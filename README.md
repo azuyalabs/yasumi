@@ -36,17 +36,17 @@ TBD
 System Requirements
 -------------------
 
-You need **PHP >= 5.5.0** or **HHVM >= 3.2** and the `intl` extension to use `Azuya\Yasumi` but the latest stable 
-version of PHP/HHVM is recommended.
+You need **PHP >= 5.5.0** and the `intl` extension to use `azuyalabs/yasumi` but the latest stable 
+version of PHP is recommended.
 
 
 Installation
 ------------
 
-Install `Azuya\Yasumi` using Composer.
+Install `azuyalabs/yasumi` using Composer.
 
 ```
-$ composer require azuya/yasumi
+$ composer require azuyalabs/yasumi
 ```
 
 
@@ -59,7 +59,7 @@ Yasumi has a [PHPUnit](https://phpunit.de/) test suite. To run the tests, run th
 $ phpunit
 ```
 
-The tests are organized in additional testsuites:
+The tests are organized in additional test suites:
 
 * Base: For testing the base functionality of Yasumi
 * Japan: For separately testing the Japan Holiday Provider
