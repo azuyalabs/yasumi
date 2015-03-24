@@ -1,10 +1,20 @@
 {
   "name": "azuyalabs/yasumi",
-  "description": "Public Holidays",
+  "description": "Yasumi is an easy PHP Library for calculating national holidays.",
+  "keywords": [
+    "holiday",
+    "calendar",
+    "calculation",
+    "celebration",
+    "php",
+    "date",
+    "time"
+  ],
+  "license": "MIT",
   "authors": [
     {
       "name": "Sacha Telgenhof",
-      "email": "stelgenhof@gmail.com"
+      "email": "me@sachatelgenhof.nl"
     }
   ],
   "require": {
@@ -21,6 +31,6 @@
     }
   },
   "autoload-dev": {
-    "psr-4": { "Yasumi\\Tests\\": "tests/" }
+    "psr-4": {"Yasumi\\Tests\\": "tests/"}
   }
 }
