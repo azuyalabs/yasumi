@@ -94,5 +94,22 @@ class Netherlands extends AbstractProvider
          */
         $this->addHoliday(new Holiday('secondChristmasDay', ['en-US' => 'Boxing Day', 'nl-NL' => 'Tweede Kerstdag'],
             Carbon::create($this->year, 12, 26, 0, 0, 0, $this->timezone), $this->locale));
+
+        /**
+         * Kings Day.
+         *
+         * King's Day is celebrated from 2014 onwards on April 27th. If this happens to be on a Sunday, it will be
+         * celebrated the day before instead.
+         */
+        if ($this->year >= 2014) {
+            $date = Carbon::create($this->year, 4, 27, 0, 0, 0, $this->timezone);
+
+            if ($date->dayOfWeek === 0) {
+                $date = $date->subDay();
+            }
+
+            $this->addHoliday(new Holiday('kingsDay', ['en-US' => 'Kings Day', 'nl-NL' => 'Koningsdag'], $date,
+                $this->locale));
+        }
     }
 }
