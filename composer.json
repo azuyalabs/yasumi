@@ -1,0 +1,26 @@
+{
+  "name": "azuyalabs/yasumi",
+  "description": "Public Holidays",
+  "authors": [
+    {
+      "name": "Sacha Telgenhof",
+      "email": "stelgenhof@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0",
+    "ext-intl": "*",
+    "nesbot/carbon": "~1.14"
+  },
+  "require-dev": {
+    "fzaninotto/faker": "~1.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Yasumi\\": "src/Yasumi/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": { "Yasumi\\Tests\\": "tests/" }
+  }
+}

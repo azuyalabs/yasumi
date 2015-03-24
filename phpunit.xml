@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnError="false"
+         stopOnFailure="false"
+         syntaxCheck="true"
+         verbose="true"
+        >
+
+    <testsuites>
+        <testsuite name="Yasumi Test Suite">
+            <directory suffix="Test.php">./tests</directory>
+        </testsuite>
+
+        <testsuite name="Base">
+            <directory suffix="Test.php">./tests/Base</directory>
+        </testsuite>
+
+        <testsuite name="Japan">
+            <directory suffix="Test.php">./tests/Japan</directory>
+        </testsuite>
+
+        <testsuite name="Netherlands">
+            <directory suffix="Test.php">./tests/Netherlands</directory>
+        </testsuite>
+
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./src/Yasumi</directory>
+            <exclude>
+            </exclude>
+        </whitelist>
+    </filter>
+</phpunit>
