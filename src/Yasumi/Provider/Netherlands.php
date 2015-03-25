@@ -151,5 +151,35 @@ class Netherlands extends AbstractProvider
          */
         $this->addHoliday(new Holiday('winterTime', ['en-US' => 'Wintertime', 'nl-NL' => 'Wintertijd'],
             new Carbon('last sunday of october ' . $this->year, $this->timezone), $this->locale, Holiday::TYPE_SEASON));
+
+        /**
+         * Prince's Day.
+         *
+         * Prinsjesdag (English: Prince's Day) is the day on which the reigning monarch of the Netherlands addresses a joint
+         * session of the Dutch Senate and House of Representatives.
+         */
+        $this->addHoliday(new Holiday('princesDay', ['en-US' => 'Prince\'s Day', 'nl-NL' => 'Prinsjesdag'],
+            new Carbon('third tuesday of september ' . $this->year, $this->timezone), $this->locale,
+            Holiday::TYPE_OTHER));
+
+        /**
+         * Father's Day.
+         *
+         * Father's Day is a celebration honoring fathers and celebrating fatherhood, paternal bonds, and the influence of
+         * fathers in society. In the Netherlands, Father's Day (Dutch: Vaderdag) is celebrated on the third Sunday of June and
+         * is not a public holiday.
+         */
+        $this->addHoliday(new Holiday('fathersDay', ['en-US' => 'Father\'s Day', 'nl-NL' => 'Vaderdag'],
+            new Carbon('third sunday of june ' . $this->year, $this->timezone), $this->locale, Holiday::TYPE_OTHER));
+
+        /**
+         * Mother's Day.
+         *
+         * Mother's Day is a modern celebration honoring one's own mother, as well as motherhood, maternal bonds, and the
+         * influence of mothers in society. In the Netherlands, Mother's Day (Dutch: Moederdag) is celebrated on the second
+         * Sunday of May and is not a public holiday.
+         */
+        $this->addHoliday(new Holiday('mothersDay', ['en-US' => 'Mother\'s Day', 'nl-NL' => 'Moederdag'],
+            new Carbon('second sunday of may ' . $this->year, $this->timezone), $this->locale, Holiday::TYPE_OTHER));
     }
 }

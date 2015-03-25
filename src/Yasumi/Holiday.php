@@ -42,6 +42,11 @@ class Holiday extends Carbon implements JsonSerializable
     const TYPE_BANK = 'bank';
 
     /**
+     * Type definition for other type of holidays
+     */
+    const TYPE_OTHER = 'other';
+
+    /**
      * The default locale. Used for translations of holiday names and other text strings.
      */
     const DEFAULT_LOCALE = 'en_US';
