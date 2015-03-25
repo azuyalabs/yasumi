@@ -1,7 +1,8 @@
+[![Build Status](https://travis-ci.org/azuyalabs/yasumi.svg?branch=master)](https://travis-ci.org/azuyalabs/yasumi)
 Yasumi
 ==========
 
-Yasumi (Japanese for Holiday) is an easy PHP library to help you calculate the dates and names of holidays and other 
+Yasumi (Japanese for Holiday) is an easy PHP library to help you calculate the dates and names of holidays and other
 special celebrations from various countries/states. Many services exist on the internet that provide holidays, however
 are either not free or offer only limited information. In addition, no complete PHP library seems to exist today
 that covers a wide range of holidays and countries, except maybe PEAR's Date_Holidays which unfortunately hasn't been
@@ -37,7 +38,7 @@ TBD
 System Requirements
 -------------------
 
-You need **PHP >= 5.5.0** and the `intl` extension to use `azuyalabs/yasumi` but the latest stable 
+You need **PHP >= 5.5.0** and the `intl` extension to use `azuyalabs/yasumi` but the latest stable
 version of PHP is recommended.
 
 
