@@ -111,5 +111,45 @@ class Netherlands extends AbstractProvider
             $this->addHoliday(new Holiday('kingsDay', ['en-US' => 'Kings Day', 'nl-NL' => 'Koningsdag'], $date,
                 $this->locale));
         }
+
+        /**
+         * Queen's Day.
+         *
+         * Queen's Day was celebrated between 1891 and 1948 (inclusive) on August 31. Between 1949 and 2013 (inclusive) it
+         * was celebrated April 30. If these dates are on a Sunday, Queen's Day was celebrated one day later until 1980
+         * (on the following Monday), starting 1980 one day earlier (on the preceding Saturday).
+         */
+        if ($this->year >= 1891 && $this->year <= 2013) {
+            $date = Carbon::create($this->year, 4, 30, 0, 0, 0, $this->timezone);
+            if ($this->year <= 1948) {
+                $date = Carbon::create($this->year, 8, 31, 0, 0, 0, $this->timezone);
+            }
+
+            // Determine substitution day
+            if ($date->dayOfWeek === 0) {
+                $date = ($this->year < 1980) ? $date->addDay() : $date->subDay();
+            }
+
+            $this->addHoliday(new Holiday('queensDay', ['en-US' => 'Queen\'s Day', 'nl-NL' => 'Koninginnedag'], $date,
+                $this->locale));
+        }
+
+        /**
+         * Summertime.
+         *
+         * Start of Summertime takes place on the last sunday of march. (Summertime is the common name for Daylight Saving
+         * Time).
+         */
+        $this->addHoliday(new Holiday('summerTime', ['en-US' => 'Summertime', 'nl-NL' => 'Zomertijd'],
+            new Carbon('last sunday of march ' . $this->year, $this->timezone), $this->locale, Holiday::TYPE_SEASON));
+
+        /**
+         * Wintertime.
+         *
+         * Start of Wintertime takes place on the last sunday of october. (Wintertime is actually the end of Summertime.
+         * Summertime is the common name for Daylight Saving Time).
+         */
+        $this->addHoliday(new Holiday('winterTime', ['en-US' => 'Wintertime', 'nl-NL' => 'Wintertijd'],
+            new Carbon('last sunday of october ' . $this->year, $this->timezone), $this->locale, Holiday::TYPE_SEASON));
     }
 }
