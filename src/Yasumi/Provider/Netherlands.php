@@ -181,5 +181,22 @@ class Netherlands extends AbstractProvider
          */
         $this->addHoliday(new Holiday('mothersDay', ['en-US' => 'Mother\'s Day', 'nl-NL' => 'Moederdag'],
             new Carbon('second sunday of may ' . $this->year, $this->timezone), $this->locale, Holiday::TYPE_OTHER));
+
+        /**
+         * Easter.
+         *
+         * Easter is a festival and holiday celebrating the resurrection of Jesus Christ from the dead. Easter is celebrated on
+         * a date based on a certain number of days after March 21st. The date of Easter Day was defined by the Council of
+         * Nicaea in AD325 as the Sunday after the first full moon which falls on or after the Spring Equinox.
+         */
+        $easter = Carbon::create($this->year, 3, 21, 0, 0, 0, $this->timezone)->addDays(easter_days($this->year));
+        $this->addHoliday(new Holiday('easter', ['en-US' => 'Easter Sunday', 'nl-NL' => 'Eerste Paasdag'], $easter,
+            $this->locale));
+
+        /**
+         * Easter Monday.
+         */
+        $this->addHoliday(new Holiday('easterMonday', ['en-US' => 'Easter Monday', 'nl-NL' => 'Tweede Paasdag'],
+            $easter->addDay(), $this->locale));
     }
 }
