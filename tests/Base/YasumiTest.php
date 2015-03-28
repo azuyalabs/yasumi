@@ -47,7 +47,7 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      */
     public function testCreateWithInvalidLocale()
     {
-        Yasumi::create('Japan', Factory::create()->numberBetween(0, 9999), 'wx_YZ');
+        Yasumi::create('Japan', Factory::create()->numberBetween(1000, 9999), 'wx_YZ');
     }
 
     /**
@@ -55,7 +55,7 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      */
     public function testGetIterator()
     {
-        $holidays = Yasumi::create('Japan', Factory::create()->numberBetween(0, 9999));
+        $holidays = Yasumi::create('Japan', Factory::create()->numberBetween(1000, 9999));
 
         $this->assertInstanceOf('ArrayIterator', $holidays->getIterator());
     }
@@ -87,7 +87,7 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      */
     public function testGetYear()
     {
-        $year     = Factory::create()->numberBetween(0, 9999);
+        $year     = Factory::create()->numberBetween(1000, 9999);
         $holidays = Yasumi::create('Netherlands', $year);
 
         $this->assertInternalType('integer', $holidays->getYear());
@@ -115,7 +115,7 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      */
     public function testNextWithBlankName()
     {
-        $holidays = Yasumi::create('Netherlands', Factory::create()->numberBetween(0, 9999));
+        $holidays = Yasumi::create('Netherlands', Factory::create()->numberBetween(1000, 9999));
         $holidays->next(null);
     }
 
@@ -140,7 +140,7 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      */
     public function testPreviousWithBlankName()
     {
-        $holidays = Yasumi::create('Netherlands', Factory::create()->numberBetween(0, 9999));
+        $holidays = Yasumi::create('Netherlands', Factory::create()->numberBetween(1000, 9999));
         $holidays->previous(null);
     }
 

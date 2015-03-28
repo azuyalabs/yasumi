@@ -69,15 +69,15 @@ trait YasumiBase
      * @param int $month      month (number) for which the test date needs to be generated
      * @param int $day        day (number) for which the test date needs to be generated
      * @param int $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
-     * @param int $interval   year interval/range from which dates will be generated (default: 500)
+     * @param int $range      year range from which dates will be generated (default: 1000)
      *
      * @return array list of random test dates used for assertion of holidays.
      */
-    public function generateRandomDates($month, $day, $iterations = 10, $interval = 500)
+    public function generateRandomDates($month, $day, $iterations = 10, $range = 1000)
     {
         $data = [];
         for ($y = 1; $y <= $iterations; $y ++) {
-            $year   = Faker::create()->dateTimeBetween("-$interval years", "+$interval years")->format('Y');
+            $year   = Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
             $data[] = [$year, Carbon::createFromDate($year, $month, $day)];
         }
 

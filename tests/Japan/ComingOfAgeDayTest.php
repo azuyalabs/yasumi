@@ -47,6 +47,6 @@ class ComingOfAgeDayTest extends JapanBaseTestCase
      */
     public function testConstitutionMemorialDayBefore1948()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, 956);
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, 1456);
     }
 }

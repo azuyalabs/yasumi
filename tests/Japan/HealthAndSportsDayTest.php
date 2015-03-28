@@ -50,6 +50,6 @@ class HealthAndSportsDayTest extends JapanBaseTestCase
      */
     public function testHealthAndSportsDayBefore1996()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, 399);
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, 1399);
     }
 }

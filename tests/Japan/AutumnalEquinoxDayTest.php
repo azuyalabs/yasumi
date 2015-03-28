@@ -74,7 +74,7 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase
      */
     public function testAutumnalEquinoxDayBefore1948()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, 699);
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, 1699);
     }
 
     /**

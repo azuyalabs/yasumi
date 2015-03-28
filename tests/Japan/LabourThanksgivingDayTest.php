@@ -39,6 +39,6 @@ class LabourThanksgivingDayTest extends JapanBaseTestCase
      */
     public function testLabourThanksgivingDayBefore1948()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, 689);
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, 1689);
     }
 }

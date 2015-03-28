@@ -35,7 +35,8 @@ class Yasumi
      * Create a new holiday provider instance.
      *
      * @param string $class  holiday provider name
-     * @param int    $year   year for which the country provider needs to be created
+     * @param int    $year   year for which the country provider needs to be created. Year needs to be a valid integer
+     *                       between 1000 and 9999.
      * @param string $locale The locale to use. If empty we'll use the default locale (en-US)
      *
      * @throws RuntimeException If no such holiday provider is found
@@ -54,7 +55,7 @@ class Yasumi
         }
 
         // Assert year input
-        if ($year < 0 || $year > 9999) {
+        if ($year < 1000 || $year > 9999) {
             throw new InvalidArgumentException(sprintf('Year needs to be between 0 and 9999 (%s given).', $year));
         }
 

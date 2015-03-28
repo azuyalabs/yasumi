@@ -50,6 +50,6 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase
      */
     public function testRespectForTheAgedDayBefore1996()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, 677);
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, 1677);
     }
 }
