@@ -26,7 +26,7 @@ class NewYearsDayTest extends JapanBaseTestCase
      */
     public function testNewYearsDayOnAfter1948()
     {
-        $year = 2014;
+        $year = $this->generateRandomYear(1948);
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, Carbon::createFromDate($year, 1, 1));
     }
 
@@ -35,6 +35,6 @@ class NewYearsDayTest extends JapanBaseTestCase
      */
     public function testNewYearsDayBefore1948()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, 1677);
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1947));
     }
 }

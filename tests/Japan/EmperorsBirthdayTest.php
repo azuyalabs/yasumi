@@ -41,6 +41,6 @@ class EmperorsBirthdayTest extends JapanBaseTestCase
      */
     public function testEmperorsBirthdayBefore1989()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, 1488);
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1988));
     }
 }

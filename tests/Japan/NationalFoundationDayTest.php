@@ -38,6 +38,6 @@ class NationalFoundationDayTest extends JapanBaseTestCase
      */
     public function testNationalFoundationDayBefore1966()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, 1377);
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1965));
     }
 }

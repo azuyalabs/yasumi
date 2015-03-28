@@ -27,7 +27,7 @@ class MarineDayTest extends JapanBaseTestCase
      */
     public function testMarineDayOnAfter2003()
     {
-        $year = 2008;
+        $year = $this->generateRandomYear(2004);
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, new Carbon('third monday of july ' . $year));
     }
 
@@ -50,6 +50,6 @@ class MarineDayTest extends JapanBaseTestCase
      */
     public function testMarineDayBefore1996()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, 1109);
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1995));
     }
 }

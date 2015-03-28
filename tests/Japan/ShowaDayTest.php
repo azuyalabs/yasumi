@@ -26,8 +26,10 @@ class ShowaDayTest extends JapanBaseTestCase
      */
     public function testShowaDayOnAfter2007()
     {
-        $year = 4771;
+        $year = 2110;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, Carbon::createFromDate($year, 4, 29));
+        $year = 2210;
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, Carbon::createFromDate($year, 4, 30));
     }
 
     /**
@@ -35,6 +37,6 @@ class ShowaDayTest extends JapanBaseTestCase
      */
     public function testShowaDayBefore2007()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, 1901);
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 2006));
     }
 }

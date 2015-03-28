@@ -30,7 +30,7 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase
      */
     public function testAutumnalEquinoxDayOnAfter2150()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, 4987);
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(2151));
     }
 
     /**
@@ -74,16 +74,16 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase
      */
     public function testAutumnalEquinoxDayBefore1948()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, 1699);
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1947));
     }
 
     /**
-     * Tests Vernal Equinox Day before 1948 and after 1851. This national holiday was established in 1948 as a day on
+     * Tests Vernal Equinox Day between 1851 and 1948. This national holiday was established in 1948 as a day on
      * which to honor one's ancestors and remember the dead. Prior to 1948, the autumnal equinox was an imperial
      * ancestor worship festival called Shūki kōrei-sai (秋季皇霊祭).
      */
-    public function testAutumnalEquinoxDayBefore1948AndAfter1851()
+    public function testAutumnalEquinoxDayBetween1851And1948()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, 1888);
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1851, 1947));
     }
 }

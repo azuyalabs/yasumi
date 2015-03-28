@@ -38,6 +38,6 @@ class MountainDayTest extends JapanBaseTestCase
      */
     public function testMountainDayBefore2016()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, 1887);
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 2015));
     }
 }

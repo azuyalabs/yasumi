@@ -27,7 +27,7 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase
      */
     public function testRespectForTheAgedDayOnAfter2003()
     {
-        $year = 2101;
+        $year = $this->generateRandomYear(2004);
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, new Carbon('third monday of september ' . $year));
     }
 
@@ -50,6 +50,6 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase
      */
     public function testRespectForTheAgedDayBefore1996()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, 1677);
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1995));
     }
 }

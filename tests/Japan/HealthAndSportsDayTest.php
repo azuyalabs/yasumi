@@ -27,7 +27,7 @@ class HealthAndSportsDayTest extends JapanBaseTestCase
      */
     public function testHealthAndSportsDayOnAfter2000()
     {
-        $year = 2209;
+        $year = $this->generateRandomYear(2001);
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, new Carbon('second monday of october ' . $year));
     }
 
@@ -50,6 +50,6 @@ class HealthAndSportsDayTest extends JapanBaseTestCase
      */
     public function testHealthAndSportsDayBefore1996()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, 1399);
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1995));
     }
 }

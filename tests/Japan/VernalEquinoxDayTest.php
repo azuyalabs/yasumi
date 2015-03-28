@@ -30,7 +30,7 @@ class VernalEquinoxDayTest extends JapanBaseTestCase
      */
     public function testVernalEquinoxDayOnAfter2150()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, 2379);
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(2151));
     }
 
     /**
@@ -74,16 +74,16 @@ class VernalEquinoxDayTest extends JapanBaseTestCase
      */
     public function testVernalEquinoxDayBefore1948()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, 1277);
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1947));
     }
 
     /**
-     * Tests Vernal Equinox Day before 1948 and after 1851. This national holiday was established in 1948 as a day for
+     * Tests Vernal Equinox Day between 1851 and 1948. This national holiday was established in 1948 as a day for
      * the admiration of nature and the love of living things. Prior to 1948, the vernal equinox was an imperial
      * ancestor worship festival called Shunki kōrei-sai (春季皇霊祭).
      */
-    public function testVernalEquinoxDayBefore1948AndAfter1851()
+    public function testVernalEquinoxDayBetween1851And1948()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, 1874);
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1851, 1947));
     }
 }
