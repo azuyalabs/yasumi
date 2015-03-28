@@ -20,16 +20,11 @@ use Yasumi\Tests\Netherlands\NetherlandsBaseTestCase;
 class EasterTest extends NetherlandsBaseTestCase
 {
     /**
-     * The name of the holiday
-     */
-    const HOLIDAY = 'easter';
-
-    /**
      * Tests Easter.
      */
     public function testEaster()
     {
         $year = 2010;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, Carbon::createFromDate($year, 4, 4));
+        $this->assertHoliday(self::COUNTRY, 'easter', $year, Carbon::createFromDate($year, 4, 4));
     }
 }

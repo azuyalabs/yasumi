@@ -19,10 +19,6 @@ use Yasumi\Tests\Netherlands\NetherlandsBaseTestCase;
  */
 class FathersDayTest extends NetherlandsBaseTestCase
 {
-    /**
-     * The name of the holiday
-     */
-    const HOLIDAY = 'fathersDay';
 
     /**
      * Tests Father's Day.
@@ -30,6 +26,6 @@ class FathersDayTest extends NetherlandsBaseTestCase
     public function testFathersDay()
     {
         $year = 1967;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, new Carbon('third sunday of june ' . $year));
+        $this->assertHoliday(self::COUNTRY, 'fathersDay', $year, new Carbon('third sunday of june ' . $year));
     }
 }

@@ -15,11 +15,6 @@ use Yasumi\Tests\Netherlands\NetherlandsBaseTestCase;
 class EpiphanyTest extends NetherlandsBaseTestCase
 {
     /**
-     * The name of the holiday
-     */
-    const HOLIDAY = 'epiphany';
-
-    /**
      * Tests Epiphany.
      *
      * @dataProvider EpiphanyDataProvider
@@ -29,7 +24,7 @@ class EpiphanyTest extends NetherlandsBaseTestCase
      */
     public function testEpiphany($year, $expected)
     {
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, $expected);
+        $this->assertHoliday(self::COUNTRY, 'epiphany', $year, $expected);
     }
 
     /**

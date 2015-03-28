@@ -19,16 +19,11 @@ use Yasumi\Tests\Netherlands\NetherlandsBaseTestCase;
 class WinterTimeTest extends NetherlandsBaseTestCase
 {
     /**
-     * The name of the holiday
-     */
-    const HOLIDAY = 'winterTime';
-
-    /**
      * Tests Wintertime.
      */
     public function testWintertime()
     {
         $year = 2000;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, new Carbon('last sunday of october ' . $year));
+        $this->assertHoliday(self::COUNTRY, 'winterTime', $year, new Carbon('last sunday of october ' . $year));
     }
 }

@@ -15,11 +15,6 @@ use Yasumi\Tests\Netherlands\NetherlandsBaseTestCase;
 class WorldAnimalDayTest extends NetherlandsBaseTestCase
 {
     /**
-     * The name of the holiday
-     */
-    const HOLIDAY = 'worldAnimalDay';
-
-    /**
      * Tests World Animal Day.
      *
      * @dataProvider WorldAnimalDayDataProvider
@@ -29,7 +24,7 @@ class WorldAnimalDayTest extends NetherlandsBaseTestCase
      */
     public function testWorldAnimalDay($year, $expected)
     {
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, $expected);
+        $this->assertHoliday(self::COUNTRY, 'worldAnimalDay', $year, $expected);
 
     }
 

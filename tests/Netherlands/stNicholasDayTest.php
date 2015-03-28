@@ -10,36 +10,31 @@
 use Yasumi\Tests\Netherlands\NetherlandsBaseTestCase;
 
 /**
- * Class stMartinsDayTest.
+ * Class stNicholasDayTest.
  */
-class stMartinsDayTest extends NetherlandsBaseTestCase
+class stNicholasDayTest extends NetherlandsBaseTestCase
 {
     /**
-     * The name of the holiday
-     */
-    const HOLIDAY = 'stMartinsDay';
-
-    /**
-     * Tests Sint Martins Day.
+     * Tests Sint Nicholas Day.
      *
-     * @dataProvider stMartinsDayDataProvider
+     * @dataProvider stNicholasDayDataProvider
      *
-     * @param int           $year     the year for which Sint Martins Day needs to be tested
+     * @param int           $year     the year for which Sint Nicholas Day needs to be tested
      * @param Carbon\Carbon $expected the expected date
      */
-    public function teststMartinsDay($year, $expected)
+    public function teststNicholasDay($year, $expected)
     {
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, $expected);
+        $this->assertHoliday(self::COUNTRY, 'stNicholasDay', $year, $expected);
 
     }
 
     /**
-     * Returns a list of random test dates used for assertion of Sint Martins Day.
+     * Returns a list of random test dates used for assertion of Sint Nicholas Day.
      *
-     * @return array list of test dates for Sint Martins Day
+     * @return array list of test dates for Sint Nicholas Day
      */
-    public function stMartinsDayDataProvider()
+    public function stNicholasDayDataProvider()
     {
-        return $this->generateRandomDates(11, 11);
+        return $this->generateRandomDates(12, 5);
     }
 }

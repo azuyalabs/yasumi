@@ -20,16 +20,11 @@ use Yasumi\Tests\Netherlands\NetherlandsBaseTestCase;
 class MothersDayTest extends NetherlandsBaseTestCase
 {
     /**
-     * The name of the holiday
-     */
-    const HOLIDAY = 'mothersDay';
-
-    /**
      * Tests Mother's Day.
      */
     public function testMothersDay()
     {
         $year = 1933;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, new Carbon('second sunday of may ' . $year));
+        $this->assertHoliday(self::COUNTRY, 'mothersDay', $year, new Carbon('second sunday of may ' . $year));
     }
 }

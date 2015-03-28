@@ -15,11 +15,6 @@ use Yasumi\Tests\Netherlands\NetherlandsBaseTestCase;
 class LabourDayTest extends NetherlandsBaseTestCase
 {
     /**
-     * The name of the holiday
-     */
-    const HOLIDAY = 'labourDay';
-
-    /**
      * Tests Labour Day.
      *
      * @dataProvider LabourDayDataProvider
@@ -29,7 +24,7 @@ class LabourDayTest extends NetherlandsBaseTestCase
      */
     public function testLabourDay($year, $expected)
     {
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, $expected);
+        $this->assertHoliday(self::COUNTRY, 'labourDay', $year, $expected);
 
     }
 

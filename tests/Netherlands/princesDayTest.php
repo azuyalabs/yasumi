@@ -20,16 +20,11 @@ use Yasumi\Tests\Netherlands\NetherlandsBaseTestCase;
 class PrincesDayTest extends NetherlandsBaseTestCase
 {
     /**
-     * The name of the holiday
-     */
-    const HOLIDAY = 'princesDay';
-
-    /**
      * Tests Prince's Day.
      */
     public function testPrincesDay()
     {
         $year = 1988;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, new Carbon('third tuesday of september ' . $year));
+        $this->assertHoliday(self::COUNTRY, 'princesDay', $year, new Carbon('third tuesday of september ' . $year));
     }
 }

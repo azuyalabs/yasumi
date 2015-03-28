@@ -15,11 +15,6 @@ use Yasumi\Tests\Netherlands\NetherlandsBaseTestCase;
 class SecondChristmasDayTest extends NetherlandsBaseTestCase
 {
     /**
-     * The name of the holiday
-     */
-    const HOLIDAY = 'secondChristmasDay';
-
-    /**
      * Tests Second Christmas Day.
      *
      * @dataProvider SecondChristmasDayDataProvider
@@ -29,7 +24,7 @@ class SecondChristmasDayTest extends NetherlandsBaseTestCase
      */
     public function testSecondChristmasDay($year, $expected)
     {
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, $expected);
+        $this->assertHoliday(self::COUNTRY, 'secondChristmasDay', $year, $expected);
 
     }
 
