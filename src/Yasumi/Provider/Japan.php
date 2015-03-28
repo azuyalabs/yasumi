@@ -136,7 +136,7 @@ class Japan extends AbstractProvider
          * Emperors Birthday. The Emperors Birthday is on December 23rd and celebrated as such since 1989.
          * Prior to the death of Emperor Hirohito in 1989, this holiday was celebrated on April 29. See also "Shōwa Day".
          */
-        if ($this->year >= 1948) {
+        if ($this->year >= 1989) {
             $this->addHoliday(new Holiday('emperorsBirthday', ['en_US' => 'Emperors Birthday', 'ja_JP' => '天皇誕生日'],
                 Carbon::create($this->year, 12, 23, 0, 0, 0, $this->timezone), $this->locale));
         }
@@ -323,7 +323,7 @@ class Japan extends AbstractProvider
         // Loop through all holidays
         foreach ($this->getHolidays() as $shortName => $date) {
             // Exclude these holidays from substitution
-            if (in_array($shortName, ['vernalEquinoxDay', 'autumnalEquinoxDay'])) {
+            if (in_array($shortName, ['vernalEquinoxDay', 'autumnalEquinoxDay', 'newYearsDay'])) {
                 continue;
             }
 
