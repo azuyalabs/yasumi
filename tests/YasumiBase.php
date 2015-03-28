@@ -56,7 +56,6 @@ trait YasumiBase
         $holiday  = $holidays->getHoliday($shortName);
 
         $this->assertInstanceOf('Yasumi\Provider\\' . $provider, $holidays);
-
         $this->assertFalse(isset($holiday));
         $this->assertFalse($holidays->isHoliday($holiday));
 
@@ -84,4 +83,16 @@ trait YasumiBase
         return $data;
     }
 
+    /**
+     * Generates a random year (number).
+     *
+     * @param int $lowerLimit the lower limit for generating a year number (default: 1000)
+     * @param int $upperLimit the upper limit for generating a year number (default: 9999)
+     *
+     * @return int a year number
+     */
+    public function generateRandomYear($lowerLimit = 1000, $upperLimit = 9999)
+    {
+        return (int) Faker::create()->numberBetween($lowerLimit, $upperLimit);
+    }
 }
