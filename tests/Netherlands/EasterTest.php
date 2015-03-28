@@ -27,4 +27,13 @@ class EasterTest extends NetherlandsBaseTestCase
         $year = 2010;
         $this->assertHoliday(self::COUNTRY, 'easter', $year, Carbon::createFromDate($year, 4, 4));
     }
+
+    /**
+     * Tests Easter.
+     */
+    public function testEasterMonday()
+    {
+        $year = 2010;
+        $this->assertHoliday(self::COUNTRY, 'easterMonday', $year, Carbon::createFromDate($year, 4, 5));
+    }
 }
