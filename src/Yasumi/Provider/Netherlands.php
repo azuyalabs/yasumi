@@ -196,7 +196,25 @@ class Netherlands extends AbstractProvider
         /**
          * Easter Monday.
          */
+        $easterMonday = clone $easter;
         $this->addHoliday(new Holiday('easterMonday', ['en-US' => 'Easter Monday', 'nl-NL' => 'Tweede Paasdag'],
-            $easter->addDay(), $this->locale));
+            $easterMonday->addDay(), $this->locale));
+
+        /**
+         * Pentecost (Whitsunday).
+         *
+         * Pentecost a feast commemorating the descent of the Holy Spirit upon the Apostles and other followers of Jesus Christ.
+         * It is celebrated 49 days after Easter and always takes place on Sunday.
+         */
+        $pentecost = clone $easter;
+        $this->addHoliday(new Holiday('pentecost', ['en-US' => 'Whitsunday', 'nl-NL' => 'Eerste Pinksterdag'],
+            $pentecost->addDays(49), $this->locale));
+
+        /**
+         * Pentecost (Whitmonday).
+         */
+        $pentecost = clone $easter;
+        $this->addHoliday(new Holiday('pentecostMonday', ['en-US' => 'Whitmonday', 'nl-NL' => 'Tweede Pinksterdag'],
+            $pentecost->addDays(50), $this->locale));
     }
 }
