@@ -263,5 +263,16 @@ class Netherlands extends AbstractProvider
         $goodFriday = clone $easter;
         $this->addHoliday(new Holiday('goodFriday', ['en-US' => 'Good Friday', 'nl-NL' => 'Goede Vrijdag'],
             $goodFriday->subDays(2), $this->locale, Holiday::TYPE_OBSERVANCE));
+
+        /**
+         * Ascension Day.
+         *
+         * Ascension Day commemorates the bodily Ascension of Jesus into heaven. It is one of the ecumenical feasts of Christian
+         * churches. Ascension Day is traditionally celebrated on a Thursday, the fortieth day of Easter although some Catholic
+         * provinces have moved the observance to the following Sunday.
+         */
+        $ascensionDay = clone $easter;
+        $this->addHoliday(new Holiday('ascensionDay', ['en-US' => 'Ascension Day', 'nl-NL' => 'Hemelvaart'],
+            $ascensionDay->addDays(39), $this->locale));
     }
 }
