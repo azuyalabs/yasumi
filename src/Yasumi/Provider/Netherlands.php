@@ -34,19 +34,19 @@ class Netherlands extends AbstractProvider
          * Epiphany
          */
         $this->addHoliday(new Holiday('epiphany', ['en-US' => 'Epiphany', 'nl-NL' => 'Drie Koningen'],
-            Carbon::create($this->year, 1, 6, 0, 0, 0, $this->timezone), $this->locale, Holiday::TYPE_OBSERVANCE));
+            Carbon::create($this->year, 1, 6, 0, 0, 0, $this->timezone), $this->locale, Holiday::TYPE_OTHER));
 
         /*
          * Valentine's Day
          */
         $this->addHoliday(new Holiday('valentinesDay', ['en-US' => 'Valentine\'s Day', 'nl-NL' => 'Valentijnsdag'],
-            Carbon::create($this->year, 2, 14, 0, 0, 0, $this->timezone), $this->locale, Holiday::TYPE_OBSERVANCE));
+            Carbon::create($this->year, 2, 14, 0, 0, 0, $this->timezone), $this->locale, Holiday::TYPE_OTHER));
 
         /*
          * Labour Day
          */
         $this->addHoliday(new Holiday('labourDay', ['en-US' => 'Labour Day', 'nl-NL' => 'Dag van de Arbeid'],
-            Carbon::create($this->year, 5, 1, 0, 0, 0, $this->timezone), $this->locale, Holiday::TYPE_OBSERVANCE));
+            Carbon::create($this->year, 5, 1, 0, 0, 0, $this->timezone), $this->locale, Holiday::TYPE_OTHER));
 
         /*
          * Commemoration Day and Liberation Day. Instituted after WWII in 1947.
@@ -63,7 +63,7 @@ class Netherlands extends AbstractProvider
          * World Animal Day
          */
         $this->addHoliday(new Holiday('worldAnimalDay', ['en-US' => 'World Animal Day', 'nl-NL' => 'Dierendag'],
-            Carbon::create($this->year, 10, 4, 0, 0, 0, $this->timezone), $this->locale, Holiday::TYPE_OBSERVANCE));
+            Carbon::create($this->year, 10, 4, 0, 0, 0, $this->timezone), $this->locale, Holiday::TYPE_OTHER));
 
         /*
          * Halloween
@@ -226,20 +226,20 @@ class Netherlands extends AbstractProvider
          */
         $carnivalDay1 = clone $easter;
         $this->addHoliday(new Holiday('carnivalDay', ['en-US' => 'Carnival', 'nl-NL' => 'Carnaval'],
-            $carnivalDay1->subDays(49), $this->locale));
+            $carnivalDay1->subDays(49), $this->locale, Holiday::TYPE_OBSERVANCE));
 
         /**
          * Second Day of Carnival.
          */
         $carnivalDay2 = clone $easter;
         $this->addHoliday(new Holiday('secondCarnivalDay', ['en-US' => 'Carnival', 'nl-NL' => 'Carnaval'],
-            $carnivalDay2->subDays(48), $this->locale));
+            $carnivalDay2->subDays(48), $this->locale, Holiday::TYPE_OBSERVANCE));
 
         /**
          * Third Day of Carnival.
          */
         $carnivalDay3 = clone $easter;
         $this->addHoliday(new Holiday('thirdCarnivalDay', ['en-US' => 'Carnival', 'nl-NL' => 'Carnaval'],
-            $carnivalDay3->subDays(47), $this->locale));
+            $carnivalDay3->subDays(47), $this->locale, Holiday::TYPE_OBSERVANCE));
     }
 }
