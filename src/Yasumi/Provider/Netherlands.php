@@ -216,5 +216,30 @@ class Netherlands extends AbstractProvider
         $pentecost = clone $easter;
         $this->addHoliday(new Holiday('pentecostMonday', ['en-US' => 'Whitmonday', 'nl-NL' => 'Tweede Pinksterdag'],
             $pentecost->addDays(50), $this->locale));
+
+        /**
+         * Carnival.
+         *
+         * Carnival (Dutch: Carnaval) is originally an European Pagan spring festival, with an emphasis on role-reversal and
+         * suspension of social norms. The feast became assimilated by the Catholic Church and was celebrated in the three days
+         * preceding Ash Wednesday and Lent.
+         */
+        $carnivalDay1 = clone $easter;
+        $this->addHoliday(new Holiday('carnivalDay', ['en-US' => 'Carnival', 'nl-NL' => 'Carnaval'],
+            $carnivalDay1->subDays(49), $this->locale));
+
+        /**
+         * Second Day of Carnival.
+         */
+        $carnivalDay2 = clone $easter;
+        $this->addHoliday(new Holiday('secondCarnivalDay', ['en-US' => 'Carnival', 'nl-NL' => 'Carnaval'],
+            $carnivalDay2->subDays(48), $this->locale));
+
+        /**
+         * Third Day of Carnival.
+         */
+        $carnivalDay3 = clone $easter;
+        $this->addHoliday(new Holiday('thirdCarnivalDay', ['en-US' => 'Carnival', 'nl-NL' => 'Carnaval'],
+            $carnivalDay3->subDays(47), $this->locale));
     }
 }
