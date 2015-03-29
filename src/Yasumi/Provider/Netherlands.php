@@ -252,5 +252,16 @@ class Netherlands extends AbstractProvider
         $ashWednesday = clone $easter;
         $this->addHoliday(new Holiday('ashWednesday', ['en-US' => 'Ash Wednesday', 'nl-NL' => 'Aswoensdag'],
             $ashWednesday->subDays(46), $this->locale, Holiday::TYPE_OBSERVANCE));
+
+        /**
+         * Good Friday.
+         *
+         * Good Friday is a Christian religious holiday commemorating the crucifixion of Jesus Christ and his death at Calvary.
+         * The holiday is observed during Holy Week as part of the Paschal Triduum on the Friday preceding Easter Sunday, and
+         * may coincide with the Jewish observance of Passover.
+         */
+        $goodFriday = clone $easter;
+        $this->addHoliday(new Holiday('goodFriday', ['en-US' => 'Good Friday', 'nl-NL' => 'Goede Vrijdag'],
+            $goodFriday->subDays(2), $this->locale, Holiday::TYPE_OBSERVANCE));
     }
 }
