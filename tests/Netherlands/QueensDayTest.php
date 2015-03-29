@@ -60,7 +60,7 @@ class QueensDayTest extends NetherlandsBaseTestCase
      */
     public function testQueensDayBefore1891()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, 1755);
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1890));
     }
 
     /**
@@ -68,6 +68,6 @@ class QueensDayTest extends NetherlandsBaseTestCase
      */
     public function testQueensDayAfter2013()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, 2690);
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(2014));
     }
 }

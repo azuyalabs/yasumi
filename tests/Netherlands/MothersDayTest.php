@@ -24,7 +24,7 @@ class MothersDayTest extends NetherlandsBaseTestCase
      */
     public function testMothersDay()
     {
-        $year = 1933;
+        $year = $this->generateRandomYear();
         $this->assertHoliday(self::COUNTRY, 'mothersDay', $year, new Carbon('second sunday of may ' . $year));
     }
 }

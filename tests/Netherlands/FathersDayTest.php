@@ -25,7 +25,7 @@ class FathersDayTest extends NetherlandsBaseTestCase
      */
     public function testFathersDay()
     {
-        $year = 1967;
+        $year = $this->generateRandomYear();
         $this->assertHoliday(self::COUNTRY, 'fathersDay', $year, new Carbon('third sunday of june ' . $year));
     }
 }

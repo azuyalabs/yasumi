@@ -26,7 +26,7 @@ class CommemorationDayTest extends NetherlandsBaseTestCase
      */
     public function testCommemorationDayBefore1947()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, 1744);
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1946));
     }
 
     /**
