@@ -11,6 +11,7 @@ namespace Yasumi\Provider;
 
 use ArrayIterator;
 use Countable;
+use DateTime;
 use InvalidArgumentException;
 use IteratorAggregate;
 use Yasumi\Holiday;
@@ -92,7 +93,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     public function isHoliday($date)
     {
-        if ( ! is_null($date) && in_array($date->timezone($this->timezone)->startOfDay(), $this->holidays)) {
+        if ( ! is_null($date) && in_array($date, $this->holidays)) {
             return true;
         }
 
@@ -135,7 +136,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
             throw new InvalidArgumentException('Holiday name can not be blank.');
         }
 
-        return (int) $this->holidays[$shortName]->dayOfWeek;
+        return (int) $this->holidays[$shortName]->format('w');
     }
 
     /**
@@ -273,18 +274,18 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     /**
      * Internal function to compare dates in order to sort them chronologically.
      *
-     * @param $dateA \Carbon\Carbon First date
-     * @param $dateB \Carbon\Carbon Second date
+     * @param $dateA DateTime First date
+     * @param $dateB DateTime Second date
      *
      * @return int result where 0 means dates are equal, -1 the first date is before the second date, and 1 if the
      *             second date is after the first.
      */
     private static function compareDates($dateA, $dateB)
     {
-        if ($dateA->eq($dateB)) {
+        if ($dateA === $dateB) {
             return 0;
         }
 
-        return ($dateA->lt($dateB)) ? - 1 : 1;
+        return ($dateA < $dateB) ? - 1 : 1;
     }
 }

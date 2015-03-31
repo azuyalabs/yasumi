@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-use Carbon\Carbon;
 use Yasumi\Holiday;
 use Yasumi\Tests\YasumiBase;
 
@@ -47,7 +46,7 @@ class HolidayTest extends PHPUnit_Framework_TestCase
      */
     public function testCreateHolidayUnknownLocaleException()
     {
-        new Holiday('testHoliday', [], new Carbon(), 'wx-YZ');
+        new Holiday('testHoliday', [], new DateTime(), 'wx-YZ');
     }
 
     /**
@@ -55,7 +54,7 @@ class HolidayTest extends PHPUnit_Framework_TestCase
      */
     public function testHolidayIsJsonSerializable()
     {
-        $holiday  = new Holiday('testHoliday', [], new Carbon(), 'en_US');
+        $holiday  = new Holiday('testHoliday', [], new DateTime(), 'en_US');
         $json     = json_encode($holiday);
         $instance = json_decode($json, true);
 
@@ -70,7 +69,7 @@ class HolidayTest extends PHPUnit_Framework_TestCase
     public function testHolidayGetNameWithNoTranslations()
     {
         $name    = 'testHoliday';
-        $holiday = new Holiday($name, [], new Carbon(), 'en_US');
+        $holiday = new Holiday($name, [], new DateTime(), 'en_US');
 
         $this->assertInternalType('string', $holiday->getName());
         $this->assertEquals($name, $holiday->getName());
@@ -84,7 +83,7 @@ class HolidayTest extends PHPUnit_Framework_TestCase
         $name        = 'testHoliday';
         $translation = 'My Holiday';
         $locale      = 'en_US';
-        $holiday     = new Holiday($name, [$locale => $translation], new Carbon(), $locale);
+        $holiday     = new Holiday($name, [$locale => $translation], new DateTime(), $locale);
 
         $this->assertInternalType('string', $holiday->getName());
         $this->assertEquals($translation, $holiday->getName());
@@ -97,7 +96,7 @@ class HolidayTest extends PHPUnit_Framework_TestCase
     {
         $name        = 'testHoliday';
         $translation = 'My Holiday';
-        $holiday     = new Holiday($name, ['en_US' => $translation], new Carbon(), 'nl_NL');
+        $holiday     = new Holiday($name, ['en_US' => $translation], new DateTime(), 'nl_NL');
 
         $this->assertNotNull($holiday->getName());
         $this->assertInternalType('string', $holiday->getName());

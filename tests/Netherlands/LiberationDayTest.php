@@ -9,7 +9,8 @@
  */
 namespace Yasumi\Tests\Netherlands;
 
-use Carbon\Carbon;
+use DateTime;
+use DateTimeZone;
 
 /**
  * Class LiberationDayTest.
@@ -35,6 +36,7 @@ class LiberationDayTest extends NetherlandsBaseTestCase
     public function testLiberationDayOnAfter1947()
     {
         $year = $this->generateRandomYear(1947);
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, Carbon::createFromDate($year, 5, 5));
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+            new DateTime("$year-5-5", new DateTimeZone(self::TIMEZONE)));
     }
 }

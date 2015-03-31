@@ -9,7 +9,6 @@
  */
 namespace Yasumi;
 
-use Carbon\Carbon;
 use DateTime;
 use IntlCalendar;
 use InvalidArgumentException;
@@ -19,7 +18,7 @@ use Yasumi\Exception\UnknownLocaleException;
 /**
  * Class Holiday.
  */
-class Holiday extends Carbon implements JsonSerializable
+class Holiday extends DateTime implements JsonSerializable
 {
     /**
      * Type definition for National/Federal holidays
@@ -79,16 +78,16 @@ class Holiday extends Carbon implements JsonSerializable
     /**
      * Creates a new Holiday.
      *
-     * If a holiday date needs to be defined for a specific timezone, make sure that the date instance (Carbon or
-     * DateTime) has the correct timezone set. Otherwise the default system timezone is used.
+     * If a holiday date needs to be defined for a specific timezone, make sure that the date instance (DateTime) has
+     * the correct timezone set. Otherwise the default system timezone is used.
      *
-     * @param string          $shortName     The short name (internal name) of this holiday
-     * @param array           $names         An array containing the name/description of this holiday in various
+     * @param string   $shortName            The short name (internal name) of this holiday
+     * @param array    $names                An array containing the name/description of this holiday in various
      *                                       languages
-     * @param Carbon|DateTime $date          A Carbon or DateTime instance representing the date of the holiday
-     * @param string          $displayLocale Locale (i.e. language) in which the holiday information needs to be
+     * @param DateTime $date                 A DateTime instance representing the date of the holiday
+     * @param string   $displayLocale        Locale (i.e. language) in which the holiday information needs to be
      *                                       displayed in. (Default 'en-US')
-     * @param string          $type          The type of holiday. Use the following constants: TYPE_NATIONAL,
+     * @param string   $type                 The type of holiday. Use the following constants: TYPE_NATIONAL,
      *                                       TYPE_OBSERVANCE, TYPE_SEASON or TYPE_BANK. By default a national holiday
      *                                       is considered.
      *
@@ -106,9 +105,9 @@ class Holiday extends Carbon implements JsonSerializable
             throw new InvalidArgumentException('Holiday name can not be blank.');
         }
 
-        // Validate if date parameter is instance of Carbon or DateTime
-        if ( ! ($date instanceof Carbon) || ! ($date instanceof DateTime)) {
-            throw new InvalidArgumentException(sprintf('Date "%s" is not a valid Carbon or DateTime instance.', $date));
+        // Validate if date parameter is instance of DateTime
+        if ( ! ($date instanceof DateTime)) {
+            throw new InvalidArgumentException(sprintf('Date "%s" is not a valid DateTime instance.', $date));
         }
 
         // Load internal locales variable
@@ -128,7 +127,7 @@ class Holiday extends Carbon implements JsonSerializable
         $this->type          = $type;
 
         // Construct instance
-        parent::__construct($date);
+        parent::__construct($date->format('Y-m-d'), $date->getTimezone());
     }
 
     /**
@@ -167,5 +166,16 @@ class Holiday extends Carbon implements JsonSerializable
         }
 
         return (string) $this->shortName;
+    }
+
+
+    /**
+     * Format the instance as a string using the set format
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->format('Y-m-d');
     }
 }

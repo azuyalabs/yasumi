@@ -9,7 +9,8 @@
  */
 namespace Yasumi\Tests\Netherlands;
 
-use Carbon\Carbon;
+use DateTime;
+use DateTimeZone;
 
 /**
  * Class for testing Queen's Day.
@@ -31,11 +32,13 @@ class QueensDayTest extends NetherlandsBaseTestCase
     public function testQueensBetween1891and1948()
     {
         $year = 1901;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, Carbon::createFromDate($year, 8, 31));
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+            new DateTime("$year-8-31", new DateTimeZone(self::TIMEZONE)));
 
         // Substituted day (one day later)
         $year = 1947;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, Carbon::createFromDate($year, 9, 1));
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+            new DateTime("$year-9-1", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**
@@ -44,15 +47,18 @@ class QueensDayTest extends NetherlandsBaseTestCase
     public function testQueensBetween1949and2013()
     {
         $year = 1965;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, Carbon::createFromDate($year, 4, 30));
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+            new DateTime("$year-4-30", new DateTimeZone(self::TIMEZONE)));
 
         // Substituted day (one day later)
-        $year = 1978;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, Carbon::createFromDate($year, 5, 1));
+        $year = 1967;
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+            new DateTime("$year-5-1", new DateTimeZone(self::TIMEZONE)));
 
         // Substituted day (one day earlier)
         $year = 2006;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, Carbon::createFromDate($year, 4, 29));
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+            new DateTime("$year-4-29", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**

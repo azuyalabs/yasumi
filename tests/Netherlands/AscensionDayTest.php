@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-use Carbon\Carbon;
 use Yasumi\Tests\Netherlands\NetherlandsBaseTestCase;
 
 /**
@@ -25,6 +24,7 @@ class AscensionDayTest extends NetherlandsBaseTestCase
     public function testAscensionDay()
     {
         $year = 1754;
-        $this->assertHoliday(self::COUNTRY, 'ascensionDay', $year, Carbon::createFromDate($year, 5, 23));
+        $this->assertHoliday(self::COUNTRY, 'ascensionDay', $year,
+            new DateTime("$year-5-23", new DateTimeZone(self::TIMEZONE)));
     }
 }

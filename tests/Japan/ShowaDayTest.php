@@ -9,7 +9,8 @@
  */
 namespace Yasumi\Tests\Japan;
 
-use Carbon\Carbon;
+use DateTime;
+use DateTimeZone;
 
 /**
  * Class ShowaDayTest.
@@ -27,9 +28,11 @@ class ShowaDayTest extends JapanBaseTestCase
     public function testShowaDayOnAfter2007()
     {
         $year = 2110;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, Carbon::createFromDate($year, 4, 29));
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+            new DateTime("$year-4-29", new DateTimeZone(self::TIMEZONE)));
         $year = 2210;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, Carbon::createFromDate($year, 4, 30));
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+            new DateTime("$year-4-30", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**

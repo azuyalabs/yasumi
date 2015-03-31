@@ -9,7 +9,8 @@
  */
 namespace Yasumi\Tests\Netherlands;
 
-use Carbon\Carbon;
+use DateTime;
+use DateTimeZone;
 
 /**
  * Class KingsDayTest.
@@ -27,11 +28,13 @@ class KingsDayTest extends NetherlandsBaseTestCase
     public function testKingsDayOnAfter2014()
     {
         $year = 2015;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, Carbon::createFromDate($year, 4, 27));
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+            new DateTime("$year-4-27", new DateTimeZone(self::TIMEZONE)));
 
         // Substituted day
-        $year = 2183;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, Carbon::createFromDate($year, 4, 26));
+        $year = 2188;
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+            new DateTime("$year-4-26", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**

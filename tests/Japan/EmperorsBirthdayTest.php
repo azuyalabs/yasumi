@@ -9,7 +9,8 @@
  */
 namespace Yasumi\Tests\Japan;
 
-use Carbon\Carbon;
+use DateTime;
+use DateTimeZone;
 
 /**
  * Class EmperorsBirthdayTest.
@@ -28,10 +29,11 @@ class EmperorsBirthdayTest extends JapanBaseTestCase
     public function testEmperorsBirthdayOnAfter1989()
     {
         $year = 3012;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, Carbon::createFromDate($year, 12, 23));
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+            new DateTime("$year-12-23", new DateTimeZone(self::TIMEZONE)));
         $year = 2001;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
-            Carbon::createFromDate($year, 12, 24)); // Substituted day
+            new DateTime("$year-12-24", new DateTimeZone(self::TIMEZONE))); // Substituted day
     }
 
     /**

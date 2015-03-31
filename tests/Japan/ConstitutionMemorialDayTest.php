@@ -9,7 +9,8 @@
  */
 namespace Yasumi\Tests\Japan;
 
-use Carbon\Carbon;
+use DateTime;
+use DateTimeZone;
 
 /**
  * Class ConstitutionMemorialDayTest.
@@ -27,10 +28,11 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase
     public function testConstitutionMemorialDayOnAfter1948()
     {
         $year = 1967;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, Carbon::createFromDate($year, 5, 3));
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+            new DateTime("$year-5-3", new DateTimeZone(self::TIMEZONE)));
         $year = 2009;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
-            Carbon::createFromDate($year, 5, 6)); // Substituted day
+            new DateTime("$year-5-6", new DateTimeZone(self::TIMEZONE))); // Substituted day
     }
 
     /**

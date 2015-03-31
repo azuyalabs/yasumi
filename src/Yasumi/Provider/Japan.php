@@ -9,7 +9,9 @@
  */
 namespace Yasumi\Provider;
 
-use Carbon\Carbon;
+use DateInterval;
+use DateTime;
+use DateTimeZone;
 use Yasumi\Holiday;
 
 /**
@@ -69,8 +71,10 @@ class Japan extends AbstractProvider
          */
         if ($this->year >= 1948) {
             $holiday = new Holiday('newYearsDay', ['en_US' => 'New Year\'s Day', 'ja_JP' => '元日'],
-                Carbon::create($this->year, 1, 1, 0, 0, 0, $this->timezone), $this->locale);
+                new DateTime("$this->year-1-1", new DateTimeZone($this->timezone)), $this->locale);
             $this->addHoliday($holiday);
+
+
         }
 
         /**
@@ -78,7 +82,7 @@ class Japan extends AbstractProvider
          */
         if ($this->year >= 1966) {
             $holiday = new Holiday('nationalFoundationDay', ['en_US' => 'National Foundation Day', 'ja_JP' => '建国記念の日'],
-                Carbon::create($this->year, 2, 11, 0, 0, 0, $this->timezone), $this->locale);
+                new DateTime("$this->year-2-11", new DateTimeZone($this->timezone)), $this->locale);
             $this->addHoliday($holiday);
         }
 
@@ -87,7 +91,7 @@ class Japan extends AbstractProvider
          */
         if ($this->year >= 2007) {
             $this->addHoliday(new Holiday('showaDay', ['en_US' => 'Showa Day', 'ja_JP' => '昭和の日'],
-                Carbon::create($this->year, 4, 29, 0, 0, 0, $this->timezone), $this->locale));
+                new DateTime("$this->year-4-29", new DateTimeZone($this->timezone)), $this->locale));
         }
 
         /**
@@ -96,7 +100,7 @@ class Japan extends AbstractProvider
         if ($this->year >= 1948) {
             $this->addHoliday(new Holiday('constitutionMemorialDay',
                 ['en_US' => 'Constitution Memorial Day', 'ja_JP' => '憲法記念日'],
-                Carbon::create($this->year, 5, 3, 0, 0, 0, $this->timezone), $this->locale));
+                new DateTime("$this->year-5-3", new DateTimeZone($this->timezone)), $this->locale));
         }
 
         /**
@@ -104,7 +108,7 @@ class Japan extends AbstractProvider
          */
         if ($this->year >= 1948) {
             $this->addHoliday(new Holiday('childrensDay', ['en_US' => 'Children\'s Day', 'ja_JP' => '子供の日'],
-                Carbon::create($this->year, 5, 5, 0, 0, 0, $this->timezone), $this->locale));
+                new DateTime("$this->year-5-5", new DateTimeZone($this->timezone)), $this->locale));
         }
 
         /**
@@ -112,7 +116,7 @@ class Japan extends AbstractProvider
          */
         if ($this->year >= 2016) {
             $this->addHoliday(new Holiday('mountainDay', ['en_US' => 'Mountain Day', 'ja_JP' => '山の日'],
-                Carbon::create($this->year, 8, 11, 0, 0, 0, $this->timezone), $this->locale));
+                new DateTime("$this->year-8-11", new DateTimeZone($this->timezone)), $this->locale));
         }
 
         /**
@@ -120,7 +124,7 @@ class Japan extends AbstractProvider
          */
         if ($this->year >= 1948) {
             $this->addHoliday(new Holiday('cultureDay', ['en_US' => 'Culture Day', 'ja_JP' => '文化の日'],
-                Carbon::create($this->year, 11, 3, 0, 0, 0, $this->timezone), $this->locale));
+                new DateTime("$this->year-11-3", new DateTimeZone($this->timezone)), $this->locale));
         }
 
         /**
@@ -129,7 +133,7 @@ class Japan extends AbstractProvider
         if ($this->year >= 1948) {
             $this->addHoliday(new Holiday('laborThanksgivingDay',
                 ['en_US' => 'Labor Thanksgiving Day', 'ja_JP' => '勤労感謝の日'],
-                Carbon::create($this->year, 11, 23, 0, 0, 0, $this->timezone), $this->locale));
+                new DateTime("$this->year-11-23", new DateTimeZone($this->timezone)), $this->locale));
         }
 
         /**
@@ -138,7 +142,7 @@ class Japan extends AbstractProvider
          */
         if ($this->year >= 1989) {
             $this->addHoliday(new Holiday('emperorsBirthday', ['en_US' => 'Emperors Birthday', 'ja_JP' => '天皇誕生日'],
-                Carbon::create($this->year, 12, 23, 0, 0, 0, $this->timezone), $this->locale));
+                new DateTime("$this->year-12-23", new DateTimeZone($this->timezone)), $this->locale));
         }
 
         $this->calculateVernalEquinoxDay();
@@ -177,7 +181,7 @@ class Japan extends AbstractProvider
 
         if ( ! is_null($day)) {
             $this->addHoliday(new Holiday('vernalEquinoxDay', ['en_US' => 'Vernal Equinox Day', 'ja_JP' => '春分の日'],
-                Carbon::create($this->year, 3, $day, 0, 0, 0, $this->timezone), $this->locale));
+                new DateTime("$this->year-3-$day", new DateTimeZone($this->timezone)), $this->locale));
         }
     }
 
@@ -191,9 +195,9 @@ class Japan extends AbstractProvider
     {
         $date = null;
         if ($this->year >= 2000) {
-            $date = new Carbon('second monday of january ' . $this->year);
+            $date = new DateTime("second monday of january $this->year", new DateTimeZone($this->timezone));
         } elseif ($this->year >= 1948) {
-            $date = Carbon::create($this->year, 1, 15, 0, 0, 0, $this->timezone);
+            $date = new DateTime("$this->year-1-15", new DateTimeZone($this->timezone));
         }
         if ( ! is_null($date)) {
             $this->addHoliday(new Holiday('comingOfAgeDay', ['en_US' => 'Coming of Age Day', 'ja_JP' => '成人の日'], $date,
@@ -210,9 +214,9 @@ class Japan extends AbstractProvider
     {
         $date = null;
         if ($this->year >= 2007) {
-            $date = Carbon::create($this->year, 5, 4, 0, 0, 0, $this->timezone);
+            $date = new DateTime("$this->year-5-4", new DateTimeZone($this->timezone));
         } elseif ($this->year >= 1989) {
-            $date = Carbon::create($this->year, 4, 29, 0, 0, 0, $this->timezone);
+            $date = new DateTime("$this->year-4-29", new DateTimeZone($this->timezone));
         }
         if ( ! is_null($date)) {
             $this->addHoliday(new Holiday('greeneryDay', ['en_US' => 'Greenery Day', 'ja_JP' => '緑の日'], $date,
@@ -229,9 +233,9 @@ class Japan extends AbstractProvider
     {
         $date = null;
         if ($this->year >= 2003) {
-            $date = new Carbon('third monday of july ' . $this->year);
+            $date = new DateTime("third monday of july $this->year", new DateTimeZone($this->timezone));
         } elseif ($this->year >= 1996) {
-            $date = Carbon::create($this->year, 7, 20, 0, 0, 0, $this->timezone);
+            $date = new DateTime("$this->year-7-20", new DateTimeZone($this->timezone));
         }
         if ( ! is_null($date)) {
             $this->addHoliday(new Holiday('marineDay', ['en_US' => 'Marine Day', 'ja_JP' => '海の日'], $date,
@@ -249,9 +253,9 @@ class Japan extends AbstractProvider
     {
         $date = null;
         if ($this->year >= 2003) {
-            $date = new Carbon('third monday of september ' . $this->year);
+            $date = new DateTime("third monday of september $this->year", new DateTimeZone($this->timezone));
         } elseif ($this->year >= 1996) {
-            $date = Carbon::create($this->year, 9, 15, 0, 0, 0, $this->timezone);
+            $date = new DateTime("$this->year-9-15", new DateTimeZone($this->timezone));
         }
         if ( ! is_null($date)) {
             $this->addHoliday(new Holiday('respectfortheAgedDay',
@@ -269,9 +273,9 @@ class Japan extends AbstractProvider
     {
         $date = null;
         if ($this->year >= 2000) {
-            $date = new Carbon('second monday of october ' . $this->year);
+            $date = new DateTime("second monday of october $this->year", new DateTimeZone($this->timezone));
         } elseif ($this->year >= 1996) {
-            $date = Carbon::create($this->year, 10, 10, 0, 0, 0, $this->timezone);
+            $date = new DateTime("$this->year-10-10", new DateTimeZone($this->timezone));
         }
         if ( ! is_null($date)) {
             $this->addHoliday(new Holiday('healthandSportsDay', ['en_US' => 'Health And Sports Day', 'ja_JP' => '体育の日'],
@@ -305,7 +309,7 @@ class Japan extends AbstractProvider
 
         if ( ! is_null($day)) {
             $this->addHoliday(new Holiday('autumnalEquinoxDay', ['en_US' => 'Autumnal Equinox Day', 'ja_JP' => '秋分の日'],
-                Carbon::create($this->year, 9, $day, 0, 0, 0, $this->timezone), $this->locale));
+                new DateTime("$this->year-9-$day", new DateTimeZone($this->timezone)), $this->locale));
         }
     }
 
@@ -328,15 +332,15 @@ class Japan extends AbstractProvider
             }
 
             // If holidays falls on a Sunday
-            if ($date->dayOfWeek === 0) {
+            if ($date->format('w') == 0) {
                 if ($this->year >= 2007) {
                     // Find next week day (not being another holiday)
                     while (in_array($date, $dates)) {
-                        $date = $date->addDay();
+                        $date->add(new DateInterval('P1D'));
                         continue;
                     }
                 } elseif ($date >= '1973-04-12') {
-                    $date = $date->addDay();
+                    $date->add(new DateInterval('P1D'));
                     if (in_array($date, $dates)) {
                         continue;
                     }

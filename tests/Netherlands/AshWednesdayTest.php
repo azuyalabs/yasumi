@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-use Carbon\Carbon;
 use Yasumi\Tests\Netherlands\NetherlandsBaseTestCase;
 
 /**
@@ -25,6 +24,7 @@ class AshWednesdayTest extends NetherlandsBaseTestCase
     public function testAshWednesday()
     {
         $year = 1999;
-        $this->assertHoliday(self::COUNTRY, 'ashWednesday', $year, Carbon::createFromDate($year, 2, 17));
+        $this->assertHoliday(self::COUNTRY, 'ashWednesday', $year,
+            new DateTime("$year-2-17", new DateTimeZone(self::TIMEZONE)));
     }
 }

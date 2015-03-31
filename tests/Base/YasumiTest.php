@@ -149,8 +149,7 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      */
     public function testGetHolidayNames()
     {
-        $holidays = Yasumi::create('Japan', 2015);
-
+        $holidays     = Yasumi::create('Japan', 2015);
         $holidayNames = $holidays->getHolidayNames();
 
         $this->assertInternalType('array', $holidayNames);
@@ -168,7 +167,7 @@ class YasumiTest extends PHPUnit_Framework_TestCase
         $when = $holidays->whenIs('autumnalEquinoxDay');
 
         $this->assertInternalType('string', $when);
-        $this->assertEquals('2010-09-23 00:00:00', $when);
+        $this->assertEquals('2010-09-23', $when);
     }
 
     /**

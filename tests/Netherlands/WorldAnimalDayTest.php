@@ -19,8 +19,8 @@ class WorldAnimalDayTest extends NetherlandsBaseTestCase
      *
      * @dataProvider WorldAnimalDayDataProvider
      *
-     * @param int           $year     the year for which World Animal Day needs to be tested
-     * @param Carbon\Carbon $expected the expected date
+     * @param int      $year     the year for which World Animal Day needs to be tested
+     * @param DateTime $expected the expected date
      */
     public function testWorldAnimalDay($year, $expected)
     {

@@ -9,7 +9,8 @@
  */
 namespace Yasumi\Tests\Japan;
 
-use Carbon\Carbon;
+use DateTime;
+use DateTimeZone;
 
 /**
  * Class LabourThanksgivingDayTest.
@@ -27,10 +28,11 @@ class LabourThanksgivingDayTest extends JapanBaseTestCase
     public function testLabourThanksgivingDayOnAfter1948()
     {
         $year = 4884;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, Carbon::createFromDate($year, 11, 23));
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+            new DateTime("$year-11-23", new DateTimeZone(self::TIMEZONE)));
         $year = 1986;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
-            Carbon::createFromDate($year, 11, 24)); // Substituted day
+            new DateTime("$year-11-24", new DateTimeZone(self::TIMEZONE))); // Substituted day
     }
 
     /**

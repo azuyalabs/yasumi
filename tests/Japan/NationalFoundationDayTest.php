@@ -9,7 +9,8 @@
  */
 namespace Yasumi\Tests\Japan;
 
-use Carbon\Carbon;
+use DateTime;
+use DateTimeZone;
 
 /**
  * Class NationalFoundationDayTest.
@@ -27,10 +28,11 @@ class NationalFoundationDayTest extends JapanBaseTestCase
     public function testNationalFoundationDayOnAfter1966()
     {
         $year = 1972;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, Carbon::createFromDate($year, 2, 11));
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+            new DateTime("$year-2-11", new DateTimeZone(self::TIMEZONE)));
         $year = 2046;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
-            Carbon::createFromDate($year, 2, 12)); // Substituted day
+            new DateTime("$year-2-12", new DateTimeZone(self::TIMEZONE))); // Substituted day
     }
 
     /**

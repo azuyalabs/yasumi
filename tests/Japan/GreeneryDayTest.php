@@ -9,7 +9,8 @@
  */
 namespace Yasumi\Tests\Japan;
 
-use Carbon\Carbon;
+use DateTime;
+use DateTimeZone;
 
 /**
  * Class GreeneryDayTest.
@@ -28,10 +29,11 @@ class GreeneryDayTest extends JapanBaseTestCase
     public function testGreeneryDayOnAfter2007()
     {
         $year = 2112;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, Carbon::createFromDate($year, 5, 4));
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+            new DateTime("$year-5-4", new DateTimeZone(self::TIMEZONE)));
         $year = 2014;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
-            Carbon::createFromDate($year, 5, 6)); // Substituted day
+            new DateTime("$year-5-6", new DateTimeZone(self::TIMEZONE))); // Substituted day
     }
 
     /**
@@ -41,10 +43,11 @@ class GreeneryDayTest extends JapanBaseTestCase
     public function testGreeneryDayBetween1989And2007()
     {
         $year = 1997;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, Carbon::createFromDate($year, 4, 29));
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+            new DateTime("$year-4-29", new DateTimeZone(self::TIMEZONE)));
         $year = 2001;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
-            Carbon::createFromDate($year, 4, 30)); // Substituted day
+            new DateTime("$year-4-30", new DateTimeZone(self::TIMEZONE))); // Substituted day
     }
 
     /**

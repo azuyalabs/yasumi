@@ -9,7 +9,8 @@
  */
 namespace Yasumi\Tests\Japan;
 
-use Carbon\Carbon;
+use DateTime;
+use DateTimeZone;
 
 /**
  * Class HealthAndSportsDayTest.
@@ -28,7 +29,8 @@ class HealthAndSportsDayTest extends JapanBaseTestCase
     public function testHealthAndSportsDayOnAfter2000()
     {
         $year = $this->generateRandomYear(2001);
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, new Carbon('second monday of october ' . $year));
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+            new DateTime("second monday of october $year", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**
@@ -38,10 +40,11 @@ class HealthAndSportsDayTest extends JapanBaseTestCase
     public function testHealthAndSportsDayBetween1996And2000()
     {
         $year = 1997;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, Carbon::createFromDate($year, 10, 10));
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+            new DateTime("$year-10-10", new DateTimeZone(self::TIMEZONE)));
         $year = 1999;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
-            Carbon::createFromDate($year, 10, 11)); // Substituted day
+            new DateTime("$year-10-11", new DateTimeZone(self::TIMEZONE))); // Substituted day
     }
 
     /**

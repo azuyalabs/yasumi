@@ -19,8 +19,8 @@ class ChristmasTest extends NetherlandsBaseTestCase
      *
      * @dataProvider ChristmasDayDataProvider
      *
-     * @param int           $year     the year for which Christmas Day needs to be tested
-     * @param Carbon\Carbon $expected the expected date
+     * @param int      $year     the year for which Christmas Day needs to be tested
+     * @param DateTime $expected the expected date
      */
     public function testChristmasDay($year, $expected)
     {
@@ -43,8 +43,8 @@ class ChristmasTest extends NetherlandsBaseTestCase
      *
      * @dataProvider SecondChristmasDayDataProvider
      *
-     * @param int           $year     the year for which Second Christmas Day needs to be tested
-     * @param Carbon\Carbon $expected the expected date
+     * @param int      $year     the year for which Second Christmas Day needs to be tested
+     * @param DateTime $expected the expected date
      */
     public function testSecondChristmasDay($year, $expected)
     {

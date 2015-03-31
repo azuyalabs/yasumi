@@ -9,7 +9,8 @@
  */
 namespace Yasumi\Tests\Japan;
 
-use Carbon\Carbon;
+use DateTime;
+use DateTimeZone;
 
 /**
  * Class NewYearsDayTest.
@@ -27,7 +28,8 @@ class NewYearsDayTest extends JapanBaseTestCase
     public function testNewYearsDayOnAfter1948()
     {
         $year = $this->generateRandomYear(1948);
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, Carbon::createFromDate($year, 1, 1));
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+            new DateTime("$year-1-1", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**

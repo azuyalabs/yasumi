@@ -9,7 +9,8 @@
  */
 namespace Yasumi\Tests\Japan;
 
-use Carbon\Carbon;
+use DateTime;
+use DateTimeZone;
 
 /**
  * Class RespectForTheAgedDayTest.
@@ -28,7 +29,8 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase
     public function testRespectForTheAgedDayOnAfter2003()
     {
         $year = $this->generateRandomYear(2004);
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, new Carbon('third monday of september ' . $year));
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+            new DateTime("third monday of september $year", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**
@@ -38,10 +40,11 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase
     public function testRespectForTheAgedDayBetween1996And2003()
     {
         $year = 1998;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, Carbon::createFromDate($year, 9, 15));
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+            new DateTime("$year-9-15", new DateTimeZone(self::TIMEZONE)));
         $year = 2002;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
-            Carbon::createFromDate($year, 9, 16)); // Substituted day
+            new DateTime("$year-9-16", new DateTimeZone(self::TIMEZONE))); // Substituted day
     }
 
     /**

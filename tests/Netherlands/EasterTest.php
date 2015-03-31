@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-use Carbon\Carbon;
 use Yasumi\Tests\Netherlands\NetherlandsBaseTestCase;
 
 /**
@@ -25,7 +24,8 @@ class EasterTest extends NetherlandsBaseTestCase
     public function testEaster()
     {
         $year = 2010;
-        $this->assertHoliday(self::COUNTRY, 'easter', $year, Carbon::createFromDate($year, 4, 4));
+        $this->assertHoliday(self::COUNTRY, 'easter', $year,
+            new DateTime("$year-4-4", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**
@@ -34,6 +34,7 @@ class EasterTest extends NetherlandsBaseTestCase
     public function testEasterMonday()
     {
         $year = 2010;
-        $this->assertHoliday(self::COUNTRY, 'easterMonday', $year, Carbon::createFromDate($year, 4, 5));
+        $this->assertHoliday(self::COUNTRY, 'easterMonday', $year,
+            new DateTime("$year-4-5", new DateTimeZone(self::TIMEZONE)));
     }
 }

@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-use Carbon\Carbon;
 use Yasumi\Tests\Netherlands\NetherlandsBaseTestCase;
 
 /**
@@ -25,6 +24,7 @@ class PrincesDayTest extends NetherlandsBaseTestCase
     public function testPrincesDay()
     {
         $year = $this->generateRandomYear();
-        $this->assertHoliday(self::COUNTRY, 'princesDay', $year, new Carbon('third tuesday of september ' . $year));
+        $this->assertHoliday(self::COUNTRY, 'princesDay', $year,
+            new DateTime("third tuesday of september $year", new DateTimeZone(self::TIMEZONE)));
     }
 }

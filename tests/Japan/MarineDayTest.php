@@ -9,7 +9,8 @@
  */
 namespace Yasumi\Tests\Japan;
 
-use Carbon\Carbon;
+use DateTime;
+use DateTimeZone;
 
 /**
  * Class MarineDayTest.
@@ -28,7 +29,8 @@ class MarineDayTest extends JapanBaseTestCase
     public function testMarineDayOnAfter2003()
     {
         $year = $this->generateRandomYear(2004);
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, new Carbon('third monday of july ' . $year));
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+            new DateTime("third monday of july $year", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**
@@ -38,10 +40,11 @@ class MarineDayTest extends JapanBaseTestCase
     public function testMarineDayBetween1996And2003()
     {
         $year = 2001;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, Carbon::createFromDate($year, 7, 20));
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+            new DateTime("$year-7-20", new DateTimeZone(self::TIMEZONE)));
         $year = 1997;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
-            Carbon::createFromDate($year, 7, 21)); // Substituted day
+            new DateTime("$year-7-21", new DateTimeZone(self::TIMEZONE))); // Substituted day
     }
 
     /**

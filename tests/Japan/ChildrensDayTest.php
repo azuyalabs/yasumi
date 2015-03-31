@@ -9,7 +9,8 @@
  */
 namespace Yasumi\Tests\Japan;
 
-use Carbon\Carbon;
+use DateTime;
+use DateTimeZone;
 
 /**
  * Class ChildrensDayTest.
@@ -27,10 +28,11 @@ class ChildrensDayTest extends JapanBaseTestCase
     public function testChildrensDayOnAfter1948()
     {
         $year = 1955;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, Carbon::createFromDate($year, 5, 5));
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+            new DateTime("$year-5-5", new DateTimeZone(self::TIMEZONE)));
         $year = 2120;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
-            Carbon::createFromDate($year, 5, 6)); // Substituted day
+            new DateTime("$year-5-6", new DateTimeZone(self::TIMEZONE))); // Substituted day
     }
 
     /**

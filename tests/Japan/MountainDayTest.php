@@ -9,7 +9,8 @@
  */
 namespace Yasumi\Tests\Japan;
 
-use Carbon\Carbon;
+use DateTime;
+use DateTimeZone;
 
 /**
  * Class MountainDayTest.
@@ -27,10 +28,11 @@ class MountainDayTest extends JapanBaseTestCase
     public function testMountainDayOnAfter2016()
     {
         $year = 2016;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, Carbon::createFromDate($year, 8, 11));
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+            new DateTime("$year-8-11", new DateTimeZone(self::TIMEZONE)));
         $year = 2019;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
-            Carbon::createFromDate($year, 8, 12)); // Substituted day
+            new DateTime("$year-8-12", new DateTimeZone(self::TIMEZONE))); // Substituted day
     }
 
     /**

@@ -9,7 +9,8 @@
  */
 namespace Yasumi\Tests\Japan;
 
-use Carbon\Carbon;
+use DateTime;
+use DateTimeZone;
 
 /**
  * Class AutumnalEquinoxDayTest.
@@ -48,7 +49,8 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase
      */
     public function testAutumnalEquinoxDayBetween1948And2150($year, $month, $day)
     {
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, Carbon::createFromDate($year, $month, $day));
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+            new DateTime("$year-$month-$day", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**

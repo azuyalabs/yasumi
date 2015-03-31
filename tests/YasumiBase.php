@@ -9,7 +9,7 @@
  */
 namespace Yasumi\Tests;
 
-use Carbon\Carbon;
+use DateTime;
 use Faker\Factory as Faker;
 use Yasumi\Yasumi;
 
@@ -24,10 +24,10 @@ trait YasumiBase
     /**
      * Asserts that the expected date is indeed a holiday for that given year and name
      *
-     * @param string $provider  the holiday provider (i.e. country/state) for which the holiday need to be tested
-     * @param string $shortName string the short name of the holiday to be checked against
-     * @param int    $year      holiday calendar year
-     * @param Carbon $expected  the date to be checked against
+     * @param string   $provider  the holiday provider (i.e. country/state) for which the holiday need to be tested
+     * @param string   $shortName string the short name of the holiday to be checked against
+     * @param int      $year      holiday calendar year
+     * @param DateTime $expected  the date to be checked against
      */
     public function assertHoliday($provider, $shortName, $year, $expected)
     {
@@ -37,7 +37,7 @@ trait YasumiBase
         $this->assertInstanceOf('Yasumi\Provider\\' . $provider, $holidays);
         $this->assertInstanceOf('Yasumi\Holiday', $holiday);
         $this->assertTrue(isset($holiday));
-        $this->assertEquals($expected->toDateString(), $holiday->toDateString());
+        $this->assertEquals($expected, $holiday);
         $this->assertTrue($holidays->isHoliday($holiday));
 
         unset($holiday, $holidays);
@@ -77,7 +77,7 @@ trait YasumiBase
         $data = [];
         for ($y = 1; $y <= $iterations; $y ++) {
             $year   = Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
-            $data[] = [$year, Carbon::createFromDate($year, $month, $day)];
+            $data[] = [$year, new DateTime("$year-$month-$day", new \DateTimeZone('Europe/Amsterdam'))];
         }
 
         return $data;

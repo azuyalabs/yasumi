@@ -19,8 +19,8 @@ class NewYearsDayTest extends NetherlandsBaseTestCase
      *
      * @dataProvider NewYearsDayDataProvider
      *
-     * @param int           $year     the year for which New Years Day needs to be tested
-     * @param Carbon\Carbon $expected the expected date
+     * @param int      $year     the year for which New Years Day needs to be tested
+     * @param DateTime $expected the expected date
      */
     public function testNewYearsDay($year, $expected)
     {

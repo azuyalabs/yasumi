@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-use Carbon\Carbon;
 use Yasumi\Tests\Netherlands\NetherlandsBaseTestCase;
 
 /**
@@ -24,6 +23,7 @@ class SummerTimeTest extends NetherlandsBaseTestCase
     public function testSummertime()
     {
         $year = $this->generateRandomYear();
-        $this->assertHoliday(self::COUNTRY, 'summerTime', $year, new Carbon('last sunday of march ' . $year));
+        $this->assertHoliday(self::COUNTRY, 'summerTime', $year,
+            new DateTime("last sunday of march $year", new DateTimeZone(self::TIMEZONE)));
     }
 }

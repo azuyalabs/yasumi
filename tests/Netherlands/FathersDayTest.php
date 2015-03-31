@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-use Carbon\Carbon;
 use Yasumi\Tests\Netherlands\NetherlandsBaseTestCase;
 
 /**
@@ -26,6 +25,9 @@ class FathersDayTest extends NetherlandsBaseTestCase
     public function testFathersDay()
     {
         $year = $this->generateRandomYear();
-        $this->assertHoliday(self::COUNTRY, 'fathersDay', $year, new Carbon('third sunday of june ' . $year));
+        $this->assertHoliday(self::COUNTRY, 'fathersDay', $year,
+            new DateTime("third sunday of june $year", new DateTimeZone(self::TIMEZONE)));
     }
+
+
 }

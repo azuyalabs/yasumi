@@ -23,4 +23,9 @@ abstract class JapanBaseTestCase extends PHPUnit_Framework_TestCase
      * Country (name) to be tested
      */
     const COUNTRY = 'Japan';
+
+    /**
+     * Timezone in which this provider has holidays defined
+     */
+    const TIMEZONE = 'Asia/Tokyo';
 }

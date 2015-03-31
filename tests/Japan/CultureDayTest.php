@@ -9,7 +9,8 @@
  */
 namespace Yasumi\Tests\Japan;
 
-use Carbon\Carbon;
+use DateTime;
+use DateTimeZone;
 
 /**
  * Class CultureDayTest.
@@ -27,10 +28,11 @@ class CultureDayTest extends JapanBaseTestCase
     public function testCultureDayOnAfter1948()
     {
         $year = 1973;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, Carbon::createFromDate($year, 11, 3));
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+            new DateTime("$year-11-3", new DateTimeZone(self::TIMEZONE)));
         $year = 2661;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
-            Carbon::createFromDate($year, 11, 4)); // Substituted day
+            new DateTime("$year-11-4", new DateTimeZone(self::TIMEZONE))); // Substituted day
     }
 
     /**

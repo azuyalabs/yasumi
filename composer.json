@@ -19,8 +19,7 @@
   ],
   "require": {
     "php": ">=5.5.0",
-    "ext-intl": "*",
-    "nesbot/carbon": "~1.14"
+    "ext-intl": "*"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4"

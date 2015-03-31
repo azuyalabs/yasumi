@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-use Carbon\Carbon;
 use Yasumi\Tests\Netherlands\NetherlandsBaseTestCase;
 
 /**
@@ -25,6 +24,7 @@ class MothersDayTest extends NetherlandsBaseTestCase
     public function testMothersDay()
     {
         $year = $this->generateRandomYear();
-        $this->assertHoliday(self::COUNTRY, 'mothersDay', $year, new Carbon('second sunday of may ' . $year));
+        $this->assertHoliday(self::COUNTRY, 'mothersDay', $year,
+            new DateTime("second sunday of may $year", new DateTimeZone(self::TIMEZONE)));
     }
 }
