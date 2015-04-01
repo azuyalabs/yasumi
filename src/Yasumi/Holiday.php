@@ -49,31 +49,26 @@ class Holiday extends DateTime implements JsonSerializable
      * The default locale. Used for translations of holiday names and other text strings.
      */
     const DEFAULT_LOCALE = 'en_US';
-
-    /**
-     * @var string short name (internal name) of this holiday
-     */
-    public $shortName;
-
-    /**
-     * @var array list of translations of this holiday
-     */
-    public $translations;
-
-    /**
-     * @var string identifies the type of holiday
-     */
-    private $type;
-
-    /**
-     * @var string Locale (i.e. language) in which the holiday information needs to be displayed in. (Default 'en-US')
-     */
-    private $displayLocale;
-
     /**
      * @var array list of all defined locales
      */
     private static $locales;
+    /**
+     * @var string short name (internal name) of this holiday
+     */
+    public $shortName;
+    /**
+     * @var array list of translations of this holiday
+     */
+    public $translations;
+    /**
+     * @var string identifies the type of holiday
+     */
+    private $type;
+    /**
+     * @var string Locale (i.e. language) in which the holiday information needs to be displayed in. (Default 'en-US')
+     */
+    private $displayLocale;
 
     /**
      * Creates a new Holiday.
@@ -112,7 +107,7 @@ class Holiday extends DateTime implements JsonSerializable
 
         // Load internal locales variable
         if ( ! isset(static::$locales)) {
-            static::$locales = IntlCalendar::getAvailableLocales();
+            static::$locales = self::getAvailableLocales();
         }
 
         // Assert display locale input
@@ -128,6 +123,23 @@ class Holiday extends DateTime implements JsonSerializable
 
         // Construct instance
         parent::__construct($date->format('Y-m-d'), $date->getTimezone());
+    }
+
+    /**
+     * Returns a list of available locales.
+     *
+     * This function relies on the 'intl' extension to be loaded. In case this extension is not available/loaded, a
+     * static list of locales will be used.
+     *
+     * @return array list of available locales
+     */
+    public static function getAvailableLocales()
+    {
+        if (extension_loaded('intl')) {
+            return IntlCalendar::getAvailableLocales();
+        }
+
+        return require_once __DIR__ . '/data/locales.php';
     }
 
     /**
@@ -167,7 +179,6 @@ class Holiday extends DateTime implements JsonSerializable
 
         return (string) $this->shortName;
     }
-
 
     /**
      * Format the instance as a string using the set format

@@ -35,6 +35,7 @@
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">./src/Yasumi</directory>
             <exclude>
+                <directory suffix=".php">./src/Yasumi/data</directory>
             </exclude>
         </whitelist>
     </filter>
