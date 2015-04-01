@@ -10,7 +10,6 @@
 namespace Yasumi;
 
 use DateTime;
-use IntlCalendar;
 use InvalidArgumentException;
 use JsonSerializable;
 use Yasumi\Exception\UnknownLocaleException;
@@ -107,7 +106,7 @@ class Holiday extends DateTime implements JsonSerializable
 
         // Load internal locales variable
         if ( ! isset(static::$locales)) {
-            static::$locales = self::getAvailableLocales();
+            static::$locales = Yasumi::getAvailableLocales();
         }
 
         // Assert display locale input
@@ -123,23 +122,6 @@ class Holiday extends DateTime implements JsonSerializable
 
         // Construct instance
         parent::__construct($date->format('Y-m-d'), $date->getTimezone());
-    }
-
-    /**
-     * Returns a list of available locales.
-     *
-     * This function relies on the 'intl' extension to be loaded. In case this extension is not available/loaded, a
-     * static list of locales will be used.
-     *
-     * @return array list of available locales
-     */
-    public static function getAvailableLocales()
-    {
-        if (class_exists('IntlCalendar')) {
-            return IntlCalendar::getAvailableLocales();
-        }
-
-        return require_once __DIR__ . '/data/locales.php';
     }
 
     /**

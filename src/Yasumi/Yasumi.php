@@ -61,7 +61,7 @@ class Yasumi
 
         // Load internal locales variable
         if ( ! isset(static::$locales)) {
-            static::$locales = IntlCalendar::getAvailableLocales();
+            static::$locales = self::getAvailableLocales();
         }
 
         // Assert locale input
@@ -70,5 +70,22 @@ class Yasumi
         }
 
         return new $providerClass($year, $locale);
+    }
+
+    /**
+     * Returns a list of available locales.
+     *
+     * This function relies on the 'intl' extension to be loaded. In case this extension is not available/loaded, a
+     * static list of locales will be used.
+     *
+     * @return array list of available locales
+     */
+    public static function getAvailableLocales()
+    {
+        if (class_exists('IntlCalendar')) {
+            return IntlCalendar::getAvailableLocales();
+        }
+
+        return require_once __DIR__ . '/data/locales.php';
     }
 }
