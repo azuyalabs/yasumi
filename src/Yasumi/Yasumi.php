@@ -86,6 +86,6 @@ class Yasumi
             return IntlCalendar::getAvailableLocales();
         }
 
-        return require_once __DIR__ . '/data/locales.php';
+        return require __DIR__ . '/data/locales.php';
     }
 }
