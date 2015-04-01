@@ -135,7 +135,7 @@ class Holiday extends DateTime implements JsonSerializable
      */
     public static function getAvailableLocales()
     {
-        if (extension_loaded('intl')) {
+        if (class_exists('IntlCalendar')) {
             return IntlCalendar::getAvailableLocales();
         }
 
