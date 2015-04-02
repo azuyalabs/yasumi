@@ -207,7 +207,7 @@ class Netherlands extends AbstractProvider
         /**
          * Easter Monday.
          */
-        $easterMonday = $easter;
+        $easterMonday = clone $easter;
         $this->addHoliday(new Holiday('easterMonday', ['en-US' => 'Easter Monday', 'nl-NL' => 'Tweede Paasdag'],
             $easterMonday->add(new DateInterval('P1D')), $this->locale));
 
@@ -217,14 +217,14 @@ class Netherlands extends AbstractProvider
          * Pentecost a feast commemorating the descent of the Holy Spirit upon the Apostles and other followers of Jesus Christ.
          * It is celebrated 49 days after Easter and always takes place on Sunday.
          */
-        $pentecost = $easter;
+        $pentecost = clone $easter;
         $this->addHoliday(new Holiday('pentecost', ['en-US' => 'Whitsunday', 'nl-NL' => 'Eerste Pinksterdag'],
             $pentecost->add(new DateInterval('P49D')), $this->locale));
 
         /**
          * Pentecost (Whitmonday).
          */
-        $pentecost = $easter;
+        $pentecost = clone $easter;
         $this->addHoliday(new Holiday('pentecostMonday', ['en-US' => 'Whitmonday', 'nl-NL' => 'Tweede Pinksterdag'],
             $pentecost->add(new DateInterval('P50D')), $this->locale));
 
@@ -235,21 +235,21 @@ class Netherlands extends AbstractProvider
          * suspension of social norms. The feast became assimilated by the Catholic Church and was celebrated in the three days
          * preceding Ash Wednesday and Lent.
          */
-        $carnivalDay1 = $easter;
+        $carnivalDay1 = clone $easter;
         $this->addHoliday(new Holiday('carnivalDay', ['en-US' => 'Carnival', 'nl-NL' => 'Carnaval'],
             $carnivalDay1->sub(new DateInterval('P49D')), $this->locale, Holiday::TYPE_OBSERVANCE));
 
         /**
          * Second Day of Carnival.
          */
-        $carnivalDay2 = $easter;
+        $carnivalDay2 = clone $easter;
         $this->addHoliday(new Holiday('secondCarnivalDay', ['en-US' => 'Carnival', 'nl-NL' => 'Carnaval'],
             $carnivalDay2->sub(new DateInterval('P48D')), $this->locale, Holiday::TYPE_OBSERVANCE));
 
         /**
          * Third Day of Carnival.
          */
-        $carnivalDay3 = $easter;
+        $carnivalDay3 = clone $easter;
         $this->addHoliday(new Holiday('thirdCarnivalDay', ['en-US' => 'Carnival', 'nl-NL' => 'Carnaval'],
             $carnivalDay3->sub(new DateInterval('P47D')), $this->locale, Holiday::TYPE_OBSERVANCE));
 
@@ -260,7 +260,7 @@ class Netherlands extends AbstractProvider
          * days, if the 6 Sundays, which are not days of fast, are excluded) before Easter and can fall as early as 4 February
          * or as late as 10 March.
          */
-        $ashWednesday = $easter;
+        $ashWednesday = clone $easter;
         $this->addHoliday(new Holiday('ashWednesday', ['en-US' => 'Ash Wednesday', 'nl-NL' => 'Aswoensdag'],
             $ashWednesday->sub(new DateInterval('P46D')), $this->locale, Holiday::TYPE_OBSERVANCE));
 
@@ -271,7 +271,7 @@ class Netherlands extends AbstractProvider
          * The holiday is observed during Holy Week as part of the Paschal Triduum on the Friday preceding Easter Sunday, and
          * may coincide with the Jewish observance of Passover.
          */
-        $goodFriday = $easter;
+        $goodFriday = clone $easter;
         $this->addHoliday(new Holiday('goodFriday', ['en-US' => 'Good Friday', 'nl-NL' => 'Goede Vrijdag'],
             $goodFriday->sub(new DateInterval('P2D')), $this->locale, Holiday::TYPE_OBSERVANCE));
 
@@ -282,7 +282,7 @@ class Netherlands extends AbstractProvider
          * churches. Ascension Day is traditionally celebrated on a Thursday, the fortieth day of Easter although some Catholic
          * provinces have moved the observance to the following Sunday.
          */
-        $ascensionDay = $easter;
+        $ascensionDay = clone $easter;
         $this->addHoliday(new Holiday('ascensionDay', ['en-US' => 'Ascension Day', 'nl-NL' => 'Hemelvaart'],
             $ascensionDay->add(new DateInterval('P39D')), $this->locale));
     }
