@@ -18,8 +18,7 @@
     }
   ],
   "require": {
-    "php": ">=5.4.0",
-    "ext-intl": "*"
+    "php": ">=5.4.0"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4"
