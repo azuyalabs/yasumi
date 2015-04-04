@@ -80,7 +80,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     private static function compareDates($dateA, $dateB)
     {
-        if ($dateA === $dateB) {
+        if ($dateA == $dateB) {
             return 0;
         }
 
@@ -294,51 +294,17 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * Easter is a festival and holiday celebrating the resurrection of Jesus Christ from the dead. Easter is celebrated
      * on a date based on a certain number of days after March 21st.
      *
-     * This function uses the standard PHP 'easter_days', however in cases of older PHP versions that don't have this
-     * function, it calculates the date for Easter using the Gaussian algorithm.
+     * This function uses the standard PHP 'easter_days'.
      *
      * @see easter_days
      *
-     * @param int    $year     The year as a positive number. If omitted, defaults to the current year.
-     * @param string $timezone The timezone for which easter needs to be calculated. If omitted, defaults to 'UTC'.
-     *
      * @return int the number of days after March 21 on which Easter falls for the given year
      */
-    protected function calculateEaster($year, $timezone = 'UTC')
+    protected function calculateEaster()
     {
-        // Use current year if not provided
-        $year = $year ?: date('Y');
+        $easter = new DateTime("$this->year-3-21", new DateTimeZone($this->timezone));
+        $easter->add(new DateInterval('P' . easter_days($this->year) . 'D'));
 
-        if (function_exists('easter_days')) {
-            $easter = new DateTime("$year-3-21", new DateTimeZone($timezone));
-            $easter->add(new DateInterval('P' . easter_days($year) . 'D'));
-
-            return $easter;
-        }
-
-        $golden  = null; // Golden number
-        $century = null;
-        $epact   = null; // 23-Epact (modulo 30)
-        $i       = null; // Number of days from 21 March to the Paschal Full Moon
-        $j       = null; // Weekday of the Full Moon (0 = Sunday, ...)
-
-        if ($year > 1582) {
-            $golden  = $year % 19;
-            $century = floor($year / 100);
-            $l       = floor($century / 4);
-            $epact   = ($century - $l - floor((8 * $century + 13) / 25) + 19 * $golden + 15) % 30;
-            $i       = $epact - floor($epact / 28) * (1 - floor($epact / 28) * floor(29 / ($epact + 1)) * floor((21 - $golden) / 11));
-            $j       = ($year + floor($year / 4) + $i + 2 - $century + $l);
-            $j       = $j % 7;
-        } else {
-            $golden = $year % 19;
-            $i      = (19 * $golden + 15) % 30;
-            $j      = ($year + floor($year / 4) + $i) % 7;
-        }
-        $l     = $i - $j;
-        $month = 3 + floor(($l + 40) / 44);
-        $day   = $l + 28 - 31 * floor($month / 4);
-
-        return new DateTime("$year-$month-$day", new DateTimeZone($timezone));
+        return $easter;
     }
 }

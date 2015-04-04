@@ -200,7 +200,7 @@ class Netherlands extends AbstractProvider
          * a date based on a certain number of days after March 21st. The date of Easter Day was defined by the Council of
          * Nicaea in AD325 as the Sunday after the first full moon which falls on or after the Spring Equinox.
          */
-        $easter = $this->calculateEaster($this->year, $this->timezone);
+        $easter = $this->calculateEaster();
         $this->addHoliday(new Holiday('easter', ['en-US' => 'Easter Sunday', 'nl-NL' => 'Eerste Paasdag'], $easter,
             $this->locale));
 
