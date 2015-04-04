@@ -9,7 +9,6 @@
  */
 namespace Yasumi;
 
-use IntlCalendar;
 use InvalidArgumentException;
 use RuntimeException;
 use Yasumi\Exception\UnknownLocaleException;
@@ -75,17 +74,10 @@ class Yasumi
     /**
      * Returns a list of available locales.
      *
-     * This function relies on the 'intl' extension to be loaded. In case this extension is not available/loaded, a
-     * static list of locales will be used.
-     *
      * @return array list of available locales
      */
     public static function getAvailableLocales()
     {
-        if (class_exists('IntlCalendar')) {
-            return IntlCalendar::getAvailableLocales();
-        }
-
         return require __DIR__ . '/data/locales.php';
     }
 }
