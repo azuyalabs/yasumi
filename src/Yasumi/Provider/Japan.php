@@ -328,7 +328,7 @@ class Japan extends AbstractProvider
         // Loop through all holidays
         foreach ($this->getHolidays() as $shortName => $date) {
             // Exclude these holidays from substitution
-            if (in_array($shortName, ['vernalEquinoxDay', 'autumnalEquinoxDay', 'newYearsDay'])) {
+            if (in_array($shortName, ['vernalEquinoxDay', 'autumnalEquinoxDay'])) {
                 continue;
             }
 
