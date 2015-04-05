@@ -68,7 +68,7 @@ class YasumiTest extends PHPUnit_Framework_TestCase
         $holidays = Yasumi::create('Japan', 2015);
 
         $this->assertInternalType('int', $holidays->count());
-        $this->assertEquals(16, $holidays->count());
+        $this->assertEquals(17, $holidays->count());
     }
 
     /**
@@ -153,7 +153,7 @@ class YasumiTest extends PHPUnit_Framework_TestCase
         $holidayNames = $holidays->getHolidayNames();
 
         $this->assertInternalType('array', $holidayNames);
-        $this->assertEquals(16, sizeof($holidayNames));
+        $this->assertEquals(17, sizeof($holidayNames));
         $this->assertContains('newYearsDay', $holidayNames);
     }
 

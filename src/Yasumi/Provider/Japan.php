@@ -153,6 +153,7 @@ class Japan extends AbstractProvider
         $this->calculateHealthAndSportsDay();
         $this->calculateAutumnalEquinoxDay();
         $this->calculateSubstituteHolidays();
+        $this->calculateBridgeHolidays();
     }
 
     /**
@@ -357,6 +358,46 @@ class Japan extends AbstractProvider
 
                     $this->addHoliday($substituteHoliday);
                 }
+            }
+        }
+    }
+
+    /**
+     * Calculate public bridge holidays.
+     *
+     * Any day that falls between two other national holidays also becomes a holiday, known as a bridge holiday.
+     */
+    private function calculateBridgeHolidays()
+    {
+        // Get initial list of holidays and iterator
+        $datesIterator = $this->getIterator();
+        $dates         = $this->getHolidayDates();
+
+        // Loop through all defined holidays
+        while ($datesIterator->valid()) {
+            $previous = $datesIterator->current();
+            $datesIterator->next();
+
+            // Skip if next holiday is not set
+            if (is_null($datesIterator->current())) {
+                continue;
+            }
+
+            // Determine if gap between holidays is a one day and create bridge holiday if that day itself is not a
+            // public holiday again.
+            if ($previous->diff($datesIterator->current())->format('%a') == 2) {
+                $bridgeDate = clone $previous;
+                $bridgeDate->add(new DateInterval('P1D'));
+
+                // Skip if bridge date coincides with existing holidays
+                if (in_array($bridgeDate, $dates)) {
+                    continue;
+                }
+
+                $this->addHoliday(new Holiday('bridgeDay', [
+                    'en_US' => 'Bridge Public holiday',
+                    'ja_JP' => '国民の休日'
+                ], $bridgeDate, $this->locale));
             }
         }
     }
