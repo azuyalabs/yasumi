@@ -65,19 +65,20 @@ trait YasumiBase
     /**
      * Returns a list of random test dates used for assertion of holidays.
      *
-     * @param int $month      month (number) for which the test date needs to be generated
-     * @param int $day        day (number) for which the test date needs to be generated
-     * @param int $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
-     * @param int $range      year range from which dates will be generated (default: 1000)
+     * @param int    $month      month (number) for which the test date needs to be generated
+     * @param int    $day        day (number) for which the test date needs to be generated
+     * @param string $timezone   name of the timezone for which the dates need to be generated
+     * @param int    $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
+     * @param int    $range      year range from which dates will be generated (default: 1000)
      *
      * @return array list of random test dates used for assertion of holidays.
      */
-    public function generateRandomDates($month, $day, $iterations = 10, $range = 1000)
+    public function generateRandomDates($month, $day, $timezone = 'UTC', $iterations = 10, $range = 1000)
     {
         $data = [];
         for ($y = 1; $y <= $iterations; $y ++) {
             $year   = Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
-            $data[] = [$year, new DateTime("$year-$month-$day", new \DateTimeZone('Europe/Amsterdam'))];
+            $data[] = [$year, new DateTime("$year-$month-$day", new \DateTimeZone($timezone))];
         }
 
         return $data;
