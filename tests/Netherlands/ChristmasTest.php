@@ -7,7 +7,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-use Yasumi\Tests\Netherlands\NetherlandsBaseTestCase;
+namespace Yasumi\Tests\Netherlands;
+
+use DateTime;
 
 /**
  * Class ChristmasTest.
@@ -35,7 +37,7 @@ class ChristmasTest extends NetherlandsBaseTestCase
      */
     public function ChristmasDayDataProvider()
     {
-        return $this->generateRandomDates(12, 25);
+        return $this->generateRandomDates(12, 25, self::TIMEZONE);
     }
 
     /**
@@ -59,6 +61,6 @@ class ChristmasTest extends NetherlandsBaseTestCase
      */
     public function SecondChristmasDayDataProvider()
     {
-        return $this->generateRandomDates(12, 26);
+        return $this->generateRandomDates(12, 26, self::TIMEZONE);
     }
 }

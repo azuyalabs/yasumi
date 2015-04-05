@@ -7,7 +7,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-use Yasumi\Tests\Netherlands\NetherlandsBaseTestCase;
+namespace Yasumi\Tests\Netherlands;
+
+use DateTime;
 
 /**
  * Class NewYearsDayTest.
@@ -35,6 +37,6 @@ class NewYearsDayTest extends NetherlandsBaseTestCase
      */
     public function NewYearsDayDataProvider()
     {
-        return $this->generateRandomDates(1, 1);
+        return $this->generateRandomDates(1, 1, self::TIMEZONE);
     }
 }

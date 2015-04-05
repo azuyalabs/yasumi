@@ -7,7 +7,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-use Yasumi\Tests\Netherlands\NetherlandsBaseTestCase;
+namespace Yasumi\Tests\Netherlands;
+
+use DateTime;
 
 /**
  * Class WorldAnimalDayTest.
@@ -35,6 +37,6 @@ class WorldAnimalDayTest extends NetherlandsBaseTestCase
      */
     public function WorldAnimalDayDataProvider()
     {
-        return $this->generateRandomDates(10, 4);
+        return $this->generateRandomDates(10, 4, self::TIMEZONE);
     }
 }

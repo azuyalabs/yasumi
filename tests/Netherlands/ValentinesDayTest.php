@@ -7,7 +7,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-use Yasumi\Tests\Netherlands\NetherlandsBaseTestCase;
+namespace Yasumi\Tests\Netherlands;
+
+use DateTime;
 
 /**
  * Class ValentinesDayTest.
@@ -35,6 +37,6 @@ class ValentinesDayTest extends NetherlandsBaseTestCase
      */
     public function ValentinesDayDataProvider()
     {
-        return $this->generateRandomDates(2, 14);
+        return $this->generateRandomDates(2, 14, self::TIMEZONE);
     }
 }

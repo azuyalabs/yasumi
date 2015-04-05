@@ -7,7 +7,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-use Yasumi\Tests\Netherlands\NetherlandsBaseTestCase;
+namespace Yasumi\Tests\Netherlands;
+
+use DateTime;
 
 /**
  * Class LabourDayTest.
@@ -35,6 +37,6 @@ class LabourDayTest extends NetherlandsBaseTestCase
      */
     public function LabourDayDataProvider()
     {
-        return $this->generateRandomDates(5, 1);
+        return $this->generateRandomDates(5, 1, self::TIMEZONE);
     }
 }

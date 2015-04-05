@@ -7,7 +7,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-use Yasumi\Tests\Netherlands\NetherlandsBaseTestCase;
+namespace Yasumi\Tests\Netherlands;
+
+use DateTime;
 
 /**
  * Class HalloweenTest.
@@ -35,6 +37,6 @@ class HalloweenTest extends NetherlandsBaseTestCase
      */
     public function HalloweenDataProvider()
     {
-        return $this->generateRandomDates(10, 31);
+        return $this->generateRandomDates(10, 31, self::TIMEZONE);
     }
 }
