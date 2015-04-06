@@ -303,7 +303,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     protected function calculateEaster()
     {
         $easter = new DateTime("$this->year-3-21", new DateTimeZone($this->timezone));
-        $easter->add(new DateInterval('P' . easter_days($this->year) . 'D'));
+        $easter->add(new DateInterval('P' . \easter_days($this->year) . 'D'));
 
         return $easter;
     }
