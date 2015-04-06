@@ -49,7 +49,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * @param int    $year   the year for which to provide holidays
      * @param string $locale the locale/language in which holidays need to be represented
      */
-    public function __construct($year, $locale = 'en-US')
+    public function __construct($year, $locale = 'en_US')
     {
         $this->clearHolidays();
 

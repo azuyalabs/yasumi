@@ -29,25 +29,25 @@ class Netherlands extends AbstractProvider
         /*
          * New Year's Day
          */
-        $this->addHoliday(new Holiday('newYearsDay', ['en-US' => 'New Year\'s Day', 'nl-NL' => 'Nieuwjaar'],
+        $this->addHoliday(new Holiday('newYearsDay', ['en_US' => 'New Year\'s Day', 'nl_NL' => 'Nieuwjaar'],
             new DateTime("$this->year-1-1", new DateTimeZone($this->timezone)), $this->locale));
 
         /*
          * Epiphany
          */
-        $this->addHoliday(new Holiday('epiphany', ['en-US' => 'Epiphany', 'nl-NL' => 'Drie Koningen'],
+        $this->addHoliday(new Holiday('epiphany', ['en_US' => 'Epiphany', 'nl_NL' => 'Drie Koningen'],
             new DateTime("$this->year-1-6", new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OTHER));
 
         /*
          * Valentine's Day
          */
-        $this->addHoliday(new Holiday('valentinesDay', ['en-US' => 'Valentine\'s Day', 'nl-NL' => 'Valentijnsdag'],
+        $this->addHoliday(new Holiday('valentinesDay', ['en_US' => 'Valentine\'s Day', 'nl_NL' => 'Valentijnsdag'],
             new DateTime("$this->year-2-14", new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OTHER));
 
         /*
          * Labour Day
          */
-        $this->addHoliday(new Holiday('labourDay', ['en-US' => 'Labour Day', 'nl-NL' => 'Dag van de Arbeid'],
+        $this->addHoliday(new Holiday('labourDay', ['en_US' => 'Labour Day', 'nl_NL' => 'Dag van de Arbeid'],
             new DateTime("$this->year-5-1", new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OTHER));
 
         /*
@@ -55,10 +55,10 @@ class Netherlands extends AbstractProvider
          */
         if ($this->year >= 1947) {
             $this->addHoliday(new Holiday('commemorationDay',
-                ['en-US' => 'Commemoration Day', 'nl-NL' => 'Dodenherdenking'],
+                ['en_US' => 'Commemoration Day', 'nl_NL' => 'Dodenherdenking'],
                 new DateTime("$this->year-5-4", new DateTimeZone($this->timezone)), $this->locale,
                 Holiday::TYPE_OBSERVANCE));
-            $this->addHoliday(new Holiday('liberationDay', ['en-US' => 'Liberation Day', 'nl-NL' => 'Bevrijdingsdag'],
+            $this->addHoliday(new Holiday('liberationDay', ['en_US' => 'Liberation Day', 'nl_NL' => 'Bevrijdingsdag'],
                 new DateTime("$this->year-5-5", new DateTimeZone($this->timezone)), $this->locale,
                 Holiday::TYPE_OBSERVANCE));
         }
@@ -66,40 +66,40 @@ class Netherlands extends AbstractProvider
         /*
          * World Animal Day
          */
-        $this->addHoliday(new Holiday('worldAnimalDay', ['en-US' => 'World Animal Day', 'nl-NL' => 'Dierendag'],
+        $this->addHoliday(new Holiday('worldAnimalDay', ['en_US' => 'World Animal Day', 'nl_NL' => 'Dierendag'],
             new DateTime("$this->year-10-04", new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OTHER));
 
         /*
          * Halloween
          */
-        $this->addHoliday(new Holiday('halloween', ['en-US' => 'Halloween', 'nl-NL' => 'Halloween'],
+        $this->addHoliday(new Holiday('halloween', ['en_US' => 'Halloween', 'nl_NL' => 'Halloween'],
             new DateTime("$this->year-10-31", new DateTimeZone($this->timezone)), $this->locale,
             Holiday::TYPE_OBSERVANCE));
 
         /**
          * St. Martins Day
          */
-        $this->addHoliday(new Holiday('stMartinsDay', ['en-US' => 'St. Martin\'s Day', 'nl-NL' => 'Sint Maarten'],
+        $this->addHoliday(new Holiday('stMartinsDay', ['en_US' => 'St. Martin\'s Day', 'nl_NL' => 'Sint Maarten'],
             new DateTime("$this->year-11-11", new DateTimeZone($this->timezone)), $this->locale,
             Holiday::TYPE_OBSERVANCE));
 
         /**
          * St. Nicholas' Day
          */
-        $this->addHoliday(new Holiday('stNicholasDay', ['en-US' => 'St. Nicholas\' Day', 'nl-NL' => 'Sinterklaas'],
+        $this->addHoliday(new Holiday('stNicholasDay', ['en_US' => 'St. Nicholas\' Day', 'nl_NL' => 'Sinterklaas'],
             new DateTime("$this->year-12-5", new DateTimeZone($this->timezone)), $this->locale,
             Holiday::TYPE_OBSERVANCE));
 
         /**
          * Christmas day
          */
-        $this->addHoliday(new Holiday('christmasDay', ['en-US' => 'Christmas', 'nl-NL' => 'Eerste Kerstdag'],
+        $this->addHoliday(new Holiday('christmasDay', ['en_US' => 'Christmas', 'nl_NL' => 'Eerste Kerstdag'],
             new DateTime("$this->year-12-25", new DateTimeZone($this->timezone)), $this->locale));
 
         /**
          * Second Christmas Day / Boxing Day
          */
-        $this->addHoliday(new Holiday('secondChristmasDay', ['en-US' => 'Boxing Day', 'nl-NL' => 'Tweede Kerstdag'],
+        $this->addHoliday(new Holiday('secondChristmasDay', ['en_US' => 'Boxing Day', 'nl_NL' => 'Tweede Kerstdag'],
             new DateTime("$this->year-12-26", new DateTimeZone($this->timezone)), $this->locale));
 
         /**
@@ -115,7 +115,7 @@ class Netherlands extends AbstractProvider
                 $date->sub(new DateInterval('P1D'));
             }
 
-            $this->addHoliday(new Holiday('kingsDay', ['en-US' => 'Kings Day', 'nl-NL' => 'Koningsdag'], $date,
+            $this->addHoliday(new Holiday('kingsDay', ['en_US' => 'Kings Day', 'nl_NL' => 'Koningsdag'], $date,
                 $this->locale));
         }
 
@@ -137,7 +137,7 @@ class Netherlands extends AbstractProvider
                 ($this->year < 1980) ? $date->add(new DateInterval('P1D')) : $date->sub(new DateInterval('P1D'));
             }
 
-            $this->addHoliday(new Holiday('queensDay', ['en-US' => 'Queen\'s Day', 'nl-NL' => 'Koninginnedag'], $date,
+            $this->addHoliday(new Holiday('queensDay', ['en_US' => 'Queen\'s Day', 'nl_NL' => 'Koninginnedag'], $date,
                 $this->locale));
         }
 
@@ -147,7 +147,7 @@ class Netherlands extends AbstractProvider
          * Start of Summertime takes place on the last sunday of march. (Summertime is the common name for Daylight Saving
          * Time).
          */
-        $this->addHoliday(new Holiday('summerTime', ['en-US' => 'Summertime', 'nl-NL' => 'Zomertijd'],
+        $this->addHoliday(new Holiday('summerTime', ['en_US' => 'Summertime', 'nl_NL' => 'Zomertijd'],
             new DateTime("last sunday of march $this->year", new DateTimeZone($this->timezone)), $this->locale,
             Holiday::TYPE_SEASON));
 
@@ -157,7 +157,7 @@ class Netherlands extends AbstractProvider
          * Start of Wintertime takes place on the last sunday of october. (Wintertime is actually the end of Summertime.
          * Summertime is the common name for Daylight Saving Time).
          */
-        $this->addHoliday(new Holiday('winterTime', ['en-US' => 'Wintertime', 'nl-NL' => 'Wintertijd'],
+        $this->addHoliday(new Holiday('winterTime', ['en_US' => 'Wintertime', 'nl_NL' => 'Wintertijd'],
             new DateTime("last sunday of october $this->year", new DateTimeZone($this->timezone)), $this->locale,
             Holiday::TYPE_SEASON));
 
@@ -167,7 +167,7 @@ class Netherlands extends AbstractProvider
          * Prinsjesdag (English: Prince's Day) is the day on which the reigning monarch of the Netherlands addresses a joint
          * session of the Dutch Senate and House of Representatives.
          */
-        $this->addHoliday(new Holiday('princesDay', ['en-US' => 'Prince\'s Day', 'nl-NL' => 'Prinsjesdag'],
+        $this->addHoliday(new Holiday('princesDay', ['en_US' => 'Prince\'s Day', 'nl_NL' => 'Prinsjesdag'],
             new DateTime("third tuesday of september $this->year", new DateTimeZone($this->timezone)), $this->locale,
             Holiday::TYPE_OTHER));
 
@@ -178,7 +178,7 @@ class Netherlands extends AbstractProvider
          * fathers in society. In the Netherlands, Father's Day (Dutch: Vaderdag) is celebrated on the third Sunday of June and
          * is not a public holiday.
          */
-        $this->addHoliday(new Holiday('fathersDay', ['en-US' => 'Father\'s Day', 'nl-NL' => 'Vaderdag'],
+        $this->addHoliday(new Holiday('fathersDay', ['en_US' => 'Father\'s Day', 'nl_NL' => 'Vaderdag'],
             new DateTime("third sunday of june $this->year", new DateTimeZone($this->timezone)), $this->locale,
             Holiday::TYPE_OTHER));
 
@@ -189,7 +189,7 @@ class Netherlands extends AbstractProvider
          * influence of mothers in society. In the Netherlands, Mother's Day (Dutch: Moederdag) is celebrated on the second
          * Sunday of May and is not a public holiday.
          */
-        $this->addHoliday(new Holiday('mothersDay', ['en-US' => 'Mother\'s Day', 'nl-NL' => 'Moederdag'],
+        $this->addHoliday(new Holiday('mothersDay', ['en_US' => 'Mother\'s Day', 'nl_NL' => 'Moederdag'],
             new DateTime("second sunday of may $this->year", new DateTimeZone($this->timezone)), $this->locale,
             Holiday::TYPE_OTHER));
 
@@ -201,14 +201,14 @@ class Netherlands extends AbstractProvider
          * Nicaea in AD325 as the Sunday after the first full moon which falls on or after the Spring Equinox.
          */
         $easter = $this->calculateEaster();
-        $this->addHoliday(new Holiday('easter', ['en-US' => 'Easter Sunday', 'nl-NL' => 'Eerste Paasdag'], $easter,
+        $this->addHoliday(new Holiday('easter', ['en_US' => 'Easter Sunday', 'nl_NL' => 'Eerste Paasdag'], $easter,
             $this->locale));
 
         /**
          * Easter Monday.
          */
         $easterMonday = clone $easter;
-        $this->addHoliday(new Holiday('easterMonday', ['en-US' => 'Easter Monday', 'nl-NL' => 'Tweede Paasdag'],
+        $this->addHoliday(new Holiday('easterMonday', ['en_US' => 'Easter Monday', 'nl_NL' => 'Tweede Paasdag'],
             $easterMonday->add(new DateInterval('P1D')), $this->locale));
 
         /**
@@ -218,14 +218,14 @@ class Netherlands extends AbstractProvider
          * It is celebrated 49 days after Easter and always takes place on Sunday.
          */
         $pentecost = clone $easter;
-        $this->addHoliday(new Holiday('pentecost', ['en-US' => 'Whitsunday', 'nl-NL' => 'Eerste Pinksterdag'],
+        $this->addHoliday(new Holiday('pentecost', ['en_US' => 'Whitsunday', 'nl_NL' => 'Eerste Pinksterdag'],
             $pentecost->add(new DateInterval('P49D')), $this->locale));
 
         /**
          * Pentecost (Whitmonday).
          */
         $pentecost = clone $easter;
-        $this->addHoliday(new Holiday('pentecostMonday', ['en-US' => 'Whitmonday', 'nl-NL' => 'Tweede Pinksterdag'],
+        $this->addHoliday(new Holiday('pentecostMonday', ['en_US' => 'Whitmonday', 'nl_NL' => 'Tweede Pinksterdag'],
             $pentecost->add(new DateInterval('P50D')), $this->locale));
 
         /**
@@ -236,21 +236,21 @@ class Netherlands extends AbstractProvider
          * preceding Ash Wednesday and Lent.
          */
         $carnivalDay1 = clone $easter;
-        $this->addHoliday(new Holiday('carnivalDay', ['en-US' => 'Carnival', 'nl-NL' => 'Carnaval'],
+        $this->addHoliday(new Holiday('carnivalDay', ['en_US' => 'Carnival', 'nl_NL' => 'Carnaval'],
             $carnivalDay1->sub(new DateInterval('P49D')), $this->locale, Holiday::TYPE_OBSERVANCE));
 
         /**
          * Second Day of Carnival.
          */
         $carnivalDay2 = clone $easter;
-        $this->addHoliday(new Holiday('secondCarnivalDay', ['en-US' => 'Carnival', 'nl-NL' => 'Carnaval'],
+        $this->addHoliday(new Holiday('secondCarnivalDay', ['en_US' => 'Carnival', 'nl_NL' => 'Carnaval'],
             $carnivalDay2->sub(new DateInterval('P48D')), $this->locale, Holiday::TYPE_OBSERVANCE));
 
         /**
          * Third Day of Carnival.
          */
         $carnivalDay3 = clone $easter;
-        $this->addHoliday(new Holiday('thirdCarnivalDay', ['en-US' => 'Carnival', 'nl-NL' => 'Carnaval'],
+        $this->addHoliday(new Holiday('thirdCarnivalDay', ['en_US' => 'Carnival', 'nl_NL' => 'Carnaval'],
             $carnivalDay3->sub(new DateInterval('P47D')), $this->locale, Holiday::TYPE_OBSERVANCE));
 
         /**
@@ -261,7 +261,7 @@ class Netherlands extends AbstractProvider
          * or as late as 10 March.
          */
         $ashWednesday = clone $easter;
-        $this->addHoliday(new Holiday('ashWednesday', ['en-US' => 'Ash Wednesday', 'nl-NL' => 'Aswoensdag'],
+        $this->addHoliday(new Holiday('ashWednesday', ['en_US' => 'Ash Wednesday', 'nl_NL' => 'Aswoensdag'],
             $ashWednesday->sub(new DateInterval('P46D')), $this->locale, Holiday::TYPE_OBSERVANCE));
 
         /**
@@ -272,7 +272,7 @@ class Netherlands extends AbstractProvider
          * may coincide with the Jewish observance of Passover.
          */
         $goodFriday = clone $easter;
-        $this->addHoliday(new Holiday('goodFriday', ['en-US' => 'Good Friday', 'nl-NL' => 'Goede Vrijdag'],
+        $this->addHoliday(new Holiday('goodFriday', ['en_US' => 'Good Friday', 'nl_NL' => 'Goede Vrijdag'],
             $goodFriday->sub(new DateInterval('P2D')), $this->locale, Holiday::TYPE_OBSERVANCE));
 
         /**
@@ -283,7 +283,7 @@ class Netherlands extends AbstractProvider
          * provinces have moved the observance to the following Sunday.
          */
         $ascensionDay = clone $easter;
-        $this->addHoliday(new Holiday('ascensionDay', ['en-US' => 'Ascension Day', 'nl-NL' => 'Hemelvaart'],
+        $this->addHoliday(new Holiday('ascensionDay', ['en_US' => 'Ascension Day', 'nl_NL' => 'Hemelvaart'],
             $ascensionDay->add(new DateInterval('P39D')), $this->locale));
     }
 }

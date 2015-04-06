@@ -33,9 +33,9 @@ class Belgium extends AbstractProvider
          * calendar as well as the Julian calendar.
          */
         $this->addHoliday(new Holiday('newYearsDay', [
-            'en-US' => 'New Year\'s Day',
-            'nl-NL' => 'Nieuwjaar',
-            'nl-BE' => 'Nieuwjaar'
+            'en_US' => 'New Year\'s Day',
+            'nl_NL' => 'Nieuwjaar',
+            'nl_BE' => 'Nieuwjaar'
         ], new DateTime("$this->year-1-1", new DateTimeZone($this->timezone)), $this->locale));
 
         /**
@@ -48,9 +48,9 @@ class Belgium extends AbstractProvider
          */
         $easter = $this->calculateEaster();
         $this->addHoliday(new Holiday('easter', [
-            'en-US' => 'Easter Sunday',
-            'nl-NL' => 'Eerste Paasdag',
-            'nl-BE' => 'Eerste Paasdag'
+            'en_US' => 'Easter Sunday',
+            'nl_NL' => 'Eerste Paasdag',
+            'nl_BE' => 'Eerste Paasdag'
         ], $easter, $this->locale));
 
         /**
@@ -58,9 +58,9 @@ class Belgium extends AbstractProvider
          */
         $easterMonday = clone $easter;
         $this->addHoliday(new Holiday('easterMonday', [
-            'en-US' => 'Easter Monday',
-            'nl-NL' => 'Tweede Paasdag',
-            'nl-BE' => 'Paasmaandag'
+            'en_US' => 'Easter Monday',
+            'nl_NL' => 'Tweede Paasdag',
+            'nl_BE' => 'Paasmaandag'
         ], $easterMonday->add(new DateInterval('P1D')), $this->locale));
 
         /*
@@ -70,9 +70,9 @@ class Belgium extends AbstractProvider
          * holiday.
          */
         $this->addHoliday(new Holiday('labourDay', [
-            'en-US' => 'Labour Day',
-            'nl-NL' => 'Dag van de arbeid',
-            'nl-BE' => 'Dag van de arbeid'
+            'en_US' => 'Labour Day',
+            'nl_NL' => 'Dag van de arbeid',
+            'nl_BE' => 'Dag van de arbeid'
         ], new DateTime("$this->year-5-1", new DateTimeZone($this->timezone)), $this->locale));
 
         /**
@@ -84,9 +84,9 @@ class Belgium extends AbstractProvider
          */
         $ascensionDay = clone $easter;
         $this->addHoliday(new Holiday('ascensionDay', [
-            'en-US' => 'Ascension Day',
-            'nl-NL' => 'Hemelvaart',
-            'nl-BE' => 'Hemelvaart'
+            'en_US' => 'Ascension Day',
+            'nl_NL' => 'Hemelvaart',
+            'nl_BE' => 'Hemelvaart'
         ], $ascensionDay->add(new DateInterval('P39D')), $this->locale));
 
         /**
@@ -97,9 +97,9 @@ class Belgium extends AbstractProvider
          */
         $pentecost = clone $easter;
         $this->addHoliday(new Holiday('pentecost', [
-            'en-US' => 'Whitsunday',
-            'nl-NL' => 'Eerste Pinksterdag',
-            'nl-BE' => 'Eerste Pinksterdag'
+            'en_US' => 'Whitsunday',
+            'nl_NL' => 'Eerste Pinksterdag',
+            'nl_BE' => 'Eerste Pinksterdag'
         ], $pentecost->add(new DateInterval('P49D')), $this->locale));
 
         /**
@@ -107,9 +107,9 @@ class Belgium extends AbstractProvider
          */
         $pentecost = clone $easter;
         $this->addHoliday(new Holiday('pentecostMonday', [
-            'en-US' => 'Whitmonday',
-            'nl-NL' => 'Tweede Pinksterdag',
-            'nl-BE' => 'Pinkstermaandag'
+            'en_US' => 'Whitmonday',
+            'nl_NL' => 'Tweede Pinksterdag',
+            'nl_BE' => 'Pinkstermaandag'
         ], $pentecost->add(new DateInterval('P50D')), $this->locale));
 
         /*
@@ -118,9 +118,9 @@ class Belgium extends AbstractProvider
          * Belgian National Day is the National Day of Belgium celebrated on 21 July each year.
          */
         $this->addHoliday(new Holiday('nationalDay', [
-            'en-US' => 'Belgian National Day',
-            'nl-NL' => 'Nationale feestdag',
-            'nl-BE' => 'Nationale feestdag'
+            'en_US' => 'Belgian National Day',
+            'nl_NL' => 'Nationale feestdag',
+            'nl_BE' => 'Nationale feestdag'
         ], new DateTime("$this->year-7-21", new DateTimeZone($this->timezone)), $this->locale));
 
         /**
@@ -131,9 +131,9 @@ class Belgium extends AbstractProvider
          * Assumption is a major feast day, commonly celebrated on August 15.
          */
         $this->addHoliday(new Holiday('assumptionOfMary', [
-            'en-US' => 'Assumption of Mary',
-            'nl-NL' => 'Onze Lieve Vrouw hemelvaart',
-            'nl-BE' => 'Onze Lieve Vrouw hemelvaart'
+            'en_US' => 'Assumption of Mary',
+            'nl_NL' => 'Onze Lieve Vrouw hemelvaart',
+            'nl_BE' => 'Onze Lieve Vrouw hemelvaart'
         ], new DateTime("$this->year-8-15", new DateTimeZone($this->timezone)), $this->locale));
 
         /**
@@ -143,9 +143,9 @@ class Belgium extends AbstractProvider
          * celebrated on 1 November by the Catholic Church and various Protestant denominations in honour of all the saints.
          */
         $this->addHoliday(new Holiday('allSaintsDay', [
-            'en-US' => 'All Saints\' Day',
-            'nl-NL' => 'Allerheiligen',
-            'nl-BE' => 'Allerheiligen'
+            'en_US' => 'All Saints\' Day',
+            'nl_NL' => 'Allerheiligen',
+            'nl_BE' => 'Allerheiligen'
         ], new DateTime("$this->year-11-1", new DateTimeZone($this->timezone)), $this->locale));
 
         /**
@@ -156,9 +156,9 @@ class Belgium extends AbstractProvider
          * War I.
          */
         $this->addHoliday(new Holiday('armisticeDay', [
-            'en-US' => 'Armistice Day',
-            'nl-NL' => 'Wapenstilstand',
-            'nl-BE' => 'Wapenstilstand'
+            'en_US' => 'Armistice Day',
+            'nl_NL' => 'Wapenstilstand',
+            'nl_BE' => 'Wapenstilstand'
         ], new DateTime("$this->year-11-11", new DateTimeZone($this->timezone)), $this->locale));
 
         /**
@@ -166,18 +166,18 @@ class Belgium extends AbstractProvider
          *
          */
         $this->addHoliday(new Holiday('christmasDay', [
-            'en-US' => 'Armistice Day',
-            'nl-NL' => 'Wapenstilstand',
-            'nl-BE' => 'Wapenstilstand'
+            'en_US' => 'Armistice Day',
+            'nl_NL' => 'Wapenstilstand',
+            'nl_BE' => 'Wapenstilstand'
         ], new DateTime("$this->year-11-11", new DateTimeZone($this->timezone)), $this->locale));
 
         /**
          * Christmas day
          */
         $this->addHoliday(new Holiday('christmasDay', [
-            'en-US' => 'Christmas',
-            'nl-NL' => 'Kerstmis',
-            'nl-BE' => 'Kerstmis'
+            'en_US' => 'Christmas',
+            'nl_NL' => 'Kerstmis',
+            'nl_BE' => 'Kerstmis'
         ], new DateTime("$this->year-12-25", new DateTimeZone($this->timezone)), $this->locale));
     }
 }
