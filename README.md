@@ -31,11 +31,6 @@ Currently the following holiday providers are implemented:
 * Belgium
 * USA
 
-Documentation
--------
-
-TBD
-
 
 System Requirements
 -------------------
@@ -70,6 +65,89 @@ The tests are organized in some test suites to make testing a bit more easier:
 * Netherlands: For separately testing the Netherlands Holiday Provider
 * Belgium    : For separately testing the Belgium Holiday Provider
 * USA        : For separately testing the USA Holiday Provider
+
+
+Basic Usage
+-------
+
+```php
+<?php
+// Require the composer auto loader
+require 'vendor/autoload.php';
+
+use Yasumi\Yasumi;
+
+// Use the factory to create a new holiday provider instance
+$holidays = Yasumi::create('USA', 2015);
+
+// Get the number of defined holidays
+echo $holidays->count() . PHP_EOL;
+// 11
+
+// Get a list all of the holiday names (short names)
+foreach ($holidays->getHolidayNames() as $name) {
+    echo $name . PHP_EOL;
+}
+// 'newYearsDay'
+// 'martinLutherKingDay'
+// 'washingtonsBirthday'
+// 'memorialDay'
+// 'substituteHoliday:independenceDay'
+// 'independenceDay'
+// 'labourDay'
+// 'columbusDay'
+// 'veteransDay'
+// 'thanksgivingDay'
+// 'christmasDay'
+
+// Get a list all of the holiday dates
+foreach ($holidays->getHolidayDates() as $date) {
+    echo $date . PHP_EOL;
+}
+// '2015-01-01'
+// '2015-01-19'
+// '2015-02-16'
+// '2015-05-25'
+// '2015-07-03'
+// '2015-07-04'
+// '2015-09-07'
+// '2015-10-12'
+// '2015-11-11'
+// '2015-11-26'
+// '2015-12-25'
+
+// Get a holiday object for Independence Day
+$independenceDay = $holidays->getHoliday('independenceDay');
+
+// Get the localized name
+echo $independenceDay->getName() . PHP_EOL;
+// 'Independence Day'
+
+// Get the date
+echo $independenceDay . PHP_EOL;
+// '2015-07-04'
+
+// Get the type of holiday
+echo $independenceDay->getType() . PHP_EOL;
+// 'national'
+
+// Print the holiday as a JSON object
+echo json_encode($independenceDay, JSON_PRETTY_PRINT);
+//{
+//    "shortName": "independenceDay",
+//    "translations": {
+//    "en_US": "Independence Day"
+//    },
+//    "date": "2015-07-04 00:00:00.000000",
+//    "timezone_type": 3,
+//    "timezone": "America\/New_York"
+//}
+```
+
+Documentation
+-------
+
+TBD
 
 
 License
