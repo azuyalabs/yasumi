@@ -383,16 +383,10 @@ class Japan extends AbstractProvider
                 continue;
             }
 
-            // Determine if gap between holidays is a one day and create bridge holiday if that day itself is not a
-            // public holiday again.
+            // Determine if gap between holidays is one day and create bridge holiday
             if ($previous->diff($datesIterator->current())->format('%a') == 2) {
                 $bridgeDate = clone $previous;
                 $bridgeDate->add(new DateInterval('P1D'));
-
-                // Skip if bridge date coincides with existing holidays
-                if (in_array($bridgeDate, $dates)) {
-                    continue;
-                }
 
                 $this->addHoliday(new Holiday('bridgeDay', [
                     'en_US' => 'Bridge Public holiday',
