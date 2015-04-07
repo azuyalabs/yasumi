@@ -29,6 +29,7 @@ Currently the following holiday providers are implemented:
 * Japan
 * Netherlands
 * Belgium
+* USA
 
 Documentation
 -------
@@ -67,7 +68,8 @@ The tests are organized in some test suites to make testing a bit more easier:
 * Base       : For testing the base functionality of Yasumi
 * Japan      : For separately testing the Japan Holiday Provider
 * Netherlands: For separately testing the Netherlands Holiday Provider
-* Belgium: For separately testing the Belgium Holiday Provider
+* Belgium    : For separately testing the Belgium Holiday Provider
+* USA        : For separately testing the USA Holiday Provider
 
 
 License
