@@ -39,7 +39,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     protected $locale;
     /**
-     * @var array list of dates of the available holidays
+     * @var Holiday[] list of dates of the available holidays
      */
     private $holidays = [];
 
@@ -169,7 +169,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     /**
      * Gets all of the holidays defined by this holiday provider (for the given year).
      *
-     * @return array list of all holidays defined for the given year
+     * @return Holiday[] list of all holidays defined for the given year
      */
     public function getHolidays()
     {
@@ -204,7 +204,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * @param $shortName string the name of the holiday.
      *
      * @throws InvalidArgumentException when the given name is blank or empty.
-     * @return \Yasumi\Holiday a Holiday instance for the given holiday
+     * @return Holiday a Holiday instance for the given holiday
      */
     public function getHoliday($shortName)
     {
@@ -243,7 +243,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @param $shortName string the name of the holiday for which the next occurrence need to be retrieved.
      *
-     * @return \Yasumi\Holiday a Holiday instance for the given holiday
+     * @return Holiday a Holiday instance for the given holiday
      *
      * @covers AbstractProvider::anotherTime
      */
@@ -259,7 +259,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * @param string $shortName the name of the holiday for which the date needs to be fetched
      *
      * @throws InvalidArgumentException when the given name is blank or empty.
-     * @return \Yasumi\Holiday a Holiday instance for the given holiday and year
+     * @return Holiday a Holiday instance for the given holiday and year
      */
     private function anotherTime($year, $shortName)
     {
@@ -279,7 +279,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @param $shortName string the name of the holiday for which the previous occurrence need to be retrieved.
      *
-     * @return \Yasumi\Holiday a Holiday instance for the given holiday
+     * @return Holiday a Holiday instance for the given holiday
      *
      * @covers AbstractProvider::anotherTime
      */
@@ -298,7 +298,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @see easter_days
      *
-     * @return int the number of days after March 21 on which Easter falls for the given year
+     * @return \DateTime date of Easter
      */
     protected function calculateEaster()
     {
