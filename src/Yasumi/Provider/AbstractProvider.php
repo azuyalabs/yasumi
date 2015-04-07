@@ -177,6 +177,22 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     }
 
     /**
+     * Gets all of the holidays defined by this holiday provider (for the given year and that are of type).
+     *
+     * @param string $type
+     * @return Holiday[] list of all holidays defined for the given year, that are of requested type
+     */
+    public function getHolidaysOfType($type) {
+        $holidays = [];
+        foreach ($this->getHolidays() as $holiday) {
+            if ($type === $holiday->getType() ) {
+                $holidays[] = $holiday;
+            }
+        }
+        return $holidays;
+    }
+
+    /**
      * Gets all of the holiday names defined by this holiday provider (for the given year).
      *
      * @return array list of all holiday names defined for the given year
