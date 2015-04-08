@@ -174,7 +174,7 @@ class USA extends AbstractProvider
          *
          * @link http://en.wikipedia.org/wiki/Thanksgiving_(United_States) Source: Wikipedia.
          */
-        if ($this->year >= 1887) {
+        if ($this->year >= 1863) {
             $this->addHoliday(new Holiday('thanksgivingDay', [
                 'en_US' => 'Thanksgiving Day'
             ], new DateTime("fourth thursday of november $this->year", new DateTimeZone($this->timezone)),
