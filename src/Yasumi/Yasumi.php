@@ -9,6 +9,7 @@
  */
 namespace Yasumi;
 
+use DirectoryIterator;
 use InvalidArgumentException;
 use RuntimeException;
 use Yasumi\Exception\UnknownLocaleException;
@@ -79,5 +80,27 @@ class Yasumi
     public static function getAvailableLocales()
     {
         return require __DIR__ . '/data/locales.php';
+    }
+
+    /**
+     * Returns a list of available holiday providers.
+     *
+     * @return array list of available holiday providers
+     */
+    public static function getProviders()
+    {
+        $extension = 'php';
+        $providers = [];
+        foreach (new DirectoryIterator(__DIR__ . '/Provider/') as $file) {
+            if ($file->isFile() === false || in_array($file->getBasename(),
+                    ['AbstractProvider.php']) || $file->getExtension() !== $extension
+            ) {
+                continue;
+            }
+
+            $providers[] = $file->getBasename('.' . $extension);
+        }
+
+        return (array) $providers;
     }
 }

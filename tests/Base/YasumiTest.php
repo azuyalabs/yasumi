@@ -216,4 +216,16 @@ class YasumiTest extends PHPUnit_Framework_TestCase
         $holidays->whatWeekDayIs(null);
     }
 
+    /**
+     * Tests that the getProviders function returns an array containing all available holiday providers.
+     */
+    public function testGetProviders()
+    {
+        $providers = Yasumi::getProviders();
+
+        $this->assertNotEmpty($providers);
+        $this->assertInternalType('array', $providers);
+        $this->assertContains('Netherlands', $providers);
+    }
+
 }
