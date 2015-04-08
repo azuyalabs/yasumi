@@ -162,16 +162,6 @@ class Belgium extends AbstractProvider
         ], new DateTime("$this->year-11-11", new DateTimeZone($this->timezone)), $this->locale));
 
         /**
-         * Christmas day.
-         *
-         */
-        $this->addHoliday(new Holiday('christmasDay', [
-            'en_US' => 'Armistice Day',
-            'nl_NL' => 'Wapenstilstand',
-            'nl_BE' => 'Wapenstilstand'
-        ], new DateTime("$this->year-11-11", new DateTimeZone($this->timezone)), $this->locale));
-
-        /**
          * Christmas day
          */
         $this->addHoliday(new Holiday('christmasDay', [

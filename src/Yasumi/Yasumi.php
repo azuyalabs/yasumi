@@ -39,7 +39,7 @@ class Yasumi
      * @param string $locale The locale to use. If empty we'll use the default locale (en_US)
      *
      * @throws RuntimeException If no such holiday provider is found
-     * @throws InvalidArgumentException if the year parameter is not between 0 and 9999
+     * @throws InvalidArgumentException if the year parameter is not between 1000 and 9999
      * @throws UnknownLocaleException if the locale parameter is invalid
      * @throws InvalidArgumentException if the holiday provider for the given country does not exist
      *
