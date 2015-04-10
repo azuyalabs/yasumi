@@ -3,12 +3,14 @@
  * This file is part of the Yasumi package.
  *
  * Copyright (c) 2015 AzuyaLabs
+ * Copyright (c) 2015 Tomasz Sawicki
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 use Yasumi\Holiday;
 use Yasumi\Tests\YasumiBase;
+use Yasumi\TranslationsInterface;
 
 /**
  * Class HolidayTest.
@@ -101,5 +103,88 @@ class HolidayTest extends PHPUnit_Framework_TestCase
         $this->assertNotNull($holiday->getName());
         $this->assertInternalType('string', $holiday->getName());
         $this->assertEquals($translation, $holiday->getName());
+    }
+
+    /**
+     * Tests the getName function of the Holiday object with global translations and no custom translation.
+     */
+    public function testHolidayGetNameWithGlobalTranslations() {
+        /** @var TranslationsInterface|PHPUnit_Framework_MockObject_MockObject $translationsStub */
+        $translationsStub = $this->getMock('\Yasumi\TranslationsInterface');
+
+        $translations = [
+            'en_US' => 'New Year\'s Day',
+            'pl_PL' => 'Nowy Rok',
+        ];
+
+        $translationsStub->expects($this->once())
+            ->method('getTranslations')
+            ->with($this->equalTo('newYearsDay'))
+            ->willReturn($translations);
+
+        $locale = 'pl_PL';
+
+        $holiday = new Holiday('newYearsDay', [], new DateTime("2015-01-01"), $locale);
+        $holiday->mergeGlobalTranslations($translationsStub);
+
+        $this->assertNotNull($holiday->getName());
+        $this->assertInternalType('string', $holiday->getName());
+        $this->assertEquals($translations[$locale], $holiday->getName());
+    }
+
+    /**
+     * Tests the getName function of the Holiday object with global translations and a new custom translation.
+     */
+    public function testHolidayGetNameWithGlobalAndCustomTranslations() {
+        /** @var TranslationsInterface|PHPUnit_Framework_MockObject_MockObject $translationsStub */
+        $translationsStub = $this->getMock('\Yasumi\TranslationsInterface');
+
+        $translations = [
+            'en_US' => 'New Year\'s Day',
+            'pl_PL' => 'Nowy Rok',
+        ];
+
+        $translationsStub->expects($this->once())
+            ->method('getTranslations')
+            ->with($this->equalTo('newYearsDay'))
+            ->willReturn($translations);
+
+        $customLocale = 'nl_NL';
+        $customTranslation = 'Nieuwjaar';
+
+        $holiday = new Holiday('newYearsDay', [$customLocale => $customTranslation], new DateTime("2015-01-01"), $customLocale);
+        $holiday->mergeGlobalTranslations($translationsStub);
+
+        $this->assertNotNull($holiday->getName());
+        $this->assertInternalType('string', $holiday->getName());
+        $this->assertEquals($customTranslation, $holiday->getName());
+    }
+
+    /**
+     * Tests the getName function of the Holiday object with global translations and an overriding custom translation.
+     */
+    public function testHolidayGetNameWithOverridenGlobalTranslations() {
+        /** @var TranslationsInterface|PHPUnit_Framework_MockObject_MockObject $translationsStub */
+        $translationsStub = $this->getMock('\Yasumi\TranslationsInterface');
+
+        $translations = [
+            'en_US' => 'New Year\'s Day',
+            'pl_PL' => 'Nowy Rok',
+        ];
+
+        $translationsStub->expects($this->once())
+            ->method('getTranslations')
+            ->with($this->equalTo('newYearsDay'))
+            ->willReturn($translations);
+
+        $customLocale = 'pl_PL';
+        $customTranslation = 'Bardzo Nowy Rok';
+
+        $holiday = new Holiday('newYearsDay', [$customLocale => $customTranslation], new DateTime("2015-01-01"), $customLocale);
+        $holiday->mergeGlobalTranslations($translationsStub);
+
+        $this->assertNotNull($holiday->getName());
+        $this->assertInternalType('string', $holiday->getName());
+        $this->assertEquals($customTranslation, $holiday->getName());
     }
 }

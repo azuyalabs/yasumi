@@ -3,6 +3,7 @@
  * This file is part of the Yasumi package.
  *
  * Copyright (c) 2015 AzuyaLabs
+ * Copyright (c) 2015 Tomasz Sawicki
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -18,6 +19,7 @@ use InvalidArgumentException;
 use IteratorAggregate;
 use Yasumi\Holiday;
 use Yasumi\ProviderInterface;
+use Yasumi\TranslationsInterface;
 use Yasumi\Yasumi;
 
 /**
@@ -44,17 +46,24 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     private $holidays = [];
 
     /**
+     * @var TranslationsInterface global translations
+     */
+    private $globalTranslations;
+
+    /**
      * Creates a new holiday provider (i.e. country/state).
      *
-     * @param int    $year   the year for which to provide holidays
-     * @param string $locale the locale/language in which holidays need to be represented
+     * @param int                   $year               the year for which to provide holidays
+     * @param string                $locale             the locale/language in which holidays need to be represented
+     * @param TranslationsInterface $globalTranslations global translations
      */
-    public function __construct($year, $locale = 'en_US')
+    public function __construct($year, $locale = 'en_US', TranslationsInterface $globalTranslations = null)
     {
         $this->clearHolidays();
 
         $this->year   = $year ?: date('Y');
         $this->locale = $locale;
+        $this->globalTranslations = $globalTranslations;
 
         $this->initialize();
     }
@@ -97,6 +106,10 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     public function addHoliday(Holiday $holiday)
     {
+        if ($this->globalTranslations !== null) {
+            $holiday->mergeGlobalTranslations($this->globalTranslations);
+        }
+
         $this->holidays[$holiday->shortName] = $holiday;
         uasort($this->holidays, ['Yasumi\Provider\AbstractProvider', 'compareDates']);
     }

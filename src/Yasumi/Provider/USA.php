@@ -34,9 +34,8 @@ class USA extends AbstractProvider
          *
          * @link http://en.wikipedia.org/wiki/New_Year%27s_Day Source: Wikipedia.
          */
-        $this->addHoliday(new Holiday('newYearsDay', [
-            'en_US' => 'New Year\'s Day'
-        ], new DateTime("$this->year-1-1", new DateTimeZone($this->timezone)), $this->locale));
+        $this->addHoliday(new Holiday('newYearsDay', [],
+            new DateTime("$this->year-1-1", new DateTimeZone($this->timezone)), $this->locale));
 
         /**
          * Dr. Martin Luther King Day.

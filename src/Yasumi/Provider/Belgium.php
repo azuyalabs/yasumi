@@ -32,12 +32,9 @@ class Belgium extends AbstractProvider
          * New Year's Day is observed on January 1, the first day of the year on the modern Gregorian
          * calendar as well as the Julian calendar.
          */
-        $this->addHoliday(new Holiday('newYearsDay', [
-            'en_US' => 'New Year\'s Day',
-            'nl_NL' => 'Nieuwjaar',
-            'nl_BE' => 'Nieuwjaar'
-        ], new DateTime("$this->year-1-1", new DateTimeZone($this->timezone)), $this->locale));
 
+        $this->addHoliday(new Holiday('newYearsDay', [],
+            new DateTime("$this->year-1-1", new DateTimeZone($this->timezone)), $this->locale));
         /**
          * Easter.
          *
