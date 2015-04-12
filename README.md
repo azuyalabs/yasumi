@@ -144,10 +144,17 @@ echo json_encode($independenceDay, JSON_PRETTY_PRINT);
 //}
 ```
 
-Documentation
+
+Roadmap
 -------
 
-TBD
+Yasumi is still in development and a stable release is coming soon. For its first release, we will have the following
+included:
+
+- Global Translations
+- Filters
+- Common holiday providers
+- Additional countries (Italy and France)
 
 
 License
