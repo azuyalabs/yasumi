@@ -70,7 +70,7 @@ class Japan extends AbstractProvider
          * New Year's Day. New Year's Day is held on January 1st and established since 1948.
          */
         if ($this->year >= 1948) {
-            $holiday = new Holiday('newYearsDay', ['en_US' => 'New Year\'s Day', 'ja_JP' => '元日'],
+            $holiday = new Holiday('newYearsDay', [],
                 new DateTime("$this->year-1-1", new DateTimeZone($this->timezone)), $this->locale);
             $this->addHoliday($holiday);
 

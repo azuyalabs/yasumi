@@ -3,6 +3,7 @@
  * This file is part of the Yasumi package.
  *
  * Copyright (c) 2015 AzuyaLabs
+ * Copyright (c) 2015 Tomasz Sawicki
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,6 +14,7 @@ use DirectoryIterator;
 use InvalidArgumentException;
 use RuntimeException;
 use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Provider\AbstractProvider;
 
 /**
  * Class Yasumi
@@ -32,6 +34,13 @@ class Yasumi
     private static $locales;
 
     /**
+     * Global translations
+     *
+     * @var Translations
+     */
+    private static $globalTranslations;
+
+    /**
      * Create a new holiday provider instance.
      *
      * @param string $class  holiday provider name
@@ -44,7 +53,7 @@ class Yasumi
      * @throws UnknownLocaleException if the locale parameter is invalid
      * @throws InvalidArgumentException if the holiday provider for the given country does not exist
      *
-     * @return object An instance of class $class is created and returned
+     * @return AbstractProvider An instance of class $class is created and returned
      */
     public static function create($class, $year = null, $locale = self::DEFAULT_LOCALE)
     {
@@ -64,12 +73,18 @@ class Yasumi
             static::$locales = self::getAvailableLocales();
         }
 
+        // Load internal translations variable
+        if ( ! isset(static::$globalTranslations)) {
+            static::$globalTranslations = new Translations(static::$locales);
+            static::$globalTranslations->loadTranslations(__DIR__ . '/data/translations');
+        }
+
         // Assert locale input
         if ( ! in_array($locale, static::$locales)) {
             throw new UnknownLocaleException(sprintf('Locale "%s" is not a valid locale.', $locale));
         }
 
-        return new $providerClass($year, $locale);
+        return new $providerClass($year, $locale, self::$globalTranslations);
     }
 
     /**

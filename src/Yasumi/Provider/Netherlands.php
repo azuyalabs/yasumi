@@ -29,7 +29,7 @@ class Netherlands extends AbstractProvider
         /*
          * New Year's Day
          */
-        $this->addHoliday(new Holiday('newYearsDay', ['en_US' => 'New Year\'s Day', 'nl_NL' => 'Nieuwjaar'],
+        $this->addHoliday(new Holiday('newYearsDay', [],
             new DateTime("$this->year-1-1", new DateTimeZone($this->timezone)), $this->locale));
 
         /*

@@ -3,6 +3,7 @@
  * This file is part of the Yasumi package.
  *
  * Copyright (c) 2015 AzuyaLabs
+ * Copyright (c) 2015 Tomasz Sawicki
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -77,7 +78,7 @@ class Holiday extends DateTime implements JsonSerializable
      *
      * @param string   $shortName            The short name (internal name) of this holiday
      * @param array    $names                An array containing the name/description of this holiday in various
-     *                                       languages
+     *                                       languages. Overrides global translations
      * @param DateTime $date                 A DateTime instance representing the date of the holiday
      * @param string   $displayLocale        Locale (i.e. language) in which the holiday information needs to be
      *                                       displayed in. (Default 'en_US')
@@ -160,6 +161,16 @@ class Holiday extends DateTime implements JsonSerializable
         }
 
         return (string) $this->shortName;
+    }
+
+    /**
+     * Merges local translations (preferred) with global translations.
+     *
+     * @param TranslationsInterface $globalTranslations global translations
+     */
+    public function mergeGlobalTranslations(TranslationsInterface $globalTranslations) {
+        $holidayGlobalTranslations = $globalTranslations->getTranslations($this->shortName);
+        $this->translations = array_merge($holidayGlobalTranslations, $this->translations);
     }
 
     /**
