@@ -18,6 +18,8 @@ Highlights
 
 * Simple API
 * Use of Providers to easily extend and expand new Holidays
+* Common Holiday Providers
+* Global Translations
 * Implements ArrayIterator to easily process a provider's holidays
 * Fully documented
 * Fully Unit tested
@@ -151,9 +153,9 @@ Roadmap
 Yasumi is still in development and a stable release is coming soon. For its first release, we will have the following
 included:
 
-- Global Translations
+- ~~Global Translations~~
 - Filters
-- Common holiday providers
+- ~~Common holiday providers~~
 - Additional countries (Italy and France)
 
 
