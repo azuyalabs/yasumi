@@ -8,15 +8,14 @@
  * file that was distributed with this source code.
  *
  * @author Sacha Telgenhof <stelgenhof@gmail.com>
- * @author Tomasz Sawicki
  *
  */
 
-// Translation for New Year's Day
+// Translation for Epiphany
 return [
-    'en_US' => 'New Year\'s Day',
-    'nl_NL' => 'Nieuwjaar',
-    'nl_BE' => 'Nieuwjaar',
-    'pl_PL' => 'Nowy Rok',
-    'ja_JP' => '元日',
+    'en_US' => 'Epiphany',
+    'nl_NL' => 'Drie Koningen',
+    'nl_BE' => 'Drie Koningen',
+    'pl_PL' => 'Święto Trzech Króli',
+    'ja_JP' => 'エピファニー',
 ];

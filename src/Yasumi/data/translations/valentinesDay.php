@@ -8,15 +8,14 @@
  * file that was distributed with this source code.
  *
  * @author Sacha Telgenhof <stelgenhof@gmail.com>
- * @author Tomasz Sawicki
  *
  */
 
-// Translation for New Year's Day
+// Translation for Valentine's Day
 return [
-    'en_US' => 'New Year\'s Day',
-    'nl_NL' => 'Nieuwjaar',
-    'nl_BE' => 'Nieuwjaar',
-    'pl_PL' => 'Nowy Rok',
-    'ja_JP' => '元日',
+    'en_US' => 'Valentine\'s Day',
+    'nl_NL' => 'Valentijnsdag',
+    'nl_BE' => 'Valentijnsdag',
+    'pl_PL' => 'Walentynki',
+    'ja_JP' => 'バレンタイン·デー',
 ];
