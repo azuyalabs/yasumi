@@ -71,7 +71,7 @@ class Translations implements TranslationsInterface
 
             $shortName = $file->getBasename('.' . $extension);
 
-            $translations = require($directoryPath . $filename);
+            $translations = require $directoryPath . $filename;
 
             if (is_array($translations)) {
                 foreach (array_keys($translations) as $locale) {

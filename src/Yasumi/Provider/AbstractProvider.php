@@ -3,18 +3,19 @@
  * This file is part of the Yasumi package.
  *
  * Copyright (c) 2015 AzuyaLabs
- * Copyright (c) 2015 Tomasz Sawicki
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
+ *
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Tomasz Sawicki
+ *
  */
 namespace Yasumi\Provider;
 
 use ArrayIterator;
 use Countable;
-use DateInterval;
 use DateTime;
-use DateTimeZone;
 use InvalidArgumentException;
 use IteratorAggregate;
 use Yasumi\Holiday;
@@ -212,26 +213,6 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     }
 
     /**
-     * Retrieves the holiday object for the given holiday.
-     *
-     * @param $shortName string the name of the holiday.
-     *
-     * @throws InvalidArgumentException when the given name is blank or empty.
-     * @return Holiday a Holiday instance for the given holiday
-     */
-    public function getHoliday($shortName)
-    {
-        // Validate if short name is not empty
-        if (empty($shortName) || is_null($shortName)) {
-            throw new InvalidArgumentException('Holiday name can not be blank.');
-        }
-
-        $holidays = $this->getHolidays();
-
-        return (isset($holidays[$shortName])) ? $holidays[$shortName] : null;
-    }
-
-    /**
      * Get an iterator for the holidays.
      *
      * @return ArrayIterator iterator for the holidays of this calendar
@@ -288,6 +269,26 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     }
 
     /**
+     * Retrieves the holiday object for the given holiday.
+     *
+     * @param $shortName string the name of the holiday.
+     *
+     * @throws InvalidArgumentException when the given name is blank or empty.
+     * @return Holiday a Holiday instance for the given holiday
+     */
+    public function getHoliday($shortName)
+    {
+        // Validate if short name is not empty
+        if (empty($shortName) || is_null($shortName)) {
+            throw new InvalidArgumentException('Holiday name can not be blank.');
+        }
+
+        $holidays = $this->getHolidays();
+
+        return (isset($holidays[$shortName])) ? $holidays[$shortName] : null;
+    }
+
+    /**
      * Retrieves the previous date (year) the given holiday took place.
      *
      * @param $shortName string the name of the holiday for which the previous occurrence need to be retrieved.
@@ -299,25 +300,5 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     public function previous($shortName)
     {
         return $this->anotherTime($this->year - 1, $shortName);
-    }
-
-    /**
-     * Calculates the date for Easter.
-     *
-     * Easter is a festival and holiday celebrating the resurrection of Jesus Christ from the dead. Easter is celebrated
-     * on a date based on a certain number of days after March 21st.
-     *
-     * This function uses the standard PHP 'easter_days'.
-     *
-     * @see easter_days
-     *
-     * @return \DateTime date of Easter
-     */
-    protected function calculateEaster()
-    {
-        $easter = new DateTime("$this->year-3-21", new DateTimeZone($this->timezone));
-        $easter->add(new DateInterval('P' . \easter_days($this->year) . 'D'));
-
-        return $easter;
     }
 }

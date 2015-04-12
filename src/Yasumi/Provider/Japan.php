@@ -6,6 +6,8 @@
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
+ *
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 namespace Yasumi\Provider;
 
@@ -19,6 +21,8 @@ use Yasumi\Holiday;
  */
 class Japan extends AbstractProvider
 {
+    use CommonHolidays;
+
     /**
      * The gradient parameter of the approximate expression to calculate equinox day
      */
@@ -67,14 +71,10 @@ class Japan extends AbstractProvider
         $this->timezone = 'Asia/Tokyo';
 
         /*
-         * New Year's Day. New Year's Day is held on January 1st and established since 1948.
+         * New Year's Day. New Year's Day in Japan is established since 1948.
          */
         if ($this->year >= 1948) {
-            $holiday = new Holiday('newYearsDay', [],
-                new DateTime("$this->year-1-1", new DateTimeZone($this->timezone)), $this->locale);
-            $this->addHoliday($holiday);
-
-
+            $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
         }
 
         /**
@@ -163,7 +163,7 @@ class Japan extends AbstractProvider
      * of nature and the love of living things. Prior to 1948, the vernal equinox was an imperial ancestor worship
      * festival called Shunki kōrei-sai (春季皇霊祭).
      *
-     * @see http://www.h3.dion.ne.jp/~sakatsu/holiday_topic.htm (in Japanese)
+     * @link http://www.h3.dion.ne.jp/~sakatsu/holiday_topic.htm (in Japanese)
      */
     private function calculateVernalEquinoxDay()
     {
@@ -291,7 +291,7 @@ class Japan extends AbstractProvider
      * one's ancestors and remember the dead. Prior to 1948, the autumnal equinox was an imperial ancestor worship
      * festival called Shūki kōrei-sai (秋季皇霊祭).
      *
-     * @see http://www.h3.dion.ne.jp/~sakatsu/holiday_topic.htm (in Japanese)
+     * @link http://www.h3.dion.ne.jp/~sakatsu/holiday_topic.htm (in Japanese)
      */
     private function calculateAutumnalEquinoxDay()
     {
@@ -371,7 +371,6 @@ class Japan extends AbstractProvider
     {
         // Get initial list of holidays and iterator
         $datesIterator = $this->getIterator();
-        $dates         = $this->getHolidayDates();
 
         // Loop through all defined holidays
         while ($datesIterator->valid()) {

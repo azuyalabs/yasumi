@@ -6,6 +6,8 @@
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
+ *
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 namespace Yasumi\Provider;
 
@@ -19,6 +21,8 @@ use Yasumi\Holiday;
  */
 class USA extends AbstractProvider
 {
+    use CommonHolidays, ChristianHolidays;
+
     /**
      * Initialize holidays for the USA.
      */
@@ -26,16 +30,11 @@ class USA extends AbstractProvider
     {
         $this->timezone = 'America/New_York';
 
-        /*
-         * New Year's Day.
-         *
-         * New Year's Day is observed on January 1, the first day of the year on the modern Gregorian calendar as well
-         * as the Julian calendar.
-         *
-         * @link http://en.wikipedia.org/wiki/New_Year%27s_Day Source: Wikipedia.
-         */
-        $this->addHoliday(new Holiday('newYearsDay', [],
-            new DateTime("$this->year-1-1", new DateTimeZone($this->timezone)), $this->locale));
+        // Add common holidays
+        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
+
+        // Add Christian holidays
+        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
 
         /**
          * Dr. Martin Luther King Day.
@@ -179,19 +178,6 @@ class USA extends AbstractProvider
             ], new DateTime("fourth thursday of november $this->year", new DateTimeZone($this->timezone)),
                 $this->locale));
         }
-
-        /**
-         * Christmas Day.
-         *
-         * Christmas or Christmas Day (Old English: Crīstesmæsse, meaning "Christ's Mass") is an annual festival
-         * commemorating the birth of Jesus Christ, observed most commonly on December 25 as a religious and cultural
-         * celebration among billions of people around the world.
-         *
-         * @link http://en.wikipedia.org/wiki/Christmas Source: Wikipedia.
-         */
-        $this->addHoliday(new Holiday('christmasDay', [
-            'en_US' => 'Christmas Day'
-        ], new DateTime("$this->year-12-25", new DateTimeZone($this->timezone)), $this->locale));
 
         $this->calculateSubstituteHolidays();
     }
