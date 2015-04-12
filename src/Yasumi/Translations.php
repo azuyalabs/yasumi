@@ -2,12 +2,15 @@
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 Tomasz Sawicki
+ * Copyright (c) 2015 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
+ *
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Tomasz Sawicki
+ *
  */
-
 namespace Yasumi;
 
 use DirectoryIterator;
@@ -48,7 +51,7 @@ class Translations implements TranslationsInterface
      */
     public function loadTranslations($directoryPath)
     {
-        if (!file_exists($directoryPath)) {
+        if ( ! file_exists($directoryPath)) {
             throw new \InvalidArgumentException("Directory with translations not found");
         }
 
@@ -72,7 +75,7 @@ class Translations implements TranslationsInterface
 
             if (is_array($translations)) {
                 foreach (array_keys($translations) as $locale) {
-                    if (!in_array($locale, $this->availableLocales)) {
+                    if ( ! in_array($locale, $this->availableLocales)) {
                         throw new UnknownLocaleException(sprintf('Locale "%s" is not a valid locale.', $locale));
                     }
                 }
@@ -85,18 +88,18 @@ class Translations implements TranslationsInterface
     /**
      * Adds translation for holiday in specific locale.
      *
-     * @param string $shortName     holiday short name
-     * @param string $locale        locale
-     * @param string $translation   translation
+     * @param string $shortName   holiday short name
+     * @param string $locale      locale
+     * @param string $translation translation
      */
     public function addTranslation($shortName, $locale, $translation)
     {
-        if (!in_array($locale, $this->availableLocales)) {
+        if ( ! in_array($locale, $this->availableLocales)) {
             throw new UnknownLocaleException(sprintf('Locale "%s" is not a valid locale.', $locale));
         }
 
-        if (!array_key_exists($shortName, $this->translations)) {
-            $this->translations[$shortName] = array();
+        if ( ! array_key_exists($shortName, $this->translations)) {
+            $this->translations[$shortName] = [];
         }
 
         $this->translations[$shortName][$locale] = $translation;
@@ -112,11 +115,11 @@ class Translations implements TranslationsInterface
      */
     public function getTranslation($shortName, $locale)
     {
-        if (!array_key_exists($shortName, $this->translations)) {
+        if ( ! array_key_exists($shortName, $this->translations)) {
             return null;
         }
 
-        if (!array_key_exists($locale, $this->translations[$shortName])) {
+        if ( ! array_key_exists($locale, $this->translations[$shortName])) {
             return null;
         }
 
@@ -132,7 +135,7 @@ class Translations implements TranslationsInterface
      */
     public function getTranslations($shortName)
     {
-        if (!array_key_exists($shortName, $this->translations)) {
+        if ( ! array_key_exists($shortName, $this->translations)) {
             return [];
         }
 

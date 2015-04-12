@@ -3,10 +3,12 @@
  * This file is part of the Yasumi package.
  *
  * Copyright (c) 2015 AzuyaLabs
- * Copyright (c) 2015 Tomasz Sawicki
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
+ *
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Tomasz Sawicki
  */
 use Yasumi\Holiday;
 use Yasumi\Tests\YasumiBase;
@@ -108,7 +110,8 @@ class HolidayTest extends PHPUnit_Framework_TestCase
     /**
      * Tests the getName function of the Holiday object with global translations and no custom translation.
      */
-    public function testHolidayGetNameWithGlobalTranslations() {
+    public function testHolidayGetNameWithGlobalTranslations()
+    {
         /** @var TranslationsInterface|PHPUnit_Framework_MockObject_MockObject $translationsStub */
         $translationsStub = $this->getMock('\Yasumi\TranslationsInterface');
 
@@ -117,10 +120,7 @@ class HolidayTest extends PHPUnit_Framework_TestCase
             'pl_PL' => 'Nowy Rok',
         ];
 
-        $translationsStub->expects($this->once())
-            ->method('getTranslations')
-            ->with($this->equalTo('newYearsDay'))
-            ->willReturn($translations);
+        $translationsStub->expects($this->once())->method('getTranslations')->with($this->equalTo('newYearsDay'))->willReturn($translations);
 
         $locale = 'pl_PL';
 
@@ -135,7 +135,8 @@ class HolidayTest extends PHPUnit_Framework_TestCase
     /**
      * Tests the getName function of the Holiday object with global translations and a new custom translation.
      */
-    public function testHolidayGetNameWithGlobalAndCustomTranslations() {
+    public function testHolidayGetNameWithGlobalAndCustomTranslations()
+    {
         /** @var TranslationsInterface|PHPUnit_Framework_MockObject_MockObject $translationsStub */
         $translationsStub = $this->getMock('\Yasumi\TranslationsInterface');
 
@@ -144,15 +145,13 @@ class HolidayTest extends PHPUnit_Framework_TestCase
             'pl_PL' => 'Nowy Rok',
         ];
 
-        $translationsStub->expects($this->once())
-            ->method('getTranslations')
-            ->with($this->equalTo('newYearsDay'))
-            ->willReturn($translations);
+        $translationsStub->expects($this->once())->method('getTranslations')->with($this->equalTo('newYearsDay'))->willReturn($translations);
 
         $customLocale = 'nl_NL';
         $customTranslation = 'Nieuwjaar';
 
-        $holiday = new Holiday('newYearsDay', [$customLocale => $customTranslation], new DateTime("2015-01-01"), $customLocale);
+        $holiday = new Holiday('newYearsDay', [$customLocale => $customTranslation], new DateTime("2015-01-01"),
+            $customLocale);
         $holiday->mergeGlobalTranslations($translationsStub);
 
         $this->assertNotNull($holiday->getName());
@@ -163,7 +162,8 @@ class HolidayTest extends PHPUnit_Framework_TestCase
     /**
      * Tests the getName function of the Holiday object with global translations and an overriding custom translation.
      */
-    public function testHolidayGetNameWithOverridenGlobalTranslations() {
+    public function testHolidayGetNameWithOverridenGlobalTranslations()
+    {
         /** @var TranslationsInterface|PHPUnit_Framework_MockObject_MockObject $translationsStub */
         $translationsStub = $this->getMock('\Yasumi\TranslationsInterface');
 
@@ -172,15 +172,13 @@ class HolidayTest extends PHPUnit_Framework_TestCase
             'pl_PL' => 'Nowy Rok',
         ];
 
-        $translationsStub->expects($this->once())
-            ->method('getTranslations')
-            ->with($this->equalTo('newYearsDay'))
-            ->willReturn($translations);
+        $translationsStub->expects($this->once())->method('getTranslations')->with($this->equalTo('newYearsDay'))->willReturn($translations);
 
         $customLocale = 'pl_PL';
         $customTranslation = 'Bardzo Nowy Rok';
 
-        $holiday = new Holiday('newYearsDay', [$customLocale => $customTranslation], new DateTime("2015-01-01"), $customLocale);
+        $holiday = new Holiday('newYearsDay', [$customLocale => $customTranslation], new DateTime("2015-01-01"),
+            $customLocale);
         $holiday->mergeGlobalTranslations($translationsStub);
 
         $this->assertNotNull($holiday->getName());

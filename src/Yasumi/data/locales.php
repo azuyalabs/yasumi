@@ -6,6 +6,9 @@
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
+ *
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ *
  */
 
 // List of possible locales. This list is used in case the 'intl' extension is not loaded/available.

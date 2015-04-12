@@ -2,10 +2,13 @@
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 Tomasz Sawicki
+ * Copyright (c) 2015 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
+ *
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Tomasz Sawicki
  */
 use org\bovigo\vfs\vfsStream;
 use Yasumi\Translations;
@@ -31,7 +34,7 @@ class TranslationsTest extends PHPUnit_Framework_TestCase
     {
         $translations = new Translations($this->locales);
 
-        $locale = 'en_US';
+        $locale    = 'en_US';
         $shortName = 'newYearsDay';
         $translation = 'New Year\'s Day';
 
@@ -56,7 +59,7 @@ class TranslationsTest extends PHPUnit_Framework_TestCase
     {
         $translations = new Translations($this->locales);
 
-        $firstLocale = 'en_US';
+        $firstLocale    = 'en_US';
         $firstShortName = 'newYearsDay';
         $firstTranslation = 'New Year\'s Day';
 
@@ -70,7 +73,7 @@ class TranslationsTest extends PHPUnit_Framework_TestCase
         $this->assertInternalType('string', $translations->getTranslation($firstShortName, $firstLocale));
         $this->assertEquals($firstTranslation, $translations->getTranslation($firstShortName, $firstLocale));
 
-        $secondLocale = 'nl_NL';
+        $secondLocale    = 'nl_NL';
         $secondShortName = 'easter';
         $secondTranslation = 'Eerste Paasdag';
 
@@ -84,7 +87,7 @@ class TranslationsTest extends PHPUnit_Framework_TestCase
         $this->assertInternalType('string', $translations->getTranslation($secondShortName, $secondLocale));
         $this->assertEquals($secondTranslation, $translations->getTranslation($secondShortName, $secondLocale));
 
-        $thirdLocale = 'en_US';
+        $thirdLocale    = 'en_US';
         $thirdShortName = 'easter';
         $thirdTranslation = 'Easter Sunday';
 
@@ -123,7 +126,7 @@ class TranslationsTest extends PHPUnit_Framework_TestCase
     {
         $translations = new Translations($this->locales);
 
-        $locale = 'en_US';
+        $locale    = 'en_US';
         $shortName = 'newYearsDay';
         $translation = 'New Year\'s Day';
 
@@ -142,7 +145,7 @@ class TranslationsTest extends PHPUnit_Framework_TestCase
     {
         $translations = new Translations($this->locales);
 
-        $locale = 'en_US';
+        $locale    = 'en_US';
         $shortName = 'newYearsDay';
         $translation = 'New Year\'s Day';
 
@@ -269,15 +272,12 @@ return [
 ];
 FILE;
 
-        vfsStream::setup('root', null,
-            [
-                'lang' =>
-                    [
-                        $firstShortName . '.php'  => $firstFileContents,
-                        $secondShortName . '.php' => $secondFileContents
-                    ]
+        vfsStream::setup('root', null, [
+            'lang' => [
+                $firstShortName . '.php'  => $firstFileContents,
+                $secondShortName . '.php' => $secondFileContents
             ]
-        );
+        ]);
 
         $translations = new Translations($this->locales);
 

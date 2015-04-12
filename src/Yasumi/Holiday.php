@@ -3,10 +3,13 @@
  * This file is part of the Yasumi package.
  *
  * Copyright (c) 2015 AzuyaLabs
- * Copyright (c) 2015 Tomasz Sawicki
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
+ *
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Tomasz Sawicki
+ *
  */
 namespace Yasumi;
 
@@ -168,7 +171,8 @@ class Holiday extends DateTime implements JsonSerializable
      *
      * @param TranslationsInterface $globalTranslations global translations
      */
-    public function mergeGlobalTranslations(TranslationsInterface $globalTranslations) {
+    public function mergeGlobalTranslations(TranslationsInterface $globalTranslations)
+    {
         $holidayGlobalTranslations = $globalTranslations->getTranslations($this->shortName);
         $this->translations = array_merge($holidayGlobalTranslations, $this->translations);
     }
