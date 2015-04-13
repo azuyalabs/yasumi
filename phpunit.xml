@@ -18,22 +18,27 @@
             <directory suffix="Test.php">./tests</directory>
         </testsuite>
 
+        <!-- Test Suite base functionality of Yasumi -->
         <testsuite name="Base">
             <directory suffix="Test.php">./tests/Base</directory>
         </testsuite>
 
+        <!-- Test Suite for holidays in Japan -->
         <testsuite name="Japan">
             <directory suffix="Test.php">./tests/Japan</directory>
         </testsuite>
 
+        <!-- Test Suite for holidays in the Netherlands -->
         <testsuite name="Netherlands">
             <directory suffix="Test.php">./tests/Netherlands</directory>
         </testsuite>
 
+        <!-- Test Suite for holidays in Belgium -->
         <testsuite name="Belgium">
             <directory suffix="Test.php">./tests/Belgium</directory>
         </testsuite>
 
+        <!-- Test Suite for holidays in the USA -->
         <testsuite name="USA">
             <directory suffix="Test.php">./tests/USA</directory>
         </testsuite>
