@@ -87,4 +87,46 @@ trait CommonHolidays
     {
         return new Holiday('valentinesDay', [], new DateTime("$year-2-14", new DateTimeZone($timezone)), $locale);
     }
+
+    /**
+     * World Animal Day
+     *
+     * World Animal Day is an international day of action for animal rights and welfare celebrated annually on October
+     * 4, the Feast Day of St Francis of Assisi, the patron saint of animals. It started in 1931 at a convention of
+     * ecologists in Florence, Italy who wished to highlight the plight of endangered species.
+     *
+     * @link http://en.wikipedia.org/wiki/World_Animal_Day Source: Wikipedia.
+     *
+     * @param int    $year     the year for which World Animal Day need to be created
+     * @param string $timezone the timezone in which World Animal Day is celebrated
+     * @param string $locale   the locale for which World Animal Day need to be displayed in.
+     *
+     * @return \Yasumi\Holiday
+     */
+    public function worldAnimalDay($year, $timezone, $locale)
+    {
+        return new Holiday('worldAnimalDay', [], new DateTime("$year-10-4", new DateTimeZone($timezone)), $locale);
+    }
+
+    /**
+     * St. Martin's Day.
+     *
+     * St. Martin's Day, also known as the Feast of St. Martin, Martinstag or Martinmas, the Feast of St Martin of Tours
+     * or Martin le Miséricordieux, is a time for feasting celebrations. This is the time when autumn wheat seeding was
+     * completed, and the annual slaughter of fattened cattle produced "Martinmas beef". Historically, hiring fairs were
+     * held where farm laborers would seek new posts. November 11 is the feast day of St. Martin of Tours, who started
+     * out as a Roman soldier.
+     *
+     * @link http://en.wikipedia.org/wiki/St._Martin%27s_Day Source: Wikipedia.
+     *
+     * @param int    $year     the year for which St. Martin's Day need to be created
+     * @param string $timezone the timezone in which St. Martin's Day is celebrated
+     * @param string $locale   the locale for which St. Martin's Day need to be displayed in.
+     *
+     * @return \Yasumi\Holiday
+     */
+    public function stMartinsDay($year, $timezone, $locale)
+    {
+        return new Holiday('stMartinsDay', [], new DateTime("$year-11-11", new DateTimeZone($timezone)), $locale);
+    }
 }

@@ -12,33 +12,40 @@
 namespace Yasumi\Tests\Netherlands;
 
 use DateTime;
+use DateTimeZone;
 
 /**
- * Class WorldAnimalDayTest.
+ * Class to test World Animal Day.
+ *
+ * World Animal Day is an international day of action for animal rights and welfare celebrated annually on October
+ * 4, the Feast Day of St Francis of Assisi, the patron saint of animals. It started in 1931 at a convention of
+ * ecologists in Florence, Italy who wished to highlight the plight of endangered species.
+ *
+ * @link http://en.wikipedia.org/wiki/World_Animal_Day Source: Wikipedia.
  */
 class WorldAnimalDayTest extends NetherlandsBaseTestCase
 {
     /**
-     * Tests World Animal Day.
-     *
-     * @dataProvider WorldAnimalDayDataProvider
-     *
-     * @param int      $year     the year for which World Animal Day needs to be tested
-     * @param DateTime $expected the expected date
+     * The name of the holiday
      */
-    public function testWorldAnimalDay($year, $expected)
+    const HOLIDAY = 'worldAnimalDay';
+
+    /**
+     * Tests World Animal Day on or after 1931.
+     */
+    public function testWorldAnimalDayOnAfter1931()
     {
-        $this->assertHoliday(self::COUNTRY, 'worldAnimalDay', $year, $expected);
+        $year = $this->generateRandomYear(1931);
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+            new DateTime("$year-10-4", new DateTimeZone(self::TIMEZONE)));
 
     }
 
     /**
-     * Returns a list of random test dates used for assertion of World Animal Day.
-     *
-     * @return array list of test dates for World Animal Day
+     * Tests World Animal Day before 1931.
      */
-    public function WorldAnimalDayDataProvider()
+    public function testWorldAnimalBefore1931()
     {
-        return $this->generateRandomDates(10, 4, self::TIMEZONE);
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1930));
     }
 }

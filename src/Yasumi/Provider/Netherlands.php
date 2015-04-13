@@ -35,6 +35,13 @@ class Netherlands extends AbstractProvider
         $this->addHoliday($this->labourDay($this->year, $this->timezone, $this->locale), Holiday::TYPE_OTHER);
         $this->addHoliday($this->valentinesDay($this->year, $this->timezone, $this->locale), Holiday::TYPE_OTHER);
 
+        // World Animal Day is celebrated since 1931
+        if ($this->year >= 1931) {
+            $this->addHoliday($this->worldAnimalDay($this->year, $this->timezone, $this->locale), Holiday::TYPE_OTHER);
+        }
+
+        $this->addHoliday($this->stMartinsDay($this->year, $this->timezone, $this->locale), Holiday::TYPE_OBSERVANCE);
+
         // Add Christian holidays
         $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
@@ -109,25 +116,11 @@ class Netherlands extends AbstractProvider
             new DateTime("third tuesday of september $this->year", new DateTimeZone($this->timezone)), $this->locale,
             Holiday::TYPE_OTHER));
 
-
-        /*
-         * World Animal Day
-         */
-        $this->addHoliday(new Holiday('worldAnimalDay', ['en_US' => 'World Animal Day', 'nl_NL' => 'Dierendag'],
-            new DateTime("$this->year-10-04", new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OTHER));
-
         /*
          * Halloween
          */
         $this->addHoliday(new Holiday('halloween', ['en_US' => 'Halloween', 'nl_NL' => 'Halloween'],
             new DateTime("$this->year-10-31", new DateTimeZone($this->timezone)), $this->locale,
-            Holiday::TYPE_OBSERVANCE));
-
-        /**
-         * St. Martins Day
-         */
-        $this->addHoliday(new Holiday('stMartinsDay', ['en_US' => 'St. Martin\'s Day', 'nl_NL' => 'Sint Maarten'],
-            new DateTime("$this->year-11-11", new DateTimeZone($this->timezone)), $this->locale,
             Holiday::TYPE_OBSERVANCE));
 
         /**

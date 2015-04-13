@@ -103,7 +103,6 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * @param Holiday $holiday Holiday instance (representing a holiday) to be added to the internal list
      *                         of holidays of this country.
      *
-     * @access   protected
      */
     public function addHoliday(Holiday $holiday)
     {
