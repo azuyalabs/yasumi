@@ -68,7 +68,6 @@ class Translations implements TranslationsInterface
             }
 
             $filename = $file->getFilename();
-
             $shortName = $file->getBasename('.' . $extension);
 
             $translations = require $directoryPath . $filename;
