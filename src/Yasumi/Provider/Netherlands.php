@@ -41,6 +41,7 @@ class Netherlands extends AbstractProvider
         }
 
         $this->addHoliday($this->stMartinsDay($this->year, $this->timezone, $this->locale), Holiday::TYPE_OBSERVANCE);
+        $this->addHoliday($this->fathersDay($this->year, $this->timezone, $this->locale), Holiday::TYPE_OTHER);
 
         // Add Christian holidays
         $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
@@ -149,17 +150,6 @@ class Netherlands extends AbstractProvider
         $this->addHoliday(new Holiday('winterTime', ['en_US' => 'Wintertime', 'nl_NL' => 'Wintertijd'],
             new DateTime("last sunday of october $this->year", new DateTimeZone($this->timezone)), $this->locale,
             Holiday::TYPE_SEASON));
-
-        /**
-         * Father's Day.
-         *
-         * Father's Day is a celebration honoring fathers and celebrating fatherhood, paternal bonds, and the influence of
-         * fathers in society. In the Netherlands, Father's Day (Dutch: Vaderdag) is celebrated on the third Sunday of June and
-         * is not a public holiday.
-         */
-        $this->addHoliday(new Holiday('fathersDay', ['en_US' => 'Father\'s Day', 'nl_NL' => 'Vaderdag'],
-            new DateTime("third sunday of june $this->year", new DateTimeZone($this->timezone)), $this->locale,
-            Holiday::TYPE_OTHER));
 
         /**
          * Mother's Day.

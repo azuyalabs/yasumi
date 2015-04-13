@@ -129,4 +129,26 @@ trait CommonHolidays
     {
         return new Holiday('stMartinsDay', [], new DateTime("$year-11-11", new DateTimeZone($timezone)), $locale);
     }
+
+    /**
+     * Father's Day.
+     *
+     * Father's Day is a celebration honoring fathers and celebrating fatherhood, paternal bonds, and the influence of
+     * fathers in society. Many countries celebrate it on the third Sunday of June, though it is also celebrated widely
+     * on other days by many other countries. Father's Day was created to complement Mother's Day, a celebration that
+     * honors mothers and motherhood.
+     *
+     * @link http://en.wikipedia.org/wiki/Father%27s_Day Source: Wikipedia.
+     *
+     * @param int    $year     the year for which Father's Day need to be created
+     * @param string $timezone the timezone in which Father's Day is celebrated
+     * @param string $locale   the locale for which Father's Day need to be displayed in.
+     *
+     * @return \Yasumi\Holiday
+     */
+    public function fathersDay($year, $timezone, $locale)
+    {
+        return new Holiday('fathersDay', [], new DateTime("third sunday of june $year", new DateTimeZone($timezone)),
+            $locale);
+    }
 }
