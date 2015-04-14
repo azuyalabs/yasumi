@@ -65,6 +65,36 @@ trait YasumiBase
     }
 
     /**
+     * Asserts that the expected name is indeed provided as a translated holiday name for that given year and name
+     *
+     * @param string $provider     the holiday provider (i.e. country/state) for which the holiday need to be tested
+     * @param string $shortName    string the short name of the holiday to be checked against
+     * @param int    $year         holiday calendar year
+     * @param array  $translations the translations to be checked against
+     */
+    public function assertTranslatedHolidayName($provider, $shortName, $year, $translations)
+    {
+        $holidays = Yasumi::create($provider, $year);
+        $holiday  = $holidays->getHoliday($shortName);
+
+        $this->assertInstanceOf('Yasumi\Provider\\' . $provider, $holidays);
+        $this->assertInstanceOf('Yasumi\Holiday', $holiday);
+        $this->assertTrue(isset($holiday));
+        $this->assertTrue($holidays->isHoliday($holiday));
+
+        if (is_array($translations) && ! empty($translations)) {
+            foreach ($translations as $locale => $name) {
+                $translationExists = isset($holiday->translations[$locale]) ? true : false;
+
+                $this->assertTrue($translationExists);
+                $this->assertEquals($name, $holiday->translations[$locale]);
+            }
+        }
+
+        unset($holiday, $holidays);
+    }
+
+    /**
      * Returns a list of random test dates used for assertion of holidays.
      *
      * @param int    $month      month (number) for which the test date needs to be generated
