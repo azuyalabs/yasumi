@@ -32,7 +32,8 @@ class Netherlands extends AbstractProvider
 
         // Add common holidays
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->labourDay($this->year, $this->timezone, $this->locale), Holiday::TYPE_OTHER);
+        $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale),
+            Holiday::TYPE_OTHER);
         $this->addHoliday($this->valentinesDay($this->year, $this->timezone, $this->locale), Holiday::TYPE_OTHER);
 
         // World Animal Day is celebrated since 1931
@@ -169,7 +170,7 @@ class Netherlands extends AbstractProvider
          * and suspension of social norms. The feast became assimilated by the Catholic Church and was celebrated in the
          * three days preceding Ash Wednesday and Lent.
          */
-        $easter = $this->calculateEaster($this->year, $this->timezone);
+        $easter       = $this->calculateEaster($this->year, $this->timezone);
         $carnivalDay1 = clone $easter;
         $this->addHoliday(new Holiday('carnivalDay', ['en_US' => 'Carnival', 'nl_NL' => 'Carnaval'],
             $carnivalDay1->sub(new DateInterval('P49D')), $this->locale, Holiday::TYPE_OBSERVANCE));

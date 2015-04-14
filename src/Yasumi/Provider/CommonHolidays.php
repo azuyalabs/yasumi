@@ -46,24 +46,26 @@ trait CommonHolidays
     }
 
     /**
-     * Labour Day.
+     * International Workers' Day.
      *
-     * Labour Day (Labor Day in the United States) is an annual holiday to celebrate the achievements of workers.
-     * Labour Day has its origins in the labour union movement, specifically the eight-hour day movement, which
-     * advocated eight hours for work, eight hours for recreation, and eight hours for rest. For many countries, Labour
-     * Day is synonymous with, or linked with, International Workers' Day, which occurs on 1 May.
+     * International Workers' Day, also known as Labour Day in some places, is a celebration of laborers and the working
+     * classes that is promoted by the international labor movement, Anarchists, Socialists, and Communists and occurs
+     * every year on May Day, 1 May, an ancient European spring holiday. 1 May was chosen as the date for International
+     * Workers' Day by the Socialists and Communists of the Second International to commemorate the Haymarket affair in
+     * Chicago that occurred on 4 May, 1886.
      *
-     * @link http://en.wikipedia.org/wiki/Labour_Day Source: Wikipedia.
+     * @link http://en.wikipedia.org/wiki/International_Workers%27_Day Source: Wikipedia.
      *
-     * @param int    $year     the year for which Labour Day need to be created
-     * @param string $timezone the timezone in which Labour Day is celebrated
-     * @param string $locale   the locale for which Labour Day need to be displayed in.
+     * @param int    $year     the year for which International Workers' Day need to be created
+     * @param string $timezone the timezone in which International Workers' Day is celebrated
+     * @param string $locale   the locale for which International Workers' Day need to be displayed in.
      *
      * @return \Yasumi\Holiday
      */
-    public function labourDay($year, $timezone, $locale)
+    public function internationalWorkersDay($year, $timezone, $locale)
     {
-        return new Holiday('labourDay', [], new DateTime("$year-5-1", new DateTimeZone($timezone)), $locale);
+        return new Holiday('internationalWorkersDay', [], new DateTime("$year-5-1", new DateTimeZone($timezone)),
+            $locale);
     }
 
     /**
