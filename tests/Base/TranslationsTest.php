@@ -174,7 +174,6 @@ FILE;
         vfsStream::setup('root', null, ['lang' => [$shortName . '.php' => $fileContents]]);
 
         $translations = new Translations($this->locales);
-
         $translations->loadTranslations(vfsStream::url('root/lang'));
 
         $locale = 'en_US';
@@ -204,7 +203,6 @@ FILE;
         vfsStream::setup('root', null, ['lang' => [$shortName . '.translation' => $fileContents]]);
 
         $translations = new Translations($this->locales);
-
         $translations->loadTranslations(vfsStream::url('root/lang'));
 
         $this->assertNotNull($translations->getTranslations($shortName));
@@ -230,7 +228,6 @@ FILE;
         vfsStream::setup('root', null, ['lang' => [$shortName . '.php' => $fileContents]]);
 
         $translations = new Translations($this->locales);
-
         $translations->loadTranslations(vfsStream::url('root/lang'));
     }
 
@@ -244,7 +241,6 @@ FILE;
         vfsStream::setup('root');
 
         $translations = new Translations($this->locales);
-
         $translations->loadTranslations(vfsStream::url('root/lang'));
     }
 
