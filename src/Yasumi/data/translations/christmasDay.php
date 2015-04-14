@@ -15,5 +15,6 @@
 return [
     'en_US' => 'Christmas',
     'nl_NL' => 'Kerstmis',
-    'nl_BE' => 'Kerstmis'
+    'nl_BE' => 'Kerstmis',
+    'it_IT' => 'Natale'
 ];

@@ -19,4 +19,5 @@ return [
     'nl_BE' => 'Nieuwjaar',
     'pl_PL' => 'Nowy Rok',
     'ja_JP' => '元日',
+    'it_IT' => 'Capodanno',
 ];

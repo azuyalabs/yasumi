@@ -15,5 +15,6 @@
 return [
     'en_US' => 'Assumption of Mary',
     'nl_NL' => 'Onze Lieve Vrouw hemelvaart',
-    'nl_BE' => 'Onze Lieve Vrouw hemelvaart'
+    'nl_BE' => 'Onze Lieve Vrouw hemelvaart',
+    'it_IT' => 'Assunzione di Maria Vergine'
 ];

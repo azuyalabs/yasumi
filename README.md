@@ -32,6 +32,7 @@ Currently the following holiday providers are implemented:
 * Netherlands
 * Belgium
 * USA
+* Italy
 
 
 System Requirements
@@ -67,6 +68,7 @@ The tests are organized in some test suites to make testing a bit more easier:
 * Netherlands: For separately testing the Netherlands Holiday Provider
 * Belgium    : For separately testing the Belgium Holiday Provider
 * USA        : For separately testing the USA Holiday Provider
+* Italy      : For separately testing the Italy Holiday Provider
 
 
 Basic Usage
@@ -156,7 +158,7 @@ included:
 - ~~Global Translations~~
 - Filters
 - ~~Common holiday providers~~
-- Additional countries (Italy and France)
+- Additional countries (~~Italy~~ and France)
 
 
 License

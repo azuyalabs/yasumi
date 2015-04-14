@@ -11,10 +11,7 @@
  *
  */
 
-// Translation for All Saints Day
+// Translation for the day of Immaculate Conception
 return [
-    'en_US' => 'All Saints\' Day',
-    'nl_NL' => 'Allerheiligen',
-    'nl_BE' => 'Allerheiligen',
-    'it_IT' => 'Festa di Tutti i Santi',
+    'it_IT' => 'Immacolata Concezione',
 ];

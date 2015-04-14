@@ -18,4 +18,5 @@ return [
     'nl_BE' => 'Drie Koningen',
     'pl_PL' => 'Święto Trzech Króli',
     'ja_JP' => 'エピファニー',
+    'it_IT' => 'Epifania'
 ];
