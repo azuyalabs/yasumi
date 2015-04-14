@@ -184,7 +184,11 @@ trait ChristianHolidays
      * All Saints' Day.
      *
      * All Saints' Day, also known as All Hallows, Solemnity of All Saints, or Feast of All Saints is a solemnity
-     * celebrated on 1 November by the Catholic Church and various Protestant denominations in honour of all the saints.
+     * celebrated on 1 November by the Catholic Church and various Protestant denominations, and on the first Sunday
+     * after Pentecost in Eastern Catholicism and Eastern Orthodoxy, in honour of all the saints, known and unknown.
+     * The liturgical celebration begins at Vespers on the evening of 31 October and ends at the close of 1 November.
+     *
+     * @link http://en.wikipedia.org/wiki/All_Saints%27_Day Source: Wikipedia
      *
      * @param int    $year     the year for which All Saints' Day need to be created
      * @param string $timezone the timezone in which All Saints' Day is celebrated
@@ -203,6 +207,8 @@ trait ChristianHolidays
      * The Assumption of the Virgin Mary into Heaven, informally known as the Assumption, was the bodily taking up
      * of the Virgin Mary into Heaven at the end of her earthly life. In the churches that observe it, the
      * Assumption is a major feast day, commonly celebrated on August 15.
+     *
+     * @link http://en.wikipedia.org/wiki/Assumption_of_Mary Source: Wikipedia
      *
      * @param int    $year     the year for which the day of the Assumption of Mary need to be created
      * @param string $timezone the timezone in which the day of the Assumption of Mary is celebrated
@@ -275,5 +281,49 @@ trait ChristianHolidays
     {
         return new Holiday('ashWednesday', [], $this->calculateEaster($year, $timezone)->sub(new DateInterval('P46D')),
             $locale);
+    }
+
+    /**
+     * Immaculate Conception.
+     *
+     * The Feast of the Immaculate Conception celebrates the solemn belief in the Immaculate Conception of the Blessed
+     * Virgin Mary. It is universally celebrated on December 8, nine months before the feast of the Nativity of Mary,
+     * which is celebrated on September 8. It is one of the most important Marian feasts celebrated in the liturgical
+     * calendar of the Roman Catholic Church.
+     *
+     * @link http://en.wikipedia.org/wiki/Feast_of_the_Immaculate_Conception Source: Wikipedia.
+     *
+     * @param int    $year     the year for which Immaculate Conception need to be created
+     * @param string $timezone the timezone in which Immaculate Conception is celebrated
+     * @param string $locale   the locale for which Immaculate Conception need to be displayed in.
+     *
+     * @return \Yasumi\Holiday
+     */
+    public function immaculateConception($year, $timezone, $locale)
+    {
+        return new Holiday('immaculateConception', [], new DateTime("$year-12-8", new DateTimeZone($timezone)),
+            $locale);
+    }
+
+    /**
+     * St. Stephen's Day.
+     *
+     * St. Stephen's Day, or the Feast of St. Stephen, is a Christian saint's day to commemorate Saint Stephen, the
+     * first Christian martyr or protomartyr, celebrated on 26 December in the Western Church and 27 December in the
+     * Eastern Church. Many Eastern Orthodox churches adhere to the Julian calendar and mark St. Stephen's Day on 27
+     * December according to that calendar, which places it on 8 January of the Gregorian calendar used in secular
+     * contexts.
+     *
+     * @link http://en.wikipedia.org/wiki/St._Stephen%27s_Day Source: Wikipedia.
+     *
+     * @param int    $year     the year for which St. Stephen's Day need to be created
+     * @param string $timezone the timezone in which St. Stephen's Day is celebrated
+     * @param string $locale   the locale for which St. Stephen's Day need to be displayed in.
+     *
+     * @return \Yasumi\Holiday
+     */
+    public function stStephensDay($year, $timezone, $locale)
+    {
+        return new Holiday('stStephensDay', [], new DateTime("$year-12-26", new DateTimeZone($timezone)), $locale);
     }
 }
