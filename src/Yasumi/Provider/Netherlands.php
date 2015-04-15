@@ -43,6 +43,7 @@ class Netherlands extends AbstractProvider
 
         $this->addHoliday($this->stMartinsDay($this->year, $this->timezone, $this->locale), Holiday::TYPE_OBSERVANCE);
         $this->addHoliday($this->fathersDay($this->year, $this->timezone, $this->locale), Holiday::TYPE_OTHER);
+        $this->addHoliday($this->mothersDay($this->year, $this->timezone, $this->locale), Holiday::TYPE_OTHER);
 
         // Add Christian holidays
         $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
@@ -151,17 +152,6 @@ class Netherlands extends AbstractProvider
         $this->addHoliday(new Holiday('winterTime', ['en_US' => 'Wintertime', 'nl_NL' => 'Wintertijd'],
             new DateTime("last sunday of october $this->year", new DateTimeZone($this->timezone)), $this->locale,
             Holiday::TYPE_SEASON));
-
-        /**
-         * Mother's Day.
-         *
-         * Mother's Day is a modern celebration honoring one's own mother, as well as motherhood, maternal bonds, and the
-         * influence of mothers in society. In the Netherlands, Mother's Day (Dutch: Moederdag) is celebrated on the second
-         * Sunday of May and is not a public holiday.
-         */
-        $this->addHoliday(new Holiday('mothersDay', ['en_US' => 'Mother\'s Day', 'nl_NL' => 'Moederdag'],
-            new DateTime("second sunday of may $this->year", new DateTimeZone($this->timezone)), $this->locale,
-            Holiday::TYPE_OTHER));
 
         /**
          * Carnival.

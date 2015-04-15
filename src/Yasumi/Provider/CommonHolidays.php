@@ -153,4 +153,26 @@ trait CommonHolidays
         return new Holiday('fathersDay', [], new DateTime("third sunday of june $year", new DateTimeZone($timezone)),
             $locale);
     }
+
+    /**
+     * Mother's Day.
+     *
+     * Mother's Day is a modern celebration honoring one's own mother, as well as motherhood, maternal bonds, and the
+     * influence of mothers in society. It is celebrated on various days in many parts of the world, most commonly in
+     * the months of March or May. It complements similar celebrations honoring family members, such as Father's Day and
+     * Siblings Day.
+     *
+     * @link http://en.wikipedia.org/wiki/Mother%27s_Day Source: Wikipedia.
+     *
+     * @param int    $year     the year for which Mother's Day need to be created
+     * @param string $timezone the timezone in which Mother's Day is celebrated
+     * @param string $locale   the locale for which Mother's Day need to be displayed in.
+     *
+     * @return \Yasumi\Holiday
+     */
+    public function mothersDay($year, $timezone, $locale)
+    {
+        return new Holiday('mothersDay', [], new DateTime("second sunday of may $year", new DateTimeZone($timezone)),
+            $locale);
+    }
 }
