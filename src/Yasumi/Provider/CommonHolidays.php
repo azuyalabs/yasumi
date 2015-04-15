@@ -175,4 +175,25 @@ trait CommonHolidays
         return new Holiday('mothersDay', [], new DateTime("second sunday of may $year", new DateTimeZone($timezone)),
             $locale);
     }
+
+    /**
+     * Victory in Europe Day.
+     *
+     * Victory in Europe Day, generally known as V-E Day, VE Day, or simply V Day was the public holiday celebrated on 8
+     * May 1945 (7 May in Commonwealth realms) to mark the formal acceptance by the Allies of World War II of Nazi
+     * Germany's unconditional surrender of its armed forces. It thus marked the end of World War II in Europe. Some
+     * countries commemorate the end of the war on a different date.
+     *
+     * @link http://en.wikipedia.org/wiki/Victory_in_Europe_Day Source: Wikipedia.
+     *
+     * @param int    $year     the year for which Victory in Europe Day need to be created
+     * @param string $timezone the timezone in which Victory in Europe Day is celebrated
+     * @param string $locale   the locale for which Victory in Europe Day need to be displayed in.
+     *
+     * @return \Yasumi\Holiday
+     */
+    public function victoryInEuropeDay($year, $timezone, $locale)
+    {
+        return new Holiday('victoryInEuropeDay', [], new DateTime("$year-5-8", new DateTimeZone($timezone)), $locale);
+    }
 }
