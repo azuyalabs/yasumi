@@ -196,4 +196,27 @@ trait CommonHolidays
     {
         return new Holiday('victoryInEuropeDay', [], new DateTime("$year-5-8", new DateTimeZone($timezone)), $locale);
     }
+
+    /**
+     * Armistice Day.
+     *
+     * Armistice Day is commemorated every year on 11 November to mark the armistice signed between the Allies of World
+     * War I and Germany at Compiègne, France, for the cessation of hostilities on the Western Front of World War I.
+     * The date was declared a national holiday in many allied nations, to commemorate those members of the armed forces
+     * who were killed during war. An exception is Italy, where the end of the war is commemorated on 4 November, the
+     * day of the Armistice of Villa Giusti. In the Netherlands, Denmark and Norway World War I is not commemorated as
+     * the three countries all remained neutral.
+     *
+     * @link http://en.wikipedia.org/wiki/Armistice_Day Source: Wikipedia.
+     *
+     * @param int    $year     the year for which Armistice Day need to be created
+     * @param string $timezone the timezone in which Armistice Day is celebrated
+     * @param string $locale   the locale for which Armistice Day need to be displayed in.
+     *
+     * @return \Yasumi\Holiday
+     */
+    public function armisticeDay($year, $timezone, $locale)
+    {
+        return new Holiday('armisticeDay', [], new DateTime("$year-11-11", new DateTimeZone($timezone)), $locale);
+    }
 }

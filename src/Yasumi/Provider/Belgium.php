@@ -43,6 +43,7 @@ class Belgium extends AbstractProvider
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->assumptionOfMary($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->armisticeDay($this->year, $this->timezone, $this->locale));
 
         /*
          * Belgian National Day.
@@ -54,18 +55,5 @@ class Belgium extends AbstractProvider
             'nl_NL' => 'Nationale feestdag',
             'nl_BE' => 'Nationale feestdag'
         ], new DateTime("$this->year-7-21", new DateTimeZone($this->timezone)), $this->locale));
-
-        /**
-         * Armistice Day.
-         *
-         * Armistice Day is commemorated every year on 11 November to mark the armistice signed between the Allies of
-         * World War I and Germany at Compiègne, France, for the cessation of hostilities on the Western Front of World
-         * War I.
-         */
-        $this->addHoliday(new Holiday('armisticeDay', [
-            'en_US' => 'Armistice Day',
-            'nl_NL' => 'Wapenstilstand',
-            'nl_BE' => 'Wapenstilstand'
-        ], new DateTime("$this->year-11-11", new DateTimeZone($this->timezone)), $this->locale));
     }
 }
