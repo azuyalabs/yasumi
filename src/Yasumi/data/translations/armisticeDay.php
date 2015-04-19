@@ -11,12 +11,9 @@
  *
  */
 
-// Translation for Good Friday
+// Translation for Armistice Day
 return [
-    'en_US' => 'Good Friday',
-    'nl_NL' => 'Goede Vrijdag',
-    'nl_BE' => 'Goede Vrijdag',
-    'pl_PL' => 'Dobry Piątek',
-    'ja_JP' => 'グッドフライデー',
-    'fr_FR' => 'Vendredi saint'
+    'en_US' => 'Armistice Day',
+    'nl_BE' => 'Wapenstilstand',
+    'fr_FR' => 'Armistice'
 ];

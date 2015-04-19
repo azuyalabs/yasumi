@@ -33,6 +33,7 @@ Currently the following holiday providers are implemented:
 * Belgium
 * USA
 * Italy
+* France
 
 
 System Requirements
@@ -69,6 +70,7 @@ The tests are organized in some test suites to make testing a bit more easier:
 * Belgium    : For separately testing the Belgium Holiday Provider
 * USA        : For separately testing the USA Holiday Provider
 * Italy      : For separately testing the Italy Holiday Provider
+* France     : For separately testing the France Holiday Provider
 
 
 Basic Usage
@@ -155,10 +157,10 @@ Roadmap
 Yasumi is still in development and a stable release is coming soon. For its first release, we will have the following
 included:
 
-- ~~Global Translations~~
 - Filters
+- ~~Global Translations~~
 - ~~Common holiday providers~~
-- Additional countries (~~Italy~~ and France)
+- Additional countries (~~Italy~~ and ~~France~~)
 
 
 License

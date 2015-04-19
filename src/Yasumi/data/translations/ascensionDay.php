@@ -15,5 +15,6 @@
 return [
     'en_US' => 'Ascension Day',
     'nl_NL' => 'Hemelvaart',
-    'nl_BE' => 'Hemelvaart'
+    'nl_BE' => 'Hemelvaart',
+    'fr_FR' => 'Ascension'
 ];

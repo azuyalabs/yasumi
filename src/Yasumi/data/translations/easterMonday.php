@@ -16,5 +16,6 @@ return [
     'en_US' => 'Easter Monday',
     'nl_NL' => 'Tweede Paasdag',
     'nl_BE' => 'Paasmaandag',
-    'it_IT' => 'Lunedi` dell\'Angelo'
+    'it_IT' => 'Lunedi` dell\'Angelo',
+    'fr_FR' => 'Lundi de Pâques'
 ];

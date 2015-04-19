@@ -14,4 +14,5 @@
 // Translation for St. Stephen's Day
 return [
     'it_IT' => 'Santo Stefano',
+    'fr_FR' => 'Saint-Étienne'
 ];
