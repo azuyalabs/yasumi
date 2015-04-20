@@ -55,6 +55,6 @@ class RepublicDayTest extends ItalyBaseTestCase
     public function testTranslatedRepublicDay()
     {
         $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1946),
-            ['it_IT' => 'Festa della Repubblica']);
+            ['it_IT' => 'Festa della Republica']);
     }
 }

@@ -71,7 +71,7 @@ class Italy extends AbstractProvider
          * @link http://en.wikipedia.org/wiki/Festa_della_Repubblica Source: Wikipedia.
          */
         if ($this->year >= 1946) {
-            $this->addHoliday(new Holiday('republicDay', ['it_IT' => 'Festa della Repubblica'],
+            $this->addHoliday(new Holiday('republicDay', ['it_IT' => 'Festa della Republica'],
                 new DateTime("$this->year-6-2", new DateTimeZone($this->timezone)), $this->locale));
         }
     }
