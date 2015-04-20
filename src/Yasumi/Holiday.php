@@ -52,22 +52,27 @@ class Holiday extends DateTime implements JsonSerializable
      * The default locale. Used for translations of holiday names and other text strings.
      */
     const DEFAULT_LOCALE = 'en_US';
+
     /**
      * @var array list of all defined locales
      */
     private static $locales;
+
     /**
      * @var string short name (internal name) of this holiday
      */
     public $shortName;
+
     /**
      * @var array list of translations of this holiday
      */
     public $translations;
+
     /**
      * @var string identifies the type of holiday
      */
     private $type;
+
     /**
      * @var string Locale (i.e. language) in which the holiday information needs to be displayed in. (Default 'en_US')
      */
@@ -86,8 +91,8 @@ class Holiday extends DateTime implements JsonSerializable
      * @param string   $displayLocale        Locale (i.e. language) in which the holiday information needs to be
      *                                       displayed in. (Default 'en_US')
      * @param string   $type                 The type of holiday. Use the following constants: TYPE_NATIONAL,
-     *                                       TYPE_OBSERVANCE, TYPE_SEASON or TYPE_BANK. By default a national holiday
-     *                                       is considered.
+     *                                       TYPE_OBSERVANCE, TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a
+     *                                       national holiday is considered.
      *
      * @throws UnknownLocaleException
      */
@@ -152,8 +157,8 @@ class Holiday extends DateTime implements JsonSerializable
      * Returns the name of this holiday.
      *
      * The name of this holiday is returned translated in the given locale. If for the given locale no translation is
-     * defined, the name in the default locale ('en_US') is returned.
-     * In case there is no translation at all, the short internal name is returned.
+     * defined, the name in the default locale ('en_US') is returned. In case there is no translation at all, the short
+     * internal name is returned.
      */
     public function getName()
     {
