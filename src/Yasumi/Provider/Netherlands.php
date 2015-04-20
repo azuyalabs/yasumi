@@ -32,18 +32,18 @@ class Netherlands extends AbstractProvider
 
         // Add common holidays
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale),
-            Holiday::TYPE_OTHER);
-        $this->addHoliday($this->valentinesDay($this->year, $this->timezone, $this->locale), Holiday::TYPE_OTHER);
+        $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale,
+            Holiday::TYPE_OTHER));
+        $this->addHoliday($this->valentinesDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
 
         // World Animal Day is celebrated since 1931
         if ($this->year >= 1931) {
-            $this->addHoliday($this->worldAnimalDay($this->year, $this->timezone, $this->locale), Holiday::TYPE_OTHER);
+            $this->addHoliday($this->worldAnimalDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         }
 
-        $this->addHoliday($this->stMartinsDay($this->year, $this->timezone, $this->locale), Holiday::TYPE_OBSERVANCE);
-        $this->addHoliday($this->fathersDay($this->year, $this->timezone, $this->locale), Holiday::TYPE_OTHER);
-        $this->addHoliday($this->mothersDay($this->year, $this->timezone, $this->locale), Holiday::TYPE_OTHER);
+        $this->addHoliday($this->stMartinsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->fathersDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->mothersDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
 
         // Add Christian holidays
         $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
@@ -51,9 +51,9 @@ class Netherlands extends AbstractProvider
         $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale), Holiday::TYPE_OBSERVANCE);
-        $this->addHoliday($this->ashWednesday($this->year, $this->timezone, $this->locale), Holiday::TYPE_OBSERVANCE);
-        $this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale), Holiday::TYPE_OTHER);
+        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->ashWednesday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
 

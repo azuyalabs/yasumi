@@ -35,12 +35,14 @@ trait ChristianHolidays
      * @param int    $year     the year for which Easter need to be created
      * @param string $timezone the timezone in which Easter is celebrated
      * @param string $locale   the locale for which Easter need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
      */
-    public function easter($year, $timezone, $locale)
+    public function easter($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('easter', [], $easter = $this->calculateEaster($year, $timezone), $locale);
+        return new Holiday('easter', [], $easter = $this->calculateEaster($year, $timezone), $locale, $type);
     }
 
     /**
@@ -78,13 +80,15 @@ trait ChristianHolidays
      * @param int    $year     the year for which Easter Monday need to be created
      * @param string $timezone the timezone in which Easter Monday is celebrated
      * @param string $locale   the locale for which Easter Monday need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
      */
-    public function easterMonday($year, $timezone, $locale)
+    public function easterMonday($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
         return new Holiday('easterMonday', [], $this->calculateEaster($year, $timezone)->add(new DateInterval('P1D')),
-            $locale);
+            $locale, $type);
     }
 
     /**
@@ -99,13 +103,15 @@ trait ChristianHolidays
      * @param int    $year     the year for which Ascension need to be created
      * @param string $timezone the timezone in which Ascension is celebrated
      * @param string $locale   the locale for which Ascension need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
      */
-    public function ascensionDay($year, $timezone, $locale)
+    public function ascensionDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
         return new Holiday('ascensionDay', [], $this->calculateEaster($year, $timezone)->add(new DateInterval('P39D')),
-            $locale);
+            $locale, $type);
     }
 
     /**
@@ -117,13 +123,15 @@ trait ChristianHolidays
      * @param int    $year     the year for which Pentecost need to be created
      * @param string $timezone the timezone in which Pentecost is celebrated
      * @param string $locale   the locale for which Pentecost need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
      */
-    public function pentecost($year, $timezone, $locale)
+    public function pentecost($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
         return new Holiday('pentecost', [], $this->calculateEaster($year, $timezone)->add(new DateInterval('P49D')),
-            $locale);
+            $locale, $type);
     }
 
     /**
@@ -135,13 +143,15 @@ trait ChristianHolidays
      * @param int    $year     the year for which Pentecost (Whitmonday) need to be created
      * @param string $timezone the timezone in which Pentecost (Whitmonday) is celebrated
      * @param string $locale   the locale for which Pentecost (Whitmonday) need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
      */
-    public function pentecostMonday($year, $timezone, $locale)
+    public function pentecostMonday($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
         return new Holiday('pentecostMonday', [],
-            $this->calculateEaster($year, $timezone)->add(new DateInterval('P50D')), $locale);
+            $this->calculateEaster($year, $timezone)->add(new DateInterval('P50D')), $locale, $type);
     }
 
     /**
@@ -154,12 +164,15 @@ trait ChristianHolidays
      * @param int    $year     the year for which Christmas Day need to be created
      * @param string $timezone the timezone in which Christmas Day is celebrated
      * @param string $locale   the locale for which Christmas Day need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
      */
-    public function christmasDay($year, $timezone, $locale)
+    public function christmasDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('christmasDay', [], new DateTime("$year-12-25", new DateTimeZone($timezone)), $locale);
+        return new Holiday('christmasDay', [], new DateTime("$year-12-25", new DateTimeZone($timezone)), $locale,
+            $type);
     }
 
     /**
@@ -172,12 +185,15 @@ trait ChristianHolidays
      * @param int    $year     the year for which the Second Christmas Day / Boxing Day need to be created
      * @param string $timezone the timezone in which the Second Christmas Day / Boxing Day is celebrated
      * @param string $locale   the locale for which the Second Christmas Day / Boxing Day need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
      */
-    public function secondChristmasDay($year, $timezone, $locale)
+    public function secondChristmasDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('secondChristmasDay', [], new DateTime("$year-12-26", new DateTimeZone($timezone)), $locale);
+        return new Holiday('secondChristmasDay', [], new DateTime("$year-12-26", new DateTimeZone($timezone)), $locale,
+            $type);
     }
 
     /**
@@ -193,12 +209,14 @@ trait ChristianHolidays
      * @param int    $year     the year for which All Saints' Day need to be created
      * @param string $timezone the timezone in which All Saints' Day is celebrated
      * @param string $locale   the locale for which All Saints' Day need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
      */
-    public function allSaintsDay($year, $timezone, $locale)
+    public function allSaintsDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('allSaintsDay', [], new DateTime("$year-11-1", new DateTimeZone($timezone)), $locale);
+        return new Holiday('allSaintsDay', [], new DateTime("$year-11-1", new DateTimeZone($timezone)), $locale, $type);
     }
 
     /**
@@ -213,12 +231,15 @@ trait ChristianHolidays
      * @param int    $year     the year for which the day of the Assumption of Mary need to be created
      * @param string $timezone the timezone in which the day of the Assumption of Mary is celebrated
      * @param string $locale   the locale for which the day of the Assumption of Mary need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
      */
-    public function assumptionOfMary($year, $timezone, $locale)
+    public function assumptionOfMary($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('assumptionOfMary', [], new DateTime("$year-8-15", new DateTimeZone($timezone)), $locale);
+        return new Holiday('assumptionOfMary', [], new DateTime("$year-8-15", new DateTimeZone($timezone)), $locale,
+            $type);
     }
 
     /**
@@ -231,13 +252,15 @@ trait ChristianHolidays
      * @param int    $year     the year for which Good Friday need to be created
      * @param string $timezone the timezone in which Good Friday is celebrated
      * @param string $locale   the locale for which Good Friday need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
      */
-    public function goodFriday($year, $timezone, $locale)
+    public function goodFriday($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
         return new Holiday('goodFriday', [], $this->calculateEaster($year, $timezone)->sub(new DateInterval('P2D')),
-            $locale);
+            $locale, $type);
     }
 
     /**
@@ -254,12 +277,14 @@ trait ChristianHolidays
      * @param int    $year     the year for which Epiphany need to be created
      * @param string $timezone the timezone in which Epiphany is celebrated
      * @param string $locale   the locale for which Epiphany need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
      */
-    public function epiphany($year, $timezone, $locale)
+    public function epiphany($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('epiphany', [], new DateTime("$year-1-6", new DateTimeZone($timezone)), $locale);
+        return new Holiday('epiphany', [], new DateTime("$year-1-6", new DateTimeZone($timezone)), $locale, $type);
     }
 
     /**
@@ -274,13 +299,15 @@ trait ChristianHolidays
      * @param int    $year     the year for which Ash Wednesday need to be created
      * @param string $timezone the timezone in which Ash Wednesday is celebrated
      * @param string $locale   the locale for which Ash Wednesday need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
      */
-    public function ashWednesday($year, $timezone, $locale)
+    public function ashWednesday($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
         return new Holiday('ashWednesday', [], $this->calculateEaster($year, $timezone)->sub(new DateInterval('P46D')),
-            $locale);
+            $locale, $type);
     }
 
     /**
@@ -296,13 +323,15 @@ trait ChristianHolidays
      * @param int    $year     the year for which Immaculate Conception need to be created
      * @param string $timezone the timezone in which Immaculate Conception is celebrated
      * @param string $locale   the locale for which Immaculate Conception need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
      */
-    public function immaculateConception($year, $timezone, $locale)
+    public function immaculateConception($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('immaculateConception', [], new DateTime("$year-12-8", new DateTimeZone($timezone)),
-            $locale);
+        return new Holiday('immaculateConception', [], new DateTime("$year-12-8", new DateTimeZone($timezone)), $locale,
+            $type);
     }
 
     /**
@@ -319,11 +348,14 @@ trait ChristianHolidays
      * @param int    $year     the year for which St. Stephen's Day need to be created
      * @param string $timezone the timezone in which St. Stephen's Day is celebrated
      * @param string $locale   the locale for which St. Stephen's Day need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
      */
-    public function stStephensDay($year, $timezone, $locale)
+    public function stStephensDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('stStephensDay', [], new DateTime("$year-12-26", new DateTimeZone($timezone)), $locale);
+        return new Holiday('stStephensDay', [], new DateTime("$year-12-26", new DateTimeZone($timezone)), $locale,
+            $type);
     }
 }

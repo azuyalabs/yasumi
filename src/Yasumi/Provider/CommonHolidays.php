@@ -37,12 +37,14 @@ trait CommonHolidays
      * @param int    $year     the year for which New Year's Day need to be created
      * @param string $timezone the timezone in which New Year's Day is celebrated
      * @param string $locale   the locale for which New Year's Day need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
      */
-    public function newYearsDay($year, $timezone, $locale)
+    public function newYearsDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('newYearsDay', [], new DateTime("$year-1-1", new DateTimeZone($timezone)), $locale);
+        return new Holiday('newYearsDay', [], new DateTime("$year-1-1", new DateTimeZone($timezone)), $locale, $type);
     }
 
     /**
@@ -59,13 +61,15 @@ trait CommonHolidays
      * @param int    $year     the year for which International Workers' Day need to be created
      * @param string $timezone the timezone in which International Workers' Day is celebrated
      * @param string $locale   the locale for which International Workers' Day need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
      */
-    public function internationalWorkersDay($year, $timezone, $locale)
+    public function internationalWorkersDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
         return new Holiday('internationalWorkersDay', [], new DateTime("$year-5-1", new DateTimeZone($timezone)),
-            $locale);
+            $locale, $type);
     }
 
     /**
@@ -82,12 +86,15 @@ trait CommonHolidays
      * @param int    $year     the year for which Valentine's Day need to be created
      * @param string $timezone the timezone in which Valentine's Day is celebrated
      * @param string $locale   the locale for which Valentine's Day need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
      */
-    public function valentinesDay($year, $timezone, $locale)
+    public function valentinesDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('valentinesDay', [], new DateTime("$year-2-14", new DateTimeZone($timezone)), $locale);
+        return new Holiday('valentinesDay', [], new DateTime("$year-2-14", new DateTimeZone($timezone)), $locale,
+            $type);
     }
 
     /**
@@ -102,12 +109,15 @@ trait CommonHolidays
      * @param int    $year     the year for which World Animal Day need to be created
      * @param string $timezone the timezone in which World Animal Day is celebrated
      * @param string $locale   the locale for which World Animal Day need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
      */
-    public function worldAnimalDay($year, $timezone, $locale)
+    public function worldAnimalDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('worldAnimalDay', [], new DateTime("$year-10-4", new DateTimeZone($timezone)), $locale);
+        return new Holiday('worldAnimalDay', [], new DateTime("$year-10-4", new DateTimeZone($timezone)), $locale,
+            $type);
     }
 
     /**
@@ -124,12 +134,15 @@ trait CommonHolidays
      * @param int    $year     the year for which St. Martin's Day need to be created
      * @param string $timezone the timezone in which St. Martin's Day is celebrated
      * @param string $locale   the locale for which St. Martin's Day need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
      */
-    public function stMartinsDay($year, $timezone, $locale)
+    public function stMartinsDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('stMartinsDay', [], new DateTime("$year-11-11", new DateTimeZone($timezone)), $locale);
+        return new Holiday('stMartinsDay', [], new DateTime("$year-11-11", new DateTimeZone($timezone)), $locale,
+            $type);
     }
 
     /**
@@ -145,13 +158,15 @@ trait CommonHolidays
      * @param int    $year     the year for which Father's Day need to be created
      * @param string $timezone the timezone in which Father's Day is celebrated
      * @param string $locale   the locale for which Father's Day need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
      */
-    public function fathersDay($year, $timezone, $locale)
+    public function fathersDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
         return new Holiday('fathersDay', [], new DateTime("third sunday of june $year", new DateTimeZone($timezone)),
-            $locale);
+            $locale, $type);
     }
 
     /**
@@ -167,13 +182,15 @@ trait CommonHolidays
      * @param int    $year     the year for which Mother's Day need to be created
      * @param string $timezone the timezone in which Mother's Day is celebrated
      * @param string $locale   the locale for which Mother's Day need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
      */
-    public function mothersDay($year, $timezone, $locale)
+    public function mothersDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
         return new Holiday('mothersDay', [], new DateTime("second sunday of may $year", new DateTimeZone($timezone)),
-            $locale);
+            $locale, $type);
     }
 
     /**
@@ -189,12 +206,15 @@ trait CommonHolidays
      * @param int    $year     the year for which Victory in Europe Day need to be created
      * @param string $timezone the timezone in which Victory in Europe Day is celebrated
      * @param string $locale   the locale for which Victory in Europe Day need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
      */
-    public function victoryInEuropeDay($year, $timezone, $locale)
+    public function victoryInEuropeDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('victoryInEuropeDay', [], new DateTime("$year-5-8", new DateTimeZone($timezone)), $locale);
+        return new Holiday('victoryInEuropeDay', [], new DateTime("$year-5-8", new DateTimeZone($timezone)), $locale,
+            $type);
     }
 
     /**
@@ -212,11 +232,14 @@ trait CommonHolidays
      * @param int    $year     the year for which Armistice Day need to be created
      * @param string $timezone the timezone in which Armistice Day is celebrated
      * @param string $locale   the locale for which Armistice Day need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
      */
-    public function armisticeDay($year, $timezone, $locale)
+    public function armisticeDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('armisticeDay', [], new DateTime("$year-11-11", new DateTimeZone($timezone)), $locale);
+        return new Holiday('armisticeDay', [], new DateTime("$year-11-11", new DateTimeZone($timezone)), $locale,
+            $type);
     }
 }
