@@ -135,7 +135,7 @@ class Holiday extends DateTime implements JsonSerializable
      */
     public function getType()
     {
-        return $this->type;
+        return (string) $this->type;
     }
 
     /**
@@ -184,6 +184,6 @@ class Holiday extends DateTime implements JsonSerializable
      */
     public function __toString()
     {
-        return $this->format('Y-m-d');
+        return (string) $this->format('Y-m-d');
     }
 }
