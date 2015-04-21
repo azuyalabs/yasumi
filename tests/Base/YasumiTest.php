@@ -45,7 +45,7 @@ class YasumiTest extends PHPUnit_Framework_TestCase
     /**
      * Tests that an Yasumi\Exception\UnknownLocaleException is thrown in case an invalid locale is given.
      *
-     * @expectedException Yasumi\Exception\UnknownLocaleException
+     * @expectedException \Yasumi\Exception\UnknownLocaleException
      */
     public function testCreateWithInvalidLocale()
     {
