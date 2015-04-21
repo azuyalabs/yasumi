@@ -21,6 +21,7 @@ Highlights
 * Common Holiday Providers
 * Global Translations
 * Implements ArrayIterator to easily process a provider's holidays
+* Filters enabling to easily select certain holiday types (Official, Observed, Bank, Seasonal or Other) 
 * Fully documented
 * Fully Unit tested
 * Framework-agnostic
@@ -34,6 +35,14 @@ Currently the following holiday providers are implemented:
 * USA
 * Italy
 * France
+
+Yasumi has the following filters to allow you to filter only certain type of holidays:
+
+* Official
+* Observed
+* Bank
+* Seasonal
+* Other
 
 
 System Requirements
@@ -82,17 +91,18 @@ Basic Usage
 require 'vendor/autoload.php';
 
 use Yasumi\Yasumi;
+use Yasumi\Filters\OfficialHolidaysFilter;
 
 // Use the factory to create a new holiday provider instance
 $holidays = Yasumi::create('USA', 2015);
 
 // Get the number of defined holidays
-echo $holidays->count() . PHP_EOL;
+echo $holidays->count();
 // 11
 
 // Get a list all of the holiday names (short names)
 foreach ($holidays->getHolidayNames() as $name) {
-    echo $name . PHP_EOL;
+    echo $name;
 }
 // 'newYearsDay'
 // 'martinLutherKingDay'
@@ -108,7 +118,7 @@ foreach ($holidays->getHolidayNames() as $name) {
 
 // Get a list all of the holiday dates
 foreach ($holidays->getHolidayDates() as $date) {
-    echo $date . PHP_EOL;
+    echo $date;
 }
 // '2015-01-01'
 // '2015-01-19'
@@ -126,20 +136,20 @@ foreach ($holidays->getHolidayDates() as $date) {
 $independenceDay = $holidays->getHoliday('independenceDay');
 
 // Get the localized name
-echo $independenceDay->getName() . PHP_EOL;
+echo $independenceDay->getName();
 // 'Independence Day'
 
 // Get the date
-echo $independenceDay . PHP_EOL;
+echo $independenceDay;
 // '2015-07-04'
 
 // Get the type of holiday
-echo $independenceDay->getType() . PHP_EOL;
+echo $independenceDay->getType();
 // 'national'
 
 // Print the holiday as a JSON object
 echo json_encode($independenceDay, JSON_PRETTY_PRINT);
-//{
+// {
 //    "shortName": "independenceDay",
 //    "translations": {
 //    "en_US": "Independence Day"
@@ -147,7 +157,23 @@ echo json_encode($independenceDay, JSON_PRETTY_PRINT);
 //    "date": "2015-07-04 00:00:00.000000",
 //    "timezone_type": 3,
 //    "timezone": "America\/New_York"
-//}
+// }
+
+// Retrieve only the official holidays for the Netherlands in 2014
+$holidays = Yasumi::create('Netherlands', 2014);
+$official = new OfficialHolidaysFilter($holidays->getIterator());
+foreach ($official as $day) {
+    echo $day->getName();
+}
+// 'New Year's Day'
+// 'Easter Sunday'
+// 'Easter Monday'
+// 'Kings Day'
+// 'Ascension Day'
+// 'Whitsunday'
+// 'Whitmonday'
+// 'Christmas'
+// 'Boxing Day'
 ```
 
 
@@ -157,7 +183,7 @@ Roadmap
 Yasumi is still in development and a stable release is coming soon. For its first release, we will have the following
 included:
 
-- Filters
+- ~~Filters~~
 - ~~Global Translations~~
 - ~~Common holiday providers~~
 - Additional countries (~~Italy~~ and ~~France~~)
