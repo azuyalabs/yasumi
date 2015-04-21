@@ -37,13 +37,23 @@ class IndependenceDayTest extends USABaseTestCase
         $year = 1955;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
             new DateTime("$year-7-4", new DateTimeZone(self::TIMEZONE)));
+    }
 
-        // Substituted Holiday on Monday (Independence Day falls on Sunday)
+    /**
+     * Tests Independence Day on or after 1776 when substituted on Monday (when Independence Day falls on Sunday)
+     */
+    public function testIndependenceDayOnAfter1776SubstitutedMonday()
+    {
         $year = 3362;
         $this->assertHoliday(self::COUNTRY, 'substituteHoliday:independenceDay', $year,
             new DateTime("$year-7-5", new DateTimeZone(self::TIMEZONE)));
+    }
 
-        // Substituted Holiday on Friday (Independence Day falls on Saturday)
+    /**
+     * Tests Independence Day on or after 1776 when substituted on Friday (when Independence Day falls on Saturday)
+     */
+    public function testIndependenceDayOnAfter1776SubstitutedFriday()
+    {
         $year = 8291;
         $this->assertHoliday(self::COUNTRY, 'substituteHoliday:independenceDay', $year,
             new DateTime("$year-7-3", new DateTimeZone(self::TIMEZONE)));

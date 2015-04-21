@@ -32,13 +32,23 @@ class NewYearsDayTest extends USABaseTestCase
         $year = 1997;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
             new DateTime("$year-1-1", new DateTimeZone(self::TIMEZONE)));
+    }
 
-        // Substituted Holiday on Monday (New Years Day falls on Sunday)
+    /**
+     * Tests New Years Day when substituted on Monday (when New Years Day falls on Sunday).
+     */
+    public function testNewYearsDaySubstitutedMonday()
+    {
         $year = 2445;
         $this->assertHoliday(self::COUNTRY, 'substituteHoliday:newYearsDay', $year,
             new DateTime("$year-1-2", new DateTimeZone(self::TIMEZONE)));
+    }
 
-        // Substituted Holiday on Friday (New Years Day falls on Saturday)
+    /**
+     * Tests New Years Day when substituted on Friday (when New Years Day falls on Saturday).
+     */
+    public function testNewYearsDaySubstitutedFriday()
+    {
         $year    = 1938;
         $subYear = $year - 1;
         $this->assertHoliday(self::COUNTRY, 'substituteHoliday:newYearsDay', $year,
