@@ -16,12 +16,6 @@ use DateTimeZone;
 
 /**
  * Class for testing New Years Day in the USA.
- *
- * Christmas or Christmas Day (Old English: Crīstesmæsse, meaning "Christ's Mass") is an annual festival commemorating
- * the birth of Jesus Christ, observed most commonly on December 25 as a religious and cultural celebration among
- * billions of people around the world.
- *
- * @link http://en.wikipedia.org/wiki/Christmas Source: Wikipedia.
  */
 class ChristmasDayTest extends USABaseTestCase
 {
@@ -38,15 +32,36 @@ class ChristmasDayTest extends USABaseTestCase
         $year = 2001;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
             new DateTime("$year-12-25", new DateTimeZone(self::TIMEZONE)));
+    }
 
+    /**
+     * Tests Christmas Day substituted on Monday (when Christmas Day falls on Sunday).
+     */
+    public function testChristmasDaySubstitutedMonday()
+    {
         // Substituted Holiday on Monday (Christmas Day falls on Sunday)
         $year = 6101;
         $this->assertHoliday(self::COUNTRY, 'substituteHoliday:christmasDay', $year,
             new DateTime("$year-12-26", new DateTimeZone(self::TIMEZONE)));
+    }
 
+    /**
+     * Tests Christmas Day substituted on Monday (when Christmas Day falls on Saturday).
+     */
+    public function testChristmasDaySubstitutedFriday()
+    {
         // Substituted Holiday on Friday (Christmas Day falls on Saturday)
         $year = 2060;
         $this->assertHoliday(self::COUNTRY, 'substituteHoliday:christmasDay', $year,
             new DateTime("$year-12-24", new DateTimeZone(self::TIMEZONE)));
+    }
+
+    /**
+     * Tests translated name of Christmas Day.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(),
+            ['en_US' => 'Christmas']);
     }
 }

@@ -16,12 +16,6 @@ use DateTimeZone;
 
 /**
  * Class for testing New Years Day in the USA.
- *
- * New Year's Day is observed on January 1, the first day of the year on the modern Gregorian calendar as well as the
- * Julian calendar. In case New Years Day falls on a Sunday, a substituted holiday is observed the following Monday. If
- * it falls on a Saturday, a substituted holiday is observed the previous Friday.
- *
- * @link http://en.wikipedia.org/wiki/New_Year%27s_Day Source: Wikipedia.
  */
 class NewYearsDayTest extends USABaseTestCase
 {
@@ -49,5 +43,14 @@ class NewYearsDayTest extends USABaseTestCase
         $subYear = $year - 1;
         $this->assertHoliday(self::COUNTRY, 'substituteHoliday:newYearsDay', $year,
             new DateTime("$subYear-12-31", new DateTimeZone(self::TIMEZONE)));
+    }
+
+    /**
+     * Tests translated name of New Years Day.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(),
+            ['en_US' => 'New Year\'s Day']);
     }
 }

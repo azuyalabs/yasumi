@@ -16,11 +16,6 @@ use DateTimeZone;
 
 /**
  * Class for testing Labour Day in the USA.
- *
- * Labor Day in the United States is a holiday celebrated on the first Monday in September. It is a celebration of the
- * American labor movement and is dedicated to the social and economic achievements of workers.
- *
- * @link http://en.wikipedia.org/wiki/Labor_Day Source: Wikipedia.
  */
 class LabourDayTest extends USABaseTestCase
 {
@@ -30,11 +25,16 @@ class LabourDayTest extends USABaseTestCase
     const HOLIDAY = 'labourDay';
 
     /**
+     * The year in which the holiday was first established
+     */
+    const ESTABLISHMENT_YEAR = 1887;
+
+    /**
      * Tests Labour Day on or after 1887. Labour Day was established since 1887 on the first Monday of September.
      */
     public function testLabourDayOnAfter1887()
     {
-        $year = $this->generateRandomYear(1887);
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
             new DateTime("first monday of september $year", new DateTimeZone(self::TIMEZONE)));
     }
@@ -44,6 +44,16 @@ class LabourDayTest extends USABaseTestCase
      */
     public function testLabourDayBefore1887()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1886));
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
+    }
+
+    /**
+     * Tests translated name of Labour Day.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), ['en_US' => 'Labour Day']);
     }
 }

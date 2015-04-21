@@ -16,14 +16,6 @@ use DateTimeZone;
 
 /**
  * Class for testing Columbus Day in the USA.
- *
- * Honors Christopher Columbus, traditional discoverer of the Americas. In some areas it is also a celebration of
- * Indigenous Peoples, or Italian culture and heritage. (traditionally October 12). Columbus Day first became an
- * official state holiday in Colorado in 1906, and became a federal holiday in the United States in 1937, though people
- * have celebrated Columbus's voyage since the colonial period. Since 1970 (Oct. 12), the holiday has been fixed to the
- * second Monday in October.
- *
- * @link http://en.wikipedia.org/wiki/Columbus_Day Source: Wikipedia.
  */
 class ColumbusDayTest extends USABaseTestCase
 {
@@ -31,6 +23,11 @@ class ColumbusDayTest extends USABaseTestCase
      * The name of the holiday
      */
     const HOLIDAY = 'columbusDay';
+
+    /**
+     * The year in which the holiday was first established
+     */
+    const ESTABLISHMENT_YEAR = 1937;
 
     /**
      * Tests Columbus Day on or after 1970. Columbus Day was established in 1937 on October 12th, but has been fixed to
@@ -49,7 +46,7 @@ class ColumbusDayTest extends USABaseTestCase
      */
     public function testColumbusBetween1937And1969()
     {
-        $year = $this->generateRandomYear(1937, 1969);
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1969);
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
             new DateTime("$year-10-12", new DateTimeZone(self::TIMEZONE)));
     }
@@ -60,6 +57,16 @@ class ColumbusDayTest extends USABaseTestCase
      */
     public function testColumbusDayBefore1937()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1936));
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
+    }
+
+    /**
+     * Tests translated name of Columbus Day.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), ['en_US' => 'Columbus Day']);
     }
 }

@@ -16,13 +16,6 @@ use DateTimeZone;
 
 /**
  * Class to test Memorial Day.
- *
- * Honors the nation's war dead from the Civil War onwards; marks the unofficial beginning of the summer season.
- *
- * Memorial Day was first declared a federal holiday on May 1, 1865. The Uniform Holidays Act, 1968 shifted the date of
- * the commemoration of Memorial Day from May 30 to the last Monday in May.
- *
- * @link http://en.wikipedia.org/wiki/Memorial_Day Source: Wikipedia.
  */
 class MemorialDayTest extends USABaseTestCase
 {
@@ -30,6 +23,11 @@ class MemorialDayTest extends USABaseTestCase
      * The name of the holiday
      */
     const HOLIDAY = 'memorialDay';
+
+    /**
+     * The year in which the holiday was first established
+     */
+    const ESTABLISHMENT_YEAR = 1865;
 
     /**
      * Tests Memorial Day on or after 1968. Memorial Day was established since 1865 on May 30 and was changed in 1968
@@ -48,7 +46,7 @@ class MemorialDayTest extends USABaseTestCase
      */
     public function testMemorialDayBetween1865And1967()
     {
-        $year = $this->generateRandomYear(1865, 1967);
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1967);
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
             new DateTime("$year-5-30", new DateTimeZone(self::TIMEZONE)));
     }
@@ -59,6 +57,16 @@ class MemorialDayTest extends USABaseTestCase
      */
     public function testMemorialDayBefore1865()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1864));
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
+    }
+
+    /**
+     * Tests translated name of Memorial Day.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), ['en_US' => 'Memorial Day']);
     }
 }

@@ -16,15 +16,6 @@ use DateTimeZone;
 
 /**
  * Class to test Washington's Birthday.
- *
- * Washington's Birthday is a United States federal holiday celebrated on the third Monday of February in honor of
- * George Washington, the first President of the United States. Colloquially, it is widely known as Presidents Day and
- * is often an occasion to remember all the presidents.
- *
- * Washington's Birthday was first declared a federal holiday by an 1879 act of Congress. The Uniform Holidays Act,
- * 1968 shifted the date of the commemoration of Washington's Birthday from February 22 to the third Monday in February.
- *
- * @link http://en.wikipedia.org/wiki/Washington%27s_Birthday Source: Wikipedia.
  */
 class WashingtonsBirthdayTest extends USABaseTestCase
 {
@@ -32,6 +23,11 @@ class WashingtonsBirthdayTest extends USABaseTestCase
      * The name of the holiday
      */
     const HOLIDAY = 'washingtonsBirthday';
+
+    /**
+     * The year in which the holiday was first established
+     */
+    const ESTABLISHMENT_YEAR = 1879;
 
     /**
      * Tests Washington's Birthday on or after 1968. Washington's Birthday was established since 1879 on February 22
@@ -50,7 +46,7 @@ class WashingtonsBirthdayTest extends USABaseTestCase
      */
     public function testWashingtonsBirthdayBetween1879And1967()
     {
-        $year = $this->generateRandomYear(1879, 1967);
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1967);
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
             new DateTime("$year-2-22", new DateTimeZone(self::TIMEZONE)));
     }
@@ -61,6 +57,16 @@ class WashingtonsBirthdayTest extends USABaseTestCase
      */
     public function testWashingtonsBirthdayBefore1879()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1878));
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
+    }
+
+    /**
+     * Tests translated name of Washington's Birthday.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), ['en_US' => 'Washington\'s Birthday']);
     }
 }

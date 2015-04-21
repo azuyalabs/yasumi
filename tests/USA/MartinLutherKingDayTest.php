@@ -16,11 +16,6 @@ use DateTimeZone;
 
 /**
  * Class to test Dr. Martin Luther King Day.
- *
- * Honors Dr. Martin Luther King, Jr., Civil Rights leader, who was actually born on January 15, 1929; combined with
- * other holidays in several states. It is observed on the third Monday of January since 1986.
- *
- * @link http://en.wikipedia.org/wiki/Martin_Luther_King,_Jr._Day Source: Wikipedia.
  */
 class MartinLutherKingDayTest extends USABaseTestCase
 {
@@ -30,12 +25,17 @@ class MartinLutherKingDayTest extends USABaseTestCase
     const HOLIDAY = 'martinLutherKingDay';
 
     /**
-     * Tests Dr. Martin Luther King Day after 1986. Dr. Martin Luther King Day was established since 1996 on the third
-     * Monday of January.
+     * The year in which the holiday was first established
+     */
+    const ESTABLISHMENT_YEAR = 1986;
+
+    /**
+     * Tests Dr. Martin Luther King Day on or after 1986. Dr. Martin Luther King Day was established since 1986 on the
+     * third Monday of January.
      */
     public function testMartinLutherKingDayOnAfter1986()
     {
-        $year = $this->generateRandomYear(1986);
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
             new DateTime("third monday of january $year", new DateTimeZone(self::TIMEZONE)));
     }
@@ -46,6 +46,16 @@ class MartinLutherKingDayTest extends USABaseTestCase
      */
     public function testMartinLutherKingDayBefore1986()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1985));
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
+    }
+
+    /**
+     * Tests translated name of Dr. Martin Luther King Day.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), ['en_US' => 'Dr. Martin Luther King Jr\'s Birthday']);
     }
 }

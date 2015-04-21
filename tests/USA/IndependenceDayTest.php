@@ -16,13 +16,6 @@ use DateTimeZone;
 
 /**
  * Class to test Independence Day.
- *
- * Independence Day, commonly known as the Fourth of July or July Fourth, is a federal holiday in the United States
- * commemorating the adoption of the Declaration of Independence on July 4, 1776, declaring independence from Great
- * Britain. In case Independence Day falls on a Sunday, a substituted holiday is observed the following Monday. If it
- * falls on a Saturday, a substituted holiday is observed the previous Friday.
- *
- * @link http://en.wikipedia.org/wiki/Independence_Day_(United_States) Source: Wikipedia.
  */
 class IndependenceDayTest extends USABaseTestCase
 {
@@ -30,6 +23,11 @@ class IndependenceDayTest extends USABaseTestCase
      * The name of the holiday
      */
     const HOLIDAY = 'independenceDay';
+
+    /**
+     * The year in which the holiday was first established
+     */
+    const ESTABLISHMENT_YEAR = 1776;
 
     /**
      * Tests Independence Day on or after 1776. Independence Day is celebrated since 1776 on July 4th.
@@ -56,6 +54,16 @@ class IndependenceDayTest extends USABaseTestCase
      */
     public function testIndependenceDayBefore1776()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1775));
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
+    }
+
+    /**
+     * Tests translated name of Independence Day.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), ['en_US' => 'Independence Day']);
     }
 }

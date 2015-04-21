@@ -16,13 +16,6 @@ use DateTimeZone;
 
 /**
  * Class for testing Thanksgiving Day in the USA.
- *
- * Thanksgiving, or Thanksgiving Day, is a holiday celebrated in the United States on the fourth Thursday in November.
- * It has been celebrated as a federal holiday every year since 1863, when, during the Civil War, President Abraham
- * Lincoln proclaimed a national day of "Thanksgiving and Praise to our beneficent Father who dwelleth in the Heavens",
- * to be celebrated on the last Thursday in November.
- *
- * @link http://en.wikipedia.org/wiki/Thanksgiving_(United_States) Source: Wikipedia.
  */
 class ThanksgivingDayDayTest extends USABaseTestCase
 {
@@ -32,22 +25,37 @@ class ThanksgivingDayDayTest extends USABaseTestCase
     const HOLIDAY = 'thanksgivingDay';
 
     /**
-     * Tests ThanksgivingDay Day on or after 1863. ThanksgivingDay Day is celebrated since 1863 on the fourth Thursday
+     * The year in which the holiday was first established
+     */
+    const ESTABLISHMENT_YEAR = 1863;
+
+    /**
+     * Tests Thanksgiving Day on or after 1863. ThanksgivingDay Day is celebrated since 1863 on the fourth Thursday
      * of November.
      */
     public function testThanksgivingDayOnAfter1863()
     {
-        $year = $this->generateRandomYear(1863);
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
             new DateTime("fourth thursday of november $year", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**
-     * Tests ThanksgivingDay Day before 1863. ThanksgivingDay Day is celebrated since 1863 on the fourth Thursday
+     * Tests Thanksgiving Day before 1863. ThanksgivingDay Day is celebrated since 1863 on the fourth Thursday
      * of November.
      */
     public function testThanksgivingDayBefore1863()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1862));
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
+    }
+
+    /**
+     * Tests translated name of Thanksgiving Day.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), ['en_US' => 'Thanksgiving Day']);
     }
 }
