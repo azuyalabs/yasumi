@@ -15,8 +15,6 @@ use DateTime;
 
 /**
  * Class for testing the National Day of Belgium.
- *
- * Belgian National Day is the National Day of Belgium celebrated on 21 July each year.
  */
 class NationalDayTest extends BelgiumBaseTestCase
 {

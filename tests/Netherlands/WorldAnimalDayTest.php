@@ -16,12 +16,6 @@ use DateTimeZone;
 
 /**
  * Class to test World Animal Day.
- *
- * World Animal Day is an international day of action for animal rights and welfare celebrated annually on October
- * 4, the Feast Day of St Francis of Assisi, the patron saint of animals. It started in 1931 at a convention of
- * ecologists in Florence, Italy who wished to highlight the plight of endangered species.
- *
- * @link http://en.wikipedia.org/wiki/World_Animal_Day Source: Wikipedia.
  */
 class WorldAnimalDayTest extends NetherlandsBaseTestCase
 {

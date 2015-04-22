@@ -16,10 +16,6 @@ use DateTimeZone;
 
 /**
  * Class for testing Father's Day.
- *
- * Father's Day is a celebration honoring fathers and celebrating fatherhood, paternal bonds, and the influence of
- * fathers in society. In the Netherlands, Father's Day (Dutch: Vaderdag) is celebrated on the third Sunday of June and
- * is not a public holiday.
  */
 class FathersDayTest extends NetherlandsBaseTestCase
 {

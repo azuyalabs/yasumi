@@ -16,9 +16,6 @@ use DateTimeZone;
 
 /**
  * Class for testing Summertime.
- *
- * Start of Summertime takes place on the last sunday of march. (Summertime is the common name for Daylight Saving
- * Time).
  */
 class SummerTimeTest extends NetherlandsBaseTestCase
 {

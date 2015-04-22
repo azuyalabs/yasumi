@@ -16,10 +16,6 @@ use DateTimeZone;
 
 /**
  * Class for testing Carnival.
- *
- * Carnival (Dutch: Carnaval) is originally an European Pagan spring festival, with an emphasis on role-reversal and
- * suspension of social norms. The feast became assimilated by the Catholic Church and was celebrated in the three days
- * preceding Ash Wednesday and Lent.
  */
 class CarnivalTest extends NetherlandsBaseTestCase
 {

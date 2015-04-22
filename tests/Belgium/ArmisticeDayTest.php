@@ -15,9 +15,6 @@ use DateTime;
 
 /**
  * Class for testing Armistice Day in Belgium.
- *
- * Armistice Day is commemorated every year on 11 November to mark the armistice signed between the Allies of World War
- * I and Germany at Compiègne, France, for the cessation of hostilities on the Western Front of World War I.
  */
 class ArmisticeDayTest extends BelgiumBaseTestCase
 {

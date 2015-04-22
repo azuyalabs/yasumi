@@ -16,10 +16,6 @@ use DateTimeZone;
 
 /**
  * Class for testing Ash Wednesday.
- *
- * Ash Wednesday, a day of fasting, is the first day of Lent in Western Christianity. It occurs 46 days (40 fasting
- * days, if the 6 Sundays, which are not days of fast, are excluded) before Easter and can fall as early as 4 February
- * or as late as 10 March.
  */
 class AshWednesdayTest extends NetherlandsBaseTestCase
 {

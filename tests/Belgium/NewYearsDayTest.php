@@ -13,9 +13,6 @@ namespace Yasumi\Tests\Belgium;
 
 /**
  * Class for testing New Years Day in Belgium.
- *
- * New Year's Day is observed on January 1, the first day of the year on the modern Gregorian calendar as well as the
- * Julian calendar.
  */
 class NewYearsDayTest extends BelgiumBaseTestCase
 {

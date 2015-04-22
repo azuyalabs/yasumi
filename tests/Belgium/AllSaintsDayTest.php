@@ -15,9 +15,6 @@ use DateTime;
 
 /**
  * Class for testing All Saints' Day in Belgium.
- *
- * All Saints' Day, also known as All Hallows, Solemnity of All Saints, or Feast of All Saints is a solemnity
- * celebrated on 1 November by the Catholic Church and various Protestant denominations in honour of all the saints.
  */
 class AllSaintsDayTest extends BelgiumBaseTestCase
 {

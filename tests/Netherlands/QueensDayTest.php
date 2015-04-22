@@ -16,10 +16,6 @@ use DateTimeZone;
 
 /**
  * Class for testing Queen's Day.
- *
- * Queen's Day was celebrated between 1891 and 1948 (inclusive) on August 31. Between 1949 and 2013 (inclusive) it
- * was celebrated April 30. If these dates are on a Sunday, Queen's Day was celebrated one day later until 1980
- * (on the following Monday), starting 1980 one day earlier (on the preceding Saturday).
  */
 class QueensDayTest extends NetherlandsBaseTestCase
 {

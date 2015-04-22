@@ -16,10 +16,6 @@ use DateTimeZone;
 
 /**
  * Class for testing Mother's Day.
- *
- * Mother's Day is a modern celebration honoring one's own mother, as well as motherhood, maternal bonds, and the
- * influence of mothers in society. In the Netherlands, Mother's Day (Dutch: Moederdag) is celebrated on the second
- * Sunday of May and is not a public holiday.
  */
 class MothersDayTest extends NetherlandsBaseTestCase
 {

@@ -16,9 +16,6 @@ use DateTimeZone;
 
 /**
  * Class for testing Wintertime.
- *
- * Start of Wintertime takes place on the last sunday of october. (Wintertime is actually the end of Summertime.
- * Summertime is the common name for Daylight Saving Time).
  */
 class WinterTimeTest extends NetherlandsBaseTestCase
 {

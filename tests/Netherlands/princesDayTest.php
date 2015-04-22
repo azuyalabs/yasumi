@@ -16,10 +16,6 @@ use DateTimeZone;
 
 /**
  * Class for testing Prince's Day.
- *
- * Prinsjesdag (English: Prince's Day) is the day on which the reigning monarch of the Netherlands addresses a joint
- * session of the Dutch Senate and House of Representatives. Prince's Day is taking place on the third tuesday of
- * september.
  */
 class PrincesDayTest extends NetherlandsBaseTestCase
 {

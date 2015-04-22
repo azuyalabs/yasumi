@@ -16,9 +16,6 @@ use DateTimeZone;
 
 /**
  * Class for testing Pentecost.
- *
- * Pentecost a feast commemorating the descent of the Holy Spirit upon the Apostles and other followers of Jesus Christ.
- * It is celebrated 49 days after Easter and always takes place on Sunday.
  */
 class PentecostTest extends NetherlandsBaseTestCase
 {

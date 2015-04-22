@@ -16,10 +16,6 @@ use DateTimeZone;
 
 /**
  * Class for testing Ascension Day.
- *
- * Ascension Day commemorates the bodily Ascension of Jesus into heaven. It is one of the ecumenical feasts of Christian
- * churches. Ascension Day is traditionally celebrated on a Thursday, the fortieth day of Easter although some Catholic
- * provinces have moved the observance to the following Sunday.
  */
 class AscensionDayTest extends NetherlandsBaseTestCase
 {
