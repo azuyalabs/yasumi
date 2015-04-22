@@ -54,7 +54,6 @@ class VictoryInEuropeDayTest extends FranceBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            ['fr_FR' => 'Fête de la Victoire']);
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), ['fr_FR' => 'Fête de la Victoire']);
     }
 }

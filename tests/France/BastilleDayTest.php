@@ -54,7 +54,6 @@ class BastilleDayTest extends FranceBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            ['fr_FR' => 'La Fête nationale']);
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), ['fr_FR' => 'La Fête nationale']);
     }
 }
