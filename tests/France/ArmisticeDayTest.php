@@ -57,6 +57,4 @@ class ArmisticeDayTest extends FranceBaseTestCase
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
             ['fr_FR' => 'Armistice']);
     }
-
-
 }

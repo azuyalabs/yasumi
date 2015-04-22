@@ -15,7 +15,7 @@ use DateTime;
 use DateTimeZone;
 
 /**
- * Class for testing Pentecost Monday.
+ * Class for testing Pentecost Monday in France.
  */
 class PentecostTest extends FranceBaseTestCase
 {

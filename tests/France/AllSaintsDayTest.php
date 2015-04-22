@@ -34,7 +34,6 @@ class AllSaintsDayTest extends FranceBaseTestCase
     public function testAllSaintsDay($year, $expected)
     {
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, $expected);
-
     }
 
     /**
