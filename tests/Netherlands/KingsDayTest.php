@@ -37,8 +37,13 @@ class KingsDayTest extends NetherlandsBaseTestCase
         $year = 2015;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
             new DateTime("$year-4-27", new DateTimeZone(self::TIMEZONE)));
+    }
 
-        // Substituted day
+    /**
+     * Tests Kings Day substituted on Saturday (when Kings Day falls on a Sunday)
+     */
+    public function testKingsDayOnAfter2014SubstitutedDay()
+    {
         $year = 2188;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
             new DateTime("$year-4-26", new DateTimeZone(self::TIMEZONE)));

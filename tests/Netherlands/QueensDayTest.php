@@ -32,8 +32,13 @@ class QueensDayTest extends NetherlandsBaseTestCase
         $year = 1901;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
             new DateTime("$year-8-31", new DateTimeZone(self::TIMEZONE)));
+    }
 
-        // Substituted day (one day later)
+    /**
+     * Tests Queens Day between 1891 and 1948 substituted one day later (when Queens Day falls on a Sunday).
+     */
+    public function testQueensBetween1891and1948SubstitutedLater()
+    {
         $year = 1947;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
             new DateTime("$year-9-1", new DateTimeZone(self::TIMEZONE)));
@@ -47,13 +52,23 @@ class QueensDayTest extends NetherlandsBaseTestCase
         $year = 1965;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
             new DateTime("$year-4-30", new DateTimeZone(self::TIMEZONE)));
+    }
 
-        // Substituted day (one day later)
+    /**
+     * Tests Queens Day between 1949 and 2013 substituted one day later.
+     */
+    public function testQueensBetween1949and2013SubstitutedLater()
+    {
         $year = 1967;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
             new DateTime("$year-5-1", new DateTimeZone(self::TIMEZONE)));
+    }
 
-        // Substituted day (one day earlier)
+    /**
+     * Tests Queens Day between 1949 and 2013 substituted one day earlier.
+     */
+    public function testQueensBetween1949and2013SubstitutedEarlier()
+    {
         $year = 2006;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
             new DateTime("$year-4-29", new DateTimeZone(self::TIMEZONE)));

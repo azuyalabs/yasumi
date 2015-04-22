@@ -30,16 +30,25 @@ class LabourThanksgivingDayTest extends JapanBaseTestCase
     const ESTABLISHMENT_YEAR = 1948;
 
     /**
-     * Tests Labor Thanksgiving Day after. Labor Thanksgiving Day is held on November 23rd and established since 1948.
+     * Tests Labor Thanksgiving Day after 1948. Labor Thanksgiving Day is held on November 23rd and established since
+     * 1948.
      */
     public function testLabourThanksgivingDayOnAfter1948()
     {
         $year = 4884;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
             new DateTime("$year-11-23", new DateTimeZone(self::TIMEZONE)));
+    }
+
+    /**
+     * Tests Labor Thanksgiving Day after 1948 substituted next working day (when Labor Thanksgiving Day falls on a
+     * Sunday)
+     */
+    public function testLabourThanksgivingDayOnAfter1948SubstitutedNextWorkingDay()
+    {
         $year = 1986;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
-            new DateTime("$year-11-24", new DateTimeZone(self::TIMEZONE))); // Substituted day
+            new DateTime("$year-11-24", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**

@@ -37,9 +37,16 @@ class ChildrensDayTest extends JapanBaseTestCase
         $year = 1955;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
             new DateTime("$year-5-5", new DateTimeZone(self::TIMEZONE)));
+    }
+
+    /**
+     * Tests Children's Day after 1948 substituted next working day (when Children's Day falls on a Sunday)
+     */
+    public function testChildrensDayOnAfter1948SubstitutedNextWorkingDay()
+    {
         $year = 2120;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
-            new DateTime("$year-5-6", new DateTimeZone(self::TIMEZONE))); // Substituted day
+            new DateTime("$year-5-6", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**

@@ -44,9 +44,17 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase
         $year = 1998;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
             new DateTime("$year-9-15", new DateTimeZone(self::TIMEZONE)));
+    }
+
+    /**
+     * Tests Respect for the Aged Day between 1996 and 2003 substituted next working day (when Respect for the Aged Day
+     * falls on a Sunday)
+     */
+    public function testRespectForTheAgedDayBetween1996And2003SubstitutedNextWorkingDay()
+    {
         $year = 2002;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
-            new DateTime("$year-9-16", new DateTimeZone(self::TIMEZONE))); // Substituted day
+            new DateTime("$year-9-16", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**

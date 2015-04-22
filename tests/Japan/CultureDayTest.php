@@ -37,9 +37,16 @@ class CultureDayTest extends JapanBaseTestCase
         $year = 1973;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
             new DateTime("$year-11-3", new DateTimeZone(self::TIMEZONE)));
+    }
+
+    /**
+     * Tests Culture Day after 1948 substituted next working day (when Culture Day falls on a Sunday)
+     */
+    public function testCultureDayOnAfter1948SubstitutedNextWorkingDay()
+    {
         $year = 2661;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
-            new DateTime("$year-11-4", new DateTimeZone(self::TIMEZONE))); // Substituted day
+            new DateTime("$year-11-4", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**

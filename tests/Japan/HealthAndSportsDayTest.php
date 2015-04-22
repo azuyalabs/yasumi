@@ -44,9 +44,17 @@ class HealthAndSportsDayTest extends JapanBaseTestCase
         $year = 1997;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
             new DateTime("$year-10-10", new DateTimeZone(self::TIMEZONE)));
+    }
+
+    /**
+     * Tests Health And Sports Day between 1996 and 2000 substituted next working day (when Health And Sports Day falls
+     * on a Sunday)
+     */
+    public function testHealthAndSportsDayBetween1996And2000SubstitutedNextWorkingDay()
+    {
         $year = 1999;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
-            new DateTime("$year-10-11", new DateTimeZone(self::TIMEZONE))); // Substituted day
+            new DateTime("$year-10-11", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**

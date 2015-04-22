@@ -37,9 +37,16 @@ class MountainDayTest extends JapanBaseTestCase
         $year = 2016;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
             new DateTime("$year-8-11", new DateTimeZone(self::TIMEZONE)));
+    }
+
+    /**
+     * Tests Mountain Day after 2016 substituted next working day (when Mountain Day falls on a Sunday)
+     */
+    public function testMountainDayOnAfter2016SubstitutedNextWorkingDay()
+    {
         $year = 2019;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
-            new DateTime("$year-8-12", new DateTimeZone(self::TIMEZONE))); // Substituted day
+            new DateTime("$year-8-12", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**
