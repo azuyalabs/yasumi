@@ -15,7 +15,7 @@ use DateTime;
 use DateTimeZone;
 
 /**
- * Class for testing Ash Wednesday.
+ * Class for testing Ash Wednesday in the Netherlands.
  */
 class AshWednesdayTest extends NetherlandsBaseTestCase
 {

@@ -15,7 +15,7 @@ use DateTime;
 use DateTimeZone;
 
 /**
- * Class for testing Wintertime.
+ * Class for testing Wintertime in the Netherlands.
  */
 class WinterTimeTest extends NetherlandsBaseTestCase
 {

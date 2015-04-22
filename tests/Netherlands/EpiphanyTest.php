@@ -14,7 +14,7 @@ namespace Yasumi\Tests\Netherlands;
 use DateTime;
 
 /**
- * Class EpiphanyTest.
+ * Class for testing Epiphany in the Netherlands.
  */
 class EpiphanyTest extends NetherlandsBaseTestCase
 {

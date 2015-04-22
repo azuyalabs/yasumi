@@ -14,7 +14,7 @@ namespace Yasumi\Tests\Netherlands;
 use DateTime;
 
 /**
- * Class stMartinsDayTest.
+ * Class for testing st Martins Day in the Netherlands.
  */
 class stMartinsDayTest extends NetherlandsBaseTestCase
 {
@@ -29,7 +29,6 @@ class stMartinsDayTest extends NetherlandsBaseTestCase
     public function teststMartinsDay($year, $expected)
     {
         $this->assertHoliday(self::COUNTRY, 'stMartinsDay', $year, $expected);
-
     }
 
     /**

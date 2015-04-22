@@ -15,7 +15,7 @@ use DateTime;
 use DateTimeZone;
 
 /**
- * Class KingsDayTest.
+ * Class for testing Kings Day in the Netherlands.
  */
 class KingsDayTest extends NetherlandsBaseTestCase
 {

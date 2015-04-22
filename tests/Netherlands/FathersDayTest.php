@@ -15,7 +15,7 @@ use DateTime;
 use DateTimeZone;
 
 /**
- * Class for testing Father's Day.
+ * Class for testing Father's Day in the Netherlands.
  */
 class FathersDayTest extends NetherlandsBaseTestCase
 {
@@ -29,6 +29,4 @@ class FathersDayTest extends NetherlandsBaseTestCase
         $this->assertHoliday(self::COUNTRY, 'fathersDay', $year,
             new DateTime("third sunday of june $year", new DateTimeZone(self::TIMEZONE)));
     }
-
-
 }

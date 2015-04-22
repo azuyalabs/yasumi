@@ -15,12 +15,12 @@ use DateTime;
 use DateTimeZone;
 
 /**
- * Class for testing Good Friday.
+ * Class for testing Good Friday in the Netherlands.
  */
 class GoodFridayTest extends NetherlandsBaseTestCase
 {
     /**
-     * Tests Ash Wednesday.
+     * Tests Good Friday.
      */
     public function testGoodFriday()
     {

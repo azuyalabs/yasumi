@@ -15,7 +15,7 @@ use DateTime;
 use DateTimeZone;
 
 /**
- * Class to test World Animal Day.
+ * Class for testing World Animal Day in the Netherlands.
  */
 class WorldAnimalDayTest extends NetherlandsBaseTestCase
 {
@@ -37,7 +37,6 @@ class WorldAnimalDayTest extends NetherlandsBaseTestCase
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
             new DateTime("$year-10-4", new DateTimeZone(self::TIMEZONE)));
-
     }
 
     /**

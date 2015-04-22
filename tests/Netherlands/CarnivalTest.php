@@ -15,7 +15,7 @@ use DateTime;
 use DateTimeZone;
 
 /**
- * Class for testing Carnival.
+ * Class for testing Carnival in the Netherlands.
  */
 class CarnivalTest extends NetherlandsBaseTestCase
 {

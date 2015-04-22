@@ -15,7 +15,7 @@ use DateTime;
 use DateTimeZone;
 
 /**
- * Class for testing Summertime.
+ * Class for testing Summertime in the Netherlands.
  */
 class SummerTimeTest extends NetherlandsBaseTestCase
 {
