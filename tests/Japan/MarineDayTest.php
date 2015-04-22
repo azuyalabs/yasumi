@@ -15,7 +15,7 @@ use DateTime;
 use DateTimeZone;
 
 /**
- * Class MarineDayTest.
+ * Class for testing Marine Day in Japan.
  */
 class MarineDayTest extends JapanBaseTestCase
 {

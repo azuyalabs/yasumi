@@ -15,7 +15,7 @@ use DateTime;
 use DateTimeZone;
 
 /**
- * Class EmperorsBirthdayTest.
+ * Class testing the Emperors Birthday in Japan.
  */
 class EmperorsBirthdayTest extends JapanBaseTestCase
 {

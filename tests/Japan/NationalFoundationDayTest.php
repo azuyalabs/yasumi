@@ -15,7 +15,7 @@ use DateTime;
 use DateTimeZone;
 
 /**
- * Class NationalFoundationDayTest.
+ * Class for testing National Foundation Day in Japan.
  */
 class NationalFoundationDayTest extends JapanBaseTestCase
 {

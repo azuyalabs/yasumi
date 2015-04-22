@@ -15,7 +15,7 @@ use DateTime;
 use DateTimeZone;
 
 /**
- * Class MountainDayTest.
+ * Class for testing Mountain Day in Japan.
  */
 class MountainDayTest extends JapanBaseTestCase
 {

@@ -15,7 +15,7 @@ use DateTime;
 use DateTimeZone;
 
 /**
- * Class LabourThanksgivingDayTest.
+ * Class for testing Labor Thanksgiving Day in Japan.
  */
 class LabourThanksgivingDayTest extends JapanBaseTestCase
 {

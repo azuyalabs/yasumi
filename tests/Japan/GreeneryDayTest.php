@@ -15,7 +15,7 @@ use DateTime;
 use DateTimeZone;
 
 /**
- * Class GreeneryDayTest.
+ * Class testing Greenery Day in Japan.
  */
 class GreeneryDayTest extends JapanBaseTestCase
 {

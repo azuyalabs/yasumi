@@ -15,7 +15,7 @@ use DateTime;
 use DateTimeZone;
 
 /**
- * Class ConstitutionMemorialDayTest.
+ * Class for teting Constitution Memorial Day in Japan.
  */
 class ConstitutionMemorialDayTest extends JapanBaseTestCase
 {

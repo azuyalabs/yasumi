@@ -15,7 +15,7 @@ use DateTime;
 use DateTimeZone;
 
 /**
- * Class VernalEquinoxDayTest.
+ * Class testing Vernal Equinox Day in Japan.
  */
 class VernalEquinoxDayTest extends JapanBaseTestCase
 {

@@ -15,7 +15,7 @@ use DateTime;
 use DateTimeZone;
 
 /**
- * Class ComingOfAgeDayTest.
+ * Class for testing Coming Of Age Day in Japan.
  */
 class ComingOfAgeDayTest extends JapanBaseTestCase
 {

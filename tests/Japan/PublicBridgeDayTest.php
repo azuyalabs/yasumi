@@ -15,7 +15,7 @@ use DateTime;
 use DateTimeZone;
 
 /**
- * Class for testing public bridge days.
+ * Class for testing public bridge days in Japan.
  */
 class PublicBridgeDayTest extends JapanBaseTestCase
 {
