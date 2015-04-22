@@ -34,7 +34,6 @@ class ImmaculateConceptionTest extends ItalyBaseTestCase
     public function testImmaculateConception($year, $expected)
     {
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, $expected);
-
     }
 
     /**

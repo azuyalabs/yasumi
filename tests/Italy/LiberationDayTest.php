@@ -61,7 +61,6 @@ class LiberationDayTest extends ItalyBaseTestCase
     public function testTranslatedLiberationDay()
     {
         $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            ['it_IT' => 'Festa della Liberazione']);
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), ['it_IT' => 'Festa della Liberazione']);
     }
 }
