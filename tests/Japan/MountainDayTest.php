@@ -25,6 +25,11 @@ class MountainDayTest extends JapanBaseTestCase
     const HOLIDAY = 'mountainDay';
 
     /**
+     * The year in which the holiday was first established
+     */
+    const ESTABLISHMENT_YEAR = 2016;
+
+    /**
      * Tests Mountain Day after 2016. Mountain Day was established in 2014 and is held from 2016 on August 11th.
      */
     public function testMountainDayOnAfter2016()
@@ -42,6 +47,7 @@ class MountainDayTest extends JapanBaseTestCase
      */
     public function testMountainDayBefore2016()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 2015));
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
     }
 }

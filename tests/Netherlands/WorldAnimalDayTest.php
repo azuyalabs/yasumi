@@ -31,11 +31,16 @@ class WorldAnimalDayTest extends NetherlandsBaseTestCase
     const HOLIDAY = 'worldAnimalDay';
 
     /**
+     * The year in which the holiday was first established
+     */
+    const ESTABLISHMENT_YEAR = 1931;
+
+    /**
      * Tests World Animal Day on or after 1931.
      */
     public function testWorldAnimalDayOnAfter1931()
     {
-        $year = $this->generateRandomYear(1931);
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
             new DateTime("$year-10-4", new DateTimeZone(self::TIMEZONE)));
 
@@ -46,6 +51,7 @@ class WorldAnimalDayTest extends NetherlandsBaseTestCase
      */
     public function testWorldAnimalBefore1931()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1930));
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
     }
 }

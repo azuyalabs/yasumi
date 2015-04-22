@@ -25,6 +25,11 @@ class NewYearsDayTest extends JapanBaseTestCase
     const HOLIDAY = 'newYearsDay';
 
     /**
+     * The year in which the holiday was first established
+     */
+    const ESTABLISHMENT_YEAR = 1948;
+
+    /**
      * Tests New Years Day after 1948. New Years Day was established after 1948
      */
     public function testNewYearsDayOnAfter1948()
@@ -42,6 +47,7 @@ class NewYearsDayTest extends JapanBaseTestCase
      */
     public function testNewYearsDayBefore1948()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1947));
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
     }
 }

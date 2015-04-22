@@ -25,11 +25,17 @@ class LiberationDayTest extends NetherlandsBaseTestCase
     const HOLIDAY = 'liberationDay';
 
     /**
+     * The year in which the holiday was first established
+     */
+    const ESTABLISHMENT_YEAR = 1947;
+
+    /**
      * Tests Liberation Day before 1947. Liberation Day was established after WWII in 1947.
      */
     public function testLiberationDayBefore1947()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1946));
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
     }
 
     /**
@@ -37,7 +43,7 @@ class LiberationDayTest extends NetherlandsBaseTestCase
      */
     public function testLiberationDayOnAfter1947()
     {
-        $year = $this->generateRandomYear(1947);
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
             new DateTime("$year-5-5", new DateTimeZone(self::TIMEZONE)));
     }

@@ -25,6 +25,11 @@ class NationalFoundationDayTest extends JapanBaseTestCase
     const HOLIDAY = 'nationalFoundationDay';
 
     /**
+     * The year in which the holiday was first established
+     */
+    const ESTABLISHMENT_YEAR = 1966;
+
+    /**
      * Tests National Foundation Day after 1966. National Foundation day was established after 1966
      */
     public function testNationalFoundationDayOnAfter1966()
@@ -42,6 +47,7 @@ class NationalFoundationDayTest extends JapanBaseTestCase
      */
     public function testNationalFoundationDayBefore1966()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1965));
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
     }
 }

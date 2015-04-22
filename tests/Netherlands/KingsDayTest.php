@@ -25,6 +25,11 @@ class KingsDayTest extends NetherlandsBaseTestCase
     const HOLIDAY = 'kingsDay';
 
     /**
+     * The year in which the holiday was first established
+     */
+    const ESTABLISHMENT_YEAR = 2014;
+
+    /**
      * Tests Kings Day on or after 2014. King's Day is celebrated from 2014 onwards on April 27th.
      */
     public function testKingsDayOnAfter2014()
@@ -44,6 +49,7 @@ class KingsDayTest extends NetherlandsBaseTestCase
      */
     public function testKingsDayBefore2014()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 2013));
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
     }
 }

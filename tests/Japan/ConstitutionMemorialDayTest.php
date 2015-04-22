@@ -25,6 +25,11 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase
     const HOLIDAY = 'constitutionMemorialDay';
 
     /**
+     * The year in which the holiday was first established
+     */
+    const ESTABLISHMENT_YEAR = 1948;
+
+    /**
      * Tests Constitution Memorial Day after 1948. Constitution Memorial Day was established after 1948
      */
     public function testConstitutionMemorialDayOnAfter1948()
@@ -42,6 +47,7 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase
      */
     public function testConstitutionMemorialDayBefore1948()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1947));
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
     }
 }

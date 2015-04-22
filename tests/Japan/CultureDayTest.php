@@ -25,6 +25,11 @@ class CultureDayTest extends JapanBaseTestCase
     const HOLIDAY = 'cultureDay';
 
     /**
+     * The year in which the holiday was first established
+     */
+    const ESTABLISHMENT_YEAR = 1948;
+
+    /**
      * Tests Culture Day after 1948. Culture Day Day was established after 1948
      */
     public function testCultureDayOnAfter1948()
@@ -42,6 +47,7 @@ class CultureDayTest extends JapanBaseTestCase
      */
     public function testCultureDayBefore1948()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1947));
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
     }
 }

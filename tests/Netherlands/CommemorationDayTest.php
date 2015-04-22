@@ -25,11 +25,17 @@ class CommemorationDayTest extends NetherlandsBaseTestCase
     const HOLIDAY = 'commemorationDay';
 
     /**
+     * The year in which the holiday was first established
+     */
+    const ESTABLISHMENT_YEAR = 1947;
+
+    /**
      * Tests Commemoration Day before 1947. Commemoration Day was established after WWII in 1947.
      */
     public function testCommemorationDayBefore1947()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1946));
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
     }
 
     /**

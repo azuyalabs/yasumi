@@ -25,6 +25,11 @@ class ShowaDayTest extends JapanBaseTestCase
     const HOLIDAY = 'showaDay';
 
     /**
+     * The year in which the holiday was first established
+     */
+    const ESTABLISHMENT_YEAR = 2007;
+
+    /**
      * Tests Showa Day after 2007. Showa day was established after 2007
      */
     public function testShowaDayOnAfter2007()
@@ -42,6 +47,7 @@ class ShowaDayTest extends JapanBaseTestCase
      */
     public function testShowaDayBefore2007()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 2006));
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
     }
 }

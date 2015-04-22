@@ -25,6 +25,11 @@ class EmperorsBirthdayTest extends JapanBaseTestCase
     const HOLIDAY = 'emperorsBirthday';
 
     /**
+     * The year in which the holiday was first established
+     */
+    const ESTABLISHMENT_YEAR = 1989;
+
+    /**
      * Tests Emperors Birthday after 1989. The Emperors Birthday is on December 23rd and celebrated as such since 1989.
      * Prior to the death of Emperor Hirohito in 1989, this holiday was celebrated on April 29. See also "Shōwa Day".
      */
@@ -45,6 +50,7 @@ class EmperorsBirthdayTest extends JapanBaseTestCase
      */
     public function testEmperorsBirthdayBefore1989()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1988));
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
     }
 }

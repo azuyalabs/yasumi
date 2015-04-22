@@ -25,6 +25,11 @@ class ChildrensDayTest extends JapanBaseTestCase
     const HOLIDAY = 'childrensDay';
 
     /**
+     * The year in which the holiday was first established
+     */
+    const ESTABLISHMENT_YEAR = 1948;
+
+    /**
      * Tests Children's Day after 1948. Children's Day was established after 1948
      */
     public function testChildrensDayOnAfter1948()
@@ -42,6 +47,7 @@ class ChildrensDayTest extends JapanBaseTestCase
      */
     public function testChildrensDayBefore1948()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1947));
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
     }
 }

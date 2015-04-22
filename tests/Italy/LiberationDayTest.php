@@ -32,11 +32,16 @@ class LiberationDayTest extends ItalyBaseTestCase
     const HOLIDAY = 'liberationDay';
 
     /**
+     * The year in which the holiday was first established
+     */
+    const ESTABLISHMENT_YEAR = 1949;
+
+    /**
      * Tests Liberation Day on or after 1949.
      */
     public function testLiberationDayOnAfter1949()
     {
-        $year = $this->generateRandomYear(1949);
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
             new DateTime("$year-4-25", new DateTimeZone(self::TIMEZONE)));
     }
@@ -46,7 +51,8 @@ class LiberationDayTest extends ItalyBaseTestCase
      */
     public function testLiberationDayBefore1949()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1948));
+        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
     }
 
     /**
@@ -54,7 +60,8 @@ class LiberationDayTest extends ItalyBaseTestCase
      */
     public function testTranslatedLiberationDay()
     {
-        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1949),
+        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
             ['it_IT' => 'Festa della Liberazione']);
     }
 }
