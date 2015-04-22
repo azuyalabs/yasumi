@@ -19,6 +19,11 @@ use DateTime;
 class AllSaintsDayTest extends BelgiumBaseTestCase
 {
     /**
+     * The name of the holiday
+     */
+    const HOLIDAY = 'allSaintsDay';
+
+    /**
      * Tests All Saints' Day.
      *
      * @dataProvider AllSaintsDayDataProvider
@@ -28,8 +33,7 @@ class AllSaintsDayTest extends BelgiumBaseTestCase
      */
     public function testAssumptionOfMary($year, $expected)
     {
-        $this->assertHoliday(self::COUNTRY, 'allSaintsDay', $year, $expected);
-
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, $expected);
     }
 
     /**
@@ -40,5 +44,14 @@ class AllSaintsDayTest extends BelgiumBaseTestCase
     public function AllSaintsDayDataProvider()
     {
         return $this->generateRandomDates(11, 1, self::TIMEZONE);
+    }
+
+    /**
+     * Tests translated name of All Saints' Day.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(),
+            ['nl_BE' => 'Allerheiligen']);
     }
 }

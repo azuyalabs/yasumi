@@ -19,6 +19,11 @@ use DateTime;
 class ArmisticeDayTest extends BelgiumBaseTestCase
 {
     /**
+     * The name of the holiday
+     */
+    const HOLIDAY = 'armisticeDay';
+
+    /**
      * Tests Armistice Day.
      *
      * @dataProvider ArmisticeDayDataProvider
@@ -28,8 +33,7 @@ class ArmisticeDayTest extends BelgiumBaseTestCase
      */
     public function testArmisticeDay($year, $expected)
     {
-        $this->assertHoliday(self::COUNTRY, 'armisticeDay', $year, $expected);
-
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, $expected);
     }
 
     /**
@@ -40,5 +44,14 @@ class ArmisticeDayTest extends BelgiumBaseTestCase
     public function ArmisticeDayDataProvider()
     {
         return $this->generateRandomDates(11, 11, self::TIMEZONE);
+    }
+
+    /**
+     * Tests translated name of Armistice Day
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(),
+            ['nl_BE' => 'Wapenstilstand']);
     }
 }

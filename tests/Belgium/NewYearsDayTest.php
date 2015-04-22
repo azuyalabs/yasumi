@@ -17,17 +17,21 @@ namespace Yasumi\Tests\Belgium;
 class NewYearsDayTest extends BelgiumBaseTestCase
 {
     /**
+     * The name of the holiday
+     */
+    const HOLIDAY = 'newYearsDay';
+
+    /**
      * Tests New Years Day.
      *
      * @dataProvider NewYearsDayDataProvider
      *
-     * @param int      $year     the year for which New Years Day needs to be tested
+     * @param int $year the year for which New Years Day needs to be tested
      * @param \DateTime $expected the expected date
      */
     public function testNewYearsDay($year, $expected)
     {
-        $this->assertHoliday(self::COUNTRY, 'newYearsDay', $year, $expected);
-
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, $expected);
     }
 
     /**
@@ -38,5 +42,14 @@ class NewYearsDayTest extends BelgiumBaseTestCase
     public function NewYearsDayDataProvider()
     {
         return $this->generateRandomDates(1, 1, self::TIMEZONE);
+    }
+
+    /**
+     * Tests translated name of New Years Day
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(),
+            ['nl_BE' => 'Nieuwjaar']);
     }
 }

@@ -20,12 +20,22 @@ use DateTimeZone;
 class EasterTest extends BelgiumBaseTestCase
 {
     /**
+     * The name of the holiday
+     */
+    const HOLIDAY = 'easter';
+
+    /**
+     * The name of the holiday EasterMonday
+     */
+    const HOLIDAY_EASTER_MONDAY = 'easterMonday';
+
+    /**
      * Tests Easter.
      */
     public function testEaster()
     {
         $year = 2008;
-        $this->assertHoliday(self::COUNTRY, 'easter', $year,
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
             new DateTime("$year-3-23", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -35,7 +45,25 @@ class EasterTest extends BelgiumBaseTestCase
     public function testEasterMonday()
     {
         $year = 2008;
-        $this->assertHoliday(self::COUNTRY, 'easterMonday', $year,
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY_EASTER_MONDAY, $year,
             new DateTime("$year-3-24", new DateTimeZone(self::TIMEZONE)));
+    }
+
+    /**
+     * Tests translated name of Easter
+     */
+    public function testTranslationEaster()
+    {
+        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(),
+            ['nl_BE' => 'Eerste Paasdag']);
+    }
+
+    /**
+     * Tests translated name of Easter Monday
+     */
+    public function testTranslationEasterMonday()
+    {
+        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY_EASTER_MONDAY, $this->generateRandomYear(),
+            ['nl_BE' => 'Paasmaandag']);
     }
 }

@@ -19,6 +19,11 @@ use DateTime;
 class NationalDayTest extends BelgiumBaseTestCase
 {
     /**
+     * The name of the holiday
+     */
+    const HOLIDAY = 'nationalDay';
+
+    /**
      * Tests National Day.
      *
      * @dataProvider NationalDayDataProvider
@@ -28,8 +33,7 @@ class NationalDayTest extends BelgiumBaseTestCase
      */
     public function testNationalDay($year, $expected)
     {
-        $this->assertHoliday(self::COUNTRY, 'nationalDay', $year, $expected);
-
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, $expected);
     }
 
     /**
@@ -40,5 +44,14 @@ class NationalDayTest extends BelgiumBaseTestCase
     public function NationalDayDataProvider()
     {
         return $this->generateRandomDates(7, 21, self::TIMEZONE);
+    }
+
+    /**
+     * Tests translated name of National Day
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(),
+            ['nl_BE' => 'Nationale feestdag']);
     }
 }
