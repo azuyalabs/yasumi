@@ -19,6 +19,11 @@ use DateTime;
 class ValentinesDayTest extends NetherlandsBaseTestCase
 {
     /**
+     * The name of the holiday
+     */
+    const HOLIDAY = 'valentinesDay';
+
+    /**
      * Tests Valentines Day.
      *
      * @dataProvider ValentinesDayDataProvider
@@ -28,7 +33,7 @@ class ValentinesDayTest extends NetherlandsBaseTestCase
      */
     public function testValentinesDay($year, $expected)
     {
-        $this->assertHoliday(self::COUNTRY, 'valentinesDay', $year, $expected);
+        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, $expected);
     }
 
     /**
@@ -39,5 +44,14 @@ class ValentinesDayTest extends NetherlandsBaseTestCase
     public function ValentinesDayDataProvider()
     {
         return $this->generateRandomDates(2, 14, self::TIMEZONE);
+    }
+
+    /**
+     * Tests translated name of Valentines Day.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(),
+            ['nl_NL' => 'Valentijnsdag',]);
     }
 }
