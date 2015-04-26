@@ -33,16 +33,7 @@ class InternationalWorkersDayTest extends ItalyBaseTestCase
      */
     public function testInternationalWorkersDay($year, $expected)
     {
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, $expected);
-    }
-
-    /**
-     * Tests translated name of International Workers' Day.
-     */
-    public function testTranslatedInternationalWorkersDay()
-    {
-        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(),
-            ['it_IT' => 'Festa del Lavoro']);
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
@@ -53,5 +44,14 @@ class InternationalWorkersDayTest extends ItalyBaseTestCase
     public function InternationalWorkersDayDataProvider()
     {
         return $this->generateRandomDates(5, 1, self::TIMEZONE);
+    }
+
+    /**
+     * Tests translated name of International Workers' Day.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            ['it_IT' => 'Festa del Lavoro']);
     }
 }

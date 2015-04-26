@@ -33,16 +33,7 @@ class stStephensDayTest extends ItalyBaseTestCase
      */
     public function teststStephensDay($year, $expected)
     {
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, $expected);
-    }
-
-    /**
-     * Tests translated name of St. Stephen's Day.
-     */
-    public function testTranslatedstStephensDay()
-    {
-        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(),
-            ['it_IT' => 'Santo Stefano']);
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
@@ -53,5 +44,14 @@ class stStephensDayTest extends ItalyBaseTestCase
     public function stStephensDayDataProvider()
     {
         return $this->generateRandomDates(12, 26, self::TIMEZONE);
+    }
+
+    /**
+     * Tests translated name of St. Stephen's Day.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            ['it_IT' => 'Santo Stefano']);
     }
 }

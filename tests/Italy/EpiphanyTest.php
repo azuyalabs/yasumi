@@ -33,16 +33,7 @@ class EpiphanyTest extends ItalyBaseTestCase
      */
     public function testEpiphany($year, $expected)
     {
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, $expected);
-    }
-
-    /**
-     * Tests translated name of Epiphany.
-     */
-    public function testTranslatedEpiphany()
-    {
-        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(),
-            ['it_IT' => 'Epifania']);
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
@@ -53,5 +44,14 @@ class EpiphanyTest extends ItalyBaseTestCase
     public function EpiphanyDataProvider()
     {
         return $this->generateRandomDates(1, 6, self::TIMEZONE);
+    }
+
+    /**
+     * Tests translated name of Epiphany.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            ['it_IT' => 'Epifania']);
     }
 }

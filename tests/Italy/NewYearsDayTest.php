@@ -33,16 +33,7 @@ class NewYearsDayTest extends ItalyBaseTestCase
      */
     public function testNewYearsDay($year, $expected)
     {
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, $expected);
-    }
-
-    /**
-     * Tests translated name of New Years Day.
-     */
-    public function testTranslatedNewYearsDay()
-    {
-        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(),
-            ['it_IT' => 'Capodanno']);
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
@@ -53,5 +44,14 @@ class NewYearsDayTest extends ItalyBaseTestCase
     public function NewYearsDayDataProvider()
     {
         return $this->generateRandomDates(1, 1, self::TIMEZONE);
+    }
+
+    /**
+     * Tests translated name of New Years Day.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            ['it_IT' => 'Capodanno']);
     }
 }

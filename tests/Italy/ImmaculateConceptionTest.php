@@ -33,16 +33,7 @@ class ImmaculateConceptionTest extends ItalyBaseTestCase
      */
     public function testImmaculateConception($year, $expected)
     {
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, $expected);
-    }
-
-    /**
-     * Tests translated name of the day of Immaculate Conception.
-     */
-    public function testTranslatedImmaculateConception()
-    {
-        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(),
-            ['it_IT' => 'Immacolata Concezione']);
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
@@ -53,5 +44,14 @@ class ImmaculateConceptionTest extends ItalyBaseTestCase
     public function ImmaculateConceptionDataProvider()
     {
         return $this->generateRandomDates(12, 8, self::TIMEZONE);
+    }
+
+    /**
+     * Tests translated name of the day of Immaculate Conception.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            ['it_IT' => 'Immacolata Concezione']);
     }
 }

@@ -42,7 +42,7 @@ class RepublicDayTest extends ItalyBaseTestCase
     public function testRepublicDayOnAfter1946()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-6-2", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -51,16 +51,16 @@ class RepublicDayTest extends ItalyBaseTestCase
      */
     public function testRepublicDayBefore1946()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
             $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
     }
 
     /**
      * Tests translated name of Republic Day.
      */
-    public function testTranslatedRepublicDay()
+    public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY,
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR), ['it_IT' => 'Festa della Republica']);
     }
 }

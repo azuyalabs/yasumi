@@ -22,9 +22,9 @@ abstract class ItalyBaseTestCase extends PHPUnit_Framework_TestCase
     use YasumiBase;
 
     /**
-     * Country (name) to be tested
+     * Name of the region (e.g. country / state) to be tested
      */
-    const COUNTRY = 'Italy';
+    const REGION = 'Italy';
 
     /**
      * Timezone in which this provider has holidays defined

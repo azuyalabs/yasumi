@@ -35,17 +35,8 @@ class EasterTest extends ItalyBaseTestCase
     public function testEaster()
     {
         $year = 2009;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY_FIRST, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY_FIRST, $year,
             new DateTime("$year-4-12", new DateTimeZone(self::TIMEZONE)));
-    }
-
-    /**
-     * Tests translated name of Easter.
-     */
-    public function testTranslatedEaster()
-    {
-        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY_FIRST, $this->generateRandomYear(),
-            ['it_IT' => 'Pasqua']);
     }
 
     /**
@@ -54,7 +45,7 @@ class EasterTest extends ItalyBaseTestCase
     public function testEasterMonday()
     {
         $year = 2009;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY_SECOND, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY_SECOND, $year,
             new DateTime("$year-4-13", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -63,7 +54,16 @@ class EasterTest extends ItalyBaseTestCase
      */
     public function testTranslatedEasterMonday()
     {
-        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY_SECOND, $this->generateRandomYear(),
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY_SECOND, $this->generateRandomYear(),
             ['it_IT' => 'Lunedi` dell\'Angelo']);
+    }
+
+    /**
+     * Tests translated name of Easter.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY_FIRST, $this->generateRandomYear(),
+            ['it_IT' => 'Pasqua']);
     }
 }

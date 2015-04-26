@@ -33,16 +33,7 @@ class AssumptionOfMaryTest extends ItalyBaseTestCase
      */
     public function testAssumptionOfMary($year, $expected)
     {
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, $expected);
-    }
-
-    /**
-     * Tests translated name of the Assumption of Mary.
-     */
-    public function testTranslatedAssumptionOfMary()
-    {
-        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(),
-            ['it_IT' => 'Assunzione di Maria Vergine']);
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
@@ -53,5 +44,14 @@ class AssumptionOfMaryTest extends ItalyBaseTestCase
     public function AssumptionOfMaryDataProvider()
     {
         return $this->generateRandomDates(8, 15, self::TIMEZONE);
+    }
+
+    /**
+     * Tests translated name of the Assumption of Mary.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            ['it_IT' => 'Assunzione di Maria Vergine']);
     }
 }

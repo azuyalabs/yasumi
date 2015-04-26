@@ -33,16 +33,7 @@ class AllSaintsDayTest extends ItalyBaseTestCase
      */
     public function testAssumptionOfMary($year, $expected)
     {
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, $expected);
-    }
-
-    /**
-     * Tests translated name of All Saints' Day.
-     */
-    public function testTranslatedAssumptionOfMary()
-    {
-        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(),
-            ['it_IT' => 'Festa di Tutti i Santi']);
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
@@ -53,5 +44,14 @@ class AllSaintsDayTest extends ItalyBaseTestCase
     public function AllSaintsDayDataProvider()
     {
         return $this->generateRandomDates(11, 1, self::TIMEZONE);
+    }
+
+    /**
+     * Tests translated name of All Saints' Day.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            ['it_IT' => 'Festa di Tutti i Santi']);
     }
 }
