@@ -61,7 +61,7 @@ class Yasumi
     public static function create($class, $year = null, $locale = self::DEFAULT_LOCALE)
     {
         // Find and return holiday provider instance
-        $providerClass = sprintf('Yasumi\Provider\%s', $class);
+        $providerClass = sprintf('Yasumi\Provider\%s', str_replace('/', '\\', $class));
         if ( ! class_exists($providerClass)) {
             throw new InvalidArgumentException(sprintf('Unable to find holiday provider "%s".', $class));
         }
