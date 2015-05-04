@@ -53,17 +53,23 @@ class France extends AbstractProvider
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->stStephensDay($this->year, $this->timezone, $this->locale));
 
-        /*
-         * French National Day.
-         *
-         * The French National Day commemorates the beginning of the French Revolution with the Storming of the Bastille
-         * on 14 July 1789,as well as the Fête de la Fédération which celebrated the unity of the French people on 14
-         * July 1790. Celebrations are held throughout France. The oldest and largest regular military parade in Europe
-         * is held on the morning of 14 July, on the Champs-Élysées in Paris in front of the President of the Republic,
-         * French officials and foreign guests.
-         *
-         * @link http://en.wikipedia.org/wiki/Bastille_Day Source: Wikipedia
-         */
+        // Calculate other holidays
+        $this->calculateBastilleDay();
+    }
+
+    /*
+     * French National Day.
+     *
+     * The French National Day commemorates the beginning of the French Revolution with the Storming of the Bastille
+     * on 14 July 1789,as well as the Fête de la Fédération which celebrated the unity of the French people on 14
+     * July 1790. Celebrations are held throughout France. The oldest and largest regular military parade in Europe
+     * is held on the morning of 14 July, on the Champs-Élysées in Paris in front of the President of the Republic,
+     * French officials and foreign guests.
+     *
+     * @link http://en.wikipedia.org/wiki/Bastille_Day
+     */
+    public function calculateBastilleDay()
+    {
         if ($this->year >= 1790) {
             $this->addHoliday(new Holiday('bastilleDay', [
                 'en_US' => 'Bastille Day',
