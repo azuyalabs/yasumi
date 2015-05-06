@@ -52,7 +52,7 @@ class MarineDayTest extends JapanBaseTestCase
     public function testMarineDayBetween1996And2003SubstitutedNextWorkingDay()
     {
         $year = 1997;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::COUNTRY, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
             new DateTime("$year-7-21", new DateTimeZone(self::TIMEZONE)));
     }
 

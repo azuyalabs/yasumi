@@ -30,4 +30,9 @@ abstract class JapanBaseTestCase extends PHPUnit_Framework_TestCase
      * Timezone in which this provider has holidays defined
      */
     const TIMEZONE = 'Asia/Tokyo';
+
+    /**
+     * Prefix for short name used when holiday is substituted
+     */
+    const SUBSTITUTE_PREFIX = 'substituteHoliday:';
 }

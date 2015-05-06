@@ -48,7 +48,7 @@ class EmperorsBirthdayTest extends JapanBaseTestCase
     public function testEmperorsBirthdayOnAfter1989SubstitutedNextWorkingDay()
     {
         $year = 2001;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::COUNTRY, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
             new DateTime("$year-12-24", new DateTimeZone(self::TIMEZONE)));
     }
 

@@ -47,7 +47,7 @@ class LabourThanksgivingDayTest extends JapanBaseTestCase
     public function testLabourThanksgivingDayOnAfter1948SubstitutedNextWorkingDay()
     {
         $year = 1986;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::COUNTRY, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
             new DateTime("$year-11-24", new DateTimeZone(self::TIMEZONE)));
     }
 

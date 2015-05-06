@@ -332,29 +332,31 @@ class Japan extends AbstractProvider
                 continue;
             }
 
+            $substituteDay = clone $date;
+
             // If holidays falls on a Sunday
             if ($date->format('w') == 0) {
                 if ($this->year >= 2007) {
                     // Find next week day (not being another holiday)
-                    while (in_array($date, $dates)) {
-                        $date->add(new DateInterval('P1D'));
+                    while (in_array($substituteDay, $dates)) {
+                        $substituteDay->add(new DateInterval('P1D'));
                         continue;
                     }
                 } elseif ($date >= '1973-04-12') {
-                    $date->add(new DateInterval('P1D'));
-                    if (in_array($date, $dates)) {
-                        continue;
+                    $substituteDay->add(new DateInterval('P1D'));
+                    if (in_array($substituteDay, $dates)) {
+                        continue; // @codeCoverageIgnore
                     }
                 } else {
                     continue;
                 }
 
                 // Add a new holiday that is substituting the original holiday
-                if ( ! is_null($date)) {
+                if ( ! is_null($substituteDay)) {
                     $substituteHoliday = new Holiday('substituteHoliday:' . $shortName, [
                         'en_US' => $date->translations['en_US'] . ' Observed',
                         'ja_JP' => '振替休日 (' . $date->translations['ja_JP'] . ')'
-                    ], $date, $this->locale);
+                    ], $substituteDay, $this->locale);
 
                     $this->addHoliday($substituteHoliday);
                 }

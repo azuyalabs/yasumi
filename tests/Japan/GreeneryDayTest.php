@@ -20,7 +20,7 @@ use DateTimeZone;
 class GreeneryDayTest extends JapanBaseTestCase
 {
     /**
-     * The name of the holiday
+     * The name of the holiday defined in the test
      */
     const HOLIDAY = 'greeneryDay';
 
@@ -28,7 +28,7 @@ class GreeneryDayTest extends JapanBaseTestCase
      * Tests Greenery Day after 2007. Greenery Day was established from 1989 on April 29th. After 2007
      * it was changed to be May 4th.
      */
-    public function testGreeneryDayOnAfter2007()
+    public function testHolidayOnAfter2007()
     {
         $year = 2112;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
@@ -38,10 +38,10 @@ class GreeneryDayTest extends JapanBaseTestCase
     /**
      * Tests Greenery Day after 2007 substituted next working day (when Greenery Day falls on a Sunday)
      */
-    public function testGreeneryDayOnAfter2007SubstitutedNextWorkingDay()
+    public function testHolidayOnAfter2007SubstitutedNextWorkingDay()
     {
         $year = 2014;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::COUNTRY, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
             new DateTime("$year-5-6", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -49,7 +49,7 @@ class GreeneryDayTest extends JapanBaseTestCase
      * Tests Greenery Day between 1989 and 2007. Greenery Day was established from 1989 on April 29th. After 2007
      * it was changed to be May 4th.
      */
-    public function testGreeneryDayBetween1989And2007()
+    public function testHolidayBetween1989And2007()
     {
         $year = 1997;
         $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
@@ -59,10 +59,10 @@ class GreeneryDayTest extends JapanBaseTestCase
     /**
      * Tests Greenery Day between 1989 and 2007 substituted next working day (when Greenery Day falls on a Sunday)
      */
-    public function testGreeneryDayBetween1989And2007SubstitutedNextWorkingDay()
+    public function testHolidayBetween1989And2007SubstitutedNextWorkingDay()
     {
         $year = 2001;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::COUNTRY, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
             new DateTime("$year-4-30", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -70,7 +70,7 @@ class GreeneryDayTest extends JapanBaseTestCase
      * Tests Greenery Day before 1989. Greenery Day was established from 1989 on April 29th. After 2007
      * it was changed to be May 4th.
      */
-    public function testGreeneryDayBefore1989()
+    public function testHolidayBefore1989()
     {
         $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1988));
     }

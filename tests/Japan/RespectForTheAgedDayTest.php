@@ -53,7 +53,7 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase
     public function testRespectForTheAgedDayBetween1996And2003SubstitutedNextWorkingDay()
     {
         $year = 2002;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::COUNTRY, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
             new DateTime("$year-9-16", new DateTimeZone(self::TIMEZONE)));
     }
 
