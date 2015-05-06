@@ -22,7 +22,7 @@ use DateTimeZone;
  * the Italian people were called to the polls to decide on the form of government, following the Second World War and
  * the fall of Fascism.
  *
- * @link http://en.wikipedia.org/wiki/Festa_della_Repubblica Source: Wikipedia.
+ * @link http://en.wikipedia.org/wiki/Festa_della_Repubblica
  */
 class RepublicDayTest extends ItalyBaseTestCase
 {
