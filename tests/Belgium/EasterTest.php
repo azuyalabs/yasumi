@@ -1,13 +1,13 @@
 <?php
-/*
- * This file is part of the Yasumi package.
+/**
+ *  This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 AzuyaLabs
+ *  Copyright (c) 2015 - 2016 AzuyaLabs
  *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ *  For the full copyright and license information, please view the LICENSE
+ *  file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 namespace Yasumi\Tests\Belgium;
 
@@ -20,7 +20,7 @@ use DateTimeZone;
 class EasterTest extends BelgiumBaseTestCase
 {
     /**
-     * The name of the holiday
+     * The name of the holiday to be tested
      */
     const HOLIDAY = 'easter';
 
@@ -35,7 +35,7 @@ class EasterTest extends BelgiumBaseTestCase
     public function testEaster()
     {
         $year = 2008;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-3-23", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -45,7 +45,7 @@ class EasterTest extends BelgiumBaseTestCase
     public function testEasterMonday()
     {
         $year = 2008;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY_EASTER_MONDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY_EASTER_MONDAY, $year,
             new DateTime("$year-3-24", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -54,7 +54,7 @@ class EasterTest extends BelgiumBaseTestCase
      */
     public function testTranslationEaster()
     {
-        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(),
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
             ['nl_BE' => 'Eerste Paasdag']);
     }
 
@@ -63,7 +63,7 @@ class EasterTest extends BelgiumBaseTestCase
      */
     public function testTranslationEasterMonday()
     {
-        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY_EASTER_MONDAY, $this->generateRandomYear(),
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY_EASTER_MONDAY, $this->generateRandomYear(),
             ['nl_BE' => 'Paasmaandag']);
     }
 }

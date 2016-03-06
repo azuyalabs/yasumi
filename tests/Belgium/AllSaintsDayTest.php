@@ -1,13 +1,13 @@
 <?php
-/*
- * This file is part of the Yasumi package.
+/**
+ *  This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 AzuyaLabs
+ *  Copyright (c) 2015 - 2016 AzuyaLabs
  *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ *  For the full copyright and license information, please view the LICENSE
+ *  file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 namespace Yasumi\Tests\Belgium;
 
@@ -19,7 +19,7 @@ use DateTime;
 class AllSaintsDayTest extends BelgiumBaseTestCase
 {
     /**
-     * The name of the holiday
+     * TThe name of the holiday to be tested
      */
     const HOLIDAY = 'allSaintsDay';
 
@@ -31,9 +31,9 @@ class AllSaintsDayTest extends BelgiumBaseTestCase
      * @param int      $year     the year for which All Saints' Day needs to be tested
      * @param DateTime $expected the expected date
      */
-    public function testAssumptionOfMary($year, $expected)
+    public function testAllSaintsDay($year, $expected)
     {
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, $expected);
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
@@ -51,7 +51,7 @@ class AllSaintsDayTest extends BelgiumBaseTestCase
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(),
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
             ['nl_BE' => 'Allerheiligen']);
     }
 }
