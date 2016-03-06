@@ -1,13 +1,13 @@
 <?php
-/*
- * This file is part of the Yasumi package.
+/**
+ *  This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 AzuyaLabs
+ *  Copyright (c) 2015 - 2016 AzuyaLabs
  *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ *  For the full copyright and license information, please view the LICENSE
+ *  file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 namespace Yasumi\Tests;
 
@@ -22,6 +22,26 @@ use Yasumi\Yasumi;
  */
 trait YasumiBase
 {
+
+    /**
+     * Asserts that the expected holidays are indeed a holiday for the given provider and year
+     *
+     * @param string $provider         the holiday provider (i.e. country/state) for which the holidays need to be
+     *                                 tested
+     * @param int    $year             holiday calendar year
+     * @param array  $expectedHolidays list of all known holidays of the given provider
+     */
+    public function assertDefinedHolidays($provider, $year, $expectedHolidays)
+    {
+        $holidays = Yasumi::create($provider, $year)->getHolidays();
+
+        // Loop through all known holidays and assert they are defined by the provider class
+        foreach ($expectedHolidays as $holiday) {
+            $this->assertArrayHasKey($holiday, $holidays);
+        }
+
+        unset($holidays);
+    }
 
     /**
      * Asserts that the expected date is indeed a holiday for that given year and name
