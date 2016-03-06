@@ -2,12 +2,12 @@
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 AzuyaLabs
+ * Copyright (c) 2015 - 2016 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com> *
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 namespace Yasumi\Provider;
 
@@ -30,7 +30,7 @@ trait ChristianHolidays
      * on a date based on a certain number of days after March 21st. The date of Easter Day was defined by the Council
      * of Nicaea in AD325 as the Sunday after the first full moon which falls on or after the Spring Equinox.
      *
-     * @link http://en.wikipedia.org/wiki/Easter Source: Wikipedia.
+     * @link http://en.wikipedia.org/wiki/Easter
      *
      * @param int    $year     the year for which Easter need to be created
      * @param string $timezone the timezone in which Easter is celebrated
@@ -75,7 +75,7 @@ trait ChristianHolidays
      * on a date based on a certain number of days after March 21st. The date of Easter Day was defined by the Council
      * of Nicaea in AD325 as the Sunday after the first full moon which falls on or after the Spring Equinox.
      *
-     * @link http://en.wikipedia.org/wiki/Easter Source: Wikipedia.
+     * @link http://en.wikipedia.org/wiki/Easter
      *
      * @param int    $year     the year for which Easter Monday need to be created
      * @param string $timezone the timezone in which Easter Monday is celebrated
@@ -98,7 +98,7 @@ trait ChristianHolidays
      * Christian churches. Ascension Day is traditionally celebrated on a Thursday, the fortieth day of Easter although
      * some Catholic provinces have moved the observance to the following Sunday.
      *
-     * @link http://en.wikipedia.org/wiki/Feast_of_the_Ascension Source: Wikipedia.
+     * @link http://en.wikipedia.org/wiki/Feast_of_the_Ascension
      *
      * @param int    $year     the year for which Ascension need to be created
      * @param string $timezone the timezone in which Ascension is celebrated
@@ -204,7 +204,7 @@ trait ChristianHolidays
      * after Pentecost in Eastern Catholicism and Eastern Orthodoxy, in honour of all the saints, known and unknown.
      * The liturgical celebration begins at Vespers on the evening of 31 October and ends at the close of 1 November.
      *
-     * @link http://en.wikipedia.org/wiki/All_Saints%27_Day Source: Wikipedia
+     * @link http://en.wikipedia.org/wiki/All_Saints%27_Day
      *
      * @param int    $year     the year for which All Saints' Day need to be created
      * @param string $timezone the timezone in which All Saints' Day is celebrated
@@ -226,7 +226,7 @@ trait ChristianHolidays
      * of the Virgin Mary into Heaven at the end of her earthly life. In the churches that observe it, the
      * Assumption is a major feast day, commonly celebrated on August 15.
      *
-     * @link http://en.wikipedia.org/wiki/Assumption_of_Mary Source: Wikipedia
+     * @link http://en.wikipedia.org/wiki/Assumption_of_Mary
      *
      * @param int    $year     the year for which the day of the Assumption of Mary need to be created
      * @param string $timezone the timezone in which the day of the Assumption of Mary is celebrated
@@ -272,7 +272,7 @@ trait ChristianHolidays
      * for most countries is January 19 because of the 13-day difference today between that calendar and the generally
      * used Gregorian calendar.
      *
-     * @link http://en.wikipedia.org/wiki/Epiphany_(holiday) Source: Wikipedia.
+     * @link http://en.wikipedia.org/wiki/Epiphany_(holiday)
      *
      * @param int    $year     the year for which Epiphany need to be created
      * @param string $timezone the timezone in which Epiphany is celebrated
@@ -294,7 +294,7 @@ trait ChristianHolidays
      * days, if the 6 Sundays, which are not days of fast, are excluded) before Easter and can fall as early as 4
      * February or as late as 10 March.
      *
-     * @link http://en.wikipedia.org/wiki/Ash_Wednesday Source: Wikipedia.
+     * @link http://en.wikipedia.org/wiki/Ash_Wednesday
      *
      * @param int    $year     the year for which Ash Wednesday need to be created
      * @param string $timezone the timezone in which Ash Wednesday is celebrated
@@ -318,7 +318,7 @@ trait ChristianHolidays
      * which is celebrated on September 8. It is one of the most important Marian feasts celebrated in the liturgical
      * calendar of the Roman Catholic Church.
      *
-     * @link http://en.wikipedia.org/wiki/Feast_of_the_Immaculate_Conception Source: Wikipedia.
+     * @link http://en.wikipedia.org/wiki/Feast_of_the_Immaculate_Conception
      *
      * @param int    $year     the year for which Immaculate Conception need to be created
      * @param string $timezone the timezone in which Immaculate Conception is celebrated
@@ -343,7 +343,7 @@ trait ChristianHolidays
      * December according to that calendar, which places it on 8 January of the Gregorian calendar used in secular
      * contexts.
      *
-     * @link http://en.wikipedia.org/wiki/St._Stephen%27s_Day Source: Wikipedia.
+     * @link http://en.wikipedia.org/wiki/St._Stephen%27s_Day
      *
      * @param int    $year     the year for which St. Stephen's Day need to be created
      * @param string $timezone the timezone in which St. Stephen's Day is celebrated
@@ -357,5 +357,100 @@ trait ChristianHolidays
     {
         return new Holiday('stStephensDay', [], new DateTime("$year-12-26", new DateTimeZone($timezone)), $locale,
             $type);
+    }
+
+    /**
+     * St. Joseph's Day
+     *
+     * Saint Joseph's Day, March 19, the Feast of St. Joseph is in Western Christianity the principal feast day of Saint
+     * Joseph, husband of the Blessed Virgin Mary. He is the foster-father of Jesus Christ. March 19 was dedicated to
+     * Saint Joseph in several Western calendars by the 10th century, and this custom was established in Rome by 1479.
+     * Pope St. Pius V extended its use to the entire Roman Rite by his Apostolic Constitution Quo primum
+     * (July 14, 1570). Since 1969, Episcopal Conferences may, if they wish, transfer it to a date outside Lent.
+     *
+     * @link http://en.wikipedia.org/wiki/St_Joseph's_Day
+     *
+     * @param int    $year     the year for which St. Joseph's Day need to be created
+     * @param string $timezone the timezone in which St. Joseph's Day is celebrated
+     * @param string $locale   the locale for which St. Joseph's Day need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
+     *
+     * @return \Yasumi\Holiday
+     */
+    public function stJosephsDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
+    {
+        return new Holiday('stJosephsDay', [], new DateTime("$year-3-19", new DateTimeZone($timezone)), $locale, $type);
+    }
+
+    /**
+     * Maundy Thursday
+     *
+     * Maundy Thursday (also known as Holy Thursday, Covenant Thursday, Great and Holy Thursday, Sheer Thursday, and
+     * Thursday of Mysteries) is the Christian holy day falling on the Thursday before Easter. It commemorates the
+     * Maundy and Last Supper of Jesus Christ with the Apostles as described in the Canonical gospels. It is the fifth
+     * day of Holy Week, and is preceded by Holy Wednesday and followed by Good Friday.
+     *
+     * @link http://en.wikipedia.org/wiki/Maundy_Thursday
+     *
+     * @param int    $year     the year for which Maundy Thursday need to be created
+     * @param string $timezone the timezone in which Maundy Thursday is celebrated
+     * @param string $locale   the locale for which Maundy Thursday need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
+     *
+     * @return \Yasumi\Holiday
+     */
+    public function maundyThursday($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
+    {
+        return new Holiday('maundyThursday', [], $this->calculateEaster($year, $timezone)->sub(new DateInterval('P3D')),
+            $locale, $type);
+    }
+
+    /**
+     * St. George's Day
+     *
+     * Saint George's Day is the feast day of Saint George. It is celebrated by various Christian Churches and by the
+     * several nations, kingdoms, countries, and cities of which Saint George is the patron saint. Saint George's Day is
+     * celebrated on 23 April, the traditionally accepted date of Saint George's death in 303 AD. For Eastern Orthodox
+     * Churches (which use the Julian calendar), '23 April' currently falls on 6 May of the Gregorian calendar.
+     *
+     * @link http://en.wikipedia.org/wiki/St_George%27s_Day
+     *
+     * @param int    $year     the year for which St. George's Day need to be created
+     * @param string $timezone the timezone in which St. George's Day is celebrated
+     * @param string $locale   the locale for which St. George's Day need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
+     *
+     * @return \Yasumi\Holiday
+     */
+    public function stGeorgesDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
+    {
+        return new Holiday('stGeorgesDay', [], new DateTime("$year-4-23", new DateTimeZone($timezone)), $locale, $type);
+    }
+
+    /**
+     * St. John's Day.
+     *
+     * The Nativity of John the Baptist (or Birth of John the Baptist, or Nativity of the Forerunner) is a Christian
+     * feast day celebrating the birth of John the Baptist, a prophet who foretold the coming of the Messiah in the
+     * person of Jesus, whom he later baptised. The Nativity of John the Baptist on June 24 comes three months after the
+     * celebration on March 25 of the Annunciation, when the angel Gabriel told Mary that her cousin Elizabeth was in
+     * her sixth month of pregnancy.
+     *
+     * @link https://en.wikipedia.org/wiki/Nativity_of_St_John_the_Baptist
+     *
+     * @param int    $year     the year for which St. John's Day need to be created
+     * @param string $timezone the timezone in which St. John's Day is celebrated
+     * @param string $locale   the locale for which St. John's Day need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
+     *
+     * @return \Yasumi\Holiday
+     */
+    public function stJohnsDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
+    {
+        return new Holiday('stJohnsDay', [], new DateTime("$year-06-24", new DateTimeZone($timezone)), $locale, $type);
     }
 }
