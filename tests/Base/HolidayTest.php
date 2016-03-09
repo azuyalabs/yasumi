@@ -1,14 +1,13 @@
 <?php
-/*
- * This file is part of the Yasumi package.
+/**
+ *  This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 AzuyaLabs
+ *  Copyright (c) 2015 - 2016 AzuyaLabs
  *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ *  For the full copyright and license information, please view the LICENSE
+ *  file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
- * @author Tomasz Sawicki
+ *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 use Yasumi\Holiday;
 use Yasumi\Tests\YasumiBase;
@@ -147,7 +146,7 @@ class HolidayTest extends PHPUnit_Framework_TestCase
 
         $translationsStub->expects($this->once())->method('getTranslations')->with($this->equalTo('newYearsDay'))->willReturn($translations);
 
-        $customLocale = 'nl_NL';
+        $customLocale      = 'nl_NL';
         $customTranslation = 'Nieuwjaar';
 
         $holiday = new Holiday('newYearsDay', [$customLocale => $customTranslation], new DateTime("2015-01-01"),
@@ -174,7 +173,7 @@ class HolidayTest extends PHPUnit_Framework_TestCase
 
         $translationsStub->expects($this->once())->method('getTranslations')->with($this->equalTo('newYearsDay'))->willReturn($translations);
 
-        $customLocale = 'pl_PL';
+        $customLocale      = 'pl_PL';
         $customTranslation = 'Bardzo Nowy Rok';
 
         $holiday = new Holiday('newYearsDay', [$customLocale => $customTranslation], new DateTime("2015-01-01"),
