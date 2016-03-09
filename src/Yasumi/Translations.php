@@ -1,15 +1,13 @@
 <?php
-/*
- * This file is part of the Yasumi package.
+/**
+ *  This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 AzuyaLabs
+ *  Copyright (c) 2015 - 2016 AzuyaLabs
  *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ *  For the full copyright and license information, please view the LICENSE
+ *  file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
- * @author Tomasz Sawicki
- *
+ *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 namespace Yasumi;
 
@@ -74,14 +72,30 @@ class Translations implements TranslationsInterface
 
             if (is_array($translations)) {
                 foreach (array_keys($translations) as $locale) {
-                    if ( ! in_array($locale, $this->availableLocales)) {
-                        throw new UnknownLocaleException(sprintf('Locale "%s" is not a valid locale.', $locale));
-                    }
+                    $this->isValidLocale($locale); // Validate the given locale
                 }
 
                 $this->translations[$shortName] = $translations;
             }
         }
+    }
+
+    /**
+     * Checks whether the given locale is a valid/available locale.
+     *
+     * @param string $locale locale the locale to be validated
+     *
+     * @throws UnknownLocaleException An UnknownLocaleException is thrown if the given locale is not
+     *                                     valid/available.
+     * @return true upon success, otherwise an UnknownLocaleException is thrown
+     */
+    protected function isValidLocale($locale)
+    {
+        if ( ! in_array($locale, $this->availableLocales)) {
+            throw new UnknownLocaleException(sprintf('Locale "%s" is not a valid locale.', $locale));
+        }
+
+        return true;
     }
 
     /**
@@ -93,9 +107,7 @@ class Translations implements TranslationsInterface
      */
     public function addTranslation($shortName, $locale, $translation)
     {
-        if ( ! in_array($locale, $this->availableLocales)) {
-            throw new UnknownLocaleException(sprintf('Locale "%s" is not a valid locale.', $locale));
-        }
+        $this->isValidLocale($locale); // Validate the given locale
 
         if ( ! array_key_exists($shortName, $this->translations)) {
             $this->translations[$shortName] = [];

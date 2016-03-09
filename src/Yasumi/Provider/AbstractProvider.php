@@ -1,15 +1,13 @@
 <?php
-/*
- * This file is part of the Yasumi package.
+/**
+ *  This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 AzuyaLabs
+ *  Copyright (c) 2015 - 2016 AzuyaLabs
  *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ *  For the full copyright and license information, please view the LICENSE
+ *  file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
- * @author Tomasz Sawicki
- *
+ *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 namespace Yasumi\Provider;
 
@@ -140,12 +138,26 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     public function whenIs($shortName)
     {
-        // Validate if short name is not empty
+        $this->isHolidayNameNotEmpty($shortName); // Validate if short name is not empty
+
+        return (string) $this->holidays[$shortName];
+    }
+
+    /**
+     * Checks whether the given holiday (short name) is not empty.
+     *
+     * @param $shortName string the name of the holiday to be checked.
+     *
+     * @throws InvalidArgumentException An InvalidArgumentException is thrown if the given holiday parameter is empty.
+     * @return true upon success, otherwise an InvalidArgumentException is thrown
+     */
+    protected function isHolidayNameNotEmpty($shortName)
+    {
         if (empty($shortName) || is_null($shortName)) {
             throw new InvalidArgumentException('Holiday name can not be blank.');
         }
 
-        return (string) $this->holidays[$shortName];
+        return true;
     }
 
     /**
@@ -161,10 +173,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     public function whatWeekDayIs($shortName)
     {
-        // Validate if short name is not empty
-        if (empty($shortName) || is_null($shortName)) {
-            throw new InvalidArgumentException('Holiday name can not be blank.');
-        }
+        $this->isHolidayNameNotEmpty($shortName); // Validate if short name is not empty
 
         return (int) $this->holidays[$shortName]->format('w');
     }
@@ -256,10 +265,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     private function anotherTime($year, $shortName)
     {
-        // Validate if short name is not empty
-        if (empty($shortName) || is_null($shortName)) {
-            throw new InvalidArgumentException('Holiday name can not be blank.');
-        }
+        $this->isHolidayNameNotEmpty($shortName); // Validate if short name is not empty
 
         // Get calling class name
         $hReflectionClass = new \ReflectionClass(get_class($this));
@@ -277,10 +283,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     public function getHoliday($shortName)
     {
-        // Validate if short name is not empty
-        if (empty($shortName) || is_null($shortName)) {
-            throw new InvalidArgumentException('Holiday name can not be blank.');
-        }
+        $this->isHolidayNameNotEmpty($shortName); // Validate if short name is not empty
 
         $holidays = $this->getHolidays();
 
