@@ -9,6 +9,7 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
+
 namespace Yasumi\Tests\Belgium;
 
 use PHPUnit_Framework_TestCase;
