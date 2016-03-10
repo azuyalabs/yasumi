@@ -1,13 +1,13 @@
 <?php
-/*
- * This file is part of the Yasumi package.
+/**
+ *  This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2016 AzuyaLabs
+ *  Copyright (c) 2015 - 2016 AzuyaLabs
  *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ *  For the full copyright and license information, please view the LICENSE
+ *  file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 namespace Yasumi\Provider;
 
@@ -152,6 +152,29 @@ trait ChristianHolidays
     {
         return new Holiday('pentecostMonday', [],
             $this->calculateEaster($year, $timezone)->add(new DateInterval('P50D')), $locale, $type);
+    }
+
+    /**
+     * Corpus Christi.
+     *
+     * The Feast of Corpus Christi (Latin for Body of Christ), also known as Corpus Domini, is a Latin Rite liturgical
+     * solemnity celebrating the tradition and belief in the body and blood of Jesus Christ and his Real Presence in the
+     * Eucharist. The feast is liturgically celebrated on the Thursday after Trinity Sunday or, "where the Solemnity of
+     * The Most Holy Body and Blood of Christ is not a holy day of obligation, it is assigned to the Sunday after the
+     * Most Holy Trinity as its proper day". This is 60 days after Easter.
+     *
+     * @param int    $year     the year for which Corpus Christi need to be created
+     * @param string $timezone the timezone in which Corpus Christi is celebrated
+     * @param string $locale   the locale for which Corpus Christi need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a type of 'other' is considered.
+     *
+     * @return \Yasumi\Holiday
+     */
+    public function corpusChristi($year, $timezone, $locale, $type = Holiday::TYPE_OTHER)
+    {
+        return new Holiday('corpusChristi', [], $this->calculateEaster($year, $timezone)->add(new DateInterval('P60D')),
+            $locale, $type);
     }
 
     /**
