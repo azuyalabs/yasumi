@@ -10,8 +10,8 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-// Translation for Victory in Europe Day
+// Translation for Corpus Christi
 return [
-    'en_US' => 'Victory in Europe Day',
-    'fr_FR' => 'Fête de la Victoire'
+    'en_US' => 'Corpus Christi',
+    'es_ES' => 'Corpus Christi'
 ];
