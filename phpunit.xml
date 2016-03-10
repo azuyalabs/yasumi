@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~  This file is part of the Yasumi package.
+  ~
+  ~  Copyright (c) 2015 - 2016 AzuyaLabs
+  ~
+  ~  For the full copyright and license information, please view the LICENSE
+  ~  file that was distributed with this source code.
+  ~
+  ~  @author Sacha Telgenhof <stelgenhof@gmail.com>
+  -->
+
 <phpunit backupGlobals="false"
          backupStaticAttributes="false"
          bootstrap="vendor/autoload.php"
@@ -51,6 +62,11 @@
         <!-- Test Suite for holidays in France -->
         <testsuite name="France">
             <directory suffix="Test.php">./tests/France</directory>
+        </testsuite>
+
+        <!-- Test Suite for holidays in Spain -->
+        <testsuite name="Spain">
+            <directory suffix="Test.php">./tests/Spain</directory>
         </testsuite>
 
     </testsuites>
