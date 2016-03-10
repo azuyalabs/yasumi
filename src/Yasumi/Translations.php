@@ -1,4 +1,5 @@
 <?php
+
 /**
  *  This file is part of the Yasumi package.
  *
@@ -54,7 +55,7 @@ class Translations implements TranslationsInterface
         }
 
         $directoryPath = rtrim($directoryPath, '/\\') . DIRECTORY_SEPARATOR;
-        $extension = 'php';
+        $extension     = 'php';
 
         foreach (new DirectoryIterator($directoryPath) as $file) {
             if ($file->isDot() || $file->isDir()) {
@@ -65,7 +66,7 @@ class Translations implements TranslationsInterface
                 continue;
             }
 
-            $filename = $file->getFilename();
+            $filename  = $file->getFilename();
             $shortName = $file->getBasename('.' . $extension);
 
             $translations = require $directoryPath . $filename;

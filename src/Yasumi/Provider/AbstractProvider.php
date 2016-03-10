@@ -1,4 +1,5 @@
 <?php
+
 /**
  *  This file is part of the Yasumi package.
  *
@@ -60,8 +61,8 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     {
         $this->clearHolidays();
 
-        $this->year   = $year ?: date('Y');
-        $this->locale = $locale;
+        $this->year               = $year ?: date('Y');
+        $this->locale             = $locale;
         $this->globalTranslations = $globalTranslations;
 
         $this->initialize();
