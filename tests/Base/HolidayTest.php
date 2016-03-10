@@ -1,4 +1,5 @@
 <?php
+
 /**
  *  This file is part of the Yasumi package.
  *
@@ -176,7 +177,7 @@ class HolidayTest extends PHPUnit_Framework_TestCase
         $customLocale      = 'pl_PL';
         $customTranslation = 'Bardzo Nowy Rok';
 
-        $holiday = new Holiday('newYearsDay', [$customLocale => $customTranslation], new DateTime("2015-01-01"),
+        $holiday = new Holiday('newYearsDay', [$customLocale => $customTranslation], new DateTime("2014-01-01"),
             $customLocale);
         $holiday->mergeGlobalTranslations($translationsStub);
 
