@@ -2,7 +2,7 @@
 Yasumi
 ==========
 
-Yasumi (Japanese for Holiday) is an easy PHP library to help you calculate the dates and names of holidays and other
+Yasumi (Japanese for 'Holiday') is an easy PHP library to help you calculate the dates and names of holidays and other
 special celebrations from various countries/states. Many services exist on the internet that provide holidays, however
 are either not free or offer only limited information. In addition, no complete PHP library seems to exist today
 that covers a wide range of holidays and countries, except maybe PEAR's Date_Holidays which unfortunately hasn't been
@@ -35,6 +35,10 @@ Currently the following holiday providers are implemented:
 * USA
 * Italy
 * France
+* Spain (including the autonomous communities Andalusia, Aragon, Asturias, Balearic Islands, Basque Country, 
+         Canary Islands, Cantabria, Castile and León, Castilla-La Mancha, Ceuta, Community of Madrid, Extremadura, 
+         Galicia, La Rioja, Melilla, Navarre, Region of Murcia, Valencian Community)
+
 
 Yasumi has the following filters to allow you to filter only certain type of holidays:
 
@@ -48,7 +52,7 @@ Yasumi has the following filters to allow you to filter only certain type of hol
 System Requirements
 -------------------
 
-You need **PHP >= 5.4.0** to use `azuyalabs/yasumi` but the latest stable version of PHP is recommended.
+You need **PHP >= 5.5.0** to use `azuyalabs/yasumi` but the latest stable version of PHP is recommended.
 
 
 Installation
@@ -71,6 +75,10 @@ folder:
 $ phpunit
 ```
 
+Yasumi has over 700 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
+the holidays, multiple iterations of assertions are executed to ensure the holidays are calculated in a large number
+of years.
+
 The tests are organized in some test suites to make testing a bit more easier:
 
 * Base       : For testing the base functionality of Yasumi
@@ -80,6 +88,7 @@ The tests are organized in some test suites to make testing a bit more easier:
 * USA        : For separately testing the USA Holiday Provider
 * Italy      : For separately testing the Italy Holiday Provider
 * France     : For separately testing the France Holiday Provider
+* Spain      : For separately testing the Spain Holiday Provider
 
 
 Basic Usage
@@ -94,15 +103,15 @@ use Yasumi\Yasumi;
 use Yasumi\Filters\OfficialHolidaysFilter;
 
 // Use the factory to create a new holiday provider instance
-$holidays = Yasumi::create('USA', 2015);
+$holidays = Yasumi::create('USA', 2016);
 
 // Get the number of defined holidays
-echo $holidays->count();
+echo $holidays->count() . PHP_EOL;
 // 11
 
 // Get a list all of the holiday names (short names)
 foreach ($holidays->getHolidayNames() as $name) {
-    echo $name;
+    echo $name . PHP_EOL;
 }
 // 'newYearsDay'
 // 'martinLutherKingDay'
@@ -118,33 +127,33 @@ foreach ($holidays->getHolidayNames() as $name) {
 
 // Get a list all of the holiday dates
 foreach ($holidays->getHolidayDates() as $date) {
-    echo $date;
+    echo $date . PHP_EOL;
 }
-// '2015-01-01'
-// '2015-01-19'
-// '2015-02-16'
-// '2015-05-25'
-// '2015-07-03'
-// '2015-07-04'
-// '2015-09-07'
-// '2015-10-12'
-// '2015-11-11'
-// '2015-11-26'
-// '2015-12-25'
+// 2016-01-01
+// 2016-01-18
+// 2016-02-15
+// 2016-05-30
+// 2016-07-04
+// 2016-09-05
+// 2016-10-10
+// 2016-11-11
+// 2016-11-24
+// 2016-12-25
+// 2016-12-26
 
 // Get a holiday object for Independence Day
 $independenceDay = $holidays->getHoliday('independenceDay');
 
 // Get the localized name
-echo $independenceDay->getName();
+echo $independenceDay->getName() . PHP_EOL;
 // 'Independence Day'
 
 // Get the date
-echo $independenceDay;
-// '2015-07-04'
+echo $independenceDay . PHP_EOL;
+// '2016-07-04'
 
 // Get the type of holiday
-echo $independenceDay->getType();
+echo $independenceDay->getType() . PHP_EOL;
 // 'national'
 
 // Print the holiday as a JSON object
@@ -154,7 +163,7 @@ echo json_encode($independenceDay, JSON_PRETTY_PRINT);
 //    "translations": {
 //    "en_US": "Independence Day"
 //    },
-//    "date": "2015-07-04 00:00:00.000000",
+//    "date": "2016-07-04 00:00:00.000000",
 //    "timezone_type": 3,
 //    "timezone": "America\/New_York"
 // }
@@ -163,7 +172,7 @@ echo json_encode($independenceDay, JSON_PRETTY_PRINT);
 $holidays = Yasumi::create('Netherlands', 2014);
 $official = new OfficialHolidaysFilter($holidays->getIterator());
 foreach ($official as $day) {
-    echo $day->getName();
+    echo $day->getName() . PHP_EOL;
 }
 // 'New Year's Day'
 // 'Easter Sunday'
@@ -175,19 +184,6 @@ foreach ($official as $day) {
 // 'Christmas'
 // 'Boxing Day'
 ```
-
-
-Roadmap
--------
-
-Yasumi is still in development and a stable release is coming soon. For its first release, we will have the following
-included:
-
-- ~~Filters~~
-- ~~Global Translations~~
-- ~~Common holiday providers~~
-- Additional countries (~~Italy~~ and ~~France~~)
-
 
 License
 -------
