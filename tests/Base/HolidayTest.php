@@ -1,5 +1,4 @@
 <?php
-
 /**
  *  This file is part of the Yasumi package.
  *
@@ -10,6 +9,7 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
+
 use Yasumi\Holiday;
 use Yasumi\Tests\YasumiBase;
 use Yasumi\TranslationsInterface;

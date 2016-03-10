@@ -9,6 +9,7 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
+
 use org\bovigo\vfs\vfsStream;
 use Yasumi\Translations;
 

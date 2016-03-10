@@ -9,6 +9,7 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
+
 use Faker\Factory;
 use Yasumi\Tests\YasumiBase;
 use Yasumi\Yasumi;

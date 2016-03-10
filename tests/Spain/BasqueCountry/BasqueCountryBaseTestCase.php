@@ -9,6 +9,7 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
+
 namespace Yasumi\Tests\Spain\BasqueCountry;
 
 use Yasumi\Tests\Spain\SpainBaseTestCase;
