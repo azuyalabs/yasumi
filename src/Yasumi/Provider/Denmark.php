@@ -1,4 +1,5 @@
 <?php
+
 /**
  *  This file is part of the Yasumi package.
  *
@@ -31,8 +32,6 @@ class Denmark extends AbstractProvider
 
         // Add common holidays
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
-        //$this->addHoliday($this->valentinesDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        //$this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
 
         // Add common Christian holidays (common in Denmark)
         $this->addHoliday($this->maundyThursday($this->year, $this->timezone, $this->locale));
