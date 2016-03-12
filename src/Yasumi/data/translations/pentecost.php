@@ -14,5 +14,6 @@
 return [
     'en_US' => 'Whitsunday',
     'nl_NL' => 'Eerste Pinksterdag',
-    'nl_BE' => 'Eerste Pinksterdag'
+    'nl_BE' => 'Eerste Pinksterdag',
+    'da_DK' => 'Pinsedag'
 ];

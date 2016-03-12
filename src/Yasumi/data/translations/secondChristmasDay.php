@@ -14,5 +14,6 @@
 return [
     'en_US' => 'Boxing Day',
     'nl_NL' => 'Tweede Kerstdag',
-    'nl_BE' => 'Tweede Kerstdag'
+    'nl_BE' => 'Tweede Kerstdag',
+    'da_DK' => '2. Juledag'
 ];

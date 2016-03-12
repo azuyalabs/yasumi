@@ -17,5 +17,6 @@ return [
     'nl_BE' => 'Paasmaandag',
     'it_IT' => 'Lunedi` dell\'Angelo',
     'fr_FR' => 'Lundi de Pâques',
-    'es_ES' => 'Lunes de Pascua'
+    'es_ES' => 'Lunes de Pascua',
+    'da_DK' => '2. Påskedag'
 ];

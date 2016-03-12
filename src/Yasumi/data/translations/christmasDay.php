@@ -17,5 +17,6 @@ return [
     'nl_BE' => 'Kerstmis',
     'it_IT' => 'Natale',
     'fr_FR' => 'Noël',
-    'es_ES' => 'Navidad'
+    'es_ES' => 'Navidad',
+    'da_DK' => '1. Juledag'
 ];

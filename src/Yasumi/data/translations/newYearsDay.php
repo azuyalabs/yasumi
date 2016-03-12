@@ -19,5 +19,6 @@ return [
     'ja_JP' => '元日',
     'it_IT' => 'Capodanno',
     'fr_FR' => 'Jour de l\'An',
-    'es_ES' => 'Año Nuevo'
+    'es_ES' => 'Año Nuevo',
+    'da_DK' => 'Nytårsdag'
 ];

@@ -69,6 +69,11 @@
             <directory suffix="Test.php">./tests/Spain</directory>
         </testsuite>
 
+        <!-- Test Suite for holidays in Denmark -->
+        <testsuite name="Denmark">
+            <directory suffix="Test.php">./tests/Denmark</directory>
+        </testsuite>
+
     </testsuites>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">

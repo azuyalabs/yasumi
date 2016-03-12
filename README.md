@@ -38,7 +38,7 @@ Currently the following holiday providers are implemented:
 * Spain (including the autonomous communities Andalusia, Aragon, Asturias, Balearic Islands, Basque Country, 
          Canary Islands, Cantabria, Castile and León, Castilla-La Mancha, Ceuta, Community of Madrid, Extremadura, 
          Galicia, La Rioja, Melilla, Navarre, Region of Murcia, Valencian Community)
-
+* Denmark
 
 Yasumi has the following filters to allow you to filter only certain type of holidays:
 
@@ -75,7 +75,7 @@ folder:
 $ phpunit
 ```
 
-Yasumi has over 700 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
+Yasumi has over 780 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
 the holidays, multiple iterations of assertions are executed to ensure the holidays are calculated in a large number
 of years.
 
@@ -89,6 +89,7 @@ The tests are organized in some test suites to make testing a bit more easier:
 * Italy      : For separately testing the Italy Holiday Provider
 * France     : For separately testing the France Holiday Provider
 * Spain      : For separately testing the Spain Holiday Provider
+* Denmark    : For separately testing the Denmark Holiday Provider
 
 
 Basic Usage

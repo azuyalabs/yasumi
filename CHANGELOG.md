@@ -1,5 +1,13 @@
 # Change Log
 
+
+## DEV/MASTER
+
+**Implemented enhancements:**
+
+- Added Denmark Holiday Driver
+
+
 ## 1.1.0
 
 **Implemented enhancements:**
