@@ -31,7 +31,7 @@ class PublicBridgeDayTest extends JapanBaseTestCase
     public function testPublicBridgeDay()
     {
         $year = 2015;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-9-22", new DateTimeZone(self::TIMEZONE)));
     }
 }

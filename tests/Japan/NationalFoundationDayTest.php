@@ -36,7 +36,7 @@ class NationalFoundationDayTest extends JapanBaseTestCase
     public function testNationalFoundationDayOnAfter1966()
     {
         $year = 1972;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-2-11", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -47,7 +47,7 @@ class NationalFoundationDayTest extends JapanBaseTestCase
     public function testNationalFoundationDayOnAfter1966SubstitutedNextWorkingDay()
     {
         $year = 2046;
-        $this->assertHoliday(self::COUNTRY, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
             new DateTime("$year-2-12", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -56,7 +56,7 @@ class NationalFoundationDayTest extends JapanBaseTestCase
      */
     public function testNationalFoundationDayBefore1966()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
             $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
     }
 }

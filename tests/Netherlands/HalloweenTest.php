@@ -29,7 +29,7 @@ class HalloweenTest extends NetherlandsBaseTestCase
      */
     public function testHalloween($year, $expected)
     {
-        $this->assertHoliday(self::COUNTRY, 'halloween', $year, $expected);
+        $this->assertHoliday(self::REGION, 'halloween', $year, $expected);
     }
 
     /**

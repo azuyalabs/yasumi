@@ -26,7 +26,7 @@ class AscensionDayTest extends NetherlandsBaseTestCase
     public function testAscensionDay()
     {
         $year = 1754;
-        $this->assertHoliday(self::COUNTRY, 'ascensionDay', $year,
+        $this->assertHoliday(self::REGION, 'ascensionDay', $year,
             new DateTime("$year-5-23", new DateTimeZone(self::TIMEZONE)));
     }
 }

@@ -34,7 +34,7 @@ class AllSaintsDayTest extends FranceBaseTestCase
      */
     public function testAllSaintsDay($year, $expected)
     {
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, $expected);
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
@@ -42,7 +42,7 @@ class AllSaintsDayTest extends FranceBaseTestCase
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(),
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
             ['fr_FR' => 'La Toussaint']);
     }
 

@@ -36,7 +36,7 @@ class ShowaDayTest extends JapanBaseTestCase
     public function testHolidayOnAfter2007()
     {
         $year = 2110;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-4-29", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -46,7 +46,7 @@ class ShowaDayTest extends JapanBaseTestCase
     public function testHolidayOnAfterEstablishmentSubstitutedNextWorkingDay()
     {
         $year = 2210;
-        $this->assertHoliday(self::COUNTRY, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
             new DateTime("$year-4-30", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -55,7 +55,7 @@ class ShowaDayTest extends JapanBaseTestCase
      */
     public function testHolidayBeforeEstablishment()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
             $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
     }
 }

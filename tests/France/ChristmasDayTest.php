@@ -34,7 +34,7 @@ class ChristmasDayTest extends FranceBaseTestCase
      */
     public function testChristmasDay($year, $expected)
     {
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year, $expected);
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
@@ -52,7 +52,7 @@ class ChristmasDayTest extends FranceBaseTestCase
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(),
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
             ['fr_FR' => 'Noël']);
     }
 }

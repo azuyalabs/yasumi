@@ -26,7 +26,7 @@ class PentecostTest extends NetherlandsBaseTestCase
     public function testPentecost()
     {
         $year = 2020;
-        $this->assertHoliday(self::COUNTRY, 'pentecost', $year,
+        $this->assertHoliday(self::REGION, 'pentecost', $year,
             new DateTime("$year-5-31", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -36,7 +36,7 @@ class PentecostTest extends NetherlandsBaseTestCase
     public function testPentecostMonday()
     {
         $year = 2020;
-        $this->assertHoliday(self::COUNTRY, 'pentecostMonday', $year,
+        $this->assertHoliday(self::REGION, 'pentecostMonday', $year,
             new DateTime("$year-6-1", new DateTimeZone(self::TIMEZONE)));
     }
 }

@@ -32,7 +32,7 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase
     public function testRespectForTheAgedDayOnAfter2003()
     {
         $year = $this->generateRandomYear(2004);
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("third monday of september $year", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -43,7 +43,7 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase
     public function testRespectForTheAgedDayBetween1996And2003()
     {
         $year = 1998;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-9-15", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -54,7 +54,7 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase
     public function testRespectForTheAgedDayBetween1996And2003SubstitutedNextWorkingDay()
     {
         $year = 2002;
-        $this->assertHoliday(self::COUNTRY, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
             new DateTime("$year-9-16", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -64,6 +64,6 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase
      */
     public function testRespectForTheAgedDayBefore1996()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1995));
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(1000, 1995));
     }
 }

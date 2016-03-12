@@ -25,7 +25,7 @@ abstract class USABaseTestCase extends PHPUnit_Framework_TestCase
     /**
      * Country (name) to be tested
      */
-    const COUNTRY = 'USA';
+    const REGION = 'USA';
 
     /**
      * Timezone in which this provider has holidays defined

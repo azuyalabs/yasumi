@@ -31,7 +31,7 @@ class ChristmasDayTest extends USABaseTestCase
     public function testChristmasDay()
     {
         $year = 2001;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-12-25", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -42,7 +42,7 @@ class ChristmasDayTest extends USABaseTestCase
     {
         // Substituted Holiday on Monday (Christmas Day falls on Sunday)
         $year = 6101;
-        $this->assertHoliday(self::COUNTRY, 'substituteHoliday:christmasDay', $year,
+        $this->assertHoliday(self::REGION, 'substituteHoliday:christmasDay', $year,
             new DateTime("$year-12-26", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -53,7 +53,7 @@ class ChristmasDayTest extends USABaseTestCase
     {
         // Substituted Holiday on Friday (Christmas Day falls on Saturday)
         $year = 2060;
-        $this->assertHoliday(self::COUNTRY, 'substituteHoliday:christmasDay', $year,
+        $this->assertHoliday(self::REGION, 'substituteHoliday:christmasDay', $year,
             new DateTime("$year-12-24", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -62,7 +62,7 @@ class ChristmasDayTest extends USABaseTestCase
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(),
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
             ['en_US' => 'Christmas']);
     }
 }

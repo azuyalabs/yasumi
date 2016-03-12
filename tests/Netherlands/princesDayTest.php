@@ -26,7 +26,7 @@ class PrincesDayTest extends NetherlandsBaseTestCase
     public function testPrincesDay()
     {
         $year = $this->generateRandomYear();
-        $this->assertHoliday(self::COUNTRY, 'princesDay', $year,
+        $this->assertHoliday(self::REGION, 'princesDay', $year,
             new DateTime("third tuesday of september $year", new DateTimeZone(self::TIMEZONE)));
     }
 }

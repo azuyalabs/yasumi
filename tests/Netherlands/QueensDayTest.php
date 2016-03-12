@@ -31,7 +31,7 @@ class QueensDayTest extends NetherlandsBaseTestCase
     public function testQueensBetween1891and1948()
     {
         $year = 1901;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-8-31", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -41,7 +41,7 @@ class QueensDayTest extends NetherlandsBaseTestCase
     public function testQueensBetween1891and1948SubstitutedLater()
     {
         $year = 1947;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-9-1", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -51,7 +51,7 @@ class QueensDayTest extends NetherlandsBaseTestCase
     public function testQueensBetween1949and2013()
     {
         $year = 1965;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-4-30", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -61,7 +61,7 @@ class QueensDayTest extends NetherlandsBaseTestCase
     public function testQueensBetween1949and2013SubstitutedLater()
     {
         $year = 1967;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-5-1", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -71,7 +71,7 @@ class QueensDayTest extends NetherlandsBaseTestCase
     public function testQueensBetween1949and2013SubstitutedEarlier()
     {
         $year = 2006;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-4-29", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -80,7 +80,7 @@ class QueensDayTest extends NetherlandsBaseTestCase
      */
     public function testQueensDayBefore1891()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1890));
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(1000, 1890));
     }
 
     /**
@@ -88,6 +88,6 @@ class QueensDayTest extends NetherlandsBaseTestCase
      */
     public function testQueensDayAfter2013()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(2014));
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(2014));
     }
 }

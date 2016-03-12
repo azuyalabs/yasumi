@@ -26,7 +26,7 @@ class WinterTimeTest extends NetherlandsBaseTestCase
     public function testWintertime()
     {
         $year = $this->generateRandomYear();
-        $this->assertHoliday(self::COUNTRY, 'winterTime', $year,
+        $this->assertHoliday(self::REGION, 'winterTime', $year,
             new DateTime("last sunday of october $year", new DateTimeZone(self::TIMEZONE)));
     }
 }

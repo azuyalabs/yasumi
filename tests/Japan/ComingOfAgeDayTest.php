@@ -32,7 +32,7 @@ class ComingOfAgeDayTest extends JapanBaseTestCase
     public function testComingOfAgeDayOnAfter2000()
     {
         $year = $this->generateRandomYear(2001);
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("second monday of january $year", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -44,7 +44,7 @@ class ComingOfAgeDayTest extends JapanBaseTestCase
     public function testComingOfAgeDayBetween1948And2000()
     {
         $year = 1991;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-1-15", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -54,6 +54,6 @@ class ComingOfAgeDayTest extends JapanBaseTestCase
      */
     public function testConstitutionMemorialDayBefore1948()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1947));
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(1000, 1947));
     }
 }

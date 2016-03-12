@@ -36,7 +36,7 @@ class WorldAnimalDayTest extends NetherlandsBaseTestCase
     public function testWorldAnimalDayOnAfter1931()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-10-4", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -45,7 +45,7 @@ class WorldAnimalDayTest extends NetherlandsBaseTestCase
      */
     public function testWorldAnimalBefore1931()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
             $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
     }
 }

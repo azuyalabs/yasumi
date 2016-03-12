@@ -27,7 +27,7 @@ class FathersDayTest extends NetherlandsBaseTestCase
     public function testFathersDay()
     {
         $year = $this->generateRandomYear();
-        $this->assertHoliday(self::COUNTRY, 'fathersDay', $year,
+        $this->assertHoliday(self::REGION, 'fathersDay', $year,
             new DateTime("third sunday of june $year", new DateTimeZone(self::TIMEZONE)));
     }
 }

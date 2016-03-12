@@ -36,7 +36,7 @@ class KingsDayTest extends NetherlandsBaseTestCase
     public function testKingsDayOnAfter2014()
     {
         $year = 2015;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-4-27", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -46,7 +46,7 @@ class KingsDayTest extends NetherlandsBaseTestCase
     public function testKingsDayOnAfter2014SubstitutedDay()
     {
         $year = 2188;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-4-26", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -55,7 +55,7 @@ class KingsDayTest extends NetherlandsBaseTestCase
      */
     public function testKingsDayBefore2014()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
             $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
     }
 }

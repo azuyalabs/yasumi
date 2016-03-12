@@ -37,7 +37,7 @@ class MartinLutherKingDayTest extends USABaseTestCase
     public function testMartinLutherKingDayOnAfter1986()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("third monday of january $year", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -47,7 +47,7 @@ class MartinLutherKingDayTest extends USABaseTestCase
      */
     public function testMartinLutherKingDayBefore1986()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
             $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
     }
 
@@ -56,7 +56,7 @@ class MartinLutherKingDayTest extends USABaseTestCase
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY,
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR), ['en_US' => 'Dr. Martin Luther King Jr\'s Birthday']);
     }
 }

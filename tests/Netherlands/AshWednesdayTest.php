@@ -31,7 +31,7 @@ class AshWednesdayTest extends NetherlandsBaseTestCase
     public function testAshWednesday()
     {
         $year = 1999;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-2-17", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -40,7 +40,7 @@ class AshWednesdayTest extends NetherlandsBaseTestCase
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(),
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
             ['nl_NL' => 'Aswoensdag']);
     }
 }

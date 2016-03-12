@@ -31,7 +31,7 @@ class NewYearsDayTest extends USABaseTestCase
     public function testNewYearsDay()
     {
         $year = 1997;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-1-1", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -41,7 +41,7 @@ class NewYearsDayTest extends USABaseTestCase
     public function testNewYearsDaySubstitutedMonday()
     {
         $year = 2445;
-        $this->assertHoliday(self::COUNTRY, 'substituteHoliday:newYearsDay', $year,
+        $this->assertHoliday(self::REGION, 'substituteHoliday:newYearsDay', $year,
             new DateTime("$year-1-2", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -52,7 +52,7 @@ class NewYearsDayTest extends USABaseTestCase
     {
         $year    = 1938;
         $subYear = $year - 1;
-        $this->assertHoliday(self::COUNTRY, 'substituteHoliday:newYearsDay', $year,
+        $this->assertHoliday(self::REGION, 'substituteHoliday:newYearsDay', $year,
             new DateTime("$subYear-12-31", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -61,7 +61,7 @@ class NewYearsDayTest extends USABaseTestCase
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(),
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
             ['en_US' => 'New Year\'s Day']);
     }
 }

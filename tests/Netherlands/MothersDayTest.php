@@ -26,7 +26,7 @@ class MothersDayTest extends NetherlandsBaseTestCase
     public function testMothersDay()
     {
         $year = $this->generateRandomYear();
-        $this->assertHoliday(self::COUNTRY, 'mothersDay', $year,
+        $this->assertHoliday(self::REGION, 'mothersDay', $year,
             new DateTime("second sunday of may $year", new DateTimeZone(self::TIMEZONE)));
     }
 }

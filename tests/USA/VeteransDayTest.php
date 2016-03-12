@@ -37,7 +37,7 @@ class VeteransDayTest extends USABaseTestCase
     public function testVeteransDayOnAfter1919()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-11-11", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -46,7 +46,7 @@ class VeteransDayTest extends USABaseTestCase
      */
     public function testVeteransDayBefore1919()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
             $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
     }
 
@@ -57,7 +57,7 @@ class VeteransDayTest extends USABaseTestCase
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1953);
 
-        $holidays = Yasumi::create(self::COUNTRY, $year);
+        $holidays = Yasumi::create(self::REGION, $year);
         $holiday  = $holidays->getHoliday(self::HOLIDAY);
         $this->assertEquals('Armistice Day', $holiday->getName());
     }
@@ -69,7 +69,7 @@ class VeteransDayTest extends USABaseTestCase
     {
         $year = $this->generateRandomYear(1954);
 
-        $holidays = Yasumi::create(self::COUNTRY, $year);
+        $holidays = Yasumi::create(self::REGION, $year);
         $holiday  = $holidays->getHoliday(self::HOLIDAY);
         $this->assertEquals('Veterans Day', $holiday->getName());
     }

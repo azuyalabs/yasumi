@@ -36,7 +36,7 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase
     public function testConstitutionMemorialDayOnAfter1948()
     {
         $year = 1967;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-5-3", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -47,7 +47,7 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase
     public function testConstitutionMemorialDayOnAfter1948SubstitutedNextWorkingDay()
     {
         $year = 2009;
-        $this->assertHoliday(self::COUNTRY, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
             new DateTime("$year-5-6", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -56,7 +56,7 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase
      */
     public function testConstitutionMemorialDayBefore1948()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
             $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
     }
 }

@@ -26,7 +26,7 @@ class SummerTimeTest extends NetherlandsBaseTestCase
     public function testSummertime()
     {
         $year = $this->generateRandomYear();
-        $this->assertHoliday(self::COUNTRY, 'summerTime', $year,
+        $this->assertHoliday(self::REGION, 'summerTime', $year,
             new DateTime("last sunday of march $year", new DateTimeZone(self::TIMEZONE)));
     }
 }

@@ -37,7 +37,7 @@ class MemorialDayTest extends USABaseTestCase
     public function testMemorialDayOnAfter1968()
     {
         $year = $this->generateRandomYear(1968);
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("last monday of may $year", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -48,7 +48,7 @@ class MemorialDayTest extends USABaseTestCase
     public function testMemorialDayBetween1865And1967()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1967);
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-5-30", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -58,7 +58,7 @@ class MemorialDayTest extends USABaseTestCase
      */
     public function testMemorialDayBefore1865()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
             $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
     }
 
@@ -67,7 +67,7 @@ class MemorialDayTest extends USABaseTestCase
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY,
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR), ['en_US' => 'Memorial Day']);
     }
 }

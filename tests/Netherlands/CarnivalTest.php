@@ -26,7 +26,7 @@ class CarnivalTest extends NetherlandsBaseTestCase
     public function testFirstCarnivalDay()
     {
         $year = 2015;
-        $this->assertHoliday(self::COUNTRY, 'carnivalDay', $year,
+        $this->assertHoliday(self::REGION, 'carnivalDay', $year,
             new DateTime("$year-2-15", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -36,7 +36,7 @@ class CarnivalTest extends NetherlandsBaseTestCase
     public function testSecondCarnivalDay()
     {
         $year = 2015;
-        $this->assertHoliday(self::COUNTRY, 'secondCarnivalDay', $year,
+        $this->assertHoliday(self::REGION, 'secondCarnivalDay', $year,
             new DateTime("$year-2-16", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -46,7 +46,7 @@ class CarnivalTest extends NetherlandsBaseTestCase
     public function testThirdCarnivalDay()
     {
         $year = 2015;
-        $this->assertHoliday(self::COUNTRY, 'thirdCarnivalDay', $year,
+        $this->assertHoliday(self::REGION, 'thirdCarnivalDay', $year,
             new DateTime("$year-2-17", new DateTimeZone(self::TIMEZONE)));
     }
 }

@@ -37,7 +37,7 @@ class ColumbusDayTest extends USABaseTestCase
     public function testColumbusDayOnAfter1970()
     {
         $year = $this->generateRandomYear(1970);
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("second monday of october $year", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -48,7 +48,7 @@ class ColumbusDayTest extends USABaseTestCase
     public function testColumbusBetween1937And1969()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1969);
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-10-12", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -58,7 +58,7 @@ class ColumbusDayTest extends USABaseTestCase
      */
     public function testColumbusDayBefore1937()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
             $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
     }
 
@@ -67,7 +67,7 @@ class ColumbusDayTest extends USABaseTestCase
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY,
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR), ['en_US' => 'Columbus Day']);
     }
 }

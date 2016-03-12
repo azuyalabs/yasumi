@@ -31,7 +31,7 @@ class PentecostTest extends FranceBaseTestCase
     public function testPentecostMonday()
     {
         $year = 1977;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-5-30", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -40,7 +40,7 @@ class PentecostTest extends FranceBaseTestCase
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(),
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
             ['fr_FR' => 'Lundi de Pentecôte']);
     }
 }

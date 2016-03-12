@@ -34,7 +34,7 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase
      */
     public function testAutumnalEquinoxDayOnAfter2150()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(2151));
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(2151));
     }
 
     /**
@@ -52,7 +52,7 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase
      */
     public function testAutumnalEquinoxDayBetween1948And2150($year, $month, $day)
     {
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-$month-$day", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -79,7 +79,7 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase
      */
     public function testAutumnalEquinoxDayBefore1948()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1947));
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(1000, 1947));
     }
 
     /**
@@ -89,6 +89,6 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase
      */
     public function testAutumnalEquinoxDayBetween1851And1948()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1851, 1947));
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(1851, 1947));
     }
 }

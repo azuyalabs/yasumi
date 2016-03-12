@@ -36,7 +36,7 @@ class IndependenceDayTest extends USABaseTestCase
     public function testIndependenceDayOnAfter1776()
     {
         $year = 1955;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-7-4", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -46,7 +46,7 @@ class IndependenceDayTest extends USABaseTestCase
     public function testIndependenceDayOnAfter1776SubstitutedMonday()
     {
         $year = 3362;
-        $this->assertHoliday(self::COUNTRY, 'substituteHoliday:independenceDay', $year,
+        $this->assertHoliday(self::REGION, 'substituteHoliday:independenceDay', $year,
             new DateTime("$year-7-5", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -56,7 +56,7 @@ class IndependenceDayTest extends USABaseTestCase
     public function testIndependenceDayOnAfter1776SubstitutedFriday()
     {
         $year = 8291;
-        $this->assertHoliday(self::COUNTRY, 'substituteHoliday:independenceDay', $year,
+        $this->assertHoliday(self::REGION, 'substituteHoliday:independenceDay', $year,
             new DateTime("$year-7-3", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -65,7 +65,7 @@ class IndependenceDayTest extends USABaseTestCase
      */
     public function testIndependenceDayBefore1776()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
             $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
     }
 
@@ -74,7 +74,7 @@ class IndependenceDayTest extends USABaseTestCase
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::COUNTRY, self::HOLIDAY,
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR), ['en_US' => 'Independence Day']);
     }
 }

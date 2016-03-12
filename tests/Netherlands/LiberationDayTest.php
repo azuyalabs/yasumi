@@ -35,7 +35,7 @@ class LiberationDayTest extends NetherlandsBaseTestCase
      */
     public function testLiberationDayBefore1947()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY,
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
             $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
     }
 
@@ -45,7 +45,7 @@ class LiberationDayTest extends NetherlandsBaseTestCase
     public function testLiberationDayOnAfter1947()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-5-5", new DateTimeZone(self::TIMEZONE)));
     }
 }

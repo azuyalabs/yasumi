@@ -29,7 +29,7 @@ class ChristmasTest extends NetherlandsBaseTestCase
      */
     public function testChristmasDay($year, $expected)
     {
-        $this->assertHoliday(self::COUNTRY, 'christmasDay', $year, $expected);
+        $this->assertHoliday(self::REGION, 'christmasDay', $year, $expected);
     }
 
     /**
@@ -52,7 +52,7 @@ class ChristmasTest extends NetherlandsBaseTestCase
      */
     public function testSecondChristmasDay($year, $expected)
     {
-        $this->assertHoliday(self::COUNTRY, 'secondChristmasDay', $year, $expected);
+        $this->assertHoliday(self::REGION, 'secondChristmasDay', $year, $expected);
     }
 
     /**

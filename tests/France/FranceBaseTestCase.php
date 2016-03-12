@@ -25,7 +25,7 @@ abstract class FranceBaseTestCase extends PHPUnit_Framework_TestCase
     /**
      * Country (name) to be tested
      */
-    const COUNTRY = 'France';
+    const REGION = 'France';
 
     /**
      * Timezone in which this provider has holidays defined

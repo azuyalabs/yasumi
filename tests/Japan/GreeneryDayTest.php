@@ -32,7 +32,7 @@ class GreeneryDayTest extends JapanBaseTestCase
     public function testHolidayOnAfter2007()
     {
         $year = 2112;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-5-4", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -42,7 +42,7 @@ class GreeneryDayTest extends JapanBaseTestCase
     public function testHolidayOnAfter2007SubstitutedNextWorkingDay()
     {
         $year = 2014;
-        $this->assertHoliday(self::COUNTRY, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
             new DateTime("$year-5-6", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -53,7 +53,7 @@ class GreeneryDayTest extends JapanBaseTestCase
     public function testHolidayBetween1989And2007()
     {
         $year = 1997;
-        $this->assertHoliday(self::COUNTRY, self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-4-29", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -63,7 +63,7 @@ class GreeneryDayTest extends JapanBaseTestCase
     public function testHolidayBetween1989And2007SubstitutedNextWorkingDay()
     {
         $year = 2001;
-        $this->assertHoliday(self::COUNTRY, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
             new DateTime("$year-4-30", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -73,6 +73,6 @@ class GreeneryDayTest extends JapanBaseTestCase
      */
     public function testHolidayBefore1989()
     {
-        $this->assertNotHoliday(self::COUNTRY, self::HOLIDAY, $this->generateRandomYear(1000, 1988));
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(1000, 1988));
     }
 }

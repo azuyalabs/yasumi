@@ -29,7 +29,7 @@ class stNicholasDayTest extends NetherlandsBaseTestCase
      */
     public function teststNicholasDay($year, $expected)
     {
-        $this->assertHoliday(self::COUNTRY, 'stNicholasDay', $year, $expected);
+        $this->assertHoliday(self::REGION, 'stNicholasDay', $year, $expected);
     }
 
     /**

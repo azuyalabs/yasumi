@@ -26,7 +26,7 @@ class GoodFridayTest extends NetherlandsBaseTestCase
     public function testGoodFriday()
     {
         $year = 1876;
-        $this->assertHoliday(self::COUNTRY, 'goodFriday', $year,
+        $this->assertHoliday(self::REGION, 'goodFriday', $year,
             new DateTime("$year-4-14", new DateTimeZone(self::TIMEZONE)));
     }
 }

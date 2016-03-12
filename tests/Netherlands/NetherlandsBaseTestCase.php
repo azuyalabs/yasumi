@@ -25,7 +25,7 @@ abstract class NetherlandsBaseTestCase extends PHPUnit_Framework_TestCase
     /**
      * Country (name) to be tested
      */
-    const COUNTRY = 'Netherlands';
+    const REGION = 'Netherlands';
 
     /**
      * Timezone in which this provider has holidays defined
