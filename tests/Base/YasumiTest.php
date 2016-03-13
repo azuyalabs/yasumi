@@ -258,4 +258,34 @@ class YasumiTest extends PHPUnit_Framework_TestCase
 
         unset($isHoliday);
     }
+
+    /**
+     * Tests that the IsWorkingDay function returns a boolean true for a date that is defined as a holiday or falls in
+     * the weekend.
+     */
+    public function testIsWorkingDay()
+    {
+        $year         = 2020;
+        $isWorkingDay = Yasumi::create('Netherlands', $year)->isWorkingDay(new DateTime($year . '-06-02'));
+
+        $this->assertInternalType('bool', $isWorkingDay);
+        $this->assertTrue($isWorkingDay);
+
+        unset($isWorkingDay);
+    }
+
+    /**
+     * Tests that the IsWorkingDay function returns a boolean true for a date that is defined as a holiday or falls in
+     * the weekend.
+     */
+    public function testIsNotWorkingDay()
+    {
+        $year            = 2016;
+        $isNotWorkingDay = Yasumi::create('Japan', $year)->isWorkingDay(new DateTime($year . '-01-11'));
+
+        $this->assertInternalType('bool', $isNotWorkingDay);
+        $this->assertFalse($isNotWorkingDay);
+
+        unset($isWorkingDay);
+    }
 }

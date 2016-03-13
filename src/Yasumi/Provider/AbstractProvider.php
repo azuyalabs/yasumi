@@ -41,10 +41,14 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     protected $locale;
     /**
+     * @var array list of the days of the week (the index of the weekdays) that are considered weekend days. Defaults
+     *      to Sunday (0) and Saturday (6), as this is globally the common standard. (0 = Sunday, 1 = Monday, etc.)
+     */
+    protected $weekend_days = [0, 6];
+    /**
      * @var Holiday[] list of dates of the available holidays
      */
     private $holidays = [];
-
     /**
      * @var TranslationsInterface global translations
      */
@@ -111,6 +115,33 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
 
         $this->holidays[$holiday->shortName] = $holiday;
         uasort($this->holidays, ['Yasumi\Provider\AbstractProvider', 'compareDates']);
+    }
+
+    /**
+     * Determines whether a date represents a working day or not.
+     *
+     * A working day is defined as a day that is not a holiday nor falls in the weekend. The index of the weekdays of
+     * the defined date is used for establishing this (0 = Sunday, 1 = Monday, etc.)
+     *
+     * @param mixed $date a Yasumi\Holiday or DateTime object
+     *
+     * @return boolean true if date represents a working day, otherwise false
+     */
+    public function isWorkingDay($date)
+    {
+        // Check if date is a holiday
+        if ($this->isHoliday($date)) {
+            return false;
+        }
+
+        // If given date is a DateTime object; check if it falls in the weekend
+        if (get_class($date) === 'DateTime') {
+            if (in_array($date->format('w'), $this->weekend_days)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     /**
