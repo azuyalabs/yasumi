@@ -98,6 +98,6 @@ class NetherlandsTest extends NetherlandsBaseTestCase
      */
     protected function setUp()
     {
-        $this->year = $this->generateRandomYear();
+        $this->year = $this->generateRandomYear(2014);
     }
 }

@@ -81,6 +81,6 @@ class DenmarkTest extends DenmarkBaseTestCase
      */
     protected function setUp()
     {
-        $this->year = $this->generateRandomYear();
+        $this->year = $this->generateRandomYear(1686);
     }
 }

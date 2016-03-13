@@ -82,6 +82,6 @@ class ItalyTest extends ItalyBaseTestCase
      */
     protected function setUp()
     {
-        $this->year = $this->generateRandomYear();
+        $this->year = $this->generateRandomYear(1949);
     }
 }

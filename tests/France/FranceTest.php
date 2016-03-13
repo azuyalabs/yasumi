@@ -83,6 +83,6 @@ class FranceTest extends FranceBaseTestCase
      */
     protected function setUp()
     {
-        $this->year = $this->generateRandomYear();
+        $this->year = $this->generateRandomYear(1945);
     }
 }

@@ -75,7 +75,7 @@ folder:
 $ phpunit
 ```
 
-Yasumi has over 780 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
+Yasumi has over 900 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
 the holidays, multiple iterations of assertions are executed to ensure the holidays are calculated in a large number
 of years.
 

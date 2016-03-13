@@ -80,6 +80,6 @@ class SpainTest extends SpainBaseTestCase
      */
     protected function setUp()
     {
-        $this->year = $this->generateRandomYear();
+        $this->year = $this->generateRandomYear(1981);
     }
 }
