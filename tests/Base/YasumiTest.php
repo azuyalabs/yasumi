@@ -231,4 +231,31 @@ class YasumiTest extends PHPUnit_Framework_TestCase
         $this->assertContains('Netherlands', $providers);
     }
 
+    /**
+     * Tests that the isHoliday function returns a boolean true for a date that is defined as a holiday.
+     */
+    public function testIsHoliday()
+    {
+        $year      = 2110;
+        $isHoliday = Yasumi::create('Spain', $year)->isHoliday(new DateTime($year . '-08-15'));
+
+        $this->assertInternalType('bool', $isHoliday);
+        $this->assertTrue($isHoliday);
+
+        unset($isHoliday);
+    }
+
+    /**
+     * Tests that the isHoliday function returns a boolean false for a date that is not defined as a holiday.
+     */
+    public function testIsNotHoliday()
+    {
+        $year      = 5220;
+        $isHoliday = Yasumi::create('Japan', $year)->isHoliday(new DateTime($year . '-06-10'));
+
+        $this->assertInternalType('bool', $isHoliday);
+        $this->assertFalse($isHoliday);
+
+        unset($isHoliday);
+    }
 }

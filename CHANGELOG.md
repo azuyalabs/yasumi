@@ -6,9 +6,15 @@
 **Implemented enhancements:**
 
 - Added Denmark Holiday Driver
+- Refactoring and cleanup of unit tests
+
+**Resolved issues:**
+
+- The Vernal Equinox Day and Autumnal Equinox Day in Japan were excluded from having it substituted for another day in
+  case these days would fall on the weekend.
 
 
-## 1.1.0
+## 1.1.0 (Mar 10, 2016)
 
 **Implemented enhancements:**
 
@@ -26,10 +32,10 @@
 - Removed support for PHP 5.4. Minimum version is now 5.5. PHP 7.0 is known to work however in Travis CI still allowed
   to fail
 
-**Closed issues:**
+**Resolved issues:**
 
-- Fixed issue for Japan where substituted holidays had same date as the original holidays.
+- For Japan substituted holidays had same date as the original holidays.
 
-## 1.0.0
+## 1.0.0 (Apr 21, 2015)
 
 - Initial Release

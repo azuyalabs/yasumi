@@ -53,6 +53,7 @@ System Requirements
 -------------------
 
 You need **PHP >= 5.5.0** to use `azuyalabs/yasumi` but the latest stable version of PHP is recommended.
+Yasumi is verified and tested on PHP 5.5, 5.6 and 7.0.
 
 
 Installation
@@ -192,3 +193,12 @@ License
 The MIT License (MIT). Please see [LICENSE](LICENSE) for more information.
 
 [PSR-2]: http://www.php-fig.org/psr/psr-2/
+
+
+Information Sources
+-------
+
+- Wikipedia
+- Timeanddate
+- Unicode
+

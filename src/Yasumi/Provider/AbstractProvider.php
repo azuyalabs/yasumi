@@ -1,5 +1,4 @@
 <?php
-
 /**
  *  This file is part of the Yasumi package.
  *
@@ -10,6 +9,7 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
+
 namespace Yasumi\Provider;
 
 use ArrayIterator;
@@ -116,17 +116,42 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     /**
      * Determines whether a date represents a holiday or not.
      *
-     * @param mixed $date a timestamp, string or PEAR::Date object
+     * @param mixed $date a Yasumi\Holiday or DateTime object
      *
      * @return boolean true if date represents a holiday, otherwise false
      */
     public function isHoliday($date)
     {
+        // Return false if given date is empty
+        if (is_null($date)) {
+            return false;
+        }
+
+        // If given date is a DateTime object
+        if (get_class($date) === 'DateTime' && in_array($date->format('Y-m-d'),
+                array_values($this->getHolidayDates()))
+        ) {
+            return true;
+        }
+
+        // If given date is a Yasumi\Holiday object
         if ( ! is_null($date) && in_array($date, $this->holidays)) {
             return true;
         }
 
         return false;
+    }
+
+    /**
+     * Gets all of the holiday dates defined by this holiday provider (for the given year).
+     *
+     * @return array list of all holiday dates defined for the given year
+     */
+    public function getHolidayDates()
+    {
+        return array_map(function ($holiday) {
+            return (string) $holiday;
+        }, $this->holidays);
     }
 
     /**
@@ -207,18 +232,6 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     public function getHolidayNames()
     {
         return array_keys($this->holidays);
-    }
-
-    /**
-     * Gets all of the holiday dates defined by this holiday provider (for the given year).
-     *
-     * @return array list of all holiday dates defined for the given year
-     */
-    public function getHolidayDates()
-    {
-        return array_map(function ($holiday) {
-            return (string) $holiday;
-        }, $this->holidays);
     }
 
     /**
