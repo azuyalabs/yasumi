@@ -16,14 +16,14 @@ use PHPUnit_Framework_TestCase;
 use Yasumi\Tests\YasumiBase;
 
 /**
- * Class NetherlandsBaseTestCase.
+ * Base class for test cases of the Netherlands holiday provider.
  */
 abstract class NetherlandsBaseTestCase extends PHPUnit_Framework_TestCase
 {
     use YasumiBase;
 
     /**
-     * Country (name) to be tested
+     * Name of the region (e.g. country / state) to be tested
      */
     const REGION = 'Netherlands';
 

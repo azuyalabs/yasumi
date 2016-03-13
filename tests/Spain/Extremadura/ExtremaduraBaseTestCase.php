@@ -31,24 +31,4 @@ abstract class ExtremaduraBaseTestCase extends SpainBaseTestCase
      * Timezone in which this provider has holidays defined
      */
     const TIMEZONE = 'Europe/Madrid';
-
-    /**
-     * List of holidays (shortnames) that are generally expected to be defined
-     */
-    public static $expectedHolidays = [
-        'newYearsDay',
-        'epiphany',
-        'valentinesDay',
-        'maundyThursday',
-        'goodFriday',
-        'easter',
-        'internationalWorkersDay',
-        'assumptionOfMary',
-        'extremaduraDay',
-        'nationalDay',
-        'allSaintsDay',
-        'constitutionDay',
-        'immaculateConception',
-        'christmasDay'
-    ];
 }

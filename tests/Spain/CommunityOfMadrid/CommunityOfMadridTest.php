@@ -12,17 +12,80 @@
 
 namespace Yasumi\Tests\Spain\CommunityOfMadrid;
 
+use Yasumi\Holiday;
+
 /**
  * Class for testing holidays in the Community of Madrid (Spain).
  */
 class CommunityOfMadridTest extends CommunityOfMadridBaseTestCase
 {
     /**
-     * Tests if all holidays in the Community of Madrid are defined by the provider class
+     * @var int year random year number used for all tests in this Test Case
      */
-    public function testDefinedHolidays()
+    protected $year;
+
+    /**
+     * Tests if all national holidays in the Community of Madrid are defined by the provider class
+     */
+    public function testNationalHolidays()
     {
-        $this->assertClassHasStaticAttribute('expectedHolidays', self::class);
-        $this->assertDefinedHolidays(self::REGION, date('Y'), self::$expectedHolidays);
+        $this->assertDefinedHolidays([
+            'newYearsDay',
+            'epiphany',
+            'valentinesDay',
+            'stJosephsDay',
+            'maundyThursday',
+            'goodFriday',
+            'easter',
+            'internationalWorkersDay',
+            'dosdeMayoUprisingDay',
+            'corpusChristi',
+            'assumptionOfMary',
+            'nationalDay',
+            'allSaintsDay',
+            'constitutionDay',
+            'immaculateConception',
+            'christmasDay'
+        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+    }
+
+    /**
+     * Tests if all observed holidays in the Community of Madrid are defined by the provider class
+     */
+    public function testObservedHolidays()
+    {
+        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+    }
+
+    /**
+     * Tests if all seasonal holidays in the Community of Madrid are defined by the provider class
+     */
+    public function testSeasonalHolidays()
+    {
+        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
+    }
+
+    /**
+     * Tests if all bank holidays in the Community of Madrid are defined by the provider class
+     */
+    public function testBankHolidays()
+    {
+        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_BANK);
+    }
+
+    /**
+     * Tests if all other holidays in the Community of Madrid are defined by the provider class
+     */
+    public function testOtherHolidays()
+    {
+        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+    }
+
+    /**
+     * Initial setup of this Test Case
+     */
+    protected function setUp()
+    {
+        $this->year = $this->generateRandomYear(1981);
     }
 }

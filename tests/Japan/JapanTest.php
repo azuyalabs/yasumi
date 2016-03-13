@@ -10,14 +10,14 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\Spain\CastileAndLeon;
+namespace Yasumi\Tests\Japan;
 
 use Yasumi\Holiday;
 
 /**
- * Class for testing holidays in Castile And Leon (Spain).
+ * Class for testing holidays in Japan.
  */
-class CastileAndLeonTest extends CastileAndLeonBaseTestCase
+class JapanTest extends JapanBaseTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -25,30 +25,33 @@ class CastileAndLeonTest extends CastileAndLeonBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Castile And Leon are defined by the provider class
+     * Tests if all national holidays in Japan are defined by the provider class
      */
     public function testNationalHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
-            'epiphany',
-            'valentinesDay',
-            'maundyThursday',
-            'goodFriday',
-            'easter',
-            'castileAndLeonDay',
-            'internationalWorkersDay',
-            'assumptionOfMary',
-            'nationalDay',
-            'allSaintsDay',
-            'constitutionDay',
-            'immaculateConception',
-            'christmasDay'
+            'comingOfAgeDay',
+            'nationalFoundationDay',
+            'vernalEquinoxDay',
+            'showaDay',
+            'constitutionMemorialDay',
+            'greeneryDay',
+            'childrensDay',
+            'marineDay',
+            'mountainDay',
+            'respectfortheAgedDay',
+            'autumnalEquinoxDay',
+            'healthandSportsDay',
+            'cultureDay',
+            'laborThanksgivingDay',
+            'emperorsBirthday',
+
         ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
     }
 
     /**
-     * Tests if all observed holidays in Castile And Leon are defined by the provider class
+     * Tests if all observed holidays in Japan are defined by the provider class
      */
     public function testObservedHolidays()
     {
@@ -56,7 +59,7 @@ class CastileAndLeonTest extends CastileAndLeonBaseTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in Castile And Leon are defined by the provider class
+     * Tests if all seasonal holidays in Japan are defined by the provider class
      */
     public function testSeasonalHolidays()
     {
@@ -64,7 +67,7 @@ class CastileAndLeonTest extends CastileAndLeonBaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in Castile And Leon are defined by the provider class
+     * Tests if all bank holidays in Japan are defined by the provider class
      */
     public function testBankHolidays()
     {
@@ -72,7 +75,7 @@ class CastileAndLeonTest extends CastileAndLeonBaseTestCase
     }
 
     /**
-     * Tests if all other holidays in Castile And Leon are defined by the provider class
+     * Tests if all other holidays in Japan are defined by the provider class
      */
     public function testOtherHolidays()
     {
@@ -84,6 +87,6 @@ class CastileAndLeonTest extends CastileAndLeonBaseTestCase
      */
     protected function setUp()
     {
-        $this->year = $this->generateRandomYear(1981);
+        $this->year = $this->generateRandomYear(2016, 2150);
     }
 }

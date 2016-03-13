@@ -32,24 +32,4 @@ abstract class ValencianCommunityBaseTestCase extends SpainBaseTestCase
      */
     const TIMEZONE = 'Europe/Madrid';
 
-    /**
-     * List of holidays (shortnames) that are generally expected to be defined
-     */
-    public static $expectedHolidays = [
-        'newYearsDay',
-        'epiphany',
-        'valentinesDay',
-        'stJosephsDay',
-        'goodFriday',
-        'easter',
-        'easterMonday',
-        'internationalWorkersDay',
-        'assumptionOfMary',
-        'valencianCommunityDay',
-        'nationalDay',
-        'allSaintsDay',
-        'constitutionDay',
-        'immaculateConception',
-        'christmasDay'
-    ];
 }

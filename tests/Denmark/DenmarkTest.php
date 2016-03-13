@@ -12,17 +12,75 @@
 
 namespace Yasumi\Tests\Denmark;
 
+use Yasumi\Holiday;
+
 /**
  * Class for testing holidays in Denmark.
  */
 class DenmarkTest extends DenmarkBaseTestCase
 {
     /**
-     * Tests if all holidays in Denmark are defined by the provider class
+     * @var int year random year number used for all tests in this Test Case
      */
-    public function testDefinedHolidays()
+    protected $year;
+
+    /**
+     * Tests if all national holidays in Denmark are defined by the provider class
+     */
+    public function testNationalHolidays()
     {
-        $this->assertClassHasStaticAttribute('expectedHolidays', self::class);
-        $this->assertDefinedHolidays(self::REGION, date('Y'), self::$expectedHolidays);
+        $this->assertDefinedHolidays([
+            'newYearsDay',
+            'maundyThursday',
+            'goodFriday',
+            'easter',
+            'easterMonday',
+            'greatPrayerDay',
+            'ascensionDay',
+            'pentecost',
+            'pentecostMonday',
+            'christmasDay',
+            'secondChristmasDay'
+        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+    }
+
+    /**
+     * Tests if all observed holidays in Denmark are defined by the provider class
+     */
+    public function testObservedHolidays()
+    {
+        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+    }
+
+    /**
+     * Tests if all seasonal holidays in Denmark are defined by the provider class
+     */
+    public function testSeasonalHolidays()
+    {
+        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
+    }
+
+    /**
+     * Tests if all bank holidays in Denmark are defined by the provider class
+     */
+    public function testBankHolidays()
+    {
+        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_BANK);
+    }
+
+    /**
+     * Tests if all other holidays in Denmark are defined by the provider class
+     */
+    public function testOtherHolidays()
+    {
+        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+    }
+
+    /**
+     * Initial setup of this Test Case
+     */
+    protected function setUp()
+    {
+        $this->year = $this->generateRandomYear();
     }
 }

@@ -31,26 +31,4 @@ abstract class CommunityOfMadridBaseTestCase extends SpainBaseTestCase
      * Timezone in which this provider has holidays defined
      */
     const TIMEZONE = 'Europe/Madrid';
-
-    /**
-     * List of holidays (shortnames) that are generally expected to be defined
-     */
-    public static $expectedHolidays = [
-        'newYearsDay',
-        'epiphany',
-        'valentinesDay',
-        'stJosephsDay',
-        'maundyThursday',
-        'goodFriday',
-        'easter',
-        'internationalWorkersDay',
-        'dosdeMayoUprisingDay',
-        'corpusChristi',
-        'assumptionOfMary',
-        'nationalDay',
-        'allSaintsDay',
-        'constitutionDay',
-        'immaculateConception',
-        'christmasDay'
-    ];
 }

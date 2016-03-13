@@ -14,6 +14,12 @@ namespace Yasumi\Tests;
 
 use DateTime;
 use Faker\Factory as Faker;
+use Yasumi\Filters\BankHolidaysFilter;
+use Yasumi\Filters\ObservedHolidaysFilter;
+use Yasumi\Filters\OfficialHolidaysFilter;
+use Yasumi\Filters\OtherHolidaysFilter;
+use Yasumi\Filters\SeasonalHolidaysFilter;
+use Yasumi\Holiday;
 use Yasumi\Yasumi;
 
 /**
@@ -23,22 +29,41 @@ use Yasumi\Yasumi;
  */
 trait YasumiBase
 {
-
     /**
      * Asserts that the expected holidays are indeed a holiday for the given provider and year
      *
-     * @param string $provider         the holiday provider (i.e. country/state) for which the holidays need to be
-     *                                 tested
-     * @param int    $year             holiday calendar year
-     * @param array  $expectedHolidays list of all known holidays of the given provider
+     * @param array  $expectedHolidays       list of all known holidays of the given provider
+     * @param string $provider               the holiday provider (i.e. country/state) for which the holidays need to be
+     *                                       tested
+     * @param int    $year                   holiday calendar year
+     * @param string $type                   The type of holiday. Use the following constants: TYPE_NATIONAL,
+     *                                       TYPE_OBSERVANCE, TYPE_SEASON, TYPE_BANK or TYPE_OTHER.
      */
-    public function assertDefinedHolidays($provider, $year, $expectedHolidays)
+    public function assertDefinedHolidays($expectedHolidays, $provider, $year, $type)
     {
-        $holidays = Yasumi::create($provider, $year)->getHolidays();
+        $holidays = Yasumi::create($provider, $year);
+
+        switch ($type) {
+            case Holiday::TYPE_NATIONAL:
+                $holidays = new OfficialHolidaysFilter($holidays->getIterator());
+                break;
+            case Holiday::TYPE_OBSERVANCE:
+                $holidays = new ObservedHolidaysFilter($holidays->getIterator());
+                break;
+            case Holiday::TYPE_SEASON:
+                $holidays = new SeasonalHolidaysFilter($holidays->getIterator());
+                break;
+            case Holiday::TYPE_BANK:
+                $holidays = new BankHolidaysFilter($holidays->getIterator());
+                break;
+            case Holiday::TYPE_OTHER:
+                $holidays = new OtherHolidaysFilter($holidays->getIterator());
+                break;
+        }
 
         // Loop through all known holidays and assert they are defined by the provider class
         foreach ($expectedHolidays as $holiday) {
-            $this->assertArrayHasKey($holiday, $holidays);
+            $this->assertArrayHasKey($holiday, $holidays->getArrayCopy());
         }
 
         unset($holidays);

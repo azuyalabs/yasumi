@@ -31,22 +31,4 @@ abstract class DenmarkBaseTestCase extends PHPUnit_Framework_TestCase
      * Timezone in which this provider has holidays defined
      */
     const TIMEZONE = 'Europe/Copenhagen';
-
-    /**
-     * List of holidays (shortnames) that are generally expected to be defined
-     */
-    public static $expectedHolidays = [
-        'newYearsDay',
-        'maundyThursday',
-        'goodFriday',
-        'easter',
-        'easterMonday',
-        'greatPrayerDay',
-        'ascensionDay',
-        'pentecost',
-        'pentecostMonday',
-        'christmasDay',
-        'secondChristmasDay'
-    ];
-
 }

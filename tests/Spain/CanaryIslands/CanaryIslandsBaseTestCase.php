@@ -31,24 +31,4 @@ abstract class CanaryIslandsBaseTestCase extends SpainBaseTestCase
      * Timezone in which this provider has holidays defined
      */
     const TIMEZONE = 'Atlantic/Canary';
-
-    /**
-     * List of holidays (shortnames) that are generally expected to be defined
-     */
-    public static $expectedHolidays = [
-        'newYearsDay',
-        'epiphany',
-        'valentinesDay',
-        'maundyThursday',
-        'goodFriday',
-        'easter',
-        'internationalWorkersDay',
-        'canaryIslandsDay',
-        'assumptionOfMary',
-        'nationalDay',
-        'allSaintsDay',
-        'constitutionDay',
-        'immaculateConception',
-        'christmasDay'
-    ];
 }

@@ -12,17 +12,78 @@
 
 namespace Yasumi\Tests\Spain\CanaryIslands;
 
+use Yasumi\Holiday;
+
 /**
- * Class for testing holidays in Canary Islands (Spain).
+ * Class for testing holidays in the Canary Islands (Spain).
  */
 class CanaryIslandsTest extends CanaryIslandsBaseTestCase
 {
     /**
-     * Tests if all holidays in Canary Islands are defined by the provider class
+     * @var int year random year number used for all tests in this Test Case
      */
-    public function testDefinedHolidays()
+    protected $year;
+
+    /**
+     * Tests if all national holidays in the Canary Islands are defined by the provider class
+     */
+    public function testNationalHolidays()
     {
-        $this->assertClassHasStaticAttribute('expectedHolidays', self::class);
-        $this->assertDefinedHolidays(self::REGION, date('Y'), self::$expectedHolidays);
+        $this->assertDefinedHolidays([
+            'newYearsDay',
+            'epiphany',
+            'valentinesDay',
+            'maundyThursday',
+            'goodFriday',
+            'easter',
+            'internationalWorkersDay',
+            'canaryIslandsDay',
+            'assumptionOfMary',
+            'nationalDay',
+            'allSaintsDay',
+            'constitutionDay',
+            'immaculateConception',
+            'christmasDay'
+        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+    }
+
+    /**
+     * Tests if all observed holidays in the Canary Islands are defined by the provider class
+     */
+    public function testObservedHolidays()
+    {
+        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+    }
+
+    /**
+     * Tests if all seasonal holidays in the Canary Islands are defined by the provider class
+     */
+    public function testSeasonalHolidays()
+    {
+        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
+    }
+
+    /**
+     * Tests if all bank holidays in the Canary Islands are defined by the provider class
+     */
+    public function testBankHolidays()
+    {
+        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_BANK);
+    }
+
+    /**
+     * Tests if all other holidays in the Canary Islands are defined by the provider class
+     */
+    public function testOtherHolidays()
+    {
+        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+    }
+
+    /**
+     * Initial setup of this Test Case
+     */
+    protected function setUp()
+    {
+        $this->year = $this->generateRandomYear(1981);
     }
 }

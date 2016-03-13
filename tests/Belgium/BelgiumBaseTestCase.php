@@ -31,22 +31,4 @@ abstract class BelgiumBaseTestCase extends PHPUnit_Framework_TestCase
      * Timezone in which this provider has holidays defined
      */
     const TIMEZONE = 'Europe/Brussels';
-
-    /**
-     * List of holidays (shortnames) that are generally expected to be defined
-     */
-    public static $expectedHolidays = [
-        'newYearsDay',
-        'easter',
-        'easterMonday',
-        'internationalWorkersDay',
-        'ascensionDay',
-        'pentecost',
-        'pentecostMonday',
-        'assumptionOfMary',
-        'nationalDay',
-        'allSaintsDay',
-        'armisticeDay',
-        'christmasDay'
-    ];
 }
