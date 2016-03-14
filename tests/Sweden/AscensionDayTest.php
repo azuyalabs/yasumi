@@ -10,37 +10,37 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\Norway;
+namespace Yasumi\Tests\Sweden;
 
 use DateTime;
 use DateTimeZone;
 
 /**
- * Class containing tests for Easter Monday in Norway.
+ * Class for testing Ascension Day in Sweden.
  */
-class EasterMondayTest extends NorwayBaseTestCase
+class AscensionDayTest extends SwedenBaseTestCase
 {
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'easterMonday';
+    const HOLIDAY = 'ascensionDay';
 
     /**
-     * Tests the holiday defined in this test.
+     * Tests Ascension Day.
      */
-    public function testHoliday()
+    public function testAscensionDay()
     {
-        $year = 2355;
+        $year = 1588;
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-4-4", new DateTimeZone(self::TIMEZONE)));
+            new DateTime("$year-5-16", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**
-     * Tests translated name of the holiday defined in this test.
+     * Tests translated name of Ascension Day
      */
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['nb_NO' => 'Andre påskedag']);
+            [self::LOCALE => 'Kristi himmelsfärds dag']);
     }
 }

@@ -10,14 +10,14 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\Norway;
+namespace Yasumi\Tests\Sweden;
 
 use DateTime;
 
 /**
- * Class for testing New Years Day in Norway.
+ * Class for testing New Years Day in Sweden.
  */
-class NewYearsDayTest extends NorwayBaseTestCase
+class NewYearsDayTest extends SwedenBaseTestCase
 {
     /**
      * The name of the holiday to be tested
@@ -53,6 +53,6 @@ class NewYearsDayTest extends NorwayBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['nb_NO' => 'Første nyttårsdag']);
+            [self::LOCALE => 'nyårsdagen']);
     }
 }

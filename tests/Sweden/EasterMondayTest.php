@@ -10,15 +10,15 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\Norway;
+namespace Yasumi\Tests\Sweden;
 
 use DateTime;
 use DateTimeZone;
 
 /**
- * Class containing tests for Easter Monday in Norway.
+ * Class containing tests for Easter Monday in Sweden.
  */
-class EasterMondayTest extends NorwayBaseTestCase
+class EasterMondayTest extends SwedenBaseTestCase
 {
     /**
      * The name of the holiday to be tested
@@ -30,9 +30,9 @@ class EasterMondayTest extends NorwayBaseTestCase
      */
     public function testHoliday()
     {
-        $year = 2355;
+        $year = 1901;
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-4-4", new DateTimeZone(self::TIMEZONE)));
+            new DateTime("$year-4-8", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**
@@ -41,6 +41,6 @@ class EasterMondayTest extends NorwayBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['nb_NO' => 'Andre påskedag']);
+            [self::LOCALE => 'annandag påsk']);
     }
 }

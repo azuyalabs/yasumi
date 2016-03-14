@@ -10,14 +10,14 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\Norway;
+namespace Yasumi\Tests\Sweden;
 
 use Yasumi\Holiday;
 
 /**
- * Class for testing holidays in Norway.
+ * Class for testing holidays in Sweden.
  */
-class NorwayTest extends NorwayBaseTestCase
+class SwedenTest extends SwedenBaseTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -25,28 +25,30 @@ class NorwayTest extends NorwayBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Norway are defined by the provider class
+     * Tests if all national holidays in Sweden are defined by the provider class
      */
     public function testNationalHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
-            'maundyThursday',
+            'epiphany',
             'goodFriday',
             'easter',
             'easterMonday',
             'internationalWorkersDay',
             'ascensionDay',
             'pentecost',
-            'pentecostMonday',
-            'constitutionDay',
+            'nationalDay',
+            'stJohnsDay', // Midsummer's Day
+            'allSaintsDay',
+            'christmasEve',
             'christmasDay',
             'secondChristmasDay'
         ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
     }
 
     /**
-     * Tests if all observed holidays in Norway are defined by the provider class
+     * Tests if all observed holidays in Sweden are defined by the provider class
      */
     public function testObservedHolidays()
     {
@@ -54,7 +56,7 @@ class NorwayTest extends NorwayBaseTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in Norway are defined by the provider class
+     * Tests if all seasonal holidays in Sweden are defined by the provider class
      */
     public function testSeasonalHolidays()
     {
@@ -62,7 +64,7 @@ class NorwayTest extends NorwayBaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in Norway are defined by the provider class
+     * Tests if all bank holidays in Sweden are defined by the provider class
      */
     public function testBankHolidays()
     {
@@ -70,7 +72,7 @@ class NorwayTest extends NorwayBaseTestCase
     }
 
     /**
-     * Tests if all other holidays in Norway are defined by the provider class
+     * Tests if all other holidays in Sweden are defined by the provider class
      */
     public function testOtherHolidays()
     {
@@ -82,6 +84,6 @@ class NorwayTest extends NorwayBaseTestCase
      */
     protected function setUp()
     {
-        $this->year = $this->generateRandomYear(1836);
+        $this->year = $this->generateRandomYear();
     }
 }

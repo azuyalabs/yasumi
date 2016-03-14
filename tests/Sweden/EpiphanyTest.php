@@ -10,19 +10,19 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\Norway;
+namespace Yasumi\Tests\Sweden;
 
 use DateTime;
 
 /**
- * Class for testing New Years Day in Norway.
+ * Class containing tests for Epiphany in Sweden.
  */
-class NewYearsDayTest extends NorwayBaseTestCase
+class EpiphanyTest extends SwedenBaseTestCase
 {
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'newYearsDay';
+    const HOLIDAY = 'epiphany';
 
     /**
      * Tests the holiday defined in this test.
@@ -38,13 +38,13 @@ class NewYearsDayTest extends NorwayBaseTestCase
     }
 
     /**
-     * Returns a list of random test dates used for assertion of the holiday defined in this test
+     * Returns a list of random test dates used for assertion of the holiday defined in this test.
      *
-     * @return array list of test dates for the holiday defined in this test
+     * @return array list of test dates for the day of the holiday defined in this test
      */
     public function HolidayDataProvider()
     {
-        return $this->generateRandomDates(1, 1, self::TIMEZONE);
+        return $this->generateRandomDates(1, 6, self::TIMEZONE);
     }
 
     /**
@@ -53,6 +53,6 @@ class NewYearsDayTest extends NorwayBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['nb_NO' => 'Første nyttårsdag']);
+            [self::LOCALE => 'trettondedag jul']);
     }
 }

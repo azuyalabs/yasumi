@@ -10,25 +10,30 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\Norway;
+namespace Yasumi\Tests\Sweden;
 
 use PHPUnit_Framework_TestCase;
 use Yasumi\Tests\YasumiBase;
 
 /**
- * Base class for test cases of the Norway holiday provider.
+ * Base class for test cases of the Sweden holiday provider.
  */
-abstract class NorwayBaseTestCase extends PHPUnit_Framework_TestCase
+abstract class SwedenBaseTestCase extends PHPUnit_Framework_TestCase
 {
     use YasumiBase;
 
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'Norway';
+    const REGION = 'Sweden';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Oslo';
+    const TIMEZONE = 'Europe/Stockholm';
+
+    /**
+     * Locale that is considered common for this provider
+     */
+    const LOCALE = 'sv_SE';
 }

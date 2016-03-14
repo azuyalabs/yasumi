@@ -30,9 +30,9 @@ class goodFridayTest extends NorwayBaseTestCase
      */
     public function testHoliday()
     {
-        $year = 2178;
+        $year = 1908;
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-4-3", new DateTimeZone(self::TIMEZONE)));
+            new DateTime("$year-4-17", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**
@@ -41,6 +41,6 @@ class goodFridayTest extends NorwayBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['no_NO' => 'Langfredag']);
+            ['nb_NO' => 'Langfredag']);
     }
 }

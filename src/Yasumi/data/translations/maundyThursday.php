@@ -14,5 +14,5 @@
 return [
     'es_ES' => 'Jueves Santo',
     'da_DK' => 'Skærtorsdag',
-    'no_NO' => 'Skjærtorsdag'
+    'nb_NO' => 'Skjærtorsdag'
 ];

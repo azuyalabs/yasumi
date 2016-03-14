@@ -19,5 +19,6 @@ return [
     'ja_JP' => 'グッドフライデー',
     'fr_FR' => 'Vendredi saint',
     'es_ES' => 'Viernes Santo',
-    'da_DK' => 'Langfredag'
+    'da_DK' => 'Langfredag',
+    'nb_NO' => 'Langfredag'
 ];

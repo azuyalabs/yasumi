@@ -18,5 +18,6 @@ return [
     'ja_JP' => '労働の日',
     'it_IT' => 'Festa del Lavoro',
     'fr_FR' => 'Fête du Travail',
-    'es_ES' => 'Día del Trabajador'
+    'es_ES' => 'Día del Trabajador',
+    'nb_NO' => 'Arbeidernes dag'
 ];
