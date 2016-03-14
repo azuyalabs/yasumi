@@ -20,5 +20,6 @@ return [
     'it_IT' => 'Capodanno',
     'fr_FR' => 'Jour de l\'An',
     'es_ES' => 'Año Nuevo',
-    'da_DK' => 'Nytårsdag'
+    'da_DK' => 'Nytårsdag',
+    'no_NO' => 'Første nyttårsdag'
 ];

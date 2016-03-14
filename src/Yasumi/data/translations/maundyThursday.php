@@ -13,5 +13,6 @@
 // Translation for Maundy Thursday
 return [
     'es_ES' => 'Jueves Santo',
-    'da_DK' => 'Skærtorsdag'
+    'da_DK' => 'Skærtorsdag',
+    'no_NO' => 'Skjærtorsdag'
 ];
