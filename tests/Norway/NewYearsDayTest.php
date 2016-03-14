@@ -53,6 +53,6 @@ class NewYearsDayTest extends NorwayBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['no_NO' => 'Første nyttårsdag']);
+            ['nb_NO' => 'Første nyttårsdag']);
     }
 }

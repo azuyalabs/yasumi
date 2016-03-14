@@ -30,9 +30,9 @@ class AscensionDayTest extends NorwayBaseTestCase
      */
     public function testAscensionDay()
     {
-        $year = 2806;
+        $year = 1877;
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-5-4", new DateTimeZone(self::TIMEZONE)));
+            new DateTime("$year-5-10", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**
@@ -41,6 +41,6 @@ class AscensionDayTest extends NorwayBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['no_NO' => 'Kristi himmelfartsdag']);
+            ['nb_NO' => 'Kristi himmelfartsdag']);
     }
 }

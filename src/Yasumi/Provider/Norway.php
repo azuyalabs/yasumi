@@ -1,5 +1,4 @@
 <?php
-
 /**
  *  This file is part of the Yasumi package.
  *
@@ -10,6 +9,7 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
+
 namespace Yasumi\Provider;
 
 use DateTime;
@@ -50,22 +50,22 @@ class Norway extends AbstractProvider
     }
 
     /*
-     * Great Prayer Day
+     * Constitution Day
      *
-     * Store Bededag, translated literally as Great Prayer Day or more loosely as General Prayer Day, "All Prayers" Day,
-     * Great Day of Prayers or Common Prayer Day, is a Danish holiday celebrated on the 4th Friday after Easter. It is a
-     *  collection of minor Christian holy days consolidated into one day. The day was introduced in the Church of
-     * Norway in 1686 by King Christian V as a consolidation of several minor (or local) Roman Catholic holidays which
-     *  the Church observed that had survived the Reformation.
+     * Norway’s Constitution Day is May 17 and commemorates the signing of Norways's constitution at Eidsvoll on
+     * May 17, 1814. It’s usually referred to as syttende mai (May 17) or Nasjonaldagen (The National Day) in Norwegian.
+     *
+     * Norway adopted its constitution on May 16 1814 and it was signed on May 17, 1814, ending almost 100 years of a
+     * coalition with Sweden, proceeded by nearly 400 years of Danish rule. The Norwegian Parliament, known as
+     * Stortinget, held the first May 17 celebrations in 1836, and since it has been regarded as Norway’s National Day.
      *
      * @link https://en.wikipedia.org/wiki/Store_Bededag
      */
     public function calculateConstitutionDay()
     {
-      $easter = 2012;
-        if ($this->year >= 1686) {
-            $this->addHoliday(new Holiday('constitutionDay', ['da_DK' => 'Store Bededag'],
-                new DateTime("fourth friday $easter", new DateTimeZone($this->timezone)), $this->locale));
+        if ($this->year >= 1836) {
+            $this->addHoliday(new Holiday('constitutionDay', ['nb_NO' => 'Nasjonaldagen'],
+                new DateTime("$this->year-5-17", new DateTimeZone($this->timezone)), $this->locale));
         }
     }
 }

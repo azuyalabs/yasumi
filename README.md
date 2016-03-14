@@ -39,6 +39,7 @@ Currently the following holiday providers are implemented:
          Canary Islands, Cantabria, Castile and León, Castilla-La Mancha, Ceuta, Community of Madrid, Extremadura, 
          Galicia, La Rioja, Melilla, Navarre, Region of Murcia, Valencian Community)
 * Denmark
+* Norway
 
 Yasumi has the following filters to allow you to filter only certain type of holidays:
 
@@ -91,6 +92,7 @@ The tests are organized in some test suites to make testing a bit more easier:
 * France     : For separately testing the France Holiday Provider
 * Spain      : For separately testing the Spain Holiday Provider
 * Denmark    : For separately testing the Denmark Holiday Provider
+* Norway     : For separately testing the Norway Holiday Provider
 
 
 Basic Usage

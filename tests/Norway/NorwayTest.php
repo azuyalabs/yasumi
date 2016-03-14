@@ -82,6 +82,6 @@ class NorwayTest extends NorwayBaseTestCase
      */
     protected function setUp()
     {
-        $this->year = $this->generateRandomYear(1686);
+        $this->year = $this->generateRandomYear(1836);
     }
 }
