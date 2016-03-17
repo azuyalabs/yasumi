@@ -21,26 +21,49 @@ use DateTimeZone;
 class NationalDayTest extends SwedenBaseTestCase
 {
     /**
+     * The year in which the holiday was first established
+     */
+    const ESTABLISHMENT_YEAR = 1916;
+
+    /**
      * The name of the holiday
      */
     const HOLIDAY = 'nationalDay';
 
     /**
-     * Tests the holiday defined in this test.
+     * Tests the holiday defined in this test on or after establishment.
      */
-    public function testHoliday()
+    public function testHolidayOnAfterEstablishment()
     {
-        $year = 2071;
+        $year = 2022;
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-6-10", new DateTimeZone(self::TIMEZONE)));
+            new DateTime("$year-6-6", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**
-     * Tests the translated name of the holiday defined in this test.
+     * Tests the holiday defined in this test before establishment.
      */
-    public function testTranslation()
+    public function testHolidayBeforeEstablishment()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
+    }
+
+    /**
+     * Tests the translated name of the holiday defined in this test on or after establishment.
+     */
+    public function testTranslationOnAfterEstablishment()
+    {
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1982), [self::LOCALE => 'Svenska flaggans dag']);
+    }
+
+    /**
+     * Tests the translated name of the holiday defined in this test on or after establishment.
+     */
+    public function testTranslationOnAfterNameChange()
+    {
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(1983),
             [self::LOCALE => 'Sveriges nationaldag']);
     }
 }

@@ -18,5 +18,7 @@ return [
     'pl_PL' => 'Święto Trzech Króli',
     'ja_JP' => 'エピファニー',
     'it_IT' => 'Epifania',
-    'es_ES' => 'Día de Reyes'
+    'es_ES' => 'Día de Reyes',
+    'sv_SE' => 'trettondedag jul'
+
 ];

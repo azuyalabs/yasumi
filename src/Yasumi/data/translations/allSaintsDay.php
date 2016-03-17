@@ -17,5 +17,6 @@ return [
     'nl_BE' => 'Allerheiligen',
     'it_IT' => 'Festa di Tutti i Santi',
     'fr_FR' => 'La Toussaint',
-    'es_ES' => 'Día de todos los Santos'
+    'es_ES' => 'Día de todos los Santos',
+    'sv_SE' => 'alla helgons dag'
 ];

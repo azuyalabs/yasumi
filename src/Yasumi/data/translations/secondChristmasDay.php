@@ -16,5 +16,6 @@ return [
     'nl_NL' => 'Tweede Kerstdag',
     'nl_BE' => 'Tweede Kerstdag',
     'da_DK' => '2. Juledag',
-    'nb_NO' => 'Andre juledag'
+    'nb_NO' => 'Andre juledag',
+    'sv_SE' => 'annandag jul'
 ];

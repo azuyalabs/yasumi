@@ -53,6 +53,6 @@ class ChristmasDayTest extends SwedenBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Første juledag']);
+            [self::LOCALE => 'juldagen']);
     }
 }

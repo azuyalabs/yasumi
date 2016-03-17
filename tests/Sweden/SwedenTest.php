@@ -84,6 +84,6 @@ class SwedenTest extends SwedenBaseTestCase
      */
     protected function setUp()
     {
-        $this->year = $this->generateRandomYear();
+        $this->year = $this->generateRandomYear(1916);
     }
 }

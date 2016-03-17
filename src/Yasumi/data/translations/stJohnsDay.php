@@ -12,5 +12,6 @@
 
 // Translation for St. John's Day
 return [
-    'es_ES' => 'Sant Joan'
+    'es_ES' => 'Sant Joan',
+    'sv_SE' => 'midsommardagen'
 ];

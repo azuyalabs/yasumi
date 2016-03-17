@@ -32,7 +32,7 @@ class PentecostTest extends SwedenBaseTestCase
     {
         $year = 4009;
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-6-9", new DateTimeZone(self::TIMEZONE)));
+            new DateTime("$year-05-17", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**

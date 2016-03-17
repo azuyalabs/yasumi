@@ -20,5 +20,6 @@ return [
     'fr_FR' => 'Vendredi saint',
     'es_ES' => 'Viernes Santo',
     'da_DK' => 'Langfredag',
-    'nb_NO' => 'Langfredag'
+    'nb_NO' => 'Langfredag',
+    'sv_SE' => 'långfredagen'
 ];
