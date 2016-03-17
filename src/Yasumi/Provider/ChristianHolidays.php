@@ -1,4 +1,5 @@
 <?php
+
 /**
  *  This file is part of the Yasumi package.
  *
@@ -175,6 +176,30 @@ trait ChristianHolidays
     {
         return new Holiday('corpusChristi', [], $this->calculateEaster($year, $timezone)->add(new DateInterval('P60D')),
             $locale, $type);
+    }
+
+    /**
+     * Christmas Eve.
+     *
+     * Christmas Eve refers to the evening or entire day preceding Christmas Day, a widely celebrated festival
+     * commemorating the birth of Jesus of Nazareth.[4] Christmas Day is observed around the world, and Christmas Eve is
+     * widely observed as a full or partial holiday in anticipation of Christmas Day. Together, both days are considered
+     * one of the most culturally significant celebrations in Christendom and Western society.
+     *
+     * @link https://en.wikipedia.org/wiki/Christmas_Eve
+     *
+     * @param int    $year     the year for which Christmas Eve needs to be created
+     * @param string $timezone the timezone in which Christmas Eve is celebrated
+     * @param string $locale   the locale for which Christmas Eve need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default observance is considered.
+     *
+     * @return \Yasumi\Holiday
+     */
+    public function christmasEve($year, $timezone, $locale, $type = Holiday::TYPE_OBSERVANCE)
+    {
+        return new Holiday('christmasEve', [], new DateTime("$year-12-24", new DateTimeZone($timezone)), $locale,
+            $type);
     }
 
     /**
