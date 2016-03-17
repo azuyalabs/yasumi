@@ -5,9 +5,9 @@
 
 **Implemented enhancements:**
 
-- Added Holiday Driver for Denmark
-- Added Holiday Driver for Norway
-- Added Holiday Driver for Sweden
+- Added Holiday Provider for Denmark
+- Added Holiday Provider for Norway
+- Added Holiday Provider for Sweden
 - New function 'isWorkingDay' added that determines whether a date represents a working day or not. A working day is 
   considered a date that is neither a holiday nor falls into the weekend.
 - Refactoring and cleanup of unit tests
@@ -22,7 +22,7 @@
 
 **Implemented enhancements:**
 
-- Added Spain Holiday Driver (including the autonomous communities Andalusia, Aragon, Asturias, Balearic Islands, 
+- Added Spain Holiday Provider (including the autonomous communities Andalusia, Aragon, Asturias, Balearic Islands, 
     Basque Country, Canary Islands, Cantabria, Castile and León, Castilla-La Mancha, Ceuta, Community of Madrid, 
     Extremadura, Galicia, La Rioja, Melilla, Navarre, Region of Murcia, Valencian Community)
 - Added Corpus Christi, St. Joseph's Day, Maundy Thursday, St. George's Day, St. John's Day to the common Christian 
