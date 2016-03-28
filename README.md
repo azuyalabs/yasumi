@@ -25,6 +25,8 @@ Highlights
 * Fully documented
 * Fully Unit tested
 * Framework-agnostic
+* Timezone aware; holidays are calculated for the timezone they apply to
+* Accounts for the date/time when holidays have been officially established and/or abolished
 * Composer ready, [PSR-2] compliant
 
 Currently the following holiday providers are implemented:
