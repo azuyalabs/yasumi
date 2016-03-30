@@ -21,5 +21,6 @@ return [
     'es_ES' => 'Viernes Santo',
     'da_DK' => 'Langfredag',
     'nb_NO' => 'Langfredag',
-    'sv_SE' => 'långfredagen'
+    'sv_SE' => 'långfredagen',
+    'fi_FI' => 'Pitkäperjantai'
 ];

@@ -19,6 +19,7 @@ return [
     'ja_JP' => 'エピファニー',
     'it_IT' => 'Epifania',
     'es_ES' => 'Día de Reyes',
-    'sv_SE' => 'trettondedag jul'
+    'sv_SE' => 'trettondedag jul',
+    'fi_FI' => 'Loppiainen'
 
 ];

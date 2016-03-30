@@ -18,5 +18,6 @@ return [
     'it_IT' => 'Pasqua',
     'da_DK' => 'Påskedag',
     'nb_NO' => 'Første påskedag',
-    'sv_SE' => 'påskdagen'
+    'sv_SE' => 'påskdagen',
+    'fi_FI' => 'Pääsiäispäivä'
 ];

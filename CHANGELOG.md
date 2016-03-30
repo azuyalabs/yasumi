@@ -8,6 +8,7 @@
 - Added Holiday Provider for Denmark
 - Added Holiday Provider for Norway
 - Added Holiday Provider for Sweden
+- Added Holiday Provider for Finland
 - New function 'isWorkingDay' added that determines whether a date represents a working day or not. A working day is 
   considered a date that is neither a holiday nor falls into the weekend.
 - Refactoring and cleanup of unit tests

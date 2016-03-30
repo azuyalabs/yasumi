@@ -20,5 +20,6 @@ return [
     'fr_FR' => 'Fête du Travail',
     'es_ES' => 'Día del Trabajador',
     'nb_NO' => 'Arbeidernes dag',
-    'sv_SE' => 'Första maj'
+    'sv_SE' => 'Första maj',
+    'fi_FI' => 'Vappu'
 ];

@@ -18,4 +18,5 @@ return [
     'da_DK' => 'Pinsedag',
     'nb_NO' => 'Første pinsedag',
     'sv_SE' => 'Pingstdagen',
+    'fi_FI' => 'Helluntaipäivä'
 ];
