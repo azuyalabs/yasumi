@@ -86,6 +86,6 @@ class GaliciaTest extends GaliciaBaseTestCase
      */
     protected function setUp()
     {
-        $this->year = $this->generateRandomYear(1981);
+        $this->year = $this->generateRandomYear(2000);
     }
 }
