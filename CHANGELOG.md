@@ -4,7 +4,7 @@
 ## DEV/MASTER
 
 
-## 1.1.0 (Apr 4, 2016)
+## 1.2.0 (Apr 4, 2016)
 
 **Implemented enhancements:**
 
