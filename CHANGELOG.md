@@ -3,6 +3,9 @@
 
 ## DEV/MASTER
 
+
+## 1.1.0 (Apr 4, 2016)
+
 **Implemented enhancements:**
 
 - Added Holiday Provider for Denmark
@@ -13,10 +16,13 @@
   considered a date that is neither a holiday nor falls into the weekend.
 - Refactoring and cleanup of unit tests
 
+
 **Resolved issues:**
 
 - The Vernal Equinox Day and Autumnal Equinox Day in Japan were excluded from having it substituted for another day in
   case these days would fall on the weekend.
+- Fixed tests for some holiday providers as some holidays have been established only in a particular year, causing
+  false failures in the unit tests.
 
 
 ## 1.1.0 (Mar 10, 2016)

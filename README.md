@@ -210,7 +210,6 @@ The MIT License (MIT). Please see [LICENSE](LICENSE) for more information.
 Information Sources
 -------
 
-- Wikipedia
-- Timeanddate
-- Unicode
-
+- [Wikipedia](https://en.wikipedia.org/wiki/Main_Page) 
+- [Timeanddate.com](http://www.timeanddate.com/)  
+- [CLDR - Unicode Common Locale Data Repository](http://cldr.unicode.org/)  
