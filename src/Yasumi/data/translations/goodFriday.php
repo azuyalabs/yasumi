@@ -22,5 +22,6 @@ return [
     'da_DK' => 'Langfredag',
     'nb_NO' => 'Langfredag',
     'sv_SE' => 'långfredagen',
-    'fi_FI' => 'Pitkäperjantai'
+    'fi_FI' => 'Pitkäperjantai',
+    'el_GR' => 'Μεγάλη Παρασκευή',
 ];

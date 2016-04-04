@@ -10,10 +10,9 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-// Translation for Father's Day
+// Translation for Annunciation
 return [
-    'en_US' => 'Father\'s Day',
-    'nl_NL' => 'Vaderdag',
-    'nl_BE' => 'Vaderdag',
-    'el_GR' => 'Γιορτή του πατέρα',
+    'en_US' => 'Annunciation',
+    'fr_FR' => 'Annonciation',
+    'el_GR' => 'Ευαγγελισμός της Θεοτόκου',
 ];

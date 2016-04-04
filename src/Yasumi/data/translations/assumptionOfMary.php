@@ -17,5 +17,6 @@ return [
     'nl_BE' => 'Onze Lieve Vrouw hemelvaart',
     'it_IT' => 'Assunzione di Maria Vergine',
     'fr_FR' => 'L\'Assomption de Marie',
-    'es_ES' => 'Asunción de la Virgen María'
+    'es_ES' => 'Asunción de la Virgen María',
+    'el_GR' => 'Κοίμηση της Θεοτόκου',
 ];

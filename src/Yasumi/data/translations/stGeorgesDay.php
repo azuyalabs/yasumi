@@ -12,5 +12,6 @@
 
 // Translation for St. George's Day
 return [
-    'es_ES' => 'San Jorge'
+    'es_ES' => 'San Jorge',
+    'el_GR' => 'Αγίου Γεωργίου',
 ];

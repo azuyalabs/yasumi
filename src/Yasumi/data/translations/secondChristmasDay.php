@@ -18,6 +18,6 @@ return [
     'da_DK' => '2. Juledag',
     'nb_NO' => 'Andre juledag',
     'sv_SE' => 'annandag jul',
-    'fi_FI' => '2. joulupäivä'
-
+    'fi_FI' => '2. joulupäivä',
+    'el_GR' => 'Σύναξις Υπεραγίας Θεοτόκου Μαρίας',
 ];

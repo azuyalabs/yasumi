@@ -20,6 +20,6 @@ return [
     'it_IT' => 'Epifania',
     'es_ES' => 'Día de Reyes',
     'sv_SE' => 'trettondedag jul',
-    'fi_FI' => 'Loppiainen'
-
+    'fi_FI' => 'Loppiainen',
+    'el_GR' => 'Θεοφάνεια',
 ];

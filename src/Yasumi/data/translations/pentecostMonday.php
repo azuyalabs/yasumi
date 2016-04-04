@@ -17,5 +17,6 @@ return [
     'nl_BE' => 'Pinkstermaandag',
     'fr_FR' => 'Lundi de Pentecôte',
     'da_DK' => '2. Pinsedag',
-    'nb_NO' => 'Andre pinsedag'
+    'nb_NO' => 'Andre pinsedag',
+    'el_GR' => 'Αγίου Πνεύματος',
 ];

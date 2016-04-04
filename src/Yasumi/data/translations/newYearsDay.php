@@ -23,5 +23,6 @@ return [
     'da_DK' => 'Nytårsdag',
     'nb_NO' => 'Første nyttårsdag',
     'sv_SE' => 'nyårsdagen',
-    'fi_FI' => 'Uudenvuodenpäivä'
+    'fi_FI' => 'Uudenvuodenpäivä',
+    'el_GR' => 'Πρωτοχρονιά',
 ];
