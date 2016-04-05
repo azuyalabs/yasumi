@@ -4,6 +4,12 @@
 ## DEV/MASTER
 
 
+**Resolved issues:**
+
+- Fixed issue for Finland as Midsummer's Day (st. Johns Day) was always calculated to be on June 24th. However since 
+  1955, the holiday has always been on a Saturday (between June 20 and June 26).
+
+
 ## 1.2.0 (Apr 4, 2016)
 
 **Implemented enhancements:**

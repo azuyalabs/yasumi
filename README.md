@@ -57,6 +57,16 @@ Yasumi focuses initially on a country's official holidays and non-working days. 
 will be added. The goal is to issue a new release every month and targeting to have at least 2 new holiday providers in
 each release :)
 
+### Roadmap
+
+- Germany
+- Greece
+- United Kingdom
+- New Zealand
+- Australia
+- Canada
+- India
+
 
 System Requirements
 -------------------
@@ -91,18 +101,18 @@ of years.
 
 The tests are organized in some test suites to make testing a bit more easier:
 
-* Base       : For testing the base functionality of Yasumi
-* Japan      : For separately testing the Japan Holiday Provider
-* Netherlands: For separately testing the Netherlands Holiday Provider
-* Belgium    : For separately testing the Belgium Holiday Provider
-* USA        : For separately testing the USA Holiday Provider
-* Italy      : For separately testing the Italy Holiday Provider
-* France     : For separately testing the France Holiday Provider
-* Spain      : For separately testing the Spain Holiday Provider
-* Denmark    : For separately testing the Denmark Holiday Provider
-* Norway     : For separately testing the Norway Holiday Provider
-* Sweden     : For separately testing the Sweden Holiday Provider
-* Finland    : For separately testing the Finland Holiday Provider
+* Base        : For testing the base functionality of Yasumi
+* Japan       : For separately testing the Japan Holiday Provider
+* Netherlands : For separately testing the Netherlands Holiday Provider
+* Belgium     : For separately testing the Belgium Holiday Provider
+* USA         : For separately testing the USA Holiday Provider
+* Italy       : For separately testing the Italy Holiday Provider
+* France      : For separately testing the France Holiday Provider
+* Spain       : For separately testing the Spain Holiday Provider
+* Denmark     : For separately testing the Denmark Holiday Provider
+* Norway      : For separately testing the Norway Holiday Provider
+* Sweden      : For separately testing the Sweden Holiday Provider
+* Finland     : For separately testing the Finland Holiday Provider
 
 
 Basic Usage
