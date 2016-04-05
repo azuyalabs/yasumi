@@ -87,6 +87,6 @@ class GreeceTest extends GreeceBaseTestCase
      */
     protected function setUp()
     {
-        $this->year = $this->generateRandomYear(1945);
+        $this->year = $this->generateRandomYear(1985);
     }
 }
