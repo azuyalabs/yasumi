@@ -107,19 +107,18 @@ class NewZealand extends AbstractProvider
     public function calculateNewYearHolidays()
     {
         $newYearsDay = new DateTime("$this->year-01-01", new DateTimeZone($this->timezone));
-
-        if (!$this->isWorkingDay($newYearsDay)) {
-            $newYearsDay->modify('next monday');
-        }
-
         $dayAfterNewYearsDay = new DateTime("$this->year-01-02", new DateTimeZone($this->timezone));
         
-        switch ($dayAfterNewYearsDay->format('w')) {
-            case 1:
+        switch ($newYearsDay->format('w')) {
+            case 0:
+                $newYearsDay->add(new DateInterval('P1D'));
                 $dayAfterNewYearsDay->add(new DateInterval('P1D'));
                 break;
+            case 5:
+                $dayAfterNewYearsDay->add(new DateInterval('P2D'));
+                break;
             case 6:
-            case 0:
+                $newYearsDay->add(new DateInterval('P2D'));
                 $dayAfterNewYearsDay->add(new DateInterval('P2D'));
                 break;
         }
