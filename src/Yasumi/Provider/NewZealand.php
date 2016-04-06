@@ -57,16 +57,17 @@ class NewZealand extends AbstractProvider
      */
     public function calculateWaitangiDay()
     {
-        if ($this->year >= 1960) {
-
-            $date = new DateTime("$this->year-02-6", new DateTimeZone($this->timezone));
-
-            if (!$this->isWorkingDay($date)) {
-                $date->modify('next monday');
-            }
-
-            $this->addHoliday(new Holiday('waitangiDay', [], $date, $this->locale));
+        if ($this->year < 1974) {
+            return;
         }
+
+        $date = new DateTime("$this->year-02-6", new DateTimeZone($this->timezone));
+
+        if ($this->year >= 2015 && !$this->isWorkingDay($date)) {
+            $date->modify('next monday');
+        }
+
+        $this->addHoliday(new Holiday('waitangiDay', [], $date, $this->locale));
     }
 
     /**
