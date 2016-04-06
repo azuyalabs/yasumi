@@ -13,6 +13,7 @@ namespace Yasumi\Provider;
 
 use DateTime;
 use DateTimeZone;
+use DateInterval;
 use Yasumi\Holiday;
 
 /**
@@ -30,8 +31,7 @@ class NewZealand extends AbstractProvider
         $this->timezone = 'Pacific/Auckland';
 
         // National Holidays
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
-        $this->calculateDayAfterNewYearsDay();
+        $this->calculateNewYearHolidays();
         $this->calculateWaitangiDay();
         $this->calculateAnzacDay();
         $this->calculateQueensBirthday();
@@ -71,21 +71,37 @@ class NewZealand extends AbstractProvider
     }
 
     /**
-     * Day After New Years Day
+     * Holidays associated with the start of the modern Gregorian calendar
+     *
+     * New Zealanders celebrate New Years Day and The Day After New Years Day,
+     * if either of these holidays occur on a weekend, the dates need to be adjusted.
      *
      * @link https://en.wikipedia.org/wiki/Public_holidays_in_New_Zealand#Statutory_holidays
+     * @link http://www.timeanddate.com/holidays/new-zealand/new-year-day
+     * @link http://www.timeanddate.com/holidays/new-zealand/day-after-new-years-day
      */
-    public function calculateDayAfterNewYearsDay()
+    public function calculateNewYearHolidays()
     {
-        if ($this->year >= 1960) {
-            $date = new DateTime("$this->year-01-02", new DateTimeZone($this->timezone));
+        $newYearsDay = new DateTime("$this->year-01-01", new DateTimeZone($this->timezone));
 
-            if (!$this->isWorkingDay($date)) {
-                $date->modify('next monday');
-            }
-
-            $this->addHoliday(new Holiday('dayAfterNewYearsDay', [], $date, $this->locale));
+        if (!$this->isWorkingDay($newYearsDay)) {
+            $newYearsDay->modify('next monday');
         }
+
+        $dayAfterNewYearsDay = new DateTime("$this->year-01-02", new DateTimeZone($this->timezone));
+        
+        switch ($dayAfterNewYearsDay->format('w')) {
+            case 1:
+                $dayAfterNewYearsDay->add(new DateInterval('P1D'));
+                break;
+            case 6:
+            case 0:
+                $dayAfterNewYearsDay->add(new DateInterval('P2D'));
+                break;
+        }
+
+        $this->addHoliday(new Holiday('newYearsDay', [], $newYearsDay, $this->locale));
+        $this->addHoliday(new Holiday('dayAfterNewYearsDay', [], $dayAfterNewYearsDay, $this->locale));
     }
 
     /**
@@ -161,7 +177,7 @@ class NewZealand extends AbstractProvider
         }
 
         $date = new DateTime(
-            (($this->year < 1910) ? 'second wednesday of october' : 'fourth monday of october')." $this->year",
+            (($this->year < 1910) ? 'second wednesday of october' : 'fourth monday of october') . " $this->year",
             new DateTimeZone($this->timezone)
         );
 
