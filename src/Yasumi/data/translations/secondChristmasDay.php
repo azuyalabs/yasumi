@@ -19,5 +19,5 @@ return [
     'nb_NO' => 'Andre juledag',
     'sv_SE' => 'annandag jul',
     'fi_FI' => '2. joulupäivä',
-    'de'    => '2. Weihnachtsfeiertag'
+    'de_DE' => '2. Weihnachtsfeiertag'
 ];

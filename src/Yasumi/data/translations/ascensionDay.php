@@ -20,5 +20,5 @@ return [
     'nb_NO' => 'Kristi himmelfartsdag',
     'sv_SE' => 'Kristi himmelsfärds dag',
     'fi_FI' => 'Helatorstai',
-    'de'    => 'Christi Himmelfahrt'
+    'de_DE' => 'Christi Himmelfahrt'
 ];
