@@ -39,6 +39,14 @@ class QueensBirthdayTest extends NewZealandBaseTestCase
     }
 
     /**
+     *  Tests that Holiday is not present before 1952
+     */
+    public function testNotHoliday()
+    {
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, 1951);
+    }
+
+    /**
      * Returns a list of test dates
      *
      * @return array list of test dates for the holiday defined in this test

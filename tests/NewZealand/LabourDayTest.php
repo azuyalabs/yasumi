@@ -40,6 +40,14 @@ class LabourDayTest extends NewZealandBaseTestCase
     }
 
     /**
+     *  Tests that Labour Day is not present before 1900
+     */
+    public function testNotHoliday()
+    {
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, 1899);
+    }
+
+    /**
      * Returns a list of test dates
      *
      * @return array list of test dates for the holiday defined in this test
