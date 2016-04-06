@@ -40,8 +40,7 @@ class NewZealand extends AbstractProvider
         // Add Christian holidays
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
+        $this->calculateChristmasHolidays();
     }
 
     /**
@@ -68,6 +67,31 @@ class NewZealand extends AbstractProvider
         }
 
         $this->addHoliday(new Holiday('waitangiDay', [], $date, $this->locale));
+    }
+
+    /**
+     *
+     */
+    public function calculateChristmasHolidays()
+    {
+        $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->timezone));
+        $boxingDay = new DateTime("$this->year-12-26", new DateTimeZone($this->timezone));
+
+        switch ($christmasDay->format('w')) {
+            case 0:
+                $christmasDay->add(new DateInterval('P2D'));
+                break;
+            case 5:
+                $boxingDay->add(new DateInterval('P2D'));
+                break;
+            case 6:
+                $christmasDay->add(new DateInterval('P2D'));
+                $boxingDay->add(new DateInterval('P2D'));
+                break;
+        }
+
+        $this->addHoliday(new Holiday('christmasDay', [], $christmasDay, $this->locale));
+        $this->addHoliday(new Holiday('secondChristmasDay', [], $boxingDay, $this->locale));
     }
 
     /**
