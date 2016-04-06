@@ -98,13 +98,13 @@ class NewZealand extends AbstractProvider
      */
     public function calculateAnzacDay()
     {
-        if ($this->year >= 1945) {
+        if ($this->year < 1921) {
             return;
         }
 
         $date = new DateTime("$this->year-04-25", new DateTimeZone($this->timezone));
 
-        if (!$this->isWorkingDay($date)) {
+        if ($this->year >= 2015 && !$this->isWorkingDay($date)) {
             $date->modify('next monday');
         }
 
