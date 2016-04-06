@@ -21,5 +21,6 @@ return [
     'da_DK' => '2. Påskedag',
     'nb_NO' => 'Andre påskedag',
     'sv_SE' => 'annandag påsk',
-    'fi_FI' => '2. pääsiäispäivä'
+    'fi_FI' => '2. pääsiäispäivä',
+    'de_DE' => 'Ostermontag'
 ];

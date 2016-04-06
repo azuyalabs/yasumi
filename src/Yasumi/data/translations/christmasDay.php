@@ -21,5 +21,6 @@ return [
     'da_DK' => '1. Juledag',
     'nb_NO' => 'Første juledag',
     'sv_SE' => 'juldagen',
-    'fi_FI' => 'Joulupäivä'
+    'fi_FI' => 'Joulupäivä',
+    'de_DE' => '1. Weihnachtsfeiertag'
 ];
