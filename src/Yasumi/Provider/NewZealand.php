@@ -53,6 +53,7 @@ class NewZealand extends AbstractProvider
      * the Monday that immediately follows becomes a public holiday.
      *
      * @link https://en.wikipedia.org/wiki/Waitangi_Day
+     * @link http://employment.govt.nz/er/holidaysandleave/publicholidays/mondayisation.asp
      */
     public function calculateWaitangiDay()
     {
@@ -70,7 +71,14 @@ class NewZealand extends AbstractProvider
     }
 
     /**
+     * Christmas Day / Boxing Day
      *
+     * Christmas day, and Boxing day are public holidays in New Zealand,
+     * they are subject to mondayisation rules.
+     *
+     * @link http://www.timeanddate.com/holidays/new-zealand/boxing-day
+     * @link http://www.timeanddate.com/holidays/new-zealand/christmas-day
+     * @link http://employment.govt.nz/er/holidaysandleave/publicholidays/mondayisation.asp
      */
     public function calculateChristmasHolidays()
     {
@@ -103,6 +111,7 @@ class NewZealand extends AbstractProvider
      * @link https://en.wikipedia.org/wiki/Public_holidays_in_New_Zealand#Statutory_holidays
      * @link http://www.timeanddate.com/holidays/new-zealand/new-year-day
      * @link http://www.timeanddate.com/holidays/new-zealand/day-after-new-years-day
+     * @link http://employment.govt.nz/er/holidaysandleave/publicholidays/mondayisation.asp
      */
     public function calculateNewYearHolidays()
     {
@@ -135,6 +144,7 @@ class NewZealand extends AbstractProvider
      * Observed on 25 April each year.
      *
      * @link https://en.wikipedia.org/wiki/Anzac_Day
+     * @link http://employment.govt.nz/er/holidaysandleave/publicholidays/mondayisation.asp
      */
     public function calculateAnzacDay()
     {
