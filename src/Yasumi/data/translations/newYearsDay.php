@@ -24,5 +24,5 @@ return [
     'nb_NO' => 'Første nyttårsdag',
     'sv_SE' => 'nyårsdagen',
     'fi_FI' => 'Uudenvuodenpäivä',
-    'de'    => 'Neujahr'
+    'de_DE' => 'Neujahr'
 ];

@@ -45,9 +45,10 @@ class Germany extends AbstractProvider
 
         // Calculate other holidays
         $this->calculateGermanUnityDay();
+        $this->calculateReformationDay();
     }
 
-    /*
+    /**
      * German Unity Day
      *
      * The Day of German Unity (German: Tag der Deutschen Einheit) is the national day of Germany, celebrated on
@@ -62,8 +63,35 @@ class Germany extends AbstractProvider
     public function calculateGermanUnityDay()
     {
         if ($this->year >= 1990) {
-            $this->addHoliday(new Holiday('germanUnityDay', ['de' => 'Tag der deutschen Einheit'],
+            $this->addHoliday(new Holiday('germanUnityDay', ['de_DE' => 'Tag der Deutschen Einheit'],
                 new DateTime($this->year . '-10-3', new \DateTimeZone($this->timezone)), $this->locale));
+        }
+    }
+
+    /**
+     * Calculates the day of the reformation.
+     *
+     * Reformation Day is a religious holiday celebrated on October 31, alongside All Hallows' Eve, in remembrance
+     * of the Reformation. It is celebrated among various Protestants, especially by Lutheran and Reformed church
+     * communities.
+
+     * It is a civic holiday in the German states of Brandenburg, Mecklenburg-Vorpommern, Saxony, Saxony-Anhalt and
+     * Thuringia. Slovenia celebrates it as well due to the profound contribution of the Reformation to that nation's
+     * cultural development, although Slovenes are mainly Roman Catholics. With the increasing influence of
+     * Protestantism in Latin America (particularly newer groups such as various Evangelical Protestants, Pentecostals
+     * or Charismatics), it has been declared a national holiday in Chile in 2009.
+     *
+     * @link https://en.wikipedia.org/wiki/Reformation_Day
+     */
+    public function calculateReformationDay()
+    {
+        /**
+         * @link https://de.wikipedia.org/wiki/Reformationstag#Ursprung_und_Geschichte
+         */
+        if ($this->year == 2017) {
+            $this->addHoliday(new Holiday('reformationDay', [
+                'de_DE' => 'Reformationstag',
+            ], new DateTime("$this->year-10-31", new DateTimeZone($this->timezone)), $this->locale));
         }
     }
 }
