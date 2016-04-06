@@ -28,7 +28,7 @@ class Norway extends AbstractProvider
      */
     public function initialize()
     {
-        $this->timezone = 'Europe/Copenhagen';
+        $this->timezone = 'Europe/Oslo';
 
         // Add common holidays
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
