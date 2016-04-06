@@ -127,12 +127,12 @@ class NewZealand extends AbstractProvider
      */
     public function calculateQueensBirthday()
     {
-        if ($this->year >= 1952) {
+        if ($this->year < 1952) {
             return;
         }
 
         $this->addHoliday(new Holiday(
-            'queensBirthDay',
+            'queensBirthday',
             [],
             new DateTime("first monday of june $this->year", new DateTimeZone($this->timezone)),
             $this->locale
