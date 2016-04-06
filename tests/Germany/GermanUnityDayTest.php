@@ -55,6 +55,6 @@ class GermanUnityDayTest extends GermanyBaseTestCase
     public function testTranslationOnAfterEstablishment()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2080), [self::LOCALE => 'Tag der Deutschen Einheit']);
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2080), [self::LOCALE => 'Tag der deutschen Einheit']);
     }
 }

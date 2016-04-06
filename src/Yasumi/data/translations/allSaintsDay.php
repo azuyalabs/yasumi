@@ -19,6 +19,5 @@ return [
     'fr_FR' => 'La Toussaint',
     'es_ES' => 'Día de todos los Santos',
     'sv_SE' => 'alla helgons dag',
-    'fi_FI' => 'Pyhäinpäivä',
-    'de_DE' => 'Allerheiligen'
+    'fi_FI' => 'Pyhäinpäivä'
 ];

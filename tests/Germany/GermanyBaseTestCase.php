@@ -35,5 +35,5 @@ abstract class GermanyBaseTestCase extends PHPUnit_Framework_TestCase
     /**
      * Locale that is considered common for this provider
      */
-    const LOCALE = 'de_DE';
+    const LOCALE = 'de';
 }

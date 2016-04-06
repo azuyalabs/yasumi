@@ -23,5 +23,5 @@ return [
     'nb_NO' => 'Langfredag',
     'sv_SE' => 'långfredagen',
     'fi_FI' => 'Pitkäperjantai',
-    'de_DE' => 'Karfreitag'
+    'de'    => 'Karfreitag'
 ];
