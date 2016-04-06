@@ -8,7 +8,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 namespace Yasumi\Provider;
 
@@ -74,7 +74,6 @@ class Germany extends AbstractProvider
      * Reformation Day is a religious holiday celebrated on October 31, alongside All Hallows' Eve, in remembrance
      * of the Reformation. It is celebrated among various Protestants, especially by Lutheran and Reformed church
      * communities.
-
      * It is a civic holiday in the German states of Brandenburg, Mecklenburg-Vorpommern, Saxony, Saxony-Anhalt and
      * Thuringia. Slovenia celebrates it as well due to the profound contribution of the Reformation to that nation's
      * cultural development, although Slovenes are mainly Roman Catholics. With the increasing influence of
@@ -82,12 +81,10 @@ class Germany extends AbstractProvider
      * or Charismatics), it has been declared a national holiday in Chile in 2009.
      *
      * @link https://en.wikipedia.org/wiki/Reformation_Day
+     * @link https://de.wikipedia.org/wiki/Reformationstag#Ursprung_und_Geschichte
      */
     public function calculateReformationDay()
     {
-        /**
-         * @link https://de.wikipedia.org/wiki/Reformationstag#Ursprung_und_Geschichte
-         */
         if ($this->year == 2017) {
             $this->addHoliday(new Holiday('reformationDay', [
                 'de_DE' => 'Reformationstag',

@@ -79,6 +79,6 @@ class GermanyTest extends GermanyBaseTestCase
      */
     protected function setUp()
     {
-        $this->year = $this->generateRandomYear(1900);
+        $this->year = $this->generateRandomYear(1990);
     }
 }
