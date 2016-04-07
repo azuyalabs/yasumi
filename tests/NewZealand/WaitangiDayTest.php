@@ -48,6 +48,19 @@ class WaitangiDayTest extends NewZealandBaseTestCase
     }
 
     /**
+     * Tests the translated name of the holiday defined in this test.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(1921),
+            ['en_US' => 'Waitangi Day']
+        );
+    }
+
+    /**
      * Returns a list of test dates
      *
      * @return array list of test dates for the holiday defined in this test
