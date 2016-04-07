@@ -6,6 +6,7 @@
 **Implemented enhancements:**
 
 - Added Holiday Provider for Germany
+- Added Holiday Provider for Greece
 - Refactoring and cleanup of unit tests
 
 **Resolved issues:**
