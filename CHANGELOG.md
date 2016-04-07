@@ -3,11 +3,16 @@
 
 ## DEV/MASTER
 
+**Implemented enhancements:**
+
+- Added Holiday Provider for Germany
+- Refactoring and cleanup of unit tests
 
 **Resolved issues:**
 
 - Fixed issue for Finland as Midsummer's Day (st. Johns Day) was always calculated to be on June 24th. However since 
   1955, the holiday has always been on a Saturday (between June 20 and June 26).
+- Accidentally the timezone for Norway was set to "Europe/Copenhagen". This has been corrected to "Europe/Oslo".
 
 
 ## 1.2.0 (Apr 4, 2016)
