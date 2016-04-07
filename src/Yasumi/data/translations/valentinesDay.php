@@ -17,5 +17,6 @@ return [
     'nl_BE' => 'Valentijnsdag',
     'pl_PL' => 'Walentynki',
     'ja_JP' => 'バレンタイン·デー',
-    'es_ES' => 'San Valentín'
+    'es_ES' => 'San Valentín',
+    'el_GR' => 'Αγίου Βαλεντίνου',
 ];

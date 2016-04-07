@@ -45,6 +45,7 @@ Currently the following holiday providers are implemented:
 * Sweden
 * Finland
 * Germany
+* Greece
 
 Yasumi has the following filters to allow you to filter only certain type of holidays:
 
@@ -96,7 +97,7 @@ folder:
 $ phpunit
 ```
 
-Yasumi has over 1100 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
+Yasumi has over 1300 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
 the holidays, multiple iterations of assertions are executed to ensure the holidays are calculated in a large number
 of years.
 
@@ -115,6 +116,7 @@ The tests are organized in some test suites to make testing a bit more easier:
 * Sweden      : For separately testing the Sweden Holiday Provider
 * Finland     : For separately testing the Finland Holiday Provider
 * Germany     : For separately testing the Germany Holiday Provider
+* Greece      : For separately testing the Greece Holiday Provider
 
 
 Basic Usage

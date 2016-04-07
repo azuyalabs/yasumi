@@ -14,5 +14,6 @@
 return [
     'en_US' => 'Armistice Day',
     'nl_BE' => 'Wapenstilstand',
-    'fr_FR' => 'Armistice'
+    'fr_FR' => 'Armistice',
+    'el_GR' => 'Ημέρα Ανακωχής',
 ];

@@ -13,5 +13,6 @@
 // Translation for the day of Immaculate Conception
 return [
     'it_IT' => 'Immacolata Concezione',
-    'es_ES' => 'Inmaculada Concepción'
+    'es_ES' => 'Inmaculada Concepción',
+    'el_GR' => 'Ευαγγελισμός της Θεοτόκου',
 ];
