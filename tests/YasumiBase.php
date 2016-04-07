@@ -13,6 +13,7 @@
 namespace Yasumi\Tests;
 
 use DateTime;
+use DateTimeZone;
 use Faker\Factory as Faker;
 use Yasumi\Filters\BankHolidaysFilter;
 use Yasumi\Filters\ObservedHolidaysFilter;
@@ -156,7 +157,7 @@ trait YasumiBase
         $data = [];
         for ($y = 1; $y <= $iterations; $y ++) {
             $year   = Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
-            $data[] = [$year, new DateTime("$year-$month-$day", new \DateTimeZone($timezone))];
+            $data[] = [$year, new DateTime("$year-$month-$day", new DateTimeZone($timezone))];
         }
 
         return $data;

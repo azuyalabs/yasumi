@@ -19,5 +19,6 @@ return [
     'nb_NO' => 'Andre juledag',
     'sv_SE' => 'annandag jul',
     'fi_FI' => '2. joulupäivä',
+    'de_DE' => '2. Weihnachtsfeiertag',
     'el_GR' => 'Σύναξις Υπεραγίας Θεοτόκου Μαρίας',
 ];

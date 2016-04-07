@@ -18,5 +18,6 @@ return [
     'it_IT' => 'Assunzione di Maria Vergine',
     'fr_FR' => 'L\'Assomption de Marie',
     'es_ES' => 'Asunción de la Virgen María',
+    'de_DE' => 'Mariä Himmelfahrt',
     'el_GR' => 'Κοίμηση της Θεοτόκου',
 ];
