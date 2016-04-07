@@ -21,5 +21,6 @@ return [
     'es_ES' => 'Día de Reyes',
     'sv_SE' => 'trettondedag jul',
     'fi_FI' => 'Loppiainen',
-    'de_DE' => 'Heilige 3 Könige'
+    'de_DE' => 'Heilige 3 Könige',
+    'el_GR' => 'Θεοφάνεια',
 ];

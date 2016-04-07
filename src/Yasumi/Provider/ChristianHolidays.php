@@ -501,4 +501,20 @@ trait ChristianHolidays
     {
         return new Holiday('stJohnsDay', [], new DateTime("$year-06-24", new DateTimeZone($timezone)), $locale, $type);
     }
+
+    /**
+     * Annunciation.
+     *
+     * @param int    $year     the year for which the Annunciation needs to be created
+     * @param string $timezone the timezone in which the Annunciation is celebrated
+     * @param string $locale   the locale for which the Annunciation need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
+     *
+     * @return \Yasumi\Holiday
+     */
+    public function annunciation($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
+    {
+        return new Holiday('annunciation', [], new DateTime("$year-03-25", new DateTimeZone($timezone)), $locale, $type);
+    }
 }

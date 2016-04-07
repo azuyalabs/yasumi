@@ -15,4 +15,5 @@ return [
     'es_ES' => 'Sant Joan',
     'sv_SE' => 'midsommardagen',
     'fi_FI' => 'Juhannuspäivä',
+    'el_GR' => 'Σύναξις Προφήτου Προδρόμου και Βαπτιστού Ιωάννου',
 ];
