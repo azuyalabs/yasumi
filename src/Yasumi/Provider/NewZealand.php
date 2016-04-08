@@ -159,7 +159,6 @@ class NewZealand extends AbstractProvider
         }
 
         $this->addHoliday(new Holiday('anzacDay', [], $date, $this->locale));
-
     }
 
     /**
