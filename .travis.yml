@@ -7,9 +7,18 @@ php:
   - hhvm
   - nightly
 
+cache:
+  directories:
+    - $HOME/.composer/cache
+
 before_script:
   - composer self-update
   - composer install --no-interaction
+
+script:
+  - phpunit
+  - phpenv config-rm xdebug.ini || return 0
+  - ./vendor/bin/php-cs-fixer --diff --dry-run -v fix
 
 matrix:
   allow_failures:
