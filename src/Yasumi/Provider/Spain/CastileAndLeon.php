@@ -10,7 +10,6 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
-
 namespace Yasumi\Provider\Spain;
 
 use DateTime;

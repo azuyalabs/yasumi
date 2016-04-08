@@ -201,7 +201,7 @@ trait ChristianHolidays
     }
 
     /**
-     * Second Christmas Day / Boxing Day.
+     * Second Christmas Day / Boxing Day
      *
      * Christmas or Christmas Day (Old English: Crīstesmæsse, meaning "Christ's Mass") is an annual festival
      * commemorating the birth of Jesus Christ, observed most commonly on December 25 as a religious and cultural
@@ -385,7 +385,7 @@ trait ChristianHolidays
     }
 
     /**
-     * St. Joseph's Day.
+     * St. Joseph's Day
      *
      * Saint Joseph's Day, March 19, the Feast of St. Joseph is in Western Christianity the principal feast day of Saint
      * Joseph, husband of the Blessed Virgin Mary. He is the foster-father of Jesus Christ. March 19 was dedicated to
@@ -409,7 +409,7 @@ trait ChristianHolidays
     }
 
     /**
-     * Maundy Thursday.
+     * Maundy Thursday
      *
      * Maundy Thursday (also known as Holy Thursday, Covenant Thursday, Great and Holy Thursday, Sheer Thursday, and
      * Thursday of Mysteries) is the Christian holy day falling on the Thursday before Easter. It commemorates the
@@ -433,7 +433,7 @@ trait ChristianHolidays
     }
 
     /**
-     * St. George's Day.
+     * St. George's Day
      *
      * Saint George's Day is the feast day of Saint George. It is celebrated by various Christian Churches and by the
      * several nations, kingdoms, countries, and cities of which Saint George is the patron saint. Saint George's Day is
@@ -521,7 +521,7 @@ trait ChristianHolidays
     protected function calculateEaster($year, $timezone)
     {
         $easter = new DateTime("$year-3-21", new DateTimeZone($timezone));
-        $easter->add(new DateInterval('P'.\easter_days($year).'D'));
+        $easter->add(new DateInterval('P' . \easter_days($year) . 'D'));
 
         return $easter;
     }

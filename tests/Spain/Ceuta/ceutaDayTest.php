@@ -21,12 +21,12 @@ use DateTimeZone;
 class ceutaDayTest extends CeutaBaseTestCase
 {
     /**
-     * The name of the holiday to be tested.
+     * The name of the holiday to be tested
      */
     const HOLIDAY = 'ceutaDay';
 
     /**
-     * The year in which the holiday was first established.
+     * The year in which the holiday was first established
      */
     const ESTABLISHMENT_YEAR = 1416;
 

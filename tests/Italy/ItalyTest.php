@@ -25,7 +25,7 @@ class ItalyTest extends ItalyBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Italy are defined by the provider class.
+     * Tests if all national holidays in Italy are defined by the provider class
      */
     public function testNationalHolidays()
     {
@@ -41,12 +41,12 @@ class ItalyTest extends ItalyBaseTestCase
             'christmasDay',
             'stStephensDay',
             'liberationDay',
-            'republicDay',
+            'republicDay'
         ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
     }
 
     /**
-     * Tests if all observed holidays in Italy are defined by the provider class.
+     * Tests if all observed holidays in Italy are defined by the provider class
      */
     public function testObservedHolidays()
     {
@@ -54,7 +54,7 @@ class ItalyTest extends ItalyBaseTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in Italy are defined by the provider class.
+     * Tests if all seasonal holidays in Italy are defined by the provider class
      */
     public function testSeasonalHolidays()
     {
@@ -62,7 +62,7 @@ class ItalyTest extends ItalyBaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in Italy are defined by the provider class.
+     * Tests if all bank holidays in Italy are defined by the provider class
      */
     public function testBankHolidays()
     {
@@ -70,7 +70,7 @@ class ItalyTest extends ItalyBaseTestCase
     }
 
     /**
-     * Tests if all other holidays in Italy are defined by the provider class.
+     * Tests if all other holidays in Italy are defined by the provider class
      */
     public function testOtherHolidays()
     {
@@ -78,7 +78,7 @@ class ItalyTest extends ItalyBaseTestCase
     }
 
     /**
-     * Initial setup of this Test Case.
+     * Initial setup of this Test Case
      */
     protected function setUp()
     {

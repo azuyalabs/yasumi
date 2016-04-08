@@ -25,7 +25,7 @@ class AsturiasTest extends AsturiasBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Asturias are defined by the provider class.
+     * Tests if all national holidays in Asturias are defined by the provider class
      */
     public function testNationalHolidays()
     {
@@ -49,7 +49,7 @@ class AsturiasTest extends AsturiasBaseTestCase
     }
 
     /**
-     * Tests if all observed holidays in Asturias are defined by the provider class.
+     * Tests if all observed holidays in Asturias are defined by the provider class
      */
     public function testObservedHolidays()
     {
@@ -57,7 +57,7 @@ class AsturiasTest extends AsturiasBaseTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in Asturias are defined by the provider class.
+     * Tests if all seasonal holidays in Asturias are defined by the provider class
      */
     public function testSeasonalHolidays()
     {
@@ -65,7 +65,7 @@ class AsturiasTest extends AsturiasBaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in Asturias are defined by the provider class.
+     * Tests if all bank holidays in Asturias are defined by the provider class
      */
     public function testBankHolidays()
     {
@@ -73,7 +73,7 @@ class AsturiasTest extends AsturiasBaseTestCase
     }
 
     /**
-     * Tests if all other holidays in Asturias are defined by the provider class.
+     * Tests if all other holidays in Asturias are defined by the provider class
      */
     public function testOtherHolidays()
     {
@@ -81,7 +81,7 @@ class AsturiasTest extends AsturiasBaseTestCase
     }
 
     /**
-     * Initial setup of this Test Case.
+     * Initial setup of this Test Case
      */
     protected function setUp()
     {

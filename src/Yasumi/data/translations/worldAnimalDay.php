@@ -14,5 +14,5 @@
 return [
     'en_US' => 'World Animal Day',
     'nl_NL' => 'Werelddierendag',
-    'nl_BE' => 'Werelddierendag',
+    'nl_BE' => 'Werelddierendag'
 ];

@@ -23,12 +23,12 @@ abstract class BelgiumBaseTestCase extends PHPUnit_Framework_TestCase
     use YasumiBase;
 
     /**
-     * Country (name) to be tested.
+     * Country (name) to be tested
      */
     const REGION = 'Belgium';
 
     /**
-     * Timezone in which this provider has holidays defined.
+     * Timezone in which this provider has holidays defined
      */
     const TIMEZONE = 'Europe/Brussels';
 }

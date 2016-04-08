@@ -23,17 +23,18 @@ abstract class FinlandBaseTestCase extends PHPUnit_Framework_TestCase
     use YasumiBase;
 
     /**
-     * Name of the region (e.g. country / state) to be tested.
+     * Name of the region (e.g. country / state) to be tested
      */
     const REGION = 'Finland';
 
     /**
-     * Timezone in which this provider has holidays defined.
+     * Timezone in which this provider has holidays defined
      */
     const TIMEZONE = 'Europe/Helsinki';
 
     /**
-     * Locale that is considered common for this provider.
+     * Locale that is considered common for this provider
      */
     const LOCALE = 'fi_FI';
+
 }

@@ -23,12 +23,12 @@ abstract class MelillaBaseTestCase extends SpainBaseTestCase
     use YasumiBase;
 
     /**
-     * Name of the region (e.g. country / state) to be tested.
+     * Name of the region (e.g. country / state) to be tested
      */
     const REGION = 'Spain/Melilla';
 
     /**
-     * Timezone in which this provider has holidays defined.
+     * Timezone in which this provider has holidays defined
      */
     const TIMEZONE = 'Europe/Madrid';
 }

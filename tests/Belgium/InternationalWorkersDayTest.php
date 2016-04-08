@@ -20,7 +20,7 @@ use DateTime;
 class InternationalWorkersDayTest extends BelgiumBaseTestCase
 {
     /**
-     * The name of the holiday to be tested.
+     * The name of the holiday to be tested
      */
     const HOLIDAY = 'internationalWorkersDay';
 

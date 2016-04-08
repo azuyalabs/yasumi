@@ -9,7 +9,6 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
-
 namespace Yasumi\Provider\Spain;
 
 use DateTime;
@@ -63,7 +62,7 @@ class Galicia extends Spain
         if ($this->year >= 1991) {
             $this->addHoliday(new Holiday('galicianLiteratureDay', [
                 'es_ES' => 'Día de las Letras Gallegas',
-                'gl_ES' => 'Día das Letras Galegas',
+                'gl_ES' => 'Día das Letras Galegas'
             ], new DateTime("$this->year-5-17", new DateTimeZone($this->timezone)), $this->locale));
         }
     }

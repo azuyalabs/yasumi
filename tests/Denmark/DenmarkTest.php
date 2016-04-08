@@ -25,7 +25,7 @@ class DenmarkTest extends DenmarkBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Denmark are defined by the provider class.
+     * Tests if all national holidays in Denmark are defined by the provider class
      */
     public function testNationalHolidays()
     {
@@ -40,12 +40,12 @@ class DenmarkTest extends DenmarkBaseTestCase
             'pentecost',
             'pentecostMonday',
             'christmasDay',
-            'secondChristmasDay',
+            'secondChristmasDay'
         ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
     }
 
     /**
-     * Tests if all observed holidays in Denmark are defined by the provider class.
+     * Tests if all observed holidays in Denmark are defined by the provider class
      */
     public function testObservedHolidays()
     {
@@ -53,7 +53,7 @@ class DenmarkTest extends DenmarkBaseTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in Denmark are defined by the provider class.
+     * Tests if all seasonal holidays in Denmark are defined by the provider class
      */
     public function testSeasonalHolidays()
     {
@@ -61,7 +61,7 @@ class DenmarkTest extends DenmarkBaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in Denmark are defined by the provider class.
+     * Tests if all bank holidays in Denmark are defined by the provider class
      */
     public function testBankHolidays()
     {
@@ -69,7 +69,7 @@ class DenmarkTest extends DenmarkBaseTestCase
     }
 
     /**
-     * Tests if all other holidays in Denmark are defined by the provider class.
+     * Tests if all other holidays in Denmark are defined by the provider class
      */
     public function testOtherHolidays()
     {
@@ -77,7 +77,7 @@ class DenmarkTest extends DenmarkBaseTestCase
     }
 
     /**
-     * Initial setup of this Test Case.
+     * Initial setup of this Test Case
      */
     protected function setUp()
     {

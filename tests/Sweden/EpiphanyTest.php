@@ -20,7 +20,7 @@ use DateTime;
 class EpiphanyTest extends SwedenBaseTestCase
 {
     /**
-     * The name of the holiday to be tested.
+     * The name of the holiday to be tested
      */
     const HOLIDAY = 'epiphany';
 

@@ -9,7 +9,6 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
-
 namespace Yasumi\Provider\Spain;
 
 use DateTime;
@@ -27,6 +26,7 @@ use Yasumi\Provider\Spain;
  * are (from largest to smallest) Tenerife, Fuerteventura, Gran Canaria, Lanzarote, La Palma, La Gomera and El Hierro.
  *
  * @link http://en.wikipedia.org/wiki/Canary_Islands
+ *
  */
 class CanaryIslands extends Spain
 {

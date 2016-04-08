@@ -20,7 +20,7 @@ use DateTime;
 class NewYearsDayTest extends DenmarkBaseTestCase
 {
     /**
-     * The name of the holiday to be tested.
+     * The name of the holiday to be tested
      */
     const HOLIDAY = 'newYearsDay';
 
@@ -38,7 +38,7 @@ class NewYearsDayTest extends DenmarkBaseTestCase
     }
 
     /**
-     * Returns a list of random test dates used for assertion of the holiday defined in this test.
+     * Returns a list of random test dates used for assertion of the holiday defined in this test
      *
      * @return array list of test dates for the holiday defined in this test
      */

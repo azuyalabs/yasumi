@@ -21,12 +21,12 @@ use DateTimeZone;
 class VictoryInEuropeDayTest extends FranceBaseTestCase
 {
     /**
-     * The name of the holiday.
+     * The name of the holiday
      */
     const HOLIDAY = 'victoryInEuropeDay';
 
     /**
-     * The year in which the holiday was first established.
+     * The year in which the holiday was first established
      */
     const ESTABLISHMENT_YEAR = 1945;
 

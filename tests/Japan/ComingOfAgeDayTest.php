@@ -21,7 +21,7 @@ use DateTimeZone;
 class ComingOfAgeDayTest extends JapanBaseTestCase
 {
     /**
-     * The name of the holiday.
+     * The name of the holiday
      */
     const HOLIDAY = 'comingOfAgeDay';
 
@@ -35,6 +35,7 @@ class ComingOfAgeDayTest extends JapanBaseTestCase
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("second monday of january $year", new DateTimeZone(self::TIMEZONE)));
     }
+
 
     /**
      * Tests Coming of Age Day between 1948 and 2000. Coming of Age Day was established after 1948 on January 15th.

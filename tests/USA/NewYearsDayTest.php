@@ -21,7 +21,7 @@ use DateTimeZone;
 class NewYearsDayTest extends USABaseTestCase
 {
     /**
-     * The name of the holiday.
+     * The name of the holiday
      */
     const HOLIDAY = 'newYearsDay';
 
@@ -50,7 +50,7 @@ class NewYearsDayTest extends USABaseTestCase
      */
     public function testNewYearsDaySubstitutedFriday()
     {
-        $year = 1938;
+        $year    = 1938;
         $subYear = $year - 1;
         $this->assertHoliday(self::REGION, 'substituteHoliday:newYearsDay', $year,
             new DateTime("$subYear-12-31", new DateTimeZone(self::TIMEZONE)));

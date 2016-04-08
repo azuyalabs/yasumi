@@ -21,12 +21,12 @@ use DateTimeZone;
 class IndependenceDayTest extends USABaseTestCase
 {
     /**
-     * The name of the holiday.
+     * The name of the holiday
      */
     const HOLIDAY = 'independenceDay';
 
     /**
-     * The year in which the holiday was first established.
+     * The year in which the holiday was first established
      */
     const ESTABLISHMENT_YEAR = 1776;
 
@@ -41,7 +41,7 @@ class IndependenceDayTest extends USABaseTestCase
     }
 
     /**
-     * Tests Independence Day on or after 1776 when substituted on Monday (when Independence Day falls on Sunday).
+     * Tests Independence Day on or after 1776 when substituted on Monday (when Independence Day falls on Sunday)
      */
     public function testIndependenceDayOnAfter1776SubstitutedMonday()
     {
@@ -51,7 +51,7 @@ class IndependenceDayTest extends USABaseTestCase
     }
 
     /**
-     * Tests Independence Day on or after 1776 when substituted on Friday (when Independence Day falls on Saturday).
+     * Tests Independence Day on or after 1776 when substituted on Friday (when Independence Day falls on Saturday)
      */
     public function testIndependenceDayOnAfter1776SubstitutedFriday()
     {

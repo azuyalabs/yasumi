@@ -25,7 +25,7 @@ class CastillaLaManchaTest extends CastillaLaManchaBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Castilla-La Mancha are defined by the provider class.
+     * Tests if all national holidays in Castilla-La Mancha are defined by the provider class
      */
     public function testNationalHolidays()
     {
@@ -44,12 +44,12 @@ class CastillaLaManchaTest extends CastillaLaManchaBaseTestCase
             'allSaintsDay',
             'constitutionDay',
             'immaculateConception',
-            'christmasDay',
+            'christmasDay'
         ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
     }
 
     /**
-     * Tests if all observed holidays in Castilla-La Mancha are defined by the provider class.
+     * Tests if all observed holidays in Castilla-La Mancha are defined by the provider class
      */
     public function testObservedHolidays()
     {
@@ -57,7 +57,7 @@ class CastillaLaManchaTest extends CastillaLaManchaBaseTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in Castilla-La Mancha are defined by the provider class.
+     * Tests if all seasonal holidays in Castilla-La Mancha are defined by the provider class
      */
     public function testSeasonalHolidays()
     {
@@ -65,7 +65,7 @@ class CastillaLaManchaTest extends CastillaLaManchaBaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in Castilla-La Mancha are defined by the provider class.
+     * Tests if all bank holidays in Castilla-La Mancha are defined by the provider class
      */
     public function testBankHolidays()
     {
@@ -73,7 +73,7 @@ class CastillaLaManchaTest extends CastillaLaManchaBaseTestCase
     }
 
     /**
-     * Tests if all other holidays in Castilla-La Mancha are defined by the provider class.
+     * Tests if all other holidays in Castilla-La Mancha are defined by the provider class
      */
     public function testOtherHolidays()
     {
@@ -81,7 +81,7 @@ class CastillaLaManchaTest extends CastillaLaManchaBaseTestCase
     }
 
     /**
-     * Initial setup of this Test Case.
+     * Initial setup of this Test Case
      */
     protected function setUp()
     {

@@ -21,7 +21,7 @@ use DateTimeZone;
 class EasterTest extends DenmarkBaseTestCase
 {
     /**
-     * The name of the holiday to be tested.
+     * The name of the holiday to be tested
      */
     const HOLIDAY = 'easter';
 

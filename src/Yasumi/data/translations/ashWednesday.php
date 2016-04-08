@@ -15,5 +15,5 @@ return [
     'en_US' => 'Ash Wednesday',
     'nl_NL' => 'Aswoensdag',
     'nl_BE' => 'Aswoensdag',
-    'es_ES' => 'Miércoles de Ceniza',
+    'es_ES' => 'Miércoles de Ceniza'
 ];

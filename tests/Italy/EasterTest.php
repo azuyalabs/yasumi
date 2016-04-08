@@ -21,12 +21,12 @@ use DateTimeZone;
 class EasterTest extends ItalyBaseTestCase
 {
     /**
-     * The name of the first holiday of Easter.
+     * The name of the first holiday of Easter
      */
     const HOLIDAY_FIRST = 'easter';
 
     /**
-     * The name of the second holiday of Easter.
+     * The name of the second holiday of Easter
      */
     const HOLIDAY_SECOND = 'easterMonday';
 

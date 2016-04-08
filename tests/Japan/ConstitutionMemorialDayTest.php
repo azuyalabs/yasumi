@@ -21,17 +21,17 @@ use DateTimeZone;
 class ConstitutionMemorialDayTest extends JapanBaseTestCase
 {
     /**
-     * The name of the holiday.
+     * The name of the holiday
      */
     const HOLIDAY = 'constitutionMemorialDay';
 
     /**
-     * The year in which the holiday was first established.
+     * The year in which the holiday was first established
      */
     const ESTABLISHMENT_YEAR = 1948;
 
     /**
-     * Tests Constitution Memorial Day after 1948. Constitution Memorial Day was established after 1948.
+     * Tests Constitution Memorial Day after 1948. Constitution Memorial Day was established after 1948
      */
     public function testConstitutionMemorialDayOnAfter1948()
     {
@@ -42,17 +42,17 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase
 
     /**
      * Tests Constitution Memorial Day after 1948 substituted next working day (when Constitution Memorial Day falls on
-     * a Sunday).
+     * a Sunday)
      */
     public function testConstitutionMemorialDayOnAfter1948SubstitutedNextWorkingDay()
     {
         $year = 2009;
-        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX.self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
             new DateTime("$year-5-6", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**
-     * Tests Constitution Memorial Day before 1948. Constitution Memorial Day was established after 1948.
+     * Tests Constitution Memorial Day before 1948. Constitution Memorial Day was established after 1948
      */
     public function testConstitutionMemorialDayBefore1948()
     {

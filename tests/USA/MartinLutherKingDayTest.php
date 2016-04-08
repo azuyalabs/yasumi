@@ -21,12 +21,12 @@ use DateTimeZone;
 class MartinLutherKingDayTest extends USABaseTestCase
 {
     /**
-     * The name of the holiday.
+     * The name of the holiday
      */
     const HOLIDAY = 'martinLutherKingDay';
 
     /**
-     * The year in which the holiday was first established.
+     * The year in which the holiday was first established
      */
     const ESTABLISHMENT_YEAR = 1986;
 

@@ -21,17 +21,17 @@ use DateTimeZone;
 class ChildrensDayTest extends JapanBaseTestCase
 {
     /**
-     * The name of the holiday.
+     * The name of the holiday
      */
     const HOLIDAY = 'childrensDay';
 
     /**
-     * The year in which the holiday was first established.
+     * The year in which the holiday was first established
      */
     const ESTABLISHMENT_YEAR = 1948;
 
     /**
-     * Tests Children's Day after 1948. Children's Day was established after 1948.
+     * Tests Children's Day after 1948. Children's Day was established after 1948
      */
     public function testChildrensDayOnAfter1948()
     {
@@ -41,17 +41,17 @@ class ChildrensDayTest extends JapanBaseTestCase
     }
 
     /**
-     * Tests Children's Day after 1948 substituted next working day (when Children's Day falls on a Sunday).
+     * Tests Children's Day after 1948 substituted next working day (when Children's Day falls on a Sunday)
      */
     public function testChildrensDayOnAfter1948SubstitutedNextWorkingDay()
     {
         $year = 2120;
-        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX.self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
             new DateTime("$year-5-6", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**
-     * Tests Children's Day before 1948. Children's Day was established after 1948.
+     * Tests Children's Day before 1948. Children's Day was established after 1948
      */
     public function testChildrensDayBefore1948()
     {

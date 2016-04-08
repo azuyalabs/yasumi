@@ -14,5 +14,5 @@
 return [
     'en_US' => 'St. Martin\'s Day',
     'nl_NL' => 'Sint Maarten',
-    'nl_BE' => 'Sint Maarten',
+    'nl_BE' => 'Sint Maarten'
 ];

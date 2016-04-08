@@ -20,7 +20,7 @@ use DateTime;
 class ArmisticeDayTest extends BelgiumBaseTestCase
 {
     /**
-     * The name of the holiday to be tested.
+     * The name of the holiday to be tested
      */
     const HOLIDAY = 'armisticeDay';
 
@@ -48,7 +48,7 @@ class ArmisticeDayTest extends BelgiumBaseTestCase
     }
 
     /**
-     * Tests translated name of Armistice Day.
+     * Tests translated name of Armistice Day
      */
     public function testTranslation()
     {

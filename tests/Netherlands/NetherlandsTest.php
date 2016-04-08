@@ -25,7 +25,7 @@ class NetherlandsTest extends NetherlandsBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Netherlands are defined by the provider class.
+     * Tests if all national holidays in Netherlands are defined by the provider class
      */
     public function testNationalHolidays()
     {
@@ -38,12 +38,12 @@ class NetherlandsTest extends NetherlandsBaseTestCase
             'pentecost',
             'pentecostMonday',
             'christmasDay',
-            'secondChristmasDay',
+            'secondChristmasDay'
         ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
     }
 
     /**
-     * Tests if all observed holidays in Netherlands are defined by the provider class.
+     * Tests if all observed holidays in Netherlands are defined by the provider class
      */
     public function testObservedHolidays()
     {
@@ -57,12 +57,12 @@ class NetherlandsTest extends NetherlandsBaseTestCase
             'stNicholasDay',
             'carnivalDay',
             'secondCarnivalDay',
-            'thirdCarnivalDay',
+            'thirdCarnivalDay'
         ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**
-     * Tests if all seasonal holidays in Netherlands are defined by the provider class.
+     * Tests if all seasonal holidays in Netherlands are defined by the provider class
      */
     public function testSeasonalHolidays()
     {
@@ -70,7 +70,7 @@ class NetherlandsTest extends NetherlandsBaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in Netherlands are defined by the provider class.
+     * Tests if all bank holidays in Netherlands are defined by the provider class
      */
     public function testBankHolidays()
     {
@@ -78,7 +78,7 @@ class NetherlandsTest extends NetherlandsBaseTestCase
     }
 
     /**
-     * Tests if all other holidays in Netherlands are defined by the provider class.
+     * Tests if all other holidays in Netherlands are defined by the provider class
      */
     public function testOtherHolidays()
     {
@@ -89,12 +89,12 @@ class NetherlandsTest extends NetherlandsBaseTestCase
             'fathersDay',
             'mothersDay',
             'epiphany',
-            'princesDay',
+            'princesDay'
         ], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**
-     * Initial setup of this Test Case.
+     * Initial setup of this Test Case
      */
     protected function setUp()
     {

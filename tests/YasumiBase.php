@@ -31,7 +31,7 @@ use Yasumi\Yasumi;
 trait YasumiBase
 {
     /**
-     * Asserts that the expected holidays are indeed a holiday for the given provider and year.
+     * Asserts that the expected holidays are indeed a holiday for the given provider and year
      *
      * @param array  $expectedHolidays       list of all known holidays of the given provider
      * @param string $provider               the holiday provider (i.e. country/state) for which the holidays need to be
@@ -71,7 +71,7 @@ trait YasumiBase
     }
 
     /**
-     * Asserts that the expected date is indeed a holiday for that given year and name.
+     * Asserts that the expected date is indeed a holiday for that given year and name
      *
      * @param string   $provider  the holiday provider (i.e. country/state) for which the holiday need to be tested
      * @param string   $shortName string the short name of the holiday to be checked against
@@ -81,9 +81,9 @@ trait YasumiBase
     public function assertHoliday($provider, $shortName, $year, $expected)
     {
         $holidays = Yasumi::create($provider, $year);
-        $holiday = $holidays->getHoliday($shortName);
+        $holiday  = $holidays->getHoliday($shortName);
 
-        $this->assertInstanceOf('Yasumi\Provider\\'.str_replace('/', '\\', $provider), $holidays);
+        $this->assertInstanceOf('Yasumi\Provider\\' . str_replace('/', '\\', $provider), $holidays);
         $this->assertInstanceOf('Yasumi\Holiday', $holiday);
         $this->assertTrue(isset($holiday));
         $this->assertEquals($expected, $holiday);
@@ -102,9 +102,9 @@ trait YasumiBase
     public function assertNotHoliday($provider, $shortName, $year)
     {
         $holidays = Yasumi::create($provider, $year);
-        $holiday = $holidays->getHoliday($shortName);
+        $holiday  = $holidays->getHoliday($shortName);
 
-        $this->assertInstanceOf('Yasumi\Provider\\'.str_replace('/', '\\', $provider), $holidays);
+        $this->assertInstanceOf('Yasumi\Provider\\' . str_replace('/', '\\', $provider), $holidays);
         $this->assertFalse(isset($holiday));
         $this->assertFalse($holidays->isHoliday($holiday));
 
@@ -112,7 +112,7 @@ trait YasumiBase
     }
 
     /**
-     * Asserts that the expected name is indeed provided as a translated holiday name for that given year and name.
+     * Asserts that the expected name is indeed provided as a translated holiday name for that given year and name
      *
      * @param string $provider     the holiday provider (i.e. country/state) for which the holiday need to be tested
      * @param string $shortName    string the short name of the holiday to be checked against
@@ -122,9 +122,9 @@ trait YasumiBase
     public function assertTranslatedHolidayName($provider, $shortName, $year, $translations)
     {
         $holidays = Yasumi::create($provider, $year);
-        $holiday = $holidays->getHoliday($shortName);
+        $holiday  = $holidays->getHoliday($shortName);
 
-        $this->assertInstanceOf('Yasumi\Provider\\'.str_replace('/', '\\', $provider), $holidays);
+        $this->assertInstanceOf('Yasumi\Provider\\' . str_replace('/', '\\', $provider), $holidays);
         $this->assertInstanceOf('Yasumi\Holiday', $holiday);
         $this->assertTrue(isset($holiday));
         $this->assertTrue($holidays->isHoliday($holiday));
@@ -155,8 +155,8 @@ trait YasumiBase
     public function generateRandomDates($month, $day, $timezone = 'UTC', $iterations = 10, $range = 1000)
     {
         $data = [];
-        for ($y = 1; $y <= $iterations; $y++) {
-            $year = Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
+        for ($y = 1; $y <= $iterations; $y ++) {
+            $year   = Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
             $data[] = [$year, new DateTime("$year-$month-$day", new DateTimeZone($timezone))];
         }
 

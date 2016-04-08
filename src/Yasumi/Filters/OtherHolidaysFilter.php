@@ -9,14 +9,13 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
-
 namespace Yasumi\Filters;
 
 use FilterIterator;
 use Yasumi\Holiday;
 
 /**
- * OtherHolidaysFilter is a class for filtering all other type of holidays.
+ * OtherHolidaysFilter is a class for filtering all other type of holidays
  *
  * OtherHolidaysFilter is a class that returns all holidays that are considered an other type of holiday of any given
  * holiday provider.
@@ -30,7 +29,7 @@ use Yasumi\Holiday;
 class OtherHolidaysFilter extends FilterIterator
 {
     /**
-     * Checks whether the current element of the iterator is an other type of holiday.
+     * Checks whether the current element of the iterator is an other type of holiday
      *
      * @return bool
      */

@@ -25,7 +25,7 @@ class NorwayTest extends NorwayBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Norway are defined by the provider class.
+     * Tests if all national holidays in Norway are defined by the provider class
      */
     public function testNationalHolidays()
     {
@@ -41,12 +41,12 @@ class NorwayTest extends NorwayBaseTestCase
             'pentecostMonday',
             'constitutionDay',
             'christmasDay',
-            'secondChristmasDay',
+            'secondChristmasDay'
         ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
     }
 
     /**
-     * Tests if all observed holidays in Norway are defined by the provider class.
+     * Tests if all observed holidays in Norway are defined by the provider class
      */
     public function testObservedHolidays()
     {
@@ -54,7 +54,7 @@ class NorwayTest extends NorwayBaseTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in Norway are defined by the provider class.
+     * Tests if all seasonal holidays in Norway are defined by the provider class
      */
     public function testSeasonalHolidays()
     {
@@ -62,7 +62,7 @@ class NorwayTest extends NorwayBaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in Norway are defined by the provider class.
+     * Tests if all bank holidays in Norway are defined by the provider class
      */
     public function testBankHolidays()
     {
@@ -70,7 +70,7 @@ class NorwayTest extends NorwayBaseTestCase
     }
 
     /**
-     * Tests if all other holidays in Norway are defined by the provider class.
+     * Tests if all other holidays in Norway are defined by the provider class
      */
     public function testOtherHolidays()
     {
@@ -78,7 +78,7 @@ class NorwayTest extends NorwayBaseTestCase
     }
 
     /**
-     * Initial setup of this Test Case.
+     * Initial setup of this Test Case
      */
     protected function setUp()
     {

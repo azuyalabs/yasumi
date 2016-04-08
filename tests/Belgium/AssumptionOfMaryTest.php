@@ -20,7 +20,7 @@ use DateTime;
 class AssumptionOfMaryTest extends BelgiumBaseTestCase
 {
     /**
-     * The name of the holiday to be tested.
+     * The name of the holiday to be tested
      */
     const HOLIDAY = 'assumptionOfMary';
 
@@ -48,7 +48,7 @@ class AssumptionOfMaryTest extends BelgiumBaseTestCase
     }
 
     /**
-     * Tests translated name of the day of the Assumption of Mary.
+     * Tests translated name of the day of the Assumption of Mary
      */
     public function testTranslation()
     {

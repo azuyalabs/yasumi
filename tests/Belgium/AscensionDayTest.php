@@ -21,7 +21,7 @@ use DateTimeZone;
 class AscensionDayTest extends BelgiumBaseTestCase
 {
     /**
-     * The name of the holiday to be tested.
+     * The name of the holiday to be tested
      */
     const HOLIDAY = 'ascensionDay';
 
@@ -36,7 +36,7 @@ class AscensionDayTest extends BelgiumBaseTestCase
     }
 
     /**
-     * Tests translated name of Ascension Day.
+     * Tests translated name of Ascension Day
      */
     public function testTranslation()
     {

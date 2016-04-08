@@ -25,7 +25,7 @@ class USATest extends USABaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in the USA are defined by the provider class.
+     * Tests if all national holidays in the USA are defined by the provider class
      */
     public function testNationalHolidays()
     {
@@ -39,12 +39,12 @@ class USATest extends USABaseTestCase
             'columbusDay',
             'veteransDay',
             'thanksgivingDay',
-            'christmasDay',
+            'christmasDay'
         ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
     }
 
     /**
-     * Tests if all observed holidays in the USA are defined by the provider class.
+     * Tests if all observed holidays in the USA are defined by the provider class
      */
     public function testObservedHolidays()
     {
@@ -52,7 +52,7 @@ class USATest extends USABaseTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in the USA are defined by the provider class.
+     * Tests if all seasonal holidays in the USA are defined by the provider class
      */
     public function testSeasonalHolidays()
     {
@@ -60,7 +60,7 @@ class USATest extends USABaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in the USA are defined by the provider class.
+     * Tests if all bank holidays in the USA are defined by the provider class
      */
     public function testBankHolidays()
     {
@@ -68,7 +68,7 @@ class USATest extends USABaseTestCase
     }
 
     /**
-     * Tests if all other holidays in the USA are defined by the provider class.
+     * Tests if all other holidays in the USA are defined by the provider class
      */
     public function testOtherHolidays()
     {
@@ -76,7 +76,7 @@ class USATest extends USABaseTestCase
     }
 
     /**
-     * Initial setup of this Test Case.
+     * Initial setup of this Test Case
      */
     protected function setUp()
     {

@@ -9,6 +9,7 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
+
 use org\bovigo\vfs\vfsStream;
 use Yasumi\Translations;
 
@@ -19,6 +20,7 @@ use Yasumi\Translations;
  */
 class TranslationsTest extends PHPUnit_Framework_TestCase
 {
+
     private $locales = [
         'en_US',
         'nl_NL',
@@ -32,8 +34,8 @@ class TranslationsTest extends PHPUnit_Framework_TestCase
     {
         $translations = new Translations($this->locales);
 
-        $locale = 'en_US';
-        $shortName = 'newYearsDay';
+        $locale      = 'en_US';
+        $shortName   = 'newYearsDay';
         $translation = 'New Year\'s Day';
 
         $this->assertNull($translations->getTranslation($shortName, $locale));
@@ -57,8 +59,8 @@ class TranslationsTest extends PHPUnit_Framework_TestCase
     {
         $translations = new Translations($this->locales);
 
-        $firstLocale = 'en_US';
-        $firstShortName = 'newYearsDay';
+        $firstLocale      = 'en_US';
+        $firstShortName   = 'newYearsDay';
         $firstTranslation = 'New Year\'s Day';
 
         $translations->addTranslation($firstShortName, $firstLocale, $firstTranslation);
@@ -71,8 +73,8 @@ class TranslationsTest extends PHPUnit_Framework_TestCase
         $this->assertInternalType('string', $translations->getTranslation($firstShortName, $firstLocale));
         $this->assertEquals($firstTranslation, $translations->getTranslation($firstShortName, $firstLocale));
 
-        $secondLocale = 'nl_NL';
-        $secondShortName = 'easter';
+        $secondLocale      = 'nl_NL';
+        $secondShortName   = 'easter';
         $secondTranslation = 'Eerste Paasdag';
 
         $translations->addTranslation($secondShortName, $secondLocale, $secondTranslation);
@@ -85,8 +87,8 @@ class TranslationsTest extends PHPUnit_Framework_TestCase
         $this->assertInternalType('string', $translations->getTranslation($secondShortName, $secondLocale));
         $this->assertEquals($secondTranslation, $translations->getTranslation($secondShortName, $secondLocale));
 
-        $thirdLocale = 'en_US';
-        $thirdShortName = 'easter';
+        $thirdLocale      = 'en_US';
+        $thirdShortName   = 'easter';
         $thirdTranslation = 'Easter Sunday';
 
         $translations->addTranslation($thirdShortName, $thirdLocale, $thirdTranslation);
@@ -111,8 +113,8 @@ class TranslationsTest extends PHPUnit_Framework_TestCase
         $translations = new Translations($this->locales);
 
         $unknownLocale = 'en_XY';
-        $shortName = 'newYearsDay';
-        $translation = 'New Year\'s Day';
+        $shortName     = 'newYearsDay';
+        $translation   = 'New Year\'s Day';
 
         $translations->addTranslation($shortName, $unknownLocale, $translation);
     }
@@ -124,8 +126,8 @@ class TranslationsTest extends PHPUnit_Framework_TestCase
     {
         $translations = new Translations($this->locales);
 
-        $locale = 'en_US';
-        $shortName = 'newYearsDay';
+        $locale      = 'en_US';
+        $shortName   = 'newYearsDay';
         $translation = 'New Year\'s Day';
 
         $unknownShortName = 'unknownHoliday';
@@ -143,8 +145,8 @@ class TranslationsTest extends PHPUnit_Framework_TestCase
     {
         $translations = new Translations($this->locales);
 
-        $locale = 'en_US';
-        $shortName = 'newYearsDay';
+        $locale      = 'en_US';
+        $shortName   = 'newYearsDay';
         $translation = 'New Year\'s Day';
 
         $unknownLocale = 'pl_PL';
@@ -159,7 +161,7 @@ class TranslationsTest extends PHPUnit_Framework_TestCase
      */
     public function testLoadingTranslationsFromDirectory()
     {
-        $shortName = 'newYearsDay';
+        $shortName    = 'newYearsDay';
         $fileContents = <<<'FILE'
 <?php
 return [
@@ -169,12 +171,12 @@ return [
 ];
 FILE;
 
-        vfsStream::setup('root', null, ['lang' => [$shortName.'.php' => $fileContents]]);
+        vfsStream::setup('root', null, ['lang' => [$shortName . '.php' => $fileContents]]);
 
         $translations = new Translations($this->locales);
         $translations->loadTranslations(vfsStream::url('root/lang'));
 
-        $locale = 'en_US';
+        $locale      = 'en_US';
         $translation = 'New Year\'s Day';
 
         $this->assertNotNull($translations->getTranslations($shortName));
@@ -188,7 +190,7 @@ FILE;
      */
     public function testNotLoadingTranslationsFromFileWithInvalidExtension()
     {
-        $shortName = 'newYearsDay';
+        $shortName    = 'newYearsDay';
         $fileContents = <<<'FILE'
 <?php
 return [
@@ -198,7 +200,7 @@ return [
 ];
 FILE;
 
-        vfsStream::setup('root', null, ['lang' => [$shortName.'.translation' => $fileContents]]);
+        vfsStream::setup('root', null, ['lang' => [$shortName . '.translation' => $fileContents]]);
 
         $translations = new Translations($this->locales);
         $translations->loadTranslations(vfsStream::url('root/lang'));
@@ -214,7 +216,7 @@ FILE;
      */
     public function testLoadingTranslationsFromDirectoryWithUnknownLocaleException()
     {
-        $shortName = 'newYearsDay';
+        $shortName    = 'newYearsDay';
         $fileContents = <<<'FILE'
 <?php
 return [
@@ -223,7 +225,7 @@ return [
 ];
 FILE;
 
-        vfsStream::setup('root', null, ['lang' => [$shortName.'.php' => $fileContents]]);
+        vfsStream::setup('root', null, ['lang' => [$shortName . '.php' => $fileContents]]);
 
         $translations = new Translations($this->locales);
         $translations->loadTranslations(vfsStream::url('root/lang'));
@@ -247,7 +249,7 @@ FILE;
      */
     public function testLoadingMultipleTranslationsFromDirectory()
     {
-        $firstShortName = 'newYearsDay';
+        $firstShortName    = 'newYearsDay';
         $firstFileContents = <<<'FILE'
 <?php
 return [
@@ -257,7 +259,7 @@ return [
 ];
 FILE;
 
-        $secondShortName = 'easter';
+        $secondShortName    = 'easter';
         $secondFileContents = <<<'FILE'
 <?php
 return [
@@ -268,16 +270,16 @@ FILE;
 
         vfsStream::setup('root', null, [
             'lang' => [
-                $firstShortName.'.php'  => $firstFileContents,
-                $secondShortName.'.php' => $secondFileContents,
-            ],
+                $firstShortName . '.php'  => $firstFileContents,
+                $secondShortName . '.php' => $secondFileContents
+            ]
         ]);
 
         $translations = new Translations($this->locales);
 
         $translations->loadTranslations(vfsStream::url('root/lang'));
 
-        $locale = 'en_US';
+        $locale      = 'en_US';
         $translation = 'New Year\'s Day';
 
         $this->assertNotNull($translations->getTranslations($firstShortName));
@@ -285,7 +287,7 @@ FILE;
         $this->assertInternalType('string', $translations->getTranslation($firstShortName, $locale));
         $this->assertEquals($translation, $translations->getTranslation($firstShortName, $locale));
 
-        $locale = 'nl_NL';
+        $locale      = 'nl_NL';
         $translation = 'Eerste Paasdag';
 
         $this->assertNotNull($translations->getTranslations($secondShortName));

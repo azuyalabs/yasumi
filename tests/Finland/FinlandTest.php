@@ -25,7 +25,7 @@ class FinlandTest extends FinlandBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Finland are defined by the provider class.
+     * Tests if all national holidays in Finland are defined by the provider class
      */
     public function testNationalHolidays()
     {
@@ -42,12 +42,12 @@ class FinlandTest extends FinlandBaseTestCase
             'allSaintsDay',
             'independenceDay',
             'christmasDay',
-            'secondChristmasDay',
+            'secondChristmasDay'
         ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
     }
 
     /**
-     * Tests if all observed holidays in Finland are defined by the provider class.
+     * Tests if all observed holidays in Finland are defined by the provider class
      */
     public function testObservedHolidays()
     {
@@ -55,7 +55,7 @@ class FinlandTest extends FinlandBaseTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in Finland are defined by the provider class.
+     * Tests if all seasonal holidays in Finland are defined by the provider class
      */
     public function testSeasonalHolidays()
     {
@@ -63,7 +63,7 @@ class FinlandTest extends FinlandBaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in Finland are defined by the provider class.
+     * Tests if all bank holidays in Finland are defined by the provider class
      */
     public function testBankHolidays()
     {
@@ -71,7 +71,7 @@ class FinlandTest extends FinlandBaseTestCase
     }
 
     /**
-     * Tests if all other holidays in Finland are defined by the provider class.
+     * Tests if all other holidays in Finland are defined by the provider class
      */
     public function testOtherHolidays()
     {
@@ -79,7 +79,7 @@ class FinlandTest extends FinlandBaseTestCase
     }
 
     /**
-     * Initial setup of this Test Case.
+     * Initial setup of this Test Case
      */
     protected function setUp()
     {

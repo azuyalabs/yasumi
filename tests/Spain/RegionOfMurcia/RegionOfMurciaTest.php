@@ -25,7 +25,7 @@ class RegionOfMurciaTest extends RegionOfMurciaBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in the Region of Murcia are defined by the provider class.
+     * Tests if all national holidays in the Region of Murcia are defined by the provider class
      */
     public function testNationalHolidays()
     {
@@ -44,12 +44,12 @@ class RegionOfMurciaTest extends RegionOfMurciaBaseTestCase
             'allSaintsDay',
             'constitutionDay',
             'immaculateConception',
-            'christmasDay',
+            'christmasDay'
         ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
     }
 
     /**
-     * Tests if all observed holidays in the Region of Murcia are defined by the provider class.
+     * Tests if all observed holidays in the Region of Murcia are defined by the provider class
      */
     public function testObservedHolidays()
     {
@@ -57,7 +57,7 @@ class RegionOfMurciaTest extends RegionOfMurciaBaseTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in the Region of Murcia are defined by the provider class.
+     * Tests if all seasonal holidays in the Region of Murcia are defined by the provider class
      */
     public function testSeasonalHolidays()
     {
@@ -65,7 +65,7 @@ class RegionOfMurciaTest extends RegionOfMurciaBaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in the Region of Murcia are defined by the provider class.
+     * Tests if all bank holidays in the Region of Murcia are defined by the provider class
      */
     public function testBankHolidays()
     {
@@ -73,7 +73,7 @@ class RegionOfMurciaTest extends RegionOfMurciaBaseTestCase
     }
 
     /**
-     * Tests if all other holidays in the Region of Murcia are defined by the provider class.
+     * Tests if all other holidays in the Region of Murcia are defined by the provider class
      */
     public function testOtherHolidays()
     {
@@ -81,7 +81,7 @@ class RegionOfMurciaTest extends RegionOfMurciaBaseTestCase
     }
 
     /**
-     * Initial setup of this Test Case.
+     * Initial setup of this Test Case
      */
     protected function setUp()
     {

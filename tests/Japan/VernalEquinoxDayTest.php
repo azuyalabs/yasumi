@@ -21,7 +21,7 @@ use DateTimeZone;
 class VernalEquinoxDayTest extends JapanBaseTestCase
 {
     /**
-     * The name of the holiday.
+     * The name of the holiday
      */
     const HOLIDAY = 'vernalEquinoxDay';
 
@@ -55,6 +55,7 @@ class VernalEquinoxDayTest extends JapanBaseTestCase
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-$month-$day", new DateTimeZone(self::TIMEZONE)));
     }
+
 
     /**
      * Returns a list of all Japanese Vernal Equinox holidays used for assertions.
