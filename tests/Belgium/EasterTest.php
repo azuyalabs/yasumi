@@ -21,12 +21,12 @@ use DateTimeZone;
 class EasterTest extends BelgiumBaseTestCase
 {
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     const HOLIDAY = 'easter';
 
     /**
-     * The name of the holiday EasterMonday
+     * The name of the holiday EasterMonday.
      */
     const HOLIDAY_EASTER_MONDAY = 'easterMonday';
 
@@ -51,7 +51,7 @@ class EasterTest extends BelgiumBaseTestCase
     }
 
     /**
-     * Tests translated name of Easter
+     * Tests translated name of Easter.
      */
     public function testTranslationEaster()
     {
@@ -60,7 +60,7 @@ class EasterTest extends BelgiumBaseTestCase
     }
 
     /**
-     * Tests translated name of Easter Monday
+     * Tests translated name of Easter Monday.
      */
     public function testTranslationEasterMonday()
     {

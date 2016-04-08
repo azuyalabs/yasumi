@@ -21,12 +21,12 @@ use DateTimeZone;
 class KingsDayTest extends NetherlandsBaseTestCase
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     const HOLIDAY = 'kingsDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     const ESTABLISHMENT_YEAR = 2014;
 
@@ -41,7 +41,7 @@ class KingsDayTest extends NetherlandsBaseTestCase
     }
 
     /**
-     * Tests Kings Day substituted on Saturday (when Kings Day falls on a Sunday)
+     * Tests Kings Day substituted on Saturday (when Kings Day falls on a Sunday).
      */
     public function testKingsDayOnAfter2014SubstitutedDay()
     {

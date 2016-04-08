@@ -20,7 +20,7 @@ use DateTime;
 class ImmaculateConceptionTest extends SpainBaseTestCase
 {
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     const HOLIDAY = 'immaculateConception';
 

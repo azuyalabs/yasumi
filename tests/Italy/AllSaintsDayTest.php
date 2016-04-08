@@ -20,7 +20,7 @@ use DateTime;
 class AllSaintsDayTest extends ItalyBaseTestCase
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     const HOLIDAY = 'allSaintsDay';
 

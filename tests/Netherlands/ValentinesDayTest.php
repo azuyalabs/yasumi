@@ -20,7 +20,7 @@ use DateTime;
 class ValentinesDayTest extends NetherlandsBaseTestCase
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     const HOLIDAY = 'valentinesDay';
 
@@ -53,6 +53,6 @@ class ValentinesDayTest extends NetherlandsBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['nl_NL' => 'Valentijnsdag',]);
+            ['nl_NL' => 'Valentijnsdag']);
     }
 }

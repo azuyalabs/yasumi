@@ -9,6 +9,7 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
+
 namespace Yasumi;
 
 use DirectoryIterator;
@@ -18,14 +19,14 @@ use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Provider\AbstractProvider;
 
 /**
- * Class Yasumi
+ * Class Yasumi.
  *
  * @package Yasumi
  */
 class Yasumi
 {
     /**
-     * Default locale
+     * Default locale.
      */
     const DEFAULT_LOCALE = 'en_US';
 
@@ -35,7 +36,7 @@ class Yasumi
     private static $locales;
 
     /**
-     * Global translations
+     * Global translations.
      *
      * @var Translations
      */
@@ -60,7 +61,7 @@ class Yasumi
     {
         // Find and return holiday provider instance
         $providerClass = sprintf('Yasumi\Provider\%s', str_replace('/', '\\', $class));
-        if ( ! class_exists($providerClass)) {
+        if (! class_exists($providerClass)) {
             throw new InvalidArgumentException(sprintf('Unable to find holiday provider "%s".', $class));
         }
 
@@ -70,18 +71,18 @@ class Yasumi
         }
 
         // Load internal locales variable
-        if ( ! isset(static::$locales)) {
+        if (! isset(static::$locales)) {
             static::$locales = self::getAvailableLocales();
         }
 
         // Load internal translations variable
-        if ( ! isset(static::$globalTranslations)) {
+        if (! isset(static::$globalTranslations)) {
             static::$globalTranslations = new Translations(static::$locales);
-            static::$globalTranslations->loadTranslations(__DIR__ . '/data/translations');
+            static::$globalTranslations->loadTranslations(__DIR__.'/data/translations');
         }
 
         // Assert locale input
-        if ( ! in_array($locale, static::$locales)) {
+        if (! in_array($locale, static::$locales)) {
             throw new UnknownLocaleException(sprintf('Locale "%s" is not a valid locale.', $locale));
         }
 
@@ -95,7 +96,7 @@ class Yasumi
      */
     public static function getAvailableLocales()
     {
-        return require __DIR__ . '/data/locales.php';
+        return require __DIR__.'/data/locales.php';
     }
 
     /**
@@ -107,17 +108,17 @@ class Yasumi
     {
         $extension = 'php';
         $providers = [];
-        foreach (new DirectoryIterator(__DIR__ . '/Provider/') as $file) {
+        foreach (new DirectoryIterator(__DIR__.'/Provider/') as $file) {
             if ($file->isFile() === false || in_array($file->getBasename(), [
                     'AbstractProvider.php',
                     'CommonHolidays.php',
-                    'ChristianHolidays.php'
+                    'ChristianHolidays.php',
                 ]) || $file->getExtension() !== $extension
             ) {
                 continue;
             }
 
-            $providers[] = $file->getBasename('.' . $extension);
+            $providers[] = $file->getBasename('.'.$extension);
         }
 
         return (array) $providers;

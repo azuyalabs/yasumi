@@ -21,7 +21,7 @@ use DateTimeZone;
 class AshWednesdayTest extends NetherlandsBaseTestCase
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     const HOLIDAY = 'ashWednesday';
 

@@ -21,17 +21,17 @@ use DateTimeZone;
 class NationalFoundationDayTest extends JapanBaseTestCase
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     const HOLIDAY = 'nationalFoundationDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     const ESTABLISHMENT_YEAR = 1966;
 
     /**
-     * Tests National Foundation Day after 1966. National Foundation day was established after 1966
+     * Tests National Foundation Day after 1966. National Foundation day was established after 1966.
      */
     public function testNationalFoundationDayOnAfter1966()
     {
@@ -42,17 +42,17 @@ class NationalFoundationDayTest extends JapanBaseTestCase
 
     /**
      * Tests National Foundation Day after 1966. substituted next working day (when National Foundation Day falls on a
-     * Sunday)
+     * Sunday).
      */
     public function testNationalFoundationDayOnAfter1966SubstitutedNextWorkingDay()
     {
         $year = 2046;
-        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX.self::HOLIDAY, $year,
             new DateTime("$year-2-12", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**
-     * Tests National Foundation Day before 1966. National Foundation day was established after 1966
+     * Tests National Foundation Day before 1966. National Foundation day was established after 1966.
      */
     public function testNationalFoundationDayBefore1966()
     {

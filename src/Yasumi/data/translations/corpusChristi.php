@@ -14,5 +14,5 @@
 return [
     'en_US' => 'Corpus Christi',
     'es_ES' => 'Corpus Christi',
-    'de_DE' => 'Fronleichnam'
+    'de_DE' => 'Fronleichnam',
 ];

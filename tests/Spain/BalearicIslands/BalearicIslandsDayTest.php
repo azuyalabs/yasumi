@@ -21,12 +21,12 @@ use DateTimeZone;
 class BalearicIslandsDayTest extends BalearicIslandsBaseTestCase
 {
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     const HOLIDAY = 'balearicIslandsDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     const ESTABLISHMENT_YEAR = 1983;
 

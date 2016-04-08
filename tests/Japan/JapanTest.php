@@ -25,7 +25,7 @@ class JapanTest extends JapanBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Japan are defined by the provider class
+     * Tests if all national holidays in Japan are defined by the provider class.
      */
     public function testNationalHolidays()
     {
@@ -51,7 +51,7 @@ class JapanTest extends JapanBaseTestCase
     }
 
     /**
-     * Tests if all observed holidays in Japan are defined by the provider class
+     * Tests if all observed holidays in Japan are defined by the provider class.
      */
     public function testObservedHolidays()
     {
@@ -59,7 +59,7 @@ class JapanTest extends JapanBaseTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in Japan are defined by the provider class
+     * Tests if all seasonal holidays in Japan are defined by the provider class.
      */
     public function testSeasonalHolidays()
     {
@@ -67,7 +67,7 @@ class JapanTest extends JapanBaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in Japan are defined by the provider class
+     * Tests if all bank holidays in Japan are defined by the provider class.
      */
     public function testBankHolidays()
     {
@@ -75,7 +75,7 @@ class JapanTest extends JapanBaseTestCase
     }
 
     /**
-     * Tests if all other holidays in Japan are defined by the provider class
+     * Tests if all other holidays in Japan are defined by the provider class.
      */
     public function testOtherHolidays()
     {
@@ -83,7 +83,7 @@ class JapanTest extends JapanBaseTestCase
     }
 
     /**
-     * Initial setup of this Test Case
+     * Initial setup of this Test Case.
      */
     protected function setUp()
     {

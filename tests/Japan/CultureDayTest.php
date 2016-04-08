@@ -21,17 +21,17 @@ use DateTimeZone;
 class CultureDayTest extends JapanBaseTestCase
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     const HOLIDAY = 'cultureDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     const ESTABLISHMENT_YEAR = 1948;
 
     /**
-     * Tests Culture Day after 1948. Culture Day Day was established after 1948
+     * Tests Culture Day after 1948. Culture Day Day was established after 1948.
      */
     public function testCultureDayOnAfter1948()
     {
@@ -41,17 +41,17 @@ class CultureDayTest extends JapanBaseTestCase
     }
 
     /**
-     * Tests Culture Day after 1948 substituted next working day (when Culture Day falls on a Sunday)
+     * Tests Culture Day after 1948 substituted next working day (when Culture Day falls on a Sunday).
      */
     public function testCultureDayOnAfter1948SubstitutedNextWorkingDay()
     {
         $year = 2661;
-        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX.self::HOLIDAY, $year,
             new DateTime("$year-11-4", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**
-     * Tests Culture Day before 1948. Culture Day was established after 1948
+     * Tests Culture Day before 1948. Culture Day was established after 1948.
      */
     public function testCultureDayBefore1948()
     {

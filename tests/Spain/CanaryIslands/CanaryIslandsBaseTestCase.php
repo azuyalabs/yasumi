@@ -23,12 +23,12 @@ abstract class CanaryIslandsBaseTestCase extends SpainBaseTestCase
     use YasumiBase;
 
     /**
-     * Name of the region (e.g. country / state) to be tested
+     * Name of the region (e.g. country / state) to be tested.
      */
     const REGION = 'Spain/CanaryIslands';
 
     /**
-     * Timezone in which this provider has holidays defined
+     * Timezone in which this provider has holidays defined.
      */
     const TIMEZONE = 'Atlantic/Canary';
 }

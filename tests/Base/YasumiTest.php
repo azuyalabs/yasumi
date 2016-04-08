@@ -9,7 +9,6 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
-
 use Faker\Factory;
 use Yasumi\Tests\YasumiBase;
 use Yasumi\Yasumi;
@@ -54,7 +53,7 @@ class YasumiTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Tests that the getIterator function returns an ArrayIterator object
+     * Tests that the getIterator function returns an ArrayIterator object.
      */
     public function testGetIterator()
     {
@@ -64,7 +63,7 @@ class YasumiTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Tests that the count function returns an integer and a correct count for the test holiday provider
+     * Tests that the count function returns an integer and a correct count for the test holiday provider.
      */
     public function testCount()
     {
@@ -75,22 +74,22 @@ class YasumiTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Tests that the getType function returns a string for the test holiday provider
+     * Tests that the getType function returns a string for the test holiday provider.
      */
     public function testGetType()
     {
         $holidays = Yasumi::create('Japan', Factory::create()->numberBetween(1949, 9999));
-        $holiday  = $holidays->getHoliday('newYearsDay');
+        $holiday = $holidays->getHoliday('newYearsDay');
 
         $this->assertInternalType('string', $holiday->getType());
     }
 
     /**
-     * Tests that the getYear function returns an integer for the test holiday provider
+     * Tests that the getYear function returns an integer for the test holiday provider.
      */
     public function testGetYear()
     {
-        $year     = Factory::create()->numberBetween(1000, 9999);
+        $year = Factory::create()->numberBetween(1000, 9999);
         $holidays = Yasumi::create('Netherlands', $year);
 
         $this->assertInternalType('integer', $holidays->getYear());
@@ -98,13 +97,13 @@ class YasumiTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Tests that the next function returns the next upcoming date (i.e. next year) for the given holiday
+     * Tests that the next function returns the next upcoming date (i.e. next year) for the given holiday.
      */
     public function testNext()
     {
         $country = 'Japan';
-        $name    = 'childrensDay';
-        $year    = Factory::create()->numberBetween(1949, 9999);
+        $name = 'childrensDay';
+        $year = Factory::create()->numberBetween(1949, 9999);
 
         $holidays = Yasumi::create($country, $year);
 
@@ -123,13 +122,13 @@ class YasumiTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Tests the previous function returns the previous date (i.e. previous year) for the given holiday
+     * Tests the previous function returns the previous date (i.e. previous year) for the given holiday.
      */
     public function testPrevious()
     {
         $country = 'Netherlands';
-        $name    = 'liberationDay';
-        $year    = Factory::create()->numberBetween(1949, 9999);
+        $name = 'liberationDay';
+        $year = Factory::create()->numberBetween(1949, 9999);
 
         $holidays = Yasumi::create($country, $year);
 
@@ -148,11 +147,11 @@ class YasumiTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Tests that the getHolidayNames function returns an array and a correct count for the test holiday provider
+     * Tests that the getHolidayNames function returns an array and a correct count for the test holiday provider.
      */
     public function testGetHolidayNames()
     {
-        $holidays     = Yasumi::create('Japan', 2015);
+        $holidays = Yasumi::create('Japan', 2015);
         $holidayNames = $holidays->getHolidayNames();
 
         $this->assertInternalType('array', $holidayNames);
@@ -202,7 +201,7 @@ class YasumiTest extends PHPUnit_Framework_TestCase
     public function testWhatWeekDayIs()
     {
         $holidays = Yasumi::create('Netherlands', 2110);
-        $weekDay  = $holidays->whatWeekDayIs('stMartinsDay');
+        $weekDay = $holidays->whatWeekDayIs('stMartinsDay');
 
         $this->assertInternalType('int', $weekDay);
         $this->assertEquals(2, $weekDay);
@@ -236,8 +235,8 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      */
     public function testIsHoliday()
     {
-        $year      = 2110;
-        $isHoliday = Yasumi::create('Spain', $year)->isHoliday(new DateTime($year . '-08-15'));
+        $year = 2110;
+        $isHoliday = Yasumi::create('Spain', $year)->isHoliday(new DateTime($year.'-08-15'));
 
         $this->assertInternalType('bool', $isHoliday);
         $this->assertTrue($isHoliday);
@@ -250,8 +249,8 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      */
     public function testIsNotHoliday()
     {
-        $year      = 5220;
-        $isHoliday = Yasumi::create('Japan', $year)->isHoliday(new DateTime($year . '-06-10'));
+        $year = 5220;
+        $isHoliday = Yasumi::create('Japan', $year)->isHoliday(new DateTime($year.'-06-10'));
 
         $this->assertInternalType('bool', $isHoliday);
         $this->assertFalse($isHoliday);
@@ -265,8 +264,8 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      */
     public function testIsWorkingDay()
     {
-        $year         = 2020;
-        $isWorkingDay = Yasumi::create('Netherlands', $year)->isWorkingDay(new DateTime($year . '-06-02'));
+        $year = 2020;
+        $isWorkingDay = Yasumi::create('Netherlands', $year)->isWorkingDay(new DateTime($year.'-06-02'));
 
         $this->assertInternalType('bool', $isWorkingDay);
         $this->assertTrue($isWorkingDay);
@@ -280,8 +279,8 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      */
     public function testIsNotWorkingDay()
     {
-        $year            = 2016;
-        $isNotWorkingDay = Yasumi::create('Japan', $year)->isWorkingDay(new DateTime($year . '-01-11'));
+        $year = 2016;
+        $isNotWorkingDay = Yasumi::create('Japan', $year)->isWorkingDay(new DateTime($year.'-01-11'));
 
         $this->assertInternalType('bool', $isNotWorkingDay);
         $this->assertFalse($isNotWorkingDay);

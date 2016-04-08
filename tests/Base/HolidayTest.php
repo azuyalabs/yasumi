@@ -9,7 +9,6 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
-
 use Yasumi\Holiday;
 use Yasumi\Tests\YasumiBase;
 use Yasumi\TranslationsInterface;
@@ -58,8 +57,8 @@ class HolidayTest extends PHPUnit_Framework_TestCase
      */
     public function testHolidayIsJsonSerializable()
     {
-        $holiday  = new Holiday('testHoliday', [], new DateTime(), 'en_US');
-        $json     = json_encode($holiday);
+        $holiday = new Holiday('testHoliday', [], new DateTime(), 'en_US');
+        $json = json_encode($holiday);
         $instance = json_decode($json, true);
 
         $this->assertInternalType('array', $instance);
@@ -72,7 +71,7 @@ class HolidayTest extends PHPUnit_Framework_TestCase
      */
     public function testHolidayGetNameWithNoTranslations()
     {
-        $name    = 'testHoliday';
+        $name = 'testHoliday';
         $holiday = new Holiday($name, [], new DateTime(), 'en_US');
 
         $this->assertInternalType('string', $holiday->getName());
@@ -84,10 +83,10 @@ class HolidayTest extends PHPUnit_Framework_TestCase
      */
     public function testHolidayGetNameWithOnlyDefaultTranslation()
     {
-        $name        = 'testHoliday';
+        $name = 'testHoliday';
         $translation = 'My Holiday';
-        $locale      = 'en_US';
-        $holiday     = new Holiday($name, [$locale => $translation], new DateTime(), $locale);
+        $locale = 'en_US';
+        $holiday = new Holiday($name, [$locale => $translation], new DateTime(), $locale);
 
         $this->assertInternalType('string', $holiday->getName());
         $this->assertEquals($translation, $holiday->getName());
@@ -98,9 +97,9 @@ class HolidayTest extends PHPUnit_Framework_TestCase
      */
     public function testHolidayGetNameWithOneNonDefaultTranslation()
     {
-        $name        = 'testHoliday';
+        $name = 'testHoliday';
         $translation = 'My Holiday';
-        $holiday     = new Holiday($name, ['en_US' => $translation], new DateTime(), 'nl_NL');
+        $holiday = new Holiday($name, ['en_US' => $translation], new DateTime(), 'nl_NL');
 
         $this->assertNotNull($holiday->getName());
         $this->assertInternalType('string', $holiday->getName());
@@ -124,7 +123,7 @@ class HolidayTest extends PHPUnit_Framework_TestCase
 
         $locale = 'pl_PL';
 
-        $holiday = new Holiday('newYearsDay', [], new DateTime("2015-01-01"), $locale);
+        $holiday = new Holiday('newYearsDay', [], new DateTime('2015-01-01'), $locale);
         $holiday->mergeGlobalTranslations($translationsStub);
 
         $this->assertNotNull($holiday->getName());
@@ -147,10 +146,10 @@ class HolidayTest extends PHPUnit_Framework_TestCase
 
         $translationsStub->expects($this->once())->method('getTranslations')->with($this->equalTo('newYearsDay'))->willReturn($translations);
 
-        $customLocale      = 'nl_NL';
+        $customLocale = 'nl_NL';
         $customTranslation = 'Nieuwjaar';
 
-        $holiday = new Holiday('newYearsDay', [$customLocale => $customTranslation], new DateTime("2015-01-01"),
+        $holiday = new Holiday('newYearsDay', [$customLocale => $customTranslation], new DateTime('2015-01-01'),
             $customLocale);
         $holiday->mergeGlobalTranslations($translationsStub);
 
@@ -174,10 +173,10 @@ class HolidayTest extends PHPUnit_Framework_TestCase
 
         $translationsStub->expects($this->once())->method('getTranslations')->with($this->equalTo('newYearsDay'))->willReturn($translations);
 
-        $customLocale      = 'pl_PL';
+        $customLocale = 'pl_PL';
         $customTranslation = 'Bardzo Nowy Rok';
 
-        $holiday = new Holiday('newYearsDay', [$customLocale => $customTranslation], new DateTime("2014-01-01"),
+        $holiday = new Holiday('newYearsDay', [$customLocale => $customTranslation], new DateTime('2014-01-01'),
             $customLocale);
         $holiday->mergeGlobalTranslations($translationsStub);
 

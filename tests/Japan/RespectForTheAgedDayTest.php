@@ -21,7 +21,7 @@ use DateTimeZone;
 class RespectForTheAgedDayTest extends JapanBaseTestCase
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     const HOLIDAY = 'respectfortheAgedDay';
 
@@ -49,12 +49,12 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase
 
     /**
      * Tests Respect for the Aged Day between 1996 and 2003 substituted next working day (when Respect for the Aged Day
-     * falls on a Sunday)
+     * falls on a Sunday).
      */
     public function testRespectForTheAgedDayBetween1996And2003SubstitutedNextWorkingDay()
     {
         $year = 2002;
-        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX.self::HOLIDAY, $year,
             new DateTime("$year-9-16", new DateTimeZone(self::TIMEZONE)));
     }
 

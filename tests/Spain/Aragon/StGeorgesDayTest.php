@@ -21,7 +21,7 @@ use DateTimeZone;
 class stGeorgesDayTest extends AragonBaseTestCase
 {
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     const HOLIDAY = 'stGeorgesDay';
 

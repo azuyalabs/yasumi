@@ -25,7 +25,7 @@ class BalearicIslandsTest extends BalearicIslandsBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in the Balearic Islands are defined by the provider class
+     * Tests if all national holidays in the Balearic Islands are defined by the provider class.
      */
     public function testNationalHolidays()
     {
@@ -51,7 +51,7 @@ class BalearicIslandsTest extends BalearicIslandsBaseTestCase
     }
 
     /**
-     * Tests if all observed holidays in the Balearic Islands are defined by the provider class
+     * Tests if all observed holidays in the Balearic Islands are defined by the provider class.
      */
     public function testObservedHolidays()
     {
@@ -59,7 +59,7 @@ class BalearicIslandsTest extends BalearicIslandsBaseTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in the Balearic Islands are defined by the provider class
+     * Tests if all seasonal holidays in the Balearic Islands are defined by the provider class.
      */
     public function testSeasonalHolidays()
     {
@@ -67,7 +67,7 @@ class BalearicIslandsTest extends BalearicIslandsBaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in the Balearic Islands are defined by the provider class
+     * Tests if all bank holidays in the Balearic Islands are defined by the provider class.
      */
     public function testBankHolidays()
     {
@@ -75,7 +75,7 @@ class BalearicIslandsTest extends BalearicIslandsBaseTestCase
     }
 
     /**
-     * Tests if all other holidays in the Balearic Islands are defined by the provider class
+     * Tests if all other holidays in the Balearic Islands are defined by the provider class.
      */
     public function testOtherHolidays()
     {
@@ -83,7 +83,7 @@ class BalearicIslandsTest extends BalearicIslandsBaseTestCase
     }
 
     /**
-     * Initial setup of this Test Case
+     * Initial setup of this Test Case.
      */
     protected function setUp()
     {

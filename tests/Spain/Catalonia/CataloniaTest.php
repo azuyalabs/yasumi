@@ -25,7 +25,7 @@ class CataloniaTest extends CataloniaBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Catalonia are defined by the provider class
+     * Tests if all national holidays in Catalonia are defined by the provider class.
      */
     public function testNationalHolidays()
     {
@@ -45,12 +45,12 @@ class CataloniaTest extends CataloniaBaseTestCase
             'constitutionDay',
             'immaculateConception',
             'christmasDay',
-            'stStephensDay'
+            'stStephensDay',
         ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
     }
 
     /**
-     * Tests if all observed holidays in Catalonia are defined by the provider class
+     * Tests if all observed holidays in Catalonia are defined by the provider class.
      */
     public function testObservedHolidays()
     {
@@ -58,7 +58,7 @@ class CataloniaTest extends CataloniaBaseTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in Catalonia are defined by the provider class
+     * Tests if all seasonal holidays in Catalonia are defined by the provider class.
      */
     public function testSeasonalHolidays()
     {
@@ -66,7 +66,7 @@ class CataloniaTest extends CataloniaBaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in Catalonia are defined by the provider class
+     * Tests if all bank holidays in Catalonia are defined by the provider class.
      */
     public function testBankHolidays()
     {
@@ -74,7 +74,7 @@ class CataloniaTest extends CataloniaBaseTestCase
     }
 
     /**
-     * Tests if all other holidays in Catalonia are defined by the provider class
+     * Tests if all other holidays in Catalonia are defined by the provider class.
      */
     public function testOtherHolidays()
     {
@@ -82,7 +82,7 @@ class CataloniaTest extends CataloniaBaseTestCase
     }
 
     /**
-     * Initial setup of this Test Case
+     * Initial setup of this Test Case.
      */
     protected function setUp()
     {

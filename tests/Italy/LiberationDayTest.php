@@ -28,12 +28,12 @@ use DateTimeZone;
 class LiberationDayTest extends ItalyBaseTestCase
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     const HOLIDAY = 'liberationDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     const ESTABLISHMENT_YEAR = 1949;
 

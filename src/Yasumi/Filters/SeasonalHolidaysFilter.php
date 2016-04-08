@@ -9,13 +9,14 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
+
 namespace Yasumi\Filters;
 
 use FilterIterator;
 use Yasumi\Holiday;
 
 /**
- * SeasonalHolidaysFilter is a class for filtering all seasonal holidays
+ * SeasonalHolidaysFilter is a class for filtering all seasonal holidays.
  *
  * OfficialHolidaysFilter is a class that returns all holidays that are considered seasonal of any given holiday
  * provider.
@@ -29,7 +30,7 @@ use Yasumi\Holiday;
 class SeasonalHolidaysFilter extends FilterIterator
 {
     /**
-     * Checks whether the current element of the iterator is a seasonal holiday
+     * Checks whether the current element of the iterator is a seasonal holiday.
      *
      * @return bool
      */

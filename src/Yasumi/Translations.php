@@ -10,19 +10,19 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
+
 namespace Yasumi;
 
 use DirectoryIterator;
 use Yasumi\Exception\UnknownLocaleException;
 
 /**
- * Class Translations
+ * Class Translations.
  *
  * @package Yasumi
  */
 class Translations implements TranslationsInterface
 {
-
     /**
      * @var array translations array: ['<holiday short name>' => ['<locale>' => 'translation', ...], ... ]
      */
@@ -50,12 +50,12 @@ class Translations implements TranslationsInterface
      */
     public function loadTranslations($directoryPath)
     {
-        if ( ! file_exists($directoryPath)) {
-            throw new \InvalidArgumentException("Directory with translations not found");
+        if (! file_exists($directoryPath)) {
+            throw new \InvalidArgumentException('Directory with translations not found');
         }
 
-        $directoryPath = rtrim($directoryPath, '/\\') . DIRECTORY_SEPARATOR;
-        $extension     = 'php';
+        $directoryPath = rtrim($directoryPath, '/\\').DIRECTORY_SEPARATOR;
+        $extension = 'php';
 
         foreach (new DirectoryIterator($directoryPath) as $file) {
             if ($file->isDot() || $file->isDir()) {
@@ -66,10 +66,10 @@ class Translations implements TranslationsInterface
                 continue;
             }
 
-            $filename  = $file->getFilename();
-            $shortName = $file->getBasename('.' . $extension);
+            $filename = $file->getFilename();
+            $shortName = $file->getBasename('.'.$extension);
 
-            $translations = require $directoryPath . $filename;
+            $translations = require $directoryPath.$filename;
 
             if (is_array($translations)) {
                 foreach (array_keys($translations) as $locale) {
@@ -88,11 +88,12 @@ class Translations implements TranslationsInterface
      *
      * @throws UnknownLocaleException An UnknownLocaleException is thrown if the given locale is not
      *                                     valid/available.
+     *
      * @return true upon success, otherwise an UnknownLocaleException is thrown
      */
     protected function isValidLocale($locale)
     {
-        if ( ! in_array($locale, $this->availableLocales)) {
+        if (! in_array($locale, $this->availableLocales)) {
             throw new UnknownLocaleException(sprintf('Locale "%s" is not a valid locale.', $locale));
         }
 
@@ -110,7 +111,7 @@ class Translations implements TranslationsInterface
     {
         $this->isValidLocale($locale); // Validate the given locale
 
-        if ( ! array_key_exists($shortName, $this->translations)) {
+        if (! array_key_exists($shortName, $this->translations)) {
             $this->translations[$shortName] = [];
         }
 
@@ -127,12 +128,12 @@ class Translations implements TranslationsInterface
      */
     public function getTranslation($shortName, $locale)
     {
-        if ( ! array_key_exists($shortName, $this->translations)) {
-            return null;
+        if (! array_key_exists($shortName, $this->translations)) {
+            return;
         }
 
-        if ( ! array_key_exists($locale, $this->translations[$shortName])) {
-            return null;
+        if (! array_key_exists($locale, $this->translations[$shortName])) {
+            return;
         }
 
         return $this->translations[$shortName][$locale];
@@ -147,7 +148,7 @@ class Translations implements TranslationsInterface
      */
     public function getTranslations($shortName)
     {
-        if ( ! array_key_exists($shortName, $this->translations)) {
+        if (! array_key_exists($shortName, $this->translations)) {
             return [];
         }
 

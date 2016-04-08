@@ -21,7 +21,7 @@ use DateTimeZone;
 class GreeneryDayTest extends JapanBaseTestCase
 {
     /**
-     * The name of the holiday defined in the test
+     * The name of the holiday defined in the test.
      */
     const HOLIDAY = 'greeneryDay';
 
@@ -37,12 +37,12 @@ class GreeneryDayTest extends JapanBaseTestCase
     }
 
     /**
-     * Tests Greenery Day after 2007 substituted next working day (when Greenery Day falls on a Sunday)
+     * Tests Greenery Day after 2007 substituted next working day (when Greenery Day falls on a Sunday).
      */
     public function testHolidayOnAfter2007SubstitutedNextWorkingDay()
     {
         $year = 2014;
-        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX.self::HOLIDAY, $year,
             new DateTime("$year-5-6", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -58,12 +58,12 @@ class GreeneryDayTest extends JapanBaseTestCase
     }
 
     /**
-     * Tests Greenery Day between 1989 and 2007 substituted next working day (when Greenery Day falls on a Sunday)
+     * Tests Greenery Day between 1989 and 2007 substituted next working day (when Greenery Day falls on a Sunday).
      */
     public function testHolidayBetween1989And2007SubstitutedNextWorkingDay()
     {
         $year = 2001;
-        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX.self::HOLIDAY, $year,
             new DateTime("$year-4-30", new DateTimeZone(self::TIMEZONE)));
     }
 

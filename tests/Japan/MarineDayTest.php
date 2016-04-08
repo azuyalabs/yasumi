@@ -21,7 +21,7 @@ use DateTimeZone;
 class MarineDayTest extends JapanBaseTestCase
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     const HOLIDAY = 'marineDay';
 
@@ -48,12 +48,12 @@ class MarineDayTest extends JapanBaseTestCase
     }
 
     /**
-     * Tests Marine Day between 1996 and 2003 substituted next working day (when Marine Day falls on a Sunday)
+     * Tests Marine Day between 1996 and 2003 substituted next working day (when Marine Day falls on a Sunday).
      */
     public function testMarineDayBetween1996And2003SubstitutedNextWorkingDay()
     {
         $year = 1997;
-        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX.self::HOLIDAY, $year,
             new DateTime("$year-7-21", new DateTimeZone(self::TIMEZONE)));
     }
 

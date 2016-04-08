@@ -9,6 +9,7 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
+
 namespace Yasumi\Provider\Spain;
 
 use DateTime;
@@ -24,7 +25,6 @@ use Yasumi\Provider\Spain;
  * and Gipuzkoa, also called Historical Territories.
  *
  * @link http://en.wikipedia.org/wiki/Basque_Country_(autonomous_community)
- *
  */
 class BasqueCountry extends Spain
 {

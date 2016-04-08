@@ -25,7 +25,7 @@ class CommunityOfMadridTest extends CommunityOfMadridBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in the Community of Madrid are defined by the provider class
+     * Tests if all national holidays in the Community of Madrid are defined by the provider class.
      */
     public function testNationalHolidays()
     {
@@ -45,12 +45,12 @@ class CommunityOfMadridTest extends CommunityOfMadridBaseTestCase
             'allSaintsDay',
             'constitutionDay',
             'immaculateConception',
-            'christmasDay'
+            'christmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
     }
 
     /**
-     * Tests if all observed holidays in the Community of Madrid are defined by the provider class
+     * Tests if all observed holidays in the Community of Madrid are defined by the provider class.
      */
     public function testObservedHolidays()
     {
@@ -58,7 +58,7 @@ class CommunityOfMadridTest extends CommunityOfMadridBaseTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in the Community of Madrid are defined by the provider class
+     * Tests if all seasonal holidays in the Community of Madrid are defined by the provider class.
      */
     public function testSeasonalHolidays()
     {
@@ -66,7 +66,7 @@ class CommunityOfMadridTest extends CommunityOfMadridBaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in the Community of Madrid are defined by the provider class
+     * Tests if all bank holidays in the Community of Madrid are defined by the provider class.
      */
     public function testBankHolidays()
     {
@@ -74,7 +74,7 @@ class CommunityOfMadridTest extends CommunityOfMadridBaseTestCase
     }
 
     /**
-     * Tests if all other holidays in the Community of Madrid are defined by the provider class
+     * Tests if all other holidays in the Community of Madrid are defined by the provider class.
      */
     public function testOtherHolidays()
     {
@@ -82,7 +82,7 @@ class CommunityOfMadridTest extends CommunityOfMadridBaseTestCase
     }
 
     /**
-     * Initial setup of this Test Case
+     * Initial setup of this Test Case.
      */
     protected function setUp()
     {

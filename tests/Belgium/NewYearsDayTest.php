@@ -18,7 +18,7 @@ namespace Yasumi\Tests\Belgium;
 class NewYearsDayTest extends BelgiumBaseTestCase
 {
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     const HOLIDAY = 'newYearsDay';
 
@@ -46,7 +46,7 @@ class NewYearsDayTest extends BelgiumBaseTestCase
     }
 
     /**
-     * Tests translated name of New Years Day
+     * Tests translated name of New Years Day.
      */
     public function testTranslation()
     {

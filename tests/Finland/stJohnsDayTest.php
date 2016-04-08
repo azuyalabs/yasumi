@@ -24,14 +24,13 @@ use Yasumi\Yasumi;
  */
 class stJohnsDayTest extends FinlandBaseTestCase
 {
-
     /**
-     * The year in which the holiday was adjusted
+     * The year in which the holiday was adjusted.
      */
     const ADJUSTMENT_YEAR = 1955;
 
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     const HOLIDAY = 'stJohnsDay';
 
@@ -53,10 +52,10 @@ class stJohnsDayTest extends FinlandBaseTestCase
         $year = $this->generateRandomYear(self::ADJUSTMENT_YEAR);
 
         $holidays = Yasumi::create(self::REGION, $year);
-        $holiday  = $holidays->getHoliday(self::HOLIDAY);
+        $holiday = $holidays->getHoliday(self::HOLIDAY);
 
         // Some basic assertions
-        $this->assertInstanceOf('Yasumi\Provider\\' . str_replace('/', '\\', self::REGION), $holidays);
+        $this->assertInstanceOf('Yasumi\Provider\\'.str_replace('/', '\\', self::REGION), $holidays);
         $this->assertInstanceOf('Yasumi\Holiday', $holiday);
         $this->assertTrue(isset($holiday));
 

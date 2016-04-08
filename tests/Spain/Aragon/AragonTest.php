@@ -25,7 +25,7 @@ class AragonTest extends AragonBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Aragon are defined by the provider class
+     * Tests if all national holidays in Aragon are defined by the provider class.
      */
     public function testNationalHolidays()
     {
@@ -48,7 +48,7 @@ class AragonTest extends AragonBaseTestCase
     }
 
     /**
-     * Tests if all observed holidays in Aragon are defined by the provider class
+     * Tests if all observed holidays in Aragon are defined by the provider class.
      */
     public function testObservedHolidays()
     {
@@ -56,7 +56,7 @@ class AragonTest extends AragonBaseTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in Aragon are defined by the provider class
+     * Tests if all seasonal holidays in Aragon are defined by the provider class.
      */
     public function testSeasonalHolidays()
     {
@@ -64,7 +64,7 @@ class AragonTest extends AragonBaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in Aragon are defined by the provider class
+     * Tests if all bank holidays in Aragon are defined by the provider class.
      */
     public function testBankHolidays()
     {
@@ -72,7 +72,7 @@ class AragonTest extends AragonBaseTestCase
     }
 
     /**
-     * Tests if all other holidays in Aragon are defined by the provider class
+     * Tests if all other holidays in Aragon are defined by the provider class.
      */
     public function testOtherHolidays()
     {
@@ -80,7 +80,7 @@ class AragonTest extends AragonBaseTestCase
     }
 
     /**
-     * Initial setup of this Test Case
+     * Initial setup of this Test Case.
      */
     protected function setUp()
     {

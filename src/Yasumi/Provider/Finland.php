@@ -82,15 +82,15 @@ class Finland extends AbstractProvider
     public function calculatestJohnsDay()
     {
         $translation = ['fi_FI' => 'Juhannuspäivä'];
-        $shortName   = 'stJohnsDay';
-        $date        = new DateTime("$this->year-6-24", new DateTimeZone($this->timezone)); // Default date
+        $shortName = 'stJohnsDay';
+        $date = new DateTime("$this->year-6-24", new DateTimeZone($this->timezone)); // Default date
 
         if ($this->year < 1955) {
             $this->addHoliday(new Holiday($shortName, $translation, $date, $this->locale));
         } else {
 
             // Check between the 20th and 26th day which one is a Saturday
-            for ($d = 20; $d <= 26; $d ++) {
+            for ($d = 20; $d <= 26; $d++) {
                 $date->setDate($this->year, 6, $d);
                 if ($date->format('l') === 'Saturday') {
                     break;

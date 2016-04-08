@@ -9,6 +9,7 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
+
 namespace Yasumi;
 
 /**
@@ -17,6 +18,7 @@ namespace Yasumi;
  * This interface class defines the standard functions that any country provider needs to define.
  *
  * @see     AbstractProvider
+ *
  * @package Yasumi
  */
 interface ProviderInterface

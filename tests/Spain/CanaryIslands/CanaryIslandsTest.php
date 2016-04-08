@@ -25,7 +25,7 @@ class CanaryIslandsTest extends CanaryIslandsBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in the Canary Islands are defined by the provider class
+     * Tests if all national holidays in the Canary Islands are defined by the provider class.
      */
     public function testNationalHolidays()
     {
@@ -43,12 +43,12 @@ class CanaryIslandsTest extends CanaryIslandsBaseTestCase
             'allSaintsDay',
             'constitutionDay',
             'immaculateConception',
-            'christmasDay'
+            'christmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
     }
 
     /**
-     * Tests if all observed holidays in the Canary Islands are defined by the provider class
+     * Tests if all observed holidays in the Canary Islands are defined by the provider class.
      */
     public function testObservedHolidays()
     {
@@ -56,7 +56,7 @@ class CanaryIslandsTest extends CanaryIslandsBaseTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in the Canary Islands are defined by the provider class
+     * Tests if all seasonal holidays in the Canary Islands are defined by the provider class.
      */
     public function testSeasonalHolidays()
     {
@@ -64,7 +64,7 @@ class CanaryIslandsTest extends CanaryIslandsBaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in the Canary Islands are defined by the provider class
+     * Tests if all bank holidays in the Canary Islands are defined by the provider class.
      */
     public function testBankHolidays()
     {
@@ -72,7 +72,7 @@ class CanaryIslandsTest extends CanaryIslandsBaseTestCase
     }
 
     /**
-     * Tests if all other holidays in the Canary Islands are defined by the provider class
+     * Tests if all other holidays in the Canary Islands are defined by the provider class.
      */
     public function testOtherHolidays()
     {
@@ -80,7 +80,7 @@ class CanaryIslandsTest extends CanaryIslandsBaseTestCase
     }
 
     /**
-     * Initial setup of this Test Case
+     * Initial setup of this Test Case.
      */
     protected function setUp()
     {

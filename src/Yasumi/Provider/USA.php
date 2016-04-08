@@ -9,6 +9,7 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
+
 namespace Yasumi\Provider;
 
 use DateInterval;
@@ -36,7 +37,7 @@ class USA extends AbstractProvider
         // Add Christian holidays
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
 
-        /**
+        /*
          * Dr. Martin Luther King Day.
          *
          * Honors Dr. Martin Luther King, Jr., Civil Rights leader, who was actually born on January 15, 1929; combined
@@ -46,11 +47,11 @@ class USA extends AbstractProvider
          */
         if ($this->year >= 1986) {
             $this->addHoliday(new Holiday('martinLutherKingDay', [
-                'en_US' => 'Dr. Martin Luther King Jr\'s Birthday'
+                'en_US' => 'Dr. Martin Luther King Jr\'s Birthday',
             ], new DateTime("third monday of january $this->year", new DateTimeZone($this->timezone)), $this->locale));
         }
 
-        /**
+        /*
          * Washington's Birthday.
          *
          * Washington's Birthday is a United States federal holiday celebrated on the third Monday of February in honor
@@ -69,11 +70,11 @@ class USA extends AbstractProvider
                 $date = new DateTime("third monday of february $this->year", new DateTimeZone($this->timezone));
             }
             $this->addHoliday(new Holiday('washingtonsBirthday', [
-                'en_US' => 'Washington\'s Birthday'
+                'en_US' => 'Washington\'s Birthday',
             ], $date, $this->locale));
         }
 
-        /**
+        /*
          * Memorial Day.
          *
          * Honors the nation's war dead from the Civil War onwards; marks the unofficial beginning of the summer season.
@@ -89,11 +90,11 @@ class USA extends AbstractProvider
                 $date = new DateTime("last monday of may $this->year", new DateTimeZone($this->timezone));
             }
             $this->addHoliday(new Holiday('memorialDay', [
-                'en_US' => 'Memorial Day'
+                'en_US' => 'Memorial Day',
             ], $date, $this->locale));
         }
 
-        /**
+        /*
          * Independence Day.
          *
          * Independence Day, commonly known as the Fourth of July or July Fourth, is a federal holiday in the United
@@ -105,11 +106,11 @@ class USA extends AbstractProvider
          */
         if ($this->year >= 1776) {
             $this->addHoliday(new Holiday('independenceDay', [
-                'en_US' => 'Independence Day'
+                'en_US' => 'Independence Day',
             ], new DateTime("$this->year-7-4", new DateTimeZone($this->timezone)), $this->locale));
         }
 
-        /**
+        /*
          * Labour Day.
          *
          * Labor Day in the United States is a holiday celebrated on the first Monday in September. It is a celebration
@@ -119,12 +120,12 @@ class USA extends AbstractProvider
          */
         if ($this->year >= 1887) {
             $this->addHoliday(new Holiday('labourDay', [
-                'en_US' => 'Labour Day'
+                'en_US' => 'Labour Day',
             ], new DateTime("first monday of september $this->year", new DateTimeZone($this->timezone)),
                 $this->locale));
         }
 
-        /**
+        /*
          * Columbus Day.
          *
          * Honors Christopher Columbus, traditional discoverer of the Americas. In some areas it is also a celebration
@@ -141,11 +142,11 @@ class USA extends AbstractProvider
                 $date = new DateTime("second monday of october $this->year", new DateTimeZone($this->timezone));
             }
             $this->addHoliday(new Holiday('columbusDay', [
-                'en_US' => 'Columbus Day'
+                'en_US' => 'Columbus Day',
             ], $date, $this->locale));
         }
 
-        /**
+        /*
          * Veterans Day.
          *
          * Veterans Day is an official United States holiday that honors people who have served in the U.S. Armed Forces
@@ -158,11 +159,11 @@ class USA extends AbstractProvider
             $name = ($this->year < 1954) ? 'Armistice Day' : 'Veterans Day';
 
             $this->addHoliday(new Holiday('veteransDay', [
-                'en_US' => $name
+                'en_US' => $name,
             ], new DateTime("$this->year-11-11", new DateTimeZone($this->timezone)), $this->locale));
         }
 
-        /**
+        /*
          * Thanksgiving Day.
          *
          * Thanksgiving, or Thanksgiving Day, is a holiday celebrated in the United States on the fourth Thursday in
@@ -174,7 +175,7 @@ class USA extends AbstractProvider
          */
         if ($this->year >= 1863) {
             $this->addHoliday(new Holiday('thanksgivingDay', [
-                'en_US' => 'Thanksgiving Day'
+                'en_US' => 'Thanksgiving Day',
             ], new DateTime("fourth thursday of november $this->year", new DateTimeZone($this->timezone)),
                 $this->locale));
         }
@@ -212,8 +213,8 @@ class USA extends AbstractProvider
 
                 // Add substitute holiday
                 if (isset($substituteHoliday)) {
-                    $this->addHoliday(new Holiday('substituteHoliday:' . $substituteHoliday->shortName, [
-                        'en_US' => $substituteHoliday->getName() . ' observed'
+                    $this->addHoliday(new Holiday('substituteHoliday:'.$substituteHoliday->shortName, [
+                        'en_US' => $substituteHoliday->getName().' observed',
                     ], $substituteHoliday, $this->locale));
                 }
             }

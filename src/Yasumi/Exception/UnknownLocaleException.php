@@ -9,12 +9,13 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
+
 namespace Yasumi\Exception;
 
 use InvalidArgumentException;
 
 /**
- * Class UnknownLocaleException
+ * Class UnknownLocaleException.
  *
  * @package Yasumi\Exception
  */

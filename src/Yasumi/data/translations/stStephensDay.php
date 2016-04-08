@@ -14,5 +14,5 @@
 return [
     'it_IT' => 'Santo Stefano',
     'fr_FR' => 'Saint-Étienne',
-    'es_ES' => 'Sant Esteve'
+    'es_ES' => 'Sant Esteve',
 ];

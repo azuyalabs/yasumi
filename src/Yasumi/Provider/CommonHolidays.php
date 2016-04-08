@@ -9,6 +9,7 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
+
 namespace Yasumi\Provider;
 
 use DateTime;
@@ -73,7 +74,7 @@ trait CommonHolidays
     }
 
     /**
-     * Valentine's Day
+     * Valentine's Day.
      *
      * Valentine's Day, also known as Saint Valentine's Day or the Feast of Saint Valentine, is a celebration observed
      * on February 14 each year. It is celebrated in many countries around the world, although it is not a public
@@ -98,7 +99,7 @@ trait CommonHolidays
     }
 
     /**
-     * World Animal Day
+     * World Animal Day.
      *
      * World Animal Day is an international day of action for animal rights and welfare celebrated annually on October
      * 4, the Feast Day of St Francis of Assisi, the patron saint of animals. It started in 1931 at a convention of

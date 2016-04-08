@@ -21,7 +21,7 @@ use DateTimeZone;
 class PentecostTest extends GreeceBaseTestCase
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     const HOLIDAY = 'pentecost';
 

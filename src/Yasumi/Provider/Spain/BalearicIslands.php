@@ -9,6 +9,7 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
+
 namespace Yasumi\Provider\Spain;
 
 use DateTime;
@@ -25,7 +26,6 @@ use Yasumi\Provider\Spain;
  * and islets in close proximity to the larger islands, including Cabrera, Dragonera and S'Espalmador.
  *
  * @link http://en.wikipedia.org/wiki/Balearic_Islands
- *
  */
 class BalearicIslands extends Spain
 {

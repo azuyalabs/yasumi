@@ -22,12 +22,12 @@ use Yasumi\Tests\Denmark\DenmarkBaseTestCase;
 class DenmarkDayTest extends DenmarkBaseTestCase
 {
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     const HOLIDAY = 'greatPrayerDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     const ESTABLISHMENT_YEAR = 1686;
 

@@ -21,12 +21,12 @@ use DateTimeZone;
 class MountainDayTest extends JapanBaseTestCase
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     const HOLIDAY = 'mountainDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     const ESTABLISHMENT_YEAR = 2016;
 
@@ -41,12 +41,12 @@ class MountainDayTest extends JapanBaseTestCase
     }
 
     /**
-     * Tests Mountain Day after 2016 substituted next working day (when Mountain Day falls on a Sunday)
+     * Tests Mountain Day after 2016 substituted next working day (when Mountain Day falls on a Sunday).
      */
     public function testMountainDayOnAfter2016SubstitutedNextWorkingDay()
     {
         $year = 2019;
-        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX.self::HOLIDAY, $year,
             new DateTime("$year-8-12", new DateTimeZone(self::TIMEZONE)));
     }
 

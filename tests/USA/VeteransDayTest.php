@@ -22,12 +22,12 @@ use Yasumi\Yasumi;
 class VeteransDayTest extends USABaseTestCase
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     const HOLIDAY = 'veteransDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     const ESTABLISHMENT_YEAR = 1919;
 
@@ -58,7 +58,7 @@ class VeteransDayTest extends USABaseTestCase
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1953);
 
         $holidays = Yasumi::create(self::REGION, $year);
-        $holiday  = $holidays->getHoliday(self::HOLIDAY);
+        $holiday = $holidays->getHoliday(self::HOLIDAY);
         $this->assertEquals('Armistice Day', $holiday->getName());
     }
 
@@ -70,7 +70,7 @@ class VeteransDayTest extends USABaseTestCase
         $year = $this->generateRandomYear(1954);
 
         $holidays = Yasumi::create(self::REGION, $year);
-        $holiday  = $holidays->getHoliday(self::HOLIDAY);
+        $holiday = $holidays->getHoliday(self::HOLIDAY);
         $this->assertEquals('Veterans Day', $holiday->getName());
     }
 }

@@ -9,7 +9,6 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
-
 use Yasumi\Filters\BankHolidaysFilter;
 use Yasumi\Filters\ObservedHolidaysFilter;
 use Yasumi\Filters\OfficialHolidaysFilter;
@@ -28,11 +27,11 @@ class HolidayFiltersTest extends PHPUnit_Framework_TestCase
     use YasumiBase;
 
     /**
-     * Tests Official Holidays
+     * Tests Official Holidays.
      */
     public function testOfficialHolidaysFilter()
     {
-        $holidays         = Yasumi::create('Netherlands', 2015);
+        $holidays = Yasumi::create('Netherlands', 2015);
         $officialHolidays = iterator_to_array(new OfficialHolidaysFilter($holidays->getIterator()));
 
         $this->assertArrayHasKey('newYearsDay', $officialHolidays);
@@ -49,11 +48,11 @@ class HolidayFiltersTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Tests Official Holidays Filter for holidays that are not official holidays
+     * Tests Official Holidays Filter for holidays that are not official holidays.
      */
     public function testOfficialHolidaysFilterNotOfficialHolidays()
     {
-        $holidays         = Yasumi::create('Netherlands', 2015);
+        $holidays = Yasumi::create('Netherlands', 2015);
         $officialHolidays = iterator_to_array(new OfficialHolidaysFilter($holidays->getIterator()));
 
         $this->assertArrayNotHasKey('goodFriday', $officialHolidays);
@@ -61,11 +60,11 @@ class HolidayFiltersTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Tests Observed Holidays
+     * Tests Observed Holidays.
      */
     public function testObservedHolidaysFilter()
     {
-        $holidays         = Yasumi::create('Netherlands', 2015);
+        $holidays = Yasumi::create('Netherlands', 2015);
         $observedHolidays = iterator_to_array(new ObservedHolidaysFilter($holidays->getIterator()));
 
         $this->assertArrayHasKey('carnivalDay', $observedHolidays);
@@ -83,11 +82,11 @@ class HolidayFiltersTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Tests Observed Holidays Filter for holidays that are not observed holidays
+     * Tests Observed Holidays Filter for holidays that are not observed holidays.
      */
     public function testObservedHolidaysFilterNotObservedHolidays()
     {
-        $holidays         = Yasumi::create('Netherlands', 2015);
+        $holidays = Yasumi::create('Netherlands', 2015);
         $observedHolidays = iterator_to_array(new ObservedHolidaysFilter($holidays->getIterator()));
 
         $this->assertArrayNotHasKey('newYearsDay', $observedHolidays);
@@ -95,22 +94,22 @@ class HolidayFiltersTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Tests Bank Holidays
+     * Tests Bank Holidays.
      */
     public function testBankHolidaysFilter()
     {
-        $holidays     = Yasumi::create('Netherlands', 2015);
+        $holidays = Yasumi::create('Netherlands', 2015);
         $bankHolidays = iterator_to_array(new BankHolidaysFilter($holidays->getIterator()));
 
         $this->assertCount(0, $bankHolidays);
     }
 
     /**
-     * Tests Bank Holidays Filter for holidays that are not bank holidays
+     * Tests Bank Holidays Filter for holidays that are not bank holidays.
      */
     public function testBankHolidaysFilterNotBankHolidays()
     {
-        $holidays     = Yasumi::create('Netherlands', 2015);
+        $holidays = Yasumi::create('Netherlands', 2015);
         $bankHolidays = iterator_to_array(new BankHolidaysFilter($holidays->getIterator()));
 
         $this->assertArrayNotHasKey('newYearsDay', $bankHolidays);
@@ -118,11 +117,11 @@ class HolidayFiltersTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Tests Seasonal Holidays
+     * Tests Seasonal Holidays.
      */
     public function testSeasonalHolidaysFilter()
     {
-        $holidays         = Yasumi::create('Netherlands', 2015);
+        $holidays = Yasumi::create('Netherlands', 2015);
         $seasonalHolidays = iterator_to_array(new SeasonalHolidaysFilter($holidays->getIterator()));
 
         $this->assertArrayHasKey('summerTime', $seasonalHolidays);
@@ -132,11 +131,11 @@ class HolidayFiltersTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Tests Seasonal Holidays Filter for holidays that are not seasonal holidays
+     * Tests Seasonal Holidays Filter for holidays that are not seasonal holidays.
      */
     public function testSeasonalHolidaysFilterNotSeasonalHolidays()
     {
-        $holidays         = Yasumi::create('Netherlands', 2015);
+        $holidays = Yasumi::create('Netherlands', 2015);
         $seasonalHolidays = iterator_to_array(new SeasonalHolidaysFilter($holidays->getIterator()));
 
         $this->assertArrayNotHasKey('newYearsDay', $seasonalHolidays);
@@ -144,11 +143,11 @@ class HolidayFiltersTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Tests other type of Holidays
+     * Tests other type of Holidays.
      */
     public function testOtherHolidaysFilter()
     {
-        $holidays      = Yasumi::create('Netherlands', 2015);
+        $holidays = Yasumi::create('Netherlands', 2015);
         $otherHolidays = iterator_to_array(new OtherHolidaysFilter($holidays->getIterator()));
 
         $this->assertArrayHasKey('valentinesDay', $otherHolidays);
@@ -163,11 +162,11 @@ class HolidayFiltersTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Tests other type of Holidays for holidays that are not other type of holidays
+     * Tests other type of Holidays for holidays that are not other type of holidays.
      */
     public function testOtherHolidaysFilterNotOtherHolidays()
     {
-        $holidays      = Yasumi::create('Netherlands', 2015);
+        $holidays = Yasumi::create('Netherlands', 2015);
         $otherHolidays = iterator_to_array(new OtherHolidaysFilter($holidays->getIterator()));
 
         $this->assertArrayNotHasKey('newYearsDay', $otherHolidays);

@@ -9,6 +9,7 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
+
 namespace Yasumi\Provider;
 
 use DateInterval;
@@ -33,7 +34,6 @@ class Greece extends AbstractProvider
         // Add common holidays
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
-
 
         // Add Christian holidays
         $this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale));

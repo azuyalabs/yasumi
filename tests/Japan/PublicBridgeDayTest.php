@@ -21,7 +21,7 @@ use DateTimeZone;
 class PublicBridgeDayTest extends JapanBaseTestCase
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     const HOLIDAY = 'bridgeDay';
 

@@ -21,12 +21,12 @@ use DateTimeZone;
 class ValencianCommunityDayTest extends ValencianCommunityBaseTestCase
 {
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     const HOLIDAY = 'valencianCommunityDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     const ESTABLISHMENT_YEAR = 1239; // Not entirely sure about this year
 

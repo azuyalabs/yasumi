@@ -21,17 +21,17 @@ use DateTimeZone;
 class NewYearsDayTest extends JapanBaseTestCase
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     const HOLIDAY = 'newYearsDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     const ESTABLISHMENT_YEAR = 1948;
 
     /**
-     * Tests New Years Day after 1948. New Years Day was established after 1948
+     * Tests New Years Day after 1948. New Years Day was established after 1948.
      */
     public function testNewYearsDayOnAfter1948()
     {
@@ -41,17 +41,17 @@ class NewYearsDayTest extends JapanBaseTestCase
     }
 
     /**
-     * Tests New Years Day after 1948 substituted next working day (when New Years Day falls on a Sunday)
+     * Tests New Years Day after 1948 substituted next working day (when New Years Day falls on a Sunday).
      */
     public function testNewYearsDayOnAfter1948SubstitutedNextWorkingDay()
     {
         $year = 4473;
-        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
+        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX.self::HOLIDAY, $year,
             new DateTime("$year-1-2", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**
-     * Tests New Years Day before 1948. New Years Day was established after 1948
+     * Tests New Years Day before 1948. New Years Day was established after 1948.
      */
     public function testNewYearsDayBefore1948()
     {

@@ -21,7 +21,7 @@ use DateTimeZone;
 class AutumnalEquinoxDayTest extends JapanBaseTestCase
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     const HOLIDAY = 'autumnalEquinoxDay';
 

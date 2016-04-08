@@ -20,7 +20,7 @@ use DateTime;
 class EpiphanyTest extends FinlandBaseTestCase
 {
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     const HOLIDAY = 'epiphany';
 
@@ -38,7 +38,7 @@ class EpiphanyTest extends FinlandBaseTestCase
     }
 
     /**
-     * Returns a list of random test dates used for assertion of the holiday defined in this test
+     * Returns a list of random test dates used for assertion of the holiday defined in this test.
      *
      * @return array list of test dates for the holiday defined in this test
      */

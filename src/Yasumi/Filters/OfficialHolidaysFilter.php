@@ -9,13 +9,14 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
+
 namespace Yasumi\Filters;
 
 use FilterIterator;
 use Yasumi\Holiday;
 
 /**
- * OfficialHolidaysFilter is a class for filtering all official holidays
+ * OfficialHolidaysFilter is a class for filtering all official holidays.
  *
  * OfficialHolidaysFilter is a class that returns all holidays that are considered official (i.e. national) of any given
  * holiday provider.
@@ -29,7 +30,7 @@ use Yasumi\Holiday;
 class OfficialHolidaysFilter extends FilterIterator
 {
     /**
-     * Checks whether the current element of the iterator is a national/official holiday
+     * Checks whether the current element of the iterator is a national/official holiday.
      *
      * @return bool
      */
