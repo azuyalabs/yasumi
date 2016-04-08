@@ -31,6 +31,6 @@
     }
   },
   "autoload-dev": {
-    "psr-4": {"Yasumi\\Tests\\": "tests/"}
+    "psr-4": {"Yasumi\\tests\\": "tests/"}
   }
 }
