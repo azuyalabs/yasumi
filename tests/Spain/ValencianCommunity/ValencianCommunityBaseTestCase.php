@@ -10,7 +10,7 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\Spain\ValencianCommunity;
+namespace Yasumi\tests\Spain\ValencianCommunity;
 
 use Yasumi\Tests\Spain\SpainBaseTestCase;
 use Yasumi\Tests\YasumiBase;
@@ -31,5 +31,4 @@ abstract class ValencianCommunityBaseTestCase extends SpainBaseTestCase
      * Timezone in which this provider has holidays defined
      */
     const TIMEZONE = 'Europe/Madrid';
-
 }

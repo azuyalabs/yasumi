@@ -10,7 +10,7 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\Spain\CastillaLaMancha;
+namespace Yasumi\tests\Spain\CastillaLaMancha;
 
 use Yasumi\Holiday;
 

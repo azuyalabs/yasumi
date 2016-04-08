@@ -10,7 +10,7 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\Netherlands;
+namespace Yasumi\tests\Netherlands;
 
 use DateTime;
 use DateTimeZone;
@@ -18,7 +18,7 @@ use DateTimeZone;
 /**
  * Class for testing Wintertime in the Netherlands.
  */
-class WinterTimeTest extends NetherlandsBaseTestCase
+class WintertimeTest extends NetherlandsBaseTestCase
 {
     /**
      * Tests Wintertime.

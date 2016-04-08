@@ -10,7 +10,7 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\Germany;
+namespace Yasumi\tests\Germany;
 
 use Yasumi\Holiday;
 

@@ -10,7 +10,7 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\Netherlands;
+namespace Yasumi\tests\Netherlands;
 
 use DateTime;
 
@@ -53,6 +53,6 @@ class ValentinesDayTest extends NetherlandsBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['nl_NL' => 'Valentijnsdag',]);
+            ['nl_NL' => 'Valentijnsdag', ]);
     }
 }
