@@ -10,7 +10,7 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\Denmark;
+namespace Yasumi\tests\Denmark;
 
 use DateTime;
 use DateTimeZone;
@@ -18,7 +18,7 @@ use DateTimeZone;
 /**
  * Class containing tests for Good Friday in Denmark.
  */
-class goodFridayTest extends DenmarkBaseTestCase
+class GoodFridayTest extends DenmarkBaseTestCase
 {
     /**
      * The name of the holiday to be tested
