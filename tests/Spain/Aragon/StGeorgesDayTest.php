@@ -10,7 +10,7 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\Spain\Aragon;
+namespace Yasumi\tests\Spain\Aragon;
 
 use DateTime;
 use DateTimeZone;
@@ -18,7 +18,7 @@ use DateTimeZone;
 /**
  * Class for testing St. George's Day in Aragon (Spain).
  */
-class stGeorgesDayTest extends AragonBaseTestCase
+class StGeorgesDayTest extends AragonBaseTestCase
 {
     /**
      * The name of the holiday to be tested

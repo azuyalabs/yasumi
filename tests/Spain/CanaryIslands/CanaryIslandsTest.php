@@ -10,7 +10,7 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\Spain\CanaryIslands;
+namespace Yasumi\tests\Spain\CanaryIslands;
 
 use Yasumi\Holiday;
 

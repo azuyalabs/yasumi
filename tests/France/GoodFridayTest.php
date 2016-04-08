@@ -10,7 +10,7 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\France;
+namespace Yasumi\tests\France;
 
 use DateTime;
 use DateTimeZone;
@@ -18,7 +18,7 @@ use DateTimeZone;
 /**
  * Class containing tests for Good Friday in France.
  */
-class goodFridayTest extends FranceBaseTestCase
+class GoodFridayTest extends FranceBaseTestCase
 {
     /**
      * The name of the holiday

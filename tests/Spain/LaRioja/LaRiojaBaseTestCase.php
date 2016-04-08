@@ -10,7 +10,7 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\Spain\LaRioja;
+namespace Yasumi\tests\Spain\LaRioja;
 
 use Yasumi\Tests\Spain\SpainBaseTestCase;
 use Yasumi\Tests\YasumiBase;

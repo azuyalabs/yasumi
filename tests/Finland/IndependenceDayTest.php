@@ -10,7 +10,7 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\Finland;
+namespace Yasumi\tests\Finland;
 
 use DateTime;
 use DateTimeZone;
@@ -18,7 +18,7 @@ use DateTimeZone;
 /**
  * Class for testing the Independence Day of Finland in Finland.
  */
-class NationalDayTest extends FinlandBaseTestCase
+class IndependenceDayTest extends FinlandBaseTestCase
 {
     /**
      * The year in which the holiday was first established
