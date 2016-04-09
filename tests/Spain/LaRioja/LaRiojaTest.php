@@ -84,6 +84,6 @@ class LaRiojaTest extends LaRiojaBaseTestCase
      */
     protected function setUp()
     {
-        $this->year = $this->generateRandomYear(1981);
+        $this->year = $this->generateRandomYear(1983);
     }
 }
