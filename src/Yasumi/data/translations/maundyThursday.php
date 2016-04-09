@@ -16,4 +16,5 @@ return [
     'da_DK' => 'Skærtorsdag',
     'nb_NO' => 'Skjærtorsdag',
     'el_GR' => 'Μεγάλη Πέμπτη',
+    'en_US' => 'Maundy Thursday'
 ];

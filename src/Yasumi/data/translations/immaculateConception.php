@@ -15,4 +15,5 @@ return [
     'it_IT' => 'Immacolata Concezione',
     'es_ES' => 'Inmaculada Concepción',
     'el_GR' => 'Ευαγγελισμός της Θεοτόκου',
+    'en_US' => 'Immaculate Conception',
 ];
