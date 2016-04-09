@@ -10,9 +10,9 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-// Translation for St. Martin's Day.
+// Translation for St. Martin's Day
 return [
     'en_US' => 'St. Martin\'s Day',
+    'nl_BE' => 'Sint Maarten',
     'nl_NL' => 'Sint Maarten',
-    'nl_BE' => 'Sint Maarten'
 ];

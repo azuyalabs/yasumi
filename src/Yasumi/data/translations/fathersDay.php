@@ -12,8 +12,8 @@
 
 // Translation for Father's Day
 return [
-    'en_US' => 'Father\'s Day',
-    'nl_NL' => 'Vaderdag',
-    'nl_BE' => 'Vaderdag',
     'el_GR' => 'Γιορτή του πατέρα',
+    'en_US' => 'Father\'s Day',
+    'nl_BE' => 'Vaderdag',
+    'nl_NL' => 'Vaderdag',
 ];

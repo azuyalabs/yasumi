@@ -12,12 +12,12 @@
 
 // Translation for Assumption of Mary
 return [
-    'en_US' => 'Assumption of Mary',
-    'nl_NL' => 'Onze Lieve Vrouw hemelvaart',
-    'nl_BE' => 'Onze Lieve Vrouw hemelvaart',
-    'it_IT' => 'Assunzione di Maria Vergine',
-    'fr_FR' => 'L\'Assomption de Marie',
-    'es_ES' => 'Asunción de la Virgen María',
     'de_DE' => 'Mariä Himmelfahrt',
     'el_GR' => 'Κοίμηση της Θεοτόκου',
+    'en_US' => 'Assumption of Mary',
+    'es_ES' => 'Asunción de la Virgen María',
+    'fr_FR' => 'L\'Assomption de Marie',
+    'it_IT' => 'Assunzione di Maria Vergine',
+    'nl_BE' => 'Onze Lieve Vrouw hemelvaart',
+    'nl_NL' => 'Onze Lieve Vrouw hemelvaart',
 ];

@@ -12,11 +12,11 @@
 
 // Translation for Valentine's Day
 return [
-    'en_US' => 'Valentine\'s Day',
-    'nl_NL' => 'Valentijnsdag',
-    'nl_BE' => 'Valentijnsdag',
-    'pl_PL' => 'Walentynki',
-    'ja_JP' => 'バレンタイン·デー',
-    'es_ES' => 'San Valentín',
     'el_GR' => 'Αγίου Βαλεντίνου',
+    'en_US' => 'Valentine\'s Day',
+    'es_ES' => 'San Valentín',
+    'ja_JP' => 'バレンタイン·デー',
+    'nl_BE' => 'Valentijnsdag',
+    'nl_NL' => 'Valentijnsdag',
+    'pl_PL' => 'Walentynki',
 ];

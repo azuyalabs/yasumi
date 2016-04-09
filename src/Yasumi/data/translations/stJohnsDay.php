@@ -12,9 +12,9 @@
 
 // Translation for St. John's Day
 return [
-    'es_ES' => 'Sant Joan',
-    'sv_SE' => 'midsommardagen',
-    'fi_FI' => 'Juhannuspäivä',
     'el_GR' => 'Σύναξις Προφήτου Προδρόμου και Βαπτιστού Ιωάννου',
     'en_US' => 'St. John\'s Day',
+    'es_ES' => 'Sant Joan',
+    'fi_FI' => 'Juhannuspäivä',
+    'sv_SE' => 'midsommardagen',
 ];

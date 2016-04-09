@@ -12,7 +12,7 @@
 
 // Translation for Annunciation
 return [
+    'el_GR' => 'Ευαγγελισμός της Θεοτόκου',
     'en_US' => 'Annunciation',
     'fr_FR' => 'Annonciation',
-    'el_GR' => 'Ευαγγελισμός της Θεοτόκου',
 ];
