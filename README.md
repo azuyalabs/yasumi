@@ -46,6 +46,7 @@ Currently the following holiday providers are implemented:
 * Finland
 * Germany
 * Greece
+* New Zealand
 
 Yasumi has the following filters to allow you to filter only certain type of holidays:
 
@@ -61,10 +62,7 @@ each release :)
 
 ### Roadmap
 
-- Germany
-- Greece
 - United Kingdom
-- New Zealand
 - Australia
 - Canada
 - India
@@ -117,6 +115,7 @@ The tests are organized in some test suites to make testing a bit more easier:
 * Finland     : For separately testing the Finland Holiday Provider
 * Germany     : For separately testing the Germany Holiday Provider
 * Greece      : For separately testing the Greece Holiday Provider
+* New Zealand : For separately testing the New Zealand Holiday Provider
 
 
 Basic Usage

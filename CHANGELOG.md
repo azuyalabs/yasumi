@@ -5,13 +5,19 @@
 
 **Implemented enhancements:**
 
+- Added Holiday Provider for New Zealand [\#13](https://github.com/azuyalabs/Yasumi/pull/13)
+- Sorted all translations in the translation files alphabetically (descending). 
+- Added missing English translations ('en_US') for the Christian holidays 'Immaculate Conception', 'Maundy Thursday', 
+  'St. Georges Day', 'St. John's Day', 'St. Josephs Day' and 'St. Stephens Day'. 
 - Added Holiday Provider for Greece [\#10](https://github.com/azuyalabs/Yasumi/pull/10)
 - Added Holiday Provider for Germany [\#9](https://github.com/azuyalabs/Yasumi/pull/9)
-- Refactoring and cleanup of unit tests
+- Refactoring and cleanup of various unit tests
 
 **Resolved issues:**
 
-- Running php-cs-fixer fix . --level=psr2 generated a massive list of changes, and breaks unit tests. Added a custom
+- Fixed base test for some Spain/LaRioja as some holidays have been established only in a particular year, causing
+  false failures in the unit tests.
+- Running php-cs-fixer fix . --level=psr2 generated a massive list of changes, and broke unit tests. Added a custom
   .php_cs config file to adhere to the PSR-2 Coding Standards and resolve this issue. In addition the php-cs-fixer 
   command to has been added to composer to run the fixers and on the CI server (Travis), meaning PR’s will need to be 
   PSR2 compliant before they can be merged. If any files do not pass, the build fails. [\#15](https://github.com/azuyalabs/yasumi/issues/15) [\#16](https://github.com/azuyalabs/Yasumi/pull/16)
