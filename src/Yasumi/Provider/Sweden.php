@@ -51,16 +51,6 @@ class Sweden extends AbstractProvider
         $this->calculateNationalDay();
     }
 
-    /*
-     * National Day
-     *
-     * National Day of Sweden (Sveriges nationaldag) is a national holiday observed in Sweden on 6 June every year.
-     * Prior to 1983, the day was celebrated as Svenska flaggans dag (Swedish flag day). At that time, the day was
-     * renamed to the national day by the Riksdag. The tradition of celebrating this date began 1916 at the Stockholm
-     * Olympic Stadium, in honour of the election of King Gustav Vasa in 1523, as this was considered the foundation of
-     * modern Sweden.
-     */
-
     /**
      * St. John's Day / Midsummer.
      *
@@ -77,7 +67,7 @@ class Sweden extends AbstractProvider
      */
     public function calculatestJohnsDay()
     {
-        $translation = ['fi_FI' => 'Juhannuspäivä'];
+        $translation = ['sv_SE' => 'midsommardagen'];
         $shortName   = 'stJohnsDay';
         $date        = new DateTime("$this->year-6-24", new DateTimeZone($this->timezone)); // Default date
 
@@ -92,6 +82,15 @@ class Sweden extends AbstractProvider
         $this->addHoliday(new Holiday($shortName, $translation, $date, $this->locale));
     }
 
+    /*
+     * National Day
+     *
+     * National Day of Sweden (Sveriges nationaldag) is a national holiday observed in Sweden on 6 June every year.
+     * Prior to 1983, the day was celebrated as Svenska flaggans dag (Swedish flag day). At that time, the day was
+     * renamed to the national day by the Riksdag. The tradition of celebrating this date began 1916 at the Stockholm
+     * Olympic Stadium, in honour of the election of King Gustav Vasa in 1523, as this was considered the foundation of
+     * modern Sweden.
+     */
     public function calculateNationalDay()
     {
         // Prior to 1983, the day was celebrated as Svenska flaggans dag
