@@ -521,7 +521,7 @@ trait ChristianHolidays
     protected function calculateEaster($year, $timezone)
     {
         $easter = new DateTime("$year-3-21", new DateTimeZone($timezone));
-        $easter->add(new DateInterval('P' . \easter_days($year) . 'D'));
+        $easter->add(new DateInterval('P'.\easter_days($year).'D'));
 
         return $easter;
     }

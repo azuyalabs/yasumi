@@ -108,25 +108,25 @@ class Holiday extends DateTime implements JsonSerializable
         }
 
         // Validate if date parameter is instance of DateTime
-        if ( ! ($date instanceof DateTime)) {
+        if (!($date instanceof DateTime)) {
             throw new InvalidArgumentException(sprintf('Date "%s" is not a valid DateTime instance.', $date));
         }
 
         // Load internal locales variable
-        if ( ! isset(static::$locales)) {
+        if (!isset(static::$locales)) {
             static::$locales = Yasumi::getAvailableLocales();
         }
 
         // Assert display locale input
-        if ( ! in_array($displayLocale, static::$locales)) {
+        if (!in_array($displayLocale, static::$locales)) {
             throw new UnknownLocaleException(sprintf('Locale "%s" is not a valid locale.', $displayLocale));
         }
 
         // Set additional attributes
-        $this->shortName     = $shortName;
-        $this->translations  = $names;
+        $this->shortName = $shortName;
+        $this->translations = $names;
         $this->displayLocale = $displayLocale;
-        $this->type          = $type;
+        $this->type = $type;
 
         // Construct instance
         parent::__construct($date->format('Y-m-d'), $date->getTimezone());
@@ -178,7 +178,7 @@ class Holiday extends DateTime implements JsonSerializable
     public function mergeGlobalTranslations(TranslationsInterface $globalTranslations)
     {
         $holidayGlobalTranslations = $globalTranslations->getTranslations($this->shortName);
-        $this->translations        = array_merge($holidayGlobalTranslations, $this->translations);
+        $this->translations = array_merge($holidayGlobalTranslations, $this->translations);
     }
 
     /**

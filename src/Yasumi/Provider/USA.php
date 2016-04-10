@@ -213,8 +213,8 @@ class USA extends AbstractProvider
 
                 // Add substitute holiday
                 if (isset($substituteHoliday)) {
-                    $this->addHoliday(new Holiday('substituteHoliday:' . $substituteHoliday->shortName, [
-                        'en_US' => $substituteHoliday->getName() . ' observed',
+                    $this->addHoliday(new Holiday('substituteHoliday:'.$substituteHoliday->shortName, [
+                        'en_US' => $substituteHoliday->getName().' observed',
                     ], $substituteHoliday, $this->locale));
                 }
             }
