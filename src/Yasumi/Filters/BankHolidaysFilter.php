@@ -9,13 +9,14 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
+
 namespace Yasumi\Filters;
 
 use FilterIterator;
 use Yasumi\Holiday;
 
 /**
- * BankHolidaysFilter is a class for filtering all bank holidays
+ * BankHolidaysFilter is a class for filtering all bank holidays.
  *
  * BankHolidaysFilter is a class that returns all holidays that are considered bank holidays of any given holiday
  * provider.
@@ -23,13 +24,11 @@ use Yasumi\Holiday;
  * Example usage:
  * $holidays = Yasumi::create('Netherlands', 2015);
  * $bank = new BankHolidaysFilter($holidays->getIterator());
- *
- * @package Yasumi
  */
 class BankHolidaysFilter extends FilterIterator
 {
     /**
-     * Checks whether the current element of the iterator is an observed holiday
+     * Checks whether the current element of the iterator is an observed holiday.
      *
      * @return bool
      */

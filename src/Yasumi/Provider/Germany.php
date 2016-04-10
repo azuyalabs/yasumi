@@ -10,6 +10,7 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
+
 namespace Yasumi\Provider;
 
 use DateTime;
@@ -49,7 +50,7 @@ class Germany extends AbstractProvider
     }
 
     /**
-     * German Unity Day
+     * German Unity Day.
      *
      * The Day of German Unity (German: Tag der Deutschen Einheit) is the national day of Germany, celebrated on
      * 3 October as a public holiday. It commemorates the anniversary of German reunification in 1990, when the

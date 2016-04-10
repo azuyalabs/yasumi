@@ -9,12 +9,11 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
+
 namespace Yasumi\Exception;
 
 /**
- * Interface Exception
- *
- * @package Yasumi\Exception
+ * Interface Exception.
  */
 interface Exception
 {

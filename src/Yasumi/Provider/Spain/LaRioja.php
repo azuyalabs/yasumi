@@ -9,6 +9,7 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
+
 namespace Yasumi\Provider\Spain;
 
 use DateTime;
@@ -25,7 +26,6 @@ use Yasumi\Provider\Spain;
  * la Calzada, and Nájera. It has an estimated population of 322,415 inhabitants.
  *
  * @link http://en.wikipedia.org/wiki/La_Rioja_(Spain)
- *
  */
 class LaRioja extends Spain
 {

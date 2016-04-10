@@ -50,20 +50,6 @@ class Finland extends AbstractProvider
         $this->calculateIndependenceDay();
     }
 
-    /*
-     * Independence Day
-     *
-     * Finland's Independence Day (Finnish: itsenäisyyspäivä, Swedish: självständighetsdagen) is a national public
-     * holiday, and a flag day, held on 6 December to celebrate Finland's declaration of independence from the Russian
-     * Republic in 1917.
-     *
-     * Independence Day was first celebrated in 1917. However, during the first years of independence, 6 December in
-     * some parts of Finland was only a minor holiday compared to 16 May, the Whites' day of celebration for prevailing
-     * in the Finnish Civil War.
-     *
-     * @link https://en.wikipedia.org/wiki/Independence_Day_(Finland)
-     */
-
     /**
      * St. John's Day / Midsummer.
      *
@@ -90,7 +76,7 @@ class Finland extends AbstractProvider
         } else {
 
             // Check between the 20th and 26th day which one is a Saturday
-            for ($d = 20; $d <= 26; $d ++) {
+            for ($d = 20; $d <= 26; ++$d) {
                 $date->setDate($this->year, 6, $d);
                 if ($date->format('l') === 'Saturday') {
                     break;
@@ -101,6 +87,19 @@ class Finland extends AbstractProvider
         }
     }
 
+    /*
+     * Independence Day
+     *
+     * Finland's Independence Day (Finnish: itsenäisyyspäivä, Swedish: självständighetsdagen) is a national public
+     * holiday, and a flag day, held on 6 December to celebrate Finland's declaration of independence from the Russian
+     * Republic in 1917.
+     *
+     * Independence Day was first celebrated in 1917. However, during the first years of independence, 6 December in
+     * some parts of Finland was only a minor holiday compared to 16 May, the Whites' day of celebration for prevailing
+     * in the Finnish Civil War.
+     *
+     * @link https://en.wikipedia.org/wiki/Independence_Day_(Finland)
+     */
     public function calculateIndependenceDay()
     {
         if ($this->year >= 1917) {

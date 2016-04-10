@@ -9,6 +9,7 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
+
 namespace Yasumi\Provider;
 
 use DateInterval;
@@ -34,7 +35,6 @@ class Greece extends AbstractProvider
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
 
-
         // Add Christian holidays
         $this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->annunciation($this->year, $this->timezone, $this->locale));
@@ -53,30 +53,6 @@ class Greece extends AbstractProvider
         $this->calculateIndependenceDay();
         $this->calculateOhiDay();
         $this->calculatePolytechnio();
-    }
-
-    /**
-     * Calculate the Easter date for Orthodox churches.
-     *
-     * @param  int    $year     the year for which Easter needs to be calculated
-     * @param  string $timezone the timezone in which Easter is celebrated
-     *
-     * @return \Datetime date of Orthodox Easter
-     *
-     * @link http://php.net/manual/en/function.easter-date.php#83794
-     * @link https://en.wikipedia.org/wiki/Computus#Adaptation_for_Western_Easter_of_Meeus.27_Julian_algorithm
-     */
-    public function calculateEaster($year, $timezone)
-    {
-        $a = $year % 4;
-        $b = $year % 7;
-        $c = $year % 19;
-        $d = (19 * $c + 15) % 30;
-        $e = (2 * $a + 4 * $b - $d + 34) % 7;
-        $month = floor(($d + $e + 114) / 31);
-        $day = (($d + $e + 114) % 31) + 1;
-
-        return (new DateTime("$year-$month-$day", new DateTimeZone($timezone)))->add(new DateInterval('P13D'));
     }
 
     /**
@@ -107,6 +83,30 @@ class Greece extends AbstractProvider
             $this->calculateEaster($this->year, $this->timezone)->sub(new DateInterval('P48D')), $this->locale));
     }
 
+    /**
+     * Calculate the Easter date for Orthodox churches.
+     *
+     * @param int    $year     the year for which Easter needs to be calculated
+     * @param string $timezone the timezone in which Easter is celebrated
+     *
+     * @return \Datetime date of Orthodox Easter
+     *
+     * @link http://php.net/manual/en/function.easter-date.php#83794
+     * @link https://en.wikipedia.org/wiki/Computus#Adaptation_for_Western_Easter_of_Meeus.27_Julian_algorithm
+     */
+    public function calculateEaster($year, $timezone)
+    {
+        $a     = $year % 4;
+        $b     = $year % 7;
+        $c     = $year % 19;
+        $d     = (19 * $c + 15) % 30;
+        $e     = (2 * $a + 4 * $b - $d + 34) % 7;
+        $month = floor(($d + $e + 114) / 31);
+        $day   = (($d + $e + 114) % 31) + 1;
+
+        return (new DateTime("$year-$month-$day", new DateTimeZone($timezone)))->add(new DateInterval('P13D'));
+    }
+
     /*
      * Independence Day.
      *
@@ -114,6 +114,7 @@ class Greece extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Greek_War_of_Independence
      */
+
     public function calculateIndependenceDay()
     {
         if ($this->year >= 1821) {
