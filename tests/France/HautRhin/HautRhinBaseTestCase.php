@@ -10,22 +10,22 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\tests\France;
+namespace Yasumi\tests\France\HautRhin;
 
-use PHPUnit_Framework_TestCase;
+use Yasumi\tests\France\FranceBaseTestCase;
 use Yasumi\tests\YasumiBase;
 
 /**
- * Base class for test cases of the France holiday provider.
+ * Base class for test cases of the Haut-Rhin (France) holiday provider.
  */
-abstract class FranceBaseTestCase extends PHPUnit_Framework_TestCase
+abstract class HautRhinBaseTestCase extends FranceBaseTestCase
 {
     use YasumiBase;
 
     /**
-     * Country (name) to be tested
+     * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'France';
+    const REGION = 'France/HautRhin';
 
     /**
      * Timezone in which this provider has holidays defined

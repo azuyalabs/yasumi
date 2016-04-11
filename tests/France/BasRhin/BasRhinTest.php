@@ -7,17 +7,17 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\tests\France;
+namespace Yasumi\tests\France\BasRhin;
 
 use Yasumi\Holiday;
 
 /**
- * Class for testing holidays in France.
+ * Class for testing holidays in Bas-Rhin (France).
  */
-class FranceTest extends FranceBaseTestCase
+class BasRhinTest extends BasRhinBaseTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -25,13 +25,14 @@ class FranceTest extends FranceBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in France are defined by the provider class
+     * Tests if all national holidays in Bas-Rhin are defined by the provider class
      */
     public function testNationalHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
             'victoryInEuropeDay',
+            'goodFriday',
             'easterMonday',
             'internationalWorkersDay',
             'ascensionDay',
@@ -40,12 +41,13 @@ class FranceTest extends FranceBaseTestCase
             'allSaintsDay',
             'armisticeDay',
             'christmasDay',
+            'stStephensDay',
             'bastilleDay'
         ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
     }
 
     /**
-     * Tests if all observed holidays in France are defined by the provider class
+     * Tests if all observed holidays in Bas-Rhin (France) are defined by the provider class
      */
     public function testObservedHolidays()
     {
@@ -53,7 +55,7 @@ class FranceTest extends FranceBaseTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in France are defined by the provider class
+     * Tests if all seasonal holidays in Bas-Rhin (France) are defined by the provider class
      */
     public function testSeasonalHolidays()
     {
@@ -61,7 +63,7 @@ class FranceTest extends FranceBaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in France are defined by the provider class
+     * Tests if all bank holidays in Bas-Rhin (France) are defined by the provider class
      */
     public function testBankHolidays()
     {
@@ -69,7 +71,7 @@ class FranceTest extends FranceBaseTestCase
     }
 
     /**
-     * Tests if all other holidays in France are defined by the provider class
+     * Tests if all other holidays in Bas-Rhin (France) are defined by the provider class
      */
     public function testOtherHolidays()
     {

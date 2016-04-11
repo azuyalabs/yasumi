@@ -15,6 +15,12 @@
 
 **Resolved issues:**
 
+- Fixed issue for France as Good Friday and St. Stephens Day were defined as official holidays. These aren't national
+  holidays and are only observed in the French departments Moselle, Bas-Rhin and Haut-Rhin. With this fix, these 
+  holidays have been removed from the France Holiday providers and new providers for the departments Moselle, Bas-Rhin 
+  and Haut-Rhin are added. [\#17](https://github.com/azuyalabs/yasumi/issues/17)
+- Fixed issue for Sweden as Midsummer's Day (st. Johns Day) was always calculated to be on June 24th. However the 
+  holiday has always been celebrated on a Saturday (between June 20 and June 26).
 - Fixed base test for some Spain/LaRioja as some holidays have been established only in a particular year, causing
   false failures in the unit tests.
 - Running php-cs-fixer fix . --level=psr2 generated a massive list of changes, and broke unit tests. Added a custom
@@ -23,7 +29,7 @@
   PSR2 compliant before they can be merged. If any files do not pass, the build fails. [\#15](https://github.com/azuyalabs/yasumi/issues/15) [\#16](https://github.com/azuyalabs/Yasumi/pull/16)
 - Accidentally the timezone for Norway was set to "Europe/Copenhagen". This has been corrected to "Europe/Oslo". [\#11](https://github.com/azuyalabs/yasumi/issues/11) [\#12](https://github.com/azuyalabs/Yasumi/pull/12)
 - Fixed issue for Finland as Midsummer's Day (st. Johns Day) was always calculated to be on June 24th. However since 
-  1955, the holiday has always been on a Saturday (between June 20 and June 26).
+  1955, the holiday has always been celebrated on a Saturday (between June 20 and June 26).
 
 
 ## 1.2.0 (Apr 4, 2016)

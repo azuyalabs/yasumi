@@ -10,25 +10,25 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\tests\France;
+namespace Yasumi\tests\France\BasRhin;
 
 use DateTime;
 use DateTimeZone;
 
 /**
- * Class containing tests for Good Friday in France.
+ * Class containing tests for Good Friday in Bas-Rhin (France).
  */
-class GoodFridayTest extends FranceBaseTestCase
+class GoodFridayTest extends BasRhinBaseTestCase
 {
     /**
-     * The name of the holiday
+     * The name of the holiday to be tested
      */
     const HOLIDAY = 'goodFriday';
 
     /**
-     * Tests Good Friday.
+     * Tests the holiday defined in this test.
      */
-    public function testGoodFriday()
+    public function testHoliday()
     {
         $year = 2008;
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
@@ -36,7 +36,7 @@ class GoodFridayTest extends FranceBaseTestCase
     }
 
     /**
-     * Tests translated name of Good Friday.
+     * Tests the translated name of the holiday defined in this test.
      */
     public function testTranslation()
     {
