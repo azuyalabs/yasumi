@@ -75,5 +75,4 @@ class Poland extends AbstractProvider
                 new DateTime("$this->year-11-11", new DateTimeZone($this->timezone)), $this->locale));
         }
     }
-
 }
