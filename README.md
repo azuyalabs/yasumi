@@ -21,7 +21,7 @@ Highlights
 * Common Holiday Providers
 * Global Translations
 * Implements ArrayIterator to easily process a provider's holidays
-* Filters enabling to easily select certain holiday types (Official, Observed, Bank, Seasonal or Other)
+* Filters enabling to easily select certain holiday types (Official, Observed, Bank, Seasonal or Other) 
 * Fully documented
 * Fully Unit tested
 * Framework-agnostic
@@ -37,8 +37,8 @@ Currently the following holiday providers are implemented:
 * USA
 * Italy
 * France
-* Spain (including the autonomous communities Andalusia, Aragon, Asturias, Balearic Islands, Basque Country,
-         Canary Islands, Cantabria, Castile and León, Castilla-La Mancha, Ceuta, Community of Madrid, Extremadura,
+* Spain (including the autonomous communities Andalusia, Aragon, Asturias, Balearic Islands, Basque Country, 
+         Canary Islands, Cantabria, Castile and León, Castilla-La Mancha, Ceuta, Community of Madrid, Extremadura, 
          Galicia, La Rioja, Melilla, Navarre, Region of Murcia, Valencian Community)
 * Denmark
 * Norway
@@ -89,7 +89,7 @@ $ composer require azuyalabs/yasumi
 Testing
 -------
 
-Yasumi has a [PHPUnit](https://phpunit.de/) test suite. To run the tests, run the following command from the project
+Yasumi has a [PHPUnit](https://phpunit.de/) test suite. To run the tests, run the following command from the project 
 folder:
 
 ``` bash
@@ -217,7 +217,7 @@ foreach ($official as $day) {
 Contributing to Yasumi
 -------
 
-Contributions are encouraged and welcome; we are always happy to get feedback or even pull requests.
+Contributions are encouraged and welcome; we are always happy to get feedback or even pull requests. 
 In order to keep the code consistent, please use the wonderful [php-cs-fixer](http://cs.sensiolabs.org/) .
 
 If you like to add a new Holiday Provider, the best starting point is to use on of the existing holiday providers. There
@@ -228,7 +228,7 @@ are a few things to keep consider:
    needs to include region/country level tests and requires assertion of all expected holidays.
 3. All the unit tests and the implementation Holiday Provider require to have the correct locale, timezone and
    region/countryname.
-4. As almost all of the tests use automatic iterations, make sure the year for which the test is executed is a valid
+4. As almost all of the tests use automatic iterations, make sure the year for which the test is executed is a valid 
    year. Some holidays are only established from a certain year and having the test yearnumber smaller than the minimum
    establishment year (amongst all holidays) can result in false errors.
 
@@ -245,6 +245,6 @@ Yasumi is open-sourced software licensed under the MIT License (MIT). Please see
 Information Sources
 -------
 
-- [Wikipedia](https://en.wikipedia.org/wiki/Main_Page)
-- [Timeanddate.com](http://www.timeanddate.com/)
-- [CLDR - Unicode Common Locale Data Repository](http://cldr.unicode.org/)
+- [Wikipedia](https://en.wikipedia.org/wiki/Main_Page) 
+- [Timeanddate.com](http://www.timeanddate.com/)  
+- [CLDR - Unicode Common Locale Data Repository](http://cldr.unicode.org/)  
