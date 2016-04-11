@@ -23,5 +23,6 @@ return [
     'nb_NO' => 'Arbeidernes dag',
     'nl_BE' => 'Dag van de arbeid',
     'nl_NL' => 'Dag van de arbeid',
+    'pl_PL' => 'Święto Pracy',
     'sv_SE' => 'Första maj',
 ];
