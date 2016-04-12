@@ -111,6 +111,7 @@ class Yasumi
                     'AbstractProvider.php',
                     'CommonHolidays.php',
                     'ChristianHolidays.php',
+                    'ChristianHolidaysJulianCalendar.php'
                 ]) || $file->getExtension() !== $extension
             ) {
                 continue;
