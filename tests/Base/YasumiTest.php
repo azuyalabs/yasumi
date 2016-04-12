@@ -74,6 +74,22 @@ class YasumiTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * Tests that the isProvider function return false with invalid provider
+     */
+    public function testIsProviderWithInvalidProvider()
+    {
+        $this->assertEquals(false, Yasumi::isProvider('Mars'));
+    }
+
+    /**
+     * Tests that the isProvider function return true with a valid provider
+     */
+    public function testIsProviderWithValidProvider()
+    {
+        $this->assertEquals(true, Yasumi::isProvider('France'));
+    }
+
+    /**
      * Tests that the getIterator function returns an ArrayIterator object
      */
     public function testGetIterator()
