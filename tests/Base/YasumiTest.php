@@ -44,6 +44,26 @@ class YasumiTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * Tests that an InvalidArgumentException is thrown in case we try to load a Trait as provider.
+     *
+     * @expectedException InvalidArgumentException
+     */
+    public function testCreateWithInvalidProviderBecauseItsATrait()
+    {
+        Yasumi::create('CommonHolidays');
+    }
+
+    /**
+     * Tests that an InvalidArgumentException is thrown in case we try to load the AbstractProvider as provider.
+     *
+     * @expectedException InvalidArgumentException
+     */
+    public function testCreateWithAbstractClassProvider()
+    {
+        Yasumi::create('AbstractProvider');
+    }
+
+    /**
      * Tests that an Yasumi\Exception\UnknownLocaleException is thrown in case an invalid locale is given.
      *
      * @expectedException \Yasumi\Exception\UnknownLocaleException
