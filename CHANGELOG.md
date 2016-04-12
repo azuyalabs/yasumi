@@ -5,12 +5,12 @@
 
 **Implemented enhancements:**
 
-- Added Holiday Provider for New Zealand [\#13](https://github.com/azuyalabs/Yasumi/pull/13)
+- Added Holiday Provider for New Zealand [\#13](https://github.com/azuyalabs/Yasumi/pull/13) ([badams](https://github.com/badams))
 - Sorted all translations in the translation files alphabetically (descending). 
 - Added missing English translations ('en_US') for the Christian holidays 'Immaculate Conception', 'Maundy Thursday', 
   'St. Georges Day', 'St. John's Day', 'St. Josephs Day' and 'St. Stephens Day'. 
-- Added Holiday Provider for Greece [\#10](https://github.com/azuyalabs/Yasumi/pull/10)
-- Added Holiday Provider for Germany [\#9](https://github.com/azuyalabs/Yasumi/pull/9)
+- Added Holiday Provider for Greece [\#10](https://github.com/azuyalabs/Yasumi/pull/10) ([sebdesign](https://github.com/sebdesign))
+- Added Holiday Provider for Germany [\#9](https://github.com/azuyalabs/Yasumi/pull/9) ([eaglefsd](https://github.com/eaglefsd))
 - Refactoring and cleanup of various unit tests
 
 **Resolved issues:**
@@ -18,7 +18,7 @@
 - Fixed issue for France as Good Friday and St. Stephens Day were defined as official holidays. These aren't national
   holidays and are only observed in the French departments Moselle, Bas-Rhin and Haut-Rhin. With this fix, these 
   holidays have been removed from the France Holiday providers and new providers for the departments Moselle, Bas-Rhin 
-  and Haut-Rhin are added. [\#17](https://github.com/azuyalabs/yasumi/issues/17)
+  and Haut-Rhin are added. [\#17](https://github.com/azuyalabs/yasumi/issues/17) ([R2c](https://github.com/R2c))
 - Fixed issue for Sweden as Midsummer's Day (st. Johns Day) was always calculated to be on June 24th. However the 
   holiday has always been celebrated on a Saturday (between June 20 and June 26).
 - Fixed base test for some Spain/LaRioja as some holidays have been established only in a particular year, causing
@@ -26,8 +26,8 @@
 - Running php-cs-fixer fix . --level=psr2 generated a massive list of changes, and broke unit tests. Added a custom
   .php_cs config file to adhere to the PSR-2 Coding Standards and resolve this issue. In addition the php-cs-fixer 
   command to has been added to composer to run the fixers and on the CI server (Travis), meaning PR’s will need to be 
-  PSR2 compliant before they can be merged. If any files do not pass, the build fails. [\#15](https://github.com/azuyalabs/yasumi/issues/15) [\#16](https://github.com/azuyalabs/Yasumi/pull/16)
-- Accidentally the timezone for Norway was set to "Europe/Copenhagen". This has been corrected to "Europe/Oslo". [\#11](https://github.com/azuyalabs/yasumi/issues/11) [\#12](https://github.com/azuyalabs/Yasumi/pull/12)
+  PSR2 compliant before they can be merged. If any files do not pass, the build fails. [\#15](https://github.com/azuyalabs/yasumi/issues/15) [\#16](https://github.com/azuyalabs/Yasumi/pull/16) ([badams](https://github.com/badams))
+- Accidentally the timezone for Norway was set to "Europe/Copenhagen". This has been corrected to "Europe/Oslo". [\#11](https://github.com/azuyalabs/yasumi/issues/11) [\#12](https://github.com/azuyalabs/Yasumi/pull/12) ([badams](https://github.com/badams))
 - Fixed issue for Finland as Midsummer's Day (st. Johns Day) was always calculated to be on June 24th. However since 
   1955, the holiday has always been celebrated on a Saturday (between June 20 and June 26).
 

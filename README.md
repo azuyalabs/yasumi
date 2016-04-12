@@ -5,8 +5,8 @@ Yasumi
 Yasumi (Japanese for 'Holiday') is an easy PHP library to help you calculate the dates and names of holidays and other
 special celebrations from various countries/states. Many services exist on the internet that provide holidays, however
 are either not free or offer only limited information. In addition, no complete PHP library seems to exist today
-that covers a wide range of holidays and countries, except maybe PEAR's Date_Holidays which unfortunately hasn't been
-updated for a while.
+that covers a wide range of holidays and countries, except maybe [PEAR's Date_Holidays](https://pear.php.net/package/Date_Holidays) 
+which unfortunately hasn't been updated for a long time.
 
 The goal of Yasumi is to be powerful while remaining lightweight, by utilizing PHP native classes wherever possible.
 Yasumi's calculation is provider-based (i.e. by country/state) so it is easy to add new holiday providers that calculate
@@ -36,7 +36,7 @@ Currently the following holiday providers are implemented:
 * Belgium
 * USA
 * Italy
-* France
+* France (including the departments Moselle, Bas-Rhin and Haut-Rhin)
 * Spain (including the autonomous communities Andalusia, Aragon, Asturias, Balearic Islands, Basque Country, 
          Canary Islands, Cantabria, Castile and León, Castilla-La Mancha, Ceuta, Community of Madrid, Extremadura, 
          Galicia, La Rioja, Melilla, Navarre, Region of Murcia, Valencian Community)
