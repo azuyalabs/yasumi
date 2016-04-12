@@ -14,6 +14,8 @@ namespace Yasumi;
 
 use DirectoryIterator;
 use InvalidArgumentException;
+use RecursiveIteratorIterator;
+use RecursiveDirectoryIterator;
 use RuntimeException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Provider\AbstractProvider;
@@ -39,6 +41,17 @@ class Yasumi
      * @var Translations
      */
     private static $globalTranslations;
+
+    /**
+     * Provider class to be ignored (Abstract, trait, other)
+     *
+     * @var array
+     */
+    private static $ignoredProvider = [
+        'AbstractProvider.php',
+        'CommonHolidays.php',
+        'ChristianHolidays.php',
+    ];
 
     /**
      * Create a new holiday provider instance.
@@ -104,19 +117,30 @@ class Yasumi
      */
     public static function getProviders()
     {
+        //Basic static cache
+        static $providers;
+        if ($providers !== null) {
+            return $providers;
+        }
+
         $extension = 'php';
         $providers = [];
-        foreach (new DirectoryIterator(__DIR__.'/Provider/') as $file) {
-            if ($file->isFile() === false || in_array($file->getBasename(), [
-                    'AbstractProvider.php',
-                    'CommonHolidays.php',
-                    'ChristianHolidays.php',
-                ]) || $file->getExtension() !== $extension
+        $filesIterator = new \RecursiveIteratorIterator(
+            new RecursiveDirectoryIterator(__DIR__.'/Provider/'),
+            RecursiveIteratorIterator::SELF_FIRST
+        );
+
+        foreach ($filesIterator as $file) {
+            if ($file->isFile() === false
+                || in_array($file->getBasename(), self::$ignoredProvider)
+                || $file->getExtension() !== $extension
             ) {
                 continue;
             }
 
-            $providers[] = $file->getBasename('.'.$extension);
+            $provider = preg_replace('#^.+/Provider/(.+)\.php$#', '$1', $file->getPathName());
+
+            $providers[] = $provider;
         }
 
         return (array) $providers;
