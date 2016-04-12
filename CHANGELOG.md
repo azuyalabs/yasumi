@@ -15,6 +15,7 @@
 
 **Resolved issues:**
 
+- Corrected incorrect pathname reference \*BaseTestCase.php files ("Test" -> "test)
 - Fixed issue for France as Good Friday and St. Stephens Day were defined as official holidays. These aren't national
   holidays and are only observed in the French departments Moselle, Bas-Rhin and Haut-Rhin. With this fix, these 
   holidays have been removed from the France Holiday providers and new providers for the departments Moselle, Bas-Rhin 

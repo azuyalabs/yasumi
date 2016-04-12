@@ -11,7 +11,7 @@
  */
 
 use Faker\Factory;
-use Yasumi\Tests\YasumiBase;
+use Yasumi\tests\YasumiBase;
 use Yasumi\Yasumi;
 
 /**

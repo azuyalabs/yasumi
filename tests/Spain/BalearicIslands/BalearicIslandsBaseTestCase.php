@@ -12,8 +12,8 @@
 
 namespace Yasumi\tests\Spain\BalearicIslands;
 
-use Yasumi\Tests\Spain\SpainBaseTestCase;
-use Yasumi\Tests\YasumiBase;
+use Yasumi\tests\Spain\SpainBaseTestCase;
+use Yasumi\tests\YasumiBase;
 
 /**
  * Base class for test cases of the Balearic Islands (Spain) holiday provider.

@@ -12,8 +12,8 @@
 
 namespace Yasumi\tests\Spain\Cantabria;
 
-use Yasumi\Tests\Spain\SpainBaseTestCase;
-use Yasumi\Tests\YasumiBase;
+use Yasumi\tests\Spain\SpainBaseTestCase;
+use Yasumi\tests\YasumiBase;
 
 /**
  * Base class for test cases of the Cantabria (Spain) holiday provider.

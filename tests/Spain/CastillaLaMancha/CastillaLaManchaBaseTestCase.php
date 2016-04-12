@@ -12,8 +12,8 @@
 
 namespace Yasumi\tests\Spain\CastillaLaMancha;
 
-use Yasumi\Tests\Spain\SpainBaseTestCase;
-use Yasumi\Tests\YasumiBase;
+use Yasumi\tests\Spain\SpainBaseTestCase;
+use Yasumi\tests\YasumiBase;
 
 /**
  * Base class for test cases of the Castilla-La Mancha (Spain) holiday provider.
