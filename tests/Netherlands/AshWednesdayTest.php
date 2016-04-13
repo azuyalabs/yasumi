@@ -41,6 +41,6 @@ class AshWednesdayTest extends NetherlandsBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['nl_NL' => 'Aswoensdag']);
+            [self::LOCALE => 'Aswoensdag']);
     }
 }

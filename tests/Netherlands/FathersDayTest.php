@@ -20,14 +20,27 @@ use DateTimeZone;
  */
 class FathersDayTest extends NetherlandsBaseTestCase
 {
+    /**
+     * The name of the holiday to be tested
+     */
+    const HOLIDAY = 'fathersDay';
 
     /**
-     * Tests Father's Day.
+     * Tests the holiday defined in this test.
      */
-    public function testFathersDay()
+    public function testHoliday()
     {
         $year = $this->generateRandomYear();
-        $this->assertHoliday(self::REGION, 'fathersDay', $year,
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("third sunday of june $year", new DateTimeZone(self::TIMEZONE)));
+    }
+
+    /**
+     * Tests the translated name of the holiday defined in this test.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            [self::LOCALE => 'Vaderdag']);
     }
 }
