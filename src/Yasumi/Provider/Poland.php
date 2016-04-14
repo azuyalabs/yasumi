@@ -51,28 +51,42 @@ class Poland extends AbstractProvider
     }
 
     /*
-     * Constitution Day
+     * Constitution Day.
+     *
+     * 3rd May National Holiday (also May 3rd Constitution Day; Polish: Święto Konstytucji 3 Maja) is a Polish national
+     * and public holiday that takes place on 3rd May. The holiday celebrates the declaration of the Constitution of
+     * May 3, 1791. Festivities date back to the Duchy of Warsaw early in the 19th century, but it became an official
+     * holiday only in 1919 in the Second Polish Republic.
      *
      * @link https://en.wikipedia.org/wiki/May_3rd_Constitution_Day
      */
     public function calculateConstitutionDay()
     {
-        if ($this->year >= 1791) {
-            $this->addHoliday(new Holiday('constitutionDay', ['pl_PL' => 'Święto Narodowe Trzeciego Maja'],
-                new DateTime("$this->year-5-3", new DateTimeZone($this->timezone)), $this->locale));
+        if ($this->year < 1791) {
+            return;
         }
+
+        $this->addHoliday(new Holiday('constitutionDay', ['pl_PL' => 'Święto Narodowe Trzeciego Maja'],
+                new DateTime("$this->year-5-3", new DateTimeZone($this->timezone)), $this->locale));
     }
 
     /*
-     * Independence Day
+     * Independence Day.
+     *
+     * National Independence Day (Polish: Narodowe Święto Niepodległości) is a national day in Poland celebrated on
+     * 11 November to commemorate the anniversary of the restoration of Poland's sovereignty as the Second Polish
+     * Republic in 1918, after 123 years of partition by the Russian Empire, the Kingdom of Prussia and the Habsburg
+     * Empire.
      *
      * @link https://en.wikipedia.org/wiki/National_Independence_Day_(Poland)
      */
     public function calculateIndependenceDay()
     {
-        if ($this->year >= 1918) {
-            $this->addHoliday(new Holiday('independenceDay', ['pl_PL' => 'Narodowe Święto Niepodległości'],
-                new DateTime("$this->year-11-11", new DateTimeZone($this->timezone)), $this->locale));
+        if ($this->year < 1918) {
+            return;
         }
+
+        $this->addHoliday(new Holiday('independenceDay', ['pl_PL' => 'Narodowe Święto Niepodległości'],
+                new DateTime("$this->year-11-11", new DateTimeZone($this->timezone)), $this->locale));
     }
 }

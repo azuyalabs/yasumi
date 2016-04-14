@@ -83,6 +83,6 @@ class PolandTest extends PolandBaseTestCase
      */
     protected function setUp()
     {
-        $this->year = $this->generateRandomYear(1836);
+        $this->year = $this->generateRandomYear(1918);
     }
 }
