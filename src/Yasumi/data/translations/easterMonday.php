@@ -23,5 +23,6 @@ return [
     'nb_NO' => 'Andre påskedag',
     'nl_BE' => 'Paasmaandag',
     'nl_NL' => 'Tweede Paasdag',
+    'pl_PL' => 'Poniedziałek Wielkanocny',
     'sv_SE' => 'annandag påsk',
 ];

@@ -20,4 +20,5 @@ return [
     'it_IT' => 'Assunzione di Maria Vergine',
     'nl_BE' => 'Onze Lieve Vrouw hemelvaart',
     'nl_NL' => 'Onze Lieve Vrouw hemelvaart',
+    'pl_PL' => 'Wniebowzięcie Najświętszej Marii Panny',
 ];
