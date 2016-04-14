@@ -5,6 +5,7 @@
 
 **Implemented enhancements:**
 
+- Added Holiday Provider for Poland [\#18](https://github.com/azuyalabs/Yasumi/pull/18) ([mpdx](https://github.com/mpdx))
 - Added translations ('fr_FR', 'fr_BE') for Belgium National day [\#864d250](https://github.com/azuyalabs/yasumi/commit/864d25097abbeedbee15bcc37702a34c36a5b696) ([R2c](https://github.com/R2c))
 - Added Holiday Provider for New Zealand [\#13](https://github.com/azuyalabs/Yasumi/pull/13) ([badams](https://github.com/badams))
 - Sorted all translations in the translation files alphabetically (descending). 
