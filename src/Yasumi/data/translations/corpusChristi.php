@@ -15,4 +15,5 @@ return [
     'de_DE' => 'Fronleichnam',
     'en_US' => 'Corpus Christi',
     'es_ES' => 'Corpus Christi',
+    'pl_PL' => 'Boże Ciało',
 ];

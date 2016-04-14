@@ -47,6 +47,7 @@ Currently the following holiday providers are implemented:
 * Germany
 * Greece
 * New Zealand
+* Poland
 
 Yasumi has the following filters to allow you to filter only certain type of holidays:
 
@@ -116,6 +117,7 @@ The tests are organized in some test suites to make testing a bit more easier:
 * Germany     : For separately testing the Germany Holiday Provider
 * Greece      : For separately testing the Greece Holiday Provider
 * New Zealand : For separately testing the New Zealand Holiday Provider
+* Poland      : For separately testing the Poland Holiday Provider
 
 
 Basic Usage

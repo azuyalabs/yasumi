@@ -20,5 +20,6 @@ return [
     'nb_NO' => 'Første påskedag',
     'nl_BE' => 'Eerste Paasdag',
     'nl_NL' => 'Eerste Paasdag',
+    'pl_PL' => 'Wielkanoc',
     'sv_SE' => 'påskdagen',
 ];
