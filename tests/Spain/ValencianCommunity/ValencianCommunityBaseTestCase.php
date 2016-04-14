@@ -12,8 +12,8 @@
 
 namespace Yasumi\tests\Spain\ValencianCommunity;
 
-use Yasumi\Tests\Spain\SpainBaseTestCase;
-use Yasumi\Tests\YasumiBase;
+use Yasumi\tests\Spain\SpainBaseTestCase;
+use Yasumi\tests\YasumiBase;
 
 /**
  * Base class for test cases of the Valencian Community (Spain) holiday provider.

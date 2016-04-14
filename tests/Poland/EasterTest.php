@@ -10,37 +10,37 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\tests\France;
+namespace Yasumi\tests\Poland;
 
 use DateTime;
 use DateTimeZone;
 
 /**
- * Class containing tests for Good Friday in France.
+ * Class containing tests for Easter in Poland.
  */
-class GoodFridayTest extends FranceBaseTestCase
+class EasterTest extends PolandBaseTestCase
 {
     /**
-     * The name of the holiday
+     * The name of the holiday to be tested
      */
-    const HOLIDAY = 'goodFriday';
+    const HOLIDAY = 'easter';
 
     /**
-     * Tests Good Friday.
+     * Tests the holiday defined in this test.
      */
-    public function testGoodFriday()
+    public function testHoliday()
     {
-        $year = 2008;
+        $year = 2020;
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-3-21", new DateTimeZone(self::TIMEZONE)));
+            new DateTime("$year-4-12", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**
-     * Tests translated name of Good Friday.
+     * Tests translated name of the holiday defined in this test.
      */
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['fr_FR' => 'Vendredi saint']);
+            ['pl_PL' => 'Wielkanoc']);
     }
 }

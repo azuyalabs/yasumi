@@ -11,7 +11,7 @@
  */
 
 use Faker\Factory;
-use Yasumi\Tests\YasumiBase;
+use Yasumi\tests\YasumiBase;
 use Yasumi\Yasumi;
 
 /**
@@ -41,6 +41,26 @@ class YasumiTest extends PHPUnit_Framework_TestCase
     public function testCreateWithInvalidProvider()
     {
         Yasumi::create('Mars');
+    }
+
+    /**
+     * Tests that an InvalidArgumentException is thrown in case we try to load a Trait as provider.
+     *
+     * @expectedException InvalidArgumentException
+     */
+    public function testCreateWithInvalidProviderBecauseItsATrait()
+    {
+        Yasumi::create('CommonHolidays');
+    }
+
+    /**
+     * Tests that an InvalidArgumentException is thrown in case we try to load the AbstractProvider as provider.
+     *
+     * @expectedException InvalidArgumentException
+     */
+    public function testCreateWithAbstractClassProvider()
+    {
+        Yasumi::create('AbstractProvider');
     }
 
     /**

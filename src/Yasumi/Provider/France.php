@@ -38,7 +38,6 @@ class France extends AbstractProvider
         }
 
         // Add Christian holidays
-        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale));
@@ -51,7 +50,6 @@ class France extends AbstractProvider
         }
 
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->stStephensDay($this->year, $this->timezone, $this->locale));
 
         // Calculate other holidays
         $this->calculateBastilleDay();

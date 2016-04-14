@@ -13,7 +13,7 @@
 namespace Yasumi\tests\USA;
 
 use PHPUnit_Framework_TestCase;
-use Yasumi\Tests\YasumiBase;
+use Yasumi\tests\YasumiBase;
 
 /**
  * Class USABaseTestCase.

@@ -23,5 +23,6 @@ return [
     'nb_NO' => 'Første juledag',
     'nl_BE' => 'Kerstmis',
     'nl_NL' => 'Kerstmis',
+    'pl_PL' => 'pierwszy dzień Bożego Narodzenia',
     'sv_SE' => 'juldagen',
 ];
