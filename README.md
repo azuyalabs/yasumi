@@ -38,8 +38,8 @@ Currently the following holiday providers are implemented:
 * Italy
 * France (including the departments Moselle, Bas-Rhin and Haut-Rhin)
 * Spain (including the autonomous communities Andalusia, Aragon, Asturias, Balearic Islands, Basque Country, 
-         Canary Islands, Cantabria, Castile and León, Castilla-La Mancha, Ceuta, Community of Madrid, Extremadura, 
-         Galicia, La Rioja, Melilla, Navarre, Region of Murcia, Valencian Community)
+  Canary Islands, Cantabria, Castile and León, Castilla-La Mancha, Ceuta, Community of Madrid, Extremadura, Galicia,
+  La Rioja, Melilla, Navarre, Region of Murcia, Valencian Community)
 * Denmark
 * Norway
 * Sweden
@@ -218,7 +218,13 @@ Contributing to Yasumi
 -------
 
 Contributions are encouraged and welcome; we are always happy to get feedback or even pull requests. 
-In order to keep the code consistent, please use the wonderful [php-cs-fixer](http://cs.sensiolabs.org/) .
+In order to keep the code consistent, please use the following command after your completed work:
+
+``` bash
+$ composer php-cs-fixer
+```
+
+This will check/correct all the code for the PSR-2 Coding Standard using the wonderful [php-cs-fixer](http://cs.sensiolabs.org/) .
 
 If you like to add a new Holiday Provider, the best starting point is to use on of the existing holiday providers. There
 are a few things to keep consider:
