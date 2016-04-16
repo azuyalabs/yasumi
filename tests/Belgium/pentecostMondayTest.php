@@ -13,40 +13,28 @@
 namespace Yasumi\tests\Belgium;
 
 use DateTime;
+use DateTimeZone;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing the day of the Assumption of Mary in Belgium.
+ * Class for testing Pentecost Monday in Belgium.
  */
-class AssumptionOfMaryTest extends BelgiumBaseTestCase implements YasumiTestCaseInterface
+class pentecostMondayTest extends BelgiumBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'assumptionOfMary';
+    const HOLIDAY = 'pentecostMonday';
 
     /**
-     * Tests the holiday defined in this test.
-     *
-     * @dataProvider HolidayDataProvider
-     *
-     * @param int      $year     the year for which the holiday defined in this test needs to be tested
-     * @param DateTime $expected the expected date
+     * Tests Pentecost Monday.
      */
-    public function testHoliday($year, $expected)
+    public function testHoliday()
     {
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
-    }
-
-    /**
-     * Returns a list of random test dates used for assertion of the holiday defined in this test
-     *
-     * @return array list of test dates for the holiday defined in this test
-     */
-    public function HolidayDataProvider()
-    {
-        return $this->generateRandomDates(8, 15, self::TIMEZONE);
+        $year = 2020;
+        $this->assertHoliday(self::REGION, 'pentecostMonday', $year,
+            new DateTime("$year-6-1", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**
@@ -55,7 +43,7 @@ class AssumptionOfMaryTest extends BelgiumBaseTestCase implements YasumiTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Onze Lieve Vrouw hemelvaart']);
+            [self::LOCALE => 'Pinkstermaandag']);
     }
 
     /**
