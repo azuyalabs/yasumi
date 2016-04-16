@@ -18,23 +18,23 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Summertime in the Netherlands.
+ * Class containing tests for Easter Monday in the Netherlands.
  */
-class SummertimeTest extends NetherlandsBaseTestCase implements YasumiTestCaseInterface
+class EasterMondayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'summerTime';
+    const HOLIDAY = 'easterMonday';
 
     /**
-     * Tests Summertime.
+     * Tests the holiday defined in this test.
      */
-    public function testSummertime()
+    public function testHoliday()
     {
-        $year = $this->generateRandomYear();
+        $year = 2016;
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("last sunday of march $year", new DateTimeZone(self::TIMEZONE)));
+            new DateTime("$year-3-28", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**
@@ -43,7 +43,7 @@ class SummertimeTest extends NetherlandsBaseTestCase implements YasumiTestCaseIn
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Zomertijd']);
+            [self::LOCALE => 'Tweede Paasdag']);
     }
 
     /**
@@ -51,6 +51,6 @@ class SummertimeTest extends NetherlandsBaseTestCase implements YasumiTestCaseIn
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_SEASON);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
     }
 }

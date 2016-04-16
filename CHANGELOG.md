@@ -5,21 +5,22 @@
 
 **Implemented enhancements:**
 
-- Added Holiday Provider for Poland [\#18](https://github.com/azuyalabs/Yasumi/pull/18) ([mpdx](https://github.com/mpdx))
+- Added Holiday Provider for Poland. [\#18](https://github.com/azuyalabs/Yasumi/pull/18) ([mpdx](https://github.com/mpdx))
+- Added Holiday Provider for New Zealand. [\#13](https://github.com/azuyalabs/Yasumi/pull/13) ([badams](https://github.com/badams))
+- Added Holiday Provider for Greece. [\#10](https://github.com/azuyalabs/Yasumi/pull/10) ([sebdesign](https://github.com/sebdesign))
+- Added Holiday Provider for Germany. [\#9](https://github.com/azuyalabs/Yasumi/pull/9) ([eaglefsd](https://github.com/eaglefsd))
 - Added translations ('fr_FR', 'fr_BE') for Belgium National day [\#864d250](https://github.com/azuyalabs/yasumi/commit/864d25097abbeedbee15bcc37702a34c36a5b696) ([R2c](https://github.com/R2c))
-- Added Holiday Provider for New Zealand [\#13](https://github.com/azuyalabs/Yasumi/pull/13) ([badams](https://github.com/badams))
 - Sorted all translations in the translation files alphabetically (descending). 
 - Added missing English translations ('en_US') for the Christian holidays 'Immaculate Conception', 'Maundy Thursday', 
   'St. Georges Day', 'St. John's Day', 'St. Josephs Day' and 'St. Stephens Day'. 
-- Added Holiday Provider for Greece [\#10](https://github.com/azuyalabs/Yasumi/pull/10) ([sebdesign](https://github.com/sebdesign))
-- Added Holiday Provider for Germany [\#9](https://github.com/azuyalabs/Yasumi/pull/9) ([eaglefsd](https://github.com/eaglefsd))
-- Refactoring and cleanup of various unit tests
+- Added Test Interface class to ensure the unit tests contain a some minimal assertions.
+- Refactoring and cleanup of various unit tests.
 
 **Resolved issues:**
 
 - Fixed the getProviders as it was not able to load Holiday Providers defined in (sub) regions [\#5879133](https://github.com/azuyalabs/yasumi/commit/58791330ccf5c13b1626885921534c32866b7faf) ([R2c](https://github.com/R2c))
 - Fixed issue that it was possible for the AbstractProvider class to be loaded as a Holiday Provider [\#9678bc4](https://github.com/azuyalabs/yasumi/commit/9678bc490e34980404ad5dc5b3d45a3c76a3ca0f) ([R2c](https://github.com/R2c))
-- Corrected incorrect pathname reference \*BaseTestCase.php files ("Test" -> "test)
+- Corrected incorrect pathname reference \*BaseTestCase.php files ("Test" -> "test).
 - Fixed issue for France as Good Friday and St. Stephens Day were defined as official holidays. These aren't national
   holidays and are only observed in the French departments Moselle, Bas-Rhin and Haut-Rhin. With this fix, these 
   holidays have been removed from the France Holiday providers and new providers for the departments Moselle, Bas-Rhin 

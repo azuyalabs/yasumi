@@ -17,21 +17,21 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Halloween in the Netherlands.
+ * Class for testing the second day ofChristmas in the Netherlands.
  */
-class HalloweenTest extends NetherlandsBaseTestCase implements YasumiTestCaseInterface
+class secondChristmasdayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'halloween';
+    const HOLIDAY = 'secondChristmasDay';
 
     /**
-     * Tests Halloween.
+     * Tests the holiday defined in this test.
      *
-     * @dataProvider HalloweenDataProvider
+     * @dataProvider HolidayDataProvider
      *
-     * @param int      $year     the year for which Halloween needs to be tested
+     * @param int      $year     the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
      */
     public function testHoliday($year, $expected)
@@ -40,13 +40,13 @@ class HalloweenTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
     }
 
     /**
-     * Returns a list of random test dates used for assertion of Halloween.
+     * Returns a list of random test dates used for assertion of the holiday defined in this test
      *
-     * @return array list of test dates for Halloween
+     * @return array list of test dates for the holiday defined in this test
      */
-    public function HalloweenDataProvider()
+    public function HolidayDataProvider()
     {
-        return $this->generateRandomDates(10, 31, self::TIMEZONE);
+        return $this->generateRandomDates(12, 26, self::TIMEZONE);
     }
 
     /**
@@ -55,7 +55,7 @@ class HalloweenTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Halloween']);
+            [self::LOCALE => 'Tweede Kerstdag']);
     }
 
     /**
@@ -63,6 +63,6 @@ class HalloweenTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OBSERVANCE);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
     }
 }

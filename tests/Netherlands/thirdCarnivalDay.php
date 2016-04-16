@@ -18,32 +18,24 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Ash Wednesday in the Netherlands.
+ * Class for testing Carnival in the Netherlands.
  */
-class AshWednesdayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInterface
+class carnivalDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInterface
 {
+
     /**
-     * The name of the holiday
+     * The name of the holiday to be tested
      */
-    const HOLIDAY = 'ashWednesday';
+    const HOLIDAY = 'thirdCarnivalDay';
 
     /**
      * Tests the holiday defined in this test.
      */
     public function testHoliday()
     {
-        $year = 1999;
+        $year = 2015;
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-2-17", new DateTimeZone(self::TIMEZONE)));
-    }
-
-    /**
-     * Tests translated name of Ash Wednesday.
-     */
-    public function testTranslation()
-    {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Aswoensdag']);
     }
 
     /**
@@ -53,4 +45,14 @@ class AshWednesdayTest extends NetherlandsBaseTestCase implements YasumiTestCase
     {
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OBSERVANCE);
     }
+
+    /**
+     * Tests the translated name of the holiday defined in this test.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            [self::LOCALE => 'Carnaval']);
+    }
+
 }
