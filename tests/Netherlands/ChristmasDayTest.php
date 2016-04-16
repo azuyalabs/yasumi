@@ -65,5 +65,4 @@ class ChristmasDayTest extends NetherlandsBaseTestCase implements YasumiTestCase
     {
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
     }
-
 }

@@ -54,5 +54,4 @@ class carnivalDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseI
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
             [self::LOCALE => 'Carnaval']);
     }
-
 }

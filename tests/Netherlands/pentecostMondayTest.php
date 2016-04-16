@@ -20,7 +20,7 @@ use Yasumi\tests\YasumiTestCaseInterface;
 /**
  * Class for testing Pentecost in the Netherlands.
  */
-class PentecostMondayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInterface
+class pentecostMondayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday to be tested

@@ -53,5 +53,4 @@ class PentecostTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
     {
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
     }
-
 }
