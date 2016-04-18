@@ -12,7 +12,6 @@
 
 namespace Yasumi;
 
-use DirectoryIterator;
 use InvalidArgumentException;
 use RecursiveIteratorIterator;
 use RecursiveDirectoryIterator;
@@ -108,6 +107,16 @@ class Yasumi
     public static function getAvailableLocales()
     {
         return require __DIR__.'/data/locales.php';
+    }
+
+    /**
+     * @param $provider
+     *
+     * @return bool
+     */
+    public static function isProvider($provider)
+    {
+        return in_array($provider, self::getProviders());
     }
 
     /**
