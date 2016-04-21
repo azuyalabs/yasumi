@@ -10,7 +10,7 @@
  *  @author Dorian Neto <doriansampaioneto@gmail.com>
  */
 
-namespace Yasumi\Tests\Brazil;
+namespace Yasumi\tests\Brazil;
 
 use DateTime;
 use DateInterval;

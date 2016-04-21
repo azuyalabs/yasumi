@@ -10,10 +10,10 @@
  *  @author Dorian Neto <doriansampaioneto@gmail.com>
  */
 
-namespace Yasumi\Tests\Brazil;
+namespace Yasumi\tests\Brazil;
 
 use PHPUnit_Framework_TestCase;
-use Yasumi\Tests\YasumiBase;
+use Yasumi\tests\YasumiBase;
 
 /**
  * Class BrazilBaseTestCase.
