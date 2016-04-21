@@ -7,17 +7,19 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\Netherlands;
+namespace Yasumi\tests\Netherlands;
 
 use DateTime;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class containing tests for International Workers' Day (i.e. Labour Day) in the Netherlands.
  */
-class InternationalWorkersDayTest extends NetherlandsBaseTestCase
+class InternationalWorkersDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -38,15 +40,6 @@ class InternationalWorkersDayTest extends NetherlandsBaseTestCase
     }
 
     /**
-     * Tests translated name of International Workers' Day.
-     */
-    public function testTranslatedInternationalWorkersDay()
-    {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['nl_NL' => 'Dag van de arbeid']);
-    }
-
-    /**
      * Returns a list of random test dates used for assertion of International Workers' Day.
      *
      * @return array list of test dates for International Workers' Day
@@ -54,5 +47,22 @@ class InternationalWorkersDayTest extends NetherlandsBaseTestCase
     public function InternationalWorkersDayDataProvider()
     {
         return $this->generateRandomDates(5, 1, self::TIMEZONE);
+    }
+
+    /**
+     * Tests the translated name of the holiday defined in this test.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            [self::LOCALE => 'Dag van de arbeid']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OTHER);
     }
 }

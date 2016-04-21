@@ -12,12 +12,14 @@
 
 // Translation for Ascension Day
 return [
-    'en_US' => 'Ascension Day',
-    'nl_NL' => 'Hemelvaart',
-    'nl_BE' => 'Hemelvaart',
-    'fr_FR' => 'Ascension',
     'da_DK' => 'Kristi Himmelfartsdag',
+    'de_DE' => 'Christi Himmelfahrt',
+    'el_GR' => 'Ανάληψη του Χριστού',
+    'en_US' => 'Ascension Day',
+    'fi_FI' => 'Helatorstai',
+    'fr_FR' => 'Ascension',
     'nb_NO' => 'Kristi himmelfartsdag',
+    'nl_BE' => 'Hemelvaart',
+    'nl_NL' => 'Hemelvaart',
     'sv_SE' => 'Kristi himmelsfärds dag',
-    'fi_FI' => 'Helatorstai'
 ];

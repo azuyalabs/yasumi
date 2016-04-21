@@ -7,18 +7,20 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\Netherlands;
+namespace Yasumi\tests\Netherlands;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing Commemoration Day in the Netherlands.
  */
-class CommemorationDayTest extends NetherlandsBaseTestCase
+class CommemorationDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -47,5 +49,23 @@ class CommemorationDayTest extends NetherlandsBaseTestCase
         $year = 2105;
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-5-4", new DateTimeZone(self::TIMEZONE)));
+    }
+
+    /**
+     * Tests the translated name of the holiday defined in this test.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Dodenherdenking']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_OBSERVANCE);
     }
 }

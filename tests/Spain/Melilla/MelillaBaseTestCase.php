@@ -10,10 +10,10 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\Spain\Melilla;
+namespace Yasumi\tests\Spain\Melilla;
 
-use Yasumi\Tests\Spain\SpainBaseTestCase;
-use Yasumi\Tests\YasumiBase;
+use Yasumi\tests\Spain\SpainBaseTestCase;
+use Yasumi\tests\YasumiBase;
 
 /**
  * Base class for test cases of the Melilla (Spain) holiday provider.

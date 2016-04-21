@@ -19,7 +19,7 @@ use Yasumi\Tests\Denmark\DenmarkBaseTestCase;
 /**
  * Class for testing Great Prayer Day in Denmark (Spain).
  */
-class DenmarkDayTest extends DenmarkBaseTestCase
+class GreatPrayerDayTest extends DenmarkBaseTestCase
 {
     /**
      * The name of the holiday to be tested

@@ -23,8 +23,7 @@ use Yasumi\TranslationsInterface;
 use Yasumi\Yasumi;
 
 /**
- * Class AbstractProvider
- * @package Yasumi\Provider
+ * Class AbstractProvider.
  */
 abstract class AbstractProvider implements ProviderInterface, Countable, IteratorAggregate
 {
@@ -42,7 +41,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     protected $locale;
     /**
      * @var array list of the days of the week (the index of the weekdays) that are considered weekend days. Defaults
-     *      to Sunday (0) and Saturday (6), as this is globally the common standard. (0 = Sunday, 1 = Monday, etc.)
+     *            to Sunday (0) and Saturday (6), as this is globally the common standard. (0 = Sunday, 1 = Monday, etc.)
      */
     protected $weekend_days = [0, 6];
     /**
@@ -65,17 +64,15 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     {
         $this->clearHolidays();
 
-        $this->year               = $year ?: date('Y');
-        $this->locale             = $locale;
+        $this->year = $year ?: date('Y');
+        $this->locale = $locale;
         $this->globalTranslations = $globalTranslations;
 
         $this->initialize();
     }
 
     /**
-     * Clear all holidays
-     *
-     * @return void
+     * Clear all holidays.
      */
     protected function clearHolidays()
     {
@@ -97,7 +94,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
             return 0;
         }
 
-        return ($dateA < $dateB) ? - 1 : 1;
+        return ($dateA < $dateB) ? -1 : 1;
     }
 
     /**
@@ -105,7 +102,6 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @param Holiday $holiday Holiday instance (representing a holiday) to be added to the internal list
      *                         of holidays of this country.
-     *
      */
     public function addHoliday(Holiday $holiday)
     {
@@ -125,7 +121,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @param mixed $date a Yasumi\Holiday or DateTime object
      *
-     * @return boolean true if date represents a working day, otherwise false
+     * @return bool true if date represents a working day, otherwise false
      */
     public function isWorkingDay($date)
     {
@@ -149,7 +145,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @param mixed $date a Yasumi\Holiday or DateTime object
      *
-     * @return boolean true if date represents a holiday, otherwise false
+     * @return bool true if date represents a holiday, otherwise false
      */
     public function isHoliday($date)
     {
@@ -166,7 +162,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         }
 
         // If given date is a Yasumi\Holiday object
-        if ( ! is_null($date) && in_array($date, $this->holidays)) {
+        if (!is_null($date) && in_array($date, $this->holidays)) {
             return true;
         }
 
@@ -191,6 +187,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * @param string $shortName short name of the holiday
      *
      * @throws InvalidArgumentException when the given name is blank or empty.
+     *
      * @return string the date of the requested holiday
      */
     public function whenIs($shortName)
@@ -206,6 +203,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * @param $shortName string the name of the holiday to be checked.
      *
      * @throws InvalidArgumentException An InvalidArgumentException is thrown if the given holiday parameter is empty.
+     *
      * @return true upon success, otherwise an InvalidArgumentException is thrown
      */
     protected function isHolidayNameNotEmpty($shortName)
@@ -226,6 +224,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * @param string $shortName short name of the holiday
      *
      * @throws InvalidArgumentException when the given name is blank or empty.
+     *
      * @return int the index of the weekdays of the requested holiday (0 = Sunday, 1 = Monday, etc.)
      */
     public function whatWeekDayIs($shortName)
@@ -236,7 +235,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     }
 
     /**
-     * Returns the number of defined holidays (for the given country and the given year)
+     * Returns the number of defined holidays (for the given country and the given year).
      *
      * @return int number of holidays
      */
@@ -276,7 +275,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     }
 
     /**
-     * Returns the current year set for this Holiday calendar
+     * Returns the current year set for this Holiday calendar.
      *
      * @return int the year set for this Holiday calendar
      */
@@ -300,12 +299,13 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     }
 
     /**
-     * Determines the date of the given holiday for another year
+     * Determines the date of the given holiday for another year.
      *
      * @param int    $year      the year to get the holiday date for
      * @param string $shortName the name of the holiday for which the date needs to be fetched
      *
      * @throws InvalidArgumentException when the given name is blank or empty.
+     *
      * @return Holiday a Holiday instance for the given holiday and year
      */
     private function anotherTime($year, $shortName)
@@ -324,6 +324,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * @param $shortName string the name of the holiday.
      *
      * @throws InvalidArgumentException when the given name is blank or empty.
+     *
      * @return Holiday a Holiday instance for the given holiday
      */
     public function getHoliday($shortName)

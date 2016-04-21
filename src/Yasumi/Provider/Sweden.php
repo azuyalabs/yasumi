@@ -41,7 +41,7 @@ class Sweden extends AbstractProvider
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->stJohnsDay($this->year, $this->timezone, $this->locale));
+        $this->calculatestJohnsDay(); // aka Midsummer's Day
         $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale, Holiday::TYPE_NATIONAL));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
@@ -49,6 +49,37 @@ class Sweden extends AbstractProvider
 
         // Calculate other holidays
         $this->calculateNationalDay();
+    }
+
+    /**
+     * St. John's Day / Midsummer.
+     *
+     * Midsummer, also known as St John's Day, is the period of time centred upon the summer solstice, and more
+     * specifically the Northern European celebrations that accompany the actual solstice or take place on a day
+     * between June 19 and June 25 and the preceding evening. The exact dates vary between different cultures.
+     * The Christian Church designated June 24 as the feast day of the early Christian martyr St John the Baptist, and
+     * the observance of St John's Day begins the evening before, known as St John's Eve.
+     *
+     * In Sweden the holiday has always been on a Saturday (between June 20 and June 26). Many of the celebrations of
+     * midsummer take place on midsummer eve, when many workplaces are closed and shops must close their doors at noon.
+     *
+     * @link https://en.wikipedia.org/wiki/Midsummer#Sweden
+     */
+    public function calculatestJohnsDay()
+    {
+        $translation = ['sv_SE' => 'midsommardagen'];
+        $shortName = 'stJohnsDay';
+        $date = new DateTime("$this->year-6-24", new DateTimeZone($this->timezone)); // Default date
+
+        // Check between the 20th and 26th day which one is a Saturday
+        for ($d = 20; $d <= 26; ++$d) {
+            $date->setDate($this->year, 6, $d);
+            if ($date->format('l') === 'Saturday') {
+                break;
+            }
+        }
+
+        $this->addHoliday(new Holiday($shortName, $translation, $date, $this->locale));
     }
 
     /*

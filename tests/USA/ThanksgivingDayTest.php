@@ -10,7 +10,7 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\USA;
+namespace Yasumi\tests\USA;
 
 use DateTime;
 use DateTimeZone;
@@ -18,7 +18,7 @@ use DateTimeZone;
 /**
  * Class for testing Thanksgiving Day in the USA.
  */
-class ThanksgivingDayDayTest extends USABaseTestCase
+class ThanksgivingDayTest extends USABaseTestCase
 {
     /**
      * The name of the holiday

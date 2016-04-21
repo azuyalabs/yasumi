@@ -12,17 +12,19 @@
 
 // Translation for New Year's Day
 return [
-    'en_US' => 'New Year\'s Day',
-    'nl_NL' => 'Nieuwjaar',
-    'nl_BE' => 'Nieuwjaar',
-    'pl_PL' => 'Nowy Rok',
-    'ja_JP' => '元日',
-    'it_IT' => 'Capodanno',
-    'fr_FR' => 'Jour de l\'An',
-    'es_ES' => 'Año Nuevo',
     'da_DK' => 'Nytårsdag',
-    'nb_NO' => 'Første nyttårsdag',
-    'sv_SE' => 'nyårsdagen',
+    'de_DE' => 'Neujahr',
+    'el_GR' => 'Πρωτοχρονιά',
+    'en_US' => 'New Year\'s Day',
+    'es_ES' => 'Año Nuevo',
     'fi_FI' => 'Uudenvuodenpäivä',
+    'fr_FR' => 'Jour de l\'An',
+    'it_IT' => 'Capodanno',
+    'ja_JP' => '元日',
+    'nb_NO' => 'Første nyttårsdag',
+    'nl_BE' => 'Nieuwjaar',
+    'nl_NL' => 'Nieuwjaar',
+    'pl_PL' => 'Nowy Rok',
+    'sv_SE' => 'nyårsdagen',
     'pt_BR' => 'Ano novo'
 ];

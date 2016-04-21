@@ -9,12 +9,11 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
+
 namespace Yasumi;
 
 /**
- * Interface TranslationsInterface
- *
- * @package Yasumi
+ * Interface TranslationsInterface.
  */
 interface TranslationsInterface
 {
@@ -26,14 +25,14 @@ interface TranslationsInterface
      *
      * @return string|null translated holiday name
      */
-    function getTranslation($shortName, $locale);
+    public function getTranslation($shortName, $locale);
 
     /**
      * Returns all available translations for holiday.
      *
-     * @param   string $shortName holiday short name
+     * @param string $shortName holiday short name
      *
      * @return array holiday name translations ['<locale>' => '<translation>', ...]
      */
-    function getTranslations($shortName);
+    public function getTranslations($shortName);
 }

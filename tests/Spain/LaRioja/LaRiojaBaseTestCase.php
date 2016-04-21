@@ -10,10 +10,10 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\Spain\LaRioja;
+namespace Yasumi\tests\Spain\LaRioja;
 
-use Yasumi\Tests\Spain\SpainBaseTestCase;
-use Yasumi\Tests\YasumiBase;
+use Yasumi\tests\Spain\SpainBaseTestCase;
+use Yasumi\tests\YasumiBase;
 
 /**
  * Base class for test cases of the La Rioja (Spain) holiday provider.

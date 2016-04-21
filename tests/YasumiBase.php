@@ -10,9 +10,10 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests;
+namespace Yasumi\tests;
 
 use DateTime;
+use DateTimeZone;
 use Faker\Factory as Faker;
 use Yasumi\Filters\BankHolidaysFilter;
 use Yasumi\Filters\ObservedHolidaysFilter;
@@ -141,6 +142,28 @@ trait YasumiBase
     }
 
     /**
+     * Asserts that the expected type is indeed the associated type of the given holiday
+     *
+     * @param string $provider  the holiday provider (i.e. country/region) for which the holiday need to be tested
+     * @param string $shortName string the short name of the holiday to be checked against
+     * @param int    $year      holiday calendar year
+     * @param string $type      the type to be checked against
+     */
+    public function assertHolidayType($provider, $shortName, $year, $type)
+    {
+        $holidays = Yasumi::create($provider, $year);
+        $holiday  = $holidays->getHoliday($shortName);
+
+        $this->assertInstanceOf('Yasumi\Provider\\' . str_replace('/', '\\', $provider), $holidays);
+        $this->assertInstanceOf('Yasumi\Holiday', $holiday);
+        $this->assertTrue(isset($holiday));
+        $this->assertEquals($type, $holiday->getType());
+
+        unset($holiday, $holidays);
+    }
+
+
+    /**
      * Returns a list of random test dates used for assertion of holidays.
      *
      * @param int    $month      month (number) for which the test date needs to be generated
@@ -156,7 +179,7 @@ trait YasumiBase
         $data = [];
         for ($y = 1; $y <= $iterations; $y ++) {
             $year   = Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
-            $data[] = [$year, new DateTime("$year-$month-$day", new \DateTimeZone($timezone))];
+            $data[] = [$year, new DateTime("$year-$month-$day", new DateTimeZone($timezone))];
         }
 
         return $data;

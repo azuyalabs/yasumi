@@ -7,18 +7,25 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\Netherlands;
+namespace Yasumi\tests\Netherlands;
 
 use DateTime;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing Epiphany in the Netherlands.
  */
-class EpiphanyTest extends NetherlandsBaseTestCase
+class EpiphanyTest extends NetherlandsBaseTestCase implements YasumiTestCaseInterface
 {
+    /**
+     * The name of the holiday to be tested
+     */
+    const HOLIDAY = 'epiphany';
+
     /**
      * Tests Epiphany.
      *
@@ -29,7 +36,7 @@ class EpiphanyTest extends NetherlandsBaseTestCase
      */
     public function testEpiphany($year, $expected)
     {
-        $this->assertHoliday(self::REGION, 'epiphany', $year, $expected);
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
@@ -40,5 +47,22 @@ class EpiphanyTest extends NetherlandsBaseTestCase
     public function EpiphanyDataProvider()
     {
         return $this->generateRandomDates(1, 6, self::TIMEZONE);
+    }
+
+    /**
+     * Tests the translated name of the holiday defined in this test.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            [self::LOCALE => 'Drie Koningen']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OTHER);
     }
 }

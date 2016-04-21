@@ -10,15 +10,20 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\Netherlands;
+namespace Yasumi\tests\Germany;
 
 use DateTime;
 
 /**
- * Class for testing Christmas in the Netherlands.
+ * Class for testing Christmas in Germany.
  */
-class ChristmasTest extends NetherlandsBaseTestCase
+class ChristmasTest extends GermanyBaseTestCase
 {
+    /**
+     * The name of the holiday
+     */
+    const HOLIDAY = 'christmasDay';
+
     /**
      * Tests Christmas Day.
      *
@@ -29,7 +34,7 @@ class ChristmasTest extends NetherlandsBaseTestCase
      */
     public function testChristmasDay($year, $expected)
     {
-        $this->assertHoliday(self::REGION, 'christmasDay', $year, $expected);
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
@@ -43,25 +48,11 @@ class ChristmasTest extends NetherlandsBaseTestCase
     }
 
     /**
-     * Tests Second Christmas Day.
-     *
-     * @dataProvider SecondChristmasDayDataProvider
-     *
-     * @param int      $year     the year for which Second Christmas Day needs to be tested
-     * @param DateTime $expected the expected date
+     * Tests translated name of Christmas Day.
      */
-    public function testSecondChristmasDay($year, $expected)
+    public function testTranslation()
     {
-        $this->assertHoliday(self::REGION, 'secondChristmasDay', $year, $expected);
-    }
-
-    /**
-     * Returns a list of random test dates used for assertion of Second Christmas Day.
-     *
-     * @return array list of test dates for Second Christmas Day
-     */
-    public function SecondChristmasDayDataProvider()
-    {
-        return $this->generateRandomDates(12, 26, self::TIMEZONE);
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            [self::LOCALE => '1. Weihnachtsfeiertag']);
     }
 }

@@ -89,6 +89,26 @@
             <directory suffix="Test.php">./tests/Finland</directory>
         </testsuite>
 
+        <!-- Test Suite for holidays in Germany -->
+        <testsuite name="Germany">
+            <directory suffix="Test.php">./tests/Germany</directory>
+        </testsuite>
+
+        <!-- Test Suite for holidays in Greece -->
+        <testsuite name="Greece">
+            <directory suffix="Test.php">./tests/Greece</directory>
+        </testsuite>
+
+        <!-- Test Suite for holidays in New Zealand -->
+        <testsuite name="NewZealand">
+            <directory suffix="Test.php">./tests/NewZealand</directory>
+        </testsuite>
+
+        <!-- Test Suite for holidays in Poland -->
+        <testsuite name="Poland">
+            <directory suffix="Test.php">./tests/Poland</directory>
+        </testsuite>
+
     </testsuites>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">

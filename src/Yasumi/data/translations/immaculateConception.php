@@ -10,8 +10,10 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-// Translation for the day of Immaculate Conception
+// Translation for Immaculate Conception
 return [
+    'el_GR' => 'Ευαγγελισμός της Θεοτόκου',
+    'en_US' => 'Immaculate Conception',
+    'es_ES' => 'Inmaculada Concepción',
     'it_IT' => 'Immacolata Concezione',
-    'es_ES' => 'Inmaculada Concepción'
 ];

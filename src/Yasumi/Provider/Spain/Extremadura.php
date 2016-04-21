@@ -9,6 +9,7 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
+
 namespace Yasumi\Provider\Spain;
 
 use DateTime;
@@ -26,7 +27,6 @@ use Yasumi\Provider\Spain;
  * east, it borders Castile–La Mancha (provinces of Toledo and Ciudad Real).
  *
  * @link http://en.wikipedia.org/wiki/Extremadura
- *
  */
 class Extremadura extends Spain
 {

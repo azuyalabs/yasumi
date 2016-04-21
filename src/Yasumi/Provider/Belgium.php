@@ -9,6 +9,7 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
+
 namespace Yasumi\Provider;
 
 use DateTime;
@@ -50,9 +51,11 @@ class Belgium extends AbstractProvider
          * Belgian National Day is the National Day of Belgium celebrated on 21 July each year.
          */
         $this->addHoliday(new Holiday('nationalDay', [
+            'fr_FR' => 'Fête nationale',
+            'fr_BE' => 'Fête nationale',
             'en_US' => 'Belgian National Day',
             'nl_NL' => 'Nationale feestdag',
-            'nl_BE' => 'Nationale feestdag'
+            'nl_BE' => 'Nationale feestdag',
         ], new DateTime("$this->year-7-21", new DateTimeZone($this->timezone)), $this->locale));
     }
 }

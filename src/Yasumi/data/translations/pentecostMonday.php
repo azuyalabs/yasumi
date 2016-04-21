@@ -10,12 +10,14 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-// Translation for Pentecost Monday
+// Translation for Whitmonday
 return [
-    'en_US' => 'Whitmonday',
-    'nl_NL' => 'Tweede Pinksterdag',
-    'nl_BE' => 'Pinkstermaandag',
-    'fr_FR' => 'Lundi de Pentecôte',
     'da_DK' => '2. Pinsedag',
-    'nb_NO' => 'Andre pinsedag'
+    'de_DE' => 'Pfingstmontag',
+    'el_GR' => 'Αγίου Πνεύματος',
+    'en_US' => 'Whitmonday',
+    'fr_FR' => 'Lundi de Pentecôte',
+    'nb_NO' => 'Andre pinsedag',
+    'nl_BE' => 'Pinkstermaandag',
+    'nl_NL' => 'Tweede Pinksterdag',
 ];

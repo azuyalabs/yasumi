@@ -10,7 +10,7 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\Spain\Extremadura;
+namespace Yasumi\tests\Spain\Extremadura;
 
 use DateTime;
 use DateTimeZone;

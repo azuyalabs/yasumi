@@ -1,5 +1,4 @@
 <?php
-
 /**
  *  This file is part of the Yasumi package.
  *
@@ -10,6 +9,7 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
+
 namespace Yasumi\Provider;
 
 use DateInterval;
@@ -44,29 +44,6 @@ trait ChristianHolidays
     public function easter($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
         return new Holiday('easter', [], $easter = $this->calculateEaster($year, $timezone), $locale, $type);
-    }
-
-    /**
-     * Calculates the date for Easter.
-     *
-     * Easter is a festival and holiday celebrating the resurrection of Jesus Christ from the dead. Easter is celebrated
-     * on a date based on a certain number of days after March 21st.
-     *
-     * This function uses the standard PHP 'easter_days'.
-     *
-     * @see easter_days
-     *
-     * @param int    $year     the year for which Easter needs to be calculated
-     * @param string $timezone the timezone in which Easter is celebrated
-     *
-     * @return \DateTime date of Easter
-     */
-    protected function calculateEaster($year, $timezone)
-    {
-        $easter = new DateTime("$year-3-21", new DateTimeZone($timezone));
-        $easter->add(new DateInterval('P' . \easter_days($year) . 'D'));
-
-        return $easter;
     }
 
     /**
@@ -224,7 +201,7 @@ trait ChristianHolidays
     }
 
     /**
-     * Second Christmas Day / Boxing Day
+     * Second Christmas Day / Boxing Day.
      *
      * Christmas or Christmas Day (Old English: Crīstesmæsse, meaning "Christ's Mass") is an annual festival
      * commemorating the birth of Jesus Christ, observed most commonly on December 25 as a religious and cultural
@@ -408,7 +385,7 @@ trait ChristianHolidays
     }
 
     /**
-     * St. Joseph's Day
+     * St. Joseph's Day.
      *
      * Saint Joseph's Day, March 19, the Feast of St. Joseph is in Western Christianity the principal feast day of Saint
      * Joseph, husband of the Blessed Virgin Mary. He is the foster-father of Jesus Christ. March 19 was dedicated to
@@ -432,7 +409,7 @@ trait ChristianHolidays
     }
 
     /**
-     * Maundy Thursday
+     * Maundy Thursday.
      *
      * Maundy Thursday (also known as Holy Thursday, Covenant Thursday, Great and Holy Thursday, Sheer Thursday, and
      * Thursday of Mysteries) is the Christian holy day falling on the Thursday before Easter. It commemorates the
@@ -456,7 +433,7 @@ trait ChristianHolidays
     }
 
     /**
-     * St. George's Day
+     * St. George's Day.
      *
      * Saint George's Day is the feast day of Saint George. It is celebrated by various Christian Churches and by the
      * several nations, kingdoms, countries, and cities of which Saint George is the patron saint. Saint George's Day is
@@ -500,5 +477,52 @@ trait ChristianHolidays
     public function stJohnsDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
         return new Holiday('stJohnsDay', [], new DateTime("$year-06-24", new DateTimeZone($timezone)), $locale, $type);
+    }
+
+    /**
+     * Annunciation.
+     *
+     * The Annunciation, also referred to as the Annunciation to the Blessed Virgin Mary, the Annunciation of Our
+     * Lady or the Annunciation of the Lord, is the Christian celebration of the announcement by the angel Gabriel to
+     * the Virgin Mary that she would conceive and become the mother of Jesus, the Son of God, marking his Incarnation.
+     * Many Christians observe this event with the Feast of the Annunciation on 25 March, an approximation of the
+     * northern vernal equinox nine full months before Christmas, the ceremonial birthday of Jesus.
+     *
+     * @link https://en.wikipedia.org/wiki/Annunciation
+     *
+     * @param int    $year     the year for which the Annunciation needs to be created
+     * @param string $timezone the timezone in which the Annunciation is celebrated
+     * @param string $locale   the locale for which the Annunciation need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
+     *
+     * @return \Yasumi\Holiday
+     */
+    public function annunciation($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
+    {
+        return new Holiday('annunciation', [], new DateTime("$year-03-25", new DateTimeZone($timezone)), $locale, $type);
+    }
+
+    /**
+     * Calculates the date for Easter.
+     *
+     * Easter is a festival and holiday celebrating the resurrection of Jesus Christ from the dead. Easter is celebrated
+     * on a date based on a certain number of days after March 21st.
+     *
+     * This function uses the standard PHP 'easter_days'.
+     *
+     * @see easter_days
+     *
+     * @param int    $year     the year for which Easter needs to be calculated
+     * @param string $timezone the timezone in which Easter is celebrated
+     *
+     * @return \DateTime date of Easter
+     */
+    protected function calculateEaster($year, $timezone)
+    {
+        $easter = new DateTime("$year-3-21", new DateTimeZone($timezone));
+        $easter->add(new DateInterval('P'.\easter_days($year).'D'));
+
+        return $easter;
     }
 }

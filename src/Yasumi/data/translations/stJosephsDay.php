@@ -12,5 +12,6 @@
 
 // Translation for St. Joseph's Day
 return [
-    'es_ES' => 'San José'
+    'en_US' => 'St. Joseph\'s Day',
+    'es_ES' => 'San José',
 ];

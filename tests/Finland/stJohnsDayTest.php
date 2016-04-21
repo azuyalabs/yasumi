@@ -10,41 +10,62 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\Finland;
+namespace Yasumi\tests\Finland;
 
 use DateTime;
+use DateTimeZone;
+use Yasumi\Yasumi;
 
 /**
  * Class for testing St. John's Day / Midsummer's Day in Finland.
+ *
+ * Since 1955, the holiday has always been on a Saturday (between June 20 and June 26). Earlier it was always on
+ * June 24.
  */
 class stJohnsDayTest extends FinlandBaseTestCase
 {
+
+    /**
+     * The year in which the holiday was adjusted
+     */
+    const ADJUSTMENT_YEAR = 1955;
+
     /**
      * The name of the holiday to be tested
      */
     const HOLIDAY = 'stJohnsDay';
 
     /**
-     * Tests the holiday defined in this test.
-     *
-     * @dataProvider HolidayDataProvider
-     *
-     * @param int      $year     the year for which the holiday defined in this test needs to be tested
-     * @param DateTime $expected the expected date
+     * Tests the holiday before it was adjusted.
      */
-    public function testHoliday($year, $expected)
+    public function testHolidayBeforeAdjustment()
     {
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
+        $year = 1944;
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
+            new DateTime("$year-6-24", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**
-     * Returns a list of random test dates used for assertion of the holiday defined in this test
-     *
-     * @return array list of test dates for the holiday defined in this test
+     * Tests the holiday before it was adjusted.
      */
-    public function HolidayDataProvider()
+    public function testHolidayAfterAdjustment()
     {
-        return $this->generateRandomDates(6, 24, self::TIMEZONE);
+        $year = $this->generateRandomYear(self::ADJUSTMENT_YEAR);
+
+        $holidays = Yasumi::create(self::REGION, $year);
+        $holiday  = $holidays->getHoliday(self::HOLIDAY);
+
+        // Some basic assertions
+        $this->assertInstanceOf('Yasumi\Provider\\' . str_replace('/', '\\', self::REGION), $holidays);
+        $this->assertInstanceOf('Yasumi\Holiday', $holiday);
+        $this->assertTrue(isset($holiday));
+
+        // Holiday specific assertions
+        $this->assertEquals('Saturday', $holiday->format('l'));
+        $this->assertGreaterThanOrEqual(20, $holiday->format('j'));
+        $this->assertLessThanOrEqual(26, $holiday->format('j'));
+
+        unset($holiday, $holidays);
     }
 
     /**

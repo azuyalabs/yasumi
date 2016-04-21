@@ -12,7 +12,8 @@
 
 // Translation for Mother's Day
 return [
+    'el_GR' => 'Ημέρα της μητέρας',
     'en_US' => 'Mother\'s Day',
-    'nl_NL' => 'Moederdag',
     'nl_BE' => 'Moederdag',
+    'nl_NL' => 'Moederdag',
 ];

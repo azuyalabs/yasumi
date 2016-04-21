@@ -2,3 +2,4 @@
 .idea/
 vendor
 composer.lock
+.php_cs.cache

@@ -7,17 +7,19 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\Belgium;
+namespace Yasumi\tests\Belgium;
 
 use DateTime;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class containing tests for International Workers' Day (i.e. Labour Day) in Belgium.
  */
-class InternationalWorkersDayTest extends BelgiumBaseTestCase
+class InternationalWorkersDayTest extends BelgiumBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday to be tested
@@ -25,34 +27,42 @@ class InternationalWorkersDayTest extends BelgiumBaseTestCase
     const HOLIDAY = 'internationalWorkersDay';
 
     /**
-     * Tests International Workers' Day.
+     * Tests the holiday defined in this test.
      *
-     * @dataProvider InternationalWorkersDayDataProvider
+     * @dataProvider HolidayDataProvider
      *
-     * @param int      $year     the year for which International Workers' Day needs to be tested
+     * @param int      $year     the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
      */
-    public function testInternationalWorkersDay($year, $expected)
+    public function testHoliday($year, $expected)
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
-     * Returns a list of random test dates used for assertion of International Workers' Day.
+     * Returns a list of random test dates used for assertion of the holiday defined in this test
      *
-     * @return array list of test dates for International Workers' Day
+     * @return array list of test dates for the holiday defined in this test
      */
-    public function InternationalWorkersDayDataProvider()
+    public function HolidayDataProvider()
     {
         return $this->generateRandomDates(5, 1, self::TIMEZONE);
     }
 
     /**
-     * Tests translated name of International Workers' Day.
+     * Tests the translated name of the holiday defined in this test.
      */
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['nl_BE' => 'Dag van de arbeid']);
+            [self::LOCALE => 'Dag van de arbeid']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
     }
 }

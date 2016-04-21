@@ -12,7 +12,9 @@
 
 // Translation for Maundy Thursday
 return [
-    'es_ES' => 'Jueves Santo',
     'da_DK' => 'Skærtorsdag',
-    'nb_NO' => 'Skjærtorsdag'
+    'el_GR' => 'Μεγάλη Πέμπτη',
+    'en_US' => 'Maundy Thursday',
+    'es_ES' => 'Jueves Santo',
+    'nb_NO' => 'Skjærtorsdag',
 ];

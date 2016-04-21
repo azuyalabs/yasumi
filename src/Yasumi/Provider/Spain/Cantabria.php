@@ -9,6 +9,7 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
+
 namespace Yasumi\Provider\Spain;
 
 use DateTime;
@@ -26,7 +27,6 @@ use Yasumi\Provider\Spain;
  * Cantabrian Sea (Bay of Biscay).
  *
  * @link http://en.wikipedia.org/wiki/Cantabria
- *
  */
 class Cantabria extends Spain
 {

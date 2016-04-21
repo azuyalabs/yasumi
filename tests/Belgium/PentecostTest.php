@@ -7,18 +7,20 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\Belgium;
+namespace Yasumi\tests\Belgium;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing Pentecost in Belgium.
  */
-class PentecostTest extends BelgiumBaseTestCase
+class PentecostTest extends BelgiumBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday to be tested
@@ -26,14 +28,9 @@ class PentecostTest extends BelgiumBaseTestCase
     const HOLIDAY = 'pentecost';
 
     /**
-     * The name of the holiday
-     */
-    const HOLIDAY_PENTECOST_MONDAY = 'pentecostMonday';
-
-    /**
      * Tests Pentecost.
      */
-    public function testPentecost()
+    public function testHoliday()
     {
         $year = 2025;
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
@@ -41,30 +38,19 @@ class PentecostTest extends BelgiumBaseTestCase
     }
 
     /**
-     * Tests Pentecost Monday.
+     * Tests the translated name of the holiday defined in this test.
      */
-    public function testPentecostMonday()
-    {
-        $year = 2025;
-        $this->assertHoliday(self::REGION, self::HOLIDAY_PENTECOST_MONDAY, $year,
-            new DateTime("$year-6-9", new DateTimeZone(self::TIMEZONE)));
-    }
-
-    /**
-     * Tests translated name of Pentecost
-     */
-    public function testTranslationPentecost()
+    public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['nl_BE' => 'Eerste Pinksterdag']);
+            [self::LOCALE => 'Eerste Pinksterdag']);
     }
 
     /**
-     * Tests translated name of Pentecost Monday
+     * Tests type of the holiday defined in this test.
      */
-    public function testTranslationPentecostMonday()
+    public function testHolidayType()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY_PENTECOST_MONDAY, $this->generateRandomYear(),
-            ['nl_BE' => 'Pinkstermaandag']);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
     }
 }

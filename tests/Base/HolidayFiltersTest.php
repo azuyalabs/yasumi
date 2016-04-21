@@ -15,7 +15,7 @@ use Yasumi\Filters\ObservedHolidaysFilter;
 use Yasumi\Filters\OfficialHolidaysFilter;
 use Yasumi\Filters\OtherHolidaysFilter;
 use Yasumi\Filters\SeasonalHolidaysFilter;
-use Yasumi\Tests\YasumiBase;
+use Yasumi\tests\YasumiBase;
 use Yasumi\Yasumi;
 
 /**

@@ -13,7 +13,7 @@
 // Translation for Ash Wednesday
 return [
     'en_US' => 'Ash Wednesday',
-    'nl_NL' => 'Aswoensdag',
+    'es_ES' => 'Miércoles de Ceniza',
     'nl_BE' => 'Aswoensdag',
-    'es_ES' => 'Miércoles de Ceniza'
+    'nl_NL' => 'Aswoensdag',
 ];

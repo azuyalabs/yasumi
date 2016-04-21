@@ -12,7 +12,8 @@
 
 // Translation for Armistice Day
 return [
+    'el_GR' => 'Ημέρα Ανακωχής',
     'en_US' => 'Armistice Day',
+    'fr_FR' => 'Armistice',
     'nl_BE' => 'Wapenstilstand',
-    'fr_FR' => 'Armistice'
 ];

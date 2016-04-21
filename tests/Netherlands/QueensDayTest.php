@@ -7,18 +7,20 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\Netherlands;
+namespace Yasumi\tests\Netherlands;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing Queen's Day in the Netherlands.
  */
-class QueensDayTest extends NetherlandsBaseTestCase
+class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -89,5 +91,23 @@ class QueensDayTest extends NetherlandsBaseTestCase
     public function testQueensDayAfter2013()
     {
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(2014));
+    }
+
+    /**
+     * Tests the translated name of the holiday defined in this test.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(1891, 2013),
+            [self::LOCALE => 'Koninginnedag']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(1891, 2013),
+            Holiday::TYPE_NATIONAL);
     }
 }

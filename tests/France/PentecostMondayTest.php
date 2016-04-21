@@ -10,7 +10,7 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\France;
+namespace Yasumi\tests\France;
 
 use DateTime;
 use DateTimeZone;
@@ -18,7 +18,7 @@ use DateTimeZone;
 /**
  * Class for testing Pentecost Monday in France.
  */
-class PentecostTest extends FranceBaseTestCase
+class PentecostMondayTest extends FranceBaseTestCase
 {
     /**
      * The name of the holiday

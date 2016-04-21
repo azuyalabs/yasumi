@@ -10,14 +10,17 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-// Translation for All Saints Day
+// Translation for All Saints' Day
 return [
+    'de_DE' => 'Allerheiligen',
+    'el_GR' => 'Άγιοι Πάντες',
     'en_US' => 'All Saints\' Day',
-    'nl_NL' => 'Allerheiligen',
-    'nl_BE' => 'Allerheiligen',
-    'it_IT' => 'Festa di Tutti i Santi',
-    'fr_FR' => 'La Toussaint',
     'es_ES' => 'Día de todos los Santos',
+    'fi_FI' => 'Pyhäinpäivä',
+    'fr_FR' => 'La Toussaint',
+    'it_IT' => 'Festa di Tutti i Santi',
+    'nl_BE' => 'Allerheiligen',
+    'nl_NL' => 'Allerheiligen',
+    'pl_PL' => 'Uroczystość Wszystkich Świętych',
     'sv_SE' => 'alla helgons dag',
-    'fi_FI' => 'Pyhäinpäivä'
 ];

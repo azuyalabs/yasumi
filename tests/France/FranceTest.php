@@ -10,7 +10,7 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\France;
+namespace Yasumi\tests\France;
 
 use Yasumi\Holiday;
 
@@ -32,7 +32,6 @@ class FranceTest extends FranceBaseTestCase
         $this->assertDefinedHolidays([
             'newYearsDay',
             'victoryInEuropeDay',
-            'goodFriday',
             'easterMonday',
             'internationalWorkersDay',
             'ascensionDay',
@@ -41,7 +40,6 @@ class FranceTest extends FranceBaseTestCase
             'allSaintsDay',
             'armisticeDay',
             'christmasDay',
-            'stStephensDay',
             'bastilleDay'
         ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
     }

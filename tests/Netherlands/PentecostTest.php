@@ -7,23 +7,30 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\Netherlands;
+namespace Yasumi\tests\Netherlands;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing Pentecost in the Netherlands.
  */
-class PentecostTest extends NetherlandsBaseTestCase
+class PentecostTest extends NetherlandsBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * Tests Pentecost.
+     * The name of the holiday to be tested
      */
-    public function testPentecost()
+    const HOLIDAY = 'pentecost';
+
+    /**
+     * Tests the holiday defined in this test.
+     */
+    public function testHoliday()
     {
         $year = 2020;
         $this->assertHoliday(self::REGION, 'pentecost', $year,
@@ -31,12 +38,19 @@ class PentecostTest extends NetherlandsBaseTestCase
     }
 
     /**
-     * Tests Pentecost Monday.
+     * Tests the translated name of the holiday defined in this test.
      */
-    public function testPentecostMonday()
+    public function testTranslation()
     {
-        $year = 2020;
-        $this->assertHoliday(self::REGION, 'pentecostMonday', $year,
-            new DateTime("$year-6-1", new DateTimeZone(self::TIMEZONE)));
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            [self::LOCALE => 'Eerste Pinksterdag']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
     }
 }

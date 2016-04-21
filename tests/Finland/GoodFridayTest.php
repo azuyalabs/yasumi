@@ -10,7 +10,7 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\Finland;
+namespace Yasumi\tests\Finland;
 
 use DateTime;
 use DateTimeZone;
@@ -18,7 +18,7 @@ use DateTimeZone;
 /**
  * Class containing tests for Good Friday in Finland.
  */
-class goodFridayTest extends FinlandBaseTestCase
+class GoodFridayTest extends FinlandBaseTestCase
 {
     /**
      * The name of the holiday to be tested

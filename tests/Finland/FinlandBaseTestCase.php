@@ -10,10 +10,10 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\Tests\Finland;
+namespace Yasumi\tests\Finland;
 
 use PHPUnit_Framework_TestCase;
-use Yasumi\Tests\YasumiBase;
+use Yasumi\tests\YasumiBase;
 
 /**
  * Base class for test cases of the Finland holiday provider.
@@ -36,5 +36,4 @@ abstract class FinlandBaseTestCase extends PHPUnit_Framework_TestCase
      * Locale that is considered common for this provider
      */
     const LOCALE = 'fi_FI';
-
 }
