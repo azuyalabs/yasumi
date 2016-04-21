@@ -31,7 +31,7 @@ class NewYearsDayTest extends BrazilBaseTestCase
     public function testNewYearsDay()
     {
         $year = 1997;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, 
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-1-1", new DateTimeZone(self::TIMEZONE)));
     }
 

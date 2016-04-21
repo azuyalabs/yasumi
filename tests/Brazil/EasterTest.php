@@ -32,7 +32,7 @@ class EasterTest extends BrazilBaseTestCase
     public function testEaster()
     {
         $year = 1948;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, 
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             $this->calculateEaster($year, self::TIMEZONE));
     }
 

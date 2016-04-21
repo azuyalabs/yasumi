@@ -36,7 +36,7 @@ class ProclamacaoDaRepublicaTest extends BrazilBaseTestCase
     public function testProclamacaoDaRepublicaAfter1889()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, 
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-11-15", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -46,7 +46,7 @@ class ProclamacaoDaRepublicaTest extends BrazilBaseTestCase
     public function testProclamacaoDaRepublicaBefore1889()
     {
         $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR-1);
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year, 
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-11-15", new DateTimeZone(self::TIMEZONE)));
     }
 }

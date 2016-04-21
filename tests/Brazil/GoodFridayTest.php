@@ -33,7 +33,7 @@ class GoodFridayTest extends BrazilBaseTestCase
     public function testGoodFriday()
     {
         $year = 1997;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, 
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             $this->calculateEaster($year, self::TIMEZONE)->sub(new DateInterval('P2D')));
     }
 

@@ -34,7 +34,7 @@ class CorpusChristiTest extends BrazilBaseTestCase
     public function testCorpusChristi()
     {
         $year = 1997;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, 
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             $this->calculateEaster($year, self::TIMEZONE)->add(new DateInterval('P60D')));
     }
 

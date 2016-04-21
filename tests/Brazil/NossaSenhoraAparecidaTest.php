@@ -36,7 +36,7 @@ class NossaSenhoraAparecidaTest extends BrazilBaseTestCase
     public function testNossaSenhoraAparecidaAfter1980()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, 
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-10-12", new DateTimeZone(self::TIMEZONE)));
     }
 
@@ -46,7 +46,7 @@ class NossaSenhoraAparecidaTest extends BrazilBaseTestCase
     public function testNossaSenhoraAparecidaBefore1980()
     {
         $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR-1);
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year, 
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-10-12", new DateTimeZone(self::TIMEZONE)));
     }
 }

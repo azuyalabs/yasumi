@@ -50,8 +50,8 @@ class Brazil extends AbstractProvider
          * @link https://pt.wikipedia.org/wiki/Carnaval_do_Brasil
          */
         if ($this->year >= 1700) {
-            $this->addHoliday(new Holiday('carnaval', [], $this->calculateEaster($this->year, $this->timezone)
-                ->sub(new DateInterval('P47D')), $this->locale));
+            $this->addHoliday(new Holiday('carnaval', [],
+                $this->calculateEaster($this->year, $this->timezone)->sub(new DateInterval('P47D')), $this->locale));
         }
 
         /**
@@ -64,8 +64,8 @@ class Brazil extends AbstractProvider
          * @link https://pt.wikipedia.org/wiki/Tiradentes_(feriado_nacional)
          */
         if ($this->year >= 1792) {
-            $this->addHoliday(new Holiday('diaDeTiradentes', [], new DateTime("$this->year-04-21",
-            	new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday('diaDeTiradentes', [],
+                new DateTime("$this->year-04-21", new DateTimeZone($this->timezone)), $this->locale));
         }
 
         /**
@@ -78,8 +78,8 @@ class Brazil extends AbstractProvider
          * @link https://pt.wikipedia.org/wiki/Dia_da_P%C3%A1tria
          */
         if ($this->year >= 1822) {
-            $this->addHoliday(new Holiday('diaDaIndependenciaDoBrasil', [], new DateTime("$this->year-09-07",
-            	new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday('diaDaIndependenciaDoBrasil', [],
+                new DateTime("$this->year-09-07", new DateTimeZone($this->timezone)), $this->locale));
         }
 
         /**
@@ -97,8 +97,8 @@ class Brazil extends AbstractProvider
          * @link https://pt.wikipedia.org/wiki/Nossa_Senhora_da_Concei%C3%A7%C3%A3o_Aparecida
          */
         if ($this->year >= 1980) {
-            $this->addHoliday(new Holiday('nossaSenhoraAparecida', [], new DateTime("$this->year-10-12",
-            	new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday('nossaSenhoraAparecida', [],
+                new DateTime("$this->year-10-12", new DateTimeZone($this->timezone)), $this->locale));
         }
 
         /**
@@ -110,8 +110,8 @@ class Brazil extends AbstractProvider
          * @link https://pt.wikipedia.org/wiki/Dia_dos_Fi%C3%A9is_Defuntos
          */
         if ($this->year >= 1300) {
-            $this->addHoliday(new Holiday('diaDosFinados', [], new DateTime("$this->year-11-02",
-            	new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday('diaDosFinados', [],
+                new DateTime("$this->year-11-02", new DateTimeZone($this->timezone)), $this->locale));
         }
 
         /**
@@ -125,9 +125,8 @@ class Brazil extends AbstractProvider
          * @link https://pt.wikipedia.org/wiki/Proclama%C3%A7%C3%A3o_da_Rep%C3%BAblica_do_Brasil
          */
         if ($this->year >= 1889) {
-            $this->addHoliday(new Holiday('proclamacaoDaRepublica', [], new DateTime("$this->year-11-15",
-            	new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday('proclamacaoDaRepublica', [],
+                new DateTime("$this->year-11-15", new DateTimeZone($this->timezone)), $this->locale));
         }
     }
-
 }
