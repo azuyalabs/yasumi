@@ -68,6 +68,6 @@ class BasqueCountryDayTest extends BasqueCountryBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::ABOLISHMENT_YEAR), ['es_ES' => 'Euskadi Eguna']);
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::ABOLISHMENT_YEAR), [self::LOCALE => 'Euskadi Eguna']);
     }
 }

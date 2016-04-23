@@ -55,6 +55,6 @@ class ConstitutionDayTest extends SpainBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), ['es_ES' => 'Día de la Constitución']);
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Día de la Constitución']);
     }
 }

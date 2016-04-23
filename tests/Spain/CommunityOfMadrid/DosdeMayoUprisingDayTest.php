@@ -41,6 +41,6 @@ class DosdeMayoUprisingDayTest extends CommunityOfMadridBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['es_ES' => 'Fiesta de la Comunidad de Madrid']);
+            [self::LOCALE => 'Fiesta de la Comunidad de Madrid']);
     }
 }

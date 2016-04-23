@@ -55,6 +55,6 @@ class nationalCataloniaDayTest extends CataloniaBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), ['es_ES' => 'Diada Nacional de Catalunya']);
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Diada Nacional de Catalunya']);
     }
 }

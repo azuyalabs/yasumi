@@ -31,4 +31,10 @@ abstract class SpainBaseTestCase extends PHPUnit_Framework_TestCase
      * Timezone in which this provider has holidays defined
      */
     const TIMEZONE = 'Europe/Madrid';
+
+
+    /**
+     * Locale that is considered common for this provider
+     */
+    const LOCALE = 'es_ES';
 }

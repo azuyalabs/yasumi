@@ -41,6 +41,6 @@ class StGeorgesDayTest extends AragonBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['es_ES' => 'San Jorge']);
+            [self::LOCALE => 'San Jorge']);
     }
 }

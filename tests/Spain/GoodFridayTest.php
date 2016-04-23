@@ -41,6 +41,6 @@ class GoodFridayTest extends SpainBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['es_ES' => 'Viernes Santo']);
+            [self::LOCALE => 'Viernes Santo']);
     }
 }

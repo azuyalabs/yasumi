@@ -47,6 +47,6 @@ class MaundyThursdayTest extends SpainBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['es_ES' => 'Jueves Santo']);
+            [self::LOCALE => 'Jueves Santo']);
     }
 }

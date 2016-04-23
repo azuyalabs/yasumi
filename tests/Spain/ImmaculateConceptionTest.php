@@ -53,6 +53,6 @@ class ImmaculateConceptionTest extends SpainBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['es_ES' => 'Inmaculada Concepción']);
+            [self::LOCALE => 'Inmaculada Concepción']);
     }
 }

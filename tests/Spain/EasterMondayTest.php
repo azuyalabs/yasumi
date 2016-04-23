@@ -47,6 +47,6 @@ class EasterMondayTest extends SpainBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['es_ES' => 'Lunes de Pascua']);
+            [self::LOCALE => 'Lunes de Pascua']);
     }
 }
