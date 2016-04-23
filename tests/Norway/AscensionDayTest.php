@@ -41,6 +41,6 @@ class AscensionDayTest extends NorwayBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['nb_NO' => 'Kristi himmelfartsdag']);
+            [self::LOCALE => 'Kristi himmelfartsdag']);
     }
 }

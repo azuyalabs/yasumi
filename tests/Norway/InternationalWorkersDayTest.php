@@ -43,7 +43,7 @@ class InternationalWorkersDayTest extends NorwayBaseTestCase
     public function testTranslatedInternationalWorkersDay()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['nb_NO' => 'Arbeidernes dag']);
+            [self::LOCALE => 'Arbeidernes dag']);
     }
 
     /**
