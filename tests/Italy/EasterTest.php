@@ -56,7 +56,7 @@ class EasterTest extends ItalyBaseTestCase
     public function testTranslatedEasterMonday()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY_SECOND, $this->generateRandomYear(),
-            ['it_IT' => 'Lunedi` dell\'Angelo']);
+            [self::LOCALE => 'Lunedi` dell\'Angelo']);
     }
 
     /**
@@ -65,6 +65,6 @@ class EasterTest extends ItalyBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY_FIRST, $this->generateRandomYear(),
-            ['it_IT' => 'Pasqua']);
+            [self::LOCALE => 'Pasqua']);
     }
 }

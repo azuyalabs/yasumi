@@ -53,6 +53,6 @@ class AllSaintsDayTest extends ItalyBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['it_IT' => 'Festa di Tutti i Santi']);
+            [self::LOCALE => 'Festa di Tutti i Santi']);
     }
 }

@@ -53,6 +53,6 @@ class stStephensDayTest extends ItalyBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['it_IT' => 'Santo Stefano']);
+            [self::LOCALE => 'Santo Stefano']);
     }
 }

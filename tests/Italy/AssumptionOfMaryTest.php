@@ -53,6 +53,6 @@ class AssumptionOfMaryTest extends ItalyBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['it_IT' => 'Assunzione di Maria Vergine']);
+            [self::LOCALE => 'Assunzione di Maria Vergine']);
     }
 }
