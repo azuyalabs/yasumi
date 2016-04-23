@@ -62,6 +62,6 @@ class NewYearsDayTest extends USABaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['en_US' => 'New Year\'s Day']);
+            [self::LOCALE => 'New Year\'s Day']);
     }
 }

@@ -57,6 +57,6 @@ class MartinLutherKingDayTest extends USABaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), ['en_US' => 'Dr. Martin Luther King Jr\'s Birthday']);
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Dr. Martin Luther King Jr\'s Birthday']);
     }
 }
