@@ -56,7 +56,7 @@ class WaitangiDayTest extends NewZealandBaseTestCase
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(1974),
-            ['en_US' => 'Waitangi Day']
+            [self::LOCALE => 'Waitangi Day']
         );
     }
 

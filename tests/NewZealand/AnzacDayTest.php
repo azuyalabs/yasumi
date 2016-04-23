@@ -56,7 +56,7 @@ class AnzacDayTest extends NewZealandBaseTestCase
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(1921),
-            ['en_US' => 'ANZAC Day']
+            [self::LOCALE => 'ANZAC Day']
         );
     }
 

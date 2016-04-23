@@ -49,7 +49,7 @@ class DayAfterNewYearsDayTest extends NewZealandBaseTestCase
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(1921),
-            ['en_US' => 'Day after New Year\'s Day']
+            [self::LOCALE => 'Day after New Year\'s Day']
         );
     }
 
