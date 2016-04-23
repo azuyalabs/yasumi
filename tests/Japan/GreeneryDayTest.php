@@ -14,16 +14,22 @@ namespace Yasumi\tests\Japan;
 
 use DateTime;
 use DateTimeZone;
-
+use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\Holiday;
 /**
  * Class testing Greenery Day in Japan.
  */
-class GreeneryDayTest extends JapanBaseTestCase
+class GreeneryDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday defined in the test
      */
     const HOLIDAY = 'greeneryDay';
+
+    /**
+     * The year in which the holiday was first established
+     */
+    const ESTABLISHMENT_YEAR = 1989;
 
     /**
      * Tests Greenery Day after 2007. Greenery Day was established from 1989 on April 29th. After 2007
@@ -73,6 +79,23 @@ class GreeneryDayTest extends JapanBaseTestCase
      */
     public function testHolidayBefore1989()
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(1000, 1988));
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR-1));
+    }
+
+    /**
+     * Tests the translated name of the holiday defined in this test.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => '緑の日']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR), Holiday::TYPE_NATIONAL);
     }
 }

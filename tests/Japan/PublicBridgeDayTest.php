@@ -7,18 +7,20 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\tests\Japan;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing public bridge days in Japan.
  */
-class PublicBridgeDayTest extends JapanBaseTestCase
+class PublicBridgeDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -30,8 +32,31 @@ class PublicBridgeDayTest extends JapanBaseTestCase
      */
     public function testPublicBridgeDay()
     {
-        $year = 2015;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-9-22", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $this->year,
+            new DateTime("$this->year-9-22", new DateTimeZone(self::TIMEZONE)));
+    }
+
+    /**
+     * Tests the translated name of the holiday defined in this test.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->year, [self::LOCALE => '国民の休日']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->year, Holiday::TYPE_NATIONAL);
+    }
+
+    /**
+     * Initial setup of this Test Case
+     */
+    protected function setUp()
+    {
+        $this->year = 2015;
     }
 }

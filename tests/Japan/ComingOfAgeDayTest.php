@@ -14,16 +14,22 @@ namespace Yasumi\tests\Japan;
 
 use DateTime;
 use DateTimeZone;
-
+use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\Holiday;
 /**
  * Class for testing Coming Of Age Day in Japan.
  */
-class ComingOfAgeDayTest extends JapanBaseTestCase
+class ComingOfAgeDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
      */
     const HOLIDAY = 'comingOfAgeDay';
+
+    /**
+     * The year in which the holiday was first established
+     */
+    const ESTABLISHMENT_YEAR = 1948;
 
     /**
      * Tests Coming of Age Day after 2000. Coming of Age Day was established after 1948 on January 15th. After 2000 it
@@ -54,6 +60,23 @@ class ComingOfAgeDayTest extends JapanBaseTestCase
      */
     public function testConstitutionMemorialDayBefore1948()
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(1000, 1947));
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR-1));
+    }
+
+    /**
+     * Tests the translated name of the holiday defined in this test.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => '成人の日']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR), Holiday::TYPE_NATIONAL);
     }
 }

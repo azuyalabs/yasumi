@@ -36,4 +36,9 @@ abstract class JapanBaseTestCase extends PHPUnit_Framework_TestCase
      * Prefix for short name used when holiday is substituted
      */
     const SUBSTITUTE_PREFIX = 'substituteHoliday:';
+
+    /**
+     * Locale that is considered common for this provider
+     */
+    const LOCALE = 'ja_JP';
 }
