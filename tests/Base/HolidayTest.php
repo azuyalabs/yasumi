@@ -9,13 +9,14 @@
  *
  * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
-namespace Yasumi\tests;
+namespace Yasumi\tests\Base;
 
 use DateTime;
 use InvalidArgumentException;
 use PHPUnit_Framework_TestCase;
 use Yasumi\Holiday;
 use Yasumi\TranslationsInterface;
+use Yasumi\tests\YasumiBase;
 
 /**
  * Class HolidayTest.

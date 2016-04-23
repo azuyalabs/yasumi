@@ -9,7 +9,7 @@
  *
  * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
-namespace Yasumi\tests;
+namespace Yasumi\tests\Base;
 
 use InvalidArgumentException;
 use org\bovigo\vfs\vfsStream;
