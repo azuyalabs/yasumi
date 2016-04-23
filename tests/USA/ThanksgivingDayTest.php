@@ -14,11 +14,13 @@ namespace Yasumi\tests\USA;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\Holiday;
 
 /**
  * Class for testing Thanksgiving Day in the USA.
  */
-class ThanksgivingDayTest extends USABaseTestCase
+class ThanksgivingDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -31,7 +33,7 @@ class ThanksgivingDayTest extends USABaseTestCase
     const ESTABLISHMENT_YEAR = 1863;
 
     /**
-     * Tests Thanksgiving Day on or after 1863. ThanksgivingDay Day is celebrated since 1863 on the fourth Thursday
+     * Tests Thanksgiving Day on or after 1863. Thanksgiving Day is celebrated since 1863 on the fourth Thursday
      * of November.
      */
     public function testThanksgivingDayOnAfter1863()
@@ -52,11 +54,20 @@ class ThanksgivingDayTest extends USABaseTestCase
     }
 
     /**
-     * Tests translated name of Thanksgiving Day.
+     * Tests translated name of the holiday defined in this test.
      */
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Thanksgiving Day']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL);
     }
 }

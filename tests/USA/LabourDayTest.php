@@ -14,11 +14,13 @@ namespace Yasumi\tests\USA;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\Holiday;
 
 /**
  * Class for testing Labour Day in the USA.
  */
-class LabourDayTest extends USABaseTestCase
+class LabourDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -50,11 +52,20 @@ class LabourDayTest extends USABaseTestCase
     }
 
     /**
-     * Tests translated name of Labour Day.
+     * Tests translated name of the holiday defined in this test.
      */
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Labour Day']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL);
     }
 }
