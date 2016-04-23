@@ -12,5 +12,6 @@
 
 // Translation for Day after New Year's Day
 return [
+    'en_NZ' => 'Day after New Year\'s Day',
     'en_US' => 'Day after New Year\'s Day',
 ];
