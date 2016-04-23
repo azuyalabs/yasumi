@@ -16,6 +16,7 @@ use DateTime;
 use DateTimeZone;
 use Yasumi\tests\YasumiTestCaseInterface;
 use Yasumi\Holiday;
+
 /**
  * Class for testing National Foundation Day in Japan.
  */
