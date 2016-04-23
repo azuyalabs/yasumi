@@ -7,16 +7,19 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
+namespace Yasumi\tests\Base;
+
+use PHPUnit_Framework_TestCase;
 use Yasumi\Filters\BankHolidaysFilter;
 use Yasumi\Filters\ObservedHolidaysFilter;
 use Yasumi\Filters\OfficialHolidaysFilter;
 use Yasumi\Filters\OtherHolidaysFilter;
 use Yasumi\Filters\SeasonalHolidaysFilter;
-use Yasumi\tests\YasumiBase;
 use Yasumi\Yasumi;
+use Yasumi\tests\YasumiBase;
 
 /**
  * Class HolidayFiltersTest.
