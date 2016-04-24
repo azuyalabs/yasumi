@@ -63,7 +63,7 @@ class EpiphanyTest extends SpainBaseTestCase implements YasumiTestCaseInterface
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
             Holiday::TYPE_NATIONAL);
     }
 }

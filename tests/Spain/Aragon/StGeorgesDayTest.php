@@ -52,6 +52,6 @@ class StGeorgesDayTest extends AragonBaseTestCase implements YasumiTestCaseInter
     public function testHolidayType()
     {
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            Holiday::TYPE_NATIONAL);
+            Holiday::TYPE_OBSERVANCE);
     }
 }

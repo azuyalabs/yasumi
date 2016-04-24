@@ -58,6 +58,6 @@ class EasterMondayTest extends SpainBaseTestCase implements YasumiTestCaseInterf
     public function testHolidayType()
     {
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            Holiday::TYPE_NATIONAL);
+            Holiday::TYPE_OBSERVANCE);
     }
 }
