@@ -7,17 +7,19 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\tests\Denmark;
 
 use DateTime;
+use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\Holiday;
 
 /**
  * Class for testing the Second Christmas Day in Denmark.
  */
-class SecondChristmasDayTest extends DenmarkBaseTestCase
+class SecondChristmasDayTest extends DenmarkBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday to be tested
@@ -53,6 +55,14 @@ class SecondChristmasDayTest extends DenmarkBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['da_DK' => '2. Juledag']);
+            [self::LOCALE => '2. Juledag']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
     }
 }

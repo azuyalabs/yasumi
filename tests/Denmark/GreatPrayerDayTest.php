@@ -7,19 +7,20 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\tests\Denmark;
 
 use DateTime;
 use DateTimeZone;
-use Yasumi\Tests\Denmark\DenmarkBaseTestCase;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Great Prayer Day in Denmark (Spain).
+ * Class for testing Great Prayer Day in Denmark.
  */
-class GreatPrayerDayTest extends DenmarkBaseTestCase
+class GreatPrayerDayTest extends DenmarkBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday to be tested
@@ -56,6 +57,15 @@ class GreatPrayerDayTest extends DenmarkBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), ['da_DK' => 'Store Bededag']);
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Store Bededag']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL);
     }
 }
