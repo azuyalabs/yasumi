@@ -14,16 +14,23 @@ namespace Yasumi\tests\NewZealand;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\Holiday;
 
 /**
  * Class for testing Labour Day in the New Zealand.
  */
-class LabourDayTest extends NewZealandBaseTestCase
+class LabourDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
      */
     const HOLIDAY = 'labourDay';
+
+    /**
+     * The year in which the holiday was first established
+     */
+    const ESTABLISHMENT_YEAR = 1900;
 
     /**
      * Tests Labour Day
@@ -44,7 +51,7 @@ class LabourDayTest extends NewZealandBaseTestCase
      */
     public function testNotHoliday()
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY, 1899);
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, self::ESTABLISHMENT_YEAR-1);
     }
 
     /**
@@ -57,7 +64,7 @@ class LabourDayTest extends NewZealandBaseTestCase
         $data = [];
 
         for ($y = 0; $y < 100; $y ++) {
-            $year = $this->generateRandomYear(1900, 2100);
+            $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
             $expected = new DateTime(
                 (($year < 1910) ? 'second wednesday of october' : 'fourth monday of october') . " $year",
                 new DateTimeZone(self::TIMEZONE)
@@ -67,5 +74,23 @@ class LabourDayTest extends NewZealandBaseTestCase
         }
 
         return $data;
+    }
+
+    /**
+     * Tests the translated name of the holiday defined in this test.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Labour Day']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL);
     }
 }

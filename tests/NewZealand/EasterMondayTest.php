@@ -15,11 +15,13 @@ namespace Yasumi\tests\NewZealand;
 use DateTime;
 use DateTimeZone;
 use DateInterval;
+use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\Holiday;
 
 /**
  * Class for testing Easter Monday in New Zealand.
  */
-class EasterMondayTest extends NewZealandBaseTestCase
+class EasterMondayTest extends NewZealandBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -50,7 +52,7 @@ class EasterMondayTest extends NewZealandBaseTestCase
         $data = [];
 
         for ($y = 0; $y < 50; $y ++) {
-            $year = $this->generateRandomYear(1800, 3000);
+            $year = $this->generateRandomYear();
             $date = new DateTime("$year-3-21", new DateTimeZone(self::TIMEZONE));
             $date->add(new DateInterval('P' . (easter_days($year)+1) . 'D'));
 
@@ -58,5 +60,23 @@ class EasterMondayTest extends NewZealandBaseTestCase
         }
 
         return $data;
+    }
+
+    /**
+     * Tests the translated name of the holiday defined in this test.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
+            $this->generateRandomYear(), [self::LOCALE => 'Easter Monday']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            Holiday::TYPE_NATIONAL);
     }
 }

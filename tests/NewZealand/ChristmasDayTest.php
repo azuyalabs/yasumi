@@ -15,11 +15,13 @@ namespace Yasumi\tests\NewZealand;
 use DateTime;
 use DateTimeZone;
 use DateInterval;
+use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\Holiday;
 
 /**
  * Class for testing Christmas Day in the New Zealand.
  */
-class ChristmasDayTest extends NewZealandBaseTestCase
+class ChristmasDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -50,7 +52,7 @@ class ChristmasDayTest extends NewZealandBaseTestCase
         $data = [];
 
         for ($y = 0; $y < 50; $y ++) {
-            $year = $this->generateRandomYear(1800, 2100);
+            $year = $this->generateRandomYear();
             $date = new DateTime("$year-12-25", new DateTimeZone(self::TIMEZONE));
 
             if (in_array($date->format('w'), [0, 6])) {
@@ -61,5 +63,23 @@ class ChristmasDayTest extends NewZealandBaseTestCase
         }
 
         return $data;
+    }
+
+    /**
+     * Tests the translated name of the holiday defined in this test.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
+            $this->generateRandomYear(), [self::LOCALE => 'Christmas Day']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            Holiday::TYPE_NATIONAL);
     }
 }

@@ -12,14 +12,16 @@
 
 namespace Yasumi\tests\NewZealand;
 
+use DateInterval;
 use DateTime;
 use DateTimeZone;
-use DateInterval;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing Good Friday in New Zealand.
  */
-class GoodFridayTest extends NewZealandBaseTestCase
+class GoodFridayTest extends NewZealandBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -31,7 +33,7 @@ class GoodFridayTest extends NewZealandBaseTestCase
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int $year the year for which the holiday defined in this test needs to be tested
+     * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      */
     public function testHoliday($year, $expected)
@@ -49,14 +51,31 @@ class GoodFridayTest extends NewZealandBaseTestCase
     {
         $data = [];
 
-        for ($y = 0; $y < 50; $y ++) {
-            $year = $this->generateRandomYear(1800, 3000);
+        for ($y = 0; $y < 50; $y++) {
+            $year = $this->generateRandomYear();
             $date = new DateTime("$year-3-21", new DateTimeZone(self::TIMEZONE));
             $date->add(new DateInterval('P' . easter_days($year) . 'D'));
-            $date->modify('previous friday');
+            $date->sub(new DateInterval('P2D'));
             $data[] = [$year, $date->format('Y-m-d')];
         }
 
         return $data;
+    }
+
+    /**
+     * Tests the translated name of the holiday defined in this test.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            [self::LOCALE => 'Good Friday']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
     }
 }

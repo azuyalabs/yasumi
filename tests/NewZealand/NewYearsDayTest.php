@@ -15,11 +15,13 @@ namespace Yasumi\tests\NewZealand;
 use DateTime;
 use DateTimeZone;
 use DateInterval;
+use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\Holiday;
 
 /**
  * Class for testing New Years Day in the New Zealand.
  */
-class NewYearsDayTest extends NewZealandBaseTestCase
+class NewYearsDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -50,7 +52,7 @@ class NewYearsDayTest extends NewZealandBaseTestCase
         $data = [];
 
         for ($y = 0; $y < 50; $y ++) {
-            $year = $this->generateRandomYear(1800, 2100);
+            $year = $this->generateRandomYear();
             $date = new DateTime("$year-01-01", new DateTimeZone(self::TIMEZONE));
 
             switch ($date->format('w')) {
@@ -66,5 +68,23 @@ class NewYearsDayTest extends NewZealandBaseTestCase
         }
 
         return $data;
+    }
+
+    /**
+     * Tests the translated name of the holiday defined in this test.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
+            $this->generateRandomYear(), [self::LOCALE => 'New Year\'s Day']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            Holiday::TYPE_NATIONAL);
     }
 }
