@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\Provider;
@@ -67,7 +67,7 @@ class Poland extends AbstractProvider
         }
 
         $this->addHoliday(new Holiday('constitutionDay', ['pl_PL' => 'Święto Narodowe Trzeciego Maja'],
-                new DateTime("$this->year-5-3", new DateTimeZone($this->timezone)), $this->locale));
+            new DateTime("$this->year-5-3", new DateTimeZone($this->timezone)), $this->locale));
     }
 
     /*
@@ -87,6 +87,6 @@ class Poland extends AbstractProvider
         }
 
         $this->addHoliday(new Holiday('independenceDay', ['pl_PL' => 'Narodowe Święto Niepodległości'],
-                new DateTime("$this->year-11-11", new DateTimeZone($this->timezone)), $this->locale));
+            new DateTime("$this->year-11-11", new DateTimeZone($this->timezone)), $this->locale));
     }
 }

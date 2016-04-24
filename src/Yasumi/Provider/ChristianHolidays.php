@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\Provider;
@@ -500,7 +500,8 @@ trait ChristianHolidays
      */
     public function annunciation($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('annunciation', [], new DateTime("$year-03-25", new DateTimeZone($timezone)), $locale, $type);
+        return new Holiday('annunciation', [], new DateTime("$year-03-25", new DateTimeZone($timezone)), $locale,
+            $type);
     }
 
     /**
@@ -521,7 +522,7 @@ trait ChristianHolidays
     protected function calculateEaster($year, $timezone)
     {
         $easter = new DateTime("$year-3-21", new DateTimeZone($timezone));
-        $easter->add(new DateInterval('P'.\easter_days($year).'D'));
+        $easter->add(new DateInterval('P' . \easter_days($year) . 'D'));
 
         return $easter;
     }

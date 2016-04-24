@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\Provider;
@@ -57,7 +57,7 @@ class NewZealand extends AbstractProvider
      */
     public function calculateNewYearHolidays()
     {
-        $newYearsDay = new DateTime("$this->year-01-01", new DateTimeZone($this->timezone));
+        $newYearsDay         = new DateTime("$this->year-01-01", new DateTimeZone($this->timezone));
         $dayAfterNewYearsDay = new DateTime("$this->year-01-02", new DateTimeZone($this->timezone));
 
         switch ($newYearsDay->format('w')) {
@@ -98,7 +98,7 @@ class NewZealand extends AbstractProvider
 
         $date = new DateTime("$this->year-02-6", new DateTimeZone($this->timezone));
 
-        if ($this->year >= 2015 && !$this->isWorkingDay($date)) {
+        if ($this->year >= 2015 && ! $this->isWorkingDay($date)) {
             $date->modify('next monday');
         }
 
@@ -123,7 +123,7 @@ class NewZealand extends AbstractProvider
 
         $date = new DateTime("$this->year-04-25", new DateTimeZone($this->timezone));
 
-        if ($this->year >= 2015 && !$this->isWorkingDay($date)) {
+        if ($this->year >= 2015 && ! $this->isWorkingDay($date)) {
             $date->modify('next monday');
         }
 
@@ -149,12 +149,8 @@ class NewZealand extends AbstractProvider
             return;
         }
 
-        $this->addHoliday(new Holiday(
-            'queensBirthday',
-            ['en_NZ' => 'Queens Birthday'],
-            new DateTime("first monday of june $this->year", new DateTimeZone($this->timezone)),
-            $this->locale
-        ));
+        $this->addHoliday(new Holiday('queensBirthday', ['en_NZ' => 'Queens Birthday'],
+            new DateTime("first monday of june $this->year", new DateTimeZone($this->timezone)), $this->locale));
     }
 
     /**
@@ -177,9 +173,8 @@ class NewZealand extends AbstractProvider
             return;
         }
 
-        $date = new DateTime((($this->year < 1910) ? 'second wednesday of october' : 'fourth monday of october')." $this->year",
-            new DateTimeZone($this->timezone)
-        );
+        $date = new DateTime((($this->year < 1910) ? 'second wednesday of october' : 'fourth monday of october') . " $this->year",
+            new DateTimeZone($this->timezone));
 
         $this->addHoliday(new Holiday('labourDay', [], $date, $this->locale));
     }
@@ -197,7 +192,7 @@ class NewZealand extends AbstractProvider
     public function calculateChristmasHolidays()
     {
         $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->timezone));
-        $boxingDay = new DateTime("$this->year-12-26", new DateTimeZone($this->timezone));
+        $boxingDay    = new DateTime("$this->year-12-26", new DateTimeZone($this->timezone));
 
         switch ($christmasDay->format('w')) {
             case 0:

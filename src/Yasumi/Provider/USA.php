@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\Provider;
@@ -213,8 +213,8 @@ class USA extends AbstractProvider
 
                 // Add substitute holiday
                 if (isset($substituteHoliday)) {
-                    $this->addHoliday(new Holiday('substituteHoliday:'.$substituteHoliday->shortName, [
-                        'en_US' => $substituteHoliday->getName().' observed',
+                    $this->addHoliday(new Holiday('substituteHoliday:' . $substituteHoliday->shortName, [
+                        'en_US' => $substituteHoliday->getName() . ' observed',
                     ], $substituteHoliday, $this->locale));
                 }
             }

@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi;
@@ -72,7 +72,7 @@ class Yasumi
     {
         // Find and return holiday provider instance
         $providerClass = sprintf('Yasumi\Provider\%s', str_replace('/', '\\', $class));
-        if (!class_exists($providerClass) || $class === 'AbstractProvider') {
+        if ( ! class_exists($providerClass) || $class === 'AbstractProvider') {
             throw new InvalidArgumentException(sprintf('Unable to find holiday provider "%s".', $class));
         }
 
@@ -82,18 +82,18 @@ class Yasumi
         }
 
         // Load internal locales variable
-        if (!isset(static::$locales)) {
+        if ( ! isset(static::$locales)) {
             static::$locales = self::getAvailableLocales();
         }
 
         // Load internal translations variable
-        if (!isset(static::$globalTranslations)) {
+        if ( ! isset(static::$globalTranslations)) {
             static::$globalTranslations = new Translations(static::$locales);
-            static::$globalTranslations->loadTranslations(__DIR__.'/data/translations');
+            static::$globalTranslations->loadTranslations(__DIR__ . '/data/translations');
         }
 
         // Assert locale input
-        if (!in_array($locale, static::$locales)) {
+        if ( ! in_array($locale, static::$locales)) {
             throw new UnknownLocaleException(sprintf('Locale "%s" is not a valid locale.', $locale));
         }
 
@@ -107,7 +107,7 @@ class Yasumi
      */
     public static function getAvailableLocales()
     {
-        return require __DIR__.'/data/locales.php';
+        return require __DIR__ . '/data/locales.php';
     }
 
     /**
@@ -123,17 +123,14 @@ class Yasumi
             return $providers;
         }
 
-        $extension = 'php';
-        $providers = [];
-        $filesIterator = new \RecursiveIteratorIterator(
-            new RecursiveDirectoryIterator(__DIR__.'/Provider/'),
-            RecursiveIteratorIterator::SELF_FIRST
-        );
+        $extension     = 'php';
+        $providers     = [];
+        $filesIterator = new \RecursiveIteratorIterator(new RecursiveDirectoryIterator(__DIR__ . '/Provider/'),
+            RecursiveIteratorIterator::SELF_FIRST);
 
         foreach ($filesIterator as $file) {
-            if ($file->isFile() === false
-                || in_array($file->getBasename(), self::$ignoredProvider)
-                || $file->getExtension() !== $extension
+            if ($file->isFile() === false || in_array($file->getBasename(),
+                    self::$ignoredProvider) || $file->getExtension() !== $extension
             ) {
                 continue;
             }
@@ -143,6 +140,6 @@ class Yasumi
             $providers[] = $provider;
         }
 
-        return (array) $providers;
+        return (array)$providers;
     }
 }

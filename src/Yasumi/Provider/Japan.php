@@ -8,7 +8,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\Provider;
@@ -182,7 +182,7 @@ class Japan extends AbstractProvider
             $day = null;
         }
 
-        if (!is_null($day)) {
+        if ( ! is_null($day)) {
             $this->addHoliday(new Holiday('vernalEquinoxDay', ['en_US' => 'Vernal Equinox Day', 'ja_JP' => '春分の日'],
                 new DateTime("$this->year-3-$day", new DateTimeZone($this->timezone)), $this->locale));
         }
@@ -202,7 +202,7 @@ class Japan extends AbstractProvider
         } elseif ($this->year >= 1948) {
             $date = new DateTime("$this->year-1-15", new DateTimeZone($this->timezone));
         }
-        if (!is_null($date)) {
+        if ( ! is_null($date)) {
             $this->addHoliday(new Holiday('comingOfAgeDay', ['en_US' => 'Coming of Age Day', 'ja_JP' => '成人の日'], $date,
                 $this->locale));
         }
@@ -221,7 +221,7 @@ class Japan extends AbstractProvider
         } elseif ($this->year >= 1989) {
             $date = new DateTime("$this->year-4-29", new DateTimeZone($this->timezone));
         }
-        if (!is_null($date)) {
+        if ( ! is_null($date)) {
             $this->addHoliday(new Holiday('greeneryDay', ['en_US' => 'Greenery Day', 'ja_JP' => '緑の日'], $date,
                 $this->locale));
         }
@@ -240,7 +240,7 @@ class Japan extends AbstractProvider
         } elseif ($this->year >= 1996) {
             $date = new DateTime("$this->year-7-20", new DateTimeZone($this->timezone));
         }
-        if (!is_null($date)) {
+        if ( ! is_null($date)) {
             $this->addHoliday(new Holiday('marineDay', ['en_US' => 'Marine Day', 'ja_JP' => '海の日'], $date,
                 $this->locale));
         }
@@ -260,7 +260,7 @@ class Japan extends AbstractProvider
         } elseif ($this->year >= 1996) {
             $date = new DateTime("$this->year-9-15", new DateTimeZone($this->timezone));
         }
-        if (!is_null($date)) {
+        if ( ! is_null($date)) {
             $this->addHoliday(new Holiday('respectfortheAgedDay',
                 ['en_US' => 'Respect for the Age Day', 'ja_JP' => '敬老の日'], $date, $this->locale));
         }
@@ -280,7 +280,7 @@ class Japan extends AbstractProvider
         } elseif ($this->year >= 1996) {
             $date = new DateTime("$this->year-10-10", new DateTimeZone($this->timezone));
         }
-        if (!is_null($date)) {
+        if ( ! is_null($date)) {
             $this->addHoliday(new Holiday('healthandSportsDay', ['en_US' => 'Health And Sports Day', 'ja_JP' => '体育の日'],
                 $date, $this->locale));
         }
@@ -310,7 +310,7 @@ class Japan extends AbstractProvider
             $day = null;
         }
 
-        if (!is_null($day)) {
+        if ( ! is_null($day)) {
             $this->addHoliday(new Holiday('autumnalEquinoxDay', ['en_US' => 'Autumnal Equinox Day', 'ja_JP' => '秋分の日'],
                 new DateTime("$this->year-9-$day", new DateTimeZone($this->timezone)), $this->locale));
         }
@@ -349,10 +349,10 @@ class Japan extends AbstractProvider
                 }
 
                 // Add a new holiday that is substituting the original holiday
-                if (!is_null($substituteDay)) {
-                    $substituteHoliday = new Holiday('substituteHoliday:'.$shortName, [
-                        'en_US' => $date->translations['en_US'].' Observed',
-                        'ja_JP' => '振替休日 ('.$date->translations['ja_JP'].')',
+                if ( ! is_null($substituteDay)) {
+                    $substituteHoliday = new Holiday('substituteHoliday:' . $shortName, [
+                        'en_US' => $date->translations['en_US'] . ' Observed',
+                        'ja_JP' => '振替休日 (' . $date->translations['ja_JP'] . ')',
                     ], $substituteDay, $this->locale);
 
                     $this->addHoliday($substituteHoliday);

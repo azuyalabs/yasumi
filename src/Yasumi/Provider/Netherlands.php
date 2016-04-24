@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\Provider;
@@ -161,7 +161,7 @@ class Netherlands extends AbstractProvider
          * and suspension of social norms. The feast became assimilated by the Catholic Church and was celebrated in the
          * three days preceding Ash Wednesday and Lent.
          */
-        $easter = $this->calculateEaster($this->year, $this->timezone);
+        $easter       = $this->calculateEaster($this->year, $this->timezone);
         $carnivalDay1 = clone $easter;
         $this->addHoliday(new Holiday('carnivalDay', ['en_US' => 'Carnival', 'nl_NL' => 'Carnaval'],
             $carnivalDay1->sub(new DateInterval('P49D')), $this->locale, Holiday::TYPE_OBSERVANCE));
