@@ -13,11 +13,13 @@
 namespace Yasumi\tests\Poland;
 
 use DateTime;
+use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\Holiday;
 
 /**
  * Class for testing Christmas in Poland.
  */
-class ChristmasTest extends PolandBaseTestCase
+class ChristmasTest extends PolandBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -53,6 +55,15 @@ class ChristmasTest extends PolandBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['pl_PL' => 'pierwszy dzień Bożego Narodzenia']);
+            [self::LOCALE => 'pierwszy dzień Bożego Narodzenia']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            Holiday::TYPE_NATIONAL);
     }
 }

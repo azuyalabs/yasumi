@@ -14,11 +14,13 @@ namespace Yasumi\tests\Poland;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\Holiday;
 
 /**
  * Class for testing the Independence Day of Poland in Poland.
  */
-class IndependenceDayTest extends PolandBaseTestCase
+class IndependenceDayTest extends PolandBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The year in which the holiday was first established
@@ -50,11 +52,20 @@ class IndependenceDayTest extends PolandBaseTestCase
     }
 
     /**
-     * Tests the translated name of the holiday defined in this test on or after establishment.
+     * Tests the translated name of the holiday defined in this test.
      */
-    public function testTranslationOnAfterEstablishment()
+    public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), ['pl_PL' => 'Narodowe Święto Niepodległości']);
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Narodowe Święto Niepodległości']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL);
     }
 }

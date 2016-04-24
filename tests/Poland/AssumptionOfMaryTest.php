@@ -13,11 +13,13 @@
 namespace Yasumi\tests\Poland;
 
 use DateTime;
+use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\Holiday;
 
 /**
  * Class for testing the day of the Assumption of Mary in Poland.
  */
-class AssumptionOfMaryTest extends PolandBaseTestCase
+class AssumptionOfMaryTest extends PolandBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday to be tested
@@ -53,6 +55,15 @@ class AssumptionOfMaryTest extends PolandBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['pl_PL' => 'Wniebowzięcie Najświętszej Marii Panny']);
+            [self::LOCALE => 'Wniebowzięcie Najświętszej Marii Panny']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            Holiday::TYPE_NATIONAL);
     }
 }
