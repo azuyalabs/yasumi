@@ -151,7 +151,7 @@ class NewZealand extends AbstractProvider
 
         $this->addHoliday(new Holiday(
             'queensBirthday',
-            [],
+            ['en_NZ' => 'Queens Birthday'],
             new DateTime("first monday of june $this->year", new DateTimeZone($this->timezone)),
             $this->locale
         ));

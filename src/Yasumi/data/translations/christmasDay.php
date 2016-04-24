@@ -15,6 +15,7 @@ return [
     'da_DK' => '1. Juledag',
     'de_DE' => '1. Weihnachtsfeiertag',
     'el_GR' => 'Χριστούγεννα',
+    'en_NZ' => 'Christmas Day',
     'en_US' => 'Christmas',
     'es_ES' => 'Navidad',
     'fi_FI' => 'Joulupäivä',
