@@ -14,11 +14,13 @@ namespace Yasumi\tests\Spain\CastillaLaMancha;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\Holiday;
 
 /**
  * Class for testing Castilla-La Mancha Day in Castilla-La Mancha (Spain).
  */
-class CastillaLaManchaDayTest extends CastillaLaManchaBaseTestCase
+class CastillaLaManchaDayTest extends CastillaLaManchaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday to be tested
@@ -56,5 +58,14 @@ class CastillaLaManchaDayTest extends CastillaLaManchaBaseTestCase
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Día de la Región Castilla-La Mancha']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL);
     }
 }

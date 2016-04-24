@@ -14,11 +14,13 @@ namespace Yasumi\tests\Spain\Andalusia;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\Holiday;
 
 /**
  * Class for testing Andalusia Day in Andalusia (Spain).
  */
-class AndalusiaDayTest extends AndalusiaBaseTestCase
+class AndalusiaDayTest extends AndalusiaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday to be tested
@@ -56,5 +58,14 @@ class AndalusiaDayTest extends AndalusiaBaseTestCase
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Día de Andalucía']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL);
     }
 }
