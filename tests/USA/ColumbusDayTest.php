@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\tests\USA;
@@ -63,7 +63,7 @@ class ColumbusDayTest extends USABaseTestCase implements YasumiTestCaseInterface
         $this->assertNotHoliday(self::REGION, self::HOLIDAY,
             $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
     }
-    
+
     /**
      * Tests translated name of the holiday defined in this test.
      */

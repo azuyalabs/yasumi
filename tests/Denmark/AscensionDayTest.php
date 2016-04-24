@@ -14,8 +14,8 @@ namespace Yasumi\tests\Denmark;
 
 use DateTime;
 use DateTimeZone;
-use Yasumi\tests\YasumiTestCaseInterface;
 use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing Ascension Day in Denmark.

@@ -13,8 +13,8 @@
 namespace Yasumi\tests\Denmark;
 
 use DateTime;
-use Yasumi\tests\YasumiTestCaseInterface;
 use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing New Years Day in Denmark.

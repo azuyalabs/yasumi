@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\tests;
@@ -177,7 +177,7 @@ trait YasumiBase
     public function generateRandomDates($month, $day, $timezone = 'UTC', $iterations = 10, $range = 1000)
     {
         $data = [];
-        for ($y = 1; $y <= $iterations; $y ++) {
+        for ($y = 1; $y <= $iterations; $y++) {
             $year   = Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
             $data[] = [$year, new DateTime("$year-$month-$day", new DateTimeZone($timezone))];
         }
@@ -195,6 +195,6 @@ trait YasumiBase
      */
     public function generateRandomYear($lowerLimit = 1000, $upperLimit = 9999)
     {
-        return (int) Faker::create()->numberBetween($lowerLimit, $upperLimit);
+        return (int)Faker::create()->numberBetween($lowerLimit, $upperLimit);
     }
 }

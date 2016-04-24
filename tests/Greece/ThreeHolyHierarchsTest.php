@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\tests\Greece;
@@ -26,12 +26,12 @@ class ThreeHolyHierarchsTest extends GreeceBaseTestCase
     const HOLIDAY = 'threeHolyHierarchs';
 
     /**
-    * Tests The Three Holy Hierarchs.
-    *
-    * @dataProvider ThreeHolyHierarchsDataProvider
-    *
-    * @param int      $year     the year for which The Three Holy Hierarchs needs to be tested
-    * @param DateTime $expected the expected date
+     * Tests The Three Holy Hierarchs.
+     *
+     * @dataProvider ThreeHolyHierarchsDataProvider
+     *
+     * @param int      $year     the year for which The Three Holy Hierarchs needs to be tested
+     * @param DateTime $expected the expected date
      */
     public function testThreeHolyHierarchs($year, $expected)
     {
@@ -39,9 +39,9 @@ class ThreeHolyHierarchsTest extends GreeceBaseTestCase
     }
 
     /**
-    * Returns a list of random test dates used for assertion of The Three Holy Hierarchs.
-    *
-    * @return array list of test dates for The Three Holy Hierarchs
+     * Returns a list of random test dates used for assertion of The Three Holy Hierarchs.
+     *
+     * @return array list of test dates for The Three Holy Hierarchs
      */
     public function ThreeHolyHierarchsDataProvider()
     {
@@ -53,7 +53,7 @@ class ThreeHolyHierarchsTest extends GreeceBaseTestCase
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(), ['el_GR' => 'Τριών Ιεραρχών']);
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            ['el_GR' => 'Τριών Ιεραρχών']);
     }
 }

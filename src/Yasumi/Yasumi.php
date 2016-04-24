@@ -72,7 +72,7 @@ class Yasumi
     {
         // Find and return holiday provider instance
         $providerClass = sprintf('Yasumi\Provider\%s', str_replace('/', '\\', $class));
-        if ( ! class_exists($providerClass) || $class === 'AbstractProvider') {
+        if (! class_exists($providerClass) || $class === 'AbstractProvider') {
             throw new InvalidArgumentException(sprintf('Unable to find holiday provider "%s".', $class));
         }
 
@@ -82,18 +82,18 @@ class Yasumi
         }
 
         // Load internal locales variable
-        if ( ! isset(static::$locales)) {
+        if (! isset(static::$locales)) {
             static::$locales = self::getAvailableLocales();
         }
 
         // Load internal translations variable
-        if ( ! isset(static::$globalTranslations)) {
+        if (! isset(static::$globalTranslations)) {
             static::$globalTranslations = new Translations(static::$locales);
             static::$globalTranslations->loadTranslations(__DIR__ . '/data/translations');
         }
 
         // Assert locale input
-        if ( ! in_array($locale, static::$locales)) {
+        if (! in_array($locale, static::$locales)) {
             throw new UnknownLocaleException(sprintf('Locale "%s" is not a valid locale.', $locale));
         }
 

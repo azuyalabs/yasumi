@@ -12,11 +12,11 @@
 
 namespace Yasumi\tests\NewZealand;
 
+use DateInterval;
 use DateTime;
 use DateTimeZone;
-use DateInterval;
-use Yasumi\tests\YasumiTestCaseInterface;
 use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing Boxing Day in the New Zealand.
@@ -33,7 +33,7 @@ class BoxingDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInte
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int $year the year for which the holiday defined in this test needs to be tested
+     * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      */
     public function testHoliday($year, $expected)
@@ -70,8 +70,8 @@ class BoxingDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInte
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(), [self::LOCALE => 'Boxing Day']);
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            [self::LOCALE => 'Boxing Day']);
     }
 
     /**
@@ -79,7 +79,6 @@ class BoxingDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInte
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
     }
 }

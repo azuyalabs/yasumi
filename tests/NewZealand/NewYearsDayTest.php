@@ -12,11 +12,11 @@
 
 namespace Yasumi\tests\NewZealand;
 
+use DateInterval;
 use DateTime;
 use DateTimeZone;
-use DateInterval;
-use Yasumi\tests\YasumiTestCaseInterface;
 use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing New Years Day in the New Zealand.
@@ -33,7 +33,7 @@ class NewYearsDayTest extends NewZealandBaseTestCase implements YasumiTestCaseIn
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int $year the year for which the holiday defined in this test needs to be tested
+     * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      */
     public function testHoliday($year, $expected)
@@ -51,7 +51,7 @@ class NewYearsDayTest extends NewZealandBaseTestCase implements YasumiTestCaseIn
     {
         $data = [];
 
-        for ($y = 0; $y < 50; $y ++) {
+        for ($y = 0; $y < 50; $y++) {
             $year = $this->generateRandomYear();
             $date = new DateTime("$year-01-01", new DateTimeZone(self::TIMEZONE));
 
@@ -75,8 +75,8 @@ class NewYearsDayTest extends NewZealandBaseTestCase implements YasumiTestCaseIn
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(), [self::LOCALE => 'New Year\'s Day']);
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            [self::LOCALE => 'New Year\'s Day']);
     }
 
     /**
@@ -84,7 +84,6 @@ class NewYearsDayTest extends NewZealandBaseTestCase implements YasumiTestCaseIn
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
     }
 }

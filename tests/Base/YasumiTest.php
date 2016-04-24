@@ -15,8 +15,8 @@ use DateTime;
 use Faker\Factory;
 use InvalidArgumentException;
 use PHPUnit_Framework_TestCase;
-use Yasumi\Yasumi;
 use Yasumi\tests\YasumiBase;
+use Yasumi\Yasumi;
 
 /**
  * Class YasumiTest.

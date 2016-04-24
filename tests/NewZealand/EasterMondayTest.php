@@ -12,11 +12,11 @@
 
 namespace Yasumi\tests\NewZealand;
 
+use DateInterval;
 use DateTime;
 use DateTimeZone;
-use DateInterval;
-use Yasumi\tests\YasumiTestCaseInterface;
 use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing Easter Monday in New Zealand.
@@ -33,7 +33,7 @@ class EasterMondayTest extends NewZealandBaseTestCase implements YasumiTestCaseI
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int $year the year for which the holiday defined in this test needs to be tested
+     * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      */
     public function testHoliday($year, $expected)
@@ -51,10 +51,10 @@ class EasterMondayTest extends NewZealandBaseTestCase implements YasumiTestCaseI
     {
         $data = [];
 
-        for ($y = 0; $y < 50; $y ++) {
+        for ($y = 0; $y < 50; $y++) {
             $year = $this->generateRandomYear();
             $date = new DateTime("$year-3-21", new DateTimeZone(self::TIMEZONE));
-            $date->add(new DateInterval('P' . (easter_days($year)+1) . 'D'));
+            $date->add(new DateInterval('P' . (easter_days($year) + 1) . 'D'));
 
             $data[] = [$year, $date->format('Y-m-d')];
         }
@@ -67,8 +67,8 @@ class EasterMondayTest extends NewZealandBaseTestCase implements YasumiTestCaseI
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(), [self::LOCALE => 'Easter Monday']);
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            [self::LOCALE => 'Easter Monday']);
     }
 
     /**
@@ -76,7 +76,6 @@ class EasterMondayTest extends NewZealandBaseTestCase implements YasumiTestCaseI
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
     }
 }

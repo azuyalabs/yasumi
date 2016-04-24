@@ -15,8 +15,8 @@ use DateTime;
 use InvalidArgumentException;
 use PHPUnit_Framework_TestCase;
 use Yasumi\Holiday;
-use Yasumi\TranslationsInterface;
 use Yasumi\tests\YasumiBase;
+use Yasumi\TranslationsInterface;
 
 /**
  * Class HolidayTest.
