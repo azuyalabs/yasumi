@@ -31,23 +31,23 @@ Highlights
 
 Currently the following holiday providers are implemented:
 
-* Japan
-* Netherlands
 * Belgium
-* USA
-* Italy
-* France (including the departments Moselle, Bas-Rhin and Haut-Rhin)
-* Spain (including the autonomous communities Andalusia, Aragon, Asturias, Balearic Islands, Basque Country, 
-  Canary Islands, Cantabria, Castile and León, Castilla-La Mancha, Ceuta, Community of Madrid, Extremadura, Galicia,
-  La Rioja, Melilla, Navarre, Region of Murcia, Valencian Community)
 * Denmark
-* Norway
-* Sweden
 * Finland
+* France (including the departments BasRhin, Haut-Rhin and Moselle)
 * Germany
 * Greece
+* Italy
+* Japan
+* Netherlands
 * New Zealand
+* Norway
 * Poland
+* Spain (including the autonomous communities Andalusia, Aragon, Asturias, Balearic Islands, Basque Country,
+  Canary Islands, Cantabria, Castile and León, Castilla-La Mancha, Catalonia, Ceuta, Community Of Madrid, Extremadura,
+  Galicia, La Rioja, Melilla, Navarre, Region of Murcia, Valencian Community)
+* Sweden
+* USA
 
 Yasumi has the following filters to allow you to filter only certain type of holidays:
 
@@ -96,28 +96,28 @@ folder:
 $ phpunit
 ```
 
-Yasumi has over 1300 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
+Yasumi has over 950 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
 the holidays, multiple iterations of assertions are executed to ensure the holidays are calculated in a large number
 of years.
 
 The tests are organized in some test suites to make testing a bit more easier:
 
 * Base        : For testing the base functionality of Yasumi
-* Japan       : For separately testing the Japan Holiday Provider
-* Netherlands : For separately testing the Netherlands Holiday Provider
 * Belgium     : For separately testing the Belgium Holiday Provider
-* USA         : For separately testing the USA Holiday Provider
-* Italy       : For separately testing the Italy Holiday Provider
-* France      : For separately testing the France Holiday Provider
-* Spain       : For separately testing the Spain Holiday Provider
 * Denmark     : For separately testing the Denmark Holiday Provider
-* Norway      : For separately testing the Norway Holiday Provider
-* Sweden      : For separately testing the Sweden Holiday Provider
 * Finland     : For separately testing the Finland Holiday Provider
+* France      : For separately testing the France Holiday Provider
 * Germany     : For separately testing the Germany Holiday Provider
 * Greece      : For separately testing the Greece Holiday Provider
-* New Zealand : For separately testing the New Zealand Holiday Provider
+* Italy       : For separately testing the Italy Holiday Provider
+* Japan       : For separately testing the Japan Holiday Provider
+* Netherlands : For separately testing the Netherlands Holiday Provider
+* NewZealand  : For separately testing the New Zealand Holiday Provider
+* Norway      : For separately testing the Norway Holiday Provider
 * Poland      : For separately testing the Poland Holiday Provider
+* Spain       : For separately testing the Spain Holiday Provider
+* Sweden      : For separately testing the Sweden Holiday Provider
+* USA         : For separately testing the USA Holiday Provider
 
 
 Basic Usage

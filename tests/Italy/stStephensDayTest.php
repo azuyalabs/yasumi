@@ -13,11 +13,13 @@
 namespace Yasumi\tests\Italy;
 
 use DateTime;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing St. Stephen's Day in Italy.
  */
-class stStephensDayTest extends ItalyBaseTestCase
+class stStephensDayTest extends ItalyBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -54,5 +56,13 @@ class stStephensDayTest extends ItalyBaseTestCase
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
             [self::LOCALE => 'Santo Stefano']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
     }
 }

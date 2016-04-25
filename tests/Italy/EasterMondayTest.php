@@ -18,32 +18,32 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class containing tests for Easter in Italy.
+ * Class containing tests for Easter Monday in the Italy.
  */
-class EasterTest extends ItalyBaseTestCase implements YasumiTestCaseInterface
+class EasterMondayTest extends ItalyBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the first holiday of Easter
+     * The name of the holiday
      */
-    const HOLIDAY = 'easter';
+    const HOLIDAY = 'easterMonday';
 
     /**
-     * Tests Easter.
+     * Tests the holiday defined in this test.
      */
-    public function testEaster()
+    public function testHoliday()
     {
-        $year = 2009;
+        $year = 2016;
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-4-12", new DateTimeZone(self::TIMEZONE)));
+            new DateTime("$year-3-28", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**
-     * Tests translated name of Easter.
+     * Tests the translated name of the holiday defined in this test.
      */
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Pasqua']);
+            [self::LOCALE => 'Lunedi` dell\'Angelo']);
     }
 
     /**
