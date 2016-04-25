@@ -17,6 +17,7 @@ return [
     'el_GR' => 'Μεγάλη Παρασκευή',
     'en_NZ' => 'Good Friday',
     'en_US' => 'Good Friday',
+    'en_GB' => 'Good Friday',
     'es_ES' => 'Viernes Santo',
     'fi_FI' => 'Pitkäperjantai',
     'fr_FR' => 'Vendredi saint',

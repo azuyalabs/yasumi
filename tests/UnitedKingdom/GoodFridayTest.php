@@ -16,11 +16,12 @@ use DateTime;
 use DateTimeZone;
 use Yasumi\Yasumi;
 use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class containing tests for Good Friday in the United Kingdom.
  */
-class GoodFridayTest extends UnitedKingdomBaseTestCase
+class GoodFridayTest extends UnitedKingdomBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday to be tested

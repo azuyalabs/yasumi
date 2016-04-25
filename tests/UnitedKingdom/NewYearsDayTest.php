@@ -17,11 +17,12 @@ use DateTimeZone;
 use DateInterval;
 use Yasumi\Yasumi;
 use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing New Years Day in the United Kingdom.
  */
-class NewYearsDayTest extends UnitedKingdomBaseTestCase
+class NewYearsDayTest extends UnitedKingdomBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The year in which the holiday was first established
@@ -61,52 +62,12 @@ class NewYearsDayTest extends UnitedKingdomBaseTestCase
             $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
     }
 
-
-    // before 1974: observed
-    // after 1974: bank
-
     /**
      * Tests that the holiday defined in this test is of the type 'observance' before the year it was changed.
      */
     public function testHolidayIsObservedTypeBeforeChange()
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::ADJUSTMENT_YEAR - 1);
-
-        $holidays = Yasumi::create(self::REGION, $year);
-        $holiday  = $holidays->getHoliday(self::HOLIDAY);
-
-        // Basic assertions
-        $this->assertInstanceOf('Yasumi\Provider\\' . str_replace('/', '\\', self::REGION), $holidays);
-        $this->assertInstanceOf('Yasumi\Holiday', $holiday);
-        $this->assertTrue(isset($holiday));
-
-        // Assert the holiday type
-        $this->assertEquals(Holiday::TYPE_OBSERVANCE, $holiday->getType());
-        $this->assertArrayNotHasKey($holiday->getType(), [Holiday::TYPE_NATIONAL, Holiday::TYPE_SEASON, Holiday::TYPE_BANK, Holiday::TYPE_OTHER]);
-
-        unset($holiday, $holidays);
-    }
-
-    /**
-     * Tests that the holiday defined in this test is of the type 'bank' after the year it was changed.
-     */
-    public function testHolidayIsObservedTypeAfterChange()
-    {
-        $year = $this->generateRandomYear(self::ADJUSTMENT_YEAR);
-
-        $holidays = Yasumi::create(self::REGION, $year);
-        $holiday  = $holidays->getHoliday(self::HOLIDAY);
-
-        // Basic assertions
-        $this->assertInstanceOf('Yasumi\Provider\\' . str_replace('/', '\\', self::REGION), $holidays);
-        $this->assertInstanceOf('Yasumi\Holiday', $holiday);
-        $this->assertTrue(isset($holiday));
-
-        // Assert the holiday type
-        $this->assertEquals(Holiday::TYPE_BANK, $holiday->getType());
-        $this->assertArrayNotHasKey($holiday->getType(), [Holiday::TYPE_NATIONAL, Holiday::TYPE_SEASON, Holiday::TYPE_OBSERVANCE, Holiday::TYPE_OTHER]);
-
-        unset($holiday, $holidays);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::ADJUSTMENT_YEAR - 1), Holiday::TYPE_OBSERVANCE);
     }
 
     /**
@@ -139,5 +100,13 @@ class NewYearsDayTest extends UnitedKingdomBaseTestCase
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => 'New Year\'s Day']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ADJUSTMENT_YEAR), Holiday::TYPE_BANK);
     }
 }
