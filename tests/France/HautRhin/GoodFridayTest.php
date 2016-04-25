@@ -14,11 +14,13 @@ namespace Yasumi\tests\France\HautRhin;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class containing tests for Good Friday in Haut-Rhin (France).
  */
-class GoodFridayTest extends HautRhinBaseTestCase
+class GoodFridayTest extends HautRhinBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday to be tested
@@ -41,6 +43,14 @@ class GoodFridayTest extends HautRhinBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['fr_FR' => 'Vendredi saint']);
+            [self::LOCALE => 'Vendredi saint']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
     }
 }

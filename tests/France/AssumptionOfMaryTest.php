@@ -13,11 +13,13 @@
 namespace Yasumi\tests\France;
 
 use DateTime;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing the day of the Assumption of Mary in France.
  */
-class AssumptionOfMaryTest extends FranceBaseTestCase
+class AssumptionOfMaryTest extends FranceBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -43,7 +45,7 @@ class AssumptionOfMaryTest extends FranceBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['fr_FR' => 'L\'Assomption de Marie']);
+            [self::LOCALE => 'L\'Assomption de Marie']);
     }
 
     /**
@@ -54,5 +56,13 @@ class AssumptionOfMaryTest extends FranceBaseTestCase
     public function AssumptionOfMaryDataProvider()
     {
         return $this->generateRandomDates(8, 15, self::TIMEZONE);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
     }
 }
