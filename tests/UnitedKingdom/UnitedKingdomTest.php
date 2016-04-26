@@ -30,9 +30,7 @@ class UnitedKingdomTest extends UnitedKingdomBaseTestCase
     public function testNationalHolidays()
     {
         $this->assertDefinedHolidays([
-            'newYearsDay',
             'goodFriday',
-            'easterMonday',
             //'christmasDay',
             //'secondChristmasDay',
             //'waitangiDay',
@@ -63,7 +61,12 @@ class UnitedKingdomTest extends UnitedKingdomBaseTestCase
      */
     public function testBankHolidays()
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_BANK);
+        $this->assertDefinedHolidays([
+                'newYearsDay',
+                'easterMonday',
+                'mayDayBankHoliday',
+                'springBankHoliday'
+            ], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
 
     /**
@@ -79,6 +82,6 @@ class UnitedKingdomTest extends UnitedKingdomBaseTestCase
      */
     protected function setUp()
     {
-        $this->year = $this->generateRandomYear(1871);
+        $this->year = $this->generateRandomYear(1978);
     }
 }

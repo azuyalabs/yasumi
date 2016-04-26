@@ -33,6 +33,8 @@ class UnitedKingdom extends AbstractProvider
 
         // Add common holidays
         $this->calculateNewYearsDay();
+        $this->calculateMayDayBankHoliday();
+        $this->calculateSpringBankHoliday();
 
         // Add common Christian holidays (common in the United Kingdom)
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
@@ -84,6 +86,59 @@ class UnitedKingdom extends AbstractProvider
 
         $this->addHoliday(new Holiday('newYearsDay', ['en_GB' => 'New Year\'s Day'], $newYearsDay, $this->locale, $type));
     }
+
+    /**
+     * The first Monday of May is a bank holiday in the United Kingdom. It is called May Day in England, Wales and Northern Ireland.
+     * It is known as the Early May Bank Holiday in Scotland. It probably originated as a Roman festival honoring the beginning of
+     * the summer season (in the northern hemisphere). In more recent times, it has been as a day to campaign for and celebrate
+     * workers' rights.
+     *
+     * The first Monday in May is a bank holiday and many people have a day off work. Many organizations, businesses and schools are
+     * closed, while stores may be open or closed, according to local custom. Public transport systems often run to a holiday timetable.
+     *
+     * @link http://www.timeanddate.com/holidays/uk/early-may-bank-holiday
+     */
+    private function calculateMayDayBankHoliday()
+    {
+        // From 1978, by Royal Proclamation annually
+        if ($this->year < 1978) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday(
+            'mayDayBankHoliday',
+            ['en_GB' => 'May Day Bank Holiday'],
+            new DateTime("first monday of may $this->year", new DateTimeZone($this->timezone)),
+            $this->locale, Holiday::TYPE_BANK
+        ));
+    }
+
+    /**
+     * The spring bank holiday, also known as the late May bank holiday, is a time for people in the United Kingdom to have a
+     * day off work or school. It falls on the last Monday of May but it used to be on the Monday after Pentecost.
+     *
+     * The last Monday in May is a bank holiday. Many organizations, businesses and schools are closed. Stores may be open
+     * or closed, according to local custom. Public transport systems often run to a holiday timetable.
+     *
+     * @link http://www.timeanddate.com/holidays/uk/spring-bank-holiday
+     */
+    private function calculateSpringBankHoliday()
+    {
+        // Statutory bank holiday from 1971, following a trial period from 1965 to 1970.
+        if ($this->year < 1965) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday(
+            'springBankHoliday',
+            ['en_GB' => 'Spring Bank Holiday'],
+            new DateTime("last monday of may $this->year", new DateTimeZone($this->timezone)),
+            $this->locale, Holiday::TYPE_BANK
+        ));
+    }
+
+
+
 
 
     /**

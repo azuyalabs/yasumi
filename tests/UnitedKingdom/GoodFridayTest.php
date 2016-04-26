@@ -44,7 +44,7 @@ class GoodFridayTest extends UnitedKingdomBaseTestCase implements YasumiTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['en_GB' => 'Good Friday']);
+            [self::LOCALE => 'Good Friday']);
     }
 
     /**
