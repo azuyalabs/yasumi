@@ -13,30 +13,28 @@
 namespace Yasumi\tests\Greece;
 
 use DateTime;
+use DateTimeZone;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class containing tests for New Years Day in Greece.
+ * Class containing tests for Easter Monday in Greece.
  */
-class NewYearsDayTest extends GreeceBaseTestCase implements YasumiTestCaseInterface
+class EasterMondayTest extends GreeceBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'newYearsDay';
+    const HOLIDAY = 'easterMonday';
 
     /**
      * Tests the holiday defined in this test.
-     *
-     * @dataProvider HolidayDataProvider
-     *
-     * @param int      $year     the year for which the holiday defined in this test needs to be tested
-     * @param DateTime $expected the expected date
      */
-    public function testHoliday($year, $expected)
+    public function testHoliday()
     {
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
+        $year = 2016;
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
+            new DateTime("$year-5-2", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**
@@ -45,17 +43,7 @@ class NewYearsDayTest extends GreeceBaseTestCase implements YasumiTestCaseInterf
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Πρωτοχρονιά']);
-    }
-
-    /**
-     * Returns a list of random test dates used for assertion of the holiday defined in this test
-     *
-     * @return array list of test dates for the holiday defined in this test
-     */
-    public function HolidayDataProvider()
-    {
-        return $this->generateRandomDates(1, 1, self::TIMEZONE);
+            [self::LOCALE => 'Δευτέρα του Πάσχα']);
     }
 
     /**

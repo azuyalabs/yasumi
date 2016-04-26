@@ -14,11 +14,13 @@ namespace Yasumi\tests\Greece;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing Ascension Day in Greece.
  */
-class AscensionDayTest extends GreeceBaseTestCase
+class AscensionDayTest extends GreeceBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -26,9 +28,9 @@ class AscensionDayTest extends GreeceBaseTestCase
     const HOLIDAY = 'ascensionDay';
 
     /**
-     * Tests Ascension Day.
+     * Tests the holiday defined in this test.
      */
-    public function testAscensionDay()
+    public function testHoliday()
     {
         $year = 2016;
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
@@ -36,11 +38,19 @@ class AscensionDayTest extends GreeceBaseTestCase
     }
 
     /**
-     * Tests translated name of Ascension Day.
+     * Tests the translated name of the holiday defined in this test.
      */
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['el_GR' => 'Ανάληψη του Χριστού']);
+            [self::LOCALE => 'Ανάληψη του Χριστού']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
     }
 }
