@@ -14,11 +14,13 @@ namespace Yasumi\tests\Germany;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing Pentecost Monday in Germany.
  */
-class PentecostMondayTest extends GermanyBaseTestCase
+class PentecostMondayTest extends GermanyBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -42,5 +44,13 @@ class PentecostMondayTest extends GermanyBaseTestCase
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
             [self::LOCALE => 'Pfingstmontag']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
     }
 }

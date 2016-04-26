@@ -13,12 +13,13 @@
 namespace Yasumi\tests\Greece;
 
 use DateTime;
-use DateTimeZone;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class containing tests for The Three Holy Hierarchs in Greece.
  */
-class ThreeHolyHierarchsTest extends GreeceBaseTestCase
+class ThreeHolyHierarchsTest extends GreeceBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -26,34 +27,42 @@ class ThreeHolyHierarchsTest extends GreeceBaseTestCase
     const HOLIDAY = 'threeHolyHierarchs';
 
     /**
-     * Tests The Three Holy Hierarchs.
+     * Tests the holiday defined in this test.
      *
-     * @dataProvider ThreeHolyHierarchsDataProvider
+     * @dataProvider HolidayDataProvider
      *
-     * @param int      $year     the year for which The Three Holy Hierarchs needs to be tested
+     * @param int      $year     the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
      */
-    public function testThreeHolyHierarchs($year, $expected)
+    public function testHoliday($year, $expected)
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
-     * Returns a list of random test dates used for assertion of The Three Holy Hierarchs.
+     * Returns a list of random test dates used for assertion of the holiday defined in this test
      *
-     * @return array list of test dates for The Three Holy Hierarchs
+     * @return array list of test dates for the holiday defined in this test
      */
-    public function ThreeHolyHierarchsDataProvider()
+    public function HolidayDataProvider()
     {
         return $this->generateRandomDates(1, 30, self::TIMEZONE);
     }
 
     /**
-     * Tests translated name of The Three Holy Hierarchs.
+     * Tests the translated name of the holiday defined in this test.
      */
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['el_GR' => 'Τριών Ιεραρχών']);
+            [self::LOCALE => 'Τριών Ιεραρχών']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OTHER);
     }
 }

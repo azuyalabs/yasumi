@@ -31,4 +31,9 @@ abstract class GreeceBaseTestCase extends PHPUnit_Framework_TestCase
      * Timezone in which this provider has holidays defined
      */
     const TIMEZONE = 'Europe/Athens';
+
+    /**
+     * Locale that is considered common for this provider
+     */
+    const LOCALE = 'el_GR';
 }
