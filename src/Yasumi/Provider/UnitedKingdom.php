@@ -18,7 +18,8 @@ use DateTimeZone;
 use Yasumi\Holiday;
 
 /**
- * Provider for all holidays in the United Kingdom.
+ * Provider for all holidays in the United Kingdom. Local holidays/observances (e.g. Wales, England, Guernsey, etc.)
+ * are not part of this provider.
  */
 class UnitedKingdom extends AbstractProvider
 {
@@ -40,8 +41,6 @@ class UnitedKingdom extends AbstractProvider
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
         $this->calculateChristmasHolidays();
-
-        // National Holidays
     }
 
     /**
@@ -75,7 +74,7 @@ class UnitedKingdom extends AbstractProvider
             $newYearsDay->modify('next monday');
         }
 
-        $this->addHoliday(new Holiday('newYearsDay', ['en_GB' => 'New Year\'s Day'], $newYearsDay, $this->locale, $type));
+        $this->addHoliday(new Holiday('newYearsDay', [], $newYearsDay, $this->locale, $type));
     }
 
     /**
