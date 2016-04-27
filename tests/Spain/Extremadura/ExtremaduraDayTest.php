@@ -30,7 +30,7 @@ class ExtremaduraDayTest extends ExtremaduraBaseTestCase implements YasumiTestCa
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1984;
+    const ESTABLISHMENT_YEAR = 1985;
 
     /**
      * Tests the holiday defined in this test on or after establishment.
