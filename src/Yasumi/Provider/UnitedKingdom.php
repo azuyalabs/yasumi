@@ -39,18 +39,9 @@ class UnitedKingdom extends AbstractProvider
         // Add common Christian holidays (common in the United Kingdom)
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
+        $this->calculateChristmasHolidays();
 
         // National Holidays
-        //$this->calculateNewYearHolidays();
-        //$this->calculateWaitangiDay();
-        //$this->calculateAnzacDay();
-        //$this->calculateQueensBirthday();
-        //$this->calculateLabourDay();
-
-        // Add Christian holidays
-        //$this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
-        //$this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
-        //$this->calculateChristmasHolidays();
     }
 
     /**
@@ -137,73 +128,21 @@ class UnitedKingdom extends AbstractProvider
         ));
     }
 
-
-
-
-
     /**
-     * Queens Birthday.
+     * Christmas Day is celebrated in the United Kingdom on December 25. It traditionally celebrates Jesus Christ's birth
+     * but many aspects of this holiday have pagan origins. Christmas is a time for many people to give and receive gifts
+     * and prepare special festive meals.
      *
-     * The official head of state of the United Kingdom is the Monarch of the Commonwealth Realms.
-     * The monarch's birthday is officially celebrated in many parts of the United Kingdom.
-     * On her accession in 1952 Queen Elizabeth II was proclaimed in the United Kingdom ‘Queen of this Realm and all her
-     * other Realms’. Her representative in the United Kingdom, the governor general, has symbolic and ceremonial roles
-     * and is not involved in the day-to-day running of the government, which is the domain of the prime minister.
+     * Boxing Day in the United Kingdom is the day after Christmas Day and falls on December 26. Traditionally, it was a
+     * day when employers distributed money, food, cloth (material) or other valuable goods to their employees.
+     * In modern times, it is an important day for sporting events and the start of the post-Christmas sales.
      *
-     * Her actual birthday is on April 21, but it's celebrated as a public holiday on the first Monday of June.
+     * Boxing Day is a bank holiday. If Boxing Day falls on a Saturday, the following Monday is a bank holiday.
+     * If Christmas Day falls on a Saturday, the following Monday and Tuesday are bank holidays. All schools and many
+     * organizations are closed in this period. Some may close for the whole week between Christmas and New Year.
      *
-     * @link http://www.timeanddate.com/holidays/new-zealand/queen-birthday
-     */
-    public function calculateQueensBirthday()
-    {
-        if ($this->year < 1952) {
-            return;
-        }
-
-        $this->addHoliday(new Holiday(
-            'queensBirthday',
-            [],
-            new DateTime("first monday of june $this->year", new DateTimeZone($this->timezone)),
-            $this->locale
-        ));
-    }
-
-    /**
-     * During the 19th century, workers in the United Kingdom tried to claim the right for an 8-hour working day.
-     * In 1840 carpenter Samuel Parnell fought for this right in Wellington, NZ, and won.
-     * Labour Day was first celebrated in the United Kingdom on October 28, 1890, when thousands of workers paraded in the
-     * main city centres.
-     * Government employees were given the day off to attend the parades and many businesses closed for at least part
-     * of the day.
-     *
-     * The first official Labour Day public holiday in the United Kingdom was celebrated on the
-     * second Wednesday in October in 1900. The holiday was moved to the fourth Monday of October in 1910
-     * has remained on this date since then.
-     *
-     * @link http://www.timeanddate.com/holidays/new-zealand/labour-day
-     */
-    public function calculateLabourDay()
-    {
-        if ($this->year < 1900) {
-            return;
-        }
-
-        $date = new DateTime((($this->year < 1910) ? 'second wednesday of october' : 'fourth monday of october')." $this->year",
-            new DateTimeZone($this->timezone)
-        );
-
-        $this->addHoliday(new Holiday('labourDay', [], $date, $this->locale));
-    }
-
-    /**
-     * Christmas Day / Boxing Day.
-     *
-     * Christmas day, and Boxing day are public holidays in the United Kingdom,
-     * they are subject to mondayisation rules.
-     *
-     * @link http://www.timeanddate.com/holidays/new-zealand/boxing-day
-     * @link http://www.timeanddate.com/holidays/new-zealand/christmas-day
-     * @link http://employment.govt.nz/er/holidaysandleave/publicholidays/mondayisation.asp
+     * @link http://www.timeanddate.com/holidays/uk/christmas-day
+     * @link http://www.timeanddate.com/holidays/uk/boxing-day
      */
     public function calculateChristmasHolidays()
     {
@@ -224,6 +163,6 @@ class UnitedKingdom extends AbstractProvider
         }
 
         $this->addHoliday(new Holiday('christmasDay', [], $christmasDay, $this->locale));
-        $this->addHoliday(new Holiday('secondChristmasDay', [], $boxingDay, $this->locale));
+        $this->addHoliday(new Holiday('secondChristmasDay', [], $boxingDay, $this->locale, Holiday::TYPE_BANK));
     }
 }
