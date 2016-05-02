@@ -34,7 +34,7 @@ Currently the following holiday providers are implemented:
 * Belgium
 * Denmark
 * Finland
-* France (including the departments BasRhin, Haut-Rhin and Moselle)
+* France (including the departments Bas-Rhin, Haut-Rhin and Moselle)
 * Germany
 * Greece
 * Italy
@@ -43,8 +43,8 @@ Currently the following holiday providers are implemented:
 * New Zealand
 * Norway
 * Poland
-* Spain (including the autonomous communities Andalusia, Aragon, Asturias, Balearic Islands, Basque Country,
-  Canary Islands, Cantabria, Castile and León, Castilla-La Mancha, Catalonia, Ceuta, Community Of Madrid, Extremadura,
+* Spain (including the autonomous communities Andalusia, Aragon, Asturias, BalearicIslands, BasqueCountry,
+  CanaryIslands, Cantabria, Castile and León, Castilla-La Mancha, Catalonia, Ceuta, Community of Madrid, Extremadura,
   Galicia, La Rioja, Melilla, Navarre, Region of Murcia, Valencian Community)
 * Sweden
 * USA
@@ -153,6 +153,7 @@ foreach ($holidays->getHolidayNames() as $name) {
 // 'veteransDay'
 // 'thanksgivingDay'
 // 'christmasDay'
+// 'substituteHoliday:christmasDay'
 
 // Get a list all of the holiday dates
 foreach ($holidays->getHolidayDates() as $date) {
