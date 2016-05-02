@@ -262,7 +262,7 @@ class Japan extends AbstractProvider
         }
         if (! is_null($date)) {
             $this->addHoliday(new Holiday('respectfortheAgedDay',
-                ['en_US' => 'Respect for the Age Day', 'ja_JP' => '敬老の日'], $date, $this->locale));
+                ['en_US' => 'Respect for the Aged Day', 'ja_JP' => '敬老の日'], $date, $this->locale));
         }
     }
 
