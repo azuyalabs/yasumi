@@ -12,6 +12,7 @@
 
 // Translation for Easter Monday
 return [
+    'cy_GB' => 'Llun y Pasg',
     'da_DK' => '2. Påskedag',
     'de_DE' => 'Ostermontag',
     'el_GR' => 'Δευτέρα του Πάσχα',
