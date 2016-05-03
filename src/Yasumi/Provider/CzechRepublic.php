@@ -35,22 +35,20 @@ class CzechRepublic extends AbstractProvider
     {
         $this->timezone = 'Europe/Prague';
 
-        // Add common holidays
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->victoryInEuropeDay($this->year, $this->timezone, $this->locale));
-
-        // Add common Christian holidays (common in Czech republic)
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
-
-        // Calculate other holidays
+        $this->addHoliday($this->victoryInEuropeDay($this->year, $this->timezone, $this->locale));
         $this->calculateSaintsCyrilAndMethodiusDay();
         $this->calculateJanHusDay();
         $this->calculateCzechStatehoodDay();
+        $this->calculateIndependentCzechoslovakStateDay();
+        $this->calculateStruggleForFreedomAndDemocracyDay();
+        $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
+
     }
 
     /**

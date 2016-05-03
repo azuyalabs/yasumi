@@ -12,6 +12,7 @@
 
 // Translation for Christmas
 return [
+    'cs_CZ' => '1. svátek vánoční',
     'da_DK' => '1. Juledag',
     'de_DE' => '1. Weihnachtsfeiertag',
     'el_GR' => 'Χριστούγεννα',

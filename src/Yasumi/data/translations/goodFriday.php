@@ -12,6 +12,7 @@
 
 // Translation for Good Friday
 return [
+    'cs_CZ' => 'Velký pátek',
     'da_DK' => 'Langfredag',
     'de_DE' => 'Karfreitag',
     'el_GR' => 'Μεγάλη Παρασκευή',

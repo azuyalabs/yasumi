@@ -12,6 +12,7 @@
 
 // Translation for Victory in Europe Day
 return [
+    'cs_CZ' => 'Den vítězství',
     'en_US' => 'Victory in Europe Day',
     'fr_FR' => 'Fête de la Victoire',
 ];

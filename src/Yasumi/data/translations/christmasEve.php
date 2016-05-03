@@ -12,6 +12,7 @@
 
 // Translation for Christmas Eve
 return [
+    'cs_CZ' => 'Štědrý den',
     'en_US' => 'Christmas Eve',
     'sv_SE' => 'julafton',
 ];
