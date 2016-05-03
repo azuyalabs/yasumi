@@ -48,7 +48,6 @@ class CzechRepublic extends AbstractProvider
         $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
-
     }
 
     /**
@@ -67,7 +66,8 @@ class CzechRepublic extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Saints_Cyril_and_Methodius
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      */
-    public function calculateSaintsCyrilAndMethodiusDay() {
+    public function calculateSaintsCyrilAndMethodiusDay()
+    {
         $this->addHoliday(new Holiday('saintsCyrilAndMethodiusDay', ['cs_CZ' => 'Den slovanských věrozvěstů Cyrila a Metoděje', 'en_US' => 'Saints Cyril and Methodius Day'],
             new DateTime($this->year . '-07-5', new \DateTimeZone($this->timezone)), $this->locale));
     }
@@ -82,7 +82,8 @@ class CzechRepublic extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Jan_Hus
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      */
-    public function calculateJanHusDay() {
+    public function calculateJanHusDay()
+    {
         $this->addHoliday(new Holiday('janHusDay', ['cs_CZ' => 'Den upálení mistra Jana Husa', 'en_US' => 'Jan Hus Day'],
             new DateTime($this->year . '-07-6', new \DateTimeZone($this->timezone)), $this->locale));
     }
@@ -100,7 +101,8 @@ class CzechRepublic extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Wenceslaus_I,_Duke_of_Bohemia
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      */
-    public function calculateCzechStatehoodDay() {
+    public function calculateCzechStatehoodDay()
+    {
         $this->addHoliday(new Holiday('czechStateHoodDay', ['cs_CZ' => 'Den české státnosti', 'en_US' => 'St. Wenceslas Day (Czech Statehood Day)'],
             new DateTime($this->year . '-09-28', new \DateTimeZone($this->timezone)), $this->locale));
     }
@@ -110,7 +112,8 @@ class CzechRepublic extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      */
-    public function calculateIndependentCzechoslovakStateDay() {
+    public function calculateIndependentCzechoslovakStateDay()
+    {
         $this->addHoliday(new Holiday('independentCzechoslovakStateDay', ['cs_CZ' => 'Den vzniku samostatného československého státu', 'en_US' => 'Independent Czechoslovak State Day'],
             new DateTime($this->year . '-10-28', new \DateTimeZone($this->timezone)), $this->locale));
     }
@@ -120,7 +123,8 @@ class CzechRepublic extends AbstractProvider
      * 
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      */
-    public function calculateStruggleForFreedomAndDemocracyDay() {
+    public function calculateStruggleForFreedomAndDemocracyDay()
+    {
         $this->addHoliday(new Holiday('struggleForFreedomAndDemocracyDay', ['cs_CZ' => 'Den boje za svobodu a demokracii', 'en_US' => 'Struggle for Freedom and Democracy Day'],
             new DateTime($this->year . '-11-17', new \DateTimeZone($this->timezone)), $this->locale));
     }
