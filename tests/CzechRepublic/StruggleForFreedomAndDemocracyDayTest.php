@@ -40,6 +40,16 @@ class StruggleForFreedomAndDemocracyDayTest extends CzechRepublicBaseTestCase im
     }
 
     /**
+     * Returns a list of random test dates used for assertion of the holiday defined in this test
+     *
+     * @return array list of test dates for the holiday defined in this test
+     */
+    public function HolidayDataProvider()
+    {
+        return $this->generateRandomDates(11, 17, self::TIMEZONE);
+    }
+
+    /**
      * Tests type of the holiday defined in this test.
      */
     public function testTranslation()

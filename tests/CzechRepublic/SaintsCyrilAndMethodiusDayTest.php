@@ -18,6 +18,10 @@ use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing the Saints Cyril and Methodius Day in Czech republic.
+ *
+ * Class SaintsCyrilAndMethodiusDayTest
+ * @package Yasumi\tests\CzechRepublic
+ * @author Dennis Fridrich <fridrich.dennis@gmail.com>
  */
 class SaintsCyrilAndMethodiusDayTest extends CzechRepublicBaseTestCase implements YasumiTestCaseInterface
 {
@@ -37,6 +41,16 @@ class SaintsCyrilAndMethodiusDayTest extends CzechRepublicBaseTestCase implement
     public function testHoliday($year, $expected)
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
+    }
+
+    /**
+     * Returns a list of random test dates used for assertion of the holiday defined in this test
+     *
+     * @return array list of test dates for the holiday defined in this test
+     */
+    public function HolidayDataProvider()
+    {
+        return $this->generateRandomDates(7, 5, self::TIMEZONE);
     }
 
     /**

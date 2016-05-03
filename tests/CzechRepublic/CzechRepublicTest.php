@@ -44,7 +44,7 @@ class CzechRepublicTest extends CzechRepublicBaseTestCase
             'secondChristmasDay',
             'saintsCyrilAndMethodiusDay',
             'janHusDay',
-            'czechStatehoodDay',
+            'czechStateHoodDay',
             'independentCzechoslovakStateDay',
             'struggleForFreedomAndDemocracyDay',
         ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);

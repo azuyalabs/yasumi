@@ -14,7 +14,6 @@ namespace Yasumi\tests\CzechRepublic;
 
 use DateTime;
 use Yasumi\Holiday;
-use Yasumi\tests\Germany\CzechRepublicBaseTestCase;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
@@ -29,7 +28,7 @@ class VictoryInEuropeDayTest extends CzechRepublicBaseTestCase implements Yasumi
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'victoryInEuropeDayTest';
+    const HOLIDAY = 'victoryInEuropeDay';
 
     /**
      * Tests the holiday defined in this test.

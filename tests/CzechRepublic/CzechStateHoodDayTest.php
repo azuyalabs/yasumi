@@ -18,13 +18,17 @@ use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing the Czech State Hood Day in Czech republic.
+ * 
+ * Class CzechStateHoodDayTest
+ * @package Yasumi\tests\CzechRepublic
+ * @author Dennis Fridrich <fridrich.dennis@gmail.com>
  */
 class CzechStateHoodDayTest extends CzechRepublicBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'czechStateHood';
+    const HOLIDAY = 'czechStateHoodDay';
 
     /**
      * Tests the holiday defined in this test.
@@ -37,6 +41,16 @@ class CzechStateHoodDayTest extends CzechRepublicBaseTestCase implements YasumiT
     public function testHoliday($year, $expected)
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
+    }
+
+    /**
+     * Returns a list of random test dates used for assertion of the holiday defined in this test
+     *
+     * @return array list of test dates for the holiday defined in this test
+     */
+    public function HolidayDataProvider()
+    {
+        return $this->generateRandomDates(9, 28, self::TIMEZONE);
     }
 
     /**

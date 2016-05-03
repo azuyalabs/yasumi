@@ -101,7 +101,7 @@ class CzechRepublic extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      */
     public function calculateCzechStatehoodDay() {
-        $this->addHoliday(new Holiday('czechStatehoodDay', ['cs_CZ' => 'Den české státnosti', 'en_US' => 'St. Wenceslas Day (Czech Statehood Day)'],
+        $this->addHoliday(new Holiday('czechStateHoodDay', ['cs_CZ' => 'Den české státnosti', 'en_US' => 'St. Wenceslas Day (Czech Statehood Day)'],
             new DateTime($this->year . '-09-28', new \DateTimeZone($this->timezone)), $this->locale));
     }
 
