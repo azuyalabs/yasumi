@@ -1,5 +1,16 @@
 # Change Log
 
+## DEV/MASTER
+
+**Implemented enhancements:**
+
+- Added Holiday Provider for the United Kingdom. [\#23](https://github.com/azuyalabs/Yasumi/pull/23)
+
+**Resolved issues:**
+
+- Corrected a typo in the English translation for 敬老の日 (Japan) [\#22](https://github.com/azuyalabs/Yasumi/pull/22) ([navarr](https://github.com/navarr))
+
+
 ## 1.3.0 (May 2, 2016)
 
 **Implemented enhancements:**
