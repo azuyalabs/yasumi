@@ -10,9 +10,8 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-// Translation for Christmas Eve
+// Translation for St. George's Day
 return [
-    'cy_GB' => 'Noswyl Nadolig',
-    'en_US' => 'Christmas Eve',
-    'sv_SE' => 'julafton',
+    'cy_GB' => 'Dydd Gŵyl Dewi',
+    'en_GB' => 'St. David\'s Day',
 ];

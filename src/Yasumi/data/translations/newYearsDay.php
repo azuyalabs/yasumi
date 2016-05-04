@@ -12,6 +12,7 @@
 
 // Translation for New Year's Day
 return [
+    'cy_GB' => 'Dydd Calan',
     'da_DK' => 'Nytårsdag',
     'de_DE' => 'Neujahr',
     'el_GR' => 'Πρωτοχρονιά',
