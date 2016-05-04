@@ -68,6 +68,16 @@ class YasumiTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * Tests that classes that Yasumi allows external classes that extend the ProviderInterface.
+     */
+    public function testCreateWithAbstractExtension()
+    {
+        $class = \Yasumi\tests\YasumiExternalProvider::class;
+        $instance = Yasumi::create($class, 2016);
+        $this->assertInstanceOf($class, $instance);
+    }
+
+    /**
      * Tests that an Yasumi\Exception\UnknownLocaleException is thrown in case an invalid locale is given.
      *
      * @expectedException \Yasumi\Exception\UnknownLocaleException
