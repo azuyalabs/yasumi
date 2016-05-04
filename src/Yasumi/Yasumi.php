@@ -123,9 +123,11 @@ class Yasumi
             return $providers;
         }
 
+        $ds = DIRECTORY_SEPARATOR;
+
         $extension     = 'php';
         $providers     = [];
-        $filesIterator = new \RecursiveIteratorIterator(new RecursiveDirectoryIterator(__DIR__ . '/Provider/'),
+        $filesIterator = new \RecursiveIteratorIterator(new RecursiveDirectoryIterator(__DIR__ . $ds . 'Provider' . $ds),
             RecursiveIteratorIterator::SELF_FIRST);
 
         foreach ($filesIterator as $file) {
@@ -135,7 +137,10 @@ class Yasumi
                 continue;
             }
 
-            $provider = preg_replace('#^.+/Provider/(.+)\.php$#', '$1', $file->getPathName());
+            $quotedDs = preg_quote($ds);
+            $regex = "#^.+{$quotedDs}Provider{$quotedDs}(.+)\\.php$#";
+
+            $provider = preg_replace($regex, '$1', $file->getPathName());
 
             $providers[] = $provider;
         }
