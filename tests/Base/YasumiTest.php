@@ -128,7 +128,7 @@ class YasumiTest extends PHPUnit_Framework_TestCase
     {
         $country = 'Japan';
         $name    = 'childrensDay';
-        $year    = Factory::create()->numberBetween(1949, 9999);
+        $year    = Factory::create()->numberBetween(1949, 9998);
 
         $holidays = Yasumi::create($country, $year);
 
