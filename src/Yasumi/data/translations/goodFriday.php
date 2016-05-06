@@ -12,6 +12,7 @@
 
 // Translation for Good Friday
 return [
+    'cs_CZ' => 'Velký pátek',
     'cy_GB' => 'Gwener y Groglith',
     'da_DK' => 'Langfredag',
     'de_DE' => 'Karfreitag',
