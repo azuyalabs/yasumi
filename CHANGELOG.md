@@ -4,11 +4,15 @@
 
 **Implemented enhancements:**
 
+- Added Holiday Provider for the Czech Republic. [\#26](https://github.com/azuyalabs/Yasumi/pull/26) ([dfridrich](https://github.com/dfridrich))
 - Added Holiday Provider for the United Kingdom. [\#23](https://github.com/azuyalabs/Yasumi/pull/23)
+- Add Welsh language (spoken in Wales, UK) translations for the holidays in the United Kingdom [\#25](https://github.com/azuyalabs/Yasumi/pull/25) ([meigwilym](https://github.com/meigwilym))
 
 **Resolved issues:**
 
+- Fixed an issue with the unit test for the 'getProviders' method failing on Windows. Hardcoded unix-style directory separators have been replaced by DIRECTORY_SEPARATOR. [\#30](https://github.com/azuyalabs/Yasumi/pull/30) ([navarr](https://github.com/navarr))
 - Corrected a typo in the English translation for 敬老の日 (Japan) [\#22](https://github.com/azuyalabs/Yasumi/pull/22) ([navarr](https://github.com/navarr))
+- Fixed issue that the unit tests in 'YasumiTest' (methods 'next' and 'previous') didn't cover the situations that the limits are exceeded. [\#28](https://github.com/azuyalabs/yasumi/issues/28)
 
 
 ## 1.3.0 (May 2, 2016)
