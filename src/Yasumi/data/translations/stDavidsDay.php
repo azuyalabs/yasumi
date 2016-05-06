@@ -10,11 +10,9 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-// Translation for St. Stephen's Day
+// Translation for St. David's Day
 return [
-    'cy_GB' => 'Gŵyl San Steffan',
-    'en_US' => 'St. Stephen\'s Day',
-    'es_ES' => 'Sant Esteve',
-    'fr_FR' => 'Saint-Étienne',
-    'it_IT' => 'Santo Stefano',
+    'cy_GB' => 'Dydd Gŵyl Dewi',
+    'en_GB' => 'St. David\'s Day',
+    'en_US' => 'St. David\'s Day',
 ];

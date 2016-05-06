@@ -13,6 +13,7 @@
 // Translation for Christmas Eve
 return [
     'cs_CZ' => 'Štědrý den',
+    'cy_GB' => 'Noswyl Nadolig',
     'en_US' => 'Christmas Eve',
     'sv_SE' => 'julafton',
 ];
