@@ -1,11 +1,21 @@
 <?php
+/**
+ *  This file is part of the Yasumi package.
+ *
+ *  Copyright (c) 2015 - 2016 AzuyaLabs
+ *
+ *  For the full copyright and license information, please view the LICENSE
+ *  file that was distributed with this source code.
+ *
+ *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ */
 
 namespace Yasumi\tests\CzechRepublic;
 
 use Yasumi\Holiday;
 
 /**
- * Class for testing holidays in Czech republic.
+ * Class for testing holidays in the Czech Republic.
  * 
  * Class CzechRepublicTest
  * @package Yasumi\tests\CzechRepublic
@@ -41,7 +51,7 @@ class CzechRepublicTest extends CzechRepublicBaseTestCase
     }
 
     /**
-     * Tests if all observed holidays in Germany are defined by the provider class
+     * Tests if all observed holidays in the Czech Republic are defined by the provider class
      */
     public function testObservedHolidays()
     {
@@ -49,7 +59,7 @@ class CzechRepublicTest extends CzechRepublicBaseTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in Germany are defined by the provider class
+     * Tests if all seasonal holidays in the Czech Republic are defined by the provider class
      */
     public function testSeasonalHolidays()
     {
@@ -57,7 +67,7 @@ class CzechRepublicTest extends CzechRepublicBaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in Germany are defined by the provider class
+     * Tests if all bank holidays in the Czech Republic are defined by the provider class
      */
     public function testBankHolidays()
     {
@@ -65,7 +75,7 @@ class CzechRepublicTest extends CzechRepublicBaseTestCase
     }
 
     /**
-     * Tests if all other holidays in Germany are defined by the provider class
+     * Tests if all other holidays in the Czech Republic are defined by the provider class
      */
     public function testOtherHolidays()
     {
