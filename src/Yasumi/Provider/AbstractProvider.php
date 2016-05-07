@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\Provider;
@@ -17,6 +17,7 @@ use Countable;
 use DateTime;
 use InvalidArgumentException;
 use IteratorAggregate;
+use Yasumi\Filters\BetweenFilter;
 use Yasumi\Holiday;
 use Yasumi\ProviderInterface;
 use Yasumi\TranslationsInterface;
@@ -349,5 +350,35 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     public function previous($shortName)
     {
         return $this->anotherTime($this->year - 1, $shortName);
+    }
+
+    /**
+     * Retrieves a list of all holidays between the given start and end date.
+     *
+     * Yasumi only calculates holidays for a single year, so a start date or end date beyond the given year will only
+     * return holidays for the given year. For example, holidays calculated for the year 2016, will only return 2016
+     * holidays if the provided period is for example 01/01/2012 - 31/12/2017.
+     *
+     * Please take care to use the appropriate timezone for the start and end date parameters. In case you use
+     * different
+     * timezone for these parameters versus the instantiated Holiday Provider, the outcome might be unexpected (but
+     * correct).
+     *
+     * @param \DateTime $start_date Start date of the time frame to check against
+     * @param \DateTime $end_date   End date of the time frame to check against
+     * @param bool      $equals     indicate whether the start and end dates should be included in the comparison
+     *
+     * @throws InvalidArgumentException An InvalidArgumentException is thrown if the start date is set after the end
+     *                                  date.
+     *
+     * @return \Yasumi\Filters\BetweenFilter
+     */
+    public function between(DateTime $start_date, DateTime $end_date = null, $equals = true)
+    {
+        if ($start_date > $end_date) {
+            throw new InvalidArgumentException('Start date must be a date before the end date.');
+        }
+
+        return new BetweenFilter($this->getIterator(), $start_date, $end_date, $equals);
     }
 }
