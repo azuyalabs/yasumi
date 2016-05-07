@@ -4,6 +4,7 @@
 
 **Implemented enhancements:**
 
+- To determine a set of holidays between two dates you can use the aptly named between() method.
 - Added Holiday Provider for the Czech Republic. [\#26](https://github.com/azuyalabs/Yasumi/pull/26) ([dfridrich](https://github.com/dfridrich))
 - Added Holiday Provider for the United Kingdom. [\#23](https://github.com/azuyalabs/Yasumi/pull/23)
 - Add Welsh language (spoken in Wales, UK) translations for the holidays in the United Kingdom [\#25](https://github.com/azuyalabs/Yasumi/pull/25) ([meigwilym](https://github.com/meigwilym))
