@@ -14,6 +14,8 @@ namespace Yasumi\tests\Italy;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class containing tests for Republic Day in Italy.
@@ -25,7 +27,7 @@ use DateTimeZone;
  *
  * @link http://en.wikipedia.org/wiki/Festa_della_Repubblica
  */
-class RepublicDayTest extends ItalyBaseTestCase
+class RepublicDayTest extends ItalyBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -62,6 +64,15 @@ class RepublicDayTest extends ItalyBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), ['it_IT' => 'Festa della Republica']);
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Festa della Republica']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL);
     }
 }

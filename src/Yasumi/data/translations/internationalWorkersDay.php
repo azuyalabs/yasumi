@@ -12,6 +12,7 @@
 
 // Translation for International Workers' Day
 return [
+    'cs_CZ' => 'Svátek práce',
     'de_DE' => 'Tag der Arbeit',
     'el_GR' => 'Εργατική Πρωτομαγιά',
     'en_US' => 'International Workers\' Day',

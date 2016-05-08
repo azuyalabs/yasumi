@@ -14,11 +14,13 @@ namespace Yasumi\tests\Spain\Extremadura;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing Extremadura Day in Extremadura (Spain).
  */
-class ExtremaduraDayTest extends ExtremaduraBaseTestCase
+class ExtremaduraDayTest extends ExtremaduraBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday to be tested
@@ -28,7 +30,7 @@ class ExtremaduraDayTest extends ExtremaduraBaseTestCase
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1984;
+    const ESTABLISHMENT_YEAR = 1985;
 
     /**
      * Tests the holiday defined in this test on or after establishment.
@@ -55,6 +57,15 @@ class ExtremaduraDayTest extends ExtremaduraBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), ['es_ES' => 'Día de Extremadura']);
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Día de Extremadura']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL);
     }
 }

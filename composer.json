@@ -3,12 +3,14 @@
   "description": "Yasumi is an easy PHP Library for calculating national holidays.",
   "keywords": [
     "holiday",
+    "holidays",
     "calendar",
     "calculation",
     "celebration",
-    "php",
     "date",
-    "time"
+    "time",
+    "bank",
+    "national"
   ],
   "license": "MIT",
   "authors": [
@@ -21,10 +23,13 @@
     "php": ">=5.5.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "~4.6",
+    "phpunit/phpunit": "~4.7|~5.3",
     "fzaninotto/faker": "~1.4",
-    "mikey179/vfsStream": "~1.5.0",
-    "fabpot/php-cs-fixer": "^1.11"
+    "mikey179/vfsStream": "~1.5",
+    "fabpot/php-cs-fixer": "~1.11",
+    "guzzlehttp/guzzle": "~4.0|~5.0|~6.0",
+    "symfony/console": "~2.3|~3.0",
+    "symfony/process": "~2.3|~3.0"
   },
   "autoload": {
     "psr-4": {
@@ -32,7 +37,10 @@
     }
   },
   "autoload-dev": {
-    "psr-4": {"Yasumi\\tests\\": "tests/"}
+    "psr-4": {
+      "Yasumi\\tests\\": "tests/",
+      "Yasumi\\bin\\": "bin/"
+    }
   },
   "scripts": {
     "php-cs-fixer": "./vendor/bin/php-cs-fixer fix ."

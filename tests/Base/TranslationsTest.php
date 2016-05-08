@@ -9,8 +9,11 @@
  *
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
+namespace Yasumi\tests\Base;
 
+use InvalidArgumentException;
 use org\bovigo\vfs\vfsStream;
+use PHPUnit_Framework_TestCase;
 use Yasumi\Translations;
 
 /**

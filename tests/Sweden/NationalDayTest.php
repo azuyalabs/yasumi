@@ -14,11 +14,13 @@ namespace Yasumi\tests\Sweden;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing the National Day of Sweden in Sweden.
  */
-class NationalDayTest extends SwedenBaseTestCase
+class NationalDayTest extends SwedenBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The year in which the holiday was first established
@@ -52,7 +54,7 @@ class NationalDayTest extends SwedenBaseTestCase
     /**
      * Tests the translated name of the holiday defined in this test on or after establishment.
      */
-    public function testTranslationOnAfterEstablishment()
+    public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1982), [self::LOCALE => 'Svenska flaggans dag']);
@@ -65,5 +67,14 @@ class NationalDayTest extends SwedenBaseTestCase
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(1983),
             [self::LOCALE => 'Sveriges nationaldag']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL);
     }
 }

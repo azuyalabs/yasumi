@@ -31,4 +31,9 @@ abstract class NewZealandBaseTestCase extends PHPUnit_Framework_TestCase
      * Timezone in which this provider has holidays defined
      */
     const TIMEZONE = 'Pacific/Auckland';
+
+    /**
+     * Locale that is considered common for this provider
+     */
+    const LOCALE = 'en_NZ';
 }

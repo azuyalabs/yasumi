@@ -14,11 +14,13 @@ namespace Yasumi\tests\USA;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class to test Independence Day.
  */
-class IndependenceDayTest extends USABaseTestCase
+class IndependenceDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -70,11 +72,20 @@ class IndependenceDayTest extends USABaseTestCase
     }
 
     /**
-     * Tests translated name of Independence Day.
+     * Tests translated name of the holiday defined in this test.
      */
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), ['en_US' => 'Independence Day']);
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Independence Day']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL);
     }
 }

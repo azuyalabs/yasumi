@@ -14,12 +14,14 @@ namespace Yasumi\tests\USA;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\tests\YasumiTestCaseInterface;
 use Yasumi\Yasumi;
+use Yasumi\Holiday;
 
 /**
  * Class for testing Veterans Day in the USA.
  */
-class VeteransDayTest extends USABaseTestCase
+class VeteransDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -72,5 +74,23 @@ class VeteransDayTest extends USABaseTestCase
         $holidays = Yasumi::create(self::REGION, $year);
         $holiday  = $holidays->getHoliday(self::HOLIDAY);
         $this->assertEquals('Veterans Day', $holiday->getName());
+    }
+
+    /**
+     * Tests translated name of the holiday defined in this test.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(1954),
+            [self::LOCALE => 'Veterans Day']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL);
     }
 }

@@ -14,11 +14,13 @@ namespace Yasumi\tests\France;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class containing tests for Easter Monday in France.
  */
-class EasterMondayTest extends FranceBaseTestCase
+class EasterMondayTest extends FranceBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -41,6 +43,14 @@ class EasterMondayTest extends FranceBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['fr_FR' => 'Lundi de Pâques']);
+            [self::LOCALE => 'Lundi de Pâques']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
     }
 }

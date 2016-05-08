@@ -14,11 +14,13 @@ namespace Yasumi\tests\Denmark;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class containing tests for Good Friday in Denmark.
  */
-class GoodFridayTest extends DenmarkBaseTestCase
+class GoodFridayTest extends DenmarkBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday to be tested
@@ -41,6 +43,14 @@ class GoodFridayTest extends DenmarkBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['da_DK' => 'Langfredag']);
+            [self::LOCALE => 'Langfredag']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
     }
 }

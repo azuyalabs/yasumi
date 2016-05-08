@@ -14,11 +14,13 @@ namespace Yasumi\tests\USA;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class to test Memorial Day.
  */
-class MemorialDayTest extends USABaseTestCase
+class MemorialDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -63,11 +65,20 @@ class MemorialDayTest extends USABaseTestCase
     }
 
     /**
-     * Tests translated name of Memorial Day.
+     * Tests translated name of the holiday defined in this test.
      */
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), ['en_US' => 'Memorial Day']);
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Memorial Day']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL);
     }
 }

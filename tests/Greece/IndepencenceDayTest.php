@@ -14,11 +14,13 @@ namespace Yasumi\tests\Greece;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing the Independence Day of Greece in Greece.
  */
-class IndepencenceDayTest extends GreeceBaseTestCase
+class IndepencenceDayTest extends GreeceBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The year in which the holiday was first established
@@ -31,9 +33,9 @@ class IndepencenceDayTest extends GreeceBaseTestCase
     const HOLIDAY = 'independenceDay';
 
     /**
-     * Tests the holiday defined in this test on or after establishment.
+     * Tests the holiday defined in this test.
      */
-    public function testHolidayOnAfterEstablishment()
+    public function testHoliday()
     {
         $year = 2018;
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
@@ -50,11 +52,20 @@ class IndepencenceDayTest extends GreeceBaseTestCase
     }
 
     /**
-     * Tests the translated name of the holiday defined in this test on or after establishment.
+     * Tests the translated name of the holiday defined in this test.
      */
-    public function testTranslationOnAfterEstablishment()
+    public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), ['el_GR' => 'Εικοστή Πέμπτη Μαρτίου']);
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Εικοστή Πέμπτη Μαρτίου']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL);
     }
 }

@@ -14,6 +14,8 @@ namespace Yasumi\tests\Italy;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class containing tests for Liberation Day in Italy.
@@ -25,7 +27,7 @@ use DateTimeZone;
  *
  * @link http://en.wikipedia.org/wiki/Liberation_Day_%28Italy%29
  */
-class LiberationDayTest extends ItalyBaseTestCase
+class LiberationDayTest extends ItalyBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -62,6 +64,15 @@ class LiberationDayTest extends ItalyBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), ['it_IT' => 'Festa della Liberazione']);
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Festa della Liberazione']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL);
     }
 }

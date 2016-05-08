@@ -14,16 +14,23 @@ namespace Yasumi\tests\Japan;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\Holiday;
 
 /**
  * Class testing Respect For The Aged Day in Japan.
  */
-class RespectForTheAgedDayTest extends JapanBaseTestCase
+class RespectForTheAgedDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
      */
     const HOLIDAY = 'respectfortheAgedDay';
+
+    /**
+     * The year in which the holiday was first established
+     */
+    const ESTABLISHMENT_YEAR = 1996;
 
     /**
      * Tests Respect for the Aged Day after 2003. Respect for the Aged Day was established since 1996 on September
@@ -64,6 +71,25 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase
      */
     public function testRespectForTheAgedDayBefore1996()
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(1000, 1995));
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
+    }
+
+    /**
+     * Tests the translated name of the holiday defined in this test.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => '敬老の日']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL);
     }
 }

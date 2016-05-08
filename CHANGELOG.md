@@ -1,7 +1,22 @@
 # Change Log
 
-
 ## DEV/MASTER
+
+**Implemented enhancements:**
+
+- To determine a set of holidays between two dates you can use the aptly named between() method.
+- Added Holiday Provider for the Czech Republic. [\#26](https://github.com/azuyalabs/Yasumi/pull/26) ([dfridrich](https://github.com/dfridrich))
+- Added Holiday Provider for the United Kingdom. [\#23](https://github.com/azuyalabs/Yasumi/pull/23)
+- Add Welsh language (spoken in Wales, UK) translations for the holidays in the United Kingdom [\#25](https://github.com/azuyalabs/Yasumi/pull/25) ([meigwilym](https://github.com/meigwilym))
+
+**Resolved issues:**
+
+- Fixed an issue with the unit test for the 'getProviders' method failing on Windows. Hardcoded unix-style directory separators have been replaced by DIRECTORY_SEPARATOR. [\#30](https://github.com/azuyalabs/Yasumi/pull/30) ([navarr](https://github.com/navarr))
+- Corrected a typo in the English translation for 敬老の日 (Japan) [\#22](https://github.com/azuyalabs/Yasumi/pull/22) ([navarr](https://github.com/navarr))
+- Fixed issue that the unit tests in 'YasumiTest' (methods 'next' and 'previous') didn't cover the situations that the limits are exceeded. [\#28](https://github.com/azuyalabs/yasumi/issues/28)
+
+
+## 1.3.0 (May 2, 2016)
 
 **Implemented enhancements:**
 
@@ -11,13 +26,15 @@
 - Added Holiday Provider for Germany. [\#9](https://github.com/azuyalabs/Yasumi/pull/9) ([eaglefsd](https://github.com/eaglefsd))
 - Added translations ('fr_FR', 'fr_BE') for Belgium National day [\#864d250](https://github.com/azuyalabs/yasumi/commit/864d25097abbeedbee15bcc37702a34c36a5b696) ([R2c](https://github.com/R2c))
 - Sorted all translations in the translation files alphabetically (descending). 
-- Added missing English translations ('en_US') for the Christian holidays 'Immaculate Conception', 'Maundy Thursday', 
+- Added missing English ('en_US') translations for the Christian holidays 'Immaculate Conception', 'Maundy Thursday', 
   'St. Georges Day', 'St. John's Day', 'St. Josephs Day' and 'St. Stephens Day'. 
 - Added Test Interface class to ensure the unit tests contain a some minimal assertions.
-- Refactoring and cleanup of various unit tests.
+- Refactoring and cleanup of all unit tests.
 
 **Resolved issues:**
 
+- Fixed issue for Sweden as All Saints Day was always calculated to be on November 1st. However the holiday has always 
+  been celebrated on a Saturday (between October 31 and November 6th).
 - Fixed the getProviders as it was not able to load Holiday Providers defined in (sub) regions [\#5879133](https://github.com/azuyalabs/yasumi/commit/58791330ccf5c13b1626885921534c32866b7faf) ([R2c](https://github.com/R2c))
 - Fixed issue that it was possible for the AbstractProvider class to be loaded as a Holiday Provider [\#9678bc4](https://github.com/azuyalabs/yasumi/commit/9678bc490e34980404ad5dc5b3d45a3c76a3ca0f) ([R2c](https://github.com/R2c))
 - Corrected incorrect pathname reference \*BaseTestCase.php files ("Test" -> "test).
@@ -65,8 +82,8 @@
 **Implemented enhancements:**
 
 - Added Spain Holiday Provider (including the autonomous communities Andalusia, Aragon, Asturias, Balearic Islands, 
-    Basque Country, Canary Islands, Cantabria, Castile and León, Castilla-La Mancha, Ceuta, Community of Madrid, 
-    Extremadura, Galicia, La Rioja, Melilla, Navarre, Region of Murcia, Valencian Community)
+  Basque Country, Canary Islands, Cantabria, Castile and León, Castilla-La Mancha, Ceuta, Community of Madrid, 
+  Extremadura, Galicia, La Rioja, Melilla, Navarre, Region of Murcia, Valencian Community)
 - Added Corpus Christi, St. Joseph's Day, Maundy Thursday, St. George's Day, St. John's Day to the common Christian 
   Holidays.
 - Updated some English, Italian, French and Dutch translations. 

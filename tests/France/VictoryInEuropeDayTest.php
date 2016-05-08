@@ -14,11 +14,13 @@ namespace Yasumi\tests\France;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class containing tests for Victory in Europe Day in France.
  */
-class VictoryInEuropeDayTest extends FranceBaseTestCase
+class VictoryInEuropeDayTest extends FranceBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -55,6 +57,15 @@ class VictoryInEuropeDayTest extends FranceBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), ['fr_FR' => 'Fête de la Victoire']);
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Fête de la Victoire']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL);
     }
 }

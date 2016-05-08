@@ -14,11 +14,13 @@ namespace Yasumi\tests\Spain\BasqueCountry;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\Holiday;
 
 /**
  * Class for testing Basque Country Day in Basque Country (Spain).
  */
-class BasqueCountryDayTest extends BasqueCountryBaseTestCase
+class BasqueCountryDayTest extends BasqueCountryBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday to be tested
@@ -68,6 +70,16 @@ class BasqueCountryDayTest extends BasqueCountryBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::ABOLISHMENT_YEAR), ['es_ES' => 'Euskadi Eguna']);
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::ABOLISHMENT_YEAR),
+            [self::LOCALE => 'Euskadi Eguna']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::ABOLISHMENT_YEAR), Holiday::TYPE_NATIONAL);
     }
 }

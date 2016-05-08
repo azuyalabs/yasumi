@@ -14,11 +14,13 @@ namespace Yasumi\tests\NewZealand;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\Holiday;
 
 /**
  * Class for testing Waitangi day in the New Zealand.
  */
-class WaitangiDayTest extends NewZealandBaseTestCase
+class WaitangiDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -26,11 +28,16 @@ class WaitangiDayTest extends NewZealandBaseTestCase
     const HOLIDAY = 'waitangiDay';
 
     /**
+     * The year in which the holiday was first established
+     */
+    const ESTABLISHMENT_YEAR = 1974;
+
+    /**
      * Tests Waitangi Day
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int $year the year for which the holiday defined in this test needs to be tested
+     * @param int      $year     the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
      */
     public function testHoliday($year, $expected)
@@ -44,7 +51,7 @@ class WaitangiDayTest extends NewZealandBaseTestCase
      */
     public function testNotHoliday()
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY, 1973);
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, self::ESTABLISHMENT_YEAR - 1);
     }
 
     /**
@@ -52,12 +59,8 @@ class WaitangiDayTest extends NewZealandBaseTestCase
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(
-            self::REGION,
-            self::HOLIDAY,
-            $this->generateRandomYear(1974),
-            ['en_US' => 'Waitangi Day']
-        );
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Waitangi Day']);
     }
 
     /**
@@ -70,7 +73,7 @@ class WaitangiDayTest extends NewZealandBaseTestCase
         $data = [];
 
         for ($i = 0; $i < 100; $i++) {
-            $year = $this->generateRandomYear(1974, 2100);
+            $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
             $date = new DateTime("$year-02-06", new DateTimeZone(self::TIMEZONE));
 
             // in 2015 some policy was introduced to make sure this holiday was celebrated during the working week.
@@ -82,5 +85,14 @@ class WaitangiDayTest extends NewZealandBaseTestCase
         }
 
         return $data;
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL);
     }
 }

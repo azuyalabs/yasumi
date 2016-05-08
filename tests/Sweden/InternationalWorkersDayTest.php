@@ -13,11 +13,13 @@
 namespace Yasumi\tests\Sweden;
 
 use DateTime;
+use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\Holiday;
 
 /**
  * Class containing tests for International Workers' Day (i.e. Labour Day) in Sweden.
  */
-class InternationalWorkersDayTest extends SwedenBaseTestCase
+class InternationalWorkersDayTest extends SwedenBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -38,9 +40,9 @@ class InternationalWorkersDayTest extends SwedenBaseTestCase
     }
 
     /**
-     * Tests translated name of International Workers' Day.
+     * Tests the translated name of the holiday defined in this test.
      */
-    public function testTranslatedInternationalWorkersDay()
+    public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
             [self::LOCALE => 'Första maj']);
@@ -54,5 +56,13 @@ class InternationalWorkersDayTest extends SwedenBaseTestCase
     public function InternationalWorkersDayDataProvider()
     {
         return $this->generateRandomDates(5, 1, self::TIMEZONE);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
     }
 }

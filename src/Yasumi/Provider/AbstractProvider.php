@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\Provider;
@@ -17,6 +17,7 @@ use Countable;
 use DateTime;
 use InvalidArgumentException;
 use IteratorAggregate;
+use Yasumi\Filters\BetweenFilter;
 use Yasumi\Holiday;
 use Yasumi\ProviderInterface;
 use Yasumi\TranslationsInterface;
@@ -41,7 +42,8 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     protected $locale;
     /**
      * @var array list of the days of the week (the index of the weekdays) that are considered weekend days. Defaults
-     *            to Sunday (0) and Saturday (6), as this is globally the common standard. (0 = Sunday, 1 = Monday, etc.)
+     *            to Sunday (0) and Saturday (6), as this is globally the common standard. (0 = Sunday, 1 = Monday,
+     *            etc.)
      */
     protected $weekend_days = [0, 6];
     /**
@@ -64,8 +66,8 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     {
         $this->clearHolidays();
 
-        $this->year = $year ?: date('Y');
-        $this->locale = $locale;
+        $this->year               = $year ?: date('Y');
+        $this->locale             = $locale;
         $this->globalTranslations = $globalTranslations;
 
         $this->initialize();
@@ -162,7 +164,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         }
 
         // If given date is a Yasumi\Holiday object
-        if (!is_null($date) && in_array($date, $this->holidays)) {
+        if (! is_null($date) && in_array($date, $this->holidays)) {
             return true;
         }
 
@@ -177,7 +179,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     public function getHolidayDates()
     {
         return array_map(function ($holiday) {
-            return (string) $holiday;
+            return (string)$holiday;
         }, $this->holidays);
     }
 
@@ -194,7 +196,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     {
         $this->isHolidayNameNotEmpty($shortName); // Validate if short name is not empty
 
-        return (string) $this->holidays[$shortName];
+        return (string)$this->holidays[$shortName];
     }
 
     /**
@@ -231,7 +233,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     {
         $this->isHolidayNameNotEmpty($shortName); // Validate if short name is not empty
 
-        return (int) $this->holidays[$shortName]->format('w');
+        return (int)$this->holidays[$shortName]->format('w');
     }
 
     /**
@@ -241,7 +243,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     public function count()
     {
-        return (int) count($this->getHolidays());
+        return (int)count($this->getHolidays());
     }
 
     /**
@@ -348,5 +350,35 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     public function previous($shortName)
     {
         return $this->anotherTime($this->year - 1, $shortName);
+    }
+
+    /**
+     * Retrieves a list of all holidays between the given start and end date.
+     *
+     * Yasumi only calculates holidays for a single year, so a start date or end date beyond the given year will only
+     * return holidays for the given year. For example, holidays calculated for the year 2016, will only return 2016
+     * holidays if the provided period is for example 01/01/2012 - 31/12/2017.
+     *
+     * Please take care to use the appropriate timezone for the start and end date parameters. In case you use
+     * different
+     * timezone for these parameters versus the instantiated Holiday Provider, the outcome might be unexpected (but
+     * correct).
+     *
+     * @param \DateTime $start_date Start date of the time frame to check against
+     * @param \DateTime $end_date   End date of the time frame to check against
+     * @param bool      $equals     indicate whether the start and end dates should be included in the comparison
+     *
+     * @throws InvalidArgumentException An InvalidArgumentException is thrown if the start date is set after the end
+     *                                  date.
+     *
+     * @return \Yasumi\Filters\BetweenFilter
+     */
+    public function between(DateTime $start_date, DateTime $end_date = null, $equals = true)
+    {
+        if ($start_date > $end_date) {
+            throw new InvalidArgumentException('Start date must be a date before the end date.');
+        }
+
+        return new BetweenFilter($this->getIterator(), $start_date, $end_date, $equals);
     }
 }

@@ -14,11 +14,13 @@ namespace Yasumi\tests\Greece;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class containing tests for Clean Monday in Greece.
  */
-class CleanMondayTest extends GreeceBaseTestCase
+class CleanMondayTest extends GreeceBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -26,9 +28,9 @@ class CleanMondayTest extends GreeceBaseTestCase
     const HOLIDAY = 'cleanMonday';
 
     /**
-     * Tests Clean Monday.
+     * Tests the holiday defined in this test.
      */
-    public function testCleanMonday()
+    public function testHoliday()
     {
         $year = 2016;
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
@@ -36,11 +38,19 @@ class CleanMondayTest extends GreeceBaseTestCase
     }
 
     /**
-     * Tests translated name of Clean Monday.
+     * Tests the translated name of the holiday defined in this test.
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(), ['el_GR' => 'Καθαρά Δευτέρα']);
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            [self::LOCALE => 'Καθαρά Δευτέρα']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
     }
 }

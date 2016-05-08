@@ -14,11 +14,13 @@ namespace Yasumi\tests\France;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing Armistice Day in France.
  */
-class ArmisticeDayTest extends FranceBaseTestCase
+class ArmisticeDayTest extends FranceBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -55,6 +57,15 @@ class ArmisticeDayTest extends FranceBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), ['fr_FR' => 'Armistice']);
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Armistice']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL);
     }
 }

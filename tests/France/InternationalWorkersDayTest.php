@@ -13,11 +13,13 @@
 namespace Yasumi\tests\France;
 
 use DateTime;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class containing tests for International Workers' Day (i.e. Labour Day) in France.
  */
-class InternationalWorkersDayTest extends FranceBaseTestCase
+class InternationalWorkersDayTest extends FranceBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -43,7 +45,7 @@ class InternationalWorkersDayTest extends FranceBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['fr_FR' => 'Fête du Travail']);
+            [self::LOCALE => 'Fête du Travail']);
     }
 
     /**
@@ -54,5 +56,13 @@ class InternationalWorkersDayTest extends FranceBaseTestCase
     public function InternationalWorkersDayDataProvider()
     {
         return $this->generateRandomDates(5, 1, self::TIMEZONE);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
     }
 }

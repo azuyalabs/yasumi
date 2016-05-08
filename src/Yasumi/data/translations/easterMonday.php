@@ -12,9 +12,13 @@
 
 // Translation for Easter Monday
 return [
+    'cs_CZ' => 'Velikonoční pondělí',
+    'cy_GB' => 'Llun y Pasg',
     'da_DK' => '2. Påskedag',
     'de_DE' => 'Ostermontag',
     'el_GR' => 'Δευτέρα του Πάσχα',
+    'en_GB' => 'Easter Monday',
+    'en_NZ' => 'Easter Monday',
     'en_US' => 'Easter Monday',
     'es_ES' => 'Lunes de Pascua',
     'fi_FI' => '2. pääsiäispäivä',

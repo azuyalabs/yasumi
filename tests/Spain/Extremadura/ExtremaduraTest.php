@@ -84,6 +84,6 @@ class ExtremaduraTest extends ExtremaduraBaseTestCase
      */
     protected function setUp()
     {
-        $this->year = $this->generateRandomYear(1981);
+        $this->year = $this->generateRandomYear(1984);
     }
 }

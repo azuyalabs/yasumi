@@ -13,11 +13,13 @@
 namespace Yasumi\tests\France;
 
 use DateTime;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class containing tests for New Years Day in France.
  */
-class NewYearsDayTest extends FranceBaseTestCase
+class NewYearsDayTest extends FranceBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -43,7 +45,7 @@ class NewYearsDayTest extends FranceBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['fr_FR' => 'Jour de l\'An']);
+            [self::LOCALE => 'Jour de l\'An']);
     }
 
     /**
@@ -54,5 +56,13 @@ class NewYearsDayTest extends FranceBaseTestCase
     public function NewYearsDayDataProvider()
     {
         return $this->generateRandomDates(1, 1, self::TIMEZONE);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
     }
 }

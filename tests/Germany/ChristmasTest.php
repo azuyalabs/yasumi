@@ -13,11 +13,13 @@
 namespace Yasumi\tests\Germany;
 
 use DateTime;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing Christmas in Germany.
  */
-class ChristmasTest extends GermanyBaseTestCase
+class ChristmasTest extends GermanyBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -27,7 +29,7 @@ class ChristmasTest extends GermanyBaseTestCase
     /**
      * Tests Christmas Day.
      *
-     * @dataProvider ChristmasDayDataProvider
+     * @dataProvider HolidayDataProvider
      *
      * @param int      $year     the year for which Christmas Day needs to be tested
      * @param DateTime $expected the expected date
@@ -38,11 +40,11 @@ class ChristmasTest extends GermanyBaseTestCase
     }
 
     /**
-     * Returns a list of random test dates used for assertion of Christmas Day.
+     * Returns a list of random test dates used for assertion of the holiday defined in this test
      *
-     * @return array list of test dates for Christmas Day
+     * @return array list of test dates for the holiday defined in this test
      */
-    public function ChristmasDayDataProvider()
+    public function HolidayDataProvider()
     {
         return $this->generateRandomDates(12, 25, self::TIMEZONE);
     }
@@ -54,5 +56,13 @@ class ChristmasTest extends GermanyBaseTestCase
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
             [self::LOCALE => '1. Weihnachtsfeiertag']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
     }
 }

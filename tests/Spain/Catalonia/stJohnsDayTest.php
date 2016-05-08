@@ -13,11 +13,13 @@
 namespace Yasumi\tests\Spain\Catalonia;
 
 use DateTime;
+use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\Holiday;
 
 /**
  * Class for testing St. John's Day in Catalonia (Spain).
  */
-class stJohnsDayTest extends CataloniaBaseTestCase
+class stJohnsDayTest extends CataloniaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday to be tested
@@ -53,6 +55,14 @@ class stJohnsDayTest extends CataloniaBaseTestCase
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['es_ES' => 'Sant Joan']);
+            [self::LOCALE => 'Sant Joan']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OBSERVANCE);
     }
 }

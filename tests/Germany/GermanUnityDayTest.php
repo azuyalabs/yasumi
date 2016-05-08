@@ -14,11 +14,13 @@ namespace Yasumi\tests\Germany;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing the German Unity Day in Germany.
  */
-class GermanUnityDayTest extends GermanyBaseTestCase
+class GermanUnityDayTest extends GermanyBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The year in which the holiday was first established
@@ -50,11 +52,20 @@ class GermanUnityDayTest extends GermanyBaseTestCase
     }
 
     /**
-     * Tests the translated name of the holiday defined in this test on or after establishment.
+     * Tests type of the holiday defined in this test.
      */
-    public function testTranslationOnAfterEstablishment()
+    public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2080), [self::LOCALE => 'Tag der Deutschen Einheit']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL);
     }
 }

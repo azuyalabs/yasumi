@@ -14,16 +14,23 @@ namespace Yasumi\tests\Japan;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\Holiday;
 
 /**
  * Class testing Vernal Equinox Day in Japan.
  */
-class VernalEquinoxDayTest extends JapanBaseTestCase
+class VernalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
      */
     const HOLIDAY = 'vernalEquinoxDay';
+
+    /**
+     * The year in which the holiday was first established
+     */
+    const ESTABLISHMENT_YEAR = 1948;
 
     /**
      * Tests Vernal Equinox Day after 2150. This national holiday was established in 1948 as a day for the admiration
@@ -80,7 +87,8 @@ class VernalEquinoxDayTest extends JapanBaseTestCase
      */
     public function testVernalEquinoxDayBefore1948()
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(1000, 1947));
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
     }
 
     /**
@@ -90,6 +98,25 @@ class VernalEquinoxDayTest extends JapanBaseTestCase
      */
     public function testVernalEquinoxDayBetween1851And1948()
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(1851, 1947));
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
+            $this->generateRandomYear(1851, self::ESTABLISHMENT_YEAR - 1));
+    }
+
+    /**
+     * Tests the translated name of the holiday defined in this test.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2150), [self::LOCALE => '春分の日']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2150),
+            Holiday::TYPE_NATIONAL);
     }
 }

@@ -12,9 +12,13 @@
 
 // Translation for New Year's Day
 return [
+    'cs_CZ' => 'Den obnovy samostatného českého státu a Nový rok',
+    'cy_GB' => 'Dydd Calan',
     'da_DK' => 'Nytårsdag',
     'de_DE' => 'Neujahr',
     'el_GR' => 'Πρωτοχρονιά',
+    'en_GB' => 'New Year\'s Day',
+    'en_NZ' => 'New Year\'s Day',
     'en_US' => 'New Year\'s Day',
     'es_ES' => 'Año Nuevo',
     'fi_FI' => 'Uudenvuodenpäivä',

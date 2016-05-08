@@ -14,11 +14,13 @@ namespace Yasumi\tests\NewZealand;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\Holiday;
 
 /**
  * Class for testing ANZAC day in the New Zealand.
  */
-class AnzacDayTest extends NewZealandBaseTestCase
+class AnzacDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -26,11 +28,16 @@ class AnzacDayTest extends NewZealandBaseTestCase
     const HOLIDAY = 'anzacDay';
 
     /**
+     * The year in which the holiday was first established
+     */
+    const ESTABLISHMENT_YEAR = 1921;
+
+    /**
      * Tests ANZAC Day
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int $year the year for which the holiday defined in this test needs to be tested
+     * @param int      $year     the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
      */
     public function testHoliday($year, $expected)
@@ -44,20 +51,7 @@ class AnzacDayTest extends NewZealandBaseTestCase
      */
     public function testNotHoliday()
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY, 1920);
-    }
-
-    /**
-     * Tests the translated name of the holiday defined in this test.
-     */
-    public function testTranslation()
-    {
-        $this->assertTranslatedHolidayName(
-            self::REGION,
-            self::HOLIDAY,
-            $this->generateRandomYear(1921),
-            ['en_US' => 'ANZAC Day']
-        );
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, self::ESTABLISHMENT_YEAR - 1);
     }
 
     /**
@@ -70,7 +64,7 @@ class AnzacDayTest extends NewZealandBaseTestCase
         $data = [];
 
         for ($i = 0; $i < 100; $i++) {
-            $year = $this->generateRandomYear(1921, 2100);
+            $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
             $date = new DateTime("$year-04-25", new DateTimeZone(self::TIMEZONE));
 
             // in 2015 some policy was introduced to make sure this holiday was celebrated during the working week.
@@ -82,5 +76,23 @@ class AnzacDayTest extends NewZealandBaseTestCase
         }
 
         return $data;
+    }
+
+    /**
+     * Tests the translated name of the holiday defined in this test.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'ANZAC Day']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL);
     }
 }

@@ -10,6 +10,9 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
+namespace Yasumi\tests\Base;
+
+use PHPUnit_Framework_TestCase;
 use Yasumi\Filters\BankHolidaysFilter;
 use Yasumi\Filters\ObservedHolidaysFilter;
 use Yasumi\Filters\OfficialHolidaysFilter;

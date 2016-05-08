@@ -14,11 +14,13 @@ namespace Yasumi\tests\USA;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\Holiday;
 
 /**
  * Class to test Dr. Martin Luther King Day.
  */
-class MartinLutherKingDayTest extends USABaseTestCase
+class MartinLutherKingDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -52,11 +54,21 @@ class MartinLutherKingDayTest extends USABaseTestCase
     }
 
     /**
-     * Tests translated name of Dr. Martin Luther King Day.
+     * Tests translated name of the holiday defined in this test.
      */
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), ['en_US' => 'Dr. Martin Luther King Jr\'s Birthday']);
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => 'Dr. Martin Luther King Jr\'s Birthday']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL);
     }
 }
