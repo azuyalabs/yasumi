@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\Provider;
@@ -24,6 +24,12 @@ use Yasumi\Holiday;
 class UnitedKingdom extends AbstractProvider
 {
     use CommonHolidays, ChristianHolidays;
+
+    /**
+     * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * country or subregion.
+     */
+    const ID = 'GB';
 
     /**
      * Initialize holidays for the United Kingdom.
@@ -78,13 +84,14 @@ class UnitedKingdom extends AbstractProvider
     }
 
     /**
-     * The first Monday of May is a bank holiday in the United Kingdom. It is called May Day in England, Wales and Northern Ireland.
-     * It is known as the Early May Bank Holiday in Scotland. It probably originated as a Roman festival honoring the beginning of
-     * the summer season (in the northern hemisphere). In more recent times, it has been as a day to campaign for and celebrate
-     * workers' rights.
+     * The first Monday of May is a bank holiday in the United Kingdom. It is called May Day in England, Wales and
+     * Northern Ireland. It is known as the Early May Bank Holiday in Scotland. It probably originated as a Roman
+     * festival honoring the beginning of the summer season (in the northern hemisphere). In more recent times, it has
+     * been as a day to campaign for and celebrate workers' rights.
      *
-     * The first Monday in May is a bank holiday and many people have a day off work. Many organizations, businesses and schools are
-     * closed, while stores may be open or closed, according to local custom. Public transport systems often run to a holiday timetable.
+     * The first Monday in May is a bank holiday and many people have a day off work. Many organizations, businesses
+     * and schools are closed, while stores may be open or closed, according to local custom. Public transport systems
+     * often run to a holiday timetable.
      *
      * @link http://www.timeanddate.com/holidays/uk/early-may-bank-holiday
      */
@@ -95,20 +102,18 @@ class UnitedKingdom extends AbstractProvider
             return;
         }
 
-        $this->addHoliday(new Holiday(
-            'mayDayBankHoliday',
-            ['en_GB' => 'May Day Bank Holiday'],
-            new DateTime("first monday of may $this->year", new DateTimeZone($this->timezone)),
-            $this->locale, Holiday::TYPE_BANK
-        ));
+        $this->addHoliday(new Holiday('mayDayBankHoliday', ['en_GB' => 'May Day Bank Holiday'],
+            new DateTime("first monday of may $this->year", new DateTimeZone($this->timezone)), $this->locale,
+            Holiday::TYPE_BANK));
     }
 
     /**
-     * The spring bank holiday, also known as the late May bank holiday, is a time for people in the United Kingdom to have a
-     * day off work or school. It falls on the last Monday of May but it used to be on the Monday after Pentecost.
+     * The spring bank holiday, also known as the late May bank holiday, is a time for people in the United Kingdom to
+     * have a day off work or school. It falls on the last Monday of May but it used to be on the Monday after
+     * Pentecost.
      *
-     * The last Monday in May is a bank holiday. Many organizations, businesses and schools are closed. Stores may be open
-     * or closed, according to local custom. Public transport systems often run to a holiday timetable.
+     * The last Monday in May is a bank holiday. Many organizations, businesses and schools are closed. Stores may be
+     * open or closed, according to local custom. Public transport systems often run to a holiday timetable.
      *
      * @link http://www.timeanddate.com/holidays/uk/spring-bank-holiday
      */
@@ -119,20 +124,18 @@ class UnitedKingdom extends AbstractProvider
             return;
         }
 
-        $this->addHoliday(new Holiday(
-            'springBankHoliday',
-            ['en_GB' => 'Spring Bank Holiday'],
-            new DateTime("last monday of may $this->year", new DateTimeZone($this->timezone)),
-            $this->locale, Holiday::TYPE_BANK
-        ));
+        $this->addHoliday(new Holiday('springBankHoliday', ['en_GB' => 'Spring Bank Holiday'],
+            new DateTime("last monday of may $this->year", new DateTimeZone($this->timezone)), $this->locale,
+            Holiday::TYPE_BANK));
     }
 
     /**
-     * Christmas Day is celebrated in the United Kingdom on December 25. It traditionally celebrates Jesus Christ's birth
-     * but many aspects of this holiday have pagan origins. Christmas is a time for many people to give and receive gifts
-     * and prepare special festive meals.
+     * Christmas Day is celebrated in the United Kingdom on December 25. It traditionally celebrates Jesus Christ's
+     * birth but many aspects of this holiday have pagan origins. Christmas is a time for many people to give and
+     * receive gifts and prepare special festive meals.
      *
-     * Boxing Day in the United Kingdom is the day after Christmas Day and falls on December 26. Traditionally, it was a
+     * Boxing Day in the United Kingdom is the day after Christmas Day and falls on December 26. Traditionally, it was
+     * a
      * day when employers distributed money, food, cloth (material) or other valuable goods to their employees.
      * In modern times, it is an important day for sporting events and the start of the post-Christmas sales.
      *
@@ -146,7 +149,7 @@ class UnitedKingdom extends AbstractProvider
     public function calculateChristmasHolidays()
     {
         $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->timezone));
-        $boxingDay = new DateTime("$this->year-12-26", new DateTimeZone($this->timezone));
+        $boxingDay    = new DateTime("$this->year-12-26", new DateTimeZone($this->timezone));
 
         switch ($christmasDay->format('w')) {
             case 0:
