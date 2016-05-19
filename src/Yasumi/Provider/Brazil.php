@@ -9,6 +9,7 @@
  *
  *  @author Dorian Neto <doriansampaioneto@gmail.com>
  */
+
 namespace Yasumi\Provider;
 
 use DateInterval;
@@ -37,95 +38,90 @@ class Brazil extends AbstractProvider
 
         // Add Christian holidays
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
 
         /**
          * Carnaval
          *
-         * Carnaval do Brasil é a maior festa popular do país. A festa acontece durante quatro dias. (que precedem a
-         * quarta–feira de cinzas). O último dia de Carnaval precede a quarta-feira de cinzas (início da Quaresma).
+         * Carnaval is the biggest popular festival of country. The festival it happens during 4 days and the last day above
+         * the wednesday of ashes (initiation of lent).
          *
-         * @link https://pt.wikipedia.org/wiki/Carnaval_do_Brasil
+         * @link https://en.wikipedia.org/wiki/Brazilian_Carnival
          */
         if ($this->year >= 1700) {
-            $this->addHoliday(new Holiday('carnaval', [],
-                $this->calculateEaster($this->year, $this->timezone)->sub(new DateInterval('P47D')), $this->locale));
+            $this->addHoliday(new Holiday('carnavalDay', ['pt_BR' => 'Carnaval'],
+                $this->calculateEaster($this->year, $this->timezone)->sub(new DateInterval('P47D')),
+                $this->locale, Holiday::TYPE_OBSERVANCE));
         }
 
         /**
-         * Dia de Tiradentes
+         * Tiradentes Day
          *
-         * Tiradentes (ou Dia de Tiradentes) é um dos feriados nacionais brasileiros. É uma homenagem ao herói nacional
-         * brasileiro Joaquim José da Silva Xavier, mártir da Inconfidência Mineira. É celebrado no dia 21 de abril,
-         * pois a execução de Tiradentes deu-se neste dia, no ano de 1792.
+         * Tiradentes Day is a the Brazilian national holidays. Is the a tribute to national Brazilian hero Joaquim José
+         * da Silva Xavier, martyr of Inconfidência Mineira. Is celebrated on 21 Abril, because the execution of
+         * Tiradentes got in the day, in 1792.
          *
-         * @link https://pt.wikipedia.org/wiki/Tiradentes_(feriado_nacional)
+         * @link https://en.wikipedia.org/wiki/Tiradentes
          */
         if ($this->year >= 1792) {
-            $this->addHoliday(new Holiday('diaDeTiradentes', [],
+            $this->addHoliday(new Holiday('tiradentesDay', ['pt_BR' => 'Dia de Tiradentes'],
                 new DateTime("$this->year-04-21", new DateTimeZone($this->timezone)), $this->locale));
         }
 
         /**
-         * Dia da Independência do Brasil
+         * Independence Day
          *
-         * O Dia da Pátria (também chamado Dia da Independência do Brasil ou Sete de Setembro) é um feriado nacional da
-         * pátria brasileira celebrado no dia 7 de setembro de cada ano. A data comemora a Declaração de Independência
-         * do Brasil do Império Português no dia 7 de setembro de 1822.
+         * The Homeland Day is a national holiday of Brazilian homeland celebrated on 7 September. The date is
+         * celebrated the independence declaration of Brazil to Portuguese empire on 7 September 1822.
          *
-         * @link https://pt.wikipedia.org/wiki/Dia_da_P%C3%A1tria
+         * @link https://en.wikipedia.org/wiki/Independence_of_Brazil
          */
         if ($this->year >= 1822) {
-            $this->addHoliday(new Holiday('diaDaIndependenciaDoBrasil', [],
+            $this->addHoliday(new Holiday('independenceDay', ['pt_BR' => 'Dia da Independência do Brasil'],
                 new DateTime("$this->year-09-07", new DateTimeZone($this->timezone)), $this->locale));
         }
 
         /**
-         * Nossa Senhora Aparecida
+         * Our Lady of Aparecida Day
          *
-         * Nossa Senhora da Conceição Aparecida, popularmente chamada de Nossa Senhora Aparecida, é a padroeira do
-         * Brasil. Venerada na Igreja Católica. Um título mariano negro, Nossa Senhora Aparecida é representada por uma
-         * pequena imagem de terracota da Virgem Maria atualmente alojada na Basílica de Nossa Senhora Aparecida,
-         * localizada na cidade de Aparecida, em São Paulo.
+         * Our Lady of Conceição Aparecida, popularly called Our Lady Aparecida, Brazil's patroness. She is
+         * venerated in Catholic Church. Our Lady Aparecida is represented like a little image of Virgen Maria,
+         * currently in Basílica of Our Lady Aparecida, localized in São Paulo.
          *
-         * Sua festa litúrgica é celebrada em 12 de outubro, um feriado nacional no Brasil desde 1980, quando o Papa
-         * João Paulo II consagrou a Basílica, que é o quarto santuário mariano mais visitado do mundo,[4] capaz de
-         * abrigar até 45.000 fiéis.
+         * The event is celebrated on 12 October, a national holiday in Brazil since 1980.
          *
-         * @link https://pt.wikipedia.org/wiki/Nossa_Senhora_da_Concei%C3%A7%C3%A3o_Aparecida
+         * @link https://en.wikipedia.org/wiki/Our_Lady_of_Aparecida
          */
         if ($this->year >= 1980) {
-            $this->addHoliday(new Holiday('nossaSenhoraAparecida', [],
+            $this->addHoliday(new Holiday('ourLadyOfAparecidaDay', ['pt_BR' => 'Dia de Nossa Senhora Aparecida'],
                 new DateTime("$this->year-10-12", new DateTimeZone($this->timezone)), $this->locale));
         }
 
         /**
-         * Dia dos Finados
+         * All Souls Day
          *
-         * O Dia dos Fiéis Defuntos ou Dia de Finados, (conhecido ainda como Dia dos Mortos no México), é celebrado pela
-         * Igreja Católica no dia 2 de novembro.
+         * The All Souls day (known like Deads Day in Mexico), is celebrated for Catholic Church on 2 November.
          *
-         * @link https://pt.wikipedia.org/wiki/Dia_dos_Fi%C3%A9is_Defuntos
+         * @link http://www.johninbrazil.org/all-souls-day-o-dia-dos-finados/
          */
         if ($this->year >= 1300) {
-            $this->addHoliday(new Holiday('diaDosFinados', [],
+            $this->addHoliday(new Holiday('allSoulsDay', ['pt_BR' => 'Dia de Finados'],
                 new DateTime("$this->year-11-02", new DateTimeZone($this->timezone)), $this->locale));
         }
 
         /**
-         * Proclamação da República
+         * Proclamation of Republic Day
          *
-         * A Proclamação da República Brasileira foi um levante político-militar ocorrido em 15 de novembro de 1889 que
-         * instaurou a forma republicana federativa presidencialista do governo no Brasil, derrubando a monarquia
-         * constitucional parlamentarista do Império do Brasil e, por conseguinte, pondo fim à soberania do imperador
-         * D. Pedro II. Foi, então, proclamada a República do Brasil.
+         * The Brazilian Proclamation of Republic was an act relevant military politic it happened on 15 November 1889
+         * that initiated the build federative presidential of govern in Brazil, downed the monarchy constitutional
+         * parlamentary of Brazil's Empire.
          *
-         * @link https://pt.wikipedia.org/wiki/Proclama%C3%A7%C3%A3o_da_Rep%C3%BAblica_do_Brasil
+         * @link https://en.wikipedia.org/wiki/Proclamation_of_the_Republic_(Brazil)
          */
         if ($this->year >= 1889) {
-            $this->addHoliday(new Holiday('proclamacaoDaRepublica', [],
+            $this->addHoliday(new Holiday('proclamationOfRepublicDay', ['pt_BR' => 'Dia da Proclamação da República'],
                 new DateTime("$this->year-11-15", new DateTimeZone($this->timezone)), $this->locale));
         }
     }

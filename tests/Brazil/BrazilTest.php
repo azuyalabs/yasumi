@@ -31,16 +31,13 @@ class BrazilTest extends BrazilBaseTestCase
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
-            'carnaval',
             'goodFriday',
-            'easter',
-            'diaDeTiradentes',
+            'tiradentesDay',
             'internationalWorkersDay',
-            'corpusChristi',
-            'diaDaIndependenciaDoBrasil',
-            'nossaSenhoraAparecida',
-            'diaDosFinados',
-            'proclamacaoDaRepublica',
+            'independenceDay',
+            'ourLadyOfAparecidaDay',
+            'allSoulsDay',
+            'proclamationOfRepublicDay',
             'christmasDay'
         ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
     }
@@ -50,7 +47,11 @@ class BrazilTest extends BrazilBaseTestCase
      */
     public function testObservedHolidays()
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays([
+            'carnavalDay',
+            'easter',
+            'corpusChristi'
+        ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**

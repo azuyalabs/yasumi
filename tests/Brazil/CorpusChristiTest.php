@@ -15,11 +15,13 @@ namespace Yasumi\tests\Brazil;
 use DateTime;
 use DateInterval;
 use Yasumi\Provider\ChristianHolidays;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing Corpus Christi in the Brazil.
  */
-class CorpusChristiTest extends BrazilBaseTestCase
+class CorpusChristiTest extends BrazilBaseTestCase implements YasumiTestCaseInterface
 {
     use ChristianHolidays;
 
@@ -39,11 +41,19 @@ class CorpusChristiTest extends BrazilBaseTestCase
     }
 
     /**
-     * Tests translated name of Corpus Christi.
+     * Tests translated name of the holiday defined in this test.
      */
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['pt_BR' => 'Corpus Christi']);
+            [self::LOCALE => 'Corpus Christi']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OBSERVANCE);
     }
 }

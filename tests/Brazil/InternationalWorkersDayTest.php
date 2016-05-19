@@ -14,11 +14,13 @@ namespace Yasumi\tests\Brazil;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing International Workers' Day in the Brazil.
  */
-class InternationalWorkersDayTest extends BrazilBaseTestCase
+class InternationalWorkersDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -36,11 +38,19 @@ class InternationalWorkersDayTest extends BrazilBaseTestCase
     }
 
     /**
-     * Tests translated name of International Workers' Day.
+     * Tests translated name of the holiday defined in this test.
      */
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['pt_BR' => 'Dia internacional do trabalhador']);
+            [self::LOCALE => 'Dia internacional do trabalhador']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
     }
 }
