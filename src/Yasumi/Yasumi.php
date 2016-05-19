@@ -116,7 +116,7 @@ class Yasumi
      */
     public static function getProviders()
     {
-        //Basic static cache
+        // Basic static cache
         static $providers;
         if ($providers !== null) {
             return $providers;
@@ -124,24 +124,26 @@ class Yasumi
 
         $ds = DIRECTORY_SEPARATOR;
 
-        $extension     = 'php';
         $providers     = [];
-        $filesIterator = new \RecursiveIteratorIterator(new RecursiveDirectoryIterator(__DIR__ . $ds . 'Provider' . $ds),
-            RecursiveIteratorIterator::SELF_FIRST);
+        $filesIterator = new \RecursiveIteratorIterator(new RecursiveDirectoryIterator(__DIR__ . $ds . 'Provider',
+            \FilesystemIterator::SKIP_DOTS), RecursiveIteratorIterator::SELF_FIRST);
 
         foreach ($filesIterator as $file) {
-            if ($file->isFile() === false || in_array($file->getBasename(),
-                    self::$ignoredProvider) || $file->getExtension() !== $extension
+            if ($file->isDir() || in_array($file->getBasename('.php'),
+                    self::$ignoredProvider) || $file->getExtension() !== 'php'
             ) {
                 continue;
             }
 
             $quotedDs = preg_quote($ds);
-            $regex    = "#^.+{$quotedDs}Provider{$quotedDs}(.+)\\.php$#";
+            $provider = preg_replace("#^.+{$quotedDs}Provider{$quotedDs}(.+)\\.php$#", '$1', $file->getPathName());
 
-            $provider = preg_replace($regex, '$1', $file->getPathName());
+            $class = new \ReflectionClass(sprintf('Yasumi\Provider\%s', str_replace('/', '\\', $provider)));
 
-            $providers[] = $provider;
+            $key = 'ID';
+            if ($class->hasConstant($key)) {
+                $providers[strtoupper($class->getConstant($key))] = $provider;
+            }
         }
 
         return (array)$providers;
