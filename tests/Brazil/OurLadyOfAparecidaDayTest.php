@@ -14,16 +14,18 @@ namespace Yasumi\tests\Brazil;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Holiday;
+use Yasumi\Tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Nossa Senhora Aparecida in the Brazil.
+ * Class for testing Our Lady Aparecida Day in the Brazil.
  */
-class NossaSenhoraAparecidaTest extends BrazilBaseTestCase
+class OurLadyOfAparecidaDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'nossaSenhoraAparecida';
+    const HOLIDAY = 'ourLadyOfAparecidaDay';
 
     /**
      * The year in which the holiday was first established
@@ -48,5 +50,24 @@ class NossaSenhoraAparecidaTest extends BrazilBaseTestCase
         $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR-1);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-10-12", new DateTimeZone(self::TIMEZONE)));
+    }
+
+    /**
+     * Tests the translated name of the holiday defined in this test.
+     */
+    public function testTranslation()
+    {
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $year,
+            [self::LOCALE => 'Dia de Nossa Senhora Aparecida']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_NATIONAL);
     }
 }

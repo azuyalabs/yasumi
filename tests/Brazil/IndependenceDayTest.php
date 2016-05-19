@@ -14,16 +14,18 @@ namespace Yasumi\tests\Brazil;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Holiday;
+use Yasumi\Tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Dia da independência do Brasil in the Brazil.
+ * Class for testing Independence Day in the Brazil.
  */
-class DiaDaIndependenciaDoBrasilTest extends BrazilBaseTestCase
+class IndependenceDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'diaDaIndependenciaDoBrasil';
+    const HOLIDAY = 'independenceDay';
 
     /**
      * The year in which the holiday was first established
@@ -48,5 +50,24 @@ class DiaDaIndependenciaDoBrasilTest extends BrazilBaseTestCase
         $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR-1);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-09-07", new DateTimeZone(self::TIMEZONE)));
+    }
+
+    /**
+     * Tests the translated name of the holiday defined in this test.
+     */
+    public function testTranslation()
+    {
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $year,
+            [self::LOCALE => 'Dia da Independência do Brasil']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_NATIONAL);
     }
 }

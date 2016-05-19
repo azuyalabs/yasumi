@@ -14,16 +14,18 @@ namespace Yasumi\tests\Brazil;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Holiday;
+use Yasumi\Tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Dia de Tiradentes in the Brazil.
+ * Class for testing Tiradentes' Day in the Brazil.
  */
-class DiaDeTiradentesTest extends BrazilBaseTestCase
+class TiradentesDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'diaDeTiradentes';
+    const HOLIDAY = 'tiradentesDay';
 
     /**
      * The year in which the holiday was first established
@@ -48,5 +50,23 @@ class DiaDeTiradentesTest extends BrazilBaseTestCase
         $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR-1);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-04-21", new DateTimeZone(self::TIMEZONE)));
+    }
+
+    /**
+     * Tests the translated name of the holiday defined in this test.
+     */
+    public function testTranslation()
+    {
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $year, [self::LOCALE => 'Dia de Tiradentes']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_NATIONAL);
     }
 }

@@ -15,18 +15,20 @@ namespace Yasumi\tests\Brazil;
 use DateTime;
 use DateInterval;
 use Yasumi\Provider\ChristianHolidays;
+use Yasumi\Holiday;
+use Yasumi\Tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing Carnaval in the Brazil.
  */
-class CarnavalTest extends BrazilBaseTestCase
+class CarnavalDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterface
 {
     use ChristianHolidays;
 
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'carnaval';
+    const HOLIDAY = 'carnavalDay';
 
     /**
      * The year in which the holiday was first established
@@ -51,5 +53,23 @@ class CarnavalTest extends BrazilBaseTestCase
         $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR-1);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year,
             $this->calculateEaster($year, self::TIMEZONE)->sub(new DateInterval('P47D')));
+    }
+
+    /**
+     * Tests the translated name of the holiday defined in this test.
+     */
+    public function testTranslation()
+    {
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $year, [self::LOCALE => 'Carnaval']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OBSERVANCE);
     }
 }
