@@ -22,8 +22,13 @@ use Yasumi\Holiday;
  */
 class Brazil extends AbstractProvider
 {
-
     use CommonHolidays, ChristianHolidays;
+
+    /**
+     * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * country or subregion.
+     */
+    const ID = 'BR';
 
     /**
      * Initialize holidays for the Brazil.
