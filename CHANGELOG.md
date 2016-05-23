@@ -4,13 +4,14 @@
 
 **Implemented enhancements:**
 
+- Added Holiday Provider for Brazil. [\#21](https://github.com/azuyalabs/Yasumi/pull/21) ([dorianneto](https://github.com/dorianneto))
+- Added Holiday Provider for the Czech Republic. [\#26](https://github.com/azuyalabs/Yasumi/pull/26) ([dfridrich](https://github.com/dfridrich))
+- Added Holiday Provider for the United Kingdom. [\#23](https://github.com/azuyalabs/Yasumi/pull/23)
+- Add Welsh language (spoken in Wales, UK) translations for the holidays in the United Kingdom [\#25](https://github.com/azuyalabs/Yasumi/pull/25) ([meigwilym](https://github.com/meigwilym))
 - All Holiday Provider must now implement a code that will identify it. Typically this is the ISO3166 code 
   corresponding to the respective country or subregion. This can help for purposes such as translations or interfacing 
   with other API's for example.
 - To determine a set of holidays between two dates you can now use the aptly named 'between()' method.
-- Added Holiday Provider for the Czech Republic. [\#26](https://github.com/azuyalabs/Yasumi/pull/26) ([dfridrich](https://github.com/dfridrich))
-- Added Holiday Provider for the United Kingdom. [\#23](https://github.com/azuyalabs/Yasumi/pull/23)
-- Add Welsh language (spoken in Wales, UK) translations for the holidays in the United Kingdom [\#25](https://github.com/azuyalabs/Yasumi/pull/25) ([meigwilym](https://github.com/meigwilym))
 
 **Resolved issues:**
 

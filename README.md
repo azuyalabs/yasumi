@@ -32,6 +32,7 @@ Highlights
 Currently the following holiday providers are implemented:
 
 * Belgium
+* Brazil
 * Czech Republic
 * Denmark
 * Finland
@@ -203,6 +204,7 @@ The tests are organized in some test suites to make testing a bit more easier:
 
 * Base          : For testing the base functionality of Yasumi
 * Belgium       : For separately testing the Belgium Holiday Provider
+* Brazil        : For separately testing the Brazil Holiday Provider
 * CzechRepublic : For separately testing the Czech Republic Holiday Provider
 * Denmark       : For separately testing the Denmark Holiday Provider
 * Finland       : For separately testing the Finland Holiday Provider
