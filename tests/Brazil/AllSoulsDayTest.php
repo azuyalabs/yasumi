@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Dorian Neto <doriansampaioneto@gmail.com>
+ * @author Dorian Neto <doriansampaioneto@gmail.com>
  */
 
 namespace Yasumi\tests\Brazil;
@@ -15,7 +15,7 @@ namespace Yasumi\tests\Brazil;
 use DateTime;
 use DateTimeZone;
 use Yasumi\Holiday;
-use Yasumi\Tests\YasumiTestCaseInterface;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing Dia dos Finados in the Brazil.
@@ -47,7 +47,7 @@ class AllSoulsDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterf
      */
     public function testDiaDosFinadosBefore1300()
     {
-        $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR-1);
+        $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-11-02", new DateTimeZone(self::TIMEZONE)));
     }
