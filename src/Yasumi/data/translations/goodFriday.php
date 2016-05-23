@@ -29,4 +29,5 @@ return [
     'nl_NL' => 'Goede Vrijdag',
     'pl_PL' => 'Wielki Piątek',
     'sv_SE' => 'långfredagen',
+    'pt_BR' => 'Sexta feira santa'
 ];

@@ -26,4 +26,5 @@ return [
     'nl_NL' => 'Dag van de arbeid',
     'pl_PL' => 'Święto Pracy',
     'sv_SE' => 'Första maj',
+    'pt_BR' => 'Dia internacional do trabalhador'
 ];
