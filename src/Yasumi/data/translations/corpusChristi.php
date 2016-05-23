@@ -14,7 +14,7 @@
 return [
     'de_DE' => 'Fronleichnam',
     'en_US' => 'Corpus Christi',
-    'pt_BR' => 'Corpus Christi',
     'es_ES' => 'Corpus Christi',
-    'pl_PL' => 'Boże Ciało'
+    'pl_PL' => 'Boże Ciało',
+    'pt_BR' => 'Corpus Christi',
 ];

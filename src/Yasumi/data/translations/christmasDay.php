@@ -28,6 +28,6 @@ return [
     'nl_BE' => 'Kerstmis',
     'nl_NL' => 'Kerstmis',
     'pl_PL' => 'pierwszy dzień Bożego Narodzenia',
+    'pt_BR' => 'Natal',
     'sv_SE' => 'juldagen',
-    'pt_BR' => 'Natal'
 ];
