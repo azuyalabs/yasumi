@@ -66,9 +66,7 @@ each release :)
 
 ### Roadmap
 
-- Czech Republic
-- United Kingdom
-- Brazil
+- Taiwan
 - Australia
 - Canada
 - India
@@ -196,31 +194,31 @@ folder:
 $ phpunit
 ```
 
-Yasumi has over 1050 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
+Yasumi has over 1100 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
 the holidays, multiple iterations of assertions are executed to ensure the holidays are calculated in a large number
 of years.
 
 The tests are organized in some test suites to make testing a bit more easier:
 
-* Base          : For testing the base functionality of Yasumi
-* Belgium       : For separately testing the Belgium Holiday Provider
-* Brazil        : For separately testing the Brazil Holiday Provider
-* CzechRepublic : For separately testing the Czech Republic Holiday Provider
-* Denmark       : For separately testing the Denmark Holiday Provider
-* Finland       : For separately testing the Finland Holiday Provider
-* France        : For separately testing the France Holiday Provider
-* Germany       : For separately testing the Germany Holiday Provider
-* Greece        : For separately testing the Greece Holiday Provider
-* Italy         : For separately testing the Italy Holiday Provider
-* Japan         : For separately testing the Japan Holiday Provider
-* Netherlands   : For separately testing the Netherlands Holiday Provider
-* NewZealand    : For separately testing the New Zealand Holiday Provider
-* Norway        : For separately testing the Norway Holiday Provider
-* Poland        : For separately testing the Poland Holiday Provider
-* Spain         : For separately testing the Spain Holiday Provider
-* Sweden        : For separately testing the Sweden Holiday Provider
-* USA           : For separately testing the USA Holiday Provider
-* UnitedKingdom : For separately testing the United Kingdom Holiday Provider
+* "Base"          : For testing the base functionality of Yasumi
+* "Belgium"       : For separately testing the Belgium Holiday Provider
+* "Brazil"        : For separately testing the Brazil Holiday Provider
+* "CzechRepublic" : For separately testing the Czech Republic Holiday Provider
+* "Denmark"       : For separately testing the Denmark Holiday Provider
+* "Finland"       : For separately testing the Finland Holiday Provider
+* "France"        : For separately testing the France Holiday Provider
+* "Germany"       : For separately testing the Germany Holiday Provider
+* "Greece"        : For separately testing the Greece Holiday Provider
+* "Italy"         : For separately testing the Italy Holiday Provider
+* "Japan"         : For separately testing the Japan Holiday Provider
+* "Netherlands"   : For separately testing the Netherlands Holiday Provider
+* "NewZealand"    : For separately testing the New Zealand Holiday Provider
+* "Norway"        : For separately testing the Norway Holiday Provider
+* "Poland"        : For separately testing the Poland Holiday Provider
+* "Spain"         : For separately testing the Spain Holiday Provider
+* "Sweden"        : For separately testing the Sweden Holiday Provider
+* "USA"           : For separately testing the USA Holiday Provider
+* "UnitedKingdom" : For separately testing the United Kingdom Holiday Provider
 
 Contributing to Yasumi
 -------
@@ -241,9 +239,9 @@ are a few things to keep consider:
 2. Next to the file '<REGIONNAME>BaseTestCase.php', a file called '<REGIONNAME>Test.php' needs to be present. This file
    needs to include region/country level tests and requires assertion of all expected holidays.
 3. All the unit tests and the implementation Holiday Provider require to have the correct locale, timezone and
-   region/countryname.
+   region/country name.
 4. As almost all of the tests use automatic iterations, make sure the year for which the test is executed is a valid 
-   year. Some holidays are only established from a certain year and having the test yearnumber smaller than the minimum
+   year. Some holidays are only established from a certain year and having the test year number smaller than the minimum
    establishment year (amongst all holidays) can result in false errors.
 
 

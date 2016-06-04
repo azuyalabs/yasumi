@@ -1,6 +1,7 @@
 # Change Log
 
-## DEV/MASTER
+
+## 1.4.0 (June 4, 2016)
 
 **Implemented enhancements:**
 
