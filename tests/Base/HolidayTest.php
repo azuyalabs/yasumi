@@ -117,7 +117,7 @@ class HolidayTest extends PHPUnit_Framework_TestCase
     public function testHolidayGetNameWithGlobalTranslations()
     {
         /** @var TranslationsInterface|PHPUnit_Framework_MockObject_MockObject $translationsStub */
-        $translationsStub = $this->getMock('\Yasumi\TranslationsInterface');
+        $translationsStub = $this->getMockBuilder('\Yasumi\TranslationsInterface')->getMock();
 
         $translations = [
             'en_US' => 'New Year\'s Day',
@@ -142,7 +142,7 @@ class HolidayTest extends PHPUnit_Framework_TestCase
     public function testHolidayGetNameWithGlobalAndCustomTranslations()
     {
         /** @var TranslationsInterface|PHPUnit_Framework_MockObject_MockObject $translationsStub */
-        $translationsStub = $this->getMock('\Yasumi\TranslationsInterface');
+        $translationsStub = $this->getMockBuilder('\Yasumi\TranslationsInterface')->getMock();
 
         $translations = [
             'en_US' => 'New Year\'s Day',
@@ -169,7 +169,7 @@ class HolidayTest extends PHPUnit_Framework_TestCase
     public function testHolidayGetNameWithOverridenGlobalTranslations()
     {
         /** @var TranslationsInterface|PHPUnit_Framework_MockObject_MockObject $translationsStub */
-        $translationsStub = $this->getMock('\Yasumi\TranslationsInterface');
+        $translationsStub = $this->getMockBuilder('\Yasumi\TranslationsInterface')->getMock();
 
         $translations = [
             'en_US' => 'New Year\'s Day',
