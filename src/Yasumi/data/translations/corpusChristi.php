@@ -17,4 +17,5 @@ return [
     'es_ES' => 'Corpus Christi',
     'pl_PL' => 'Boże Ciało',
     'pt_BR' => 'Corpus Christi',
+    'hr_HR' => 'Tijelovo',
 ];
