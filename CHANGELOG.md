@@ -1,5 +1,11 @@
 # Change Log
 
+## DEV/MASTER
+
+**Implemented enhancements:**
+
+- Added Holiday Provider for Croatia. [\#32](https://github.com/azuyalabs/Yasumi/pull/32) ([karlomikus](https://github.com/karlomikus))
+
 
 ## 1.4.0 (June 4, 2016)
 
