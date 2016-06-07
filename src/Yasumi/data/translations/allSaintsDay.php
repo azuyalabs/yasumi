@@ -23,4 +23,5 @@ return [
     'nl_NL' => 'Allerheiligen',
     'pl_PL' => 'Uroczystość Wszystkich Świętych',
     'sv_SE' => 'alla helgons dag',
+    'hr_HR' => 'Dan svih svetih',
 ];
