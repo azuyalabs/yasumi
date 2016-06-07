@@ -23,6 +23,7 @@ return [
     'es_ES' => 'Año Nuevo',
     'fi_FI' => 'Uudenvuodenpäivä',
     'fr_FR' => 'Jour de l\'An',
+    'hr_HR' => 'Nova godina',
     'it_IT' => 'Capodanno',
     'ja_JP' => '元日',
     'nb_NO' => 'Første nyttårsdag',
@@ -31,5 +32,4 @@ return [
     'pl_PL' => 'Nowy Rok',
     'pt_BR' => 'Ano novo',
     'sv_SE' => 'nyårsdagen',
-    'hr_HR' => 'Nova godina',
 ];

@@ -17,9 +17,9 @@ return [
     'en_US' => 'Assumption of Mary',
     'es_ES' => 'Asunción de la Virgen María',
     'fr_FR' => 'L\'Assomption de Marie',
+    'hr_HR' => 'Velika Gospa',
     'it_IT' => 'Assunzione di Maria Vergine',
     'nl_BE' => 'Onze Lieve Vrouw hemelvaart',
     'nl_NL' => 'Onze Lieve Vrouw hemelvaart',
     'pl_PL' => 'Wniebowzięcie Najświętszej Marii Panny',
-    'hr_HR' => 'Velika Gospa',
 ];

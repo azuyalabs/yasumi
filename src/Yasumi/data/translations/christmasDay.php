@@ -23,6 +23,7 @@ return [
     'es_ES' => 'Navidad',
     'fi_FI' => 'Joulupäivä',
     'fr_FR' => 'Noël',
+    'hr_HR' => 'Božić',
     'it_IT' => 'Natale',
     'nb_NO' => 'Første juledag',
     'nl_BE' => 'Kerstmis',
@@ -30,5 +31,4 @@ return [
     'pl_PL' => 'pierwszy dzień Bożego Narodzenia',
     'pt_BR' => 'Natal',
     'sv_SE' => 'juldagen',
-    'hr_HR' => 'Božić',
 ];

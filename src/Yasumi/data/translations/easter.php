@@ -17,6 +17,7 @@ return [
     'el_GR' => 'Κυριακή του Πάσχα',
     'en_US' => 'Easter Sunday',
     'fi_FI' => 'Pääsiäispäivä',
+    'hr_HR' => 'Uskrs',
     'it_IT' => 'Pasqua',
     'nb_NO' => 'Første påskedag',
     'nl_BE' => 'Eerste Paasdag',
@@ -24,5 +25,4 @@ return [
     'pl_PL' => 'Wielkanoc',
     'pt_BR' => 'Páscoa',
     'sv_SE' => 'påskdagen',
-    'hr_HR' => 'Uskrs',
 ];

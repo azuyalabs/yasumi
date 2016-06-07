@@ -19,6 +19,7 @@ return [
     'es_ES' => 'Día del Trabajador',
     'fi_FI' => 'Vappu',
     'fr_FR' => 'Fête du Travail',
+    'hr_HR' => 'Praznik rada',
     'it_IT' => 'Festa del Lavoro',
     'ja_JP' => '労働の日',
     'nb_NO' => 'Arbeidernes dag',
@@ -27,5 +28,4 @@ return [
     'pl_PL' => 'Święto Pracy',
     'pt_BR' => 'Dia internacional do trabalhador',
     'sv_SE' => 'Första maj',
-    'hr_HR' => 'Praznik rada',
 ];

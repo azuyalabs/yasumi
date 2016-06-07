@@ -16,6 +16,6 @@ return [
     'en_US' => 'St. Stephen\'s Day',
     'es_ES' => 'Sant Esteve',
     'fr_FR' => 'Saint-Étienne',
-    'it_IT' => 'Santo Stefano',
     'hr_HR' => 'Sveti Stjepan',
+    'it_IT' => 'Santo Stefano',
 ];
