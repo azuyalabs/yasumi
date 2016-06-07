@@ -13,7 +13,19 @@ Yasumi's calculation is provider-based (i.e. by country/state) so it is easy to 
 holidays. The methods of Yasumi can be used to get a holiday's date and name in various languages.
 
 
-Highlights
+Contents
+==========
+* [Highlights](#highlights)
+* [System Requirements](#requirements)
+* [Installation](#installation)
+* [Basic Usage](#usage)
+* [Testing](#testing)
+* [Contributing to Yasumi](#contributing)
+* [License](#license)
+* [Information Sources](#license)
+
+
+Highlights<a name="highlights"></a>
 -------
 
 * Simple API
@@ -73,14 +85,14 @@ each release :)
 - India
 
 
-System Requirements
+System Requirements<a name="requirements"></a>
 -------------------
 
 You need **PHP >= 5.5.0** to use `azuyalabs/yasumi` but the latest stable version of PHP is recommended.
 Yasumi is verified and tested on PHP 5.5, 5.6 and 7.0.
 
 
-Installation
+Installation<a name="installation"></a>
 ------------
 
 Install `azuyalabs/yasumi` using Composer.
@@ -90,7 +102,7 @@ $ composer require azuyalabs/yasumi
 ```
 
 
-Basic Usage
+Basic Usage<a name="usage"></a>
 -------
 
 ```php
@@ -185,7 +197,7 @@ foreach ($official as $day) {
 // 'Boxing Day'
 ```
 
-Testing
+Testing<a name="testing"></a>
 -------
 
 Yasumi has a [PHPUnit](https://phpunit.de/) test suite. To run the tests, run the following command from the project 
@@ -222,7 +234,7 @@ The tests are organized in some test suites to make testing a bit more easier:
 * "USA"           : For separately testing the USA Holiday Provider
 * "UnitedKingdom" : For separately testing the United Kingdom Holiday Provider
 
-Contributing to Yasumi
+Contributing to Yasumi<a name="contributing"></a>
 -------
 
 Contributions are encouraged and welcome; we are always happy to get feedback or even pull requests. 
@@ -247,7 +259,7 @@ are a few things to keep consider:
    establishment year (amongst all holidays) can result in false errors.
 
 
-License
+License<a name="license"></a>
 -------
 
 Yasumi is open-sourced software licensed under the MIT License (MIT). Please see [LICENSE](LICENSE) for more information.
@@ -256,7 +268,7 @@ Yasumi is open-sourced software licensed under the MIT License (MIT). Please see
 [PSR-2]: http://www.php-fig.org/psr/psr-2/
 
 
-Information Sources
+Information Sources<a name="sources"></a>
 -------
 
 - [Wikipedia](https://en.wikipedia.org/wiki/Main_Page) 
