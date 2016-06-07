@@ -16,4 +16,5 @@ return [
     'cy_GB' => 'Noswyl Nadolig',
     'en_US' => 'Christmas Eve',
     'sv_SE' => 'julafton',
+    'sk_SK' => 'Štedrý deň',
 ];

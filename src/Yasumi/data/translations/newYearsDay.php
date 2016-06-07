@@ -31,4 +31,5 @@ return [
     'pl_PL' => 'Nowy Rok',
     'pt_BR' => 'Ano novo',
     'sv_SE' => 'nyårsdagen',
+    'sk_SK' => 'Deň vzniku Slovenskej republiky',
 ];

@@ -25,4 +25,5 @@ return [
     'nl_NL' => 'Tweede Kerstdag',
     'pl_PL' => 'drugi dzień Bożego Narodzenia',
     'sv_SE' => 'annandag jul',
+    'sk_SK' => 'Druhý sviatok vianočný',
 ];

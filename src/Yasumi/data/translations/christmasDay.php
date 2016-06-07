@@ -30,4 +30,5 @@ return [
     'pl_PL' => 'pierwszy dzień Bożego Narodzenia',
     'pt_BR' => 'Natal',
     'sv_SE' => 'juldagen',
+    'sk_SK' => 'Prvý sviatok vianočný',
 ];
