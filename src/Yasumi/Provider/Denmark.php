@@ -60,9 +60,9 @@ class Denmark extends AbstractProvider
      *
      * Store Bededag, translated literally as Great Prayer Day or more loosely as General Prayer Day, "All Prayers" Day,
      * Great Day of Prayers or Common Prayer Day, is a Danish holiday celebrated on the 4th Friday after Easter. It is a
-     *  collection of minor Christian holy days consolidated into one day. The day was introduced in the Church of
+     * collection of minor Christian holy days consolidated into one day. The day was introduced in the Church of
      * Denmark in 1686 by King Christian V as a consolidation of several minor (or local) Roman Catholic holidays which
-     *  the Church observed that had survived the Reformation.
+     * the Church observed that had survived the Reformation.
      *
      * @link https://en.wikipedia.org/wiki/Store_Bededag
      */
