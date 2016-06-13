@@ -10,7 +10,7 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\tests\Germany\BadenWürttemberg;
+namespace Yasumi\tests\Germany\BadenWurttemberg;
 
 use Yasumi\tests\Germany\GermanyBaseTestCase;
 use Yasumi\tests\YasumiBase;
@@ -18,14 +18,14 @@ use Yasumi\tests\YasumiBase;
 /**
  * Base class for test cases of the Baden-Württemberg (Germany) holiday provider.
  */
-abstract class BadenWürttembergBaseTestCase extends GermanyBaseTestCase
+abstract class BadenWurttembergBaseTestCase extends GermanyBaseTestCase
 {
     use YasumiBase;
 
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'Germany/BadenWürttemberg';
+    const REGION = 'Germany/BadenWurttemberg';
 
     /**
      * Timezone in which this provider has holidays defined

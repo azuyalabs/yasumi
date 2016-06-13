@@ -10,14 +10,14 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\tests\Germany\BadenWürttemberg;
+namespace Yasumi\tests\Germany\BadenWurttemberg;
 
 use Yasumi\Holiday;
 
 /**
  * Class for testing holidays in Baden-Württemberg (Germany).
  */
-class BadenWürttembergTest extends BadenWürttembergBaseTestCase
+class BadenWurttembergTest extends BadenWurttembergBaseTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
