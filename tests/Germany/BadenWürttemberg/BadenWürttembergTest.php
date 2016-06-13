@@ -84,6 +84,6 @@ class BadenWürttembergTest extends BadenWürttembergBaseTestCase
      */
     protected function setUp()
     {
-        $this->year = $this->generateRandomYear();
+        $this->year = $this->generateRandomYear(1990);
     }
 }
