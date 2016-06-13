@@ -12,8 +12,6 @@
 
 namespace Yasumi\Provider\Germany;
 
-use DateTime;
-use DateTimeZone;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\Germany;
