@@ -24,8 +24,6 @@ use Yasumi\Provider\Germany;
  */
 class Bavaria extends Germany
 {
-    use ChristianHolidays;
-
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or subregion.
