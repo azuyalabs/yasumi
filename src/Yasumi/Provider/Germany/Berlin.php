@@ -16,13 +16,16 @@ use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\Germany;
 
 /**
- * Provider for all holidays in Bavaria (Germany).
+ * Provider for all holidays in Berlin (Germany).
  *
+ * Berlin is the capital of Germany and one of its 16 states. With a population of approximately 3.5 million people,
+ * Berlin is the second most populous city proper and the seventh most populous urban area in the European Union.
+ * Located in northeastern Germany on the banks of Rivers Spree and Havel, it is the centre of the Berlin-Brandenburg
+ * Metropolitan Region, which has about six million residents from over 180 nations.
  *
- *
- * @link https://en.wikipedia.org/wiki/
+ * @link https://en.wikipedia.org/wiki/Berlin
  */
-class Bavaria extends Germany
+class Berlin extends Germany
 {
     use ChristianHolidays;
 
@@ -30,18 +33,13 @@ class Bavaria extends Germany
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or subregion.
      */
-    const ID = 'DE_BY';
+    const ID = 'DE_BE';
 
     /**
-     * Initialize holidays for Bavaria (Germany).
+     * Initialize holidays for Berlin (Germany).
      */
     public function initialize()
     {
         parent::initialize();
-
-        // Add custom Christian holidays
-        $this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale));
     }
 }
