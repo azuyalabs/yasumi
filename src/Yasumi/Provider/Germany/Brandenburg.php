@@ -18,8 +18,8 @@ use Yasumi\Provider\Germany;
 /**
  * Provider for all holidays in Brandenburg (Germany).
  *
- * Brandenburg is one of the sixteen federated states of Germany. It lies in the northeast of the country covering an 
- * area of 29,478 square kilometers and has 2.45 million inhabitants. The capital and largest city is Potsdam. 
+ * Brandenburg is one of the sixteen federated states of Germany. It lies in the northeast of the country covering an
+ * area of 29,478 square kilometers and has 2.45 million inhabitants. The capital and largest city is Potsdam.
  * Brandenburg surrounds but does not include the national capital and city-state Berlin forming a metropolitan area.
  *
  * @link https://en.wikipedia.org/wiki/Brandenburg
