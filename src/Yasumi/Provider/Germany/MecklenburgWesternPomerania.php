@@ -16,7 +16,7 @@ use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\Germany;
 
 /**
- * Provider for all holidays in Mecklenburg-Vorpommern (Germany).
+ * Provider for all holidays in Mecklenburg-Western Pomerania (Germany).
  *
  * Mecklenburg-Vorpommern (also known as Mecklenburg-Western Pomerania in English) is a federated state in northern 
  * Germany. The capital city is Schwerin. The state was formed through the merger of the historic regions of Mecklenburg
@@ -25,7 +25,7 @@ use Yasumi\Provider\Germany;
  *
  * @link https://en.wikipedia.org/wiki/Mecklenburg-Vorpommern
  */
-class MecklenburgVorpommern extends Germany
+class MecklenburgWesternPomerania extends Germany
 {
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
@@ -34,7 +34,7 @@ class MecklenburgVorpommern extends Germany
     const ID = 'DE_MV';
 
     /**
-     * Initialize holidays for Mecklenburg-Vorpommern (Germany).
+     * Initialize holidays for Mecklenburg-Western Pomerania (Germany).
      */
     public function initialize()
     {
