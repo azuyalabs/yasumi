@@ -16,7 +16,7 @@ use Yasumi\tests\Germany\GermanyBaseTestCase;
 use Yasumi\tests\YasumiBase;
 
 /**
- * Base class for test cases of the Brandenburg (Germany) holiday provider.
+ * Base class for test cases of the Hamburg (Germany) holiday provider.
  */
 abstract class HamburgBaseTestCase extends GermanyBaseTestCase
 {
