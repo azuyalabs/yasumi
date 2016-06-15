@@ -10,14 +10,14 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\tests\Germany\MecklenburgVorpommern;
+namespace Yasumi\tests\Germany\LowerSaxony;
 
 use Yasumi\Holiday;
 
 /**
- * Class for testing holidays in Mecklenburg-Vorpommern (Germany)
+ * Class for testing holidays in Lower Saxony (Germany)
  */
-class MecklenburgVorpommernTest extends MecklenburgVorpommernBaseTestCase
+class LowerSaxonyTest extends LowerSaxonyBaseTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -25,7 +25,7 @@ class MecklenburgVorpommernTest extends MecklenburgVorpommernBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Mecklenburg-Vorpommern (Germany) are defined by the provider class
+     * Tests if all national holidays in Lower Saxony (Germany) are defined by the provider class
      */
     public function testNationalHolidays()
     {
@@ -39,14 +39,13 @@ class MecklenburgVorpommernTest extends MecklenburgVorpommernBaseTestCase
             'pentecost',
             'pentecostMonday',
             'germanUnityDay',
-            'reformationDay',
             'christmasDay',
             'secondChristmasDay'
         ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
     }
 
     /**
-     * Tests if all observed holidays in Mecklenburg-Vorpommern (Germany) are defined by the provider class
+     * Tests if all observed holidays in Lower Saxony (Germany) are defined by the provider class
      */
     public function testObservedHolidays()
     {
@@ -54,7 +53,7 @@ class MecklenburgVorpommernTest extends MecklenburgVorpommernBaseTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in Mecklenburg-Vorpommern (Germany) are defined by the provider class
+     * Tests if all seasonal holidays in Lower Saxony (Germany) are defined by the provider class
      */
     public function testSeasonalHolidays()
     {
@@ -62,7 +61,7 @@ class MecklenburgVorpommernTest extends MecklenburgVorpommernBaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in Mecklenburg-Vorpommern (Germany) are defined by the provider class
+     * Tests if all bank holidays in Lower Saxony (Germany) are defined by the provider class
      */
     public function testBankHolidays()
     {
@@ -70,7 +69,7 @@ class MecklenburgVorpommernTest extends MecklenburgVorpommernBaseTestCase
     }
 
     /**
-     * Tests if all other holidays in Mecklenburg-Vorpommern (Germany) are defined by the provider class
+     * Tests if all other holidays in Lower Saxony (Germany) are defined by the provider class
      */
     public function testOtherHolidays()
     {
