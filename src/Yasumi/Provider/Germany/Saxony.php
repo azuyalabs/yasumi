@@ -14,6 +14,9 @@ namespace Yasumi\Provider\Germany;
 
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\Germany;
+use Yasumi\Holiday;
+use DateTimeZone;
+use DateTime;
 
 /**
  * Provider for all holidays in Saxony (Germany).
@@ -41,5 +44,14 @@ class Saxony extends Germany
 
         // Add custom Christian holidays
         $this->calculateReformationDay();
+        $this->calculateRepentanceAndPrayerDay();
+    }
+
+    public function calculateRepentanceAndPrayerDay()
+    {
+        if ($this->year >= 1995) {
+            $this->addHoliday(new Holiday('repentanceAndPrayerDay', ['de_DE' => 'Buß- und Bettag'],
+                new DateTime("next wednesday $this->year-11-15", new DateTimeZone($this->timezone)), $this->locale));
+        }
     }
 }
