@@ -41,7 +41,7 @@ Highlights<a name="highlights"></a>
 * Accounts for the date/time when holidays have been officially established and/or abolished
 * Composer ready, [PSR-2] compliant
 
-Currently the following holiday providers are implemented:
+Yasumi currently supports 57 countries (including subregions):
 
 * Belgium
 * Brazil
@@ -50,7 +50,9 @@ Currently the following holiday providers are implemented:
 * Denmark
 * Finland
 * France (including the sub-regions Bas-Rhin, Haut-Rhin and Moselle)
-* Germany
+* Germany (including the sub-regions Baden-Württemberg, Bavaria, Berlin, Brandenburg, Bremen, Hamburg, Hesse, 
+           Lower-Saxony, Mecklenburg-Western Pomerania, North Rhine-Westphalia, Rhineland-Palatinate, Saarland, Saxony, 
+           Saxony-Anhalt, Schleswig-Holstein, Thuringia)
 * Greece
 * Italy
 * Japan
@@ -79,6 +81,7 @@ each release :)
 
 ### Roadmap
 
+- State Holidays for Germany
 - Taiwan
 - Australia
 - Canada
@@ -207,7 +210,7 @@ folder:
 $ phpunit
 ```
 
-Yasumi has over 1148 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
+Yasumi has over 1200 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
 the holidays, multiple iterations of assertions are executed to ensure the holidays are calculated in a large number
 of years.
 

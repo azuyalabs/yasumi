@@ -4,6 +4,7 @@
 
 **Implemented enhancements:**
 
+- Added Holiday Providers for all 16 German States. [\#34](https://github.com/azuyalabs/Yasumi/pull/34) ([stelgenhof](https://github.com/stelgenhof))
 - Added Holiday Provider for Croatia. [\#32](https://github.com/azuyalabs/Yasumi/pull/32) ([karlomikus](https://github.com/karlomikus))
 
 
@@ -13,7 +14,7 @@
 
 - Added Holiday Provider for Brazil. [\#21](https://github.com/azuyalabs/Yasumi/pull/21) ([dorianneto](https://github.com/dorianneto))
 - Added Holiday Provider for the Czech Republic. [\#26](https://github.com/azuyalabs/Yasumi/pull/26) ([dfridrich](https://github.com/dfridrich))
-- Added Holiday Provider for the United Kingdom. [\#23](https://github.com/azuyalabs/Yasumi/pull/23)
+- Added Holiday Provider for the United Kingdom. [\#23](https://github.com/azuyalabs/Yasumi/pull/23) ([stelgenhof](https://github.com/stelgenhof))
 - Add Welsh language (spoken in Wales, UK) translations for the holidays in the United Kingdom [\#25](https://github.com/azuyalabs/Yasumi/pull/25) ([meigwilym](https://github.com/meigwilym))
 - All Holiday Provider must now implement a code that will identify it. Typically this is the ISO3166 code 
   corresponding to the respective country or subregion. This can help for purposes such as translations or interfacing 
