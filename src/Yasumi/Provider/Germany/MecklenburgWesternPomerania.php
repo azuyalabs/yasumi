@@ -31,7 +31,7 @@ class MecklenburgWesternPomerania extends Germany
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or subregion.
      */
-    const ID = 'DE_MV';
+    const ID = 'DE-MV';
 
     /**
      * Initialize holidays for Mecklenburg-Western Pomerania (Germany).

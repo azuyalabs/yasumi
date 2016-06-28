@@ -30,7 +30,7 @@ class LowerSaxony extends Germany
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or subregion.
      */
-    const ID = 'DE_NI';
+    const ID = 'DE-NI';
 
     /**
      * Initialize holidays for Lower Saxony (Germany).

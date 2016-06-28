@@ -29,7 +29,7 @@ class SaxonyAnhalt extends Germany
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or subregion.
      */
-    const ID = 'DE_ST';
+    const ID = 'DE-ST';
 
     /**
      * Initialize holidays for Saxony-Anhalt (Germany).

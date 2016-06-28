@@ -31,7 +31,7 @@ class Thuringia extends Germany
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or subregion.
      */
-    const ID = 'DE_TH';
+    const ID = 'DE-TH';
 
     /**
      * Initialize holidays for Thuringia (Germany).

@@ -33,7 +33,7 @@ class Saxony extends Germany
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or subregion.
      */
-    const ID = 'DE_SN';
+    const ID = 'DE-SN';
 
     /**
      * Initialize holidays for Saxony (Germany).
