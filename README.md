@@ -49,10 +49,8 @@ Yasumi currently supports 57 countries (including subregions):
 * Czech Republic
 * Denmark
 * Finland
-* France (including the sub-regions Bas-Rhin, Haut-Rhin and Moselle)
-* Germany (including the sub-regions Baden-Württemberg, Bavaria, Berlin, Brandenburg, Bremen, Hamburg, Hesse, 
-           Lower-Saxony, Mecklenburg-Western Pomerania, North Rhine-Westphalia, Rhineland-Palatinate, Saarland, Saxony, 
-           Saxony-Anhalt, Schleswig-Holstein, Thuringia)
+* France (including the sub-regions Bas-Rhin, Haut-Rhin, Moselle)
+* Germany (including the sub-regions Baden-Württemberg, Bavaria, Berlin, Brandenburg, Bremen, Hamburg, Hesse, Lower Saxony, Mecklenburg-Vorpommern, North Rhine-Westphalia, Rhineland-Palatinate, Saarland, Saxony, Saxony-Anhalt, Schleswig-Holstein, Thuringia)
 * Greece
 * Italy
 * Japan
@@ -60,12 +58,10 @@ Yasumi currently supports 57 countries (including subregions):
 * New Zealand
 * Norway
 * Poland
-* Spain (including the sub-regions Andalusia, Aragon, Asturias, Balearic Islands, Basque Country, Canary Islands, 
-         Cantabria, Castile and León, Castilla-La Mancha, Catalonia, Ceuta, Community of Madrid, Extremadura, Galicia,
-         La Rioja, Melilla, Navarre, Region of Murcia, Valencian Community)
+* Spain (including the sub-regions Andalusia, Aragon, Asturias, Balearic Islands, Basque Country, Canary Islands, Cantabria, Castile and León, Castile-La Mancha, Catalonia, Ceuta, Madrid Autonomous Community, Extremadura, Galicia, La Rioja, Melilla, Navarra Chartered Community, Murcia Region, Valencian Community)
 * Sweden
-* USA
-* UnitedKingdom
+* United States
+* United Kingdom
 
 Yasumi has the following filters to allow you to filter only certain type of holidays:
 
