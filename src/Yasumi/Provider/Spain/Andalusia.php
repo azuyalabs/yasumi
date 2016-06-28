@@ -35,7 +35,7 @@ class Andalusia extends Spain
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or subregion.
      */
-    const ID = 'EN-AN';
+    const ID = 'ES-AN';
 
     /**
      * Initialize holidays for Andalusia (Spain).
