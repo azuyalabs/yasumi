@@ -14,6 +14,7 @@ namespace Yasumi\Provider\Germany;
 
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\Germany;
+use Yasumi\Holiday;
 
 /**
  * Provider for all holidays in Mecklenburg-Western Pomerania (Germany).

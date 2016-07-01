@@ -31,7 +31,6 @@ class BavariaTest extends BavariaBaseTestCase
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
-            'epiphany',
             'goodFriday',
             'easter',
             'easterMonday',
@@ -39,7 +38,6 @@ class BavariaTest extends BavariaBaseTestCase
             'ascensionDay',
             'pentecost',
             'pentecostMonday',
-            'corpusChristi',
             'germanUnityDay',
             'allSaintsDay',
             'christmasDay',
@@ -76,7 +74,7 @@ class BavariaTest extends BavariaBaseTestCase
      */
     public function testOtherHolidays()
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays(['epiphany', 'corpusChristi'], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**

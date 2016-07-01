@@ -62,7 +62,7 @@ class Saxony extends Germany
     {
         if ($this->year >= 1995) {
             $this->addHoliday(new Holiday('repentanceAndPrayerDay', ['de_DE' => 'Buß- und Bettag'],
-                new DateTime("next wednesday $this->year-11-15", new DateTimeZone($this->timezone)), $this->locale));
+                new DateTime("next wednesday $this->year-11-15", new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OTHER));
         }
     }
 }

@@ -79,6 +79,6 @@ class RepentanceAndPrayerDayTest extends SaxonyBaseTestCase implements YasumiTes
     public function testHolidayType()
     {
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            Holiday::TYPE_NATIONAL);
+            Holiday::TYPE_OTHER);
     }
 }

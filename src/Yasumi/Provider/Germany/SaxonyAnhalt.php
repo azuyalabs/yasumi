@@ -13,6 +13,7 @@
 namespace Yasumi\Provider\Germany;
 
 use Yasumi\Provider\Germany;
+use Yasumi\Holiday;
 
 /**
  * Provider for all holidays in Saxony-Anhalt (Germany).
@@ -39,7 +40,7 @@ class SaxonyAnhalt extends Germany
         parent::initialize();
 
         // Add custom Christian holidays
-        $this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->calculateReformationDay();
     }
 }

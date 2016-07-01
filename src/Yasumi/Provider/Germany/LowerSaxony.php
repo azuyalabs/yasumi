@@ -13,6 +13,7 @@
 namespace Yasumi\Provider\Germany;
 
 use Yasumi\Provider\Germany;
+use Yasumi\Holiday;
 
 /**
  * Provider for all holidays in Lower Saxony (Germany).

@@ -13,6 +13,7 @@
 namespace Yasumi\Provider\Germany;
 
 use Yasumi\Provider\Germany;
+use Yasumi\Holiday;
 
 /**
  * Provider for all holidays in Hesse (Germany).
@@ -41,6 +42,6 @@ class Hesse extends Germany
         parent::initialize();
 
         // Add custom Christian holidays
-        $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
     }
 }
