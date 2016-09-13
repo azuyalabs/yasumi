@@ -2,14 +2,14 @@
 Yasumi
 ==========
 
-Yasumi (Japanese for 'Holiday') is an easy PHP library to help you calculate the dates and names of holidays and other
+Yasumi (Japanese for 'Holiday'「休み」) is an easy PHP library to help you calculate the dates and names of holidays and other
 special celebrations from various countries/states. Many services exist on the internet that provide holidays, however
 are either not free or offer only limited information. In addition, no complete PHP library seems to exist today
 that covers a wide range of holidays and countries, except maybe [PEAR's Date_Holidays](https://pear.php.net/package/Date_Holidays) 
 which unfortunately hasn't been updated for a long time.
 
 The goal of Yasumi is to be powerful while remaining lightweight, by utilizing PHP native classes wherever possible.
-Yasumi's calculation is provider-based (i.e. by country/state) so it is easy to add new holiday providers that calculate
+Yasumi's calculation is provider-based (i.e. by country/state) sos easy to add new holiday providers that calculate
 holidays. The methods of Yasumi can be used to get a holiday's date and name in various languages.
 
 
@@ -20,9 +20,10 @@ Contents
 * [Installation](#installation)
 * [Basic Usage](#usage)
 * [Testing](#testing)
-* [Contributing to Yasumi](#contributing)
+* [Contributing](#contributing)
+* [Credits](#credits)
 * [License](#license)
-* [Information Sources](#license)
+* [Sources](#license)
 
 
 Highlights<a name="highlights"></a>
@@ -88,7 +89,8 @@ System Requirements<a name="requirements"></a>
 -------------------
 
 You need **PHP >= 5.5.0** to use `azuyalabs/yasumi` but the latest stable version of PHP is recommended.
-Yasumi is verified and tested on PHP 5.5, 5.6 and 7.0.
+Yasumi is verified and tested on PHP 5.5, 5.6 and 7.0. Although Yasumi will work with PHP 5.5, only PHP version 5.6 or
+higher is supported. 
 
 
 Installation<a name="installation"></a>
@@ -233,29 +235,33 @@ The tests are organized in some test suites to make testing a bit more easier:
 * "USA"           : For separately testing the USA Holiday Provider
 * "UnitedKingdom" : For separately testing the United Kingdom Holiday Provider
 
-Contributing to Yasumi<a name="contributing"></a>
--------
 
-Contributions are encouraged and welcome; we are always happy to get feedback or even pull requests. 
-In order to keep the code consistent, please use the following command after your completed work:
+## Testing
+
+Run the tests with:
 
 ``` bash
-$ composer php-cs-fixer
+$ composer test
 ```
 
-This will check/correct all the code for the PSR-2 Coding Standard using the wonderful [php-cs-fixer](http://cs.sensiolabs.org/) .
+or alternatively run with:
 
-If you like to add a new Holiday Provider, the best starting point is to use on of the existing holiday providers. There
-are a few things to keep consider:
+``` bash
+$ vendor/bin/phpunit
+```
 
-1. Ensure your new Holiday Provider contains all the necessary unit tests.
-2. Next to the file '<REGIONNAME>BaseTestCase.php', a file called '<REGIONNAME>Test.php' needs to be present. This file
-   needs to include region/country level tests and requires assertion of all expected holidays.
-3. All the unit tests and the implementation Holiday Provider require to have the correct locale, timezone and
-   region/country name.
-4. As almost all of the tests use automatic iterations, make sure the year for which the test is executed is a valid 
-   year. Some holidays are only established from a certain year and having the test year number smaller than the minimum
-   establishment year (amongst all holidays) can result in false errors.
+
+Contributing<a name="contributing"></a>
+-------
+
+Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+
+
+Credits<a name="credits"></a>
+-------
+
+- [Sacha Telgenhof](https://github.com/stelgenhof)
+- [All Contributors](../../contributors)
 
 
 License<a name="license"></a>
@@ -267,7 +273,7 @@ Yasumi is open-sourced software licensed under the MIT License (MIT). Please see
 [PSR-2]: http://www.php-fig.org/psr/psr-2/
 
 
-Information Sources<a name="sources"></a>
+Sources<a name="sources"></a>
 -------
 
 - [Wikipedia](https://en.wikipedia.org/wiki/Main_Page) 
