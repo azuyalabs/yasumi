@@ -23,7 +23,6 @@ use Yasumi\Translations;
  */
 class TranslationsTest extends PHPUnit_Framework_TestCase
 {
-
     private $locales = [
         'en_US',
         'nl_NL',
