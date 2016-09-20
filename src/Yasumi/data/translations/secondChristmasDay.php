@@ -16,6 +16,7 @@ return [
     'da_DK' => '2. Juledag',
     'de_DE' => '2. Weihnachtsfeiertag',
     'el_GR' => 'Σύναξις Υπεραγίας Θεοτόκου Μαρίας',
+    'en_AU' => 'Boxing Day',
     'en_GB' => 'Boxing Day',
     'en_NZ' => 'Boxing Day',
     'en_US' => 'Boxing Day',

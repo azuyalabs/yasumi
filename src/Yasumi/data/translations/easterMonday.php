@@ -17,6 +17,7 @@ return [
     'da_DK' => '2. Påskedag',
     'de_DE' => 'Ostermontag',
     'el_GR' => 'Δευτέρα του Πάσχα',
+    'en_AU' => 'Easter Monday',
     'en_GB' => 'Easter Monday',
     'en_NZ' => 'Easter Monday',
     'en_US' => 'Easter Monday',

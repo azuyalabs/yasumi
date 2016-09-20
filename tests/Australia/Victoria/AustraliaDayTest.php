@@ -10,9 +10,16 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-// Translation for ANZAC Day
-return [
-    'en_AU' => 'ANZAC Day',
-    'en_NZ' => 'ANZAC Day',
-    'en_US' => 'ANZAC Day',
-];
+namespace Yasumi\tests\Australia\Victoria;
+
+use DateTime;
+use DateTimeZone;
+use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\Holiday;
+
+/**
+ * Class for testing Australia day in Australia.
+ */
+class AustraliaDayTest extends \Yasumi\tests\Australia\AustraliaDayTest
+{
+}

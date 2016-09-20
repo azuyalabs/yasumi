@@ -12,6 +12,7 @@
 
 // Translation for Labour Day
 return [
+    'en_AU' => 'Labour Day',
     'en_NZ' => 'Labour Day',
     'en_US' => 'Labour Day',
     'ja_JP' => '労働の日',

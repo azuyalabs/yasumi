@@ -10,9 +10,8 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-// Translation for ANZAC Day
+// Translation for Australia Day
 return [
-    'en_AU' => 'ANZAC Day',
-    'en_NZ' => 'ANZAC Day',
-    'en_US' => 'ANZAC Day',
+    'en_AU' => 'Australia Day',
+    'en_US' => 'Australia Day',
 ];
