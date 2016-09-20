@@ -196,7 +196,13 @@ foreach ($official as $day) {
 // 'Whitmonday'
 // 'Christmas'
 // 'Boxing Day'
+
+// Calculate number of business/working days until a date
+$nextBusinessDay = Yasumi::addWorkingDays('USA', 1, new \DateTime('2016-07-01', new \DateTimeZone('America/New_York')))
+$nextBusinessDay->format('Y-m-d');
+// 2015-07-05
 ```
+
 
 Testing<a name="testing"></a>
 -------

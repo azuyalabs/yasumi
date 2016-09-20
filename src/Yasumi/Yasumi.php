@@ -148,4 +148,36 @@ class Yasumi
 
         return (array)$providers;
     }
+
+    /**
+     * @param string $class holiday provider name
+     * @param $workingDays int
+     * @param $startDate \DateTime Start date, defaults to today
+     * @return \DateTime
+     * @throws \Exception
+     */
+    public static function addWorkingDays($class, $workingDays, $startDate)
+    {
+        /* @TODO we should accept a timezone so we can accept int/string for $startDate */
+        if (!($startDate instanceof \DateTime)) {
+            throw new \Exception('Bad paramater, DateTime expected');
+        }
+
+        // Setup start date, if its an instance of \DateTime, clone to prevent modification to original
+        $date = $startDate instanceof \DateTime ? clone $startDate : new \DateTime($startDate);
+
+        $provider = false;
+
+        while ($workingDays > 0) {
+            $date->add(new \DateInterval('P1D'));
+            if (!$provider || $provider->getYear() != $date->format('Y')) {
+                $provider = self::create($class, $date->format('Y'));
+            }
+            if ($provider->isWorkingDay($date)) {
+                $workingDays --;
+            }
+        }
+
+        return $date;
+    }
 }
