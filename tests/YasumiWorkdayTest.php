@@ -52,6 +52,5 @@ class YasumiWorkdayTest extends PHPUnit_Framework_TestCase
         $startDate = new \DateTime('2016-01-20', new \DateTimeZone('America/New_York'));
         $result = Yasumi::prevWorkingDay('USA', $startDate, 20);
         $this->assertEquals('2015-12-18', $result->format('Y-m-d'));
-
     }
 }
