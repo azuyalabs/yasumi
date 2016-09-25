@@ -18,6 +18,7 @@ return [
     'es_ES' => 'Día de todos los Santos',
     'fi_FI' => 'Pyhäinpäivä',
     'fr_FR' => 'La Toussaint',
+    'hr_HR' => 'Dan svih svetih',
     'it_IT' => 'Festa di Tutti i Santi',
     'nl_BE' => 'Allerheiligen',
     'nl_NL' => 'Allerheiligen',

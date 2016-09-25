@@ -23,6 +23,7 @@ return [
     'es_ES' => 'Lunes de Pascua',
     'fi_FI' => '2. pääsiäispäivä',
     'fr_FR' => 'Lundi de Pâques',
+    'hr_HR' => 'Uskršnji ponedjeljak',
     'it_IT' => 'Lunedi` dell\'Angelo',
     'nb_NO' => 'Andre påskedag',
     'nl_BE' => 'Paasmaandag',

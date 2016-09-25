@@ -17,6 +17,7 @@ return [
     'en_US' => 'Epiphany',
     'es_ES' => 'Día de Reyes',
     'fi_FI' => 'Loppiainen',
+    'hr_HR' => 'Sveta tri kralja',
     'it_IT' => 'Epifania',
     'ja_JP' => 'エピファニー',
     'nl_BE' => 'Drie Koningen',

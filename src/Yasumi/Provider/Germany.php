@@ -43,16 +43,22 @@ class Germany extends AbstractProvider
         // Add common Christian holidays (common in Germany)
         $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
 
         // Calculate other holidays
         $this->calculateGermanUnityDay();
-        $this->calculateReformationDay();
+
+        // Note: all German states have agreed this to be a nationwide holiday in 2017 to celebrate the 500th anniversary.
+        if ($this->year == 2017) {
+            $this->calculateReformationDay();
+        }
     }
 
     /**
@@ -92,10 +98,8 @@ class Germany extends AbstractProvider
      */
     public function calculateReformationDay()
     {
-        if ($this->year == 2017) {
-            $this->addHoliday(new Holiday('reformationDay', [
+        $this->addHoliday(new Holiday('reformationDay', [
                 'de_DE' => 'Reformationstag',
             ], new DateTime("$this->year-10-31", new DateTimeZone($this->timezone)), $this->locale));
-        }
     }
 }

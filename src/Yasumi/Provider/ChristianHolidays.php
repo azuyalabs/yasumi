@@ -20,7 +20,8 @@ use Yasumi\Holiday;
 /**
  * Trait ChristianHolidays.
  *
- * Trait containing common holidays that are celebrated in christian environments.
+ * Trait containing base Christian Western churches calendar based holidays.
+ *
  */
 trait ChristianHolidays
 {
