@@ -48,24 +48,6 @@ class SlovakiaTest extends SlovakiaBaseTestCase
 
 
 	/**
-	 * Tests if all observed holidays in Slovakia are defined by the provider class
-	 */
-	public function testObservedHolidays()
-	{
-		$this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
-	}
-
-
-	/**
-	 * Tests if all seasonal holidays in Slovakia are defined by the provider class
-	 */
-	public function testSeasonalHolidays()
-	{
-		$this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
-	}
-
-
-	/**
 	 * Tests if all bank holidays in Slovakia are defined by the provider class
 	 */
 	public function testBankHolidays()
@@ -82,6 +64,24 @@ class SlovakiaTest extends SlovakiaBaseTestCase
 			'goodFriday',
 			'easterMonday',
 				], self::REGION, $this->year, Holiday::TYPE_BANK);
+	}
+
+
+	/**
+	 * Tests if all observed holidays in Slovakia are defined by the provider class
+	 */
+	public function testObservedHolidays()
+	{
+		$this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+	}
+
+
+	/**
+	 * Tests if all seasonal holidays in Slovakia are defined by the provider class
+	 */
+	public function testSeasonalHolidays()
+	{
+		$this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
 	}
 
 

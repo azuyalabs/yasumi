@@ -29,6 +29,8 @@ abstract class SlovakiaBaseTestCase extends PHPUnit_Framework_TestCase
 {
 
 	use YasumiBase;
+
+	
 	/**
 	 * Name of the region (e.g. country / state) to be tested
 	 */

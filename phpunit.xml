@@ -28,7 +28,7 @@
         <testsuite name="Yasumi Test Suite">
             <directory suffix="Test.php">./tests</directory>
         </testsuite>
-
+        
         <!-- Test Suite base functionality of Yasumi -->
         <testsuite name="Base">
             <directory suffix="Test.php">./tests/Base</directory>
@@ -124,6 +124,11 @@
             <directory suffix="Test.php">./tests/Croatia</directory>
         </testsuite>
 
+        <!-- Test Suite for holidays in Slovakia -->
+        <testsuite name="Slovakia">
+            <directory suffix="Test.php">./tests/Slovakia</directory>
+        </testsuite>
+		
     </testsuites>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
