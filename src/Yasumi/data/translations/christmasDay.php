@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 // Translation for Christmas
@@ -31,4 +31,6 @@ return [
     'pl_PL' => 'pierwszy dzień Bożego Narodzenia',
     'pt_BR' => 'Natal',
     'sv_SE' => 'juldagen',
+    'uk_UA' => 'Різдво',
+    'ru_UA' => 'Рождество',
 ];

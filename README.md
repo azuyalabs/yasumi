@@ -61,6 +61,7 @@ Yasumi currently supports 57 countries (including subregions):
 * Poland
 * Spain (including the sub-regions Andalusia, Aragon, Asturias, Balearic Islands, Basque Country, Canary Islands, Cantabria, Castile and León, Castile-La Mancha, Catalonia, Ceuta, Madrid Autonomous Community, Extremadura, Galicia, La Rioja, Melilla, Navarra Chartered Community, Murcia Region, Valencian Community)
 * Sweden
+* Ukraine
 * United States
 * United Kingdom
 
@@ -239,6 +240,7 @@ The tests are organized in some test suites to make testing a bit more easier:
 * "Spain"         : For separately testing the Spain Holiday Provider
 * "Sweden"        : For separately testing the Sweden Holiday Provider
 * "USA"           : For separately testing the USA Holiday Provider
+* "Ukraine"       : For separately testing the Ukraine Holiday Provider
 * "UnitedKingdom" : For separately testing the United Kingdom Holiday Provider
 
 
