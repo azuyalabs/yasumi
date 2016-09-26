@@ -44,7 +44,6 @@ class YasumiWorkdayTest extends PHPUnit_Framework_TestCase
          * 16th-17th Weekend, 18th Martin Luther King Day
          * 19th-20th (2 Workdays)
          *
-         *
          * @see https://www.timeanddate.com/calendar/?year=2016&country=1
          */
         $this->assertEquals('2016-01-20', $result->format('Y-m-d'));
