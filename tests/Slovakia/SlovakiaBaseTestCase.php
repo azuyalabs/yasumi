@@ -14,9 +14,8 @@
 
 namespace Yasumi\tests\Slovakia;
 
-use PHPUnit_Framework_TestCase,
-	Yasumi\tests\YasumiBase;
-
+use PHPUnit_Framework_TestCase;
+use Yasumi\tests\YasumiBase;
 
 /**
  * Base class for test cases of the Slovakia holiday provider.
@@ -28,22 +27,21 @@ use PHPUnit_Framework_TestCase,
 abstract class SlovakiaBaseTestCase extends PHPUnit_Framework_TestCase
 {
 
-	use YasumiBase;
+    use YasumiBase;
 
-	
-	/**
-	 * Name of the region (e.g. country / state) to be tested
-	 */
-	const REGION = 'Slovakia';
+    
+    /**
+     * Name of the region (e.g. country / state) to be tested
+     */
+    const REGION = 'Slovakia';
 
-	/**
-	 * Timezone in which this provider has holidays defined
-	 */
-	const TIMEZONE = 'Europe/Bratislava';
+    /**
+     * Timezone in which this provider has holidays defined
+     */
+    const TIMEZONE = 'Europe/Bratislava';
 
-	/**
-	 * Locale that is considered common for this provider
-	 */
-	const LOCALE = 'sk_SK';
-
+    /**
+     * Locale that is considered common for this provider
+     */
+    const LOCALE = 'sk_SK';
 }

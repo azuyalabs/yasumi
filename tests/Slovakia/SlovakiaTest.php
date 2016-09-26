@@ -16,7 +16,6 @@ namespace Yasumi\tests\Slovakia;
 
 use Yasumi\Holiday;
 
-
 /**
  * Class for testing holidays in Slovakia.
  *
@@ -26,81 +25,80 @@ use Yasumi\Holiday;
  */
 class SlovakiaTest extends SlovakiaBaseTestCase
 {
-	/**
-	 * @var int year random year number used for all tests in this Test Case
-	 */
-	protected $year;
+    /**
+     * @var int year random year number used for all tests in this Test Case
+     */
+    protected $year;
 
 
-	/**
-	 * Tests if all national holidays in Slovakia are defined by the provider class
-	 */
-	public function testNationalHolidays()
-	{
-		$this->assertDefinedHolidays([
-			'newYearsDay',
-			'slovakConstitutionDay',
-			'slovakNationalUprisingDay',
-			'saintsCyrilAndMethodiusDay',
-			'struggleForFreedomAndDemocracyDay',
-				], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
-	}
+    /**
+     * Tests if all national holidays in Slovakia are defined by the provider class
+     */
+    public function testNationalHolidays()
+    {
+        $this->assertDefinedHolidays([
+            'newYearsDay',
+            'slovakConstitutionDay',
+            'slovakNationalUprisingDay',
+            'saintsCyrilAndMethodiusDay',
+            'struggleForFreedomAndDemocracyDay',
+                ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+    }
 
 
-	/**
-	 * Tests if all bank holidays in Slovakia are defined by the provider class
-	 */
-	public function testBankHolidays()
-	{
-		$this->assertDefinedHolidays([
-			'epiphany',
-			'internationalWorkersDay',
-			'victoryInEuropeDay',
-			'ourLadyOfSorrowsDay',
-			'allSaintsDay',
-			'christmasEve',
-			'christmasDay',
-			'secondChristmasDay',
-			'goodFriday',
-			'easterMonday',
-				], self::REGION, $this->year, Holiday::TYPE_BANK);
-	}
+    /**
+     * Tests if all bank holidays in Slovakia are defined by the provider class
+     */
+    public function testBankHolidays()
+    {
+        $this->assertDefinedHolidays([
+            'epiphany',
+            'internationalWorkersDay',
+            'victoryInEuropeDay',
+            'ourLadyOfSorrowsDay',
+            'allSaintsDay',
+            'christmasEve',
+            'christmasDay',
+            'secondChristmasDay',
+            'goodFriday',
+            'easterMonday',
+                ], self::REGION, $this->year, Holiday::TYPE_BANK);
+    }
 
 
-	/**
-	 * Tests if all observed holidays in Slovakia are defined by the provider class
-	 */
-	public function testObservedHolidays()
-	{
-		$this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
-	}
+    /**
+     * Tests if all observed holidays in Slovakia are defined by the provider class
+     */
+    public function testObservedHolidays()
+    {
+        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+    }
 
 
-	/**
-	 * Tests if all seasonal holidays in Slovakia are defined by the provider class
-	 */
-	public function testSeasonalHolidays()
-	{
-		$this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
-	}
+    /**
+     * Tests if all seasonal holidays in Slovakia are defined by the provider class
+     */
+    public function testSeasonalHolidays()
+    {
+        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
+    }
 
 
-	/**
-	 * Tests if all other holidays in Slovakia are defined by the provider class
-	 */
-	public function testOtherHolidays()
-	{
-		$this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
-	}
+    /**
+     * Tests if all other holidays in Slovakia are defined by the provider class
+     */
+    public function testOtherHolidays()
+    {
+        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+    }
 
 
-	/**
-	 * Initial setup of this Test Case
-	 */
-	protected function setUp()
-	{
-		// NOTE: 1993 is the year Slovakia was founded as an independent state
-		$this->year = $this->generateRandomYear(1993, 2100);
-	}
-
+    /**
+     * Initial setup of this Test Case
+     */
+    protected function setUp()
+    {
+        // NOTE: 1993 is the year Slovakia was founded as an independent state
+        $this->year = $this->generateRandomYear(1993, 2100);
+    }
 }

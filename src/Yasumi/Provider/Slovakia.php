@@ -14,10 +14,9 @@
 
 namespace Yasumi\Provider;
 
-use DateTime,
-	DateTimeZone,
-	Yasumi\Holiday;
-
+use DateTime;
+use DateTimeZone;
+use Yasumi\Holiday;
 
 /**
  * Provider for all holidays in Slovakia.
@@ -49,132 +48,131 @@ use DateTime,
 class Slovakia extends AbstractProvider
 {
 
-	use CommonHolidays,
-	 ChristianHolidays;
+    use CommonHolidays,
+     ChristianHolidays;
 
 
-	/**
-	 * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
-	 * country or subregion.
-	 */
-	const ID = 'SK';
+    /**
+     * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * country or subregion.
+     */
+    const ID = 'SK';
 
 
-	/**
-	 * Initialize holidays for Slovakia.
-	 */
-	public function initialize()
-	{
-		$this->timezone = 'Europe/Bratislava';
+    /**
+     * Initialize holidays for Slovakia.
+     */
+    public function initialize()
+    {
+        $this->timezone = 'Europe/Bratislava';
 
-		// 1.1.
-		$this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_NATIONAL));
-		// 6.1.
-		$this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
-		// 1.5.
-		$this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
-		// 8.5.
-		$this->addHoliday($this->victoryInEuropeDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
-		// 5.7.
-		$this->calculateSaintsCyrilAndMethodiusDay();
-		// 29.8.
-		$this->calculateSlovakNationalUprisingDay();
-		// 1.9.
-		$this->calculateSlovakConstitutionDay();
-		// 15.9.
-		$this->calculateOurLadyOfSorrowsDay();
-		// 1.11.
-		$this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
-		// 17.11.
-		$this->calculateStruggleForFreedomAndDemocracyDay();
-		// 24.12.
-		$this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
-		// 25.12.
-		$this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
-		// 26.12.
-		$this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
+        // 1.1.
+        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_NATIONAL));
+        // 6.1.
+        $this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
+        // 1.5.
+        $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
+        // 8.5.
+        $this->addHoliday($this->victoryInEuropeDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
+        // 5.7.
+        $this->calculateSaintsCyrilAndMethodiusDay();
+        // 29.8.
+        $this->calculateSlovakNationalUprisingDay();
+        // 1.9.
+        $this->calculateSlovakConstitutionDay();
+        // 15.9.
+        $this->calculateOurLadyOfSorrowsDay();
+        // 1.11.
+        $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
+        // 17.11.
+        $this->calculateStruggleForFreedomAndDemocracyDay();
+        // 24.12.
+        $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
+        // 25.12.
+        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
+        // 26.12.
+        $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
 
-		// variable holidays - easter
-		$this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
-		$this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
-	}
-
-
-	/**
-	 * Our Lady of Sorrows ("Sedembolestná Panna Mária"),
-	 * is the main patron of slovakia, announced by pope Pius IX. in 1927.
-	 *
-	 * Note: This is a Christian church holiday.
-	 *
-	 * @see https://en.wikipedia.org/wiki/Our_Lady_of_Sorrows
-	 * @see https://sk.wikipedia.org/wiki/Sedembolestn%C3%A1_Panna_M%C3%A1ria
-	 */
-	public function calculateOurLadyOfSorrowsDay()
-	{
-		$this->addHoliday(new Holiday('ourLadyOfSorrowsDay', [
-			'sk_SK' => 'Sviatok Sedembolestnej Panny Márie',
-			'en_US' => 'Our Lady of Sorrows Day',
-				], new DateTime($this->year . '-09-15', new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_BANK));
-	}
+        // variable holidays - easter
+        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
+        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
+    }
 
 
-	/**
-	 * Day of the Constitution of the Slovak Republic
-	 *
-	 * @see https://en.wikipedia.org/wiki/Constitution_of_Slovakia
-	 */
-	public function calculateSlovakConstitutionDay()
-	{
-		$this->addHoliday(new Holiday('slovakConstitutionDay', [
-			'sk_SK' => 'Deň Ústavy Slovenskej republiky',
-			'en_US' => 'Day of the Constitution of the Slovak Republic',
-				], new DateTime($this->year . '-09-01', new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_NATIONAL));
-	}
+    /**
+     * Our Lady of Sorrows ("Sedembolestná Panna Mária"),
+     * is the main patron of slovakia, announced by pope Pius IX. in 1927.
+     *
+     * Note: This is a Christian church holiday.
+     *
+     * @see https://en.wikipedia.org/wiki/Our_Lady_of_Sorrows
+     * @see https://sk.wikipedia.org/wiki/Sedembolestn%C3%A1_Panna_M%C3%A1ria
+     */
+    public function calculateOurLadyOfSorrowsDay()
+    {
+        $this->addHoliday(new Holiday('ourLadyOfSorrowsDay', [
+            'sk_SK' => 'Sviatok Sedembolestnej Panny Márie',
+            'en_US' => 'Our Lady of Sorrows Day',
+                ], new DateTime($this->year . '-09-15', new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_BANK));
+    }
 
 
-	/**
-	 * Slovak National Uprising Day
-	 *
-	 * @see https://en.wikipedia.org/wiki/Slovak_National_Uprising
-	 */
-	public function calculateSlovakNationalUprisingDay()
-	{
-		$this->addHoliday(new Holiday('slovakNationalUprisingDay', [
-			'sk_SK' => 'Výročie Slovenského národného povstania',
-			'en_US' => 'Slovak National Uprising Day',
-				], new DateTime($this->year . '-08-29', new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_NATIONAL));
-	}
+    /**
+     * Day of the Constitution of the Slovak Republic
+     *
+     * @see https://en.wikipedia.org/wiki/Constitution_of_Slovakia
+     */
+    public function calculateSlovakConstitutionDay()
+    {
+        $this->addHoliday(new Holiday('slovakConstitutionDay', [
+            'sk_SK' => 'Deň Ústavy Slovenskej republiky',
+            'en_US' => 'Day of the Constitution of the Slovak Republic',
+                ], new DateTime($this->year . '-09-01', new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_NATIONAL));
+    }
 
 
-	/**
-	 * Saints Cyril and Methodius Day
-	 *
-	 * @see https://en.wikipedia.org/wiki/Saints_Cyril_and_Methodius
-	 *
-	 * Note: this holiday is common for Czech republic and Slovakia.
-	 */
-	public function calculateSaintsCyrilAndMethodiusDay()
-	{
-		$this->addHoliday(new Holiday('saintsCyrilAndMethodiusDay', [
-			'sk_SK' => 'Sviatok svätého Cyrila a Metoda',
-			'cs_CZ' => 'Den slovanských věrozvěstů Cyrila a Metoděje',
-			'en_US' => 'Saints Cyril and Methodius Day',
-				], new DateTime($this->year . '-07-05', new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_NATIONAL));
-	}
+    /**
+     * Slovak National Uprising Day
+     *
+     * @see https://en.wikipedia.org/wiki/Slovak_National_Uprising
+     */
+    public function calculateSlovakNationalUprisingDay()
+    {
+        $this->addHoliday(new Holiday('slovakNationalUprisingDay', [
+            'sk_SK' => 'Výročie Slovenského národného povstania',
+            'en_US' => 'Slovak National Uprising Day',
+                ], new DateTime($this->year . '-08-29', new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_NATIONAL));
+    }
 
 
-	/**
-	 * Struggle for Freedom and Democracy Day
-	 *
-	 * Note: this national day is common for Czech republic and Slovakia.
-	 */
-	public function calculateStruggleForFreedomAndDemocracyDay()
-	{
-		$this->addHoliday(new Holiday('struggleForFreedomAndDemocracyDay', [
-			'sk_SK' => 'Deň boja za slobodu a demokraciu',
-			'cs_CZ' => 'Den boje za svobodu a demokracii',
-			'en_US' => 'Struggle for Freedom and Democracy Day',
-				], new DateTime($this->year . '-11-17', new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_NATIONAL));
-	}
+    /**
+     * Saints Cyril and Methodius Day
+     *
+     * @see https://en.wikipedia.org/wiki/Saints_Cyril_and_Methodius
+     *
+     * Note: this holiday is common for Czech republic and Slovakia.
+     */
+    public function calculateSaintsCyrilAndMethodiusDay()
+    {
+        $this->addHoliday(new Holiday('saintsCyrilAndMethodiusDay', [
+            'sk_SK' => 'Sviatok svätého Cyrila a Metoda',
+            'cs_CZ' => 'Den slovanských věrozvěstů Cyrila a Metoděje',
+            'en_US' => 'Saints Cyril and Methodius Day',
+                ], new DateTime($this->year . '-07-05', new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_NATIONAL));
+    }
 
+
+    /**
+     * Struggle for Freedom and Democracy Day
+     *
+     * Note: this national day is common for Czech republic and Slovakia.
+     */
+    public function calculateStruggleForFreedomAndDemocracyDay()
+    {
+        $this->addHoliday(new Holiday('struggleForFreedomAndDemocracyDay', [
+            'sk_SK' => 'Deň boja za slobodu a demokraciu',
+            'cs_CZ' => 'Den boje za svobodu a demokracii',
+            'en_US' => 'Struggle for Freedom and Democracy Day',
+                ], new DateTime($this->year . '-11-17', new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_NATIONAL));
+    }
 }

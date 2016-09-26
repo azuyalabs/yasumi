@@ -14,10 +14,9 @@
 
 namespace Yasumi\tests\Slovakia;
 
-use DateTime,
-	Yasumi\Holiday,
-	Yasumi\tests\YasumiTestCaseInterface;
-
+use DateTime;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing a national holiday in Slovakia.
@@ -28,52 +27,51 @@ use DateTime,
  */
 class StruggleForFreedomAndDemocracyDayTest extends SlovakiaBaseTestCase implements YasumiTestCaseInterface
 {
-	/**
-	 * The name of the holiday to be tested
-	 */
-	const HOLIDAY = 'struggleForFreedomAndDemocracyDay';
+    /**
+     * The name of the holiday to be tested
+     */
+    const HOLIDAY = 'struggleForFreedomAndDemocracyDay';
 
 
-	/**
-	 * Tests the holiday defined in this test.
-	 *
-	 * @dataProvider HolidayDataProvider
-	 *
-	 * @param int      $year     the year for which the holiday defined in this test needs to be tested
-	 * @param DateTime $expected the expected date
-	 */
-	public function testHoliday($year, $expected)
-	{
-		$this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
-	}
+    /**
+     * Tests the holiday defined in this test.
+     *
+     * @dataProvider HolidayDataProvider
+     *
+     * @param int      $year     the year for which the holiday defined in this test needs to be tested
+     * @param DateTime $expected the expected date
+     */
+    public function testHoliday($year, $expected)
+    {
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
+    }
 
 
-	/**
-	 * Returns a list of random test dates used for assertion of the holiday defined in this test
-	 *
-	 * @return array list of test dates for the holiday defined in this test
-	 */
-	public function HolidayDataProvider()
-	{
-		return $this->generateRandomDates(11, 17, self::TIMEZONE);
-	}
+    /**
+     * Returns a list of random test dates used for assertion of the holiday defined in this test
+     *
+     * @return array list of test dates for the holiday defined in this test
+     */
+    public function HolidayDataProvider()
+    {
+        return $this->generateRandomDates(11, 17, self::TIMEZONE);
+    }
 
 
-	/**
-	 * Tests the translated name of the holiday defined in this test.
-	 */
-	public function testTranslation()
-	{
-		$this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(), [self::LOCALE => 'Deň boja za slobodu a demokraciu']);
-	}
+    /**
+     * Tests the translated name of the holiday defined in this test.
+     */
+    public function testTranslation()
+    {
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(), [self::LOCALE => 'Deň boja za slobodu a demokraciu']);
+    }
 
 
-	/**
-	 * Tests type of the holiday defined in this test.
-	 */
-	public function testHolidayType()
-	{
-		$this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
-	}
-
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
+    }
 }
