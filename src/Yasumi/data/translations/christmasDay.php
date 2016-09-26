@@ -30,7 +30,7 @@ return [
     'nl_NL' => 'Kerstmis',
     'pl_PL' => 'pierwszy dzień Bożego Narodzenia',
     'pt_BR' => 'Natal',
+    'ru_UA' => 'Рождество',
     'sv_SE' => 'juldagen',
     'uk_UA' => 'Різдво',
-    'ru_UA' => 'Рождество',
 ];

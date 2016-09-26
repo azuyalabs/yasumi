@@ -27,7 +27,7 @@ return [
     'nl_NL' => 'Dag van de arbeid',
     'pl_PL' => 'Święto Pracy',
     'pt_BR' => 'Dia internacional do trabalhador',
+    'ru_UA' => 'День международной солидарности трудящихся',
     'sv_SE' => 'Första maj',
     'uk_UA' => 'День міжнародної солідарності трудящих',
-    'ru_UA' => 'День международной солидарности трудящихся',
 ];

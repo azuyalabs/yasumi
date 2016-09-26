@@ -24,7 +24,7 @@ return [
     'nl_NL' => 'Eerste Paasdag',
     'pl_PL' => 'Wielkanoc',
     'pt_BR' => 'Páscoa',
+    'ru_UA' => 'Пасха',
     'sv_SE' => 'påskdagen',
     'uk_UA' => 'Великдень',
-    'ru_UA' => 'Пасха',
 ];

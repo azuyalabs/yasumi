@@ -31,7 +31,7 @@ return [
     'nl_NL' => 'Nieuwjaar',
     'pl_PL' => 'Nowy Rok',
     'pt_BR' => 'Ano novo',
+    'ru_UA' => 'Новый Год',
     'sv_SE' => 'nyårsdagen',
     'uk_UA' => 'Новий Рік',
-    'ru_UA' => 'Новый Год',
 ];
