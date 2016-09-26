@@ -42,7 +42,7 @@ Highlights<a name="highlights"></a>
 * Accounts for the date/time when holidays have been officially established and/or abolished
 * Composer ready, [PSR-2] compliant
 
-Yasumi currently supports 57 countries (including subregions):
+Yasumi currently supports 58 countries (including sub-regions):
 
 * Belgium
 * Brazil
@@ -61,8 +61,8 @@ Yasumi currently supports 57 countries (including subregions):
 * Poland
 * Spain (including the sub-regions Andalusia, Aragon, Asturias, Balearic Islands, Basque Country, Canary Islands, Cantabria, Castile and León, Castile-La Mancha, Catalonia, Ceuta, Madrid Autonomous Community, Extremadura, Galicia, La Rioja, Melilla, Navarra Chartered Community, Murcia Region, Valencian Community)
 * Sweden
-* Ukraine
 * United States
+* Ukraine
 * United Kingdom
 
 Yasumi has the following filters to allow you to filter only certain type of holidays:
@@ -215,7 +215,7 @@ folder:
 $ phpunit
 ```
 
-Yasumi has over 1200 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
+Yasumi has over 1250 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
 the holidays, multiple iterations of assertions are executed to ensure the holidays are calculated in a large number
 of years.
 

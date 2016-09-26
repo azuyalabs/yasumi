@@ -4,6 +4,7 @@
 
 **Implemented enhancements:**
 
+- Added Holiday Provider for Ukraine. [\#41](https://github.com/azuyalabs/yasumi/pull/41) ([madmis](https://github.com/madmis))
 - Possibility to retrieve the next or previous working day within a defined number of days from today [\#39](https://github.com/azuyalabs/Yasumi/pull/39) ([brucealdridge](https://github.com/brucealdridge))
 - Added Holiday Providers for all 16 German States. [\#34](https://github.com/azuyalabs/Yasumi/pull/34) ([stelgenhof](https://github.com/stelgenhof))
 - Added Holiday Provider for Croatia. [\#32](https://github.com/azuyalabs/Yasumi/pull/32) ([karlomikus](https://github.com/karlomikus))
@@ -18,7 +19,7 @@
 - Added Holiday Provider for the United Kingdom. [\#23](https://github.com/azuyalabs/Yasumi/pull/23) ([stelgenhof](https://github.com/stelgenhof))
 - Add Welsh language (spoken in Wales, UK) translations for the holidays in the United Kingdom [\#25](https://github.com/azuyalabs/Yasumi/pull/25) ([meigwilym](https://github.com/meigwilym))
 - All Holiday Provider must now implement a code that will identify it. Typically this is the ISO3166 code 
-  corresponding to the respective country or subregion. This can help for purposes such as translations or interfacing 
+  corresponding to the respective country or sub-region. This can help for purposes such as translations or interfacing 
   with other API's for example.
 - To determine a set of holidays between two dates you can now use the aptly named 'between()' method.
 
