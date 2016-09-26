@@ -112,8 +112,8 @@ Basic Usage<a name="usage"></a>
 // Require the composer auto loader
 require 'vendor/autoload.php';
 
-use Yasumi\Yasumi;
 use Yasumi\Filters\OfficialHolidaysFilter;
+use Yasumi\Yasumi;
 
 // Use the factory to create a new holiday provider instance
 $holidays = Yasumi::create('USA', 2016);
@@ -197,7 +197,13 @@ foreach ($official as $day) {
 // 'Whitmonday'
 // 'Christmas'
 // 'Boxing Day'
+
+// Calculate number of business/working days until a date
+$nextBusinessDay = Yasumi::nextWorkingDay('USA', new \DateTime('2016-07-01', new \DateTimeZone('America/New_York')));
+echo $nextBusinessDay->format('Y-m-d') . PHP_EOL;
+// 2016-07-05
 ```
+
 
 Testing<a name="testing"></a>
 -------

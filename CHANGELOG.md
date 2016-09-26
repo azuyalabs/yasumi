@@ -4,6 +4,7 @@
 
 **Implemented enhancements:**
 
+- Possibility to retrieve the next or previous working day within a defined number of days from today [\#39](https://github.com/azuyalabs/Yasumi/pull/39) ([brucealdridge](https://github.com/brucealdridge))
 - Added Holiday Providers for all 16 German States. [\#34](https://github.com/azuyalabs/Yasumi/pull/34) ([stelgenhof](https://github.com/stelgenhof))
 - Added Holiday Provider for Croatia. [\#32](https://github.com/azuyalabs/Yasumi/pull/32) ([karlomikus](https://github.com/karlomikus))
 
