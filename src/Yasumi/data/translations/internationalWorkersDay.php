@@ -28,4 +28,6 @@ return [
     'pl_PL' => 'Święto Pracy',
     'pt_BR' => 'Dia internacional do trabalhador',
     'sv_SE' => 'Första maj',
+    'uk_UA' => 'День міжнародної солідарності трудящих',
+    'ru_UA' => 'День международной солидарности трудящихся',
 ];
