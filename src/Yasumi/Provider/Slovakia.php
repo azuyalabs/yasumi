@@ -47,9 +47,7 @@ use Yasumi\Holiday;
  */
 class Slovakia extends AbstractProvider
 {
-
-    use CommonHolidays,
-     ChristianHolidays;
+    use CommonHolidays, ChristianHolidays;
 
 
     /**
