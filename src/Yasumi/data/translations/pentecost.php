@@ -20,5 +20,7 @@ return [
     'nl_BE' => 'Eerste Pinksterdag',
     'nl_NL' => 'Eerste Pinksterdag',
     'pl_PL' => 'Zielone Świątki',
+    'ru_UA' => 'Троица',
     'sv_SE' => 'Pingstdagen',
+    'uk_UA' => 'Трійця',
 ];
