@@ -34,4 +34,5 @@ return [
     'ru_UA' => 'Новый Год',
     'sv_SE' => 'nyårsdagen',
     'uk_UA' => 'Новий Рік',
+    'sk_SK' => 'Deň vzniku Slovenskej republiky',
 ];

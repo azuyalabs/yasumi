@@ -16,4 +16,5 @@ return [
     'en_US' => 'Father\'s Day',
     'nl_BE' => 'Vaderdag',
     'nl_NL' => 'Vaderdag',
+    'sk_SK' => 'Deň otcov',
 ];

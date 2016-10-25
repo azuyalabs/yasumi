@@ -17,4 +17,5 @@ return [
     'ja_JP' => '労働の日',
     'nl_BE' => 'Dag van de arbeid',
     'nl_NL' => 'Dag van de arbeid',
+    'sk_SK' => 'Sviatok práce',
 ];
