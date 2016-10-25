@@ -42,7 +42,7 @@ Highlights<a name="highlights"></a>
 * Accounts for the date/time when holidays have been officially established and/or abolished
 * Composer ready, [PSR-2] compliant
 
-Yasumi currently supports 58 countries (including sub-regions):
+Yasumi currently supports 59 countries (including sub-regions):
 
 * Belgium
 * Brazil
@@ -216,7 +216,7 @@ folder:
 $ phpunit
 ```
 
-Yasumi has over 1250 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
+Yasumi has over 1300 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
 the holidays, multiple iterations of assertions are executed to ensure the holidays are calculated in a large number
 of years.
 
