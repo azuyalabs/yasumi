@@ -32,7 +32,7 @@ return [
     'pl_PL' => 'Nowy Rok',
     'pt_BR' => 'Ano novo',
     'ru_UA' => 'Новый Год',
+    'sk_SK' => 'Deň vzniku Slovenskej republiky',
     'sv_SE' => 'nyårsdagen',
     'uk_UA' => 'Новий Рік',
-    'sk_SK' => 'Deň vzniku Slovenskej republiky',
 ];
