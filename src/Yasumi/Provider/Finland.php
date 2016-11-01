@@ -7,11 +7,12 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\Provider;
 
+use DateInterval;
 use DateTime;
 use DateTimeZone;
 use Yasumi\Holiday;
@@ -48,7 +49,7 @@ class Finland extends AbstractProvider
         $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale));
         $this->calculatestJohnsDay(); // aka Midsummer's Day
-        $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale));
+        $this->calculateAllSaintsDay();
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
 
@@ -92,6 +93,39 @@ class Finland extends AbstractProvider
             $this->addHoliday(new Holiday($shortName, $translation, $date, $this->locale));
         }
     }
+
+    /**
+     * All Saints Day.
+     *
+     * All Saints' Day is a celebration of all Christian saints, particularly those who have no special feast days of
+     * their own, in many Roman Catholic, Anglican and Protestant churches. In many western churches it is annually
+     * held
+     * November 1 and in many eastern churches it is celebrated on the first Sunday after Pentecost. It is also known
+     * as All Hallows Tide, All-Hallomas, or All Hallows' Day.
+     *
+     * The festival was retained after the Reformation in the calendar of the Anglican Church and in many Lutheran
+     * churches. In the Lutheran churches, such as the Church of Sweden, it assumes a role of general commemoration of
+     * the dead. In the Swedish and Finnish calendar, the observance takes place on the Saturday between 31 October and
+     * 6 November. In many Lutheran Churches, it is moved to the first Sunday of November.
+     *
+     * @link https://en.wikipedia.org/wiki/All_Saints%27_Day
+     * @link https://fi.wikipedia.org/wiki/Pyh%C3%A4inp%C3%A4iv%C3%A4
+     */
+    private function calculateAllSaintsDay()
+    {
+        $date = new DateTime("$this->year-10-31", new DateTimeZone($this->timezone));
+
+        // Check between 31 October and 6th of November the day that is a Saturday
+        for ($d = 0; $d <= 7; ++$d) {
+            if ($date->format('l') === 'Saturday') {
+                break;
+            }
+            $date->add(new DateInterval('P1D'));
+        }
+
+        $this->addHoliday(new Holiday('allSaintsDay', [], $date, $this->locale));
+    }
+
 
     /*
      * Independence Day

@@ -7,12 +7,14 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\tests\Finland;
 
 use DateTime;
+use DateTimeZone;
+use DateInterval;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -46,7 +48,23 @@ class AllSaintsDayTest extends FinlandBaseTestCase implements YasumiTestCaseInte
      */
     public function HolidayDataProvider()
     {
-        return $this->generateRandomDates(11, 1, self::TIMEZONE);
+        $data = [];
+
+        for ($y = 0; $y < 50; $y++) {
+            $year = $this->generateRandomYear();
+            $date = new DateTime("$year-10-31", new DateTimeZone(self::TIMEZONE));
+
+            // Check between 31 October and 6th of November the day that is a Saturday
+            for ($d = 0; $d <= 7; ++$d) {
+                if ($date->format('l') === 'Saturday') {
+                    $data[] = [$year, $date];
+                    break;
+                }
+                $date->add(new DateInterval('P1D'));
+            }
+        }
+
+        return $data;
     }
 
     /**
