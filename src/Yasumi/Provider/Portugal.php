@@ -61,7 +61,7 @@ class Portugal extends AbstractProvider
      */
     public function calculateAllSaintsDay()
     {
-        if($this->year <= 2013 || $this->year >= 2016) {
+        if ($this->year <= 2013 || $this->year >= 2016) {
             $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale));
         }
     }
@@ -72,7 +72,7 @@ class Portugal extends AbstractProvider
      */
     public function calculateCorpusChristi()
     {
-        if($this->year <= 2013 || $this->year >= 2016) {
+        if ($this->year <= 2013 || $this->year >= 2016) {
             $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale));
         }
     }
