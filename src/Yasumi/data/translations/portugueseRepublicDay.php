@@ -10,12 +10,8 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-// Translation for Father's Day
+// Translation for Implantation of the Portuguese Republic Day
 return [
-    'el_GR' => 'Γιορτή του πατέρα',
-    'en_US' => 'Father\'s Day',
-    'nl_BE' => 'Vaderdag',
-    'nl_NL' => 'Vaderdag',
-    'pt_PT' => 'Dia do Pai',
-    'sk_SK' => 'Deň otcov',
+    'en_US' => 'Implantation of the Portuguese Republic',
+    'pt_PT' => 'Implantação da República Portuguesa',
 ];
