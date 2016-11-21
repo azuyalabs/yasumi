@@ -18,4 +18,5 @@ return [
     'hr_HR' => 'Tijelovo',
     'pl_PL' => 'Boże Ciało',
     'pt_BR' => 'Corpus Christi',
+    'pt_PT' => 'Corpo de Deus',
 ];

@@ -16,5 +16,6 @@ return [
     'en_US' => 'Mother\'s Day',
     'nl_BE' => 'Moederdag',
     'nl_NL' => 'Moederdag',
+    'pt_PT' => 'Dia da Mãe',
     'sk_SK' => 'Deň matiek',
 ];

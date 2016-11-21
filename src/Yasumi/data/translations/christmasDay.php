@@ -30,6 +30,7 @@ return [
     'nl_NL' => 'Kerstmis',
     'pl_PL' => 'pierwszy dzień Bożego Narodzenia',
     'pt_BR' => 'Natal',
+    'pt_PT' => 'Natal',
     'ru_UA' => 'Рождество',
     'sk_SK' => 'Prvý sviatok vianočný',
     'sv_SE' => 'juldagen',
