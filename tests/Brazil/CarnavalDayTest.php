@@ -41,7 +41,7 @@ class CarnavalDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterf
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            $this->calculateEaster($year, self::TIMEZONE)->sub(new DateInterval('P47D')));
+            $this->calculateEaster($year, self::TIMEZONE)->sub(new DateInterval('P51D')));
     }
 
     /**
@@ -51,7 +51,7 @@ class CarnavalDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterf
     {
         $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year,
-            $this->calculateEaster($year, self::TIMEZONE)->sub(new DateInterval('P47D')));
+            $this->calculateEaster($year, self::TIMEZONE)->sub(new DateInterval('P51D')));
     }
 
     /**
