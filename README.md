@@ -5,7 +5,7 @@ Yasumi
 Yasumi (Japanese for 'Holiday'「休み」) is an easy PHP library to help you calculate the dates and names of holidays and other
 special celebrations from various countries/states. Many services exist on the internet that provide holidays, however
 are either not free or offer only limited information. In addition, no complete PHP library seems to exist today
-that covers a wide range of holidays and countries, except maybe [PEAR's Date_Holidays](https://pear.php.net/package/Date_Holidays) 
+that covers a wide range of holidays and countries, except maybe [PEAR's Date_Holidays](https://pear.php.net/package/Date_Holidays)
 which unfortunately hasn't been updated for a long time.
 
 The goal of Yasumi is to be powerful while remaining lightweight, by utilizing PHP native classes wherever possible.
@@ -34,7 +34,7 @@ Highlights<a name="highlights"></a>
 * Common Holiday Providers
 * Global Translations
 * Implements ArrayIterator to easily process a provider's holidays
-* Filters enabling to easily select certain holiday types (Official, Observed, Bank, Seasonal or Other) 
+* Filters enabling to easily select certain holiday types (Official, Observed, Bank, Seasonal or Other)
 * Fully documented
 * Fully Unit tested
 * Framework-agnostic
@@ -42,7 +42,7 @@ Highlights<a name="highlights"></a>
 * Accounts for the date/time when holidays have been officially established and/or abolished
 * Composer ready, [PSR-2] compliant
 
-Yasumi currently supports 59 countries (including sub-regions):
+Yasumi currently supports 60 providers (22 countries and 38 sub-regions):
 
 * Belgium
 * Brazil
@@ -93,7 +93,7 @@ System Requirements<a name="requirements"></a>
 
 You need **PHP >= 5.5.0** to use `azuyalabs/yasumi` but the latest stable version of PHP is recommended.
 Yasumi is verified and tested on PHP 5.5, 5.6 and 7.0. Although Yasumi will work with PHP 5.5, only PHP version 5.6 or
-higher is supported. 
+higher is supported.
 
 
 Installation<a name="installation"></a>
@@ -210,14 +210,14 @@ echo $nextBusinessDay->format('Y-m-d') . PHP_EOL;
 Testing<a name="testing"></a>
 -------
 
-Yasumi has a [PHPUnit](https://phpunit.de/) test suite. To run the tests, run the following command from the project 
+Yasumi has a [PHPUnit](https://phpunit.de/) test suite. To run the tests, run the following command from the project
 folder:
 
 ``` bash
 $ phpunit
 ```
 
-Yasumi has over 1300 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
+Yasumi has over 1370 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
 the holidays, multiple iterations of assertions are executed to ensure the holidays are calculated in a large number
 of years.
 
@@ -246,7 +246,6 @@ The tests are organized in some test suites to make testing a bit more easier:
 * "USA"           : For separately testing the USA Holiday Provider
 * "Ukraine"       : For separately testing the Ukraine Holiday Provider
 * "UnitedKingdom" : For separately testing the United Kingdom Holiday Provider
-
 
 ## Testing
 
@@ -288,6 +287,6 @@ Yasumi is open-sourced software licensed under the MIT License (MIT). Please see
 Sources<a name="sources"></a>
 -------
 
-- [Wikipedia](https://en.wikipedia.org/wiki/Main_Page) 
+- [Wikipedia](https://en.wikipedia.org/wiki/Main_Page)
 - [Timeanddate.com](http://www.timeanddate.com/)  
 - [CLDR - Unicode Common Locale Data Repository](http://cldr.unicode.org/)  
