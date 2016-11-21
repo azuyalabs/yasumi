@@ -57,7 +57,7 @@ class Brazil extends AbstractProvider
          */
         if ($this->year >= 1700) {
             $this->addHoliday(new Holiday('carnavalDay', ['pt_BR' => 'Carnaval'],
-                $this->calculateEaster($this->year, $this->timezone)->sub(new DateInterval('P47D')),
+                $this->calculateEaster($this->year, $this->timezone)->sub(new DateInterval('P51D')),
                 $this->locale, Holiday::TYPE_OBSERVANCE));
         }
 
