@@ -10,7 +10,7 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-// Translation for the Carnation Revolution Day
+// Translation for Freedom Day
 return [
     'en_US' => 'Freedom Day',
     'pt_PT' => 'Dia da Liberdade',

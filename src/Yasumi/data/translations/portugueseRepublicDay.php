@@ -10,7 +10,7 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-// Translation for Implantation of the Portuguese Republic Day
+// Translation for Implantation of the Portuguese Republic
 return [
     'en_US' => 'Implantation of the Portuguese Republic',
     'pt_PT' => 'Implantação da República Portuguesa',

@@ -10,7 +10,7 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-// Translation for Armistice Day
+// Translation for Restoration of Independence
 return [
     'en_US' => 'Restoration of Independence',
     'pt_PT' => 'Restauração da Independência',
