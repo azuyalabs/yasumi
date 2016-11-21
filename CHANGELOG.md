@@ -6,12 +6,13 @@
 
 - Added Holiday Provider for Portugal. [\#44](https://github.com/azuyalabs/yasumi/pull/44) ([rvelhote](https://github.com/rvelhote))
 - Added Holiday Provider for Ukraine. [\#41](https://github.com/azuyalabs/yasumi/pull/41) ([madmis](https://github.com/madmis))
-- Possibility to retrieve the next or previous working day within a defined number of days from today [\#39](https://github.com/azuyalabs/Yasumi/pull/39) ([brucealdridge](https://github.com/brucealdridge))
-- Added Holiday Providers for all 16 German States. [\#34](https://github.com/azuyalabs/Yasumi/pull/34) ([stelgenhof](https://github.com/stelgenhof))
-- Added Holiday Provider for Croatia. [\#32](https://github.com/azuyalabs/Yasumi/pull/32) ([karlomikus](https://github.com/karlomikus))
+- Possibility to retrieve the next or previous working day within a defined number of days from today [\#39](https://github.com/azuyalabs/yasumi/pull/39) ([brucealdridge](https://github.com/brucealdridge))
+- Added Holiday Providers for all 16 German States. [\#34](https://github.com/azuyalabs/yasumi/pull/34) ([stelgenhof](https://github.com/stelgenhof))
+- Added Holiday Provider for Croatia. [\#32](https://github.com/azuyalabs/yasumi/pull/32) ([karlomikus](https://github.com/karlomikus))
 
 **Resolved issues:**
 
+- Carnival Day in Brazil was incorrectly set to be 47 days after Easter. Carnival Day begins Friday before Ash Wednesday (51 days to Easter). [\#36](https://github.com/azuyalabs/yasumi/pull/36) ([icaroce](https://github.com/icaroce))
 - All Saints Day for Finland was incorrectly set for November 1st. The correct date is Saturday between 31 Oct and 6 Nov, similar to Sweden. [\#43](https://github.com/azuyalabs/yasumi/issues/43) ([stelgenhof](https://github.com/stelgenhof))
 
 
@@ -19,10 +20,10 @@
 
 **Implemented enhancements:**
 
-- Added Holiday Provider for Brazil. [\#21](https://github.com/azuyalabs/Yasumi/pull/21) ([dorianneto](https://github.com/dorianneto))
-- Added Holiday Provider for the Czech Republic. [\#26](https://github.com/azuyalabs/Yasumi/pull/26) ([dfridrich](https://github.com/dfridrich))
-- Added Holiday Provider for the United Kingdom. [\#23](https://github.com/azuyalabs/Yasumi/pull/23) ([stelgenhof](https://github.com/stelgenhof))
-- Add Welsh language (spoken in Wales, UK) translations for the holidays in the United Kingdom [\#25](https://github.com/azuyalabs/Yasumi/pull/25) ([meigwilym](https://github.com/meigwilym))
+- Added Holiday Provider for Brazil. [\#21](https://github.com/azuyalabs/yasumi/pull/21) ([dorianneto](https://github.com/dorianneto))
+- Added Holiday Provider for the Czech Republic. [\#26](https://github.com/azuyalabs/yasumi/pull/26) ([dfridrich](https://github.com/dfridrich))
+- Added Holiday Provider for the United Kingdom. [\#23](https://github.com/azuyalabs/yasumi/pull/23) ([stelgenhof](https://github.com/stelgenhof))
+- Add Welsh language (spoken in Wales, UK) translations for the holidays in the United Kingdom [\#25](https://github.com/azuyalabs/yasumi/pull/25) ([meigwilym](https://github.com/meigwilym))
 - All Holiday Provider must now implement a code that will identify it. Typically this is the ISO3166 code
   corresponding to the respective country or sub-region. This can help for purposes such as translations or interfacing
   with other API's for example.
@@ -30,8 +31,8 @@
 
 **Resolved issues:**
 
-- Fixed an issue with the unit test for the 'getProviders' method failing on Windows. Hardcoded unix-style directory separators have been replaced by DIRECTORY_SEPARATOR. [\#30](https://github.com/azuyalabs/Yasumi/pull/30) ([navarr](https://github.com/navarr))
-- Corrected a typo in the English translation for 敬老の日 (Japan) [\#22](https://github.com/azuyalabs/Yasumi/pull/22) ([navarr](https://github.com/navarr))
+- Fixed an issue with the unit test for the 'getProviders' method failing on Windows. Hardcoded unix-style directory separators have been replaced by DIRECTORY_SEPARATOR. [\#30](https://github.com/azuyalabs/yasumi/pull/30) ([navarr](https://github.com/navarr))
+- Corrected a typo in the English translation for 敬老の日 (Japan) [\#22](https://github.com/azuyalabs/yasumi/pull/22) ([navarr](https://github.com/navarr))
 - Fixed issue that the unit tests in 'YasumiTest' (methods 'next' and 'previous') didn't cover the situations that the limits are exceeded. [\#28](https://github.com/azuyalabs/yasumi/issues/28)
 
 
@@ -39,10 +40,10 @@
 
 **Implemented enhancements:**
 
-- Added Holiday Provider for Poland. [\#18](https://github.com/azuyalabs/Yasumi/pull/18) ([mpdx](https://github.com/mpdx))
-- Added Holiday Provider for New Zealand. [\#13](https://github.com/azuyalabs/Yasumi/pull/13) ([badams](https://github.com/badams))
-- Added Holiday Provider for Greece. [\#10](https://github.com/azuyalabs/Yasumi/pull/10) ([sebdesign](https://github.com/sebdesign))
-- Added Holiday Provider for Germany. [\#9](https://github.com/azuyalabs/Yasumi/pull/9) ([eaglefsd](https://github.com/eaglefsd))
+- Added Holiday Provider for Poland. [\#18](https://github.com/azuyalabs/yasumi/pull/18) ([mpdx](https://github.com/mpdx))
+- Added Holiday Provider for New Zealand. [\#13](https://github.com/azuyalabs/yasumi/pull/13) ([badams](https://github.com/badams))
+- Added Holiday Provider for Greece. [\#10](https://github.com/azuyalabs/yasumi/pull/10) ([sebdesign](https://github.com/sebdesign))
+- Added Holiday Provider for Germany. [\#9](https://github.com/azuyalabs/yasumi/pull/9) ([eaglefsd](https://github.com/eaglefsd))
 - Added translations ('fr_FR', 'fr_BE') for Belgium National day [\#864d250](https://github.com/azuyalabs/yasumi/commit/864d25097abbeedbee15bcc37702a34c36a5b696) ([R2c](https://github.com/R2c))
 - Sorted all translations in the translation files alphabetically (descending).
 - Added missing English ('en_US') translations for the Christian holidays 'Immaculate Conception', 'Maundy Thursday',
@@ -69,8 +70,8 @@
 - Running php-cs-fixer fix . --level=psr2 generated a massive list of changes, and broke unit tests. Added a custom
   .php_cs config file to adhere to the PSR-2 Coding Standards and resolve this issue. In addition the php-cs-fixer
   command to has been added to composer to run the fixers and on the CI server (Travis), meaning PR’s will need to be
-  PSR2 compliant before they can be merged. If any files do not pass, the build fails. [\#15](https://github.com/azuyalabs/yasumi/issues/15) [\#16](https://github.com/azuyalabs/Yasumi/pull/16) ([badams](https://github.com/badams))
-- Accidentally the timezone for Norway was set to "Europe/Copenhagen". This has been corrected to "Europe/Oslo". [\#11](https://github.com/azuyalabs/yasumi/issues/11) [\#12](https://github.com/azuyalabs/Yasumi/pull/12) ([badams](https://github.com/badams))
+  PSR2 compliant before they can be merged. If any files do not pass, the build fails. [\#15](https://github.com/azuyalabs/yasumi/issues/15) [\#16](https://github.com/azuyalabs/yasumi/pull/16) ([badams](https://github.com/badams))
+- Accidentally the timezone for Norway was set to "Europe/Copenhagen". This has been corrected to "Europe/Oslo". [\#11](https://github.com/azuyalabs/yasumi/issues/11) [\#12](https://github.com/azuyalabs/yasumi/pull/12) ([badams](https://github.com/badams))
 - Fixed issue for Finland as Midsummer's Day (st. Johns Day) was always calculated to be on June 24th. However since
   1955, the holiday has always been celebrated on a Saturday (between June 20 and June 26).
 
