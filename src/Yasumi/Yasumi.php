@@ -71,6 +71,11 @@ class Yasumi
     {
         // Find and return holiday provider instance
         $providerClass = sprintf('Yasumi\Provider\%s', str_replace('/', '\\', $class));
+
+        if (class_exists($class) && (new \ReflectionClass($class))->implementsInterface(ProviderInterface::class)) {
+            $providerClass = $class;
+        }
+
         if (! class_exists($providerClass) || $class === 'AbstractProvider') {
             throw new InvalidArgumentException(sprintf('Unable to find holiday provider "%s".', $class));
         }
