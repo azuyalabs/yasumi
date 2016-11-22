@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi;
@@ -54,6 +54,10 @@ class Yasumi
 
     /**
      * Create a new holiday provider instance.
+     *
+     * A new holiday provider instance can be created using this function. You can use one of the providers included
+     * already with Yasumi, or your own provider by giving the name of your class in the first parameter. Your provider
+     * class needs to implement the 'ProviderInterface' class.
      *
      * @param string $class  holiday provider name
      * @param int    $year   year for which the country provider needs to be created. Year needs to be a valid integer
@@ -155,16 +159,17 @@ class Yasumi
     }
 
     /**
-     * @param string $class holiday provider name
-     * @param $startDate \DateTime Start date, defaults to today
-     * @param $workingDays int
+     * @param string $class       holiday provider name
+     * @param        $startDate   \DateTime Start date, defaults to today
+     * @param        $workingDays int
+     *
      * @return \DateTime
      * @throws \Exception
      */
     public static function nextWorkingDay($class, $startDate, $workingDays = 1)
     {
         /* @TODO we should accept a timezone so we can accept int/string for $startDate */
-        if (!($startDate instanceof \DateTime)) {
+        if (! ($startDate instanceof \DateTime)) {
             throw new \Exception('Bad paramater, DateTime expected');
         }
 
@@ -175,11 +180,11 @@ class Yasumi
 
         while ($workingDays > 0) {
             $date->add(new \DateInterval('P1D'));
-            if (!$provider || $provider->getYear() != $date->format('Y')) {
+            if (! $provider || $provider->getYear() != $date->format('Y')) {
                 $provider = self::create($class, $date->format('Y'));
             }
             if ($provider->isWorkingDay($date)) {
-                $workingDays --;
+                $workingDays--;
             }
         }
 
@@ -187,16 +192,17 @@ class Yasumi
     }
 
     /**
-     * @param string $class holiday provider name
-     * @param $startDate \DateTime Start date, defaults to today
-     * @param $workingDays int
+     * @param string $class       holiday provider name
+     * @param        $startDate   \DateTime Start date, defaults to today
+     * @param        $workingDays int
+     *
      * @return \DateTime
      * @throws \Exception
      */
     public static function prevWorkingDay($class, $startDate, $workingDays = 1)
     {
         /* @TODO we should accept a timezone so we can accept int/string for $startDate */
-        if (!($startDate instanceof \DateTime)) {
+        if (! ($startDate instanceof \DateTime)) {
             throw new \Exception('Bad paramater, DateTime expected');
         }
 
@@ -207,11 +213,11 @@ class Yasumi
 
         while ($workingDays > 0) {
             $date->sub(new \DateInterval('P1D'));
-            if (!$provider || $provider->getYear() != $date->format('Y')) {
+            if (! $provider || $provider->getYear() != $date->format('Y')) {
                 $provider = self::create($class, $date->format('Y'));
             }
             if ($provider->isWorkingDay($date)) {
-                $workingDays --;
+                $workingDays--;
             }
         }
 
