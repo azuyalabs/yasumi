@@ -10,7 +10,7 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\tests;
+namespace Yasumi\tests\Base;
 
 use Yasumi\ProviderInterface;
 

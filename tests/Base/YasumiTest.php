@@ -83,8 +83,8 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      */
     public function testCreateWithAbstractExtension()
     {
-        $class = \Yasumi\tests\YasumiExternalProvider::class;
-        $instance = Yasumi::create($class, 2016);
+        $class = YasumiExternalProvider::class;
+        $instance = Yasumi::create($class, Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND));
         $this->assertInstanceOf($class, $instance);
     }
 
