@@ -4,6 +4,8 @@
 
 **Implemented enhancements:**
 
+- You can now also use your own holiday providers in addition to the included holiday providers. 
+  A very helpful improvement if Yasumi doesn't include your provider (yet), but you want to use yours! [\#29](https://github.com/azuyalabs/yasumi/pull/29) ([navarr](https://github.com/navarr))
 - Added Holiday Provider for Portugal. [\#44](https://github.com/azuyalabs/yasumi/pull/44) ([rvelhote](https://github.com/rvelhote))
 - Added Holiday Provider for Ukraine. [\#41](https://github.com/azuyalabs/yasumi/pull/41) ([madmis](https://github.com/madmis))
 - Possibility to retrieve the next or previous working day within a defined number of days from today [\#39](https://github.com/azuyalabs/yasumi/pull/39) ([brucealdridge](https://github.com/brucealdridge))
