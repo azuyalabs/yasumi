@@ -47,7 +47,7 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Yasu
      */
     public function testHolidayOnAfterEstablishment()
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::HOLIDAY_YEAR_ABOLISHED);
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::HOLIDAY_YEAR_ABOLISHED - 1);
 
         $expected = new DateTime("$year-12-01", new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);

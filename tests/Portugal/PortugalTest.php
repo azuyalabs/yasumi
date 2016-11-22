@@ -83,6 +83,6 @@ class PortugalTest extends PortugalBaseTestCase
      */
     protected function setUp()
     {
-        $this->year = $this->generateRandomYear(1900);
+        $this->year = $this->generateRandomYear(1974);
     }
 }

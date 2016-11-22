@@ -7,16 +7,16 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\tests\Portugal;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Holiday;
 use Yasumi\Provider\Portugal;
 use Yasumi\tests\YasumiTestCaseInterface;
-use Yasumi\Holiday;
 
 /**
  * Class for testing Portugal Day in Portugal.
@@ -44,7 +44,7 @@ class PortugalDayTest extends PortugalBaseTestCase implements YasumiTestCaseInte
      */
     public function testHolidayBeforeAbolishment()
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR_BEFORE);
+        $year     = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR_BEFORE);
         $expected = new DateTime("$year-06-10", new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
@@ -55,7 +55,7 @@ class PortugalDayTest extends PortugalBaseTestCase implements YasumiTestCaseInte
      */
     public function testHolidayAfterRestoration()
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR_AFTER);
+        $year     = $this->generateRandomYear(self::ESTABLISHMENT_YEAR_AFTER);
         $expected = new DateTime("$year-06-10", new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
@@ -69,11 +69,8 @@ class PortugalDayTest extends PortugalBaseTestCase implements YasumiTestCaseInte
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR_BEFORE + 1, self::ESTABLISHMENT_YEAR_AFTER - 1);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
 
-        $year = 1933;
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
-
-        $year = 1973;
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, self::ESTABLISHMENT_YEAR_BEFORE + 1);
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, self::ESTABLISHMENT_YEAR_AFTER - 1);
     }
 
     /**
@@ -81,7 +78,7 @@ class PortugalDayTest extends PortugalBaseTestCase implements YasumiTestCaseInte
      */
     public function testTranslation()
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR_BEFORE);
+        $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR_BEFORE);
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $year, [self::LOCALE => 'Dia de Portugal']);
 
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR_AFTER);
