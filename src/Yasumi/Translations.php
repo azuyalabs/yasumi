@@ -8,13 +8,14 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi;
 
 use DirectoryIterator;
 use Yasumi\Exception\UnknownLocaleException;
+use InvalidArgumentException;
 
 /**
  * Class Translations.
@@ -49,7 +50,7 @@ class Translations implements TranslationsInterface
     public function loadTranslations($directoryPath)
     {
         if (! file_exists($directoryPath)) {
-            throw new \InvalidArgumentException('Directory with translations not found');
+            throw new InvalidArgumentException('Directory with translations not found');
         }
 
         $directoryPath = rtrim($directoryPath, '/\\') . DIRECTORY_SEPARATOR;
@@ -127,11 +128,11 @@ class Translations implements TranslationsInterface
     public function getTranslation($shortName, $locale)
     {
         if (! array_key_exists($shortName, $this->translations)) {
-            return;
+            return null;
         }
 
         if (! array_key_exists($locale, $this->translations[$shortName])) {
-            return;
+            return null;
         }
 
         return $this->translations[$shortName][$locale];

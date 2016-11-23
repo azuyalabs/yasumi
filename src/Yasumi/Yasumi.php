@@ -12,9 +12,14 @@
 
 namespace Yasumi;
 
+use DateInterval;
+use DateTime;
+use Exception;
+use FilesystemIterator;
 use InvalidArgumentException;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
+use ReflectionClass;
 use RuntimeException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Provider\AbstractProvider;
@@ -76,7 +81,7 @@ class Yasumi
         // Find and return holiday provider instance
         $providerClass = sprintf('Yasumi\Provider\%s', str_replace('/', '\\', $class));
 
-        if (class_exists($class) && (new \ReflectionClass($class))->implementsInterface(ProviderInterface::class)) {
+        if (class_exists($class) && (new ReflectionClass($class))->implementsInterface(ProviderInterface::class)) {
             $providerClass = $class;
         }
 
@@ -134,8 +139,8 @@ class Yasumi
         $ds = DIRECTORY_SEPARATOR;
 
         $providers     = [];
-        $filesIterator = new \RecursiveIteratorIterator(new RecursiveDirectoryIterator(__DIR__ . $ds . 'Provider',
-            \FilesystemIterator::SKIP_DOTS), RecursiveIteratorIterator::SELF_FIRST);
+        $filesIterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(__DIR__ . $ds . 'Provider',
+            FilesystemIterator::SKIP_DOTS), RecursiveIteratorIterator::SELF_FIRST);
 
         foreach ($filesIterator as $file) {
             if ($file->isDir() || in_array($file->getBasename('.php'),
@@ -147,7 +152,7 @@ class Yasumi
             $quotedDs = preg_quote($ds);
             $provider = preg_replace("#^.+{$quotedDs}Provider{$quotedDs}(.+)\\.php$#", '$1', $file->getPathName());
 
-            $class = new \ReflectionClass(sprintf('Yasumi\Provider\%s', str_replace('/', '\\', $provider)));
+            $class = new ReflectionClass(sprintf('Yasumi\Provider\%s', str_replace('/', '\\', $provider)));
 
             $key = 'ID';
             if ($class->hasConstant($key)) {
@@ -160,26 +165,26 @@ class Yasumi
 
     /**
      * @param string $class       holiday provider name
-     * @param        $startDate   \DateTime Start date, defaults to today
+     * @param        $startDate   DateTime Start date, defaults to today
      * @param        $workingDays int
      *
-     * @return \DateTime
-     * @throws \Exception
+     * @return DateTime
+     * @throws Exception
      */
     public static function nextWorkingDay($class, $startDate, $workingDays = 1)
     {
         /* @TODO we should accept a timezone so we can accept int/string for $startDate */
-        if (! ($startDate instanceof \DateTime)) {
-            throw new \Exception('Bad paramater, DateTime expected');
+        if (! ($startDate instanceof DateTime)) {
+            throw new Exception('Bad parameter, DateTime expected');
         }
 
         // Setup start date, if its an instance of \DateTime, clone to prevent modification to original
-        $date = $startDate instanceof \DateTime ? clone $startDate : new \DateTime($startDate);
+        $date = $startDate instanceof DateTime ? clone $startDate : new DateTime($startDate);
 
         $provider = false;
 
         while ($workingDays > 0) {
-            $date->add(new \DateInterval('P1D'));
+            $date->add(new DateInterval('P1D'));
             if (! $provider || $provider->getYear() != $date->format('Y')) {
                 $provider = self::create($class, $date->format('Y'));
             }
@@ -193,26 +198,26 @@ class Yasumi
 
     /**
      * @param string $class       holiday provider name
-     * @param        $startDate   \DateTime Start date, defaults to today
+     * @param        $startDate   DateTime Start date, defaults to today
      * @param        $workingDays int
      *
-     * @return \DateTime
-     * @throws \Exception
+     * @return DateTime
+     * @throws Exception
      */
     public static function prevWorkingDay($class, $startDate, $workingDays = 1)
     {
         /* @TODO we should accept a timezone so we can accept int/string for $startDate */
-        if (! ($startDate instanceof \DateTime)) {
-            throw new \Exception('Bad paramater, DateTime expected');
+        if (! ($startDate instanceof DateTime)) {
+            throw new Exception('Bad parameter, DateTime expected');
         }
 
         // Setup start date, if its an instance of \DateTime, clone to prevent modification to original
-        $date = $startDate instanceof \DateTime ? clone $startDate : new \DateTime($startDate);
+        $date = $startDate instanceof DateTime ? clone $startDate : new DateTime($startDate);
 
         $provider = false;
 
         while ($workingDays > 0) {
-            $date->sub(new \DateInterval('P1D'));
+            $date->sub(new DateInterval('P1D'));
             if (! $provider || $provider->getYear() != $date->format('Y')) {
                 $provider = self::create($class, $date->format('Y'));
             }
