@@ -128,11 +128,6 @@
                 <directory suffix="Test.php">./tests/Sweden</directory>
             </testsuite>
 
-            <!-- Test Suite for holidays in USA -->
-            <testsuite name="USA">
-                <directory suffix="Test.php">./tests/USA</directory>
-            </testsuite>
-
             <!-- Test Suite for holidays in Ukraine -->
             <testsuite name="Ukraine">
                 <directory suffix="Test.php">./tests/Ukraine</directory>
@@ -143,7 +138,12 @@
                 <directory suffix="Test.php">./tests/UnitedKingdom</directory>
             </testsuite>
 
+            <!-- Test Suite for holidays in United States -->
+            <testsuite name="USA">
+                <directory suffix="Test.php">./tests/USA</directory>
+            </testsuite>
 
+            
         </testsuites>
         <filter>
             <whitelist processUncoveredFilesFromWhitelist="true">
