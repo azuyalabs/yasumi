@@ -10,8 +10,8 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-// List of possible locales. This list is used in case the 'intl' extension is not loaded/available.
-return [
+ // List of possible locales. This list is used in case the 'intl' extension is not loaded/available.
+ return [
     'af_NA',
     'af_ZA',
     'agq_CM',
@@ -87,6 +87,7 @@ return [
     'de_BE',
     'de_CH',
     'de_DE',
+    'de_IT',
     'de_LI',
     'de_LU',
     'dje_NE',
@@ -378,6 +379,8 @@ return [
     'nb_NO',
     'nb_SJ',
     'nd_ZW',
+    'nds_DE',
+    'nds_NL',
     'ne_IN',
     'ne_NP',
     'nl_AW',
