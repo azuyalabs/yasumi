@@ -42,8 +42,9 @@ Highlights<a name="highlights"></a>
 * Accounts for the date/time when holidays have been officially established and/or abolished
 * Composer ready, [PSR-2] compliant
 
-Yasumi currently supports 60 providers (22 countries and 38 sub-regions):
+Yasumi currently supports 62 holiday providers (23 countries and 39 sub-regions):
 
+* Australia (including the sub-region Victoria)
 * Belgium
 * Brazil
 * Croatia
@@ -217,13 +218,14 @@ folder:
 $ phpunit
 ```
 
-Yasumi has over 1400 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
+Yasumi has over 1500 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
 the holidays, multiple iterations of assertions are executed to ensure the holidays are calculated in a large number
 of years.
 
 The tests are organized in some test suites to make testing a bit more easier:
 
 * "Base"          : For testing the base functionality of Yasumi
+* "Australia"     : For separately testing the Australia Holiday Provider
 * "Belgium"       : For separately testing the Belgium Holiday Provider
 * "Brazil"        : For separately testing the Brazil Holiday Provider
 * "Croatia"       : For separately testing the Croatia Holiday Provider
