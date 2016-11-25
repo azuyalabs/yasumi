@@ -7,24 +7,23 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\tests\Germany\Saxony;
 
 use DateTime;
 use DateTimeZone;
-use DateInterval;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing Repentance And Prayer Day in Saxony (Germany).
  *
- * Note: All German states agreed, except of the Free State of Saxony, which chose instead a higher charge on labour 
- * revenues, so that only there Buß- und Bettag remained a statutory non-working holiday as of 1995. 
- * Buß- und Bettag has undergone many changes as either a working or non-working holiday in Germany. At the moment, 
- * Yasumi only considers (for now) the time it was established as non-working day in Saxony. 
+ * Note: All German states agreed, except of the Free State of Saxony, which chose instead a higher charge on labour
+ * revenues, so that only there Buß- und Bettag remained a statutory non-working holiday as of 1995.
+ * Buß- und Bettag has undergone many changes as either a working or non-working holiday in Germany. At the moment,
+ * Yasumi only considers (for now) the time it was established as non-working day in Saxony.
  */
 class RepentanceAndPrayerDayTest extends SaxonyBaseTestCase implements YasumiTestCaseInterface
 {
@@ -44,7 +43,7 @@ class RepentanceAndPrayerDayTest extends SaxonyBaseTestCase implements YasumiTes
     public function testHolidayOnAfterEstablishment()
     {
         // Check between the 16th and 22nd day the one that is a Wednesday
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $year    = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $holiday = new DateTime("next wednesday $year-11-15", new DateTimeZone(self::TIMEZONE)); // Default date
 
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $holiday);
