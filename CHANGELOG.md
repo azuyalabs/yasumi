@@ -4,6 +4,13 @@
 
 **Implemented enhancements:**
 
+**Resolved issues:**
+
+
+## 1.5.0 (November 25, 2016)
+
+**Implemented enhancements:**
+
 - Added Holiday Provider for Australia (and the sub-region of Victoria). [\#38](https://github.com/azuyalabs/yasumi/pull/38) ([brucealdridge](https://github.com/brucealdridge))
 - You can now also use your own holiday providers in addition to the included holiday providers. 
   A very helpful improvement if Yasumi does not include your provider (yet), but you want to use yours! [\#29](https://github.com/azuyalabs/yasumi/pull/29) ([navarr](https://github.com/navarr))

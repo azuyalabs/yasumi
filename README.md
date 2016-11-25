@@ -82,9 +82,7 @@ each release :)
 
 ### Roadmap
 
-- State Holidays for Germany
 - Taiwan
-- Australia
 - Canada
 - India
 
