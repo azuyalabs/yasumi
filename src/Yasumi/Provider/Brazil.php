@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\Provider;
@@ -57,8 +57,8 @@ class Brazil extends AbstractProvider
          */
         if ($this->year >= 1700) {
             $this->addHoliday(new Holiday('carnavalDay', ['pt_BR' => 'Carnaval'],
-                $this->calculateEaster($this->year, $this->timezone)->sub(new DateInterval('P51D')),
-                $this->locale, Holiday::TYPE_OBSERVANCE));
+                $this->calculateEaster($this->year, $this->timezone)->sub(new DateInterval('P51D')), $this->locale,
+                Holiday::TYPE_OBSERVANCE));
         }
 
         /**

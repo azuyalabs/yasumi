@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi;
@@ -108,17 +108,17 @@ class Holiday extends DateTime implements JsonSerializable
         }
 
         // Validate if date parameter is instance of DateTime
-        if (! ($date instanceof DateTime)) {
+        if ( ! ($date instanceof DateTime)) {
             throw new InvalidArgumentException(sprintf('Date "%s" is not a valid DateTime instance.', $date));
         }
 
         // Load internal locales variable
-        if (! isset(static::$locales)) {
+        if ( ! isset(static::$locales)) {
             static::$locales = Yasumi::getAvailableLocales();
         }
 
         // Assert display locale input
-        if (! in_array($displayLocale, static::$locales)) {
+        if ( ! in_array($displayLocale, static::$locales)) {
             throw new UnknownLocaleException(sprintf('Locale "%s" is not a valid locale.', $displayLocale));
         }
 
