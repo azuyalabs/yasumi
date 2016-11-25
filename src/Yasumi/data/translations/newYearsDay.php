@@ -17,6 +17,7 @@ return [
     'da_DK' => 'Nytårsdag',
     'de_DE' => 'Neujahr',
     'el_GR' => 'Πρωτοχρονιά',
+    'en_AU' => 'New Year\'s Day',
     'en_GB' => 'New Year\'s Day',
     'en_NZ' => 'New Year\'s Day',
     'en_US' => 'New Year\'s Day',

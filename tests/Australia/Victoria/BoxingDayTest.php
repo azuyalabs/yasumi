@@ -10,13 +10,17 @@
  *  @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-// Translation for Labour Day
-return [
-    'en_AU' => 'Labour Day',
-    'en_NZ' => 'Labour Day',
-    'en_US' => 'Labour Day',
-    'ja_JP' => '労働の日',
-    'nl_BE' => 'Dag van de arbeid',
-    'nl_NL' => 'Dag van de arbeid',
-    'sk_SK' => 'Sviatok práce',
-];
+namespace Yasumi\tests\Australia\Victoria;
+
+use DateInterval;
+use DateTime;
+use DateTimeZone;
+use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
+
+/**
+ * Class for testing Boxing Day in Australia.
+ */
+class BoxingDayTest extends \Yasumi\tests\Australia\BoxingDayTest
+{
+}
