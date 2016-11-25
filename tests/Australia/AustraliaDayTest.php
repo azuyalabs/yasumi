@@ -7,15 +7,15 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\tests\Australia;
 
 use DateTime;
 use DateTimeZone;
-use Yasumi\tests\YasumiTestCaseInterface;
 use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing Australia day in Australia.
@@ -47,8 +47,16 @@ class AustraliaDayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName($this->region, self::HOLIDAY,
-            $this->generateRandomYear(2000), [self::LOCALE => 'Australia Day']);
+        $this->assertTranslatedHolidayName($this->region, self::HOLIDAY, $this->generateRandomYear(2000),
+            [self::LOCALE => 'Australia Day']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(2000), Holiday::TYPE_NATIONAL);
     }
 
     /**
@@ -73,14 +81,5 @@ class AustraliaDayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
         ];
 
         return $data;
-    }
-
-    /**
-     * Tests type of the holiday defined in this test.
-     */
-    public function testHolidayType()
-    {
-        $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(2000),
-            Holiday::TYPE_NATIONAL);
     }
 }

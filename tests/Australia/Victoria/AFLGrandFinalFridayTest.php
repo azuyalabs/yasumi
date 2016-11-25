@@ -7,18 +7,18 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\tests\Australia\Victoria;
 
 use DateTime;
 use DateTimeZone;
-use Yasumi\tests\YasumiTestCaseInterface;
 use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing AFL Grand Final Friday in Victoria.
+ * Class for testing AFL Grand Final Friday in Victoria (Australia)..
  */
 class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements YasumiTestCaseInterface
 {
@@ -51,7 +51,17 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements YasumiTest
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName($this->region, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::LAST_KNOWN_YEAR), [self::LOCALE => 'AFL Grand Final Friday']);
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::LAST_KNOWN_YEAR),
+            [self::LOCALE => 'AFL Grand Final Friday']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType($this->region, self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::LAST_KNOWN_YEAR), Holiday::TYPE_NATIONAL);
     }
 
     /**
@@ -61,7 +71,6 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements YasumiTest
     {
         $this->assertNotHoliday($this->region, self::HOLIDAY, self::ESTABLISHMENT_YEAR - 1);
     }
-
 
     /**
      * Returns a list of test dates
@@ -76,14 +85,5 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements YasumiTest
         ];
 
         return $data;
-    }
-
-    /**
-     * Tests type of the holiday defined in this test.
-     */
-    public function testHolidayType()
-    {
-        $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::LAST_KNOWN_YEAR),
-            Holiday::TYPE_NATIONAL);
     }
 }

@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\tests\Australia;
@@ -28,7 +28,6 @@ abstract class LabourDayTest extends AustraliaBaseTestCase implements YasumiTest
     const HOLIDAY = 'labourDay';
 
 
-
     protected $dateFormat; // picked a random date -- sorry :)
 
     /**
@@ -46,7 +45,6 @@ abstract class LabourDayTest extends AustraliaBaseTestCase implements YasumiTest
     }
 
 
-
     /**
      * Returns a list of test dates
      *
@@ -62,8 +60,8 @@ abstract class LabourDayTest extends AustraliaBaseTestCase implements YasumiTest
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName($this->region, self::HOLIDAY,
-            $this->generateRandomYear(1990), [self::LOCALE => 'Labour Day']);
+        $this->assertTranslatedHolidayName($this->region, self::HOLIDAY, $this->generateRandomYear(1990),
+            [self::LOCALE => 'Labour Day']);
     }
 
     /**
@@ -71,7 +69,6 @@ abstract class LabourDayTest extends AustraliaBaseTestCase implements YasumiTest
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(1990),
-            Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(1990), Holiday::TYPE_NATIONAL);
     }
 }

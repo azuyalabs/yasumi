@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\tests\Australia;
@@ -70,7 +70,6 @@ abstract class QueensBirthdayTest extends AustraliaBaseTestCase implements Yasum
             [2020, '2020-06-08'],
         ];
 
-
         return $data;
     }
 
@@ -88,7 +87,7 @@ abstract class QueensBirthdayTest extends AustraliaBaseTestCase implements Yasum
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2100),
-            Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType($this->region, self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2100), Holiday::TYPE_NATIONAL);
     }
 }
