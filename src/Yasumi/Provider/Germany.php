@@ -100,6 +100,6 @@ class Germany extends AbstractProvider
     {
         $this->addHoliday(new Holiday('reformationDay', [
             'de_DE' => 'Reformationstag',
-        ], new DateTime("$this->year-10-31", new DateTimeZone($this->timezone)), $this->locale));
+        ], new DateTime("$this->year-10-31", new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OBSERVANCE));
     }
 }
