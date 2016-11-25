@@ -20,9 +20,9 @@ use Yasumi\Holiday;
 /**
  * Provider for all holidays in Australia.
  */
- class Australia extends AbstractProvider
- {
-     use CommonHolidays, ChristianHolidays;
+class Australia extends AbstractProvider
+{
+    use CommonHolidays, ChristianHolidays;
 
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
@@ -30,7 +30,7 @@ use Yasumi\Holiday;
      */
     const ID = 'AU';
 
-     public $timezone = 'Australia/Melbourne';
+    public $timezone = 'Australia/Melbourne';
 
     /**
      * Initialize holidays for Australia.
@@ -74,6 +74,45 @@ use Yasumi\Holiday;
     }
 
     /**
+     * Function to simplify moving holidays to mondays if required
+     *
+     * @param       $shortName
+     * @param array $names
+     * @param       $date
+     * @param bool  $moveFromSaturday
+     * @param bool  $moveFromSunday
+     */
+    public function calculateHoliday($shortName, $names = [], $date, $moveFromSaturday = true, $moveFromSunday = true)
+    {
+        $holidayDate = $date instanceof DateTime ? $date : new DateTime($date, new DateTimeZone($this->timezone));
+
+        $day = $holidayDate->format('w');
+        //echo ' - '.$shortName.' - Day: '.$day."\n";
+        if (($day == 0 && $moveFromSunday) || ($day == 6 && $moveFromSaturday)) {
+            //echo ' - '.$shortName.' - Need to move: '.($day == 0 ? '1 day' : '2days')."\n";
+            $holidayDate->add($day == 0 ? new DateInterval('P1D') : new DateInterval('P2D'));
+        }
+
+        $this->addHoliday(new Holiday($shortName, $names, $holidayDate, $this->locale));
+    }
+
+    /**
+     * Holidays associated with the start of the modern Gregorian calendar.
+     *
+     * New Year's Day is on January 1 and is the first day of a new year in the Gregorian calendar,
+     * which is used in Australia and many other countries. Due to its geographical position close
+     * to the International Date Line, Australia is one of the first countries in the world to
+     * welcome the New Year.
+     *
+     * @link https://www.timeanddate.com/holidays/australia/new-year-day
+     */
+    public function calculateNewYearHolidays()
+    {
+        $this->calculateHoliday('newYearsDay', [],
+            new DateTime("$this->year-01-01", new DateTimeZone($this->timezone)));
+    }
+
+    /**
      * ANZAC Day.
      *
      * Anzac Day is a national day of remembrance in Australia and New Zealand that broadly commemorates all Australians
@@ -92,29 +131,6 @@ use Yasumi\Holiday;
         $date = new DateTime("$this->year-04-25", new DateTimeZone($this->timezone));
 
         $this->calculateHoliday('anzacDay', [], $date, true, true);
-    }
-
-    /**
-     * Queens Birthday.
-     *
-     * The Queen's Birthday is an Australian public holiday but the date varies across
-     * states and territories. Australia celebrates this holiday because it is a constitutional
-     * monarchy, with the English monarch as head of state.
-     *
-     * Her actual birthday is on April 21, but it's celebrated as a public holiday on the second Monday of June.
-     *  (Except QLD & WA)
-     *
-     * @link https://www.timeanddate.com/holidays/australia/queens-birthday
-     */
-    public function calculateQueensBirthday()
-    {
-        $this->calculateHoliday(
-            'queensBirthday',
-            ['en_AU' => 'Queens Birthday'],
-            'second monday of june '.$this->year,
-            false,
-            false
-        );
     }
 
     /**
@@ -147,52 +163,30 @@ use Yasumi\Holiday;
     }
 
     /**
-     * Holidays associated with the start of the modern Gregorian calendar.
+     * Queens Birthday.
      *
-     * New Year's Day is on January 1 and is the first day of a new year in the Gregorian calendar,
-     * which is used in Australia and many other countries. Due to its geographical position close
-     * to the International Date Line, Australia is one of the first countries in the world to
-     * welcome the New Year.
+     * The Queen's Birthday is an Australian public holiday but the date varies across
+     * states and territories. Australia celebrates this holiday because it is a constitutional
+     * monarchy, with the English monarch as head of state.
      *
-     * @link https://www.timeanddate.com/holidays/australia/new-year-day
+     * Her actual birthday is on April 21, but it's celebrated as a public holiday on the second Monday of June.
+     *  (Except QLD & WA)
+     *
+     * @link https://www.timeanddate.com/holidays/australia/queens-birthday
      */
-    public function calculateNewYearHolidays()
+    public function calculateQueensBirthday()
     {
-        $this->calculateHoliday('newYearsDay', [], new DateTime("$this->year-01-01", new DateTimeZone($this->timezone)));
+        $this->calculateHoliday('queensBirthday', ['en_AU' => 'Queens Birthday'],
+            'second monday of june ' . $this->year, false, false);
     }
-
 
     /**
      * @link https://www.timeanddate.com/holidays/australia/labour-day
      */
     public function calculateLabourDay()
     {
-        $date = new DateTime('first Monday in October' . " $this->year",
-            new DateTimeZone($this->timezone));
+        $date = new DateTime('first Monday in October' . " $this->year", new DateTimeZone($this->timezone));
 
         $this->addHoliday(new Holiday('labourDay', [], $date, $this->locale));
     }
-
-
-    /**
-     * Function to simplify moving holidays to mondays if required
-     * @param $shortName
-     * @param array $names
-     * @param $date
-     * @param bool $moveFromSaturday
-     * @param bool $moveFromSunday
-     */
-    public function calculateHoliday($shortName, $names = [], $date, $moveFromSaturday = true, $moveFromSunday = true)
-    {
-        $holidayDate = $date instanceof DateTime ? $date : new DateTime($date, new DateTimeZone($this->timezone));
-
-        $day = $holidayDate->format('w');
-        //echo ' - '.$shortName.' - Day: '.$day."\n";
-        if (($day == 0 && $moveFromSunday) || ($day == 6 && $moveFromSaturday)) {
-            //echo ' - '.$shortName.' - Need to move: '.($day == 0 ? '1 day' : '2days')."\n";
-            $holidayDate->add($day == 0 ? new DateInterval('P1D') : new DateInterval('P2D'));
-        }
-
-        $this->addHoliday(new Holiday($shortName, $names, $holidayDate, $this->locale));
-    }
- }
+}

@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\Provider;
@@ -164,7 +164,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         }
 
         // If given date is a Yasumi\Holiday object
-        if (! is_null($date) && in_array($date, $this->holidays)) {
+        if ( ! is_null($date) && in_array($date, $this->holidays)) {
             return true;
         }
 
@@ -264,16 +264,6 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     public function getHolidayNames()
     {
         return array_keys($this->holidays);
-    }
-
-    /**
-     * Get an iterator for the holidays.
-     *
-     * @return ArrayIterator iterator for the holidays of this calendar
-     */
-    public function getIterator()
-    {
-        return new ArrayIterator($this->getHolidays());
     }
 
     /**
@@ -380,5 +370,15 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         }
 
         return new BetweenFilter($this->getIterator(), $start_date, $end_date, $equals);
+    }
+
+    /**
+     * Get an iterator for the holidays.
+     *
+     * @return ArrayIterator iterator for the holidays of this calendar
+     */
+    public function getIterator()
+    {
+        return new ArrayIterator($this->getHolidays());
     }
 }

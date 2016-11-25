@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\Provider;
@@ -506,29 +506,6 @@ trait ChristianHolidays
     }
 
     /**
-     * Calculates the date for Easter.
-     *
-     * Easter is a festival and holiday celebrating the resurrection of Jesus Christ from the dead. Easter is celebrated
-     * on a date based on a certain number of days after March 21st.
-     *
-     * This function uses the standard PHP 'easter_days'.
-     *
-     * @see easter_days
-     *
-     * @param int    $year     the year for which Easter needs to be calculated
-     * @param string $timezone the timezone in which Easter is celebrated
-     *
-     * @return \DateTime date of Easter
-     */
-    protected function calculateEaster($year, $timezone)
-    {
-        $easter = new DateTime("$year-3-21", new DateTimeZone($timezone));
-        $easter->add(new DateInterval('P' . \easter_days($year) . 'D'));
-
-        return $easter;
-    }
-
-    /**
      * Calculate the Easter date for Orthodox churches.
      *
      * @param int    $year     the year for which Easter needs to be calculated
@@ -550,5 +527,28 @@ trait ChristianHolidays
         $day   = (($d + $e + 114) % 31) + 1;
 
         return (new DateTime("$year-$month-$day", new DateTimeZone($timezone)))->add(new DateInterval('P13D'));
+    }
+
+    /**
+     * Calculates the date for Easter.
+     *
+     * Easter is a festival and holiday celebrating the resurrection of Jesus Christ from the dead. Easter is celebrated
+     * on a date based on a certain number of days after March 21st.
+     *
+     * This function uses the standard PHP 'easter_days'.
+     *
+     * @see easter_days
+     *
+     * @param int    $year     the year for which Easter needs to be calculated
+     * @param string $timezone the timezone in which Easter is celebrated
+     *
+     * @return \DateTime date of Easter
+     */
+    protected function calculateEaster($year, $timezone)
+    {
+        $easter = new DateTime("$year-3-21", new DateTimeZone($timezone));
+        $easter->add(new DateInterval('P' . \easter_days($year) . 'D'));
+
+        return $easter;
     }
 }

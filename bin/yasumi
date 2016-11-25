@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+
+use Yasumi\bin\BuildLocaleListCommand;
+use Yasumi\bin\CodeCheckCommand;
+use Yasumi\bin\SortTranslationsCommand;
+
+require __DIR__ . '/../vendor/autoload.php';
+
+$app = new Symfony\Component\Console\Application('Yasumi Utilities', '0.2.0');
+$app->add(new SortTranslationsCommand());
+$app->add(new BuildLocaleListCommand());
+$app->add(new CodeCheckCommand());
+
+$app->run();

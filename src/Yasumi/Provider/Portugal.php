@@ -19,7 +19,7 @@ use Yasumi\Holiday;
 /**
  * Holidays for Portugal.
  *
- * @link https://pt.wikipedia.org/wiki/Feriados_em_Portugal
+ * @link    https://pt.wikipedia.org/wiki/Feriados_em_Portugal
  *
  * @package Yasumi\Provider
  */
@@ -55,14 +55,12 @@ class Portugal extends AbstractProvider
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
     }
 
-    /**
-     * In Portugal, between 2013 andd 2015 (inclusive) this holiday did not happen due to government deliberation.
-     * It was restored in 2016.
-     */
-    public function calculateAllSaintsDay()
+    public function calculateCarnationRevolutionDay()
     {
-        if ($this->year <= 2013 || $this->year >= 2016) {
-            $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale));
+        if ($this->year >= 1974) {
+            $this->addHoliday(new Holiday('25thApril', ['pt_PT' => 'Dia da Liberdade'],
+                new DateTime("$this->year-04-25", new DateTimeZone($this->timezone)), $this->locale,
+                Holiday::TYPE_NATIONAL));
         }
     }
 
@@ -93,11 +91,25 @@ class Portugal extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Carnation_Revolution
      */
-    public function calculateCarnationRevolutionDay()
+
+    /**
+     * Day of Portugal, Camões and the Portuguese Communities / Dia de Portugal, de Camões e das Comunidades Portuguesas
+     *
+     * The Wikipedia article mentions that this holiday changed names during the Portuguese dictatorship that ran
+     * between 1933 and 1974 (ended with the Carnation Revolution). This is the name that is currently standing.
+     *
+     * Portugal Day, officially Day of Portugal, Camões, and the Portuguese Communities (Portuguese: Dia de Portugal,
+     * de Camões e das Comunidades Portuguesas), is Portugal's National Day celebrated annually on 10 June. Although
+     * officially observed only in Portugal, Portuguese citizens and emigrants throughout the world celebrate this
+     * holiday. The date commemorates the death of national literary icon Luís de Camões on 10 June 1580.
+     *
+     * @link https://en.wikipedia.org/wiki/Portugal_Day
+     */
+    public function calculatePortugalDay()
     {
-        if ($this->year >= 1974) {
-            $this->addHoliday(new Holiday('25thApril', ['pt_PT' => 'Dia da Liberdade'],
-                new DateTime("$this->year-04-25", new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_NATIONAL));
+        if ($this->year <= 1932 || $this->year >= 1974) {
+            $this->addHoliday(new Holiday('portugalDay', ['pt_PT' => 'Dia de Portugal'],
+                new DateTime("$this->year-06-10", new DateTimeZone($this->timezone)), $this->locale));
         }
     }
 
@@ -121,6 +133,17 @@ class Portugal extends AbstractProvider
         if ($this->year >= 1910) {
             $this->addHoliday(new Holiday('portugueseRepublic', ['pt_PT' => 'Implantação da República Portuguesa'],
                 new DateTime("$this->year-10-05", new DateTimeZone($this->timezone)), $this->locale));
+        }
+    }
+
+    /**
+     * In Portugal, between 2013 andd 2015 (inclusive) this holiday did not happen due to government deliberation.
+     * It was restored in 2016.
+     */
+    public function calculateAllSaintsDay()
+    {
+        if ($this->year <= 2013 || $this->year >= 2016) {
+            $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale));
         }
     }
 
@@ -149,29 +172,8 @@ class Portugal extends AbstractProvider
         // The Wikipedia article mentions that this has been a holiday since the second of half of the XIX century.
         if (($this->year >= 1850 && $this->year <= 2013) || $this->year >= 2016) {
             $this->addHoliday(new Holiday('restorationOfIndependence', ['pt_PT' => 'Restauração da Independência'],
-                new DateTime("$this->year-12-01", new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_NATIONAL));
-        }
-    }
-
-    /**
-     * Day of Portugal, Camões and the Portuguese Communities / Dia de Portugal, de Camões e das Comunidades Portuguesas
-     *
-     * The Wikipedia article mentions that this holiday changed names during the Portuguese dictatorship that ran
-     * between 1933 and 1974 (ended with the Carnation Revolution). This is the name that is currently standing.
-     *
-     * Portugal Day, officially Day of Portugal, Camões, and the Portuguese Communities (Portuguese: Dia de Portugal,
-     * de Camões e das Comunidades Portuguesas), is Portugal's National Day celebrated annually on 10 June. Although
-     * officially observed only in Portugal, Portuguese citizens and emigrants throughout the world celebrate this
-     * holiday. The date commemorates the death of national literary icon Luís de Camões on 10 June 1580.
-     *
-     * @link https://en.wikipedia.org/wiki/Portugal_Day
-     */
-    public function calculatePortugalDay()
-    {
-        if ($this->year <= 1932 || $this->year >= 1974) {
-            $this->addHoliday(new Holiday('portugalDay',
-                ['pt_PT' => 'Dia de Portugal'],
-                new DateTime("$this->year-06-10", new DateTimeZone($this->timezone)), $this->locale));
+                new DateTime("$this->year-12-01", new DateTimeZone($this->timezone)), $this->locale,
+                Holiday::TYPE_NATIONAL));
         }
     }
 }

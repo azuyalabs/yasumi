@@ -53,15 +53,14 @@ class Victoria extends Australia
 
     public function calculateLabourDay()
     {
-        $date = new DateTime("second monday of march $this->year",
-            new DateTimeZone($this->timezone));
+        $date = new DateTime("second monday of march $this->year", new DateTimeZone($this->timezone));
 
         $this->addHoliday(new Holiday('labourDay', [], $date, $this->locale));
     }
+
     public function calculateMelbourneCupDay()
     {
-        $date = new DateTime('first Tuesday of November' . " $this->year",
-            new DateTimeZone($this->timezone));
+        $date = new DateTime('first Tuesday of November' . " $this->year", new DateTimeZone($this->timezone));
 
         $this->addHoliday(new Holiday('melbourneCup', ['en_AU' => 'Melbourne Cup'], $date, $this->locale));
     }
@@ -79,9 +78,9 @@ class Victoria extends Australia
                 return;
         }
 
-        $date = new DateTime($aflGrandFinalFriday,
-            new DateTimeZone($this->timezone));
+        $date = new DateTime($aflGrandFinalFriday, new DateTimeZone($this->timezone));
 
-        $this->addHoliday(new Holiday('aflGrandFinalFriday', ['en_AU' => 'AFL Grand Final Friday'], $date, $this->locale));
+        $this->addHoliday(new Holiday('aflGrandFinalFriday', ['en_AU' => 'AFL Grand Final Friday'], $date,
+            $this->locale));
     }
 }
