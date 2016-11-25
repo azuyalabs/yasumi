@@ -26,7 +26,6 @@ class EpiphanyTest extends BadenWurttembergBaseTestCase implements YasumiTestCas
      */
     const HOLIDAY = 'epiphany';
 
-
     /**
      * Tests the holiday defined in this test.
      *
