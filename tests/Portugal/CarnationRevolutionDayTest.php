@@ -7,15 +7,15 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\tests\Portugal;
 
 use DateTime;
 use DateTimeZone;
-use Yasumi\tests\YasumiTestCaseInterface;
 use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing Portugal Day in Portugal.
@@ -37,7 +37,7 @@ class CarnationRevolutionDayTest extends PortugalBaseTestCase implements YasumiT
      */
     public function testHolidayAfterEstablishment()
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $year     = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $expected = new DateTime("$year-04-25", new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

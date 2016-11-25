@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\tests\Ukraine;
@@ -31,7 +31,7 @@ class ChristmasDayTest extends UkraineBaseTestCase implements YasumiTestCaseInte
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int $year the year for which Christmas Day needs to be tested
+     * @param int      $year     the year for which Christmas Day needs to be tested
      * @param DateTime $expected the expected date
      */
     public function testChristmasDay($year, $expected)
@@ -54,12 +54,8 @@ class ChristmasDayTest extends UkraineBaseTestCase implements YasumiTestCaseInte
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(
-            self::REGION,
-            self::HOLIDAY,
-            $this->generateRandomYear(),
-            [self::LOCALE => 'Різдво']
-        );
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            [self::LOCALE => 'Різдво']);
     }
 
     /**

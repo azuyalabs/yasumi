@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\tests\UnitedKingdom;
@@ -57,12 +57,12 @@ class UnitedKingdomTest extends UnitedKingdomBaseTestCase
     public function testBankHolidays()
     {
         $this->assertDefinedHolidays([
-                'newYearsDay',
-                'easterMonday',
-                'mayDayBankHoliday',
-                'springBankHoliday',
-                'secondChristmasDay'
-            ], self::REGION, $this->year, Holiday::TYPE_BANK);
+            'newYearsDay',
+            'easterMonday',
+            'mayDayBankHoliday',
+            'springBankHoliday',
+            'secondChristmasDay'
+        ], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
 
     /**

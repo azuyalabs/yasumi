@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\tests\Ukraine;
@@ -29,7 +29,7 @@ class InternationalWomensDayTest extends UkraineBaseTestCase implements YasumiTe
     /**
      * @dataProvider HolidayDataProvider
      *
-     * @param int $year
+     * @param int       $year
      * @param \DateTime $expected
      */
     public function testHoliday($year, $expected)
@@ -52,12 +52,8 @@ class InternationalWomensDayTest extends UkraineBaseTestCase implements YasumiTe
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(
-            self::REGION,
-            self::HOLIDAY,
-            $this->generateRandomYear(),
-            [self::LOCALE => 'Міжнародний жіночий день']
-        );
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            [self::LOCALE => 'Міжнародний жіночий день']);
     }
 
     /**

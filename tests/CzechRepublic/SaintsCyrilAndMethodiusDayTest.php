@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\tests\CzechRepublic;
@@ -21,7 +21,7 @@ use Yasumi\tests\YasumiTestCaseInterface;
  *
  * Class SaintsCyrilAndMethodiusDayTest
  * @package Yasumi\tests\CzechRepublic
- * @author Dennis Fridrich <fridrich.dennis@gmail.com>
+ * @author  Dennis Fridrich <fridrich.dennis@gmail.com>
  */
 class SaintsCyrilAndMethodiusDayTest extends CzechRepublicBaseTestCase implements YasumiTestCaseInterface
 {
@@ -58,8 +58,8 @@ class SaintsCyrilAndMethodiusDayTest extends CzechRepublicBaseTestCase implement
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(), [self::LOCALE => 'Den slovanských věrozvěstů Cyrila a Metoděje']);
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            [self::LOCALE => 'Den slovanských věrozvěstů Cyrila a Metoděje']);
     }
 
     /**
@@ -67,7 +67,6 @@ class SaintsCyrilAndMethodiusDayTest extends CzechRepublicBaseTestCase implement
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
     }
 }

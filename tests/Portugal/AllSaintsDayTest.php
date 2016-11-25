@@ -7,15 +7,15 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\tests\Portugal;
 
 use DateTime;
 use DateTimeZone;
-use Yasumi\tests\YasumiTestCaseInterface;
 use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class containing tests for All Saints Day in Portugal.
@@ -42,11 +42,11 @@ class AllSaintsDayTest extends PortugalBaseTestCase implements YasumiTestCaseInt
      */
     public function testHoliday()
     {
-        $year = 2016;
+        $year     = 2016;
         $expected = new DateTime("$year-11-01", new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
 
-        $year = 2013;
+        $year     = 2013;
         $expected = new DateTime("$year-11-01", new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
@@ -66,7 +66,8 @@ class AllSaintsDayTest extends PortugalBaseTestCase implements YasumiTestCaseInt
     public function testTranslation()
     {
         $year = $this->generateRandomYear(self::HOLIDAY_YEAR_RESTORED);
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $year, [self::LOCALE => 'Dia de todos os Santos']);
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $year,
+            [self::LOCALE => 'Dia de todos os Santos']);
     }
 
     /**

@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\tests\France;
@@ -49,6 +49,14 @@ class InternationalWorkersDayTest extends FranceBaseTestCase implements YasumiTe
     }
 
     /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
+    }
+
+    /**
      * Returns a list of random test dates used for assertion of International Workers' Day.
      *
      * @return array list of test dates for International Workers' Day
@@ -56,13 +64,5 @@ class InternationalWorkersDayTest extends FranceBaseTestCase implements YasumiTe
     public function InternationalWorkersDayDataProvider()
     {
         return $this->generateRandomDates(5, 1, self::TIMEZONE);
-    }
-
-    /**
-     * Tests type of the holiday defined in this test.
-     */
-    public function testHolidayType()
-    {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
     }
 }

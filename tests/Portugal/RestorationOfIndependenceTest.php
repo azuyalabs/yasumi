@@ -7,15 +7,15 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\tests\Portugal;
 
 use DateTime;
 use DateTimeZone;
-use Yasumi\tests\YasumiTestCaseInterface;
 use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing Restoration of Independence Day in Portugal.
@@ -52,7 +52,7 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Yasu
         $expected = new DateTime("$year-12-01", new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
 
-        $year = 1850;
+        $year     = 1850;
         $expected = new DateTime("$year-12-01", new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
@@ -100,7 +100,8 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Yasu
     public function testTranslation()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $year, [self::LOCALE => 'Restauração da Independência']);
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $year,
+            [self::LOCALE => 'Restauração da Independência']);
     }
 
     /**

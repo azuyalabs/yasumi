@@ -8,7 +8,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 
@@ -27,7 +27,7 @@ use Yasumi\tests\YasumiBase;
 abstract class SlovakiaBaseTestCase extends PHPUnit_Framework_TestCase
 {
     use YasumiBase;
-    
+
     /**
      * Name of the region (e.g. country / state) to be tested
      */

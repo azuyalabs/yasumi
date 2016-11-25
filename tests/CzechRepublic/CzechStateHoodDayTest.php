@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\tests\CzechRepublic;
@@ -18,10 +18,10 @@ use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing the Czech State Hood Day in the Czech Republic.
- * 
+ *
  * Class CzechStateHoodDayTest
  * @package Yasumi\tests\CzechRepublic
- * @author Dennis Fridrich <fridrich.dennis@gmail.com>
+ * @author  Dennis Fridrich <fridrich.dennis@gmail.com>
  */
 class CzechStateHoodDayTest extends CzechRepublicBaseTestCase implements YasumiTestCaseInterface
 {
@@ -58,8 +58,8 @@ class CzechStateHoodDayTest extends CzechRepublicBaseTestCase implements YasumiT
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(), [self::LOCALE => 'Den české státnosti']);
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            [self::LOCALE => 'Den české státnosti']);
     }
 
     /**
@@ -67,7 +67,6 @@ class CzechStateHoodDayTest extends CzechRepublicBaseTestCase implements YasumiT
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
     }
 }

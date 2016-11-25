@@ -12,9 +12,9 @@
 
 namespace Yasumi\tests\Finland;
 
+use DateInterval;
 use DateTime;
 use DateTimeZone;
-use DateInterval;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 

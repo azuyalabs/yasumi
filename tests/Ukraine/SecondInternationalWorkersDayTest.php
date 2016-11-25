@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\tests\Ukraine;
@@ -31,7 +31,7 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements Y
      *
      * @dataProvider SecondInternationalWorkersDayDataProvider
      *
-     * @param int $year the year for which International Workers' Day needs to be tested
+     * @param int       $year     the year for which International Workers' Day needs to be tested
      * @param \DateTime $expected the expected date
      */
     public function testSecondInternationalWorkersDay($year, $expected)
@@ -44,12 +44,16 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements Y
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(
-            self::REGION,
-            self::HOLIDAY,
-            $this->generateRandomYear(),
-            [self::LOCALE => 'День міжнародної солідарності трудящих']
-        );
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            [self::LOCALE => 'День міжнародної солідарності трудящих']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     */
+    public function testHolidayType()
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
     }
 
     /**
@@ -60,13 +64,5 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements Y
     public function SecondInternationalWorkersDayDataProvider()
     {
         return $this->generateRandomDates(5, 2, self::TIMEZONE);
-    }
-
-    /**
-     * Tests type of the holiday defined in this test.
-     */
-    public function testHolidayType()
-    {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
     }
 }

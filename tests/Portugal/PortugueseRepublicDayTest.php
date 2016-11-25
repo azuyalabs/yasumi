@@ -7,15 +7,15 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\tests\Portugal;
 
 use DateTime;
 use DateTimeZone;
-use Yasumi\tests\YasumiTestCaseInterface;
 use Yasumi\Holiday;
+use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing Restoration of Independence Day in Portugal.
@@ -42,7 +42,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements YasumiTe
         $expected = new DateTime("$year-10-05", new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
 
-        $year = self::ESTABLISHMENT_YEAR;
+        $year     = self::ESTABLISHMENT_YEAR;
         $expected = new DateTime("$year-10-05", new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
@@ -65,7 +65,8 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements YasumiTe
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Implantação da República Portuguesa']);
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => 'Implantação da República Portuguesa']);
     }
 
     /**
@@ -73,7 +74,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements YasumiTe
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL);
     }
 }

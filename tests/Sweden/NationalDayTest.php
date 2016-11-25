@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\tests\Sweden;
@@ -61,20 +61,20 @@ class NationalDayTest extends SwedenBaseTestCase implements YasumiTestCaseInterf
     }
 
     /**
-     * Tests the translated name of the holiday defined in this test on or after establishment.
-     */
-    public function testTranslationOnAfterNameChange()
-    {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(1983),
-            [self::LOCALE => 'Sveriges nationaldag']);
-    }
-
-    /**
      * Tests type of the holiday defined in this test.
      */
     public function testHolidayType()
     {
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_NATIONAL);
+    }
+
+    /**
+     * Tests the translated name of the holiday defined in this test on or after establishment.
+     */
+    public function testTranslationOnAfterNameChange()
+    {
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(1983),
+            [self::LOCALE => 'Sveriges nationaldag']);
     }
 }

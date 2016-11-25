@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\tests\Ukraine;
@@ -31,7 +31,7 @@ class NewYearsDayTest extends UkraineBaseTestCase implements YasumiTestCaseInter
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int $year the year for which the holiday defined in this test needs to be tested
+     * @param int       $year     the year for which the holiday defined in this test needs to be tested
      * @param \DateTime $expected the expected date
      */
     public function testHoliday($year, $expected)
@@ -54,12 +54,8 @@ class NewYearsDayTest extends UkraineBaseTestCase implements YasumiTestCaseInter
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(
-            self::REGION,
-            self::HOLIDAY,
-            $this->generateRandomYear(),
-            [self::LOCALE => 'Новий Рік']
-        );
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            [self::LOCALE => 'Новий Рік']);
     }
 
     /**
@@ -67,11 +63,6 @@ class NewYearsDayTest extends UkraineBaseTestCase implements YasumiTestCaseInter
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(
-            self::REGION,
-            self::HOLIDAY,
-            $this->generateRandomYear(),
-            Holiday::TYPE_NATIONAL
-        );
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
     }
 }

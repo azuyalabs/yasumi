@@ -8,7 +8,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 
@@ -63,7 +63,8 @@ class SlovakNationalUprisingDayTest extends SlovakiaBaseTestCase implements Yasu
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(), [self::LOCALE => 'Výročie Slovenského národného povstania']);
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            [self::LOCALE => 'Výročie Slovenského národného povstania']);
     }
 
 

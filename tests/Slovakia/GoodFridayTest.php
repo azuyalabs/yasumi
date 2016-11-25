@@ -8,7 +8,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 
@@ -56,6 +56,7 @@ class GoodFridayTest extends SlovakiaBaseTestCase implements YasumiTestCaseInter
     public function HolidayDataProvider()
     {
         $timezone = self::TIMEZONE;
+
         return [
             [1788, new DateTime("1788-3-21", new DateTimeZone($timezone))],
             [1876, new DateTime("1876-4-14", new DateTimeZone($timezone))],
@@ -74,7 +75,8 @@ class GoodFridayTest extends SlovakiaBaseTestCase implements YasumiTestCaseInter
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(), [self::LOCALE => 'Veľký piatok']);
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+            [self::LOCALE => 'Veľký piatok']);
     }
 
 

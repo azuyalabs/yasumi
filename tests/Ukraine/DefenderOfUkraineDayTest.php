@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\tests\Ukraine;
@@ -29,12 +29,8 @@ class DefenderOfUkraineDayTest extends UkraineBaseTestCase implements YasumiTest
     public function testHoliday()
     {
         $year = 2020;
-        $this->assertHoliday(
-            self::REGION,
-            self::HOLIDAY,
-            $year,
-            new \DateTime("$year-10-14", new \DateTimeZone(self::TIMEZONE))
-        );
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
+            new \DateTime("$year-10-14", new \DateTimeZone(self::TIMEZONE)));
     }
 
     /**
@@ -42,12 +38,8 @@ class DefenderOfUkraineDayTest extends UkraineBaseTestCase implements YasumiTest
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(
-            self::REGION,
-            self::HOLIDAY,
-            2020,
-            [self::LOCALE => 'День захисника України']
-        );
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, 2020,
+            [self::LOCALE => 'День захисника України']);
     }
 
     /**

@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\tests\CzechRepublic;
@@ -16,10 +16,10 @@ use Yasumi\Holiday;
 
 /**
  * Class for testing holidays in the Czech Republic.
- * 
+ *
  * Class CzechRepublicTest
  * @package Yasumi\tests\CzechRepublic
- * @author Dennis Fridrich <fridrich.dennis@gmail.com>
+ * @author  Dennis Fridrich <fridrich.dennis@gmail.com>
  */
 class CzechRepublicTest extends CzechRepublicBaseTestCase
 {
