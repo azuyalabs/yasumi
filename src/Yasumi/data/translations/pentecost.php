@@ -12,6 +12,7 @@
 
 // Translations for Whitsunday
 return [
+    'de_AT' => 'Pfingsten',
     'da_DK' => 'Pinsedag',
     'el_GR' => 'Πεντηκοστή',
     'en_US' => 'Whitsunday',

@@ -12,6 +12,7 @@
 
 // Translations for Assumption of Mary
 return [
+    'de_AT' => 'Mariä Himmelfahrt',
     'de_DE' => 'Mariä Himmelfahrt',
     'el_GR' => 'Κοίμηση της Θεοτόκου',
     'en_US' => 'Assumption of Mary',

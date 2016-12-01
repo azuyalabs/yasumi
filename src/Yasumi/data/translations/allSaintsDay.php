@@ -12,6 +12,7 @@
 
 // Translations for All Saints' Day
 return [
+    'de_AT' => 'Allerheiligen',
     'de_DE' => 'Allerheiligen',
     'el_GR' => 'Άγιοι Πάντες',
     'en_US' => 'All Saints\' Day',

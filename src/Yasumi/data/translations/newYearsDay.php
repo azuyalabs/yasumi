@@ -15,6 +15,7 @@ return [
     'cs_CZ' => 'Den obnovy samostatného českého státu a Nový rok',
     'cy_GB' => 'Dydd Calan',
     'da_DK' => 'Nytårsdag',
+    'de_AT' => 'Neujahr',
     'de_DE' => 'Neujahr',
     'el_GR' => 'Πρωτοχρονιά',
     'en_AU' => 'New Year\'s Day',
