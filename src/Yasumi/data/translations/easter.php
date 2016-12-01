@@ -12,9 +12,9 @@
 
 // Translations for Easter Sunday
 return [
-    'de_AT' => 'Oster',
     'cy_GB' => 'Sul y Pasg',
     'da_DK' => 'Påskedag',
+    'de_AT' => 'Oster',
     'el_GR' => 'Κυριακή του Πάσχα',
     'en_US' => 'Easter Sunday',
     'fi_FI' => 'Pääsiäispäivä',
