@@ -15,6 +15,7 @@ return [
     'cs_CZ' => '1. svátek vánoční',
     'cy_GB' => 'Nadolig',
     'da_DK' => '1. Juledag',
+    'de_AT' => 'Christtag',
     'de_DE' => '1. Weihnachtsfeiertag',
     'el_GR' => 'Χριστούγεννα',
     'en_AU' => 'Christmas Day',

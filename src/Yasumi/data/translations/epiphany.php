@@ -12,6 +12,7 @@
 
 // Translations for Epiphany
 return [
+    'de_AT' => 'Heilige Drei Könige',
     'de_DE' => 'Heilige 3 Könige',
     'el_GR' => 'Θεοφάνεια',
     'en_US' => 'Epiphany',

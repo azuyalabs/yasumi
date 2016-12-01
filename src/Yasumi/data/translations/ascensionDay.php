@@ -13,6 +13,7 @@
 // Translations for Ascension Day
 return [
     'da_DK' => 'Kristi Himmelfartsdag',
+    'de_AT' => 'Christi Himmelfahrt',
     'de_DE' => 'Christi Himmelfahrt',
     'el_GR' => 'Ανάληψη του Χριστού',
     'en_US' => 'Ascension Day',
