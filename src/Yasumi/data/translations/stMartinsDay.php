@@ -1,16 +1,16 @@
 <?php
 /**
- *  This file is part of the Yasumi package.
+ * This file is part of the Yasumi package.
  *
- *  Copyright (c) 2015 - 2016 AzuyaLabs
+ * Copyright (c) 2015 - 2016 AzuyaLabs
  *
- *  For the full copyright and license information, please view the LICENSE
- *  file that was distributed with this source code.
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  *
  * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-// Translation for St. Martin's Day
+// Translations for St. Martin's Day
 return [
     'en_US' => 'St. Martin\'s Day',
     'nl_BE' => 'Sint Maarten',
