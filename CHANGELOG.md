@@ -3,6 +3,7 @@
 ## DEV/MASTER
 
 **Implemented enhancements:**
+- Added Holiday Provider for Austria. ([stelgenhof](https://github.com/stelgenhof))
 
 **Resolved issues:**
 
