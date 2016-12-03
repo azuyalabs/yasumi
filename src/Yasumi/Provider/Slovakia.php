@@ -54,7 +54,7 @@ class Slovakia extends AbstractProvider
 
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
-     * country or subregion.
+     * country or sub-region.
      */
     const ID = 'SK';
 

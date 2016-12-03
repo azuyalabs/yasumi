@@ -26,7 +26,7 @@ class Australia extends AbstractProvider
 
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
-     * country or subregion.
+     * country or sub-region.
      */
     const ID = 'AU';
 
@@ -37,8 +37,6 @@ class Australia extends AbstractProvider
      */
     public function initialize()
     {
-
-
         // National Holidays
         $this->calculateAustraliaDay();
         $this->calculateNewYearHolidays();

@@ -16,7 +16,7 @@ use PHPUnit_Framework_TestCase;
 use Yasumi\tests\YasumiBase;
 
 /**
- * Base class for test cases of the Netherlands holiday provider.
+ * Base class for test cases of the Germany holiday provider.
  */
 abstract class GermanyBaseTestCase extends PHPUnit_Framework_TestCase
 {
