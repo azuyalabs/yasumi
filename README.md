@@ -42,7 +42,7 @@ Highlights<a name="highlights"></a>
 * Accounts for the date/time when holidays have been officially established and/or abolished
 * Composer ready, [PSR-2] compliant
 
-Yasumi currently supports 63 holiday providers (24 countries and 39 sub-regions):
+Yasumi currently supports 64 holiday providers (25 countries and 39 sub-regions):
 
 * Australia (including the sub-region Victoria)
 * Austria
@@ -63,6 +63,7 @@ Yasumi currently supports 63 holiday providers (24 countries and 39 sub-regions)
 * Poland
 * Portugal
 * Slovakia
+* South Africa
 * Spain (including the sub-regions Andalusia, Aragon, Asturias, Balearic Islands, Basque Country, Canary Islands, Cantabria, Castile and León, Castile-La Mancha, Catalonia, Ceuta, Madrid Autonomous Community, Extremadura, Galicia, La Rioja, Melilla, Navarra Chartered Community, Murcia Region, Valencian Community)
 * Sweden
 * United States
@@ -243,6 +244,7 @@ The tests are organized in some test suites to make testing a bit more easier:
 * "Poland"        : For separately testing the Poland Holiday Provider
 * "Portugal"      : For separately testing the Portugal Holiday Provider
 * "Slovakia"      : For separately testing the Slovakia Holiday Provider
+* "South Africa"  : For separately testing the South Africa Holiday Provider
 * "Spain"         : For separately testing the Spain Holiday Provider
 * "Sweden"        : For separately testing the Sweden Holiday Provider
 * "USA"           : For separately testing the USA Holiday Provider
