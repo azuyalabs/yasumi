@@ -28,7 +28,7 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class GoodFridayTest extends SouthAfricaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday to be tested
      */
     const HOLIDAY = 'goodFriday';
 
