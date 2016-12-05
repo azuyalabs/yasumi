@@ -15,6 +15,7 @@ namespace Yasumi\Provider;
 
 use DateInterval;
 use DateTime;
+use DateTimeZone;
 use Yasumi\Holiday;
 
 /**
@@ -51,16 +52,6 @@ class SouthAfrica extends AbstractProvider
 
         // Add common Christian holidays (common in SouthAfrica)
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
-        //$this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale));
-        //$this->addHoliday($this->assumptionOfMary($this->year, $this->timezone, $this->locale));
-        //$this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
-        //$this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
-        //$this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale));
-        //$this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
-        //$this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale));
-        //$this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale, Holiday::TYPE_NATIONAL));
-        //$this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale));
-        //$this->addHoliday($this->immaculateConception($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
 
@@ -73,6 +64,7 @@ class SouthAfrica extends AbstractProvider
         $this->calculateNationalWomensDay();
         $this->calculateHeritageDay();
         $this->calculateDayOfReconciliation();
+        $this->calculateSubstituteDayofGoodwill();
 
         // Determine whether any of the holidays is substituted on another day
         $this->calculateSubstituteHolidays();
@@ -93,7 +85,7 @@ class SouthAfrica extends AbstractProvider
     public function calculateHumanRightsDay()
     {
         $this->addHoliday(new Holiday('humanRightsDay', ['en_ZA' => 'Human Rights Day'],
-            new DateTime($this->year . '-3-21', new \DateTimeZone($this->timezone)), $this->locale));
+            new DateTime($this->year . '-3-21', new DateTimeZone($this->timezone)), $this->locale));
     }
 
     /**
@@ -120,7 +112,7 @@ class SouthAfrica extends AbstractProvider
     public function calculateFreedomDay()
     {
         $this->addHoliday(new Holiday('freedomDay', ['en_ZA' => 'Freedom Day'],
-            new DateTime($this->year . '-4-27', new \DateTimeZone($this->timezone)), $this->locale));
+            new DateTime($this->year . '-4-27', new DateTimeZone($this->timezone)), $this->locale));
     }
 
     /**
@@ -138,7 +130,7 @@ class SouthAfrica extends AbstractProvider
     public function calculateYouthDay()
     {
         $this->addHoliday(new Holiday('youthDay', ['en_ZA' => 'Youth Day'],
-            new DateTime($this->year . '-6-16', new \DateTimeZone($this->timezone)), $this->locale));
+            new DateTime($this->year . '-6-16', new DateTimeZone($this->timezone)), $this->locale));
     }
 
     /**
@@ -156,7 +148,7 @@ class SouthAfrica extends AbstractProvider
         }
 
         $this->addHoliday(new Holiday('2016MunicipalElectionsDay', ['en_ZA' => '2016 Municipal Elections Day'],
-            new DateTime('2016-8-3', new \DateTimeZone($this->timezone)), $this->locale));
+            new DateTime('2016-8-3', new DateTimeZone($this->timezone)), $this->locale));
     }
 
     /**
@@ -172,7 +164,7 @@ class SouthAfrica extends AbstractProvider
     public function calculateNationalWomensDay()
     {
         $this->addHoliday(new Holiday('nationalWomensDay', ['en_ZA' => 'National Women\'s Day'],
-            new DateTime($this->year . '-8-9', new \DateTimeZone($this->timezone)), $this->locale));
+            new DateTime($this->year . '-8-9', new DateTimeZone($this->timezone)), $this->locale));
     }
 
     /**
@@ -188,7 +180,7 @@ class SouthAfrica extends AbstractProvider
     public function calculateHeritageDay()
     {
         $this->addHoliday(new Holiday('heritageDay', ['en_ZA' => 'Heritage Day'],
-            new DateTime($this->year . '-9-24', new \DateTimeZone($this->timezone)), $this->locale));
+            new DateTime($this->year . '-9-24', new DateTimeZone($this->timezone)), $this->locale));
     }
 
     /**
@@ -206,7 +198,28 @@ class SouthAfrica extends AbstractProvider
     public function calculateDayOfReconciliation()
     {
         $this->addHoliday(new Holiday('reconciliationDay', ['en_ZA' => 'Day of Reconciliation'],
-            new DateTime($this->year . '-12-16', new \DateTimeZone($this->timezone)), $this->locale));
+            new DateTime($this->year . '-12-16', new DateTimeZone($this->timezone)), $this->locale));
+    }
+
+    /**
+     * Substitute Day of Goodwill 2016.
+     *
+     * In 2016 Christmas Day is observed on the next day as it falls on a Sunday in 2016. Since it coincides with the
+     * second day of Christmas (Day of Goodwill), a substitute day is given for December 27th.
+     *
+     * Note: Not entirely sure if this is a common rule as the Public Holidays Act doesn't mention such specific
+     * situation.
+     *
+     * @link http://www.gov.za/sites/www.gov.za/files/Act36of1994.pdf
+     */
+    public function calculateSubstituteDayOfGoodwill()
+    {
+        if ($this->year != 2016) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday('substituteDayOfGoodwill', ['en_ZA' => 'Day of Goodwill observed'],
+            new DateTime('2016-12-27', new DateTimeZone($this->timezone)), $this->locale));
     }
 
     /**
@@ -222,7 +235,7 @@ class SouthAfrica extends AbstractProvider
         // Loop through all defined holidays
         while ($datesIterator->valid()) {
 
-            // Exclude Good Friday, Family Day, 2016MunicipalElectionsDay as these don't fall in the weekend
+            // Exclude Good Friday, Family Day, 2016 Municipal Elections Day as these don't fall in the weekend
             if (in_array($datesIterator->current()->shortName,
                 ['goodFriday', 'familyDay', '2016MunicipalElectionsDay'])) {
                 $datesIterator->next();

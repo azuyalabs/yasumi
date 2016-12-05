@@ -50,6 +50,7 @@ class SouthAfricaTest extends SouthAfricaBaseTestCase
 
         if ($this->year == 2016) {
             $nationalHolidays[] = '2016MunicipalElectionsDay';
+            $nationalHolidays[] = 'substituteDayOfGoodwill';
         }
 
         $this->assertDefinedHolidays($nationalHolidays, self::REGION, $this->year, Holiday::TYPE_NATIONAL);
