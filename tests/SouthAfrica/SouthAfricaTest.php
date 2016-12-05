@@ -33,8 +33,18 @@ class SouthAfricaTest extends SouthAfricaBaseTestCase
      */
     public function testNationalHolidays()
     {
-        $this->assertDefinedHolidays(['newYearsDay', 'christmasDay'], self::REGION, $this->year,
-            Holiday::TYPE_NATIONAL);
+        $this->assertDefinedHolidays([
+            'newYearsDay',
+            'humanRightsDay',
+            'goodFriday',
+            'familyDay',
+            'freedomDay',
+            'internationalWorkersDay',
+            'youthDay',
+            '2016MunicipalElectionsDay',
+            'nationalWomensDay',
+            'christmasDay'
+        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
     }
 
     /**
