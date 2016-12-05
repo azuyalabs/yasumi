@@ -21,6 +21,7 @@ return [
     'en_GB' => 'Boxing Day',
     'en_NZ' => 'Boxing Day',
     'en_US' => 'Boxing Day',
+    'en_ZA' => 'Day of Goodwill',
     'fi_FI' => '2. joulupäivä',
     'nb_NO' => 'Andre juledag',
     'nl_BE' => 'Tweede Kerstdag',

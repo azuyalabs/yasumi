@@ -22,6 +22,7 @@ return [
     'en_GB' => 'Christmas Day',
     'en_NZ' => 'Christmas Day',
     'en_US' => 'Christmas',
+    'en_ZA' => 'Christmas Day',
     'es_ES' => 'Navidad',
     'fi_FI' => 'Joulupäivä',
     'fr_FR' => 'Noël',
