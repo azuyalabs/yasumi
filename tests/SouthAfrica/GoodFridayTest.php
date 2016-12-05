@@ -61,7 +61,6 @@ class GoodFridayTest extends SouthAfricaBaseTestCase implements YasumiTestCaseIn
         $data = [];
 
         for ($y = 0; $y < 50; $y++) {
-
             $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
             $date = new DateTime("$year-3-21", new DateTimeZone(self::TIMEZONE));
             $date->add(new DateInterval('P' . easter_days($year) . 'D'));
