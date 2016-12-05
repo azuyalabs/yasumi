@@ -42,6 +42,8 @@ class SouthAfricaTest extends SouthAfricaBaseTestCase
             'internationalWorkersDay',
             'youthDay',
             'nationalWomensDay',
+            'heritageDay',
+            'reconciliationDay',
             'christmasDay'
         ];
 

@@ -72,6 +72,7 @@ class SouthAfrica extends AbstractProvider
         $this->calculate2016MunicipalElectionsDay();
         $this->calculateNationalWomensDay();
         $this->calculateHeritageDay();
+        $this->calculateDayOfReconciliation();
 
         // Determine whether any of the holidays is substituted on another day
         $this->calculateSubstituteHolidays();
@@ -188,6 +189,24 @@ class SouthAfrica extends AbstractProvider
     {
         $this->addHoliday(new Holiday('heritageDay', ['en_ZA' => 'Heritage Day'],
             new DateTime($this->year . '-9-24', new \DateTimeZone($this->timezone)), $this->locale));
+    }
+
+    /**
+     * Day of Reconciliation.
+     *
+     * In apartheid South Africa 16 December was known as Day of the Vow, as the Voortrekkers in preparation for the
+     * battle on 16 December against the Zulus took a Vow before God that they would build a church and that they and
+     * their descendants would observe the day as a day of thanksgiving should they be granted victory. With the advent
+     * of democracy in South Africa 16 December retained its status as a public holiday, however, this time with the
+     * purpose of fostering reconciliation and national unity.
+     *
+     * @link http://www.gov.za/sites/www.gov.za/files/Act36of1994.pdf
+     * @link http://www.gov.za/day-reconciliation-2014
+     */
+    public function calculateDayOfReconciliation()
+    {
+        $this->addHoliday(new Holiday('reconciliationDay', ['en_ZA' => 'Day of Reconciliation'],
+            new DateTime($this->year . '-12-16', new \DateTimeZone($this->timezone)), $this->locale));
     }
 
     /**
