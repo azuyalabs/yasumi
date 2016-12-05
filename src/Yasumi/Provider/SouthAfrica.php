@@ -64,7 +64,7 @@ class SouthAfrica extends AbstractProvider
         $this->calculateNationalWomensDay();
         $this->calculateHeritageDay();
         $this->calculateDayOfReconciliation();
-        $this->calculateSubstituteDayofGoodwill();
+        $this->calculateSubstituteDayOfGoodwill();
 
         // Determine whether any of the holidays is substituted on another day
         $this->calculateSubstituteHolidays();
