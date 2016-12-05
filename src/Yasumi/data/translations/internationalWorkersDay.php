@@ -17,6 +17,7 @@ return [
     'de_DE' => 'Tag der Arbeit',
     'el_GR' => 'Εργατική Πρωτομαγιά',
     'en_US' => 'International Workers\' Day',
+    'en_ZA' => 'Workers\' Day',
     'es_ES' => 'Día del Trabajador',
     'fi_FI' => 'Vappu',
     'fr_FR' => 'Fête du Travail',
