@@ -71,6 +71,7 @@ class SouthAfrica extends AbstractProvider
         $this->calculateYouthDay();
         $this->calculate2016MunicipalElectionsDay();
         $this->calculateNationalWomensDay();
+        $this->calculateHeritageDay();
 
         // Determine whether any of the holidays is substituted on another day
         $this->calculateSubstituteHolidays();
@@ -171,6 +172,22 @@ class SouthAfrica extends AbstractProvider
     {
         $this->addHoliday(new Holiday('nationalWomensDay', ['en_ZA' => 'National Women\'s Day'],
             new DateTime($this->year . '-8-9', new \DateTimeZone($this->timezone)), $this->locale));
+    }
+
+    /**
+     * Heritage Day.
+     *
+     * Heritage Day on 24 September recognises and celebrates the cultural wealth of the South African nation. South
+     * Africans celebrate the day by remembering the cultural heritage of the many cultures that make up the population
+     * of South Africa.
+     *
+     * @link http://www.gov.za/sites/www.gov.za/files/Act36of1994.pdf
+     * @link http://www.gov.za/heritage-day-2014
+     */
+    public function calculateHeritageDay()
+    {
+        $this->addHoliday(new Holiday('heritageDay', ['en_ZA' => 'Heritage Day'],
+            new DateTime($this->year . '-9-24', new \DateTimeZone($this->timezone)), $this->locale));
     }
 
     /**
