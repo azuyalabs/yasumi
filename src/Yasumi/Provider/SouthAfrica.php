@@ -62,7 +62,7 @@ class SouthAfrica extends AbstractProvider
         //$this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale));
         //$this->addHoliday($this->immaculateConception($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
-        //$this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
 
         // Calculate other holidays
         $this->calculateHumanRightsDay();
