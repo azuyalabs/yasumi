@@ -46,7 +46,7 @@ class IrelandTest extends IrelandBaseTestCase
      */
     public function testObservedHolidays()
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays(['goodFriday'], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**
@@ -78,6 +78,6 @@ class IrelandTest extends IrelandBaseTestCase
      */
     protected function setUp()
     {
-        $this->year = $this->generateRandomYear(1955);
+        $this->year = $this->generateRandomYear(1974);
     }
 }

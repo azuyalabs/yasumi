@@ -19,6 +19,8 @@ return [
     'el_GR' => 'Μεγάλη Παρασκευή',
     'en_AU' => 'Good Friday',
     'en_GB' => 'Good Friday',
+    'en_IE' => 'Good Friday',
+    'ga_IE' => 'Aoine an Chéasta',
     'en_NZ' => 'Good Friday',
     'en_US' => 'Good Friday',
     'en_ZA' => 'Good Friday',
