@@ -13,9 +13,6 @@
 
 namespace Yasumi\Provider;
 
-use DateTime;
-use Yasumi\Holiday;
-
 /**
  * Provider for all holidays in Ireland.
  */
@@ -37,7 +34,7 @@ class Ireland extends AbstractProvider
         $this->timezone = 'Europe/Dublin';
 
         // Add common holidays
-        //$this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
+        $this->calculateNewYearsDay();
 
         // Add common Christian holidays (common in Ireland)
         //$this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale));
@@ -59,22 +56,20 @@ class Ireland extends AbstractProvider
     }
 
     /**
-     * National Day.
+     * New Years Day.
      *
-     * The Declaration of Neutrality was a declaration by the Irelandn Parliament declaring the country permanently
-     * neutral. It was enacted on 26 October 1955 as a constitutional act of parliament. Since 1955, neutrality has
-     * become a deeply ingrained element of Irelandn identity. Ireland's national holiday on 26 October commemorates
-     * the declaration.
+     * New Year's Day was recognized as a church holiday in the Holidays (Employees) Act 1961 in the Republic of
+     * Ireland. It became a public holiday following the Holidays (Employees) Act 1973. The public holiday was first
+     * observed in 1974.
      *
-     * @link https://en.wikipedia.org/wiki/Declaration_of_Neutrality
+     * @link http://www.timeanddate.com/holidays/ireland/new-year-day
      */
-    public function calculateNationalDay()
+    public function calculateNewYearsDay()
     {
-        if ($this->year < 1955) {
+        if ($this->year < 1974) {
             return;
         }
 
-        $this->addHoliday(new Holiday('nationalDay', ['de_AT' => 'Nationalfeiertag'],
-            new DateTime($this->year . '-10-26', new \DateTimeZone($this->timezone)), $this->locale));
+        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
     }
 }
