@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Ireland;
 
+use DateInterval;
 use DateTime;
 use DateTimeZone;
 use Yasumi\Holiday;
@@ -42,7 +43,14 @@ class StPatricksDayTest extends IrelandBaseTestCase implements YasumiTestCaseInt
      */
     public function testHoliday($year, $expected)
     {
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
+        $date = new DateTime($expected, new DateTimeZone(self::TIMEZONE));
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
+
+        // Whenever any public holiday falls on a Sunday, the Monday following on it shall be a public holiday.
+        if (in_array($date->format('w'), [0, 6])) {
+            $date->add(new DateInterval('P1D'));
+            $this->assertHoliday(self::REGION, 'substituteHoliday:' . self::HOLIDAY, $year, $date);
+        }
     }
 
     /**

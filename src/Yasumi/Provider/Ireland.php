@@ -13,6 +13,7 @@
 
 namespace Yasumi\Provider;
 
+use DateInterval;
 use DateTime;
 use DateTimeZone;
 use Yasumi\Holiday;
@@ -57,6 +58,9 @@ class Ireland extends AbstractProvider
 
         // Calculate other holidays
         $this->calculateStPatricksDay();
+
+        // Determine whether any of the holidays is substituted on another day
+        $this->calculateSubstituteHolidays();
     }
 
     /**
@@ -95,5 +99,40 @@ class Ireland extends AbstractProvider
         $this->addHoliday(new Holiday('stPatricksDay',
             ['en_IE' => 'St. Patrick\'s Day', 'ga_IE' => 'Lá Fhéile Pádraig'],
             new DateTime($this->year . '-3-17', new DateTimeZone($this->timezone)), $this->locale));
+    }
+
+    /**
+     * Calculate substitute holidays.
+     *
+     * Where a public holiday falls on a Saturday or a Sunday, or possibly coincides with another public holiday, it
+     * is generally observed (as a day off work) on the next available weekday, even though the public holiday itself
+     * does not move.
+     *
+     * @TODO: Implement calculation when an holiday coincides with another.
+     */
+    private function calculateSubstituteHolidays()
+    {
+        $datesIterator = $this->getIterator();
+
+        // Loop through all defined holidays
+        while ($datesIterator->valid()) {
+
+            // Exclude Good Friday as this doesn't fall in the weekend
+            if (in_array($datesIterator->current()->shortName, ['goodFriday'])) {
+                $datesIterator->next();
+            }
+
+            // Substitute holiday is on the next available weekday if a holiday falls on a Saturday or Sunday
+            if (in_array($datesIterator->current()->format('w'), [0, 6])) {
+                $substituteHoliday = clone $datesIterator->current();
+                $substituteHoliday->add(new DateInterval('P1D'));
+
+                $this->addHoliday(new Holiday('substituteHoliday:' . $substituteHoliday->shortName, [
+                    'en_IE' => $substituteHoliday->getName() . ' observed',
+                ], $substituteHoliday, $this->locale));
+            }
+
+            $datesIterator->next();
+        }
     }
 }
