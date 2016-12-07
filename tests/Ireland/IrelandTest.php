@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  *
- *  @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
 namespace Yasumi\tests\Ireland;
@@ -29,7 +29,16 @@ class IrelandTest extends IrelandBaseTestCase
      */
     public function testNationalHolidays()
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        $nationalHolidays = [];
+        if ($this->year >= 1974) {
+            $nationalHolidays[] = 'newYearsDay';
+        }
+
+        if ($this->year >= 1903) {
+            $nationalHolidays[] = 'stPatricksDay';
+        }
+
+        $this->assertDefinedHolidays($nationalHolidays, self::REGION, $this->year, Holiday::TYPE_NATIONAL);
     }
 
     /**

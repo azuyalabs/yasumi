@@ -13,6 +13,10 @@
 
 namespace Yasumi\Provider;
 
+use DateTime;
+use DateTimeZone;
+use Yasumi\Holiday;
+
 /**
  * Provider for all holidays in Ireland.
  */
@@ -52,7 +56,7 @@ class Ireland extends AbstractProvider
         //$this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
 
         // Calculate other holidays
-        //$this->calculateNationalDay();
+        $this->calculateStPatricksDay();
     }
 
     /**
@@ -71,5 +75,25 @@ class Ireland extends AbstractProvider
         }
 
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
+    }
+
+    /**
+     * St. Patrick's Day.
+     *
+     * New Year's Day was recognized as a church holiday in the Holidays (Employees) Act 1961 in the Republic of
+     * Ireland. It became a public holiday following the Holidays (Employees) Act 1973. The public holiday was first
+     * observed in 1974.
+     *
+     * @link http://www.timeanddate.com/holidays/ireland/new-year-day
+     */
+    public function calculateStPatricksDay()
+    {
+        if ($this->year < 1903) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday('stPatricksDay',
+            ['en_IE' => 'St. Patrick\'s Day', 'ga_IE' => 'Lá Fhéile Pádraig'],
+            new DateTime($this->year . '-3-17', new DateTimeZone($this->timezone)), $this->locale));
     }
 }
