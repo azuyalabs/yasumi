@@ -29,13 +29,17 @@ class IrelandTest extends IrelandBaseTestCase
      */
     public function testNationalHolidays()
     {
-        $nationalHolidays = [];
+        $nationalHolidays = ['easter', 'easterMonday'];
         if ($this->year >= 1974) {
             $nationalHolidays[] = 'newYearsDay';
         }
 
         if ($this->year >= 1903) {
             $nationalHolidays[] = 'stPatricksDay';
+        }
+
+        if ($this->year >= 1994) {
+            $nationalHolidays[] = 'mayDay';
         }
 
         $this->assertDefinedHolidays($nationalHolidays, self::REGION, $this->year, Holiday::TYPE_NATIONAL);
