@@ -51,7 +51,7 @@ class EasterMondayTest extends IrelandBaseTestCase implements YasumiTestCaseInte
     {
         $data = [];
 
-        for ($y = 0; $y < 50; $y++) {
+        for ($y = 0; $y < self::TEST_ITERATIONS; $y++) {
             $year = $this->generateRandomYear();
             $date = new DateTime("$year-3-21", new DateTimeZone(self::TIMEZONE));
             $date->add(new DateInterval('P' . (easter_days($year) + 1) . 'D'));

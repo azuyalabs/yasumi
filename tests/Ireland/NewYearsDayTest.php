@@ -46,7 +46,7 @@ class NewYearsDayTest extends IrelandBaseTestCase implements YasumiTestCaseInter
         $date = new DateTime($expected, new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
 
-        // Whenever any public holiday falls on a Sunday, the Monday following on it shall be a public holiday.
+        // Whenever any public holiday doesn't fall on a weekday, the Monday following on it shall be a public holiday.
         if (in_array($date->format('w'), [0, 6])) {
             $date->modify('next monday');
             $this->assertHoliday(self::REGION, 'substituteHoliday:' . self::HOLIDAY, $year, $date);
@@ -62,7 +62,7 @@ class NewYearsDayTest extends IrelandBaseTestCase implements YasumiTestCaseInter
     {
         $data = [];
 
-        for ($y = 0; $y < 50; $y++) {
+        for ($y = 0; $y < self::TEST_ITERATIONS; $y++) {
             $year   = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
             $date   = new DateTime("$year-1-1", new DateTimeZone(self::TIMEZONE));
             $data[] = [$year, $date->format('Y-m-d')];

@@ -62,7 +62,7 @@ class StPatricksDayTest extends IrelandBaseTestCase implements YasumiTestCaseInt
     {
         $data = [];
 
-        for ($y = 0; $y < 50; $y++) {
+        for ($y = 0; $y < self::TEST_ITERATIONS; $y++) {
             $year   = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
             $date   = new DateTime("$year-3-17", new DateTimeZone(self::TIMEZONE));
             $data[] = [$year, $date->format('Y-m-d')];

@@ -36,4 +36,9 @@ abstract class IrelandBaseTestCase extends PHPUnit_Framework_TestCase
      * Locale that is considered common for this provider
      */
     const LOCALE = 'en_IE';
+
+    /**
+     * Number of iterations to be used for the various unit test of this provider
+     */
+    const TEST_ITERATIONS = 50;
 }

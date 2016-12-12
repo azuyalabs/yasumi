@@ -57,7 +57,7 @@ class MayDayTest extends IrelandBaseTestCase implements YasumiTestCaseInterface
     {
         $data = [];
 
-        for ($y = 0; $y < 50; $y++) {
+        for ($y = 0; $y < self::TEST_ITERATIONS; $y++) {
             $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
             $date = new DateTime("next monday $year-4-30", new DateTimeZone(self::TIMEZONE));
 
