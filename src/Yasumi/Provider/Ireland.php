@@ -43,11 +43,11 @@ class Ireland extends AbstractProvider
 
         // Add common Christian holidays (common in Ireland)
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
-
+        $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
 
         //$this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale));
         //$this->addHoliday($this->assumptionOfMary($this->year, $this->timezone, $this->locale));
-        // $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
+        //
         //$this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
         //$this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
         //$this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale));

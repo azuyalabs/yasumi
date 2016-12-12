@@ -17,6 +17,8 @@ return [
     'de_AT' => 'Oster',
     'el_GR' => 'Κυριακή του Πάσχα',
     'en_US' => 'Easter Sunday',
+    'en_IE' => 'Easter Sunday',
+    'ga_IE' => 'Domhnach Cásca',
     'fi_FI' => 'Pääsiäispäivä',
     'hr_HR' => 'Uskrs',
     'it_IT' => 'Pasqua',
