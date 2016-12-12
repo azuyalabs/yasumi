@@ -48,12 +48,9 @@ class Ireland extends AbstractProvider
 
         //$this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale));
         //$this->addHoliday($this->assumptionOfMary($this->year, $this->timezone, $this->locale));
-        //
-        //
         //$this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
         //$this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale));
         //$this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
-
         //$this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale));
         //$this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale, Holiday::TYPE_NATIONAL));
         //$this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale));
@@ -68,7 +65,7 @@ class Ireland extends AbstractProvider
         $this->calculateStPatricksDay();
 
         // Determine whether any of the holidays is substituted on another day
-        $this->calculateSubstituteHolidays();
+        //$this->calculateSubstituteHolidays();
     }
 
     /**
@@ -86,7 +83,18 @@ class Ireland extends AbstractProvider
             return;
         }
 
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
+        $holiday = $this->newYearsDay($this->year, $this->timezone, $this->locale);
+        $this->addHoliday($holiday);
+
+        // Substitute holiday is on the next available weekday if a holiday falls on a Saturday or Sunday
+        if (in_array($holiday->format('w'), [0, 6])) {
+            $substituteHoliday = clone $holiday;
+            $substituteHoliday->modify('next monday');
+
+            $this->addHoliday(new Holiday('substituteHoliday:' . $substituteHoliday->shortName, [
+                'en_IE' => $substituteHoliday->getName() . ' observed',
+            ], $substituteHoliday, $this->locale));
+        }
     }
 
     /**
@@ -103,10 +111,20 @@ class Ireland extends AbstractProvider
         if ($this->year < 1903) {
             return;
         }
+        $holiday = new Holiday('stPatricksDay', ['en_IE' => 'St. Patrick\'s Day', 'ga_IE' => 'Lá Fhéile Pádraig'],
+            new DateTime($this->year . '-3-17', new DateTimeZone($this->timezone)), $this->locale);
 
-        $this->addHoliday(new Holiday('stPatricksDay',
-            ['en_IE' => 'St. Patrick\'s Day', 'ga_IE' => 'Lá Fhéile Pádraig'],
-            new DateTime($this->year . '-3-17', new DateTimeZone($this->timezone)), $this->locale));
+        $this->addHoliday($holiday);
+
+        // Substitute holiday is on the next available weekday if a holiday falls on a Saturday or Sunday
+        if (in_array($holiday->format('w'), [0, 6])) {
+            $substituteHoliday = clone $holiday;
+            $substituteHoliday->modify('next monday');
+
+            $this->addHoliday(new Holiday('substituteHoliday:' . $substituteHoliday->shortName, [
+                'en_IE' => $substituteHoliday->getName() . ' observed',
+            ], $substituteHoliday, $this->locale));
+        }
     }
 
     /**

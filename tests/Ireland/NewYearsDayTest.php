@@ -48,7 +48,7 @@ class NewYearsDayTest extends IrelandBaseTestCase implements YasumiTestCaseInter
 
         // Whenever any public holiday falls on a Sunday, the Monday following on it shall be a public holiday.
         if (in_array($date->format('w'), [0, 6])) {
-            $date->add(new DateInterval('P1D'));
+            $date->modify('next monday');
             $this->assertHoliday(self::REGION, 'substituteHoliday:' . self::HOLIDAY, $year, $date);
         }
     }
