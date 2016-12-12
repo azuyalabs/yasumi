@@ -20,6 +20,11 @@ use Yasumi\Holiday;
 
 /**
  * Provider for all holidays in Ireland.
+ *
+ * Note: All calculations are based on the schedule published in the Holidays (Employees) Act, 1973 and its amendments
+ * thereafter.
+ *
+ * link: http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
  */
 class Ireland extends AbstractProvider
 {
@@ -63,6 +68,7 @@ class Ireland extends AbstractProvider
 
         // Calculate other holidays
         $this->calculateStPatricksDay();
+        $this->calculateMayDay();
 
         // Determine whether any of the holidays is substituted on another day
         //$this->calculateSubstituteHolidays();
@@ -100,11 +106,13 @@ class Ireland extends AbstractProvider
     /**
      * St. Patrick's Day.
      *
-     * New Year's Day was recognized as a church holiday in the Holidays (Employees) Act 1961 in the Republic of
-     * Ireland. It became a public holiday following the Holidays (Employees) Act 1973. The public holiday was first
-     * observed in 1974.
+     * Saint Patrick's Day, or the Feast of Saint Patrick (Irish: Lá Fhéile Pádraig, "the Day of the Festival of
+     * Patrick"), is a cultural and religious celebration held on 17 March, the traditional death date of Saint Patrick
+     * (c. AD 385–461), the foremost patron saint of Ireland. Saint Patrick's Day is a public holiday in the Republic
+     * of Ireland, Northern Ireland, the Canadian province of Newfoundland and Labrador, and the British Overseas
+     * Territory of Montserrat.
      *
-     * @link http://www.timeanddate.com/holidays/ireland/new-year-day
+     * @link https://en.wikipedia.org/wiki/Saint_Patrick%27s_Day
      */
     public function calculateStPatricksDay()
     {
@@ -125,6 +133,27 @@ class Ireland extends AbstractProvider
                 'en_IE' => $substituteHoliday->getName() . ' observed',
             ], $substituteHoliday, $this->locale));
         }
+    }
+
+    /**
+     * May Day.
+     *
+     * May Day has been celebrated in Ireland since pagan times as the feast of Beltane and in latter times as
+     * Mary's day. Traditionally, bonfires were lit to mark the coming of summer and to banish the long nights of
+     * winter. Officially Irish May Day holiday is the first Monday in May. Old traditions such as bonfires are no
+     * longer widely observed, though the practice still persists in some places across the country. Limerick, Clare
+     * and many other people in other counties still keep on this tradition.
+     *
+     * @link https://en.wikipedia.org/wiki/May_Day
+     */
+    public function calculateMayDay()
+    {
+        if ($this->year < 1994) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday('mayDay', ['en_IE' => 'May Day', 'ga_IE' => 'Lá Bealtaine'],
+            new DateTime("next monday $this->year-4-30", new DateTimeZone($this->timezone)), $this->locale));
     }
 
     /**
