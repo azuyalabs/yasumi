@@ -33,7 +33,7 @@ class Ukraine extends AbstractProvider
     const ID = 'UA';
 
     /**
-     * Initialize holidays for Poland.
+     * Initialize holidays for Ukraine.
      */
     public function initialize()
     {
