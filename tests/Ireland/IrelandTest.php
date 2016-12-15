@@ -29,7 +29,7 @@ class IrelandTest extends IrelandBaseTestCase
      */
     public function testNationalHolidays()
     {
-        $nationalHolidays = ['easter', 'easterMonday'];
+        $nationalHolidays = ['easter', 'easterMonday', 'augustHoliday'];
         if ($this->year >= 1974) {
             $nationalHolidays[] = 'newYearsDay';
             $nationalHolidays[] = 'juneHoliday';

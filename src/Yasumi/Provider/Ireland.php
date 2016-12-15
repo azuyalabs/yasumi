@@ -66,6 +66,10 @@ class Ireland extends AbstractProvider
         $this->calculateStPatricksDay();
         $this->calculateMayDay();
         $this->calculateJuneHoliday();
+
+        $this->addHoliday(new Holiday('augustHoliday',
+            ['en_IE' => 'August Holiday', 'ga_IE' => 'Lá Saoire i mí Lúnasa'],
+            new DateTime("next monday $this->year-7-31", new DateTimeZone($this->timezone)), $this->locale));
     }
 
     /**
