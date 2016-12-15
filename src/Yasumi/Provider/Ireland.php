@@ -13,7 +13,6 @@
 
 namespace Yasumi\Provider;
 
-use DateInterval;
 use DateTime;
 use DateTimeZone;
 use Yasumi\Holiday;
@@ -24,7 +23,7 @@ use Yasumi\Holiday;
  * Note: All calculations are based on the schedule published in the Holidays (Employees) Act, 1973 and its amendments
  * thereafter.
  *
- * link: http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
+ * @link: http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
  */
 class Ireland extends AbstractProvider
 {
@@ -50,28 +49,23 @@ class Ireland extends AbstractProvider
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
         $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
 
+        $this->calculatePentecostMonday();
         //$this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale));
         //$this->addHoliday($this->assumptionOfMary($this->year, $this->timezone, $this->locale));
         //$this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
         //$this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale));
-        //$this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
-        //$this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale));
+
         //$this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale, Holiday::TYPE_NATIONAL));
         //$this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale));
         //$this->addHoliday($this->immaculateConception($this->year, $this->timezone, $this->locale));
         //$this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
         //$this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
 
-
-        // var_dump($this->goodFriday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
-
         // Calculate other holidays
         $this->calculateStPatricksDay();
         $this->calculateMayDay();
-
-        // Determine whether any of the holidays is substituted on another day
-        //$this->calculateSubstituteHolidays();
     }
 
     /**
@@ -157,32 +151,19 @@ class Ireland extends AbstractProvider
     }
 
     /**
-     * Calculate substitute holidays.
+     * Pentecost Monday.
      *
-     * Where a public holiday falls on a Saturday or a Sunday, or possibly coincides with another public holiday, it
-     * is generally observed (as a day off work) on the next available weekday, even though the public holiday itself
-     * does not move.
+     * Whitmonday (Pentecost Monday) was considered a public holiday in Ireland until 1973.
      *
-     * @TODO: Implement calculation when an holiday coincides with another.
+     * @link http://www.irishstatutebook.ie/eli/1939/act/1/section/8/enacted/en/html
+     * @link http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
      */
-    private function calculateSubstituteHolidays()
+    public function calculatePentecostMonday()
     {
-        $datesIterator = $this->getIterator();
-
-        // Loop through all defined holidays
-        while ($datesIterator->valid()) {
-
-            // Substitute holiday is on the next available weekday if a holiday falls on a Saturday or Sunday
-            if (in_array($datesIterator->current()->format('w'), [0, 6])) {
-                $substituteHoliday = clone $datesIterator->current();
-                $substituteHoliday->add(new DateInterval('P1D'));
-
-                $this->addHoliday(new Holiday('substituteHoliday:' . $substituteHoliday->shortName, [
-                    'en_IE' => $substituteHoliday->getName() . ' observed',
-                ], $substituteHoliday, $this->locale));
-            }
-
-            $datesIterator->next();
+        if ($this->year > 1973) {
+            return;
         }
+
+        $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale));
     }
 }

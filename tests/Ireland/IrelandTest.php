@@ -42,6 +42,10 @@ class IrelandTest extends IrelandBaseTestCase
             $nationalHolidays[] = 'mayDay';
         }
 
+        if ($this->year <= 1973) {
+            $nationalHolidays[] = 'pentecostMonday';
+        }
+
         $this->assertDefinedHolidays($nationalHolidays, self::REGION, $this->year, Holiday::TYPE_NATIONAL);
     }
 
@@ -50,7 +54,7 @@ class IrelandTest extends IrelandBaseTestCase
      */
     public function testObservedHolidays()
     {
-        $this->assertDefinedHolidays(['goodFriday'], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays(['goodFriday', 'pentecost'], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**
