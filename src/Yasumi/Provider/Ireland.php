@@ -50,7 +50,6 @@ class Ireland extends AbstractProvider
         $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
-
         $this->calculatePentecostMonday();
         //$this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale));
         //$this->addHoliday($this->assumptionOfMary($this->year, $this->timezone, $this->locale));
@@ -66,6 +65,7 @@ class Ireland extends AbstractProvider
         // Calculate other holidays
         $this->calculateStPatricksDay();
         $this->calculateMayDay();
+        $this->calculateJuneHoliday();
     }
 
     /**
@@ -165,5 +165,24 @@ class Ireland extends AbstractProvider
         }
 
         $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale));
+    }
+
+    /**
+     * June Holiday.
+     *
+     * The first Monday in June is considered a public holiday since 1974. Previously observed as Whit Monday until
+     * 1973.
+     *
+     * @link http://www.irishstatutebook.ie/eli/1961/act/33/section/8/enacted/en/html
+     */
+    public function calculateJuneHoliday()
+    {
+        if ($this->year < 1974) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday('juneHoliday',
+            ['en_IE' => 'June Holiday', 'ga_IE' => 'Lá Saoire i mí an Mheithimh'],
+            new DateTime("next monday $this->year-5-31", new DateTimeZone($this->timezone)), $this->locale));
     }
 }
