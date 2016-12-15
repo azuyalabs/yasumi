@@ -51,14 +51,7 @@ class Ireland extends AbstractProvider
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
         $this->calculatePentecostMonday();
-        //$this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale));
-        //$this->addHoliday($this->assumptionOfMary($this->year, $this->timezone, $this->locale));
-        //$this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
-        //$this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale));
 
-        //$this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale, Holiday::TYPE_NATIONAL));
-        //$this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale));
-        //$this->addHoliday($this->immaculateConception($this->year, $this->timezone, $this->locale));
         //$this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
         //$this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
 
@@ -70,6 +63,8 @@ class Ireland extends AbstractProvider
         $this->addHoliday(new Holiday('augustHoliday',
             ['en_IE' => 'August Holiday', 'ga_IE' => 'Lá Saoire i mí Lúnasa'],
             new DateTime("next monday $this->year-7-31", new DateTimeZone($this->timezone)), $this->locale));
+
+        $this->calculateOctoberHoliday();
     }
 
     /**
@@ -99,6 +94,23 @@ class Ireland extends AbstractProvider
                 'en_IE' => $substituteHoliday->getName() . ' observed',
             ], $substituteHoliday, $this->locale));
         }
+    }
+
+    /**
+     * Pentecost Monday.
+     *
+     * Whitmonday (Pentecost Monday) was considered a public holiday in Ireland until 1973.
+     *
+     * @link http://www.irishstatutebook.ie/eli/1939/act/1/section/8/enacted/en/html
+     * @link http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
+     */
+    public function calculatePentecostMonday()
+    {
+        if ($this->year > 1973) {
+            return;
+        }
+
+        $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale));
     }
 
     /**
@@ -155,23 +167,6 @@ class Ireland extends AbstractProvider
     }
 
     /**
-     * Pentecost Monday.
-     *
-     * Whitmonday (Pentecost Monday) was considered a public holiday in Ireland until 1973.
-     *
-     * @link http://www.irishstatutebook.ie/eli/1939/act/1/section/8/enacted/en/html
-     * @link http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
-     */
-    public function calculatePentecostMonday()
-    {
-        if ($this->year > 1973) {
-            return;
-        }
-
-        $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale));
-    }
-
-    /**
      * June Holiday.
      *
      * The first Monday in June is considered a public holiday since 1974. Previously observed as Whit Monday until
@@ -188,5 +183,23 @@ class Ireland extends AbstractProvider
         $this->addHoliday(new Holiday('juneHoliday',
             ['en_IE' => 'June Holiday', 'ga_IE' => 'Lá Saoire i mí an Mheithimh'],
             new DateTime("next monday $this->year-5-31", new DateTimeZone($this->timezone)), $this->locale));
+    }
+
+    /**
+     * October Holiday.
+     *
+     * The last Monday in October is considered a public holiday since 1977.
+     *
+     * @link http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
+     */
+    public function calculateOctoberHoliday()
+    {
+        if ($this->year < 1977) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday('octoberHoliday',
+            ['en_IE' => 'October Holiday', 'ga_IE' => 'Lá Saoire i mí Dheireadh Fómhair'],
+            new DateTime("previous monday $this->year-11-01", new DateTimeZone($this->timezone)), $this->locale));
     }
 }

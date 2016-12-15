@@ -47,6 +47,10 @@ class IrelandTest extends IrelandBaseTestCase
             $nationalHolidays[] = 'pentecostMonday';
         }
 
+        if ($this->year >= 1977) {
+            $nationalHolidays[] = 'octoberHoliday';
+        }
+
         $this->assertDefinedHolidays($nationalHolidays, self::REGION, $this->year, Holiday::TYPE_NATIONAL);
     }
 
