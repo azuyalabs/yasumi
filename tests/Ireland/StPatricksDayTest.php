@@ -46,7 +46,6 @@ class StPatricksDayTest extends IrelandBaseTestCase implements YasumiTestCaseInt
         $date = new DateTime($expected, new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
 
-        // Whenever any public holiday falls on a Sunday, the Monday following on it shall be a public holiday.
         if (in_array($date->format('w'), [0, 6])) {
             $date->modify('next monday');
             $this->assertHoliday(self::REGION, 'substituteHoliday:' . self::HOLIDAY, $year, $date);
