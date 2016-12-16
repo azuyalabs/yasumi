@@ -162,6 +162,28 @@ trait YasumiBase
         unset($holiday, $holidays);
     }
 
+    /**
+     * Asserts that the expected week day is indeed the week day for the given holiday and year
+     *
+     * @param string $provider          the holiday provider (i.e. country/state) for which the holiday need to be
+     *                                  tested
+     * @param string $shortName         string the short name of the holiday to be checked against
+     * @param int    $year              holiday calendar year
+     * @param string $expectedDayOfWeek the expected week day (i.e. "Saturday", "Sunday", etc.)
+     */
+    public function assertDayOfWeek($provider, $shortName, $year, $expectedDayOfWeek)
+    {
+        $holidays = Yasumi::create($provider, $year);
+        $holiday  = $holidays->getHoliday($shortName);
+
+        $this->assertInstanceOf('Yasumi\Provider\\' . str_replace('/', '\\', $provider), $holidays);
+        $this->assertInstanceOf('Yasumi\Holiday', $holiday);
+        $this->assertTrue(isset($holiday));
+        $this->assertTrue($holidays->isHoliday($holiday));
+        $this->assertEquals($expectedDayOfWeek, $holiday->format('l'));
+
+        unset($holiday, $holidays);
+    }
 
     /**
      * Returns a list of random test dates used for assertion of holidays.
