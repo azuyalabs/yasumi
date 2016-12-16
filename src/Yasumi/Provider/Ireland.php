@@ -75,6 +75,11 @@ class Ireland extends AbstractProvider
      * observed in 1974.
      *
      * @link http://www.timeanddate.com/holidays/ireland/new-year-day
+     * @link http://www.irishstatutebook.ie/eli/1974/si/341
+     *
+     * @TODO : Check substitution of New Years Day when it falls on a Saturday. The Holidays (Employees) Act 1973
+     *       states that New Years Day is substituted the *next* day if it does not fall on a weekday. So what if it
+     *       falls on a Saturday?
      */
     public function calculateNewYearsDay()
     {
@@ -85,8 +90,8 @@ class Ireland extends AbstractProvider
         $holiday = $this->newYearsDay($this->year, $this->timezone, $this->locale);
         $this->addHoliday($holiday);
 
-        // Substitute holiday is on the next available weekday if a holiday falls on a Saturday or Sunday
-        if (in_array($holiday->format('w'), [0, 6])) {
+        // Substitute holiday is on the next available weekday if a holiday falls on a Sunday.
+        if (0 == $holiday->format('w')) {
             $substituteHoliday = clone $holiday;
             $substituteHoliday->modify('next monday');
 

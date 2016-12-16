@@ -40,14 +40,15 @@ class NewYearsDayTest extends IrelandBaseTestCase implements YasumiTestCaseInter
      *
      * @param int       $year     the year for which the holiday defined in this test needs to be tested
      * @param \DateTime $expected the expected date
+     *
      */
     public function testHoliday($year, $expected)
     {
         $date = new DateTime($expected, new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
 
-        // Whenever any public holiday doesn't fall on a weekday, the Monday following on it shall be a public holiday.
-        if (in_array($date->format('w'), [0, 6])) {
+        // Substitute holiday is on the next available weekday if a holiday falls on a Sunday.
+        if (0 == $date->format('w')) {
             $date->modify('next monday');
             $this->assertHoliday(self::REGION, 'substituteHoliday:' . self::HOLIDAY, $year, $date);
         }
