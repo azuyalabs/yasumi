@@ -42,7 +42,7 @@ Highlights<a name="highlights"></a>
 * Accounts for the date/time when holidays have been officially established and/or abolished
 * Composer ready, [PSR-2] compliant
 
-Yasumi currently supports 64 holiday providers (25 countries and 39 sub-regions):
+Yasumi currently supports 65 holiday providers (26 countries and 39 sub-regions):
 
 * Australia (including the sub-region Victoria)
 * Austria
@@ -55,6 +55,7 @@ Yasumi currently supports 64 holiday providers (25 countries and 39 sub-regions)
 * France (including the sub-regions Bas-Rhin, Haut-Rhin, Moselle)
 * Germany (including the sub-regions Baden-Württemberg, Bavaria, Berlin, Brandenburg, Bremen, Hamburg, Hesse, Lower Saxony, Mecklenburg-Vorpommern, North Rhine-Westphalia, Rhineland-Palatinate, Saarland, Saxony, Saxony-Anhalt, Schleswig-Holstein, Thuringia)
 * Greece
+* Ireland
 * Italy
 * Japan
 * Netherlands
@@ -236,6 +237,7 @@ The tests are organized in some test suites to make testing a bit more easier:
 * "France"        : For separately testing the France Holiday Provider
 * "Germany"       : For separately testing the Germany Holiday Provider
 * "Greece"        : For separately testing the Greece Holiday Provider
+* "Ireland"       : For separately testing the Ireland Holiday Provider
 * "Italy"         : For separately testing the Italy Holiday Provider
 * "Japan"         : For separately testing the Japan Holiday Provider
 * "Netherlands"   : For separately testing the Netherlands Holiday Provider
