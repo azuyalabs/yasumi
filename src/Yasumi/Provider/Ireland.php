@@ -51,8 +51,7 @@ class Ireland extends AbstractProvider
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
         $this->calculatePentecostMonday();
-
-        //$this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
+        $this->calculateChristmasDay();
         //$this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
 
         // Calculate other holidays
@@ -206,5 +205,31 @@ class Ireland extends AbstractProvider
         $this->addHoliday(new Holiday('octoberHoliday',
             ['en_IE' => 'October Holiday', 'ga_IE' => 'Lá Saoire i mí Dheireadh Fómhair'],
             new DateTime("previous monday $this->year-11-01", new DateTimeZone($this->timezone)), $this->locale));
+    }
+
+    /**
+     * Christmas Day.
+     *
+     * Most people in Ireland start Christmas celebrations on Christmas Eve (Oíche Nollag), including taking time
+     * off work.
+     *
+     * @link http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
+     */
+    public function calculateChristmasDay()
+    {
+        $holiday = new Holiday('christmasDay', ['en_IE' => 'Christmas Day', 'ga_IE' => 'Lá Nollag'],
+            new DateTime($this->year . '-12-25', new DateTimeZone($this->timezone)), $this->locale);
+
+        $this->addHoliday($holiday);
+
+        // Whenever Christmas Day does not fall on a weekday, the Tuesday following on it shall be a public holiday.
+        if (in_array($holiday->format('w'), [0, 6])) {
+            $substituteHoliday = clone $holiday;
+            $substituteHoliday->modify('next tuesday');
+
+            $this->addHoliday(new Holiday('substituteHoliday:' . $substituteHoliday->shortName, [
+                'en_IE' => $substituteHoliday->getName() . ' observed',
+            ], $substituteHoliday, $this->locale));
+        }
     }
 }
