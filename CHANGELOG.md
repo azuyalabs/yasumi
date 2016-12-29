@@ -3,6 +3,7 @@
 ## DEV/MASTER
 
 **Implemented enhancements:**
+
 - Added Holiday Provider for Ireland. ([stelgenhof](https://github.com/stelgenhof))
 - Added Holiday Provider for South Africa. ([stelgenhof](https://github.com/stelgenhof))
 - Added Holiday Provider for Austria. ([stelgenhof](https://github.com/stelgenhof))
@@ -10,6 +11,8 @@
 - Added 'en_US' translations for the Polish Independence Day and Constitution Day. [\#45](https://github.com/azuyalabs/yasumi/pull/45) ([AngelinCalu](https://github.com/AngelinCalu))
 
 **Resolved issues:**
+
+- The parameters of the `isHoliday` and `isWorkingDay` methods now allow for classes that derive from DateTime (like the very popular Carbon class). [\#49](https://github.com/azuyalabs/yasumi/issues/49) ([stelgenhof](https://github.com/stelgenhof))
 
 
 ## 1.5.0 (November 25, 2016)
