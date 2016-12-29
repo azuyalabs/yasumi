@@ -32,24 +32,29 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * @var int the object's current year
      */
     protected $year;
+
     /**
      * @var string the object's current timezone
      */
     protected $timezone;
+
     /**
      * @var string the object's current locale
      */
     protected $locale;
+
     /**
      * @var array list of the days of the week (the index of the weekdays) that are considered weekend days. Defaults
      *            to Sunday (0) and Saturday (6), as this is globally the common standard. (0 = Sunday, 1 = Monday,
      *            etc.)
      */
     protected $weekend_days = [0, 6];
+
     /**
      * @var Holiday[] list of dates of the available holidays
      */
     private $holidays = [];
+
     /**
      * @var TranslationsInterface global translations
      */
@@ -90,7 +95,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * @return int result where 0 means dates are equal, -1 the first date is before the second date, and 1 if the
      *             second date is after the first.
      */
-    private static function compareDates($dateA, $dateB)
+    private static function compareDates(DateTime $dateA, DateTime $dateB)
     {
         if ($dateA == $dateB) {
             return 0;
@@ -164,7 +169,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         }
 
         // If given date is a Yasumi\Holiday object
-        if (! is_null($date) && in_array($date, $this->holidays)) {
+        if ( ! is_null($date) && in_array($date, $this->holidays)) {
             return true;
         }
 
