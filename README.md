@@ -94,7 +94,7 @@ System Requirements<a name="requirements"></a>
 -------------------
 
 You need **PHP >= 5.5.0** to use `azuyalabs/yasumi` but the latest stable version of PHP is recommended.
-Yasumi is verified and tested on PHP 5.5, 5.6 and 7.0. Although Yasumi will work with PHP 5.5, only PHP version 5.6 or
+Yasumi is verified and tested on PHP 5.5, 5.6, 7.0 and 7.1. Although Yasumi will work with PHP 5.5, only PHP version 5.6 or
 higher is supported.
 
 
