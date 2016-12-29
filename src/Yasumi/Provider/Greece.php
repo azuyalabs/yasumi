@@ -92,7 +92,7 @@ class Greece extends AbstractProvider
 
     /**
      * Orthodox Easter
-     * 
+     *
      * @param int    $year
      * @param string $timezone
      *
