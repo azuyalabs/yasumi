@@ -108,7 +108,7 @@ class Yasumi
     public static function nextWorkingDay($class, DateTime $startDate, $workingDays = 1)
     {
         /* @TODO we should accept a timezone so we can accept int/string for $startDate */
-        if ( ! ($startDate instanceof DateTime)) {
+        if (! ($startDate instanceof DateTime)) {
             throw new Exception('Bad parameter, DateTime expected');
         }
 
@@ -119,7 +119,7 @@ class Yasumi
 
         while ($workingDays > 0) {
             $date->add(new DateInterval('P1D'));
-            if ( ! $provider || $provider->getYear() != $date->format('Y')) {
+            if (! $provider || $provider->getYear() != $date->format('Y')) {
                 $provider = self::create($class, $date->format('Y'));
             }
             if ($provider->isWorkingDay($date)) {
@@ -158,7 +158,7 @@ class Yasumi
             $providerClass = $class;
         }
 
-        if ( ! class_exists($providerClass) || $class === 'AbstractProvider') {
+        if (! class_exists($providerClass) || $class === 'AbstractProvider') {
             throw new InvalidArgumentException(sprintf('Unable to find holiday provider "%s".', $class));
         }
 
@@ -168,18 +168,18 @@ class Yasumi
         }
 
         // Load internal locales variable
-        if ( ! isset(static::$locales)) {
+        if (! isset(static::$locales)) {
             static::$locales = self::getAvailableLocales();
         }
 
         // Load internal translations variable
-        if ( ! isset(static::$globalTranslations)) {
+        if (! isset(static::$globalTranslations)) {
             static::$globalTranslations = new Translations(static::$locales);
             static::$globalTranslations->loadTranslations(__DIR__ . '/data/translations');
         }
 
         // Assert locale input
-        if ( ! in_array($locale, static::$locales)) {
+        if (! in_array($locale, static::$locales)) {
             throw new UnknownLocaleException(sprintf('Locale "%s" is not a valid locale.', $locale));
         }
 
@@ -207,7 +207,7 @@ class Yasumi
     public static function prevWorkingDay($class, DateTime $startDate, $workingDays = 1)
     {
         /* @TODO we should accept a timezone so we can accept int/string for $startDate */
-        if ( ! ($startDate instanceof DateTime)) {
+        if (! ($startDate instanceof DateTime)) {
             throw new Exception('Bad parameter, DateTime expected');
         }
 
@@ -218,7 +218,7 @@ class Yasumi
 
         while ($workingDays > 0) {
             $date->sub(new DateInterval('P1D'));
-            if ( ! $provider || $provider->getYear() != $date->format('Y')) {
+            if (! $provider || $provider->getYear() != $date->format('Y')) {
                 $provider = self::create($class, $date->format('Y'));
             }
             if ($provider->isWorkingDay($date)) {
