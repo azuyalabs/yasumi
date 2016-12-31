@@ -129,16 +129,18 @@ class Sweden extends AbstractProvider
      */
     public function calculateNationalDay()
     {
-        // Prior to 1983, the day was celebrated as Svenska flaggans dag
-        if ($this->year >= 1916 and $this->year < 1983) {
-            $this->addHoliday(new Holiday('nationalDay', ['sv_SE' => 'Svenska flaggans dag'],
-                new DateTime("$this->year-6-6", new DateTimeZone($this->timezone)), $this->locale));
+        if ($this->year < 1916) {
+            return;
         }
+
+        $holiday_name = 'Svenska flaggans dag';
 
         // Since 1983 this day was named 'Sveriges nationaldag'
         if ($this->year >= 1983) {
-            $this->addHoliday(new Holiday('nationalDay', ['sv_SE' => 'Sveriges nationaldag'],
-                new DateTime("$this->year-6-6", new DateTimeZone($this->timezone)), $this->locale));
+            $holiday_name = 'Sveriges nationaldag';
         }
+
+        $this->addHoliday(new Holiday('nationalDay', ['sv_SE' => $holiday_name],
+            new DateTime("$this->year-6-6", new DateTimeZone($this->timezone)), $this->locale));
     }
 }
