@@ -63,6 +63,7 @@ Yasumi currently supports 65 holiday providers (26 countries and 39 sub-regions)
 * Norway
 * Poland
 * Portugal
+* Romania
 * Slovakia
 * South Africa
 * Spain (including the sub-regions Andalusia, Aragon, Asturias, Balearic Islands, Basque Country, Canary Islands, Cantabria, Castile and León, Castile-La Mancha, Catalonia, Ceuta, Madrid Autonomous Community, Extremadura, Galicia, La Rioja, Melilla, Navarra Chartered Community, Murcia Region, Valencian Community)
@@ -245,6 +246,7 @@ The tests are organized in some test suites to make testing a bit more easier:
 * "Norway"        : For separately testing the Norway Holiday Provider
 * "Poland"        : For separately testing the Poland Holiday Provider
 * "Portugal"      : For separately testing the Portugal Holiday Provider
+* "Romania"       : For separately testing the Romania Holiday Provider
 * "Slovakia"      : For separately testing the Slovakia Holiday Provider
 * "South Africa"  : For separately testing the South Africa Holiday Provider
 * "Spain"         : For separately testing the Spain Holiday Provider
