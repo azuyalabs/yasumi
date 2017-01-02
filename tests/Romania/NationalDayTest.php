@@ -28,6 +28,11 @@ class NationalDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
     const HOLIDAY = 'nationalDay';
 
     /**
+     * The year in which the holiday was first established
+     */
+    const ESTABLISHMENT_YEAR = 1866;
+
+    /**
      * Tests National Day on or after 1990.
      */
     public function testNationalDayOnAfter1990()
@@ -48,13 +53,22 @@ class NationalDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
     }
 
     /**
-     * Tests National Day before 1948.
+     * Tests National Day between 1866 - 1947.
      */
-    public function testNationalDayBefore1948()
+    public function testNationalDayBetween1866_1947()
     {
-        $year = $this->generateRandomYear(1000,1947);
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR,1947);
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-05-10", new DateTimeZone(self::TIMEZONE)));
+    }
+
+    /**
+     * Tests National Day before 1865.
+     */
+    public function testNationalDayBefore1865()
+    {
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR-1));
     }
 
     /**
@@ -62,7 +76,7 @@ class NationalDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => 'Ziua Națională']);
     }
 
@@ -71,6 +85,6 @@ class NationalDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR), Holiday::TYPE_NATIONAL);
     }
 }

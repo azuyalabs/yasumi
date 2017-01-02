@@ -64,6 +64,7 @@ class Romania extends AbstractProvider
         $this->calculateStAndrewDay();  //since 24.07.2012 (Law 147/2012), celebrated on 30th of November
         $this->calculateNationalDay();  //after 1990, celebrated on December 1st
         $this->calculateConstantinBrancusiDay();
+        $this->calculateChildrensDay(); // Since 18.11.2016 (Law 220/2016), Celebrated on 1st of June
     }
 
 
@@ -113,10 +114,10 @@ class Romania extends AbstractProvider
      */
     public function calculateDayAfterNewYearsDay()
     {
-        return new Holiday('dayAfterNewYearsDay', [
+        $this->addHoliday(new Holiday('dayAfterNewYearsDay', [
                 'en_US' => 'Day after New Year\'s Day',
-                'ro_RO' => 'Anul Nou'
-            ], new DateTime("$this->year-01-02", new DateTimeZone($this->timezone)), $this->locale);
+                'ro_RO' => 'A doua zi după Anul Nou'
+            ], new DateTime("$this->year-01-02", new DateTimeZone($this->timezone)), $this->locale));
     }
 
 
@@ -134,10 +135,10 @@ class Romania extends AbstractProvider
     {
         // The law is official since 21.12.2014.
         if ($this->year > 2014) {
-            return new Holiday('unitedPrincipalitiesDay', [
+            $this->addHoliday(new Holiday('unitedPrincipalitiesDay', [
                     'en_US' => 'Union Day / Small Union',
                     'ro_RO' => 'Unirea Principatelor Române / Mica Unire'
-                ], new DateTime("$this->year-01-24", new DateTimeZone($this->timezone)), $this->locale);
+                ], new DateTime("$this->year-01-24", new DateTimeZone($this->timezone)), $this->locale));
         }
     }
 
@@ -151,10 +152,10 @@ class Romania extends AbstractProvider
     public function calculateStAndrewDay()
     {
         if ($this->year >= 2012) {
-            return new Holiday('stAndrewDay', [
+            $this->addHoliday(new Holiday('stAndrewDay', [
                     'en_US' => 'Saint Andrew\'s Day',
                     'ro_RO' => 'Sfântul Andrei'
-                ], new DateTime("$this->year-11-30", new DateTimeZone($this->timezone)), $this->locale);
+                ], new DateTime($this->year."-11-30", new DateTimeZone($this->timezone)), $this->locale));
         }
     }
 
@@ -168,10 +169,35 @@ class Romania extends AbstractProvider
     public function calculateConstantinBrancusiDay()
     {
         if ($this->year >= 2016) {
-            return new Holiday('constantinBrancusiDay', [
+            $this->addHoliday(new Holiday('constantinBrancusiDay', [
                     'en_US' => 'Constantin Brâncuși day',
                     'ro_RO' => 'Ziua Constantin Brâncuși'
-                ], new DateTime("$this->year-02-19", new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OBSERVANCE);
+                ], new DateTime("$this->year-02-19", new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OBSERVANCE));
+        }
+    }
+
+    /*
+     * Children's Day
+     *
+     * International Children's Day becamed a public Holiday in Romania starting with 2017
+     * according to the Law 220/2016 (18.11.2016)
+     *
+     * @link https://en.wikipedia.org/wiki/Children%27s_Day
+     */
+    public function calculateChildrensDay()
+    {
+        if ($this->year >= 1950 && $this->year <= 2016) {
+             $this->addHoliday(new Holiday('childrensDay', [
+                    'en_US' => 'International Children\'s Day',
+                    'ro_RO' => 'Ziua Copilului'
+                ], new DateTime("$this->year-06-01", new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OBSERVANCE));
+        }
+        
+        if ($this->year >= 2017) {
+            $this->addHoliday(new Holiday('childrensDay', [
+                    'en_US' => 'International Children\'s Day',
+                    'ro_RO' => 'Ziua Copilului'
+                ], new DateTime("$this->year-06-01", new DateTimeZone($this->timezone)), $this->locale));
         }
     }
 

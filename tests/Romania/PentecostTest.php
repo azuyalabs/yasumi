@@ -29,9 +29,14 @@ class PentecostTest extends RomaniaBaseTestCase implements YasumiTestCaseInterfa
     const HOLIDAY = 'pentecost';
 
     /**
-     * Tests the holiday defined in this test.
+     * The year in which the holiday was first established
      */
-    public function testHoliday()
+    const ESTABLISHMENT_YEAR = 2008;
+    
+    /**
+     * Tests the Pentecost Day on and after 2008.
+     */
+    public function testPentecostDayOnAfter2008()
     {
         $year = 2020;
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
@@ -39,11 +44,20 @@ class PentecostTest extends RomaniaBaseTestCase implements YasumiTestCaseInterfa
     }
 
     /**
+     * Tests the Pentecost Day before 2008.
+     */
+    public function testPentecostDayBefore2008()
+    {
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
+    }
+
+    /**
      * Tests the translated name of the holiday defined in this test.
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => 'Rusaliile']);
     }
 
@@ -52,6 +66,6 @@ class PentecostTest extends RomaniaBaseTestCase implements YasumiTestCaseInterfa
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR), Holiday::TYPE_NATIONAL);
     }
 }

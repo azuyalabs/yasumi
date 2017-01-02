@@ -37,13 +37,14 @@ class RomaniaTest extends RomaniaBaseTestCase
             'internationalWorkersDay',
             'easter',
             'easterMonday',
-            'christmasDay',
-            'secondChristmasDay',
+            'childrensDay',
             'pentecost',
             'pentecostMonday',
             'assumptionOfMary',
             'stAndrewDay',
             'nationalDay',
+            'christmasDay',
+            'secondChristmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
     }
 

@@ -18,35 +18,34 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class PentecostMondayTest
- * @package Yasumi\tests\Romania
+ * Class for testing Children's Day in Romania.
  */
-class PentecostMondayTest extends RomaniaBaseTestCase implements YasumiTestCaseInterface
+class ChildrensDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday to be tested
      */
-    const HOLIDAY = 'pentecostMonday';
+    const HOLIDAY = 'childrensDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 2008;
+    const ESTABLISHMENT_YEAR = 1950;
 
-   /**
-     * Tests the Pentecost Monday Day on and after 2008.
+    /**
+     * Tests Children's Day on or after 1950.
      */
-    public function testPentecostMondayOnAfter2008()
+    public function testChildrensDayOnAfter1950()
     {
-        $year = 2020;
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-06-08", new DateTimeZone(self::TIMEZONE)));
+            new DateTime("$year-06-01", new DateTimeZone(self::TIMEZONE)));
     }
 
     /**
-     * Tests the Pentecost Day before 2008.
+     * Tests Children's Day before 1950.
      */
-    public function testPentecostMondayBefore2008()
+    public function testChildrensDayBefore1950()
     {
         $this->assertNotHoliday(self::REGION, self::HOLIDAY,
             $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
@@ -58,7 +57,7 @@ class PentecostMondayTest extends RomaniaBaseTestCase implements YasumiTestCaseI
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'A doua zi de Rusalii']);
+            [self::LOCALE => 'Ziua Copilului']);
     }
 
     /**
@@ -66,6 +65,7 @@ class PentecostMondayTest extends RomaniaBaseTestCase implements YasumiTestCaseI
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR), Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2016), Holiday::TYPE_OBSERVANCE);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(2017), Holiday::TYPE_NATIONAL);
     }
 }
