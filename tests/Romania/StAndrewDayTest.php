@@ -18,33 +18,33 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing United Principalities Day in Romania.
+ * Class for testing Saint Andrew Day in Romania.
  */
-class UnitedPrincipalitiesDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInterface
+class StAndrewDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'unitedPrincipalitiesDay';
+    const HOLIDAY = 'stAndrewDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 2015;
+    const ESTABLISHMENT_YEAR = 2012;
 
     /**
-     * Tests united Principalities Day on or after 2015.
+     * Tests Saint Andrew Day on or after 2012.
      */
-    public function testUnitedPrincipalitiesDayOnAfter2015()
+    public function testStAndrewDayOnAfter2012()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-1-24", new DateTimeZone(self::TIMEZONE)));
+            new DateTime("$year-11-30", new DateTimeZone(self::TIMEZONE)));
     }
     /**
-     * Tests unitedPrincipalitiesDay before 2015.
+     * Tests Saint Andrew before 2012.
      */
-    public function testUnitedPrincipalitiesDayBefore2015()
+    public function testStAndrewDayBefore2012()
     {
         $this->assertNotHoliday(self::REGION, self::HOLIDAY,
             $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
@@ -56,7 +56,7 @@ class UnitedPrincipalitiesDayTest extends RomaniaBaseTestCase implements YasumiT
     public function testTranslation()
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Unirea Principatelor Române / Mica Unire']);
+            [self::LOCALE => 'Sfântul Andrei']);
     }
 
     /**

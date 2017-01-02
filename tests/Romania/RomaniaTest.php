@@ -42,8 +42,8 @@ class RomaniaTest extends RomaniaBaseTestCase
             'pentecost',
             'pentecostMonday',
             'assumptionOfMary',
-            //'stAndrewDay',
-            //'nationalDay',
+            'stAndrewDay',
+            'nationalDay',
         ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
     }
 

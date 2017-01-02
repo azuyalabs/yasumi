@@ -45,10 +45,10 @@ class DayAfterNewYearsDayTest extends RomaniaBaseTestCase implements YasumiTestC
      *
      * @return array list of test dates for the holiday defined in this test
      */
-    public function HolidayDataProvider()
-    {
-        return $this->generateRandomDates(1, 2, self::TIMEZONE);
-    }
+   public function HolidayDataProvider()
+   {
+       return $this->generateRandomDates(1, 2, self::TIMEZONE);
+   }
 
     /**
      * Tests the translated name of the holiday defined in this test.
