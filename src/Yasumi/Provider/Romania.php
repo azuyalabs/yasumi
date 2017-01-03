@@ -187,7 +187,7 @@ class Romania extends AbstractProvider
     public function calculateChildrensDay()
     {
         if ($this->year >= 1950 && $this->year <= 2016) {
-             $this->addHoliday(new Holiday('childrensDay', [
+            $this->addHoliday(new Holiday('childrensDay', [
                     'en_US' => 'International Children\'s Day',
                     'ro_RO' => 'Ziua Copilului'
                 ], new DateTime("$this->year-06-01", new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OBSERVANCE));
