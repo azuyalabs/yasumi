@@ -57,7 +57,7 @@ class NationalDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
      */
     public function testNationalDayBetween1866_1947()
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR,1947);
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1947);
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-05-10", new DateTimeZone(self::TIMEZONE)));
     }
