@@ -9,7 +9,6 @@
  *
  * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
-
 namespace Yasumi\tests\Romania;
 
 use Yasumi\Holiday;
@@ -24,7 +23,6 @@ class RomaniaTest extends RomaniaBaseTestCase
      * @var int year random year number used for all tests in this Test Case
      */
     protected $year;
-
     /**
      * Tests if all national holidays in Romania are defined by the provider class
      */
@@ -47,7 +45,6 @@ class RomaniaTest extends RomaniaBaseTestCase
             'secondChristmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
     }
-
     /**
      * Tests if all observed holidays in Romania are defined by the provider class
      */
@@ -57,7 +54,6 @@ class RomaniaTest extends RomaniaBaseTestCase
                 'constantinBrancusiDay',
             ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
-
     /**
      * Tests if all seasonal holidays in Romania are defined by the provider class
      */
@@ -65,7 +61,6 @@ class RomaniaTest extends RomaniaBaseTestCase
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
     }
-
     /**
      * Tests if all bank holidays in Romania are defined by the provider class
      */
@@ -73,7 +68,6 @@ class RomaniaTest extends RomaniaBaseTestCase
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
-
     /**
      * Tests if all other holidays in Romania are defined by the provider class
      */
@@ -81,7 +75,6 @@ class RomaniaTest extends RomaniaBaseTestCase
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
-
     /**
      * Initial setup of this Test Case
      */
