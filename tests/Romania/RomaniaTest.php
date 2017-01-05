@@ -50,9 +50,17 @@ class RomaniaTest extends RomaniaBaseTestCase
      */
     public function testObservedHolidays()
     {
-        $this->assertDefinedHolidays([
-                'constantinBrancusiDay',
-            ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+        $ObservedHolidays = [];
+
+        if ($this->year >= 2016) {
+            $ObservedHolidays[] = 'constantinBrancusiDay';
+        }
+
+        if ($this->year >= 1950 && $this->year <= 2016) {
+            $ObservedHolidays[] = 'childrensDay';
+        }
+
+        $this->assertDefinedHolidays($ObservedHolidays, self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
     /**
      * Tests if all seasonal holidays in Romania are defined by the provider class
