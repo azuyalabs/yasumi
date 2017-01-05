@@ -25,6 +25,7 @@ return [
     'nl_NL' => 'Allerheiligen',
     'pl_PL' => 'Uroczystość Wszystkich Świętych',
     'pt_PT' => 'Dia de todos os Santos',
+    'ro_RO' => 'Ziua tuturor sfinților',
     'sk_SK' => 'Sviatok Všetkých svätých',
     'sv_SE' => 'alla helgons dag',
 ];

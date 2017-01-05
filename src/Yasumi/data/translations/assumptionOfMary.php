@@ -24,5 +24,6 @@ return [
     'nl_NL' => 'Onze Lieve Vrouw hemelvaart',
     'pl_PL' => 'Wniebowzięcie Najświętszej Marii Panny',
     'pt_PT' => 'Assunção de Nossa Senhora',
+    'ro_RO' => 'Adormirea Maicii Domnului',
     'sk_SK' => 'Nanebovzatie Panny Márie',
 ];

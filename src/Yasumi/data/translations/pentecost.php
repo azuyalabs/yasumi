@@ -23,6 +23,7 @@ return [
     'nl_BE' => 'Eerste Pinksterdag',
     'nl_NL' => 'Eerste Pinksterdag',
     'pl_PL' => 'Zielone Świątki',
+    'ro_RO' => 'Rusaliile',
     'ru_UA' => 'Троица',
     'sv_SE' => 'Pingstdagen',
     'uk_UA' => 'Трійця',
