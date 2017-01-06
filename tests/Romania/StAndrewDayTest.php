@@ -41,6 +41,7 @@ class StAndrewDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-11-30", new DateTimeZone(self::TIMEZONE)));
     }
+
     /**
      * Tests Saint Andrew before 2012.
      */
@@ -55,8 +56,8 @@ class StAndrewDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Sfântul Andrei']);
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Sfântul Andrei']);
     }
 
     /**
@@ -64,6 +65,7 @@ class StAndrewDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR), Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL);
     }
 }

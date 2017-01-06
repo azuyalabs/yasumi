@@ -41,6 +41,7 @@ class ConstantinBrancusiDayTest extends RomaniaBaseTestCase implements YasumiTes
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-02-19", new DateTimeZone(self::TIMEZONE)));
     }
+
     /**
      * Tests Constantin Brancusi Day before 2016.
      */
@@ -55,8 +56,8 @@ class ConstantinBrancusiDayTest extends RomaniaBaseTestCase implements YasumiTes
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Ziua Constantin Brâncuși']);
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Ziua Constantin Brâncuși']);
     }
 
     /**
@@ -64,6 +65,7 @@ class ConstantinBrancusiDayTest extends RomaniaBaseTestCase implements YasumiTes
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR), Holiday::TYPE_OBSERVANCE);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_OBSERVANCE);
     }
 }

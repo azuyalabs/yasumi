@@ -41,6 +41,7 @@ class AssumptionOfMaryTest extends RomaniaBaseTestCase implements YasumiTestCase
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
             new DateTime("$year-8-15", new DateTimeZone(self::TIMEZONE)));
     }
+
     /**
      * Tests Assumption of Mary Day before 2008.
      */
@@ -49,14 +50,14 @@ class AssumptionOfMaryTest extends RomaniaBaseTestCase implements YasumiTestCase
         $this->assertNotHoliday(self::REGION, self::HOLIDAY,
             $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
     }
-    
+
     /**
      * Tests the translated name of the holiday defined in this test.
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Adormirea Maicii Domnului']);
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Adormirea Maicii Domnului']);
     }
 
     /**
@@ -64,6 +65,7 @@ class AssumptionOfMaryTest extends RomaniaBaseTestCase implements YasumiTestCase
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR), Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL);
     }
 }

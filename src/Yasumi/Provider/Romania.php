@@ -79,6 +79,65 @@ class Romania extends AbstractProvider
      * @link https://en.wikipedia.org/wiki/Great_Union_Day
      * @link https://ro.wikipedia.org/wiki/Ziua_na%C8%9Bional%C4%83_a_Rom%C3%A2niei
      */
+
+    public function calculateDayAfterNewYearsDay()
+    {
+        $this->addHoliday(new Holiday('dayAfterNewYearsDay', [
+            'en_US' => 'Day after New Year\'s Day',
+            'ro_RO' => 'A doua zi după Anul Nou'
+        ], new DateTime("$this->year-01-02", new DateTimeZone($this->timezone)), $this->locale));
+    }
+
+
+    /*
+     * Day after New Year's Day
+     *
+     * 2nd of January one of Romania's official non-working holidays
+     *
+     * @link https://en.wikipedia.org/wiki/Public_holidays_in_Romania
+     */
+
+    public function calculateUnitedPrincipalitiesDay()
+    {
+        // The law is official since 21.12.2014.
+        if ($this->year > 2014) {
+            $this->addHoliday(new Holiday('unitedPrincipalitiesDay', [
+                'en_US' => 'Union Day / Small Union',
+                'ro_RO' => 'Unirea Principatelor Române / Mica Unire'
+            ], new DateTime("$this->year-01-24", new DateTimeZone($this->timezone)), $this->locale));
+        }
+    }
+
+
+    /*
+     * Celebration of United Principalities
+     *
+     * On 24 January 1862, the Principality of Moldavia and the Principality of Wallachia
+     * formally united to create the Romanian United Principalities.
+     * It is officially a non-working holiday since 7 October 2016.
+     *
+     *
+     * @link https://en.wikipedia.org/wiki/United_Principalities
+     */
+
+    public function calculateStAndrewDay()
+    {
+        if ($this->year >= 2012) {
+            $this->addHoliday(new Holiday('stAndrewDay', [
+                'en_US' => 'Saint Andrew\'s Day',
+                'ro_RO' => 'Sfântul Andrei'
+            ], new DateTime($this->year . "-11-30", new DateTimeZone($this->timezone)), $this->locale));
+        }
+    }
+
+    /*
+     * St. Andrew's day
+     *
+     * Saint Andrew is the patron saint of Romania.
+     *
+     * @link https://en.wikipedia.org/wiki/St._Andrew%27s_Day
+     */
+
     public function calculateNationalDay()
     {
         $national_day = null;
@@ -96,66 +155,11 @@ class Romania extends AbstractProvider
             $national_day = "$this->year-05-10";
         }
 
-        if (!is_null($national_day)) {
+        if (! is_null($national_day)) {
             $this->addHoliday(new Holiday('nationalDay', [
                 'en_US' => 'National Day',
                 'ro_RO' => 'Ziua Națională'
-                ], new DateTime($national_day, new DateTimeZone($this->timezone)), $this->locale));
-        }
-    }
-
-
-    /*
-     * Day after New Year's Day
-     *
-     * 2nd of January one of Romania's official non-working holidays
-     *
-     * @link https://en.wikipedia.org/wiki/Public_holidays_in_Romania
-     */
-    public function calculateDayAfterNewYearsDay()
-    {
-        $this->addHoliday(new Holiday('dayAfterNewYearsDay', [
-                'en_US' => 'Day after New Year\'s Day',
-                'ro_RO' => 'A doua zi după Anul Nou'
-            ], new DateTime("$this->year-01-02", new DateTimeZone($this->timezone)), $this->locale));
-    }
-
-
-    /*
-     * Celebration of United Principalities
-     *
-     * On 24 January 1862, the Principality of Moldavia and the Principality of Wallachia
-     * formally united to create the Romanian United Principalities.
-     * It is officially a non-working holiday since 7 October 2016.
-     *
-     *
-     * @link https://en.wikipedia.org/wiki/United_Principalities
-     */
-    public function calculateUnitedPrincipalitiesDay()
-    {
-        // The law is official since 21.12.2014.
-        if ($this->year > 2014) {
-            $this->addHoliday(new Holiday('unitedPrincipalitiesDay', [
-                    'en_US' => 'Union Day / Small Union',
-                    'ro_RO' => 'Unirea Principatelor Române / Mica Unire'
-                ], new DateTime("$this->year-01-24", new DateTimeZone($this->timezone)), $this->locale));
-        }
-    }
-
-    /*
-     * St. Andrew's day
-     *
-     * Saint Andrew is the patron saint of Romania.
-     *
-     * @link https://en.wikipedia.org/wiki/St._Andrew%27s_Day
-     */
-    public function calculateStAndrewDay()
-    {
-        if ($this->year >= 2012) {
-            $this->addHoliday(new Holiday('stAndrewDay', [
-                    'en_US' => 'Saint Andrew\'s Day',
-                    'ro_RO' => 'Sfântul Andrei'
-                ], new DateTime($this->year."-11-30", new DateTimeZone($this->timezone)), $this->locale));
+            ], new DateTime($national_day, new DateTimeZone($this->timezone)), $this->locale));
         }
     }
 
@@ -166,13 +170,15 @@ class Romania extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Constantin_Br%C3%A2ncu%C8%99i
      */
+
     public function calculateConstantinBrancusiDay()
     {
         if ($this->year >= 2016) {
             $this->addHoliday(new Holiday('constantinBrancusiDay', [
-                    'en_US' => 'Constantin Brâncuși day',
-                    'ro_RO' => 'Ziua Constantin Brâncuși'
-                ], new DateTime("$this->year-02-19", new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OBSERVANCE));
+                'en_US' => 'Constantin Brâncuși day',
+                'ro_RO' => 'Ziua Constantin Brâncuși'
+            ], new DateTime("$this->year-02-19", new DateTimeZone($this->timezone)), $this->locale,
+                Holiday::TYPE_OBSERVANCE));
         }
     }
 
@@ -188,16 +194,17 @@ class Romania extends AbstractProvider
     {
         if ($this->year >= 1950 && $this->year <= 2016) {
             $this->addHoliday(new Holiday('childrensDay', [
-                    'en_US' => 'International Children\'s Day',
-                    'ro_RO' => 'Ziua Copilului'
-                ], new DateTime("$this->year-06-01", new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OBSERVANCE));
+                'en_US' => 'International Children\'s Day',
+                'ro_RO' => 'Ziua Copilului'
+            ], new DateTime("$this->year-06-01", new DateTimeZone($this->timezone)), $this->locale,
+                Holiday::TYPE_OBSERVANCE));
         }
-        
+
         if ($this->year >= 2017) {
             $this->addHoliday(new Holiday('childrensDay', [
-                    'en_US' => 'International Children\'s Day',
-                    'ro_RO' => 'Ziua Copilului'
-                ], new DateTime("$this->year-06-01", new DateTimeZone($this->timezone)), $this->locale));
+                'en_US' => 'International Children\'s Day',
+                'ro_RO' => 'Ziua Copilului'
+            ], new DateTime("$this->year-06-01", new DateTimeZone($this->timezone)), $this->locale));
         }
     }
 

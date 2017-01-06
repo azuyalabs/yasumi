@@ -9,6 +9,7 @@
  *
  * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
+
 namespace Yasumi\tests\Base;
 
 use DateTime;

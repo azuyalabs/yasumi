@@ -33,7 +33,7 @@ class PentecostMondayTest extends RomaniaBaseTestCase implements YasumiTestCaseI
      */
     const ESTABLISHMENT_YEAR = 2008;
 
-   /**
+    /**
      * Tests the Pentecost Monday Day on and after 2008.
      */
     public function testPentecostMondayOnAfter2008()
@@ -57,8 +57,8 @@ class PentecostMondayTest extends RomaniaBaseTestCase implements YasumiTestCaseI
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'A doua zi de Rusalii']);
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'A doua zi de Rusalii']);
     }
 
     /**
@@ -66,6 +66,7 @@ class PentecostMondayTest extends RomaniaBaseTestCase implements YasumiTestCaseI
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR), Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL);
     }
 }
