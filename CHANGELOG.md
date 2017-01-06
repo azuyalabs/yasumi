@@ -4,9 +4,17 @@
 
 **Implemented enhancements:**
 
-- Added Holiday Provider for Ireland. ([stelgenhof](https://github.com/stelgenhof))
-- Added Holiday Provider for South Africa. ([stelgenhof](https://github.com/stelgenhof))
-- Added Holiday Provider for Austria. ([stelgenhof](https://github.com/stelgenhof))
+**Resolved issues:**
+
+
+## 1.6.0 (January 6, 2017)
+
+**Implemented enhancements:**
+
+- Added Holiday Provider for Romania. [\#52](https://github.com/azuyalabs/yasumi/pull/52) ([AngelinCalu](https://github.com/AngelinCalu))
+- Added Holiday Provider for Ireland. [stelgenhof](https://github.com/stelgenhof)
+- Added Holiday Provider for South Africa. [stelgenhof](https://github.com/stelgenhof)
+- Added Holiday Provider for Austria. [stelgenhof](https://github.com/stelgenhof)
 - Refactored the calculation of Orthodox Easter using the function from ChristianHolidays.php. [\#47](https://github.com/azuyalabs/yasumi/pull/47) ([AngelinCalu](https://github.com/AngelinCalu))
 - Added 'en_US' translations for the Polish Independence Day and Constitution Day. [\#45](https://github.com/azuyalabs/yasumi/pull/45) ([AngelinCalu](https://github.com/AngelinCalu))
 

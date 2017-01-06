@@ -42,7 +42,7 @@ Highlights<a name="highlights"></a>
 * Accounts for the date/time when holidays have been officially established and/or abolished
 * Composer ready, [PSR-2] compliant
 
-Yasumi currently supports 65 holiday providers (26 countries and 39 sub-regions):
+Yasumi currently supports 66 holiday providers (27 countries and 39 sub-regions):
 
 * Australia (including the sub-region Victoria)
 * Austria
