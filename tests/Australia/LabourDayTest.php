@@ -53,6 +53,8 @@ abstract class LabourDayTest extends AustraliaBaseTestCase implements YasumiTest
     public function HolidayDataProvider()
     {
         $data = [];
+
+        return $data;
     }
 
     /**
