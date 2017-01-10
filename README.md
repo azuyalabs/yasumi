@@ -113,7 +113,6 @@ Basic Usage<a name="usage"></a>
 -------
 
 ```php
-<?php
 // Require the composer auto loader
 require 'vendor/autoload.php';
 
@@ -121,7 +120,7 @@ use Yasumi\Filters\OfficialHolidaysFilter;
 use Yasumi\Yasumi;
 
 // Use the factory to create a new holiday provider instance
-$holidays = Yasumi::create('USA', 2016);
+$holidays = Yasumi::create('USA', 2017);
 
 // Get the number of defined holidays
 echo $holidays->count() . PHP_EOL;
@@ -132,6 +131,7 @@ foreach ($holidays->getHolidayNames() as $name) {
     echo $name . PHP_EOL;
 }
 // 'newYearsDay'
+// substituteHoliday:newYearsDay
 // 'martinLutherKingDay'
 // 'washingtonsBirthday'
 // 'memorialDay'
@@ -142,23 +142,23 @@ foreach ($holidays->getHolidayNames() as $name) {
 // 'veteransDay'
 // 'thanksgivingDay'
 // 'christmasDay'
-// 'substituteHoliday:christmasDay'
 
 // Get a list all of the holiday dates
 foreach ($holidays->getHolidayDates() as $date) {
     echo $date . PHP_EOL;
 }
-// 2016-01-01
-// 2016-01-18
-// 2016-02-15
-// 2016-05-30
-// 2016-07-04
-// 2016-09-05
-// 2016-10-10
-// 2016-11-11
-// 2016-11-24
-// 2016-12-25
-// 2016-12-26
+// 2017-01-01
+// 2017-01-02
+// 2017-01-16
+// 2017-02-20
+// 2017-05-29
+// 2017-07-04
+// 2017-09-04
+// 2017-10-09
+// 2017-11-11
+// 2017-11-23
+// 2017-12-25
+
 
 // Get a holiday object for Independence Day
 $independenceDay = $holidays->getHoliday('independenceDay');
@@ -169,7 +169,7 @@ echo $independenceDay->getName() . PHP_EOL;
 
 // Get the date
 echo $independenceDay . PHP_EOL;
-// '2016-07-04'
+// '2017-07-04'
 
 // Get the type of holiday
 echo $independenceDay->getType() . PHP_EOL;
@@ -182,7 +182,7 @@ echo json_encode($independenceDay, JSON_PRETTY_PRINT);
 //    "translations": {
 //    "en_US": "Independence Day"
 //    },
-//    "date": "2016-07-04 00:00:00.000000",
+//    "date": "2017-07-04 00:00:00.000000",
 //    "timezone_type": 3,
 //    "timezone": "America\/New_York"
 // }
@@ -204,9 +204,9 @@ foreach ($official as $day) {
 // 'Boxing Day'
 
 // Calculate number of business/working days until a date
-$nextBusinessDay = Yasumi::nextWorkingDay('USA', new \DateTime('2016-07-01', new \DateTimeZone('America/New_York')));
+$nextBusinessDay = Yasumi::nextWorkingDay('USA', new \DateTime('2017-07-01', new \DateTimeZone('America/New_York')));
 echo $nextBusinessDay->format('Y-m-d') . PHP_EOL;
-// 2016-07-05
+// 2017-07-03
 ```
 
 
@@ -220,7 +220,7 @@ folder:
 $ phpunit
 ```
 
-Yasumi has over 1500 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
+Yasumi has over 1700 unit tests with multiple iterations of assertions. Since Yasumi is using randomized years for asserting
 the holidays, multiple iterations of assertions are executed to ensure the holidays are calculated in a large number
 of years.
 
@@ -248,10 +248,10 @@ The tests are organized in some test suites to make testing a bit more easier:
 * "Portugal"      : For separately testing the Portugal Holiday Provider
 * "Romania"       : For separately testing the Romania Holiday Provider
 * "Slovakia"      : For separately testing the Slovakia Holiday Provider
-* "South Africa"  : For separately testing the South Africa Holiday Provider
+* "SouthAfrica"   : For separately testing the South Africa Holiday Provider
 * "Spain"         : For separately testing the Spain Holiday Provider
 * "Sweden"        : For separately testing the Sweden Holiday Provider
-* "USA"           : For separately testing the USA Holiday Provider
+* "USA"           : For separately testing the United States Holiday Provider
 * "Ukraine"       : For separately testing the Ukraine Holiday Provider
 * "UnitedKingdom" : For separately testing the United Kingdom Holiday Provider
 
