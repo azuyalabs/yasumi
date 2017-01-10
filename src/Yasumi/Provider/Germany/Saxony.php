@@ -49,10 +49,10 @@ class Saxony extends Germany
     /**
      * Calculates the Day of repentance and prayer.
      *
-     * Buß- und Bettag (Day of repentance and prayer) was a public holiday in Germany and is still a public holiday in 
-     * Saxony. In Germany, Protestant church bodies of Lutheran, Reformed (Calvinist) and United denominational 
-     * affiliation celebrate a day of repentance and prayer. It is now celebrated in November on the penultimate 
-     * Wednesday before the beginning of the Protestant liturgical year on the first Sunday of Advent; in other words, 
+     * Buß- und Bettag (Day of repentance and prayer) was a public holiday in Germany and is still a public holiday in
+     * Saxony. In Germany, Protestant church bodies of Lutheran, Reformed (Calvinist) and United denominational
+     * affiliation celebrate a day of repentance and prayer. It is now celebrated in November on the penultimate
+     * Wednesday before the beginning of the Protestant liturgical year on the first Sunday of Advent; in other words,
      * it is the Wednesday that falls between 16th and 22nd November. However, it is not a statutory non-working holiday
      * any more, except in the Free State of Saxony.
      *
