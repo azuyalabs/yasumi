@@ -55,7 +55,7 @@ class Spain extends AbstractProvider
         $this->calculateConstitutionDay();
     }
 
-    /*
+    /**
      * National Day.
      *
      * The Fiesta Nacional de España is the national day of Spain. It is held annually on October 12 and is a national
@@ -74,7 +74,7 @@ class Spain extends AbstractProvider
         }
     }
 
-    /*
+    /**
      * Day of Constitution.
      *
      * Constitution Day (Día de la Constitución) marks the anniversary of a referendum held in Spain on December 6,

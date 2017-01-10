@@ -126,8 +126,7 @@ class Finland extends AbstractProvider
         $this->addHoliday(new Holiday('allSaintsDay', [], $date, $this->locale));
     }
 
-
-    /*
+    /**
      * Independence Day
      *
      * Finland's Independence Day (Finnish: itsenäisyyspäivä, Swedish: självständighetsdagen) is a national public

@@ -55,7 +55,7 @@ class Norway extends AbstractProvider
         $this->calculateConstitutionDay();
     }
 
-    /*
+    /**
      * Constitution Day
      *
      * Norway’s Constitution Day is May 17 and commemorates the signing of Norways's constitution at Eidsvoll on

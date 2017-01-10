@@ -64,7 +64,7 @@ class Netherlands extends AbstractProvider
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
 
-        /*
+        /**
          * Commemoration Day and Liberation Day. Instituted after WWII in 1947.
          */
         if ($this->year >= 1947) {
@@ -77,7 +77,7 @@ class Netherlands extends AbstractProvider
                 Holiday::TYPE_OBSERVANCE));
         }
 
-        /*
+        /**
          * Kings Day.
          *
          * King's Day is celebrated from 2014 onwards on April 27th. If this happens to be on a Sunday, it will be
@@ -94,7 +94,7 @@ class Netherlands extends AbstractProvider
                 $this->locale));
         }
 
-        /*
+        /**
          * Queen's Day.
          *
          * Queen's Day was celebrated between 1891 and 1948 (inclusive) on August 31. Between 1949 and 2013 (inclusive) it
@@ -116,7 +116,7 @@ class Netherlands extends AbstractProvider
                 $this->locale));
         }
 
-        /*
+        /**
          * Prince's Day.
          *
          * Prinsjesdag (English: Prince's Day) is the day on which the reigning monarch of the Netherlands addresses a joint
@@ -126,21 +126,21 @@ class Netherlands extends AbstractProvider
             new DateTime("third tuesday of september $this->year", new DateTimeZone($this->timezone)), $this->locale,
             Holiday::TYPE_OTHER));
 
-        /*
+        /**
          * Halloween
          */
         $this->addHoliday(new Holiday('halloween', ['en_US' => 'Halloween', 'nl_NL' => 'Halloween'],
             new DateTime("$this->year-10-31", new DateTimeZone($this->timezone)), $this->locale,
             Holiday::TYPE_OBSERVANCE));
 
-        /*
+        /**
          * St. Nicholas' Day
          */
         $this->addHoliday(new Holiday('stNicholasDay', ['en_US' => 'St. Nicholas\' Day', 'nl_NL' => 'Sinterklaas'],
             new DateTime("$this->year-12-5", new DateTimeZone($this->timezone)), $this->locale,
             Holiday::TYPE_OBSERVANCE));
 
-        /*
+        /**
          * Summertime.
          *
          * Start of Summertime takes place on the last sunday of march. (Summertime is the common name for Daylight Saving
@@ -150,7 +150,7 @@ class Netherlands extends AbstractProvider
             new DateTime("last sunday of march $this->year", new DateTimeZone($this->timezone)), $this->locale,
             Holiday::TYPE_SEASON));
 
-        /*
+        /**
          * Wintertime.
          *
          * Start of Wintertime takes place on the last sunday of october. (Wintertime is actually the end of Summertime.
@@ -160,7 +160,7 @@ class Netherlands extends AbstractProvider
             new DateTime("last sunday of october $this->year", new DateTimeZone($this->timezone)), $this->locale,
             Holiday::TYPE_SEASON));
 
-        /*
+        /**
          * Carnival.
          *
          * Carnival (Dutch: Carnaval) is originally an European Pagan spring festival, with an emphasis on role-reversal
@@ -172,14 +172,14 @@ class Netherlands extends AbstractProvider
         $this->addHoliday(new Holiday('carnivalDay', ['en_US' => 'Carnival', 'nl_NL' => 'Carnaval'],
             $carnivalDay1->sub(new DateInterval('P49D')), $this->locale, Holiday::TYPE_OBSERVANCE));
 
-        /*
+        /**
          * Second Day of Carnival.
          */
         $carnivalDay2 = clone $easter;
         $this->addHoliday(new Holiday('secondCarnivalDay', ['en_US' => 'Carnival', 'nl_NL' => 'Carnaval'],
             $carnivalDay2->sub(new DateInterval('P48D')), $this->locale, Holiday::TYPE_OBSERVANCE));
 
-        /*
+        /**
          * Third Day of Carnival.
          */
         $carnivalDay3 = clone $easter;

@@ -75,7 +75,7 @@ class Portugal extends AbstractProvider
         }
     }
 
-    /*
+    /**
      * Carnation Revolution (25th of April 1974) / Revolução dos Cravos (25 de Abril 1974)
      *
      * The Carnation Revolution (Portuguese: Revolução dos Cravos), also referred to as the 25 April (Portuguese: 25 de

@@ -51,7 +51,7 @@ class Belgium extends AbstractProvider
         $this->addHoliday($this->assumptionOfMary($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->armisticeDay($this->year, $this->timezone, $this->locale));
 
-        /*
+        /**
          * Belgian National Day.
          *
          * Belgian National Day is the National Day of Belgium celebrated on 21 July each year.

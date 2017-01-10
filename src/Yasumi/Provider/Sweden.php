@@ -118,7 +118,7 @@ class Sweden extends AbstractProvider
         $this->addHoliday(new Holiday('allSaintsDay', [], $date, $this->locale));
     }
 
-    /*
+    /**
      * National Day
      *
      * National Day of Sweden (Sveriges nationaldag) is a national holiday observed in Sweden on 6 June every year.

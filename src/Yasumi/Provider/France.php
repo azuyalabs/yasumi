@@ -61,7 +61,7 @@ class France extends AbstractProvider
         $this->calculateBastilleDay();
     }
 
-    /*
+    /**
      * French National Day.
      *
      * The French National Day commemorates the beginning of the French Revolution with the Storming of the Bastille

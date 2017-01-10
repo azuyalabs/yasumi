@@ -43,7 +43,7 @@ class USA extends AbstractProvider
         // Add Christian holidays
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
 
-        /*
+        /**
          * Dr. Martin Luther King Day.
          *
          * Honors Dr. Martin Luther King, Jr., Civil Rights leader, who was actually born on January 15, 1929; combined
@@ -57,7 +57,7 @@ class USA extends AbstractProvider
             ], new DateTime("third monday of january $this->year", new DateTimeZone($this->timezone)), $this->locale));
         }
 
-        /*
+        /**
          * Washington's Birthday.
          *
          * Washington's Birthday is a United States federal holiday celebrated on the third Monday of February in honor
@@ -80,7 +80,7 @@ class USA extends AbstractProvider
             ], $date, $this->locale));
         }
 
-        /*
+        /**
          * Memorial Day.
          *
          * Honors the nation's war dead from the Civil War onwards; marks the unofficial beginning of the summer season.
@@ -100,7 +100,7 @@ class USA extends AbstractProvider
             ], $date, $this->locale));
         }
 
-        /*
+        /**
          * Independence Day.
          *
          * Independence Day, commonly known as the Fourth of July or July Fourth, is a federal holiday in the United
@@ -116,7 +116,7 @@ class USA extends AbstractProvider
             ], new DateTime("$this->year-7-4", new DateTimeZone($this->timezone)), $this->locale));
         }
 
-        /*
+        /**
          * Labour Day.
          *
          * Labor Day in the United States is a holiday celebrated on the first Monday in September. It is a celebration
@@ -131,7 +131,7 @@ class USA extends AbstractProvider
                 $this->locale));
         }
 
-        /*
+        /**
          * Columbus Day.
          *
          * Honors Christopher Columbus, traditional discoverer of the Americas. In some areas it is also a celebration
@@ -152,7 +152,7 @@ class USA extends AbstractProvider
             ], $date, $this->locale));
         }
 
-        /*
+        /**
          * Veterans Day.
          *
          * Veterans Day is an official United States holiday that honors people who have served in the U.S. Armed Forces
@@ -169,7 +169,7 @@ class USA extends AbstractProvider
             ], new DateTime("$this->year-11-11", new DateTimeZone($this->timezone)), $this->locale));
         }
 
-        /*
+        /**
          * Thanksgiving Day.
          *
          * Thanksgiving, or Thanksgiving Day, is a holiday celebrated in the United States on the fourth Thursday in

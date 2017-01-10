@@ -56,7 +56,7 @@ class Poland extends AbstractProvider
         $this->calculateConstitutionDay();
     }
 
-    /*
+    /**
      * Constitution Day.
      *
      * 3rd May National Holiday (also May 3rd Constitution Day; Polish: Święto Konstytucji 3 Maja) is a Polish national
@@ -79,7 +79,7 @@ class Poland extends AbstractProvider
         ], new DateTime("$this->year-11-11", new DateTimeZone($this->timezone)), $this->locale));
     }
 
-    /*
+    /**
      * Independence Day.
      *
      * National Independence Day (Polish: Narodowe Święto Niepodległości) is a national day in Poland celebrated on

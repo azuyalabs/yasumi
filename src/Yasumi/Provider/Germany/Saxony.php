@@ -46,7 +46,7 @@ class Saxony extends Germany
         $this->calculateRepentanceAndPrayerDay();
     }
 
-    /*
+    /**
      * Calculates the Day of repentance and prayer.
      *
      * Buß- und Bettag (Day of repentance and prayer) was a public holiday in Germany and is still a public holiday in 

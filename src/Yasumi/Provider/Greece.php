@@ -103,7 +103,7 @@ class Greece extends AbstractProvider
         return $this->calculateOrthodoxEaster($year, $timezone);
     }
 
-    /*
+    /**
      * Independence Day.
      *
      * Anniversary of the declaration of the start of Greek War of Independence from the Ottoman Empire, in 1821.
@@ -119,7 +119,7 @@ class Greece extends AbstractProvider
         }
     }
 
-    /*
+    /**
      * Ohi Day.
      *
      * Celebration of the Greek refusal to the Italian ultimatum of 1940.
@@ -134,7 +134,7 @@ class Greece extends AbstractProvider
         }
     }
 
-    /*
+    /**
      * Polytechnio.
      *
      * Anniversary of the 1973 students protests against the junta of the colonels (1967–1974).

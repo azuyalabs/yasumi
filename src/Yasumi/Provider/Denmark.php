@@ -55,7 +55,7 @@ class Denmark extends AbstractProvider
         $this->calculateGreatPrayerDay();
     }
 
-    /*
+    /**
      * Great Prayer Day
      *
      * Store Bededag, translated literally as Great Prayer Day or more loosely as General Prayer Day, "All Prayers" Day,

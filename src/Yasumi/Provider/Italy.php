@@ -55,7 +55,7 @@ class Italy extends AbstractProvider
         $this->calculateRepublicDay();
     }
 
-    /*
+    /**
      * Liberation Day.
      *
      * Italy's Liberation Day (Festa della Liberazione), also known as the Anniversary of the Liberation
@@ -74,7 +74,7 @@ class Italy extends AbstractProvider
         }
     }
 
-    /*
+    /**
      * Class containing tests for Republic Day in Italy.
      *
      * Festa della Repubblica (in English, Republic Day) is the Italian National Day and Republic Day, which is

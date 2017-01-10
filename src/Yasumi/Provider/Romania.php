@@ -68,7 +68,7 @@ class Romania extends AbstractProvider
     }
 
 
-    /*
+    /**
      * National Day.
      *
      * Great Union Day (Romanian: Ziua Marii Uniri, also called Unification Day) .
@@ -89,7 +89,7 @@ class Romania extends AbstractProvider
     }
 
 
-    /*
+    /**
      * Day after New Year's Day
      *
      * 2nd of January one of Romania's official non-working holidays
@@ -109,7 +109,7 @@ class Romania extends AbstractProvider
     }
 
 
-    /*
+    /**
      * Celebration of United Principalities
      *
      * On 24 January 1862, the Principality of Moldavia and the Principality of Wallachia
@@ -130,7 +130,7 @@ class Romania extends AbstractProvider
         }
     }
 
-    /*
+    /**
      * St. Andrew's day
      *
      * Saint Andrew is the patron saint of Romania.
@@ -163,7 +163,7 @@ class Romania extends AbstractProvider
         }
     }
 
-    /*
+    /**
      * Constantin Brancusi Day
      *
      * Constantin Brâncuși (February 19, 1876 – March 16, 1957) was a Romanian sculptor, painter and photographer.
@@ -182,7 +182,7 @@ class Romania extends AbstractProvider
         }
     }
 
-    /*
+    /**
      * Children's Day
      *
      * International Children's Day becamed a public Holiday in Romania starting with 2017
