@@ -1,4 +1,10 @@
-[![Latest Stable Version](https://poser.pugx.org/azuyalabs/yasumi/v/stable.svg)](https://packagist.org/packages/azuyalabs/yasumi) [![Total Downloads](https://poser.pugx.org/azuyalabs/yasumi/downloads.svg)](https://packagist.org/packages/azuyalabs/yasumi) [![Latest Unstable Version](https://poser.pugx.org/azuyalabs/yasumi/v/unstable.svg)](https://packagist.org/packages/azuyalabs/yasumi) [![License](https://poser.pugx.org/azuyalabs/yasumi/license.svg)](https://packagist.org/packages/azuyalabs/yasumi) [![Build Status](https://travis-ci.org/azuyalabs/yasumi.svg?branch=master)](https://travis-ci.org/azuyalabs/yasumi) [![StyleCI](https://styleci.io/repos/32797151/shield?branch=master)](https://styleci.io/repos/32797151)
+[![GitHub Release](https://img.shields.io/github/release/azuyalabs/yasumi.svg?style=flat-square)](https://github.com/azuyalabs/yasumi/releases)
+[![Total Downloads](https://img.shields.io/packagist/dt/azuyalabs/yasumi.svg?style=flat-square)](https://packagist.org/packages/azuyalabs/yasumi)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
+[![Build Status](https://img.shields.io/travis/azuyalabs/yasumi.svg?style=flat-square)](https://travis-ci.org/azuyalabs/yasumi)
+[![StyleCI](https://styleci.io/repos/32797151/shield?branch=master)](https://styleci.io/repos/32797151)
+
+
 Yasumi
 ==========
 
