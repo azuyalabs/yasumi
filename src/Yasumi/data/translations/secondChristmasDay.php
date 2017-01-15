@@ -10,7 +10,7 @@
  * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-// Translations for Boxing Day
+// Translations for Second Christmas Day
 return [
     'cs_CZ' => '2. svátek vánoční',
     'da_DK' => '2. Juledag',
