@@ -285,6 +285,26 @@ class YasumiTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * Tests that the getProviders function (static call) returns the same data when called again.
+     */
+    public function testGetProvidersStaticCall()
+    {
+        $provider          = 'Ireland';
+        $providers         = Yasumi::getProviders();
+        $initial_providers = $providers;
+
+        $this->assertNotEmpty($providers);
+        $this->assertInternalType('array', $providers);
+        $this->assertContains($provider, $providers);
+
+        $providers = Yasumi::getProviders();
+        $this->assertNotEmpty($providers);
+        $this->assertInternalType('array', $providers);
+        $this->assertContains($provider, $providers);
+        $this->assertEquals($initial_providers, $providers);
+    }
+
+    /**
      * Tests that the isHoliday function returns a boolean true for a date that is defined as a holiday.
      */
     public function testIsHoliday()
