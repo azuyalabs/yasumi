@@ -14,7 +14,6 @@ namespace Yasumi;
 
 use DateInterval;
 use DateTime;
-use Exception;
 use FilesystemIterator;
 use InvalidArgumentException;
 use RecursiveDirectoryIterator;
@@ -102,16 +101,12 @@ class Yasumi
      * @param DateTime $startDate   DateTime Start date, defaults to today
      * @param int      $workingDays int
      *
+     * @TODO we should accept a timezone so we can accept int/string for $startDate
+     *
      * @return DateTime
-     * @throws Exception
      */
     public static function nextWorkingDay($class, DateTime $startDate, $workingDays = 1)
     {
-        /* @TODO we should accept a timezone so we can accept int/string for $startDate */
-        if (! ($startDate instanceof DateTime)) {
-            throw new Exception('Bad parameter, DateTime expected');
-        }
-
         // Setup start date, if its an instance of \DateTime, clone to prevent modification to original
         $date = $startDate instanceof DateTime ? clone $startDate : new DateTime($startDate);
 
@@ -201,16 +196,12 @@ class Yasumi
      * @param DateTime $startDate   DateTime Start date, defaults to today
      * @param int      $workingDays int
      *
+     * @TODO we should accept a timezone so we can accept int/string for $startDate
+     *
      * @return DateTime
-     * @throws Exception
      */
     public static function prevWorkingDay($class, DateTime $startDate, $workingDays = 1)
     {
-        /* @TODO we should accept a timezone so we can accept int/string for $startDate */
-        if (! ($startDate instanceof DateTime)) {
-            throw new Exception('Bad parameter, DateTime expected');
-        }
-
         // Setup start date, if its an instance of \DateTime, clone to prevent modification to original
         $date = $startDate instanceof DateTime ? clone $startDate : new DateTime($startDate);
 
