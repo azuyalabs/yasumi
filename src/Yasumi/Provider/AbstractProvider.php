@@ -166,11 +166,6 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
             return true;
         }
 
-        // If given date is a Yasumi\Holiday object
-        if (! is_null($date) && in_array($date, $this->holidays)) {
-            return true;
-        }
-
         return false;
     }
 
