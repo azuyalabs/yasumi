@@ -18,7 +18,7 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing New Years Day in the Brazil.
+ * Class for testing New Years Day in Brazil.
  */
 class NewYearsDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterface
 {

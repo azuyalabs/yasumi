@@ -18,7 +18,7 @@ use DateTimeZone;
 use Yasumi\Holiday;
 
 /**
- * Provider for all holidays in the Brazil.
+ * Provider for all holidays in Brazil.
  */
 class Brazil extends AbstractProvider
 {
@@ -31,7 +31,7 @@ class Brazil extends AbstractProvider
     const ID = 'BR';
 
     /**
-     * Initialize holidays for the Brazil.
+     * Initialize holidays for Brazil.
      */
     public function initialize()
     {

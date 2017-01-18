@@ -18,7 +18,7 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing International Workers' Day in the Brazil.
+ * Class for testing International Workers' Day in Brazil.
  */
 class InternationalWorkersDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterface
 {

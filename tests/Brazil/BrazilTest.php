@@ -15,7 +15,7 @@ namespace Yasumi\tests\Brazil;
 use Yasumi\Holiday;
 
 /**
- * Class for testing holidays in the Brazil.
+ * Class for testing holidays in Brazil.
  */
 class BrazilTest extends BrazilBaseTestCase
 {
@@ -25,7 +25,7 @@ class BrazilTest extends BrazilBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in the Brazil are defined by the provider class
+     * Tests if all national holidays in Brazil are defined by the provider class
      */
     public function testNationalHolidays()
     {
@@ -43,7 +43,7 @@ class BrazilTest extends BrazilBaseTestCase
     }
 
     /**
-     * Tests if all observed holidays in the Brazil are defined by the provider class
+     * Tests if all observed holidays in Brazil are defined by the provider class
      */
     public function testObservedHolidays()
     {
@@ -55,7 +55,7 @@ class BrazilTest extends BrazilBaseTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in the Brazil are defined by the provider class
+     * Tests if all seasonal holidays in Brazil are defined by the provider class
      */
     public function testSeasonalHolidays()
     {
@@ -63,7 +63,7 @@ class BrazilTest extends BrazilBaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in the Brazil are defined by the provider class
+     * Tests if all bank holidays in Brazil are defined by the provider class
      */
     public function testBankHolidays()
     {
@@ -71,7 +71,7 @@ class BrazilTest extends BrazilBaseTestCase
     }
 
     /**
-     * Tests if all other holidays in the Brazil are defined by the provider class
+     * Tests if all other holidays in Brazil are defined by the provider class
      */
     public function testOtherHolidays()
     {

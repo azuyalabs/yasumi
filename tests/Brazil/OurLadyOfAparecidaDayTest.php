@@ -18,7 +18,7 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Our Lady Aparecida Day in the Brazil.
+ * Class for testing Our Lady Aparecida Day in Brazil.
  */
 class OurLadyOfAparecidaDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterface
 {

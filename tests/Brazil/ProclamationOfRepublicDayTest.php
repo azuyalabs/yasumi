@@ -18,7 +18,7 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Proclamation of The Republic Day in the Brazil.
+ * Class for testing Proclamation of The Republic Day in Brazil.
  */
 class ProclamationOfRepublicDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterface
 {

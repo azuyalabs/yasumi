@@ -18,7 +18,7 @@ use Yasumi\Provider\ChristianHolidays;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Carnaval in the Brazil.
+ * Class for testing Carnaval in Brazil.
  */
 class CarnavalDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterface
 {

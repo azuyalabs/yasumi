@@ -18,7 +18,7 @@ use Yasumi\Provider\ChristianHolidays;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Corpus Christi in the Brazil.
+ * Class for testing Corpus Christi in Brazil.
  */
 class CorpusChristiTest extends BrazilBaseTestCase implements YasumiTestCaseInterface
 {

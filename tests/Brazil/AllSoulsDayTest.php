@@ -18,7 +18,7 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Dia dos Finados in the Brazil.
+ * Class for testing Dia dos Finados in Brazil.
  */
 class AllSoulsDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterface
 {

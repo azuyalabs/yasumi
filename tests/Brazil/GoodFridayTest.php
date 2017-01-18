@@ -18,7 +18,7 @@ use Yasumi\Provider\ChristianHolidays;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Good Friday in the Brazil.
+ * Class for testing Good Friday in Brazil.
  */
 class GoodFridayTest extends BrazilBaseTestCase implements YasumiTestCaseInterface
 {
