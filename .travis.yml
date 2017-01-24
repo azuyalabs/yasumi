@@ -1,9 +1,9 @@
 language: php
 
 php:
-  - '5.6'
-  - '7.0'
-  - '7.1'
+  - 5.6
+  - 7.0
+  - 7.1
   - hhvm
   - nightly
 
@@ -16,7 +16,7 @@ before_script:
   - composer install --no-interaction
 
 script:
-  - phpunit
+  - ./vendor/bin/phpunit
   - phpenv config-rm xdebug.ini || return 0
   - ./vendor/bin/php-cs-fixer --diff --dry-run -v fix
 
@@ -24,4 +24,3 @@ matrix:
   allow_failures:
     - php: hhvm
     - php: nightly
-
