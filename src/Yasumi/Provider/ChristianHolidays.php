@@ -530,6 +530,35 @@ trait ChristianHolidays
     }
 
     /**
+     * Calculates the day of the reformation.
+     *
+     * Reformation Day is a religious holiday celebrated on October 31, alongside All Hallows' Eve, in remembrance
+     * of the Reformation. It is celebrated among various Protestants, especially by Lutheran and Reformed church
+     * communities.
+     * It is a civic holiday in the German states of Brandenburg, Mecklenburg-Vorpommern, Saxony, Saxony-Anhalt and
+     * Thuringia. Slovenia celebrates it as well due to the profound contribution of the Reformation to that nation's
+     * cultural development, although Slovenes are mainly Roman Catholics. With the increasing influence of
+     * Protestantism in Latin America (particularly newer groups such as various Evangelical Protestants, Pentecostals
+     * or Charismatics), it has been declared a national holiday in Chile in 2009.
+     *
+     * @link https://en.wikipedia.org/wiki/Reformation_Day
+     * @link https://de.wikipedia.org/wiki/Reformationstag#Ursprung_und_Geschichte
+     *
+     * @param int    $year     the year for which St. John's Day need to be created
+     * @param string $timezone the timezone in which St. John's Day is celebrated
+     * @param string $locale   the locale for which St. John's Day need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
+     *
+     * @return \Yasumi\Holiday
+     */
+    public function reformationDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
+    {
+        return new Holiday('reformationDay', [], new DateTime("$year-10-31", new DateTimeZone($timezone)), $locale,
+            $type);
+    }
+
+    /**
      * Calculates the date for Easter.
      *
      * Easter is a festival and holiday celebrating the resurrection of Jesus Christ from the dead. Easter is celebrated

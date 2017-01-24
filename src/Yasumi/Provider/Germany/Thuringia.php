@@ -40,6 +40,6 @@ class Thuringia extends Germany
         parent::initialize();
 
         // Add custom Christian holidays
-        $this->calculateReformationDay();
+        $this->addHoliday($this->reformationDay($this->year, $this->timezone, $this->locale));
     }
 }
