@@ -42,8 +42,21 @@ class Saxony extends Germany
         parent::initialize();
 
         // Add custom Christian holidays
-        $this->addHoliday($this->reformationDay($this->year, $this->timezone, $this->locale));
+        $this->calculateReformationDay();
         $this->calculateRepentanceAndPrayerDay();
+    }
+
+    /**
+     * For the German state of Saxony, Reformation Day was celebrated since 1517.
+     * Note: In 2017 all German states will celebrate Reformation Day for its 500th anniversary.
+     */
+    private function calculateReformationDay()
+    {
+        if ($this->year < 1517) {
+            return;
+        }
+
+        $this->addHoliday($this->reformationDay($this->year, $this->timezone, $this->locale));
     }
 
     /**
