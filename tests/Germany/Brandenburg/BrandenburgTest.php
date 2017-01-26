@@ -29,7 +29,7 @@ class BrandenburgTest extends BrandenburgBaseTestCase
      */
     public function testNationalHolidays()
     {
-        $this->assertDefinedHolidays([
+        $holidays = [
             'newYearsDay',
             'goodFriday',
             'easter',
@@ -38,11 +38,19 @@ class BrandenburgTest extends BrandenburgBaseTestCase
             'ascensionDay',
             'pentecost',
             'pentecostMonday',
-            'germanUnityDay',
-            'reformationDay',
             'christmasDay',
             'secondChristmasDay'
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ];
+
+        if ($this->year >= 1990) {
+            $holidays[] = 'germanUnityDay';
+        }
+
+        if ($this->year >= 1517) {
+            $holidays[] = 'reformationDay';
+        }
+
+        $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_NATIONAL);
     }
 
     /**
@@ -82,6 +90,6 @@ class BrandenburgTest extends BrandenburgBaseTestCase
      */
     protected function setUp()
     {
-        $this->year = $this->generateRandomYear(1990);
+        $this->year = $this->generateRandomYear();
     }
 }

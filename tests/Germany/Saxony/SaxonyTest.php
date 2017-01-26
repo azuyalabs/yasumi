@@ -29,7 +29,7 @@ class SaxonyTest extends SaxonyBaseTestCase
      */
     public function testNationalHolidays()
     {
-        $this->assertDefinedHolidays([
+        $holidays = [
             'newYearsDay',
             'goodFriday',
             'easter',
@@ -38,12 +38,20 @@ class SaxonyTest extends SaxonyBaseTestCase
             'ascensionDay',
             'pentecost',
             'pentecostMonday',
-            'germanUnityDay',
-            'reformationDay',
             'repentanceAndPrayerDay',
             'christmasDay',
             'secondChristmasDay'
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ];
+
+        if ($this->year >= 1990) {
+            $holidays[] = 'germanUnityDay';
+        }
+
+        if ($this->year >= 1517) {
+            $holidays[] = 'reformationDay';
+        }
+
+        $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_NATIONAL);
     }
 
     /**
