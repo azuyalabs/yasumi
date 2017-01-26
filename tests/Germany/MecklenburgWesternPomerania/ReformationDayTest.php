@@ -13,6 +13,7 @@
 namespace Yasumi\tests\Germany\MecklenburgWesternPomerania;
 
 use DateTime;
+use DateTimeZone;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -27,17 +28,9 @@ class ReformationDayTest extends MecklenburgWesternPomeraniaBaseTestCase impleme
     const HOLIDAY = 'reformationDay';
 
     /**
-     * Tests the holiday defined in this test.
-     *
-     * @dataProvider HolidayDataProvider
-     *
-     * @param int      $year     the year for which the holiday defined in this test needs to be tested
-     * @param DateTime $expected the expected date
+     * The year in which the holiday was first established
      */
-    public function testHoliday($year, $expected)
-    {
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
-    }
+    const ESTABLISHMENT_YEAR = 1517;
 
     /**
      * Returns a list of random test dates used for assertion of the holiday defined in this test
@@ -46,7 +39,23 @@ class ReformationDayTest extends MecklenburgWesternPomeraniaBaseTestCase impleme
      */
     public function HolidayDataProvider()
     {
-        return $this->generateRandomDates(10, 31, self::TIMEZONE);
+        $data = [];
+
+        for ($y = 0; $y < self::TEST_ITERATIONS; $y++) {
+            $year   = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+            $data[] = [$year, new DateTime("$year-10-31", new DateTimeZone(self::TIMEZONE))];
+        }
+
+        return $data;
+    }
+
+    /**
+     * Tests the holiday defined in this test before establishment.
+     */
+    public function testHolidayBeforeEstablishment()
+    {
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
     }
 
     /**
@@ -54,8 +63,8 @@ class ReformationDayTest extends MecklenburgWesternPomeraniaBaseTestCase impleme
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Reformationstag']);
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Reformationstag']);
     }
 
     /**
@@ -63,6 +72,7 @@ class ReformationDayTest extends MecklenburgWesternPomeraniaBaseTestCase impleme
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL);
     }
 }
