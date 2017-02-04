@@ -3,8 +3,13 @@
 ## DEV/MASTER
 
 **Implemented enhancements:**
+- Moved Reformation Day to Christian Holidays as it is not only celebrated in Germany.
+- Changed Travis configuration to use Composer-installed phpunit to avoid if any issues arise with globally installed phpunit.
+- Added missing unit tests for Reformation Day as in 2017 it is celebrated in all German states for its 500th anniversary.
+- Added missing unit tests for the German Unit Day for each German state.
 
 **Resolved issues:**
+- Renamed 'en_US' translation for the Second Christmas Day (from ‘Boxing Day’ to ‘Second Christmas Day’: Boxing Day concept does not exist in the US). [\#53](https://github.com/azuyalabs/yasumi/pull/53) ([AngelinCalu]
 
 
 ## 1.6.0 (January 6, 2017)
