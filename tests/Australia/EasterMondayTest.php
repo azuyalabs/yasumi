@@ -53,8 +53,8 @@ class EasterMondayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
 
         for ($y = 0; $y < 50; $y++) {
             $year = $this->generateRandomYear();
-            $date = new DateTime("$year-3-21", new DateTimeZone($this->timezone));
-            $date->add(new DateInterval('P' . (easter_days($year) + 1) . 'D'));
+            $date = $this->calculateEaster($year, $this->timezone);
+            $date->add(new DateInterval('P1D'));
 
             $data[] = [$year, $date->format('Y-m-d')];
         }

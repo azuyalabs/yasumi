@@ -12,7 +12,6 @@
 
 namespace Yasumi\tests\Ireland;
 
-use DateInterval;
 use DateTime;
 use DateTimeZone;
 use Yasumi\Holiday;
@@ -53,8 +52,7 @@ class EasterTest extends IrelandBaseTestCase implements YasumiTestCaseInterface
 
         for ($y = 0; $y < self::TEST_ITERATIONS; $y++) {
             $year = $this->generateRandomYear();
-            $date = new DateTime("$year-3-21", new DateTimeZone(self::TIMEZONE));
-            $date->add(new DateInterval('P' . easter_days($year) . 'D'));
+            $date = $this->calculateEaster($year, self::TIMEZONE);
 
             $data[] = [$year, $date->format('Y-m-d')];
         }

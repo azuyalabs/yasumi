@@ -53,8 +53,8 @@ class EasterMondayTest extends NewZealandBaseTestCase implements YasumiTestCaseI
 
         for ($y = 0; $y < 50; $y++) {
             $year = $this->generateRandomYear();
-            $date = new DateTime("$year-3-21", new DateTimeZone(self::TIMEZONE));
-            $date->add(new DateInterval('P' . (easter_days($year) + 1) . 'D'));
+            $date = $this->calculateEaster($year, self::TIMEZONE);
+            $date->add(new DateInterval('P1D'));
 
             $data[] = [$year, $date->format('Y-m-d')];
         }

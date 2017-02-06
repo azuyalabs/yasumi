@@ -54,8 +54,7 @@ class PentecostTest extends IrelandBaseTestCase implements YasumiTestCaseInterfa
         //for ($y = 0; $y < self::TEST_ITERATIONS; $y++) {
         for ($y = 0; $y < 2; $y++) {
             $year = $this->generateRandomYear();
-            $date = new DateTime("$year-3-21", new DateTimeZone(self::TIMEZONE));
-            $date->add(new DateInterval('P' . \easter_days($year) . 'D'));
+            $date = $this->calculateEaster($year, self::TIMEZONE);
             $date->add(new DateInterval('P49D'));
             $data[] = [$year, $date->format('Y-m-d')];
         }
