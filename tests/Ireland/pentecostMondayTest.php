@@ -58,8 +58,7 @@ class pentecostMondayTest extends IrelandBaseTestCase implements YasumiTestCaseI
 
         for ($y = 0; $y < self::TEST_ITERATIONS; $y++) {
             $year = $this->generateRandomYear(1000, self::ABOLISHMENT_YEAR);
-            $date = new DateTime("$year-3-21", new DateTimeZone(self::TIMEZONE));
-            $date->add(new DateInterval('P' . \easter_days($year) . 'D'));
+            $date = $this->calculateEaster($year, self::TIMEZONE);
             $date->add(new DateInterval('P50D'));
             $data[] = [$year, $date->format('Y-m-d')];
         }

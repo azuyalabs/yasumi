@@ -53,8 +53,7 @@ class GoodFridayTest extends AustraliaBaseTestCase implements YasumiTestCaseInte
 
         for ($y = 0; $y < 50; $y++) {
             $year = $this->generateRandomYear();
-            $date = new DateTime("$year-3-21", new DateTimeZone($this->timezone));
-            $date->add(new DateInterval('P' . easter_days($year) . 'D'));
+            $date = $this->calculateEaster($year, $this->timezone);
             $date->sub(new DateInterval('P2D'));
             $data[] = [$year, $date->format('Y-m-d')];
         }
