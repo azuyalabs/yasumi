@@ -12,9 +12,11 @@
 
 namespace Yasumi\tests\Germany\RhinelandPalatinate;
 
+use Yasumi\tests\Germany\GermanUnityDayTest as BaseGermanUnityDayTest;
+
 /**
  * Class for testing German Unity Day in Rhineland Palatinate (Germany).
  */
-class GermanUnityDayTest extends \Yasumi\tests\Germany\GermanUnityDayTest
+class GermanUnityDayTest extends BaseGermanUnityDayTest
 {
 }
