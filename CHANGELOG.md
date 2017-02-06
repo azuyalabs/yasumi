@@ -4,12 +4,13 @@
 
 **Implemented enhancements:**
 - Moved Reformation Day to Christian Holidays as it is not only celebrated in Germany.
-- Changed Travis configuration to use Composer-installed phpunit to avoid if any issues arise with globally installed phpunit.
-- Added missing unit tests for Reformation Day as in 2017 it is celebrated in all German states for its 500th anniversary.
 - Added missing unit tests for the German Unit Day for each German state.
 
 **Resolved issues:**
-- Renamed 'en_US' translation for the Second Christmas Day (from ‘Boxing Day’ to ‘Second Christmas Day’: Boxing Day concept does not exist in the US). [\#53](https://github.com/azuyalabs/yasumi/pull/53) ([AngelinCalu]
+- Renamed 'en_US' translation for the Second Christmas Day (from ‘Boxing Day’ to ‘Second Christmas Day’: Boxing Day concept does not exist in the US). [\#53](https://github.com/azuyalabs/yasumi/pull/53) ([AngelinCalu](https://github.com/AngelinCalu))
+- Created fallback calculation of the easter_days function in case the PHP extension 'calendar' is not loaded. [\#55](https://github.com/azuyalabs/yasumi/pull/55) ([stelgenhof](https://github.com/stelgenhof))
+- Added missing unit tests for Reformation Day as in 2017 it is celebrated in all German states for its 500th anniversary.
+- Changed Travis configuration to use Composer-installed phpunit to avoid if any issues arise with globally installed phpunit.
 
 
 ## 1.6.0 (January 6, 2017)
