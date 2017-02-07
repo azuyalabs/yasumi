@@ -7,6 +7,7 @@
 - Added missing unit tests for the German Unit Day for each German state.
 
 **Resolved issues:**
+- Fixed Christmas Day and Boxing Day for the United Kingdom. A substitute bank holiday is now created for both Christmas and Boxing Day when either of those days fall on a weekend. [\#48](https://github.com/azuyalabs/yasumi/issues/48) ([joshuabaker](https://github.com/joshuabaker))
 - Renamed 'en_US' translation for the Second Christmas Day (from ‘Boxing Day’ to ‘Second Christmas Day’: Boxing Day concept does not exist in the US). [\#53](https://github.com/azuyalabs/yasumi/pull/53) ([AngelinCalu](https://github.com/AngelinCalu))
 - Created fallback calculation of the easter_days function in case the PHP extension 'calendar' is not loaded. [\#55](https://github.com/azuyalabs/yasumi/pull/55) ([stelgenhof](https://github.com/stelgenhof))
 - Added missing unit tests for Reformation Day as in 2017 it is celebrated in all German states for its 500th anniversary.
