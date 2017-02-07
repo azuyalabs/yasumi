@@ -151,20 +151,22 @@ class UnitedKingdom extends AbstractProvider
         $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->timezone));
         $boxingDay    = new DateTime("$this->year-12-26", new DateTimeZone($this->timezone));
 
-        switch ($christmasDay->format('w')) {
-            case 0:
-                $christmasDay->add(new DateInterval('P2D'));
-                break;
-            case 5:
-                $boxingDay->add(new DateInterval('P2D'));
-                break;
-            case 6:
-                $christmasDay->add(new DateInterval('P2D'));
-                $boxingDay->add(new DateInterval('P2D'));
-                break;
-        }
-
         $this->addHoliday(new Holiday('christmasDay', [], $christmasDay, $this->locale));
         $this->addHoliday(new Holiday('secondChristmasDay', [], $boxingDay, $this->locale, Holiday::TYPE_BANK));
+
+        $substituteChristmasDay = clone $christmasDay;
+        $substituteBoxingDay    = clone $boxingDay;
+
+        if (in_array($christmasDay->format('w'), [0, 6])) {
+            $substituteChristmasDay->add(new DateInterval('P2D'));
+            $this->addHoliday(new Holiday('substituteHoliday:christmasDay', [], $substituteChristmasDay, $this->locale,
+                Holiday::TYPE_BANK));
+        }
+
+        if (in_array($boxingDay->format('w'), [0, 6])) {
+            $substituteBoxingDay->add(new DateInterval('P2D'));
+            $this->addHoliday(new Holiday('substituteHoliday:secondChristmasDay', [], $substituteBoxingDay,
+                $this->locale, Holiday::TYPE_BANK));
+        }
     }
 }

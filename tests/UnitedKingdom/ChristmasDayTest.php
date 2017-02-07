@@ -38,8 +38,14 @@ class ChristmasDayTest extends UnitedKingdomBaseTestCase implements YasumiTestCa
      */
     public function testHoliday($year, $expected)
     {
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime($expected, new DateTimeZone(self::TIMEZONE)));
+        $date = new DateTime($expected, new DateTimeZone(self::TIMEZONE));
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
+
+        if (in_array($date->format('w'), [0, 6])) {
+            $date->add(new DateInterval('P2D'));
+            $this->assertHoliday(self::REGION, 'substituteHoliday:' . self::HOLIDAY, $year, $date);
+            $this->assertHolidayType(self::REGION, 'substituteHoliday:' . self::HOLIDAY, $year, Holiday::TYPE_BANK);
+        }
     }
 
     /**
@@ -51,13 +57,9 @@ class ChristmasDayTest extends UnitedKingdomBaseTestCase implements YasumiTestCa
     {
         $data = [];
 
-        for ($y = 0; $y < 50; $y++) {
+        for ($y = 0; $y < self::TEST_ITERATIONS; $y++) {
             $year = $this->generateRandomYear();
             $date = new DateTime("$year-12-25", new DateTimeZone(self::TIMEZONE));
-
-            if (in_array($date->format('w'), [0, 6])) {
-                $date->add(new DateInterval('P2D'));
-            }
 
             $data[] = [$year, $date->format('Y-m-d')];
         }
