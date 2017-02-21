@@ -34,6 +34,6 @@ class OtherHolidaysFilter extends FilterIterator
      */
     public function accept()
     {
-        return ($this->getInnerIterator()->current()->getType() === Holiday::TYPE_OTHER) ? true : false;
+        return $this->getInnerIterator()->current()->getType() === Holiday::TYPE_OTHER;
     }
 }

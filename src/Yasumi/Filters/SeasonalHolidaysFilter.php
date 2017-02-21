@@ -34,6 +34,6 @@ class SeasonalHolidaysFilter extends FilterIterator
      */
     public function accept()
     {
-        return ($this->getInnerIterator()->current()->getType() === Holiday::TYPE_SEASON) ? true : false;
+        return $this->getInnerIterator()->current()->getType() === Holiday::TYPE_SEASON;
     }
 }

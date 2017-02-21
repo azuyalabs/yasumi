@@ -34,6 +34,6 @@ class OfficialHolidaysFilter extends FilterIterator
      */
     public function accept()
     {
-        return ($this->getInnerIterator()->current()->getType() === Holiday::TYPE_NATIONAL) ? true : false;
+        return $this->getInnerIterator()->current()->getType() === Holiday::TYPE_NATIONAL;
     }
 }

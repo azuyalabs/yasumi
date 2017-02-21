@@ -34,6 +34,6 @@ class ObservedHolidaysFilter extends FilterIterator
      */
     public function accept()
     {
-        return ($this->getInnerIterator()->current()->getType() === Holiday::TYPE_OBSERVANCE) ? true : false;
+        return $this->getInnerIterator()->current()->getType() === Holiday::TYPE_OBSERVANCE;
     }
 }
