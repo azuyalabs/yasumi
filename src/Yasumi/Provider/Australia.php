@@ -80,7 +80,7 @@ class Australia extends AbstractProvider
      * @param bool  $moveFromSaturday
      * @param bool  $moveFromSunday
      */
-    public function calculateHoliday($shortName, $names = [], $date, $moveFromSaturday = true, $moveFromSunday = true)
+    public function calculateHoliday($shortName, array $names = [], $date, $moveFromSaturday = true, $moveFromSunday = true)
     {
         $holidayDate = $date instanceof DateTime ? $date : new DateTime($date, new DateTimeZone($this->timezone));
 
