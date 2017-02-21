@@ -34,6 +34,6 @@ class BankHolidaysFilter extends FilterIterator
      */
     public function accept()
     {
-        return ($this->getInnerIterator()->current()->getType() === Holiday::TYPE_BANK) ? true : false;
+        return $this->getInnerIterator()->current()->getType() === Holiday::TYPE_BANK;
     }
 }
