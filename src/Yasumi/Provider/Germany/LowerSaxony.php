@@ -31,12 +31,4 @@ class LowerSaxony extends Germany
      * country or sub-region.
      */
     const ID = 'DE-NI';
-
-    /**
-     * Initialize holidays for Lower Saxony (Germany).
-     */
-    public function initialize()
-    {
-        parent::initialize();
-    }
 }

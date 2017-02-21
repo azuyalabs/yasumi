@@ -31,12 +31,4 @@ class Berlin extends Germany
      * country or sub-region.
      */
     const ID = 'DE-BE';
-
-    /**
-     * Initialize holidays for Berlin (Germany).
-     */
-    public function initialize()
-    {
-        parent::initialize();
-    }
 }

@@ -30,12 +30,4 @@ class Bremen extends Germany
      * country or sub-region.
      */
     const ID = 'DE-HB';
-
-    /**
-     * Initialize holidays for Bremen (Germany).
-     */
-    public function initialize()
-    {
-        parent::initialize();
-    }
 }

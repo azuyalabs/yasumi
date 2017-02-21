@@ -31,12 +31,4 @@ class Hamburg extends Germany
      * country or sub-region.
      */
     const ID = 'DE-HH';
-
-    /**
-     * Initialize holidays for Hamburg (Germany).
-     */
-    public function initialize()
-    {
-        parent::initialize();
-    }
 }
