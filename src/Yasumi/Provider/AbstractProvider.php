@@ -157,7 +157,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     public function isHoliday($date)
     {
         // Return false if given date is empty
-        if (is_null($date)) {
+        if (null === $date) {
             return false;
         }
 
@@ -208,7 +208,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     protected function isHolidayNameNotEmpty($shortName)
     {
-        if (empty($shortName) || is_null($shortName)) {
+        if (empty($shortName) || null === $shortName) {
             throw new InvalidArgumentException('Holiday name can not be blank.');
         }
 

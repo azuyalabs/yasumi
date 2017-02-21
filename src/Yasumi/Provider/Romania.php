@@ -155,7 +155,7 @@ class Romania extends AbstractProvider
             $national_day = "$this->year-05-10";
         }
 
-        if (! is_null($national_day)) {
+        if (null !== $national_day) {
             $this->addHoliday(new Holiday('nationalDay', [
                 'en_US' => 'National Day',
                 'ro_RO' => 'Ziua Națională'
