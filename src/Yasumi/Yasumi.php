@@ -76,8 +76,8 @@ class Yasumi
             FilesystemIterator::SKIP_DOTS), RecursiveIteratorIterator::SELF_FIRST);
 
         foreach ($filesIterator as $file) {
-            if ($file->isDir() || in_array($file->getBasename('.php'),
-                    self::$ignoredProvider) || $file->getExtension() !== 'php'
+            if ($file->isDir() || in_array($file->getBasename('.php'), self::$ignoredProvider,
+                    true) || $file->getExtension() !== 'php'
             ) {
                 continue;
             }
@@ -163,12 +163,12 @@ class Yasumi
         }
 
         // Load internal locales variable
-        if (! isset(static::$locales)) {
+        if (null === static::$locales) {
             static::$locales = self::getAvailableLocales();
         }
 
         // Load internal translations variable
-        if (! isset(static::$globalTranslations)) {
+        if (null === static::$globalTranslations) {
             static::$globalTranslations = new Translations(static::$locales);
             static::$globalTranslations->loadTranslations(__DIR__ . '/data/translations');
         }

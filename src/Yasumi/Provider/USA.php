@@ -198,12 +198,13 @@ class USA extends AbstractProvider
     private function calculateSubstituteHolidays()
     {
         $datesIterator = $this->getIterator();
+        $substituteHoliday = null;
 
         // Loop through all defined holidays
         while ($datesIterator->valid()) {
 
             // Only process New Year's Day, Independence Day, or Christmas Day
-            if (in_array($datesIterator->current()->shortName, ['newYearsDay', 'independenceDay', 'christmasDay'])) {
+            if (in_array($datesIterator->current()->shortName, ['newYearsDay', 'independenceDay', 'christmasDay'], true)) {
 
                 // Substitute holiday is on a Monday in case the holiday falls on a Sunday
                 if ($datesIterator->current()->format('w') == 0) {
@@ -218,7 +219,7 @@ class USA extends AbstractProvider
                 }
 
                 // Add substitute holiday
-                if (isset($substituteHoliday)) {
+                if (null !== $substituteHoliday) {
                     $this->addHoliday(new Holiday('substituteHoliday:' . $substituteHoliday->shortName, [
                         'en_US' => $substituteHoliday->getName() . ' observed',
                     ], $substituteHoliday, $this->locale));

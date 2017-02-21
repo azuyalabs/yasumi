@@ -94,6 +94,7 @@ class Holiday extends DateTime implements JsonSerializable
      *                                national holiday is considered.
      *
      * @throws UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function __construct(
         $shortName,
@@ -113,7 +114,7 @@ class Holiday extends DateTime implements JsonSerializable
         }
 
         // Load internal locales variable
-        if (! isset(static::$locales)) {
+        if (null === static::$locales) {
             static::$locales = Yasumi::getAvailableLocales();
         }
 
