@@ -23,6 +23,11 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class PublicBridgeDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 {
     /**
+     * @var number representing the calendar year to be tested against
+     */
+    private $year;
+
+    /**
      * The name of the holiday
      */
     const HOLIDAY = 'bridgeDay';
