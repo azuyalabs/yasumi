@@ -71,16 +71,10 @@ class BetweenFilter extends FilterIterator
     {
         $holiday = $this->getInnerIterator()->current();
 
-        if ($this->equal) {
-            if ($holiday >= $this->start_date && $holiday <= $this->end_date) {
-                return true;
-            }
-        }
-
-        if ($holiday > $this->start_date && $holiday < $this->end_date) {
+        if ($this->equal && $holiday >= $this->start_date && $holiday <= $this->end_date) {
             return true;
         }
 
-        return false;
+        return $holiday > $this->start_date && $holiday < $this->end_date;
     }
 }
