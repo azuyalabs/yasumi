@@ -48,8 +48,7 @@ class OurLadyOfAparecidaDayTest extends BrazilBaseTestCase implements YasumiTest
     public function testNossaSenhoraAparecidaBefore1980()
     {
         $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1);
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-10-12", new DateTimeZone(self::TIMEZONE)));
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
     }
 
     /**

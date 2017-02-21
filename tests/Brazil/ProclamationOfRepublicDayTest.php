@@ -48,8 +48,7 @@ class ProclamationOfRepublicDayTest extends BrazilBaseTestCase implements Yasumi
     public function testProclamacaoDaRepublicaBefore1889()
     {
         $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1);
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-11-15", new DateTimeZone(self::TIMEZONE)));
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
     }
 
     /**
