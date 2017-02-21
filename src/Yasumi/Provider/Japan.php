@@ -188,7 +188,7 @@ class Japan extends AbstractProvider
             $day = null;
         }
 
-        if (! is_null($day)) {
+        if (null !== $day) {
             $this->addHoliday(new Holiday('vernalEquinoxDay', ['en_US' => 'Vernal Equinox Day', 'ja_JP' => '春分の日'],
                 new DateTime("$this->year-3-$day", new DateTimeZone($this->timezone)), $this->locale));
         }
