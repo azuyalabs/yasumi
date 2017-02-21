@@ -93,7 +93,7 @@ class Yasumi
             }
         }
 
-        return (array)$providers;
+        return $providers;
     }
 
     /**
