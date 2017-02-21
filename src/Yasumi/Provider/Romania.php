@@ -147,11 +147,11 @@ class Romania extends AbstractProvider
             $national_day = "$this->year-12-01";
         }
 
-        if ($this->year >= 1948 and $this->year <= 1989) {
+        if ($this->year >= 1948 && $this->year <= 1989) {
             $national_day = "$this->year-08-23";
         }
 
-        if ($this->year >= 1866 and $this->year <= 1947) {
+        if ($this->year >= 1866 && $this->year <= 1947) {
             $national_day = "$this->year-05-10";
         }
 
