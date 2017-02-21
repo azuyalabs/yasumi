@@ -55,7 +55,7 @@ class Germany extends AbstractProvider
         $this->calculateGermanUnityDay();
 
         // Note: all German states have agreed this to be a nationwide holiday in 2017 to celebrate the 500th anniversary.
-        if ($this->year == 2017) {
+        if ($this->year === 2017) {
             $this->addHoliday($this->reformationDay($this->year, $this->timezone, $this->locale));
         }
     }
