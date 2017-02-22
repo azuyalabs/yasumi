@@ -32,6 +32,9 @@ class Netherlands extends AbstractProvider
 
     /**
      * Initialize holidays for the Netherlands.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {

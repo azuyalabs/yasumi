@@ -32,6 +32,9 @@ class NewZealand extends AbstractProvider
 
     /**
      * Initialize holidays for New Zealand.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -60,6 +63,9 @@ class NewZealand extends AbstractProvider
      * @link http://www.timeanddate.com/holidays/new-zealand/new-year-day
      * @link http://www.timeanddate.com/holidays/new-zealand/day-after-new-years-day
      * @link http://employment.govt.nz/er/holidaysandleave/publicholidays/mondayisation.asp
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateNewYearHolidays()
     {
@@ -95,6 +101,9 @@ class NewZealand extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Waitangi_Day
      * @link http://employment.govt.nz/er/holidaysandleave/publicholidays/mondayisation.asp
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateWaitangiDay()
     {
@@ -120,6 +129,9 @@ class NewZealand extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Anzac_Day
      * @link http://employment.govt.nz/er/holidaysandleave/publicholidays/mondayisation.asp
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateAnzacDay()
     {
@@ -148,6 +160,9 @@ class NewZealand extends AbstractProvider
      * Her actual birthday is on April 21, but it's celebrated as a public holiday on the first Monday of June.
      *
      * @link http://www.timeanddate.com/holidays/new-zealand/queen-birthday
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateQueensBirthday()
     {
@@ -172,6 +187,9 @@ class NewZealand extends AbstractProvider
      * has remained on this date since then.
      *
      * @link http://www.timeanddate.com/holidays/new-zealand/labour-day
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateLabourDay()
     {
@@ -194,6 +212,9 @@ class NewZealand extends AbstractProvider
      * @link http://www.timeanddate.com/holidays/new-zealand/boxing-day
      * @link http://www.timeanddate.com/holidays/new-zealand/christmas-day
      * @link http://employment.govt.nz/er/holidaysandleave/publicholidays/mondayisation.asp
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateChristmasHolidays()
     {

@@ -32,6 +32,9 @@ class Brazil extends AbstractProvider
 
     /**
      * Initialize holidays for Brazil.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {

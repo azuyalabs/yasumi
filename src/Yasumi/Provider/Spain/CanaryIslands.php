@@ -40,6 +40,9 @@ class CanaryIslands extends Spain
 
     /**
      * Initialize holidays for Canary Islands (Spain).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -61,6 +64,9 @@ class CanaryIslands extends Spain
      * Canary Islands Parliament's first session, which was on May 30, 1983.
      *
      * @link http://www.timeanddate.com/holidays/spain/canaries-day-observed
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateCanaryIslandsDay()
     {

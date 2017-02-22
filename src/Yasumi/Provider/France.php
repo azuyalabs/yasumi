@@ -31,6 +31,9 @@ class France extends AbstractProvider
 
     /**
      * Initialize holidays for France.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -71,6 +74,9 @@ class France extends AbstractProvider
      * French officials and foreign guests.
      *
      * @link http://en.wikipedia.org/wiki/Bastille_Day
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateBastilleDay()
     {

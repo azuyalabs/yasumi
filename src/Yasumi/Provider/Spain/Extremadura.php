@@ -40,6 +40,9 @@ class Extremadura extends Spain
 
     /**
      * Initialize holidays for Extremadura (Spain).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -62,6 +65,9 @@ class Extremadura extends Spain
      * The public holiday was first observed on September 8, 1985.
      *
      * @link http://www.timeanddate.com/holidays/spain/extremadura-day
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateDayOfExtremadura()
     {

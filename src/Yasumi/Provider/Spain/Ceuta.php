@@ -39,6 +39,9 @@ class Ceuta extends Spain
 
     /**
      * Initialize holidays for Ceuta (Spain).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -59,6 +62,9 @@ class Ceuta extends Spain
      * the city from King John I of Portugal on September 2, 1415.
      *
      * @link http://www.timeanddate.com/holidays/spain/the-independent-city-ceuta-day
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateDayOfCeuta()
     {

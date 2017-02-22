@@ -37,6 +37,9 @@ class Ireland extends AbstractProvider
 
     /**
      * Initialize holidays for Ireland.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -77,6 +80,9 @@ class Ireland extends AbstractProvider
      * @TODO : Check substitution of New Years Day when it falls on a Saturday. The Holidays (Employees) Act 1973
      *       states that New Years Day is substituted the *next* day if it does not fall on a weekday. So what if it
      *       falls on a Saturday?
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateNewYearsDay()
     {
@@ -105,6 +111,9 @@ class Ireland extends AbstractProvider
      *
      * @link http://www.irishstatutebook.ie/eli/1939/act/1/section/8/enacted/en/html
      * @link http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculatePentecostMonday()
     {
@@ -122,6 +131,9 @@ class Ireland extends AbstractProvider
      * off work.
      *
      * @link http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateChristmasDay()
     {
@@ -149,6 +161,9 @@ class Ireland extends AbstractProvider
      * @link http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
      * @link https://en.wikipedia.org/wiki/St._Stephen%27s_Day
      * @see  ChristianHolidays
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateStStephensDay()
     {
@@ -178,6 +193,9 @@ class Ireland extends AbstractProvider
      * Territory of Montserrat.
      *
      * @link https://en.wikipedia.org/wiki/Saint_Patrick%27s_Day
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateStPatricksDay()
     {
@@ -210,6 +228,9 @@ class Ireland extends AbstractProvider
      * and many other people in other counties still keep on this tradition.
      *
      * @link https://en.wikipedia.org/wiki/May_Day
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateMayDay()
     {
@@ -228,6 +249,9 @@ class Ireland extends AbstractProvider
      * 1973.
      *
      * @link http://www.irishstatutebook.ie/eli/1961/act/33/section/8/enacted/en/html
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateJuneHoliday()
     {
@@ -246,6 +270,9 @@ class Ireland extends AbstractProvider
      * The last Monday in October is considered a public holiday since 1977.
      *
      * @link http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateOctoberHoliday()
     {

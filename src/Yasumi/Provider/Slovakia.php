@@ -11,7 +11,6 @@
  * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-
 namespace Yasumi\Provider;
 
 use DateTime;
@@ -20,7 +19,6 @@ use Yasumi\Holiday;
 
 /**
  * Provider for all holidays in Slovakia.
- *
  *
  * Resources:
  *    1/    "Zákon č. 241/1993 Z. z.Zákon Národnej rady Slovenskej republiky o štátnych sviatkoch,
@@ -51,16 +49,17 @@ class Slovakia extends AbstractProvider
 {
     use CommonHolidays, ChristianHolidays;
 
-
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
     const ID = 'SK';
 
-
     /**
      * Initialize holidays for Slovakia.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -105,6 +104,9 @@ class Slovakia extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Saints_Cyril_and_Methodius
      *
      * Note: this holiday is common for Czech republic and Slovakia.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateSaintsCyrilAndMethodiusDay()
     {
@@ -120,6 +122,9 @@ class Slovakia extends AbstractProvider
      * Slovak National Uprising Day
      *
      * @see https://en.wikipedia.org/wiki/Slovak_National_Uprising
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateSlovakNationalUprisingDay()
     {
@@ -134,6 +139,9 @@ class Slovakia extends AbstractProvider
      * Day of the Constitution of the Slovak Republic
      *
      * @see https://en.wikipedia.org/wiki/Constitution_of_Slovakia
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateSlovakConstitutionDay()
     {
@@ -152,6 +160,9 @@ class Slovakia extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Our_Lady_of_Sorrows
      * @see https://sk.wikipedia.org/wiki/Sedembolestn%C3%A1_Panna_M%C3%A1ria
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateOurLadyOfSorrowsDay()
     {
@@ -165,6 +176,9 @@ class Slovakia extends AbstractProvider
      * Struggle for Freedom and Democracy Day
      *
      * Note: this national day is common for Czech republic and Slovakia.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateStruggleForFreedomAndDemocracyDay()
     {

@@ -35,6 +35,9 @@ class Bavaria extends Germany
 
     /**
      * Initialize holidays for Bavaria (Germany).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {

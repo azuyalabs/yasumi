@@ -32,6 +32,9 @@ class Greece extends AbstractProvider
 
     /**
      * Initialize holidays for Greece.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -68,6 +71,9 @@ class Greece extends AbstractProvider
      * Chrysostom).
      *
      * @see https://en.wikipedia.org/wiki/Three_Holy_Hierarchs
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateThreeHolyHierarchs()
     {
@@ -83,6 +89,9 @@ class Greece extends AbstractProvider
      * It is a movable feast that occurs at the beginning of the 7th week before Orthodox Easter Sunday.
      *
      * @see https://en.wikipedia.org/wiki/Clean_Monday
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateCleanMonday()
     {
@@ -109,6 +118,9 @@ class Greece extends AbstractProvider
      * Anniversary of the declaration of the start of Greek War of Independence from the Ottoman Empire, in 1821.
      *
      * @link https://en.wikipedia.org/wiki/Greek_War_of_Independence
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
 
     public function calculateIndependenceDay()
@@ -125,6 +137,9 @@ class Greece extends AbstractProvider
      * Celebration of the Greek refusal to the Italian ultimatum of 1940.
      *
      * @link https://en.wikipedia.org/wiki/Ohi_Day
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateOhiDay()
     {
@@ -140,6 +155,9 @@ class Greece extends AbstractProvider
      * Anniversary of the 1973 students protests against the junta of the colonels (1967–1974).
      *
      * @link https://en.wikipedia.org/wiki/Athens_Polytechnic_uprising
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculatePolytechnio()
     {

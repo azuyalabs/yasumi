@@ -31,6 +31,9 @@ class Spain extends AbstractProvider
 
     /**
      * Initialize holidays for Spain.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -65,6 +68,9 @@ class Spain extends AbstractProvider
      * Hispanidad as a national holiday.
      *
      * @link http://en.wikipedia.org/wiki/Fiesta_Nacional_de_España
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateNationalDay()
     {
@@ -82,6 +88,9 @@ class Spain extends AbstractProvider
      * becoming a constitutional monarchy and democracy.
      *
      * @link http://www.timeanddate.com/holidays/spain/constitution-day
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateConstitutionDay()
     {

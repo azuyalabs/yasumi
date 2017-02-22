@@ -41,6 +41,9 @@ class CastillaLaMancha extends Spain
 
     /**
      * Initialize holidays for Castilla-La Mancha (Spain).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -65,6 +68,9 @@ class CastillaLaMancha extends Spain
      * May 31, 1984.
      *
      * @link http://www.timeanddate.com/holidays/spain/castile-la-mancha-day
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateCastillaLaManchaDay()
     {

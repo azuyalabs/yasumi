@@ -39,6 +39,9 @@ class BalearicIslands extends Spain
 
     /**
      * Initialize holidays for Balearic Islands (Spain).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -62,6 +65,9 @@ class BalearicIslands extends Spain
      * Autonomy came into effect on March 1, 1983.
      *
      * @link http://www.timeanddate.com/holidays/spain/the-balearic-islands-day
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateBalearicIslandsDay()
     {

@@ -37,6 +37,9 @@ class Melilla extends Spain
 
     /**
      * Initialize holidays for Melilla (Spain).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {

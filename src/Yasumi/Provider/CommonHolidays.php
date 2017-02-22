@@ -42,6 +42,9 @@ trait CommonHolidays
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function newYearsDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
@@ -66,6 +69,9 @@ trait CommonHolidays
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function internationalWorkersDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
@@ -91,6 +97,9 @@ trait CommonHolidays
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function valentinesDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
@@ -114,6 +123,9 @@ trait CommonHolidays
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function worldAnimalDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
@@ -139,6 +151,9 @@ trait CommonHolidays
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function stMartinsDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
@@ -163,6 +178,9 @@ trait CommonHolidays
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function fathersDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
@@ -187,6 +205,9 @@ trait CommonHolidays
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function mothersDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
@@ -211,6 +232,9 @@ trait CommonHolidays
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function victoryInEuropeDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
@@ -237,6 +261,9 @@ trait CommonHolidays
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function armisticeDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {

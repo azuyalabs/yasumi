@@ -32,6 +32,9 @@ class Finland extends AbstractProvider
 
     /**
      * Initialize holidays for Finland.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -71,6 +74,9 @@ class Finland extends AbstractProvider
      * closed and shops must close their doors at noon.
      *
      * @link https://en.wikipedia.org/wiki/Midsummer#Finland
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculatestJohnsDay()
     {
@@ -110,6 +116,9 @@ class Finland extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/All_Saints%27_Day
      * @link https://fi.wikipedia.org/wiki/Pyh%C3%A4inp%C3%A4iv%C3%A4
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     private function calculateAllSaintsDay()
     {
@@ -138,6 +147,9 @@ class Finland extends AbstractProvider
      * in the Finnish Civil War.
      *
      * @link https://en.wikipedia.org/wiki/Independence_Day_(Finland)
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateIndependenceDay()
     {

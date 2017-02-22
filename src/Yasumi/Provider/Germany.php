@@ -31,6 +31,9 @@ class Germany extends AbstractProvider
 
     /**
      * Initialize holidays for Germany.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -71,6 +74,9 @@ class Germany extends AbstractProvider
      * is a legal holiday for the Federal Republic of Germany.
      *
      * @link https://en.wikipedia.org/wiki/German_Unity_Day
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateGermanUnityDay()
     {

@@ -39,6 +39,9 @@ class RegionOfMurcia extends Spain
 
     /**
      * Initialize holidays for the Region of Murcia (Spain).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -60,6 +63,9 @@ class RegionOfMurcia extends Spain
      * Murcia on June 9, 1982. The Day of the Region of Murcia was first celebrated on June 9, 1983.
      *
      * @link http://www.timeanddate.com/holidays/spain/murcia-day
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateDayOfMurcia()
     {

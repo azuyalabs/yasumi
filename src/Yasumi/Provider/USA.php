@@ -32,6 +32,9 @@ class USA extends AbstractProvider
 
     /**
      * Initialize holidays for the USA.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -194,17 +197,21 @@ class USA extends AbstractProvider
      *
      * When New Year's Day, Independence Day, or Christmas Day falls on a Saturday, the previous day is also a holiday.
      * When one of these holidays fall on a Sunday, the next day is also a holiday.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     private function calculateSubstituteHolidays()
     {
-        $datesIterator = $this->getIterator();
+        $datesIterator     = $this->getIterator();
         $substituteHoliday = null;
 
         // Loop through all defined holidays
         while ($datesIterator->valid()) {
 
             // Only process New Year's Day, Independence Day, or Christmas Day
-            if (in_array($datesIterator->current()->shortName, ['newYearsDay', 'independenceDay', 'christmasDay'], true)) {
+            if (in_array($datesIterator->current()->shortName, ['newYearsDay', 'independenceDay', 'christmasDay'],
+                true)) {
 
                 // Substitute holiday is on a Monday in case the holiday falls on a Sunday
                 if ($datesIterator->current()->format('w') == 0) {

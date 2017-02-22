@@ -40,6 +40,9 @@ class Galicia extends Spain
 
     /**
      * Initialize holidays for Galicia (Spain).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -63,6 +66,9 @@ class Galicia extends Spain
      * holiday in all Galicia.
      *
      * @link http://en.wikipedia.org/wiki/Galician_Literature_Day
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateGalicianLiteratureDay()
     {
@@ -86,6 +92,9 @@ class Galicia extends Spain
      * July 24, or Friday, July 26. In the rest of Spain, July 25 is not a public holiday.
      *
      * @link http://www.timeanddate.com/holidays/spain/santiago-apostle
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateStJamesDay()
     {

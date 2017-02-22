@@ -36,6 +36,8 @@ class Saxony extends Germany
 
     /**
      * Initialize holidays for Saxony (Germany).
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -49,6 +51,9 @@ class Saxony extends Germany
     /**
      * For the German state of Saxony, Reformation Day was celebrated since 1517.
      * Note: In 2017 all German states will celebrate Reformation Day for its 500th anniversary.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     private function calculateReformationDay()
     {
@@ -70,6 +75,9 @@ class Saxony extends Germany
      * any more, except in the Free State of Saxony.
      *
      * @link https://en.wikipedia.org/wiki/Bu%C3%9F-_und_Bettag
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateRepentanceAndPrayerDay()
     {

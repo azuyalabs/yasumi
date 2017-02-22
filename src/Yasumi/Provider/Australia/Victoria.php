@@ -31,6 +31,9 @@ class Victoria extends Australia
 
     /**
      * Initialize holidays for Victoria (Australia).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {

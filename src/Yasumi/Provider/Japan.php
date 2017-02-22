@@ -73,6 +73,9 @@ class Japan extends AbstractProvider
 
     /**
      * Initialize holidays for Japan.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -172,6 +175,9 @@ class Japan extends AbstractProvider
      * festival called Shunki kōrei-sai (春季皇霊祭).
      *
      * @link http://www.h3.dion.ne.jp/~sakatsu/holiday_topic.htm (in Japanese)
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     private function calculateVernalEquinoxDay()
     {
@@ -199,6 +205,9 @@ class Japan extends AbstractProvider
      *
      * Coming of Age Day was established after 1948 on January 15th. After 2000 it was changed to be the second monday
      * of January.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     private function calculateComingOfAgeDay()
     {
@@ -218,6 +227,9 @@ class Japan extends AbstractProvider
      * Calculates Greenery Day.
      *
      * Greenery Day was established from 1989 on April 29th. After 2007 it was changed to be May 4th.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     private function calculateGreeneryDay()
     {
@@ -237,6 +249,9 @@ class Japan extends AbstractProvider
      * Calculates Marine Day.
      *
      * Marine Day was established since 1996 on July 20th. After 2003 it was changed to be the third monday of July.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     private function calculateMarineDay()
     {
@@ -257,6 +272,9 @@ class Japan extends AbstractProvider
      *
      * Respect for the Age Day was established since 1996 on September 15th. After 2003 it was changed to be the third
      * monday of September.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     private function calculateRespectForTheAgeDay()
     {
@@ -277,6 +295,9 @@ class Japan extends AbstractProvider
      *
      * Health And Sports Day was established since 1966 on October 10th. After 2000 it was changed to be the second
      * monday of October.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     private function calculateHealthAndSportsDay()
     {
@@ -300,6 +321,9 @@ class Japan extends AbstractProvider
      * festival called Shūki kōrei-sai (秋季皇霊祭).
      *
      * @link http://www.h3.dion.ne.jp/~sakatsu/holiday_topic.htm (in Japanese)
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     private function calculateAutumnalEquinoxDay()
     {
@@ -327,6 +351,9 @@ class Japan extends AbstractProvider
      *
      * Generally if a national holiday falls on a Sunday, the holiday is observed the next working day (not being
      * another holiday).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     private function calculateSubstituteHolidays()
     {
@@ -371,6 +398,9 @@ class Japan extends AbstractProvider
      * Calculate public bridge holidays.
      *
      * Any day that falls between two other national holidays also becomes a holiday, known as a bridge holiday.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     private function calculateBridgeHolidays()
     {

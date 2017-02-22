@@ -42,6 +42,9 @@ class ValencianCommunity extends Spain
 
     /**
      * Initialize holidays for the Valencian Community (Spain).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -67,6 +70,9 @@ class ValencianCommunity extends Spain
      * the Mediterranean. The Valencia region gained some autonomy in 1977 and full autonomy in 1982.
      *
      * @link http://www.timeanddate.com/holidays/spain/the-valencian-community-day
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateValencianCommunityDay()
     {

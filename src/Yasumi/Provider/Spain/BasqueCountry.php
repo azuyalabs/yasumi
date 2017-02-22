@@ -38,6 +38,9 @@ class BasqueCountry extends Spain
 
     /**
      * Initialize holidays for Basque Country (Spain).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -62,6 +65,9 @@ class BasqueCountry extends Spain
      * In 2016, this holiday is replaced by the Day of the First Constitiution of the Basque Country.
      *
      * @link http://www.officeholidays.com/countries/spain/basque_community_day.php
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateBasqueCountryDay()
     {

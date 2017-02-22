@@ -31,6 +31,9 @@ class Belgium extends AbstractProvider
 
     /**
      * Initialize holidays for Belgium.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {

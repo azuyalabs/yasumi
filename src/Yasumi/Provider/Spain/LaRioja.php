@@ -39,6 +39,9 @@ class LaRioja extends Spain
 
     /**
      * Initialize holidays for La Rioja (Spain).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -59,6 +62,9 @@ class LaRioja extends Spain
      * on June 9, 1982. The Day of La Rioja was first observed on June 9, 1983.
      *
      * @link http://www.timeanddate.com/holidays/spain/rioja-day
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateLaRiojaDay()
     {

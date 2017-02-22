@@ -34,6 +34,9 @@ class Ukraine extends AbstractProvider
 
     /**
      * Initialize holidays for Ukraine.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -59,6 +62,9 @@ class Ukraine extends AbstractProvider
 
     /**
      * Christmas Day.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateChristmasDay()
     {
@@ -73,6 +79,9 @@ class Ukraine extends AbstractProvider
      * every year.
      *
      * @link https://en.wikipedia.org/wiki/International_Women%27s_Day
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateInternationalWomensDay()
     {
@@ -85,6 +94,9 @@ class Ukraine extends AbstractProvider
      * International Workers' Day.
      *
      * @link https://en.wikipedia.org/wiki/International_Workers%27_Day#Ukraine
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateSecondInternationalWorkersDay()
     {
@@ -104,6 +116,9 @@ class Ukraine extends AbstractProvider
      * Ukraine, until 2014 inclusive.
      *
      * @link https://en.wikipedia.org/wiki/Victory_Day_over_Nazism_in_World_War_II
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateVictoryDay()
     {
@@ -117,6 +132,9 @@ class Ukraine extends AbstractProvider
      * Constitution Day (Ukrainian: День Конституції) is an Ukrainian public holiday celebrated on 28 June since 1996.
      *
      * @link https://en.wikipedia.org/wiki/Constitution_Day_(Ukraine)
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateConstitutionDay()
     {
@@ -129,13 +147,16 @@ class Ukraine extends AbstractProvider
     }
 
     /**
-     * Constitution Day
+     * Independence Day
      *
      * The Act of Declaration of Independence of Ukraine (Ukrainian: Акт проголошення незалежності України, translit.
      * Akt proholoshennya nezalezhnosti Ukrayiny) was adopted by the Ukrainian parliament on 24 August 1991.
      * The Act established Ukraine as an independent state.
      *
      * @link https://en.wikipedia.org/wiki/Declaration_of_Independence_of_Ukraine
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateIndependenceDay()
     {
@@ -157,6 +178,9 @@ class Ukraine extends AbstractProvider
      * Starting from 2015, this day is considered a public holiday (this is thus a day off in Ukraine)
      *
      * @link https://en.wikipedia.org/wiki/Defender_of_Ukraine_Day
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateDefenderOfUkraineDay()
     {

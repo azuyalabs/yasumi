@@ -32,6 +32,9 @@ class Sweden extends AbstractProvider
 
     /**
      * Initialize holidays for Sweden.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -71,6 +74,9 @@ class Sweden extends AbstractProvider
      * midsummer take place on midsummer eve, when many workplaces are closed and shops must close their doors at noon.
      *
      * @link https://en.wikipedia.org/wiki/Midsummer#Sweden
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculatestJohnsDay()
     {
@@ -102,6 +108,9 @@ class Sweden extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/All_Saints%27_Day
      * @link http://www.timeanddate.com/holidays/sweden/all-saints-day
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     private function calculateAllSaintsDay()
     {
@@ -126,6 +135,9 @@ class Sweden extends AbstractProvider
      * renamed to the national day by the Riksdag. The tradition of celebrating this date began 1916 at the Stockholm
      * Olympic Stadium, in honour of the election of King Gustav Vasa in 1523, as this was considered the foundation of
      * modern Sweden.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateNationalDay()
     {

@@ -38,6 +38,9 @@ class Aragon extends Spain
 
     /**
      * Initialize holidays for Aragon (Spain).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {

@@ -41,6 +41,9 @@ trait ChristianHolidays
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function easter($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
@@ -63,6 +66,9 @@ trait ChristianHolidays
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function easterMonday($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
@@ -86,6 +92,9 @@ trait ChristianHolidays
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function ascensionDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
@@ -106,6 +115,9 @@ trait ChristianHolidays
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function pentecost($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
@@ -126,6 +138,9 @@ trait ChristianHolidays
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function pentecostMonday($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
@@ -149,6 +164,9 @@ trait ChristianHolidays
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a type of 'other' is considered.
      *
      * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function corpusChristi($year, $timezone, $locale, $type = Holiday::TYPE_OTHER)
     {
@@ -173,6 +191,9 @@ trait ChristianHolidays
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default observance is considered.
      *
      * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function christmasEve($year, $timezone, $locale, $type = Holiday::TYPE_OBSERVANCE)
     {
@@ -194,6 +215,9 @@ trait ChristianHolidays
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function christmasDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
@@ -215,6 +239,9 @@ trait ChristianHolidays
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function secondChristmasDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
@@ -239,6 +266,9 @@ trait ChristianHolidays
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function allSaintsDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
@@ -261,6 +291,9 @@ trait ChristianHolidays
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function assumptionOfMary($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
@@ -282,6 +315,9 @@ trait ChristianHolidays
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function goodFriday($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
@@ -307,6 +343,9 @@ trait ChristianHolidays
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function epiphany($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
@@ -329,6 +368,9 @@ trait ChristianHolidays
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function ashWednesday($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
@@ -353,6 +395,9 @@ trait ChristianHolidays
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function immaculateConception($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
@@ -378,6 +423,9 @@ trait ChristianHolidays
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function stStephensDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
@@ -403,6 +451,9 @@ trait ChristianHolidays
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function stJosephsDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
@@ -426,6 +477,9 @@ trait ChristianHolidays
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function maundyThursday($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
@@ -450,6 +504,9 @@ trait ChristianHolidays
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function stGeorgesDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
@@ -474,6 +531,9 @@ trait ChristianHolidays
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function stJohnsDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
@@ -498,6 +558,9 @@ trait ChristianHolidays
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function annunciation($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
@@ -551,6 +614,9 @@ trait ChristianHolidays
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
      *
      * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
      */
     public function reformationDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {

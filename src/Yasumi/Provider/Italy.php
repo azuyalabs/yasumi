@@ -31,6 +31,9 @@ class Italy extends AbstractProvider
 
     /**
      * Initialize holidays for Italy.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -65,6 +68,9 @@ class Italy extends AbstractProvider
      * holiday.
      *
      * @link http://en.wikipedia.org/wiki/Liberation_Day_%28Italy%29
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateLiberationDay()
     {
@@ -83,6 +89,9 @@ class Italy extends AbstractProvider
      * the Second World War and the fall of Fascism.
      *
      * @link http://en.wikipedia.org/wiki/Festa_della_Repubblica
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateRepublicDay()
     {

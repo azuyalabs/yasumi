@@ -31,6 +31,9 @@ class Austria extends AbstractProvider
 
     /**
      * Initialize holidays for Austria.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -67,6 +70,9 @@ class Austria extends AbstractProvider
      * the declaration.
      *
      * @link https://en.wikipedia.org/wiki/Declaration_of_Neutrality
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateNationalDay()
     {

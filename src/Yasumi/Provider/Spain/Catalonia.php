@@ -42,6 +42,9 @@ class Catalonia extends Spain
 
     /**
      * Initialize holidays for Catalonia (Spain).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -65,6 +68,9 @@ class Catalonia extends Spain
      * government of Catalonia, the Generalitat de Catalunya, upon its restoration after the Franco dictatorship.
      *
      * @link https://en.wikipedia.org/wiki/National_Day_of_Catalonia
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateNationalDayOfCatalonia()
     {

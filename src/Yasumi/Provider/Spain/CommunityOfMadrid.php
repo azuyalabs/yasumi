@@ -41,6 +41,9 @@ class CommunityOfMadrid extends Spain
 
     /**
      * Initialize holidays for the Community Of Madrid (Spain).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -66,6 +69,9 @@ class CommunityOfMadrid extends Spain
      * French troops in the aftermath of the revolt.
      *
      * @link http://en.wikipedia.org/wiki/Dos_de_Mayo_Uprising
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateDosdeMayoUprisingDay()
     {

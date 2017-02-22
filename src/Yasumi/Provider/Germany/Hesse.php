@@ -36,6 +36,9 @@ class Hesse extends Germany
 
     /**
      * Initialize holidays for Hesse (Germany).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {

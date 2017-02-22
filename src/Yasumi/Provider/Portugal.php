@@ -35,6 +35,9 @@ class Portugal extends AbstractProvider
 
     /**
      * Initialize holidays for Portugal.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -55,26 +58,6 @@ class Portugal extends AbstractProvider
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
     }
 
-    public function calculateCarnationRevolutionDay()
-    {
-        if ($this->year >= 1974) {
-            $this->addHoliday(new Holiday('25thApril', ['pt_PT' => 'Dia da Liberdade'],
-                new DateTime("$this->year-04-25", new DateTimeZone($this->timezone)), $this->locale,
-                Holiday::TYPE_NATIONAL));
-        }
-    }
-
-    /**
-     * In Portugal, between 2013 andd 2015 (inclusive) this holiday did not happen due to government deliberation.
-     * It was restored in 2016.
-     */
-    public function calculateCorpusChristi()
-    {
-        if ($this->year <= 2013 || $this->year >= 2016) {
-            $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale));
-        }
-    }
-
     /**
      * Carnation Revolution (25th of April 1974) / Revolução dos Cravos (25 de Abril 1974)
      *
@@ -90,7 +73,32 @@ class Portugal extends AbstractProvider
      * Freedom Day (Portuguese: Dia da Liberdade), to celebrate the event.
      *
      * @link https://en.wikipedia.org/wiki/Carnation_Revolution
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
+    public function calculateCarnationRevolutionDay()
+    {
+        if ($this->year >= 1974) {
+            $this->addHoliday(new Holiday('25thApril', ['pt_PT' => 'Dia da Liberdade'],
+                new DateTime("$this->year-04-25", new DateTimeZone($this->timezone)), $this->locale,
+                Holiday::TYPE_NATIONAL));
+        }
+    }
+
+    /**
+     * In Portugal, between 2013 andd 2015 (inclusive) this holiday did not happen due to government deliberation.
+     * It was restored in 2016.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     */
+    public function calculateCorpusChristi()
+    {
+        if ($this->year <= 2013 || $this->year >= 2016) {
+            $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale));
+        }
+    }
 
     /**
      * Day of Portugal, Camões and the Portuguese Communities / Dia de Portugal, de Camões e das Comunidades Portuguesas
@@ -104,6 +112,9 @@ class Portugal extends AbstractProvider
      * holiday. The date commemorates the death of national literary icon Luís de Camões on 10 June 1580.
      *
      * @link https://en.wikipedia.org/wiki/Portugal_Day
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculatePortugalDay()
     {
@@ -127,6 +138,9 @@ class Portugal extends AbstractProvider
      * status and place Portugal on the way of progress.
      *
      * @link https://en.wikipedia.org/wiki/5_October_1910_revolution
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculatePortugueseRepublicDay()
     {
@@ -139,6 +153,9 @@ class Portugal extends AbstractProvider
     /**
      * In Portugal, between 2013 andd 2015 (inclusive) this holiday did not happen due to government deliberation.
      * It was restored in 2016.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateAllSaintsDay()
     {
@@ -166,6 +183,9 @@ class Portugal extends AbstractProvider
      *
      * @link https://pt.wikipedia.org/wiki/Restauração_da_Independência (portuguese link)
      * @link https://pt.wikipedia.org/wiki/Guerra_da_Restauração (english link)
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateRestorationOfIndependenceDay()
     {

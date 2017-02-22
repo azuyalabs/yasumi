@@ -37,6 +37,9 @@ class Moselle extends France
 
     /**
      * Initialize holidays for Moselle (France).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {

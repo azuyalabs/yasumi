@@ -34,6 +34,9 @@ class RhinelandPalatinate extends Germany
 
     /**
      * Initialize holidays for Rhineland Palatinate (Germany).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {

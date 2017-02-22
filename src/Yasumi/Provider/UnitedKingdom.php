@@ -33,6 +33,9 @@ class UnitedKingdom extends AbstractProvider
 
     /**
      * Initialize holidays for the United Kingdom.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -60,6 +63,9 @@ class UnitedKingdom extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom
      * @link http://www.timeanddate.com/holidays/uk/new-year-day
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateNewYearsDay()
     {
@@ -94,6 +100,9 @@ class UnitedKingdom extends AbstractProvider
      * often run to a holiday timetable.
      *
      * @link http://www.timeanddate.com/holidays/uk/early-may-bank-holiday
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     private function calculateMayDayBankHoliday()
     {
@@ -116,6 +125,9 @@ class UnitedKingdom extends AbstractProvider
      * open or closed, according to local custom. Public transport systems often run to a holiday timetable.
      *
      * @link http://www.timeanddate.com/holidays/uk/spring-bank-holiday
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     private function calculateSpringBankHoliday()
     {
@@ -145,6 +157,9 @@ class UnitedKingdom extends AbstractProvider
      *
      * @link http://www.timeanddate.com/holidays/uk/christmas-day
      * @link http://www.timeanddate.com/holidays/uk/boxing-day
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateChristmasHolidays()
     {

@@ -39,6 +39,9 @@ class Andalusia extends Spain
 
     /**
      * Initialize holidays for Andalusia (Spain).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -60,6 +63,9 @@ class Andalusia extends Spain
      * public holiday in the rest of Spain on February 28.
      *
      * @link http://en.wikipedia.org/wiki/D%C3%ADa_de_Andaluc%C3%ADa
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateAndalusiaDay()
     {

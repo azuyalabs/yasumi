@@ -31,6 +31,9 @@ class Poland extends AbstractProvider
 
     /**
      * Initialize holidays for Poland.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -65,6 +68,9 @@ class Poland extends AbstractProvider
      * holiday only in 1919 in the Second Polish Republic.
      *
      * @link https://en.wikipedia.org/wiki/May_3rd_Constitution_Day
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
 
     public function calculateIndependenceDay()
@@ -88,6 +94,9 @@ class Poland extends AbstractProvider
      * Empire.
      *
      * @link https://en.wikipedia.org/wiki/National_Independence_Day_(Poland)
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
 
     public function calculateConstitutionDay()

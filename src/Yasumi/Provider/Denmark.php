@@ -32,6 +32,9 @@ class Denmark extends AbstractProvider
 
     /**
      * Initialize holidays for Denmark.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -65,6 +68,9 @@ class Denmark extends AbstractProvider
      * the Church observed that had survived the Reformation.
      *
      * @link https://en.wikipedia.org/wiki/Store_Bededag
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateGreatPrayerDay()
     {

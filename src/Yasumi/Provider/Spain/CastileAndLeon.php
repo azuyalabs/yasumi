@@ -41,6 +41,9 @@ class CastileAndLeon extends Spain
 
     /**
      * Initialize holidays for Castile and León (Spain).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -62,6 +65,9 @@ class CastileAndLeon extends Spain
      * April 23, 1521.
      *
      * @link http://en.wikipedia.org/wiki/Castile_and_León_Day
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateCastileAndLeonDay()
     {

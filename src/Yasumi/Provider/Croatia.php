@@ -33,6 +33,9 @@ class Croatia extends AbstractProvider
 
     /**
      * Initialize holidays for Croatia.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {

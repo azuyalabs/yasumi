@@ -40,6 +40,9 @@ class Cantabria extends Spain
 
     /**
      * Initialize holidays for Cantabria (Spain).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -65,6 +68,9 @@ class Cantabria extends Spain
      * 1982, the event became known as the Day of Cantabria.
      *
      * @link http://www.timeanddate.com/holidays/spain/cantabria-day
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateCantabriaDay()
     {

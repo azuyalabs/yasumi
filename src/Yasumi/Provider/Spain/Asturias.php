@@ -40,6 +40,9 @@ class Asturias extends Spain
 
     /**
      * Initialize holidays for Asturias (Spain).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -62,6 +65,9 @@ class Asturias extends Spain
      * The public holiday was first observed on September 8, 1984.
      *
      * @link http://www.timeanddate.com/holidays/spain/asturias-day
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateAsturiasDay()
     {

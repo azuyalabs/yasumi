@@ -281,6 +281,10 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @return Holiday a Holiday instance for the given holiday
      *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \RuntimeException
+     * @throws \InvalidArgumentException
+     *
      * @covers AbstractProvider::anotherTime
      */
     public function next($shortName)
@@ -294,9 +298,11 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * @param int    $year      the year to get the holiday date for
      * @param string $shortName the name of the holiday for which the date needs to be fetched
      *
-     * @throws InvalidArgumentException when the given name is blank or empty.
-     *
      * @return Holiday a Holiday instance for the given holiday and year
+     *
+     * @throws InvalidArgumentException when the given name is blank or empty.
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \RuntimeException
      */
     private function anotherTime($year, $shortName)
     {
@@ -332,6 +338,10 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * @param $shortName string the name of the holiday for which the previous occurrence need to be retrieved.
      *
      * @return Holiday a Holiday instance for the given holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \RuntimeException
+     * @throws \InvalidArgumentException
      *
      * @covers AbstractProvider::anotherTime
      */

@@ -104,6 +104,10 @@ class Yasumi
      * @TODO we should accept a timezone so we can accept int/string for $startDate
      *
      * @return DateTime
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \RuntimeException
+     * @throws \InvalidArgumentException
      */
     public static function nextWorkingDay($class, DateTime $startDate, $workingDays = 1)
     {
@@ -199,6 +203,10 @@ class Yasumi
      * @TODO we should accept a timezone so we can accept int/string for $startDate
      *
      * @return DateTime
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \RuntimeException
+     * @throws \InvalidArgumentException
      */
     public static function prevWorkingDay($class, DateTime $startDate, $workingDays = 1)
     {
