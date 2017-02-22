@@ -178,7 +178,7 @@ class Yasumi
         }
 
         // Assert locale input
-        if (! in_array($locale, static::$locales)) {
+        if (! in_array($locale, static::$locales, true)) {
             throw new UnknownLocaleException(sprintf('Locale "%s" is not a valid locale.', $locale));
         }
 

@@ -95,7 +95,7 @@ class Translations implements TranslationsInterface
      */
     protected function isValidLocale($locale)
     {
-        if (! in_array($locale, $this->availableLocales)) {
+        if (! in_array($locale, $this->availableLocales, true)) {
             throw new UnknownLocaleException(sprintf('Locale "%s" is not a valid locale.', $locale));
         }
 

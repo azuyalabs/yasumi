@@ -119,7 +119,7 @@ class Holiday extends DateTime implements JsonSerializable
         }
 
         // Assert display locale input
-        if (! in_array($displayLocale, static::$locales)) {
+        if (! in_array($displayLocale, static::$locales, true)) {
             throw new UnknownLocaleException(sprintf('Locale "%s" is not a valid locale.', $displayLocale));
         }
 
