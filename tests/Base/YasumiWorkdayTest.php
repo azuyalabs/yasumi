@@ -23,7 +23,7 @@ class YasumiWorkdayTest extends PHPUnit_Framework_TestCase
         $result    = Yasumi::nextWorkingDay('USA', $startDate);
 
         // Includes a weekend and a holiday
-        $this->assertInstanceOf('\DateTime', $result);
+        $this->assertInstanceOf(\DateTime::class, $result);
         $this->assertEquals('2016-07-05', $result->format('Y-m-d'));
     }
 
@@ -33,7 +33,7 @@ class YasumiWorkdayTest extends PHPUnit_Framework_TestCase
         $result    = Yasumi::prevWorkingDay('USA', $startDate);
 
         // Includes a weekend and a holiday
-        $this->assertInstanceOf('\DateTime', $result);
+        $this->assertInstanceOf(\DateTime::class, $result);
         $this->assertEquals('2016-07-01', $result->format('Y-m-d'));
     }
 

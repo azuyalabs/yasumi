@@ -108,7 +108,7 @@ class YasumiTest extends PHPUnit_Framework_TestCase
         $holidays = Yasumi::create('Japan',
             Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND));
 
-        $this->assertInstanceOf('ArrayIterator', $holidays->getIterator());
+        $this->assertInstanceOf(\ArrayIterator::class, $holidays->getIterator());
     }
 
     /**
