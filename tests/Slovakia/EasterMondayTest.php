@@ -58,14 +58,14 @@ class EasterMondayTest extends SlovakiaBaseTestCase implements YasumiTestCaseInt
         $timezone = self::TIMEZONE;
 
         return [
-            [1788, new DateTime("1788-3-24", new DateTimeZone($timezone))],
-            [1876, new DateTime("1876-4-17", new DateTimeZone($timezone))],
-            [2016, new DateTime("2016-3-28", new DateTimeZone($timezone))],
-            [2017, new DateTime("2017-4-17", new DateTimeZone($timezone))],
-            [2018, new DateTime("2018-4-2", new DateTimeZone($timezone))],
-            [2019, new DateTime("2019-4-22", new DateTimeZone($timezone))],
-            [2020, new DateTime("2020-4-13", new DateTimeZone($timezone))],
-            [2050, new DateTime("2050-4-11", new DateTimeZone($timezone))],
+            [1788, new DateTime('1788-3-24', new DateTimeZone($timezone))],
+            [1876, new DateTime('1876-4-17', new DateTimeZone($timezone))],
+            [2016, new DateTime('2016-3-28', new DateTimeZone($timezone))],
+            [2017, new DateTime('2017-4-17', new DateTimeZone($timezone))],
+            [2018, new DateTime('2018-4-2', new DateTimeZone($timezone))],
+            [2019, new DateTime('2019-4-22', new DateTimeZone($timezone))],
+            [2020, new DateTime('2020-4-13', new DateTimeZone($timezone))],
+            [2050, new DateTime('2050-4-11', new DateTimeZone($timezone))],
         ];
     }
 

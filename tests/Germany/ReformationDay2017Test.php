@@ -38,7 +38,7 @@ class ReformationDay2017Test extends GermanyBaseTestCase implements YasumiTestCa
     public function testHolidayOnEstablishment()
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, self::ESTABLISHMENT_YEAR,
-            new DateTime(self::ESTABLISHMENT_YEAR . "-10-31", new DateTimeZone(self::TIMEZONE)));
+            new DateTime(self::ESTABLISHMENT_YEAR . '-10-31', new DateTimeZone(self::TIMEZONE)));
     }
 
     /**

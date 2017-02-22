@@ -129,7 +129,7 @@ class HolidayTest extends PHPUnit_Framework_TestCase
 
         $locale = 'pl_PL';
 
-        $holiday = new Holiday('newYearsDay', [], new DateTime("2015-01-01"), $locale);
+        $holiday = new Holiday('newYearsDay', [], new DateTime('2015-01-01'), $locale);
         $holiday->mergeGlobalTranslations($translationsStub);
 
         $this->assertNotNull($holiday->getName());
@@ -155,7 +155,7 @@ class HolidayTest extends PHPUnit_Framework_TestCase
         $customLocale      = 'nl_NL';
         $customTranslation = 'Nieuwjaar';
 
-        $holiday = new Holiday('newYearsDay', [$customLocale => $customTranslation], new DateTime("2015-01-01"),
+        $holiday = new Holiday('newYearsDay', [$customLocale => $customTranslation], new DateTime('2015-01-01'),
             $customLocale);
         $holiday->mergeGlobalTranslations($translationsStub);
 
@@ -182,7 +182,7 @@ class HolidayTest extends PHPUnit_Framework_TestCase
         $customLocale      = 'pl_PL';
         $customTranslation = 'Bardzo Nowy Rok';
 
-        $holiday = new Holiday('newYearsDay', [$customLocale => $customTranslation], new DateTime("2014-01-01"),
+        $holiday = new Holiday('newYearsDay', [$customLocale => $customTranslation], new DateTime('2014-01-01'),
             $customLocale);
         $holiday->mergeGlobalTranslations($translationsStub);
 

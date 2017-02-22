@@ -42,7 +42,7 @@ class MunicipalElections2016DayTest extends SouthAfricaBaseTestCase implements Y
     public function testHolidayOnAfterEstablishment()
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, self::ESTABLISHMENT_YEAR,
-            new DateTime(self::ESTABLISHMENT_YEAR . "-8-3", new DateTimeZone(self::TIMEZONE)));
+            new DateTime(self::ESTABLISHMENT_YEAR . '-8-3', new DateTimeZone(self::TIMEZONE)));
     }
 
     /**

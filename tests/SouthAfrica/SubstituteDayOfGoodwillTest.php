@@ -42,7 +42,7 @@ class SubstituteDayOfGoodwillTest extends SouthAfricaBaseTestCase implements Yas
     public function testHolidayOnAfterEstablishment()
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, self::ESTABLISHMENT_YEAR,
-            new DateTime(self::ESTABLISHMENT_YEAR . "-12-27", new DateTimeZone(self::TIMEZONE)));
+            new DateTime(self::ESTABLISHMENT_YEAR . '-12-27', new DateTimeZone(self::TIMEZONE)));
     }
 
     /**
