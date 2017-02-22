@@ -98,11 +98,11 @@ class Australia extends AbstractProvider
     ) {
         $holidayDate = $date instanceof DateTime ? $date : new DateTime($date, new DateTimeZone($this->timezone));
 
-        $day = $holidayDate->format('w');
+        $day = (int) $holidayDate->format('w');
         //echo ' - '.$shortName.' - Day: '.$day."\n";
-        if (($day == 0 && $moveFromSunday) || ($day == 6 && $moveFromSaturday)) {
+        if (($day === 0 && $moveFromSunday) || ($day === 6 && $moveFromSaturday)) {
             //echo ' - '.$shortName.' - Need to move: '.($day == 0 ? '1 day' : '2days')."\n";
-            $holidayDate->add($day == 0 ? new DateInterval('P1D') : new DateInterval('P2D'));
+            $holidayDate->add($day === 0 ? new DateInterval('P1D') : new DateInterval('P2D'));
         }
 
         $this->addHoliday(new Holiday($shortName, $names, $holidayDate, $this->locale));
