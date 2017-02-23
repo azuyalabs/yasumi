@@ -40,6 +40,10 @@ trait YasumiBase
      * @param int    $year                   holiday calendar year
      * @param string $type                   The type of holiday. Use the following constants: TYPE_NATIONAL,
      *                                       TYPE_OBSERVANCE, TYPE_SEASON, TYPE_BANK or TYPE_OTHER.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \RuntimeException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function assertDefinedHolidays($expectedHolidays, $provider, $year, $type)
     {
@@ -78,6 +82,11 @@ trait YasumiBase
      * @param string   $shortName string the short name of the holiday to be checked against
      * @param int      $year      holiday calendar year
      * @param DateTime $expected  the date to be checked against
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
+     * @throws \RuntimeException
+     * @throws \PHPUnit_Framework_AssertionFailedError
      */
     public function assertHoliday($provider, $shortName, $year, $expected)
     {
@@ -99,6 +108,11 @@ trait YasumiBase
      * @param string $provider  the holiday provider (i.e. country/state) for which the holiday need to be tested
      * @param string $shortName the short name of the holiday to be checked against
      * @param int    $year      holiday calendar year
+     *
+     * @throws \InvalidArgumentException
+     * @throws \RuntimeException
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \PHPUnit_Framework_AssertionFailedError
      */
     public function assertNotHoliday($provider, $shortName, $year)
     {
@@ -119,6 +133,11 @@ trait YasumiBase
      * @param string $shortName    string the short name of the holiday to be checked against
      * @param int    $year         holiday calendar year
      * @param array  $translations the translations to be checked against
+     *
+     * @throws \InvalidArgumentException
+     * @throws \RuntimeException
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \PHPUnit_Framework_AssertionFailedError
      */
     public function assertTranslatedHolidayName($provider, $shortName, $year, $translations)
     {
@@ -149,6 +168,11 @@ trait YasumiBase
      * @param string $shortName string the short name of the holiday to be checked against
      * @param int    $year      holiday calendar year
      * @param string $type      the type to be checked against
+     *
+     * @throws \InvalidArgumentException
+     * @throws \RuntimeException
+     * @throws \PHPUnit_Framework_AssertionFailedError
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function assertHolidayType($provider, $shortName, $year, $type)
     {
@@ -171,6 +195,11 @@ trait YasumiBase
      * @param string $shortName         string the short name of the holiday to be checked against
      * @param int    $year              holiday calendar year
      * @param string $expectedDayOfWeek the expected week day (i.e. "Saturday", "Sunday", etc.)
+     *
+     * @throws \PHPUnit_Framework_AssertionFailedError
+     * @throws \InvalidArgumentException
+     * @throws \RuntimeException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function assertDayOfWeek($provider, $shortName, $year, $expectedDayOfWeek)
     {

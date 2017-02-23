@@ -30,6 +30,11 @@ class thirdCarnivalDay extends NetherlandsBaseTestCase implements YasumiTestCase
 
     /**
      * Tests the holiday defined in this test.
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
+     * @throws \PHPUnit_Framework_AssertionFailedError
+     * @throws \RuntimeException
      */
     public function testHoliday()
     {
@@ -40,6 +45,11 @@ class thirdCarnivalDay extends NetherlandsBaseTestCase implements YasumiTestCase
 
     /**
      * Tests type of the holiday defined in this test.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \PHPUnit_Framework_AssertionFailedError
+     * @throws \RuntimeException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function testHolidayType()
     {
@@ -48,6 +58,11 @@ class thirdCarnivalDay extends NetherlandsBaseTestCase implements YasumiTestCase
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \PHPUnit_Framework_AssertionFailedError
+     * @throws \RuntimeException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function testTranslation()
     {
