@@ -15,6 +15,7 @@ namespace Yasumi\tests\Base;
 use DateTime;
 use InvalidArgumentException;
 use PHPUnit_Framework_TestCase;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiBase;
 use Yasumi\TranslationsInterface;
@@ -51,7 +52,7 @@ class HolidayTest extends PHPUnit_Framework_TestCase
     /**
      * Tests that an Yasumi\Exception\UnknownLocaleException is thrown in case an invalid locale is given.
      *
-     * @expectedException Yasumi\Exception\UnknownLocaleException
+     * @expectedException UnknownLocaleException
      */
     public function testCreateHolidayUnknownLocaleException()
     {
@@ -68,7 +69,7 @@ class HolidayTest extends PHPUnit_Framework_TestCase
         $instance = json_decode($json, true);
 
         $this->assertInternalType('array', $instance);
-        $this->assertNotSame(null, $instance);
+        $this->assertNotNull(null, $instance);
         $this->assertArrayHasKey('shortName', $instance);
     }
 
