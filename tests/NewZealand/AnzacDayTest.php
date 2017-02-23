@@ -68,7 +68,7 @@ class AnzacDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInter
             $date = new DateTime("$year-04-25", new DateTimeZone(self::TIMEZONE));
 
             // in 2015 some policy was introduced to make sure this holiday was celebrated during the working week.
-            if ($year >= 2015 && in_array($date->format('w'), [0, 6])) {
+            if ($year >= 2015 && in_array((int) $date->format('w'), [0, 6], true)) {
                 $date->modify('next monday');
             }
 

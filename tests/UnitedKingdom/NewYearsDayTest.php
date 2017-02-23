@@ -82,7 +82,7 @@ class NewYearsDayTest extends UnitedKingdomBaseTestCase implements YasumiTestCas
             $date = new DateTime("$year-01-01", new DateTimeZone(self::TIMEZONE));
 
             // If New Years Day falls on a Saturday or Sunday, it is observed the next Monday (January 2nd or 3rd)
-            if (in_array($date->format('w'), [0, 6])) {
+            if (in_array((int) $date->format('w'), [0, 6], true)) {
                 $date->modify('next monday');
             }
 

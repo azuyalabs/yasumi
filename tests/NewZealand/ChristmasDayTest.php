@@ -55,7 +55,7 @@ class ChristmasDayTest extends NewZealandBaseTestCase implements YasumiTestCaseI
             $year = $this->generateRandomYear();
             $date = new DateTime("$year-12-25", new DateTimeZone(self::TIMEZONE));
 
-            if (in_array($date->format('w'), [0, 6])) {
+            if (in_array((int) $date->format('w'), [0, 6], true)) {
                 $date->add(new DateInterval('P2D'));
             }
 
