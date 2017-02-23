@@ -46,7 +46,7 @@ class NewYearsDayTest extends IrelandBaseTestCase implements YasumiTestCaseInter
         $date = new DateTime($expected, new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
 
-        if (0 == $date->format('w')) {
+        if (0 === (int) $date->format('w')) {
             $date->modify('next monday');
             $this->assertHoliday(self::REGION, 'substituteHoliday:' . self::HOLIDAY, $year, $date);
         }

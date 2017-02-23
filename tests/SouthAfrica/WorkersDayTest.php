@@ -51,7 +51,7 @@ class WorkersDayTest extends SouthAfricaBaseTestCase implements YasumiTestCaseIn
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
 
         // Whenever any public holiday falls on a Sunday, the Monday following on it shall be a public holiday.
-        if (0 == $date->format('w')) {
+        if (0 === (int) $date->format('w')) {
             $date->add(new DateInterval('P1D'));
             $this->assertHoliday(self::REGION, 'substituteHoliday:' . self::HOLIDAY, $year, $date);
         }

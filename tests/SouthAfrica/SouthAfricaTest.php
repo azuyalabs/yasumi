@@ -48,7 +48,7 @@ class SouthAfricaTest extends SouthAfricaBaseTestCase
             'secondChristmasDay'
         ];
 
-        if ($this->year == 2016) {
+        if ($this->year === 2016) {
             $nationalHolidays[] = '2016MunicipalElectionsDay';
             $nationalHolidays[] = 'substituteDayOfGoodwill';
         }
