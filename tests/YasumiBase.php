@@ -95,7 +95,7 @@ trait YasumiBase
 
         $this->assertInstanceOf('Yasumi\Provider\\' . str_replace('/', '\\', $provider), $holidays);
         $this->assertInstanceOf(Holiday::class, $holiday);
-        $this->assertTrue(isset($holiday));
+        $this->assertNotNull($holiday);
         $this->assertEquals($expected, $holiday);
         $this->assertTrue($holidays->isHoliday($holiday));
 
@@ -120,7 +120,7 @@ trait YasumiBase
         $holiday  = $holidays->getHoliday($shortName);
 
         $this->assertInstanceOf('Yasumi\Provider\\' . str_replace('/', '\\', $provider), $holidays);
-        $this->assertFalse(isset($holiday));
+        $this->assertNull($holiday);
         $this->assertFalse($holidays->isHoliday($holiday));
 
         unset($holiday, $holidays);
@@ -146,7 +146,7 @@ trait YasumiBase
 
         $this->assertInstanceOf('Yasumi\Provider\\' . str_replace('/', '\\', $provider), $holidays);
         $this->assertInstanceOf(Holiday::class, $holiday);
-        $this->assertTrue(isset($holiday));
+        $this->assertNotNull($holiday);
         $this->assertTrue($holidays->isHoliday($holiday));
 
         if (is_array($translations) && ! empty($translations)) {
@@ -181,7 +181,7 @@ trait YasumiBase
 
         $this->assertInstanceOf('Yasumi\Provider\\' . str_replace('/', '\\', $provider), $holidays);
         $this->assertInstanceOf(Holiday::class, $holiday);
-        $this->assertTrue(isset($holiday));
+        $this->assertNotNull($holiday);
         $this->assertEquals($type, $holiday->getType());
 
         unset($holiday, $holidays);
@@ -208,7 +208,7 @@ trait YasumiBase
 
         $this->assertInstanceOf('Yasumi\Provider\\' . str_replace('/', '\\', $provider), $holidays);
         $this->assertInstanceOf(Holiday::class, $holiday);
-        $this->assertTrue(isset($holiday));
+        $this->assertNotNull($holiday);
         $this->assertTrue($holidays->isHoliday($holiday));
         $this->assertEquals($expectedDayOfWeek, $holiday->format('l'));
 
