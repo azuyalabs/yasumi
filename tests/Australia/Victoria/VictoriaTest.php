@@ -47,38 +47,6 @@ class VictoriaTest extends AustraliaTest
     }
 
     /**
-     * Tests if all observed holidays in Australia are defined by the provider class
-     */
-    public function testObservedHolidays()
-    {
-        $this->assertDefinedHolidays([], $this->region, $this->year, Holiday::TYPE_OBSERVANCE);
-    }
-
-    /**
-     * Tests if all seasonal holidays in Australia are defined by the provider class
-     */
-    public function testSeasonalHolidays()
-    {
-        $this->assertDefinedHolidays([], $this->region, $this->year, Holiday::TYPE_SEASON);
-    }
-
-    /**
-     * Tests if all bank holidays in Australia are defined by the provider class
-     */
-    public function testBankHolidays()
-    {
-        $this->assertDefinedHolidays([], $this->region, $this->year, Holiday::TYPE_BANK);
-    }
-
-    /**
-     * Tests if all other holidays in Australia are defined by the provider class
-     */
-    public function testOtherHolidays()
-    {
-        $this->assertDefinedHolidays([], $this->region, $this->year, Holiday::TYPE_OTHER);
-    }
-
-    /**
      * Initial setup of this Test Case
      */
     protected function setUp()
