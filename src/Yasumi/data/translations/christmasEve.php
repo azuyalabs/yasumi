@@ -14,7 +14,10 @@
 return [
     'cs_CZ' => 'Štědrý den',
     'cy_GB' => 'Noswyl Nadolig',
+    'de_CH' => 'Heiliger Abend',
     'en_US' => 'Christmas Eve',
+    'fr_CH' => 'Réveillon de Noël',
+    'it_CH' => 'Vigilia di Natale',
     'pt_PT' => 'Véspera de Natal',
     'ro_RO' => 'Ajunul Crãciunului',
     'sk_SK' => 'Štedrý deň',

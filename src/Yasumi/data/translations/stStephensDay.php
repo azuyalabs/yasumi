@@ -13,11 +13,14 @@
 // Translations for St. Stephen's Day
 return [
     'cy_GB' => 'Gŵyl San Steffan',
+    'de_CH' => 'Stephanstag',
     'en_IE' => 'St. Stephen\'s Day',
     'en_US' => 'St. Stephen\'s Day',
     'es_ES' => 'Sant Esteve',
+    'fr_CH' => 'Saint-Etienne',
     'fr_FR' => 'Saint-Étienne',
     'ga_IE' => 'Lá Fhéile Stiofáin',
     'hr_HR' => 'Sveti Stjepan',
+    'it_CH' => 'Santo Stefano',
     'it_IT' => 'Santo Stefano',
 ];

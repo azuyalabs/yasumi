@@ -13,12 +13,15 @@
 // Translations for Epiphany
 return [
     'de_AT' => 'Heilige Drei Könige',
+    'de_CH' => 'Heilige Drei Könige',
     'de_DE' => 'Heilige 3 Könige',
     'el_GR' => 'Θεοφάνεια',
     'en_US' => 'Epiphany',
     'es_ES' => 'Día de Reyes',
     'fi_FI' => 'Loppiainen',
+    'fr_CH' => 'Epiphanie',
     'hr_HR' => 'Sveta tri kralja',
+    'it_CH' => 'Epifania',
     'it_IT' => 'Epifania',
     'ja_JP' => 'エピファニー',
     'nl_BE' => 'Drie Koningen',

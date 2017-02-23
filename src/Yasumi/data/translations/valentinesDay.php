@@ -12,9 +12,12 @@
 
 // Translations for Valentine's Day
 return [
+    'de_CH' => 'Valentinstag',
     'el_GR' => 'Αγίου Βαλεντίνου',
     'en_US' => 'Valentine\'s Day',
     'es_ES' => 'San Valentín',
+    'fr_CH' => 'Saint-Valentin',
+    'it_CH' => 'San Valentino',
     'ja_JP' => 'バレンタイン·デー',
     'nl_BE' => 'Valentijnsdag',
     'nl_NL' => 'Valentijnsdag',
