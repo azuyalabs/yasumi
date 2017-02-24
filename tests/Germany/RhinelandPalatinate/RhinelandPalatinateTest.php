@@ -38,9 +38,7 @@ class RhinelandPalatinateTest extends RhinelandPalatinateBaseTestCase
             'ascensionDay',
             'pentecost',
             'pentecostMonday',
-            'corpusChristi',
             'germanUnityDay',
-            'allSaintsDay',
             'christmasDay',
             'secondChristmasDay'
         ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
@@ -75,7 +73,7 @@ class RhinelandPalatinateTest extends RhinelandPalatinateBaseTestCase
      */
     public function testOtherHolidays()
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays(['corpusChristi', 'allSaintsDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**

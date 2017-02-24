@@ -38,7 +38,6 @@ class SaxonyTest extends SaxonyBaseTestCase
             'ascensionDay',
             'pentecost',
             'pentecostMonday',
-            'repentanceAndPrayerDay',
             'christmasDay',
             'secondChristmasDay'
         ];
@@ -83,7 +82,7 @@ class SaxonyTest extends SaxonyBaseTestCase
      */
     public function testOtherHolidays()
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays(['repentanceAndPrayerDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**

@@ -69,7 +69,7 @@ trait YasumiBase
 
         // Loop through all known holidays and assert they are defined by the provider class
         foreach ($expectedHolidays as $holiday) {
-            $this->assertArrayHasKey($holiday, $holidays->getArrayCopy());
+            $this->assertArrayHasKey($holiday, iterator_to_array($holidays));
         }
 
         unset($holidays);

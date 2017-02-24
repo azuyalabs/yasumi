@@ -32,9 +32,7 @@ class AndalusiaTest extends AndalusiaBaseTestCase
         $this->assertDefinedHolidays([
             'newYearsDay',
             'epiphany',
-            'valentinesDay',
             'andalusiaDay',
-            'maundyThursday',
             'goodFriday',
             'easter',
             'internationalWorkersDay',
@@ -52,7 +50,7 @@ class AndalusiaTest extends AndalusiaBaseTestCase
      */
     public function testObservedHolidays()
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays(['maundyThursday'], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**
@@ -76,7 +74,7 @@ class AndalusiaTest extends AndalusiaBaseTestCase
      */
     public function testOtherHolidays()
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays(['valentinesDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**

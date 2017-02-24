@@ -32,21 +32,16 @@ class BalearicIslandsTest extends BalearicIslandsBaseTestCase
         $this->assertDefinedHolidays([
             'newYearsDay',
             'epiphany',
-            'valentinesDay',
             'balearicIslandsDay',
-            'stJosephsDay',
-            'maundyThursday',
             'goodFriday',
             'easter',
-            'easterMonday',
             'internationalWorkersDay',
             'assumptionOfMary',
             'nationalDay',
             'allSaintsDay',
             'constitutionDay',
             'immaculateConception',
-            'christmasDay',
-            'stStephensDay',
+            'christmasDay'
         ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
     }
 
@@ -55,7 +50,12 @@ class BalearicIslandsTest extends BalearicIslandsBaseTestCase
      */
     public function testObservedHolidays()
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays([
+            'stJosephsDay',
+            'maundyThursday',
+            'easterMonday',
+            'stStephensDay'
+        ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**
@@ -79,7 +79,7 @@ class BalearicIslandsTest extends BalearicIslandsBaseTestCase
      */
     public function testOtherHolidays()
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays(['valentinesDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**

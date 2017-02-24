@@ -32,8 +32,6 @@ class CantabriaTest extends CantabriaBaseTestCase
         $this->assertDefinedHolidays([
             'newYearsDay',
             'epiphany',
-            'valentinesDay',
-            'maundyThursday',
             'goodFriday',
             'easter',
             'internationalWorkersDay',
@@ -52,7 +50,7 @@ class CantabriaTest extends CantabriaBaseTestCase
      */
     public function testObservedHolidays()
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays(['maundyThursday'], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**
@@ -76,7 +74,7 @@ class CantabriaTest extends CantabriaBaseTestCase
      */
     public function testOtherHolidays()
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays(['valentinesDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**

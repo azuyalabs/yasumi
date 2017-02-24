@@ -38,7 +38,6 @@ class HesseTest extends HesseBaseTestCase
             'ascensionDay',
             'pentecost',
             'pentecostMonday',
-            'corpusChristi',
             'germanUnityDay',
             'christmasDay',
             'secondChristmasDay'
@@ -74,7 +73,7 @@ class HesseTest extends HesseBaseTestCase
      */
     public function testOtherHolidays()
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays(['corpusChristi'], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**

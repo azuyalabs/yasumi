@@ -35,7 +35,6 @@ class PolandTest extends PolandBaseTestCase
             'allSaintsDay',
             'assumptionOfMary',
             'christmasDay',
-            'corpusChristi',
             'easter',
             'easterMonday',
             'epiphany',
@@ -75,7 +74,7 @@ class PolandTest extends PolandBaseTestCase
      */
     public function testOtherHolidays()
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays(['corpusChristi'], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**

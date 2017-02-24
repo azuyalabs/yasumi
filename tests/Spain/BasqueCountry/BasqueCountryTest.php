@@ -32,11 +32,8 @@ class BasqueCountryTest extends BasqueCountryBaseTestCase
         $this->assertDefinedHolidays([
             'newYearsDay',
             'epiphany',
-            'valentinesDay',
-            'maundyThursday',
             'goodFriday',
             'easter',
-            'easterMonday',
             'internationalWorkersDay',
             'assumptionOfMary',
             'nationalDay',
@@ -53,7 +50,8 @@ class BasqueCountryTest extends BasqueCountryBaseTestCase
      */
     public function testObservedHolidays()
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays(['maundyThursday', 'easterMonday'], self::REGION, $this->year,
+            Holiday::TYPE_OBSERVANCE);
     }
 
     /**
@@ -77,7 +75,7 @@ class BasqueCountryTest extends BasqueCountryBaseTestCase
      */
     public function testOtherHolidays()
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays(['valentinesDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**

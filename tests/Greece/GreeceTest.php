@@ -42,11 +42,9 @@ class GreeceTest extends GreeceBaseTestCase
             'pentecostMonday',
             'assumptionOfMary',
             'christmasDay',
-            'threeHolyHierarchs',
             'cleanMonday',
             'independenceDay',
             'ohiDay',
-            'polytechnio',
         ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
     }
 
@@ -79,7 +77,8 @@ class GreeceTest extends GreeceBaseTestCase
      */
     public function testOtherHolidays()
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays(['threeHolyHierarchs', 'polytechnio'], self::REGION, $this->year,
+            Holiday::TYPE_OTHER);
     }
 
     /**

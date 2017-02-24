@@ -32,9 +32,6 @@ class AsturiasTest extends AsturiasBaseTestCase
         $this->assertDefinedHolidays([
             'newYearsDay',
             'epiphany',
-            'valentinesDay',
-            'stJosephsDay',
-            'maundyThursday',
             'goodFriday',
             'easter',
             'internationalWorkersDay',
@@ -53,7 +50,10 @@ class AsturiasTest extends AsturiasBaseTestCase
      */
     public function testObservedHolidays()
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays([
+            'stJosephsDay',
+            'maundyThursday'
+        ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**
@@ -77,7 +77,7 @@ class AsturiasTest extends AsturiasBaseTestCase
      */
     public function testOtherHolidays()
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays(['valentinesDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**

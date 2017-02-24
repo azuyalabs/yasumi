@@ -32,12 +32,8 @@ class NavarreTest extends NavarreBaseTestCase
         $this->assertDefinedHolidays([
             'newYearsDay',
             'epiphany',
-            'valentinesDay',
-            'stJosephsDay',
-            'maundyThursday',
             'goodFriday',
             'easter',
-            'easterMonday',
             'internationalWorkersDay',
             'assumptionOfMary',
             'nationalDay',
@@ -53,7 +49,11 @@ class NavarreTest extends NavarreBaseTestCase
      */
     public function testObservedHolidays()
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays([
+            'stJosephsDay',
+            'maundyThursday',
+            'easterMonday'
+        ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**
@@ -77,7 +77,7 @@ class NavarreTest extends NavarreBaseTestCase
      */
     public function testOtherHolidays()
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays(['valentinesDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**

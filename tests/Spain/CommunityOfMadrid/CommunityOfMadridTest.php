@@ -32,14 +32,10 @@ class CommunityOfMadridTest extends CommunityOfMadridBaseTestCase
         $this->assertDefinedHolidays([
             'newYearsDay',
             'epiphany',
-            'valentinesDay',
-            'stJosephsDay',
-            'maundyThursday',
             'goodFriday',
             'easter',
             'internationalWorkersDay',
             'dosdeMayoUprisingDay',
-            'corpusChristi',
             'assumptionOfMary',
             'nationalDay',
             'allSaintsDay',
@@ -54,7 +50,11 @@ class CommunityOfMadridTest extends CommunityOfMadridBaseTestCase
      */
     public function testObservedHolidays()
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays([
+            'stJosephsDay',
+            'maundyThursday',
+            'corpusChristi'
+        ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**
@@ -78,7 +78,7 @@ class CommunityOfMadridTest extends CommunityOfMadridBaseTestCase
      */
     public function testOtherHolidays()
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays(['valentinesDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**

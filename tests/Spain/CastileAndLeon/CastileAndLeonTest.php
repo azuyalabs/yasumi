@@ -32,8 +32,6 @@ class CastileAndLeonTest extends CastileAndLeonBaseTestCase
         $this->assertDefinedHolidays([
             'newYearsDay',
             'epiphany',
-            'valentinesDay',
-            'maundyThursday',
             'goodFriday',
             'easter',
             'castileAndLeonDay',
@@ -52,7 +50,7 @@ class CastileAndLeonTest extends CastileAndLeonBaseTestCase
      */
     public function testObservedHolidays()
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays(['maundyThursday'], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**
@@ -76,7 +74,7 @@ class CastileAndLeonTest extends CastileAndLeonBaseTestCase
      */
     public function testOtherHolidays()
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays(['valentinesDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**

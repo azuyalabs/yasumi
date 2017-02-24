@@ -30,22 +30,27 @@ class RomaniaTest extends RomaniaBaseTestCase
      */
     public function testNationalHolidays()
     {
-        $this->assertDefinedHolidays([
+        $national_holidays = [
             'newYearsDay',
             'dayAfterNewYearsDay',
             'unitedPrincipalitiesDay',
             'internationalWorkersDay',
             'easter',
             'easterMonday',
-            'childrensDay',
             'pentecost',
             'pentecostMonday',
             'assumptionOfMary',
             'stAndrewDay',
             'nationalDay',
             'christmasDay',
-            'secondChristmasDay',
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+            'secondChristmasDay'
+        ];
+
+        if ($this->year >= 2017) {
+            $national_holidays[] = 'childrensDay';
+        }
+
+        $this->assertDefinedHolidays($national_holidays, self::REGION, $this->year, Holiday::TYPE_NATIONAL);
     }
 
     /**

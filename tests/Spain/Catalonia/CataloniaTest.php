@@ -32,20 +32,16 @@ class CataloniaTest extends CataloniaBaseTestCase
         $this->assertDefinedHolidays([
             'newYearsDay',
             'epiphany',
-            'valentinesDay',
             'goodFriday',
             'easter',
-            'easterMonday',
             'internationalWorkersDay',
-            'stJohnsDay',
             'assumptionOfMary',
             'nationalCataloniaDay',
             'nationalDay',
             'allSaintsDay',
             'constitutionDay',
             'immaculateConception',
-            'christmasDay',
-            'stStephensDay'
+            'christmasDay'
         ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
     }
 
@@ -54,7 +50,8 @@ class CataloniaTest extends CataloniaBaseTestCase
      */
     public function testObservedHolidays()
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays(['easterMonday', 'stJohnsDay', 'stStephensDay'], self::REGION, $this->year,
+            Holiday::TYPE_OBSERVANCE);
     }
 
     /**
@@ -78,7 +75,7 @@ class CataloniaTest extends CataloniaBaseTestCase
      */
     public function testOtherHolidays()
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays(['valentinesDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**
