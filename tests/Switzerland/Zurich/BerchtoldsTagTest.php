@@ -12,7 +12,6 @@
 
 namespace Yasumi\tests\Switzerland\Zurich;
 
-
 use DateTime;
 use DateTimeZone;
 use Yasumi\Holiday;

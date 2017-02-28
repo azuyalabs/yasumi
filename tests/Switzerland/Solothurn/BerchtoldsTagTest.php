@@ -12,7 +12,6 @@
 
 namespace Yasumi\tests\Switzerland\Solothurn;
 
-
 use DateTime;
 use DateTimeZone;
 use Yasumi\Holiday;

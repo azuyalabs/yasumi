@@ -12,7 +12,6 @@
 
 namespace Yasumi\tests\Switzerland\Vaud;
 
-
 use DateTime;
 use DateTimeZone;
 use Yasumi\Holiday;
