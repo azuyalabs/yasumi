@@ -13,10 +13,13 @@
 // Translations for Corpus Christi
 return [
     'de_AT' => 'Fronleichnam',
+    'de_CH' => 'Fronleichnam',
     'de_DE' => 'Fronleichnam',
     'en_US' => 'Corpus Christi',
     'es_ES' => 'Corpus Christi',
+    'fr_CH' => 'Fête-Dieu',
     'hr_HR' => 'Tijelovo',
+    'it_CH' => 'Corpus Domini',
     'pl_PL' => 'Boże Ciało',
     'pt_BR' => 'Corpus Christi',
     'pt_PT' => 'Corpo de Deus',

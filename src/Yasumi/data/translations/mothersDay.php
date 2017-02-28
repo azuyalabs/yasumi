@@ -12,8 +12,11 @@
 
 // Translations for Mother's Day
 return [
+    'de_CH' => 'Muttertag',
     'el_GR' => 'Ημέρα της μητέρας',
     'en_US' => 'Mother\'s Day',
+    'fr_CH' => 'Fête des mères',
+    'it_CH' => 'Festa della mamma',
     'nl_BE' => 'Moederdag',
     'nl_NL' => 'Moederdag',
     'pt_PT' => 'Dia da Mãe',

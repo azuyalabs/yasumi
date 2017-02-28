@@ -13,13 +13,16 @@
 // Translations for All Saints' Day
 return [
     'de_AT' => 'Allerheiligen',
+    'de_CH' => 'Allerheiligen',
     'de_DE' => 'Allerheiligen',
     'el_GR' => 'Άγιοι Πάντες',
     'en_US' => 'All Saints\' Day',
     'es_ES' => 'Día de todos los Santos',
     'fi_FI' => 'Pyhäinpäivä',
+    'fr_CH' => 'Toussaint',
     'fr_FR' => 'La Toussaint',
     'hr_HR' => 'Dan svih svetih',
+    'it_CH' => 'Ognissanti',
     'it_IT' => 'Festa di Tutti i Santi',
     'nl_BE' => 'Allerheiligen',
     'nl_NL' => 'Allerheiligen',
