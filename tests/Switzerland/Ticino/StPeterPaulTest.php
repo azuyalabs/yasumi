@@ -13,7 +13,7 @@
 namespace Yasumi\tests\Switzerland\Ticino;
 
 use Yasumi\Holiday;
-use Yasumi\Provider\ChristianHolidays;
+
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
@@ -33,7 +33,7 @@ class StPeterPaulTest extends TicinoBaseTestCase implements YasumiTestCaseInterf
      * @dataProvider StPeterPaulDataProvider
      *
      * @param int      $year     the year for which Feast of Saints Peter and Paul needs to be tested
-     * @param DateTime $expected the expected date
+     * @param \DateTime $expected the expected date
      */
     public function testStPeterPaul($year, $expected)
     {

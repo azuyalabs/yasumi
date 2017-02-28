@@ -12,7 +12,7 @@
 
 namespace Yasumi\tests\Switzerland\Zug;
 
-use DateInterval;
+
 use DateTime;
 use DateTimeZone;
 use Yasumi\Holiday;
