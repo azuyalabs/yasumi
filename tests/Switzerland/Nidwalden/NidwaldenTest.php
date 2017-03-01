@@ -29,9 +29,11 @@ class NidwaldenTest extends NidwaldenBaseTestCase
      */
     public function testNationalHolidays()
     {
-        $this->assertDefinedHolidays([
-            'swissNationalDay'
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        $nationalHolidays = [];
+        if ($this->year >= 1994) {
+            $nationalHolidays[] = 'swissNationalDay';
+        }
+        $this->assertDefinedHolidays($nationalHolidays, self::REGION, $this->year, Holiday::TYPE_NATIONAL);
     }
 
     /**
@@ -60,7 +62,12 @@ class NidwaldenTest extends NidwaldenBaseTestCase
      */
     public function testObservedHolidays()
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+        $observedHolidays = [];
+        if (($this->year >= 1899 && $this->year < 1994) || $this->year = 1891) {
+            $observedHolidays[] = 'swissNationalDay';
+        }
+
+        $this->assertDefinedHolidays($observedHolidays, self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**
