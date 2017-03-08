@@ -20,7 +20,7 @@ use Yasumi\tests\YasumiTestCaseInterface;
 /**
  * Class containing tests for the State Foundation Day in Hungary.
  */
-class StateFoundationTest extends HungaryBaseTestCase implements YasumiTestCaseInterface
+class StateFoundationDayTest extends HungaryBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday to be tested

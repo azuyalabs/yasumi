@@ -47,7 +47,7 @@ class Hungary extends AbstractProvider
 
         // Add Christian holidays
         if ($this->year >= 2017) {
-          $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
+            $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
         }
         $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
