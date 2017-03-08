@@ -86,6 +86,5 @@ class Hungary extends AbstractProvider
                 'hu_HU' => 'Az 1956-os forradalom ünnepe',
             ], new DateTime("$this->year-10-23", new DateTimeZone($this->timezone)), $this->locale));
         }
-
     }
 }
