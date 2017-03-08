@@ -21,6 +21,7 @@ return [
     'fi_FI' => 'Helluntaipäivä',
     'fr_CH' => 'Pentecôte',
     'ga_IE' => 'Domhnach Cincíse',
+    'hu_HU' => 'Pünkösd',
     'it_CH' => 'Pentecoste',
     'nb_NO' => 'Første pinsedag',
     'nl_BE' => 'Eerste Pinksterdag',

@@ -31,6 +31,7 @@ return [
     'fr_FR' => 'Jour de l\'An',
     'ga_IE' => 'Lá Caille',
     'hr_HR' => 'Nova godina',
+    'hu_HU' => 'Újév',
     'it_CH' => 'Capodanno',
     'it_IT' => 'Capodanno',
     'ja_JP' => '元日',

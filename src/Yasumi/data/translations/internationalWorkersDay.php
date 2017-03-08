@@ -24,6 +24,7 @@ return [
     'fr_CH' => 'Fête du Travail',
     'fr_FR' => 'Fête du Travail',
     'hr_HR' => 'Praznik rada',
+    'hu_HU' => 'A munka ünnepe',
     'it_CH' => 'Festa dei lavoratori',
     'it_IT' => 'Festa del Lavoro',
     'ja_JP' => '労働の日',

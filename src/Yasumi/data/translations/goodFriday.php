@@ -29,6 +29,7 @@ return [
     'fr_CH' => 'Vendredi Saint',
     'fr_FR' => 'Vendredi saint',
     'ga_IE' => 'Aoine an Chéasta',
+    'hu_HU' => 'Nagypéntek',
     'it_CH' => 'Venerdi Santo',
     'ja_JP' => 'グッドフライデー',
     'nb_NO' => 'Langfredag',

@@ -23,6 +23,7 @@ return [
     'fr_CH' => 'Pâques',
     'ga_IE' => 'Domhnach Cásca',
     'hr_HR' => 'Uskrs',
+    'hu_HU' => 'Húsvét',
     'it_CH' => 'Pasqua',
     'it_IT' => 'Pasqua',
     'nb_NO' => 'Første påskedag',

@@ -22,6 +22,7 @@ return [
     'fr_CH' => 'Lundi de Pentecôte',
     'fr_FR' => 'Lundi de Pentecôte',
     'ga_IE' => 'Luan Cincíse',
+    'hu_HU' => 'Pünkösdhétfő',
     'it_CH' => 'Lunedi di Pentecoste',
     'nb_NO' => 'Andre pinsedag',
     'nl_BE' => 'Pinkstermaandag',
