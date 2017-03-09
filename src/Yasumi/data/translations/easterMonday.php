@@ -30,6 +30,7 @@ return [
     'fr_FR' => 'Lundi de Pâques',
     'ga_IE' => 'Luan Cásca',
     'hr_HR' => 'Uskršnji ponedjeljak',
+    'hu_HU' => 'Húsvéthétfő',
     'it_CH' => 'Lunedi di Pasqua',
     'it_IT' => 'Lunedi` dell\'Angelo',
     'nb_NO' => 'Andre påskedag',

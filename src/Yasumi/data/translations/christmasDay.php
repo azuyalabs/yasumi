@@ -29,6 +29,7 @@ return [
     'fr_CH' => 'Noël',
     'fr_FR' => 'Noël',
     'hr_HR' => 'Božić',
+    'hu_HU' => 'Karácsony',
     'it_CH' => 'Natale',
     'it_IT' => 'Natale',
     'nb_NO' => 'Første juledag',
