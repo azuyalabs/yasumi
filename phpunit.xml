@@ -93,7 +93,6 @@
                 <directory suffix="Test.php">./tests/Hungary</directory>
             </testsuite>
 
-
             <!-- Test Suite for holidays in Ireland -->
             <testsuite name="Ireland">
                 <directory suffix="Test.php">./tests/Ireland</directory>
