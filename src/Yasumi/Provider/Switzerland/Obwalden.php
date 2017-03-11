@@ -12,7 +12,6 @@
 
 namespace Yasumi\Provider\Switzerland;
 
-use DateInterval;
 use DateTime;
 use DateTimeZone;
 use Yasumi\Holiday;
@@ -48,7 +47,8 @@ class Obwalden extends Switzerland
         $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->assumptionOfMary($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        $this->addHoliday($this->immaculateConception($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->immaculateConception($this->year, $this->timezone, $this->locale,
+            Holiday::TYPE_OTHER));
         $this->addHoliday($this->stStephensDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
@@ -74,12 +74,14 @@ class Obwalden extends Switzerland
             $this->addHoliday(new Holiday('bruderKlausenFest', [
                 'de_DE' => 'Bruder-Klausen-Fest',
                 'de_CH' => 'Bruder-Klausen-Fest',
-            ], new DateTime($this->year.'-09-25', new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OTHER));
+            ], new DateTime($this->year . '-09-25', new DateTimeZone($this->timezone)), $this->locale,
+                Holiday::TYPE_OTHER));
         } elseif ($this->year >= 1649) {
             $this->addHoliday(new Holiday('bruderKlausenFest', [
                 'de_DE' => 'Bruder-Klausen-Fest',
                 'de_CH' => 'Bruder-Klausen-Fest',
-            ], new DateTime($this->year.'-09-21', new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OTHER));
+            ], new DateTime($this->year . '-09-21', new DateTimeZone($this->timezone)), $this->locale,
+                Holiday::TYPE_OTHER));
         }
     }
 }

@@ -98,7 +98,7 @@ class Australia extends AbstractProvider
     ) {
         $holidayDate = $date instanceof DateTime ? $date : new DateTime($date, new DateTimeZone($this->timezone));
 
-        $day = (int) $holidayDate->format('w');
+        $day = (int)$holidayDate->format('w');
         //echo ' - '.$shortName.' - Day: '.$day."\n";
         if (($day === 0 && $moveFromSunday) || ($day === 6 && $moveFromSaturday)) {
             //echo ' - '.$shortName.' - Need to move: '.($day == 0 ? '1 day' : '2days')."\n";

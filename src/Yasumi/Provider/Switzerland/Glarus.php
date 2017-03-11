@@ -12,7 +12,6 @@
 
 namespace Yasumi\Provider\Switzerland;
 
-use DateInterval;
 use DateTime;
 use DateTimeZone;
 use Yasumi\Holiday;
@@ -72,7 +71,7 @@ class Glarus extends Switzerland
     public function calculateNafelserFahrt()
     {
         if ($this->year >= 1389) {
-            $date = new DateTime('First Thursday of '.$this->year.'-04', new DateTimeZone($this->timezone));
+            $date = new DateTime('First Thursday of ' . $this->year . '-04', new DateTimeZone($this->timezone));
             $this->addHoliday(new Holiday('nafelserFahrt', [
                 'de_DE' => 'Näfelser Fahrt',
                 'de_CH' => 'Näfelser Fahrt',

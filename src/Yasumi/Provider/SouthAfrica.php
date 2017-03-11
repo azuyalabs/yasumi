@@ -275,7 +275,7 @@ class SouthAfrica extends AbstractProvider
             }
 
             // Substitute holiday is on a Monday in case the holiday falls on a Sunday
-            if (0 === (int) $datesIterator->current()->format('w')) {
+            if (0 === (int)$datesIterator->current()->format('w')) {
                 $substituteHoliday = clone $datesIterator->current();
                 $substituteHoliday->add(new DateInterval('P1D'));
 

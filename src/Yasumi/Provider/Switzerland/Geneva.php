@@ -69,7 +69,7 @@ class Geneva extends Switzerland
     public function calculateJeuneGenevois()
     {
         // Find first Sunday of September
-        $date = new DateTime('First Sunday of '.$this->year.'-09', new DateTimeZone($this->timezone));
+        $date = new DateTime('First Sunday of ' . $this->year . '-09', new DateTimeZone($this->timezone));
         // Go to next Thursday
         $date->add(new DateInterval('P4D'));
 
@@ -105,7 +105,8 @@ class Geneva extends Switzerland
             $this->addHoliday(new Holiday('restaurationGenevoise', [
                 'fr_FR' => 'Restauration de la République',
                 'fr_CH' => 'Restauration de la République',
-            ], new DateTime($this->year.'-12-31', new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OTHER));
+            ], new DateTime($this->year . '-12-31', new DateTimeZone($this->timezone)), $this->locale,
+                Holiday::TYPE_OTHER));
         }
     }
 }

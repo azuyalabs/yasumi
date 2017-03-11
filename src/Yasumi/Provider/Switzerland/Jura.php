@@ -12,7 +12,6 @@
 
 namespace Yasumi\Provider\Switzerland;
 
-use DateInterval;
 use DateTime;
 use DateTimeZone;
 use Yasumi\Holiday;
@@ -45,7 +44,8 @@ class Jura extends Switzerland
         parent::initialize();
 
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale,
+            Holiday::TYPE_OTHER));
         $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->assumptionOfMary($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
@@ -73,7 +73,8 @@ class Jura extends Switzerland
             $this->addHoliday(new Holiday('plebisciteJurassien', [
                 'fr_FR' => 'Commémoration du plébiscite jurassien',
                 'fr_CH' => 'Commémoration du plébiscite jurassien',
-            ], new DateTime($this->year.'-06-23', new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OTHER));
+            ], new DateTime($this->year . '-06-23', new DateTimeZone($this->timezone)), $this->locale,
+                Holiday::TYPE_OTHER));
         }
     }
 }

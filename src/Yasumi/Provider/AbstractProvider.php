@@ -139,7 +139,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
 
         // If given date is a DateTime object; check if it falls in the weekend
         if ($date instanceof DateTime) {
-            if (in_array((int) $date->format('w'), $this->weekend_days, true)) {
+            if (in_array((int)$date->format('w'), $this->weekend_days, true)) {
                 return false;
             }
         }
