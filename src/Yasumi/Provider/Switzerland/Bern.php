@@ -33,6 +33,9 @@ class Bern extends Switzerland
 
     /**
      * Initialize holidays for Bern (Switzerland).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {

@@ -36,6 +36,9 @@ class Jura extends Switzerland
 
     /**
      * Initialize holidays for Jura (Switzerland).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -60,6 +63,9 @@ class Jura extends Switzerland
      * Plébiscite jurassien
      *
      * @link https://fr.wikipedia.org/wiki/Pl%C3%A9biscite_jurassien
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculatePlebisciteJurassien()
     {

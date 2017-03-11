@@ -33,6 +33,9 @@ class Aargau extends Switzerland
 
     /**
      * Initialize holidays for Aargau (Switzerland).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {

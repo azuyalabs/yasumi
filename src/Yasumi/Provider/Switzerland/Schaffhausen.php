@@ -33,6 +33,9 @@ class Schaffhausen extends Switzerland
 
     /**
      * Initialize holidays for Schaffhausen (Switzerland).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {

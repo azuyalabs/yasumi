@@ -36,6 +36,9 @@ class Obwalden extends Switzerland
 
     /**
      * Initialize holidays for Obwalden (Switzerland).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -61,6 +64,9 @@ class Obwalden extends Switzerland
      * Bruder-Klausen-Fest
      *
      * @link http://www.lebendigetraditionen.ch/traditionen/00210/index.html?lang=en
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateBruderKlausenFest()
     {

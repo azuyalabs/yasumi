@@ -36,6 +36,9 @@ class Geneva extends Switzerland
 
     /**
      * Initialize holidays for Geneva (Switzerland).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -59,6 +62,9 @@ class Geneva extends Switzerland
      * on the Thursday following the first Sunday of September. It dates back to the 16th century.
      *
      * @link https://en.wikipedia.org/wiki/Je%C3%BBne_genevois
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateJeuneGenevois()
     {
@@ -89,6 +95,9 @@ class Geneva extends Switzerland
      * Restoration of the Republic of Geneva was declared.
      *
      * @link https://fr.wikipedia.org/wiki/Restauration_genevoise
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateRestaurationGenevoise()
     {

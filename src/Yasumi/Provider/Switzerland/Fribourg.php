@@ -33,6 +33,9 @@ class Fribourg extends Switzerland
 
     /**
      * Initialize holidays for Fribourg (Switzerland).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {

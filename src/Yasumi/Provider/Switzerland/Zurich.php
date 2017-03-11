@@ -33,6 +33,9 @@ class Zurich extends Switzerland
 
     /**
      * Initialize holidays for Zürich (Switzerland).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {

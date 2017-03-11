@@ -33,6 +33,9 @@ class Zug extends Switzerland
 
     /**
      * Initialize holidays for Zug (Switzerland).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {

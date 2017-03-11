@@ -33,6 +33,9 @@ class Solothurn extends Switzerland
 
     /**
      * Initialize holidays for Solothurn (Switzerland).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {

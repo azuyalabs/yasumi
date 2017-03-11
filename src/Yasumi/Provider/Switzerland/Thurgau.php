@@ -33,6 +33,9 @@ class Thurgau extends Switzerland
 
     /**
      * Initialize holidays for Thurgau (Switzerland).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {

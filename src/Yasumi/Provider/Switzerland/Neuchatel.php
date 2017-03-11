@@ -36,6 +36,9 @@ class Neuchatel extends Switzerland
 
     /**
      * Initialize holidays for Neuchâtel (Switzerland).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -58,6 +61,9 @@ class Neuchatel extends Switzerland
      * Instauration de la République
      *
      * @link https://www.feiertagskalender.ch/feiertag.php?ft_id=11&geo=3056&hl=fr
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateInstaurationRepublique()
     {

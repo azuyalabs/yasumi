@@ -33,6 +33,9 @@ class BaselStadt extends Switzerland
 
     /**
      * Initialize holidays for Basel-Stadt (Switzerland).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {

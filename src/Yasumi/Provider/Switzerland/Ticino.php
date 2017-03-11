@@ -36,6 +36,9 @@ class Ticino extends Switzerland
 
     /**
      * Initialize holidays for Ticino (Switzerland).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -62,6 +65,9 @@ class Ticino extends Switzerland
      * Feast of Saints Peter and Paul
      *
      * @link https://en.wikipedia.org/wiki/Feast_of_Saints_Peter_and_Paul
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateStPeterPaul()
     {

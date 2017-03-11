@@ -33,6 +33,9 @@ class AppenzellAusserrhoden extends Switzerland
 
     /**
      * Initialize holidays for Appenzell Ausserrhoden (Switzerland).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {

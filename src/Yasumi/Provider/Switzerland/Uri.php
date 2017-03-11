@@ -33,6 +33,9 @@ class Uri extends Switzerland
 
     /**
      * Initialize holidays for Uri (Switzerland).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {

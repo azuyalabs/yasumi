@@ -36,6 +36,9 @@ class Glarus extends Switzerland
 
     /**
      * Initialize holidays for Glarus (Switzerland).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
@@ -62,6 +65,9 @@ class Glarus extends Switzerland
      * of the battle was held.
      *
      * @link https://en.wikipedia.org/wiki/Battle_of_N%C3%A4fels
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function calculateNafelserFahrt()
     {

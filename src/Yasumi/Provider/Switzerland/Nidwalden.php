@@ -33,6 +33,9 @@ class Nidwalden extends Switzerland
 
     /**
      * Initialize holidays for Nidwalden (Switzerland).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {

@@ -33,6 +33,9 @@ class StGallen extends Switzerland
 
     /**
      * Initialize holidays for St. Gallen (Switzerland).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {

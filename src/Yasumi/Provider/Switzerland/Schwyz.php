@@ -33,6 +33,9 @@ class Schwyz extends Switzerland
 
     /**
      * Initialize holidays for Schwyz (Switzerland).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {

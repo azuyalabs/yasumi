@@ -33,6 +33,9 @@ class Vaud extends Switzerland
 
     /**
      * Initialize holidays for Vaud (Switzerland).
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
      */
     public function initialize()
     {
