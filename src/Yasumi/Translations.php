@@ -30,7 +30,7 @@ class Translations implements TranslationsInterface
     /**
      * @var array list of all defined locales
      */
-    private $availableLocales = [];
+    private $availableLocales;
 
     /**
      * Constructor.
