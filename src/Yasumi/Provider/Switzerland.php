@@ -71,7 +71,7 @@ class Switzerland extends AbstractProvider
             $this->addHoliday(new Holiday('swissNationalDay', $translations,
                 new DateTime($this->year . '-08-01', new DateTimeZone($this->timezone)), $this->locale,
                 Holiday::TYPE_NATIONAL));
-        } elseif ($this->year >= 1899 || $this->year == 1891) {
+        } elseif ($this->year >= 1899 || $this->year === 1891) {
             $this->addHoliday(new Holiday('swissNationalDay', $translations,
                 new DateTime($this->year . '-08-01', new DateTimeZone($this->timezone)), $this->locale,
                 Holiday::TYPE_OBSERVANCE));
