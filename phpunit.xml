@@ -58,7 +58,7 @@
                 <directory suffix="Test.php">./tests/Croatia</directory>
             </testsuite>
 
-            <!-- Test Suite for holidays in Czech Republic -->
+            <!-- Test Suite for holidays in Czechia -->
             <testsuite name="CzechRepublic">
                 <directory suffix="Test.php">./tests/CzechRepublic</directory>
             </testsuite>
