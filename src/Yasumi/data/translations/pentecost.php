@@ -13,6 +13,7 @@
 // Translations for Whitsunday
 return [
     'da_DK' => 'Pinsedag',
+    'de_DE' => 'Pfingstsonntag',
     'de_AT' => 'Pfingsten',
     'de_CH' => 'Pfingsten',
     'el_GR' => 'Πεντηκοστή',
