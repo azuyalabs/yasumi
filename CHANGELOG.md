@@ -1,52 +1,55 @@
 # Change Log
+All notable changes to this project will be documented in this file.
 
-## DEV/MASTER
+The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org).
 
-**Implemented enhancements:**
+## [Unreleased]
 
+### Added
 - Added Holiday Provider for Hungary. [\#57](https://github.com/azuyalabs/yasumi/pull/57) ([AronNovak](https://github.com/AronNovak))
 - Added Holiday Provider for Switzerland. [\#56](https://github.com/azuyalabs/yasumi/pull/56) ([qligier](https://github.com/qligier))
 
-**Resolved issues:**
+### Changed
+
+### Fixed
+
+### Removed
 
 
 
-## 1.6.1 (February 7, 2017)
+## [1.6.1] - 2017-02-07
 
-**Implemented enhancements:**
-
-- Moved Reformation Day to Christian Holidays as it is not only celebrated in Germany.
-- Added missing unit tests for the German Unit Day for each German state.
-
-**Resolved issues:**
-
-- Fixed Christmas Day and Boxing Day for the United Kingdom. A substitute bank holiday is now created for both Christmas and Boxing Day when either of those days fall on a weekend. [\#48](https://github.com/azuyalabs/yasumi/issues/48) ([joshuabaker](https://github.com/joshuabaker))
-- Renamed 'en_US' translation for the Second Christmas Day (from ‘Boxing Day’ to ‘Second Christmas Day’: Boxing Day concept does not exist in the US). [\#53](https://github.com/azuyalabs/yasumi/pull/53) ([AngelinCalu](https://github.com/AngelinCalu))
-- Created fallback calculation of the easter_days function in case the PHP extension 'calendar' is not loaded. [\#55](https://github.com/azuyalabs/yasumi/pull/55) ([stelgenhof](https://github.com/stelgenhof))
+### Added
 - Added missing unit tests for Reformation Day as in 2017 it is celebrated in all German states for its 500th anniversary.
+- Added missing unit tests for the German Unit Day for each German state.
+- Created fallback calculation of the easter_days function in case the PHP extension 'calendar' is not loaded. [\#55](https://github.com/azuyalabs/yasumi/pull/55) ([stelgenhof](https://github.com/stelgenhof))
+
+### Changed
+- Moved Reformation Day to Christian Holidays as it is not only celebrated in Germany.
 - Changed Travis configuration to use Composer-installed phpunit to avoid if any issues arise with globally installed phpunit.
 
+### Fixed
+- Fixed Christmas Day and Boxing Day for the United Kingdom. A substitute bank holiday is now created for both Christmas and Boxing Day when either of those days fall on a weekend. [\#48](https://github.com/azuyalabs/yasumi/issues/48) ([joshuabaker](https://github.com/joshuabaker))
+- Renamed 'en_US' translation for the Second Christmas Day (from ‘Boxing Day’ to ‘Second Christmas Day’: Boxing Day concept does not exist in the US). [\#53](https://github.com/azuyalabs/yasumi/pull/53) ([AngelinCalu](https://github.com/AngelinCalu))
 
-## 1.6.0 (January 6, 2017)
 
-**Implemented enhancements:**
-
+## [1.6.0] - 2017-01-06
+### Added
 - Added Holiday Provider for Romania. [\#52](https://github.com/azuyalabs/yasumi/pull/52) ([AngelinCalu](https://github.com/AngelinCalu))
 - Added Holiday Provider for Ireland. [stelgenhof](https://github.com/stelgenhof)
 - Added Holiday Provider for South Africa. [stelgenhof](https://github.com/stelgenhof)
 - Added Holiday Provider for Austria. [stelgenhof](https://github.com/stelgenhof)
-- Refactored the calculation of Orthodox Easter using the function from ChristianHolidays.php. [\#47](https://github.com/azuyalabs/yasumi/pull/47) ([AngelinCalu](https://github.com/AngelinCalu))
 - Added 'en_US' translations for the Polish Independence Day and Constitution Day. [\#45](https://github.com/azuyalabs/yasumi/pull/45) ([AngelinCalu](https://github.com/AngelinCalu))
 
-**Resolved issues:**
+### Changed
+- Refactored the calculation of Orthodox Easter using the function from ChristianHolidays.php. [\#47](https://github.com/azuyalabs/yasumi/pull/47) ([AngelinCalu](https://github.com/AngelinCalu))
 
+### Fixed
 - The parameters of the `isHoliday` and `isWorkingDay` methods now allow for classes that derive from DateTime (like the very popular Carbon class). [\#49](https://github.com/azuyalabs/yasumi/issues/49) ([stelgenhof](https://github.com/stelgenhof))
 
 
-## 1.5.0 (November 25, 2016)
-
-**Implemented enhancements:**
-
+## [1.5.0] - 2016-11-25
+### Added
 - Added Holiday Provider for Australia (and the sub-region of Victoria). [\#38](https://github.com/azuyalabs/yasumi/pull/38) ([brucealdridge](https://github.com/brucealdridge))
 - You can now also use your own holiday providers in addition to the included holiday providers. 
   A very helpful improvement if Yasumi does not include your provider (yet), but you want to use yours! [\#29](https://github.com/azuyalabs/yasumi/pull/29) ([navarr](https://github.com/navarr))
@@ -56,49 +59,46 @@
 - Added Holiday Providers for all 16 German States. [\#34](https://github.com/azuyalabs/yasumi/pull/34) ([stelgenhof](https://github.com/stelgenhof))
 - Added Holiday Provider for Croatia. [\#32](https://github.com/azuyalabs/yasumi/pull/32) ([karlomikus](https://github.com/karlomikus))
 
-**Resolved issues:**
-
+### Fixed
 - Carnival Day in Brazil was incorrectly set to be 47 days after Easter. Carnival Day begins Friday before Ash Wednesday (51 days to Easter). [\#36](https://github.com/azuyalabs/yasumi/pull/36) ([icaroce](https://github.com/icaroce))
 - All Saints Day for Finland was incorrectly set for November 1st. The correct date is Saturday between 31 Oct and 6 Nov, similar to Sweden. [\#43](https://github.com/azuyalabs/yasumi/issues/43) ([stelgenhof](https://github.com/stelgenhof))
 
 
-## 1.4.0 (June 4, 2016)
-
-**Implemented enhancements:**
-
+## [1.4.0] - 2016-06-04
+### Added
 - Added Holiday Provider for Brazil. [\#21](https://github.com/azuyalabs/yasumi/pull/21) ([dorianneto](https://github.com/dorianneto))
 - Added Holiday Provider for the Czech Republic. [\#26](https://github.com/azuyalabs/yasumi/pull/26) ([dfridrich](https://github.com/dfridrich))
 - Added Holiday Provider for the United Kingdom. [\#23](https://github.com/azuyalabs/yasumi/pull/23) ([stelgenhof](https://github.com/stelgenhof))
 - Add Welsh language (spoken in Wales, UK) translations for the holidays in the United Kingdom [\#25](https://github.com/azuyalabs/yasumi/pull/25) ([meigwilym](https://github.com/meigwilym))
+- To determine a set of holidays between two dates you can now use the aptly named 'between()' method.
+
+### Changed
 - All Holiday Provider must now implement a code that will identify it. Typically this is the ISO3166 code
   corresponding to the respective country or sub-region. This can help for purposes such as translations or interfacing
   with other API's for example.
-- To determine a set of holidays between two dates you can now use the aptly named 'between()' method.
 
-**Resolved issues:**
-
+### Fixed
 - Fixed an issue with the unit test for the 'getProviders' method failing on Windows. Hardcoded unix-style directory separators have been replaced by DIRECTORY_SEPARATOR. [\#30](https://github.com/azuyalabs/yasumi/pull/30) ([navarr](https://github.com/navarr))
 - Corrected a typo in the English translation for 敬老の日 (Japan) [\#22](https://github.com/azuyalabs/yasumi/pull/22) ([navarr](https://github.com/navarr))
 - Fixed issue that the unit tests in 'YasumiTest' (methods 'next' and 'previous') did not cover the situations that the limits are exceeded. [\#28](https://github.com/azuyalabs/yasumi/issues/28)
 
 
-## 1.3.0 (May 2, 2016)
-
-**Implemented enhancements:**
-
+## [1.3.0] - 2016-05-02
+### Added
 - Added Holiday Provider for Poland. [\#18](https://github.com/azuyalabs/yasumi/pull/18) ([mpdx](https://github.com/mpdx))
 - Added Holiday Provider for New Zealand. [\#13](https://github.com/azuyalabs/yasumi/pull/13) ([badams](https://github.com/badams))
 - Added Holiday Provider for Greece. [\#10](https://github.com/azuyalabs/yasumi/pull/10) ([sebdesign](https://github.com/sebdesign))
 - Added Holiday Provider for Germany. [\#9](https://github.com/azuyalabs/yasumi/pull/9) ([eaglefsd](https://github.com/eaglefsd))
 - Added translations ('fr_FR', 'fr_BE') for Belgium National day [\#864d250](https://github.com/azuyalabs/yasumi/commit/864d25097abbeedbee15bcc37702a34c36a5b696) ([R2c](https://github.com/R2c))
-- Sorted all translations in the translation files alphabetically (descending).
 - Added missing English ('en_US') translations for the Christian holidays 'Immaculate Conception', 'Maundy Thursday',
   'St. Georges Day', 'St. John's Day', 'St. Josephs Day' and 'St. Stephens Day'.
 - Added Test Interface class to ensure the unit tests contain a some minimal assertions.
+
+### Changed
+- Sorted all translations in the translation files alphabetically (descending).
 - Refactoring and cleanup of all unit tests.
 
-**Resolved issues:**
-
+### Fixed
 - Fixed issue for Sweden as All Saints Day was always calculated to be on November 1st. However the holiday has always
   been celebrated on a Saturday (between October 31 and November 6th).
 - Fixed the getProviders as it was not able to load Holiday Providers defined in (sub) regions [\#5879133](https://github.com/azuyalabs/yasumi/commit/58791330ccf5c13b1626885921534c32866b7faf) ([R2c](https://github.com/R2c))
@@ -122,49 +122,48 @@
   1955, the holiday has always been celebrated on a Saturday (between June 20 and June 26).
 
 
-## 1.2.0 (Apr 4, 2016)
-
-**Implemented enhancements:**
-
+## [1.2.0] - 2016-04-04
+### Added
 - Added Holiday Provider for Denmark
 - Added Holiday Provider for Norway
 - Added Holiday Provider for Sweden
 - Added Holiday Provider for Finland
 - New function 'isWorkingDay' added that determines whether a date represents a working day or not. A working day is
   considered a date that is neither a holiday nor falls into the weekend.
+  
+### Changed
 - Refactoring and cleanup of unit tests
 
-
-**Resolved issues:**
-
+### Fixed
 - The Vernal Equinox Day and Autumnal Equinox Day in Japan were excluded from having it substituted for another day in
   case these days would fall on the weekend.
 - Fixed tests for some holiday providers as some holidays have been established only in a particular year, causing
   false failures in the unit tests.
 
 
-## 1.1.0 (Mar 10, 2016)
-
-**Implemented enhancements:**
-
+## [1.1.0] - 2016-03-10
+### Added
 - Added Spain Holiday Provider (including the autonomous communities Andalusia, Aragon, Asturias, Balearic Islands,
   Basque Country, Canary Islands, Cantabria, Castile and León, Castilla-La Mancha, Ceuta, Community of Madrid,
   Extremadura, Galicia, La Rioja, Melilla, Navarre, Region of Murcia, Valencian Community)
 - Added Corpus Christi, St. Joseph's Day, Maundy Thursday, St. George's Day, St. John's Day to the common Christian
   Holidays.
-- Updated some English, Italian, French and Dutch translations.
 - Created separate tests for holidays that are substituted on different days.
-- Moved all other holiday calculations in Netherlands and France to individual methods.
 - Allow for name spaced holiday providers.
 - Added test for translation of Ash Wednesday and Valentinesday in the Netherlands.
 - Added test to check whether all holidays for a Holiday Provider are defined by the respective provider class.
+  
+### Changed
+- Updated some English, Italian, French and Dutch translations.
+- Moved all other holiday calculations in Netherlands and France to individual methods.
+
+### Fixed
+- For Japan substituted holidays had same date as the original holidays.
+
+### Removed
 - Removed support for PHP 5.4. Minimum version is now 5.5. PHP 7.0 is known to work however in Travis CI still allowed
   to fail
 
-**Resolved issues:**
 
-- For Japan substituted holidays had same date as the original holidays.
-
-## 1.0.0 (Apr 21, 2015)
-
+## [1.0.0] - 2015-04-21
 - Initial Release
