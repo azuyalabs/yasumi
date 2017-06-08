@@ -189,8 +189,8 @@ class Yasumi
      * Create a new holiday provider instance.
      *
      * A new holiday provider instance can be created using this function. You can use one of the providers included
-     * already with Yasumi, or your own provider by giving the name of your class in the first parameter. Your provider
-     * class needs to implement the 'ProviderInterface' class.
+     * already with Yasumi, or your own provider by giving the 'const ID', corresponding to the ISO3166-2 Code, set in
+     * your class in the first parameter. Your provider class needs to implement the 'ProviderInterface' class.
      *
      * @param string $iso3166_2  ISO3166-2 Coded region, holiday provider will be searched for
      * @param int    $year   year for which the country provider needs to be created. Year needs to be a valid integer
@@ -200,7 +200,7 @@ class Yasumi
      * @throws RuntimeException         If no such holiday provider is found
      * @throws InvalidArgumentException if the year parameter is not between 1000 and 9999
      * @throws UnknownLocaleException   if the locale parameter is invalid
-     * @throws InvalidArgumentException if the holiday provider for the given country does not exist
+     * @throws InvalidArgumentException if the holiday provider for the given ISO3166-2 code does not exist
      *
      * @return AbstractProvider An instance of class $class is created and returned
      */
