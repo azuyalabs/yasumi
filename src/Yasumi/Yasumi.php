@@ -206,18 +206,15 @@ class Yasumi
      */
     public static function createByISO3166_2($iso3166_2, $year = null, $locale = self::DEFAULT_LOCALE)
     {
-        $providers = self::getProviders();
 
-        $class = isset($providers[$iso3166_2])
-            ? $providers[$iso3166_2]
-            : false;
+        $availableProviders = self::getProviders();
 
-        if ($class === false) {
+        if (false === isset($availableProviders[$iso3166_2])) {
             throw new InvalidArgumentException(sprintf('Unable to find holiday provider by ISO3166-2 "%s".', $iso3166_2));
         }
 
         return self::create(
-            $class,
+            $availableProviders[$iso3166_2],
             $year,
             $locale
         );
