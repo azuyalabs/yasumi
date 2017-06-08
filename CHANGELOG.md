@@ -6,11 +6,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [Unreleased]
 
 ### Added
-- Added missing translations (de_DE) for Easter Sunday and Whitsunday [\#60](https://github.com/azuyalabs/yasumi/pull/60) [IceShack](https://github.com/IceShack))
+- Added missing translations (de_DE) for Easter Sunday and Whitsunday [\#60](https://github.com/azuyalabs/yasumi/pull/60) )([IceShack](https://github.com/IceShack))
 - Added Holiday Provider for Hungdary. [\#57](https://github.com/azuyalabs/yasumi/pull/57) ([AronNovak](https://github.com/AronNovak))
 - Added Holiday Provider for Switzerland. [\#56](https://github.com/azuyalabs/yasumi/pull/56) ([qligier](https://github.com/qligier))
 
 ### Changed
+- Upgraded PHP-CS-Fixer to version 2.1
 
 ### Fixed
 
