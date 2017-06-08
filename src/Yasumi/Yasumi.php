@@ -206,7 +206,6 @@ class Yasumi
      */
     public static function createByISO3166_2($iso3166_2, $year = null, $locale = self::DEFAULT_LOCALE)
     {
-
         $availableProviders = self::getProviders();
 
         if (false === isset($availableProviders[$iso3166_2])) {
