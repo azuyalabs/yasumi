@@ -12,7 +12,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Added Holiday Provider for Switzerland. [\#56](https://github.com/azuyalabs/yasumi/pull/56) ([qligier](https://github.com/qligier))
 
 ### Changed
-- Upgraded PHP-CS-Fixer to version 2.1
+- Upgraded PHP-CS-Fixer to version 2.4
 
 ### Fixed
 
