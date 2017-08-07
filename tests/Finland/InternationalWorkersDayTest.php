@@ -44,8 +44,12 @@ class InternationalWorkersDayTest extends FinlandBaseTestCase implements YasumiT
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Vappu']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Vappu']
+        );
     }
 
     /**

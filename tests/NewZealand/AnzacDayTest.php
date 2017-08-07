@@ -42,8 +42,12 @@ class AnzacDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInter
      */
     public function testHoliday($year, $expected)
     {
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime($expected, new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime($expected, new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -83,8 +87,12 @@ class AnzacDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInter
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'ANZAC Day']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => 'ANZAC Day']
+        );
     }
 
     /**
@@ -92,7 +100,11 @@ class AnzacDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInter
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL
+        );
     }
 }

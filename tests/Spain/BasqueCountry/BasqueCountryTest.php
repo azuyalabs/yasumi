@@ -50,8 +50,12 @@ class BasqueCountryTest extends BasqueCountryBaseTestCase
      */
     public function testObservedHolidays()
     {
-        $this->assertDefinedHolidays(['maundyThursday', 'easterMonday'], self::REGION, $this->year,
-            Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays(
+            ['maundyThursday', 'easterMonday'],
+            self::REGION,
+            $this->year,
+            Holiday::TYPE_OBSERVANCE
+        );
     }
 
     /**

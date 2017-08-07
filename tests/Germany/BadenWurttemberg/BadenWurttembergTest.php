@@ -73,8 +73,12 @@ class BadenWurttembergTest extends BadenWurttembergBaseTestCase
      */
     public function testOtherHolidays()
     {
-        $this->assertDefinedHolidays(['epiphany', 'corpusChristi', 'allSaintsDay'], self::REGION, $this->year,
-            Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays(
+            ['epiphany', 'corpusChristi', 'allSaintsDay'],
+            self::REGION,
+            $this->year,
+            Holiday::TYPE_OTHER
+        );
     }
 
     /**

@@ -38,8 +38,12 @@ class ConstantinBrancusiDayTest extends RomaniaBaseTestCase implements YasumiTes
     public function testConstantinBrancusiDayOnAfter2016()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-02-19", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-02-19", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -47,8 +51,11 @@ class ConstantinBrancusiDayTest extends RomaniaBaseTestCase implements YasumiTes
      */
     public function testConstantinBrancusiDayBefore2016()
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+        );
     }
 
     /**
@@ -56,8 +63,12 @@ class ConstantinBrancusiDayTest extends RomaniaBaseTestCase implements YasumiTes
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Ziua Constantin Brâncuși']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => 'Ziua Constantin Brâncuși']
+        );
     }
 
     /**
@@ -65,7 +76,11 @@ class ConstantinBrancusiDayTest extends RomaniaBaseTestCase implements YasumiTes
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            Holiday::TYPE_OBSERVANCE);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_OBSERVANCE
+        );
     }
 }

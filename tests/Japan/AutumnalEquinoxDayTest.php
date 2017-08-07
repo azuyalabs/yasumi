@@ -59,8 +59,12 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCase
      */
     public function testAutumnalEquinoxDayBetween1948And2150($year, $month, $day)
     {
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-$month-$day", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-$month-$day", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -86,8 +90,11 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCase
      */
     public function testAutumnalEquinoxDayBefore1948()
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+        );
     }
 
     /**
@@ -97,8 +104,11 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCase
      */
     public function testAutumnalEquinoxDayBetween1851And1948()
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(1851, self::ESTABLISHMENT_YEAR - 1));
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(1851, self::ESTABLISHMENT_YEAR - 1)
+        );
     }
 
     /**
@@ -106,8 +116,12 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCase
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2150), [self::LOCALE => '秋分の日']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2150),
+            [self::LOCALE => '秋分の日']
+        );
     }
 
     /**
@@ -115,7 +129,11 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCase
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2150),
-            Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2150),
+            Holiday::TYPE_NATIONAL
+        );
     }
 }

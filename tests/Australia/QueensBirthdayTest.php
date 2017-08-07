@@ -44,8 +44,12 @@ abstract class QueensBirthdayTest extends AustraliaBaseTestCase implements Yasum
      */
     public function testHoliday($year, $expected)
     {
-        $this->assertHoliday($this->region, self::HOLIDAY, $year,
-            new DateTime($expected, new DateTimeZone($this->timezone)));
+        $this->assertHoliday(
+            $this->region,
+            self::HOLIDAY,
+            $year,
+            new DateTime($expected, new DateTimeZone($this->timezone))
+        );
     }
 
 
@@ -78,8 +82,12 @@ abstract class QueensBirthdayTest extends AustraliaBaseTestCase implements Yasum
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName($this->region, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Queens Birthday']);
+        $this->assertTranslatedHolidayName(
+            $this->region,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => 'Queens Birthday']
+        );
     }
 
     /**
@@ -87,7 +95,11 @@ abstract class QueensBirthdayTest extends AustraliaBaseTestCase implements Yasum
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType($this->region, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2100), Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(
+            $this->region,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2100),
+            Holiday::TYPE_NATIONAL
+        );
     }
 }

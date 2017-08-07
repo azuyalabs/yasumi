@@ -39,8 +39,12 @@ class ComingOfAgeDayTest extends JapanBaseTestCase implements YasumiTestCaseInte
     public function testComingOfAgeDayOnAfter2000()
     {
         $year = $this->generateRandomYear(2001);
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("second monday of january $year", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("second monday of january $year", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
 
@@ -51,8 +55,12 @@ class ComingOfAgeDayTest extends JapanBaseTestCase implements YasumiTestCaseInte
     public function testComingOfAgeDayBetween1948And2000()
     {
         $year = 1991;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-1-15", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-1-15", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -61,8 +69,11 @@ class ComingOfAgeDayTest extends JapanBaseTestCase implements YasumiTestCaseInte
      */
     public function testConstitutionMemorialDayBefore1948()
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+        );
     }
 
     /**
@@ -70,8 +81,12 @@ class ComingOfAgeDayTest extends JapanBaseTestCase implements YasumiTestCaseInte
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => '成人の日']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => '成人の日']
+        );
     }
 
     /**
@@ -79,7 +94,11 @@ class ComingOfAgeDayTest extends JapanBaseTestCase implements YasumiTestCaseInte
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL
+        );
     }
 }

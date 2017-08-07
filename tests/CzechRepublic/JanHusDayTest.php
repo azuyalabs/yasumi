@@ -54,8 +54,12 @@ class JanHusDayTest extends CzechRepublicBaseTestCase implements YasumiTestCaseI
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Den upálení mistra Jana Husa']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Den upálení mistra Jana Husa']
+        );
     }
 
     /**

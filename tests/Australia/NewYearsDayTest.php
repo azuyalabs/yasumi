@@ -37,8 +37,12 @@ class NewYearsDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInt
      */
     public function testHoliday($year, $expected)
     {
-        $this->assertHoliday($this->region, self::HOLIDAY, $year,
-            new DateTime($expected, new DateTimeZone($this->timezone)));
+        $this->assertHoliday(
+            $this->region,
+            self::HOLIDAY,
+            $year,
+            new DateTime($expected, new DateTimeZone($this->timezone))
+        );
     }
 
     /**
@@ -71,8 +75,12 @@ class NewYearsDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInt
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName($this->region, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'New Year\'s Day']);
+        $this->assertTranslatedHolidayName(
+            $this->region,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'New Year\'s Day']
+        );
     }
 
     /**

@@ -50,8 +50,12 @@ class RegionOfMurciaTest extends RegionOfMurciaBaseTestCase
      */
     public function testObservedHolidays()
     {
-        $this->assertDefinedHolidays(['stJosephsDay', 'maundyThursday'], self::REGION, $this->year,
-            Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays(
+            ['stJosephsDay', 'maundyThursday'],
+            self::REGION,
+            $this->year,
+            Holiday::TYPE_OBSERVANCE
+        );
     }
 
     /**

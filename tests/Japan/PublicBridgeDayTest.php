@@ -37,8 +37,12 @@ class PublicBridgeDayTest extends JapanBaseTestCase implements YasumiTestCaseInt
      */
     public function testPublicBridgeDay()
     {
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $this->year,
-            new DateTime("$this->year-9-22", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $this->year,
+            new DateTime("$this->year-9-22", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**

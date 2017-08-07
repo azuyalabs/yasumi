@@ -152,7 +152,11 @@ class Sweden extends AbstractProvider
             $holiday_name = 'Sveriges nationaldag';
         }
 
-        $this->addHoliday(new Holiday('nationalDay', ['sv_SE' => $holiday_name],
-            new DateTime("$this->year-6-6", new DateTimeZone($this->timezone)), $this->locale));
+        $this->addHoliday(new Holiday(
+            'nationalDay',
+            ['sv_SE' => $holiday_name],
+            new DateTime("$this->year-6-6", new DateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 }

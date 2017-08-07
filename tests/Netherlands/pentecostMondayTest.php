@@ -33,8 +33,12 @@ class pentecostMondayTest extends NetherlandsBaseTestCase implements YasumiTestC
     public function testPentecostMonday()
     {
         $year = 2020;
-        $this->assertHoliday(self::REGION, 'pentecostMonday', $year,
-            new DateTime("$year-6-1", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            'pentecostMonday',
+            $year,
+            new DateTime("$year-6-1", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -42,8 +46,12 @@ class pentecostMondayTest extends NetherlandsBaseTestCase implements YasumiTestC
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Tweede Pinksterdag']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Tweede Pinksterdag']
+        );
     }
 
     /**

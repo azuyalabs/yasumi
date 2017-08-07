@@ -54,8 +54,12 @@ class IndependentCzechoslovakStateDayTest extends CzechRepublicBaseTestCase impl
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Den vzniku samostatného československého státu']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Den vzniku samostatného československého státu']
+        );
     }
 
     /**

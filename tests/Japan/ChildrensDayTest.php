@@ -38,8 +38,12 @@ class ChildrensDayTest extends JapanBaseTestCase implements YasumiTestCaseInterf
     public function testChildrensDayOnAfter1948()
     {
         $year = 1955;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-5-5", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-5-5", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -48,8 +52,12 @@ class ChildrensDayTest extends JapanBaseTestCase implements YasumiTestCaseInterf
     public function testChildrensDayOnAfter1948SubstitutedNextWorkingDay()
     {
         $year = 2120;
-        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
-            new DateTime("$year-5-6", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::SUBSTITUTE_PREFIX . self::HOLIDAY,
+            $year,
+            new DateTime("$year-5-6", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -57,8 +65,11 @@ class ChildrensDayTest extends JapanBaseTestCase implements YasumiTestCaseInterf
      */
     public function testChildrensDayBefore1948()
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+        );
     }
 
     /**
@@ -66,8 +77,12 @@ class ChildrensDayTest extends JapanBaseTestCase implements YasumiTestCaseInterf
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => '子供の日']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => '子供の日']
+        );
     }
 
     /**
@@ -75,7 +90,11 @@ class ChildrensDayTest extends JapanBaseTestCase implements YasumiTestCaseInterf
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL
+        );
     }
 }

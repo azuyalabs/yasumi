@@ -38,8 +38,12 @@ class AllSoulsDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterf
     public function testDiaDosFinadosAfter1300()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-11-02", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-11-02", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**

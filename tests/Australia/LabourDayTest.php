@@ -40,8 +40,12 @@ abstract class LabourDayTest extends AustraliaBaseTestCase implements YasumiTest
      */
     public function testHoliday($year, $expected)
     {
-        $this->assertHoliday($this->region, self::HOLIDAY, $year,
-            new DateTime($expected, new DateTimeZone($this->timezone)));
+        $this->assertHoliday(
+            $this->region,
+            self::HOLIDAY,
+            $year,
+            new DateTime($expected, new DateTimeZone($this->timezone))
+        );
     }
 
 
@@ -60,8 +64,12 @@ abstract class LabourDayTest extends AustraliaBaseTestCase implements YasumiTest
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName($this->region, self::HOLIDAY, $this->generateRandomYear(1990),
-            [self::LOCALE => 'Labour Day']);
+        $this->assertTranslatedHolidayName(
+            $this->region,
+            self::HOLIDAY,
+            $this->generateRandomYear(1990),
+            [self::LOCALE => 'Labour Day']
+        );
     }
 
     /**

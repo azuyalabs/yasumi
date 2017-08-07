@@ -37,8 +37,12 @@ class AugustHolidayTest extends IrelandBaseTestCase implements YasumiTestCaseInt
      */
     public function testHoliday($year, $expected)
     {
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime($expected, new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime($expected, new DateTimeZone(self::TIMEZONE))
+        );
         $this->assertDayOfWeek(self::REGION, self::HOLIDAY, $year, 'Monday');
     }
 
@@ -66,10 +70,18 @@ class AugustHolidayTest extends IrelandBaseTestCase implements YasumiTestCaseInt
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'August Holiday']);
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['ga_IE' => 'Lá Saoire i mí Lúnasa']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'August Holiday']
+        );
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            ['ga_IE' => 'Lá Saoire i mí Lúnasa']
+        );
     }
 
     /**

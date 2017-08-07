@@ -54,8 +54,12 @@ class AssumptionOfMaryTest extends GreeceBaseTestCase implements YasumiTestCaseI
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Κοίμηση της Θεοτόκου']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Κοίμηση της Θεοτόκου']
+        );
     }
 
     /**

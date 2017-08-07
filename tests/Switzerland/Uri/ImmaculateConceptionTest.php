@@ -54,8 +54,12 @@ class ImmaculateConceptionTest extends UriBaseTestCase implements YasumiTestCase
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Mariä Empfängnis']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Mariä Empfängnis']
+        );
     }
 
     /**

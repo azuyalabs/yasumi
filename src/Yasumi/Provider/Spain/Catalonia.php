@@ -75,8 +75,12 @@ class Catalonia extends Spain
     public function calculateNationalDayOfCatalonia()
     {
         if ($this->year >= 1886) {
-            $this->addHoliday(new Holiday('nationalCataloniaDay', ['es_ES' => 'Diada Nacional de Catalunya'],
-                new DateTime("$this->year-9-11", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'nationalCataloniaDay',
+                ['es_ES' => 'Diada Nacional de Catalunya'],
+                new DateTime("$this->year-9-11", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
     }
 }

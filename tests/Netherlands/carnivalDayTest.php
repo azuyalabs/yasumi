@@ -34,8 +34,12 @@ class carnivalDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseI
     public function testHoliday()
     {
         $year = 2015;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-2-15", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-2-15", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -51,7 +55,11 @@ class carnivalDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseI
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Carnaval']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Carnaval']
+        );
     }
 }

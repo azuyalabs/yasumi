@@ -69,8 +69,12 @@ class Ceuta extends Spain
     public function calculateDayOfCeuta()
     {
         if ($this->year >= 1416) {
-            $this->addHoliday(new Holiday('ceutaDay', ['es_ES' => 'Día de Ceuta'],
-                new DateTime("$this->year-9-2", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'ceutaDay',
+                ['es_ES' => 'Día de Ceuta'],
+                new DateTime("$this->year-9-2", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
     }
 }

@@ -34,8 +34,12 @@ class EasterMondayTest extends RomaniaBaseTestCase implements YasumiTestCaseInte
     public function testHoliday()
     {
         $year = 2020;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-04-20", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-04-20", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -43,8 +47,12 @@ class EasterMondayTest extends RomaniaBaseTestCase implements YasumiTestCaseInte
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'A doua zi de Paște']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'A doua zi de Paște']
+        );
     }
 
     /**

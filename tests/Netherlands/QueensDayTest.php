@@ -33,8 +33,12 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
     public function testQueensBetween1891and1948()
     {
         $year = 1901;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-8-31", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-8-31", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -43,8 +47,12 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
     public function testQueensBetween1891and1948SubstitutedLater()
     {
         $year = 1947;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-9-1", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-9-1", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -53,8 +61,12 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
     public function testQueensBetween1949and2013()
     {
         $year = 1965;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-4-30", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-4-30", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -63,8 +75,12 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
     public function testQueensBetween1949and2013SubstitutedLater()
     {
         $year = 1967;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-5-1", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-5-1", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -73,8 +89,12 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
     public function testQueensBetween1949and2013SubstitutedEarlier()
     {
         $year = 2006;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-4-29", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-4-29", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -98,8 +118,12 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(1891, 2013),
-            [self::LOCALE => 'Koninginnedag']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(1891, 2013),
+            [self::LOCALE => 'Koninginnedag']
+        );
     }
 
     /**
@@ -107,7 +131,11 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(1891, 2013),
-            Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(1891, 2013),
+            Holiday::TYPE_NATIONAL
+        );
     }
 }

@@ -34,8 +34,12 @@ class RestaurationGenevoiseTest extends GenevaBaseTestCase implements YasumiTest
     {
         $year = $this->generateRandomYear(1814);
 
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime($year.'-12-31', new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime($year.'-12-31', new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -43,8 +47,12 @@ class RestaurationGenevoiseTest extends GenevaBaseTestCase implements YasumiTest
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(1814),
-            [self::LOCALE => 'Restauration de la République']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(1814),
+            [self::LOCALE => 'Restauration de la République']
+        );
     }
 
     /**

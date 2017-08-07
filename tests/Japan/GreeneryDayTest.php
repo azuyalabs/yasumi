@@ -39,8 +39,12 @@ class GreeneryDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
     public function testHolidayOnAfter2007()
     {
         $year = 2112;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-5-4", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-5-4", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -49,8 +53,12 @@ class GreeneryDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
     public function testHolidayOnAfter2007SubstitutedNextWorkingDay()
     {
         $year = 2014;
-        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
-            new DateTime("$year-5-6", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::SUBSTITUTE_PREFIX . self::HOLIDAY,
+            $year,
+            new DateTime("$year-5-6", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -60,8 +68,12 @@ class GreeneryDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
     public function testHolidayBetween1989And2007()
     {
         $year = 1997;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-4-29", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-4-29", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -70,8 +82,12 @@ class GreeneryDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
     public function testHolidayBetween1989And2007SubstitutedNextWorkingDay()
     {
         $year = 2001;
-        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
-            new DateTime("$year-4-30", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::SUBSTITUTE_PREFIX . self::HOLIDAY,
+            $year,
+            new DateTime("$year-4-30", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -80,8 +96,11 @@ class GreeneryDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
      */
     public function testHolidayBefore1989()
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+        );
     }
 
     /**
@@ -89,8 +108,12 @@ class GreeneryDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => '緑の日']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => '緑の日']
+        );
     }
 
     /**
@@ -98,7 +121,11 @@ class GreeneryDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL
+        );
     }
 }

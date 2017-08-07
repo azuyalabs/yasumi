@@ -39,8 +39,12 @@ class LabourThanksgivingDayTest extends JapanBaseTestCase implements YasumiTestC
     public function testLabourThanksgivingDayOnAfter1948()
     {
         $year = 4884;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-11-23", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-11-23", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -50,8 +54,12 @@ class LabourThanksgivingDayTest extends JapanBaseTestCase implements YasumiTestC
     public function testLabourThanksgivingDayOnAfter1948SubstitutedNextWorkingDay()
     {
         $year = 1986;
-        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
-            new DateTime("$year-11-24", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::SUBSTITUTE_PREFIX . self::HOLIDAY,
+            $year,
+            new DateTime("$year-11-24", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -60,8 +68,11 @@ class LabourThanksgivingDayTest extends JapanBaseTestCase implements YasumiTestC
      */
     public function testLabourThanksgivingDayBefore1948()
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+        );
     }
 
     /**
@@ -69,8 +80,12 @@ class LabourThanksgivingDayTest extends JapanBaseTestCase implements YasumiTestC
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => '勤労感謝の日']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => '勤労感謝の日']
+        );
     }
 
     /**
@@ -78,7 +93,11 @@ class LabourThanksgivingDayTest extends JapanBaseTestCase implements YasumiTestC
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL
+        );
     }
 }

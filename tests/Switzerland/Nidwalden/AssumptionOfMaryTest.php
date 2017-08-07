@@ -44,8 +44,12 @@ class AssumptionOfMaryTest extends NidwaldenBaseTestCase implements YasumiTestCa
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Mariä Himmelfahrt']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Mariä Himmelfahrt']
+        );
     }
 
     /**

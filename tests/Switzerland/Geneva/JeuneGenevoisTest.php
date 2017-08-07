@@ -87,8 +87,12 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements YasumiTestCaseInte
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(1966),
-            [self::LOCALE => 'Jeûne genevois']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(1966),
+            [self::LOCALE => 'Jeûne genevois']
+        );
     }
 
     /**

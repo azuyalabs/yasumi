@@ -33,8 +33,12 @@ class GoodFridayTest extends GermanyBaseTestCase implements YasumiTestCaseInterf
     public function testGoodFriday()
     {
         $year = 1876;
-        $this->assertHoliday(self::REGION, 'goodFriday', $year,
-            new DateTime("$year-4-14", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            'goodFriday',
+            $year,
+            new DateTime("$year-4-14", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -42,8 +46,12 @@ class GoodFridayTest extends GermanyBaseTestCase implements YasumiTestCaseInterf
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Karfreitag']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Karfreitag']
+        );
     }
 
     /**

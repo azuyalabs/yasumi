@@ -39,8 +39,12 @@ class HealthAndSportsDayTest extends JapanBaseTestCase implements YasumiTestCase
     public function testHealthAndSportsDayOnAfter2000()
     {
         $year = $this->generateRandomYear(2001);
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("second monday of october $year", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("second monday of october $year", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -50,8 +54,12 @@ class HealthAndSportsDayTest extends JapanBaseTestCase implements YasumiTestCase
     public function testHealthAndSportsDayBetween1996And2000()
     {
         $year = 1997;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-10-10", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-10-10", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -61,8 +69,12 @@ class HealthAndSportsDayTest extends JapanBaseTestCase implements YasumiTestCase
     public function testHealthAndSportsDayBetween1996And2000SubstitutedNextWorkingDay()
     {
         $year = 1999;
-        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
-            new DateTime("$year-10-11", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::SUBSTITUTE_PREFIX . self::HOLIDAY,
+            $year,
+            new DateTime("$year-10-11", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -71,8 +83,11 @@ class HealthAndSportsDayTest extends JapanBaseTestCase implements YasumiTestCase
      */
     public function testHealthAndSportsDayBefore1996()
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+        );
     }
 
     /**
@@ -80,8 +95,12 @@ class HealthAndSportsDayTest extends JapanBaseTestCase implements YasumiTestCase
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => '体育の日']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => '体育の日']
+        );
     }
 
     /**
@@ -89,7 +108,11 @@ class HealthAndSportsDayTest extends JapanBaseTestCase implements YasumiTestCase
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL
+        );
     }
 }

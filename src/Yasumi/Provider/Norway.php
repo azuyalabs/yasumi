@@ -76,8 +76,12 @@ class Norway extends AbstractProvider
     public function calculateConstitutionDay()
     {
         if ($this->year >= 1836) {
-            $this->addHoliday(new Holiday('constitutionDay', ['nb_NO' => 'Nasjonaldagen'],
-                new DateTime("$this->year-5-17", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'constitutionDay',
+                ['nb_NO' => 'Nasjonaldagen'],
+                new DateTime("$this->year-5-17", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
     }
 }

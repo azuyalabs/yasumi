@@ -47,8 +47,12 @@ class NewYearsDayTest extends UnitedKingdomBaseTestCase implements YasumiTestCas
      */
     public function testHolidayOnAfterEstablishment($year, $expected)
     {
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime($expected, new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime($expected, new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -56,8 +60,11 @@ class NewYearsDayTest extends UnitedKingdomBaseTestCase implements YasumiTestCas
      */
     public function testHolidayBeforeEstablishment()
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+        );
     }
 
     /**
@@ -65,8 +72,12 @@ class NewYearsDayTest extends UnitedKingdomBaseTestCase implements YasumiTestCas
      */
     public function testHolidayIsObservedTypeBeforeChange()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::ADJUSTMENT_YEAR - 1), Holiday::TYPE_OBSERVANCE);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::ADJUSTMENT_YEAR - 1),
+            Holiday::TYPE_OBSERVANCE
+        );
     }
 
     /**
@@ -97,8 +108,12 @@ class NewYearsDayTest extends UnitedKingdomBaseTestCase implements YasumiTestCas
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'New Year\'s Day']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => 'New Year\'s Day']
+        );
     }
 
     /**
@@ -106,7 +121,11 @@ class NewYearsDayTest extends UnitedKingdomBaseTestCase implements YasumiTestCas
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ADJUSTMENT_YEAR),
-            Holiday::TYPE_BANK);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ADJUSTMENT_YEAR),
+            Holiday::TYPE_BANK
+        );
     }
 }

@@ -54,8 +54,12 @@ class DayAfterNewYearsDayTest extends RomaniaBaseTestCase implements YasumiTestC
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'A doua zi după Anul Nou']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'A doua zi după Anul Nou']
+        );
     }
 
     /**

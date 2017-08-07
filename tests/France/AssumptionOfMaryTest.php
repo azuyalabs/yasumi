@@ -44,8 +44,12 @@ class AssumptionOfMaryTest extends FranceBaseTestCase implements YasumiTestCaseI
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'L\'Assomption de Marie']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'L\'Assomption de Marie']
+        );
     }
 
     /**

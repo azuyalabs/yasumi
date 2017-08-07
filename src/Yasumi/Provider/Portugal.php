@@ -80,9 +80,13 @@ class Portugal extends AbstractProvider
     public function calculateCarnationRevolutionDay()
     {
         if ($this->year >= 1974) {
-            $this->addHoliday(new Holiday('25thApril', ['pt_PT' => 'Dia da Liberdade'],
-                new DateTime("$this->year-04-25", new DateTimeZone($this->timezone)), $this->locale,
-                Holiday::TYPE_NATIONAL));
+            $this->addHoliday(new Holiday(
+                '25thApril',
+                ['pt_PT' => 'Dia da Liberdade'],
+                new DateTime("$this->year-04-25", new DateTimeZone($this->timezone)),
+                $this->locale,
+                Holiday::TYPE_NATIONAL
+            ));
         }
     }
 
@@ -119,8 +123,12 @@ class Portugal extends AbstractProvider
     public function calculatePortugalDay()
     {
         if ($this->year <= 1932 || $this->year >= 1974) {
-            $this->addHoliday(new Holiday('portugalDay', ['pt_PT' => 'Dia de Portugal'],
-                new DateTime("$this->year-06-10", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'portugalDay',
+                ['pt_PT' => 'Dia de Portugal'],
+                new DateTime("$this->year-06-10", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
     }
 
@@ -145,8 +153,12 @@ class Portugal extends AbstractProvider
     public function calculatePortugueseRepublicDay()
     {
         if ($this->year >= 1910) {
-            $this->addHoliday(new Holiday('portugueseRepublic', ['pt_PT' => 'Implantação da República Portuguesa'],
-                new DateTime("$this->year-10-05", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'portugueseRepublic',
+                ['pt_PT' => 'Implantação da República Portuguesa'],
+                new DateTime("$this->year-10-05", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
     }
 
@@ -191,9 +203,13 @@ class Portugal extends AbstractProvider
     {
         // The Wikipedia article mentions that this has been a holiday since the second of half of the XIX century.
         if (($this->year >= 1850 && $this->year <= 2013) || $this->year >= 2016) {
-            $this->addHoliday(new Holiday('restorationOfIndependence', ['pt_PT' => 'Restauração da Independência'],
-                new DateTime("$this->year-12-01", new DateTimeZone($this->timezone)), $this->locale,
-                Holiday::TYPE_NATIONAL));
+            $this->addHoliday(new Holiday(
+                'restorationOfIndependence',
+                ['pt_PT' => 'Restauração da Independência'],
+                new DateTime("$this->year-12-01", new DateTimeZone($this->timezone)),
+                $this->locale,
+                Holiday::TYPE_NATIONAL
+            ));
         }
     }
 }

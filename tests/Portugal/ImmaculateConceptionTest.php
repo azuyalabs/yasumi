@@ -54,8 +54,12 @@ class ImmaculateConceptionTest extends PortugalBaseTestCase implements YasumiTes
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Dia da Imaculada Conceição']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Dia da Imaculada Conceição']
+        );
     }
 
     /**

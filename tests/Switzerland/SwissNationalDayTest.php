@@ -48,8 +48,12 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements YasumiTest
     public function testNationalDayOnAfter1994()
     {
         $year = $this->generateRandomYear(self::NATIONAL_ESTABLISHMENT_YEAR);
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-8-01", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-8-01", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -58,8 +62,12 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements YasumiTest
     public function testNationalDayOnAfter1899()
     {
         $year = $this->generateRandomYear(self::FIRST_ESTABLISHMENT_YEAR, self::NATIONAL_ESTABLISHMENT_YEAR - 1);
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-8-01", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-8-01", new DateTimeZone(self::TIMEZONE))
+        );
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OBSERVANCE);
     }
 
@@ -69,8 +77,12 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements YasumiTest
     public function testNationalDayOn1891()
     {
         $year = self::FIRST_OBSERVANCE_YEAR;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-8-01", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-8-01", new DateTimeZone(self::TIMEZONE))
+        );
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OBSERVANCE);
     }
 
@@ -79,8 +91,11 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements YasumiTest
      */
     public function testNationalDayBefore1891()
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(1000, self::FIRST_OBSERVANCE_YEAR - 1));
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(1000, self::FIRST_OBSERVANCE_YEAR - 1)
+        );
     }
 
     /**
@@ -97,8 +112,12 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements YasumiTest
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::FIRST_OBSERVANCE_YEAR), [self::LOCALE => 'Bundesfeiertag']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::FIRST_OBSERVANCE_YEAR),
+            [self::LOCALE => 'Bundesfeiertag']
+        );
     }
 
     /**
@@ -106,7 +125,11 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements YasumiTest
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::NATIONAL_ESTABLISHMENT_YEAR),
-            Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::NATIONAL_ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL
+        );
     }
 }

@@ -63,8 +63,12 @@ class NewYearsDayTest extends SlovakiaBaseTestCase implements YasumiTestCaseInte
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Deň vzniku Slovenskej republiky']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Deň vzniku Slovenskej republiky']
+        );
     }
 
 

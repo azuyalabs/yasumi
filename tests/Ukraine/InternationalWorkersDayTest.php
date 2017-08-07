@@ -44,8 +44,12 @@ class InternationalWorkersDayTest extends UkraineBaseTestCase implements YasumiT
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'День міжнародної солідарності трудящих']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'День міжнародної солідарності трудящих']
+        );
     }
 
     /**

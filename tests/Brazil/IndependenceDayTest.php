@@ -38,8 +38,12 @@ class IndependenceDayTest extends BrazilBaseTestCase implements YasumiTestCaseIn
     public function testDiaDaIndependenciaDoBrasilAfter1822()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-09-07", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-09-07", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -57,8 +61,12 @@ class IndependenceDayTest extends BrazilBaseTestCase implements YasumiTestCaseIn
     public function testTranslation()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $year,
-            [self::LOCALE => 'Dia da Independência do Brasil']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            [self::LOCALE => 'Dia da Independência do Brasil']
+        );
     }
 
     /**

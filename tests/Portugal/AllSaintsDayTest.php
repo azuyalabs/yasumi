@@ -66,8 +66,12 @@ class AllSaintsDayTest extends PortugalBaseTestCase implements YasumiTestCaseInt
     public function testTranslation()
     {
         $year = $this->generateRandomYear(self::HOLIDAY_YEAR_RESTORED);
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $year,
-            [self::LOCALE => 'Dia de todos os Santos']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            [self::LOCALE => 'Dia de todos os Santos']
+        );
     }
 
     /**

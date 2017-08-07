@@ -64,9 +64,12 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements YasumiTe
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Implantação da República Portuguesa']);
+            [self::LOCALE => 'Implantação da República Portuguesa']
+        );
     }
 
     /**
@@ -74,7 +77,11 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements YasumiTe
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL
+        );
     }
 }

@@ -29,8 +29,12 @@ class IndependenceDayTest extends UkraineBaseTestCase implements YasumiTestCaseI
     public function testHoliday()
     {
         $year = 2020;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new \DateTime("$year-08-24", new \DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new \DateTime("$year-08-24", new \DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**

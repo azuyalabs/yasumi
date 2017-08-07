@@ -50,8 +50,12 @@ class CataloniaTest extends CataloniaBaseTestCase
      */
     public function testObservedHolidays()
     {
-        $this->assertDefinedHolidays(['easterMonday', 'stJohnsDay', 'stStephensDay'], self::REGION, $this->year,
-            Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays(
+            ['easterMonday', 'stJohnsDay', 'stStephensDay'],
+            self::REGION,
+            $this->year,
+            Holiday::TYPE_OBSERVANCE
+        );
     }
 
     /**

@@ -111,9 +111,13 @@ class UnitedKingdom extends AbstractProvider
             return;
         }
 
-        $this->addHoliday(new Holiday('mayDayBankHoliday', ['en_GB' => 'May Day Bank Holiday'],
-            new DateTime("first monday of may $this->year", new DateTimeZone($this->timezone)), $this->locale,
-            Holiday::TYPE_BANK));
+        $this->addHoliday(new Holiday(
+            'mayDayBankHoliday',
+            ['en_GB' => 'May Day Bank Holiday'],
+            new DateTime("first monday of may $this->year", new DateTimeZone($this->timezone)),
+            $this->locale,
+            Holiday::TYPE_BANK
+        ));
     }
 
     /**
@@ -136,9 +140,13 @@ class UnitedKingdom extends AbstractProvider
             return;
         }
 
-        $this->addHoliday(new Holiday('springBankHoliday', ['en_GB' => 'Spring Bank Holiday'],
-            new DateTime("last monday of may $this->year", new DateTimeZone($this->timezone)), $this->locale,
-            Holiday::TYPE_BANK));
+        $this->addHoliday(new Holiday(
+            'springBankHoliday',
+            ['en_GB' => 'Spring Bank Holiday'],
+            new DateTime("last monday of may $this->year", new DateTimeZone($this->timezone)),
+            $this->locale,
+            Holiday::TYPE_BANK
+        ));
     }
 
     /**
@@ -174,14 +182,24 @@ class UnitedKingdom extends AbstractProvider
 
         if (in_array((int)$christmasDay->format('w'), [0, 6], true)) {
             $substituteChristmasDay->add(new DateInterval('P2D'));
-            $this->addHoliday(new Holiday('substituteHoliday:christmasDay', [], $substituteChristmasDay, $this->locale,
-                Holiday::TYPE_BANK));
+            $this->addHoliday(new Holiday(
+                'substituteHoliday:christmasDay',
+                [],
+                $substituteChristmasDay,
+                $this->locale,
+                Holiday::TYPE_BANK
+            ));
         }
 
         if (in_array((int)$boxingDay->format('w'), [0, 6], true)) {
             $substituteBoxingDay->add(new DateInterval('P2D'));
-            $this->addHoliday(new Holiday('substituteHoliday:secondChristmasDay', [], $substituteBoxingDay,
-                $this->locale, Holiday::TYPE_BANK));
+            $this->addHoliday(new Holiday(
+                'substituteHoliday:secondChristmasDay',
+                [],
+                $substituteBoxingDay,
+                $this->locale,
+                Holiday::TYPE_BANK
+            ));
         }
     }
 }

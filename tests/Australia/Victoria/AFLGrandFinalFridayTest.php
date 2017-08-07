@@ -40,8 +40,12 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements YasumiTest
      */
     public function testHoliday($year, $expected)
     {
-        $this->assertHoliday($this->region, self::HOLIDAY, $year,
-            new DateTime($expected, new DateTimeZone($this->timezone)));
+        $this->assertHoliday(
+            $this->region,
+            self::HOLIDAY,
+            $year,
+            new DateTime($expected, new DateTimeZone($this->timezone))
+        );
     }
 
 
@@ -50,9 +54,12 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements YasumiTest
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName($this->region, self::HOLIDAY,
+        $this->assertTranslatedHolidayName(
+            $this->region,
+            self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::LAST_KNOWN_YEAR),
-            [self::LOCALE => 'AFL Grand Final Friday']);
+            [self::LOCALE => 'AFL Grand Final Friday']
+        );
     }
 
     /**
@@ -60,8 +67,12 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements YasumiTest
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType($this->region, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::LAST_KNOWN_YEAR), Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(
+            $this->region,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::LAST_KNOWN_YEAR),
+            Holiday::TYPE_NATIONAL
+        );
     }
 
     /**

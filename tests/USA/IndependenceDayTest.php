@@ -38,8 +38,12 @@ class IndependenceDayTest extends USABaseTestCase implements YasumiTestCaseInter
     public function testIndependenceDayOnAfter1776()
     {
         $year = 1955;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-7-4", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-7-4", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -48,8 +52,12 @@ class IndependenceDayTest extends USABaseTestCase implements YasumiTestCaseInter
     public function testIndependenceDayOnAfter1776SubstitutedMonday()
     {
         $year = 3362;
-        $this->assertHoliday(self::REGION, 'substituteHoliday:independenceDay', $year,
-            new DateTime("$year-7-5", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            'substituteHoliday:independenceDay',
+            $year,
+            new DateTime("$year-7-5", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -58,8 +66,12 @@ class IndependenceDayTest extends USABaseTestCase implements YasumiTestCaseInter
     public function testIndependenceDayOnAfter1776SubstitutedFriday()
     {
         $year = 8291;
-        $this->assertHoliday(self::REGION, 'substituteHoliday:independenceDay', $year,
-            new DateTime("$year-7-3", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            'substituteHoliday:independenceDay',
+            $year,
+            new DateTime("$year-7-3", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -67,8 +79,11 @@ class IndependenceDayTest extends USABaseTestCase implements YasumiTestCaseInter
      */
     public function testIndependenceDayBefore1776()
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+        );
     }
 
     /**
@@ -76,8 +91,12 @@ class IndependenceDayTest extends USABaseTestCase implements YasumiTestCaseInter
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Independence Day']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => 'Independence Day']
+        );
     }
 
     /**
@@ -85,7 +104,11 @@ class IndependenceDayTest extends USABaseTestCase implements YasumiTestCaseInter
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL
+        );
     }
 }

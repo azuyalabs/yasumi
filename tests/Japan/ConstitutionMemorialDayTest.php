@@ -38,8 +38,12 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements YasumiTes
     public function testConstitutionMemorialDayOnAfter1948()
     {
         $year = 1967;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-5-3", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-5-3", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -49,8 +53,12 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements YasumiTes
     public function testConstitutionMemorialDayOnAfter1948SubstitutedNextWorkingDay()
     {
         $year = 2009;
-        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
-            new DateTime("$year-5-6", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::SUBSTITUTE_PREFIX . self::HOLIDAY,
+            $year,
+            new DateTime("$year-5-6", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -58,8 +66,11 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements YasumiTes
      */
     public function testConstitutionMemorialDayBefore1948()
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+        );
     }
 
     /**
@@ -67,8 +78,12 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements YasumiTes
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => '憲法記念日']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => '憲法記念日']
+        );
     }
 
     /**
@@ -76,7 +91,11 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements YasumiTes
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL
+        );
     }
 }

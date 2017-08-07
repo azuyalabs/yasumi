@@ -77,8 +77,12 @@ class GreeceTest extends GreeceBaseTestCase
      */
     public function testOtherHolidays()
     {
-        $this->assertDefinedHolidays(['threeHolyHierarchs', 'polytechnio'], self::REGION, $this->year,
-            Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays(
+            ['threeHolyHierarchs', 'polytechnio'],
+            self::REGION,
+            $this->year,
+            Holiday::TYPE_OTHER
+        );
     }
 
     /**

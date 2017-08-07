@@ -72,8 +72,13 @@ trait ChristianHolidays
      */
     public function easterMonday($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('easterMonday', [], $this->calculateEaster($year, $timezone)->add(new DateInterval('P1D')),
-            $locale, $type);
+        return new Holiday(
+            'easterMonday',
+            [],
+            $this->calculateEaster($year, $timezone)->add(new DateInterval('P1D')),
+            $locale,
+            $type
+        );
     }
 
     /**
@@ -98,8 +103,13 @@ trait ChristianHolidays
      */
     public function ascensionDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('ascensionDay', [], $this->calculateEaster($year, $timezone)->add(new DateInterval('P39D')),
-            $locale, $type);
+        return new Holiday(
+            'ascensionDay',
+            [],
+            $this->calculateEaster($year, $timezone)->add(new DateInterval('P39D')),
+            $locale,
+            $type
+        );
     }
 
     /**
@@ -121,8 +131,13 @@ trait ChristianHolidays
      */
     public function pentecost($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('pentecost', [], $this->calculateEaster($year, $timezone)->add(new DateInterval('P49D')),
-            $locale, $type);
+        return new Holiday(
+            'pentecost',
+            [],
+            $this->calculateEaster($year, $timezone)->add(new DateInterval('P49D')),
+            $locale,
+            $type
+        );
     }
 
     /**
@@ -144,8 +159,13 @@ trait ChristianHolidays
      */
     public function pentecostMonday($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('pentecostMonday', [],
-            $this->calculateEaster($year, $timezone)->add(new DateInterval('P50D')), $locale, $type);
+        return new Holiday(
+            'pentecostMonday',
+            [],
+            $this->calculateEaster($year, $timezone)->add(new DateInterval('P50D')),
+            $locale,
+            $type
+        );
     }
 
     /**
@@ -170,8 +190,13 @@ trait ChristianHolidays
      */
     public function corpusChristi($year, $timezone, $locale, $type = Holiday::TYPE_OTHER)
     {
-        return new Holiday('corpusChristi', [], $this->calculateEaster($year, $timezone)->add(new DateInterval('P60D')),
-            $locale, $type);
+        return new Holiday(
+            'corpusChristi',
+            [],
+            $this->calculateEaster($year, $timezone)->add(new DateInterval('P60D')),
+            $locale,
+            $type
+        );
     }
 
     /**
@@ -197,8 +222,13 @@ trait ChristianHolidays
      */
     public function christmasEve($year, $timezone, $locale, $type = Holiday::TYPE_OBSERVANCE)
     {
-        return new Holiday('christmasEve', [], new DateTime("$year-12-24", new DateTimeZone($timezone)), $locale,
-            $type);
+        return new Holiday(
+            'christmasEve',
+            [],
+            new DateTime("$year-12-24", new DateTimeZone($timezone)),
+            $locale,
+            $type
+        );
     }
 
     /**
@@ -221,8 +251,13 @@ trait ChristianHolidays
      */
     public function christmasDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('christmasDay', [], new DateTime("$year-12-25", new DateTimeZone($timezone)), $locale,
-            $type);
+        return new Holiday(
+            'christmasDay',
+            [],
+            new DateTime("$year-12-25", new DateTimeZone($timezone)),
+            $locale,
+            $type
+        );
     }
 
     /**
@@ -245,8 +280,13 @@ trait ChristianHolidays
      */
     public function secondChristmasDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('secondChristmasDay', [], new DateTime("$year-12-26", new DateTimeZone($timezone)), $locale,
-            $type);
+        return new Holiday(
+            'secondChristmasDay',
+            [],
+            new DateTime("$year-12-26", new DateTimeZone($timezone)),
+            $locale,
+            $type
+        );
     }
 
     /**
@@ -297,8 +337,13 @@ trait ChristianHolidays
      */
     public function assumptionOfMary($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('assumptionOfMary', [], new DateTime("$year-8-15", new DateTimeZone($timezone)), $locale,
-            $type);
+        return new Holiday(
+            'assumptionOfMary',
+            [],
+            new DateTime("$year-8-15", new DateTimeZone($timezone)),
+            $locale,
+            $type
+        );
     }
 
     /**
@@ -321,8 +366,13 @@ trait ChristianHolidays
      */
     public function goodFriday($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('goodFriday', [], $this->calculateEaster($year, $timezone)->sub(new DateInterval('P2D')),
-            $locale, $type);
+        return new Holiday(
+            'goodFriday',
+            [],
+            $this->calculateEaster($year, $timezone)->sub(new DateInterval('P2D')),
+            $locale,
+            $type
+        );
     }
 
     /**
@@ -374,8 +424,13 @@ trait ChristianHolidays
      */
     public function ashWednesday($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('ashWednesday', [], $this->calculateEaster($year, $timezone)->sub(new DateInterval('P46D')),
-            $locale, $type);
+        return new Holiday(
+            'ashWednesday',
+            [],
+            $this->calculateEaster($year, $timezone)->sub(new DateInterval('P46D')),
+            $locale,
+            $type
+        );
     }
 
     /**
@@ -401,8 +456,13 @@ trait ChristianHolidays
      */
     public function immaculateConception($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('immaculateConception', [], new DateTime("$year-12-8", new DateTimeZone($timezone)), $locale,
-            $type);
+        return new Holiday(
+            'immaculateConception',
+            [],
+            new DateTime("$year-12-8", new DateTimeZone($timezone)),
+            $locale,
+            $type
+        );
     }
 
     /**
@@ -429,8 +489,13 @@ trait ChristianHolidays
      */
     public function stStephensDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('stStephensDay', [], new DateTime("$year-12-26", new DateTimeZone($timezone)), $locale,
-            $type);
+        return new Holiday(
+            'stStephensDay',
+            [],
+            new DateTime("$year-12-26", new DateTimeZone($timezone)),
+            $locale,
+            $type
+        );
     }
 
     /**
@@ -483,8 +548,13 @@ trait ChristianHolidays
      */
     public function maundyThursday($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('maundyThursday', [], $this->calculateEaster($year, $timezone)->sub(new DateInterval('P3D')),
-            $locale, $type);
+        return new Holiday(
+            'maundyThursday',
+            [],
+            $this->calculateEaster($year, $timezone)->sub(new DateInterval('P3D')),
+            $locale,
+            $type
+        );
     }
 
     /**
@@ -564,8 +634,13 @@ trait ChristianHolidays
      */
     public function annunciation($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('annunciation', [], new DateTime("$year-03-25", new DateTimeZone($timezone)), $locale,
-            $type);
+        return new Holiday(
+            'annunciation',
+            [],
+            new DateTime("$year-03-25", new DateTimeZone($timezone)),
+            $locale,
+            $type
+        );
     }
 
     /**
@@ -620,8 +695,13 @@ trait ChristianHolidays
      */
     public function reformationDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('reformationDay', [], new DateTime("$year-10-31", new DateTimeZone($timezone)), $locale,
-            $type);
+        return new Holiday(
+            'reformationDay',
+            [],
+            new DateTime("$year-10-31", new DateTimeZone($timezone)),
+            $locale,
+            $type
+        );
     }
 
     /**

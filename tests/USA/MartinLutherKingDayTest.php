@@ -39,8 +39,12 @@ class MartinLutherKingDayTest extends USABaseTestCase implements YasumiTestCaseI
     public function testMartinLutherKingDayOnAfter1986()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("third monday of january $year", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("third monday of january $year", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -49,8 +53,11 @@ class MartinLutherKingDayTest extends USABaseTestCase implements YasumiTestCaseI
      */
     public function testMartinLutherKingDayBefore1986()
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+        );
     }
 
     /**
@@ -58,9 +65,12 @@ class MartinLutherKingDayTest extends USABaseTestCase implements YasumiTestCaseI
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Dr. Martin Luther King Jr\'s Birthday']);
+            [self::LOCALE => 'Dr. Martin Luther King Jr\'s Birthday']
+        );
     }
 
     /**
@@ -68,7 +78,11 @@ class MartinLutherKingDayTest extends USABaseTestCase implements YasumiTestCaseI
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL
+        );
     }
 }

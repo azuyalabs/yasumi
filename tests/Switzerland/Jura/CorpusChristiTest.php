@@ -35,8 +35,12 @@ class CorpusChristiTest extends JuraBaseTestCase implements YasumiTestCaseInterf
     public function testCorpusChristi()
     {
         $year = 2016;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            $this->calculateEaster($year, self::TIMEZONE)->add(new DateInterval('P60D')));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            $this->calculateEaster($year, self::TIMEZONE)->add(new DateInterval('P60D'))
+        );
     }
 
     /**
@@ -44,8 +48,12 @@ class CorpusChristiTest extends JuraBaseTestCase implements YasumiTestCaseInterf
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Fête-Dieu']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Fête-Dieu']
+        );
     }
 
     /**

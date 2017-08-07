@@ -33,8 +33,12 @@ class ChristmasDayTest extends USABaseTestCase implements YasumiTestCaseInterfac
     public function testChristmasDay()
     {
         $year = 2001;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-12-25", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-12-25", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -44,8 +48,12 @@ class ChristmasDayTest extends USABaseTestCase implements YasumiTestCaseInterfac
     {
         // Substituted Holiday on Monday (Christmas Day falls on Sunday)
         $year = 6101;
-        $this->assertHoliday(self::REGION, 'substituteHoliday:christmasDay', $year,
-            new DateTime("$year-12-26", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            'substituteHoliday:christmasDay',
+            $year,
+            new DateTime("$year-12-26", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -55,8 +63,12 @@ class ChristmasDayTest extends USABaseTestCase implements YasumiTestCaseInterfac
     {
         // Substituted Holiday on Friday (Christmas Day falls on Saturday)
         $year = 2060;
-        $this->assertHoliday(self::REGION, 'substituteHoliday:christmasDay', $year,
-            new DateTime("$year-12-24", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            'substituteHoliday:christmasDay',
+            $year,
+            new DateTime("$year-12-24", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -64,8 +76,12 @@ class ChristmasDayTest extends USABaseTestCase implements YasumiTestCaseInterfac
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Christmas']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Christmas']
+        );
     }
 
     /**

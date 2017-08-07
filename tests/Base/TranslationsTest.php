@@ -98,8 +98,10 @@ class TranslationsTest extends PHPUnit_Framework_TestCase
 
         $this->assertNotNull($translations->getTranslations($thirdShortName));
         $this->assertNotEmpty($translations->getTranslations($thirdShortName));
-        $this->assertEquals([$thirdLocale => $thirdTranslation, $secondLocale => $secondTranslation],
-            $translations->getTranslations($thirdShortName));
+        $this->assertEquals(
+            [$thirdLocale => $thirdTranslation, $secondLocale => $secondTranslation],
+            $translations->getTranslations($thirdShortName)
+        );
 
         $this->assertNotNull($translations->getTranslation($thirdShortName, $thirdLocale));
         $this->assertInternalType('string', $translations->getTranslation($thirdShortName, $thirdLocale));

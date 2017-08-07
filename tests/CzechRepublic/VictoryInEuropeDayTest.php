@@ -58,8 +58,12 @@ class VictoryInEuropeDayTest extends CzechRepublicBaseTestCase implements Yasumi
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Den vítězství']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Den vítězství']
+        );
     }
 
     /**

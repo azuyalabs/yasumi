@@ -48,8 +48,12 @@ class InternationalWorkersDayTest extends CzechRepublicBaseTestCase implements Y
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Svátek práce']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Svátek práce']
+        );
     }
 
     /**

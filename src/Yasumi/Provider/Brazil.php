@@ -59,9 +59,13 @@ class Brazil extends AbstractProvider
          * @link https://en.wikipedia.org/wiki/Brazilian_Carnival
          */
         if ($this->year >= 1700) {
-            $this->addHoliday(new Holiday('carnavalDay', ['pt_BR' => 'Carnaval'],
-                $this->calculateEaster($this->year, $this->timezone)->sub(new DateInterval('P51D')), $this->locale,
-                Holiday::TYPE_OBSERVANCE));
+            $this->addHoliday(new Holiday(
+                'carnavalDay',
+                ['pt_BR' => 'Carnaval'],
+                $this->calculateEaster($this->year, $this->timezone)->sub(new DateInterval('P51D')),
+                $this->locale,
+                Holiday::TYPE_OBSERVANCE
+            ));
         }
 
         /**
@@ -74,8 +78,12 @@ class Brazil extends AbstractProvider
          * @link https://en.wikipedia.org/wiki/Tiradentes
          */
         if ($this->year >= 1792) {
-            $this->addHoliday(new Holiday('tiradentesDay', ['pt_BR' => 'Dia de Tiradentes'],
-                new DateTime("$this->year-04-21", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'tiradentesDay',
+                ['pt_BR' => 'Dia de Tiradentes'],
+                new DateTime("$this->year-04-21", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
 
         /**
@@ -87,8 +95,12 @@ class Brazil extends AbstractProvider
          * @link https://en.wikipedia.org/wiki/Independence_of_Brazil
          */
         if ($this->year >= 1822) {
-            $this->addHoliday(new Holiday('independenceDay', ['pt_BR' => 'Dia da Independência do Brasil'],
-                new DateTime("$this->year-09-07", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'independenceDay',
+                ['pt_BR' => 'Dia da Independência do Brasil'],
+                new DateTime("$this->year-09-07", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
 
         /**
@@ -103,8 +115,12 @@ class Brazil extends AbstractProvider
          * @link https://en.wikipedia.org/wiki/Our_Lady_of_Aparecida
          */
         if ($this->year >= 1980) {
-            $this->addHoliday(new Holiday('ourLadyOfAparecidaDay', ['pt_BR' => 'Dia de Nossa Senhora Aparecida'],
-                new DateTime("$this->year-10-12", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'ourLadyOfAparecidaDay',
+                ['pt_BR' => 'Dia de Nossa Senhora Aparecida'],
+                new DateTime("$this->year-10-12", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
 
         /**
@@ -115,8 +131,12 @@ class Brazil extends AbstractProvider
          * @link http://www.johninbrazil.org/all-souls-day-o-dia-dos-finados/
          */
         if ($this->year >= 1300) {
-            $this->addHoliday(new Holiday('allSoulsDay', ['pt_BR' => 'Dia de Finados'],
-                new DateTime("$this->year-11-02", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'allSoulsDay',
+                ['pt_BR' => 'Dia de Finados'],
+                new DateTime("$this->year-11-02", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
 
         /**
@@ -129,8 +149,12 @@ class Brazil extends AbstractProvider
          * @link https://en.wikipedia.org/wiki/Proclamation_of_the_Republic_(Brazil)
          */
         if ($this->year >= 1889) {
-            $this->addHoliday(new Holiday('proclamationOfRepublicDay', ['pt_BR' => 'Dia da Proclamação da República'],
-                new DateTime("$this->year-11-15", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'proclamationOfRepublicDay',
+                ['pt_BR' => 'Dia da Proclamação da República'],
+                new DateTime("$this->year-11-15", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
     }
 }

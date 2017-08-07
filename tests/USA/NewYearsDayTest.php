@@ -33,8 +33,12 @@ class NewYearsDayTest extends USABaseTestCase implements YasumiTestCaseInterface
     public function testNewYearsDay()
     {
         $year = 1997;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-1-1", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-1-1", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -43,8 +47,12 @@ class NewYearsDayTest extends USABaseTestCase implements YasumiTestCaseInterface
     public function testNewYearsDaySubstitutedMonday()
     {
         $year = 2445;
-        $this->assertHoliday(self::REGION, 'substituteHoliday:newYearsDay', $year,
-            new DateTime("$year-1-2", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            'substituteHoliday:newYearsDay',
+            $year,
+            new DateTime("$year-1-2", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -54,8 +62,12 @@ class NewYearsDayTest extends USABaseTestCase implements YasumiTestCaseInterface
     {
         $year    = 1938;
         $subYear = $year - 1;
-        $this->assertHoliday(self::REGION, 'substituteHoliday:newYearsDay', $year,
-            new DateTime("$subYear-12-31", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            'substituteHoliday:newYearsDay',
+            $year,
+            new DateTime("$subYear-12-31", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -63,8 +75,12 @@ class NewYearsDayTest extends USABaseTestCase implements YasumiTestCaseInterface
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'New Year\'s Day']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'New Year\'s Day']
+        );
     }
 
     /**

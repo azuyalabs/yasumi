@@ -58,8 +58,12 @@ class SaintsCyrilAndMethodiusDayTest extends CzechRepublicBaseTestCase implement
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Den slovanských věrozvěstů Cyrila a Metoděje']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Den slovanských věrozvěstů Cyrila a Metoděje']
+        );
     }
 
     /**

@@ -43,8 +43,12 @@ class pentecostMondayTest extends IrelandBaseTestCase implements YasumiTestCaseI
      */
     public function testHoliday($year, $expected)
     {
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime($expected, new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime($expected, new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -79,10 +83,18 @@ class pentecostMondayTest extends IrelandBaseTestCase implements YasumiTestCaseI
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ABOLISHMENT_YEAR), [self::LOCALE => 'Whitmonday']);
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ABOLISHMENT_YEAR), ['ga_IE' => 'Luan Cincíse']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ABOLISHMENT_YEAR),
+            [self::LOCALE => 'Whitmonday']
+        );
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ABOLISHMENT_YEAR),
+            ['ga_IE' => 'Luan Cincíse']
+        );
     }
 
     /**
@@ -90,7 +102,11 @@ class pentecostMondayTest extends IrelandBaseTestCase implements YasumiTestCaseI
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(1000, self::ABOLISHMENT_YEAR),
-            Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ABOLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL
+        );
     }
 }

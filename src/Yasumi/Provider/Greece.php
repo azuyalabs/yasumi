@@ -77,8 +77,13 @@ class Greece extends AbstractProvider
      */
     public function calculateThreeHolyHierarchs()
     {
-        $this->addHoliday(new Holiday('threeHolyHierarchs', ['el_GR' => 'Τριών Ιεραρχών'],
-            new DateTime("$this->year-1-30", new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday(new Holiday(
+            'threeHolyHierarchs',
+            ['el_GR' => 'Τριών Ιεραρχών'],
+            new DateTime("$this->year-1-30", new DateTimeZone($this->timezone)),
+            $this->locale,
+            Holiday::TYPE_OTHER
+        ));
     }
 
     /**
@@ -95,8 +100,12 @@ class Greece extends AbstractProvider
      */
     public function calculateCleanMonday()
     {
-        $this->addHoliday(new Holiday('cleanMonday', ['el_GR' => 'Καθαρά Δευτέρα'],
-            $this->calculateEaster($this->year, $this->timezone)->sub(new DateInterval('P48D')), $this->locale));
+        $this->addHoliday(new Holiday(
+            'cleanMonday',
+            ['el_GR' => 'Καθαρά Δευτέρα'],
+            $this->calculateEaster($this->year, $this->timezone)->sub(new DateInterval('P48D')),
+            $this->locale
+        ));
     }
 
     /**
@@ -126,8 +135,12 @@ class Greece extends AbstractProvider
     public function calculateIndependenceDay()
     {
         if ($this->year >= 1821) {
-            $this->addHoliday(new Holiday('independenceDay', ['el_GR' => 'Εικοστή Πέμπτη Μαρτίου'],
-                new DateTime("$this->year-3-25", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'independenceDay',
+                ['el_GR' => 'Εικοστή Πέμπτη Μαρτίου'],
+                new DateTime("$this->year-3-25", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
     }
 
@@ -144,8 +157,12 @@ class Greece extends AbstractProvider
     public function calculateOhiDay()
     {
         if ($this->year >= 1940) {
-            $this->addHoliday(new Holiday('ohiDay', ['el_GR' => 'Επέτειος του Όχι'],
-                new DateTime("$this->year-10-28", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'ohiDay',
+                ['el_GR' => 'Επέτειος του Όχι'],
+                new DateTime("$this->year-10-28", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
     }
 
@@ -162,9 +179,13 @@ class Greece extends AbstractProvider
     public function calculatePolytechnio()
     {
         if ($this->year >= 1973) {
-            $this->addHoliday(new Holiday('polytechnio', ['el_GR' => 'Πολυτεχνείο'],
-                new DateTime("$this->year-11-17", new DateTimeZone($this->timezone)), $this->locale,
-                Holiday::TYPE_OTHER));
+            $this->addHoliday(new Holiday(
+                'polytechnio',
+                ['el_GR' => 'Πολυτεχνείο'],
+                new DateTime("$this->year-11-17", new DateTimeZone($this->timezone)),
+                $this->locale,
+                Holiday::TYPE_OTHER
+            ));
         }
     }
 }

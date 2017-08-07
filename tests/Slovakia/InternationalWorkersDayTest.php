@@ -63,8 +63,12 @@ class InternationalWorkersDayTest extends SlovakiaBaseTestCase implements Yasumi
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Sviatok práce']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Sviatok práce']
+        );
     }
 
 

@@ -43,8 +43,12 @@ class stJohnsDayTest extends FinlandBaseTestCase implements YasumiTestCaseInterf
     public function testHolidayBeforeAdjustment()
     {
         $year = 1944;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-6-24", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-6-24", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -75,8 +79,12 @@ class stJohnsDayTest extends FinlandBaseTestCase implements YasumiTestCaseInterf
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Juhannuspäivä']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Juhannuspäivä']
+        );
     }
 
     /**

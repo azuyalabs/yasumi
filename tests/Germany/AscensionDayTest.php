@@ -33,8 +33,12 @@ class AscensionDayTest extends GermanyBaseTestCase implements YasumiTestCaseInte
     public function testAscensionDay()
     {
         $year = 1754;
-        $this->assertHoliday(self::REGION, 'ascensionDay', $year,
-            new DateTime("$year-5-23", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            'ascensionDay',
+            $year,
+            new DateTime("$year-5-23", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -42,8 +46,12 @@ class AscensionDayTest extends GermanyBaseTestCase implements YasumiTestCaseInte
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Christi Himmelfahrt']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Christi Himmelfahrt']
+        );
     }
 
     /**

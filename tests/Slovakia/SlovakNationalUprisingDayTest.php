@@ -63,8 +63,12 @@ class SlovakNationalUprisingDayTest extends SlovakiaBaseTestCase implements Yasu
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Výročie Slovenského národného povstania']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Výročie Slovenského národného povstania']
+        );
     }
 
 

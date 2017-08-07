@@ -46,8 +46,12 @@ class Ticino extends Switzerland
         $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->assumptionOfMary($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        $this->addHoliday($this->immaculateConception($this->year, $this->timezone, $this->locale,
-            Holiday::TYPE_OTHER));
+        $this->addHoliday($this->immaculateConception(
+            $this->year,
+            $this->timezone,
+            $this->locale,
+            Holiday::TYPE_OTHER
+        ));
         $this->addHoliday($this->stStephensDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
@@ -56,8 +60,12 @@ class Ticino extends Switzerland
         $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->stJosephsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale,
-            Holiday::TYPE_OTHER));
+        $this->addHoliday($this->internationalWorkersDay(
+            $this->year,
+            $this->timezone,
+            $this->locale,
+            Holiday::TYPE_OTHER
+        ));
 
         $this->calculateStPeterPaul();
     }
@@ -72,7 +80,9 @@ class Ticino extends Switzerland
      */
     public function calculateStPeterPaul()
     {
-        $this->addHoliday(new Holiday('stPeterPaul', [
+        $this->addHoliday(new Holiday(
+            'stPeterPaul',
+            [
             'it_IT' => 'Santi Pietro e Paolo',
             'it_CH' => 'Santi Pietro e Paolo',
             'en_US' => 'Feast of Saints Peter and Paul',
@@ -80,7 +90,10 @@ class Ticino extends Switzerland
             'fr_CH' => 'Solennité des saints Pierre et Paul',
             'de_DE' => 'St. Peter und Paul',
             'de_CH' => 'St. Peter und Paul',
-        ], new DateTime($this->year . '-06-29', new DateTimeZone($this->timezone)), $this->locale,
-            Holiday::TYPE_OTHER));
+        ],
+            new DateTime($this->year . '-06-29', new DateTimeZone($this->timezone)),
+            $this->locale,
+            Holiday::TYPE_OTHER
+        ));
     }
 }

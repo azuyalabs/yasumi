@@ -183,11 +183,16 @@ class Romania extends AbstractProvider
     public function calculateConstantinBrancusiDay()
     {
         if ($this->year >= 2016) {
-            $this->addHoliday(new Holiday('constantinBrancusiDay', [
+            $this->addHoliday(new Holiday(
+                'constantinBrancusiDay',
+                [
                 'en_US' => 'Constantin Brâncuși day',
                 'ro_RO' => 'Ziua Constantin Brâncuși'
-            ], new DateTime("$this->year-02-19", new DateTimeZone($this->timezone)), $this->locale,
-                Holiday::TYPE_OBSERVANCE));
+            ],
+                new DateTime("$this->year-02-19", new DateTimeZone($this->timezone)),
+                $this->locale,
+                Holiday::TYPE_OBSERVANCE
+            ));
         }
     }
 
@@ -204,11 +209,16 @@ class Romania extends AbstractProvider
     public function calculateChildrensDay()
     {
         if ($this->year >= 1950 && $this->year <= 2016) {
-            $this->addHoliday(new Holiday('childrensDay', [
+            $this->addHoliday(new Holiday(
+                'childrensDay',
+                [
                 'en_US' => 'International Children\'s Day',
                 'ro_RO' => 'Ziua Copilului'
-            ], new DateTime("$this->year-06-01", new DateTimeZone($this->timezone)), $this->locale,
-                Holiday::TYPE_OBSERVANCE));
+            ],
+                new DateTime("$this->year-06-01", new DateTimeZone($this->timezone)),
+                $this->locale,
+                Holiday::TYPE_OBSERVANCE
+            ));
         }
 
         if ($this->year >= 2017) {

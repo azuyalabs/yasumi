@@ -63,8 +63,12 @@ class SaintsCyrilAndMethodiusDayTest extends SlovakiaBaseTestCase implements Yas
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Sviatok svätého Cyrila a Metoda']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Sviatok svätého Cyrila a Metoda']
+        );
     }
 
 

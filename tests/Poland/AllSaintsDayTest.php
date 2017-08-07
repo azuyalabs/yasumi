@@ -54,8 +54,12 @@ class AllSaintsDayTest extends PolandBaseTestCase implements YasumiTestCaseInter
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Uroczystość Wszystkich Świętych']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Uroczystość Wszystkich Świętych']
+        );
     }
 
     /**

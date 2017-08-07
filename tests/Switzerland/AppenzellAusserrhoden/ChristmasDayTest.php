@@ -54,8 +54,12 @@ class ChristmasDayTest extends AppenzellAusserrhodenBaseTestCase implements Yasu
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Weihnachtstag']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Weihnachtstag']
+        );
     }
 
     /**

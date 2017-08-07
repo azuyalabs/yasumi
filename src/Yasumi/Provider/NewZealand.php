@@ -170,8 +170,12 @@ class NewZealand extends AbstractProvider
             return;
         }
 
-        $this->addHoliday(new Holiday('queensBirthday', ['en_NZ' => 'Queens Birthday'],
-            new DateTime("first monday of june $this->year", new DateTimeZone($this->timezone)), $this->locale));
+        $this->addHoliday(new Holiday(
+            'queensBirthday',
+            ['en_NZ' => 'Queens Birthday'],
+            new DateTime("first monday of june $this->year", new DateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /**
@@ -197,8 +201,10 @@ class NewZealand extends AbstractProvider
             return;
         }
 
-        $date = new DateTime((($this->year < 1910) ? 'second wednesday of october' : 'fourth monday of october') . " $this->year",
-            new DateTimeZone($this->timezone));
+        $date = new DateTime(
+            (($this->year < 1910) ? 'second wednesday of october' : 'fourth monday of october') . " $this->year",
+            new DateTimeZone($this->timezone)
+        );
 
         $this->addHoliday(new Holiday('labourDay', [], $date, $this->locale));
     }

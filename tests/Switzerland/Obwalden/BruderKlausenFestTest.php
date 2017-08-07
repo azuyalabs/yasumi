@@ -65,8 +65,12 @@ class BruderKlausenFestTest extends ObwaldenBaseTestCase implements YasumiTestCa
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(1947),
-            [self::LOCALE => 'Bruder-Klausen-Fest']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(1947),
+            [self::LOCALE => 'Bruder-Klausen-Fest']
+        );
     }
 
     /**

@@ -54,8 +54,12 @@ class SecondChristmasDayTest extends RomaniaBaseTestCase implements YasumiTestCa
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'A doua zi de Crăciun']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'A doua zi de Crăciun']
+        );
     }
 
     /**

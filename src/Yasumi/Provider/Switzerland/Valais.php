@@ -44,8 +44,12 @@ class Valais extends Switzerland
         $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->assumptionOfMary($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        $this->addHoliday($this->immaculateConception($this->year, $this->timezone, $this->locale,
-            Holiday::TYPE_OTHER));
+        $this->addHoliday($this->immaculateConception(
+            $this->year,
+            $this->timezone,
+            $this->locale,
+            Holiday::TYPE_OTHER
+        ));
         $this->addHoliday($this->stJosephsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));

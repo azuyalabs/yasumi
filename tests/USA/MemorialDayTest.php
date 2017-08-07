@@ -39,8 +39,12 @@ class MemorialDayTest extends USABaseTestCase implements YasumiTestCaseInterface
     public function testMemorialDayOnAfter1968()
     {
         $year = $this->generateRandomYear(1968);
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("last monday of may $year", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("last monday of may $year", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -50,8 +54,12 @@ class MemorialDayTest extends USABaseTestCase implements YasumiTestCaseInterface
     public function testMemorialDayBetween1865And1967()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1967);
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-5-30", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-5-30", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -60,8 +68,11 @@ class MemorialDayTest extends USABaseTestCase implements YasumiTestCaseInterface
      */
     public function testMemorialDayBefore1865()
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+        );
     }
 
     /**
@@ -69,8 +80,12 @@ class MemorialDayTest extends USABaseTestCase implements YasumiTestCaseInterface
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Memorial Day']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => 'Memorial Day']
+        );
     }
 
     /**
@@ -78,7 +93,11 @@ class MemorialDayTest extends USABaseTestCase implements YasumiTestCaseInterface
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL
+        );
     }
 }

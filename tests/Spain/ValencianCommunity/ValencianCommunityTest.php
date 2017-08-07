@@ -50,8 +50,12 @@ class ValencianCommunityTest extends ValencianCommunityBaseTestCase
      */
     public function testObservedHolidays()
     {
-        $this->assertDefinedHolidays(['stJosephsDay', 'easterMonday'], self::REGION, $this->year,
-            Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays(
+            ['stJosephsDay', 'easterMonday'],
+            self::REGION,
+            $this->year,
+            Holiday::TYPE_OBSERVANCE
+        );
     }
 
     /**

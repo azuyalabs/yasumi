@@ -75,8 +75,13 @@ trait CommonHolidays
      */
     public function internationalWorkersDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('internationalWorkersDay', [], new DateTime("$year-5-1", new DateTimeZone($timezone)),
-            $locale, $type);
+        return new Holiday(
+            'internationalWorkersDay',
+            [],
+            new DateTime("$year-5-1", new DateTimeZone($timezone)),
+            $locale,
+            $type
+        );
     }
 
     /**
@@ -103,8 +108,13 @@ trait CommonHolidays
      */
     public function valentinesDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('valentinesDay', [], new DateTime("$year-2-14", new DateTimeZone($timezone)), $locale,
-            $type);
+        return new Holiday(
+            'valentinesDay',
+            [],
+            new DateTime("$year-2-14", new DateTimeZone($timezone)),
+            $locale,
+            $type
+        );
     }
 
     /**
@@ -129,8 +139,13 @@ trait CommonHolidays
      */
     public function worldAnimalDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('worldAnimalDay', [], new DateTime("$year-10-4", new DateTimeZone($timezone)), $locale,
-            $type);
+        return new Holiday(
+            'worldAnimalDay',
+            [],
+            new DateTime("$year-10-4", new DateTimeZone($timezone)),
+            $locale,
+            $type
+        );
     }
 
     /**
@@ -157,8 +172,13 @@ trait CommonHolidays
      */
     public function stMartinsDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('stMartinsDay', [], new DateTime("$year-11-11", new DateTimeZone($timezone)), $locale,
-            $type);
+        return new Holiday(
+            'stMartinsDay',
+            [],
+            new DateTime("$year-11-11", new DateTimeZone($timezone)),
+            $locale,
+            $type
+        );
     }
 
     /**
@@ -184,8 +204,13 @@ trait CommonHolidays
      */
     public function fathersDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('fathersDay', [], new DateTime("third sunday of june $year", new DateTimeZone($timezone)),
-            $locale, $type);
+        return new Holiday(
+            'fathersDay',
+            [],
+            new DateTime("third sunday of june $year", new DateTimeZone($timezone)),
+            $locale,
+            $type
+        );
     }
 
     /**
@@ -211,8 +236,13 @@ trait CommonHolidays
      */
     public function mothersDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('mothersDay', [], new DateTime("second sunday of may $year", new DateTimeZone($timezone)),
-            $locale, $type);
+        return new Holiday(
+            'mothersDay',
+            [],
+            new DateTime("second sunday of may $year", new DateTimeZone($timezone)),
+            $locale,
+            $type
+        );
     }
 
     /**
@@ -238,8 +268,13 @@ trait CommonHolidays
      */
     public function victoryInEuropeDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('victoryInEuropeDay', [], new DateTime("$year-5-8", new DateTimeZone($timezone)), $locale,
-            $type);
+        return new Holiday(
+            'victoryInEuropeDay',
+            [],
+            new DateTime("$year-5-8", new DateTimeZone($timezone)),
+            $locale,
+            $type
+        );
     }
 
     /**
@@ -267,7 +302,12 @@ trait CommonHolidays
      */
     public function armisticeDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
     {
-        return new Holiday('armisticeDay', [], new DateTime("$year-11-11", new DateTimeZone($timezone)), $locale,
-            $type);
+        return new Holiday(
+            'armisticeDay',
+            [],
+            new DateTime("$year-11-11", new DateTimeZone($timezone)),
+            $locale,
+            $type
+        );
     }
 }

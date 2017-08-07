@@ -63,8 +63,12 @@ class StruggleForFreedomAndDemocracyDayTest extends SlovakiaBaseTestCase impleme
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Deň boja za slobodu a demokraciu']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Deň boja za slobodu a demokraciu']
+        );
     }
 
 

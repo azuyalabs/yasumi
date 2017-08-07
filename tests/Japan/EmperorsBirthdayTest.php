@@ -40,8 +40,12 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements YasumiTestCaseIn
     public function testEmperorsBirthdayOnAfter1989()
     {
         $year = 3012;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-12-23", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-12-23", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -51,8 +55,12 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements YasumiTestCaseIn
     public function testEmperorsBirthdayOnAfter1989SubstitutedNextWorkingDay()
     {
         $year = 2001;
-        $this->assertHoliday(self::REGION, self::SUBSTITUTE_PREFIX . self::HOLIDAY, $year,
-            new DateTime("$year-12-24", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::SUBSTITUTE_PREFIX . self::HOLIDAY,
+            $year,
+            new DateTime("$year-12-24", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -62,8 +70,11 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements YasumiTestCaseIn
      */
     public function testEmperorsBirthdayBefore1989()
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+        );
     }
 
     /**
@@ -71,8 +82,12 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements YasumiTestCaseIn
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => '天皇誕生日']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => '天皇誕生日']
+        );
     }
 
     /**
@@ -80,7 +95,11 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements YasumiTestCaseIn
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL
+        );
     }
 }

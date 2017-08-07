@@ -154,8 +154,12 @@ class Finland extends AbstractProvider
     public function calculateIndependenceDay()
     {
         if ($this->year >= 1917) {
-            $this->addHoliday(new Holiday('independenceDay', ['fi_FI' => 'Itsenäisyyspäivä'],
-                new DateTime("$this->year-12-6", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'independenceDay',
+                ['fi_FI' => 'Itsenäisyyspäivä'],
+                new DateTime("$this->year-12-6", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
     }
 }

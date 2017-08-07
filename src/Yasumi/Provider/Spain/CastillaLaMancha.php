@@ -75,8 +75,12 @@ class CastillaLaMancha extends Spain
     public function calculateCastillaLaManchaDay()
     {
         if ($this->year >= 1984) {
-            $this->addHoliday(new Holiday('castillaLaManchaDay', ['es_ES' => 'Día de la Región Castilla-La Mancha'],
-                new DateTime("$this->year-5-31", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'castillaLaManchaDay',
+                ['es_ES' => 'Día de la Región Castilla-La Mancha'],
+                new DateTime("$this->year-5-31", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
     }
 }

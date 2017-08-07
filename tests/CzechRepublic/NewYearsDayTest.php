@@ -58,8 +58,12 @@ class NewYearsDayTest extends CzechRepublicBaseTestCase implements YasumiTestCas
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Den obnovy samostatného českého státu a Nový rok']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Den obnovy samostatného českého státu a Nový rok']
+        );
     }
 
     /**

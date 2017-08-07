@@ -37,8 +37,12 @@ class BoxingDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInter
      */
     public function testHoliday($year, $expected)
     {
-        $this->assertHoliday($this->region, self::HOLIDAY, $year,
-            new DateTime($expected, new DateTimeZone($this->timezone)));
+        $this->assertHoliday(
+            $this->region,
+            self::HOLIDAY,
+            $year,
+            new DateTime($expected, new DateTimeZone($this->timezone))
+        );
     }
 
     /**
@@ -70,8 +74,12 @@ class BoxingDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInter
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName($this->region, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Boxing Day']);
+        $this->assertTranslatedHolidayName(
+            $this->region,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Boxing Day']
+        );
     }
 
     /**

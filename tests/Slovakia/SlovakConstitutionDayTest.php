@@ -63,8 +63,12 @@ class SlovakConstitutionDayTest extends SlovakiaBaseTestCase implements YasumiTe
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Deň Ústavy Slovenskej republiky']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Deň Ústavy Slovenskej republiky']
+        );
     }
 
 

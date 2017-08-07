@@ -38,8 +38,12 @@ class TiradentesDayTest extends BrazilBaseTestCase implements YasumiTestCaseInte
     public function testDiaDeTiradentesAfter1792()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-04-21", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-04-21", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**

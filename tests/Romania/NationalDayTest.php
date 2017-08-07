@@ -38,8 +38,12 @@ class NationalDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
     public function testNationalDayOnAfter1990()
     {
         $year = $this->generateRandomYear(1990);
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-12-1", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-12-1", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -48,8 +52,12 @@ class NationalDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
     public function testNationalDayBetween1948_1989()
     {
         $year = $this->generateRandomYear(1948, 1989);
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-08-23", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-08-23", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -58,8 +66,12 @@ class NationalDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
     public function testNationalDayBetween1866_1947()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1947);
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-05-10", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-05-10", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -67,8 +79,11 @@ class NationalDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
      */
     public function testNationalDayBefore1865()
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+        );
     }
 
     /**
@@ -76,8 +91,12 @@ class NationalDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Ziua Națională']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => 'Ziua Națională']
+        );
     }
 
     /**
@@ -85,7 +104,11 @@ class NationalDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_NATIONAL
+        );
     }
 }

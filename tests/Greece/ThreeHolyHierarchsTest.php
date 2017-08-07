@@ -54,8 +54,12 @@ class ThreeHolyHierarchsTest extends GreeceBaseTestCase implements YasumiTestCas
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Τριών Ιεραρχών']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Τριών Ιεραρχών']
+        );
     }
 
     /**

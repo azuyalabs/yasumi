@@ -83,7 +83,11 @@ class Victoria extends Australia
 
         $date = new DateTime($aflGrandFinalFriday, new DateTimeZone($this->timezone));
 
-        $this->addHoliday(new Holiday('aflGrandFinalFriday', ['en_AU' => 'AFL Grand Final Friday'], $date,
-            $this->locale));
+        $this->addHoliday(new Holiday(
+            'aflGrandFinalFriday',
+            ['en_AU' => 'AFL Grand Final Friday'],
+            $date,
+            $this->locale
+        ));
     }
 }

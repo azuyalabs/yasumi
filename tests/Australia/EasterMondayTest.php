@@ -38,8 +38,12 @@ class EasterMondayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
      */
     public function testHoliday($year, $expected)
     {
-        $this->assertHoliday($this->region, self::HOLIDAY, $year,
-            new DateTime($expected, new DateTimeZone($this->timezone)));
+        $this->assertHoliday(
+            $this->region,
+            self::HOLIDAY,
+            $year,
+            new DateTime($expected, new DateTimeZone($this->timezone))
+        );
     }
 
     /**
@@ -67,8 +71,12 @@ class EasterMondayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName($this->region, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Easter Monday']);
+        $this->assertTranslatedHolidayName(
+            $this->region,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Easter Monday']
+        );
     }
 
     /**
