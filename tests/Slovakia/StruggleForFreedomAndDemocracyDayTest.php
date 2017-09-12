@@ -19,7 +19,7 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing a national holiday in Slovakia.
+ * Class for testing an official holiday in Slovakia.
  *
  *
  * @package Yasumi\tests\Slovakia
@@ -77,6 +77,6 @@ class StruggleForFreedomAndDemocracyDayTest extends SlovakiaBaseTestCase impleme
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

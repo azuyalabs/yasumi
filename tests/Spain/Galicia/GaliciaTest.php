@@ -25,9 +25,9 @@ class GaliciaTest extends GaliciaBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Galicia are defined by the provider class
+     * Tests if all official holidays in Galicia (Spain) are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -43,7 +43,7 @@ class GaliciaTest extends GaliciaBaseTestCase
             'constitutionDay',
             'immaculateConception',
             'christmasDay'
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

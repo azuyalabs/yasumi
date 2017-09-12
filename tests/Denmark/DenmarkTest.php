@@ -25,9 +25,9 @@ class DenmarkTest extends DenmarkBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Denmark are defined by the provider class
+     * Tests if all official holidays in Denmark are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -41,7 +41,7 @@ class DenmarkTest extends DenmarkBaseTestCase
             'pentecostMonday',
             'christmasDay',
             'secondChristmasDay'
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

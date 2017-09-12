@@ -25,9 +25,9 @@ class AustriaTest extends AustriaBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Austria are defined by the provider class
+     * Tests if all official holidays in Austria are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $this->assertDefinedHolidays([
             'ascensionDay',
@@ -43,7 +43,7 @@ class AustriaTest extends AustriaBaseTestCase
             'christmasDay',
             'secondChristmasDay',
             'nationalDay'
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

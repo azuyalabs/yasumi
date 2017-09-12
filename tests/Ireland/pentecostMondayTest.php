@@ -106,7 +106,7 @@ class pentecostMondayTest extends IrelandBaseTestCase implements YasumiTestCaseI
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(1000, self::ABOLISHMENT_YEAR),
-            Holiday::TYPE_NATIONAL
+            Holiday::TYPE_OFFICIAL
         );
     }
 }

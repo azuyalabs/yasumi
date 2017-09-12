@@ -25,9 +25,9 @@ class AsturiasTest extends AsturiasBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Asturias are defined by the provider class
+     * Tests if all official holidays in Asturias (Spain) are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -42,7 +42,7 @@ class AsturiasTest extends AsturiasBaseTestCase
             'constitutionDay',
             'immaculateConception',
             'christmasDay',
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

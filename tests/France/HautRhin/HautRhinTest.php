@@ -25,9 +25,9 @@ class HautRhinTest extends HautRhinBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Haut-Rhin are defined by the provider class
+     * Tests if all official holidays in Haut-Rhin are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -43,7 +43,7 @@ class HautRhinTest extends HautRhinBaseTestCase
             'christmasDay',
             'stStephensDay',
             'bastilleDay'
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

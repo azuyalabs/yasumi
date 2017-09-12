@@ -53,7 +53,7 @@ class Sweden extends AbstractProvider
         $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale));
         $this->calculatestJohnsDay(); // aka Midsummer's Day
         $this->calculateAllSaintsDay();
-        $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale, Holiday::TYPE_NATIONAL));
+        $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale, Holiday::TYPE_OFFICIAL));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
 

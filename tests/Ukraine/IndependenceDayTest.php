@@ -50,6 +50,6 @@ class IndependenceDayTest extends UkraineBaseTestCase implements YasumiTestCaseI
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, 2020, Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, 2020, Holiday::TYPE_OFFICIAL);
     }
 }

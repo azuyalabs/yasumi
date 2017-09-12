@@ -26,9 +26,9 @@ class RomaniaTest extends RomaniaBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Romania are defined by the provider class
+     * Tests if all official holidays in Romania are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $national_holidays = [
             'newYearsDay',
@@ -50,7 +50,7 @@ class RomaniaTest extends RomaniaBaseTestCase
             $national_holidays[] = 'childrensDay';
         }
 
-        $this->assertDefinedHolidays($national_holidays, self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        $this->assertDefinedHolidays($national_holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

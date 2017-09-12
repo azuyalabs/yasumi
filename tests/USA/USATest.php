@@ -25,9 +25,9 @@ class USATest extends USABaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in the USA are defined by the provider class
+     * Tests if all official holidays in the USA are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -40,7 +40,7 @@ class USATest extends USABaseTestCase
             'veteransDay',
             'thanksgivingDay',
             'christmasDay'
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

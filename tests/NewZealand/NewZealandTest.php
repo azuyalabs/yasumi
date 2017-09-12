@@ -25,9 +25,9 @@ class NewZealandTest extends NewZealandBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in New Zealand are defined by the provider class
+     * Tests if all official holidays in New Zealand are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -39,7 +39,7 @@ class NewZealandTest extends NewZealandBaseTestCase
             'anzacDay',
             'queensBirthday',
             'labourDay',
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

@@ -25,9 +25,9 @@ class SpainTest extends SpainBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Spain are defined by the provider class
+     * Tests if all official holidays in Spain are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -40,7 +40,7 @@ class SpainTest extends SpainBaseTestCase
             'constitutionDay',
             'immaculateConception',
             'christmasDay'
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

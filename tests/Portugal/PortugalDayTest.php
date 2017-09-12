@@ -91,9 +91,9 @@ class PortugalDayTest extends PortugalBaseTestCase implements YasumiTestCaseInte
     public function testHolidayType()
     {
         $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR_BEFORE);
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OFFICIAL);
 
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR_AFTER);
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OFFICIAL);
     }
 }

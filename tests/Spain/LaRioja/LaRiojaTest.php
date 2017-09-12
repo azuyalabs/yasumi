@@ -25,9 +25,9 @@ class LaRiojaTest extends LaRiojaBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in La Rioja are defined by the provider class
+     * Tests if all official holidays in La Rioja (Spain) are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -42,7 +42,7 @@ class LaRiojaTest extends LaRiojaBaseTestCase
             'constitutionDay',
             'immaculateConception',
             'christmasDay'
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

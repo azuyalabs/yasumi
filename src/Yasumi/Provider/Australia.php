@@ -40,7 +40,7 @@ class Australia extends AbstractProvider
      */
     public function initialize()
     {
-        // National Holidays
+        // Official Holidays
         $this->calculateAustraliaDay();
         $this->calculateNewYearHolidays();
         $this->calculateAnzacDay();

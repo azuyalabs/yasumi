@@ -80,7 +80,7 @@ class GalicianLiteratureDayTest extends GaliciaBaseTestCase implements YasumiTes
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            Holiday::TYPE_NATIONAL
+            Holiday::TYPE_OFFICIAL
         );
     }
 }

@@ -25,9 +25,9 @@ class AndalusiaTest extends AndalusiaBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Andalusia are defined by the provider class
+     * Tests if all official holidays in Andalusia (Spain) are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -42,7 +42,7 @@ class AndalusiaTest extends AndalusiaBaseTestCase
             'constitutionDay',
             'immaculateConception',
             'christmasDay',
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

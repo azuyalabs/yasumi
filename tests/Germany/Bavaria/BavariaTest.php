@@ -25,9 +25,9 @@ class BavariaTest extends BavariaBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Bavaria (Germany) are defined by the provider class
+     * Tests if all official holidays in Bavaria (Germany) are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -41,7 +41,7 @@ class BavariaTest extends BavariaBaseTestCase
             'germanUnityDay',
             'christmasDay',
             'secondChristmasDay'
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

@@ -80,7 +80,7 @@ class NationalDayTest extends AustriaBaseTestCase implements YasumiTestCaseInter
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            Holiday::TYPE_NATIONAL
+            Holiday::TYPE_OFFICIAL
         );
     }
 }

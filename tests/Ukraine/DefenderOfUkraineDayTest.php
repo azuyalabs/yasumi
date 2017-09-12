@@ -55,6 +55,6 @@ class DefenderOfUkraineDayTest extends UkraineBaseTestCase implements YasumiTest
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, 2020, Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, 2020, Holiday::TYPE_OFFICIAL);
     }
 }

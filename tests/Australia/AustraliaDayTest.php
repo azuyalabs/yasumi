@@ -64,7 +64,7 @@ class AustraliaDayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(2000), Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(2000), Holiday::TYPE_OFFICIAL);
     }
 
     /**
