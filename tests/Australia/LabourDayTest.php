@@ -77,6 +77,6 @@ abstract class LabourDayTest extends AustraliaBaseTestCase implements YasumiTest
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(1990), Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(1990), Holiday::TYPE_OFFICIAL);
     }
 }

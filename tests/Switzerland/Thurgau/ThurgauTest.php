@@ -25,19 +25,19 @@ class ThurgauTest extends ThurgauBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Thurgau are defined by the provider class
+     * Tests if all official holidays in Thurgau (Switzerland) are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
-        $nationalHolidays = [];
+        $officialHolidays = [];
         if ($this->year >= 1994) {
-            $nationalHolidays[] = 'swissNationalDay';
+            $officialHolidays[] = 'swissNationalDay';
         }
-        $this->assertDefinedHolidays($nationalHolidays, self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        $this->assertDefinedHolidays($officialHolidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
-     * Tests if all national holidays in Thurgau are defined by the provider class
+     * Tests if all regional holidays in Thurgau (Switzerland) are defined by the provider class
      */
     public function testRegionalHolidays()
     {

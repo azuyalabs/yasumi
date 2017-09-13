@@ -18,7 +18,7 @@ use Yasumi\Holiday;
 /**
  * OfficialHolidaysFilter is a class for filtering all official holidays.
  *
- * OfficialHolidaysFilter is a class that returns all holidays that are considered official (i.e. national) of any given
+ * OfficialHolidaysFilter is a class that returns all holidays that are considered official of any given
  * holiday provider.
  *
  * Example usage:
@@ -28,12 +28,12 @@ use Yasumi\Holiday;
 class OfficialHolidaysFilter extends FilterIterator
 {
     /**
-     * Checks whether the current element of the iterator is a national/official holiday.
+     * Checks whether the current element of the iterator is an official holiday.
      *
      * @return bool
      */
     public function accept()
     {
-        return $this->getInnerIterator()->current()->getType() === Holiday::TYPE_NATIONAL;
+        return $this->getInnerIterator()->current()->getType() === Holiday::TYPE_OFFICIAL;
     }
 }

@@ -129,7 +129,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements YasumiTest
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::NATIONAL_ESTABLISHMENT_YEAR),
-            Holiday::TYPE_NATIONAL
+            Holiday::TYPE_OFFICIAL
         );
     }
 }

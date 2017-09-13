@@ -25,9 +25,9 @@ class ThuringiaTest extends ThuringiaBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Thuringia (Germany) are defined by the provider class
+     * Tests if all official holidays in Thuringia (Germany) are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $holidays = [
             'newYearsDay',
@@ -50,7 +50,7 @@ class ThuringiaTest extends ThuringiaBaseTestCase
             $holidays[] = 'reformationDay';
         }
 
-        $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

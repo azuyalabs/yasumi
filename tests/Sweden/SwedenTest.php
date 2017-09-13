@@ -25,9 +25,9 @@ class SwedenTest extends SwedenBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Sweden are defined by the provider class
+     * Tests if all official holidays in Sweden (Spain) are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -44,7 +44,7 @@ class SwedenTest extends SwedenBaseTestCase
             'christmasEve',
             'christmasDay',
             'secondChristmasDay'
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

@@ -91,7 +91,7 @@ class MunicipalElections2016DayTest extends SouthAfricaBaseTestCase implements Y
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::ESTABLISHMENT_YEAR),
-            Holiday::TYPE_NATIONAL
+            Holiday::TYPE_OFFICIAL
         );
     }
 }

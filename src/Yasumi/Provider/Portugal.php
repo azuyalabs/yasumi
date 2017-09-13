@@ -85,7 +85,7 @@ class Portugal extends AbstractProvider
                 ['pt_PT' => 'Dia da Liberdade'],
                 new DateTime("$this->year-04-25", new DateTimeZone($this->timezone)),
                 $this->locale,
-                Holiday::TYPE_NATIONAL
+                Holiday::TYPE_OFFICIAL
             ));
         }
     }
@@ -208,7 +208,7 @@ class Portugal extends AbstractProvider
                 ['pt_PT' => 'Restauração da Independência'],
                 new DateTime("$this->year-12-01", new DateTimeZone($this->timezone)),
                 $this->locale,
-                Holiday::TYPE_NATIONAL
+                Holiday::TYPE_OFFICIAL
             ));
         }
     }

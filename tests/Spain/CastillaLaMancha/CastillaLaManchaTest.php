@@ -25,9 +25,9 @@ class CastillaLaManchaTest extends CastillaLaManchaBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Castilla-La Mancha are defined by the provider class
+     * Tests if all official holidays in Castilla-La Mancha (Spain) are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -42,7 +42,7 @@ class CastillaLaManchaTest extends CastillaLaManchaBaseTestCase
             'constitutionDay',
             'immaculateConception',
             'christmasDay'
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

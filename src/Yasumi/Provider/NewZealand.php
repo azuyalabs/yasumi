@@ -40,7 +40,7 @@ class NewZealand extends AbstractProvider
     {
         $this->timezone = 'Pacific/Auckland';
 
-        // National Holidays
+        // Official Holidays
         $this->calculateNewYearHolidays();
         $this->calculateWaitangiDay();
         $this->calculateAnzacDay();

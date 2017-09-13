@@ -66,7 +66,7 @@ class Slovakia extends AbstractProvider
         $this->timezone = 'Europe/Bratislava';
 
         // 1.1.
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_NATIONAL));
+        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OFFICIAL));
         // 6.1.
         $this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
         // 1.5.
@@ -123,7 +123,7 @@ class Slovakia extends AbstractProvider
         ],
             new DateTime($this->year . '-07-05', new DateTimeZone($this->timezone)),
             $this->locale,
-            Holiday::TYPE_NATIONAL
+            Holiday::TYPE_OFFICIAL
         ));
     }
 
@@ -145,7 +145,7 @@ class Slovakia extends AbstractProvider
         ],
             new DateTime($this->year . '-08-29', new DateTimeZone($this->timezone)),
             $this->locale,
-            Holiday::TYPE_NATIONAL
+            Holiday::TYPE_OFFICIAL
         ));
     }
 
@@ -167,7 +167,7 @@ class Slovakia extends AbstractProvider
         ],
             new DateTime($this->year . '-09-01', new DateTimeZone($this->timezone)),
             $this->locale,
-            Holiday::TYPE_NATIONAL
+            Holiday::TYPE_OFFICIAL
         ));
     }
 
@@ -210,7 +210,7 @@ class Slovakia extends AbstractProvider
         ],
             new DateTime($this->year . '-11-17', new DateTimeZone($this->timezone)),
             $this->locale,
-            Holiday::TYPE_NATIONAL
+            Holiday::TYPE_OFFICIAL
         ));
     }
 }

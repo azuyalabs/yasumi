@@ -25,9 +25,9 @@ class BerlinTest extends BerlinBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Berlin (Germany) are defined by the provider class
+     * Tests if all official holidays in Berlin (Germany) are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -41,7 +41,7 @@ class BerlinTest extends BerlinBaseTestCase
             'germanUnityDay',
             'christmasDay',
             'secondChristmasDay'
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

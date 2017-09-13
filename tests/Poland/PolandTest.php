@@ -25,9 +25,9 @@ class PolandTest extends PolandBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Poland are defined by the provider class
+     * Tests if all official holidays in Poland are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -42,7 +42,7 @@ class PolandTest extends PolandBaseTestCase
             'secondChristmasDay',
             'constitutionDay',
             'independenceDay',
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

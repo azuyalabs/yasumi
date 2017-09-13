@@ -25,9 +25,9 @@ class FranceTest extends FranceBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in France are defined by the provider class
+     * Tests if all official holidays in France are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -41,7 +41,7 @@ class FranceTest extends FranceBaseTestCase
             'armisticeDay',
             'christmasDay',
             'bastilleDay'
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

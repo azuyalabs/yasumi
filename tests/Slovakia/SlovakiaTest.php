@@ -32,9 +32,9 @@ class SlovakiaTest extends SlovakiaBaseTestCase
 
 
     /**
-     * Tests if all national holidays in Slovakia are defined by the provider class
+     * Tests if all official holidays in Slovakia are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -42,7 +42,7 @@ class SlovakiaTest extends SlovakiaBaseTestCase
             'slovakNationalUprisingDay',
             'saintsCyrilAndMethodiusDay',
             'struggleForFreedomAndDemocracyDay',
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
 

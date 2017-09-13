@@ -25,33 +25,33 @@ class IrelandTest extends IrelandBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Ireland are defined by the provider class
+     * Tests if all official holidays in Ireland are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
-        $nationalHolidays = ['easter', 'easterMonday', 'augustHoliday', 'christmasDay', 'stStephensDay'];
+        $officialHolidays = ['easter', 'easterMonday', 'augustHoliday', 'christmasDay', 'stStephensDay'];
         if ($this->year >= 1974) {
-            $nationalHolidays[] = 'newYearsDay';
-            $nationalHolidays[] = 'juneHoliday';
+            $officialHolidays[] = 'newYearsDay';
+            $officialHolidays[] = 'juneHoliday';
         }
 
         if ($this->year >= 1903) {
-            $nationalHolidays[] = 'stPatricksDay';
+            $officialHolidays[] = 'stPatricksDay';
         }
 
         if ($this->year >= 1994) {
-            $nationalHolidays[] = 'mayDay';
+            $officialHolidays[] = 'mayDay';
         }
 
         if ($this->year <= 1973) {
-            $nationalHolidays[] = 'pentecostMonday';
+            $officialHolidays[] = 'pentecostMonday';
         }
 
         if ($this->year >= 1977) {
-            $nationalHolidays[] = 'octoberHoliday';
+            $officialHolidays[] = 'octoberHoliday';
         }
 
-        $this->assertDefinedHolidays($nationalHolidays, self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        $this->assertDefinedHolidays($officialHolidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

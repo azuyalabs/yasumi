@@ -82,6 +82,6 @@ class ChildrensDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInte
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2016),
             Holiday::TYPE_OBSERVANCE
         );
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(2017), Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(2017), Holiday::TYPE_OFFICIAL);
     }
 }

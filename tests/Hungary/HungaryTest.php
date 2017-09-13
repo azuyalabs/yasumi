@@ -25,9 +25,9 @@ class HungaryTest extends HungaryBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Hungary are defined by the provider class
+     * Tests if all official holidays in Hungary are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -41,7 +41,7 @@ class HungaryTest extends HungaryBaseTestCase
             'memorialDay1848',
             'memorialDay1956',
             'stateFoundation',
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

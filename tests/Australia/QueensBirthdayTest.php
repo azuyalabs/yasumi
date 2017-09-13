@@ -99,7 +99,7 @@ abstract class QueensBirthdayTest extends AustraliaBaseTestCase implements Yasum
             $this->region,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2100),
-            Holiday::TYPE_NATIONAL
+            Holiday::TYPE_OFFICIAL
         );
     }
 }

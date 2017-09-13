@@ -133,7 +133,7 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCase
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2150),
-            Holiday::TYPE_NATIONAL
+            Holiday::TYPE_OFFICIAL
         );
     }
 }

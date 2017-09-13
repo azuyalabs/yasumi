@@ -71,7 +71,7 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements YasumiTest
             $this->region,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::LAST_KNOWN_YEAR),
-            Holiday::TYPE_NATIONAL
+            Holiday::TYPE_OFFICIAL
         );
     }
 

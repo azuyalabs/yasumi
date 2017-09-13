@@ -38,15 +38,15 @@ trait CommonHolidays
      * @param int    $year     the year for which New Year's Day need to be created
      * @param string $timezone the timezone in which New Year's Day is celebrated
      * @param string $locale   the locale for which New Year's Day need to be displayed in.
-     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
-     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
      * @return \Yasumi\Holiday
      *
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
-    public function newYearsDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
+    public function newYearsDay($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL)
     {
         return new Holiday('newYearsDay', [], new DateTime("$year-1-1", new DateTimeZone($timezone)), $locale, $type);
     }
@@ -65,15 +65,15 @@ trait CommonHolidays
      * @param int    $year     the year for which International Workers' Day need to be created
      * @param string $timezone the timezone in which International Workers' Day is celebrated
      * @param string $locale   the locale for which International Workers' Day need to be displayed in.
-     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
-     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
      * @return \Yasumi\Holiday
      *
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
-    public function internationalWorkersDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
+    public function internationalWorkersDay($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL)
     {
         return new Holiday(
             'internationalWorkersDay',
@@ -98,15 +98,15 @@ trait CommonHolidays
      * @param int    $year     the year for which Valentine's Day need to be created
      * @param string $timezone the timezone in which Valentine's Day is celebrated
      * @param string $locale   the locale for which Valentine's Day need to be displayed in.
-     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
-     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
      * @return \Yasumi\Holiday
      *
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
-    public function valentinesDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
+    public function valentinesDay($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL)
     {
         return new Holiday(
             'valentinesDay',
@@ -129,15 +129,15 @@ trait CommonHolidays
      * @param int    $year     the year for which World Animal Day need to be created
      * @param string $timezone the timezone in which World Animal Day is celebrated
      * @param string $locale   the locale for which World Animal Day need to be displayed in.
-     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
-     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
      * @return \Yasumi\Holiday
      *
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
-    public function worldAnimalDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
+    public function worldAnimalDay($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL)
     {
         return new Holiday(
             'worldAnimalDay',
@@ -162,15 +162,15 @@ trait CommonHolidays
      * @param int    $year     the year for which St. Martin's Day need to be created
      * @param string $timezone the timezone in which St. Martin's Day is celebrated
      * @param string $locale   the locale for which St. Martin's Day need to be displayed in.
-     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
-     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
      * @return \Yasumi\Holiday
      *
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
-    public function stMartinsDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
+    public function stMartinsDay($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL)
     {
         return new Holiday(
             'stMartinsDay',
@@ -194,15 +194,15 @@ trait CommonHolidays
      * @param int    $year     the year for which Father's Day need to be created
      * @param string $timezone the timezone in which Father's Day is celebrated
      * @param string $locale   the locale for which Father's Day need to be displayed in.
-     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
-     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
      * @return \Yasumi\Holiday
      *
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
-    public function fathersDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
+    public function fathersDay($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL)
     {
         return new Holiday(
             'fathersDay',
@@ -226,15 +226,15 @@ trait CommonHolidays
      * @param int    $year     the year for which Mother's Day need to be created
      * @param string $timezone the timezone in which Mother's Day is celebrated
      * @param string $locale   the locale for which Mother's Day need to be displayed in.
-     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
-     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
      * @return \Yasumi\Holiday
      *
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
-    public function mothersDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
+    public function mothersDay($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL)
     {
         return new Holiday(
             'mothersDay',
@@ -258,15 +258,15 @@ trait CommonHolidays
      * @param int    $year     the year for which Victory in Europe Day need to be created
      * @param string $timezone the timezone in which Victory in Europe Day is celebrated
      * @param string $locale   the locale for which Victory in Europe Day need to be displayed in.
-     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
-     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
      * @return \Yasumi\Holiday
      *
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
-    public function victoryInEuropeDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
+    public function victoryInEuropeDay($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL)
     {
         return new Holiday(
             'victoryInEuropeDay',
@@ -292,15 +292,15 @@ trait CommonHolidays
      * @param int    $year     the year for which Armistice Day need to be created
      * @param string $timezone the timezone in which Armistice Day is celebrated
      * @param string $locale   the locale for which Armistice Day need to be displayed in.
-     * @param string $type     The type of holiday. Use the following constants: TYPE_NATIONAL, TYPE_OBSERVANCE,
-     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a national holiday is considered.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
      * @return \Yasumi\Holiday
      *
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
-    public function armisticeDay($year, $timezone, $locale, $type = Holiday::TYPE_NATIONAL)
+    public function armisticeDay($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL)
     {
         return new Holiday(
             'armisticeDay',

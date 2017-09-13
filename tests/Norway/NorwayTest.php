@@ -25,9 +25,9 @@ class NorwayTest extends NorwayBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Norway are defined by the provider class
+     * Tests if all official holidays in Norway are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -42,7 +42,7 @@ class NorwayTest extends NorwayBaseTestCase
             'constitutionDay',
             'christmasDay',
             'secondChristmasDay'
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

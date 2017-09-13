@@ -38,7 +38,7 @@ trait YasumiBase
      * @param string $provider               the holiday provider (i.e. country/state) for which the holidays need to be
      *                                       tested
      * @param int    $year                   holiday calendar year
-     * @param string $type                   The type of holiday. Use the following constants: TYPE_NATIONAL,
+     * @param string $type                   The type of holiday. Use the following constants: TYPE_OFFICIAL,
      *                                       TYPE_OBSERVANCE, TYPE_SEASON, TYPE_BANK or TYPE_OTHER.
      *
      * @throws \InvalidArgumentException
@@ -50,7 +50,7 @@ trait YasumiBase
         $holidays = Yasumi::create($provider, $year);
 
         switch ($type) {
-            case Holiday::TYPE_NATIONAL:
+            case Holiday::TYPE_OFFICIAL:
                 $holidays = new OfficialHolidaysFilter($holidays->getIterator());
                 break;
             case Holiday::TYPE_OBSERVANCE:

@@ -135,7 +135,7 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(1891, 2013),
-            Holiday::TYPE_NATIONAL
+            Holiday::TYPE_OFFICIAL
         );
     }
 }
