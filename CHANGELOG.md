@@ -12,10 +12,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Added Holiday Provider for Switzerland. [\#56](https://github.com/azuyalabs/yasumi/pull/56) ([qligier](https://github.com/qligier))
 
 ### Changed
-- Renamed the holiday type NATIONAL to OFFICIAL. Subregions may have official holidays and the name NATIONAL doesn't suit these situations.
+- Renamed the holiday type NATIONAL to OFFICIAL. Subregions may have official holidays and the name NATIONAL doesn't suit these situations. [\#65](https://github.com/azuyalabs/yasumi/pull/65)
 - Upgraded PHP-CS-Fixer to version 2.4
 
 ### Fixed
+- Corrected Hungary unit test to ensure holidays that are established at a particular year are handled as such.
 - Added missing Summer Bank Holiday for the United Kingdom. [\#64](https://github.com/azuyalabs/yasumi/issues/64) ([stelgenhof](https://github.com/stelgenhof))
 
 ### Removed
