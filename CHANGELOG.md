@@ -17,8 +17,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Upgraded PHP-CS-Fixer to version 2.6
 
 ### Fixed
+- Corrected the Easter Sunday translation for Austria (de_AT)  [\#64](https://github.com/azuyalabs/yasumi/issues/66)
 - Corrected Hungary unit test to ensure holidays that are established at a particular year are handled as such.
-- Added missing Summer Bank Holiday for the United Kingdom. [\#64](https://github.com/azuyalabs/yasumi/issues/64) ([stelgenhof](https://github.com/stelgenhof))
+- Added missing Summer Bank Holiday for the United Kingdom. [\#64](https://github.com/azuyalabs/yasumi/issues/64)
 
 ### Removed
 
