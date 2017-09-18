@@ -15,7 +15,7 @@ return [
     'cy_GB' => 'Sul y Pasg',
     'da_DK' => 'Påskedag',
     'de_DE' => 'Ostersonntag',
-    'de_AT' => 'Oster',
+    'de_AT' => 'Ostersonntag',
     'de_CH' => 'Ostern',
     'el_GR' => 'Κυριακή του Πάσχα',
     'en_IE' => 'Easter Sunday',
