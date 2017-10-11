@@ -82,7 +82,13 @@ class SaxonyTest extends SaxonyBaseTestCase
      */
     public function testOtherHolidays()
     {
-        $this->assertDefinedHolidays(['repentanceAndPrayerDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $holidays = [];
+
+        if ($this->year >= 1995) {
+            $holidays[] = 'repentanceAndPrayerDay';
+        }
+
+        $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**
