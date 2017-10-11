@@ -25,6 +25,7 @@ return [
     'hu_HU' => 'Mindenszentek',
     'it_CH' => 'Ognissanti',
     'it_IT' => 'Festa di Tutti i Santi',
+    'lt_LT' => 'Visų šventųjų diena (Vėlinės)',
     'nl_BE' => 'Allerheiligen',
     'nl_NL' => 'Allerheiligen',
     'pl_PL' => 'Uroczystość Wszystkich Świętych',

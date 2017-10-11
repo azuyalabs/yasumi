@@ -16,5 +16,6 @@ return [
     'en_US' => 'St. John\'s Day',
     'es_ES' => 'Sant Joan',
     'fi_FI' => 'Juhannuspäivä',
+    'lt_LT' => 'Rasos ir Joninių diena',
     'sv_SE' => 'midsommardagen',
 ];
