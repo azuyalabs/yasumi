@@ -21,7 +21,7 @@ use Yasumi\tests\YasumiTestCaseInterface;
  *
  * @author Gedas Lukošius <gedas@lukosius.me>
  */
-class EasterTest extends LithuaniaBaseTestCase implements YasumiTestCaseInterface
+class EasterDayTest extends LithuaniaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday to be tested
