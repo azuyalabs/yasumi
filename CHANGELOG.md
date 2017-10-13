@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Upgraded PHP-CS-Fixer to version 2.6
 
 ### Fixed
+- Repentance Day is an official holiday in Saxony (Germany) [\#63](https://github.com/azuyalabs/yasumi/issues/63)
 - Corrected the Easter Sunday translation for Austria (de_AT)  [\#66](https://github.com/azuyalabs/yasumi/issues/66)
 - Corrected Hungary unit test to ensure holidays that are established at a particular year are handled as such.
 - Added missing Summer Bank Holiday for the United Kingdom. [\#64](https://github.com/azuyalabs/yasumi/issues/64)
