@@ -88,7 +88,7 @@ class RepentanceAndPrayerDayTest extends SaxonyBaseTestCase implements YasumiTes
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            Holiday::TYPE_OTHER
+            Holiday::TYPE_OFFICIAL
         );
     }
 }

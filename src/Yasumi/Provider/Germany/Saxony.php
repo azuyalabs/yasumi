@@ -87,7 +87,7 @@ class Saxony extends Germany
                 ['de_DE' => 'Buß- und Bettag'],
                 new DateTime("next wednesday $this->year-11-15", new DateTimeZone($this->timezone)),
                 $this->locale,
-                Holiday::TYPE_OTHER
+                Holiday::TYPE_OFFICIAL
             ));
         }
     }

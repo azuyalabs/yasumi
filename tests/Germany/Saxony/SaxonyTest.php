@@ -46,6 +46,10 @@ class SaxonyTest extends SaxonyBaseTestCase
             $holidays[] = 'germanUnityDay';
         }
 
+        if ($this->year >= 1995) {
+            $holidays[] = 'repentanceAndPrayerDay';
+        }
+
         if ($this->year >= 1517) {
             $holidays[] = 'reformationDay';
         }
@@ -82,7 +86,7 @@ class SaxonyTest extends SaxonyBaseTestCase
      */
     public function testOtherHolidays()
     {
-        $this->assertDefinedHolidays(['repentanceAndPrayerDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**
