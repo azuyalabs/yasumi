@@ -28,6 +28,7 @@ return [
     'it_CH' => 'Festa dei lavoratori',
     'it_IT' => 'Festa del Lavoro',
     'ja_JP' => '労働の日',
+    'lv_LV' => 'Darba svētki',
     'nb_NO' => 'Arbeidernes dag',
     'nl_BE' => 'Dag van de arbeid',
     'nl_NL' => 'Dag van de arbeid',

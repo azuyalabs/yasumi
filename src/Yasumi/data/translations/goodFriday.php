@@ -32,6 +32,7 @@ return [
     'hu_HU' => 'Nagypéntek',
     'it_CH' => 'Venerdi Santo',
     'ja_JP' => 'グッドフライデー',
+    'lv_LV' => 'Lielā Piektdiena',
     'nb_NO' => 'Langfredag',
     'nl_BE' => 'Goede Vrijdag',
     'nl_NL' => 'Goede Vrijdag',
