@@ -25,6 +25,7 @@ return [
     'en_US' => 'Good Friday',
     'en_ZA' => 'Good Friday',
     'es_ES' => 'Viernes Santo',
+    'et_EE' => 'Suur Reede',
     'fi_FI' => 'Pitkäperjantai',
     'fr_CH' => 'Vendredi Saint',
     'fr_FR' => 'Vendredi saint',
