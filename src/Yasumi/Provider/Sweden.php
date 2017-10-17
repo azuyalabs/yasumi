@@ -112,7 +112,7 @@ class Sweden extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
-    private function calculateAllSaintsDay()
+    public function calculateAllSaintsDay()
     {
         $date = new DateTime("$this->year-10-31", new DateTimeZone($this->timezone));
 
