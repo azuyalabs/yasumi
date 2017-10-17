@@ -51,7 +51,7 @@ class Sweden extends AbstractProvider
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale));
-        $this->calculatestJohnsDay(); // aka Midsummer's Day
+        $this->calculateStJohnsDay(); // aka Midsummer's Day
         $this->calculateAllSaintsDay();
         $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale, Holiday::TYPE_OFFICIAL));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
@@ -78,7 +78,7 @@ class Sweden extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
-    public function calculatestJohnsDay()
+    public function calculateStJohnsDay()
     {
         $date = new DateTime("$this->year-6-20", new DateTimeZone($this->timezone)); // Default date
 
