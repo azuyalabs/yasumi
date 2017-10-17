@@ -29,17 +29,28 @@ class EasterDayTest extends LithuaniaBaseTestCase implements YasumiTestCaseInter
     const HOLIDAY = 'easter';
 
     /**
-     * Test defined holiday in the test
+     * @return array
      */
-    public function testHoliday()
+    public function holidayDataProvider()
     {
-        $year = 2017;
+        return $this->generateRandomEasterDates(self::TIMEZONE);
+    }
 
+    /**
+     * Test defined holiday in the test
+     *
+     * @dataProvider holidayDataProvider
+     *
+     * @param int    $year     the year for which the holiday defined in this test needs to be tested
+     * @param string $expected the expected date
+     */
+    public function testHoliday($year, $expected)
+    {
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("{$year}-04-16", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime($expected, new \DateTimeZone(self::TIMEZONE))
         );
     }
 
