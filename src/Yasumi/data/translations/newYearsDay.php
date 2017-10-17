@@ -35,6 +35,7 @@ return [
     'it_CH' => 'Capodanno',
     'it_IT' => 'Capodanno',
     'ja_JP' => '元日',
+    'lt_LT' => 'Naujųjų metų diena',
     'nb_NO' => 'Første nyttårsdag',
     'nl_BE' => 'Nieuwjaar',
     'nl_NL' => 'Nieuwjaar',

@@ -27,6 +27,7 @@ return [
     'hu_HU' => 'Húsvét',
     'it_CH' => 'Pasqua',
     'it_IT' => 'Pasqua',
+    'lt_LT' => 'Velykos',
     'nb_NO' => 'Første påskedag',
     'nl_BE' => 'Eerste Paasdag',
     'nl_NL' => 'Eerste Paasdag',
