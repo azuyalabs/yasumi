@@ -33,6 +33,7 @@ return [
     'hu_HU' => 'Húsvéthétfő',
     'it_CH' => 'Lunedi di Pasqua',
     'it_IT' => 'Lunedi` dell\'Angelo',
+    'lt_LT' => 'Antroji Velykų diena',
     'lv_LV' => 'Otrās Lieldienas',
     'nb_NO' => 'Andre påskedag',
     'nl_BE' => 'Paasmaandag',
