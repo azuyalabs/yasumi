@@ -382,13 +382,14 @@ trait YasumiBase
     /**
      * Checks if given $dateTime is a weekend.
      *
-     * @param \DateTimeInterface $dateTime date for which weekend will be checked.
+     * @param \DateTimeInterface $dateTime    date for which weekend will be checked.
+     * @param array              $weekendDays weekend days. Saturday and Sunday are used by default.
      *
-     * @return bool true if $dateTime is a weekend, false otherwise.
+     * @return bool true if $dateTime is a weekend, false otherwise
      */
-    public function isWeekend(\DateTimeInterface $dateTime)
+    public function isWeekend(\DateTimeInterface $dateTime, array $weekendDays = [0, 6])
     {
-        return in_array((int) $dateTime->format('w'), [0, 6], true);
+        return in_array((int) $dateTime->format('w'), $weekendDays, true);
     }
 
     /**
