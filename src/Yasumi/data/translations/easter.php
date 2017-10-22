@@ -21,6 +21,7 @@ return [
     'en_IE' => 'Easter Sunday',
     'en_US' => 'Easter Sunday',
     'fi_FI' => 'Pääsiäispäivä',
+    'fr_BE' => 'Pâques',
     'fr_CH' => 'Pâques',
     'ga_IE' => 'Domhnach Cásca',
     'hr_HR' => 'Uskrs',

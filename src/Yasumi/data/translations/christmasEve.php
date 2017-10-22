@@ -17,6 +17,7 @@ return [
     'de_CH' => 'Heiliger Abend',
     'en_US' => 'Christmas Eve',
     'fr_CH' => 'Réveillon de Noël',
+    'fr_BE' => 'Réveillon de Noël',
     'it_CH' => 'Vigilia di Natale',
     'lt_LT' => 'Šv. Kūčios',
     'pt_PT' => 'Véspera de Natal',

@@ -15,6 +15,7 @@ return [
     'de_CH' => 'Aschermittwoch',
     'en_US' => 'Ash Wednesday',
     'es_ES' => 'Miércoles de Ceniza',
+    'fr_BE' => 'Mercredi des Cendres',
     'fr_CH' => 'Mercredi des Cendres',
     'it_CH' => 'Mercoledi delle Ceneri',
     'nl_BE' => 'Aswoensdag',
