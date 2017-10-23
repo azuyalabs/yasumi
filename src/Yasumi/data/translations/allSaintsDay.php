@@ -19,6 +19,7 @@ return [
     'en_US' => 'All Saints\' Day',
     'es_ES' => 'Día de todos los Santos',
     'fi_FI' => 'Pyhäinpäivä',
+    'fr_BE' => 'La Toussaint',
     'fr_CH' => 'Toussaint',
     'fr_FR' => 'La Toussaint',
     'hr_HR' => 'Dan svih svetih',

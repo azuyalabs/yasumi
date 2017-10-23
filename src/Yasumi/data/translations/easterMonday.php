@@ -26,6 +26,7 @@ return [
     'en_US' => 'Easter Monday',
     'es_ES' => 'Lunes de Pascua',
     'fi_FI' => '2. pääsiäispäivä',
+    'fr_BE' => 'Lundi de Pâques',
     'fr_CH' => 'Lundi de Pâques',
     'fr_FR' => 'Lundi de Pâques',
     'ga_IE' => 'Luan Cásca',

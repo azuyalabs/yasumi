@@ -21,6 +21,7 @@ return [
     'en_ZA' => 'Workers\' Day',
     'es_ES' => 'Día del Trabajador',
     'fi_FI' => 'Vappu',
+    'fr_BE' => 'Fête du Travail',
     'fr_CH' => 'Fête du Travail',
     'fr_FR' => 'Fête du Travail',
     'hr_HR' => 'Praznik rada',
