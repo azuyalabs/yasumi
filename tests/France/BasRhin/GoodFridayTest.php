@@ -50,7 +50,7 @@ class GoodFridayTest extends BasRhinBaseTestCase implements YasumiTestCaseInterf
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'Vendredi saint']
+            [self::LOCALE => 'Vendredi Saint']
         );
     }
 
