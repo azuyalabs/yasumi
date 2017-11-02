@@ -114,10 +114,13 @@ class Yasumi
      * @throws \RuntimeException
      * @throws \InvalidArgumentException
      */
-    public static function nextWorkingDay($class, DateTime $startDate, $workingDays = 1)
+    public static function nextWorkingDay(string $class, DateTime $startDate, int $workingDays = null)
     {
         // Setup start date, if its an instance of \DateTime, clone to prevent modification to original
         $date = $startDate instanceof DateTime ? clone $startDate : new DateTime($startDate);
+
+        // Default to 1
+        $workingDays = is_null($workingDays) ? 1 : $workingDays;
 
         $provider = false;
 
@@ -153,7 +156,7 @@ class Yasumi
      *
      * @return AbstractProvider An instance of class $class is created and returned
      */
-    public static function create($class, $year = null, $locale = self::DEFAULT_LOCALE)
+    public static function create(string $class, int $year = null, string $locale = null)
     {
         // Find and return holiday provider instance
         $providerClass = sprintf('Yasumi\Provider\%s', str_replace('/', '\\', $class));
@@ -170,6 +173,9 @@ class Yasumi
         if ($year < 1000 || $year > 9999) {
             throw new InvalidArgumentException(sprintf('Year needs to be between 1000 and 9999 (%s given).', $year));
         }
+
+        // Default locale to en_US
+        $locale = is_null($locale) ? self::DEFAULT_LOCALE : $locale;
 
         // Load internal locales variable
         if (null === static::$locales) {
@@ -209,7 +215,7 @@ class Yasumi
      *
      * @return AbstractProvider An instance of class $class is created and returned
      */
-    public static function createByISO3166_2($iso3166_2, $year = null, $locale = self::DEFAULT_LOCALE)
+    public static function createByISO3166_2(string $iso3166_2, int $year = null, string $locale = null)
     {
         $availableProviders = self::getProviders();
 
@@ -247,10 +253,13 @@ class Yasumi
      * @throws \RuntimeException
      * @throws \InvalidArgumentException
      */
-    public static function prevWorkingDay($class, DateTime $startDate, $workingDays = 1)
+    public static function prevWorkingDay(string $class, DateTime $startDate, int $workingDays = null)
     {
         // Setup start date, if its an instance of \DateTime, clone to prevent modification to original
         $date = $startDate instanceof DateTime ? clone $startDate : new DateTime($startDate);
+
+        // Default to 1
+        $workingDays = is_null($workingDays) ? 1 : $workingDays;
 
         $provider = false;
 
