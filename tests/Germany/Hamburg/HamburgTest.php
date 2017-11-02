@@ -25,9 +25,9 @@ class HamburgTest extends HamburgBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Hamburg (Germany) are defined by the provider class
+     * Tests if all official holidays in Hamburg (Germany) are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -41,7 +41,7 @@ class HamburgTest extends HamburgBaseTestCase
             'germanUnityDay',
             'christmasDay',
             'secondChristmasDay'
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

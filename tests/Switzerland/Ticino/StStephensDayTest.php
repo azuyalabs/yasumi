@@ -54,8 +54,12 @@ class StStephensDayTest extends TicinoBaseTestCase implements YasumiTestCaseInte
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Santo Stefano']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Santo Stefano']
+        );
     }
 
     /**

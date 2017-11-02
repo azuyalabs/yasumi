@@ -44,8 +44,12 @@ class AssumptionOfMaryTest extends AppenzellInnerrhodenBaseTestCase implements Y
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Mariä Himmelfahrt']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Mariä Himmelfahrt']
+        );
     }
 
     /**

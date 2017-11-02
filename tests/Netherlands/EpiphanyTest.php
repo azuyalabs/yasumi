@@ -54,8 +54,12 @@ class EpiphanyTest extends NetherlandsBaseTestCase implements YasumiTestCaseInte
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Drie Koningen']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Drie Koningen']
+        );
     }
 
     /**

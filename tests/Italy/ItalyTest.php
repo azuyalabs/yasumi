@@ -25,9 +25,9 @@ class ItalyTest extends ItalyBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Italy are defined by the provider class
+     * Tests if all official holidays in Italy are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -42,7 +42,7 @@ class ItalyTest extends ItalyBaseTestCase
             'stStephensDay',
             'liberationDay',
             'republicDay'
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

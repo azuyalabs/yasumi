@@ -25,9 +25,9 @@ class PortugalTest extends PortugalBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Portugal are defined by the provider class
+     * Tests if all official holidays in Portugal are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -42,7 +42,7 @@ class PortugalTest extends PortugalBaseTestCase
             'portugueseRepublic',
             'restorationOfIndependence',
             'portugalDay'
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

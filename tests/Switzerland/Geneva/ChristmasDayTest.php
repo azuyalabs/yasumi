@@ -54,8 +54,12 @@ class ChristmasDayTest extends GenevaBaseTestCase implements YasumiTestCaseInter
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Noël']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Noël']
+        );
     }
 
     /**

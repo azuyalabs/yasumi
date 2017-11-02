@@ -72,8 +72,12 @@ class BalearicIslands extends Spain
     public function calculateBalearicIslandsDay()
     {
         if ($this->year >= 1983) {
-            $this->addHoliday(new Holiday('balearicIslandsDay', ['es_ES' => 'Día de les Illes Balears'],
-                new DateTime("$this->year-3-1", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'balearicIslandsDay',
+                ['es_ES' => 'Día de les Illes Balears'],
+                new DateTime("$this->year-3-1", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
     }
 }

@@ -33,8 +33,12 @@ class DosdeMayoUprisingDayTest extends CommunityOfMadridBaseTestCase implements 
     public function testHoliday()
     {
         $year = $this->generateRandomYear();
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-5-2", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-5-2", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -42,8 +46,12 @@ class DosdeMayoUprisingDayTest extends CommunityOfMadridBaseTestCase implements 
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Fiesta de la Comunidad de Madrid']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Fiesta de la Comunidad de Madrid']
+        );
     }
 
     /**
@@ -51,6 +59,6 @@ class DosdeMayoUprisingDayTest extends CommunityOfMadridBaseTestCase implements 
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

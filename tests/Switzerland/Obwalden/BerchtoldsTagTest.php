@@ -44,8 +44,12 @@ class BerchtoldsTagTest extends ObwaldenBaseTestCase implements YasumiTestCaseIn
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Berchtoldstag']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Berchtoldstag']
+        );
     }
 
     /**

@@ -33,8 +33,12 @@ class AscensionDayTest extends GreeceBaseTestCase implements YasumiTestCaseInter
     public function testHoliday()
     {
         $year = 2016;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-6-9", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-6-9", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -42,8 +46,12 @@ class AscensionDayTest extends GreeceBaseTestCase implements YasumiTestCaseInter
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Ανάληψη του Χριστού']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Ανάληψη του Χριστού']
+        );
     }
 
     /**
@@ -51,6 +59,6 @@ class AscensionDayTest extends GreeceBaseTestCase implements YasumiTestCaseInter
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

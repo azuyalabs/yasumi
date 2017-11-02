@@ -63,8 +63,12 @@ class ChristmasEveTest extends SlovakiaBaseTestCase implements YasumiTestCaseInt
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Štedrý deň']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Štedrý deň']
+        );
     }
 
 

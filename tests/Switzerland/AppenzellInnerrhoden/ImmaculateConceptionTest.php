@@ -54,8 +54,12 @@ class ImmaculateConceptionTest extends AppenzellInnerrhodenBaseTestCase implemen
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Mariä Empfängnis']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Mariä Empfängnis']
+        );
     }
 
     /**

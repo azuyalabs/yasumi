@@ -44,8 +44,12 @@ class NewYearsDayTest extends AppenzellAusserrhodenBaseTestCase implements Yasum
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Neujahr']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Neujahr']
+        );
     }
 
     /**

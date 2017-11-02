@@ -58,8 +58,12 @@ class SecondChristmasDayTest extends CzechRepublicBaseTestCase implements Yasumi
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => '2. svátek vánoční']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => '2. svátek vánoční']
+        );
     }
 
     /**
@@ -67,6 +71,6 @@ class SecondChristmasDayTest extends CzechRepublicBaseTestCase implements Yasumi
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

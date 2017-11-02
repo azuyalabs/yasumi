@@ -37,8 +37,12 @@ class ChristmasDayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
      */
     public function testHoliday($year, $expected)
     {
-        $this->assertHoliday($this->region, self::HOLIDAY, $year,
-            new DateTime($expected, new DateTimeZone($this->timezone)));
+        $this->assertHoliday(
+            $this->region,
+            self::HOLIDAY,
+            $year,
+            new DateTime($expected, new DateTimeZone($this->timezone))
+        );
     }
 
     /**
@@ -70,8 +74,12 @@ class ChristmasDayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName($this->region, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Christmas Day']);
+        $this->assertTranslatedHolidayName(
+            $this->region,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Christmas Day']
+        );
     }
 
     /**
@@ -79,6 +87,6 @@ class ChristmasDayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

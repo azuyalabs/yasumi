@@ -19,6 +19,7 @@ return [
     'el_GR' => 'Ανάληψη του Χριστού',
     'en_US' => 'Ascension Day',
     'fi_FI' => 'Helatorstai',
+    'fr_BE' => 'Ascension',
     'fr_CH' => 'Ascension',
     'fr_FR' => 'Ascension',
     'it_CH' => 'Ascensione',

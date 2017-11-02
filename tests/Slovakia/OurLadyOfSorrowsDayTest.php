@@ -63,8 +63,12 @@ class OurLadyOfSorrowsDayTest extends SlovakiaBaseTestCase implements YasumiTest
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Sviatok Sedembolestnej Panny Márie']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Sviatok Sedembolestnej Panny Márie']
+        );
     }
 
 

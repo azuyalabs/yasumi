@@ -38,8 +38,12 @@ class ProclamationOfRepublicDayTest extends BrazilBaseTestCase implements Yasumi
     public function testProclamacaoDaRepublicaAfter1889()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-11-15", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-11-15", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -57,8 +61,12 @@ class ProclamationOfRepublicDayTest extends BrazilBaseTestCase implements Yasumi
     public function testTranslation()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $year,
-            [self::LOCALE => 'Dia da Proclamação da República']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            [self::LOCALE => 'Dia da Proclamação da República']
+        );
     }
 
     /**
@@ -67,6 +75,6 @@ class ProclamationOfRepublicDayTest extends BrazilBaseTestCase implements Yasumi
     public function testHolidayType()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OFFICIAL);
     }
 }

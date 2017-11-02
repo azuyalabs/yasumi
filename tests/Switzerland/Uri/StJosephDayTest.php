@@ -56,8 +56,12 @@ class StJosephDayTest extends UriBaseTestCase implements YasumiTestCaseInterface
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Josephstag']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Josephstag']
+        );
     }
 
     /**

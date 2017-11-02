@@ -28,9 +28,9 @@ class VictoriaTest extends AustraliaTest
     protected $year;
 
     /**
-     * Tests if all national holidays in Australia are defined by the provider class
+     * Tests if all official holidays in Victoria (Australia) are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -43,7 +43,7 @@ class VictoriaTest extends AustraliaTest
             'queensBirthday',
             'labourDay',
             'aflGrandFinalFriday'
-        ], $this->region, $this->year, Holiday::TYPE_NATIONAL);
+        ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

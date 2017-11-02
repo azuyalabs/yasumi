@@ -33,8 +33,12 @@ class pentecostMondayTest extends BelgiumBaseTestCase implements YasumiTestCaseI
     public function testHoliday()
     {
         $year = 2020;
-        $this->assertHoliday(self::REGION, 'pentecostMonday', $year,
-            new DateTime("$year-6-1", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            'pentecostMonday',
+            $year,
+            new DateTime("$year-6-1", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -42,8 +46,12 @@ class pentecostMondayTest extends BelgiumBaseTestCase implements YasumiTestCaseI
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Pinkstermaandag']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Pinkstermaandag']
+        );
     }
 
     /**
@@ -51,6 +59,6 @@ class pentecostMondayTest extends BelgiumBaseTestCase implements YasumiTestCaseI
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

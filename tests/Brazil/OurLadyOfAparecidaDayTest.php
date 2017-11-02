@@ -38,8 +38,12 @@ class OurLadyOfAparecidaDayTest extends BrazilBaseTestCase implements YasumiTest
     public function testNossaSenhoraAparecidaAfter1980()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-10-12", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-10-12", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -57,8 +61,12 @@ class OurLadyOfAparecidaDayTest extends BrazilBaseTestCase implements YasumiTest
     public function testTranslation()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $year,
-            [self::LOCALE => 'Dia de Nossa Senhora Aparecida']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            [self::LOCALE => 'Dia de Nossa Senhora Aparecida']
+        );
     }
 
     /**
@@ -67,6 +75,6 @@ class OurLadyOfAparecidaDayTest extends BrazilBaseTestCase implements YasumiTest
     public function testHolidayType()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OFFICIAL);
     }
 }

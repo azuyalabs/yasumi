@@ -72,8 +72,12 @@ class BoxingDayTest extends UnitedKingdomBaseTestCase implements YasumiTestCaseI
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Boxing Day']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Boxing Day']
+        );
     }
 
     /**

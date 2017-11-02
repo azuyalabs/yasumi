@@ -72,8 +72,12 @@ class Extremadura extends Spain
     public function calculateDayOfExtremadura()
     {
         if ($this->year >= 1985) {
-            $this->addHoliday(new Holiday('extremaduraDay', ['es_ES' => 'Día de Extremadura'],
-                new DateTime("$this->year-9-8", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'extremaduraDay',
+                ['es_ES' => 'Día de Extremadura'],
+                new DateTime("$this->year-9-8", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
     }
 }

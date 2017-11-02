@@ -70,8 +70,12 @@ class Andalusia extends Spain
     public function calculateAndalusiaDay()
     {
         if ($this->year >= 1980) {
-            $this->addHoliday(new Holiday('andalusiaDay', ['es_ES' => 'Día de Andalucía'],
-                new DateTime("$this->year-2-28", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'andalusiaDay',
+                ['es_ES' => 'Día de Andalucía'],
+                new DateTime("$this->year-2-28", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
     }
 }

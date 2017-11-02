@@ -6,15 +6,25 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [Unreleased]
 
 ### Added
+- Added Holiday Provider for Lithuania. [\#67](https://github.com/azuyalabs/yasumi/pull/67) ([lukosius](https://github.com/lukosius))
+- Sometimes it is more convenient to be able to create a Yasumi instance by ISO3166 code rather than Yasumi's Holiday Provider name. A new function `createByISO3166_2` has been added to allow for that. [\#62](https://github.com/azuyalabs/yasumi/pull/62) ([huehnerhose](https://github.com/huehnerhose))
+- Added missing translations (de_DE) for Easter Sunday and Whitsunday. [\#60](https://github.com/azuyalabs/yasumi/pull/60) ([IceShack](https://github.com/IceShack))
 - Added Holiday Provider for Hungary. [\#57](https://github.com/azuyalabs/yasumi/pull/57) ([AronNovak](https://github.com/AronNovak))
 - Added Holiday Provider for Switzerland. [\#56](https://github.com/azuyalabs/yasumi/pull/56) ([qligier](https://github.com/qligier))
 
 ### Changed
+- Made calculate method public and use of proper camel casing. [\#73](https://github.com/azuyalabs/yasumi/pull/73) ([patrickreck](https://github.com/patrickreck))
+- Upgraded Faker Library to version 1.7
+- Renamed the holiday type NATIONAL to OFFICIAL. Subregions may have official holidays and the name NATIONAL doesn't suit these situations. [\#65](https://github.com/azuyalabs/yasumi/pull/65)
+- Upgraded PHP-CS-Fixer to version 2.6
 
 ### Fixed
+- Repentance Day is an official holiday in Saxony (Germany) [\#63](https://github.com/azuyalabs/yasumi/issues/63)
+- Corrected the Easter Sunday translation for Austria (de_AT)  [\#66](https://github.com/azuyalabs/yasumi/issues/66)
+- Corrected Hungary unit test to ensure holidays that are established at a particular year are handled as such.
+- Added missing Summer Bank Holiday for the United Kingdom. [\#64](https://github.com/azuyalabs/yasumi/issues/64)
 
 ### Removed
-
 
 
 ## [1.6.1] - 2017-02-07
@@ -51,7 +61,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [1.5.0] - 2016-11-25
 ### Added
 - Added Holiday Provider for Australia (and the sub-region of Victoria). [\#38](https://github.com/azuyalabs/yasumi/pull/38) ([brucealdridge](https://github.com/brucealdridge))
-- You can now also use your own holiday providers in addition to the included holiday providers. 
+- You can now also use your own holiday providers in addition to the included holiday providers.
   A very helpful improvement if Yasumi does not include your provider (yet), but you want to use yours! [\#29](https://github.com/azuyalabs/yasumi/pull/29) ([navarr](https://github.com/navarr))
 - Added Holiday Provider for Portugal. [\#44](https://github.com/azuyalabs/yasumi/pull/44) ([rvelhote](https://github.com/rvelhote))
 - Added Holiday Provider for Ukraine. [\#41](https://github.com/azuyalabs/yasumi/pull/41) ([madmis](https://github.com/madmis))
@@ -130,7 +140,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Added Holiday Provider for Finland
 - New function 'isWorkingDay' added that determines whether a date represents a working day or not. A working day is
   considered a date that is neither a holiday nor falls into the weekend.
-  
+
 ### Changed
 - Refactoring and cleanup of unit tests
 
@@ -152,7 +162,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Allow for name spaced holiday providers.
 - Added test for translation of Ash Wednesday and Valentinesday in the Netherlands.
 - Added test to check whether all holidays for a Holiday Provider are defined by the respective provider class.
-  
+
 ### Changed
 - Updated some English, Italian, French and Dutch translations.
 - Moved all other holiday calculations in Netherlands and France to individual methods.

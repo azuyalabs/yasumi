@@ -44,8 +44,12 @@ class NewYearsDayTest extends JuraBaseTestCase implements YasumiTestCaseInterfac
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Nouvel An']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Nouvel An']
+        );
     }
 
     /**

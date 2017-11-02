@@ -72,12 +72,17 @@ class Yasumi
         $ds = DIRECTORY_SEPARATOR;
 
         $providers     = [];
-        $filesIterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(__DIR__ . $ds . 'Provider',
-            FilesystemIterator::SKIP_DOTS), RecursiveIteratorIterator::SELF_FIRST);
+        $filesIterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(
+            __DIR__ . $ds . 'Provider',
+            FilesystemIterator::SKIP_DOTS
+        ), RecursiveIteratorIterator::SELF_FIRST);
 
         foreach ($filesIterator as $file) {
-            if ($file->isDir() || $file->getExtension() !== 'php' || in_array($file->getBasename('.php'),
-                    self::$ignoredProvider, true)
+            if ($file->isDir() || $file->getExtension() !== 'php' || in_array(
+                $file->getBasename('.php'),
+                    self::$ignoredProvider,
+                true
+            )
             ) {
                 continue;
             }

@@ -55,8 +55,12 @@ class EpiphanyTest extends BavariaBaseTestCase implements YasumiTestCaseInterfac
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Heilige 3 Könige']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Heilige 3 Könige']
+        );
     }
 
     /**

@@ -61,9 +61,12 @@ class Ireland extends AbstractProvider
         $this->calculateStPatricksDay();
         $this->calculateMayDay();
         $this->calculateJuneHoliday();
-        $this->addHoliday(new Holiday('augustHoliday',
+        $this->addHoliday(new Holiday(
+            'augustHoliday',
             ['en_IE' => 'August Holiday', 'ga_IE' => 'Lá Saoire i mí Lúnasa'],
-            new DateTime("next monday $this->year-7-31", new DateTimeZone($this->timezone)), $this->locale));
+            new DateTime("next monday $this->year-7-31", new DateTimeZone($this->timezone)),
+            $this->locale
+        ));
         $this->calculateOctoberHoliday();
     }
 
@@ -137,8 +140,12 @@ class Ireland extends AbstractProvider
      */
     public function calculateChristmasDay()
     {
-        $holiday = new Holiday('christmasDay', ['en_IE' => 'Christmas Day', 'ga_IE' => 'Lá Nollag'],
-            new DateTime($this->year . '-12-25', new DateTimeZone($this->timezone)), $this->locale);
+        $holiday = new Holiday(
+            'christmasDay',
+            ['en_IE' => 'Christmas Day', 'ga_IE' => 'Lá Nollag'],
+            new DateTime($this->year . '-12-25', new DateTimeZone($this->timezone)),
+            $this->locale
+        );
 
         $this->addHoliday($holiday);
 
@@ -167,8 +174,12 @@ class Ireland extends AbstractProvider
      */
     public function calculateStStephensDay()
     {
-        $holiday = new Holiday('stStephensDay', [],
-            new DateTime($this->year . '-12-26', new DateTimeZone($this->timezone)), $this->locale);
+        $holiday = new Holiday(
+            'stStephensDay',
+            [],
+            new DateTime($this->year . '-12-26', new DateTimeZone($this->timezone)),
+            $this->locale
+        );
 
         $this->addHoliday($holiday);
 
@@ -202,8 +213,12 @@ class Ireland extends AbstractProvider
         if ($this->year < 1903) {
             return;
         }
-        $holiday = new Holiday('stPatricksDay', ['en_IE' => 'St. Patrick\'s Day', 'ga_IE' => 'Lá Fhéile Pádraig'],
-            new DateTime($this->year . '-3-17', new DateTimeZone($this->timezone)), $this->locale);
+        $holiday = new Holiday(
+            'stPatricksDay',
+            ['en_IE' => 'St. Patrick\'s Day', 'ga_IE' => 'Lá Fhéile Pádraig'],
+            new DateTime($this->year . '-3-17', new DateTimeZone($this->timezone)),
+            $this->locale
+        );
 
         $this->addHoliday($holiday);
 
@@ -238,8 +253,12 @@ class Ireland extends AbstractProvider
             return;
         }
 
-        $this->addHoliday(new Holiday('mayDay', ['en_IE' => 'May Day', 'ga_IE' => 'Lá Bealtaine'],
-            new DateTime("next monday $this->year-4-30", new DateTimeZone($this->timezone)), $this->locale));
+        $this->addHoliday(new Holiday(
+            'mayDay',
+            ['en_IE' => 'May Day', 'ga_IE' => 'Lá Bealtaine'],
+            new DateTime("next monday $this->year-4-30", new DateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /**
@@ -259,9 +278,12 @@ class Ireland extends AbstractProvider
             return;
         }
 
-        $this->addHoliday(new Holiday('juneHoliday',
+        $this->addHoliday(new Holiday(
+            'juneHoliday',
             ['en_IE' => 'June Holiday', 'ga_IE' => 'Lá Saoire i mí an Mheithimh'],
-            new DateTime("next monday $this->year-5-31", new DateTimeZone($this->timezone)), $this->locale));
+            new DateTime("next monday $this->year-5-31", new DateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /**
@@ -280,8 +302,11 @@ class Ireland extends AbstractProvider
             return;
         }
 
-        $this->addHoliday(new Holiday('octoberHoliday',
+        $this->addHoliday(new Holiday(
+            'octoberHoliday',
             ['en_IE' => 'October Holiday', 'ga_IE' => 'Lá Saoire i mí Dheireadh Fómhair'],
-            new DateTime("previous monday $this->year-11-01", new DateTimeZone($this->timezone)), $this->locale));
+            new DateTime("previous monday $this->year-11-01", new DateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 }

@@ -39,8 +39,12 @@ class MaundyThursdayTest extends SpainBaseTestCase implements YasumiTestCaseInte
     public function testHoliday()
     {
         $year = 1977;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-4-7", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-4-7", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -48,8 +52,12 @@ class MaundyThursdayTest extends SpainBaseTestCase implements YasumiTestCaseInte
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Jueves Santo']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Jueves Santo']
+        );
     }
 
     /**

@@ -33,8 +33,12 @@ class InternationalWorkersDayTest extends BrazilBaseTestCase implements YasumiTe
     public function testInternationalWorkersDay()
     {
         $year = 1927;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-5-1", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-5-1", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -42,8 +46,12 @@ class InternationalWorkersDayTest extends BrazilBaseTestCase implements YasumiTe
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Dia internacional do trabalhador']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Dia internacional do trabalhador']
+        );
     }
 
     /**
@@ -51,6 +59,6 @@ class InternationalWorkersDayTest extends BrazilBaseTestCase implements YasumiTe
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

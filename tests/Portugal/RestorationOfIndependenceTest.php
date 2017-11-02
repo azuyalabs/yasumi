@@ -100,8 +100,12 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Yasu
     public function testTranslation()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $year,
-            [self::LOCALE => 'Restauração da Independência']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            [self::LOCALE => 'Restauração da Independência']
+        );
     }
 
     /**
@@ -111,10 +115,10 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Yasu
     {
         // After establishment and before abolishment
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::HOLIDAY_YEAR_ABOLISHED - 1);
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OFFICIAL);
 
         // After restoration
         $this->generateRandomYear(self::HOLIDAY_YEAR_RESTORED);
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OFFICIAL);
     }
 }

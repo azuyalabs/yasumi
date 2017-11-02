@@ -42,8 +42,12 @@ class EasterTest extends BrazilBaseTestCase implements YasumiTestCaseInterface
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Páscoa']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Páscoa']
+        );
     }
 
     /**

@@ -25,9 +25,9 @@ class SchleswigHolsteinTest extends SchleswigHolsteinBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Schleswig-Holstein (Germany) are defined by the provider class
+     * Tests if all official holidays in Schleswig-Holstein (Germany) are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -41,7 +41,7 @@ class SchleswigHolsteinTest extends SchleswigHolsteinBaseTestCase
             'germanUnityDay',
             'christmasDay',
             'secondChristmasDay'
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

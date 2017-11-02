@@ -71,8 +71,12 @@ class CanaryIslands extends Spain
     public function calculateCanaryIslandsDay()
     {
         if ($this->year >= 1984) {
-            $this->addHoliday(new Holiday('canaryIslandsDay', ['es_ES' => 'Día de las Canarias'],
-                new DateTime("$this->year-5-30", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'canaryIslandsDay',
+                ['es_ES' => 'Día de las Canarias'],
+                new DateTime("$this->year-5-30", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
     }
 }

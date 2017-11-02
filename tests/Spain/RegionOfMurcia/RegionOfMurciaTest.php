@@ -25,9 +25,9 @@ class RegionOfMurciaTest extends RegionOfMurciaBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in the Region of Murcia are defined by the provider class
+     * Tests if all official holidays in the Region of Murcia (Spain) are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -42,7 +42,7 @@ class RegionOfMurciaTest extends RegionOfMurciaBaseTestCase
             'constitutionDay',
             'immaculateConception',
             'christmasDay'
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
@@ -50,8 +50,12 @@ class RegionOfMurciaTest extends RegionOfMurciaBaseTestCase
      */
     public function testObservedHolidays()
     {
-        $this->assertDefinedHolidays(['stJosephsDay', 'maundyThursday'], self::REGION, $this->year,
-            Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays(
+            ['stJosephsDay', 'maundyThursday'],
+            self::REGION,
+            $this->year,
+            Holiday::TYPE_OBSERVANCE
+        );
     }
 
     /**

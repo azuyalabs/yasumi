@@ -38,8 +38,12 @@ class PolytechnioTest extends GreeceBaseTestCase implements YasumiTestCaseInterf
     public function testHoliday()
     {
         $year = 2018;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-11-17", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-11-17", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -47,8 +51,11 @@ class PolytechnioTest extends GreeceBaseTestCase implements YasumiTestCaseInterf
      */
     public function testHolidayBeforeEstablishment()
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+        );
     }
 
     /**
@@ -56,8 +63,12 @@ class PolytechnioTest extends GreeceBaseTestCase implements YasumiTestCaseInterf
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Πολυτεχνείο']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => 'Πολυτεχνείο']
+        );
     }
 
     /**
@@ -65,7 +76,11 @@ class PolytechnioTest extends GreeceBaseTestCase implements YasumiTestCaseInterf
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            Holiday::TYPE_OTHER);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_OTHER
+        );
     }
 }

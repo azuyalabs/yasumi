@@ -38,8 +38,12 @@ class GoodFridayTest extends AustraliaBaseTestCase implements YasumiTestCaseInte
      */
     public function testHoliday($year, $expected)
     {
-        $this->assertHoliday($this->region, self::HOLIDAY, $year,
-            new DateTime($expected, new DateTimeZone($this->timezone)));
+        $this->assertHoliday(
+            $this->region,
+            self::HOLIDAY,
+            $year,
+            new DateTime($expected, new DateTimeZone($this->timezone))
+        );
     }
 
     /**
@@ -66,8 +70,12 @@ class GoodFridayTest extends AustraliaBaseTestCase implements YasumiTestCaseInte
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName($this->region, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Good Friday']);
+        $this->assertTranslatedHolidayName(
+            $this->region,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Good Friday']
+        );
     }
 
     /**
@@ -75,6 +83,6 @@ class GoodFridayTest extends AustraliaBaseTestCase implements YasumiTestCaseInte
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

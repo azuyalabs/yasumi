@@ -57,8 +57,12 @@ class BettagsMontagTest extends NeuchatelBaseTestCase implements YasumiTestCaseI
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(1832),
-            [self::LOCALE => 'Jeûne fédéral']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(1832),
+            [self::LOCALE => 'Jeûne fédéral']
+        );
     }
 
     /**

@@ -128,10 +128,14 @@ class USA extends AbstractProvider
          * @link http://en.wikipedia.org/wiki/Labor_Day
          */
         if ($this->year >= 1887) {
-            $this->addHoliday(new Holiday('labourDay', [
+            $this->addHoliday(new Holiday(
+                'labourDay',
+                [
                 'en_US' => 'Labour Day',
-            ], new DateTime("first monday of september $this->year", new DateTimeZone($this->timezone)),
-                $this->locale));
+            ],
+                new DateTime("first monday of september $this->year", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
 
         /**
@@ -183,10 +187,14 @@ class USA extends AbstractProvider
          * @link http://en.wikipedia.org/wiki/Thanksgiving_(United_States)
          */
         if ($this->year >= 1863) {
-            $this->addHoliday(new Holiday('thanksgivingDay', [
+            $this->addHoliday(new Holiday(
+                'thanksgivingDay',
+                [
                 'en_US' => 'Thanksgiving Day',
-            ], new DateTime("fourth thursday of november $this->year", new DateTimeZone($this->timezone)),
-                $this->locale));
+            ],
+                new DateTime("fourth thursday of november $this->year", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
 
         $this->calculateSubstituteHolidays();
@@ -210,8 +218,11 @@ class USA extends AbstractProvider
         while ($datesIterator->valid()) {
 
             // Only process New Year's Day, Independence Day, or Christmas Day
-            if (in_array($datesIterator->current()->shortName, ['newYearsDay', 'independenceDay', 'christmasDay'],
-                true)) {
+            if (in_array(
+                $datesIterator->current()->shortName,
+                ['newYearsDay', 'independenceDay', 'christmasDay'],
+                true
+            )) {
 
                 // Substitute holiday is on a Monday in case the holiday falls on a Sunday
                 if (0 === (int)$datesIterator->current()->format('w')) {

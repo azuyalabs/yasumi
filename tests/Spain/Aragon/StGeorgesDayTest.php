@@ -33,8 +33,12 @@ class StGeorgesDayTest extends AragonBaseTestCase implements YasumiTestCaseInter
     public function testHoliday()
     {
         $year = $this->generateRandomYear();
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-4-23", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-4-23", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -42,8 +46,12 @@ class StGeorgesDayTest extends AragonBaseTestCase implements YasumiTestCaseInter
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'San Jorge']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'San Jorge']
+        );
     }
 
     /**

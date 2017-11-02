@@ -38,7 +38,7 @@ trait YasumiBase
      * @param string $provider               the holiday provider (i.e. country/state) for which the holidays need to be
      *                                       tested
      * @param int    $year                   holiday calendar year
-     * @param string $type                   The type of holiday. Use the following constants: TYPE_NATIONAL,
+     * @param string $type                   The type of holiday. Use the following constants: TYPE_OFFICIAL,
      *                                       TYPE_OBSERVANCE, TYPE_SEASON, TYPE_BANK or TYPE_OTHER.
      *
      * @throws \InvalidArgumentException
@@ -50,7 +50,7 @@ trait YasumiBase
         $holidays = Yasumi::create($provider, $year);
 
         switch ($type) {
-            case Holiday::TYPE_NATIONAL:
+            case Holiday::TYPE_OFFICIAL:
                 $holidays = new OfficialHolidaysFilter($holidays->getIterator());
                 break;
             case Holiday::TYPE_OBSERVANCE:
@@ -232,6 +232,55 @@ trait YasumiBase
         for ($y = 1; $y <= $iterations; $y++) {
             $year   = Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
             $data[] = [$year, new DateTime("$year-$month-$day", new DateTimeZone($timezone))];
+        }
+
+        return $data;
+    }
+
+    /**
+     * Returns a list of random easter test dates used for assertion of holidays.
+     *
+     * @param string $timezone   name of the timezone for which the dates need to be generated
+     * @param int    $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
+     * @param int    $range      year range from which dates will be generated (default: 1000)
+     *
+     * @return array list of random easter test dates used for assertion of holidays.
+     */
+    public function generateRandomEasterDates($timezone = 'UTC', $iterations = 10, $range = 1000)
+    {
+        $data = [];
+
+        for ($i = 1; $i <= $iterations; ++$i) {
+            $year = Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
+            $date = $this->calculateEaster($year, $timezone);
+
+            $data[] = [$year, $date->format('Y-m-d')];
+        }
+
+        return $data;
+    }
+
+    /**
+     * Returns a list of random Easter Monday test dates used for assertion of holidays.
+     *
+     * @param string $timezone   name of the timezone for which the dates need to be generated
+     * @param int    $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
+     * @param int    $range      year range from which dates will be generated (default: 1000)
+     *
+     * @return array list of random Easter Monday test dates used for assertion of holidays.
+     *
+     * @throws \Exception
+     */
+    public function generateRandomEasterMondayDates($timezone = 'UTC', $iterations = 10, $range = 1000)
+    {
+        $data = [];
+
+        for ($i = 1; $i <= $iterations; ++$i) {
+            $year = Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
+            $date = $this->calculateEaster($year, $timezone);
+            $date->add(new DateInterval('P1D'));
+
+            $data[] = [$year, $date->format('Y-m-d')];
         }
 
         return $data;

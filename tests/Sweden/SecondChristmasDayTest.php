@@ -54,8 +54,12 @@ class SecondChristmasDayTest extends SwedenBaseTestCase implements YasumiTestCas
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'annandag jul']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'annandag jul']
+        );
     }
 
     /**
@@ -63,6 +67,6 @@ class SecondChristmasDayTest extends SwedenBaseTestCase implements YasumiTestCas
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

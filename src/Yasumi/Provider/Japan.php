@@ -92,8 +92,12 @@ class Japan extends AbstractProvider
          * National Foundation Day. National Foundation Day is held on February 11th and established since 1966.
          */
         if ($this->year >= 1966) {
-            $holiday = new Holiday('nationalFoundationDay', ['en_US' => 'National Foundation Day', 'ja_JP' => '建国記念の日'],
-                new DateTime("$this->year-2-11", new DateTimeZone($this->timezone)), $this->locale);
+            $holiday = new Holiday(
+                'nationalFoundationDay',
+                ['en_US' => 'National Foundation Day', 'ja_JP' => '建国記念の日'],
+                new DateTime("$this->year-2-11", new DateTimeZone($this->timezone)),
+                $this->locale
+            );
             $this->addHoliday($holiday);
         }
 
@@ -101,50 +105,72 @@ class Japan extends AbstractProvider
          * Showa Day. Showa Day is held on April 29th and established since 2007.
          */
         if ($this->year >= 2007) {
-            $this->addHoliday(new Holiday('showaDay', ['en_US' => 'Showa Day', 'ja_JP' => '昭和の日'],
-                new DateTime("$this->year-4-29", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'showaDay',
+                ['en_US' => 'Showa Day', 'ja_JP' => '昭和の日'],
+                new DateTime("$this->year-4-29", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
 
         /**
          * Constitution Memorial Day. Constitution Memorial Day is held on May 3rd and established since 1948.
          */
         if ($this->year >= 1948) {
-            $this->addHoliday(new Holiday('constitutionMemorialDay',
+            $this->addHoliday(new Holiday(
+                'constitutionMemorialDay',
                 ['en_US' => 'Constitution Memorial Day', 'ja_JP' => '憲法記念日'],
-                new DateTime("$this->year-5-3", new DateTimeZone($this->timezone)), $this->locale));
+                new DateTime("$this->year-5-3", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
 
         /**
          * Children's Day. Children's Day is held on May 5th and established since 1948.
          */
         if ($this->year >= 1948) {
-            $this->addHoliday(new Holiday('childrensDay', ['en_US' => 'Children\'s Day', 'ja_JP' => '子供の日'],
-                new DateTime("$this->year-5-5", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'childrensDay',
+                ['en_US' => 'Children\'s Day', 'ja_JP' => '子供の日'],
+                new DateTime("$this->year-5-5", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
 
         /**
          * Mountain Day. Mountain Day is held on August 11th and established since 2016.
          */
         if ($this->year >= 2016) {
-            $this->addHoliday(new Holiday('mountainDay', ['en_US' => 'Mountain Day', 'ja_JP' => '山の日'],
-                new DateTime("$this->year-8-11", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'mountainDay',
+                ['en_US' => 'Mountain Day', 'ja_JP' => '山の日'],
+                new DateTime("$this->year-8-11", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
 
         /**
          * Culture Day. Culture Day is held on November 11th and established since 1948.
          */
         if ($this->year >= 1948) {
-            $this->addHoliday(new Holiday('cultureDay', ['en_US' => 'Culture Day', 'ja_JP' => '文化の日'],
-                new DateTime("$this->year-11-3", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'cultureDay',
+                ['en_US' => 'Culture Day', 'ja_JP' => '文化の日'],
+                new DateTime("$this->year-11-3", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
 
         /**
          * Labor Thanksgiving Day. Labor Thanksgiving Day is held on November 23rd and established since 1948.
          */
         if ($this->year >= 1948) {
-            $this->addHoliday(new Holiday('laborThanksgivingDay',
+            $this->addHoliday(new Holiday(
+                'laborThanksgivingDay',
                 ['en_US' => 'Labor Thanksgiving Day', 'ja_JP' => '勤労感謝の日'],
-                new DateTime("$this->year-11-23", new DateTimeZone($this->timezone)), $this->locale));
+                new DateTime("$this->year-11-23", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
 
         /**
@@ -152,8 +178,12 @@ class Japan extends AbstractProvider
          * Prior to the death of Emperor Hirohito in 1989, this holiday was celebrated on April 29. See also "Shōwa Day".
          */
         if ($this->year >= 1989) {
-            $this->addHoliday(new Holiday('emperorsBirthday', ['en_US' => 'Emperors Birthday', 'ja_JP' => '天皇誕生日'],
-                new DateTime("$this->year-12-23", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'emperorsBirthday',
+                ['en_US' => 'Emperors Birthday', 'ja_JP' => '天皇誕生日'],
+                new DateTime("$this->year-12-23", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
 
         $this->calculateVernalEquinoxDay();
@@ -195,8 +225,12 @@ class Japan extends AbstractProvider
         }
 
         if (null !== $day) {
-            $this->addHoliday(new Holiday('vernalEquinoxDay', ['en_US' => 'Vernal Equinox Day', 'ja_JP' => '春分の日'],
-                new DateTime("$this->year-3-$day", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'vernalEquinoxDay',
+                ['en_US' => 'Vernal Equinox Day', 'ja_JP' => '春分の日'],
+                new DateTime("$this->year-3-$day", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
     }
 
@@ -218,8 +252,12 @@ class Japan extends AbstractProvider
             $date = new DateTime("$this->year-1-15", new DateTimeZone($this->timezone));
         }
         if (null !== $date) {
-            $this->addHoliday(new Holiday('comingOfAgeDay', ['en_US' => 'Coming of Age Day', 'ja_JP' => '成人の日'], $date,
-                $this->locale));
+            $this->addHoliday(new Holiday(
+                'comingOfAgeDay',
+                ['en_US' => 'Coming of Age Day', 'ja_JP' => '成人の日'],
+                $date,
+                $this->locale
+            ));
         }
     }
 
@@ -240,8 +278,12 @@ class Japan extends AbstractProvider
             $date = new DateTime("$this->year-4-29", new DateTimeZone($this->timezone));
         }
         if (null !== $date) {
-            $this->addHoliday(new Holiday('greeneryDay', ['en_US' => 'Greenery Day', 'ja_JP' => '緑の日'], $date,
-                $this->locale));
+            $this->addHoliday(new Holiday(
+                'greeneryDay',
+                ['en_US' => 'Greenery Day', 'ja_JP' => '緑の日'],
+                $date,
+                $this->locale
+            ));
         }
     }
 
@@ -262,8 +304,12 @@ class Japan extends AbstractProvider
             $date = new DateTime("$this->year-7-20", new DateTimeZone($this->timezone));
         }
         if (null !== $date) {
-            $this->addHoliday(new Holiday('marineDay', ['en_US' => 'Marine Day', 'ja_JP' => '海の日'], $date,
-                $this->locale));
+            $this->addHoliday(new Holiday(
+                'marineDay',
+                ['en_US' => 'Marine Day', 'ja_JP' => '海の日'],
+                $date,
+                $this->locale
+            ));
         }
     }
 
@@ -285,8 +331,12 @@ class Japan extends AbstractProvider
             $date = new DateTime("$this->year-9-15", new DateTimeZone($this->timezone));
         }
         if (null !== $date) {
-            $this->addHoliday(new Holiday('respectfortheAgedDay',
-                ['en_US' => 'Respect for the Aged Day', 'ja_JP' => '敬老の日'], $date, $this->locale));
+            $this->addHoliday(new Holiday(
+                'respectfortheAgedDay',
+                ['en_US' => 'Respect for the Aged Day', 'ja_JP' => '敬老の日'],
+                $date,
+                $this->locale
+            ));
         }
     }
 
@@ -308,8 +358,12 @@ class Japan extends AbstractProvider
             $date = new DateTime("$this->year-10-10", new DateTimeZone($this->timezone));
         }
         if (null !== $date) {
-            $this->addHoliday(new Holiday('healthandSportsDay', ['en_US' => 'Health And Sports Day', 'ja_JP' => '体育の日'],
-                $date, $this->locale));
+            $this->addHoliday(new Holiday(
+                'healthandSportsDay',
+                ['en_US' => 'Health And Sports Day', 'ja_JP' => '体育の日'],
+                $date,
+                $this->locale
+            ));
         }
     }
 
@@ -341,8 +395,12 @@ class Japan extends AbstractProvider
         }
 
         if (null !== $day) {
-            $this->addHoliday(new Holiday('autumnalEquinoxDay', ['en_US' => 'Autumnal Equinox Day', 'ja_JP' => '秋分の日'],
-                new DateTime("$this->year-9-$day", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'autumnalEquinoxDay',
+                ['en_US' => 'Autumnal Equinox Day', 'ja_JP' => '秋分の日'],
+                new DateTime("$this->year-9-$day", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
     }
 

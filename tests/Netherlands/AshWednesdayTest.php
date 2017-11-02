@@ -33,8 +33,12 @@ class AshWednesdayTest extends NetherlandsBaseTestCase implements YasumiTestCase
     public function testHoliday()
     {
         $year = 1999;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-2-17", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-2-17", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -42,8 +46,12 @@ class AshWednesdayTest extends NetherlandsBaseTestCase implements YasumiTestCase
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Aswoensdag']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Aswoensdag']
+        );
     }
 
     /**

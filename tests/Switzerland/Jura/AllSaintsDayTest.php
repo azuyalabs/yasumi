@@ -44,8 +44,12 @@ class AllSaintsDayTest extends JuraBaseTestCase implements YasumiTestCaseInterfa
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Toussaint']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Toussaint']
+        );
     }
 
     /**

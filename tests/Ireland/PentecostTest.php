@@ -38,8 +38,12 @@ class PentecostTest extends IrelandBaseTestCase implements YasumiTestCaseInterfa
      */
     public function testHoliday($year, $expected)
     {
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime($expected, new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime($expected, new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -67,10 +71,18 @@ class PentecostTest extends IrelandBaseTestCase implements YasumiTestCaseInterfa
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Whitsunday']);
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['ga_IE' => 'Domhnach Cincíse']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Whitsunday']
+        );
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            ['ga_IE' => 'Domhnach Cincíse']
+        );
     }
 
     /**

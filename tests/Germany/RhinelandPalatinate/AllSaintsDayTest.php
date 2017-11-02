@@ -54,8 +54,12 @@ class AllSaintsDayTest extends RhinelandPalatinateBaseTestCase implements Yasumi
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Allerheiligen']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Allerheiligen']
+        );
     }
 
     /**

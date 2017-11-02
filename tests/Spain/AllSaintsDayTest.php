@@ -54,8 +54,12 @@ class AllSaintsDayTest extends SpainBaseTestCase implements YasumiTestCaseInterf
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Día de todos los Santos']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Día de todos los Santos']
+        );
     }
 
     /**
@@ -63,6 +67,6 @@ class AllSaintsDayTest extends SpainBaseTestCase implements YasumiTestCaseInterf
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

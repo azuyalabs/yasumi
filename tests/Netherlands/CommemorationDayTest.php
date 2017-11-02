@@ -37,8 +37,11 @@ class CommemorationDayTest extends NetherlandsBaseTestCase implements YasumiTest
      */
     public function testCommemorationDayBefore1947()
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1));
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+        );
     }
 
     /**
@@ -47,8 +50,12 @@ class CommemorationDayTest extends NetherlandsBaseTestCase implements YasumiTest
     public function testCommemorationDayOnAfter1947()
     {
         $year = 2105;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-5-4", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-5-4", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -56,8 +63,12 @@ class CommemorationDayTest extends NetherlandsBaseTestCase implements YasumiTest
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR), [self::LOCALE => 'Dodenherdenking']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => 'Dodenherdenking']
+        );
     }
 
     /**
@@ -65,7 +76,11 @@ class CommemorationDayTest extends NetherlandsBaseTestCase implements YasumiTest
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            Holiday::TYPE_OBSERVANCE);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_OBSERVANCE
+        );
     }
 }

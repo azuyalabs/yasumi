@@ -54,8 +54,12 @@ class NewYearsDayTest extends PolandBaseTestCase implements YasumiTestCaseInterf
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Nowy Rok']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Nowy Rok']
+        );
     }
 
     /**
@@ -63,6 +67,6 @@ class NewYearsDayTest extends PolandBaseTestCase implements YasumiTestCaseInterf
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

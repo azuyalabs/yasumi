@@ -25,9 +25,9 @@ class CastileAndLeonTest extends CastileAndLeonBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Castile And Leon are defined by the provider class
+     * Tests if all official holidays in Castile And Leon (Spain) are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -42,7 +42,7 @@ class CastileAndLeonTest extends CastileAndLeonBaseTestCase
             'constitutionDay',
             'immaculateConception',
             'christmasDay'
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

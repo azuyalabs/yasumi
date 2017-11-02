@@ -52,8 +52,12 @@ class InternationalWomensDayTest extends UkraineBaseTestCase implements YasumiTe
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Міжнародний жіночий день']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Міжнародний жіночий день']
+        );
     }
 
     /**
@@ -61,6 +65,6 @@ class InternationalWomensDayTest extends UkraineBaseTestCase implements YasumiTe
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

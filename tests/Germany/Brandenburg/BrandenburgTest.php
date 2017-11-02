@@ -25,9 +25,9 @@ class BrandenburgTest extends BrandenburgBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Brandenburg (Germany) are defined by the provider class
+     * Tests if all official holidays in Brandenburg (Germany) are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $holidays = [
             'newYearsDay',
@@ -50,7 +50,7 @@ class BrandenburgTest extends BrandenburgBaseTestCase
             $holidays[] = 'reformationDay';
         }
 
-        $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

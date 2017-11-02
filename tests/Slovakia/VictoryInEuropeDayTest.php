@@ -63,8 +63,12 @@ class VictoryInEuropeDayTest extends SlovakiaBaseTestCase implements YasumiTestC
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Deň víťazstva nad fašizmom']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Deň víťazstva nad fašizmom']
+        );
     }
 
 

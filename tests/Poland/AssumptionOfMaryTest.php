@@ -54,8 +54,12 @@ class AssumptionOfMaryTest extends PolandBaseTestCase implements YasumiTestCaseI
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Wniebowzięcie Najświętszej Marii Panny']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Wniebowzięcie Najświętszej Marii Panny']
+        );
     }
 
     /**
@@ -63,6 +67,6 @@ class AssumptionOfMaryTest extends PolandBaseTestCase implements YasumiTestCaseI
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

@@ -72,8 +72,12 @@ class CastileAndLeon extends Spain
     public function calculateCastileAndLeonDay()
     {
         if ($this->year >= 1976) {
-            $this->addHoliday(new Holiday('castileAndLeonDay', ['es_ES' => 'Día de Castilla y León'],
-                new DateTime("$this->year-4-23", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'castileAndLeonDay',
+                ['es_ES' => 'Día de Castilla y León'],
+                new DateTime("$this->year-4-23", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
     }
 }

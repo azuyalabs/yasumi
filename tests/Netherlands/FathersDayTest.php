@@ -33,8 +33,12 @@ class FathersDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseIn
     public function testHoliday()
     {
         $year = $this->generateRandomYear();
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("third sunday of june $year", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("third sunday of june $year", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -42,8 +46,12 @@ class FathersDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseIn
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Vaderdag']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Vaderdag']
+        );
     }
 
     /**

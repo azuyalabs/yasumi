@@ -39,8 +39,12 @@ class EasterMondayTest extends SpainBaseTestCase implements YasumiTestCaseInterf
     public function testHoliday()
     {
         $year = 2216;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-4-8", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-4-8", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -48,8 +52,12 @@ class EasterMondayTest extends SpainBaseTestCase implements YasumiTestCaseInterf
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Lunes de Pascua']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Lunes de Pascua']
+        );
     }
 
     /**

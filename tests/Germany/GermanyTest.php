@@ -25,9 +25,9 @@ class GermanyTest extends GermanyBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Finland are defined by the provider class
+     * Tests if all official holidays in Finland are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $this->assertDefinedHolidays([
             'ascensionDay',
@@ -39,7 +39,7 @@ class GermanyTest extends GermanyBaseTestCase
             'newYearsDay',
             'pentecostMonday',
             'secondChristmasDay'
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

@@ -16,6 +16,7 @@ return [
     'el_GR' => 'Αγίου Βαλεντίνου',
     'en_US' => 'Valentine\'s Day',
     'es_ES' => 'San Valentín',
+    'fr_BE' => 'Saint-Valentin',
     'fr_CH' => 'Saint-Valentin',
     'it_CH' => 'San Valentino',
     'ja_JP' => 'バレンタイン·デー',

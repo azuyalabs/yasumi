@@ -54,8 +54,12 @@ class HalloweenTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Halloween']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Halloween']
+        );
     }
 
     /**

@@ -54,8 +54,12 @@ class EpiphanyTest extends FinlandBaseTestCase implements YasumiTestCaseInterfac
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Loppiainen']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Loppiainen']
+        );
     }
 
     /**
@@ -63,6 +67,6 @@ class EpiphanyTest extends FinlandBaseTestCase implements YasumiTestCaseInterfac
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

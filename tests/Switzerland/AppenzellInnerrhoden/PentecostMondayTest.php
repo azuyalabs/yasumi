@@ -33,8 +33,12 @@ class PentecostMondayTest extends AppenzellInnerrhodenBaseTestCase implements Ya
     public function testPentecostMonday()
     {
         $year = 1977;
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year,
-            new DateTime("$year-5-30", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-5-30", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -42,8 +46,12 @@ class PentecostMondayTest extends AppenzellInnerrhodenBaseTestCase implements Ya
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Pfingstmontag']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Pfingstmontag']
+        );
     }
 
     /**

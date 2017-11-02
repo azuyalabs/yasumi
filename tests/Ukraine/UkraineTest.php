@@ -26,9 +26,9 @@ class UkraineTest extends UkraineBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Ukraine are defined by the provider class
+     * Tests if all official holidays in Ukraine are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -42,7 +42,7 @@ class UkraineTest extends UkraineBaseTestCase
             'constitutionDay',
             'independenceDay',
             'defenderOfUkraineDay',
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

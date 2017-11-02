@@ -25,9 +25,9 @@ class MoselleTest extends MoselleBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Moselle are defined by the provider class
+     * Tests if all official holidays in Moselle are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -43,7 +43,7 @@ class MoselleTest extends MoselleBaseTestCase
             'christmasDay',
             'stStephensDay',
             'bastilleDay'
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

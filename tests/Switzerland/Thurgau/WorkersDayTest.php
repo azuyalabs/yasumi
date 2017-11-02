@@ -64,8 +64,12 @@ class WorkersDayTest extends ThurgauBaseTestCase implements YasumiTestCaseInterf
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY,
-            $this->generateRandomYear(), [self::LOCALE => 'Tag der Arbeit']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Tag der Arbeit']
+        );
     }
 
     /**
@@ -73,7 +77,11 @@ class WorkersDayTest extends ThurgauBaseTestCase implements YasumiTestCaseInterf
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            Holiday::TYPE_OTHER);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            Holiday::TYPE_OTHER
+        );
     }
 }

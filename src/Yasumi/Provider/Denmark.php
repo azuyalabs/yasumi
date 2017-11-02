@@ -77,8 +77,12 @@ class Denmark extends AbstractProvider
         $easter = $this->calculateEaster($this->year, $this->timezone)->format('Y-m-d');
 
         if ($this->year >= 1686) {
-            $this->addHoliday(new Holiday('greatPrayerDay', ['da_DK' => 'Store Bededag'],
-                new DateTime("fourth friday $easter", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'greatPrayerDay',
+                ['da_DK' => 'Store Bededag'],
+                new DateTime("fourth friday $easter", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
     }
 }

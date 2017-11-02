@@ -54,8 +54,12 @@ class StStephensDayTest extends SchaffhausenBaseTestCase implements YasumiTestCa
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Stephanstag']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Stephanstag']
+        );
     }
 
     /**

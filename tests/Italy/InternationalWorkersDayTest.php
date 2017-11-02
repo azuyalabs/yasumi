@@ -54,8 +54,12 @@ class InternationalWorkersDayTest extends ItalyBaseTestCase implements YasumiTes
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Festa del Lavoro']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Festa del Lavoro']
+        );
     }
 
     /**
@@ -63,6 +67,6 @@ class InternationalWorkersDayTest extends ItalyBaseTestCase implements YasumiTes
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

@@ -54,8 +54,12 @@ class ImmaculateConceptionTest extends ValaisBaseTestCase implements YasumiTestC
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Immaculée Conception']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Immaculée Conception']
+        );
     }
 
     /**

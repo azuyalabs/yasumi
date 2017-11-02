@@ -54,8 +54,12 @@ class StStephensDayTest extends CroatiaBaseTestCase implements YasumiTestCaseInt
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Sveti Stjepan']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Sveti Stjepan']
+        );
     }
 
     /**
@@ -63,6 +67,6 @@ class StStephensDayTest extends CroatiaBaseTestCase implements YasumiTestCaseInt
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

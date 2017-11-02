@@ -69,10 +69,18 @@ class StStephensDayTest extends IrelandBaseTestCase implements YasumiTestCaseInt
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'St. Stephen\'s Day']);
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            ['ga_IE' => 'Lá Fhéile Stiofáin']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'St. Stephen\'s Day']
+        );
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            ['ga_IE' => 'Lá Fhéile Stiofáin']
+        );
     }
 
     /**
@@ -80,6 +88,6 @@ class StStephensDayTest extends IrelandBaseTestCase implements YasumiTestCaseInt
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

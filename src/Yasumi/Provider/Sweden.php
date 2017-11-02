@@ -51,9 +51,9 @@ class Sweden extends AbstractProvider
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale));
-        $this->calculatestJohnsDay(); // aka Midsummer's Day
+        $this->calculateStJohnsDay(); // aka Midsummer's Day
         $this->calculateAllSaintsDay();
-        $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale, Holiday::TYPE_NATIONAL));
+        $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale, Holiday::TYPE_OFFICIAL));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
 
@@ -78,7 +78,7 @@ class Sweden extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
-    public function calculatestJohnsDay()
+    public function calculateStJohnsDay()
     {
         $date = new DateTime("$this->year-6-20", new DateTimeZone($this->timezone)); // Default date
 
@@ -112,7 +112,7 @@ class Sweden extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
-    private function calculateAllSaintsDay()
+    public function calculateAllSaintsDay()
     {
         $date = new DateTime("$this->year-10-31", new DateTimeZone($this->timezone));
 
@@ -152,7 +152,11 @@ class Sweden extends AbstractProvider
             $holiday_name = 'Sveriges nationaldag';
         }
 
-        $this->addHoliday(new Holiday('nationalDay', ['sv_SE' => $holiday_name],
-            new DateTime("$this->year-6-6", new DateTimeZone($this->timezone)), $this->locale));
+        $this->addHoliday(new Holiday(
+            'nationalDay',
+            ['sv_SE' => $holiday_name],
+            new DateTime("$this->year-6-6", new DateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 }

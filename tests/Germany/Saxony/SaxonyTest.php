@@ -25,9 +25,9 @@ class SaxonyTest extends SaxonyBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Saxony (Germany) are defined by the provider class
+     * Tests if all official holidays in Saxony (Germany) are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $holidays = [
             'newYearsDay',
@@ -46,11 +46,15 @@ class SaxonyTest extends SaxonyBaseTestCase
             $holidays[] = 'germanUnityDay';
         }
 
+        if ($this->year >= 1995) {
+            $holidays[] = 'repentanceAndPrayerDay';
+        }
+
         if ($this->year >= 1517) {
             $holidays[] = 'reformationDay';
         }
 
-        $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
@@ -82,7 +86,7 @@ class SaxonyTest extends SaxonyBaseTestCase
      */
     public function testOtherHolidays()
     {
-        $this->assertDefinedHolidays(['repentanceAndPrayerDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**

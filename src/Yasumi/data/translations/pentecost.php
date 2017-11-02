@@ -20,6 +20,7 @@ return [
     'en_IE' => 'Whitsunday',
     'en_US' => 'Whitsunday',
     'fi_FI' => 'Helluntaipäivä',
+    'fr_BE' => 'Pentecôte',
     'fr_CH' => 'Pentecôte',
     'ga_IE' => 'Domhnach Cincíse',
     'hu_HU' => 'Pünkösd',

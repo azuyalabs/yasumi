@@ -72,8 +72,12 @@ class Asturias extends Spain
     public function calculateAsturiasDay()
     {
         if ($this->year >= 1984) {
-            $this->addHoliday(new Holiday('asturiasDay', ['es_ES' => 'Día de Asturias'],
-                new DateTime("$this->year-9-8", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'asturiasDay',
+                ['es_ES' => 'Día de Asturias'],
+                new DateTime("$this->year-9-8", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
     }
 }

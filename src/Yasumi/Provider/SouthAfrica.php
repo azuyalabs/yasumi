@@ -90,8 +90,12 @@ class SouthAfrica extends AbstractProvider
      */
     public function calculateHumanRightsDay()
     {
-        $this->addHoliday(new Holiday('humanRightsDay', ['en_ZA' => 'Human Rights Day'],
-            new DateTime($this->year . '-3-21', new DateTimeZone($this->timezone)), $this->locale));
+        $this->addHoliday(new Holiday(
+            'humanRightsDay',
+            ['en_ZA' => 'Human Rights Day'],
+            new DateTime($this->year . '-3-21', new DateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /**
@@ -106,8 +110,12 @@ class SouthAfrica extends AbstractProvider
      */
     public function calculateFamilyDay()
     {
-        $this->addHoliday(new Holiday('familyDay', ['en_ZA' => 'Family Day'],
-            $this->calculateEaster($this->year, $this->timezone)->add(new DateInterval('P1D')), $this->locale));
+        $this->addHoliday(new Holiday(
+            'familyDay',
+            ['en_ZA' => 'Family Day'],
+            $this->calculateEaster($this->year, $this->timezone)->add(new DateInterval('P1D')),
+            $this->locale
+        ));
     }
 
     /**
@@ -123,8 +131,12 @@ class SouthAfrica extends AbstractProvider
      */
     public function calculateFreedomDay()
     {
-        $this->addHoliday(new Holiday('freedomDay', ['en_ZA' => 'Freedom Day'],
-            new DateTime($this->year . '-4-27', new DateTimeZone($this->timezone)), $this->locale));
+        $this->addHoliday(new Holiday(
+            'freedomDay',
+            ['en_ZA' => 'Freedom Day'],
+            new DateTime($this->year . '-4-27', new DateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /**
@@ -144,8 +156,12 @@ class SouthAfrica extends AbstractProvider
      */
     public function calculateYouthDay()
     {
-        $this->addHoliday(new Holiday('youthDay', ['en_ZA' => 'Youth Day'],
-            new DateTime($this->year . '-6-16', new DateTimeZone($this->timezone)), $this->locale));
+        $this->addHoliday(new Holiday(
+            'youthDay',
+            ['en_ZA' => 'Youth Day'],
+            new DateTime($this->year . '-6-16', new DateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /**
@@ -165,8 +181,12 @@ class SouthAfrica extends AbstractProvider
             return;
         }
 
-        $this->addHoliday(new Holiday('2016MunicipalElectionsDay', ['en_ZA' => '2016 Municipal Elections Day'],
-            new DateTime('2016-8-3', new DateTimeZone($this->timezone)), $this->locale));
+        $this->addHoliday(new Holiday(
+            '2016MunicipalElectionsDay',
+            ['en_ZA' => '2016 Municipal Elections Day'],
+            new DateTime('2016-8-3', new DateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /**
@@ -184,8 +204,12 @@ class SouthAfrica extends AbstractProvider
      */
     public function calculateNationalWomensDay()
     {
-        $this->addHoliday(new Holiday('nationalWomensDay', ['en_ZA' => 'National Women\'s Day'],
-            new DateTime($this->year . '-8-9', new DateTimeZone($this->timezone)), $this->locale));
+        $this->addHoliday(new Holiday(
+            'nationalWomensDay',
+            ['en_ZA' => 'National Women\'s Day'],
+            new DateTime($this->year . '-8-9', new DateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /**
@@ -203,8 +227,12 @@ class SouthAfrica extends AbstractProvider
      */
     public function calculateHeritageDay()
     {
-        $this->addHoliday(new Holiday('heritageDay', ['en_ZA' => 'Heritage Day'],
-            new DateTime($this->year . '-9-24', new DateTimeZone($this->timezone)), $this->locale));
+        $this->addHoliday(new Holiday(
+            'heritageDay',
+            ['en_ZA' => 'Heritage Day'],
+            new DateTime($this->year . '-9-24', new DateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /**
@@ -224,8 +252,12 @@ class SouthAfrica extends AbstractProvider
      */
     public function calculateDayOfReconciliation()
     {
-        $this->addHoliday(new Holiday('reconciliationDay', ['en_ZA' => 'Day of Reconciliation'],
-            new DateTime($this->year . '-12-16', new DateTimeZone($this->timezone)), $this->locale));
+        $this->addHoliday(new Holiday(
+            'reconciliationDay',
+            ['en_ZA' => 'Day of Reconciliation'],
+            new DateTime($this->year . '-12-16', new DateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /**
@@ -248,8 +280,12 @@ class SouthAfrica extends AbstractProvider
             return;
         }
 
-        $this->addHoliday(new Holiday('substituteDayOfGoodwill', ['en_ZA' => 'Day of Goodwill observed'],
-            new DateTime('2016-12-27', new DateTimeZone($this->timezone)), $this->locale));
+        $this->addHoliday(new Holiday(
+            'substituteDayOfGoodwill',
+            ['en_ZA' => 'Day of Goodwill observed'],
+            new DateTime('2016-12-27', new DateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /**
@@ -269,8 +305,11 @@ class SouthAfrica extends AbstractProvider
         while ($datesIterator->valid()) {
 
             // Exclude Good Friday, Family Day, 2016 Municipal Elections Day as these don't fall in the weekend
-            if (in_array($datesIterator->current()->shortName, ['goodFriday', 'familyDay', '2016MunicipalElectionsDay'],
-                true)) {
+            if (in_array(
+                $datesIterator->current()->shortName,
+                ['goodFriday', 'familyDay', '2016MunicipalElectionsDay'],
+                true
+            )) {
                 $datesIterator->next();
             }
 

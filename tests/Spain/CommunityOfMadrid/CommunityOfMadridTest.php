@@ -25,9 +25,9 @@ class CommunityOfMadridTest extends CommunityOfMadridBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in the Community of Madrid are defined by the provider class
+     * Tests if all official holidays in the Community of Madrid (Spain) are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -42,7 +42,7 @@ class CommunityOfMadridTest extends CommunityOfMadridBaseTestCase
             'constitutionDay',
             'immaculateConception',
             'christmasDay'
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

@@ -57,8 +57,12 @@ class NafelserFahrtTest extends GlarusBaseTestCase implements YasumiTestCaseInte
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Näfelser Fahrt']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => 'Näfelser Fahrt']
+        );
     }
 
     /**

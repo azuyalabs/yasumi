@@ -29,11 +29,11 @@ class SouthAfricaTest extends SouthAfricaBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in SouthAfrica are defined by the provider class
+     * Tests if all official holidays in SouthAfrica are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
-        $nationalHolidays = [
+        $officialHolidays = [
             'newYearsDay',
             'humanRightsDay',
             'goodFriday',
@@ -49,11 +49,11 @@ class SouthAfricaTest extends SouthAfricaBaseTestCase
         ];
 
         if ($this->year === 2016) {
-            $nationalHolidays[] = '2016MunicipalElectionsDay';
-            $nationalHolidays[] = 'substituteDayOfGoodwill';
+            $officialHolidays[] = '2016MunicipalElectionsDay';
+            $officialHolidays[] = 'substituteDayOfGoodwill';
         }
 
-        $this->assertDefinedHolidays($nationalHolidays, self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        $this->assertDefinedHolidays($officialHolidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

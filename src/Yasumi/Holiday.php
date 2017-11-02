@@ -23,9 +23,9 @@ use Yasumi\Exception\UnknownLocaleException;
 class Holiday extends DateTime implements JsonSerializable
 {
     /**
-     * Type definition for National/Federal holidays.
+     * Type definition for Official (i.e. National/Federal) holidays.
      */
-    const TYPE_NATIONAL = 'national';
+    const TYPE_OFFICIAL = 'official';
 
     /**
      * Type definition for Observance holidays.
@@ -89,9 +89,9 @@ class Holiday extends DateTime implements JsonSerializable
      * @param DateTime $date          A DateTime instance representing the date of the holiday
      * @param string   $displayLocale Locale (i.e. language) in which the holiday information needs to be
      *                                displayed in. (Default 'en_US')
-     * @param string   $type          The type of holiday. Use the following constants: TYPE_NATIONAL,
-     *                                TYPE_OBSERVANCE, TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a
-     *                                national holiday is considered.
+     * @param string   $type          The type of holiday. Use the following constants: TYPE_OFFICIAL,
+     *                                TYPE_OBSERVANCE, TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an
+     *                                official holiday is considered.
      *
      * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
@@ -101,7 +101,7 @@ class Holiday extends DateTime implements JsonSerializable
         array $names,
         $date,
         $displayLocale = self::DEFAULT_LOCALE,
-        $type = self::TYPE_NATIONAL
+        $type = self::TYPE_OFFICIAL
     ) {
         // Validate if short name is not empty
         if (empty($shortName)) {
@@ -136,7 +136,7 @@ class Holiday extends DateTime implements JsonSerializable
     /**
      * Returns what type this holiday is.
      *
-     * @return string the type of holiday (national, observance, season or bank).
+     * @return string the type of holiday (official, observance, season, bank or other).
      */
     public function getType()
     {

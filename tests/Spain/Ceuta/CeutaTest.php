@@ -25,9 +25,9 @@ class CeutaTest extends CeutaBaseTestCase
     protected $year;
 
     /**
-     * Tests if all national holidays in Ceuta are defined by the provider class
+     * Tests if all official holidays in Ceuta (Spain) are defined by the provider class
      */
-    public function testNationalHolidays()
+    public function testOfficialHolidays()
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -42,7 +42,7 @@ class CeutaTest extends CeutaBaseTestCase
             'constitutionDay',
             'immaculateConception',
             'christmasDay'
-        ], self::REGION, $this->year, Holiday::TYPE_NATIONAL);
+        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

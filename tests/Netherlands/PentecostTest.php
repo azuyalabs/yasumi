@@ -33,8 +33,12 @@ class PentecostTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
     public function testHoliday()
     {
         $year = 2020;
-        $this->assertHoliday(self::REGION, 'pentecost', $year,
-            new DateTime("$year-5-31", new DateTimeZone(self::TIMEZONE)));
+        $this->assertHoliday(
+            self::REGION,
+            'pentecost',
+            $year,
+            new DateTime("$year-5-31", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -42,8 +46,12 @@ class PentecostTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
      */
     public function testTranslation()
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->generateRandomYear(),
-            [self::LOCALE => 'Eerste Pinksterdag']);
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Eerste Pinksterdag']
+        );
     }
 
     /**
@@ -51,6 +59,6 @@ class PentecostTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_NATIONAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }
