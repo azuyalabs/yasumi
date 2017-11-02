@@ -120,7 +120,7 @@ class Yasumi
         $date = $startDate instanceof DateTime ? clone $startDate : new DateTime($startDate);
 
         // Default to 1
-        $workingDays = is_null($workingDays) ? 1 : $workingDays;
+        $workingDays = $workingDays ?? 1;
 
         $provider = false;
 
@@ -175,7 +175,7 @@ class Yasumi
         }
 
         // Default locale to en_US
-        $locale = is_null($locale) ? self::DEFAULT_LOCALE : $locale;
+        $locale = $locale ?? self::DEFAULT_LOCALE;
 
         // Load internal locales variable
         if (null === static::$locales) {
@@ -259,7 +259,7 @@ class Yasumi
         $date = $startDate instanceof DateTime ? clone $startDate : new DateTime($startDate);
 
         // Default to 1
-        $workingDays = is_null($workingDays) ? 1 : $workingDays;
+        $workingDays = $workingDays ?? 1;
 
         $provider = false;
 
