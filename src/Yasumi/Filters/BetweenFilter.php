@@ -16,6 +16,7 @@ namespace Yasumi\Filters;
 use DateTime;
 use FilterIterator;
 use Iterator;
+use Countable;
 
 /**
  * BetweenFilter is a class used for filtering holidays based on given date range.
@@ -27,7 +28,7 @@ use Iterator;
  *
  * @package Yasumi\Filters
  */
-class BetweenFilter extends FilterIterator
+class BetweenFilter extends FilterIterator implements Countable
 {
     /**
      * @var \DateTime start date of the time frame to check against
@@ -76,5 +77,13 @@ class BetweenFilter extends FilterIterator
         }
 
         return $holiday > $this->start_date && $holiday < $this->end_date;
+    }
+
+    /**
+     * @return integer Returns the number of holidays between the given start and end date.
+     */
+    public function count()
+    {
+        return iterator_count($this);
     }
 }
