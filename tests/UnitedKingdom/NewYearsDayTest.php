@@ -87,20 +87,13 @@ class NewYearsDayTest extends UnitedKingdomBaseTestCase implements YasumiTestCas
      */
     public function HolidayDataProvider()
     {
-        $data = [];
-        for ($y = 0; $y < 10; $y++) {
-            $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-            $date = new DateTime("$year-01-01", new DateTimeZone(self::TIMEZONE));
-
-            // If New Years Day falls on a Saturday or Sunday, it is observed the next Monday (January 2nd or 3rd)
-            if (in_array((int) $date->format('w'), [0, 6], true)) {
-                $date->modify('next monday');
-            }
-
-            $data[] = [$year, $date->format('Y-m-d')];
-        }
-
-        return $data;
+        return $this->generateRandomDatesWithHolidayMovedToMonday(
+            01,
+            01,
+            self::TIMEZONE,
+            10,
+            self::ESTABLISHMENT_YEAR
+        );
     }
 
     /**

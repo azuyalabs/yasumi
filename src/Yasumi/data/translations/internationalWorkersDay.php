@@ -30,6 +30,7 @@ return [
     'it_IT' => 'Festa del Lavoro',
     'ja_JP' => '労働の日',
     'lt_LT' => 'Tarptautinė darbo diena',
+    'lv_LV' => 'Darba svētki',
     'nb_NO' => 'Arbeidernes dag',
     'nl_BE' => 'Dag van de arbeid',
     'nl_NL' => 'Dag van de arbeid',
