@@ -74,7 +74,11 @@ class PortugalTest extends PortugalBaseTestCase
      */
     public function testOtherHolidays()
     {
-        $this->assertDefinedHolidays(['corpusChristi'], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        if ($this->year <= 2013 || $this->year >= 2016) {
+            $holidays[] = 'corpusChristi';
+        }
+        
+        $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**

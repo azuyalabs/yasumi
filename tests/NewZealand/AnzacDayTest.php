@@ -37,8 +37,8 @@ class AnzacDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInter
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int      $year     the year for which the holiday defined in this test needs to be tested
-     * @param DateTime $expected the expected date
+     * @param int    $year     the year for which the holiday defined in this test needs to be tested
+     * @param string $expected the expected date
      */
     public function testHoliday($year, $expected)
     {
@@ -65,21 +65,19 @@ class AnzacDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInter
      */
     public function HolidayDataProvider()
     {
-        $data = [];
-
-        for ($i = 0; $i < 100; $i++) {
-            $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-            $date = new DateTime("$year-04-25", new DateTimeZone(self::TIMEZONE));
-
-            // in 2015 some policy was introduced to make sure this holiday was celebrated during the working week.
-            if ($year >= 2015 && in_array((int) $date->format('w'), [0, 6], true)) {
-                $date->modify('next monday');
-            }
-
-            $data[] = [$year, $date->format('Y-m-d')];
-        }
-
-        return $data;
+        return $this->generateRandomDatesWithModifier(
+            4,
+            25,
+            function ($year, \DateTime $date) {
+                // in 2015 some policy was introduced to make sure this holiday was celebrated during the working week.
+                if ($year >= 2015 && $this->isWeekend($date)) {
+                    $date->modify('next monday');
+                }
+            },
+            self::TIMEZONE,
+            100,
+            self::ESTABLISHMENT_YEAR
+        );
     }
 
     /**
