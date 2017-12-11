@@ -34,7 +34,6 @@ class LithuaniaTest extends LithuaniaBaseTestCase
             'easterMonday',
             'internationalWorkersDay',
             'stJohnsDay',
-            'statehoodDay',
             'assumptionOfMary',
             'allSaintsDay',
             'christmasEve',
