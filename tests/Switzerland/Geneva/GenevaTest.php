@@ -41,16 +41,27 @@ class GenevaTest extends GenevaBaseTestCase
      */
     public function testRegionalHolidays()
     {
-        $this->assertDefinedHolidays([
+        $regionalHolidays = [
             'goodFriday',
             'newYearsDay',
             'christmasDay',
             'ascensionDay',
             'easterMonday',
             'pentecostMonday',
-            'jeuneGenevois',
-            'restaurationGenevoise'
-        ], self::REGION, $this->year, Holiday::TYPE_OTHER);
+
+        ];
+
+        if (($this->year >= 1840 && $this->year <= 1869) || $this->year >= 1966) {
+            $regionalHolidays[] = 'jeuneGenevois';
+        } elseif ($this->year > 1869 && $this->year < 1966) {
+            $regionalHolidays[] = 'jeuneGenevois';
+        }
+
+        if ($this->year > 1813) {
+            $regionalHolidays[] = 'restaurationGenevoise';
+        }
+
+        $this->assertDefinedHolidays($regionalHolidays, self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**
