@@ -112,7 +112,7 @@ class GreeneryDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => '緑の日']
+            [self::LOCALE => 'みどりの日']
         );
     }
 

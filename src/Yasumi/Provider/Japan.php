@@ -131,7 +131,7 @@ class Japan extends AbstractProvider
         if ($this->year >= 1948) {
             $this->addHoliday(new Holiday(
                 'childrensDay',
-                ['en_US' => 'Children\'s Day', 'ja_JP' => '子供の日'],
+                ['en_US' => 'Children\'s Day', 'ja_JP' => 'こどもの日'],
                 new DateTime("$this->year-5-5", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -280,7 +280,7 @@ class Japan extends AbstractProvider
         if (null !== $date) {
             $this->addHoliday(new Holiday(
                 'greeneryDay',
-                ['en_US' => 'Greenery Day', 'ja_JP' => '緑の日'],
+                ['en_US' => 'Greenery Day', 'ja_JP' => 'みどりの日'],
                 $date,
                 $this->locale
             ));
