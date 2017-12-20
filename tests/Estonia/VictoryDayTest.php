@@ -30,9 +30,9 @@ class VictoryDayTest extends EstoniaBaseTestCase implements YasumiTestCaseInterf
     const HOLIDAY = 'victoryDay';
 
     /**
-     * Test if holiday is not defined before restoration
+     * Test if holiday is not defined before
      */
-    public function testHolidayBeforeRestoration()
+    public function testHolidayBefore()
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -42,9 +42,9 @@ class VictoryDayTest extends EstoniaBaseTestCase implements YasumiTestCaseInterf
     }
 
     /**
-     * Test if holiday is defined after restoration
+     * Test if holiday is defined after
      */
-    public function testHolidayAfterRestoration()
+    public function testHolidayAfter()
     {
         $year = $this->generateRandomYear(Estonia::VICTORY_DAY_START_YEAR);
 
