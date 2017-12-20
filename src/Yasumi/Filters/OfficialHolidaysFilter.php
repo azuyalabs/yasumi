@@ -12,6 +12,7 @@
 
 namespace Yasumi\Filters;
 
+use Countable;
 use FilterIterator;
 use Yasumi\Holiday;
 
@@ -25,7 +26,7 @@ use Yasumi\Holiday;
  * $holidays = Yasumi::create('Netherlands', 2015);
  * $official = new OfficialHolidaysFilter($holidays->getIterator());
  */
-class OfficialHolidaysFilter extends FilterIterator
+class OfficialHolidaysFilter extends FilterIterator implements Countable
 {
     /**
      * Checks whether the current element of the iterator is an official holiday.
@@ -35,5 +36,13 @@ class OfficialHolidaysFilter extends FilterIterator
     public function accept()
     {
         return $this->getInnerIterator()->current()->getType() === Holiday::TYPE_OFFICIAL;
+    }
+
+    /**
+     * @return integer Returns the number of filtered holidays.
+     */
+    public function count()
+    {
+        return iterator_count($this);
     }
 }

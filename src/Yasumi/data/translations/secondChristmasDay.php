@@ -24,6 +24,8 @@ return [
     'en_ZA' => 'Day of Goodwill',
     'fi_FI' => '2. joulupäivä',
     'hu_HU' => 'Karácsony másnapja',
+    'lt_LT' => 'Kalėdos (antra diena)',
+    'lv_LV' => 'Otrie Ziemassvētki',
     'nb_NO' => 'Andre juledag',
     'nl_BE' => 'Tweede Kerstdag',
     'nl_NL' => 'Tweede Kerstdag',

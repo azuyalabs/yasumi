@@ -19,6 +19,7 @@ return [
     'el_GR' => 'Αγίου Πνεύματος',
     'en_IE' => 'Whitmonday',
     'en_US' => 'Whitmonday',
+    'fr_BE' => 'Lundi de Pentecôte',
     'fr_CH' => 'Lundi de Pentecôte',
     'fr_FR' => 'Lundi de Pentecôte',
     'ga_IE' => 'Luan Cincíse',

@@ -51,7 +51,7 @@ class Finland extends AbstractProvider
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale));
-        $this->calculatestJohnsDay(); // aka Midsummer's Day
+        $this->calculateStJohnsDay(); // aka Midsummer's Day
         $this->calculateAllSaintsDay();
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
@@ -78,7 +78,7 @@ class Finland extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
-    public function calculatestJohnsDay()
+    public function calculateStJohnsDay()
     {
         $translation = ['fi_FI' => 'Juhannuspäivä'];
         $shortName   = 'stJohnsDay';

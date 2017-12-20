@@ -164,7 +164,9 @@ class Holiday extends DateTime implements JsonSerializable
     {
         if (isset($this->translations[$this->displayLocale])) {
             return $this->translations[$this->displayLocale];
-        } elseif (isset($this->translations[self::DEFAULT_LOCALE])) {
+        }
+
+        if (isset($this->translations[self::DEFAULT_LOCALE])) {
             return $this->translations[self::DEFAULT_LOCALE];
         }
 

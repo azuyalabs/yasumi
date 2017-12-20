@@ -15,6 +15,7 @@ return [
     'de_CH' => 'Muttertag',
     'el_GR' => 'Ημέρα της μητέρας',
     'en_US' => 'Mother\'s Day',
+    'fr_BE' => 'Fête des mères',
     'fr_CH' => 'Fête des mères',
     'it_CH' => 'Festa della mamma',
     'nl_BE' => 'Moederdag',
