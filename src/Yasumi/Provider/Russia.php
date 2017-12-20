@@ -165,7 +165,7 @@ class Russia extends AbstractProvider
         }
 
         $this->addHoliday(new Holiday(
-            'victoryDay',
+            'russiaDay',
             [
                 'en_US' => 'Russia Day',
                 'ru_RU' => 'День России'
