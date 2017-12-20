@@ -273,17 +273,9 @@ trait YasumiBase
      */
     public function generateRandomEasterMondayDates($timezone = 'UTC', $iterations = 10, $range = 1000)
     {
-        $data = [];
-
-        for ($i = 1; $i <= $iterations; ++$i) {
-            $year = Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
-            $date = $this->calculateEaster($year, $timezone);
+        return $this->generateRandomModifiedEasterDates(function (DateTime $date) {
             $date->add(new DateInterval('P1D'));
-
-            $data[] = [$year, $date->format('Y-m-d')];
-        }
-
-        return $data;
+        }, $timezone, $iterations, $range);
     }
 
     /**
@@ -299,12 +291,48 @@ trait YasumiBase
      */
     public function generateRandomGoodFridayDates($timezone = 'UTC', $iterations = 10, $range = 1000)
     {
+        return $this->generateRandomModifiedEasterDates(function (DateTime $date) {
+            $date->sub(new DateInterval('P2D'));
+        }, $timezone, $iterations, $range);
+    }
+
+    /**
+     * Returns a list of random Pentecost test dates used for assertion of holidays.
+     *
+     * @param string $timezone   name of the timezone for which the dates need to be generated
+     * @param int    $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
+     * @param int    $range      year range from which dates will be generated (default: 1000)
+     *
+     * @return array list of random Pentecost test dates used for assertion of holidays.
+     *
+     * @throws \Exception
+     */
+    public function generateRandomPentecostDates($timezone = 'UTC', $iterations = 10, $range = 1000)
+    {
+        return $this->generateRandomModifiedEasterDates(function (DateTime $date) {
+            $date->add(new DateInterval('P49D'));
+        }, $timezone, $iterations, $range);
+    }
+
+    /**
+     * Returns a list of random modified Easter day test dates for assertion of holidays.
+     *
+     * @param callable $cb         callback(DateTime $date) to modify $date by custom rules
+     * @param string   $timezone   name of the timezone for which the dates need to be generated
+     * @param int      $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
+     * @param int      $range      year range from which dates will be generated (default: 1000)
+     *
+     * @return array list of random modified Easter day test dates for assertion of holidays.
+     */
+    public function generateRandomModifiedEasterDates(callable $cb, $timezone = 'UTC', $iterations = 10, $range = 1000)
+    {
         $data = [];
 
         for ($i = 1; $i <= $iterations; ++$i) {
             $year = Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
             $date = $this->calculateEaster($year, $timezone);
-            $date->sub(new DateInterval('P2D'));
+
+            $cb($date);
 
             $data[] = [$year, $date->format('Y-m-d')];
         }
