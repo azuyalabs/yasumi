@@ -55,7 +55,7 @@ class Estonia extends AbstractProvider
         $this->addVictoryDay();
         $this->addHoliday($this->stJohnsDay($this->year, $this->timezone, $this->locale));
         $this->addRestorationOfIndependenceDay();
-        $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale, Holiday::TYPE_OFFICIAL));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
     }
