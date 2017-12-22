@@ -15,6 +15,7 @@ return [
     'el_GR' => 'Σύναξις Προφήτου Προδρόμου και Βαπτιστού Ιωάννου',
     'en_US' => 'St. John\'s Day',
     'es_ES' => 'Sant Joan',
+    'et_EE' => 'Jaanipäev',
     'fi_FI' => 'Juhannuspäivä',
     'lt_LT' => 'Rasos ir Joninių diena',
     'lv_LV' => 'Jāņi',

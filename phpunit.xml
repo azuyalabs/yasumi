@@ -68,6 +68,11 @@
                 <directory suffix="Test.php">./tests/Denmark</directory>
             </testsuite>
 
+            <!-- Test Suite for holidays in Estonia -->
+            <testsuite name="Estonia">
+                <directory suffix="Test.php">./tests/Estonia</directory>
+            </testsuite>
+
             <!-- Test Suite for holidays in Finland -->
             <testsuite name="Finland">
                 <directory suffix="Test.php">./tests/Finland</directory>

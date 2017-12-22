@@ -16,6 +16,7 @@ return [
     'cy_GB' => 'Noswyl Nadolig',
     'de_CH' => 'Heiliger Abend',
     'en_US' => 'Christmas Eve',
+    'et_EE' => 'Jõululaupäev',
     'fr_BE' => 'Réveillon de Noël',
     'fr_CH' => 'Réveillon de Noël',
     'it_CH' => 'Vigilia di Natale',

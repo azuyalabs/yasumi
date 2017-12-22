@@ -26,6 +26,7 @@ return [
     'en_US' => 'New Year\'s Day',
     'en_ZA' => 'New Year\'s Day',
     'es_ES' => 'Año Nuevo',
+    'et_EE' => 'Uusaasta',
     'fi_FI' => 'Uudenvuodenpäivä',
     'fr_BE' => 'Nouvel An',
     'fr_CH' => 'Nouvel An',

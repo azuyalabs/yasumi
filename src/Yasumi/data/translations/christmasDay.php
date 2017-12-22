@@ -25,6 +25,7 @@ return [
     'en_US' => 'Christmas',
     'en_ZA' => 'Christmas Day',
     'es_ES' => 'Navidad',
+    'et_EE' => 'Esimene jõulupüha',
     'fi_FI' => 'Joulupäivä',
     'fr_BE' => 'Noël',
     'fr_CH' => 'Noël',

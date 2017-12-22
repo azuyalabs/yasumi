@@ -20,6 +20,7 @@ return [
     'el_GR' => 'Κυριακή του Πάσχα',
     'en_IE' => 'Easter Sunday',
     'en_US' => 'Easter Sunday',
+    'et_EE' => 'Ülestõusmispühade 1. püha',
     'fi_FI' => 'Pääsiäispäivä',
     'fr_BE' => 'Pâques',
     'fr_CH' => 'Pâques',

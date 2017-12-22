@@ -22,6 +22,7 @@ return [
     'en_NZ' => 'Boxing Day',
     'en_US' => 'Second Christmas Day',
     'en_ZA' => 'Day of Goodwill',
+    'et_EE' => 'Teine Jõulupüha',
     'fi_FI' => '2. joulupäivä',
     'hu_HU' => 'Karácsony másnapja',
     'lt_LT' => 'Kalėdos (antra diena)',
