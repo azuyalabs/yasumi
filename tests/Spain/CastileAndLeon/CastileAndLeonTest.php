@@ -33,7 +33,6 @@ class CastileAndLeonTest extends CastileAndLeonBaseTestCase
             'newYearsDay',
             'epiphany',
             'goodFriday',
-            'easter',
             'castileAndLeonDay',
             'internationalWorkersDay',
             'assumptionOfMary',
