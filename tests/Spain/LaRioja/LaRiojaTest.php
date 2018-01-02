@@ -33,7 +33,6 @@ class LaRiojaTest extends LaRiojaBaseTestCase
             'newYearsDay',
             'epiphany',
             'goodFriday',
-            'easter',
             'internationalWorkersDay',
             'laRiojaDay',
             'assumptionOfMary',
@@ -41,7 +40,7 @@ class LaRiojaTest extends LaRiojaBaseTestCase
             'allSaintsDay',
             'constitutionDay',
             'immaculateConception',
-            'christmasDay'
+            'christmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -50,7 +49,10 @@ class LaRiojaTest extends LaRiojaBaseTestCase
      */
     public function testObservedHolidays()
     {
-        $this->assertDefinedHolidays(['maundyThursday'], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays([
+            'maundyThursday',
+            'easter',
+        ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**

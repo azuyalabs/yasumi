@@ -34,14 +34,13 @@ class BalearicIslandsTest extends BalearicIslandsBaseTestCase
             'epiphany',
             'balearicIslandsDay',
             'goodFriday',
-            'easter',
             'internationalWorkersDay',
             'assumptionOfMary',
             'nationalDay',
             'allSaintsDay',
             'constitutionDay',
             'immaculateConception',
-            'christmasDay'
+            'christmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -53,8 +52,9 @@ class BalearicIslandsTest extends BalearicIslandsBaseTestCase
         $this->assertDefinedHolidays([
             'stJosephsDay',
             'maundyThursday',
+            'easter',
             'easterMonday',
-            'stStephensDay'
+            'stStephensDay',
         ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 

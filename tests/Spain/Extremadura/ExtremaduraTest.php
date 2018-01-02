@@ -33,7 +33,6 @@ class ExtremaduraTest extends ExtremaduraBaseTestCase
             'newYearsDay',
             'epiphany',
             'goodFriday',
-            'easter',
             'internationalWorkersDay',
             'assumptionOfMary',
             'extremaduraDay',
@@ -41,7 +40,7 @@ class ExtremaduraTest extends ExtremaduraBaseTestCase
             'allSaintsDay',
             'constitutionDay',
             'immaculateConception',
-            'christmasDay'
+            'christmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -50,7 +49,10 @@ class ExtremaduraTest extends ExtremaduraBaseTestCase
      */
     public function testObservedHolidays()
     {
-        $this->assertDefinedHolidays(['maundyThursday'], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays([
+            'maundyThursday',
+            'easter',
+        ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**

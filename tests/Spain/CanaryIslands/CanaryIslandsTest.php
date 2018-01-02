@@ -33,7 +33,6 @@ class CanaryIslandsTest extends CanaryIslandsBaseTestCase
             'newYearsDay',
             'epiphany',
             'goodFriday',
-            'easter',
             'internationalWorkersDay',
             'canaryIslandsDay',
             'assumptionOfMary',
@@ -41,7 +40,7 @@ class CanaryIslandsTest extends CanaryIslandsBaseTestCase
             'allSaintsDay',
             'constitutionDay',
             'immaculateConception',
-            'christmasDay'
+            'christmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -50,7 +49,10 @@ class CanaryIslandsTest extends CanaryIslandsBaseTestCase
      */
     public function testObservedHolidays()
     {
-        $this->assertDefinedHolidays(['maundyThursday'], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays([
+            'maundyThursday',
+            'easter',
+        ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**

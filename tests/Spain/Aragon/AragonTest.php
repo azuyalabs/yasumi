@@ -33,7 +33,6 @@ class AragonTest extends AragonBaseTestCase
             'newYearsDay',
             'epiphany',
             'goodFriday',
-            'easter',
             'internationalWorkersDay',
             'assumptionOfMary',
             'nationalDay',
@@ -49,12 +48,11 @@ class AragonTest extends AragonBaseTestCase
      */
     public function testObservedHolidays()
     {
-        $this->assertDefinedHolidays(
-            ['maundyThursday', 'stGeorgesDay'],
-            self::REGION,
-            $this->year,
-            Holiday::TYPE_OBSERVANCE
-        );
+        $this->assertDefinedHolidays([
+            'maundyThursday',
+            'easter',
+            'stGeorgesDay',
+        ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**

@@ -33,7 +33,6 @@ class GaliciaTest extends GaliciaBaseTestCase
             'newYearsDay',
             'epiphany',
             'goodFriday',
-            'easter',
             'internationalWorkersDay',
             'galicianLiteratureDay',
             'stJamesDay',
@@ -42,7 +41,7 @@ class GaliciaTest extends GaliciaBaseTestCase
             'allSaintsDay',
             'constitutionDay',
             'immaculateConception',
-            'christmasDay'
+            'christmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -53,7 +52,8 @@ class GaliciaTest extends GaliciaBaseTestCase
     {
         $this->assertDefinedHolidays([
             'stJosephsDay',
-            'maundyThursday'
+            'maundyThursday',
+            'easter',
         ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 

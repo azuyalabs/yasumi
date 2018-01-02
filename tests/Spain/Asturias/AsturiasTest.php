@@ -33,7 +33,6 @@ class AsturiasTest extends AsturiasBaseTestCase
             'newYearsDay',
             'epiphany',
             'goodFriday',
-            'easter',
             'internationalWorkersDay',
             'assumptionOfMary',
             'asturiasDay',
@@ -52,7 +51,8 @@ class AsturiasTest extends AsturiasBaseTestCase
     {
         $this->assertDefinedHolidays([
             'stJosephsDay',
-            'maundyThursday'
+            'maundyThursday',
+            'easter',
         ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
