@@ -16,6 +16,7 @@ before_script:
   - composer install --no-interaction
 
 script:
+  - ./vendor/bin/phpstan analyse -l 7 src
   - ./vendor/bin/phpunit
   - phpenv config-rm xdebug.ini || return 0
   - ./vendor/bin/php-cs-fixer --diff --dry-run -v fix
