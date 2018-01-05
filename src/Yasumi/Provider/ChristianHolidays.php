@@ -732,7 +732,7 @@ trait ChristianHolidays
         if (extension_loaded('calendar')) {
             $easter_days = \easter_days($year);
         } else {
-            $golden = (int)(($year % 19) + 1); // The Golden Number
+            $golden = ($year % 19) + 1; // The Golden Number
 
             // The Julian calendar applies to the original method from 326AD. The Gregorian calendar was first
             // introduced in October 1582 in Italy. Easter algorithms using the Gregorian calendar apply to years
@@ -773,7 +773,7 @@ trait ChristianHolidays
                 $tmp += 7;
             }
 
-            $easter_days = (int)($pfm + $tmp + 1); // Easter as the number of days after 21st March
+            $easter_days = $pfm + $tmp + 1; // Easter as the number of days after 21st March
         }
 
         $easter = new DateTime("$year-3-21", new DateTimeZone($timezone));

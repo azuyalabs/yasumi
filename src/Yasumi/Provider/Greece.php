@@ -114,7 +114,7 @@ class Greece extends AbstractProvider
      * @param int    $year
      * @param string $timezone
      *
-     * @return \Datetime
+     * @return \DateTime
      */
     public function calculateEaster($year, $timezone)
     {

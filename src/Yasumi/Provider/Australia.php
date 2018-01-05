@@ -80,11 +80,11 @@ class Australia extends AbstractProvider
     /**
      * Function to simplify moving holidays to mondays if required
      *
-     * @param       $shortName
-     * @param array $names
-     * @param       $date
-     * @param bool  $moveFromSaturday
-     * @param bool  $moveFromSunday
+     * @param string          $shortName
+     * @param array           $names
+     * @param string|DateTime $date
+     * @param bool            $moveFromSaturday
+     * @param bool            $moveFromSunday
      *
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
