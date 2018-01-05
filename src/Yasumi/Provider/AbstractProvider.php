@@ -56,16 +56,17 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     private $holidays = [];
 
     /**
-     * @var TranslationsInterface global translations
+     * @var TranslationsInterface|null global translations
      */
     private $globalTranslations;
 
     /**
      * Creates a new holiday provider (i.e. country/state).
      *
-     * @param int                   $year               the year for which to provide holidays
-     * @param string                $locale             the locale/language in which holidays need to be represented
-     * @param TranslationsInterface $globalTranslations global translations
+     * @param int                        $year               the year for which to provide holidays
+     * @param string                     $locale             the locale/language in which holidays need to be
+     *                                                       represented
+     * @param TranslationsInterface|null $globalTranslations global translations
      */
     public function __construct($year, $locale = 'en_US', TranslationsInterface $globalTranslations = null)
     {
@@ -89,8 +90,8 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     /**
      * Internal function to compare dates in order to sort them chronologically.
      *
-     * @param $dateA DateTime First date
-     * @param $dateB DateTime Second date
+     * @param DateTime $dateA First date
+     * @param DateTime $dateB Second date
      *
      * @return int result where 0 means dates are equal, -1 the first date is before the second date, and 1 if the
      *             second date is after the first.
@@ -200,7 +201,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     /**
      * Checks whether the given holiday (short name) is not empty.
      *
-     * @param $shortName string the name of the holiday to be checked.
+     * @param string $shortName the name of the holiday to be checked.
      *
      * @throws InvalidArgumentException An InvalidArgumentException is thrown if the given holiday parameter is empty.
      *
@@ -208,7 +209,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     protected function isHolidayNameNotEmpty($shortName)
     {
-        if (empty($shortName) || null === $shortName) {
+        if (empty($shortName)) {
             throw new InvalidArgumentException('Holiday name can not be blank.');
         }
 
@@ -241,7 +242,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     public function count()
     {
-        return (int)count($this->getHolidays());
+        return count($this->getHolidays());
     }
 
     /**
@@ -277,9 +278,9 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     /**
      * Retrieves the next date (year) the given holiday is going to take place.
      *
-     * @param $shortName string the name of the holiday for which the next occurrence need to be retrieved.
+     * @param string $shortName the name of the holiday for which the next occurrence need to be retrieved.
      *
-     * @return Holiday a Holiday instance for the given holiday
+     * @return Holiday|null a Holiday instance for the given holiday
      *
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \RuntimeException
@@ -298,7 +299,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * @param int    $year      the year to get the holiday date for
      * @param string $shortName the name of the holiday for which the date needs to be fetched
      *
-     * @return Holiday a Holiday instance for the given holiday and year
+     * @return Holiday|null a Holiday instance for the given holiday and year
      *
      * @throws InvalidArgumentException when the given name is blank or empty.
      * @throws \Yasumi\Exception\UnknownLocaleException
@@ -317,11 +318,11 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     /**
      * Retrieves the holiday object for the given holiday.
      *
-     * @param $shortName string the name of the holiday.
+     * @param string $shortName the name of the holiday.
      *
      * @throws InvalidArgumentException when the given name is blank or empty.
      *
-     * @return Holiday a Holiday instance for the given holiday
+     * @return Holiday|null a Holiday instance for the given holiday
      */
     public function getHoliday($shortName)
     {
@@ -335,9 +336,9 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     /**
      * Retrieves the previous date (year) the given holiday took place.
      *
-     * @param $shortName string the name of the holiday for which the previous occurrence need to be retrieved.
+     * @param string $shortName the name of the holiday for which the previous occurrence need to be retrieved.
      *
-     * @return Holiday a Holiday instance for the given holiday
+     * @return Holiday|null a Holiday instance for the given holiday
      *
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \RuntimeException
@@ -371,7 +372,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @return \Yasumi\Filters\BetweenFilter
      */
-    public function between(DateTime $start_date, DateTime $end_date = null, $equals = true)
+    public function between(DateTime $start_date, DateTime $end_date, $equals = true)
     {
         if ($start_date > $end_date) {
             throw new InvalidArgumentException('Start date must be a date before the end date.');
