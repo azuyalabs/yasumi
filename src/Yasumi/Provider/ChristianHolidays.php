@@ -649,12 +649,12 @@ trait ChristianHolidays
      * @param int    $year     the year for which Easter needs to be calculated
      * @param string $timezone the timezone in which Easter is celebrated
      *
-     * @return \Datetime date of Orthodox Easter
+     * @return \DateTime date of Orthodox Easter
      *
      * @link http://php.net/manual/en/function.easter-date.php#83794
      * @link https://en.wikipedia.org/wiki/Computus#Adaptation_for_Western_Easter_of_Meeus.27_Julian_algorithm
      */
-    public function calculateOrthodoxEaster($year, $timezone): \Datetime
+    public function calculateOrthodoxEaster($year, $timezone): \DateTime
     {
         $a     = $year % 4;
         $b     = $year % 7;
