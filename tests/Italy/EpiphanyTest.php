@@ -44,7 +44,7 @@ class EpiphanyTest extends ItalyBaseTestCase implements YasumiTestCaseInterface
      *
      * @return array list of test dates for Epiphany
      */
-    public function EpiphanyDataProvider()
+    public function EpiphanyDataProvider(): array
     {
         return $this->generateRandomDates(1, 6, self::TIMEZONE);
     }

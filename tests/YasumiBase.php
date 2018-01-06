@@ -226,7 +226,7 @@ trait YasumiBase
      *
      * @return array list of random test dates used for assertion of holidays.
      */
-    public function generateRandomDates($month, $day, $timezone = 'UTC', $iterations = 10, $range = 1000)
+    public function generateRandomDates($month, $day, $timezone = 'UTC', $iterations = 10, $range = 1000): array
     {
         $data = [];
         for ($y = 1; $y <= $iterations; $y++) {
@@ -246,7 +246,7 @@ trait YasumiBase
      *
      * @return array list of random easter test dates used for assertion of holidays.
      */
-    public function generateRandomEasterDates($timezone = 'UTC', $iterations = 10, $range = 1000)
+    public function generateRandomEasterDates($timezone = 'UTC', $iterations = 10, $range = 1000): array
     {
         $data = [];
 
@@ -271,7 +271,7 @@ trait YasumiBase
      *
      * @throws \Exception
      */
-    public function generateRandomEasterMondayDates($timezone = 'UTC', $iterations = 10, $range = 1000)
+    public function generateRandomEasterMondayDates($timezone = 'UTC', $iterations = 10, $range = 1000): array
     {
         return $this->generateRandomModifiedEasterDates(function (DateTime $date) {
             $date->add(new DateInterval('P1D'));
@@ -289,7 +289,7 @@ trait YasumiBase
      *
      * @throws \Exception
      */
-    public function generateRandomGoodFridayDates($timezone = 'UTC', $iterations = 10, $range = 1000)
+    public function generateRandomGoodFridayDates($timezone = 'UTC', $iterations = 10, $range = 1000): array
     {
         return $this->generateRandomModifiedEasterDates(function (DateTime $date) {
             $date->sub(new DateInterval('P2D'));
@@ -307,7 +307,7 @@ trait YasumiBase
      *
      * @throws \Exception
      */
-    public function generateRandomPentecostDates($timezone = 'UTC', $iterations = 10, $range = 1000)
+    public function generateRandomPentecostDates($timezone = 'UTC', $iterations = 10, $range = 1000): array
     {
         return $this->generateRandomModifiedEasterDates(function (DateTime $date) {
             $date->add(new DateInterval('P49D'));
@@ -324,7 +324,7 @@ trait YasumiBase
      *
      * @return array list of random modified Easter day test dates for assertion of holidays.
      */
-    public function generateRandomModifiedEasterDates(callable $cb, $timezone = 'UTC', $iterations = 10, $range = 1000)
+    public function generateRandomModifiedEasterDates(callable $cb, $timezone = 'UTC', $iterations = 10, $range = 1000): array
     {
         $data = [];
 
@@ -358,7 +358,7 @@ trait YasumiBase
         $timezone = 'UTC',
         $iterations = 10,
         $range = 1000
-    ) {
+    ): array {
         return $this->generateRandomDatesWithModifier(
             $month,
             $day,
@@ -392,7 +392,7 @@ trait YasumiBase
         $timezone = 'UTC',
         $iterations,
         $range
-    ) {
+    ): array {
         $data  = [];
 
         for ($i = 1; $i <= $iterations; ++$i) {
@@ -415,7 +415,7 @@ trait YasumiBase
      *
      * @return bool true if $dateTime is a weekend, false otherwise
      */
-    public function isWeekend(\DateTimeInterface $dateTime, array $weekendDays = [0, 6])
+    public function isWeekend(\DateTimeInterface $dateTime, array $weekendDays = [0, 6]): bool
     {
         return in_array((int) $dateTime->format('w'), $weekendDays, true);
     }
@@ -428,7 +428,7 @@ trait YasumiBase
      *
      * @return int a year number
      */
-    public function generateRandomYear($lowerLimit = 1000, $upperLimit = 9999)
+    public function generateRandomYear($lowerLimit = 1000, $upperLimit = 9999): int
     {
         return (int)Faker::create()->numberBetween($lowerLimit, $upperLimit);
     }
@@ -456,7 +456,7 @@ trait YasumiBase
      *
      * @return \DateTime date of Easter
      */
-    protected function calculateEaster($year, $timezone)
+    protected function calculateEaster($year, $timezone): DateTime
     {
         if (extension_loaded('calendar')) {
             $easter_days = \easter_days($year);

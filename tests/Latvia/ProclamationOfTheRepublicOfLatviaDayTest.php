@@ -44,7 +44,7 @@ class ProclamationOfTheRepublicOfLatviaDayTest extends LatviaBaseTestCase implem
     /**
      * @return array
      */
-    public function holidayDataProvider()
+    public function holidayDataProvider(): array
     {
         return $this->generateRandomDatesWithHolidayMovedToMonday(
             11,

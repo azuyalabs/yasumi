@@ -33,7 +33,7 @@ class PentecostTest extends EstoniaBaseTestCase implements YasumiTestCaseInterfa
      *
      * @throws \Exception
      */
-    public function holidayDataProvider()
+    public function holidayDataProvider(): array
     {
         return $this->generateRandomPentecostDates(self::TIMEZONE);
     }

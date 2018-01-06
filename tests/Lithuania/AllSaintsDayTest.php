@@ -31,7 +31,7 @@ class AllSaintsDayTest extends LithuaniaBaseTestCase implements YasumiTestCaseIn
     /**
      * @return array
      */
-    public function holidayDataProvider()
+    public function holidayDataProvider(): array
     {
         return $this->generateRandomDates(11, 1, self::TIMEZONE);
     }

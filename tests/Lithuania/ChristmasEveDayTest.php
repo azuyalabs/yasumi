@@ -31,7 +31,7 @@ class ChristmasEveDayTest extends LithuaniaBaseTestCase implements YasumiTestCas
     /**
      * @return array
      */
-    public function holidayDataProvider()
+    public function holidayDataProvider(): array
     {
         return $this->generateRandomDates(12, 24, self::TIMEZONE);
     }

@@ -31,7 +31,7 @@ class InternationalWomensDayTest extends RussiaBaseTestCase implements YasumiTes
     /**
      * @return array
      */
-    public function holidayDataProvider()
+    public function holidayDataProvider(): array
     {
         return $this->generateRandomDates(3, 8, self::TIMEZONE);
     }

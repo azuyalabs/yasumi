@@ -44,7 +44,7 @@ class ChristmasDayTest extends SchwyzBaseTestCase implements YasumiTestCaseInter
      *
      * @return array list of test dates for Christmas Day
      */
-    public function ChristmasDayDataProvider()
+    public function ChristmasDayDataProvider(): array
     {
         return $this->generateRandomDates(12, 25, self::TIMEZONE);
     }

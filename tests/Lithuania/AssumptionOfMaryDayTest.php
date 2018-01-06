@@ -31,7 +31,7 @@ class AssumptionOfMaryDayTest extends LithuaniaBaseTestCase implements YasumiTes
     /**
      * @return array
      */
-    public function holidayDataProvider()
+    public function holidayDataProvider(): array
     {
         return $this->generateRandomDates(8, 15, self::TIMEZONE);
     }

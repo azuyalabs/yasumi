@@ -44,7 +44,7 @@ class ImmaculateConceptionTest extends NidwaldenBaseTestCase implements YasumiTe
      *
      * @return array list of test dates for the day of the holiday defined in this test
      */
-    public function HolidayDataProvider()
+    public function HolidayDataProvider(): array
     {
         return $this->generateRandomDates(12, 8, self::TIMEZONE);
     }

@@ -46,7 +46,7 @@ class AllSaintsDayTest extends SwedenBaseTestCase implements YasumiTestCaseInter
      *
      * @return array list of test dates for the holiday defined in this test
      */
-    public function HolidayDataProvider()
+    public function HolidayDataProvider(): array
     {
         $data = [];
 

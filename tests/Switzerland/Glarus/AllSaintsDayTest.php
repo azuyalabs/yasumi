@@ -65,7 +65,7 @@ class AllSaintsDayTest extends GlarusBaseTestCase implements YasumiTestCaseInter
      *
      * @return array list of test dates for All Saints' Day
      */
-    public function AllSaintsDayDataProvider()
+    public function AllSaintsDayDataProvider(): array
     {
         return $this->generateRandomDates(11, 1, self::TIMEZONE);
     }

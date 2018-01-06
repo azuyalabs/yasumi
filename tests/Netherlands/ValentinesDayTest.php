@@ -44,7 +44,7 @@ class ValentinesDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
      *
      * @return array list of test dates for Valentines Day
      */
-    public function ValentinesDayDataProvider()
+    public function ValentinesDayDataProvider(): array
     {
         return $this->generateRandomDates(2, 14, self::TIMEZONE);
     }

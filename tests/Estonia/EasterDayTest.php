@@ -31,7 +31,7 @@ class EasterDayTest extends EstoniaBaseTestCase implements YasumiTestCaseInterfa
     /**
      * @return array
      */
-    public function holidayDataProvider()
+    public function holidayDataProvider(): array
     {
         return $this->generateRandomEasterDates(self::TIMEZONE);
     }
