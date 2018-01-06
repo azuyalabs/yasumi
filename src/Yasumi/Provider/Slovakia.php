@@ -66,7 +66,7 @@ class Slovakia extends AbstractProvider
         $this->timezone = 'Europe/Bratislava';
 
         // 1.1.
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OFFICIAL));
+        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
         // 6.1.
         $this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
         // 1.5.

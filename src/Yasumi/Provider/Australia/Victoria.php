@@ -51,7 +51,7 @@ class Victoria extends Australia
         $boxingDay    = new DateTime("$this->year-12-26", new DateTimeZone($this->timezone));
 
         $this->calculateHoliday('christmasDay', [], $christmasDay);
-        $this->calculateHoliday('secondChristmasDay', [], $boxingDay, false, true);
+        $this->calculateHoliday('secondChristmasDay', [], $boxingDay, false);
     }
 
     public function calculateLabourDay()

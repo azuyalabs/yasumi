@@ -151,7 +151,7 @@ class Australia extends AbstractProvider
 
         $date = new DateTime("$this->year-04-25", new DateTimeZone($this->timezone));
 
-        $this->calculateHoliday('anzacDay', [], $date, true, true);
+        $this->calculateHoliday('anzacDay', [], $date);
     }
 
     /**

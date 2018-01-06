@@ -43,7 +43,7 @@ class RhinelandPalatinate extends Germany
         parent::initialize();
 
         // Add custom Christian holidays
-        $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
     }
 }
