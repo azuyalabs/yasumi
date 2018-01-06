@@ -330,7 +330,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
 
         $holidays = $this->getHolidays();
 
-        return isset($holidays[$shortName]) ? $holidays[$shortName] : null;
+        return $holidays[$shortName] ?? null;
     }
 
     /**
