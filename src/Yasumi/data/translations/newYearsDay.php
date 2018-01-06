@@ -46,6 +46,7 @@ return [
     'pt_BR' => 'Ano novo',
     'pt_PT' => 'Dia de Ano Novo',
     'ro_RO' => 'Anul Nou',
+    'ru_RU' => 'Новый год',
     'ru_UA' => 'Новый Год',
     'sk_SK' => 'Deň vzniku Slovenskej republiky',
     'sv_SE' => 'nyårsdagen',
