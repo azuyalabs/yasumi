@@ -33,7 +33,7 @@ class ObservedHolidaysFilter extends FilterIterator implements Countable
      *
      * @return bool
      */
-    public function accept()
+    public function accept(): bool
     {
         return $this->getInnerIterator()->current()->getType() === Holiday::TYPE_OBSERVANCE;
     }
@@ -41,7 +41,7 @@ class ObservedHolidaysFilter extends FilterIterator implements Countable
     /**
      * @return integer Returns the number of filtered holidays.
      */
-    public function count()
+    public function count(): int
     {
         return iterator_count($this);
     }

@@ -61,7 +61,7 @@ class Yasumi
      *
      * @return array list of available holiday providers
      */
-    public static function getProviders()
+    public static function getProviders(): array
     {
         // Basic static cache
         static $providers;
@@ -114,7 +114,7 @@ class Yasumi
      * @throws \RuntimeException
      * @throws \InvalidArgumentException
      */
-    public static function nextWorkingDay($class, DateTime $startDate, $workingDays = 1)
+    public static function nextWorkingDay($class, DateTime $startDate, $workingDays = 1): DateTime
     {
         // Setup start date, if its an instance of \DateTime, clone to prevent modification to original
         $date = $startDate instanceof DateTime ? clone $startDate : new DateTime($startDate);
@@ -209,7 +209,7 @@ class Yasumi
      *
      * @return AbstractProvider An instance of class $class is created and returned
      */
-    public static function createByISO3166_2($iso3166_2, $year = null, $locale = self::DEFAULT_LOCALE)
+    public static function createByISO3166_2($iso3166_2, $year = null, $locale = self::DEFAULT_LOCALE): AbstractProvider
     {
         $availableProviders = self::getProviders();
 
@@ -229,7 +229,7 @@ class Yasumi
      *
      * @return array list of available locales
      */
-    public static function getAvailableLocales()
+    public static function getAvailableLocales(): array
     {
         return require __DIR__ . '/data/locales.php';
     }
@@ -247,7 +247,7 @@ class Yasumi
      * @throws \RuntimeException
      * @throws \InvalidArgumentException
      */
-    public static function prevWorkingDay($class, DateTime $startDate, $workingDays = 1)
+    public static function prevWorkingDay($class, DateTime $startDate, $workingDays = 1): DateTime
     {
         // Setup start date, if its an instance of \DateTime, clone to prevent modification to original
         $date = $startDate instanceof DateTime ? clone $startDate : new DateTime($startDate);

@@ -79,7 +79,7 @@ class YasumiTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Tests that classes that Yasumi allows external classes that extend the ProviderInterface.
+     * Tests that Yasumi allows external classes that extend the ProviderInterface.
      */
     public function testCreateWithAbstractExtension()
     {

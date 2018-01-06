@@ -138,7 +138,7 @@ class Holiday extends DateTime implements JsonSerializable
      *
      * @return string the type of holiday (official, observance, season, bank or other).
      */
-    public function getType()
+    public function getType(): string
     {
         return $this->type;
     }

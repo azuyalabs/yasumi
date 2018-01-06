@@ -68,7 +68,7 @@ class BetweenFilter extends FilterIterator implements Countable
     /**
      * @return bool Check whether the current element of the iterator is acceptable
      */
-    public function accept()
+    public function accept(): bool
     {
         $holiday = $this->getInnerIterator()->current();
 
@@ -82,7 +82,7 @@ class BetweenFilter extends FilterIterator implements Countable
     /**
      * @return integer Returns the number of holidays between the given start and end date.
      */
-    public function count()
+    public function count(): int
     {
         return iterator_count($this);
     }

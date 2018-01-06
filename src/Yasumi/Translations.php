@@ -93,7 +93,7 @@ class Translations implements TranslationsInterface
      *
      * @return true upon success, otherwise an UnknownLocaleException is thrown
      */
-    protected function isValidLocale($locale)
+    protected function isValidLocale($locale): bool
     {
         if (! in_array($locale, $this->availableLocales, true)) {
             throw new UnknownLocaleException(sprintf('Locale "%s" is not a valid locale.', $locale));
@@ -150,7 +150,7 @@ class Translations implements TranslationsInterface
      *
      * @return array holiday name translations ['<locale>' => '<translation>', ...]
      */
-    public function getTranslations($shortName)
+    public function getTranslations($shortName): array
     {
         if (! array_key_exists($shortName, $this->translations)) {
             return [];
