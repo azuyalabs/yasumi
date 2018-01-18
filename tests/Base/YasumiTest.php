@@ -123,10 +123,12 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      */
     public function testCount()
     {
+        // There are 16 holidays in Japan in the year 2015, with 1 substituted holiday.
         $holidays = Yasumi::create('Japan', 2015);
 
         $this->assertInternalType('int', $holidays->count());
-        $this->assertEquals(17, $holidays->count());
+        $this->assertEquals(16, $holidays->count());
+        $this->assertNotEquals(17, $holidays->count());
     }
 
     /**

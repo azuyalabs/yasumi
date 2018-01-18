@@ -237,12 +237,19 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
 
     /**
      * Returns the number of defined holidays (for the given country and the given year).
+     * In case a holiday is substituted (e.g. observed), the holiday is only counted once.
      *
      * @return int number of holidays
      */
     public function count()
     {
-        return count($this->getHolidays());
+        $list = $this->getHolidayNames();
+
+        array_walk($list, function (&$holiday) {
+            $holiday = str_replace('substituteHoliday:', '', $holiday);
+        });
+
+        return count(array_unique($list));
     }
 
     /**
