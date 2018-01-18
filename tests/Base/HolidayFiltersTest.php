@@ -68,7 +68,7 @@ class HolidayFiltersTest extends PHPUnit_Framework_TestCase
      */
     public function testObservedHolidaysFilter()
     {
-        // There are 11 holidays in Ireland in the year 2018, with 1 substituted holiday.
+        // There are 2 observed holidays in Ireland in the year 2018.
         $holidays = Yasumi::create('Ireland', 2018);
 
         $filteredHolidays      = new ObservedHolidaysFilter($holidays->getIterator());
@@ -101,40 +101,26 @@ class HolidayFiltersTest extends PHPUnit_Framework_TestCase
      */
     public function testBankHolidaysFilter()
     {
-        $holidays = Yasumi::create('Netherlands', 2017);
+        // There are no bank holidays in Ireland in the year 2018.
+        $holidays = Yasumi::create('Ireland', 2018);
 
         $filteredHolidays      = new BankHolidaysFilter($holidays->getIterator());
         $filteredHolidaysArray = iterator_to_array($filteredHolidays);
 
         // Assert array definitions
-        $this->assertArrayNotHasKey('summerTime', $filteredHolidaysArray);
-        $this->assertArrayNotHasKey('winterTime', $filteredHolidaysArray);
         $this->assertArrayNotHasKey('newYearsDay', $filteredHolidaysArray);
+        $this->assertArrayNotHasKey('stPatricksDay', $filteredHolidaysArray);
         $this->assertArrayNotHasKey('easter', $filteredHolidaysArray);
         $this->assertArrayNotHasKey('easterMonday', $filteredHolidaysArray);
-        $this->assertArrayNotHasKey('kingsDay', $filteredHolidaysArray);
-        $this->assertArrayNotHasKey('ascensionDay', $filteredHolidaysArray);
+        $this->assertArrayNotHasKey('mayDay', $filteredHolidaysArray);
+        $this->assertArrayNotHasKey('juneHoliday', $filteredHolidaysArray);
+        $this->assertArrayNotHasKey('augustHoliday', $filteredHolidaysArray);
+        $this->assertArrayNotHasKey('octoberHoliday', $filteredHolidaysArray);
+        $this->assertArrayNotHasKey('christmasDay', $filteredHolidaysArray);
+        $this->assertArrayNotHasKey('stStephensDay', $filteredHolidaysArray);
         $this->assertArrayNotHasKey('pentecost', $filteredHolidaysArray);
         $this->assertArrayNotHasKey('pentecostMonday', $filteredHolidaysArray);
-        $this->assertArrayNotHasKey('christmasDay', $filteredHolidaysArray);
-        $this->assertArrayNotHasKey('secondChristmasDay', $filteredHolidaysArray);
-        $this->assertArrayNotHasKey('stMartinsDay', $filteredHolidaysArray);
         $this->assertArrayNotHasKey('goodFriday', $filteredHolidaysArray);
-        $this->assertArrayNotHasKey('ashWednesday', $filteredHolidaysArray);
-        $this->assertArrayNotHasKey('commemorationDay', $filteredHolidaysArray);
-        $this->assertArrayNotHasKey('liberationDay', $filteredHolidaysArray);
-        $this->assertArrayNotHasKey('halloween', $filteredHolidaysArray);
-        $this->assertArrayNotHasKey('stNicholasDay', $filteredHolidaysArray);
-        $this->assertArrayNotHasKey('carnivalDay', $filteredHolidaysArray);
-        $this->assertArrayNotHasKey('secondCarnivalDay', $filteredHolidaysArray);
-        $this->assertArrayNotHasKey('thirdCarnivalDay', $filteredHolidaysArray);
-        $this->assertArrayNotHasKey('internationalWorkersDay', $filteredHolidaysArray);
-        $this->assertArrayNotHasKey('valentinesDay', $filteredHolidaysArray);
-        $this->assertArrayNotHasKey('worldAnimalDay', $filteredHolidaysArray);
-        $this->assertArrayNotHasKey('fathersDay', $filteredHolidaysArray);
-        $this->assertArrayNotHasKey('mothersDay', $filteredHolidaysArray);
-        $this->assertArrayNotHasKey('epiphany', $filteredHolidaysArray);
-        $this->assertArrayNotHasKey('princesDay', $filteredHolidaysArray);
 
         // Assert number of results returned
         $this->assertCount(0, $filteredHolidays);
