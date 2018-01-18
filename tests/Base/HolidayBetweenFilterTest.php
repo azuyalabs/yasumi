@@ -259,10 +259,7 @@ class HolidayBetweenFilterTest extends PHPUnit_Framework_TestCase
         $this->assertArrayNotHasKey('pentecostMonday', $betweenHolidays);
 
         $this->assertCount(12, $between);
-        //$this->assertNotCount(count($holidays), $between); // Cause PHPUnit to fail ('Failed asserting that actual size 12 does not match expected size 12.')
-
         $this->assertEquals(12, $between->count());
-        //$this->assertNotEquals(count($holidays), $between->count());
     }
 
     /**
