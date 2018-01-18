@@ -35,7 +35,7 @@ class HolidayFiltersTest extends PHPUnit_Framework_TestCase
      */
     public function testOfficialHolidaysFilter()
     {
-        // There are 11 holidays in Ireland in the year 2018, with 1 substituted holiday.
+        // There are 11 official holidays in Ireland in the year 2018, with 1 substituted holiday.
         $holidays = Yasumi::create('Ireland', 2018);
 
         $filteredHolidays      = new OfficialHolidaysFilter($holidays->getIterator());

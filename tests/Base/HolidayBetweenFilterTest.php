@@ -75,7 +75,7 @@ class HolidayBetweenFilterTest extends PHPUnit_Framework_TestCase
 
         $this->assertCount(13, $between);
         $this->assertNotCount(count($holidays), $between);
-        
+
         $this->assertEquals(13, $between->count());
         $this->assertNotEquals(count($holidays), $between->count());
     }
@@ -125,10 +125,10 @@ class HolidayBetweenFilterTest extends PHPUnit_Framework_TestCase
         $this->assertArrayNotHasKey('stNicholasDay', $betweenHolidays);
         $this->assertArrayNotHasKey('christmasDay', $betweenHolidays);
         $this->assertArrayNotHasKey('secondChristmasDay', $betweenHolidays);
-        
+
         $this->assertCount(19, $between);
         $this->assertNotCount(count($holidays), $between);
-        
+
         $this->assertEquals(19, $between->count());
         $this->assertNotEquals(count($holidays), $between->count());
     }
@@ -162,10 +162,10 @@ class HolidayBetweenFilterTest extends PHPUnit_Framework_TestCase
         $this->assertArrayNotHasKey('pentecostMonday', $betweenHolidays);
         $this->assertArrayNotHasKey('christmasDay', $betweenHolidays);
         $this->assertArrayNotHasKey('secondChristmasDay', $betweenHolidays);
-        
+
         $this->assertCount(8, $between);
         $this->assertNotCount(count($holidays), $between);
-        
+
         $this->assertEquals(8, $between->count());
         $this->assertNotEquals(count($holidays), $between->count());
     }
@@ -199,10 +199,10 @@ class HolidayBetweenFilterTest extends PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('immaculateConception', $betweenHolidays);
         $this->assertArrayHasKey('christmasDay', $betweenHolidays);
         $this->assertArrayHasKey('stStephensDay', $betweenHolidays);
-        
+
         $this->assertCount(10, $between);
         $this->assertNotCount(count($holidays), $between);
-        
+
         $this->assertEquals(10, $between->count());
         $this->assertNotEquals(count($holidays), $between->count());
     }
@@ -222,5 +222,172 @@ class HolidayBetweenFilterTest extends PHPUnit_Framework_TestCase
             new DateTime('12/31/' . $year, new DateTimeZone($timezone)),
             new DateTime('01/01/' . $year, new DateTimeZone($timezone))
         );
+    }
+
+    /**
+     * Tests the BetweenFilter so that a substituted holiday is only counted once.
+     *
+     * This test covers the scenario that the requested date range covers all know holidays.
+     */
+    public function testCountBetweenWithSubstitutes()
+    {
+        // There are official 12 holidays in Ireland in the year 2018, with 1 substituted holiday.
+        $year     = 2018;
+        $timezone = 'Europe/Dublin';
+        $holidays = Yasumi::create('Ireland', $year);
+
+        $between = $holidays->between(
+            new DateTime('01/01/' . $year, new DateTimeZone($timezone)),
+            new DateTime('12/31/' . $year, new DateTimeZone($timezone))
+        );
+
+        $betweenHolidays = iterator_to_array($between);
+
+        // Assert array definitions
+        $this->assertArrayHasKey('newYearsDay', $betweenHolidays);
+        $this->assertArrayHasKey('stPatricksDay', $betweenHolidays);
+        $this->assertArrayHasKey('easter', $betweenHolidays);
+        $this->assertArrayHasKey('easterMonday', $betweenHolidays);
+        $this->assertArrayHasKey('mayDay', $betweenHolidays);
+        $this->assertArrayHasKey('juneHoliday', $betweenHolidays);
+        $this->assertArrayHasKey('augustHoliday', $betweenHolidays);
+        $this->assertArrayHasKey('octoberHoliday', $betweenHolidays);
+        $this->assertArrayHasKey('christmasDay', $betweenHolidays);
+        $this->assertArrayHasKey('stStephensDay', $betweenHolidays);
+        $this->assertArrayHasKey('pentecost', $betweenHolidays);
+        $this->assertArrayHasKey('goodFriday', $betweenHolidays);
+        $this->assertArrayNotHasKey('pentecostMonday', $betweenHolidays);
+
+        $this->assertCount(12, $between);
+        //$this->assertNotCount(count($holidays), $between); // Cause PHPUnit to fail ('Failed asserting that actual size 12 does not match expected size 12.')
+
+        $this->assertEquals(12, $between->count());
+        //$this->assertNotEquals(count($holidays), $between->count());
+    }
+
+    /**
+     * Tests the BetweenFilter so that a substituted holiday is only counted once.
+     *
+     * This test covers the scenario that the requested date range excludes a substituted holiday.
+     */
+    public function testCountBetweenExcludingSubstituteHoliday()
+    {
+        // There are 2 official holidays in Ireland in the given date range, with 1 substituted holiday.
+        $year     = 2018;
+        $timezone = 'Europe/Dublin';
+        $holidays = Yasumi::create('Ireland', $year);
+
+        $between = $holidays->between(
+            new DateTime('01/01/' . $year, new DateTimeZone($timezone)),
+            new DateTime('03/20/' . $year, new DateTimeZone($timezone))
+        );
+
+        $betweenHolidays = iterator_to_array($between);
+
+        // Assert array definitions
+        $this->assertArrayHasKey('newYearsDay', $betweenHolidays);
+        $this->assertArrayHasKey('stPatricksDay', $betweenHolidays);
+        $this->assertArrayNotHasKey('mayDay', $betweenHolidays);
+        $this->assertArrayNotHasKey('juneHoliday', $betweenHolidays);
+        $this->assertArrayNotHasKey('augustHoliday', $betweenHolidays);
+        $this->assertArrayNotHasKey('octoberHoliday', $betweenHolidays);
+        $this->assertArrayNotHasKey('christmasDay', $betweenHolidays);
+        $this->assertArrayNotHasKey('stStephensDay', $betweenHolidays);
+        $this->assertArrayNotHasKey('pentecost', $betweenHolidays);
+        $this->assertArrayNotHasKey('goodFriday', $betweenHolidays);
+        $this->assertArrayNotHasKey('easter', $betweenHolidays);
+        $this->assertArrayNotHasKey('easterMonday', $betweenHolidays);
+        $this->assertArrayNotHasKey('pentecostMonday', $betweenHolidays);
+
+        $this->assertCount(2, $between);
+        $this->assertNotCount(count($holidays), $between);
+
+        $this->assertEquals(2, $between->count());
+        $this->assertNotEquals(count($holidays), $between->count());
+    }
+
+    /**
+     * Tests the BetweenFilter so that a substituted holiday is only counted once.
+     *
+     * This test covers the scenario that the requested date range excludes a substituted holiday, but includes
+     * the original substituted holiday.
+     */
+    public function testCountBetweenExcludingSubstituteHolidayIncludingOriginalHoliday()
+    {
+        // There are 2 official holidays in Ireland in the given date range, with 1 substituted holiday.
+        $year     = 2018;
+        $timezone = 'Europe/Dublin';
+        $holidays = Yasumi::create('Ireland', $year);
+
+        $between = $holidays->between(
+            new DateTime('01/01/' . $year, new DateTimeZone($timezone)),
+            new DateTime('03/18/' . $year, new DateTimeZone($timezone))
+        );
+
+        $betweenHolidays = iterator_to_array($between);
+
+        // Assert array definitions
+        $this->assertArrayHasKey('newYearsDay', $betweenHolidays);
+        $this->assertArrayHasKey('stPatricksDay', $betweenHolidays);
+        $this->assertArrayNotHasKey('easterMonday', $betweenHolidays);
+        $this->assertArrayNotHasKey('mayDay', $betweenHolidays);
+        $this->assertArrayNotHasKey('juneHoliday', $betweenHolidays);
+        $this->assertArrayNotHasKey('augustHoliday', $betweenHolidays);
+        $this->assertArrayNotHasKey('octoberHoliday', $betweenHolidays);
+        $this->assertArrayNotHasKey('christmasDay', $betweenHolidays);
+        $this->assertArrayNotHasKey('stStephensDay', $betweenHolidays);
+        $this->assertArrayNotHasKey('pentecost', $betweenHolidays);
+        $this->assertArrayNotHasKey('goodFriday', $betweenHolidays);
+        $this->assertArrayNotHasKey('easter', $betweenHolidays);
+        $this->assertArrayNotHasKey('easterMonday', $betweenHolidays);
+        $this->assertArrayNotHasKey('pentecostMonday', $betweenHolidays);
+
+        $this->assertCount(2, $between);
+        $this->assertNotCount(count($holidays), $between);
+
+        $this->assertEquals(2, $between->count());
+        $this->assertNotEquals(count($holidays), $between->count());
+    }
+
+    /**
+     * Tests the BetweenFilter so that a substituted holiday is only counted once.
+     *
+     * This test covers the scenario that the requested date range excludes a substituted holiday and also
+     * the original substituted holiday.
+     */
+    public function testCountBetweenExcludingSubstituteHolidayAndOriginalHoliday()
+    {
+        // There is 1 official holidays in Ireland in the given date range.
+        $year     = 2018;
+        $timezone = 'Europe/Dublin';
+        $holidays = Yasumi::create('Ireland', $year);
+
+        $between = $holidays->between(
+            new DateTime('01/01/' . $year, new DateTimeZone($timezone)),
+            new DateTime('03/16/' . $year, new DateTimeZone($timezone))
+        );
+
+        $betweenHolidays = iterator_to_array($between);
+
+        // Assert array definitions
+        $this->assertArrayHasKey('newYearsDay', $betweenHolidays);
+        $this->assertArrayNotHasKey('stPatricksDay', $betweenHolidays);
+        $this->assertArrayNotHasKey('mayDay', $betweenHolidays);
+        $this->assertArrayNotHasKey('juneHoliday', $betweenHolidays);
+        $this->assertArrayNotHasKey('augustHoliday', $betweenHolidays);
+        $this->assertArrayNotHasKey('octoberHoliday', $betweenHolidays);
+        $this->assertArrayNotHasKey('christmasDay', $betweenHolidays);
+        $this->assertArrayNotHasKey('stStephensDay', $betweenHolidays);
+        $this->assertArrayNotHasKey('pentecost', $betweenHolidays);
+        $this->assertArrayNotHasKey('goodFriday', $betweenHolidays);
+        $this->assertArrayNotHasKey('easter', $betweenHolidays);
+        $this->assertArrayNotHasKey('easterMonday', $betweenHolidays);
+        $this->assertArrayNotHasKey('pentecostMonday', $betweenHolidays);
+
+        $this->assertCount(1, $between);
+        $this->assertNotCount(count($holidays), $between);
+
+        $this->assertEquals(1, $between->count());
+        $this->assertNotEquals(count($holidays), $between->count());
     }
 }

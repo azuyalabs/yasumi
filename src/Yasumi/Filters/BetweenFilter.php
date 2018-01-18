@@ -84,6 +84,12 @@ class BetweenFilter extends FilterIterator implements Countable
      */
     public function count()
     {
-        return iterator_count($this);
+        $days = array_keys(iterator_to_array($this));
+
+        array_walk($days, function (&$day) {
+            $day = str_replace('substituteHoliday:', '', $day);
+        });
+
+        return count(array_unique($days));
     }
 }
