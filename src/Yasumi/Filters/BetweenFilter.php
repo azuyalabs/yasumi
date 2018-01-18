@@ -13,10 +13,10 @@
 
 namespace Yasumi\Filters;
 
+use Countable;
 use DateTime;
 use FilterIterator;
 use Iterator;
-use Countable;
 
 /**
  * BetweenFilter is a class used for filtering holidays based on given date range.
