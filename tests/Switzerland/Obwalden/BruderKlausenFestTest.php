@@ -33,7 +33,7 @@ class BruderKlausenFestTest extends ObwaldenBaseTestCase implements YasumiTestCa
     public function testBruderKlausenFestOnAfter1947()
     {
         $year = $this->generateRandomYear(1947);
-        $date = new DateTime($year.'-09-25', new DateTimeZone(self::TIMEZONE));
+        $date = new DateTime($year . '-09-25', new DateTimeZone(self::TIMEZONE));
 
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OTHER);
@@ -45,7 +45,7 @@ class BruderKlausenFestTest extends ObwaldenBaseTestCase implements YasumiTestCa
     public function testBruderKlausenFestBetween1649And1946()
     {
         $year = $this->generateRandomYear(1649, 1946);
-        $date = new DateTime($year.'-09-21', new DateTimeZone(self::TIMEZONE));
+        $date = new DateTime($year . '-09-21', new DateTimeZone(self::TIMEZONE));
 
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OTHER);

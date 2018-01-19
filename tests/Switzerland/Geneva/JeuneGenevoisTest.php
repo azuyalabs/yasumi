@@ -35,7 +35,7 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements YasumiTestCaseInte
     {
         $year = $this->generateRandomYear(1966);
         // Find first Sunday of September
-        $date = new DateTime('First Sunday of '.$year.'-09', new DateTimeZone(self::TIMEZONE));
+        $date = new DateTime('First Sunday of ' . $year . '-09', new DateTimeZone(self::TIMEZONE));
         // Go to next Thursday
         $date->add(new DateInterval('P4D'));
 
@@ -50,7 +50,7 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements YasumiTestCaseInte
     {
         $year = $this->generateRandomYear(1870, 1965);
         // Find first Sunday of September
-        $date = new DateTime('First Sunday of '.$year.'-09', new DateTimeZone(self::TIMEZONE));
+        $date = new DateTime('First Sunday of ' . $year . '-09', new DateTimeZone(self::TIMEZONE));
         // Go to next Thursday
         $date->add(new DateInterval('P4D'));
 
@@ -65,7 +65,7 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements YasumiTestCaseInte
     {
         $year = $this->generateRandomYear(1840, 1869);
         // Find first Sunday of September
-        $date = new DateTime('First Sunday of '.$year.'-09', new DateTimeZone(self::TIMEZONE));
+        $date = new DateTime('First Sunday of ' . $year . '-09', new DateTimeZone(self::TIMEZONE));
         // Go to next Thursday
         $date->add(new DateInterval('P4D'));
 

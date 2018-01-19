@@ -84,7 +84,7 @@ class RestorationOfIndependenceDayTest extends LatviaBaseTestCase implements Yas
             $this->generateRandomYear(Latvia::RESTORATION_OF_INDEPENDENCE_YEAR),
             [
                 self::LOCALE => 'Latvijas Republikas Neatkarības atjaunošanas diena',
-                'en_US' => 'Restoration of Independence day'
+                'en_US'      => 'Restoration of Independence day'
             ]
         );
     }

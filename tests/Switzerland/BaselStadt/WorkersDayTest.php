@@ -77,11 +77,6 @@ class WorkersDayTest extends BaselStadtBaseTestCase implements YasumiTestCaseInt
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(
-            self::REGION,
-            self::HOLIDAY,
-            $this->generateRandomYear(),
-            Holiday::TYPE_OTHER
-        );
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OTHER);
     }
 }

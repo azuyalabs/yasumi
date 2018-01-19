@@ -261,179 +261,6 @@ trait YasumiBase
     }
 
     /**
-     * Returns a list of random Easter Monday test dates used for assertion of holidays.
-     *
-     * @param string $timezone   name of the timezone for which the dates need to be generated
-     * @param int    $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
-     * @param int    $range      year range from which dates will be generated (default: 1000)
-     *
-     * @return array list of random Easter Monday test dates used for assertion of holidays.
-     *
-     * @throws \Exception
-     */
-    public function generateRandomEasterMondayDates($timezone = 'UTC', $iterations = 10, $range = 1000): array
-    {
-        return $this->generateRandomModifiedEasterDates(function (DateTime $date) {
-            $date->add(new DateInterval('P1D'));
-        }, $timezone, $iterations, $range);
-    }
-
-    /**
-     * Returns a list of random Good Friday test dates used for assertion of holidays.
-     *
-     * @param string $timezone   name of the timezone for which the dates need to be generated
-     * @param int    $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
-     * @param int    $range      year range from which dates will be generated (default: 1000)
-     *
-     * @return array list of random Good Friday test dates used for assertion of holidays.
-     *
-     * @throws \Exception
-     */
-    public function generateRandomGoodFridayDates($timezone = 'UTC', $iterations = 10, $range = 1000): array
-    {
-        return $this->generateRandomModifiedEasterDates(function (DateTime $date) {
-            $date->sub(new DateInterval('P2D'));
-        }, $timezone, $iterations, $range);
-    }
-
-    /**
-     * Returns a list of random Pentecost test dates used for assertion of holidays.
-     *
-     * @param string $timezone   name of the timezone for which the dates need to be generated
-     * @param int    $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
-     * @param int    $range      year range from which dates will be generated (default: 1000)
-     *
-     * @return array list of random Pentecost test dates used for assertion of holidays.
-     *
-     * @throws \Exception
-     */
-    public function generateRandomPentecostDates($timezone = 'UTC', $iterations = 10, $range = 1000): array
-    {
-        return $this->generateRandomModifiedEasterDates(function (DateTime $date) {
-            $date->add(new DateInterval('P49D'));
-        }, $timezone, $iterations, $range);
-    }
-
-    /**
-     * Returns a list of random modified Easter day test dates for assertion of holidays.
-     *
-     * @param callable $cb         callback(DateTime $date) to modify $date by custom rules
-     * @param string   $timezone   name of the timezone for which the dates need to be generated
-     * @param int      $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
-     * @param int      $range      year range from which dates will be generated (default: 1000)
-     *
-     * @return array list of random modified Easter day test dates for assertion of holidays.
-     */
-    public function generateRandomModifiedEasterDates(callable $cb, $timezone = 'UTC', $iterations = 10, $range = 1000): array
-    {
-        $data = [];
-
-        for ($i = 1; $i <= $iterations; ++$i) {
-            $year = Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
-            $date = $this->calculateEaster($year, $timezone);
-
-            $cb($date);
-
-            $data[] = [$year, $date->format('Y-m-d')];
-        }
-
-        return $data;
-    }
-
-    /**
-     * Returns a list of random test dates used for assertion of holidays. If the date falls in a weekend, random
-     * holiday day is moved to to Monday.
-     *
-     * @param int    $month      month (number) for which the test date needs to be generated
-     * @param int    $day        day (number) for which the test date needs to be generated
-     * @param string $timezone   name of the timezone for which the dates need to be generated
-     * @param int    $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
-     * @param int    $range      year range from which dates will be generated (default: 1000)
-     *
-     * @return array list of random test dates used for assertion of holidays.
-     */
-    public function generateRandomDatesWithHolidayMovedToMonday(
-        $month,
-        $day,
-        $timezone = 'UTC',
-        $iterations = 10,
-        $range = 1000
-    ): array {
-        return $this->generateRandomDatesWithModifier(
-            $month,
-            $day,
-            function ($year, \DateTime $date) {
-                if ($this->isWeekend($date)) {
-                    $date->modify('next monday');
-                }
-            },
-            $timezone,
-            $iterations,
-            $range
-        );
-    }
-
-    /**
-     * Returns a list of random test dates used for assertion of holidays with applied callback.
-     *
-     * @param int      $month      month (number) for which the test date needs to be generated
-     * @param int      $day        day (number) for which the test date needs to be generated
-     * @param callable $callback   callback(int $year, \DateTime $dateTime) to modify $dateTime by custom rules
-     * @param string   $timezone   name of the timezone for which the dates need to be generated
-     * @param int      $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
-     * @param int      $range      year range from which dates will be generated (default: 1000)
-     *
-     * @return array list of random test dates used for assertion of holidays with applied callback.
-     */
-    public function generateRandomDatesWithModifier(
-        $month,
-        $day,
-        callable $callback,
-        $timezone = 'UTC',
-        $iterations,
-        $range
-    ): array {
-        $data  = [];
-
-        for ($i = 1; $i <= $iterations; ++$i) {
-            $year = $this->generateRandomYear($range);
-            $date = new \DateTime("{$year}-{$month}-{$day}", new \DateTimeZone($timezone));
-
-            $callback($year, $date);
-
-            $data[] = [$year, $date->format('Y-m-d')];
-        }
-
-        return $data;
-    }
-
-    /**
-     * Checks if given $dateTime is a weekend.
-     *
-     * @param \DateTimeInterface $dateTime    date for which weekend will be checked.
-     * @param array              $weekendDays weekend days. Saturday and Sunday are used by default.
-     *
-     * @return bool true if $dateTime is a weekend, false otherwise
-     */
-    public function isWeekend(\DateTimeInterface $dateTime, array $weekendDays = [0, 6]): bool
-    {
-        return in_array((int) $dateTime->format('w'), $weekendDays, true);
-    }
-
-    /**
-     * Generates a random year (number).
-     *
-     * @param int $lowerLimit the lower limit for generating a year number (default: 1000)
-     * @param int $upperLimit the upper limit for generating a year number (default: 9999)
-     *
-     * @return int a year number
-     */
-    public function generateRandomYear($lowerLimit = 1000, $upperLimit = 9999): int
-    {
-        return (int)Faker::create()->numberBetween($lowerLimit, $upperLimit);
-    }
-
-    /**
      * Calculates the date for Easter.
      *
      * Easter is a festival and holiday celebrating the resurrection of Jesus Christ from the dead. Easter is celebrated
@@ -509,5 +336,175 @@ trait YasumiBase
         $easter->add(new DateInterval('P' . $easter_days . 'D'));
 
         return $easter;
+    }
+
+    /**
+     * Returns a list of random Easter Monday test dates used for assertion of holidays.
+     *
+     * @param string $timezone   name of the timezone for which the dates need to be generated
+     * @param int    $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
+     * @param int    $range      year range from which dates will be generated (default: 1000)
+     *
+     * @return array list of random Easter Monday test dates used for assertion of holidays.
+     *
+     * @throws \Exception
+     */
+    public function generateRandomEasterMondayDates($timezone = 'UTC', $iterations = 10, $range = 1000): array
+    {
+        return $this->generateRandomModifiedEasterDates(function (DateTime $date) {
+            $date->add(new DateInterval('P1D'));
+        }, $timezone, $iterations, $range);
+    }
+
+    /**
+     * Returns a list of random modified Easter day test dates for assertion of holidays.
+     *
+     * @param callable $cb         callback(DateTime $date) to modify $date by custom rules
+     * @param string   $timezone   name of the timezone for which the dates need to be generated
+     * @param int      $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
+     * @param int      $range      year range from which dates will be generated (default: 1000)
+     *
+     * @return array list of random modified Easter day test dates for assertion of holidays.
+     */
+    public function generateRandomModifiedEasterDates(
+        callable $cb,
+        $timezone = 'UTC',
+        $iterations = 10,
+        $range = 1000
+    ): array {
+        $data = [];
+
+        for ($i = 1; $i <= $iterations; ++$i) {
+            $year = Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
+            $date = $this->calculateEaster($year, $timezone);
+
+            $cb($date);
+
+            $data[] = [$year, $date->format('Y-m-d')];
+        }
+
+        return $data;
+    }
+
+    /**
+     * Returns a list of random Good Friday test dates used for assertion of holidays.
+     *
+     * @param string $timezone   name of the timezone for which the dates need to be generated
+     * @param int    $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
+     * @param int    $range      year range from which dates will be generated (default: 1000)
+     *
+     * @return array list of random Good Friday test dates used for assertion of holidays.
+     *
+     * @throws \Exception
+     */
+    public function generateRandomGoodFridayDates($timezone = 'UTC', $iterations = 10, $range = 1000): array
+    {
+        return $this->generateRandomModifiedEasterDates(function (DateTime $date) {
+            $date->sub(new DateInterval('P2D'));
+        }, $timezone, $iterations, $range);
+    }
+
+    /**
+     * Returns a list of random Pentecost test dates used for assertion of holidays.
+     *
+     * @param string $timezone   name of the timezone for which the dates need to be generated
+     * @param int    $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
+     * @param int    $range      year range from which dates will be generated (default: 1000)
+     *
+     * @return array list of random Pentecost test dates used for assertion of holidays.
+     *
+     * @throws \Exception
+     */
+    public function generateRandomPentecostDates($timezone = 'UTC', $iterations = 10, $range = 1000): array
+    {
+        return $this->generateRandomModifiedEasterDates(function (DateTime $date) {
+            $date->add(new DateInterval('P49D'));
+        }, $timezone, $iterations, $range);
+    }
+
+    /**
+     * Returns a list of random test dates used for assertion of holidays. If the date falls in a weekend, random
+     * holiday day is moved to to Monday.
+     *
+     * @param int    $month      month (number) for which the test date needs to be generated
+     * @param int    $day        day (number) for which the test date needs to be generated
+     * @param string $timezone   name of the timezone for which the dates need to be generated
+     * @param int    $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
+     * @param int    $range      year range from which dates will be generated (default: 1000)
+     *
+     * @return array list of random test dates used for assertion of holidays.
+     */
+    public function generateRandomDatesWithHolidayMovedToMonday(
+        $month,
+        $day,
+        $timezone = 'UTC',
+        $iterations = 10,
+        $range = 1000
+    ): array {
+        return $this->generateRandomDatesWithModifier($month, $day, function ($year, \DateTime $date) {
+            if ($this->isWeekend($date)) {
+                $date->modify('next monday');
+            }
+        }, $timezone, $iterations, $range);
+    }
+
+    /**
+     * Returns a list of random test dates used for assertion of holidays with applied callback.
+     *
+     * @param int      $month      month (number) for which the test date needs to be generated
+     * @param int      $day        day (number) for which the test date needs to be generated
+     * @param callable $callback   callback(int $year, \DateTime $dateTime) to modify $dateTime by custom rules
+     * @param string   $timezone   name of the timezone for which the dates need to be generated
+     * @param int      $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
+     * @param int      $range      year range from which dates will be generated (default: 1000)
+     *
+     * @return array list of random test dates used for assertion of holidays with applied callback.
+     */
+    public function generateRandomDatesWithModifier(
+        $month,
+        $day,
+        callable $callback,
+        $timezone = 'UTC',
+        $iterations,
+        $range
+    ): array {
+        $data = [];
+
+        for ($i = 1; $i <= $iterations; ++$i) {
+            $year = $this->generateRandomYear($range);
+            $date = new \DateTime("{$year}-{$month}-{$day}", new \DateTimeZone($timezone));
+
+            $callback($year, $date);
+
+            $data[] = [$year, $date->format('Y-m-d')];
+        }
+
+        return $data;
+    }
+
+    /**
+     * Generates a random year (number).
+     *
+     * @param int $lowerLimit the lower limit for generating a year number (default: 1000)
+     * @param int $upperLimit the upper limit for generating a year number (default: 9999)
+     *
+     * @return int a year number
+     */
+    public function generateRandomYear($lowerLimit = 1000, $upperLimit = 9999): int
+    {
+        return (int)Faker::create()->numberBetween($lowerLimit, $upperLimit);
+    }
+
+    /**
+     * Checks if given $dateTime is a weekend.
+     *
+     * @param \DateTimeInterface $dateTime    date for which weekend will be checked.
+     * @param array              $weekendDays weekend days. Saturday and Sunday are used by default.
+     *
+     * @return bool true if $dateTime is a weekend, false otherwise
+     */
+    public function isWeekend(\DateTimeInterface $dateTime, array $weekendDays = [0, 6]): bool
+    {
+        return in_array((int)$dateTime->format('w'), $weekendDays, true);
     }
 }

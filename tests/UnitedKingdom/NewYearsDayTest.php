@@ -87,13 +87,7 @@ class NewYearsDayTest extends UnitedKingdomBaseTestCase implements YasumiTestCas
      */
     public function HolidayDataProvider(): array
     {
-        return $this->generateRandomDatesWithHolidayMovedToMonday(
-            01,
-            01,
-            self::TIMEZONE,
-            10,
-            self::ESTABLISHMENT_YEAR
-        );
+        return $this->generateRandomDatesWithHolidayMovedToMonday(01, 01, self::TIMEZONE, 10, self::ESTABLISHMENT_YEAR);
     }
 
     /**

@@ -54,7 +54,7 @@ class CzechRepublicTest extends CzechRepublicBaseTestCase
      */
     public function testObservedHolidays()
     {
-        $this->assertDefinedHolidays(['christmasEve', ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays(['christmasEve',], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**

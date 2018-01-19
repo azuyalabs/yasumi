@@ -33,7 +33,7 @@ class BerchtoldsTagTest extends VaudBaseTestCase implements YasumiTestCaseInterf
     public function testBerchtoldsTag()
     {
         $year = $this->generateRandomYear();
-        $date = new DateTime($year.'-01-02', new DateTimeZone(self::TIMEZONE));
+        $date = new DateTime($year . '-01-02', new DateTimeZone(self::TIMEZONE));
 
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OTHER);

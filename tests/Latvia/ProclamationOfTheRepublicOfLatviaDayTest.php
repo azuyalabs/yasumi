@@ -84,7 +84,7 @@ class ProclamationOfTheRepublicOfLatviaDayTest extends LatviaBaseTestCase implem
             $this->generateRandomYear(Latvia::PROCLAMATION_OF_INDEPENDENCE_YEAR),
             [
                 self::LOCALE => 'Latvijas Republikas proklamēšanas diena',
-                'en_US' => 'Proclamation Day of the Republic of Latvia'
+                'en_US'      => 'Proclamation Day of the Republic of Latvia'
             ]
         );
     }

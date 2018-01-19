@@ -12,7 +12,6 @@
 
 namespace Yasumi\Provider\Germany;
 
-
 use Yasumi\Provider\Germany;
 
 /**

@@ -36,7 +36,7 @@ class BettagsMontagTest extends VaudBaseTestCase implements YasumiTestCaseInterf
         $year = $this->generateRandomYear(1832);
 
         // Find third Sunday of September
-        $date = new DateTime('Third Sunday of '.$year.'-09', new DateTimeZone(self::TIMEZONE));
+        $date = new DateTime('Third Sunday of ' . $year . '-09', new DateTimeZone(self::TIMEZONE));
         // Go to next Thursday
         $date->add(new DateInterval('P1D'));
 
