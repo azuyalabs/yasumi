@@ -66,14 +66,10 @@ class Estonia extends AbstractProvider
     private function addIndependenceDay()
     {
         if ($this->year >= self::DECLARATION_OF_INDEPENDENCE_YEAR) {
-            $this->addHoliday(new Holiday(
-                'independenceDay',
-                [
+            $this->addHoliday(new Holiday('independenceDay', [
                     'en_US' => 'Independence Day',
                     'et_EE' => 'Iseseisvuspäev'
-                ],
-                new \DateTime("{$this->year}-02-24", new \DateTimeZone($this->timezone))
-            ));
+                ], new \DateTime("{$this->year}-02-24", new \DateTimeZone($this->timezone))));
         }
     }
 
@@ -83,14 +79,10 @@ class Estonia extends AbstractProvider
     private function addVictoryDay()
     {
         if ($this->year >= self::VICTORY_DAY_START_YEAR) {
-            $this->addHoliday(new Holiday(
-                'victoryDay',
-                [
+            $this->addHoliday(new Holiday('victoryDay', [
                     'en_US' => 'Victory Day',
                     'et_EE' => 'Võidupüha'
-                ],
-                new \DateTime("{$this->year}-06-23", new \DateTimeZone($this->timezone))
-            ));
+                ], new \DateTime("{$this->year}-06-23", new \DateTimeZone($this->timezone))));
         }
     }
 
@@ -100,14 +92,10 @@ class Estonia extends AbstractProvider
     private function addRestorationOfIndependenceDay()
     {
         if ($this->year >= self::RESTORATION_OF_INDEPENDENCE_YEAR) {
-            $this->addHoliday(new Holiday(
-                'restorationOfIndependenceDay',
-                [
+            $this->addHoliday(new Holiday('restorationOfIndependenceDay', [
                     'en_US' => 'Day of Restoration of Independence',
                     'et_EE' => 'Tasiseseisvumispäev'
-                ],
-                new \DateTime("{$this->year}-08-20", new \DateTimeZone($this->timezone))
-            ));
+                ], new \DateTime("{$this->year}-08-20", new \DateTimeZone($this->timezone))));
         }
     }
 }

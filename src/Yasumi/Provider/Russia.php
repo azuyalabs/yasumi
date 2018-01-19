@@ -64,14 +64,10 @@ class Russia extends AbstractProvider
         $holidayDays = [2, 3, 4, 5, 6, 8];
 
         foreach ($holidayDays as $day) {
-            $this->addHoliday(new Holiday(
-                'newYearHolidaysDay' . $day,
-                [
+            $this->addHoliday(new Holiday('newYearHolidaysDay' . $day, [
                     'en_US' => 'New Year\'s holidays',
                     'ru_RU' => 'Новогодние каникулы'
-                ],
-                new \DateTime("{$this->year}-01-{$day}", new \DateTimeZone($this->timezone))
-            ));
+                ], new \DateTime("{$this->year}-01-{$day}", new \DateTimeZone($this->timezone))));
         }
     }
 
@@ -80,14 +76,10 @@ class Russia extends AbstractProvider
      */
     private function addOrthodoxChristmasDay()
     {
-        $this->addHoliday(new Holiday(
-            'orthodoxChristmasDay',
-            [
+        $this->addHoliday(new Holiday('orthodoxChristmasDay', [
                 'en_US' => 'Orthodox Christmas Day',
                 'ru_RU' => 'Рождество'
-            ],
-            new \DateTime("{$this->year}-01-07", new \DateTimeZone($this->timezone))
-        ));
+            ], new \DateTime("{$this->year}-01-07", new \DateTimeZone($this->timezone))));
     }
 
     /**
@@ -99,14 +91,10 @@ class Russia extends AbstractProvider
             return;
         }
 
-        $this->addHoliday(new Holiday(
-            'defenceOfTheFatherlandDay',
-            [
+        $this->addHoliday(new Holiday('defenceOfTheFatherlandDay', [
                 'en_US' => 'Defence of the Fatherland Day',
                 'ru_RU' => 'День защитника Отечества'
-            ],
-            new \DateTime("{$this->year}-02-23", new \DateTimeZone($this->timezone))
-        ));
+            ], new \DateTime("{$this->year}-02-23", new \DateTimeZone($this->timezone))));
     }
 
     /**
@@ -114,14 +102,10 @@ class Russia extends AbstractProvider
      */
     private function addInternationalWomensDay()
     {
-        $this->addHoliday(new Holiday(
-            'internationalWomensDay',
-            [
+        $this->addHoliday(new Holiday('internationalWomensDay', [
                 'en_US' => 'International Women\'s Day',
                 'ru_RU' => 'Международный женский день'
-            ],
-            new \DateTime("{$this->year}-03-08", new \DateTimeZone($this->timezone))
-        ));
+            ], new \DateTime("{$this->year}-03-08", new \DateTimeZone($this->timezone))));
     }
 
     /**
@@ -129,14 +113,10 @@ class Russia extends AbstractProvider
      */
     private function addSpringAndLabourDay()
     {
-        $this->addHoliday(new Holiday(
-            'springAndLabourDay',
-            [
+        $this->addHoliday(new Holiday('springAndLabourDay', [
                 'en_US' => 'Spring and Labour Day',
                 'ru_RU' => 'Праздник Весны и Труда'
-            ],
-            new \DateTime("{$this->year}-05-01", new \DateTimeZone($this->timezone))
-        ));
+            ], new \DateTime("{$this->year}-05-01", new \DateTimeZone($this->timezone))));
     }
 
     /**
@@ -144,14 +124,10 @@ class Russia extends AbstractProvider
      */
     private function addVictoryDay()
     {
-        $this->addHoliday(new Holiday(
-            'victoryDay',
-            [
+        $this->addHoliday(new Holiday('victoryDay', [
                 'en_US' => 'Victory Day',
                 'ru_RU' => 'День Победы'
-            ],
-            new \DateTime("{$this->year}-05-09", new \DateTimeZone($this->timezone))
-        ));
+            ], new \DateTime("{$this->year}-05-09", new \DateTimeZone($this->timezone))));
     }
 
     /**
@@ -163,14 +139,10 @@ class Russia extends AbstractProvider
             return;
         }
 
-        $this->addHoliday(new Holiday(
-            'russiaDay',
-            [
+        $this->addHoliday(new Holiday('russiaDay', [
                 'en_US' => 'Russia Day',
                 'ru_RU' => 'День России'
-            ],
-            new \DateTime("{$this->year}-06-12", new \DateTimeZone($this->timezone))
-        ));
+            ], new \DateTime("{$this->year}-06-12", new \DateTimeZone($this->timezone))));
     }
 
     /**
@@ -182,13 +154,9 @@ class Russia extends AbstractProvider
             return;
         }
 
-        $this->addHoliday(new Holiday(
-            'unityDay',
-            [
+        $this->addHoliday(new Holiday('unityDay', [
                 'en_US' => 'Unity Day',
                 'ru_RU' => 'День народного единства'
-            ],
-            new \DateTime("{$this->year}-11-04", new \DateTimeZone($this->timezone))
-        ));
+            ], new \DateTime("{$this->year}-11-04", new \DateTimeZone($this->timezone))));
     }
 }

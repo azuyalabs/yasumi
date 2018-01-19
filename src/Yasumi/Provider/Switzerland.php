@@ -103,12 +103,12 @@ class Switzerland extends AbstractProvider
         $this->addHoliday(new Holiday(
             'berchtoldsTag',
             [
-            'de_DE' => 'Berchtoldstag',
-            'de_CH' => 'Berchtoldstag',
-            'fr_FR' => 'Jour de la Saint-Berthold',
-            'fr_CH' => 'Jour de la Saint-Berthold',
-            'en_US' => 'Berchtoldstag',
-        ],
+                'de_DE' => 'Berchtoldstag',
+                'de_CH' => 'Berchtoldstag',
+                'fr_FR' => 'Jour de la Saint-Berthold',
+                'fr_CH' => 'Jour de la Saint-Berthold',
+                'en_US' => 'Berchtoldstag',
+            ],
             new DateTime($this->year . '-01-02', new DateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OTHER

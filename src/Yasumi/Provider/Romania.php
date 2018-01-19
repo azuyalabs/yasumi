@@ -186,9 +186,9 @@ class Romania extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'constantinBrancusiDay',
                 [
-                'en_US' => 'Constantin Brâncuși day',
-                'ro_RO' => 'Ziua Constantin Brâncuși'
-            ],
+                    'en_US' => 'Constantin Brâncuși day',
+                    'ro_RO' => 'Ziua Constantin Brâncuși'
+                ],
                 new DateTime("$this->year-02-19", new DateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OBSERVANCE
@@ -212,9 +212,9 @@ class Romania extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'childrensDay',
                 [
-                'en_US' => 'International Children\'s Day',
-                'ro_RO' => 'Ziua Copilului'
-            ],
+                    'en_US' => 'International Children\'s Day',
+                    'ro_RO' => 'Ziua Copilului'
+                ],
                 new DateTime("$this->year-06-01", new DateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OBSERVANCE
