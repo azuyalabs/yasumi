@@ -163,7 +163,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         }
 
         // If given date is a DateTime object
-        if ($date instanceof DateTime && in_array($date->format('Y-m-d'), array_values($this->getHolidayDates()))) {
+        if ($date instanceof DateTime && in_array($date->format('Y-m-d'), array_values($this->getHolidayDates()), true)) {
             return true;
         }
 
