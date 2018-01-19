@@ -57,51 +57,6 @@ class Yasumi
     ];
 
     /**
-     * Returns a list of available holiday providers.
-     *
-     * @return array list of available holiday providers
-     */
-    public static function getProviders(): array
-    {
-        // Basic static cache
-        static $providers;
-        if ($providers !== null) {
-            return $providers;
-        }
-
-        $ds = DIRECTORY_SEPARATOR;
-
-        $providers     = [];
-        $filesIterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(
-            __DIR__ . $ds . 'Provider',
-            FilesystemIterator::SKIP_DOTS
-        ), RecursiveIteratorIterator::SELF_FIRST);
-
-        foreach ($filesIterator as $file) {
-            if ($file->isDir() || $file->getExtension() !== 'php' || in_array(
-                $file->getBasename('.php'),
-                    self::$ignoredProvider,
-                true
-            )
-            ) {
-                continue;
-            }
-
-            $quotedDs = preg_quote($ds);
-            $provider = preg_replace("#^.+{$quotedDs}Provider{$quotedDs}(.+)\\.php$#", '$1', $file->getPathName());
-
-            $class = new ReflectionClass(sprintf('Yasumi\Provider\%s', str_replace('/', '\\', $provider)));
-
-            $key = 'ID';
-            if ($class->hasConstant($key)) {
-                $providers[strtoupper($class->getConstant($key))] = $provider;
-            }
-        }
-
-        return $providers;
-    }
-
-    /**
      * @param string   $class       holiday provider name
      * @param DateTime $startDate   DateTime Start date, defaults to today
      * @param int      $workingDays int
@@ -114,7 +69,7 @@ class Yasumi
      * @throws \RuntimeException
      * @throws \InvalidArgumentException
      */
-    public static function nextWorkingDay($class, DateTime $startDate, $workingDays = 1): DateTime
+    public static function nextWorkingDay(string $class, DateTime $startDate, int $workingDays = 1): DateTime
     {
         // Setup start date, if its an instance of \DateTime, clone to prevent modification to original
         $date = $startDate instanceof DateTime ? clone $startDate : new DateTime($startDate);
@@ -153,7 +108,7 @@ class Yasumi
      *
      * @return AbstractProvider An instance of class $class is created and returned
      */
-    public static function create($class, $year = null, $locale = self::DEFAULT_LOCALE)
+    public static function create(string $class, int $year = null, string $locale = self::DEFAULT_LOCALE)
     {
         // Find and return holiday provider instance
         $providerClass = sprintf('Yasumi\Provider\%s', str_replace('/', '\\', $class));
@@ -191,16 +146,26 @@ class Yasumi
     }
 
     /**
+     * Returns a list of available locales.
+     *
+     * @return array list of available locales
+     */
+    public static function getAvailableLocales(): array
+    {
+        return require __DIR__ . '/data/locales.php';
+    }
+
+    /**
      * Create a new holiday provider instance.
      *
      * A new holiday provider instance can be created using this function. You can use one of the providers included
      * already with Yasumi, or your own provider by giving the 'const ID', corresponding to the ISO3166-2 Code, set in
      * your class in the first parameter. Your provider class needs to implement the 'ProviderInterface' class.
      *
-     * @param string $iso3166_2  ISO3166-2 Coded region, holiday provider will be searched for
-     * @param int    $year   year for which the country provider needs to be created. Year needs to be a valid integer
-     *                       between 1000 and 9999.
-     * @param string $locale The locale to use. If empty we'll use the default locale (en_US)
+     * @param string $iso3166_2 ISO3166-2 Coded region, holiday provider will be searched for
+     * @param int    $year      year for which the country provider needs to be created. Year needs to be a valid
+     *                          integer between 1000 and 9999.
+     * @param string $locale    The locale to use. If empty we'll use the default locale (en_US)
      *
      * @throws RuntimeException         If no such holiday provider is found
      * @throws InvalidArgumentException if the year parameter is not between 1000 and 9999
@@ -209,29 +174,65 @@ class Yasumi
      *
      * @return AbstractProvider An instance of class $class is created and returned
      */
-    public static function createByISO3166_2($iso3166_2, $year = null, $locale = self::DEFAULT_LOCALE): AbstractProvider
-    {
+    public static function createByISO3166_2(
+        string $iso3166_2,
+        int $year = null,
+        string $locale = self::DEFAULT_LOCALE
+    ): AbstractProvider {
         $availableProviders = self::getProviders();
 
         if (false === isset($availableProviders[$iso3166_2])) {
-            throw new InvalidArgumentException(sprintf('Unable to find holiday provider by ISO3166-2 "%s".', $iso3166_2));
+            throw new InvalidArgumentException(sprintf(
+                'Unable to find holiday provider by ISO3166-2 "%s".',
+                $iso3166_2
+            ));
         }
 
-        return self::create(
-            $availableProviders[$iso3166_2],
-            $year,
-            $locale
-        );
+        return self::create($availableProviders[$iso3166_2], $year, $locale);
     }
 
     /**
-     * Returns a list of available locales.
+     * Returns a list of available holiday providers.
      *
-     * @return array list of available locales
+     * @return array list of available holiday providers
      */
-    public static function getAvailableLocales(): array
+    public static function getProviders(): array
     {
-        return require __DIR__ . '/data/locales.php';
+        // Basic static cache
+        static $providers;
+        if ($providers !== null) {
+            return $providers;
+        }
+
+        $ds = DIRECTORY_SEPARATOR;
+
+        $providers     = [];
+        $filesIterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(
+            __DIR__ . $ds . 'Provider',
+            FilesystemIterator::SKIP_DOTS
+        ), RecursiveIteratorIterator::SELF_FIRST);
+
+        foreach ($filesIterator as $file) {
+            if ($file->isDir() || $file->getExtension() !== 'php' || in_array(
+                $file->getBasename('.php'),
+                    self::$ignoredProvider,
+                true
+            )) {
+                continue;
+            }
+
+            $quotedDs = preg_quote($ds);
+            $provider = preg_replace("#^.+{$quotedDs}Provider{$quotedDs}(.+)\\.php$#", '$1', $file->getPathName());
+
+            $class = new ReflectionClass(sprintf('Yasumi\Provider\%s', str_replace('/', '\\', $provider)));
+
+            $key = 'ID';
+            if ($class->hasConstant($key)) {
+                $providers[strtoupper($class->getConstant($key))] = $provider;
+            }
+        }
+
+        return $providers;
     }
 
     /**
@@ -247,7 +248,7 @@ class Yasumi
      * @throws \RuntimeException
      * @throws \InvalidArgumentException
      */
-    public static function prevWorkingDay($class, DateTime $startDate, $workingDays = 1): DateTime
+    public static function prevWorkingDay(string $class, DateTime $startDate, int $workingDays = 1): DateTime
     {
         // Setup start date, if its an instance of \DateTime, clone to prevent modification to original
         $date = $startDate instanceof DateTime ? clone $startDate : new DateTime($startDate);
