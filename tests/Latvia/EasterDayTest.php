@@ -30,6 +30,7 @@ class EasterDayTest extends LatviaBaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * @return array
+     * @throws \Exception
      */
     public function holidayDataProvider(): array
     {

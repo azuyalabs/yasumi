@@ -245,6 +245,7 @@ trait YasumiBase
      * @param int    $range      year range from which dates will be generated (default: 1000)
      *
      * @return array list of random easter test dates used for assertion of holidays.
+     * @throws \Exception
      */
     public function generateRandomEasterDates($timezone = 'UTC', $iterations = 10, $range = 1000): array
     {
@@ -282,6 +283,7 @@ trait YasumiBase
      * @param string $timezone the timezone in which Easter is celebrated
      *
      * @return \DateTime date of Easter
+     * @throws \Exception
      */
     protected function calculateEaster($year, $timezone): DateTime
     {
@@ -365,6 +367,7 @@ trait YasumiBase
      * @param int      $range      year range from which dates will be generated (default: 1000)
      *
      * @return array list of random modified Easter day test dates for assertion of holidays.
+     * @throws \Exception
      */
     public function generateRandomModifiedEasterDates(
         callable $cb,

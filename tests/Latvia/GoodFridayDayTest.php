@@ -30,6 +30,7 @@ class GoodFridayDayTest extends LatviaBaseTestCase implements YasumiTestCaseInte
 
     /**
      * @return array
+     * @throws \Exception
      */
     public function holidayDataProvider(): array
     {
