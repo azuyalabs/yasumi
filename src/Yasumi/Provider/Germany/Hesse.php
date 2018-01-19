@@ -12,7 +12,7 @@
 
 namespace Yasumi\Provider\Germany;
 
-use Yasumi\Holiday;
+
 use Yasumi\Provider\Germany;
 
 /**
