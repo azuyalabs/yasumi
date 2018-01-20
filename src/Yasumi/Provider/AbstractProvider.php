@@ -48,7 +48,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *            This list only concerns those countries that deviate from the global common definition,
      *            where the weekend starts on Saturday and ends on Sunday (0 = Sunday, 1 = Monday, etc.).
      */
-    protected static $weekend_data = [
+    const WEEKEND_DATA = [
 
         // Thursday and Friday
         'AF' => [4, 5], // Afghanistan
@@ -172,7 +172,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         if ($date instanceof DateTime) {
             if (in_array(
                 (int)$date->format('w'),
-                isset(self::$weekend_data[$this::ID]) ? self::$weekend_data[$this::ID] : [0, 6],
+                isset(self::WEEKEND_DATA[$this::ID]) ? self::WEEKEND_DATA[$this::ID] : [0, 6],
                 true
             )) {
                 return false;
