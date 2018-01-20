@@ -44,11 +44,40 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     protected $locale;
 
     /**
-     * @var array list of the days of the week (the index of the weekdays) that are considered weekend days. Defaults
-     *            to Sunday (0) and Saturday (6), as this is globally the common standard. (0 = Sunday, 1 = Monday,
-     *            etc.)
+     * @var array list of the days of the week (the index of the weekdays) that are considered weekend days.
+     *            This list only concerns those countries that deviate from the global common definition,
+     *            where the weekend starts on Saturday and ends on Sunday (0 = Sunday, 1 = Monday, etc.).
      */
-    protected $weekend_days = [0, 6];
+    protected static $weekend_data = [
+
+        // Thursday and Friday
+        'AF' => [4, 5], // Afghanistan
+
+        // Friday and Saturday
+        'AE' => [5, 6], // United Arab Emirates
+        'BH' => [5, 6], // Bahrain
+        'DZ' => [5, 6], // Algeria
+        'EG' => [5, 6], // Egypt
+        'IL' => [5, 6], // Israel
+        'IQ' => [5, 6], // Iraq
+        'JO' => [5, 6], // Jordan
+        'KW' => [5, 6], // Kuwait
+        'LY' => [5, 6], // Libya
+        'MA' => [5, 6], // Morocco
+        'OM' => [5, 6], // Oman
+        'QA' => [5, 6], // Qatar
+        'SA' => [5, 6], // Saudi Arabia
+        'SD' => [5, 6], // Sudan
+        'SY' => [5, 6], // Syrian Arab Republic (Syria)
+        'TN' => [5, 6], // Tunisia
+        'YE' => [5, 6], // Yemen
+
+        // Friday
+        'IR' => [5], // Iran, Islamic Republic of
+
+        // Friday
+        'IN' => [0], // India
+    ];
 
     /**
      * @var Holiday[] list of dates of the available holidays
@@ -139,8 +168,13 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         }
 
         // If given date is a DateTime object; check if it falls in the weekend
+        // If no data is defined for this Holiday Provider, the function falls back to the global weekend definition.
         if ($date instanceof DateTime) {
-            if (in_array((int)$date->format('w'), $this->weekend_days, true)) {
+            if (in_array(
+                (int)$date->format('w'),
+                isset(self::$weekend_data[$this::ID]) ? self::$weekend_data[$this::ID] : [0, 6],
+                true
+            )) {
                 return false;
             }
         }
