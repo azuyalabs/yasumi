@@ -1,6 +1,4 @@
-<p align="center">
 ![Logo](https://github.com/azuyalabs/yasumi/blob/gh-pages/images/yasumi_logo_wb.png)
-</p>
 
 [![GitHub Release](https://img.shields.io/github/release/azuyalabs/yasumi.svg?style=flat-square)](https://github.com/azuyalabs/yasumi/releases)
 [![Total Downloads](https://img.shields.io/packagist/dt/azuyalabs/yasumi.svg?style=flat-square)](https://packagist.org/packages/azuyalabs/yasumi)
