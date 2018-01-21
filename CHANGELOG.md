@@ -6,15 +6,20 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [Unreleased]
 
 ### Added
+- Added support for countries where the weekend definition (start and end day) differs from the global definition (Saturday and Sunday).
 - Holiday Provider for Russia. [\#72](https://github.com/azuyalabs/yasumi/pull/72) ([lukosius](https://github.com/lukosius))
 - Holiday Provider for Estonia. [\#71](https://github.com/azuyalabs/yasumi/pull/71) ([lukosius](https://github.com/lukosius))
 
 ### Changed
+- Locale List updated based on CLDR version 32. 
 - Added PHPStan static analysis tool to Travis CI [\#88](https://github.com/azuyalabs/yasumi/pull/88) ([lukosius](https://github.com/lukosius))
 - Various inline documentation enhancements. [\#87](https://github.com/azuyalabs/yasumi/pull/87) ([lukosius](https://github.com/lukosius))
 - Removed unnecessary typecasts and if-construct. [\#87](https://github.com/azuyalabs/yasumi/pull/87) ([lukosius](https://github.com/lukosius))
 
 ### Fixed
+- Corrected unit test for Geneva (Switzerland) as the jeune Genevois day was incorrectly asserted as a regional holiday.
+- Corrected the count logic so that in case a holiday is substituted (or observed), it is only counted once.
+- Dropped unnecessary arguments of some methods in various Holiday Providers.
 - Corrected Japanese "Green Day" and "Children's Day" to use "Hiragana" instead of Kanji. [\#80](https://github.com/azuyalabs/yasumi/pull/80) ([cookie-maker](https://github.com/cookie-maker))
 
 ### Removed
