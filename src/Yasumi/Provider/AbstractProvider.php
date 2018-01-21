@@ -44,6 +44,12 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     protected $locale;
 
     /**
+     * Code to identify the Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * country or sub-region.
+     */
+    const ID = 'US';
+
+    /**
      * @var array list of the days of the week (the index of the weekdays) that are considered weekend days.
      *            This list only concerns those countries that deviate from the global common definition,
      *            where the weekend starts on Saturday and ends on Sunday (0 = Sunday, 1 = Monday, etc.).
@@ -169,10 +175,11 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
 
         // If given date is a DateTime object; check if it falls in the weekend
         // If no data is defined for this Holiday Provider, the function falls back to the global weekend definition.
+        // @TODO Ideally avoid late static binding here (static::ID)
         if ($date instanceof DateTime) {
             if (in_array(
                 (int)$date->format('w'),
-                isset(self::WEEKEND_DATA[$this::ID]) ? self::WEEKEND_DATA[$this::ID] : [0, 6],
+                isset(self::WEEKEND_DATA[static::ID]) ? self::WEEKEND_DATA[static::ID] : [0, 6],
                 true
             )) {
                 return false;
