@@ -153,6 +153,36 @@ class UnitedKingdom extends AbstractProvider
     }
 
     /**
+     * The Summer Bank holiday, also known as the Late Summer bank holiday, is a time for people in the United Kingdom
+     * to have a day off work or school. It falls on the last Monday of August replacing the first Monday in August
+     * (formerly commonly known as "August Bank Holiday".
+     *
+     * Many organizations, businesses and schools are closed. Stores may be open or closed, according to local custom.
+     * Public transport systems often run to a holiday timetable.
+     *
+     * @link https://www.timeanddate.com/holidays/uk/summer-bank-holiday
+     * @link https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     */
+    private function calculateSummerBankHoliday()
+    {
+        // Statutory bank holiday from 1971, following a trial period from 1965 to 1970.
+        if ($this->year < 1965) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday(
+            'summerBankHoliday',
+            ['en_GB' => 'Summer Bank Holiday'],
+            new DateTime("last monday of august $this->year", new DateTimeZone($this->timezone)),
+            $this->locale,
+            Holiday::TYPE_BANK
+        ));
+    }
+
+    /**
      * Christmas Day is celebrated in the United Kingdom on December 25. It traditionally celebrates Jesus Christ's
      * birth but many aspects of this holiday have pagan origins. Christmas is a time for many people to give and
      * receive gifts and prepare special festive meals.
@@ -205,35 +235,5 @@ class UnitedKingdom extends AbstractProvider
                 Holiday::TYPE_BANK
             ));
         }
-    }
-
-    /**
-     * The Summer Bank holiday, also known as the Late Summer bank holiday, is a time for people in the United Kingdom
-     * to have a day off work or school. It falls on the last Monday of August replacing the first Monday in August
-     * (formerly commonly known as "August Bank Holiday".
-     *
-     * Many organizations, businesses and schools are closed. Stores may be open or closed, according to local custom.
-     * Public transport systems often run to a holiday timetable.
-     *
-     * @link https://www.timeanddate.com/holidays/uk/summer-bank-holiday
-     * @link https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom
-     *
-     * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     */
-    private function calculateSummerBankHoliday()
-    {
-        // Statutory bank holiday from 1971, following a trial period from 1965 to 1970.
-        if ($this->year < 1965) {
-            return;
-        }
-
-        $this->addHoliday(new Holiday(
-            'summerBankHoliday',
-            ['en_GB' => 'Summer Bank Holiday'],
-            new DateTime("last monday of august $this->year", new DateTimeZone($this->timezone)),
-            $this->locale,
-            Holiday::TYPE_BANK
-        ));
     }
 }

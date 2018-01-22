@@ -118,10 +118,10 @@ class Slovakia extends AbstractProvider
         $this->addHoliday(new Holiday(
             'saintsCyrilAndMethodiusDay',
             [
-            'sk_SK' => 'Sviatok svätého Cyrila a Metoda',
-            'cs_CZ' => 'Den slovanských věrozvěstů Cyrila a Metoděje',
-            'en_US' => 'Saints Cyril and Methodius Day',
-        ],
+                'sk_SK' => 'Sviatok svätého Cyrila a Metoda',
+                'cs_CZ' => 'Den slovanských věrozvěstů Cyrila a Metoděje',
+                'en_US' => 'Saints Cyril and Methodius Day',
+            ],
             new DateTime($this->year . '-07-05', new DateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
@@ -141,9 +141,9 @@ class Slovakia extends AbstractProvider
         $this->addHoliday(new Holiday(
             'slovakNationalUprisingDay',
             [
-            'sk_SK' => 'Výročie Slovenského národného povstania',
-            'en_US' => 'Slovak National Uprising Day',
-        ],
+                'sk_SK' => 'Výročie Slovenského národného povstania',
+                'en_US' => 'Slovak National Uprising Day',
+            ],
             new DateTime($this->year . '-08-29', new DateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
@@ -163,9 +163,9 @@ class Slovakia extends AbstractProvider
         $this->addHoliday(new Holiday(
             'slovakConstitutionDay',
             [
-            'sk_SK' => 'Deň Ústavy Slovenskej republiky',
-            'en_US' => 'Day of the Constitution of the Slovak Republic',
-        ],
+                'sk_SK' => 'Deň Ústavy Slovenskej republiky',
+                'en_US' => 'Day of the Constitution of the Slovak Republic',
+            ],
             new DateTime($this->year . '-09-01', new DateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
@@ -205,10 +205,10 @@ class Slovakia extends AbstractProvider
         $this->addHoliday(new Holiday(
             'struggleForFreedomAndDemocracyDay',
             [
-            'sk_SK' => 'Deň boja za slobodu a demokraciu',
-            'cs_CZ' => 'Den boje za svobodu a demokracii',
-            'en_US' => 'Struggle for Freedom and Democracy Day',
-        ],
+                'sk_SK' => 'Deň boja za slobodu a demokraciu',
+                'cs_CZ' => 'Den boje za svobodu a demokracii',
+                'en_US' => 'Struggle for Freedom and Democracy Day',
+            ],
             new DateTime($this->year . '-11-17', new DateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL

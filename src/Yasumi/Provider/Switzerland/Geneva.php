@@ -107,9 +107,9 @@ class Geneva extends Switzerland
             $this->addHoliday(new Holiday(
                 'restaurationGenevoise',
                 [
-                'fr_FR' => 'Restauration de la République',
-                'fr_CH' => 'Restauration de la République',
-            ],
+                    'fr_FR' => 'Restauration de la République',
+                    'fr_CH' => 'Restauration de la République',
+                ],
                 new DateTime($this->year . '-12-31', new DateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OTHER

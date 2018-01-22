@@ -132,8 +132,8 @@ class USA extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'labourDay',
                 [
-                'en_US' => 'Labour Day',
-            ],
+                    'en_US' => 'Labour Day',
+                ],
                 new DateTime("first monday of september $this->year", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -191,8 +191,8 @@ class USA extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'thanksgivingDay',
                 [
-                'en_US' => 'Thanksgiving Day',
-            ],
+                    'en_US' => 'Thanksgiving Day',
+                ],
                 new DateTime("fourth thursday of november $this->year", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
