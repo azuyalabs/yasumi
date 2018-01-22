@@ -37,6 +37,7 @@ class Australia extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function initialize()
     {
@@ -69,6 +70,7 @@ class Australia extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateAustraliaDay()
     {
@@ -88,6 +90,7 @@ class Australia extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateHoliday(
         $shortName,
@@ -120,6 +123,7 @@ class Australia extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateNewYearHolidays()
     {
@@ -142,6 +146,7 @@ class Australia extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateAnzacDay()
     {
@@ -164,6 +169,7 @@ class Australia extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateChristmasDay()
     {
@@ -199,6 +205,7 @@ class Australia extends AbstractProvider
      * @link https://www.timeanddate.com/holidays/australia/queens-birthday
      *
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function calculateQueensBirthday()
     {

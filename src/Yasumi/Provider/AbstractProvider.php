@@ -332,6 +332,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \RuntimeException
      * @throws \InvalidArgumentException
+     * @throws \ReflectionException
      *
      * @covers AbstractProvider::anotherTime
      */
@@ -351,6 +352,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * @throws InvalidArgumentException when the given name is blank or empty.
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \RuntimeException
+     * @throws \ReflectionException
      */
     private function anotherTime($year, $shortName)
     {
@@ -390,6 +392,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \RuntimeException
      * @throws \InvalidArgumentException
+     * @throws \ReflectionException
      *
      * @covers AbstractProvider::anotherTime
      */

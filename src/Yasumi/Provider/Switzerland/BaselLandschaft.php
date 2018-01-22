@@ -36,6 +36,7 @@ class BaselLandschaft extends Switzerland
      *
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function initialize()
     {

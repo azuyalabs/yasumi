@@ -60,6 +60,8 @@ class Yasumi
      * Returns a list of available holiday providers.
      *
      * @return array list of available holiday providers
+     *
+     * @throws \ReflectionException
      */
     public static function getProviders()
     {
@@ -82,8 +84,7 @@ class Yasumi
                 $file->getBasename('.php'),
                     self::$ignoredProvider,
                 true
-            )
-            ) {
+            )) {
                 continue;
             }
 
@@ -113,6 +114,8 @@ class Yasumi
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \RuntimeException
      * @throws \InvalidArgumentException
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public static function nextWorkingDay($class, DateTime $startDate, $workingDays = 1)
     {
@@ -150,6 +153,7 @@ class Yasumi
      * @throws InvalidArgumentException if the year parameter is not between 1000 and 9999
      * @throws UnknownLocaleException   if the locale parameter is invalid
      * @throws InvalidArgumentException if the holiday provider for the given country does not exist
+     * @throws \ReflectionException
      *
      * @return AbstractProvider An instance of class $class is created and returned
      */
@@ -197,15 +201,16 @@ class Yasumi
      * already with Yasumi, or your own provider by giving the 'const ID', corresponding to the ISO3166-2 Code, set in
      * your class in the first parameter. Your provider class needs to implement the 'ProviderInterface' class.
      *
-     * @param string $iso3166_2  ISO3166-2 Coded region, holiday provider will be searched for
-     * @param int    $year   year for which the country provider needs to be created. Year needs to be a valid integer
-     *                       between 1000 and 9999.
-     * @param string $locale The locale to use. If empty we'll use the default locale (en_US)
+     * @param string $iso3166_2 ISO3166-2 Coded region, holiday provider will be searched for
+     * @param int    $year      year for which the country provider needs to be created. Year needs to be a valid
+     *                          integer between 1000 and 9999.
+     * @param string $locale    The locale to use. If empty we'll use the default locale (en_US)
      *
      * @throws RuntimeException         If no such holiday provider is found
      * @throws InvalidArgumentException if the year parameter is not between 1000 and 9999
      * @throws UnknownLocaleException   if the locale parameter is invalid
      * @throws InvalidArgumentException if the holiday provider for the given ISO3166-2 code does not exist
+     * @throws \ReflectionException
      *
      * @return AbstractProvider An instance of class $class is created and returned
      */
@@ -214,14 +219,13 @@ class Yasumi
         $availableProviders = self::getProviders();
 
         if (false === isset($availableProviders[$iso3166_2])) {
-            throw new InvalidArgumentException(sprintf('Unable to find holiday provider by ISO3166-2 "%s".', $iso3166_2));
+            throw new InvalidArgumentException(sprintf(
+                'Unable to find holiday provider by ISO3166-2 "%s".',
+                $iso3166_2
+            ));
         }
 
-        return self::create(
-            $availableProviders[$iso3166_2],
-            $year,
-            $locale
-        );
+        return self::create($availableProviders[$iso3166_2], $year, $locale);
     }
 
     /**
@@ -246,6 +250,8 @@ class Yasumi
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \RuntimeException
      * @throws \InvalidArgumentException
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public static function prevWorkingDay($class, DateTime $startDate, $workingDays = 1)
     {

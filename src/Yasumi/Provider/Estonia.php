@@ -40,6 +40,7 @@ class Estonia extends AbstractProvider
      * Initialize holidays for Estonia.
      *
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function initialize()
     {

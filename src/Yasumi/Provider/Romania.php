@@ -39,6 +39,7 @@ class Romania extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function initialize()
     {
@@ -234,6 +235,8 @@ class Romania extends AbstractProvider
      * @param string $timezone
      *
      * @return \DateTime
+     *
+     * @throws \Exception
      */
     public function calculateEaster($year, $timezone)
     {

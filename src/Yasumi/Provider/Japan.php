@@ -76,6 +76,7 @@ class Japan extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function initialize()
     {
@@ -248,7 +249,7 @@ class Japan extends AbstractProvider
         } elseif ($this->year >= 1948) {
             $date = new DateTime("$this->year-1-15", new DateTimeZone($this->timezone));
         }
-        
+
         if (null !== $date) {
             $this->addHoliday(new Holiday(
                 'comingOfAgeDay',
@@ -275,7 +276,7 @@ class Japan extends AbstractProvider
         } elseif ($this->year >= 1989) {
             $date = new DateTime("$this->year-4-29", new DateTimeZone($this->timezone));
         }
-        
+
         if (null !== $date) {
             $this->addHoliday(new Holiday(
                 'greeneryDay',
@@ -302,7 +303,7 @@ class Japan extends AbstractProvider
         } elseif ($this->year >= 1996) {
             $date = new DateTime("$this->year-7-20", new DateTimeZone($this->timezone));
         }
-        
+
         if (null !== $date) {
             $this->addHoliday(new Holiday(
                 'marineDay',
@@ -330,7 +331,7 @@ class Japan extends AbstractProvider
         } elseif ($this->year >= 1996) {
             $date = new DateTime("$this->year-9-15", new DateTimeZone($this->timezone));
         }
-        
+
         if (null !== $date) {
             $this->addHoliday(new Holiday(
                 'respectfortheAgedDay',
@@ -358,7 +359,7 @@ class Japan extends AbstractProvider
         } elseif ($this->year >= 1996) {
             $date = new DateTime("$this->year-10-10", new DateTimeZone($this->timezone));
         }
-        
+
         if (null !== $date) {
             $this->addHoliday(new Holiday(
                 'healthandSportsDay',
@@ -412,6 +413,7 @@ class Japan extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     private function calculateSubstituteHolidays()
     {
@@ -457,6 +459,7 @@ class Japan extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     private function calculateBridgeHolidays()
     {
