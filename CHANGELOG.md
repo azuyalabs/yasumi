@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Removed unnecessary typecasts and if-construct. [\#87](https://github.com/azuyalabs/yasumi/pull/87) ([lukosius](https://github.com/lukosius))
 
 ### Fixed
+- Yasumi listed 01.04.2018 (Easter Sunday) for Spain as an official holiday, however it is not recognized as such. Fix made that recognizes Easter Sunday as being observed (in all regions). [\#86](https://github.com/azuyalabs/yasumi/pull/86) ([Bastian Konetzny](https://github.com/bkonetzny))
 - Corrected unit test for Geneva (Switzerland) as the jeune Genevois day was incorrectly asserted as a regional holiday.
 - Corrected the count logic so that in case a holiday is substituted (or observed), it is only counted once.
 - Dropped unnecessary arguments of some methods in various Holiday Providers.
