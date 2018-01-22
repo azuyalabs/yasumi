@@ -29,26 +29,10 @@ use Yasumi\Yasumi;
 abstract class AbstractProvider implements ProviderInterface, Countable, IteratorAggregate
 {
     /**
-     * @var int the object's current year
-     */
-    protected $year;
-
-    /**
-     * @var string the object's current timezone
-     */
-    protected $timezone;
-
-    /**
-     * @var string the object's current locale
-     */
-    protected $locale;
-
-    /**
      * Code to identify the Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
     const ID = 'US';
-
     /**
      * @var array list of the days of the week (the index of the weekdays) that are considered weekend days.
      *            This list only concerns those countries that deviate from the global common definition,
@@ -84,7 +68,18 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         // Friday
         'IN' => [0], // India
     ];
-
+    /**
+     * @var int the object's current year
+     */
+    protected $year;
+    /**
+     * @var string the object's current timezone
+     */
+    protected $timezone;
+    /**
+     * @var string the object's current locale
+     */
+    protected $locale;
     /**
      * @var Holiday[] list of dates of the available holidays
      */
