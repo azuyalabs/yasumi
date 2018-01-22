@@ -92,13 +92,12 @@ class Japan extends AbstractProvider
          * National Foundation Day. National Foundation Day is held on February 11th and established since 1966.
          */
         if ($this->year >= 1966) {
-            $holiday = new Holiday(
+            $this->addHoliday(new Holiday(
                 'nationalFoundationDay',
                 ['en_US' => 'National Foundation Day', 'ja_JP' => '建国記念の日'],
                 new DateTime("$this->year-2-11", new DateTimeZone($this->timezone)),
                 $this->locale
-            );
-            $this->addHoliday($holiday);
+            ));
         }
 
         /**
@@ -212,7 +211,7 @@ class Japan extends AbstractProvider
     private function calculateVernalEquinoxDay()
     {
         $day = null;
-        if ($this->year < 1948) {
+        if ($this->year < 1948 || $this->year > 2150) {
             $day = null;
         } elseif ($this->year >= 1948 && $this->year <= 1979) {
             $day = floor(self::VERNAL_EQUINOX_PARAM_1979 + self::EQUINOX_GRADIENT * ($this->year - 1980) - floor(($this->year - 1983) / 4));
@@ -220,8 +219,6 @@ class Japan extends AbstractProvider
             $day = floor(self::VERNAL_EQUINOX_PARAM_2099 + self::EQUINOX_GRADIENT * ($this->year - 1980) - floor(($this->year - 1980) / 4));
         } elseif ($this->year <= 2150) {
             $day = floor(self::VERNAL_EQUINOX_PARAM_2150 + self::EQUINOX_GRADIENT * ($this->year - 1980) - floor(($this->year - 1980) / 4));
-        } elseif ($this->year > 2150) {
-            $day = null;
         }
 
         if (null !== $day) {
@@ -251,6 +248,7 @@ class Japan extends AbstractProvider
         } elseif ($this->year >= 1948) {
             $date = new DateTime("$this->year-1-15", new DateTimeZone($this->timezone));
         }
+        
         if (null !== $date) {
             $this->addHoliday(new Holiday(
                 'comingOfAgeDay',
@@ -277,6 +275,7 @@ class Japan extends AbstractProvider
         } elseif ($this->year >= 1989) {
             $date = new DateTime("$this->year-4-29", new DateTimeZone($this->timezone));
         }
+        
         if (null !== $date) {
             $this->addHoliday(new Holiday(
                 'greeneryDay',
@@ -303,6 +302,7 @@ class Japan extends AbstractProvider
         } elseif ($this->year >= 1996) {
             $date = new DateTime("$this->year-7-20", new DateTimeZone($this->timezone));
         }
+        
         if (null !== $date) {
             $this->addHoliday(new Holiday(
                 'marineDay',
@@ -330,6 +330,7 @@ class Japan extends AbstractProvider
         } elseif ($this->year >= 1996) {
             $date = new DateTime("$this->year-9-15", new DateTimeZone($this->timezone));
         }
+        
         if (null !== $date) {
             $this->addHoliday(new Holiday(
                 'respectfortheAgedDay',
@@ -357,6 +358,7 @@ class Japan extends AbstractProvider
         } elseif ($this->year >= 1996) {
             $date = new DateTime("$this->year-10-10", new DateTimeZone($this->timezone));
         }
+        
         if (null !== $date) {
             $this->addHoliday(new Holiday(
                 'healthandSportsDay',
@@ -382,7 +384,7 @@ class Japan extends AbstractProvider
     private function calculateAutumnalEquinoxDay()
     {
         $day = null;
-        if ($this->year < 1948) {
+        if ($this->year < 1948 || $this->year > 2150) {
             $day = null;
         } elseif ($this->year >= 1948 && $this->year <= 1979) {
             $day = floor(self::AUTUMNAL_EQUINOX_PARAM_1979 + self::EQUINOX_GRADIENT * ($this->year - 1980) - floor(($this->year - 1983) / 4));
@@ -390,8 +392,6 @@ class Japan extends AbstractProvider
             $day = floor(self::AUTUMNAL_EQUINOX_PARAM_2099 + self::EQUINOX_GRADIENT * ($this->year - 1980) - floor(($this->year - 1980) / 4));
         } elseif ($this->year <= 2150) {
             $day = floor(self::AUTUMNAL_EQUINOX_PARAM_2150 + self::EQUINOX_GRADIENT * ($this->year - 1980) - floor(($this->year - 1980) / 4));
-        } elseif ($this->year > 2150) {
-            $day = null;
         }
 
         if (null !== $day) {
