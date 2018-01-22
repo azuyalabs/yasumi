@@ -35,6 +35,7 @@ class Greece extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function initialize()
     {
@@ -97,6 +98,7 @@ class Greece extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateCleanMonday()
     {
@@ -115,6 +117,8 @@ class Greece extends AbstractProvider
      * @param string $timezone
      *
      * @return \DateTime
+     *
+     * @throws \Exception
      */
     public function calculateEaster($year, $timezone): DateTime
     {

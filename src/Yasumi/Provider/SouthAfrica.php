@@ -40,6 +40,7 @@ class SouthAfrica extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function initialize()
     {
@@ -107,6 +108,7 @@ class SouthAfrica extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateFamilyDay()
     {
@@ -296,6 +298,7 @@ class SouthAfrica extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     private function calculateSubstituteHolidays()
     {

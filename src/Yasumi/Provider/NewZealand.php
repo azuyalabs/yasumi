@@ -35,6 +35,7 @@ class NewZealand extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function initialize()
     {
@@ -66,6 +67,7 @@ class NewZealand extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateNewYearHolidays()
     {
@@ -221,6 +223,7 @@ class NewZealand extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateChristmasHolidays()
     {

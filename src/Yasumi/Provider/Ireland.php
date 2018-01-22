@@ -40,6 +40,7 @@ class Ireland extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function initialize()
     {
@@ -117,6 +118,7 @@ class Ireland extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculatePentecostMonday()
     {

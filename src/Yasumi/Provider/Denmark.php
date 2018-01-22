@@ -35,6 +35,7 @@ class Denmark extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function initialize()
     {
@@ -71,6 +72,7 @@ class Denmark extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateGreatPrayerDay()
     {

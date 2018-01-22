@@ -34,6 +34,7 @@ class Victoria extends Australia
      *
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function initialize()
     {
@@ -45,6 +46,9 @@ class Victoria extends Australia
         $this->calculateAFLGrandFinalDay();
     }
 
+    /**
+     * @throws \Exception
+     */
     public function calculateChristmasDay()
     {
         $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->timezone));

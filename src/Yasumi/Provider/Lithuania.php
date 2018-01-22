@@ -49,6 +49,7 @@ class Lithuania extends AbstractProvider
      * Initialize holidays for Lithuania.
      *
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function initialize()
     {

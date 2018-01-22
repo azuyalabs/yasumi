@@ -38,6 +38,7 @@ class Latvia extends AbstractProvider
      * Initialize holidays for Latvia.
      *
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function initialize()
     {

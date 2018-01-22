@@ -37,6 +37,7 @@ class Ukraine extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function initialize()
     {
@@ -219,6 +220,7 @@ class Ukraine extends AbstractProvider
      * @param string $timezone
      *
      * @return \DateTime
+     * @throws \Exception
      */
     public function calculateEaster($year, $timezone): \DateTime
     {

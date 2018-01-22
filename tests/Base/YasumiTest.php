@@ -356,6 +356,8 @@ class YasumiTest extends PHPUnit_Framework_TestCase
     /**
      * Tests that the IsWorkingDay function returns a boolean true for a date that is defined as a holiday or falls in
      * the weekend.
+     *
+     * @TODO Add additional unit tests for those holiday providers that differ from the global definition
      */
     public function testIsWorkingDay()
     {

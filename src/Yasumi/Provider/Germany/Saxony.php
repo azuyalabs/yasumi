@@ -38,6 +38,7 @@ class Saxony extends Germany
      * Initialize holidays for Saxony (Germany).
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function initialize()
     {

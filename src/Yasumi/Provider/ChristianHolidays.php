@@ -69,6 +69,7 @@ trait ChristianHolidays
      *
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function easterMonday($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
     {
@@ -100,6 +101,7 @@ trait ChristianHolidays
      *
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function ascensionDay($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
     {
@@ -128,6 +130,7 @@ trait ChristianHolidays
      *
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function pentecost($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
     {
@@ -156,6 +159,7 @@ trait ChristianHolidays
      *
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function pentecostMonday($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
     {
@@ -187,6 +191,7 @@ trait ChristianHolidays
      *
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function corpusChristi($year, $timezone, $locale, $type = Holiday::TYPE_OTHER): Holiday
     {
@@ -363,6 +368,7 @@ trait ChristianHolidays
      *
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function goodFriday($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
     {
@@ -421,6 +427,7 @@ trait ChristianHolidays
      *
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function ashWednesday($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
     {
@@ -545,6 +552,7 @@ trait ChristianHolidays
      *
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function maundyThursday($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
     {
@@ -653,6 +661,7 @@ trait ChristianHolidays
      *
      * @link http://php.net/manual/en/function.easter-date.php#83794
      * @link https://en.wikipedia.org/wiki/Computus#Adaptation_for_Western_Easter_of_Meeus.27_Julian_algorithm
+     * @throws \Exception
      */
     public function calculateOrthodoxEaster($year, $timezone): \DateTime
     {
@@ -726,6 +735,7 @@ trait ChristianHolidays
      * @param string $timezone the timezone in which Easter is celebrated
      *
      * @return \DateTime date of Easter
+     * @throws \Exception
      */
     protected function calculateEaster($year, $timezone): DateTime
     {

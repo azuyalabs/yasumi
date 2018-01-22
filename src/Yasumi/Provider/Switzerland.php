@@ -127,6 +127,7 @@ class Switzerland extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateBettagsMontag()
     {
