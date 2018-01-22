@@ -57,52 +57,6 @@ class Yasumi
     ];
 
     /**
-     * Returns a list of available holiday providers.
-     *
-     * @return array list of available holiday providers
-     *
-     * @throws \ReflectionException
-     */
-    public static function getProviders()
-    {
-        // Basic static cache
-        static $providers;
-        if ($providers !== null) {
-            return $providers;
-        }
-
-        $ds = DIRECTORY_SEPARATOR;
-
-        $providers     = [];
-        $filesIterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(
-            __DIR__ . $ds . 'Provider',
-            FilesystemIterator::SKIP_DOTS
-        ), RecursiveIteratorIterator::SELF_FIRST);
-
-        foreach ($filesIterator as $file) {
-            if ($file->isDir() || $file->getExtension() !== 'php' || in_array(
-                $file->getBasename('.php'),
-                    self::$ignoredProvider,
-                true
-            )) {
-                continue;
-            }
-
-            $quotedDs = preg_quote($ds, null);
-            $provider = preg_replace("#^.+{$quotedDs}Provider{$quotedDs}(.+)\\.php$#", '$1', $file->getPathName());
-
-            $class = new ReflectionClass(sprintf('Yasumi\Provider\%s', str_replace('/', '\\', $provider)));
-
-            $key = 'ID';
-            if ($class->hasConstant($key)) {
-                $providers[strtoupper($class->getConstant($key))] = $provider;
-            }
-        }
-
-        return $providers;
-    }
-
-    /**
      * @param string   $class       holiday provider name
      * @param DateTime $startDate   DateTime Start date, defaults to today
      * @param int      $workingDays int
@@ -245,8 +199,10 @@ class Yasumi
      * Returns a list of available holiday providers.
      *
      * @return array list of available holiday providers
+     *
+     * @throws \ReflectionException
      */
-    public static function getProviders(): array
+    public static function getProviders()
     {
         // Basic static cache
         static $providers;
@@ -271,7 +227,7 @@ class Yasumi
                 continue;
             }
 
-            $quotedDs = preg_quote($ds);
+            $quotedDs = preg_quote($ds, null);
             $provider = preg_replace("#^.+{$quotedDs}Provider{$quotedDs}(.+)\\.php$#", '$1', $file->getPathName());
 
             $class = new ReflectionClass(sprintf('Yasumi\Provider\%s', str_replace('/', '\\', $provider)));
