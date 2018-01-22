@@ -87,7 +87,7 @@ class Yasumi
                 continue;
             }
 
-            $quotedDs = preg_quote($ds);
+            $quotedDs = preg_quote($ds, null);
             $provider = preg_replace("#^.+{$quotedDs}Provider{$quotedDs}(.+)\\.php$#", '$1', $file->getPathName());
 
             $class = new ReflectionClass(sprintf('Yasumi\Provider\%s', str_replace('/', '\\', $provider)));
