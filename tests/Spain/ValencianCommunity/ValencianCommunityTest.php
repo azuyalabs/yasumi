@@ -33,7 +33,6 @@ class ValencianCommunityTest extends ValencianCommunityBaseTestCase
             'newYearsDay',
             'epiphany',
             'goodFriday',
-            'easter',
             'internationalWorkersDay',
             'assumptionOfMary',
             'valencianCommunityDay',
@@ -41,7 +40,7 @@ class ValencianCommunityTest extends ValencianCommunityBaseTestCase
             'allSaintsDay',
             'constitutionDay',
             'immaculateConception',
-            'christmasDay'
+            'christmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -50,12 +49,11 @@ class ValencianCommunityTest extends ValencianCommunityBaseTestCase
      */
     public function testObservedHolidays()
     {
-        $this->assertDefinedHolidays(
-            ['stJosephsDay', 'easterMonday'],
-            self::REGION,
-            $this->year,
-            Holiday::TYPE_OBSERVANCE
-        );
+        $this->assertDefinedHolidays([
+            'stJosephsDay',
+            'easterMonday',
+            'easter',
+        ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**

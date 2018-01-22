@@ -33,7 +33,6 @@ class CommunityOfMadridTest extends CommunityOfMadridBaseTestCase
             'newYearsDay',
             'epiphany',
             'goodFriday',
-            'easter',
             'internationalWorkersDay',
             'dosdeMayoUprisingDay',
             'assumptionOfMary',
@@ -41,7 +40,7 @@ class CommunityOfMadridTest extends CommunityOfMadridBaseTestCase
             'allSaintsDay',
             'constitutionDay',
             'immaculateConception',
-            'christmasDay'
+            'christmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -53,7 +52,8 @@ class CommunityOfMadridTest extends CommunityOfMadridBaseTestCase
         $this->assertDefinedHolidays([
             'stJosephsDay',
             'maundyThursday',
-            'corpusChristi'
+            'easter',
+            'corpusChristi',
         ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 

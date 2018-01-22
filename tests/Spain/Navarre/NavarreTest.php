@@ -33,14 +33,13 @@ class NavarreTest extends NavarreBaseTestCase
             'newYearsDay',
             'epiphany',
             'goodFriday',
-            'easter',
             'internationalWorkersDay',
             'assumptionOfMary',
             'nationalDay',
             'allSaintsDay',
             'constitutionDay',
             'immaculateConception',
-            'christmasDay'
+            'christmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -52,7 +51,8 @@ class NavarreTest extends NavarreBaseTestCase
         $this->assertDefinedHolidays([
             'stJosephsDay',
             'maundyThursday',
-            'easterMonday'
+            'easter',
+            'easterMonday',
         ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 

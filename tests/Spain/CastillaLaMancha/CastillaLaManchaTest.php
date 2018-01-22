@@ -33,7 +33,6 @@ class CastillaLaManchaTest extends CastillaLaManchaBaseTestCase
             'newYearsDay',
             'epiphany',
             'goodFriday',
-            'easter',
             'internationalWorkersDay',
             'castillaLaManchaDay',
             'assumptionOfMary',
@@ -41,7 +40,7 @@ class CastillaLaManchaTest extends CastillaLaManchaBaseTestCase
             'allSaintsDay',
             'constitutionDay',
             'immaculateConception',
-            'christmasDay'
+            'christmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -52,7 +51,8 @@ class CastillaLaManchaTest extends CastillaLaManchaBaseTestCase
     {
         $this->assertDefinedHolidays([
             'stJosephsDay',
-            'maundyThursday'
+            'maundyThursday',
+            'easter',
         ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
