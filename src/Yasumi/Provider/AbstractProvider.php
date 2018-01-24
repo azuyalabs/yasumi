@@ -14,7 +14,6 @@ namespace Yasumi\Provider;
 
 use ArrayIterator;
 use Countable;
-use DateTime;
 use InvalidArgumentException;
 use IteratorAggregate;
 use Yasumi\Exception\InvalidDateException;
@@ -121,15 +120,15 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     /**
      * Internal function to compare dates in order to sort them chronologically.
      *
-     * @param DateTime $dateA First date
-     * @param DateTime $dateB Second date
+     * @param \DateTimeInterface $dateA First date
+     * @param \DateTimeInterface $dateB Second date
      *
      * @return int result where 0 means dates are equal, -1 the first date is before the second date, and 1 if the
      *             second date is after the first.
      */
-    private static function compareDates(DateTime $dateA, DateTime $dateB)
+    private static function compareDates(\DateTimeInterface $dateA, \DateTimeInterface $dateB)
     {
-        if ($dateA == $dateB) {
+        if ($dateA === $dateB) {
             return 0;
         }
 
@@ -158,7 +157,8 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * A working day is defined as a day that is not a holiday nor falls in the weekend. The index of the weekdays of
      * the defined date is used for establishing this (0 = Sunday, 1 = Monday, etc.)
      *
-     * @param mixed $date a Yasumi\Holiday or DateTime object
+     * @param \DateTimeInterface $date any date object that implements the DateTimeInterface (e.g. Yasumi\Holiday,
+     *                                 \DateTime)
      *
      * @throws \Yasumi\Exception\InvalidDateException
      *
@@ -419,16 +419,17 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * timezone for these parameters versus the instantiated Holiday Provider, the outcome might be unexpected (but
      * correct).
      *
-     * @param \DateTime $start_date Start date of the time frame to check against
-     * @param \DateTime $end_date   End date of the time frame to check against
-     * @param bool      $equals     indicate whether the start and end dates should be included in the comparison
+     * @param \DateTimeInterface $start_date Start date of the time frame to check against
+     * @param \DateTimeInterface $end_date   End date of the time frame to check against
+     * @param bool               $equals     indicate whether the start and end dates should be included in the
+     *                                       comparison
      *
      * @throws InvalidArgumentException An InvalidArgumentException is thrown if the start date is set after the end
      *                                  date.
      *
      * @return \Yasumi\Filters\BetweenFilter
      */
-    public function between(DateTime $start_date, DateTime $end_date, $equals = true)
+    public function between(\DateTimeInterface $start_date, \DateTimeInterface $end_date, $equals = true)
     {
         if ($start_date > $end_date) {
             throw new InvalidArgumentException('Start date must be a date before the end date.');

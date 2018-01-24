@@ -81,6 +81,59 @@ class HolidayBetweenFilterTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * Tests the basic usage of the BetweenFilter using DateTimeImmutable objects.
+     */
+    public function testHolidaysBetweenDateRangeWithDateTimeImmutable()
+    {
+        $timezone = 'Europe/Amsterdam';
+        $holidays = Yasumi::create('Netherlands', 2016);
+
+        $between = $holidays->between(
+            new \DateTimeImmutable('03/25/2016', new \DateTimeZone($timezone)),
+            new \DateTimeImmutable('07/25/2016', new \DateTimeZone($timezone))
+        );
+
+        $betweenHolidays = iterator_to_array($between);
+
+        $this->assertArrayHasKey('goodFriday', $betweenHolidays);
+        $this->assertArrayHasKey('easter', $betweenHolidays);
+        $this->assertArrayHasKey('summerTime', $betweenHolidays);
+        $this->assertArrayHasKey('easterMonday', $betweenHolidays);
+        $this->assertArrayHasKey('kingsDay', $betweenHolidays);
+        $this->assertArrayHasKey('internationalWorkersDay', $betweenHolidays);
+        $this->assertArrayHasKey('commemorationDay', $betweenHolidays);
+        $this->assertArrayHasKey('ascensionDay', $betweenHolidays);
+        $this->assertArrayHasKey('liberationDay', $betweenHolidays);
+        $this->assertArrayHasKey('mothersDay', $betweenHolidays);
+        $this->assertArrayHasKey('pentecost', $betweenHolidays);
+        $this->assertArrayHasKey('pentecostMonday', $betweenHolidays);
+        $this->assertArrayHasKey('fathersDay', $betweenHolidays);
+
+        $this->assertArrayNotHasKey('newYearsDay', $betweenHolidays);
+        $this->assertArrayNotHasKey('epiphany', $betweenHolidays);
+        $this->assertArrayNotHasKey('carnivalDay', $betweenHolidays);
+        $this->assertArrayNotHasKey('secondCarnivalDay', $betweenHolidays);
+        $this->assertArrayNotHasKey('thirdCarnivalDay', $betweenHolidays);
+        $this->assertArrayNotHasKey('ashWednesday', $betweenHolidays);
+        $this->assertArrayNotHasKey('valentinesDay', $betweenHolidays);
+        $this->assertArrayNotHasKey('princesDay', $betweenHolidays);
+        $this->assertArrayNotHasKey('worldAnimalDay', $betweenHolidays);
+        $this->assertArrayNotHasKey('winterTime', $betweenHolidays);
+        $this->assertArrayNotHasKey('halloween', $betweenHolidays);
+        $this->assertArrayNotHasKey('stMartinsDay', $betweenHolidays);
+        $this->assertArrayNotHasKey('stNicholasDay', $betweenHolidays);
+        $this->assertArrayNotHasKey('christmasDay', $betweenHolidays);
+        $this->assertArrayNotHasKey('secondChristmasDay', $betweenHolidays);
+
+        $this->assertCount(13, $between);
+        $this->assertNotCount(count($holidays), $between);
+
+        $this->assertEquals(13, $between->count());
+        $this->assertNotEquals(count($holidays), $between->count());
+    }
+
+
+    /**
      * Tests the BetweenFilter with date range where start and end date are exclusive of the comparison.
      */
     public function testHolidaysBetweenDateRangeExclusiveStartEndDate()
