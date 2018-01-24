@@ -38,7 +38,7 @@ class RestaurationGenevoiseTest extends GenevaBaseTestCase implements YasumiTest
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime($year.'-12-31', new DateTimeZone(self::TIMEZONE))
+            new DateTime($year . '-12-31', new DateTimeZone(self::TIMEZONE))
         );
     }
 

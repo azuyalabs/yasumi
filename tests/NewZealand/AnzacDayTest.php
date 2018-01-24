@@ -65,19 +65,12 @@ class AnzacDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInter
      */
     public function HolidayDataProvider()
     {
-        return $this->generateRandomDatesWithModifier(
-            4,
-            25,
-            function ($year, \DateTime $date) {
-                // in 2015 some policy was introduced to make sure this holiday was celebrated during the working week.
-                if ($year >= 2015 && $this->isWeekend($date)) {
-                    $date->modify('next monday');
-                }
-            },
-            self::TIMEZONE,
-            100,
-            self::ESTABLISHMENT_YEAR
-        );
+        return $this->generateRandomDatesWithModifier(4, 25, function ($year, \DateTime $date) {
+            // in 2015 some policy was introduced to make sure this holiday was celebrated during the working week.
+            if ($year >= 2015 && $this->isWeekend($date)) {
+                $date->modify('next monday');
+            }
+        }, self::TIMEZONE, 100, self::ESTABLISHMENT_YEAR);
     }
 
     /**

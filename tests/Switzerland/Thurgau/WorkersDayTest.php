@@ -77,11 +77,6 @@ class WorkersDayTest extends ThurgauBaseTestCase implements YasumiTestCaseInterf
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(
-            self::REGION,
-            self::HOLIDAY,
-            $this->generateRandomYear(),
-            Holiday::TYPE_OTHER
-        );
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OTHER);
     }
 }

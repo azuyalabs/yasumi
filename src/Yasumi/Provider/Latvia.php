@@ -76,9 +76,9 @@ class Latvia extends AbstractProvider
             }
 
             $this->addHoliday(new Holiday('restorationOfIndependenceOfLatviaDay', [
-                    'en_US' => 'Restoration of Independence day',
-                    'lv_LV' => 'Latvijas Republikas Neatkarības atjaunošanas diena'
-                ], $date));
+                'en_US' => 'Restoration of Independence day',
+                'lv_LV' => 'Latvijas Republikas Neatkarības atjaunošanas diena'
+            ], $date));
         }
     }
 
@@ -88,9 +88,9 @@ class Latvia extends AbstractProvider
     private function addMidsummerEveDay()
     {
         $this->addHoliday(new Holiday('midsummerEveDay', [
-                'en_US' => 'Midsummer Eve',
-                'lv_LV' => 'Līgo Diena'
-            ], new \DateTime("{$this->year}-06-23", new \DateTimeZone($this->timezone))));
+            'en_US' => 'Midsummer Eve',
+            'lv_LV' => 'Līgo Diena'
+        ], new \DateTime("{$this->year}-06-23", new \DateTimeZone($this->timezone))));
     }
 
     /**
@@ -109,9 +109,9 @@ class Latvia extends AbstractProvider
             }
 
             $this->addHoliday(new Holiday('proclamationOfTheRepublicOfLatviaDay', [
-                    'en_US' => 'Proclamation Day of the Republic of Latvia',
-                    'lv_LV' => 'Latvijas Republikas proklamēšanas diena'
-                ], $date));
+                'en_US' => 'Proclamation Day of the Republic of Latvia',
+                'lv_LV' => 'Latvijas Republikas proklamēšanas diena'
+            ], $date));
         }
     }
 
@@ -121,8 +121,8 @@ class Latvia extends AbstractProvider
     private function addNewYearsEve()
     {
         $this->addHoliday(new Holiday('newYearsEve', [
-                'en_US' => 'New Year\'s Eve',
-                'lv_LV' => 'Vecgada vakars'
-            ], new \DateTime("{$this->year}-12-31", new \DateTimeZone($this->timezone))));
+            'en_US' => 'New Year\'s Eve',
+            'lv_LV' => 'Vecgada vakars'
+        ], new \DateTime("{$this->year}-12-31", new \DateTimeZone($this->timezone))));
     }
 }

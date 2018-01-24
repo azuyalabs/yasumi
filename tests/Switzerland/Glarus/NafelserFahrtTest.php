@@ -38,7 +38,7 @@ class NafelserFahrtTest extends GlarusBaseTestCase implements YasumiTestCaseInte
     public function testNafelserFahrtOnAfter1389()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $date = new DateTime('First Thursday of '.$year.'-04', new DateTimeZone(self::TIMEZONE));
+        $date = new DateTime('First Thursday of ' . $year . '-04', new DateTimeZone(self::TIMEZONE));
 
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
     }
@@ -70,6 +70,11 @@ class NafelserFahrtTest extends GlarusBaseTestCase implements YasumiTestCaseInte
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR), Holiday::TYPE_OTHER);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_OTHER
+        );
     }
 }
