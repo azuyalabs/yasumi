@@ -16,6 +16,7 @@ use DateTime;
 use Faker\Factory;
 use InvalidArgumentException;
 use PHPUnit_Framework_TestCase;
+use Yasumi\Exception\InvalidDateException;
 use Yasumi\tests\YasumiBase;
 use Yasumi\Yasumi;
 
@@ -330,9 +331,17 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      */
     public function testIsHoliday()
     {
-        $year      = 2110;
-        $isHoliday = Yasumi::create('Spain', $year)->isHoliday(new DateTime($year . '-08-15'));
+        $year     = 2110;
+        $provider = 'Spain';
+        $date     = $year . '-08-15';
 
+        // Assertion using a DateTime instance
+        $isHoliday = Yasumi::create($provider, $year)->isHoliday(new \DateTime($date));
+        $this->assertInternalType('bool', $isHoliday);
+        $this->assertTrue($isHoliday);
+
+        // Assertion using a DateTimeImmutable instance
+        $isHoliday = Yasumi::create($provider, $year)->isHoliday(new \DateTimeImmutable($date));
         $this->assertInternalType('bool', $isHoliday);
         $this->assertTrue($isHoliday);
 
@@ -344,13 +353,36 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      */
     public function testIsNotHoliday()
     {
-        $year      = 5220;
-        $isHoliday = Yasumi::create('Japan', $year)->isHoliday(new DateTime($year . '-06-10'));
+        $year     = 5220;
+        $provider = 'Japan';
+        $date     = $year . '-06-10';
 
+        // Assertion using a DateTime instance
+        $isHoliday = Yasumi::create($provider, $year)->isHoliday(new \DateTime($date));
+        $this->assertInternalType('bool', $isHoliday);
+        $this->assertFalse($isHoliday);
+
+        // Assertion using a DateTimeImmutable instance
+        $isHoliday = Yasumi::create($provider, $year)->isHoliday(new \DateTimeImmutable($date));
         $this->assertInternalType('bool', $isHoliday);
         $this->assertFalse($isHoliday);
 
         unset($isHoliday);
+    }
+
+    /**
+     * Tests that the isHoliday function throws an InvalidDateException when the given argument is not an instance that
+     * implements the DateTimeInterface (e.g. DateTime or DateTimeImmutable)
+     *
+     */
+    public function testIsHolidayException()
+    {
+        $this->expectException(InvalidDateException::class);
+
+        Yasumi::create('Spain', Factory::create()->numberBetween(
+            self::YEAR_LOWER_BOUND,
+            self::YEAR_UPPER_BOUND
+        ))->isHoliday(new \stdClass());
     }
 
     /**

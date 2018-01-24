@@ -17,6 +17,7 @@ use Countable;
 use DateTime;
 use InvalidArgumentException;
 use IteratorAggregate;
+use Yasumi\Exception\InvalidDateException;
 use Yasumi\Filters\BetweenFilter;
 use Yasumi\Holiday;
 use Yasumi\ProviderInterface;
@@ -186,19 +187,22 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     /**
      * Determines whether a date represents a holiday or not.
      *
-     * @param mixed $date a Yasumi\Holiday or DateTime object
+     * @param \DateTimeInterface $date any date object that implements the DateTimeInterface (e.g. Yasumi\Holiday,
+     *                                 \DateTime)
+     *
+     * @throws \Yasumi\Exception\InvalidDateException
      *
      * @return bool true if date represents a holiday, otherwise false
      */
     public function isHoliday($date)
     {
         // Return false if given date is empty
-        if (null === $date) {
-            return false;
+        if (null === $date || ! $date instanceof \DateTimeInterface) {
+            throw new InvalidDateException($date);
         }
 
         // If given date is a DateTime object
-        if ($date instanceof DateTime && in_array($date->format('Y-m-d'), array_values($this->getHolidayDates()))) {
+        if (in_array($date->format('Y-m-d'), array_values($this->getHolidayDates()), true)) {
             return true;
         }
 

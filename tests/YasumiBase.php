@@ -16,6 +16,7 @@ use DateInterval;
 use DateTime;
 use DateTimeZone;
 use Faker\Factory as Faker;
+use Yasumi\Exception\InvalidDateException;
 use Yasumi\Filters\BankHolidaysFilter;
 use Yasumi\Filters\ObservedHolidaysFilter;
 use Yasumi\Filters\OfficialHolidaysFilter;
@@ -84,12 +85,16 @@ trait YasumiBase
      * @param DateTime $expected  the date to be checked against
      *
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \RuntimeException
      * @throws \PHPUnit_Framework_AssertionFailedError
+     * @throws \ReflectionException
      */
     public function assertHoliday($provider, $shortName, $year, $expected)
     {
+        $this->expectException(InvalidDateException::class);
+
         $holidays = Yasumi::create($provider, $year);
         $holiday  = $holidays->getHoliday($shortName);
 
@@ -112,10 +117,14 @@ trait YasumiBase
      * @throws \InvalidArgumentException
      * @throws \RuntimeException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \PHPUnit_Framework_AssertionFailedError
+     * @throws \ReflectionException
      */
     public function assertNotHoliday($provider, $shortName, $year)
     {
+        $this->expectException(InvalidDateException::class);
+
         $holidays = Yasumi::create($provider, $year);
         $holiday  = $holidays->getHoliday($shortName);
 
@@ -359,18 +368,11 @@ trait YasumiBase
         $iterations = 10,
         $range = 1000
     ) {
-        return $this->generateRandomDatesWithModifier(
-            $month,
-            $day,
-            function ($year, \DateTime $date) {
-                if ($this->isWeekend($date)) {
-                    $date->modify('next monday');
-                }
-            },
-            $timezone,
-            $iterations,
-            $range
-        );
+        return $this->generateRandomDatesWithModifier($month, $day, function ($year, \DateTime $date) {
+            if ($this->isWeekend($date)) {
+                $date->modify('next monday');
+            }
+        }, $timezone, $iterations, $range);
     }
 
     /**
@@ -393,7 +395,7 @@ trait YasumiBase
         $iterations,
         $range
     ) {
-        $data  = [];
+        $data = [];
 
         for ($i = 1; $i <= $iterations; ++$i) {
             $year = $this->generateRandomYear($range);
@@ -417,7 +419,7 @@ trait YasumiBase
      */
     public function isWeekend(\DateTimeInterface $dateTime, array $weekendDays = [0, 6])
     {
-        return in_array((int) $dateTime->format('w'), $weekendDays, true);
+        return in_array((int)$dateTime->format('w'), $weekendDays, true);
     }
 
     /**
