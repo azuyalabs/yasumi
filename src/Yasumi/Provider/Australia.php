@@ -88,6 +88,7 @@ class Australia extends AbstractProvider
      * @param bool            $moveFromSaturday
      * @param bool            $moveFromSunday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -99,13 +100,12 @@ class Australia extends AbstractProvider
         $moveFromSaturday = true,
         $moveFromSunday = true
     ) {
-        $holidayDate = $date instanceof DateTime ? $date : new DateTime($date, new DateTimeZone($this->timezone));
+        $holidayDate = $date instanceof \DateTimeInterface ? $date : new \DateTime($date,
+            new \DateTimeZone($this->timezone));
 
         $day = (int)$holidayDate->format('w');
-        //echo ' - '.$shortName.' - Day: '.$day."\n";
         if (($day === 0 && $moveFromSunday) || ($day === 6 && $moveFromSaturday)) {
-            //echo ' - '.$shortName.' - Need to move: '.($day == 0 ? '1 day' : '2days')."\n";
-            $holidayDate->add($day === 0 ? new DateInterval('P1D') : new DateInterval('P2D'));
+            $holidayDate = $holidayDate->add($day === 0 ? new DateInterval('P1D') : new DateInterval('P2D'));
         }
 
         $this->addHoliday(new Holiday($shortName, $names, $holidayDate, $this->locale));
@@ -127,11 +127,8 @@ class Australia extends AbstractProvider
      */
     public function calculateNewYearHolidays()
     {
-        $this->calculateHoliday(
-            'newYearsDay',
-            [],
-            new DateTime("$this->year-01-01", new DateTimeZone($this->timezone))
-        );
+        $this->calculateHoliday('newYearsDay', [],
+            new DateTime("$this->year-01-01", new DateTimeZone($this->timezone)));
     }
 
     /**
@@ -209,13 +206,8 @@ class Australia extends AbstractProvider
      */
     public function calculateQueensBirthday()
     {
-        $this->calculateHoliday(
-            'queensBirthday',
-            ['en_AU' => 'Queens Birthday'],
-            'second monday of june ' . $this->year,
-            false,
-            false
-        );
+        $this->calculateHoliday('queensBirthday', ['en_AU' => 'Queens Birthday'],
+            'second monday of june ' . $this->year, false, false);
     }
 
     /**
