@@ -93,8 +93,6 @@ trait YasumiBase
      */
     public function assertHoliday($provider, $shortName, $year, $expected)
     {
-        $this->expectException(InvalidDateException::class);
-
         $holidays = Yasumi::create($provider, $year);
         $holiday  = $holidays->getHoliday($shortName);
 

@@ -12,7 +12,6 @@
 
 namespace Yasumi\tests\Base;
 
-use DateTime;
 use Faker\Factory;
 use InvalidArgumentException;
 use PHPUnit_Framework_TestCase;
@@ -386,16 +385,26 @@ class YasumiTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Tests that the IsWorkingDay function returns a boolean true for a date that is defined as a holiday or falls in
+     * Tests that the isWorkingDay function returns a boolean true for a date that is defined as a holiday or falls in
      * the weekend.
      *
      * @TODO Add additional unit tests for those holiday providers that differ from the global definition
      */
     public function testIsWorkingDay()
     {
-        $year         = 2020;
-        $isWorkingDay = Yasumi::create('Netherlands', $year)->isWorkingDay(new DateTime($year . '-06-02'));
+        $year     = 2020;
+        $provider = 'Netherlands';
+        $date     = $year . '-06-02';
 
+        // Assertion using a DateTime instance
+        $isWorkingDay = Yasumi::create($provider, $year)->isWorkingDay(new \DateTime($date));
+        var_dump($isWorkingDay);
+        $this->assertInternalType('bool', $isWorkingDay);
+        $this->assertTrue($isWorkingDay);
+
+        // Assertion using a DateTimeImmutable instance
+        $isWorkingDay = Yasumi::create($provider, $year)->isWorkingDay(new \DateTimeImmutable($date));
+        var_dump($isWorkingDay);
         $this->assertInternalType('bool', $isWorkingDay);
         $this->assertTrue($isWorkingDay);
 
@@ -403,17 +412,43 @@ class YasumiTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Tests that the IsWorkingDay function returns a boolean true for a date that is defined as a holiday or falls in
+     * Tests that the isWorkingDay function returns a boolean true for a date that is defined as a holiday or falls in
      * the weekend.
+     *
+     * @TODO Add additional unit tests for those holiday providers that differ from the global definition
      */
     public function testIsNotWorkingDay()
     {
-        $year            = 2016;
-        $isNotWorkingDay = Yasumi::create('Japan', $year)->isWorkingDay(new DateTime($year . '-01-11'));
+        $year     = 2016;
+        $provider = 'Japan';
+        $date     = $year . '-01-11';
 
+        // Assertion using a DateTime instance
+        $isNotWorkingDay = Yasumi::create($provider, $year)->isWorkingDay(new \DateTime($date));
         $this->assertInternalType('bool', $isNotWorkingDay);
         $this->assertFalse($isNotWorkingDay);
 
-        unset($isWorkingDay);
+        // Assertion using a DateTimeImmutable instance
+        $isNotWorkingDay = Yasumi::create($provider, $year)->isWorkingDay(new \DateTimeImmutable($date));
+        $this->assertInternalType('bool', $isNotWorkingDay);
+        $this->assertFalse($isNotWorkingDay);
+
+        unset($isNotWorkingDay);
+    }
+
+    /**
+     * Tests that the isWorkingDay function throws an InvalidDateException when the given argument is not an instance
+     * that implements the DateTimeInterface (e.g. DateTime or DateTimeImmutable)
+     *
+     * @TODO Add additional unit tests for those holiday providers that differ from the global definition
+     */
+    public function testIsWorkingDayException()
+    {
+        $this->expectException(InvalidDateException::class);
+
+        Yasumi::create('SouthAfrica', Factory::create()->numberBetween(
+            self::YEAR_LOWER_BOUND,
+            self::YEAR_UPPER_BOUND
+        ))->isWorkingDay(new \stdClass());
     }
 }
