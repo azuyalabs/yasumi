@@ -16,6 +16,7 @@ use DateInterval;
 use DateTime;
 use DateTimeZone;
 use Faker\Factory as Faker;
+use Yasumi\Exception\InvalidDateException;
 use Yasumi\Filters\BankHolidaysFilter;
 use Yasumi\Filters\ObservedHolidaysFilter;
 use Yasumi\Filters\OfficialHolidaysFilter;
@@ -84,9 +85,11 @@ trait YasumiBase
      * @param DateTime $expected  the date to be checked against
      *
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \RuntimeException
      * @throws \PHPUnit_Framework_AssertionFailedError
+     * @throws \ReflectionException
      */
     public function assertHoliday($provider, $shortName, $year, $expected)
     {
@@ -112,10 +115,14 @@ trait YasumiBase
      * @throws \InvalidArgumentException
      * @throws \RuntimeException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \PHPUnit_Framework_AssertionFailedError
+     * @throws \ReflectionException
      */
     public function assertNotHoliday($provider, $shortName, $year)
     {
+        $this->expectException(InvalidDateException::class);
+
         $holidays = Yasumi::create($provider, $year);
         $holiday  = $holidays->getHoliday($shortName);
 

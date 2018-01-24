@@ -12,8 +12,6 @@
 
 namespace Yasumi;
 
-use DateInterval;
-use DateTime;
 use FilesystemIterator;
 use InvalidArgumentException;
 use RecursiveDirectoryIterator;
@@ -57,29 +55,34 @@ class Yasumi
     ];
 
     /**
-     * @param string   $class       holiday provider name
-     * @param DateTime $startDate   DateTime Start date, defaults to today
-     * @param int      $workingDays int
+     * Determines the next working day based on a given start date.
+     *
+     * The next working day based on a given start date excludes any holidays and weekends that may be defined
+     * by this Holiday Provider. The workingDays parameter can be used how far ahead (in days) the next working day
+     * must be searched for.
+     *
+     * @param string             $class       Holiday Provider name
+     * @param \DateTimeInterface $startDate   Start date, defaults to today
+     * @param int                $workingDays Number of days to look ahead for the (first) next working day
+     *
+     * @return \DateTimeInterface
+     *
+     * @throws \ReflectionException
+     * @throws \Exception
+     * @throws \Yasumi\Exception\InvalidDateException
      *
      * @TODO we should accept a timezone so we can accept int/string for $startDate
      *
-     * @return DateTime
-     *
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     * @throws \RuntimeException
-     * @throws \InvalidArgumentException
-     * @throws \Exception
-     * @throws \ReflectionException
      */
-    public static function nextWorkingDay(string $class, DateTime $startDate, int $workingDays = 1): DateTime
+    public static function nextWorkingDay(string $class, \DateTimeInterface $startDate, int $workingDays = 1): DateTime
     {
         // Setup start date, if its an instance of \DateTime, clone to prevent modification to original
-        $date = $startDate instanceof DateTime ? clone $startDate : new DateTime($startDate);
+        $date = $startDate instanceof \DateTime ? clone $startDate : $startDate;
 
         $provider = false;
 
         while ($workingDays > 0) {
-            $date->add(new DateInterval('P1D'));
+            $date = $date->add(new \DateInterval('P1D'));
             if (! $provider || $provider->getYear() != $date->format('Y')) {
                 $provider = self::create($class, $date->format('Y'));
             }
@@ -242,29 +245,34 @@ class Yasumi
     }
 
     /**
-     * @param string   $class       holiday provider name
-     * @param DateTime $startDate   DateTime Start date, defaults to today
-     * @param int      $workingDays int
+     * Determines the previous working day based on a given start date.
+     *
+     * The previous working day based on a given start date excludes any holidays and weekends that may be defined
+     * by this Holiday Provider. The workingDays parameter can be used how far back (in days) the previous working day
+     * must be searched for.
+     *
+     * @param string             $class       Holiday Provider name
+     * @param \DateTimeInterface $startDate   Start date, defaults to today
+     * @param int                $workingDays Number of days to look back for the (first) previous working day
+     *
+     * @return \DateTimeInterface
+     *
+     * @throws \ReflectionException
+     * @throws \Exception
+     * @throws \Yasumi\Exception\InvalidDateException
      *
      * @TODO we should accept a timezone so we can accept int/string for $startDate
      *
-     * @return DateTime
-     *
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     * @throws \RuntimeException
-     * @throws \InvalidArgumentException
-     * @throws \ReflectionException
-     * @throws \Exception
      */
-    public static function prevWorkingDay(string $class, DateTime $startDate, int $workingDays = 1): DateTime
+    public static function prevWorkingDay(string $class, \DateTimeInterface $startDate, int $workingDays = 1): DateTime
     {
         // Setup start date, if its an instance of \DateTime, clone to prevent modification to original
-        $date = $startDate instanceof DateTime ? clone $startDate : new DateTime($startDate);
+        $date = $startDate instanceof \DateTime ? clone $startDate : $startDate;
 
         $provider = false;
 
         while ($workingDays > 0) {
-            $date->sub(new DateInterval('P1D'));
+            $date = $date->sub(new \DateInterval('P1D'));
             if (! $provider || $provider->getYear() != $date->format('Y')) {
                 $provider = self::create($class, $date->format('Y'));
             }

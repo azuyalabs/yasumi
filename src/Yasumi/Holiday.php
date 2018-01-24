@@ -15,6 +15,7 @@ namespace Yasumi;
 use DateTime;
 use InvalidArgumentException;
 use JsonSerializable;
+use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 
 /**
@@ -80,26 +81,27 @@ class Holiday extends DateTime implements JsonSerializable
     /**
      * Creates a new Holiday.
      *
-     * If a holiday date needs to be defined for a specific timezone, make sure that the date instance (DateTime) has
-     * the correct timezone set. Otherwise the default system timezone is used.
+     * If a holiday date needs to be defined for a specific timezone, make sure that the date instance
+     * (DateTimeInterface) has the correct timezone set. Otherwise the default system timezone is used.
      *
-     * @param string   $shortName     The short name (internal name) of this holiday
-     * @param array    $names         An array containing the name/description of this holiday in various
-     *                                languages. Overrides global translations
-     * @param DateTime $date          A DateTime instance representing the date of the holiday
-     * @param string   $displayLocale Locale (i.e. language) in which the holiday information needs to be
-     *                                displayed in. (Default 'en_US')
-     * @param string   $type          The type of holiday. Use the following constants: TYPE_OFFICIAL,
-     *                                TYPE_OBSERVANCE, TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an
-     *                                official holiday is considered.
+     * @param string             $shortName     The short name (internal name) of this holiday
+     * @param array              $names         An array containing the name/description of this holiday in various
+     *                                          languages. Overrides global translations
+     * @param \DateTimeInterface $date          A DateTimeInterface instance representing the date of the holiday
+     * @param string             $displayLocale Locale (i.e. language) in which the holiday information needs to be
+     *                                          displayed in. (Default 'en_US')
+     * @param string             $type          The type of holiday. Use the following constants: TYPE_OFFICIAL,
+     *                                          TYPE_OBSERVANCE, TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an
+     *                                          official holiday is considered.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      */
     public function __construct(
         $shortName,
         array $names,
-        $date,
+        \DateTimeInterface $date,
         $displayLocale = self::DEFAULT_LOCALE,
         $type = self::TYPE_OFFICIAL
     ) {
@@ -108,9 +110,9 @@ class Holiday extends DateTime implements JsonSerializable
             throw new InvalidArgumentException('Holiday name can not be blank.');
         }
 
-        // Validate if date parameter is instance of DateTime
-        if (! ($date instanceof DateTime)) {
-            throw new InvalidArgumentException(sprintf('Date "%s" is not a valid DateTime instance.', $date));
+        // Validate if date parameter is instance of DateTimeInterface
+        if (! ($date instanceof \DateTimeInterface)) {
+            throw new InvalidDateException($date);
         }
 
         // Load internal locales variable

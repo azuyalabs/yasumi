@@ -33,7 +33,6 @@ class CastileAndLeonTest extends CastileAndLeonBaseTestCase
             'newYearsDay',
             'epiphany',
             'goodFriday',
-            'easter',
             'castileAndLeonDay',
             'internationalWorkersDay',
             'assumptionOfMary',
@@ -41,7 +40,7 @@ class CastileAndLeonTest extends CastileAndLeonBaseTestCase
             'allSaintsDay',
             'constitutionDay',
             'immaculateConception',
-            'christmasDay'
+            'christmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -50,7 +49,10 @@ class CastileAndLeonTest extends CastileAndLeonBaseTestCase
      */
     public function testObservedHolidays()
     {
-        $this->assertDefinedHolidays(['maundyThursday'], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays([
+            'maundyThursday',
+            'easter',
+        ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**

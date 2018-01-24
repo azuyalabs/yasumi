@@ -14,9 +14,9 @@ namespace Yasumi\Provider;
 
 use ArrayIterator;
 use Countable;
-use DateTime;
 use InvalidArgumentException;
 use IteratorAggregate;
+use Yasumi\Exception\InvalidDateException;
 use Yasumi\Filters\BetweenFilter;
 use Yasumi\Holiday;
 use Yasumi\ProviderInterface;
@@ -120,15 +120,15 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     /**
      * Internal function to compare dates in order to sort them chronologically.
      *
-     * @param DateTime $dateA First date
-     * @param DateTime $dateB Second date
+     * @param \DateTimeInterface $dateA First date
+     * @param \DateTimeInterface $dateB Second date
      *
      * @return int result where 0 means dates are equal, -1 the first date is before the second date, and 1 if the
      *             second date is after the first.
      */
-    private static function compareDates(DateTime $dateA, DateTime $dateB): int
+    private static function compareDates(\DateTimeInterface $dateA, \DateTimeInterface $dateB)
     {
-        if ($dateA == $dateB) {
+        if ($dateA === $dateB) {
             return 0;
         }
 
@@ -157,21 +157,29 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * A working day is defined as a day that is not a holiday nor falls in the weekend. The index of the weekdays of
      * the defined date is used for establishing this (0 = Sunday, 1 = Monday, etc.)
      *
-     * @param mixed $date a Yasumi\Holiday or DateTime object
+     * @param \DateTimeInterface $date any date object that implements the DateTimeInterface (e.g. Yasumi\Holiday,
+     *                                 \DateTime)
+     *
+     * @throws \Yasumi\Exception\InvalidDateException
      *
      * @return bool true if date represents a working day, otherwise false
      */
     public function isWorkingDay($date): bool
     {
-        // Check if date is a holiday
+        // Return false if given date is invalid
+        if (! $date instanceof \DateTimeInterface) {
+            throw new InvalidDateException($date);
+        }
+
+        // First check if the given date is a holiday
         if ($this->isHoliday($date)) {
             return false;
         }
 
-        // If given date is a DateTime object; check if it falls in the weekend
+        // Check if given date is a falls in the weekend or not
         // If no data is defined for this Holiday Provider, the function falls back to the global weekend definition.
         // @TODO Ideally avoid late static binding here (static::ID)
-        if ($date instanceof DateTime) {
+        if ($date instanceof \DateTimeInterface) {
             $weekend_data = self::WEEKEND_DATA;
             $weekend_days = isset($weekend_data[$this::ID]) ? $weekend_data[$this::ID] : [0, 6];
 
@@ -186,23 +194,22 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     /**
      * Determines whether a date represents a holiday or not.
      *
-     * @param mixed $date a Yasumi\Holiday or DateTime object
+     * @param \DateTimeInterface $date any date object that implements the DateTimeInterface (e.g. Yasumi\Holiday,
+     *                                 \DateTime)
+     *
+     * @throws \Yasumi\Exception\InvalidDateException
      *
      * @return bool true if date represents a holiday, otherwise false
      */
     public function isHoliday($date): bool
     {
-        // Return false if given date is empty
-        if (null === $date) {
-            return false;
+        // Return false if given date is invalid
+        if (!$date instanceof \DateTimeInterface) {
+            throw new InvalidDateException($date);
         }
 
-        // If given date is a DateTime object
-        if ($date instanceof DateTime && in_array(
-            $date->format('Y-m-d'),
-            array_values($this->getHolidayDates()),
-                true
-        )) {
+        // Check if given date is a holiday or not
+        if (in_array($date->format('Y-m-d'), array_values($this->getHolidayDates()), true)) {
             return true;
         }
 
@@ -382,6 +389,16 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     }
 
     /**
+     * Gets all of the holidays defined by this holiday provider (for the given year).
+     *
+     * @return Holiday[] list of all holidays defined for the given year
+     */
+    public function getHolidays()
+    {
+        return $this->holidays;
+    }
+
+    /**
      * Retrieves the previous date (year) the given holiday took place.
      *
      * @param string $shortName the name of the holiday for which the previous occurrence need to be retrieved.
@@ -412,16 +429,17 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * timezone for these parameters versus the instantiated Holiday Provider, the outcome might be unexpected (but
      * correct).
      *
-     * @param \DateTime $start_date Start date of the time frame to check against
-     * @param \DateTime $end_date   End date of the time frame to check against
-     * @param bool      $equals     indicate whether the start and end dates should be included in the comparison
+     * @param \DateTimeInterface $start_date Start date of the time frame to check against
+     * @param \DateTimeInterface $end_date   End date of the time frame to check against
+     * @param bool               $equals     indicate whether the start and end dates should be included in the
+     *                                       comparison
      *
      * @throws InvalidArgumentException An InvalidArgumentException is thrown if the start date is set after the end
      *                                  date.
      *
      * @return \Yasumi\Filters\BetweenFilter
      */
-    public function between(DateTime $start_date, DateTime $end_date, $equals = true): BetweenFilter
+    public function between(\DateTimeInterface $start_date, \DateTimeInterface $end_date, $equals = true)
     {
         if ($start_date > $end_date) {
             throw new InvalidArgumentException('Start date must be a date before the end date.');

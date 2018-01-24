@@ -33,7 +33,6 @@ class RegionOfMurciaTest extends RegionOfMurciaBaseTestCase
             'newYearsDay',
             'epiphany',
             'goodFriday',
-            'easter',
             'internationalWorkersDay',
             'murciaDay',
             'assumptionOfMary',
@@ -41,7 +40,7 @@ class RegionOfMurciaTest extends RegionOfMurciaBaseTestCase
             'allSaintsDay',
             'constitutionDay',
             'immaculateConception',
-            'christmasDay'
+            'christmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -50,12 +49,11 @@ class RegionOfMurciaTest extends RegionOfMurciaBaseTestCase
      */
     public function testObservedHolidays()
     {
-        $this->assertDefinedHolidays(
-            ['stJosephsDay', 'maundyThursday'],
-            self::REGION,
-            $this->year,
-            Holiday::TYPE_OBSERVANCE
-        );
+        $this->assertDefinedHolidays([
+            'stJosephsDay',
+            'maundyThursday',
+            'easter',
+        ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**

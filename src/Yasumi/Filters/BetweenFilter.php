@@ -14,7 +14,6 @@
 namespace Yasumi\Filters;
 
 use Countable;
-use DateTime;
 use FilterIterator;
 use Iterator;
 
@@ -31,12 +30,12 @@ use Iterator;
 class BetweenFilter extends FilterIterator implements Countable
 {
     /**
-     * @var \DateTime start date of the time frame to check against
+     * @var \DateTimeInterface start date of the time frame to check against
      */
     private $start_date;
 
     /**
-     * @var \DateTime end date of the time frame to check against
+     * @var \DateTimeInterface end date of the time frame to check against
      */
     private $end_date;
 
@@ -48,15 +47,16 @@ class BetweenFilter extends FilterIterator implements Countable
     /**
      * Construct the Between FilterIterator Object
      *
-     * @param \Iterator $iterator   Iterator object of the Holidays Provider
-     * @param \DateTime $start_date Start date of the time frame to check against
-     * @param \DateTime $end_date   End date of the time frame to check against
-     * @param  bool     $equal      Indicate whether the start and end dates should be included in the comparison
+     * @param \Iterator          $iterator   Iterator object of the Holidays Provider
+     * @param \DateTimeInterface $start_date Start date of the time frame to check against
+     * @param \DateTimeInterface $end_date   End date of the time frame to check against
+     * @param  bool              $equal      Indicate whether the start and end dates should be included in the
+     *                                       comparison
      */
     public function __construct(
         Iterator $iterator,
-        DateTime $start_date,
-        DateTime $end_date,
+        \DateTimeInterface $start_date,
+        \DateTimeInterface $end_date,
         $equal = true
     ) {
         parent::__construct($iterator);
