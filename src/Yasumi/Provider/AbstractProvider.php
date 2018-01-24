@@ -204,7 +204,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     public function isHoliday($date): bool
     {
         // Return false if given date is invalid
-        if (!$date instanceof \DateTimeInterface) {
+        if (! $date instanceof \DateTimeInterface) {
             throw new InvalidDateException($date);
         }
 
@@ -384,16 +384,6 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * @return Holiday[] list of all holidays defined for the given year
      */
     public function getHolidays(): array
-    {
-        return $this->holidays;
-    }
-
-    /**
-     * Gets all of the holidays defined by this holiday provider (for the given year).
-     *
-     * @return Holiday[] list of all holidays defined for the given year
-     */
-    public function getHolidays()
     {
         return $this->holidays;
     }

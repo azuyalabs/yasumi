@@ -74,8 +74,11 @@ class Yasumi
      * @TODO we should accept a timezone so we can accept int/string for $startDate
      *
      */
-    public static function nextWorkingDay(string $class, \DateTimeInterface $startDate, int $workingDays = 1): DateTime
-    {
+    public static function nextWorkingDay(
+        string $class,
+        \DateTimeInterface $startDate,
+        int $workingDays = 1
+    ): \DateTimeInterface {
         // Setup start date, if its an instance of \DateTime, clone to prevent modification to original
         $date = $startDate instanceof \DateTime ? clone $startDate : $startDate;
 
@@ -264,8 +267,11 @@ class Yasumi
      * @TODO we should accept a timezone so we can accept int/string for $startDate
      *
      */
-    public static function prevWorkingDay(string $class, \DateTimeInterface $startDate, int $workingDays = 1): DateTime
-    {
+    public static function prevWorkingDay(
+        string $class,
+        \DateTimeInterface $startDate,
+        int $workingDays = 1
+    ): \DateTimeInterface {
         // Setup start date, if its an instance of \DateTime, clone to prevent modification to original
         $date = $startDate instanceof \DateTime ? clone $startDate : $startDate;
 
