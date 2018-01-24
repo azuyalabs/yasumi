@@ -167,7 +167,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     public function isWorkingDay($date)
     {
         // Return false if given date is invalid
-        if (null === $date || ! $date instanceof \DateTimeInterface) {
+        if (! $date instanceof \DateTimeInterface) {
             throw new InvalidDateException($date);
         }
 
@@ -204,7 +204,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     public function isHoliday($date)
     {
         // Return false if given date is invalid
-        if (null === $date || ! $date instanceof \DateTimeInterface) {
+        if (!$date instanceof \DateTimeInterface) {
             throw new InvalidDateException($date);
         }
 

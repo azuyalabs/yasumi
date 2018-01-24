@@ -398,13 +398,11 @@ class YasumiTest extends PHPUnit_Framework_TestCase
 
         // Assertion using a DateTime instance
         $isWorkingDay = Yasumi::create($provider, $year)->isWorkingDay(new \DateTime($date));
-        var_dump($isWorkingDay);
         $this->assertInternalType('bool', $isWorkingDay);
         $this->assertTrue($isWorkingDay);
 
         // Assertion using a DateTimeImmutable instance
         $isWorkingDay = Yasumi::create($provider, $year)->isWorkingDay(new \DateTimeImmutable($date));
-        var_dump($isWorkingDay);
         $this->assertInternalType('bool', $isWorkingDay);
         $this->assertTrue($isWorkingDay);
 
