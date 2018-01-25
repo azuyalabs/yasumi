@@ -6,7 +6,7 @@
 [![Build Status](https://img.shields.io/travis/azuyalabs/yasumi.svg?style=flat-square)](https://travis-ci.org/azuyalabs/yasumi)
 [![StyleCI](https://styleci.io/repos/32797151/shield?branch=master)](https://styleci.io/repos/32797151)
 
-***Update***
+***!!Update!!***
 A new [blog](https://azuyalabs.github.io/yasumi/blog/) section has been added to the documentation site. Keeping you informed about any news, releases, etc. in a handy blog post format!
 
 Yasumi (Japanese for 'Holiday'「休み」) is an easy PHP library to help you calculate the dates and names of holidays and other
