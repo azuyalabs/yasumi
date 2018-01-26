@@ -208,7 +208,7 @@ class Yasumi
      *
      * @throws \ReflectionException
      */
-    public static function getProviders()
+    public static function getProviders(): array
     {
         // Basic static cache
         static $providers;
@@ -233,7 +233,7 @@ class Yasumi
                 continue;
             }
 
-            $quotedDs = preg_quote($ds, null);
+            $quotedDs = preg_quote($ds);
             $provider = preg_replace("#^.+{$quotedDs}Provider{$quotedDs}(.+)\\.php$#", '$1', $file->getPathName());
 
             $class = new ReflectionClass(sprintf('Yasumi\Provider\%s', str_replace('/', '\\', $provider)));

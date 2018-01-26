@@ -126,7 +126,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * @return int result where 0 means dates are equal, -1 the first date is before the second date, and 1 if the
      *             second date is after the first.
      */
-    private static function compareDates(\DateTimeInterface $dateA, \DateTimeInterface $dateB)
+    private static function compareDates(\DateTimeInterface $dateA, \DateTimeInterface $dateB): int
     {
         if ($dateA === $dateB) {
             return 0;
@@ -181,7 +181,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         // @TODO Ideally avoid late static binding here (static::ID)
         if ($date instanceof \DateTimeInterface) {
             $weekend_data = self::WEEKEND_DATA;
-            $weekend_days = isset($weekend_data[$this::ID]) ? $weekend_data[$this::ID] : [0, 6];
+            $weekend_days = $weekend_data[$this::ID] ?? [0, 6];
 
             if (in_array((int)$date->format('w'), $weekend_days, true)) {
                 return false;
@@ -429,7 +429,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @return \Yasumi\Filters\BetweenFilter
      */
-    public function between(\DateTimeInterface $start_date, \DateTimeInterface $end_date, $equals = true)
+    public function between(\DateTimeInterface $start_date, \DateTimeInterface $end_date, $equals = true): BetweenFilter
     {
         if ($start_date > $end_date) {
             throw new InvalidArgumentException('Start date must be a date before the end date.');
