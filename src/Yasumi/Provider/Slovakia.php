@@ -58,6 +58,7 @@ class Slovakia extends AbstractProvider
     /**
      * Initialize holidays for Slovakia.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -110,6 +111,7 @@ class Slovakia extends AbstractProvider
      *
      * Note: this holiday is common for Czech republic and Slovakia.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
@@ -133,6 +135,7 @@ class Slovakia extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Slovak_National_Uprising
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
@@ -155,6 +158,7 @@ class Slovakia extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Constitution_of_Slovakia
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
@@ -181,6 +185,7 @@ class Slovakia extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Our_Lady_of_Sorrows
      * @see https://sk.wikipedia.org/wiki/Sedembolestn%C3%A1_Panna_M%C3%A1ria
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
@@ -197,6 +202,7 @@ class Slovakia extends AbstractProvider
      *
      * Note: this national day is common for Czech republic and Slovakia.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */

@@ -43,6 +43,7 @@ trait CommonHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
@@ -70,6 +71,7 @@ trait CommonHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
@@ -103,6 +105,7 @@ trait CommonHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
@@ -134,6 +137,7 @@ trait CommonHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
@@ -167,6 +171,7 @@ trait CommonHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
@@ -199,6 +204,7 @@ trait CommonHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
@@ -231,6 +237,7 @@ trait CommonHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
@@ -263,6 +270,7 @@ trait CommonHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
@@ -297,6 +305,7 @@ trait CommonHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */

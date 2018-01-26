@@ -36,6 +36,7 @@ class Neuchatel extends Switzerland
     /**
      * Initialize holidays for Neuchâtel (Switzerland).
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -67,6 +68,7 @@ class Neuchatel extends Switzerland
      *
      * @link https://www.feiertagskalender.ch/feiertag.php?ft_id=11&geo=3056&hl=fr
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */

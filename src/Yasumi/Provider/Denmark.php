@@ -33,6 +33,7 @@ class Denmark extends AbstractProvider
     /**
      * Initialize holidays for Denmark.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -70,6 +71,7 @@ class Denmark extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Store_Bededag
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception

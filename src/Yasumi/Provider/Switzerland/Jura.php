@@ -36,6 +36,7 @@ class Jura extends Switzerland
     /**
      * Initialize holidays for Jura (Switzerland).
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -69,6 +70,7 @@ class Jura extends Switzerland
      *
      * @link https://fr.wikipedia.org/wiki/Pl%C3%A9biscite_jurassien
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */

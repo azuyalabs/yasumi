@@ -34,6 +34,7 @@ class Brandenburg extends Germany
     /**
      * Initialize holidays for Brandenburg (Germany).
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -50,6 +51,7 @@ class Brandenburg extends Germany
      * For the German state of Brandenburg, Reformation Day was celebrated since 1517.
      * Note: In 2017 all German states will celebrate Reformation Day for its 500th anniversary.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */

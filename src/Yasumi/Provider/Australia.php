@@ -35,6 +35,7 @@ class Australia extends AbstractProvider
     /**
      * Initialize holidays for Australia.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -68,6 +69,7 @@ class Australia extends AbstractProvider
      * @link https://en.wikipedia.org/wiki/Waitangi_Day
      * @link https://www.timeanddate.com/holidays/australia/australia-day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -123,6 +125,7 @@ class Australia extends AbstractProvider
      *
      * @link https://www.timeanddate.com/holidays/australia/new-year-day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -146,6 +149,7 @@ class Australia extends AbstractProvider
      * @link https://en.wikipedia.org/wiki/Anzac_Day
      * @link https://www.timeanddate.com/holidays/australia/anzac-day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -169,6 +173,7 @@ class Australia extends AbstractProvider
      *
      * @link https://www.timeanddate.com/holidays/australia/christmas-day-holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -223,6 +228,7 @@ class Australia extends AbstractProvider
     /**
      * @link https://www.timeanddate.com/holidays/australia/labour-day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */

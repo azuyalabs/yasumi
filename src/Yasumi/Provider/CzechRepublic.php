@@ -35,6 +35,7 @@ class CzechRepublic extends AbstractProvider
     /**
      * Initialize holidays for the Czech Republic.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -74,6 +75,7 @@ class CzechRepublic extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Saints_Cyril_and_Methodius
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
@@ -97,6 +99,7 @@ class CzechRepublic extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Jan_Hus
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
@@ -123,6 +126,7 @@ class CzechRepublic extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Wenceslaus_I,_Duke_of_Bohemia
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
@@ -141,6 +145,7 @@ class CzechRepublic extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
@@ -157,6 +162,7 @@ class CzechRepublic extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */

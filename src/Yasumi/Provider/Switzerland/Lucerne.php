@@ -34,6 +34,7 @@ class Lucerne extends Switzerland
     /**
      * Initialize holidays for Lucerne (Switzerland).
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception

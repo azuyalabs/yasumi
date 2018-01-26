@@ -36,6 +36,7 @@ class Bavaria extends Germany
     /**
      * Initialize holidays for Bavaria (Germany).
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception

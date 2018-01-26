@@ -42,6 +42,7 @@ trait ChristianHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
@@ -67,6 +68,7 @@ trait ChristianHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
@@ -99,6 +101,7 @@ trait ChristianHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
@@ -128,6 +131,7 @@ trait ChristianHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
@@ -157,6 +161,7 @@ trait ChristianHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
@@ -189,6 +194,7 @@ trait ChristianHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
@@ -222,6 +228,7 @@ trait ChristianHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
@@ -251,6 +258,7 @@ trait ChristianHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
@@ -280,6 +288,7 @@ trait ChristianHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
@@ -312,6 +321,7 @@ trait ChristianHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
@@ -337,6 +347,7 @@ trait ChristianHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
@@ -366,6 +377,7 @@ trait ChristianHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
@@ -400,6 +412,7 @@ trait ChristianHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
@@ -425,6 +438,7 @@ trait ChristianHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
@@ -458,6 +472,7 @@ trait ChristianHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
@@ -491,6 +506,7 @@ trait ChristianHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
@@ -524,6 +540,7 @@ trait ChristianHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
@@ -550,6 +567,7 @@ trait ChristianHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
@@ -583,6 +601,7 @@ trait ChristianHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
@@ -610,6 +629,7 @@ trait ChristianHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
@@ -637,6 +657,7 @@ trait ChristianHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
@@ -699,6 +720,7 @@ trait ChristianHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */

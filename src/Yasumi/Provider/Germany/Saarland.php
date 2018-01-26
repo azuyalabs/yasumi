@@ -36,6 +36,7 @@ class Saarland extends Germany
     /**
      * Initialize holidays for Saarland (Germany).
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception

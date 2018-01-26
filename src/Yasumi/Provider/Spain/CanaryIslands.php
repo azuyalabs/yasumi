@@ -41,6 +41,7 @@ class CanaryIslands extends Spain
     /**
      * Initialize holidays for Canary Islands (Spain).
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -66,6 +67,7 @@ class CanaryIslands extends Spain
      *
      * @link http://www.timeanddate.com/holidays/spain/canaries-day-observed
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */

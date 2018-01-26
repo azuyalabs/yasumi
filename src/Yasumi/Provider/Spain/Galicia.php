@@ -41,6 +41,7 @@ class Galicia extends Spain
     /**
      * Initialize holidays for Galicia (Spain).
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -68,6 +69,7 @@ class Galicia extends Spain
      *
      * @link http://en.wikipedia.org/wiki/Galician_Literature_Day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
@@ -94,6 +96,7 @@ class Galicia extends Spain
      *
      * @link http://www.timeanddate.com/holidays/spain/santiago-apostle
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */

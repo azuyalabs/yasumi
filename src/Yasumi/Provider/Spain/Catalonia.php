@@ -43,6 +43,7 @@ class Catalonia extends Spain
     /**
      * Initialize holidays for Catalonia (Spain).
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -70,6 +71,7 @@ class Catalonia extends Spain
      *
      * @link https://en.wikipedia.org/wiki/National_Day_of_Catalonia
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */

@@ -33,6 +33,7 @@ class Brazil extends AbstractProvider
     /**
      * Initialize holidays for Brazil.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception

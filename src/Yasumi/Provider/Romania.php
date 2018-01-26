@@ -37,6 +37,7 @@ class Romania extends AbstractProvider
     /**
      * Initialize holidays for Romania.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -78,6 +79,7 @@ class Romania extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Public_holidays_in_Romania
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
@@ -99,6 +101,7 @@ class Romania extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/United_Principalities
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
@@ -120,6 +123,7 @@ class Romania extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/St._Andrew%27s_Day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
@@ -144,6 +148,7 @@ class Romania extends AbstractProvider
      * @link https://en.wikipedia.org/wiki/Great_Union_Day
      * @link https://ro.wikipedia.org/wiki/Ziua_na%C8%9Bional%C4%83_a_Rom%C3%A2niei
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
@@ -178,6 +183,7 @@ class Romania extends AbstractProvider
      * Constantin Brâncuși (February 19, 1876 – March 16, 1957) was a Romanian sculptor, painter and photographer.
      *
      * @link https://en.wikipedia.org/wiki/Constantin_Br%C3%A2ncu%C8%99i
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
@@ -204,6 +210,7 @@ class Romania extends AbstractProvider
      * according to the Law 220/2016 (18.11.2016)
      *
      * @link https://en.wikipedia.org/wiki/Children%27s_Day
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */

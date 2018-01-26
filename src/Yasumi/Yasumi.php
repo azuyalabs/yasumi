@@ -67,6 +67,9 @@ class Yasumi
      *
      * @return \DateTimeInterface
      *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \RuntimeException
+     * @throws \InvalidArgumentException
      * @throws \ReflectionException
      * @throws \Exception
      * @throws \Yasumi\Exception\InvalidDateException
@@ -260,6 +263,9 @@ class Yasumi
      *
      * @return \DateTimeInterface
      *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \RuntimeException
+     * @throws \InvalidArgumentException
      * @throws \ReflectionException
      * @throws \Exception
      * @throws \Yasumi\Exception\InvalidDateException

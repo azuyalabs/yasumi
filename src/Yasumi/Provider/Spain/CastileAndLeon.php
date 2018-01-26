@@ -42,6 +42,7 @@ class CastileAndLeon extends Spain
     /**
      * Initialize holidays for Castile and León (Spain).
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -67,6 +68,7 @@ class CastileAndLeon extends Spain
      *
      * @link http://en.wikipedia.org/wiki/Castile_and_León_Day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
