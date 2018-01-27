@@ -12,4 +12,7 @@
 
 $finder = PhpCsFixer\Finder::create()->in(__DIR__);
 
-return PhpCsFixer\Config::create()->setRules(['@PSR2' => true])->setFinder($finder);
+return PhpCsFixer\Config::create()->setRiskyAllowed(true)->setRules([
+        '@PSR2'                      => true,
+        'native_function_invocation' => true
+    ])->setFinder($finder);

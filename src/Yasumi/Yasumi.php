@@ -123,19 +123,19 @@ class Yasumi
     public static function create(string $class, int $year = null, string $locale = self::DEFAULT_LOCALE)
     {
         // Find and return holiday provider instance
-        $providerClass = sprintf('Yasumi\Provider\%s', str_replace('/', '\\', $class));
+        $providerClass = \sprintf('Yasumi\Provider\%s', \str_replace('/', '\\', $class));
 
-        if (class_exists($class) && (new ReflectionClass($class))->implementsInterface(ProviderInterface::class)) {
+        if (\class_exists($class) && (new ReflectionClass($class))->implementsInterface(ProviderInterface::class)) {
             $providerClass = $class;
         }
 
-        if ($class === 'AbstractProvider' || ! class_exists($providerClass)) {
-            throw new InvalidArgumentException(sprintf('Unable to find holiday provider "%s".', $class));
+        if ($class === 'AbstractProvider' || ! \class_exists($providerClass)) {
+            throw new InvalidArgumentException(\sprintf('Unable to find holiday provider "%s".', $class));
         }
 
         // Assert year input
         if ($year < 1000 || $year > 9999) {
-            throw new InvalidArgumentException(sprintf('Year needs to be between 1000 and 9999 (%s given).', $year));
+            throw new InvalidArgumentException(\sprintf('Year needs to be between 1000 and 9999 (%s given).', $year));
         }
 
         // Load internal locales variable
@@ -150,8 +150,8 @@ class Yasumi
         }
 
         // Assert locale input
-        if (! in_array($locale, static::$locales, true)) {
-            throw new UnknownLocaleException(sprintf('Locale "%s" is not a valid locale.', $locale));
+        if (! \in_array($locale, static::$locales, true)) {
+            throw new UnknownLocaleException(\sprintf('Locale "%s" is not a valid locale.', $locale));
         }
 
         return new $providerClass($year, $locale, self::$globalTranslations);
@@ -195,7 +195,7 @@ class Yasumi
         $availableProviders = self::getProviders();
 
         if (false === isset($availableProviders[$iso3166_2])) {
-            throw new InvalidArgumentException(sprintf(
+            throw new InvalidArgumentException(\sprintf(
                 'Unable to find holiday provider by ISO3166-2 "%s".',
                 $iso3166_2
             ));
@@ -228,7 +228,7 @@ class Yasumi
         ), RecursiveIteratorIterator::SELF_FIRST);
 
         foreach ($filesIterator as $file) {
-            if ($file->isDir() || $file->getExtension() !== 'php' || in_array(
+            if ($file->isDir() || $file->getExtension() !== 'php' || \in_array(
                 $file->getBasename('.php'),
                     self::$ignoredProvider,
                 true
@@ -236,14 +236,14 @@ class Yasumi
                 continue;
             }
 
-            $quotedDs = preg_quote($ds);
-            $provider = preg_replace("#^.+{$quotedDs}Provider{$quotedDs}(.+)\\.php$#", '$1', $file->getPathName());
+            $quotedDs = \preg_quote($ds);
+            $provider = \preg_replace("#^.+{$quotedDs}Provider{$quotedDs}(.+)\\.php$#", '$1', $file->getPathName());
 
-            $class = new ReflectionClass(sprintf('Yasumi\Provider\%s', str_replace('/', '\\', $provider)));
+            $class = new ReflectionClass(\sprintf('Yasumi\Provider\%s', \str_replace('/', '\\', $provider)));
 
             $key = 'ID';
             if ($class->hasConstant($key)) {
-                $providers[strtoupper($class->getConstant($key))] = $provider;
+                $providers[\strtoupper($class->getConstant($key))] = $provider;
             }
         }
 

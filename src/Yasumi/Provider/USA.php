@@ -222,7 +222,7 @@ class USA extends AbstractProvider
         while ($datesIterator->valid()) {
 
             // Only process New Year's Day, Independence Day, or Christmas Day
-            if (in_array(
+            if (\in_array(
                 $datesIterator->current()->shortName,
                 ['newYearsDay', 'independenceDay', 'christmasDay'],
                 true

@@ -121,8 +121,8 @@ class Holiday extends DateTime implements JsonSerializable
         }
 
         // Assert display locale input
-        if (! in_array($displayLocale, static::$locales, true)) {
-            throw new UnknownLocaleException(sprintf('Locale "%s" is not a valid locale.', $displayLocale));
+        if (! \in_array($displayLocale, static::$locales, true)) {
+            throw new UnknownLocaleException(\sprintf('Locale "%s" is not a valid locale.', $displayLocale));
         }
 
         // Set additional attributes
@@ -183,7 +183,7 @@ class Holiday extends DateTime implements JsonSerializable
     public function mergeGlobalTranslations(TranslationsInterface $globalTranslations)
     {
         $holidayGlobalTranslations = $globalTranslations->getTranslations($this->shortName);
-        $this->translations        = array_merge($holidayGlobalTranslations, $this->translations);
+        $this->translations        = \array_merge($holidayGlobalTranslations, $this->translations);
     }
 
     /**

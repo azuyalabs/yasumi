@@ -691,7 +691,7 @@ trait ChristianHolidays
         $c     = $year % 19;
         $d     = (19 * $c + 15) % 30;
         $e     = (2 * $a + 4 * $b - $d + 34) % 7;
-        $month = floor(($d + $e + 114) / 31);
+        $month = \floor(($d + $e + 114) / 31);
         $day   = (($d + $e + 114) % 31) + 1;
 
         return (new DateTime("$year-$month-$day", new DateTimeZone($timezone)))->add(new DateInterval('P13D'));
@@ -761,7 +761,7 @@ trait ChristianHolidays
      */
     protected function calculateEaster($year, $timezone): DateTime
     {
-        if (extension_loaded('calendar')) {
+        if (\extension_loaded('calendar')) {
             $easter_days = \easter_days($year);
         } else {
             $golden = ($year % 19) + 1; // The Golden Number

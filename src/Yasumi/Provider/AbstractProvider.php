@@ -102,7 +102,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     {
         $this->clearHolidays();
 
-        $this->year               = $year ?: date('Y');
+        $this->year               = $year ?: \date('Y');
         $this->locale             = $locale;
         $this->globalTranslations = $globalTranslations;
 
@@ -148,7 +148,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         }
 
         $this->holidays[$holiday->shortName] = $holiday;
-        uasort($this->holidays, [__CLASS__, 'compareDates']);
+        \uasort($this->holidays, [__CLASS__, 'compareDates']);
     }
 
     /**
@@ -183,7 +183,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
             $weekend_data = self::WEEKEND_DATA;
             $weekend_days = $weekend_data[$this::ID] ?? [0, 6];
 
-            if (in_array((int)$date->format('w'), $weekend_days, true)) {
+            if (\in_array((int)$date->format('w'), $weekend_days, true)) {
                 return false;
             }
         }
@@ -209,7 +209,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         }
 
         // Check if given date is a holiday or not
-        if (in_array($date->format('Y-m-d'), array_values($this->getHolidayDates()), true)) {
+        if (\in_array($date->format('Y-m-d'), \array_values($this->getHolidayDates()), true)) {
             return true;
         }
 
@@ -223,7 +223,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     public function getHolidayDates(): array
     {
-        return array_map(function ($holiday) {
+        return \array_map(function ($holiday) {
             return (string)$holiday;
         }, $this->holidays);
     }
@@ -291,11 +291,11 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     {
         $list = $this->getHolidayNames();
 
-        array_walk($list, function (&$holiday) {
-            $holiday = str_replace('substituteHoliday:', '', $holiday);
+        \array_walk($list, function (&$holiday) {
+            $holiday = \str_replace('substituteHoliday:', '', $holiday);
         });
 
-        return count(array_unique($list));
+        return \count(\array_unique($list));
     }
 
     /**
@@ -305,7 +305,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     public function getHolidayNames(): array
     {
-        return array_keys($this->holidays);
+        return \array_keys($this->holidays);
     }
 
     /**
@@ -355,7 +355,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         $this->isHolidayNameNotEmpty($shortName); // Validate if short name is not empty
 
         // Get calling class name
-        $hReflectionClass = new \ReflectionClass(get_class($this));
+        $hReflectionClass = new \ReflectionClass(\get_class($this));
 
         return Yasumi::create($hReflectionClass->getShortName(), $year, $this->locale)->getHoliday($shortName);
     }

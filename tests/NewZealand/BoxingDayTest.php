@@ -59,7 +59,7 @@ class BoxingDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInte
             $year = $this->generateRandomYear();
             $date = new DateTime("$year-12-26", new DateTimeZone(self::TIMEZONE));
 
-            if (in_array((int)$date->format('w'), [0, 6], true)) {
+            if (\in_array((int)$date->format('w'), [0, 6], true)) {
                 $date->add(new DateInterval('P2D'));
             }
 

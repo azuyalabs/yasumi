@@ -70,7 +70,7 @@ trait YasumiBase
 
         // Loop through all known holidays and assert they are defined by the provider class
         foreach ($expectedHolidays as $holiday) {
-            $this->assertArrayHasKey($holiday, iterator_to_array($holidays));
+            $this->assertArrayHasKey($holiday, \iterator_to_array($holidays));
         }
 
         unset($holidays);
@@ -96,7 +96,7 @@ trait YasumiBase
         $holidays = Yasumi::create($provider, $year);
         $holiday  = $holidays->getHoliday($shortName);
 
-        $this->assertInstanceOf('Yasumi\Provider\\' . str_replace('/', '\\', $provider), $holidays);
+        $this->assertInstanceOf('Yasumi\Provider\\' . \str_replace('/', '\\', $provider), $holidays);
         $this->assertInstanceOf(Holiday::class, $holiday);
         $this->assertNotNull($holiday);
         $this->assertEquals($expected, $holiday);
@@ -126,7 +126,7 @@ trait YasumiBase
         $holidays = Yasumi::create($provider, $year);
         $holiday  = $holidays->getHoliday($shortName);
 
-        $this->assertInstanceOf('Yasumi\Provider\\' . str_replace('/', '\\', $provider), $holidays);
+        $this->assertInstanceOf('Yasumi\Provider\\' . \str_replace('/', '\\', $provider), $holidays);
         $this->assertNull($holiday);
         $this->assertFalse($holidays->isHoliday($holiday));
 
@@ -151,12 +151,12 @@ trait YasumiBase
         $holidays = Yasumi::create($provider, $year);
         $holiday  = $holidays->getHoliday($shortName);
 
-        $this->assertInstanceOf('Yasumi\Provider\\' . str_replace('/', '\\', $provider), $holidays);
+        $this->assertInstanceOf('Yasumi\Provider\\' . \str_replace('/', '\\', $provider), $holidays);
         $this->assertInstanceOf(Holiday::class, $holiday);
         $this->assertNotNull($holiday);
         $this->assertTrue($holidays->isHoliday($holiday));
 
-        if (is_array($translations) && ! empty($translations)) {
+        if (\is_array($translations) && ! empty($translations)) {
             foreach ($translations as $locale => $name) {
                 $translationExists = isset($holiday->translations[$locale]) ? true : false;
 
@@ -186,7 +186,7 @@ trait YasumiBase
         $holidays = Yasumi::create($provider, $year);
         $holiday  = $holidays->getHoliday($shortName);
 
-        $this->assertInstanceOf('Yasumi\Provider\\' . str_replace('/', '\\', $provider), $holidays);
+        $this->assertInstanceOf('Yasumi\Provider\\' . \str_replace('/', '\\', $provider), $holidays);
         $this->assertInstanceOf(Holiday::class, $holiday);
         $this->assertNotNull($holiday);
         $this->assertEquals($type, $holiday->getType());
@@ -213,7 +213,7 @@ trait YasumiBase
         $holidays = Yasumi::create($provider, $year);
         $holiday  = $holidays->getHoliday($shortName);
 
-        $this->assertInstanceOf('Yasumi\Provider\\' . str_replace('/', '\\', $provider), $holidays);
+        $this->assertInstanceOf('Yasumi\Provider\\' . \str_replace('/', '\\', $provider), $holidays);
         $this->assertInstanceOf(Holiday::class, $holiday);
         $this->assertNotNull($holiday);
         $this->assertTrue($holidays->isHoliday($holiday));
@@ -294,7 +294,7 @@ trait YasumiBase
      */
     protected function calculateEaster($year, $timezone): DateTime
     {
-        if (extension_loaded('calendar')) {
+        if (\extension_loaded('calendar')) {
             $easter_days = \easter_days($year);
         } else {
             $golden = (($year % 19) + 1); // The Golden Number
@@ -515,6 +515,6 @@ trait YasumiBase
      */
     public function isWeekend(\DateTimeInterface $dateTime, array $weekendDays = [0, 6]): bool
     {
-        return in_array((int)$dateTime->format('w'), $weekendDays, true);
+        return \in_array((int)$dateTime->format('w'), $weekendDays, true);
     }
 }

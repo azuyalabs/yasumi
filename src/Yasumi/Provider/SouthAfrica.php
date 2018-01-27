@@ -319,7 +319,7 @@ class SouthAfrica extends AbstractProvider
         while ($datesIterator->valid()) {
 
             // Exclude Good Friday, Family Day, 2016 Municipal Elections Day as these don't fall in the weekend
-            if (in_array(
+            if (\in_array(
                 $datesIterator->current()->shortName,
                 ['goodFriday', 'familyDay', '2016MunicipalElectionsDay'],
                 true

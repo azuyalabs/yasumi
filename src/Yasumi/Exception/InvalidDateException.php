@@ -27,7 +27,7 @@ class InvalidDateException extends InvalidArgumentException implements Exception
      */
     public function __construct($argumentValue)
     {
-        $type = gettype($argumentValue);
+        $type = \gettype($argumentValue);
         switch ($type) {
             case 'boolean':
                 $displayName = $argumentValue ? 'true' : 'false';
@@ -40,13 +40,13 @@ class InvalidDateException extends InvalidArgumentException implements Exception
                 $displayName = $argumentValue;
                 break;
             case 'object':
-                $displayName = get_class($argumentValue);
+                $displayName = \get_class($argumentValue);
                 break;
             default:
                 $displayName = $type;
                 break;
         }
 
-        parent::__construct(sprintf(sprintf('\'%s\' is not a valid DateTime(Immutable) instance', $displayName)));
+        parent::__construct(\sprintf(\sprintf('\'%s\' is not a valid DateTime(Immutable) instance', $displayName)));
     }
 }

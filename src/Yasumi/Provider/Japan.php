@@ -217,11 +217,11 @@ class Japan extends AbstractProvider
         if ($this->year < 1948 || $this->year > 2150) {
             $day = null;
         } elseif ($this->year >= 1948 && $this->year <= 1979) {
-            $day = floor(self::VERNAL_EQUINOX_PARAM_1979 + self::EQUINOX_GRADIENT * ($this->year - 1980) - floor(($this->year - 1983) / 4));
+            $day = \floor(self::VERNAL_EQUINOX_PARAM_1979 + self::EQUINOX_GRADIENT * ($this->year - 1980) - \floor(($this->year - 1983) / 4));
         } elseif ($this->year <= 2099) {
-            $day = floor(self::VERNAL_EQUINOX_PARAM_2099 + self::EQUINOX_GRADIENT * ($this->year - 1980) - floor(($this->year - 1980) / 4));
+            $day = \floor(self::VERNAL_EQUINOX_PARAM_2099 + self::EQUINOX_GRADIENT * ($this->year - 1980) - \floor(($this->year - 1980) / 4));
         } elseif ($this->year <= 2150) {
-            $day = floor(self::VERNAL_EQUINOX_PARAM_2150 + self::EQUINOX_GRADIENT * ($this->year - 1980) - floor(($this->year - 1980) / 4));
+            $day = \floor(self::VERNAL_EQUINOX_PARAM_2150 + self::EQUINOX_GRADIENT * ($this->year - 1980) - \floor(($this->year - 1980) / 4));
         }
 
         if (null !== $day) {
@@ -396,11 +396,11 @@ class Japan extends AbstractProvider
         if ($this->year < 1948 || $this->year > 2150) {
             $day = null;
         } elseif ($this->year >= 1948 && $this->year <= 1979) {
-            $day = floor(self::AUTUMNAL_EQUINOX_PARAM_1979 + self::EQUINOX_GRADIENT * ($this->year - 1980) - floor(($this->year - 1983) / 4));
+            $day = \floor(self::AUTUMNAL_EQUINOX_PARAM_1979 + self::EQUINOX_GRADIENT * ($this->year - 1980) - \floor(($this->year - 1983) / 4));
         } elseif ($this->year <= 2099) {
-            $day = floor(self::AUTUMNAL_EQUINOX_PARAM_2099 + self::EQUINOX_GRADIENT * ($this->year - 1980) - floor(($this->year - 1980) / 4));
+            $day = \floor(self::AUTUMNAL_EQUINOX_PARAM_2099 + self::EQUINOX_GRADIENT * ($this->year - 1980) - \floor(($this->year - 1980) / 4));
         } elseif ($this->year <= 2150) {
-            $day = floor(self::AUTUMNAL_EQUINOX_PARAM_2150 + self::EQUINOX_GRADIENT * ($this->year - 1980) - floor(($this->year - 1980) / 4));
+            $day = \floor(self::AUTUMNAL_EQUINOX_PARAM_2150 + self::EQUINOX_GRADIENT * ($this->year - 1980) - \floor(($this->year - 1980) / 4));
         }
 
         if (null !== $day) {
@@ -437,13 +437,13 @@ class Japan extends AbstractProvider
             if (0 === (int)$date->format('w')) {
                 if ($this->year >= 2007) {
                     // Find next week day (not being another holiday)
-                    while (in_array($substituteDay, $dates)) {
+                    while (\in_array($substituteDay, $dates)) {
                         $substituteDay->add(new DateInterval('P1D'));
                         continue;
                     }
                 } elseif ($date >= '1973-04-12') {
                     $substituteDay->add(new DateInterval('P1D'));
-                    if (in_array($substituteDay, $dates)) {
+                    if (\in_array($substituteDay, $dates)) {
                         continue; // @codeCoverageIgnore
                     }
                 } else {
