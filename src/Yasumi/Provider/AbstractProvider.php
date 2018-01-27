@@ -325,10 +325,10 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @return Holiday|null a Holiday instance for the given holiday
      *
+     * @throws \ReflectionException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \RuntimeException
      * @throws \InvalidArgumentException
-     * @throws \ReflectionException
      *
      * @covers AbstractProvider::anotherTime
      */
@@ -345,10 +345,10 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @return Holiday|null a Holiday instance for the given holiday and year
      *
+     * @throws \ReflectionException
      * @throws InvalidArgumentException when the given name is blank or empty.
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \RuntimeException
-     * @throws \ReflectionException
      */
     private function anotherTime($year, $shortName)
     {
@@ -395,10 +395,10 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @return Holiday|null a Holiday instance for the given holiday
      *
+     * @throws \ReflectionException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \RuntimeException
      * @throws \InvalidArgumentException
-     * @throws \ReflectionException
      *
      * @covers AbstractProvider::anotherTime
      */

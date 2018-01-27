@@ -67,10 +67,10 @@ class Yasumi
      *
      * @return \DateTimeInterface
      *
+     * @throws \ReflectionException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \RuntimeException
      * @throws \InvalidArgumentException
-     * @throws \ReflectionException
      * @throws \Exception
      * @throws \Yasumi\Exception\InvalidDateException
      *
@@ -112,11 +112,11 @@ class Yasumi
      *                       between 1000 and 9999.
      * @param string $locale The locale to use. If empty we'll use the default locale (en_US)
      *
+     * @throws \ReflectionException
      * @throws RuntimeException         If no such holiday provider is found
      * @throws InvalidArgumentException if the year parameter is not between 1000 and 9999
      * @throws UnknownLocaleException   if the locale parameter is invalid
      * @throws InvalidArgumentException if the holiday provider for the given country does not exist
-     * @throws \ReflectionException
      *
      * @return AbstractProvider An instance of class $class is created and returned
      */
@@ -179,11 +179,11 @@ class Yasumi
      *                          integer between 1000 and 9999.
      * @param string $locale    The locale to use. If empty we'll use the default locale (en_US)
      *
+     * @throws \ReflectionException
      * @throws RuntimeException         If no such holiday provider is found
      * @throws InvalidArgumentException if the year parameter is not between 1000 and 9999
      * @throws UnknownLocaleException   if the locale parameter is invalid
      * @throws InvalidArgumentException if the holiday provider for the given ISO3166-2 code does not exist
-     * @throws \ReflectionException
      *
      * @return AbstractProvider An instance of class $class is created and returned
      */
@@ -236,7 +236,7 @@ class Yasumi
                 continue;
             }
 
-            $quotedDs = \preg_quote($ds);
+            $quotedDs = \preg_quote($ds, null);
             $provider = \preg_replace("#^.+{$quotedDs}Provider{$quotedDs}(.+)\\.php$#", '$1', $file->getPathName());
 
             $class = new ReflectionClass(\sprintf('Yasumi\Provider\%s', \str_replace('/', '\\', $provider)));
@@ -263,10 +263,10 @@ class Yasumi
      *
      * @return \DateTimeInterface
      *
+     * @throws \ReflectionException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \RuntimeException
      * @throws \InvalidArgumentException
-     * @throws \ReflectionException
      * @throws \Exception
      * @throws \Yasumi\Exception\InvalidDateException
      *
