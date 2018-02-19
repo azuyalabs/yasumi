@@ -50,6 +50,7 @@ class Brazil extends AbstractProvider
         $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
         $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->ashWednesday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
 
         /**
          * Carnaval
@@ -60,13 +61,25 @@ class Brazil extends AbstractProvider
          * @link https://en.wikipedia.org/wiki/Brazilian_Carnival
          */
         if ($this->year >= 1700) {
+            $easter = $this->calculateEaster($this->year, $this->timezone);
+
+            $carnavalMonday = clone $easter;
             $this->addHoliday(new Holiday(
-                'carnavalDay',
-                ['pt_BR' => 'Carnaval'],
-                $this->calculateEaster($this->year, $this->timezone)->sub(new DateInterval('P51D')),
-                $this->locale,
-                Holiday::TYPE_OBSERVANCE
-            ));
+                 'carnavalMonday',
+                 ['pt_BR' => 'Segunda-feira de Carnaval'],
+                 $carnavalMonday->sub(new DateInterval('P48D')),
+                 $this->locale,
+                 Holiday::TYPE_OBSERVANCE
+             ));
+
+            $carnavalTuesday = clone $easter;
+            $this->addHoliday(new Holiday(
+                 'carnavalTuesday',
+                 ['pt_BR' => 'Terça-feira de Carnaval'],
+                 $carnavalTuesday->sub(new DateInterval('P47D')),
+                 $this->locale,
+                 Holiday::TYPE_OBSERVANCE
+             ));
         }
 
         /**
