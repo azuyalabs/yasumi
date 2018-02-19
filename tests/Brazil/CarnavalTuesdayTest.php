@@ -20,7 +20,7 @@ use Yasumi\tests\YasumiTestCaseInterface;
 /**
  * Class for testing Carnaval Tuesday in Brazil.
  */
-class CarnavalTuesdayDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterface
+class CarnavalTuesdayTest extends BrazilBaseTestCase implements YasumiTestCaseInterface
 {
     use ChristianHolidays;
 
