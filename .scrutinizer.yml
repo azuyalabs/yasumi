@@ -3,7 +3,7 @@ checks:
         code_rating: true
         duplication: true
 tools:
-    external_code_coverage: true
+    external_code_coverage: false
     php_code_sniffer: true
     php_mess_detector: true
     php_cs_fixer:
