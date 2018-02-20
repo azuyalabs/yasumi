@@ -1,0 +1,12 @@
+checks:
+    php:
+        code_rating: true
+        duplication: true
+tools:
+    external_code_coverage: true
+    php_code_sniffer: true
+    php_mess_detector: true
+    php_cs_fixer:
+        config: { level: psr2 }
+filter:
+    paths: [src/*]
