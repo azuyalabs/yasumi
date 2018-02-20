@@ -48,9 +48,11 @@ class BrazilTest extends BrazilBaseTestCase
     public function testObservedHolidays()
     {
         $this->assertDefinedHolidays([
-            'carnavalDay',
+            'carnavalMonday',
+            'carnavalTuesday',
             'easter',
-            'corpusChristi'
+            'corpusChristi',
+            'ashWednesday',
         ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 

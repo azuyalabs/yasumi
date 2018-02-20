@@ -18,16 +18,16 @@ use Yasumi\Provider\ChristianHolidays;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Carnaval in Brazil.
+ * Class for testing Carnaval Tuesday in Brazil.
  */
-class CarnavalDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterface
+class CarnavalTuesdayTest extends BrazilBaseTestCase implements YasumiTestCaseInterface
 {
     use ChristianHolidays;
 
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'carnavalDay';
+    const HOLIDAY = 'carnavalTuesday';
 
     /**
      * The year in which the holiday was first established
@@ -35,23 +35,23 @@ class CarnavalDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterf
     const ESTABLISHMENT_YEAR = 1700;
 
     /**
-     * Tests Carnaval on or after 1700.
+     * Tests Carnaval Tuesday on or after 1700.
      */
-    public function testCarnavalAfter1700()
+    public function testCarnavalTuesdayAfter1700()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             $year,
-            $this->calculateEaster($year, self::TIMEZONE)->sub(new DateInterval('P51D'))
+            $this->calculateEaster($year, self::TIMEZONE)->sub(new DateInterval('P47D'))
         );
     }
 
     /**
-     * Tests Carnaval on or before 1700.
+     * Tests Carnaval Tuesday on or before 1700.
      */
-    public function testCarnavalBefore1700()
+    public function testCarnavalTuesdayBefore1700()
     {
         $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
@@ -63,7 +63,7 @@ class CarnavalDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterf
     public function testTranslation()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $year, [self::LOCALE => 'Carnaval']);
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $year, [self::LOCALE => 'Terça-feira de Carnaval']);
     }
 
     /**
