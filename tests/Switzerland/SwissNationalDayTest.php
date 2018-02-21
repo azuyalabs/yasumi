@@ -115,7 +115,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements YasumiTest
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::FIRST_OBSERVANCE_YEAR),
+            $this->generateRandomYear(self::NATIONAL_ESTABLISHMENT_YEAR),
             [self::LOCALE => 'Bundesfeiertag']
         );
     }
