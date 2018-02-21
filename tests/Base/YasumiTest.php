@@ -449,4 +449,53 @@ class YasumiTest extends PHPUnit_Framework_TestCase
             self::YEAR_UPPER_BOUND
         ))->isWorkingDay(new \stdClass());
     }
+
+    /**
+     * Tests that holidays successfully can be removed from the list of holidays of a provider
+     *
+     * @throws \ReflectionException
+     */
+    public function testRemoveHoliday()
+    {
+        $provider = Yasumi::create('Ireland', 2018);
+        $holidays = $provider->getHolidays();
+
+        // Assert initial list of holidays
+        $this->assertCount(13, $holidays);
+        $this->assertArrayHasKey('newYearsDay', $holidays);
+        $this->assertArrayHasKey('stPatricksDay', $holidays);
+        $this->assertArrayHasKey('substituteHoliday:stPatricksDay', $holidays);
+        $this->assertArrayHasKey('goodFriday', $holidays);
+        $this->assertArrayHasKey('easter', $holidays);
+        $this->assertArrayHasKey('easterMonday', $holidays);
+        $this->assertArrayHasKey('mayDay', $holidays);
+        $this->assertArrayHasKey('pentecost', $holidays);
+        $this->assertArrayHasKey('juneHoliday', $holidays);
+        $this->assertArrayHasKey('augustHoliday', $holidays);
+        $this->assertArrayHasKey('octoberHoliday', $holidays);
+        $this->assertArrayHasKey('christmasDay', $holidays);
+        $this->assertArrayHasKey('stStephensDay', $holidays);
+
+        $provider->removeHoliday('juneHoliday');
+        $provider->removeHoliday('augustHoliday');
+        $provider->removeHoliday('octoberHoliday');
+
+        $holidaysAfterRemoval = $provider->getHolidays();
+
+        // Assert list of holidays after removal of some holidays
+        $this->assertCount(10, $holidaysAfterRemoval);
+        $this->assertArrayHasKey('newYearsDay', $holidaysAfterRemoval);
+        $this->assertArrayHasKey('stPatricksDay', $holidaysAfterRemoval);
+        $this->assertArrayHasKey('substituteHoliday:stPatricksDay', $holidaysAfterRemoval);
+        $this->assertArrayHasKey('goodFriday', $holidaysAfterRemoval);
+        $this->assertArrayHasKey('easter', $holidaysAfterRemoval);
+        $this->assertArrayHasKey('easterMonday', $holidaysAfterRemoval);
+        $this->assertArrayHasKey('mayDay', $holidaysAfterRemoval);
+        $this->assertArrayHasKey('pentecost', $holidaysAfterRemoval);
+        $this->assertArrayHasKey('christmasDay', $holidaysAfterRemoval);
+        $this->assertArrayHasKey('stStephensDay', $holidaysAfterRemoval);
+        $this->assertArrayNotHasKey('juneHoliday', $holidaysAfterRemoval);
+        $this->assertArrayNotHasKey('augustHoliday', $holidaysAfterRemoval);
+        $this->assertArrayNotHasKey('octoberHoliday', $holidaysAfterRemoval);
+    }
 }

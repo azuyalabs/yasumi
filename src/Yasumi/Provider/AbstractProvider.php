@@ -151,6 +151,22 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         uasort($this->holidays, [__CLASS__, 'compareDates']);
     }
 
+
+    /**
+     * Removes a holiday from the holidays providers (i.e. country/state) list of holidays.
+     *
+     * This function can be helpful in cases where an existing holiday provider class can be extended but some holidays
+     * are not part of the original (extended) provider.
+     *
+     * @param string $shortName short name of the holiday
+     *
+     * @return void
+     */
+    public function removeHoliday($shortName)
+    {
+        unset($this->holidays[$shortName]);
+    }
+
     /**
      * Determines whether a date represents a working day or not.
      *
@@ -204,7 +220,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     public function isHoliday($date)
     {
         // Return false if given date is invalid
-        if (!$date instanceof \DateTimeInterface) {
+        if (! $date instanceof \DateTimeInterface) {
             throw new InvalidDateException($date);
         }
 
