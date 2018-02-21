@@ -5,6 +5,8 @@
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 [![Build Status](https://img.shields.io/travis/azuyalabs/yasumi.svg?style=flat-square)](https://travis-ci.org/azuyalabs/yasumi)
 [![StyleCI](https://styleci.io/repos/32797151/shield?branch=master)](https://styleci.io/repos/32797151)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/azuyalabs/yasumi/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/azuyalabs/yasumi/?branch=master)
+
 
 ***!!Update!!***
 A new [blog](https://azuyalabs.github.io/yasumi/blog/) section has been added to the documentation site. Keeping you informed about any news, releases, etc. in a handy blog post format!
