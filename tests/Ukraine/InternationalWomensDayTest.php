@@ -42,7 +42,7 @@ class InternationalWomensDayTest extends UkraineBaseTestCase implements YasumiTe
      *
      * @return array list of test dates for the holiday defined in this test
      */
-    public function HolidayDataProvider()
+    public function HolidayDataProvider(): array
     {
         return $this->generateRandomDates(3, 8, self::TIMEZONE);
     }

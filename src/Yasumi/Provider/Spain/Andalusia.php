@@ -40,6 +40,7 @@ class Andalusia extends Spain
     /**
      * Initialize holidays for Andalusia (Spain).
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -65,6 +66,7 @@ class Andalusia extends Spain
      *
      * @link http://en.wikipedia.org/wiki/D%C3%ADa_de_Andaluc%C3%ADa
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */

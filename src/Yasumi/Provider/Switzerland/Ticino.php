@@ -36,6 +36,7 @@ class Ticino extends Switzerland
     /**
      * Initialize holidays for Ticino (Switzerland).
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -76,6 +77,7 @@ class Ticino extends Switzerland
      *
      * @link https://en.wikipedia.org/wiki/Feast_of_Saints_Peter_and_Paul
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */

@@ -41,7 +41,7 @@ class HolidayBetweenFilterTest extends PHPUnit_Framework_TestCase
             new DateTime('07/25/2016', new DateTimeZone($timezone))
         );
 
-        $betweenHolidays = iterator_to_array($between);
+        $betweenHolidays = \iterator_to_array($between);
 
         $this->assertArrayHasKey('goodFriday', $betweenHolidays);
         $this->assertArrayHasKey('easter', $betweenHolidays);
@@ -74,10 +74,10 @@ class HolidayBetweenFilterTest extends PHPUnit_Framework_TestCase
         $this->assertArrayNotHasKey('secondChristmasDay', $betweenHolidays);
 
         $this->assertCount(13, $between);
-        $this->assertNotCount(count($holidays), $between);
+        $this->assertNotCount(\count($holidays), $between);
 
         $this->assertEquals(13, $between->count());
-        $this->assertNotEquals(count($holidays), $between->count());
+        $this->assertNotEquals(\count($holidays), $between->count());
     }
 
     /**
@@ -93,7 +93,7 @@ class HolidayBetweenFilterTest extends PHPUnit_Framework_TestCase
             new \DateTimeImmutable('07/25/2016', new \DateTimeZone($timezone))
         );
 
-        $betweenHolidays = iterator_to_array($between);
+        $betweenHolidays = \iterator_to_array($between);
 
         $this->assertArrayHasKey('goodFriday', $betweenHolidays);
         $this->assertArrayHasKey('easter', $betweenHolidays);
@@ -126,10 +126,10 @@ class HolidayBetweenFilterTest extends PHPUnit_Framework_TestCase
         $this->assertArrayNotHasKey('secondChristmasDay', $betweenHolidays);
 
         $this->assertCount(13, $between);
-        $this->assertNotCount(count($holidays), $between);
+        $this->assertNotCount(\count($holidays), $between);
 
         $this->assertEquals(13, $between->count());
-        $this->assertNotEquals(count($holidays), $between->count());
+        $this->assertNotEquals(\count($holidays), $between->count());
     }
 
 
@@ -147,7 +147,7 @@ class HolidayBetweenFilterTest extends PHPUnit_Framework_TestCase
             false
         );
 
-        $betweenHolidays = iterator_to_array($between);
+        $betweenHolidays = \iterator_to_array($between);
 
         $this->assertArrayHasKey('epiphany', $betweenHolidays);
         $this->assertArrayHasKey('carnivalDay', $betweenHolidays);
@@ -180,10 +180,10 @@ class HolidayBetweenFilterTest extends PHPUnit_Framework_TestCase
         $this->assertArrayNotHasKey('secondChristmasDay', $betweenHolidays);
 
         $this->assertCount(19, $between);
-        $this->assertNotCount(count($holidays), $between);
+        $this->assertNotCount(\count($holidays), $between);
 
         $this->assertEquals(19, $between->count());
-        $this->assertNotEquals(count($holidays), $between->count());
+        $this->assertNotEquals(\count($holidays), $between->count());
     }
 
     /**
@@ -200,7 +200,7 @@ class HolidayBetweenFilterTest extends PHPUnit_Framework_TestCase
             new DateTime('05/17/' . $year, new DateTimeZone($timezone))
         );
 
-        $betweenHolidays = iterator_to_array($between);
+        $betweenHolidays = \iterator_to_array($between);
 
         $this->assertArrayHasKey('newYearsDay', $betweenHolidays);
         $this->assertArrayHasKey('maundyThursday', $betweenHolidays);
@@ -217,10 +217,10 @@ class HolidayBetweenFilterTest extends PHPUnit_Framework_TestCase
         $this->assertArrayNotHasKey('secondChristmasDay', $betweenHolidays);
 
         $this->assertCount(8, $between);
-        $this->assertNotCount(count($holidays), $between);
+        $this->assertNotCount(\count($holidays), $between);
 
         $this->assertEquals(8, $between->count());
-        $this->assertNotEquals(count($holidays), $between->count());
+        $this->assertNotEquals(\count($holidays), $between->count());
     }
 
     /**
@@ -237,7 +237,7 @@ class HolidayBetweenFilterTest extends PHPUnit_Framework_TestCase
             new DateTime('09/21/2021', new DateTimeZone($timezone))
         );
 
-        $betweenHolidays = iterator_to_array($between);
+        $betweenHolidays = \iterator_to_array($between);
 
         $this->assertArrayNotHasKey('newYearsDay', $betweenHolidays);
         $this->assertArrayNotHasKey('epiphany', $betweenHolidays);
@@ -254,10 +254,10 @@ class HolidayBetweenFilterTest extends PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('stStephensDay', $betweenHolidays);
 
         $this->assertCount(10, $between);
-        $this->assertNotCount(count($holidays), $between);
+        $this->assertNotCount(\count($holidays), $between);
 
         $this->assertEquals(10, $between->count());
-        $this->assertNotEquals(count($holidays), $between->count());
+        $this->assertNotEquals(\count($holidays), $between->count());
     }
 
     /**
@@ -294,7 +294,7 @@ class HolidayBetweenFilterTest extends PHPUnit_Framework_TestCase
             new DateTime('12/31/' . $year, new DateTimeZone($timezone))
         );
 
-        $betweenHolidays = iterator_to_array($between);
+        $betweenHolidays = \iterator_to_array($between);
 
         // Assert array definitions
         $this->assertArrayHasKey('newYearsDay', $betweenHolidays);
@@ -332,7 +332,7 @@ class HolidayBetweenFilterTest extends PHPUnit_Framework_TestCase
             new DateTime('03/20/' . $year, new DateTimeZone($timezone))
         );
 
-        $betweenHolidays = iterator_to_array($between);
+        $betweenHolidays = \iterator_to_array($between);
 
         // Assert array definitions
         $this->assertArrayHasKey('newYearsDay', $betweenHolidays);
@@ -350,10 +350,10 @@ class HolidayBetweenFilterTest extends PHPUnit_Framework_TestCase
         $this->assertArrayNotHasKey('pentecostMonday', $betweenHolidays);
 
         $this->assertCount(2, $between);
-        $this->assertNotCount(count($holidays), $between);
+        $this->assertNotCount(\count($holidays), $between);
 
         $this->assertEquals(2, $between->count());
-        $this->assertNotEquals(count($holidays), $between->count());
+        $this->assertNotEquals(\count($holidays), $between->count());
     }
 
     /**
@@ -374,7 +374,7 @@ class HolidayBetweenFilterTest extends PHPUnit_Framework_TestCase
             new DateTime('03/18/' . $year, new DateTimeZone($timezone))
         );
 
-        $betweenHolidays = iterator_to_array($between);
+        $betweenHolidays = \iterator_to_array($between);
 
         // Assert array definitions
         $this->assertArrayHasKey('newYearsDay', $betweenHolidays);
@@ -393,10 +393,10 @@ class HolidayBetweenFilterTest extends PHPUnit_Framework_TestCase
         $this->assertArrayNotHasKey('pentecostMonday', $betweenHolidays);
 
         $this->assertCount(2, $between);
-        $this->assertNotCount(count($holidays), $between);
+        $this->assertNotCount(\count($holidays), $between);
 
         $this->assertEquals(2, $between->count());
-        $this->assertNotEquals(count($holidays), $between->count());
+        $this->assertNotEquals(\count($holidays), $between->count());
     }
 
     /**
@@ -417,7 +417,7 @@ class HolidayBetweenFilterTest extends PHPUnit_Framework_TestCase
             new DateTime('03/16/' . $year, new DateTimeZone($timezone))
         );
 
-        $betweenHolidays = iterator_to_array($between);
+        $betweenHolidays = \iterator_to_array($between);
 
         // Assert array definitions
         $this->assertArrayHasKey('newYearsDay', $betweenHolidays);
@@ -435,9 +435,9 @@ class HolidayBetweenFilterTest extends PHPUnit_Framework_TestCase
         $this->assertArrayNotHasKey('pentecostMonday', $betweenHolidays);
 
         $this->assertCount(1, $between);
-        $this->assertNotCount(count($holidays), $between);
+        $this->assertNotCount(\count($holidays), $between);
 
         $this->assertEquals(1, $between->count());
-        $this->assertNotEquals(count($holidays), $between->count());
+        $this->assertNotEquals(\count($holidays), $between->count());
     }
 }

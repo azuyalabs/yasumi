@@ -43,6 +43,7 @@ class ValencianCommunity extends Spain
     /**
      * Initialize holidays for the Valencian Community (Spain).
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -72,6 +73,7 @@ class ValencianCommunity extends Spain
      *
      * @link http://www.timeanddate.com/holidays/spain/the-valencian-community-day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */

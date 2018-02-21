@@ -42,6 +42,7 @@ class CastillaLaMancha extends Spain
     /**
      * Initialize holidays for Castilla-La Mancha (Spain).
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -70,6 +71,7 @@ class CastillaLaMancha extends Spain
      *
      * @link http://www.timeanddate.com/holidays/spain/castile-la-mancha-day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */

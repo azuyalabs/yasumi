@@ -1,9 +1,9 @@
 language: php
 
 php:
-  - 5.6
   - 7.0
   - 7.1
+  - 7.2
   - hhvm
   - nightly
 
@@ -28,4 +28,6 @@ matrix:
 
   include:
     - php: 7.1
+      env: PHPSTAN=1
+    - php: 7.2
       env: PHPSTAN=1

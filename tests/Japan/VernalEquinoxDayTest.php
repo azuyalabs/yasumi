@@ -73,7 +73,7 @@ class VernalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCaseIn
      *
      * @return array list of Japanese Vernal Equinox holidays
      */
-    public function vernalEquinoxHolidaysProvider()
+    public function vernalEquinoxHolidaysProvider(): array
     {
         return [
             [1948, 3, 22],

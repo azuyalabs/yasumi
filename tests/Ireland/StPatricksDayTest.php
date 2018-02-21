@@ -45,7 +45,7 @@ class StPatricksDayTest extends IrelandBaseTestCase implements YasumiTestCaseInt
         $date = new DateTime($expected, new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
 
-        if (in_array((int)$date->format('w'), [0, 6], true)) {
+        if (\in_array((int)$date->format('w'), [0, 6], true)) {
             $date->modify('next monday');
             $this->assertHoliday(self::REGION, 'substituteHoliday:' . self::HOLIDAY, $year, $date);
         }
@@ -56,7 +56,7 @@ class StPatricksDayTest extends IrelandBaseTestCase implements YasumiTestCaseInt
      *
      * @return array list of test dates for the holiday defined in this test
      */
-    public function HolidayDataProvider()
+    public function HolidayDataProvider(): array
     {
         $data = [];
 

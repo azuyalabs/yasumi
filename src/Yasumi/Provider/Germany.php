@@ -32,6 +32,7 @@ class Germany extends AbstractProvider
     /**
      * Initialize holidays for Germany.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -76,6 +77,7 @@ class Germany extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/German_Unity_Day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */

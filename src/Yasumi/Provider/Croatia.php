@@ -34,6 +34,7 @@ class Croatia extends AbstractProvider
     /**
      * Initialize holidays for Croatia.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception

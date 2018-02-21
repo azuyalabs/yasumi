@@ -36,6 +36,7 @@ class NorthRhineWestphalia extends Germany
     /**
      * Initialize holidays for North Rhine-Westphalia (Germany).
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception

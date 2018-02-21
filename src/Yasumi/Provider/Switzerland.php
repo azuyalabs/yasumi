@@ -33,6 +33,7 @@ class Switzerland extends AbstractProvider
     /**
      * Initialize holidays for Switzerland.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
@@ -52,6 +53,7 @@ class Switzerland extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Swiss_National_Day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
@@ -95,6 +97,7 @@ class Switzerland extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Berchtoldstag
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
@@ -125,6 +128,7 @@ class Switzerland extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Federal_Day_of_Thanksgiving,_Repentance_and_Prayer
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception

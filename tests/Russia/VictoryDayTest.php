@@ -31,7 +31,7 @@ class VictoryDayTest extends RussiaBaseTestCase implements YasumiTestCaseInterfa
     /**
      * @return array
      */
-    public function holidayDataProvider()
+    public function holidayDataProvider(): array
     {
         return $this->generateRandomDates(5, 9, self::TIMEZONE);
     }

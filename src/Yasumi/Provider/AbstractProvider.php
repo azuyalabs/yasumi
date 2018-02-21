@@ -102,7 +102,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     {
         $this->clearHolidays();
 
-        $this->year               = $year ?: date('Y');
+        $this->year               = $year ?: \date('Y');
         $this->locale             = $locale;
         $this->globalTranslations = $globalTranslations;
 
@@ -126,7 +126,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * @return int result where 0 means dates are equal, -1 the first date is before the second date, and 1 if the
      *             second date is after the first.
      */
-    private static function compareDates(\DateTimeInterface $dateA, \DateTimeInterface $dateB)
+    private static function compareDates(\DateTimeInterface $dateA, \DateTimeInterface $dateB): int
     {
         if ($dateA === $dateB) {
             return 0;
@@ -148,7 +148,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         }
 
         $this->holidays[$holiday->shortName] = $holiday;
-        uasort($this->holidays, [__CLASS__, 'compareDates']);
+        \uasort($this->holidays, [__CLASS__, 'compareDates']);
     }
 
 
@@ -180,7 +180,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @return bool true if date represents a working day, otherwise false
      */
-    public function isWorkingDay($date)
+    public function isWorkingDay($date): bool
     {
         // Return false if given date is invalid
         if (! $date instanceof \DateTimeInterface) {
@@ -197,9 +197,9 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         // @TODO Ideally avoid late static binding here (static::ID)
         if ($date instanceof \DateTimeInterface) {
             $weekend_data = self::WEEKEND_DATA;
-            $weekend_days = isset($weekend_data[$this::ID]) ? $weekend_data[$this::ID] : [0, 6];
+            $weekend_days = $weekend_data[$this::ID] ?? [0, 6];
 
-            if (in_array((int)$date->format('w'), $weekend_days, true)) {
+            if (\in_array((int)$date->format('w'), $weekend_days, true)) {
                 return false;
             }
         }
@@ -217,7 +217,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @return bool true if date represents a holiday, otherwise false
      */
-    public function isHoliday($date)
+    public function isHoliday($date): bool
     {
         // Return false if given date is invalid
         if (! $date instanceof \DateTimeInterface) {
@@ -225,7 +225,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         }
 
         // Check if given date is a holiday or not
-        if (in_array($date->format('Y-m-d'), array_values($this->getHolidayDates()), true)) {
+        if (\in_array($date->format('Y-m-d'), \array_values($this->getHolidayDates()), true)) {
             return true;
         }
 
@@ -237,9 +237,9 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @return array list of all holiday dates defined for the given year
      */
-    public function getHolidayDates()
+    public function getHolidayDates(): array
     {
-        return array_map(function ($holiday) {
+        return \array_map(function ($holiday) {
             return (string)$holiday;
         }, $this->holidays);
     }
@@ -253,7 +253,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @return string the date of the requested holiday
      */
-    public function whenIs($shortName)
+    public function whenIs($shortName): string
     {
         $this->isHolidayNameNotEmpty($shortName); // Validate if short name is not empty
 
@@ -269,7 +269,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @return true upon success, otherwise an InvalidArgumentException is thrown
      */
-    protected function isHolidayNameNotEmpty($shortName)
+    protected function isHolidayNameNotEmpty($shortName): bool
     {
         if (empty($shortName)) {
             throw new InvalidArgumentException('Holiday name can not be blank.');
@@ -290,7 +290,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @return int the index of the weekdays of the requested holiday (0 = Sunday, 1 = Monday, etc.)
      */
-    public function whatWeekDayIs($shortName)
+    public function whatWeekDayIs($shortName): int
     {
         $this->isHolidayNameNotEmpty($shortName); // Validate if short name is not empty
 
@@ -303,15 +303,15 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @return int number of holidays
      */
-    public function count()
+    public function count(): int
     {
         $list = $this->getHolidayNames();
 
-        array_walk($list, function (&$holiday) {
-            $holiday = str_replace('substituteHoliday:', '', $holiday);
+        \array_walk($list, function (&$holiday) {
+            $holiday = \str_replace('substituteHoliday:', '', $holiday);
         });
 
-        return count(array_unique($list));
+        return \count(\array_unique($list));
     }
 
     /**
@@ -319,9 +319,9 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @return array list of all holiday names defined for the given year
      */
-    public function getHolidayNames()
+    public function getHolidayNames(): array
     {
-        return array_keys($this->holidays);
+        return \array_keys($this->holidays);
     }
 
     /**
@@ -329,7 +329,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @return int the year set for this Holiday calendar
      */
-    public function getYear()
+    public function getYear(): int
     {
         return $this->year;
     }
@@ -341,10 +341,10 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @return Holiday|null a Holiday instance for the given holiday
      *
+     * @throws \ReflectionException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \RuntimeException
      * @throws \InvalidArgumentException
-     * @throws \ReflectionException
      *
      * @covers AbstractProvider::anotherTime
      */
@@ -361,17 +361,17 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @return Holiday|null a Holiday instance for the given holiday and year
      *
+     * @throws \ReflectionException
      * @throws InvalidArgumentException when the given name is blank or empty.
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \RuntimeException
-     * @throws \ReflectionException
      */
     private function anotherTime($year, $shortName)
     {
         $this->isHolidayNameNotEmpty($shortName); // Validate if short name is not empty
 
         // Get calling class name
-        $hReflectionClass = new \ReflectionClass(get_class($this));
+        $hReflectionClass = new \ReflectionClass(\get_class($this));
 
         return Yasumi::create($hReflectionClass->getShortName(), $year, $this->locale)->getHoliday($shortName);
     }
@@ -391,7 +391,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
 
         $holidays = $this->getHolidays();
 
-        return isset($holidays[$shortName]) ? $holidays[$shortName] : null;
+        return $holidays[$shortName] ?? null;
     }
 
     /**
@@ -399,7 +399,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @return Holiday[] list of all holidays defined for the given year
      */
-    public function getHolidays()
+    public function getHolidays(): array
     {
         return $this->holidays;
     }
@@ -411,10 +411,10 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @return Holiday|null a Holiday instance for the given holiday
      *
+     * @throws \ReflectionException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \RuntimeException
      * @throws \InvalidArgumentException
-     * @throws \ReflectionException
      *
      * @covers AbstractProvider::anotherTime
      */
@@ -445,7 +445,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @return \Yasumi\Filters\BetweenFilter
      */
-    public function between(\DateTimeInterface $start_date, \DateTimeInterface $end_date, $equals = true)
+    public function between(\DateTimeInterface $start_date, \DateTimeInterface $end_date, $equals = true): BetweenFilter
     {
         if ($start_date > $end_date) {
             throw new InvalidArgumentException('Start date must be a date before the end date.');
@@ -459,7 +459,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @return ArrayIterator iterator for the holidays of this calendar
      */
-    public function getIterator()
+    public function getIterator(): ArrayIterator
     {
         return new ArrayIterator($this->getHolidays());
     }

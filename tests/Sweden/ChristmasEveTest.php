@@ -44,7 +44,7 @@ class ChristmasEveTest extends SwedenBaseTestCase implements YasumiTestCaseInter
      *
      * @return array list of test dates for the holiday defined in this test
      */
-    public function HolidayDataProvider()
+    public function HolidayDataProvider(): array
     {
         return $this->generateRandomDates(12, 24, self::TIMEZONE);
     }

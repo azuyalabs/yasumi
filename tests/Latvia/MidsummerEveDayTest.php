@@ -31,7 +31,7 @@ class MidsummerEveDayTest extends LatviaBaseTestCase implements YasumiTestCaseIn
     /**
      * @return array
      */
-    public function holidayDataProvider()
+    public function holidayDataProvider(): array
     {
         return $this->generateRandomDates(6, 23, self::TIMEZONE);
     }

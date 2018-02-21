@@ -31,7 +31,7 @@ class StJohnsDayTest extends EstoniaBaseTestCase implements YasumiTestCaseInterf
     /**
      * @return array
      */
-    public function holidayDataProvider()
+    public function holidayDataProvider(): array
     {
         return $this->generateRandomDates(6, 24, self::TIMEZONE);
     }

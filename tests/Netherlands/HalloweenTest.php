@@ -44,7 +44,7 @@ class HalloweenTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
      *
      * @return array list of test dates for Halloween
      */
-    public function HalloweenDataProvider()
+    public function HalloweenDataProvider(): array
     {
         return $this->generateRandomDates(10, 31, self::TIMEZONE);
     }

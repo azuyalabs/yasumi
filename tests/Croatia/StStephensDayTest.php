@@ -44,7 +44,7 @@ class StStephensDayTest extends CroatiaBaseTestCase implements YasumiTestCaseInt
      *
      * @return array list of test dates for St. Stephen's Day
      */
-    public function stStephensDayDataProvider()
+    public function stStephensDayDataProvider(): array
     {
         return $this->generateRandomDates(12, 26, self::TIMEZONE);
     }

@@ -32,6 +32,7 @@ class Victoria extends Australia
     /**
      * Initialize holidays for Victoria (Australia).
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception

@@ -50,7 +50,7 @@ class NewYearsDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInt
      *
      * @return array list of test dates for the holiday defined in this test
      */
-    public function HolidayDataProvider()
+    public function HolidayDataProvider(): array
     {
         $data = [
             [2010, '2010-01-01'],

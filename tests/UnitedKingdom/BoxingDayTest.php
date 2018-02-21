@@ -41,7 +41,7 @@ class BoxingDayTest extends UnitedKingdomBaseTestCase implements YasumiTestCaseI
         $date = new DateTime($expected, new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
 
-        if (in_array((int)$date->format('w'), [0, 6], true)) {
+        if (\in_array((int)$date->format('w'), [0, 6], true)) {
             $date->add(new DateInterval('P2D'));
             $this->assertHoliday(self::REGION, 'substituteHoliday:' . self::HOLIDAY, $year, $date);
             $this->assertHolidayType(self::REGION, 'substituteHoliday:' . self::HOLIDAY, $year, Holiday::TYPE_BANK);
@@ -53,7 +53,7 @@ class BoxingDayTest extends UnitedKingdomBaseTestCase implements YasumiTestCaseI
      *
      * @return array list of test dates for the holiday defined in this test
      */
-    public function HolidayDataProvider()
+    public function HolidayDataProvider(): array
     {
         $data = [];
 

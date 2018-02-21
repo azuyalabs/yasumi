@@ -37,6 +37,7 @@ class Geneva extends Switzerland
     /**
      * Initialize holidays for Geneva (Switzerland).
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -64,6 +65,7 @@ class Geneva extends Switzerland
      *
      * @link https://en.wikipedia.org/wiki/Je%C3%BBne_genevois
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -98,6 +100,7 @@ class Geneva extends Switzerland
      *
      * @link https://fr.wikipedia.org/wiki/Restauration_genevoise
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */

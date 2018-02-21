@@ -32,6 +32,7 @@ class Spain extends AbstractProvider
     /**
      * Initialize holidays for Spain.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -70,6 +71,7 @@ class Spain extends AbstractProvider
      *
      * @link http://en.wikipedia.org/wiki/Fiesta_Nacional_de_España
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
@@ -94,6 +96,7 @@ class Spain extends AbstractProvider
      *
      * @link http://www.timeanddate.com/holidays/spain/constitution-day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */

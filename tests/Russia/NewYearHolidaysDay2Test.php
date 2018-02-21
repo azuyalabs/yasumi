@@ -31,7 +31,7 @@ class NewYearHolidaysDay2Test extends RussiaBaseTestCase implements YasumiTestCa
     /**
      * @return array
      */
-    public function holidayDataProvider()
+    public function holidayDataProvider(): array
     {
         return $this->generateRandomDates(1, 2, self::TIMEZONE);
     }

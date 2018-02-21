@@ -52,11 +52,11 @@ class Translations implements TranslationsInterface
      */
     public function loadTranslations($directoryPath)
     {
-        if (! file_exists($directoryPath)) {
+        if (! \file_exists($directoryPath)) {
             throw new InvalidArgumentException('Directory with translations not found');
         }
 
-        $directoryPath = rtrim($directoryPath, '/\\') . DIRECTORY_SEPARATOR;
+        $directoryPath = \rtrim($directoryPath, '/\\') . DIRECTORY_SEPARATOR;
         $extension     = 'php';
 
         foreach (new DirectoryIterator($directoryPath) as $file) {
@@ -73,8 +73,8 @@ class Translations implements TranslationsInterface
 
             $translations = require $directoryPath . $filename;
 
-            if (is_array($translations)) {
-                foreach (array_keys($translations) as $locale) {
+            if (\is_array($translations)) {
+                foreach (\array_keys($translations) as $locale) {
                     $this->isValidLocale($locale); // Validate the given locale
                 }
 
@@ -93,10 +93,10 @@ class Translations implements TranslationsInterface
      *
      * @return true upon success, otherwise an UnknownLocaleException is thrown
      */
-    protected function isValidLocale($locale)
+    protected function isValidLocale($locale): bool
     {
-        if (! in_array($locale, $this->availableLocales, true)) {
-            throw new UnknownLocaleException(sprintf('Locale "%s" is not a valid locale.', $locale));
+        if (! \in_array($locale, $this->availableLocales, true)) {
+            throw new UnknownLocaleException(\sprintf('Locale "%s" is not a valid locale.', $locale));
         }
 
         return true;
@@ -115,7 +115,7 @@ class Translations implements TranslationsInterface
     {
         $this->isValidLocale($locale); // Validate the given locale
 
-        if (! array_key_exists($shortName, $this->translations)) {
+        if (! \array_key_exists($shortName, $this->translations)) {
             $this->translations[$shortName] = [];
         }
 
@@ -132,11 +132,11 @@ class Translations implements TranslationsInterface
      */
     public function getTranslation($shortName, $locale)
     {
-        if (! array_key_exists($shortName, $this->translations)) {
+        if (! \array_key_exists($shortName, $this->translations)) {
             return null;
         }
 
-        if (! array_key_exists($locale, $this->translations[$shortName])) {
+        if (! \array_key_exists($locale, $this->translations[$shortName])) {
             return null;
         }
 
@@ -150,9 +150,9 @@ class Translations implements TranslationsInterface
      *
      * @return array holiday name translations ['<locale>' => '<translation>', ...]
      */
-    public function getTranslations($shortName)
+    public function getTranslations($shortName): array
     {
-        if (! array_key_exists($shortName, $this->translations)) {
+        if (! \array_key_exists($shortName, $this->translations)) {
             return [];
         }
 

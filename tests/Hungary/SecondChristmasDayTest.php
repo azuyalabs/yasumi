@@ -44,7 +44,7 @@ class SecondChristmasDayTest extends HungaryBaseTestCase implements YasumiTestCa
      *
      * @return array list of test dates for the holiday defined in this test
      */
-    public function HolidayDataProvider()
+    public function HolidayDataProvider(): array
     {
         return $this->generateRandomDates(12, 26, self::TIMEZONE);
     }

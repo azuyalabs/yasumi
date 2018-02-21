@@ -32,6 +32,7 @@ class France extends AbstractProvider
     /**
      * Initialize holidays for France.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -76,6 +77,7 @@ class France extends AbstractProvider
      *
      * @link http://en.wikipedia.org/wiki/Bastille_Day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */

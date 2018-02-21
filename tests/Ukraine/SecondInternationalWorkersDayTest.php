@@ -65,7 +65,7 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements Y
      *
      * @return array list of test dates for International Workers' Day
      */
-    public function SecondInternationalWorkersDayDataProvider()
+    public function SecondInternationalWorkersDayDataProvider(): array
     {
         return $this->generateRandomDates(5, 2, self::TIMEZONE);
     }

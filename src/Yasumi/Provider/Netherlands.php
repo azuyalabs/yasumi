@@ -33,6 +33,7 @@ class Netherlands extends AbstractProvider
     /**
      * Initialize holidays for the Netherlands.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
