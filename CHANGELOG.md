@@ -13,7 +13,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Removed
 
-## [1.8.0] - 2018-02-29
+## [1.8.0] - 2018-02-21
 
 ### Added
 - Added a function that can remove a holiday from the holidays providers (i.e. country/state) list of holidays. This function can be helpful in cases where an existing holiday provider class can be extended but some holidays are not part of the original (extended) provider.
