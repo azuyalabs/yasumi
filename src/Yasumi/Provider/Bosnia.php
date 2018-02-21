@@ -47,9 +47,7 @@ class Bosnia extends AbstractProvider
         $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
 
         // Add Christian holidays
-        $this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale, Holiday::TYPE_OFFICIAL));
         $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
 
@@ -57,10 +55,10 @@ class Bosnia extends AbstractProvider
          * Independence Day
          */
         if ($this->year >= 1992) {
-            $this->addHoliday(new Holiday('antifascistStruggleDay', [
+            $this->addHoliday(new Holiday('independenceDay', [
                 'en_US' => 'Independence Day',
                 'bs_Latn_BA' => 'Dan Nezavisnosti'
-            ], new DateTime("$this->year-1-3", new DateTimeZone($this->timezone)), $this->locale));
+            ], new DateTime("$this->year-3-1", new DateTimeZone($this->timezone)), $this->locale));
         }
 
         /**
@@ -70,7 +68,7 @@ class Bosnia extends AbstractProvider
             $this->addHoliday(new Holiday('statehoodDay', [
                 'en_US' => 'Statehood Day',
                 'bs_Latn_BA' => 'Dan državnosti'
-            ], new DateTime("$this->year-25-11", new DateTimeZone($this->timezone)), $this->locale));
+            ], new DateTime("$this->year-11-25", new DateTimeZone($this->timezone)), $this->locale));
         }
     }
 }

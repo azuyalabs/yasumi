@@ -12,6 +12,7 @@
 
 // Translations for Christmas
 return [
+    'bs_Latn_BA' => 'Božić',
     'cs_CZ' => '1. svátek vánoční',
     'cy_GB' => 'Nadolig',
     'da_DK' => '1. Juledag',
