@@ -46,8 +46,6 @@ class Australia extends AbstractProvider
         $this->calculateAustraliaDay();
         $this->calculateNewYearHolidays();
         $this->calculateAnzacDay();
-        //$this->calculateQueensBirthday();
-        //$this->calculateLabourDay();
 
         // Add Christian holidays
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
