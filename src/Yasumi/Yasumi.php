@@ -18,6 +18,9 @@ use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use ReflectionClass;
 use RuntimeException;
+use Yasumi\Exception\InvalidYearException;
+use Yasumi\Exception\ProviderNotFoundException;
+use Yasumi\Exception\UnknownIso31662Exception;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Provider\AbstractProvider;
 
@@ -124,12 +127,12 @@ class Yasumi
         }
 
         if ($class === 'AbstractProvider' || ! class_exists($providerClass)) {
-            throw new InvalidArgumentException(sprintf('Unable to find holiday provider "%s".', $class));
+            throw new ProviderNotFoundException(sprintf('Unable to find holiday provider "%s".', $class));
         }
 
         // Assert year input
         if ($year < 1000 || $year > 9999) {
-            throw new InvalidArgumentException(sprintf('Year needs to be between 1000 and 9999 (%s given).', $year));
+            throw new InvalidYearException(sprintf('Year needs to be between 1000 and 9999 (%s given).', $year));
         }
 
         // Load internal locales variable
@@ -186,7 +189,7 @@ class Yasumi
         $availableProviders = self::getProviders();
 
         if (false === isset($availableProviders[$iso3166_2])) {
-            throw new InvalidArgumentException(sprintf(
+            throw new UnknownIso31662Exception(sprintf(
                 'Unable to find holiday provider by ISO3166-2 "%s".',
                 $iso3166_2
             ));
