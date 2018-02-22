@@ -79,7 +79,20 @@ class Bosnia extends AbstractProvider
             ], new DateTime("$this->year-11-25", new DateTimeZone($this->timezone)), $this->locale));
         }
 
+        /**
+         * Day after New Years Day
+         */
+        $this->addHoliday(new Holiday('dayAfterNewYearsDay', [
+            'en_US' => 'Day after New Year\'s Day',
+            'ro_RO' => 'Nova godina - drugi dan'
+        ], new DateTime("$this->year-01-02", new DateTimeZone($this->timezone)), $this->locale));
 
-
+        /**
+         * Second Labour day
+         */
+        $this->addHoliday(new Holiday('secondLabourDay', [
+            'en_US' => 'Second Labour Day',
+            'ro_RO' => 'Praznik rada - drugi dan'
+        ], new DateTime("$this->year-05-02", new DateTimeZone($this->timezone)), $this->locale));
     }
 }

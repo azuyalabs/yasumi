@@ -20,7 +20,7 @@ use Yasumi\tests\YasumiTestCaseInterface;
 /**
  * Class containing tests for Orthodox Christmas Day in Bosnia.
  */
-class OrthodoxChristmasDay extends BosniaBaseTestCase implements YasumiTestCaseInterface
+class OrthodoxChristmasDayTest extends BosniaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
