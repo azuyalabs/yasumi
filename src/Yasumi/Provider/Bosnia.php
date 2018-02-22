@@ -46,10 +46,18 @@ class Bosnia extends AbstractProvider
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
 
-        // Add Christian holidays
+        // Add Catholic holidays
         $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
+
+        // Add Orthodox holidays
+
+        $this->addHoliday(new Holiday('orthodoxChristmasDay', [
+            'en_US' => 'Orthodox Christmas Day',
+            'bs_Latn_BA' => 'Pravoslavni Božić'
+        ], new \DateTime("{$this->year}-01-07", new \DateTimeZone($this->timezone))));
+
 
         /**
          * Independence Day
@@ -70,5 +78,8 @@ class Bosnia extends AbstractProvider
                 'bs_Latn_BA' => 'Dan državnosti'
             ], new DateTime("$this->year-11-25", new DateTimeZone($this->timezone)), $this->locale));
         }
+
+
+
     }
 }
