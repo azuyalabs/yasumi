@@ -19,7 +19,7 @@ use Yasumi\tests\YasumiTestCaseInterface;
 /**
  * Class containing tests for the Second International Workers' Day (i.e. Labour Day) in Bosnia.
  */
-class SecondLabourDayTest extends BosniaBaseTestCase implements YasumiTestCaseInterface
+class SecondLabourDay extends BosniaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday to be tested

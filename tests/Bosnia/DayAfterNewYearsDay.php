@@ -19,7 +19,7 @@ use Yasumi\tests\YasumiTestCaseInterface;
 /**
  * Class for testing Day after New Years Day in Bosnia.
  */
-class DayAfterNewYearsDayTest extends BosniaBaseTestCase implements YasumiTestCaseInterface
+class DayAfterNewYearsDay extends BosniaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday to be tested
