@@ -17,9 +17,9 @@ use DateTimeZone;
 use Yasumi\Holiday;
 
 /**
- * Provider for all holidays in Croatia.
+ * Provider for all holidays in Bosnia.
  *
- * @author Karlo Mikus <contact@karlomikus.com>
+ * @author Adnan Kičin <adnankicin92@gmail.com>
  */
 class Bosnia extends AbstractProvider
 {
@@ -29,10 +29,10 @@ class Bosnia extends AbstractProvider
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'BS';
+    const ID = 'BA';
 
     /**
-     * Initialize holidays for Croatia.
+     * Initialize holidays for Bosnia.
      *
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
