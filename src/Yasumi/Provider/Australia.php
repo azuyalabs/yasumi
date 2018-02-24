@@ -125,8 +125,11 @@ class Australia extends AbstractProvider
      */
     public function calculateNewYearHolidays()
     {
-        $this->calculateHoliday('newYearsDay', [],
-            new DateTime("$this->year-01-01", new DateTimeZone($this->timezone)));
+        $this->calculateHoliday(
+            'newYearsDay',
+            [],
+            new DateTime("$this->year-01-01", new DateTimeZone($this->timezone))
+        );
     }
 
     /**
@@ -206,8 +209,13 @@ class Australia extends AbstractProvider
      */
     public function calculateQueensBirthday()
     {
-        $this->calculateHoliday('queensBirthday', ['en_AU' => 'Queens Birthday'],
-            new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->timezone)), false, false);
+        $this->calculateHoliday(
+            'queensBirthday',
+            ['en_AU' => 'Queens Birthday'],
+            new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->timezone)),
+            false,
+            false
+        );
     }
 
     /**
