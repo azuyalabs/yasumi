@@ -82,11 +82,11 @@ class Australia extends AbstractProvider
     /**
      * Function to simplify moving holidays to mondays if required
      *
-     * @param string          $shortName
-     * @param array           $names
-     * @param string|DateTime $date
-     * @param bool            $moveFromSaturday
-     * @param bool            $moveFromSunday
+     * @param string             $shortName
+     * @param array              $names
+     * @param \DateTimeInterface $date
+     * @param bool               $moveFromSaturday
+     * @param bool               $moveFromSunday
      *
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
@@ -94,23 +94,18 @@ class Australia extends AbstractProvider
      * @throws \Exception
      */
     public function calculateHoliday(
-        $shortName,
+        string $shortName,
         array $names = [],
-        $date,
-        $moveFromSaturday = true,
-        $moveFromSunday = true
+        \DateTimeInterface $date,
+        bool $moveFromSaturday = true,
+        bool $moveFromSunday = true
     ) {
-        $holidayDate = $date instanceof \DateTimeInterface ? $date : new \DateTime(
-            $date,
-            new \DateTimeZone($this->timezone)
-        );
-
-        $day = (int)$holidayDate->format('w');
+        $day = (int)$date->format('w');
         if (($day === 0 && $moveFromSunday) || ($day === 6 && $moveFromSaturday)) {
-            $holidayDate = $holidayDate->add($day === 0 ? new DateInterval('P1D') : new DateInterval('P2D'));
+            $date = $date->add($day === 0 ? new DateInterval('P1D') : new DateInterval('P2D'));
         }
 
-        $this->addHoliday(new Holiday($shortName, $names, $holidayDate, $this->locale));
+        $this->addHoliday(new Holiday($shortName, $names, $date, $this->locale));
     }
 
     /**
@@ -217,7 +212,7 @@ class Australia extends AbstractProvider
         $this->calculateHoliday(
             'queensBirthday',
             ['en_AU' => 'Queens Birthday'],
-            'second monday of june ' . $this->year,
+            new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->timezone)),
             false,
             false
         );
