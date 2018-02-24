@@ -299,7 +299,7 @@ trait YasumiBase
      * @return \DateTime date of Easter
      * @throws \Exception
      */
-    protected function calculateEaster($year, $timezone): DateTime
+    protected function calculateEaster(int $year, string $timezone): DateTime
     {
         if (\extension_loaded('calendar')) {
             $easter_days = \easter_days($year);

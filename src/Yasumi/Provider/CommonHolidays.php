@@ -47,8 +47,12 @@ trait CommonHolidays
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
-    public function newYearsDay($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
-    {
+    public function newYearsDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
         return new Holiday('newYearsDay', [], new DateTime("$year-1-1", new DateTimeZone($timezone)), $locale, $type);
     }
 
@@ -75,8 +79,12 @@ trait CommonHolidays
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
-    public function internationalWorkersDay($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
-    {
+    public function internationalWorkersDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
         return new Holiday(
             'internationalWorkersDay',
             [],
@@ -109,8 +117,12 @@ trait CommonHolidays
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
-    public function valentinesDay($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
-    {
+    public function valentinesDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
         return new Holiday(
             'valentinesDay',
             [],
@@ -141,8 +153,12 @@ trait CommonHolidays
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
-    public function worldAnimalDay($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
-    {
+    public function worldAnimalDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
         return new Holiday(
             'worldAnimalDay',
             [],
@@ -175,8 +191,12 @@ trait CommonHolidays
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
-    public function stMartinsDay($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
-    {
+    public function stMartinsDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
         return new Holiday(
             'stMartinsDay',
             [],
@@ -208,8 +228,12 @@ trait CommonHolidays
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
-    public function fathersDay($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
-    {
+    public function fathersDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
         return new Holiday(
             'fathersDay',
             [],
@@ -241,8 +265,12 @@ trait CommonHolidays
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
-    public function mothersDay($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
-    {
+    public function mothersDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
         return new Holiday(
             'mothersDay',
             [],
@@ -274,8 +302,12 @@ trait CommonHolidays
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
-    public function victoryInEuropeDay($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
-    {
+    public function victoryInEuropeDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
         return new Holiday(
             'victoryInEuropeDay',
             [],
@@ -309,8 +341,12 @@ trait CommonHolidays
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
-    public function armisticeDay($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
-    {
+    public function armisticeDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
         return new Holiday(
             'armisticeDay',
             [],
