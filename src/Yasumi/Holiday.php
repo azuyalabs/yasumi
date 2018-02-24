@@ -110,11 +110,6 @@ class Holiday extends DateTime implements JsonSerializable
             throw new InvalidArgumentException('Holiday name can not be blank.');
         }
 
-        // Validate if date parameter is instance of DateTimeInterface
-        if (! ($date instanceof \DateTimeInterface)) {
-            throw new InvalidDateException($date);
-        }
-
         // Load internal locales variable
         if (null === static::$locales) {
             static::$locales = Yasumi::getAvailableLocales();

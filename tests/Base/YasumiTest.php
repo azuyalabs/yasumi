@@ -15,7 +15,6 @@ namespace Yasumi\tests\Base;
 use Faker\Factory;
 use InvalidArgumentException;
 use PHPUnit_Framework_TestCase;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\tests\YasumiBase;
 use Yasumi\Yasumi;
 
@@ -84,10 +83,8 @@ class YasumiTest extends PHPUnit_Framework_TestCase
     public function testCreateWithAbstractExtension()
     {
         $class    = YasumiExternalProvider::class;
-        $instance = Yasumi::create(
-            $class,
-            Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND)
-        );
+        $instance = Yasumi::create($class,
+            Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND));
         $this->assertInstanceOf($class, $instance);
     }
 
@@ -98,11 +95,8 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      */
     public function testCreateWithInvalidLocale()
     {
-        Yasumi::create(
-            'Japan',
-            Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND),
-            'wx_YZ'
-        );
+        Yasumi::create('Japan', Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND),
+            'wx_YZ');
     }
 
     /**
@@ -110,10 +104,8 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      */
     public function testGetIterator()
     {
-        $holidays = Yasumi::create(
-            'Japan',
-            Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND)
-        );
+        $holidays = Yasumi::create('Japan',
+            Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND));
 
         $this->assertInstanceOf(\ArrayIterator::class, $holidays->getIterator());
     }
@@ -165,12 +157,8 @@ class YasumiTest extends PHPUnit_Framework_TestCase
 
         $holidays = Yasumi::create($country, $year);
 
-        $this->assertHoliday(
-            $country,
-            $name,
-            (($year < self::YEAR_UPPER_BOUND) ? $year + 1 : self::YEAR_UPPER_BOUND),
-            $holidays->next($name)
-        );
+        $this->assertHoliday($country, $name, (($year < self::YEAR_UPPER_BOUND) ? $year + 1 : self::YEAR_UPPER_BOUND),
+            $holidays->next($name));
     }
 
     /**
@@ -180,10 +168,8 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      */
     public function testNextWithBlankName()
     {
-        $holidays = Yasumi::create(
-            'Netherlands',
-            Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND)
-        );
+        $holidays = Yasumi::create('Netherlands',
+            Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND));
         $holidays->next(null);
     }
 
@@ -199,12 +185,8 @@ class YasumiTest extends PHPUnit_Framework_TestCase
 
         $holidays = Yasumi::create($country, $year);
 
-        $this->assertHoliday(
-            $country,
-            $name,
-            (($year > $year_lower_limit) ? $year - 1 : $year_lower_limit),
-            $holidays->previous($name)
-        );
+        $this->assertHoliday($country, $name, (($year > $year_lower_limit) ? $year - 1 : $year_lower_limit),
+            $holidays->previous($name));
     }
 
     /**
@@ -214,10 +196,8 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      */
     public function testPreviousWithBlankName()
     {
-        $holidays = Yasumi::create(
-            'Netherlands',
-            Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND)
-        );
+        $holidays = Yasumi::create('Netherlands',
+            Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND));
         $holidays->previous(null);
     }
 
@@ -370,18 +350,15 @@ class YasumiTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Tests that the isHoliday function throws an InvalidDateException when the given argument is not an instance that
+     * Tests that the isHoliday function throws a TypeError when the given argument is not an instance that
      * implements the DateTimeInterface (e.g. DateTime or DateTimeImmutable)
-     *
      */
     public function testIsHolidayException()
     {
-        $this->expectException(InvalidDateException::class);
+        $this->expectException(\TypeError::class);
 
-        Yasumi::create('Spain', Factory::create()->numberBetween(
-            self::YEAR_LOWER_BOUND,
-            self::YEAR_UPPER_BOUND
-        ))->isHoliday(new \stdClass());
+        Yasumi::create('Spain', Factory::create()->numberBetween(self::YEAR_LOWER_BOUND,
+            self::YEAR_UPPER_BOUND))->isHoliday(new \stdClass());
     }
 
     /**
@@ -435,19 +412,17 @@ class YasumiTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Tests that the isWorkingDay function throws an InvalidDateException when the given argument is not an instance
+     * Tests that the isWorkingDay function throws a TypeError when the given argument is not an instance
      * that implements the DateTimeInterface (e.g. DateTime or DateTimeImmutable)
      *
      * @TODO Add additional unit tests for those holiday providers that differ from the global definition
      */
     public function testIsWorkingDayException()
     {
-        $this->expectException(InvalidDateException::class);
+        $this->expectException(\TypeError::class);
 
-        Yasumi::create('SouthAfrica', Factory::create()->numberBetween(
-            self::YEAR_LOWER_BOUND,
-            self::YEAR_UPPER_BOUND
-        ))->isWorkingDay(new \stdClass());
+        Yasumi::create('SouthAfrica', Factory::create()->numberBetween(self::YEAR_LOWER_BOUND,
+            self::YEAR_UPPER_BOUND))->isWorkingDay(new \stdClass());
     }
 
     /**
