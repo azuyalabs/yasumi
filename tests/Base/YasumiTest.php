@@ -83,8 +83,10 @@ class YasumiTest extends PHPUnit_Framework_TestCase
     public function testCreateWithAbstractExtension()
     {
         $class    = YasumiExternalProvider::class;
-        $instance = Yasumi::create($class,
-            Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND));
+        $instance = Yasumi::create(
+            $class,
+            Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND)
+        );
         $this->assertInstanceOf($class, $instance);
     }
 
@@ -95,8 +97,11 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      */
     public function testCreateWithInvalidLocale()
     {
-        Yasumi::create('Japan', Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND),
-            'wx_YZ');
+        Yasumi::create(
+            'Japan',
+            Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND),
+            'wx_YZ'
+        );
     }
 
     /**
@@ -104,8 +109,10 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      */
     public function testGetIterator()
     {
-        $holidays = Yasumi::create('Japan',
-            Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND));
+        $holidays = Yasumi::create(
+            'Japan',
+            Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND)
+        );
 
         $this->assertInstanceOf(\ArrayIterator::class, $holidays->getIterator());
     }
@@ -157,8 +164,12 @@ class YasumiTest extends PHPUnit_Framework_TestCase
 
         $holidays = Yasumi::create($country, $year);
 
-        $this->assertHoliday($country, $name, (($year < self::YEAR_UPPER_BOUND) ? $year + 1 : self::YEAR_UPPER_BOUND),
-            $holidays->next($name));
+        $this->assertHoliday(
+            $country,
+            $name,
+            (($year < self::YEAR_UPPER_BOUND) ? $year + 1 : self::YEAR_UPPER_BOUND),
+            $holidays->next($name)
+        );
     }
 
     /**
@@ -168,8 +179,10 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      */
     public function testNextWithBlankName()
     {
-        $holidays = Yasumi::create('Netherlands',
-            Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND));
+        $holidays = Yasumi::create(
+            'Netherlands',
+            Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND)
+        );
         $holidays->next(null);
     }
 
@@ -185,8 +198,12 @@ class YasumiTest extends PHPUnit_Framework_TestCase
 
         $holidays = Yasumi::create($country, $year);
 
-        $this->assertHoliday($country, $name, (($year > $year_lower_limit) ? $year - 1 : $year_lower_limit),
-            $holidays->previous($name));
+        $this->assertHoliday(
+            $country,
+            $name,
+            (($year > $year_lower_limit) ? $year - 1 : $year_lower_limit),
+            $holidays->previous($name)
+        );
     }
 
     /**
@@ -196,8 +213,10 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      */
     public function testPreviousWithBlankName()
     {
-        $holidays = Yasumi::create('Netherlands',
-            Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND));
+        $holidays = Yasumi::create(
+            'Netherlands',
+            Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND)
+        );
         $holidays->previous(null);
     }
 
@@ -357,8 +376,10 @@ class YasumiTest extends PHPUnit_Framework_TestCase
     {
         $this->expectException(\TypeError::class);
 
-        Yasumi::create('Spain', Factory::create()->numberBetween(self::YEAR_LOWER_BOUND,
-            self::YEAR_UPPER_BOUND))->isHoliday(new \stdClass());
+        Yasumi::create('Spain', Factory::create()->numberBetween(
+            self::YEAR_LOWER_BOUND,
+            self::YEAR_UPPER_BOUND
+        ))->isHoliday(new \stdClass());
     }
 
     /**
@@ -421,8 +442,10 @@ class YasumiTest extends PHPUnit_Framework_TestCase
     {
         $this->expectException(\TypeError::class);
 
-        Yasumi::create('SouthAfrica', Factory::create()->numberBetween(self::YEAR_LOWER_BOUND,
-            self::YEAR_UPPER_BOUND))->isWorkingDay(new \stdClass());
+        Yasumi::create('SouthAfrica', Factory::create()->numberBetween(
+            self::YEAR_LOWER_BOUND,
+            self::YEAR_UPPER_BOUND
+        ))->isWorkingDay(new \stdClass());
     }
 
     /**
