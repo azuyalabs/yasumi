@@ -34,6 +34,7 @@ class Bosnia extends AbstractProvider
     /**
      * Initialize holidays for Bosnia.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
