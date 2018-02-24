@@ -16,7 +16,6 @@ use DateInterval;
 use DateTime;
 use DateTimeZone;
 use Faker\Factory as Faker;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Filters\BankHolidaysFilter;
 use Yasumi\Filters\ObservedHolidaysFilter;
 use Yasumi\Filters\OfficialHolidaysFilter;
@@ -45,6 +44,7 @@ trait YasumiBase
      * @throws \InvalidArgumentException
      * @throws \RuntimeException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \ReflectionException
      */
     public function assertDefinedHolidays($expectedHolidays, $provider, $year, $type)
     {
@@ -90,6 +90,7 @@ trait YasumiBase
      * @throws \RuntimeException
      * @throws \PHPUnit_Framework_AssertionFailedError
      * @throws \ReflectionException
+     * @throws \TypeError
      */
     public function assertHoliday($provider, $shortName, $year, $expected)
     {
@@ -118,10 +119,11 @@ trait YasumiBase
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \PHPUnit_Framework_AssertionFailedError
      * @throws \ReflectionException
+     * @throws \TypeError
      */
     public function assertNotHoliday($provider, $shortName, $year)
     {
-        $this->expectException(InvalidDateException::class);
+        $this->expectException(\TypeError::class);
 
         $holidays = Yasumi::create($provider, $year);
         $holiday  = $holidays->getHoliday($shortName);
@@ -145,6 +147,8 @@ trait YasumiBase
      * @throws \RuntimeException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \PHPUnit_Framework_AssertionFailedError
+     * @throws \ReflectionException
+     * @throws \TypeError
      */
     public function assertTranslatedHolidayName($provider, $shortName, $year, $translations)
     {
@@ -180,6 +184,7 @@ trait YasumiBase
      * @throws \RuntimeException
      * @throws \PHPUnit_Framework_AssertionFailedError
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \ReflectionException
      */
     public function assertHolidayType($provider, $shortName, $year, $type)
     {
@@ -207,6 +212,8 @@ trait YasumiBase
      * @throws \InvalidArgumentException
      * @throws \RuntimeException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \ReflectionException
+     * @throws \TypeError
      */
     public function assertDayOfWeek($provider, $shortName, $year, $expectedDayOfWeek)
     {
