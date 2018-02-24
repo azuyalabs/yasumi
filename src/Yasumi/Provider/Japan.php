@@ -90,103 +90,14 @@ class Japan extends AbstractProvider
             $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
         }
 
-        /**
-         * National Foundation Day. National Foundation Day is held on February 11th and established since 1966.
-         */
-        if ($this->year >= 1966) {
-            $this->addHoliday(new Holiday(
-                'nationalFoundationDay',
-                ['en_US' => 'National Foundation Day', 'ja_JP' => '建国記念の日'],
-                new DateTime("$this->year-2-11", new DateTimeZone($this->timezone)),
-                $this->locale
-            ));
-        }
-
-        /**
-         * Showa Day. Showa Day is held on April 29th and established since 2007.
-         */
-        if ($this->year >= 2007) {
-            $this->addHoliday(new Holiday(
-                'showaDay',
-                ['en_US' => 'Showa Day', 'ja_JP' => '昭和の日'],
-                new DateTime("$this->year-4-29", new DateTimeZone($this->timezone)),
-                $this->locale
-            ));
-        }
-
-        /**
-         * Constitution Memorial Day. Constitution Memorial Day is held on May 3rd and established since 1948.
-         */
-        if ($this->year >= 1948) {
-            $this->addHoliday(new Holiday(
-                'constitutionMemorialDay',
-                ['en_US' => 'Constitution Memorial Day', 'ja_JP' => '憲法記念日'],
-                new DateTime("$this->year-5-3", new DateTimeZone($this->timezone)),
-                $this->locale
-            ));
-        }
-
-        /**
-         * Children's Day. Children's Day is held on May 5th and established since 1948.
-         */
-        if ($this->year >= 1948) {
-            $this->addHoliday(new Holiday(
-                'childrensDay',
-                ['en_US' => 'Children\'s Day', 'ja_JP' => 'こどもの日'],
-                new DateTime("$this->year-5-5", new DateTimeZone($this->timezone)),
-                $this->locale
-            ));
-        }
-
-        /**
-         * Mountain Day. Mountain Day is held on August 11th and established since 2016.
-         */
-        if ($this->year >= 2016) {
-            $this->addHoliday(new Holiday(
-                'mountainDay',
-                ['en_US' => 'Mountain Day', 'ja_JP' => '山の日'],
-                new DateTime("$this->year-8-11", new DateTimeZone($this->timezone)),
-                $this->locale
-            ));
-        }
-
-        /**
-         * Culture Day. Culture Day is held on November 11th and established since 1948.
-         */
-        if ($this->year >= 1948) {
-            $this->addHoliday(new Holiday(
-                'cultureDay',
-                ['en_US' => 'Culture Day', 'ja_JP' => '文化の日'],
-                new DateTime("$this->year-11-3", new DateTimeZone($this->timezone)),
-                $this->locale
-            ));
-        }
-
-        /**
-         * Labor Thanksgiving Day. Labor Thanksgiving Day is held on November 23rd and established since 1948.
-         */
-        if ($this->year >= 1948) {
-            $this->addHoliday(new Holiday(
-                'laborThanksgivingDay',
-                ['en_US' => 'Labor Thanksgiving Day', 'ja_JP' => '勤労感謝の日'],
-                new DateTime("$this->year-11-23", new DateTimeZone($this->timezone)),
-                $this->locale
-            ));
-        }
-
-        /**
-         * Emperors Birthday. The Emperors Birthday is on December 23rd and celebrated as such since 1989.
-         * Prior to the death of Emperor Hirohito in 1989, this holiday was celebrated on April 29. See also "Shōwa Day".
-         */
-        if ($this->year >= 1989) {
-            $this->addHoliday(new Holiday(
-                'emperorsBirthday',
-                ['en_US' => 'Emperors Birthday', 'ja_JP' => '天皇誕生日'],
-                new DateTime("$this->year-12-23", new DateTimeZone($this->timezone)),
-                $this->locale
-            ));
-        }
-
+        $this->calculateNationalFoundationDay();
+        $this->calculateShowaDay();
+        $this->calculateConstitutionMemorialDay();
+        $this->calculateChildrensDay();
+        $this->calculateMountainDay();
+        $this->calculateCultureDay();
+        $this->calculateLaborThanksgivingDay();
+        $this->calculateEmperorsBirthday();
         $this->calculateVernalEquinoxDay();
         $this->calculateComingOfAgeDay();
         $this->calculateGreeneryDay();
@@ -496,6 +407,158 @@ class Japan extends AbstractProvider
                     'ja_JP' => '国民の休日',
                 ], $bridgeDate, $this->locale));
             }
+        }
+    }
+
+    /**
+     * Emperors Birthday.
+     *
+     * The Emperors Birthday is on December 23rd and celebrated as such since 1989.
+     * Prior to the death of Emperor Hirohito in 1989, this holiday was celebrated on April 29.
+     * See also "Shōwa Day".
+     *
+     * @throws \InvalidArgumentException
+     */
+    private function calculateEmperorsBirthday()
+    {
+        if ($this->year >= 1989) {
+            $this->addHoliday(new Holiday(
+                'emperorsBirthday',
+                ['en_US' => 'Emperors Birthday', 'ja_JP' => '天皇誕生日'],
+                new DateTime("$this->year-12-23", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        }
+    }
+
+    /**
+     * National Foundation Day.
+     *
+     * National Foundation Day is held on February 11th and established since 1966.
+     *
+     * @throws \InvalidArgumentException
+     */
+    private function calculateNationalFoundationDay()
+    {
+        if ($this->year >= 1966) {
+            $this->addHoliday(new Holiday(
+                'nationalFoundationDay',
+                ['en_US' => 'National Foundation Day', 'ja_JP' => '建国記念の日'],
+                new DateTime("$this->year-2-11", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        }
+    }
+
+    /**
+     * Showa Day. Showa Day is held on April 29th and established since 2007.
+     *
+     * @throws \InvalidArgumentException
+     */
+    private function calculateShowaDay()
+    {
+        if ($this->year >= 2007) {
+            $this->addHoliday(new Holiday(
+                'showaDay',
+                ['en_US' => 'Showa Day', 'ja_JP' => '昭和の日'],
+                new DateTime("$this->year-4-29", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        }
+    }
+
+    /**
+     * Constitution Memorial Day.
+     *
+     * Constitution Memorial Day is held on May 3rd and established since 1948.
+     *
+     * @throws \InvalidArgumentException
+     */
+    private function calculateConstitutionMemorialDay()
+    {
+        if ($this->year >= 1948) {
+            $this->addHoliday(new Holiday(
+                'constitutionMemorialDay',
+                ['en_US' => 'Constitution Memorial Day', 'ja_JP' => '憲法記念日'],
+                new DateTime("$this->year-5-3", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        }
+    }
+
+    /**
+     * Children's Day.
+     *
+     * Children's Day is held on May 5th and established since 1948.
+     *
+     * @throws \InvalidArgumentException
+     */
+    private function calculateChildrensDay()
+    {
+        if ($this->year >= 1948) {
+            $this->addHoliday(new Holiday(
+                'childrensDay',
+                ['en_US' => 'Children\'s Day', 'ja_JP' => 'こどもの日'],
+                new DateTime("$this->year-5-5", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        }
+    }
+
+    /**
+     * Mountain Day.
+     *
+     * Mountain Day is held on August 11th and established since 2016.
+     *
+     * @throws \InvalidArgumentException
+     */
+    private function calculateMountainDay()
+    {
+        if ($this->year >= 2016) {
+            $this->addHoliday(new Holiday(
+                'mountainDay',
+                ['en_US' => 'Mountain Day', 'ja_JP' => '山の日'],
+                new DateTime("$this->year-8-11", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        }
+    }
+
+    /**
+     * Culture Day.
+     *
+     * Culture Day is held on November 11th and established since 1948.
+     *
+     * @throws \InvalidArgumentException
+     */
+    private function calculateCultureDay()
+    {
+        if ($this->year >= 1948) {
+            $this->addHoliday(new Holiday(
+                'cultureDay',
+                ['en_US' => 'Culture Day', 'ja_JP' => '文化の日'],
+                new DateTime("$this->year-11-3", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        }
+    }
+
+    /**
+     * Labor Thanksgiving Day.
+     *
+     * Labor Thanksgiving Day is held on November 23rd and established since 1948.
+     *
+     * @throws \InvalidArgumentException
+     */
+    private function calculateLaborThanksgivingDay()
+    {
+        if ($this->year >= 1948) {
+            $this->addHoliday(new Holiday(
+                'laborThanksgivingDay',
+                ['en_US' => 'Labor Thanksgiving Day', 'ja_JP' => '勤労感謝の日'],
+                new DateTime("$this->year-11-23", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
     }
 }
