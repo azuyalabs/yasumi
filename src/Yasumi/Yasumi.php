@@ -82,6 +82,7 @@ class Yasumi
         \DateTimeInterface $startDate,
         int $workingDays = 1
     ): \DateTimeInterface {
+
         // Setup start date, if its an instance of \DateTime, clone to prevent modification to original
         $date = $startDate instanceof \DateTime ? clone $startDate : $startDate;
 
@@ -278,6 +279,7 @@ class Yasumi
         \DateTimeInterface $startDate,
         int $workingDays = 1
     ): \DateTimeInterface {
+
         // Setup start date, if its an instance of \DateTime, clone to prevent modification to original
         $date = $startDate instanceof \DateTime ? clone $startDate : $startDate;
 
