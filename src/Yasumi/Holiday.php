@@ -15,7 +15,6 @@ namespace Yasumi;
 use DateTime;
 use InvalidArgumentException;
 use JsonSerializable;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 
 /**
@@ -99,11 +98,11 @@ class Holiday extends DateTime implements JsonSerializable
      * @throws \InvalidArgumentException
      */
     public function __construct(
-        $shortName,
+        string $shortName,
         array $names,
         \DateTimeInterface $date,
-        $displayLocale = self::DEFAULT_LOCALE,
-        $type = self::TYPE_OFFICIAL
+        string $displayLocale = self::DEFAULT_LOCALE,
+        string $type = self::TYPE_OFFICIAL
     ) {
         // Validate if short name is not empty
         if (empty($shortName)) {
@@ -157,7 +156,7 @@ class Holiday extends DateTime implements JsonSerializable
      * defined, the name in the default locale ('en_US') is returned. In case there is no translation at all, the short
      * internal name is returned.
      */
-    public function getName()
+    public function getName(): string
     {
         if (isset($this->translations[$this->displayLocale])) {
             return $this->translations[$this->displayLocale];
@@ -184,9 +183,9 @@ class Holiday extends DateTime implements JsonSerializable
     /**
      * Format the instance as a string using the set format.
      *
-     * @return string
+     * @return string this instance as a string using the set format.
      */
-    public function __toString()
+    public function __toString(): string
     {
         return (string)$this->format('Y-m-d');
     }
