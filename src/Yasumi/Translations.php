@@ -50,7 +50,7 @@ class Translations implements TranslationsInterface
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
-    public function loadTranslations($directoryPath)
+    public function loadTranslations(string $directoryPath)
     {
         if (! \file_exists($directoryPath)) {
             throw new InvalidArgumentException('Directory with translations not found');
@@ -93,7 +93,7 @@ class Translations implements TranslationsInterface
      *
      * @return true upon success, otherwise an UnknownLocaleException is thrown
      */
-    protected function isValidLocale($locale): bool
+    protected function isValidLocale(string $locale): bool
     {
         if (! \in_array($locale, $this->availableLocales, true)) {
             throw new UnknownLocaleException(\sprintf('Locale "%s" is not a valid locale.', $locale));
@@ -111,7 +111,7 @@ class Translations implements TranslationsInterface
      *
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
-    public function addTranslation($shortName, $locale, $translation)
+    public function addTranslation(string $shortName, string $locale, string $translation)
     {
         $this->isValidLocale($locale); // Validate the given locale
 
@@ -130,7 +130,7 @@ class Translations implements TranslationsInterface
      *
      * @return string|null translated holiday name
      */
-    public function getTranslation($shortName, $locale)
+    public function getTranslation(string $shortName, string $locale)
     {
         if (! \array_key_exists($shortName, $this->translations)) {
             return null;
@@ -150,7 +150,7 @@ class Translations implements TranslationsInterface
      *
      * @return array holiday name translations ['<locale>' => '<translation>', ...]
      */
-    public function getTranslations($shortName): array
+    public function getTranslations(string $shortName): array
     {
         if (! \array_key_exists($shortName, $this->translations)) {
             return [];
