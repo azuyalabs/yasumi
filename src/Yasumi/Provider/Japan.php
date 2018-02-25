@@ -437,13 +437,13 @@ class Japan extends AbstractProvider
             if (0 === (int)$date->format('w')) {
                 if ($this->year >= 2007) {
                     // Find next week day (not being another holiday)
-                    while (\in_array($substituteDay, $dates)) {
+                    while (\in_array($substituteDay, $dates, false)) {
                         $substituteDay->add(new DateInterval('P1D'));
                         continue;
                     }
                 } elseif ($date >= '1973-04-12') {
                     $substituteDay->add(new DateInterval('P1D'));
-                    if (\in_array($substituteDay, $dates)) {
+                    if (\in_array($substituteDay, $dates, false)) {
                         continue; // @codeCoverageIgnore
                     }
                 } else {
