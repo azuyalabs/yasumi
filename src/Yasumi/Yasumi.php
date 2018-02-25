@@ -121,7 +121,7 @@ class Yasumi
      *
      * @return AbstractProvider An instance of class $class is created and returned
      */
-    public static function create(string $class, int $year = null, string $locale = self::DEFAULT_LOCALE)
+    public static function create(string $class, int $year = null, string $locale = self::DEFAULT_LOCALE): ProviderInterface
     {
         // Find and return holiday provider instance
         $providerClass = \sprintf('Yasumi\Provider\%s', \str_replace('/', '\\', $class));
