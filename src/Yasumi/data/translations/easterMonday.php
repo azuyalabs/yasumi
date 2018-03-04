@@ -14,7 +14,7 @@
 return [
     'cs_CZ' => 'Velikonoční pondělí',
     'cy_GB' => 'Llun y Pasg',
-    'da_DK' => '2. Påskedag',
+    'da_DK' => '2. påskedag',
     'de_AT' => 'Ostermontag',
     'de_CH' => 'Ostermontag',
     'de_DE' => 'Ostermontag',

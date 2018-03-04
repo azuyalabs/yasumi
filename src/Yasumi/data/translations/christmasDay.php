@@ -15,7 +15,7 @@ return [
     'bs_Latn_BA' => 'Božić',
     'cs_CZ' => '1. svátek vánoční',
     'cy_GB' => 'Nadolig',
-    'da_DK' => '1. Juledag',
+    'da_DK' => 'Juledag',
     'de_AT' => 'Christtag',
     'de_CH' => 'Weihnachtstag',
     'de_DE' => '1. Weihnachtsfeiertag',

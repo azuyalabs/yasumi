@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Fixed
 - Fixed spelling issue in the Swedish translation. [\#97](https://github.com/azuyalabs/yasumi/pull/97)
+- Fixed spelling issues in the Danish translation. [\#96](https://github.com/azuyalabs/yasumi/pull/96)
 
 ### Removed
 
