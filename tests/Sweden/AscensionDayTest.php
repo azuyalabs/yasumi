@@ -50,7 +50,7 @@ class AscensionDayTest extends SwedenBaseTestCase implements YasumiTestCaseInter
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'Kristi himmelsfärds dag']
+            [self::LOCALE => 'Kristi himmelsfärdsdag']
         );
     }
 
