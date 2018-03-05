@@ -355,4 +355,98 @@ trait CommonHolidays
             $type
         );
     }
+
+    /**
+     * Calculates daylight saving time transitions.
+     *
+     * Daylight saving time is the practice of advancing clocks by one hour during summer months so evening daylight lasts even longer, while sacrificing normal sunrise times.
+     *
+     * The date of transition between standard time and daylight saving time differs from country to country and sometimes from year to year. Most countries outside Europe and North America do not observe daylight saving time.
+     *
+     * On the northern hemisphere, summer time starts around March/April. On the southern hemisphere it happens 6 months later.
+     *
+     * @param int    $year     the year for which Easter needs to be calculated
+     * @param string $timezone the timezone in which Easter is celebrated
+     * @param bool   $summer   whether to calculate the start of summer or winter time
+     */
+    protected function calculateSummerWinterTime($year, $timezone, $summer)
+    {
+        $zone = new DateTimeZone($timezone);
+
+        $transitions = $zone->getTransitions(mktime(0, 0, 0, 1, 1, $year), mktime(23, 59, 59, 12, 31, $year));
+
+        $transition = array_shift($transitions);
+        $dst = $transition['isdst'];
+
+        foreach ($transitions as $transition) {
+            if ($transition['isdst'] !== $dst && $transition['isdst'] === $summer) {
+                return new DateTime(substr($transition['time'], 0, 10), $zone);
+            }
+            $dst = $transition['isdst'];
+        }
+
+        return null;
+    }
+
+    /**
+     * The beginning of summer time.
+     *
+     * Summer time is also known as daylight save time.
+     *
+     * @param int    $year     the year for which summer time need to be created
+     * @param string $timezone the timezone in which summer time transition occurs
+     * @param string $locale   the locale for which summer time need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
+     *
+     * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
+     */
+    public function summerTime($year, $timezone, $locale, $type = Holiday::TYPE_SEASON)
+    {
+        $date = $this->calculateSummerWinterTime($year, $timezone, true);
+
+        if ($date) {
+            return new Holiday(
+                'summerTime',
+                [],
+                $date,
+                $locale,
+                $type
+            );
+        }
+    }
+
+    /**
+     * The beginning of winter time.
+     *
+     * Winter time is also known as standard time.
+     *
+     * @param int    $year     the year for which summer time need to be created
+     * @param string $timezone the timezone in which summer time transition occurs
+     * @param string $locale   the locale for which summer time need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
+     *
+     * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
+     */
+    public function winterTime($year, $timezone, $locale, $type = Holiday::TYPE_SEASON)
+    {
+        $date = $this->calculateSummerWinterTime($year, $timezone, false);
+
+        if ($date) {
+            return new Holiday(
+                'winterTime',
+                [],
+                $date,
+                $locale,
+                $type
+            );
+        }
+    }
 }

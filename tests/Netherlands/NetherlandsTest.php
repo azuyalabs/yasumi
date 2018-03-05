@@ -66,7 +66,8 @@ class NetherlandsTest extends NetherlandsBaseTestCase
      */
     public function testSeasonalHolidays()
     {
-        $this->assertDefinedHolidays(['summerTime', 'winterTime'], self::REGION, $this->year, Holiday::TYPE_SEASON);
+        $year = $this->generateRandomYear(1978, 2037);
+        $this->assertDefinedHolidays(['summerTime', 'winterTime'], self::REGION, $year, Holiday::TYPE_SEASON);
     }
 
     /**
