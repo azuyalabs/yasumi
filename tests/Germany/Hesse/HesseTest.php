@@ -32,11 +32,9 @@ class HesseTest extends HesseBaseTestCase
         $this->assertDefinedHolidays([
             'newYearsDay',
             'goodFriday',
-            'easter',
             'easterMonday',
             'internationalWorkersDay',
             'ascensionDay',
-            'pentecost',
             'pentecostMonday',
             'germanUnityDay',
             'christmasDay',
