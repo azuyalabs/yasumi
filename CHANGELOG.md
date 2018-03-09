@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Fixed
 - Fixed spelling issue in the Swedish translation. [\#97](https://github.com/azuyalabs/yasumi/pull/97)
+- Fixed German Easter Sunday and Pentecost Sunday holidays (not nationwide, only in Brandenburg). [\#100](https://github.com/azuyalabs/yasumi/pull/100)
 
 ### Removed
 
