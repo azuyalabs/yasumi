@@ -32,11 +32,9 @@ class ThuringiaTest extends ThuringiaBaseTestCase
         $holidays = [
             'newYearsDay',
             'goodFriday',
-            'easter',
             'easterMonday',
             'internationalWorkersDay',
             'ascensionDay',
-            'pentecost',
             'pentecostMonday',
             'christmasDay',
             'secondChristmasDay'

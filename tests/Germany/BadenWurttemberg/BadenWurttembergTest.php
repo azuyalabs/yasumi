@@ -32,11 +32,9 @@ class BadenWurttembergTest extends BadenWurttembergBaseTestCase
         $this->assertDefinedHolidays([
             'newYearsDay',
             'goodFriday',
-            'easter',
             'easterMonday',
             'internationalWorkersDay',
             'ascensionDay',
-            'pentecost',
             'pentecostMonday',
             'germanUnityDay',
             'christmasDay',

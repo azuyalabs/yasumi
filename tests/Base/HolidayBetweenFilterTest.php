@@ -132,6 +132,29 @@ class HolidayBetweenFilterTest extends PHPUnit_Framework_TestCase
         $this->assertNotEquals(\count($holidays), $between->count());
     }
 
+    /**
+     * Tests that BetweenFilter considers the date and ignores timezones and time of day.
+     */
+    public function testHolidaysBetweenDateRangeDifferentTimezone()
+    {
+        $holidays = Yasumi::create('Netherlands', 2016);
+
+        $timezones = ['Pacific/Honolulu', 'Europe/Amsterdam', 'Asia/Tokyo'];
+
+        foreach ($timezones as $timezone) {
+            $between = $holidays->between(
+                new DateTime('01/01/2016', new DateTimeZone($timezone)),
+                new DateTime('01/01/2016', new DateTimeZone($timezone))
+            );
+            $this->assertCount(1, $between);
+
+            $between = $holidays->between(
+                new DateTime('01/01/2016 23:59:59', new DateTimeZone($timezone)),
+                new DateTime('01/01/2016 23:59:59', new DateTimeZone($timezone))
+            );
+            $this->assertCount(1, $between);
+        }
+    }
 
     /**
      * Tests the BetweenFilter with date range where start and end date are exclusive of the comparison.

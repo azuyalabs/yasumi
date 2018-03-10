@@ -30,12 +30,12 @@ use Iterator;
 class BetweenFilter extends FilterIterator implements Countable
 {
     /**
-     * @var \DateTimeInterface start date of the time frame to check against
+     * @var string start date of the time frame to check against
      */
     private $start_date;
 
     /**
-     * @var \DateTimeInterface end date of the time frame to check against
+     * @var string end date of the time frame to check against
      */
     private $end_date;
 
@@ -61,8 +61,8 @@ class BetweenFilter extends FilterIterator implements Countable
     ) {
         parent::__construct($iterator);
         $this->equal      = $equal;
-        $this->start_date = $start_date;
-        $this->end_date   = $end_date;
+        $this->start_date = $start_date->format('Y-m-d');
+        $this->end_date   = $end_date->format('Y-m-d');
     }
 
     /**
@@ -70,7 +70,7 @@ class BetweenFilter extends FilterIterator implements Countable
      */
     public function accept(): bool
     {
-        $holiday = $this->getInnerIterator()->current();
+        $holiday = $this->getInnerIterator()->current()->format('Y-m-d');
 
         if ($this->equal && $holiday >= $this->start_date && $holiday <= $this->end_date) {
             return true;

@@ -32,11 +32,9 @@ class BavariaTest extends BavariaBaseTestCase
         $this->assertDefinedHolidays([
             'newYearsDay',
             'goodFriday',
-            'easter',
             'easterMonday',
             'internationalWorkersDay',
             'ascensionDay',
-            'pentecost',
             'pentecostMonday',
             'germanUnityDay',
             'christmasDay',

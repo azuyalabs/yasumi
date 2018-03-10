@@ -32,11 +32,9 @@ class SaxonyTest extends SaxonyBaseTestCase
         $holidays = [
             'newYearsDay',
             'goodFriday',
-            'easter',
             'easterMonday',
             'internationalWorkersDay',
             'ascensionDay',
-            'pentecost',
             'pentecostMonday',
             'christmasDay',
             'secondChristmasDay'
