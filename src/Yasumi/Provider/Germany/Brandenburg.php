@@ -42,6 +42,10 @@ class Brandenburg extends Germany
     {
         parent::initialize();
 
+        // Add specific Christian holidays
+        $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale));
+
         // Add custom Christian holidays
         $this->calculateReformationDay();
     }
