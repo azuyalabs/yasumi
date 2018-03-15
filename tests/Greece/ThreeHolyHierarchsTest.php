@@ -44,7 +44,7 @@ class ThreeHolyHierarchsTest extends GreeceBaseTestCase implements YasumiTestCas
      *
      * @return array list of test dates for the holiday defined in this test
      */
-    public function HolidayDataProvider()
+    public function HolidayDataProvider(): array
     {
         return $this->generateRandomDates(1, 30, self::TIMEZONE);
     }

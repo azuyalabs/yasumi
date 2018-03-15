@@ -44,7 +44,7 @@ class ImmaculateConceptionTest extends ItalyBaseTestCase implements YasumiTestCa
      *
      * @return array list of test dates for the day of Immaculate Conception
      */
-    public function ImmaculateConceptionDataProvider()
+    public function ImmaculateConceptionDataProvider(): array
     {
         return $this->generateRandomDates(12, 8, self::TIMEZONE);
     }

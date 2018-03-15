@@ -34,6 +34,7 @@ class Brandenburg extends Germany
     /**
      * Initialize holidays for Brandenburg (Germany).
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -41,6 +42,10 @@ class Brandenburg extends Germany
     public function initialize()
     {
         parent::initialize();
+
+        // Add specific Christian holidays
+        $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale));
 
         // Add custom Christian holidays
         $this->calculateReformationDay();
@@ -50,6 +55,7 @@ class Brandenburg extends Germany
      * For the German state of Brandenburg, Reformation Day was celebrated since 1517.
      * Note: In 2017 all German states will celebrate Reformation Day for its 500th anniversary.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */

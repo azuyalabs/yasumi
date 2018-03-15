@@ -44,7 +44,7 @@ class EpiphanyTest extends BadenWurttembergBaseTestCase implements YasumiTestCas
      *
      * @return array list of test dates for the day of the holiday defined in this test
      */
-    public function HolidayDataProvider()
+    public function HolidayDataProvider(): array
     {
         return $this->generateRandomDates(1, 6, self::TIMEZONE);
     }

@@ -25,7 +25,7 @@ interface TranslationsInterface
      *
      * @return string|null translated holiday name
      */
-    public function getTranslation($shortName, $locale);
+    public function getTranslation(string $shortName, string $locale);
 
     /**
      * Returns all available translations for holiday.
@@ -34,5 +34,5 @@ interface TranslationsInterface
      *
      * @return array holiday name translations ['<locale>' => '<translation>', ...]
      */
-    public function getTranslations($shortName);
+    public function getTranslations(string $shortName): array;
 }

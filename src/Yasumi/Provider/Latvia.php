@@ -65,6 +65,7 @@ class Latvia extends AbstractProvider
      * If the day is on the weekend the next Monday is a holiday.
      *
      * @throws \InvalidArgumentException
+     * @throws \TypeError
      */
     private function addRestorationOfIndependenceDay()
     {
@@ -98,6 +99,7 @@ class Latvia extends AbstractProvider
      * If the day is on the weekend the next Monday is a holiday.
      *
      * @throws \InvalidArgumentException
+     * @throws \TypeError
      */
     private function addProclamationDay()
     {

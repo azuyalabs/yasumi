@@ -44,7 +44,7 @@ class AssumptionOfMaryTest extends ItalyBaseTestCase implements YasumiTestCaseIn
      *
      * @return array list of test dates for the day of the Assumption of Mary
      */
-    public function AssumptionOfMaryDataProvider()
+    public function AssumptionOfMaryDataProvider(): array
     {
         return $this->generateRandomDates(8, 15, self::TIMEZONE);
     }

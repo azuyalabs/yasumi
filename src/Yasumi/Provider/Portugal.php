@@ -36,6 +36,7 @@ class Portugal extends AbstractProvider
     /**
      * Initialize holidays for Portugal.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -75,6 +76,7 @@ class Portugal extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Carnation_Revolution
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
@@ -95,6 +97,7 @@ class Portugal extends AbstractProvider
      * In Portugal, between 2013 andd 2015 (inclusive) this holiday did not happen due to government deliberation.
      * It was restored in 2016.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -119,6 +122,7 @@ class Portugal extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Portugal_Day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
@@ -149,6 +153,7 @@ class Portugal extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/5_October_1910_revolution
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
@@ -168,6 +173,7 @@ class Portugal extends AbstractProvider
      * In Portugal, between 2013 andd 2015 (inclusive) this holiday did not happen due to government deliberation.
      * It was restored in 2016.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
@@ -198,6 +204,7 @@ class Portugal extends AbstractProvider
      * @link https://pt.wikipedia.org/wiki/Restauração_da_Independência (portuguese link)
      * @link https://pt.wikipedia.org/wiki/Guerra_da_Restauração (english link)
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */

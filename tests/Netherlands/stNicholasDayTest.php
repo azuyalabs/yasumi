@@ -45,7 +45,7 @@ class stNicholasDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
      *
      * @return array list of test dates for Sint Nicholas Day
      */
-    public function stNicholasDayDataProvider()
+    public function stNicholasDayDataProvider(): array
     {
         return $this->generateRandomDates(12, 5, self::TIMEZONE);
     }

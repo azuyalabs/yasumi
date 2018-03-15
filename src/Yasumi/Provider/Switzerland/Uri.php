@@ -34,6 +34,7 @@ class Uri extends Switzerland
     /**
      * Initialize holidays for Uri (Switzerland).
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception

@@ -32,11 +32,9 @@ class RhinelandPalatinateTest extends RhinelandPalatinateBaseTestCase
         $this->assertDefinedHolidays([
             'newYearsDay',
             'goodFriday',
-            'easter',
             'easterMonday',
             'internationalWorkersDay',
             'ascensionDay',
-            'pentecost',
             'pentecostMonday',
             'germanUnityDay',
             'christmasDay',

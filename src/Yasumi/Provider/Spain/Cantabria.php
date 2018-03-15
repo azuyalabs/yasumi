@@ -41,6 +41,7 @@ class Cantabria extends Spain
     /**
      * Initialize holidays for Cantabria (Spain).
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -70,6 +71,7 @@ class Cantabria extends Spain
      *
      * @link http://www.timeanddate.com/holidays/spain/cantabria-day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */

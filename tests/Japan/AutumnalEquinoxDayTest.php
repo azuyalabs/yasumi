@@ -72,7 +72,7 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCase
      *
      * @return array list of Japanese Autumnal Equinox holidays
      */
-    public function autumnalEquinoxHolidaysProvider()
+    public function autumnalEquinoxHolidaysProvider(): array
     {
         return [
             [1951, 9, 24],

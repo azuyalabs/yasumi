@@ -52,7 +52,7 @@ class VictoryInEuropeDayTest extends SlovakiaBaseTestCase implements YasumiTestC
      *
      * @return array list of test dates for the holiday defined in this test
      */
-    public function HolidayDataProvider()
+    public function HolidayDataProvider(): array
     {
         return $this->generateRandomDates(5, 8, self::TIMEZONE);
     }

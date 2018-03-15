@@ -52,7 +52,7 @@ class SlovakNationalUprisingDayTest extends SlovakiaBaseTestCase implements Yasu
      *
      * @return array list of test dates for the holiday defined in this test
      */
-    public function HolidayDataProvider()
+    public function HolidayDataProvider(): array
     {
         return $this->generateRandomDates(8, 29, self::TIMEZONE);
     }

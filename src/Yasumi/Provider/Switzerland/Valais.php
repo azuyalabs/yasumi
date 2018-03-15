@@ -34,6 +34,7 @@ class Valais extends Switzerland
     /**
      * Initialize holidays for Valais (Switzerland).
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception

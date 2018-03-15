@@ -32,6 +32,7 @@ class Norway extends AbstractProvider
     /**
      * Initialize holidays for Norway.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -71,6 +72,7 @@ class Norway extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Store_Bededag
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */

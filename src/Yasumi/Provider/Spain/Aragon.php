@@ -39,6 +39,7 @@ class Aragon extends Spain
     /**
      * Initialize holidays for Aragon (Spain).
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception

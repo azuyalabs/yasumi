@@ -46,7 +46,7 @@ class StJosephDayTest extends ValaisBaseTestCase implements YasumiTestCaseInterf
      *
      * @return array list of test dates for St. Joseph's Day
      */
-    public function StJosephDayDataProvider()
+    public function StJosephDayDataProvider(): array
     {
         return $this->generateRandomDates(3, 19, self::TIMEZONE);
     }

@@ -24,7 +24,7 @@ use Yasumi\Translations;
  */
 class TranslationsTest extends PHPUnit_Framework_TestCase
 {
-    private $locales = [
+    const LOCALES = [
         'en_US',
         'nl_NL',
         'pl_PL',
@@ -35,7 +35,7 @@ class TranslationsTest extends PHPUnit_Framework_TestCase
      */
     public function testAddTranslation()
     {
-        $translations = new Translations($this->locales);
+        $translations = new Translations(self::LOCALES);
 
         $locale      = 'en_US';
         $shortName   = 'newYearsDay';
@@ -60,7 +60,7 @@ class TranslationsTest extends PHPUnit_Framework_TestCase
      */
     public function testAddMultipleTranslations()
     {
-        $translations = new Translations($this->locales);
+        $translations = new Translations(self::LOCALES);
 
         $firstLocale      = 'en_US';
         $firstShortName   = 'newYearsDay';
@@ -115,7 +115,7 @@ class TranslationsTest extends PHPUnit_Framework_TestCase
      */
     public function testAddTranslationUnknownLocaleException()
     {
-        $translations = new Translations($this->locales);
+        $translations = new Translations(self::LOCALES);
 
         $unknownLocale = 'en_XY';
         $shortName     = 'newYearsDay';
@@ -129,7 +129,7 @@ class TranslationsTest extends PHPUnit_Framework_TestCase
      */
     public function testNoTranslationForUnknownHoliday()
     {
-        $translations = new Translations($this->locales);
+        $translations = new Translations(self::LOCALES);
 
         $locale      = 'en_US';
         $shortName   = 'newYearsDay';
@@ -148,7 +148,7 @@ class TranslationsTest extends PHPUnit_Framework_TestCase
      */
     public function testNoTranslationForNotTranslatedLocale()
     {
-        $translations = new Translations($this->locales);
+        $translations = new Translations(self::LOCALES);
 
         $locale      = 'en_US';
         $shortName   = 'newYearsDay';
@@ -178,7 +178,7 @@ FILE;
 
         vfsStream::setup('root', null, ['lang' => [$shortName . '.php' => $fileContents]]);
 
-        $translations = new Translations($this->locales);
+        $translations = new Translations(self::LOCALES);
         $translations->loadTranslations(vfsStream::url('root/lang'));
 
         $locale      = 'en_US';
@@ -207,7 +207,7 @@ FILE;
 
         vfsStream::setup('root', null, ['lang' => [$shortName . '.translation' => $fileContents]]);
 
-        $translations = new Translations($this->locales);
+        $translations = new Translations(self::LOCALES);
         $translations->loadTranslations(vfsStream::url('root/lang'));
 
         $this->assertNotNull($translations->getTranslations($shortName));
@@ -232,7 +232,7 @@ FILE;
 
         vfsStream::setup('root', null, ['lang' => [$shortName . '.php' => $fileContents]]);
 
-        $translations = new Translations($this->locales);
+        $translations = new Translations(self::LOCALES);
         $translations->loadTranslations(vfsStream::url('root/lang'));
     }
 
@@ -245,7 +245,7 @@ FILE;
     {
         vfsStream::setup('root');
 
-        $translations = new Translations($this->locales);
+        $translations = new Translations(self::LOCALES);
         $translations->loadTranslations(vfsStream::url('root/lang'));
     }
 
@@ -280,7 +280,7 @@ FILE;
             ]
         ]);
 
-        $translations = new Translations($this->locales);
+        $translations = new Translations(self::LOCALES);
 
         $translations->loadTranslations(vfsStream::url('root/lang'));
 

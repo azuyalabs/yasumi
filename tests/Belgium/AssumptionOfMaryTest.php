@@ -44,7 +44,7 @@ class AssumptionOfMaryTest extends BelgiumBaseTestCase implements YasumiTestCase
      *
      * @return array list of test dates for the holiday defined in this test
      */
-    public function HolidayDataProvider()
+    public function HolidayDataProvider(): array
     {
         return $this->generateRandomDates(8, 15, self::TIMEZONE);
     }

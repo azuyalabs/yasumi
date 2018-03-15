@@ -33,6 +33,7 @@ class NewZealand extends AbstractProvider
     /**
      * Initialize holidays for New Zealand.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -65,6 +66,7 @@ class NewZealand extends AbstractProvider
      * @link http://www.timeanddate.com/holidays/new-zealand/day-after-new-years-day
      * @link http://employment.govt.nz/er/holidaysandleave/publicholidays/mondayisation.asp
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -104,8 +106,10 @@ class NewZealand extends AbstractProvider
      * @link https://en.wikipedia.org/wiki/Waitangi_Day
      * @link http://employment.govt.nz/er/holidaysandleave/publicholidays/mondayisation.asp
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \TypeError
      */
     public function calculateWaitangiDay()
     {
@@ -132,8 +136,10 @@ class NewZealand extends AbstractProvider
      * @link https://en.wikipedia.org/wiki/Anzac_Day
      * @link http://employment.govt.nz/er/holidaysandleave/publicholidays/mondayisation.asp
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \TypeError
      */
     public function calculateAnzacDay()
     {
@@ -163,6 +169,7 @@ class NewZealand extends AbstractProvider
      *
      * @link http://www.timeanddate.com/holidays/new-zealand/queen-birthday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
@@ -194,6 +201,7 @@ class NewZealand extends AbstractProvider
      *
      * @link http://www.timeanddate.com/holidays/new-zealand/labour-day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
@@ -221,6 +229,7 @@ class NewZealand extends AbstractProvider
      * @link http://www.timeanddate.com/holidays/new-zealand/christmas-day
      * @link http://employment.govt.nz/er/holidaysandleave/publicholidays/mondayisation.asp
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception

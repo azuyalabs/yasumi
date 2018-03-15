@@ -40,6 +40,7 @@ class BalearicIslands extends Spain
     /**
      * Initialize holidays for Balearic Islands (Spain).
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -67,6 +68,7 @@ class BalearicIslands extends Spain
      *
      * @link http://www.timeanddate.com/holidays/spain/the-balearic-islands-day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */

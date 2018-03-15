@@ -33,7 +33,7 @@ class ObservedHolidaysFilter extends FilterIterator implements Countable
      *
      * @return bool
      */
-    public function accept()
+    public function accept(): bool
     {
         return $this->getInnerIterator()->current()->getType() === Holiday::TYPE_OBSERVANCE;
     }
@@ -41,14 +41,14 @@ class ObservedHolidaysFilter extends FilterIterator implements Countable
     /**
      * @return integer Returns the number of filtered holidays.
      */
-    public function count()
+    public function count(): int
     {
-        $days = array_keys(iterator_to_array($this));
+        $days = \array_keys(\iterator_to_array($this));
 
-        array_walk($days, function (&$day) {
-            $day = str_replace('substituteHoliday:', '', $day);
+        \array_walk($days, function (&$day) {
+            $day = \str_replace('substituteHoliday:', '', $day);
         });
 
-        return count(array_unique($days));
+        return \count(\array_unique($days));
     }
 }

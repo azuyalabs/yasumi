@@ -44,7 +44,7 @@ class RestorationOfIndependenceDayTest extends LatviaBaseTestCase implements Yas
     /**
      * @return array
      */
-    public function holidayDataProvider()
+    public function holidayDataProvider(): array
     {
         return $this->generateRandomDatesWithHolidayMovedToMonday(
             5,

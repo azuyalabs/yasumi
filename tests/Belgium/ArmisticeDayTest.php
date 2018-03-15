@@ -44,7 +44,7 @@ class ArmisticeDayTest extends BelgiumBaseTestCase implements YasumiTestCaseInte
      *
      * @return array list of test dates for the holiday defined in this test
      */
-    public function HolidayDataProvider()
+    public function HolidayDataProvider(): array
     {
         return $this->generateRandomDates(11, 11, self::TIMEZONE);
     }

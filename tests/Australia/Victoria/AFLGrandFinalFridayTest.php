@@ -88,7 +88,7 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements YasumiTest
      *
      * @return array list of test dates for the holiday defined in this test
      */
-    public function HolidayDataProvider()
+    public function HolidayDataProvider(): array
     {
         $data = [
             [2015, '2015-10-02'],

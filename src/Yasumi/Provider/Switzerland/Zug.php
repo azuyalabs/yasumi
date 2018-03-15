@@ -34,6 +34,7 @@ class Zug extends Switzerland
     /**
      * Initialize holidays for Zug (Switzerland).
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
