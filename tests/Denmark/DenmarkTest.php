@@ -49,7 +49,12 @@ class DenmarkTest extends DenmarkBaseTestCase
      */
     public function testObservedHolidays()
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays([
+            'internationalWorkersDay',
+            'constitutionDay',
+            'christmasEve',
+            'newYearsEve',
+        ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**
@@ -57,7 +62,8 @@ class DenmarkTest extends DenmarkBaseTestCase
      */
     public function testSeasonalHolidays()
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
+        $year = $this->generateRandomYear(1980, 2037);
+        $this->assertDefinedHolidays(['summerTime', 'winterTime'], self::REGION, $year, Holiday::TYPE_SEASON);
     }
 
     /**
@@ -81,6 +87,6 @@ class DenmarkTest extends DenmarkBaseTestCase
      */
     protected function setUp()
     {
-        $this->year = $this->generateRandomYear(1686);
+        $this->year = $this->generateRandomYear(1849);
     }
 }

@@ -24,6 +24,37 @@ use Yasumi\Holiday;
 trait CommonHolidays
 {
     /**
+     * New Year's Eve.
+     *
+     * New Year's Eve is observed on December 31, the last day of the year on the modern Gregorian calendar as well as
+     * the Julian calendar. In present day, with most countries now using the Gregorian calendar as their de facto calendar,
+     * New Year's Eve is probably the most celebrated holiday, often observed with fireworks at the stroke of midnight as
+     * the new year starts in each time zone.
+     *
+     * @link http://en.wikipedia.org/wiki/New_Year%27s_Eve
+     *
+     * @param int    $year     the year for which New Year's Eve need to be created
+     * @param string $timezone the timezone in which New Year's Eve is celebrated
+     * @param string $locale   the locale for which New Year's Eve need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
+     *
+     * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
+     */
+    public function newYearsEve(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday('newYearsEve', [], new DateTime("$year-12-31", new DateTimeZone($timezone)), $locale, $type);
+    }
+
+    /**
      * New Year's Day.
      *
      * New Year's Day is observed on January 1, the first day of the year on the modern Gregorian calendar as well as

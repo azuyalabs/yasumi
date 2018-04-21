@@ -70,7 +70,7 @@ class Norway extends AbstractProvider
      * coalition with Sweden, proceeded by nearly 400 years of Danish rule. The Norwegian Parliament, known as
      * Stortinget, held the first May 17 celebrations in 1836, and since it has been regarded as Norway’s National Day.
      *
-     * @link https://en.wikipedia.org/wiki/Store_Bededag
+     * @link https://en.wikipedia.org/wiki/Norwegian_Constitution_Day
      *
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException

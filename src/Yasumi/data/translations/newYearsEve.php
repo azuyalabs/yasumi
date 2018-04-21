@@ -10,9 +10,9 @@
  * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-// Translations for daylight saving time start.
+// Translations for New Year's Eve
 return [
-    'da_DK' => 'Sommertid starter',
-    'en_US' => 'Summertime',
-    'nl_NL' => 'Zomertijd',
+    'en_US' => 'New Year\'s Eve',
+    'da_DK' => 'Nytårsaften',
+    'lv_LV' => 'Vecgada vakars'
 ];
