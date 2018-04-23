@@ -12,7 +12,7 @@
 
 // Translations for Whitmonday
 return [
-    'da_DK' => '2. Pinsedag',
+    'da_DK' => '2. pinsedag',
     'de_AT' => 'Pfingstmontag',
     'de_CH' => 'Pfingstmontag',
     'de_DE' => 'Pfingstmontag',
