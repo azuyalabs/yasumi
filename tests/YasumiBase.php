@@ -123,14 +123,11 @@ trait YasumiBase
      */
     public function assertNotHoliday($provider, $shortName, $year)
     {
-        $this->expectException(\TypeError::class);
-
         $holidays = Yasumi::create($provider, $year);
         $holiday  = $holidays->getHoliday($shortName);
 
         $this->assertInstanceOf('Yasumi\Provider\\' . \str_replace('/', '\\', $provider), $holidays);
         $this->assertNull($holiday);
-        $this->assertFalse($holidays->isHoliday($holiday));
 
         unset($holiday, $holidays);
     }
