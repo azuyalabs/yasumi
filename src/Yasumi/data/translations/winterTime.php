@@ -12,6 +12,7 @@
 
 // Translations for daylight saving time end.
 return [
+    'da_DK' => 'Sommertid slutter',
     'en_US' => 'Wintertime',
     'nl_NL' => 'Wintertijd',
 ];

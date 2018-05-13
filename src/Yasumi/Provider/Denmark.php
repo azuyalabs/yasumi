@@ -55,9 +55,21 @@ class Denmark extends AbstractProvider
         $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
-
-        // Calculate other holidays
         $this->calculateGreatPrayerDay();
+
+        $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->newYearsEve($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->calculateConstitutionDay();
+
+        $summerTime = $this->summerTime($this->year, $this->timezone, $this->locale);
+        if ($summerTime) {
+            $this->addHoliday($summerTime);
+        }
+        $winterTime = $this->winterTime($this->year, $this->timezone, $this->locale);
+        if ($winterTime) {
+            $this->addHoliday($winterTime);
+        }
     }
 
     /**
@@ -86,6 +98,34 @@ class Denmark extends AbstractProvider
                 ['da_DK' => 'Store bededag'],
                 new DateTime("fourth friday $easter", new DateTimeZone($this->timezone)),
                 $this->locale
+            ));
+        }
+    }
+
+    /**
+     * Constitution Day
+     *
+     * Denmark’s Constitution Day is June 5 and commemorates the signing of Denmark's constitution
+     * on June 5 1849, when Denmark peacefully became as a constitutional monarchy.
+     *
+     * While not a public holiday, some companies and public offices are closed. Traditionally,
+     * members of parliament gives political speeches around the country.
+     *
+     * @link https://en.wikipedia.org/wiki/Constitution_Day_(Denmark)
+     *
+     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     */
+    public function calculateConstitutionDay()
+    {
+        if ($this->year >= 1849) {
+            $this->addHoliday(new Holiday(
+                'constitutionDay',
+                ['da_DK' => 'Grundlovsdag'],
+                new DateTime("$this->year-6-5", new DateTimeZone($this->timezone)),
+                $this->locale,
+                Holiday::TYPE_OBSERVANCE
             ));
         }
     }

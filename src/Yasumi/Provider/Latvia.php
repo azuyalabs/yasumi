@@ -57,7 +57,7 @@ class Latvia extends AbstractProvider
         $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale, Holiday::TYPE_OFFICIAL));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
-        $this->addNewYearsEve();
+        $this->addHoliday($this->newYearsEve($this->year, $this->timezone, $this->locale));
     }
 
     /**
@@ -115,16 +115,5 @@ class Latvia extends AbstractProvider
                 'lv_LV' => 'Latvijas Republikas proklamēšanas diena'
             ], $date));
         }
-    }
-
-    /**
-     * @throws \InvalidArgumentException
-     */
-    private function addNewYearsEve()
-    {
-        $this->addHoliday(new Holiday('newYearsEve', [
-            'en_US' => 'New Year\'s Eve',
-            'lv_LV' => 'Vecgada vakars'
-        ], new \DateTime("{$this->year}-12-31", new \DateTimeZone($this->timezone))));
     }
 }
