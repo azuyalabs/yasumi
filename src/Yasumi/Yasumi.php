@@ -199,7 +199,7 @@ class Yasumi
         $availableProviders = self::getProviders();
 
         if (false === isset($availableProviders[$iso3166_2])) {
-            throw new UnknownIso31662Exception(\sprintf(
+            throw new ProviderNotFoundException(\sprintf(
                 'Unable to find holiday provider by ISO3166-2 "%s".',
                 $iso3166_2
             ));
