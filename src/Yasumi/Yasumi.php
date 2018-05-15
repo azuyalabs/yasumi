@@ -116,10 +116,10 @@ class Yasumi
      * @param string $locale The locale to use. If empty we'll use the default locale (en_US)
      *
      * @throws \ReflectionException
-     * @throws RuntimeException         If no such holiday provider is found
-     * @throws InvalidArgumentException if the year parameter is not between 1000 and 9999
-     * @throws UnknownLocaleException   if the locale parameter is invalid
-     * @throws InvalidArgumentException if the holiday provider for the given country does not exist
+     * @throws RuntimeException          If no such holiday provider is found
+     * @throws InvalidYearException      if the year parameter is not between 1000 and 9999
+     * @throws UnknownLocaleException    if the locale parameter is invalid
+     * @throws ProviderNotFoundException if the holiday provider for the given country does not exist
      *
      * @return AbstractProvider An instance of class $class is created and returned
      */
@@ -183,10 +183,10 @@ class Yasumi
      * @param string $locale    The locale to use. If empty we'll use the default locale (en_US)
      *
      * @throws \ReflectionException
-     * @throws RuntimeException         If no such holiday provider is found
-     * @throws InvalidArgumentException if the year parameter is not between 1000 and 9999
-     * @throws UnknownLocaleException   if the locale parameter is invalid
-     * @throws InvalidArgumentException if the holiday provider for the given ISO3166-2 code does not exist
+     * @throws RuntimeException          If no such holiday provider is found
+     * @throws InvalidArgumentException  if the year parameter is not between 1000 and 9999
+     * @throws UnknownLocaleException    if the locale parameter is invalid
+     * @throws ProviderNotFoundException if the holiday provider for the given ISO3166-2 code does not exist
      *
      * @return AbstractProvider An instance of class $class is created and returned
      */
