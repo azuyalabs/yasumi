@@ -20,7 +20,6 @@ use ReflectionClass;
 use RuntimeException;
 use Yasumi\Exception\InvalidYearException;
 use Yasumi\Exception\ProviderNotFoundException;
-use Yasumi\Exception\UnknownIso31662Exception;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Provider\AbstractProvider;
 
