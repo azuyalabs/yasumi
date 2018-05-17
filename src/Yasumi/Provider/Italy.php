@@ -32,6 +32,7 @@ class Italy extends AbstractProvider
     /**
      * Initialize holidays for Italy.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -70,6 +71,7 @@ class Italy extends AbstractProvider
      *
      * @link http://en.wikipedia.org/wiki/Liberation_Day_%28Italy%29
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
@@ -95,6 +97,7 @@ class Italy extends AbstractProvider
      *
      * @link http://en.wikipedia.org/wiki/Festa_della_Repubblica
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */

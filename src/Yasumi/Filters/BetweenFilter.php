@@ -30,12 +30,12 @@ use Iterator;
 class BetweenFilter extends FilterIterator implements Countable
 {
     /**
-     * @var \DateTimeInterface start date of the time frame to check against
+     * @var string start date of the time frame to check against
      */
     private $start_date;
 
     /**
-     * @var \DateTimeInterface end date of the time frame to check against
+     * @var string end date of the time frame to check against
      */
     private $end_date;
 
@@ -61,16 +61,16 @@ class BetweenFilter extends FilterIterator implements Countable
     ) {
         parent::__construct($iterator);
         $this->equal      = $equal;
-        $this->start_date = $start_date;
-        $this->end_date   = $end_date;
+        $this->start_date = $start_date->format('Y-m-d');
+        $this->end_date   = $end_date->format('Y-m-d');
     }
 
     /**
      * @return bool Check whether the current element of the iterator is acceptable
      */
-    public function accept()
+    public function accept(): bool
     {
-        $holiday = $this->getInnerIterator()->current();
+        $holiday = $this->getInnerIterator()->current()->format('Y-m-d');
 
         if ($this->equal && $holiday >= $this->start_date && $holiday <= $this->end_date) {
             return true;
@@ -82,14 +82,14 @@ class BetweenFilter extends FilterIterator implements Countable
     /**
      * @return integer Returns the number of holidays between the given start and end date.
      */
-    public function count()
+    public function count(): int
     {
-        $days = array_keys(iterator_to_array($this));
+        $days = \array_keys(\iterator_to_array($this));
 
-        array_walk($days, function (&$day) {
-            $day = str_replace('substituteHoliday:', '', $day);
+        \array_walk($days, function (&$day) {
+            $day = \str_replace('substituteHoliday:', '', $day);
         });
 
-        return count(array_unique($days));
+        return \count(\array_unique($days));
     }
 }

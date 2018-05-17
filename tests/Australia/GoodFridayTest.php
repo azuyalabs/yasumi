@@ -50,8 +50,9 @@ class GoodFridayTest extends AustraliaBaseTestCase implements YasumiTestCaseInte
      * Returns a list of test dates
      *
      * @return array list of test dates for the holiday defined in this test
+     * @throws \Exception
      */
-    public function HolidayDataProvider()
+    public function HolidayDataProvider(): array
     {
         $data = [];
 

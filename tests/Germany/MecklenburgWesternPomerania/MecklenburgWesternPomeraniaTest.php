@@ -32,11 +32,9 @@ class MecklenburgWesternPomeraniaTest extends MecklenburgWesternPomeraniaBaseTes
         $holidays = [
             'newYearsDay',
             'goodFriday',
-            'easter',
             'easterMonday',
             'internationalWorkersDay',
             'ascensionDay',
-            'pentecost',
             'pentecostMonday',
             'christmasDay',
             'secondChristmasDay'

@@ -15,7 +15,6 @@ namespace Yasumi\tests\Base;
 use Faker\Factory;
 use InvalidArgumentException;
 use PHPUnit_Framework_TestCase;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\tests\YasumiBase;
 use Yasumi\Yasumi;
 
@@ -79,7 +78,7 @@ class YasumiTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Tests that classes that Yasumi allows external classes that extend the ProviderInterface.
+     * Tests that Yasumi allows external classes that extend the ProviderInterface.
      */
     public function testCreateWithAbstractExtension()
     {
@@ -370,13 +369,12 @@ class YasumiTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Tests that the isHoliday function throws an InvalidDateException when the given argument is not an instance that
+     * Tests that the isHoliday function throws a TypeError when the given argument is not an instance that
      * implements the DateTimeInterface (e.g. DateTime or DateTimeImmutable)
-     *
      */
     public function testIsHolidayException()
     {
-        $this->expectException(InvalidDateException::class);
+        $this->expectException(\TypeError::class);
 
         Yasumi::create('Spain', Factory::create()->numberBetween(
             self::YEAR_LOWER_BOUND,
@@ -435,14 +433,14 @@ class YasumiTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Tests that the isWorkingDay function throws an InvalidDateException when the given argument is not an instance
+     * Tests that the isWorkingDay function throws a TypeError when the given argument is not an instance
      * that implements the DateTimeInterface (e.g. DateTime or DateTimeImmutable)
      *
      * @TODO Add additional unit tests for those holiday providers that differ from the global definition
      */
     public function testIsWorkingDayException()
     {
-        $this->expectException(InvalidDateException::class);
+        $this->expectException(\TypeError::class);
 
         Yasumi::create('SouthAfrica', Factory::create()->numberBetween(
             self::YEAR_LOWER_BOUND,

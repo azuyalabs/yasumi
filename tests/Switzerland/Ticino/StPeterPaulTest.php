@@ -44,7 +44,7 @@ class StPeterPaulTest extends TicinoBaseTestCase implements YasumiTestCaseInterf
      *
      * @return array list of test dates for Feast of Saints Peter and Paul
      */
-    public function StPeterPaulDataProvider()
+    public function StPeterPaulDataProvider(): array
     {
         return $this->generateRandomDates(6, 29, self::TIMEZONE);
     }

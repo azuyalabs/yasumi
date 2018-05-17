@@ -31,7 +31,7 @@ class InternationalWorkersDayTest extends EstoniaBaseTestCase implements YasumiT
     /**
      * @return array
      */
-    public function holidayDataProvider()
+    public function holidayDataProvider(): array
     {
         return $this->generateRandomDates(5, 1, self::TIMEZONE);
     }

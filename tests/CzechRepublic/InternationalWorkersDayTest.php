@@ -69,7 +69,7 @@ class InternationalWorkersDayTest extends CzechRepublicBaseTestCase implements Y
      *
      * @return array list of test dates for the holiday defined in this test
      */
-    public function HolidayDataProvider()
+    public function HolidayDataProvider(): array
     {
         return $this->generateRandomDates(5, 1, self::TIMEZONE);
     }

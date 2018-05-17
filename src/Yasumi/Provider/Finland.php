@@ -33,6 +33,7 @@ class Finland extends AbstractProvider
     /**
      * Initialize holidays for Finland.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -76,6 +77,7 @@ class Finland extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Midsummer#Finland
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
@@ -118,6 +120,7 @@ class Finland extends AbstractProvider
      * @link https://en.wikipedia.org/wiki/All_Saints%27_Day
      * @link https://fi.wikipedia.org/wiki/Pyh%C3%A4inp%C3%A4iv%C3%A4
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -150,6 +153,7 @@ class Finland extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Independence_Day_(Finland)
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */

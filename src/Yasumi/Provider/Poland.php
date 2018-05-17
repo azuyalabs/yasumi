@@ -32,6 +32,7 @@ class Poland extends AbstractProvider
     /**
      * Initialize holidays for Poland.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -70,6 +71,7 @@ class Poland extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/May_3rd_Constitution_Day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
@@ -96,6 +98,7 @@ class Poland extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/National_Independence_Day_(Poland)
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */

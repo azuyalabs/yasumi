@@ -34,6 +34,7 @@ class Grisons extends Switzerland
     /**
      * Initialize holidays for Grisons (Switzerland).
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception

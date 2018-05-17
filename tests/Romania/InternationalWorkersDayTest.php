@@ -65,7 +65,7 @@ class InternationalWorkersDayTest extends RomaniaBaseTestCase implements YasumiT
      *
      * @return array list of test dates for International Workers' Day
      */
-    public function InternationalWorkersDayDataProvider()
+    public function InternationalWorkersDayDataProvider(): array
     {
         return $this->generateRandomDates(5, 1, self::TIMEZONE);
     }

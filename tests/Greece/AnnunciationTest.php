@@ -44,7 +44,7 @@ class AnnunciationTest extends GreeceBaseTestCase implements YasumiTestCaseInter
      *
      * @return array list of test dates for the holiday defined in this test
      */
-    public function HolidayDataProvider()
+    public function HolidayDataProvider(): array
     {
         return $this->generateRandomDates(3, 25, self::TIMEZONE);
     }

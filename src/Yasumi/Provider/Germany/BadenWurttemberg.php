@@ -35,6 +35,7 @@ class BadenWurttemberg extends Germany
     /**
      * Initialize holidays for Baden-Württemberg (Germany).
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception

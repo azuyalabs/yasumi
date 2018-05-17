@@ -32,7 +32,17 @@ class SummertimeTest extends NetherlandsBaseTestCase implements YasumiTestCaseIn
      */
     public function testSummertime()
     {
-        $year = $this->generateRandomYear();
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(1946, 1976));
+
+        $year = $this->generateRandomYear(1977, 1980);
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("first sunday of april $year", new DateTimeZone(self::TIMEZONE))
+        );
+
+        $year = $this->generateRandomYear(1981, 2036);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -49,7 +59,7 @@ class SummertimeTest extends NetherlandsBaseTestCase implements YasumiTestCaseIn
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            $this->generateRandomYear(1978, 2037),
             [self::LOCALE => 'Zomertijd']
         );
     }
@@ -59,6 +69,6 @@ class SummertimeTest extends NetherlandsBaseTestCase implements YasumiTestCaseIn
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_SEASON);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(1978, 2037), Holiday::TYPE_SEASON);
     }
 }

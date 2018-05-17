@@ -36,6 +36,7 @@ class Obwalden extends Switzerland
     /**
      * Initialize holidays for Obwalden (Switzerland).
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -70,6 +71,7 @@ class Obwalden extends Switzerland
      *
      * @link http://www.lebendigetraditionen.ch/traditionen/00210/index.html?lang=en
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */

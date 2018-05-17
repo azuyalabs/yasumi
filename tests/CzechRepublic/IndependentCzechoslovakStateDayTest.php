@@ -44,7 +44,7 @@ class IndependentCzechoslovakStateDayTest extends CzechRepublicBaseTestCase impl
      *
      * @return array list of test dates for the holiday defined in this test
      */
-    public function HolidayDataProvider()
+    public function HolidayDataProvider(): array
     {
         return $this->generateRandomDates(10, 28, self::TIMEZONE);
     }

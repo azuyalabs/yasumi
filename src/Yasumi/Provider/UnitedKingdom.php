@@ -34,6 +34,7 @@ class UnitedKingdom extends AbstractProvider
     /**
      * Initialize holidays for the United Kingdom.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -66,6 +67,7 @@ class UnitedKingdom extends AbstractProvider
      * @link https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom
      * @link http://www.timeanddate.com/holidays/uk/new-year-day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
@@ -84,7 +86,7 @@ class UnitedKingdom extends AbstractProvider
         $newYearsDay = new DateTime("$this->year-01-01", new DateTimeZone($this->timezone));
 
         // If New Years Day falls on a Saturday or Sunday, it is observed the next Monday (January 2nd or 3rd)
-        if (in_array((int)$newYearsDay->format('w'), [0, 6], true)) {
+        if (\in_array((int)$newYearsDay->format('w'), [0, 6], true)) {
             $newYearsDay->modify('next monday');
         }
 
@@ -103,6 +105,7 @@ class UnitedKingdom extends AbstractProvider
      *
      * @link http://www.timeanddate.com/holidays/uk/early-may-bank-holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
@@ -133,6 +136,7 @@ class UnitedKingdom extends AbstractProvider
      * @link http://www.timeanddate.com/holidays/uk/spring-bank-holiday
      * @link https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
@@ -163,6 +167,7 @@ class UnitedKingdom extends AbstractProvider
      * @link https://www.timeanddate.com/holidays/uk/summer-bank-holiday
      * @link https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */
@@ -199,6 +204,7 @@ class UnitedKingdom extends AbstractProvider
      * @link http://www.timeanddate.com/holidays/uk/christmas-day
      * @link http://www.timeanddate.com/holidays/uk/boxing-day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -214,7 +220,7 @@ class UnitedKingdom extends AbstractProvider
         $substituteChristmasDay = clone $christmasDay;
         $substituteBoxingDay    = clone $boxingDay;
 
-        if (in_array((int)$christmasDay->format('w'), [0, 6], true)) {
+        if (\in_array((int)$christmasDay->format('w'), [0, 6], true)) {
             $substituteChristmasDay->add(new DateInterval('P2D'));
             $this->addHoliday(new Holiday(
                 'substituteHoliday:christmasDay',
@@ -225,7 +231,7 @@ class UnitedKingdom extends AbstractProvider
             ));
         }
 
-        if (in_array((int)$boxingDay->format('w'), [0, 6], true)) {
+        if (\in_array((int)$boxingDay->format('w'), [0, 6], true)) {
             $substituteBoxingDay->add(new DateInterval('P2D'));
             $this->addHoliday(new Holiday(
                 'substituteHoliday:secondChristmasDay',

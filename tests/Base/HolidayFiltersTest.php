@@ -39,7 +39,7 @@ class HolidayFiltersTest extends PHPUnit_Framework_TestCase
         $holidays = Yasumi::create('Ireland', 2018);
 
         $filteredHolidays      = new OfficialHolidaysFilter($holidays->getIterator());
-        $filteredHolidaysArray = iterator_to_array($filteredHolidays);
+        $filteredHolidaysArray = \iterator_to_array($filteredHolidays);
 
         // Assert array definitions
         $this->assertArrayHasKey('newYearsDay', $filteredHolidaysArray);
@@ -58,9 +58,9 @@ class HolidayFiltersTest extends PHPUnit_Framework_TestCase
 
         // Assert number of results returned
         $this->assertCount(10, $filteredHolidays);
-        $this->assertNotCount(count($holidays), $filteredHolidays);
+        $this->assertNotCount(\count($holidays), $filteredHolidays);
         $this->assertEquals(10, $filteredHolidays->count());
-        $this->assertNotEquals(count($holidays), $filteredHolidays->count());
+        $this->assertNotEquals(\count($holidays), $filteredHolidays->count());
     }
 
     /**
@@ -72,7 +72,7 @@ class HolidayFiltersTest extends PHPUnit_Framework_TestCase
         $holidays = Yasumi::create('Ireland', 2018);
 
         $filteredHolidays      = new ObservedHolidaysFilter($holidays->getIterator());
-        $filteredHolidaysArray = iterator_to_array($filteredHolidays);
+        $filteredHolidaysArray = \iterator_to_array($filteredHolidays);
 
         // Assert array definitions
         $this->assertArrayNotHasKey('newYearsDay', $filteredHolidaysArray);
@@ -91,9 +91,9 @@ class HolidayFiltersTest extends PHPUnit_Framework_TestCase
 
         // Assert number of results returned
         $this->assertCount(2, $filteredHolidays);
-        $this->assertNotCount(count($holidays), $filteredHolidays);
+        $this->assertNotCount(\count($holidays), $filteredHolidays);
         $this->assertEquals(2, $filteredHolidays->count());
-        $this->assertNotEquals(count($holidays), $filteredHolidays->count());
+        $this->assertNotEquals(\count($holidays), $filteredHolidays->count());
     }
 
     /**
@@ -105,7 +105,7 @@ class HolidayFiltersTest extends PHPUnit_Framework_TestCase
         $holidays = Yasumi::create('Ireland', 2018);
 
         $filteredHolidays      = new BankHolidaysFilter($holidays->getIterator());
-        $filteredHolidaysArray = iterator_to_array($filteredHolidays);
+        $filteredHolidaysArray = \iterator_to_array($filteredHolidays);
 
         // Assert array definitions
         $this->assertArrayNotHasKey('newYearsDay', $filteredHolidaysArray);
@@ -124,9 +124,9 @@ class HolidayFiltersTest extends PHPUnit_Framework_TestCase
 
         // Assert number of results returned
         $this->assertCount(0, $filteredHolidays);
-        $this->assertNotCount(count($holidays), $filteredHolidays);
+        $this->assertNotCount(\count($holidays), $filteredHolidays);
         $this->assertEquals(0, $filteredHolidays->count());
-        $this->assertNotEquals(count($holidays), $filteredHolidays->count());
+        $this->assertNotEquals(\count($holidays), $filteredHolidays->count());
     }
 
     /**
@@ -137,7 +137,7 @@ class HolidayFiltersTest extends PHPUnit_Framework_TestCase
         $holidays = Yasumi::create('Netherlands', 2017);
 
         $filteredHolidays      = new SeasonalHolidaysFilter($holidays->getIterator());
-        $filteredHolidaysArray = iterator_to_array($filteredHolidays);
+        $filteredHolidaysArray = \iterator_to_array($filteredHolidays);
 
         // Assert array definitions
         $this->assertArrayHasKey('summerTime', $filteredHolidaysArray);
@@ -171,9 +171,9 @@ class HolidayFiltersTest extends PHPUnit_Framework_TestCase
 
         // Assert number of results returned
         $this->assertCount(2, $filteredHolidays);
-        $this->assertNotCount(count($holidays), $filteredHolidays);
+        $this->assertNotCount(\count($holidays), $filteredHolidays);
         $this->assertEquals(2, $filteredHolidays->count());
-        $this->assertNotEquals(count($holidays), $filteredHolidays->count());
+        $this->assertNotEquals(\count($holidays), $filteredHolidays->count());
     }
 
     /**
@@ -184,7 +184,7 @@ class HolidayFiltersTest extends PHPUnit_Framework_TestCase
         $holidays = Yasumi::create('Netherlands', 2017);
 
         $filteredHolidays      = new OtherHolidaysFilter($holidays->getIterator());
-        $filteredHolidaysArray = iterator_to_array($filteredHolidays);
+        $filteredHolidaysArray = \iterator_to_array($filteredHolidays);
 
         // Assert array definitions
         $this->assertArrayHasKey('internationalWorkersDay', $filteredHolidaysArray);
@@ -218,8 +218,8 @@ class HolidayFiltersTest extends PHPUnit_Framework_TestCase
 
         // Assert number of results returned
         $this->assertCount(7, $filteredHolidays);
-        $this->assertNotCount(count($holidays), $filteredHolidays);
+        $this->assertNotCount(\count($holidays), $filteredHolidays);
         $this->assertEquals(7, $filteredHolidays->count());
-        $this->assertNotEquals(count($holidays), $filteredHolidays->count());
+        $this->assertNotEquals(\count($holidays), $filteredHolidays->count());
     }
 }

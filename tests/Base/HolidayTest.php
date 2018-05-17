@@ -54,8 +54,8 @@ class HolidayTest extends PHPUnit_Framework_TestCase
     public function testHolidayIsJsonSerializable()
     {
         $holiday  = new Holiday('testHoliday', [], new DateTime(), 'en_US');
-        $json     = json_encode($holiday);
-        $instance = json_decode($json, true);
+        $json     = \json_encode($holiday);
+        $instance = \json_decode($json, true);
 
         $this->assertInternalType('array', $instance);
         $this->assertNotNull($instance);

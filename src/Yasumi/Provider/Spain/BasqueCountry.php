@@ -39,6 +39,7 @@ class BasqueCountry extends Spain
     /**
      * Initialize holidays for Basque Country (Spain).
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -67,6 +68,7 @@ class BasqueCountry extends Spain
      *
      * @link http://www.officeholidays.com/countries/spain/basque_community_day.php
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */

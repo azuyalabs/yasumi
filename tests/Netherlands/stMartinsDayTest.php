@@ -44,7 +44,7 @@ class stMartinsDayTest extends NetherlandsBaseTestCase implements YasumiTestCase
      *
      * @return array list of test dates for Sint Martins Day
      */
-    public function stMartinsDayDataProvider()
+    public function stMartinsDayDataProvider(): array
     {
         return $this->generateRandomDates(11, 11, self::TIMEZONE);
     }

@@ -12,6 +12,7 @@
 
 // Translations for New Year's Day
 return [
+    'bs_Latn_BA' => 'Nova godina',
     'cs_CZ' => 'Den obnovy samostatného českého státu a Nový rok',
     'cy_GB' => 'Dydd Calan',
     'da_DK' => 'Nytårsdag',

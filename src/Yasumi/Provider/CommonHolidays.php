@@ -24,6 +24,37 @@ use Yasumi\Holiday;
 trait CommonHolidays
 {
     /**
+     * New Year's Eve.
+     *
+     * New Year's Eve is observed on December 31, the last day of the year on the modern Gregorian calendar as well as
+     * the Julian calendar. In present day, with most countries now using the Gregorian calendar as their de facto calendar,
+     * New Year's Eve is probably the most celebrated holiday, often observed with fireworks at the stroke of midnight as
+     * the new year starts in each time zone.
+     *
+     * @link http://en.wikipedia.org/wiki/New_Year%27s_Eve
+     *
+     * @param int    $year     the year for which New Year's Eve need to be created
+     * @param string $timezone the timezone in which New Year's Eve is celebrated
+     * @param string $locale   the locale for which New Year's Eve need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
+     *
+     * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
+     */
+    public function newYearsEve(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday('newYearsEve', [], new DateTime("$year-12-31", new DateTimeZone($timezone)), $locale, $type);
+    }
+
+    /**
      * New Year's Day.
      *
      * New Year's Day is observed on January 1, the first day of the year on the modern Gregorian calendar as well as
@@ -43,11 +74,16 @@ trait CommonHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
-    public function newYearsDay($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL)
-    {
+    public function newYearsDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
         return new Holiday('newYearsDay', [], new DateTime("$year-1-1", new DateTimeZone($timezone)), $locale, $type);
     }
 
@@ -70,11 +106,16 @@ trait CommonHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
-    public function internationalWorkersDay($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL)
-    {
+    public function internationalWorkersDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
         return new Holiday(
             'internationalWorkersDay',
             [],
@@ -103,11 +144,16 @@ trait CommonHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
-    public function valentinesDay($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL)
-    {
+    public function valentinesDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
         return new Holiday(
             'valentinesDay',
             [],
@@ -134,11 +180,16 @@ trait CommonHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
-    public function worldAnimalDay($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL)
-    {
+    public function worldAnimalDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
         return new Holiday(
             'worldAnimalDay',
             [],
@@ -167,11 +218,16 @@ trait CommonHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
-    public function stMartinsDay($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL)
-    {
+    public function stMartinsDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
         return new Holiday(
             'stMartinsDay',
             [],
@@ -199,11 +255,16 @@ trait CommonHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
-    public function fathersDay($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL)
-    {
+    public function fathersDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
         return new Holiday(
             'fathersDay',
             [],
@@ -231,11 +292,16 @@ trait CommonHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
-    public function mothersDay($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL)
-    {
+    public function mothersDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
         return new Holiday(
             'mothersDay',
             [],
@@ -263,11 +329,16 @@ trait CommonHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
-    public function victoryInEuropeDay($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL)
-    {
+    public function victoryInEuropeDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
         return new Holiday(
             'victoryInEuropeDay',
             [],
@@ -297,11 +368,16 @@ trait CommonHolidays
      *
      * @return \Yasumi\Holiday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      */
-    public function armisticeDay($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL)
-    {
+    public function armisticeDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
         return new Holiday(
             'armisticeDay',
             [],
@@ -309,5 +385,99 @@ trait CommonHolidays
             $locale,
             $type
         );
+    }
+
+    /**
+     * Calculates daylight saving time transitions.
+     *
+     * Daylight saving time is the practice of advancing clocks by one hour during summer months so evening daylight lasts even longer, while sacrificing normal sunrise times.
+     *
+     * The date of transition between standard time and daylight saving time differs from country to country and sometimes from year to year. Most countries outside Europe and North America do not observe daylight saving time.
+     *
+     * On the northern hemisphere, summer time starts around March/April. On the southern hemisphere it happens 6 months later.
+     *
+     * @param int    $year     the year for which Easter needs to be calculated
+     * @param string $timezone the timezone in which Easter is celebrated
+     * @param bool   $summer   whether to calculate the start of summer or winter time
+     */
+    protected function calculateSummerWinterTime($year, $timezone, $summer)
+    {
+        $zone = new DateTimeZone($timezone);
+
+        $transitions = $zone->getTransitions(\mktime(0, 0, 0, 1, 1, $year), \mktime(23, 59, 59, 12, 31, $year));
+
+        $transition = \array_shift($transitions);
+        $dst = $transition['isdst'];
+
+        foreach ($transitions as $transition) {
+            if ($transition['isdst'] !== $dst && $transition['isdst'] === $summer) {
+                return new DateTime(\substr($transition['time'], 0, 10), $zone);
+            }
+            $dst = $transition['isdst'];
+        }
+
+        return null;
+    }
+
+    /**
+     * The beginning of summer time.
+     *
+     * Summer time is also known as daylight save time.
+     *
+     * @param int    $year     the year for which summer time need to be created
+     * @param string $timezone the timezone in which summer time transition occurs
+     * @param string $locale   the locale for which summer time need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
+     *
+     * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
+     */
+    public function summerTime($year, $timezone, $locale, $type = Holiday::TYPE_SEASON)
+    {
+        $date = $this->calculateSummerWinterTime($year, $timezone, true);
+
+        if ($date) {
+            return new Holiday(
+                'summerTime',
+                [],
+                $date,
+                $locale,
+                $type
+            );
+        }
+    }
+
+    /**
+     * The beginning of winter time.
+     *
+     * Winter time is also known as standard time.
+     *
+     * @param int    $year     the year for which summer time need to be created
+     * @param string $timezone the timezone in which summer time transition occurs
+     * @param string $locale   the locale for which summer time need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
+     *
+     * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
+     */
+    public function winterTime($year, $timezone, $locale, $type = Holiday::TYPE_SEASON)
+    {
+        $date = $this->calculateSummerWinterTime($year, $timezone, false);
+
+        if ($date) {
+            return new Holiday(
+                'winterTime',
+                [],
+                $date,
+                $locale,
+                $type
+            );
+        }
     }
 }

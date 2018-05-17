@@ -33,7 +33,7 @@ class GoodFridayDayTest extends EstoniaBaseTestCase implements YasumiTestCaseInt
      *
      * @throws \Exception
      */
-    public function holidayDataProvider()
+    public function holidayDataProvider(): array
     {
         return $this->generateRandomGoodFridayDates(self::TIMEZONE);
     }

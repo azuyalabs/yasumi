@@ -37,7 +37,7 @@ class stJohnsDayTest extends SwedenBaseTestCase implements YasumiTestCaseInterfa
         $holiday  = $holidays->getHoliday(self::HOLIDAY);
 
         // Some basic assertions
-        $this->assertInstanceOf('Yasumi\Provider\\' . str_replace('/', '\\', self::REGION), $holidays);
+        $this->assertInstanceOf('Yasumi\Provider\\' . \str_replace('/', '\\', self::REGION), $holidays);
         $this->assertInstanceOf(Holiday::class, $holiday);
         $this->assertNotNull($holiday);
 

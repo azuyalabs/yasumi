@@ -40,6 +40,7 @@ class RegionOfMurcia extends Spain
     /**
      * Initialize holidays for the Region of Murcia (Spain).
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
@@ -65,6 +66,7 @@ class RegionOfMurcia extends Spain
      *
      * @link http://www.timeanddate.com/holidays/spain/murcia-day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      */

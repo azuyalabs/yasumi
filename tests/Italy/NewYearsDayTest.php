@@ -44,7 +44,7 @@ class NewYearsDayTest extends ItalyBaseTestCase implements YasumiTestCaseInterfa
      *
      * @return array list of test dates for New Years Day
      */
-    public function NewYearsDayDataProvider()
+    public function NewYearsDayDataProvider(): array
     {
         return $this->generateRandomDates(1, 1, self::TIMEZONE);
     }

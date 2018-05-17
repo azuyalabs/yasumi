@@ -32,11 +32,9 @@ class NorthRhineWestphaliaTest extends NorthRhineWestphaliaBaseTestCase
         $this->assertDefinedHolidays([
             'newYearsDay',
             'goodFriday',
-            'easter',
             'easterMonday',
             'internationalWorkersDay',
             'ascensionDay',
-            'pentecost',
             'pentecostMonday',
             'germanUnityDay',
             'christmasDay',

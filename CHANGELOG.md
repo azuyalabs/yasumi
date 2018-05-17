@@ -8,9 +8,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Added
 
 ### Changed
+- Summer/winter time is now fetched from PHP's tz database. [\#103](https://github.com/azuyalabs/yasumi/pull/103)
+- Changed translation for Norway's national day. [\#98](https://github.com/azuyalabs/yasumi/pull/98)
 
 ### Fixed
-- Changed translation for Norway's national day. [\#98](https://github.com/azuyalabs/yasumi/pull/98)
+- Fixed spelling issue in the Swedish translation. [\#97](https://github.com/azuyalabs/yasumi/pull/97)
+- Fixed spelling issues in the Danish translation. [\#96](https://github.com/azuyalabs/yasumi/pull/96)
+- Fixed German Easter Sunday and Pentecost Sunday holidays (not nationwide, only in Brandenburg). [\#100](https://github.com/azuyalabs/yasumi/pull/100)
+- Fixed BetweenFilter to ignore time part and timezone. [\#101](https://github.com/azuyalabs/yasumi/pull/101)
 
 ### Removed
 
