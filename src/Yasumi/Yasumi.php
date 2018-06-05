@@ -243,7 +243,7 @@ class Yasumi
             $class = new ReflectionClass(\sprintf('Yasumi\Provider\%s', \str_replace('/', '\\', $provider)));
 
             $key = 'ID';
-            if ($class->hasConstant($key)) {
+            if ($class->isSubclassOf('Yasumi\Provider\AbstractProvider') && $class->hasConstant($key)) {
                 $providers[\strtoupper($class->getConstant($key))] = $provider;
             }
         }
