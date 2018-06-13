@@ -12,6 +12,7 @@
 
 namespace Yasumi\Provider\Germany;
 
+use Yasumi\Holiday;
 use Yasumi\Provider\Germany;
 
 /**
@@ -31,4 +32,44 @@ class Hamburg extends Germany
      * country or sub-region.
      */
     const ID = 'DE-HH';
+
+    /**
+     * Initialize holidays for Schleswig-Holstein (Germany).
+     *
+     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
+     */
+    public function initialize()
+    {
+        parent::initialize();
+
+        $this->calculateDayOfReformation();
+    }
+
+    /**
+     * Since 2018 Hamburg celebrates the "Day of Reformation".
+     * It is not called "Reformation Day" like other states to prevent church-based associations
+     *
+     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     */
+    private function calculateDayOfReformation()
+    {
+        if ($this->year < 2018) {
+            return;
+        }
+
+        $this->addHoliday(
+            new Holiday(
+                'dayOfReformation',
+                [],
+                new \DateTime("{$this->year}-10-31", new \DateTimeZone($this->timezone)),
+                $this->locale,
+                Holiday::TYPE_OFFICIAL
+            )
+        );
+    }
 }
