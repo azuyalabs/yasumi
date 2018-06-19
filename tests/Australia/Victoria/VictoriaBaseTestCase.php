@@ -8,6 +8,7 @@
  * file that was distributed with this source code.
  *
  * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author William Sanders <williamrsanders@hotmail.com>
  */
 
 namespace Yasumi\tests\Australia\Victoria;
@@ -30,5 +31,5 @@ abstract class VictoriaBaseTestCase extends AustraliaBaseTestCase
     /**
      * Timezone in which this provider has holidays defined
      */
-    public $timezone = 'Australia/Melbourne';
+    public $timezone = 'Australia/Victoria';
 }

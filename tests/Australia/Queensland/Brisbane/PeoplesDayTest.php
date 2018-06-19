@@ -7,10 +7,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author William Sanders <williamrsanders@hotmail.com>
  */
 
-namespace Yasumi\tests\Australia;
+namespace Yasumi\tests\Australia\Queensland\Brisbane;
 
 use DateTime;
 use DateTimeZone;
@@ -18,20 +18,17 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Labour Day in Australia.
+ * Class for testing Ekka People's Day in Brisbane (Australia)..
  */
-abstract class LabourDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInterface
+class PeoplesDayTest extends BrisbaneBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'labourDay';
-
-
-    protected $dateFormat; // picked a random date -- sorry :)
+    const HOLIDAY = 'peoplesDay';
 
     /**
-     * Tests Labour Day
+     * Tests Ekka People's Day
      *
      * @dataProvider HolidayDataProvider
      *
@@ -48,7 +45,6 @@ abstract class LabourDayTest extends AustraliaBaseTestCase implements YasumiTest
         );
     }
 
-
     /**
      * Returns a list of test dates
      *
@@ -56,7 +52,21 @@ abstract class LabourDayTest extends AustraliaBaseTestCase implements YasumiTest
      */
     public function HolidayDataProvider()
     {
-        return [];
+        $data = [
+            [2010, '2010-08-11'],
+            [2011, '2011-08-10'],
+            [2012, '2012-08-15'],
+            [2013, '2013-08-14'],
+            [2014, '2014-08-13'],
+            [2015, '2015-08-12'],
+            [2016, '2016-08-10'],
+            [2017, '2017-08-16'],
+            [2018, '2018-08-15'],
+            [2019, '2019-08-14'],
+            [2020, '2020-08-12'],
+        ];
+
+        return $data;
     }
 
     /**
@@ -68,7 +78,7 @@ abstract class LabourDayTest extends AustraliaBaseTestCase implements YasumiTest
             $this->region,
             self::HOLIDAY,
             $this->generateRandomYear(1990),
-            [self::LOCALE => 'Labour Day']
+            [self::LOCALE => 'Ekka People\'s Day']
         );
     }
 
