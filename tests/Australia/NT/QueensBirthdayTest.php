@@ -8,9 +8,10 @@
  * file that was distributed with this source code.
  *
  * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author William Sanders <williamrsanders@hotmail.com>
  */
 
-namespace Yasumi\tests\Australia;
+namespace Yasumi\tests\Australia\NT;
 
 use DateTime;
 use DateTimeZone;
@@ -18,9 +19,9 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing QueensBirthday in Australia.
+ * Class for testing Queen's Birthday in NT (Australia)..
  */
-abstract class QueensBirthdayTest extends AustraliaBaseTestCase implements YasumiTestCaseInterface
+class QueensBirthdayTest extends NTBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
@@ -32,10 +33,8 @@ abstract class QueensBirthdayTest extends AustraliaBaseTestCase implements Yasum
      */
     const ESTABLISHMENT_YEAR = 1950;
 
-    protected $dateFormat; // picked a random date -- sorry :)
-
     /**
-     * Tests Labour Day
+     * Tests Queen's Birthday
      *
      * @dataProvider HolidayDataProvider
      *
@@ -51,7 +50,6 @@ abstract class QueensBirthdayTest extends AustraliaBaseTestCase implements Yasum
             new DateTime($expected, new DateTimeZone($this->timezone))
         );
     }
-
 
     /**
      * Returns a list of test dates
@@ -86,7 +84,7 @@ abstract class QueensBirthdayTest extends AustraliaBaseTestCase implements Yasum
             $this->region,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Queens Birthday']
+            [self::LOCALE => 'Queen\'s Birthday']
         );
     }
 
