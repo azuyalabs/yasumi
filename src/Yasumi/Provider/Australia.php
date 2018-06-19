@@ -8,6 +8,7 @@
  * file that was distributed with this source code.
  *
  * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author William Sanders <williamrsanders@hotmail.com>
  */
 
 namespace Yasumi\Provider;
@@ -42,11 +43,9 @@ class Australia extends AbstractProvider
     public function initialize()
     {
         // Official Holidays
-        $this->calculateAustraliaDay();
         $this->calculateNewYearHolidays();
+        $this->calculateAustraliaDay();
         $this->calculateAnzacDay();
-        //$this->calculateQueensBirthday();
-        //$this->calculateLabourDay();
 
         // Add Christian holidays
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
@@ -76,7 +75,7 @@ class Australia extends AbstractProvider
     {
         $date = new DateTime("$this->year-01-26", new DateTimeZone($this->timezone));
 
-        $this->calculateHoliday('australiaDay', [], $date);
+        $this->calculateHoliday('australiaDay', ['en_AU' => 'Australia Day'], $date);
     }
 
     /**
@@ -87,6 +86,7 @@ class Australia extends AbstractProvider
      * @param string|DateTime $date
      * @param bool            $moveFromSaturday
      * @param bool            $moveFromSunday
+     * @param string		  $type
      *
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
@@ -98,19 +98,17 @@ class Australia extends AbstractProvider
         array $names = [],
         $date,
         $moveFromSaturday = true,
-        $moveFromSunday = true
+        $moveFromSunday = true,
+        $type = Holiday::TYPE_OFFICIAL
     ) {
-        $holidayDate = $date instanceof \DateTimeInterface ? $date : new \DateTime(
-            $date,
-            new \DateTimeZone($this->timezone)
-        );
+        $holidayDate = ($date instanceof DateTime) ? $date : new DateTime($date, new DateTimeZone($this->timezone));
 
         $day = (int)$holidayDate->format('w');
         if (($day === 0 && $moveFromSunday) || ($day === 6 && $moveFromSaturday)) {
             $holidayDate = $holidayDate->add($day === 0 ? new DateInterval('P1D') : new DateInterval('P2D'));
         }
 
-        $this->addHoliday(new Holiday($shortName, $names, $holidayDate, $this->locale));
+        $this->addHoliday(new Holiday($shortName, $names, $holidayDate, $this->locale, $type));
     }
 
     /**
@@ -118,8 +116,8 @@ class Australia extends AbstractProvider
      *
      * New Year's Day is on January 1 and is the first day of a new year in the Gregorian calendar,
      * which is used in Australia and many other countries. Due to its geographical position close
-     * to the International Date Line, Australia is one of the first countries in the world to
-     * welcome the New Year.
+     * to the International Date Line, Australia is one of the first countries in the world to welcome the New Year.
+     * If it falls on a weekend an additional public holiday is held on the next available weekday.
      *
      * @link https://www.timeanddate.com/holidays/australia/new-year-day
      *
@@ -129,11 +127,18 @@ class Australia extends AbstractProvider
      */
     public function calculateNewYearHolidays()
     {
-        $this->calculateHoliday(
-            'newYearsDay',
-            [],
-            new DateTime("$this->year-01-01", new DateTimeZone($this->timezone))
-        );
+        $newyearsday = new DateTime("$this->year-01-01", new DateTimeZone($this->timezone));
+        $this->calculateHoliday('newYearsDay', ['en_AU' => 'New Year\'s Day'], $newyearsday, false, false);
+        switch ($newyearsday->format('w')) {
+            case 0: // sunday
+                $newyearsday->add(new DateInterval('P1D'));
+                $this->calculateHoliday('newYearsHoliday', ['en_AU' => 'New Year\'s Holiday'], $newyearsday, false, false);
+                break;
+            case 6: // saturday
+                $newyearsday->add(new DateInterval('P2D'));
+                $this->calculateHoliday('newYearsHoliday', ['en_AU' => 'New Year\'s Holiday'], $newyearsday, false, false);
+                break;
+        }
     }
 
     /**
@@ -141,7 +146,9 @@ class Australia extends AbstractProvider
      *
      * Anzac Day is a national day of remembrance in Australia and New Zealand that broadly commemorates all Australians
      * and New Zealanders "who served and died in all wars, conflicts, and peacekeeping operations"
-     * Observed on 25 April each year.
+     * Observed on 25 April each year. Unlike most other Australian public holidays, If it falls on a weekend it is NOT moved
+     * to the next available weekday, nor is there an additional public holiday held. However, if it clashes with Easter,
+     * an additional public holiday is held for Easter.
      *
      * @link https://en.wikipedia.org/wiki/Anzac_Day
      * @link https://www.timeanddate.com/holidays/australia/anzac-day
@@ -157,15 +164,21 @@ class Australia extends AbstractProvider
         }
 
         $date = new DateTime("$this->year-04-25", new DateTimeZone($this->timezone));
-
-        $this->calculateHoliday('anzacDay', [], $date);
+        $this->calculateHoliday('anzacDay', ['en_AU' => 'ANZAC Day'], $date, false, false);
+        $easter = $this->calculateEaster($this->year, $this->timezone);
+        $easterMonday = $this->calculateEaster($this->year, $this->timezone);
+        $easterMonday->add(new DateInterval('P1D'));
+        if (($date->format('Y-m-d') === $easter->format('Y-m-d')) || ($date->format('Y-m-d') === $easterMonday->format('Y-m-d'))) {
+            $easterMonday->add(new DateInterval('P1D'));
+            $this->calculateHoliday('easterTuesday', ['en_AU' => 'Easter Tuesday'], $easterMonday, false, false);
+        }
     }
 
     /**
      * Christmas Day / Boxing Day.
      *
      * Christmas day, and Boxing day are public holidays in Australia,
-     * if they fall on the weekend they are moved to the next available weekday.
+     * if they fall on the weekend an additional public holiday is held on the next available weekday.
      *
      * @link https://www.timeanddate.com/holidays/australia/christmas-day-holiday
      *
@@ -177,59 +190,24 @@ class Australia extends AbstractProvider
     {
         $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->timezone));
         $boxingDay    = new DateTime("$this->year-12-26", new DateTimeZone($this->timezone));
+        $this->calculateHoliday('christmasDay', ['en_AU' => 'Christmas Day'], $christmasDay, false, false);
+        $this->calculateHoliday('secondChristmasDay', ['en_AU' => 'Boxing Day'], $boxingDay, false, false);
 
         switch ($christmasDay->format('w')) {
             case 0: // sunday
-                $christmasDay->add(new \DateInterval('P2D'));
+                $christmasDay->add(new DateInterval('P2D'));
+                $this->calculateHoliday('christmasHoliday', ['en_AU' => 'Christmas Holiday'], $christmasDay, false, false);
                 break;
             case 5: // friday
-                $boxingDay->add(new \DateInterval('P2D'));
+                $boxingDay->add(new DateInterval('P2D'));
+                $this->calculateHoliday('secondChristmasHoliday', ['en_AU' => 'Boxing Day Holiday'], $boxingDay, false, false);
                 break;
             case 6: // saturday
-                $christmasDay->add(new \DateInterval('P2D'));
-                $boxingDay->add(new \DateInterval('P2D'));
+                $christmasDay->add(new DateInterval('P2D'));
+                $boxingDay->add(new DateInterval('P2D'));
+                $this->calculateHoliday('christmasHoliday', ['en_AU' => 'Christmas Holiday'], $christmasDay, false, false);
+                $this->calculateHoliday('secondChristmasHoliday', ['en_AU' => 'Boxing Day Holiday'], $boxingDay, false, false);
                 break;
         }
-        $this->calculateHoliday('christmasDay', [], $christmasDay);
-        $this->calculateHoliday('secondChristmasDay', [], $boxingDay);
-    }
-
-    /**
-     * Queens Birthday.
-     *
-     * The Queen's Birthday is an Australian public holiday but the date varies across
-     * states and territories. Australia celebrates this holiday because it is a constitutional
-     * monarchy, with the English monarch as head of state.
-     *
-     * Her actual birthday is on April 21, but it's celebrated as a public holiday on the second Monday of June.
-     *  (Except QLD & WA)
-     *
-     * @link https://www.timeanddate.com/holidays/australia/queens-birthday
-     *
-     * @throws \InvalidArgumentException
-     * @throws \Exception
-     */
-    public function calculateQueensBirthday()
-    {
-        $this->calculateHoliday(
-            'queensBirthday',
-            ['en_AU' => 'Queens Birthday'],
-            'second monday of june ' . $this->year,
-            false,
-            false
-        );
-    }
-
-    /**
-     * @link https://www.timeanddate.com/holidays/australia/labour-day
-     *
-     * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     */
-    public function calculateLabourDay()
-    {
-        $date = new DateTime('first Monday in October' . " $this->year", new DateTimeZone($this->timezone));
-
-        $this->addHoliday(new Holiday('labourDay', [], $date, $this->locale));
     }
 }
