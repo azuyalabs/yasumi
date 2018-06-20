@@ -8,6 +8,7 @@
  * file that was distributed with this source code.
  *
  * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author William Sanders <williamrsanders@hotmail.com>
  */
 
 namespace Yasumi\tests\Australia;
@@ -51,7 +52,7 @@ class AnzacDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInterf
     }
 
     /**
-     *  Tests that Labour Day is not present before 1921
+     *  Tests that ANZAC Day is not present before 1921
      */
     public function testNotHoliday()
     {
@@ -63,21 +64,21 @@ class AnzacDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInterf
      *
      * @return array list of test dates for the holiday defined in this test
      */
-    public function HolidayDataProvider(): array
+    public function HolidayDataProvider()
     {
         $data = [
-            [2010, '2010-04-26'],
+            [2010, '2010-04-25'],
             [2011, '2011-04-25'],
             [2012, '2012-04-25'],
             [2013, '2013-04-25'],
             [2014, '2014-04-25'],
-            [2015, '2015-04-27'],
+            [2015, '2015-04-25'],
             [2016, '2016-04-25'],
             [2017, '2017-04-25'],
             [2018, '2018-04-25'],
             [2019, '2019-04-25'],
             [2019, '2019-04-25'],
-            [2020, '2020-04-27'],
+            [2020, '2020-04-25'],
         ];
 
         return $data;

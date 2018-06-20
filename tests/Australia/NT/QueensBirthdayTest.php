@@ -8,9 +8,10 @@
  * file that was distributed with this source code.
  *
  * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author William Sanders <williamrsanders@hotmail.com>
  */
 
-namespace Yasumi\tests\Australia;
+namespace Yasumi\tests\Australia\NT;
 
 use DateTime;
 use DateTimeZone;
@@ -18,20 +19,22 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Labour Day in Australia.
+ * Class for testing Queen's Birthday in NT (Australia)..
  */
-abstract class LabourDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInterface
+class QueensBirthdayTest extends NTBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'labourDay';
-
-
-    protected $dateFormat; // picked a random date -- sorry :)
+    const HOLIDAY = 'queensBirthday';
 
     /**
-     * Tests Labour Day
+     * The year in which the holiday was first established
+     */
+    const ESTABLISHMENT_YEAR = 1950;
+
+    /**
+     * Tests Queen's Birthday
      *
      * @dataProvider HolidayDataProvider
      *
@@ -48,15 +51,28 @@ abstract class LabourDayTest extends AustraliaBaseTestCase implements YasumiTest
         );
     }
 
-
     /**
      * Returns a list of test dates
      *
      * @return array list of test dates for the holiday defined in this test
      */
-    public function HolidayDataProvider(): array
+    public function HolidayDataProvider()
     {
-        return [];
+        $data = [
+            [2010, '2010-06-14'],
+            [2011, '2011-06-13'],
+            [2012, '2012-06-11'],
+            [2013, '2013-06-10'],
+            [2014, '2014-06-09'],
+            [2015, '2015-06-08'],
+            [2016, '2016-06-13'],
+            [2017, '2017-06-12'],
+            [2018, '2018-06-11'],
+            [2019, '2019-06-10'],
+            [2020, '2020-06-08'],
+        ];
+
+        return $data;
     }
 
     /**
@@ -67,8 +83,8 @@ abstract class LabourDayTest extends AustraliaBaseTestCase implements YasumiTest
         $this->assertTranslatedHolidayName(
             $this->region,
             self::HOLIDAY,
-            $this->generateRandomYear(1990),
-            [self::LOCALE => 'Labour Day']
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => 'Queen\'s Birthday']
         );
     }
 
@@ -77,6 +93,11 @@ abstract class LabourDayTest extends AustraliaBaseTestCase implements YasumiTest
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(1990), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(
+            $this->region,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2100),
+            Holiday::TYPE_OFFICIAL
+        );
     }
 }

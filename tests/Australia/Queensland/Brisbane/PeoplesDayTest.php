@@ -7,10 +7,10 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author William Sanders <williamrsanders@hotmail.com>
  */
 
-namespace Yasumi\tests\Australia;
+namespace Yasumi\tests\Australia\Queensland\Brisbane;
 
 use DateTime;
 use DateTimeZone;
@@ -18,24 +18,17 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing QueensBirthday in Australia.
+ * Class for testing Ekka People's Day in Brisbane (Australia)..
  */
-abstract class QueensBirthdayTest extends AustraliaBaseTestCase implements YasumiTestCaseInterface
+class PeoplesDayTest extends BrisbaneBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'queensBirthday';
+    const HOLIDAY = 'peoplesDay';
 
     /**
-     * The year in which the holiday was first established
-     */
-    const ESTABLISHMENT_YEAR = 1950;
-
-    protected $dateFormat; // picked a random date -- sorry :)
-
-    /**
-     * Tests Labour Day
+     * Tests Ekka People's Day
      *
      * @dataProvider HolidayDataProvider
      *
@@ -52,26 +45,25 @@ abstract class QueensBirthdayTest extends AustraliaBaseTestCase implements Yasum
         );
     }
 
-
     /**
      * Returns a list of test dates
      *
      * @return array list of test dates for the holiday defined in this test
      */
-    public function HolidayDataProvider(): array
+    public function HolidayDataProvider()
     {
         $data = [
-            [2010, '2010-06-14'],
-            [2011, '2011-06-13'],
-            [2012, '2012-06-11'],
-            [2013, '2013-06-10'],
-            [2014, '2014-06-09'],
-            [2015, '2015-06-08'],
-            [2016, '2016-06-13'],
-            [2017, '2017-06-12'],
-            [2018, '2018-06-11'],
-            [2019, '2019-06-10'],
-            [2020, '2020-06-08'],
+            [2010, '2010-08-11'],
+            [2011, '2011-08-10'],
+            [2012, '2012-08-15'],
+            [2013, '2013-08-14'],
+            [2014, '2014-08-13'],
+            [2015, '2015-08-12'],
+            [2016, '2016-08-10'],
+            [2017, '2017-08-16'],
+            [2018, '2018-08-15'],
+            [2019, '2019-08-14'],
+            [2020, '2020-08-12'],
         ];
 
         return $data;
@@ -85,8 +77,8 @@ abstract class QueensBirthdayTest extends AustraliaBaseTestCase implements Yasum
         $this->assertTranslatedHolidayName(
             $this->region,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Queens Birthday']
+            $this->generateRandomYear(1990),
+            [self::LOCALE => 'Ekka People\'s Day']
         );
     }
 
@@ -95,11 +87,6 @@ abstract class QueensBirthdayTest extends AustraliaBaseTestCase implements Yasum
      */
     public function testHolidayType()
     {
-        $this->assertHolidayType(
-            $this->region,
-            self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2100),
-            Holiday::TYPE_OFFICIAL
-        );
+        $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(1990), Holiday::TYPE_OFFICIAL);
     }
 }

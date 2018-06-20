@@ -8,17 +8,17 @@
  * file that was distributed with this source code.
  *
  * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author William Sanders <williamrsanders@hotmail.com>
  */
 
 namespace Yasumi\tests\Australia\Victoria;
 
 use Yasumi\Holiday;
-use Yasumi\tests\Australia\AustraliaTest;
 
 /**
  * Class for testing holidays in Victoria (Australia).
  */
-class VictoriaTest extends AustraliaTest
+class VictoriaTest extends VictoriaBaseTestCase
 {
     public $region = 'Australia\Victoria';
 
@@ -40,9 +40,12 @@ class VictoriaTest extends AustraliaTest
             'secondChristmasDay',
             'australiaDay',
             'anzacDay',
+            'easter',
+            'easterSaturday',
             'queensBirthday',
             'labourDay',
-            'aflGrandFinalFriday'
+            'aflGrandFinalFriday',
+            'melbourneCup'
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -51,6 +54,6 @@ class VictoriaTest extends AustraliaTest
      */
     protected function setUp()
     {
-        $this->year = $this->generateRandomYear(2015, 2016);
+        $this->year = $this->generateRandomYear(2015, 2018);
     }
 }

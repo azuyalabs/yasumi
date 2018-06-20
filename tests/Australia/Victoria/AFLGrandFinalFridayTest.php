@@ -8,6 +8,7 @@
  * file that was distributed with this source code.
  *
  * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author William Sanders <williamrsanders@hotmail.com>
  */
 
 namespace Yasumi\tests\Australia\Victoria;
@@ -28,7 +29,7 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements YasumiTest
     const HOLIDAY = 'aflGrandFinalFriday';
 
     const ESTABLISHMENT_YEAR = 2015;
-    const LAST_KNOWN_YEAR = 2016;
+    const LAST_KNOWN_YEAR = 2018;
 
     /**
      * Tests AFL Grand Final Friday
@@ -88,11 +89,13 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements YasumiTest
      *
      * @return array list of test dates for the holiday defined in this test
      */
-    public function HolidayDataProvider(): array
+    public function HolidayDataProvider()
     {
         $data = [
             [2015, '2015-10-02'],
             [2016, '2016-09-30'],
+            [2017, '2017-09-29'],
+            [2018, '2018-09-28'],
         ];
 
         return $data;
