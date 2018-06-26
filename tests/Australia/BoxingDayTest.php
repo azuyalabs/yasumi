@@ -8,6 +8,7 @@
  * file that was distributed with this source code.
  *
  * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author William Sanders <williamrsanders@hotmail.com>
  */
 
 namespace Yasumi\tests\Australia;
@@ -26,16 +27,18 @@ class BoxingDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInter
      * The name of the holiday
      */
     const HOLIDAY = 'secondChristmasDay';
+    const HOLIDAY2 = 'secondChristmasHoliday';
 
     /**
      * Tests Boxing Day
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int    $year     the year for which the holiday defined in this test needs to be tested
-     * @param string $expected the expected date
+     * @param int    $year          the year for which the holiday defined in this test needs to be tested
+     * @param string $expected      the expected date
+     * @param string $expectedExtra the expected date for the additional holiday, or null if no additional holiday
      */
-    public function testHoliday($year, $expected)
+    public function testHoliday($year, $expected, $expectedExtra)
     {
         $this->assertHoliday(
             $this->region,
@@ -43,6 +46,20 @@ class BoxingDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInter
             $year,
             new DateTime($expected, new DateTimeZone($this->timezone))
         );
+        if ($expectedExtra === null) {
+            $this->assertNotHoliday(
+                $this->region,
+                self::HOLIDAY2,
+                $year
+            );
+        } else {
+            $this->assertHoliday(
+                $this->region,
+                self::HOLIDAY2,
+                $year,
+                new DateTime($expectedExtra, new DateTimeZone($this->timezone))
+            );
+        }
     }
 
     /**
@@ -53,17 +70,17 @@ class BoxingDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInter
     public function HolidayDataProvider(): array
     {
         $data = [
-            [2010, '2010-12-28'],
-            [2011, '2011-12-26'],
-            [2012, '2012-12-26'],
-            [2013, '2013-12-26'],
-            [2014, '2014-12-26'],
-            [2015, '2015-12-28'],
-            [2016, '2016-12-26'],
-            [2017, '2017-12-26'],
-            [2018, '2018-12-26'],
-            [2019, '2019-12-26'],
-            [2020, '2020-12-28'],
+            [2010, '2010-12-26', '2010-12-28'],
+            [2011, '2011-12-26', null],
+            [2012, '2012-12-26', null],
+            [2013, '2013-12-26', null],
+            [2014, '2014-12-26', null],
+            [2015, '2015-12-26', '2015-12-28'],
+            [2016, '2016-12-26', null],
+            [2017, '2017-12-26', null],
+            [2018, '2018-12-26', null],
+            [2019, '2019-12-26', null],
+            [2020, '2020-12-26', '2020-12-28'],
         ];
 
         return $data;
@@ -80,6 +97,12 @@ class BoxingDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInter
             $this->generateRandomYear(),
             [self::LOCALE => 'Boxing Day']
         );
+        $this->assertTranslatedHolidayName(
+            $this->region,
+            self::HOLIDAY2,
+            2020,
+            [self::LOCALE => 'Boxing Day Holiday']
+        );
     }
 
     /**
@@ -88,5 +111,6 @@ class BoxingDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInter
     public function testHolidayType()
     {
         $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType($this->region, self::HOLIDAY2, 2020, Holiday::TYPE_OFFICIAL);
     }
 }
