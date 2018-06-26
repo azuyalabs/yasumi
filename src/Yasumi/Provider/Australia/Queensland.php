@@ -79,7 +79,7 @@ class Queensland extends Australia
             $this->calculateHoliday(
                 'queensBirthday',
                 ['en_AU' => "Queen's Birthday"],
-                'second monday of june ' . $this->year,
+                new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->timezone)),
                 false,
                 false
             );
@@ -87,7 +87,7 @@ class Queensland extends Australia
             $this->calculateHoliday(
                 'queensBirthday',
                 ['en_AU' => "Queen's Birthday"],
-                'first monday of october ' . $this->year,
+                new DateTime('first monday of october ' . $this->year, new DateTimeZone($this->timezone)),
                 false,
                 false
             );

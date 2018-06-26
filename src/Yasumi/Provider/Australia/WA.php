@@ -68,7 +68,7 @@ class WA extends Australia
         $this->calculateHoliday(
             'westernAustraliaDay',
             ['en_AU' => 'Western Australia Day'],
-            'first monday of june ' . $this->year,
+            new DateTime('first monday of june ' . $this->year, new DateTimeZone($this->timezone)),
             false,
             false
         );
@@ -95,7 +95,7 @@ class WA extends Australia
             $this->calculateHoliday(
                 'queensBirthday',
                 ['en_AU' => "Queen's Birthday"],
-                '2011-10-28',
+                new DateTime('2011-10-28', new DateTimeZone($this->timezone)),
                 false,
                 false
             );
@@ -103,7 +103,7 @@ class WA extends Australia
             $this->calculateHoliday(
                 'queensBirthday',
                 ['en_AU' => "Queen's Birthday"],
-                '2012-10-01',
+                new DateTime('2012-10-01', new DateTimeZone($this->timezone)),
                 false,
                 false
             );
@@ -111,7 +111,7 @@ class WA extends Australia
             $this->calculateHoliday(
                 'queensBirthday',
                 ['en_AU' => "Queen's Birthday"],
-                'last monday of september ' . $this->year,
+                new DateTime('last monday of september ' . $this->year, new DateTimeZone($this->timezone)),
                 false,
                 false
             );

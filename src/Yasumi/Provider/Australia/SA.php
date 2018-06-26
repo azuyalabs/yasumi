@@ -107,7 +107,7 @@ class SA extends Australia
                 $this->calculateHoliday(
                     'adelaideCup',
                     ['en_AU' => 'Adelaide Cup'],
-                    'third monday of may ' . $this->year,
+                    new DateTime('third monday of may ' . $this->year, new DateTimeZone($this->timezone)),
                     false,
                     false
                 );
@@ -115,7 +115,7 @@ class SA extends Australia
                 $this->calculateHoliday(
                     'adelaideCup',
                     ['en_AU' => 'Adelaide Cup'],
-                    'second monday of march ' . $this->year,
+                    new DateTime('second monday of march ' . $this->year, new DateTimeZone($this->timezone)),
                     false,
                     false
                 );
@@ -175,7 +175,7 @@ class SA extends Australia
         $this->calculateHoliday(
             'queensBirthday',
             ['en_AU' => "Queen's Birthday"],
-            'second monday of june ' . $this->year,
+            new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->timezone)),
             false,
             false
         );

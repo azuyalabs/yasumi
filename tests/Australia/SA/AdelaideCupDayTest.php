@@ -55,7 +55,7 @@ class AdelaideCupDayTest extends SABaseTestCase implements YasumiTestCaseInterfa
      *
      * @return array list of test dates for the holiday defined in this test
      */
-    public function HolidayDataProvider()
+    public function HolidayDataProvider(): array
     {
         $data = [
             [2000, '2000-05-15'],
