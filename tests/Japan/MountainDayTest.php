@@ -33,6 +33,20 @@ class MountainDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
     const ESTABLISHMENT_YEAR = 2016;
 
     /**
+     * Tests Mountain Day in 2020. Mountain Day in 2020 is August 10th for the Olympic Games.
+     */
+    public function testMountainDayIn2020()
+    {
+        $year = 2020;
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-8-10", new DateTimeZone(self::TIMEZONE))
+        );
+    }
+
+    /**
      * Tests Mountain Day after 2016. Mountain Day was established in 2014 and is held from 2016 on August 11th.
      */
     public function testMountainDayOnAfter2016()

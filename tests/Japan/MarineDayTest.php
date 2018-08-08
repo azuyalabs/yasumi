@@ -33,6 +33,20 @@ class MarineDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
     const ESTABLISHMENT_YEAR = 1996;
 
     /**
+     * Tests Marine Day in 2020. Marine Day in 2020 is July 23th for the Olympic Games.
+     */
+    public function testMarineDayIn2020()
+    {
+        $year = 2020;
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-7-23", new DateTimeZone(self::TIMEZONE))
+        );
+    }
+
+    /**
      * Tests Marine Day after 2003. Marine Day was established since 1996 on July 20th. After 2003 it was changed
      * to be the third monday of July.
      */
