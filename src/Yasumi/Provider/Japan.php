@@ -139,18 +139,6 @@ class Japan extends AbstractProvider
         }
 
         /**
-         * Mountain Day. Mountain Day is held on August 11th and established since 2016.
-         */
-        if ($this->year >= 2016) {
-            $this->addHoliday(new Holiday(
-                'mountainDay',
-                ['en_US' => 'Mountain Day', 'ja_JP' => '山の日'],
-                new DateTime("$this->year-8-11", new DateTimeZone($this->timezone)),
-                $this->locale
-            ));
-        }
-
-        /**
          * Culture Day. Culture Day is held on November 11th and established since 1948.
          */
         if ($this->year >= 1948) {
@@ -191,6 +179,7 @@ class Japan extends AbstractProvider
         $this->calculateComingOfAgeDay();
         $this->calculateGreeneryDay();
         $this->calculateMarineDay();
+        $this->caluclateMountainDay();
         $this->calculateRespectForTheAgeDay();
         $this->calculateHealthAndSportsDay();
         $this->calculateAutumnalEquinoxDay();
@@ -294,7 +283,7 @@ class Japan extends AbstractProvider
     /**
      * Calculates Marine Day.
      *
-     * Marine Day was established since 1996 on July 20th. After 2003 it was changed to be the third monday of July.
+     * Marine Day was established since 1996 on July 20th. After 2003 it was changed to be the third monday of July.In 2020 is July 23th.
      *
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
@@ -303,7 +292,9 @@ class Japan extends AbstractProvider
     private function calculateMarineDay()
     {
         $date = null;
-        if ($this->year >= 2003) {
+        if ($this->year == 2020) {
+            $date = new DateTime("$this->year-7-23", new DateTimeZone($this->timezone));
+        } elseif ($this->year >= 2003) {
             $date = new DateTime("third monday of july $this->year", new DateTimeZone($this->timezone));
         } elseif ($this->year >= 1996) {
             $date = new DateTime("$this->year-7-20", new DateTimeZone($this->timezone));
@@ -313,6 +304,33 @@ class Japan extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'marineDay',
                 ['en_US' => 'Marine Day', 'ja_JP' => '海の日'],
+                $date,
+                $this->locale
+            ));
+        }
+    }
+
+    /**
+     * Calculates MountainDay
+     *
+     * Mountain Day. Mountain Day is held on August 11th and established since 2016.In 2020 is August 10th.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     */
+    private function caluclateMountainDay()
+    {
+        $date = null;
+        if ($this->year == 2020) {
+            $date = new DateTime("$this->year-8-10", new DateTimeZone($this->timezone));
+        } elseif ($this->year >= 2016) {
+            $date = new DateTime("$this->year-8-11", new DateTimeZone($this->timezone));
+        }
+
+        if (null !== $date) {
+            $this->addHoliday(new Holiday(
+                'mountainDay',
+                ['en_US' => 'Mountain Day', 'ja_JP' => '山の日'],
                 $date,
                 $this->locale
             ));
@@ -352,7 +370,7 @@ class Japan extends AbstractProvider
      * Calculates Health And Sports Day.
      *
      * Health And Sports Day was established since 1966 on October 10th. After 2000 it was changed to be the second
-     * monday of October.
+     * monday of October.In 2020 is July 24th.
      *
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
@@ -361,7 +379,9 @@ class Japan extends AbstractProvider
     private function calculateHealthAndSportsDay()
     {
         $date = null;
-        if ($this->year >= 2000) {
+        if ($this->year == 2020) {
+            $date = new DateTime("$this->year-7-24", new DateTimeZone($this->timezone));
+        } elseif ($this->year >= 2000) {
             $date = new DateTime("second monday of october $this->year", new DateTimeZone($this->timezone));
         } elseif ($this->year >= 1996) {
             $date = new DateTime("$this->year-10-10", new DateTimeZone($this->timezone));
