@@ -33,6 +33,20 @@ class HealthAndSportsDayTest extends JapanBaseTestCase implements YasumiTestCase
     const ESTABLISHMENT_YEAR = 1996;
 
     /**
+     * Tests Health And Sports Day in 2020. Health And Sports Day in 2020 is July 24th for the Olympic Games.
+     */
+    public function testHealthAndSportsDayIn2020()
+    {
+        $year = 2020;
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-7-24", new DateTimeZone(self::TIMEZONE))
+        );
+    }
+
+    /**
      * Tests Health And Sports Day after 2000. Health And Sports Day was established since 1996 on October 10th. After
      * 2000 it was changed to be the second monday of October.
      */

@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Added Day of Reformation as offical holiday since 2018 in Hamburg (Germany). [#108](https://github.com/azuyalabs/yasumi/pull/108)
 
 ### Changed
+- Changed Japanese holiday for the 2020 Olympic Games.Marine Day,Mountain Day and Health And Sports Day. [\#113](https://github.com/azuyalabs/yasumi/pull/113)
 - Summer/winter time is now fetched from PHP's tz database. [\#103](https://github.com/azuyalabs/yasumi/pull/103)
 - Changed translation for Norway's national day. [\#98](https://github.com/azuyalabs/yasumi/pull/98)
 
