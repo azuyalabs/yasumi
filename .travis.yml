@@ -4,11 +4,19 @@ php:
   - 7.0
   - 7.1
   - 7.2
+  - hhvm
   - nightly
+
+dist: xenial
+sudo: required
 
 cache:
   directories:
     - $HOME/.composer/cache
+
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install hhvm=3.\*
 
 before_script:
   - composer self-update
