@@ -4,12 +4,18 @@ php:
   - 7.0
   - 7.1
   - 7.2
-  - hhvm
   - nightly
+
+dist: trusty
+sudo: required
 
 cache:
   directories:
     - $HOME/.composer/cache
+
+before_install:
+  - if [[ $HHVM == true ]]; then sudo apt-get update; fi
+  - if [[ $HHVM == true ]]; then sudo apt-get install hhvm=3.\*; fi
 
 before_script:
   - composer self-update
@@ -31,3 +37,5 @@ matrix:
       env: PHPSTAN=1
     - php: 7.2
       env: PHPSTAN=1
+    - php: hhvm
+      env: HHVM=true
