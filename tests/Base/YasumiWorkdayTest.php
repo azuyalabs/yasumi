@@ -12,10 +12,10 @@
 
 namespace Yasumi\tests;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Yasumi\Yasumi;
 
-class YasumiWorkdayTest extends PHPUnit_Framework_TestCase
+class YasumiWorkdayTest extends TestCase
 {
     const FORMAT_DATE = 'Y-m-d';
 

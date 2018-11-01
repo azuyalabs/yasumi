@@ -12,13 +12,14 @@
 
 namespace Yasumi\tests\Ukraine;
 
+use PHPUnit\Framework\TestCase;
 use Yasumi\tests\YasumiBase;
 
 /**
  * Class UkraineBaseTestCase
  * @package Yasumi\tests\Ukraine
  */
-class UkraineBaseTestCase extends \PHPUnit_Framework_TestCase
+class UkraineBaseTestCase extends TestCase
 {
     use YasumiBase;
 

@@ -26,7 +26,7 @@
     "friendsofphp/php-cs-fixer": "^2.13",
     "fzaninotto/faker": "~1.7",
     "mikey179/vfsStream": "~1.6",
-    "phpunit/phpunit": "~5.7"
+    "phpunit/phpunit": "~7.4"
   },
   "autoload": {
     "psr-4": {
