@@ -23,7 +23,7 @@
     "php": ">=7.0"
   },
   "require-dev": {
-    "friendsofphp/php-cs-fixer": "^2.6",
+    "friendsofphp/php-cs-fixer": "^2.13",
     "fzaninotto/faker": "~1.7",
     "mikey179/vfsStream": "~1.6",
     "phpunit/phpunit": "~5.7"
