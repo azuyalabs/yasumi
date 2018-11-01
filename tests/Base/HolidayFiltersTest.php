@@ -12,7 +12,7 @@
 
 namespace Yasumi\tests\Base;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Yasumi\Filters\BankHolidaysFilter;
 use Yasumi\Filters\ObservedHolidaysFilter;
 use Yasumi\Filters\OfficialHolidaysFilter;
@@ -26,7 +26,7 @@ use Yasumi\Yasumi;
  *
  * Contains tests for testing the filter classes
  */
-class HolidayFiltersTest extends PHPUnit_Framework_TestCase
+class HolidayFiltersTest extends TestCase
 {
     use YasumiBase;
 

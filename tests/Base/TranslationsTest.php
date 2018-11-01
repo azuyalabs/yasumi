@@ -14,7 +14,7 @@ namespace Yasumi\tests\Base;
 
 use InvalidArgumentException;
 use org\bovigo\vfs\vfsStream;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Yasumi\Translations;
 
 /**
@@ -22,7 +22,7 @@ use Yasumi\Translations;
  *
  * Contains tests for testing the Translations class
  */
-class TranslationsTest extends PHPUnit_Framework_TestCase
+class TranslationsTest extends TestCase
 {
     const LOCALES = [
         'en_US',

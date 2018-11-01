@@ -12,7 +12,7 @@
 
 namespace Yasumi\tests\Bosnia;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Yasumi\tests\YasumiBase;
 
 /**
@@ -20,7 +20,7 @@ use Yasumi\tests\YasumiBase;
  *
  * @author Adnan Kičin <adnankicin@gmail.com>
  */
-abstract class BosniaBaseTestCase extends PHPUnit_Framework_TestCase
+abstract class BosniaBaseTestCase extends TestCase
 {
     use YasumiBase;
 

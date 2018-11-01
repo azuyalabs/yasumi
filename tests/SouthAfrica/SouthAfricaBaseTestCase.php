@@ -13,7 +13,7 @@
 
 namespace Yasumi\tests\SouthAfrica;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Yasumi\tests\YasumiBase;
 
 /**
@@ -22,7 +22,7 @@ use Yasumi\tests\YasumiBase;
  * @package Yasumi\tests\SouthAfrica
  * @author  Sacha Telgenhof <stelgenhof@gmail.com>
  */
-abstract class SouthAfricaBaseTestCase extends PHPUnit_Framework_TestCase
+abstract class SouthAfricaBaseTestCase extends TestCase
 {
     use YasumiBase;
 

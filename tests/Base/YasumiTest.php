@@ -14,7 +14,7 @@ namespace Yasumi\tests\Base;
 
 use Faker\Factory;
 use InvalidArgumentException;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Yasumi\tests\YasumiBase;
 use Yasumi\Yasumi;
 
@@ -23,7 +23,7 @@ use Yasumi\Yasumi;
  *
  * Contains tests for testing the Holiday class
  */
-class YasumiTest extends PHPUnit_Framework_TestCase
+class YasumiTest extends TestCase
 {
     use YasumiBase;
 

@@ -88,9 +88,8 @@ trait YasumiBase
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \RuntimeException
-     * @throws \PHPUnit_Framework_AssertionFailedError
+     * @throws \PHPUnit\Framework\AssertionFailedError
      * @throws \ReflectionException
-     * @throws \TypeError
      */
     public function assertHoliday($provider, $shortName, $year, $expected)
     {
@@ -117,9 +116,8 @@ trait YasumiBase
      * @throws \RuntimeException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \PHPUnit_Framework_AssertionFailedError
+     * @throws \PHPUnit\Framework\AssertionFailedError
      * @throws \ReflectionException
-     * @throws \TypeError
      */
     public function assertNotHoliday($provider, $shortName, $year)
     {
@@ -143,9 +141,8 @@ trait YasumiBase
      * @throws \InvalidArgumentException
      * @throws \RuntimeException
      * @throws \Yasumi\Exception\UnknownLocaleException
-     * @throws \PHPUnit_Framework_AssertionFailedError
+     * @throws \PHPUnit\Framework\AssertionFailedError
      * @throws \ReflectionException
-     * @throws \TypeError
      */
     public function assertTranslatedHolidayName($provider, $shortName, $year, $translations)
     {
@@ -179,7 +176,7 @@ trait YasumiBase
      *
      * @throws \InvalidArgumentException
      * @throws \RuntimeException
-     * @throws \PHPUnit_Framework_AssertionFailedError
+     * @throws \PHPUnit\Framework\AssertionFailedError
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \ReflectionException
      */
@@ -205,12 +202,11 @@ trait YasumiBase
      * @param int    $year              holiday calendar year
      * @param string $expectedDayOfWeek the expected week day (i.e. "Saturday", "Sunday", etc.)
      *
-     * @throws \PHPUnit_Framework_AssertionFailedError
+     * @throws \PHPUnit\Framework\AssertionFailedError
      * @throws \InvalidArgumentException
      * @throws \RuntimeException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \ReflectionException
-     * @throws \TypeError
      */
     public function assertDayOfWeek($provider, $shortName, $year, $expectedDayOfWeek)
     {
@@ -455,7 +451,7 @@ trait YasumiBase
         $iterations = 10,
         $range = 1000
     ): array {
-        return $this->generateRandomDatesWithModifier($month, $day, function ($year, \DateTime $date) {
+        return $this->generateRandomDatesWithModifier($month, $day, function (\DateTime $date) {
             if ($this->isWeekend($date)) {
                 $date->modify('next monday');
             }

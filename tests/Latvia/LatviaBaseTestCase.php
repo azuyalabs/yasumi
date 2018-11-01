@@ -13,6 +13,7 @@
 
 namespace Yasumi\tests\Latvia;
 
+use PHPUnit\Framework\TestCase;
 use Yasumi\tests\YasumiBase;
 
 /**
@@ -20,7 +21,7 @@ use Yasumi\tests\YasumiBase;
  *
  * @author Gedas Lukošius <gedas@lukosius.me>
  */
-abstract class LatviaBaseTestCase extends \PHPUnit_Framework_TestCase
+abstract class LatviaBaseTestCase extends TestCase
 {
     use YasumiBase;
 

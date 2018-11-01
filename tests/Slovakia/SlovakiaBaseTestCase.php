@@ -14,7 +14,7 @@
 
 namespace Yasumi\tests\Slovakia;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Yasumi\tests\YasumiBase;
 
 /**
@@ -24,7 +24,7 @@ use Yasumi\tests\YasumiBase;
  * @package Yasumi\tests\Slovakia
  * @author  Andrej Rypak (dakujem) <xrypak@gmail.com>
  */
-abstract class SlovakiaBaseTestCase extends PHPUnit_Framework_TestCase
+abstract class SlovakiaBaseTestCase extends TestCase
 {
     use YasumiBase;
 

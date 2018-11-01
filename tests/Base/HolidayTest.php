@@ -14,7 +14,7 @@ namespace Yasumi\tests\Base;
 
 use DateTime;
 use InvalidArgumentException;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiBase;
 use Yasumi\TranslationsInterface;
@@ -24,7 +24,7 @@ use Yasumi\TranslationsInterface;
  *
  * Contains tests for testing the Holiday class
  */
-class HolidayTest extends PHPUnit_Framework_TestCase
+class HolidayTest extends TestCase
 {
     use YasumiBase;
 

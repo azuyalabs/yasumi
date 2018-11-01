@@ -12,13 +12,13 @@
 
 namespace Yasumi\tests\Spain;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Yasumi\tests\YasumiBase;
 
 /**
  * Base class for test cases of the Spain holiday provider.
  */
-abstract class SpainBaseTestCase extends PHPUnit_Framework_TestCase
+abstract class SpainBaseTestCase extends TestCase
 {
     use YasumiBase;
 
