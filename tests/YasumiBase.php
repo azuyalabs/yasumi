@@ -451,7 +451,7 @@ trait YasumiBase
         $iterations = 10,
         $range = 1000
     ): array {
-        return $this->generateRandomDatesWithModifier($month, $day, function (\DateTime $date) {
+        return $this->generateRandomDatesWithModifier($month, $day, function ($year, \DateTime $date) {
             if ($this->isWeekend($date)) {
                 $date->modify('next monday');
             }
