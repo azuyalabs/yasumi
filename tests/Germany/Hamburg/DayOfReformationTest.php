@@ -10,7 +10,7 @@
  * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-namespace Yasumi\tests\Germany\SchleswigHolstein;
+namespace Yasumi\tests\Germany\Hamburg;
 
 use DateTime;
 use DateTimeZone;
@@ -19,7 +19,7 @@ use Yasumi\tests\Germany\Hamburg\HamburgBaseTestCase;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Reformation Day in Schleswig-Holstein (Germany).
+ * Class for testing Reformation Day in Hamburg (Germany).
  */
 class DayOfReformationTest extends HamburgBaseTestCase implements YasumiTestCaseInterface
 {

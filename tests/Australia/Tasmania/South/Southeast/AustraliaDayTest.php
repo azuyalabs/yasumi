@@ -10,7 +10,7 @@
  * @author William Sanders <williamrsanders@hotmail.com>
  */
 
-namespace Yasumi\tests\Australia\Tasmania\South\Southeast\CircularHead;
+namespace Yasumi\tests\Australia\Tasmania\South\Southeast;
 
 /**
  * Class for testing Australia day in southeastern Tasmania (Australia)..
