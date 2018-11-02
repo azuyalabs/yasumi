@@ -10,7 +10,7 @@
  * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-// Translations for daylight saving time end.
+// Translations for Wintertime
 return [
     'da_DK' => 'Sommertid slutter',
     'en_US' => 'Wintertime',

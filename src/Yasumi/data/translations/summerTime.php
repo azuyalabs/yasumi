@@ -10,7 +10,7 @@
  * @author Sacha Telgenhof <stelgenhof@gmail.com>
  */
 
-// Translations for daylight saving time start.
+// Translations for Summertime
 return [
     'da_DK' => 'Sommertid starter',
     'en_US' => 'Summertime',
