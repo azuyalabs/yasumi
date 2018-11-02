@@ -177,11 +177,12 @@ class Netherlands extends AbstractProvider
         ));
 
         $summerTime = $this->summerTime($this->year, $this->timezone, $this->locale);
-        if ($summerTime) {
+        if ($summerTime !== null) {
             $this->addHoliday($summerTime);
         }
+
         $winterTime = $this->winterTime($this->year, $this->timezone, $this->locale);
-        if ($winterTime) {
+        if ($winterTime !== null) {
             $this->addHoliday($winterTime);
         }
 
