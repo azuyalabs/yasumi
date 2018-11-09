@@ -30,4 +30,35 @@ class Bremen extends Germany
      * country or sub-region.
      */
     const ID = 'DE-HB';
+
+    /**
+     * Initialize holidays for Bremen (Germany).
+     *
+     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
+     */
+    public function initialize()
+    {
+        parent::initialize();
+
+        // Add custom Christian holidays
+        $this->calculateReformationDay();
+    }
+    /**
+     * For the German state of Bremen, Reformation Day is celebrated since 2018.
+     * Note: In 2017 all German states will celebrate Reformation Day for its 500th anniversary.
+     *
+     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     */
+    private function calculateReformationDay()
+    {
+        if ($this->year < 2018) {
+            return;
+        }
+        $this->addHoliday($this->reformationDay($this->year, $this->timezone, $this->locale));
+    }
 }
