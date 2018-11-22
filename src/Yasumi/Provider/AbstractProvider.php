@@ -17,6 +17,7 @@ use Countable;
 use InvalidArgumentException;
 use IteratorAggregate;
 use Yasumi\Filters\BetweenFilter;
+use Yasumi\Filters\OnFilter;
 use Yasumi\Holiday;
 use Yasumi\ProviderInterface;
 use Yasumi\TranslationsInterface;
@@ -441,6 +442,25 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         }
 
         return new BetweenFilter($this->getIterator(), $start_date, $end_date, $equals);
+    }
+
+
+    /**
+     * Retrieves a list of all holidays that happen on the given date.
+     *
+     * Yasumi only calculates holidays for a single year, so a date outside of the given year will not appear to
+     * contain any holidays.
+     *
+     * Please take care to use the appropriate timezone for the date parameters. If there is a different timezone used
+     * for these parameters versus the instantiated Holiday Provider, the outcome might be unexpected (but correct).
+     *
+     * @param \DateTimeInterface $date Date to check for holidays on.
+     *
+     * @return \Yasumi\Filters\OnFilter
+     */
+    public function on(\DateTimeInterface $date): OnFilter
+    {
+        return new OnFilter($this->getIterator(), $date);
     }
 
     /**
