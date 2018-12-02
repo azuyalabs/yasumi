@@ -6,24 +6,31 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [Unreleased]
 
 ### Added
+- New filter to select holidays that happen on a given date [\#119](https://github.com/azuyalabs/yasumi/pull/119) ([cruxicheiros](https://github.com/cruxicheiros))
 - Holiday Providers for all Australian states and teritories. [\#112](https://github.com/azuyalabs/yasumi/pull/112) ([Milamber33](https://github.com/Milamber33))
-- Added Reformation Day as offical holiday since 2018 in Lower Saxony (Germany). [#115](https://github.com/azuyalabs/yasumi/issues/115)
-- Added Reformation Day as offical holiday since 2018 in Schleswig-Holstein (Germany). [#106](https://github.com/azuyalabs/yasumi/pull/106)
-- Added Day of Reformation as offical holiday since 2018 in Hamburg (Germany). [#108](https://github.com/azuyalabs/yasumi/pull/108)
-- Added Reformation Day as offical holiday since 2018 in Bremen (Germany). [#116](https://github.com/azuyalabs/yasumi/issues/116)
+- Holiday Provider for Bosnia. [\#194](https://github.com/azuyalabs/yasumi/pull/94) ([TheAdnan](https://github.com/TheAdnan))
+- Added Reformation Day as offical holiday since 2018 in Lower Saxony (Germany). [#115](https://github.com/azuyalabs/yasumi/issues/115) ([Taxcamp](https://github.com/Taxcamp))
+- Added Reformation Day as offical holiday since 2018 in Schleswig-Holstein (Germany). [#106](https://github.com/azuyalabs/yasumi/pull/106) ([HenningCash](https://github.com/HenningCash))
+- Added Reformation Day as offical holiday since 2018 in Hamburg (Germany). [#108](https://github.com/azuyalabs/yasumi/pull/108) ([HenningCash](https://github.com/HenningCash))
+- Added Reformation Day as offical holiday since 2018 in Bremen (Germany). [#116](https://github.com/azuyalabs/yasumi/issues/116) ([TalonTR](https://github.com/TalonTR))
+- The (observed) holidays Lukkeloven, Constitution Day, New Year's Eve and Labour Day, as well as summertime and wintertime are included for Denmark [\#104](https://github.com/azuyalabs/yasumi/pull/104) ([c960657](https://github.com/c960657))
 
 ### Changed
 - Upgraded to PHPUnit 7.
-- Changed Japanese holiday for the 2020 Olympic Games.Marine Day,Mountain Day and Health And Sports Day. [\#113](https://github.com/azuyalabs/yasumi/pull/113)
-- Summer/winter time is now fetched from PHP's tz database. [\#103](https://github.com/azuyalabs/yasumi/pull/103)
-- Changed translation for Norway's national day. [\#98](https://github.com/azuyalabs/yasumi/pull/98)
+- PHP version 7.1 is now the minimum required version.
+- Changed Japanese holiday for the 2020 Olympic Games.Marine Day,Mountain Day and Health And Sports Day. [\#113](https://github.com/azuyalabs/yasumi/pull/113) ([cookie-maker](https://github.com/cookie-maker))
+- Summer/winter time is now fetched from PHP's tz database. [\#103](https://github.com/azuyalabs/yasumi/pull/103) ([c960657](https://github.com/c960657))
+- Changed translation for Norway's national day. [\#98](https://github.com/azuyalabs/yasumi/pull/98) ([c960657](https://github.com/c960657))
+- Applied proper null checks in the summertime and wintertime calculations for Denmark and The Netherlands.
+- Corrected some namespaces for Australia and Germany.
 
 ### Fixed
-- Fixed spelling issue in the Swedish translation. [\#97](https://github.com/azuyalabs/yasumi/pull/97)
-- Fixed spelling issues in the Danish translation. [\#96](https://github.com/azuyalabs/yasumi/pull/96)
-- Fixed German Easter Sunday and Pentecost Sunday holidays (not nationwide, only in Brandenburg). [\#100](https://github.com/azuyalabs/yasumi/pull/100)
-- Fixed BetweenFilter to ignore time part and timezone. [\#101](https://github.com/azuyalabs/yasumi/pull/101)
-- Fixed bug in provider list generation related to variable order of files returned by the filesystem [\#107](https://github.com/azuyalabs/yasumi/pull/107)
+- Fixed issue for summertime in Denmark in 1980. By default summertime in Denmark is set for the last day of March since 1980, however in 1980 itself, it started on April, 6th.
+- Fixed spelling issue in the Swedish translation. [\#97](https://github.com/azuyalabs/yasumi/pull/97) ([c960657](https://github.com/c960657))
+- Fixed spelling issues in the Danish translation. [\#96](https://github.com/azuyalabs/yasumi/pull/96) ([c960657](https://github.com/c960657))
+- Fixed German Easter Sunday and Pentecost Sunday holidays (not nationwide, only in Brandenburg). [\#100](https://github.com/azuyalabs/yasumi/pull/100) ([TalonTR](https://github.com/TalonTR))
+- Fixed BetweenFilter to ignore time part and timezone. [\#101](https://github.com/azuyalabs/yasumi/pull/101) ([c960657](https://github.com/c960657))
+- Fixed bug in provider list generation related to variable order of files returned by the filesystem [\#107](https://github.com/azuyalabs/yasumi/pull/107) ([leafnode](https://github.com/leafnode))
 
 ### Removed
 
