@@ -76,7 +76,7 @@ class ACT extends Australia
         if ($this->year < 2018) {
             return;
         } else {
-            $date = new DateTime($this->year."-05-27", new DateTimeZone($this->timezone));
+            $date = new DateTime($this->year . '-05-27', new DateTimeZone($this->timezone));
             $day = (int)$date->format('w');
             if ($day !== 1) {
                 $date = $date->add($day === 0 ? new DateInterval('P1D') : new DateInterval('P'.(8-$day).'D'));
