@@ -390,15 +390,22 @@ trait CommonHolidays
     /**
      * Calculates daylight saving time transitions.
      *
-     * Daylight saving time is the practice of advancing clocks by one hour during summer months so evening daylight lasts even longer, while sacrificing normal sunrise times.
+     * Daylight saving time is the practice of advancing clocks by one hour during summer months so evening daylight
+     * lasts even longer, while sacrificing normal sunrise times.
      *
-     * The date of transition between standard time and daylight saving time differs from country to country and sometimes from year to year. Most countries outside Europe and North America do not observe daylight saving time.
+     * The date of transition between standard time and daylight saving time differs from country to country and
+     * sometimes from year to year. Most countries outside Europe and North America do not observe daylight saving
+     * time.
      *
-     * On the northern hemisphere, summer time starts around March/April. On the southern hemisphere it happens 6 months later.
+     * On the northern hemisphere, summer time starts around March/April. On the southern hemisphere it happens 6
+     * months later.
      *
      * @param int    $year     the year for which Easter needs to be calculated
      * @param string $timezone the timezone in which Easter is celebrated
      * @param bool   $summer   whether to calculate the start of summer or winter time
+     *
+     * @return \DateTime|null A DateTime object representing the summer or winter transition time for the given timezone.
+     *                        If no transition time is found, a null value is returned.
      */
     protected function calculateSummerWinterTime($year, $timezone, $summer)
     {
