@@ -157,7 +157,7 @@ class Victoria extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function easterSaturday($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL)
+    public function easterSaturday($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
     {
         return new Holiday(
             'easterSaturday',
@@ -189,7 +189,7 @@ class Victoria extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function easterSunday($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL)
+    public function easterSunday($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
     {
         return new Holiday(
             'easter',
