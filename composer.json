@@ -39,7 +39,7 @@
     }
   },
   "scripts": {
-    "php-cs-fixer": "./vendor/bin/php-cs-fixer fix .",
+    "format": "./vendor/bin/php-cs-fixer fix .",
     "test": "vendor/bin/phpunit"
   },
   "config": {
