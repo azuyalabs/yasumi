@@ -12,10 +12,8 @@
 
 namespace Yasumi\Provider\Australia\Tasmania\South;
 
-use DateInterval;
 use DateTime;
 use DateTimeZone;
-use Yasumi\Holiday;
 use Yasumi\Provider\Australia\Tasmania\South;
 
 /**
