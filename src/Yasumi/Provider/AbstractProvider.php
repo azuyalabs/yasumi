@@ -177,7 +177,6 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *                                 \DateTime)
      *
      * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \TypeError
      *
      * @return bool true if date represents a working day, otherwise false
      */
@@ -208,7 +207,6 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *                                 \DateTime)
      *
      * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \TypeError
      *
      * @return bool true if date represents a holiday, otherwise false
      */
