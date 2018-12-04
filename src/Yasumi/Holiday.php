@@ -187,6 +187,6 @@ class Holiday extends DateTime implements JsonSerializable
      */
     public function __toString(): string
     {
-        return (string)$this->format('Y-m-d');
+        return $this->format('Y-m-d');
     }
 }
