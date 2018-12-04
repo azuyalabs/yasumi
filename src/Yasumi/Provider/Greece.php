@@ -77,6 +77,7 @@ class Greece extends AbstractProvider
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateThreeHolyHierarchs()
     {
@@ -138,6 +139,7 @@ class Greece extends AbstractProvider
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
 
     public function calculateIndependenceDay()
@@ -162,6 +164,7 @@ class Greece extends AbstractProvider
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateOhiDay()
     {
@@ -185,6 +188,7 @@ class Greece extends AbstractProvider
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculatePolytechnio()
     {

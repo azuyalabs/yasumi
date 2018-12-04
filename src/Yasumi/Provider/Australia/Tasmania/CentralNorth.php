@@ -45,7 +45,12 @@ class CentralNorth extends Tasmania
 
         $this->calculateDevonportShow();
     }
-    
+
+    /**
+     * Devonport Show
+     *
+     * @throws \Exception
+     */
     public function calculateDevonportShow()
     {
         $date = new DateTime($this->year . '-12-02', new DateTimeZone($this->timezone));

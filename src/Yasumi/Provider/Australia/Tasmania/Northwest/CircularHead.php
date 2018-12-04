@@ -46,7 +46,12 @@ class CircularHead extends Northwest
 
         $this->calculateAGFEST();
     }
-    
+
+    /**
+     * AGFEST
+     *
+     * @throws \Exception
+     */
     public function calculateAGFEST()
     {
         $date = new DateTime('first thursday of may ' . $this->year, new DateTimeZone($this->timezone));

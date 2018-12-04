@@ -58,6 +58,7 @@ class Brandenburg extends Germany
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     private function calculateReformationDay()
     {

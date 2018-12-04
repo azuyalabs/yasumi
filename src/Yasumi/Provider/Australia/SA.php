@@ -57,6 +57,11 @@ class SA extends Australia
         $this->calculateProclamationDay();
     }
 
+    /**
+     * Proclamation Day
+     *
+     * @throws \Exception
+     */
     public function calculateProclamationDay()
     {
         $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->timezone));
@@ -84,7 +89,12 @@ class SA extends Australia
                 break;
         }
     }
-    
+
+    /**
+     * Labour Day
+     *
+     * @throws \Exception
+     */
     public function calculateLabourDay()
     {
         $date = new DateTime("first monday of october $this->year", new DateTimeZone($this->timezone));

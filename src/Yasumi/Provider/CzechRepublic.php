@@ -78,6 +78,7 @@ class CzechRepublic extends AbstractProvider
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateSaintsCyrilAndMethodiusDay()
     {
@@ -102,6 +103,7 @@ class CzechRepublic extends AbstractProvider
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateJanHusDay()
     {
@@ -129,6 +131,7 @@ class CzechRepublic extends AbstractProvider
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateCzechStatehoodDay()
     {
@@ -148,6 +151,7 @@ class CzechRepublic extends AbstractProvider
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateIndependentCzechoslovakStateDay()
     {
@@ -165,6 +169,7 @@ class CzechRepublic extends AbstractProvider
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateStruggleForFreedomAndDemocracyDay()
     {

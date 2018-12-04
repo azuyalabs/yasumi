@@ -49,6 +49,11 @@ class NT extends Australia
         $this->calculatePicnicDay();
     }
 
+    /**
+     * May Day
+     *
+     * @throws \Exception
+     */
     public function calculateMayDay()
     {
         $date = new DateTime("first monday of may $this->year", new DateTimeZone($this->timezone));

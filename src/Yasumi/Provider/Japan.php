@@ -199,6 +199,7 @@ class Japan extends AbstractProvider
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     private function calculateVernalEquinoxDay()
     {
@@ -232,6 +233,8 @@ class Japan extends AbstractProvider
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
+     * @throws \Exception
      */
     private function calculateComingOfAgeDay()
     {
@@ -260,6 +263,8 @@ class Japan extends AbstractProvider
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
+     * @throws \Exception
      */
     private function calculateGreeneryDay()
     {
@@ -283,11 +288,15 @@ class Japan extends AbstractProvider
     /**
      * Calculates Marine Day.
      *
-     * Marine Day was established since 1996 on July 20th. After 2003 it was changed to be the third monday of July.In 2020 is July 23th.
+     * Marine Day was established since 1996 on July 20th. After 2003 it was changed to be the third monday of July.In
+     * 2020 is July 23th.
      *
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
+     * @throws \Exception
+     * @throws \Exception
      */
     private function calculateMarineDay()
     {
@@ -317,6 +326,8 @@ class Japan extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
+     * @throws \Exception
      */
     private function caluclateMountainDay()
     {
@@ -346,6 +357,8 @@ class Japan extends AbstractProvider
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
+     * @throws \Exception
      */
     private function calculateRespectForTheAgeDay()
     {
@@ -375,6 +388,9 @@ class Japan extends AbstractProvider
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
+     * @throws \Exception
+     * @throws \Exception
      */
     private function calculateHealthAndSportsDay()
     {
@@ -409,6 +425,7 @@ class Japan extends AbstractProvider
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     private function calculateAutumnalEquinoxDay()
     {

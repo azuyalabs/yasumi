@@ -50,6 +50,11 @@ class NSW extends Australia
         $this->calculateBankHoliday();
     }
 
+    /**
+     * Labour Day
+     *
+     * @throws \Exception
+     */
     public function calculateLabourDay()
     {
         $date = new DateTime("first monday of october $this->year", new DateTimeZone($this->timezone));

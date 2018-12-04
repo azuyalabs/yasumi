@@ -44,7 +44,12 @@ class KingIsland extends Tasmania
 
         $this->calculateKingIslandShow();
     }
-    
+
+    /**
+     * King Island Show
+     *
+     * @throws \Exception
+     */
     public function calculateKingIslandShow()
     {
         $this->calculateHoliday(

@@ -74,6 +74,7 @@ class Spain extends AbstractProvider
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateNationalDay()
     {
@@ -99,6 +100,7 @@ class Spain extends AbstractProvider
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateConstitutionDay()
     {

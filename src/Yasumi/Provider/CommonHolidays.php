@@ -27,9 +27,9 @@ trait CommonHolidays
      * New Year's Eve.
      *
      * New Year's Eve is observed on December 31, the last day of the year on the modern Gregorian calendar as well as
-     * the Julian calendar. In present day, with most countries now using the Gregorian calendar as their de facto calendar,
-     * New Year's Eve is probably the most celebrated holiday, often observed with fireworks at the stroke of midnight as
-     * the new year starts in each time zone.
+     * the Julian calendar. In present day, with most countries now using the Gregorian calendar as their de facto
+     * calendar, New Year's Eve is probably the most celebrated holiday, often observed with fireworks at the stroke of
+     * midnight as the new year starts in each time zone.
      *
      * @link http://en.wikipedia.org/wiki/New_Year%27s_Eve
      *
@@ -44,6 +44,7 @@ trait CommonHolidays
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function newYearsEve(
         int $year,
@@ -77,6 +78,7 @@ trait CommonHolidays
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function newYearsDay(
         int $year,
@@ -109,6 +111,7 @@ trait CommonHolidays
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function internationalWorkersDay(
         int $year,
@@ -147,6 +150,7 @@ trait CommonHolidays
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function valentinesDay(
         int $year,
@@ -183,6 +187,7 @@ trait CommonHolidays
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function worldAnimalDay(
         int $year,
@@ -221,6 +226,7 @@ trait CommonHolidays
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function stMartinsDay(
         int $year,
@@ -258,6 +264,7 @@ trait CommonHolidays
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function fathersDay(
         int $year,
@@ -295,6 +302,7 @@ trait CommonHolidays
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function mothersDay(
         int $year,
@@ -332,6 +340,7 @@ trait CommonHolidays
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function victoryInEuropeDay(
         int $year,
@@ -371,6 +380,7 @@ trait CommonHolidays
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function armisticeDay(
         int $year,
@@ -404,8 +414,9 @@ trait CommonHolidays
      * @param string $timezone the timezone in which Easter is celebrated
      * @param bool   $summer   whether to calculate the start of summer or winter time
      *
-     * @return \DateTime|null A DateTime object representing the summer or winter transition time for the given timezone.
-     *                        If no transition time is found, a null value is returned.
+     * @return \DateTime|null A DateTime object representing the summer or winter transition time for the given
+     *                        timezone. If no transition time is found, a null value is returned.
+     * @throws \Exception
      */
     protected function calculateSummerWinterTime($year, $timezone, $summer)
     {
@@ -441,6 +452,7 @@ trait CommonHolidays
      *
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function summerTime($year, $timezone, $locale, $type = Holiday::TYPE_SEASON)
     {
@@ -472,6 +484,7 @@ trait CommonHolidays
      *
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function winterTime($year, $timezone, $locale, $type = Holiday::TYPE_SEASON)
     {

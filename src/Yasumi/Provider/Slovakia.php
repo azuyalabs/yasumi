@@ -114,6 +114,7 @@ class Slovakia extends AbstractProvider
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateSaintsCyrilAndMethodiusDay()
     {
@@ -138,6 +139,7 @@ class Slovakia extends AbstractProvider
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateSlovakNationalUprisingDay()
     {
@@ -161,6 +163,7 @@ class Slovakia extends AbstractProvider
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateSlovakConstitutionDay()
     {
@@ -188,6 +191,7 @@ class Slovakia extends AbstractProvider
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateOurLadyOfSorrowsDay()
     {
@@ -205,6 +209,7 @@ class Slovakia extends AbstractProvider
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateStruggleForFreedomAndDemocracyDay()
     {

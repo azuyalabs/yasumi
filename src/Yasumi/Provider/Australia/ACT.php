@@ -51,6 +51,11 @@ class ACT extends Australia
         $this->calculateReconciliationDay();
     }
 
+    /**
+     * Canberra Day
+     *
+     * @throws \Exception
+     */
     public function calculateCanberraDay()
     {
         if ($this->year < 2007) {
@@ -60,7 +65,12 @@ class ACT extends Australia
         }
         $this->addHoliday(new Holiday('canberraDay', ['en_AU' => 'Canberra Day'], $date, $this->locale));
     }
-    
+
+    /**
+     * Reconciliation Day
+     *
+     * @throws \Exception
+     */
     public function calculateReconciliationDay()
     {
         if ($this->year < 2018) {
@@ -74,7 +84,12 @@ class ACT extends Australia
             $this->addHoliday(new Holiday('reconciliationDay', ['en_AU' => 'Reconciliation Day'], $date, $this->locale));
         }
     }
-    
+
+    /**
+     * Labour Day
+     *
+     * @throws \Exception
+     */
     public function calculateLabourDay()
     {
         $date = new DateTime("first monday of october $this->year", new DateTimeZone($this->timezone));

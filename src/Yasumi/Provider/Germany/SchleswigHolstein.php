@@ -46,6 +46,7 @@ class SchleswigHolstein extends Germany
         // Add custom Christian holidays
         $this->calculateReformationDay();
     }
+
     /**
      * For the German state of Schleswig-Holstein, Reformation Day is celebrated since 2018.
      * Note: In 2017 all German states will celebrate Reformation Day for its 500th anniversary.
@@ -53,6 +54,7 @@ class SchleswigHolstein extends Germany
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     private function calculateReformationDay()
     {

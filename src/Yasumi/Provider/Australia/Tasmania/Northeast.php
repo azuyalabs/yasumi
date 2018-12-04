@@ -46,7 +46,12 @@ class Northeast extends Tasmania
 
         $this->calculateLauncestonShow();
     }
-    
+
+    /**
+     * Royal Launceston Show
+     *
+     * @throws \Exception
+     */
     public function calculateLauncestonShow()
     {
         $date = new DateTime('second saturday of october ' . $this->year, new DateTimeZone($this->timezone));

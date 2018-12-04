@@ -72,6 +72,7 @@ class Galicia extends Spain
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateGalicianLiteratureDay()
     {
@@ -99,6 +100,7 @@ class Galicia extends Spain
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateStJamesDay()
     {

@@ -45,6 +45,7 @@ trait ChristianHolidays
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function easter(int $year, string $timezone, string $locale, string $type = Holiday::TYPE_OFFICIAL): Holiday
     {
@@ -251,6 +252,7 @@ trait ChristianHolidays
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function christmasEve(
         int $year,
@@ -285,6 +287,7 @@ trait ChristianHolidays
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function christmasDay(
         int $year,
@@ -319,6 +322,7 @@ trait ChristianHolidays
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function secondChristmasDay(
         int $year,
@@ -356,6 +360,7 @@ trait ChristianHolidays
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function allSaintsDay(
         int $year,
@@ -386,6 +391,7 @@ trait ChristianHolidays
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function assumptionOfMary(
         int $year,
@@ -459,6 +465,7 @@ trait ChristianHolidays
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function epiphany(
         int $year,
@@ -527,6 +534,7 @@ trait ChristianHolidays
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function immaculateConception(
         int $year,
@@ -565,6 +573,7 @@ trait ChristianHolidays
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function stStephensDay(
         int $year,
@@ -603,6 +612,7 @@ trait ChristianHolidays
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function stJosephsDay(
         int $year,
@@ -672,6 +682,7 @@ trait ChristianHolidays
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function stGeorgesDay(
         int $year,
@@ -704,6 +715,7 @@ trait ChristianHolidays
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function stJohnsDay(
         int $year,
@@ -736,6 +748,7 @@ trait ChristianHolidays
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function annunciation(
         int $year,
@@ -803,6 +816,7 @@ trait ChristianHolidays
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function reformationDay(
         int $year,

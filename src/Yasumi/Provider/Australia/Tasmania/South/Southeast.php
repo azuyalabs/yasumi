@@ -45,7 +45,12 @@ class Southeast extends South
         $this->removeHoliday('recreationDay');
         $this->calculateHobartRegatta();
     }
-    
+
+    /**
+     * Royal Hobart Regatta
+     *
+     * @throws \Exception
+     */
     public function calculateHobartRegatta()
     {
         $this->calculateHoliday(

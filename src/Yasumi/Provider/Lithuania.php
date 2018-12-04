@@ -75,6 +75,7 @@ class Lithuania extends AbstractProvider
      * The Act of Reinstating Independence of Lithuania was signed on February 16, 1918.
      *
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     private function addRestorationOfTheStateDay()
     {
@@ -90,6 +91,7 @@ class Lithuania extends AbstractProvider
      * The Act of the Re-Establishment of the State of Lithuania was signed on March 11, 1990.
      *
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     private function addRestorationOfIndependenceDay()
     {
@@ -106,6 +108,7 @@ class Lithuania extends AbstractProvider
      * the coronation in 1253 of Mindaugas as the only King of Lithuania.
      *
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     private function addStatehoodDay()
     {

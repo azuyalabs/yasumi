@@ -66,6 +66,7 @@ class Latvia extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws \TypeError
+     * @throws \Exception
      */
     private function addRestorationOfIndependenceDay()
     {
@@ -85,6 +86,7 @@ class Latvia extends AbstractProvider
 
     /**
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     private function addMidsummerEveDay()
     {
@@ -100,6 +102,7 @@ class Latvia extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws \TypeError
+     * @throws \Exception
      */
     private function addProclamationDay()
     {

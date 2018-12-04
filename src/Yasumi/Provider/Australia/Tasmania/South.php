@@ -46,7 +46,12 @@ class South extends Tasmania
 
         $this->calculateHobartShow();
     }
-    
+
+    /**
+     * Royal Hobart Show
+     *
+     * @throws \Exception
+     */
     public function calculateHobartShow()
     {
         $date = new DateTime('fourth saturday of october ' . $this->year, new DateTimeZone($this->timezone));

@@ -57,6 +57,7 @@ class Saxony extends Germany
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     private function calculateReformationDay()
     {
@@ -82,6 +83,7 @@ class Saxony extends Germany
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateRepentanceAndPrayerDay()
     {

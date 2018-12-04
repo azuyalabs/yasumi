@@ -96,6 +96,7 @@ class Holiday extends DateTime implements JsonSerializable
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function __construct(
         string $shortName,

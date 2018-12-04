@@ -63,6 +63,7 @@ class Estonia extends AbstractProvider
 
     /**
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     private function addIndependenceDay()
     {
@@ -76,6 +77,7 @@ class Estonia extends AbstractProvider
 
     /**
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     private function addVictoryDay()
     {
@@ -89,6 +91,7 @@ class Estonia extends AbstractProvider
 
     /**
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     private function addRestorationOfIndependenceDay()
     {

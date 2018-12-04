@@ -39,6 +39,7 @@ class Russia extends AbstractProvider
      * Initialize holidays for Russia.
      *
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function initialize()
     {
@@ -58,6 +59,7 @@ class Russia extends AbstractProvider
 
     /**
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     private function addNewYearsHolidays()
     {
@@ -73,6 +75,7 @@ class Russia extends AbstractProvider
 
     /**
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     private function addOrthodoxChristmasDay()
     {
@@ -84,6 +87,7 @@ class Russia extends AbstractProvider
 
     /**
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     private function addDefenceOfTheFatherlandDay()
     {
@@ -99,6 +103,7 @@ class Russia extends AbstractProvider
 
     /**
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     private function addInternationalWomensDay()
     {
@@ -110,6 +115,7 @@ class Russia extends AbstractProvider
 
     /**
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     private function addSpringAndLabourDay()
     {
@@ -121,6 +127,7 @@ class Russia extends AbstractProvider
 
     /**
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     private function addVictoryDay()
     {
@@ -132,6 +139,7 @@ class Russia extends AbstractProvider
 
     /**
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     private function addRussiaDay()
     {
@@ -147,6 +155,7 @@ class Russia extends AbstractProvider
 
     /**
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     private function addUnityDay()
     {

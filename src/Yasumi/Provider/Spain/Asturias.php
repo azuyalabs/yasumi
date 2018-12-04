@@ -71,6 +71,7 @@ class Asturias extends Spain
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateAsturiasDay()
     {

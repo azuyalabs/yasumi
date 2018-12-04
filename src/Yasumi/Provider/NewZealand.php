@@ -110,6 +110,7 @@ class NewZealand extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \TypeError
+     * @throws \Exception
      */
     public function calculateWaitangiDay()
     {
@@ -140,6 +141,7 @@ class NewZealand extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \TypeError
+     * @throws \Exception
      */
     public function calculateAnzacDay()
     {
@@ -172,6 +174,7 @@ class NewZealand extends AbstractProvider
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateQueensBirthday()
     {
@@ -204,6 +207,7 @@ class NewZealand extends AbstractProvider
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateLabourDay()
     {

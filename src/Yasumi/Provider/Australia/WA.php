@@ -47,6 +47,11 @@ class WA extends Australia
         $this->calculateWesternAustraliaDay();
     }
 
+    /**
+     * Labour Day
+     *
+     * @throws \Exception
+     */
     public function calculateLabourDay()
     {
         $date = new DateTime("first monday of march $this->year", new DateTimeZone($this->timezone));

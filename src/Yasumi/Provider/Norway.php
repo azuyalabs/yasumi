@@ -64,7 +64,8 @@ class Norway extends AbstractProvider
      * Constitution Day
      *
      * Norway’s Constitution Day is May 17 and commemorates the signing of Norways's constitution at Eidsvoll on
-     * May 17, 1814. It’s usually referred to as Grunnlovsdag(en) ((The) Constitution Day), syttende mai (May 17) or Nasjonaldagen (The National Day) in Norwegian.
+     * May 17, 1814. It’s usually referred to as Grunnlovsdag(en) ((The) Constitution Day), syttende mai (May 17) or
+     * Nasjonaldagen (The National Day) in Norwegian.
      *
      * Norway adopted its constitution on May 16 1814 and it was signed on May 17, 1814, ending almost 100 years of a
      * coalition with Sweden, proceeded by nearly 400 years of Danish rule. The Norwegian Parliament, known as
@@ -75,6 +76,7 @@ class Norway extends AbstractProvider
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function calculateConstitutionDay()
     {
