@@ -145,7 +145,7 @@ class Holiday extends DateTime implements JsonSerializable
      *
      * @return $this
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): self
     {
         return $this;
     }
