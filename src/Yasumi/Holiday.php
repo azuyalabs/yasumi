@@ -55,7 +55,7 @@ class Holiday extends DateTime implements JsonSerializable
     /**
      * @var array list of all defined locales
      */
-    private static $locales;
+    private static $locales = [];
 
     /**
      * @var string short name (internal name) of this holiday
@@ -111,7 +111,7 @@ class Holiday extends DateTime implements JsonSerializable
         }
 
         // Load internal locales variable
-        if (null === self::$locales) {
+        if (empty(self::$locales)) {
             self::$locales = Yasumi::getAvailableLocales();
         }
 

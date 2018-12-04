@@ -34,14 +34,14 @@ class Yasumi
     /**
      * @var array list of all defined locales
      */
-    private static $locales;
+    private static $locales = [];
 
     /**
      * Global translations.
      *
-     * @var Translations
+     * @var array Translations
      */
-    private static $globalTranslations;
+    private static $globalTranslations = [];
 
     /**
      * Provider class to be ignored (Abstract, trait, other)
@@ -121,7 +121,7 @@ class Yasumi
      *
      * @return AbstractProvider An instance of class $class is created and returned
      */
-    public static function create(string $class, int $year = null, string $locale = self::DEFAULT_LOCALE): ProviderInterface
+    public static function create(string $class, int $year = 0, string $locale = self::DEFAULT_LOCALE): ProviderInterface
     {
         // Find and return holiday provider instance
         $providerClass = \sprintf('Yasumi\Provider\%s', \str_replace('/', '\\', $class));
@@ -140,12 +140,12 @@ class Yasumi
         }
 
         // Load internal locales variable
-        if (null === self::$locales) {
+        if (empty(self::$locales)) {
             self::$locales = self::getAvailableLocales();
         }
 
         // Load internal translations variable
-        if (null === self::$globalTranslations) {
+        if (empty(self::$globalTranslations)) {
             self::$globalTranslations = new Translations(self::$locales);
             self::$globalTranslations->loadTranslations(__DIR__ . '/data/translations');
         }
@@ -190,7 +190,7 @@ class Yasumi
      */
     public static function createByISO3166_2(
         string $iso3166_2,
-        int $year = null,
+        int $year = 0,
         string $locale = self::DEFAULT_LOCALE
     ): AbstractProvider {
         $availableProviders = self::getProviders();
@@ -216,7 +216,7 @@ class Yasumi
     {
         // Basic static cache
         static $providers;
-        if ($providers !== null) {
+        if (!empty($providers)) {
             return $providers;
         }
 
