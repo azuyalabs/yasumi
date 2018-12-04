@@ -39,9 +39,9 @@ class Yasumi
     /**
      * Global translations.
      *
-     * @var array Translations
+     * @var Translations
      */
-    private static $globalTranslations = [];
+    private static $globalTranslations;
 
     /**
      * Provider class to be ignored (Abstract, trait, other)
@@ -145,7 +145,7 @@ class Yasumi
         }
 
         // Load internal translations variable
-        if (empty(self::$globalTranslations)) {
+        if (null === self::$globalTranslations) {
             self::$globalTranslations = new Translations(self::$locales);
             self::$globalTranslations->loadTranslations(__DIR__ . '/data/translations');
         }
