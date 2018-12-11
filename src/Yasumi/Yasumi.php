@@ -220,11 +220,9 @@ class Yasumi
             return $providers;
         }
 
-        $ds = DIRECTORY_SEPARATOR;
-
         $providers     = [];
         $filesIterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(
-            __DIR__ . $ds . 'Provider',
+            __DIR__ . DIRECTORY_SEPARATOR . 'Provider',
             FilesystemIterator::SKIP_DOTS
         ), RecursiveIteratorIterator::SELF_FIRST);
 
@@ -237,7 +235,7 @@ class Yasumi
                 continue;
             }
 
-            $quotedDs = \preg_quote($ds, null);
+            $quotedDs = \preg_quote(DIRECTORY_SEPARATOR, null);
             $provider = \preg_replace("#^.+{$quotedDs}Provider{$quotedDs}(.+)\\.php$#", '$1', $file->getPathName());
 
             $class = new ReflectionClass(\sprintf('Yasumi\Provider\%s', \str_replace('/', '\\', $provider)));
