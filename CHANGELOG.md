@@ -16,6 +16,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - The (observed) holidays Lukkeloven, Constitution Day, New Year's Eve and Labour Day, as well as summertime and wintertime are included for Denmark [\#104](https://github.com/azuyalabs/yasumi/pull/104) ([c960657](https://github.com/c960657))
 
 ### Changed
+- Updated copyright year.
 - Upgraded to PHPUnit 7.
 - PHP version 7.1 is now the minimum required version.
 - Changed Japanese holiday for the 2020 Olympic Games.Marine Day,Mountain Day and Health And Sports Day. [\#113](https://github.com/azuyalabs/yasumi/pull/113) ([cookie-maker](https://github.com/cookie-maker))
