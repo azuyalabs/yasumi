@@ -8,7 +8,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\SouthAfrica;
@@ -20,7 +20,7 @@ use Yasumi\tests\YasumiBase;
  * Base class for test cases of the South Africa holiday provider.
  *
  * @package Yasumi\tests\SouthAfrica
- * @author  Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author  Sacha Telgenhof <sme@sachatelgenhof.com>
  */
 abstract class SouthAfricaBaseTestCase extends TestCase
 {
