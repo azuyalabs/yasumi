@@ -38,7 +38,7 @@ class Southeast extends South
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         parent::initialize();
 
@@ -51,7 +51,7 @@ class Southeast extends South
      *
      * @throws \Exception
      */
-    public function calculateHobartRegatta()
+    public function calculateHobartRegatta(): void
     {
         $this->calculateHoliday(
             'hobartRegatta',

@@ -39,7 +39,7 @@ class SA extends Australia
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         parent::initialize();
 
@@ -62,7 +62,7 @@ class SA extends Australia
      *
      * @throws \Exception
      */
-    public function calculateProclamationDay()
+    public function calculateProclamationDay(): void
     {
         $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->timezone));
         $this->calculateHoliday('christmasDay', ['en_AU' => 'Christmas Day'], $christmasDay, false, false);
@@ -95,7 +95,7 @@ class SA extends Australia
      *
      * @throws \Exception
      */
-    public function calculateLabourDay()
+    public function calculateLabourDay(): void
     {
         $date = new DateTime("first monday of october $this->year", new DateTimeZone($this->timezone));
 
@@ -110,7 +110,7 @@ class SA extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function calculateAdelaideCupDay()
+    public function calculateAdelaideCupDay(): void
     {
         if ($this->year >= 1973) {
             if ($this->year < 2006) {
@@ -180,7 +180,7 @@ class SA extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function calculateQueensBirthday()
+    public function calculateQueensBirthday(): void
     {
         $this->calculateHoliday(
             'queensBirthday',

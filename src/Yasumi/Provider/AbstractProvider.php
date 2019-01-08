@@ -33,6 +33,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * country or sub-region.
      */
     public const ID = 'US';
+
     /**
      * @var array list of the days of the week (the index of the weekdays) that are considered weekend days.
      *            This list only concerns those countries that deviate from the global common definition,
@@ -68,18 +69,22 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         // Friday
         'IN' => [0], // India
     ];
+
     /**
      * @var int the object's current year
      */
     protected $year;
+
     /**
      * @var string the object's current timezone
      */
     protected $timezone;
+
     /**
      * @var string the object's current locale
      */
     protected $locale;
+
     /**
      * @var Holiday[] list of dates of the available holidays
      */
@@ -162,7 +167,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @return void
      */
-    public function removeHoliday($shortName)
+    public function removeHoliday($shortName): void
     {
         unset($this->holidays[$shortName]);
     }
@@ -327,7 +332,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @param string $shortName the name of the holiday for which the next occurrence need to be retrieved.
      *
-     * @return Holiday|null a Holiday instance for the given holiday
+     * @return \Yasumi\Holiday|null a Holiday instance for the given holiday
      *
      * @throws \ReflectionException
      * @throws \Yasumi\Exception\UnknownLocaleException
@@ -336,7 +341,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @covers AbstractProvider::anotherTime
      */
-    public function next($shortName)
+    public function next($shortName): ?Holiday
     {
         return $this->anotherTime($this->year + 1, $shortName);
     }
@@ -347,14 +352,14 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * @param int    $year      the year to get the holiday date for
      * @param string $shortName the name of the holiday for which the date needs to be fetched
      *
-     * @return Holiday|null a Holiday instance for the given holiday and year
+     * @return \Yasumi\Holiday|null a Holiday instance for the given holiday and year
      *
      * @throws \ReflectionException
      * @throws InvalidArgumentException when the given name is blank or empty.
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \RuntimeException
      */
-    private function anotherTime($year, $shortName)
+    private function anotherTime($year, $shortName): ?Holiday
     {
         $this->isHolidayNameNotEmpty($shortName); // Validate if short name is not empty
 
@@ -371,9 +376,9 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @throws InvalidArgumentException when the given name is blank or empty.
      *
-     * @return Holiday|null a Holiday instance for the given holiday
+     * @return \Yasumi\Holiday|null a Holiday instance for the given holiday
      */
-    public function getHoliday($shortName)
+    public function getHoliday($shortName): ?Holiday
     {
         $this->isHolidayNameNotEmpty($shortName); // Validate if short name is not empty
 
@@ -385,7 +390,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     /**
      * Gets all of the holidays defined by this holiday provider (for the given year).
      *
-     * @return Holiday[] list of all holidays defined for the given year
+     * @return \Yasumi\Holiday[] list of all holidays defined for the given year
      */
     public function getHolidays(): array
     {
@@ -397,7 +402,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @param string $shortName the name of the holiday for which the previous occurrence need to be retrieved.
      *
-     * @return Holiday|null a Holiday instance for the given holiday
+     * @return \Yasumi\Holiday|null a Holiday instance for the given holiday
      *
      * @throws \ReflectionException
      * @throws \Yasumi\Exception\UnknownLocaleException
@@ -406,7 +411,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @covers AbstractProvider::anotherTime
      */
-    public function previous($shortName)
+    public function previous($shortName): ?Holiday
     {
         return $this->anotherTime($this->year - 1, $shortName);
     }
@@ -441,7 +446,6 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
 
         return new BetweenFilter($this->getIterator(), $start_date, $end_date, $equals);
     }
-
 
     /**
      * Retrieves a list of all holidays that happen on the given date.

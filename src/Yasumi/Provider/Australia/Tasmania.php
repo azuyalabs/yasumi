@@ -38,7 +38,7 @@ class Tasmania extends Australia
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         parent::initialize();
 
@@ -52,7 +52,7 @@ class Tasmania extends Australia
      *
      * @throws \Exception
      */
-    public function calculateEightHoursDay()
+    public function calculateEightHoursDay(): void
     {
         $date = new DateTime("second monday of march $this->year", new DateTimeZone($this->timezone));
 
@@ -74,7 +74,7 @@ class Tasmania extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function calculateQueensBirthday()
+    public function calculateQueensBirthday(): void
     {
         $this->calculateHoliday(
             'queensBirthday',
@@ -93,7 +93,7 @@ class Tasmania extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function calculateRecreationDay()
+    public function calculateRecreationDay(): void
     {
         $this->calculateHoliday(
             'recreationDay',

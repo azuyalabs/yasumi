@@ -38,7 +38,7 @@ class CircularHead extends Northwest
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         parent::initialize();
 
@@ -50,7 +50,7 @@ class CircularHead extends Northwest
      *
      * @throws \Exception
      */
-    public function calculateAGFEST()
+    public function calculateAGFEST(): void
     {
         $date = new DateTime('first thursday of may ' . $this->year, new DateTimeZone($this->timezone));
         $date = $date->add(new DateInterval('P1D'));

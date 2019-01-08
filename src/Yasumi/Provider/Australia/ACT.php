@@ -39,7 +39,7 @@ class ACT extends Australia
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         parent::initialize();
 
@@ -56,7 +56,7 @@ class ACT extends Australia
      *
      * @throws \Exception
      */
-    public function calculateCanberraDay()
+    public function calculateCanberraDay(): void
     {
         if ($this->year < 2007) {
             $date = new DateTime("third monday of march $this->year", new DateTimeZone($this->timezone));
@@ -71,7 +71,7 @@ class ACT extends Australia
      *
      * @throws \Exception
      */
-    public function calculateReconciliationDay()
+    public function calculateReconciliationDay(): void
     {
         if ($this->year < 2018) {
             return;
@@ -90,7 +90,7 @@ class ACT extends Australia
      *
      * @throws \Exception
      */
-    public function calculateLabourDay()
+    public function calculateLabourDay(): void
     {
         $date = new DateTime("first monday of october $this->year", new DateTimeZone($this->timezone));
 
@@ -176,7 +176,7 @@ class ACT extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function calculateQueensBirthday()
+    public function calculateQueensBirthday(): void
     {
         $this->calculateHoliday(
             'queensBirthday',

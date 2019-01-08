@@ -38,7 +38,7 @@ class WA extends Australia
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         parent::initialize();
 
@@ -52,7 +52,7 @@ class WA extends Australia
      *
      * @throws \Exception
      */
-    public function calculateLabourDay()
+    public function calculateLabourDay(): void
     {
         $date = new DateTime("first monday of march $this->year", new DateTimeZone($this->timezone));
 
@@ -67,7 +67,7 @@ class WA extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function calculateWesternAustraliaDay()
+    public function calculateWesternAustraliaDay(): void
     {
         $this->calculateHoliday(
             'westernAustraliaDay',
@@ -93,7 +93,7 @@ class WA extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function calculateQueensBirthday()
+    public function calculateQueensBirthday(): void
     {
         if ($this->year === 2011) {
             $this->calculateHoliday(

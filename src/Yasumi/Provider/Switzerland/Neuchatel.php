@@ -41,7 +41,7 @@ class Neuchatel extends Switzerland
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         parent::initialize();
 
@@ -73,7 +73,7 @@ class Neuchatel extends Switzerland
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateInstaurationRepublique()
+    public function calculateInstaurationRepublique(): void
     {
         if ($this->year > 1848) {
             $this->addHoliday(new Holiday(

@@ -39,7 +39,7 @@ class Victoria extends Australia
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         parent::initialize();
 
@@ -56,7 +56,7 @@ class Victoria extends Australia
      *
      * @throws \Exception
      */
-    public function calculateLabourDay()
+    public function calculateLabourDay(): void
     {
         $date = new DateTime("second monday of march $this->year", new DateTimeZone($this->timezone));
 
@@ -68,7 +68,7 @@ class Victoria extends Australia
      *
      * @throws \Exception
      */
-    public function calculateMelbourneCupDay()
+    public function calculateMelbourneCupDay(): void
     {
         $date = new DateTime('first Tuesday of November' . " $this->year", new DateTimeZone($this->timezone));
 
@@ -80,7 +80,7 @@ class Victoria extends Australia
      *
      * @throws \Exception
      */
-    public function calculateAFLGrandFinalDay()
+    public function calculateAFLGrandFinalDay(): void
     {
         switch ($this->year) {
             case 2015:
@@ -124,7 +124,7 @@ class Victoria extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function calculateQueensBirthday()
+    public function calculateQueensBirthday(): void
     {
         $this->calculateHoliday(
             'queensBirthday',

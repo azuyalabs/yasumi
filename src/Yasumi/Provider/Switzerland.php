@@ -38,7 +38,7 @@ class Switzerland extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         $this->timezone = 'Europe/Zurich';
 
@@ -60,7 +60,7 @@ class Switzerland extends AbstractProvider
      * @throws \Exception
      * @throws \Exception
      */
-    public function calculateNationalDay()
+    public function calculateNationalDay(): void
     {
         $translations = [
             'en_US' => 'National Day',
@@ -105,7 +105,7 @@ class Switzerland extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateBerchtoldsTag()
+    public function calculateBerchtoldsTag(): void
     {
         $this->addHoliday(new Holiday(
             'berchtoldsTag',
@@ -137,7 +137,7 @@ class Switzerland extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateBettagsMontag()
+    public function calculateBettagsMontag(): void
     {
         if ($this->year >= 1832) {
             // Find third Sunday of September

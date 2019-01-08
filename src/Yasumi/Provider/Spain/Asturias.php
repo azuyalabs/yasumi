@@ -46,7 +46,7 @@ class Asturias extends Spain
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         parent::initialize();
 
@@ -73,7 +73,7 @@ class Asturias extends Spain
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateAsturiasDay()
+    public function calculateAsturiasDay(): void
     {
         if ($this->year >= 1984) {
             $this->addHoliday(new Holiday(

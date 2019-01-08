@@ -39,7 +39,7 @@ class NSW extends Australia
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         parent::initialize();
 
@@ -55,7 +55,7 @@ class NSW extends Australia
      *
      * @throws \Exception
      */
-    public function calculateLabourDay()
+    public function calculateLabourDay(): void
     {
         $date = new DateTime("first monday of october $this->year", new DateTimeZone($this->timezone));
 
@@ -109,7 +109,7 @@ class NSW extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function calculateQueensBirthday()
+    public function calculateQueensBirthday(): void
     {
         $this->calculateHoliday(
             'queensBirthday',
@@ -126,7 +126,7 @@ class NSW extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function calculateBankHoliday()
+    public function calculateBankHoliday(): void
     {
         $this->calculateHoliday(
             'bankHoliday',

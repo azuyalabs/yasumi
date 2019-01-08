@@ -38,7 +38,7 @@ class Northeast extends Tasmania
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         parent::initialize();
 
@@ -50,7 +50,7 @@ class Northeast extends Tasmania
      *
      * @throws \Exception
      */
-    public function calculateLauncestonShow()
+    public function calculateLauncestonShow(): void
     {
         $date = new DateTime('second saturday of october ' . $this->year, new DateTimeZone($this->timezone));
         $date = $date->sub(new DateInterval('P2D'));

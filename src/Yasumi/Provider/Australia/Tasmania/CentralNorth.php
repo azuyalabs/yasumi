@@ -37,7 +37,7 @@ class CentralNorth extends Tasmania
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         parent::initialize();
 
@@ -49,7 +49,7 @@ class CentralNorth extends Tasmania
      *
      * @throws \Exception
      */
-    public function calculateDevonportShow()
+    public function calculateDevonportShow(): void
     {
         $date = new DateTime($this->year . '-12-02', new DateTimeZone($this->timezone));
         $date = $date->modify('previous friday');

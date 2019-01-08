@@ -36,7 +36,7 @@ class KingIsland extends Tasmania
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         parent::initialize();
 
@@ -48,7 +48,7 @@ class KingIsland extends Tasmania
      *
      * @throws \Exception
      */
-    public function calculateKingIslandShow()
+    public function calculateKingIslandShow(): void
     {
         $this->calculateHoliday(
             'kingIslandShow',

@@ -39,7 +39,7 @@ class NT extends Australia
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         parent::initialize();
 
@@ -54,7 +54,7 @@ class NT extends Australia
      *
      * @throws \Exception
      */
-    public function calculateMayDay()
+    public function calculateMayDay(): void
     {
         $date = new DateTime("first monday of may $this->year", new DateTimeZone($this->timezone));
 
@@ -69,7 +69,7 @@ class NT extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function calculatePicnicDay()
+    public function calculatePicnicDay(): void
     {
         $this->calculateHoliday(
             'picnicDay',
@@ -127,7 +127,7 @@ class NT extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function calculateQueensBirthday()
+    public function calculateQueensBirthday(): void
     {
         $this->calculateHoliday(
             'queensBirthday',

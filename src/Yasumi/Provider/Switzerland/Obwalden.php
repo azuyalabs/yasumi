@@ -41,7 +41,7 @@ class Obwalden extends Switzerland
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         parent::initialize();
 
@@ -77,7 +77,7 @@ class Obwalden extends Switzerland
      * @throws \Exception
      * @throws \Exception
      */
-    public function calculateBruderKlausenFest()
+    public function calculateBruderKlausenFest(): void
     {
         if ($this->year >= 1947) {
             $this->addHoliday(new Holiday(

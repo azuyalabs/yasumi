@@ -25,7 +25,7 @@ interface TranslationsInterface
      *
      * @return string|null translated holiday name
      */
-    public function getTranslation(string $shortName, string $locale);
+    public function getTranslation(string $shortName, string $locale): ?string;
 
     /**
      * Returns all available translations for holiday.

@@ -39,7 +39,7 @@ class Australia extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         // Official Holidays
         $this->calculateNewYearHolidays();
@@ -70,7 +70,7 @@ class Australia extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateAustraliaDay()
+    public function calculateAustraliaDay(): void
     {
         $date = new DateTime("$this->year-01-26", new DateTimeZone($this->timezone));
 
@@ -99,7 +99,7 @@ class Australia extends AbstractProvider
         $moveFromSaturday = true,
         $moveFromSunday = true,
         $type = Holiday::TYPE_OFFICIAL
-    ) {
+    ): void {
         $day = (int)$date->format('w');
         if (($day === 0 && $moveFromSunday) || ($day === 6 && $moveFromSaturday)) {
             $date = $date->add($day === 0 ? new DateInterval('P1D') : new DateInterval('P2D'));
@@ -122,7 +122,7 @@ class Australia extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateNewYearHolidays()
+    public function calculateNewYearHolidays(): void
     {
         $newyearsday = new DateTime("$this->year-01-01", new DateTimeZone($this->timezone));
         $this->calculateHoliday('newYearsDay', ['en_AU' => 'New Year\'s Day'], $newyearsday, false, false);
@@ -154,7 +154,7 @@ class Australia extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateAnzacDay()
+    public function calculateAnzacDay(): void
     {
         if ($this->year < 1921) {
             return;
@@ -183,7 +183,7 @@ class Australia extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateChristmasDay()
+    public function calculateChristmasDay(): void
     {
         $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->timezone));
         $boxingDay    = new DateTime("$this->year-12-26", new DateTimeZone($this->timezone));
