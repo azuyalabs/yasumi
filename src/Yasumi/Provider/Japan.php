@@ -301,7 +301,7 @@ class Japan extends AbstractProvider
     private function calculateMarineDay()
     {
         $date = null;
-        if ($this->year == 2020) {
+        if ($this->year === 2020) {
             $date = new DateTime("$this->year-7-23", new DateTimeZone($this->timezone));
         } elseif ($this->year >= 2003) {
             $date = new DateTime("third monday of july $this->year", new DateTimeZone($this->timezone));
@@ -332,7 +332,7 @@ class Japan extends AbstractProvider
     private function caluclateMountainDay()
     {
         $date = null;
-        if ($this->year == 2020) {
+        if ($this->year === 2020) {
             $date = new DateTime("$this->year-8-10", new DateTimeZone($this->timezone));
         } elseif ($this->year >= 2016) {
             $date = new DateTime("$this->year-8-11", new DateTimeZone($this->timezone));
@@ -395,7 +395,7 @@ class Japan extends AbstractProvider
     private function calculateHealthAndSportsDay()
     {
         $date = null;
-        if ($this->year == 2020) {
+        if ($this->year === 2020) {
             $date = new DateTime("$this->year-7-24", new DateTimeZone($this->timezone));
         } elseif ($this->year >= 2000) {
             $date = new DateTime("second monday of october $this->year", new DateTimeZone($this->timezone));
