@@ -418,7 +418,7 @@ trait CommonHolidays
      *                        timezone. If no transition time is found, a null value is returned.
      * @throws \Exception
      */
-    protected function calculateSummerWinterTime($year, $timezone, $summer)
+    protected function calculateSummerWinterTime($year, $timezone, $summer): ?DateTime
     {
         $zone = new DateTimeZone($timezone);
 
@@ -448,13 +448,13 @@ trait CommonHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return \Yasumi\Holiday
+     * @return \Yasumi\Holiday|null
      *
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function summerTime($year, $timezone, $locale, $type = Holiday::TYPE_SEASON)
+    public function summerTime($year, $timezone, $locale, $type = Holiday::TYPE_SEASON): ?Holiday
     {
         $date = $this->calculateSummerWinterTime($year, $timezone, true);
 
@@ -467,6 +467,8 @@ trait CommonHolidays
                 $type
             );
         }
+
+        return null;
     }
 
     /**
@@ -480,13 +482,13 @@ trait CommonHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return \Yasumi\Holiday
+     * @return \Yasumi\Holiday|null
      *
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function winterTime($year, $timezone, $locale, $type = Holiday::TYPE_SEASON)
+    public function winterTime($year, $timezone, $locale, $type = Holiday::TYPE_SEASON): ?Holiday
     {
         $date = $this->calculateSummerWinterTime($year, $timezone, false);
 
@@ -499,5 +501,7 @@ trait CommonHolidays
                 $type
             );
         }
+
+        return null;
     }
 }
