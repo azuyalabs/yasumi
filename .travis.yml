@@ -3,6 +3,7 @@ language: php
 php:
   - 7.1
   - 7.2
+  - 7.3
   - nightly
 
 dist: trusty
@@ -35,6 +36,8 @@ matrix:
     - php: 7.1
       env: PHPSTAN=1
     - php: 7.2
+      env: PHPSTAN=1
+    - php: 7.3
       env: PHPSTAN=1
     - php: hhvm
       env: HHVM=true
