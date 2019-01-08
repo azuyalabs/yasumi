@@ -45,7 +45,7 @@ class Ceuta extends Spain
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         parent::initialize();
 
@@ -70,7 +70,7 @@ class Ceuta extends Spain
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateDayOfCeuta()
+    public function calculateDayOfCeuta(): void
     {
         if ($this->year >= 1416) {
             $this->addHoliday(new Holiday(

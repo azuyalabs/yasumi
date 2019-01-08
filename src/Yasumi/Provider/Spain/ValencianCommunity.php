@@ -48,7 +48,7 @@ class ValencianCommunity extends Spain
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         parent::initialize();
 
@@ -78,7 +78,7 @@ class ValencianCommunity extends Spain
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateValencianCommunityDay()
+    public function calculateValencianCommunityDay(): void
     {
         if ($this->year >= 1239) {
             $this->addHoliday(new Holiday('valencianCommunityDay', [

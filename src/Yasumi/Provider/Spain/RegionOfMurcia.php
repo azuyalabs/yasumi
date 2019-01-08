@@ -45,7 +45,7 @@ class RegionOfMurcia extends Spain
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         parent::initialize();
 
@@ -71,7 +71,7 @@ class RegionOfMurcia extends Spain
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateDayOfMurcia()
+    public function calculateDayOfMurcia(): void
     {
         if ($this->year >= 1983) {
             $this->addHoliday(new Holiday('murciaDay', [

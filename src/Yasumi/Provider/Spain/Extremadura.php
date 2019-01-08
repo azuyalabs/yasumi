@@ -46,7 +46,7 @@ class Extremadura extends Spain
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         parent::initialize();
 
@@ -73,7 +73,7 @@ class Extremadura extends Spain
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateDayOfExtremadura()
+    public function calculateDayOfExtremadura(): void
     {
         if ($this->year >= 1985) {
             $this->addHoliday(new Holiday(

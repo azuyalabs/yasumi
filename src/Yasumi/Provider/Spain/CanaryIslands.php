@@ -46,7 +46,7 @@ class CanaryIslands extends Spain
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         parent::initialize();
         $this->timezone = 'Atlantic/Canary';
@@ -72,7 +72,7 @@ class CanaryIslands extends Spain
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateCanaryIslandsDay()
+    public function calculateCanaryIslandsDay(): void
     {
         if ($this->year >= 1984) {
             $this->addHoliday(new Holiday(

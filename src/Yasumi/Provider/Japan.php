@@ -79,7 +79,7 @@ class Japan extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         $this->timezone = 'Asia/Tokyo';
 
@@ -201,7 +201,7 @@ class Japan extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateVernalEquinoxDay()
+    private function calculateVernalEquinoxDay(): void
     {
         $day = null;
         if ($this->year < 1948 || $this->year > 2150) {
@@ -236,7 +236,7 @@ class Japan extends AbstractProvider
      * @throws \Exception
      * @throws \Exception
      */
-    private function calculateComingOfAgeDay()
+    private function calculateComingOfAgeDay(): void
     {
         $date = null;
         if ($this->year >= 2000) {
@@ -266,7 +266,7 @@ class Japan extends AbstractProvider
      * @throws \Exception
      * @throws \Exception
      */
-    private function calculateGreeneryDay()
+    private function calculateGreeneryDay(): void
     {
         $date = null;
         if ($this->year >= 2007) {
@@ -298,7 +298,7 @@ class Japan extends AbstractProvider
      * @throws \Exception
      * @throws \Exception
      */
-    private function calculateMarineDay()
+    private function calculateMarineDay(): void
     {
         $date = null;
         if ($this->year === 2020) {
@@ -329,7 +329,7 @@ class Japan extends AbstractProvider
      * @throws \Exception
      * @throws \Exception
      */
-    private function caluclateMountainDay()
+    private function caluclateMountainDay(): void
     {
         $date = null;
         if ($this->year === 2020) {
@@ -360,7 +360,7 @@ class Japan extends AbstractProvider
      * @throws \Exception
      * @throws \Exception
      */
-    private function calculateRespectForTheAgeDay()
+    private function calculateRespectForTheAgeDay(): void
     {
         $date = null;
         if ($this->year >= 2003) {
@@ -392,7 +392,7 @@ class Japan extends AbstractProvider
      * @throws \Exception
      * @throws \Exception
      */
-    private function calculateHealthAndSportsDay()
+    private function calculateHealthAndSportsDay(): void
     {
         $date = null;
         if ($this->year === 2020) {
@@ -427,7 +427,7 @@ class Japan extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateAutumnalEquinoxDay()
+    private function calculateAutumnalEquinoxDay(): void
     {
         $day = null;
         if ($this->year < 1948 || $this->year > 2150) {
@@ -461,7 +461,7 @@ class Japan extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateSubstituteHolidays()
+    private function calculateSubstituteHolidays(): void
     {
         // Get initial list of holiday dates
         $dates = $this->getHolidayDates();
@@ -508,7 +508,7 @@ class Japan extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateBridgeHolidays()
+    private function calculateBridgeHolidays(): void
     {
         // Get initial list of holidays and iterator
         $datesIterator = $this->getIterator();

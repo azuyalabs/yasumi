@@ -48,7 +48,7 @@ class Catalonia extends Spain
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         parent::initialize();
 
@@ -76,7 +76,7 @@ class Catalonia extends Spain
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateNationalDayOfCatalonia()
+    public function calculateNationalDayOfCatalonia(): void
     {
         if ($this->year >= 1886) {
             $this->addHoliday(new Holiday(
