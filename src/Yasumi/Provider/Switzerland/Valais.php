@@ -29,7 +29,7 @@ class Valais extends Switzerland
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'CH-VS';
+    public const ID = 'CH-VS';
 
     /**
      * Initialize holidays for Valais (Switzerland).

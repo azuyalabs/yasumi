@@ -32,7 +32,7 @@ class Romania extends AbstractProvider
      * Code to identify this Holiday Provider.
      * Typically this is the ISO3166 code corresponding to the respective country or sub-region.
      */
-    const ID = 'RO';
+    public const ID = 'RO';
 
     /**
      * Initialize holidays for Romania.

@@ -29,7 +29,7 @@ class Uri extends Switzerland
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'CH-UR';
+    public const ID = 'CH-UR';
 
     /**
      * Initialize holidays for Uri (Switzerland).

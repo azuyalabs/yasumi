@@ -29,7 +29,7 @@ class Aargau extends Switzerland
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'CH-AG';
+    public const ID = 'CH-AG';
 
     /**
      * Initialize holidays for Aargau (Switzerland).

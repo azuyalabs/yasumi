@@ -28,7 +28,7 @@ class Sweden extends AbstractProvider
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'SE';
+    public const ID = 'SE';
 
     /**
      * Initialize holidays for Sweden.

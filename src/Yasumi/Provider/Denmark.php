@@ -28,7 +28,7 @@ class Denmark extends AbstractProvider
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'DK';
+    public const ID = 'DK';
 
     /**
      * Initialize holidays for Denmark.

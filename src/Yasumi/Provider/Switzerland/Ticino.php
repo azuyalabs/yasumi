@@ -31,7 +31,7 @@ class Ticino extends Switzerland
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'CH-TI';
+    public const ID = 'CH-TI';
 
     /**
      * Initialize holidays for Ticino (Switzerland).

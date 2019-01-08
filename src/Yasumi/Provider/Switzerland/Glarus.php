@@ -31,7 +31,7 @@ class Glarus extends Switzerland
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'CH-GL';
+    public const ID = 'CH-GL';
 
     /**
      * Initialize holidays for Glarus (Switzerland).

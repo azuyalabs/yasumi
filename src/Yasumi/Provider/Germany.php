@@ -27,7 +27,7 @@ class Germany extends AbstractProvider
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'DE';
+    public const ID = 'DE';
 
     /**
      * Initialize holidays for Germany.

@@ -33,7 +33,7 @@ class SouthAfrica extends AbstractProvider
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'ZA';
+    public const ID = 'ZA';
 
     /**
      * Initialize holidays for South Africa.

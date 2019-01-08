@@ -30,7 +30,7 @@ class CzechRepublic extends AbstractProvider
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'CZ';
+    public const ID = 'CZ';
 
     /**
      * Initialize holidays for the Czech Republic.

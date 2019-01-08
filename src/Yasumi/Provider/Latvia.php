@@ -24,15 +24,15 @@ class Latvia extends AbstractProvider
 {
     use CommonHolidays, ChristianHolidays;
 
-    const RESTORATION_OF_INDEPENDENCE_YEAR = 1990;
+    public const RESTORATION_OF_INDEPENDENCE_YEAR = 1990;
 
-    const PROCLAMATION_OF_INDEPENDENCE_YEAR = 1918;
+    public const PROCLAMATION_OF_INDEPENDENCE_YEAR = 1918;
 
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'LV';
+    public const ID = 'LV';
 
     /**
      * Initialize holidays for Latvia.

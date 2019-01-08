@@ -29,7 +29,7 @@ class Solothurn extends Switzerland
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'CH-SO';
+    public const ID = 'CH-SO';
 
     /**
      * Initialize holidays for Solothurn (Switzerland).

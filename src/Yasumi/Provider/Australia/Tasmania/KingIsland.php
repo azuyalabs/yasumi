@@ -27,7 +27,7 @@ class KingIsland extends Tasmania
      * country or sub-region. This one is not a proper ISO3166 code, but there aren't any for areas within Tasmania,
      * and I believe it to be a logical extension.
      */
-    const ID = 'AU-TAS-KI';
+    public const ID = 'AU-TAS-KI';
 
     public $timezone = 'Australia/Tasmania';
 

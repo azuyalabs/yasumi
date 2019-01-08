@@ -34,7 +34,7 @@ class BasqueCountry extends Spain
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'ES-PV';
+    public const ID = 'ES-PV';
 
     /**
      * Initialize holidays for Basque Country (Spain).

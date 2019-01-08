@@ -27,7 +27,7 @@ class WA extends Australia
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'AU-WA';
+    public const ID = 'AU-WA';
 
     public $timezone = 'Australia/West';
 

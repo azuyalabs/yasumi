@@ -38,7 +38,7 @@ class Catalonia extends Spain
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'ES-CT';
+    public const ID = 'ES-CT';
 
     /**
      * Initialize holidays for Catalonia (Spain).

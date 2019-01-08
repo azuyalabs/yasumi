@@ -37,7 +37,7 @@ class CastileAndLeon extends Spain
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'ES-CL';
+    public const ID = 'ES-CL';
 
     /**
      * Initialize holidays for Castile and León (Spain).

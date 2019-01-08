@@ -29,7 +29,7 @@ class Bosnia extends AbstractProvider
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'BA';
+    public const ID = 'BA';
 
     /**
      * Initialize holidays for Bosnia.

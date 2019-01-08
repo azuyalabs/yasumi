@@ -31,7 +31,7 @@ class Hesse extends Germany
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'DE-HE';
+    public const ID = 'DE-HE';
 
     /**
      * Initialize holidays for Hesse (Germany).

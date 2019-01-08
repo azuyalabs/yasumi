@@ -29,7 +29,7 @@ class Schwyz extends Switzerland
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'CH-SZ';
+    public const ID = 'CH-SZ';
 
     /**
      * Initialize holidays for Schwyz (Switzerland).

@@ -29,7 +29,7 @@ class Thurgau extends Switzerland
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'CH-TG';
+    public const ID = 'CH-TG';
 
     /**
      * Initialize holidays for Thurgau (Switzerland).

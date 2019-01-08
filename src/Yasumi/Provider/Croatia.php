@@ -29,7 +29,7 @@ class Croatia extends AbstractProvider
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'HR';
+    public const ID = 'HR';
 
     /**
      * Initialize holidays for Croatia.

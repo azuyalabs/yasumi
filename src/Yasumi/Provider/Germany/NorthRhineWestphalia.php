@@ -31,7 +31,7 @@ class NorthRhineWestphalia extends Germany
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'DE-NW';
+    public const ID = 'DE-NW';
 
     /**
      * Initialize holidays for North Rhine-Westphalia (Germany).

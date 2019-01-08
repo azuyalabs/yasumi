@@ -31,7 +31,7 @@ class Obwalden extends Switzerland
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'CH-OW';
+    public const ID = 'CH-OW';
 
     /**
      * Initialize holidays for Obwalden (Switzerland).

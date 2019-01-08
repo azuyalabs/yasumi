@@ -30,7 +30,7 @@ class Ukraine extends AbstractProvider
      * Code to identify this Holiday Provider.
      * Typically this is the ISO3166 code corresponding to the respective country or sub-region.
      */
-    const ID = 'UA';
+    public const ID = 'UA';
 
     /**
      * Initialize holidays for Ukraine.

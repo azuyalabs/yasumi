@@ -24,17 +24,17 @@ class Estonia extends AbstractProvider
 {
     use CommonHolidays, ChristianHolidays;
 
-    const DECLARATION_OF_INDEPENDENCE_YEAR = 1918;
+    public const DECLARATION_OF_INDEPENDENCE_YEAR = 1918;
 
-    const VICTORY_DAY_START_YEAR = 1934;
+    public const VICTORY_DAY_START_YEAR = 1934;
 
-    const RESTORATION_OF_INDEPENDENCE_YEAR = 1991;
+    public const RESTORATION_OF_INDEPENDENCE_YEAR = 1991;
 
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'EE';
+    public const ID = 'EE';
 
     /**
      * Initialize holidays for Estonia.

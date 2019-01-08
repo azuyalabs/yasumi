@@ -30,7 +30,7 @@ class BadenWurttemberg extends Germany
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'DE-BW';
+    public const ID = 'DE-BW';
 
     /**
      * Initialize holidays for Baden-Württemberg (Germany).

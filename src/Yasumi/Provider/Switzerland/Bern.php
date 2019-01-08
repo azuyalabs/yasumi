@@ -29,7 +29,7 @@ class Bern extends Switzerland
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'CH-BE';
+    public const ID = 'CH-BE';
 
     /**
      * Initialize holidays for Bern (Switzerland).

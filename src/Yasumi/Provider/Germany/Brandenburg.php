@@ -29,7 +29,7 @@ class Brandenburg extends Germany
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'DE-BB';
+    public const ID = 'DE-BB';
 
     /**
      * Initialize holidays for Brandenburg (Germany).

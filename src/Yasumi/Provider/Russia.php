@@ -23,17 +23,17 @@ class Russia extends AbstractProvider
 {
     use CommonHolidays;
 
-    const DEFENCE_OF_THE_FATHERLAND_START_YEAR = 1919;
+    public const DEFENCE_OF_THE_FATHERLAND_START_YEAR = 1919;
 
-    const RUSSIA_DAY_START_YEAR = 1990;
+    public const RUSSIA_DAY_START_YEAR = 1990;
 
-    const UNITY_DAY_START_YEAR = 2005;
+    public const UNITY_DAY_START_YEAR = 2005;
 
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'RU';
+    public const ID = 'RU';
 
     /**
      * Initialize holidays for Russia.

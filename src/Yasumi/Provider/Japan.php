@@ -29,47 +29,47 @@ class Japan extends AbstractProvider
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'JP';
+    public const ID = 'JP';
 
     /**
      * The gradient parameter of the approximate expression to calculate equinox day.
      */
-    const EQUINOX_GRADIENT = 0.242194;
+    public const EQUINOX_GRADIENT = 0.242194;
 
     /**
      * The initial parameter of the approximate expression to calculate vernal equinox day from 1900 to 1979.
      */
-    const VERNAL_EQUINOX_PARAM_1979 = 20.8357;
+    public const VERNAL_EQUINOX_PARAM_1979 = 20.8357;
 
     /**
      * The initial parameter of the approximate expression to calculate vernal equinox day from 1980 to 2099.
      */
-    const VERNAL_EQUINOX_PARAM_2099 = 20.8431;
+    public const VERNAL_EQUINOX_PARAM_2099 = 20.8431;
 
     /**
      * The initial parameter of the approximate expression to calculate vernal equinox day from 2100 to 2150.
      */
-    const VERNAL_EQUINOX_PARAM_2150 = 21.8510;
+    public const VERNAL_EQUINOX_PARAM_2150 = 21.8510;
 
     /**
      * The initial parameter of the approximate expression to calculate autumnal equinox day from 1851 to 1899.
      */
-    const AUTUMNAL_EQUINOX_PARAM_1899 = 22.2588;
+    public const AUTUMNAL_EQUINOX_PARAM_1899 = 22.2588;
 
     /**
      * The initial parameter of the approximate expression to calculate autumnal equinox day from 1900 to 1979.
      */
-    const AUTUMNAL_EQUINOX_PARAM_1979 = 23.2588;
+    public const AUTUMNAL_EQUINOX_PARAM_1979 = 23.2588;
 
     /**
      * The initial parameter of the approximate expression to calculate autumnal equinox day from 1980 to 2099.
      */
-    const AUTUMNAL_EQUINOX_PARAM_2099 = 23.2488;
+    public const AUTUMNAL_EQUINOX_PARAM_2099 = 23.2488;
 
     /**
      * The initial parameter of the approximate expression to calculate autumnal equinox day from 2100 to 2150.
      */
-    const AUTUMNAL_EQUINOX_PARAM_2150 = 24.2488;
+    public const AUTUMNAL_EQUINOX_PARAM_2150 = 24.2488;
 
     /**
      * Initialize holidays for Japan.

@@ -32,7 +32,7 @@ class Geneva extends Switzerland
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'CH-GE';
+    public const ID = 'CH-GE';
 
     /**
      * Initialize holidays for Geneva (Switzerland).

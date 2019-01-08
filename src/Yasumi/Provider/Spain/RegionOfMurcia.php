@@ -35,7 +35,7 @@ class RegionOfMurcia extends Spain
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'ES-MC';
+    public const ID = 'ES-MC';
 
     /**
      * Initialize holidays for the Region of Murcia (Spain).

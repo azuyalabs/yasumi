@@ -29,7 +29,7 @@ class Brisbane extends Queensland
      * country or sub-region. This one is not a proper ISO3166 code, but there isn't one specifically for Brisbane,
      * and I believe this is a logical extension.
      */
-    const ID = 'AU-QLD-BRI';
+    public const ID = 'AU-QLD-BRI';
 
     public $timezone = 'Australia/Brisbane';
 

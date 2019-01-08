@@ -28,7 +28,7 @@ class Netherlands extends AbstractProvider
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'NL';
+    public const ID = 'NL';
 
     /**
      * Initialize holidays for the Netherlands.

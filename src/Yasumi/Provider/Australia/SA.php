@@ -28,7 +28,7 @@ class SA extends Australia
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'AU-SA';
+    public const ID = 'AU-SA';
 
     public $timezone = 'Australia/South';
 

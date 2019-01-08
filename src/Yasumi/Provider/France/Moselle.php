@@ -33,7 +33,7 @@ class Moselle extends France
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'FR-57';
+    public const ID = 'FR-57';
 
     /**
      * Initialize holidays for Moselle (France).

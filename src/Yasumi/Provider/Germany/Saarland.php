@@ -31,7 +31,7 @@ class Saarland extends Germany
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'DE-SL';
+    public const ID = 'DE-SL';
 
     /**
      * Initialize holidays for Saarland (Germany).

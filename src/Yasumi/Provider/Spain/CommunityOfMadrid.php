@@ -37,7 +37,7 @@ class CommunityOfMadrid extends Spain
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'ES-MD';
+    public const ID = 'ES-MD';
 
     /**
      * Initialize holidays for the Community Of Madrid (Spain).

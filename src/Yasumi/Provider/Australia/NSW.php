@@ -28,7 +28,7 @@ class NSW extends Australia
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'AU-NSW';
+    public const ID = 'AU-NSW';
 
     public $timezone = 'Australia/NSW';
 

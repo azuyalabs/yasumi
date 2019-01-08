@@ -31,7 +31,7 @@ class Jura extends Switzerland
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'CH-JU';
+    public const ID = 'CH-JU';
 
     /**
      * Initialize holidays for Jura (Switzerland).

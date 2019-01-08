@@ -36,7 +36,7 @@ class Galicia extends Spain
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'ES-GA';
+    public const ID = 'ES-GA';
 
     /**
      * Initialize holidays for Galicia (Spain).

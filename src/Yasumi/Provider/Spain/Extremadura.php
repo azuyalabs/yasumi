@@ -36,7 +36,7 @@ class Extremadura extends Spain
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'ES-EX';
+    public const ID = 'ES-EX';
 
     /**
      * Initialize holidays for Extremadura (Spain).

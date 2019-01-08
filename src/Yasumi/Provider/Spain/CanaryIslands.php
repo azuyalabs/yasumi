@@ -36,7 +36,7 @@ class CanaryIslands extends Spain
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'ES-CN';
+    public const ID = 'ES-CN';
 
     /**
      * Initialize holidays for Canary Islands (Spain).

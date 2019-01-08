@@ -29,7 +29,7 @@ class Yasumi
     /**
      * Default locale.
      */
-    const DEFAULT_LOCALE = 'en_US';
+    public const DEFAULT_LOCALE = 'en_US';
 
     /**
      * @var array list of all defined locales

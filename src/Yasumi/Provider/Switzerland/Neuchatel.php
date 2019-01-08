@@ -31,7 +31,7 @@ class Neuchatel extends Switzerland
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'CH-NE';
+    public const ID = 'CH-NE';
 
     /**
      * Initialize holidays for Neuchâtel (Switzerland).

@@ -28,7 +28,7 @@ class NewZealand extends AbstractProvider
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'NZ';
+    public const ID = 'NZ';
 
     /**
      * Initialize holidays for New Zealand.

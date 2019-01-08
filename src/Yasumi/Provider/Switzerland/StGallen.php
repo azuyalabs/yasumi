@@ -29,7 +29,7 @@ class StGallen extends Switzerland
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'CH-SG';
+    public const ID = 'CH-SG';
 
     /**
      * Initialize holidays for St. Gallen (Switzerland).

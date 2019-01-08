@@ -36,7 +36,7 @@ class Asturias extends Spain
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'ES-AS';
+    public const ID = 'ES-AS';
 
     /**
      * Initialize holidays for Asturias (Spain).

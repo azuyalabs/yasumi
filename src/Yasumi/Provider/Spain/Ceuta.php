@@ -35,7 +35,7 @@ class Ceuta extends Spain
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'ES-CE';
+    public const ID = 'ES-CE';
 
     /**
      * Initialize holidays for Ceuta (Spain).

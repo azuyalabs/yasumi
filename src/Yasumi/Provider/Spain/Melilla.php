@@ -33,7 +33,7 @@ class Melilla extends Spain
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'ES-ML';
+    public const ID = 'ES-ML';
 
     /**
      * Initialize holidays for Melilla (Spain).

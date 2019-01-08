@@ -28,22 +28,22 @@ class Lithuania extends AbstractProvider
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'LT';
+    public const ID = 'LT';
 
     /**
      * The year when The Act of Reinstating Independence of Lithuania was signed.
      */
-    const RESTORATION_OF_THE_STATE_YEAR = 1918;
+    public const RESTORATION_OF_THE_STATE_YEAR = 1918;
 
     /**
      * The year when The Act of the Re-Establishment of the State of Lithuania was signed.
      */
-    const RESTORATION_OF_INDEPENDENCE_YEAR = 1990;
+    public const RESTORATION_OF_INDEPENDENCE_YEAR = 1990;
 
     /**
      * A year when Mindaugas was crowned as the only King of Lithuania.
      */
-    const STATEHOOD_YEAR = 1253;
+    public const STATEHOOD_YEAR = 1253;
 
     /**
      * Initialize holidays for Lithuania.
