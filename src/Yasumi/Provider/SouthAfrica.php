@@ -43,7 +43,7 @@ class SouthAfrica extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         $this->timezone = 'Africa/Johannesburg';
 
@@ -92,7 +92,7 @@ class SouthAfrica extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateHumanRightsDay()
+    public function calculateHumanRightsDay(): void
     {
         $this->addHoliday(new Holiday(
             'humanRightsDay',
@@ -114,7 +114,7 @@ class SouthAfrica extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateFamilyDay()
+    public function calculateFamilyDay(): void
     {
         $this->addHoliday(new Holiday(
             'familyDay',
@@ -137,7 +137,7 @@ class SouthAfrica extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateFreedomDay()
+    public function calculateFreedomDay(): void
     {
         $this->addHoliday(new Holiday(
             'freedomDay',
@@ -164,7 +164,7 @@ class SouthAfrica extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateYouthDay()
+    public function calculateYouthDay(): void
     {
         $this->addHoliday(new Holiday(
             'youthDay',
@@ -187,7 +187,7 @@ class SouthAfrica extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculate2016MunicipalElectionsDay()
+    public function calculate2016MunicipalElectionsDay(): void
     {
         if ($this->year !== 2016) {
             return;
@@ -216,7 +216,7 @@ class SouthAfrica extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateNationalWomensDay()
+    public function calculateNationalWomensDay(): void
     {
         $this->addHoliday(new Holiday(
             'nationalWomensDay',
@@ -241,7 +241,7 @@ class SouthAfrica extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateHeritageDay()
+    public function calculateHeritageDay(): void
     {
         $this->addHoliday(new Holiday(
             'heritageDay',
@@ -268,7 +268,7 @@ class SouthAfrica extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateDayOfReconciliation()
+    public function calculateDayOfReconciliation(): void
     {
         $this->addHoliday(new Holiday(
             'reconciliationDay',
@@ -294,7 +294,7 @@ class SouthAfrica extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateSubstituteDayOfGoodwill()
+    public function calculateSubstituteDayOfGoodwill(): void
     {
         if ($this->year !== 2016) {
             return;
@@ -319,7 +319,7 @@ class SouthAfrica extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateSubstituteHolidays()
+    private function calculateSubstituteHolidays(): void
     {
         $datesIterator = $this->getIterator();
 

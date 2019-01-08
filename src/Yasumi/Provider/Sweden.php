@@ -38,7 +38,7 @@ class Sweden extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         $this->timezone = 'Europe/Stockholm';
 
@@ -82,7 +82,7 @@ class Sweden extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateStJohnsDay()
+    public function calculateStJohnsDay(): void
     {
         $date = new DateTime("$this->year-6-20", new DateTimeZone($this->timezone)); // Default date
 
@@ -118,7 +118,7 @@ class Sweden extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateAllSaintsDay()
+    public function calculateAllSaintsDay(): void
     {
         $date = new DateTime("$this->year-10-31", new DateTimeZone($this->timezone));
 
@@ -147,7 +147,7 @@ class Sweden extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateNationalDay()
+    public function calculateNationalDay(): void
     {
         if ($this->year < 1916) {
             return;

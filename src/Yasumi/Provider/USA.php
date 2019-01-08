@@ -38,7 +38,7 @@ class USA extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         $this->timezone = 'America/New_York';
 
@@ -213,7 +213,7 @@ class USA extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateSubstituteHolidays()
+    private function calculateSubstituteHolidays(): void
     {
         $datesIterator     = $this->getIterator();
         $substituteHoliday = null;

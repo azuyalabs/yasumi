@@ -37,7 +37,7 @@ class Spain extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         $this->timezone = 'Europe/Madrid';
 
@@ -76,7 +76,7 @@ class Spain extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateNationalDay()
+    public function calculateNationalDay(): void
     {
         if ($this->year >= 1981) {
             $this->addHoliday(new Holiday(
@@ -102,7 +102,7 @@ class Spain extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateConstitutionDay()
+    public function calculateConstitutionDay(): void
     {
         if ($this->year >= 1978) {
             $this->addHoliday(new Holiday(

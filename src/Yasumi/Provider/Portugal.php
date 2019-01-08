@@ -41,7 +41,7 @@ class Portugal extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         $this->timezone = 'Europe/Lisbon';
 
@@ -81,7 +81,7 @@ class Portugal extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateCarnationRevolutionDay()
+    public function calculateCarnationRevolutionDay(): void
     {
         if ($this->year >= 1974) {
             $this->addHoliday(new Holiday(
@@ -103,7 +103,7 @@ class Portugal extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateCorpusChristi()
+    public function calculateCorpusChristi(): void
     {
         if ($this->year <= 2013 || $this->year >= 2016) {
             $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale));
@@ -128,7 +128,7 @@ class Portugal extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculatePortugalDay()
+    public function calculatePortugalDay(): void
     {
         if ($this->year <= 1932 || $this->year >= 1974) {
             $this->addHoliday(new Holiday(
@@ -160,7 +160,7 @@ class Portugal extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculatePortugueseRepublicDay()
+    public function calculatePortugueseRepublicDay(): void
     {
         if ($this->year >= 1910) {
             $this->addHoliday(new Holiday(
@@ -181,7 +181,7 @@ class Portugal extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateAllSaintsDay()
+    public function calculateAllSaintsDay(): void
     {
         if ($this->year <= 2013 || $this->year >= 2016) {
             $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale));
@@ -213,7 +213,7 @@ class Portugal extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateRestorationOfIndependenceDay()
+    public function calculateRestorationOfIndependenceDay(): void
     {
         // The Wikipedia article mentions that this has been a holiday since the second of half of the XIX century.
         if (($this->year >= 1850 && $this->year <= 2013) || $this->year >= 2016) {

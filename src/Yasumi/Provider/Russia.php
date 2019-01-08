@@ -41,7 +41,7 @@ class Russia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         $this->timezone = 'Europe/Moscow';
 
@@ -61,7 +61,7 @@ class Russia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addNewYearsHolidays()
+    private function addNewYearsHolidays(): void
     {
         $holidayDays = [2, 3, 4, 5, 6, 8];
 
@@ -77,7 +77,7 @@ class Russia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addOrthodoxChristmasDay()
+    private function addOrthodoxChristmasDay(): void
     {
         $this->addHoliday(new Holiday('orthodoxChristmasDay', [
             'en_US' => 'Orthodox Christmas Day',
@@ -89,7 +89,7 @@ class Russia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addDefenceOfTheFatherlandDay()
+    private function addDefenceOfTheFatherlandDay(): void
     {
         if ($this->year < self::DEFENCE_OF_THE_FATHERLAND_START_YEAR) {
             return;
@@ -105,7 +105,7 @@ class Russia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addInternationalWomensDay()
+    private function addInternationalWomensDay(): void
     {
         $this->addHoliday(new Holiday('internationalWomensDay', [
             'en_US' => 'International Women\'s Day',
@@ -117,7 +117,7 @@ class Russia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addSpringAndLabourDay()
+    private function addSpringAndLabourDay(): void
     {
         $this->addHoliday(new Holiday('springAndLabourDay', [
             'en_US' => 'Spring and Labour Day',
@@ -129,7 +129,7 @@ class Russia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addVictoryDay()
+    private function addVictoryDay(): void
     {
         $this->addHoliday(new Holiday('victoryDay', [
             'en_US' => 'Victory Day',
@@ -141,7 +141,7 @@ class Russia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addRussiaDay()
+    private function addRussiaDay(): void
     {
         if ($this->year < self::RUSSIA_DAY_START_YEAR) {
             return;
@@ -157,7 +157,7 @@ class Russia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addUnityDay()
+    private function addUnityDay(): void
     {
         if ($this->year < self::UNITY_DAY_START_YEAR) {
             return;
