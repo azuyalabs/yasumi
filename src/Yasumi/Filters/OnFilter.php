@@ -55,7 +55,7 @@ class OnFilter extends FilterIterator implements Countable
     public function accept(): bool
     {
         $holiday = $this->getInnerIterator()->current()->format('Y-m-d');
-        return $holiday == $this->date;
+        return $holiday === $this->date;
     }
 
     /**
