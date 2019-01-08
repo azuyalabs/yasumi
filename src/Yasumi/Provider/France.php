@@ -37,7 +37,7 @@ class France extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         $this->timezone = 'Europe/Paris';
 
@@ -82,7 +82,7 @@ class France extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateBastilleDay()
+    public function calculateBastilleDay(): void
     {
         if ($this->year >= 1790) {
             $this->addHoliday(new Holiday('bastilleDay', [

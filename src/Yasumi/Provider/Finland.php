@@ -38,7 +38,7 @@ class Finland extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         $this->timezone = 'Europe/Helsinki';
 
@@ -82,7 +82,7 @@ class Finland extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateStJohnsDay()
+    public function calculateStJohnsDay(): void
     {
         $translation = ['fi_FI' => 'Juhannuspäivä'];
         $shortName   = 'stJohnsDay';
@@ -126,7 +126,7 @@ class Finland extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateAllSaintsDay()
+    private function calculateAllSaintsDay(): void
     {
         $date = new DateTime("$this->year-10-31", new DateTimeZone($this->timezone));
 
@@ -159,7 +159,7 @@ class Finland extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateIndependenceDay()
+    public function calculateIndependenceDay(): void
     {
         if ($this->year >= 1917) {
             $this->addHoliday(new Holiday(

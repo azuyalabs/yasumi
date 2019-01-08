@@ -51,7 +51,7 @@ class Lithuania extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         $this->timezone = 'Europe/Vilnius';
 
@@ -77,7 +77,7 @@ class Lithuania extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addRestorationOfTheStateDay()
+    private function addRestorationOfTheStateDay(): void
     {
         if ($this->year >= self::RESTORATION_OF_THE_STATE_YEAR) {
             $this->addHoliday(new Holiday('restorationOfTheStateOfLithuaniaDay', [
@@ -93,7 +93,7 @@ class Lithuania extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addRestorationOfIndependenceDay()
+    private function addRestorationOfIndependenceDay(): void
     {
         if ($this->year >= self::RESTORATION_OF_INDEPENDENCE_YEAR) {
             $this->addHoliday(new Holiday('restorationOfIndependenceOfLithuaniaDay', [
@@ -110,7 +110,7 @@ class Lithuania extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addStatehoodDay()
+    private function addStatehoodDay(): void
     {
         if ($this->year >= self::STATEHOOD_YEAR) {
             $this->addHoliday(new Holiday('statehoodDay', [

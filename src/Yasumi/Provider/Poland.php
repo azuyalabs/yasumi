@@ -37,7 +37,7 @@ class Poland extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         $this->timezone = 'Europe/Warsaw';
 
@@ -77,7 +77,7 @@ class Poland extends AbstractProvider
      * @throws \Exception
      */
 
-    public function calculateIndependenceDay()
+    public function calculateIndependenceDay(): void
     {
         if ($this->year < 1918) {
             return;
@@ -105,7 +105,7 @@ class Poland extends AbstractProvider
      * @throws \Exception
      */
 
-    public function calculateConstitutionDay()
+    public function calculateConstitutionDay(): void
     {
         if ($this->year < 1791) {
             return;

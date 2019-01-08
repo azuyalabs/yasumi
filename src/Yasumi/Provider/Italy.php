@@ -37,7 +37,7 @@ class Italy extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         $this->timezone = 'Europe/Rome';
 
@@ -77,7 +77,7 @@ class Italy extends AbstractProvider
      * @throws \Exception
      * @throws \Exception
      */
-    public function calculateLiberationDay()
+    public function calculateLiberationDay(): void
     {
         if ($this->year >= 1949) {
             $this->addHoliday(new Holiday(
@@ -105,7 +105,7 @@ class Italy extends AbstractProvider
      * @throws \Exception
      * @throws \Exception
      */
-    public function calculateRepublicDay()
+    public function calculateRepublicDay(): void
     {
         if ($this->year >= 1946) {
             $this->addHoliday(new Holiday(
