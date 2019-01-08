@@ -38,7 +38,7 @@ class Brazil extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         $this->timezone = 'America/Fortaleza';
 

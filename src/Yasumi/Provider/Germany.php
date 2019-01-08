@@ -37,7 +37,7 @@ class Germany extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         $this->timezone = 'Europe/Berlin';
 
@@ -80,7 +80,7 @@ class Germany extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateGermanUnityDay()
+    public function calculateGermanUnityDay(): void
     {
         if ($this->year >= 1990) {
             $this->addHoliday(new Holiday(

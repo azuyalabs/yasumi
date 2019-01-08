@@ -38,7 +38,7 @@ class Denmark extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         $this->timezone = 'Europe/Copenhagen';
 
@@ -88,7 +88,7 @@ class Denmark extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateGreatPrayerDay()
+    public function calculateGreatPrayerDay(): void
     {
         $easter = $this->calculateEaster($this->year, $this->timezone)->format('Y-m-d');
 
@@ -118,7 +118,7 @@ class Denmark extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateConstitutionDay()
+    public function calculateConstitutionDay(): void
     {
         if ($this->year >= 1849) {
             $this->addHoliday(new Holiday(

@@ -41,7 +41,7 @@ class Hamburg extends Germany
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         parent::initialize();
 
@@ -57,7 +57,7 @@ class Hamburg extends Germany
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateDayOfReformation()
+    private function calculateDayOfReformation(): void
     {
         if ($this->year < 2018) {
             return;

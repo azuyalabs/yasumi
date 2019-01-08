@@ -42,7 +42,7 @@ class Estonia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         $this->timezone = 'Europe/Tallinn';
 
@@ -65,7 +65,7 @@ class Estonia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addIndependenceDay()
+    private function addIndependenceDay(): void
     {
         if ($this->year >= self::DECLARATION_OF_INDEPENDENCE_YEAR) {
             $this->addHoliday(new Holiday('independenceDay', [
@@ -79,7 +79,7 @@ class Estonia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addVictoryDay()
+    private function addVictoryDay(): void
     {
         if ($this->year >= self::VICTORY_DAY_START_YEAR) {
             $this->addHoliday(new Holiday('victoryDay', [
@@ -93,7 +93,7 @@ class Estonia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addRestorationOfIndependenceDay()
+    private function addRestorationOfIndependenceDay(): void
     {
         if ($this->year >= self::RESTORATION_OF_INDEPENDENCE_YEAR) {
             $this->addHoliday(new Holiday('restorationOfIndependenceDay', [

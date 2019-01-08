@@ -39,7 +39,7 @@ class Brandenburg extends Germany
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         parent::initialize();
 
@@ -60,7 +60,7 @@ class Brandenburg extends Germany
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateReformationDay()
+    private function calculateReformationDay(): void
     {
         if ($this->year < 1517) {
             return;

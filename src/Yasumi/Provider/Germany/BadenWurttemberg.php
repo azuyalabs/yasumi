@@ -40,7 +40,7 @@ class BadenWurttemberg extends Germany
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         parent::initialize();
 

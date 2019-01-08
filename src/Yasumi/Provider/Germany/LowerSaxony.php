@@ -40,7 +40,7 @@ class LowerSaxony extends Germany
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         parent::initialize();
 
@@ -59,7 +59,7 @@ class LowerSaxony extends Germany
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateReformationDay()
+    private function calculateReformationDay(): void
     {
         if ($this->year < 2018) {
             return;

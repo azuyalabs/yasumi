@@ -40,7 +40,7 @@ class CzechRepublic extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         $this->timezone = 'Europe/Prague';
 
@@ -80,7 +80,7 @@ class CzechRepublic extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateSaintsCyrilAndMethodiusDay()
+    public function calculateSaintsCyrilAndMethodiusDay(): void
     {
         $this->addHoliday(new Holiday(
             'saintsCyrilAndMethodiusDay',
@@ -105,7 +105,7 @@ class CzechRepublic extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateJanHusDay()
+    public function calculateJanHusDay(): void
     {
         $this->addHoliday(new Holiday(
             'janHusDay',
@@ -133,7 +133,7 @@ class CzechRepublic extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateCzechStatehoodDay()
+    public function calculateCzechStatehoodDay(): void
     {
         $this->addHoliday(new Holiday(
             'czechStateHoodDay',
@@ -153,7 +153,7 @@ class CzechRepublic extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateIndependentCzechoslovakStateDay()
+    public function calculateIndependentCzechoslovakStateDay(): void
     {
         $this->addHoliday(new Holiday('independentCzechoslovakStateDay', [
             'cs_CZ' => 'Den vzniku samostatného československého státu',
@@ -171,7 +171,7 @@ class CzechRepublic extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateStruggleForFreedomAndDemocracyDay()
+    public function calculateStruggleForFreedomAndDemocracyDay(): void
     {
         $this->addHoliday(new Holiday(
             'struggleForFreedomAndDemocracyDay',

@@ -37,7 +37,7 @@ class Austria extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         $this->timezone = 'Europe/Vienna';
 
@@ -78,7 +78,7 @@ class Austria extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateNationalDay()
+    public function calculateNationalDay(): void
     {
         if ($this->year < 1955) {
             return;

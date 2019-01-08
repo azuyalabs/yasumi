@@ -41,7 +41,7 @@ class Saxony extends Germany
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         parent::initialize();
 
@@ -59,7 +59,7 @@ class Saxony extends Germany
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateReformationDay()
+    private function calculateReformationDay(): void
     {
         if ($this->year < 1517) {
             return;
@@ -85,7 +85,7 @@ class Saxony extends Germany
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateRepentanceAndPrayerDay()
+    public function calculateRepentanceAndPrayerDay(): void
     {
         if ($this->year >= 1995) {
             $this->addHoliday(new Holiday(
