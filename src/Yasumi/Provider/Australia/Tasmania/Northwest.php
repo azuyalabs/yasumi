@@ -31,8 +31,6 @@ class Northwest extends Tasmania
      */
     public const ID = 'AU-TAS-NW';
 
-    public $timezone = 'Australia/Tasmania';
-
     /**
      * Initialize holidays for northwestern Tasmania (Australia).
      *

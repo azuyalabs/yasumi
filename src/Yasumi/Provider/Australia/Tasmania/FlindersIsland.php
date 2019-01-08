@@ -31,8 +31,6 @@ class FlindersIsland extends Tasmania
      */
     public const ID = 'AU-TAS-FI';
 
-    public $timezone = 'Australia/Tasmania';
-
     /**
      * Initialize holidays for Flinders Island (Australia).
      *

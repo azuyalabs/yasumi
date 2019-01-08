@@ -31,8 +31,6 @@ class Northeast extends Tasmania
      */
     public const ID = 'AU-TAS-NE';
 
-    public $timezone = 'Australia/Tasmania';
-
     /**
      * Initialize holidays for northeastern Tasmania (Australia).
      *

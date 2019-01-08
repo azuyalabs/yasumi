@@ -29,8 +29,6 @@ class KingIsland extends Tasmania
      */
     public const ID = 'AU-TAS-KI';
 
-    public $timezone = 'Australia/Tasmania';
-
     /**
      * Initialize holidays for King Island (Australia).
      *

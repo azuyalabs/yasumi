@@ -31,8 +31,6 @@ class South extends Tasmania
      */
     public const ID = 'AU-TAS-SOU';
 
-    public $timezone = 'Australia/Tasmania';
-
     /**
      * Initialize holidays for southern Tasmania (Australia).
      *

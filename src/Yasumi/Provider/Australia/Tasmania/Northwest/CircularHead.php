@@ -31,8 +31,6 @@ class CircularHead extends Northwest
      */
     public const ID = 'AU-TAS-NW-CH';
 
-    public $timezone = 'Australia/Tasmania';
-
     /**
      * Initialize holidays for Circular Head (Australia).
      *

@@ -30,8 +30,6 @@ class CentralNorth extends Tasmania
      */
     public const ID = 'AU-TAS-CN';
 
-    public $timezone = 'Australia/Tasmania';
-
     /**
      * Initialize holidays for northeastern Tasmania (Australia).
      *
