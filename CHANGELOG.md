@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Added
 - New filter to select holidays that happen on a given date [\#119](https://github.com/azuyalabs/yasumi/pull/119) ([cruxicheiros](https://github.com/cruxicheiros))
-- Holiday Providers for all Australian states and teritories. [\#112](https://github.com/azuyalabs/yasumi/pull/112) ([Milamber33](https://github.com/Milamber33))
+- Holiday Providers for all Australian states and territories. [\#112](https://github.com/azuyalabs/yasumi/pull/112) ([Milamber33](https://github.com/Milamber33))
 - Holiday Provider for Bosnia. [\#94](https://github.com/azuyalabs/yasumi/pull/94) ([TheAdnan](https://github.com/TheAdnan))
 - Added Reformation Day as offical holiday since 2018 in Lower Saxony (Germany). [#115](https://github.com/azuyalabs/yasumi/issues/115) ([Taxcamp](https://github.com/Taxcamp))
 - Added Reformation Day as offical holiday since 2018 in Schleswig-Holstein (Germany). [#106](https://github.com/azuyalabs/yasumi/pull/106) ([HenningCash](https://github.com/HenningCash))
