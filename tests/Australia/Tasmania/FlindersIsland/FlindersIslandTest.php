@@ -28,6 +28,7 @@ class FlindersIslandTest extends FlindersIslandBaseTestCase
 
     /**
      * Tests if all official holidays in Flinders Island (Australia) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {

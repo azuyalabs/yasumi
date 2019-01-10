@@ -39,6 +39,8 @@ class RepentanceAndPrayerDayTest extends SaxonyBaseTestCase implements YasumiTes
 
     /**
      * Tests the holiday defined in this test on or after establishment.
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHolidayOnAfterEstablishment()
     {
@@ -56,6 +58,7 @@ class RepentanceAndPrayerDayTest extends SaxonyBaseTestCase implements YasumiTes
 
     /**
      * Tests the holiday defined in this test before establishment.
+     * @throws \ReflectionException
      */
     public function testHolidayBeforeEstablishment()
     {
@@ -68,6 +71,7 @@ class RepentanceAndPrayerDayTest extends SaxonyBaseTestCase implements YasumiTes
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -81,6 +85,7 @@ class RepentanceAndPrayerDayTest extends SaxonyBaseTestCase implements YasumiTes
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

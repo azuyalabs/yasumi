@@ -26,6 +26,7 @@ class BrazilTest extends BrazilBaseTestCase
 
     /**
      * Tests if all official holidays in Brazil are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -44,6 +45,7 @@ class BrazilTest extends BrazilBaseTestCase
 
     /**
      * Tests if all observed holidays in Brazil are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -58,6 +60,7 @@ class BrazilTest extends BrazilBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Brazil are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -66,6 +69,7 @@ class BrazilTest extends BrazilBaseTestCase
 
     /**
      * Tests if all bank holidays in Brazil are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -74,6 +78,7 @@ class BrazilTest extends BrazilBaseTestCase
 
     /**
      * Tests if all other holidays in Brazil are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

@@ -30,6 +30,9 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests Jeune Genevois on or after 1966
+     *
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testJeuneGenevoisOnAfter1966()
     {
@@ -45,6 +48,9 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests Jeune Genevois between 1870 and 1965
+     *
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testJeuneGenevoisBetween1870And1965()
     {
@@ -60,6 +66,9 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests Jeune Genevois between 1840 and 1869
+     *
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testJeuneGenevoisBetween1840And1869()
     {
@@ -75,6 +84,7 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests Jeune Genevois before 1840
+     * @throws \ReflectionException
      */
     public function testJeuneGenevoisBefore1840()
     {
@@ -84,6 +94,7 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests translated name of Jeune Genevois.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -97,6 +108,7 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

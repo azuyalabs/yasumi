@@ -34,6 +34,8 @@ class ProclamationOfRepublicDayTest extends BrazilBaseTestCase implements Yasumi
 
     /**
      * Tests Proclamação da República on or after 1889.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testProclamacaoDaRepublicaAfter1889()
     {
@@ -48,6 +50,7 @@ class ProclamationOfRepublicDayTest extends BrazilBaseTestCase implements Yasumi
 
     /**
      * Tests Proclamação da República on or before 1889.
+     * @throws \ReflectionException
      */
     public function testProclamacaoDaRepublicaBefore1889()
     {
@@ -57,6 +60,7 @@ class ProclamationOfRepublicDayTest extends BrazilBaseTestCase implements Yasumi
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -71,6 +75,7 @@ class ProclamationOfRepublicDayTest extends BrazilBaseTestCase implements Yasumi
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

@@ -26,6 +26,7 @@ class GlarusTest extends GlarusBaseTestCase
 
     /**
      * Tests if all official holidays in Glarus (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -38,6 +39,7 @@ class GlarusTest extends GlarusBaseTestCase
 
     /**
      * Tests if all regional holidays in Glarus (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testRegionalHolidays()
     {
@@ -57,6 +59,7 @@ class GlarusTest extends GlarusBaseTestCase
 
     /**
      * Tests if all observed holidays in Glarus (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -70,6 +73,7 @@ class GlarusTest extends GlarusBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Glarus (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -78,6 +82,7 @@ class GlarusTest extends GlarusBaseTestCase
 
     /**
      * Tests if all bank holidays in Glarus (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -86,6 +91,7 @@ class GlarusTest extends GlarusBaseTestCase
 
     /**
      * Tests if all other holidays in Glarus (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

@@ -36,6 +36,9 @@ class CarnavalTuesdayTest extends BrazilBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests Carnaval Tuesday on or after 1700.
+     *
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testCarnavalTuesdayAfter1700()
     {
@@ -50,6 +53,7 @@ class CarnavalTuesdayTest extends BrazilBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests Carnaval Tuesday on or before 1700.
+     * @throws \ReflectionException
      */
     public function testCarnavalTuesdayBefore1700()
     {
@@ -59,6 +63,7 @@ class CarnavalTuesdayTest extends BrazilBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -68,6 +73,7 @@ class CarnavalTuesdayTest extends BrazilBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

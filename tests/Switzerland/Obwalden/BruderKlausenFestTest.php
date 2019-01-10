@@ -29,6 +29,9 @@ class BruderKlausenFestTest extends ObwaldenBaseTestCase implements YasumiTestCa
 
     /**
      * Tests Bruder-Klausen-Fest on or after 1947
+     *
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testBruderKlausenFestOnAfter1947()
     {
@@ -41,6 +44,9 @@ class BruderKlausenFestTest extends ObwaldenBaseTestCase implements YasumiTestCa
 
     /**
      * Tests Bruder-Klausen-Fest between 1649 and 1946
+     *
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testBruderKlausenFestBetween1649And1946()
     {
@@ -53,6 +59,7 @@ class BruderKlausenFestTest extends ObwaldenBaseTestCase implements YasumiTestCa
 
     /**
      * Tests Bruder-Klausen-Fest before 1648
+     * @throws \ReflectionException
      */
     public function testBruderKlausenFestBefore1648()
     {
@@ -62,6 +69,7 @@ class BruderKlausenFestTest extends ObwaldenBaseTestCase implements YasumiTestCa
 
     /**
      * Tests translated name of Bruder-Klausen-Fest.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -75,6 +83,7 @@ class BruderKlausenFestTest extends ObwaldenBaseTestCase implements YasumiTestCa
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

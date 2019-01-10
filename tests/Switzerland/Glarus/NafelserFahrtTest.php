@@ -34,6 +34,8 @@ class NafelserFahrtTest extends GlarusBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests Näfelser Fahrt on or after 1389
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testNafelserFahrtOnAfter1389()
     {
@@ -45,6 +47,7 @@ class NafelserFahrtTest extends GlarusBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests Näfelser Fahrt before 1389
+     * @throws \ReflectionException
      */
     public function testNafelserFahrtBefore1389()
     {
@@ -54,6 +57,7 @@ class NafelserFahrtTest extends GlarusBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests translated name of Näfelser Fahrt.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -67,6 +71,7 @@ class NafelserFahrtTest extends GlarusBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

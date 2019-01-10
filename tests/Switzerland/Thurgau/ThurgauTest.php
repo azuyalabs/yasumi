@@ -26,6 +26,7 @@ class ThurgauTest extends ThurgauBaseTestCase
 
     /**
      * Tests if all official holidays in Thurgau (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -38,6 +39,7 @@ class ThurgauTest extends ThurgauBaseTestCase
 
     /**
      * Tests if all regional holidays in Thurgau (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testRegionalHolidays()
     {
@@ -56,6 +58,7 @@ class ThurgauTest extends ThurgauBaseTestCase
 
     /**
      * Tests if all observed holidays in Thurgau (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -69,6 +72,7 @@ class ThurgauTest extends ThurgauBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Thurgau (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -77,6 +81,7 @@ class ThurgauTest extends ThurgauBaseTestCase
 
     /**
      * Tests if all bank holidays in Thurgau (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -85,6 +90,7 @@ class ThurgauTest extends ThurgauBaseTestCase
 
     /**
      * Tests if all other holidays in Thurgau (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

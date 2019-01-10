@@ -34,6 +34,8 @@ class ConstantinBrancusiDayTest extends RomaniaBaseTestCase implements YasumiTes
 
     /**
      * Tests Constantin Brancusi Day on or after 2016.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testConstantinBrancusiDayOnAfter2016()
     {
@@ -48,6 +50,7 @@ class ConstantinBrancusiDayTest extends RomaniaBaseTestCase implements YasumiTes
 
     /**
      * Tests Constantin Brancusi Day before 2016.
+     * @throws \ReflectionException
      */
     public function testConstantinBrancusiDayBefore2016()
     {
@@ -60,6 +63,7 @@ class ConstantinBrancusiDayTest extends RomaniaBaseTestCase implements YasumiTes
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -73,6 +77,7 @@ class ConstantinBrancusiDayTest extends RomaniaBaseTestCase implements YasumiTes
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

@@ -31,6 +31,9 @@ class CorpusChristiTest extends ZugBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests Corpus Christi.
+     *
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testCorpusChristi()
     {
@@ -45,6 +48,7 @@ class CorpusChristiTest extends ZugBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -58,6 +62,7 @@ class CorpusChristiTest extends ZugBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

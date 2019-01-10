@@ -34,6 +34,8 @@ class KingsDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests Kings Day on or after 2014. King's Day is celebrated from 2014 onwards on April 27th.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testKingsDayOnAfter2014()
     {
@@ -48,6 +50,8 @@ class KingsDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests Kings Day substituted on Saturday (when Kings Day falls on a Sunday)
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testKingsDayOnAfter2014SubstitutedDay()
     {
@@ -62,6 +66,7 @@ class KingsDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests Kings Day before 2014. King's Day is celebrated from 2014 onwards on April 27th.
+     * @throws \ReflectionException
      */
     public function testKingsDayBefore2014()
     {
@@ -74,6 +79,7 @@ class KingsDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -87,6 +93,7 @@ class KingsDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

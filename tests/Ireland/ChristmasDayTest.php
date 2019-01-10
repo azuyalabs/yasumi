@@ -34,6 +34,9 @@ class ChristmasDayTest extends IrelandBaseTestCase implements YasumiTestCaseInte
      *
      * @param int       $year     the year for which the holiday defined in this test needs to be tested
      * @param \DateTime $expected the expected date
+     *
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHoliday($year, $expected)
     {
@@ -50,6 +53,7 @@ class ChristmasDayTest extends IrelandBaseTestCase implements YasumiTestCaseInte
      * Returns a list of random test dates used for assertion of the holiday defined in this test
      *
      * @return array list of test dates for the holiday defined in this test
+     * @throws \Exception
      */
     public function HolidayDataProvider(): array
     {
@@ -66,6 +70,8 @@ class ChristmasDayTest extends IrelandBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests translated name of the holiday defined in this test.
+     *
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -85,6 +91,7 @@ class ChristmasDayTest extends IrelandBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

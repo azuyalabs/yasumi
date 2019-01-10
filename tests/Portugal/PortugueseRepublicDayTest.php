@@ -34,6 +34,10 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements YasumiTe
 
     /**
      * Tests the holiday defined in this test on or after establishment.
+     * @throws \ReflectionException
+     * @throws \Exception
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHolidayOnAfterEstablishment()
     {
@@ -49,6 +53,8 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements YasumiTe
 
     /**
      * Tests the holiday defined in this test before establishment.
+     *
+     * @throws \ReflectionException
      */
     public function testHolidayBeforeEstablishment()
     {
@@ -61,6 +67,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements YasumiTe
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -74,6 +81,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements YasumiTe
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

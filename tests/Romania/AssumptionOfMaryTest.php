@@ -34,6 +34,8 @@ class AssumptionOfMaryTest extends RomaniaBaseTestCase implements YasumiTestCase
 
     /**
      * Tests Assumption Of Mary Day on or after 2008.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testAssumptionOfMaryDayOnAfter2008()
     {
@@ -48,6 +50,7 @@ class AssumptionOfMaryTest extends RomaniaBaseTestCase implements YasumiTestCase
 
     /**
      * Tests Assumption of Mary Day before 2008.
+     * @throws \ReflectionException
      */
     public function testAssumptionOfMaryDayBefore2008()
     {
@@ -60,6 +63,7 @@ class AssumptionOfMaryTest extends RomaniaBaseTestCase implements YasumiTestCase
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -73,6 +77,7 @@ class AssumptionOfMaryTest extends RomaniaBaseTestCase implements YasumiTestCase
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

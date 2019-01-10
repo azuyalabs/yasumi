@@ -26,6 +26,7 @@ class BrandenburgTest extends BrandenburgBaseTestCase
 
     /**
      * Tests if all official holidays in Brandenburg (Germany) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -55,6 +56,7 @@ class BrandenburgTest extends BrandenburgBaseTestCase
 
     /**
      * Tests if all observed holidays in Brandenburg (Germany) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -63,6 +65,7 @@ class BrandenburgTest extends BrandenburgBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Brandenburg (Germany) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -71,6 +74,7 @@ class BrandenburgTest extends BrandenburgBaseTestCase
 
     /**
      * Tests if all bank holidays in Brandenburg (Germany) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -79,6 +83,7 @@ class BrandenburgTest extends BrandenburgBaseTestCase
 
     /**
      * Tests if all other holidays in Brandenburg (Germany) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

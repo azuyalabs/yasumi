@@ -41,6 +41,8 @@ class LiberationDayTest extends ItalyBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests Liberation Day on or after 1949.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testLiberationDayOnAfter1949()
     {
@@ -55,6 +57,7 @@ class LiberationDayTest extends ItalyBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests Liberation Day before 1949.
+     * @throws \ReflectionException
      */
     public function testLiberationDayBefore1949()
     {
@@ -67,6 +70,7 @@ class LiberationDayTest extends ItalyBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests translated name of Liberation Day.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -80,6 +84,7 @@ class LiberationDayTest extends ItalyBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

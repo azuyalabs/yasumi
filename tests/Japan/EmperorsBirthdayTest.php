@@ -36,6 +36,8 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements YasumiTestCaseIn
      * Tests the Emperors Birthday after 1989. The Emperors Birthday is on December 23rd and celebrated as such since
      * 1989. Prior to the death of Emperor Hirohito in 1989, this holiday was celebrated on April 29. See also "Shōwa
      * Day".
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testEmperorsBirthdayOnAfter1989()
     {
@@ -51,6 +53,8 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements YasumiTestCaseIn
     /**
      * Tests the Emperors Birthday after 1989 substituted next working day (when the Emperors Birthday falls on a
      * Sunday)
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testEmperorsBirthdayOnAfter1989SubstitutedNextWorkingDay()
     {
@@ -67,6 +71,7 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements YasumiTestCaseIn
      * Tests the Emperors Birthday before 1989. The Emperors Birthday is on December 23rd and celebrated as such since
      * 1989. Prior to the death of Emperor Hirohito in 1989, this holiday was celebrated on April 29. See also "Shōwa
      * Day"/"Greenery Day"
+     * @throws \ReflectionException
      */
     public function testEmperorsBirthdayBefore1989()
     {
@@ -79,6 +84,7 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -92,6 +98,7 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

@@ -29,6 +29,9 @@ class SummertimeTest extends NetherlandsBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests Summertime.
+     *
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testSummertime()
     {
@@ -53,6 +56,7 @@ class SummertimeTest extends NetherlandsBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -66,6 +70,7 @@ class SummertimeTest extends NetherlandsBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

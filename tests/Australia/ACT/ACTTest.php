@@ -28,6 +28,7 @@ class ACTTest extends ACTBaseTestCase
 
     /**
      * Tests if all official holidays in ACT (Australia) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {

@@ -29,6 +29,8 @@ class NewYearsDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests New Years Day.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testNewYearsDay()
     {
@@ -43,6 +45,7 @@ class NewYearsDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -56,6 +59,7 @@ class NewYearsDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

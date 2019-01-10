@@ -35,6 +35,8 @@ class PentecostTest extends RomaniaBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests the Pentecost Day on and after 2008.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testPentecostDayOnAfter2008()
     {
@@ -49,6 +51,7 @@ class PentecostTest extends RomaniaBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests the Pentecost Day before 2008.
+     * @throws \ReflectionException
      */
     public function testPentecostDayBefore2008()
     {
@@ -61,6 +64,7 @@ class PentecostTest extends RomaniaBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -74,6 +78,7 @@ class PentecostTest extends RomaniaBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

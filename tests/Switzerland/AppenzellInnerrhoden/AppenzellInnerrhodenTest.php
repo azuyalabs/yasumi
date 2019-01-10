@@ -26,6 +26,7 @@ class AppenzellInnerrhodenTest extends AppenzellInnerrhodenBaseTestCase
 
     /**
      * Tests if all official holidays in Appenzell Innerrhoden (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -38,6 +39,7 @@ class AppenzellInnerrhodenTest extends AppenzellInnerrhodenBaseTestCase
 
     /**
      * Tests if all regional holidays in Appenzell Innerrhoden (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testRegionalHolidays()
     {
@@ -58,6 +60,7 @@ class AppenzellInnerrhodenTest extends AppenzellInnerrhodenBaseTestCase
 
     /**
      * Tests if all observed holidays in Appenzell Innerrhoden (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -71,6 +74,7 @@ class AppenzellInnerrhodenTest extends AppenzellInnerrhodenBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Appenzell Innerrhoden (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -79,6 +83,7 @@ class AppenzellInnerrhodenTest extends AppenzellInnerrhodenBaseTestCase
 
     /**
      * Tests if all bank holidays in Appenzell Innerrhoden (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -87,6 +92,7 @@ class AppenzellInnerrhodenTest extends AppenzellInnerrhodenBaseTestCase
 
     /**
      * Tests if all other holidays in Appenzell Innerrhoden (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

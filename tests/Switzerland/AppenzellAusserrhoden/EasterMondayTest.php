@@ -29,6 +29,8 @@ class EasterMondayTest extends AppenzellAusserrhodenBaseTestCase implements Yasu
 
     /**
      * Tests Easter Monday.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testEasterMonday()
     {
@@ -43,6 +45,7 @@ class EasterMondayTest extends AppenzellAusserrhodenBaseTestCase implements Yasu
 
     /**
      * Tests translated name of Easter Monday.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -56,6 +59,7 @@ class EasterMondayTest extends AppenzellAusserrhodenBaseTestCase implements Yasu
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

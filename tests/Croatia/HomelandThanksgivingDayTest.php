@@ -34,6 +34,8 @@ class HomelandThanksgivingDayTest extends CroatiaBaseTestCase implements YasumiT
 
     /**
      * Tests Homeland Thanksgiving Day on or after 1995.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testHomelandThanksgivingDayOnAfter1995()
     {
@@ -48,6 +50,7 @@ class HomelandThanksgivingDayTest extends CroatiaBaseTestCase implements YasumiT
 
     /**
      * Tests Homeland Thanksgiving Day before 1995.
+     * @throws \ReflectionException
      */
     public function testHomelandThanksgivingDayBefore1995()
     {
@@ -60,6 +63,7 @@ class HomelandThanksgivingDayTest extends CroatiaBaseTestCase implements YasumiT
 
     /**
      * Tests translated name of Homeland Thanksgiving Day.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -73,6 +77,7 @@ class HomelandThanksgivingDayTest extends CroatiaBaseTestCase implements YasumiT
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

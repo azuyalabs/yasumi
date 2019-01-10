@@ -26,6 +26,7 @@ class SchwyzTest extends SchwyzBaseTestCase
 
     /**
      * Tests if all official holidays in Schwyz (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -38,6 +39,7 @@ class SchwyzTest extends SchwyzBaseTestCase
 
     /**
      * Tests if all regional holidays in Schwyz (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testRegionalHolidays()
     {
@@ -60,6 +62,7 @@ class SchwyzTest extends SchwyzBaseTestCase
 
     /**
      * Tests if all observed holidays in Schwyz (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -73,6 +76,7 @@ class SchwyzTest extends SchwyzBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Schwyz (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -81,6 +85,7 @@ class SchwyzTest extends SchwyzBaseTestCase
 
     /**
      * Tests if all bank holidays in Schwyz (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -89,6 +94,7 @@ class SchwyzTest extends SchwyzBaseTestCase
 
     /**
      * Tests if all other holidays in Schwyz (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

@@ -29,6 +29,8 @@ class ChristmasDayTest extends BrazilBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests Christmas Day.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testChristmasDay()
     {
@@ -43,6 +45,7 @@ class ChristmasDayTest extends BrazilBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -56,6 +59,7 @@ class ChristmasDayTest extends BrazilBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

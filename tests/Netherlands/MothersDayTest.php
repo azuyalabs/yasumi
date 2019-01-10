@@ -29,6 +29,8 @@ class MothersDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests Mother's Day.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testMothersDay()
     {
@@ -43,6 +45,7 @@ class MothersDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -56,6 +59,7 @@ class MothersDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

@@ -29,6 +29,8 @@ class EasterTest extends BelgiumBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests Easter.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testEaster()
     {
@@ -43,6 +45,7 @@ class EasterTest extends BelgiumBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -56,6 +59,7 @@ class EasterTest extends BelgiumBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

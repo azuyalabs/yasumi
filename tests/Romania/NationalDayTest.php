@@ -34,6 +34,8 @@ class NationalDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests National Day on or after 1990.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testNationalDayOnAfter1990()
     {
@@ -48,6 +50,8 @@ class NationalDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests National Day between 1948 - 1989.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testNationalDayBetween1948_1989()
     {
@@ -62,6 +66,8 @@ class NationalDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests National Day between 1866 - 1947.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testNationalDayBetween1866_1947()
     {
@@ -76,6 +82,7 @@ class NationalDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests National Day before 1865.
+     * @throws \ReflectionException
      */
     public function testNationalDayBefore1865()
     {
@@ -88,6 +95,7 @@ class NationalDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -101,6 +109,7 @@ class NationalDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

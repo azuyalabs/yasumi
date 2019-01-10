@@ -28,6 +28,7 @@ class NTTest extends NTBaseTestCase
 
     /**
      * Tests if all official holidays in NT (Australia) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {

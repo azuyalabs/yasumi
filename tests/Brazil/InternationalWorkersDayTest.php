@@ -29,6 +29,8 @@ class InternationalWorkersDayTest extends BrazilBaseTestCase implements YasumiTe
 
     /**
      * Tests International Workers' Day.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testInternationalWorkersDay()
     {
@@ -43,6 +45,7 @@ class InternationalWorkersDayTest extends BrazilBaseTestCase implements YasumiTe
 
     /**
      * Tests translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -56,6 +59,7 @@ class InternationalWorkersDayTest extends BrazilBaseTestCase implements YasumiTe
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

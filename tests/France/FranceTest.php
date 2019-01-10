@@ -26,6 +26,7 @@ class FranceTest extends FranceBaseTestCase
 
     /**
      * Tests if all official holidays in France are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -46,6 +47,7 @@ class FranceTest extends FranceBaseTestCase
 
     /**
      * Tests if all observed holidays in France are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -54,6 +56,7 @@ class FranceTest extends FranceBaseTestCase
 
     /**
      * Tests if all seasonal holidays in France are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -62,6 +65,7 @@ class FranceTest extends FranceBaseTestCase
 
     /**
      * Tests if all bank holidays in France are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -70,6 +74,7 @@ class FranceTest extends FranceBaseTestCase
 
     /**
      * Tests if all other holidays in France are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

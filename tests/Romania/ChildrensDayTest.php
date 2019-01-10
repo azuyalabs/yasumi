@@ -34,6 +34,8 @@ class ChildrensDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests Children's Day on or after 1950.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testChildrensDayOnAfter1950()
     {
@@ -48,6 +50,7 @@ class ChildrensDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests Children's Day before 1950.
+     * @throws \ReflectionException
      */
     public function testChildrensDayBefore1950()
     {
@@ -60,6 +63,7 @@ class ChildrensDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -73,6 +77,8 @@ class ChildrensDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests type of the holiday defined in this test.
+     *
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

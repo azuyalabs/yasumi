@@ -31,6 +31,9 @@ class CorpusChristiTest extends CroatiaBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests Corpus Christi.
+     *
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testCorpusChristi()
     {
@@ -45,6 +48,7 @@ class CorpusChristiTest extends CroatiaBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -58,6 +62,7 @@ class CorpusChristiTest extends CroatiaBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

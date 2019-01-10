@@ -34,6 +34,8 @@ class UnitedPrincipalitiesDayTest extends RomaniaBaseTestCase implements YasumiT
 
     /**
      * Tests united Principalities Day on or after 2015.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testUnitedPrincipalitiesDayOnAfter2015()
     {
@@ -48,6 +50,7 @@ class UnitedPrincipalitiesDayTest extends RomaniaBaseTestCase implements YasumiT
 
     /**
      * Tests unitedPrincipalitiesDay before 2015.
+     * @throws \ReflectionException
      */
     public function testUnitedPrincipalitiesDayBefore2015()
     {
@@ -60,6 +63,7 @@ class UnitedPrincipalitiesDayTest extends RomaniaBaseTestCase implements YasumiT
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -73,6 +77,7 @@ class UnitedPrincipalitiesDayTest extends RomaniaBaseTestCase implements YasumiT
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

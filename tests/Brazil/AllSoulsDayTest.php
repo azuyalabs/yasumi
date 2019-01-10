@@ -34,6 +34,8 @@ class AllSoulsDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests Dia dos Finados on or after 1300.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testDiaDosFinadosAfter1300()
     {
@@ -48,6 +50,7 @@ class AllSoulsDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests Dia dos Finados on or before 1300.
+     * @throws \ReflectionException
      */
     public function testDiaDosFinadosBefore1300()
     {
@@ -57,6 +60,7 @@ class AllSoulsDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -66,6 +70,7 @@ class AllSoulsDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

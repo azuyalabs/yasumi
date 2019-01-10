@@ -33,6 +33,8 @@ class ValentinesDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
      *
      * @param int      $year     the year for which Valentines Day needs to be tested
      * @param DateTime $expected the expected date
+     *
+     * @throws \ReflectionException
      */
     public function testValentinesDay($year, $expected)
     {
@@ -43,6 +45,7 @@ class ValentinesDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
      * Returns a list of random test dates used for assertion of Valentines Day.
      *
      * @return array list of test dates for Valentines Day
+     * @throws \Exception
      */
     public function ValentinesDayDataProvider(): array
     {
@@ -52,6 +55,7 @@ class ValentinesDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {
@@ -60,6 +64,7 @@ class ValentinesDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {

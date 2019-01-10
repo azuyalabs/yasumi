@@ -29,6 +29,8 @@ class CorpusChristiTest extends PolandBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests the holiday defined in this test.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testHoliday()
     {
@@ -43,6 +45,7 @@ class CorpusChristiTest extends PolandBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests translated name of Corpus Christi.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -56,6 +59,7 @@ class CorpusChristiTest extends PolandBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

@@ -29,6 +29,8 @@ class WintertimeTest extends NetherlandsBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests Wintertime.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testWintertime()
     {
@@ -53,6 +55,7 @@ class WintertimeTest extends NetherlandsBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -66,6 +69,7 @@ class WintertimeTest extends NetherlandsBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

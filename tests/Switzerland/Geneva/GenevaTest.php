@@ -26,6 +26,7 @@ class GenevaTest extends GenevaBaseTestCase
 
     /**
      * Tests if all official holidays in Geneva (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -38,6 +39,7 @@ class GenevaTest extends GenevaBaseTestCase
 
     /**
      * Tests if all regional holidays in Geneva (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testRegionalHolidays()
     {
@@ -59,6 +61,7 @@ class GenevaTest extends GenevaBaseTestCase
 
     /**
      * Tests if all observed holidays in Geneva (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -76,6 +79,7 @@ class GenevaTest extends GenevaBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Geneva (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -84,6 +88,7 @@ class GenevaTest extends GenevaBaseTestCase
 
     /**
      * Tests if all bank holidays in Geneva (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -92,6 +97,7 @@ class GenevaTest extends GenevaBaseTestCase
 
     /**
      * Tests if all other holidays in Geneva (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

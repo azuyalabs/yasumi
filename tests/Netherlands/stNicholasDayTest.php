@@ -34,6 +34,8 @@ class stNicholasDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
      *
      * @param int      $year     the year for which Sint Nicholas Day needs to be tested
      * @param DateTime $expected the expected date
+     *
+     * @throws \ReflectionException
      */
     public function teststNicholasDay($year, $expected)
     {
@@ -44,6 +46,7 @@ class stNicholasDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
      * Returns a list of random test dates used for assertion of Sint Nicholas Day.
      *
      * @return array list of test dates for Sint Nicholas Day
+     * @throws \Exception
      */
     public function stNicholasDayDataProvider(): array
     {
@@ -52,6 +55,7 @@ class stNicholasDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -65,6 +69,7 @@ class stNicholasDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

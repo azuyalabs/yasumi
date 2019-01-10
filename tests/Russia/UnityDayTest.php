@@ -31,6 +31,7 @@ class UnityDayTest extends RussiaBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Test if holiday is not defined before
+     * @throws \ReflectionException
      */
     public function testHolidayBefore()
     {
@@ -43,6 +44,8 @@ class UnityDayTest extends RussiaBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Test if holiday is defined after
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testHolidayAfter()
     {
@@ -58,6 +61,8 @@ class UnityDayTest extends RussiaBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * {@inheritdoc}
+     *
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -77,6 +82,7 @@ class UnityDayTest extends RussiaBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * {@inheritdoc}
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

@@ -30,6 +30,8 @@ class PentecostTest extends UkraineBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests the holiday defined in this test.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testHoliday()
     {
@@ -44,6 +46,7 @@ class PentecostTest extends UkraineBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -57,6 +60,7 @@ class PentecostTest extends UkraineBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

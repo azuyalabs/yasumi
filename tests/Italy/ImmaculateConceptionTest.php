@@ -33,6 +33,8 @@ class ImmaculateConceptionTest extends ItalyBaseTestCase implements YasumiTestCa
      *
      * @param int      $year     the year for which the day of Immaculate Conception needs to be tested
      * @param DateTime $expected the expected date
+     *
+     * @throws \ReflectionException
      */
     public function testImmaculateConception($year, $expected)
     {
@@ -43,6 +45,7 @@ class ImmaculateConceptionTest extends ItalyBaseTestCase implements YasumiTestCa
      * Returns a list of random test dates used for assertion of the day of Immaculate Conception.
      *
      * @return array list of test dates for the day of Immaculate Conception
+     * @throws \Exception
      */
     public function ImmaculateConceptionDataProvider(): array
     {
@@ -51,6 +54,7 @@ class ImmaculateConceptionTest extends ItalyBaseTestCase implements YasumiTestCa
 
     /**
      * Tests translated name of the day of Immaculate Conception.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -64,6 +68,7 @@ class ImmaculateConceptionTest extends ItalyBaseTestCase implements YasumiTestCa
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

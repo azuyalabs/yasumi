@@ -26,6 +26,7 @@ class BelgiumTest extends BelgiumBaseTestCase
 
     /**
      * Tests if all official holidays in Belgium are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -47,6 +48,7 @@ class BelgiumTest extends BelgiumBaseTestCase
 
     /**
      * Tests if all observed holidays in Belgium are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -55,6 +57,7 @@ class BelgiumTest extends BelgiumBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Belgium are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -63,6 +66,7 @@ class BelgiumTest extends BelgiumBaseTestCase
 
     /**
      * Tests if all bank holidays in Belgium are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -71,6 +75,7 @@ class BelgiumTest extends BelgiumBaseTestCase
 
     /**
      * Tests if all other holidays in Belgium are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

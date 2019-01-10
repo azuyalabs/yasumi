@@ -35,6 +35,9 @@ class NewYearsDayTest extends NewZealandBaseTestCase implements YasumiTestCaseIn
      *
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
+     *
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHoliday($year, $expected)
     {
@@ -50,6 +53,7 @@ class NewYearsDayTest extends NewZealandBaseTestCase implements YasumiTestCaseIn
      * Returns a list of test dates
      *
      * @return array list of test dates for the holiday defined in this test
+     * @throws \Exception
      */
     public function HolidayDataProvider(): array
     {
@@ -76,6 +80,7 @@ class NewYearsDayTest extends NewZealandBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -89,6 +94,7 @@ class NewYearsDayTest extends NewZealandBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

@@ -34,6 +34,8 @@ class ShowaDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests the holiday defined in the test on or after establishment.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testHolidayOnAfter2007()
     {
@@ -48,6 +50,8 @@ class ShowaDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests the holiday defined in the test on or after the establishment and substituted next working day.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testHolidayOnAfterEstablishmentSubstitutedNextWorkingDay()
     {
@@ -62,6 +66,7 @@ class ShowaDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests the holiday defined in the test before establishment.
+     * @throws \ReflectionException
      */
     public function testHolidayBeforeEstablishment()
     {
@@ -74,6 +79,7 @@ class ShowaDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -87,6 +93,7 @@ class ShowaDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

@@ -30,6 +30,7 @@ class DefenceOfTheFatherlandDayTest extends RussiaBaseTestCase implements Yasumi
 
     /**
      * Test if holiday is not defined before
+     * @throws \ReflectionException
      */
     public function testHolidayBefore()
     {
@@ -42,6 +43,8 @@ class DefenceOfTheFatherlandDayTest extends RussiaBaseTestCase implements Yasumi
 
     /**
      * Test if holiday is defined after
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testHolidayAfter()
     {
@@ -57,6 +60,8 @@ class DefenceOfTheFatherlandDayTest extends RussiaBaseTestCase implements Yasumi
 
     /**
      * {@inheritdoc}
+     *
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -76,6 +81,7 @@ class DefenceOfTheFatherlandDayTest extends RussiaBaseTestCase implements Yasumi
 
     /**
      * {@inheritdoc}
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

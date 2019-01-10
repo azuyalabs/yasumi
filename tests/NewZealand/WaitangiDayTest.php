@@ -39,6 +39,9 @@ class WaitangiDayTest extends NewZealandBaseTestCase implements YasumiTestCaseIn
      *
      * @param int      $year     the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
+     *
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHoliday($year, $expected)
     {
@@ -52,6 +55,7 @@ class WaitangiDayTest extends NewZealandBaseTestCase implements YasumiTestCaseIn
 
     /**
      *  Tests that Holiday is not present before 1974
+     * @throws \ReflectionException
      */
     public function testNotHoliday()
     {
@@ -60,6 +64,7 @@ class WaitangiDayTest extends NewZealandBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -73,6 +78,7 @@ class WaitangiDayTest extends NewZealandBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {
@@ -88,6 +94,7 @@ class WaitangiDayTest extends NewZealandBaseTestCase implements YasumiTestCaseIn
      * Returns a list of test dates
      *
      * @return array list of test dates for the holiday defined in this test
+     * @throws \Exception
      */
     public function HolidayDataProvider(): array
     {

@@ -29,6 +29,8 @@ class RestaurationGenevoiseTest extends GenevaBaseTestCase implements YasumiTest
 
     /**
      * Tests Restauration Genevoise.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testRestaurationGenevoiseAfter1813()
     {
@@ -44,6 +46,7 @@ class RestaurationGenevoiseTest extends GenevaBaseTestCase implements YasumiTest
 
     /**
      * Tests translated name of Restauration Genevoise.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -57,6 +60,7 @@ class RestaurationGenevoiseTest extends GenevaBaseTestCase implements YasumiTest
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

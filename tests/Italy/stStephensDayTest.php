@@ -33,6 +33,8 @@ class stStephensDayTest extends ItalyBaseTestCase implements YasumiTestCaseInter
      *
      * @param int      $year     the year for which St. Stephen's Day needs to be tested
      * @param DateTime $expected the expected date
+     *
+     * @throws \ReflectionException
      */
     public function teststStephensDay($year, $expected)
     {
@@ -43,6 +45,7 @@ class stStephensDayTest extends ItalyBaseTestCase implements YasumiTestCaseInter
      * Returns a list of random test dates used for assertion of St. Stephen's Day.
      *
      * @return array list of test dates for St. Stephen's Day
+     * @throws \Exception
      */
     public function stStephensDayDataProvider(): array
     {
@@ -51,6 +54,7 @@ class stStephensDayTest extends ItalyBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests translated name of St. Stephen's Day.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -64,6 +68,7 @@ class stStephensDayTest extends ItalyBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

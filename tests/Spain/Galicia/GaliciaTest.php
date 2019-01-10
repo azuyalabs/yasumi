@@ -26,6 +26,7 @@ class GaliciaTest extends GaliciaBaseTestCase
 
     /**
      * Tests if all official holidays in Galicia (Spain) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -47,6 +48,7 @@ class GaliciaTest extends GaliciaBaseTestCase
 
     /**
      * Tests if all observed holidays in Galicia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -59,6 +61,7 @@ class GaliciaTest extends GaliciaBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Galicia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -67,6 +70,7 @@ class GaliciaTest extends GaliciaBaseTestCase
 
     /**
      * Tests if all bank holidays in Galicia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -75,6 +79,7 @@ class GaliciaTest extends GaliciaBaseTestCase
 
     /**
      * Tests if all other holidays in Galicia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

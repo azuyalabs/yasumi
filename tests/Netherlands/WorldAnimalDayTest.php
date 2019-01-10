@@ -34,6 +34,8 @@ class WorldAnimalDayTest extends NetherlandsBaseTestCase implements YasumiTestCa
 
     /**
      * Tests World Animal Day on or after 1931.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testWorldAnimalDayOnAfter1931()
     {
@@ -48,6 +50,7 @@ class WorldAnimalDayTest extends NetherlandsBaseTestCase implements YasumiTestCa
 
     /**
      * Tests World Animal Day before 1931.
+     * @throws \ReflectionException
      */
     public function testWorldAnimalBefore1931()
     {
@@ -60,6 +63,7 @@ class WorldAnimalDayTest extends NetherlandsBaseTestCase implements YasumiTestCa
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {
@@ -73,6 +77,7 @@ class WorldAnimalDayTest extends NetherlandsBaseTestCase implements YasumiTestCa
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {

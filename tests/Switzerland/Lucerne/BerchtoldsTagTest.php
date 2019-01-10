@@ -29,6 +29,9 @@ class BerchtoldsTagTest extends LucerneBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests BerchtoldsTag
+     *
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testBerchtoldsTag()
     {
@@ -41,6 +44,7 @@ class BerchtoldsTagTest extends LucerneBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests translated name of BerchtoldsTag.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -54,6 +58,7 @@ class BerchtoldsTagTest extends LucerneBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

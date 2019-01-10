@@ -26,6 +26,7 @@ class FribourgTest extends FribourgBaseTestCase
 
     /**
      * Tests if all official holidays in Fribourg (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -38,6 +39,7 @@ class FribourgTest extends FribourgBaseTestCase
 
     /**
      * Tests if all regional holidays in Fribourg (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testRegionalHolidays()
     {
@@ -53,6 +55,7 @@ class FribourgTest extends FribourgBaseTestCase
 
     /**
      * Tests if all observed holidays in Fribourg (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -66,6 +69,7 @@ class FribourgTest extends FribourgBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Fribourg (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -74,6 +78,7 @@ class FribourgTest extends FribourgBaseTestCase
 
     /**
      * Tests if all bank holidays in Fribourg (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -82,6 +87,7 @@ class FribourgTest extends FribourgBaseTestCase
 
     /**
      * Tests if all other holidays in Fribourg (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

@@ -30,6 +30,7 @@ class SouthAfricaTest extends SouthAfricaBaseTestCase
 
     /**
      * Tests if all official holidays in SouthAfrica are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -58,6 +59,7 @@ class SouthAfricaTest extends SouthAfricaBaseTestCase
 
     /**
      * Tests if all bank holidays in South Africa are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -66,6 +68,7 @@ class SouthAfricaTest extends SouthAfricaBaseTestCase
 
     /**
      * Tests if all observed holidays in South Africa are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -74,6 +77,7 @@ class SouthAfricaTest extends SouthAfricaBaseTestCase
 
     /**
      * Tests if all seasonal holidays in South Africa are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -82,6 +86,7 @@ class SouthAfricaTest extends SouthAfricaBaseTestCase
 
     /**
      * Tests if all other holidays in South Africa are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

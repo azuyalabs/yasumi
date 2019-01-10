@@ -28,6 +28,7 @@ class TasmaniaTest extends TasmaniaBaseTestCase
 
     /**
      * Tests if all official holidays in Tasmania (Australia) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {

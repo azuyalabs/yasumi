@@ -41,6 +41,7 @@ class YasumiTest extends TestCase
      * Tests that an InvalidArgumentException is thrown in case an invalid year is given.
      *
      * @expectedException InvalidArgumentException
+     * @throws \ReflectionException
      */
     public function testCreateWithInvalidYear()
     {
@@ -51,6 +52,7 @@ class YasumiTest extends TestCase
      * Tests that an InvalidArgumentException is thrown in case an invalid holiday provider is given.
      *
      * @expectedException InvalidArgumentException
+     * @throws \ReflectionException
      */
     public function testCreateWithInvalidProvider()
     {
@@ -61,6 +63,7 @@ class YasumiTest extends TestCase
      * Tests that an InvalidArgumentException is thrown in case we try to load a Trait as provider.
      *
      * @expectedException InvalidArgumentException
+     * @throws \ReflectionException
      */
     public function testCreateWithInvalidProviderBecauseItsATrait()
     {
@@ -71,6 +74,7 @@ class YasumiTest extends TestCase
      * Tests that an InvalidArgumentException is thrown in case we try to load the AbstractProvider as provider.
      *
      * @expectedException InvalidArgumentException
+     * @throws \ReflectionException
      */
     public function testCreateWithAbstractClassProvider()
     {
@@ -79,6 +83,7 @@ class YasumiTest extends TestCase
 
     /**
      * Tests that Yasumi allows external classes that extend the ProviderInterface.
+     * @throws \ReflectionException
      */
     public function testCreateWithAbstractExtension()
     {
@@ -94,6 +99,7 @@ class YasumiTest extends TestCase
      * Tests that an Yasumi\Exception\UnknownLocaleException is thrown in case an invalid locale is given.
      *
      * @expectedException \Yasumi\Exception\UnknownLocaleException
+     * @throws \ReflectionException
      */
     public function testCreateWithInvalidLocale()
     {
@@ -106,6 +112,7 @@ class YasumiTest extends TestCase
 
     /**
      * Tests that the getIterator function returns an ArrayIterator object
+     * @throws \ReflectionException
      */
     public function testGetIterator()
     {
@@ -119,6 +126,7 @@ class YasumiTest extends TestCase
 
     /**
      * Tests that the count function returns an integer and a correct count for the test holiday provider
+     * @throws \ReflectionException
      */
     public function testCount()
     {
@@ -132,6 +140,7 @@ class YasumiTest extends TestCase
 
     /**
      * Tests that the getType function returns a string for the test holiday provider
+     * @throws \ReflectionException
      */
     public function testGetType()
     {
@@ -143,6 +152,7 @@ class YasumiTest extends TestCase
 
     /**
      * Tests that the getYear function returns an integer for the test holiday provider
+     * @throws \ReflectionException
      */
     public function testGetYear()
     {
@@ -155,6 +165,8 @@ class YasumiTest extends TestCase
 
     /**
      * Tests that the next function returns the next upcoming date (i.e. next year) for the given holiday
+     *
+     * @throws \ReflectionException
      */
     public function testNext()
     {
@@ -176,6 +188,7 @@ class YasumiTest extends TestCase
      * Tests the next function that an InvalidArgumentException is thrown in case a blank name is given.
      *
      * @expectedException InvalidArgumentException
+     * @throws \ReflectionException
      */
     public function testNextWithBlankName()
     {
@@ -188,6 +201,8 @@ class YasumiTest extends TestCase
 
     /**
      * Tests the previous function returns the previous date (i.e. previous year) for the given holiday
+     *
+     * @throws \ReflectionException
      */
     public function testPrevious()
     {
@@ -210,6 +225,7 @@ class YasumiTest extends TestCase
      * Tests the previous function that an InvalidArgumentException is thrown in case a blank name is given.
      *
      * @expectedException InvalidArgumentException
+     * @throws \ReflectionException
      */
     public function testPreviousWithBlankName()
     {
@@ -222,6 +238,7 @@ class YasumiTest extends TestCase
 
     /**
      * Tests that the getHolidayNames function returns an array and a correct count for the test holiday provider
+     * @throws \ReflectionException
      */
     public function testGetHolidayNames()
     {
@@ -235,6 +252,7 @@ class YasumiTest extends TestCase
 
     /**
      * Tests that the WhenIs function returns a string representation of the date the given holiday occurs.
+     * @throws \ReflectionException
      */
     public function testWhenIs()
     {
@@ -250,6 +268,7 @@ class YasumiTest extends TestCase
      * Tests that the WhenIs function throws an InvalidArgumentException when a blank name is given.
      *
      * @expectedException InvalidArgumentException
+     * @throws \ReflectionException
      */
     public function testWhenIsWithBlankName()
     {
@@ -261,6 +280,7 @@ class YasumiTest extends TestCase
      * Tests that an InvalidArgumentException is thrown in case a blank name is given for the getHoliday function.
      *
      * @expectedException InvalidArgumentException
+     * @throws \ReflectionException
      */
     public function testGetHolidayWithBlankName()
     {
@@ -271,6 +291,7 @@ class YasumiTest extends TestCase
     /**
      * Tests that the whatWeekDayIs function returns an integer representation of the day of the week the given holiday
      * is occurring.
+     * @throws \ReflectionException
      */
     public function testWhatWeekDayIs()
     {
@@ -285,6 +306,7 @@ class YasumiTest extends TestCase
      * Tests that the whatWeekDayIs function throws an InvalidArgumentException when a blank name is given.
      *
      * @expectedException InvalidArgumentException
+     * @throws \ReflectionException
      */
     public function testWhatWeekDayIsWithBlankName()
     {
@@ -294,6 +316,7 @@ class YasumiTest extends TestCase
 
     /**
      * Tests that the getProviders function returns an array containing all available holiday providers.
+     * @throws \ReflectionException
      */
     public function testGetProviders()
     {
@@ -308,6 +331,8 @@ class YasumiTest extends TestCase
 
     /**
      * Tests that the getProviders function (static call) returns the same data when called again.
+     *
+     * @throws \ReflectionException
      */
     public function testGetProvidersStaticCall()
     {
@@ -328,6 +353,10 @@ class YasumiTest extends TestCase
 
     /**
      * Tests that the isHoliday function returns a boolean true for a date that is defined as a holiday.
+     * @throws \Exception
+     * @throws \ReflectionException
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testIsHoliday()
     {
@@ -350,6 +379,10 @@ class YasumiTest extends TestCase
 
     /**
      * Tests that the isHoliday function returns a boolean false for a date that is not defined as a holiday.
+     * @throws \Exception
+     * @throws \ReflectionException
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testIsNotHoliday()
     {
@@ -373,6 +406,7 @@ class YasumiTest extends TestCase
     /**
      * Tests that the isHoliday function throws a TypeError when the given argument is not an instance that
      * implements the DateTimeInterface (e.g. DateTime or DateTimeImmutable)
+     * @throws \ReflectionException
      */
     public function testIsHolidayException()
     {
@@ -389,6 +423,10 @@ class YasumiTest extends TestCase
      * the weekend.
      *
      * @TODO Add additional unit tests for those holiday providers that differ from the global definition
+     * @throws \Exception
+     * @throws \ReflectionException
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testIsWorkingDay()
     {
@@ -414,6 +452,10 @@ class YasumiTest extends TestCase
      * the weekend.
      *
      * @TODO Add additional unit tests for those holiday providers that differ from the global definition
+     * @throws \Exception
+     * @throws \ReflectionException
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testIsNotWorkingDay()
     {
@@ -439,6 +481,7 @@ class YasumiTest extends TestCase
      * that implements the DateTimeInterface (e.g. DateTime or DateTimeImmutable)
      *
      * @TODO Add additional unit tests for those holiday providers that differ from the global definition
+     * @throws \ReflectionException
      */
     public function testIsWorkingDayException()
     {

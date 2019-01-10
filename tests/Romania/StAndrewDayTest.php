@@ -34,6 +34,8 @@ class StAndrewDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests Saint Andrew Day on or after 2012.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testStAndrewDayOnAfter2012()
     {
@@ -48,6 +50,7 @@ class StAndrewDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests Saint Andrew before 2012.
+     * @throws \ReflectionException
      */
     public function testStAndrewDayBefore2012()
     {
@@ -60,6 +63,7 @@ class StAndrewDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -73,6 +77,7 @@ class StAndrewDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

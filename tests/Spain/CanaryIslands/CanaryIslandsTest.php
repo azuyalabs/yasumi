@@ -26,6 +26,7 @@ class CanaryIslandsTest extends CanaryIslandsBaseTestCase
 
     /**
      * Tests if all official holidays in the Canary Islands (Spain) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -46,6 +47,7 @@ class CanaryIslandsTest extends CanaryIslandsBaseTestCase
 
     /**
      * Tests if all observed holidays in the Canary Islands are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -57,6 +59,7 @@ class CanaryIslandsTest extends CanaryIslandsBaseTestCase
 
     /**
      * Tests if all seasonal holidays in the Canary Islands are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -65,6 +68,7 @@ class CanaryIslandsTest extends CanaryIslandsBaseTestCase
 
     /**
      * Tests if all bank holidays in the Canary Islands are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -73,6 +77,7 @@ class CanaryIslandsTest extends CanaryIslandsBaseTestCase
 
     /**
      * Tests if all other holidays in the Canary Islands are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

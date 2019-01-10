@@ -28,6 +28,7 @@ class QueenslandTest extends QueenslandBaseTestCase
 
     /**
      * Tests if all official holidays in Queensland (Australia) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {

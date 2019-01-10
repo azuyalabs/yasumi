@@ -29,6 +29,8 @@ class AshWednesdayTest extends NetherlandsBaseTestCase implements YasumiTestCase
 
     /**
      * Tests the holiday defined in this test.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testHoliday()
     {
@@ -43,6 +45,7 @@ class AshWednesdayTest extends NetherlandsBaseTestCase implements YasumiTestCase
 
     /**
      * Tests translated name of Ash Wednesday.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -56,6 +59,7 @@ class AshWednesdayTest extends NetherlandsBaseTestCase implements YasumiTestCase
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

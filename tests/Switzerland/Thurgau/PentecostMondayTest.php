@@ -29,6 +29,8 @@ class PentecostMondayTest extends ThurgauBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests Pentecost Monday.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testPentecostMonday()
     {
@@ -43,6 +45,7 @@ class PentecostMondayTest extends ThurgauBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests translated name of Pentecost Monday.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -56,6 +59,7 @@ class PentecostMondayTest extends ThurgauBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

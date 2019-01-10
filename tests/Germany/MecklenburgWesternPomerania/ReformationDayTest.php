@@ -36,6 +36,7 @@ class ReformationDayTest extends MecklenburgWesternPomeraniaBaseTestCase impleme
      * Returns a list of random test dates used for assertion of the holiday defined in this test
      *
      * @return array list of test dates for the holiday defined in this test
+     * @throws \Exception
      */
     public function HolidayDataProvider(): array
     {
@@ -51,6 +52,7 @@ class ReformationDayTest extends MecklenburgWesternPomeraniaBaseTestCase impleme
 
     /**
      * Tests the holiday defined in this test before establishment.
+     * @throws \ReflectionException
      */
     public function testHolidayBeforeEstablishment()
     {
@@ -63,6 +65,7 @@ class ReformationDayTest extends MecklenburgWesternPomeraniaBaseTestCase impleme
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -76,6 +79,7 @@ class ReformationDayTest extends MecklenburgWesternPomeraniaBaseTestCase impleme
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

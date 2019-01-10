@@ -26,6 +26,7 @@ class IrelandTest extends IrelandBaseTestCase
 
     /**
      * Tests if all official holidays in Ireland are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -56,6 +57,7 @@ class IrelandTest extends IrelandBaseTestCase
 
     /**
      * Tests if all observed holidays in Ireland are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -64,6 +66,7 @@ class IrelandTest extends IrelandBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Ireland are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -72,6 +75,7 @@ class IrelandTest extends IrelandBaseTestCase
 
     /**
      * Tests if all bank holidays in Ireland are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -80,6 +84,7 @@ class IrelandTest extends IrelandBaseTestCase
 
     /**
      * Tests if all other holidays in Ireland are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

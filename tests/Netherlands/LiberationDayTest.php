@@ -34,6 +34,7 @@ class LiberationDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
 
     /**
      * Tests Liberation Day before 1947. Liberation Day was established after WWII in 1947.
+     * @throws \ReflectionException
      */
     public function testLiberationDayBefore1947()
     {
@@ -46,6 +47,8 @@ class LiberationDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
 
     /**
      * Tests Liberation Day after 1947. Liberation Day was established after WWII in 1947.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testLiberationDayOnAfter1947()
     {
@@ -60,6 +63,7 @@ class LiberationDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -73,6 +77,7 @@ class LiberationDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

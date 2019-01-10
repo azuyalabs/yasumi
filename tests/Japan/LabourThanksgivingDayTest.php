@@ -35,6 +35,8 @@ class LabourThanksgivingDayTest extends JapanBaseTestCase implements YasumiTestC
     /**
      * Tests Labor Thanksgiving Day after 1948. Labor Thanksgiving Day is held on November 23rd and established since
      * 1948.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testLabourThanksgivingDayOnAfter1948()
     {
@@ -50,6 +52,8 @@ class LabourThanksgivingDayTest extends JapanBaseTestCase implements YasumiTestC
     /**
      * Tests Labor Thanksgiving Day after 1948 substituted next working day (when Labor Thanksgiving Day falls on a
      * Sunday)
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testLabourThanksgivingDayOnAfter1948SubstitutedNextWorkingDay()
     {
@@ -65,6 +69,7 @@ class LabourThanksgivingDayTest extends JapanBaseTestCase implements YasumiTestC
     /**
      * Tests Labor Thanksgiving Day before 1948. Labor Thanksgiving Day is held on November 23rd and established since
      * 1948.
+     * @throws \ReflectionException
      */
     public function testLabourThanksgivingDayBefore1948()
     {
@@ -77,6 +82,7 @@ class LabourThanksgivingDayTest extends JapanBaseTestCase implements YasumiTestC
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -90,6 +96,7 @@ class LabourThanksgivingDayTest extends JapanBaseTestCase implements YasumiTestC
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

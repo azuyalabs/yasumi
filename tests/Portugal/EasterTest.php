@@ -29,6 +29,8 @@ class EasterTest extends PortugalBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests the holiday defined in this test.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testHoliday()
     {
@@ -43,6 +45,7 @@ class EasterTest extends PortugalBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -56,6 +59,7 @@ class EasterTest extends PortugalBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

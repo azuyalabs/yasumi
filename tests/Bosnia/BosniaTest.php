@@ -26,6 +26,7 @@ class BosniaTest extends BosniaBaseTestCase
 
     /**
      * Tests if all official holidays in Bosnia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -45,6 +46,7 @@ class BosniaTest extends BosniaBaseTestCase
 
     /**
      * Tests if all observed holidays in Bosnia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -53,6 +55,7 @@ class BosniaTest extends BosniaBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Bosnia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -61,6 +64,7 @@ class BosniaTest extends BosniaBaseTestCase
 
     /**
      * Tests if all bank holidays in Bosnia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -69,6 +73,7 @@ class BosniaTest extends BosniaBaseTestCase
 
     /**
      * Tests if all other holidays in Bosnia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

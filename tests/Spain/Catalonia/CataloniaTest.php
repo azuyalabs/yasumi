@@ -26,6 +26,7 @@ class CataloniaTest extends CataloniaBaseTestCase
 
     /**
      * Tests if all official holidays in Catalonia (Spain) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -46,6 +47,7 @@ class CataloniaTest extends CataloniaBaseTestCase
 
     /**
      * Tests if all observed holidays in Catalonia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -59,6 +61,7 @@ class CataloniaTest extends CataloniaBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Catalonia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -67,6 +70,7 @@ class CataloniaTest extends CataloniaBaseTestCase
 
     /**
      * Tests if all bank holidays in Catalonia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -75,6 +79,7 @@ class CataloniaTest extends CataloniaBaseTestCase
 
     /**
      * Tests if all other holidays in Catalonia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

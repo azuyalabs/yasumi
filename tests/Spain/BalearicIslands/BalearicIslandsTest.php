@@ -26,6 +26,7 @@ class BalearicIslandsTest extends BalearicIslandsBaseTestCase
 
     /**
      * Tests if all official holidays in the Balearic Islands (Spain) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -46,6 +47,7 @@ class BalearicIslandsTest extends BalearicIslandsBaseTestCase
 
     /**
      * Tests if all observed holidays in the Balearic Islands are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -60,6 +62,7 @@ class BalearicIslandsTest extends BalearicIslandsBaseTestCase
 
     /**
      * Tests if all seasonal holidays in the Balearic Islands are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -68,6 +71,7 @@ class BalearicIslandsTest extends BalearicIslandsBaseTestCase
 
     /**
      * Tests if all bank holidays in the Balearic Islands are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -76,6 +80,7 @@ class BalearicIslandsTest extends BalearicIslandsBaseTestCase
 
     /**
      * Tests if all other holidays in the Balearic Islands are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

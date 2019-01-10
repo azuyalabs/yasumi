@@ -26,6 +26,7 @@ class DenmarkTest extends DenmarkBaseTestCase
 
     /**
      * Tests if all official holidays in Denmark are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -46,6 +47,7 @@ class DenmarkTest extends DenmarkBaseTestCase
 
     /**
      * Tests if all observed holidays in Denmark are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -59,6 +61,7 @@ class DenmarkTest extends DenmarkBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Denmark are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -68,6 +71,7 @@ class DenmarkTest extends DenmarkBaseTestCase
 
     /**
      * Tests if all bank holidays in Denmark are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -76,6 +80,7 @@ class DenmarkTest extends DenmarkBaseTestCase
 
     /**
      * Tests if all other holidays in Denmark are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

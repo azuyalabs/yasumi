@@ -35,6 +35,8 @@ class MemorialDayTest extends USABaseTestCase implements YasumiTestCaseInterface
     /**
      * Tests Memorial Day on or after 1968. Memorial Day was established since 1865 on May 30 and was changed in 1968
      * to the last Monday in May.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testMemorialDayOnAfter1968()
     {
@@ -50,6 +52,8 @@ class MemorialDayTest extends USABaseTestCase implements YasumiTestCaseInterface
     /**
      * Tests Memorial Day between 1865 and 1967. Memorial Day was established since 1865 on May 30 and was changed in
      * 1968 to the last Monday in May.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testMemorialDayBetween1865And1967()
     {
@@ -65,6 +69,7 @@ class MemorialDayTest extends USABaseTestCase implements YasumiTestCaseInterface
     /**
      * Tests Memorial Day before 1865. Memorial Day was established since 1865 on May 30 and was changed in 1968 to the
      * last Monday in May.
+     * @throws \ReflectionException
      */
     public function testMemorialDayBefore1865()
     {
@@ -77,6 +82,7 @@ class MemorialDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -90,6 +96,7 @@ class MemorialDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

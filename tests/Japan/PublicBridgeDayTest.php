@@ -33,6 +33,8 @@ class PublicBridgeDayTest extends JapanBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests public bridge days.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testPublicBridgeDay()
     {
@@ -46,6 +48,7 @@ class PublicBridgeDayTest extends JapanBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -54,6 +57,7 @@ class PublicBridgeDayTest extends JapanBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

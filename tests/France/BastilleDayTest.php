@@ -34,6 +34,8 @@ class BastilleDayTest extends FranceBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests Bastille Day on or after 1790.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testBastilleDayOnAfter1790()
     {
@@ -48,6 +50,7 @@ class BastilleDayTest extends FranceBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests Bastille Day before 1790.
+     * @throws \ReflectionException
      */
     public function testBastilleDayBefore1790()
     {
@@ -60,6 +63,7 @@ class BastilleDayTest extends FranceBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests translated name of Bastille Day.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -73,6 +77,7 @@ class BastilleDayTest extends FranceBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

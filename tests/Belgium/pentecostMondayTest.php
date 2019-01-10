@@ -29,6 +29,8 @@ class pentecostMondayTest extends BelgiumBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests Pentecost Monday.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testHoliday()
     {
@@ -43,6 +45,7 @@ class pentecostMondayTest extends BelgiumBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -56,6 +59,7 @@ class pentecostMondayTest extends BelgiumBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

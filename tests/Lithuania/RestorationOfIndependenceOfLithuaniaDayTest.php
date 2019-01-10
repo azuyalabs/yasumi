@@ -31,6 +31,7 @@ class RestorationOfIndependenceOfLithuaniaDayTest extends LithuaniaBaseTestCase 
 
     /**
      * Test if holiday is not defined before restoration
+     * @throws \ReflectionException
      */
     public function testHolidayBeforeRestoration()
     {
@@ -43,6 +44,8 @@ class RestorationOfIndependenceOfLithuaniaDayTest extends LithuaniaBaseTestCase 
 
     /**
      * Test if holiday is defined after restoration
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testHolidayAfterRestoration()
     {
@@ -58,6 +61,8 @@ class RestorationOfIndependenceOfLithuaniaDayTest extends LithuaniaBaseTestCase 
 
     /**
      * {@inheritdoc}
+     *
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -77,6 +82,7 @@ class RestorationOfIndependenceOfLithuaniaDayTest extends LithuaniaBaseTestCase 
 
     /**
      * {@inheritdoc}
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

@@ -33,6 +33,8 @@ class NewYearsDayTest extends ItalyBaseTestCase implements YasumiTestCaseInterfa
      *
      * @param int      $year     the year for which New Years Day needs to be tested
      * @param DateTime $expected the expected date
+     *
+     * @throws \ReflectionException
      */
     public function testNewYearsDay($year, $expected)
     {
@@ -43,6 +45,7 @@ class NewYearsDayTest extends ItalyBaseTestCase implements YasumiTestCaseInterfa
      * Returns a list of random test dates used for assertion of New Years Day.
      *
      * @return array list of test dates for New Years Day
+     * @throws \Exception
      */
     public function NewYearsDayDataProvider(): array
     {
@@ -51,6 +54,7 @@ class NewYearsDayTest extends ItalyBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests translated name of New Years Day.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -64,6 +68,7 @@ class NewYearsDayTest extends ItalyBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

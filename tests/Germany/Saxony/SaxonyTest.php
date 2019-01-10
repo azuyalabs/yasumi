@@ -26,6 +26,7 @@ class SaxonyTest extends SaxonyBaseTestCase
 
     /**
      * Tests if all official holidays in Saxony (Germany) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -57,6 +58,7 @@ class SaxonyTest extends SaxonyBaseTestCase
 
     /**
      * Tests if all observed holidays in Saxony (Germany) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -65,6 +67,7 @@ class SaxonyTest extends SaxonyBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Saxony (Germany) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -73,6 +76,7 @@ class SaxonyTest extends SaxonyBaseTestCase
 
     /**
      * Tests if all bank holidays in Saxony (Germany) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -81,6 +85,7 @@ class SaxonyTest extends SaxonyBaseTestCase
 
     /**
      * Tests if all other holidays in Saxony (Germany) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

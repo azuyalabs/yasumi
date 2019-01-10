@@ -39,6 +39,8 @@ class CorpusChristiTest extends PortugalBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests the holiday defined in this test.
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHoliday()
     {
@@ -49,6 +51,7 @@ class CorpusChristiTest extends PortugalBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Test that the holiday did not happen in 2014 and 2015.
+     * @throws \ReflectionException
      */
     public function testNotHoliday()
     {
@@ -58,6 +61,7 @@ class CorpusChristiTest extends PortugalBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests translated name of Corpus Christi.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -67,6 +71,8 @@ class CorpusChristiTest extends PortugalBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests type of the holiday defined in this test.
+     *
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

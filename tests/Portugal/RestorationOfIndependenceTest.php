@@ -44,6 +44,10 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Yasu
 
     /**
      * Tests the holiday defined in this test on or after establishment.
+     * @throws \ReflectionException
+     * @throws \Exception
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHolidayOnAfterEstablishment()
     {
@@ -59,6 +63,10 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Yasu
 
     /**
      * Test that the holiday if in effect in 2016 and later dates.
+     * @throws \ReflectionException
+     * @throws \Exception
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHolidayOnAfterRestoration()
     {
@@ -75,6 +83,7 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Yasu
 
     /**
      * Test that the holiday did not happen in 2014 and 2015.
+     * @throws \ReflectionException
      */
     public function testNotHolidayDuringAbolishment()
     {
@@ -84,6 +93,8 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Yasu
 
     /**
      * Tests the holiday defined in this test before establishment.
+     *
+     * @throws \ReflectionException
      */
     public function testHolidayBeforeEstablishment()
     {
@@ -96,6 +107,8 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Yasu
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -118,6 +131,8 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Yasu
 
     /**
      * Tests type of the holiday defined in this test.
+     *
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

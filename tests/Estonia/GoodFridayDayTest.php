@@ -45,6 +45,9 @@ class GoodFridayDayTest extends EstoniaBaseTestCase implements YasumiTestCaseInt
      *
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
+     *
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHoliday($year, $expected)
     {
@@ -58,6 +61,7 @@ class GoodFridayDayTest extends EstoniaBaseTestCase implements YasumiTestCaseInt
 
     /**
      * {@inheritdoc}
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -71,6 +75,7 @@ class GoodFridayDayTest extends EstoniaBaseTestCase implements YasumiTestCaseInt
 
     /**
      * {@inheritdoc}
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

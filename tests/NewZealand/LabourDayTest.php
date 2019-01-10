@@ -39,6 +39,9 @@ class LabourDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInte
      *
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
+     *
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHoliday($year, $expected)
     {
@@ -52,6 +55,7 @@ class LabourDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInte
 
     /**
      *  Tests that Labour Day is not present before 1900
+     * @throws \ReflectionException
      */
     public function testNotHoliday()
     {
@@ -62,6 +66,7 @@ class LabourDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInte
      * Returns a list of test dates
      *
      * @return array list of test dates for the holiday defined in this test
+     * @throws \Exception
      */
     public function HolidayDataProvider(): array
     {
@@ -82,6 +87,7 @@ class LabourDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -95,6 +101,7 @@ class LabourDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

@@ -37,6 +37,8 @@ class ChristmasEveTest extends CzechRepublicBaseTestCase implements YasumiTestCa
      *
      * @param int      $year     the year for which Christmas Eve needs to be tested
      * @param DateTime $expected the expected date
+     *
+     * @throws \ReflectionException
      */
     public function testChristmasDay($year, $expected)
     {
@@ -47,6 +49,7 @@ class ChristmasEveTest extends CzechRepublicBaseTestCase implements YasumiTestCa
      * Returns a list of random test dates used for assertion of the holiday defined in this test
      *
      * @return array list of test dates for the holiday defined in this test
+     * @throws \Exception
      */
     public function HolidayDataProvider(): array
     {
@@ -55,6 +58,7 @@ class ChristmasEveTest extends CzechRepublicBaseTestCase implements YasumiTestCa
 
     /**
      * Tests translated name of Christmas Day.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -68,6 +72,7 @@ class ChristmasEveTest extends CzechRepublicBaseTestCase implements YasumiTestCa
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

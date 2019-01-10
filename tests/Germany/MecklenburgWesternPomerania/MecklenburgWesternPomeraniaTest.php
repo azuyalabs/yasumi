@@ -26,6 +26,7 @@ class MecklenburgWesternPomeraniaTest extends MecklenburgWesternPomeraniaBaseTes
 
     /**
      * Tests if all official holidays in Mecklenburg-Western Pomerania (Germany) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -53,6 +54,7 @@ class MecklenburgWesternPomeraniaTest extends MecklenburgWesternPomeraniaBaseTes
 
     /**
      * Tests if all observed holidays in Mecklenburg-Western Pomerania (Germany) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -61,6 +63,7 @@ class MecklenburgWesternPomeraniaTest extends MecklenburgWesternPomeraniaBaseTes
 
     /**
      * Tests if all seasonal holidays in Mecklenburg-Western Pomerania (Germany) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -69,6 +72,7 @@ class MecklenburgWesternPomeraniaTest extends MecklenburgWesternPomeraniaBaseTes
 
     /**
      * Tests if all bank holidays in Mecklenburg-Western Pomerania (Germany) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -77,6 +81,7 @@ class MecklenburgWesternPomeraniaTest extends MecklenburgWesternPomeraniaBaseTes
 
     /**
      * Tests if all other holidays in Mecklenburg-Western Pomerania (Germany) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

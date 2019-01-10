@@ -26,6 +26,7 @@ class JuraTest extends JuraBaseTestCase
 
     /**
      * Tests if all official holidays in Jura (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -38,6 +39,7 @@ class JuraTest extends JuraBaseTestCase
 
     /**
      * Tests if all regional holidays in Jura (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testRegionalHolidays()
     {
@@ -59,6 +61,7 @@ class JuraTest extends JuraBaseTestCase
 
     /**
      * Tests if all observed holidays in Jura (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -72,6 +75,7 @@ class JuraTest extends JuraBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Jura (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -80,6 +84,7 @@ class JuraTest extends JuraBaseTestCase
 
     /**
      * Tests if all bank holidays in Jura (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -88,6 +93,7 @@ class JuraTest extends JuraBaseTestCase
 
     /**
      * Tests if all other holidays in Jura (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

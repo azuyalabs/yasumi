@@ -26,6 +26,7 @@ class AustraliaTest extends AustraliaBaseTestCase
 
     /**
      * Tests if all official holidays in Australia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -42,6 +43,7 @@ class AustraliaTest extends AustraliaBaseTestCase
 
     /**
      * Tests if all observed holidays in Australia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -50,6 +52,7 @@ class AustraliaTest extends AustraliaBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Australia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -58,6 +61,7 @@ class AustraliaTest extends AustraliaBaseTestCase
 
     /**
      * Tests if all bank holidays in Australia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -66,6 +70,7 @@ class AustraliaTest extends AustraliaBaseTestCase
 
     /**
      * Tests if all other holidays in Australia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

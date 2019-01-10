@@ -38,6 +38,8 @@ class SubstituteDayOfGoodwillTest extends SouthAfricaBaseTestCase implements Yas
 
     /**
      * Tests the holiday defined in this test on or after establishment.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testHolidayOnAfterEstablishment()
     {
@@ -51,6 +53,7 @@ class SubstituteDayOfGoodwillTest extends SouthAfricaBaseTestCase implements Yas
 
     /**
      * Tests the holiday defined in this test before establishment.
+     * @throws \ReflectionException
      */
     public function testHolidayBeforeEstablishment()
     {
@@ -63,6 +66,7 @@ class SubstituteDayOfGoodwillTest extends SouthAfricaBaseTestCase implements Yas
 
     /**
      * Tests the holiday defined in this test after completion.
+     * @throws \ReflectionException
      */
     public function testHolidayDayAfterCompletion()
     {
@@ -71,6 +75,7 @@ class SubstituteDayOfGoodwillTest extends SouthAfricaBaseTestCase implements Yas
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -84,6 +89,7 @@ class SubstituteDayOfGoodwillTest extends SouthAfricaBaseTestCase implements Yas
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

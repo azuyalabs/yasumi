@@ -39,6 +39,8 @@ class ReformationDayTest extends SaxonyAnhaltBaseTestCase implements YasumiTestC
      *
      * @param int      $year     the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
+     *
+     * @throws \ReflectionException
      */
     public function testHoliday($year, $expected)
     {
@@ -49,6 +51,7 @@ class ReformationDayTest extends SaxonyAnhaltBaseTestCase implements YasumiTestC
      * Returns a list of random test dates used for assertion of the holiday defined in this test
      *
      * @return array list of test dates for the holiday defined in this test
+     * @throws \Exception
      */
     public function HolidayDataProvider(): array
     {
@@ -64,6 +67,7 @@ class ReformationDayTest extends SaxonyAnhaltBaseTestCase implements YasumiTestC
 
     /**
      * Tests the holiday defined in this test before establishment.
+     * @throws \ReflectionException
      */
     public function testHolidayBeforeEstablishment()
     {
@@ -76,6 +80,7 @@ class ReformationDayTest extends SaxonyAnhaltBaseTestCase implements YasumiTestC
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -89,6 +94,7 @@ class ReformationDayTest extends SaxonyAnhaltBaseTestCase implements YasumiTestC
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

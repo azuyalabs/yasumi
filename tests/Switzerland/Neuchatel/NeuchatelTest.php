@@ -26,6 +26,7 @@ class NeuchatelTest extends NeuchatelBaseTestCase
 
     /**
      * Tests if all official holidays in Neuchatel (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -38,6 +39,7 @@ class NeuchatelTest extends NeuchatelBaseTestCase
 
     /**
      * Tests if all regional holidays in Neuchatel (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testRegionalHolidays()
     {
@@ -57,6 +59,7 @@ class NeuchatelTest extends NeuchatelBaseTestCase
 
     /**
      * Tests if all observed holidays in Neuchatel (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -70,6 +73,7 @@ class NeuchatelTest extends NeuchatelBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Neuchatel (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -78,6 +82,7 @@ class NeuchatelTest extends NeuchatelBaseTestCase
 
     /**
      * Tests if all bank holidays in Neuchatel (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -86,6 +91,7 @@ class NeuchatelTest extends NeuchatelBaseTestCase
 
     /**
      * Tests if all other holidays in Neuchatel (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

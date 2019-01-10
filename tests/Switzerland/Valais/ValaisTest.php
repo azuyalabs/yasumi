@@ -26,6 +26,7 @@ class ValaisTest extends ValaisBaseTestCase
 
     /**
      * Tests if all official holidays in Valais (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -38,6 +39,7 @@ class ValaisTest extends ValaisBaseTestCase
 
     /**
      * Tests if all regional holidays in Valais (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testRegionalHolidays()
     {
@@ -55,6 +57,7 @@ class ValaisTest extends ValaisBaseTestCase
 
     /**
      * Tests if all observed holidays in Valais (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -68,6 +71,7 @@ class ValaisTest extends ValaisBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Valais (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -76,6 +80,7 @@ class ValaisTest extends ValaisBaseTestCase
 
     /**
      * Tests if all bank holidays in Valais (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -84,6 +89,7 @@ class ValaisTest extends ValaisBaseTestCase
 
     /**
      * Tests if all other holidays in Valais (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

@@ -39,6 +39,10 @@ class AllSaintsDayTest extends PortugalBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests the holiday defined in this test.
+     * @throws \ReflectionException
+     * @throws \Exception
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHoliday()
     {
@@ -53,6 +57,7 @@ class AllSaintsDayTest extends PortugalBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Test that the holiday did not happen in 2014 and 2015.
+     * @throws \ReflectionException
      */
     public function testNotHoliday()
     {
@@ -62,6 +67,7 @@ class AllSaintsDayTest extends PortugalBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests translated name of Corpus Christi.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -76,6 +82,8 @@ class AllSaintsDayTest extends PortugalBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests type of the holiday defined in this test.
+     *
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

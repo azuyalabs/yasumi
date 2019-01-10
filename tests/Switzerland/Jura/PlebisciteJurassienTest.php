@@ -34,6 +34,8 @@ class PlebisciteJurassienTest extends JuraBaseTestCase implements YasumiTestCase
 
     /**
      * Tests Plébiscite jurassien on or after 1975.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testInstaurationRepubliqueOnAfter1975()
     {
@@ -48,6 +50,7 @@ class PlebisciteJurassienTest extends JuraBaseTestCase implements YasumiTestCase
 
     /**
      * Tests Plébiscite jurassien before 1975.
+     * @throws \ReflectionException
      */
     public function testInstaurationRepubliqueBefore1975()
     {
@@ -60,6 +63,7 @@ class PlebisciteJurassienTest extends JuraBaseTestCase implements YasumiTestCase
 
     /**
      * Tests translated name of Plébiscite jurassien.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -73,6 +77,7 @@ class PlebisciteJurassienTest extends JuraBaseTestCase implements YasumiTestCase
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

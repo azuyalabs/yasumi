@@ -34,6 +34,8 @@ class LabourDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests Labour Day on or after 1887. Labour Day was established since 1887 on the first Monday of September.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testLabourDayOnAfter1887()
     {
@@ -48,6 +50,7 @@ class LabourDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests Labour Day before 1887. Labour Day was established since 1887 on the first Monday of September.
+     * @throws \ReflectionException
      */
     public function testLabourDayBefore1887()
     {
@@ -60,6 +63,7 @@ class LabourDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -73,6 +77,7 @@ class LabourDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

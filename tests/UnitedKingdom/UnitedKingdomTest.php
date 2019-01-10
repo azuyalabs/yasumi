@@ -26,6 +26,7 @@ class UnitedKingdomTest extends UnitedKingdomBaseTestCase
 
     /**
      * Tests if all official holidays in the United Kingdom are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -37,6 +38,7 @@ class UnitedKingdomTest extends UnitedKingdomBaseTestCase
 
     /**
      * Tests if all observed holidays in the United Kingdom are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -45,6 +47,7 @@ class UnitedKingdomTest extends UnitedKingdomBaseTestCase
 
     /**
      * Tests if all seasonal holidays in the United Kingdom are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -53,6 +56,7 @@ class UnitedKingdomTest extends UnitedKingdomBaseTestCase
 
     /**
      * Tests if all bank holidays in the United Kingdom are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -67,6 +71,7 @@ class UnitedKingdomTest extends UnitedKingdomBaseTestCase
 
     /**
      * Tests if all other holidays in the United Kingdom are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

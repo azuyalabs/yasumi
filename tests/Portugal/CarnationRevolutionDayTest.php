@@ -34,6 +34,8 @@ class CarnationRevolutionDayTest extends PortugalBaseTestCase implements YasumiT
 
     /**
      * Test that the holiday is valid after the year of establishment
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHolidayAfterEstablishment()
     {
@@ -44,6 +46,7 @@ class CarnationRevolutionDayTest extends PortugalBaseTestCase implements YasumiT
 
     /**
      * Tests that the holiday is not a holiday before the year of establishment
+     * @throws \ReflectionException
      */
     public function testNotHolidayBeforeEstablishment()
     {
@@ -53,6 +56,7 @@ class CarnationRevolutionDayTest extends PortugalBaseTestCase implements YasumiT
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -62,6 +66,7 @@ class CarnationRevolutionDayTest extends PortugalBaseTestCase implements YasumiT
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

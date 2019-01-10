@@ -39,6 +39,8 @@ class stJohnsDayTest extends FinlandBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests the holiday before it was adjusted.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testHolidayBeforeAdjustment()
     {
@@ -53,6 +55,7 @@ class stJohnsDayTest extends FinlandBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests the holiday before it was adjusted.
+     * @throws \ReflectionException
      */
     public function testHolidayAfterAdjustment()
     {
@@ -76,6 +79,7 @@ class stJohnsDayTest extends FinlandBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -89,6 +93,7 @@ class stJohnsDayTest extends FinlandBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

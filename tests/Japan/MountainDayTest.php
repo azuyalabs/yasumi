@@ -34,6 +34,8 @@ class MountainDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests Mountain Day in 2020. Mountain Day in 2020 is August 10th for the Olympic Games.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testMountainDayIn2020()
     {
@@ -48,6 +50,8 @@ class MountainDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests Mountain Day after 2016. Mountain Day was established in 2014 and is held from 2016 on August 11th.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testMountainDayOnAfter2016()
     {
@@ -62,6 +66,8 @@ class MountainDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests Mountain Day after 2016 substituted next working day (when Mountain Day falls on a Sunday)
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testMountainDayOnAfter2016SubstitutedNextWorkingDay()
     {
@@ -76,6 +82,7 @@ class MountainDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests Mountain Day before 2016. Mountain Day was established in 2014 and is held from 2016 on August 11th.
+     * @throws \ReflectionException
      */
     public function testMountainDayBefore2016()
     {
@@ -88,6 +95,7 @@ class MountainDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -101,6 +109,7 @@ class MountainDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

@@ -29,6 +29,8 @@ class ChristmasDayTest extends USABaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * Tests Christmas Day. Christmas Day is celebrated on December 25th.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testChristmasDay()
     {
@@ -43,6 +45,8 @@ class ChristmasDayTest extends USABaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * Tests Christmas Day substituted on Monday (when Christmas Day falls on Sunday).
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testChristmasDaySubstitutedMonday()
     {
@@ -58,6 +62,8 @@ class ChristmasDayTest extends USABaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * Tests Christmas Day substituted on Monday (when Christmas Day falls on Saturday).
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testChristmasDaySubstitutedFriday()
     {
@@ -73,6 +79,7 @@ class ChristmasDayTest extends USABaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * Tests translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -86,6 +93,7 @@ class ChristmasDayTest extends USABaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

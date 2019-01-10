@@ -26,6 +26,7 @@ class SwedenTest extends SwedenBaseTestCase
 
     /**
      * Tests if all official holidays in Sweden (Spain) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -49,6 +50,7 @@ class SwedenTest extends SwedenBaseTestCase
 
     /**
      * Tests if all observed holidays in Sweden are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -57,6 +59,7 @@ class SwedenTest extends SwedenBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Sweden are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -65,6 +68,7 @@ class SwedenTest extends SwedenBaseTestCase
 
     /**
      * Tests if all bank holidays in Sweden are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -73,6 +77,7 @@ class SwedenTest extends SwedenBaseTestCase
 
     /**
      * Tests if all other holidays in Sweden are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

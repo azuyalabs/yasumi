@@ -35,6 +35,9 @@ class GoodFridayTest extends IrelandBaseTestCase implements YasumiTestCaseInterf
      *
      * @param int      $year     the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
+     *
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHoliday($year, $expected)
     {
@@ -68,6 +71,8 @@ class GoodFridayTest extends IrelandBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -87,6 +92,7 @@ class GoodFridayTest extends IrelandBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

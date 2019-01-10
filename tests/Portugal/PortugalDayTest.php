@@ -41,6 +41,8 @@ class PortugalDayTest extends PortugalBaseTestCase implements YasumiTestCaseInte
     /**
      * Tests the holiday defined in this test before it was abolished.
      * @see Portugal::calculatePortugalDay()
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHolidayBeforeAbolishment()
     {
@@ -52,6 +54,8 @@ class PortugalDayTest extends PortugalBaseTestCase implements YasumiTestCaseInte
     /**
      * Tests the holiday defined in this test after it was restored
      * @see Portugal::calculatePortugalDay()
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHolidayAfterRestoration()
     {
@@ -63,6 +67,8 @@ class PortugalDayTest extends PortugalBaseTestCase implements YasumiTestCaseInte
     /**
      * Tests that the holiday defined in this test does not exist during the period that it was abolished
      * @see Portugal::calculatePortugalDay()
+     *
+     * @throws \ReflectionException
      */
     public function testNotHolidayDuringAbolishment()
     {
@@ -75,6 +81,8 @@ class PortugalDayTest extends PortugalBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -87,6 +95,8 @@ class PortugalDayTest extends PortugalBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests type of the holiday defined in this test.
+     *
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

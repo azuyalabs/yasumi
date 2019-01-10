@@ -30,6 +30,7 @@ class ChristmasEveDayTest extends LatviaBaseTestCase implements YasumiTestCaseIn
 
     /**
      * @return array
+     * @throws \Exception
      */
     public function holidayDataProvider(): array
     {
@@ -41,6 +42,8 @@ class ChristmasEveDayTest extends LatviaBaseTestCase implements YasumiTestCaseIn
      *
      * @param int       $year
      * @param \DateTime $expected
+     *
+     * @throws \ReflectionException
      */
     public function testHoliday($year, \DateTime $expected)
     {
@@ -49,6 +52,7 @@ class ChristmasEveDayTest extends LatviaBaseTestCase implements YasumiTestCaseIn
 
     /**
      * {@inheritdoc}
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -62,6 +66,7 @@ class ChristmasEveDayTest extends LatviaBaseTestCase implements YasumiTestCaseIn
 
     /**
      * {@inheritdoc}
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

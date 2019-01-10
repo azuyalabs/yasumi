@@ -39,6 +39,9 @@ class ReconciliationDayTest extends ACTBaseTestCase implements YasumiTestCaseInt
      *
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
+     *
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHoliday($year, $expected)
     {
@@ -78,6 +81,7 @@ class ReconciliationDayTest extends ACTBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -91,6 +95,7 @@ class ReconciliationDayTest extends ACTBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

@@ -26,6 +26,7 @@ class SpainTest extends SpainBaseTestCase
 
     /**
      * Tests if all official holidays in Spain are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -45,6 +46,7 @@ class SpainTest extends SpainBaseTestCase
 
     /**
      * Tests if all observed holidays in Spain are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -53,6 +55,7 @@ class SpainTest extends SpainBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Spain are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -61,6 +64,7 @@ class SpainTest extends SpainBaseTestCase
 
     /**
      * Tests if all bank holidays in Spain are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -69,6 +73,7 @@ class SpainTest extends SpainBaseTestCase
 
     /**
      * Tests if all other holidays in Spain are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

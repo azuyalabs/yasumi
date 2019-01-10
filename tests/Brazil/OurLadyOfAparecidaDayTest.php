@@ -34,6 +34,8 @@ class OurLadyOfAparecidaDayTest extends BrazilBaseTestCase implements YasumiTest
 
     /**
      * Tests Nossa Senhora Aparecida on or after 1980.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testNossaSenhoraAparecidaAfter1980()
     {
@@ -48,6 +50,7 @@ class OurLadyOfAparecidaDayTest extends BrazilBaseTestCase implements YasumiTest
 
     /**
      * Tests Nossa Senhora Aparecida on or before 1980.
+     * @throws \ReflectionException
      */
     public function testNossaSenhoraAparecidaBefore1980()
     {
@@ -57,6 +60,7 @@ class OurLadyOfAparecidaDayTest extends BrazilBaseTestCase implements YasumiTest
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -71,6 +75,7 @@ class OurLadyOfAparecidaDayTest extends BrazilBaseTestCase implements YasumiTest
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

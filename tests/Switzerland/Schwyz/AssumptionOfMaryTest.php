@@ -33,6 +33,8 @@ class AssumptionOfMaryTest extends SchwyzBaseTestCase implements YasumiTestCaseI
      *
      * @param int      $year     the year for which the day of the Assumption of Mary needs to be tested
      * @param DateTime $expected the expected date
+     *
+     * @throws \ReflectionException
      */
     public function testAssumptionOfMary($year, $expected)
     {
@@ -41,6 +43,7 @@ class AssumptionOfMaryTest extends SchwyzBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests translated name of the day of the Assumption of Mary.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -54,6 +57,7 @@ class AssumptionOfMaryTest extends SchwyzBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {
@@ -64,6 +68,7 @@ class AssumptionOfMaryTest extends SchwyzBaseTestCase implements YasumiTestCaseI
      * Returns a list of random test dates used for assertion of the day of the Assumption of Mary.
      *
      * @return array list of test dates for the day of the Assumption of Mary
+     * @throws \Exception
      */
     public function AssumptionOfMaryDataProvider(): array
     {

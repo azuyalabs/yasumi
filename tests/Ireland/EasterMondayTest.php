@@ -35,6 +35,9 @@ class EasterMondayTest extends IrelandBaseTestCase implements YasumiTestCaseInte
      *
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
+     *
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHoliday($year, $expected)
     {
@@ -69,6 +72,8 @@ class EasterMondayTest extends IrelandBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests translated name of the holiday defined in this test.
+     *
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -88,6 +93,7 @@ class EasterMondayTest extends IrelandBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

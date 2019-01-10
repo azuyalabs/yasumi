@@ -34,6 +34,8 @@ class SpringBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
 
     /**
      * Tests the holiday defined in this test.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testHoliday()
     {
@@ -48,6 +50,7 @@ class SpringBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
 
     /**
      * Tests the holiday defined in this test before establishment.
+     * @throws \ReflectionException
      */
     public function testHolidayBeforeEstablishment()
     {
@@ -60,6 +63,7 @@ class SpringBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -73,6 +77,7 @@ class SpringBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

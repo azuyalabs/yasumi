@@ -34,6 +34,8 @@ class InstaurationRepubliqueTest extends NeuchatelBaseTestCase implements Yasumi
 
     /**
      * Tests Instauration de la République on or after 1849.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testInstaurationRepubliqueOnAfter1849()
     {
@@ -48,6 +50,7 @@ class InstaurationRepubliqueTest extends NeuchatelBaseTestCase implements Yasumi
 
     /**
      * Tests Instauration de la République before 1849.
+     * @throws \ReflectionException
      */
     public function testInstaurationRepubliqueBefore1849()
     {
@@ -60,6 +63,7 @@ class InstaurationRepubliqueTest extends NeuchatelBaseTestCase implements Yasumi
 
     /**
      * Tests translated name of Instauration de la République.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -73,6 +77,7 @@ class InstaurationRepubliqueTest extends NeuchatelBaseTestCase implements Yasumi
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

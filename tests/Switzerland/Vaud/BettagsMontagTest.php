@@ -30,6 +30,9 @@ class BettagsMontagTest extends VaudBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests Bettags Montag on or after 1832
+     * @throws \ReflectionException
+     *
+     * @throws \Exception
      */
     public function testBettagsMontagOnAfter1832()
     {
@@ -45,6 +48,7 @@ class BettagsMontagTest extends VaudBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests Bettags Montag before 1832
+     * @throws \ReflectionException
      */
     public function testBettagsMontagBefore1832()
     {
@@ -54,6 +58,7 @@ class BettagsMontagTest extends VaudBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests translated name of Bettags Montag.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -67,6 +72,7 @@ class BettagsMontagTest extends VaudBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

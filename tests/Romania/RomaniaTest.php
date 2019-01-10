@@ -28,6 +28,7 @@ class RomaniaTest extends RomaniaBaseTestCase
 
     /**
      * Tests if all official holidays in Romania are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -56,6 +57,7 @@ class RomaniaTest extends RomaniaBaseTestCase
 
     /**
      * Tests if all observed holidays in Romania are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -74,6 +76,7 @@ class RomaniaTest extends RomaniaBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Romania are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -82,6 +85,7 @@ class RomaniaTest extends RomaniaBaseTestCase
 
     /**
      * Tests if all bank holidays in Romania are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -90,6 +94,7 @@ class RomaniaTest extends RomaniaBaseTestCase
 
     /**
      * Tests if all other holidays in Romania are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

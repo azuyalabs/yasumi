@@ -33,6 +33,7 @@ class SlovakiaTest extends SlovakiaBaseTestCase
 
     /**
      * Tests if all official holidays in Slovakia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -48,6 +49,7 @@ class SlovakiaTest extends SlovakiaBaseTestCase
 
     /**
      * Tests if all bank holidays in Slovakia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -68,6 +70,7 @@ class SlovakiaTest extends SlovakiaBaseTestCase
 
     /**
      * Tests if all observed holidays in Slovakia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -77,6 +80,7 @@ class SlovakiaTest extends SlovakiaBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Slovakia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -86,6 +90,7 @@ class SlovakiaTest extends SlovakiaBaseTestCase
 
     /**
      * Tests if all other holidays in Slovakia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

@@ -34,6 +34,8 @@ class ReformationDay2017Test extends GermanyBaseTestCase implements YasumiTestCa
 
     /**
      * Test the holiday defined in this test upon establishment
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testHolidayOnEstablishment()
     {
@@ -47,6 +49,7 @@ class ReformationDay2017Test extends GermanyBaseTestCase implements YasumiTestCa
 
     /**
      * Test the holiday defined in this test before establishment
+     * @throws \ReflectionException
      */
     public function testHolidayBeforeEstablishment()
     {
@@ -59,6 +62,7 @@ class ReformationDay2017Test extends GermanyBaseTestCase implements YasumiTestCa
 
     /**
      * Test the holiday defined in this test after completion
+     * @throws \ReflectionException
      */
     public function testHolidayAfterCompletion()
     {
@@ -67,6 +71,7 @@ class ReformationDay2017Test extends GermanyBaseTestCase implements YasumiTestCa
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -80,6 +85,7 @@ class ReformationDay2017Test extends GermanyBaseTestCase implements YasumiTestCa
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

@@ -29,6 +29,9 @@ class HolidayOnFilterTest extends TestCase
 
     /**
      * Tests the basic usage of the OnFilter.
+     *
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHolidaysOnDate()
     {
@@ -50,6 +53,10 @@ class HolidayOnFilterTest extends TestCase
         }
     }
 
+    /**
+     * @throws \ReflectionException
+     * @throws \Exception
+     */
     public function testHolidaysNotOnDate()
     {
         $timezone = 'Europe/Amsterdam';
@@ -70,6 +77,10 @@ class HolidayOnFilterTest extends TestCase
         }
     }
 
+    /**
+     * @throws \ReflectionException
+     * @throws \Exception
+     */
     public function testCorrectNumberOfHolidaysOnDate()
     {
         $timezone = 'Europe/Amsterdam';

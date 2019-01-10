@@ -25,6 +25,7 @@ class RussiaTest extends RussiaBaseTestCase
 {
     /**
      * Tests if all official holidays in Russia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -61,6 +62,7 @@ class RussiaTest extends RussiaBaseTestCase
 
     /**
      * Tests if all observed holidays in Russia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -69,6 +71,7 @@ class RussiaTest extends RussiaBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Russia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -77,6 +80,7 @@ class RussiaTest extends RussiaBaseTestCase
 
     /**
      * Tests if all bank holidays in Russia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -85,6 +89,7 @@ class RussiaTest extends RussiaBaseTestCase
 
     /**
      * Tests if all other holidays in Russia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

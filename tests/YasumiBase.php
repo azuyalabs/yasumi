@@ -232,6 +232,7 @@ trait YasumiBase
      * @param int    $range      year range from which dates will be generated (default: 1000)
      *
      * @return array list of random test dates used for assertion of holidays.
+     * @throws \Exception
      */
     public function generateRandomDates($month, $day, $timezone = 'UTC', $iterations = 10, $range = 1000): array
     {
@@ -443,6 +444,7 @@ trait YasumiBase
      * @param int    $range      year range from which dates will be generated (default: 1000)
      *
      * @return array list of random test dates used for assertion of holidays.
+     * @throws \Exception
      */
     public function generateRandomDatesWithHolidayMovedToMonday(
         $month,
@@ -469,6 +471,7 @@ trait YasumiBase
      * @param int      $range      year range from which dates will be generated (default: 1000)
      *
      * @return array list of random test dates used for assertion of holidays with applied callback.
+     * @throws \Exception
      */
     public function generateRandomDatesWithModifier(
         $month,

@@ -34,6 +34,8 @@ class CantabriaDayTest extends CantabriaBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests the holiday defined in this test on or after establishment.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testHolidayOnAfterEstablishment()
     {
@@ -48,6 +50,7 @@ class CantabriaDayTest extends CantabriaBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests the holiday defined in this test before establishment.
+     * @throws \ReflectionException
      */
     public function testHolidayBeforeEstablishment()
     {
@@ -60,6 +63,7 @@ class CantabriaDayTest extends CantabriaBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -73,6 +77,7 @@ class CantabriaDayTest extends CantabriaBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

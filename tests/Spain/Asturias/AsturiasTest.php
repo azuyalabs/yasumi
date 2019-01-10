@@ -26,6 +26,7 @@ class AsturiasTest extends AsturiasBaseTestCase
 
     /**
      * Tests if all official holidays in Asturias (Spain) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -46,6 +47,7 @@ class AsturiasTest extends AsturiasBaseTestCase
 
     /**
      * Tests if all observed holidays in Asturias are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -58,6 +60,7 @@ class AsturiasTest extends AsturiasBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Asturias are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -66,6 +69,7 @@ class AsturiasTest extends AsturiasBaseTestCase
 
     /**
      * Tests if all bank holidays in Asturias are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -74,6 +78,7 @@ class AsturiasTest extends AsturiasBaseTestCase
 
     /**
      * Tests if all other holidays in Asturias are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

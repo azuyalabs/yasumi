@@ -26,6 +26,7 @@ class ValencianCommunityTest extends ValencianCommunityBaseTestCase
 
     /**
      * Tests if all official holidays in the Valencian Community (Spain) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -46,6 +47,7 @@ class ValencianCommunityTest extends ValencianCommunityBaseTestCase
 
     /**
      * Tests if all observed holidays in the Valencian Community are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -58,6 +60,7 @@ class ValencianCommunityTest extends ValencianCommunityBaseTestCase
 
     /**
      * Tests if all seasonal holidays in the Valencian Community are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -66,6 +69,7 @@ class ValencianCommunityTest extends ValencianCommunityBaseTestCase
 
     /**
      * Tests if all bank holidays in the Valencian Community are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -74,6 +78,7 @@ class ValencianCommunityTest extends ValencianCommunityBaseTestCase
 
     /**
      * Tests if all other holidays in the Valencian Community are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

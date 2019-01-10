@@ -33,6 +33,8 @@ class AssumptionOfMaryTest extends GreeceBaseTestCase implements YasumiTestCaseI
      *
      * @param int      $year     the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
+     *
+     * @throws \ReflectionException
      */
     public function testHoliday($year, $expected)
     {
@@ -43,6 +45,7 @@ class AssumptionOfMaryTest extends GreeceBaseTestCase implements YasumiTestCaseI
      * Returns a list of random test dates used for assertion of the holiday defined in this test
      *
      * @return array list of test dates for the holiday defined in this test
+     * @throws \Exception
      */
     public function HolidayDataProvider(): array
     {
@@ -51,6 +54,7 @@ class AssumptionOfMaryTest extends GreeceBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests translated name of the Assumption of Mary.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -64,6 +68,7 @@ class AssumptionOfMaryTest extends GreeceBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

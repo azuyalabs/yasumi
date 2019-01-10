@@ -26,6 +26,7 @@ class BasRhinTest extends BasRhinBaseTestCase
 
     /**
      * Tests if all official holidays in Bas-Rhin are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -48,6 +49,7 @@ class BasRhinTest extends BasRhinBaseTestCase
 
     /**
      * Tests if all observed holidays in Bas-Rhin (France) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -56,6 +58,7 @@ class BasRhinTest extends BasRhinBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Bas-Rhin (France) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -64,6 +67,7 @@ class BasRhinTest extends BasRhinBaseTestCase
 
     /**
      * Tests if all bank holidays in Bas-Rhin (France) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -72,6 +76,7 @@ class BasRhinTest extends BasRhinBaseTestCase
 
     /**
      * Tests if all other holidays in Bas-Rhin (France) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

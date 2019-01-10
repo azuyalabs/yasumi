@@ -33,6 +33,8 @@ class EasterMondayTest extends CzechRepublicBaseTestCase implements YasumiTestCa
 
     /**
      * Tests the holiday defined in this test.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testHoliday()
     {
@@ -47,6 +49,7 @@ class EasterMondayTest extends CzechRepublicBaseTestCase implements YasumiTestCa
 
     /**
      * Tests translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -60,6 +63,7 @@ class EasterMondayTest extends CzechRepublicBaseTestCase implements YasumiTestCa
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

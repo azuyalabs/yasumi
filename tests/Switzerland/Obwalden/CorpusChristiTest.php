@@ -31,6 +31,8 @@ class CorpusChristiTest extends ObwaldenBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests Corpus Christi.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testCorpusChristi()
     {
@@ -45,6 +47,7 @@ class CorpusChristiTest extends ObwaldenBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -58,6 +61,7 @@ class CorpusChristiTest extends ObwaldenBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

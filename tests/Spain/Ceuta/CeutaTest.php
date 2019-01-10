@@ -26,6 +26,7 @@ class CeutaTest extends CeutaBaseTestCase
 
     /**
      * Tests if all official holidays in Ceuta (Spain) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -46,6 +47,7 @@ class CeutaTest extends CeutaBaseTestCase
 
     /**
      * Tests if all observed holidays in Ceuta are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -57,6 +59,7 @@ class CeutaTest extends CeutaBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Ceuta are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -65,6 +68,7 @@ class CeutaTest extends CeutaBaseTestCase
 
     /**
      * Tests if all bank holidays in Ceuta are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -73,6 +77,7 @@ class CeutaTest extends CeutaBaseTestCase
 
     /**
      * Tests if all other holidays in Ceuta are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

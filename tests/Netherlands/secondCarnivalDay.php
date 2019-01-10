@@ -35,6 +35,8 @@ class secondCarnivalDay extends NetherlandsBaseTestCase implements YasumiTestCas
      * @throws \InvalidArgumentException
      * @throws \PHPUnit_Framework_AssertionFailedError
      * @throws \RuntimeException
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHoliday()
     {
@@ -54,6 +56,7 @@ class secondCarnivalDay extends NetherlandsBaseTestCase implements YasumiTestCas
      * @throws \PHPUnit_Framework_AssertionFailedError
      * @throws \RuntimeException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {
@@ -67,6 +70,7 @@ class secondCarnivalDay extends NetherlandsBaseTestCase implements YasumiTestCas
      * @throws \PHPUnit_Framework_AssertionFailedError
      * @throws \RuntimeException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {

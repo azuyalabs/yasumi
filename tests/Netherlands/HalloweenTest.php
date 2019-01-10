@@ -33,6 +33,8 @@ class HalloweenTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
      *
      * @param int      $year     the year for which Halloween needs to be tested
      * @param DateTime $expected the expected date
+     *
+     * @throws \ReflectionException
      */
     public function testHoliday($year, $expected)
     {
@@ -43,6 +45,7 @@ class HalloweenTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
      * Returns a list of random test dates used for assertion of Halloween.
      *
      * @return array list of test dates for Halloween
+     * @throws \Exception
      */
     public function HalloweenDataProvider(): array
     {
@@ -51,6 +54,7 @@ class HalloweenTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -64,6 +68,7 @@ class HalloweenTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

@@ -26,6 +26,7 @@ class RegionOfMurciaTest extends RegionOfMurciaBaseTestCase
 
     /**
      * Tests if all official holidays in the Region of Murcia (Spain) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -46,6 +47,7 @@ class RegionOfMurciaTest extends RegionOfMurciaBaseTestCase
 
     /**
      * Tests if all observed holidays in the Region of Murcia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -58,6 +60,7 @@ class RegionOfMurciaTest extends RegionOfMurciaBaseTestCase
 
     /**
      * Tests if all seasonal holidays in the Region of Murcia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -66,6 +69,7 @@ class RegionOfMurciaTest extends RegionOfMurciaBaseTestCase
 
     /**
      * Tests if all bank holidays in the Region of Murcia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -74,6 +78,7 @@ class RegionOfMurciaTest extends RegionOfMurciaBaseTestCase
 
     /**
      * Tests if all other holidays in the Region of Murcia are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

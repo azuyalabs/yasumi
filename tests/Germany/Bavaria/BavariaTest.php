@@ -26,6 +26,7 @@ class BavariaTest extends BavariaBaseTestCase
 
     /**
      * Tests if all official holidays in Bavaria (Germany) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -44,6 +45,7 @@ class BavariaTest extends BavariaBaseTestCase
 
     /**
      * Tests if all observed holidays in Bavaria (Germany) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -52,6 +54,7 @@ class BavariaTest extends BavariaBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Bavaria (Germany) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -60,6 +63,7 @@ class BavariaTest extends BavariaBaseTestCase
 
     /**
      * Tests if all bank holidays in Bavaria (Germany) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -68,6 +72,7 @@ class BavariaTest extends BavariaBaseTestCase
 
     /**
      * Tests if all other holidays in Bavaria (Germany) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

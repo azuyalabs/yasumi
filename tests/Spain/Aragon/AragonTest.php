@@ -26,6 +26,7 @@ class AragonTest extends AragonBaseTestCase
 
     /**
      * Tests if all official holidays in Aragon (Spain) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -45,6 +46,7 @@ class AragonTest extends AragonBaseTestCase
 
     /**
      * Tests if all observed holidays in Aragon are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -57,6 +59,7 @@ class AragonTest extends AragonBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Aragon are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -65,6 +68,7 @@ class AragonTest extends AragonBaseTestCase
 
     /**
      * Tests if all bank holidays in Aragon are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -73,6 +77,7 @@ class AragonTest extends AragonBaseTestCase
 
     /**
      * Tests if all other holidays in Aragon are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

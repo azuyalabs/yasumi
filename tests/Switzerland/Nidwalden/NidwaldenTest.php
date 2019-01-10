@@ -26,6 +26,7 @@ class NidwaldenTest extends NidwaldenBaseTestCase
 
     /**
      * Tests if all official holidays in Nidwalden (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -38,6 +39,7 @@ class NidwaldenTest extends NidwaldenBaseTestCase
 
     /**
      * Tests if all regional holidays in Nidwalden (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testRegionalHolidays()
     {
@@ -59,6 +61,7 @@ class NidwaldenTest extends NidwaldenBaseTestCase
 
     /**
      * Tests if all observed holidays in Nidwalden (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -72,6 +75,7 @@ class NidwaldenTest extends NidwaldenBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Nidwalden (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -80,6 +84,7 @@ class NidwaldenTest extends NidwaldenBaseTestCase
 
     /**
      * Tests if all bank holidays in Nidwalden (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -88,6 +93,7 @@ class NidwaldenTest extends NidwaldenBaseTestCase
 
     /**
      * Tests if all other holidays in Nidwalden (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

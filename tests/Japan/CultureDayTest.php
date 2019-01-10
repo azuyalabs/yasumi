@@ -34,6 +34,8 @@ class CultureDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * Tests Culture Day after 1948. Culture Day Day was established after 1948
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testCultureDayOnAfter1948()
     {
@@ -48,6 +50,8 @@ class CultureDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * Tests Culture Day after 1948 substituted next working day (when Culture Day falls on a Sunday)
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testCultureDayOnAfter1948SubstitutedNextWorkingDay()
     {
@@ -62,6 +66,7 @@ class CultureDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * Tests Culture Day before 1948. Culture Day was established after 1948
+     * @throws \ReflectionException
      */
     public function testCultureDayBefore1948()
     {
@@ -74,6 +79,7 @@ class CultureDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -87,6 +93,7 @@ class CultureDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

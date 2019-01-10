@@ -28,6 +28,7 @@ class CentralNorthTest extends CentralNorthBaseTestCase
 
     /**
      * Tests if all official holidays in central north Tasmania (Australia) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {

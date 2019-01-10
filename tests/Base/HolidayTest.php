@@ -32,6 +32,7 @@ class HolidayTest extends TestCase
      * Tests that an InvalidArgumentException is thrown in case an blank short name is given.
      *
      * @expectedException InvalidArgumentException
+     * @throws \Exception
      */
     public function testHolidayBlankNameInvalidArgumentException()
     {
@@ -42,6 +43,7 @@ class HolidayTest extends TestCase
      * Tests that an Yasumi\Exception\UnknownLocaleException is thrown in case an invalid locale is given.
      *
      * @expectedException \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
     public function testCreateHolidayUnknownLocaleException()
     {
@@ -50,6 +52,7 @@ class HolidayTest extends TestCase
 
     /**
      * Tests that a Yasumi holiday instance can be serialized to a JSON object.
+     * @throws \Exception
      */
     public function testHolidayIsJsonSerializable()
     {
@@ -65,6 +68,7 @@ class HolidayTest extends TestCase
     /**
      * Tests that a Yasumi holiday instance can be created using an object that implements the DateTimeInterface (e.g.
      * DateTime or DateTimeImmutable)
+     * @throws \Exception
      */
     public function testHolidayWithDateTimeInterface()
     {
@@ -81,6 +85,7 @@ class HolidayTest extends TestCase
 
     /**
      * Tests the getName function of the Holiday object with no translations for the name given.
+     * @throws \Exception
      */
     public function testHolidayGetNameWithNoTranslations()
     {
@@ -93,6 +98,7 @@ class HolidayTest extends TestCase
 
     /**
      * Tests the getName function of the Holiday object with only a default translation for the name given.
+     * @throws \Exception
      */
     public function testHolidayGetNameWithOnlyDefaultTranslation()
     {
@@ -107,6 +113,8 @@ class HolidayTest extends TestCase
 
     /**
      * Tests the getName function of the Holiday object with only a default translation for the name given.
+     *
+     * @throws \Exception
      */
     public function testHolidayGetNameWithOneNonDefaultTranslation()
     {
@@ -121,6 +129,7 @@ class HolidayTest extends TestCase
 
     /**
      * Tests the getName function of the Holiday object with global translations and no custom translation.
+     * @throws \Exception
      */
     public function testHolidayGetNameWithGlobalTranslations()
     {
@@ -146,6 +155,7 @@ class HolidayTest extends TestCase
 
     /**
      * Tests the getName function of the Holiday object with global translations and a new custom translation.
+     * @throws \Exception
      */
     public function testHolidayGetNameWithGlobalAndCustomTranslations()
     {
@@ -177,6 +187,7 @@ class HolidayTest extends TestCase
 
     /**
      * Tests the getName function of the Holiday object with global translations and an overriding custom translation.
+     * @throws \Exception
      */
     public function testHolidayGetNameWithOverridenGlobalTranslations()
     {

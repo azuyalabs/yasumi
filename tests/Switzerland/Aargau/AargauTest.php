@@ -26,6 +26,8 @@ class AargauTest extends AargauBaseTestCase
 
     /**
      * Tests if all official holidays in Aargau (Switzerland) are defined by the provider class
+     *
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -38,6 +40,8 @@ class AargauTest extends AargauBaseTestCase
 
     /**
      * Tests if all official holidays in Aargau (Switzerland) are defined by the provider class
+     *
+     * @throws \ReflectionException
      */
     public function testRegionalHolidays()
     {
@@ -51,6 +55,8 @@ class AargauTest extends AargauBaseTestCase
 
     /**
      * Tests if all observed holidays in Aargau (Switzerland) are defined by the provider class
+     *
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -64,6 +70,8 @@ class AargauTest extends AargauBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Aargau (Switzerland) are defined by the provider class
+     *
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -72,6 +80,8 @@ class AargauTest extends AargauBaseTestCase
 
     /**
      * Tests if all bank holidays in Aargau (Switzerland) are defined by the provider class
+     *
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -80,6 +90,8 @@ class AargauTest extends AargauBaseTestCase
 
     /**
      * Tests if all other holidays in Aargau (Switzerland) are defined by the provider class
+     *
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

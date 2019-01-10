@@ -39,6 +39,9 @@ class JuneHolidayTest extends IrelandBaseTestCase implements YasumiTestCaseInter
      *
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
+     *
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHoliday($year, $expected)
     {
@@ -55,6 +58,7 @@ class JuneHolidayTest extends IrelandBaseTestCase implements YasumiTestCaseInter
      * Returns a list of test dates
      *
      * @return array list of test dates for the holiday defined in this test
+     * @throws \Exception
      */
     public function HolidayDataProvider(): array
     {
@@ -72,6 +76,7 @@ class JuneHolidayTest extends IrelandBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests the holiday defined in this test before establishment.
+     * @throws \ReflectionException
      */
     public function testHolidayBeforeEstablishment()
     {
@@ -84,6 +89,8 @@ class JuneHolidayTest extends IrelandBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -103,6 +110,7 @@ class JuneHolidayTest extends IrelandBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

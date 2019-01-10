@@ -34,6 +34,8 @@ class IndependenceDayTest extends BrazilBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests Dia da independência do Brasil on or after 1822.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testDiaDaIndependenciaDoBrasilAfter1822()
     {
@@ -48,6 +50,7 @@ class IndependenceDayTest extends BrazilBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests Dia da independência do Brasil on or before 1822.
+     * @throws \ReflectionException
      */
     public function testDiaDaIndependenciaDoBrasilBefore1822()
     {
@@ -57,6 +60,7 @@ class IndependenceDayTest extends BrazilBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -71,6 +75,7 @@ class IndependenceDayTest extends BrazilBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

@@ -26,6 +26,7 @@ class TicinoTest extends TicinoBaseTestCase
 
     /**
      * Tests if all official holidays in Ticino (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -38,6 +39,7 @@ class TicinoTest extends TicinoBaseTestCase
 
     /**
      * Tests if all regional holidays in Ticino (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testRegionalHolidays()
     {
@@ -61,6 +63,7 @@ class TicinoTest extends TicinoBaseTestCase
 
     /**
      * Tests if all observed holidays in Ticino (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -74,6 +77,7 @@ class TicinoTest extends TicinoBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Ticino (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -82,6 +86,7 @@ class TicinoTest extends TicinoBaseTestCase
 
     /**
      * Tests if all bank holidays in Ticino (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -90,6 +95,7 @@ class TicinoTest extends TicinoBaseTestCase
 
     /**
      * Tests if all other holidays in Ticino (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

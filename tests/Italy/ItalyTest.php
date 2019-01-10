@@ -26,6 +26,7 @@ class ItalyTest extends ItalyBaseTestCase
 
     /**
      * Tests if all official holidays in Italy are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -47,6 +48,7 @@ class ItalyTest extends ItalyBaseTestCase
 
     /**
      * Tests if all observed holidays in Italy are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -55,6 +57,7 @@ class ItalyTest extends ItalyBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Italy are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -63,6 +66,7 @@ class ItalyTest extends ItalyBaseTestCase
 
     /**
      * Tests if all bank holidays in Italy are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -71,6 +75,7 @@ class ItalyTest extends ItalyBaseTestCase
 
     /**
      * Tests if all other holidays in Italy are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

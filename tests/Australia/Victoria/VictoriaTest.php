@@ -28,6 +28,7 @@ class VictoriaTest extends VictoriaBaseTestCase
 
     /**
      * Tests if all official holidays in Victoria (Australia) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {

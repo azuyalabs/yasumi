@@ -25,6 +25,7 @@ class LithuaniaTest extends LithuaniaBaseTestCase
 {
     /**
      * Tests if all official holidays in Lithuania are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -60,6 +61,7 @@ class LithuaniaTest extends LithuaniaBaseTestCase
 
     /**
      * Tests if all observed holidays in Lithuania are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -68,6 +70,7 @@ class LithuaniaTest extends LithuaniaBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Lithuania are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -76,6 +79,7 @@ class LithuaniaTest extends LithuaniaBaseTestCase
 
     /**
      * Tests if all bank holidays in Lithuania are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -84,6 +88,7 @@ class LithuaniaTest extends LithuaniaBaseTestCase
 
     /**
      * Tests if all other holidays in Lithuania are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

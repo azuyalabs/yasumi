@@ -26,6 +26,7 @@ class NavarreTest extends NavarreBaseTestCase
 
     /**
      * Tests if all official holidays in Navarre (Spain) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -45,6 +46,7 @@ class NavarreTest extends NavarreBaseTestCase
 
     /**
      * Tests if all observed holidays in Navarre are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -58,6 +60,7 @@ class NavarreTest extends NavarreBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Navarre are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -66,6 +69,7 @@ class NavarreTest extends NavarreBaseTestCase
 
     /**
      * Tests if all bank holidays in Navarre are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -74,6 +78,7 @@ class NavarreTest extends NavarreBaseTestCase
 
     /**
      * Tests if all other holidays in Navarre are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

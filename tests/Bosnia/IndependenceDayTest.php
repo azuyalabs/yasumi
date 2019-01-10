@@ -34,6 +34,8 @@ class IndependenceDayTest extends BosniaBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests Independence Day on or after 1992.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testIndependenceDayOnAfter1992()
     {
@@ -48,6 +50,7 @@ class IndependenceDayTest extends BosniaBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests Independence Day before 1992.
+     * @throws \ReflectionException
      */
     public function testIndependenceDayBefore1992()
     {
@@ -60,6 +63,7 @@ class IndependenceDayTest extends BosniaBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests translated name of Independence Day.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -73,6 +77,7 @@ class IndependenceDayTest extends BosniaBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

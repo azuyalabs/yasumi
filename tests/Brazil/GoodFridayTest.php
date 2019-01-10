@@ -31,6 +31,9 @@ class GoodFridayTest extends BrazilBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests Good Friday.
+     *
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testGoodFriday()
     {
@@ -45,6 +48,7 @@ class GoodFridayTest extends BrazilBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -58,6 +62,7 @@ class GoodFridayTest extends BrazilBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

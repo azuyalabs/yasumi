@@ -31,6 +31,7 @@ class IndependenceDayTest extends EstoniaBaseTestCase implements YasumiTestCaseI
 
     /**
      * Test if holiday is not defined before
+     * @throws \ReflectionException
      */
     public function testHolidayBefore()
     {
@@ -43,6 +44,8 @@ class IndependenceDayTest extends EstoniaBaseTestCase implements YasumiTestCaseI
 
     /**
      * Test if holiday is defined after
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testHolidayAfter()
     {
@@ -58,6 +61,8 @@ class IndependenceDayTest extends EstoniaBaseTestCase implements YasumiTestCaseI
 
     /**
      * {@inheritdoc}
+     *
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -77,6 +82,7 @@ class IndependenceDayTest extends EstoniaBaseTestCase implements YasumiTestCaseI
 
     /**
      * {@inheritdoc}
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

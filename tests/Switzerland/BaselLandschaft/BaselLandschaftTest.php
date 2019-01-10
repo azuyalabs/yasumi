@@ -26,6 +26,7 @@ class BaselLandschaftTest extends BaselLandschaftBaseTestCase
 
     /**
      * Tests if all official holidays in BaselLandschaft (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -38,6 +39,7 @@ class BaselLandschaftTest extends BaselLandschaftBaseTestCase
 
     /**
      * Tests if all regional holidays in BaselLandschaft (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testRegionalHolidays()
     {
@@ -55,6 +57,7 @@ class BaselLandschaftTest extends BaselLandschaftBaseTestCase
 
     /**
      * Tests if all observed holidays in BaselLandschaft (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -68,6 +71,7 @@ class BaselLandschaftTest extends BaselLandschaftBaseTestCase
 
     /**
      * Tests if all seasonal holidays in BaselLandschaft (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -76,6 +80,7 @@ class BaselLandschaftTest extends BaselLandschaftBaseTestCase
 
     /**
      * Tests if all bank holidays in BaselLandschaft (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -84,6 +89,7 @@ class BaselLandschaftTest extends BaselLandschaftBaseTestCase
 
     /**
      * Tests if all other holidays in BaselLandschaft (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

@@ -26,6 +26,7 @@ class SchaffhausenTest extends SchaffhausenBaseTestCase
 
     /**
      * Tests if all official holidays in Schaffhausen (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -38,6 +39,7 @@ class SchaffhausenTest extends SchaffhausenBaseTestCase
 
     /**
      * Tests if all regional holidays in Schaffhausen (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testRegionalHolidays()
     {
@@ -56,6 +58,7 @@ class SchaffhausenTest extends SchaffhausenBaseTestCase
 
     /**
      * Tests if all observed holidays in Schaffhausen (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -69,6 +72,7 @@ class SchaffhausenTest extends SchaffhausenBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Schaffhausen (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -77,6 +81,7 @@ class SchaffhausenTest extends SchaffhausenBaseTestCase
 
     /**
      * Tests if all bank holidays in Schaffhausen (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -85,6 +90,7 @@ class SchaffhausenTest extends SchaffhausenBaseTestCase
 
     /**
      * Tests if all other holidays in Schaffhausen (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

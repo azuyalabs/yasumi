@@ -26,6 +26,7 @@ class MelillaTest extends MelillaBaseTestCase
 
     /**
      * Tests if all official holidays in Melilla (Spain) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -45,6 +46,7 @@ class MelillaTest extends MelillaBaseTestCase
 
     /**
      * Tests if all observed holidays in Melilla are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -57,6 +59,7 @@ class MelillaTest extends MelillaBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Melilla are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -65,6 +68,7 @@ class MelillaTest extends MelillaBaseTestCase
 
     /**
      * Tests if all bank holidays in Melilla are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -73,6 +77,7 @@ class MelillaTest extends MelillaBaseTestCase
 
     /**
      * Tests if all other holidays in Melilla are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

@@ -31,6 +31,7 @@ class ProclamationOfTheRepublicOfLatviaDayTest extends LatviaBaseTestCase implem
 
     /**
      * Test if holiday is not defined before proclamation
+     * @throws \ReflectionException
      */
     public function testNotHoliday()
     {
@@ -43,6 +44,7 @@ class ProclamationOfTheRepublicOfLatviaDayTest extends LatviaBaseTestCase implem
 
     /**
      * @return array
+     * @throws \Exception
      */
     public function holidayDataProvider(): array
     {
@@ -62,6 +64,9 @@ class ProclamationOfTheRepublicOfLatviaDayTest extends LatviaBaseTestCase implem
      *
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
+     *
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHoliday($year, $expected)
     {
@@ -75,6 +80,7 @@ class ProclamationOfTheRepublicOfLatviaDayTest extends LatviaBaseTestCase implem
 
     /**
      * {@inheritdoc}
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -91,6 +97,7 @@ class ProclamationOfTheRepublicOfLatviaDayTest extends LatviaBaseTestCase implem
 
     /**
      * {@inheritdoc}
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

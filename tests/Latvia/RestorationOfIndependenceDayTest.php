@@ -31,6 +31,7 @@ class RestorationOfIndependenceDayTest extends LatviaBaseTestCase implements Yas
 
     /**
      * Test if holiday is not defined before restoration
+     * @throws \ReflectionException
      */
     public function testNotHoliday()
     {
@@ -43,6 +44,7 @@ class RestorationOfIndependenceDayTest extends LatviaBaseTestCase implements Yas
 
     /**
      * @return array
+     * @throws \Exception
      */
     public function holidayDataProvider(): array
     {
@@ -62,6 +64,9 @@ class RestorationOfIndependenceDayTest extends LatviaBaseTestCase implements Yas
      *
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
+     *
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHoliday($year, $expected)
     {
@@ -75,6 +80,7 @@ class RestorationOfIndependenceDayTest extends LatviaBaseTestCase implements Yas
 
     /**
      * {@inheritdoc}
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -91,6 +97,7 @@ class RestorationOfIndependenceDayTest extends LatviaBaseTestCase implements Yas
 
     /**
      * {@inheritdoc}
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

@@ -26,6 +26,7 @@ class LucerneTest extends LucerneBaseTestCase
 
     /**
      * Tests if all official holidays in Lucerne (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -38,6 +39,7 @@ class LucerneTest extends LucerneBaseTestCase
 
     /**
      * Tests if all regional holidays in Lucerne (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testRegionalHolidays()
     {
@@ -59,6 +61,7 @@ class LucerneTest extends LucerneBaseTestCase
 
     /**
      * Tests if all observed holidays in Lucerne (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -72,6 +75,7 @@ class LucerneTest extends LucerneBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Lucerne (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -80,6 +84,7 @@ class LucerneTest extends LucerneBaseTestCase
 
     /**
      * Tests if all bank holidays in Lucerne (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -88,6 +93,7 @@ class LucerneTest extends LucerneBaseTestCase
 
     /**
      * Tests if all other holidays in Lucerne (Switzerland) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {

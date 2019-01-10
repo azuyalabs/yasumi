@@ -34,6 +34,7 @@ class CommemorationDayTest extends NetherlandsBaseTestCase implements YasumiTest
 
     /**
      * Tests Commemoration Day before 1947. Commemoration Day was established after WWII in 1947.
+     * @throws \ReflectionException
      */
     public function testCommemorationDayBefore1947()
     {
@@ -46,6 +47,8 @@ class CommemorationDayTest extends NetherlandsBaseTestCase implements YasumiTest
 
     /**
      * Tests Commemoration Day after 1947. Commemoration Day was established after WWII in 1947.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testCommemorationDayOnAfter1947()
     {
@@ -60,6 +63,7 @@ class CommemorationDayTest extends NetherlandsBaseTestCase implements YasumiTest
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -73,6 +77,7 @@ class CommemorationDayTest extends NetherlandsBaseTestCase implements YasumiTest
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

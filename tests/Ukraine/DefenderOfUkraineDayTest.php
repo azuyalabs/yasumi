@@ -26,6 +26,10 @@ class DefenderOfUkraineDayTest extends UkraineBaseTestCase implements YasumiTest
      */
     const HOLIDAY = 'defenderOfUkraineDay';
 
+    /**
+     * @throws \ReflectionException
+     * @throws \Exception
+     */
     public function testHoliday()
     {
         $year = 2020;
@@ -39,6 +43,7 @@ class DefenderOfUkraineDayTest extends UkraineBaseTestCase implements YasumiTest
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -52,6 +57,7 @@ class DefenderOfUkraineDayTest extends UkraineBaseTestCase implements YasumiTest
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

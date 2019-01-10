@@ -33,6 +33,8 @@ class AllSaintsDayTest extends AustriaBaseTestCase implements YasumiTestCaseInte
      *
      * @param int      $year     the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
+     *
+     * @throws \ReflectionException
      */
     public function testHoliday($year, $expected)
     {
@@ -43,6 +45,7 @@ class AllSaintsDayTest extends AustriaBaseTestCase implements YasumiTestCaseInte
      * Returns a list of random test dates used for assertion of the holiday defined in this test
      *
      * @return array list of test dates for the holiday defined in this test
+     * @throws \Exception
      */
     public function HolidayDataProvider(): array
     {
@@ -51,6 +54,7 @@ class AllSaintsDayTest extends AustriaBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -64,6 +68,7 @@ class AllSaintsDayTest extends AustriaBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

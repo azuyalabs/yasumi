@@ -35,6 +35,8 @@ class MaundyThursdayTest extends SpainBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests the holiday defined in this test.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testHoliday()
     {
@@ -49,6 +51,7 @@ class MaundyThursdayTest extends SpainBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -62,6 +65,7 @@ class MaundyThursdayTest extends SpainBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

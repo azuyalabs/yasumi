@@ -33,6 +33,8 @@ class ChristmasDayTest extends VaudBaseTestCase implements YasumiTestCaseInterfa
      *
      * @param int      $year     the year for which Christmas Day needs to be tested
      * @param DateTime $expected the expected date
+     *
+     * @throws \ReflectionException
      */
     public function testChristmasDay($year, $expected)
     {
@@ -43,6 +45,7 @@ class ChristmasDayTest extends VaudBaseTestCase implements YasumiTestCaseInterfa
      * Returns a list of random test dates used for assertion of Christmas Day.
      *
      * @return array list of test dates for Christmas Day
+     * @throws \Exception
      */
     public function ChristmasDayDataProvider(): array
     {
@@ -51,6 +54,7 @@ class ChristmasDayTest extends VaudBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests translated name of Christmas Day.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -64,6 +68,7 @@ class ChristmasDayTest extends VaudBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

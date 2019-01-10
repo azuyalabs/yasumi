@@ -29,6 +29,8 @@ class AscensionDayTest extends ThurgauBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests Ascension Day.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testAscensionDay()
     {
@@ -43,6 +45,7 @@ class AscensionDayTest extends ThurgauBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests translated name of Ascension Day.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -56,6 +59,7 @@ class AscensionDayTest extends ThurgauBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

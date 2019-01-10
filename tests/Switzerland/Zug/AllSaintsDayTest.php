@@ -33,6 +33,8 @@ class AllSaintsDayTest extends ZugBaseTestCase implements YasumiTestCaseInterfac
      *
      * @param int      $year     the year for which All Saints' Day needs to be tested
      * @param DateTime $expected the expected date
+     *
+     * @throws \ReflectionException
      */
     public function testAllSaintsDay($year, $expected)
     {
@@ -41,6 +43,7 @@ class AllSaintsDayTest extends ZugBaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * Tests translated name of All Saints' Day.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -54,6 +57,7 @@ class AllSaintsDayTest extends ZugBaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {
@@ -64,6 +68,7 @@ class AllSaintsDayTest extends ZugBaseTestCase implements YasumiTestCaseInterfac
      * Returns a list of random test dates used for assertion of All Saints' Day.
      *
      * @return array list of test dates for All Saints' Day
+     * @throws \Exception
      */
     public function AllSaintsDayDataProvider(): array
     {

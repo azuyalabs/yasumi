@@ -28,6 +28,7 @@ class OrthodoxChristmasDay extends BosniaBaseTestCase implements YasumiTestCaseI
 
     /**
      * @return array
+     * @throws \Exception
      */
     public function holidayDataProvider()
     {
@@ -39,6 +40,8 @@ class OrthodoxChristmasDay extends BosniaBaseTestCase implements YasumiTestCaseI
      *
      * @param int       $year
      * @param \DateTime $expected
+     *
+     * @throws \ReflectionException
      */
     public function testHoliday($year, \DateTime $expected)
     {
@@ -47,6 +50,7 @@ class OrthodoxChristmasDay extends BosniaBaseTestCase implements YasumiTestCaseI
 
     /**
      * {@inheritdoc}
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -60,6 +64,7 @@ class OrthodoxChristmasDay extends BosniaBaseTestCase implements YasumiTestCaseI
 
     /**
      * {@inheritdoc}
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

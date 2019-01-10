@@ -30,6 +30,8 @@ class carnivalDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests the holiday defined in this test.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testHoliday()
     {
@@ -44,6 +46,7 @@ class carnivalDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {
@@ -52,6 +55,7 @@ class carnivalDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {

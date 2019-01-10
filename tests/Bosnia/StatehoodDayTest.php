@@ -34,6 +34,8 @@ class StatehoodDayTest extends BosniaBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests Statehood Day on or after 1943.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testStatehoodDayOnAfter1943()
     {
@@ -48,6 +50,7 @@ class StatehoodDayTest extends BosniaBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests Statehood Day before 1943.
+     * @throws \ReflectionException
      */
     public function testStatehoodDayBefore1943()
     {
@@ -60,6 +63,7 @@ class StatehoodDayTest extends BosniaBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests translated name of Statehood Day.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -73,6 +77,7 @@ class StatehoodDayTest extends BosniaBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

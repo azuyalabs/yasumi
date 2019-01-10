@@ -34,6 +34,8 @@ class AntifascistStruggleDayTest extends CroatiaBaseTestCase implements YasumiTe
 
     /**
      * Tests Day of Antifascist Struggle on or after 1941.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testAntifascistStruggleDayOnAfter1941()
     {
@@ -48,6 +50,7 @@ class AntifascistStruggleDayTest extends CroatiaBaseTestCase implements YasumiTe
 
     /**
      * Tests Day of Antifascist Struggle before 1941.
+     * @throws \ReflectionException
      */
     public function testAntifascistStruggleDayBefore1941()
     {
@@ -60,6 +63,7 @@ class AntifascistStruggleDayTest extends CroatiaBaseTestCase implements YasumiTe
 
     /**
      * Tests translated name of Day of Antifascist Struggle.
+     * @throws \ReflectionException
      */
     public function testTranslation()
     {
@@ -73,6 +77,7 @@ class AntifascistStruggleDayTest extends CroatiaBaseTestCase implements YasumiTe
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHolidayType()
     {

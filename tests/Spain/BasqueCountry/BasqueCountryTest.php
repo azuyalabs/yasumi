@@ -26,6 +26,7 @@ class BasqueCountryTest extends BasqueCountryBaseTestCase
 
     /**
      * Tests if all official holidays in Basque Country (Spain) are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOfficialHolidays()
     {
@@ -46,6 +47,7 @@ class BasqueCountryTest extends BasqueCountryBaseTestCase
 
     /**
      * Tests if all observed holidays in Basque Country are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testObservedHolidays()
     {
@@ -58,6 +60,7 @@ class BasqueCountryTest extends BasqueCountryBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Basque Country are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testSeasonalHolidays()
     {
@@ -66,6 +69,7 @@ class BasqueCountryTest extends BasqueCountryBaseTestCase
 
     /**
      * Tests if all bank holidays in Basque Country are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testBankHolidays()
     {
@@ -74,6 +78,7 @@ class BasqueCountryTest extends BasqueCountryBaseTestCase
 
     /**
      * Tests if all other holidays in Basque Country are defined by the provider class
+     * @throws \ReflectionException
      */
     public function testOtherHolidays()
     {
