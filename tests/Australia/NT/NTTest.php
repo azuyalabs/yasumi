@@ -19,8 +19,6 @@ use Yasumi\Holiday;
  */
 class NTTest extends NTBaseTestCase
 {
-    public $region = 'Australia\NT';
-
     /**
      * @var int year random year number used for all tests in this Test Case
      */
@@ -30,7 +28,7 @@ class NTTest extends NTBaseTestCase
      * Tests if all official holidays in NT (Australia) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $this->assertDefinedHolidays([
             'newYearsDay',

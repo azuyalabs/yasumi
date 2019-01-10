@@ -28,7 +28,7 @@ class CastillaLaManchaTest extends CastillaLaManchaBaseTestCase
      * Tests if all official holidays in Castilla-La Mancha (Spain) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -49,7 +49,7 @@ class CastillaLaManchaTest extends CastillaLaManchaBaseTestCase
      * Tests if all observed holidays in Castilla-La Mancha are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testObservedHolidays()
+    public function testObservedHolidays(): void
     {
         $this->assertDefinedHolidays([
             'stJosephsDay',
@@ -62,7 +62,7 @@ class CastillaLaManchaTest extends CastillaLaManchaBaseTestCase
      * Tests if all seasonal holidays in Castilla-La Mancha are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testSeasonalHolidays()
+    public function testSeasonalHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
     }
@@ -71,7 +71,7 @@ class CastillaLaManchaTest extends CastillaLaManchaBaseTestCase
      * Tests if all bank holidays in Castilla-La Mancha are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testBankHolidays()
+    public function testBankHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
@@ -80,7 +80,7 @@ class CastillaLaManchaTest extends CastillaLaManchaBaseTestCase
      * Tests if all other holidays in Castilla-La Mancha are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOtherHolidays()
+    public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays(['valentinesDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }

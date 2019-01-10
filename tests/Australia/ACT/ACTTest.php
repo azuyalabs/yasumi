@@ -19,8 +19,6 @@ use Yasumi\Holiday;
  */
 class ACTTest extends ACTBaseTestCase
 {
-    public $region = 'Australia\ACT';
-
     /**
      * @var int year random year number used for all tests in this Test Case
      */
@@ -30,7 +28,7 @@ class ACTTest extends ACTBaseTestCase
      * Tests if all official holidays in ACT (Australia) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $this->assertDefinedHolidays([
             'newYearsDay',

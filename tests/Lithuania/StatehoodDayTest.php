@@ -64,7 +64,7 @@ class StatehoodDayTest extends LithuaniaBaseTestCase implements YasumiTestCaseIn
      *
      * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -84,7 +84,7 @@ class StatehoodDayTest extends LithuaniaBaseTestCase implements YasumiTestCaseIn
      * {@inheritdoc}
      * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(
             self::REGION,

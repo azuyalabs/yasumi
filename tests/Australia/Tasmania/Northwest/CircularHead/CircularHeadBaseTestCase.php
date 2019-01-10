@@ -26,9 +26,4 @@ abstract class CircularHeadBaseTestCase extends NorthwestBaseTestCase
      * Name of the region (e.g. country / state) to be tested
      */
     public $region = 'Australia\Tasmania\Northwest\CircularHead';
-
-    /**
-     * Timezone in which this provider has holidays defined
-     */
-    public $timezone = 'Australia/Tasmania';
 }

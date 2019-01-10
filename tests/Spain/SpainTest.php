@@ -28,7 +28,7 @@ class SpainTest extends SpainBaseTestCase
      * Tests if all official holidays in Spain are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -48,7 +48,7 @@ class SpainTest extends SpainBaseTestCase
      * Tests if all observed holidays in Spain are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testObservedHolidays()
+    public function testObservedHolidays(): void
     {
         $this->assertDefinedHolidays(['easter'], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
@@ -57,7 +57,7 @@ class SpainTest extends SpainBaseTestCase
      * Tests if all seasonal holidays in Spain are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testSeasonalHolidays()
+    public function testSeasonalHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
     }
@@ -66,7 +66,7 @@ class SpainTest extends SpainBaseTestCase
      * Tests if all bank holidays in Spain are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testBankHolidays()
+    public function testBankHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
@@ -75,7 +75,7 @@ class SpainTest extends SpainBaseTestCase
      * Tests if all other holidays in Spain are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOtherHolidays()
+    public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays(['valentinesDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }

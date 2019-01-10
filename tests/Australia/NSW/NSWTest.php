@@ -19,8 +19,6 @@ use Yasumi\Holiday;
  */
 class NSWTest extends NSWBaseTestCase
 {
-    public $region = 'Australia\NSW';
-
     /**
      * @var int year random year number used for all tests in this Test Case
      */
@@ -30,7 +28,7 @@ class NSWTest extends NSWBaseTestCase
      * Tests if all official holidays in NSW (Australia) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -51,7 +49,7 @@ class NSWTest extends NSWBaseTestCase
      * Tests if all bank holidays in NSW (Australia) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testBankHolidays()
+    public function testBankHolidays(): void
     {
         $this->assertDefinedHolidays([
             'bankHoliday',

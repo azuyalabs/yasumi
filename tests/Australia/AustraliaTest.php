@@ -28,7 +28,7 @@ class AustraliaTest extends AustraliaBaseTestCase
      * Tests if all official holidays in Australia are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -45,7 +45,7 @@ class AustraliaTest extends AustraliaBaseTestCase
      * Tests if all observed holidays in Australia are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testObservedHolidays()
+    public function testObservedHolidays(): void
     {
         $this->assertDefinedHolidays([], $this->region, $this->year, Holiday::TYPE_OBSERVANCE);
     }
@@ -54,7 +54,7 @@ class AustraliaTest extends AustraliaBaseTestCase
      * Tests if all seasonal holidays in Australia are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testSeasonalHolidays()
+    public function testSeasonalHolidays(): void
     {
         $this->assertDefinedHolidays([], $this->region, $this->year, Holiday::TYPE_SEASON);
     }
@@ -63,7 +63,7 @@ class AustraliaTest extends AustraliaBaseTestCase
      * Tests if all bank holidays in Australia are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testBankHolidays()
+    public function testBankHolidays(): void
     {
         $this->assertDefinedHolidays([], $this->region, $this->year, Holiday::TYPE_BANK);
     }
@@ -72,7 +72,7 @@ class AustraliaTest extends AustraliaBaseTestCase
      * Tests if all other holidays in Australia are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOtherHolidays()
+    public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], $this->region, $this->year, Holiday::TYPE_OTHER);
     }

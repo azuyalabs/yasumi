@@ -45,7 +45,7 @@ class ConstitutionDayTest extends UkraineBaseTestCase implements YasumiTestCaseI
      * Tests the translated name of the holiday defined in this test.
      * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, 2020, [self::LOCALE => 'День Конституції']);
     }
@@ -54,7 +54,7 @@ class ConstitutionDayTest extends UkraineBaseTestCase implements YasumiTestCaseI
      * Tests type of the holiday defined in this test.
      * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(self::REGION, self::HOLIDAY, 2020, Holiday::TYPE_OFFICIAL);
     }

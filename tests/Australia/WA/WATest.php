@@ -19,7 +19,6 @@ use Yasumi\Holiday;
  */
 class WATest extends WABaseTestCase
 {
-    public $region = 'Australia\WA';
 
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -30,7 +29,7 @@ class WATest extends WABaseTestCase
      * Tests if all official holidays in WA (Australia) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $this->assertDefinedHolidays([
             'newYearsDay',

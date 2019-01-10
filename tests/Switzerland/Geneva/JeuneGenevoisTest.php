@@ -96,7 +96,7 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements YasumiTestCaseInte
      * Tests translated name of Jeune Genevois.
      * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -110,7 +110,7 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements YasumiTestCaseInte
      * Tests type of the holiday defined in this test.
      * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(1966), Holiday::TYPE_OTHER);
     }

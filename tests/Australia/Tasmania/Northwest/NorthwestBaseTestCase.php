@@ -26,9 +26,4 @@ abstract class NorthwestBaseTestCase extends TasmaniaBaseTestCase
      * Name of the region (e.g. country / state) to be tested
      */
     public $region = 'Australia\Tasmania\Northwest';
-
-    /**
-     * Timezone in which this provider has holidays defined
-     */
-    public $timezone = 'Australia/Tasmania';
 }

@@ -27,7 +27,7 @@ class EstoniaTest extends EstoniaBaseTestCase
      * Tests if all official holidays in Estonia are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $holidays = [
             'christmasDay',
@@ -62,7 +62,7 @@ class EstoniaTest extends EstoniaBaseTestCase
      * Tests if all observed holidays in Estonia are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testObservedHolidays()
+    public function testObservedHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_OBSERVANCE);
     }
@@ -71,7 +71,7 @@ class EstoniaTest extends EstoniaBaseTestCase
      * Tests if all seasonal holidays in Estonia are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testSeasonalHolidays()
+    public function testSeasonalHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_SEASON);
     }
@@ -80,7 +80,7 @@ class EstoniaTest extends EstoniaBaseTestCase
      * Tests if all bank holidays in Estonia are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testBankHolidays()
+    public function testBankHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_BANK);
     }
@@ -89,7 +89,7 @@ class EstoniaTest extends EstoniaBaseTestCase
      * Tests if all other holidays in Estonia are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOtherHolidays()
+    public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_OTHER);
     }

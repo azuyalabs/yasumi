@@ -81,7 +81,7 @@ class QueensBirthdayTest extends TasmaniaBaseTestCase implements YasumiTestCaseI
      * Tests the translated name of the holiday defined in this test.
      * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             $this->region,
@@ -95,7 +95,7 @@ class QueensBirthdayTest extends TasmaniaBaseTestCase implements YasumiTestCaseI
      * Tests type of the holiday defined in this test.
      * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(
             $this->region,

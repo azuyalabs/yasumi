@@ -69,7 +69,7 @@ class AllSaintsDayTest extends PortugalBaseTestCase implements YasumiTestCaseInt
      * Tests translated name of Corpus Christi.
      * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $year = $this->generateRandomYear(self::HOLIDAY_YEAR_RESTORED);
         $this->assertTranslatedHolidayName(
@@ -85,7 +85,7 @@ class AllSaintsDayTest extends PortugalBaseTestCase implements YasumiTestCaseInt
      *
      * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         // After restoration
         $year = $this->generateRandomYear(self::HOLIDAY_YEAR_RESTORED);

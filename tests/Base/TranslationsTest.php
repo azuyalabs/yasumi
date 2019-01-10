@@ -33,7 +33,7 @@ class TranslationsTest extends TestCase
     /**
      * Tests adding single translation.
      */
-    public function testAddTranslation()
+    public function testAddTranslation(): void
     {
         $translations = new Translations(self::LOCALES);
 
@@ -58,7 +58,7 @@ class TranslationsTest extends TestCase
     /**
      * Tests adding multiple translations.
      */
-    public function testAddMultipleTranslations()
+    public function testAddMultipleTranslations(): void
     {
         $translations = new Translations(self::LOCALES);
 
@@ -113,7 +113,7 @@ class TranslationsTest extends TestCase
      *
      * @expectedException \Yasumi\Exception\UnknownLocaleException
      */
-    public function testAddTranslationUnknownLocaleException()
+    public function testAddTranslationUnknownLocaleException(): void
     {
         $translations = new Translations(self::LOCALES);
 
@@ -127,7 +127,7 @@ class TranslationsTest extends TestCase
     /**
      * Tests that no translation is returned for an unknown holiday.
      */
-    public function testNoTranslationForUnknownHoliday()
+    public function testNoTranslationForUnknownHoliday(): void
     {
         $translations = new Translations(self::LOCALES);
 
@@ -146,7 +146,7 @@ class TranslationsTest extends TestCase
     /**
      * Tests that no translation is returned for not translated locale.
      */
-    public function testNoTranslationForNotTranslatedLocale()
+    public function testNoTranslationForNotTranslatedLocale(): void
     {
         $translations = new Translations(self::LOCALES);
 
@@ -164,7 +164,7 @@ class TranslationsTest extends TestCase
     /**
      * Tests loading one translation file from directory.
      */
-    public function testLoadingTranslationsFromDirectory()
+    public function testLoadingTranslationsFromDirectory(): void
     {
         $shortName    = 'newYearsDay';
         $fileContents = <<<'FILE'
@@ -193,7 +193,7 @@ FILE;
     /**
      * Tests that translation is not loaded from file with invalid extension.
      */
-    public function testNotLoadingTranslationsFromFileWithInvalidExtension()
+    public function testNotLoadingTranslationsFromFileWithInvalidExtension(): void
     {
         $shortName    = 'newYearsDay';
         $fileContents = <<<'FILE'
@@ -219,7 +219,7 @@ FILE;
      *
      * @expectedException \Yasumi\Exception\UnknownLocaleException
      */
-    public function testLoadingTranslationsFromDirectoryWithUnknownLocaleException()
+    public function testLoadingTranslationsFromDirectoryWithUnknownLocaleException(): void
     {
         $shortName    = 'newYearsDay';
         $fileContents = <<<'FILE'
@@ -241,7 +241,7 @@ FILE;
      *
      * @expectedException InvalidArgumentException
      */
-    public function testLoadingTranslationsFromInexistentDirectory()
+    public function testLoadingTranslationsFromInexistentDirectory(): void
     {
         vfsStream::setup('root');
 
@@ -252,7 +252,7 @@ FILE;
     /**
      * Tests loading more than one translation file from directory.
      */
-    public function testLoadingMultipleTranslationsFromDirectory()
+    public function testLoadingMultipleTranslationsFromDirectory(): void
     {
         $firstShortName    = 'newYearsDay';
         $firstFileContents = <<<'FILE'

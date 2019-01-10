@@ -28,7 +28,7 @@ class SaxonyTest extends SaxonyBaseTestCase
      * Tests if all official holidays in Saxony (Germany) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $holidays = [
             'newYearsDay',
@@ -60,7 +60,7 @@ class SaxonyTest extends SaxonyBaseTestCase
      * Tests if all observed holidays in Saxony (Germany) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testObservedHolidays()
+    public function testObservedHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
@@ -69,7 +69,7 @@ class SaxonyTest extends SaxonyBaseTestCase
      * Tests if all seasonal holidays in Saxony (Germany) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testSeasonalHolidays()
+    public function testSeasonalHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
     }
@@ -78,7 +78,7 @@ class SaxonyTest extends SaxonyBaseTestCase
      * Tests if all bank holidays in Saxony (Germany) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testBankHolidays()
+    public function testBankHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
@@ -87,7 +87,7 @@ class SaxonyTest extends SaxonyBaseTestCase
      * Tests if all other holidays in Saxony (Germany) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOtherHolidays()
+    public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }

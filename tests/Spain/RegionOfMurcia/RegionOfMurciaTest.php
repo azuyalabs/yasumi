@@ -28,7 +28,7 @@ class RegionOfMurciaTest extends RegionOfMurciaBaseTestCase
      * Tests if all official holidays in the Region of Murcia (Spain) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -49,7 +49,7 @@ class RegionOfMurciaTest extends RegionOfMurciaBaseTestCase
      * Tests if all observed holidays in the Region of Murcia are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testObservedHolidays()
+    public function testObservedHolidays(): void
     {
         $this->assertDefinedHolidays([
             'stJosephsDay',
@@ -62,7 +62,7 @@ class RegionOfMurciaTest extends RegionOfMurciaBaseTestCase
      * Tests if all seasonal holidays in the Region of Murcia are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testSeasonalHolidays()
+    public function testSeasonalHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
     }
@@ -71,7 +71,7 @@ class RegionOfMurciaTest extends RegionOfMurciaBaseTestCase
      * Tests if all bank holidays in the Region of Murcia are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testBankHolidays()
+    public function testBankHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
@@ -80,7 +80,7 @@ class RegionOfMurciaTest extends RegionOfMurciaBaseTestCase
      * Tests if all other holidays in the Region of Murcia are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOtherHolidays()
+    public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays(['valentinesDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }

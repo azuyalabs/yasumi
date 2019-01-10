@@ -28,7 +28,7 @@ class AragonTest extends AragonBaseTestCase
      * Tests if all official holidays in Aragon (Spain) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -48,7 +48,7 @@ class AragonTest extends AragonBaseTestCase
      * Tests if all observed holidays in Aragon are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testObservedHolidays()
+    public function testObservedHolidays(): void
     {
         $this->assertDefinedHolidays([
             'maundyThursday',
@@ -61,7 +61,7 @@ class AragonTest extends AragonBaseTestCase
      * Tests if all seasonal holidays in Aragon are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testSeasonalHolidays()
+    public function testSeasonalHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
     }
@@ -70,7 +70,7 @@ class AragonTest extends AragonBaseTestCase
      * Tests if all bank holidays in Aragon are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testBankHolidays()
+    public function testBankHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
@@ -79,7 +79,7 @@ class AragonTest extends AragonBaseTestCase
      * Tests if all other holidays in Aragon are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOtherHolidays()
+    public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays(['valentinesDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }

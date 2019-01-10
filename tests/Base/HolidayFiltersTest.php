@@ -34,7 +34,7 @@ class HolidayFiltersTest extends TestCase
      * Tests the Official Holidays filter
      * @throws \ReflectionException
      */
-    public function testOfficialHolidaysFilter()
+    public function testOfficialHolidaysFilter(): void
     {
         // There are 11 official holidays in Ireland in the year 2018, with 1 substituted holiday.
         $holidays = Yasumi::create('Ireland', 2018);
@@ -68,7 +68,7 @@ class HolidayFiltersTest extends TestCase
      * Tests the Observed Holidays filter
      * @throws \ReflectionException
      */
-    public function testObservedHolidaysFilter()
+    public function testObservedHolidaysFilter(): void
     {
         // There are 2 observed holidays in Ireland in the year 2018.
         $holidays = Yasumi::create('Ireland', 2018);
@@ -102,7 +102,7 @@ class HolidayFiltersTest extends TestCase
      * Tests Bank Holidays
      * @throws \ReflectionException
      */
-    public function testBankHolidaysFilter()
+    public function testBankHolidaysFilter(): void
     {
         // There are no bank holidays in Ireland in the year 2018.
         $holidays = Yasumi::create('Ireland', 2018);
@@ -136,7 +136,7 @@ class HolidayFiltersTest extends TestCase
      * Tests Seasonal Holidays
      * @throws \ReflectionException
      */
-    public function testSeasonalHolidaysFilter()
+    public function testSeasonalHolidaysFilter(): void
     {
         $holidays = Yasumi::create('Netherlands', 2017);
 
@@ -184,7 +184,7 @@ class HolidayFiltersTest extends TestCase
      * Tests other type of Holidays
      * @throws \ReflectionException
      */
-    public function testOtherHolidaysFilter()
+    public function testOtherHolidaysFilter(): void
     {
         $holidays = Yasumi::create('Netherlands', 2017);
 

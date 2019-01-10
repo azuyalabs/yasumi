@@ -19,7 +19,6 @@ use Yasumi\Holiday;
  */
 class NorthwestTest extends NorthwestBaseTestCase
 {
-    public $region = 'Australia\Tasmania\Northwest';
 
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -30,7 +29,7 @@ class NorthwestTest extends NorthwestBaseTestCase
      * Tests if all official holidays in northwestern Tasmania (Australia) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $this->assertDefinedHolidays([
             'newYearsDay',

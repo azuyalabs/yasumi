@@ -64,7 +64,7 @@ class IndependenceDayTest extends EstoniaBaseTestCase implements YasumiTestCaseI
      *
      * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -84,7 +84,7 @@ class IndependenceDayTest extends EstoniaBaseTestCase implements YasumiTestCaseI
      * {@inheritdoc}
      * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(
             self::REGION,

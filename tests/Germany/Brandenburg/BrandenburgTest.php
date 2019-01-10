@@ -28,7 +28,7 @@ class BrandenburgTest extends BrandenburgBaseTestCase
      * Tests if all official holidays in Brandenburg (Germany) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $holidays = [
             'newYearsDay',
@@ -58,7 +58,7 @@ class BrandenburgTest extends BrandenburgBaseTestCase
      * Tests if all observed holidays in Brandenburg (Germany) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testObservedHolidays()
+    public function testObservedHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
@@ -67,7 +67,7 @@ class BrandenburgTest extends BrandenburgBaseTestCase
      * Tests if all seasonal holidays in Brandenburg (Germany) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testSeasonalHolidays()
+    public function testSeasonalHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
     }
@@ -76,7 +76,7 @@ class BrandenburgTest extends BrandenburgBaseTestCase
      * Tests if all bank holidays in Brandenburg (Germany) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testBankHolidays()
+    public function testBankHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
@@ -85,7 +85,7 @@ class BrandenburgTest extends BrandenburgBaseTestCase
      * Tests if all other holidays in Brandenburg (Germany) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOtherHolidays()
+    public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }

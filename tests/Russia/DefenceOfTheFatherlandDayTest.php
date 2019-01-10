@@ -63,7 +63,7 @@ class DefenceOfTheFatherlandDayTest extends RussiaBaseTestCase implements Yasumi
      *
      * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -83,7 +83,7 @@ class DefenceOfTheFatherlandDayTest extends RussiaBaseTestCase implements Yasumi
      * {@inheritdoc}
      * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(
             self::REGION,

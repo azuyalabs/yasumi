@@ -19,7 +19,6 @@ use Yasumi\Holiday;
  */
 class CircularHeadTest extends CircularHeadBaseTestCase
 {
-    public $region = 'Australia\Tasmania\Northwest\CircularHead';
 
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -30,7 +29,7 @@ class CircularHeadTest extends CircularHeadBaseTestCase
      * Tests if all official holidays in Circular Head (Australia) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $this->assertDefinedHolidays([
             'newYearsDay',

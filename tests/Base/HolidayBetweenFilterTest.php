@@ -34,7 +34,7 @@ class HolidayBetweenFilterTest extends TestCase
      * @throws \Exception
      * @throws \ReflectionException
      */
-    public function testHolidaysBetweenDateRange()
+    public function testHolidaysBetweenDateRange(): void
     {
         $timezone = 'Europe/Amsterdam';
         $holidays = Yasumi::create('Netherlands', 2016);
@@ -89,7 +89,7 @@ class HolidayBetweenFilterTest extends TestCase
      * @throws \Exception
      * @throws \ReflectionException
      */
-    public function testHolidaysBetweenDateRangeWithDateTimeImmutable()
+    public function testHolidaysBetweenDateRangeWithDateTimeImmutable(): void
     {
         $timezone = 'Europe/Amsterdam';
         $holidays = Yasumi::create('Netherlands', 2016);
@@ -144,7 +144,7 @@ class HolidayBetweenFilterTest extends TestCase
      * @throws \Exception
      * @throws \ReflectionException
      */
-    public function testHolidaysBetweenDateRangeDifferentTimezone()
+    public function testHolidaysBetweenDateRangeDifferentTimezone(): void
     {
         $holidays = Yasumi::create('Netherlands', 2016);
 
@@ -171,7 +171,7 @@ class HolidayBetweenFilterTest extends TestCase
      * @throws \Exception
      * @throws \ReflectionException
      */
-    public function testHolidaysBetweenDateRangeExclusiveStartEndDate()
+    public function testHolidaysBetweenDateRangeExclusiveStartEndDate(): void
     {
         $timezone = 'Europe/Amsterdam';
         $holidays = Yasumi::create('Netherlands', 2016);
@@ -227,7 +227,7 @@ class HolidayBetweenFilterTest extends TestCase
      * @throws \Exception
      * @throws \ReflectionException
      */
-    public function testHolidaysBetweenDateRangeWithStartBeforeInstanceYear()
+    public function testHolidaysBetweenDateRangeWithStartBeforeInstanceYear(): void
     {
         $year     = 2015;
         $timezone = 'Europe/Oslo';
@@ -267,7 +267,7 @@ class HolidayBetweenFilterTest extends TestCase
      * @throws \Exception
      * @throws \ReflectionException
      */
-    public function testHolidaysBetweenDateRangeWithEndAfterInstanceYear()
+    public function testHolidaysBetweenDateRangeWithEndAfterInstanceYear(): void
     {
         $year     = 2000;
         $timezone = 'Europe/Rome';
@@ -308,7 +308,7 @@ class HolidayBetweenFilterTest extends TestCase
      * @throws \Exception
      * @throws \ReflectionException
      */
-    public function testWrongDates()
+    public function testWrongDates(): void
     {
         $year     = 2017;
         $timezone = 'America/New_York';
@@ -328,7 +328,7 @@ class HolidayBetweenFilterTest extends TestCase
      * @throws \Exception
      * @throws \ReflectionException
      */
-    public function testCountBetweenWithSubstitutes()
+    public function testCountBetweenWithSubstitutes(): void
     {
         // There are official 12 holidays in Ireland in the year 2018, with 1 substituted holiday.
         $year     = 2018;
@@ -369,7 +369,7 @@ class HolidayBetweenFilterTest extends TestCase
      * @throws \Exception
      * @throws \ReflectionException
      */
-    public function testCountBetweenExcludingSubstituteHoliday()
+    public function testCountBetweenExcludingSubstituteHoliday(): void
     {
         // There are 2 official holidays in Ireland in the given date range, with 1 substituted holiday.
         $year     = 2018;
@@ -414,7 +414,7 @@ class HolidayBetweenFilterTest extends TestCase
      * @throws \Exception
      * @throws \ReflectionException
      */
-    public function testCountBetweenExcludingSubstituteHolidayIncludingOriginalHoliday()
+    public function testCountBetweenExcludingSubstituteHolidayIncludingOriginalHoliday(): void
     {
         // There are 2 official holidays in Ireland in the given date range, with 1 substituted holiday.
         $year     = 2018;
@@ -460,7 +460,7 @@ class HolidayBetweenFilterTest extends TestCase
      * @throws \Exception
      * @throws \ReflectionException
      */
-    public function testCountBetweenExcludingSubstituteHolidayAndOriginalHoliday()
+    public function testCountBetweenExcludingSubstituteHolidayAndOriginalHoliday(): void
     {
         // There is 1 official holidays in Ireland in the given date range.
         $year     = 2018;

@@ -30,7 +30,7 @@ class OrthodoxChristmasDay extends BosniaBaseTestCase implements YasumiTestCaseI
      * @return array
      * @throws \Exception
      */
-    public function holidayDataProvider()
+    public function holidayDataProvider(): array
     {
         return $this->generateRandomDates(1, 7, self::TIMEZONE);
     }
@@ -52,7 +52,7 @@ class OrthodoxChristmasDay extends BosniaBaseTestCase implements YasumiTestCaseI
      * {@inheritdoc}
      * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -66,7 +66,7 @@ class OrthodoxChristmasDay extends BosniaBaseTestCase implements YasumiTestCaseI
      * {@inheritdoc}
      * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }

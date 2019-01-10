@@ -28,7 +28,7 @@ class BrazilTest extends BrazilBaseTestCase
      * Tests if all official holidays in Brazil are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -47,7 +47,7 @@ class BrazilTest extends BrazilBaseTestCase
      * Tests if all observed holidays in Brazil are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testObservedHolidays()
+    public function testObservedHolidays(): void
     {
         $this->assertDefinedHolidays([
             'carnavalMonday',
@@ -62,7 +62,7 @@ class BrazilTest extends BrazilBaseTestCase
      * Tests if all seasonal holidays in Brazil are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testSeasonalHolidays()
+    public function testSeasonalHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
     }
@@ -71,7 +71,7 @@ class BrazilTest extends BrazilBaseTestCase
      * Tests if all bank holidays in Brazil are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testBankHolidays()
+    public function testBankHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
@@ -80,7 +80,7 @@ class BrazilTest extends BrazilBaseTestCase
      * Tests if all other holidays in Brazil are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOtherHolidays()
+    public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }

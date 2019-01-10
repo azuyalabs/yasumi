@@ -62,7 +62,7 @@ class IndependenceDayTest extends BrazilBaseTestCase implements YasumiTestCaseIn
      * Tests the translated name of the holiday defined in this test.
      * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertTranslatedHolidayName(
@@ -77,7 +77,7 @@ class IndependenceDayTest extends BrazilBaseTestCase implements YasumiTestCaseIn
      * Tests type of the holiday defined in this test.
      * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OFFICIAL);

@@ -53,7 +53,7 @@ class AustraliaDayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
      * Tests the translated name of the holiday defined in this test.
      * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             $this->region,
@@ -67,7 +67,7 @@ class AustraliaDayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
      * Tests type of the holiday defined in this test.
      * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(2000), Holiday::TYPE_OFFICIAL);
     }
@@ -77,7 +77,7 @@ class AustraliaDayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
      *
      * @return array list of test dates for the holiday defined in this test
      */
-    public function HolidayDataProvider()
+    public function HolidayDataProvider(): array
     {
         $data = [
             [2010, '2010-01-26'],

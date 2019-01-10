@@ -28,7 +28,7 @@ class SchwyzTest extends SchwyzBaseTestCase
      * Tests if all official holidays in Schwyz (Switzerland) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $officialHolidays = [];
         if ($this->year >= 1994) {
@@ -41,7 +41,7 @@ class SchwyzTest extends SchwyzBaseTestCase
      * Tests if all regional holidays in Schwyz (Switzerland) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testRegionalHolidays()
+    public function testRegionalHolidays(): void
     {
         $this->assertDefinedHolidays([
             'epiphany',
@@ -64,7 +64,7 @@ class SchwyzTest extends SchwyzBaseTestCase
      * Tests if all observed holidays in Schwyz (Switzerland) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testObservedHolidays()
+    public function testObservedHolidays(): void
     {
         $observedHolidays = [];
         if (($this->year >= 1899 && $this->year < 1994) || $this->year = 1891) {
@@ -78,7 +78,7 @@ class SchwyzTest extends SchwyzBaseTestCase
      * Tests if all seasonal holidays in Schwyz (Switzerland) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testSeasonalHolidays()
+    public function testSeasonalHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
     }
@@ -87,7 +87,7 @@ class SchwyzTest extends SchwyzBaseTestCase
      * Tests if all bank holidays in Schwyz (Switzerland) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testBankHolidays()
+    public function testBankHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
@@ -96,7 +96,7 @@ class SchwyzTest extends SchwyzBaseTestCase
      * Tests if all other holidays in Schwyz (Switzerland) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOtherHolidays()
+    public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }

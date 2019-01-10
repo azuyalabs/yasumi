@@ -28,7 +28,7 @@ class NidwaldenTest extends NidwaldenBaseTestCase
      * Tests if all official holidays in Nidwalden (Switzerland) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $officialHolidays = [];
         if ($this->year >= 1994) {
@@ -41,7 +41,7 @@ class NidwaldenTest extends NidwaldenBaseTestCase
      * Tests if all regional holidays in Nidwalden (Switzerland) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testRegionalHolidays()
+    public function testRegionalHolidays(): void
     {
         $this->assertDefinedHolidays([
             'stJosephsDay',
@@ -63,7 +63,7 @@ class NidwaldenTest extends NidwaldenBaseTestCase
      * Tests if all observed holidays in Nidwalden (Switzerland) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testObservedHolidays()
+    public function testObservedHolidays(): void
     {
         $observedHolidays = [];
         if (($this->year >= 1899 && $this->year < 1994) || $this->year = 1891) {
@@ -77,7 +77,7 @@ class NidwaldenTest extends NidwaldenBaseTestCase
      * Tests if all seasonal holidays in Nidwalden (Switzerland) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testSeasonalHolidays()
+    public function testSeasonalHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
     }
@@ -86,7 +86,7 @@ class NidwaldenTest extends NidwaldenBaseTestCase
      * Tests if all bank holidays in Nidwalden (Switzerland) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testBankHolidays()
+    public function testBankHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
@@ -95,7 +95,7 @@ class NidwaldenTest extends NidwaldenBaseTestCase
      * Tests if all other holidays in Nidwalden (Switzerland) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOtherHolidays()
+    public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }

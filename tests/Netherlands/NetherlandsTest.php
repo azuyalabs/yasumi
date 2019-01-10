@@ -28,7 +28,7 @@ class NetherlandsTest extends NetherlandsBaseTestCase
      * Tests if all official holidays in Netherlands are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -47,7 +47,7 @@ class NetherlandsTest extends NetherlandsBaseTestCase
      * Tests if all observed holidays in Netherlands are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testObservedHolidays()
+    public function testObservedHolidays(): void
     {
         $this->assertDefinedHolidays([
             'stMartinsDay',
@@ -67,7 +67,7 @@ class NetherlandsTest extends NetherlandsBaseTestCase
      * Tests if all seasonal holidays in Netherlands are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testSeasonalHolidays()
+    public function testSeasonalHolidays(): void
     {
         $year = $this->generateRandomYear(1978, 2037);
         $this->assertDefinedHolidays(['summerTime', 'winterTime'], self::REGION, $year, Holiday::TYPE_SEASON);
@@ -77,7 +77,7 @@ class NetherlandsTest extends NetherlandsBaseTestCase
      * Tests if all bank holidays in Netherlands are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testBankHolidays()
+    public function testBankHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
@@ -86,7 +86,7 @@ class NetherlandsTest extends NetherlandsBaseTestCase
      * Tests if all other holidays in Netherlands are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOtherHolidays()
+    public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([
             'internationalWorkersDay',

@@ -28,7 +28,7 @@ class GaliciaTest extends GaliciaBaseTestCase
      * Tests if all official holidays in Galicia (Spain) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -50,7 +50,7 @@ class GaliciaTest extends GaliciaBaseTestCase
      * Tests if all observed holidays in Galicia are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testObservedHolidays()
+    public function testObservedHolidays(): void
     {
         $this->assertDefinedHolidays([
             'stJosephsDay',
@@ -63,7 +63,7 @@ class GaliciaTest extends GaliciaBaseTestCase
      * Tests if all seasonal holidays in Galicia are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testSeasonalHolidays()
+    public function testSeasonalHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
     }
@@ -72,7 +72,7 @@ class GaliciaTest extends GaliciaBaseTestCase
      * Tests if all bank holidays in Galicia are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testBankHolidays()
+    public function testBankHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
@@ -81,7 +81,7 @@ class GaliciaTest extends GaliciaBaseTestCase
      * Tests if all other holidays in Galicia are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOtherHolidays()
+    public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays(['valentinesDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }

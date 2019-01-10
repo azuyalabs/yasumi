@@ -27,7 +27,7 @@ class RussiaTest extends RussiaBaseTestCase
      * Tests if all official holidays in Russia are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $holidays = [
             'newYearsDay',
@@ -64,7 +64,7 @@ class RussiaTest extends RussiaBaseTestCase
      * Tests if all observed holidays in Russia are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testObservedHolidays()
+    public function testObservedHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_OBSERVANCE);
     }
@@ -73,7 +73,7 @@ class RussiaTest extends RussiaBaseTestCase
      * Tests if all seasonal holidays in Russia are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testSeasonalHolidays()
+    public function testSeasonalHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_SEASON);
     }
@@ -82,7 +82,7 @@ class RussiaTest extends RussiaBaseTestCase
      * Tests if all bank holidays in Russia are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testBankHolidays()
+    public function testBankHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_BANK);
     }
@@ -91,7 +91,7 @@ class RussiaTest extends RussiaBaseTestCase
      * Tests if all other holidays in Russia are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOtherHolidays()
+    public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_OTHER);
     }

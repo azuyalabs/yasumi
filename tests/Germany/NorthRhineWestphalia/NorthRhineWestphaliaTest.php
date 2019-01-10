@@ -28,7 +28,7 @@ class NorthRhineWestphaliaTest extends NorthRhineWestphaliaBaseTestCase
      * Tests if all official holidays in North Rhine-Westphalia (Germany) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -47,7 +47,7 @@ class NorthRhineWestphaliaTest extends NorthRhineWestphaliaBaseTestCase
      * Tests if all observed holidays in North Rhine-Westphalia (Germany) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testObservedHolidays()
+    public function testObservedHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
@@ -56,7 +56,7 @@ class NorthRhineWestphaliaTest extends NorthRhineWestphaliaBaseTestCase
      * Tests if all seasonal holidays in North Rhine-Westphalia (Germany) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testSeasonalHolidays()
+    public function testSeasonalHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
     }
@@ -65,7 +65,7 @@ class NorthRhineWestphaliaTest extends NorthRhineWestphaliaBaseTestCase
      * Tests if all bank holidays in North Rhine-Westphalia (Germany) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testBankHolidays()
+    public function testBankHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
@@ -74,7 +74,7 @@ class NorthRhineWestphaliaTest extends NorthRhineWestphaliaBaseTestCase
      * Tests if all other holidays in North Rhine-Westphalia (Germany) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOtherHolidays()
+    public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays(['corpusChristi', 'allSaintsDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
