@@ -92,8 +92,6 @@ class EasterMondayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
      */
     public function HolidayDataProvider2(): array
     {
-        $data = [];
-
         $data = [
             [2011, '2011-04-26'],
             [2038, '2038-04-27'],
