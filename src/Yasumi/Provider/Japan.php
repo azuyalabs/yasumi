@@ -100,7 +100,7 @@ class Japan extends AbstractProvider
         $this->calculateComingOfAgeDay();
         $this->calculateGreeneryDay();
         $this->calculateMarineDay();
-        $this->caluclateMountainDay();
+        $this->calculateMountainDay();
         $this->calculateRespectForTheAgeDay();
         $this->calculateHealthAndSportsDay();
         $this->calculateAutumnalEquinoxDay();
@@ -369,7 +369,7 @@ class Japan extends AbstractProvider
      * @throws \Exception
      * @throws \Exception
      */
-    private function caluclateMountainDay(): void
+    private function calculateMountainDay(): void
     {
         $date = null;
         if ($this->year === 2020) {
