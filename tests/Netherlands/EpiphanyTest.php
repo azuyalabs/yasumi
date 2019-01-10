@@ -24,7 +24,7 @@ class EpiphanyTest extends NetherlandsBaseTestCase implements YasumiTestCaseInte
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'epiphany';
+    public const HOLIDAY = 'epiphany';
 
     /**
      * Tests Epiphany.

@@ -25,12 +25,12 @@ class ShowaDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
     /**
      * The name of the holiday defined in the test
      */
-    const HOLIDAY = 'showaDay';
+    public const HOLIDAY = 'showaDay';
 
     /**
      * The year in which the holiday defined in the test was first established
      */
-    const ESTABLISHMENT_YEAR = 2007;
+    public const ESTABLISHMENT_YEAR = 2007;
 
     /**
      * Tests the holiday defined in the test on or after establishment.

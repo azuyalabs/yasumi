@@ -25,12 +25,12 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements YasumiTestCaseIn
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'emperorsBirthday';
+    public const HOLIDAY = 'emperorsBirthday';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1989;
+    public const ESTABLISHMENT_YEAR = 1989;
 
     /**
      * Tests the Emperors Birthday after 1989. The Emperors Birthday is on December 23rd and celebrated as such since

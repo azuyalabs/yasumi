@@ -28,15 +28,15 @@ abstract class RussiaBaseTestCase extends TestCase
     /**
      * Name of the country to be tested
      */
-    const REGION = 'Russia';
+    public const REGION = 'Russia';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Moscow';
+    public const TIMEZONE = 'Europe/Moscow';
 
     /**
      * Locale that is considered common for this provider
      */
-    const LOCALE = 'ru_RU';
+    public const LOCALE = 'ru_RU';
 }

@@ -25,12 +25,12 @@ class StateFoundationDayTest extends HungaryBaseTestCase implements YasumiTestCa
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'stateFoundation';
+    public const HOLIDAY = 'stateFoundation';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1891;
+    public const ESTABLISHMENT_YEAR = 1891;
 
     /**
      * Tests the holiday defined in this test on or after establishment.

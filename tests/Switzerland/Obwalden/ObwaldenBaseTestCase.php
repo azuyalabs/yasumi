@@ -25,15 +25,15 @@ abstract class ObwaldenBaseTestCase extends SwitzerlandBaseTestCase
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'Switzerland/Obwalden';
+    public const REGION = 'Switzerland/Obwalden';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Zurich';
+    public const TIMEZONE = 'Europe/Zurich';
 
     /**
      * Locale that is considered common for this provider
      */
-    const LOCALE = 'de_CH';
+    public const LOCALE = 'de_CH';
 }

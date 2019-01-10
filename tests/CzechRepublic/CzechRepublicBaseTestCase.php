@@ -29,15 +29,15 @@ abstract class CzechRepublicBaseTestCase extends TestCase
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'CzechRepublic';
+    public const REGION = 'CzechRepublic';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Prague';
+    public const TIMEZONE = 'Europe/Prague';
 
     /**
      * Locale that is considered common for this provider
      */
-    const LOCALE = 'cs_CZ';
+    public const LOCALE = 'cs_CZ';
 }

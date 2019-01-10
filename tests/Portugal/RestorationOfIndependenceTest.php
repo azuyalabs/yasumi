@@ -25,22 +25,22 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Yasu
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1850;
+    public const ESTABLISHMENT_YEAR = 1850;
 
     /**
      * Holiday was abolished by the portuguese government in 2014.
      */
-    const HOLIDAY_YEAR_ABOLISHED = 2014;
+    public const HOLIDAY_YEAR_ABOLISHED = 2014;
 
     /**
      * Holiday was restored by the portuguese government in 2016.
      */
-    const HOLIDAY_YEAR_RESTORED = 2016;
+    public const HOLIDAY_YEAR_RESTORED = 2016;
 
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'restorationOfIndependence';
+    public const HOLIDAY = 'restorationOfIndependence';
 
     /**
      * Tests the holiday defined in this test on or after establishment.

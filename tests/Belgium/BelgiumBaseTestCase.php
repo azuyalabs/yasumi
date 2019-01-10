@@ -25,15 +25,15 @@ abstract class BelgiumBaseTestCase extends TestCase
     /**
      * Country (name) to be tested
      */
-    const REGION = 'Belgium';
+    public const REGION = 'Belgium';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Brussels';
+    public const TIMEZONE = 'Europe/Brussels';
 
     /**
      * Locale that is considered common for this provider
      */
-    const LOCALE = 'nl_BE';
+    public const LOCALE = 'nl_BE';
 }

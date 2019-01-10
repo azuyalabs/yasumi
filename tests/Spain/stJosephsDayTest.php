@@ -24,13 +24,13 @@ class stJosephsDayTest extends SpainBaseTestCase implements YasumiTestCaseInterf
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'stJosephsDay';
+    public const HOLIDAY = 'stJosephsDay';
 
     /**
      * Name of the region (e.g. country / state) to be tested
      * Using Asturias as the holiday provider as not all regions celebrate St. Joseph's Day in Spain.
      */
-    const REGION = 'Spain/Asturias';
+    public const REGION = 'Spain/Asturias';
 
     /**
      * Tests the holiday defined in this test.

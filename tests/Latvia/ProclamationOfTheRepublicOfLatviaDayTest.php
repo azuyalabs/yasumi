@@ -27,7 +27,7 @@ class ProclamationOfTheRepublicOfLatviaDayTest extends LatviaBaseTestCase implem
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'proclamationOfTheRepublicOfLatviaDay';
+    public const HOLIDAY = 'proclamationOfTheRepublicOfLatviaDay';
 
     /**
      * Test if holiday is not defined before proclamation

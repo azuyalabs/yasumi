@@ -25,7 +25,7 @@ class PublicBridgeDayTest extends JapanBaseTestCase implements YasumiTestCaseInt
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'bridgeDay';
+    public const HOLIDAY = 'bridgeDay';
     /**
      * @var number representing the calendar year to be tested against
      */

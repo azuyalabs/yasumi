@@ -25,12 +25,12 @@ class NationalFoundationDayTest extends JapanBaseTestCase implements YasumiTestC
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'nationalFoundationDay';
+    public const HOLIDAY = 'nationalFoundationDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1966;
+    public const ESTABLISHMENT_YEAR = 1966;
 
     /**
      * Tests National Foundation Day after 1966. National Foundation day was established after 1966

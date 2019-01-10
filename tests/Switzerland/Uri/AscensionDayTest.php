@@ -25,7 +25,7 @@ class AscensionDayTest extends UriBaseTestCase implements YasumiTestCaseInterfac
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'ascensionDay';
+    public const HOLIDAY = 'ascensionDay';
 
     /**
      * Tests Ascension Day.

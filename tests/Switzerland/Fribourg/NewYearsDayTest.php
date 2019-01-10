@@ -24,7 +24,7 @@ class NewYearsDayTest extends FribourgBaseTestCase implements YasumiTestCaseInte
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'newYearsDay';
+    public const HOLIDAY = 'newYearsDay';
 
     /**
      * Tests New Years Day.

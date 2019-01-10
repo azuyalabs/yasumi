@@ -24,7 +24,7 @@ class DayAfterNewYearsDay extends BosniaBaseTestCase implements YasumiTestCaseIn
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'dayAfterNewYearsDay';
+    public const HOLIDAY = 'dayAfterNewYearsDay';
 
     /**
      * Tests the holiday defined in this test.

@@ -25,12 +25,12 @@ class HealthAndSportsDayTest extends JapanBaseTestCase implements YasumiTestCase
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'healthandSportsDay';
+    public const HOLIDAY = 'healthandSportsDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1996;
+    public const ESTABLISHMENT_YEAR = 1996;
 
     /**
      * Tests Health And Sports Day in 2020. Health And Sports Day in 2020 is July 24th for the Olympic Games.

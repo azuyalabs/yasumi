@@ -25,12 +25,12 @@ class nationalCataloniaDayTest extends CataloniaBaseTestCase implements YasumiTe
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'nationalCataloniaDay';
+    public const HOLIDAY = 'nationalCataloniaDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1886;
+    public const ESTABLISHMENT_YEAR = 1886;
 
     /**
      * Tests the holiday defined in this test on or after establishment.

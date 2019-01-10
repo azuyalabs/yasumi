@@ -29,7 +29,7 @@ class GoodFridayTest extends CzechRepublicBaseTestCase implements YasumiTestCase
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'goodFriday';
+    public const HOLIDAY = 'goodFriday';
 
     /**
      * Tests Good Friday.

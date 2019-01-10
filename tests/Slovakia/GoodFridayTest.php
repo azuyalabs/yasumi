@@ -31,7 +31,7 @@ class GoodFridayTest extends SlovakiaBaseTestCase implements YasumiTestCaseInter
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'goodFriday';
+    public const HOLIDAY = 'goodFriday';
 
 
     /**

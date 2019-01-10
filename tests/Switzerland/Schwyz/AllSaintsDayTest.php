@@ -24,7 +24,7 @@ class AllSaintsDayTest extends SchwyzBaseTestCase implements YasumiTestCaseInter
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'allSaintsDay';
+    public const HOLIDAY = 'allSaintsDay';
 
     /**
      * Tests All Saints' Day.

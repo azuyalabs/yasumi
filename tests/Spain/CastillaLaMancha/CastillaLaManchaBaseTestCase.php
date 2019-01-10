@@ -25,10 +25,10 @@ abstract class CastillaLaManchaBaseTestCase extends SpainBaseTestCase
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'Spain/CastillaLaMancha';
+    public const REGION = 'Spain/CastillaLaMancha';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Madrid';
+    public const TIMEZONE = 'Europe/Madrid';
 }

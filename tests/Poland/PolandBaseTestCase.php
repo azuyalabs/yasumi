@@ -25,15 +25,15 @@ abstract class PolandBaseTestCase extends TestCase
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'Poland';
+    public const REGION = 'Poland';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Warsaw';
+    public const TIMEZONE = 'Europe/Warsaw';
 
     /**
      * Locale that is considered common for this provider
      */
-    const LOCALE = 'pl_PL';
+    public const LOCALE = 'pl_PL';
 }

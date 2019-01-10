@@ -25,7 +25,7 @@ class EasterSundayTest extends VictoriaBaseTestCase implements YasumiTestCaseInt
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'easter';
+    public const HOLIDAY = 'easter';
 
     /**
      * Tests Easter Sunday

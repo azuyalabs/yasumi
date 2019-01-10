@@ -25,10 +25,10 @@ abstract class AndalusiaBaseTestCase extends SpainBaseTestCase
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'Spain/Andalusia';
+    public const REGION = 'Spain/Andalusia';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Madrid';
+    public const TIMEZONE = 'Europe/Madrid';
 }

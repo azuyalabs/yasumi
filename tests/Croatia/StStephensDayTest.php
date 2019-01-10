@@ -24,7 +24,7 @@ class StStephensDayTest extends CroatiaBaseTestCase implements YasumiTestCaseInt
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'stStephensDay';
+    public const HOLIDAY = 'stStephensDay';
 
     /**
      * Tests the day of St. Stephen's Day.

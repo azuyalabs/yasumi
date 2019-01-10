@@ -24,7 +24,7 @@ class AssumptionOfMaryTest extends SaarlandBaseTestCase implements YasumiTestCas
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'assumptionOfMary';
+    public const HOLIDAY = 'assumptionOfMary';
 
     /**
      * Tests the holiday defined in this test.

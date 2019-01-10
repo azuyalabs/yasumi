@@ -25,7 +25,7 @@ class EasterMondayTest extends UriBaseTestCase implements YasumiTestCaseInterfac
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'easterMonday';
+    public const HOLIDAY = 'easterMonday';
 
     /**
      * Tests Easter Monday.

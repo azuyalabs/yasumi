@@ -25,12 +25,12 @@ class MarineDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'marineDay';
+    public const HOLIDAY = 'marineDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1996;
+    public const ESTABLISHMENT_YEAR = 1996;
 
     /**
      * Tests Marine Day in 2020. Marine Day in 2020 is July 23th for the Olympic Games.

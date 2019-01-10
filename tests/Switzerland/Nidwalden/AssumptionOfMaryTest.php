@@ -24,7 +24,7 @@ class AssumptionOfMaryTest extends NidwaldenBaseTestCase implements YasumiTestCa
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'assumptionOfMary';
+    public const HOLIDAY = 'assumptionOfMary';
 
     /**
      * Tests the day of the Assumption of Mary.

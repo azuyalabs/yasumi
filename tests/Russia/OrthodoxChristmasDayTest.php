@@ -26,7 +26,7 @@ class OrthodoxChristmasDayTest extends RussiaBaseTestCase implements YasumiTestC
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'orthodoxChristmasDay';
+    public const HOLIDAY = 'orthodoxChristmasDay';
 
     /**
      * @return array

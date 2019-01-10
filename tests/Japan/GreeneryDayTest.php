@@ -25,12 +25,12 @@ class GreeneryDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
     /**
      * The name of the holiday defined in the test
      */
-    const HOLIDAY = 'greeneryDay';
+    public const HOLIDAY = 'greeneryDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1989;
+    public const ESTABLISHMENT_YEAR = 1989;
 
     /**
      * Tests Greenery Day after 2007. Greenery Day was established from 1989 on April 29th. After 2007

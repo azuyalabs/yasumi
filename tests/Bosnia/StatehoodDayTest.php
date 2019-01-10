@@ -25,12 +25,12 @@ class StatehoodDayTest extends BosniaBaseTestCase implements YasumiTestCaseInter
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'statehoodDay';
+    public const HOLIDAY = 'statehoodDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1943;
+    public const ESTABLISHMENT_YEAR = 1943;
 
     /**
      * Tests Statehood Day on or after 1943.

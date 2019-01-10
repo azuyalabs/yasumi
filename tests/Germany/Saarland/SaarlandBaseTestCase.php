@@ -25,10 +25,10 @@ abstract class SaarlandBaseTestCase extends GermanyBaseTestCase
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'Germany/Saarland';
+    public const REGION = 'Germany/Saarland';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Berlin';
+    public const TIMEZONE = 'Europe/Berlin';
 }

@@ -24,7 +24,7 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements Y
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'secondInternationalWorkersDay';
+    public const HOLIDAY = 'secondInternationalWorkersDay';
 
     /**
      * Tests International Workers' Day.

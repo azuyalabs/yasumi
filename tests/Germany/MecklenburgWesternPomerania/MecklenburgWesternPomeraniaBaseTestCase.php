@@ -25,10 +25,10 @@ abstract class MecklenburgWesternPomeraniaBaseTestCase extends GermanyBaseTestCa
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'Germany/MecklenburgWesternPomerania';
+    public const REGION = 'Germany/MecklenburgWesternPomerania';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Berlin';
+    public const TIMEZONE = 'Europe/Berlin';
 }

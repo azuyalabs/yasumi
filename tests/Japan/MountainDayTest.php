@@ -25,12 +25,12 @@ class MountainDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'mountainDay';
+    public const HOLIDAY = 'mountainDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 2016;
+    public const ESTABLISHMENT_YEAR = 2016;
 
     /**
      * Tests Mountain Day in 2020. Mountain Day in 2020 is August 10th for the Olympic Games.

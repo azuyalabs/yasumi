@@ -24,7 +24,7 @@ class stMartinsDayTest extends NetherlandsBaseTestCase implements YasumiTestCase
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'stMartinsDay';
+    public const HOLIDAY = 'stMartinsDay';
 
     /**
      * Tests Sint Martins Day.

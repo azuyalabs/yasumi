@@ -25,8 +25,8 @@ class ChristmasDayTest extends SABaseTestCase implements YasumiTestCaseInterface
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'christmasDay';
-    const HOLIDAY2 = 'christmasHoliday';
+    public const HOLIDAY = 'christmasDay';
+    public const HOLIDAY2 = 'christmasHoliday';
 
     /**
      * Tests Christmas Day

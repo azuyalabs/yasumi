@@ -24,7 +24,7 @@ class AllSaintsDayTest extends JuraBaseTestCase implements YasumiTestCaseInterfa
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'allSaintsDay';
+    public const HOLIDAY = 'allSaintsDay';
 
     /**
      * Tests All Saints' Day.

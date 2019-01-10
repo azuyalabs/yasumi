@@ -25,7 +25,7 @@ class SummertimeTest extends NetherlandsBaseTestCase implements YasumiTestCaseIn
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'summerTime';
+    public const HOLIDAY = 'summerTime';
 
     /**
      * Tests Summertime.

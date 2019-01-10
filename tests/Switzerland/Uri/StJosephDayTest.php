@@ -26,7 +26,7 @@ class StJosephDayTest extends UriBaseTestCase implements YasumiTestCaseInterface
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'stJosephsDay';
+    public const HOLIDAY = 'stJosephsDay';
 
     /**
      * Tests St. Joseph's Day.

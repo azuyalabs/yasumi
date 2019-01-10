@@ -28,7 +28,7 @@ class CzechStateHoodDayTest extends CzechRepublicBaseTestCase implements YasumiT
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'czechStateHoodDay';
+    public const HOLIDAY = 'czechStateHoodDay';
 
     /**
      * Tests the holiday defined in this test.

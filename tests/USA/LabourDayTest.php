@@ -25,12 +25,12 @@ class LabourDayTest extends USABaseTestCase implements YasumiTestCaseInterface
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'labourDay';
+    public const HOLIDAY = 'labourDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1887;
+    public const ESTABLISHMENT_YEAR = 1887;
 
     /**
      * Tests Labour Day on or after 1887. Labour Day was established since 1887 on the first Monday of September.

@@ -25,7 +25,7 @@ class DevonportShowTest extends CentralNorthBaseTestCase implements YasumiTestCa
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'devonportShow';
+    public const HOLIDAY = 'devonportShow';
 
     /**
      * Tests Devonport Show Day

@@ -25,15 +25,15 @@ abstract class NorwayBaseTestCase extends TestCase
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'Norway';
+    public const REGION = 'Norway';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Oslo';
+    public const TIMEZONE = 'Europe/Oslo';
 
     /**
      * Locale that is considered common for this provider
      */
-    const LOCALE = 'nb_NO';
+    public const LOCALE = 'nb_NO';
 }

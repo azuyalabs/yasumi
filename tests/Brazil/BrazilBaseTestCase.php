@@ -25,15 +25,15 @@ abstract class BrazilBaseTestCase extends TestCase
     /**
      * Country (name) to be tested
      */
-    const REGION = 'Brazil';
+    public const REGION = 'Brazil';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'America/Fortaleza';
+    public const TIMEZONE = 'America/Fortaleza';
 
     /**
      * Locale that is considered common for this provider
      */
-    const LOCALE = 'pt_BR';
+    public const LOCALE = 'pt_BR';
 }

@@ -25,7 +25,7 @@ class KingIslandShowTest extends KingIslandBaseTestCase implements YasumiTestCas
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'kingIslandShow';
+    public const HOLIDAY = 'kingIslandShow';
 
     /**
      * Tests King Island Show Day

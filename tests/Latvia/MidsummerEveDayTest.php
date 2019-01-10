@@ -26,7 +26,7 @@ class MidsummerEveDayTest extends LatviaBaseTestCase implements YasumiTestCaseIn
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'midsummerEveDay';
+    public const HOLIDAY = 'midsummerEveDay';
 
     /**
      * @return array

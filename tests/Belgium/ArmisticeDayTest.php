@@ -24,7 +24,7 @@ class ArmisticeDayTest extends BelgiumBaseTestCase implements YasumiTestCaseInte
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'armisticeDay';
+    public const HOLIDAY = 'armisticeDay';
 
     /**
      * Tests the holiday defined in this test.

@@ -25,7 +25,7 @@ class EasterMondayTest extends AppenzellAusserrhodenBaseTestCase implements Yasu
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'easterMonday';
+    public const HOLIDAY = 'easterMonday';
 
     /**
      * Tests Easter Monday.

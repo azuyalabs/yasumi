@@ -26,12 +26,12 @@ class PentecostTest extends RomaniaBaseTestCase implements YasumiTestCaseInterfa
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'pentecost';
+    public const HOLIDAY = 'pentecost';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 2008;
+    public const ESTABLISHMENT_YEAR = 2008;
 
     /**
      * Tests the Pentecost Day on and after 2008.

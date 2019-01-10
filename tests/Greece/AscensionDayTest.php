@@ -25,7 +25,7 @@ class AscensionDayTest extends GreeceBaseTestCase implements YasumiTestCaseInter
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'ascensionDay';
+    public const HOLIDAY = 'ascensionDay';
 
     /**
      * Tests the holiday defined in this test.

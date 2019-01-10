@@ -25,12 +25,12 @@ class ConstantinBrancusiDayTest extends RomaniaBaseTestCase implements YasumiTes
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'constantinBrancusiDay';
+    public const HOLIDAY = 'constantinBrancusiDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 2016;
+    public const ESTABLISHMENT_YEAR = 2016;
 
     /**
      * Tests Constantin Brancusi Day on or after 2016.

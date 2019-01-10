@@ -28,7 +28,7 @@ class SecondChristmasDayTest extends CzechRepublicBaseTestCase implements Yasumi
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'secondChristmasDay';
+    public const HOLIDAY = 'secondChristmasDay';
 
     /**
      * Tests the holiday defined in this test.

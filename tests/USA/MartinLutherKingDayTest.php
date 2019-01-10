@@ -25,12 +25,12 @@ class MartinLutherKingDayTest extends USABaseTestCase implements YasumiTestCaseI
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'martinLutherKingDay';
+    public const HOLIDAY = 'martinLutherKingDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1986;
+    public const ESTABLISHMENT_YEAR = 1986;
 
     /**
      * Tests Dr. Martin Luther King Day on or after 1986. Dr. Martin Luther King Day was established since 1986 on the

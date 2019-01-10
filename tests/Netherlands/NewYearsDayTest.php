@@ -24,7 +24,7 @@ class NewYearsDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseI
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'newYearsDay';
+    public const HOLIDAY = 'newYearsDay';
 
     /**
      * Tests New Years Day.

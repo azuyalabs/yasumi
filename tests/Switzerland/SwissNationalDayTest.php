@@ -25,22 +25,22 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements YasumiTest
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'swissNationalDay';
+    public const HOLIDAY = 'swissNationalDay';
 
     /**
      * The year in which the holiday was established as national holiday
      */
-    const NATIONAL_ESTABLISHMENT_YEAR = 1994;
+    public const NATIONAL_ESTABLISHMENT_YEAR = 1994;
 
     /**
      * The year in which the holiday was first established
      */
-    const FIRST_ESTABLISHMENT_YEAR = 1899;
+    public const FIRST_ESTABLISHMENT_YEAR = 1899;
 
     /**
      * The year in which the holiday was first observed
      */
-    const FIRST_OBSERVANCE_YEAR = 1891;
+    public const FIRST_OBSERVANCE_YEAR = 1891;
 
     /**
      * Tests National Day on or after 1994.

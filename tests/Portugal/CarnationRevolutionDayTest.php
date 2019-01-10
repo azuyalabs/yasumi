@@ -25,12 +25,12 @@ class CarnationRevolutionDayTest extends PortugalBaseTestCase implements YasumiT
     /**
      * The year in which the holiday was established
      */
-    const ESTABLISHMENT_YEAR = 1974;
+    public const ESTABLISHMENT_YEAR = 1974;
 
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = '25thApril';
+    public const HOLIDAY = '25thApril';
 
     /**
      * Test that the holiday is valid after the year of establishment

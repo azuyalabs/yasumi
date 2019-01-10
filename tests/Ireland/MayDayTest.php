@@ -25,12 +25,12 @@ class MayDayTest extends IrelandBaseTestCase implements YasumiTestCaseInterface
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'mayDay';
+    public const HOLIDAY = 'mayDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1994;
+    public const ESTABLISHMENT_YEAR = 1994;
 
     /**
      * Tests the holiday defined in this test.

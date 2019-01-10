@@ -26,7 +26,7 @@ class EasterSaturdayTest extends SABaseTestCase implements YasumiTestCaseInterfa
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'easterSaturday';
+    public const HOLIDAY = 'easterSaturday';
 
     /**
      * Tests Easter Saturday

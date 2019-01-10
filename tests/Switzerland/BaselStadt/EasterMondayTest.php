@@ -25,7 +25,7 @@ class EasterMondayTest extends BaselStadtBaseTestCase implements YasumiTestCaseI
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'easterMonday';
+    public const HOLIDAY = 'easterMonday';
 
     /**
      * Tests Easter Monday.

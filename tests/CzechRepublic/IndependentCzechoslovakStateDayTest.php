@@ -24,7 +24,7 @@ class IndependentCzechoslovakStateDayTest extends CzechRepublicBaseTestCase impl
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'independentCzechoslovakStateDay';
+    public const HOLIDAY = 'independentCzechoslovakStateDay';
 
     /**
      * Tests the holiday defined in this test.

@@ -25,12 +25,12 @@ class ChildrensDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInte
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'childrensDay';
+    public const HOLIDAY = 'childrensDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1950;
+    public const ESTABLISHMENT_YEAR = 1950;
 
     /**
      * Tests Children's Day on or after 1950.

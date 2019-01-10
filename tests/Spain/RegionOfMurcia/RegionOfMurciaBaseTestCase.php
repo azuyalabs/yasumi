@@ -25,10 +25,10 @@ abstract class RegionOfMurciaBaseTestCase extends SpainBaseTestCase
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'Spain/RegionOfMurcia';
+    public const REGION = 'Spain/RegionOfMurcia';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Madrid';
+    public const TIMEZONE = 'Europe/Madrid';
 }

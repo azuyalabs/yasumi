@@ -25,7 +25,7 @@ class FlindersIslandShowTest extends FlindersIslandBaseTestCase implements Yasum
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'flindersIslandShow';
+    public const HOLIDAY = 'flindersIslandShow';
 
     /**
      * Tests Flinders Island Show Day

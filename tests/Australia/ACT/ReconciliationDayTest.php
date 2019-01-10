@@ -25,12 +25,12 @@ class ReconciliationDayTest extends ACTBaseTestCase implements YasumiTestCaseInt
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'reconciliationDay';
+    public const HOLIDAY = 'reconciliationDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 2018;
+    public const ESTABLISHMENT_YEAR = 2018;
 
     /**
      * Tests Reconciliation Day

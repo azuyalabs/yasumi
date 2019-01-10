@@ -25,16 +25,16 @@ abstract class SpainBaseTestCase extends TestCase
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'Spain';
+    public const REGION = 'Spain';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Madrid';
+    public const TIMEZONE = 'Europe/Madrid';
 
 
     /**
      * Locale that is considered common for this provider
      */
-    const LOCALE = 'es_ES';
+    public const LOCALE = 'es_ES';
 }

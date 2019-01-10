@@ -17,7 +17,7 @@ use Yasumi\Yasumi;
 
 class YasumiWorkdayTest extends TestCase
 {
-    const FORMAT_DATE = 'Y-m-d';
+    public const FORMAT_DATE = 'Y-m-d';
 
     /**
      * Tests that the nextWorkingDay function returns an object that implements the DateTimeInterface (e.g. DateTime)

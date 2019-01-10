@@ -25,7 +25,7 @@ class AscensionDayTest extends VaudBaseTestCase implements YasumiTestCaseInterfa
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'ascensionDay';
+    public const HOLIDAY = 'ascensionDay';
 
     /**
      * Tests Ascension Day.

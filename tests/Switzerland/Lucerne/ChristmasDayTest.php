@@ -24,7 +24,7 @@ class ChristmasDayTest extends LucerneBaseTestCase implements YasumiTestCaseInte
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'christmasDay';
+    public const HOLIDAY = 'christmasDay';
 
     /**
      * Tests Christmas Day.

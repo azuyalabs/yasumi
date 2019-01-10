@@ -25,17 +25,17 @@ class CorpusChristiTest extends PortugalBaseTestCase implements YasumiTestCaseIn
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'corpusChristi';
+    public const HOLIDAY = 'corpusChristi';
 
     /**
      * Holiday was abolished by the portuguese government in 2014.
      */
-    const HOLIDAY_YEAR_ABOLISHED = 2014;
+    public const HOLIDAY_YEAR_ABOLISHED = 2014;
 
     /**
      * Holiday was restored by the portuguese government in 2016.
      */
-    const HOLIDAY_YEAR_RESTORED = 2016;
+    public const HOLIDAY_YEAR_RESTORED = 2016;
 
     /**
      * Tests the holiday defined in this test.

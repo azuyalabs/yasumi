@@ -26,15 +26,15 @@ class UkraineBaseTestCase extends TestCase
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'Ukraine';
+    public const REGION = 'Ukraine';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Kiev';
+    public const TIMEZONE = 'Europe/Kiev';
 
     /**
      * Locale that is considered common for this provider
      */
-    const LOCALE = 'uk_UA';
+    public const LOCALE = 'uk_UA';
 }

@@ -25,12 +25,12 @@ class SummerBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'summerBankHoliday';
+    public const HOLIDAY = 'summerBankHoliday';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1965;
+    public const ESTABLISHMENT_YEAR = 1965;
 
     /**
      * Tests the holiday defined in this test.

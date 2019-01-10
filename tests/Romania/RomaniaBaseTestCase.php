@@ -26,15 +26,15 @@ class RomaniaBaseTestCase extends TestCase
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'Romania';
+    public const REGION = 'Romania';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Bucharest';
+    public const TIMEZONE = 'Europe/Bucharest';
 
     /**
      * Locale that is considered common for this provider
      */
-    const LOCALE = 'ro_RO';
+    public const LOCALE = 'ro_RO';
 }

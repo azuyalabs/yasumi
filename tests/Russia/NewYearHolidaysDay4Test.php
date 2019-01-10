@@ -25,7 +25,7 @@ class NewYearHolidaysDay4Test extends RussiaBaseTestCase implements YasumiTestCa
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'newYearHolidaysDay4';
+    public const HOLIDAY = 'newYearHolidaysDay4';
 
     /**
      * @return array

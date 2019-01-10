@@ -25,12 +25,12 @@ class GermanUnityDayTest extends GermanyBaseTestCase implements YasumiTestCaseIn
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1990;
+    public const ESTABLISHMENT_YEAR = 1990;
 
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'germanUnityDay';
+    public const HOLIDAY = 'germanUnityDay';
 
     /**
      * Tests the holiday defined in this test on or after establishment.

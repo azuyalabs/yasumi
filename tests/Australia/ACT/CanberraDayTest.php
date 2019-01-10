@@ -25,12 +25,12 @@ class CanberraDayTest extends ACTBaseTestCase implements YasumiTestCaseInterface
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'canberraDay';
+    public const HOLIDAY = 'canberraDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1913;
+    public const ESTABLISHMENT_YEAR = 1913;
 
     /**
      * Tests Canberra Day

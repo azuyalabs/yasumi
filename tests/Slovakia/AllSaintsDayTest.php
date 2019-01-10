@@ -30,7 +30,7 @@ class AllSaintsDayTest extends SlovakiaBaseTestCase implements YasumiTestCaseInt
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'allSaintsDay';
+    public const HOLIDAY = 'allSaintsDay';
 
 
     /**

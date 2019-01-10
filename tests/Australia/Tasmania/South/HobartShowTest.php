@@ -25,7 +25,7 @@ class HobartShowTest extends SouthBaseTestCase implements YasumiTestCaseInterfac
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'hobartShow';
+    public const HOLIDAY = 'hobartShow';
 
     /**
      * Tests Royal Hobart Show Day

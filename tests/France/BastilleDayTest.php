@@ -25,12 +25,12 @@ class BastilleDayTest extends FranceBaseTestCase implements YasumiTestCaseInterf
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'bastilleDay';
+    public const HOLIDAY = 'bastilleDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1790;
+    public const ESTABLISHMENT_YEAR = 1790;
 
     /**
      * Tests Bastille Day on or after 1790.

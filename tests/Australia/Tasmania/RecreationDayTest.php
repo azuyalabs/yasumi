@@ -25,7 +25,7 @@ class RecreationDayTest extends TasmaniaBaseTestCase implements YasumiTestCaseIn
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'recreationDay';
+    public const HOLIDAY = 'recreationDay';
 
     /**
      * Tests Recreation Day

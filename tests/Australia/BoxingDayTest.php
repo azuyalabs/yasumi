@@ -25,8 +25,8 @@ class BoxingDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInter
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'secondChristmasDay';
-    const HOLIDAY2 = 'secondChristmasHoliday';
+    public const HOLIDAY = 'secondChristmasDay';
+    public const HOLIDAY2 = 'secondChristmasHoliday';
 
     /**
      * Tests Boxing Day

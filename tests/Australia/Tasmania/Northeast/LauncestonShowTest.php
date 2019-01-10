@@ -25,7 +25,7 @@ class LauncestonShowTest extends NortheastBaseTestCase implements YasumiTestCase
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'launcestonShow';
+    public const HOLIDAY = 'launcestonShow';
 
     /**
      * Tests Launceston Show Day

@@ -25,12 +25,12 @@ class OurLadyOfAparecidaDayTest extends BrazilBaseTestCase implements YasumiTest
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'ourLadyOfAparecidaDay';
+    public const HOLIDAY = 'ourLadyOfAparecidaDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1980;
+    public const ESTABLISHMENT_YEAR = 1980;
 
     /**
      * Tests Nossa Senhora Aparecida on or after 1980.

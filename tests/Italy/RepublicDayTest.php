@@ -32,12 +32,12 @@ class RepublicDayTest extends ItalyBaseTestCase implements YasumiTestCaseInterfa
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'republicDay';
+    public const HOLIDAY = 'republicDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1946;
+    public const ESTABLISHMENT_YEAR = 1946;
 
     /**
      * Tests Republic Day on or after 1946.

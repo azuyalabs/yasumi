@@ -25,12 +25,12 @@ class LabourDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInte
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'labourDay';
+    public const HOLIDAY = 'labourDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1900;
+    public const ESTABLISHMENT_YEAR = 1900;
 
     /**
      * Tests Labour Day

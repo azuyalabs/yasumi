@@ -25,12 +25,12 @@ class LiberationDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'liberationDay';
+    public const HOLIDAY = 'liberationDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1947;
+    public const ESTABLISHMENT_YEAR = 1947;
 
     /**
      * Tests Liberation Day before 1947. Liberation Day was established after WWII in 1947.

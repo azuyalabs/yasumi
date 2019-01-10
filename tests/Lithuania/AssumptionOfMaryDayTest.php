@@ -26,7 +26,7 @@ class AssumptionOfMaryDayTest extends LithuaniaBaseTestCase implements YasumiTes
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'assumptionOfMary';
+    public const HOLIDAY = 'assumptionOfMary';
 
     /**
      * @return array

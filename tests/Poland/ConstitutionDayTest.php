@@ -25,12 +25,12 @@ class ConstitutionDayTest extends PolandBaseTestCase implements YasumiTestCaseIn
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'constitutionDay';
+    public const HOLIDAY = 'constitutionDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1791;
+    public const ESTABLISHMENT_YEAR = 1791;
 
     /**
      * Tests the holiday defined in this test on or after establishment.

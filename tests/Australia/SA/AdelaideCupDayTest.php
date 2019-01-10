@@ -25,12 +25,12 @@ class AdelaideCupDayTest extends SABaseTestCase implements YasumiTestCaseInterfa
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'adelaideCup';
+    public const HOLIDAY = 'adelaideCup';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1973;
+    public const ESTABLISHMENT_YEAR = 1973;
 
     /**
      * Tests Adelaide Cup Day

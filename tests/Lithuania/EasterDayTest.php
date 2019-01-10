@@ -26,7 +26,7 @@ class EasterDayTest extends LithuaniaBaseTestCase implements YasumiTestCaseInter
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'easter';
+    public const HOLIDAY = 'easter';
 
     /**
      * @return array

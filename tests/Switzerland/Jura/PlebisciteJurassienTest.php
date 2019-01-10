@@ -25,12 +25,12 @@ class PlebisciteJurassienTest extends JuraBaseTestCase implements YasumiTestCase
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'plebisciteJurassien';
+    public const HOLIDAY = 'plebisciteJurassien';
 
     /**
      * The year in which the holiday was established
      */
-    const ESTABLISHMENT_YEAR = 1975;
+    public const ESTABLISHMENT_YEAR = 1975;
 
     /**
      * Tests Plébiscite jurassien on or after 1975.

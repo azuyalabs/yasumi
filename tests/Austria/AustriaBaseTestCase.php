@@ -25,15 +25,15 @@ abstract class AustriaBaseTestCase extends TestCase
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'Austria';
+    public const REGION = 'Austria';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Vienna';
+    public const TIMEZONE = 'Europe/Vienna';
 
     /**
      * Locale that is considered common for this provider
      */
-    const LOCALE = 'de_AT';
+    public const LOCALE = 'de_AT';
 }

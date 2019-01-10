@@ -25,12 +25,12 @@ class AsturiasDayTest extends AsturiasBaseTestCase implements YasumiTestCaseInte
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'asturiasDay';
+    public const HOLIDAY = 'asturiasDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1984;
+    public const ESTABLISHMENT_YEAR = 1984;
 
     /**
      * Tests the holiday defined in this test on or after establishment.

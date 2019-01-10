@@ -25,12 +25,12 @@ class TiradentesDayTest extends BrazilBaseTestCase implements YasumiTestCaseInte
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'tiradentesDay';
+    public const HOLIDAY = 'tiradentesDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1792;
+    public const ESTABLISHMENT_YEAR = 1792;
 
     /**
      * Tests Dia de Tiradentes on or after 1792.

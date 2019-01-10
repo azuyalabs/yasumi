@@ -24,7 +24,7 @@ class SecondLabourDay extends BosniaBaseTestCase implements YasumiTestCaseInterf
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'secondLabourDay';
+    public const HOLIDAY = 'secondLabourDay';
 
     /**
      * Tests the holiday defined in this test.

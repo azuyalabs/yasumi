@@ -25,10 +25,10 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements YasumiTest
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'aflGrandFinalFriday';
+    public const HOLIDAY = 'aflGrandFinalFriday';
 
-    const ESTABLISHMENT_YEAR = 2015;
-    const LAST_KNOWN_YEAR = 2018;
+    public const ESTABLISHMENT_YEAR = 2015;
+    public const LAST_KNOWN_YEAR = 2018;
 
     /**
      * Tests AFL Grand Final Friday

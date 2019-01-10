@@ -25,12 +25,12 @@ class AndalusiaDayTest extends AndalusiaBaseTestCase implements YasumiTestCaseIn
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'andalusiaDay';
+    public const HOLIDAY = 'andalusiaDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1980;
+    public const ESTABLISHMENT_YEAR = 1980;
 
     /**
      * Tests the holiday defined in this test on or after establishment.

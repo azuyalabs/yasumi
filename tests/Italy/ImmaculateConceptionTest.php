@@ -24,7 +24,7 @@ class ImmaculateConceptionTest extends ItalyBaseTestCase implements YasumiTestCa
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'immaculateConception';
+    public const HOLIDAY = 'immaculateConception';
 
     /**
      * Tests the day of Immaculate Conception.

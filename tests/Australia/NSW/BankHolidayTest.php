@@ -25,7 +25,7 @@ class BankHolidayTest extends NSWBaseTestCase implements YasumiTestCaseInterface
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'bankHoliday';
+    public const HOLIDAY = 'bankHoliday';
 
     /**
      * Tests Bank Holiday

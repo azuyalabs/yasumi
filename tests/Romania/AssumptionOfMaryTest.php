@@ -25,12 +25,12 @@ class AssumptionOfMaryTest extends RomaniaBaseTestCase implements YasumiTestCase
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'assumptionOfMary';
+    public const HOLIDAY = 'assumptionOfMary';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 2008;
+    public const ESTABLISHMENT_YEAR = 2008;
 
     /**
      * Tests Assumption Of Mary Day on or after 2008.

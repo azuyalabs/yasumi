@@ -26,7 +26,7 @@ class StJohnsDayTest extends LithuaniaBaseTestCase implements YasumiTestCaseInte
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'stJohnsDay';
+    public const HOLIDAY = 'stJohnsDay';
 
     /**
      * @return array

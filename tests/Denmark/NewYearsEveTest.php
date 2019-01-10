@@ -24,7 +24,7 @@ class NewYearsEveTest extends DenmarkBaseTestCase implements YasumiTestCaseInter
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'newYearsEve';
+    public const HOLIDAY = 'newYearsEve';
 
     /**
      * Tests the holiday defined in this test.

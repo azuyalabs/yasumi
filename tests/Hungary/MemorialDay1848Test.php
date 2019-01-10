@@ -25,12 +25,12 @@ class MemorialDay1848Test extends HungaryBaseTestCase implements YasumiTestCaseI
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'memorialDay1848';
+    public const HOLIDAY = 'memorialDay1848';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1927;
+    public const ESTABLISHMENT_YEAR = 1927;
 
     /**
      * Tests the holiday defined in this test on or after establishment.

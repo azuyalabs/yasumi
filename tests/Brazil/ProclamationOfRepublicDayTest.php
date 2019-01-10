@@ -25,12 +25,12 @@ class ProclamationOfRepublicDayTest extends BrazilBaseTestCase implements Yasumi
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'proclamationOfRepublicDay';
+    public const HOLIDAY = 'proclamationOfRepublicDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1889;
+    public const ESTABLISHMENT_YEAR = 1889;
 
     /**
      * Tests Proclamação da República on or after 1889.

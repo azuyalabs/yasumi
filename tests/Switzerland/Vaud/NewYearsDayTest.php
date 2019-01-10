@@ -24,7 +24,7 @@ class NewYearsDayTest extends VaudBaseTestCase implements YasumiTestCaseInterfac
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'newYearsDay';
+    public const HOLIDAY = 'newYearsDay';
 
     /**
      * Tests New Years Day.

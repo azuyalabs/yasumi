@@ -25,12 +25,12 @@ class PolytechnioTest extends GreeceBaseTestCase implements YasumiTestCaseInterf
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1973;
+    public const ESTABLISHMENT_YEAR = 1973;
 
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'polytechnio';
+    public const HOLIDAY = 'polytechnio';
 
     /**
      * Tests the holiday defined in this test.

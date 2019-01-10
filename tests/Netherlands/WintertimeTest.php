@@ -25,7 +25,7 @@ class WintertimeTest extends NetherlandsBaseTestCase implements YasumiTestCaseIn
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'winterTime';
+    public const HOLIDAY = 'winterTime';
 
     /**
      * Tests Wintertime.

@@ -25,7 +25,7 @@ class PentecostMondayTest extends ZurichBaseTestCase implements YasumiTestCaseIn
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'pentecostMonday';
+    public const HOLIDAY = 'pentecostMonday';
 
     /**
      * Tests Pentecost Monday.

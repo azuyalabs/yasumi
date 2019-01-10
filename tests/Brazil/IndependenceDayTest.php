@@ -25,12 +25,12 @@ class IndependenceDayTest extends BrazilBaseTestCase implements YasumiTestCaseIn
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'independenceDay';
+    public const HOLIDAY = 'independenceDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1822;
+    public const ESTABLISHMENT_YEAR = 1822;
 
     /**
      * Tests Dia da independência do Brasil on or after 1822.

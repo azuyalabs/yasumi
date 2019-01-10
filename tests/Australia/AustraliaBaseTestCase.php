@@ -25,7 +25,7 @@ abstract class AustraliaBaseTestCase extends TestCase
     /**
      * Locale that is considered common for this provider
      */
-    const LOCALE = 'en_AU';
+    public const LOCALE = 'en_AU';
     /**
      * Name of the region (e.g. country / state) to be tested
      */

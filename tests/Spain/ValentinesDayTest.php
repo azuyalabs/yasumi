@@ -24,7 +24,7 @@ class ValentinesDayTest extends SpainBaseTestCase implements YasumiTestCaseInter
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'valentinesDay';
+    public const HOLIDAY = 'valentinesDay';
 
     /**
      * Tests the holiday defined in this test.

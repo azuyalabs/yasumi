@@ -25,12 +25,12 @@ class NationalDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'nationalDay';
+    public const HOLIDAY = 'nationalDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1866;
+    public const ESTABLISHMENT_YEAR = 1866;
 
     /**
      * Tests National Day on or after 1990.

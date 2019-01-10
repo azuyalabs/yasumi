@@ -27,15 +27,15 @@ abstract class BosniaBaseTestCase extends TestCase
     /**
      * Country (name) to be tested
      */
-    const REGION = 'Bosnia';
+    public const REGION = 'Bosnia';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Sarajevo';
+    public const TIMEZONE = 'Europe/Sarajevo';
 
     /**
      * Locale that is considered common for this provider
      */
-    const LOCALE = 'bs_Latn_BA';
+    public const LOCALE = 'bs_Latn_BA';
 }

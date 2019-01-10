@@ -24,7 +24,7 @@ class NationalDayTest extends BelgiumBaseTestCase implements YasumiTestCaseInter
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'nationalDay';
+    public const HOLIDAY = 'nationalDay';
 
     /**
      * Tests the holiday defined in this test.

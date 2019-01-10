@@ -27,7 +27,7 @@ class VictoryDayTest extends EstoniaBaseTestCase implements YasumiTestCaseInterf
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'victoryDay';
+    public const HOLIDAY = 'victoryDay';
 
     /**
      * Test if holiday is not defined before

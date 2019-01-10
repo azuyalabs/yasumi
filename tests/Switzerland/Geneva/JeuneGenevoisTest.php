@@ -26,7 +26,7 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements YasumiTestCaseInte
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'jeuneGenevois';
+    public const HOLIDAY = 'jeuneGenevois';
 
     /**
      * Tests Jeune Genevois on or after 1966

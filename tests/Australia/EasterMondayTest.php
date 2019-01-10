@@ -26,8 +26,8 @@ class EasterMondayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'easterMonday';
-    const HOLIDAY2 = 'easterTuesday';
+    public const HOLIDAY = 'easterMonday';
+    public const HOLIDAY2 = 'easterTuesday';
 
     /**
      * Tests Easter Monday

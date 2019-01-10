@@ -25,15 +25,15 @@ abstract class SwedenBaseTestCase extends TestCase
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'Sweden';
+    public const REGION = 'Sweden';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Stockholm';
+    public const TIMEZONE = 'Europe/Stockholm';
 
     /**
      * Locale that is considered common for this provider
      */
-    const LOCALE = 'sv_SE';
+    public const LOCALE = 'sv_SE';
 }

@@ -25,12 +25,12 @@ class OhiDayTest extends GreeceBaseTestCase implements YasumiTestCaseInterface
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1940;
+    public const ESTABLISHMENT_YEAR = 1940;
 
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'ohiDay';
+    public const HOLIDAY = 'ohiDay';
 
     /**
      * Tests the holiday defined in this test.

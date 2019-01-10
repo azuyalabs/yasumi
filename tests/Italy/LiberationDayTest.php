@@ -32,12 +32,12 @@ class LiberationDayTest extends ItalyBaseTestCase implements YasumiTestCaseInter
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'liberationDay';
+    public const HOLIDAY = 'liberationDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1949;
+    public const ESTABLISHMENT_YEAR = 1949;
 
     /**
      * Tests Liberation Day on or after 1949.

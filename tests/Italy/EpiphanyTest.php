@@ -24,7 +24,7 @@ class EpiphanyTest extends ItalyBaseTestCase implements YasumiTestCaseInterface
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'epiphany';
+    public const HOLIDAY = 'epiphany';
 
     /**
      * Tests Epiphany.

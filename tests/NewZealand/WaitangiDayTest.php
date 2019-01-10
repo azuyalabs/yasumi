@@ -25,12 +25,12 @@ class WaitangiDayTest extends NewZealandBaseTestCase implements YasumiTestCaseIn
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'waitangiDay';
+    public const HOLIDAY = 'waitangiDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1974;
+    public const ESTABLISHMENT_YEAR = 1974;
 
     /**
      * Tests Waitangi Day

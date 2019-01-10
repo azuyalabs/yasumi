@@ -25,12 +25,12 @@ class IndependenceDayTest extends USABaseTestCase implements YasumiTestCaseInter
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'independenceDay';
+    public const HOLIDAY = 'independenceDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1776;
+    public const ESTABLISHMENT_YEAR = 1776;
 
     /**
      * Tests Independence Day on or after 1776. Independence Day is celebrated since 1776 on July 4th.

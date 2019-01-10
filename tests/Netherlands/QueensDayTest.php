@@ -25,7 +25,7 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'queensDay';
+    public const HOLIDAY = 'queensDay';
 
     /**
      * Tests Queens Day between 1891 and 1948.

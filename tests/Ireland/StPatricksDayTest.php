@@ -25,12 +25,12 @@ class StPatricksDayTest extends IrelandBaseTestCase implements YasumiTestCaseInt
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'stPatricksDay';
+    public const HOLIDAY = 'stPatricksDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1903;
+    public const ESTABLISHMENT_YEAR = 1903;
 
     /**
      * Tests the holiday defined in this test.

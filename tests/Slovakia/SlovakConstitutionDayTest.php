@@ -30,7 +30,7 @@ class SlovakConstitutionDayTest extends SlovakiaBaseTestCase implements YasumiTe
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'slovakConstitutionDay';
+    public const HOLIDAY = 'slovakConstitutionDay';
 
     /**
      * Tests the holiday defined in this test.

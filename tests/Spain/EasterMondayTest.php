@@ -25,13 +25,13 @@ class EasterMondayTest extends SpainBaseTestCase implements YasumiTestCaseInterf
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'easterMonday';
+    public const HOLIDAY = 'easterMonday';
 
     /**
      * Name of the region (e.g. country / state) to be tested
      * Using Catalonia as the holiday provider as not all regions celebrate Easter Monday in Spain.
      */
-    const REGION = 'Spain/Catalonia';
+    public const REGION = 'Spain/Catalonia';
 
     /**
      * Tests the holiday defined in this test.

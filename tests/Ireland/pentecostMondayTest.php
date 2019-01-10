@@ -26,12 +26,12 @@ class pentecostMondayTest extends IrelandBaseTestCase implements YasumiTestCaseI
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'pentecostMonday';
+    public const HOLIDAY = 'pentecostMonday';
 
     /**
      * The year in which the holiday was abolished
      */
-    const ABOLISHMENT_YEAR = 1973;
+    public const ABOLISHMENT_YEAR = 1973;
 
     /**
      * Tests the holiday defined in this test.

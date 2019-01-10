@@ -25,15 +25,15 @@ abstract class PortugalBaseTestCase extends TestCase
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'Portugal';
+    public const REGION = 'Portugal';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Lisbon';
+    public const TIMEZONE = 'Europe/Lisbon';
 
     /**
      * Locale that is considered common for this provider
      */
-    const LOCALE = 'pt_PT';
+    public const LOCALE = 'pt_PT';
 }

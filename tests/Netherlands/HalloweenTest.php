@@ -24,7 +24,7 @@ class HalloweenTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'halloween';
+    public const HOLIDAY = 'halloween';
 
     /**
      * Tests Halloween.

@@ -30,7 +30,7 @@ class SaintsCyrilAndMethodiusDayTest extends SlovakiaBaseTestCase implements Yas
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'saintsCyrilAndMethodiusDay';
+    public const HOLIDAY = 'saintsCyrilAndMethodiusDay';
 
 
     /**

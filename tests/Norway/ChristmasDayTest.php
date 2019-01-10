@@ -24,7 +24,7 @@ class ChristmasDayTest extends NorwayBaseTestCase implements YasumiTestCaseInter
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'christmasDay';
+    public const HOLIDAY = 'christmasDay';
 
     /**
      * Tests the holiday defined in this test.

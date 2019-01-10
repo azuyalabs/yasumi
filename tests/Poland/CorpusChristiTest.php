@@ -25,7 +25,7 @@ class CorpusChristiTest extends PolandBaseTestCase implements YasumiTestCaseInte
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'corpusChristi';
+    public const HOLIDAY = 'corpusChristi';
 
     /**
      * Tests the holiday defined in this test.

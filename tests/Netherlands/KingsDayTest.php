@@ -25,12 +25,12 @@ class KingsDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInte
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'kingsDay';
+    public const HOLIDAY = 'kingsDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 2014;
+    public const ESTABLISHMENT_YEAR = 2014;
 
     /**
      * Tests Kings Day on or after 2014. King's Day is celebrated from 2014 onwards on April 27th.

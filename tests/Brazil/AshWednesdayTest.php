@@ -25,7 +25,7 @@ class AshWednesdayTest extends BrazilBaseTestCase implements YasumiTestCaseInter
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'ashWednesday';
+    public const HOLIDAY = 'ashWednesday';
 
     /**
      * Tests the holiday defined in this test.

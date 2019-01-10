@@ -25,10 +25,10 @@ abstract class CanaryIslandsBaseTestCase extends SpainBaseTestCase
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'Spain/CanaryIslands';
+    public const REGION = 'Spain/CanaryIslands';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Atlantic/Canary';
+    public const TIMEZONE = 'Atlantic/Canary';
 }

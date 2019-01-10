@@ -25,15 +25,15 @@ abstract class NetherlandsBaseTestCase extends TestCase
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'Netherlands';
+    public const REGION = 'Netherlands';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Amsterdam';
+    public const TIMEZONE = 'Europe/Amsterdam';
 
     /**
      * Locale that is considered common for this provider
      */
-    const LOCALE = 'nl_NL';
+    public const LOCALE = 'nl_NL';
 }

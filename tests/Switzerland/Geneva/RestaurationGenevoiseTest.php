@@ -25,7 +25,7 @@ class RestaurationGenevoiseTest extends GenevaBaseTestCase implements YasumiTest
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'restaurationGenevoise';
+    public const HOLIDAY = 'restaurationGenevoise';
 
     /**
      * Tests Restauration Genevoise.

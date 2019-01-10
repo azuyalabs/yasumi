@@ -25,20 +25,20 @@ abstract class JapanBaseTestCase extends TestCase
     /**
      * Country (name) to be tested
      */
-    const REGION = 'Japan';
+    public const REGION = 'Japan';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Asia/Tokyo';
+    public const TIMEZONE = 'Asia/Tokyo';
 
     /**
      * Prefix for short name used when holiday is substituted
      */
-    const SUBSTITUTE_PREFIX = 'substituteHoliday:';
+    public const SUBSTITUTE_PREFIX = 'substituteHoliday:';
 
     /**
      * Locale that is considered common for this provider
      */
-    const LOCALE = 'ja_JP';
+    public const LOCALE = 'ja_JP';
 }

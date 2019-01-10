@@ -25,7 +25,7 @@ class PicnicDayTest extends NTBaseTestCase implements YasumiTestCaseInterface
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'picnicDay';
+    public const HOLIDAY = 'picnicDay';
 
     /**
      * Tests Picnic Day

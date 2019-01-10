@@ -25,7 +25,7 @@ class ChristmasDayTest extends USABaseTestCase implements YasumiTestCaseInterfac
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'christmasDay';
+    public const HOLIDAY = 'christmasDay';
 
     /**
      * Tests Christmas Day. Christmas Day is celebrated on December 25th.

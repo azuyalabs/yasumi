@@ -27,7 +27,7 @@ class RestorationOfIndependenceDayTest extends LatviaBaseTestCase implements Yas
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'restorationOfIndependenceOfLatviaDay';
+    public const HOLIDAY = 'restorationOfIndependenceOfLatviaDay';
 
     /**
      * Test if holiday is not defined before restoration

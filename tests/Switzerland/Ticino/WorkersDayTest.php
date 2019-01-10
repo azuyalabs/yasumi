@@ -25,7 +25,7 @@ class WorkersDayTest extends TicinoBaseTestCase implements YasumiTestCaseInterfa
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'internationalWorkersDay';
+    public const HOLIDAY = 'internationalWorkersDay';
 
     /**
      * Tests the holiday defined in this test.

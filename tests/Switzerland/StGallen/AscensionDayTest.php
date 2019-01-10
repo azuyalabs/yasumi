@@ -25,7 +25,7 @@ class AscensionDayTest extends StGallenBaseTestCase implements YasumiTestCaseInt
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'ascensionDay';
+    public const HOLIDAY = 'ascensionDay';
 
     /**
      * Tests Ascension Day.

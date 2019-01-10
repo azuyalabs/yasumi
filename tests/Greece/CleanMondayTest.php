@@ -25,7 +25,7 @@ class CleanMondayTest extends GreeceBaseTestCase implements YasumiTestCaseInterf
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'cleanMonday';
+    public const HOLIDAY = 'cleanMonday';
 
     /**
      * Tests the holiday defined in this test.

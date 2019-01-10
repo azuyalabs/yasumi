@@ -25,7 +25,7 @@ class AugustHolidayTest extends IrelandBaseTestCase implements YasumiTestCaseInt
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'augustHoliday';
+    public const HOLIDAY = 'augustHoliday';
 
     /**
      * Tests the holiday defined in this test.

@@ -25,7 +25,7 @@ class DosdeMayoUprisingDayTest extends CommunityOfMadridBaseTestCase implements 
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'dosdeMayoUprisingDay';
+    public const HOLIDAY = 'dosdeMayoUprisingDay';
 
     /**
      * Tests the holiday defined in this test.

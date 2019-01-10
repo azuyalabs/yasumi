@@ -25,13 +25,13 @@ class MaundyThursdayTest extends SpainBaseTestCase implements YasumiTestCaseInte
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'maundyThursday';
+    public const HOLIDAY = 'maundyThursday';
 
     /**
      * Name of the region (e.g. country / state) to be tested
      * Using the Region of Murcia as the holiday provider as not all regions celebrate Maundy Thursday in Spain.
      */
-    const REGION = 'Spain/RegionOfMurcia';
+    public const REGION = 'Spain/RegionOfMurcia';
 
     /**
      * Tests the holiday defined in this test.

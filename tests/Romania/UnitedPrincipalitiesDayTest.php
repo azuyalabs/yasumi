@@ -25,12 +25,12 @@ class UnitedPrincipalitiesDayTest extends RomaniaBaseTestCase implements YasumiT
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'unitedPrincipalitiesDay';
+    public const HOLIDAY = 'unitedPrincipalitiesDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 2015;
+    public const ESTABLISHMENT_YEAR = 2015;
 
     /**
      * Tests united Principalities Day on or after 2015.

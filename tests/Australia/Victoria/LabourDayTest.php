@@ -25,7 +25,7 @@ class LabourDayTest extends VictoriaBaseTestCase implements YasumiTestCaseInterf
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'labourDay';
+    public const HOLIDAY = 'labourDay';
 
     /**
      * Tests Labour Day

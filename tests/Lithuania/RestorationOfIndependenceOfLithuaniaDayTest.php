@@ -27,7 +27,7 @@ class RestorationOfIndependenceOfLithuaniaDayTest extends LithuaniaBaseTestCase 
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'restorationOfIndependenceOfLithuaniaDay';
+    public const HOLIDAY = 'restorationOfIndependenceOfLithuaniaDay';
 
     /**
      * Test if holiday is not defined before restoration

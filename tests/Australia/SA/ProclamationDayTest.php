@@ -25,7 +25,7 @@ class ProclamationDayTest extends SABaseTestCase implements YasumiTestCaseInterf
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'proclamationDay';
+    public const HOLIDAY = 'proclamationDay';
 
     /**
      * Tests Proclamation Day

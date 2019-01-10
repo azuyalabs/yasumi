@@ -25,7 +25,7 @@ class GoodFridayTest extends AppenzellAusserrhodenBaseTestCase implements Yasumi
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'goodFriday';
+    public const HOLIDAY = 'goodFriday';
 
     /**
      * Tests the holiday defined in this test.

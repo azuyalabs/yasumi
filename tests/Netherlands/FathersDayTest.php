@@ -25,7 +25,7 @@ class FathersDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseIn
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'fathersDay';
+    public const HOLIDAY = 'fathersDay';
 
     /**
      * Tests the holiday defined in this test.

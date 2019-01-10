@@ -25,12 +25,12 @@ class HomelandThanksgivingDayTest extends CroatiaBaseTestCase implements YasumiT
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'homelandThanksgiving';
+    public const HOLIDAY = 'homelandThanksgiving';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1995;
+    public const ESTABLISHMENT_YEAR = 1995;
 
     /**
      * Tests Homeland Thanksgiving Day on or after 1995.

@@ -25,12 +25,12 @@ class ValencianCommunityDayTest extends ValencianCommunityBaseTestCase implement
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'valencianCommunityDay';
+    public const HOLIDAY = 'valencianCommunityDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1239; // Not entirely sure about this year
+    public const ESTABLISHMENT_YEAR = 1239; // Not entirely sure about this year
 
     /**
      * Tests the holiday defined in this test on or after establishment.

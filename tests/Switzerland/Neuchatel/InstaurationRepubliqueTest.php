@@ -25,12 +25,12 @@ class InstaurationRepubliqueTest extends NeuchatelBaseTestCase implements Yasumi
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'instaurationRepublique';
+    public const HOLIDAY = 'instaurationRepublique';
 
     /**
      * The year in which the holiday was established
      */
-    const ESTABLISHMENT_YEAR = 1849;
+    public const ESTABLISHMENT_YEAR = 1849;
 
     /**
      * Tests Instauration de la République on or after 1849.

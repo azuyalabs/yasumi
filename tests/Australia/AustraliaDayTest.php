@@ -25,7 +25,7 @@ class AustraliaDayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'australiaDay';
+    public const HOLIDAY = 'australiaDay';
 
     /**
      * Tests Australia Day

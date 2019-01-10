@@ -25,12 +25,12 @@ class NafelserFahrtTest extends GlarusBaseTestCase implements YasumiTestCaseInte
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'nafelserFahrt';
+    public const HOLIDAY = 'nafelserFahrt';
 
     /**
      * The year in which the holiday was established
      */
-    const ESTABLISHMENT_YEAR = 1389;
+    public const ESTABLISHMENT_YEAR = 1389;
 
     /**
      * Tests Näfelser Fahrt on or after 1389

@@ -25,15 +25,15 @@ abstract class GreeceBaseTestCase extends TestCase
     /**
      * Country (name) to be tested
      */
-    const REGION = 'Greece';
+    public const REGION = 'Greece';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Athens';
+    public const TIMEZONE = 'Europe/Athens';
 
     /**
      * Locale that is considered common for this provider
      */
-    const LOCALE = 'el_GR';
+    public const LOCALE = 'el_GR';
 }

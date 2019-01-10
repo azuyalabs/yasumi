@@ -24,7 +24,7 @@ class NewYearsDayTest extends ThurgauBaseTestCase implements YasumiTestCaseInter
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'newYearsDay';
+    public const HOLIDAY = 'newYearsDay';
 
     /**
      * Tests New Years Day.

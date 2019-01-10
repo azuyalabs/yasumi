@@ -25,12 +25,12 @@ class IndependenceDayTest extends CroatiaBaseTestCase implements YasumiTestCaseI
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'independenceDay';
+    public const HOLIDAY = 'independenceDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1991;
+    public const ESTABLISHMENT_YEAR = 1991;
 
     /**
      * Tests Independence Day on or after 1991.

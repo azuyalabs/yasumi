@@ -25,7 +25,7 @@ class PeoplesDayTest extends BrisbaneBaseTestCase implements YasumiTestCaseInter
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'peoplesDay';
+    public const HOLIDAY = 'peoplesDay';
 
     /**
      * Tests Ekka People's Day

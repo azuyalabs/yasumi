@@ -25,12 +25,12 @@ class ThanksgivingDayTest extends USABaseTestCase implements YasumiTestCaseInter
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'thanksgivingDay';
+    public const HOLIDAY = 'thanksgivingDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1863;
+    public const ESTABLISHMENT_YEAR = 1863;
 
     /**
      * Tests Thanksgiving Day on or after 1863. Thanksgiving Day is celebrated since 1863 on the fourth Thursday

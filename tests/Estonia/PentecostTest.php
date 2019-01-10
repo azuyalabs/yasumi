@@ -26,7 +26,7 @@ class PentecostTest extends EstoniaBaseTestCase implements YasumiTestCaseInterfa
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'pentecost';
+    public const HOLIDAY = 'pentecost';
 
     /**
      * @return array

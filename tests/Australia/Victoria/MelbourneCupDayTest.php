@@ -25,12 +25,12 @@ class MelbourneCupDayTest extends VictoriaBaseTestCase implements YasumiTestCase
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'melbourneCup';
+    public const HOLIDAY = 'melbourneCup';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1877;
+    public const ESTABLISHMENT_YEAR = 1877;
 
     /**
      * Tests Melbourne Cup Day

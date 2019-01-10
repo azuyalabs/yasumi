@@ -25,7 +25,7 @@ class PentecostTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'pentecost';
+    public const HOLIDAY = 'pentecost';
 
     /**
      * Tests the holiday defined in this test.

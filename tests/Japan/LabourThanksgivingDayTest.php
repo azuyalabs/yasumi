@@ -25,12 +25,12 @@ class LabourThanksgivingDayTest extends JapanBaseTestCase implements YasumiTestC
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'laborThanksgivingDay';
+    public const HOLIDAY = 'laborThanksgivingDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1948;
+    public const ESTABLISHMENT_YEAR = 1948;
 
     /**
      * Tests Labor Thanksgiving Day after 1948. Labor Thanksgiving Day is held on November 23rd and established since

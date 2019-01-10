@@ -25,12 +25,12 @@ class MemorialDayTest extends USABaseTestCase implements YasumiTestCaseInterface
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'memorialDay';
+    public const HOLIDAY = 'memorialDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1865;
+    public const ESTABLISHMENT_YEAR = 1865;
 
     /**
      * Tests Memorial Day on or after 1968. Memorial Day was established since 1865 on May 30 and was changed in 1968

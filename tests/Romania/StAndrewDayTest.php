@@ -25,12 +25,12 @@ class StAndrewDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'stAndrewDay';
+    public const HOLIDAY = 'stAndrewDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 2012;
+    public const ESTABLISHMENT_YEAR = 2012;
 
     /**
      * Tests Saint Andrew Day on or after 2012.

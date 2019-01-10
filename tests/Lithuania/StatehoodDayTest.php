@@ -27,7 +27,7 @@ class StatehoodDayTest extends LithuaniaBaseTestCase implements YasumiTestCaseIn
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'statehoodDay';
+    public const HOLIDAY = 'statehoodDay';
 
     /**
      * Test if holiday is not defined before restoration

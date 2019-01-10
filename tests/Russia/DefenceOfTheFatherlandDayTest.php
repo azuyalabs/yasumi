@@ -26,7 +26,7 @@ class DefenceOfTheFatherlandDayTest extends RussiaBaseTestCase implements Yasumi
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'defenceOfTheFatherlandDay';
+    public const HOLIDAY = 'defenceOfTheFatherlandDay';
 
     /**
      * Test if holiday is not defined before

@@ -25,10 +25,10 @@ abstract class LowerSaxonyBaseTestCase extends GermanyBaseTestCase
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'Germany/LowerSaxony';
+    public const REGION = 'Germany/LowerSaxony';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Berlin';
+    public const TIMEZONE = 'Europe/Berlin';
 }

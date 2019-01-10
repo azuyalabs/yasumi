@@ -25,7 +25,7 @@ class StGeorgesDayTest extends AragonBaseTestCase implements YasumiTestCaseInter
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'stGeorgesDay';
+    public const HOLIDAY = 'stGeorgesDay';
 
     /**
      * Tests the holiday defined in this test.

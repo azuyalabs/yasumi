@@ -26,7 +26,7 @@ class EasterMondayTest extends UnitedKingdomBaseTestCase implements YasumiTestCa
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'easterMonday';
+    public const HOLIDAY = 'easterMonday';
 
     /**
      * Tests Easter Monday

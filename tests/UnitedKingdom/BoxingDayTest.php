@@ -26,7 +26,7 @@ class BoxingDayTest extends UnitedKingdomBaseTestCase implements YasumiTestCaseI
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'secondChristmasDay';
+    public const HOLIDAY = 'secondChristmasDay';
 
     /**
      * Tests the holiday defined in this test.

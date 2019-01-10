@@ -26,17 +26,17 @@ class PortugalDayTest extends PortugalBaseTestCase implements YasumiTestCaseInte
     /**
      * The year in which the holiday was abolished
      */
-    const ESTABLISHMENT_YEAR_BEFORE = 1932;
+    public const ESTABLISHMENT_YEAR_BEFORE = 1932;
 
     /**
      * The year in which the holiday was restored
      */
-    const ESTABLISHMENT_YEAR_AFTER = 1974;
+    public const ESTABLISHMENT_YEAR_AFTER = 1974;
 
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'portugalDay';
+    public const HOLIDAY = 'portugalDay';
 
     /**
      * Tests the holiday defined in this test before it was abolished.

@@ -25,7 +25,7 @@ class princesDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseIn
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'princesDay';
+    public const HOLIDAY = 'princesDay';
 
     /**
      * Tests Prince's Day.

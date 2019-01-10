@@ -25,10 +25,10 @@ abstract class BadenWurttembergBaseTestCase extends GermanyBaseTestCase
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'Germany/BadenWurttemberg';
+    public const REGION = 'Germany/BadenWurttemberg';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Berlin';
+    public const TIMEZONE = 'Europe/Berlin';
 }

@@ -28,7 +28,7 @@ class SaintsCyrilAndMethodiusDayTest extends CzechRepublicBaseTestCase implement
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'saintsCyrilAndMethodiusDay';
+    public const HOLIDAY = 'saintsCyrilAndMethodiusDay';
 
     /**
      * Tests the holiday defined in this test.

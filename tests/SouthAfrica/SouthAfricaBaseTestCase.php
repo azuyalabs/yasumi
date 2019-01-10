@@ -29,15 +29,15 @@ abstract class SouthAfricaBaseTestCase extends TestCase
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'SouthAfrica';
+    public const REGION = 'SouthAfrica';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Africa/Johannesburg';
+    public const TIMEZONE = 'Africa/Johannesburg';
 
     /**
      * Locale that is considered common for this provider
      */
-    const LOCALE = 'en_ZA';
+    public const LOCALE = 'en_ZA';
 }

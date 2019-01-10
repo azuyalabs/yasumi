@@ -27,7 +27,7 @@ class CorpusChristiTest extends BadenWurttembergBaseTestCase implements YasumiTe
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'corpusChristi';
+    public const HOLIDAY = 'corpusChristi';
 
     /**
      * Tests Corpus Christi.

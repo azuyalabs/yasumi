@@ -24,7 +24,7 @@ class AllSaintsDayTest extends NorthRhineWestphaliaBaseTestCase implements Yasum
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'allSaintsDay';
+    public const HOLIDAY = 'allSaintsDay';
 
     /**
      * Tests the holiday defined in this test.

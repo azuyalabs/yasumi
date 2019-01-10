@@ -25,10 +25,10 @@ abstract class NorthRhineWestphaliaBaseTestCase extends GermanyBaseTestCase
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'Germany/NorthRhineWestphalia';
+    public const REGION = 'Germany/NorthRhineWestphalia';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Berlin';
+    public const TIMEZONE = 'Europe/Berlin';
 }

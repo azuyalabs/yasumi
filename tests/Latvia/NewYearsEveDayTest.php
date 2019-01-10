@@ -26,7 +26,7 @@ class NewYearsEveDayTest extends LatviaBaseTestCase implements YasumiTestCaseInt
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'newYearsEve';
+    public const HOLIDAY = 'newYearsEve';
 
     /**
      * @return array

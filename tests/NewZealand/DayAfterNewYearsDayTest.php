@@ -26,7 +26,7 @@ class DayAfterNewYearsDayTest extends NewZealandBaseTestCase implements YasumiTe
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'dayAfterNewYearsDay';
+    public const HOLIDAY = 'dayAfterNewYearsDay';
 
     /**
      * Tests Day After New Years Day

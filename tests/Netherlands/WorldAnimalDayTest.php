@@ -25,12 +25,12 @@ class WorldAnimalDayTest extends NetherlandsBaseTestCase implements YasumiTestCa
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'worldAnimalDay';
+    public const HOLIDAY = 'worldAnimalDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1931;
+    public const ESTABLISHMENT_YEAR = 1931;
 
     /**
      * Tests World Animal Day on or after 1931.

@@ -25,12 +25,12 @@ class BalearicIslandsDayTest extends BalearicIslandsBaseTestCase implements Yasu
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'balearicIslandsDay';
+    public const HOLIDAY = 'balearicIslandsDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1983;
+    public const ESTABLISHMENT_YEAR = 1983;
 
     /**
      * Tests the holiday defined in this test on or after establishment.

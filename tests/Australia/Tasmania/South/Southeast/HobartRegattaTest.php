@@ -25,7 +25,7 @@ class HobartRegattaTest extends SoutheastBaseTestCase implements YasumiTestCaseI
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'hobartRegatta';
+    public const HOLIDAY = 'hobartRegatta';
 
     /**
      * Tests Royal Hobart Regatta

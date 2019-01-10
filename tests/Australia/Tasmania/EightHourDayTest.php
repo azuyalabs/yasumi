@@ -25,7 +25,7 @@ class EightHourDayTest extends TasmaniaBaseTestCase implements YasumiTestCaseInt
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'eightHourDay';
+    public const HOLIDAY = 'eightHourDay';
 
     /**
      * Tests Eight Hour Day

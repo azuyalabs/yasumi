@@ -27,15 +27,15 @@ abstract class CroatiaBaseTestCase extends TestCase
     /**
      * Country (name) to be tested
      */
-    const REGION = 'Croatia';
+    public const REGION = 'Croatia';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Zagreb';
+    public const TIMEZONE = 'Europe/Zagreb';
 
     /**
      * Locale that is considered common for this provider
      */
-    const LOCALE = 'hr_HR';
+    public const LOCALE = 'hr_HR';
 }

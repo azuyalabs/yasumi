@@ -25,7 +25,7 @@ class EasterTest extends GreeceBaseTestCase implements YasumiTestCaseInterface
     /**
      * The name of the first holiday of Easter
      */
-    const HOLIDAY = 'easter';
+    public const HOLIDAY = 'easter';
 
     /**
      * Tests the holiday defined in this test.

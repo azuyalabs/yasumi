@@ -25,10 +25,10 @@ abstract class CommunityOfMadridBaseTestCase extends SpainBaseTestCase
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'Spain/CommunityOfMadrid';
+    public const REGION = 'Spain/CommunityOfMadrid';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Madrid';
+    public const TIMEZONE = 'Europe/Madrid';
 }

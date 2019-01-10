@@ -25,12 +25,12 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements YasumiTes
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'constitutionMemorialDay';
+    public const HOLIDAY = 'constitutionMemorialDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1948;
+    public const ESTABLISHMENT_YEAR = 1948;
 
     /**
      * Tests Constitution Memorial Day after 1948. Constitution Memorial Day was established after 1948

@@ -25,12 +25,12 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements YasumiTe
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1910;
+    public const ESTABLISHMENT_YEAR = 1910;
 
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'portugueseRepublic';
+    public const HOLIDAY = 'portugueseRepublic';
 
     /**
      * Tests the holiday defined in this test on or after establishment.

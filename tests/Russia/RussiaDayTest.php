@@ -27,7 +27,7 @@ class RussiaDayTest extends RussiaBaseTestCase implements YasumiTestCaseInterfac
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'russiaDay';
+    public const HOLIDAY = 'russiaDay';
 
     /**
      * Test if holiday is not defined before

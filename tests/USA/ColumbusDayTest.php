@@ -25,12 +25,12 @@ class ColumbusDayTest extends USABaseTestCase implements YasumiTestCaseInterface
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'columbusDay';
+    public const HOLIDAY = 'columbusDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1937;
+    public const ESTABLISHMENT_YEAR = 1937;
 
     /**
      * Tests Columbus Day on or after 1970. Columbus Day was established in 1937 on October 12th, but has been fixed to

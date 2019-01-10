@@ -25,7 +25,7 @@ class BruderKlausenFestTest extends ObwaldenBaseTestCase implements YasumiTestCa
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'bruderKlausenFest';
+    public const HOLIDAY = 'bruderKlausenFest';
 
     /**
      * Tests Bruder-Klausen-Fest on or after 1947

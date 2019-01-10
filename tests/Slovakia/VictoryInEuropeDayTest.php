@@ -30,7 +30,7 @@ class VictoryInEuropeDayTest extends SlovakiaBaseTestCase implements YasumiTestC
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'victoryInEuropeDay';
+    public const HOLIDAY = 'victoryInEuropeDay';
 
 
     /**

@@ -26,7 +26,7 @@ class thirdCarnivalDay extends NetherlandsBaseTestCase implements YasumiTestCase
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'thirdCarnivalDay';
+    public const HOLIDAY = 'thirdCarnivalDay';
 
     /**
      * Tests the holiday defined in this test.

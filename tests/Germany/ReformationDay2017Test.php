@@ -25,12 +25,12 @@ class ReformationDay2017Test extends GermanyBaseTestCase implements YasumiTestCa
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'reformationDay';
+    public const HOLIDAY = 'reformationDay';
 
     /**
      * The year in which the holiday was established
      */
-    const ESTABLISHMENT_YEAR = 2017;
+    public const ESTABLISHMENT_YEAR = 2017;
 
     /**
      * Test the holiday defined in this test upon establishment

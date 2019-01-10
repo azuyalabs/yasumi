@@ -24,7 +24,7 @@ class ChristmasDayTest extends AppenzellAusserrhodenBaseTestCase implements Yasu
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'christmasDay';
+    public const HOLIDAY = 'christmasDay';
 
     /**
      * Tests Christmas Day.

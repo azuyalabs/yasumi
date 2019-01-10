@@ -26,7 +26,7 @@ class EasterSaturdayTest extends NSWBaseTestCase implements YasumiTestCaseInterf
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'easterSaturday';
+    public const HOLIDAY = 'easterSaturday';
 
     /**
      * Tests Easter Saturday

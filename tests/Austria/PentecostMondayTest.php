@@ -25,7 +25,7 @@ class PentecostMondayTest extends AustriaBaseTestCase implements YasumiTestCaseI
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'pentecostMonday';
+    public const HOLIDAY = 'pentecostMonday';
 
     /**
      * Tests the holiday defined in this test.

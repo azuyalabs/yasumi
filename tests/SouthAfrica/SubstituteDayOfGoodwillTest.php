@@ -29,12 +29,12 @@ class SubstituteDayOfGoodwillTest extends SouthAfricaBaseTestCase implements Yas
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'substituteDayOfGoodwill';
+    public const HOLIDAY = 'substituteDayOfGoodwill';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 2016;
+    public const ESTABLISHMENT_YEAR = 2016;
 
     /**
      * Tests the holiday defined in this test on or after establishment.

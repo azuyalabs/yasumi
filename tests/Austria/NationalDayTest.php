@@ -25,12 +25,12 @@ class NationalDayTest extends AustriaBaseTestCase implements YasumiTestCaseInter
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'nationalDay';
+    public const HOLIDAY = 'nationalDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1955;
+    public const ESTABLISHMENT_YEAR = 1955;
 
     /**
      * Tests the holiday defined in this test on or after establishment.

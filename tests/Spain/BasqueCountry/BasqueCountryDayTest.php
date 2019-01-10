@@ -25,17 +25,17 @@ class BasqueCountryDayTest extends BasqueCountryBaseTestCase implements YasumiTe
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'basqueCountryDay';
+    public const HOLIDAY = 'basqueCountryDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 2011;
+    public const ESTABLISHMENT_YEAR = 2011;
 
     /**
      * The year in which the holiday was abolished
      */
-    const ABOLISHMENT_YEAR = 2013;
+    public const ABOLISHMENT_YEAR = 2013;
 
     /**
      * Tests the holiday defined in this test on or after establishment.

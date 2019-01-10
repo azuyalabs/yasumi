@@ -28,15 +28,15 @@ abstract class LatviaBaseTestCase extends TestCase
     /**
      * Name of the country to be tested
      */
-    const REGION = 'Latvia';
+    public const REGION = 'Latvia';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Riga';
+    public const TIMEZONE = 'Europe/Riga';
 
     /**
      * Locale that is considered common for this provider
      */
-    const LOCALE = 'lv_LV';
+    public const LOCALE = 'lv_LV';
 }

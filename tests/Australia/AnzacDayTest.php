@@ -25,12 +25,12 @@ class AnzacDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInterf
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'anzacDay';
+    public const HOLIDAY = 'anzacDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1921;
+    public const ESTABLISHMENT_YEAR = 1921;
 
     /**
      * Tests ANZAC Day

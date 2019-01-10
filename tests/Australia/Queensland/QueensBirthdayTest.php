@@ -25,12 +25,12 @@ class QueensBirthdayTest extends QueenslandBaseTestCase implements YasumiTestCas
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'queensBirthday';
+    public const HOLIDAY = 'queensBirthday';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1950;
+    public const ESTABLISHMENT_YEAR = 1950;
 
     /**
      * Tests Queen's Birthday

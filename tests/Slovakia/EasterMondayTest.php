@@ -31,7 +31,7 @@ class EasterMondayTest extends SlovakiaBaseTestCase implements YasumiTestCaseInt
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'easterMonday';
+    public const HOLIDAY = 'easterMonday';
 
 
     /**

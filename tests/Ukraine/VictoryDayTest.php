@@ -24,7 +24,7 @@ class VictoryDayTest extends UkraineBaseTestCase implements YasumiTestCaseInterf
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'victoryDay';
+    public const HOLIDAY = 'victoryDay';
 
     /**
      * @dataProvider HolidayDataProvider

@@ -25,12 +25,12 @@ class ReformationDayTest extends SaxonyBaseTestCase implements YasumiTestCaseInt
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'reformationDay';
+    public const HOLIDAY = 'reformationDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1517;
+    public const ESTABLISHMENT_YEAR = 1517;
 
     /**
      * Tests the holiday defined in this test.

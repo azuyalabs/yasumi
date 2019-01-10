@@ -24,7 +24,7 @@ class StruggleForFreedomAndDemocracyDayTest extends CzechRepublicBaseTestCase im
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'struggleForFreedomAndDemocracyDay';
+    public const HOLIDAY = 'struggleForFreedomAndDemocracyDay';
 
     /**
      * Tests the holiday defined in this test.

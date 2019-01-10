@@ -24,7 +24,7 @@ class InternationalWomensDayTest extends UkraineBaseTestCase implements YasumiTe
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'internationalWomensDay';
+    public const HOLIDAY = 'internationalWomensDay';
 
     /**
      * @dataProvider HolidayDataProvider

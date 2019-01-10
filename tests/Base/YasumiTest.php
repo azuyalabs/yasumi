@@ -30,12 +30,12 @@ class YasumiTest extends TestCase
     /**
      * The lower year limit supported by Yasumi
      */
-    const YEAR_LOWER_BOUND = 1000;
+    public const YEAR_LOWER_BOUND = 1000;
 
     /**
      * The upper year limit supported by Yasumi
      */
-    const YEAR_UPPER_BOUND = 9999;
+    public const YEAR_UPPER_BOUND = 9999;
 
     /**
      * Tests that an InvalidArgumentException is thrown in case an invalid year is given.

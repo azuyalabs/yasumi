@@ -26,7 +26,7 @@ class GoodFridayTest extends NewZealandBaseTestCase implements YasumiTestCaseInt
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'goodFriday';
+    public const HOLIDAY = 'goodFriday';
 
     /**
      * Tests Good Friday

@@ -24,7 +24,7 @@ class ChristmasEveTest extends DenmarkBaseTestCase implements YasumiTestCaseInte
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'christmasEve';
+    public const HOLIDAY = 'christmasEve';
 
     /**
      * Tests the holiday defined in this test.

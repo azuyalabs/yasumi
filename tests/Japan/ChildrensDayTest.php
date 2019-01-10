@@ -25,12 +25,12 @@ class ChildrensDayTest extends JapanBaseTestCase implements YasumiTestCaseInterf
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'childrensDay';
+    public const HOLIDAY = 'childrensDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1948;
+    public const ESTABLISHMENT_YEAR = 1948;
 
     /**
      * Tests Children's Day after 1948. Children's Day was established after 1948

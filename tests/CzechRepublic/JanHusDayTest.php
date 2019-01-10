@@ -24,7 +24,7 @@ class JanHusDayTest extends CzechRepublicBaseTestCase implements YasumiTestCaseI
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'janHusDay';
+    public const HOLIDAY = 'janHusDay';
 
     /**
      * Tests the holiday defined in this test.

@@ -25,12 +25,12 @@ class AntifascistStruggleDayTest extends CroatiaBaseTestCase implements YasumiTe
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'antifascistStruggleDay';
+    public const HOLIDAY = 'antifascistStruggleDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1941;
+    public const ESTABLISHMENT_YEAR = 1941;
 
     /**
      * Tests Day of Antifascist Struggle on or after 1941.

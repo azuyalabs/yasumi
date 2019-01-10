@@ -24,7 +24,7 @@ class StStephensDayTest extends AppenzellInnerrhodenBaseTestCase implements Yasu
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'stStephensDay';
+    public const HOLIDAY = 'stStephensDay';
 
     /**
      * Tests the holiday defined in this test.

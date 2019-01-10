@@ -25,12 +25,12 @@ class AllSoulsDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterf
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'allSoulsDay';
+    public const HOLIDAY = 'allSoulsDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1300;
+    public const ESTABLISHMENT_YEAR = 1300;
 
     /**
      * Tests Dia dos Finados on or after 1300.

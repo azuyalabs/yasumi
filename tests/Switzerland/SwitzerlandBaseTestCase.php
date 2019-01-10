@@ -25,15 +25,15 @@ abstract class SwitzerlandBaseTestCase extends TestCase
     /**
      * Country (name) to be tested
      */
-    const REGION = 'Switzerland';
+    public const REGION = 'Switzerland';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Zurich';
+    public const TIMEZONE = 'Europe/Zurich';
 
     /**
      * Locale that is considered common for this provider
      */
-    const LOCALE = 'de_CH';
+    public const LOCALE = 'de_CH';
 }

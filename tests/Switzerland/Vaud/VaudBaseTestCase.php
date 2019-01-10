@@ -25,15 +25,15 @@ abstract class VaudBaseTestCase extends SwitzerlandBaseTestCase
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'Switzerland/Vaud';
+    public const REGION = 'Switzerland/Vaud';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Zurich';
+    public const TIMEZONE = 'Europe/Zurich';
 
     /**
      * Locale that is considered common for this provider
      */
-    const LOCALE = 'fr_CH';
+    public const LOCALE = 'fr_CH';
 }

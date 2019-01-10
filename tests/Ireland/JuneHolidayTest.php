@@ -25,12 +25,12 @@ class JuneHolidayTest extends IrelandBaseTestCase implements YasumiTestCaseInter
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'juneHoliday';
+    public const HOLIDAY = 'juneHoliday';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1974;
+    public const ESTABLISHMENT_YEAR = 1974;
 
     /**
      * Tests the holiday defined in this test.

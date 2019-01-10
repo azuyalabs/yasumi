@@ -25,12 +25,12 @@ class stJamesDayTest extends GaliciaBaseTestCase implements YasumiTestCaseInterf
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'stJamesDay';
+    public const HOLIDAY = 'stJamesDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 2000;
+    public const ESTABLISHMENT_YEAR = 2000;
 
     /**
      * Tests the holiday defined in this test on or after establishment.

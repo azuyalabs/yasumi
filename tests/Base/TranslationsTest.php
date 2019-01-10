@@ -24,7 +24,7 @@ use Yasumi\Translations;
  */
 class TranslationsTest extends TestCase
 {
-    const LOCALES = [
+    public const LOCALES = [
         'en_US',
         'nl_NL',
         'pl_PL',

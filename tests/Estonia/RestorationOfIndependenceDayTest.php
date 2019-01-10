@@ -27,7 +27,7 @@ class RestorationOfIndependenceDayTest extends EstoniaBaseTestCase implements Ya
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'restorationOfIndependenceDay';
+    public const HOLIDAY = 'restorationOfIndependenceDay';
 
     /**
      * Test if holiday is not defined before

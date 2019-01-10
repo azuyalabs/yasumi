@@ -25,7 +25,7 @@ class MayDayTest extends NTBaseTestCase implements YasumiTestCaseInterface
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'mayDay';
+    public const HOLIDAY = 'mayDay';
 
     /**
      * Tests May Day

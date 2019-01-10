@@ -25,7 +25,7 @@ class BerchtoldsTagTest extends NeuchatelBaseTestCase implements YasumiTestCaseI
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'berchtoldsTag';
+    public const HOLIDAY = 'berchtoldsTag';
 
     /**
      * Tests BerchtoldsTag

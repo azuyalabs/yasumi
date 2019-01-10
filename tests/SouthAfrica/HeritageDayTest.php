@@ -30,12 +30,12 @@ class HeritageDayTest extends SouthAfricaBaseTestCase implements YasumiTestCaseI
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'heritageDay';
+    public const HOLIDAY = 'heritageDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1994;
+    public const ESTABLISHMENT_YEAR = 1994;
 
     /**
      * Tests the holiday defined in this test.

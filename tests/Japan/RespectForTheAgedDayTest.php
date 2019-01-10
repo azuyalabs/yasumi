@@ -25,12 +25,12 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase implements YasumiTestCa
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'respectfortheAgedDay';
+    public const HOLIDAY = 'respectfortheAgedDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1996;
+    public const ESTABLISHMENT_YEAR = 1996;
 
     /**
      * Tests Respect for the Aged Day after 2003. Respect for the Aged Day was established since 1996 on September

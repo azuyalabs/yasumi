@@ -26,7 +26,7 @@ class InternationalWomensDayTest extends RussiaBaseTestCase implements YasumiTes
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'internationalWomensDay';
+    public const HOLIDAY = 'internationalWomensDay';
 
     /**
      * @return array

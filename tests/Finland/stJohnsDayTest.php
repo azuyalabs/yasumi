@@ -30,12 +30,12 @@ class stJohnsDayTest extends FinlandBaseTestCase implements YasumiTestCaseInterf
     /**
      * The year in which the holiday was adjusted
      */
-    const ADJUSTMENT_YEAR = 1955;
+    public const ADJUSTMENT_YEAR = 1955;
 
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'stJohnsDay';
+    public const HOLIDAY = 'stJohnsDay';
 
     /**
      * Tests the holiday before it was adjusted.

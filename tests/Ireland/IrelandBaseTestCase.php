@@ -25,20 +25,20 @@ abstract class IrelandBaseTestCase extends TestCase
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'Ireland';
+    public const REGION = 'Ireland';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Dublin';
+    public const TIMEZONE = 'Europe/Dublin';
 
     /**
      * Locale that is considered common for this provider
      */
-    const LOCALE = 'en_IE';
+    public const LOCALE = 'en_IE';
 
     /**
      * Number of iterations to be used for the various unit test of this provider
      */
-    const TEST_ITERATIONS = 50;
+    public const TEST_ITERATIONS = 50;
 }

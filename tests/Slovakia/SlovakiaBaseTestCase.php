@@ -31,15 +31,15 @@ abstract class SlovakiaBaseTestCase extends TestCase
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'Slovakia';
+    public const REGION = 'Slovakia';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Bratislava';
+    public const TIMEZONE = 'Europe/Bratislava';
 
     /**
      * Locale that is considered common for this provider
      */
-    const LOCALE = 'sk_SK';
+    public const LOCALE = 'sk_SK';
 }

@@ -25,12 +25,12 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCase
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'autumnalEquinoxDay';
+    public const HOLIDAY = 'autumnalEquinoxDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1948;
+    public const ESTABLISHMENT_YEAR = 1948;
 
     /**
      * Tests Vernal Equinox Day after 2150. This national holiday was established in 1948 as a day on which to honor

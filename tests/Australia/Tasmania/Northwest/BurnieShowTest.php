@@ -25,7 +25,7 @@ class BurnieShowTest extends NorthwestBaseTestCase implements YasumiTestCaseInte
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'burnieShow';
+    public const HOLIDAY = 'burnieShow';
 
     /**
      * Tests Burnie Show Day

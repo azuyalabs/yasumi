@@ -25,7 +25,7 @@ class stNicholasDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'stNicholasDay';
+    public const HOLIDAY = 'stNicholasDay';
 
     /**
      * Tests Sint Nicholas Day.

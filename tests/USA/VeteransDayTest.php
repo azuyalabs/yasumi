@@ -26,12 +26,12 @@ class VeteransDayTest extends USABaseTestCase implements YasumiTestCaseInterface
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'veteransDay';
+    public const HOLIDAY = 'veteransDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1919;
+    public const ESTABLISHMENT_YEAR = 1919;
 
     /**
      * Tests Veterans Day on or after 1919. Veterans Day was established in 1919 on November 11.

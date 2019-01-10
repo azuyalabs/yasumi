@@ -28,15 +28,15 @@ abstract class LithuaniaBaseTestCase extends TestCase
     /**
      * Name of the country to be tested
      */
-    const REGION = 'Lithuania';
+    public const REGION = 'Lithuania';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Vilnius';
+    public const TIMEZONE = 'Europe/Vilnius';
 
     /**
      * Locale that is considered common for this provider
      */
-    const LOCALE = 'lt_LT';
+    public const LOCALE = 'lt_LT';
 }

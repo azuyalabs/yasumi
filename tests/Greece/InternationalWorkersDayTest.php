@@ -24,7 +24,7 @@ class InternationalWorkersDayTest extends GreeceBaseTestCase implements YasumiTe
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'internationalWorkersDay';
+    public const HOLIDAY = 'internationalWorkersDay';
 
     /**
      * Tests the holiday defined in this test.

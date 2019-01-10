@@ -23,7 +23,7 @@ class OrthodoxChristmasDay extends BosniaBaseTestCase implements YasumiTestCaseI
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'orthodoxChristmasDay';
+    public const HOLIDAY = 'orthodoxChristmasDay';
 
 
     /**

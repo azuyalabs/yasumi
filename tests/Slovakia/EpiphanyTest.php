@@ -30,7 +30,7 @@ class EpiphanyTest extends SlovakiaBaseTestCase implements YasumiTestCaseInterfa
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'epiphany';
+    public const HOLIDAY = 'epiphany';
 
 
     /**

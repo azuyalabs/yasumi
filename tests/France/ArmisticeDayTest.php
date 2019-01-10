@@ -25,12 +25,12 @@ class ArmisticeDayTest extends FranceBaseTestCase implements YasumiTestCaseInter
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'armisticeDay';
+    public const HOLIDAY = 'armisticeDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1919;
+    public const ESTABLISHMENT_YEAR = 1919;
 
     /**
      * Tests Armistice Day on or after 1919.

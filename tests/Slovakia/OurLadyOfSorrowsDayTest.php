@@ -30,7 +30,7 @@ class OurLadyOfSorrowsDayTest extends SlovakiaBaseTestCase implements YasumiTest
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'ourLadyOfSorrowsDay';
+    public const HOLIDAY = 'ourLadyOfSorrowsDay';
 
 
     /**

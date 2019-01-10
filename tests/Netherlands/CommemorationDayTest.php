@@ -25,12 +25,12 @@ class CommemorationDayTest extends NetherlandsBaseTestCase implements YasumiTest
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'commemorationDay';
+    public const HOLIDAY = 'commemorationDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1947;
+    public const ESTABLISHMENT_YEAR = 1947;
 
     /**
      * Tests Commemoration Day before 1947. Commemoration Day was established after WWII in 1947.

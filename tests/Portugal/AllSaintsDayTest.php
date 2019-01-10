@@ -25,17 +25,17 @@ class AllSaintsDayTest extends PortugalBaseTestCase implements YasumiTestCaseInt
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'allSaintsDay';
+    public const HOLIDAY = 'allSaintsDay';
 
     /**
      * Holiday was abolished by the portuguese government in 2014.
      */
-    const HOLIDAY_YEAR_ABOLISHED = 2014;
+    public const HOLIDAY_YEAR_ABOLISHED = 2014;
 
     /**
      * Holiday was restored by the portuguese government in 2016.
      */
-    const HOLIDAY_YEAR_RESTORED = 2016;
+    public const HOLIDAY_YEAR_RESTORED = 2016;
 
     /**
      * Tests the holiday defined in this test.

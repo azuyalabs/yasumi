@@ -26,7 +26,7 @@ class StJosephDayTest extends NidwaldenBaseTestCase implements YasumiTestCaseInt
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'stJosephsDay';
+    public const HOLIDAY = 'stJosephsDay';
 
     /**
      * Tests St. Joseph's Day.

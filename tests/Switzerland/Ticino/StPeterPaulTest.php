@@ -24,7 +24,7 @@ class StPeterPaulTest extends TicinoBaseTestCase implements YasumiTestCaseInterf
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'stPeterPaul';
+    public const HOLIDAY = 'stPeterPaul';
 
     /**
      * Tests Feast of Saints Peter and Paul.

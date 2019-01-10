@@ -24,7 +24,7 @@ class AllSaintsDayTest extends ZugBaseTestCase implements YasumiTestCaseInterfac
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'allSaintsDay';
+    public const HOLIDAY = 'allSaintsDay';
 
     /**
      * Tests All Saints' Day.

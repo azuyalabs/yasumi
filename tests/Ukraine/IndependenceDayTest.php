@@ -24,7 +24,7 @@ class IndependenceDayTest extends UkraineBaseTestCase implements YasumiTestCaseI
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'independenceDay';
+    public const HOLIDAY = 'independenceDay';
 
     /**
      * @throws \ReflectionException

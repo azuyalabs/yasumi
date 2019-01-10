@@ -24,7 +24,7 @@ class ThreeHolyHierarchsTest extends GreeceBaseTestCase implements YasumiTestCas
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'threeHolyHierarchs';
+    public const HOLIDAY = 'threeHolyHierarchs';
 
     /**
      * Tests the holiday defined in this test.

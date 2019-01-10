@@ -25,7 +25,7 @@ class WesternAustraliaDayTest extends WABaseTestCase implements YasumiTestCaseIn
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'westernAustraliaDay';
+    public const HOLIDAY = 'westernAustraliaDay';
 
     /**
      * Tests Western Australia Day

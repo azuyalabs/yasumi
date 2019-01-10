@@ -25,17 +25,17 @@ class NewYearsDayTest extends UnitedKingdomBaseTestCase implements YasumiTestCas
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1871;
+    public const ESTABLISHMENT_YEAR = 1871;
 
     /**
      * The year in which the holiday was adjusted
      */
-    const ADJUSTMENT_YEAR = 1974;
+    public const ADJUSTMENT_YEAR = 1974;
 
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'newYearsDay';
+    public const HOLIDAY = 'newYearsDay';
 
     /**
      * Tests the holiday defined in this test on or after establishment.

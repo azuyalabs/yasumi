@@ -30,7 +30,7 @@ class SlovakNationalUprisingDayTest extends SlovakiaBaseTestCase implements Yasu
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'slovakNationalUprisingDay';
+    public const HOLIDAY = 'slovakNationalUprisingDay';
 
 
     /**

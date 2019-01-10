@@ -24,7 +24,7 @@ class ImmaculateConceptionTest extends ValaisBaseTestCase implements YasumiTestC
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'immaculateConception';
+    public const HOLIDAY = 'immaculateConception';
 
     /**
      * Tests the holiday defined in this test.

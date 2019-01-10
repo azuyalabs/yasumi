@@ -25,15 +25,15 @@ abstract class DenmarkBaseTestCase extends TestCase
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'Denmark';
+    public const REGION = 'Denmark';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Copenhagen';
+    public const TIMEZONE = 'Europe/Copenhagen';
 
     /**
      * Locale that is considered common for this provider
      */
-    const LOCALE = 'da_DK';
+    public const LOCALE = 'da_DK';
 }

@@ -26,7 +26,7 @@ class BettagsMontagTest extends NeuchatelBaseTestCase implements YasumiTestCaseI
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'bettagsMontag';
+    public const HOLIDAY = 'bettagsMontag';
 
     /**
      * Tests Bettags Montag on or after 1832

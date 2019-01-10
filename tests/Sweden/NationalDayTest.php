@@ -25,12 +25,12 @@ class NationalDayTest extends SwedenBaseTestCase implements YasumiTestCaseInterf
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1916;
+    public const ESTABLISHMENT_YEAR = 1916;
 
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'nationalDay';
+    public const HOLIDAY = 'nationalDay';
 
     /**
      * Tests the holiday defined in this test on or after establishment.

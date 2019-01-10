@@ -25,12 +25,12 @@ class WashingtonsBirthdayTest extends USABaseTestCase implements YasumiTestCaseI
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'washingtonsBirthday';
+    public const HOLIDAY = 'washingtonsBirthday';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1879;
+    public const ESTABLISHMENT_YEAR = 1879;
 
     /**
      * Tests Washington's Birthday on or after 1968. Washington's Birthday was established since 1879 on February 22

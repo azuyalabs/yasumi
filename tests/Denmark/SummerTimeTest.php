@@ -25,7 +25,7 @@ class SummerTimeTest extends DenmarkBaseTestCase implements YasumiTestCaseInterf
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'summerTime';
+    public const HOLIDAY = 'summerTime';
 
     /**
      * Tests the holiday defined in this test.

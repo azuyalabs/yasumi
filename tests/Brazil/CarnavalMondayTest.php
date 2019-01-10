@@ -27,12 +27,12 @@ class CarnavalMondayTest extends BrazilBaseTestCase implements YasumiTestCaseInt
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'carnavalMonday';
+    public const HOLIDAY = 'carnavalMonday';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1700;
+    public const ESTABLISHMENT_YEAR = 1700;
 
     /**
      * Tests Carnaval Monday on or after 1700.

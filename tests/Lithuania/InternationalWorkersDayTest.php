@@ -26,7 +26,7 @@ class InternationalWorkersDayTest extends LithuaniaBaseTestCase implements Yasum
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'internationalWorkersDay';
+    public const HOLIDAY = 'internationalWorkersDay';
 
     /**
      * @return array

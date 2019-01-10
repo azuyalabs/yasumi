@@ -25,7 +25,7 @@ class AGFESTTest extends CircularHeadBaseTestCase implements YasumiTestCaseInter
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'agfest';
+    public const HOLIDAY = 'agfest';
 
     /**
      * Tests AGFEST

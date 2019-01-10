@@ -25,7 +25,7 @@ class MaundyThursdayTest extends NorwayBaseTestCase implements YasumiTestCaseInt
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'maundyThursday';
+    public const HOLIDAY = 'maundyThursday';
 
     /**
      * Tests the holiday defined in this test.

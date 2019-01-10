@@ -24,7 +24,7 @@ class AnnunciationTest extends GreeceBaseTestCase implements YasumiTestCaseInter
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'annunciation';
+    public const HOLIDAY = 'annunciation';
 
     /**
      * Tests the holiday defined in this test.

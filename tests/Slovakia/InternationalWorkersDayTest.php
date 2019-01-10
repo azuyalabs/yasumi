@@ -30,7 +30,7 @@ class InternationalWorkersDayTest extends SlovakiaBaseTestCase implements Yasumi
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'internationalWorkersDay';
+    public const HOLIDAY = 'internationalWorkersDay';
 
 
     /**

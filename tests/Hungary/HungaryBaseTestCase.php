@@ -25,15 +25,15 @@ abstract class HungaryBaseTestCase extends TestCase
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'Hungary';
+    public const REGION = 'Hungary';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Budapest';
+    public const TIMEZONE = 'Europe/Budapest';
 
     /**
      * Locale that is considered common for this provider
      */
-    const LOCALE = 'hu_HU';
+    public const LOCALE = 'hu_HU';
 }

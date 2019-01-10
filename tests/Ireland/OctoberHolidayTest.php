@@ -25,12 +25,12 @@ class OctoberHolidayTest extends IrelandBaseTestCase implements YasumiTestCaseIn
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'octoberHoliday';
+    public const HOLIDAY = 'octoberHoliday';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1977;
+    public const ESTABLISHMENT_YEAR = 1977;
 
     /**
      * Tests the holiday defined in this test.

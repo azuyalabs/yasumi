@@ -25,12 +25,12 @@ class VictoryInEuropeDayTest extends FranceBaseTestCase implements YasumiTestCas
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'victoryInEuropeDay';
+    public const HOLIDAY = 'victoryInEuropeDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1945;
+    public const ESTABLISHMENT_YEAR = 1945;
 
     /**
      * Tests Victory In Europe Day on or after 1945.

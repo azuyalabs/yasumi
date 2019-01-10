@@ -25,15 +25,15 @@ abstract class BasRhinBaseTestCase extends FranceBaseTestCase
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'France/BasRhin';
+    public const REGION = 'France/BasRhin';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Paris';
+    public const TIMEZONE = 'Europe/Paris';
 
     /**
      * Locale that is considered common for this provider
      */
-    const LOCALE = 'fr_FR';
+    public const LOCALE = 'fr_FR';
 }
