@@ -34,42 +34,42 @@ class Japan extends AbstractProvider
     /**
      * The gradient parameter of the approximate expression to calculate equinox day.
      */
-    public const EQUINOX_GRADIENT = 0.242194;
+    private const EQUINOX_GRADIENT = 0.242194;
 
     /**
      * The initial parameter of the approximate expression to calculate vernal equinox day from 1900 to 1979.
      */
-    public const VERNAL_EQUINOX_PARAM_1979 = 20.8357;
+    private const VERNAL_EQUINOX_PARAM_1979 = 20.8357;
 
     /**
      * The initial parameter of the approximate expression to calculate vernal equinox day from 1980 to 2099.
      */
-    public const VERNAL_EQUINOX_PARAM_2099 = 20.8431;
+    private const VERNAL_EQUINOX_PARAM_2099 = 20.8431;
 
     /**
      * The initial parameter of the approximate expression to calculate vernal equinox day from 2100 to 2150.
      */
-    public const VERNAL_EQUINOX_PARAM_2150 = 21.8510;
+    private const VERNAL_EQUINOX_PARAM_2150 = 21.8510;
 
     /**
      * The initial parameter of the approximate expression to calculate autumnal equinox day from 1851 to 1899.
      */
-    public const AUTUMNAL_EQUINOX_PARAM_1899 = 22.2588;
+    private const AUTUMNAL_EQUINOX_PARAM_1899 = 22.2588;
 
     /**
      * The initial parameter of the approximate expression to calculate autumnal equinox day from 1900 to 1979.
      */
-    public const AUTUMNAL_EQUINOX_PARAM_1979 = 23.2588;
+    private const AUTUMNAL_EQUINOX_PARAM_1979 = 23.2588;
 
     /**
      * The initial parameter of the approximate expression to calculate autumnal equinox day from 1980 to 2099.
      */
-    public const AUTUMNAL_EQUINOX_PARAM_2099 = 23.2488;
+    private const AUTUMNAL_EQUINOX_PARAM_2099 = 23.2488;
 
     /**
      * The initial parameter of the approximate expression to calculate autumnal equinox day from 2100 to 2150.
      */
-    public const AUTUMNAL_EQUINOX_PARAM_2150 = 24.2488;
+    private const AUTUMNAL_EQUINOX_PARAM_2150 = 24.2488;
 
     /**
      * Initialize holidays for Japan.
@@ -83,98 +83,19 @@ class Japan extends AbstractProvider
     {
         $this->timezone = 'Asia/Tokyo';
 
-        /**
-         * New Year's Day. New Year's Day in Japan is established since 1948.
-         */
+        // Add common holidays
         if ($this->year >= 1948) {
             $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
         }
 
-        /**
-         * National Foundation Day. National Foundation Day is held on February 11th and established since 1966.
-         */
-        if ($this->year >= 1966) {
-            $this->addHoliday(new Holiday(
-                'nationalFoundationDay',
-                ['en_US' => 'National Foundation Day', 'ja_JP' => '建国記念の日'],
-                new DateTime("$this->year-2-11", new DateTimeZone($this->timezone)),
-                $this->locale
-            ));
-        }
-
-        /**
-         * Showa Day. Showa Day is held on April 29th and established since 2007.
-         */
-        if ($this->year >= 2007) {
-            $this->addHoliday(new Holiday(
-                'showaDay',
-                ['en_US' => 'Showa Day', 'ja_JP' => '昭和の日'],
-                new DateTime("$this->year-4-29", new DateTimeZone($this->timezone)),
-                $this->locale
-            ));
-        }
-
-        /**
-         * Constitution Memorial Day. Constitution Memorial Day is held on May 3rd and established since 1948.
-         */
-        if ($this->year >= 1948) {
-            $this->addHoliday(new Holiday(
-                'constitutionMemorialDay',
-                ['en_US' => 'Constitution Memorial Day', 'ja_JP' => '憲法記念日'],
-                new DateTime("$this->year-5-3", new DateTimeZone($this->timezone)),
-                $this->locale
-            ));
-        }
-
-        /**
-         * Children's Day. Children's Day is held on May 5th and established since 1948.
-         */
-        if ($this->year >= 1948) {
-            $this->addHoliday(new Holiday(
-                'childrensDay',
-                ['en_US' => 'Children\'s Day', 'ja_JP' => 'こどもの日'],
-                new DateTime("$this->year-5-5", new DateTimeZone($this->timezone)),
-                $this->locale
-            ));
-        }
-
-        /**
-         * Culture Day. Culture Day is held on November 11th and established since 1948.
-         */
-        if ($this->year >= 1948) {
-            $this->addHoliday(new Holiday(
-                'cultureDay',
-                ['en_US' => 'Culture Day', 'ja_JP' => '文化の日'],
-                new DateTime("$this->year-11-3", new DateTimeZone($this->timezone)),
-                $this->locale
-            ));
-        }
-
-        /**
-         * Labor Thanksgiving Day. Labor Thanksgiving Day is held on November 23rd and established since 1948.
-         */
-        if ($this->year >= 1948) {
-            $this->addHoliday(new Holiday(
-                'laborThanksgivingDay',
-                ['en_US' => 'Labor Thanksgiving Day', 'ja_JP' => '勤労感謝の日'],
-                new DateTime("$this->year-11-23", new DateTimeZone($this->timezone)),
-                $this->locale
-            ));
-        }
-
-        /**
-         * Emperors Birthday. The Emperors Birthday is on December 23rd and celebrated as such since 1989.
-         * Prior to the death of Emperor Hirohito in 1989, this holiday was celebrated on April 29. See also "Shōwa Day".
-         */
-        if ($this->year >= 1989) {
-            $this->addHoliday(new Holiday(
-                'emperorsBirthday',
-                ['en_US' => 'Emperors Birthday', 'ja_JP' => '天皇誕生日'],
-                new DateTime("$this->year-12-23", new DateTimeZone($this->timezone)),
-                $this->locale
-            ));
-        }
-
+        // Calculate other holidays
+        $this->calculateNationalFoundationDay();
+        $this->calculateShowaDay();
+        $this->calculateConstitutionMemorialDay();
+        $this->calculateChildrensDay();
+        $this->calculateCultureDay();
+        $this->calculateLaborThanksgivingDay();
+        $this->calculateEmporersBirthday();
         $this->calculateVernalEquinoxDay();
         $this->calculateComingOfAgeDay();
         $this->calculateGreeneryDay();
@@ -185,6 +106,125 @@ class Japan extends AbstractProvider
         $this->calculateAutumnalEquinoxDay();
         $this->calculateSubstituteHolidays();
         $this->calculateBridgeHolidays();
+    }
+
+    /**
+     * National Foundation Day. National Foundation Day is held on February 11th and established since 1966.
+     *
+     * @throws \Exception
+     */
+    private function calculateNationalFoundationDay(): void
+    {
+        if ($this->year >= 1966) {
+            $this->addHoliday(new Holiday(
+                'nationalFoundationDay',
+                ['en_US' => 'National Foundation Day', 'ja_JP' => '建国記念の日'],
+                new DateTime("$this->year-2-11", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        }
+    }
+
+    /**
+     * Showa Day. Showa Day is held on April 29th and established since 2007.
+     *
+     * @throws \Exception
+     */
+    private function calculateShowaDay(): void
+    {
+        if ($this->year >= 2007) {
+            $this->addHoliday(new Holiday(
+                'showaDay',
+                ['en_US' => 'Showa Day', 'ja_JP' => '昭和の日'],
+                new DateTime("$this->year-4-29", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        }
+    }
+
+    /**
+     * Constitution Memorial Day. Constitution Memorial Day is held on May 3rd and established since 1948.
+     *
+     * @throws \Exception
+     */
+    private function calculateConstitutionMemorialDay(): void
+    {
+        if ($this->year >= 1948) {
+            $this->addHoliday(new Holiday(
+                'constitutionMemorialDay',
+                ['en_US' => 'Constitution Memorial Day', 'ja_JP' => '憲法記念日'],
+                new DateTime("$this->year-5-3", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        }
+    }
+    /**
+     * Children's Day. Children's Day is held on May 5th and established since 1948.
+     *
+     * @throws \Exception
+     */
+    private function calculateChildrensDay(): void
+    {
+        if ($this->year >= 1948) {
+            $this->addHoliday(new Holiday(
+                'childrensDay',
+                ['en_US' => 'Children\'s Day', 'ja_JP' => 'こどもの日'],
+                new DateTime("$this->year-5-5", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        }
+    }
+
+    /**
+     * Culture Day. Culture Day is held on November 11th and established since 1948.
+     *
+     * @throws \Exception
+     */
+    private function calculateCultureDay(): void
+    {
+        if ($this->year >= 1948) {
+            $this->addHoliday(new Holiday(
+                'cultureDay',
+                ['en_US' => 'Culture Day', 'ja_JP' => '文化の日'],
+                new DateTime("$this->year-11-3", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        }
+    }
+
+    /**
+     * Labor Thanksgiving Day. Labor Thanksgiving Day is held on November 23rd and established since 1948.
+     *
+     * @throws \Exception
+     */
+    private function calculateLaborThanksgivingDay(): void
+    {
+        if ($this->year >= 1948) {
+            $this->addHoliday(new Holiday(
+                'laborThanksgivingDay',
+                ['en_US' => 'Labor Thanksgiving Day', 'ja_JP' => '勤労感謝の日'],
+                new DateTime("$this->year-11-23", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        }
+    }
+
+    /**
+     * Emperors Birthday. The Emperors Birthday is on December 23rd and celebrated as such since 1989.
+     * Prior to the death of Emperor Hirohito in 1989, this holiday was celebrated on April 29. See also "Shōwa Day".
+     *
+     * @throws \Exception
+     */
+    private function calculateEmporersBirthday(): void
+    {
+        if ($this->year >= 1989) {
+            $this->addHoliday(new Holiday(
+                'emperorsBirthday',
+                ['en_US' => 'Emperors Birthday', 'ja_JP' => '天皇誕生日'],
+                new DateTime("$this->year-12-23", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        }
     }
 
     /**
