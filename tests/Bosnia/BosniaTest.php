@@ -13,7 +13,6 @@
 namespace Yasumi\tests\Bosnia;
 
 use Yasumi\Holiday;
-use Yasumi\tests\Bosnia\BosniaBaseTestCase;
 
 /**
  * Class for testing holidays in Bosnia.

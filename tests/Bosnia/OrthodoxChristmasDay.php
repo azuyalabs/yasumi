@@ -12,8 +12,6 @@
 
 namespace Yasumi\tests\Bosnia;
 
-use DateTime;
-use DateTimeZone;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 

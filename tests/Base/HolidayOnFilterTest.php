@@ -14,7 +14,6 @@ namespace Yasumi\tests\Base;
 
 use DateTime;
 use DateTimeZone;
-use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 use Yasumi\tests\YasumiBase;
 use Yasumi\Yasumi;

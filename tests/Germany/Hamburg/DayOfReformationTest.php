@@ -15,7 +15,6 @@ namespace Yasumi\tests\Germany\Hamburg;
 use DateTime;
 use DateTimeZone;
 use Yasumi\Holiday;
-use Yasumi\tests\Germany\Hamburg\HamburgBaseTestCase;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**

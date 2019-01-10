@@ -12,7 +12,6 @@
 
 namespace Yasumi\tests\Australia\ACT;
 
-use DateInterval;
 use DateTime;
 use DateTimeZone;
 use Yasumi\Holiday;
