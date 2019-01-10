@@ -28,7 +28,7 @@ class AppenzellAusserrhodenTest extends AppenzellAusserrhodenBaseTestCase
      * Tests if all official holidays in Appenzell Ausserrhoden (Switzerland) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $officialHolidays = [];
         if ($this->year >= 1994) {
@@ -41,7 +41,7 @@ class AppenzellAusserrhodenTest extends AppenzellAusserrhodenBaseTestCase
      * Tests if all regional holidays in Appenzell Ausserrhoden (Switzerland) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testRegionalHolidays()
+    public function testRegionalHolidays(): void
     {
         $this->assertDefinedHolidays([
             'goodFriday',
@@ -58,7 +58,7 @@ class AppenzellAusserrhodenTest extends AppenzellAusserrhodenBaseTestCase
      * Tests if all observed holidays in Appenzell Ausserrhoden (Switzerland) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testObservedHolidays()
+    public function testObservedHolidays(): void
     {
         $observedHolidays = [];
         if (($this->year >= 1899 && $this->year < 1994) || $this->year = 1891) {
@@ -72,7 +72,7 @@ class AppenzellAusserrhodenTest extends AppenzellAusserrhodenBaseTestCase
      * Tests if all seasonal holidays in Appenzell Ausserrhoden (Switzerland) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testSeasonalHolidays()
+    public function testSeasonalHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
     }
@@ -81,7 +81,7 @@ class AppenzellAusserrhodenTest extends AppenzellAusserrhodenBaseTestCase
      * Tests if all bank holidays in Appenzell Ausserrhoden (Switzerland) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testBankHolidays()
+    public function testBankHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
@@ -90,7 +90,7 @@ class AppenzellAusserrhodenTest extends AppenzellAusserrhodenBaseTestCase
      * Tests if all other holidays in Appenzell Ausserrhoden (Switzerland) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOtherHolidays()
+    public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }

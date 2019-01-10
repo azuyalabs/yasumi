@@ -25,7 +25,7 @@ class YasumiWorkdayTest extends TestCase
      * @throws \Exception
      * @throws \ReflectionException
      */
-    public function testNextWorkingDay()
+    public function testNextWorkingDay(): void
     {
         // Includes a weekend and a holiday
         $provider     = 'USA';
@@ -54,7 +54,7 @@ class YasumiWorkdayTest extends TestCase
      * @throws \Exception
      * @throws \ReflectionException
      */
-    public function testPreviousWorkingDay()
+    public function testPreviousWorkingDay(): void
     {
         // Includes a weekend and a holiday
         $provider     = 'USA';
@@ -84,7 +84,7 @@ class YasumiWorkdayTest extends TestCase
      * @throws \Exception
      * @throws \ReflectionException
      */
-    public function testYearBoundary()
+    public function testYearBoundary(): void
     {
         /**
          * Use Case (USA):

@@ -45,7 +45,7 @@ class NewYearsDayTest extends BaselLandschaftBaseTestCase implements YasumiTestC
      * Tests translated name of New Years Day.
      * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -59,7 +59,7 @@ class NewYearsDayTest extends BaselLandschaftBaseTestCase implements YasumiTestC
      * Tests type of the holiday defined in this test.
      * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OTHER);
     }

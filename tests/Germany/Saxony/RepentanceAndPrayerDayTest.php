@@ -73,7 +73,7 @@ class RepentanceAndPrayerDayTest extends SaxonyBaseTestCase implements YasumiTes
      * Tests the translated name of the holiday defined in this test.
      * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -87,7 +87,7 @@ class RepentanceAndPrayerDayTest extends SaxonyBaseTestCase implements YasumiTes
      * Tests type of the holiday defined in this test.
      * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(
             self::REGION,

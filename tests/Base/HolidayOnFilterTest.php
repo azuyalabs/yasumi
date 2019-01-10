@@ -33,7 +33,7 @@ class HolidayOnFilterTest extends TestCase
      * @throws \ReflectionException
      * @throws \Exception
      */
-    public function testHolidaysOnDate()
+    public function testHolidaysOnDate(): void
     {
         $timezone = 'Europe/Amsterdam';
         $holidays = Yasumi::create('Netherlands', 2016);
@@ -57,7 +57,7 @@ class HolidayOnFilterTest extends TestCase
      * @throws \ReflectionException
      * @throws \Exception
      */
-    public function testHolidaysNotOnDate()
+    public function testHolidaysNotOnDate(): void
     {
         $timezone = 'Europe/Amsterdam';
         $holidays = Yasumi::create('Netherlands', 2016);
@@ -81,7 +81,7 @@ class HolidayOnFilterTest extends TestCase
      * @throws \ReflectionException
      * @throws \Exception
      */
-    public function testCorrectNumberOfHolidaysOnDate()
+    public function testCorrectNumberOfHolidaysOnDate(): void
     {
         $timezone = 'Europe/Amsterdam';
         $holidays = Yasumi::create('Netherlands', 2016);

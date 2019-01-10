@@ -57,7 +57,7 @@ class ValentinesDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
      * Tests type of the holiday defined in this test.
      * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OTHER);
     }
@@ -66,7 +66,7 @@ class ValentinesDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
      * Tests the translated name of the holiday defined in this test.
      * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,

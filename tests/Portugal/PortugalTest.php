@@ -28,7 +28,7 @@ class PortugalTest extends PortugalBaseTestCase
      * Tests if all official holidays in Portugal are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -50,7 +50,7 @@ class PortugalTest extends PortugalBaseTestCase
      * Tests if all observed holidays in Portugal are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testObservedHolidays()
+    public function testObservedHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
@@ -59,7 +59,7 @@ class PortugalTest extends PortugalBaseTestCase
      * Tests if all seasonal holidays in Portugal are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testSeasonalHolidays()
+    public function testSeasonalHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
     }
@@ -68,7 +68,7 @@ class PortugalTest extends PortugalBaseTestCase
      * Tests if all bank holidays in Portugal are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testBankHolidays()
+    public function testBankHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
@@ -77,7 +77,7 @@ class PortugalTest extends PortugalBaseTestCase
      * Tests if all other holidays in PortugalPortugal are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOtherHolidays()
+    public function testOtherHolidays(): void
     {
         $holidays = [];
 

@@ -65,7 +65,7 @@ class AntifascistStruggleDayTest extends CroatiaBaseTestCase implements YasumiTe
      * Tests translated name of Day of Antifascist Struggle.
      * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -79,7 +79,7 @@ class AntifascistStruggleDayTest extends CroatiaBaseTestCase implements YasumiTe
      * Tests type of the holiday defined in this test.
      * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(
             self::REGION,

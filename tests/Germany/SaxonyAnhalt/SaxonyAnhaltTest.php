@@ -28,7 +28,7 @@ class SaxonyAnhaltTest extends SaxonyAnhaltBaseTestCase
      * Tests if all official holidays in Saxony-Anhalt (Germany) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $holidays = [
             'newYearsDay',
@@ -56,7 +56,7 @@ class SaxonyAnhaltTest extends SaxonyAnhaltBaseTestCase
      * Tests if all observed holidays in Saxony-Anhalt (Germany) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testObservedHolidays()
+    public function testObservedHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
@@ -65,7 +65,7 @@ class SaxonyAnhaltTest extends SaxonyAnhaltBaseTestCase
      * Tests if all seasonal holidays in Saxony-Anhalt (Germany) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testSeasonalHolidays()
+    public function testSeasonalHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
     }
@@ -74,7 +74,7 @@ class SaxonyAnhaltTest extends SaxonyAnhaltBaseTestCase
      * Tests if all bank holidays in Saxony-Anhalt (Germany) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testBankHolidays()
+    public function testBankHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
@@ -83,7 +83,7 @@ class SaxonyAnhaltTest extends SaxonyAnhaltBaseTestCase
      * Tests if all other holidays in Saxony-Anhalt (Germany) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOtherHolidays()
+    public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays(['epiphany'], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }

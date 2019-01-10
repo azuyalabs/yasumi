@@ -24,7 +24,7 @@ class YasumiExternalProvider implements ProviderInterface
     /**
      * Initialize country holidays.
      */
-    public function initialize()
+    public function initialize(): void
     {
         // We don't actually have to do anything here.
     }

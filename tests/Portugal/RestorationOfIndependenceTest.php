@@ -110,7 +110,7 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Yasu
      *
      * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::HOLIDAY_YEAR_ABOLISHED - 1);
         $this->assertTranslatedHolidayName(
@@ -134,7 +134,7 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Yasu
      *
      * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         // After establishment and before abolishment
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::HOLIDAY_YEAR_ABOLISHED - 1);

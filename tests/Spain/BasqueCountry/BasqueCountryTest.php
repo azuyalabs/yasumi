@@ -28,7 +28,7 @@ class BasqueCountryTest extends BasqueCountryBaseTestCase
      * Tests if all official holidays in Basque Country (Spain) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -49,7 +49,7 @@ class BasqueCountryTest extends BasqueCountryBaseTestCase
      * Tests if all observed holidays in Basque Country are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testObservedHolidays()
+    public function testObservedHolidays(): void
     {
         $this->assertDefinedHolidays([
             'maundyThursday',
@@ -62,7 +62,7 @@ class BasqueCountryTest extends BasqueCountryBaseTestCase
      * Tests if all seasonal holidays in Basque Country are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testSeasonalHolidays()
+    public function testSeasonalHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
     }
@@ -71,7 +71,7 @@ class BasqueCountryTest extends BasqueCountryBaseTestCase
      * Tests if all bank holidays in Basque Country are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testBankHolidays()
+    public function testBankHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
@@ -80,7 +80,7 @@ class BasqueCountryTest extends BasqueCountryBaseTestCase
      * Tests if all other holidays in Basque Country are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOtherHolidays()
+    public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays(['valentinesDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }

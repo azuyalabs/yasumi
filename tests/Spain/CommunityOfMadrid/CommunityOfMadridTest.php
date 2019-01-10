@@ -28,7 +28,7 @@ class CommunityOfMadridTest extends CommunityOfMadridBaseTestCase
      * Tests if all official holidays in the Community of Madrid (Spain) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -49,7 +49,7 @@ class CommunityOfMadridTest extends CommunityOfMadridBaseTestCase
      * Tests if all observed holidays in the Community of Madrid are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testObservedHolidays()
+    public function testObservedHolidays(): void
     {
         $this->assertDefinedHolidays([
             'stJosephsDay',
@@ -63,7 +63,7 @@ class CommunityOfMadridTest extends CommunityOfMadridBaseTestCase
      * Tests if all seasonal holidays in the Community of Madrid are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testSeasonalHolidays()
+    public function testSeasonalHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
     }
@@ -72,7 +72,7 @@ class CommunityOfMadridTest extends CommunityOfMadridBaseTestCase
      * Tests if all bank holidays in the Community of Madrid are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testBankHolidays()
+    public function testBankHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
@@ -81,7 +81,7 @@ class CommunityOfMadridTest extends CommunityOfMadridBaseTestCase
      * Tests if all other holidays in the Community of Madrid are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOtherHolidays()
+    public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays(['valentinesDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }

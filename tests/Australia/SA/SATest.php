@@ -30,7 +30,7 @@ class SATest extends SABaseTestCase
      * Tests if all official holidays in SA (Australia) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $this->assertDefinedHolidays([
             'newYearsDay',

@@ -59,7 +59,7 @@ class NafelserFahrtTest extends GlarusBaseTestCase implements YasumiTestCaseInte
      * Tests translated name of Näfelser Fahrt.
      * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -73,7 +73,7 @@ class NafelserFahrtTest extends GlarusBaseTestCase implements YasumiTestCaseInte
      * Tests type of the holiday defined in this test.
      * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(
             self::REGION,

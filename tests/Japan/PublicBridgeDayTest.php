@@ -50,7 +50,7 @@ class PublicBridgeDayTest extends JapanBaseTestCase implements YasumiTestCaseInt
      * Tests the translated name of the holiday defined in this test.
      * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->year, [self::LOCALE => '国民の休日']);
     }
@@ -59,7 +59,7 @@ class PublicBridgeDayTest extends JapanBaseTestCase implements YasumiTestCaseInt
      * Tests type of the holiday defined in this test.
      * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->year, Holiday::TYPE_OFFICIAL);
     }

@@ -30,7 +30,7 @@ class NorthwestTest extends NorthwestBaseTestCase
      * Tests if all official holidays in northwestern Tasmania (Australia) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $this->assertDefinedHolidays([
             'newYearsDay',

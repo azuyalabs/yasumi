@@ -84,7 +84,7 @@ class PortugalDayTest extends PortugalBaseTestCase implements YasumiTestCaseInte
      *
      * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR_BEFORE);
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $year, [self::LOCALE => 'Dia de Portugal']);
@@ -98,7 +98,7 @@ class PortugalDayTest extends PortugalBaseTestCase implements YasumiTestCaseInte
      *
      * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR_BEFORE);
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OFFICIAL);

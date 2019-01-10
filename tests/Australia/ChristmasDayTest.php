@@ -93,7 +93,7 @@ class ChristmasDayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
      *
      * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             $this->region,
@@ -114,7 +114,7 @@ class ChristmasDayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
      *
      * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
         $this->assertHolidayType($this->region, self::HOLIDAY2, 2016, Holiday::TYPE_OFFICIAL);

@@ -28,7 +28,7 @@ class BasRhinTest extends BasRhinBaseTestCase
      * Tests if all official holidays in Bas-Rhin are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -51,7 +51,7 @@ class BasRhinTest extends BasRhinBaseTestCase
      * Tests if all observed holidays in Bas-Rhin (France) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testObservedHolidays()
+    public function testObservedHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
@@ -60,7 +60,7 @@ class BasRhinTest extends BasRhinBaseTestCase
      * Tests if all seasonal holidays in Bas-Rhin (France) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testSeasonalHolidays()
+    public function testSeasonalHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
     }
@@ -69,7 +69,7 @@ class BasRhinTest extends BasRhinBaseTestCase
      * Tests if all bank holidays in Bas-Rhin (France) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testBankHolidays()
+    public function testBankHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
@@ -78,7 +78,7 @@ class BasRhinTest extends BasRhinBaseTestCase
      * Tests if all other holidays in Bas-Rhin (France) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOtherHolidays()
+    public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }

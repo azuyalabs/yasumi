@@ -34,7 +34,7 @@ class HolidayTest extends TestCase
      * @expectedException InvalidArgumentException
      * @throws \Exception
      */
-    public function testHolidayBlankNameInvalidArgumentException()
+    public function testHolidayBlankNameInvalidArgumentException(): void
     {
         new Holiday('', [], new \DateTime());
     }
@@ -45,7 +45,7 @@ class HolidayTest extends TestCase
      * @expectedException \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function testCreateHolidayUnknownLocaleException()
+    public function testCreateHolidayUnknownLocaleException(): void
     {
         new Holiday('testHoliday', [], new DateTime(), 'wx-YZ');
     }
@@ -54,7 +54,7 @@ class HolidayTest extends TestCase
      * Tests that a Yasumi holiday instance can be serialized to a JSON object.
      * @throws \Exception
      */
-    public function testHolidayIsJsonSerializable()
+    public function testHolidayIsJsonSerializable(): void
     {
         $holiday  = new Holiday('testHoliday', [], new DateTime(), 'en_US');
         $json     = \json_encode($holiday);
@@ -70,7 +70,7 @@ class HolidayTest extends TestCase
      * DateTime or DateTimeImmutable)
      * @throws \Exception
      */
-    public function testHolidayWithDateTimeInterface()
+    public function testHolidayWithDateTimeInterface(): void
     {
         // Assert with DateTime instance
         $holiday = new Holiday('testHoliday', [], new \DateTime(), 'en_US');
@@ -87,7 +87,7 @@ class HolidayTest extends TestCase
      * Tests the getName function of the Holiday object with no translations for the name given.
      * @throws \Exception
      */
-    public function testHolidayGetNameWithNoTranslations()
+    public function testHolidayGetNameWithNoTranslations(): void
     {
         $name    = 'testHoliday';
         $holiday = new Holiday($name, [], new DateTime(), 'en_US');
@@ -100,7 +100,7 @@ class HolidayTest extends TestCase
      * Tests the getName function of the Holiday object with only a default translation for the name given.
      * @throws \Exception
      */
-    public function testHolidayGetNameWithOnlyDefaultTranslation()
+    public function testHolidayGetNameWithOnlyDefaultTranslation(): void
     {
         $name        = 'testHoliday';
         $translation = 'My Holiday';
@@ -116,7 +116,7 @@ class HolidayTest extends TestCase
      *
      * @throws \Exception
      */
-    public function testHolidayGetNameWithOneNonDefaultTranslation()
+    public function testHolidayGetNameWithOneNonDefaultTranslation(): void
     {
         $name        = 'testHoliday';
         $translation = 'My Holiday';
@@ -131,7 +131,7 @@ class HolidayTest extends TestCase
      * Tests the getName function of the Holiday object with global translations and no custom translation.
      * @throws \Exception
      */
-    public function testHolidayGetNameWithGlobalTranslations()
+    public function testHolidayGetNameWithGlobalTranslations(): void
     {
         /** @var TranslationsInterface|PHPUnit_Framework_MockObject_MockObject $translationsStub */
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
@@ -157,7 +157,7 @@ class HolidayTest extends TestCase
      * Tests the getName function of the Holiday object with global translations and a new custom translation.
      * @throws \Exception
      */
-    public function testHolidayGetNameWithGlobalAndCustomTranslations()
+    public function testHolidayGetNameWithGlobalAndCustomTranslations(): void
     {
         /** @var TranslationsInterface|PHPUnit_Framework_MockObject_MockObject $translationsStub */
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
@@ -189,7 +189,7 @@ class HolidayTest extends TestCase
      * Tests the getName function of the Holiday object with global translations and an overriding custom translation.
      * @throws \Exception
      */
-    public function testHolidayGetNameWithOverridenGlobalTranslations()
+    public function testHolidayGetNameWithOverridenGlobalTranslations(): void
     {
         /** @var TranslationsInterface|PHPUnit_Framework_MockObject_MockObject $translationsStub */
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();

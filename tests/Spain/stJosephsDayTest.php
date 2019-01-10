@@ -62,7 +62,7 @@ class stJosephsDayTest extends SpainBaseTestCase implements YasumiTestCaseInterf
      * Tests the translated name of the holiday defined in this test.
      * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -76,7 +76,7 @@ class stJosephsDayTest extends SpainBaseTestCase implements YasumiTestCaseInterf
      * Tests type of the holiday defined in this test.
      * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OBSERVANCE);
     }

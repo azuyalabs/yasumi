@@ -28,7 +28,7 @@ class PolandTest extends PolandBaseTestCase
      * Tests if all official holidays in Poland are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -50,7 +50,7 @@ class PolandTest extends PolandBaseTestCase
      * Tests if all observed holidays in Poland are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testObservedHolidays()
+    public function testObservedHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
@@ -59,7 +59,7 @@ class PolandTest extends PolandBaseTestCase
      * Tests if all seasonal holidays in Poland are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testSeasonalHolidays()
+    public function testSeasonalHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
     }
@@ -68,7 +68,7 @@ class PolandTest extends PolandBaseTestCase
      * Tests if all bank holidays in Poland are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testBankHolidays()
+    public function testBankHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
@@ -77,7 +77,7 @@ class PolandTest extends PolandBaseTestCase
      * Tests if all other holidays in Poland are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOtherHolidays()
+    public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays(['corpusChristi'], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }

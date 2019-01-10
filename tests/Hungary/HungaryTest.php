@@ -28,7 +28,7 @@ class HungaryTest extends HungaryBaseTestCase
      * Tests if all official holidays in Hungary are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $officialHolidays = [
             'newYearsDay',
@@ -64,7 +64,7 @@ class HungaryTest extends HungaryBaseTestCase
      * Tests if all observed holidays in Hungary are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testObservedHolidays()
+    public function testObservedHolidays(): void
     {
         $this->assertDefinedHolidays(['pentecost'], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
@@ -73,7 +73,7 @@ class HungaryTest extends HungaryBaseTestCase
      * Tests if all seasonal holidays in Hungary are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testSeasonalHolidays()
+    public function testSeasonalHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
     }
@@ -82,7 +82,7 @@ class HungaryTest extends HungaryBaseTestCase
      * Tests if all bank holidays in Hungary are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testBankHolidays()
+    public function testBankHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
@@ -91,7 +91,7 @@ class HungaryTest extends HungaryBaseTestCase
      * Tests if all other holidays in Hungary are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOtherHolidays()
+    public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }

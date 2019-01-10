@@ -30,7 +30,7 @@ class WATest extends WABaseTestCase
      * Tests if all official holidays in WA (Australia) are defined by the provider class
      * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
