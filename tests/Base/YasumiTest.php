@@ -125,7 +125,7 @@ class YasumiTest extends TestCase
         // There are 16 holidays in Japan in the year 2015, with 1 substituted holiday.
         $holidays = Yasumi::create('Japan', 2015);
 
-        $this->assertInternalType('int', $holidays->count());
+        $this->assertIsInt($holidays->count());
         $this->assertEquals(16, $holidays->count());
         $this->assertNotEquals(17, $holidays->count());
     }
@@ -138,7 +138,7 @@ class YasumiTest extends TestCase
         $holidays = Yasumi::create('Japan', Factory::create()->numberBetween(1949, self::YEAR_UPPER_BOUND));
         $holiday  = $holidays->getHoliday('newYearsDay');
 
-        $this->assertInternalType('string', $holiday->getType());
+        $this->assertIsString($holiday->getType());
     }
 
     /**
@@ -149,7 +149,7 @@ class YasumiTest extends TestCase
         $year     = Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND);
         $holidays = Yasumi::create('Netherlands', $year);
 
-        $this->assertInternalType('integer', $holidays->getYear());
+        $this->assertIsInt($holidays->getYear());
         $this->assertEquals($year, $holidays->getYear());
     }
 
@@ -228,7 +228,7 @@ class YasumiTest extends TestCase
         $holidays     = Yasumi::create('Japan', 2015);
         $holidayNames = $holidays->getHolidayNames();
 
-        $this->assertInternalType('array', $holidayNames);
+        $this->assertIsArray($holidayNames);
         $this->assertCount(17, $holidayNames);
         $this->assertContains('newYearsDay', $holidayNames);
     }
@@ -242,7 +242,7 @@ class YasumiTest extends TestCase
 
         $when = $holidays->whenIs('autumnalEquinoxDay');
 
-        $this->assertInternalType('string', $when);
+        $this->assertIsString($when);
         $this->assertEquals('2010-09-23', $when);
     }
 
@@ -277,7 +277,7 @@ class YasumiTest extends TestCase
         $holidays = Yasumi::create('Netherlands', 2110);
         $weekDay  = $holidays->whatWeekDayIs('stMartinsDay');
 
-        $this->assertInternalType('int', $weekDay);
+        $this->assertIsInt($weekDay);
         $this->assertEquals(2, $weekDay);
     }
 
@@ -300,7 +300,7 @@ class YasumiTest extends TestCase
         $providers = Yasumi::getProviders();
 
         $this->assertNotEmpty($providers);
-        $this->assertInternalType('array', $providers);
+        $this->assertIsArray($providers);
         $this->assertContains('Netherlands', $providers);
         $this->assertEquals('USA', $providers['US']);
         $this->assertNotContains('AbstractProvider', $providers);
@@ -316,12 +316,12 @@ class YasumiTest extends TestCase
         $initial_providers = $providers;
 
         $this->assertNotEmpty($providers);
-        $this->assertInternalType('array', $providers);
+        $this->assertIsArray($providers);
         $this->assertContains($provider, $providers);
 
         $providers = Yasumi::getProviders();
         $this->assertNotEmpty($providers);
-        $this->assertInternalType('array', $providers);
+        $this->assertIsArray($providers);
         $this->assertContains($provider, $providers);
         $this->assertEquals($initial_providers, $providers);
     }
@@ -337,12 +337,12 @@ class YasumiTest extends TestCase
 
         // Assertion using a DateTime instance
         $isHoliday = Yasumi::create($provider, $year)->isHoliday(new \DateTime($date));
-        $this->assertInternalType('bool', $isHoliday);
+        $this->assertIsBool($isHoliday);
         $this->assertTrue($isHoliday);
 
         // Assertion using a DateTimeImmutable instance
         $isHoliday = Yasumi::create($provider, $year)->isHoliday(new \DateTimeImmutable($date));
-        $this->assertInternalType('bool', $isHoliday);
+        $this->assertIsBool($isHoliday);
         $this->assertTrue($isHoliday);
 
         unset($isHoliday);
@@ -359,12 +359,12 @@ class YasumiTest extends TestCase
 
         // Assertion using a DateTime instance
         $isHoliday = Yasumi::create($provider, $year)->isHoliday(new \DateTime($date));
-        $this->assertInternalType('bool', $isHoliday);
+        $this->assertIsBool($isHoliday);
         $this->assertFalse($isHoliday);
 
         // Assertion using a DateTimeImmutable instance
         $isHoliday = Yasumi::create($provider, $year)->isHoliday(new \DateTimeImmutable($date));
-        $this->assertInternalType('bool', $isHoliday);
+        $this->assertIsBool($isHoliday);
         $this->assertFalse($isHoliday);
 
         unset($isHoliday);
@@ -398,12 +398,12 @@ class YasumiTest extends TestCase
 
         // Assertion using a DateTime instance
         $isWorkingDay = Yasumi::create($provider, $year)->isWorkingDay(new \DateTime($date));
-        $this->assertInternalType('bool', $isWorkingDay);
+        $this->assertIsBool($isWorkingDay);
         $this->assertTrue($isWorkingDay);
 
         // Assertion using a DateTimeImmutable instance
         $isWorkingDay = Yasumi::create($provider, $year)->isWorkingDay(new \DateTimeImmutable($date));
-        $this->assertInternalType('bool', $isWorkingDay);
+        $this->assertIsBool($isWorkingDay);
         $this->assertTrue($isWorkingDay);
 
         unset($isWorkingDay);
@@ -423,12 +423,12 @@ class YasumiTest extends TestCase
 
         // Assertion using a DateTime instance
         $isNotWorkingDay = Yasumi::create($provider, $year)->isWorkingDay(new \DateTime($date));
-        $this->assertInternalType('bool', $isNotWorkingDay);
+        $this->assertIsBool($isNotWorkingDay);
         $this->assertFalse($isNotWorkingDay);
 
         // Assertion using a DateTimeImmutable instance
         $isNotWorkingDay = Yasumi::create($provider, $year)->isWorkingDay(new \DateTimeImmutable($date));
-        $this->assertInternalType('bool', $isNotWorkingDay);
+        $this->assertIsBool($isNotWorkingDay);
         $this->assertFalse($isNotWorkingDay);
 
         unset($isNotWorkingDay);

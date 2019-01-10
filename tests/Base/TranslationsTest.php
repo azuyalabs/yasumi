@@ -51,7 +51,7 @@ class TranslationsTest extends TestCase
         $this->assertEquals([$locale => $translation], $translations->getTranslations($shortName));
 
         $this->assertNotNull($translations->getTranslation($shortName, $locale));
-        $this->assertInternalType('string', $translations->getTranslation($shortName, $locale));
+        $this->assertIsString($translations->getTranslation($shortName, $locale));
         $this->assertEquals($translation, $translations->getTranslation($shortName, $locale));
     }
 
@@ -73,7 +73,7 @@ class TranslationsTest extends TestCase
         $this->assertEquals([$firstLocale => $firstTranslation], $translations->getTranslations($firstShortName));
 
         $this->assertNotNull($translations->getTranslation($firstShortName, $firstLocale));
-        $this->assertInternalType('string', $translations->getTranslation($firstShortName, $firstLocale));
+        $this->assertIsString($translations->getTranslation($firstShortName, $firstLocale));
         $this->assertEquals($firstTranslation, $translations->getTranslation($firstShortName, $firstLocale));
 
         $secondLocale      = 'nl_NL';
@@ -87,7 +87,7 @@ class TranslationsTest extends TestCase
         $this->assertEquals([$secondLocale => $secondTranslation], $translations->getTranslations($secondShortName));
 
         $this->assertNotNull($translations->getTranslation($secondShortName, $secondLocale));
-        $this->assertInternalType('string', $translations->getTranslation($secondShortName, $secondLocale));
+        $this->assertIsString($translations->getTranslation($secondShortName, $secondLocale));
         $this->assertEquals($secondTranslation, $translations->getTranslation($secondShortName, $secondLocale));
 
         $thirdLocale      = 'en_US';
@@ -104,7 +104,7 @@ class TranslationsTest extends TestCase
         );
 
         $this->assertNotNull($translations->getTranslation($thirdShortName, $thirdLocale));
-        $this->assertInternalType('string', $translations->getTranslation($thirdShortName, $thirdLocale));
+        $this->assertIsString($translations->getTranslation($thirdShortName, $thirdLocale));
         $this->assertEquals($thirdTranslation, $translations->getTranslation($thirdShortName, $thirdLocale));
     }
 
@@ -186,7 +186,7 @@ FILE;
 
         $this->assertNotNull($translations->getTranslations($shortName));
         $this->assertNotEmpty($translations->getTranslations($shortName));
-        $this->assertInternalType('string', $translations->getTranslation($shortName, $locale));
+        $this->assertIsString($translations->getTranslation($shortName, $locale));
         $this->assertEquals($translation, $translations->getTranslation($shortName, $locale));
     }
 
@@ -289,7 +289,7 @@ FILE;
 
         $this->assertNotNull($translations->getTranslations($firstShortName));
         $this->assertNotEmpty($translations->getTranslations($firstShortName));
-        $this->assertInternalType('string', $translations->getTranslation($firstShortName, $locale));
+        $this->assertIsString($translations->getTranslation($firstShortName, $locale));
         $this->assertEquals($translation, $translations->getTranslation($firstShortName, $locale));
 
         $locale      = 'nl_NL';
@@ -297,7 +297,7 @@ FILE;
 
         $this->assertNotNull($translations->getTranslations($secondShortName));
         $this->assertNotEmpty($translations->getTranslations($secondShortName));
-        $this->assertInternalType('string', $translations->getTranslation($secondShortName, $locale));
+        $this->assertIsString($translations->getTranslation($secondShortName, $locale));
         $this->assertEquals($translation, $translations->getTranslation($secondShortName, $locale));
     }
 }

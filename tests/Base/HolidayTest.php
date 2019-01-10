@@ -57,7 +57,7 @@ class HolidayTest extends TestCase
         $json     = \json_encode($holiday);
         $instance = \json_decode($json, true);
 
-        $this->assertInternalType('array', $instance);
+        $this->assertIsArray($instance);
         $this->assertNotNull($instance);
         $this->assertArrayHasKey('shortName', $instance);
     }
@@ -87,7 +87,7 @@ class HolidayTest extends TestCase
         $name    = 'testHoliday';
         $holiday = new Holiday($name, [], new DateTime(), 'en_US');
 
-        $this->assertInternalType('string', $holiday->getName());
+        $this->assertIsString($holiday->getName());
         $this->assertEquals($name, $holiday->getName());
     }
 
@@ -101,7 +101,7 @@ class HolidayTest extends TestCase
         $locale      = 'en_US';
         $holiday     = new Holiday($name, [$locale => $translation], new DateTime(), $locale);
 
-        $this->assertInternalType('string', $holiday->getName());
+        $this->assertIsString($holiday->getName());
         $this->assertEquals($translation, $holiday->getName());
     }
 
@@ -115,7 +115,7 @@ class HolidayTest extends TestCase
         $holiday     = new Holiday($name, ['en_US' => $translation], new DateTime(), 'nl_NL');
 
         $this->assertNotNull($holiday->getName());
-        $this->assertInternalType('string', $holiday->getName());
+        $this->assertIsString($holiday->getName());
         $this->assertEquals($translation, $holiday->getName());
     }
 
@@ -140,7 +140,7 @@ class HolidayTest extends TestCase
         $holiday->mergeGlobalTranslations($translationsStub);
 
         $this->assertNotNull($holiday->getName());
-        $this->assertInternalType('string', $holiday->getName());
+        $this->assertIsString($holiday->getName());
         $this->assertEquals($translations[$locale], $holiday->getName());
     }
 
@@ -171,7 +171,7 @@ class HolidayTest extends TestCase
         $holiday->mergeGlobalTranslations($translationsStub);
 
         $this->assertNotNull($holiday->getName());
-        $this->assertInternalType('string', $holiday->getName());
+        $this->assertIsString($holiday->getName());
         $this->assertEquals($customTranslation, $holiday->getName());
     }
 
@@ -202,7 +202,7 @@ class HolidayTest extends TestCase
         $holiday->mergeGlobalTranslations($translationsStub);
 
         $this->assertNotNull($holiday->getName());
-        $this->assertInternalType('string', $holiday->getName());
+        $this->assertIsString($holiday->getName());
         $this->assertEquals($customTranslation, $holiday->getName());
     }
 }
