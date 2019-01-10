@@ -243,7 +243,7 @@ FILE;
      */
     public function testLoadingTranslationsFromInexistentDirectory(): void
     {
-        vfsStream::setup('root');
+        vfsStream::setup();
 
         $translations = new Translations(self::LOCALES);
         $translations->loadTranslations(vfsStream::url('root/lang'));
