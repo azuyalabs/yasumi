@@ -163,12 +163,16 @@ class Australia extends AbstractProvider
         $date = new DateTime("$this->year-04-25", new DateTimeZone($this->timezone));
         $this->calculateHoliday('anzacDay', ['en_AU' => 'ANZAC Day'], $date, false, false);
         $easter = $this->calculateEaster($this->year, $this->timezone);
+
         $easterMonday = $this->calculateEaster($this->year, $this->timezone);
         $easterMonday->add(new DateInterval('P1D'));
-        if (($date->format('Y-m-d') === $easter->format('Y-m-d')) || ($date->format('Y-m-d') === $easterMonday->format('Y-m-d'))) {
+
+        $fDate = $date->format('Y-m-d');
+        if ($fDate === $easter->format('Y-m-d') || $fDate === $easterMonday->format('Y-m-d')) {
             $easterMonday->add(new DateInterval('P1D'));
             $this->calculateHoliday('easterTuesday', ['en_AU' => 'Easter Tuesday'], $easterMonday, false, false);
         }
+        unset($fDate);
     }
 
     /**
