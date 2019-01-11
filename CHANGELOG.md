@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Added
 
 ### Changed
+- Changed Japanese holiday for the 2020 Olympic Games.Marine Day,Mountain Day and Health And Sports Day. [\#113](https://github.com/azuyalabs/yasumi/pull/113)
 - Changed translation for Norway's national day. [\#98](https://github.com/azuyalabs/yasumi/pull/98)
 
 ### Fixed
