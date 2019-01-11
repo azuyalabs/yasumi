@@ -303,6 +303,8 @@ class YasumiTest extends PHPUnit_Framework_TestCase
         $this->assertNotEmpty($providers);
         $this->assertInternalType('array', $providers);
         $this->assertContains('Netherlands', $providers);
+        $this->assertEquals('USA', $providers['US']);
+        $this->assertNotContains('AbstractProvider', $providers);
     }
 
     /**
