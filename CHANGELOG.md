@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [Unreleased]
 
 ### Added
+
+### Changed
+
+### Fixed
+
+### Removed
+
+
+## [2.0.0] - 2019-01-11
+
+### Added
 - New filter to select holidays that happen on a given date [\#119](https://github.com/azuyalabs/yasumi/pull/119) ([cruxicheiros](https://github.com/cruxicheiros))
 - Holiday Providers for all Australian states and territories. [\#112](https://github.com/azuyalabs/yasumi/pull/112) ([Milamber33](https://github.com/Milamber33))
 - Holiday Provider for Bosnia. [\#94](https://github.com/azuyalabs/yasumi/pull/94) ([TheAdnan](https://github.com/TheAdnan))
@@ -14,10 +25,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Added Reformation Day as offical holiday since 2018 in Hamburg (Germany). [#108](https://github.com/azuyalabs/yasumi/pull/108) ([HenningCash](https://github.com/HenningCash))
 - Added Reformation Day as offical holiday since 2018 in Bremen (Germany). [#116](https://github.com/azuyalabs/yasumi/issues/116) ([TalonTR](https://github.com/TalonTR))
 - The (observed) holidays Lukkeloven, Constitution Day, New Year's Eve and Labour Day, as well as summertime and wintertime are included for Denmark [\#104](https://github.com/azuyalabs/yasumi/pull/104) ([c960657](https://github.com/c960657))
-- Added Scrutinizer integration for additional code quality checks.
 
 ### Changed
-- Upgraded entirely to PHP version 7 with PHP7.1 being the minimum required version. Base code and all unit tests have been reworked to compatibility with PHP 7.
+- Upgraded entirely to PHP version 7 with PHP 7.1 being the minimum required version. Base code and all unit tests have been reworked to compatibility with PHP 7.
 - Upgraded to PHPUnit to version 7.5.
 - Changed Japanese holiday for the 2020 Olympic Games. Marine Day, Mountain Day and Health And Sports Day. [\#113](https://github.com/azuyalabs/yasumi/pull/113) ([cookie-maker](https://github.com/cookie-maker))
 - Summer/winter time is now fetched from PHP's tz database. [\#103](https://github.com/azuyalabs/yasumi/pull/103) ([c960657](https://github.com/c960657))
@@ -39,6 +49,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Fixed bug in provider list generation related to variable order of files returned by the filesystem [\#107](https://github.com/azuyalabs/yasumi/pull/107) ([leafnode](https://github.com/leafnode))
 
 ### Removed
+
 
 ## [1.8.0] - 2018-02-21
 
