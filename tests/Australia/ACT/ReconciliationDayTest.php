@@ -2,15 +2,15 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia;
+namespace Yasumi\tests\Australia\ACT;
 
 use DateTime;
 use DateTimeZone;
@@ -18,29 +18,30 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing QueensBirthday in Australia.
+ * Class for testing Reconciliation Day in ACT (Australia)..
  */
-abstract class QueensBirthdayTest extends AustraliaBaseTestCase implements YasumiTestCaseInterface
+class ReconciliationDayTest extends ACTBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'queensBirthday';
+    public const HOLIDAY = 'reconciliationDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1950;
-
-    protected $dateFormat; // picked a random date -- sorry :)
+    public const ESTABLISHMENT_YEAR = 2018;
 
     /**
-     * Tests Labour Day
+     * Tests Reconciliation Day
      *
      * @dataProvider HolidayDataProvider
      *
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
+     *
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHoliday($year, $expected)
     {
@@ -52,26 +53,27 @@ abstract class QueensBirthdayTest extends AustraliaBaseTestCase implements Yasum
         );
     }
 
-
     /**
      * Returns a list of test dates
      *
      * @return array list of test dates for the holiday defined in this test
      */
-    public function HolidayDataProvider()
+    public function HolidayDataProvider(): array
     {
         $data = [
-            [2010, '2010-06-14'],
-            [2011, '2011-06-13'],
-            [2012, '2012-06-11'],
-            [2013, '2013-06-10'],
-            [2014, '2014-06-09'],
-            [2015, '2015-06-08'],
-            [2016, '2016-06-13'],
-            [2017, '2017-06-12'],
-            [2018, '2018-06-11'],
-            [2019, '2019-06-10'],
-            [2020, '2020-06-08'],
+            [2018, '2018-05-28'],
+            [2019, '2019-05-27'],
+            [2020, '2020-06-01'],
+            [2021, '2021-05-31'],
+            [2022, '2022-05-30'],
+            [2023, '2023-05-29'],
+            [2024, '2024-05-27'],
+            [2025, '2025-06-02'],
+            [2026, '2026-06-01'],
+            [2027, '2027-05-31'],
+            [2028, '2028-05-29'],
+            [2029, '2029-05-28'],
+            [2030, '2030-05-27'],
         ];
 
         return $data;
@@ -79,21 +81,23 @@ abstract class QueensBirthdayTest extends AustraliaBaseTestCase implements Yasum
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             $this->region,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Queens Birthday']
+            [self::LOCALE => 'Reconciliation Day']
         );
     }
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(
             $this->region,

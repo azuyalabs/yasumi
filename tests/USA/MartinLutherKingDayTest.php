@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\USA;
@@ -25,16 +25,18 @@ class MartinLutherKingDayTest extends USABaseTestCase implements YasumiTestCaseI
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'martinLutherKingDay';
+    public const HOLIDAY = 'martinLutherKingDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1986;
+    public const ESTABLISHMENT_YEAR = 1986;
 
     /**
      * Tests Dr. Martin Luther King Day on or after 1986. Dr. Martin Luther King Day was established since 1986 on the
      * third Monday of January.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testMartinLutherKingDayOnAfter1986()
     {
@@ -50,6 +52,7 @@ class MartinLutherKingDayTest extends USABaseTestCase implements YasumiTestCaseI
     /**
      * Tests Dr. Martin Luther King Day before 1986. Dr. Martin Luther King Day was established since 1996 on the third
      * Monday of January.
+     * @throws \ReflectionException
      */
     public function testMartinLutherKingDayBefore1986()
     {
@@ -62,8 +65,9 @@ class MartinLutherKingDayTest extends USABaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -75,8 +79,9 @@ class MartinLutherKingDayTest extends USABaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(
             self::REGION,

@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Spain\ValencianCommunity;
@@ -25,15 +25,17 @@ class ValencianCommunityDayTest extends ValencianCommunityBaseTestCase implement
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'valencianCommunityDay';
+    public const HOLIDAY = 'valencianCommunityDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1239; // Not entirely sure about this year
+    public const ESTABLISHMENT_YEAR = 1239; // Not entirely sure about this year
 
     /**
      * Tests the holiday defined in this test on or after establishment.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testHolidayOnAfterEstablishment()
     {
@@ -48,6 +50,7 @@ class ValencianCommunityDayTest extends ValencianCommunityBaseTestCase implement
 
     /**
      * Tests the holiday defined in this test before establishment.
+     * @throws \ReflectionException
      */
     public function testHolidayBeforeEstablishment()
     {
@@ -60,8 +63,9 @@ class ValencianCommunityDayTest extends ValencianCommunityBaseTestCase implement
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -73,8 +77,9 @@ class ValencianCommunityDayTest extends ValencianCommunityBaseTestCase implement
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(
             self::REGION,

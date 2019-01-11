@@ -3,12 +3,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Romania;
@@ -28,8 +28,9 @@ class RomaniaTest extends RomaniaBaseTestCase
 
     /**
      * Tests if all official holidays in Romania are defined by the provider class
+     * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $national_holidays = [
             'newYearsDay',
@@ -56,8 +57,9 @@ class RomaniaTest extends RomaniaBaseTestCase
 
     /**
      * Tests if all observed holidays in Romania are defined by the provider class
+     * @throws \ReflectionException
      */
-    public function testObservedHolidays()
+    public function testObservedHolidays(): void
     {
         $ObservedHolidays = [];
 
@@ -74,24 +76,27 @@ class RomaniaTest extends RomaniaBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Romania are defined by the provider class
+     * @throws \ReflectionException
      */
-    public function testSeasonalHolidays()
+    public function testSeasonalHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
     }
 
     /**
      * Tests if all bank holidays in Romania are defined by the provider class
+     * @throws \ReflectionException
      */
-    public function testBankHolidays()
+    public function testBankHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
 
     /**
      * Tests if all other holidays in Romania are defined by the provider class
+     * @throws \ReflectionException
      */
-    public function testOtherHolidays()
+    public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }

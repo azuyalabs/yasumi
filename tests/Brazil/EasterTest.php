@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Brazil;
@@ -26,10 +26,12 @@ class EasterTest extends BrazilBaseTestCase implements YasumiTestCaseInterface
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'easter';
+    public const HOLIDAY = 'easter';
 
     /**
      * Tests Easter.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testEaster()
     {
@@ -39,8 +41,9 @@ class EasterTest extends BrazilBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -52,8 +55,9 @@ class EasterTest extends BrazilBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OBSERVANCE);
     }

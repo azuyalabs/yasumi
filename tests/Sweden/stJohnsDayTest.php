@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Sweden;
@@ -24,10 +24,11 @@ class stJohnsDayTest extends SwedenBaseTestCase implements YasumiTestCaseInterfa
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'stJohnsDay';
+    public const HOLIDAY = 'stJohnsDay';
 
     /**
      * Tests the holiday defined in this test.
+     * @throws \ReflectionException
      */
     public function testHoliday()
     {
@@ -37,7 +38,7 @@ class stJohnsDayTest extends SwedenBaseTestCase implements YasumiTestCaseInterfa
         $holiday  = $holidays->getHoliday(self::HOLIDAY);
 
         // Some basic assertions
-        $this->assertInstanceOf('Yasumi\Provider\\' . str_replace('/', '\\', self::REGION), $holidays);
+        $this->assertInstanceOf('Yasumi\Provider\\' . \str_replace('/', '\\', self::REGION), $holidays);
         $this->assertInstanceOf(Holiday::class, $holiday);
         $this->assertNotNull($holiday);
 
@@ -51,8 +52,9 @@ class stJohnsDayTest extends SwedenBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -64,8 +66,9 @@ class stJohnsDayTest extends SwedenBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }

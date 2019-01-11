@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Switzerland\Obwalden;
@@ -24,7 +24,7 @@ class AssumptionOfMaryTest extends ObwaldenBaseTestCase implements YasumiTestCas
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'assumptionOfMary';
+    public const HOLIDAY = 'assumptionOfMary';
 
     /**
      * Tests the day of the Assumption of Mary.
@@ -33,6 +33,8 @@ class AssumptionOfMaryTest extends ObwaldenBaseTestCase implements YasumiTestCas
      *
      * @param int      $year     the year for which the day of the Assumption of Mary needs to be tested
      * @param DateTime $expected the expected date
+     *
+     * @throws \ReflectionException
      */
     public function testAssumptionOfMary($year, $expected)
     {
@@ -41,8 +43,9 @@ class AssumptionOfMaryTest extends ObwaldenBaseTestCase implements YasumiTestCas
 
     /**
      * Tests translated name of the day of the Assumption of Mary.
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -54,8 +57,9 @@ class AssumptionOfMaryTest extends ObwaldenBaseTestCase implements YasumiTestCas
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OTHER);
     }
@@ -64,8 +68,9 @@ class AssumptionOfMaryTest extends ObwaldenBaseTestCase implements YasumiTestCas
      * Returns a list of random test dates used for assertion of the day of the Assumption of Mary.
      *
      * @return array list of test dates for the day of the Assumption of Mary
+     * @throws \Exception
      */
-    public function AssumptionOfMaryDataProvider()
+    public function AssumptionOfMaryDataProvider(): array
     {
         return $this->generateRandomDates(8, 15, self::TIMEZONE);
     }

@@ -2,17 +2,17 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 // Translations for Ascension Day
 return [
-    'da_DK' => 'Kristi Himmelfartsdag',
+    'da_DK' => 'Kristi himmelfartsdag',
     'de_AT' => 'Christi Himmelfahrt',
     'de_CH' => 'Auffahrt',
     'de_DE' => 'Christi Himmelfahrt',
@@ -26,5 +26,5 @@ return [
     'nb_NO' => 'Kristi himmelfartsdag',
     'nl_BE' => 'Hemelvaart',
     'nl_NL' => 'Hemelvaart',
-    'sv_SE' => 'Kristi himmelsfärds dag',
+    'sv_SE' => 'Kristi himmelsfärdsdag',
 ];

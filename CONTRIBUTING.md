@@ -10,7 +10,7 @@ When contributing there are a few guidelines we'd like you to keep in mind:
   Please use the following command after you have completed your work:
   
   ``` bash
-  $ composer php-cs-fixer
+  $ composer format
   ```
 
   This will check/correct all the code for the PSR-2 Coding Standard using the wonderful [php-cs-fixer](http://cs.sensiolabs.org/) .

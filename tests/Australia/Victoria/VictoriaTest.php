@@ -2,25 +2,23 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Australia\Victoria;
 
 use Yasumi\Holiday;
-use Yasumi\tests\Australia\AustraliaTest;
 
 /**
  * Class for testing holidays in Victoria (Australia).
  */
-class VictoriaTest extends AustraliaTest
+class VictoriaTest extends VictoriaBaseTestCase
 {
-    public $region = 'Australia\Victoria';
 
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -29,8 +27,9 @@ class VictoriaTest extends AustraliaTest
 
     /**
      * Tests if all official holidays in Victoria (Australia) are defined by the provider class
+     * @throws \ReflectionException
      */
-    public function testOfficialHolidays()
+    public function testOfficialHolidays(): void
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
@@ -40,9 +39,12 @@ class VictoriaTest extends AustraliaTest
             'secondChristmasDay',
             'australiaDay',
             'anzacDay',
+            'easter',
+            'easterSaturday',
             'queensBirthday',
             'labourDay',
-            'aflGrandFinalFriday'
+            'aflGrandFinalFriday',
+            'melbourneCup'
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -51,6 +53,6 @@ class VictoriaTest extends AustraliaTest
      */
     protected function setUp()
     {
-        $this->year = $this->generateRandomYear(2015, 2016);
+        $this->year = $this->generateRandomYear(2015, 2018);
     }
 }

@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\Provider;
@@ -28,16 +28,17 @@ class Greece extends AbstractProvider
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'GR';
+    public const ID = 'GR';
 
     /**
      * Initialize holidays for Greece.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         $this->timezone = 'Europe/Athens';
 
@@ -73,10 +74,12 @@ class Greece extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Three_Holy_Hierarchs
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateThreeHolyHierarchs()
+    public function calculateThreeHolyHierarchs(): void
     {
         $this->addHoliday(new Holiday(
             'threeHolyHierarchs',
@@ -96,11 +99,12 @@ class Greece extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Clean_Monday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateCleanMonday()
+    public function calculateCleanMonday(): void
     {
         $this->addHoliday(new Holiday(
             'cleanMonday',
@@ -120,7 +124,7 @@ class Greece extends AbstractProvider
      *
      * @throws \Exception
      */
-    public function calculateEaster($year, $timezone)
+    public function calculateEaster($year, $timezone): DateTime
     {
         return $this->calculateOrthodoxEaster($year, $timezone);
     }
@@ -132,11 +136,13 @@ class Greece extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Greek_War_of_Independence
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
 
-    public function calculateIndependenceDay()
+    public function calculateIndependenceDay(): void
     {
         if ($this->year >= 1821) {
             $this->addHoliday(new Holiday(
@@ -155,10 +161,12 @@ class Greece extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Ohi_Day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateOhiDay()
+    public function calculateOhiDay(): void
     {
         if ($this->year >= 1940) {
             $this->addHoliday(new Holiday(
@@ -177,10 +185,12 @@ class Greece extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Athens_Polytechnic_uprising
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculatePolytechnio()
+    public function calculatePolytechnio(): void
     {
         if ($this->year >= 1973) {
             $this->addHoliday(new Holiday(

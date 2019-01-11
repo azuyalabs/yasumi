@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\Provider;
@@ -30,16 +30,17 @@ class CzechRepublic extends AbstractProvider
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'CZ';
+    public const ID = 'CZ';
 
     /**
      * Initialize holidays for the Czech Republic.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         $this->timezone = 'Europe/Prague';
 
@@ -74,10 +75,12 @@ class CzechRepublic extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Saints_Cyril_and_Methodius
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateSaintsCyrilAndMethodiusDay()
+    public function calculateSaintsCyrilAndMethodiusDay(): void
     {
         $this->addHoliday(new Holiday(
             'saintsCyrilAndMethodiusDay',
@@ -97,10 +100,12 @@ class CzechRepublic extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Jan_Hus
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateJanHusDay()
+    public function calculateJanHusDay(): void
     {
         $this->addHoliday(new Holiday(
             'janHusDay',
@@ -123,10 +128,12 @@ class CzechRepublic extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Wenceslaus_I,_Duke_of_Bohemia
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateCzechStatehoodDay()
+    public function calculateCzechStatehoodDay(): void
     {
         $this->addHoliday(new Holiday(
             'czechStateHoodDay',
@@ -141,10 +148,12 @@ class CzechRepublic extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateIndependentCzechoslovakStateDay()
+    public function calculateIndependentCzechoslovakStateDay(): void
     {
         $this->addHoliday(new Holiday('independentCzechoslovakStateDay', [
             'cs_CZ' => 'Den vzniku samostatného československého státu',
@@ -157,10 +166,12 @@ class CzechRepublic extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateStruggleForFreedomAndDemocracyDay()
+    public function calculateStruggleForFreedomAndDemocracyDay(): void
     {
         $this->addHoliday(new Holiday(
             'struggleForFreedomAndDemocracyDay',

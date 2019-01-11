@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Italy;
@@ -24,7 +24,7 @@ class ImmaculateConceptionTest extends ItalyBaseTestCase implements YasumiTestCa
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'immaculateConception';
+    public const HOLIDAY = 'immaculateConception';
 
     /**
      * Tests the day of Immaculate Conception.
@@ -33,6 +33,8 @@ class ImmaculateConceptionTest extends ItalyBaseTestCase implements YasumiTestCa
      *
      * @param int      $year     the year for which the day of Immaculate Conception needs to be tested
      * @param DateTime $expected the expected date
+     *
+     * @throws \ReflectionException
      */
     public function testImmaculateConception($year, $expected)
     {
@@ -43,16 +45,18 @@ class ImmaculateConceptionTest extends ItalyBaseTestCase implements YasumiTestCa
      * Returns a list of random test dates used for assertion of the day of Immaculate Conception.
      *
      * @return array list of test dates for the day of Immaculate Conception
+     * @throws \Exception
      */
-    public function ImmaculateConceptionDataProvider()
+    public function ImmaculateConceptionDataProvider(): array
     {
         return $this->generateRandomDates(12, 8, self::TIMEZONE);
     }
 
     /**
      * Tests translated name of the day of Immaculate Conception.
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -64,8 +68,9 @@ class ImmaculateConceptionTest extends ItalyBaseTestCase implements YasumiTestCa
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }

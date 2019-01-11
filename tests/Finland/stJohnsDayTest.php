@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Finland;
@@ -30,15 +30,17 @@ class stJohnsDayTest extends FinlandBaseTestCase implements YasumiTestCaseInterf
     /**
      * The year in which the holiday was adjusted
      */
-    const ADJUSTMENT_YEAR = 1955;
+    public const ADJUSTMENT_YEAR = 1955;
 
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'stJohnsDay';
+    public const HOLIDAY = 'stJohnsDay';
 
     /**
      * Tests the holiday before it was adjusted.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testHolidayBeforeAdjustment()
     {
@@ -53,6 +55,7 @@ class stJohnsDayTest extends FinlandBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests the holiday before it was adjusted.
+     * @throws \ReflectionException
      */
     public function testHolidayAfterAdjustment()
     {
@@ -62,7 +65,7 @@ class stJohnsDayTest extends FinlandBaseTestCase implements YasumiTestCaseInterf
         $holiday  = $holidays->getHoliday(self::HOLIDAY);
 
         // Some basic assertions
-        $this->assertInstanceOf('Yasumi\Provider\\' . str_replace('/', '\\', self::REGION), $holidays);
+        $this->assertInstanceOf('Yasumi\Provider\\' . \str_replace('/', '\\', self::REGION), $holidays);
         $this->assertInstanceOf(Holiday::class, $holiday);
         $this->assertNotNull($holiday);
 
@@ -76,8 +79,9 @@ class stJohnsDayTest extends FinlandBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -89,8 +93,9 @@ class stJohnsDayTest extends FinlandBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }

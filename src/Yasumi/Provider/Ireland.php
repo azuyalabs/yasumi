@@ -3,12 +3,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\Provider;
@@ -33,16 +33,17 @@ class Ireland extends AbstractProvider
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'IE';
+    public const ID = 'IE';
 
     /**
      * Initialize holidays for Ireland.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         $this->timezone = 'Europe/Dublin';
 
@@ -85,10 +86,12 @@ class Ireland extends AbstractProvider
      *       states that New Years Day is substituted the *next* day if it does not fall on a weekday. So what if it
      *       falls on a Saturday?
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateNewYearsDay()
+    public function calculateNewYearsDay(): void
     {
         if ($this->year < 1974) {
             return;
@@ -116,11 +119,12 @@ class Ireland extends AbstractProvider
      * @link http://www.irishstatutebook.ie/eli/1939/act/1/section/8/enacted/en/html
      * @link http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculatePentecostMonday()
+    public function calculatePentecostMonday(): void
     {
         if ($this->year > 1973) {
             return;
@@ -137,10 +141,13 @@ class Ireland extends AbstractProvider
      *
      * @link http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
+     * @throws \Exception
      */
-    public function calculateChristmasDay()
+    public function calculateChristmasDay(): void
     {
         $holiday = new Holiday(
             'christmasDay',
@@ -152,7 +159,7 @@ class Ireland extends AbstractProvider
         $this->addHoliday($holiday);
 
         // Whenever Christmas Day does not fall on a weekday, the Tuesday following on it shall be a public holiday.
-        if (in_array((int)$holiday->format('w'), [0, 6], true)) {
+        if (\in_array((int)$holiday->format('w'), [0, 6], true)) {
             $substituteHoliday = clone $holiday;
             $substituteHoliday->modify('next tuesday');
 
@@ -171,10 +178,13 @@ class Ireland extends AbstractProvider
      * @link https://en.wikipedia.org/wiki/St._Stephen%27s_Day
      * @see  ChristianHolidays
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
+     * @throws \Exception
      */
-    public function calculateStStephensDay()
+    public function calculateStStephensDay(): void
     {
         $holiday = new Holiday(
             'stStephensDay',
@@ -186,7 +196,7 @@ class Ireland extends AbstractProvider
         $this->addHoliday($holiday);
 
         // Whenever St. Stephens Day does not fall on a weekday, the Monday following on it shall be a public holiday.
-        if (in_array((int)$holiday->format('w'), [0, 6], true)) {
+        if (\in_array((int)$holiday->format('w'), [0, 6], true)) {
             $substituteHoliday = clone $holiday;
             $substituteHoliday->modify('next monday');
 
@@ -207,10 +217,13 @@ class Ireland extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Saint_Patrick%27s_Day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
+     * @throws \Exception
      */
-    public function calculateStPatricksDay()
+    public function calculateStPatricksDay(): void
     {
         if ($this->year < 1903) {
             return;
@@ -225,7 +238,7 @@ class Ireland extends AbstractProvider
         $this->addHoliday($holiday);
 
         // Substitute holiday is on the next available weekday if a holiday falls on a Saturday or Sunday
-        if (in_array((int)$holiday->format('w'), [0, 6], true)) {
+        if (\in_array((int)$holiday->format('w'), [0, 6], true)) {
             $substituteHoliday = clone $holiday;
             $substituteHoliday->modify('next monday');
 
@@ -246,10 +259,13 @@ class Ireland extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/May_Day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
+     * @throws \Exception
      */
-    public function calculateMayDay()
+    public function calculateMayDay(): void
     {
         if ($this->year < 1994) {
             return;
@@ -271,10 +287,13 @@ class Ireland extends AbstractProvider
      *
      * @link http://www.irishstatutebook.ie/eli/1961/act/33/section/8/enacted/en/html
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
+     * @throws \Exception
      */
-    public function calculateJuneHoliday()
+    public function calculateJuneHoliday(): void
     {
         if ($this->year < 1974) {
             return;
@@ -295,10 +314,13 @@ class Ireland extends AbstractProvider
      *
      * @link http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
+     * @throws \Exception
      */
-    public function calculateOctoberHoliday()
+    public function calculateOctoberHoliday(): void
     {
         if ($this->year < 1977) {
             return;

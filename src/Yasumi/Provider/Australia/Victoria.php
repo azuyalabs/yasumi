@@ -2,16 +2,17 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\Provider\Australia;
 
+use DateInterval;
 use DateTime;
 use DateTimeZone;
 use Yasumi\Holiday;
@@ -27,7 +28,9 @@ class Victoria extends Australia
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'AU-VIC';
+    public const ID = 'AU-VIC';
+
+    public $timezone = 'Australia/Victoria';
 
     /**
      * Initialize holidays for Victoria (Australia).
@@ -36,10 +39,12 @@ class Victoria extends Australia
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         parent::initialize();
 
+        $this->addHoliday($this->easterSunday($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->easterSaturday($this->year, $this->timezone, $this->locale));
         $this->calculateLabourDay();
         $this->calculateQueensBirthday();
         $this->calculateMelbourneCupDay();
@@ -47,32 +52,35 @@ class Victoria extends Australia
     }
 
     /**
+     * Labour Day
+     *
      * @throws \Exception
      */
-    public function calculateChristmasDay()
-    {
-        $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->timezone));
-        $boxingDay    = new DateTime("$this->year-12-26", new DateTimeZone($this->timezone));
-
-        $this->calculateHoliday('christmasDay', [], $christmasDay);
-        $this->calculateHoliday('secondChristmasDay', [], $boxingDay, false);
-    }
-
-    public function calculateLabourDay()
+    public function calculateLabourDay(): void
     {
         $date = new DateTime("second monday of march $this->year", new DateTimeZone($this->timezone));
 
-        $this->addHoliday(new Holiday('labourDay', [], $date, $this->locale));
+        $this->addHoliday(new Holiday('labourDay', ['en_AU' => 'Labour Day'], $date, $this->locale));
     }
 
-    public function calculateMelbourneCupDay()
+    /**
+     * Melbourne Cup Day
+     *
+     * @throws \Exception
+     */
+    public function calculateMelbourneCupDay(): void
     {
         $date = new DateTime('first Tuesday of November' . " $this->year", new DateTimeZone($this->timezone));
 
         $this->addHoliday(new Holiday('melbourneCup', ['en_AU' => 'Melbourne Cup'], $date, $this->locale));
     }
 
-    public function calculateAFLGrandFinalDay()
+    /**
+     * AFL Grand Final Day
+     *
+     * @throws \Exception
+     */
+    public function calculateAFLGrandFinalDay(): void
     {
         switch ($this->year) {
             case 2015:
@@ -80,6 +88,12 @@ class Victoria extends Australia
                 break;
             case 2016:
                 $aflGrandFinalFriday = '2016-09-30';
+                break;
+            case 2017:
+                $aflGrandFinalFriday = '2017-09-29';
+                break;
+            case 2018:
+                $aflGrandFinalFriday = '2018-09-28';
                 break;
             default:
                 return;
@@ -93,5 +107,95 @@ class Victoria extends Australia
             $date,
             $this->locale
         ));
+    }
+
+    /**
+     * Queens Birthday.
+     *
+     * The Queen's Birthday is an Australian public holiday but the date varies across
+     * states and territories. Australia celebrates this holiday because it is a constitutional
+     * monarchy, with the English monarch as head of state.
+     *
+     * Her actual birthday is on April 21, but it's celebrated as a public holiday on the second Monday of June.
+     *  (Except QLD & WA)
+     *
+     * @link https://www.timeanddate.com/holidays/australia/queens-birthday
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Exception
+     */
+    public function calculateQueensBirthday(): void
+    {
+        $this->calculateHoliday(
+            'queensBirthday',
+            ['en_AU' => 'Queen\'s Birthday'],
+            new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->timezone)),
+            false,
+            false
+        );
+    }
+
+    /**
+     * Easter Saturday.
+     *
+     * Easter is a festival and holiday celebrating the resurrection of Jesus Christ from the dead. Easter is celebrated
+     * on a date based on a certain number of days after March 21st. The date of Easter Day was defined by the Council
+     * of Nicaea in AD325 as the Sunday after the first full moon which falls on or after the Spring Equinox.
+     *
+     * @link http://en.wikipedia.org/wiki/Easter
+     *
+     * @param int    $year     the year for which Easter Saturday need to be created
+     * @param string $timezone the timezone in which Easter Saturday is celebrated
+     * @param string $locale   the locale for which Easter Saturday need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
+     *
+     * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
+     * @throws \Exception
+     */
+    public function easterSaturday($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
+    {
+        return new Holiday(
+            'easterSaturday',
+            ['en_AU' => 'Easter Saturday'],
+            $this->calculateEaster($year, $timezone)->sub(new DateInterval('P1D')),
+            $locale,
+            $type
+        );
+    }
+    
+    /**
+     * Easter Sunday.
+     *
+     * Easter is a festival and holiday celebrating the resurrection of Jesus Christ from the dead. Easter is celebrated
+     * on a date based on a certain number of days after March 21st. The date of Easter Day was defined by the Council
+     * of Nicaea in AD325 as the Sunday after the first full moon which falls on or after the Spring Equinox.
+     *
+     * @link http://en.wikipedia.org/wiki/Easter
+     *
+     * @param int    $year     the year for which Easter Saturday need to be created
+     * @param string $timezone the timezone in which Easter Saturday is celebrated
+     * @param string $locale   the locale for which Easter Saturday need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
+     *
+     * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
+     * @throws \Exception
+     */
+    public function easterSunday($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
+    {
+        return new Holiday(
+            'easter',
+            ['en_AU' => 'Easter Sunday'],
+            $this->calculateEaster($year, $timezone),
+            $locale,
+            $type
+        );
     }
 }

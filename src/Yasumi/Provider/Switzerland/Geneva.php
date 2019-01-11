@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\Provider\Switzerland;
@@ -32,16 +32,17 @@ class Geneva extends Switzerland
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'CH-GE';
+    public const ID = 'CH-GE';
 
     /**
      * Initialize holidays for Geneva (Switzerland).
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         parent::initialize();
 
@@ -64,11 +65,12 @@ class Geneva extends Switzerland
      *
      * @link https://en.wikipedia.org/wiki/Je%C3%BBne_genevois
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateJeuneGenevois()
+    public function calculateJeuneGenevois(): void
     {
         // Find first Sunday of September
         $date = new DateTime('First Sunday of ' . $this->year . '-09', new DateTimeZone($this->timezone));
@@ -98,10 +100,12 @@ class Geneva extends Switzerland
      *
      * @link https://fr.wikipedia.org/wiki/Restauration_genevoise
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateRestaurationGenevoise()
+    public function calculateRestaurationGenevoise(): void
     {
         if ($this->year > 1813) {
             $this->addHoliday(new Holiday(

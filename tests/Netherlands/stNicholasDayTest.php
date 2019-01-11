@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Netherlands;
@@ -25,7 +25,7 @@ class stNicholasDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'stNicholasDay';
+    public const HOLIDAY = 'stNicholasDay';
 
     /**
      * Tests Sint Nicholas Day.
@@ -34,6 +34,8 @@ class stNicholasDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
      *
      * @param int      $year     the year for which Sint Nicholas Day needs to be tested
      * @param DateTime $expected the expected date
+     *
+     * @throws \ReflectionException
      */
     public function teststNicholasDay($year, $expected)
     {
@@ -44,16 +46,18 @@ class stNicholasDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
      * Returns a list of random test dates used for assertion of Sint Nicholas Day.
      *
      * @return array list of test dates for Sint Nicholas Day
+     * @throws \Exception
      */
-    public function stNicholasDayDataProvider()
+    public function stNicholasDayDataProvider(): array
     {
         return $this->generateRandomDates(12, 5, self::TIMEZONE);
     }
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -65,8 +69,9 @@ class stNicholasDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OBSERVANCE);
     }

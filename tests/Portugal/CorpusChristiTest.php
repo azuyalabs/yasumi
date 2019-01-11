@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Portugal;
@@ -25,20 +25,22 @@ class CorpusChristiTest extends PortugalBaseTestCase implements YasumiTestCaseIn
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'corpusChristi';
+    public const HOLIDAY = 'corpusChristi';
 
     /**
      * Holiday was abolished by the portuguese government in 2014.
      */
-    const HOLIDAY_YEAR_ABOLISHED = 2014;
+    public const HOLIDAY_YEAR_ABOLISHED = 2014;
 
     /**
      * Holiday was restored by the portuguese government in 2016.
      */
-    const HOLIDAY_YEAR_RESTORED = 2016;
+    public const HOLIDAY_YEAR_RESTORED = 2016;
 
     /**
      * Tests the holiday defined in this test.
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHoliday()
     {
@@ -49,6 +51,7 @@ class CorpusChristiTest extends PortugalBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Test that the holiday did not happen in 2014 and 2015.
+     * @throws \ReflectionException
      */
     public function testNotHoliday()
     {
@@ -58,8 +61,9 @@ class CorpusChristiTest extends PortugalBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests translated name of Corpus Christi.
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $year = $this->generateRandomYear(self::HOLIDAY_YEAR_RESTORED);
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $year, [self::LOCALE => 'Corpo de Deus']);
@@ -67,8 +71,10 @@ class CorpusChristiTest extends PortugalBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests type of the holiday defined in this test.
+     *
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         // Before abolishment
         $year = $this->generateRandomYear(1000, self::HOLIDAY_YEAR_ABOLISHED - 1);

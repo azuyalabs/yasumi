@@ -2,19 +2,19 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Base;
 
 use DateTime;
 use InvalidArgumentException;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiBase;
 use Yasumi\TranslationsInterface;
@@ -24,7 +24,7 @@ use Yasumi\TranslationsInterface;
  *
  * Contains tests for testing the Holiday class
  */
-class HolidayTest extends PHPUnit_Framework_TestCase
+class HolidayTest extends TestCase
 {
     use YasumiBase;
 
@@ -32,8 +32,9 @@ class HolidayTest extends PHPUnit_Framework_TestCase
      * Tests that an InvalidArgumentException is thrown in case an blank short name is given.
      *
      * @expectedException InvalidArgumentException
+     * @throws \Exception
      */
-    public function testHolidayBlankNameInvalidArgumentException()
+    public function testHolidayBlankNameInvalidArgumentException(): void
     {
         new Holiday('', [], new \DateTime());
     }
@@ -42,22 +43,24 @@ class HolidayTest extends PHPUnit_Framework_TestCase
      * Tests that an Yasumi\Exception\UnknownLocaleException is thrown in case an invalid locale is given.
      *
      * @expectedException \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function testCreateHolidayUnknownLocaleException()
+    public function testCreateHolidayUnknownLocaleException(): void
     {
         new Holiday('testHoliday', [], new DateTime(), 'wx-YZ');
     }
 
     /**
      * Tests that a Yasumi holiday instance can be serialized to a JSON object.
+     * @throws \Exception
      */
-    public function testHolidayIsJsonSerializable()
+    public function testHolidayIsJsonSerializable(): void
     {
         $holiday  = new Holiday('testHoliday', [], new DateTime(), 'en_US');
-        $json     = json_encode($holiday);
-        $instance = json_decode($json, true);
+        $json     = \json_encode($holiday);
+        $instance = \json_decode($json, true);
 
-        $this->assertInternalType('array', $instance);
+        $this->assertIsArray($instance);
         $this->assertNotNull($instance);
         $this->assertArrayHasKey('shortName', $instance);
     }
@@ -65,8 +68,9 @@ class HolidayTest extends PHPUnit_Framework_TestCase
     /**
      * Tests that a Yasumi holiday instance can be created using an object that implements the DateTimeInterface (e.g.
      * DateTime or DateTimeImmutable)
+     * @throws \Exception
      */
-    public function testHolidayWithDateTimeInterface()
+    public function testHolidayWithDateTimeInterface(): void
     {
         // Assert with DateTime instance
         $holiday = new Holiday('testHoliday', [], new \DateTime(), 'en_US');
@@ -81,48 +85,53 @@ class HolidayTest extends PHPUnit_Framework_TestCase
 
     /**
      * Tests the getName function of the Holiday object with no translations for the name given.
+     * @throws \Exception
      */
-    public function testHolidayGetNameWithNoTranslations()
+    public function testHolidayGetNameWithNoTranslations(): void
     {
         $name    = 'testHoliday';
         $holiday = new Holiday($name, [], new DateTime(), 'en_US');
 
-        $this->assertInternalType('string', $holiday->getName());
+        $this->assertIsString($holiday->getName());
         $this->assertEquals($name, $holiday->getName());
     }
 
     /**
      * Tests the getName function of the Holiday object with only a default translation for the name given.
+     * @throws \Exception
      */
-    public function testHolidayGetNameWithOnlyDefaultTranslation()
+    public function testHolidayGetNameWithOnlyDefaultTranslation(): void
     {
         $name        = 'testHoliday';
         $translation = 'My Holiday';
         $locale      = 'en_US';
         $holiday     = new Holiday($name, [$locale => $translation], new DateTime(), $locale);
 
-        $this->assertInternalType('string', $holiday->getName());
+        $this->assertIsString($holiday->getName());
         $this->assertEquals($translation, $holiday->getName());
     }
 
     /**
      * Tests the getName function of the Holiday object with only a default translation for the name given.
+     *
+     * @throws \Exception
      */
-    public function testHolidayGetNameWithOneNonDefaultTranslation()
+    public function testHolidayGetNameWithOneNonDefaultTranslation(): void
     {
         $name        = 'testHoliday';
         $translation = 'My Holiday';
         $holiday     = new Holiday($name, ['en_US' => $translation], new DateTime(), 'nl_NL');
 
         $this->assertNotNull($holiday->getName());
-        $this->assertInternalType('string', $holiday->getName());
+        $this->assertIsString($holiday->getName());
         $this->assertEquals($translation, $holiday->getName());
     }
 
     /**
      * Tests the getName function of the Holiday object with global translations and no custom translation.
+     * @throws \Exception
      */
-    public function testHolidayGetNameWithGlobalTranslations()
+    public function testHolidayGetNameWithGlobalTranslations(): void
     {
         /** @var TranslationsInterface|PHPUnit_Framework_MockObject_MockObject $translationsStub */
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
@@ -140,14 +149,15 @@ class HolidayTest extends PHPUnit_Framework_TestCase
         $holiday->mergeGlobalTranslations($translationsStub);
 
         $this->assertNotNull($holiday->getName());
-        $this->assertInternalType('string', $holiday->getName());
+        $this->assertIsString($holiday->getName());
         $this->assertEquals($translations[$locale], $holiday->getName());
     }
 
     /**
      * Tests the getName function of the Holiday object with global translations and a new custom translation.
+     * @throws \Exception
      */
-    public function testHolidayGetNameWithGlobalAndCustomTranslations()
+    public function testHolidayGetNameWithGlobalAndCustomTranslations(): void
     {
         /** @var TranslationsInterface|PHPUnit_Framework_MockObject_MockObject $translationsStub */
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
@@ -171,14 +181,15 @@ class HolidayTest extends PHPUnit_Framework_TestCase
         $holiday->mergeGlobalTranslations($translationsStub);
 
         $this->assertNotNull($holiday->getName());
-        $this->assertInternalType('string', $holiday->getName());
+        $this->assertIsString($holiday->getName());
         $this->assertEquals($customTranslation, $holiday->getName());
     }
 
     /**
      * Tests the getName function of the Holiday object with global translations and an overriding custom translation.
+     * @throws \Exception
      */
-    public function testHolidayGetNameWithOverridenGlobalTranslations()
+    public function testHolidayGetNameWithOverridenGlobalTranslations(): void
     {
         /** @var TranslationsInterface|PHPUnit_Framework_MockObject_MockObject $translationsStub */
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
@@ -202,7 +213,7 @@ class HolidayTest extends PHPUnit_Framework_TestCase
         $holiday->mergeGlobalTranslations($translationsStub);
 
         $this->assertNotNull($holiday->getName());
-        $this->assertInternalType('string', $holiday->getName());
+        $this->assertIsString($holiday->getName());
         $this->assertEquals($customTranslation, $holiday->getName());
     }
 }

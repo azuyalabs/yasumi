@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Japan;
@@ -25,16 +25,18 @@ class GreeneryDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
     /**
      * The name of the holiday defined in the test
      */
-    const HOLIDAY = 'greeneryDay';
+    public const HOLIDAY = 'greeneryDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1989;
+    public const ESTABLISHMENT_YEAR = 1989;
 
     /**
      * Tests Greenery Day after 2007. Greenery Day was established from 1989 on April 29th. After 2007
      * it was changed to be May 4th.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testHolidayOnAfter2007()
     {
@@ -49,6 +51,8 @@ class GreeneryDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests Greenery Day after 2007 substituted next working day (when Greenery Day falls on a Sunday)
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testHolidayOnAfter2007SubstitutedNextWorkingDay()
     {
@@ -64,6 +68,8 @@ class GreeneryDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
     /**
      * Tests Greenery Day between 1989 and 2007. Greenery Day was established from 1989 on April 29th. After 2007
      * it was changed to be May 4th.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testHolidayBetween1989And2007()
     {
@@ -78,6 +84,8 @@ class GreeneryDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests Greenery Day between 1989 and 2007 substituted next working day (when Greenery Day falls on a Sunday)
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testHolidayBetween1989And2007SubstitutedNextWorkingDay()
     {
@@ -93,6 +101,7 @@ class GreeneryDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
     /**
      * Tests Greenery Day before 1989. Greenery Day was established from 1989 on April 29th. After 2007
      * it was changed to be May 4th.
+     * @throws \ReflectionException
      */
     public function testHolidayBefore1989()
     {
@@ -105,8 +114,9 @@ class GreeneryDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -118,8 +128,9 @@ class GreeneryDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(
             self::REGION,

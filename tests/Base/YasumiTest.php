@@ -2,20 +2,19 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Base;
 
 use Faker\Factory;
 use InvalidArgumentException;
-use PHPUnit_Framework_TestCase;
-use Yasumi\Exception\InvalidDateException;
+use PHPUnit\Framework\TestCase;
 use Yasumi\tests\YasumiBase;
 use Yasumi\Yasumi;
 
@@ -24,26 +23,27 @@ use Yasumi\Yasumi;
  *
  * Contains tests for testing the Holiday class
  */
-class YasumiTest extends PHPUnit_Framework_TestCase
+class YasumiTest extends TestCase
 {
     use YasumiBase;
 
     /**
      * The lower year limit supported by Yasumi
      */
-    const YEAR_LOWER_BOUND = 1000;
+    public const YEAR_LOWER_BOUND = 1000;
 
     /**
      * The upper year limit supported by Yasumi
      */
-    const YEAR_UPPER_BOUND = 9999;
+    public const YEAR_UPPER_BOUND = 9999;
 
     /**
      * Tests that an InvalidArgumentException is thrown in case an invalid year is given.
      *
      * @expectedException InvalidArgumentException
+     * @throws \ReflectionException
      */
-    public function testCreateWithInvalidYear()
+    public function testCreateWithInvalidYear(): void
     {
         Yasumi::create('Japan', 10100);
     }
@@ -52,8 +52,9 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      * Tests that an InvalidArgumentException is thrown in case an invalid holiday provider is given.
      *
      * @expectedException InvalidArgumentException
+     * @throws \ReflectionException
      */
-    public function testCreateWithInvalidProvider()
+    public function testCreateWithInvalidProvider(): void
     {
         Yasumi::create('Mars');
     }
@@ -62,8 +63,9 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      * Tests that an InvalidArgumentException is thrown in case we try to load a Trait as provider.
      *
      * @expectedException InvalidArgumentException
+     * @throws \ReflectionException
      */
-    public function testCreateWithInvalidProviderBecauseItsATrait()
+    public function testCreateWithInvalidProviderBecauseItsATrait(): void
     {
         Yasumi::create('CommonHolidays');
     }
@@ -72,16 +74,18 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      * Tests that an InvalidArgumentException is thrown in case we try to load the AbstractProvider as provider.
      *
      * @expectedException InvalidArgumentException
+     * @throws \ReflectionException
      */
-    public function testCreateWithAbstractClassProvider()
+    public function testCreateWithAbstractClassProvider(): void
     {
         Yasumi::create('AbstractProvider');
     }
 
     /**
-     * Tests that classes that Yasumi allows external classes that extend the ProviderInterface.
+     * Tests that Yasumi allows external classes that extend the ProviderInterface.
+     * @throws \ReflectionException
      */
-    public function testCreateWithAbstractExtension()
+    public function testCreateWithAbstractExtension(): void
     {
         $class    = YasumiExternalProvider::class;
         $instance = Yasumi::create(
@@ -95,8 +99,9 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      * Tests that an Yasumi\Exception\UnknownLocaleException is thrown in case an invalid locale is given.
      *
      * @expectedException \Yasumi\Exception\UnknownLocaleException
+     * @throws \ReflectionException
      */
-    public function testCreateWithInvalidLocale()
+    public function testCreateWithInvalidLocale(): void
     {
         Yasumi::create(
             'Japan',
@@ -107,8 +112,9 @@ class YasumiTest extends PHPUnit_Framework_TestCase
 
     /**
      * Tests that the getIterator function returns an ArrayIterator object
+     * @throws \ReflectionException
      */
-    public function testGetIterator()
+    public function testGetIterator(): void
     {
         $holidays = Yasumi::create(
             'Japan',
@@ -120,44 +126,49 @@ class YasumiTest extends PHPUnit_Framework_TestCase
 
     /**
      * Tests that the count function returns an integer and a correct count for the test holiday provider
+     * @throws \ReflectionException
      */
-    public function testCount()
+    public function testCount(): void
     {
         // There are 16 holidays in Japan in the year 2015, with 1 substituted holiday.
         $holidays = Yasumi::create('Japan', 2015);
 
-        $this->assertInternalType('int', $holidays->count());
+        $this->assertIsInt($holidays->count());
         $this->assertEquals(16, $holidays->count());
         $this->assertNotEquals(17, $holidays->count());
     }
 
     /**
      * Tests that the getType function returns a string for the test holiday provider
+     * @throws \ReflectionException
      */
-    public function testGetType()
+    public function testGetType(): void
     {
         $holidays = Yasumi::create('Japan', Factory::create()->numberBetween(1949, self::YEAR_UPPER_BOUND));
         $holiday  = $holidays->getHoliday('newYearsDay');
 
-        $this->assertInternalType('string', $holiday->getType());
+        $this->assertIsString($holiday->getType());
     }
 
     /**
      * Tests that the getYear function returns an integer for the test holiday provider
+     * @throws \ReflectionException
      */
-    public function testGetYear()
+    public function testGetYear(): void
     {
         $year     = Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND);
         $holidays = Yasumi::create('Netherlands', $year);
 
-        $this->assertInternalType('integer', $holidays->getYear());
+        $this->assertIsInt($holidays->getYear());
         $this->assertEquals($year, $holidays->getYear());
     }
 
     /**
      * Tests that the next function returns the next upcoming date (i.e. next year) for the given holiday
+     *
+     * @throws \ReflectionException
      */
-    public function testNext()
+    public function testNext(): void
     {
         $country = 'Japan';
         $name    = 'childrensDay';
@@ -177,8 +188,9 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      * Tests the next function that an InvalidArgumentException is thrown in case a blank name is given.
      *
      * @expectedException InvalidArgumentException
+     * @throws \ReflectionException
      */
-    public function testNextWithBlankName()
+    public function testNextWithBlankName(): void
     {
         $holidays = Yasumi::create(
             'Netherlands',
@@ -189,8 +201,10 @@ class YasumiTest extends PHPUnit_Framework_TestCase
 
     /**
      * Tests the previous function returns the previous date (i.e. previous year) for the given holiday
+     *
+     * @throws \ReflectionException
      */
-    public function testPrevious()
+    public function testPrevious(): void
     {
         $country          = 'Netherlands';
         $name             = 'liberationDay';
@@ -211,8 +225,9 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      * Tests the previous function that an InvalidArgumentException is thrown in case a blank name is given.
      *
      * @expectedException InvalidArgumentException
+     * @throws \ReflectionException
      */
-    public function testPreviousWithBlankName()
+    public function testPreviousWithBlankName(): void
     {
         $holidays = Yasumi::create(
             'Netherlands',
@@ -223,27 +238,29 @@ class YasumiTest extends PHPUnit_Framework_TestCase
 
     /**
      * Tests that the getHolidayNames function returns an array and a correct count for the test holiday provider
+     * @throws \ReflectionException
      */
-    public function testGetHolidayNames()
+    public function testGetHolidayNames(): void
     {
         $holidays     = Yasumi::create('Japan', 2015);
         $holidayNames = $holidays->getHolidayNames();
 
-        $this->assertInternalType('array', $holidayNames);
+        $this->assertIsArray($holidayNames);
         $this->assertCount(17, $holidayNames);
         $this->assertContains('newYearsDay', $holidayNames);
     }
 
     /**
      * Tests that the WhenIs function returns a string representation of the date the given holiday occurs.
+     * @throws \ReflectionException
      */
-    public function testWhenIs()
+    public function testWhenIs(): void
     {
         $holidays = Yasumi::create('Japan', 2010);
 
         $when = $holidays->whenIs('autumnalEquinoxDay');
 
-        $this->assertInternalType('string', $when);
+        $this->assertIsString($when);
         $this->assertEquals('2010-09-23', $when);
     }
 
@@ -251,8 +268,9 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      * Tests that the WhenIs function throws an InvalidArgumentException when a blank name is given.
      *
      * @expectedException InvalidArgumentException
+     * @throws \ReflectionException
      */
-    public function testWhenIsWithBlankName()
+    public function testWhenIsWithBlankName(): void
     {
         $holidays = Yasumi::create('Japan', 2010);
         $holidays->whenIs(null);
@@ -262,8 +280,9 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      * Tests that an InvalidArgumentException is thrown in case a blank name is given for the getHoliday function.
      *
      * @expectedException InvalidArgumentException
+     * @throws \ReflectionException
      */
-    public function testGetHolidayWithBlankName()
+    public function testGetHolidayWithBlankName(): void
     {
         $holidays = Yasumi::create('Netherlands', 1999);
         $holidays->getHoliday(null);
@@ -272,13 +291,14 @@ class YasumiTest extends PHPUnit_Framework_TestCase
     /**
      * Tests that the whatWeekDayIs function returns an integer representation of the day of the week the given holiday
      * is occurring.
+     * @throws \ReflectionException
      */
-    public function testWhatWeekDayIs()
+    public function testWhatWeekDayIs(): void
     {
         $holidays = Yasumi::create('Netherlands', 2110);
         $weekDay  = $holidays->whatWeekDayIs('stMartinsDay');
 
-        $this->assertInternalType('int', $weekDay);
+        $this->assertIsInt($weekDay);
         $this->assertEquals(2, $weekDay);
     }
 
@@ -286,8 +306,9 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      * Tests that the whatWeekDayIs function throws an InvalidArgumentException when a blank name is given.
      *
      * @expectedException InvalidArgumentException
+     * @throws \ReflectionException
      */
-    public function testWhatWeekDayIsWithBlankName()
+    public function testWhatWeekDayIsWithBlankName(): void
     {
         $holidays = Yasumi::create('Netherlands', 2388);
         $holidays->whatWeekDayIs(null);
@@ -295,40 +316,49 @@ class YasumiTest extends PHPUnit_Framework_TestCase
 
     /**
      * Tests that the getProviders function returns an array containing all available holiday providers.
+     * @throws \ReflectionException
      */
-    public function testGetProviders()
+    public function testGetProviders(): void
     {
         $providers = Yasumi::getProviders();
 
         $this->assertNotEmpty($providers);
-        $this->assertInternalType('array', $providers);
+        $this->assertIsArray($providers);
         $this->assertContains('Netherlands', $providers);
+        $this->assertEquals('USA', $providers['US']);
+        $this->assertNotContains('AbstractProvider', $providers);
     }
 
     /**
      * Tests that the getProviders function (static call) returns the same data when called again.
+     *
+     * @throws \ReflectionException
      */
-    public function testGetProvidersStaticCall()
+    public function testGetProvidersStaticCall(): void
     {
         $provider          = 'Ireland';
         $providers         = Yasumi::getProviders();
         $initial_providers = $providers;
 
         $this->assertNotEmpty($providers);
-        $this->assertInternalType('array', $providers);
+        $this->assertIsArray($providers);
         $this->assertContains($provider, $providers);
 
         $providers = Yasumi::getProviders();
         $this->assertNotEmpty($providers);
-        $this->assertInternalType('array', $providers);
+        $this->assertIsArray($providers);
         $this->assertContains($provider, $providers);
         $this->assertEquals($initial_providers, $providers);
     }
 
     /**
      * Tests that the isHoliday function returns a boolean true for a date that is defined as a holiday.
+     * @throws \Exception
+     * @throws \ReflectionException
+     * @throws \Exception
+     * @throws \ReflectionException
      */
-    public function testIsHoliday()
+    public function testIsHoliday(): void
     {
         $year     = 2110;
         $provider = 'Spain';
@@ -336,12 +366,12 @@ class YasumiTest extends PHPUnit_Framework_TestCase
 
         // Assertion using a DateTime instance
         $isHoliday = Yasumi::create($provider, $year)->isHoliday(new \DateTime($date));
-        $this->assertInternalType('bool', $isHoliday);
+        $this->assertIsBool($isHoliday);
         $this->assertTrue($isHoliday);
 
         // Assertion using a DateTimeImmutable instance
         $isHoliday = Yasumi::create($provider, $year)->isHoliday(new \DateTimeImmutable($date));
-        $this->assertInternalType('bool', $isHoliday);
+        $this->assertIsBool($isHoliday);
         $this->assertTrue($isHoliday);
 
         unset($isHoliday);
@@ -349,8 +379,12 @@ class YasumiTest extends PHPUnit_Framework_TestCase
 
     /**
      * Tests that the isHoliday function returns a boolean false for a date that is not defined as a holiday.
+     * @throws \Exception
+     * @throws \ReflectionException
+     * @throws \Exception
+     * @throws \ReflectionException
      */
-    public function testIsNotHoliday()
+    public function testIsNotHoliday(): void
     {
         $year     = 5220;
         $provider = 'Japan';
@@ -358,25 +392,25 @@ class YasumiTest extends PHPUnit_Framework_TestCase
 
         // Assertion using a DateTime instance
         $isHoliday = Yasumi::create($provider, $year)->isHoliday(new \DateTime($date));
-        $this->assertInternalType('bool', $isHoliday);
+        $this->assertIsBool($isHoliday);
         $this->assertFalse($isHoliday);
 
         // Assertion using a DateTimeImmutable instance
         $isHoliday = Yasumi::create($provider, $year)->isHoliday(new \DateTimeImmutable($date));
-        $this->assertInternalType('bool', $isHoliday);
+        $this->assertIsBool($isHoliday);
         $this->assertFalse($isHoliday);
 
         unset($isHoliday);
     }
 
     /**
-     * Tests that the isHoliday function throws an InvalidDateException when the given argument is not an instance that
+     * Tests that the isHoliday function throws a TypeError when the given argument is not an instance that
      * implements the DateTimeInterface (e.g. DateTime or DateTimeImmutable)
-     *
+     * @throws \ReflectionException
      */
-    public function testIsHolidayException()
+    public function testIsHolidayException(): void
     {
-        $this->expectException(InvalidDateException::class);
+        $this->expectException(\TypeError::class);
 
         Yasumi::create('Spain', Factory::create()->numberBetween(
             self::YEAR_LOWER_BOUND,
@@ -389,8 +423,12 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      * the weekend.
      *
      * @TODO Add additional unit tests for those holiday providers that differ from the global definition
+     * @throws \Exception
+     * @throws \ReflectionException
+     * @throws \Exception
+     * @throws \ReflectionException
      */
-    public function testIsWorkingDay()
+    public function testIsWorkingDay(): void
     {
         $year     = 2020;
         $provider = 'Netherlands';
@@ -398,12 +436,12 @@ class YasumiTest extends PHPUnit_Framework_TestCase
 
         // Assertion using a DateTime instance
         $isWorkingDay = Yasumi::create($provider, $year)->isWorkingDay(new \DateTime($date));
-        $this->assertInternalType('bool', $isWorkingDay);
+        $this->assertIsBool($isWorkingDay);
         $this->assertTrue($isWorkingDay);
 
         // Assertion using a DateTimeImmutable instance
         $isWorkingDay = Yasumi::create($provider, $year)->isWorkingDay(new \DateTimeImmutable($date));
-        $this->assertInternalType('bool', $isWorkingDay);
+        $this->assertIsBool($isWorkingDay);
         $this->assertTrue($isWorkingDay);
 
         unset($isWorkingDay);
@@ -414,8 +452,12 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      * the weekend.
      *
      * @TODO Add additional unit tests for those holiday providers that differ from the global definition
+     * @throws \Exception
+     * @throws \ReflectionException
+     * @throws \Exception
+     * @throws \ReflectionException
      */
-    public function testIsNotWorkingDay()
+    public function testIsNotWorkingDay(): void
     {
         $year     = 2016;
         $provider = 'Japan';
@@ -423,26 +465,27 @@ class YasumiTest extends PHPUnit_Framework_TestCase
 
         // Assertion using a DateTime instance
         $isNotWorkingDay = Yasumi::create($provider, $year)->isWorkingDay(new \DateTime($date));
-        $this->assertInternalType('bool', $isNotWorkingDay);
+        $this->assertIsBool($isNotWorkingDay);
         $this->assertFalse($isNotWorkingDay);
 
         // Assertion using a DateTimeImmutable instance
         $isNotWorkingDay = Yasumi::create($provider, $year)->isWorkingDay(new \DateTimeImmutable($date));
-        $this->assertInternalType('bool', $isNotWorkingDay);
+        $this->assertIsBool($isNotWorkingDay);
         $this->assertFalse($isNotWorkingDay);
 
         unset($isNotWorkingDay);
     }
 
     /**
-     * Tests that the isWorkingDay function throws an InvalidDateException when the given argument is not an instance
+     * Tests that the isWorkingDay function throws a TypeError when the given argument is not an instance
      * that implements the DateTimeInterface (e.g. DateTime or DateTimeImmutable)
      *
      * @TODO Add additional unit tests for those holiday providers that differ from the global definition
+     * @throws \ReflectionException
      */
-    public function testIsWorkingDayException()
+    public function testIsWorkingDayException(): void
     {
-        $this->expectException(InvalidDateException::class);
+        $this->expectException(\TypeError::class);
 
         Yasumi::create('SouthAfrica', Factory::create()->numberBetween(
             self::YEAR_LOWER_BOUND,
@@ -455,7 +498,7 @@ class YasumiTest extends PHPUnit_Framework_TestCase
      *
      * @throws \ReflectionException
      */
-    public function testRemoveHoliday()
+    public function testRemoveHoliday(): void
     {
         $provider = Yasumi::create('Ireland', 2018);
         $holidays = $provider->getHolidays();

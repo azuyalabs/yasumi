@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Japan;
@@ -25,12 +25,12 @@ class VernalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCaseIn
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'vernalEquinoxDay';
+    public const HOLIDAY = 'vernalEquinoxDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1948;
+    public const ESTABLISHMENT_YEAR = 1948;
 
     /**
      * Tests Vernal Equinox Day after 2150. This national holiday was established in 1948 as a day for the admiration
@@ -38,6 +38,7 @@ class VernalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCaseIn
      * festival called Shunki kōrei-sai (春季皇霊祭).
      *
      * After 2150 no calculations are available yet.
+     * @throws \ReflectionException
      */
     public function testVernalEquinoxDayOnAfter2150()
     {
@@ -56,6 +57,9 @@ class VernalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCaseIn
      * @param $year  int year of example data to be tested
      * @param $month int month (number) of example data to be tested
      * @param $day   int day of the month (number) of example data to be tested
+     *
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testVernalEquinoxDayBetween1948And2150($year, $month, $day)
     {
@@ -73,7 +77,7 @@ class VernalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCaseIn
      *
      * @return array list of Japanese Vernal Equinox holidays
      */
-    public function vernalEquinoxHolidaysProvider()
+    public function vernalEquinoxHolidaysProvider(): array
     {
         return [
             [1948, 3, 22],
@@ -88,6 +92,7 @@ class VernalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCaseIn
      * Tests Vernal Equinox Day before 1948. This national holiday was established in 1948 as a day for the admiration
      * of nature and the love of living things. Prior to 1948, the vernal equinox was an imperial ancestor worship
      * festival called Shunki kōrei-sai (春季皇霊祭).
+     * @throws \ReflectionException
      */
     public function testVernalEquinoxDayBefore1948()
     {
@@ -102,6 +107,7 @@ class VernalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCaseIn
      * Tests Vernal Equinox Day between 1851 and 1948. This national holiday was established in 1948 as a day for
      * the admiration of nature and the love of living things. Prior to 1948, the vernal equinox was an imperial
      * ancestor worship festival called Shunki kōrei-sai (春季皇霊祭).
+     * @throws \ReflectionException
      */
     public function testVernalEquinoxDayBetween1851And1948()
     {
@@ -114,8 +120,9 @@ class VernalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -127,8 +134,9 @@ class VernalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(
             self::REGION,

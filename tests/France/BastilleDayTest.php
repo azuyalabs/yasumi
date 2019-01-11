@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\France;
@@ -25,15 +25,17 @@ class BastilleDayTest extends FranceBaseTestCase implements YasumiTestCaseInterf
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'bastilleDay';
+    public const HOLIDAY = 'bastilleDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1790;
+    public const ESTABLISHMENT_YEAR = 1790;
 
     /**
      * Tests Bastille Day on or after 1790.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testBastilleDayOnAfter1790()
     {
@@ -48,6 +50,7 @@ class BastilleDayTest extends FranceBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests Bastille Day before 1790.
+     * @throws \ReflectionException
      */
     public function testBastilleDayBefore1790()
     {
@@ -60,8 +63,9 @@ class BastilleDayTest extends FranceBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests translated name of Bastille Day.
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -73,8 +77,9 @@ class BastilleDayTest extends FranceBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(
             self::REGION,

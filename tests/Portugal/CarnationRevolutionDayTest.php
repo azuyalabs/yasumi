@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Portugal;
@@ -25,15 +25,17 @@ class CarnationRevolutionDayTest extends PortugalBaseTestCase implements YasumiT
     /**
      * The year in which the holiday was established
      */
-    const ESTABLISHMENT_YEAR = 1974;
+    public const ESTABLISHMENT_YEAR = 1974;
 
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = '25thApril';
+    public const HOLIDAY = '25thApril';
 
     /**
      * Test that the holiday is valid after the year of establishment
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHolidayAfterEstablishment()
     {
@@ -44,6 +46,7 @@ class CarnationRevolutionDayTest extends PortugalBaseTestCase implements YasumiT
 
     /**
      * Tests that the holiday is not a holiday before the year of establishment
+     * @throws \ReflectionException
      */
     public function testNotHolidayBeforeEstablishment()
     {
@@ -53,8 +56,9 @@ class CarnationRevolutionDayTest extends PortugalBaseTestCase implements YasumiT
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $year, [self::LOCALE => 'Dia da Liberdade']);
@@ -62,8 +66,9 @@ class CarnationRevolutionDayTest extends PortugalBaseTestCase implements YasumiT
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OFFICIAL);

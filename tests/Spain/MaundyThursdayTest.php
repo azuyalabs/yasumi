@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Spain;
@@ -25,16 +25,18 @@ class MaundyThursdayTest extends SpainBaseTestCase implements YasumiTestCaseInte
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'maundyThursday';
+    public const HOLIDAY = 'maundyThursday';
 
     /**
      * Name of the region (e.g. country / state) to be tested
      * Using the Region of Murcia as the holiday provider as not all regions celebrate Maundy Thursday in Spain.
      */
-    const REGION = 'Spain/RegionOfMurcia';
+    public const REGION = 'Spain/RegionOfMurcia';
 
     /**
      * Tests the holiday defined in this test.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testHoliday()
     {
@@ -49,8 +51,9 @@ class MaundyThursdayTest extends SpainBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -62,8 +65,9 @@ class MaundyThursdayTest extends SpainBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OBSERVANCE);
     }

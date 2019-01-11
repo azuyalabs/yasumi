@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\Provider;
@@ -28,16 +28,17 @@ class Netherlands extends AbstractProvider
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'NL';
+    public const ID = 'NL';
 
     /**
      * Initialize holidays for the Netherlands.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         $this->timezone = 'Europe/Amsterdam';
 
@@ -175,33 +176,15 @@ class Netherlands extends AbstractProvider
             Holiday::TYPE_OBSERVANCE
         ));
 
-        /**
-         * Summertime.
-         *
-         * Start of Summertime takes place on the last sunday of march. (Summertime is the common name for Daylight Saving
-         * Time).
-         */
-        $this->addHoliday(new Holiday(
-            'summerTime',
-            ['en_US' => 'Summertime', 'nl_NL' => 'Zomertijd'],
-            new DateTime("last sunday of march $this->year", new DateTimeZone($this->timezone)),
-            $this->locale,
-            Holiday::TYPE_SEASON
-        ));
+        $summerTime = $this->summerTime($this->year, $this->timezone, $this->locale);
+        if ($summerTime !== null) {
+            $this->addHoliday($summerTime);
+        }
 
-        /**
-         * Wintertime.
-         *
-         * Start of Wintertime takes place on the last sunday of october. (Wintertime is actually the end of Summertime.
-         * Summertime is the common name for Daylight Saving Time).
-         */
-        $this->addHoliday(new Holiday(
-            'winterTime',
-            ['en_US' => 'Wintertime', 'nl_NL' => 'Wintertijd'],
-            new DateTime("last sunday of october $this->year", new DateTimeZone($this->timezone)),
-            $this->locale,
-            Holiday::TYPE_SEASON
-        ));
+        $winterTime = $this->winterTime($this->year, $this->timezone, $this->locale);
+        if ($winterTime !== null) {
+            $this->addHoliday($winterTime);
+        }
 
         /**
          * Carnival.

@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\Provider;
@@ -27,16 +27,17 @@ class Spain extends AbstractProvider
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'ES';
+    public const ID = 'ES';
 
     /**
      * Initialize holidays for Spain.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         $this->timezone = 'Europe/Madrid';
 
@@ -70,10 +71,12 @@ class Spain extends AbstractProvider
      *
      * @link http://en.wikipedia.org/wiki/Fiesta_Nacional_de_España
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateNationalDay()
+    public function calculateNationalDay(): void
     {
         if ($this->year >= 1981) {
             $this->addHoliday(new Holiday(
@@ -94,10 +97,12 @@ class Spain extends AbstractProvider
      *
      * @link http://www.timeanddate.com/holidays/spain/constitution-day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateConstitutionDay()
+    public function calculateConstitutionDay(): void
     {
         if ($this->year >= 1978) {
             $this->addHoliday(new Holiday(

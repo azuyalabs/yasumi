@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Netherlands;
@@ -26,7 +26,7 @@ class thirdCarnivalDay extends NetherlandsBaseTestCase implements YasumiTestCase
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'thirdCarnivalDay';
+    public const HOLIDAY = 'thirdCarnivalDay';
 
     /**
      * Tests the holiday defined in this test.
@@ -35,6 +35,8 @@ class thirdCarnivalDay extends NetherlandsBaseTestCase implements YasumiTestCase
      * @throws \InvalidArgumentException
      * @throws \PHPUnit_Framework_AssertionFailedError
      * @throws \RuntimeException
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHoliday()
     {
@@ -54,8 +56,9 @@ class thirdCarnivalDay extends NetherlandsBaseTestCase implements YasumiTestCase
      * @throws \PHPUnit_Framework_AssertionFailedError
      * @throws \RuntimeException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OBSERVANCE);
     }
@@ -67,8 +70,9 @@ class thirdCarnivalDay extends NetherlandsBaseTestCase implements YasumiTestCase
      * @throws \PHPUnit_Framework_AssertionFailedError
      * @throws \RuntimeException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,

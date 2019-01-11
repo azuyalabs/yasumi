@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Italy;
@@ -32,15 +32,17 @@ class RepublicDayTest extends ItalyBaseTestCase implements YasumiTestCaseInterfa
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'republicDay';
+    public const HOLIDAY = 'republicDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1946;
+    public const ESTABLISHMENT_YEAR = 1946;
 
     /**
      * Tests Republic Day on or after 1946.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testRepublicDayOnAfter1946()
     {
@@ -55,6 +57,7 @@ class RepublicDayTest extends ItalyBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests Republic Day before 1946.
+     * @throws \ReflectionException
      */
     public function testRepublicDayBefore1946()
     {
@@ -67,8 +70,9 @@ class RepublicDayTest extends ItalyBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests translated name of Republic Day.
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -80,8 +84,9 @@ class RepublicDayTest extends ItalyBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(
             self::REGION,

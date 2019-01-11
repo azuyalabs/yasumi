@@ -3,12 +3,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Lithuania;
@@ -27,10 +27,11 @@ class RestorationOfTheStateOfLithuaniaDayTest extends LithuaniaBaseTestCase impl
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'restorationOfTheStateOfLithuaniaDay';
+    public const HOLIDAY = 'restorationOfTheStateOfLithuaniaDay';
 
     /**
      * Test if holiday is not defined before restoration
+     * @throws \ReflectionException
      */
     public function testHolidayBeforeRestoration()
     {
@@ -43,6 +44,8 @@ class RestorationOfTheStateOfLithuaniaDayTest extends LithuaniaBaseTestCase impl
 
     /**
      * Test if holiday is defined after restoration
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testHolidayAfterRestoration()
     {
@@ -58,8 +61,10 @@ class RestorationOfTheStateOfLithuaniaDayTest extends LithuaniaBaseTestCase impl
 
     /**
      * {@inheritdoc}
+     *
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -77,8 +82,9 @@ class RestorationOfTheStateOfLithuaniaDayTest extends LithuaniaBaseTestCase impl
 
     /**
      * {@inheritdoc}
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(
             self::REGION,

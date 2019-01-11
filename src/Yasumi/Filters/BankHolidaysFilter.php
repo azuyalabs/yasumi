@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\Filters;
@@ -33,7 +33,7 @@ class BankHolidaysFilter extends FilterIterator implements Countable
      *
      * @return bool
      */
-    public function accept()
+    public function accept(): bool
     {
         return $this->getInnerIterator()->current()->getType() === Holiday::TYPE_BANK;
     }
@@ -41,14 +41,14 @@ class BankHolidaysFilter extends FilterIterator implements Countable
     /**
      * @return integer Returns the number of filtered holidays.
      */
-    public function count()
+    public function count(): int
     {
-        $days = array_keys(iterator_to_array($this));
+        $days = \array_keys(\iterator_to_array($this));
 
-        array_walk($days, function (&$day) {
-            $day = str_replace('substituteHoliday:', '', $day);
+        \array_walk($days, function (&$day) {
+            $day = \str_replace('substituteHoliday:', '', $day);
         });
 
-        return count(array_unique($days));
+        return \count(\array_unique($days));
     }
 }

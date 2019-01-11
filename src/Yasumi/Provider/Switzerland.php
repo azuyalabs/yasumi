@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\Provider;
@@ -28,15 +28,17 @@ class Switzerland extends AbstractProvider
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'CH';
+    public const ID = 'CH';
 
     /**
      * Initialize holidays for Switzerland.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         $this->timezone = 'Europe/Zurich';
 
@@ -52,10 +54,13 @@ class Switzerland extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Swiss_National_Day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
+     * @throws \Exception
      */
-    public function calculateNationalDay()
+    public function calculateNationalDay(): void
     {
         $translations = [
             'en_US' => 'National Day',
@@ -95,10 +100,12 @@ class Switzerland extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Berchtoldstag
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateBerchtoldsTag()
+    public function calculateBerchtoldsTag(): void
     {
         $this->addHoliday(new Holiday(
             'berchtoldsTag',
@@ -125,11 +132,12 @@ class Switzerland extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Federal_Day_of_Thanksgiving,_Repentance_and_Prayer
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateBettagsMontag()
+    public function calculateBettagsMontag(): void
     {
         if ($this->year >= 1832) {
             // Find third Sunday of September

@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Switzerland\Jura;
@@ -25,15 +25,17 @@ class PlebisciteJurassienTest extends JuraBaseTestCase implements YasumiTestCase
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'plebisciteJurassien';
+    public const HOLIDAY = 'plebisciteJurassien';
 
     /**
      * The year in which the holiday was established
      */
-    const ESTABLISHMENT_YEAR = 1975;
+    public const ESTABLISHMENT_YEAR = 1975;
 
     /**
      * Tests Plébiscite jurassien on or after 1975.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testInstaurationRepubliqueOnAfter1975()
     {
@@ -48,6 +50,7 @@ class PlebisciteJurassienTest extends JuraBaseTestCase implements YasumiTestCase
 
     /**
      * Tests Plébiscite jurassien before 1975.
+     * @throws \ReflectionException
      */
     public function testInstaurationRepubliqueBefore1975()
     {
@@ -60,8 +63,9 @@ class PlebisciteJurassienTest extends JuraBaseTestCase implements YasumiTestCase
 
     /**
      * Tests translated name of Plébiscite jurassien.
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -73,8 +77,9 @@ class PlebisciteJurassienTest extends JuraBaseTestCase implements YasumiTestCase
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(
             self::REGION,

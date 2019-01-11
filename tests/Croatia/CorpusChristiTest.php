@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Croatia;
@@ -27,10 +27,13 @@ class CorpusChristiTest extends CroatiaBaseTestCase implements YasumiTestCaseInt
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'corpusChristi';
+    public const HOLIDAY = 'corpusChristi';
 
     /**
      * Tests Corpus Christi.
+     *
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testCorpusChristi()
     {
@@ -45,8 +48,9 @@ class CorpusChristiTest extends CroatiaBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -58,8 +62,9 @@ class CorpusChristiTest extends CroatiaBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }

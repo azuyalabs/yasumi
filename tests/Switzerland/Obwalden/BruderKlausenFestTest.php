@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Switzerland\Obwalden;
@@ -25,10 +25,13 @@ class BruderKlausenFestTest extends ObwaldenBaseTestCase implements YasumiTestCa
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'bruderKlausenFest';
+    public const HOLIDAY = 'bruderKlausenFest';
 
     /**
      * Tests Bruder-Klausen-Fest on or after 1947
+     *
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testBruderKlausenFestOnAfter1947()
     {
@@ -41,6 +44,9 @@ class BruderKlausenFestTest extends ObwaldenBaseTestCase implements YasumiTestCa
 
     /**
      * Tests Bruder-Klausen-Fest between 1649 and 1946
+     *
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testBruderKlausenFestBetween1649And1946()
     {
@@ -53,6 +59,7 @@ class BruderKlausenFestTest extends ObwaldenBaseTestCase implements YasumiTestCa
 
     /**
      * Tests Bruder-Klausen-Fest before 1648
+     * @throws \ReflectionException
      */
     public function testBruderKlausenFestBefore1648()
     {
@@ -62,8 +69,9 @@ class BruderKlausenFestTest extends ObwaldenBaseTestCase implements YasumiTestCa
 
     /**
      * Tests translated name of Bruder-Klausen-Fest.
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -75,8 +83,9 @@ class BruderKlausenFestTest extends ObwaldenBaseTestCase implements YasumiTestCa
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(1947), Holiday::TYPE_OTHER);
     }

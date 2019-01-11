@@ -3,12 +3,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Russia;
@@ -27,10 +27,11 @@ class RussiaDayTest extends RussiaBaseTestCase implements YasumiTestCaseInterfac
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'russiaDay';
+    public const HOLIDAY = 'russiaDay';
 
     /**
      * Test if holiday is not defined before
+     * @throws \ReflectionException
      */
     public function testHolidayBefore()
     {
@@ -43,6 +44,8 @@ class RussiaDayTest extends RussiaBaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * Test if holiday is defined after
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testHolidayAfter()
     {
@@ -58,8 +61,10 @@ class RussiaDayTest extends RussiaBaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * {@inheritdoc}
+     *
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -77,8 +82,9 @@ class RussiaDayTest extends RussiaBaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * {@inheritdoc}
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(
             self::REGION,

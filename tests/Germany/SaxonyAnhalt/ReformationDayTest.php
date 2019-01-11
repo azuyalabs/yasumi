@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Germany\SaxonyAnhalt;
@@ -25,12 +25,12 @@ class ReformationDayTest extends SaxonyAnhaltBaseTestCase implements YasumiTestC
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'reformationDay';
+    public const HOLIDAY = 'reformationDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1517;
+    public const ESTABLISHMENT_YEAR = 1517;
 
     /**
      * Tests the holiday defined in this test.
@@ -39,6 +39,8 @@ class ReformationDayTest extends SaxonyAnhaltBaseTestCase implements YasumiTestC
      *
      * @param int      $year     the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
+     *
+     * @throws \ReflectionException
      */
     public function testHoliday($year, $expected)
     {
@@ -49,8 +51,9 @@ class ReformationDayTest extends SaxonyAnhaltBaseTestCase implements YasumiTestC
      * Returns a list of random test dates used for assertion of the holiday defined in this test
      *
      * @return array list of test dates for the holiday defined in this test
+     * @throws \Exception
      */
-    public function HolidayDataProvider()
+    public function HolidayDataProvider(): array
     {
         $data = [];
 
@@ -64,6 +67,7 @@ class ReformationDayTest extends SaxonyAnhaltBaseTestCase implements YasumiTestC
 
     /**
      * Tests the holiday defined in this test before establishment.
+     * @throws \ReflectionException
      */
     public function testHolidayBeforeEstablishment()
     {
@@ -76,8 +80,9 @@ class ReformationDayTest extends SaxonyAnhaltBaseTestCase implements YasumiTestC
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -89,8 +94,9 @@ class ReformationDayTest extends SaxonyAnhaltBaseTestCase implements YasumiTestC
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(
             self::REGION,

@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Sweden;
@@ -26,7 +26,7 @@ class AllSaintsDayTest extends SwedenBaseTestCase implements YasumiTestCaseInter
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'allSaintsDay';
+    public const HOLIDAY = 'allSaintsDay';
 
     /**
      * Tests the holiday defined in this test.
@@ -35,6 +35,8 @@ class AllSaintsDayTest extends SwedenBaseTestCase implements YasumiTestCaseInter
      *
      * @param int      $year     the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
+     *
+     * @throws \ReflectionException
      */
     public function testHoliday($year, $expected)
     {
@@ -45,8 +47,9 @@ class AllSaintsDayTest extends SwedenBaseTestCase implements YasumiTestCaseInter
      * Returns a list of random test dates used for assertion of the holiday defined in this test
      *
      * @return array list of test dates for the holiday defined in this test
+     * @throws \Exception
      */
-    public function HolidayDataProvider()
+    public function HolidayDataProvider(): array
     {
         $data = [];
 
@@ -69,8 +72,9 @@ class AllSaintsDayTest extends SwedenBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -82,8 +86,9 @@ class AllSaintsDayTest extends SwedenBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }

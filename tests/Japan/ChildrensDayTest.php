@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Japan;
@@ -25,15 +25,17 @@ class ChildrensDayTest extends JapanBaseTestCase implements YasumiTestCaseInterf
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'childrensDay';
+    public const HOLIDAY = 'childrensDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1948;
+    public const ESTABLISHMENT_YEAR = 1948;
 
     /**
      * Tests Children's Day after 1948. Children's Day was established after 1948
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testChildrensDayOnAfter1948()
     {
@@ -48,6 +50,8 @@ class ChildrensDayTest extends JapanBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests Children's Day after 1948 substituted next working day (when Children's Day falls on a Sunday)
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testChildrensDayOnAfter1948SubstitutedNextWorkingDay()
     {
@@ -62,6 +66,7 @@ class ChildrensDayTest extends JapanBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests Children's Day before 1948. Children's Day was established after 1948
+     * @throws \ReflectionException
      */
     public function testChildrensDayBefore1948()
     {
@@ -74,8 +79,9 @@ class ChildrensDayTest extends JapanBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -87,8 +93,9 @@ class ChildrensDayTest extends JapanBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(
             self::REGION,

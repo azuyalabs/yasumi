@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\Provider;
@@ -31,16 +31,17 @@ class Portugal extends AbstractProvider
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'PT';
+    public const ID = 'PT';
 
     /**
      * Initialize holidays for Portugal.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         $this->timezone = 'Europe/Lisbon';
 
@@ -75,10 +76,12 @@ class Portugal extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Carnation_Revolution
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateCarnationRevolutionDay()
+    public function calculateCarnationRevolutionDay(): void
     {
         if ($this->year >= 1974) {
             $this->addHoliday(new Holiday(
@@ -95,11 +98,12 @@ class Portugal extends AbstractProvider
      * In Portugal, between 2013 andd 2015 (inclusive) this holiday did not happen due to government deliberation.
      * It was restored in 2016.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateCorpusChristi()
+    public function calculateCorpusChristi(): void
     {
         if ($this->year <= 2013 || $this->year >= 2016) {
             $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale));
@@ -119,10 +123,12 @@ class Portugal extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Portugal_Day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculatePortugalDay()
+    public function calculatePortugalDay(): void
     {
         if ($this->year <= 1932 || $this->year >= 1974) {
             $this->addHoliday(new Holiday(
@@ -149,10 +155,12 @@ class Portugal extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/5_October_1910_revolution
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculatePortugueseRepublicDay()
+    public function calculatePortugueseRepublicDay(): void
     {
         if ($this->year >= 1910) {
             $this->addHoliday(new Holiday(
@@ -168,10 +176,12 @@ class Portugal extends AbstractProvider
      * In Portugal, between 2013 andd 2015 (inclusive) this holiday did not happen due to government deliberation.
      * It was restored in 2016.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateAllSaintsDay()
+    public function calculateAllSaintsDay(): void
     {
         if ($this->year <= 2013 || $this->year >= 2016) {
             $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale));
@@ -198,10 +208,12 @@ class Portugal extends AbstractProvider
      * @link https://pt.wikipedia.org/wiki/Restauração_da_Independência (portuguese link)
      * @link https://pt.wikipedia.org/wiki/Guerra_da_Restauração (english link)
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateRestorationOfIndependenceDay()
+    public function calculateRestorationOfIndependenceDay(): void
     {
         // The Wikipedia article mentions that this has been a holiday since the second of half of the XIX century.
         if (($this->year >= 1850 && $this->year <= 2013) || $this->year >= 2016) {

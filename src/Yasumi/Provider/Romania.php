@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\Provider;
@@ -32,16 +32,17 @@ class Romania extends AbstractProvider
      * Code to identify this Holiday Provider.
      * Typically this is the ISO3166 code corresponding to the respective country or sub-region.
      */
-    const ID = 'RO';
+    public const ID = 'RO';
 
     /**
      * Initialize holidays for Romania.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         $this->timezone = 'Europe/Bucharest';
 
@@ -78,10 +79,12 @@ class Romania extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Public_holidays_in_Romania
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateDayAfterNewYearsDay()
+    public function calculateDayAfterNewYearsDay(): void
     {
         $this->addHoliday(new Holiday('dayAfterNewYearsDay', [
             'en_US' => 'Day after New Year\'s Day',
@@ -99,10 +102,12 @@ class Romania extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/United_Principalities
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateUnitedPrincipalitiesDay()
+    public function calculateUnitedPrincipalitiesDay(): void
     {
         // The law is official since 21.12.2014.
         if ($this->year > 2014) {
@@ -120,10 +125,12 @@ class Romania extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/St._Andrew%27s_Day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateStAndrewDay()
+    public function calculateStAndrewDay(): void
     {
         if ($this->year >= 2012) {
             $this->addHoliday(new Holiday('stAndrewDay', [
@@ -144,10 +151,12 @@ class Romania extends AbstractProvider
      * @link https://en.wikipedia.org/wiki/Great_Union_Day
      * @link https://ro.wikipedia.org/wiki/Ziua_na%C8%9Bional%C4%83_a_Rom%C3%A2niei
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateNationalDay()
+    public function calculateNationalDay(): void
     {
         $national_day = null;
 
@@ -178,10 +187,12 @@ class Romania extends AbstractProvider
      * Constantin Brâncuși (February 19, 1876 – March 16, 1957) was a Romanian sculptor, painter and photographer.
      *
      * @link https://en.wikipedia.org/wiki/Constantin_Br%C3%A2ncu%C8%99i
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateConstantinBrancusiDay()
+    public function calculateConstantinBrancusiDay(): void
     {
         if ($this->year >= 2016) {
             $this->addHoliday(new Holiday(
@@ -204,10 +215,13 @@ class Romania extends AbstractProvider
      * according to the Law 220/2016 (18.11.2016)
      *
      * @link https://en.wikipedia.org/wiki/Children%27s_Day
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
+     * @throws \Exception
      */
-    public function calculateChildrensDay()
+    public function calculateChildrensDay(): void
     {
         if ($this->year >= 1950 && $this->year <= 2016) {
             $this->addHoliday(new Holiday(
@@ -238,7 +252,7 @@ class Romania extends AbstractProvider
      *
      * @throws \Exception
      */
-    public function calculateEaster($year, $timezone)
+    public function calculateEaster($year, $timezone): DateTime
     {
         return $this->calculateOrthodoxEaster($year, $timezone);
     }

@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Switzerland\Ticino;
@@ -26,7 +26,7 @@ class StJosephDayTest extends TicinoBaseTestCase implements YasumiTestCaseInterf
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'stJosephsDay';
+    public const HOLIDAY = 'stJosephsDay';
 
     /**
      * Tests St. Joseph's Day.
@@ -35,6 +35,8 @@ class StJosephDayTest extends TicinoBaseTestCase implements YasumiTestCaseInterf
      *
      * @param int       $year     the year for which St. Joseph's Day needs to be tested
      * @param \DateTime $expected the expected date
+     *
+     * @throws \ReflectionException
      */
     public function testStJosephDay($year, $expected)
     {
@@ -45,16 +47,18 @@ class StJosephDayTest extends TicinoBaseTestCase implements YasumiTestCaseInterf
      * Returns a list of random test dates used for assertion of St. Joseph's Day.
      *
      * @return array list of test dates for St. Joseph's Day
+     * @throws \Exception
      */
-    public function StJosephDayDataProvider()
+    public function StJosephDayDataProvider(): array
     {
         return $this->generateRandomDates(3, 19, self::TIMEZONE);
     }
 
     /**
      * Tests translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -66,8 +70,9 @@ class StJosephDayTest extends TicinoBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OTHER);
     }

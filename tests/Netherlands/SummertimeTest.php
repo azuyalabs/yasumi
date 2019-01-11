@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Netherlands;
@@ -25,14 +25,27 @@ class SummertimeTest extends NetherlandsBaseTestCase implements YasumiTestCaseIn
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'summerTime';
+    public const HOLIDAY = 'summerTime';
 
     /**
      * Tests Summertime.
+     *
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testSummertime()
     {
-        $year = $this->generateRandomYear();
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(1946, 1976));
+
+        $year = $this->generateRandomYear(1977, 1980);
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("first sunday of april $year", new DateTimeZone(self::TIMEZONE))
+        );
+
+        $year = $this->generateRandomYear(1981, 2036);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -43,22 +56,24 @@ class SummertimeTest extends NetherlandsBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            $this->generateRandomYear(1978, 2037),
             [self::LOCALE => 'Zomertijd']
         );
     }
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_SEASON);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(1978, 2037), Holiday::TYPE_SEASON);
     }
 }

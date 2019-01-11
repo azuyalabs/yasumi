@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Ireland;
@@ -26,12 +26,12 @@ class pentecostMondayTest extends IrelandBaseTestCase implements YasumiTestCaseI
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'pentecostMonday';
+    public const HOLIDAY = 'pentecostMonday';
 
     /**
      * The year in which the holiday was abolished
      */
-    const ABOLISHMENT_YEAR = 1973;
+    public const ABOLISHMENT_YEAR = 1973;
 
     /**
      * Tests the holiday defined in this test.
@@ -40,6 +40,9 @@ class pentecostMondayTest extends IrelandBaseTestCase implements YasumiTestCaseI
      *
      * @param int      $year     the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
+     *
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHoliday($year, $expected)
     {
@@ -55,8 +58,9 @@ class pentecostMondayTest extends IrelandBaseTestCase implements YasumiTestCaseI
      * Returns a list of random test dates used for assertion of the holiday defined in this test
      *
      * @return array list of test dates for the holiday defined in this test
+     * @throws \Exception
      */
-    public function HolidayDataProvider()
+    public function HolidayDataProvider(): array
     {
         $data = [];
 
@@ -72,6 +76,7 @@ class pentecostMondayTest extends IrelandBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests the holiday defined in this test after abolishment.
+     * @throws \ReflectionException
      */
     public function testHolidayDayAfterAbolishment()
     {
@@ -80,8 +85,10 @@ class pentecostMondayTest extends IrelandBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -99,8 +106,9 @@ class pentecostMondayTest extends IrelandBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(
             self::REGION,

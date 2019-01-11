@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\Provider;
@@ -28,16 +28,17 @@ class NewZealand extends AbstractProvider
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'NZ';
+    public const ID = 'NZ';
 
     /**
      * Initialize holidays for New Zealand.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         $this->timezone = 'Pacific/Auckland';
 
@@ -65,11 +66,12 @@ class NewZealand extends AbstractProvider
      * @link http://www.timeanddate.com/holidays/new-zealand/day-after-new-years-day
      * @link http://employment.govt.nz/er/holidaysandleave/publicholidays/mondayisation.asp
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateNewYearHolidays()
+    public function calculateNewYearHolidays(): void
     {
         $newYearsDay         = new DateTime("$this->year-01-01", new DateTimeZone($this->timezone));
         $dayAfterNewYearsDay = new DateTime("$this->year-01-02", new DateTimeZone($this->timezone));
@@ -104,10 +106,12 @@ class NewZealand extends AbstractProvider
      * @link https://en.wikipedia.org/wiki/Waitangi_Day
      * @link http://employment.govt.nz/er/holidaysandleave/publicholidays/mondayisation.asp
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateWaitangiDay()
+    public function calculateWaitangiDay(): void
     {
         if ($this->year < 1974) {
             return;
@@ -132,10 +136,12 @@ class NewZealand extends AbstractProvider
      * @link https://en.wikipedia.org/wiki/Anzac_Day
      * @link http://employment.govt.nz/er/holidaysandleave/publicholidays/mondayisation.asp
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateAnzacDay()
+    public function calculateAnzacDay(): void
     {
         if ($this->year < 1921) {
             return;
@@ -163,10 +169,12 @@ class NewZealand extends AbstractProvider
      *
      * @link http://www.timeanddate.com/holidays/new-zealand/queen-birthday
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateQueensBirthday()
+    public function calculateQueensBirthday(): void
     {
         if ($this->year < 1952) {
             return;
@@ -194,10 +202,12 @@ class NewZealand extends AbstractProvider
      *
      * @link http://www.timeanddate.com/holidays/new-zealand/labour-day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateLabourDay()
+    public function calculateLabourDay(): void
     {
         if ($this->year < 1900) {
             return;
@@ -221,11 +231,12 @@ class NewZealand extends AbstractProvider
      * @link http://www.timeanddate.com/holidays/new-zealand/christmas-day
      * @link http://employment.govt.nz/er/holidaysandleave/publicholidays/mondayisation.asp
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateChristmasHolidays()
+    public function calculateChristmasHolidays(): void
     {
         $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->timezone));
         $boxingDay    = new DateTime("$this->year-12-26", new DateTimeZone($this->timezone));

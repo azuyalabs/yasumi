@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Switzerland\Neuchatel;
@@ -26,10 +26,13 @@ class BettagsMontagTest extends NeuchatelBaseTestCase implements YasumiTestCaseI
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'bettagsMontag';
+    public const HOLIDAY = 'bettagsMontag';
 
     /**
      * Tests Bettags Montag on or after 1832
+     *
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testBettagsMontagOnAfter1832()
     {
@@ -45,6 +48,7 @@ class BettagsMontagTest extends NeuchatelBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests Bettags Montag before 1832
+     * @throws \ReflectionException
      */
     public function testBettagsMontagBefore1832()
     {
@@ -54,8 +58,9 @@ class BettagsMontagTest extends NeuchatelBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests translated name of Bettags Montag.
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -67,8 +72,9 @@ class BettagsMontagTest extends NeuchatelBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(1900), Holiday::TYPE_OTHER);
     }

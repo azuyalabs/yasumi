@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\USA;
@@ -25,15 +25,17 @@ class IndependenceDayTest extends USABaseTestCase implements YasumiTestCaseInter
     /**
      * The name of the holiday
      */
-    const HOLIDAY = 'independenceDay';
+    public const HOLIDAY = 'independenceDay';
 
     /**
      * The year in which the holiday was first established
      */
-    const ESTABLISHMENT_YEAR = 1776;
+    public const ESTABLISHMENT_YEAR = 1776;
 
     /**
      * Tests Independence Day on or after 1776. Independence Day is celebrated since 1776 on July 4th.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testIndependenceDayOnAfter1776()
     {
@@ -48,6 +50,8 @@ class IndependenceDayTest extends USABaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests Independence Day on or after 1776 when substituted on Monday (when Independence Day falls on Sunday)
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testIndependenceDayOnAfter1776SubstitutedMonday()
     {
@@ -62,6 +66,8 @@ class IndependenceDayTest extends USABaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests Independence Day on or after 1776 when substituted on Friday (when Independence Day falls on Saturday)
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testIndependenceDayOnAfter1776SubstitutedFriday()
     {
@@ -76,6 +82,7 @@ class IndependenceDayTest extends USABaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests Independence Day before 1776. Independence Day is celebrated since 1776 on July 4th.
+     * @throws \ReflectionException
      */
     public function testIndependenceDayBefore1776()
     {
@@ -88,8 +95,9 @@ class IndependenceDayTest extends USABaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -101,8 +109,9 @@ class IndependenceDayTest extends USABaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(
             self::REGION,

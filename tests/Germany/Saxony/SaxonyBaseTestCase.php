@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Germany\Saxony;
@@ -25,10 +25,10 @@ abstract class SaxonyBaseTestCase extends GermanyBaseTestCase
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    const REGION = 'Germany/Saxony';
+    public const REGION = 'Germany/Saxony';
 
     /**
      * Timezone in which this provider has holidays defined
      */
-    const TIMEZONE = 'Europe/Berlin';
+    public const TIMEZONE = 'Europe/Berlin';
 }

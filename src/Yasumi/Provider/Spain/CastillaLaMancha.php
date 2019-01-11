@@ -3,12 +3,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\Provider\Spain;
@@ -37,16 +37,17 @@ class CastillaLaMancha extends Spain
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'ES-CM';
+    public const ID = 'ES-CM';
 
     /**
      * Initialize holidays for Castilla-La Mancha (Spain).
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         parent::initialize();
 
@@ -70,10 +71,12 @@ class CastillaLaMancha extends Spain
      *
      * @link http://www.timeanddate.com/holidays/spain/castile-la-mancha-day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateCastillaLaManchaDay()
+    public function calculateCastillaLaManchaDay(): void
     {
         if ($this->year >= 1984) {
             $this->addHoliday(new Holiday(

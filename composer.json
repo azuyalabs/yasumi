@@ -16,17 +16,17 @@
   "authors": [
     {
       "name": "Sacha Telgenhof",
-      "email": "me@sachatelgenhof.nl"
+      "email": "me@sachatelgenhof.com"
     }
   ],
   "require": {
-    "php": ">=5.6.0"
+    "php": ">=7.1"
   },
   "require-dev": {
-    "friendsofphp/php-cs-fixer": "^2.6",
-    "fzaninotto/faker": "~1.7",
+    "friendsofphp/php-cs-fixer": "^2.14",
+    "fzaninotto/faker": "~1.8",
     "mikey179/vfsStream": "~1.6",
-    "phpunit/phpunit": "~5.7"
+    "phpunit/phpunit": "~7.5"
   },
   "autoload": {
     "psr-4": {
@@ -39,7 +39,7 @@
     }
   },
   "scripts": {
-    "php-cs-fixer": "./vendor/bin/php-cs-fixer fix .",
+    "format": "./vendor/bin/php-cs-fixer fix .",
     "test": "vendor/bin/phpunit"
   },
   "config": {

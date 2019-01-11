@@ -3,12 +3,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\Provider;
@@ -24,17 +24,17 @@ class Estonia extends AbstractProvider
 {
     use CommonHolidays, ChristianHolidays;
 
-    const DECLARATION_OF_INDEPENDENCE_YEAR = 1918;
+    public const DECLARATION_OF_INDEPENDENCE_YEAR = 1918;
 
-    const VICTORY_DAY_START_YEAR = 1934;
+    public const VICTORY_DAY_START_YEAR = 1934;
 
-    const RESTORATION_OF_INDEPENDENCE_YEAR = 1991;
+    public const RESTORATION_OF_INDEPENDENCE_YEAR = 1991;
 
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'EE';
+    public const ID = 'EE';
 
     /**
      * Initialize holidays for Estonia.
@@ -42,7 +42,7 @@ class Estonia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         $this->timezone = 'Europe/Tallinn';
 
@@ -63,8 +63,9 @@ class Estonia extends AbstractProvider
 
     /**
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
-    private function addIndependenceDay()
+    private function addIndependenceDay(): void
     {
         if ($this->year >= self::DECLARATION_OF_INDEPENDENCE_YEAR) {
             $this->addHoliday(new Holiday('independenceDay', [
@@ -76,8 +77,9 @@ class Estonia extends AbstractProvider
 
     /**
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
-    private function addVictoryDay()
+    private function addVictoryDay(): void
     {
         if ($this->year >= self::VICTORY_DAY_START_YEAR) {
             $this->addHoliday(new Holiday('victoryDay', [
@@ -89,8 +91,9 @@ class Estonia extends AbstractProvider
 
     /**
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
-    private function addRestorationOfIndependenceDay()
+    private function addRestorationOfIndependenceDay(): void
     {
         if ($this->year >= self::RESTORATION_OF_INDEPENDENCE_YEAR) {
             $this->addHoliday(new Holiday('restorationOfIndependenceDay', [

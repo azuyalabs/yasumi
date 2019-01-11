@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Japan;
@@ -25,15 +25,17 @@ class ShowaDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
     /**
      * The name of the holiday defined in the test
      */
-    const HOLIDAY = 'showaDay';
+    public const HOLIDAY = 'showaDay';
 
     /**
      * The year in which the holiday defined in the test was first established
      */
-    const ESTABLISHMENT_YEAR = 2007;
+    public const ESTABLISHMENT_YEAR = 2007;
 
     /**
      * Tests the holiday defined in the test on or after establishment.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testHolidayOnAfter2007()
     {
@@ -48,6 +50,8 @@ class ShowaDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests the holiday defined in the test on or after the establishment and substituted next working day.
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testHolidayOnAfterEstablishmentSubstitutedNextWorkingDay()
     {
@@ -62,6 +66,7 @@ class ShowaDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests the holiday defined in the test before establishment.
+     * @throws \ReflectionException
      */
     public function testHolidayBeforeEstablishment()
     {
@@ -74,8 +79,9 @@ class ShowaDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -87,8 +93,9 @@ class ShowaDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests type of the holiday defined in this test.
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(
             self::REGION,

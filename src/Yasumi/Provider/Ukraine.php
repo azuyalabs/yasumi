@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\Provider;
@@ -30,16 +30,17 @@ class Ukraine extends AbstractProvider
      * Code to identify this Holiday Provider.
      * Typically this is the ISO3166 code corresponding to the respective country or sub-region.
      */
-    const ID = 'UA';
+    public const ID = 'UA';
 
     /**
      * Initialize holidays for Ukraine.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         $this->timezone = 'Europe/Kiev';
 
@@ -64,10 +65,12 @@ class Ukraine extends AbstractProvider
     /**
      * Christmas Day.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateChristmasDay()
+    public function calculateChristmasDay(): void
     {
         $this->addHoliday(new Holiday(
             'christmasDay',
@@ -85,10 +88,12 @@ class Ukraine extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/International_Women%27s_Day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateInternationalWomensDay()
+    public function calculateInternationalWomensDay(): void
     {
         $this->addHoliday(new Holiday(
             'internationalWomensDay',
@@ -103,10 +108,12 @@ class Ukraine extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/International_Workers%27_Day#Ukraine
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateSecondInternationalWorkersDay()
+    public function calculateSecondInternationalWorkersDay(): void
     {
         $this->addHoliday(new Holiday('secondInternationalWorkersDay', [
             'uk_UA' => 'День міжнародної солідарності трудящих',
@@ -125,10 +132,12 @@ class Ukraine extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Victory_Day_over_Nazism_in_World_War_II
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateVictoryDay()
+    public function calculateVictoryDay(): void
     {
         $this->addHoliday(new Holiday(
             'victoryDay',
@@ -145,10 +154,12 @@ class Ukraine extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Constitution_Day_(Ukraine)
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateConstitutionDay()
+    public function calculateConstitutionDay(): void
     {
         if ($this->year < 1996) {
             return;
@@ -171,10 +182,12 @@ class Ukraine extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Declaration_of_Independence_of_Ukraine
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateIndependenceDay()
+    public function calculateIndependenceDay(): void
     {
         if ($this->year < 1991) {
             return;
@@ -198,10 +211,12 @@ class Ukraine extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Defender_of_Ukraine_Day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateDefenderOfUkraineDay()
+    public function calculateDefenderOfUkraineDay(): void
     {
         if ($this->year < 2015) {
             return;
@@ -222,7 +237,7 @@ class Ukraine extends AbstractProvider
      * @return \DateTime
      * @throws \Exception
      */
-    public function calculateEaster($year, $timezone)
+    public function calculateEaster($year, $timezone): \DateTime
     {
         return $this->calculateOrthodoxEaster($year, $timezone);
     }

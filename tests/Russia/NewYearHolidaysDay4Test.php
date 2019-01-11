@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\tests\Russia;
@@ -25,12 +25,13 @@ class NewYearHolidaysDay4Test extends RussiaBaseTestCase implements YasumiTestCa
     /**
      * The name of the holiday to be tested
      */
-    const HOLIDAY = 'newYearHolidaysDay4';
+    public const HOLIDAY = 'newYearHolidaysDay4';
 
     /**
      * @return array
+     * @throws \Exception
      */
-    public function holidayDataProvider()
+    public function holidayDataProvider(): array
     {
         return $this->generateRandomDates(1, 4, self::TIMEZONE);
     }
@@ -40,6 +41,8 @@ class NewYearHolidaysDay4Test extends RussiaBaseTestCase implements YasumiTestCa
      *
      * @param int       $year
      * @param \DateTime $expected
+     *
+     * @throws \ReflectionException
      */
     public function testHoliday($year, \DateTime $expected)
     {
@@ -48,8 +51,9 @@ class NewYearHolidaysDay4Test extends RussiaBaseTestCase implements YasumiTestCa
 
     /**
      * {@inheritdoc}
+     * @throws \ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -61,8 +65,9 @@ class NewYearHolidaysDay4Test extends RussiaBaseTestCase implements YasumiTestCa
 
     /**
      * {@inheritdoc}
+     * @throws \ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }

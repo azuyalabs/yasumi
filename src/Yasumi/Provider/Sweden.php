@@ -2,12 +2,12 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\Provider;
@@ -28,16 +28,17 @@ class Sweden extends AbstractProvider
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    const ID = 'SE';
+    public const ID = 'SE';
 
     /**
      * Initialize holidays for Sweden.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function initialize()
+    public function initialize(): void
     {
         $this->timezone = 'Europe/Stockholm';
 
@@ -76,11 +77,12 @@ class Sweden extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Midsummer#Sweden
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateStJohnsDay()
+    public function calculateStJohnsDay(): void
     {
         $date = new DateTime("$this->year-6-20", new DateTimeZone($this->timezone)); // Default date
 
@@ -111,11 +113,12 @@ class Sweden extends AbstractProvider
      * @link https://en.wikipedia.org/wiki/All_Saints%27_Day
      * @link http://www.timeanddate.com/holidays/sweden/all-saints-day
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateAllSaintsDay()
+    public function calculateAllSaintsDay(): void
     {
         $date = new DateTime("$this->year-10-31", new DateTimeZone($this->timezone));
 
@@ -139,10 +142,12 @@ class Sweden extends AbstractProvider
      * Olympic Stadium, in honour of the election of King Gustav Vasa in 1523, as this was considered the foundation of
      * modern Sweden.
      *
+     * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
      */
-    public function calculateNationalDay()
+    public function calculateNationalDay(): void
     {
         if ($this->year < 1916) {
             return;

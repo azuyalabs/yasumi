@@ -2,19 +2,19 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2018 AzuyaLabs
+ * Copyright (c) 2015 - 2019 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <stelgenhof@gmail.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 // Translations for Easter Monday
 return [
     'cs_CZ' => 'Velikonoční pondělí',
     'cy_GB' => 'Llun y Pasg',
-    'da_DK' => '2. Påskedag',
+    'da_DK' => '2. påskedag',
     'de_AT' => 'Ostermontag',
     'de_CH' => 'Ostermontag',
     'de_DE' => 'Ostermontag',
