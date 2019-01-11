@@ -133,19 +133,19 @@ class Yasumi
         }
 
         // Load internal locales variable
-        if (null === static::$locales) {
-            static::$locales = self::getAvailableLocales();
+        if (null === self::$locales) {
+            self::$locales = self::getAvailableLocales();
         }
 
         // Load internal translations variable
-        if (null === static::$globalTranslations) {
-            static::$globalTranslations = new Translations(static::$locales);
-            static::$globalTranslations->loadTranslations(__DIR__ . '/data/translations');
+        if (null === self::$globalTranslations) {
+            self::$globalTranslations = new Translations(self::$locales);
+            self::$globalTranslations->loadTranslations(__DIR__ . '/data/translations');
         }
 
         // Assert locale input
-        if (! in_array($locale, static::$locales, true)) {
-            throw new UnknownLocaleException(sprintf('Locale "%s" is not a valid locale.', $locale));
+        if (! \in_array($locale, self::$locales, true)) {
+            throw new UnknownLocaleException(\sprintf('Locale "%s" is not a valid locale.', $locale));
         }
 
         return new $providerClass($year, $locale, self::$globalTranslations);
