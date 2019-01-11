@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Added
 
 ### Changed
+- Changed translation for Norway's national day. [\#98](https://github.com/azuyalabs/yasumi/pull/98)
 
 ### Fixed
 - Fixed spelling issue in the Swedish translation. [\#97](https://github.com/azuyalabs/yasumi/pull/97)
