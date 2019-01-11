@@ -116,13 +116,13 @@ class Holiday extends DateTime implements JsonSerializable
         }
 
         // Load internal locales variable
-        if (null === static::$locales) {
-            static::$locales = Yasumi::getAvailableLocales();
+        if (null === self::$locales) {
+            self::$locales = Yasumi::getAvailableLocales();
         }
 
         // Assert display locale input
-        if (! in_array($displayLocale, static::$locales, true)) {
-            throw new UnknownLocaleException(sprintf('Locale "%s" is not a valid locale.', $displayLocale));
+        if (! \in_array($displayLocale, self::$locales, true)) {
+            throw new UnknownLocaleException(\sprintf('Locale "%s" is not a valid locale.', $displayLocale));
         }
 
         // Set additional attributes
