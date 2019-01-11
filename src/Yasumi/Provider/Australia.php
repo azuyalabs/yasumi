@@ -82,11 +82,11 @@ class Australia extends AbstractProvider
     /**
      * Function to simplify moving holidays to mondays if required
      *
-     * @param string          $shortName
-     * @param array           $names
-     * @param string|DateTime $date
-     * @param bool            $moveFromSaturday
-     * @param bool            $moveFromSunday
+     * @param string    $shortName
+     * @param array     $names
+     * @param \DateTime $date
+     * @param bool      $moveFromSaturday
+     * @param bool      $moveFromSunday
      *
      * @throws \Yasumi\Exception\InvalidDateException
      * @throws \InvalidArgumentException
@@ -129,11 +129,8 @@ class Australia extends AbstractProvider
      */
     public function calculateNewYearHolidays()
     {
-        $this->calculateHoliday(
-            'newYearsDay',
-            [],
-            new DateTime("$this->year-01-01", new DateTimeZone($this->timezone))
-        );
+        $this->calculateHoliday('newYearsDay', [],
+            new DateTime("$this->year-01-01", new DateTimeZone($this->timezone)));
     }
 
     /**
@@ -211,13 +208,8 @@ class Australia extends AbstractProvider
      */
     public function calculateQueensBirthday()
     {
-        $this->calculateHoliday(
-            'queensBirthday',
-            ['en_AU' => 'Queens Birthday'],
-            'second monday of june ' . $this->year,
-            false,
-            false
-        );
+        $this->calculateHoliday('queensBirthday', ['en_AU' => 'Queens Birthday'],
+            new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->timezone)), false, false);
     }
 
     /**
