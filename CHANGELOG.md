@@ -8,17 +8,32 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Added
 
 ### Changed
-- Changed Japanese holiday for the 2020 Olympic Games.Marine Day,Mountain Day and Health And Sports Day. [\#113](https://github.com/azuyalabs/yasumi/pull/113)
+
+### Fixed
+
+### Removed
+
+
+## [1.8.1] - 2019-01-11
+
+### Changed
+- Added PHP 7.2 and 7.3 to the TravisCI configuration.
+- Changed Japanese holiday for the 2020 Olympic Games. Marine Day, Mountain Day and Health And Sports Day. [\#113](https://github.com/azuyalabs/yasumi/pull/113)
 - Changed translation for Norway's national day. [\#98](https://github.com/azuyalabs/yasumi/pull/98)
 
 ### Fixed
+- Except New Years Day, all holidays for Russia didn't have the locale parameter in place, causing Yasumi to use the fallback locale ('en_US').
 - Fixed spelling issue in the Swedish translation. [\#97](https://github.com/azuyalabs/yasumi/pull/97)
 - Fixed spelling issues in the Danish translation. [\#96](https://github.com/azuyalabs/yasumi/pull/96)
 - Fixed German Easter Sunday and Pentecost Sunday holidays (not nationwide, only in Brandenburg). [\#100](https://github.com/azuyalabs/yasumi/pull/100)
 - Fixed BetweenFilter to ignore time part and timezone. [\#101](https://github.com/azuyalabs/yasumi/pull/101)
 - Fixed bug in provider list generation related to variable order of files returned by the filesystem [\#107](https://github.com/azuyalabs/yasumi/pull/107)
-
-### Removed
+- Fixed issues that assertNotHoliday() skips rest of test
+- Type cast to integer as Yasumi::create() requires an integer.
+- Changed access to static variables with 'self'. Accessing with 'static' can lead to possible sub-classes.
+- Corrected date parameter to be of DateTime (instead of DateTimeInterface) as the parameter object needs to be a direct instance.
+- Changed way to get current year so value is an integer (as required by the class). PHP's date function is intended for formatting and returns a string type as such.
+- Corrected test using different start year to avoid incorrect assertion.
 
 ## [1.8.0] - 2018-02-21
 
