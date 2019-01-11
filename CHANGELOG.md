@@ -10,6 +10,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Changed
 
 ### Fixed
+- Fixed spelling issue in the Swedish translation. [\#97](https://github.com/azuyalabs/yasumi/pull/97)
+- Fixed BetweenFilter to ignore time part and timezone. [\#101](https://github.com/azuyalabs/yasumi/pull/101)
 
 ### Removed
 
