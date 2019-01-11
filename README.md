@@ -1,6 +1,5 @@
 ![Logo](https://github.com/azuyalabs/yasumi/blob/gh-pages/images/yasumi_logo_wb.png)
 
-[![GitHub Release](https://img.shields.io/github/release/azuyalabs/yasumi.svg?style=flat-square)](https://github.com/azuyalabs/yasumi/releases)
 [![Total Downloads](https://img.shields.io/packagist/dt/azuyalabs/yasumi.svg?style=flat-square)](https://packagist.org/packages/azuyalabs/yasumi)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 [![Build Status](https://img.shields.io/travis/azuyalabs/yasumi.svg?style=flat-square)](https://travis-ci.org/azuyalabs/yasumi)
@@ -8,9 +7,14 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/azuyalabs/yasumi/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/azuyalabs/yasumi/?branch=master)
 
 
-***!!Update!!***
-A new [blog](https://azuyalabs.github.io/yasumi/blog/) section has been added to the documentation site. Keeping you informed about any news, releases, etc. in a handy blog post format!
+Important
+----
+This branch of Yasumi reflects the code up until version 1.8. With the release of Yasumi version 2.0, support for PHP 5 has ended. This code base serves as a support branch and will only receive the most critical bug fixes. Please note that v1.8.x works both in PHP 5 and PHP 7, but the code base hasn't been upgraded to PHP 7. 
 
+It is highly recommended to upgrade to PHP7 and Yasumi v2.0.0 to enjoy the latest changes and improvements. More information can be found here: [Yasumi Release v2](https://azuyalabs.github.io/yasumi/blog/release_v2)
+
+Introduction
+------------
 Yasumi (Japanese for 'Holiday'「休み」) is an easy PHP library to help you calculate the dates and names of holidays and other
 special celebrations from various countries/states. Many services exist on the internet that provide holidays, however
 are either not free or offer only limited information. In addition, no complete PHP library seems to exist today
