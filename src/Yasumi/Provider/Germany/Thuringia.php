@@ -63,6 +63,6 @@ class Thuringia extends Germany
             return;
         }
 
-        $this->addHoliday($this->reformationDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->reformationDay($this->year, $this->timezone));
     }
 }

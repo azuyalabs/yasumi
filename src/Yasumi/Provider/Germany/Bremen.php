@@ -61,6 +61,6 @@ class Bremen extends Germany
         if ($this->year < 2018) {
             return;
         }
-        $this->addHoliday($this->reformationDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->reformationDay($this->year, $this->timezone));
     }
 }

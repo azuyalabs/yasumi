@@ -45,7 +45,7 @@ class SaxonyAnhalt extends Germany
         parent::initialize();
 
         // Add custom Christian holidays
-        $this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->epiphany($this->year, $this->timezone, Holiday::TYPE_OTHER));
         $this->calculateReformationDay();
     }
 
@@ -64,6 +64,6 @@ class SaxonyAnhalt extends Germany
             return;
         }
 
-        $this->addHoliday($this->reformationDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->reformationDay($this->year, $this->timezone));
     }
 }

@@ -35,7 +35,6 @@ trait CommonHolidays
      *
      * @param int    $year     the year for which New Year's Eve need to be created
      * @param string $timezone the timezone in which New Year's Eve is celebrated
-     * @param string $locale   the locale for which New Year's Eve need to be displayed in.
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
@@ -49,10 +48,14 @@ trait CommonHolidays
     public function newYearsEve(
         int $year,
         string $timezone,
-        string $locale,
         string $type = Holiday::TYPE_OFFICIAL
     ): Holiday {
-        return new Holiday('newYearsEve', [], new DateTime("$year-12-31", new DateTimeZone($timezone)), $locale, $type);
+        return new Holiday(
+            'newYearsEve',
+            [],
+            new DateTime("$year-12-31", new DateTimeZone($timezone)),
+            $type
+        );
     }
 
     /**
@@ -69,7 +72,6 @@ trait CommonHolidays
      *
      * @param int    $year     the year for which New Year's Day need to be created
      * @param string $timezone the timezone in which New Year's Day is celebrated
-     * @param string $locale   the locale for which New Year's Day need to be displayed in.
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
@@ -83,10 +85,14 @@ trait CommonHolidays
     public function newYearsDay(
         int $year,
         string $timezone,
-        string $locale,
         string $type = Holiday::TYPE_OFFICIAL
     ): Holiday {
-        return new Holiday('newYearsDay', [], new DateTime("$year-1-1", new DateTimeZone($timezone)), $locale, $type);
+        return new Holiday(
+            'newYearsDay',
+            [],
+            new DateTime("$year-1-1", new DateTimeZone($timezone)),
+            $type
+        );
     }
 
     /**
@@ -102,7 +108,6 @@ trait CommonHolidays
      *
      * @param int    $year     the year for which International Workers' Day need to be created
      * @param string $timezone the timezone in which International Workers' Day is celebrated
-     * @param string $locale   the locale for which International Workers' Day need to be displayed in.
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
@@ -116,14 +121,12 @@ trait CommonHolidays
     public function internationalWorkersDay(
         int $year,
         string $timezone,
-        string $locale,
         string $type = Holiday::TYPE_OFFICIAL
     ): Holiday {
         return new Holiday(
             'internationalWorkersDay',
             [],
             new DateTime("$year-5-1", new DateTimeZone($timezone)),
-            $locale,
             $type
         );
     }
@@ -141,7 +144,6 @@ trait CommonHolidays
      *
      * @param int    $year     the year for which Valentine's Day need to be created
      * @param string $timezone the timezone in which Valentine's Day is celebrated
-     * @param string $locale   the locale for which Valentine's Day need to be displayed in.
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
@@ -155,14 +157,12 @@ trait CommonHolidays
     public function valentinesDay(
         int $year,
         string $timezone,
-        string $locale,
         string $type = Holiday::TYPE_OFFICIAL
     ): Holiday {
         return new Holiday(
             'valentinesDay',
             [],
             new DateTime("$year-2-14", new DateTimeZone($timezone)),
-            $locale,
             $type
         );
     }
@@ -178,7 +178,6 @@ trait CommonHolidays
      *
      * @param int    $year     the year for which World Animal Day need to be created
      * @param string $timezone the timezone in which World Animal Day is celebrated
-     * @param string $locale   the locale for which World Animal Day need to be displayed in.
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
@@ -192,14 +191,12 @@ trait CommonHolidays
     public function worldAnimalDay(
         int $year,
         string $timezone,
-        string $locale,
         string $type = Holiday::TYPE_OFFICIAL
     ): Holiday {
         return new Holiday(
             'worldAnimalDay',
             [],
             new DateTime("$year-10-4", new DateTimeZone($timezone)),
-            $locale,
             $type
         );
     }
@@ -217,7 +214,6 @@ trait CommonHolidays
      *
      * @param int    $year     the year for which St. Martin's Day need to be created
      * @param string $timezone the timezone in which St. Martin's Day is celebrated
-     * @param string $locale   the locale for which St. Martin's Day need to be displayed in.
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
@@ -231,14 +227,12 @@ trait CommonHolidays
     public function stMartinsDay(
         int $year,
         string $timezone,
-        string $locale,
         string $type = Holiday::TYPE_OFFICIAL
     ): Holiday {
         return new Holiday(
             'stMartinsDay',
             [],
             new DateTime("$year-11-11", new DateTimeZone($timezone)),
-            $locale,
             $type
         );
     }
@@ -255,7 +249,6 @@ trait CommonHolidays
      *
      * @param int    $year     the year for which Father's Day need to be created
      * @param string $timezone the timezone in which Father's Day is celebrated
-     * @param string $locale   the locale for which Father's Day need to be displayed in.
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
@@ -269,14 +262,12 @@ trait CommonHolidays
     public function fathersDay(
         int $year,
         string $timezone,
-        string $locale,
         string $type = Holiday::TYPE_OFFICIAL
     ): Holiday {
         return new Holiday(
             'fathersDay',
             [],
             new DateTime("third sunday of june $year", new DateTimeZone($timezone)),
-            $locale,
             $type
         );
     }
@@ -293,7 +284,6 @@ trait CommonHolidays
      *
      * @param int    $year     the year for which Mother's Day need to be created
      * @param string $timezone the timezone in which Mother's Day is celebrated
-     * @param string $locale   the locale for which Mother's Day need to be displayed in.
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
@@ -307,14 +297,12 @@ trait CommonHolidays
     public function mothersDay(
         int $year,
         string $timezone,
-        string $locale,
         string $type = Holiday::TYPE_OFFICIAL
     ): Holiday {
         return new Holiday(
             'mothersDay',
             [],
             new DateTime("second sunday of may $year", new DateTimeZone($timezone)),
-            $locale,
             $type
         );
     }
@@ -331,7 +319,6 @@ trait CommonHolidays
      *
      * @param int    $year     the year for which Victory in Europe Day need to be created
      * @param string $timezone the timezone in which Victory in Europe Day is celebrated
-     * @param string $locale   the locale for which Victory in Europe Day need to be displayed in.
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
@@ -345,14 +332,12 @@ trait CommonHolidays
     public function victoryInEuropeDay(
         int $year,
         string $timezone,
-        string $locale,
         string $type = Holiday::TYPE_OFFICIAL
     ): Holiday {
         return new Holiday(
             'victoryInEuropeDay',
             [],
             new DateTime("$year-5-8", new DateTimeZone($timezone)),
-            $locale,
             $type
         );
     }
@@ -371,7 +356,6 @@ trait CommonHolidays
      *
      * @param int    $year     the year for which Armistice Day need to be created
      * @param string $timezone the timezone in which Armistice Day is celebrated
-     * @param string $locale   the locale for which Armistice Day need to be displayed in.
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
@@ -385,14 +369,12 @@ trait CommonHolidays
     public function armisticeDay(
         int $year,
         string $timezone,
-        string $locale,
         string $type = Holiday::TYPE_OFFICIAL
     ): Holiday {
         return new Holiday(
             'armisticeDay',
             [],
             new DateTime("$year-11-11", new DateTimeZone($timezone)),
-            $locale,
             $type
         );
     }
@@ -444,7 +426,6 @@ trait CommonHolidays
      *
      * @param int    $year     the year for which summer time need to be created
      * @param string $timezone the timezone in which summer time transition occurs
-     * @param string $locale   the locale for which summer time need to be displayed in.
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
@@ -454,7 +435,7 @@ trait CommonHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function summerTime($year, $timezone, $locale, $type = Holiday::TYPE_SEASON): ?Holiday
+    public function summerTime($year, $timezone, $type = Holiday::TYPE_SEASON): ?Holiday
     {
         $date = $this->calculateSummerWinterTime($year, $timezone, true);
 
@@ -463,7 +444,6 @@ trait CommonHolidays
                 'summerTime',
                 [],
                 $date,
-                $locale,
                 $type
             );
         }
@@ -478,7 +458,6 @@ trait CommonHolidays
      *
      * @param int    $year     the year for which summer time need to be created
      * @param string $timezone the timezone in which summer time transition occurs
-     * @param string $locale   the locale for which summer time need to be displayed in.
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
@@ -488,7 +467,7 @@ trait CommonHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function winterTime($year, $timezone, $locale, $type = Holiday::TYPE_SEASON): ?Holiday
+    public function winterTime($year, $timezone, $type = Holiday::TYPE_SEASON): ?Holiday
     {
         $date = $this->calculateSummerWinterTime($year, $timezone, false);
 
@@ -497,7 +476,6 @@ trait CommonHolidays
                 'winterTime',
                 [],
                 $date,
-                $locale,
                 $type
             );
         }

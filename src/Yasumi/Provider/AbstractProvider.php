@@ -81,11 +81,6 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     protected $timezone;
 
     /**
-     * @var string the object's current locale
-     */
-    protected $locale;
-
-    /**
      * @var Holiday[] list of dates of the available holidays
      */
     private $holidays = [];
@@ -99,16 +94,14 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * Creates a new holiday provider (i.e. country/state).
      *
      * @param int                        $year               the year for which to provide holidays
-     * @param string                     $locale             the locale/language in which holidays need to be
      *                                                       represented
      * @param TranslationsInterface|null $globalTranslations global translations
      */
-    public function __construct($year, $locale = 'en_US', TranslationsInterface $globalTranslations = null)
+    public function __construct($year, TranslationsInterface $globalTranslations = null)
     {
         $this->clearHolidays();
 
         $this->year               = $year ?: \getdate()['year'];
-        $this->locale             = $locale;
         $this->globalTranslations = $globalTranslations;
 
         $this->initialize();
@@ -366,7 +359,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         // Get calling class name
         $hReflectionClass = new \ReflectionClass(\get_class($this));
 
-        return Yasumi::create($hReflectionClass->getShortName(), $year, $this->locale)->getHoliday($shortName);
+        return Yasumi::create($hReflectionClass->getShortName(), $year)->getHoliday($shortName);
     }
 
     /**

@@ -42,18 +42,18 @@ class Spain extends AbstractProvider
         $this->timezone = 'Europe/Madrid';
 
         // Add common holidays
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->valentinesDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->newYearsDay($this->year, $this->timezone));
+        $this->addHoliday($this->valentinesDay($this->year, $this->timezone, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone));
 
         // Add Christian holidays (common in Spain)
-        $this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
-        $this->addHoliday($this->assumptionOfMary($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->immaculateConception($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->epiphany($this->year, $this->timezone));
+        $this->addHoliday($this->goodFriday($this->year, $this->timezone));
+        $this->addHoliday($this->easter($this->year, $this->timezone, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->assumptionOfMary($this->year, $this->timezone));
+        $this->addHoliday($this->allSaintsDay($this->year, $this->timezone));
+        $this->addHoliday($this->immaculateConception($this->year, $this->timezone));
+        $this->addHoliday($this->christmasDay($this->year, $this->timezone));
 
         // Calculate other holidays
         $this->calculateNationalDay();
@@ -82,9 +82,7 @@ class Spain extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'nationalDay',
                 ['es_ES' => 'Fiesta Nacional de España'],
-                new DateTime("$this->year-10-12", new DateTimeZone($this->timezone)),
-                $this->locale
-            ));
+                new DateTime("$this->year-10-12", new DateTimeZone($this->timezone))            ));
         }
     }
 
@@ -108,9 +106,7 @@ class Spain extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'constitutionDay',
                 ['es_ES' => 'Día de la Constitución'],
-                new DateTime("$this->year-12-6", new DateTimeZone($this->timezone)),
-                $this->locale
-            ));
+                new DateTime("$this->year-12-6", new DateTimeZone($this->timezone))            ));
         }
     }
 }

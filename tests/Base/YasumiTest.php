@@ -37,6 +37,33 @@ class YasumiTest extends TestCase
      */
     public const YEAR_UPPER_BOUND = 9999;
 
+    protected function tearDown()
+    {
+        Yasumi::setDefaultLocale('en_US');
+    }
+
+    /**
+     * Tests that default locale can be set and retrieved.
+     */
+    public function testDefaultLocale(): void
+    {
+        $this->assertEquals('en_US', Yasumi::getDefaultLocale());
+
+        Yasumi::setDefaultLocale('it_IT');
+        $this->assertEquals('it_IT', Yasumi::getDefaultLocale());
+    }
+
+    /**
+     * Tests that an Yasumi\Exception\UnknownLocaleException is thrown in case an invalid locale is given.
+     *
+     * @expectedException \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
+     */
+    public function testSetDefaultLocaleUnknownLocaleException(): void
+    {
+        Yasumi::setDefaultLocale('wx_YZ');
+    }
+
     /**
      * Tests that an InvalidArgumentException is thrown in case an invalid year is given.
      *
@@ -93,21 +120,6 @@ class YasumiTest extends TestCase
             Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND)
         );
         $this->assertInstanceOf($class, $instance);
-    }
-
-    /**
-     * Tests that an Yasumi\Exception\UnknownLocaleException is thrown in case an invalid locale is given.
-     *
-     * @expectedException \Yasumi\Exception\UnknownLocaleException
-     * @throws \ReflectionException
-     */
-    public function testCreateWithInvalidLocale(): void
-    {
-        Yasumi::create(
-            'Japan',
-            Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND),
-            'wx_YZ'
-        );
     }
 
     /**

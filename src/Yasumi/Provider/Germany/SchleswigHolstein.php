@@ -30,7 +30,7 @@ class SchleswigHolstein extends Germany
      * country or sub-region.
      */
     public const ID = 'DE-SH';
-    
+
     /**
      * Initialize holidays for Schleswig-Holstein (Germany).
      *
@@ -61,6 +61,6 @@ class SchleswigHolstein extends Germany
         if ($this->year < 2018) {
             return;
         }
-        $this->addHoliday($this->reformationDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->reformationDay($this->year, $this->timezone));
     }
 }

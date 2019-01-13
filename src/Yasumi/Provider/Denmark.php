@@ -43,30 +43,30 @@ class Denmark extends AbstractProvider
         $this->timezone = 'Europe/Copenhagen';
 
         // Add common holidays
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->newYearsDay($this->year, $this->timezone));
 
         // Add common Christian holidays (common in Denmark)
-        $this->addHoliday($this->maundyThursday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->maundyThursday($this->year, $this->timezone));
+        $this->addHoliday($this->goodFriday($this->year, $this->timezone));
+        $this->addHoliday($this->easter($this->year, $this->timezone));
+        $this->addHoliday($this->easterMonday($this->year, $this->timezone));
+        $this->addHoliday($this->ascensionDay($this->year, $this->timezone));
+        $this->addHoliday($this->pentecost($this->year, $this->timezone));
+        $this->addHoliday($this->pentecostMonday($this->year, $this->timezone));
+        $this->addHoliday($this->christmasDay($this->year, $this->timezone));
+        $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone));
         $this->calculateGreatPrayerDay();
 
-        $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
-        $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->newYearsEve($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->christmasEve($this->year, $this->timezone));
+        $this->addHoliday($this->newYearsEve($this->year, $this->timezone, Holiday::TYPE_OBSERVANCE));
         $this->calculateConstitutionDay();
 
-        $summerTime = $this->summerTime($this->year, $this->timezone, $this->locale);
+        $summerTime = $this->summerTime($this->year, $this->timezone);
         if ($summerTime !== null) {
             $this->addHoliday($summerTime);
         }
-        $winterTime = $this->winterTime($this->year, $this->timezone, $this->locale);
+        $winterTime = $this->winterTime($this->year, $this->timezone);
         if ($winterTime !== null) {
             $this->addHoliday($winterTime);
         }
@@ -96,8 +96,7 @@ class Denmark extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'greatPrayerDay',
                 ['da_DK' => 'Store bededag'],
-                new DateTime("fourth friday $easter", new DateTimeZone($this->timezone)),
-                $this->locale
+                new DateTime("fourth friday $easter", new DateTimeZone($this->timezone))
             ));
         }
     }
@@ -125,7 +124,6 @@ class Denmark extends AbstractProvider
                 'constitutionDay',
                 ['da_DK' => 'Grundlovsdag'],
                 new DateTime("$this->year-6-5", new DateTimeZone($this->timezone)),
-                $this->locale,
                 Holiday::TYPE_OBSERVANCE
             ));
         }

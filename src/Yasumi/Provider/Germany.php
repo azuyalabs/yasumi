@@ -42,24 +42,24 @@ class Germany extends AbstractProvider
         $this->timezone = 'Europe/Berlin';
 
         // Add common holidays
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->newYearsDay($this->year, $this->timezone));
 
         // Add common Christian holidays (common in Germany)
-        $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->ascensionDay($this->year, $this->timezone));
+        $this->addHoliday($this->christmasDay($this->year, $this->timezone));
+        $this->addHoliday($this->easterMonday($this->year, $this->timezone));
+        $this->addHoliday($this->goodFriday($this->year, $this->timezone));
+        $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone));
+        $this->addHoliday($this->newYearsDay($this->year, $this->timezone));
+        $this->addHoliday($this->pentecostMonday($this->year, $this->timezone));
+        $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone));
 
         // Calculate other holidays
         $this->calculateGermanUnityDay();
 
         // Note: all German states have agreed this to be a nationwide holiday in 2017 to celebrate the 500th anniversary.
         if ($this->year === 2017) {
-            $this->addHoliday($this->reformationDay($this->year, $this->timezone, $this->locale));
+            $this->addHoliday($this->reformationDay($this->year, $this->timezone));
         }
     }
 
@@ -86,8 +86,7 @@ class Germany extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'germanUnityDay',
                 ['de_DE' => 'Tag der Deutschen Einheit'],
-                new DateTime($this->year . '-10-3', new \DateTimeZone($this->timezone)),
-                $this->locale
+                new DateTime($this->year . '-10-3', new \DateTimeZone($this->timezone))
             ));
         }
     }

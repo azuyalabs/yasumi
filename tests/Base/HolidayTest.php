@@ -15,6 +15,7 @@ namespace Yasumi\tests\Base;
 use DateTime;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
+use Yasumi\Yasumi;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiBase;
 use Yasumi\TranslationsInterface;
@@ -28,6 +29,11 @@ class HolidayTest extends TestCase
 {
     use YasumiBase;
 
+    protected function tearDown()
+    {
+        Yasumi::setDefaultLocale('en_US');
+    }
+
     /**
      * Tests that an InvalidArgumentException is thrown in case an blank short name is given.
      *
@@ -40,23 +46,12 @@ class HolidayTest extends TestCase
     }
 
     /**
-     * Tests that an Yasumi\Exception\UnknownLocaleException is thrown in case an invalid locale is given.
-     *
-     * @expectedException \Yasumi\Exception\UnknownLocaleException
-     * @throws \Exception
-     */
-    public function testCreateHolidayUnknownLocaleException(): void
-    {
-        new Holiday('testHoliday', [], new DateTime(), 'wx-YZ');
-    }
-
-    /**
      * Tests that a Yasumi holiday instance can be serialized to a JSON object.
      * @throws \Exception
      */
     public function testHolidayIsJsonSerializable(): void
     {
-        $holiday  = new Holiday('testHoliday', [], new DateTime(), 'en_US');
+        $holiday  = new Holiday('testHoliday', [], new DateTime());
         $json     = \json_encode($holiday);
         $instance = \json_decode($json, true);
 
@@ -73,12 +68,12 @@ class HolidayTest extends TestCase
     public function testHolidayWithDateTimeInterface(): void
     {
         // Assert with DateTime instance
-        $holiday = new Holiday('testHoliday', [], new \DateTime(), 'en_US');
+        $holiday = new Holiday('testHoliday', [], new \DateTime());
         $this->assertNotNull($holiday);
         $this->assertInstanceOf(Holiday::class, $holiday);
 
         // Assert with DateTimeImmutable instance
-        $holiday = new Holiday('testHoliday', [], new \DateTimeImmutable(), 'en_US');
+        $holiday = new Holiday('testHoliday', [], new \DateTimeImmutable());
         $this->assertNotNull($holiday);
         $this->assertInstanceOf(Holiday::class, $holiday);
     }
@@ -90,7 +85,7 @@ class HolidayTest extends TestCase
     public function testHolidayGetNameWithNoTranslations(): void
     {
         $name    = 'testHoliday';
-        $holiday = new Holiday($name, [], new DateTime(), 'en_US');
+        $holiday = new Holiday($name, [], new DateTime());
 
         $this->assertIsString($holiday->getName());
         $this->assertEquals($name, $holiday->getName());
@@ -104,8 +99,10 @@ class HolidayTest extends TestCase
     {
         $name        = 'testHoliday';
         $translation = 'My Holiday';
-        $locale      = 'en_US';
-        $holiday     = new Holiday($name, [$locale => $translation], new DateTime(), $locale);
+        $locale      = 'en_NZ';
+        $holiday     = new Holiday($name, [$locale => $translation], new DateTime());
+
+        Yasumi::setDefaultLocale($locale);
 
         $this->assertIsString($holiday->getName());
         $this->assertEquals($translation, $holiday->getName());
@@ -120,11 +117,12 @@ class HolidayTest extends TestCase
     {
         $name        = 'testHoliday';
         $translation = 'My Holiday';
-        $holiday     = new Holiday($name, ['en_US' => $translation], new DateTime(), 'nl_NL');
+        $locale      = 'nl_NL';
+        $holiday     = new Holiday($name, [$locale => $translation], new DateTime());
 
-        $this->assertNotNull($holiday->getName());
-        $this->assertIsString($holiday->getName());
-        $this->assertEquals($translation, $holiday->getName());
+        $this->assertNotNull($holiday->getName($locale));
+        $this->assertIsString($holiday->getName($locale));
+        $this->assertEquals($translation, $holiday->getName($locale));
     }
 
     /**
@@ -145,12 +143,12 @@ class HolidayTest extends TestCase
 
         $locale = 'pl_PL';
 
-        $holiday = new Holiday('newYearsDay', [], new DateTime('2015-01-01'), $locale);
+        $holiday = new Holiday('newYearsDay', [], new DateTime('2015-01-01'));
         $holiday->mergeGlobalTranslations($translationsStub);
 
-        $this->assertNotNull($holiday->getName());
-        $this->assertIsString($holiday->getName());
-        $this->assertEquals($translations[$locale], $holiday->getName());
+        $this->assertNotNull($holiday->getName($locale));
+        $this->assertIsString($holiday->getName($locale));
+        $this->assertEquals($translations[$locale], $holiday->getName($locale));
     }
 
     /**
@@ -175,14 +173,13 @@ class HolidayTest extends TestCase
         $holiday = new Holiday(
             'newYearsDay',
             [$customLocale => $customTranslation],
-            new DateTime('2015-01-01'),
-            $customLocale
+            new DateTime('2015-01-01')
         );
         $holiday->mergeGlobalTranslations($translationsStub);
 
-        $this->assertNotNull($holiday->getName());
-        $this->assertIsString($holiday->getName());
-        $this->assertEquals($customTranslation, $holiday->getName());
+        $this->assertNotNull($holiday->getName($customLocale));
+        $this->assertIsString($holiday->getName($customLocale));
+        $this->assertEquals($customTranslation, $holiday->getName($customLocale));
     }
 
     /**
@@ -207,13 +204,12 @@ class HolidayTest extends TestCase
         $holiday = new Holiday(
             'newYearsDay',
             [$customLocale => $customTranslation],
-            new DateTime('2014-01-01'),
-            $customLocale
+            new DateTime('2014-01-01')
         );
         $holiday->mergeGlobalTranslations($translationsStub);
 
-        $this->assertNotNull($holiday->getName());
-        $this->assertIsString($holiday->getName());
-        $this->assertEquals($customTranslation, $holiday->getName());
+        $this->assertNotNull($holiday->getName($customLocale));
+        $this->assertIsString($holiday->getName($customLocale));
+        $this->assertEquals($customTranslation, $holiday->getName($customLocale));
     }
 }

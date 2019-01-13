@@ -48,11 +48,6 @@ class Holiday extends DateTime implements JsonSerializable
     public const TYPE_OTHER = 'other';
 
     /**
-     * The default locale. Used for translations of holiday names and other text strings.
-     */
-    public const DEFAULT_LOCALE = 'en_US';
-
-    /**
      * @var array list of all defined locales
      */
     private static $locales = [];
@@ -87,7 +82,6 @@ class Holiday extends DateTime implements JsonSerializable
      * @param array              $names         An array containing the name/description of this holiday in various
      *                                          languages. Overrides global translations
      * @param \DateTimeInterface $date          A DateTimeInterface instance representing the date of the holiday
-     * @param string             $displayLocale Locale (i.e. language) in which the holiday information needs to be
      *                                          displayed in. (Default 'en_US')
      * @param string             $type          The type of holiday. Use the following constants: TYPE_OFFICIAL,
      *                                          TYPE_OBSERVANCE, TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an
@@ -102,7 +96,6 @@ class Holiday extends DateTime implements JsonSerializable
         string $shortName,
         array $names,
         \DateTimeInterface $date,
-        string $displayLocale = self::DEFAULT_LOCALE,
         string $type = self::TYPE_OFFICIAL
     ) {
         // Validate if short name is not empty
@@ -110,20 +103,9 @@ class Holiday extends DateTime implements JsonSerializable
             throw new InvalidArgumentException('Holiday name can not be blank.');
         }
 
-        // Load internal locales variable
-        if (empty(self::$locales)) {
-            self::$locales = Yasumi::getAvailableLocales();
-        }
-
-        // Assert display locale input
-        if (! \in_array($displayLocale, self::$locales, true)) {
-            throw new UnknownLocaleException(\sprintf('Locale "%s" is not a valid locale.', $displayLocale));
-        }
-
         // Set additional attributes
         $this->shortName     = $shortName;
         $this->translations  = $names;
-        $this->displayLocale = $displayLocale;
         $this->type          = $type;
 
         // Construct instance
@@ -157,9 +139,13 @@ class Holiday extends DateTime implements JsonSerializable
      * defined, the name in the default locale ('en_US') is returned. In case there is no translation at all, the short
      * internal name is returned.
      */
-    public function getName(): string
+    public function getName(string $locale = null): string
     {
-        return $this->translations[$this->displayLocale] ?? $this->translations[self::DEFAULT_LOCALE] ?? $this->shortName;
+        if (!$locale) {
+            $locale = Yasumi::getDefaultLocale();
+        }
+
+        return $this->translations[$locale] ?? $this->translations[Yasumi::FALLBACK_LOCALE] ?? $this->shortName;
     }
 
     /**
