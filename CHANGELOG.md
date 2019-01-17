@@ -13,6 +13,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Observance holidays for Sweden [\#172](https://github.com/azuyalabs/yasumi/pull/172) ([c960657](https://github.com/c960657))
 - Added additional code style fixers and aligning StyleCI settings with PHP-CS.
 - Included extra requirement for some PHP Extensions in the composer file.
+- Added `Yasumi::setDefaultLocale()` and `Yasumi::getDefaultLocale()`. [\#123](https://github.com/azuyalabs/yasumi/pull/123) ([c960657](https://github.com/c960657))
+- Added optional $argument for `Holiday::getName($locale)` for overriding the default locale. [\#123](https://github.com/azuyalabs/yasumi/pull/123) ([c960657](https://github.com/c960657))
 
 ### Changed
 - Updated the translation for the All Saints holiday for the 'fr_FR' locale [\#152](https://github.com/azuyalabs/yasumi/pull/152) ([pioc92](https://github.com/pioc92))
@@ -66,6 +68,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
   
 ### Removed
 - Duplicate definition of newYearsDay [\#125](https://github.com/azuyalabs/yasumi/pull/125) ([c960657](https://github.com/c960657))
+
+### Deprecated
+- Deprecated the `$locale` argument for `Yasumi::create()` and  `Yasumi::createByISO3166_2()`. [\#123](https://github.com/azuyalabs/yasumi/pull/123) ([c960657](https://github.com/c960657))
+- Deprecated the constant `Yasumi::DEFAULT_LOCALE`. [\#123](https://github.com/azuyalabs/yasumi/pull/123) ([c960657](https://github.com/c960657))
 
 
 ## [2.0.0] - 2019-01-11

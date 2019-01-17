@@ -13,6 +13,7 @@
 namespace Yasumi\tests\Base;
 
 use Yasumi\ProviderInterface;
+use Yasumi\TranslationsInterface;
 
 /**
  * Class YasumiExternalProvider.
@@ -21,6 +22,17 @@ use Yasumi\ProviderInterface;
  */
 class YasumiExternalProvider implements ProviderInterface
 {
+    public $year;
+    public $locale;
+    public $globalTranslations;
+
+    public function __construct($year, $locale, TranslationsInterface $globalTranslations)
+    {
+        $this->year = $year;
+        $this->locale = $locale;
+        $this->globalTranslations = $globalTranslations;
+    }
+
     /**
      * Initialize country holidays.
      */
