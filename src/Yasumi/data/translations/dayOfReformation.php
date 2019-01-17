@@ -12,6 +12,6 @@
 
 // Translations for Day of Reformation
 return [
-    'de_DE' => 'Tag der Reformation',
-    'en_US' => 'Day of Reformation',
+    'de' => 'Tag der Reformation',
+    'en' => 'Day of Reformation',
 ];

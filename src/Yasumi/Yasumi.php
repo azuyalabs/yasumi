@@ -33,12 +33,17 @@ class Yasumi
      *
      * @deprecated Will be removed in Yasumi 3.0
      */
-    public const DEFAULT_LOCALE = 'en_US';
+    public const DEFAULT_LOCALE = 'en';
 
     /**
      * @var string Default locale
      */
     private static $defaultLocale = self::DEFAULT_LOCALE;
+
+    /**
+     * @var array Array of arrays of fallback locales
+     */
+    private static $fallbackLocales = [self::DEFAULT_LOCALE => []];
 
     /**
      * @var array list of all defined locales
@@ -214,11 +219,61 @@ class Yasumi
     }
 
     /**
+     * Returns the fallback locales for the specified locale.
+     *
+     * @param string $locale The locale to use
+     */
+    public static function getFallbackLocales(string $locale): array
+    {
+        if (isset(self::$fallbackLocales[$locale])) {
+            return self::$fallbackLocales[$locale];
+        }
+
+        $locales = \array_merge(
+            self::getParentLocales($locale),
+            [self::$defaultLocale],
+            self::getParentLocales(self::$defaultLocale)
+        );
+
+        return $locales;
+    }
+
+    /**
+     * Sets the fallback locales for a locale.
+     *
+     * @param string $locale          The locale to use
+     * @param array  $fallbackLocales Array of fallback locales
+     */
+    public static function setFallbackLocales(string $locale, array $fallbackLocales): void
+    {
+        self::$fallbackLocales[$locale] = $fallbackLocales;
+    }
+
+    /**
+     * Returns the parent locales for the specified locale.
+     *
+     * @return array All ancestor locales starting with the direct parent
+     */
+    public static function getParentLocales(string $locale): array
+    {
+        $locales = [];
+
+        $parts = \explode('_', $locale);
+
+        while (\array_pop($parts) && $parts) {
+            $locales[] = \implode('_', $parts);
+        }
+
+        return $locales;
+    }
+
+    /**
      * Resets default locale and fallback locales.
      */
     public static function reset(): void
     {
         self::$defaultLocale = 'en_US';
+        self::$fallbackLocales = [];
     }
 
     /**

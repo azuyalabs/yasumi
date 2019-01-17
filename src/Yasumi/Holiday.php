@@ -157,17 +157,30 @@ class Holiday extends DateTime implements JsonSerializable
      * defined, the name in the default locale is returned. In case there is no translation at all, the short
      * internal name is returned.
      *
-     * @param string $locale the locale to use
+     * @param string $locale          The locale to use
+     * @param array  $fallbackLocales Fallback locales to use when looking for translations
      */
-    public function getName(string $locale = null): string
+    public function getName(string $locale = null, array $fallbackLocales = null): string
     {
         if ($locale === null) {
             $locale = $this->displayLocale;
         }
 
-        return $this->translations[$locale]
-            ?? $this->translations[Yasumi::getDefaultLocale()]
-            ?? $this->shortName;
+        if (isset($this->translations[$locale])) {
+            return $this->translations[$locale];
+        }
+
+        if ($fallbackLocales === null) {
+            $fallbackLocales = Yasumi::getFallbackLocales($locale);
+        }
+
+        foreach ($fallbackLocales as $locale) {
+            if (isset($this->translations[$locale])) {
+                return $this->translations[$locale];
+            }
+        }
+
+        return $this->shortName;
     }
     /**
      * Merges local translations (preferred) with global translations.

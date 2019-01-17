@@ -61,6 +61,17 @@ class YasumiTest extends TestCase
     }
 
     /**
+     * Tests that locale fallbacks can be set and returned.
+     */
+    public function testSetFallbackLocales(): void
+    {
+        Yasumi::setFallbackLocales('it_IT', ['es_ES', 'es']);
+
+        $this->assertEquals(['es_ES', 'es'], Yasumi::getFallbackLocales('it_IT'));
+        $this->assertEquals(['ja', 'en_US', 'en'], Yasumi::getFallbackLocales('ja_JP'));
+    }
+
+    /**
      * Tests that an Yasumi\Exception\UnknownLocaleException is thrown in case an invalid locale is given.
      *
      * @expectedException \Yasumi\Exception\UnknownLocaleException
@@ -69,6 +80,16 @@ class YasumiTest extends TestCase
     public function testSetDefaultLocaleUnknownLocaleException(): void
     {
         Yasumi::setDefaultLocale('wx_YZ');
+    }
+
+    /**
+     * Tests that default locale can be set and retrieved.
+     */
+    public function testGetParentLocales(): void
+    {
+        $this->assertEquals([], Yasumi::getParentLocales('az'));
+        $this->assertEquals(['az'], Yasumi::getParentLocales('az_Cyrl'));
+        $this->assertEquals(['az_Cyrl', 'az'], Yasumi::getParentLocales('az_Cyrl_AZ'));
     }
 
     /**

@@ -156,10 +156,7 @@ trait YasumiBase
 
         if (\is_array($translations) && ! empty($translations)) {
             foreach ($translations as $locale => $name) {
-                $translationExists = isset($holiday->translations[$locale]) ? true : false;
-
-                $this->assertTrue($translationExists);
-                $this->assertEquals($name, $holiday->translations[$locale]);
+                $this->assertEquals($name, $holiday->getName($locale));
             }
         }
 
