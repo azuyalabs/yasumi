@@ -82,6 +82,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
 
     /**
      * @var string the object's current locale
+     * @deprecated will be removed in Yasumi 3.0
      */
     protected $locale;
 

@@ -37,6 +37,40 @@ class YasumiTest extends TestCase
      */
     public const YEAR_UPPER_BOUND = 9999;
 
+    protected function tearDown()
+    {
+        Yasumi::reset();
+    }
+
+    /**
+     * Tests the initial default locale.
+     */
+    public function testInitialDefaultLocale(): void
+    {
+        $this->assertEquals('en_US', Yasumi::getDefaultLocale());
+    }
+
+    /**
+     * Tests that default locale can be set and returned.
+     */
+    public function testSetDefaultLocale(): void
+    {
+        Yasumi::setDefaultLocale('it_IT');
+
+        $this->assertEquals('it_IT', Yasumi::getDefaultLocale());
+    }
+
+    /**
+     * Tests that an Yasumi\Exception\UnknownLocaleException is thrown in case an invalid locale is given.
+     *
+     * @expectedException \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
+     */
+    public function testSetDefaultLocaleUnknownLocaleException(): void
+    {
+        Yasumi::setDefaultLocale('wx_YZ');
+    }
+
     /**
      * Tests that an InvalidArgumentException is thrown in case an invalid year is given.
      *
@@ -56,7 +90,7 @@ class YasumiTest extends TestCase
      */
     public function testCreateWithInvalidProvider(): void
     {
-        Yasumi::create('Mars');
+        Yasumi::create('Mars', 2000);
     }
 
     /**
@@ -67,7 +101,7 @@ class YasumiTest extends TestCase
      */
     public function testCreateWithInvalidProviderBecauseItsATrait(): void
     {
-        Yasumi::create('CommonHolidays');
+        Yasumi::create('CommonHolidays', 2000);
     }
 
     /**
@@ -78,21 +112,44 @@ class YasumiTest extends TestCase
      */
     public function testCreateWithAbstractClassProvider(): void
     {
-        Yasumi::create('AbstractProvider');
+        Yasumi::create('AbstractProvider', 2000);
     }
 
     /**
      * Tests that Yasumi allows external classes that extend the ProviderInterface.
      * @throws \ReflectionException
      */
-    public function testCreateWithAbstractExtension(): void
+    public function testCreateWithExternalProvider(): void
     {
         $class    = YasumiExternalProvider::class;
+        $locale   = 'en_AU';
+
+        $instance = Yasumi::create(
+            $class,
+            Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND),
+            $locale
+        );
+        $this->assertInstanceOf($class, $instance);
+        $this->assertEquals($locale, $instance->locale);
+    }
+
+    /**
+     * Tests that Yasumi allows external classes that extend the ProviderInterface.
+     * @throws \ReflectionException
+     */
+    public function testCreateWithDefaultLocale(): void
+    {
+        $class    = YasumiExternalProvider::class;
+        $locale   = 'en_GB';
+
+        Yasumi::setDefaultLocale($locale);
+
         $instance = Yasumi::create(
             $class,
             Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND)
         );
         $this->assertInstanceOf($class, $instance);
+        $this->assertEquals($locale, $instance->locale);
     }
 
     /**

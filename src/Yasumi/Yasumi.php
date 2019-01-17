@@ -30,8 +30,15 @@ class Yasumi
 {
     /**
      * Default locale.
+     *
+     * @deprecated Will be removed in Yasumi 3.0
      */
     public const DEFAULT_LOCALE = 'en_US';
+
+    /**
+     * @var string Default locale
+     */
+    private static $defaultLocale = self::DEFAULT_LOCALE;
 
     /**
      * @var array list of all defined locales
@@ -113,7 +120,7 @@ class Yasumi
      * @param string $class  holiday provider name
      * @param int    $year   year for which the country provider needs to be created. Year needs to be a valid integer
      *                       between 1000 and 9999.
-     * @param string $locale The locale to use. If empty we'll use the default locale (en_US)
+     * @param string $locale The locale to use (deprecated). If empty we'll use the default locale
      *
      * @throws \ReflectionException
      * @throws RuntimeException          If no such holiday provider is found
@@ -123,8 +130,14 @@ class Yasumi
      *
      * @return AbstractProvider An instance of class $class is created and returned
      */
-    public static function create(string $class, int $year = 0, string $locale = self::DEFAULT_LOCALE): ProviderInterface
+    public static function create(string $class, int $year = 0, string $locale = null): ProviderInterface
     {
+        if ($locale === null) {
+            $locale = self::$defaultLocale;
+        } else {
+            @\trigger_error('The third argument, $locale, is deprecated and will be removed in Yasumi 3.0', E_USER_DEPRECATED);
+        }
+
         // Find and return holiday provider instance
         $providerClass = \sprintf('Yasumi\Provider\%s', \str_replace('/', '\\', $class));
 
@@ -171,6 +184,44 @@ class Yasumi
     }
 
     /**
+     * Returns the default locale.
+     *
+     * @return string The default locale
+     */
+    public static function getDefaultLocale(): string
+    {
+        return self::$defaultLocale;
+    }
+
+    /**
+     * Sets the default locale.
+     *
+     * @param string $locale The locale to use
+     */
+    public static function setDefaultLocale(string $locale): void
+    {
+        // Load internal locales variable
+        if (empty(self::$locales)) {
+            self::$locales = self::getAvailableLocales();
+        }
+
+        // Assert locale input
+        if (! \in_array($locale, self::$locales, true)) {
+            throw new UnknownLocaleException(\sprintf('Locale "%s" is not a valid locale.', $locale));
+        }
+
+        self::$defaultLocale = $locale;
+    }
+
+    /**
+     * Resets default locale and fallback locales.
+     */
+    public static function reset(): void
+    {
+        self::$defaultLocale = 'en_US';
+    }
+
+    /**
      * Create a new holiday provider instance.
      *
      * A new holiday provider instance can be created using this function. You can use one of the providers included
@@ -180,7 +231,7 @@ class Yasumi
      * @param string $iso3166_2 ISO3166-2 Coded region, holiday provider will be searched for
      * @param int    $year      year for which the country provider needs to be created. Year needs to be a valid
      *                          integer between 1000 and 9999.
-     * @param string $locale    The locale to use. If empty we'll use the default locale (en_US)
+     * @param string $locale    The locale to use (deprecated). If empty we'll use the default locale
      *
      * @throws \ReflectionException
      * @throws RuntimeException          If no such holiday provider is found
@@ -193,8 +244,14 @@ class Yasumi
     public static function createByISO3166_2(
         string $iso3166_2,
         int $year = 0,
-        string $locale = self::DEFAULT_LOCALE
+        string $locale = null
     ): AbstractProvider {
+        if ($locale === null) {
+            $locale = self::$defaultLocale;
+        } else {
+            @\trigger_error('The third argument, $locale, is deprecated and will be removed in Yasumi 3.0', E_USER_DEPRECATED);
+        }
+
         $availableProviders = self::getProviders();
 
         if (false === isset($availableProviders[$iso3166_2])) {
