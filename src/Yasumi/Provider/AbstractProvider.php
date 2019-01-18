@@ -66,7 +66,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         // Friday
         'IR' => [5], // Iran, Islamic Republic of
 
-        // Friday
+        // Sunday
         'IN' => [0], // India
     ];
 
