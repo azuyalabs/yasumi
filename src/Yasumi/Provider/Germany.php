@@ -79,7 +79,7 @@ class Germany extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateGermanUnityDay(): void
+    private function calculateGermanUnityDay(): void
     {
         if ($this->year >= 1990) {
             $this->addHoliday(new Holiday(
