@@ -116,7 +116,7 @@ class Slovakia extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateSaintsCyrilAndMethodiusDay(): void
+    private function calculateSaintsCyrilAndMethodiusDay(): void
     {
         $this->addHoliday(new Holiday(
             'saintsCyrilAndMethodiusDay',
@@ -141,7 +141,7 @@ class Slovakia extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateSlovakNationalUprisingDay(): void
+    private function calculateSlovakNationalUprisingDay(): void
     {
         $this->addHoliday(new Holiday(
             'slovakNationalUprisingDay',
@@ -165,7 +165,7 @@ class Slovakia extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateSlovakConstitutionDay(): void
+    private function calculateSlovakConstitutionDay(): void
     {
         $this->addHoliday(new Holiday(
             'slovakConstitutionDay',
@@ -193,7 +193,7 @@ class Slovakia extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateOurLadyOfSorrowsDay(): void
+    private function calculateOurLadyOfSorrowsDay(): void
     {
         $this->addHoliday(new Holiday('ourLadyOfSorrowsDay', [
             'sk_SK' => 'Sviatok Sedembolestnej Panny Márie',
@@ -211,7 +211,7 @@ class Slovakia extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateStruggleForFreedomAndDemocracyDay(): void
+    private function calculateStruggleForFreedomAndDemocracyDay(): void
     {
         $this->addHoliday(new Holiday(
             'struggleForFreedomAndDemocracyDay',

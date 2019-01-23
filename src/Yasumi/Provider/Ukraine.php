@@ -70,7 +70,7 @@ class Ukraine extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateChristmasDay(): void
+    private function calculateChristmasDay(): void
     {
         $this->addHoliday(new Holiday(
             'christmasDay',
@@ -93,7 +93,7 @@ class Ukraine extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateInternationalWomensDay(): void
+    private function calculateInternationalWomensDay(): void
     {
         $this->addHoliday(new Holiday(
             'internationalWomensDay',
@@ -113,7 +113,7 @@ class Ukraine extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateSecondInternationalWorkersDay(): void
+    private function calculateSecondInternationalWorkersDay(): void
     {
         $this->addHoliday(new Holiday('secondInternationalWorkersDay', [
             'uk_UA' => 'День міжнародної солідарності трудящих',
@@ -137,7 +137,7 @@ class Ukraine extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateVictoryDay(): void
+    private function calculateVictoryDay(): void
     {
         $this->addHoliday(new Holiday(
             'victoryDay',
@@ -159,7 +159,7 @@ class Ukraine extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateConstitutionDay(): void
+    private function calculateConstitutionDay(): void
     {
         if ($this->year < 1996) {
             return;
@@ -187,7 +187,7 @@ class Ukraine extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateIndependenceDay(): void
+    private function calculateIndependenceDay(): void
     {
         if ($this->year < 1991) {
             return;
@@ -216,7 +216,7 @@ class Ukraine extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateDefenderOfUkraineDay(): void
+    private function calculateDefenderOfUkraineDay(): void
     {
         if ($this->year < 2015) {
             return;

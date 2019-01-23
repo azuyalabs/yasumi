@@ -60,7 +60,7 @@ class Switzerland extends AbstractProvider
      * @throws \Exception
      * @throws \Exception
      */
-    public function calculateNationalDay(): void
+    private function calculateNationalDay(): void
     {
         $translations = [
             'en_US' => 'National Day',

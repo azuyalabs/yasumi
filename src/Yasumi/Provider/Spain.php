@@ -76,7 +76,7 @@ class Spain extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateNationalDay(): void
+    private function calculateNationalDay(): void
     {
         if ($this->year >= 1981) {
             $this->addHoliday(new Holiday(
@@ -102,7 +102,7 @@ class Spain extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateConstitutionDay(): void
+    private function calculateConstitutionDay(): void
     {
         if ($this->year >= 1978) {
             $this->addHoliday(new Holiday(
