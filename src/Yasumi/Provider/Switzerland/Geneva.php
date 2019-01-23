@@ -70,7 +70,7 @@ class Geneva extends Switzerland
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateJeuneGenevois(): void
+    private function calculateJeuneGenevois(): void
     {
         // Find first Sunday of September
         $date = new DateTime('First Sunday of ' . $this->year . '-09', new DateTimeZone($this->timezone));
@@ -105,7 +105,7 @@ class Geneva extends Switzerland
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateRestaurationGenevoise(): void
+    private function calculateRestaurationGenevoise(): void
     {
         if ($this->year > 1813) {
             $this->addHoliday(new Holiday(

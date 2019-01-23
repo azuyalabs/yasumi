@@ -72,7 +72,7 @@ class Glarus extends Switzerland
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateNafelserFahrt(): void
+    private function calculateNafelserFahrt(): void
     {
         if ($this->year >= 1389) {
             $date = new DateTime('First Thursday of ' . $this->year . '-04', new DateTimeZone($this->timezone));

@@ -77,7 +77,7 @@ class CommunityOfMadrid extends Spain
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateDosdeMayoUprisingDay(): void
+    private function calculateDosdeMayoUprisingDay(): void
     {
         $this->addHoliday(new Holiday(
             'dosdeMayoUprisingDay',

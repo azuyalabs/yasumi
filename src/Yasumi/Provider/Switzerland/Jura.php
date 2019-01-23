@@ -75,7 +75,7 @@ class Jura extends Switzerland
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculatePlebisciteJurassien(): void
+    private function calculatePlebisciteJurassien(): void
     {
         if ($this->year > 1974) {
             $this->addHoliday(new Holiday(

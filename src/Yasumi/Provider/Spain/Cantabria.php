@@ -76,7 +76,7 @@ class Cantabria extends Spain
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateCantabriaDay(): void
+    private function calculateCantabriaDay(): void
     {
         if ($this->year >= 1967) {
             $this->addHoliday(new Holiday(

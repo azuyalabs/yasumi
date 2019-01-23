@@ -77,7 +77,7 @@ class Obwalden extends Switzerland
      * @throws \Exception
      * @throws \Exception
      */
-    public function calculateBruderKlausenFest(): void
+    private function calculateBruderKlausenFest(): void
     {
         if ($this->year >= 1947) {
             $this->addHoliday(new Holiday(

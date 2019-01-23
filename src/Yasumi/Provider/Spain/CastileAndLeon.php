@@ -73,7 +73,7 @@ class CastileAndLeon extends Spain
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateCastileAndLeonDay(): void
+    private function calculateCastileAndLeonDay(): void
     {
         if ($this->year >= 1976) {
             $this->addHoliday(new Holiday(
