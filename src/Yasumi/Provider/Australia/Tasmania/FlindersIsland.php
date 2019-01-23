@@ -50,7 +50,7 @@ class FlindersIsland extends Tasmania
      *
      * @throws \Exception
      */
-    public function calculateFlindersIslandShow(): void
+    private function calculateFlindersIslandShow(): void
     {
         $date = new DateTime('third saturday of october ' . $this->year, new DateTimeZone($this->timezone));
         $date = $date->sub(new DateInterval('P1D'));

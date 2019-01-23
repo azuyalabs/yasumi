@@ -62,7 +62,7 @@ class SA extends Australia
      *
      * @throws \Exception
      */
-    public function calculateProclamationDay(): void
+    private function calculateProclamationDay(): void
     {
         $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->timezone));
         $this->calculateHoliday('christmasDay', ['en_AU' => 'Christmas Day'], $christmasDay, false, false);
@@ -95,7 +95,7 @@ class SA extends Australia
      *
      * @throws \Exception
      */
-    public function calculateLabourDay(): void
+    private function calculateLabourDay(): void
     {
         $date = new DateTime("first monday of october $this->year", new DateTimeZone($this->timezone));
 
@@ -110,7 +110,7 @@ class SA extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function calculateAdelaideCupDay(): void
+    private function calculateAdelaideCupDay(): void
     {
         if ($this->year >= 1973) {
             if ($this->year < 2006) {
@@ -154,7 +154,7 @@ class SA extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function easterSaturday($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
+    private function easterSaturday($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
     {
         return new Holiday(
             'easterSaturday',
@@ -180,7 +180,7 @@ class SA extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function calculateQueensBirthday(): void
+    private function calculateQueensBirthday(): void
     {
         $this->calculateHoliday(
             'queensBirthday',

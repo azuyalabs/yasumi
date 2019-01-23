@@ -70,7 +70,7 @@ class Australia extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateAustraliaDay(): void
+    private function calculateAustraliaDay(): void
     {
         $date = new DateTime("$this->year-01-26", new DateTimeZone($this->timezone));
 
@@ -122,7 +122,7 @@ class Australia extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateNewYearHolidays(): void
+    private function calculateNewYearHolidays(): void
     {
         $newyearsday = new DateTime("$this->year-01-01", new DateTimeZone($this->timezone));
         $this->calculateHoliday('newYearsDay', ['en_AU' => 'New Year\'s Day'], $newyearsday, false, false);
@@ -154,7 +154,7 @@ class Australia extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateAnzacDay(): void
+    private function calculateAnzacDay(): void
     {
         if ($this->year < 1921) {
             return;
@@ -187,7 +187,7 @@ class Australia extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateChristmasDay(): void
+    private function calculateChristmasDay(): void
     {
         $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->timezone));
         $boxingDay    = new DateTime("$this->year-12-26", new DateTimeZone($this->timezone));

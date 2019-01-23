@@ -56,7 +56,7 @@ class Victoria extends Australia
      *
      * @throws \Exception
      */
-    public function calculateLabourDay(): void
+    private function calculateLabourDay(): void
     {
         $date = new DateTime("second monday of march $this->year", new DateTimeZone($this->timezone));
 
@@ -68,7 +68,7 @@ class Victoria extends Australia
      *
      * @throws \Exception
      */
-    public function calculateMelbourneCupDay(): void
+    private function calculateMelbourneCupDay(): void
     {
         $date = new DateTime('first Tuesday of November' . " $this->year", new DateTimeZone($this->timezone));
 
@@ -80,7 +80,7 @@ class Victoria extends Australia
      *
      * @throws \Exception
      */
-    public function calculateAFLGrandFinalDay(): void
+    private function calculateAFLGrandFinalDay(): void
     {
         switch ($this->year) {
             case 2015:
@@ -124,7 +124,7 @@ class Victoria extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function calculateQueensBirthday(): void
+    private function calculateQueensBirthday(): void
     {
         $this->calculateHoliday(
             'queensBirthday',
@@ -156,7 +156,7 @@ class Victoria extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function easterSaturday($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
+    private function easterSaturday($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
     {
         return new Holiday(
             'easterSaturday',
@@ -188,7 +188,7 @@ class Victoria extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function easterSunday($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
+    private function easterSunday($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
     {
         return new Holiday(
             'easter',

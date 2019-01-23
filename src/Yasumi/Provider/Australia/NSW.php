@@ -55,7 +55,7 @@ class NSW extends Australia
      *
      * @throws \Exception
      */
-    public function calculateLabourDay(): void
+    private function calculateLabourDay(): void
     {
         $date = new DateTime("first monday of october $this->year", new DateTimeZone($this->timezone));
 
@@ -83,7 +83,7 @@ class NSW extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function easterSaturday($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
+    private function easterSaturday($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
     {
         return new Holiday(
             'easterSaturday',
@@ -109,7 +109,7 @@ class NSW extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function calculateQueensBirthday(): void
+    private function calculateQueensBirthday(): void
     {
         $this->calculateHoliday(
             'queensBirthday',
@@ -126,7 +126,7 @@ class NSW extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function calculateBankHoliday(): void
+    private function calculateBankHoliday(): void
     {
         $this->calculateHoliday(
             'bankHoliday',

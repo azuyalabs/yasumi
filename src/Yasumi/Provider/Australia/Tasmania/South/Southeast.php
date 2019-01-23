@@ -51,7 +51,7 @@ class Southeast extends South
      *
      * @throws \Exception
      */
-    public function calculateHobartRegatta(): void
+    private function calculateHobartRegatta(): void
     {
         $this->calculateHoliday(
             'hobartRegatta',

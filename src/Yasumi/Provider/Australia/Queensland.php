@@ -51,7 +51,7 @@ class Queensland extends Australia
      *
      * @throws \Exception
      */
-    public function calculateLabourDay(): void
+    private function calculateLabourDay(): void
     {
         if ($this->year === 2013 || $this->year === 2014 || $this->year === 2015) {
             $date = new DateTime("first monday of october $this->year", new DateTimeZone($this->timezone));
@@ -77,7 +77,7 @@ class Queensland extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function calculateQueensBirthday(): void
+    private function calculateQueensBirthday(): void
     {
         if ($this->year < 2012 || $this->year === 2013 || $this->year === 2014 || $this->year === 2015) {
             $this->calculateHoliday(
