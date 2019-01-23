@@ -79,7 +79,7 @@ class Greece extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateThreeHolyHierarchs(): void
+    private function calculateThreeHolyHierarchs(): void
     {
         $this->addHoliday(new Holiday(
             'threeHolyHierarchs',
@@ -104,7 +104,7 @@ class Greece extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateCleanMonday(): void
+    private function calculateCleanMonday(): void
     {
         $this->addHoliday(new Holiday(
             'cleanMonday',
@@ -124,7 +124,7 @@ class Greece extends AbstractProvider
      *
      * @throws \Exception
      */
-    public function calculateEaster($year, $timezone): DateTime
+    private function calculateEaster($year, $timezone): DateTime
     {
         return $this->calculateOrthodoxEaster($year, $timezone);
     }
@@ -142,7 +142,7 @@ class Greece extends AbstractProvider
      * @throws \Exception
      */
 
-    public function calculateIndependenceDay(): void
+    private function calculateIndependenceDay(): void
     {
         if ($this->year >= 1821) {
             $this->addHoliday(new Holiday(
@@ -166,7 +166,7 @@ class Greece extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateOhiDay(): void
+    private function calculateOhiDay(): void
     {
         if ($this->year >= 1940) {
             $this->addHoliday(new Holiday(
@@ -190,7 +190,7 @@ class Greece extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculatePolytechnio(): void
+    private function calculatePolytechnio(): void
     {
         if ($this->year >= 1973) {
             $this->addHoliday(new Holiday(

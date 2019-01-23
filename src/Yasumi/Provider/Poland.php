@@ -77,7 +77,7 @@ class Poland extends AbstractProvider
      * @throws \Exception
      */
 
-    public function calculateIndependenceDay(): void
+    private function calculateIndependenceDay(): void
     {
         if ($this->year < 1918) {
             return;
@@ -105,7 +105,7 @@ class Poland extends AbstractProvider
      * @throws \Exception
      */
 
-    public function calculateConstitutionDay(): void
+    private function calculateConstitutionDay(): void
     {
         if ($this->year < 1791) {
             return;

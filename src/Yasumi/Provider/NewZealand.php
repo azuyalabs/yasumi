@@ -71,7 +71,7 @@ class NewZealand extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateNewYearHolidays(): void
+    private function calculateNewYearHolidays(): void
     {
         $newYearsDay         = new DateTime("$this->year-01-01", new DateTimeZone($this->timezone));
         $dayAfterNewYearsDay = new DateTime("$this->year-01-02", new DateTimeZone($this->timezone));
@@ -111,7 +111,7 @@ class NewZealand extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateWaitangiDay(): void
+    private function calculateWaitangiDay(): void
     {
         if ($this->year < 1974) {
             return;
@@ -141,7 +141,7 @@ class NewZealand extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateAnzacDay(): void
+    private function calculateAnzacDay(): void
     {
         if ($this->year < 1921) {
             return;
@@ -174,7 +174,7 @@ class NewZealand extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateQueensBirthday(): void
+    private function calculateQueensBirthday(): void
     {
         if ($this->year < 1952) {
             return;
@@ -207,7 +207,7 @@ class NewZealand extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateLabourDay(): void
+    private function calculateLabourDay(): void
     {
         if ($this->year < 1900) {
             return;
@@ -236,7 +236,7 @@ class NewZealand extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateChristmasHolidays(): void
+    private function calculateChristmasHolidays(): void
     {
         $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->timezone));
         $boxingDay    = new DateTime("$this->year-12-26", new DateTimeZone($this->timezone));
