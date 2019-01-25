@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Added
 
 ### Changed
+- Changed Dutch spelling for Easter/Pentecost/Christmas. [\#128](https://github.com/azuyalabs/yasumi/issues/128) ([c960657](https://github.com/c960657))
 
 ### Fixed
 
