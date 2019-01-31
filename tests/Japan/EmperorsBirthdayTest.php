@@ -30,10 +30,28 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements YasumiTestCaseIn
     /**
      * The year in which the holiday was first established
      */
-    public const ESTABLISHMENT_YEAR = 1989;
+    public const ESTABLISHMENT_YEAR = 1949;
+    // public const ESTABLISHMENT_YEAR = 1989;
 
     /**
-     * Tests the Emperors Birthday after 1989. The Emperors Birthday is on December 23rd and celebrated as such since
+     * Tests the Emperors Birthday after 1949 to 1988. The Emperors Birthday is on April 28rd and celebrated as such since
+     * 1949.
+     * @throws \Exception
+     * @throws \ReflectionException
+     */
+    public function testEmperorsBirthdayOnAfter1949()
+    {
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1988);
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-4-29", new DateTimeZone(self::TIMEZONE))
+        );
+    }
+
+    /**
+     * Tests the Emperors Birthday after 1989 to 2018. The Emperors Birthday is on December 23rd and celebrated as such since
      * 1989. Prior to the death of Emperor Hirohito in 1989, this holiday was celebrated on April 29. See also "Shōwa
      * Day".
      * @throws \Exception
@@ -41,12 +59,29 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements YasumiTestCaseIn
      */
     public function testEmperorsBirthdayOnAfter1989()
     {
-        $year = 3012;
+        $year = $this->generateRandomYear(1989, 2018);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             $year,
             new DateTime("$year-12-23", new DateTimeZone(self::TIMEZONE))
+        );
+    }
+
+    /**
+     * Tests the Emperors Birthday after 2020. The Emperors Birthday is on February 23rd and celebrated as such since
+     * 2020.
+     * @throws \Exception
+     * @throws \ReflectionException
+     */
+    public function testEmperorsBirthdayOnAfter2020()
+    {
+        $year = $this->generateRandomYear(2020);
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-2-23", new DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -79,6 +114,20 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements YasumiTestCaseIn
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+        );
+    }
+
+    /**
+     * Tests the Emperors Birthday at 2019.
+     *
+     * @throws \ReflectionException
+     */
+    public function testEmperorsBirthdayAt2019()
+    {
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2019
         );
     }
 
