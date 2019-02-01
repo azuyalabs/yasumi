@@ -20,7 +20,7 @@ use Yasumi\tests\YasumiTestCaseInterface;
 /**
  * Class testing the Emperors Coronation day in Japan.
  */
-class CoronationdayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
+class CoronationDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
