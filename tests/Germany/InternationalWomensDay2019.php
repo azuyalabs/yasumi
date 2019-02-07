@@ -20,7 +20,7 @@ use Yasumi\tests\YasumiTestCaseInterface;
 /**
  * Class containing tests for Reformation Day in Germany.
  */
-class InternationalWomensDay2019Test extends GermanyBaseTestCase implements YasumiTestCaseInterface
+class InternationalWomensDay2019 extends GermanyBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday to be tested
