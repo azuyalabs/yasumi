@@ -31,4 +31,24 @@ class Berlin extends Germany
      * country or sub-region.
      */
     public const ID = 'DE-BE';
+
+    /**
+     * Initialize holidays for Berlin (Germany).
+     *
+     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
+     */
+    public function initialize(): void
+    {
+        parent::initialize();
+
+        if ($this->year >= 2019) {
+            $this->addHoliday($this->internationalWomensDay($this->year, $this->timezone, $this->locale));
+        }
+
+    }
+
+
 }

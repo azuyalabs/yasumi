@@ -398,6 +398,41 @@ trait CommonHolidays
     }
 
     /**
+     * International Women's Day
+     *
+     * International Women's Day (IWD) is celebrated on March 8 every year.[3] It is a focal point in the movement for women's rights.
+     *
+     * @link https://en.wikipedia.org/wiki/International_Women%27s_Day
+     *
+     * @param int    $year     the year for which International Women's Day need to be created
+     * @param string $timezone the timezone in which International Women's Day is celebrated
+     * @param string $locale   the locale for which International Women's Day need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
+     *
+     * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \InvalidArgumentException
+     * @throws \Exception
+     */
+    public function internationalWomensDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'internationalWomensDay',
+            [],
+            new DateTime("$year-03-08", new DateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    /**
      * Calculates daylight saving time transitions.
      *
      * Daylight saving time is the practice of advancing clocks by one hour during summer months so evening daylight
