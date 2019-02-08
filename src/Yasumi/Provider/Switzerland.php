@@ -76,7 +76,7 @@ class Switzerland extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'swissNationalDay',
                 $translations,
-                new DateTime($this->year . '-08-01', new DateTimeZone($this->timezone)),
+                new DateTime($this->year . '-08-01', new DateTimeZone($this->getTimezone())),
                 $this->locale,
                 Holiday::TYPE_OFFICIAL
             ));
@@ -84,7 +84,7 @@ class Switzerland extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'swissNationalDay',
                 $translations,
-                new DateTime($this->year . '-08-01', new DateTimeZone($this->timezone)),
+                new DateTime($this->year . '-08-01', new DateTimeZone($this->getTimezone())),
                 $this->locale,
                 Holiday::TYPE_OBSERVANCE
             ));
@@ -116,7 +116,7 @@ class Switzerland extends AbstractProvider
                 'fr_CH' => 'Jour de la Saint-Berthold',
                 'en_US' => 'Berchtoldstag',
             ],
-            new DateTime($this->year . '-01-02', new DateTimeZone($this->timezone)),
+            new DateTime($this->year . '-01-02', new DateTimeZone($this->getTimezone())),
             $this->locale,
             Holiday::TYPE_OTHER
         ));
@@ -141,7 +141,7 @@ class Switzerland extends AbstractProvider
     {
         if ($this->year >= 1832) {
             // Find third Sunday of September
-            $date = new DateTime('Third Sunday of ' . $this->year . '-09', new DateTimeZone($this->timezone));
+            $date = new DateTime('Third Sunday of ' . $this->year . '-09', new DateTimeZone($this->getTimezone()));
             // Go to next Thursday
             $date->add(new DateInterval('P1D'));
 

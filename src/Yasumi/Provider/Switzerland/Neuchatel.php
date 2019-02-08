@@ -45,18 +45,18 @@ class Neuchatel extends Switzerland
     {
         parent::initialize();
 
-        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->goodFriday($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->internationalWorkersDay(
             $this->year,
-            $this->timezone,
+            $this->getTimezone(),
             $this->locale,
             Holiday::TYPE_OTHER
         ));
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->newYearsDay($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->christmasDay($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->ascensionDay($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->easterMonday($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->pentecostMonday($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OTHER));
 
         $this->calculateBerchtoldsTag();
         $this->calculateBettagsMontag();
@@ -82,7 +82,7 @@ class Neuchatel extends Switzerland
                     'fr_FR' => 'Instauration de la République',
                     'fr_CH' => 'Instauration de la République',
                 ],
-                new DateTime($this->year . '-03-01', new DateTimeZone($this->timezone)),
+                new DateTime($this->year . '-03-01', new DateTimeZone($this->getTimezone())),
                 $this->locale,
                 Holiday::TYPE_OTHER
             ));

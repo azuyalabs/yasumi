@@ -43,8 +43,8 @@ class ACT extends Australia
     {
         parent::initialize();
 
-        $this->addHoliday($this->easterSunday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easterSaturday($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->easterSunday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->easterSaturday($this->year, $this->getTimezone(), $this->locale));
         $this->calculateQueensBirthday();
         $this->calculateLabourDay();
         $this->calculateCanberraDay();
@@ -59,9 +59,9 @@ class ACT extends Australia
     public function calculateCanberraDay(): void
     {
         if ($this->year < 2007) {
-            $date = new DateTime("third monday of march $this->year", new DateTimeZone($this->timezone));
+            $date = new DateTime("third monday of march $this->year", new DateTimeZone($this->getTimezone()));
         } else {
-            $date = new DateTime("second monday of march $this->year", new DateTimeZone($this->timezone));
+            $date = new DateTime("second monday of march $this->year", new DateTimeZone($this->getTimezone()));
         }
         $this->addHoliday(new Holiday('canberraDay', ['en_AU' => 'Canberra Day'], $date, $this->locale));
     }
@@ -77,7 +77,7 @@ class ACT extends Australia
             return;
         }
 
-        $date = new DateTime($this->year . '-05-27', new DateTimeZone($this->timezone));
+        $date = new DateTime($this->year . '-05-27', new DateTimeZone($this->getTimezone()));
         $day  = (int)$date->format('w');
         if ($day !== 1) {
             $date = $date->add($day === 0 ? new DateInterval('P1D') : new DateInterval('P'.(8-$day).'D'));
@@ -92,7 +92,7 @@ class ACT extends Australia
      */
     public function calculateLabourDay(): void
     {
-        $date = new DateTime("first monday of october $this->year", new DateTimeZone($this->timezone));
+        $date = new DateTime("first monday of october $this->year", new DateTimeZone($this->getTimezone()));
 
         $this->addHoliday(new Holiday('labourDay', ['en_AU' => 'Labour Day'], $date, $this->locale));
     }
@@ -181,7 +181,7 @@ class ACT extends Australia
         $this->calculateHoliday(
             'queensBirthday',
             ['en_AU' => "Queen's Birthday"],
-            new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->timezone)),
+            new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->getTimezone())),
             false,
             false
         );

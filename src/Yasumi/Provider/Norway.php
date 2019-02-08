@@ -42,19 +42,19 @@ class Norway extends AbstractProvider
         $this->timezone = 'Europe/Oslo';
 
         // Add common holidays
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->newYearsDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->internationalWorkersDay($this->year, $this->getTimezone(), $this->locale));
 
         // Add common Christian holidays (common in Norway)
-        $this->addHoliday($this->maundyThursday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->maundyThursday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->goodFriday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->easter($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->easterMonday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->ascensionDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->pentecost($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->pentecostMonday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->christmasDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->secondChristmasDay($this->year, $this->getTimezone(), $this->locale));
 
         // Calculate other holidays
         $this->calculateConstitutionDay();
@@ -84,7 +84,7 @@ class Norway extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'constitutionDay',
                 ['nb_NO' => 'Grunnlovsdagen'],
-                new DateTime("$this->year-5-17", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-5-17", new DateTimeZone($this->getTimezone())),
                 $this->locale
             ));
         }

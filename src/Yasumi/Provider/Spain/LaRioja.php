@@ -50,7 +50,7 @@ class LaRioja extends Spain
         parent::initialize();
 
         // Add custom Christian holidays
-        $this->addHoliday($this->maundyThursday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->maundyThursday($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OBSERVANCE));
 
         // Calculate other holidays
         $this->calculateLaRiojaDay();
@@ -75,7 +75,7 @@ class LaRioja extends Spain
         if ($this->year >= 1983) {
             $this->addHoliday(new Holiday('laRiojaDay', [
                 'es_ES' => 'Día de La Rioja',
-            ], new DateTime("$this->year-6-9", new DateTimeZone($this->timezone)), $this->locale));
+            ], new DateTime("$this->year-6-9", new DateTimeZone($this->getTimezone())), $this->locale));
         }
     }
 }

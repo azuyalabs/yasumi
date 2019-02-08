@@ -43,21 +43,21 @@ class Sweden extends AbstractProvider
         $this->timezone = 'Europe/Stockholm';
 
         // Add common holidays
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->newYearsDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->internationalWorkersDay($this->year, $this->getTimezone(), $this->locale));
 
         // Add common Christian holidays (common in Sweden)
-        $this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->epiphany($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->goodFriday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->easter($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->easterMonday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->ascensionDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->pentecost($this->year, $this->getTimezone(), $this->locale));
         $this->calculateStJohnsDay(); // aka Midsummer's Day
         $this->calculateAllSaintsDay();
-        $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale, Holiday::TYPE_OFFICIAL));
-        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->christmasEve($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OFFICIAL));
+        $this->addHoliday($this->christmasDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->secondChristmasDay($this->year, $this->getTimezone(), $this->locale));
 
         // Calculate other holidays
         $this->calculateNationalDay();
@@ -84,7 +84,7 @@ class Sweden extends AbstractProvider
      */
     public function calculateStJohnsDay(): void
     {
-        $date = new DateTime("$this->year-6-20", new DateTimeZone($this->timezone)); // Default date
+        $date = new DateTime("$this->year-6-20", new DateTimeZone($this->getTimezone())); // Default date
 
         // Check between the 20th and 26th day which one is a Saturday
         for ($d = 0; $d <= 7; ++$d) {
@@ -120,7 +120,7 @@ class Sweden extends AbstractProvider
      */
     public function calculateAllSaintsDay(): void
     {
-        $date = new DateTime("$this->year-10-31", new DateTimeZone($this->timezone));
+        $date = new DateTime("$this->year-10-31", new DateTimeZone($this->getTimezone()));
 
         // Check between 31 October and 6th of November the day that is a Saturday
         for ($d = 0; $d <= 7; ++$d) {
@@ -163,7 +163,7 @@ class Sweden extends AbstractProvider
         $this->addHoliday(new Holiday(
             'nationalDay',
             ['sv_SE' => $holiday_name],
-            new DateTime("$this->year-6-6", new DateTimeZone($this->timezone)),
+            new DateTime("$this->year-6-6", new DateTimeZone($this->getTimezone())),
             $this->locale
         ));
     }

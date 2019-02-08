@@ -44,18 +44,18 @@ class Croatia extends AbstractProvider
         $this->timezone = 'Europe/Zagreb';
 
         // Add common holidays
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->newYearsDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->internationalWorkersDay($this->year, $this->getTimezone(), $this->locale));
 
         // Add Christian holidays
-        $this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale, Holiday::TYPE_OFFICIAL));
-        $this->addHoliday($this->assumptionOfMary($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->stStephensDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->epiphany($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->easter($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->easterMonday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->corpusChristi($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OFFICIAL));
+        $this->addHoliday($this->assumptionOfMary($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->allSaintsDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->christmasDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->stStephensDay($this->year, $this->getTimezone(), $this->locale));
 
         /**
          * Day of Antifascist Struggle
@@ -64,7 +64,7 @@ class Croatia extends AbstractProvider
             $this->addHoliday(new Holiday('antifascistStruggleDay', [
                 'en_US' => 'Day of Antifascist Struggle',
                 'hr_HR' => 'Dan antifašističke borbe'
-            ], new DateTime("$this->year-6-22", new DateTimeZone($this->timezone)), $this->locale));
+            ], new DateTime("$this->year-6-22", new DateTimeZone($this->getTimezone())), $this->locale));
         }
 
         /**
@@ -74,7 +74,7 @@ class Croatia extends AbstractProvider
             $this->addHoliday(new Holiday('statehoodDay', [
                 'en_US' => 'Statehood Day',
                 'hr_HR' => 'Dan državnosti'
-            ], new DateTime("$this->year-6-25", new DateTimeZone($this->timezone)), $this->locale));
+            ], new DateTime("$this->year-6-25", new DateTimeZone($this->getTimezone())), $this->locale));
         }
 
         /**
@@ -84,7 +84,7 @@ class Croatia extends AbstractProvider
             $this->addHoliday(new Holiday('homelandThanksgiving', [
                 'en_US' => 'Homeland Thanksgiving Day',
                 'hr_HR' => 'Dan domovinske zahvalnosti'
-            ], new DateTime("$this->year-8-5", new DateTimeZone($this->timezone)), $this->locale));
+            ], new DateTime("$this->year-8-5", new DateTimeZone($this->getTimezone())), $this->locale));
         }
 
         /**
@@ -94,7 +94,7 @@ class Croatia extends AbstractProvider
             $this->addHoliday(new Holiday('independenceDay', [
                 'en_US' => 'Independence Day',
                 'hr_HR' => 'Dan neovisnosti'
-            ], new DateTime("$this->year-10-8", new DateTimeZone($this->timezone)), $this->locale));
+            ], new DateTime("$this->year-10-8", new DateTimeZone($this->getTimezone())), $this->locale));
         }
     }
 }

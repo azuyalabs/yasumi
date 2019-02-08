@@ -45,19 +45,19 @@ class Latvia extends AbstractProvider
         $this->timezone = 'Europe/Riga';
 
         // Official
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->newYearsDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->goodFriday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->easter($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->easterMonday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->internationalWorkersDay($this->year, $this->getTimezone(), $this->locale));
         $this->addRestorationOfIndependenceDay();
         $this->addMidsummerEveDay();
-        $this->addHoliday($this->stJohnsDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->stJohnsDay($this->year, $this->getTimezone(), $this->locale));
         $this->addProclamationDay();
-        $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale, Holiday::TYPE_OFFICIAL));
-        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->newYearsEve($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->christmasEve($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OFFICIAL));
+        $this->addHoliday($this->christmasDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->secondChristmasDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->newYearsEve($this->year, $this->getTimezone(), $this->locale));
     }
 
     /**
@@ -70,7 +70,7 @@ class Latvia extends AbstractProvider
     private function addRestorationOfIndependenceDay(): void
     {
         if ($this->year >= self::RESTORATION_OF_INDEPENDENCE_YEAR) {
-            $date = new \DateTime("{$this->year}-05-04", new \DateTimeZone($this->timezone));
+            $date = new \DateTime("{$this->year}-05-04", new \DateTimeZone($this->getTimezone()));
 
             if (! $this->isWorkingDay($date)) {
                 $date->modify('next monday');
@@ -92,7 +92,7 @@ class Latvia extends AbstractProvider
         $this->addHoliday(new Holiday('midsummerEveDay', [
             'en_US' => 'Midsummer Eve',
             'lv_LV' => 'Līgo Diena'
-        ], new \DateTime("{$this->year}-06-23", new \DateTimeZone($this->timezone))));
+        ], new \DateTime("{$this->year}-06-23", new \DateTimeZone($this->getTimezone()))));
     }
 
     /**
@@ -105,7 +105,7 @@ class Latvia extends AbstractProvider
     private function addProclamationDay(): void
     {
         if ($this->year >= self::PROCLAMATION_OF_INDEPENDENCE_YEAR) {
-            $date = new \DateTime("{$this->year}-11-18", new \DateTimeZone($this->timezone));
+            $date = new \DateTime("{$this->year}-11-18", new \DateTimeZone($this->getTimezone()));
 
             if (! $this->isWorkingDay($date)) {
                 $date->modify('next monday');

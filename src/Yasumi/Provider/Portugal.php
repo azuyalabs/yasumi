@@ -45,19 +45,19 @@ class Portugal extends AbstractProvider
     {
         $this->timezone = 'Europe/Lisbon';
 
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->newYearsDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->goodFriday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->easter($this->year, $this->getTimezone(), $this->locale));
         $this->calculateCarnationRevolutionDay();
-        $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->internationalWorkersDay($this->year, $this->getTimezone(), $this->locale));
         $this->calculateCorpusChristi();
         $this->calculatePortugalDay();
-        $this->addHoliday($this->assumptionOfMary($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->assumptionOfMary($this->year, $this->getTimezone(), $this->locale));
         $this->calculatePortugueseRepublicDay();
         $this->calculateAllSaintsDay();
         $this->calculateRestorationOfIndependenceDay();
-        $this->addHoliday($this->immaculateConception($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->immaculateConception($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->christmasDay($this->year, $this->getTimezone(), $this->locale));
     }
 
     /**
@@ -87,7 +87,7 @@ class Portugal extends AbstractProvider
             $this->addHoliday(new Holiday(
                 '25thApril',
                 ['pt_PT' => 'Dia da Liberdade'],
-                new DateTime("$this->year-04-25", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-04-25", new DateTimeZone($this->getTimezone())),
                 $this->locale,
                 Holiday::TYPE_OFFICIAL
             ));
@@ -106,7 +106,7 @@ class Portugal extends AbstractProvider
     public function calculateCorpusChristi(): void
     {
         if ($this->year <= 2013 || $this->year >= 2016) {
-            $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale));
+            $this->addHoliday($this->corpusChristi($this->year, $this->getTimezone(), $this->locale));
         }
     }
 
@@ -134,7 +134,7 @@ class Portugal extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'portugalDay',
                 ['pt_PT' => 'Dia de Portugal'],
-                new DateTime("$this->year-06-10", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-06-10", new DateTimeZone($this->getTimezone())),
                 $this->locale
             ));
         }
@@ -166,7 +166,7 @@ class Portugal extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'portugueseRepublic',
                 ['pt_PT' => 'Implantação da República Portuguesa'],
-                new DateTime("$this->year-10-05", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-10-05", new DateTimeZone($this->getTimezone())),
                 $this->locale
             ));
         }
@@ -184,7 +184,7 @@ class Portugal extends AbstractProvider
     public function calculateAllSaintsDay(): void
     {
         if ($this->year <= 2013 || $this->year >= 2016) {
-            $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale));
+            $this->addHoliday($this->allSaintsDay($this->year, $this->getTimezone(), $this->locale));
         }
     }
 
@@ -220,7 +220,7 @@ class Portugal extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'restorationOfIndependence',
                 ['pt_PT' => 'Restauração da Independência'],
-                new DateTime("$this->year-12-01", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-12-01", new DateTimeZone($this->getTimezone())),
                 $this->locale,
                 Holiday::TYPE_OFFICIAL
             ));

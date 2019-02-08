@@ -43,35 +43,35 @@ class Netherlands extends AbstractProvider
         $this->timezone = 'Europe/Amsterdam';
 
         // Add common holidays
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->newYearsDay($this->year, $this->getTimezone(), $this->locale));
         $this->addHoliday($this->internationalWorkersDay(
             $this->year,
-            $this->timezone,
+            $this->getTimezone(),
             $this->locale,
             Holiday::TYPE_OTHER
         ));
-        $this->addHoliday($this->valentinesDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->valentinesDay($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OTHER));
 
         // World Animal Day is celebrated since 1931
         if ($this->year >= 1931) {
-            $this->addHoliday($this->worldAnimalDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
+            $this->addHoliday($this->worldAnimalDay($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OTHER));
         }
 
-        $this->addHoliday($this->stMartinsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
-        $this->addHoliday($this->fathersDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        $this->addHoliday($this->mothersDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->stMartinsDay($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->fathersDay($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->mothersDay($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OTHER));
 
         // Add Christian holidays
-        $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
-        $this->addHoliday($this->ashWednesday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
-        $this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->easter($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->easterMonday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->pentecost($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->pentecostMonday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->ascensionDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->goodFriday($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->ashWednesday($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->epiphany($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->christmasDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->secondChristmasDay($this->year, $this->getTimezone(), $this->locale));
 
         /**
          * Commemoration Day and Liberation Day. Instituted after WWII in 1947.
@@ -80,14 +80,14 @@ class Netherlands extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'commemorationDay',
                 ['en_US' => 'Commemoration Day', 'nl_NL' => 'Dodenherdenking'],
-                new DateTime("$this->year-5-4", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-5-4", new DateTimeZone($this->getTimezone())),
                 $this->locale,
                 Holiday::TYPE_OBSERVANCE
             ));
             $this->addHoliday(new Holiday(
                 'liberationDay',
                 ['en_US' => 'Liberation Day', 'nl_NL' => 'Bevrijdingsdag'],
-                new DateTime("$this->year-5-5", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-5-5", new DateTimeZone($this->getTimezone())),
                 $this->locale,
                 Holiday::TYPE_OBSERVANCE
             ));
@@ -100,7 +100,7 @@ class Netherlands extends AbstractProvider
          * celebrated the day before instead.
          */
         if ($this->year >= 2014) {
-            $date = new DateTime("$this->year-4-27", new DateTimeZone($this->timezone));
+            $date = new DateTime("$this->year-4-27", new DateTimeZone($this->getTimezone()));
 
             if (0 === (int)$date->format('w')) {
                 $date->sub(new DateInterval('P1D'));
@@ -122,9 +122,9 @@ class Netherlands extends AbstractProvider
          * (on the following Monday), starting 1980 one day earlier (on the preceding Saturday).
          */
         if ($this->year >= 1891 && $this->year <= 2013) {
-            $date = new DateTime("$this->year-4-30", new DateTimeZone($this->timezone));
+            $date = new DateTime("$this->year-4-30", new DateTimeZone($this->getTimezone()));
             if ($this->year <= 1948) {
-                $date = new DateTime("$this->year-8-31", new DateTimeZone($this->timezone));
+                $date = new DateTime("$this->year-8-31", new DateTimeZone($this->getTimezone()));
             }
 
             // Determine substitution day
@@ -149,7 +149,7 @@ class Netherlands extends AbstractProvider
         $this->addHoliday(new Holiday(
             'princesDay',
             ['en_US' => 'Prince\'s Day', 'nl_NL' => 'Prinsjesdag'],
-            new DateTime("third tuesday of september $this->year", new DateTimeZone($this->timezone)),
+            new DateTime("third tuesday of september $this->year", new DateTimeZone($this->getTimezone())),
             $this->locale,
             Holiday::TYPE_OTHER
         ));
@@ -160,7 +160,7 @@ class Netherlands extends AbstractProvider
         $this->addHoliday(new Holiday(
             'halloween',
             ['en_US' => 'Halloween', 'nl_NL' => 'Halloween'],
-            new DateTime("$this->year-10-31", new DateTimeZone($this->timezone)),
+            new DateTime("$this->year-10-31", new DateTimeZone($this->getTimezone())),
             $this->locale,
             Holiday::TYPE_OBSERVANCE
         ));
@@ -171,17 +171,17 @@ class Netherlands extends AbstractProvider
         $this->addHoliday(new Holiday(
             'stNicholasDay',
             ['en_US' => 'St. Nicholas\' Day', 'nl_NL' => 'Sinterklaas'],
-            new DateTime("$this->year-12-5", new DateTimeZone($this->timezone)),
+            new DateTime("$this->year-12-5", new DateTimeZone($this->getTimezone())),
             $this->locale,
             Holiday::TYPE_OBSERVANCE
         ));
 
-        $summerTime = $this->summerTime($this->year, $this->timezone, $this->locale);
+        $summerTime = $this->summerTime($this->year, $this->getTimezone(), $this->locale);
         if ($summerTime !== null) {
             $this->addHoliday($summerTime);
         }
 
-        $winterTime = $this->winterTime($this->year, $this->timezone, $this->locale);
+        $winterTime = $this->winterTime($this->year, $this->getTimezone(), $this->locale);
         if ($winterTime !== null) {
             $this->addHoliday($winterTime);
         }
@@ -193,7 +193,7 @@ class Netherlands extends AbstractProvider
          * and suspension of social norms. The feast became assimilated by the Catholic Church and was celebrated in the
          * three days preceding Ash Wednesday and Lent.
          */
-        $easter       = $this->calculateEaster($this->year, $this->timezone);
+        $easter       = $this->calculateEaster($this->year, $this->getTimezone());
         $carnivalDay1 = clone $easter;
         $this->addHoliday(new Holiday(
             'carnivalDay',

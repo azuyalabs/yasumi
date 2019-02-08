@@ -43,7 +43,7 @@ class SA extends Australia
     {
         parent::initialize();
 
-        $this->addHoliday($this->easterSaturday($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->easterSaturday($this->year, $this->getTimezone(), $this->locale));
         $this->calculateQueensBirthday();
         $this->calculateLabourDay();
         $this->calculateAdelaideCupDay();
@@ -64,7 +64,7 @@ class SA extends Australia
      */
     public function calculateProclamationDay(): void
     {
-        $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->timezone));
+        $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->getTimezone()));
         $this->calculateHoliday('christmasDay', ['en_AU' => 'Christmas Day'], $christmasDay, false, false);
         switch ($christmasDay->format('w')) {
             case 0: // sunday
@@ -97,7 +97,7 @@ class SA extends Australia
      */
     public function calculateLabourDay(): void
     {
-        $date = new DateTime("first monday of october $this->year", new DateTimeZone($this->timezone));
+        $date = new DateTime("first monday of october $this->year", new DateTimeZone($this->getTimezone()));
 
         $this->addHoliday(new Holiday('labourDay', ['en_AU' => 'Labour Day'], $date, $this->locale));
     }
@@ -117,7 +117,7 @@ class SA extends Australia
                 $this->calculateHoliday(
                     'adelaideCup',
                     ['en_AU' => 'Adelaide Cup'],
-                    new DateTime('third monday of may ' . $this->year, new DateTimeZone($this->timezone)),
+                    new DateTime('third monday of may ' . $this->year, new DateTimeZone($this->getTimezone())),
                     false,
                     false
                 );
@@ -125,7 +125,7 @@ class SA extends Australia
                 $this->calculateHoliday(
                     'adelaideCup',
                     ['en_AU' => 'Adelaide Cup'],
-                    new DateTime('second monday of march ' . $this->year, new DateTimeZone($this->timezone)),
+                    new DateTime('second monday of march ' . $this->year, new DateTimeZone($this->getTimezone())),
                     false,
                     false
                 );
@@ -185,7 +185,7 @@ class SA extends Australia
         $this->calculateHoliday(
             'queensBirthday',
             ['en_AU' => "Queen's Birthday"],
-            new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->timezone)),
+            new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->getTimezone())),
             false,
             false
         );

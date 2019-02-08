@@ -46,6 +46,6 @@ class Hesse extends Germany
         parent::initialize();
 
         // Add custom Christian holidays
-        $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->corpusChristi($this->year, $this->getTimezone(), $this->locale));
     }
 }

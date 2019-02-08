@@ -50,8 +50,8 @@ class RegionOfMurcia extends Spain
         parent::initialize();
 
         // Add custom Christian holidays
-        $this->addHoliday($this->stJosephsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
-        $this->addHoliday($this->maundyThursday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->stJosephsDay($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->maundyThursday($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OBSERVANCE));
 
         // Calculate other holidays
         $this->calculateDayOfMurcia();
@@ -76,7 +76,7 @@ class RegionOfMurcia extends Spain
         if ($this->year >= 1983) {
             $this->addHoliday(new Holiday('murciaDay', [
                 'es_ES' => 'Día de la Región de Murcia',
-            ], new DateTime("$this->year-6-9", new DateTimeZone($this->timezone)), $this->locale));
+            ], new DateTime("$this->year-6-9", new DateTimeZone($this->getTimezone())), $this->locale));
         }
     }
 }

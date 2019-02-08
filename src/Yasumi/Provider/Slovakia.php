@@ -68,18 +68,18 @@ class Slovakia extends AbstractProvider
         $this->timezone = 'Europe/Bratislava';
 
         // 1.1.
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->newYearsDay($this->year, $this->getTimezone(), $this->locale));
         // 6.1.
-        $this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
+        $this->addHoliday($this->epiphany($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_BANK));
         // 1.5.
         $this->addHoliday($this->internationalWorkersDay(
             $this->year,
-            $this->timezone,
+            $this->getTimezone(),
             $this->locale,
             Holiday::TYPE_BANK
         ));
         // 8.5.
-        $this->addHoliday($this->victoryInEuropeDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
+        $this->addHoliday($this->victoryInEuropeDay($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_BANK));
         // 5.7.
         $this->calculateSaintsCyrilAndMethodiusDay();
         // 29.8.
@@ -89,19 +89,19 @@ class Slovakia extends AbstractProvider
         // 15.9.
         $this->calculateOurLadyOfSorrowsDay();
         // 1.11.
-        $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
+        $this->addHoliday($this->allSaintsDay($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_BANK));
         // 17.11.
         $this->calculateStruggleForFreedomAndDemocracyDay();
         // 24.12.
-        $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
+        $this->addHoliday($this->christmasEve($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_BANK));
         // 25.12.
-        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
+        $this->addHoliday($this->christmasDay($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_BANK));
         // 26.12.
-        $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
+        $this->addHoliday($this->secondChristmasDay($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_BANK));
 
         // variable holidays - easter
-        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
-        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
+        $this->addHoliday($this->goodFriday($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_BANK));
+        $this->addHoliday($this->easterMonday($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_BANK));
     }
 
     /**
@@ -125,7 +125,7 @@ class Slovakia extends AbstractProvider
                 'cs_CZ' => 'Den slovanských věrozvěstů Cyrila a Metoděje',
                 'en_US' => 'Saints Cyril and Methodius Day',
             ],
-            new DateTime($this->year . '-07-05', new DateTimeZone($this->timezone)),
+            new DateTime($this->year . '-07-05', new DateTimeZone($this->getTimezone())),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));
@@ -149,7 +149,7 @@ class Slovakia extends AbstractProvider
                 'sk_SK' => 'Výročie Slovenského národného povstania',
                 'en_US' => 'Slovak National Uprising Day',
             ],
-            new DateTime($this->year . '-08-29', new DateTimeZone($this->timezone)),
+            new DateTime($this->year . '-08-29', new DateTimeZone($this->getTimezone())),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));
@@ -173,7 +173,7 @@ class Slovakia extends AbstractProvider
                 'sk_SK' => 'Deň Ústavy Slovenskej republiky',
                 'en_US' => 'Day of the Constitution of the Slovak Republic',
             ],
-            new DateTime($this->year . '-09-01', new DateTimeZone($this->timezone)),
+            new DateTime($this->year . '-09-01', new DateTimeZone($this->getTimezone())),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));
@@ -198,7 +198,7 @@ class Slovakia extends AbstractProvider
         $this->addHoliday(new Holiday('ourLadyOfSorrowsDay', [
             'sk_SK' => 'Sviatok Sedembolestnej Panny Márie',
             'en_US' => 'Our Lady of Sorrows Day',
-        ], new DateTime($this->year . '-09-15', new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_BANK));
+        ], new DateTime($this->year . '-09-15', new DateTimeZone($this->getTimezone())), $this->locale, Holiday::TYPE_BANK));
     }
 
     /**
@@ -220,7 +220,7 @@ class Slovakia extends AbstractProvider
                 'cs_CZ' => 'Den boje za svobodu a demokracii',
                 'en_US' => 'Struggle for Freedom and Democracy Day',
             ],
-            new DateTime($this->year . '-11-17', new DateTimeZone($this->timezone)),
+            new DateTime($this->year . '-11-17', new DateTimeZone($this->getTimezone())),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));

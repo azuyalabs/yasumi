@@ -43,10 +43,10 @@ class USA extends AbstractProvider
         $this->timezone = 'America/New_York';
 
         // Add common holidays
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->newYearsDay($this->year, $this->getTimezone(), $this->locale));
 
         // Add Christian holidays
-        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->christmasDay($this->year, $this->getTimezone(), $this->locale));
 
         // Calculate other holidays
         $this->calculateMartinLutherKingday();
@@ -76,7 +76,7 @@ class USA extends AbstractProvider
         if ($this->year >= 1986) {
             $this->addHoliday(new Holiday('martinLutherKingDay', [
                 'en_US' => 'Dr. Martin Luther King Jr\'s Birthday',
-            ], new DateTime("third monday of january $this->year", new DateTimeZone($this->timezone)), $this->locale));
+            ], new DateTime("third monday of january $this->year", new DateTimeZone($this->getTimezone())), $this->locale));
         }
     }
 
@@ -95,9 +95,9 @@ class USA extends AbstractProvider
     private function calculateMemorialDay(): void
     {
         if ($this->year >= 1865) {
-            $date = new DateTime("$this->year-5-30", new DateTimeZone($this->timezone));
+            $date = new DateTime("$this->year-5-30", new DateTimeZone($this->getTimezone()));
             if ($this->year >= 1968) {
-                $date = new DateTime("last monday of may $this->year", new DateTimeZone($this->timezone));
+                $date = new DateTime("last monday of may $this->year", new DateTimeZone($this->getTimezone()));
             }
             $this->addHoliday(new Holiday('memorialDay', [
                 'en_US' => 'Memorial Day',
@@ -122,7 +122,7 @@ class USA extends AbstractProvider
         if ($this->year >= 1776) {
             $this->addHoliday(new Holiday('independenceDay', [
                 'en_US' => 'Independence Day',
-            ], new DateTime("$this->year-7-4", new DateTimeZone($this->timezone)), $this->locale));
+            ], new DateTime("$this->year-7-4", new DateTimeZone($this->getTimezone())), $this->locale));
         }
     }
 
@@ -144,7 +144,7 @@ class USA extends AbstractProvider
                 [
                     'en_US' => 'Labour Day',
                 ],
-                new DateTime("first monday of september $this->year", new DateTimeZone($this->timezone)),
+                new DateTime("first monday of september $this->year", new DateTimeZone($this->getTimezone())),
                 $this->locale
             ));
         }
@@ -166,9 +166,9 @@ class USA extends AbstractProvider
     private function calculateColumbusDay(): void
     {
         if ($this->year >= 1937) {
-            $date = new DateTime("$this->year-10-12", new DateTimeZone($this->timezone));
+            $date = new DateTime("$this->year-10-12", new DateTimeZone($this->getTimezone()));
             if ($this->year >= 1970) {
-                $date = new DateTime("second monday of october $this->year", new DateTimeZone($this->timezone));
+                $date = new DateTime("second monday of october $this->year", new DateTimeZone($this->getTimezone()));
             }
             $this->addHoliday(new Holiday('columbusDay', [
                 'en_US' => 'Columbus Day',
@@ -194,7 +194,7 @@ class USA extends AbstractProvider
 
             $this->addHoliday(new Holiday('veteransDay', [
                 'en_US' => $name,
-            ], new DateTime("$this->year-11-11", new DateTimeZone($this->timezone)), $this->locale));
+            ], new DateTime("$this->year-11-11", new DateTimeZone($this->getTimezone())), $this->locale));
         }
     }
 
@@ -218,7 +218,7 @@ class USA extends AbstractProvider
                 [
                     'en_US' => 'Thanksgiving Day',
                 ],
-                new DateTime("fourth thursday of november $this->year", new DateTimeZone($this->timezone)),
+                new DateTime("fourth thursday of november $this->year", new DateTimeZone($this->getTimezone())),
                 $this->locale
             ));
         }
@@ -242,9 +242,9 @@ class USA extends AbstractProvider
     private function calculateWashingtonsBirthday(): void
     {
         if ($this->year >= 1879) {
-            $date = new DateTime("$this->year-2-22", new DateTimeZone($this->timezone));
+            $date = new DateTime("$this->year-2-22", new DateTimeZone($this->getTimezone()));
             if ($this->year >= 1968) {
-                $date = new DateTime("third monday of february $this->year", new DateTimeZone($this->timezone));
+                $date = new DateTime("third monday of february $this->year", new DateTimeZone($this->getTimezone()));
             }
             $this->addHoliday(new Holiday('washingtonsBirthday', [
                 'en_US' => 'Washington\'s Birthday',

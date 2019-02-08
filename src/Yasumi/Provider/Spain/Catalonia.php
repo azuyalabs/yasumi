@@ -53,9 +53,9 @@ class Catalonia extends Spain
         parent::initialize();
 
         // Add custom Christian holidays
-        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
-        $this->addHoliday($this->stJohnsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
-        $this->addHoliday($this->stStephensDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->easterMonday($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->stJohnsDay($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->stStephensDay($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OBSERVANCE));
 
         // Calculate other holidays
         $this->calculateNationalDayOfCatalonia();
@@ -82,7 +82,7 @@ class Catalonia extends Spain
             $this->addHoliday(new Holiday(
                 'nationalCataloniaDay',
                 ['es_ES' => 'Diada Nacional de Catalunya'],
-                new DateTime("$this->year-9-11", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-9-11", new DateTimeZone($this->getTimezone())),
                 $this->locale
             ));
         }

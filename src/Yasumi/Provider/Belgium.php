@@ -42,19 +42,19 @@ class Belgium extends AbstractProvider
         $this->timezone = 'Europe/Brussels';
 
         // Add common holidays
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->newYearsDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->internationalWorkersDay($this->year, $this->getTimezone(), $this->locale));
 
         // Add Christian holidays
-        $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->assumptionOfMary($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->armisticeDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->easter($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->easterMonday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->ascensionDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->pentecost($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->pentecostMonday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->christmasDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->allSaintsDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->assumptionOfMary($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->armisticeDay($this->year, $this->getTimezone(), $this->locale));
 
         /**
          * Belgian National Day.
@@ -67,6 +67,6 @@ class Belgium extends AbstractProvider
             'en_US' => 'Belgian National Day',
             'nl_NL' => 'Nationale feestdag',
             'nl_BE' => 'Nationale feestdag',
-        ], new DateTime("$this->year-7-21", new DateTimeZone($this->timezone)), $this->locale));
+        ], new DateTime("$this->year-7-21", new DateTimeZone($this->getTimezone())), $this->locale));
     }
 }

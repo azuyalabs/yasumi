@@ -474,4 +474,14 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     {
         return new ArrayIterator($this->getHolidays());
     }
+
+    /**
+     * Returns the current timezone.
+     *
+     * @return string the object's current timezone
+     */
+    protected function getTimezone(): string
+    {
+        return $this->timezone;
+    }
 }

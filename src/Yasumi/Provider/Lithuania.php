@@ -56,19 +56,19 @@ class Lithuania extends AbstractProvider
         $this->timezone = 'Europe/Vilnius';
 
         // Official
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->newYearsDay($this->year, $this->getTimezone(), $this->locale));
         $this->addRestorationOfTheStateDay();
         $this->addRestorationOfIndependenceDay();
-        $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->stJohnsDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->easter($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->easterMonday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->internationalWorkersDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->stJohnsDay($this->year, $this->getTimezone(), $this->locale));
         $this->addStatehoodDay();
-        $this->addHoliday($this->assumptionOfMary($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale, Holiday::TYPE_OFFICIAL));
-        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->assumptionOfMary($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->allSaintsDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->christmasEve($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OFFICIAL));
+        $this->addHoliday($this->christmasDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->secondChristmasDay($this->year, $this->getTimezone(), $this->locale));
     }
 
     /**
@@ -83,7 +83,7 @@ class Lithuania extends AbstractProvider
             $this->addHoliday(new Holiday('restorationOfTheStateOfLithuaniaDay', [
                 'en_US' => 'Day of Restoration of the State of Lithuania',
                 'lt_LT' => 'Lietuvos valstybės atkūrimo diena'
-            ], new \DateTime("{$this->year}-02-16", new \DateTimeZone($this->timezone))));
+            ], new \DateTime("{$this->year}-02-16", new \DateTimeZone($this->getTimezone()))));
         }
     }
 
@@ -99,7 +99,7 @@ class Lithuania extends AbstractProvider
             $this->addHoliday(new Holiday('restorationOfIndependenceOfLithuaniaDay', [
                 'en_US' => 'Day of Restoration of Independence of Lithuania',
                 'lt_LT' => 'Lietuvos nepriklausomybės atkūrimo diena'
-            ], new \DateTime("{$this->year}-03-11", new \DateTimeZone($this->timezone))));
+            ], new \DateTime("{$this->year}-03-11", new \DateTimeZone($this->getTimezone()))));
         }
     }
 
@@ -116,7 +116,7 @@ class Lithuania extends AbstractProvider
             $this->addHoliday(new Holiday('statehoodDay', [
                 'en_US' => 'Statehood Day (Lithuania)',
                 'lt_LT' => 'Valstybės (Lietuvos karaliaus Mindaugo karūnavimo) diena'
-            ], new \DateTime("{$this->year}-07-06", new \DateTimeZone($this->timezone)), $this->locale));
+            ], new \DateTime("{$this->year}-07-06", new \DateTimeZone($this->getTimezone())), $this->locale));
         }
     }
 }

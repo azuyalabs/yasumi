@@ -43,10 +43,10 @@ class Solothurn extends Switzerland
     {
         parent::initialize();
 
-        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->goodFriday($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->newYearsDay($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->christmasDay($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->ascensionDay($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OTHER));
 
         $this->calculateBerchtoldsTag();
     }

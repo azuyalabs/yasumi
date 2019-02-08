@@ -47,7 +47,7 @@ class HautRhin extends France
         parent::initialize();
 
         // Add custom Christian holidays
-        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->stStephensDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->goodFriday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->stStephensDay($this->year, $this->getTimezone(), $this->locale));
     }
 }

@@ -66,7 +66,7 @@ class Brisbane extends Queensland
      */
     public function calculatePeoplesDay(): void
     {
-        $date = new DateTime('first friday of august ' . $this->year, new DateTimeZone($this->timezone));
+        $date = new DateTime('first friday of august ' . $this->year, new DateTimeZone($this->getTimezone()));
         if ($date->format('d') < 5) {
             $date = $date->add(new DateInterval('P7D'));
         }

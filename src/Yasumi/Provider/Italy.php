@@ -42,18 +42,18 @@ class Italy extends AbstractProvider
         $this->timezone = 'Europe/Rome';
 
         // Add common holidays
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->newYearsDay($this->year, $this->getTimezone(), $this->locale));
 
         // Add Christian holidays
-        $this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->assumptionOfMary($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->immaculateConception($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->stStephensDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->epiphany($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->easter($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->easterMonday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->internationalWorkersDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->assumptionOfMary($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->allSaintsDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->immaculateConception($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->christmasDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->stStephensDay($this->year, $this->getTimezone(), $this->locale));
 
         // Calculate other holidays
         $this->calculateLiberationDay();
@@ -83,7 +83,7 @@ class Italy extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'liberationDay',
                 ['it_IT' => 'Festa della Liberazione'],
-                new DateTime("$this->year-4-25", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-4-25", new DateTimeZone($this->getTimezone())),
                 $this->locale
             ));
         }
@@ -111,7 +111,7 @@ class Italy extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'republicDay',
                 ['it_IT' => 'Festa della Republica'],
-                new DateTime("$this->year-6-2", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-6-2", new DateTimeZone($this->getTimezone())),
                 $this->locale
             ));
         }

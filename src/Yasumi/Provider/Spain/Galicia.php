@@ -51,8 +51,8 @@ class Galicia extends Spain
         parent::initialize();
 
         // Add custom Christian holidays
-        $this->addHoliday($this->stJosephsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
-        $this->addHoliday($this->maundyThursday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->stJosephsDay($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->maundyThursday($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OBSERVANCE));
 
         // Calculate other holidays
         $this->calculateGalicianLiteratureDay();
@@ -80,7 +80,7 @@ class Galicia extends Spain
             $this->addHoliday(new Holiday('galicianLiteratureDay', [
                 'es_ES' => 'Día de las Letras Gallegas',
                 'gl_ES' => 'Día das Letras Galegas',
-            ], new DateTime("$this->year-5-17", new DateTimeZone($this->timezone)), $this->locale));
+            ], new DateTime("$this->year-5-17", new DateTimeZone($this->getTimezone())), $this->locale));
         }
     }
 
@@ -107,7 +107,7 @@ class Galicia extends Spain
         if ($this->year >= 2000) {
             $this->addHoliday(new Holiday('stJamesDay', [
                 'es_ES' => 'Santiago Apostol',
-            ], new DateTime("$this->year-7-25", new DateTimeZone($this->timezone)), $this->locale));
+            ], new DateTime("$this->year-7-25", new DateTimeZone($this->getTimezone())), $this->locale));
         }
     }
 }

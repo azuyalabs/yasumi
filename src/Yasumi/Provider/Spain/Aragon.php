@@ -49,7 +49,7 @@ class Aragon extends Spain
         parent::initialize();
 
         // Add custom Christian holidays
-        $this->addHoliday($this->maundyThursday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
-        $this->addHoliday($this->stGeorgesDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->maundyThursday($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->stGeorgesDay($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OBSERVANCE));
     }
 }

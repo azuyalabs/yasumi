@@ -43,8 +43,8 @@ class Victoria extends Australia
     {
         parent::initialize();
 
-        $this->addHoliday($this->easterSunday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easterSaturday($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->easterSunday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->easterSaturday($this->year, $this->getTimezone(), $this->locale));
         $this->calculateLabourDay();
         $this->calculateQueensBirthday();
         $this->calculateMelbourneCupDay();
@@ -58,7 +58,7 @@ class Victoria extends Australia
      */
     public function calculateLabourDay(): void
     {
-        $date = new DateTime("second monday of march $this->year", new DateTimeZone($this->timezone));
+        $date = new DateTime("second monday of march $this->year", new DateTimeZone($this->getTimezone()));
 
         $this->addHoliday(new Holiday('labourDay', ['en_AU' => 'Labour Day'], $date, $this->locale));
     }
@@ -70,7 +70,7 @@ class Victoria extends Australia
      */
     public function calculateMelbourneCupDay(): void
     {
-        $date = new DateTime('first Tuesday of November' . " $this->year", new DateTimeZone($this->timezone));
+        $date = new DateTime('first Tuesday of November' . " $this->year", new DateTimeZone($this->getTimezone()));
 
         $this->addHoliday(new Holiday('melbourneCup', ['en_AU' => 'Melbourne Cup'], $date, $this->locale));
     }
@@ -99,7 +99,7 @@ class Victoria extends Australia
                 return;
         }
 
-        $date = new DateTime($aflGrandFinalFriday, new DateTimeZone($this->timezone));
+        $date = new DateTime($aflGrandFinalFriday, new DateTimeZone($this->getTimezone()));
 
         $this->addHoliday(new Holiday(
             'aflGrandFinalFriday',
@@ -129,7 +129,7 @@ class Victoria extends Australia
         $this->calculateHoliday(
             'queensBirthday',
             ['en_AU' => 'Queen\'s Birthday'],
-            new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->timezone)),
+            new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->getTimezone())),
             false,
             false
         );

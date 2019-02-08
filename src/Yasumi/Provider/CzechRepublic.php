@@ -44,19 +44,19 @@ class CzechRepublic extends AbstractProvider
     {
         $this->timezone = 'Europe/Prague';
 
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->victoryInEuropeDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->newYearsDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->goodFriday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->easterMonday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->internationalWorkersDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->victoryInEuropeDay($this->year, $this->getTimezone(), $this->locale));
         $this->calculateSaintsCyrilAndMethodiusDay();
         $this->calculateJanHusDay();
         $this->calculateCzechStatehoodDay();
         $this->calculateIndependentCzechoslovakStateDay();
         $this->calculateStruggleForFreedomAndDemocracyDay();
-        $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->christmasEve($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->christmasDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->secondChristmasDay($this->year, $this->getTimezone(), $this->locale));
     }
 
     /**
@@ -85,7 +85,7 @@ class CzechRepublic extends AbstractProvider
         $this->addHoliday(new Holiday(
             'saintsCyrilAndMethodiusDay',
             ['cs_CZ' => 'Den slovanských věrozvěstů Cyrila a Metoděje', 'en_US' => 'Saints Cyril and Methodius Day'],
-            new DateTime($this->year . '-07-5', new \DateTimeZone($this->timezone)),
+            new DateTime($this->year . '-07-5', new \DateTimeZone($this->getTimezone())),
             $this->locale
         ));
     }
@@ -110,7 +110,7 @@ class CzechRepublic extends AbstractProvider
         $this->addHoliday(new Holiday(
             'janHusDay',
             ['cs_CZ' => 'Den upálení mistra Jana Husa', 'en_US' => 'Jan Hus Day'],
-            new DateTime($this->year . '-07-6', new \DateTimeZone($this->timezone)),
+            new DateTime($this->year . '-07-6', new \DateTimeZone($this->getTimezone())),
             $this->locale
         ));
     }
@@ -138,7 +138,7 @@ class CzechRepublic extends AbstractProvider
         $this->addHoliday(new Holiday(
             'czechStateHoodDay',
             ['cs_CZ' => 'Den české státnosti', 'en_US' => 'St. Wenceslas Day (Czech Statehood Day)'],
-            new DateTime($this->year . '-09-28', new \DateTimeZone($this->timezone)),
+            new DateTime($this->year . '-09-28', new \DateTimeZone($this->getTimezone())),
             $this->locale
         ));
     }
@@ -158,7 +158,7 @@ class CzechRepublic extends AbstractProvider
         $this->addHoliday(new Holiday('independentCzechoslovakStateDay', [
             'cs_CZ' => 'Den vzniku samostatného československého státu',
             'en_US' => 'Independent Czechoslovak State Day'
-        ], new DateTime($this->year . '-10-28', new \DateTimeZone($this->timezone)), $this->locale));
+        ], new DateTime($this->year . '-10-28', new \DateTimeZone($this->getTimezone())), $this->locale));
     }
 
     /**
@@ -176,7 +176,7 @@ class CzechRepublic extends AbstractProvider
         $this->addHoliday(new Holiday(
             'struggleForFreedomAndDemocracyDay',
             ['cs_CZ' => 'Den boje za svobodu a demokracii', 'en_US' => 'Struggle for Freedom and Democracy Day'],
-            new DateTime($this->year . '-11-17', new \DateTimeZone($this->timezone)),
+            new DateTime($this->year . '-11-17', new \DateTimeZone($this->getTimezone())),
             $this->locale
         ));
     }

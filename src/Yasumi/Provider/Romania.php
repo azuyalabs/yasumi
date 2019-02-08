@@ -47,20 +47,20 @@ class Romania extends AbstractProvider
         $this->timezone = 'Europe/Bucharest';
 
         // Add common holidays
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->newYearsDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->internationalWorkersDay($this->year, $this->getTimezone(), $this->locale));
 
         // Add Christian holidays
-        $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->easter($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->easterMonday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->christmasDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->secondChristmasDay($this->year, $this->getTimezone(), $this->locale));
 
         // Pentecost (50th and 51st day after Easter) and Asumption of Mary (15.08) were added as legal holidays acc. to the Law '202/2008'
         if ($this->year >= 2008) {
-            $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale));
-            $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale));
-            $this->addHoliday($this->assumptionOfMary($this->year, $this->timezone, $this->locale));
+            $this->addHoliday($this->pentecost($this->year, $this->getTimezone(), $this->locale));
+            $this->addHoliday($this->pentecostMonday($this->year, $this->getTimezone(), $this->locale));
+            $this->addHoliday($this->assumptionOfMary($this->year, $this->getTimezone(), $this->locale));
         }
 
         // Add other holidays
@@ -89,7 +89,7 @@ class Romania extends AbstractProvider
         $this->addHoliday(new Holiday('dayAfterNewYearsDay', [
             'en_US' => 'Day after New Year\'s Day',
             'ro_RO' => 'A doua zi după Anul Nou'
-        ], new DateTime("$this->year-01-02", new DateTimeZone($this->timezone)), $this->locale));
+        ], new DateTime("$this->year-01-02", new DateTimeZone($this->getTimezone())), $this->locale));
     }
 
     /**
@@ -114,7 +114,7 @@ class Romania extends AbstractProvider
             $this->addHoliday(new Holiday('unitedPrincipalitiesDay', [
                 'en_US' => 'Union Day / Small Union',
                 'ro_RO' => 'Unirea Principatelor Române / Mica Unire'
-            ], new DateTime("$this->year-01-24", new DateTimeZone($this->timezone)), $this->locale));
+            ], new DateTime("$this->year-01-24", new DateTimeZone($this->getTimezone())), $this->locale));
         }
     }
 
@@ -136,7 +136,7 @@ class Romania extends AbstractProvider
             $this->addHoliday(new Holiday('stAndrewDay', [
                 'en_US' => 'Saint Andrew\'s Day',
                 'ro_RO' => 'Sfântul Andrei'
-            ], new DateTime($this->year . '-11-30', new DateTimeZone($this->timezone)), $this->locale));
+            ], new DateTime($this->year . '-11-30', new DateTimeZone($this->getTimezone())), $this->locale));
         }
     }
 
@@ -177,7 +177,7 @@ class Romania extends AbstractProvider
             $this->addHoliday(new Holiday('nationalDay', [
                 'en_US' => 'National Day',
                 'ro_RO' => 'Ziua Națională'
-            ], new DateTime($national_day, new DateTimeZone($this->timezone)), $this->locale));
+            ], new DateTime($national_day, new DateTimeZone($this->getTimezone())), $this->locale));
         }
     }
 
@@ -201,7 +201,7 @@ class Romania extends AbstractProvider
                     'en_US' => 'Constantin Brâncuși day',
                     'ro_RO' => 'Ziua Constantin Brâncuși'
                 ],
-                new DateTime("$this->year-02-19", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-02-19", new DateTimeZone($this->getTimezone())),
                 $this->locale,
                 Holiday::TYPE_OBSERVANCE
             ));
@@ -230,7 +230,7 @@ class Romania extends AbstractProvider
                     'en_US' => 'International Children\'s Day',
                     'ro_RO' => 'Ziua Copilului'
                 ],
-                new DateTime("$this->year-06-01", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-06-01", new DateTimeZone($this->getTimezone())),
                 $this->locale,
                 Holiday::TYPE_OBSERVANCE
             ));
@@ -240,7 +240,7 @@ class Romania extends AbstractProvider
             $this->addHoliday(new Holiday('childrensDay', [
                 'en_US' => 'International Children\'s Day',
                 'ro_RO' => 'Ziua Copilului'
-            ], new DateTime("$this->year-06-01", new DateTimeZone($this->timezone)), $this->locale));
+            ], new DateTime("$this->year-06-01", new DateTimeZone($this->getTimezone())), $this->locale));
         }
     }
 

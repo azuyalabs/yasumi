@@ -42,25 +42,25 @@ class France extends AbstractProvider
         $this->timezone = 'Europe/Paris';
 
         // Add common holidays
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->newYearsDay($this->year, $this->getTimezone(), $this->locale));
 
         if ($this->year >= 1945) {
-            $this->addHoliday($this->victoryInEuropeDay($this->year, $this->timezone, $this->locale));
+            $this->addHoliday($this->victoryInEuropeDay($this->year, $this->getTimezone(), $this->locale));
         }
 
         // Add Christian holidays
-        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->assumptionOfMary($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->easterMonday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->internationalWorkersDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->ascensionDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->pentecostMonday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->assumptionOfMary($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->allSaintsDay($this->year, $this->getTimezone(), $this->locale));
 
         if ($this->year >= 1919) {
-            $this->addHoliday($this->armisticeDay($this->year, $this->timezone, $this->locale));
+            $this->addHoliday($this->armisticeDay($this->year, $this->getTimezone(), $this->locale));
         }
 
-        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->christmasDay($this->year, $this->getTimezone(), $this->locale));
 
         // Calculate other holidays
         $this->calculateBastilleDay();
@@ -88,7 +88,7 @@ class France extends AbstractProvider
             $this->addHoliday(new Holiday('bastilleDay', [
                 'en_US' => 'Bastille Day',
                 'fr_FR' => 'La Fête nationale',
-            ], new DateTime("$this->year-7-14", new DateTimeZone($this->timezone)), $this->locale));
+            ], new DateTime("$this->year-7-14", new DateTimeZone($this->getTimezone())), $this->locale));
         }
     }
 }

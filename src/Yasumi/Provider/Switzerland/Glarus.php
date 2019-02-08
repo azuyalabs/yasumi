@@ -45,14 +45,14 @@ class Glarus extends Switzerland
     {
         parent::initialize();
 
-        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        $this->addHoliday($this->stStephensDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->goodFriday($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->allSaintsDay($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->stStephensDay($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->newYearsDay($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->christmasDay($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->ascensionDay($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->easterMonday($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->pentecostMonday($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OTHER));
 
         $this->calculateBerchtoldsTag();
         $this->calculateNafelserFahrt();
@@ -75,7 +75,7 @@ class Glarus extends Switzerland
     public function calculateNafelserFahrt(): void
     {
         if ($this->year >= 1389) {
-            $date = new DateTime('First Thursday of ' . $this->year . '-04', new DateTimeZone($this->timezone));
+            $date = new DateTime('First Thursday of ' . $this->year . '-04', new DateTimeZone($this->getTimezone()));
             $this->addHoliday(new Holiday('nafelserFahrt', [
                 'de_DE' => 'Näfelser Fahrt',
                 'de_CH' => 'Näfelser Fahrt',

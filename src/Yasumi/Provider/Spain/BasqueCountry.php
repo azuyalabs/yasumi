@@ -49,8 +49,8 @@ class BasqueCountry extends Spain
         parent::initialize();
 
         // Add custom Christian holidays
-        $this->addHoliday($this->maundyThursday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
-        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->maundyThursday($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->easterMonday($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OBSERVANCE));
 
         // Calculate other holidays
         $this->calculateBasqueCountryDay();
@@ -79,7 +79,7 @@ class BasqueCountry extends Spain
             $this->addHoliday(new Holiday(
                 'basqueCountryDay',
                 ['es_ES' => 'Euskadi Eguna'],
-                new DateTime("$this->year-10-25", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-10-25", new DateTimeZone($this->getTimezone())),
                 $this->locale
             ));
         }

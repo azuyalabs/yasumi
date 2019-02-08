@@ -47,18 +47,18 @@ class Estonia extends AbstractProvider
         $this->timezone = 'Europe/Tallinn';
 
         // Official
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->newYearsDay($this->year, $this->getTimezone(), $this->locale));
         $this->addIndependenceDay();
-        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->goodFriday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->easter($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->internationalWorkersDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->pentecost($this->year, $this->getTimezone(), $this->locale));
         $this->addVictoryDay();
-        $this->addHoliday($this->stJohnsDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->stJohnsDay($this->year, $this->getTimezone(), $this->locale));
         $this->addRestorationOfIndependenceDay();
-        $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale, Holiday::TYPE_OFFICIAL));
-        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->christmasEve($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OFFICIAL));
+        $this->addHoliday($this->christmasDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->secondChristmasDay($this->year, $this->getTimezone(), $this->locale));
     }
 
     /**
@@ -71,7 +71,7 @@ class Estonia extends AbstractProvider
             $this->addHoliday(new Holiday('independenceDay', [
                 'en_US' => 'Independence Day',
                 'et_EE' => 'Iseseisvuspäev'
-            ], new \DateTime("{$this->year}-02-24", new \DateTimeZone($this->timezone))));
+            ], new \DateTime("{$this->year}-02-24", new \DateTimeZone($this->getTimezone()))));
         }
     }
 
@@ -85,7 +85,7 @@ class Estonia extends AbstractProvider
             $this->addHoliday(new Holiday('victoryDay', [
                 'en_US' => 'Victory Day',
                 'et_EE' => 'Võidupüha'
-            ], new \DateTime("{$this->year}-06-23", new \DateTimeZone($this->timezone))));
+            ], new \DateTime("{$this->year}-06-23", new \DateTimeZone($this->getTimezone()))));
         }
     }
 
@@ -99,7 +99,7 @@ class Estonia extends AbstractProvider
             $this->addHoliday(new Holiday('restorationOfIndependenceDay', [
                 'en_US' => 'Day of Restoration of Independence',
                 'et_EE' => 'Tasiseseisvumispäev'
-            ], new \DateTime("{$this->year}-08-20", new \DateTimeZone($this->timezone))));
+            ], new \DateTime("{$this->year}-08-20", new \DateTimeZone($this->getTimezone()))));
         }
     }
 }

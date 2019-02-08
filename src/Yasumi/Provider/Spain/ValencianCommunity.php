@@ -53,8 +53,8 @@ class ValencianCommunity extends Spain
         parent::initialize();
 
         // Add custom Christian holidays
-        $this->addHoliday($this->stJosephsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
-        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->stJosephsDay($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->easterMonday($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OBSERVANCE));
 
         // Calculate other holidays
         $this->calculateValencianCommunityDay();
@@ -83,7 +83,7 @@ class ValencianCommunity extends Spain
         if ($this->year >= 1239) {
             $this->addHoliday(new Holiday('valencianCommunityDay', [
                 'es_ES' => 'Día de la Comunidad Valenciana',
-            ], new DateTime("$this->year-10-9", new DateTimeZone($this->timezone)), $this->locale));
+            ], new DateTime("$this->year-10-9", new DateTimeZone($this->getTimezone())), $this->locale));
         }
     }
 }

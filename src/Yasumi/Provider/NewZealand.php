@@ -50,8 +50,8 @@ class NewZealand extends AbstractProvider
         $this->calculateLabourDay();
 
         // Add Christian holidays
-        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->goodFriday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->easterMonday($this->year, $this->getTimezone(), $this->locale));
         $this->calculateChristmasHolidays();
     }
 
@@ -73,8 +73,8 @@ class NewZealand extends AbstractProvider
      */
     public function calculateNewYearHolidays(): void
     {
-        $newYearsDay         = new DateTime("$this->year-01-01", new DateTimeZone($this->timezone));
-        $dayAfterNewYearsDay = new DateTime("$this->year-01-02", new DateTimeZone($this->timezone));
+        $newYearsDay         = new DateTime("$this->year-01-01", new DateTimeZone($this->getTimezone()));
+        $dayAfterNewYearsDay = new DateTime("$this->year-01-02", new DateTimeZone($this->getTimezone()));
 
         switch ($newYearsDay->format('w')) {
             case 0:
@@ -117,7 +117,7 @@ class NewZealand extends AbstractProvider
             return;
         }
 
-        $date = new DateTime("$this->year-02-6", new DateTimeZone($this->timezone));
+        $date = new DateTime("$this->year-02-6", new DateTimeZone($this->getTimezone()));
 
         if ($this->year >= 2015 && ! $this->isWorkingDay($date)) {
             $date->modify('next monday');
@@ -147,7 +147,7 @@ class NewZealand extends AbstractProvider
             return;
         }
 
-        $date = new DateTime("$this->year-04-25", new DateTimeZone($this->timezone));
+        $date = new DateTime("$this->year-04-25", new DateTimeZone($this->getTimezone()));
 
         if ($this->year >= 2015 && ! $this->isWorkingDay($date)) {
             $date->modify('next monday');
@@ -183,7 +183,7 @@ class NewZealand extends AbstractProvider
         $this->addHoliday(new Holiday(
             'queensBirthday',
             ['en_NZ' => 'Queens Birthday'],
-            new DateTime("first monday of june $this->year", new DateTimeZone($this->timezone)),
+            new DateTime("first monday of june $this->year", new DateTimeZone($this->getTimezone())),
             $this->locale
         ));
     }
@@ -215,7 +215,7 @@ class NewZealand extends AbstractProvider
 
         $date = new DateTime(
             (($this->year < 1910) ? 'second wednesday of october' : 'fourth monday of october') . " $this->year",
-            new DateTimeZone($this->timezone)
+            new DateTimeZone($this->getTimezone())
         );
 
         $this->addHoliday(new Holiday('labourDay', [], $date, $this->locale));
@@ -238,8 +238,8 @@ class NewZealand extends AbstractProvider
      */
     public function calculateChristmasHolidays(): void
     {
-        $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->timezone));
-        $boxingDay    = new DateTime("$this->year-12-26", new DateTimeZone($this->timezone));
+        $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->getTimezone()));
+        $boxingDay    = new DateTime("$this->year-12-26", new DateTimeZone($this->getTimezone()));
 
         switch ($christmasDay->format('w')) {
             case 0:

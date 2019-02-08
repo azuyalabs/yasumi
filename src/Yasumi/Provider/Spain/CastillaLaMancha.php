@@ -52,8 +52,8 @@ class CastillaLaMancha extends Spain
         parent::initialize();
 
         // Add custom Christian holidays
-        $this->addHoliday($this->stJosephsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
-        $this->addHoliday($this->maundyThursday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->stJosephsDay($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->maundyThursday($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OBSERVANCE));
 
         // Calculate other holidays
         $this->calculateCastillaLaManchaDay();
@@ -82,7 +82,7 @@ class CastillaLaMancha extends Spain
             $this->addHoliday(new Holiday(
                 'castillaLaManchaDay',
                 ['es_ES' => 'Día de la Región Castilla-La Mancha'],
-                new DateTime("$this->year-5-31", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-5-31", new DateTimeZone($this->getTimezone())),
                 $this->locale
             ));
         }

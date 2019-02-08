@@ -54,7 +54,7 @@ class WA extends Australia
      */
     public function calculateLabourDay(): void
     {
-        $date = new DateTime("first monday of march $this->year", new DateTimeZone($this->timezone));
+        $date = new DateTime("first monday of march $this->year", new DateTimeZone($this->getTimezone()));
 
         $this->addHoliday(new Holiday('labourDay', [], $date, $this->locale));
     }
@@ -72,7 +72,7 @@ class WA extends Australia
         $this->calculateHoliday(
             'westernAustraliaDay',
             ['en_AU' => 'Western Australia Day'],
-            new DateTime('first monday of june ' . $this->year, new DateTimeZone($this->timezone)),
+            new DateTime('first monday of june ' . $this->year, new DateTimeZone($this->getTimezone())),
             false,
             false
         );
@@ -99,7 +99,7 @@ class WA extends Australia
             $this->calculateHoliday(
                 'queensBirthday',
                 ['en_AU' => "Queen's Birthday"],
-                new DateTime('2011-10-28', new DateTimeZone($this->timezone)),
+                new DateTime('2011-10-28', new DateTimeZone($this->getTimezone())),
                 false,
                 false
             );
@@ -107,7 +107,7 @@ class WA extends Australia
             $this->calculateHoliday(
                 'queensBirthday',
                 ['en_AU' => "Queen's Birthday"],
-                new DateTime('2012-10-01', new DateTimeZone($this->timezone)),
+                new DateTime('2012-10-01', new DateTimeZone($this->getTimezone())),
                 false,
                 false
             );
@@ -115,7 +115,7 @@ class WA extends Australia
             $this->calculateHoliday(
                 'queensBirthday',
                 ['en_AU' => "Queen's Birthday"],
-                new DateTime('last monday of september ' . $this->year, new DateTimeZone($this->timezone)),
+                new DateTime('last monday of september ' . $this->year, new DateTimeZone($this->getTimezone())),
                 false,
                 false
             );

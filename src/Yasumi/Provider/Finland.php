@@ -43,20 +43,20 @@ class Finland extends AbstractProvider
         $this->timezone = 'Europe/Helsinki';
 
         // Add common holidays
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->newYearsDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->internationalWorkersDay($this->year, $this->getTimezone(), $this->locale));
 
         // Add common Christian holidays (common in Finland)
-        $this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->epiphany($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->goodFriday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->easter($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->easterMonday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->ascensionDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->pentecost($this->year, $this->getTimezone(), $this->locale));
         $this->calculateStJohnsDay(); // aka Midsummer's Day
         $this->calculateAllSaintsDay();
-        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->christmasDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->secondChristmasDay($this->year, $this->getTimezone(), $this->locale));
 
         // Calculate other holidays
         $this->calculateIndependenceDay();
@@ -86,7 +86,7 @@ class Finland extends AbstractProvider
     {
         $translation = ['fi_FI' => 'Juhannuspäivä'];
         $shortName   = 'stJohnsDay';
-        $date        = new DateTime("$this->year-6-24", new DateTimeZone($this->timezone)); // Default date
+        $date        = new DateTime("$this->year-6-24", new DateTimeZone($this->getTimezone())); // Default date
 
         if ($this->year < 1955) {
             $this->addHoliday(new Holiday($shortName, $translation, $date, $this->locale));
@@ -128,7 +128,7 @@ class Finland extends AbstractProvider
      */
     private function calculateAllSaintsDay(): void
     {
-        $date = new DateTime("$this->year-10-31", new DateTimeZone($this->timezone));
+        $date = new DateTime("$this->year-10-31", new DateTimeZone($this->getTimezone()));
 
         // Check between 31 October and 6th of November the day that is a Saturday
         for ($d = 0; $d <= 7; ++$d) {
@@ -165,7 +165,7 @@ class Finland extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'independenceDay',
                 ['fi_FI' => 'Itsenäisyyspäivä'],
-                new DateTime("$this->year-12-6", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-12-6", new DateTimeZone($this->getTimezone())),
                 $this->locale
             ));
         }

@@ -52,7 +52,7 @@ class CanaryIslands extends Spain
         $this->timezone = 'Atlantic/Canary';
 
         // Add custom Christian holidays
-        $this->addHoliday($this->maundyThursday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->maundyThursday($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OBSERVANCE));
 
         // Calculate other holidays
         $this->calculateCanaryIslandsDay();
@@ -78,7 +78,7 @@ class CanaryIslands extends Spain
             $this->addHoliday(new Holiday(
                 'canaryIslandsDay',
                 ['es_ES' => 'Día de las Canarias'],
-                new DateTime("$this->year-5-30", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-5-30", new DateTimeZone($this->getTimezone())),
                 $this->locale
             ));
         }

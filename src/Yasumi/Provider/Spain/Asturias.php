@@ -51,8 +51,8 @@ class Asturias extends Spain
         parent::initialize();
 
         // Add custom Christian holidays
-        $this->addHoliday($this->stJosephsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
-        $this->addHoliday($this->maundyThursday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->stJosephsDay($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->maundyThursday($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OBSERVANCE));
 
         // Calculate other holidays
         $this->calculateAsturiasDay();
@@ -79,7 +79,7 @@ class Asturias extends Spain
             $this->addHoliday(new Holiday(
                 'asturiasDay',
                 ['es_ES' => 'Día de Asturias'],
-                new DateTime("$this->year-9-8", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-9-8", new DateTimeZone($this->getTimezone())),
                 $this->locale
             ));
         }

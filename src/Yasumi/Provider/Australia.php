@@ -47,8 +47,8 @@ class Australia extends AbstractProvider
         $this->calculateAnzacDay();
 
         // Add Christian holidays
-        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->goodFriday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->easterMonday($this->year, $this->getTimezone(), $this->locale));
         $this->calculateChristmasDay();
     }
 
@@ -72,7 +72,7 @@ class Australia extends AbstractProvider
      */
     public function calculateAustraliaDay(): void
     {
-        $date = new DateTime("$this->year-01-26", new DateTimeZone($this->timezone));
+        $date = new DateTime("$this->year-01-26", new DateTimeZone($this->getTimezone()));
 
         $this->calculateHoliday('australiaDay', ['en_AU' => 'Australia Day'], $date);
     }
@@ -124,7 +124,7 @@ class Australia extends AbstractProvider
      */
     public function calculateNewYearHolidays(): void
     {
-        $newyearsday = new DateTime("$this->year-01-01", new DateTimeZone($this->timezone));
+        $newyearsday = new DateTime("$this->year-01-01", new DateTimeZone($this->getTimezone()));
         $this->calculateHoliday('newYearsDay', ['en_AU' => 'New Year\'s Day'], $newyearsday, false, false);
         switch ($newyearsday->format('w')) {
             case 0: // sunday
@@ -160,11 +160,11 @@ class Australia extends AbstractProvider
             return;
         }
 
-        $date = new DateTime("$this->year-04-25", new DateTimeZone($this->timezone));
+        $date = new DateTime("$this->year-04-25", new DateTimeZone($this->getTimezone()));
         $this->calculateHoliday('anzacDay', ['en_AU' => 'ANZAC Day'], $date, false, false);
-        $easter = $this->calculateEaster($this->year, $this->timezone);
+        $easter = $this->calculateEaster($this->year, $this->getTimezone());
 
-        $easterMonday = $this->calculateEaster($this->year, $this->timezone);
+        $easterMonday = $this->calculateEaster($this->year, $this->getTimezone());
         $easterMonday->add(new DateInterval('P1D'));
 
         $fDate = $date->format('Y-m-d');
@@ -189,8 +189,8 @@ class Australia extends AbstractProvider
      */
     public function calculateChristmasDay(): void
     {
-        $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->timezone));
-        $boxingDay    = new DateTime("$this->year-12-26", new DateTimeZone($this->timezone));
+        $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->getTimezone()));
+        $boxingDay    = new DateTime("$this->year-12-26", new DateTimeZone($this->getTimezone()));
         $this->calculateHoliday('christmasDay', ['en_AU' => 'Christmas Day'], $christmasDay, false, false);
         $this->calculateHoliday('secondChristmasDay', ['en_AU' => 'Boxing Day'], $boxingDay, false, false);
 

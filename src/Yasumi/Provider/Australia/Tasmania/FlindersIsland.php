@@ -52,7 +52,7 @@ class FlindersIsland extends Tasmania
      */
     public function calculateFlindersIslandShow(): void
     {
-        $date = new DateTime('third saturday of october ' . $this->year, new DateTimeZone($this->timezone));
+        $date = new DateTime('third saturday of october ' . $this->year, new DateTimeZone($this->getTimezone()));
         $date = $date->sub(new DateInterval('P1D'));
         $this->addHoliday(new Holiday('flindersIslandShow', ['en_AU' => 'Flinders Island Show'], $date, $this->locale));
     }

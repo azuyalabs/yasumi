@@ -51,7 +51,7 @@ class Extremadura extends Spain
         parent::initialize();
 
         // Add custom Christian holidays
-        $this->addHoliday($this->maundyThursday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->maundyThursday($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OBSERVANCE));
 
         // Calculate other holidays
         $this->calculateDayOfExtremadura();
@@ -79,7 +79,7 @@ class Extremadura extends Spain
             $this->addHoliday(new Holiday(
                 'extremaduraDay',
                 ['es_ES' => 'Día de Extremadura'],
-                new DateTime("$this->year-9-8", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-9-8", new DateTimeZone($this->getTimezone())),
                 $this->locale
             ));
         }

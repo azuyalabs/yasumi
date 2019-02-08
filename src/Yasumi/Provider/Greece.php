@@ -43,20 +43,20 @@ class Greece extends AbstractProvider
         $this->timezone = 'Europe/Athens';
 
         // Add common holidays
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->newYearsDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->internationalWorkersDay($this->year, $this->getTimezone(), $this->locale));
 
         // Add Christian holidays
-        $this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->annunciation($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->assumptionOfMary($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->epiphany($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->annunciation($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->goodFriday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->easter($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->easterMonday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->ascensionDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->pentecost($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->pentecostMonday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->assumptionOfMary($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->christmasDay($this->year, $this->getTimezone(), $this->locale));
 
         // Calculate other holidays
         $this->calculateThreeHolyHierarchs();
@@ -84,7 +84,7 @@ class Greece extends AbstractProvider
         $this->addHoliday(new Holiday(
             'threeHolyHierarchs',
             ['el_GR' => 'Τριών Ιεραρχών'],
-            new DateTime("$this->year-1-30", new DateTimeZone($this->timezone)),
+            new DateTime("$this->year-1-30", new DateTimeZone($this->getTimezone())),
             $this->locale,
             Holiday::TYPE_OTHER
         ));
@@ -109,7 +109,7 @@ class Greece extends AbstractProvider
         $this->addHoliday(new Holiday(
             'cleanMonday',
             ['el_GR' => 'Καθαρά Δευτέρα'],
-            $this->calculateEaster($this->year, $this->timezone)->sub(new DateInterval('P48D')),
+            $this->calculateEaster($this->year, $this->getTimezone())->sub(new DateInterval('P48D')),
             $this->locale
         ));
     }
@@ -148,7 +148,7 @@ class Greece extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'independenceDay',
                 ['el_GR' => 'Εικοστή Πέμπτη Μαρτίου'],
-                new DateTime("$this->year-3-25", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-3-25", new DateTimeZone($this->getTimezone())),
                 $this->locale
             ));
         }
@@ -172,7 +172,7 @@ class Greece extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'ohiDay',
                 ['el_GR' => 'Επέτειος του Όχι'],
-                new DateTime("$this->year-10-28", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-10-28", new DateTimeZone($this->getTimezone())),
                 $this->locale
             ));
         }
@@ -196,7 +196,7 @@ class Greece extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'polytechnio',
                 ['el_GR' => 'Πολυτεχνείο'],
-                new DateTime("$this->year-11-17", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-11-17", new DateTimeZone($this->getTimezone())),
                 $this->locale,
                 Holiday::TYPE_OTHER
             ));

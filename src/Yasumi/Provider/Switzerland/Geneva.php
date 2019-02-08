@@ -46,12 +46,12 @@ class Geneva extends Switzerland
     {
         parent::initialize();
 
-        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->goodFriday($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->newYearsDay($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->christmasDay($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->ascensionDay($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->easterMonday($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->pentecostMonday($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OTHER));
 
         $this->calculateJeuneGenevois();
         $this->calculateRestaurationGenevoise();
@@ -73,7 +73,7 @@ class Geneva extends Switzerland
     public function calculateJeuneGenevois(): void
     {
         // Find first Sunday of September
-        $date = new DateTime('First Sunday of ' . $this->year . '-09', new DateTimeZone($this->timezone));
+        $date = new DateTime('First Sunday of ' . $this->year . '-09', new DateTimeZone($this->getTimezone()));
         // Go to next Thursday
         $date->add(new DateInterval('P4D'));
 
@@ -114,7 +114,7 @@ class Geneva extends Switzerland
                     'fr_FR' => 'Restauration de la République',
                     'fr_CH' => 'Restauration de la République',
                 ],
-                new DateTime($this->year . '-12-31', new DateTimeZone($this->timezone)),
+                new DateTime($this->year . '-12-31', new DateTimeZone($this->getTimezone())),
                 $this->locale,
                 Holiday::TYPE_OTHER
             ));

@@ -43,7 +43,7 @@ class NT extends Australia
     {
         parent::initialize();
 
-        $this->addHoliday($this->easterSaturday($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->easterSaturday($this->year, $this->getTimezone(), $this->locale));
         $this->calculateQueensBirthday();
         $this->calculateMayDay();
         $this->calculatePicnicDay();
@@ -56,7 +56,7 @@ class NT extends Australia
      */
     public function calculateMayDay(): void
     {
-        $date = new DateTime("first monday of may $this->year", new DateTimeZone($this->timezone));
+        $date = new DateTime("first monday of may $this->year", new DateTimeZone($this->getTimezone()));
 
         $this->addHoliday(new Holiday('mayDay', ['en_AU' => 'May Day'], $date, $this->locale));
     }
@@ -74,7 +74,7 @@ class NT extends Australia
         $this->calculateHoliday(
             'picnicDay',
             ['en_AU' => 'Picnic Day'],
-            new DateTime('first monday of august '. $this->year, new DateTimeZone($this->timezone)),
+            new DateTime('first monday of august '. $this->year, new DateTimeZone($this->getTimezone())),
             false,
             false
         );
@@ -132,7 +132,7 @@ class NT extends Australia
         $this->calculateHoliday(
             'queensBirthday',
             ['en_AU' => "Queen's Birthday"],
-            new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->timezone)),
+            new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->getTimezone())),
             false,
             false
         );

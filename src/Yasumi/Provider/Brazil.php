@@ -43,15 +43,15 @@ class Brazil extends AbstractProvider
         $this->timezone = 'America/Fortaleza';
 
         // Add common holidays
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->newYearsDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->internationalWorkersDay($this->year, $this->getTimezone(), $this->locale));
 
         // Add Christian holidays
-        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
-        $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
-        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->ashWednesday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->christmasDay($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->easter($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->corpusChristi($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->goodFriday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->ashWednesday($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OBSERVANCE));
 
         /**
          * Carnaval
@@ -62,7 +62,7 @@ class Brazil extends AbstractProvider
          * @link https://en.wikipedia.org/wiki/Brazilian_Carnival
          */
         if ($this->year >= 1700) {
-            $easter = $this->calculateEaster($this->year, $this->timezone);
+            $easter = $this->calculateEaster($this->year, $this->getTimezone());
 
             $carnavalMonday = clone $easter;
             $this->addHoliday(new Holiday(
@@ -96,7 +96,7 @@ class Brazil extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'tiradentesDay',
                 ['pt_BR' => 'Dia de Tiradentes'],
-                new DateTime("$this->year-04-21", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-04-21", new DateTimeZone($this->getTimezone())),
                 $this->locale
             ));
         }
@@ -113,7 +113,7 @@ class Brazil extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'independenceDay',
                 ['pt_BR' => 'Dia da Independência do Brasil'],
-                new DateTime("$this->year-09-07", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-09-07", new DateTimeZone($this->getTimezone())),
                 $this->locale
             ));
         }
@@ -133,7 +133,7 @@ class Brazil extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'ourLadyOfAparecidaDay',
                 ['pt_BR' => 'Dia de Nossa Senhora Aparecida'],
-                new DateTime("$this->year-10-12", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-10-12", new DateTimeZone($this->getTimezone())),
                 $this->locale
             ));
         }
@@ -149,7 +149,7 @@ class Brazil extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'allSoulsDay',
                 ['pt_BR' => 'Dia de Finados'],
-                new DateTime("$this->year-11-02", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-11-02", new DateTimeZone($this->getTimezone())),
                 $this->locale
             ));
         }
@@ -167,7 +167,7 @@ class Brazil extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'proclamationOfRepublicDay',
                 ['pt_BR' => 'Dia da Proclamação da República'],
-                new DateTime("$this->year-11-15", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-11-15", new DateTimeZone($this->getTimezone())),
                 $this->locale
             ));
         }

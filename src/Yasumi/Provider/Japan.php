@@ -85,7 +85,7 @@ class Japan extends AbstractProvider
 
         // Add common holidays
         if ($this->year >= 1948) {
-            $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
+            $this->addHoliday($this->newYearsDay($this->year, $this->getTimezone(), $this->locale));
         }
 
         // Calculate other holidays
@@ -119,7 +119,7 @@ class Japan extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'nationalFoundationDay',
                 ['en_US' => 'National Foundation Day', 'ja_JP' => '建国記念の日'],
-                new DateTime("$this->year-2-11", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-2-11", new DateTimeZone($this->getTimezone())),
                 $this->locale
             ));
         }
@@ -136,7 +136,7 @@ class Japan extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'showaDay',
                 ['en_US' => 'Showa Day', 'ja_JP' => '昭和の日'],
-                new DateTime("$this->year-4-29", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-4-29", new DateTimeZone($this->getTimezone())),
                 $this->locale
             ));
         }
@@ -153,7 +153,7 @@ class Japan extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'constitutionMemorialDay',
                 ['en_US' => 'Constitution Memorial Day', 'ja_JP' => '憲法記念日'],
-                new DateTime("$this->year-5-3", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-5-3", new DateTimeZone($this->getTimezone())),
                 $this->locale
             ));
         }
@@ -169,7 +169,7 @@ class Japan extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'childrensDay',
                 ['en_US' => 'Children\'s Day', 'ja_JP' => 'こどもの日'],
-                new DateTime("$this->year-5-5", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-5-5", new DateTimeZone($this->getTimezone())),
                 $this->locale
             ));
         }
@@ -186,7 +186,7 @@ class Japan extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'cultureDay',
                 ['en_US' => 'Culture Day', 'ja_JP' => '文化の日'],
-                new DateTime("$this->year-11-3", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-11-3", new DateTimeZone($this->getTimezone())),
                 $this->locale
             ));
         }
@@ -203,7 +203,7 @@ class Japan extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'laborThanksgivingDay',
                 ['en_US' => 'Labor Thanksgiving Day', 'ja_JP' => '勤労感謝の日'],
-                new DateTime("$this->year-11-23", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-11-23", new DateTimeZone($this->getTimezone())),
                 $this->locale
             ));
         }
@@ -221,7 +221,7 @@ class Japan extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'emperorsBirthday',
                 ['en_US' => 'Emperors Birthday', 'ja_JP' => '天皇誕生日'],
-                new DateTime("$this->year-12-23", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-12-23", new DateTimeZone($this->getTimezone())),
                 $this->locale
             ));
         }
@@ -258,7 +258,7 @@ class Japan extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'vernalEquinoxDay',
                 ['en_US' => 'Vernal Equinox Day', 'ja_JP' => '春分の日'],
-                new DateTime("$this->year-3-$day", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-3-$day", new DateTimeZone($this->getTimezone())),
                 $this->locale
             ));
         }
@@ -280,9 +280,9 @@ class Japan extends AbstractProvider
     {
         $date = null;
         if ($this->year >= 2000) {
-            $date = new DateTime("second monday of january $this->year", new DateTimeZone($this->timezone));
+            $date = new DateTime("second monday of january $this->year", new DateTimeZone($this->getTimezone()));
         } elseif ($this->year >= 1948) {
-            $date = new DateTime("$this->year-1-15", new DateTimeZone($this->timezone));
+            $date = new DateTime("$this->year-1-15", new DateTimeZone($this->getTimezone()));
         }
 
         if (null !== $date) {
@@ -310,9 +310,9 @@ class Japan extends AbstractProvider
     {
         $date = null;
         if ($this->year >= 2007) {
-            $date = new DateTime("$this->year-5-4", new DateTimeZone($this->timezone));
+            $date = new DateTime("$this->year-5-4", new DateTimeZone($this->getTimezone()));
         } elseif ($this->year >= 1989) {
-            $date = new DateTime("$this->year-4-29", new DateTimeZone($this->timezone));
+            $date = new DateTime("$this->year-4-29", new DateTimeZone($this->getTimezone()));
         }
 
         if (null !== $date) {
@@ -342,11 +342,11 @@ class Japan extends AbstractProvider
     {
         $date = null;
         if ($this->year === 2020) {
-            $date = new DateTime("$this->year-7-23", new DateTimeZone($this->timezone));
+            $date = new DateTime("$this->year-7-23", new DateTimeZone($this->getTimezone()));
         } elseif ($this->year >= 2003) {
-            $date = new DateTime("third monday of july $this->year", new DateTimeZone($this->timezone));
+            $date = new DateTime("third monday of july $this->year", new DateTimeZone($this->getTimezone()));
         } elseif ($this->year >= 1996) {
-            $date = new DateTime("$this->year-7-20", new DateTimeZone($this->timezone));
+            $date = new DateTime("$this->year-7-20", new DateTimeZone($this->getTimezone()));
         }
 
         if (null !== $date) {
@@ -373,9 +373,9 @@ class Japan extends AbstractProvider
     {
         $date = null;
         if ($this->year === 2020) {
-            $date = new DateTime("$this->year-8-10", new DateTimeZone($this->timezone));
+            $date = new DateTime("$this->year-8-10", new DateTimeZone($this->getTimezone()));
         } elseif ($this->year >= 2016) {
-            $date = new DateTime("$this->year-8-11", new DateTimeZone($this->timezone));
+            $date = new DateTime("$this->year-8-11", new DateTimeZone($this->getTimezone()));
         }
 
         if (null !== $date) {
@@ -404,9 +404,9 @@ class Japan extends AbstractProvider
     {
         $date = null;
         if ($this->year >= 2003) {
-            $date = new DateTime("third monday of september $this->year", new DateTimeZone($this->timezone));
+            $date = new DateTime("third monday of september $this->year", new DateTimeZone($this->getTimezone()));
         } elseif ($this->year >= 1996) {
-            $date = new DateTime("$this->year-9-15", new DateTimeZone($this->timezone));
+            $date = new DateTime("$this->year-9-15", new DateTimeZone($this->getTimezone()));
         }
 
         if (null !== $date) {
@@ -436,11 +436,11 @@ class Japan extends AbstractProvider
     {
         $date = null;
         if ($this->year === 2020) {
-            $date = new DateTime("$this->year-7-24", new DateTimeZone($this->timezone));
+            $date = new DateTime("$this->year-7-24", new DateTimeZone($this->getTimezone()));
         } elseif ($this->year >= 2000) {
-            $date = new DateTime("second monday of october $this->year", new DateTimeZone($this->timezone));
+            $date = new DateTime("second monday of october $this->year", new DateTimeZone($this->getTimezone()));
         } elseif ($this->year >= 1996) {
-            $date = new DateTime("$this->year-10-10", new DateTimeZone($this->timezone));
+            $date = new DateTime("$this->year-10-10", new DateTimeZone($this->getTimezone()));
         }
 
         if (null !== $date) {
@@ -484,7 +484,7 @@ class Japan extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'autumnalEquinoxDay',
                 ['en_US' => 'Autumnal Equinox Day', 'ja_JP' => '秋分の日'],
-                new DateTime("$this->year-9-$day", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-9-$day", new DateTimeZone($this->getTimezone())),
                 $this->locale
             ));
         }

@@ -50,8 +50,8 @@ class UnitedKingdom extends AbstractProvider
         $this->calculateSummerBankHoliday();
 
         // Add common Christian holidays (common in the United Kingdom)
-        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
+        $this->addHoliday($this->goodFriday($this->year, $this->getTimezone(), $this->locale));
+        $this->addHoliday($this->easterMonday($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_BANK));
         $this->calculateChristmasHolidays();
     }
 
@@ -84,7 +84,7 @@ class UnitedKingdom extends AbstractProvider
             $type = Holiday::TYPE_OBSERVANCE;
         }
 
-        $newYearsDay = new DateTime("$this->year-01-01", new DateTimeZone($this->timezone));
+        $newYearsDay = new DateTime("$this->year-01-01", new DateTimeZone($this->getTimezone()));
 
         // If New Years Day falls on a Saturday or Sunday, it is observed the next Monday (January 2nd or 3rd)
         if (\in_array((int)$newYearsDay->format('w'), [0, 6], true)) {
@@ -121,7 +121,7 @@ class UnitedKingdom extends AbstractProvider
         $this->addHoliday(new Holiday(
             'mayDayBankHoliday',
             ['en_GB' => 'May Day Bank Holiday'],
-            new DateTime("first monday of may $this->year", new DateTimeZone($this->timezone)),
+            new DateTime("first monday of may $this->year", new DateTimeZone($this->getTimezone())),
             $this->locale,
             Holiday::TYPE_BANK
         ));
@@ -153,7 +153,7 @@ class UnitedKingdom extends AbstractProvider
         $this->addHoliday(new Holiday(
             'springBankHoliday',
             ['en_GB' => 'Spring Bank Holiday'],
-            new DateTime("last monday of may $this->year", new DateTimeZone($this->timezone)),
+            new DateTime("last monday of may $this->year", new DateTimeZone($this->getTimezone())),
             $this->locale,
             Holiday::TYPE_BANK
         ));
@@ -185,7 +185,7 @@ class UnitedKingdom extends AbstractProvider
         $this->addHoliday(new Holiday(
             'summerBankHoliday',
             ['en_GB' => 'Summer Bank Holiday'],
-            new DateTime("last monday of august $this->year", new DateTimeZone($this->timezone)),
+            new DateTime("last monday of august $this->year", new DateTimeZone($this->getTimezone())),
             $this->locale,
             Holiday::TYPE_BANK
         ));
@@ -215,8 +215,8 @@ class UnitedKingdom extends AbstractProvider
      */
     public function calculateChristmasHolidays(): void
     {
-        $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->timezone));
-        $boxingDay    = new DateTime("$this->year-12-26", new DateTimeZone($this->timezone));
+        $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->getTimezone()));
+        $boxingDay    = new DateTime("$this->year-12-26", new DateTimeZone($this->getTimezone()));
 
         $this->addHoliday(new Holiday('christmasDay', [], $christmasDay, $this->locale));
         $this->addHoliday(new Holiday('secondChristmasDay', [], $boxingDay, $this->locale, Holiday::TYPE_BANK));

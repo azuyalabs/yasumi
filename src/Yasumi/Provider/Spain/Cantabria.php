@@ -51,7 +51,7 @@ class Cantabria extends Spain
         parent::initialize();
 
         // Add custom Christian holidays
-        $this->addHoliday($this->maundyThursday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->maundyThursday($this->year, $this->getTimezone(), $this->locale, Holiday::TYPE_OBSERVANCE));
 
         // Calculate other holidays
         $this->calculateCantabriaDay();
@@ -82,7 +82,7 @@ class Cantabria extends Spain
             $this->addHoliday(new Holiday(
                 'cantabriaDay',
                 ['es_ES' => 'Día de Cantabria'],
-                new DateTime("second sunday of august $this->year", new DateTimeZone($this->timezone)),
+                new DateTime("second sunday of august $this->year", new DateTimeZone($this->getTimezone())),
                 $this->locale
             ));
         }
