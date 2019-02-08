@@ -15,4 +15,6 @@ return [
     'de_DE' => 'Internationaler Frauentag',
     'en_US' => 'International Women\'s Day',
     'ru_RU' => 'Международный женский день',
+    'uk_UA' => 'Міжнародний жіночий день',
+    'ru_UA' => 'Международный женский день',
 ];

@@ -47,6 +47,7 @@ class Ukraine extends AbstractProvider
         // Add common holidays
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->internationalWomensDay($this->year, $this->timezone, $this->locale));
 
         // Add Christian holidays
         $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
@@ -54,7 +55,6 @@ class Ukraine extends AbstractProvider
 
         // Add other holidays
         $this->calculateChristmasDay();
-        $this->calculateInternationalWomensDay();
         $this->calculateSecondInternationalWorkersDay();
         $this->calculateVictoryDay();
         $this->calculateConstitutionDay();
@@ -76,29 +76,6 @@ class Ukraine extends AbstractProvider
             'christmasDay',
             [],
             new \DateTime("$this->year-01-07", new \DateTimeZone($this->timezone)),
-            $this->locale
-        ));
-    }
-
-    /**
-     * International Women's Day.
-     *
-     * International Women's Day (IWD), originally called International Working Women's Day, is celebrated on March 8
-     * every year.
-     *
-     * @link https://en.wikipedia.org/wiki/International_Women%27s_Day
-     *
-     * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     * @throws \Exception
-     */
-    public function calculateInternationalWomensDay(): void
-    {
-        $this->addHoliday(new Holiday(
-            'internationalWomensDay',
-            ['uk_UA' => 'Міжнародний жіночий день', 'ru_UA' => 'Международный женский день'],
-            new \DateTime("$this->year-03-08", new \DateTimeZone($this->timezone)),
             $this->locale
         ));
     }
