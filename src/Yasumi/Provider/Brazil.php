@@ -66,20 +66,20 @@ class Brazil extends AbstractProvider
 
             $carnavalMonday = clone $easter;
             $this->addHoliday(new Holiday(
-                 'carnavalMonday',
-                 ['pt_BR' => 'Segunda-feira de Carnaval'],
-                 $carnavalMonday->sub(new DateInterval('P48D')),
-                 $this->locale,
-                 Holiday::TYPE_OBSERVANCE
+                'carnavalMonday',
+                ['pt_BR' => 'Segunda-feira de Carnaval'],
+                $carnavalMonday->sub(new DateInterval('P48D')),
+                $this->locale,
+                Holiday::TYPE_OBSERVANCE
              ));
 
             $carnavalTuesday = clone $easter;
             $this->addHoliday(new Holiday(
-                 'carnavalTuesday',
-                 ['pt_BR' => 'Terça-feira de Carnaval'],
-                 $carnavalTuesday->sub(new DateInterval('P47D')),
-                 $this->locale,
-                 Holiday::TYPE_OBSERVANCE
+                'carnavalTuesday',
+                ['pt_BR' => 'Terça-feira de Carnaval'],
+                $carnavalTuesday->sub(new DateInterval('P47D')),
+                $this->locale,
+                Holiday::TYPE_OBSERVANCE
              ));
         }
 
