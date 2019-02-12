@@ -24,6 +24,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Added Reformation Day as offical holiday since 2018 in Schleswig-Holstein (Germany). [#106](https://github.com/azuyalabs/yasumi/pull/106) ([HenningCash](https://github.com/HenningCash))
 - Added Reformation Day as offical holiday since 2018 in Hamburg (Germany). [#108](https://github.com/azuyalabs/yasumi/pull/108) ([HenningCash](https://github.com/HenningCash))
 - Added Reformation Day as offical holiday since 2018 in Bremen (Germany). [#116](https://github.com/azuyalabs/yasumi/issues/116) ([TalonTR](https://github.com/TalonTR))
+- Added International Women's Day as official holidy since 2019 in Berlin (Germany). [#133](https://github.com/azuyalabs/yasumi/pull/133) ([huehnerhose](https://github.com/huehnerhose))
 - The (observed) holidays Lukkeloven, Constitution Day, New Year's Eve and Labour Day, as well as summertime and wintertime are included for Denmark [\#104](https://github.com/azuyalabs/yasumi/pull/104) ([c960657](https://github.com/c960657))
 
 ### Changed
@@ -37,7 +38,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Updated copyright year.
 - Upgraded various dependency packages.
 - Internal locale list updated based on CLDR v34.
-- Refactored the Japan and USA Holiday Provider by moving the holiday calculations to private methods. This reduced the complexity of the initialize method. 
+- Refactored the Japan and USA Holiday Provider by moving the holiday calculations to private methods. This reduced the complexity of the initialize method.
+- Changed individual added International Women's Day for Ukraine and Russia to common holiday.  [#133](https://github.com/azuyalabs/yasumi/pull/133) ([huehnerhose](https://github.com/huehnerhose))
 
 ### Fixed
 - Translation for Russia showed in English (except New Year's Day) as the proper locale was not in place.
