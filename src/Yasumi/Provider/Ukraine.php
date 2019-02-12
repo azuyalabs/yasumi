@@ -47,6 +47,7 @@ class Ukraine extends AbstractProvider
         // Add common holidays
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->internationalWomensDay($this->year, $this->timezone, $this->locale));
 
         // Add Christian holidays
         $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
@@ -54,7 +55,6 @@ class Ukraine extends AbstractProvider
 
         // Add other holidays
         $this->calculateChristmasDay();
-        $this->calculateInternationalWomensDay();
         $this->calculateSecondInternationalWorkersDay();
         $this->calculateVictoryDay();
         $this->calculateConstitutionDay();

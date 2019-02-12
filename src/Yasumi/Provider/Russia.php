@@ -107,10 +107,7 @@ class Russia extends AbstractProvider
      */
     private function addInternationalWomensDay(): void
     {
-        $this->addHoliday(new Holiday('internationalWomensDay', [
-            'en_US' => 'International Women\'s Day',
-            'ru_RU' => 'Международный женский день'
-        ], new \DateTime("{$this->year}-03-08", new \DateTimeZone($this->timezone)), $this->locale));
+        $this->addHoliday($this->internationalWomensDay($this->year, $this->timezone, $this->locale));
     }
 
     /**
