@@ -27,6 +27,6 @@ return [
     'it_CH' => 'Lunedi di Pentecoste',
     'nb_NO' => 'Andre pinsedag',
     'nl_BE' => 'Pinkstermaandag',
-    'nl_NL' => 'Tweede Pinksterdag',
+    'nl_NL' => 'Tweede pinksterdag',
     'ro_RO' => 'A doua zi de Rusalii',
 ];

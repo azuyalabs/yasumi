@@ -38,7 +38,7 @@ return [
     'lv_LV' => 'Otrās Lieldienas',
     'nb_NO' => 'Andre påskedag',
     'nl_BE' => 'Paasmaandag',
-    'nl_NL' => 'Tweede Paasdag',
+    'nl_NL' => 'Tweede paasdag',
     'pl_PL' => 'Poniedziałek Wielkanocny',
     'ro_RO' => 'A doua zi de Paște',
     'sk_SK' => 'Veľkonočný pondelok',
