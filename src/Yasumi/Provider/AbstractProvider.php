@@ -187,11 +187,21 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     public function isWorkingDay(\DateTimeInterface $date): bool
     {
-        // First check if the given date is a holiday
-        if ($this->isHoliday($date)) {
-            return false;
-        }
+        return !$this->isHoliday($date) && !$this->isWeekendDay($date);
+    }
 
+    /**
+     * Determines whether a date represents a weekend day or not.
+     *
+     * @param \DateTimeInterface $date any date object that implements the DateTimeInterface (e.g. Yasumi\Holiday,
+     *                                 \DateTime)
+     *
+     * @throws \Yasumi\Exception\InvalidDateException
+     *
+     * @return bool true if date represents a weekend day, otherwise false
+     */
+    public function isWeekendDay(\DateTimeInterface $date): bool
+    {
         // Check if given date is a falls in the weekend or not
         // If no data is defined for this Holiday Provider, the function falls back to the global weekend definition.
         // @TODO Ideally avoid late static binding here (static::ID)
@@ -199,10 +209,10 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         $weekend_days = $weekend_data[$this::ID] ?? [0, 6];
 
         if (\in_array((int)$date->format('w'), $weekend_days, true)) {
-            return false;
+            return true;
         }
 
-        return true;
+        return false;
     }
 
     /**
