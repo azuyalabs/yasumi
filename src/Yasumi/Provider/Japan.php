@@ -443,15 +443,15 @@ class Japan extends AbstractProvider
             $date = new DateTime("$this->year-10-10", new DateTimeZone($this->timezone));
         }
 
-        $holyday_name =['en_US' => 'Health And Sports Day', 'ja_JP' => '体育の日'];
+        $holiday_name =['en_US' => 'Health And Sports Day', 'ja_JP' => '体育の日'];
         if ($this->year >= 2020) {
-            $holyday_name =['en_US' => 'Sports Day', 'ja_JP' => 'スポーツの日'];
+            $holiday_name =['en_US' => 'Sports Day', 'ja_JP' => 'スポーツの日'];
         }
 
         if (null !== $date) {
             $this->addHoliday(new Holiday(
                 'sportsDay',
-                $holyday_name,
+                $holiday_name,
                 $date,
                 $this->locale
             ));
