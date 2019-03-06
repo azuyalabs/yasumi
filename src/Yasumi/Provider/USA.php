@@ -270,33 +270,25 @@ class USA extends AbstractProvider
 
         // Loop through all defined holidays
         while ($datesIterator->valid()) {
-
-            // Only process New Year's Day, Independence Day, or Christmas Day
-            if (\in_array(
-                $datesIterator->current()->shortName,
-                ['newYearsDay', 'independenceDay', 'christmasDay'],
-                true
-            )) {
-
-                // Substitute holiday is on a Monday in case the holiday falls on a Sunday
-                if (0 === (int)$datesIterator->current()->format('w')) {
-                    $substituteHoliday = clone $datesIterator->current();
-                    $substituteHoliday->add(new DateInterval('P1D'));
-                }
-
-                // Substitute holiday is on a Friday in case the holiday falls on a Saturday
-                if (6 === (int)$datesIterator->current()->format('w')) {
-                    $substituteHoliday = clone $datesIterator->current();
-                    $substituteHoliday->sub(new DateInterval('P1D'));
-                }
-
-                // Add substitute holiday
-                if (null !== $substituteHoliday) {
-                    $this->addHoliday(new Holiday('substituteHoliday:' . $substituteHoliday->shortName, [
-                        'en_US' => $substituteHoliday->getName() . ' observed',
-                    ], $substituteHoliday, $this->locale));
-                }
+            // Substitute holiday is on a Monday in case the holiday falls on a Sunday
+            if (0 === (int)$datesIterator->current()->format('w')) {
+                $substituteHoliday = clone $datesIterator->current();
+                $substituteHoliday->add(new DateInterval('P1D'));
             }
+
+            // Substitute holiday is on a Friday in case the holiday falls on a Saturday
+            if (6 === (int)$datesIterator->current()->format('w')) {
+                $substituteHoliday = clone $datesIterator->current();
+                $substituteHoliday->sub(new DateInterval('P1D'));
+            }
+
+            // Add substitute holiday
+            if (null !== $substituteHoliday) {
+                $this->addHoliday(new Holiday('substituteHoliday:' . $substituteHoliday->shortName, [
+                    'en_US' => $substituteHoliday->getName() . ' observed',
+                ], $substituteHoliday, $this->locale));
+            }
+
             $datesIterator->next();
         }
     }
