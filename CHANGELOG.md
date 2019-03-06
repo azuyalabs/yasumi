@@ -6,13 +6,22 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [Unreleased]
 
 ### Added
+- Added International Women's Day as official holidy since 2019 in Berlin (Germany). [#133](https://github.com/azuyalabs/yasumi/pull/133) ([huehnerhose](https://github.com/huehnerhose))
 
 ### Changed
 - Changed Dutch spelling for Easter/Pentecost/Christmas. [\#128](https://github.com/azuyalabs/yasumi/issues/128) ([c960657](https://github.com/c960657))
+- Refactored the Netherlands Holiday provider by moving the calculation of individual holidays to private methods. This will reduce the complexity of the initialize method.
+- Changed visibility of internal class functions to 'private'. These are to be used within the class only and should not be public.
 
 ### Fixed
+- Changed the USA Provider to check all holidays for potential substitute holidays, not just New Year's Day, Independence Day, and Christmas Day. [\#140](https://github.com/azuyalabs/yasumi/pull/140) ([jagers](https://github.com/jagers))
+- Adjusted tests for the 'next' and 'previous' methods to avoid actually exceeding the year boundaries.
+- Fixed deprecation warning for the package mikey179/vfStream. Composer 2.0 requires package names to not contain any upper case characters. [\#135](https://github.com/azuyalabs/yasumi/pull/135) ([IceShack](https://github.com/IceShack))
+- Fix comment about weekend in India [\#126](https://github.com/azuyalabs/yasumi/pull/126) ([c960657](https://github.com/c960657))
 
 ### Removed
+- Removed duplicate definition of newYearsDay [\#125](https://github.com/azuyalabs/yasumi/pull/125) ([c960657](https://github.com/c960657))
+
 
 
 ## [2.0.0] - 2019-01-11
@@ -25,7 +34,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Added Reformation Day as offical holiday since 2018 in Schleswig-Holstein (Germany). [#106](https://github.com/azuyalabs/yasumi/pull/106) ([HenningCash](https://github.com/HenningCash))
 - Added Reformation Day as offical holiday since 2018 in Hamburg (Germany). [#108](https://github.com/azuyalabs/yasumi/pull/108) ([HenningCash](https://github.com/HenningCash))
 - Added Reformation Day as offical holiday since 2018 in Bremen (Germany). [#116](https://github.com/azuyalabs/yasumi/issues/116) ([TalonTR](https://github.com/TalonTR))
-- Added International Women's Day as official holidy since 2019 in Berlin (Germany). [#133](https://github.com/azuyalabs/yasumi/pull/133) ([huehnerhose](https://github.com/huehnerhose))
 - The (observed) holidays Lukkeloven, Constitution Day, New Year's Eve and Labour Day, as well as summertime and wintertime are included for Denmark [\#104](https://github.com/azuyalabs/yasumi/pull/104) ([c960657](https://github.com/c960657))
 
 ### Changed
