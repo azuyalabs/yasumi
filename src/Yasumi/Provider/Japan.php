@@ -102,7 +102,7 @@ class Japan extends AbstractProvider
         $this->calculateMarineDay();
         $this->calculateMountainDay();
         $this->calculateRespectForTheAgeDay();
-        $this->calculateHealthAndSportsDay();
+        $this->calculateSportsDay();
         $this->calculateAutumnalEquinoxDay();
         $this->calculateSubstituteHolidays();
         $this->calculateBridgeHolidays();
@@ -432,7 +432,7 @@ class Japan extends AbstractProvider
      * @throws \Exception
      * @throws \Exception
      */
-    private function calculateHealthAndSportsDay(): void
+    private function calculateSportsDay(): void
     {
         $date = null;
         if ($this->year === 2020) {
@@ -443,10 +443,15 @@ class Japan extends AbstractProvider
             $date = new DateTime("$this->year-10-10", new DateTimeZone($this->timezone));
         }
 
+        $holiday_name =['en_US' => 'Health And Sports Day', 'ja_JP' => '体育の日'];
+        if ($this->year >= 2020) {
+            $holiday_name =['en_US' => 'Sports Day', 'ja_JP' => 'スポーツの日'];
+        }
+
         if (null !== $date) {
             $this->addHoliday(new Holiday(
-                'healthandSportsDay',
-                ['en_US' => 'Health And Sports Day', 'ja_JP' => '体育の日'],
+                'sportsDay',
+                $holiday_name,
                 $date,
                 $this->locale
             ));
