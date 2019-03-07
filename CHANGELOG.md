@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [Unreleased]
 
 ### Added
+- As the Japanese Emperor will abdicate the throne on May 1st 2019, the holiday of the Emporers Birthday will change to February 23rd from 2020 (No holiday in 2019). In addition, Coronation Day and the Enthronement Proclamation Ceremony will be extra holidays in 2019. [\#130](https://github.com/azuyalabs/yasumi/pull/130) ([cookie-maker](https://github.com/cookie-maker))
 - International Women's Day is an official holiday since 2019 in Berlin (Germany). [#133](https://github.com/azuyalabs/yasumi/pull/133) ([huehnerhose](https://github.com/huehnerhose))
 
 ### Changed
