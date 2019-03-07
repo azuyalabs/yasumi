@@ -74,7 +74,7 @@ class ReformationDayTest extends BremenBaseTestCase implements YasumiTestCaseInt
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 2)
         );
     }
 

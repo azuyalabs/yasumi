@@ -15,6 +15,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Visibility of internal class functions to 'private'. These are to be used within the class only and should not be public.
 
 ### Fixed
+- Tests for Bremen, Lower Saxony and Schleswig Holstein (Germany) also celebrated Reformation Day in 2017. The unit tests were failing as it didn't account for that.
 - Changed the USA Provider to check all holidays for potential substitute holidays, not just New Year's Day, Independence Day, and Christmas Day. [\#140](https://github.com/azuyalabs/yasumi/pull/140) ([jagers](https://github.com/jagers))
 - Adjusted tests for the 'next' and 'previous' methods to avoid actually exceeding the year boundaries.
 - Deprecation warning for the package mikey179/vfStream. Composer 2.0 requires package names to not contain any upper case characters. [\#135](https://github.com/azuyalabs/yasumi/pull/135) ([IceShack](https://github.com/IceShack))

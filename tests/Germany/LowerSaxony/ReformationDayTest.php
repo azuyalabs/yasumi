@@ -74,7 +74,7 @@ class ReformationDayTest extends LowerSaxonyBaseTestCase implements YasumiTestCa
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 2)
         );
     }
 
