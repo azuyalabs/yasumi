@@ -78,7 +78,7 @@ class TranslationsTest extends TestCase
 
         $secondLocale      = 'nl_NL';
         $secondShortName   = 'easter';
-        $secondTranslation = 'Eerste Paasdag';
+        $secondTranslation = 'Eerste paasdag';
 
         $translations->addTranslation($secondShortName, $secondLocale, $secondTranslation);
 

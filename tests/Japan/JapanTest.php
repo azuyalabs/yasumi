@@ -43,7 +43,7 @@ class JapanTest extends JapanBaseTestCase
             'mountainDay',
             'respectfortheAgedDay',
             'autumnalEquinoxDay',
-            'healthandSportsDay',
+            'sportsDay',
             'cultureDay',
             'laborThanksgivingDay',
             'emperorsBirthday',

@@ -172,14 +172,14 @@ class YasumiTest extends TestCase
     {
         $country = 'Japan';
         $name    = 'childrensDay';
-        $year    = Factory::create()->numberBetween(1949, self::YEAR_UPPER_BOUND);
+        $year    = Factory::create()->numberBetween(1949, self::YEAR_UPPER_BOUND - 1);
 
         $holidays = Yasumi::create($country, $year);
 
         $this->assertHoliday(
             $country,
             $name,
-            (($year < self::YEAR_UPPER_BOUND) ? $year + 1 : self::YEAR_UPPER_BOUND),
+            $year + 1,
             $holidays->next($name)
         );
     }
@@ -194,7 +194,7 @@ class YasumiTest extends TestCase
     {
         $holidays = Yasumi::create(
             'Netherlands',
-            Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND)
+            Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND - 1)
         );
         $holidays->next(null);
     }
@@ -231,7 +231,7 @@ class YasumiTest extends TestCase
     {
         $holidays = Yasumi::create(
             'Netherlands',
-            Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND)
+            Factory::create()->numberBetween(self::YEAR_LOWER_BOUND + 1, self::YEAR_UPPER_BOUND)
         );
         $holidays->previous(null);
     }
