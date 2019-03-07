@@ -30,7 +30,7 @@ class CoronationDayTest extends JapanBaseTestCase implements YasumiTestCaseInter
     /**
      * The year in which the holiday was first established
      */
-    public const IMPLEMENT_YEAR = 2019;
+    public const ESTABLISHMENT_YEAR = 2019;
 
     /**
      *
@@ -58,7 +58,7 @@ class CoronationDayTest extends JapanBaseTestCase implements YasumiTestCaseInter
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::IMPLEMENT_YEAR - 1)
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -70,7 +70,7 @@ class CoronationDayTest extends JapanBaseTestCase implements YasumiTestCaseInter
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::IMPLEMENT_YEAR + 1)
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR + 1)
         );
     }
 

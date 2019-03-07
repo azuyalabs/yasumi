@@ -242,7 +242,7 @@ class Japan extends AbstractProvider
 
     /**
      * Coronation Day. Coronation Day is The new Emperor Coronation.
-     * This holyday is only 2019.
+     * This holiday is only 2019.
      *
      * @throws \Exception
      */
@@ -260,7 +260,7 @@ class Japan extends AbstractProvider
 
     /**
      * Enthronement Proclamation Ceremony. Enthronement Proclamation Ceremony is The New Emperor enthronement ceremony.
-     * This holyday only 2019.
+     * This holiday only 2019.
      *
      * @throws \Exception
      */
