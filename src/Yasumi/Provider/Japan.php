@@ -106,6 +106,8 @@ class Japan extends AbstractProvider
         $this->calculateAutumnalEquinoxDay();
         $this->calculateSubstituteHolidays();
         $this->calculateBridgeHolidays();
+        $this->calculateCoronationDay();
+        $this->calculateEnthronementProclamationCeremony();
     }
 
     /**
@@ -210,18 +212,65 @@ class Japan extends AbstractProvider
     }
 
     /**
-     * Emperors Birthday. The Emperors Birthday is on December 23rd and celebrated as such since 1989.
-     * Prior to the death of Emperor Hirohito in 1989, this holiday was celebrated on April 29. See also "Shōwa Day".
+     * Emperors Birthday.
+     * The Emperors Birthday is on April 29rd and celebrated as such since 1949 to 1988.
+     * December 23rd and celebrated as such since 1989 to 2018.
+     * February 23rd and celebrated as such since 2020.(Coronation Day of the new Emperor, May 1, 2019)
      *
      * @throws \Exception
      */
     private function calculateEmporersBirthday(): void
     {
-        if ($this->year >= 1989) {
+        $emporersBirthday = false;
+        if ($this->year >=2020) {
+            $emporersBirthday = "$this->year-2-23";
+        } elseif ($this->year >= 1989 && $this->year <2019) {
+            $emporersBirthday = "$this->year-12-23";
+        } elseif ($this->year >= 1949 && $this->year <1988) {
+            $emporersBirthday = "$this->year-4-29";
+        }
+        
+        if ($emporersBirthday) {
             $this->addHoliday(new Holiday(
                 'emperorsBirthday',
                 ['en_US' => 'Emperors Birthday', 'ja_JP' => '天皇誕生日'],
-                new DateTime("$this->year-12-23", new DateTimeZone($this->timezone)),
+                new DateTime($emporersBirthday, new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        }
+    }
+
+    /**
+     * Coronation Day. Coronation Day is The new Emperor Coronation.
+     * This holiday is only 2019.
+     *
+     * @throws \Exception
+     */
+    private function calculateCoronationDay(): void
+    {
+        if ($this->year == 2019) {
+            $this->addHoliday(new Holiday(
+                'coronationDay',
+                ['en_US' => 'Coronation Day', 'ja_JP' => '即位の日'],
+                new DateTime("$this->year-5-1", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        }
+    }
+
+    /**
+     * Enthronement Proclamation Ceremony. Enthronement Proclamation Ceremony is The New Emperor enthronement ceremony.
+     * This holiday only 2019.
+     *
+     * @throws \Exception
+     */
+    private function calculateEnthronementProclamationCeremony(): void
+    {
+        if ($this->year == 2019) {
+            $this->addHoliday(new Holiday(
+                'enthronementProclamationCeremony',
+                ['en_US' => 'Enthronement Proclamation Ceremony', 'ja_JP' => '即位礼正殿の儀'],
+                new DateTime("$this->year-10-22", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
