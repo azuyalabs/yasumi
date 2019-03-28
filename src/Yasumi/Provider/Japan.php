@@ -105,9 +105,9 @@ class Japan extends AbstractProvider
         $this->calculateSportsDay();
         $this->calculateAutumnalEquinoxDay();
         $this->calculateSubstituteHolidays();
-        $this->calculateBridgeHolidays();
         $this->calculateCoronationDay();
         $this->calculateEnthronementProclamationCeremony();
+        $this->calculateBridgeHolidays();
     }
 
     /**
@@ -607,6 +607,7 @@ class Japan extends AbstractProvider
         // Get initial list of holidays and iterator
         $datesIterator = $this->getIterator();
 
+        $counter=1;
         // Loop through all defined holidays
         while ($datesIterator->valid()) {
             $previous = $datesIterator->current();
@@ -622,10 +623,11 @@ class Japan extends AbstractProvider
                 $bridgeDate = clone $previous;
                 $bridgeDate->add(new DateInterval('P1D'));
 
-                $this->addHoliday(new Holiday('bridgeDay', [
+                $this->addHoliday(new Holiday('bridgeDay'.$counter, [
                     'en_US' => 'Bridge Public holiday',
                     'ja_JP' => '国民の休日',
                 ], $bridgeDate, $this->locale));
+                $counter++;
             }
         }
     }
