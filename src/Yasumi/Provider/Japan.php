@@ -248,7 +248,7 @@ class Japan extends AbstractProvider
      */
     private function calculateCoronationDay(): void
     {
-        if ($this->year == 2019) {
+        if (2019 === $this->year) {
             $this->addHoliday(new Holiday(
                 'coronationDay',
                 ['en_US' => 'Coronation Day', 'ja_JP' => '即位の日'],
@@ -266,7 +266,7 @@ class Japan extends AbstractProvider
      */
     private function calculateEnthronementProclamationCeremony(): void
     {
-        if ($this->year == 2019) {
+        if (2019 === $this->year) {
             $this->addHoliday(new Holiday(
                 'enthronementProclamationCeremony',
                 ['en_US' => 'Enthronement Proclamation Ceremony', 'ja_JP' => '即位礼正殿の儀'],
