@@ -50,7 +50,7 @@ class South extends Tasmania
      *
      * @throws \Exception
      */
-    public function calculateHobartShow(): void
+    private function calculateHobartShow(): void
     {
         $date = new DateTime('fourth saturday of october ' . $this->year, new DateTimeZone($this->timezone));
         $date = $date->sub(new DateInterval('P2D'));

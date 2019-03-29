@@ -85,7 +85,7 @@ class Saxony extends Germany
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateRepentanceAndPrayerDay(): void
+    private function calculateRepentanceAndPrayerDay(): void
     {
         if ($this->year >= 1995) {
             $this->addHoliday(new Holiday(

@@ -72,7 +72,7 @@ class UnitedKingdom extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateNewYearsDay(): void
+    private function calculateNewYearsDay(): void
     {
         // Before 1871 it was not an observed or statutory holiday
         if ($this->year < 1871) {
@@ -213,7 +213,7 @@ class UnitedKingdom extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateChristmasHolidays(): void
+    private function calculateChristmasHolidays(): void
     {
         $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->timezone));
         $boxingDay    = new DateTime("$this->year-12-26", new DateTimeZone($this->timezone));

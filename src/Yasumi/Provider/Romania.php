@@ -84,7 +84,7 @@ class Romania extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateDayAfterNewYearsDay(): void
+    private function calculateDayAfterNewYearsDay(): void
     {
         $this->addHoliday(new Holiday('dayAfterNewYearsDay', [
             'en_US' => 'Day after New Year\'s Day',
@@ -107,7 +107,7 @@ class Romania extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateUnitedPrincipalitiesDay(): void
+    private function calculateUnitedPrincipalitiesDay(): void
     {
         // The law is official since 21.12.2014.
         if ($this->year > 2014) {
@@ -130,7 +130,7 @@ class Romania extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateStAndrewDay(): void
+    private function calculateStAndrewDay(): void
     {
         if ($this->year >= 2012) {
             $this->addHoliday(new Holiday('stAndrewDay', [
@@ -156,7 +156,7 @@ class Romania extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateNationalDay(): void
+    private function calculateNationalDay(): void
     {
         $national_day = null;
 
@@ -192,7 +192,7 @@ class Romania extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateConstantinBrancusiDay(): void
+    private function calculateConstantinBrancusiDay(): void
     {
         if ($this->year >= 2016) {
             $this->addHoliday(new Holiday(
@@ -221,7 +221,7 @@ class Romania extends AbstractProvider
      * @throws \Exception
      * @throws \Exception
      */
-    public function calculateChildrensDay(): void
+    private function calculateChildrensDay(): void
     {
         if ($this->year >= 1950 && $this->year <= 2016) {
             $this->addHoliday(new Holiday(

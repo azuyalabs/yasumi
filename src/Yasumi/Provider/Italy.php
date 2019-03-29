@@ -77,7 +77,7 @@ class Italy extends AbstractProvider
      * @throws \Exception
      * @throws \Exception
      */
-    public function calculateLiberationDay(): void
+    private function calculateLiberationDay(): void
     {
         if ($this->year >= 1949) {
             $this->addHoliday(new Holiday(
@@ -105,7 +105,7 @@ class Italy extends AbstractProvider
      * @throws \Exception
      * @throws \Exception
      */
-    public function calculateRepublicDay(): void
+    private function calculateRepublicDay(): void
     {
         if ($this->year >= 1946) {
             $this->addHoliday(new Holiday(

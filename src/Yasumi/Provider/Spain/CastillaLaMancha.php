@@ -76,7 +76,7 @@ class CastillaLaMancha extends Spain
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateCastillaLaManchaDay(): void
+    private function calculateCastillaLaManchaDay(): void
     {
         if ($this->year >= 1984) {
             $this->addHoliday(new Holiday(

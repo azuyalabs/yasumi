@@ -73,7 +73,7 @@ class BasqueCountry extends Spain
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateBasqueCountryDay(): void
+    private function calculateBasqueCountryDay(): void
     {
         if ($this->year >= 2011 && $this->year <= 2013) {
             $this->addHoliday(new Holiday(

@@ -91,7 +91,7 @@ class Ireland extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateNewYearsDay(): void
+    private function calculateNewYearsDay(): void
     {
         if ($this->year < 1974) {
             return;
@@ -124,7 +124,7 @@ class Ireland extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculatePentecostMonday(): void
+    private function calculatePentecostMonday(): void
     {
         if ($this->year > 1973) {
             return;
@@ -147,7 +147,7 @@ class Ireland extends AbstractProvider
      * @throws \Exception
      * @throws \Exception
      */
-    public function calculateChristmasDay(): void
+    private function calculateChristmasDay(): void
     {
         $holiday = new Holiday(
             'christmasDay',
@@ -184,7 +184,7 @@ class Ireland extends AbstractProvider
      * @throws \Exception
      * @throws \Exception
      */
-    public function calculateStStephensDay(): void
+    private function calculateStStephensDay(): void
     {
         $holiday = new Holiday(
             'stStephensDay',
@@ -223,7 +223,7 @@ class Ireland extends AbstractProvider
      * @throws \Exception
      * @throws \Exception
      */
-    public function calculateStPatricksDay(): void
+    private function calculateStPatricksDay(): void
     {
         if ($this->year < 1903) {
             return;
@@ -265,7 +265,7 @@ class Ireland extends AbstractProvider
      * @throws \Exception
      * @throws \Exception
      */
-    public function calculateMayDay(): void
+    private function calculateMayDay(): void
     {
         if ($this->year < 1994) {
             return;
@@ -293,7 +293,7 @@ class Ireland extends AbstractProvider
      * @throws \Exception
      * @throws \Exception
      */
-    public function calculateJuneHoliday(): void
+    private function calculateJuneHoliday(): void
     {
         if ($this->year < 1974) {
             return;
@@ -320,7 +320,7 @@ class Ireland extends AbstractProvider
      * @throws \Exception
      * @throws \Exception
      */
-    public function calculateOctoberHoliday(): void
+    private function calculateOctoberHoliday(): void
     {
         if ($this->year < 1977) {
             return;

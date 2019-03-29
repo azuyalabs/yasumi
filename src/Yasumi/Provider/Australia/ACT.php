@@ -56,7 +56,7 @@ class ACT extends Australia
      *
      * @throws \Exception
      */
-    public function calculateCanberraDay(): void
+    private function calculateCanberraDay(): void
     {
         if ($this->year < 2007) {
             $date = new DateTime("third monday of march $this->year", new DateTimeZone($this->timezone));
@@ -71,7 +71,7 @@ class ACT extends Australia
      *
      * @throws \Exception
      */
-    public function calculateReconciliationDay(): void
+    private function calculateReconciliationDay(): void
     {
         if ($this->year < 2018) {
             return;
@@ -90,7 +90,7 @@ class ACT extends Australia
      *
      * @throws \Exception
      */
-    public function calculateLabourDay(): void
+    private function calculateLabourDay(): void
     {
         $date = new DateTime("first monday of october $this->year", new DateTimeZone($this->timezone));
 
@@ -118,7 +118,7 @@ class ACT extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function easterSaturday($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
+    private function easterSaturday($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
     {
         return new Holiday(
             'easterSaturday',
@@ -150,7 +150,7 @@ class ACT extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function easterSunday($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
+    private function easterSunday($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
     {
         return new Holiday(
             'easter',
@@ -176,7 +176,7 @@ class ACT extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function calculateQueensBirthday(): void
+    private function calculateQueensBirthday(): void
     {
         $this->calculateHoliday(
             'queensBirthday',

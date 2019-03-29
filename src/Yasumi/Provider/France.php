@@ -82,7 +82,7 @@ class France extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateBastilleDay(): void
+    private function calculateBastilleDay(): void
     {
         if ($this->year >= 1790) {
             $this->addHoliday(new Holiday('bastilleDay', [

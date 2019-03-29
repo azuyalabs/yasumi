@@ -52,7 +52,7 @@ class Tasmania extends Australia
      *
      * @throws \Exception
      */
-    public function calculateEightHoursDay(): void
+    private function calculateEightHoursDay(): void
     {
         $date = new DateTime("second monday of march $this->year", new DateTimeZone($this->timezone));
 
@@ -74,7 +74,7 @@ class Tasmania extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function calculateQueensBirthday(): void
+    private function calculateQueensBirthday(): void
     {
         $this->calculateHoliday(
             'queensBirthday',
@@ -93,7 +93,7 @@ class Tasmania extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function calculateRecreationDay(): void
+    private function calculateRecreationDay(): void
     {
         $this->calculateHoliday(
             'recreationDay',

@@ -54,7 +54,7 @@ class NT extends Australia
      *
      * @throws \Exception
      */
-    public function calculateMayDay(): void
+    private function calculateMayDay(): void
     {
         $date = new DateTime("first monday of may $this->year", new DateTimeZone($this->timezone));
 
@@ -69,7 +69,7 @@ class NT extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function calculatePicnicDay(): void
+    private function calculatePicnicDay(): void
     {
         $this->calculateHoliday(
             'picnicDay',
@@ -101,7 +101,7 @@ class NT extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function easterSaturday($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
+    private function easterSaturday($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
     {
         return new Holiday(
             'easterSaturday',
@@ -127,7 +127,7 @@ class NT extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function calculateQueensBirthday(): void
+    private function calculateQueensBirthday(): void
     {
         $this->calculateHoliday(
             'queensBirthday',

@@ -82,7 +82,7 @@ class Finland extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateStJohnsDay(): void
+    private function calculateStJohnsDay(): void
     {
         $translation = ['fi_FI' => 'Juhannuspäivä'];
         $shortName   = 'stJohnsDay';
@@ -159,7 +159,7 @@ class Finland extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateIndependenceDay(): void
+    private function calculateIndependenceDay(): void
     {
         if ($this->year >= 1917) {
             $this->addHoliday(new Holiday(

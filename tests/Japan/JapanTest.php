@@ -43,12 +43,38 @@ class JapanTest extends JapanBaseTestCase
             'mountainDay',
             'respectfortheAgedDay',
             'autumnalEquinoxDay',
-            'healthandSportsDay',
+            'sportsDay',
             'cultureDay',
             'laborThanksgivingDay',
             'emperorsBirthday',
-
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
+    }
+
+    /**
+     * Tests if all official holidays in Japan At 2019 are defined by the provider class
+     * @throws \ReflectionException
+     */
+    public function testOfficialHolidaysAt2019(): void
+    {
+        $this->assertDefinedHolidays([
+            'newYearsDay',
+            'comingOfAgeDay',
+            'nationalFoundationDay',
+            'vernalEquinoxDay',
+            'showaDay',
+            'constitutionMemorialDay',
+            'greeneryDay',
+            'childrensDay',
+            'marineDay',
+            'mountainDay',
+            'respectfortheAgedDay',
+            'autumnalEquinoxDay',
+            'sportsDay',
+            'cultureDay',
+            'laborThanksgivingDay',
+            'coronationDay',
+            'enthronementProclamationCeremony',
+        ], self::REGION, 2019, Holiday::TYPE_OFFICIAL);
     }
 
     /**
@@ -92,6 +118,6 @@ class JapanTest extends JapanBaseTestCase
      */
     protected function setUp()
     {
-        $this->year = $this->generateRandomYear(2016, 2150);
+        $this->year = $this->generateRandomYear(2020, 2150);
     }
 }

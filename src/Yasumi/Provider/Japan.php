@@ -102,9 +102,11 @@ class Japan extends AbstractProvider
         $this->calculateMarineDay();
         $this->calculateMountainDay();
         $this->calculateRespectForTheAgeDay();
-        $this->calculateHealthAndSportsDay();
+        $this->calculateSportsDay();
         $this->calculateAutumnalEquinoxDay();
         $this->calculateSubstituteHolidays();
+        $this->calculateCoronationDay();
+        $this->calculateEnthronementProclamationCeremony();
         $this->calculateBridgeHolidays();
     }
 
@@ -210,18 +212,65 @@ class Japan extends AbstractProvider
     }
 
     /**
-     * Emperors Birthday. The Emperors Birthday is on December 23rd and celebrated as such since 1989.
-     * Prior to the death of Emperor Hirohito in 1989, this holiday was celebrated on April 29. See also "Shōwa Day".
+     * Emperors Birthday.
+     * The Emperors Birthday is on April 29rd and celebrated as such since 1949 to 1988.
+     * December 23rd and celebrated as such since 1989 to 2018.
+     * February 23rd and celebrated as such since 2020.(Coronation Day of the new Emperor, May 1, 2019)
      *
      * @throws \Exception
      */
     private function calculateEmporersBirthday(): void
     {
-        if ($this->year >= 1989) {
+        $emporersBirthday = false;
+        if ($this->year >=2020) {
+            $emporersBirthday = "$this->year-2-23";
+        } elseif ($this->year >= 1989 && $this->year <2019) {
+            $emporersBirthday = "$this->year-12-23";
+        } elseif ($this->year >= 1949 && $this->year <1988) {
+            $emporersBirthday = "$this->year-4-29";
+        }
+        
+        if ($emporersBirthday) {
             $this->addHoliday(new Holiday(
                 'emperorsBirthday',
                 ['en_US' => 'Emperors Birthday', 'ja_JP' => '天皇誕生日'],
-                new DateTime("$this->year-12-23", new DateTimeZone($this->timezone)),
+                new DateTime($emporersBirthday, new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        }
+    }
+
+    /**
+     * Coronation Day. Coronation Day is The new Emperor Coronation.
+     * This holiday is only 2019.
+     *
+     * @throws \Exception
+     */
+    private function calculateCoronationDay(): void
+    {
+        if (2019 === $this->year) {
+            $this->addHoliday(new Holiday(
+                'coronationDay',
+                ['en_US' => 'Coronation Day', 'ja_JP' => '即位の日'],
+                new DateTime("$this->year-5-1", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        }
+    }
+
+    /**
+     * Enthronement Proclamation Ceremony. Enthronement Proclamation Ceremony is The New Emperor enthronement ceremony.
+     * This holiday only 2019.
+     *
+     * @throws \Exception
+     */
+    private function calculateEnthronementProclamationCeremony(): void
+    {
+        if (2019 === $this->year) {
+            $this->addHoliday(new Holiday(
+                'enthronementProclamationCeremony',
+                ['en_US' => 'Enthronement Proclamation Ceremony', 'ja_JP' => '即位礼正殿の儀'],
+                new DateTime("$this->year-10-22", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -432,7 +481,7 @@ class Japan extends AbstractProvider
      * @throws \Exception
      * @throws \Exception
      */
-    private function calculateHealthAndSportsDay(): void
+    private function calculateSportsDay(): void
     {
         $date = null;
         if ($this->year === 2020) {
@@ -443,10 +492,15 @@ class Japan extends AbstractProvider
             $date = new DateTime("$this->year-10-10", new DateTimeZone($this->timezone));
         }
 
+        $holiday_name =['en_US' => 'Health And Sports Day', 'ja_JP' => '体育の日'];
+        if ($this->year >= 2020) {
+            $holiday_name =['en_US' => 'Sports Day', 'ja_JP' => 'スポーツの日'];
+        }
+
         if (null !== $date) {
             $this->addHoliday(new Holiday(
-                'healthandSportsDay',
-                ['en_US' => 'Health And Sports Day', 'ja_JP' => '体育の日'],
+                'sportsDay',
+                $holiday_name,
                 $date,
                 $this->locale
             ));
@@ -553,6 +607,7 @@ class Japan extends AbstractProvider
         // Get initial list of holidays and iterator
         $datesIterator = $this->getIterator();
 
+        $counter=1;
         // Loop through all defined holidays
         while ($datesIterator->valid()) {
             $previous = $datesIterator->current();
@@ -568,10 +623,11 @@ class Japan extends AbstractProvider
                 $bridgeDate = clone $previous;
                 $bridgeDate->add(new DateInterval('P1D'));
 
-                $this->addHoliday(new Holiday('bridgeDay', [
+                $this->addHoliday(new Holiday('bridgeDay'.$counter, [
                     'en_US' => 'Bridge Public holiday',
                     'ja_JP' => '国民の休日',
                 ], $bridgeDate, $this->locale));
+                $counter++;
             }
         }
     }

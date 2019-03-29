@@ -50,7 +50,6 @@ class Germany extends AbstractProvider
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
 
@@ -80,7 +79,7 @@ class Germany extends AbstractProvider
      * @throws \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateGermanUnityDay(): void
+    private function calculateGermanUnityDay(): void
     {
         if ($this->year >= 1990) {
             $this->addHoliday(new Holiday(
