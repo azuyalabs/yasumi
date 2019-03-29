@@ -41,7 +41,7 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements YasumiTestCaseIn
      */
     public function testEmperorsBirthdayOnAfter1949()
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1988);
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1987);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
