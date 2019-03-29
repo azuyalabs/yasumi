@@ -45,7 +45,7 @@ class EnthronementProclamationCeremonyTest extends JapanBaseTestCase implements 
             self::REGION,
             self::HOLIDAY,
             2019,
-            new DateTime("2019-10-22", new DateTimeZone(self::TIMEZONE))
+            new DateTime('2019-10-22', new DateTimeZone(self::TIMEZONE))
         );
     }
 

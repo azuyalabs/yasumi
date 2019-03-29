@@ -45,7 +45,7 @@ class CoronationDayTest extends JapanBaseTestCase implements YasumiTestCaseInter
             self::REGION,
             self::HOLIDAY,
             2019,
-            new DateTime("2019-5-1", new DateTimeZone(self::TIMEZONE))
+            new DateTime('2019-5-1', new DateTimeZone(self::TIMEZONE))
         );
     }
 
