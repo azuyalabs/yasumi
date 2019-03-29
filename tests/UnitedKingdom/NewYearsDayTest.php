@@ -119,7 +119,7 @@ class NewYearsDayTest extends UnitedKingdomBaseTestCase implements YasumiTestCas
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ADJUSTMENT_YEAR),
+            $this->generateRandomYear(self::ADJUSTMENT_YEAR + 1),
             Holiday::TYPE_BANK
         );
     }
