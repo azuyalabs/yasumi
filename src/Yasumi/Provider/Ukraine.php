@@ -81,29 +81,6 @@ class Ukraine extends AbstractProvider
     }
 
     /**
-     * International Women's Day.
-     *
-     * International Women's Day (IWD), originally called International Working Women's Day, is celebrated on March 8
-     * every year.
-     *
-     * @link https://en.wikipedia.org/wiki/International_Women%27s_Day
-     *
-     * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     * @throws \Exception
-     */
-    private function calculateInternationalWomensDay(): void
-    {
-        $this->addHoliday(new Holiday(
-            'internationalWomensDay',
-            ['uk_UA' => 'Міжнародний жіночий день', 'ru_UA' => 'Международный женский день'],
-            new \DateTime("$this->year-03-08", new \DateTimeZone($this->timezone)),
-            $this->locale
-        ));
-    }
-
-    /**
      * International Workers' Day.
      *
      * @link https://en.wikipedia.org/wiki/International_Workers%27_Day#Ukraine
