@@ -51,7 +51,7 @@ class AssumptionOfMaryTest extends FranceBaseTestCase implements YasumiTestCaseI
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'L\'Assomption de Marie']
+            [self::LOCALE => 'Assomption']
         );
     }
 
