@@ -21,6 +21,7 @@ return [
     'fi_FI' => 'Loppiainen',
     'fr_BE' => 'Epiphanie',
     'fr_CH' => 'Epiphanie',
+    'fr_FR' => 'Epiphanie',
     'hr_HR' => 'Sveta tri kralja',
     'it_CH' => 'Epifania',
     'it_IT' => 'Epifania',
