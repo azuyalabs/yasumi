@@ -71,7 +71,7 @@ class ArmisticeDayTest extends FranceBaseTestCase implements YasumiTestCaseInter
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Armistice']
+            [self::LOCALE => 'Armistice 1918']
         );
     }
 
