@@ -51,7 +51,7 @@ class AllSaintsDayTest extends FranceBaseTestCase implements YasumiTestCaseInter
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'La Toussaint']
+            [self::LOCALE => 'Toussaint']
         );
     }
 
