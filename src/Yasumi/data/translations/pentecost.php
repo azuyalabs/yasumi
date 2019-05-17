@@ -23,6 +23,7 @@ return [
     'fi_FI' => 'Helluntaipäivä',
     'fr_BE' => 'Pentecôte',
     'fr_CH' => 'Pentecôte',
+    'fr_FR' => 'Pentecôte',
     'ga_IE' => 'Domhnach Cincíse',
     'hu_HU' => 'Pünkösd',
     'it_CH' => 'Pentecoste',
