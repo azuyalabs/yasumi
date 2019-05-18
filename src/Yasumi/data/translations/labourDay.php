@@ -16,6 +16,7 @@ return [
     'en_NZ' => 'Labour Day',
     'en_US' => 'Labour Day',
     'ja_JP' => '労働の日',
+    'ko_KR' => '노동절',
     'nl_BE' => 'Dag van de arbeid',
     'nl_NL' => 'Dag van de arbeid',
     'sk_SK' => 'Sviatok práce',

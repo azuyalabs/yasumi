@@ -20,6 +20,7 @@ return [
     'fr_CH' => 'Saint-Valentin',
     'it_CH' => 'San Valentino',
     'ja_JP' => 'バレンタイン·デー',
+    'ko_KR' => '발렌타인 데이',
     'nl_BE' => 'Valentijnsdag',
     'nl_NL' => 'Valentijnsdag',
     'pl_PL' => 'Walentynki',
