@@ -173,6 +173,11 @@
                 <directory suffix="Test.php">./tests/SouthAfrica</directory>
             </testsuite>
 
+            <!-- Test Suite for holidays in South Korea -->
+            <testsuite name="SouthKorea">
+                <directory suffix="Test.php">./tests/SouthKorea</directory>
+            </testsuite>
+
             <!-- Test Suite for holidays in Spain -->
             <testsuite name="Spain">
                 <directory suffix="Test.php">./tests/Spain</directory>
