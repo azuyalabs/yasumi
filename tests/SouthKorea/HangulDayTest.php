@@ -77,7 +77,7 @@ class HangulDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInte
     public function testTranslation(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        if ($year <= 1990 && $year > 2012) {
+        if ($year <= 1990 || $year > 2012) {
             $this->assertTranslatedHolidayName(
                 self::REGION,
                 self::HOLIDAY,
@@ -94,7 +94,7 @@ class HangulDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInte
     public function testHolidayType(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        if ($year <= 1990 && $year > 2012) {
+        if ($year <= 1990 || $year > 2012) {
             $this->assertHolidayType(
                 self::REGION,
                 self::HOLIDAY,
