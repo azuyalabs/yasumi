@@ -25,6 +25,7 @@ return [
     'et_EE' => 'Teine Jõulupüha',
     'fi_FI' => '2. joulupäivä',
     'hu_HU' => 'Karácsony másnapja',
+    'ko_KR' => '성탄절 연휴',
     'lt_LT' => 'Kalėdos (antra diena)',
     'lv_LV' => 'Otrie Ziemassvētki',
     'nb_NO' => 'Andre juledag',
