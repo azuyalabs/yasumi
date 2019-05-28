@@ -21,7 +21,7 @@ return [
     'fi_FI' => 'Pyhäinpäivä',
     'fr_BE' => 'La Toussaint',
     'fr_CH' => 'Toussaint',
-    'fr_FR' => 'La Toussaint',
+    'fr_FR' => 'Toussaint',
     'hr_HR' => 'Dan svih svetih',
     'hu_HU' => 'Mindenszentek',
     'it_CH' => 'Ognissanti',
