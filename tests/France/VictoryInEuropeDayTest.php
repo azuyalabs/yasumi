@@ -71,7 +71,7 @@ class VictoryInEuropeDayTest extends FranceBaseTestCase implements YasumiTestCas
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Fête de la Victoire']
+            [self::LOCALE => 'Victoire 1945']
         );
     }
 
