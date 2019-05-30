@@ -25,6 +25,7 @@ return [
     'fi_FI' => 'Pääsiäispäivä',
     'fr_BE' => 'Pâques',
     'fr_CH' => 'Pâques',
+    'fr_FR' => 'Pâques',
     'ga_IE' => 'Domhnach Cásca',
     'hr_HR' => 'Uskrs',
     'hu_HU' => 'Húsvét',
