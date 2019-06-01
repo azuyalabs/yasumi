@@ -18,6 +18,8 @@ use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use ReflectionClass;
 use RuntimeException;
+use Yasumi\Exception\InvalidYearException;
+use Yasumi\Exception\ProviderNotFoundException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Provider\AbstractProvider;
 
@@ -114,10 +116,10 @@ class Yasumi
      * @param string $locale The locale to use. If empty we'll use the default locale (en_US)
      *
      * @throws \ReflectionException
-     * @throws RuntimeException         If no such holiday provider is found
-     * @throws InvalidArgumentException if the year parameter is not between 1000 and 9999
-     * @throws UnknownLocaleException   if the locale parameter is invalid
-     * @throws InvalidArgumentException if the holiday provider for the given country does not exist
+     * @throws RuntimeException          If no such holiday provider is found
+     * @throws InvalidYearException      if the year parameter is not between 1000 and 9999
+     * @throws UnknownLocaleException    if the locale parameter is invalid
+     * @throws ProviderNotFoundException if the holiday provider for the given country does not exist
      *
      * @return AbstractProvider An instance of class $class is created and returned
      */
@@ -131,12 +133,12 @@ class Yasumi
         }
 
         if ($class === 'AbstractProvider' || ! \class_exists($providerClass)) {
-            throw new InvalidArgumentException(\sprintf('Unable to find holiday provider "%s".', $class));
+            throw new ProviderNotFoundException(\sprintf('Unable to find holiday provider "%s".', $class));
         }
 
         // Assert year input
         if ($year < 1000 || $year > 9999) {
-            throw new InvalidArgumentException(\sprintf('Year needs to be between 1000 and 9999 (%s given).', $year));
+            throw new InvalidYearException(\sprintf('Year needs to be between 1000 and 9999 (%s given).', $year));
         }
 
         // Load internal locales variable
@@ -181,10 +183,10 @@ class Yasumi
      * @param string $locale    The locale to use. If empty we'll use the default locale (en_US)
      *
      * @throws \ReflectionException
-     * @throws RuntimeException         If no such holiday provider is found
-     * @throws InvalidArgumentException if the year parameter is not between 1000 and 9999
-     * @throws UnknownLocaleException   if the locale parameter is invalid
-     * @throws InvalidArgumentException if the holiday provider for the given ISO3166-2 code does not exist
+     * @throws RuntimeException          If no such holiday provider is found
+     * @throws InvalidArgumentException  if the year parameter is not between 1000 and 9999
+     * @throws UnknownLocaleException    if the locale parameter is invalid
+     * @throws ProviderNotFoundException if the holiday provider for the given ISO3166-2 code does not exist
      *
      * @return AbstractProvider An instance of class $class is created and returned
      */
@@ -196,7 +198,7 @@ class Yasumi
         $availableProviders = self::getProviders();
 
         if (false === isset($availableProviders[$iso3166_2])) {
-            throw new InvalidArgumentException(\sprintf(
+            throw new ProviderNotFoundException(\sprintf(
                 'Unable to find holiday provider by ISO3166-2 "%s".',
                 $iso3166_2
             ));
