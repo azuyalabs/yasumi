@@ -82,19 +82,19 @@ class ChuseokTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterf
             self::REGION,
             'substituteHoliday:dayBeforeChuseok',
             2017,
-            new DateTime("2017-10-6", new DateTimeZone(self::TIMEZONE))
+            new DateTime('2017-10-6', new DateTimeZone(self::TIMEZONE))
         );
         $this->assertHoliday(
             self::REGION,
             'substituteHoliday:chuseok',
             2028,
-            new DateTime("2028-10-5", new DateTimeZone(self::TIMEZONE))
+            new DateTime('2028-10-5', new DateTimeZone(self::TIMEZONE))
         );
         $this->assertHoliday(
             self::REGION,
             'substituteHoliday:dayAfterChuseok',
             2039,
-            new DateTime("2039-10-5", new DateTimeZone(self::TIMEZONE))
+            new DateTime('2039-10-5', new DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -109,19 +109,19 @@ class ChuseokTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterf
             self::REGION,
             'substituteHoliday:dayBeforeChuseok',
             2014,
-            new DateTime("2014-9-10", new DateTimeZone(self::TIMEZONE))
+            new DateTime('2014-9-10', new DateTimeZone(self::TIMEZONE))
         );
         $this->assertHoliday(
             self::REGION,
             'substituteHoliday:chuseok',
             2039,
-            new DateTime("2039-10-4", new DateTimeZone(self::TIMEZONE))
+            new DateTime('2039-10-4', new DateTimeZone(self::TIMEZONE))
         );
         $this->assertHoliday(
             self::REGION,
             'substituteHoliday:dayAfterChuseok',
             2022,
-            new DateTime("2022-9-12", new DateTimeZone(self::TIMEZONE))
+            new DateTime('2022-9-12', new DateTimeZone(self::TIMEZONE))
         );
     }
 

@@ -244,7 +244,7 @@ class SouthKorea extends AbstractProvider
      */
     public function calculateArborDay(): void
     {
-        if ($this->year >= 1949 && $this->year < 1960 || $this->year > 1960 && $this->year < 2006) {
+        if (($this->year >= 1949 && $this->year < 1960) || ($this->year > 1960 && $this->year < 2006)) {
             $this->addHoliday(new Holiday(
                 'arborDay',
                 ['en_US' => 'Arbor Day', 'ko_KR' => '식목일'],
@@ -443,7 +443,7 @@ class SouthKorea extends AbstractProvider
      */
     public function calculateHangulDay(): void
     {
-        if ($this->year >= 1949 && $this->year <= 1990 || $this->year > 2012) {
+        if (($this->year >= 1949 && $this->year <= 1990) || $this->year > 2012) {
             $this->addHoliday(new Holiday(
                 'hangulDay',
                 ['en_US' => 'Hangul Day', 'ko_KR' => '한글날'],
@@ -487,14 +487,14 @@ class SouthKorea extends AbstractProvider
                     && (
                         0 === (int)$date->format('w')
                         || \in_array($date, $holidayDates, false)
-                        || 6 === (int)$date->format('w') && $shortName === 'childrensDay'
+                        || (6 === (int)$date->format('w') && $shortName === 'childrensDay')
                     )
                 ) {
                     $substitute = clone $date;
 
                     // Find next week day (not being another holiday)
                     while (0 === (int)$substitute->format('w')
-                        || 6 === (int)$substitute->format('w') && $shortName === 'childrensDay'
+                           || (6 === (int)$substitute->format('w') && $shortName === 'childrensDay')
                         || \in_array($substitute, $holidayDates, false)) {
                         $substitute->add(new DateInterval('P1D'));
                         continue;
