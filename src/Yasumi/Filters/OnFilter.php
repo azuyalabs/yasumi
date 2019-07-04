@@ -65,7 +65,7 @@ class OnFilter extends FilterIterator implements Countable
     {
         $days = \array_keys(\iterator_to_array($this));
 
-        \array_walk($days, function (&$day) {
+        \array_walk($days, static function (&$day) {
             $day = \str_replace('substituteHoliday:', '', $day);
         });
 

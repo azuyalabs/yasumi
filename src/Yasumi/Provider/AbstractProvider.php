@@ -232,7 +232,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     public function getHolidayDates(): array
     {
-        return \array_map(function ($holiday) {
+        return \array_map(static function ($holiday) {
             return (string)$holiday;
         }, $this->holidays);
     }
@@ -300,7 +300,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     {
         $list = $this->getHolidayNames();
 
-        \array_walk($list, function (&$holiday) {
+        \array_walk($list, static function (&$holiday) {
             $holiday = \str_replace('substituteHoliday:', '', $holiday);
         });
 
