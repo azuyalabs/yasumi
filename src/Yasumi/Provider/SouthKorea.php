@@ -187,7 +187,7 @@ class SouthKorea extends AbstractProvider
      */
     public function calculateSeollal(): void
     {
-        if ($this->year >= 1985 and isset(self::LUNAR_HOLIDAY['seollal'][$this->year])) {
+        if ($this->year >= 1985 && isset(self::LUNAR_HOLIDAY['seollal'][$this->year])) {
             $seollal = new DateTime(self::LUNAR_HOLIDAY['seollal'][$this->year], new DateTimeZone($this->timezone));
             $this->addHoliday(new Holiday(
                 'seollal',
@@ -282,7 +282,7 @@ class SouthKorea extends AbstractProvider
      */
     public function calculateBuddhasBirthday(): void
     {
-        if ($this->year >= 1975 and isset(self::LUNAR_HOLIDAY['buddhasBirthday'][$this->year])) {
+        if ($this->year >= 1975 && isset(self::LUNAR_HOLIDAY['buddhasBirthday'][$this->year])) {
             $this->addHoliday(new Holiday(
                 'buddhasBirthday',
                 ['en_US' => 'Buddha\'s Birthday', 'ko_KR' => '부처님오신날'],
@@ -364,7 +364,7 @@ class SouthKorea extends AbstractProvider
      */
     public function calculateChuseok(): void
     {
-        if ($this->year >= 1949 and isset(self::LUNAR_HOLIDAY['chuseok'][$this->year])) {
+        if ($this->year >= 1949 && isset(self::LUNAR_HOLIDAY['chuseok'][$this->year])) {
             // Chuseok
             $chuseok = new Holiday(
                 'chuseok',
