@@ -161,7 +161,7 @@ class ChuseokTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterf
                     [self::LOCALE => '추석 연휴']
                 );
             }
-            if ($year >= 1986) {
+            if ($year >= 1989) {
                 $this->assertTranslatedHolidayName(
                     self::REGION,
                     'dayBeforeChuseok',
