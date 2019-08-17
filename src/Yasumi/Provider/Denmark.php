@@ -95,7 +95,7 @@ class Denmark extends AbstractProvider
         if ($this->year >= 1686) {
             $this->addHoliday(new Holiday(
                 'greatPrayerDay',
-                ['da_DK' => 'Store bededag'],
+                ['da' => 'Store bededag'],
                 new DateTime("fourth friday $easter", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -123,7 +123,7 @@ class Denmark extends AbstractProvider
         if ($this->year >= 1849) {
             $this->addHoliday(new Holiday(
                 'constitutionDay',
-                ['da_DK' => 'Grundlovsdag'],
+                ['da' => 'Grundlovsdag'],
                 new DateTime("$this->year-6-5", new DateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OBSERVANCE

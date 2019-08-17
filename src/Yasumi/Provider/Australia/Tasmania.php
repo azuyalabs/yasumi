@@ -56,9 +56,9 @@ class Tasmania extends Australia
     {
         $date = new DateTime("second monday of march $this->year", new DateTimeZone($this->timezone));
 
-        $this->addHoliday(new Holiday('eightHourDay', ['en_AU' => 'Eight Hour Day'], $date, $this->locale));
+        $this->addHoliday(new Holiday('eightHourDay', ['en' => 'Eight Hour Day'], $date, $this->locale));
     }
-    
+
     /**
      * Queens Birthday.
      *
@@ -78,13 +78,13 @@ class Tasmania extends Australia
     {
         $this->calculateHoliday(
             'queensBirthday',
-            ['en_AU' => 'Queen\'s Birthday'],
+            ['en' => 'Queen\'s Birthday'],
             new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->timezone)),
             false,
             false
         );
     }
-    
+
     /**
      * Recreation Day
      *
@@ -97,7 +97,7 @@ class Tasmania extends Australia
     {
         $this->calculateHoliday(
             'recreationDay',
-            ['en_AU' => 'Recreation Day'],
+            ['en' => 'Recreation Day'],
             new DateTime('first monday of november ' . $this->year, new DateTimeZone($this->timezone)),
             false,
             false

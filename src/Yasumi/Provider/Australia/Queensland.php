@@ -58,7 +58,7 @@ class Queensland extends Australia
         } else {
             $date = new DateTime("first monday of may $this->year", new DateTimeZone($this->timezone));
         }
-        
+
         $this->addHoliday(new Holiday('labourDay', [], $date, $this->locale));
     }
 
@@ -82,7 +82,7 @@ class Queensland extends Australia
         if ($this->year < 2012 || $this->year === 2013 || $this->year === 2014 || $this->year === 2015) {
             $this->calculateHoliday(
                 'queensBirthday',
-                ['en_AU' => "Queen's Birthday"],
+                ['en' => "Queen's Birthday"],
                 new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->timezone)),
                 false,
                 false
@@ -90,7 +90,7 @@ class Queensland extends Australia
         } else {
             $this->calculateHoliday(
                 'queensBirthday',
-                ['en_AU' => "Queen's Birthday"],
+                ['en' => "Queen's Birthday"],
                 new DateTime('first monday of october ' . $this->year, new DateTimeZone($this->timezone)),
                 false,
                 false

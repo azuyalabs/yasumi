@@ -120,7 +120,10 @@ class Japan extends AbstractProvider
         if ($this->year >= 1966) {
             $this->addHoliday(new Holiday(
                 'nationalFoundationDay',
-                ['en_US' => 'National Foundation Day', 'ja_JP' => '建国記念の日'],
+                [
+                    'en' => 'National Foundation Day',
+                    'ja' => '建国記念の日',
+                ],
                 new DateTime("$this->year-2-11", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -137,7 +140,10 @@ class Japan extends AbstractProvider
         if ($this->year >= 2007) {
             $this->addHoliday(new Holiday(
                 'showaDay',
-                ['en_US' => 'Showa Day', 'ja_JP' => '昭和の日'],
+                [
+                    'en' => 'Showa Day',
+                    'ja' => '昭和の日',
+                ],
                 new DateTime("$this->year-4-29", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -154,7 +160,10 @@ class Japan extends AbstractProvider
         if ($this->year >= 1948) {
             $this->addHoliday(new Holiday(
                 'constitutionMemorialDay',
-                ['en_US' => 'Constitution Memorial Day', 'ja_JP' => '憲法記念日'],
+                [
+                    'en' => 'Constitution Memorial Day',
+                    'ja' => '憲法記念日',
+                ],
                 new DateTime("$this->year-5-3", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -170,7 +179,10 @@ class Japan extends AbstractProvider
         if ($this->year >= 1948) {
             $this->addHoliday(new Holiday(
                 'childrensDay',
-                ['en_US' => 'Children\'s Day', 'ja_JP' => 'こどもの日'],
+                [
+                    'en' => 'Children\'s Day',
+                    'ja' => 'こどもの日',
+                ],
                 new DateTime("$this->year-5-5", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -187,7 +199,10 @@ class Japan extends AbstractProvider
         if ($this->year >= 1948) {
             $this->addHoliday(new Holiday(
                 'cultureDay',
-                ['en_US' => 'Culture Day', 'ja_JP' => '文化の日'],
+                [
+                    'en' => 'Culture Day',
+                    'ja' => '文化の日',
+                ],
                 new DateTime("$this->year-11-3", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -204,7 +219,10 @@ class Japan extends AbstractProvider
         if ($this->year >= 1948) {
             $this->addHoliday(new Holiday(
                 'laborThanksgivingDay',
-                ['en_US' => 'Labor Thanksgiving Day', 'ja_JP' => '勤労感謝の日'],
+                [
+                    'en' => 'Labor Thanksgiving Day',
+                    'ja' => '勤労感謝の日',
+                ],
                 new DateTime("$this->year-11-23", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -229,11 +247,14 @@ class Japan extends AbstractProvider
         } elseif ($this->year >= 1949 && $this->year <1988) {
             $emporersBirthday = "$this->year-4-29";
         }
-        
+
         if ($emporersBirthday) {
             $this->addHoliday(new Holiday(
                 'emperorsBirthday',
-                ['en_US' => 'Emperors Birthday', 'ja_JP' => '天皇誕生日'],
+                [
+                    'en' => 'Emperors Birthday',
+                    'ja' => '天皇誕生日',
+                ],
                 new DateTime($emporersBirthday, new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -251,7 +272,10 @@ class Japan extends AbstractProvider
         if (2019 === $this->year) {
             $this->addHoliday(new Holiday(
                 'coronationDay',
-                ['en_US' => 'Coronation Day', 'ja_JP' => '即位の日'],
+                [
+                    'en' => 'Coronation Day',
+                    'ja' => '即位の日',
+                ],
                 new DateTime("$this->year-5-1", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -269,7 +293,10 @@ class Japan extends AbstractProvider
         if (2019 === $this->year) {
             $this->addHoliday(new Holiday(
                 'enthronementProclamationCeremony',
-                ['en_US' => 'Enthronement Proclamation Ceremony', 'ja_JP' => '即位礼正殿の儀'],
+                [
+                    'en' => 'Enthronement Proclamation Ceremony',
+                    'ja' => '即位礼正殿の儀',
+                ],
                 new DateTime("$this->year-10-22", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -306,7 +333,10 @@ class Japan extends AbstractProvider
         if (null !== $day) {
             $this->addHoliday(new Holiday(
                 'vernalEquinoxDay',
-                ['en_US' => 'Vernal Equinox Day', 'ja_JP' => '春分の日'],
+                [
+                    'en' => 'Vernal Equinox Day',
+                    'ja' => '春分の日',
+                ],
                 new DateTime("$this->year-3-$day", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -337,7 +367,10 @@ class Japan extends AbstractProvider
         if (null !== $date) {
             $this->addHoliday(new Holiday(
                 'comingOfAgeDay',
-                ['en_US' => 'Coming of Age Day', 'ja_JP' => '成人の日'],
+                [
+                    'en' => 'Coming of Age Day',
+                    'ja' => '成人の日',
+                ],
                 $date,
                 $this->locale
             ));
@@ -367,7 +400,10 @@ class Japan extends AbstractProvider
         if (null !== $date) {
             $this->addHoliday(new Holiday(
                 'greeneryDay',
-                ['en_US' => 'Greenery Day', 'ja_JP' => 'みどりの日'],
+                [
+                    'en' => 'Greenery Day',
+                    'ja' => 'みどりの日',
+                ],
                 $date,
                 $this->locale
             ));
@@ -401,7 +437,10 @@ class Japan extends AbstractProvider
         if (null !== $date) {
             $this->addHoliday(new Holiday(
                 'marineDay',
-                ['en_US' => 'Marine Day', 'ja_JP' => '海の日'],
+                [
+                    'en' => 'Marine Day',
+                    'ja' => '海の日',
+                ],
                 $date,
                 $this->locale
             ));
@@ -430,7 +469,10 @@ class Japan extends AbstractProvider
         if (null !== $date) {
             $this->addHoliday(new Holiday(
                 'mountainDay',
-                ['en_US' => 'Mountain Day', 'ja_JP' => '山の日'],
+                [
+                    'en' => 'Mountain Day',
+                    'ja' => '山の日',
+                ],
                 $date,
                 $this->locale
             ));
@@ -461,7 +503,10 @@ class Japan extends AbstractProvider
         if (null !== $date) {
             $this->addHoliday(new Holiday(
                 'respectfortheAgedDay',
-                ['en_US' => 'Respect for the Aged Day', 'ja_JP' => '敬老の日'],
+                [
+                    'en' => 'Respect for the Aged Day',
+                    'ja' => '敬老の日',
+                ],
                 $date,
                 $this->locale
             ));
@@ -492,9 +537,15 @@ class Japan extends AbstractProvider
             $date = new DateTime("$this->year-10-10", new DateTimeZone($this->timezone));
         }
 
-        $holiday_name =['en_US' => 'Health And Sports Day', 'ja_JP' => '体育の日'];
+        $holiday_name = [
+            'en' => 'Health And Sports Day',
+            'ja' => '体育の日',
+        ];
         if ($this->year >= 2020) {
-            $holiday_name =['en_US' => 'Sports Day', 'ja_JP' => 'スポーツの日'];
+            $holiday_name = [
+                'en' => 'Sports Day',
+                'ja' => 'スポーツの日',
+            ];
         }
 
         if (null !== $date) {
@@ -537,7 +588,10 @@ class Japan extends AbstractProvider
         if (null !== $day) {
             $this->addHoliday(new Holiday(
                 'autumnalEquinoxDay',
-                ['en_US' => 'Autumnal Equinox Day', 'ja_JP' => '秋分の日'],
+                [
+                    'en' => 'Autumnal Equinox Day',
+                    'ja' => '秋分の日',
+                ],
                 new DateTime("$this->year-9-$day", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -583,8 +637,8 @@ class Japan extends AbstractProvider
 
                 // Add a new holiday that is substituting the original holiday
                 $substituteHoliday = new Holiday('substituteHoliday:' . $shortName, [
-                    'en_US' => $date->getName('en_US') . ' Observed',
-                    'ja_JP' => '振替休日 (' . $date->getName('ja_JP') . ')',
+                    'en' => $date->getName('en') . ' Observed',
+                    'ja' => '振替休日 (' . $date->getName('ja') . ')',
                 ], $substituteDay, $this->locale);
 
                 $this->addHoliday($substituteHoliday);
@@ -624,8 +678,8 @@ class Japan extends AbstractProvider
                 $bridgeDate->add(new DateInterval('P1D'));
 
                 $this->addHoliday(new Holiday('bridgeDay'.$counter, [
-                    'en_US' => 'Bridge Public holiday',
-                    'ja_JP' => '国民の休日',
+                    'en' => 'Bridge Public holiday',
+                    'ja' => '国民の休日',
                 ], $bridgeDate, $this->locale));
                 $counter++;
             }

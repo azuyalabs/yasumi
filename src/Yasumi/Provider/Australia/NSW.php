@@ -43,7 +43,7 @@ class NSW extends Australia
     {
         parent::initialize();
 
-        $this->addHoliday(new Holiday('easter', ['en_AU' => 'Easter Sunday'], $this->calculateEaster($this->year, $this->timezone), $this->locale));
+        $this->addHoliday(new Holiday('easter', [], $this->calculateEaster($this->year, $this->timezone), $this->locale));
         $this->addHoliday($this->easterSaturday($this->year, $this->timezone, $this->locale));
         $this->calculateQueensBirthday();
         $this->calculateLabourDay();
@@ -87,7 +87,7 @@ class NSW extends Australia
     {
         return new Holiday(
             'easterSaturday',
-            ['en_AU' => 'Easter Saturday'],
+            ['en' => 'Easter Saturday'],
             $this->calculateEaster($year, $timezone)->sub(new DateInterval('P1D')),
             $locale,
             $type
@@ -113,13 +113,13 @@ class NSW extends Australia
     {
         $this->calculateHoliday(
             'queensBirthday',
-            ['en_AU' => "Queen's Birthday"],
+            ['en' => "Queen's Birthday"],
             new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->timezone)),
             false,
             false
         );
     }
-    
+
     /**
      * Bank Holiday.
      *
@@ -130,7 +130,7 @@ class NSW extends Australia
     {
         $this->calculateHoliday(
             'bankHoliday',
-            ['en_AU' => 'Bank Holiday'],
+            ['en' => 'Bank Holiday'],
             new DateTime('first monday of august '. $this->year, new DateTimeZone($this->timezone)),
             false,
             false,

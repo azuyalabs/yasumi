@@ -78,7 +78,7 @@ class Extremadura extends Spain
         if ($this->year >= 1985) {
             $this->addHoliday(new Holiday(
                 'extremaduraDay',
-                ['es_ES' => 'Día de Extremadura'],
+                ['es' => 'Día de Extremadura'],
                 new DateTime("$this->year-9-8", new DateTimeZone($this->timezone)),
                 $this->locale
             ));

@@ -81,7 +81,7 @@ class Spain extends AbstractProvider
         if ($this->year >= 1981) {
             $this->addHoliday(new Holiday(
                 'nationalDay',
-                ['es_ES' => 'Fiesta Nacional de España'],
+                ['es' => 'Fiesta Nacional de España'],
                 new DateTime("$this->year-10-12", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -107,7 +107,7 @@ class Spain extends AbstractProvider
         if ($this->year >= 1978) {
             $this->addHoliday(new Holiday(
                 'constitutionDay',
-                ['es_ES' => 'Día de la Constitución'],
+                ['es' => 'Día de la Constitución'],
                 new DateTime("$this->year-12-6", new DateTimeZone($this->timezone)),
                 $this->locale
             ));

@@ -84,7 +84,7 @@ class Finland extends AbstractProvider
      */
     private function calculateStJohnsDay(): void
     {
-        $translation = ['fi_FI' => 'Juhannuspäivä'];
+        $translation = ['fi' => 'Juhannuspäivä'];
         $shortName   = 'stJohnsDay';
         $date        = new DateTime("$this->year-6-24", new DateTimeZone($this->timezone)); // Default date
 
@@ -164,7 +164,7 @@ class Finland extends AbstractProvider
         if ($this->year >= 1917) {
             $this->addHoliday(new Holiday(
                 'independenceDay',
-                ['fi_FI' => 'Itsenäisyyspäivä'],
+                ['fi' => 'Itsenäisyyspäivä'],
                 new DateTime("$this->year-12-6", new DateTimeZone($this->timezone)),
                 $this->locale
             ));

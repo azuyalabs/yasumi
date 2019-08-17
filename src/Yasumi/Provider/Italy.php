@@ -82,7 +82,7 @@ class Italy extends AbstractProvider
         if ($this->year >= 1949) {
             $this->addHoliday(new Holiday(
                 'liberationDay',
-                ['it_IT' => 'Festa della Liberazione'],
+                ['it' => 'Festa della Liberazione'],
                 new DateTime("$this->year-4-25", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -110,7 +110,7 @@ class Italy extends AbstractProvider
         if ($this->year >= 1946) {
             $this->addHoliday(new Holiday(
                 'republicDay',
-                ['it_IT' => 'Festa della Republica'],
+                ['it' => 'Festa della Republica'],
                 new DateTime("$this->year-6-2", new DateTimeZone($this->timezone)),
                 $this->locale
             ));

@@ -120,7 +120,7 @@ class UnitedKingdom extends AbstractProvider
 
         $this->addHoliday(new Holiday(
             'mayDayBankHoliday',
-            ['en_GB' => 'May Day Bank Holiday'],
+            ['en' => 'May Day Bank Holiday'],
             new DateTime("first monday of may $this->year", new DateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
@@ -152,7 +152,7 @@ class UnitedKingdom extends AbstractProvider
 
         $this->addHoliday(new Holiday(
             'springBankHoliday',
-            ['en_GB' => 'Spring Bank Holiday'],
+            ['en' => 'Spring Bank Holiday'],
             new DateTime("last monday of may $this->year", new DateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
@@ -184,7 +184,7 @@ class UnitedKingdom extends AbstractProvider
 
         $this->addHoliday(new Holiday(
             'summerBankHoliday',
-            ['en_GB' => 'Summer Bank Holiday'],
+            ['en' => 'Summer Bank Holiday'],
             new DateTime("last monday of august $this->year", new DateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK

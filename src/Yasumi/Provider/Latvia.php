@@ -77,8 +77,8 @@ class Latvia extends AbstractProvider
             }
 
             $this->addHoliday(new Holiday('restorationOfIndependenceOfLatviaDay', [
-                'en_US' => 'Restoration of Independence day',
-                'lv_LV' => 'Latvijas Republikas Neatkarības atjaunošanas diena'
+                'en' => 'Restoration of Independence day',
+                'lv' => 'Latvijas Republikas Neatkarības atjaunošanas diena'
             ], $date));
         }
     }
@@ -90,8 +90,8 @@ class Latvia extends AbstractProvider
     private function addMidsummerEveDay(): void
     {
         $this->addHoliday(new Holiday('midsummerEveDay', [
-            'en_US' => 'Midsummer Eve',
-            'lv_LV' => 'Līgo Diena'
+            'en' => 'Midsummer Eve',
+            'lv' => 'Līgo Diena'
         ], new \DateTime("{$this->year}-06-23", new \DateTimeZone($this->timezone))));
     }
 
@@ -112,8 +112,8 @@ class Latvia extends AbstractProvider
             }
 
             $this->addHoliday(new Holiday('proclamationOfTheRepublicOfLatviaDay', [
-                'en_US' => 'Proclamation Day of the Republic of Latvia',
-                'lv_LV' => 'Latvijas Republikas proklamēšanas diena'
+                'en' => 'Proclamation Day of the Republic of Latvia',
+                'lv' => 'Latvijas Republikas proklamēšanas diena'
             ], $date));
         }
     }

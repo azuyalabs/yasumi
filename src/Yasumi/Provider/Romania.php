@@ -87,8 +87,8 @@ class Romania extends AbstractProvider
     private function calculateDayAfterNewYearsDay(): void
     {
         $this->addHoliday(new Holiday('dayAfterNewYearsDay', [
-            'en_US' => 'Day after New Year\'s Day',
-            'ro_RO' => 'A doua zi după Anul Nou'
+            'en' => 'Day after New Year\'s Day',
+            'ro' => 'A doua zi după Anul Nou'
         ], new DateTime("$this->year-01-02", new DateTimeZone($this->timezone)), $this->locale));
     }
 
@@ -112,8 +112,8 @@ class Romania extends AbstractProvider
         // The law is official since 21.12.2014.
         if ($this->year > 2014) {
             $this->addHoliday(new Holiday('unitedPrincipalitiesDay', [
-                'en_US' => 'Union Day / Small Union',
-                'ro_RO' => 'Unirea Principatelor Române / Mica Unire'
+                'en' => 'Union Day / Small Union',
+                'ro' => 'Unirea Principatelor Române / Mica Unire'
             ], new DateTime("$this->year-01-24", new DateTimeZone($this->timezone)), $this->locale));
         }
     }
@@ -134,8 +134,8 @@ class Romania extends AbstractProvider
     {
         if ($this->year >= 2012) {
             $this->addHoliday(new Holiday('stAndrewDay', [
-                'en_US' => 'Saint Andrew\'s Day',
-                'ro_RO' => 'Sfântul Andrei'
+                'en' => 'Saint Andrew\'s Day',
+                'ro' => 'Sfântul Andrei'
             ], new DateTime($this->year . '-11-30', new DateTimeZone($this->timezone)), $this->locale));
         }
     }
@@ -175,8 +175,8 @@ class Romania extends AbstractProvider
 
         if (null !== $national_day) {
             $this->addHoliday(new Holiday('nationalDay', [
-                'en_US' => 'National Day',
-                'ro_RO' => 'Ziua Națională'
+                'en' => 'National Day',
+                'ro' => 'Ziua Națională'
             ], new DateTime($national_day, new DateTimeZone($this->timezone)), $this->locale));
         }
     }
@@ -198,8 +198,8 @@ class Romania extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'constantinBrancusiDay',
                 [
-                    'en_US' => 'Constantin Brâncuși day',
-                    'ro_RO' => 'Ziua Constantin Brâncuși'
+                    'en' => 'Constantin Brâncuși day',
+                    'ro' => 'Ziua Constantin Brâncuși'
                 ],
                 new DateTime("$this->year-02-19", new DateTimeZone($this->timezone)),
                 $this->locale,
@@ -227,8 +227,8 @@ class Romania extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'childrensDay',
                 [
-                    'en_US' => 'International Children\'s Day',
-                    'ro_RO' => 'Ziua Copilului'
+                    'en' => 'International Children\'s Day',
+                    'ro' => 'Ziua Copilului'
                 ],
                 new DateTime("$this->year-06-01", new DateTimeZone($this->timezone)),
                 $this->locale,
@@ -238,8 +238,8 @@ class Romania extends AbstractProvider
 
         if ($this->year >= 2017) {
             $this->addHoliday(new Holiday('childrensDay', [
-                'en_US' => 'International Children\'s Day',
-                'ro_RO' => 'Ziua Copilului'
+                'en' => 'International Children\'s Day',
+                'ro' => 'Ziua Copilului'
             ], new DateTime("$this->year-06-01", new DateTimeZone($this->timezone)), $this->locale));
         }
     }

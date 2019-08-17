@@ -63,14 +63,11 @@ class Switzerland extends AbstractProvider
     private function calculateNationalDay(): void
     {
         $translations = [
-            'en_US' => 'National Day',
-            'fr_FR' => 'Jour de la fête nationale',
-            'fr_CH' => 'Jour de la fête nationale',
-            'de_DE' => 'Bundesfeiertag',
-            'de_CH' => 'Bundesfeiertag',
-            'it_IT' => 'Giorno festivo federale',
-            'it_CH' => 'Giorno festivo federale',
-            'rm_CH' => 'Fiasta naziunala',
+            'en' => 'National Day',
+            'fr' => 'Jour de la fête nationale',
+            'de' => 'Bundesfeiertag',
+            'it' => 'Giorno festivo federale',
+            'rm' => 'Fiasta naziunala',
         ];
         if ($this->year >= 1994) {
             $this->addHoliday(new Holiday(
@@ -110,11 +107,9 @@ class Switzerland extends AbstractProvider
         $this->addHoliday(new Holiday(
             'berchtoldsTag',
             [
-                'de_DE' => 'Berchtoldstag',
-                'de_CH' => 'Berchtoldstag',
-                'fr_FR' => 'Jour de la Saint-Berthold',
-                'fr_CH' => 'Jour de la Saint-Berthold',
-                'en_US' => 'Berchtoldstag',
+                'de' => 'Berchtoldstag',
+                'fr' => 'Jour de la Saint-Berthold',
+                'en' => 'Berchtoldstag',
             ],
             new DateTime($this->year . '-01-02', new DateTimeZone($this->timezone)),
             $this->locale,
@@ -146,12 +141,9 @@ class Switzerland extends AbstractProvider
             $date->add(new DateInterval('P1D'));
 
             $this->addHoliday(new Holiday('bettagsMontag', [
-                'fr_FR' => 'Jeûne fédéral',
-                'fr_CH' => 'Jeûne fédéral',
-                'de_DE' => 'Eidgenössischer Dank-, Buss- und Bettag',
-                'de_CH' => 'Eidgenössischer Dank-, Buss- und Bettag',
-                'it_IT' => 'Festa federale di ringraziamento, pentimento e preghiera',
-                'it_CH' => 'Festa federale di ringraziamento, pentimento e preghiera',
+                'fr' => 'Jeûne fédéral',
+                'de' => 'Eidgenössischer Dank-, Buss- und Bettag',
+                'it' => 'Festa federale di ringraziamento, pentimento e preghiera',
             ], $date, $this->locale, Holiday::TYPE_OTHER));
         }
     }
