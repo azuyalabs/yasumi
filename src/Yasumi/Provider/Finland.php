@@ -84,19 +84,17 @@ class Finland extends AbstractProvider
      */
     private function calculateStJohnsDay(): void
     {
-        $translation = ['fi_FI' => 'Juhannuspäivä'];
-        $shortName   = 'stJohnsDay';
-
         if ($this->year < 1955) {
             $this->addHoliday(new Holiday(
-                $shortName,
-                $translation,
+                'stJohnsDay',
+                [],
                 new DateTime("$this->year-6-24", new DateTimeZone($this->timezone)),
-                $this->locale));
+                $this->locale
+            ));
         } else {
             $this->addHoliday(new Holiday(
-                $shortName,
-                $translation,
+                'stJohnsDay',
+                [],
                 new DateTime("$this->year-6-20 this saturday", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -127,8 +125,8 @@ class Finland extends AbstractProvider
      */
     private function calculateAllSaintsDay(): void
     {
-        $this->addHoliday(
-            new Holiday('allSaintsDay',
+        $this->addHoliday(new Holiday(
+            'allSaintsDay',
             [],
             new DateTime("$this->year-10-31 this saturday", new DateTimeZone($this->timezone)),
             $this->locale

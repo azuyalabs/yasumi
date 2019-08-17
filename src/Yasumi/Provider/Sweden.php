@@ -86,7 +86,7 @@ class Sweden extends AbstractProvider
     {
         $this->addHoliday(new Holiday(
             'stJohnsDay',
-            ['sv_SE' => 'midsommardagen'],
+            [],
             new DateTime("$this->year-6-20 this saturday", new DateTimeZone($this->timezone)),
             $this->locale
         ));
