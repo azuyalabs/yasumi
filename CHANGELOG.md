@@ -9,6 +9,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Holiday Provider for South Korea. [\#156](https://github.com/azuyalabs/yasumi/pull/156) ([blood72](https://github.com/blood72))
 - Translation for the Easter holiday for the 'fr_FR' locale [\#146](https://github.com/azuyalabs/yasumi/pull/146) ([pioc92](https://github.com/pioc92))
 - Translation for the Pentecoste holiday for the 'fr_FR' locale [\#145](https://github.com/azuyalabs/yasumi/pull/145) ([pioc92](https://github.com/pioc92))
+- Added `Yasumi::setDefaultLocale()` and `Yasumi::getDefaultLocale()`. [\#123](https://github.com/azuyalabs/yasumi/pull/123) ([c960657](https://github.com/c960657))
+- Added optional $argument for `Holiday::getName($locale)` for overriding the default locale. [\#123](https://github.com/azuyalabs/yasumi/pull/123) ([c960657](https://github.com/c960657))
 
 ### Changed
 - Replaced the standard 'InvalidArgumentException' when an invalid year or holiday provider are given by a new exception for each of these two situations separately ('InvalidYearException' and 'ProviderNotFoundException'). This allows you to better distinguish which exception may occur when instantiating the Yasumi class. [\#95](https://github.com/azuyalabs/yasumi/pull/95) ([qneyrat](https://github.com/qneyrat))
@@ -20,6 +22,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Fixed
 
 ### Removed
+
+### Deprecated
+- Deprecated the `$locale` argument for `Yasumi::create()` and  `Yasumi::createByISO3166_2()`. [\#123](https://github.com/azuyalabs/yasumi/pull/123) ([c960657](https://github.com/c960657))
+- Deprecated the constant `Yasumi::DEFAULT_LOCALE`. [\#123](https://github.com/azuyalabs/yasumi/pull/123) ([c960657](https://github.com/c960657))
 
 
 ## [2.1.0] - 2019-03-29
