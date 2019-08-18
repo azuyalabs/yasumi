@@ -49,6 +49,27 @@ class SpringBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
     }
 
     /**
+     * Tests the holiday exceptions in 2002 and 2012.
+     * @throws \ReflectionException
+     */
+    public function testHolidayException()
+    {
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2002,
+            new DateTime("2002-6-4", new DateTimeZone(self::TIMEZONE))
+        );
+
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2012,
+            new DateTime("2012-6-4", new DateTimeZone(self::TIMEZONE))
+        );
+    }
+
+    /**
      * Tests the holiday defined in this test before establishment.
      * @throws \ReflectionException
      */

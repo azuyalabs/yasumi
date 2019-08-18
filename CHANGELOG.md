@@ -18,6 +18,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Updated the translation for the Assumption of Mary holiday for the 'fr_FR' locale [\#155](https://github.com/azuyalabs/yasumi/pull/155) ([pioc92](https://github.com/pioc92))
 
 ### Fixed
+- Fixed one-off exceptions for May Day Bank Holiday in 1995 and 2020 and Spring Bank Holiday in 2002 and 2012 (United Kingdom) [\#160](https://github.com/azuyalabs/yasumi/pull/160) ([c960657](https://github.com/c960657))
 
 ### Removed
 
