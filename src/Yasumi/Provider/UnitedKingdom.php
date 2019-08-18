@@ -189,7 +189,7 @@ class UnitedKingdom extends AbstractProvider
     /**
      * The Summer Bank holiday, also known as the Late Summer bank holiday, is a time for people in the United Kingdom
      * to have a day off work or school. It falls on the last Monday of August replacing the first Monday in August
-     * (formerly commonly known as "August Bank Holiday".
+     * (formerly commonly known as "August Bank Holiday").
      *
      * Many organizations, businesses and schools are closed. Stores may be open or closed, according to local custom.
      * Public transport systems often run to a holiday timetable.
@@ -204,8 +204,34 @@ class UnitedKingdom extends AbstractProvider
      */
     private function calculateSummerBankHoliday(): void
     {
-        // Statutory bank holiday from 1971, following a trial period from 1965 to 1970.
+        if ($this->year < 1871) {
+            return;
+        }
+
         if ($this->year < 1965) {
+            $this->addHoliday(new Holiday(
+                'summerBankHoliday',
+                ['en_GB' => 'August Bank Holiday'],
+                new DateTime("first monday of august $this->year", new DateTimeZone($this->timezone)),
+                $this->locale,
+                Holiday::TYPE_BANK
+            ));
+
+            return;
+        }
+
+        // Statutory bank holiday from 1971, following a trial period from 1965 to 1970.
+        // During the trial period, the definition was different than today, causing exceptions
+        // in 1968 and 1969.
+        if ($this->year == 1968 || $this->year == 1969) {
+            $this->addHoliday(new Holiday(
+                'summerBankHoliday',
+                ['en_GB' => 'Summer Bank Holiday'],
+                new DateTime("first monday of september $this->year", new DateTimeZone($this->timezone)),
+                $this->locale,
+                Holiday::TYPE_BANK
+            ));
+
             return;
         }
 
