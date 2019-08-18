@@ -49,7 +49,7 @@ class MayDayBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
     }
 
     /**
-     * Tests the holiday exception in 2020.
+     * Tests the holiday exception in 1995 and 2020.
      * @throws \ReflectionException
      */
     public function testHolidayExceptions()
