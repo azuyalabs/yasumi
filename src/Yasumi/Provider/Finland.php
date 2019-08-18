@@ -84,23 +84,20 @@ class Finland extends AbstractProvider
      */
     private function calculateStJohnsDay(): void
     {
-        $translation = ['fi_FI' => 'Juhannuspäivä'];
-        $shortName   = 'stJohnsDay';
-        $date        = new DateTime("$this->year-6-24", new DateTimeZone($this->timezone)); // Default date
-
         if ($this->year < 1955) {
-            $this->addHoliday(new Holiday($shortName, $translation, $date, $this->locale));
+            $this->addHoliday(new Holiday(
+                'stJohnsDay',
+                [],
+                new DateTime("$this->year-6-24", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         } else {
-
-            // Check between the 20th and 26th day which one is a Saturday
-            for ($d = 20; $d <= 26; ++$d) {
-                $date->setDate($this->year, 6, $d);
-                if ($date->format('l') === 'Saturday') {
-                    break;
-                }
-            }
-
-            $this->addHoliday(new Holiday($shortName, $translation, $date, $this->locale));
+            $this->addHoliday(new Holiday(
+                'stJohnsDay',
+                [],
+                new DateTime("$this->year-6-20 this saturday", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
     }
 
@@ -128,17 +125,12 @@ class Finland extends AbstractProvider
      */
     private function calculateAllSaintsDay(): void
     {
-        $date = new DateTime("$this->year-10-31", new DateTimeZone($this->timezone));
-
-        // Check between 31 October and 6th of November the day that is a Saturday
-        for ($d = 0; $d <= 7; ++$d) {
-            if ($date->format('l') === 'Saturday') {
-                break;
-            }
-            $date->add(new DateInterval('P1D'));
-        }
-
-        $this->addHoliday(new Holiday('allSaintsDay', [], $date, $this->locale));
+        $this->addHoliday(new Holiday(
+            'allSaintsDay',
+            [],
+            new DateTime("$this->year-10-31 this saturday", new DateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /**

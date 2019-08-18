@@ -118,6 +118,19 @@ class UnitedKingdom extends AbstractProvider
             return;
         }
 
+        // Moved to 8 May to commemorate the 50th (1995) and 75th (2020) anniversary of VE Day.
+        if ($this->year == 1995 || $this->year == 2020) {
+            $this->addHoliday(new Holiday(
+                'mayDayBankHoliday',
+                ['en_GB' => 'May Day Bank Holiday'],
+                new DateTime("$this->year-5-8", new DateTimeZone($this->timezone)),
+                $this->locale,
+                Holiday::TYPE_BANK
+            ));
+
+            return;
+        }
+
         $this->addHoliday(new Holiday(
             'mayDayBankHoliday',
             ['en_GB' => 'May Day Bank Holiday'],
@@ -147,6 +160,20 @@ class UnitedKingdom extends AbstractProvider
     {
         // Statutory bank holiday from 1971, following a trial period from 1965 to 1970.
         if ($this->year < 1965) {
+            return;
+        }
+
+        // Moved to 4 June for the celebration of the Golden (2002) and Diamond (2012) Jubilee
+        // of Elizabeth II.
+        if ($this->year == 2002 || $this->year == 2012) {
+            $this->addHoliday(new Holiday(
+                'springBankHoliday',
+                ['en_GB' => 'Spring Bank Holiday'],
+                new DateTime("$this->year-6-4", new DateTimeZone($this->timezone)),
+                $this->locale,
+                Holiday::TYPE_BANK
+            ));
+
             return;
         }
 

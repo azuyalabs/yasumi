@@ -84,17 +84,12 @@ class Sweden extends AbstractProvider
      */
     private function calculateStJohnsDay(): void
     {
-        $date = new DateTime("$this->year-6-20", new DateTimeZone($this->timezone)); // Default date
-
-        // Check between the 20th and 26th day which one is a Saturday
-        for ($d = 0; $d <= 7; ++$d) {
-            if ($date->format('l') === 'Saturday') {
-                break;
-            }
-            $date->add(new DateInterval('P1D'));
-        }
-
-        $this->addHoliday(new Holiday('stJohnsDay', ['sv_SE' => 'midsommardagen'], $date, $this->locale));
+        $this->addHoliday(new Holiday(
+            'stJohnsDay',
+            [],
+            new DateTime("$this->year-6-20 this saturday", new DateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /**
@@ -120,17 +115,12 @@ class Sweden extends AbstractProvider
      */
     private function calculateAllSaintsDay(): void
     {
-        $date = new DateTime("$this->year-10-31", new DateTimeZone($this->timezone));
-
-        // Check between 31 October and 6th of November the day that is a Saturday
-        for ($d = 0; $d <= 7; ++$d) {
-            if ($date->format('l') === 'Saturday') {
-                break;
-            }
-            $date->add(new DateInterval('P1D'));
-        }
-
-        $this->addHoliday(new Holiday('allSaintsDay', [], $date, $this->locale));
+        $this->addHoliday(new Holiday(
+            'allSaintsDay',
+            [],
+            new DateTime("$this->year-10-31 this saturday", new DateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /**

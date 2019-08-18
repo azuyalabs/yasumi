@@ -49,6 +49,27 @@ class MayDayBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
     }
 
     /**
+     * Tests the holiday exception in 1995 and 2020.
+     * @throws \ReflectionException
+     */
+    public function testHolidayExceptions()
+    {
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            1995,
+            new DateTime("1995-5-8", new DateTimeZone(self::TIMEZONE))
+        );
+
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2020,
+            new DateTime("2020-5-8", new DateTimeZone(self::TIMEZONE))
+        );
+    }
+
+    /**
      * Tests the holiday defined in this test before establishment.
      * @throws \ReflectionException
      */
