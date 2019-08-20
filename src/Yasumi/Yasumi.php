@@ -138,7 +138,7 @@ class Yasumi
 
         // Assert year input
         if ($year < 1000 || $year > 9999) {
-            throw new InvalidYearException(\sprintf('Year needs to be between 1000 and 9999 (%s given).', $year));
+            throw new InvalidYearException(\sprintf('Year needs to be between 1000 and 9999 (%d given).', $year));
         }
 
         // Load internal locales variable
