@@ -88,7 +88,7 @@ class SubstituteHoliday extends Holiday
                 ?? $this->substituteHolidayTranslations[self::DEFAULT_LOCALE]
                 ?? $this->shortName;
 
-            $name = str_replace('{0}', $this->substitutedHoliday->getName(), $pattern);
+            $name = \str_replace('{0}', $this->substitutedHoliday->getName(), $pattern);
         }
 
         return $name;
