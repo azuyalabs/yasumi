@@ -16,6 +16,7 @@ namespace Yasumi\Provider;
 use DateTime;
 use DateTimeZone;
 use Yasumi\Holiday;
+use Yasumi\SubstituteHoliday;
 
 /**
  * Provider for all holidays in Ireland.
@@ -102,12 +103,15 @@ class Ireland extends AbstractProvider
 
         // Substitute holiday is on the next available weekday if a holiday falls on a Sunday.
         if (0 === (int)$holiday->format('w')) {
-            $substituteHoliday = clone $holiday;
-            $substituteHoliday->modify('next monday');
+            $date = clone $holiday;
+            $date->modify('next monday');
 
-            $this->addHoliday(new Holiday('substituteHoliday:' . $substituteHoliday->shortName, [
-                'en_IE' => $substituteHoliday->getName() . ' observed',
-            ], $substituteHoliday, $this->locale));
+            $this->addHoliday(new SubstituteHoliday(
+                $holiday,
+                [],
+                $date,
+                $this->locale
+            ));
         }
     }
 
@@ -160,12 +164,15 @@ class Ireland extends AbstractProvider
 
         // Whenever Christmas Day does not fall on a weekday, the Tuesday following on it shall be a public holiday.
         if (\in_array((int)$holiday->format('w'), [0, 6], true)) {
-            $substituteHoliday = clone $holiday;
-            $substituteHoliday->modify('next tuesday');
+            $date = clone $holiday;
+            $date->modify('next tuesday');
 
-            $this->addHoliday(new Holiday('substituteHoliday:' . $substituteHoliday->shortName, [
-                'en_IE' => $substituteHoliday->getName() . ' observed',
-            ], $substituteHoliday, $this->locale));
+            $this->addHoliday(new SubstituteHoliday(
+                $holiday,
+                [],
+                $date,
+                $this->locale
+            ));
         }
     }
 
@@ -197,12 +204,15 @@ class Ireland extends AbstractProvider
 
         // Whenever St. Stephens Day does not fall on a weekday, the Monday following on it shall be a public holiday.
         if (\in_array((int)$holiday->format('w'), [0, 6], true)) {
-            $substituteHoliday = clone $holiday;
-            $substituteHoliday->modify('next monday');
+            $date = clone $holiday;
+            $date->modify('next monday');
 
-            $this->addHoliday(new Holiday('substituteHoliday:' . $substituteHoliday->shortName, [
-                'en_IE' => $substituteHoliday->getName() . ' observed',
-            ], $substituteHoliday, $this->locale));
+            $this->addHoliday(new SubstituteHoliday(
+                $holiday,
+                [],
+                $date,
+                $this->locale
+            ));
         }
     }
 
@@ -239,12 +249,15 @@ class Ireland extends AbstractProvider
 
         // Substitute holiday is on the next available weekday if a holiday falls on a Saturday or Sunday
         if (\in_array((int)$holiday->format('w'), [0, 6], true)) {
-            $substituteHoliday = clone $holiday;
-            $substituteHoliday->modify('next monday');
+            $date = clone $holiday;
+            $date->modify('next monday');
 
-            $this->addHoliday(new Holiday('substituteHoliday:' . $substituteHoliday->shortName, [
-                'en_IE' => $substituteHoliday->getName() . ' observed',
-            ], $substituteHoliday, $this->locale));
+            $this->addHoliday(new SubstituteHoliday(
+                $holiday,
+                [],
+                $date,
+                $this->locale
+            ));
         }
     }
 

@@ -19,6 +19,7 @@ use IteratorAggregate;
 use Yasumi\Filters\BetweenFilter;
 use Yasumi\Filters\OnFilter;
 use Yasumi\Holiday;
+use Yasumi\SubstituteHoliday;
 use Yasumi\ProviderInterface;
 use Yasumi\TranslationsInterface;
 use Yasumi\Yasumi;
@@ -298,13 +299,15 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     public function count(): int
     {
-        $list = $this->getHolidayNames();
+        $names = \array_map(static function (&$holiday) {
+            if ($holiday instanceof SubstituteHoliday) {
+                return $holiday->substitutedHoliday->shortName;
+            } else {
+                return $holiday->shortName;
+            }
+        }, $this->getHolidays());
 
-        \array_walk($list, static function (&$holiday) {
-            $holiday = \str_replace('substituteHoliday:', '', $holiday);
-        });
-
-        return \count(\array_unique($list));
+        return \count(\array_unique($names));
     }
 
     /**

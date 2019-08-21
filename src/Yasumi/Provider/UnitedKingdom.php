@@ -16,6 +16,7 @@ use DateInterval;
 use DateTime;
 use DateTimeZone;
 use Yasumi\Holiday;
+use Yasumi\SubstituteHoliday;
 
 /**
  * Provider for all holidays in the United Kingdom. Local holidays/observances (e.g. Wales, England, Guernsey, etc.)
@@ -268,32 +269,31 @@ class UnitedKingdom extends AbstractProvider
      */
     private function calculateChristmasHolidays(): void
     {
-        $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->timezone));
-        $boxingDay    = new DateTime("$this->year-12-26", new DateTimeZone($this->timezone));
+        $christmasDay = $this->christmasDay($this->year, $this->timezone, $this->locale);
+        $secondChristmasDay = $this->secondChristmasDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK);
 
-        $this->addHoliday(new Holiday('christmasDay', [], $christmasDay, $this->locale));
-        $this->addHoliday(new Holiday('secondChristmasDay', [], $boxingDay, $this->locale, Holiday::TYPE_BANK));
-
-        $substituteChristmasDay = clone $christmasDay;
-        $substituteBoxingDay    = clone $boxingDay;
+        $this->addHoliday($christmasDay);
+        $this->addHoliday($secondChristmasDay);
 
         if (\in_array((int)$christmasDay->format('w'), [0, 6], true)) {
-            $substituteChristmasDay->add(new DateInterval('P2D'));
-            $this->addHoliday(new Holiday(
-                'substituteHoliday:christmasDay',
+            $date = clone $christmasDay;
+            $date->add(new DateInterval('P2D'));
+            $this->addHoliday(new SubstituteHoliday(
+                $christmasDay,
                 [],
-                $substituteChristmasDay,
+                $date,
                 $this->locale,
                 Holiday::TYPE_BANK
             ));
         }
 
-        if (\in_array((int)$boxingDay->format('w'), [0, 6], true)) {
-            $substituteBoxingDay->add(new DateInterval('P2D'));
-            $this->addHoliday(new Holiday(
-                'substituteHoliday:secondChristmasDay',
+        if (\in_array((int)$secondChristmasDay->format('w'), [0, 6], true)) {
+            $date = clone $secondChristmasDay;
+            $date->add(new DateInterval('P2D'));
+            $this->addHoliday(new SubstituteHoliday(
+                $secondChristmasDay,
                 [],
-                $substituteBoxingDay,
+                $date,
                 $this->locale,
                 Holiday::TYPE_BANK
             ));

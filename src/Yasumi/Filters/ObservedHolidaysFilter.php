@@ -15,6 +15,7 @@ namespace Yasumi\Filters;
 use Countable;
 use FilterIterator;
 use Yasumi\Holiday;
+use Yasumi\SubstituteHoliday;
 
 /**
  * ObservedHolidaysFilter is a class for filtering all observed holidays.
@@ -43,12 +44,14 @@ class ObservedHolidaysFilter extends FilterIterator implements Countable
      */
     public function count(): int
     {
-        $days = \array_keys(\iterator_to_array($this));
+        $names = \array_map(static function (&$holiday) {
+            if ($holiday instanceof SubstituteHoliday) {
+                return $holiday->substitutedHoliday->shortName;
+            } else {
+                return $holiday->shortName;
+            }
+        }, \iterator_to_array($this));
 
-        \array_walk($days, static function (&$day) {
-            $day = \str_replace('substituteHoliday:', '', $day);
-        });
-
-        return \count(\array_unique($days));
+        return \count(\array_unique($names));
     }
 }

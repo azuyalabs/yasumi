@@ -17,6 +17,7 @@ use DateInterval;
 use DateTime;
 use DateTimeZone;
 use Yasumi\Holiday;
+use Yasumi\SubstituteHoliday;
 
 /**
  * Provider for all holidays in the South Korea except for election day and temporary public holiday.
@@ -476,7 +477,7 @@ class SouthKorea extends AbstractProvider
             ];
 
             // Loop through all holidays
-            foreach ($holidays as $shortName => $date) {
+            foreach ($holidays as $shortName => $holiday) {
                 // Get list of holiday dates except this
                 $holidayDates = \array_map(static function ($holiday) use ($shortName) {
                     return $holiday->shortName === $shortName ? false : (string)$holiday;
@@ -485,32 +486,34 @@ class SouthKorea extends AbstractProvider
                 // Only process accepted holidays and conditions
                 if (\in_array($shortName, $acceptedHolidays, true)
                     && (
-                        0 === (int)$date->format('w')
-                        || \in_array($date, $holidayDates, false)
-                        || (6 === (int)$date->format('w') && $shortName === 'childrensDay')
+                        0 === (int)$holiday->format('w')
+                        || \in_array($holiday, $holidayDates, false)
+                        || (6 === (int)$holiday->format('w') && $shortName === 'childrensDay')
                     )
                 ) {
-                    $substitute = clone $date;
+                    $date = clone $holiday;
 
                     // Find next week day (not being another holiday)
-                    while (0 === (int)$substitute->format('w')
-                           || (6 === (int)$substitute->format('w') && $shortName === 'childrensDay')
-                        || \in_array($substitute, $holidayDates, false)) {
-                        $substitute->add(new DateInterval('P1D'));
+                    while (0 === (int)$date->format('w')
+                           || (6 === (int)$date->format('w') && $shortName === 'childrensDay')
+                        || \in_array($date, $holidayDates, false)) {
+                        $date->add(new DateInterval('P1D'));
                         continue;
                     }
 
                     // Add a new holiday that is substituting the original holiday
-                    $holiday = new Holiday("substituteHoliday:$substitute->shortName", [
-                        'en_US' => $substitute->translations['en_US'] . ' Observed',
-                        'ko_KR' => '대체공휴일',
-                    ], $substitute, $this->locale);
+                    $substitute = new SubstituteHoliday(
+                        $holiday,
+                        [],
+                        $date,
+                        $this->locale
+                    );
 
                     // Add a new holiday that is substituting the original holiday
-                    $this->addHoliday($holiday);
+                    $this->addHoliday($substitute);
 
                     // Add substitute holiday to the list
-                    $holidays[] = $holiday;
+                    $holidays[] = $substitute;
                 }
             }
         }
