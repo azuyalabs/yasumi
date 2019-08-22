@@ -45,6 +45,7 @@ class CzechRepublic extends AbstractProvider
         $this->timezone = 'Europe/Prague';
 
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
+        $this->calculateRenewalOfCzechIndependenceDay();
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
@@ -57,6 +58,29 @@ class CzechRepublic extends AbstractProvider
         $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
+    }
+
+    /**
+     * Day of renewal of independent Czech state
+     *
+     * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
+     *
+     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
+     */
+    private function calculateRenewalOfCzechIndependenceDay(): void
+    {
+        $this->addHoliday(new Holiday(
+            'czechRenewalOfIndependentStateDay',
+            [
+                'cs_CZ' => 'Den obnovy samostatného českého státu',
+                'en_US' => 'Day of renewal of the independent Czech state'
+            ],
+            new DateTime($this->year . '-01-01', new \DateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /**

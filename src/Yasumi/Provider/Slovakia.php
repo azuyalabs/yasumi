@@ -68,7 +68,7 @@ class Slovakia extends AbstractProvider
         $this->timezone = 'Europe/Bratislava';
 
         // 1.1.
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
+        $this->calculateSlovakIndependenceDay();
         // 6.1.
         $this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
         // 1.5.
@@ -102,6 +102,30 @@ class Slovakia extends AbstractProvider
         // variable holidays - easter
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
+    }
+
+
+    /**
+     * New Year's Day
+     *
+     * @see https://en.wikipedia.org/wiki/Public_holidays_in_Slovakia
+     *
+     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws \InvalidArgumentException
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
+     */
+    private function calculateSlovakIndependenceDay(): void
+    {
+        $this->addHoliday(new Holiday(
+            'slovakIndependenceDay',
+            [
+                'sk_SK' => 'Deň vzniku Slovenskej republiky',
+                'en_US' => 'Day of the Establishment of the Slovak Republic'
+            ],
+            new DateTime($this->year . '-01-01', new \DateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /**

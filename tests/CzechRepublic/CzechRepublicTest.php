@@ -36,6 +36,7 @@ class CzechRepublicTest extends CzechRepublicBaseTestCase
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
+            'czechRenewalOfIndependentStateDay',
             'victoryInEuropeDay',
             'goodFriday',
             'easterMonday',

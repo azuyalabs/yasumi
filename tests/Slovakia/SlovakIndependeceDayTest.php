@@ -19,18 +19,19 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing New years day in Slovakia.
+ * Class for testing Slovak independence day in Slovakia.
  *
  *
  * @package Yasumi\tests\Slovakia
  * @author  Andrej Rypak (dakujem) <xrypak@gmail.com>
+ * @author Jan Langer <mail@janlanger.cz>
  */
-class NewYearsDayTest extends SlovakiaBaseTestCase implements YasumiTestCaseInterface
+class SlovakIndependeceDayTest extends SlovakiaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday to be tested
      */
-    public const HOLIDAY = 'newYearsDay';
+    public const HOLIDAY = 'slovakIndependenceDay';
 
 
     /**
