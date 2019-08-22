@@ -38,7 +38,7 @@ class SlovakiaTest extends SlovakiaBaseTestCase
     public function testOfficialHolidays(): void
     {
         $this->assertDefinedHolidays([
-            'newYearsDay',
+            'slovakIndependenceDay',
             'slovakConstitutionDay',
             'slovakNationalUprisingDay',
             'saintsCyrilAndMethodiusDay',

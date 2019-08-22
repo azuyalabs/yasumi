@@ -17,18 +17,19 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing New Years Day in the Czech Republic.
+ * Class for testing Day of renewal of independent czech state in Czechia.
  *
- * Class NewYearsDayTest
- * @package Yasumi\tests\CzechRepublic
- * @author  Dennis Fridrich <fridrich.dennis@gmail.com>
+ *
+ * @package Yasumi\tests\Slovakia
+ * @author  Andrej Rypak (dakujem) <xrypak@gmail.com>
+ * @author Jan Langer <mail@janlanger.cz>
  */
-class NewYearsDayTest extends CzechRepublicBaseTestCase implements YasumiTestCaseInterface
+class RenewalOfIndependentCzechStateDayTest extends CzechRepublicBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday to be tested
      */
-    public const HOLIDAY = 'newYearsDay';
+    public const HOLIDAY = 'czechRenewalOfIndependentStateDay';
 
     /**
      * Tests the holiday defined in this test.
@@ -66,7 +67,7 @@ class NewYearsDayTest extends CzechRepublicBaseTestCase implements YasumiTestCas
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'Nový rok']
+            [self::LOCALE => 'Den obnovy samostatného českého státu']
         );
     }
 
