@@ -1,0 +1,699 @@
+2010:
+  - date: 2010-01-01
+    name: 'Новий Рік'
+    type: official
+  - date: 2010-01-07
+    name: Різдво
+    type: official
+  - date: 2010-03-08
+    name: 'Міжнародний жіночий день'
+    type: official
+  - date: 2010-04-04
+    name: Великдень
+    type: official
+  - date: 2010-05-01
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2010-05-02
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2010-05-09
+    name: 'День перемоги'
+    type: official
+  - date: 2010-05-23
+    name: Трійця
+    type: official
+  - date: 2010-06-28
+    name: 'День Конституції'
+    type: official
+  - date: 2010-08-24
+    name: 'День Незалежності'
+    type: official
+2011:
+  - date: 2011-01-01
+    name: 'Новий Рік'
+    type: official
+  - date: 2011-01-07
+    name: Різдво
+    type: official
+  - date: 2011-03-08
+    name: 'Міжнародний жіночий день'
+    type: official
+  - date: 2011-04-24
+    name: Великдень
+    type: official
+  - date: 2011-05-01
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2011-05-02
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2011-05-09
+    name: 'День перемоги'
+    type: official
+  - date: 2011-06-12
+    name: Трійця
+    type: official
+  - date: 2011-06-28
+    name: 'День Конституції'
+    type: official
+  - date: 2011-08-24
+    name: 'День Незалежності'
+    type: official
+2012:
+  - date: 2012-01-01
+    name: 'Новий Рік'
+    type: official
+  - date: 2012-01-07
+    name: Різдво
+    type: official
+  - date: 2012-03-08
+    name: 'Міжнародний жіночий день'
+    type: official
+  - date: 2012-04-15
+    name: Великдень
+    type: official
+  - date: 2012-05-01
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2012-05-02
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2012-05-09
+    name: 'День перемоги'
+    type: official
+  - date: 2012-06-03
+    name: Трійця
+    type: official
+  - date: 2012-06-28
+    name: 'День Конституції'
+    type: official
+  - date: 2012-08-24
+    name: 'День Незалежності'
+    type: official
+2013:
+  - date: 2013-01-01
+    name: 'Новий Рік'
+    type: official
+  - date: 2013-01-07
+    name: Різдво
+    type: official
+  - date: 2013-03-08
+    name: 'Міжнародний жіночий день'
+    type: official
+  - date: 2013-05-01
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2013-05-02
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2013-05-05
+    name: Великдень
+    type: official
+  - date: 2013-05-09
+    name: 'День перемоги'
+    type: official
+  - date: 2013-06-23
+    name: Трійця
+    type: official
+  - date: 2013-06-28
+    name: 'День Конституції'
+    type: official
+  - date: 2013-08-24
+    name: 'День Незалежності'
+    type: official
+2014:
+  - date: 2014-01-01
+    name: 'Новий Рік'
+    type: official
+  - date: 2014-01-07
+    name: Різдво
+    type: official
+  - date: 2014-03-08
+    name: 'Міжнародний жіночий день'
+    type: official
+  - date: 2014-04-20
+    name: Великдень
+    type: official
+  - date: 2014-05-01
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2014-05-02
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2014-05-09
+    name: 'День перемоги'
+    type: official
+  - date: 2014-06-08
+    name: Трійця
+    type: official
+  - date: 2014-06-28
+    name: 'День Конституції'
+    type: official
+  - date: 2014-08-24
+    name: 'День Незалежності'
+    type: official
+2015:
+  - date: 2015-01-01
+    name: 'Новий Рік'
+    type: official
+  - date: 2015-01-07
+    name: Різдво
+    type: official
+  - date: 2015-03-08
+    name: 'Міжнародний жіночий день'
+    type: official
+  - date: 2015-04-12
+    name: Великдень
+    type: official
+  - date: 2015-05-01
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2015-05-02
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2015-05-09
+    name: 'День перемоги'
+    type: official
+  - date: 2015-05-31
+    name: Трійця
+    type: official
+  - date: 2015-06-28
+    name: 'День Конституції'
+    type: official
+  - date: 2015-08-24
+    name: 'День Незалежності'
+    type: official
+  - date: 2015-10-14
+    name: 'День захисника України'
+    type: official
+2016:
+  - date: 2016-01-01
+    name: 'Новий Рік'
+    type: official
+  - date: 2016-01-07
+    name: Різдво
+    type: official
+  - date: 2016-03-08
+    name: 'Міжнародний жіночий день'
+    type: official
+  - date: 2016-05-01
+    name: Великдень
+    type: official
+  - date: 2016-05-01
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2016-05-02
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2016-05-09
+    name: 'День перемоги'
+    type: official
+  - date: 2016-06-19
+    name: Трійця
+    type: official
+  - date: 2016-06-28
+    name: 'День Конституції'
+    type: official
+  - date: 2016-08-24
+    name: 'День Незалежності'
+    type: official
+  - date: 2016-10-14
+    name: 'День захисника України'
+    type: official
+2017:
+  - date: 2017-01-01
+    name: 'Новий Рік'
+    type: official
+  - date: 2017-01-07
+    name: Різдво
+    type: official
+  - date: 2017-03-08
+    name: 'Міжнародний жіночий день'
+    type: official
+  - date: 2017-04-16
+    name: Великдень
+    type: official
+  - date: 2017-05-01
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2017-05-02
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2017-05-09
+    name: 'День перемоги'
+    type: official
+  - date: 2017-06-04
+    name: Трійця
+    type: official
+  - date: 2017-06-28
+    name: 'День Конституції'
+    type: official
+  - date: 2017-08-24
+    name: 'День Незалежності'
+    type: official
+  - date: 2017-10-14
+    name: 'День захисника України'
+    type: official
+2018:
+  - date: 2018-01-01
+    name: 'Новий Рік'
+    type: official
+  - date: 2018-01-07
+    name: Різдво
+    type: official
+  - date: 2018-03-08
+    name: 'Міжнародний жіночий день'
+    type: official
+  - date: 2018-04-08
+    name: Великдень
+    type: official
+  - date: 2018-05-01
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2018-05-02
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2018-05-09
+    name: 'День перемоги'
+    type: official
+  - date: 2018-05-27
+    name: Трійця
+    type: official
+  - date: 2018-06-28
+    name: 'День Конституції'
+    type: official
+  - date: 2018-08-24
+    name: 'День Незалежності'
+    type: official
+  - date: 2018-10-14
+    name: 'День захисника України'
+    type: official
+2019:
+  - date: 2019-01-01
+    name: 'Новий Рік'
+    type: official
+  - date: 2019-01-07
+    name: Різдво
+    type: official
+  - date: 2019-03-08
+    name: 'Міжнародний жіночий день'
+    type: official
+  - date: 2019-04-28
+    name: Великдень
+    type: official
+  - date: 2019-05-01
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2019-05-02
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2019-05-09
+    name: 'День перемоги'
+    type: official
+  - date: 2019-06-16
+    name: Трійця
+    type: official
+  - date: 2019-06-28
+    name: 'День Конституції'
+    type: official
+  - date: 2019-08-24
+    name: 'День Незалежності'
+    type: official
+  - date: 2019-10-14
+    name: 'День захисника України'
+    type: official
+2020:
+  - date: 2020-01-01
+    name: 'Новий Рік'
+    type: official
+  - date: 2020-01-07
+    name: Різдво
+    type: official
+  - date: 2020-03-08
+    name: 'Міжнародний жіночий день'
+    type: official
+  - date: 2020-04-19
+    name: Великдень
+    type: official
+  - date: 2020-05-01
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2020-05-02
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2020-05-09
+    name: 'День перемоги'
+    type: official
+  - date: 2020-06-07
+    name: Трійця
+    type: official
+  - date: 2020-06-28
+    name: 'День Конституції'
+    type: official
+  - date: 2020-08-24
+    name: 'День Незалежності'
+    type: official
+  - date: 2020-10-14
+    name: 'День захисника України'
+    type: official
+2021:
+  - date: 2021-01-01
+    name: 'Новий Рік'
+    type: official
+  - date: 2021-01-07
+    name: Різдво
+    type: official
+  - date: 2021-03-08
+    name: 'Міжнародний жіночий день'
+    type: official
+  - date: 2021-05-01
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2021-05-02
+    name: Великдень
+    type: official
+  - date: 2021-05-02
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2021-05-09
+    name: 'День перемоги'
+    type: official
+  - date: 2021-06-20
+    name: Трійця
+    type: official
+  - date: 2021-06-28
+    name: 'День Конституції'
+    type: official
+  - date: 2021-08-24
+    name: 'День Незалежності'
+    type: official
+  - date: 2021-10-14
+    name: 'День захисника України'
+    type: official
+2022:
+  - date: 2022-01-01
+    name: 'Новий Рік'
+    type: official
+  - date: 2022-01-07
+    name: Різдво
+    type: official
+  - date: 2022-03-08
+    name: 'Міжнародний жіночий день'
+    type: official
+  - date: 2022-04-24
+    name: Великдень
+    type: official
+  - date: 2022-05-01
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2022-05-02
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2022-05-09
+    name: 'День перемоги'
+    type: official
+  - date: 2022-06-12
+    name: Трійця
+    type: official
+  - date: 2022-06-28
+    name: 'День Конституції'
+    type: official
+  - date: 2022-08-24
+    name: 'День Незалежності'
+    type: official
+  - date: 2022-10-14
+    name: 'День захисника України'
+    type: official
+2023:
+  - date: 2023-01-01
+    name: 'Новий Рік'
+    type: official
+  - date: 2023-01-07
+    name: Різдво
+    type: official
+  - date: 2023-03-08
+    name: 'Міжнародний жіночий день'
+    type: official
+  - date: 2023-04-16
+    name: Великдень
+    type: official
+  - date: 2023-05-01
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2023-05-02
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2023-05-09
+    name: 'День перемоги'
+    type: official
+  - date: 2023-06-04
+    name: Трійця
+    type: official
+  - date: 2023-06-28
+    name: 'День Конституції'
+    type: official
+  - date: 2023-08-24
+    name: 'День Незалежності'
+    type: official
+  - date: 2023-10-14
+    name: 'День захисника України'
+    type: official
+2024:
+  - date: 2024-01-01
+    name: 'Новий Рік'
+    type: official
+  - date: 2024-01-07
+    name: Різдво
+    type: official
+  - date: 2024-03-08
+    name: 'Міжнародний жіночий день'
+    type: official
+  - date: 2024-05-01
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2024-05-02
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2024-05-05
+    name: Великдень
+    type: official
+  - date: 2024-05-09
+    name: 'День перемоги'
+    type: official
+  - date: 2024-06-23
+    name: Трійця
+    type: official
+  - date: 2024-06-28
+    name: 'День Конституції'
+    type: official
+  - date: 2024-08-24
+    name: 'День Незалежності'
+    type: official
+  - date: 2024-10-14
+    name: 'День захисника України'
+    type: official
+2025:
+  - date: 2025-01-01
+    name: 'Новий Рік'
+    type: official
+  - date: 2025-01-07
+    name: Різдво
+    type: official
+  - date: 2025-03-08
+    name: 'Міжнародний жіночий день'
+    type: official
+  - date: 2025-04-20
+    name: Великдень
+    type: official
+  - date: 2025-05-01
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2025-05-02
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2025-05-09
+    name: 'День перемоги'
+    type: official
+  - date: 2025-06-08
+    name: Трійця
+    type: official
+  - date: 2025-06-28
+    name: 'День Конституції'
+    type: official
+  - date: 2025-08-24
+    name: 'День Незалежності'
+    type: official
+  - date: 2025-10-14
+    name: 'День захисника України'
+    type: official
+2026:
+  - date: 2026-01-01
+    name: 'Новий Рік'
+    type: official
+  - date: 2026-01-07
+    name: Різдво
+    type: official
+  - date: 2026-03-08
+    name: 'Міжнародний жіночий день'
+    type: official
+  - date: 2026-04-12
+    name: Великдень
+    type: official
+  - date: 2026-05-01
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2026-05-02
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2026-05-09
+    name: 'День перемоги'
+    type: official
+  - date: 2026-05-31
+    name: Трійця
+    type: official
+  - date: 2026-06-28
+    name: 'День Конституції'
+    type: official
+  - date: 2026-08-24
+    name: 'День Незалежності'
+    type: official
+  - date: 2026-10-14
+    name: 'День захисника України'
+    type: official
+2027:
+  - date: 2027-01-01
+    name: 'Новий Рік'
+    type: official
+  - date: 2027-01-07
+    name: Різдво
+    type: official
+  - date: 2027-03-08
+    name: 'Міжнародний жіночий день'
+    type: official
+  - date: 2027-05-01
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2027-05-02
+    name: Великдень
+    type: official
+  - date: 2027-05-02
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2027-05-09
+    name: 'День перемоги'
+    type: official
+  - date: 2027-06-20
+    name: Трійця
+    type: official
+  - date: 2027-06-28
+    name: 'День Конституції'
+    type: official
+  - date: 2027-08-24
+    name: 'День Незалежності'
+    type: official
+  - date: 2027-10-14
+    name: 'День захисника України'
+    type: official
+2028:
+  - date: 2028-01-01
+    name: 'Новий Рік'
+    type: official
+  - date: 2028-01-07
+    name: Різдво
+    type: official
+  - date: 2028-03-08
+    name: 'Міжнародний жіночий день'
+    type: official
+  - date: 2028-04-16
+    name: Великдень
+    type: official
+  - date: 2028-05-01
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2028-05-02
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2028-05-09
+    name: 'День перемоги'
+    type: official
+  - date: 2028-06-04
+    name: Трійця
+    type: official
+  - date: 2028-06-28
+    name: 'День Конституції'
+    type: official
+  - date: 2028-08-24
+    name: 'День Незалежності'
+    type: official
+  - date: 2028-10-14
+    name: 'День захисника України'
+    type: official
+2029:
+  - date: 2029-01-01
+    name: 'Новий Рік'
+    type: official
+  - date: 2029-01-07
+    name: Різдво
+    type: official
+  - date: 2029-03-08
+    name: 'Міжнародний жіночий день'
+    type: official
+  - date: 2029-04-08
+    name: Великдень
+    type: official
+  - date: 2029-05-01
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2029-05-02
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2029-05-09
+    name: 'День перемоги'
+    type: official
+  - date: 2029-05-27
+    name: Трійця
+    type: official
+  - date: 2029-06-28
+    name: 'День Конституції'
+    type: official
+  - date: 2029-08-24
+    name: 'День Незалежності'
+    type: official
+  - date: 2029-10-14
+    name: 'День захисника України'
+    type: official
+2030:
+  - date: 2030-01-01
+    name: 'Новий Рік'
+    type: official
+  - date: 2030-01-07
+    name: Різдво
+    type: official
+  - date: 2030-03-08
+    name: 'Міжнародний жіночий день'
+    type: official
+  - date: 2030-04-28
+    name: Великдень
+    type: official
+  - date: 2030-05-01
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2030-05-02
+    name: 'День міжнародної солідарності трудящих'
+    type: official
+  - date: 2030-05-09
+    name: 'День перемоги'
+    type: official
+  - date: 2030-06-16
+    name: Трійця
+    type: official
+  - date: 2030-06-28
+    name: 'День Конституції'
+    type: official
+  - date: 2030-08-24
+    name: 'День Незалежності'
+    type: official
+  - date: 2030-10-14
+    name: 'День захисника України'
+    type: official

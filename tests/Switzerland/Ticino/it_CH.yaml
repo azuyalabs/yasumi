@@ -1,0 +1,966 @@
+2010:
+  - date: 2010-01-01
+    name: Capodanno
+    type: other
+  - date: 2010-01-06
+    name: Epifania
+    type: other
+  - date: 2010-03-19
+    name: 'San Giuseppe'
+    type: other
+  - date: 2010-04-05
+    name: 'Lunedi di Pasqua'
+    type: other
+  - date: 2010-05-01
+    name: 'Festa dei lavoratori'
+    type: other
+  - date: 2010-05-13
+    name: Ascensione
+    type: other
+  - date: 2010-05-24
+    name: 'Lunedi di Pentecoste'
+    type: other
+  - date: 2010-06-03
+    name: 'Corpus Domini'
+    type: other
+  - date: 2010-06-29
+    name: 'Santi Pietro e Paolo'
+    type: other
+  - date: 2010-08-01
+    name: 'Giorno festivo federale'
+    type: official
+  - date: 2010-08-15
+    name: Assunzione
+    type: other
+  - date: 2010-11-01
+    name: Ognissanti
+    type: other
+  - date: 2010-12-08
+    name: 'Immacolata Concezione'
+    type: other
+  - date: 2010-12-25
+    name: Natale
+    type: other
+  - date: 2010-12-26
+    name: 'Santo Stefano'
+    type: other
+2011:
+  - date: 2011-01-01
+    name: Capodanno
+    type: other
+  - date: 2011-01-06
+    name: Epifania
+    type: other
+  - date: 2011-03-19
+    name: 'San Giuseppe'
+    type: other
+  - date: 2011-04-25
+    name: 'Lunedi di Pasqua'
+    type: other
+  - date: 2011-05-01
+    name: 'Festa dei lavoratori'
+    type: other
+  - date: 2011-06-02
+    name: Ascensione
+    type: other
+  - date: 2011-06-13
+    name: 'Lunedi di Pentecoste'
+    type: other
+  - date: 2011-06-23
+    name: 'Corpus Domini'
+    type: other
+  - date: 2011-06-29
+    name: 'Santi Pietro e Paolo'
+    type: other
+  - date: 2011-08-01
+    name: 'Giorno festivo federale'
+    type: official
+  - date: 2011-08-15
+    name: Assunzione
+    type: other
+  - date: 2011-11-01
+    name: Ognissanti
+    type: other
+  - date: 2011-12-08
+    name: 'Immacolata Concezione'
+    type: other
+  - date: 2011-12-25
+    name: Natale
+    type: other
+  - date: 2011-12-26
+    name: 'Santo Stefano'
+    type: other
+2012:
+  - date: 2012-01-01
+    name: Capodanno
+    type: other
+  - date: 2012-01-06
+    name: Epifania
+    type: other
+  - date: 2012-03-19
+    name: 'San Giuseppe'
+    type: other
+  - date: 2012-04-09
+    name: 'Lunedi di Pasqua'
+    type: other
+  - date: 2012-05-01
+    name: 'Festa dei lavoratori'
+    type: other
+  - date: 2012-05-17
+    name: Ascensione
+    type: other
+  - date: 2012-05-28
+    name: 'Lunedi di Pentecoste'
+    type: other
+  - date: 2012-06-07
+    name: 'Corpus Domini'
+    type: other
+  - date: 2012-06-29
+    name: 'Santi Pietro e Paolo'
+    type: other
+  - date: 2012-08-01
+    name: 'Giorno festivo federale'
+    type: official
+  - date: 2012-08-15
+    name: Assunzione
+    type: other
+  - date: 2012-11-01
+    name: Ognissanti
+    type: other
+  - date: 2012-12-08
+    name: 'Immacolata Concezione'
+    type: other
+  - date: 2012-12-25
+    name: Natale
+    type: other
+  - date: 2012-12-26
+    name: 'Santo Stefano'
+    type: other
+2013:
+  - date: 2013-01-01
+    name: Capodanno
+    type: other
+  - date: 2013-01-06
+    name: Epifania
+    type: other
+  - date: 2013-03-19
+    name: 'San Giuseppe'
+    type: other
+  - date: 2013-04-01
+    name: 'Lunedi di Pasqua'
+    type: other
+  - date: 2013-05-01
+    name: 'Festa dei lavoratori'
+    type: other
+  - date: 2013-05-09
+    name: Ascensione
+    type: other
+  - date: 2013-05-20
+    name: 'Lunedi di Pentecoste'
+    type: other
+  - date: 2013-05-30
+    name: 'Corpus Domini'
+    type: other
+  - date: 2013-06-29
+    name: 'Santi Pietro e Paolo'
+    type: other
+  - date: 2013-08-01
+    name: 'Giorno festivo federale'
+    type: official
+  - date: 2013-08-15
+    name: Assunzione
+    type: other
+  - date: 2013-11-01
+    name: Ognissanti
+    type: other
+  - date: 2013-12-08
+    name: 'Immacolata Concezione'
+    type: other
+  - date: 2013-12-25
+    name: Natale
+    type: other
+  - date: 2013-12-26
+    name: 'Santo Stefano'
+    type: other
+2014:
+  - date: 2014-01-01
+    name: Capodanno
+    type: other
+  - date: 2014-01-06
+    name: Epifania
+    type: other
+  - date: 2014-03-19
+    name: 'San Giuseppe'
+    type: other
+  - date: 2014-04-21
+    name: 'Lunedi di Pasqua'
+    type: other
+  - date: 2014-05-01
+    name: 'Festa dei lavoratori'
+    type: other
+  - date: 2014-05-29
+    name: Ascensione
+    type: other
+  - date: 2014-06-09
+    name: 'Lunedi di Pentecoste'
+    type: other
+  - date: 2014-06-19
+    name: 'Corpus Domini'
+    type: other
+  - date: 2014-06-29
+    name: 'Santi Pietro e Paolo'
+    type: other
+  - date: 2014-08-01
+    name: 'Giorno festivo federale'
+    type: official
+  - date: 2014-08-15
+    name: Assunzione
+    type: other
+  - date: 2014-11-01
+    name: Ognissanti
+    type: other
+  - date: 2014-12-08
+    name: 'Immacolata Concezione'
+    type: other
+  - date: 2014-12-25
+    name: Natale
+    type: other
+  - date: 2014-12-26
+    name: 'Santo Stefano'
+    type: other
+2015:
+  - date: 2015-01-01
+    name: Capodanno
+    type: other
+  - date: 2015-01-06
+    name: Epifania
+    type: other
+  - date: 2015-03-19
+    name: 'San Giuseppe'
+    type: other
+  - date: 2015-04-06
+    name: 'Lunedi di Pasqua'
+    type: other
+  - date: 2015-05-01
+    name: 'Festa dei lavoratori'
+    type: other
+  - date: 2015-05-14
+    name: Ascensione
+    type: other
+  - date: 2015-05-25
+    name: 'Lunedi di Pentecoste'
+    type: other
+  - date: 2015-06-04
+    name: 'Corpus Domini'
+    type: other
+  - date: 2015-06-29
+    name: 'Santi Pietro e Paolo'
+    type: other
+  - date: 2015-08-01
+    name: 'Giorno festivo federale'
+    type: official
+  - date: 2015-08-15
+    name: Assunzione
+    type: other
+  - date: 2015-11-01
+    name: Ognissanti
+    type: other
+  - date: 2015-12-08
+    name: 'Immacolata Concezione'
+    type: other
+  - date: 2015-12-25
+    name: Natale
+    type: other
+  - date: 2015-12-26
+    name: 'Santo Stefano'
+    type: other
+2016:
+  - date: 2016-01-01
+    name: Capodanno
+    type: other
+  - date: 2016-01-06
+    name: Epifania
+    type: other
+  - date: 2016-03-19
+    name: 'San Giuseppe'
+    type: other
+  - date: 2016-03-28
+    name: 'Lunedi di Pasqua'
+    type: other
+  - date: 2016-05-01
+    name: 'Festa dei lavoratori'
+    type: other
+  - date: 2016-05-05
+    name: Ascensione
+    type: other
+  - date: 2016-05-16
+    name: 'Lunedi di Pentecoste'
+    type: other
+  - date: 2016-05-26
+    name: 'Corpus Domini'
+    type: other
+  - date: 2016-06-29
+    name: 'Santi Pietro e Paolo'
+    type: other
+  - date: 2016-08-01
+    name: 'Giorno festivo federale'
+    type: official
+  - date: 2016-08-15
+    name: Assunzione
+    type: other
+  - date: 2016-11-01
+    name: Ognissanti
+    type: other
+  - date: 2016-12-08
+    name: 'Immacolata Concezione'
+    type: other
+  - date: 2016-12-25
+    name: Natale
+    type: other
+  - date: 2016-12-26
+    name: 'Santo Stefano'
+    type: other
+2017:
+  - date: 2017-01-01
+    name: Capodanno
+    type: other
+  - date: 2017-01-06
+    name: Epifania
+    type: other
+  - date: 2017-03-19
+    name: 'San Giuseppe'
+    type: other
+  - date: 2017-04-17
+    name: 'Lunedi di Pasqua'
+    type: other
+  - date: 2017-05-01
+    name: 'Festa dei lavoratori'
+    type: other
+  - date: 2017-05-25
+    name: Ascensione
+    type: other
+  - date: 2017-06-05
+    name: 'Lunedi di Pentecoste'
+    type: other
+  - date: 2017-06-15
+    name: 'Corpus Domini'
+    type: other
+  - date: 2017-06-29
+    name: 'Santi Pietro e Paolo'
+    type: other
+  - date: 2017-08-01
+    name: 'Giorno festivo federale'
+    type: official
+  - date: 2017-08-15
+    name: Assunzione
+    type: other
+  - date: 2017-11-01
+    name: Ognissanti
+    type: other
+  - date: 2017-12-08
+    name: 'Immacolata Concezione'
+    type: other
+  - date: 2017-12-25
+    name: Natale
+    type: other
+  - date: 2017-12-26
+    name: 'Santo Stefano'
+    type: other
+2018:
+  - date: 2018-01-01
+    name: Capodanno
+    type: other
+  - date: 2018-01-06
+    name: Epifania
+    type: other
+  - date: 2018-03-19
+    name: 'San Giuseppe'
+    type: other
+  - date: 2018-04-02
+    name: 'Lunedi di Pasqua'
+    type: other
+  - date: 2018-05-01
+    name: 'Festa dei lavoratori'
+    type: other
+  - date: 2018-05-10
+    name: Ascensione
+    type: other
+  - date: 2018-05-21
+    name: 'Lunedi di Pentecoste'
+    type: other
+  - date: 2018-05-31
+    name: 'Corpus Domini'
+    type: other
+  - date: 2018-06-29
+    name: 'Santi Pietro e Paolo'
+    type: other
+  - date: 2018-08-01
+    name: 'Giorno festivo federale'
+    type: official
+  - date: 2018-08-15
+    name: Assunzione
+    type: other
+  - date: 2018-11-01
+    name: Ognissanti
+    type: other
+  - date: 2018-12-08
+    name: 'Immacolata Concezione'
+    type: other
+  - date: 2018-12-25
+    name: Natale
+    type: other
+  - date: 2018-12-26
+    name: 'Santo Stefano'
+    type: other
+2019:
+  - date: 2019-01-01
+    name: Capodanno
+    type: other
+  - date: 2019-01-06
+    name: Epifania
+    type: other
+  - date: 2019-03-19
+    name: 'San Giuseppe'
+    type: other
+  - date: 2019-04-22
+    name: 'Lunedi di Pasqua'
+    type: other
+  - date: 2019-05-01
+    name: 'Festa dei lavoratori'
+    type: other
+  - date: 2019-05-30
+    name: Ascensione
+    type: other
+  - date: 2019-06-10
+    name: 'Lunedi di Pentecoste'
+    type: other
+  - date: 2019-06-20
+    name: 'Corpus Domini'
+    type: other
+  - date: 2019-06-29
+    name: 'Santi Pietro e Paolo'
+    type: other
+  - date: 2019-08-01
+    name: 'Giorno festivo federale'
+    type: official
+  - date: 2019-08-15
+    name: Assunzione
+    type: other
+  - date: 2019-11-01
+    name: Ognissanti
+    type: other
+  - date: 2019-12-08
+    name: 'Immacolata Concezione'
+    type: other
+  - date: 2019-12-25
+    name: Natale
+    type: other
+  - date: 2019-12-26
+    name: 'Santo Stefano'
+    type: other
+2020:
+  - date: 2020-01-01
+    name: Capodanno
+    type: other
+  - date: 2020-01-06
+    name: Epifania
+    type: other
+  - date: 2020-03-19
+    name: 'San Giuseppe'
+    type: other
+  - date: 2020-04-13
+    name: 'Lunedi di Pasqua'
+    type: other
+  - date: 2020-05-01
+    name: 'Festa dei lavoratori'
+    type: other
+  - date: 2020-05-21
+    name: Ascensione
+    type: other
+  - date: 2020-06-01
+    name: 'Lunedi di Pentecoste'
+    type: other
+  - date: 2020-06-11
+    name: 'Corpus Domini'
+    type: other
+  - date: 2020-06-29
+    name: 'Santi Pietro e Paolo'
+    type: other
+  - date: 2020-08-01
+    name: 'Giorno festivo federale'
+    type: official
+  - date: 2020-08-15
+    name: Assunzione
+    type: other
+  - date: 2020-11-01
+    name: Ognissanti
+    type: other
+  - date: 2020-12-08
+    name: 'Immacolata Concezione'
+    type: other
+  - date: 2020-12-25
+    name: Natale
+    type: other
+  - date: 2020-12-26
+    name: 'Santo Stefano'
+    type: other
+2021:
+  - date: 2021-01-01
+    name: Capodanno
+    type: other
+  - date: 2021-01-06
+    name: Epifania
+    type: other
+  - date: 2021-03-19
+    name: 'San Giuseppe'
+    type: other
+  - date: 2021-04-05
+    name: 'Lunedi di Pasqua'
+    type: other
+  - date: 2021-05-01
+    name: 'Festa dei lavoratori'
+    type: other
+  - date: 2021-05-13
+    name: Ascensione
+    type: other
+  - date: 2021-05-24
+    name: 'Lunedi di Pentecoste'
+    type: other
+  - date: 2021-06-03
+    name: 'Corpus Domini'
+    type: other
+  - date: 2021-06-29
+    name: 'Santi Pietro e Paolo'
+    type: other
+  - date: 2021-08-01
+    name: 'Giorno festivo federale'
+    type: official
+  - date: 2021-08-15
+    name: Assunzione
+    type: other
+  - date: 2021-11-01
+    name: Ognissanti
+    type: other
+  - date: 2021-12-08
+    name: 'Immacolata Concezione'
+    type: other
+  - date: 2021-12-25
+    name: Natale
+    type: other
+  - date: 2021-12-26
+    name: 'Santo Stefano'
+    type: other
+2022:
+  - date: 2022-01-01
+    name: Capodanno
+    type: other
+  - date: 2022-01-06
+    name: Epifania
+    type: other
+  - date: 2022-03-19
+    name: 'San Giuseppe'
+    type: other
+  - date: 2022-04-18
+    name: 'Lunedi di Pasqua'
+    type: other
+  - date: 2022-05-01
+    name: 'Festa dei lavoratori'
+    type: other
+  - date: 2022-05-26
+    name: Ascensione
+    type: other
+  - date: 2022-06-06
+    name: 'Lunedi di Pentecoste'
+    type: other
+  - date: 2022-06-16
+    name: 'Corpus Domini'
+    type: other
+  - date: 2022-06-29
+    name: 'Santi Pietro e Paolo'
+    type: other
+  - date: 2022-08-01
+    name: 'Giorno festivo federale'
+    type: official
+  - date: 2022-08-15
+    name: Assunzione
+    type: other
+  - date: 2022-11-01
+    name: Ognissanti
+    type: other
+  - date: 2022-12-08
+    name: 'Immacolata Concezione'
+    type: other
+  - date: 2022-12-25
+    name: Natale
+    type: other
+  - date: 2022-12-26
+    name: 'Santo Stefano'
+    type: other
+2023:
+  - date: 2023-01-01
+    name: Capodanno
+    type: other
+  - date: 2023-01-06
+    name: Epifania
+    type: other
+  - date: 2023-03-19
+    name: 'San Giuseppe'
+    type: other
+  - date: 2023-04-10
+    name: 'Lunedi di Pasqua'
+    type: other
+  - date: 2023-05-01
+    name: 'Festa dei lavoratori'
+    type: other
+  - date: 2023-05-18
+    name: Ascensione
+    type: other
+  - date: 2023-05-29
+    name: 'Lunedi di Pentecoste'
+    type: other
+  - date: 2023-06-08
+    name: 'Corpus Domini'
+    type: other
+  - date: 2023-06-29
+    name: 'Santi Pietro e Paolo'
+    type: other
+  - date: 2023-08-01
+    name: 'Giorno festivo federale'
+    type: official
+  - date: 2023-08-15
+    name: Assunzione
+    type: other
+  - date: 2023-11-01
+    name: Ognissanti
+    type: other
+  - date: 2023-12-08
+    name: 'Immacolata Concezione'
+    type: other
+  - date: 2023-12-25
+    name: Natale
+    type: other
+  - date: 2023-12-26
+    name: 'Santo Stefano'
+    type: other
+2024:
+  - date: 2024-01-01
+    name: Capodanno
+    type: other
+  - date: 2024-01-06
+    name: Epifania
+    type: other
+  - date: 2024-03-19
+    name: 'San Giuseppe'
+    type: other
+  - date: 2024-04-01
+    name: 'Lunedi di Pasqua'
+    type: other
+  - date: 2024-05-01
+    name: 'Festa dei lavoratori'
+    type: other
+  - date: 2024-05-09
+    name: Ascensione
+    type: other
+  - date: 2024-05-20
+    name: 'Lunedi di Pentecoste'
+    type: other
+  - date: 2024-05-30
+    name: 'Corpus Domini'
+    type: other
+  - date: 2024-06-29
+    name: 'Santi Pietro e Paolo'
+    type: other
+  - date: 2024-08-01
+    name: 'Giorno festivo federale'
+    type: official
+  - date: 2024-08-15
+    name: Assunzione
+    type: other
+  - date: 2024-11-01
+    name: Ognissanti
+    type: other
+  - date: 2024-12-08
+    name: 'Immacolata Concezione'
+    type: other
+  - date: 2024-12-25
+    name: Natale
+    type: other
+  - date: 2024-12-26
+    name: 'Santo Stefano'
+    type: other
+2025:
+  - date: 2025-01-01
+    name: Capodanno
+    type: other
+  - date: 2025-01-06
+    name: Epifania
+    type: other
+  - date: 2025-03-19
+    name: 'San Giuseppe'
+    type: other
+  - date: 2025-04-21
+    name: 'Lunedi di Pasqua'
+    type: other
+  - date: 2025-05-01
+    name: 'Festa dei lavoratori'
+    type: other
+  - date: 2025-05-29
+    name: Ascensione
+    type: other
+  - date: 2025-06-09
+    name: 'Lunedi di Pentecoste'
+    type: other
+  - date: 2025-06-19
+    name: 'Corpus Domini'
+    type: other
+  - date: 2025-06-29
+    name: 'Santi Pietro e Paolo'
+    type: other
+  - date: 2025-08-01
+    name: 'Giorno festivo federale'
+    type: official
+  - date: 2025-08-15
+    name: Assunzione
+    type: other
+  - date: 2025-11-01
+    name: Ognissanti
+    type: other
+  - date: 2025-12-08
+    name: 'Immacolata Concezione'
+    type: other
+  - date: 2025-12-25
+    name: Natale
+    type: other
+  - date: 2025-12-26
+    name: 'Santo Stefano'
+    type: other
+2026:
+  - date: 2026-01-01
+    name: Capodanno
+    type: other
+  - date: 2026-01-06
+    name: Epifania
+    type: other
+  - date: 2026-03-19
+    name: 'San Giuseppe'
+    type: other
+  - date: 2026-04-06
+    name: 'Lunedi di Pasqua'
+    type: other
+  - date: 2026-05-01
+    name: 'Festa dei lavoratori'
+    type: other
+  - date: 2026-05-14
+    name: Ascensione
+    type: other
+  - date: 2026-05-25
+    name: 'Lunedi di Pentecoste'
+    type: other
+  - date: 2026-06-04
+    name: 'Corpus Domini'
+    type: other
+  - date: 2026-06-29
+    name: 'Santi Pietro e Paolo'
+    type: other
+  - date: 2026-08-01
+    name: 'Giorno festivo federale'
+    type: official
+  - date: 2026-08-15
+    name: Assunzione
+    type: other
+  - date: 2026-11-01
+    name: Ognissanti
+    type: other
+  - date: 2026-12-08
+    name: 'Immacolata Concezione'
+    type: other
+  - date: 2026-12-25
+    name: Natale
+    type: other
+  - date: 2026-12-26
+    name: 'Santo Stefano'
+    type: other
+2027:
+  - date: 2027-01-01
+    name: Capodanno
+    type: other
+  - date: 2027-01-06
+    name: Epifania
+    type: other
+  - date: 2027-03-19
+    name: 'San Giuseppe'
+    type: other
+  - date: 2027-03-29
+    name: 'Lunedi di Pasqua'
+    type: other
+  - date: 2027-05-01
+    name: 'Festa dei lavoratori'
+    type: other
+  - date: 2027-05-06
+    name: Ascensione
+    type: other
+  - date: 2027-05-17
+    name: 'Lunedi di Pentecoste'
+    type: other
+  - date: 2027-05-27
+    name: 'Corpus Domini'
+    type: other
+  - date: 2027-06-29
+    name: 'Santi Pietro e Paolo'
+    type: other
+  - date: 2027-08-01
+    name: 'Giorno festivo federale'
+    type: official
+  - date: 2027-08-15
+    name: Assunzione
+    type: other
+  - date: 2027-11-01
+    name: Ognissanti
+    type: other
+  - date: 2027-12-08
+    name: 'Immacolata Concezione'
+    type: other
+  - date: 2027-12-25
+    name: Natale
+    type: other
+  - date: 2027-12-26
+    name: 'Santo Stefano'
+    type: other
+2028:
+  - date: 2028-01-01
+    name: Capodanno
+    type: other
+  - date: 2028-01-06
+    name: Epifania
+    type: other
+  - date: 2028-03-19
+    name: 'San Giuseppe'
+    type: other
+  - date: 2028-04-17
+    name: 'Lunedi di Pasqua'
+    type: other
+  - date: 2028-05-01
+    name: 'Festa dei lavoratori'
+    type: other
+  - date: 2028-05-25
+    name: Ascensione
+    type: other
+  - date: 2028-06-05
+    name: 'Lunedi di Pentecoste'
+    type: other
+  - date: 2028-06-15
+    name: 'Corpus Domini'
+    type: other
+  - date: 2028-06-29
+    name: 'Santi Pietro e Paolo'
+    type: other
+  - date: 2028-08-01
+    name: 'Giorno festivo federale'
+    type: official
+  - date: 2028-08-15
+    name: Assunzione
+    type: other
+  - date: 2028-11-01
+    name: Ognissanti
+    type: other
+  - date: 2028-12-08
+    name: 'Immacolata Concezione'
+    type: other
+  - date: 2028-12-25
+    name: Natale
+    type: other
+  - date: 2028-12-26
+    name: 'Santo Stefano'
+    type: other
+2029:
+  - date: 2029-01-01
+    name: Capodanno
+    type: other
+  - date: 2029-01-06
+    name: Epifania
+    type: other
+  - date: 2029-03-19
+    name: 'San Giuseppe'
+    type: other
+  - date: 2029-04-02
+    name: 'Lunedi di Pasqua'
+    type: other
+  - date: 2029-05-01
+    name: 'Festa dei lavoratori'
+    type: other
+  - date: 2029-05-10
+    name: Ascensione
+    type: other
+  - date: 2029-05-21
+    name: 'Lunedi di Pentecoste'
+    type: other
+  - date: 2029-05-31
+    name: 'Corpus Domini'
+    type: other
+  - date: 2029-06-29
+    name: 'Santi Pietro e Paolo'
+    type: other
+  - date: 2029-08-01
+    name: 'Giorno festivo federale'
+    type: official
+  - date: 2029-08-15
+    name: Assunzione
+    type: other
+  - date: 2029-11-01
+    name: Ognissanti
+    type: other
+  - date: 2029-12-08
+    name: 'Immacolata Concezione'
+    type: other
+  - date: 2029-12-25
+    name: Natale
+    type: other
+  - date: 2029-12-26
+    name: 'Santo Stefano'
+    type: other
+2030:
+  - date: 2030-01-01
+    name: Capodanno
+    type: other
+  - date: 2030-01-06
+    name: Epifania
+    type: other
+  - date: 2030-03-19
+    name: 'San Giuseppe'
+    type: other
+  - date: 2030-04-22
+    name: 'Lunedi di Pasqua'
+    type: other
+  - date: 2030-05-01
+    name: 'Festa dei lavoratori'
+    type: other
+  - date: 2030-05-30
+    name: Ascensione
+    type: other
+  - date: 2030-06-10
+    name: 'Lunedi di Pentecoste'
+    type: other
+  - date: 2030-06-20
+    name: 'Corpus Domini'
+    type: other
+  - date: 2030-06-29
+    name: 'Santi Pietro e Paolo'
+    type: other
+  - date: 2030-08-01
+    name: 'Giorno festivo federale'
+    type: official
+  - date: 2030-08-15
+    name: Assunzione
+    type: other
+  - date: 2030-11-01
+    name: Ognissanti
+    type: other
+  - date: 2030-12-08
+    name: 'Immacolata Concezione'
+    type: other
+  - date: 2030-12-25
+    name: Natale
+    type: other
+  - date: 2030-12-26
+    name: 'Santo Stefano'
+    type: other

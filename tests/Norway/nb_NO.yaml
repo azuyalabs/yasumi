@@ -1,0 +1,777 @@
+2010:
+  - date: 2010-01-01
+    name: 'Første nyttårsdag'
+    type: official
+  - date: 2010-04-01
+    name: Skjærtorsdag
+    type: official
+  - date: 2010-04-02
+    name: Langfredag
+    type: official
+  - date: 2010-04-04
+    name: 'Første påskedag'
+    type: official
+  - date: 2010-04-05
+    name: 'Andre påskedag'
+    type: official
+  - date: 2010-05-01
+    name: 'Arbeidernes dag'
+    type: official
+  - date: 2010-05-13
+    name: 'Kristi himmelfartsdag'
+    type: official
+  - date: 2010-05-17
+    name: Grunnlovsdagen
+    type: official
+  - date: 2010-05-23
+    name: 'Første pinsedag'
+    type: official
+  - date: 2010-05-24
+    name: 'Andre pinsedag'
+    type: official
+  - date: 2010-12-25
+    name: 'Første juledag'
+    type: official
+  - date: 2010-12-26
+    name: 'Andre juledag'
+    type: official
+2011:
+  - date: 2011-01-01
+    name: 'Første nyttårsdag'
+    type: official
+  - date: 2011-04-21
+    name: Skjærtorsdag
+    type: official
+  - date: 2011-04-22
+    name: Langfredag
+    type: official
+  - date: 2011-04-24
+    name: 'Første påskedag'
+    type: official
+  - date: 2011-04-25
+    name: 'Andre påskedag'
+    type: official
+  - date: 2011-05-01
+    name: 'Arbeidernes dag'
+    type: official
+  - date: 2011-05-17
+    name: Grunnlovsdagen
+    type: official
+  - date: 2011-06-02
+    name: 'Kristi himmelfartsdag'
+    type: official
+  - date: 2011-06-12
+    name: 'Første pinsedag'
+    type: official
+  - date: 2011-06-13
+    name: 'Andre pinsedag'
+    type: official
+  - date: 2011-12-25
+    name: 'Første juledag'
+    type: official
+  - date: 2011-12-26
+    name: 'Andre juledag'
+    type: official
+2012:
+  - date: 2012-01-01
+    name: 'Første nyttårsdag'
+    type: official
+  - date: 2012-04-05
+    name: Skjærtorsdag
+    type: official
+  - date: 2012-04-06
+    name: Langfredag
+    type: official
+  - date: 2012-04-08
+    name: 'Første påskedag'
+    type: official
+  - date: 2012-04-09
+    name: 'Andre påskedag'
+    type: official
+  - date: 2012-05-01
+    name: 'Arbeidernes dag'
+    type: official
+  - date: 2012-05-17
+    name: Grunnlovsdagen
+    type: official
+  - date: 2012-05-17
+    name: 'Kristi himmelfartsdag'
+    type: official
+  - date: 2012-05-27
+    name: 'Første pinsedag'
+    type: official
+  - date: 2012-05-28
+    name: 'Andre pinsedag'
+    type: official
+  - date: 2012-12-25
+    name: 'Første juledag'
+    type: official
+  - date: 2012-12-26
+    name: 'Andre juledag'
+    type: official
+2013:
+  - date: 2013-01-01
+    name: 'Første nyttårsdag'
+    type: official
+  - date: 2013-03-28
+    name: Skjærtorsdag
+    type: official
+  - date: 2013-03-29
+    name: Langfredag
+    type: official
+  - date: 2013-03-31
+    name: 'Første påskedag'
+    type: official
+  - date: 2013-04-01
+    name: 'Andre påskedag'
+    type: official
+  - date: 2013-05-01
+    name: 'Arbeidernes dag'
+    type: official
+  - date: 2013-05-09
+    name: 'Kristi himmelfartsdag'
+    type: official
+  - date: 2013-05-17
+    name: Grunnlovsdagen
+    type: official
+  - date: 2013-05-19
+    name: 'Første pinsedag'
+    type: official
+  - date: 2013-05-20
+    name: 'Andre pinsedag'
+    type: official
+  - date: 2013-12-25
+    name: 'Første juledag'
+    type: official
+  - date: 2013-12-26
+    name: 'Andre juledag'
+    type: official
+2014:
+  - date: 2014-01-01
+    name: 'Første nyttårsdag'
+    type: official
+  - date: 2014-04-17
+    name: Skjærtorsdag
+    type: official
+  - date: 2014-04-18
+    name: Langfredag
+    type: official
+  - date: 2014-04-20
+    name: 'Første påskedag'
+    type: official
+  - date: 2014-04-21
+    name: 'Andre påskedag'
+    type: official
+  - date: 2014-05-01
+    name: 'Arbeidernes dag'
+    type: official
+  - date: 2014-05-17
+    name: Grunnlovsdagen
+    type: official
+  - date: 2014-05-29
+    name: 'Kristi himmelfartsdag'
+    type: official
+  - date: 2014-06-08
+    name: 'Første pinsedag'
+    type: official
+  - date: 2014-06-09
+    name: 'Andre pinsedag'
+    type: official
+  - date: 2014-12-25
+    name: 'Første juledag'
+    type: official
+  - date: 2014-12-26
+    name: 'Andre juledag'
+    type: official
+2015:
+  - date: 2015-01-01
+    name: 'Første nyttårsdag'
+    type: official
+  - date: 2015-04-02
+    name: Skjærtorsdag
+    type: official
+  - date: 2015-04-03
+    name: Langfredag
+    type: official
+  - date: 2015-04-05
+    name: 'Første påskedag'
+    type: official
+  - date: 2015-04-06
+    name: 'Andre påskedag'
+    type: official
+  - date: 2015-05-01
+    name: 'Arbeidernes dag'
+    type: official
+  - date: 2015-05-14
+    name: 'Kristi himmelfartsdag'
+    type: official
+  - date: 2015-05-17
+    name: Grunnlovsdagen
+    type: official
+  - date: 2015-05-24
+    name: 'Første pinsedag'
+    type: official
+  - date: 2015-05-25
+    name: 'Andre pinsedag'
+    type: official
+  - date: 2015-12-25
+    name: 'Første juledag'
+    type: official
+  - date: 2015-12-26
+    name: 'Andre juledag'
+    type: official
+2016:
+  - date: 2016-01-01
+    name: 'Første nyttårsdag'
+    type: official
+  - date: 2016-03-24
+    name: Skjærtorsdag
+    type: official
+  - date: 2016-03-25
+    name: Langfredag
+    type: official
+  - date: 2016-03-27
+    name: 'Første påskedag'
+    type: official
+  - date: 2016-03-28
+    name: 'Andre påskedag'
+    type: official
+  - date: 2016-05-01
+    name: 'Arbeidernes dag'
+    type: official
+  - date: 2016-05-05
+    name: 'Kristi himmelfartsdag'
+    type: official
+  - date: 2016-05-15
+    name: 'Første pinsedag'
+    type: official
+  - date: 2016-05-16
+    name: 'Andre pinsedag'
+    type: official
+  - date: 2016-05-17
+    name: Grunnlovsdagen
+    type: official
+  - date: 2016-12-25
+    name: 'Første juledag'
+    type: official
+  - date: 2016-12-26
+    name: 'Andre juledag'
+    type: official
+2017:
+  - date: 2017-01-01
+    name: 'Første nyttårsdag'
+    type: official
+  - date: 2017-04-13
+    name: Skjærtorsdag
+    type: official
+  - date: 2017-04-14
+    name: Langfredag
+    type: official
+  - date: 2017-04-16
+    name: 'Første påskedag'
+    type: official
+  - date: 2017-04-17
+    name: 'Andre påskedag'
+    type: official
+  - date: 2017-05-01
+    name: 'Arbeidernes dag'
+    type: official
+  - date: 2017-05-17
+    name: Grunnlovsdagen
+    type: official
+  - date: 2017-05-25
+    name: 'Kristi himmelfartsdag'
+    type: official
+  - date: 2017-06-04
+    name: 'Første pinsedag'
+    type: official
+  - date: 2017-06-05
+    name: 'Andre pinsedag'
+    type: official
+  - date: 2017-12-25
+    name: 'Første juledag'
+    type: official
+  - date: 2017-12-26
+    name: 'Andre juledag'
+    type: official
+2018:
+  - date: 2018-01-01
+    name: 'Første nyttårsdag'
+    type: official
+  - date: 2018-03-29
+    name: Skjærtorsdag
+    type: official
+  - date: 2018-03-30
+    name: Langfredag
+    type: official
+  - date: 2018-04-01
+    name: 'Første påskedag'
+    type: official
+  - date: 2018-04-02
+    name: 'Andre påskedag'
+    type: official
+  - date: 2018-05-01
+    name: 'Arbeidernes dag'
+    type: official
+  - date: 2018-05-10
+    name: 'Kristi himmelfartsdag'
+    type: official
+  - date: 2018-05-17
+    name: Grunnlovsdagen
+    type: official
+  - date: 2018-05-20
+    name: 'Første pinsedag'
+    type: official
+  - date: 2018-05-21
+    name: 'Andre pinsedag'
+    type: official
+  - date: 2018-12-25
+    name: 'Første juledag'
+    type: official
+  - date: 2018-12-26
+    name: 'Andre juledag'
+    type: official
+2019:
+  - date: 2019-01-01
+    name: 'Første nyttårsdag'
+    type: official
+  - date: 2019-04-18
+    name: Skjærtorsdag
+    type: official
+  - date: 2019-04-19
+    name: Langfredag
+    type: official
+  - date: 2019-04-21
+    name: 'Første påskedag'
+    type: official
+  - date: 2019-04-22
+    name: 'Andre påskedag'
+    type: official
+  - date: 2019-05-01
+    name: 'Arbeidernes dag'
+    type: official
+  - date: 2019-05-17
+    name: Grunnlovsdagen
+    type: official
+  - date: 2019-05-30
+    name: 'Kristi himmelfartsdag'
+    type: official
+  - date: 2019-06-09
+    name: 'Første pinsedag'
+    type: official
+  - date: 2019-06-10
+    name: 'Andre pinsedag'
+    type: official
+  - date: 2019-12-25
+    name: 'Første juledag'
+    type: official
+  - date: 2019-12-26
+    name: 'Andre juledag'
+    type: official
+2020:
+  - date: 2020-01-01
+    name: 'Første nyttårsdag'
+    type: official
+  - date: 2020-04-09
+    name: Skjærtorsdag
+    type: official
+  - date: 2020-04-10
+    name: Langfredag
+    type: official
+  - date: 2020-04-12
+    name: 'Første påskedag'
+    type: official
+  - date: 2020-04-13
+    name: 'Andre påskedag'
+    type: official
+  - date: 2020-05-01
+    name: 'Arbeidernes dag'
+    type: official
+  - date: 2020-05-17
+    name: Grunnlovsdagen
+    type: official
+  - date: 2020-05-21
+    name: 'Kristi himmelfartsdag'
+    type: official
+  - date: 2020-05-31
+    name: 'Første pinsedag'
+    type: official
+  - date: 2020-06-01
+    name: 'Andre pinsedag'
+    type: official
+  - date: 2020-12-25
+    name: 'Første juledag'
+    type: official
+  - date: 2020-12-26
+    name: 'Andre juledag'
+    type: official
+2021:
+  - date: 2021-01-01
+    name: 'Første nyttårsdag'
+    type: official
+  - date: 2021-04-01
+    name: Skjærtorsdag
+    type: official
+  - date: 2021-04-02
+    name: Langfredag
+    type: official
+  - date: 2021-04-04
+    name: 'Første påskedag'
+    type: official
+  - date: 2021-04-05
+    name: 'Andre påskedag'
+    type: official
+  - date: 2021-05-01
+    name: 'Arbeidernes dag'
+    type: official
+  - date: 2021-05-13
+    name: 'Kristi himmelfartsdag'
+    type: official
+  - date: 2021-05-17
+    name: Grunnlovsdagen
+    type: official
+  - date: 2021-05-23
+    name: 'Første pinsedag'
+    type: official
+  - date: 2021-05-24
+    name: 'Andre pinsedag'
+    type: official
+  - date: 2021-12-25
+    name: 'Første juledag'
+    type: official
+  - date: 2021-12-26
+    name: 'Andre juledag'
+    type: official
+2022:
+  - date: 2022-01-01
+    name: 'Første nyttårsdag'
+    type: official
+  - date: 2022-04-14
+    name: Skjærtorsdag
+    type: official
+  - date: 2022-04-15
+    name: Langfredag
+    type: official
+  - date: 2022-04-17
+    name: 'Første påskedag'
+    type: official
+  - date: 2022-04-18
+    name: 'Andre påskedag'
+    type: official
+  - date: 2022-05-01
+    name: 'Arbeidernes dag'
+    type: official
+  - date: 2022-05-17
+    name: Grunnlovsdagen
+    type: official
+  - date: 2022-05-26
+    name: 'Kristi himmelfartsdag'
+    type: official
+  - date: 2022-06-05
+    name: 'Første pinsedag'
+    type: official
+  - date: 2022-06-06
+    name: 'Andre pinsedag'
+    type: official
+  - date: 2022-12-25
+    name: 'Første juledag'
+    type: official
+  - date: 2022-12-26
+    name: 'Andre juledag'
+    type: official
+2023:
+  - date: 2023-01-01
+    name: 'Første nyttårsdag'
+    type: official
+  - date: 2023-04-06
+    name: Skjærtorsdag
+    type: official
+  - date: 2023-04-07
+    name: Langfredag
+    type: official
+  - date: 2023-04-09
+    name: 'Første påskedag'
+    type: official
+  - date: 2023-04-10
+    name: 'Andre påskedag'
+    type: official
+  - date: 2023-05-01
+    name: 'Arbeidernes dag'
+    type: official
+  - date: 2023-05-17
+    name: Grunnlovsdagen
+    type: official
+  - date: 2023-05-18
+    name: 'Kristi himmelfartsdag'
+    type: official
+  - date: 2023-05-28
+    name: 'Første pinsedag'
+    type: official
+  - date: 2023-05-29
+    name: 'Andre pinsedag'
+    type: official
+  - date: 2023-12-25
+    name: 'Første juledag'
+    type: official
+  - date: 2023-12-26
+    name: 'Andre juledag'
+    type: official
+2024:
+  - date: 2024-01-01
+    name: 'Første nyttårsdag'
+    type: official
+  - date: 2024-03-28
+    name: Skjærtorsdag
+    type: official
+  - date: 2024-03-29
+    name: Langfredag
+    type: official
+  - date: 2024-03-31
+    name: 'Første påskedag'
+    type: official
+  - date: 2024-04-01
+    name: 'Andre påskedag'
+    type: official
+  - date: 2024-05-01
+    name: 'Arbeidernes dag'
+    type: official
+  - date: 2024-05-09
+    name: 'Kristi himmelfartsdag'
+    type: official
+  - date: 2024-05-17
+    name: Grunnlovsdagen
+    type: official
+  - date: 2024-05-19
+    name: 'Første pinsedag'
+    type: official
+  - date: 2024-05-20
+    name: 'Andre pinsedag'
+    type: official
+  - date: 2024-12-25
+    name: 'Første juledag'
+    type: official
+  - date: 2024-12-26
+    name: 'Andre juledag'
+    type: official
+2025:
+  - date: 2025-01-01
+    name: 'Første nyttårsdag'
+    type: official
+  - date: 2025-04-17
+    name: Skjærtorsdag
+    type: official
+  - date: 2025-04-18
+    name: Langfredag
+    type: official
+  - date: 2025-04-20
+    name: 'Første påskedag'
+    type: official
+  - date: 2025-04-21
+    name: 'Andre påskedag'
+    type: official
+  - date: 2025-05-01
+    name: 'Arbeidernes dag'
+    type: official
+  - date: 2025-05-17
+    name: Grunnlovsdagen
+    type: official
+  - date: 2025-05-29
+    name: 'Kristi himmelfartsdag'
+    type: official
+  - date: 2025-06-08
+    name: 'Første pinsedag'
+    type: official
+  - date: 2025-06-09
+    name: 'Andre pinsedag'
+    type: official
+  - date: 2025-12-25
+    name: 'Første juledag'
+    type: official
+  - date: 2025-12-26
+    name: 'Andre juledag'
+    type: official
+2026:
+  - date: 2026-01-01
+    name: 'Første nyttårsdag'
+    type: official
+  - date: 2026-04-02
+    name: Skjærtorsdag
+    type: official
+  - date: 2026-04-03
+    name: Langfredag
+    type: official
+  - date: 2026-04-05
+    name: 'Første påskedag'
+    type: official
+  - date: 2026-04-06
+    name: 'Andre påskedag'
+    type: official
+  - date: 2026-05-01
+    name: 'Arbeidernes dag'
+    type: official
+  - date: 2026-05-14
+    name: 'Kristi himmelfartsdag'
+    type: official
+  - date: 2026-05-17
+    name: Grunnlovsdagen
+    type: official
+  - date: 2026-05-24
+    name: 'Første pinsedag'
+    type: official
+  - date: 2026-05-25
+    name: 'Andre pinsedag'
+    type: official
+  - date: 2026-12-25
+    name: 'Første juledag'
+    type: official
+  - date: 2026-12-26
+    name: 'Andre juledag'
+    type: official
+2027:
+  - date: 2027-01-01
+    name: 'Første nyttårsdag'
+    type: official
+  - date: 2027-03-25
+    name: Skjærtorsdag
+    type: official
+  - date: 2027-03-26
+    name: Langfredag
+    type: official
+  - date: 2027-03-28
+    name: 'Første påskedag'
+    type: official
+  - date: 2027-03-29
+    name: 'Andre påskedag'
+    type: official
+  - date: 2027-05-01
+    name: 'Arbeidernes dag'
+    type: official
+  - date: 2027-05-06
+    name: 'Kristi himmelfartsdag'
+    type: official
+  - date: 2027-05-16
+    name: 'Første pinsedag'
+    type: official
+  - date: 2027-05-17
+    name: 'Andre pinsedag'
+    type: official
+  - date: 2027-05-17
+    name: Grunnlovsdagen
+    type: official
+  - date: 2027-12-25
+    name: 'Første juledag'
+    type: official
+  - date: 2027-12-26
+    name: 'Andre juledag'
+    type: official
+2028:
+  - date: 2028-01-01
+    name: 'Første nyttårsdag'
+    type: official
+  - date: 2028-04-13
+    name: Skjærtorsdag
+    type: official
+  - date: 2028-04-14
+    name: Langfredag
+    type: official
+  - date: 2028-04-16
+    name: 'Første påskedag'
+    type: official
+  - date: 2028-04-17
+    name: 'Andre påskedag'
+    type: official
+  - date: 2028-05-01
+    name: 'Arbeidernes dag'
+    type: official
+  - date: 2028-05-17
+    name: Grunnlovsdagen
+    type: official
+  - date: 2028-05-25
+    name: 'Kristi himmelfartsdag'
+    type: official
+  - date: 2028-06-04
+    name: 'Første pinsedag'
+    type: official
+  - date: 2028-06-05
+    name: 'Andre pinsedag'
+    type: official
+  - date: 2028-12-25
+    name: 'Første juledag'
+    type: official
+  - date: 2028-12-26
+    name: 'Andre juledag'
+    type: official
+2029:
+  - date: 2029-01-01
+    name: 'Første nyttårsdag'
+    type: official
+  - date: 2029-03-29
+    name: Skjærtorsdag
+    type: official
+  - date: 2029-03-30
+    name: Langfredag
+    type: official
+  - date: 2029-04-01
+    name: 'Første påskedag'
+    type: official
+  - date: 2029-04-02
+    name: 'Andre påskedag'
+    type: official
+  - date: 2029-05-01
+    name: 'Arbeidernes dag'
+    type: official
+  - date: 2029-05-10
+    name: 'Kristi himmelfartsdag'
+    type: official
+  - date: 2029-05-17
+    name: Grunnlovsdagen
+    type: official
+  - date: 2029-05-20
+    name: 'Første pinsedag'
+    type: official
+  - date: 2029-05-21
+    name: 'Andre pinsedag'
+    type: official
+  - date: 2029-12-25
+    name: 'Første juledag'
+    type: official
+  - date: 2029-12-26
+    name: 'Andre juledag'
+    type: official
+2030:
+  - date: 2030-01-01
+    name: 'Første nyttårsdag'
+    type: official
+  - date: 2030-04-18
+    name: Skjærtorsdag
+    type: official
+  - date: 2030-04-19
+    name: Langfredag
+    type: official
+  - date: 2030-04-21
+    name: 'Første påskedag'
+    type: official
+  - date: 2030-04-22
+    name: 'Andre påskedag'
+    type: official
+  - date: 2030-05-01
+    name: 'Arbeidernes dag'
+    type: official
+  - date: 2030-05-17
+    name: Grunnlovsdagen
+    type: official
+  - date: 2030-05-30
+    name: 'Kristi himmelfartsdag'
+    type: official
+  - date: 2030-06-09
+    name: 'Første pinsedag'
+    type: official
+  - date: 2030-06-10
+    name: 'Andre pinsedag'
+    type: official
+  - date: 2030-12-25
+    name: 'Første juledag'
+    type: official
+  - date: 2030-12-26
+    name: 'Andre juledag'
+    type: official

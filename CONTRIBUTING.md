@@ -25,6 +25,8 @@ When contributing there are a few guidelines we'd like you to keep in mind:
     4. As almost all of the tests use automatic iterations, make sure the year for which the test is executed is a valid 
    year. Some holidays are only established from a certain year and having the test year number smaller than the minimum
    establishment year (amongst all holidays) can result in false errors.
+    5. Add YAML files for relevant locales. To bootstrap a file, copy the YAML file from some provider and run `YamlTest.php`
+   with the environment variable `DUMP_YAML=1`.
 
 - **Document any change** - Make sure the `README.md` and any other relevant documentation are kept up-to-date.
 

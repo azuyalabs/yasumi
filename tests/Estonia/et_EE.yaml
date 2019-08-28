@@ -1,0 +1,777 @@
+2010:
+  - date: 2010-01-01
+    name: Uusaasta
+    type: official
+  - date: 2010-02-24
+    name: 'Independence Day'
+    type: official
+  - date: 2010-04-02
+    name: 'Suur Reede'
+    type: official
+  - date: 2010-04-04
+    name: 'Ülestõusmispühade 1. püha'
+    type: official
+  - date: 2010-05-01
+    name: Kevadpüha
+    type: official
+  - date: 2010-05-23
+    name: 'Nelipühade 1. püha'
+    type: official
+  - date: 2010-06-23
+    name: 'Victory Day'
+    type: official
+  - date: 2010-06-24
+    name: Jaanipäev
+    type: official
+  - date: 2010-08-20
+    name: 'Day of Restoration of Independence'
+    type: official
+  - date: 2010-12-24
+    name: Jõululaupäev
+    type: official
+  - date: 2010-12-25
+    name: 'Esimene jõulupüha'
+    type: official
+  - date: 2010-12-26
+    name: 'Teine Jõulupüha'
+    type: official
+2011:
+  - date: 2011-01-01
+    name: Uusaasta
+    type: official
+  - date: 2011-02-24
+    name: 'Independence Day'
+    type: official
+  - date: 2011-04-22
+    name: 'Suur Reede'
+    type: official
+  - date: 2011-04-24
+    name: 'Ülestõusmispühade 1. püha'
+    type: official
+  - date: 2011-05-01
+    name: Kevadpüha
+    type: official
+  - date: 2011-06-12
+    name: 'Nelipühade 1. püha'
+    type: official
+  - date: 2011-06-23
+    name: 'Victory Day'
+    type: official
+  - date: 2011-06-24
+    name: Jaanipäev
+    type: official
+  - date: 2011-08-20
+    name: 'Day of Restoration of Independence'
+    type: official
+  - date: 2011-12-24
+    name: Jõululaupäev
+    type: official
+  - date: 2011-12-25
+    name: 'Esimene jõulupüha'
+    type: official
+  - date: 2011-12-26
+    name: 'Teine Jõulupüha'
+    type: official
+2012:
+  - date: 2012-01-01
+    name: Uusaasta
+    type: official
+  - date: 2012-02-24
+    name: 'Independence Day'
+    type: official
+  - date: 2012-04-06
+    name: 'Suur Reede'
+    type: official
+  - date: 2012-04-08
+    name: 'Ülestõusmispühade 1. püha'
+    type: official
+  - date: 2012-05-01
+    name: Kevadpüha
+    type: official
+  - date: 2012-05-27
+    name: 'Nelipühade 1. püha'
+    type: official
+  - date: 2012-06-23
+    name: 'Victory Day'
+    type: official
+  - date: 2012-06-24
+    name: Jaanipäev
+    type: official
+  - date: 2012-08-20
+    name: 'Day of Restoration of Independence'
+    type: official
+  - date: 2012-12-24
+    name: Jõululaupäev
+    type: official
+  - date: 2012-12-25
+    name: 'Esimene jõulupüha'
+    type: official
+  - date: 2012-12-26
+    name: 'Teine Jõulupüha'
+    type: official
+2013:
+  - date: 2013-01-01
+    name: Uusaasta
+    type: official
+  - date: 2013-02-24
+    name: 'Independence Day'
+    type: official
+  - date: 2013-03-29
+    name: 'Suur Reede'
+    type: official
+  - date: 2013-03-31
+    name: 'Ülestõusmispühade 1. püha'
+    type: official
+  - date: 2013-05-01
+    name: Kevadpüha
+    type: official
+  - date: 2013-05-19
+    name: 'Nelipühade 1. püha'
+    type: official
+  - date: 2013-06-23
+    name: 'Victory Day'
+    type: official
+  - date: 2013-06-24
+    name: Jaanipäev
+    type: official
+  - date: 2013-08-20
+    name: 'Day of Restoration of Independence'
+    type: official
+  - date: 2013-12-24
+    name: Jõululaupäev
+    type: official
+  - date: 2013-12-25
+    name: 'Esimene jõulupüha'
+    type: official
+  - date: 2013-12-26
+    name: 'Teine Jõulupüha'
+    type: official
+2014:
+  - date: 2014-01-01
+    name: Uusaasta
+    type: official
+  - date: 2014-02-24
+    name: 'Independence Day'
+    type: official
+  - date: 2014-04-18
+    name: 'Suur Reede'
+    type: official
+  - date: 2014-04-20
+    name: 'Ülestõusmispühade 1. püha'
+    type: official
+  - date: 2014-05-01
+    name: Kevadpüha
+    type: official
+  - date: 2014-06-08
+    name: 'Nelipühade 1. püha'
+    type: official
+  - date: 2014-06-23
+    name: 'Victory Day'
+    type: official
+  - date: 2014-06-24
+    name: Jaanipäev
+    type: official
+  - date: 2014-08-20
+    name: 'Day of Restoration of Independence'
+    type: official
+  - date: 2014-12-24
+    name: Jõululaupäev
+    type: official
+  - date: 2014-12-25
+    name: 'Esimene jõulupüha'
+    type: official
+  - date: 2014-12-26
+    name: 'Teine Jõulupüha'
+    type: official
+2015:
+  - date: 2015-01-01
+    name: Uusaasta
+    type: official
+  - date: 2015-02-24
+    name: 'Independence Day'
+    type: official
+  - date: 2015-04-03
+    name: 'Suur Reede'
+    type: official
+  - date: 2015-04-05
+    name: 'Ülestõusmispühade 1. püha'
+    type: official
+  - date: 2015-05-01
+    name: Kevadpüha
+    type: official
+  - date: 2015-05-24
+    name: 'Nelipühade 1. püha'
+    type: official
+  - date: 2015-06-23
+    name: 'Victory Day'
+    type: official
+  - date: 2015-06-24
+    name: Jaanipäev
+    type: official
+  - date: 2015-08-20
+    name: 'Day of Restoration of Independence'
+    type: official
+  - date: 2015-12-24
+    name: Jõululaupäev
+    type: official
+  - date: 2015-12-25
+    name: 'Esimene jõulupüha'
+    type: official
+  - date: 2015-12-26
+    name: 'Teine Jõulupüha'
+    type: official
+2016:
+  - date: 2016-01-01
+    name: Uusaasta
+    type: official
+  - date: 2016-02-24
+    name: 'Independence Day'
+    type: official
+  - date: 2016-03-25
+    name: 'Suur Reede'
+    type: official
+  - date: 2016-03-27
+    name: 'Ülestõusmispühade 1. püha'
+    type: official
+  - date: 2016-05-01
+    name: Kevadpüha
+    type: official
+  - date: 2016-05-15
+    name: 'Nelipühade 1. püha'
+    type: official
+  - date: 2016-06-23
+    name: 'Victory Day'
+    type: official
+  - date: 2016-06-24
+    name: Jaanipäev
+    type: official
+  - date: 2016-08-20
+    name: 'Day of Restoration of Independence'
+    type: official
+  - date: 2016-12-24
+    name: Jõululaupäev
+    type: official
+  - date: 2016-12-25
+    name: 'Esimene jõulupüha'
+    type: official
+  - date: 2016-12-26
+    name: 'Teine Jõulupüha'
+    type: official
+2017:
+  - date: 2017-01-01
+    name: Uusaasta
+    type: official
+  - date: 2017-02-24
+    name: 'Independence Day'
+    type: official
+  - date: 2017-04-14
+    name: 'Suur Reede'
+    type: official
+  - date: 2017-04-16
+    name: 'Ülestõusmispühade 1. püha'
+    type: official
+  - date: 2017-05-01
+    name: Kevadpüha
+    type: official
+  - date: 2017-06-04
+    name: 'Nelipühade 1. püha'
+    type: official
+  - date: 2017-06-23
+    name: 'Victory Day'
+    type: official
+  - date: 2017-06-24
+    name: Jaanipäev
+    type: official
+  - date: 2017-08-20
+    name: 'Day of Restoration of Independence'
+    type: official
+  - date: 2017-12-24
+    name: Jõululaupäev
+    type: official
+  - date: 2017-12-25
+    name: 'Esimene jõulupüha'
+    type: official
+  - date: 2017-12-26
+    name: 'Teine Jõulupüha'
+    type: official
+2018:
+  - date: 2018-01-01
+    name: Uusaasta
+    type: official
+  - date: 2018-02-24
+    name: 'Independence Day'
+    type: official
+  - date: 2018-03-30
+    name: 'Suur Reede'
+    type: official
+  - date: 2018-04-01
+    name: 'Ülestõusmispühade 1. püha'
+    type: official
+  - date: 2018-05-01
+    name: Kevadpüha
+    type: official
+  - date: 2018-05-20
+    name: 'Nelipühade 1. püha'
+    type: official
+  - date: 2018-06-23
+    name: 'Victory Day'
+    type: official
+  - date: 2018-06-24
+    name: Jaanipäev
+    type: official
+  - date: 2018-08-20
+    name: 'Day of Restoration of Independence'
+    type: official
+  - date: 2018-12-24
+    name: Jõululaupäev
+    type: official
+  - date: 2018-12-25
+    name: 'Esimene jõulupüha'
+    type: official
+  - date: 2018-12-26
+    name: 'Teine Jõulupüha'
+    type: official
+2019:
+  - date: 2019-01-01
+    name: Uusaasta
+    type: official
+  - date: 2019-02-24
+    name: 'Independence Day'
+    type: official
+  - date: 2019-04-19
+    name: 'Suur Reede'
+    type: official
+  - date: 2019-04-21
+    name: 'Ülestõusmispühade 1. püha'
+    type: official
+  - date: 2019-05-01
+    name: Kevadpüha
+    type: official
+  - date: 2019-06-09
+    name: 'Nelipühade 1. püha'
+    type: official
+  - date: 2019-06-23
+    name: 'Victory Day'
+    type: official
+  - date: 2019-06-24
+    name: Jaanipäev
+    type: official
+  - date: 2019-08-20
+    name: 'Day of Restoration of Independence'
+    type: official
+  - date: 2019-12-24
+    name: Jõululaupäev
+    type: official
+  - date: 2019-12-25
+    name: 'Esimene jõulupüha'
+    type: official
+  - date: 2019-12-26
+    name: 'Teine Jõulupüha'
+    type: official
+2020:
+  - date: 2020-01-01
+    name: Uusaasta
+    type: official
+  - date: 2020-02-24
+    name: 'Independence Day'
+    type: official
+  - date: 2020-04-10
+    name: 'Suur Reede'
+    type: official
+  - date: 2020-04-12
+    name: 'Ülestõusmispühade 1. püha'
+    type: official
+  - date: 2020-05-01
+    name: Kevadpüha
+    type: official
+  - date: 2020-05-31
+    name: 'Nelipühade 1. püha'
+    type: official
+  - date: 2020-06-23
+    name: 'Victory Day'
+    type: official
+  - date: 2020-06-24
+    name: Jaanipäev
+    type: official
+  - date: 2020-08-20
+    name: 'Day of Restoration of Independence'
+    type: official
+  - date: 2020-12-24
+    name: Jõululaupäev
+    type: official
+  - date: 2020-12-25
+    name: 'Esimene jõulupüha'
+    type: official
+  - date: 2020-12-26
+    name: 'Teine Jõulupüha'
+    type: official
+2021:
+  - date: 2021-01-01
+    name: Uusaasta
+    type: official
+  - date: 2021-02-24
+    name: 'Independence Day'
+    type: official
+  - date: 2021-04-02
+    name: 'Suur Reede'
+    type: official
+  - date: 2021-04-04
+    name: 'Ülestõusmispühade 1. püha'
+    type: official
+  - date: 2021-05-01
+    name: Kevadpüha
+    type: official
+  - date: 2021-05-23
+    name: 'Nelipühade 1. püha'
+    type: official
+  - date: 2021-06-23
+    name: 'Victory Day'
+    type: official
+  - date: 2021-06-24
+    name: Jaanipäev
+    type: official
+  - date: 2021-08-20
+    name: 'Day of Restoration of Independence'
+    type: official
+  - date: 2021-12-24
+    name: Jõululaupäev
+    type: official
+  - date: 2021-12-25
+    name: 'Esimene jõulupüha'
+    type: official
+  - date: 2021-12-26
+    name: 'Teine Jõulupüha'
+    type: official
+2022:
+  - date: 2022-01-01
+    name: Uusaasta
+    type: official
+  - date: 2022-02-24
+    name: 'Independence Day'
+    type: official
+  - date: 2022-04-15
+    name: 'Suur Reede'
+    type: official
+  - date: 2022-04-17
+    name: 'Ülestõusmispühade 1. püha'
+    type: official
+  - date: 2022-05-01
+    name: Kevadpüha
+    type: official
+  - date: 2022-06-05
+    name: 'Nelipühade 1. püha'
+    type: official
+  - date: 2022-06-23
+    name: 'Victory Day'
+    type: official
+  - date: 2022-06-24
+    name: Jaanipäev
+    type: official
+  - date: 2022-08-20
+    name: 'Day of Restoration of Independence'
+    type: official
+  - date: 2022-12-24
+    name: Jõululaupäev
+    type: official
+  - date: 2022-12-25
+    name: 'Esimene jõulupüha'
+    type: official
+  - date: 2022-12-26
+    name: 'Teine Jõulupüha'
+    type: official
+2023:
+  - date: 2023-01-01
+    name: Uusaasta
+    type: official
+  - date: 2023-02-24
+    name: 'Independence Day'
+    type: official
+  - date: 2023-04-07
+    name: 'Suur Reede'
+    type: official
+  - date: 2023-04-09
+    name: 'Ülestõusmispühade 1. püha'
+    type: official
+  - date: 2023-05-01
+    name: Kevadpüha
+    type: official
+  - date: 2023-05-28
+    name: 'Nelipühade 1. püha'
+    type: official
+  - date: 2023-06-23
+    name: 'Victory Day'
+    type: official
+  - date: 2023-06-24
+    name: Jaanipäev
+    type: official
+  - date: 2023-08-20
+    name: 'Day of Restoration of Independence'
+    type: official
+  - date: 2023-12-24
+    name: Jõululaupäev
+    type: official
+  - date: 2023-12-25
+    name: 'Esimene jõulupüha'
+    type: official
+  - date: 2023-12-26
+    name: 'Teine Jõulupüha'
+    type: official
+2024:
+  - date: 2024-01-01
+    name: Uusaasta
+    type: official
+  - date: 2024-02-24
+    name: 'Independence Day'
+    type: official
+  - date: 2024-03-29
+    name: 'Suur Reede'
+    type: official
+  - date: 2024-03-31
+    name: 'Ülestõusmispühade 1. püha'
+    type: official
+  - date: 2024-05-01
+    name: Kevadpüha
+    type: official
+  - date: 2024-05-19
+    name: 'Nelipühade 1. püha'
+    type: official
+  - date: 2024-06-23
+    name: 'Victory Day'
+    type: official
+  - date: 2024-06-24
+    name: Jaanipäev
+    type: official
+  - date: 2024-08-20
+    name: 'Day of Restoration of Independence'
+    type: official
+  - date: 2024-12-24
+    name: Jõululaupäev
+    type: official
+  - date: 2024-12-25
+    name: 'Esimene jõulupüha'
+    type: official
+  - date: 2024-12-26
+    name: 'Teine Jõulupüha'
+    type: official
+2025:
+  - date: 2025-01-01
+    name: Uusaasta
+    type: official
+  - date: 2025-02-24
+    name: 'Independence Day'
+    type: official
+  - date: 2025-04-18
+    name: 'Suur Reede'
+    type: official
+  - date: 2025-04-20
+    name: 'Ülestõusmispühade 1. püha'
+    type: official
+  - date: 2025-05-01
+    name: Kevadpüha
+    type: official
+  - date: 2025-06-08
+    name: 'Nelipühade 1. püha'
+    type: official
+  - date: 2025-06-23
+    name: 'Victory Day'
+    type: official
+  - date: 2025-06-24
+    name: Jaanipäev
+    type: official
+  - date: 2025-08-20
+    name: 'Day of Restoration of Independence'
+    type: official
+  - date: 2025-12-24
+    name: Jõululaupäev
+    type: official
+  - date: 2025-12-25
+    name: 'Esimene jõulupüha'
+    type: official
+  - date: 2025-12-26
+    name: 'Teine Jõulupüha'
+    type: official
+2026:
+  - date: 2026-01-01
+    name: Uusaasta
+    type: official
+  - date: 2026-02-24
+    name: 'Independence Day'
+    type: official
+  - date: 2026-04-03
+    name: 'Suur Reede'
+    type: official
+  - date: 2026-04-05
+    name: 'Ülestõusmispühade 1. püha'
+    type: official
+  - date: 2026-05-01
+    name: Kevadpüha
+    type: official
+  - date: 2026-05-24
+    name: 'Nelipühade 1. püha'
+    type: official
+  - date: 2026-06-23
+    name: 'Victory Day'
+    type: official
+  - date: 2026-06-24
+    name: Jaanipäev
+    type: official
+  - date: 2026-08-20
+    name: 'Day of Restoration of Independence'
+    type: official
+  - date: 2026-12-24
+    name: Jõululaupäev
+    type: official
+  - date: 2026-12-25
+    name: 'Esimene jõulupüha'
+    type: official
+  - date: 2026-12-26
+    name: 'Teine Jõulupüha'
+    type: official
+2027:
+  - date: 2027-01-01
+    name: Uusaasta
+    type: official
+  - date: 2027-02-24
+    name: 'Independence Day'
+    type: official
+  - date: 2027-03-26
+    name: 'Suur Reede'
+    type: official
+  - date: 2027-03-28
+    name: 'Ülestõusmispühade 1. püha'
+    type: official
+  - date: 2027-05-01
+    name: Kevadpüha
+    type: official
+  - date: 2027-05-16
+    name: 'Nelipühade 1. püha'
+    type: official
+  - date: 2027-06-23
+    name: 'Victory Day'
+    type: official
+  - date: 2027-06-24
+    name: Jaanipäev
+    type: official
+  - date: 2027-08-20
+    name: 'Day of Restoration of Independence'
+    type: official
+  - date: 2027-12-24
+    name: Jõululaupäev
+    type: official
+  - date: 2027-12-25
+    name: 'Esimene jõulupüha'
+    type: official
+  - date: 2027-12-26
+    name: 'Teine Jõulupüha'
+    type: official
+2028:
+  - date: 2028-01-01
+    name: Uusaasta
+    type: official
+  - date: 2028-02-24
+    name: 'Independence Day'
+    type: official
+  - date: 2028-04-14
+    name: 'Suur Reede'
+    type: official
+  - date: 2028-04-16
+    name: 'Ülestõusmispühade 1. püha'
+    type: official
+  - date: 2028-05-01
+    name: Kevadpüha
+    type: official
+  - date: 2028-06-04
+    name: 'Nelipühade 1. püha'
+    type: official
+  - date: 2028-06-23
+    name: 'Victory Day'
+    type: official
+  - date: 2028-06-24
+    name: Jaanipäev
+    type: official
+  - date: 2028-08-20
+    name: 'Day of Restoration of Independence'
+    type: official
+  - date: 2028-12-24
+    name: Jõululaupäev
+    type: official
+  - date: 2028-12-25
+    name: 'Esimene jõulupüha'
+    type: official
+  - date: 2028-12-26
+    name: 'Teine Jõulupüha'
+    type: official
+2029:
+  - date: 2029-01-01
+    name: Uusaasta
+    type: official
+  - date: 2029-02-24
+    name: 'Independence Day'
+    type: official
+  - date: 2029-03-30
+    name: 'Suur Reede'
+    type: official
+  - date: 2029-04-01
+    name: 'Ülestõusmispühade 1. püha'
+    type: official
+  - date: 2029-05-01
+    name: Kevadpüha
+    type: official
+  - date: 2029-05-20
+    name: 'Nelipühade 1. püha'
+    type: official
+  - date: 2029-06-23
+    name: 'Victory Day'
+    type: official
+  - date: 2029-06-24
+    name: Jaanipäev
+    type: official
+  - date: 2029-08-20
+    name: 'Day of Restoration of Independence'
+    type: official
+  - date: 2029-12-24
+    name: Jõululaupäev
+    type: official
+  - date: 2029-12-25
+    name: 'Esimene jõulupüha'
+    type: official
+  - date: 2029-12-26
+    name: 'Teine Jõulupüha'
+    type: official
+2030:
+  - date: 2030-01-01
+    name: Uusaasta
+    type: official
+  - date: 2030-02-24
+    name: 'Independence Day'
+    type: official
+  - date: 2030-04-19
+    name: 'Suur Reede'
+    type: official
+  - date: 2030-04-21
+    name: 'Ülestõusmispühade 1. püha'
+    type: official
+  - date: 2030-05-01
+    name: Kevadpüha
+    type: official
+  - date: 2030-06-09
+    name: 'Nelipühade 1. püha'
+    type: official
+  - date: 2030-06-23
+    name: 'Victory Day'
+    type: official
+  - date: 2030-06-24
+    name: Jaanipäev
+    type: official
+  - date: 2030-08-20
+    name: 'Day of Restoration of Independence'
+    type: official
+  - date: 2030-12-24
+    name: Jõululaupäev
+    type: official
+  - date: 2030-12-25
+    name: 'Esimene jõulupüha'
+    type: official
+  - date: 2030-12-26
+    name: 'Teine Jõulupüha'
+    type: official

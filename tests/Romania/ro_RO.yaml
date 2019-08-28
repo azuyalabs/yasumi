@@ -1,0 +1,927 @@
+2010:
+  - date: 2010-01-01
+    name: 'Anul Nou'
+    type: official
+  - date: 2010-01-02
+    name: 'A doua zi după Anul Nou'
+    type: official
+  - date: 2010-04-04
+    name: Paștele
+    type: official
+  - date: 2010-04-05
+    name: 'A doua zi de Paște'
+    type: official
+  - date: 2010-05-01
+    name: 'Ziua internațională a muncii'
+    type: official
+  - date: 2010-05-23
+    name: Rusaliile
+    type: official
+  - date: 2010-05-24
+    name: 'A doua zi de Rusalii'
+    type: official
+  - date: 2010-06-01
+    name: 'Ziua Copilului'
+    type: observance
+  - date: 2010-08-15
+    name: 'Adormirea Maicii Domnului'
+    type: official
+  - date: 2010-12-01
+    name: 'Ziua Națională'
+    type: official
+  - date: 2010-12-25
+    name: Crăciunul
+    type: official
+  - date: 2010-12-26
+    name: 'A doua zi de Crăciun'
+    type: official
+2011:
+  - date: 2011-01-01
+    name: 'Anul Nou'
+    type: official
+  - date: 2011-01-02
+    name: 'A doua zi după Anul Nou'
+    type: official
+  - date: 2011-04-24
+    name: Paștele
+    type: official
+  - date: 2011-04-25
+    name: 'A doua zi de Paște'
+    type: official
+  - date: 2011-05-01
+    name: 'Ziua internațională a muncii'
+    type: official
+  - date: 2011-06-01
+    name: 'Ziua Copilului'
+    type: observance
+  - date: 2011-06-12
+    name: Rusaliile
+    type: official
+  - date: 2011-06-13
+    name: 'A doua zi de Rusalii'
+    type: official
+  - date: 2011-08-15
+    name: 'Adormirea Maicii Domnului'
+    type: official
+  - date: 2011-12-01
+    name: 'Ziua Națională'
+    type: official
+  - date: 2011-12-25
+    name: Crăciunul
+    type: official
+  - date: 2011-12-26
+    name: 'A doua zi de Crăciun'
+    type: official
+2012:
+  - date: 2012-01-01
+    name: 'Anul Nou'
+    type: official
+  - date: 2012-01-02
+    name: 'A doua zi după Anul Nou'
+    type: official
+  - date: 2012-04-15
+    name: Paștele
+    type: official
+  - date: 2012-04-16
+    name: 'A doua zi de Paște'
+    type: official
+  - date: 2012-05-01
+    name: 'Ziua internațională a muncii'
+    type: official
+  - date: 2012-06-01
+    name: 'Ziua Copilului'
+    type: observance
+  - date: 2012-06-03
+    name: Rusaliile
+    type: official
+  - date: 2012-06-04
+    name: 'A doua zi de Rusalii'
+    type: official
+  - date: 2012-08-15
+    name: 'Adormirea Maicii Domnului'
+    type: official
+  - date: 2012-11-30
+    name: 'Sfântul Andrei'
+    type: official
+  - date: 2012-12-01
+    name: 'Ziua Națională'
+    type: official
+  - date: 2012-12-25
+    name: Crăciunul
+    type: official
+  - date: 2012-12-26
+    name: 'A doua zi de Crăciun'
+    type: official
+2013:
+  - date: 2013-01-01
+    name: 'Anul Nou'
+    type: official
+  - date: 2013-01-02
+    name: 'A doua zi după Anul Nou'
+    type: official
+  - date: 2013-05-01
+    name: 'Ziua internațională a muncii'
+    type: official
+  - date: 2013-05-05
+    name: Paștele
+    type: official
+  - date: 2013-05-06
+    name: 'A doua zi de Paște'
+    type: official
+  - date: 2013-06-01
+    name: 'Ziua Copilului'
+    type: observance
+  - date: 2013-06-23
+    name: Rusaliile
+    type: official
+  - date: 2013-06-24
+    name: 'A doua zi de Rusalii'
+    type: official
+  - date: 2013-08-15
+    name: 'Adormirea Maicii Domnului'
+    type: official
+  - date: 2013-11-30
+    name: 'Sfântul Andrei'
+    type: official
+  - date: 2013-12-01
+    name: 'Ziua Națională'
+    type: official
+  - date: 2013-12-25
+    name: Crăciunul
+    type: official
+  - date: 2013-12-26
+    name: 'A doua zi de Crăciun'
+    type: official
+2014:
+  - date: 2014-01-01
+    name: 'Anul Nou'
+    type: official
+  - date: 2014-01-02
+    name: 'A doua zi după Anul Nou'
+    type: official
+  - date: 2014-04-20
+    name: Paștele
+    type: official
+  - date: 2014-04-21
+    name: 'A doua zi de Paște'
+    type: official
+  - date: 2014-05-01
+    name: 'Ziua internațională a muncii'
+    type: official
+  - date: 2014-06-01
+    name: 'Ziua Copilului'
+    type: observance
+  - date: 2014-06-08
+    name: Rusaliile
+    type: official
+  - date: 2014-06-09
+    name: 'A doua zi de Rusalii'
+    type: official
+  - date: 2014-08-15
+    name: 'Adormirea Maicii Domnului'
+    type: official
+  - date: 2014-11-30
+    name: 'Sfântul Andrei'
+    type: official
+  - date: 2014-12-01
+    name: 'Ziua Națională'
+    type: official
+  - date: 2014-12-25
+    name: Crăciunul
+    type: official
+  - date: 2014-12-26
+    name: 'A doua zi de Crăciun'
+    type: official
+2015:
+  - date: 2015-01-01
+    name: 'Anul Nou'
+    type: official
+  - date: 2015-01-02
+    name: 'A doua zi după Anul Nou'
+    type: official
+  - date: 2015-01-24
+    name: 'Unirea Principatelor Române / Mica Unire'
+    type: official
+  - date: 2015-04-12
+    name: Paștele
+    type: official
+  - date: 2015-04-13
+    name: 'A doua zi de Paște'
+    type: official
+  - date: 2015-05-01
+    name: 'Ziua internațională a muncii'
+    type: official
+  - date: 2015-05-31
+    name: Rusaliile
+    type: official
+  - date: 2015-06-01
+    name: 'A doua zi de Rusalii'
+    type: official
+  - date: 2015-06-01
+    name: 'Ziua Copilului'
+    type: observance
+  - date: 2015-08-15
+    name: 'Adormirea Maicii Domnului'
+    type: official
+  - date: 2015-11-30
+    name: 'Sfântul Andrei'
+    type: official
+  - date: 2015-12-01
+    name: 'Ziua Națională'
+    type: official
+  - date: 2015-12-25
+    name: Crăciunul
+    type: official
+  - date: 2015-12-26
+    name: 'A doua zi de Crăciun'
+    type: official
+2016:
+  - date: 2016-01-01
+    name: 'Anul Nou'
+    type: official
+  - date: 2016-01-02
+    name: 'A doua zi după Anul Nou'
+    type: official
+  - date: 2016-01-24
+    name: 'Unirea Principatelor Române / Mica Unire'
+    type: official
+  - date: 2016-02-19
+    name: 'Ziua Constantin Brâncuși'
+    type: observance
+  - date: 2016-05-01
+    name: Paștele
+    type: official
+  - date: 2016-05-01
+    name: 'Ziua internațională a muncii'
+    type: official
+  - date: 2016-05-02
+    name: 'A doua zi de Paște'
+    type: official
+  - date: 2016-06-01
+    name: 'Ziua Copilului'
+    type: observance
+  - date: 2016-06-19
+    name: Rusaliile
+    type: official
+  - date: 2016-06-20
+    name: 'A doua zi de Rusalii'
+    type: official
+  - date: 2016-08-15
+    name: 'Adormirea Maicii Domnului'
+    type: official
+  - date: 2016-11-30
+    name: 'Sfântul Andrei'
+    type: official
+  - date: 2016-12-01
+    name: 'Ziua Națională'
+    type: official
+  - date: 2016-12-25
+    name: Crăciunul
+    type: official
+  - date: 2016-12-26
+    name: 'A doua zi de Crăciun'
+    type: official
+2017:
+  - date: 2017-01-01
+    name: 'Anul Nou'
+    type: official
+  - date: 2017-01-02
+    name: 'A doua zi după Anul Nou'
+    type: official
+  - date: 2017-01-24
+    name: 'Unirea Principatelor Române / Mica Unire'
+    type: official
+  - date: 2017-02-19
+    name: 'Ziua Constantin Brâncuși'
+    type: observance
+  - date: 2017-04-16
+    name: Paștele
+    type: official
+  - date: 2017-04-17
+    name: 'A doua zi de Paște'
+    type: official
+  - date: 2017-05-01
+    name: 'Ziua internațională a muncii'
+    type: official
+  - date: 2017-06-01
+    name: 'Ziua Copilului'
+    type: official
+  - date: 2017-06-04
+    name: Rusaliile
+    type: official
+  - date: 2017-06-05
+    name: 'A doua zi de Rusalii'
+    type: official
+  - date: 2017-08-15
+    name: 'Adormirea Maicii Domnului'
+    type: official
+  - date: 2017-11-30
+    name: 'Sfântul Andrei'
+    type: official
+  - date: 2017-12-01
+    name: 'Ziua Națională'
+    type: official
+  - date: 2017-12-25
+    name: Crăciunul
+    type: official
+  - date: 2017-12-26
+    name: 'A doua zi de Crăciun'
+    type: official
+2018:
+  - date: 2018-01-01
+    name: 'Anul Nou'
+    type: official
+  - date: 2018-01-02
+    name: 'A doua zi după Anul Nou'
+    type: official
+  - date: 2018-01-24
+    name: 'Unirea Principatelor Române / Mica Unire'
+    type: official
+  - date: 2018-02-19
+    name: 'Ziua Constantin Brâncuși'
+    type: observance
+  - date: 2018-04-08
+    name: Paștele
+    type: official
+  - date: 2018-04-09
+    name: 'A doua zi de Paște'
+    type: official
+  - date: 2018-05-01
+    name: 'Ziua internațională a muncii'
+    type: official
+  - date: 2018-05-27
+    name: Rusaliile
+    type: official
+  - date: 2018-05-28
+    name: 'A doua zi de Rusalii'
+    type: official
+  - date: 2018-06-01
+    name: 'Ziua Copilului'
+    type: official
+  - date: 2018-08-15
+    name: 'Adormirea Maicii Domnului'
+    type: official
+  - date: 2018-11-30
+    name: 'Sfântul Andrei'
+    type: official
+  - date: 2018-12-01
+    name: 'Ziua Națională'
+    type: official
+  - date: 2018-12-25
+    name: Crăciunul
+    type: official
+  - date: 2018-12-26
+    name: 'A doua zi de Crăciun'
+    type: official
+2019:
+  - date: 2019-01-01
+    name: 'Anul Nou'
+    type: official
+  - date: 2019-01-02
+    name: 'A doua zi după Anul Nou'
+    type: official
+  - date: 2019-01-24
+    name: 'Unirea Principatelor Române / Mica Unire'
+    type: official
+  - date: 2019-02-19
+    name: 'Ziua Constantin Brâncuși'
+    type: observance
+  - date: 2019-04-28
+    name: Paștele
+    type: official
+  - date: 2019-04-29
+    name: 'A doua zi de Paște'
+    type: official
+  - date: 2019-05-01
+    name: 'Ziua internațională a muncii'
+    type: official
+  - date: 2019-06-01
+    name: 'Ziua Copilului'
+    type: official
+  - date: 2019-06-16
+    name: Rusaliile
+    type: official
+  - date: 2019-06-17
+    name: 'A doua zi de Rusalii'
+    type: official
+  - date: 2019-08-15
+    name: 'Adormirea Maicii Domnului'
+    type: official
+  - date: 2019-11-30
+    name: 'Sfântul Andrei'
+    type: official
+  - date: 2019-12-01
+    name: 'Ziua Națională'
+    type: official
+  - date: 2019-12-25
+    name: Crăciunul
+    type: official
+  - date: 2019-12-26
+    name: 'A doua zi de Crăciun'
+    type: official
+2020:
+  - date: 2020-01-01
+    name: 'Anul Nou'
+    type: official
+  - date: 2020-01-02
+    name: 'A doua zi după Anul Nou'
+    type: official
+  - date: 2020-01-24
+    name: 'Unirea Principatelor Române / Mica Unire'
+    type: official
+  - date: 2020-02-19
+    name: 'Ziua Constantin Brâncuși'
+    type: observance
+  - date: 2020-04-19
+    name: Paștele
+    type: official
+  - date: 2020-04-20
+    name: 'A doua zi de Paște'
+    type: official
+  - date: 2020-05-01
+    name: 'Ziua internațională a muncii'
+    type: official
+  - date: 2020-06-01
+    name: 'Ziua Copilului'
+    type: official
+  - date: 2020-06-07
+    name: Rusaliile
+    type: official
+  - date: 2020-06-08
+    name: 'A doua zi de Rusalii'
+    type: official
+  - date: 2020-08-15
+    name: 'Adormirea Maicii Domnului'
+    type: official
+  - date: 2020-11-30
+    name: 'Sfântul Andrei'
+    type: official
+  - date: 2020-12-01
+    name: 'Ziua Națională'
+    type: official
+  - date: 2020-12-25
+    name: Crăciunul
+    type: official
+  - date: 2020-12-26
+    name: 'A doua zi de Crăciun'
+    type: official
+2021:
+  - date: 2021-01-01
+    name: 'Anul Nou'
+    type: official
+  - date: 2021-01-02
+    name: 'A doua zi după Anul Nou'
+    type: official
+  - date: 2021-01-24
+    name: 'Unirea Principatelor Române / Mica Unire'
+    type: official
+  - date: 2021-02-19
+    name: 'Ziua Constantin Brâncuși'
+    type: observance
+  - date: 2021-05-01
+    name: 'Ziua internațională a muncii'
+    type: official
+  - date: 2021-05-02
+    name: Paștele
+    type: official
+  - date: 2021-05-03
+    name: 'A doua zi de Paște'
+    type: official
+  - date: 2021-06-01
+    name: 'Ziua Copilului'
+    type: official
+  - date: 2021-06-20
+    name: Rusaliile
+    type: official
+  - date: 2021-06-21
+    name: 'A doua zi de Rusalii'
+    type: official
+  - date: 2021-08-15
+    name: 'Adormirea Maicii Domnului'
+    type: official
+  - date: 2021-11-30
+    name: 'Sfântul Andrei'
+    type: official
+  - date: 2021-12-01
+    name: 'Ziua Națională'
+    type: official
+  - date: 2021-12-25
+    name: Crăciunul
+    type: official
+  - date: 2021-12-26
+    name: 'A doua zi de Crăciun'
+    type: official
+2022:
+  - date: 2022-01-01
+    name: 'Anul Nou'
+    type: official
+  - date: 2022-01-02
+    name: 'A doua zi după Anul Nou'
+    type: official
+  - date: 2022-01-24
+    name: 'Unirea Principatelor Române / Mica Unire'
+    type: official
+  - date: 2022-02-19
+    name: 'Ziua Constantin Brâncuși'
+    type: observance
+  - date: 2022-04-24
+    name: Paștele
+    type: official
+  - date: 2022-04-25
+    name: 'A doua zi de Paște'
+    type: official
+  - date: 2022-05-01
+    name: 'Ziua internațională a muncii'
+    type: official
+  - date: 2022-06-01
+    name: 'Ziua Copilului'
+    type: official
+  - date: 2022-06-12
+    name: Rusaliile
+    type: official
+  - date: 2022-06-13
+    name: 'A doua zi de Rusalii'
+    type: official
+  - date: 2022-08-15
+    name: 'Adormirea Maicii Domnului'
+    type: official
+  - date: 2022-11-30
+    name: 'Sfântul Andrei'
+    type: official
+  - date: 2022-12-01
+    name: 'Ziua Națională'
+    type: official
+  - date: 2022-12-25
+    name: Crăciunul
+    type: official
+  - date: 2022-12-26
+    name: 'A doua zi de Crăciun'
+    type: official
+2023:
+  - date: 2023-01-01
+    name: 'Anul Nou'
+    type: official
+  - date: 2023-01-02
+    name: 'A doua zi după Anul Nou'
+    type: official
+  - date: 2023-01-24
+    name: 'Unirea Principatelor Române / Mica Unire'
+    type: official
+  - date: 2023-02-19
+    name: 'Ziua Constantin Brâncuși'
+    type: observance
+  - date: 2023-04-16
+    name: Paștele
+    type: official
+  - date: 2023-04-17
+    name: 'A doua zi de Paște'
+    type: official
+  - date: 2023-05-01
+    name: 'Ziua internațională a muncii'
+    type: official
+  - date: 2023-06-01
+    name: 'Ziua Copilului'
+    type: official
+  - date: 2023-06-04
+    name: Rusaliile
+    type: official
+  - date: 2023-06-05
+    name: 'A doua zi de Rusalii'
+    type: official
+  - date: 2023-08-15
+    name: 'Adormirea Maicii Domnului'
+    type: official
+  - date: 2023-11-30
+    name: 'Sfântul Andrei'
+    type: official
+  - date: 2023-12-01
+    name: 'Ziua Națională'
+    type: official
+  - date: 2023-12-25
+    name: Crăciunul
+    type: official
+  - date: 2023-12-26
+    name: 'A doua zi de Crăciun'
+    type: official
+2024:
+  - date: 2024-01-01
+    name: 'Anul Nou'
+    type: official
+  - date: 2024-01-02
+    name: 'A doua zi după Anul Nou'
+    type: official
+  - date: 2024-01-24
+    name: 'Unirea Principatelor Române / Mica Unire'
+    type: official
+  - date: 2024-02-19
+    name: 'Ziua Constantin Brâncuși'
+    type: observance
+  - date: 2024-05-01
+    name: 'Ziua internațională a muncii'
+    type: official
+  - date: 2024-05-05
+    name: Paștele
+    type: official
+  - date: 2024-05-06
+    name: 'A doua zi de Paște'
+    type: official
+  - date: 2024-06-01
+    name: 'Ziua Copilului'
+    type: official
+  - date: 2024-06-23
+    name: Rusaliile
+    type: official
+  - date: 2024-06-24
+    name: 'A doua zi de Rusalii'
+    type: official
+  - date: 2024-08-15
+    name: 'Adormirea Maicii Domnului'
+    type: official
+  - date: 2024-11-30
+    name: 'Sfântul Andrei'
+    type: official
+  - date: 2024-12-01
+    name: 'Ziua Națională'
+    type: official
+  - date: 2024-12-25
+    name: Crăciunul
+    type: official
+  - date: 2024-12-26
+    name: 'A doua zi de Crăciun'
+    type: official
+2025:
+  - date: 2025-01-01
+    name: 'Anul Nou'
+    type: official
+  - date: 2025-01-02
+    name: 'A doua zi după Anul Nou'
+    type: official
+  - date: 2025-01-24
+    name: 'Unirea Principatelor Române / Mica Unire'
+    type: official
+  - date: 2025-02-19
+    name: 'Ziua Constantin Brâncuși'
+    type: observance
+  - date: 2025-04-20
+    name: Paștele
+    type: official
+  - date: 2025-04-21
+    name: 'A doua zi de Paște'
+    type: official
+  - date: 2025-05-01
+    name: 'Ziua internațională a muncii'
+    type: official
+  - date: 2025-06-01
+    name: 'Ziua Copilului'
+    type: official
+  - date: 2025-06-08
+    name: Rusaliile
+    type: official
+  - date: 2025-06-09
+    name: 'A doua zi de Rusalii'
+    type: official
+  - date: 2025-08-15
+    name: 'Adormirea Maicii Domnului'
+    type: official
+  - date: 2025-11-30
+    name: 'Sfântul Andrei'
+    type: official
+  - date: 2025-12-01
+    name: 'Ziua Națională'
+    type: official
+  - date: 2025-12-25
+    name: Crăciunul
+    type: official
+  - date: 2025-12-26
+    name: 'A doua zi de Crăciun'
+    type: official
+2026:
+  - date: 2026-01-01
+    name: 'Anul Nou'
+    type: official
+  - date: 2026-01-02
+    name: 'A doua zi după Anul Nou'
+    type: official
+  - date: 2026-01-24
+    name: 'Unirea Principatelor Române / Mica Unire'
+    type: official
+  - date: 2026-02-19
+    name: 'Ziua Constantin Brâncuși'
+    type: observance
+  - date: 2026-04-12
+    name: Paștele
+    type: official
+  - date: 2026-04-13
+    name: 'A doua zi de Paște'
+    type: official
+  - date: 2026-05-01
+    name: 'Ziua internațională a muncii'
+    type: official
+  - date: 2026-05-31
+    name: Rusaliile
+    type: official
+  - date: 2026-06-01
+    name: 'A doua zi de Rusalii'
+    type: official
+  - date: 2026-06-01
+    name: 'Ziua Copilului'
+    type: official
+  - date: 2026-08-15
+    name: 'Adormirea Maicii Domnului'
+    type: official
+  - date: 2026-11-30
+    name: 'Sfântul Andrei'
+    type: official
+  - date: 2026-12-01
+    name: 'Ziua Națională'
+    type: official
+  - date: 2026-12-25
+    name: Crăciunul
+    type: official
+  - date: 2026-12-26
+    name: 'A doua zi de Crăciun'
+    type: official
+2027:
+  - date: 2027-01-01
+    name: 'Anul Nou'
+    type: official
+  - date: 2027-01-02
+    name: 'A doua zi după Anul Nou'
+    type: official
+  - date: 2027-01-24
+    name: 'Unirea Principatelor Române / Mica Unire'
+    type: official
+  - date: 2027-02-19
+    name: 'Ziua Constantin Brâncuși'
+    type: observance
+  - date: 2027-05-01
+    name: 'Ziua internațională a muncii'
+    type: official
+  - date: 2027-05-02
+    name: Paștele
+    type: official
+  - date: 2027-05-03
+    name: 'A doua zi de Paște'
+    type: official
+  - date: 2027-06-01
+    name: 'Ziua Copilului'
+    type: official
+  - date: 2027-06-20
+    name: Rusaliile
+    type: official
+  - date: 2027-06-21
+    name: 'A doua zi de Rusalii'
+    type: official
+  - date: 2027-08-15
+    name: 'Adormirea Maicii Domnului'
+    type: official
+  - date: 2027-11-30
+    name: 'Sfântul Andrei'
+    type: official
+  - date: 2027-12-01
+    name: 'Ziua Națională'
+    type: official
+  - date: 2027-12-25
+    name: Crăciunul
+    type: official
+  - date: 2027-12-26
+    name: 'A doua zi de Crăciun'
+    type: official
+2028:
+  - date: 2028-01-01
+    name: 'Anul Nou'
+    type: official
+  - date: 2028-01-02
+    name: 'A doua zi după Anul Nou'
+    type: official
+  - date: 2028-01-24
+    name: 'Unirea Principatelor Române / Mica Unire'
+    type: official
+  - date: 2028-02-19
+    name: 'Ziua Constantin Brâncuși'
+    type: observance
+  - date: 2028-04-16
+    name: Paștele
+    type: official
+  - date: 2028-04-17
+    name: 'A doua zi de Paște'
+    type: official
+  - date: 2028-05-01
+    name: 'Ziua internațională a muncii'
+    type: official
+  - date: 2028-06-01
+    name: 'Ziua Copilului'
+    type: official
+  - date: 2028-06-04
+    name: Rusaliile
+    type: official
+  - date: 2028-06-05
+    name: 'A doua zi de Rusalii'
+    type: official
+  - date: 2028-08-15
+    name: 'Adormirea Maicii Domnului'
+    type: official
+  - date: 2028-11-30
+    name: 'Sfântul Andrei'
+    type: official
+  - date: 2028-12-01
+    name: 'Ziua Națională'
+    type: official
+  - date: 2028-12-25
+    name: Crăciunul
+    type: official
+  - date: 2028-12-26
+    name: 'A doua zi de Crăciun'
+    type: official
+2029:
+  - date: 2029-01-01
+    name: 'Anul Nou'
+    type: official
+  - date: 2029-01-02
+    name: 'A doua zi după Anul Nou'
+    type: official
+  - date: 2029-01-24
+    name: 'Unirea Principatelor Române / Mica Unire'
+    type: official
+  - date: 2029-02-19
+    name: 'Ziua Constantin Brâncuși'
+    type: observance
+  - date: 2029-04-08
+    name: Paștele
+    type: official
+  - date: 2029-04-09
+    name: 'A doua zi de Paște'
+    type: official
+  - date: 2029-05-01
+    name: 'Ziua internațională a muncii'
+    type: official
+  - date: 2029-05-27
+    name: Rusaliile
+    type: official
+  - date: 2029-05-28
+    name: 'A doua zi de Rusalii'
+    type: official
+  - date: 2029-06-01
+    name: 'Ziua Copilului'
+    type: official
+  - date: 2029-08-15
+    name: 'Adormirea Maicii Domnului'
+    type: official
+  - date: 2029-11-30
+    name: 'Sfântul Andrei'
+    type: official
+  - date: 2029-12-01
+    name: 'Ziua Națională'
+    type: official
+  - date: 2029-12-25
+    name: Crăciunul
+    type: official
+  - date: 2029-12-26
+    name: 'A doua zi de Crăciun'
+    type: official
+2030:
+  - date: 2030-01-01
+    name: 'Anul Nou'
+    type: official
+  - date: 2030-01-02
+    name: 'A doua zi după Anul Nou'
+    type: official
+  - date: 2030-01-24
+    name: 'Unirea Principatelor Române / Mica Unire'
+    type: official
+  - date: 2030-02-19
+    name: 'Ziua Constantin Brâncuși'
+    type: observance
+  - date: 2030-04-28
+    name: Paștele
+    type: official
+  - date: 2030-04-29
+    name: 'A doua zi de Paște'
+    type: official
+  - date: 2030-05-01
+    name: 'Ziua internațională a muncii'
+    type: official
+  - date: 2030-06-01
+    name: 'Ziua Copilului'
+    type: official
+  - date: 2030-06-16
+    name: Rusaliile
+    type: official
+  - date: 2030-06-17
+    name: 'A doua zi de Rusalii'
+    type: official
+  - date: 2030-08-15
+    name: 'Adormirea Maicii Domnului'
+    type: official
+  - date: 2030-11-30
+    name: 'Sfântul Andrei'
+    type: official
+  - date: 2030-12-01
+    name: 'Ziua Națională'
+    type: official
+  - date: 2030-12-25
+    name: Crăciunul
+    type: official
+  - date: 2030-12-26
+    name: 'A doua zi de Crăciun'
+    type: official

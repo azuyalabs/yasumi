@@ -1,0 +1,903 @@
+2010:
+  - date: 2010-01-01
+    name: 'Новый год'
+    type: official
+  - date: 2010-01-02
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2010-01-03
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2010-01-04
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2010-01-05
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2010-01-06
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2010-01-07
+    name: Рождество
+    type: official
+  - date: 2010-01-08
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2010-02-23
+    name: 'День защитника Отечества'
+    type: official
+  - date: 2010-03-08
+    name: 'Международный женский день'
+    type: official
+  - date: 2010-05-01
+    name: 'Праздник Весны и Труда'
+    type: official
+  - date: 2010-05-09
+    name: 'День Победы'
+    type: official
+  - date: 2010-06-12
+    name: 'День России'
+    type: official
+  - date: 2010-11-04
+    name: 'День народного единства'
+    type: official
+2011:
+  - date: 2011-01-01
+    name: 'Новый год'
+    type: official
+  - date: 2011-01-02
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2011-01-03
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2011-01-04
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2011-01-05
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2011-01-06
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2011-01-07
+    name: Рождество
+    type: official
+  - date: 2011-01-08
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2011-02-23
+    name: 'День защитника Отечества'
+    type: official
+  - date: 2011-03-08
+    name: 'Международный женский день'
+    type: official
+  - date: 2011-05-01
+    name: 'Праздник Весны и Труда'
+    type: official
+  - date: 2011-05-09
+    name: 'День Победы'
+    type: official
+  - date: 2011-06-12
+    name: 'День России'
+    type: official
+  - date: 2011-11-04
+    name: 'День народного единства'
+    type: official
+2012:
+  - date: 2012-01-01
+    name: 'Новый год'
+    type: official
+  - date: 2012-01-02
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2012-01-03
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2012-01-04
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2012-01-05
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2012-01-06
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2012-01-07
+    name: Рождество
+    type: official
+  - date: 2012-01-08
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2012-02-23
+    name: 'День защитника Отечества'
+    type: official
+  - date: 2012-03-08
+    name: 'Международный женский день'
+    type: official
+  - date: 2012-05-01
+    name: 'Праздник Весны и Труда'
+    type: official
+  - date: 2012-05-09
+    name: 'День Победы'
+    type: official
+  - date: 2012-06-12
+    name: 'День России'
+    type: official
+  - date: 2012-11-04
+    name: 'День народного единства'
+    type: official
+2013:
+  - date: 2013-01-01
+    name: 'Новый год'
+    type: official
+  - date: 2013-01-02
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2013-01-03
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2013-01-04
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2013-01-05
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2013-01-06
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2013-01-07
+    name: Рождество
+    type: official
+  - date: 2013-01-08
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2013-02-23
+    name: 'День защитника Отечества'
+    type: official
+  - date: 2013-03-08
+    name: 'Международный женский день'
+    type: official
+  - date: 2013-05-01
+    name: 'Праздник Весны и Труда'
+    type: official
+  - date: 2013-05-09
+    name: 'День Победы'
+    type: official
+  - date: 2013-06-12
+    name: 'День России'
+    type: official
+  - date: 2013-11-04
+    name: 'День народного единства'
+    type: official
+2014:
+  - date: 2014-01-01
+    name: 'Новый год'
+    type: official
+  - date: 2014-01-02
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2014-01-03
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2014-01-04
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2014-01-05
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2014-01-06
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2014-01-07
+    name: Рождество
+    type: official
+  - date: 2014-01-08
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2014-02-23
+    name: 'День защитника Отечества'
+    type: official
+  - date: 2014-03-08
+    name: 'Международный женский день'
+    type: official
+  - date: 2014-05-01
+    name: 'Праздник Весны и Труда'
+    type: official
+  - date: 2014-05-09
+    name: 'День Победы'
+    type: official
+  - date: 2014-06-12
+    name: 'День России'
+    type: official
+  - date: 2014-11-04
+    name: 'День народного единства'
+    type: official
+2015:
+  - date: 2015-01-01
+    name: 'Новый год'
+    type: official
+  - date: 2015-01-02
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2015-01-03
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2015-01-04
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2015-01-05
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2015-01-06
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2015-01-07
+    name: Рождество
+    type: official
+  - date: 2015-01-08
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2015-02-23
+    name: 'День защитника Отечества'
+    type: official
+  - date: 2015-03-08
+    name: 'Международный женский день'
+    type: official
+  - date: 2015-05-01
+    name: 'Праздник Весны и Труда'
+    type: official
+  - date: 2015-05-09
+    name: 'День Победы'
+    type: official
+  - date: 2015-06-12
+    name: 'День России'
+    type: official
+  - date: 2015-11-04
+    name: 'День народного единства'
+    type: official
+2016:
+  - date: 2016-01-01
+    name: 'Новый год'
+    type: official
+  - date: 2016-01-02
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2016-01-03
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2016-01-04
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2016-01-05
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2016-01-06
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2016-01-07
+    name: Рождество
+    type: official
+  - date: 2016-01-08
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2016-02-23
+    name: 'День защитника Отечества'
+    type: official
+  - date: 2016-03-08
+    name: 'Международный женский день'
+    type: official
+  - date: 2016-05-01
+    name: 'Праздник Весны и Труда'
+    type: official
+  - date: 2016-05-09
+    name: 'День Победы'
+    type: official
+  - date: 2016-06-12
+    name: 'День России'
+    type: official
+  - date: 2016-11-04
+    name: 'День народного единства'
+    type: official
+2017:
+  - date: 2017-01-01
+    name: 'Новый год'
+    type: official
+  - date: 2017-01-02
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2017-01-03
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2017-01-04
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2017-01-05
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2017-01-06
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2017-01-07
+    name: Рождество
+    type: official
+  - date: 2017-01-08
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2017-02-23
+    name: 'День защитника Отечества'
+    type: official
+  - date: 2017-03-08
+    name: 'Международный женский день'
+    type: official
+  - date: 2017-05-01
+    name: 'Праздник Весны и Труда'
+    type: official
+  - date: 2017-05-09
+    name: 'День Победы'
+    type: official
+  - date: 2017-06-12
+    name: 'День России'
+    type: official
+  - date: 2017-11-04
+    name: 'День народного единства'
+    type: official
+2018:
+  - date: 2018-01-01
+    name: 'Новый год'
+    type: official
+  - date: 2018-01-02
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2018-01-03
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2018-01-04
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2018-01-05
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2018-01-06
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2018-01-07
+    name: Рождество
+    type: official
+  - date: 2018-01-08
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2018-02-23
+    name: 'День защитника Отечества'
+    type: official
+  - date: 2018-03-08
+    name: 'Международный женский день'
+    type: official
+  - date: 2018-05-01
+    name: 'Праздник Весны и Труда'
+    type: official
+  - date: 2018-05-09
+    name: 'День Победы'
+    type: official
+  - date: 2018-06-12
+    name: 'День России'
+    type: official
+  - date: 2018-11-04
+    name: 'День народного единства'
+    type: official
+2019:
+  - date: 2019-01-01
+    name: 'Новый год'
+    type: official
+  - date: 2019-01-02
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2019-01-03
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2019-01-04
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2019-01-05
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2019-01-06
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2019-01-07
+    name: Рождество
+    type: official
+  - date: 2019-01-08
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2019-02-23
+    name: 'День защитника Отечества'
+    type: official
+  - date: 2019-03-08
+    name: 'Международный женский день'
+    type: official
+  - date: 2019-05-01
+    name: 'Праздник Весны и Труда'
+    type: official
+  - date: 2019-05-09
+    name: 'День Победы'
+    type: official
+  - date: 2019-06-12
+    name: 'День России'
+    type: official
+  - date: 2019-11-04
+    name: 'День народного единства'
+    type: official
+2020:
+  - date: 2020-01-01
+    name: 'Новый год'
+    type: official
+  - date: 2020-01-02
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2020-01-03
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2020-01-04
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2020-01-05
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2020-01-06
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2020-01-07
+    name: Рождество
+    type: official
+  - date: 2020-01-08
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2020-02-23
+    name: 'День защитника Отечества'
+    type: official
+  - date: 2020-03-08
+    name: 'Международный женский день'
+    type: official
+  - date: 2020-05-01
+    name: 'Праздник Весны и Труда'
+    type: official
+  - date: 2020-05-09
+    name: 'День Победы'
+    type: official
+  - date: 2020-06-12
+    name: 'День России'
+    type: official
+  - date: 2020-11-04
+    name: 'День народного единства'
+    type: official
+2021:
+  - date: 2021-01-01
+    name: 'Новый год'
+    type: official
+  - date: 2021-01-02
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2021-01-03
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2021-01-04
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2021-01-05
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2021-01-06
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2021-01-07
+    name: Рождество
+    type: official
+  - date: 2021-01-08
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2021-02-23
+    name: 'День защитника Отечества'
+    type: official
+  - date: 2021-03-08
+    name: 'Международный женский день'
+    type: official
+  - date: 2021-05-01
+    name: 'Праздник Весны и Труда'
+    type: official
+  - date: 2021-05-09
+    name: 'День Победы'
+    type: official
+  - date: 2021-06-12
+    name: 'День России'
+    type: official
+  - date: 2021-11-04
+    name: 'День народного единства'
+    type: official
+2022:
+  - date: 2022-01-01
+    name: 'Новый год'
+    type: official
+  - date: 2022-01-02
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2022-01-03
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2022-01-04
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2022-01-05
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2022-01-06
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2022-01-07
+    name: Рождество
+    type: official
+  - date: 2022-01-08
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2022-02-23
+    name: 'День защитника Отечества'
+    type: official
+  - date: 2022-03-08
+    name: 'Международный женский день'
+    type: official
+  - date: 2022-05-01
+    name: 'Праздник Весны и Труда'
+    type: official
+  - date: 2022-05-09
+    name: 'День Победы'
+    type: official
+  - date: 2022-06-12
+    name: 'День России'
+    type: official
+  - date: 2022-11-04
+    name: 'День народного единства'
+    type: official
+2023:
+  - date: 2023-01-01
+    name: 'Новый год'
+    type: official
+  - date: 2023-01-02
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2023-01-03
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2023-01-04
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2023-01-05
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2023-01-06
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2023-01-07
+    name: Рождество
+    type: official
+  - date: 2023-01-08
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2023-02-23
+    name: 'День защитника Отечества'
+    type: official
+  - date: 2023-03-08
+    name: 'Международный женский день'
+    type: official
+  - date: 2023-05-01
+    name: 'Праздник Весны и Труда'
+    type: official
+  - date: 2023-05-09
+    name: 'День Победы'
+    type: official
+  - date: 2023-06-12
+    name: 'День России'
+    type: official
+  - date: 2023-11-04
+    name: 'День народного единства'
+    type: official
+2024:
+  - date: 2024-01-01
+    name: 'Новый год'
+    type: official
+  - date: 2024-01-02
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2024-01-03
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2024-01-04
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2024-01-05
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2024-01-06
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2024-01-07
+    name: Рождество
+    type: official
+  - date: 2024-01-08
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2024-02-23
+    name: 'День защитника Отечества'
+    type: official
+  - date: 2024-03-08
+    name: 'Международный женский день'
+    type: official
+  - date: 2024-05-01
+    name: 'Праздник Весны и Труда'
+    type: official
+  - date: 2024-05-09
+    name: 'День Победы'
+    type: official
+  - date: 2024-06-12
+    name: 'День России'
+    type: official
+  - date: 2024-11-04
+    name: 'День народного единства'
+    type: official
+2025:
+  - date: 2025-01-01
+    name: 'Новый год'
+    type: official
+  - date: 2025-01-02
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2025-01-03
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2025-01-04
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2025-01-05
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2025-01-06
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2025-01-07
+    name: Рождество
+    type: official
+  - date: 2025-01-08
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2025-02-23
+    name: 'День защитника Отечества'
+    type: official
+  - date: 2025-03-08
+    name: 'Международный женский день'
+    type: official
+  - date: 2025-05-01
+    name: 'Праздник Весны и Труда'
+    type: official
+  - date: 2025-05-09
+    name: 'День Победы'
+    type: official
+  - date: 2025-06-12
+    name: 'День России'
+    type: official
+  - date: 2025-11-04
+    name: 'День народного единства'
+    type: official
+2026:
+  - date: 2026-01-01
+    name: 'Новый год'
+    type: official
+  - date: 2026-01-02
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2026-01-03
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2026-01-04
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2026-01-05
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2026-01-06
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2026-01-07
+    name: Рождество
+    type: official
+  - date: 2026-01-08
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2026-02-23
+    name: 'День защитника Отечества'
+    type: official
+  - date: 2026-03-08
+    name: 'Международный женский день'
+    type: official
+  - date: 2026-05-01
+    name: 'Праздник Весны и Труда'
+    type: official
+  - date: 2026-05-09
+    name: 'День Победы'
+    type: official
+  - date: 2026-06-12
+    name: 'День России'
+    type: official
+  - date: 2026-11-04
+    name: 'День народного единства'
+    type: official
+2027:
+  - date: 2027-01-01
+    name: 'Новый год'
+    type: official
+  - date: 2027-01-02
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2027-01-03
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2027-01-04
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2027-01-05
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2027-01-06
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2027-01-07
+    name: Рождество
+    type: official
+  - date: 2027-01-08
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2027-02-23
+    name: 'День защитника Отечества'
+    type: official
+  - date: 2027-03-08
+    name: 'Международный женский день'
+    type: official
+  - date: 2027-05-01
+    name: 'Праздник Весны и Труда'
+    type: official
+  - date: 2027-05-09
+    name: 'День Победы'
+    type: official
+  - date: 2027-06-12
+    name: 'День России'
+    type: official
+  - date: 2027-11-04
+    name: 'День народного единства'
+    type: official
+2028:
+  - date: 2028-01-01
+    name: 'Новый год'
+    type: official
+  - date: 2028-01-02
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2028-01-03
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2028-01-04
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2028-01-05
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2028-01-06
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2028-01-07
+    name: Рождество
+    type: official
+  - date: 2028-01-08
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2028-02-23
+    name: 'День защитника Отечества'
+    type: official
+  - date: 2028-03-08
+    name: 'Международный женский день'
+    type: official
+  - date: 2028-05-01
+    name: 'Праздник Весны и Труда'
+    type: official
+  - date: 2028-05-09
+    name: 'День Победы'
+    type: official
+  - date: 2028-06-12
+    name: 'День России'
+    type: official
+  - date: 2028-11-04
+    name: 'День народного единства'
+    type: official
+2029:
+  - date: 2029-01-01
+    name: 'Новый год'
+    type: official
+  - date: 2029-01-02
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2029-01-03
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2029-01-04
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2029-01-05
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2029-01-06
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2029-01-07
+    name: Рождество
+    type: official
+  - date: 2029-01-08
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2029-02-23
+    name: 'День защитника Отечества'
+    type: official
+  - date: 2029-03-08
+    name: 'Международный женский день'
+    type: official
+  - date: 2029-05-01
+    name: 'Праздник Весны и Труда'
+    type: official
+  - date: 2029-05-09
+    name: 'День Победы'
+    type: official
+  - date: 2029-06-12
+    name: 'День России'
+    type: official
+  - date: 2029-11-04
+    name: 'День народного единства'
+    type: official
+2030:
+  - date: 2030-01-01
+    name: 'Новый год'
+    type: official
+  - date: 2030-01-02
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2030-01-03
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2030-01-04
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2030-01-05
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2030-01-06
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2030-01-07
+    name: Рождество
+    type: official
+  - date: 2030-01-08
+    name: 'Новогодние каникулы'
+    type: official
+  - date: 2030-02-23
+    name: 'День защитника Отечества'
+    type: official
+  - date: 2030-03-08
+    name: 'Международный женский день'
+    type: official
+  - date: 2030-05-01
+    name: 'Праздник Весны и Труда'
+    type: official
+  - date: 2030-05-09
+    name: 'День Победы'
+    type: official
+  - date: 2030-06-12
+    name: 'День России'
+    type: official
+  - date: 2030-11-04
+    name: 'День народного единства'
+    type: official

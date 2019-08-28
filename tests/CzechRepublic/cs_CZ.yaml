@@ -1,0 +1,903 @@
+2010:
+  - date: 2010-01-01
+    name: 'Den obnovy samostatného českého státu'
+    type: official
+  - date: 2010-01-01
+    name: 'Nový rok'
+    type: official
+  - date: 2010-04-02
+    name: 'Velký pátek'
+    type: official
+  - date: 2010-04-05
+    name: 'Velikonoční pondělí'
+    type: official
+  - date: 2010-05-01
+    name: 'Svátek práce'
+    type: official
+  - date: 2010-05-08
+    name: 'Den vítězství'
+    type: official
+  - date: 2010-07-05
+    name: 'Den slovanských věrozvěstů Cyrila a Metoděje'
+    type: official
+  - date: 2010-07-06
+    name: 'Den upálení mistra Jana Husa'
+    type: official
+  - date: 2010-09-28
+    name: 'Den české státnosti'
+    type: official
+  - date: 2010-10-28
+    name: 'Den vzniku samostatného československého státu'
+    type: official
+  - date: 2010-11-17
+    name: 'Den boje za svobodu a demokracii'
+    type: official
+  - date: 2010-12-24
+    name: 'Štědrý den'
+    type: observance
+  - date: 2010-12-25
+    name: '1. svátek vánoční'
+    type: official
+  - date: 2010-12-26
+    name: '2. svátek vánoční'
+    type: official
+2011:
+  - date: 2011-01-01
+    name: 'Den obnovy samostatného českého státu'
+    type: official
+  - date: 2011-01-01
+    name: 'Nový rok'
+    type: official
+  - date: 2011-04-22
+    name: 'Velký pátek'
+    type: official
+  - date: 2011-04-25
+    name: 'Velikonoční pondělí'
+    type: official
+  - date: 2011-05-01
+    name: 'Svátek práce'
+    type: official
+  - date: 2011-05-08
+    name: 'Den vítězství'
+    type: official
+  - date: 2011-07-05
+    name: 'Den slovanských věrozvěstů Cyrila a Metoděje'
+    type: official
+  - date: 2011-07-06
+    name: 'Den upálení mistra Jana Husa'
+    type: official
+  - date: 2011-09-28
+    name: 'Den české státnosti'
+    type: official
+  - date: 2011-10-28
+    name: 'Den vzniku samostatného československého státu'
+    type: official
+  - date: 2011-11-17
+    name: 'Den boje za svobodu a demokracii'
+    type: official
+  - date: 2011-12-24
+    name: 'Štědrý den'
+    type: observance
+  - date: 2011-12-25
+    name: '1. svátek vánoční'
+    type: official
+  - date: 2011-12-26
+    name: '2. svátek vánoční'
+    type: official
+2012:
+  - date: 2012-01-01
+    name: 'Den obnovy samostatného českého státu'
+    type: official
+  - date: 2012-01-01
+    name: 'Nový rok'
+    type: official
+  - date: 2012-04-06
+    name: 'Velký pátek'
+    type: official
+  - date: 2012-04-09
+    name: 'Velikonoční pondělí'
+    type: official
+  - date: 2012-05-01
+    name: 'Svátek práce'
+    type: official
+  - date: 2012-05-08
+    name: 'Den vítězství'
+    type: official
+  - date: 2012-07-05
+    name: 'Den slovanských věrozvěstů Cyrila a Metoděje'
+    type: official
+  - date: 2012-07-06
+    name: 'Den upálení mistra Jana Husa'
+    type: official
+  - date: 2012-09-28
+    name: 'Den české státnosti'
+    type: official
+  - date: 2012-10-28
+    name: 'Den vzniku samostatného československého státu'
+    type: official
+  - date: 2012-11-17
+    name: 'Den boje za svobodu a demokracii'
+    type: official
+  - date: 2012-12-24
+    name: 'Štědrý den'
+    type: observance
+  - date: 2012-12-25
+    name: '1. svátek vánoční'
+    type: official
+  - date: 2012-12-26
+    name: '2. svátek vánoční'
+    type: official
+2013:
+  - date: 2013-01-01
+    name: 'Den obnovy samostatného českého státu'
+    type: official
+  - date: 2013-01-01
+    name: 'Nový rok'
+    type: official
+  - date: 2013-03-29
+    name: 'Velký pátek'
+    type: official
+  - date: 2013-04-01
+    name: 'Velikonoční pondělí'
+    type: official
+  - date: 2013-05-01
+    name: 'Svátek práce'
+    type: official
+  - date: 2013-05-08
+    name: 'Den vítězství'
+    type: official
+  - date: 2013-07-05
+    name: 'Den slovanských věrozvěstů Cyrila a Metoděje'
+    type: official
+  - date: 2013-07-06
+    name: 'Den upálení mistra Jana Husa'
+    type: official
+  - date: 2013-09-28
+    name: 'Den české státnosti'
+    type: official
+  - date: 2013-10-28
+    name: 'Den vzniku samostatného československého státu'
+    type: official
+  - date: 2013-11-17
+    name: 'Den boje za svobodu a demokracii'
+    type: official
+  - date: 2013-12-24
+    name: 'Štědrý den'
+    type: observance
+  - date: 2013-12-25
+    name: '1. svátek vánoční'
+    type: official
+  - date: 2013-12-26
+    name: '2. svátek vánoční'
+    type: official
+2014:
+  - date: 2014-01-01
+    name: 'Den obnovy samostatného českého státu'
+    type: official
+  - date: 2014-01-01
+    name: 'Nový rok'
+    type: official
+  - date: 2014-04-18
+    name: 'Velký pátek'
+    type: official
+  - date: 2014-04-21
+    name: 'Velikonoční pondělí'
+    type: official
+  - date: 2014-05-01
+    name: 'Svátek práce'
+    type: official
+  - date: 2014-05-08
+    name: 'Den vítězství'
+    type: official
+  - date: 2014-07-05
+    name: 'Den slovanských věrozvěstů Cyrila a Metoděje'
+    type: official
+  - date: 2014-07-06
+    name: 'Den upálení mistra Jana Husa'
+    type: official
+  - date: 2014-09-28
+    name: 'Den české státnosti'
+    type: official
+  - date: 2014-10-28
+    name: 'Den vzniku samostatného československého státu'
+    type: official
+  - date: 2014-11-17
+    name: 'Den boje za svobodu a demokracii'
+    type: official
+  - date: 2014-12-24
+    name: 'Štědrý den'
+    type: observance
+  - date: 2014-12-25
+    name: '1. svátek vánoční'
+    type: official
+  - date: 2014-12-26
+    name: '2. svátek vánoční'
+    type: official
+2015:
+  - date: 2015-01-01
+    name: 'Den obnovy samostatného českého státu'
+    type: official
+  - date: 2015-01-01
+    name: 'Nový rok'
+    type: official
+  - date: 2015-04-03
+    name: 'Velký pátek'
+    type: official
+  - date: 2015-04-06
+    name: 'Velikonoční pondělí'
+    type: official
+  - date: 2015-05-01
+    name: 'Svátek práce'
+    type: official
+  - date: 2015-05-08
+    name: 'Den vítězství'
+    type: official
+  - date: 2015-07-05
+    name: 'Den slovanských věrozvěstů Cyrila a Metoděje'
+    type: official
+  - date: 2015-07-06
+    name: 'Den upálení mistra Jana Husa'
+    type: official
+  - date: 2015-09-28
+    name: 'Den české státnosti'
+    type: official
+  - date: 2015-10-28
+    name: 'Den vzniku samostatného československého státu'
+    type: official
+  - date: 2015-11-17
+    name: 'Den boje za svobodu a demokracii'
+    type: official
+  - date: 2015-12-24
+    name: 'Štědrý den'
+    type: observance
+  - date: 2015-12-25
+    name: '1. svátek vánoční'
+    type: official
+  - date: 2015-12-26
+    name: '2. svátek vánoční'
+    type: official
+2016:
+  - date: 2016-01-01
+    name: 'Den obnovy samostatného českého státu'
+    type: official
+  - date: 2016-01-01
+    name: 'Nový rok'
+    type: official
+  - date: 2016-03-25
+    name: 'Velký pátek'
+    type: official
+  - date: 2016-03-28
+    name: 'Velikonoční pondělí'
+    type: official
+  - date: 2016-05-01
+    name: 'Svátek práce'
+    type: official
+  - date: 2016-05-08
+    name: 'Den vítězství'
+    type: official
+  - date: 2016-07-05
+    name: 'Den slovanských věrozvěstů Cyrila a Metoděje'
+    type: official
+  - date: 2016-07-06
+    name: 'Den upálení mistra Jana Husa'
+    type: official
+  - date: 2016-09-28
+    name: 'Den české státnosti'
+    type: official
+  - date: 2016-10-28
+    name: 'Den vzniku samostatného československého státu'
+    type: official
+  - date: 2016-11-17
+    name: 'Den boje za svobodu a demokracii'
+    type: official
+  - date: 2016-12-24
+    name: 'Štědrý den'
+    type: observance
+  - date: 2016-12-25
+    name: '1. svátek vánoční'
+    type: official
+  - date: 2016-12-26
+    name: '2. svátek vánoční'
+    type: official
+2017:
+  - date: 2017-01-01
+    name: 'Den obnovy samostatného českého státu'
+    type: official
+  - date: 2017-01-01
+    name: 'Nový rok'
+    type: official
+  - date: 2017-04-14
+    name: 'Velký pátek'
+    type: official
+  - date: 2017-04-17
+    name: 'Velikonoční pondělí'
+    type: official
+  - date: 2017-05-01
+    name: 'Svátek práce'
+    type: official
+  - date: 2017-05-08
+    name: 'Den vítězství'
+    type: official
+  - date: 2017-07-05
+    name: 'Den slovanských věrozvěstů Cyrila a Metoděje'
+    type: official
+  - date: 2017-07-06
+    name: 'Den upálení mistra Jana Husa'
+    type: official
+  - date: 2017-09-28
+    name: 'Den české státnosti'
+    type: official
+  - date: 2017-10-28
+    name: 'Den vzniku samostatného československého státu'
+    type: official
+  - date: 2017-11-17
+    name: 'Den boje za svobodu a demokracii'
+    type: official
+  - date: 2017-12-24
+    name: 'Štědrý den'
+    type: observance
+  - date: 2017-12-25
+    name: '1. svátek vánoční'
+    type: official
+  - date: 2017-12-26
+    name: '2. svátek vánoční'
+    type: official
+2018:
+  - date: 2018-01-01
+    name: 'Den obnovy samostatného českého státu'
+    type: official
+  - date: 2018-01-01
+    name: 'Nový rok'
+    type: official
+  - date: 2018-03-30
+    name: 'Velký pátek'
+    type: official
+  - date: 2018-04-02
+    name: 'Velikonoční pondělí'
+    type: official
+  - date: 2018-05-01
+    name: 'Svátek práce'
+    type: official
+  - date: 2018-05-08
+    name: 'Den vítězství'
+    type: official
+  - date: 2018-07-05
+    name: 'Den slovanských věrozvěstů Cyrila a Metoděje'
+    type: official
+  - date: 2018-07-06
+    name: 'Den upálení mistra Jana Husa'
+    type: official
+  - date: 2018-09-28
+    name: 'Den české státnosti'
+    type: official
+  - date: 2018-10-28
+    name: 'Den vzniku samostatného československého státu'
+    type: official
+  - date: 2018-11-17
+    name: 'Den boje za svobodu a demokracii'
+    type: official
+  - date: 2018-12-24
+    name: 'Štědrý den'
+    type: observance
+  - date: 2018-12-25
+    name: '1. svátek vánoční'
+    type: official
+  - date: 2018-12-26
+    name: '2. svátek vánoční'
+    type: official
+2019:
+  - date: 2019-01-01
+    name: 'Den obnovy samostatného českého státu'
+    type: official
+  - date: 2019-01-01
+    name: 'Nový rok'
+    type: official
+  - date: 2019-04-19
+    name: 'Velký pátek'
+    type: official
+  - date: 2019-04-22
+    name: 'Velikonoční pondělí'
+    type: official
+  - date: 2019-05-01
+    name: 'Svátek práce'
+    type: official
+  - date: 2019-05-08
+    name: 'Den vítězství'
+    type: official
+  - date: 2019-07-05
+    name: 'Den slovanských věrozvěstů Cyrila a Metoděje'
+    type: official
+  - date: 2019-07-06
+    name: 'Den upálení mistra Jana Husa'
+    type: official
+  - date: 2019-09-28
+    name: 'Den české státnosti'
+    type: official
+  - date: 2019-10-28
+    name: 'Den vzniku samostatného československého státu'
+    type: official
+  - date: 2019-11-17
+    name: 'Den boje za svobodu a demokracii'
+    type: official
+  - date: 2019-12-24
+    name: 'Štědrý den'
+    type: observance
+  - date: 2019-12-25
+    name: '1. svátek vánoční'
+    type: official
+  - date: 2019-12-26
+    name: '2. svátek vánoční'
+    type: official
+2020:
+  - date: 2020-01-01
+    name: 'Den obnovy samostatného českého státu'
+    type: official
+  - date: 2020-01-01
+    name: 'Nový rok'
+    type: official
+  - date: 2020-04-10
+    name: 'Velký pátek'
+    type: official
+  - date: 2020-04-13
+    name: 'Velikonoční pondělí'
+    type: official
+  - date: 2020-05-01
+    name: 'Svátek práce'
+    type: official
+  - date: 2020-05-08
+    name: 'Den vítězství'
+    type: official
+  - date: 2020-07-05
+    name: 'Den slovanských věrozvěstů Cyrila a Metoděje'
+    type: official
+  - date: 2020-07-06
+    name: 'Den upálení mistra Jana Husa'
+    type: official
+  - date: 2020-09-28
+    name: 'Den české státnosti'
+    type: official
+  - date: 2020-10-28
+    name: 'Den vzniku samostatného československého státu'
+    type: official
+  - date: 2020-11-17
+    name: 'Den boje za svobodu a demokracii'
+    type: official
+  - date: 2020-12-24
+    name: 'Štědrý den'
+    type: observance
+  - date: 2020-12-25
+    name: '1. svátek vánoční'
+    type: official
+  - date: 2020-12-26
+    name: '2. svátek vánoční'
+    type: official
+2021:
+  - date: 2021-01-01
+    name: 'Den obnovy samostatného českého státu'
+    type: official
+  - date: 2021-01-01
+    name: 'Nový rok'
+    type: official
+  - date: 2021-04-02
+    name: 'Velký pátek'
+    type: official
+  - date: 2021-04-05
+    name: 'Velikonoční pondělí'
+    type: official
+  - date: 2021-05-01
+    name: 'Svátek práce'
+    type: official
+  - date: 2021-05-08
+    name: 'Den vítězství'
+    type: official
+  - date: 2021-07-05
+    name: 'Den slovanských věrozvěstů Cyrila a Metoděje'
+    type: official
+  - date: 2021-07-06
+    name: 'Den upálení mistra Jana Husa'
+    type: official
+  - date: 2021-09-28
+    name: 'Den české státnosti'
+    type: official
+  - date: 2021-10-28
+    name: 'Den vzniku samostatného československého státu'
+    type: official
+  - date: 2021-11-17
+    name: 'Den boje za svobodu a demokracii'
+    type: official
+  - date: 2021-12-24
+    name: 'Štědrý den'
+    type: observance
+  - date: 2021-12-25
+    name: '1. svátek vánoční'
+    type: official
+  - date: 2021-12-26
+    name: '2. svátek vánoční'
+    type: official
+2022:
+  - date: 2022-01-01
+    name: 'Den obnovy samostatného českého státu'
+    type: official
+  - date: 2022-01-01
+    name: 'Nový rok'
+    type: official
+  - date: 2022-04-15
+    name: 'Velký pátek'
+    type: official
+  - date: 2022-04-18
+    name: 'Velikonoční pondělí'
+    type: official
+  - date: 2022-05-01
+    name: 'Svátek práce'
+    type: official
+  - date: 2022-05-08
+    name: 'Den vítězství'
+    type: official
+  - date: 2022-07-05
+    name: 'Den slovanských věrozvěstů Cyrila a Metoděje'
+    type: official
+  - date: 2022-07-06
+    name: 'Den upálení mistra Jana Husa'
+    type: official
+  - date: 2022-09-28
+    name: 'Den české státnosti'
+    type: official
+  - date: 2022-10-28
+    name: 'Den vzniku samostatného československého státu'
+    type: official
+  - date: 2022-11-17
+    name: 'Den boje za svobodu a demokracii'
+    type: official
+  - date: 2022-12-24
+    name: 'Štědrý den'
+    type: observance
+  - date: 2022-12-25
+    name: '1. svátek vánoční'
+    type: official
+  - date: 2022-12-26
+    name: '2. svátek vánoční'
+    type: official
+2023:
+  - date: 2023-01-01
+    name: 'Den obnovy samostatného českého státu'
+    type: official
+  - date: 2023-01-01
+    name: 'Nový rok'
+    type: official
+  - date: 2023-04-07
+    name: 'Velký pátek'
+    type: official
+  - date: 2023-04-10
+    name: 'Velikonoční pondělí'
+    type: official
+  - date: 2023-05-01
+    name: 'Svátek práce'
+    type: official
+  - date: 2023-05-08
+    name: 'Den vítězství'
+    type: official
+  - date: 2023-07-05
+    name: 'Den slovanských věrozvěstů Cyrila a Metoděje'
+    type: official
+  - date: 2023-07-06
+    name: 'Den upálení mistra Jana Husa'
+    type: official
+  - date: 2023-09-28
+    name: 'Den české státnosti'
+    type: official
+  - date: 2023-10-28
+    name: 'Den vzniku samostatného československého státu'
+    type: official
+  - date: 2023-11-17
+    name: 'Den boje za svobodu a demokracii'
+    type: official
+  - date: 2023-12-24
+    name: 'Štědrý den'
+    type: observance
+  - date: 2023-12-25
+    name: '1. svátek vánoční'
+    type: official
+  - date: 2023-12-26
+    name: '2. svátek vánoční'
+    type: official
+2024:
+  - date: 2024-01-01
+    name: 'Den obnovy samostatného českého státu'
+    type: official
+  - date: 2024-01-01
+    name: 'Nový rok'
+    type: official
+  - date: 2024-03-29
+    name: 'Velký pátek'
+    type: official
+  - date: 2024-04-01
+    name: 'Velikonoční pondělí'
+    type: official
+  - date: 2024-05-01
+    name: 'Svátek práce'
+    type: official
+  - date: 2024-05-08
+    name: 'Den vítězství'
+    type: official
+  - date: 2024-07-05
+    name: 'Den slovanských věrozvěstů Cyrila a Metoděje'
+    type: official
+  - date: 2024-07-06
+    name: 'Den upálení mistra Jana Husa'
+    type: official
+  - date: 2024-09-28
+    name: 'Den české státnosti'
+    type: official
+  - date: 2024-10-28
+    name: 'Den vzniku samostatného československého státu'
+    type: official
+  - date: 2024-11-17
+    name: 'Den boje za svobodu a demokracii'
+    type: official
+  - date: 2024-12-24
+    name: 'Štědrý den'
+    type: observance
+  - date: 2024-12-25
+    name: '1. svátek vánoční'
+    type: official
+  - date: 2024-12-26
+    name: '2. svátek vánoční'
+    type: official
+2025:
+  - date: 2025-01-01
+    name: 'Den obnovy samostatného českého státu'
+    type: official
+  - date: 2025-01-01
+    name: 'Nový rok'
+    type: official
+  - date: 2025-04-18
+    name: 'Velký pátek'
+    type: official
+  - date: 2025-04-21
+    name: 'Velikonoční pondělí'
+    type: official
+  - date: 2025-05-01
+    name: 'Svátek práce'
+    type: official
+  - date: 2025-05-08
+    name: 'Den vítězství'
+    type: official
+  - date: 2025-07-05
+    name: 'Den slovanských věrozvěstů Cyrila a Metoděje'
+    type: official
+  - date: 2025-07-06
+    name: 'Den upálení mistra Jana Husa'
+    type: official
+  - date: 2025-09-28
+    name: 'Den české státnosti'
+    type: official
+  - date: 2025-10-28
+    name: 'Den vzniku samostatného československého státu'
+    type: official
+  - date: 2025-11-17
+    name: 'Den boje za svobodu a demokracii'
+    type: official
+  - date: 2025-12-24
+    name: 'Štědrý den'
+    type: observance
+  - date: 2025-12-25
+    name: '1. svátek vánoční'
+    type: official
+  - date: 2025-12-26
+    name: '2. svátek vánoční'
+    type: official
+2026:
+  - date: 2026-01-01
+    name: 'Den obnovy samostatného českého státu'
+    type: official
+  - date: 2026-01-01
+    name: 'Nový rok'
+    type: official
+  - date: 2026-04-03
+    name: 'Velký pátek'
+    type: official
+  - date: 2026-04-06
+    name: 'Velikonoční pondělí'
+    type: official
+  - date: 2026-05-01
+    name: 'Svátek práce'
+    type: official
+  - date: 2026-05-08
+    name: 'Den vítězství'
+    type: official
+  - date: 2026-07-05
+    name: 'Den slovanských věrozvěstů Cyrila a Metoděje'
+    type: official
+  - date: 2026-07-06
+    name: 'Den upálení mistra Jana Husa'
+    type: official
+  - date: 2026-09-28
+    name: 'Den české státnosti'
+    type: official
+  - date: 2026-10-28
+    name: 'Den vzniku samostatného československého státu'
+    type: official
+  - date: 2026-11-17
+    name: 'Den boje za svobodu a demokracii'
+    type: official
+  - date: 2026-12-24
+    name: 'Štědrý den'
+    type: observance
+  - date: 2026-12-25
+    name: '1. svátek vánoční'
+    type: official
+  - date: 2026-12-26
+    name: '2. svátek vánoční'
+    type: official
+2027:
+  - date: 2027-01-01
+    name: 'Den obnovy samostatného českého státu'
+    type: official
+  - date: 2027-01-01
+    name: 'Nový rok'
+    type: official
+  - date: 2027-03-26
+    name: 'Velký pátek'
+    type: official
+  - date: 2027-03-29
+    name: 'Velikonoční pondělí'
+    type: official
+  - date: 2027-05-01
+    name: 'Svátek práce'
+    type: official
+  - date: 2027-05-08
+    name: 'Den vítězství'
+    type: official
+  - date: 2027-07-05
+    name: 'Den slovanských věrozvěstů Cyrila a Metoděje'
+    type: official
+  - date: 2027-07-06
+    name: 'Den upálení mistra Jana Husa'
+    type: official
+  - date: 2027-09-28
+    name: 'Den české státnosti'
+    type: official
+  - date: 2027-10-28
+    name: 'Den vzniku samostatného československého státu'
+    type: official
+  - date: 2027-11-17
+    name: 'Den boje za svobodu a demokracii'
+    type: official
+  - date: 2027-12-24
+    name: 'Štědrý den'
+    type: observance
+  - date: 2027-12-25
+    name: '1. svátek vánoční'
+    type: official
+  - date: 2027-12-26
+    name: '2. svátek vánoční'
+    type: official
+2028:
+  - date: 2028-01-01
+    name: 'Den obnovy samostatného českého státu'
+    type: official
+  - date: 2028-01-01
+    name: 'Nový rok'
+    type: official
+  - date: 2028-04-14
+    name: 'Velký pátek'
+    type: official
+  - date: 2028-04-17
+    name: 'Velikonoční pondělí'
+    type: official
+  - date: 2028-05-01
+    name: 'Svátek práce'
+    type: official
+  - date: 2028-05-08
+    name: 'Den vítězství'
+    type: official
+  - date: 2028-07-05
+    name: 'Den slovanských věrozvěstů Cyrila a Metoděje'
+    type: official
+  - date: 2028-07-06
+    name: 'Den upálení mistra Jana Husa'
+    type: official
+  - date: 2028-09-28
+    name: 'Den české státnosti'
+    type: official
+  - date: 2028-10-28
+    name: 'Den vzniku samostatného československého státu'
+    type: official
+  - date: 2028-11-17
+    name: 'Den boje za svobodu a demokracii'
+    type: official
+  - date: 2028-12-24
+    name: 'Štědrý den'
+    type: observance
+  - date: 2028-12-25
+    name: '1. svátek vánoční'
+    type: official
+  - date: 2028-12-26
+    name: '2. svátek vánoční'
+    type: official
+2029:
+  - date: 2029-01-01
+    name: 'Den obnovy samostatného českého státu'
+    type: official
+  - date: 2029-01-01
+    name: 'Nový rok'
+    type: official
+  - date: 2029-03-30
+    name: 'Velký pátek'
+    type: official
+  - date: 2029-04-02
+    name: 'Velikonoční pondělí'
+    type: official
+  - date: 2029-05-01
+    name: 'Svátek práce'
+    type: official
+  - date: 2029-05-08
+    name: 'Den vítězství'
+    type: official
+  - date: 2029-07-05
+    name: 'Den slovanských věrozvěstů Cyrila a Metoděje'
+    type: official
+  - date: 2029-07-06
+    name: 'Den upálení mistra Jana Husa'
+    type: official
+  - date: 2029-09-28
+    name: 'Den české státnosti'
+    type: official
+  - date: 2029-10-28
+    name: 'Den vzniku samostatného československého státu'
+    type: official
+  - date: 2029-11-17
+    name: 'Den boje za svobodu a demokracii'
+    type: official
+  - date: 2029-12-24
+    name: 'Štědrý den'
+    type: observance
+  - date: 2029-12-25
+    name: '1. svátek vánoční'
+    type: official
+  - date: 2029-12-26
+    name: '2. svátek vánoční'
+    type: official
+2030:
+  - date: 2030-01-01
+    name: 'Den obnovy samostatného českého státu'
+    type: official
+  - date: 2030-01-01
+    name: 'Nový rok'
+    type: official
+  - date: 2030-04-19
+    name: 'Velký pátek'
+    type: official
+  - date: 2030-04-22
+    name: 'Velikonoční pondělí'
+    type: official
+  - date: 2030-05-01
+    name: 'Svátek práce'
+    type: official
+  - date: 2030-05-08
+    name: 'Den vítězství'
+    type: official
+  - date: 2030-07-05
+    name: 'Den slovanských věrozvěstů Cyrila a Metoděje'
+    type: official
+  - date: 2030-07-06
+    name: 'Den upálení mistra Jana Husa'
+    type: official
+  - date: 2030-09-28
+    name: 'Den české státnosti'
+    type: official
+  - date: 2030-10-28
+    name: 'Den vzniku samostatného československého státu'
+    type: official
+  - date: 2030-11-17
+    name: 'Den boje za svobodu a demokracii'
+    type: official
+  - date: 2030-12-24
+    name: 'Štědrý den'
+    type: observance
+  - date: 2030-12-25
+    name: '1. svátek vánoční'
+    type: official
+  - date: 2030-12-26
+    name: '2. svátek vánoční'
+    type: official

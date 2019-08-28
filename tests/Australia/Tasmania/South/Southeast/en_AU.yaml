@@ -1,0 +1,771 @@
+2010:
+  - date: 2010-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2010-01-26
+    name: 'Australia Day'
+    type: official
+  - date: 2010-02-08
+    name: 'Royal Hobart Regatta'
+    type: official
+  - date: 2010-03-08
+    name: 'Eight Hour Day'
+    type: official
+  - date: 2010-04-02
+    name: 'Good Friday'
+    type: official
+  - date: 2010-04-05
+    name: 'Easter Monday'
+    type: official
+  - date: 2010-04-25
+    name: 'ANZAC Day'
+    type: official
+  - date: 2010-06-14
+    name: 'Queen''s Birthday'
+    type: official
+  - date: 2010-10-21
+    name: 'Royal Hobart Show'
+    type: official
+  - date: 2010-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2010-12-26
+    name: 'Boxing Day'
+    type: official
+  - date: 2010-12-27
+    name: 'Christmas Holiday'
+    type: official
+  - date: 2010-12-28
+    name: 'Boxing Day Holiday'
+    type: official
+2011:
+  - date: 2011-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2011-01-03
+    name: 'New Year''s Holiday'
+    type: official
+  - date: 2011-01-26
+    name: 'Australia Day'
+    type: official
+  - date: 2011-02-14
+    name: 'Royal Hobart Regatta'
+    type: official
+  - date: 2011-03-14
+    name: 'Eight Hour Day'
+    type: official
+  - date: 2011-04-22
+    name: 'Good Friday'
+    type: official
+  - date: 2011-04-25
+    name: 'ANZAC Day'
+    type: official
+  - date: 2011-04-25
+    name: 'Easter Monday'
+    type: official
+  - date: 2011-04-26
+    name: 'Easter Tuesday'
+    type: official
+  - date: 2011-06-13
+    name: 'Queen''s Birthday'
+    type: official
+  - date: 2011-10-20
+    name: 'Royal Hobart Show'
+    type: official
+  - date: 2011-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2011-12-26
+    name: 'Boxing Day'
+    type: official
+  - date: 2011-12-27
+    name: 'Christmas Holiday'
+    type: official
+2012:
+  - date: 2012-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2012-01-02
+    name: 'New Year''s Holiday'
+    type: official
+  - date: 2012-01-26
+    name: 'Australia Day'
+    type: official
+  - date: 2012-02-13
+    name: 'Royal Hobart Regatta'
+    type: official
+  - date: 2012-03-12
+    name: 'Eight Hour Day'
+    type: official
+  - date: 2012-04-06
+    name: 'Good Friday'
+    type: official
+  - date: 2012-04-09
+    name: 'Easter Monday'
+    type: official
+  - date: 2012-04-25
+    name: 'ANZAC Day'
+    type: official
+  - date: 2012-06-11
+    name: 'Queen''s Birthday'
+    type: official
+  - date: 2012-10-25
+    name: 'Royal Hobart Show'
+    type: official
+  - date: 2012-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2012-12-26
+    name: 'Boxing Day'
+    type: official
+2013:
+  - date: 2013-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2013-01-28
+    name: 'Australia Day'
+    type: official
+  - date: 2013-02-11
+    name: 'Royal Hobart Regatta'
+    type: official
+  - date: 2013-03-11
+    name: 'Eight Hour Day'
+    type: official
+  - date: 2013-03-29
+    name: 'Good Friday'
+    type: official
+  - date: 2013-04-01
+    name: 'Easter Monday'
+    type: official
+  - date: 2013-04-25
+    name: 'ANZAC Day'
+    type: official
+  - date: 2013-06-10
+    name: 'Queen''s Birthday'
+    type: official
+  - date: 2013-10-24
+    name: 'Royal Hobart Show'
+    type: official
+  - date: 2013-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2013-12-26
+    name: 'Boxing Day'
+    type: official
+2014:
+  - date: 2014-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2014-01-27
+    name: 'Australia Day'
+    type: official
+  - date: 2014-02-10
+    name: 'Royal Hobart Regatta'
+    type: official
+  - date: 2014-03-10
+    name: 'Eight Hour Day'
+    type: official
+  - date: 2014-04-18
+    name: 'Good Friday'
+    type: official
+  - date: 2014-04-21
+    name: 'Easter Monday'
+    type: official
+  - date: 2014-04-25
+    name: 'ANZAC Day'
+    type: official
+  - date: 2014-06-09
+    name: 'Queen''s Birthday'
+    type: official
+  - date: 2014-10-23
+    name: 'Royal Hobart Show'
+    type: official
+  - date: 2014-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2014-12-26
+    name: 'Boxing Day'
+    type: official
+2015:
+  - date: 2015-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2015-01-26
+    name: 'Australia Day'
+    type: official
+  - date: 2015-02-09
+    name: 'Royal Hobart Regatta'
+    type: official
+  - date: 2015-03-09
+    name: 'Eight Hour Day'
+    type: official
+  - date: 2015-04-03
+    name: 'Good Friday'
+    type: official
+  - date: 2015-04-06
+    name: 'Easter Monday'
+    type: official
+  - date: 2015-04-25
+    name: 'ANZAC Day'
+    type: official
+  - date: 2015-06-08
+    name: 'Queen''s Birthday'
+    type: official
+  - date: 2015-10-22
+    name: 'Royal Hobart Show'
+    type: official
+  - date: 2015-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2015-12-26
+    name: 'Boxing Day'
+    type: official
+  - date: 2015-12-28
+    name: 'Boxing Day Holiday'
+    type: official
+2016:
+  - date: 2016-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2016-01-26
+    name: 'Australia Day'
+    type: official
+  - date: 2016-02-08
+    name: 'Royal Hobart Regatta'
+    type: official
+  - date: 2016-03-14
+    name: 'Eight Hour Day'
+    type: official
+  - date: 2016-03-25
+    name: 'Good Friday'
+    type: official
+  - date: 2016-03-28
+    name: 'Easter Monday'
+    type: official
+  - date: 2016-04-25
+    name: 'ANZAC Day'
+    type: official
+  - date: 2016-06-13
+    name: 'Queen''s Birthday'
+    type: official
+  - date: 2016-10-20
+    name: 'Royal Hobart Show'
+    type: official
+  - date: 2016-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2016-12-26
+    name: 'Boxing Day'
+    type: official
+  - date: 2016-12-27
+    name: 'Christmas Holiday'
+    type: official
+2017:
+  - date: 2017-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2017-01-02
+    name: 'New Year''s Holiday'
+    type: official
+  - date: 2017-01-26
+    name: 'Australia Day'
+    type: official
+  - date: 2017-02-13
+    name: 'Royal Hobart Regatta'
+    type: official
+  - date: 2017-03-13
+    name: 'Eight Hour Day'
+    type: official
+  - date: 2017-04-14
+    name: 'Good Friday'
+    type: official
+  - date: 2017-04-17
+    name: 'Easter Monday'
+    type: official
+  - date: 2017-04-25
+    name: 'ANZAC Day'
+    type: official
+  - date: 2017-06-12
+    name: 'Queen''s Birthday'
+    type: official
+  - date: 2017-10-26
+    name: 'Royal Hobart Show'
+    type: official
+  - date: 2017-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2017-12-26
+    name: 'Boxing Day'
+    type: official
+2018:
+  - date: 2018-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2018-01-26
+    name: 'Australia Day'
+    type: official
+  - date: 2018-02-12
+    name: 'Royal Hobart Regatta'
+    type: official
+  - date: 2018-03-12
+    name: 'Eight Hour Day'
+    type: official
+  - date: 2018-03-30
+    name: 'Good Friday'
+    type: official
+  - date: 2018-04-02
+    name: 'Easter Monday'
+    type: official
+  - date: 2018-04-25
+    name: 'ANZAC Day'
+    type: official
+  - date: 2018-06-11
+    name: 'Queen''s Birthday'
+    type: official
+  - date: 2018-10-25
+    name: 'Royal Hobart Show'
+    type: official
+  - date: 2018-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2018-12-26
+    name: 'Boxing Day'
+    type: official
+2019:
+  - date: 2019-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2019-01-28
+    name: 'Australia Day'
+    type: official
+  - date: 2019-02-11
+    name: 'Royal Hobart Regatta'
+    type: official
+  - date: 2019-03-11
+    name: 'Eight Hour Day'
+    type: official
+  - date: 2019-04-19
+    name: 'Good Friday'
+    type: official
+  - date: 2019-04-22
+    name: 'Easter Monday'
+    type: official
+  - date: 2019-04-25
+    name: 'ANZAC Day'
+    type: official
+  - date: 2019-06-10
+    name: 'Queen''s Birthday'
+    type: official
+  - date: 2019-10-24
+    name: 'Royal Hobart Show'
+    type: official
+  - date: 2019-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2019-12-26
+    name: 'Boxing Day'
+    type: official
+2020:
+  - date: 2020-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2020-01-27
+    name: 'Australia Day'
+    type: official
+  - date: 2020-02-10
+    name: 'Royal Hobart Regatta'
+    type: official
+  - date: 2020-03-09
+    name: 'Eight Hour Day'
+    type: official
+  - date: 2020-04-10
+    name: 'Good Friday'
+    type: official
+  - date: 2020-04-13
+    name: 'Easter Monday'
+    type: official
+  - date: 2020-04-25
+    name: 'ANZAC Day'
+    type: official
+  - date: 2020-06-08
+    name: 'Queen''s Birthday'
+    type: official
+  - date: 2020-10-22
+    name: 'Royal Hobart Show'
+    type: official
+  - date: 2020-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2020-12-26
+    name: 'Boxing Day'
+    type: official
+  - date: 2020-12-28
+    name: 'Boxing Day Holiday'
+    type: official
+2021:
+  - date: 2021-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2021-01-26
+    name: 'Australia Day'
+    type: official
+  - date: 2021-02-08
+    name: 'Royal Hobart Regatta'
+    type: official
+  - date: 2021-03-08
+    name: 'Eight Hour Day'
+    type: official
+  - date: 2021-04-02
+    name: 'Good Friday'
+    type: official
+  - date: 2021-04-05
+    name: 'Easter Monday'
+    type: official
+  - date: 2021-04-25
+    name: 'ANZAC Day'
+    type: official
+  - date: 2021-06-14
+    name: 'Queen''s Birthday'
+    type: official
+  - date: 2021-10-21
+    name: 'Royal Hobart Show'
+    type: official
+  - date: 2021-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2021-12-26
+    name: 'Boxing Day'
+    type: official
+  - date: 2021-12-27
+    name: 'Christmas Holiday'
+    type: official
+  - date: 2021-12-28
+    name: 'Boxing Day Holiday'
+    type: official
+2022:
+  - date: 2022-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2022-01-03
+    name: 'New Year''s Holiday'
+    type: official
+  - date: 2022-01-26
+    name: 'Australia Day'
+    type: official
+  - date: 2022-02-14
+    name: 'Royal Hobart Regatta'
+    type: official
+  - date: 2022-03-14
+    name: 'Eight Hour Day'
+    type: official
+  - date: 2022-04-15
+    name: 'Good Friday'
+    type: official
+  - date: 2022-04-18
+    name: 'Easter Monday'
+    type: official
+  - date: 2022-04-25
+    name: 'ANZAC Day'
+    type: official
+  - date: 2022-06-13
+    name: 'Queen''s Birthday'
+    type: official
+  - date: 2022-10-20
+    name: 'Royal Hobart Show'
+    type: official
+  - date: 2022-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2022-12-26
+    name: 'Boxing Day'
+    type: official
+  - date: 2022-12-27
+    name: 'Christmas Holiday'
+    type: official
+2023:
+  - date: 2023-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2023-01-02
+    name: 'New Year''s Holiday'
+    type: official
+  - date: 2023-01-26
+    name: 'Australia Day'
+    type: official
+  - date: 2023-02-13
+    name: 'Royal Hobart Regatta'
+    type: official
+  - date: 2023-03-13
+    name: 'Eight Hour Day'
+    type: official
+  - date: 2023-04-07
+    name: 'Good Friday'
+    type: official
+  - date: 2023-04-10
+    name: 'Easter Monday'
+    type: official
+  - date: 2023-04-25
+    name: 'ANZAC Day'
+    type: official
+  - date: 2023-06-12
+    name: 'Queen''s Birthday'
+    type: official
+  - date: 2023-10-26
+    name: 'Royal Hobart Show'
+    type: official
+  - date: 2023-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2023-12-26
+    name: 'Boxing Day'
+    type: official
+2024:
+  - date: 2024-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2024-01-26
+    name: 'Australia Day'
+    type: official
+  - date: 2024-02-12
+    name: 'Royal Hobart Regatta'
+    type: official
+  - date: 2024-03-11
+    name: 'Eight Hour Day'
+    type: official
+  - date: 2024-03-29
+    name: 'Good Friday'
+    type: official
+  - date: 2024-04-01
+    name: 'Easter Monday'
+    type: official
+  - date: 2024-04-25
+    name: 'ANZAC Day'
+    type: official
+  - date: 2024-06-10
+    name: 'Queen''s Birthday'
+    type: official
+  - date: 2024-10-24
+    name: 'Royal Hobart Show'
+    type: official
+  - date: 2024-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2024-12-26
+    name: 'Boxing Day'
+    type: official
+2025:
+  - date: 2025-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2025-01-27
+    name: 'Australia Day'
+    type: official
+  - date: 2025-02-10
+    name: 'Royal Hobart Regatta'
+    type: official
+  - date: 2025-03-10
+    name: 'Eight Hour Day'
+    type: official
+  - date: 2025-04-18
+    name: 'Good Friday'
+    type: official
+  - date: 2025-04-21
+    name: 'Easter Monday'
+    type: official
+  - date: 2025-04-25
+    name: 'ANZAC Day'
+    type: official
+  - date: 2025-06-09
+    name: 'Queen''s Birthday'
+    type: official
+  - date: 2025-10-23
+    name: 'Royal Hobart Show'
+    type: official
+  - date: 2025-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2025-12-26
+    name: 'Boxing Day'
+    type: official
+2026:
+  - date: 2026-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2026-01-26
+    name: 'Australia Day'
+    type: official
+  - date: 2026-02-09
+    name: 'Royal Hobart Regatta'
+    type: official
+  - date: 2026-03-09
+    name: 'Eight Hour Day'
+    type: official
+  - date: 2026-04-03
+    name: 'Good Friday'
+    type: official
+  - date: 2026-04-06
+    name: 'Easter Monday'
+    type: official
+  - date: 2026-04-25
+    name: 'ANZAC Day'
+    type: official
+  - date: 2026-06-08
+    name: 'Queen''s Birthday'
+    type: official
+  - date: 2026-10-22
+    name: 'Royal Hobart Show'
+    type: official
+  - date: 2026-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2026-12-26
+    name: 'Boxing Day'
+    type: official
+  - date: 2026-12-28
+    name: 'Boxing Day Holiday'
+    type: official
+2027:
+  - date: 2027-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2027-01-26
+    name: 'Australia Day'
+    type: official
+  - date: 2027-02-08
+    name: 'Royal Hobart Regatta'
+    type: official
+  - date: 2027-03-08
+    name: 'Eight Hour Day'
+    type: official
+  - date: 2027-03-26
+    name: 'Good Friday'
+    type: official
+  - date: 2027-03-29
+    name: 'Easter Monday'
+    type: official
+  - date: 2027-04-25
+    name: 'ANZAC Day'
+    type: official
+  - date: 2027-06-14
+    name: 'Queen''s Birthday'
+    type: official
+  - date: 2027-10-21
+    name: 'Royal Hobart Show'
+    type: official
+  - date: 2027-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2027-12-26
+    name: 'Boxing Day'
+    type: official
+  - date: 2027-12-27
+    name: 'Christmas Holiday'
+    type: official
+  - date: 2027-12-28
+    name: 'Boxing Day Holiday'
+    type: official
+2028:
+  - date: 2028-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2028-01-03
+    name: 'New Year''s Holiday'
+    type: official
+  - date: 2028-01-26
+    name: 'Australia Day'
+    type: official
+  - date: 2028-02-14
+    name: 'Royal Hobart Regatta'
+    type: official
+  - date: 2028-03-13
+    name: 'Eight Hour Day'
+    type: official
+  - date: 2028-04-14
+    name: 'Good Friday'
+    type: official
+  - date: 2028-04-17
+    name: 'Easter Monday'
+    type: official
+  - date: 2028-04-25
+    name: 'ANZAC Day'
+    type: official
+  - date: 2028-06-12
+    name: 'Queen''s Birthday'
+    type: official
+  - date: 2028-10-26
+    name: 'Royal Hobart Show'
+    type: official
+  - date: 2028-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2028-12-26
+    name: 'Boxing Day'
+    type: official
+2029:
+  - date: 2029-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2029-01-26
+    name: 'Australia Day'
+    type: official
+  - date: 2029-02-12
+    name: 'Royal Hobart Regatta'
+    type: official
+  - date: 2029-03-12
+    name: 'Eight Hour Day'
+    type: official
+  - date: 2029-03-30
+    name: 'Good Friday'
+    type: official
+  - date: 2029-04-02
+    name: 'Easter Monday'
+    type: official
+  - date: 2029-04-25
+    name: 'ANZAC Day'
+    type: official
+  - date: 2029-06-11
+    name: 'Queen''s Birthday'
+    type: official
+  - date: 2029-10-25
+    name: 'Royal Hobart Show'
+    type: official
+  - date: 2029-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2029-12-26
+    name: 'Boxing Day'
+    type: official
+2030:
+  - date: 2030-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2030-01-28
+    name: 'Australia Day'
+    type: official
+  - date: 2030-02-11
+    name: 'Royal Hobart Regatta'
+    type: official
+  - date: 2030-03-11
+    name: 'Eight Hour Day'
+    type: official
+  - date: 2030-04-19
+    name: 'Good Friday'
+    type: official
+  - date: 2030-04-22
+    name: 'Easter Monday'
+    type: official
+  - date: 2030-04-25
+    name: 'ANZAC Day'
+    type: official
+  - date: 2030-06-10
+    name: 'Queen''s Birthday'
+    type: official
+  - date: 2030-10-24
+    name: 'Royal Hobart Show'
+    type: official
+  - date: 2030-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2030-12-26
+    name: 'Boxing Day'
+    type: official

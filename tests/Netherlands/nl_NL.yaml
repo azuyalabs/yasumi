@@ -1,0 +1,1785 @@
+2010:
+  - date: 2010-01-01
+    name: Nieuwjaar
+    type: official
+  - date: 2010-01-06
+    name: 'Drie Koningen'
+    type: other
+  - date: 2010-02-14
+    name: Carnaval
+    type: observance
+  - date: 2010-02-14
+    name: Valentijnsdag
+    type: other
+  - date: 2010-02-15
+    name: Carnaval
+    type: observance
+  - date: 2010-02-16
+    name: Carnaval
+    type: observance
+  - date: 2010-02-17
+    name: Aswoensdag
+    type: observance
+  - date: 2010-03-28
+    name: Zomertijd
+    type: season
+  - date: 2010-04-02
+    name: 'Goede Vrijdag'
+    type: observance
+  - date: 2010-04-04
+    name: 'Eerste paasdag'
+    type: official
+  - date: 2010-04-05
+    name: 'Tweede paasdag'
+    type: official
+  - date: 2010-04-30
+    name: Koninginnedag
+    type: official
+  - date: 2010-05-01
+    name: 'Dag van de arbeid'
+    type: other
+  - date: 2010-05-04
+    name: Dodenherdenking
+    type: observance
+  - date: 2010-05-05
+    name: Bevrijdingsdag
+    type: observance
+  - date: 2010-05-09
+    name: Moederdag
+    type: other
+  - date: 2010-05-13
+    name: Hemelvaart
+    type: official
+  - date: 2010-05-23
+    name: 'Eerste pinksterdag'
+    type: official
+  - date: 2010-05-24
+    name: 'Tweede pinksterdag'
+    type: official
+  - date: 2010-06-20
+    name: Vaderdag
+    type: other
+  - date: 2010-09-21
+    name: Prinsjesdag
+    type: other
+  - date: 2010-10-04
+    name: Werelddierendag
+    type: other
+  - date: 2010-10-31
+    name: Halloween
+    type: observance
+  - date: 2010-10-31
+    name: Wintertijd
+    type: season
+  - date: 2010-11-11
+    name: 'Sint Maarten'
+    type: observance
+  - date: 2010-12-05
+    name: Sinterklaas
+    type: observance
+  - date: 2010-12-25
+    name: Kerstmis
+    type: official
+  - date: 2010-12-26
+    name: 'Tweede kerstdag'
+    type: official
+2011:
+  - date: 2011-01-01
+    name: Nieuwjaar
+    type: official
+  - date: 2011-01-06
+    name: 'Drie Koningen'
+    type: other
+  - date: 2011-02-14
+    name: Valentijnsdag
+    type: other
+  - date: 2011-03-06
+    name: Carnaval
+    type: observance
+  - date: 2011-03-07
+    name: Carnaval
+    type: observance
+  - date: 2011-03-08
+    name: Carnaval
+    type: observance
+  - date: 2011-03-09
+    name: Aswoensdag
+    type: observance
+  - date: 2011-03-27
+    name: Zomertijd
+    type: season
+  - date: 2011-04-22
+    name: 'Goede Vrijdag'
+    type: observance
+  - date: 2011-04-24
+    name: 'Eerste paasdag'
+    type: official
+  - date: 2011-04-25
+    name: 'Tweede paasdag'
+    type: official
+  - date: 2011-04-30
+    name: Koninginnedag
+    type: official
+  - date: 2011-05-01
+    name: 'Dag van de arbeid'
+    type: other
+  - date: 2011-05-04
+    name: Dodenherdenking
+    type: observance
+  - date: 2011-05-05
+    name: Bevrijdingsdag
+    type: observance
+  - date: 2011-05-08
+    name: Moederdag
+    type: other
+  - date: 2011-06-02
+    name: Hemelvaart
+    type: official
+  - date: 2011-06-12
+    name: 'Eerste pinksterdag'
+    type: official
+  - date: 2011-06-13
+    name: 'Tweede pinksterdag'
+    type: official
+  - date: 2011-06-19
+    name: Vaderdag
+    type: other
+  - date: 2011-09-20
+    name: Prinsjesdag
+    type: other
+  - date: 2011-10-04
+    name: Werelddierendag
+    type: other
+  - date: 2011-10-30
+    name: Wintertijd
+    type: season
+  - date: 2011-10-31
+    name: Halloween
+    type: observance
+  - date: 2011-11-11
+    name: 'Sint Maarten'
+    type: observance
+  - date: 2011-12-05
+    name: Sinterklaas
+    type: observance
+  - date: 2011-12-25
+    name: Kerstmis
+    type: official
+  - date: 2011-12-26
+    name: 'Tweede kerstdag'
+    type: official
+2012:
+  - date: 2012-01-01
+    name: Nieuwjaar
+    type: official
+  - date: 2012-01-06
+    name: 'Drie Koningen'
+    type: other
+  - date: 2012-02-14
+    name: Valentijnsdag
+    type: other
+  - date: 2012-02-19
+    name: Carnaval
+    type: observance
+  - date: 2012-02-20
+    name: Carnaval
+    type: observance
+  - date: 2012-02-21
+    name: Carnaval
+    type: observance
+  - date: 2012-02-22
+    name: Aswoensdag
+    type: observance
+  - date: 2012-03-25
+    name: Zomertijd
+    type: season
+  - date: 2012-04-06
+    name: 'Goede Vrijdag'
+    type: observance
+  - date: 2012-04-08
+    name: 'Eerste paasdag'
+    type: official
+  - date: 2012-04-09
+    name: 'Tweede paasdag'
+    type: official
+  - date: 2012-04-30
+    name: Koninginnedag
+    type: official
+  - date: 2012-05-01
+    name: 'Dag van de arbeid'
+    type: other
+  - date: 2012-05-04
+    name: Dodenherdenking
+    type: observance
+  - date: 2012-05-05
+    name: Bevrijdingsdag
+    type: observance
+  - date: 2012-05-13
+    name: Moederdag
+    type: other
+  - date: 2012-05-17
+    name: Hemelvaart
+    type: official
+  - date: 2012-05-27
+    name: 'Eerste pinksterdag'
+    type: official
+  - date: 2012-05-28
+    name: 'Tweede pinksterdag'
+    type: official
+  - date: 2012-06-17
+    name: Vaderdag
+    type: other
+  - date: 2012-09-18
+    name: Prinsjesdag
+    type: other
+  - date: 2012-10-04
+    name: Werelddierendag
+    type: other
+  - date: 2012-10-28
+    name: Wintertijd
+    type: season
+  - date: 2012-10-31
+    name: Halloween
+    type: observance
+  - date: 2012-11-11
+    name: 'Sint Maarten'
+    type: observance
+  - date: 2012-12-05
+    name: Sinterklaas
+    type: observance
+  - date: 2012-12-25
+    name: Kerstmis
+    type: official
+  - date: 2012-12-26
+    name: 'Tweede kerstdag'
+    type: official
+2013:
+  - date: 2013-01-01
+    name: Nieuwjaar
+    type: official
+  - date: 2013-01-06
+    name: 'Drie Koningen'
+    type: other
+  - date: 2013-02-10
+    name: Carnaval
+    type: observance
+  - date: 2013-02-11
+    name: Carnaval
+    type: observance
+  - date: 2013-02-12
+    name: Carnaval
+    type: observance
+  - date: 2013-02-13
+    name: Aswoensdag
+    type: observance
+  - date: 2013-02-14
+    name: Valentijnsdag
+    type: other
+  - date: 2013-03-29
+    name: 'Goede Vrijdag'
+    type: observance
+  - date: 2013-03-31
+    name: 'Eerste paasdag'
+    type: official
+  - date: 2013-03-31
+    name: Zomertijd
+    type: season
+  - date: 2013-04-01
+    name: 'Tweede paasdag'
+    type: official
+  - date: 2013-04-30
+    name: Koninginnedag
+    type: official
+  - date: 2013-05-01
+    name: 'Dag van de arbeid'
+    type: other
+  - date: 2013-05-04
+    name: Dodenherdenking
+    type: observance
+  - date: 2013-05-05
+    name: Bevrijdingsdag
+    type: observance
+  - date: 2013-05-09
+    name: Hemelvaart
+    type: official
+  - date: 2013-05-12
+    name: Moederdag
+    type: other
+  - date: 2013-05-19
+    name: 'Eerste pinksterdag'
+    type: official
+  - date: 2013-05-20
+    name: 'Tweede pinksterdag'
+    type: official
+  - date: 2013-06-16
+    name: Vaderdag
+    type: other
+  - date: 2013-09-17
+    name: Prinsjesdag
+    type: other
+  - date: 2013-10-04
+    name: Werelddierendag
+    type: other
+  - date: 2013-10-27
+    name: Wintertijd
+    type: season
+  - date: 2013-10-31
+    name: Halloween
+    type: observance
+  - date: 2013-11-11
+    name: 'Sint Maarten'
+    type: observance
+  - date: 2013-12-05
+    name: Sinterklaas
+    type: observance
+  - date: 2013-12-25
+    name: Kerstmis
+    type: official
+  - date: 2013-12-26
+    name: 'Tweede kerstdag'
+    type: official
+2014:
+  - date: 2014-01-01
+    name: Nieuwjaar
+    type: official
+  - date: 2014-01-06
+    name: 'Drie Koningen'
+    type: other
+  - date: 2014-02-14
+    name: Valentijnsdag
+    type: other
+  - date: 2014-03-02
+    name: Carnaval
+    type: observance
+  - date: 2014-03-03
+    name: Carnaval
+    type: observance
+  - date: 2014-03-04
+    name: Carnaval
+    type: observance
+  - date: 2014-03-05
+    name: Aswoensdag
+    type: observance
+  - date: 2014-03-30
+    name: Zomertijd
+    type: season
+  - date: 2014-04-18
+    name: 'Goede Vrijdag'
+    type: observance
+  - date: 2014-04-20
+    name: 'Eerste paasdag'
+    type: official
+  - date: 2014-04-21
+    name: 'Tweede paasdag'
+    type: official
+  - date: 2014-04-26
+    name: Koningsdag
+    type: official
+  - date: 2014-05-01
+    name: 'Dag van de arbeid'
+    type: other
+  - date: 2014-05-04
+    name: Dodenherdenking
+    type: observance
+  - date: 2014-05-05
+    name: Bevrijdingsdag
+    type: observance
+  - date: 2014-05-11
+    name: Moederdag
+    type: other
+  - date: 2014-05-29
+    name: Hemelvaart
+    type: official
+  - date: 2014-06-08
+    name: 'Eerste pinksterdag'
+    type: official
+  - date: 2014-06-09
+    name: 'Tweede pinksterdag'
+    type: official
+  - date: 2014-06-15
+    name: Vaderdag
+    type: other
+  - date: 2014-09-16
+    name: Prinsjesdag
+    type: other
+  - date: 2014-10-04
+    name: Werelddierendag
+    type: other
+  - date: 2014-10-26
+    name: Wintertijd
+    type: season
+  - date: 2014-10-31
+    name: Halloween
+    type: observance
+  - date: 2014-11-11
+    name: 'Sint Maarten'
+    type: observance
+  - date: 2014-12-05
+    name: Sinterklaas
+    type: observance
+  - date: 2014-12-25
+    name: Kerstmis
+    type: official
+  - date: 2014-12-26
+    name: 'Tweede kerstdag'
+    type: official
+2015:
+  - date: 2015-01-01
+    name: Nieuwjaar
+    type: official
+  - date: 2015-01-06
+    name: 'Drie Koningen'
+    type: other
+  - date: 2015-02-14
+    name: Valentijnsdag
+    type: other
+  - date: 2015-02-15
+    name: Carnaval
+    type: observance
+  - date: 2015-02-16
+    name: Carnaval
+    type: observance
+  - date: 2015-02-17
+    name: Carnaval
+    type: observance
+  - date: 2015-02-18
+    name: Aswoensdag
+    type: observance
+  - date: 2015-03-29
+    name: Zomertijd
+    type: season
+  - date: 2015-04-03
+    name: 'Goede Vrijdag'
+    type: observance
+  - date: 2015-04-05
+    name: 'Eerste paasdag'
+    type: official
+  - date: 2015-04-06
+    name: 'Tweede paasdag'
+    type: official
+  - date: 2015-04-27
+    name: Koningsdag
+    type: official
+  - date: 2015-05-01
+    name: 'Dag van de arbeid'
+    type: other
+  - date: 2015-05-04
+    name: Dodenherdenking
+    type: observance
+  - date: 2015-05-05
+    name: Bevrijdingsdag
+    type: observance
+  - date: 2015-05-10
+    name: Moederdag
+    type: other
+  - date: 2015-05-14
+    name: Hemelvaart
+    type: official
+  - date: 2015-05-24
+    name: 'Eerste pinksterdag'
+    type: official
+  - date: 2015-05-25
+    name: 'Tweede pinksterdag'
+    type: official
+  - date: 2015-06-21
+    name: Vaderdag
+    type: other
+  - date: 2015-09-15
+    name: Prinsjesdag
+    type: other
+  - date: 2015-10-04
+    name: Werelddierendag
+    type: other
+  - date: 2015-10-25
+    name: Wintertijd
+    type: season
+  - date: 2015-10-31
+    name: Halloween
+    type: observance
+  - date: 2015-11-11
+    name: 'Sint Maarten'
+    type: observance
+  - date: 2015-12-05
+    name: Sinterklaas
+    type: observance
+  - date: 2015-12-25
+    name: Kerstmis
+    type: official
+  - date: 2015-12-26
+    name: 'Tweede kerstdag'
+    type: official
+2016:
+  - date: 2016-01-01
+    name: Nieuwjaar
+    type: official
+  - date: 2016-01-06
+    name: 'Drie Koningen'
+    type: other
+  - date: 2016-02-07
+    name: Carnaval
+    type: observance
+  - date: 2016-02-08
+    name: Carnaval
+    type: observance
+  - date: 2016-02-09
+    name: Carnaval
+    type: observance
+  - date: 2016-02-10
+    name: Aswoensdag
+    type: observance
+  - date: 2016-02-14
+    name: Valentijnsdag
+    type: other
+  - date: 2016-03-25
+    name: 'Goede Vrijdag'
+    type: observance
+  - date: 2016-03-27
+    name: 'Eerste paasdag'
+    type: official
+  - date: 2016-03-27
+    name: Zomertijd
+    type: season
+  - date: 2016-03-28
+    name: 'Tweede paasdag'
+    type: official
+  - date: 2016-04-27
+    name: Koningsdag
+    type: official
+  - date: 2016-05-01
+    name: 'Dag van de arbeid'
+    type: other
+  - date: 2016-05-04
+    name: Dodenherdenking
+    type: observance
+  - date: 2016-05-05
+    name: Bevrijdingsdag
+    type: observance
+  - date: 2016-05-05
+    name: Hemelvaart
+    type: official
+  - date: 2016-05-08
+    name: Moederdag
+    type: other
+  - date: 2016-05-15
+    name: 'Eerste pinksterdag'
+    type: official
+  - date: 2016-05-16
+    name: 'Tweede pinksterdag'
+    type: official
+  - date: 2016-06-19
+    name: Vaderdag
+    type: other
+  - date: 2016-09-20
+    name: Prinsjesdag
+    type: other
+  - date: 2016-10-04
+    name: Werelddierendag
+    type: other
+  - date: 2016-10-30
+    name: Wintertijd
+    type: season
+  - date: 2016-10-31
+    name: Halloween
+    type: observance
+  - date: 2016-11-11
+    name: 'Sint Maarten'
+    type: observance
+  - date: 2016-12-05
+    name: Sinterklaas
+    type: observance
+  - date: 2016-12-25
+    name: Kerstmis
+    type: official
+  - date: 2016-12-26
+    name: 'Tweede kerstdag'
+    type: official
+2017:
+  - date: 2017-01-01
+    name: Nieuwjaar
+    type: official
+  - date: 2017-01-06
+    name: 'Drie Koningen'
+    type: other
+  - date: 2017-02-14
+    name: Valentijnsdag
+    type: other
+  - date: 2017-02-26
+    name: Carnaval
+    type: observance
+  - date: 2017-02-27
+    name: Carnaval
+    type: observance
+  - date: 2017-02-28
+    name: Carnaval
+    type: observance
+  - date: 2017-03-01
+    name: Aswoensdag
+    type: observance
+  - date: 2017-03-26
+    name: Zomertijd
+    type: season
+  - date: 2017-04-14
+    name: 'Goede Vrijdag'
+    type: observance
+  - date: 2017-04-16
+    name: 'Eerste paasdag'
+    type: official
+  - date: 2017-04-17
+    name: 'Tweede paasdag'
+    type: official
+  - date: 2017-04-27
+    name: Koningsdag
+    type: official
+  - date: 2017-05-01
+    name: 'Dag van de arbeid'
+    type: other
+  - date: 2017-05-04
+    name: Dodenherdenking
+    type: observance
+  - date: 2017-05-05
+    name: Bevrijdingsdag
+    type: observance
+  - date: 2017-05-14
+    name: Moederdag
+    type: other
+  - date: 2017-05-25
+    name: Hemelvaart
+    type: official
+  - date: 2017-06-04
+    name: 'Eerste pinksterdag'
+    type: official
+  - date: 2017-06-05
+    name: 'Tweede pinksterdag'
+    type: official
+  - date: 2017-06-18
+    name: Vaderdag
+    type: other
+  - date: 2017-09-19
+    name: Prinsjesdag
+    type: other
+  - date: 2017-10-04
+    name: Werelddierendag
+    type: other
+  - date: 2017-10-29
+    name: Wintertijd
+    type: season
+  - date: 2017-10-31
+    name: Halloween
+    type: observance
+  - date: 2017-11-11
+    name: 'Sint Maarten'
+    type: observance
+  - date: 2017-12-05
+    name: Sinterklaas
+    type: observance
+  - date: 2017-12-25
+    name: Kerstmis
+    type: official
+  - date: 2017-12-26
+    name: 'Tweede kerstdag'
+    type: official
+2018:
+  - date: 2018-01-01
+    name: Nieuwjaar
+    type: official
+  - date: 2018-01-06
+    name: 'Drie Koningen'
+    type: other
+  - date: 2018-02-11
+    name: Carnaval
+    type: observance
+  - date: 2018-02-12
+    name: Carnaval
+    type: observance
+  - date: 2018-02-13
+    name: Carnaval
+    type: observance
+  - date: 2018-02-14
+    name: Aswoensdag
+    type: observance
+  - date: 2018-02-14
+    name: Valentijnsdag
+    type: other
+  - date: 2018-03-25
+    name: Zomertijd
+    type: season
+  - date: 2018-03-30
+    name: 'Goede Vrijdag'
+    type: observance
+  - date: 2018-04-01
+    name: 'Eerste paasdag'
+    type: official
+  - date: 2018-04-02
+    name: 'Tweede paasdag'
+    type: official
+  - date: 2018-04-27
+    name: Koningsdag
+    type: official
+  - date: 2018-05-01
+    name: 'Dag van de arbeid'
+    type: other
+  - date: 2018-05-04
+    name: Dodenherdenking
+    type: observance
+  - date: 2018-05-05
+    name: Bevrijdingsdag
+    type: observance
+  - date: 2018-05-10
+    name: Hemelvaart
+    type: official
+  - date: 2018-05-13
+    name: Moederdag
+    type: other
+  - date: 2018-05-20
+    name: 'Eerste pinksterdag'
+    type: official
+  - date: 2018-05-21
+    name: 'Tweede pinksterdag'
+    type: official
+  - date: 2018-06-17
+    name: Vaderdag
+    type: other
+  - date: 2018-09-18
+    name: Prinsjesdag
+    type: other
+  - date: 2018-10-04
+    name: Werelddierendag
+    type: other
+  - date: 2018-10-28
+    name: Wintertijd
+    type: season
+  - date: 2018-10-31
+    name: Halloween
+    type: observance
+  - date: 2018-11-11
+    name: 'Sint Maarten'
+    type: observance
+  - date: 2018-12-05
+    name: Sinterklaas
+    type: observance
+  - date: 2018-12-25
+    name: Kerstmis
+    type: official
+  - date: 2018-12-26
+    name: 'Tweede kerstdag'
+    type: official
+2019:
+  - date: 2019-01-01
+    name: Nieuwjaar
+    type: official
+  - date: 2019-01-06
+    name: 'Drie Koningen'
+    type: other
+  - date: 2019-02-14
+    name: Valentijnsdag
+    type: other
+  - date: 2019-03-03
+    name: Carnaval
+    type: observance
+  - date: 2019-03-04
+    name: Carnaval
+    type: observance
+  - date: 2019-03-05
+    name: Carnaval
+    type: observance
+  - date: 2019-03-06
+    name: Aswoensdag
+    type: observance
+  - date: 2019-03-31
+    name: Zomertijd
+    type: season
+  - date: 2019-04-19
+    name: 'Goede Vrijdag'
+    type: observance
+  - date: 2019-04-21
+    name: 'Eerste paasdag'
+    type: official
+  - date: 2019-04-22
+    name: 'Tweede paasdag'
+    type: official
+  - date: 2019-04-27
+    name: Koningsdag
+    type: official
+  - date: 2019-05-01
+    name: 'Dag van de arbeid'
+    type: other
+  - date: 2019-05-04
+    name: Dodenherdenking
+    type: observance
+  - date: 2019-05-05
+    name: Bevrijdingsdag
+    type: observance
+  - date: 2019-05-12
+    name: Moederdag
+    type: other
+  - date: 2019-05-30
+    name: Hemelvaart
+    type: official
+  - date: 2019-06-09
+    name: 'Eerste pinksterdag'
+    type: official
+  - date: 2019-06-10
+    name: 'Tweede pinksterdag'
+    type: official
+  - date: 2019-06-16
+    name: Vaderdag
+    type: other
+  - date: 2019-09-17
+    name: Prinsjesdag
+    type: other
+  - date: 2019-10-04
+    name: Werelddierendag
+    type: other
+  - date: 2019-10-27
+    name: Wintertijd
+    type: season
+  - date: 2019-10-31
+    name: Halloween
+    type: observance
+  - date: 2019-11-11
+    name: 'Sint Maarten'
+    type: observance
+  - date: 2019-12-05
+    name: Sinterklaas
+    type: observance
+  - date: 2019-12-25
+    name: Kerstmis
+    type: official
+  - date: 2019-12-26
+    name: 'Tweede kerstdag'
+    type: official
+2020:
+  - date: 2020-01-01
+    name: Nieuwjaar
+    type: official
+  - date: 2020-01-06
+    name: 'Drie Koningen'
+    type: other
+  - date: 2020-02-14
+    name: Valentijnsdag
+    type: other
+  - date: 2020-02-23
+    name: Carnaval
+    type: observance
+  - date: 2020-02-24
+    name: Carnaval
+    type: observance
+  - date: 2020-02-25
+    name: Carnaval
+    type: observance
+  - date: 2020-02-26
+    name: Aswoensdag
+    type: observance
+  - date: 2020-03-29
+    name: Zomertijd
+    type: season
+  - date: 2020-04-10
+    name: 'Goede Vrijdag'
+    type: observance
+  - date: 2020-04-12
+    name: 'Eerste paasdag'
+    type: official
+  - date: 2020-04-13
+    name: 'Tweede paasdag'
+    type: official
+  - date: 2020-04-27
+    name: Koningsdag
+    type: official
+  - date: 2020-05-01
+    name: 'Dag van de arbeid'
+    type: other
+  - date: 2020-05-04
+    name: Dodenherdenking
+    type: observance
+  - date: 2020-05-05
+    name: Bevrijdingsdag
+    type: observance
+  - date: 2020-05-10
+    name: Moederdag
+    type: other
+  - date: 2020-05-21
+    name: Hemelvaart
+    type: official
+  - date: 2020-05-31
+    name: 'Eerste pinksterdag'
+    type: official
+  - date: 2020-06-01
+    name: 'Tweede pinksterdag'
+    type: official
+  - date: 2020-06-21
+    name: Vaderdag
+    type: other
+  - date: 2020-09-15
+    name: Prinsjesdag
+    type: other
+  - date: 2020-10-04
+    name: Werelddierendag
+    type: other
+  - date: 2020-10-25
+    name: Wintertijd
+    type: season
+  - date: 2020-10-31
+    name: Halloween
+    type: observance
+  - date: 2020-11-11
+    name: 'Sint Maarten'
+    type: observance
+  - date: 2020-12-05
+    name: Sinterklaas
+    type: observance
+  - date: 2020-12-25
+    name: Kerstmis
+    type: official
+  - date: 2020-12-26
+    name: 'Tweede kerstdag'
+    type: official
+2021:
+  - date: 2021-01-01
+    name: Nieuwjaar
+    type: official
+  - date: 2021-01-06
+    name: 'Drie Koningen'
+    type: other
+  - date: 2021-02-14
+    name: Carnaval
+    type: observance
+  - date: 2021-02-14
+    name: Valentijnsdag
+    type: other
+  - date: 2021-02-15
+    name: Carnaval
+    type: observance
+  - date: 2021-02-16
+    name: Carnaval
+    type: observance
+  - date: 2021-02-17
+    name: Aswoensdag
+    type: observance
+  - date: 2021-03-28
+    name: Zomertijd
+    type: season
+  - date: 2021-04-02
+    name: 'Goede Vrijdag'
+    type: observance
+  - date: 2021-04-04
+    name: 'Eerste paasdag'
+    type: official
+  - date: 2021-04-05
+    name: 'Tweede paasdag'
+    type: official
+  - date: 2021-04-27
+    name: Koningsdag
+    type: official
+  - date: 2021-05-01
+    name: 'Dag van de arbeid'
+    type: other
+  - date: 2021-05-04
+    name: Dodenherdenking
+    type: observance
+  - date: 2021-05-05
+    name: Bevrijdingsdag
+    type: observance
+  - date: 2021-05-09
+    name: Moederdag
+    type: other
+  - date: 2021-05-13
+    name: Hemelvaart
+    type: official
+  - date: 2021-05-23
+    name: 'Eerste pinksterdag'
+    type: official
+  - date: 2021-05-24
+    name: 'Tweede pinksterdag'
+    type: official
+  - date: 2021-06-20
+    name: Vaderdag
+    type: other
+  - date: 2021-09-21
+    name: Prinsjesdag
+    type: other
+  - date: 2021-10-04
+    name: Werelddierendag
+    type: other
+  - date: 2021-10-31
+    name: Halloween
+    type: observance
+  - date: 2021-10-31
+    name: Wintertijd
+    type: season
+  - date: 2021-11-11
+    name: 'Sint Maarten'
+    type: observance
+  - date: 2021-12-05
+    name: Sinterklaas
+    type: observance
+  - date: 2021-12-25
+    name: Kerstmis
+    type: official
+  - date: 2021-12-26
+    name: 'Tweede kerstdag'
+    type: official
+2022:
+  - date: 2022-01-01
+    name: Nieuwjaar
+    type: official
+  - date: 2022-01-06
+    name: 'Drie Koningen'
+    type: other
+  - date: 2022-02-14
+    name: Valentijnsdag
+    type: other
+  - date: 2022-02-27
+    name: Carnaval
+    type: observance
+  - date: 2022-02-28
+    name: Carnaval
+    type: observance
+  - date: 2022-03-01
+    name: Carnaval
+    type: observance
+  - date: 2022-03-02
+    name: Aswoensdag
+    type: observance
+  - date: 2022-03-27
+    name: Zomertijd
+    type: season
+  - date: 2022-04-15
+    name: 'Goede Vrijdag'
+    type: observance
+  - date: 2022-04-17
+    name: 'Eerste paasdag'
+    type: official
+  - date: 2022-04-18
+    name: 'Tweede paasdag'
+    type: official
+  - date: 2022-04-27
+    name: Koningsdag
+    type: official
+  - date: 2022-05-01
+    name: 'Dag van de arbeid'
+    type: other
+  - date: 2022-05-04
+    name: Dodenherdenking
+    type: observance
+  - date: 2022-05-05
+    name: Bevrijdingsdag
+    type: observance
+  - date: 2022-05-08
+    name: Moederdag
+    type: other
+  - date: 2022-05-26
+    name: Hemelvaart
+    type: official
+  - date: 2022-06-05
+    name: 'Eerste pinksterdag'
+    type: official
+  - date: 2022-06-06
+    name: 'Tweede pinksterdag'
+    type: official
+  - date: 2022-06-19
+    name: Vaderdag
+    type: other
+  - date: 2022-09-20
+    name: Prinsjesdag
+    type: other
+  - date: 2022-10-04
+    name: Werelddierendag
+    type: other
+  - date: 2022-10-30
+    name: Wintertijd
+    type: season
+  - date: 2022-10-31
+    name: Halloween
+    type: observance
+  - date: 2022-11-11
+    name: 'Sint Maarten'
+    type: observance
+  - date: 2022-12-05
+    name: Sinterklaas
+    type: observance
+  - date: 2022-12-25
+    name: Kerstmis
+    type: official
+  - date: 2022-12-26
+    name: 'Tweede kerstdag'
+    type: official
+2023:
+  - date: 2023-01-01
+    name: Nieuwjaar
+    type: official
+  - date: 2023-01-06
+    name: 'Drie Koningen'
+    type: other
+  - date: 2023-02-14
+    name: Valentijnsdag
+    type: other
+  - date: 2023-02-19
+    name: Carnaval
+    type: observance
+  - date: 2023-02-20
+    name: Carnaval
+    type: observance
+  - date: 2023-02-21
+    name: Carnaval
+    type: observance
+  - date: 2023-02-22
+    name: Aswoensdag
+    type: observance
+  - date: 2023-03-26
+    name: Zomertijd
+    type: season
+  - date: 2023-04-07
+    name: 'Goede Vrijdag'
+    type: observance
+  - date: 2023-04-09
+    name: 'Eerste paasdag'
+    type: official
+  - date: 2023-04-10
+    name: 'Tweede paasdag'
+    type: official
+  - date: 2023-04-27
+    name: Koningsdag
+    type: official
+  - date: 2023-05-01
+    name: 'Dag van de arbeid'
+    type: other
+  - date: 2023-05-04
+    name: Dodenherdenking
+    type: observance
+  - date: 2023-05-05
+    name: Bevrijdingsdag
+    type: observance
+  - date: 2023-05-14
+    name: Moederdag
+    type: other
+  - date: 2023-05-18
+    name: Hemelvaart
+    type: official
+  - date: 2023-05-28
+    name: 'Eerste pinksterdag'
+    type: official
+  - date: 2023-05-29
+    name: 'Tweede pinksterdag'
+    type: official
+  - date: 2023-06-18
+    name: Vaderdag
+    type: other
+  - date: 2023-09-19
+    name: Prinsjesdag
+    type: other
+  - date: 2023-10-04
+    name: Werelddierendag
+    type: other
+  - date: 2023-10-29
+    name: Wintertijd
+    type: season
+  - date: 2023-10-31
+    name: Halloween
+    type: observance
+  - date: 2023-11-11
+    name: 'Sint Maarten'
+    type: observance
+  - date: 2023-12-05
+    name: Sinterklaas
+    type: observance
+  - date: 2023-12-25
+    name: Kerstmis
+    type: official
+  - date: 2023-12-26
+    name: 'Tweede kerstdag'
+    type: official
+2024:
+  - date: 2024-01-01
+    name: Nieuwjaar
+    type: official
+  - date: 2024-01-06
+    name: 'Drie Koningen'
+    type: other
+  - date: 2024-02-11
+    name: Carnaval
+    type: observance
+  - date: 2024-02-12
+    name: Carnaval
+    type: observance
+  - date: 2024-02-13
+    name: Carnaval
+    type: observance
+  - date: 2024-02-14
+    name: Aswoensdag
+    type: observance
+  - date: 2024-02-14
+    name: Valentijnsdag
+    type: other
+  - date: 2024-03-29
+    name: 'Goede Vrijdag'
+    type: observance
+  - date: 2024-03-31
+    name: 'Eerste paasdag'
+    type: official
+  - date: 2024-03-31
+    name: Zomertijd
+    type: season
+  - date: 2024-04-01
+    name: 'Tweede paasdag'
+    type: official
+  - date: 2024-04-27
+    name: Koningsdag
+    type: official
+  - date: 2024-05-01
+    name: 'Dag van de arbeid'
+    type: other
+  - date: 2024-05-04
+    name: Dodenherdenking
+    type: observance
+  - date: 2024-05-05
+    name: Bevrijdingsdag
+    type: observance
+  - date: 2024-05-09
+    name: Hemelvaart
+    type: official
+  - date: 2024-05-12
+    name: Moederdag
+    type: other
+  - date: 2024-05-19
+    name: 'Eerste pinksterdag'
+    type: official
+  - date: 2024-05-20
+    name: 'Tweede pinksterdag'
+    type: official
+  - date: 2024-06-16
+    name: Vaderdag
+    type: other
+  - date: 2024-09-17
+    name: Prinsjesdag
+    type: other
+  - date: 2024-10-04
+    name: Werelddierendag
+    type: other
+  - date: 2024-10-27
+    name: Wintertijd
+    type: season
+  - date: 2024-10-31
+    name: Halloween
+    type: observance
+  - date: 2024-11-11
+    name: 'Sint Maarten'
+    type: observance
+  - date: 2024-12-05
+    name: Sinterklaas
+    type: observance
+  - date: 2024-12-25
+    name: Kerstmis
+    type: official
+  - date: 2024-12-26
+    name: 'Tweede kerstdag'
+    type: official
+2025:
+  - date: 2025-01-01
+    name: Nieuwjaar
+    type: official
+  - date: 2025-01-06
+    name: 'Drie Koningen'
+    type: other
+  - date: 2025-02-14
+    name: Valentijnsdag
+    type: other
+  - date: 2025-03-02
+    name: Carnaval
+    type: observance
+  - date: 2025-03-03
+    name: Carnaval
+    type: observance
+  - date: 2025-03-04
+    name: Carnaval
+    type: observance
+  - date: 2025-03-05
+    name: Aswoensdag
+    type: observance
+  - date: 2025-03-30
+    name: Zomertijd
+    type: season
+  - date: 2025-04-18
+    name: 'Goede Vrijdag'
+    type: observance
+  - date: 2025-04-20
+    name: 'Eerste paasdag'
+    type: official
+  - date: 2025-04-21
+    name: 'Tweede paasdag'
+    type: official
+  - date: 2025-04-26
+    name: Koningsdag
+    type: official
+  - date: 2025-05-01
+    name: 'Dag van de arbeid'
+    type: other
+  - date: 2025-05-04
+    name: Dodenherdenking
+    type: observance
+  - date: 2025-05-05
+    name: Bevrijdingsdag
+    type: observance
+  - date: 2025-05-11
+    name: Moederdag
+    type: other
+  - date: 2025-05-29
+    name: Hemelvaart
+    type: official
+  - date: 2025-06-08
+    name: 'Eerste pinksterdag'
+    type: official
+  - date: 2025-06-09
+    name: 'Tweede pinksterdag'
+    type: official
+  - date: 2025-06-15
+    name: Vaderdag
+    type: other
+  - date: 2025-09-16
+    name: Prinsjesdag
+    type: other
+  - date: 2025-10-04
+    name: Werelddierendag
+    type: other
+  - date: 2025-10-26
+    name: Wintertijd
+    type: season
+  - date: 2025-10-31
+    name: Halloween
+    type: observance
+  - date: 2025-11-11
+    name: 'Sint Maarten'
+    type: observance
+  - date: 2025-12-05
+    name: Sinterklaas
+    type: observance
+  - date: 2025-12-25
+    name: Kerstmis
+    type: official
+  - date: 2025-12-26
+    name: 'Tweede kerstdag'
+    type: official
+2026:
+  - date: 2026-01-01
+    name: Nieuwjaar
+    type: official
+  - date: 2026-01-06
+    name: 'Drie Koningen'
+    type: other
+  - date: 2026-02-14
+    name: Valentijnsdag
+    type: other
+  - date: 2026-02-15
+    name: Carnaval
+    type: observance
+  - date: 2026-02-16
+    name: Carnaval
+    type: observance
+  - date: 2026-02-17
+    name: Carnaval
+    type: observance
+  - date: 2026-02-18
+    name: Aswoensdag
+    type: observance
+  - date: 2026-03-29
+    name: Zomertijd
+    type: season
+  - date: 2026-04-03
+    name: 'Goede Vrijdag'
+    type: observance
+  - date: 2026-04-05
+    name: 'Eerste paasdag'
+    type: official
+  - date: 2026-04-06
+    name: 'Tweede paasdag'
+    type: official
+  - date: 2026-04-27
+    name: Koningsdag
+    type: official
+  - date: 2026-05-01
+    name: 'Dag van de arbeid'
+    type: other
+  - date: 2026-05-04
+    name: Dodenherdenking
+    type: observance
+  - date: 2026-05-05
+    name: Bevrijdingsdag
+    type: observance
+  - date: 2026-05-10
+    name: Moederdag
+    type: other
+  - date: 2026-05-14
+    name: Hemelvaart
+    type: official
+  - date: 2026-05-24
+    name: 'Eerste pinksterdag'
+    type: official
+  - date: 2026-05-25
+    name: 'Tweede pinksterdag'
+    type: official
+  - date: 2026-06-21
+    name: Vaderdag
+    type: other
+  - date: 2026-09-15
+    name: Prinsjesdag
+    type: other
+  - date: 2026-10-04
+    name: Werelddierendag
+    type: other
+  - date: 2026-10-25
+    name: Wintertijd
+    type: season
+  - date: 2026-10-31
+    name: Halloween
+    type: observance
+  - date: 2026-11-11
+    name: 'Sint Maarten'
+    type: observance
+  - date: 2026-12-05
+    name: Sinterklaas
+    type: observance
+  - date: 2026-12-25
+    name: Kerstmis
+    type: official
+  - date: 2026-12-26
+    name: 'Tweede kerstdag'
+    type: official
+2027:
+  - date: 2027-01-01
+    name: Nieuwjaar
+    type: official
+  - date: 2027-01-06
+    name: 'Drie Koningen'
+    type: other
+  - date: 2027-02-07
+    name: Carnaval
+    type: observance
+  - date: 2027-02-08
+    name: Carnaval
+    type: observance
+  - date: 2027-02-09
+    name: Carnaval
+    type: observance
+  - date: 2027-02-10
+    name: Aswoensdag
+    type: observance
+  - date: 2027-02-14
+    name: Valentijnsdag
+    type: other
+  - date: 2027-03-26
+    name: 'Goede Vrijdag'
+    type: observance
+  - date: 2027-03-28
+    name: 'Eerste paasdag'
+    type: official
+  - date: 2027-03-28
+    name: Zomertijd
+    type: season
+  - date: 2027-03-29
+    name: 'Tweede paasdag'
+    type: official
+  - date: 2027-04-27
+    name: Koningsdag
+    type: official
+  - date: 2027-05-01
+    name: 'Dag van de arbeid'
+    type: other
+  - date: 2027-05-04
+    name: Dodenherdenking
+    type: observance
+  - date: 2027-05-05
+    name: Bevrijdingsdag
+    type: observance
+  - date: 2027-05-06
+    name: Hemelvaart
+    type: official
+  - date: 2027-05-09
+    name: Moederdag
+    type: other
+  - date: 2027-05-16
+    name: 'Eerste pinksterdag'
+    type: official
+  - date: 2027-05-17
+    name: 'Tweede pinksterdag'
+    type: official
+  - date: 2027-06-20
+    name: Vaderdag
+    type: other
+  - date: 2027-09-21
+    name: Prinsjesdag
+    type: other
+  - date: 2027-10-04
+    name: Werelddierendag
+    type: other
+  - date: 2027-10-31
+    name: Halloween
+    type: observance
+  - date: 2027-10-31
+    name: Wintertijd
+    type: season
+  - date: 2027-11-11
+    name: 'Sint Maarten'
+    type: observance
+  - date: 2027-12-05
+    name: Sinterklaas
+    type: observance
+  - date: 2027-12-25
+    name: Kerstmis
+    type: official
+  - date: 2027-12-26
+    name: 'Tweede kerstdag'
+    type: official
+2028:
+  - date: 2028-01-01
+    name: Nieuwjaar
+    type: official
+  - date: 2028-01-06
+    name: 'Drie Koningen'
+    type: other
+  - date: 2028-02-14
+    name: Valentijnsdag
+    type: other
+  - date: 2028-02-27
+    name: Carnaval
+    type: observance
+  - date: 2028-02-28
+    name: Carnaval
+    type: observance
+  - date: 2028-02-29
+    name: Carnaval
+    type: observance
+  - date: 2028-03-01
+    name: Aswoensdag
+    type: observance
+  - date: 2028-03-26
+    name: Zomertijd
+    type: season
+  - date: 2028-04-14
+    name: 'Goede Vrijdag'
+    type: observance
+  - date: 2028-04-16
+    name: 'Eerste paasdag'
+    type: official
+  - date: 2028-04-17
+    name: 'Tweede paasdag'
+    type: official
+  - date: 2028-04-27
+    name: Koningsdag
+    type: official
+  - date: 2028-05-01
+    name: 'Dag van de arbeid'
+    type: other
+  - date: 2028-05-04
+    name: Dodenherdenking
+    type: observance
+  - date: 2028-05-05
+    name: Bevrijdingsdag
+    type: observance
+  - date: 2028-05-14
+    name: Moederdag
+    type: other
+  - date: 2028-05-25
+    name: Hemelvaart
+    type: official
+  - date: 2028-06-04
+    name: 'Eerste pinksterdag'
+    type: official
+  - date: 2028-06-05
+    name: 'Tweede pinksterdag'
+    type: official
+  - date: 2028-06-18
+    name: Vaderdag
+    type: other
+  - date: 2028-09-19
+    name: Prinsjesdag
+    type: other
+  - date: 2028-10-04
+    name: Werelddierendag
+    type: other
+  - date: 2028-10-29
+    name: Wintertijd
+    type: season
+  - date: 2028-10-31
+    name: Halloween
+    type: observance
+  - date: 2028-11-11
+    name: 'Sint Maarten'
+    type: observance
+  - date: 2028-12-05
+    name: Sinterklaas
+    type: observance
+  - date: 2028-12-25
+    name: Kerstmis
+    type: official
+  - date: 2028-12-26
+    name: 'Tweede kerstdag'
+    type: official
+2029:
+  - date: 2029-01-01
+    name: Nieuwjaar
+    type: official
+  - date: 2029-01-06
+    name: 'Drie Koningen'
+    type: other
+  - date: 2029-02-11
+    name: Carnaval
+    type: observance
+  - date: 2029-02-12
+    name: Carnaval
+    type: observance
+  - date: 2029-02-13
+    name: Carnaval
+    type: observance
+  - date: 2029-02-14
+    name: Aswoensdag
+    type: observance
+  - date: 2029-02-14
+    name: Valentijnsdag
+    type: other
+  - date: 2029-03-25
+    name: Zomertijd
+    type: season
+  - date: 2029-03-30
+    name: 'Goede Vrijdag'
+    type: observance
+  - date: 2029-04-01
+    name: 'Eerste paasdag'
+    type: official
+  - date: 2029-04-02
+    name: 'Tweede paasdag'
+    type: official
+  - date: 2029-04-27
+    name: Koningsdag
+    type: official
+  - date: 2029-05-01
+    name: 'Dag van de arbeid'
+    type: other
+  - date: 2029-05-04
+    name: Dodenherdenking
+    type: observance
+  - date: 2029-05-05
+    name: Bevrijdingsdag
+    type: observance
+  - date: 2029-05-10
+    name: Hemelvaart
+    type: official
+  - date: 2029-05-13
+    name: Moederdag
+    type: other
+  - date: 2029-05-20
+    name: 'Eerste pinksterdag'
+    type: official
+  - date: 2029-05-21
+    name: 'Tweede pinksterdag'
+    type: official
+  - date: 2029-06-17
+    name: Vaderdag
+    type: other
+  - date: 2029-09-18
+    name: Prinsjesdag
+    type: other
+  - date: 2029-10-04
+    name: Werelddierendag
+    type: other
+  - date: 2029-10-28
+    name: Wintertijd
+    type: season
+  - date: 2029-10-31
+    name: Halloween
+    type: observance
+  - date: 2029-11-11
+    name: 'Sint Maarten'
+    type: observance
+  - date: 2029-12-05
+    name: Sinterklaas
+    type: observance
+  - date: 2029-12-25
+    name: Kerstmis
+    type: official
+  - date: 2029-12-26
+    name: 'Tweede kerstdag'
+    type: official
+2030:
+  - date: 2030-01-01
+    name: Nieuwjaar
+    type: official
+  - date: 2030-01-06
+    name: 'Drie Koningen'
+    type: other
+  - date: 2030-02-14
+    name: Valentijnsdag
+    type: other
+  - date: 2030-03-03
+    name: Carnaval
+    type: observance
+  - date: 2030-03-04
+    name: Carnaval
+    type: observance
+  - date: 2030-03-05
+    name: Carnaval
+    type: observance
+  - date: 2030-03-06
+    name: Aswoensdag
+    type: observance
+  - date: 2030-03-31
+    name: Zomertijd
+    type: season
+  - date: 2030-04-19
+    name: 'Goede Vrijdag'
+    type: observance
+  - date: 2030-04-21
+    name: 'Eerste paasdag'
+    type: official
+  - date: 2030-04-22
+    name: 'Tweede paasdag'
+    type: official
+  - date: 2030-04-27
+    name: Koningsdag
+    type: official
+  - date: 2030-05-01
+    name: 'Dag van de arbeid'
+    type: other
+  - date: 2030-05-04
+    name: Dodenherdenking
+    type: observance
+  - date: 2030-05-05
+    name: Bevrijdingsdag
+    type: observance
+  - date: 2030-05-12
+    name: Moederdag
+    type: other
+  - date: 2030-05-30
+    name: Hemelvaart
+    type: official
+  - date: 2030-06-09
+    name: 'Eerste pinksterdag'
+    type: official
+  - date: 2030-06-10
+    name: 'Tweede pinksterdag'
+    type: official
+  - date: 2030-06-16
+    name: Vaderdag
+    type: other
+  - date: 2030-09-17
+    name: Prinsjesdag
+    type: other
+  - date: 2030-10-04
+    name: Werelddierendag
+    type: other
+  - date: 2030-10-27
+    name: Wintertijd
+    type: season
+  - date: 2030-10-31
+    name: Halloween
+    type: observance
+  - date: 2030-11-11
+    name: 'Sint Maarten'
+    type: observance
+  - date: 2030-12-05
+    name: Sinterklaas
+    type: observance
+  - date: 2030-12-25
+    name: Kerstmis
+    type: official
+  - date: 2030-12-26
+    name: 'Tweede kerstdag'
+    type: official

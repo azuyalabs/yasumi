@@ -1,0 +1,903 @@
+2010:
+  - date: 2010-01-01
+    name: 'Nova godina'
+    type: official
+  - date: 2010-01-06
+    name: 'Sveta tri kralja'
+    type: official
+  - date: 2010-04-04
+    name: Uskrs
+    type: official
+  - date: 2010-04-05
+    name: 'Uskršnji ponedjeljak'
+    type: official
+  - date: 2010-05-01
+    name: 'Praznik rada'
+    type: official
+  - date: 2010-06-03
+    name: Tijelovo
+    type: official
+  - date: 2010-06-22
+    name: 'Dan antifašističke borbe'
+    type: official
+  - date: 2010-06-25
+    name: 'Dan državnosti'
+    type: official
+  - date: 2010-08-05
+    name: 'Dan domovinske zahvalnosti'
+    type: official
+  - date: 2010-08-15
+    name: 'Velika Gospa'
+    type: official
+  - date: 2010-10-08
+    name: 'Dan neovisnosti'
+    type: official
+  - date: 2010-11-01
+    name: 'Dan svih svetih'
+    type: official
+  - date: 2010-12-25
+    name: Božić
+    type: official
+  - date: 2010-12-26
+    name: 'Sveti Stjepan'
+    type: official
+2011:
+  - date: 2011-01-01
+    name: 'Nova godina'
+    type: official
+  - date: 2011-01-06
+    name: 'Sveta tri kralja'
+    type: official
+  - date: 2011-04-24
+    name: Uskrs
+    type: official
+  - date: 2011-04-25
+    name: 'Uskršnji ponedjeljak'
+    type: official
+  - date: 2011-05-01
+    name: 'Praznik rada'
+    type: official
+  - date: 2011-06-22
+    name: 'Dan antifašističke borbe'
+    type: official
+  - date: 2011-06-23
+    name: Tijelovo
+    type: official
+  - date: 2011-06-25
+    name: 'Dan državnosti'
+    type: official
+  - date: 2011-08-05
+    name: 'Dan domovinske zahvalnosti'
+    type: official
+  - date: 2011-08-15
+    name: 'Velika Gospa'
+    type: official
+  - date: 2011-10-08
+    name: 'Dan neovisnosti'
+    type: official
+  - date: 2011-11-01
+    name: 'Dan svih svetih'
+    type: official
+  - date: 2011-12-25
+    name: Božić
+    type: official
+  - date: 2011-12-26
+    name: 'Sveti Stjepan'
+    type: official
+2012:
+  - date: 2012-01-01
+    name: 'Nova godina'
+    type: official
+  - date: 2012-01-06
+    name: 'Sveta tri kralja'
+    type: official
+  - date: 2012-04-08
+    name: Uskrs
+    type: official
+  - date: 2012-04-09
+    name: 'Uskršnji ponedjeljak'
+    type: official
+  - date: 2012-05-01
+    name: 'Praznik rada'
+    type: official
+  - date: 2012-06-07
+    name: Tijelovo
+    type: official
+  - date: 2012-06-22
+    name: 'Dan antifašističke borbe'
+    type: official
+  - date: 2012-06-25
+    name: 'Dan državnosti'
+    type: official
+  - date: 2012-08-05
+    name: 'Dan domovinske zahvalnosti'
+    type: official
+  - date: 2012-08-15
+    name: 'Velika Gospa'
+    type: official
+  - date: 2012-10-08
+    name: 'Dan neovisnosti'
+    type: official
+  - date: 2012-11-01
+    name: 'Dan svih svetih'
+    type: official
+  - date: 2012-12-25
+    name: Božić
+    type: official
+  - date: 2012-12-26
+    name: 'Sveti Stjepan'
+    type: official
+2013:
+  - date: 2013-01-01
+    name: 'Nova godina'
+    type: official
+  - date: 2013-01-06
+    name: 'Sveta tri kralja'
+    type: official
+  - date: 2013-03-31
+    name: Uskrs
+    type: official
+  - date: 2013-04-01
+    name: 'Uskršnji ponedjeljak'
+    type: official
+  - date: 2013-05-01
+    name: 'Praznik rada'
+    type: official
+  - date: 2013-05-30
+    name: Tijelovo
+    type: official
+  - date: 2013-06-22
+    name: 'Dan antifašističke borbe'
+    type: official
+  - date: 2013-06-25
+    name: 'Dan državnosti'
+    type: official
+  - date: 2013-08-05
+    name: 'Dan domovinske zahvalnosti'
+    type: official
+  - date: 2013-08-15
+    name: 'Velika Gospa'
+    type: official
+  - date: 2013-10-08
+    name: 'Dan neovisnosti'
+    type: official
+  - date: 2013-11-01
+    name: 'Dan svih svetih'
+    type: official
+  - date: 2013-12-25
+    name: Božić
+    type: official
+  - date: 2013-12-26
+    name: 'Sveti Stjepan'
+    type: official
+2014:
+  - date: 2014-01-01
+    name: 'Nova godina'
+    type: official
+  - date: 2014-01-06
+    name: 'Sveta tri kralja'
+    type: official
+  - date: 2014-04-20
+    name: Uskrs
+    type: official
+  - date: 2014-04-21
+    name: 'Uskršnji ponedjeljak'
+    type: official
+  - date: 2014-05-01
+    name: 'Praznik rada'
+    type: official
+  - date: 2014-06-19
+    name: Tijelovo
+    type: official
+  - date: 2014-06-22
+    name: 'Dan antifašističke borbe'
+    type: official
+  - date: 2014-06-25
+    name: 'Dan državnosti'
+    type: official
+  - date: 2014-08-05
+    name: 'Dan domovinske zahvalnosti'
+    type: official
+  - date: 2014-08-15
+    name: 'Velika Gospa'
+    type: official
+  - date: 2014-10-08
+    name: 'Dan neovisnosti'
+    type: official
+  - date: 2014-11-01
+    name: 'Dan svih svetih'
+    type: official
+  - date: 2014-12-25
+    name: Božić
+    type: official
+  - date: 2014-12-26
+    name: 'Sveti Stjepan'
+    type: official
+2015:
+  - date: 2015-01-01
+    name: 'Nova godina'
+    type: official
+  - date: 2015-01-06
+    name: 'Sveta tri kralja'
+    type: official
+  - date: 2015-04-05
+    name: Uskrs
+    type: official
+  - date: 2015-04-06
+    name: 'Uskršnji ponedjeljak'
+    type: official
+  - date: 2015-05-01
+    name: 'Praznik rada'
+    type: official
+  - date: 2015-06-04
+    name: Tijelovo
+    type: official
+  - date: 2015-06-22
+    name: 'Dan antifašističke borbe'
+    type: official
+  - date: 2015-06-25
+    name: 'Dan državnosti'
+    type: official
+  - date: 2015-08-05
+    name: 'Dan domovinske zahvalnosti'
+    type: official
+  - date: 2015-08-15
+    name: 'Velika Gospa'
+    type: official
+  - date: 2015-10-08
+    name: 'Dan neovisnosti'
+    type: official
+  - date: 2015-11-01
+    name: 'Dan svih svetih'
+    type: official
+  - date: 2015-12-25
+    name: Božić
+    type: official
+  - date: 2015-12-26
+    name: 'Sveti Stjepan'
+    type: official
+2016:
+  - date: 2016-01-01
+    name: 'Nova godina'
+    type: official
+  - date: 2016-01-06
+    name: 'Sveta tri kralja'
+    type: official
+  - date: 2016-03-27
+    name: Uskrs
+    type: official
+  - date: 2016-03-28
+    name: 'Uskršnji ponedjeljak'
+    type: official
+  - date: 2016-05-01
+    name: 'Praznik rada'
+    type: official
+  - date: 2016-05-26
+    name: Tijelovo
+    type: official
+  - date: 2016-06-22
+    name: 'Dan antifašističke borbe'
+    type: official
+  - date: 2016-06-25
+    name: 'Dan državnosti'
+    type: official
+  - date: 2016-08-05
+    name: 'Dan domovinske zahvalnosti'
+    type: official
+  - date: 2016-08-15
+    name: 'Velika Gospa'
+    type: official
+  - date: 2016-10-08
+    name: 'Dan neovisnosti'
+    type: official
+  - date: 2016-11-01
+    name: 'Dan svih svetih'
+    type: official
+  - date: 2016-12-25
+    name: Božić
+    type: official
+  - date: 2016-12-26
+    name: 'Sveti Stjepan'
+    type: official
+2017:
+  - date: 2017-01-01
+    name: 'Nova godina'
+    type: official
+  - date: 2017-01-06
+    name: 'Sveta tri kralja'
+    type: official
+  - date: 2017-04-16
+    name: Uskrs
+    type: official
+  - date: 2017-04-17
+    name: 'Uskršnji ponedjeljak'
+    type: official
+  - date: 2017-05-01
+    name: 'Praznik rada'
+    type: official
+  - date: 2017-06-15
+    name: Tijelovo
+    type: official
+  - date: 2017-06-22
+    name: 'Dan antifašističke borbe'
+    type: official
+  - date: 2017-06-25
+    name: 'Dan državnosti'
+    type: official
+  - date: 2017-08-05
+    name: 'Dan domovinske zahvalnosti'
+    type: official
+  - date: 2017-08-15
+    name: 'Velika Gospa'
+    type: official
+  - date: 2017-10-08
+    name: 'Dan neovisnosti'
+    type: official
+  - date: 2017-11-01
+    name: 'Dan svih svetih'
+    type: official
+  - date: 2017-12-25
+    name: Božić
+    type: official
+  - date: 2017-12-26
+    name: 'Sveti Stjepan'
+    type: official
+2018:
+  - date: 2018-01-01
+    name: 'Nova godina'
+    type: official
+  - date: 2018-01-06
+    name: 'Sveta tri kralja'
+    type: official
+  - date: 2018-04-01
+    name: Uskrs
+    type: official
+  - date: 2018-04-02
+    name: 'Uskršnji ponedjeljak'
+    type: official
+  - date: 2018-05-01
+    name: 'Praznik rada'
+    type: official
+  - date: 2018-05-31
+    name: Tijelovo
+    type: official
+  - date: 2018-06-22
+    name: 'Dan antifašističke borbe'
+    type: official
+  - date: 2018-06-25
+    name: 'Dan državnosti'
+    type: official
+  - date: 2018-08-05
+    name: 'Dan domovinske zahvalnosti'
+    type: official
+  - date: 2018-08-15
+    name: 'Velika Gospa'
+    type: official
+  - date: 2018-10-08
+    name: 'Dan neovisnosti'
+    type: official
+  - date: 2018-11-01
+    name: 'Dan svih svetih'
+    type: official
+  - date: 2018-12-25
+    name: Božić
+    type: official
+  - date: 2018-12-26
+    name: 'Sveti Stjepan'
+    type: official
+2019:
+  - date: 2019-01-01
+    name: 'Nova godina'
+    type: official
+  - date: 2019-01-06
+    name: 'Sveta tri kralja'
+    type: official
+  - date: 2019-04-21
+    name: Uskrs
+    type: official
+  - date: 2019-04-22
+    name: 'Uskršnji ponedjeljak'
+    type: official
+  - date: 2019-05-01
+    name: 'Praznik rada'
+    type: official
+  - date: 2019-06-20
+    name: Tijelovo
+    type: official
+  - date: 2019-06-22
+    name: 'Dan antifašističke borbe'
+    type: official
+  - date: 2019-06-25
+    name: 'Dan državnosti'
+    type: official
+  - date: 2019-08-05
+    name: 'Dan domovinske zahvalnosti'
+    type: official
+  - date: 2019-08-15
+    name: 'Velika Gospa'
+    type: official
+  - date: 2019-10-08
+    name: 'Dan neovisnosti'
+    type: official
+  - date: 2019-11-01
+    name: 'Dan svih svetih'
+    type: official
+  - date: 2019-12-25
+    name: Božić
+    type: official
+  - date: 2019-12-26
+    name: 'Sveti Stjepan'
+    type: official
+2020:
+  - date: 2020-01-01
+    name: 'Nova godina'
+    type: official
+  - date: 2020-01-06
+    name: 'Sveta tri kralja'
+    type: official
+  - date: 2020-04-12
+    name: Uskrs
+    type: official
+  - date: 2020-04-13
+    name: 'Uskršnji ponedjeljak'
+    type: official
+  - date: 2020-05-01
+    name: 'Praznik rada'
+    type: official
+  - date: 2020-06-11
+    name: Tijelovo
+    type: official
+  - date: 2020-06-22
+    name: 'Dan antifašističke borbe'
+    type: official
+  - date: 2020-06-25
+    name: 'Dan državnosti'
+    type: official
+  - date: 2020-08-05
+    name: 'Dan domovinske zahvalnosti'
+    type: official
+  - date: 2020-08-15
+    name: 'Velika Gospa'
+    type: official
+  - date: 2020-10-08
+    name: 'Dan neovisnosti'
+    type: official
+  - date: 2020-11-01
+    name: 'Dan svih svetih'
+    type: official
+  - date: 2020-12-25
+    name: Božić
+    type: official
+  - date: 2020-12-26
+    name: 'Sveti Stjepan'
+    type: official
+2021:
+  - date: 2021-01-01
+    name: 'Nova godina'
+    type: official
+  - date: 2021-01-06
+    name: 'Sveta tri kralja'
+    type: official
+  - date: 2021-04-04
+    name: Uskrs
+    type: official
+  - date: 2021-04-05
+    name: 'Uskršnji ponedjeljak'
+    type: official
+  - date: 2021-05-01
+    name: 'Praznik rada'
+    type: official
+  - date: 2021-06-03
+    name: Tijelovo
+    type: official
+  - date: 2021-06-22
+    name: 'Dan antifašističke borbe'
+    type: official
+  - date: 2021-06-25
+    name: 'Dan državnosti'
+    type: official
+  - date: 2021-08-05
+    name: 'Dan domovinske zahvalnosti'
+    type: official
+  - date: 2021-08-15
+    name: 'Velika Gospa'
+    type: official
+  - date: 2021-10-08
+    name: 'Dan neovisnosti'
+    type: official
+  - date: 2021-11-01
+    name: 'Dan svih svetih'
+    type: official
+  - date: 2021-12-25
+    name: Božić
+    type: official
+  - date: 2021-12-26
+    name: 'Sveti Stjepan'
+    type: official
+2022:
+  - date: 2022-01-01
+    name: 'Nova godina'
+    type: official
+  - date: 2022-01-06
+    name: 'Sveta tri kralja'
+    type: official
+  - date: 2022-04-17
+    name: Uskrs
+    type: official
+  - date: 2022-04-18
+    name: 'Uskršnji ponedjeljak'
+    type: official
+  - date: 2022-05-01
+    name: 'Praznik rada'
+    type: official
+  - date: 2022-06-16
+    name: Tijelovo
+    type: official
+  - date: 2022-06-22
+    name: 'Dan antifašističke borbe'
+    type: official
+  - date: 2022-06-25
+    name: 'Dan državnosti'
+    type: official
+  - date: 2022-08-05
+    name: 'Dan domovinske zahvalnosti'
+    type: official
+  - date: 2022-08-15
+    name: 'Velika Gospa'
+    type: official
+  - date: 2022-10-08
+    name: 'Dan neovisnosti'
+    type: official
+  - date: 2022-11-01
+    name: 'Dan svih svetih'
+    type: official
+  - date: 2022-12-25
+    name: Božić
+    type: official
+  - date: 2022-12-26
+    name: 'Sveti Stjepan'
+    type: official
+2023:
+  - date: 2023-01-01
+    name: 'Nova godina'
+    type: official
+  - date: 2023-01-06
+    name: 'Sveta tri kralja'
+    type: official
+  - date: 2023-04-09
+    name: Uskrs
+    type: official
+  - date: 2023-04-10
+    name: 'Uskršnji ponedjeljak'
+    type: official
+  - date: 2023-05-01
+    name: 'Praznik rada'
+    type: official
+  - date: 2023-06-08
+    name: Tijelovo
+    type: official
+  - date: 2023-06-22
+    name: 'Dan antifašističke borbe'
+    type: official
+  - date: 2023-06-25
+    name: 'Dan državnosti'
+    type: official
+  - date: 2023-08-05
+    name: 'Dan domovinske zahvalnosti'
+    type: official
+  - date: 2023-08-15
+    name: 'Velika Gospa'
+    type: official
+  - date: 2023-10-08
+    name: 'Dan neovisnosti'
+    type: official
+  - date: 2023-11-01
+    name: 'Dan svih svetih'
+    type: official
+  - date: 2023-12-25
+    name: Božić
+    type: official
+  - date: 2023-12-26
+    name: 'Sveti Stjepan'
+    type: official
+2024:
+  - date: 2024-01-01
+    name: 'Nova godina'
+    type: official
+  - date: 2024-01-06
+    name: 'Sveta tri kralja'
+    type: official
+  - date: 2024-03-31
+    name: Uskrs
+    type: official
+  - date: 2024-04-01
+    name: 'Uskršnji ponedjeljak'
+    type: official
+  - date: 2024-05-01
+    name: 'Praznik rada'
+    type: official
+  - date: 2024-05-30
+    name: Tijelovo
+    type: official
+  - date: 2024-06-22
+    name: 'Dan antifašističke borbe'
+    type: official
+  - date: 2024-06-25
+    name: 'Dan državnosti'
+    type: official
+  - date: 2024-08-05
+    name: 'Dan domovinske zahvalnosti'
+    type: official
+  - date: 2024-08-15
+    name: 'Velika Gospa'
+    type: official
+  - date: 2024-10-08
+    name: 'Dan neovisnosti'
+    type: official
+  - date: 2024-11-01
+    name: 'Dan svih svetih'
+    type: official
+  - date: 2024-12-25
+    name: Božić
+    type: official
+  - date: 2024-12-26
+    name: 'Sveti Stjepan'
+    type: official
+2025:
+  - date: 2025-01-01
+    name: 'Nova godina'
+    type: official
+  - date: 2025-01-06
+    name: 'Sveta tri kralja'
+    type: official
+  - date: 2025-04-20
+    name: Uskrs
+    type: official
+  - date: 2025-04-21
+    name: 'Uskršnji ponedjeljak'
+    type: official
+  - date: 2025-05-01
+    name: 'Praznik rada'
+    type: official
+  - date: 2025-06-19
+    name: Tijelovo
+    type: official
+  - date: 2025-06-22
+    name: 'Dan antifašističke borbe'
+    type: official
+  - date: 2025-06-25
+    name: 'Dan državnosti'
+    type: official
+  - date: 2025-08-05
+    name: 'Dan domovinske zahvalnosti'
+    type: official
+  - date: 2025-08-15
+    name: 'Velika Gospa'
+    type: official
+  - date: 2025-10-08
+    name: 'Dan neovisnosti'
+    type: official
+  - date: 2025-11-01
+    name: 'Dan svih svetih'
+    type: official
+  - date: 2025-12-25
+    name: Božić
+    type: official
+  - date: 2025-12-26
+    name: 'Sveti Stjepan'
+    type: official
+2026:
+  - date: 2026-01-01
+    name: 'Nova godina'
+    type: official
+  - date: 2026-01-06
+    name: 'Sveta tri kralja'
+    type: official
+  - date: 2026-04-05
+    name: Uskrs
+    type: official
+  - date: 2026-04-06
+    name: 'Uskršnji ponedjeljak'
+    type: official
+  - date: 2026-05-01
+    name: 'Praznik rada'
+    type: official
+  - date: 2026-06-04
+    name: Tijelovo
+    type: official
+  - date: 2026-06-22
+    name: 'Dan antifašističke borbe'
+    type: official
+  - date: 2026-06-25
+    name: 'Dan državnosti'
+    type: official
+  - date: 2026-08-05
+    name: 'Dan domovinske zahvalnosti'
+    type: official
+  - date: 2026-08-15
+    name: 'Velika Gospa'
+    type: official
+  - date: 2026-10-08
+    name: 'Dan neovisnosti'
+    type: official
+  - date: 2026-11-01
+    name: 'Dan svih svetih'
+    type: official
+  - date: 2026-12-25
+    name: Božić
+    type: official
+  - date: 2026-12-26
+    name: 'Sveti Stjepan'
+    type: official
+2027:
+  - date: 2027-01-01
+    name: 'Nova godina'
+    type: official
+  - date: 2027-01-06
+    name: 'Sveta tri kralja'
+    type: official
+  - date: 2027-03-28
+    name: Uskrs
+    type: official
+  - date: 2027-03-29
+    name: 'Uskršnji ponedjeljak'
+    type: official
+  - date: 2027-05-01
+    name: 'Praznik rada'
+    type: official
+  - date: 2027-05-27
+    name: Tijelovo
+    type: official
+  - date: 2027-06-22
+    name: 'Dan antifašističke borbe'
+    type: official
+  - date: 2027-06-25
+    name: 'Dan državnosti'
+    type: official
+  - date: 2027-08-05
+    name: 'Dan domovinske zahvalnosti'
+    type: official
+  - date: 2027-08-15
+    name: 'Velika Gospa'
+    type: official
+  - date: 2027-10-08
+    name: 'Dan neovisnosti'
+    type: official
+  - date: 2027-11-01
+    name: 'Dan svih svetih'
+    type: official
+  - date: 2027-12-25
+    name: Božić
+    type: official
+  - date: 2027-12-26
+    name: 'Sveti Stjepan'
+    type: official
+2028:
+  - date: 2028-01-01
+    name: 'Nova godina'
+    type: official
+  - date: 2028-01-06
+    name: 'Sveta tri kralja'
+    type: official
+  - date: 2028-04-16
+    name: Uskrs
+    type: official
+  - date: 2028-04-17
+    name: 'Uskršnji ponedjeljak'
+    type: official
+  - date: 2028-05-01
+    name: 'Praznik rada'
+    type: official
+  - date: 2028-06-15
+    name: Tijelovo
+    type: official
+  - date: 2028-06-22
+    name: 'Dan antifašističke borbe'
+    type: official
+  - date: 2028-06-25
+    name: 'Dan državnosti'
+    type: official
+  - date: 2028-08-05
+    name: 'Dan domovinske zahvalnosti'
+    type: official
+  - date: 2028-08-15
+    name: 'Velika Gospa'
+    type: official
+  - date: 2028-10-08
+    name: 'Dan neovisnosti'
+    type: official
+  - date: 2028-11-01
+    name: 'Dan svih svetih'
+    type: official
+  - date: 2028-12-25
+    name: Božić
+    type: official
+  - date: 2028-12-26
+    name: 'Sveti Stjepan'
+    type: official
+2029:
+  - date: 2029-01-01
+    name: 'Nova godina'
+    type: official
+  - date: 2029-01-06
+    name: 'Sveta tri kralja'
+    type: official
+  - date: 2029-04-01
+    name: Uskrs
+    type: official
+  - date: 2029-04-02
+    name: 'Uskršnji ponedjeljak'
+    type: official
+  - date: 2029-05-01
+    name: 'Praznik rada'
+    type: official
+  - date: 2029-05-31
+    name: Tijelovo
+    type: official
+  - date: 2029-06-22
+    name: 'Dan antifašističke borbe'
+    type: official
+  - date: 2029-06-25
+    name: 'Dan državnosti'
+    type: official
+  - date: 2029-08-05
+    name: 'Dan domovinske zahvalnosti'
+    type: official
+  - date: 2029-08-15
+    name: 'Velika Gospa'
+    type: official
+  - date: 2029-10-08
+    name: 'Dan neovisnosti'
+    type: official
+  - date: 2029-11-01
+    name: 'Dan svih svetih'
+    type: official
+  - date: 2029-12-25
+    name: Božić
+    type: official
+  - date: 2029-12-26
+    name: 'Sveti Stjepan'
+    type: official
+2030:
+  - date: 2030-01-01
+    name: 'Nova godina'
+    type: official
+  - date: 2030-01-06
+    name: 'Sveta tri kralja'
+    type: official
+  - date: 2030-04-21
+    name: Uskrs
+    type: official
+  - date: 2030-04-22
+    name: 'Uskršnji ponedjeljak'
+    type: official
+  - date: 2030-05-01
+    name: 'Praznik rada'
+    type: official
+  - date: 2030-06-20
+    name: Tijelovo
+    type: official
+  - date: 2030-06-22
+    name: 'Dan antifašističke borbe'
+    type: official
+  - date: 2030-06-25
+    name: 'Dan državnosti'
+    type: official
+  - date: 2030-08-05
+    name: 'Dan domovinske zahvalnosti'
+    type: official
+  - date: 2030-08-15
+    name: 'Velika Gospa'
+    type: official
+  - date: 2030-10-08
+    name: 'Dan neovisnosti'
+    type: official
+  - date: 2030-11-01
+    name: 'Dan svih svetih'
+    type: official
+  - date: 2030-12-25
+    name: Božić
+    type: official
+  - date: 2030-12-26
+    name: 'Sveti Stjepan'
+    type: official

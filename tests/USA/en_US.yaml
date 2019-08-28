@@ -1,0 +1,723 @@
+2010:
+  - date: 2010-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2010-01-18
+    name: 'Dr. Martin Luther King Jr''s Birthday'
+    type: official
+  - date: 2010-02-15
+    name: 'Washington''s Birthday'
+    type: official
+  - date: 2010-05-31
+    name: 'Memorial Day'
+    type: official
+  - date: 2010-07-04
+    name: 'Independence Day'
+    type: official
+  - date: 2010-07-05
+    name: 'Independence Day observed'
+    type: official
+  - date: 2010-09-06
+    name: 'Labour Day'
+    type: official
+  - date: 2010-10-11
+    name: 'Columbus Day'
+    type: official
+  - date: 2010-11-11
+    name: 'Veterans Day'
+    type: official
+  - date: 2010-11-25
+    name: 'Thanksgiving Day'
+    type: official
+  - date: 2010-12-24
+    name: 'Christmas observed'
+    type: official
+  - date: 2010-12-25
+    name: Christmas
+    type: official
+2011:
+  - date: 2010-12-31
+    name: 'New Year''s Day observed'
+    type: official
+  - date: 2011-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2011-01-17
+    name: 'Dr. Martin Luther King Jr''s Birthday'
+    type: official
+  - date: 2011-02-21
+    name: 'Washington''s Birthday'
+    type: official
+  - date: 2011-05-30
+    name: 'Memorial Day'
+    type: official
+  - date: 2011-07-04
+    name: 'Independence Day'
+    type: official
+  - date: 2011-09-05
+    name: 'Labour Day'
+    type: official
+  - date: 2011-10-10
+    name: 'Columbus Day'
+    type: official
+  - date: 2011-11-11
+    name: 'Veterans Day'
+    type: official
+  - date: 2011-11-24
+    name: 'Thanksgiving Day'
+    type: official
+  - date: 2011-12-25
+    name: Christmas
+    type: official
+  - date: 2011-12-26
+    name: 'Christmas observed'
+    type: official
+2012:
+  - date: 2012-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2012-01-02
+    name: 'New Year''s Day observed'
+    type: official
+  - date: 2012-01-16
+    name: 'Dr. Martin Luther King Jr''s Birthday'
+    type: official
+  - date: 2012-02-20
+    name: 'Washington''s Birthday'
+    type: official
+  - date: 2012-05-28
+    name: 'Memorial Day'
+    type: official
+  - date: 2012-07-04
+    name: 'Independence Day'
+    type: official
+  - date: 2012-09-03
+    name: 'Labour Day'
+    type: official
+  - date: 2012-10-08
+    name: 'Columbus Day'
+    type: official
+  - date: 2012-11-11
+    name: 'Veterans Day'
+    type: official
+  - date: 2012-11-12
+    name: 'Veterans Day observed'
+    type: official
+  - date: 2012-11-22
+    name: 'Thanksgiving Day'
+    type: official
+  - date: 2012-12-25
+    name: Christmas
+    type: official
+2013:
+  - date: 2013-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2013-01-21
+    name: 'Dr. Martin Luther King Jr''s Birthday'
+    type: official
+  - date: 2013-02-18
+    name: 'Washington''s Birthday'
+    type: official
+  - date: 2013-05-27
+    name: 'Memorial Day'
+    type: official
+  - date: 2013-07-04
+    name: 'Independence Day'
+    type: official
+  - date: 2013-09-02
+    name: 'Labour Day'
+    type: official
+  - date: 2013-10-14
+    name: 'Columbus Day'
+    type: official
+  - date: 2013-11-11
+    name: 'Veterans Day'
+    type: official
+  - date: 2013-11-28
+    name: 'Thanksgiving Day'
+    type: official
+  - date: 2013-12-25
+    name: Christmas
+    type: official
+2014:
+  - date: 2014-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2014-01-20
+    name: 'Dr. Martin Luther King Jr''s Birthday'
+    type: official
+  - date: 2014-02-17
+    name: 'Washington''s Birthday'
+    type: official
+  - date: 2014-05-26
+    name: 'Memorial Day'
+    type: official
+  - date: 2014-07-04
+    name: 'Independence Day'
+    type: official
+  - date: 2014-09-01
+    name: 'Labour Day'
+    type: official
+  - date: 2014-10-13
+    name: 'Columbus Day'
+    type: official
+  - date: 2014-11-11
+    name: 'Veterans Day'
+    type: official
+  - date: 2014-11-27
+    name: 'Thanksgiving Day'
+    type: official
+  - date: 2014-12-25
+    name: Christmas
+    type: official
+2015:
+  - date: 2015-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2015-01-19
+    name: 'Dr. Martin Luther King Jr''s Birthday'
+    type: official
+  - date: 2015-02-16
+    name: 'Washington''s Birthday'
+    type: official
+  - date: 2015-05-25
+    name: 'Memorial Day'
+    type: official
+  - date: 2015-07-03
+    name: 'Independence Day observed'
+    type: official
+  - date: 2015-07-04
+    name: 'Independence Day'
+    type: official
+  - date: 2015-09-07
+    name: 'Labour Day'
+    type: official
+  - date: 2015-10-12
+    name: 'Columbus Day'
+    type: official
+  - date: 2015-11-11
+    name: 'Veterans Day'
+    type: official
+  - date: 2015-11-26
+    name: 'Thanksgiving Day'
+    type: official
+  - date: 2015-12-25
+    name: Christmas
+    type: official
+2016:
+  - date: 2016-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2016-01-18
+    name: 'Dr. Martin Luther King Jr''s Birthday'
+    type: official
+  - date: 2016-02-15
+    name: 'Washington''s Birthday'
+    type: official
+  - date: 2016-05-30
+    name: 'Memorial Day'
+    type: official
+  - date: 2016-07-04
+    name: 'Independence Day'
+    type: official
+  - date: 2016-09-05
+    name: 'Labour Day'
+    type: official
+  - date: 2016-10-10
+    name: 'Columbus Day'
+    type: official
+  - date: 2016-11-11
+    name: 'Veterans Day'
+    type: official
+  - date: 2016-11-24
+    name: 'Thanksgiving Day'
+    type: official
+  - date: 2016-12-25
+    name: Christmas
+    type: official
+  - date: 2016-12-26
+    name: 'Christmas observed'
+    type: official
+2017:
+  - date: 2017-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2017-01-02
+    name: 'New Year''s Day observed'
+    type: official
+  - date: 2017-01-16
+    name: 'Dr. Martin Luther King Jr''s Birthday'
+    type: official
+  - date: 2017-02-20
+    name: 'Washington''s Birthday'
+    type: official
+  - date: 2017-05-29
+    name: 'Memorial Day'
+    type: official
+  - date: 2017-07-04
+    name: 'Independence Day'
+    type: official
+  - date: 2017-09-04
+    name: 'Labour Day'
+    type: official
+  - date: 2017-10-09
+    name: 'Columbus Day'
+    type: official
+  - date: 2017-11-10
+    name: 'Veterans Day observed'
+    type: official
+  - date: 2017-11-11
+    name: 'Veterans Day'
+    type: official
+  - date: 2017-11-23
+    name: 'Thanksgiving Day'
+    type: official
+  - date: 2017-12-25
+    name: Christmas
+    type: official
+2018:
+  - date: 2018-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2018-01-15
+    name: 'Dr. Martin Luther King Jr''s Birthday'
+    type: official
+  - date: 2018-02-19
+    name: 'Washington''s Birthday'
+    type: official
+  - date: 2018-05-28
+    name: 'Memorial Day'
+    type: official
+  - date: 2018-07-04
+    name: 'Independence Day'
+    type: official
+  - date: 2018-09-03
+    name: 'Labour Day'
+    type: official
+  - date: 2018-10-08
+    name: 'Columbus Day'
+    type: official
+  - date: 2018-11-11
+    name: 'Veterans Day'
+    type: official
+  - date: 2018-11-12
+    name: 'Veterans Day observed'
+    type: official
+  - date: 2018-11-22
+    name: 'Thanksgiving Day'
+    type: official
+  - date: 2018-12-25
+    name: Christmas
+    type: official
+2019:
+  - date: 2019-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2019-01-21
+    name: 'Dr. Martin Luther King Jr''s Birthday'
+    type: official
+  - date: 2019-02-18
+    name: 'Washington''s Birthday'
+    type: official
+  - date: 2019-05-27
+    name: 'Memorial Day'
+    type: official
+  - date: 2019-07-04
+    name: 'Independence Day'
+    type: official
+  - date: 2019-09-02
+    name: 'Labour Day'
+    type: official
+  - date: 2019-10-14
+    name: 'Columbus Day'
+    type: official
+  - date: 2019-11-11
+    name: 'Veterans Day'
+    type: official
+  - date: 2019-11-28
+    name: 'Thanksgiving Day'
+    type: official
+  - date: 2019-12-25
+    name: Christmas
+    type: official
+2020:
+  - date: 2020-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2020-01-20
+    name: 'Dr. Martin Luther King Jr''s Birthday'
+    type: official
+  - date: 2020-02-17
+    name: 'Washington''s Birthday'
+    type: official
+  - date: 2020-05-25
+    name: 'Memorial Day'
+    type: official
+  - date: 2020-07-03
+    name: 'Independence Day observed'
+    type: official
+  - date: 2020-07-04
+    name: 'Independence Day'
+    type: official
+  - date: 2020-09-07
+    name: 'Labour Day'
+    type: official
+  - date: 2020-10-12
+    name: 'Columbus Day'
+    type: official
+  - date: 2020-11-11
+    name: 'Veterans Day'
+    type: official
+  - date: 2020-11-26
+    name: 'Thanksgiving Day'
+    type: official
+  - date: 2020-12-25
+    name: Christmas
+    type: official
+2021:
+  - date: 2021-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2021-01-18
+    name: 'Dr. Martin Luther King Jr''s Birthday'
+    type: official
+  - date: 2021-02-15
+    name: 'Washington''s Birthday'
+    type: official
+  - date: 2021-05-31
+    name: 'Memorial Day'
+    type: official
+  - date: 2021-07-04
+    name: 'Independence Day'
+    type: official
+  - date: 2021-07-05
+    name: 'Independence Day observed'
+    type: official
+  - date: 2021-09-06
+    name: 'Labour Day'
+    type: official
+  - date: 2021-10-11
+    name: 'Columbus Day'
+    type: official
+  - date: 2021-11-11
+    name: 'Veterans Day'
+    type: official
+  - date: 2021-11-25
+    name: 'Thanksgiving Day'
+    type: official
+  - date: 2021-12-24
+    name: 'Christmas observed'
+    type: official
+  - date: 2021-12-25
+    name: Christmas
+    type: official
+2022:
+  - date: 2021-12-31
+    name: 'New Year''s Day observed'
+    type: official
+  - date: 2022-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2022-01-17
+    name: 'Dr. Martin Luther King Jr''s Birthday'
+    type: official
+  - date: 2022-02-21
+    name: 'Washington''s Birthday'
+    type: official
+  - date: 2022-05-30
+    name: 'Memorial Day'
+    type: official
+  - date: 2022-07-04
+    name: 'Independence Day'
+    type: official
+  - date: 2022-09-05
+    name: 'Labour Day'
+    type: official
+  - date: 2022-10-10
+    name: 'Columbus Day'
+    type: official
+  - date: 2022-11-11
+    name: 'Veterans Day'
+    type: official
+  - date: 2022-11-24
+    name: 'Thanksgiving Day'
+    type: official
+  - date: 2022-12-25
+    name: Christmas
+    type: official
+  - date: 2022-12-26
+    name: 'Christmas observed'
+    type: official
+2023:
+  - date: 2023-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2023-01-02
+    name: 'New Year''s Day observed'
+    type: official
+  - date: 2023-01-16
+    name: 'Dr. Martin Luther King Jr''s Birthday'
+    type: official
+  - date: 2023-02-20
+    name: 'Washington''s Birthday'
+    type: official
+  - date: 2023-05-29
+    name: 'Memorial Day'
+    type: official
+  - date: 2023-07-04
+    name: 'Independence Day'
+    type: official
+  - date: 2023-09-04
+    name: 'Labour Day'
+    type: official
+  - date: 2023-10-09
+    name: 'Columbus Day'
+    type: official
+  - date: 2023-11-10
+    name: 'Veterans Day observed'
+    type: official
+  - date: 2023-11-11
+    name: 'Veterans Day'
+    type: official
+  - date: 2023-11-23
+    name: 'Thanksgiving Day'
+    type: official
+  - date: 2023-12-25
+    name: Christmas
+    type: official
+2024:
+  - date: 2024-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2024-01-15
+    name: 'Dr. Martin Luther King Jr''s Birthday'
+    type: official
+  - date: 2024-02-19
+    name: 'Washington''s Birthday'
+    type: official
+  - date: 2024-05-27
+    name: 'Memorial Day'
+    type: official
+  - date: 2024-07-04
+    name: 'Independence Day'
+    type: official
+  - date: 2024-09-02
+    name: 'Labour Day'
+    type: official
+  - date: 2024-10-14
+    name: 'Columbus Day'
+    type: official
+  - date: 2024-11-11
+    name: 'Veterans Day'
+    type: official
+  - date: 2024-11-28
+    name: 'Thanksgiving Day'
+    type: official
+  - date: 2024-12-25
+    name: Christmas
+    type: official
+2025:
+  - date: 2025-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2025-01-20
+    name: 'Dr. Martin Luther King Jr''s Birthday'
+    type: official
+  - date: 2025-02-17
+    name: 'Washington''s Birthday'
+    type: official
+  - date: 2025-05-26
+    name: 'Memorial Day'
+    type: official
+  - date: 2025-07-04
+    name: 'Independence Day'
+    type: official
+  - date: 2025-09-01
+    name: 'Labour Day'
+    type: official
+  - date: 2025-10-13
+    name: 'Columbus Day'
+    type: official
+  - date: 2025-11-11
+    name: 'Veterans Day'
+    type: official
+  - date: 2025-11-27
+    name: 'Thanksgiving Day'
+    type: official
+  - date: 2025-12-25
+    name: Christmas
+    type: official
+2026:
+  - date: 2026-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2026-01-19
+    name: 'Dr. Martin Luther King Jr''s Birthday'
+    type: official
+  - date: 2026-02-16
+    name: 'Washington''s Birthday'
+    type: official
+  - date: 2026-05-25
+    name: 'Memorial Day'
+    type: official
+  - date: 2026-07-03
+    name: 'Independence Day observed'
+    type: official
+  - date: 2026-07-04
+    name: 'Independence Day'
+    type: official
+  - date: 2026-09-07
+    name: 'Labour Day'
+    type: official
+  - date: 2026-10-12
+    name: 'Columbus Day'
+    type: official
+  - date: 2026-11-11
+    name: 'Veterans Day'
+    type: official
+  - date: 2026-11-26
+    name: 'Thanksgiving Day'
+    type: official
+  - date: 2026-12-25
+    name: Christmas
+    type: official
+2027:
+  - date: 2027-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2027-01-18
+    name: 'Dr. Martin Luther King Jr''s Birthday'
+    type: official
+  - date: 2027-02-15
+    name: 'Washington''s Birthday'
+    type: official
+  - date: 2027-05-31
+    name: 'Memorial Day'
+    type: official
+  - date: 2027-07-04
+    name: 'Independence Day'
+    type: official
+  - date: 2027-07-05
+    name: 'Independence Day observed'
+    type: official
+  - date: 2027-09-06
+    name: 'Labour Day'
+    type: official
+  - date: 2027-10-11
+    name: 'Columbus Day'
+    type: official
+  - date: 2027-11-11
+    name: 'Veterans Day'
+    type: official
+  - date: 2027-11-25
+    name: 'Thanksgiving Day'
+    type: official
+  - date: 2027-12-24
+    name: 'Christmas observed'
+    type: official
+  - date: 2027-12-25
+    name: Christmas
+    type: official
+2028:
+  - date: 2027-12-31
+    name: 'New Year''s Day observed'
+    type: official
+  - date: 2028-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2028-01-17
+    name: 'Dr. Martin Luther King Jr''s Birthday'
+    type: official
+  - date: 2028-02-21
+    name: 'Washington''s Birthday'
+    type: official
+  - date: 2028-05-29
+    name: 'Memorial Day'
+    type: official
+  - date: 2028-07-04
+    name: 'Independence Day'
+    type: official
+  - date: 2028-09-04
+    name: 'Labour Day'
+    type: official
+  - date: 2028-10-09
+    name: 'Columbus Day'
+    type: official
+  - date: 2028-11-10
+    name: 'Veterans Day observed'
+    type: official
+  - date: 2028-11-11
+    name: 'Veterans Day'
+    type: official
+  - date: 2028-11-23
+    name: 'Thanksgiving Day'
+    type: official
+  - date: 2028-12-25
+    name: Christmas
+    type: official
+2029:
+  - date: 2029-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2029-01-15
+    name: 'Dr. Martin Luther King Jr''s Birthday'
+    type: official
+  - date: 2029-02-19
+    name: 'Washington''s Birthday'
+    type: official
+  - date: 2029-05-28
+    name: 'Memorial Day'
+    type: official
+  - date: 2029-07-04
+    name: 'Independence Day'
+    type: official
+  - date: 2029-09-03
+    name: 'Labour Day'
+    type: official
+  - date: 2029-10-08
+    name: 'Columbus Day'
+    type: official
+  - date: 2029-11-11
+    name: 'Veterans Day'
+    type: official
+  - date: 2029-11-12
+    name: 'Veterans Day observed'
+    type: official
+  - date: 2029-11-22
+    name: 'Thanksgiving Day'
+    type: official
+  - date: 2029-12-25
+    name: Christmas
+    type: official
+2030:
+  - date: 2030-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2030-01-21
+    name: 'Dr. Martin Luther King Jr''s Birthday'
+    type: official
+  - date: 2030-02-18
+    name: 'Washington''s Birthday'
+    type: official
+  - date: 2030-05-27
+    name: 'Memorial Day'
+    type: official
+  - date: 2030-07-04
+    name: 'Independence Day'
+    type: official
+  - date: 2030-09-02
+    name: 'Labour Day'
+    type: official
+  - date: 2030-10-14
+    name: 'Columbus Day'
+    type: official
+  - date: 2030-11-11
+    name: 'Veterans Day'
+    type: official
+  - date: 2030-11-28
+    name: 'Thanksgiving Day'
+    type: official
+  - date: 2030-12-25
+    name: Christmas
+    type: official

@@ -1,0 +1,873 @@
+2010:
+  - date: 2010-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2010-03-21
+    name: 'Human Rights Day'
+    type: official
+  - date: 2010-03-22
+    name: 'Human Rights Day observed'
+    type: official
+  - date: 2010-04-02
+    name: 'Good Friday'
+    type: official
+  - date: 2010-04-05
+    name: 'Family Day'
+    type: official
+  - date: 2010-04-27
+    name: 'Freedom Day'
+    type: official
+  - date: 2010-05-01
+    name: 'Workers'' Day'
+    type: official
+  - date: 2010-06-16
+    name: 'Youth Day'
+    type: official
+  - date: 2010-08-09
+    name: 'National Women''s Day'
+    type: official
+  - date: 2010-09-24
+    name: 'Heritage Day'
+    type: official
+  - date: 2010-12-16
+    name: 'Day of Reconciliation'
+    type: official
+  - date: 2010-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2010-12-26
+    name: 'Day of Goodwill'
+    type: official
+  - date: 2010-12-27
+    name: 'Day of Goodwill observed'
+    type: official
+2011:
+  - date: 2011-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2011-03-21
+    name: 'Human Rights Day'
+    type: official
+  - date: 2011-04-22
+    name: 'Good Friday'
+    type: official
+  - date: 2011-04-25
+    name: 'Family Day'
+    type: official
+  - date: 2011-04-27
+    name: 'Freedom Day'
+    type: official
+  - date: 2011-05-01
+    name: 'Workers'' Day'
+    type: official
+  - date: 2011-05-02
+    name: 'Workers'' Day observed'
+    type: official
+  - date: 2011-06-16
+    name: 'Youth Day'
+    type: official
+  - date: 2011-08-09
+    name: 'National Women''s Day'
+    type: official
+  - date: 2011-09-24
+    name: 'Heritage Day'
+    type: official
+  - date: 2011-12-16
+    name: 'Day of Reconciliation'
+    type: official
+  - date: 2011-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2011-12-26
+    name: 'Christmas Day observed'
+    type: official
+  - date: 2011-12-26
+    name: 'Day of Goodwill'
+    type: official
+2012:
+  - date: 2012-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2012-01-02
+    name: 'New Year''s Day observed'
+    type: official
+  - date: 2012-03-21
+    name: 'Human Rights Day'
+    type: official
+  - date: 2012-04-06
+    name: 'Good Friday'
+    type: official
+  - date: 2012-04-09
+    name: 'Family Day'
+    type: official
+  - date: 2012-04-27
+    name: 'Freedom Day'
+    type: official
+  - date: 2012-05-01
+    name: 'Workers'' Day'
+    type: official
+  - date: 2012-06-16
+    name: 'Youth Day'
+    type: official
+  - date: 2012-08-09
+    name: 'National Women''s Day'
+    type: official
+  - date: 2012-09-24
+    name: 'Heritage Day'
+    type: official
+  - date: 2012-12-16
+    name: 'Day of Reconciliation'
+    type: official
+  - date: 2012-12-17
+    name: 'Day of Reconciliation observed'
+    type: official
+  - date: 2012-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2012-12-26
+    name: 'Day of Goodwill'
+    type: official
+2013:
+  - date: 2013-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2013-03-21
+    name: 'Human Rights Day'
+    type: official
+  - date: 2013-03-29
+    name: 'Good Friday'
+    type: official
+  - date: 2013-04-01
+    name: 'Family Day'
+    type: official
+  - date: 2013-04-27
+    name: 'Freedom Day'
+    type: official
+  - date: 2013-05-01
+    name: 'Workers'' Day'
+    type: official
+  - date: 2013-06-16
+    name: 'Youth Day'
+    type: official
+  - date: 2013-06-17
+    name: 'Youth Day observed'
+    type: official
+  - date: 2013-08-09
+    name: 'National Women''s Day'
+    type: official
+  - date: 2013-09-24
+    name: 'Heritage Day'
+    type: official
+  - date: 2013-12-16
+    name: 'Day of Reconciliation'
+    type: official
+  - date: 2013-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2013-12-26
+    name: 'Day of Goodwill'
+    type: official
+2014:
+  - date: 2014-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2014-03-21
+    name: 'Human Rights Day'
+    type: official
+  - date: 2014-04-18
+    name: 'Good Friday'
+    type: official
+  - date: 2014-04-21
+    name: 'Family Day'
+    type: official
+  - date: 2014-04-27
+    name: 'Freedom Day'
+    type: official
+  - date: 2014-04-28
+    name: 'Freedom Day observed'
+    type: official
+  - date: 2014-05-01
+    name: 'Workers'' Day'
+    type: official
+  - date: 2014-06-16
+    name: 'Youth Day'
+    type: official
+  - date: 2014-08-09
+    name: 'National Women''s Day'
+    type: official
+  - date: 2014-09-24
+    name: 'Heritage Day'
+    type: official
+  - date: 2014-12-16
+    name: 'Day of Reconciliation'
+    type: official
+  - date: 2014-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2014-12-26
+    name: 'Day of Goodwill'
+    type: official
+2015:
+  - date: 2015-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2015-03-21
+    name: 'Human Rights Day'
+    type: official
+  - date: 2015-04-03
+    name: 'Good Friday'
+    type: official
+  - date: 2015-04-06
+    name: 'Family Day'
+    type: official
+  - date: 2015-04-27
+    name: 'Freedom Day'
+    type: official
+  - date: 2015-05-01
+    name: 'Workers'' Day'
+    type: official
+  - date: 2015-06-16
+    name: 'Youth Day'
+    type: official
+  - date: 2015-08-09
+    name: 'National Women''s Day'
+    type: official
+  - date: 2015-08-10
+    name: 'National Women''s Day observed'
+    type: official
+  - date: 2015-09-24
+    name: 'Heritage Day'
+    type: official
+  - date: 2015-12-16
+    name: 'Day of Reconciliation'
+    type: official
+  - date: 2015-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2015-12-26
+    name: 'Day of Goodwill'
+    type: official
+2016:
+  - date: 2016-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2016-03-21
+    name: 'Human Rights Day'
+    type: official
+  - date: 2016-03-25
+    name: 'Good Friday'
+    type: official
+  - date: 2016-03-28
+    name: 'Family Day'
+    type: official
+  - date: 2016-04-27
+    name: 'Freedom Day'
+    type: official
+  - date: 2016-05-01
+    name: 'Workers'' Day'
+    type: official
+  - date: 2016-05-02
+    name: 'Workers'' Day observed'
+    type: official
+  - date: 2016-06-16
+    name: 'Youth Day'
+    type: official
+  - date: 2016-08-03
+    name: '2016 Municipal Elections Day'
+    type: official
+  - date: 2016-08-09
+    name: 'National Women''s Day'
+    type: official
+  - date: 2016-09-24
+    name: 'Heritage Day'
+    type: official
+  - date: 2016-12-16
+    name: 'Day of Reconciliation'
+    type: official
+  - date: 2016-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2016-12-26
+    name: 'Christmas Day observed'
+    type: official
+  - date: 2016-12-26
+    name: 'Day of Goodwill'
+    type: official
+  - date: 2016-12-27
+    name: 'Day of Goodwill observed'
+    type: official
+2017:
+  - date: 2017-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2017-01-02
+    name: 'New Year''s Day observed'
+    type: official
+  - date: 2017-03-21
+    name: 'Human Rights Day'
+    type: official
+  - date: 2017-04-14
+    name: 'Good Friday'
+    type: official
+  - date: 2017-04-17
+    name: 'Family Day'
+    type: official
+  - date: 2017-04-27
+    name: 'Freedom Day'
+    type: official
+  - date: 2017-05-01
+    name: 'Workers'' Day'
+    type: official
+  - date: 2017-06-16
+    name: 'Youth Day'
+    type: official
+  - date: 2017-08-09
+    name: 'National Women''s Day'
+    type: official
+  - date: 2017-09-24
+    name: 'Heritage Day'
+    type: official
+  - date: 2017-09-25
+    name: 'Heritage Day observed'
+    type: official
+  - date: 2017-12-16
+    name: 'Day of Reconciliation'
+    type: official
+  - date: 2017-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2017-12-26
+    name: 'Day of Goodwill'
+    type: official
+2018:
+  - date: 2018-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2018-03-21
+    name: 'Human Rights Day'
+    type: official
+  - date: 2018-03-30
+    name: 'Good Friday'
+    type: official
+  - date: 2018-04-02
+    name: 'Family Day'
+    type: official
+  - date: 2018-04-27
+    name: 'Freedom Day'
+    type: official
+  - date: 2018-05-01
+    name: 'Workers'' Day'
+    type: official
+  - date: 2018-06-16
+    name: 'Youth Day'
+    type: official
+  - date: 2018-08-09
+    name: 'National Women''s Day'
+    type: official
+  - date: 2018-09-24
+    name: 'Heritage Day'
+    type: official
+  - date: 2018-12-16
+    name: 'Day of Reconciliation'
+    type: official
+  - date: 2018-12-17
+    name: 'Day of Reconciliation observed'
+    type: official
+  - date: 2018-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2018-12-26
+    name: 'Day of Goodwill'
+    type: official
+2019:
+  - date: 2019-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2019-03-21
+    name: 'Human Rights Day'
+    type: official
+  - date: 2019-04-19
+    name: 'Good Friday'
+    type: official
+  - date: 2019-04-22
+    name: 'Family Day'
+    type: official
+  - date: 2019-04-27
+    name: 'Freedom Day'
+    type: official
+  - date: 2019-05-01
+    name: 'Workers'' Day'
+    type: official
+  - date: 2019-06-16
+    name: 'Youth Day'
+    type: official
+  - date: 2019-06-17
+    name: 'Youth Day observed'
+    type: official
+  - date: 2019-08-09
+    name: 'National Women''s Day'
+    type: official
+  - date: 2019-09-24
+    name: 'Heritage Day'
+    type: official
+  - date: 2019-12-16
+    name: 'Day of Reconciliation'
+    type: official
+  - date: 2019-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2019-12-26
+    name: 'Day of Goodwill'
+    type: official
+2020:
+  - date: 2020-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2020-03-21
+    name: 'Human Rights Day'
+    type: official
+  - date: 2020-04-10
+    name: 'Good Friday'
+    type: official
+  - date: 2020-04-13
+    name: 'Family Day'
+    type: official
+  - date: 2020-04-27
+    name: 'Freedom Day'
+    type: official
+  - date: 2020-05-01
+    name: 'Workers'' Day'
+    type: official
+  - date: 2020-06-16
+    name: 'Youth Day'
+    type: official
+  - date: 2020-08-09
+    name: 'National Women''s Day'
+    type: official
+  - date: 2020-08-10
+    name: 'National Women''s Day observed'
+    type: official
+  - date: 2020-09-24
+    name: 'Heritage Day'
+    type: official
+  - date: 2020-12-16
+    name: 'Day of Reconciliation'
+    type: official
+  - date: 2020-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2020-12-26
+    name: 'Day of Goodwill'
+    type: official
+2021:
+  - date: 2021-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2021-03-21
+    name: 'Human Rights Day'
+    type: official
+  - date: 2021-03-22
+    name: 'Human Rights Day observed'
+    type: official
+  - date: 2021-04-02
+    name: 'Good Friday'
+    type: official
+  - date: 2021-04-05
+    name: 'Family Day'
+    type: official
+  - date: 2021-04-27
+    name: 'Freedom Day'
+    type: official
+  - date: 2021-05-01
+    name: 'Workers'' Day'
+    type: official
+  - date: 2021-06-16
+    name: 'Youth Day'
+    type: official
+  - date: 2021-08-09
+    name: 'National Women''s Day'
+    type: official
+  - date: 2021-09-24
+    name: 'Heritage Day'
+    type: official
+  - date: 2021-12-16
+    name: 'Day of Reconciliation'
+    type: official
+  - date: 2021-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2021-12-26
+    name: 'Day of Goodwill'
+    type: official
+  - date: 2021-12-27
+    name: 'Day of Goodwill observed'
+    type: official
+2022:
+  - date: 2022-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2022-03-21
+    name: 'Human Rights Day'
+    type: official
+  - date: 2022-04-15
+    name: 'Good Friday'
+    type: official
+  - date: 2022-04-18
+    name: 'Family Day'
+    type: official
+  - date: 2022-04-27
+    name: 'Freedom Day'
+    type: official
+  - date: 2022-05-01
+    name: 'Workers'' Day'
+    type: official
+  - date: 2022-05-02
+    name: 'Workers'' Day observed'
+    type: official
+  - date: 2022-06-16
+    name: 'Youth Day'
+    type: official
+  - date: 2022-08-09
+    name: 'National Women''s Day'
+    type: official
+  - date: 2022-09-24
+    name: 'Heritage Day'
+    type: official
+  - date: 2022-12-16
+    name: 'Day of Reconciliation'
+    type: official
+  - date: 2022-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2022-12-26
+    name: 'Christmas Day observed'
+    type: official
+  - date: 2022-12-26
+    name: 'Day of Goodwill'
+    type: official
+2023:
+  - date: 2023-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2023-01-02
+    name: 'New Year''s Day observed'
+    type: official
+  - date: 2023-03-21
+    name: 'Human Rights Day'
+    type: official
+  - date: 2023-04-07
+    name: 'Good Friday'
+    type: official
+  - date: 2023-04-10
+    name: 'Family Day'
+    type: official
+  - date: 2023-04-27
+    name: 'Freedom Day'
+    type: official
+  - date: 2023-05-01
+    name: 'Workers'' Day'
+    type: official
+  - date: 2023-06-16
+    name: 'Youth Day'
+    type: official
+  - date: 2023-08-09
+    name: 'National Women''s Day'
+    type: official
+  - date: 2023-09-24
+    name: 'Heritage Day'
+    type: official
+  - date: 2023-09-25
+    name: 'Heritage Day observed'
+    type: official
+  - date: 2023-12-16
+    name: 'Day of Reconciliation'
+    type: official
+  - date: 2023-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2023-12-26
+    name: 'Day of Goodwill'
+    type: official
+2024:
+  - date: 2024-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2024-03-21
+    name: 'Human Rights Day'
+    type: official
+  - date: 2024-03-29
+    name: 'Good Friday'
+    type: official
+  - date: 2024-04-01
+    name: 'Family Day'
+    type: official
+  - date: 2024-04-27
+    name: 'Freedom Day'
+    type: official
+  - date: 2024-05-01
+    name: 'Workers'' Day'
+    type: official
+  - date: 2024-06-16
+    name: 'Youth Day'
+    type: official
+  - date: 2024-06-17
+    name: 'Youth Day observed'
+    type: official
+  - date: 2024-08-09
+    name: 'National Women''s Day'
+    type: official
+  - date: 2024-09-24
+    name: 'Heritage Day'
+    type: official
+  - date: 2024-12-16
+    name: 'Day of Reconciliation'
+    type: official
+  - date: 2024-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2024-12-26
+    name: 'Day of Goodwill'
+    type: official
+2025:
+  - date: 2025-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2025-03-21
+    name: 'Human Rights Day'
+    type: official
+  - date: 2025-04-18
+    name: 'Good Friday'
+    type: official
+  - date: 2025-04-21
+    name: 'Family Day'
+    type: official
+  - date: 2025-04-27
+    name: 'Freedom Day'
+    type: official
+  - date: 2025-04-28
+    name: 'Freedom Day observed'
+    type: official
+  - date: 2025-05-01
+    name: 'Workers'' Day'
+    type: official
+  - date: 2025-06-16
+    name: 'Youth Day'
+    type: official
+  - date: 2025-08-09
+    name: 'National Women''s Day'
+    type: official
+  - date: 2025-09-24
+    name: 'Heritage Day'
+    type: official
+  - date: 2025-12-16
+    name: 'Day of Reconciliation'
+    type: official
+  - date: 2025-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2025-12-26
+    name: 'Day of Goodwill'
+    type: official
+2026:
+  - date: 2026-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2026-03-21
+    name: 'Human Rights Day'
+    type: official
+  - date: 2026-04-03
+    name: 'Good Friday'
+    type: official
+  - date: 2026-04-06
+    name: 'Family Day'
+    type: official
+  - date: 2026-04-27
+    name: 'Freedom Day'
+    type: official
+  - date: 2026-05-01
+    name: 'Workers'' Day'
+    type: official
+  - date: 2026-06-16
+    name: 'Youth Day'
+    type: official
+  - date: 2026-08-09
+    name: 'National Women''s Day'
+    type: official
+  - date: 2026-08-10
+    name: 'National Women''s Day observed'
+    type: official
+  - date: 2026-09-24
+    name: 'Heritage Day'
+    type: official
+  - date: 2026-12-16
+    name: 'Day of Reconciliation'
+    type: official
+  - date: 2026-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2026-12-26
+    name: 'Day of Goodwill'
+    type: official
+2027:
+  - date: 2027-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2027-03-21
+    name: 'Human Rights Day'
+    type: official
+  - date: 2027-03-22
+    name: 'Human Rights Day observed'
+    type: official
+  - date: 2027-03-26
+    name: 'Good Friday'
+    type: official
+  - date: 2027-03-29
+    name: 'Family Day'
+    type: official
+  - date: 2027-04-27
+    name: 'Freedom Day'
+    type: official
+  - date: 2027-05-01
+    name: 'Workers'' Day'
+    type: official
+  - date: 2027-06-16
+    name: 'Youth Day'
+    type: official
+  - date: 2027-08-09
+    name: 'National Women''s Day'
+    type: official
+  - date: 2027-09-24
+    name: 'Heritage Day'
+    type: official
+  - date: 2027-12-16
+    name: 'Day of Reconciliation'
+    type: official
+  - date: 2027-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2027-12-26
+    name: 'Day of Goodwill'
+    type: official
+  - date: 2027-12-27
+    name: 'Day of Goodwill observed'
+    type: official
+2028:
+  - date: 2028-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2028-03-21
+    name: 'Human Rights Day'
+    type: official
+  - date: 2028-04-14
+    name: 'Good Friday'
+    type: official
+  - date: 2028-04-17
+    name: 'Family Day'
+    type: official
+  - date: 2028-04-27
+    name: 'Freedom Day'
+    type: official
+  - date: 2028-05-01
+    name: 'Workers'' Day'
+    type: official
+  - date: 2028-06-16
+    name: 'Youth Day'
+    type: official
+  - date: 2028-08-09
+    name: 'National Women''s Day'
+    type: official
+  - date: 2028-09-24
+    name: 'Heritage Day'
+    type: official
+  - date: 2028-09-25
+    name: 'Heritage Day observed'
+    type: official
+  - date: 2028-12-16
+    name: 'Day of Reconciliation'
+    type: official
+  - date: 2028-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2028-12-26
+    name: 'Day of Goodwill'
+    type: official
+2029:
+  - date: 2029-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2029-03-21
+    name: 'Human Rights Day'
+    type: official
+  - date: 2029-03-30
+    name: 'Good Friday'
+    type: official
+  - date: 2029-04-02
+    name: 'Family Day'
+    type: official
+  - date: 2029-04-27
+    name: 'Freedom Day'
+    type: official
+  - date: 2029-05-01
+    name: 'Workers'' Day'
+    type: official
+  - date: 2029-06-16
+    name: 'Youth Day'
+    type: official
+  - date: 2029-08-09
+    name: 'National Women''s Day'
+    type: official
+  - date: 2029-09-24
+    name: 'Heritage Day'
+    type: official
+  - date: 2029-12-16
+    name: 'Day of Reconciliation'
+    type: official
+  - date: 2029-12-17
+    name: 'Day of Reconciliation observed'
+    type: official
+  - date: 2029-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2029-12-26
+    name: 'Day of Goodwill'
+    type: official
+2030:
+  - date: 2030-01-01
+    name: 'New Year''s Day'
+    type: official
+  - date: 2030-03-21
+    name: 'Human Rights Day'
+    type: official
+  - date: 2030-04-19
+    name: 'Good Friday'
+    type: official
+  - date: 2030-04-22
+    name: 'Family Day'
+    type: official
+  - date: 2030-04-27
+    name: 'Freedom Day'
+    type: official
+  - date: 2030-05-01
+    name: 'Workers'' Day'
+    type: official
+  - date: 2030-06-16
+    name: 'Youth Day'
+    type: official
+  - date: 2030-06-17
+    name: 'Youth Day observed'
+    type: official
+  - date: 2030-08-09
+    name: 'National Women''s Day'
+    type: official
+  - date: 2030-09-24
+    name: 'Heritage Day'
+    type: official
+  - date: 2030-12-16
+    name: 'Day of Reconciliation'
+    type: official
+  - date: 2030-12-25
+    name: 'Christmas Day'
+    type: official
+  - date: 2030-12-26
+    name: 'Day of Goodwill'
+    type: official

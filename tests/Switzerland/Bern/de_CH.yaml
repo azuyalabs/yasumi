@@ -1,0 +1,588 @@
+2010:
+  - date: 2010-01-01
+    name: Neujahr
+    type: other
+  - date: 2010-01-02
+    name: Berchtoldstag
+    type: other
+  - date: 2010-04-02
+    name: Karfreitag
+    type: other
+  - date: 2010-04-05
+    name: Ostermontag
+    type: other
+  - date: 2010-05-13
+    name: Auffahrt
+    type: other
+  - date: 2010-05-24
+    name: Pfingstmontag
+    type: other
+  - date: 2010-08-01
+    name: Bundesfeiertag
+    type: official
+  - date: 2010-12-25
+    name: Weihnachtstag
+    type: other
+  - date: 2010-12-26
+    name: Stephanstag
+    type: other
+2011:
+  - date: 2011-01-01
+    name: Neujahr
+    type: other
+  - date: 2011-01-02
+    name: Berchtoldstag
+    type: other
+  - date: 2011-04-22
+    name: Karfreitag
+    type: other
+  - date: 2011-04-25
+    name: Ostermontag
+    type: other
+  - date: 2011-06-02
+    name: Auffahrt
+    type: other
+  - date: 2011-06-13
+    name: Pfingstmontag
+    type: other
+  - date: 2011-08-01
+    name: Bundesfeiertag
+    type: official
+  - date: 2011-12-25
+    name: Weihnachtstag
+    type: other
+  - date: 2011-12-26
+    name: Stephanstag
+    type: other
+2012:
+  - date: 2012-01-01
+    name: Neujahr
+    type: other
+  - date: 2012-01-02
+    name: Berchtoldstag
+    type: other
+  - date: 2012-04-06
+    name: Karfreitag
+    type: other
+  - date: 2012-04-09
+    name: Ostermontag
+    type: other
+  - date: 2012-05-17
+    name: Auffahrt
+    type: other
+  - date: 2012-05-28
+    name: Pfingstmontag
+    type: other
+  - date: 2012-08-01
+    name: Bundesfeiertag
+    type: official
+  - date: 2012-12-25
+    name: Weihnachtstag
+    type: other
+  - date: 2012-12-26
+    name: Stephanstag
+    type: other
+2013:
+  - date: 2013-01-01
+    name: Neujahr
+    type: other
+  - date: 2013-01-02
+    name: Berchtoldstag
+    type: other
+  - date: 2013-03-29
+    name: Karfreitag
+    type: other
+  - date: 2013-04-01
+    name: Ostermontag
+    type: other
+  - date: 2013-05-09
+    name: Auffahrt
+    type: other
+  - date: 2013-05-20
+    name: Pfingstmontag
+    type: other
+  - date: 2013-08-01
+    name: Bundesfeiertag
+    type: official
+  - date: 2013-12-25
+    name: Weihnachtstag
+    type: other
+  - date: 2013-12-26
+    name: Stephanstag
+    type: other
+2014:
+  - date: 2014-01-01
+    name: Neujahr
+    type: other
+  - date: 2014-01-02
+    name: Berchtoldstag
+    type: other
+  - date: 2014-04-18
+    name: Karfreitag
+    type: other
+  - date: 2014-04-21
+    name: Ostermontag
+    type: other
+  - date: 2014-05-29
+    name: Auffahrt
+    type: other
+  - date: 2014-06-09
+    name: Pfingstmontag
+    type: other
+  - date: 2014-08-01
+    name: Bundesfeiertag
+    type: official
+  - date: 2014-12-25
+    name: Weihnachtstag
+    type: other
+  - date: 2014-12-26
+    name: Stephanstag
+    type: other
+2015:
+  - date: 2015-01-01
+    name: Neujahr
+    type: other
+  - date: 2015-01-02
+    name: Berchtoldstag
+    type: other
+  - date: 2015-04-03
+    name: Karfreitag
+    type: other
+  - date: 2015-04-06
+    name: Ostermontag
+    type: other
+  - date: 2015-05-14
+    name: Auffahrt
+    type: other
+  - date: 2015-05-25
+    name: Pfingstmontag
+    type: other
+  - date: 2015-08-01
+    name: Bundesfeiertag
+    type: official
+  - date: 2015-12-25
+    name: Weihnachtstag
+    type: other
+  - date: 2015-12-26
+    name: Stephanstag
+    type: other
+2016:
+  - date: 2016-01-01
+    name: Neujahr
+    type: other
+  - date: 2016-01-02
+    name: Berchtoldstag
+    type: other
+  - date: 2016-03-25
+    name: Karfreitag
+    type: other
+  - date: 2016-03-28
+    name: Ostermontag
+    type: other
+  - date: 2016-05-05
+    name: Auffahrt
+    type: other
+  - date: 2016-05-16
+    name: Pfingstmontag
+    type: other
+  - date: 2016-08-01
+    name: Bundesfeiertag
+    type: official
+  - date: 2016-12-25
+    name: Weihnachtstag
+    type: other
+  - date: 2016-12-26
+    name: Stephanstag
+    type: other
+2017:
+  - date: 2017-01-01
+    name: Neujahr
+    type: other
+  - date: 2017-01-02
+    name: Berchtoldstag
+    type: other
+  - date: 2017-04-14
+    name: Karfreitag
+    type: other
+  - date: 2017-04-17
+    name: Ostermontag
+    type: other
+  - date: 2017-05-25
+    name: Auffahrt
+    type: other
+  - date: 2017-06-05
+    name: Pfingstmontag
+    type: other
+  - date: 2017-08-01
+    name: Bundesfeiertag
+    type: official
+  - date: 2017-12-25
+    name: Weihnachtstag
+    type: other
+  - date: 2017-12-26
+    name: Stephanstag
+    type: other
+2018:
+  - date: 2018-01-01
+    name: Neujahr
+    type: other
+  - date: 2018-01-02
+    name: Berchtoldstag
+    type: other
+  - date: 2018-03-30
+    name: Karfreitag
+    type: other
+  - date: 2018-04-02
+    name: Ostermontag
+    type: other
+  - date: 2018-05-10
+    name: Auffahrt
+    type: other
+  - date: 2018-05-21
+    name: Pfingstmontag
+    type: other
+  - date: 2018-08-01
+    name: Bundesfeiertag
+    type: official
+  - date: 2018-12-25
+    name: Weihnachtstag
+    type: other
+  - date: 2018-12-26
+    name: Stephanstag
+    type: other
+2019:
+  - date: 2019-01-01
+    name: Neujahr
+    type: other
+  - date: 2019-01-02
+    name: Berchtoldstag
+    type: other
+  - date: 2019-04-19
+    name: Karfreitag
+    type: other
+  - date: 2019-04-22
+    name: Ostermontag
+    type: other
+  - date: 2019-05-30
+    name: Auffahrt
+    type: other
+  - date: 2019-06-10
+    name: Pfingstmontag
+    type: other
+  - date: 2019-08-01
+    name: Bundesfeiertag
+    type: official
+  - date: 2019-12-25
+    name: Weihnachtstag
+    type: other
+  - date: 2019-12-26
+    name: Stephanstag
+    type: other
+2020:
+  - date: 2020-01-01
+    name: Neujahr
+    type: other
+  - date: 2020-01-02
+    name: Berchtoldstag
+    type: other
+  - date: 2020-04-10
+    name: Karfreitag
+    type: other
+  - date: 2020-04-13
+    name: Ostermontag
+    type: other
+  - date: 2020-05-21
+    name: Auffahrt
+    type: other
+  - date: 2020-06-01
+    name: Pfingstmontag
+    type: other
+  - date: 2020-08-01
+    name: Bundesfeiertag
+    type: official
+  - date: 2020-12-25
+    name: Weihnachtstag
+    type: other
+  - date: 2020-12-26
+    name: Stephanstag
+    type: other
+2021:
+  - date: 2021-01-01
+    name: Neujahr
+    type: other
+  - date: 2021-01-02
+    name: Berchtoldstag
+    type: other
+  - date: 2021-04-02
+    name: Karfreitag
+    type: other
+  - date: 2021-04-05
+    name: Ostermontag
+    type: other
+  - date: 2021-05-13
+    name: Auffahrt
+    type: other
+  - date: 2021-05-24
+    name: Pfingstmontag
+    type: other
+  - date: 2021-08-01
+    name: Bundesfeiertag
+    type: official
+  - date: 2021-12-25
+    name: Weihnachtstag
+    type: other
+  - date: 2021-12-26
+    name: Stephanstag
+    type: other
+2022:
+  - date: 2022-01-01
+    name: Neujahr
+    type: other
+  - date: 2022-01-02
+    name: Berchtoldstag
+    type: other
+  - date: 2022-04-15
+    name: Karfreitag
+    type: other
+  - date: 2022-04-18
+    name: Ostermontag
+    type: other
+  - date: 2022-05-26
+    name: Auffahrt
+    type: other
+  - date: 2022-06-06
+    name: Pfingstmontag
+    type: other
+  - date: 2022-08-01
+    name: Bundesfeiertag
+    type: official
+  - date: 2022-12-25
+    name: Weihnachtstag
+    type: other
+  - date: 2022-12-26
+    name: Stephanstag
+    type: other
+2023:
+  - date: 2023-01-01
+    name: Neujahr
+    type: other
+  - date: 2023-01-02
+    name: Berchtoldstag
+    type: other
+  - date: 2023-04-07
+    name: Karfreitag
+    type: other
+  - date: 2023-04-10
+    name: Ostermontag
+    type: other
+  - date: 2023-05-18
+    name: Auffahrt
+    type: other
+  - date: 2023-05-29
+    name: Pfingstmontag
+    type: other
+  - date: 2023-08-01
+    name: Bundesfeiertag
+    type: official
+  - date: 2023-12-25
+    name: Weihnachtstag
+    type: other
+  - date: 2023-12-26
+    name: Stephanstag
+    type: other
+2024:
+  - date: 2024-01-01
+    name: Neujahr
+    type: other
+  - date: 2024-01-02
+    name: Berchtoldstag
+    type: other
+  - date: 2024-03-29
+    name: Karfreitag
+    type: other
+  - date: 2024-04-01
+    name: Ostermontag
+    type: other
+  - date: 2024-05-09
+    name: Auffahrt
+    type: other
+  - date: 2024-05-20
+    name: Pfingstmontag
+    type: other
+  - date: 2024-08-01
+    name: Bundesfeiertag
+    type: official
+  - date: 2024-12-25
+    name: Weihnachtstag
+    type: other
+  - date: 2024-12-26
+    name: Stephanstag
+    type: other
+2025:
+  - date: 2025-01-01
+    name: Neujahr
+    type: other
+  - date: 2025-01-02
+    name: Berchtoldstag
+    type: other
+  - date: 2025-04-18
+    name: Karfreitag
+    type: other
+  - date: 2025-04-21
+    name: Ostermontag
+    type: other
+  - date: 2025-05-29
+    name: Auffahrt
+    type: other
+  - date: 2025-06-09
+    name: Pfingstmontag
+    type: other
+  - date: 2025-08-01
+    name: Bundesfeiertag
+    type: official
+  - date: 2025-12-25
+    name: Weihnachtstag
+    type: other
+  - date: 2025-12-26
+    name: Stephanstag
+    type: other
+2026:
+  - date: 2026-01-01
+    name: Neujahr
+    type: other
+  - date: 2026-01-02
+    name: Berchtoldstag
+    type: other
+  - date: 2026-04-03
+    name: Karfreitag
+    type: other
+  - date: 2026-04-06
+    name: Ostermontag
+    type: other
+  - date: 2026-05-14
+    name: Auffahrt
+    type: other
+  - date: 2026-05-25
+    name: Pfingstmontag
+    type: other
+  - date: 2026-08-01
+    name: Bundesfeiertag
+    type: official
+  - date: 2026-12-25
+    name: Weihnachtstag
+    type: other
+  - date: 2026-12-26
+    name: Stephanstag
+    type: other
+2027:
+  - date: 2027-01-01
+    name: Neujahr
+    type: other
+  - date: 2027-01-02
+    name: Berchtoldstag
+    type: other
+  - date: 2027-03-26
+    name: Karfreitag
+    type: other
+  - date: 2027-03-29
+    name: Ostermontag
+    type: other
+  - date: 2027-05-06
+    name: Auffahrt
+    type: other
+  - date: 2027-05-17
+    name: Pfingstmontag
+    type: other
+  - date: 2027-08-01
+    name: Bundesfeiertag
+    type: official
+  - date: 2027-12-25
+    name: Weihnachtstag
+    type: other
+  - date: 2027-12-26
+    name: Stephanstag
+    type: other
+2028:
+  - date: 2028-01-01
+    name: Neujahr
+    type: other
+  - date: 2028-01-02
+    name: Berchtoldstag
+    type: other
+  - date: 2028-04-14
+    name: Karfreitag
+    type: other
+  - date: 2028-04-17
+    name: Ostermontag
+    type: other
+  - date: 2028-05-25
+    name: Auffahrt
+    type: other
+  - date: 2028-06-05
+    name: Pfingstmontag
+    type: other
+  - date: 2028-08-01
+    name: Bundesfeiertag
+    type: official
+  - date: 2028-12-25
+    name: Weihnachtstag
+    type: other
+  - date: 2028-12-26
+    name: Stephanstag
+    type: other
+2029:
+  - date: 2029-01-01
+    name: Neujahr
+    type: other
+  - date: 2029-01-02
+    name: Berchtoldstag
+    type: other
+  - date: 2029-03-30
+    name: Karfreitag
+    type: other
+  - date: 2029-04-02
+    name: Ostermontag
+    type: other
+  - date: 2029-05-10
+    name: Auffahrt
+    type: other
+  - date: 2029-05-21
+    name: Pfingstmontag
+    type: other
+  - date: 2029-08-01
+    name: Bundesfeiertag
+    type: official
+  - date: 2029-12-25
+    name: Weihnachtstag
+    type: other
+  - date: 2029-12-26
+    name: Stephanstag
+    type: other
+2030:
+  - date: 2030-01-01
+    name: Neujahr
+    type: other
+  - date: 2030-01-02
+    name: Berchtoldstag
+    type: other
+  - date: 2030-04-19
+    name: Karfreitag
+    type: other
+  - date: 2030-04-22
+    name: Ostermontag
+    type: other
+  - date: 2030-05-30
+    name: Auffahrt
+    type: other
+  - date: 2030-06-10
+    name: Pfingstmontag
+    type: other
+  - date: 2030-08-01
+    name: Bundesfeiertag
+    type: official
+  - date: 2030-12-25
+    name: Weihnachtstag
+    type: other
+  - date: 2030-12-26
+    name: Stephanstag
+    type: other
