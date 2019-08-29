@@ -153,6 +153,8 @@ class Portugal extends AbstractProvider
      * presented itself as the only one that had a programme that was capable of returning to the country its lost
      * status and place Portugal on the way of progress.
      *
+     * The holiday was revoked in 2013 due to government deliberation. It was restored in 2016.
+     *
      * @link https://en.wikipedia.org/wiki/5_October_1910_revolution
      *
      * @throws \Yasumi\Exception\InvalidDateException
@@ -162,7 +164,7 @@ class Portugal extends AbstractProvider
      */
     private function calculatePortugueseRepublicDay(): void
     {
-        if ($this->year >= 1910) {
+        if ($this->year >= 1910 && $this->year <= 2012 || $this->year >= 2016) {
             $this->addHoliday(new Holiday(
                 'portugueseRepublic',
                 ['pt_PT' => 'Implantação da República Portuguesa'],
