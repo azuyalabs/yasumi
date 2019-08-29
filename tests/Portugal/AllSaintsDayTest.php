@@ -28,9 +28,9 @@ class AllSaintsDayTest extends PortugalBaseTestCase implements YasumiTestCaseInt
     public const HOLIDAY = 'allSaintsDay';
 
     /**
-     * Holiday was abolished by the portuguese government in 2014.
+     * Holiday was abolished by the portuguese government in 2013.
      */
-    public const HOLIDAY_YEAR_ABOLISHED = 2014;
+    public const HOLIDAY_YEAR_ABOLISHED = 2013;
 
     /**
      * Holiday was restored by the portuguese government in 2016.
@@ -50,18 +50,18 @@ class AllSaintsDayTest extends PortugalBaseTestCase implements YasumiTestCaseInt
         $expected = new DateTime("$year-11-01", new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
 
-        $year     = 2013;
+        $year     = 2012;
         $expected = new DateTime("$year-11-01", new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
-     * Test that the holiday did not happen in 2014 and 2015.
+     * Test that the holiday did not happen in 2013-2015.
      * @throws \ReflectionException
      */
     public function testNotHoliday()
     {
-        $year = $this->generateRandomYear(2014, 2015);
+        $year = $this->generateRandomYear(2013, 2015);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
     }
 

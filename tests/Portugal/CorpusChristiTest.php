@@ -30,7 +30,7 @@ class CorpusChristiTest extends PortugalBaseTestCase implements YasumiTestCaseIn
     /**
      * Holiday was abolished by the portuguese government in 2014.
      */
-    public const HOLIDAY_YEAR_ABOLISHED = 2014;
+    public const HOLIDAY_YEAR_ABOLISHED = 2013;
 
     /**
      * Holiday was restored by the portuguese government in 2016.
@@ -50,12 +50,12 @@ class CorpusChristiTest extends PortugalBaseTestCase implements YasumiTestCaseIn
     }
 
     /**
-     * Test that the holiday did not happen in 2014 and 2015.
+     * Test that the holiday did not happen in 2013-2015.
      * @throws \ReflectionException
      */
     public function testNotHoliday()
     {
-        $year = $this->generateRandomYear(2014, 2015);
+        $year = $this->generateRandomYear(2013, 2015);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
     }
 

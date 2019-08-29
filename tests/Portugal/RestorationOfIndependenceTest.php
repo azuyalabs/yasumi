@@ -28,9 +28,9 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Yasu
     public const ESTABLISHMENT_YEAR = 1850;
 
     /**
-     * Holiday was abolished by the portuguese government in 2014.
+     * Holiday was abolished by the portuguese government in 2013.
      */
-    public const HOLIDAY_YEAR_ABOLISHED = 2014;
+    public const HOLIDAY_YEAR_ABOLISHED = 2013;
 
     /**
      * Holiday was restored by the portuguese government in 2016.
@@ -56,7 +56,7 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Yasu
         $expected = new DateTime("$year-12-01", new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
 
-        $year     = 1850;
+        $year     = self::ESTABLISHMENT_YEAR;
         $expected = new DateTime("$year-12-01", new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
@@ -82,12 +82,12 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Yasu
     }
 
     /**
-     * Test that the holiday did not happen in 2014 and 2015.
+     * Test that the holiday did not happen in 2013-2015.
      * @throws \ReflectionException
      */
     public function testNotHolidayDuringAbolishment()
     {
-        $year = $this->generateRandomYear(2014, 2015);
+        $year = $this->generateRandomYear(2013, 2015);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
     }
 
