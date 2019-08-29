@@ -81,7 +81,7 @@ class PortugalTest extends PortugalBaseTestCase
     {
         $holidays = [];
 
-        if ($this->year <= 2013 || $this->year >= 2016) {
+        if ($this->year <= 2012 || $this->year >= 2016) {
             $holidays[] = 'corpusChristi';
         }
 

@@ -28,9 +28,49 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements YasumiTe
     public const ESTABLISHMENT_YEAR = 1910;
 
     /**
+     * Holiday was abolished by the portuguese government in 2013.
+     */
+    public const HOLIDAY_YEAR_ABOLISHED = 2013;
+
+    /**
+     * Holiday was restored by the portuguese government in 2016.
+     */
+    public const HOLIDAY_YEAR_RESTORED = 2016;
+
+    /**
      * The name of the holiday to be tested
      */
     public const HOLIDAY = 'portugueseRepublic';
+
+    /**
+     * Test that the holiday if in effect in 2016 and later dates.
+     * @throws \ReflectionException
+     * @throws \Exception
+     * @throws \ReflectionException
+     * @throws \Exception
+     */
+    public function testHolidayOnAfterRestoration()
+    {
+        $year = self::HOLIDAY_YEAR_RESTORED;
+
+        $expected = new DateTime("$year-10-05", new DateTimeZone(self::TIMEZONE));
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
+
+        $year = $this->generateRandomYear(self::HOLIDAY_YEAR_RESTORED);
+
+        $expected = new DateTime("$year-10-05", new DateTimeZone(self::TIMEZONE));
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
+    }
+
+    /**
+     * Test that the holiday did not happen in 2013-2015.
+     * @throws \ReflectionException
+     */
+    public function testNotHolidayDuringAbolishment()
+    {
+        $year = $this->generateRandomYear(2013, 2015);
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
+    }
 
     /**
      * Tests the holiday defined in this test on or after establishment.
