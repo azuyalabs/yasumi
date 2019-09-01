@@ -18,7 +18,12 @@ use JsonSerializable;
 use Yasumi\Exception\UnknownLocaleException;
 
 /**
- * Class Holiday.
+ * Class SubstituteHoliday.
+ *
+ * A substitute holiday is a holiday given in lieu of another holiday, if that day falls in a weekend or
+ * overlaps with other holidays, so that people do not "lose" a day off in these years.
+ *
+ * @link https://en.wikipedia.org/wiki/Substitute_holiday
  */
 class SubstituteHoliday extends Holiday
 {
