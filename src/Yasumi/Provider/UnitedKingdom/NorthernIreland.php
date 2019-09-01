@@ -91,7 +91,8 @@ class NorthernIreland extends UnitedKingdom
                 ['en_GB' => $substituteHoliday->getName() . ' (substitute day)'],
                 $substituteHoliday,
                 $this->locale,
-                Holiday::TYPE_BANK));
+                Holiday::TYPE_BANK
+            ));
         }
     }
 
