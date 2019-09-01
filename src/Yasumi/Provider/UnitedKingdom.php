@@ -33,6 +33,8 @@ class UnitedKingdom extends AbstractProvider
      */
     public const ID = 'GB';
 
+    public $timezone = 'Europe/London';
+
     /**
      * Initialize holidays for the United Kingdom.
      *
@@ -43,8 +45,6 @@ class UnitedKingdom extends AbstractProvider
      */
     public function initialize(): void
     {
-        $this->timezone = 'Europe/London';
-
         // Add common holidays
         $this->calculateNewYearsDay();
         $this->calculateMayDayBankHoliday();
@@ -74,7 +74,7 @@ class UnitedKingdom extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateNewYearsDay(): void
+    protected function calculateNewYearsDay(): void
     {
         // Before 1871 it was not an observed or statutory holiday
         if ($this->year < 1871) {
@@ -113,7 +113,7 @@ class UnitedKingdom extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateMayDayBankHoliday(): void
+    protected function calculateMayDayBankHoliday(): void
     {
         // From 1978, by Royal Proclamation annually
         if ($this->year < 1978) {
@@ -158,7 +158,7 @@ class UnitedKingdom extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateSpringBankHoliday(): void
+    protected function calculateSpringBankHoliday(): void
     {
         // Statutory bank holiday from 1971, following a trial period from 1965 to 1970.
         if ($this->year < 1965) {
@@ -204,7 +204,7 @@ class UnitedKingdom extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateSummerBankHoliday(): void
+    protected function calculateSummerBankHoliday(): void
     {
         if ($this->year < 1871) {
             return;
@@ -268,12 +268,12 @@ class UnitedKingdom extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateChristmasHolidays(): void
+    protected function calculateChristmasHolidays($type = Holiday::TYPE_OFFICIAL): void
     {
         $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->timezone));
         $boxingDay = new DateTime("$this->year-12-26", new DateTimeZone($this->timezone));
 
-        $this->addHoliday(new Holiday('christmasDay', [], $christmasDay, $this->locale));
+        $this->addHoliday(new Holiday('christmasDay', [], $christmasDay, $this->locale, $type));
         $this->addHoliday(new Holiday('secondChristmasDay', [], $boxingDay, $this->locale, Holiday::TYPE_BANK));
 
         $substituteChristmasDay = clone $christmasDay;
