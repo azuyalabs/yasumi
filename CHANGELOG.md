@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Added additional code style fixers and aligning StyleCI settings with PHP-CS.
 - Included extra requirement for some PHP Extensions in the composer file.
 - Holiday providers for England, Wales, Scotland and Northern Ireland [\#165](https://github.com/azuyalabs/yasumi/pull/165) ([c960657](https://github.com/c960657))
+- Holiday providers for England, Wales, Scotland and Northern Ireland [\#166](https://github.com/azuyalabs/yasumi/pull/166) ([c960657](https://github.com/c960657))
 
 ### Changed
 - Updated the translation for the All Saints holiday for the 'fr_FR' locale [\#152](https://github.com/azuyalabs/yasumi/pull/152) ([pioc92](https://github.com/pioc92))
