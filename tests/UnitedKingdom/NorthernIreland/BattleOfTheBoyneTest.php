@@ -28,6 +28,11 @@ class BattleOfTheBoyneTest extends NorthernIrelandBaseTestCase implements Yasumi
     public const HOLIDAY = 'battleOfTheBoyne';
 
     /**
+     * The year in which the holiday was first established
+     */
+    public const ESTABLISHMENT_YEAR = 1926;
+
+    /**
      * Tests the holiday defined in this test.
      *
      * @dataProvider HolidayDataProvider
@@ -50,6 +55,19 @@ class BattleOfTheBoyneTest extends NorthernIrelandBaseTestCase implements Yasumi
     }
 
     /**
+     * Tests the holiday defined in this test before establishment.
+     * @throws \ReflectionException
+     */
+    public function testHolidayBeforeEstablishment()
+    {
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+        );
+    }
+
+    /**
      * Returns a list of random test dates used for assertion of the holiday defined in this test
      *
      * @return array list of test dates for the holiday defined in this test
@@ -60,7 +78,7 @@ class BattleOfTheBoyneTest extends NorthernIrelandBaseTestCase implements Yasumi
         $data = [];
 
         for ($y = 0; $y < self::TEST_ITERATIONS; $y++) {
-            $year   = $this->generateRandomYear();
+            $year   = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
             $date   = new DateTime("$year-7-12", new DateTimeZone(self::TIMEZONE));
             $data[] = [$year, $date->format('Y-m-d')];
         }

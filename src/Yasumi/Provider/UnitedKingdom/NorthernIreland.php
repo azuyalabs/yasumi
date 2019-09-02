@@ -71,6 +71,10 @@ class NorthernIreland extends UnitedKingdom
      */
     private function calculateStPatricksDay(): void
     {
+        if ($this->year < 1971) {
+            return;
+        }
+
         $holiday = new Holiday(
             'stPatricksDay',
             ['en_GB' => 'St. Patrick\'s Day'],
@@ -113,6 +117,10 @@ class NorthernIreland extends UnitedKingdom
      */
     private function calculateBattleOfTheBoyne(): void
     {
+        if ($this->year < 1926) {
+            return;
+        }
+
         $holiday = new Holiday(
             'battleOfTheBoyne',
             ['en_GB' => 'Battle of the Boyne'],
