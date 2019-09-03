@@ -62,7 +62,7 @@ class SecondChristmasDayTest extends DenmarkBaseTestCase implements YasumiTestCa
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => '2. Juledag']
+            [self::LOCALE => '2. juledag']
         );
     }
 

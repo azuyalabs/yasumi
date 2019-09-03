@@ -13,7 +13,7 @@
 // Translations for Second Christmas Day
 return [
     'cs_CZ' => '2. svátek vánoční',
-    'da_DK' => '2. Juledag',
+    'da_DK' => '2. juledag',
     'de_AT' => 'Stefanitag',
     'de_DE' => '2. Weihnachtsfeiertag',
     'el_GR' => 'Σύναξις Υπεραγίας Θεοτόκου Μαρίας',
