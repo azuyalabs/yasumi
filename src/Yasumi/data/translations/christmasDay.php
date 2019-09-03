@@ -39,7 +39,7 @@ return [
     'lt_LT' => 'Šv. Kalėdos',
     'lv_LV' => 'Ziemassvētki',
     'nb_NO' => 'Første juledag',
-    'nl_BE' => 'Eerste kerstdag',
+    'nl_BE' => 'Kerstmis',
     'nl_NL' => 'Eerste kerstdag',
     'pl_PL' => 'pierwszy dzień Bożego Narodzenia',
     'pt_BR' => 'Natal',
