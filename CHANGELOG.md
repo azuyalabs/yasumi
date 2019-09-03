@@ -23,6 +23,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Fixed one-off exceptions for May Day Bank Holiday in 1995 and 2020 and Spring Bank Holiday in 2002 and 2012 (United Kingdom) [\#160](https://github.com/azuyalabs/yasumi/pull/160) ([c960657](https://github.com/c960657))
 - Fixed revoked holidays in Portugal in 2013-2015 [\#163](https://github.com/azuyalabs/yasumi/pull/163) ([c960657](https://github.com/c960657))
 - Fixed spelling issues in the Danish translation for Second Christmas Day. [\#167](https://github.com/azuyalabs/yasumi/pull/167)
+- Corpus Christi is official in Poland [\#168](https://github.com/azuyalabs/yasumi/pull/168) ([c960657](https://github.com/c960657))
+
 
 ### Removed
 
