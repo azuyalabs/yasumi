@@ -38,6 +38,7 @@ class NetherlandsTest extends NetherlandsBaseTestCase
             'ascensionDay',
             'pentecost',
             'pentecostMonday',
+            'liberationDay',
             'christmasDay',
             'secondChristmasDay'
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
@@ -54,7 +55,6 @@ class NetherlandsTest extends NetherlandsBaseTestCase
             'goodFriday',
             'ashWednesday',
             'commemorationDay',
-            'liberationDay',
             'halloween',
             'stNicholasDay',
             'carnivalDay',

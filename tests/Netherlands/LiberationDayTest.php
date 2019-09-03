@@ -85,7 +85,7 @@ class LiberationDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            Holiday::TYPE_OBSERVANCE
+            Holiday::TYPE_OFFICIAL
         );
     }
 }

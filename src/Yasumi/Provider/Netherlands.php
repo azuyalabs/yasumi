@@ -107,7 +107,7 @@ class Netherlands extends AbstractProvider
                 ['en_US' => 'Liberation Day', 'nl_NL' => 'Bevrijdingsdag'],
                 new DateTime("$this->year-5-5", new DateTimeZone($this->timezone)),
                 $this->locale,
-                Holiday::TYPE_OBSERVANCE
+                Holiday::TYPE_OFFICIAL
             ));
         }
     }
