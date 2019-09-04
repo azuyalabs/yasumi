@@ -53,7 +53,7 @@ class EasterMondayTest extends ItalyBaseTestCase implements YasumiTestCaseInterf
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'Lunedi` dell\'Angelo']
+            [self::LOCALE => "Lunedì dell'Angelo"]
         );
     }
 
