@@ -10,11 +10,9 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-// Translations for New Year's Eve
+// Translations for Epiphany Eve
 return [
-    'da_DK' => 'Nytårsaften',
-    'en_US' => 'New Year\'s Eve',
-    'ko_KR' => '신년전야',
-    'lv_LV' => 'Vecgada vakars',
-    'sv_SE' => 'nyårsafton',
+    'da_DK' => 'Helligtrekongersaften',
+    'en_US' => 'Epiphany Eve',
+    'sv_SE' => 'trettondagsafton',
 ];

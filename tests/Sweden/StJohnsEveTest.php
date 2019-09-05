@@ -17,14 +17,14 @@ use Yasumi\tests\YasumiTestCaseInterface;
 use Yasumi\Yasumi;
 
 /**
- * Class for testing St. John's Day / Midsummer's Day in Sweden.
+ * Class for testing St. John's Eve / Midsummer's Eve in Sweden.
  */
-class stJohnsDayTest extends SwedenBaseTestCase implements YasumiTestCaseInterface
+class StJohnsEveTest extends SwedenBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday to be tested
      */
-    public const HOLIDAY = 'stJohnsDay';
+    public const HOLIDAY = 'stJohnsEve';
 
     /**
      * Tests the holiday defined in this test.
@@ -43,9 +43,9 @@ class stJohnsDayTest extends SwedenBaseTestCase implements YasumiTestCaseInterfa
         $this->assertNotNull($holiday);
 
         // Holiday specific assertions
-        $this->assertEquals('Saturday', $holiday->format('l'));
-        $this->assertGreaterThanOrEqual(20, $holiday->format('j'));
-        $this->assertLessThanOrEqual(26, $holiday->format('j'));
+        $this->assertEquals('Friday', $holiday->format('l'));
+        $this->assertGreaterThanOrEqual(19, $holiday->format('j'));
+        $this->assertLessThanOrEqual(25, $holiday->format('j'));
 
         unset($holiday, $holidays);
     }
@@ -60,7 +60,7 @@ class stJohnsDayTest extends SwedenBaseTestCase implements YasumiTestCaseInterfa
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'midsommardagen']
+            [self::LOCALE => 'midsommarafton']
         );
     }
 
@@ -70,6 +70,6 @@ class stJohnsDayTest extends SwedenBaseTestCase implements YasumiTestCaseInterfa
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OBSERVANCE);
     }
 }

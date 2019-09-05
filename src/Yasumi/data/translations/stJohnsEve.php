@@ -10,11 +10,9 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-// Translations for New Year's Eve
+// Translations for St. John's Eve
 return [
-    'da_DK' => 'Nytårsaften',
-    'en_US' => 'New Year\'s Eve',
-    'ko_KR' => '신년전야',
-    'lv_LV' => 'Vecgada vakars',
-    'sv_SE' => 'nyårsafton',
+    'da_DK' => 'Sankthansaften',
+    'en_US' => 'St. John\'s Eve',
+    'sv_SE' => 'midsommarafton',
 ];

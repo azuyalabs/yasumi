@@ -17,14 +17,14 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Christmas Eve in Sweden.
+ * Class for testing New Year's Eve in Sweden.
  */
-class ChristmasEveTest extends SwedenBaseTestCase implements YasumiTestCaseInterface
+class NewYearsEveTest extends SwedenBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday to be tested
      */
-    public const HOLIDAY = 'christmasEve';
+    public const HOLIDAY = 'newYearsEve';
 
     /**
      * Tests the holiday defined in this test.
@@ -49,7 +49,7 @@ class ChristmasEveTest extends SwedenBaseTestCase implements YasumiTestCaseInter
      */
     public function HolidayDataProvider(): array
     {
-        return $this->generateRandomDates(12, 24, self::TIMEZONE);
+        return $this->generateRandomDates(12, 31, self::TIMEZONE);
     }
 
     /**
@@ -62,7 +62,7 @@ class ChristmasEveTest extends SwedenBaseTestCase implements YasumiTestCaseInter
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'julafton']
+            [self::LOCALE => 'nyårsafton']
         );
     }
 
