@@ -26,6 +26,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Fixed spelling issues in the Danish translation for Second Christmas Day. [\#167](https://github.com/azuyalabs/yasumi/pull/167)
 - Corpus Christi is official in Poland [\#168](https://github.com/azuyalabs/yasumi/pull/168) ([c960657](https://github.com/c960657))
 - Liberation Day is official in the Netherlands [\#169](https://github.com/azuyalabs/yasumi/pull/169) ([c960657](https://github.com/c960657))
+- Typos in Easter Monday and Republic Day for the 'it_IT' locale [\#171](https://github.com/azuyalabs/yasumi/pull/171) ([c960657](https://github.com/c960657))
 
 
 ### Removed

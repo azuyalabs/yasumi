@@ -78,7 +78,7 @@ class RepublicDayTest extends ItalyBaseTestCase implements YasumiTestCaseInterfa
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Festa della Republica']
+            [self::LOCALE => 'Festa della Repubblica']
         );
     }
 
