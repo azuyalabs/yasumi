@@ -12,19 +12,21 @@
 
 namespace Yasumi\tests\Sweden;
 
+use DateInterval;
 use DateTime;
+use DateTimeZone;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Christmas Eve in Sweden.
+ * Class for testing All Saints' Eve in Sweden.
  */
-class ChristmasEveTest extends SwedenBaseTestCase implements YasumiTestCaseInterface
+class AllSaintsEveTest extends SwedenBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday to be tested
      */
-    public const HOLIDAY = 'christmasEve';
+    public const HOLIDAY = 'allSaintsEve';
 
     /**
      * Tests the holiday defined in this test.
@@ -49,7 +51,23 @@ class ChristmasEveTest extends SwedenBaseTestCase implements YasumiTestCaseInter
      */
     public function HolidayDataProvider(): array
     {
-        return $this->generateRandomDates(12, 24, self::TIMEZONE);
+        $data = [];
+
+        for ($y = 0; $y < 50; $y++) {
+            $year = $this->generateRandomYear();
+            $date = new DateTime("$year-10-30", new DateTimeZone(self::TIMEZONE));
+
+            // Check between 30 October and 5th of November the day that is a Friday
+            for ($d = 0; $d <= 7; ++$d) {
+                if ($date->format('l') === 'Friday') {
+                    $data[] = [$year, $date];
+                    break;
+                }
+                $date->add(new DateInterval('P1D'));
+            }
+        }
+
+        return $data;
     }
 
     /**
@@ -62,7 +80,7 @@ class ChristmasEveTest extends SwedenBaseTestCase implements YasumiTestCaseInter
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'julafton']
+            [self::LOCALE => 'alla helgons afton']
         );
     }
 

@@ -10,11 +10,9 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-// Translations for New Year's Eve
+// Translations for All Saints' Eve
 return [
-    'da_DK' => 'Nytårsaften',
-    'en_US' => 'New Year\'s Eve',
-    'ko_KR' => '신년전야',
-    'lv_LV' => 'Vecgada vakars',
-    'sv_SE' => 'nyårsafton',
+    'da_DK' => 'Allehelgensaften',
+    'en_US' => 'All Saints\' Eve',
+    'sv_SE' => 'alla helgons afton',
 ];

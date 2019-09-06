@@ -10,11 +10,8 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-// Translations for New Year's Eve
+// Translations for Walpurgis Night
 return [
-    'da_DK' => 'Nytårsaften',
-    'en_US' => 'New Year\'s Eve',
-    'ko_KR' => '신년전야',
-    'lv_LV' => 'Vecgada vakars',
-    'sv_SE' => 'nyårsafton',
+    'en_US' => 'Walpurgis Night',
+    'sv_SE' => 'valborgsmässoafton',
 ];

@@ -42,7 +42,6 @@ class SwedenTest extends SwedenBaseTestCase
             'nationalDay',
             'stJohnsDay', // Midsummer's Day
             'allSaintsDay',
-            'christmasEve',
             'christmasDay',
             'secondChristmasDay'
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
@@ -54,7 +53,14 @@ class SwedenTest extends SwedenBaseTestCase
      */
     public function testObservedHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays([
+            'epiphanyEve',
+            'walpurgisEve',
+            'stJohnsEve',
+            'allSaintsEve',
+            'christmasEve',
+            'newYearsEve',
+        ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**
