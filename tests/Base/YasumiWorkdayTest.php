@@ -20,6 +20,11 @@ use PHPUnit\Framework\TestCase;
 use ReflectionException;
 use Yasumi\Yasumi;
 
+/**
+ * Class YasumiWorkdayTest.
+ *
+ * Class for testing the workday functions.
+ */
 class YasumiWorkdayTest extends TestCase
 {
     public const FORMAT_DATE = 'Y-m-d';
