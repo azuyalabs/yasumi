@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -247,7 +247,7 @@ trait YasumiBase
     {
         $data = [];
         for ($y = 1; $y <= $iterations; $y++) {
-            $year = Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
+            $year = (int) Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
             $data[] = [$year, new DateTime("$year-$month-$day", new DateTimeZone($timezone))];
         }
 
@@ -269,7 +269,7 @@ trait YasumiBase
         $data = [];
 
         for ($i = 1; $i <= $iterations; ++$i) {
-            $year = Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
+            $year = (int) Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
             $date = $this->calculateEaster($year, $timezone);
 
             $data[] = [$year, $date->format('Y-m-d')];
@@ -395,7 +395,7 @@ trait YasumiBase
         $data = [];
 
         for ($i = 1; $i <= $iterations; ++$i) {
-            $year = Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
+            $year = (int) Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
             $date = $this->calculateEaster($year, $timezone);
 
             $cb($date);

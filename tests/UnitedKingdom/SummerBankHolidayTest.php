@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -53,6 +53,7 @@ class SummerBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
     /**
      * Tests the holiday exception in 2020.
      * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayBefore1965()
     {
@@ -68,6 +69,12 @@ class SummerBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
     /**
      * Tests the holiday during trial period in 1965-1970.
      * @throws ReflectionException
+     * @throws Exception
+     * @throws Exception
+     * @throws Exception
+     * @throws Exception
+     * @throws Exception
+     * @throws Exception
      */
     public function testHolidayTrialPeriod()
     {
