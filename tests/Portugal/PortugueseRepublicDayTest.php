@@ -30,11 +30,6 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements YasumiTe
     public const ESTABLISHMENT_YEAR = 1910;
 
     /**
-     * Holiday was abolished by the portuguese government in 2013.
-     */
-    public const HOLIDAY_YEAR_ABOLISHED = 2013;
-
-    /**
      * Holiday was restored by the portuguese government in 2016.
      */
     public const HOLIDAY_YEAR_RESTORED = 2016;

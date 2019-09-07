@@ -27,8 +27,4 @@ abstract class NavarreBaseTestCase extends SpainBaseTestCase
      */
     public const REGION = 'Spain/Navarre';
 
-    /**
-     * Timezone in which this provider has holidays defined
-     */
-    public const TIMEZONE = 'Europe/Madrid';
 }
