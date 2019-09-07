@@ -55,7 +55,7 @@ class BrazilTest extends BrazilBaseTestCase
             'carnavalTuesday',
             'easter',
             'corpusChristi',
-            'ashWednesday',
+            'ashWednesday'
         ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 

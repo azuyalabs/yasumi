@@ -60,7 +60,7 @@ class SwedenTest extends SwedenBaseTestCase
             'stJohnsEve',
             'allSaintsEve',
             'christmasEve',
-            'newYearsEve',
+            'newYearsEve'
         ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 

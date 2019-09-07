@@ -28,7 +28,7 @@ class TranslationsTest extends TestCase
     public const LOCALES = [
         'en_US',
         'nl_NL',
-        'pl_PL',
+        'pl_PL'
     ];
 
     /**

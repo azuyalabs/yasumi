@@ -33,7 +33,7 @@ class UnitedKingdomTest extends UnitedKingdomBaseTestCase
     {
         $this->assertDefinedHolidays([
             'goodFriday',
-            'christmasDay',
+            'christmasDay'
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
