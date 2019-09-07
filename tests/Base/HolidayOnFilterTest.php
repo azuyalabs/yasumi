@@ -89,15 +89,15 @@ class HolidayOnFilterTest extends TestCase
         $holidays = Yasumi::create('Netherlands', 2016);
 
         // No holidays
-        $holidaysOnDate = $holidays->on(new \DateTime('11/19/2016', new DateTimeZone($timezone)));
+        $holidaysOnDate = $holidays->on(new DateTime('11/19/2016', new DateTimeZone($timezone)));
         $this->assertEquals(0, $holidaysOnDate->count());
 
         // One holiday
-        $holidaysOnDate = $holidays->on(new \DateTime('12/25/2016', new DateTimeZone($timezone)));
+        $holidaysOnDate = $holidays->on(new DateTime('12/25/2016', new DateTimeZone($timezone)));
         $this->assertEquals(1, $holidaysOnDate->count());
 
         // Multiple holidays
-        $holidaysOnDate = $holidays->on(new \DateTime('03/27/2016', new DateTimeZone($timezone)));
+        $holidaysOnDate = $holidays->on(new DateTime('03/27/2016', new DateTimeZone($timezone)));
         $this->assertGreaterThan(1, $holidaysOnDate->count());
     }
 }

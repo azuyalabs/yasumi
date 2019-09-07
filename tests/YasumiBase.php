@@ -293,7 +293,7 @@ trait YasumiBase
      * @param int $year the year for which Easter needs to be calculated
      * @param string $timezone the timezone in which Easter is celebrated
      *
-     * @return \DateTime date of Easter
+     * @return DateTime date of Easter
      * @throws Exception
      * @see  easter_days
      *
@@ -305,7 +305,7 @@ trait YasumiBase
     protected function calculateEaster(int $year, string $timezone): DateTime
     {
         if (\extension_loaded('calendar')) {
-            $easter_days = \easter_days($year);
+            $easter_days = easter_days($year);
         } else {
             $golden = (($year % 19) + 1); // The Golden Number
 
@@ -462,7 +462,7 @@ trait YasumiBase
         $iterations = 10,
         $range = 1000
     ): array {
-        return $this->generateRandomDatesWithModifier($month, $day, function ($year, \DateTime $date) {
+        return $this->generateRandomDatesWithModifier($month, $day, function ($year, DateTime $date) {
             if ($this->isWeekend($date)) {
                 $date->modify('next monday');
             }
@@ -494,7 +494,7 @@ trait YasumiBase
 
         for ($i = 1; $i <= $iterations; ++$i) {
             $year = $this->generateRandomYear($range);
-            $date = new \DateTime("{$year}-{$month}-{$day}", new \DateTimeZone($timezone));
+            $date = new DateTime("{$year}-{$month}-{$day}", new DateTimeZone($timezone));
 
             $callback($year, $date);
 

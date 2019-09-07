@@ -98,8 +98,8 @@ class HolidayBetweenFilterTest extends TestCase
         $holidays = Yasumi::create('Netherlands', 2016);
 
         $between = $holidays->between(
-            new DateTimeImmutable('03/25/2016', new \DateTimeZone($timezone)),
-            new DateTimeImmutable('07/25/2016', new \DateTimeZone($timezone))
+            new DateTimeImmutable('03/25/2016', new DateTimeZone($timezone)),
+            new DateTimeImmutable('07/25/2016', new DateTimeZone($timezone))
         );
 
         $betweenHolidays = \iterator_to_array($between);

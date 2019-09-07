@@ -40,7 +40,7 @@ class HolidayTest extends TestCase
     {
         $this->expectException(InvalidArgumentException::class);
 
-        new Holiday('', [], new \DateTime());
+        new Holiday('', [], new DateTime());
     }
 
     /**
@@ -78,7 +78,7 @@ class HolidayTest extends TestCase
     public function testHolidayWithDateTimeInterface(): void
     {
         // Assert with DateTime instance
-        $holiday = new Holiday('testHoliday', [], new \DateTime(), 'en_US');
+        $holiday = new Holiday('testHoliday', [], new DateTime(), 'en_US');
         $this->assertNotNull($holiday);
         $this->assertInstanceOf(Holiday::class, $holiday);
 
