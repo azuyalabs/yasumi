@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * This file is part of the Yasumi package.
@@ -13,6 +13,10 @@
 
 namespace Yasumi\tests\Latvia;
 
+use DateTime;
+use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Latvia;
 use Yasumi\tests\YasumiTestCaseInterface;
@@ -31,7 +35,7 @@ class RestorationOfIndependenceDayTest extends LatviaBaseTestCase implements Yas
 
     /**
      * Test if holiday is not defined before restoration
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testNotHoliday()
     {
@@ -44,7 +48,7 @@ class RestorationOfIndependenceDayTest extends LatviaBaseTestCase implements Yas
 
     /**
      * @return array
-     * @throws \Exception
+     * @throws Exception
      */
     public function holidayDataProvider(): array
     {
@@ -62,11 +66,11 @@ class RestorationOfIndependenceDayTest extends LatviaBaseTestCase implements Yas
      *
      * @dataProvider holidayDataProvider
      *
-     * @param int    $year     the year for which the holiday defined in this test needs to be tested
+     * @param int $year the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
-     * @throws \ReflectionException
-     * @throws \Exception
+     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHoliday($year, $expected)
     {
@@ -74,13 +78,13 @@ class RestorationOfIndependenceDayTest extends LatviaBaseTestCase implements Yas
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime($expected, new \DateTimeZone(self::TIMEZONE))
+            new DateTime($expected, new DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * {@inheritdoc}
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -90,14 +94,14 @@ class RestorationOfIndependenceDayTest extends LatviaBaseTestCase implements Yas
             $this->generateRandomYear(Latvia::RESTORATION_OF_INDEPENDENCE_YEAR),
             [
                 self::LOCALE => 'Latvijas Republikas Neatkarības atjaunošanas diena',
-                'en_US'      => 'Restoration of Independence day'
+                'en_US' => 'Restoration of Independence day'
             ]
         );
     }
 
     /**
      * {@inheritdoc}
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

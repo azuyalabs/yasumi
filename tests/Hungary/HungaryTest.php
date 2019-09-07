@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Hungary;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class HungaryTest extends HungaryBaseTestCase
 
     /**
      * Tests if all official holidays in Hungary are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -38,7 +39,7 @@ class HungaryTest extends HungaryBaseTestCase
             'internationalWorkersDay',
             'pentecostMonday',
             'christmasDay',
-            'secondChristmasDay',
+            'secondChristmasDay'
         ];
 
         if ($this->year >= 1891) {
@@ -62,7 +63,7 @@ class HungaryTest extends HungaryBaseTestCase
 
     /**
      * Tests if all observed holidays in Hungary are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -71,7 +72,7 @@ class HungaryTest extends HungaryBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Hungary are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -80,7 +81,7 @@ class HungaryTest extends HungaryBaseTestCase
 
     /**
      * Tests if all bank holidays in Hungary are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -89,7 +90,7 @@ class HungaryTest extends HungaryBaseTestCase
 
     /**
      * Tests if all other holidays in Hungary are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -99,7 +100,7 @@ class HungaryTest extends HungaryBaseTestCase
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->year = $this->generateRandomYear(1955);
     }

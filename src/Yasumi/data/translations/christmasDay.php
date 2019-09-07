@@ -40,7 +40,7 @@ return [
     'lv_LV' => 'Ziemassvētki',
     'nb_NO' => 'Første juledag',
     'nl_BE' => 'Kerstmis',
-    'nl_NL' => 'Kerstmis',
+    'nl_NL' => 'Eerste kerstdag',
     'pl_PL' => 'pierwszy dzień Bożego Narodzenia',
     'pt_BR' => 'Natal',
     'pt_PT' => 'Natal',

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Portugal;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class PortugalTest extends PortugalBaseTestCase
 
     /**
      * Tests if all official holidays in Portugal are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -48,7 +49,7 @@ class PortugalTest extends PortugalBaseTestCase
 
     /**
      * Tests if all observed holidays in Portugal are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -57,7 +58,7 @@ class PortugalTest extends PortugalBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Portugal are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -66,7 +67,7 @@ class PortugalTest extends PortugalBaseTestCase
 
     /**
      * Tests if all bank holidays in Portugal are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -75,7 +76,7 @@ class PortugalTest extends PortugalBaseTestCase
 
     /**
      * Tests if all other holidays in PortugalPortugal are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -91,7 +92,7 @@ class PortugalTest extends PortugalBaseTestCase
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->year = $this->generateRandomYear(1974);
     }

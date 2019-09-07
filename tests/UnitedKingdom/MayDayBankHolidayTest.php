@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\UnitedKingdom;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -34,8 +36,8 @@ class MayDayBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
 
     /**
      * Tests the holiday defined in this test.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testHoliday()
     {
@@ -50,7 +52,9 @@ class MayDayBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
 
     /**
      * Tests the holiday exception in 1995 and 2020.
-     * @throws \ReflectionException
+     * @throws ReflectionException
+     * @throws Exception
+     * @throws Exception
      */
     public function testHolidayExceptions()
     {
@@ -58,20 +62,20 @@ class MayDayBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
             self::REGION,
             self::HOLIDAY,
             1995,
-            new DateTime("1995-5-8", new DateTimeZone(self::TIMEZONE))
+            new DateTime('1995-5-8', new DateTimeZone(self::TIMEZONE))
         );
 
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             2020,
-            new DateTime("2020-5-8", new DateTimeZone(self::TIMEZONE))
+            new DateTime('2020-5-8', new DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests the holiday defined in this test before establishment.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayBeforeEstablishment()
     {
@@ -84,7 +88,7 @@ class MayDayBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -98,7 +102,7 @@ class MayDayBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

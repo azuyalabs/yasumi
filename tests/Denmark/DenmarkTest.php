@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Denmark;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class DenmarkTest extends DenmarkBaseTestCase
 
     /**
      * Tests if all official holidays in Denmark are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -47,7 +48,7 @@ class DenmarkTest extends DenmarkBaseTestCase
 
     /**
      * Tests if all observed holidays in Denmark are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -55,13 +56,13 @@ class DenmarkTest extends DenmarkBaseTestCase
             'internationalWorkersDay',
             'constitutionDay',
             'christmasEve',
-            'newYearsEve',
+            'newYearsEve'
         ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**
      * Tests if all seasonal holidays in Denmark are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -71,7 +72,7 @@ class DenmarkTest extends DenmarkBaseTestCase
 
     /**
      * Tests if all bank holidays in Denmark are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -80,7 +81,7 @@ class DenmarkTest extends DenmarkBaseTestCase
 
     /**
      * Tests if all other holidays in Denmark are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -90,7 +91,7 @@ class DenmarkTest extends DenmarkBaseTestCase
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->year = $this->generateRandomYear(1849);
     }

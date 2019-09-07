@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * This file is part of the Yasumi package.
@@ -13,6 +13,9 @@
 
 namespace Yasumi\tests\Russia;
 
+use DateTime;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -30,7 +33,7 @@ class NewYearHolidaysDay3Test extends RussiaBaseTestCase implements YasumiTestCa
 
     /**
      * @return array
-     * @throws \Exception
+     * @throws Exception
      */
     public function holidayDataProvider(): array
     {
@@ -40,19 +43,19 @@ class NewYearHolidaysDay3Test extends RussiaBaseTestCase implements YasumiTestCa
     /**
      * @dataProvider holidayDataProvider
      *
-     * @param int       $year
-     * @param \DateTime $expected
+     * @param int $year
+     * @param DateTime $expected
      *
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
-    public function testHoliday($year, \DateTime $expected)
+    public function testHoliday($year, DateTime $expected)
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
      * {@inheritdoc}
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -66,7 +69,7 @@ class NewYearHolidaysDay3Test extends RussiaBaseTestCase implements YasumiTestCa
 
     /**
      * {@inheritdoc}
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

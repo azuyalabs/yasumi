@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Spain\Catalonia;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class CataloniaTest extends CataloniaBaseTestCase
 
     /**
      * Tests if all official holidays in Catalonia (Spain) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -41,13 +42,13 @@ class CataloniaTest extends CataloniaBaseTestCase
             'allSaintsDay',
             'constitutionDay',
             'immaculateConception',
-            'christmasDay',
+            'christmasDay'
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
      * Tests if all observed holidays in Catalonia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -55,13 +56,13 @@ class CataloniaTest extends CataloniaBaseTestCase
             'easter',
             'easterMonday',
             'stJohnsDay',
-            'stStephensDay',
+            'stStephensDay'
         ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**
      * Tests if all seasonal holidays in Catalonia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -70,7 +71,7 @@ class CataloniaTest extends CataloniaBaseTestCase
 
     /**
      * Tests if all bank holidays in Catalonia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -79,7 +80,7 @@ class CataloniaTest extends CataloniaBaseTestCase
 
     /**
      * Tests if all other holidays in Catalonia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -89,7 +90,7 @@ class CataloniaTest extends CataloniaBaseTestCase
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->year = $this->generateRandomYear(1981);
     }

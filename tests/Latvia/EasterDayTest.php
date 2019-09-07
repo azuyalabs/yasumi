@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * This file is part of the Yasumi package.
@@ -13,6 +13,10 @@
 
 namespace Yasumi\tests\Latvia;
 
+use DateTime;
+use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -30,7 +34,7 @@ class EasterDayTest extends LatviaBaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * @return array
-     * @throws \Exception
+     * @throws Exception
      */
     public function holidayDataProvider(): array
     {
@@ -42,11 +46,11 @@ class EasterDayTest extends LatviaBaseTestCase implements YasumiTestCaseInterfac
      *
      * @dataProvider holidayDataProvider
      *
-     * @param int    $year     the year for which the holiday defined in this test needs to be tested
+     * @param int $year the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
-     * @throws \ReflectionException
-     * @throws \Exception
+     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHoliday($year, $expected)
     {
@@ -54,13 +58,13 @@ class EasterDayTest extends LatviaBaseTestCase implements YasumiTestCaseInterfac
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime($expected, new \DateTimeZone(self::TIMEZONE))
+            new DateTime($expected, new DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * {@inheritdoc}
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -74,7 +78,7 @@ class EasterDayTest extends LatviaBaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * {@inheritdoc}
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

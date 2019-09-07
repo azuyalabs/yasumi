@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,12 @@ namespace Yasumi\tests\Netherlands;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use InvalidArgumentException;
+use PHPUnit_Framework_AssertionFailedError;
+use ReflectionException;
+use RuntimeException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -31,12 +37,12 @@ class thirdCarnivalDay extends NetherlandsBaseTestCase implements YasumiTestCase
     /**
      * Tests the holiday defined in this test.
      *
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     * @throws \InvalidArgumentException
-     * @throws \PHPUnit_Framework_AssertionFailedError
-     * @throws \RuntimeException
-     * @throws \ReflectionException
-     * @throws \Exception
+     * @throws UnknownLocaleException
+     * @throws InvalidArgumentException
+     * @throws PHPUnit_Framework_AssertionFailedError
+     * @throws RuntimeException
+     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHoliday()
     {
@@ -52,11 +58,11 @@ class thirdCarnivalDay extends NetherlandsBaseTestCase implements YasumiTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws \InvalidArgumentException
-     * @throws \PHPUnit_Framework_AssertionFailedError
-     * @throws \RuntimeException
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     * @throws \ReflectionException
+     * @throws InvalidArgumentException
+     * @throws PHPUnit_Framework_AssertionFailedError
+     * @throws RuntimeException
+     * @throws UnknownLocaleException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {
@@ -66,11 +72,11 @@ class thirdCarnivalDay extends NetherlandsBaseTestCase implements YasumiTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws \InvalidArgumentException
-     * @throws \PHPUnit_Framework_AssertionFailedError
-     * @throws \RuntimeException
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     * @throws \ReflectionException
+     * @throws InvalidArgumentException
+     * @throws PHPUnit_Framework_AssertionFailedError
+     * @throws RuntimeException
+     * @throws UnknownLocaleException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {

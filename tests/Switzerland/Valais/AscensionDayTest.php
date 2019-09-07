@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Switzerland\Valais;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -29,8 +31,8 @@ class AscensionDayTest extends ValaisBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests Ascension Day.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testAscensionDay()
     {
@@ -45,7 +47,7 @@ class AscensionDayTest extends ValaisBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests translated name of Ascension Day.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -59,7 +61,7 @@ class AscensionDayTest extends ValaisBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Japan;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -34,8 +36,8 @@ class NewYearsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests New Years Day after 1948. New Years Day was established after 1948
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testNewYearsDayOnAfter1948()
     {
@@ -50,8 +52,8 @@ class NewYearsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests New Years Day after 1948 substituted next working day (when New Years Day falls on a Sunday)
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testNewYearsDayOnAfter1948SubstitutedNextWorkingDay()
     {
@@ -66,7 +68,7 @@ class NewYearsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests New Years Day before 1948. New Years Day was established after 1948
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testNewYearsDayBefore1948()
     {
@@ -79,7 +81,7 @@ class NewYearsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -93,7 +95,7 @@ class NewYearsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

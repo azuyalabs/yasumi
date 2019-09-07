@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Sweden;
 
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 use Yasumi\Yasumi;
@@ -19,7 +20,7 @@ use Yasumi\Yasumi;
 /**
  * Class for testing St. John's Day / Midsummer's Day in Sweden.
  */
-class stJohnsDayTest extends SwedenBaseTestCase implements YasumiTestCaseInterface
+class StJohnsDayTest extends SwedenBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday to be tested
@@ -28,14 +29,14 @@ class stJohnsDayTest extends SwedenBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHoliday()
     {
         $year = $this->generateRandomYear();
 
         $holidays = Yasumi::create(self::REGION, $year);
-        $holiday  = $holidays->getHoliday(self::HOLIDAY);
+        $holiday = $holidays->getHoliday(self::HOLIDAY);
 
         // Some basic assertions
         $this->assertInstanceOf('Yasumi\Provider\\' . \str_replace('/', '\\', self::REGION), $holidays);
@@ -52,7 +53,7 @@ class stJohnsDayTest extends SwedenBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -66,7 +67,7 @@ class stJohnsDayTest extends SwedenBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

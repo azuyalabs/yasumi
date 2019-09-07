@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Brazil;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -29,8 +31,8 @@ class InternationalWorkersDayTest extends BrazilBaseTestCase implements YasumiTe
 
     /**
      * Tests International Workers' Day.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testInternationalWorkersDay()
     {
@@ -45,7 +47,7 @@ class InternationalWorkersDayTest extends BrazilBaseTestCase implements YasumiTe
 
     /**
      * Tests translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -59,7 +61,7 @@ class InternationalWorkersDayTest extends BrazilBaseTestCase implements YasumiTe
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

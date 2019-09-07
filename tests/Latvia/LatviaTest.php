@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * This file is part of the Yasumi package.
@@ -13,6 +13,7 @@
 
 namespace Yasumi\tests\Latvia;
 
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Latvia;
 
@@ -25,7 +26,7 @@ class LatviaTest extends LatviaBaseTestCase
 {
     /**
      * Tests if all official holidays in Latvia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -58,7 +59,7 @@ class LatviaTest extends LatviaBaseTestCase
 
     /**
      * Tests if all observed holidays in Latvia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -67,7 +68,7 @@ class LatviaTest extends LatviaBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Latvia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -76,7 +77,7 @@ class LatviaTest extends LatviaBaseTestCase
 
     /**
      * Tests if all bank holidays in Latvia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -85,7 +86,7 @@ class LatviaTest extends LatviaBaseTestCase
 
     /**
      * Tests if all other holidays in Latvia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {

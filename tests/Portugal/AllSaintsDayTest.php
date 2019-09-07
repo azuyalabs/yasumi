@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Portugal;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -39,25 +41,25 @@ class AllSaintsDayTest extends PortugalBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests the holiday defined in this test.
-     * @throws \ReflectionException
-     * @throws \Exception
-     * @throws \ReflectionException
-     * @throws \Exception
+     * @throws ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHoliday()
     {
-        $year     = 2016;
+        $year = 2016;
         $expected = new DateTime("$year-11-01", new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
 
-        $year     = 2012;
+        $year = 2012;
         $expected = new DateTime("$year-11-01", new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
      * Test that the holiday did not happen in 2013-2015.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testNotHoliday()
     {
@@ -67,7 +69,7 @@ class AllSaintsDayTest extends PortugalBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests translated name of Corpus Christi.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -83,7 +85,7 @@ class AllSaintsDayTest extends PortugalBaseTestCase implements YasumiTestCaseInt
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

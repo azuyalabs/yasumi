@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Australia\ACT;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -37,11 +39,11 @@ class ReconciliationDayTest extends ACTBaseTestCase implements YasumiTestCaseInt
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int    $year     the year for which the holiday defined in this test needs to be tested
+     * @param int $year the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
-     * @throws \ReflectionException
-     * @throws \Exception
+     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHoliday($year, $expected)
     {
@@ -73,7 +75,7 @@ class ReconciliationDayTest extends ACTBaseTestCase implements YasumiTestCaseInt
             [2027, '2027-05-31'],
             [2028, '2028-05-29'],
             [2029, '2029-05-28'],
-            [2030, '2030-05-27'],
+            [2030, '2030-05-27']
         ];
 
         return $data;
@@ -81,7 +83,7 @@ class ReconciliationDayTest extends ACTBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -95,7 +97,7 @@ class ReconciliationDayTest extends ACTBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

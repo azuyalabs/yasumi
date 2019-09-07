@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * This file is part of the Yasumi package.
@@ -15,6 +15,8 @@ namespace Yasumi\tests\SouthKorea;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -35,8 +37,8 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests the holiday defined in this test.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testMainHoliday()
     {
@@ -51,8 +53,8 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests the substitute holiday defined in this test (conflict with Buddha's Birthday).
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testSubstituteHolidayByBuddhasBirthday()
     {
@@ -68,8 +70,8 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests the substitute holiday defined in this test (conflict with Saturday).
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testSubstituteHolidayBySaturday()
     {
@@ -84,8 +86,8 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests the substitute holiday defined in this test (conflict with Sunday).
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testSubstituteHolidayBySunday()
     {
@@ -100,7 +102,7 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests the holiday defined in this test before establishment.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayBeforeEstablishment()
     {
@@ -113,7 +115,7 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -127,7 +129,7 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

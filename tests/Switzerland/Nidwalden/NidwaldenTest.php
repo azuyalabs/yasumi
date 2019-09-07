@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Switzerland\Nidwalden;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class NidwaldenTest extends NidwaldenBaseTestCase
 
     /**
      * Tests if all official holidays in Nidwalden (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -39,7 +40,7 @@ class NidwaldenTest extends NidwaldenBaseTestCase
 
     /**
      * Tests if all regional holidays in Nidwalden (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testRegionalHolidays(): void
     {
@@ -61,7 +62,7 @@ class NidwaldenTest extends NidwaldenBaseTestCase
 
     /**
      * Tests if all observed holidays in Nidwalden (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -75,7 +76,7 @@ class NidwaldenTest extends NidwaldenBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Nidwalden (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -84,7 +85,7 @@ class NidwaldenTest extends NidwaldenBaseTestCase
 
     /**
      * Tests if all bank holidays in Nidwalden (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -93,7 +94,7 @@ class NidwaldenTest extends NidwaldenBaseTestCase
 
     /**
      * Tests if all other holidays in Nidwalden (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -103,7 +104,7 @@ class NidwaldenTest extends NidwaldenBaseTestCase
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->year = $this->generateRandomYear(1945);
     }

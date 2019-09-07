@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\France;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -34,8 +36,8 @@ class VictoryInEuropeDayTest extends FranceBaseTestCase implements YasumiTestCas
 
     /**
      * Tests Victory In Europe Day on or after 1945.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testVictoryInEuropeDayOnAfter1945()
     {
@@ -50,7 +52,7 @@ class VictoryInEuropeDayTest extends FranceBaseTestCase implements YasumiTestCas
 
     /**
      * Tests Victory In Europe Day before 1945.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testVictoryInEuropeDayBefore1945()
     {
@@ -63,7 +65,7 @@ class VictoryInEuropeDayTest extends FranceBaseTestCase implements YasumiTestCas
 
     /**
      * Tests translated name of Victory in Europe Day.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -77,7 +79,7 @@ class VictoryInEuropeDayTest extends FranceBaseTestCase implements YasumiTestCas
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

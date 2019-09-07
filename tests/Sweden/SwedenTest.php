@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Sweden;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class SwedenTest extends SwedenBaseTestCase
 
     /**
      * Tests if all official holidays in Sweden (Spain) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -42,7 +43,6 @@ class SwedenTest extends SwedenBaseTestCase
             'nationalDay',
             'stJohnsDay', // Midsummer's Day
             'allSaintsDay',
-            'christmasEve',
             'christmasDay',
             'secondChristmasDay'
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
@@ -50,16 +50,23 @@ class SwedenTest extends SwedenBaseTestCase
 
     /**
      * Tests if all observed holidays in Sweden are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays([
+            'epiphanyEve',
+            'walpurgisEve',
+            'stJohnsEve',
+            'allSaintsEve',
+            'christmasEve',
+            'newYearsEve'
+        ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**
      * Tests if all seasonal holidays in Sweden are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -68,7 +75,7 @@ class SwedenTest extends SwedenBaseTestCase
 
     /**
      * Tests if all bank holidays in Sweden are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -77,7 +84,7 @@ class SwedenTest extends SwedenBaseTestCase
 
     /**
      * Tests if all other holidays in Sweden are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -87,7 +94,7 @@ class SwedenTest extends SwedenBaseTestCase
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->year = $this->generateRandomYear(1916);
     }

@@ -4,6 +4,7 @@ php:
   - 7.1
   - 7.2
   - 7.3
+  - 7.4snapshot
   - nightly
 
 dist: trusty
@@ -22,13 +23,15 @@ before_script:
   - composer install --no-interaction
 
 script:
-  - if [[ $PHPSTAN = 1 ]]; then composer require --dev phpstan/phpstan:^0.10 && vendor/bin/phpstan analyse -l 5 src; fi
+  - if [[ $PHPSTAN = 1 ]]; then composer require --dev phpstan/phpstan:^0.11 && vendor/bin/phpstan analyse -l 5 src; fi
   - ./vendor/bin/phpunit
   - phpenv config-rm xdebug.ini || return 0
   - ./vendor/bin/php-cs-fixer --diff --dry-run -v fix
 
 matrix:
   allow_failures:
+    - php: 7.1
+    - php: 7.4snapshot
     - php: hhvm
     - php: nightly
 
@@ -38,6 +41,8 @@ matrix:
     - php: 7.2
       env: PHPSTAN=1
     - php: 7.3
+      env: PHPSTAN=1
+    - php: 7.4snapshot
       env: PHPSTAN=1
     - php: hhvm
       env: HHVM=true

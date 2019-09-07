@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Portugal;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -34,19 +36,19 @@ class CarnationRevolutionDayTest extends PortugalBaseTestCase implements YasumiT
 
     /**
      * Test that the holiday is valid after the year of establishment
-     * @throws \ReflectionException
-     * @throws \Exception
+     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayAfterEstablishment()
     {
-        $year     = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $expected = new DateTime("$year-04-25", new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
      * Tests that the holiday is not a holiday before the year of establishment
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testNotHolidayBeforeEstablishment()
     {
@@ -56,7 +58,7 @@ class CarnationRevolutionDayTest extends PortugalBaseTestCase implements YasumiT
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -66,7 +68,7 @@ class CarnationRevolutionDayTest extends PortugalBaseTestCase implements YasumiT
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

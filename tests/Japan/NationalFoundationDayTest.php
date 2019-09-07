@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Japan;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -34,8 +36,8 @@ class NationalFoundationDayTest extends JapanBaseTestCase implements YasumiTestC
 
     /**
      * Tests National Foundation Day after 1966. National Foundation day was established after 1966
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testNationalFoundationDayOnAfter1966()
     {
@@ -51,8 +53,8 @@ class NationalFoundationDayTest extends JapanBaseTestCase implements YasumiTestC
     /**
      * Tests National Foundation Day after 1966. substituted next working day (when National Foundation Day falls on a
      * Sunday)
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testNationalFoundationDayOnAfter1966SubstitutedNextWorkingDay()
     {
@@ -67,7 +69,7 @@ class NationalFoundationDayTest extends JapanBaseTestCase implements YasumiTestC
 
     /**
      * Tests National Foundation Day before 1966. National Foundation day was established after 1966
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testNationalFoundationDayBefore1966()
     {
@@ -80,7 +82,7 @@ class NationalFoundationDayTest extends JapanBaseTestCase implements YasumiTestC
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -94,7 +96,7 @@ class NationalFoundationDayTest extends JapanBaseTestCase implements YasumiTestC
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

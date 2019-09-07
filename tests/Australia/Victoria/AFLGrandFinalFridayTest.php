@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Australia\Victoria;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -35,11 +37,11 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements YasumiTest
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int      $year     the year for which the holiday defined in this test needs to be tested
+     * @param int $year the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
      *
-     * @throws \ReflectionException
-     * @throws \Exception
+     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHoliday($year, $expected)
     {
@@ -54,7 +56,7 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements YasumiTest
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -68,7 +70,7 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements YasumiTest
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {
@@ -82,7 +84,7 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements YasumiTest
 
     /**
      *  Tests that Holiday is not present before establishment year
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testNotHoliday()
     {
@@ -100,7 +102,7 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements YasumiTest
             [2015, '2015-10-02'],
             [2016, '2016-09-30'],
             [2017, '2017-09-29'],
-            [2018, '2018-09-28'],
+            [2018, '2018-09-28']
         ];
 
         return $data;

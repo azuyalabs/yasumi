@@ -14,5 +14,10 @@ $finder = PhpCsFixer\Finder::create()->in(__DIR__);
 
 return PhpCsFixer\Config::create()->setRiskyAllowed(true)->setRules([
         '@PSR2'                      => true,
-        'native_function_invocation' => true
-    ])->setFinder($finder);
+        'array_syntax'               => ['syntax' => 'short'],
+        'native_function_invocation' => true,
+        'ordered_imports'            => ['sortAlgorithm' => 'alpha'],
+        'no_unused_imports'          => true,
+        'single_quote'               => true,
+        'space_after_semicolon'      => true
+    ])->setLineEnding("\n")->setFinder($finder);

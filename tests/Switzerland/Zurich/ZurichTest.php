@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Switzerland\Zurich;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class ZurichTest extends ZurichBaseTestCase
 
     /**
      * Tests if all official holidays in Zurich (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -39,7 +40,7 @@ class ZurichTest extends ZurichBaseTestCase
 
     /**
      * Tests if all regional holidays in Zurich (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testRegionalHolidays(): void
     {
@@ -58,7 +59,7 @@ class ZurichTest extends ZurichBaseTestCase
 
     /**
      * Tests if all observed holidays in Zurich (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -72,7 +73,7 @@ class ZurichTest extends ZurichBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Zurich (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -81,7 +82,7 @@ class ZurichTest extends ZurichBaseTestCase
 
     /**
      * Tests if all bank holidays in Zurich (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -90,7 +91,7 @@ class ZurichTest extends ZurichBaseTestCase
 
     /**
      * Tests if all other holidays in Zurich (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -100,7 +101,7 @@ class ZurichTest extends ZurichBaseTestCase
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->year = $this->generateRandomYear(1945);
     }

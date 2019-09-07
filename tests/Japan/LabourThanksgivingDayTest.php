@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Japan;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -35,8 +37,8 @@ class LabourThanksgivingDayTest extends JapanBaseTestCase implements YasumiTestC
     /**
      * Tests Labor Thanksgiving Day after 1948. Labor Thanksgiving Day is held on November 23rd and established since
      * 1948.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testLabourThanksgivingDayOnAfter1948()
     {
@@ -52,8 +54,8 @@ class LabourThanksgivingDayTest extends JapanBaseTestCase implements YasumiTestC
     /**
      * Tests Labor Thanksgiving Day after 1948 substituted next working day (when Labor Thanksgiving Day falls on a
      * Sunday)
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testLabourThanksgivingDayOnAfter1948SubstitutedNextWorkingDay()
     {
@@ -69,7 +71,7 @@ class LabourThanksgivingDayTest extends JapanBaseTestCase implements YasumiTestC
     /**
      * Tests Labor Thanksgiving Day before 1948. Labor Thanksgiving Day is held on November 23rd and established since
      * 1948.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testLabourThanksgivingDayBefore1948()
     {
@@ -82,7 +84,7 @@ class LabourThanksgivingDayTest extends JapanBaseTestCase implements YasumiTestC
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -96,7 +98,7 @@ class LabourThanksgivingDayTest extends JapanBaseTestCase implements YasumiTestC
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

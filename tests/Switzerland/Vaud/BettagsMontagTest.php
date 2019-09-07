@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -15,6 +15,8 @@ namespace Yasumi\tests\Switzerland\Vaud;
 use DateInterval;
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -30,9 +32,9 @@ class BettagsMontagTest extends VaudBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests Bettags Montag on or after 1832
-     * @throws \ReflectionException
+     * @throws ReflectionException
      *
-     * @throws \Exception
+     * @throws Exception
      */
     public function testBettagsMontagOnAfter1832()
     {
@@ -48,7 +50,7 @@ class BettagsMontagTest extends VaudBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests Bettags Montag before 1832
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBettagsMontagBefore1832()
     {
@@ -58,7 +60,7 @@ class BettagsMontagTest extends VaudBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests translated name of Bettags Montag.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -72,7 +74,7 @@ class BettagsMontagTest extends VaudBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

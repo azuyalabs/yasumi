@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Japan;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class JapanTest extends JapanBaseTestCase
 
     /**
      * Tests if all official holidays in Japan are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -46,13 +47,13 @@ class JapanTest extends JapanBaseTestCase
             'sportsDay',
             'cultureDay',
             'laborThanksgivingDay',
-            'emperorsBirthday',
+            'emperorsBirthday'
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
      * Tests if all official holidays in Japan At 2019 are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidaysAt2019(): void
     {
@@ -73,13 +74,13 @@ class JapanTest extends JapanBaseTestCase
             'cultureDay',
             'laborThanksgivingDay',
             'coronationDay',
-            'enthronementProclamationCeremony',
+            'enthronementProclamationCeremony'
         ], self::REGION, 2019, Holiday::TYPE_OFFICIAL);
     }
 
     /**
      * Tests if all observed holidays in Japan are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -88,7 +89,7 @@ class JapanTest extends JapanBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Japan are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -97,7 +98,7 @@ class JapanTest extends JapanBaseTestCase
 
     /**
      * Tests if all bank holidays in Japan are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -106,7 +107,7 @@ class JapanTest extends JapanBaseTestCase
 
     /**
      * Tests if all other holidays in Japan are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -116,7 +117,7 @@ class JapanTest extends JapanBaseTestCase
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->year = $this->generateRandomYear(2020, 2150);
     }

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,6 +12,10 @@
 
 namespace Yasumi\tests\Ukraine;
 
+use DateTime;
+use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -27,8 +31,8 @@ class IndependenceDayTest extends UkraineBaseTestCase implements YasumiTestCaseI
     public const HOLIDAY = 'independenceDay';
 
     /**
-     * @throws \ReflectionException
-     * @throws \Exception
+     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHoliday()
     {
@@ -37,13 +41,13 @@ class IndependenceDayTest extends UkraineBaseTestCase implements YasumiTestCaseI
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-08-24", new \DateTimeZone(self::TIMEZONE))
+            new DateTime("$year-08-24", new DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -52,7 +56,7 @@ class IndependenceDayTest extends UkraineBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\SouthAfrica;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -38,8 +40,8 @@ class SubstituteDayOfGoodwillTest extends SouthAfricaBaseTestCase implements Yas
 
     /**
      * Tests the holiday defined in this test on or after establishment.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testHolidayOnAfterEstablishment()
     {
@@ -53,7 +55,7 @@ class SubstituteDayOfGoodwillTest extends SouthAfricaBaseTestCase implements Yas
 
     /**
      * Tests the holiday defined in this test before establishment.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayBeforeEstablishment()
     {
@@ -66,7 +68,7 @@ class SubstituteDayOfGoodwillTest extends SouthAfricaBaseTestCase implements Yas
 
     /**
      * Tests the holiday defined in this test after completion.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayDayAfterCompletion()
     {
@@ -75,7 +77,7 @@ class SubstituteDayOfGoodwillTest extends SouthAfricaBaseTestCase implements Yas
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -89,7 +91,7 @@ class SubstituteDayOfGoodwillTest extends SouthAfricaBaseTestCase implements Yas
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Brazil;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -34,8 +36,8 @@ class IndependenceDayTest extends BrazilBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests Dia da independência do Brasil on or after 1822.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testDiaDaIndependenciaDoBrasilAfter1822()
     {
@@ -50,7 +52,7 @@ class IndependenceDayTest extends BrazilBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests Dia da independência do Brasil on or before 1822.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testDiaDaIndependenciaDoBrasilBefore1822()
     {
@@ -60,7 +62,7 @@ class IndependenceDayTest extends BrazilBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -75,7 +77,7 @@ class IndependenceDayTest extends BrazilBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

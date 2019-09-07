@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * This file is part of the Yasumi package.
@@ -16,6 +16,8 @@ namespace Yasumi\tests\SouthKorea;
 use DateInterval;
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\SouthKorea;
 use Yasumi\tests\YasumiTestCaseInterface;
@@ -37,8 +39,8 @@ class SeollalTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests the holiday defined in this test.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testHoliday()
     {
@@ -71,8 +73,8 @@ class SeollalTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests the substitute holiday defined in this test (conflict with Sunday).
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testSubstituteHolidayBySunday()
     {
@@ -80,25 +82,25 @@ class SeollalTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterf
             self::REGION,
             'substituteHoliday:dayBeforeSeollal',
             2016,
-            new DateTime("2016-2-10", new DateTimeZone(self::TIMEZONE))
+            new DateTime('2016-2-10', new DateTimeZone(self::TIMEZONE))
         );
         $this->assertHoliday(
             self::REGION,
             'substituteHoliday:seollal',
             2034,
-            new DateTime("2034-2-21", new DateTimeZone(self::TIMEZONE))
+            new DateTime('2034-2-21', new DateTimeZone(self::TIMEZONE))
         );
         $this->assertHoliday(
             self::REGION,
             'substituteHoliday:dayAfterSeollal',
             2024,
-            new DateTime("2024-2-12", new DateTimeZone(self::TIMEZONE))
+            new DateTime('2024-2-12', new DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests the holiday defined in this test before establishment.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayBeforeEstablishment()
     {
@@ -111,7 +113,7 @@ class SeollalTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -142,7 +144,7 @@ class SeollalTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

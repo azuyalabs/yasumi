@@ -8,20 +8,28 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Added
 - Holiday Provider for South Korea. [\#156](https://github.com/azuyalabs/yasumi/pull/156) ([blood72](https://github.com/blood72))
 - Translation for the Easter holiday for the 'fr_FR' locale [\#146](https://github.com/azuyalabs/yasumi/pull/146) ([pioc92](https://github.com/pioc92))
-- Translation for the Pentecoste holiday for the 'fr_FR' locale [\#145](https://github.com/azuyalabs/yasumi/pull/145) ([pioc92](https://github.com/pioc92))
+- Translation for the Pentecost holiday for the 'fr_FR' locale [\#145](https://github.com/azuyalabs/yasumi/pull/145) ([pioc92](https://github.com/pioc92))
 - Late Summer Bank Holiday in United Kingdom prior to 1965 [\#161](https://github.com/azuyalabs/yasumi/pull/161) ([c960657](https://github.com/c960657))
+- Observance holidays for Sweden [\#172](https://github.com/azuyalabs/yasumi/pull/172) ([c960657](https://github.com/c960657))
 
 ### Changed
+- Upgraded to PHPUnit 8.
 - Replaced the standard 'InvalidArgumentException' when an invalid year or holiday provider are given by a new exception for each of these two situations separately ('InvalidYearException' and 'ProviderNotFoundException'). This allows you to better distinguish which exception may occur when instantiating the Yasumi class. [\#95](https://github.com/azuyalabs/yasumi/pull/95) ([qneyrat](https://github.com/qneyrat))
 - Updated the translation for the All Saints holiday for the 'fr_FR' locale [\#152](https://github.com/azuyalabs/yasumi/pull/152) ([pioc92](https://github.com/pioc92))
 - Updated the translation for the Armistice holiday for the 'fr_FR' locale [\#154](https://github.com/azuyalabs/yasumi/pull/154) ([pioc92](https://github.com/pioc92))
 - Updated the translation for the Victory in Europe holiday for the 'fr_FR' locale [\#153](https://github.com/azuyalabs/yasumi/pull/153) ([pioc92](https://github.com/pioc92))
 - Updated the translation for the Assumption of Mary holiday for the 'fr_FR' locale [\#155](https://github.com/azuyalabs/yasumi/pull/155) ([pioc92](https://github.com/pioc92))
+- Updated the translation for Christmas Day for the 'nl_NL' locale [\#160](https://github.com/azuyalabs/yasumi/pull/160) ([pioc92](https://github.com/pioc92))
 
 ### Fixed
 - Late Summer Bank Holiday in 1968 and 1969 in United Kingdom [\#161](https://github.com/azuyalabs/yasumi/pull/161) ([c960657](https://github.com/c960657))
 - Fixed one-off exceptions for May Day Bank Holiday in 1995 and 2020 and Spring Bank Holiday in 2002 and 2012 (United Kingdom) [\#160](https://github.com/azuyalabs/yasumi/pull/160) ([c960657](https://github.com/c960657))
 - Fixed revoked holidays in Portugal in 2013-2015 [\#163](https://github.com/azuyalabs/yasumi/pull/163) ([c960657](https://github.com/c960657))
+- Fixed spelling issues in the Danish translation for Second Christmas Day. [\#167](https://github.com/azuyalabs/yasumi/pull/167)
+- Corpus Christi is official in Poland [\#168](https://github.com/azuyalabs/yasumi/pull/168) ([c960657](https://github.com/c960657))
+- Liberation Day is official in the Netherlands [\#169](https://github.com/azuyalabs/yasumi/pull/169) ([c960657](https://github.com/c960657))
+- Typos in Easter Monday and Republic Day for the 'it_IT' locale [\#171](https://github.com/azuyalabs/yasumi/pull/171) ([c960657](https://github.com/c960657))
+
 
 ### Removed
 

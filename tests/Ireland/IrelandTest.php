@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Ireland;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class IrelandTest extends IrelandBaseTestCase
 
     /**
      * Tests if all official holidays in Ireland are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -57,7 +58,7 @@ class IrelandTest extends IrelandBaseTestCase
 
     /**
      * Tests if all observed holidays in Ireland are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -66,7 +67,7 @@ class IrelandTest extends IrelandBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Ireland are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -75,7 +76,7 @@ class IrelandTest extends IrelandBaseTestCase
 
     /**
      * Tests if all bank holidays in Ireland are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -84,7 +85,7 @@ class IrelandTest extends IrelandBaseTestCase
 
     /**
      * Tests if all other holidays in Ireland are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -94,7 +95,7 @@ class IrelandTest extends IrelandBaseTestCase
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->year = $this->generateRandomYear(1974);
     }

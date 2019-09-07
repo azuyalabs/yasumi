@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Portugal;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -28,11 +30,6 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements YasumiTe
     public const ESTABLISHMENT_YEAR = 1910;
 
     /**
-     * Holiday was abolished by the portuguese government in 2013.
-     */
-    public const HOLIDAY_YEAR_ABOLISHED = 2013;
-
-    /**
      * Holiday was restored by the portuguese government in 2016.
      */
     public const HOLIDAY_YEAR_RESTORED = 2016;
@@ -44,10 +41,10 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements YasumiTe
 
     /**
      * Test that the holiday if in effect in 2016 and later dates.
-     * @throws \ReflectionException
-     * @throws \Exception
-     * @throws \ReflectionException
-     * @throws \Exception
+     * @throws ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayOnAfterRestoration()
     {
@@ -64,7 +61,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements YasumiTe
 
     /**
      * Test that the holiday did not happen in 2013-2015.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testNotHolidayDuringAbolishment()
     {
@@ -74,10 +71,10 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements YasumiTe
 
     /**
      * Tests the holiday defined in this test on or after establishment.
-     * @throws \ReflectionException
-     * @throws \Exception
-     * @throws \ReflectionException
-     * @throws \Exception
+     * @throws ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayOnAfterEstablishment()
     {
@@ -86,7 +83,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements YasumiTe
         $expected = new DateTime("$year-10-05", new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
 
-        $year     = self::ESTABLISHMENT_YEAR;
+        $year = self::ESTABLISHMENT_YEAR;
         $expected = new DateTime("$year-10-05", new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
@@ -94,7 +91,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements YasumiTe
     /**
      * Tests the holiday defined in this test before establishment.
      *
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayBeforeEstablishment()
     {
@@ -107,7 +104,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements YasumiTe
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -121,7 +118,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements YasumiTe
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

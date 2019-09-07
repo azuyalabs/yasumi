@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -13,6 +13,8 @@
 namespace Yasumi\tests\France;
 
 use DateTime;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -31,10 +33,10 @@ class AllSaintsDayTest extends FranceBaseTestCase implements YasumiTestCaseInter
      *
      * @dataProvider AllSaintsDayDataProvider
      *
-     * @param int      $year     the year for which All Saints' Day needs to be tested
+     * @param int $year the year for which All Saints' Day needs to be tested
      * @param DateTime $expected the expected date
      *
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testAllSaintsDay($year, $expected)
     {
@@ -43,7 +45,7 @@ class AllSaintsDayTest extends FranceBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests translated name of All Saints' Day.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -57,7 +59,7 @@ class AllSaintsDayTest extends FranceBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {
@@ -68,7 +70,7 @@ class AllSaintsDayTest extends FranceBaseTestCase implements YasumiTestCaseInter
      * Returns a list of random test dates used for assertion of All Saints' Day.
      *
      * @return array list of test dates for All Saints' Day
-     * @throws \Exception
+     * @throws Exception
      */
     public function AllSaintsDayDataProvider(): array
     {

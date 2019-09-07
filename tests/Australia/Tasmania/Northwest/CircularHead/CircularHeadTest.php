@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Australia\Tasmania\Northwest\CircularHead;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -27,7 +28,7 @@ class CircularHeadTest extends CircularHeadBaseTestCase
 
     /**
      * Tests if all official holidays in Circular Head (Australia) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -43,14 +44,14 @@ class CircularHeadTest extends CircularHeadBaseTestCase
             'eightHourDay',
             'recreationDay',
             'burnieShow',
-            'agfest',
+            'agfest'
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->year = $this->generateRandomYear(1921);
     }

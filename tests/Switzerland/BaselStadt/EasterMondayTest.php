@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Switzerland\BaselStadt;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -29,8 +31,8 @@ class EasterMondayTest extends BaselStadtBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests Easter Monday.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testEasterMonday()
     {
@@ -45,7 +47,7 @@ class EasterMondayTest extends BaselStadtBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests translated name of Easter Monday.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -59,7 +61,7 @@ class EasterMondayTest extends BaselStadtBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

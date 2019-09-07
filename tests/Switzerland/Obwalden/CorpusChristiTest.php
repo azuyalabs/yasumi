@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -13,6 +13,8 @@
 namespace Yasumi\tests\Switzerland\Obwalden;
 
 use DateInterval;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\tests\YasumiTestCaseInterface;
@@ -31,8 +33,8 @@ class CorpusChristiTest extends ObwaldenBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests Corpus Christi.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testCorpusChristi()
     {
@@ -47,7 +49,7 @@ class CorpusChristiTest extends ObwaldenBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -61,7 +63,7 @@ class CorpusChristiTest extends ObwaldenBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {
