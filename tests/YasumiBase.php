@@ -382,8 +382,7 @@ trait YasumiBase
         $timezone = 'UTC',
         $iterations = 10,
         $range = 1000
-    ): array
-    {
+    ): array {
         $data = [];
 
         for ($i = 1; $i <= $iterations; ++$i) {
@@ -453,8 +452,7 @@ trait YasumiBase
         $timezone = 'UTC',
         $iterations = 10,
         $range = 1000
-    ): array
-    {
+    ): array {
         return $this->generateRandomDatesWithModifier($month, $day, function ($year, \DateTime $date) {
             if ($this->isWeekend($date)) {
                 $date->modify('next monday');
@@ -482,8 +480,7 @@ trait YasumiBase
         $timezone = 'UTC',
         $iterations,
         $range
-    ): array
-    {
+    ): array {
         $data = [];
 
         for ($i = 1; $i <= $iterations; ++$i) {

@@ -73,37 +73,37 @@ class SummerBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
             self::REGION,
             self::HOLIDAY,
             1965,
-            new DateTime("1965-8-30", new DateTimeZone(self::TIMEZONE))
+            new DateTime('1965-8-30', new DateTimeZone(self::TIMEZONE))
         );
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             1966,
-            new DateTime("1966-8-29", new DateTimeZone(self::TIMEZONE))
+            new DateTime('1966-8-29', new DateTimeZone(self::TIMEZONE))
         );
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             1967,
-            new DateTime("1967-8-28", new DateTimeZone(self::TIMEZONE))
+            new DateTime('1967-8-28', new DateTimeZone(self::TIMEZONE))
         );
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             1968,
-            new DateTime("1968-9-2", new DateTimeZone(self::TIMEZONE))
+            new DateTime('1968-9-2', new DateTimeZone(self::TIMEZONE))
         );
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             1969,
-            new DateTime("1969-9-1", new DateTimeZone(self::TIMEZONE))
+            new DateTime('1969-9-1', new DateTimeZone(self::TIMEZONE))
         );
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             1970,
-            new DateTime("1970-8-31", new DateTimeZone(self::TIMEZONE))
+            new DateTime('1970-8-31', new DateTimeZone(self::TIMEZONE))
         );
     }
 

@@ -1,1 +1,11 @@
 preset: psr2
+
+risky: true
+
+enabled:
+  - short_array_syntax
+  - native_function_invocation
+  - alpha_ordered_imports
+  - no_unused_imports
+  - single_quote
+  - space_after_semicolon

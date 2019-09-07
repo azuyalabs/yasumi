@@ -80,19 +80,19 @@ class SeollalTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterf
             self::REGION,
             'substituteHoliday:dayBeforeSeollal',
             2016,
-            new DateTime("2016-2-10", new DateTimeZone(self::TIMEZONE))
+            new DateTime('2016-2-10', new DateTimeZone(self::TIMEZONE))
         );
         $this->assertHoliday(
             self::REGION,
             'substituteHoliday:seollal',
             2034,
-            new DateTime("2034-2-21", new DateTimeZone(self::TIMEZONE))
+            new DateTime('2034-2-21', new DateTimeZone(self::TIMEZONE))
         );
         $this->assertHoliday(
             self::REGION,
             'substituteHoliday:dayAfterSeollal',
             2024,
-            new DateTime("2024-2-12", new DateTimeZone(self::TIMEZONE))
+            new DateTime('2024-2-12', new DateTimeZone(self::TIMEZONE))
         );
     }
 
