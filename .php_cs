@@ -20,4 +20,4 @@ return PhpCsFixer\Config::create()->setRiskyAllowed(true)->setRules([
         'no_unused_imports'          => true,
         'single_quote'               => true,
         'space_after_semicolon'      => true
-    ])->setFinder($finder);
+    ])->setLineEnding("\n")->setFinder($finder);
