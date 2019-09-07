@@ -56,9 +56,9 @@ class VernalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCaseIn
      *
      * @dataProvider vernalEquinoxHolidaysProvider
      *
-     * @param $year  int year of example data to be tested
-     * @param $month int month (number) of example data to be tested
-     * @param $day   int day of the month (number) of example data to be tested
+     * @param int $year year of example data to be tested
+     * @param int $month month (number) of example data to be tested
+     * @param int $day day of the month (number) of example data to be tested
      *
      * @throws ReflectionException
      * @throws Exception
