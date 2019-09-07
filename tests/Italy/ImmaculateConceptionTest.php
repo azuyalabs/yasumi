@@ -31,7 +31,7 @@ class ImmaculateConceptionTest extends ItalyBaseTestCase implements YasumiTestCa
      *
      * @dataProvider ImmaculateConceptionDataProvider
      *
-     * @param int      $year     the year for which the day of Immaculate Conception needs to be tested
+     * @param int $year the year for which the day of Immaculate Conception needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws \ReflectionException

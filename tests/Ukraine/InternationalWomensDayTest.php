@@ -29,7 +29,7 @@ class InternationalWomensDayTest extends UkraineBaseTestCase implements YasumiTe
     /**
      * @dataProvider HolidayDataProvider
      *
-     * @param int       $year
+     * @param int $year
      * @param \DateTime $expected
      *
      * @throws \ReflectionException

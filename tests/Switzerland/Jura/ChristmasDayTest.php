@@ -31,7 +31,7 @@ class ChristmasDayTest extends JuraBaseTestCase implements YasumiTestCaseInterfa
      *
      * @dataProvider ChristmasDayDataProvider
      *
-     * @param int      $year     the year for which Christmas Day needs to be tested
+     * @param int $year the year for which Christmas Day needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws \ReflectionException

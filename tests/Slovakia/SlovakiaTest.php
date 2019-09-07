@@ -101,7 +101,7 @@ class SlovakiaTest extends SlovakiaBaseTestCase
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         // NOTE: 1993 is the year Slovakia was founded as an independent state
         $this->year = $this->generateRandomYear(1993, 2100);

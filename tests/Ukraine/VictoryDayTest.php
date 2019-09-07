@@ -29,7 +29,7 @@ class VictoryDayTest extends UkraineBaseTestCase implements YasumiTestCaseInterf
     /**
      * @dataProvider HolidayDataProvider
      *
-     * @param int       $year
+     * @param int $year
      * @param \DateTime $expected
      *
      * @throws \ReflectionException

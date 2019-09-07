@@ -40,35 +40,35 @@ class PortugalDayTest extends PortugalBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests the holiday defined in this test before it was abolished.
-     * @see Portugal::calculatePortugalDay()
      * @throws \ReflectionException
      * @throws \Exception
+     * @see Portugal::calculatePortugalDay()
      */
     public function testHolidayBeforeAbolishment()
     {
-        $year     = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR_BEFORE);
+        $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR_BEFORE);
         $expected = new DateTime("$year-06-10", new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
      * Tests the holiday defined in this test after it was restored
-     * @see Portugal::calculatePortugalDay()
      * @throws \ReflectionException
      * @throws \Exception
+     * @see Portugal::calculatePortugalDay()
      */
     public function testHolidayAfterRestoration()
     {
-        $year     = $this->generateRandomYear(self::ESTABLISHMENT_YEAR_AFTER);
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR_AFTER);
         $expected = new DateTime("$year-06-10", new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
      * Tests that the holiday defined in this test does not exist during the period that it was abolished
+     * @throws \ReflectionException
      * @see Portugal::calculatePortugalDay()
      *
-     * @throws \ReflectionException
      */
     public function testNotHolidayDuringAbolishment()
     {

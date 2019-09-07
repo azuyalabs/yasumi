@@ -31,7 +31,7 @@ class StPeterPaulTest extends TicinoBaseTestCase implements YasumiTestCaseInterf
      *
      * @dataProvider StPeterPaulDataProvider
      *
-     * @param int       $year     the year for which Feast of Saints Peter and Paul needs to be tested
+     * @param int $year the year for which Feast of Saints Peter and Paul needs to be tested
      * @param \DateTime $expected the expected date
      *
      * @throws \ReflectionException

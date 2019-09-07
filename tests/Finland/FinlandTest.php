@@ -86,7 +86,7 @@ class FinlandTest extends FinlandBaseTestCase
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->year = $this->generateRandomYear(1917);
     }

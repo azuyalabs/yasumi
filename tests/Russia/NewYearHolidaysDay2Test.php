@@ -40,7 +40,7 @@ class NewYearHolidaysDay2Test extends RussiaBaseTestCase implements YasumiTestCa
     /**
      * @dataProvider holidayDataProvider
      *
-     * @param int       $year
+     * @param int $year
      * @param \DateTime $expected
      *
      * @throws \ReflectionException

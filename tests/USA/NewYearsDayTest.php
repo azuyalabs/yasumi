@@ -66,7 +66,7 @@ class NewYearsDayTest extends USABaseTestCase implements YasumiTestCaseInterface
      */
     public function testNewYearsDaySubstitutedFriday()
     {
-        $year    = 1938;
+        $year = 1938;
         $subYear = $year - 1;
         $this->assertHoliday(
             self::REGION,

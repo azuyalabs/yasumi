@@ -40,7 +40,7 @@ class StJohnsDayTest extends LatviaBaseTestCase implements YasumiTestCaseInterfa
     /**
      * @dataProvider holidayDataProvider
      *
-     * @param int       $year
+     * @param int $year
      * @param \DateTime $expected
      *
      * @throws \ReflectionException

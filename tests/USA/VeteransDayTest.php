@@ -103,7 +103,7 @@ class VeteransDayTest extends USABaseTestCase implements YasumiTestCaseInterface
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1953);
 
         $holidays = Yasumi::create(self::REGION, $year);
-        $holiday  = $holidays->getHoliday(self::HOLIDAY);
+        $holiday = $holidays->getHoliday(self::HOLIDAY);
         $this->assertEquals('Armistice Day', $holiday->getName());
     }
 
@@ -116,7 +116,7 @@ class VeteransDayTest extends USABaseTestCase implements YasumiTestCaseInterface
         $year = $this->generateRandomYear(1954);
 
         $holidays = Yasumi::create(self::REGION, $year);
-        $holiday  = $holidays->getHoliday(self::HOLIDAY);
+        $holiday = $holidays->getHoliday(self::HOLIDAY);
         $this->assertEquals('Veterans Day', $holiday->getName());
     }
 

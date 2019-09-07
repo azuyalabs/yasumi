@@ -33,7 +33,7 @@ class StJosephDayTest extends UriBaseTestCase implements YasumiTestCaseInterface
      *
      * @dataProvider StJosephDayDataProvider
      *
-     * @param int       $year     the year for which St. Joseph's Day needs to be tested
+     * @param int $year the year for which St. Joseph's Day needs to be tested
      * @param \DateTime $expected the expected date
      *
      * @throws \ReflectionException

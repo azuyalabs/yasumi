@@ -62,7 +62,7 @@ class ProclamationOfTheRepublicOfLatviaDayTest extends LatviaBaseTestCase implem
      *
      * @dataProvider holidayDataProvider
      *
-     * @param int    $year     the year for which the holiday defined in this test needs to be tested
+     * @param int $year the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
      * @throws \ReflectionException
@@ -90,7 +90,7 @@ class ProclamationOfTheRepublicOfLatviaDayTest extends LatviaBaseTestCase implem
             $this->generateRandomYear(Latvia::PROCLAMATION_OF_INDEPENDENCE_YEAR),
             [
                 self::LOCALE => 'Latvijas Republikas proklamēšanas diena',
-                'en_US'      => 'Proclamation Day of the Republic of Latvia'
+                'en_US' => 'Proclamation Day of the Republic of Latvia'
             ]
         );
     }

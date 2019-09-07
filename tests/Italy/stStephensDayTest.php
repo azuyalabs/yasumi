@@ -31,7 +31,7 @@ class stStephensDayTest extends ItalyBaseTestCase implements YasumiTestCaseInter
      *
      * @dataProvider stStephensDayDataProvider
      *
-     * @param int      $year     the year for which St. Stephen's Day needs to be tested
+     * @param int $year the year for which St. Stephen's Day needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws \ReflectionException

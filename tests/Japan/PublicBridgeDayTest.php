@@ -40,13 +40,13 @@ class PublicBridgeDayTest extends JapanBaseTestCase implements YasumiTestCaseInt
     {
         $this->assertHoliday(
             self::REGION,
-            self::HOLIDAY.'1',
+            self::HOLIDAY . '1',
             $this->year,
             new DateTime("$this->year-4-30", new DateTimeZone(self::TIMEZONE))
         );
         $this->assertHoliday(
             self::REGION,
-            self::HOLIDAY.'2',
+            self::HOLIDAY . '2',
             $this->year,
             new DateTime("$this->year-5-2", new DateTimeZone(self::TIMEZONE))
         );
@@ -58,7 +58,7 @@ class PublicBridgeDayTest extends JapanBaseTestCase implements YasumiTestCaseInt
      */
     public function testTranslation(): void
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY.'1', $this->year, [self::LOCALE => '国民の休日']);
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY . '1', $this->year, [self::LOCALE => '国民の休日']);
     }
 
     /**
@@ -67,13 +67,13 @@ class PublicBridgeDayTest extends JapanBaseTestCase implements YasumiTestCaseInt
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY.'1', $this->year, Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY . '1', $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->year = 2019;
     }

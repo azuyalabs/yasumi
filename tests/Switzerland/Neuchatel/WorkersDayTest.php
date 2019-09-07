@@ -32,7 +32,7 @@ class WorkersDayTest extends NeuchatelBaseTestCase implements YasumiTestCaseInte
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int      $year     the year for which the holiday defined in this test needs to be tested
+     * @param int $year the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws \ReflectionException
@@ -55,8 +55,8 @@ class WorkersDayTest extends NeuchatelBaseTestCase implements YasumiTestCaseInte
         $data = [];
 
         for ($y = 0; $y < 50; $y++) {
-            $year   = $this->generateRandomYear();
-            $date   = new DateTime("$year-5-1", new DateTimeZone(self::TIMEZONE));
+            $year = $this->generateRandomYear();
+            $date = new DateTime("$year-5-1", new DateTimeZone(self::TIMEZONE));
             $data[] = [$year, $date->format('Y-m-d')];
         }
 

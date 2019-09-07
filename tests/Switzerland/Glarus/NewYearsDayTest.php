@@ -31,7 +31,7 @@ class NewYearsDayTest extends GlarusBaseTestCase implements YasumiTestCaseInterf
      *
      * @dataProvider NewYearsDayDataProvider
      *
-     * @param int      $year     the year for which New Years Day needs to be tested
+     * @param int $year the year for which New Years Day needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws \ReflectionException

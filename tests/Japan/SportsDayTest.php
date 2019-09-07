@@ -135,7 +135,7 @@ class SportsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
      */
     public function testTranslationFrom2020(): void
     {
-        $year =2020;
+        $year = 2020;
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,

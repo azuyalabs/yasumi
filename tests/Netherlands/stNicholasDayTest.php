@@ -32,7 +32,7 @@ class stNicholasDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
      *
      * @dataProvider stNicholasDayDataProvider
      *
-     * @param int      $year     the year for which Sint Nicholas Day needs to be tested
+     * @param int $year the year for which Sint Nicholas Day needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws \ReflectionException

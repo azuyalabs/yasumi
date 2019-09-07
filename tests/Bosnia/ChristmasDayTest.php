@@ -31,7 +31,7 @@ class ChristmasDayTest extends BosniaBaseTestCase implements YasumiTestCaseInter
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int      $year     the year for which the holiday defined in this test needs to be tested
+     * @param int $year the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws \ReflectionException

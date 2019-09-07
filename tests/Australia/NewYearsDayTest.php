@@ -33,8 +33,8 @@ class NewYearsDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInt
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int    $year          the year for which the holiday defined in this test needs to be tested
-     * @param string $expected      the expected date
+     * @param int $year the year for which the holiday defined in this test needs to be tested
+     * @param string $expected the expected date
      * @param string $expectedExtra the expected date for the additional holiday, or null if no additional holiday
      *
      * @throws \ReflectionException

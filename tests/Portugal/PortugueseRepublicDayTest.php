@@ -86,7 +86,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements YasumiTe
         $expected = new DateTime("$year-10-05", new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
 
-        $year     = self::ESTABLISHMENT_YEAR;
+        $year = self::ESTABLISHMENT_YEAR;
         $expected = new DateTime("$year-10-05", new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

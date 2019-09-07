@@ -31,7 +31,7 @@ class HalloweenTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
      *
      * @dataProvider HalloweenDataProvider
      *
-     * @param int      $year     the year for which Halloween needs to be tested
+     * @param int $year the year for which Halloween needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws \ReflectionException

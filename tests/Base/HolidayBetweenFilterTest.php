@@ -229,7 +229,7 @@ class HolidayBetweenFilterTest extends TestCase
      */
     public function testHolidaysBetweenDateRangeWithStartBeforeInstanceYear(): void
     {
-        $year     = 2015;
+        $year = 2015;
         $timezone = 'Europe/Oslo';
         $holidays = Yasumi::create('Norway', $year);
 
@@ -269,7 +269,7 @@ class HolidayBetweenFilterTest extends TestCase
      */
     public function testHolidaysBetweenDateRangeWithEndAfterInstanceYear(): void
     {
-        $year     = 2000;
+        $year = 2000;
         $timezone = 'Europe/Rome';
         $holidays = Yasumi::create('Italy', $year);
 
@@ -304,13 +304,14 @@ class HolidayBetweenFilterTest extends TestCase
     /**
      * Tests that an InvalidArgumentException is thrown in case an invalid holiday provider is given.
      *
-     * @expectedException InvalidArgumentException
      * @throws \Exception
      * @throws \ReflectionException
      */
     public function testWrongDates(): void
     {
-        $year     = 2017;
+        $this->expectException(InvalidArgumentException::class);
+
+        $year = 2017;
         $timezone = 'America/New_York';
         $holidays = Yasumi::create('USA', $year);
 
@@ -331,7 +332,7 @@ class HolidayBetweenFilterTest extends TestCase
     public function testCountBetweenWithSubstitutes(): void
     {
         // There are official 12 holidays in Ireland in the year 2018, with 1 substituted holiday.
-        $year     = 2018;
+        $year = 2018;
         $timezone = 'Europe/Dublin';
         $holidays = Yasumi::create('Ireland', $year);
 
@@ -372,7 +373,7 @@ class HolidayBetweenFilterTest extends TestCase
     public function testCountBetweenExcludingSubstituteHoliday(): void
     {
         // There are 2 official holidays in Ireland in the given date range, with 1 substituted holiday.
-        $year     = 2018;
+        $year = 2018;
         $timezone = 'Europe/Dublin';
         $holidays = Yasumi::create('Ireland', $year);
 
@@ -417,7 +418,7 @@ class HolidayBetweenFilterTest extends TestCase
     public function testCountBetweenExcludingSubstituteHolidayIncludingOriginalHoliday(): void
     {
         // There are 2 official holidays in Ireland in the given date range, with 1 substituted holiday.
-        $year     = 2018;
+        $year = 2018;
         $timezone = 'Europe/Dublin';
         $holidays = Yasumi::create('Ireland', $year);
 
@@ -463,7 +464,7 @@ class HolidayBetweenFilterTest extends TestCase
     public function testCountBetweenExcludingSubstituteHolidayAndOriginalHoliday(): void
     {
         // There is 1 official holidays in Ireland in the given date range.
-        $year     = 2018;
+        $year = 2018;
         $timezone = 'Europe/Dublin';
         $holidays = Yasumi::create('Ireland', $year);
 

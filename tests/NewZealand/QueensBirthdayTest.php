@@ -37,7 +37,7 @@ class QueensBirthdayTest extends NewZealandBaseTestCase implements YasumiTestCas
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int      $year     the year for which the holiday defined in this test needs to be tested
+     * @param int $year the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws \ReflectionException
@@ -67,9 +67,9 @@ class QueensBirthdayTest extends NewZealandBaseTestCase implements YasumiTestCas
         $data = [];
 
         for ($y = 1; $y <= 100; $y++) {
-            $year     = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+            $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
             $expected = new DateTime("first monday of june $year", new DateTimeZone(self::TIMEZONE));
-            $data[]   = [$year, $expected];
+            $data[] = [$year, $expected];
         }
 
         return $data;

@@ -35,7 +35,7 @@ class ChristmasEveTest extends CzechRepublicBaseTestCase implements YasumiTestCa
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int      $year     the year for which Christmas Eve needs to be tested
+     * @param int $year the year for which Christmas Eve needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws \ReflectionException

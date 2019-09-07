@@ -50,7 +50,7 @@ class ACTTest extends ACTBaseTestCase
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->year = $this->generateRandomYear(2018, 2100);
     }

@@ -43,7 +43,7 @@ class ReformationDayTest extends MecklenburgWesternPomeraniaBaseTestCase impleme
         $data = [];
 
         for ($y = 0; $y < self::TEST_ITERATIONS; $y++) {
-            $year   = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+            $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
             $data[] = [$year, new DateTime("$year-10-31", new DateTimeZone(self::TIMEZONE))];
         }
 

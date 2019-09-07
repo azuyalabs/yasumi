@@ -39,7 +39,7 @@ class HolidayFiltersTest extends TestCase
         // There are 11 official holidays in Ireland in the year 2018, with 1 substituted holiday.
         $holidays = Yasumi::create('Ireland', 2018);
 
-        $filteredHolidays      = new OfficialHolidaysFilter($holidays->getIterator());
+        $filteredHolidays = new OfficialHolidaysFilter($holidays->getIterator());
         $filteredHolidaysArray = \iterator_to_array($filteredHolidays);
 
         // Assert array definitions
@@ -73,7 +73,7 @@ class HolidayFiltersTest extends TestCase
         // There are 2 observed holidays in Ireland in the year 2018.
         $holidays = Yasumi::create('Ireland', 2018);
 
-        $filteredHolidays      = new ObservedHolidaysFilter($holidays->getIterator());
+        $filteredHolidays = new ObservedHolidaysFilter($holidays->getIterator());
         $filteredHolidaysArray = \iterator_to_array($filteredHolidays);
 
         // Assert array definitions
@@ -107,7 +107,7 @@ class HolidayFiltersTest extends TestCase
         // There are no bank holidays in Ireland in the year 2018.
         $holidays = Yasumi::create('Ireland', 2018);
 
-        $filteredHolidays      = new BankHolidaysFilter($holidays->getIterator());
+        $filteredHolidays = new BankHolidaysFilter($holidays->getIterator());
         $filteredHolidaysArray = \iterator_to_array($filteredHolidays);
 
         // Assert array definitions
@@ -140,7 +140,7 @@ class HolidayFiltersTest extends TestCase
     {
         $holidays = Yasumi::create('Netherlands', 2017);
 
-        $filteredHolidays      = new SeasonalHolidaysFilter($holidays->getIterator());
+        $filteredHolidays = new SeasonalHolidaysFilter($holidays->getIterator());
         $filteredHolidaysArray = \iterator_to_array($filteredHolidays);
 
         // Assert array definitions
@@ -188,7 +188,7 @@ class HolidayFiltersTest extends TestCase
     {
         $holidays = Yasumi::create('Netherlands', 2017);
 
-        $filteredHolidays      = new OtherHolidaysFilter($holidays->getIterator());
+        $filteredHolidays = new OtherHolidaysFilter($holidays->getIterator());
         $filteredHolidaysArray = \iterator_to_array($filteredHolidays);
 
         // Assert array definitions

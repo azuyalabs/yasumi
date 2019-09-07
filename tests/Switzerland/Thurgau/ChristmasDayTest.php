@@ -31,7 +31,7 @@ class ChristmasDayTest extends ThurgauBaseTestCase implements YasumiTestCaseInte
      *
      * @dataProvider ChristmasDayDataProvider
      *
-     * @param int      $year     the year for which Christmas Day needs to be tested
+     * @param int $year the year for which Christmas Day needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws \ReflectionException

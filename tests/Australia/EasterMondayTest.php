@@ -34,7 +34,7 @@ class EasterMondayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int    $year     the year for which the holiday defined in this test needs to be tested
+     * @param int $year the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
      * @throws \ReflectionException
@@ -55,7 +55,7 @@ class EasterMondayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
      *
      * @dataProvider HolidayDataProvider2
      *
-     * @param int    $year     the year for which the holiday defined in this test needs to be tested
+     * @param int $year the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
      * @throws \ReflectionException
@@ -105,7 +105,7 @@ class EasterMondayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
             [2095, '2095-04-26'],
             [2163, '2163-04-26'],
         ];
-        
+
         return $data;
     }
 

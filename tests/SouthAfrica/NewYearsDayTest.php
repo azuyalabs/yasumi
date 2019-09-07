@@ -42,7 +42,7 @@ class NewYearsDayTest extends SouthAfricaBaseTestCase implements YasumiTestCaseI
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int      $year     the year for which the holiday defined in this test needs to be tested
+     * @param int $year the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws \ReflectionException
@@ -71,8 +71,8 @@ class NewYearsDayTest extends SouthAfricaBaseTestCase implements YasumiTestCaseI
         $data = [];
 
         for ($y = 0; $y < 50; $y++) {
-            $year   = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-            $date   = new DateTime("$year-1-1", new DateTimeZone(self::TIMEZONE));
+            $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+            $date = new DateTime("$year-1-1", new DateTimeZone(self::TIMEZONE));
             $data[] = [$year, $date->format('Y-m-d')];
         }
 

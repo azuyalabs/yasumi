@@ -43,7 +43,7 @@ class GoodFridayDayTest extends EstoniaBaseTestCase implements YasumiTestCaseInt
      *
      * @dataProvider holidayDataProvider
      *
-     * @param int    $year     the year for which the holiday defined in this test needs to be tested
+     * @param int $year the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
      * @throws \ReflectionException

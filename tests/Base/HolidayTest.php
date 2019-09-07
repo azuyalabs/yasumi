@@ -15,6 +15,7 @@ namespace Yasumi\tests\Base;
 use DateTime;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiBase;
 use Yasumi\TranslationsInterface;
@@ -31,22 +32,24 @@ class HolidayTest extends TestCase
     /**
      * Tests that an InvalidArgumentException is thrown in case an blank short name is given.
      *
-     * @expectedException InvalidArgumentException
      * @throws \Exception
      */
     public function testHolidayBlankNameInvalidArgumentException(): void
     {
+        $this->expectException(InvalidArgumentException::class);
+
         new Holiday('', [], new \DateTime());
     }
 
     /**
      * Tests that an Yasumi\Exception\UnknownLocaleException is thrown in case an invalid locale is given.
      *
-     * @expectedException \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
     public function testCreateHolidayUnknownLocaleException(): void
     {
+        $this->expectException(UnknownLocaleException::class);
+
         new Holiday('testHoliday', [], new DateTime(), 'wx-YZ');
     }
 
@@ -56,8 +59,8 @@ class HolidayTest extends TestCase
      */
     public function testHolidayIsJsonSerializable(): void
     {
-        $holiday  = new Holiday('testHoliday', [], new DateTime(), 'en_US');
-        $json     = \json_encode($holiday);
+        $holiday = new Holiday('testHoliday', [], new DateTime(), 'en_US');
+        $json = \json_encode($holiday);
         $instance = \json_decode($json, true);
 
         $this->assertIsArray($instance);
@@ -89,7 +92,7 @@ class HolidayTest extends TestCase
      */
     public function testHolidayGetNameWithNoTranslations(): void
     {
-        $name    = 'testHoliday';
+        $name = 'testHoliday';
         $holiday = new Holiday($name, [], new DateTime(), 'en_US');
 
         $this->assertIsString($holiday->getName());
@@ -102,10 +105,10 @@ class HolidayTest extends TestCase
      */
     public function testHolidayGetNameWithOnlyDefaultTranslation(): void
     {
-        $name        = 'testHoliday';
+        $name = 'testHoliday';
         $translation = 'My Holiday';
-        $locale      = 'en_US';
-        $holiday     = new Holiday($name, [$locale => $translation], new DateTime(), $locale);
+        $locale = 'en_US';
+        $holiday = new Holiday($name, [$locale => $translation], new DateTime(), $locale);
 
         $this->assertIsString($holiday->getName());
         $this->assertEquals($translation, $holiday->getName());
@@ -118,9 +121,9 @@ class HolidayTest extends TestCase
      */
     public function testHolidayGetNameWithOneNonDefaultTranslation(): void
     {
-        $name        = 'testHoliday';
+        $name = 'testHoliday';
         $translation = 'My Holiday';
-        $holiday     = new Holiday($name, ['en_US' => $translation], new DateTime(), 'nl_NL');
+        $holiday = new Holiday($name, ['en_US' => $translation], new DateTime(), 'nl_NL');
 
         $this->assertNotNull($holiday->getName());
         $this->assertIsString($holiday->getName());
@@ -169,7 +172,7 @@ class HolidayTest extends TestCase
 
         $translationsStub->expects($this->once())->method('getTranslations')->with($this->equalTo('newYearsDay'))->willReturn($translations);
 
-        $customLocale      = 'nl_NL';
+        $customLocale = 'nl_NL';
         $customTranslation = 'Nieuwjaar';
 
         $holiday = new Holiday(
@@ -201,7 +204,7 @@ class HolidayTest extends TestCase
 
         $translationsStub->expects($this->once())->method('getTranslations')->with($this->equalTo('newYearsDay'))->willReturn($translations);
 
-        $customLocale      = 'pl_PL';
+        $customLocale = 'pl_PL';
         $customTranslation = 'Bardzo Nowy Rok';
 
         $holiday = new Holiday(

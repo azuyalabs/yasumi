@@ -40,7 +40,7 @@ class SpringAndLabourDayTest extends RussiaBaseTestCase implements YasumiTestCas
     /**
      * @dataProvider holidayDataProvider
      *
-     * @param int       $year
+     * @param int $year
      * @param \DateTime $expected
      *
      * @throws \ReflectionException

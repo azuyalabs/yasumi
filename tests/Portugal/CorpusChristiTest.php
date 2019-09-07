@@ -44,7 +44,7 @@ class CorpusChristiTest extends PortugalBaseTestCase implements YasumiTestCaseIn
      */
     public function testHoliday()
     {
-        $year     = 2016;
+        $year = 2016;
         $expected = new DateTime("$year-5-26", new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

@@ -46,11 +46,11 @@ class AllSaintsDayTest extends PortugalBaseTestCase implements YasumiTestCaseInt
      */
     public function testHoliday()
     {
-        $year     = 2016;
+        $year = 2016;
         $expected = new DateTime("$year-11-01", new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
 
-        $year     = 2012;
+        $year = 2012;
         $expected = new DateTime("$year-11-01", new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

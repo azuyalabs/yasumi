@@ -31,7 +31,7 @@ class stMartinsDayTest extends NetherlandsBaseTestCase implements YasumiTestCase
      *
      * @dataProvider stMartinsDayDataProvider
      *
-     * @param int      $year     the year for which Sint Martins Day needs to be tested
+     * @param int $year the year for which Sint Martins Day needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws \ReflectionException

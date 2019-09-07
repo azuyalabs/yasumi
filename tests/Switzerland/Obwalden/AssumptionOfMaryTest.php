@@ -31,7 +31,7 @@ class AssumptionOfMaryTest extends ObwaldenBaseTestCase implements YasumiTestCas
      *
      * @dataProvider AssumptionOfMaryDataProvider
      *
-     * @param int      $year     the year for which the day of the Assumption of Mary needs to be tested
+     * @param int $year the year for which the day of the Assumption of Mary needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws \ReflectionException

@@ -35,7 +35,7 @@ class StJohnsEveTest extends SwedenBaseTestCase implements YasumiTestCaseInterfa
         $year = $this->generateRandomYear();
 
         $holidays = Yasumi::create(self::REGION, $year);
-        $holiday  = $holidays->getHoliday(self::HOLIDAY);
+        $holiday = $holidays->getHoliday(self::HOLIDAY);
 
         // Some basic assertions
         $this->assertInstanceOf('Yasumi\Provider\\' . \str_replace('/', '\\', self::REGION), $holidays);

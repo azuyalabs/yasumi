@@ -31,7 +31,7 @@ class AllSaintsDayTest extends LucerneBaseTestCase implements YasumiTestCaseInte
      *
      * @dataProvider AllSaintsDayDataProvider
      *
-     * @param int      $year     the year for which All Saints' Day needs to be tested
+     * @param int $year the year for which All Saints' Day needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws \ReflectionException

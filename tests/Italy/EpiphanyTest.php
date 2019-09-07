@@ -31,7 +31,7 @@ class EpiphanyTest extends ItalyBaseTestCase implements YasumiTestCaseInterface
      *
      * @dataProvider EpiphanyDataProvider
      *
-     * @param int      $year     the year for which Epiphany needs to be tested
+     * @param int $year the year for which Epiphany needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws \ReflectionException
