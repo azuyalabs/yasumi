@@ -427,6 +427,7 @@ class YasumiTest extends TestCase
     {
         $this->expectException(TypeError::class);
 
+        /** @noinspection PhpParamsInspection */
         Yasumi::create('Spain', Factory::create()->numberBetween(
             self::YEAR_LOWER_BOUND,
             self::YEAR_UPPER_BOUND
@@ -502,6 +503,7 @@ class YasumiTest extends TestCase
     {
         $this->expectException(TypeError::class);
 
+        /** @noinspection PhpParamsInspection */
         Yasumi::create('SouthAfrica', Factory::create()->numberBetween(
             self::YEAR_LOWER_BOUND,
             self::YEAR_UPPER_BOUND
