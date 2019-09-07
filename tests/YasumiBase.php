@@ -370,7 +370,7 @@ trait YasumiBase
      */
     public function generateRandomEasterMondayDates($timezone = 'UTC', $iterations = 10, $range = 1000): array
     {
-        return $this->generateRandomModifiedEasterDates(function (DateTime $date) {
+        return $this->generateRandomModifiedEasterDates(static function (DateTime $date) {
             $date->add(new DateInterval('P1D'));
         }, $timezone, $iterations, $range);
     }
@@ -419,7 +419,7 @@ trait YasumiBase
      */
     public function generateRandomGoodFridayDates($timezone = 'UTC', $iterations = 10, $range = 1000): array
     {
-        return $this->generateRandomModifiedEasterDates(function (DateTime $date) {
+        return $this->generateRandomModifiedEasterDates(static function (DateTime $date) {
             $date->sub(new DateInterval('P2D'));
         }, $timezone, $iterations, $range);
     }
@@ -437,7 +437,7 @@ trait YasumiBase
      */
     public function generateRandomPentecostDates($timezone = 'UTC', $iterations = 10, $range = 1000): array
     {
-        return $this->generateRandomModifiedEasterDates(function (DateTime $date) {
+        return $this->generateRandomModifiedEasterDates(static function (DateTime $date) {
             $date->add(new DateInterval('P49D'));
         }, $timezone, $iterations, $range);
     }
