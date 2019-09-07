@@ -16,7 +16,6 @@ use DateInterval;
 use DateTime;
 use DateTimeInterface;
 use DateTimeZone;
-use function easter_days;
 use Exception;
 use Faker\Factory as Faker;
 use InvalidArgumentException;
@@ -243,12 +242,13 @@ trait YasumiBase
      * @return array list of random test dates used for assertion of holidays.
      * @throws Exception
      */
-    public function generateRandomDates($month, $day, $timezone = 'UTC', $iterations = 10, $range = 1000): array
+    public function generateRandomDates($month, $day, $timezone = null, $iterations = null, $range = null): array
     {
         $data = [];
-        for ($y = 1; $y <= $iterations; $y++) {
-            $year = (int) Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
-            $data[] = [$year, new DateTime("$year-$month-$day", new DateTimeZone($timezone))];
+        $range = $range ?? 1000;
+        for ($y = 1; $y <= ($iterations ?? 10); $y++) {
+            $year = (int)Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
+            $data[] = [$year, new DateTime("$year-$month-$day", new DateTimeZone($timezone ?? 'UTC'))];
         }
 
         return $data;
@@ -264,13 +264,14 @@ trait YasumiBase
      * @return array list of random easter test dates used for assertion of holidays.
      * @throws Exception
      */
-    public function generateRandomEasterDates($timezone = 'UTC', $iterations = 10, $range = 1000): array
+    public function generateRandomEasterDates($timezone = null, $iterations = null, $range = null): array
     {
         $data = [];
+        $range = $range ?? 1000;
 
-        for ($i = 1; $i <= $iterations; ++$i) {
-            $year = (int) Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
-            $date = $this->calculateEaster($year, $timezone);
+        for ($i = 1; $i <= ($iterations ?? 10); ++$i) {
+            $year = (int)Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
+            $date = $this->calculateEaster($year, $timezone ?? 'UTC');
 
             $data[] = [$year, $date->format('Y-m-d')];
         }
@@ -368,11 +369,12 @@ trait YasumiBase
      *
      * @throws Exception
      */
-    public function generateRandomEasterMondayDates($timezone = 'UTC', $iterations = 10, $range = 1000): array
+    public function generateRandomEasterMondayDates($timezone = null, $iterations = null, $range = null): array
     {
+        $range = $range ?? 1000;
         return $this->generateRandomModifiedEasterDates(static function (DateTime $date) {
             $date->add(new DateInterval('P1D'));
-        }, $timezone, $iterations, $range);
+        }, $timezone ?? 'UTC', $iterations ?? 10, $range);
     }
 
     /**
@@ -388,15 +390,15 @@ trait YasumiBase
      */
     public function generateRandomModifiedEasterDates(
         callable $cb,
-        $timezone = 'UTC',
-        $iterations = 10,
-        $range = 1000
+        $timezone = null,
+        $iterations = null,
+        $range = null
     ): array {
         $data = [];
-
-        for ($i = 1; $i <= $iterations; ++$i) {
-            $year = (int) Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
-            $date = $this->calculateEaster($year, $timezone);
+        $range = $range ?? 1000;
+        for ($i = 1; $i <= ($iterations ?? 10); ++$i) {
+            $year = (int)Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
+            $date = $this->calculateEaster($year, $timezone ?? 'UTC');
 
             $cb($date);
 
@@ -417,11 +419,13 @@ trait YasumiBase
      *
      * @throws Exception
      */
-    public function generateRandomGoodFridayDates($timezone = 'UTC', $iterations = 10, $range = 1000): array
+    public function generateRandomGoodFridayDates($timezone = null, $iterations = null, $range = null): array
     {
+        $range = $range ?? 1000;
+
         return $this->generateRandomModifiedEasterDates(static function (DateTime $date) {
             $date->sub(new DateInterval('P2D'));
-        }, $timezone, $iterations, $range);
+        }, $timezone ?? 'UTC', $iterations ?? 10, $range);
     }
 
     /**
@@ -435,11 +439,13 @@ trait YasumiBase
      *
      * @throws Exception
      */
-    public function generateRandomPentecostDates($timezone = 'UTC', $iterations = 10, $range = 1000): array
+    public function generateRandomPentecostDates($timezone = null, $iterations = null, $range = null): array
     {
+        $range = $range ?? 1000;
+
         return $this->generateRandomModifiedEasterDates(static function (DateTime $date) {
             $date->add(new DateInterval('P49D'));
-        }, $timezone, $iterations, $range);
+        }, $timezone ?? 'UTC', $iterations ?? 10, $range);
     }
 
     /**
@@ -458,15 +464,15 @@ trait YasumiBase
     public function generateRandomDatesWithHolidayMovedToMonday(
         $month,
         $day,
-        $timezone = 'UTC',
-        $iterations = 10,
-        $range = 1000
+        $timezone = null,
+        $iterations = null,
+        $range = null
     ): array {
-        return $this->generateRandomDatesWithModifier($month, $day, function ($year, DateTime $date) {
+        return $this->generateRandomDatesWithModifier($month, $day, function ($range, DateTime $date) {
             if ($this->isWeekend($date)) {
                 $date->modify('next monday');
             }
-        }, $timezone, $iterations, $range);
+        }, $timezone ?? 'UTC', $iterations ?? 10, $range);
     }
 
     /**
@@ -486,7 +492,7 @@ trait YasumiBase
         $month,
         $day,
         callable $callback,
-        $timezone = 'UTC',
+        $timezone = null,
         $iterations,
         $range
     ): array {
@@ -494,7 +500,7 @@ trait YasumiBase
 
         for ($i = 1; $i <= $iterations; ++$i) {
             $year = $this->generateRandomYear($range);
-            $date = new DateTime("{$year}-{$month}-{$day}", new DateTimeZone($timezone));
+            $date = new DateTime("{$year}-{$month}-{$day}", new DateTimeZone($timezone ?? 'UTC'));
 
             $callback($year, $date);
 
@@ -512,9 +518,9 @@ trait YasumiBase
      *
      * @return int a year number
      */
-    public function generateRandomYear($lowerLimit = 1000, $upperLimit = 9999): int
+    public function generateRandomYear($lowerLimit = null, $upperLimit = null): int
     {
-        return (int)Faker::create()->numberBetween($lowerLimit, $upperLimit);
+        return (int)Faker::create()->numberBetween($lowerLimit ?? 1000, $upperLimit ?? 9999);
     }
 
     /**
