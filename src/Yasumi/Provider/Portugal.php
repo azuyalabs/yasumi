@@ -164,7 +164,7 @@ class Portugal extends AbstractProvider
      */
     private function calculatePortugueseRepublicDay(): void
     {
-        if ($this->year >= 1910 && $this->year <= 2012 || $this->year >= 2016) {
+        if (($this->year >= 1910 && $this->year <= 2012) || $this->year >= 2016) {
             $this->addHoliday(new Holiday(
                 'portugueseRepublic',
                 ['pt_PT' => 'Implantação da República Portuguesa'],
