@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Ukraine;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -27,7 +28,7 @@ class UkraineTest extends UkraineBaseTestCase
 
     /**
      * Tests if all official holidays in Ukraine are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -48,7 +49,7 @@ class UkraineTest extends UkraineBaseTestCase
 
     /**
      * Tests if all observed holidays in Ukraine are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -57,7 +58,7 @@ class UkraineTest extends UkraineBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Ukraine are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -66,7 +67,7 @@ class UkraineTest extends UkraineBaseTestCase
 
     /**
      * Tests if all bank holidays in Ukraine are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -75,7 +76,7 @@ class UkraineTest extends UkraineBaseTestCase
 
     /**
      * Tests if all other holidays in Ukraine are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {

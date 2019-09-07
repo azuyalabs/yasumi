@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\USA;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class USATest extends USABaseTestCase
 
     /**
      * Tests if all official holidays in the USA are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -46,7 +47,7 @@ class USATest extends USABaseTestCase
 
     /**
      * Tests if all observed holidays in the USA are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -55,7 +56,7 @@ class USATest extends USABaseTestCase
 
     /**
      * Tests if all seasonal holidays in the USA are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -64,7 +65,7 @@ class USATest extends USABaseTestCase
 
     /**
      * Tests if all bank holidays in the USA are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -73,7 +74,7 @@ class USATest extends USABaseTestCase
 
     /**
      * Tests if all other holidays in the USA are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {

@@ -14,6 +14,8 @@ namespace Yasumi\tests\NewZealand;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -40,8 +42,8 @@ class AnzacDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInter
      * @param int $year the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
-     * @throws \ReflectionException
-     * @throws \Exception
+     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHoliday($year, $expected)
     {
@@ -55,7 +57,7 @@ class AnzacDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInter
 
     /**
      *  Tests that Labour Day is not present before 1921
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testNotHoliday()
     {
@@ -66,7 +68,7 @@ class AnzacDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInter
      * Returns a list of test dates
      *
      * @return array list of test dates for the holiday defined in this test
-     * @throws \Exception
+     * @throws Exception
      */
     public function HolidayDataProvider(): array
     {
@@ -80,7 +82,7 @@ class AnzacDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -94,7 +96,7 @@ class AnzacDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

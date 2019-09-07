@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Australia\Tasmania\Northwest\CircularHead;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -27,7 +28,7 @@ class CircularHeadTest extends CircularHeadBaseTestCase
 
     /**
      * Tests if all official holidays in Circular Head (Australia) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {

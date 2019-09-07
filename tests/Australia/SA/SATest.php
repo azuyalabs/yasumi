@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Australia\SA;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class SATest extends SABaseTestCase
 
     /**
      * Tests if all official holidays in SA (Australia) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {

@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Spain\BasqueCountry;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class BasqueCountryTest extends BasqueCountryBaseTestCase
 
     /**
      * Tests if all official holidays in Basque Country (Spain) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -47,7 +48,7 @@ class BasqueCountryTest extends BasqueCountryBaseTestCase
 
     /**
      * Tests if all observed holidays in Basque Country are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -60,7 +61,7 @@ class BasqueCountryTest extends BasqueCountryBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Basque Country are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -69,7 +70,7 @@ class BasqueCountryTest extends BasqueCountryBaseTestCase
 
     /**
      * Tests if all bank holidays in Basque Country are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -78,7 +79,7 @@ class BasqueCountryTest extends BasqueCountryBaseTestCase
 
     /**
      * Tests if all other holidays in Basque Country are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {

@@ -14,8 +14,17 @@ namespace Yasumi\tests;
 
 use DateInterval;
 use DateTime;
+use DateTimeInterface;
 use DateTimeZone;
+use function easter_days;
+use Exception;
 use Faker\Factory as Faker;
+use InvalidArgumentException;
+use PHPUnit\Framework\AssertionFailedError;
+use ReflectionException;
+use RuntimeException;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Filters\BankHolidaysFilter;
 use Yasumi\Filters\ObservedHolidaysFilter;
 use Yasumi\Filters\OfficialHolidaysFilter;
@@ -41,10 +50,10 @@ trait YasumiBase
      * @param string $type The type of holiday. Use the following constants: TYPE_OFFICIAL,
      *                                       TYPE_OBSERVANCE, TYPE_SEASON, TYPE_BANK or TYPE_OTHER.
      *
-     * @throws \InvalidArgumentException
-     * @throws \RuntimeException
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     * @throws \ReflectionException
+     * @throws InvalidArgumentException
+     * @throws RuntimeException
+     * @throws UnknownLocaleException
+     * @throws ReflectionException
      */
     public function assertDefinedHolidays($expectedHolidays, $provider, $year, $type): void
     {
@@ -84,12 +93,12 @@ trait YasumiBase
      * @param int $year holiday calendar year
      * @param DateTime $expected the date to be checked against
      *
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \InvalidArgumentException
-     * @throws \RuntimeException
-     * @throws \PHPUnit\Framework\AssertionFailedError
-     * @throws \ReflectionException
+     * @throws UnknownLocaleException
+     * @throws InvalidDateException
+     * @throws InvalidArgumentException
+     * @throws RuntimeException
+     * @throws AssertionFailedError
+     * @throws ReflectionException
      */
     public function assertHoliday($provider, $shortName, $year, $expected): void
     {
@@ -112,12 +121,12 @@ trait YasumiBase
      * @param string $shortName the short name of the holiday to be checked against
      * @param int $year holiday calendar year
      *
-     * @throws \InvalidArgumentException
-     * @throws \RuntimeException
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \PHPUnit\Framework\AssertionFailedError
-     * @throws \ReflectionException
+     * @throws InvalidArgumentException
+     * @throws RuntimeException
+     * @throws UnknownLocaleException
+     * @throws InvalidDateException
+     * @throws AssertionFailedError
+     * @throws ReflectionException
      */
     public function assertNotHoliday($provider, $shortName, $year): void
     {
@@ -138,11 +147,11 @@ trait YasumiBase
      * @param int $year holiday calendar year
      * @param array $translations the translations to be checked against
      *
-     * @throws \InvalidArgumentException
-     * @throws \RuntimeException
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     * @throws \PHPUnit\Framework\AssertionFailedError
-     * @throws \ReflectionException
+     * @throws InvalidArgumentException
+     * @throws RuntimeException
+     * @throws UnknownLocaleException
+     * @throws AssertionFailedError
+     * @throws ReflectionException
      */
     public function assertTranslatedHolidayName($provider, $shortName, $year, $translations): void
     {
@@ -174,11 +183,11 @@ trait YasumiBase
      * @param int $year holiday calendar year
      * @param string $type the type to be checked against
      *
-     * @throws \InvalidArgumentException
-     * @throws \RuntimeException
-     * @throws \PHPUnit\Framework\AssertionFailedError
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     * @throws \ReflectionException
+     * @throws InvalidArgumentException
+     * @throws RuntimeException
+     * @throws AssertionFailedError
+     * @throws UnknownLocaleException
+     * @throws ReflectionException
      */
     public function assertHolidayType($provider, $shortName, $year, $type): void
     {
@@ -202,11 +211,11 @@ trait YasumiBase
      * @param int $year holiday calendar year
      * @param string $expectedDayOfWeek the expected week day (i.e. "Saturday", "Sunday", etc.)
      *
-     * @throws \PHPUnit\Framework\AssertionFailedError
-     * @throws \InvalidArgumentException
-     * @throws \RuntimeException
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     * @throws \ReflectionException
+     * @throws AssertionFailedError
+     * @throws InvalidArgumentException
+     * @throws RuntimeException
+     * @throws UnknownLocaleException
+     * @throws ReflectionException
      */
     public function assertDayOfWeek($provider, $shortName, $year, $expectedDayOfWeek): void
     {
@@ -232,7 +241,7 @@ trait YasumiBase
      * @param int $range year range from which dates will be generated (default: 1000)
      *
      * @return array list of random test dates used for assertion of holidays.
-     * @throws \Exception
+     * @throws Exception
      */
     public function generateRandomDates($month, $day, $timezone = 'UTC', $iterations = 10, $range = 1000): array
     {
@@ -253,7 +262,7 @@ trait YasumiBase
      * @param int $range year range from which dates will be generated (default: 1000)
      *
      * @return array list of random easter test dates used for assertion of holidays.
-     * @throws \Exception
+     * @throws Exception
      */
     public function generateRandomEasterDates($timezone = 'UTC', $iterations = 10, $range = 1000): array
     {
@@ -285,7 +294,7 @@ trait YasumiBase
      * @param string $timezone the timezone in which Easter is celebrated
      *
      * @return \DateTime date of Easter
-     * @throws \Exception
+     * @throws Exception
      * @see  easter_days
      *
      * @link https://github.com/php/php-src/blob/c8aa6f3a9a3d2c114d0c5e0c9fdd0a465dbb54a5/ext/calendar/easter.c
@@ -357,7 +366,7 @@ trait YasumiBase
      *
      * @return array list of random Easter Monday test dates used for assertion of holidays.
      *
-     * @throws \Exception
+     * @throws Exception
      */
     public function generateRandomEasterMondayDates($timezone = 'UTC', $iterations = 10, $range = 1000): array
     {
@@ -375,7 +384,7 @@ trait YasumiBase
      * @param int $range year range from which dates will be generated (default: 1000)
      *
      * @return array list of random modified Easter day test dates for assertion of holidays.
-     * @throws \Exception
+     * @throws Exception
      */
     public function generateRandomModifiedEasterDates(
         callable $cb,
@@ -406,7 +415,7 @@ trait YasumiBase
      *
      * @return array list of random Good Friday test dates used for assertion of holidays.
      *
-     * @throws \Exception
+     * @throws Exception
      */
     public function generateRandomGoodFridayDates($timezone = 'UTC', $iterations = 10, $range = 1000): array
     {
@@ -424,7 +433,7 @@ trait YasumiBase
      *
      * @return array list of random Pentecost test dates used for assertion of holidays.
      *
-     * @throws \Exception
+     * @throws Exception
      */
     public function generateRandomPentecostDates($timezone = 'UTC', $iterations = 10, $range = 1000): array
     {
@@ -444,7 +453,7 @@ trait YasumiBase
      * @param int $range year range from which dates will be generated (default: 1000)
      *
      * @return array list of random test dates used for assertion of holidays.
-     * @throws \Exception
+     * @throws Exception
      */
     public function generateRandomDatesWithHolidayMovedToMonday(
         $month,
@@ -471,7 +480,7 @@ trait YasumiBase
      * @param int $range year range from which dates will be generated (default: 1000)
      *
      * @return array list of random test dates used for assertion of holidays with applied callback.
-     * @throws \Exception
+     * @throws Exception
      */
     public function generateRandomDatesWithModifier(
         $month,
@@ -511,12 +520,12 @@ trait YasumiBase
     /**
      * Checks if given $dateTime is a weekend.
      *
-     * @param \DateTimeInterface $dateTime date for which weekend will be checked.
+     * @param DateTimeInterface $dateTime date for which weekend will be checked.
      * @param array $weekendDays weekend days. Saturday and Sunday are used by default.
      *
      * @return bool true if $dateTime is a weekend, false otherwise
      */
-    public function isWeekend(\DateTimeInterface $dateTime, array $weekendDays = [0, 6]): bool
+    public function isWeekend(DateTimeInterface $dateTime, array $weekendDays = [0, 6]): bool
     {
         return \in_array((int)$dateTime->format('w'), $weekendDays, true);
     }

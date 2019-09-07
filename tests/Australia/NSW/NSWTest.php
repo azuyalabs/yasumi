@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Australia\NSW;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class NSWTest extends NSWBaseTestCase
 
     /**
      * Tests if all official holidays in NSW (Australia) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -47,7 +48,7 @@ class NSWTest extends NSWBaseTestCase
 
     /**
      * Tests if all bank holidays in NSW (Australia) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {

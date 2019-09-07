@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Germany\Hesse;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class HesseTest extends HesseBaseTestCase
 
     /**
      * Tests if all official holidays in Hesse (Germany) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -45,7 +46,7 @@ class HesseTest extends HesseBaseTestCase
 
     /**
      * Tests if all observed holidays in Hesse (Germany) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -54,7 +55,7 @@ class HesseTest extends HesseBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Hesse (Germany) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -63,7 +64,7 @@ class HesseTest extends HesseBaseTestCase
 
     /**
      * Tests if all bank holidays in Hesse (Germany) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -72,7 +73,7 @@ class HesseTest extends HesseBaseTestCase
 
     /**
      * Tests if all other holidays in Hesse (Germany) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {

@@ -14,7 +14,9 @@ namespace Yasumi\tests\Base;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
 use PHPUnit\Framework\TestCase;
+use ReflectionException;
 use Yasumi\tests\YasumiBase;
 use Yasumi\Yasumi;
 
@@ -30,8 +32,8 @@ class HolidayOnFilterTest extends TestCase
     /**
      * Tests the basic usage of the OnFilter.
      *
-     * @throws \ReflectionException
-     * @throws \Exception
+     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidaysOnDate(): void
     {
@@ -54,8 +56,8 @@ class HolidayOnFilterTest extends TestCase
     }
 
     /**
-     * @throws \ReflectionException
-     * @throws \Exception
+     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidaysNotOnDate(): void
     {
@@ -78,8 +80,8 @@ class HolidayOnFilterTest extends TestCase
     }
 
     /**
-     * @throws \ReflectionException
-     * @throws \Exception
+     * @throws ReflectionException
+     * @throws Exception
      */
     public function testCorrectNumberOfHolidaysOnDate(): void
     {

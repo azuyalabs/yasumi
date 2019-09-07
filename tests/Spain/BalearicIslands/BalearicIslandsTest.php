@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Spain\BalearicIslands;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class BalearicIslandsTest extends BalearicIslandsBaseTestCase
 
     /**
      * Tests if all official holidays in the Balearic Islands (Spain) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -47,7 +48,7 @@ class BalearicIslandsTest extends BalearicIslandsBaseTestCase
 
     /**
      * Tests if all observed holidays in the Balearic Islands are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -62,7 +63,7 @@ class BalearicIslandsTest extends BalearicIslandsBaseTestCase
 
     /**
      * Tests if all seasonal holidays in the Balearic Islands are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -71,7 +72,7 @@ class BalearicIslandsTest extends BalearicIslandsBaseTestCase
 
     /**
      * Tests if all bank holidays in the Balearic Islands are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -80,7 +81,7 @@ class BalearicIslandsTest extends BalearicIslandsBaseTestCase
 
     /**
      * Tests if all other holidays in the Balearic Islands are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {

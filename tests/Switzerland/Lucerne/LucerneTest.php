@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Switzerland\Lucerne;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class LucerneTest extends LucerneBaseTestCase
 
     /**
      * Tests if all official holidays in Lucerne (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -39,7 +40,7 @@ class LucerneTest extends LucerneBaseTestCase
 
     /**
      * Tests if all regional holidays in Lucerne (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testRegionalHolidays(): void
     {
@@ -61,7 +62,7 @@ class LucerneTest extends LucerneBaseTestCase
 
     /**
      * Tests if all observed holidays in Lucerne (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -75,7 +76,7 @@ class LucerneTest extends LucerneBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Lucerne (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -84,7 +85,7 @@ class LucerneTest extends LucerneBaseTestCase
 
     /**
      * Tests if all bank holidays in Lucerne (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -93,7 +94,7 @@ class LucerneTest extends LucerneBaseTestCase
 
     /**
      * Tests if all other holidays in Lucerne (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {

@@ -13,6 +13,9 @@
 
 namespace Yasumi\tests\Latvia;
 
+use DateTime;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -30,7 +33,7 @@ class NewYearsEveDayTest extends LatviaBaseTestCase implements YasumiTestCaseInt
 
     /**
      * @return array
-     * @throws \Exception
+     * @throws Exception
      */
     public function holidayDataProvider(): array
     {
@@ -41,18 +44,18 @@ class NewYearsEveDayTest extends LatviaBaseTestCase implements YasumiTestCaseInt
      * @dataProvider holidayDataProvider
      *
      * @param int $year
-     * @param \DateTime $expected
+     * @param DateTime $expected
      *
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
-    public function testHoliday($year, \DateTime $expected)
+    public function testHoliday($year, DateTime $expected)
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
      * {@inheritdoc}
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -66,7 +69,7 @@ class NewYearsEveDayTest extends LatviaBaseTestCase implements YasumiTestCaseInt
 
     /**
      * {@inheritdoc}
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

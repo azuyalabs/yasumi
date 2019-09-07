@@ -15,6 +15,8 @@ namespace Yasumi\tests\SouthAfrica;
 use DateInterval;
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -45,8 +47,8 @@ class ChristmasDayTest extends SouthAfricaBaseTestCase implements YasumiTestCase
      * @param int $year the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
      *
-     * @throws \ReflectionException
-     * @throws \Exception
+     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHoliday($year, $expected)
     {
@@ -64,7 +66,7 @@ class ChristmasDayTest extends SouthAfricaBaseTestCase implements YasumiTestCase
      * Returns a list of random test dates used for assertion of the holiday defined in this test
      *
      * @return array list of test dates for the holiday defined in this test
-     * @throws \Exception
+     * @throws Exception
      */
     public function HolidayDataProvider(): array
     {
@@ -81,7 +83,7 @@ class ChristmasDayTest extends SouthAfricaBaseTestCase implements YasumiTestCase
 
     /**
      * Tests the holiday defined in this test before establishment.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayBeforeEstablishment()
     {
@@ -94,7 +96,7 @@ class ChristmasDayTest extends SouthAfricaBaseTestCase implements YasumiTestCase
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -108,7 +110,7 @@ class ChristmasDayTest extends SouthAfricaBaseTestCase implements YasumiTestCase
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

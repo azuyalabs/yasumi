@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Australia\Tasmania\South;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -27,7 +28,7 @@ class SouthTest extends SouthBaseTestCase
 
     /**
      * Tests if all official holidays in northwestern Tasmania (Australia) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {

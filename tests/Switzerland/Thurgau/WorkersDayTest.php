@@ -14,6 +14,8 @@ namespace Yasumi\tests\Switzerland\Thurgau;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -35,8 +37,8 @@ class WorkersDayTest extends ThurgauBaseTestCase implements YasumiTestCaseInterf
      * @param int $year the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
      *
-     * @throws \ReflectionException
-     * @throws \Exception
+     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHoliday($year, $expected)
     {
@@ -48,7 +50,7 @@ class WorkersDayTest extends ThurgauBaseTestCase implements YasumiTestCaseInterf
      * Returns a list of random test dates used for assertion of the holiday defined in this test
      *
      * @return array list of test dates for the holiday defined in this test
-     * @throws \Exception
+     * @throws Exception
      */
     public function HolidayDataProvider(): array
     {
@@ -65,7 +67,7 @@ class WorkersDayTest extends ThurgauBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -79,7 +81,7 @@ class WorkersDayTest extends ThurgauBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

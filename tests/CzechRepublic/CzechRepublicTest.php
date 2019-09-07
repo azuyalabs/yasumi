@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\CzechRepublic;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -30,7 +31,7 @@ class CzechRepublicTest extends CzechRepublicBaseTestCase
 
     /**
      * Tests if all official holidays in Finland are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -53,7 +54,7 @@ class CzechRepublicTest extends CzechRepublicBaseTestCase
 
     /**
      * Tests if all observed holidays in the Czech Republic are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -62,7 +63,7 @@ class CzechRepublicTest extends CzechRepublicBaseTestCase
 
     /**
      * Tests if all seasonal holidays in the Czech Republic are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -71,7 +72,7 @@ class CzechRepublicTest extends CzechRepublicBaseTestCase
 
     /**
      * Tests if all bank holidays in the Czech Republic are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -80,7 +81,7 @@ class CzechRepublicTest extends CzechRepublicBaseTestCase
 
     /**
      * Tests if all other holidays in the Czech Republic are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {

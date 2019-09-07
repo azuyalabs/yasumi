@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Sweden;
 
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 use Yasumi\Yasumi;
@@ -28,7 +29,7 @@ class StJohnsDayTest extends SwedenBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHoliday()
     {
@@ -52,7 +53,7 @@ class StJohnsDayTest extends SwedenBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -66,7 +67,7 @@ class StJohnsDayTest extends SwedenBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

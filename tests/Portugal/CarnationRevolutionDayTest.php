@@ -14,6 +14,8 @@ namespace Yasumi\tests\Portugal;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -34,8 +36,8 @@ class CarnationRevolutionDayTest extends PortugalBaseTestCase implements YasumiT
 
     /**
      * Test that the holiday is valid after the year of establishment
-     * @throws \ReflectionException
-     * @throws \Exception
+     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayAfterEstablishment()
     {
@@ -46,7 +48,7 @@ class CarnationRevolutionDayTest extends PortugalBaseTestCase implements YasumiT
 
     /**
      * Tests that the holiday is not a holiday before the year of establishment
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testNotHolidayBeforeEstablishment()
     {
@@ -56,7 +58,7 @@ class CarnationRevolutionDayTest extends PortugalBaseTestCase implements YasumiT
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -66,7 +68,7 @@ class CarnationRevolutionDayTest extends PortugalBaseTestCase implements YasumiT
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

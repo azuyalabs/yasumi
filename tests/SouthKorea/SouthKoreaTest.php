@@ -13,6 +13,7 @@
 
 namespace Yasumi\tests\SouthKorea;
 
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\SouthKorea;
 
@@ -28,7 +29,7 @@ class SouthKoreaTest extends SouthKoreaBaseTestCase
 
     /**
      * Tests if all official holidays in South Korea are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -90,7 +91,7 @@ class SouthKoreaTest extends SouthKoreaBaseTestCase
 
     /**
      * Tests if all observed holidays in South Korea are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -99,7 +100,7 @@ class SouthKoreaTest extends SouthKoreaBaseTestCase
 
     /**
      * Tests if all seasonal holidays in South Korea are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -108,7 +109,7 @@ class SouthKoreaTest extends SouthKoreaBaseTestCase
 
     /**
      * Tests if all bank holidays in South Korea are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -117,7 +118,7 @@ class SouthKoreaTest extends SouthKoreaBaseTestCase
 
     /**
      * Tests if all other holidays in South Korea are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {

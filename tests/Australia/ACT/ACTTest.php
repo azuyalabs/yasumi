@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Australia\ACT;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class ACTTest extends ACTBaseTestCase
 
     /**
      * Tests if all official holidays in ACT (Australia) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {

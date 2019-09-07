@@ -14,6 +14,8 @@ namespace Yasumi\tests\USA;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 use Yasumi\Yasumi;
@@ -35,8 +37,8 @@ class VeteransDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests Veterans Day on or after 1919. Veterans Day was established in 1919 on November 11.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testVeteransDayOnAfter1919()
     {
@@ -51,8 +53,8 @@ class VeteransDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests Veterans Day on or after 1919 when substituted on Monday (when Veterans Day falls on Sunday)
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testVeteransDayOnAfter1919SubstitutedMonday()
     {
@@ -67,8 +69,8 @@ class VeteransDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests Veterans Day on or after 1919 when substituted on Friday (when Veterans Day falls on Saturday)
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testVeteransDayOnAfter1919SubstitutedFriday()
     {
@@ -83,7 +85,7 @@ class VeteransDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests Veterans Day before 1919. Veterans Day was established in 1919 on November 11.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testVeteransDayBefore1919()
     {
@@ -96,7 +98,7 @@ class VeteransDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests name of Veterans Day before 1954. Veterans Day was named 'Armistice Day' before 1954.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testVeteransDayNameBefore1954()
     {
@@ -109,7 +111,7 @@ class VeteransDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests name of Veterans Day after 1954. Veterans Day was named 'Armistice Day' before 1954.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testVeteransDayNameAfter1954()
     {
@@ -122,7 +124,7 @@ class VeteransDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -136,7 +138,7 @@ class VeteransDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

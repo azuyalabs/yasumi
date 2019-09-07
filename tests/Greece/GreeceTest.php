@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Greece;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class GreeceTest extends GreeceBaseTestCase
 
     /**
      * Tests if all official holidays in Greece are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -51,7 +52,7 @@ class GreeceTest extends GreeceBaseTestCase
 
     /**
      * Tests if all observed holidays in Greece are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -60,7 +61,7 @@ class GreeceTest extends GreeceBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Greece are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -69,7 +70,7 @@ class GreeceTest extends GreeceBaseTestCase
 
     /**
      * Tests if all bank holidays in Greece are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -78,7 +79,7 @@ class GreeceTest extends GreeceBaseTestCase
 
     /**
      * Tests if all other holidays in Greece are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {

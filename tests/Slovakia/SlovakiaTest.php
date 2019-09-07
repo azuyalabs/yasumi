@@ -14,6 +14,7 @@
 
 namespace Yasumi\tests\Slovakia;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -33,7 +34,7 @@ class SlovakiaTest extends SlovakiaBaseTestCase
 
     /**
      * Tests if all official holidays in Slovakia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -49,7 +50,7 @@ class SlovakiaTest extends SlovakiaBaseTestCase
 
     /**
      * Tests if all bank holidays in Slovakia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -70,7 +71,7 @@ class SlovakiaTest extends SlovakiaBaseTestCase
 
     /**
      * Tests if all observed holidays in Slovakia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -80,7 +81,7 @@ class SlovakiaTest extends SlovakiaBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Slovakia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -90,7 +91,7 @@ class SlovakiaTest extends SlovakiaBaseTestCase
 
     /**
      * Tests if all other holidays in Slovakia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {

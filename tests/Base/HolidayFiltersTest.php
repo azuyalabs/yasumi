@@ -13,6 +13,7 @@
 namespace Yasumi\tests\Base;
 
 use PHPUnit\Framework\TestCase;
+use ReflectionException;
 use Yasumi\Filters\BankHolidaysFilter;
 use Yasumi\Filters\ObservedHolidaysFilter;
 use Yasumi\Filters\OfficialHolidaysFilter;
@@ -32,7 +33,7 @@ class HolidayFiltersTest extends TestCase
 
     /**
      * Tests the Official Holidays filter
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidaysFilter(): void
     {
@@ -66,7 +67,7 @@ class HolidayFiltersTest extends TestCase
 
     /**
      * Tests the Observed Holidays filter
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidaysFilter(): void
     {
@@ -100,7 +101,7 @@ class HolidayFiltersTest extends TestCase
 
     /**
      * Tests Bank Holidays
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidaysFilter(): void
     {
@@ -134,7 +135,7 @@ class HolidayFiltersTest extends TestCase
 
     /**
      * Tests Seasonal Holidays
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidaysFilter(): void
     {
@@ -182,7 +183,7 @@ class HolidayFiltersTest extends TestCase
 
     /**
      * Tests other type of Holidays
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidaysFilter(): void
     {

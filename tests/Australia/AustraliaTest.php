@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Australia;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class AustraliaTest extends AustraliaBaseTestCase
 
     /**
      * Tests if all official holidays in Australia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -43,7 +44,7 @@ class AustraliaTest extends AustraliaBaseTestCase
 
     /**
      * Tests if all observed holidays in Australia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -52,7 +53,7 @@ class AustraliaTest extends AustraliaBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Australia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -61,7 +62,7 @@ class AustraliaTest extends AustraliaBaseTestCase
 
     /**
      * Tests if all bank holidays in Australia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -70,7 +71,7 @@ class AustraliaTest extends AustraliaBaseTestCase
 
     /**
      * Tests if all other holidays in Australia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {

@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Australia\NT;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class NTTest extends NTBaseTestCase
 
     /**
      * Tests if all official holidays in NT (Australia) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {

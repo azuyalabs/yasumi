@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Australia\Queensland\Brisbane;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -27,7 +28,7 @@ class BrisbaneTest extends BrisbaneBaseTestCase
 
     /**
      * Tests if all official holidays in Queensland (Australia) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {

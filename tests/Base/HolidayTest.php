@@ -13,6 +13,8 @@
 namespace Yasumi\tests\Base;
 
 use DateTime;
+use DateTimeImmutable;
+use Exception;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 use Yasumi\Exception\UnknownLocaleException;
@@ -32,7 +34,7 @@ class HolidayTest extends TestCase
     /**
      * Tests that an InvalidArgumentException is thrown in case an blank short name is given.
      *
-     * @throws \Exception
+     * @throws Exception
      */
     public function testHolidayBlankNameInvalidArgumentException(): void
     {
@@ -44,7 +46,7 @@ class HolidayTest extends TestCase
     /**
      * Tests that an Yasumi\Exception\UnknownLocaleException is thrown in case an invalid locale is given.
      *
-     * @throws \Exception
+     * @throws Exception
      */
     public function testCreateHolidayUnknownLocaleException(): void
     {
@@ -55,7 +57,7 @@ class HolidayTest extends TestCase
 
     /**
      * Tests that a Yasumi holiday instance can be serialized to a JSON object.
-     * @throws \Exception
+     * @throws Exception
      */
     public function testHolidayIsJsonSerializable(): void
     {
@@ -71,7 +73,7 @@ class HolidayTest extends TestCase
     /**
      * Tests that a Yasumi holiday instance can be created using an object that implements the DateTimeInterface (e.g.
      * DateTime or DateTimeImmutable)
-     * @throws \Exception
+     * @throws Exception
      */
     public function testHolidayWithDateTimeInterface(): void
     {
@@ -81,14 +83,14 @@ class HolidayTest extends TestCase
         $this->assertInstanceOf(Holiday::class, $holiday);
 
         // Assert with DateTimeImmutable instance
-        $holiday = new Holiday('testHoliday', [], new \DateTimeImmutable(), 'en_US');
+        $holiday = new Holiday('testHoliday', [], new DateTimeImmutable(), 'en_US');
         $this->assertNotNull($holiday);
         $this->assertInstanceOf(Holiday::class, $holiday);
     }
 
     /**
      * Tests the getName function of the Holiday object with no translations for the name given.
-     * @throws \Exception
+     * @throws Exception
      */
     public function testHolidayGetNameWithNoTranslations(): void
     {
@@ -101,7 +103,7 @@ class HolidayTest extends TestCase
 
     /**
      * Tests the getName function of the Holiday object with only a default translation for the name given.
-     * @throws \Exception
+     * @throws Exception
      */
     public function testHolidayGetNameWithOnlyDefaultTranslation(): void
     {
@@ -117,7 +119,7 @@ class HolidayTest extends TestCase
     /**
      * Tests the getName function of the Holiday object with only a default translation for the name given.
      *
-     * @throws \Exception
+     * @throws Exception
      */
     public function testHolidayGetNameWithOneNonDefaultTranslation(): void
     {
@@ -132,7 +134,7 @@ class HolidayTest extends TestCase
 
     /**
      * Tests the getName function of the Holiday object with global translations and no custom translation.
-     * @throws \Exception
+     * @throws Exception
      */
     public function testHolidayGetNameWithGlobalTranslations(): void
     {
@@ -158,7 +160,7 @@ class HolidayTest extends TestCase
 
     /**
      * Tests the getName function of the Holiday object with global translations and a new custom translation.
-     * @throws \Exception
+     * @throws Exception
      */
     public function testHolidayGetNameWithGlobalAndCustomTranslations(): void
     {
@@ -190,7 +192,7 @@ class HolidayTest extends TestCase
 
     /**
      * Tests the getName function of the Holiday object with global translations and an overriding custom translation.
-     * @throws \Exception
+     * @throws Exception
      */
     public function testHolidayGetNameWithOverridenGlobalTranslations(): void
     {

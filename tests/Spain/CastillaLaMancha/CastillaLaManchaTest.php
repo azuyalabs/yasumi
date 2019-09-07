@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Spain\CastillaLaMancha;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class CastillaLaManchaTest extends CastillaLaManchaBaseTestCase
 
     /**
      * Tests if all official holidays in Castilla-La Mancha (Spain) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -47,7 +48,7 @@ class CastillaLaManchaTest extends CastillaLaManchaBaseTestCase
 
     /**
      * Tests if all observed holidays in Castilla-La Mancha are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -60,7 +61,7 @@ class CastillaLaManchaTest extends CastillaLaManchaBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Castilla-La Mancha are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -69,7 +70,7 @@ class CastillaLaManchaTest extends CastillaLaManchaBaseTestCase
 
     /**
      * Tests if all bank holidays in Castilla-La Mancha are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -78,7 +79,7 @@ class CastillaLaManchaTest extends CastillaLaManchaBaseTestCase
 
     /**
      * Tests if all other holidays in Castilla-La Mancha are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {

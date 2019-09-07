@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Spain\CommunityOfMadrid;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class CommunityOfMadridTest extends CommunityOfMadridBaseTestCase
 
     /**
      * Tests if all official holidays in the Community of Madrid (Spain) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -47,7 +48,7 @@ class CommunityOfMadridTest extends CommunityOfMadridBaseTestCase
 
     /**
      * Tests if all observed holidays in the Community of Madrid are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -61,7 +62,7 @@ class CommunityOfMadridTest extends CommunityOfMadridBaseTestCase
 
     /**
      * Tests if all seasonal holidays in the Community of Madrid are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -70,7 +71,7 @@ class CommunityOfMadridTest extends CommunityOfMadridBaseTestCase
 
     /**
      * Tests if all bank holidays in the Community of Madrid are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -79,7 +80,7 @@ class CommunityOfMadridTest extends CommunityOfMadridBaseTestCase
 
     /**
      * Tests if all other holidays in the Community of Madrid are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {

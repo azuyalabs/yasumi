@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Switzerland\Valais;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class ValaisTest extends ValaisBaseTestCase
 
     /**
      * Tests if all official holidays in Valais (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -39,7 +40,7 @@ class ValaisTest extends ValaisBaseTestCase
 
     /**
      * Tests if all regional holidays in Valais (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testRegionalHolidays(): void
     {
@@ -57,7 +58,7 @@ class ValaisTest extends ValaisBaseTestCase
 
     /**
      * Tests if all observed holidays in Valais (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -71,7 +72,7 @@ class ValaisTest extends ValaisBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Valais (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -80,7 +81,7 @@ class ValaisTest extends ValaisBaseTestCase
 
     /**
      * Tests if all bank holidays in Valais (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -89,7 +90,7 @@ class ValaisTest extends ValaisBaseTestCase
 
     /**
      * Tests if all other holidays in Valais (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {

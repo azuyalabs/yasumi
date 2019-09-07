@@ -12,6 +12,9 @@
 
 namespace Yasumi\tests\Switzerland\Uri;
 
+use DateTime;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\tests\YasumiTestCaseInterface;
@@ -34,9 +37,9 @@ class StJosephDayTest extends UriBaseTestCase implements YasumiTestCaseInterface
      * @dataProvider StJosephDayDataProvider
      *
      * @param int $year the year for which St. Joseph's Day needs to be tested
-     * @param \DateTime $expected the expected date
+     * @param DateTime $expected the expected date
      *
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testStJosephDay($year, $expected)
     {
@@ -47,7 +50,7 @@ class StJosephDayTest extends UriBaseTestCase implements YasumiTestCaseInterface
      * Returns a list of random test dates used for assertion of St. Joseph's Day.
      *
      * @return array list of test dates for St. Joseph's Day
-     * @throws \Exception
+     * @throws Exception
      */
     public function StJosephDayDataProvider(): array
     {
@@ -56,7 +59,7 @@ class StJosephDayTest extends UriBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -70,7 +73,7 @@ class StJosephDayTest extends UriBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

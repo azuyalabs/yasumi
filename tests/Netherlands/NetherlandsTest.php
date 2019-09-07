@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Netherlands;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class NetherlandsTest extends NetherlandsBaseTestCase
 
     /**
      * Tests if all official holidays in Netherlands are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -46,7 +47,7 @@ class NetherlandsTest extends NetherlandsBaseTestCase
 
     /**
      * Tests if all observed holidays in Netherlands are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -65,7 +66,7 @@ class NetherlandsTest extends NetherlandsBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Netherlands are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -75,7 +76,7 @@ class NetherlandsTest extends NetherlandsBaseTestCase
 
     /**
      * Tests if all bank holidays in Netherlands are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -84,7 +85,7 @@ class NetherlandsTest extends NetherlandsBaseTestCase
 
     /**
      * Tests if all other holidays in Netherlands are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {

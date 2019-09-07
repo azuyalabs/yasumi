@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Australia\WA;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -27,7 +28,7 @@ class WATest extends WABaseTestCase
 
     /**
      * Tests if all official holidays in WA (Australia) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {

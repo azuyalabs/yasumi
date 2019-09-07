@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Australia\Tasmania\KingIsland;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -27,7 +28,7 @@ class KingIslandTest extends KingIslandBaseTestCase
 
     /**
      * Tests if all official holidays in King Island (Australia) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {

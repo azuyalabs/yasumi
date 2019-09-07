@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Australia\Tasmania\CentralNorth;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class CentralNorthTest extends CentralNorthBaseTestCase
 
     /**
      * Tests if all official holidays in central north Tasmania (Australia) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {

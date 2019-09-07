@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Brazil;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class BrazilTest extends BrazilBaseTestCase
 
     /**
      * Tests if all official holidays in Brazil are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -45,7 +46,7 @@ class BrazilTest extends BrazilBaseTestCase
 
     /**
      * Tests if all observed holidays in Brazil are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -60,7 +61,7 @@ class BrazilTest extends BrazilBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Brazil are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -69,7 +70,7 @@ class BrazilTest extends BrazilBaseTestCase
 
     /**
      * Tests if all bank holidays in Brazil are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -78,7 +79,7 @@ class BrazilTest extends BrazilBaseTestCase
 
     /**
      * Tests if all other holidays in Brazil are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {

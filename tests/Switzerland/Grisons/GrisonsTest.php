@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Switzerland\Grisons;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class GrisonsTest extends GrisonsBaseTestCase
 
     /**
      * Tests if all official holidays in Grisons (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -39,7 +40,7 @@ class GrisonsTest extends GrisonsBaseTestCase
 
     /**
      * Tests if all regional holidays in Grisons (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testRegionalHolidays(): void
     {
@@ -56,7 +57,7 @@ class GrisonsTest extends GrisonsBaseTestCase
 
     /**
      * Tests if all observed holidays in Grisons (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -70,7 +71,7 @@ class GrisonsTest extends GrisonsBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Grisons (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -79,7 +80,7 @@ class GrisonsTest extends GrisonsBaseTestCase
 
     /**
      * Tests if all bank holidays in Grisons (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -88,7 +89,7 @@ class GrisonsTest extends GrisonsBaseTestCase
 
     /**
      * Tests if all other holidays in Grisons (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {

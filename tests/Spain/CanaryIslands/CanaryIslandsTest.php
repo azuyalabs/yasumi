@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Spain\CanaryIslands;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class CanaryIslandsTest extends CanaryIslandsBaseTestCase
 
     /**
      * Tests if all official holidays in the Canary Islands (Spain) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -47,7 +48,7 @@ class CanaryIslandsTest extends CanaryIslandsBaseTestCase
 
     /**
      * Tests if all observed holidays in the Canary Islands are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -59,7 +60,7 @@ class CanaryIslandsTest extends CanaryIslandsBaseTestCase
 
     /**
      * Tests if all seasonal holidays in the Canary Islands are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -68,7 +69,7 @@ class CanaryIslandsTest extends CanaryIslandsBaseTestCase
 
     /**
      * Tests if all bank holidays in the Canary Islands are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -77,7 +78,7 @@ class CanaryIslandsTest extends CanaryIslandsBaseTestCase
 
     /**
      * Tests if all other holidays in the Canary Islands are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {

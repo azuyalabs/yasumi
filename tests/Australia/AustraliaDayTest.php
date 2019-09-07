@@ -14,6 +14,8 @@ namespace Yasumi\tests\Australia;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -35,8 +37,8 @@ class AustraliaDayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
      * @param int $year the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
      *
-     * @throws \ReflectionException
-     * @throws \Exception
+     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHoliday($year, $expected)
     {
@@ -51,7 +53,7 @@ class AustraliaDayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -65,7 +67,7 @@ class AustraliaDayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {
