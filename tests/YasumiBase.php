@@ -305,7 +305,7 @@ trait YasumiBase
     protected function calculateEaster(int $year, string $timezone): DateTime
     {
         if (\extension_loaded('calendar')) {
-            $easter_days = easter_days($year);
+            $easter_days = \easter_days($year);
         } else {
             $golden = (($year % 19) + 1); // The Golden Number
 

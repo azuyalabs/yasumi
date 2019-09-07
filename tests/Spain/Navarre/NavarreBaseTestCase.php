@@ -26,5 +26,4 @@ abstract class NavarreBaseTestCase extends SpainBaseTestCase
      * Name of the region (e.g. country / state) to be tested
      */
     public const REGION = 'Spain/Navarre';
-
 }
