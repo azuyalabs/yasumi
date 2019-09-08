@@ -55,11 +55,6 @@ class Japan extends AbstractProvider
     private const VERNAL_EQUINOX_PARAM_2150 = 21.8510;
 
     /**
-     * The initial parameter of the approximate expression to calculate autumnal equinox day from 1851 to 1899.
-     */
-    private const AUTUMNAL_EQUINOX_PARAM_1899 = 22.2588;
-
-    /**
      * The initial parameter of the approximate expression to calculate autumnal equinox day from 1900 to 1979.
      */
     private const AUTUMNAL_EQUINOX_PARAM_1979 = 23.2588;
