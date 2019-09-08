@@ -155,7 +155,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         }
 
         $this->holidays[$holiday->shortName] = $holiday;
-        \uasort($this->holidays, [__CLASS__, 'compareDates']);
+        \uasort($this->holidays, [AbstractProvider::class, 'compareDates']);
     }
 
 
