@@ -38,12 +38,12 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInter
     /**
      * The year in which the holiday was removed
      */
-    private const REMOVED_YEAR = 2005;
+    public const REMOVED_YEAR = 2005;
 
     /**
      * The year in which the holiday was not celebrated
      */
-    private const YEAR_NOT_CELEBRATED = 1960;
+    public const YEAR_NOT_CELEBRATED = 1960;
 
     /**
      * Tests the holiday defined in this test.
