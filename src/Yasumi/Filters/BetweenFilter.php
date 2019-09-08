@@ -80,7 +80,7 @@ class BetweenFilter extends FilterIterator implements Countable
     }
 
     /**
-     * @return integer Returns the number of holidays between the given start and end date.
+     * @return int Returns the number of holidays between the given start and end date.
      */
     public function count(): int
     {
