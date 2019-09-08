@@ -47,7 +47,7 @@ class YasumiTest extends TestCase
      */
     public const YEAR_UPPER_BOUND = 9999;
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         Yasumi::reset();
     }
@@ -73,11 +73,12 @@ class YasumiTest extends TestCase
     /**
      * Tests that an Yasumi\Exception\UnknownLocaleException is thrown in case an invalid locale is given.
      *
-     * @expectedException \Yasumi\Exception\UnknownLocaleException
-     * @throws \Exception
+     * @throws Exception
      */
     public function testSetDefaultLocaleUnknownLocaleException(): void
     {
+        $this->expectException(UnknownLocaleException::class);
+
         Yasumi::setDefaultLocale('wx_YZ');
     }
 
@@ -102,7 +103,7 @@ class YasumiTest extends TestCase
     {
         $this->expectException(ProviderNotFoundException::class);
 
-        Yasumi::create('Mars, 2000');
+        Yasumi::create('Mars', 2000);
     }
 
     /**
