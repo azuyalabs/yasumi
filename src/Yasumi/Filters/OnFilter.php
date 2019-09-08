@@ -59,7 +59,7 @@ class OnFilter extends FilterIterator implements Countable
     }
 
     /**
-     * @return integer Returns the number of holidays that happen on the specified date
+     * @return int Returns the number of holidays that happen on the specified date
      */
     public function count(): int
     {

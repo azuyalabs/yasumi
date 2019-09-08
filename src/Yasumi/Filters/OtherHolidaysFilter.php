@@ -39,7 +39,7 @@ class OtherHolidaysFilter extends FilterIterator implements Countable
     }
 
     /**
-     * @return integer Returns the number of filtered holidays.
+     * @return int Returns the number of filtered holidays.
      */
     public function count(): int
     {
