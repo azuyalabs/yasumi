@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -51,37 +51,6 @@ class NT extends Australia
     }
 
     /**
-     * May Day
-     *
-     * @throws \Exception
-     */
-    private function calculateMayDay(): void
-    {
-        $date = new DateTime("first monday of may $this->year", new DateTimeZone($this->timezone));
-
-        $this->addHoliday(new Holiday('mayDay', ['en_AU' => 'May Day'], $date, $this->locale));
-    }
-
-    /**
-     * Picnic Day
-     *
-     * @link https://en.wikipedia.org/wiki/Picnic_Day_(Australian_holiday)
-     *
-     * @throws \InvalidArgumentException
-     * @throws \Exception
-     */
-    private function calculatePicnicDay(): void
-    {
-        $this->calculateHoliday(
-            'picnicDay',
-            ['en_AU' => 'Picnic Day'],
-            new DateTime('first monday of august '. $this->year, new DateTimeZone($this->timezone)),
-            false,
-            false
-        );
-    }
-    
-    /**
      * Easter Saturday.
      *
      * Easter is a festival and holiday celebrating the resurrection of Jesus Christ from the dead. Easter is celebrated
@@ -90,10 +59,10 @@ class NT extends Australia
      *
      * @link http://en.wikipedia.org/wiki/Easter
      *
-     * @param int    $year     the year for which Easter Saturday need to be created
+     * @param int $year the year for which Easter Saturday need to be created
      * @param string $timezone the timezone in which Easter Saturday is celebrated
-     * @param string $locale   the locale for which Easter Saturday need to be displayed in.
-     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     * @param string $locale the locale for which Easter Saturday need to be displayed in.
+     * @param string $type The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
      * @return Holiday
@@ -102,14 +71,14 @@ class NT extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function easterSaturday($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
+    private function easterSaturday($year, $timezone, $locale, $type = null): Holiday
     {
         return new Holiday(
             'easterSaturday',
             ['en_AU' => 'Easter Saturday'],
             $this->calculateEaster($year, $timezone)->sub(new DateInterval('P1D')),
             $locale,
-            $type
+            $type ?? Holiday::TYPE_OFFICIAL
         );
     }
 
@@ -134,6 +103,37 @@ class NT extends Australia
             'queensBirthday',
             ['en_AU' => "Queen's Birthday"],
             new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->timezone)),
+            false,
+            false
+        );
+    }
+
+    /**
+     * May Day
+     *
+     * @throws \Exception
+     */
+    private function calculateMayDay(): void
+    {
+        $date = new DateTime("first monday of may $this->year", new DateTimeZone($this->timezone));
+
+        $this->addHoliday(new Holiday('mayDay', ['en_AU' => 'May Day'], $date, $this->locale));
+    }
+
+    /**
+     * Picnic Day
+     *
+     * @link https://en.wikipedia.org/wiki/Picnic_Day_(Australian_holiday)
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Exception
+     */
+    private function calculatePicnicDay(): void
+    {
+        $this->calculateHoliday(
+            'picnicDay',
+            ['en_AU' => 'Picnic Day'],
+            new DateTime('first monday of august ' . $this->year, new DateTimeZone($this->timezone)),
             false,
             false
         );

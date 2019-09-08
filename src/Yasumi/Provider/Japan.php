@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * This file is part of the Yasumi package.
@@ -163,6 +163,7 @@ class Japan extends AbstractProvider
             ));
         }
     }
+
     /**
      * Children's Day. Children's Day is held on May 5th and established since 1948.
      *
@@ -225,11 +226,11 @@ class Japan extends AbstractProvider
     private function calculateEmperorsBirthday(): void
     {
         $emperorsBirthday = false;
-        if ($this->year >=2020) {
+        if ($this->year >= 2020) {
             $emperorsBirthday = "$this->year-2-23";
-        } elseif ($this->year >= 1989 && $this->year <2019) {
+        } elseif ($this->year >= 1989 && $this->year < 2019) {
             $emperorsBirthday = "$this->year-12-23";
-        } elseif ($this->year >= 1949 && $this->year <1988) {
+        } elseif ($this->year >= 1949 && $this->year < 1988) {
             $emperorsBirthday = "$this->year-4-29";
         }
 
@@ -238,42 +239,6 @@ class Japan extends AbstractProvider
                 'emperorsBirthday',
                 ['en_US' => 'Emperors Birthday', 'ja_JP' => '天皇誕生日'],
                 new DateTime($emperorsBirthday, new DateTimeZone($this->timezone)),
-                $this->locale
-            ));
-        }
-    }
-
-    /**
-     * Coronation Day. Coronation Day is The new Emperor Coronation.
-     * This holiday is only 2019.
-     *
-     * @throws \Exception
-     */
-    private function calculateCoronationDay(): void
-    {
-        if (2019 === $this->year) {
-            $this->addHoliday(new Holiday(
-                'coronationDay',
-                ['en_US' => 'Coronation Day', 'ja_JP' => '即位の日'],
-                new DateTime("$this->year-5-1", new DateTimeZone($this->timezone)),
-                $this->locale
-            ));
-        }
-    }
-
-    /**
-     * Enthronement Proclamation Ceremony. Enthronement Proclamation Ceremony is The New Emperor enthronement ceremony.
-     * This holiday only 2019.
-     *
-     * @throws \Exception
-     */
-    private function calculateEnthronementProclamationCeremony(): void
-    {
-        if (2019 === $this->year) {
-            $this->addHoliday(new Holiday(
-                'enthronementProclamationCeremony',
-                ['en_US' => 'Enthronement Proclamation Ceremony', 'ja_JP' => '即位礼正殿の儀'],
-                new DateTime("$this->year-10-22", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -495,9 +460,9 @@ class Japan extends AbstractProvider
             $date = new DateTime("$this->year-10-10", new DateTimeZone($this->timezone));
         }
 
-        $holiday_name =['en_US' => 'Health And Sports Day', 'ja_JP' => '体育の日'];
+        $holiday_name = ['en_US' => 'Health And Sports Day', 'ja_JP' => '体育の日'];
         if ($this->year >= 2020) {
-            $holiday_name =['en_US' => 'Sports Day', 'ja_JP' => 'スポーツの日'];
+            $holiday_name = ['en_US' => 'Sports Day', 'ja_JP' => 'スポーツの日'];
         }
 
         if ($date instanceof DateTimeInterface) {
@@ -596,6 +561,42 @@ class Japan extends AbstractProvider
     }
 
     /**
+     * Coronation Day. Coronation Day is The new Emperor Coronation.
+     * This holiday is only 2019.
+     *
+     * @throws \Exception
+     */
+    private function calculateCoronationDay(): void
+    {
+        if (2019 === $this->year) {
+            $this->addHoliday(new Holiday(
+                'coronationDay',
+                ['en_US' => 'Coronation Day', 'ja_JP' => '即位の日'],
+                new DateTime("$this->year-5-1", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        }
+    }
+
+    /**
+     * Enthronement Proclamation Ceremony. Enthronement Proclamation Ceremony is The New Emperor enthronement ceremony.
+     * This holiday only 2019.
+     *
+     * @throws \Exception
+     */
+    private function calculateEnthronementProclamationCeremony(): void
+    {
+        if (2019 === $this->year) {
+            $this->addHoliday(new Holiday(
+                'enthronementProclamationCeremony',
+                ['en_US' => 'Enthronement Proclamation Ceremony', 'ja_JP' => '即位礼正殿の儀'],
+                new DateTime("$this->year-10-22", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        }
+    }
+
+    /**
      * Calculate public bridge holidays.
      *
      * Any day that falls between two other national holidays also becomes a holiday, known as a bridge holiday.
@@ -610,7 +611,7 @@ class Japan extends AbstractProvider
         // Get initial list of holidays and iterator
         $datesIterator = $this->getIterator();
 
-        $counter=1;
+        $counter = 1;
         // Loop through all defined holidays
         while ($datesIterator->valid()) {
             $previous = $datesIterator->current();
@@ -626,7 +627,7 @@ class Japan extends AbstractProvider
                 $bridgeDate = clone $previous;
                 $bridgeDate->add(new DateInterval('P1D'));
 
-                $this->addHoliday(new Holiday('bridgeDay'.$counter, [
+                $this->addHoliday(new Holiday('bridgeDay' . $counter, [
                     'en_US' => 'Bridge Public holiday',
                     'ja_JP' => '国民の休日'
                 ], $bridgeDate, $this->locale));

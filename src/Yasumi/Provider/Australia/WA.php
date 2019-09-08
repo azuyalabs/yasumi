@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -49,37 +49,6 @@ class WA extends Australia
     }
 
     /**
-     * Labour Day
-     *
-     * @throws \Exception
-     */
-    private function calculateLabourDay(): void
-    {
-        $date = new DateTime("first monday of march $this->year", new DateTimeZone($this->timezone));
-
-        $this->addHoliday(new Holiday('labourDay', [], $date, $this->locale));
-    }
-
-    /**
-     * Western Australia Day
-     *
-     * @link https://en.wikipedia.org/wiki/Western_Australia_Day
-     *
-     * @throws \InvalidArgumentException
-     * @throws \Exception
-     */
-    private function calculateWesternAustraliaDay(): void
-    {
-        $this->calculateHoliday(
-            'westernAustraliaDay',
-            ['en_AU' => 'Western Australia Day'],
-            new DateTime('first monday of june ' . $this->year, new DateTimeZone($this->timezone)),
-            false,
-            false
-        );
-    }
-    
-    /**
      * Queens Birthday.
      *
      * The Queen's Birthday is an Australian public holiday but the date varies across
@@ -121,5 +90,36 @@ class WA extends Australia
                 false
             );
         }
+    }
+
+    /**
+     * Labour Day
+     *
+     * @throws \Exception
+     */
+    private function calculateLabourDay(): void
+    {
+        $date = new DateTime("first monday of march $this->year", new DateTimeZone($this->timezone));
+
+        $this->addHoliday(new Holiday('labourDay', [], $date, $this->locale));
+    }
+
+    /**
+     * Western Australia Day
+     *
+     * @link https://en.wikipedia.org/wiki/Western_Australia_Day
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Exception
+     */
+    private function calculateWesternAustraliaDay(): void
+    {
+        $this->calculateHoliday(
+            'westernAustraliaDay',
+            ['en_AU' => 'Western Australia Day'],
+            new DateTime('first monday of june ' . $this->year, new DateTimeZone($this->timezone)),
+            false,
+            false
+        );
     }
 }

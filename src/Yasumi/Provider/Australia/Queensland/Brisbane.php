@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -47,7 +47,7 @@ class Brisbane extends Queensland
 
         $this->calculatePeoplesDay();
     }
-    
+
     /**
      * Ekka People's Day.
      *

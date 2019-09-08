@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -271,13 +271,13 @@ class UnitedKingdom extends AbstractProvider
     private function calculateChristmasHolidays(): void
     {
         $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->timezone));
-        $boxingDay    = new DateTime("$this->year-12-26", new DateTimeZone($this->timezone));
+        $boxingDay = new DateTime("$this->year-12-26", new DateTimeZone($this->timezone));
 
         $this->addHoliday(new Holiday('christmasDay', [], $christmasDay, $this->locale));
         $this->addHoliday(new Holiday('secondChristmasDay', [], $boxingDay, $this->locale, Holiday::TYPE_BANK));
 
         $substituteChristmasDay = clone $christmasDay;
-        $substituteBoxingDay    = clone $boxingDay;
+        $substituteBoxingDay = clone $boxingDay;
 
         if (\in_array((int)$christmasDay->format('w'), [0, 6], true)) {
             $substituteChristmasDay->add(new DateInterval('P2D'));

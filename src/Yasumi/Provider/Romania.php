@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -247,7 +247,7 @@ class Romania extends AbstractProvider
     }
 
     /**
-     * @param int    $year
+     * @param int $year
      * @param string $timezone
      *
      * @return DateTime

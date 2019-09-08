@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * This file is part of the Yasumi package.
@@ -49,8 +49,8 @@ class BetweenFilter extends FilterIterator implements Countable
      *
      * @param Iterator $iterator Iterator object of the Holidays Provider
      * @param \DateTimeInterface $start_date Start date of the time frame to check against
-     * @param \DateTimeInterface $end_date   End date of the time frame to check against
-     * @param  bool              $equal      Indicate whether the start and end dates should be included in the
+     * @param \DateTimeInterface $end_date End date of the time frame to check against
+     * @param bool $equal Indicate whether the start and end dates should be included in the
      *                                       comparison
      */
     public function __construct(
@@ -60,9 +60,9 @@ class BetweenFilter extends FilterIterator implements Countable
         $equal = true
     ) {
         parent::__construct($iterator);
-        $this->equal      = $equal;
+        $this->equal = $equal;
         $this->start_date = $start_date->format('Y-m-d');
-        $this->end_date   = $end_date->format('Y-m-d');
+        $this->end_date = $end_date->format('Y-m-d');
     }
 
     /**

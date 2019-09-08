@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -79,6 +79,34 @@ class USA extends AbstractProvider
             $this->addHoliday(new Holiday('martinLutherKingDay', [
                 'en_US' => 'Dr. Martin Luther King Jr\'s Birthday'
             ], new DateTime("third monday of january $this->year", new DateTimeZone($this->timezone)), $this->locale));
+        }
+    }
+
+    /**
+     * Washington's Birthday.
+     *
+     * Washington's Birthday is a United States federal holiday celebrated on the third Monday of February in honor
+     * of George Washington, the first President of the United States. Colloquially, it is widely known as
+     * Presidents Day and is often an occasion to remember all the presidents.
+     *
+     * Washington's Birthday was first declared a federal holiday by an 1879 act of Congress. The Uniform Holidays
+     * Act, 1968 shifted the date of the commemoration of Washington's Birthday from February 22 to the third Monday
+     * in February.
+     *
+     * @link http://en.wikipedia.org/wiki/Washington%27s_Birthday
+     *
+     * @throws \Exception
+     */
+    private function calculateWashingtonsBirthday(): void
+    {
+        if ($this->year >= 1879) {
+            $date = new DateTime("$this->year-2-22", new DateTimeZone($this->timezone));
+            if ($this->year >= 1968) {
+                $date = new DateTime("third monday of february $this->year", new DateTimeZone($this->timezone));
+            }
+            $this->addHoliday(new Holiday('washingtonsBirthday', [
+                'en_US' => 'Washington\'s Birthday'
+            ], $date, $this->locale));
         }
     }
 
@@ -227,34 +255,6 @@ class USA extends AbstractProvider
     }
 
     /**
-     * Washington's Birthday.
-     *
-     * Washington's Birthday is a United States federal holiday celebrated on the third Monday of February in honor
-     * of George Washington, the first President of the United States. Colloquially, it is widely known as
-     * Presidents Day and is often an occasion to remember all the presidents.
-     *
-     * Washington's Birthday was first declared a federal holiday by an 1879 act of Congress. The Uniform Holidays
-     * Act, 1968 shifted the date of the commemoration of Washington's Birthday from February 22 to the third Monday
-     * in February.
-     *
-     * @link http://en.wikipedia.org/wiki/Washington%27s_Birthday
-     *
-     * @throws \Exception
-     */
-    private function calculateWashingtonsBirthday(): void
-    {
-        if ($this->year >= 1879) {
-            $date = new DateTime("$this->year-2-22", new DateTimeZone($this->timezone));
-            if ($this->year >= 1968) {
-                $date = new DateTime("third monday of february $this->year", new DateTimeZone($this->timezone));
-            }
-            $this->addHoliday(new Holiday('washingtonsBirthday', [
-                'en_US' => 'Washington\'s Birthday'
-            ], $date, $this->locale));
-        }
-    }
-
-    /**
      * Calculate substitute holidays.
      *
      * When New Year's Day, Independence Day, or Christmas Day falls on a Saturday, the previous day is also a holiday.
@@ -267,7 +267,7 @@ class USA extends AbstractProvider
      */
     private function calculateSubstituteHolidays(): void
     {
-        $datesIterator     = $this->getIterator();
+        $datesIterator = $this->getIterator();
         $substituteHoliday = null;
 
         // Loop through all defined holidays

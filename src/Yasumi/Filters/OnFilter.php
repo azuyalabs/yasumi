@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * This file is part of the Yasumi package.
@@ -46,7 +46,7 @@ class OnFilter extends FilterIterator implements Countable
         \DateTimeInterface $date
     ) {
         parent::__construct($iterator);
-        $this->date      = $date->format('Y-m-d');
+        $this->date = $date->format('Y-m-d');
     }
 
     /**

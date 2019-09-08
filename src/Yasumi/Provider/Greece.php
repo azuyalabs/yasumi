@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -119,7 +119,7 @@ class Greece extends AbstractProvider
     /**
      * Orthodox Easter
      *
-     * @param int    $year
+     * @param int $year
      * @param string $timezone
      *
      * @return DateTime

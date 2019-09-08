@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -59,7 +59,7 @@ class Tasmania extends Australia
 
         $this->addHoliday(new Holiday('eightHourDay', ['en_AU' => 'Eight Hour Day'], $date, $this->locale));
     }
-    
+
     /**
      * Queens Birthday.
      *
@@ -85,7 +85,7 @@ class Tasmania extends Australia
             false
         );
     }
-    
+
     /**
      * Recreation Day
      *

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -85,21 +85,14 @@ class Finland extends AbstractProvider
      */
     private function calculateStJohnsDay(): void
     {
-        if ($this->year < 1955) {
-            $this->addHoliday(new Holiday(
-                'stJohnsDay',
-                [],
-                new DateTime("$this->year-6-24", new DateTimeZone($this->timezone)),
-                $this->locale
-            ));
-        } else {
-            $this->addHoliday(new Holiday(
-                'stJohnsDay',
-                [],
-                new DateTime("$this->year-6-20 this saturday", new DateTimeZone($this->timezone)),
-                $this->locale
-            ));
-        }
+        $stJohnsDay = ($this->year < 1955) ? "$this->year-6-24" : "$this->year-6-20 this saturday";
+
+        $this->addHoliday(new Holiday(
+            'stJohnsDay',
+            [],
+            new DateTime($stJohnsDay, new DateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /**

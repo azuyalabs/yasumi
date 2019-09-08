@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -53,49 +53,35 @@ class ACT extends Australia
     }
 
     /**
-     * Canberra Day
+     * Easter Sunday.
      *
+     * Easter is a festival and holiday celebrating the resurrection of Jesus Christ from the dead. Easter is celebrated
+     * on a date based on a certain number of days after March 21st. The date of Easter Day was defined by the Council
+     * of Nicaea in AD325 as the Sunday after the first full moon which falls on or after the Spring Equinox.
+     *
+     * @link http://en.wikipedia.org/wiki/Easter
+     *
+     * @param int $year the year for which Easter Saturday need to be created
+     * @param string $timezone the timezone in which Easter Saturday is celebrated
+     * @param string $locale the locale for which Easter Saturday need to be displayed in.
+     * @param string $type The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
+     *
+     * @return Holiday
+     *
+     * @throws UnknownLocaleException
+     * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function calculateCanberraDay(): void
+    private function easterSunday($year, $timezone, $locale, $type = null): Holiday
     {
-        if ($this->year < 2007) {
-            $date = new DateTime("third monday of march $this->year", new DateTimeZone($this->timezone));
-        } else {
-            $date = new DateTime("second monday of march $this->year", new DateTimeZone($this->timezone));
-        }
-        $this->addHoliday(new Holiday('canberraDay', ['en_AU' => 'Canberra Day'], $date, $this->locale));
-    }
-
-    /**
-     * Reconciliation Day
-     *
-     * @throws \Exception
-     */
-    private function calculateReconciliationDay(): void
-    {
-        if ($this->year < 2018) {
-            return;
-        }
-
-        $date = new DateTime($this->year . '-05-27', new DateTimeZone($this->timezone));
-        $day  = (int)$date->format('w');
-        if (1 !== $day) {
-            $date = $date->add(0 === $day ? new DateInterval('P1D') : new DateInterval('P' . (8 - $day) . 'D'));
-        }
-        $this->addHoliday(new Holiday('reconciliationDay', ['en_AU' => 'Reconciliation Day'], $date, $this->locale));
-    }
-
-    /**
-     * Labour Day
-     *
-     * @throws \Exception
-     */
-    private function calculateLabourDay(): void
-    {
-        $date = new DateTime("first monday of october $this->year", new DateTimeZone($this->timezone));
-
-        $this->addHoliday(new Holiday('labourDay', ['en_AU' => 'Labour Day'], $date, $this->locale));
+        return new Holiday(
+            'easter',
+            ['en_AU' => 'Easter Sunday'],
+            $this->calculateEaster($year, $timezone),
+            $locale,
+            $type ?? Holiday::TYPE_OFFICIAL
+        );
     }
 
     /**
@@ -107,10 +93,10 @@ class ACT extends Australia
      *
      * @link http://en.wikipedia.org/wiki/Easter
      *
-     * @param int    $year     the year for which Easter Saturday need to be created
+     * @param int $year the year for which Easter Saturday need to be created
      * @param string $timezone the timezone in which Easter Saturday is celebrated
-     * @param string $locale   the locale for which Easter Saturday need to be displayed in.
-     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     * @param string $locale the locale for which Easter Saturday need to be displayed in.
+     * @param string $type The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
      * @return Holiday
@@ -119,46 +105,14 @@ class ACT extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function easterSaturday($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
+    private function easterSaturday($year, $timezone, $locale, $type = null): Holiday
     {
         return new Holiday(
             'easterSaturday',
             ['en_AU' => 'Easter Saturday'],
             $this->calculateEaster($year, $timezone)->sub(new DateInterval('P1D')),
             $locale,
-            $type
-        );
-    }
-
-    /**
-     * Easter Sunday.
-     *
-     * Easter is a festival and holiday celebrating the resurrection of Jesus Christ from the dead. Easter is celebrated
-     * on a date based on a certain number of days after March 21st. The date of Easter Day was defined by the Council
-     * of Nicaea in AD325 as the Sunday after the first full moon which falls on or after the Spring Equinox.
-     *
-     * @link http://en.wikipedia.org/wiki/Easter
-     *
-     * @param int    $year     the year for which Easter Saturday need to be created
-     * @param string $timezone the timezone in which Easter Saturday is celebrated
-     * @param string $locale   the locale for which Easter Saturday need to be displayed in.
-     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
-     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
-     *
-     * @return Holiday
-     *
-     * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
-     * @throws \Exception
-     */
-    private function easterSunday($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
-    {
-        return new Holiday(
-            'easter',
-            ['en_AU' => 'Easter Sunday'],
-            $this->calculateEaster($year, $timezone),
-            $locale,
-            $type
+            $type ?? Holiday::TYPE_OFFICIAL
         );
     }
 
@@ -186,5 +140,51 @@ class ACT extends Australia
             false,
             false
         );
+    }
+
+    /**
+     * Labour Day
+     *
+     * @throws \Exception
+     */
+    private function calculateLabourDay(): void
+    {
+        $date = new DateTime("first monday of october $this->year", new DateTimeZone($this->timezone));
+
+        $this->addHoliday(new Holiday('labourDay', ['en_AU' => 'Labour Day'], $date, $this->locale));
+    }
+
+    /**
+     * Canberra Day
+     *
+     * @throws \Exception
+     */
+    private function calculateCanberraDay(): void
+    {
+        if ($this->year < 2007) {
+            $date = new DateTime("third monday of march $this->year", new DateTimeZone($this->timezone));
+        } else {
+            $date = new DateTime("second monday of march $this->year", new DateTimeZone($this->timezone));
+        }
+        $this->addHoliday(new Holiday('canberraDay', ['en_AU' => 'Canberra Day'], $date, $this->locale));
+    }
+
+    /**
+     * Reconciliation Day
+     *
+     * @throws \Exception
+     */
+    private function calculateReconciliationDay(): void
+    {
+        if ($this->year < 2018) {
+            return;
+        }
+
+        $date = new DateTime($this->year . '-05-27', new DateTimeZone($this->timezone));
+        $day = (int)$date->format('w');
+        if (1 !== $day) {
+            $date = $date->add(0 === $day ? new DateInterval('P1D') : new DateInterval('P' . (8 - $day) . 'D'));
+        }
+        $this->addHoliday(new Holiday('reconciliationDay', ['en_AU' => 'Reconciliation Day'], $date, $this->locale));
     }
 }

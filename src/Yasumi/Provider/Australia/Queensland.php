@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -48,22 +48,6 @@ class Queensland extends Australia
     }
 
     /**
-     * Labour Day
-     *
-     * @throws \Exception
-     */
-    private function calculateLabourDay(): void
-    {
-        if (2013 === $this->year || 2014 === $this->year || 2015 === $this->year) {
-            $date = new DateTime("first monday of october $this->year", new DateTimeZone($this->timezone));
-        } else {
-            $date = new DateTime("first monday of may $this->year", new DateTimeZone($this->timezone));
-        }
-        
-        $this->addHoliday(new Holiday('labourDay', [], $date, $this->locale));
-    }
-
-    /**
      * Queens Birthday.
      *
      * The Queen's Birthday is an Australian public holiday but the date varies across
@@ -97,5 +81,21 @@ class Queensland extends Australia
                 false
             );
         }
+    }
+
+    /**
+     * Labour Day
+     *
+     * @throws \Exception
+     */
+    private function calculateLabourDay(): void
+    {
+        if (2013 === $this->year || 2014 === $this->year || 2015 === $this->year) {
+            $date = new DateTime("first monday of october $this->year", new DateTimeZone($this->timezone));
+        } else {
+            $date = new DateTime("first monday of may $this->year", new DateTimeZone($this->timezone));
+        }
+
+        $this->addHoliday(new Holiday('labourDay', [], $date, $this->locale));
     }
 }
