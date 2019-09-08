@@ -150,7 +150,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     public function addHoliday(Holiday $holiday)
     {
-        if ($this->globalTranslations !== null) {
+        if ($this->globalTranslations instanceof TranslationsInterface) {
             $holiday->mergeGlobalTranslations($this->globalTranslations);
         }
 

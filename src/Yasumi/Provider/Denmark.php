@@ -65,11 +65,11 @@ class Denmark extends AbstractProvider
         $this->calculateConstitutionDay();
 
         $summerTime = $this->summerTime($this->year, $this->timezone, $this->locale);
-        if ($summerTime !== null) {
+        if ($summerTime instanceof Holiday) {
             $this->addHoliday($summerTime);
         }
         $winterTime = $this->winterTime($this->year, $this->timezone, $this->locale);
-        if ($winterTime !== null) {
+        if ($winterTime instanceof Holiday) {
             $this->addHoliday($winterTime);
         }
     }

@@ -285,7 +285,7 @@ class USA extends AbstractProvider
             }
 
             // Add substitute holiday
-            if (null !== $substituteHoliday) {
+            if ($substituteHoliday instanceof \DateTimeInterface) {
                 $this->addHoliday(new Holiday('substituteHoliday:' . $substituteHoliday->shortName, [
                     'en_US' => $substituteHoliday->getName() . ' observed',
                 ], $substituteHoliday, $this->locale));

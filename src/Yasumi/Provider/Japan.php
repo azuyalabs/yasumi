@@ -15,6 +15,7 @@ namespace Yasumi\Provider;
 
 use DateInterval;
 use DateTime;
+use DateTimeInterface;
 use DateTimeZone;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
@@ -231,8 +232,8 @@ class Japan extends AbstractProvider
         } elseif ($this->year >= 1949 && $this->year <1988) {
             $emperorsBirthday = "$this->year-4-29";
         }
-        
-        if ($emperorsBirthday) {
+
+        if (\is_string($emperorsBirthday)) {
             $this->addHoliday(new Holiday(
                 'emperorsBirthday',
                 ['en_US' => 'Emperors Birthday', 'ja_JP' => '天皇誕生日'],
@@ -336,7 +337,7 @@ class Japan extends AbstractProvider
             $date = new DateTime("$this->year-1-15", new DateTimeZone($this->timezone));
         }
 
-        if ($date instanceof DateTime) {
+        if ($date instanceof DateTimeInterface) {
             $this->addHoliday(new Holiday(
                 'comingOfAgeDay',
                 ['en_US' => 'Coming of Age Day', 'ja_JP' => '成人の日'],
@@ -366,7 +367,7 @@ class Japan extends AbstractProvider
             $date = new DateTime("$this->year-4-29", new DateTimeZone($this->timezone));
         }
 
-        if ($date instanceof DateTime) {
+        if ($date instanceof DateTimeInterface) {
             $this->addHoliday(new Holiday(
                 'greeneryDay',
                 ['en_US' => 'Greenery Day', 'ja_JP' => 'みどりの日'],
@@ -400,7 +401,7 @@ class Japan extends AbstractProvider
             $date = new DateTime("$this->year-7-20", new DateTimeZone($this->timezone));
         }
 
-        if ($date instanceof DateTime) {
+        if ($date instanceof DateTimeInterface) {
             $this->addHoliday(new Holiday(
                 'marineDay',
                 ['en_US' => 'Marine Day', 'ja_JP' => '海の日'],
@@ -429,7 +430,7 @@ class Japan extends AbstractProvider
             $date = new DateTime("$this->year-8-11", new DateTimeZone($this->timezone));
         }
 
-        if ($date instanceof DateTime) {
+        if ($date instanceof DateTimeInterface) {
             $this->addHoliday(new Holiday(
                 'mountainDay',
                 ['en_US' => 'Mountain Day', 'ja_JP' => '山の日'],
@@ -460,7 +461,7 @@ class Japan extends AbstractProvider
             $date = new DateTime("$this->year-9-15", new DateTimeZone($this->timezone));
         }
 
-        if ($date instanceof DateTime) {
+        if ($date instanceof DateTimeInterface) {
             $this->addHoliday(new Holiday(
                 'respectfortheAgedDay',
                 ['en_US' => 'Respect for the Aged Day', 'ja_JP' => '敬老の日'],
@@ -499,7 +500,7 @@ class Japan extends AbstractProvider
             $holiday_name =['en_US' => 'Sports Day', 'ja_JP' => 'スポーツの日'];
         }
 
-        if ($date instanceof DateTime) {
+        if ($date instanceof DateTimeInterface) {
             $this->addHoliday(new Holiday(
                 'sportsDay',
                 $holiday_name,

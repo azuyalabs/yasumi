@@ -251,7 +251,7 @@ class Netherlands extends AbstractProvider
     private function calculateSummerTime(): void
     {
         $summerTime = $this->summerTime($this->year, $this->timezone, $this->locale);
-        if ($summerTime !== null) {
+        if ($summerTime instanceof Holiday) {
             $this->addHoliday($summerTime);
         }
     }
@@ -268,7 +268,7 @@ class Netherlands extends AbstractProvider
     private function calculateWinterTime(): void
     {
         $winterTime = $this->winterTime($this->year, $this->timezone, $this->locale);
-        if ($winterTime !== null) {
+        if ($winterTime instanceof Holiday) {
             $this->addHoliday($winterTime);
         }
     }
