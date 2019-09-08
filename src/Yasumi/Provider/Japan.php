@@ -95,7 +95,7 @@ class Japan extends AbstractProvider
         $this->calculateChildrensDay();
         $this->calculateCultureDay();
         $this->calculateLaborThanksgivingDay();
-        $this->calculateEmporersBirthday();
+        $this->calculateEmperorsBirthday();
         $this->calculateVernalEquinoxDay();
         $this->calculateComingOfAgeDay();
         $this->calculateGreeneryDay();
@@ -219,22 +219,22 @@ class Japan extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateEmporersBirthday(): void
+    private function calculateEmperorsBirthday(): void
     {
-        $emporersBirthday = false;
+        $emperorsBirthday = false;
         if ($this->year >=2020) {
-            $emporersBirthday = "$this->year-2-23";
+            $emperorsBirthday = "$this->year-2-23";
         } elseif ($this->year >= 1989 && $this->year <2019) {
-            $emporersBirthday = "$this->year-12-23";
+            $emperorsBirthday = "$this->year-12-23";
         } elseif ($this->year >= 1949 && $this->year <1988) {
-            $emporersBirthday = "$this->year-4-29";
+            $emperorsBirthday = "$this->year-4-29";
         }
         
-        if ($emporersBirthday) {
+        if ($emperorsBirthday) {
             $this->addHoliday(new Holiday(
                 'emperorsBirthday',
                 ['en_US' => 'Emperors Birthday', 'ja_JP' => '天皇誕生日'],
-                new DateTime($emporersBirthday, new DateTimeZone($this->timezone)),
+                new DateTime($emperorsBirthday, new DateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -303,7 +303,7 @@ class Japan extends AbstractProvider
             $day = \floor(self::VERNAL_EQUINOX_PARAM_2150 + self::EQUINOX_GRADIENT * ($this->year - 1980) - \floor(($this->year - 1980) / 4));
         }
 
-        if (null !== $day) {
+        if (\is_numeric($day)) {
             $this->addHoliday(new Holiday(
                 'vernalEquinoxDay',
                 ['en_US' => 'Vernal Equinox Day', 'ja_JP' => '春分の日'],
@@ -334,7 +334,7 @@ class Japan extends AbstractProvider
             $date = new DateTime("$this->year-1-15", new DateTimeZone($this->timezone));
         }
 
-        if (null !== $date) {
+        if ($date instanceof DateTime) {
             $this->addHoliday(new Holiday(
                 'comingOfAgeDay',
                 ['en_US' => 'Coming of Age Day', 'ja_JP' => '成人の日'],
@@ -364,7 +364,7 @@ class Japan extends AbstractProvider
             $date = new DateTime("$this->year-4-29", new DateTimeZone($this->timezone));
         }
 
-        if (null !== $date) {
+        if ($date instanceof DateTime) {
             $this->addHoliday(new Holiday(
                 'greeneryDay',
                 ['en_US' => 'Greenery Day', 'ja_JP' => 'みどりの日'],
@@ -390,7 +390,7 @@ class Japan extends AbstractProvider
     private function calculateMarineDay(): void
     {
         $date = null;
-        if ($this->year === 2020) {
+        if (2020 === $this->year) {
             $date = new DateTime("$this->year-7-23", new DateTimeZone($this->timezone));
         } elseif ($this->year >= 2003) {
             $date = new DateTime("third monday of july $this->year", new DateTimeZone($this->timezone));
@@ -398,7 +398,7 @@ class Japan extends AbstractProvider
             $date = new DateTime("$this->year-7-20", new DateTimeZone($this->timezone));
         }
 
-        if (null !== $date) {
+        if ($date instanceof DateTime) {
             $this->addHoliday(new Holiday(
                 'marineDay',
                 ['en_US' => 'Marine Day', 'ja_JP' => '海の日'],
@@ -421,13 +421,13 @@ class Japan extends AbstractProvider
     private function calculateMountainDay(): void
     {
         $date = null;
-        if ($this->year === 2020) {
+        if (2020 === $this->year) {
             $date = new DateTime("$this->year-8-10", new DateTimeZone($this->timezone));
         } elseif ($this->year >= 2016) {
             $date = new DateTime("$this->year-8-11", new DateTimeZone($this->timezone));
         }
 
-        if (null !== $date) {
+        if ($date instanceof DateTime) {
             $this->addHoliday(new Holiday(
                 'mountainDay',
                 ['en_US' => 'Mountain Day', 'ja_JP' => '山の日'],
@@ -458,7 +458,7 @@ class Japan extends AbstractProvider
             $date = new DateTime("$this->year-9-15", new DateTimeZone($this->timezone));
         }
 
-        if (null !== $date) {
+        if ($date instanceof DateTime) {
             $this->addHoliday(new Holiday(
                 'respectfortheAgedDay',
                 ['en_US' => 'Respect for the Aged Day', 'ja_JP' => '敬老の日'],
@@ -484,7 +484,7 @@ class Japan extends AbstractProvider
     private function calculateSportsDay(): void
     {
         $date = null;
-        if ($this->year === 2020) {
+        if (2020 === $this->year) {
             $date = new DateTime("$this->year-7-24", new DateTimeZone($this->timezone));
         } elseif ($this->year >= 2000) {
             $date = new DateTime("second monday of october $this->year", new DateTimeZone($this->timezone));
@@ -497,7 +497,7 @@ class Japan extends AbstractProvider
             $holiday_name =['en_US' => 'Sports Day', 'ja_JP' => 'スポーツの日'];
         }
 
-        if (null !== $date) {
+        if ($date instanceof DateTime) {
             $this->addHoliday(new Holiday(
                 'sportsDay',
                 $holiday_name,
@@ -534,7 +534,7 @@ class Japan extends AbstractProvider
             $day = \floor(self::AUTUMNAL_EQUINOX_PARAM_2150 + self::EQUINOX_GRADIENT * ($this->year - 1980) - \floor(($this->year - 1980) / 4));
         }
 
-        if (null !== $day) {
+        if (\is_numeric($day)) {
             $this->addHoliday(new Holiday(
                 'autumnalEquinoxDay',
                 ['en_US' => 'Autumnal Equinox Day', 'ja_JP' => '秋分の日'],
