@@ -254,7 +254,7 @@ class Netherlands extends AbstractProvider
 
             // Determine substitution day
             if (0 === (int)$date->format('w')) {
-                ($this->year < 1980) ? $date->add(new DateInterval('P1D')) : $date->sub(new DateInterval('P1D'));
+                $this->year < 1980 ? $date->add(new DateInterval('P1D')) : $date->sub(new DateInterval('P1D'));
             }
 
             $this->addHoliday(new Holiday(

@@ -216,7 +216,7 @@ class NewZealand extends AbstractProvider
         }
 
         $date = new DateTime(
-            (($this->year < 1910) ? 'second wednesday of october' : 'fourth monday of october') . " $this->year",
+            ($this->year < 1910 ? 'second wednesday of october' : 'fourth monday of october') . " $this->year",
             new DateTimeZone($this->timezone)
         );
 

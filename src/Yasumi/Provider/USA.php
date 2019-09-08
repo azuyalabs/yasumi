@@ -220,7 +220,7 @@ class USA extends AbstractProvider
     private function calculateVeteransDay(): void
     {
         if ($this->year >= 1919) {
-            $name = ($this->year < 1954) ? 'Armistice Day' : 'Veterans Day';
+            $name = $this->year < 1954 ? 'Armistice Day' : 'Veterans Day';
 
             $this->addHoliday(new Holiday('veteransDay', [
                 'en_US' => $name
