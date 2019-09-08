@@ -14,6 +14,7 @@ namespace Yasumi\Provider\Australia\Tasmania;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Provider\Australia\Tasmania;
 
 /**
@@ -33,7 +34,7 @@ class KingIsland extends Tasmania
      * Initialize holidays for King Island (Australia).
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void

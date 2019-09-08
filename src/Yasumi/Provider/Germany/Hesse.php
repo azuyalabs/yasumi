@@ -12,6 +12,8 @@
 
 namespace Yasumi\Provider\Germany;
 
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Provider\Germany;
 
 /**
@@ -36,9 +38,9 @@ class Hesse extends Germany
     /**
      * Initialize holidays for Hesse (Germany).
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void

@@ -14,6 +14,8 @@ namespace Yasumi\Provider\Switzerland;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\Switzerland;
@@ -36,9 +38,9 @@ class Glarus extends Switzerland
     /**
      * Initialize holidays for Glarus (Switzerland).
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -67,9 +69,9 @@ class Glarus extends Switzerland
      *
      * @link https://en.wikipedia.org/wiki/Battle_of_N%C3%A4fels
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateNafelserFahrt(): void

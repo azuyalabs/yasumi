@@ -15,6 +15,8 @@ namespace Yasumi\Provider;
 use DateInterval;
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
 /**
@@ -36,7 +38,7 @@ class Australia extends AbstractProvider
      * Initialize holidays for Australia.
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -67,7 +69,7 @@ class Australia extends AbstractProvider
      * @link https://www.timeanddate.com/holidays/australia/australia-day
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateAustraliaDay(): void
@@ -87,9 +89,9 @@ class Australia extends AbstractProvider
      * @param bool      $moveFromSunday
      * @param string    $type
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function calculateHoliday(
@@ -119,7 +121,7 @@ class Australia extends AbstractProvider
      * @link https://www.timeanddate.com/holidays/australia/new-year-day
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateNewYearHolidays(): void
@@ -151,7 +153,7 @@ class Australia extends AbstractProvider
      * @link https://www.timeanddate.com/holidays/australia/anzac-day
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateAnzacDay(): void
@@ -184,7 +186,7 @@ class Australia extends AbstractProvider
      * @link https://www.timeanddate.com/holidays/australia/christmas-day-holiday
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateChristmasDay(): void

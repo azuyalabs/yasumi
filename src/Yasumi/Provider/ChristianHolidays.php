@@ -15,6 +15,8 @@ namespace Yasumi\Provider;
 use DateInterval;
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
 /**
@@ -40,10 +42,10 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return \Yasumi\Holiday
+     * @return Holiday
      *
-     * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -67,10 +69,10 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return \Yasumi\Holiday
+     * @return Holiday
      *
-     * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -104,10 +106,10 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return \Yasumi\Holiday
+     * @return Holiday
      *
-     * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -138,10 +140,10 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return \Yasumi\Holiday
+     * @return Holiday
      *
-     * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -172,10 +174,10 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return \Yasumi\Holiday
+     * @return Holiday
      *
-     * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -209,10 +211,10 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a type of 'other' is considered.
      *
-     * @return \Yasumi\Holiday
+     * @return Holiday
      *
-     * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -247,10 +249,10 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default observance is considered.
      *
-     * @return \Yasumi\Holiday
+     * @return Holiday
      *
-     * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -282,10 +284,10 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return \Yasumi\Holiday
+     * @return Holiday
      *
-     * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -317,10 +319,10 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return \Yasumi\Holiday
+     * @return Holiday
      *
-     * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -355,10 +357,10 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return \Yasumi\Holiday
+     * @return Holiday
      *
-     * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -386,10 +388,10 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return \Yasumi\Holiday
+     * @return Holiday
      *
-     * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -421,10 +423,10 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return \Yasumi\Holiday
+     * @return Holiday
      *
-     * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -460,10 +462,10 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return \Yasumi\Holiday
+     * @return Holiday
      *
-     * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -491,10 +493,10 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return \Yasumi\Holiday
+     * @return Holiday
      *
-     * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -529,10 +531,10 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return \Yasumi\Holiday
+     * @return Holiday
      *
-     * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -568,10 +570,10 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return \Yasumi\Holiday
+     * @return Holiday
      *
-     * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -607,10 +609,10 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return \Yasumi\Holiday
+     * @return Holiday
      *
-     * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -639,10 +641,10 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return \Yasumi\Holiday
+     * @return Holiday
      *
-     * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -677,10 +679,10 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return \Yasumi\Holiday
+     * @return Holiday
      *
-     * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -710,10 +712,10 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return \Yasumi\Holiday
+     * @return Holiday
      *
-     * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -743,10 +745,10 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return \Yasumi\Holiday
+     * @return Holiday
      *
-     * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -771,13 +773,13 @@ trait ChristianHolidays
      * @param int    $year     the year for which Easter needs to be calculated
      * @param string $timezone the timezone in which Easter is celebrated
      *
-     * @return \DateTime date of Orthodox Easter
+     * @return DateTime date of Orthodox Easter
      *
-     * @link http://php.net/manual/en/function.easter-date.php#83794
-     * @link https://en.wikipedia.org/wiki/Computus#Adaptation_for_Western_Easter_of_Meeus.27_Julian_algorithm
      * @throws \Exception
+     * @link https://en.wikipedia.org/wiki/Computus#Adaptation_for_Western_Easter_of_Meeus.27_Julian_algorithm
+     * @link http://php.net/manual/en/function.easter-date.php#83794
      */
-    public function calculateOrthodoxEaster(int $year, string $timezone): \DateTime
+    public function calculateOrthodoxEaster(int $year, string $timezone): DateTime
     {
         $a     = $year % 4;
         $b     = $year % 7;
@@ -811,10 +813,10 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return \Yasumi\Holiday
+     * @return Holiday
      *
-     * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -845,17 +847,17 @@ trait ChristianHolidays
      *
      * Note: In calendrical calculations, frequently operations called integer division are used.
      *
+     * @param int $year the year for which Easter needs to be calculated
+     * @param string $timezone the timezone in which Easter is celebrated
+     *
+     * @return DateTime date of Easter
+     * @throws \Exception
      * @see  easter_days
      *
      * @link https://github.com/php/php-src/blob/c8aa6f3a9a3d2c114d0c5e0c9fdd0a465dbb54a5/ext/calendar/easter.c
      * @link http://www.gmarts.org/index.php?go=415#EasterMallen
      * @link http://www.tondering.dk/claus/cal/easter.php
      *
-     * @param int    $year     the year for which Easter needs to be calculated
-     * @param string $timezone the timezone in which Easter is celebrated
-     *
-     * @return \DateTime date of Easter
-     * @throws \Exception
      */
     protected function calculateEaster(int $year, string $timezone): DateTime
     {

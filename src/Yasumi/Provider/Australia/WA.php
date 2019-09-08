@@ -14,6 +14,7 @@ namespace Yasumi\Provider\Australia;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia;
 
@@ -35,7 +36,7 @@ class WA extends Australia
      * Initialize holidays for Western Australia (Australia).
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void

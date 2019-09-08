@@ -16,6 +16,8 @@ namespace Yasumi\Provider;
 use DateInterval;
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
 /**
@@ -74,9 +76,9 @@ class Japan extends AbstractProvider
     /**
      * Initialize holidays for Japan.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -285,9 +287,9 @@ class Japan extends AbstractProvider
      *
      * @link http://www.h3.dion.ne.jp/~sakatsu/holiday_topic.htm (in Japanese)
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateVernalEquinoxDay(): void
@@ -319,9 +321,9 @@ class Japan extends AbstractProvider
      * Coming of Age Day was established after 1948 on January 15th. After 2000 it was changed to be the second monday
      * of January.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      * @throws \Exception
      */
@@ -349,9 +351,9 @@ class Japan extends AbstractProvider
      *
      * Greenery Day was established from 1989 on April 29th. After 2007 it was changed to be May 4th.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      * @throws \Exception
      */
@@ -380,9 +382,9 @@ class Japan extends AbstractProvider
      * Marine Day was established since 1996 on July 20th. After 2003 it was changed to be the third monday of July.In
      * 2020 is July 23th.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      * @throws \Exception
      * @throws \Exception
@@ -414,7 +416,7 @@ class Japan extends AbstractProvider
      * Mountain Day. Mountain Day is held on August 11th and established since 2016.In 2020 is August 10th.
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      * @throws \Exception
      */
@@ -443,9 +445,9 @@ class Japan extends AbstractProvider
      * Respect for the Age Day was established since 1996 on September 15th. After 2003 it was changed to be the third
      * monday of September.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      * @throws \Exception
      */
@@ -474,9 +476,9 @@ class Japan extends AbstractProvider
      * Health And Sports Day was established since 1966 on October 10th. After 2000 it was changed to be the second
      * monday of October.In 2020 is July 24th.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      * @throws \Exception
      * @throws \Exception
@@ -516,9 +518,9 @@ class Japan extends AbstractProvider
      *
      * @link http://www.h3.dion.ne.jp/~sakatsu/holiday_topic.htm (in Japanese)
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateAutumnalEquinoxDay(): void
@@ -550,9 +552,9 @@ class Japan extends AbstractProvider
      * Generally if a national holiday falls on a Sunday, the holiday is observed the next working day (not being
      * another holiday).
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateSubstituteHolidays(): void
@@ -597,9 +599,9 @@ class Japan extends AbstractProvider
      *
      * Any day that falls between two other national holidays also becomes a holiday, known as a bridge holiday.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateBridgeHolidays(): void

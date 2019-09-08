@@ -18,6 +18,7 @@ use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use ReflectionClass;
 use RuntimeException;
+use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\InvalidYearException;
 use Yasumi\Exception\ProviderNotFoundException;
 use Yasumi\Exception\UnknownLocaleException;
@@ -70,11 +71,11 @@ class Yasumi
      * @return \DateTimeInterface
      *
      * @throws \ReflectionException
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     * @throws \RuntimeException
-     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws RuntimeException
+     * @throws InvalidArgumentException
      * @throws \Exception
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      *
      * @TODO we should accept a timezone so we can accept int/string for $startDate
      *
@@ -265,11 +266,11 @@ class Yasumi
      * @return \DateTimeInterface
      *
      * @throws \ReflectionException
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     * @throws \RuntimeException
-     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws RuntimeException
+     * @throws InvalidArgumentException
      * @throws \Exception
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      *
      * @TODO we should accept a timezone so we can accept int/string for $startDate
      *

@@ -14,6 +14,8 @@ namespace Yasumi\Provider\Switzerland;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\Switzerland;
@@ -36,9 +38,9 @@ class Neuchatel extends Switzerland
     /**
      * Initialize holidays for Neuchâtel (Switzerland).
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -68,9 +70,9 @@ class Neuchatel extends Switzerland
      *
      * @link https://www.feiertagskalender.ch/feiertag.php?ft_id=11&geo=3056&hl=fr
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateInstaurationRepublique(): void

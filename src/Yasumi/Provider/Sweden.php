@@ -15,6 +15,8 @@ namespace Yasumi\Provider;
 use DateInterval;
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
 /**
@@ -33,9 +35,9 @@ class Sweden extends AbstractProvider
     /**
      * Initialize holidays for Sweden.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -78,8 +80,8 @@ class Sweden extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Twelfth_Night_(holiday)
      *
-     * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -106,8 +108,8 @@ class Sweden extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Walpurgis_Night
      *
-     * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -136,9 +138,9 @@ class Sweden extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Midsummer#Sweden
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateStJohnsHolidays(): void
@@ -177,9 +179,9 @@ class Sweden extends AbstractProvider
      * @link https://en.wikipedia.org/wiki/All_Saints%27_Day
      * @link http://www.timeanddate.com/holidays/sweden/all-saints-day
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateAllSaintsHolidays(): void
@@ -211,9 +213,9 @@ class Sweden extends AbstractProvider
      * Olympic Stadium, in honour of the election of King Gustav Vasa in 1523, as this was considered the foundation of
      * modern Sweden.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateNationalDay(): void

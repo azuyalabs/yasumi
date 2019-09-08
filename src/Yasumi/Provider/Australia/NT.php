@@ -15,6 +15,7 @@ namespace Yasumi\Provider\Australia;
 use DateInterval;
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia;
 
@@ -36,7 +37,7 @@ class NT extends Australia
      * Initialize holidays for Northern Territory (Australia).
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -95,9 +96,9 @@ class NT extends Australia
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return \Yasumi\Holiday
+     * @return Holiday
      *
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
      */

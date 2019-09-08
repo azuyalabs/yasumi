@@ -14,6 +14,7 @@ namespace Yasumi\Provider\Australia\Tasmania;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia\Tasmania;
 
@@ -34,7 +35,7 @@ class CentralNorth extends Tasmania
      * Initialize holidays for northeastern Tasmania (Australia).
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void

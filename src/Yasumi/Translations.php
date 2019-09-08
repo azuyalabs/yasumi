@@ -47,8 +47,8 @@ class Translations implements TranslationsInterface
      *
      * @param string $directoryPath directory path for translation files
      *
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws InvalidArgumentException
      */
     public function loadTranslations(string $directoryPath): void
     {
@@ -109,7 +109,7 @@ class Translations implements TranslationsInterface
      * @param string $locale      locale
      * @param string $translation translation
      *
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      */
     public function addTranslation(string $shortName, string $locale, string $translation): void
     {

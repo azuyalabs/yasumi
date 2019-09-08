@@ -37,7 +37,7 @@ class OnFilter extends FilterIterator implements Countable
     /**
      * Construct the On FilterIterator Object
      *
-     * @param \Iterator          $iterator   Iterator object of the Holidays Provider
+     * @param Iterator $iterator Iterator object of the Holidays Provider
      * @param \DateTimeInterface $date Start date of the time frame to check against
      */
 
