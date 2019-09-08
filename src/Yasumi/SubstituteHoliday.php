@@ -12,9 +12,6 @@
 
 namespace Yasumi;
 
-use DateTime;
-use InvalidArgumentException;
-use JsonSerializable;
 use Yasumi\Exception\UnknownLocaleException;
 
 /**
@@ -70,7 +67,7 @@ class SubstituteHoliday extends Holiday
         $shortName = 'substituteHoliday:' . $substitutedHoliday->shortName;
 
         if ($date == $substitutedHoliday) {
-            throw new \InvalidArgumentException("Date must differ from the substituted holiday");
+            throw new \InvalidArgumentException('Date must differ from the substituted holiday');
         }
 
         // Construct instance

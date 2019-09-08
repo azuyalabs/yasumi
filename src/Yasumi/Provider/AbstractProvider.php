@@ -21,8 +21,8 @@ use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Filters\BetweenFilter;
 use Yasumi\Filters\OnFilter;
 use Yasumi\Holiday;
-use Yasumi\SubstituteHoliday;
 use Yasumi\ProviderInterface;
+use Yasumi\SubstituteHoliday;
 use Yasumi\TranslationsInterface;
 use Yasumi\Yasumi;
 
