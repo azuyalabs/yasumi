@@ -61,7 +61,6 @@ class Bosnia extends AbstractProvider
             'bs_Latn_BA' => 'Pravoslavni Božić'
         ], new DateTime("{$this->year}-01-07", new DateTimeZone($this->timezone))));
 
-
         /**
          * Independence Day
          */
