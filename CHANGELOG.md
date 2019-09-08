@@ -20,6 +20,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Updated the translation for the Victory in Europe holiday for the 'fr_FR' locale [\#153](https://github.com/azuyalabs/yasumi/pull/153) ([pioc92](https://github.com/pioc92))
 - Updated the translation for the Assumption of Mary holiday for the 'fr_FR' locale [\#155](https://github.com/azuyalabs/yasumi/pull/155) ([pioc92](https://github.com/pioc92))
 - Updated the translation for Christmas Day for the 'nl_NL' locale [\#160](https://github.com/azuyalabs/yasumi/pull/160) ([pioc92](https://github.com/pioc92))
+- Reordered arguments to Yoda style.
 - Replaced null checks by appropriate instance / type checks.
 - Moved default method values to method body as parameters should be nullable. 
 - Applying the use of strict types. Strict typing allows for improved readability, maintainability, and less prone to bugs and security vulnerabilities.
@@ -38,9 +39,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Typos in Easter Monday and Republic Day for the 'it_IT' locale [\#171](https://github.com/azuyalabs/yasumi/pull/171) ([c960657](https://github.com/c960657))
 - Corrected the name of the Emperors Birthday function and variable.
 
-
 ### Removed
 - Unused constants.
+
 
 ## [2.1.0] - 2019-03-29
 
