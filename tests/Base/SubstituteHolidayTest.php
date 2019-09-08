@@ -15,6 +15,7 @@ namespace Yasumi\tests\Base;
 use DateTime;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\SubstituteHoliday;
 use Yasumi\tests\YasumiBase;
@@ -30,45 +31,46 @@ class SubstituteHolidayTest extends TestCase
     use YasumiBase;
 
     /**
-     * Tests that an Yasumi\Exception\UnknownLocaleException is thrown in case an invalid locale is given.
+     * Tests that an UnknownLocaleException is thrown in case an invalid locale is given.
      *
-     * @expectedException \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
     public function testCreateSubstituteHolidayUnknownLocaleException(): void
     {
         $holiday = new Holiday('testHoliday', [], new DateTime());
+
+        $this->expectException(UnknownLocaleException::class);
+
         new SubstituteHoliday($holiday, [], new DateTime(), 'wx-YZ');
     }
 
     /**
-     * Tests that an Yasumi\Exception\InvalidArgumentException is thrown in case the substitute is on the same date as the substituted.
-     *
-     * @expectedException \InvalidArgumentException
+     * Tests that an InvalidArgumentException is thrown in case the substitute is on the same date as the substituted.
      * @throws \Exception
      */
     public function testCreateSubstituteHolidaySameDate(): void
     {
         $holiday = new Holiday('testHoliday', [], new DateTime('2019-01-01'));
+
+        $this->expectException(InvalidArgumentException::class);
+
         new SubstituteHoliday($holiday, [], new DateTime('2019-01-01'));
     }
 
     /**
      * Tests the constructor.
      *
-     * @expectedException \Yasumi\Exception\UnknownLocaleException
      * @throws \Exception
      */
     public function testConstructor(): void
     {
-        $holiday = new Holiday('testHoliday', [], new DateTime('2019-01-01'), Holiday::TYPE_BANK, 'en_IE');
-        $substitute = new SubstituteHoliday($holiday, [], new DateTime('2019-01-02'), Holiday::TYPE_SEASONAL, 'en_GB');
+        $holiday = new Holiday('testHoliday', [], new DateTime('2019-01-01'), 'en_US', Holiday::TYPE_BANK);
+        $substitute = new SubstituteHoliday($holiday, [], new DateTime('2019-01-02'), 'en_US', Holiday::TYPE_SEASON);
 
         $this->assertSame($holiday, $substitute->substitutedHoliday);
         $this->assertEquals('substituteHoliday:testHoliday', $substitute->shortName);
-        $this->assertEquals(Holiday::TYPE_SEASONAL, $substitute->type);
+        $this->assertEquals(Holiday::TYPE_SEASON, $substitute->getType());
         $this->assertEquals(new DateTime('2019-01-02'), $substitute);
-        $this->assertEquals('en_GB', $substitute->displayLocale);
     }
 
     /**
