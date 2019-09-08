@@ -14,7 +14,6 @@ namespace Yasumi\Provider;
 
 use DateInterval;
 use DateTime;
-use DateTimeInterface;
 use DateTimeZone;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
