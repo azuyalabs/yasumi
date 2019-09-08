@@ -14,6 +14,7 @@ namespace Yasumi\Provider;
 
 use DateInterval;
 use DateTime;
+use DateTimeInterface;
 use DateTimeZone;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
@@ -285,7 +286,7 @@ class USA extends AbstractProvider
             }
 
             // Add substitute holiday
-            if ($substituteHoliday instanceof \DateTimeInterface) {
+            if ($substituteHoliday instanceof Holiday) {
                 $this->addHoliday(new Holiday('substituteHoliday:' . $substituteHoliday->shortName, [
                     'en_US' => $substituteHoliday->getName() . ' observed',
                 ], $substituteHoliday, $this->locale));
