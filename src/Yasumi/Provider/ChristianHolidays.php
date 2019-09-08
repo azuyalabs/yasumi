@@ -896,7 +896,7 @@ trait ChristianHolidays
             }
 
             // Corrected date of the Paschal full moon, - days after 21st March
-            if (($pfm === 29) || ($pfm === 28 && $golden > 11)) {
+            if ((29 === $pfm) || (28 === $pfm && $golden > 11)) {
                 --$pfm;
             }
 

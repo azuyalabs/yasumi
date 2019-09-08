@@ -191,7 +191,7 @@ class SouthAfrica extends AbstractProvider
      */
     private function calculate2016MunicipalElectionsDay(): void
     {
-        if ($this->year !== 2016) {
+        if (2016 !== $this->year) {
             return;
         }
 
@@ -298,7 +298,7 @@ class SouthAfrica extends AbstractProvider
      */
     private function calculateSubstituteDayOfGoodwill(): void
     {
-        if ($this->year !== 2016) {
+        if (2016 !== $this->year) {
             return;
         }
 

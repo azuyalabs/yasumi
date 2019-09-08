@@ -80,8 +80,8 @@ class ACT extends Australia
 
         $date = new DateTime($this->year . '-05-27', new DateTimeZone($this->timezone));
         $day  = (int)$date->format('w');
-        if ($day !== 1) {
-            $date = $date->add($day === 0 ? new DateInterval('P1D') : new DateInterval('P'.(8-$day).'D'));
+        if (1 !== $day) {
+            $date = $date->add(0 === $day ? new DateInterval('P1D') : new DateInterval('P' . (8 - $day) . 'D'));
         }
         $this->addHoliday(new Holiday('reconciliationDay', ['en_AU' => 'Reconciliation Day'], $date, $this->locale));
     }

@@ -103,8 +103,8 @@ class Australia extends AbstractProvider
         $type = Holiday::TYPE_OFFICIAL
     ): void {
         $day = (int)$date->format('w');
-        if (($day === 0 && $moveFromSunday) || ($day === 6 && $moveFromSaturday)) {
-            $date = $date->add($day === 0 ? new DateInterval('P1D') : new DateInterval('P2D'));
+        if ((0 === $day && $moveFromSunday) || (6 === $day && $moveFromSaturday)) {
+            $date = $date->add(0 === $day ? new DateInterval('P1D') : new DateInterval('P2D'));
         }
 
         $this->addHoliday(new Holiday($shortName, $names, $date, $this->locale, $type));

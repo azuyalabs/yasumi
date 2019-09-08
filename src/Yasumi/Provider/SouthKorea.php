@@ -489,14 +489,14 @@ class SouthKorea extends AbstractProvider
                     && (
                         0 === (int)$date->format('w')
                         || \in_array($date, $holidayDates, false)
-                        || (6 === (int)$date->format('w') && $shortName === 'childrensDay')
+                        || (6 === (int)$date->format('w') && 'childrensDay' === $shortName)
                     )
                 ) {
                     $substitute = clone $date;
 
                     // Find next week day (not being another holiday)
                     while (0 === (int)$substitute->format('w')
-                           || (6 === (int)$substitute->format('w') && $shortName === 'childrensDay')
+                        || (6 === (int)$substitute->format('w') && 'childrensDay' === $shortName)
                         || \in_array($substitute, $holidayDates, false)) {
                         $substitute->add(new DateInterval('P1D'));
                         continue;

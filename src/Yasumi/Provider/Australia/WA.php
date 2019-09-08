@@ -96,7 +96,7 @@ class WA extends Australia
      */
     private function calculateQueensBirthday(): void
     {
-        if ($this->year === 2011) {
+        if (2011 === $this->year) {
             $this->calculateHoliday(
                 'queensBirthday',
                 ['en_AU' => "Queen's Birthday"],
@@ -104,7 +104,7 @@ class WA extends Australia
                 false,
                 false
             );
-        } elseif ($this->year === 2012) {
+        } elseif (2012 === $this->year) {
             $this->calculateHoliday(
                 'queensBirthday',
                 ['en_AU' => "Queen's Birthday"],

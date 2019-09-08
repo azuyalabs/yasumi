@@ -133,7 +133,7 @@ class Yasumi
             $providerClass = $class;
         }
 
-        if ($class === 'AbstractProvider' || ! \class_exists($providerClass)) {
+        if ('AbstractProvider' === $class || !\class_exists($providerClass)) {
             throw new ProviderNotFoundException(\sprintf('Unable to find holiday provider "%s".', $class));
         }
 
@@ -230,7 +230,7 @@ class Yasumi
         ), RecursiveIteratorIterator::SELF_FIRST);
 
         foreach ($filesIterator as $file) {
-            if ($file->isDir() || $file->getExtension() !== 'php' || \in_array(
+            if ($file->isDir() || 'php' !== $file->getExtension() || \in_array(
                 $file->getBasename('.php'),
                 self::$ignoredProvider,
                 true

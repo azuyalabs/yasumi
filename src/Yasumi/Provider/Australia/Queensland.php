@@ -54,7 +54,7 @@ class Queensland extends Australia
      */
     private function calculateLabourDay(): void
     {
-        if ($this->year === 2013 || $this->year === 2014 || $this->year === 2015) {
+        if (2013 === $this->year || 2014 === $this->year || 2015 === $this->year) {
             $date = new DateTime("first monday of october $this->year", new DateTimeZone($this->timezone));
         } else {
             $date = new DateTime("first monday of may $this->year", new DateTimeZone($this->timezone));
@@ -80,7 +80,7 @@ class Queensland extends Australia
      */
     private function calculateQueensBirthday(): void
     {
-        if ($this->year < 2012 || $this->year === 2013 || $this->year === 2014 || $this->year === 2015) {
+        if ($this->year < 2012 || 2013 === $this->year || 2014 === $this->year || 2015 === $this->year) {
             $this->calculateHoliday(
                 'queensBirthday',
                 ['en_AU' => "Queen's Birthday"],
