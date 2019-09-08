@@ -38,6 +38,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Liberation Day is official in the Netherlands [\#169](https://github.com/azuyalabs/yasumi/pull/169) ([c960657](https://github.com/c960657))
 - Typos in Easter Monday and Republic Day for the 'it_IT' locale [\#171](https://github.com/azuyalabs/yasumi/pull/171) ([c960657](https://github.com/c960657))
 - Corrected the name of the Emperors Birthday function and variable.
+- Good Friday is not official in Brazil [\#174](https://github.com/azuyalabs/yasumi/pull/174) ([c960657](https://github.com/c960657))
 
 ### Removed
 - Unused constants.
