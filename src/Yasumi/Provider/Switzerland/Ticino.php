@@ -95,7 +95,7 @@ class Ticino extends Switzerland
                 'fr_FR' => 'Solennité des saints Pierre et Paul',
                 'fr_CH' => 'Solennité des saints Pierre et Paul',
                 'de_DE' => 'St. Peter und Paul',
-                'de_CH' => 'St. Peter und Paul',
+                'de_CH' => 'St. Peter und Paul'
             ],
             new DateTime($this->year . '-06-29', new DateTimeZone($this->timezone)),
             $this->locale,

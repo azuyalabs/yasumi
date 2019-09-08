@@ -554,5 +554,5 @@ return [
     'zh_Hant_HK',
     'zh_Hant_MO',
     'zh_Hant_TW',
-    'zu_ZA',
+    'zu_ZA'
 ];

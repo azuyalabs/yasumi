@@ -587,7 +587,7 @@ class Japan extends AbstractProvider
                 // Add a new holiday that is substituting the original holiday
                 $substituteHoliday = new Holiday('substituteHoliday:' . $shortName, [
                     'en_US' => $date->translations['en_US'] . ' Observed',
-                    'ja_JP' => '振替休日 (' . $date->translations['ja_JP'] . ')',
+                    'ja_JP' => '振替休日 (' . $date->translations['ja_JP'] . ')'
                 ], $substituteDay, $this->locale);
 
                 $this->addHoliday($substituteHoliday);
@@ -628,7 +628,7 @@ class Japan extends AbstractProvider
 
                 $this->addHoliday(new Holiday('bridgeDay'.$counter, [
                     'en_US' => 'Bridge Public holiday',
-                    'ja_JP' => '国民の休日',
+                    'ja_JP' => '国民の休日'
                 ], $bridgeDate, $this->locale));
                 $counter++;
             }

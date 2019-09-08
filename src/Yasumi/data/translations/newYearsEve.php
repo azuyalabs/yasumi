@@ -16,5 +16,5 @@ return [
     'en_US' => 'New Year\'s Eve',
     'ko_KR' => '신년전야',
     'lv_LV' => 'Vecgada vakars',
-    'sv_SE' => 'nyårsafton',
+    'sv_SE' => 'nyårsafton'
 ];

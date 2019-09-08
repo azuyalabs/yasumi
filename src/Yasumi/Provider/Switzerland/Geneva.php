@@ -82,12 +82,12 @@ class Geneva extends Switzerland
         if (($this->year >= 1840 && $this->year <= 1869) || $this->year >= 1966) {
             $this->addHoliday(new Holiday('jeuneGenevois', [
                 'fr_FR' => 'Jeûne genevois',
-                'fr_CH' => 'Jeûne genevois',
+                'fr_CH' => 'Jeûne genevois'
             ], $date, $this->locale, Holiday::TYPE_OTHER));
         } elseif ($this->year > 1869 && $this->year < 1966) {
             $this->addHoliday(new Holiday('jeuneGenevois', [
                 'fr_FR' => 'Jeûne genevois',
-                'fr_CH' => 'Jeûne genevois',
+                'fr_CH' => 'Jeûne genevois'
             ], $date, $this->locale, Holiday::TYPE_OBSERVANCE));
         }
     }
@@ -114,7 +114,7 @@ class Geneva extends Switzerland
                 'restaurationGenevoise',
                 [
                     'fr_FR' => 'Restauration de la République',
-                    'fr_CH' => 'Restauration de la République',
+                    'fr_CH' => 'Restauration de la République'
                 ],
                 new DateTime($this->year . '-12-31', new DateTimeZone($this->timezone)),
                 $this->locale,

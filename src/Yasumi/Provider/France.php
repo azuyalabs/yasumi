@@ -89,7 +89,7 @@ class France extends AbstractProvider
         if ($this->year >= 1790) {
             $this->addHoliday(new Holiday('bastilleDay', [
                 'en_US' => 'Bastille Day',
-                'fr_FR' => 'La Fête nationale',
+                'fr_FR' => 'La Fête nationale'
             ], new DateTime("$this->year-7-14", new DateTimeZone($this->timezone)), $this->locale));
         }
     }

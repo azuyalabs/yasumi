@@ -68,7 +68,7 @@ class Belgium extends AbstractProvider
             'fr_BE' => 'Fête nationale',
             'en_US' => 'Belgian National Day',
             'nl_NL' => 'Nationale feestdag',
-            'nl_BE' => 'Nationale feestdag',
+            'nl_BE' => 'Nationale feestdag'
         ], new DateTime("$this->year-7-21", new DateTimeZone($this->timezone)), $this->locale));
     }
 }

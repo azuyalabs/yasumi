@@ -20,5 +20,5 @@ return [
     'it_CH' => 'Mercoledi delle Ceneri',
     'nl_BE' => 'Aswoensdag',
     'nl_NL' => 'Aswoensdag',
-    'pt_BR' => 'Quarta-feira de Cinzas',
+    'pt_BR' => 'Quarta-feira de Cinzas'
 ];

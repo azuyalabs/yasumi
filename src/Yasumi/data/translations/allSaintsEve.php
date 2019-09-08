@@ -14,5 +14,5 @@
 return [
     'da_DK' => 'Allehelgensaften',
     'en_US' => 'All Saints\' Eve',
-    'sv_SE' => 'alla helgons afton',
+    'sv_SE' => 'alla helgons afton'
 ];

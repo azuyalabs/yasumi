@@ -13,5 +13,5 @@
 // Translations for Implantation of the Portuguese Republic
 return [
     'en_US' => 'Implantation of the Portuguese Republic',
-    'pt_PT' => 'Implantação da República Portuguesa',
+    'pt_PT' => 'Implantação da República Portuguesa'
 ];

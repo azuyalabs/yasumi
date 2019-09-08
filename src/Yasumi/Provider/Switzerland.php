@@ -72,7 +72,7 @@ class Switzerland extends AbstractProvider
             'de_CH' => 'Bundesfeiertag',
             'it_IT' => 'Giorno festivo federale',
             'it_CH' => 'Giorno festivo federale',
-            'rm_CH' => 'Fiasta naziunala',
+            'rm_CH' => 'Fiasta naziunala'
         ];
         if ($this->year >= 1994) {
             $this->addHoliday(new Holiday(
@@ -116,7 +116,7 @@ class Switzerland extends AbstractProvider
                 'de_CH' => 'Berchtoldstag',
                 'fr_FR' => 'Jour de la Saint-Berthold',
                 'fr_CH' => 'Jour de la Saint-Berthold',
-                'en_US' => 'Berchtoldstag',
+                'en_US' => 'Berchtoldstag'
             ],
             new DateTime($this->year . '-01-02', new DateTimeZone($this->timezone)),
             $this->locale,
@@ -153,7 +153,7 @@ class Switzerland extends AbstractProvider
                 'de_DE' => 'Eidgenössischer Dank-, Buss- und Bettag',
                 'de_CH' => 'Eidgenössischer Dank-, Buss- und Bettag',
                 'it_IT' => 'Festa federale di ringraziamento, pentimento e preghiera',
-                'it_CH' => 'Festa federale di ringraziamento, pentimento e preghiera',
+                'it_CH' => 'Festa federale di ringraziamento, pentimento e preghiera'
             ], $date, $this->locale, Holiday::TYPE_OTHER));
         }
     }

@@ -15,5 +15,5 @@ return [
     'da_DK' => 'Sommertid starter',
     'en_US' => 'Summertime',
     'ko_KR' => '서머타임',
-    'nl_NL' => 'Zomertijd',
+    'nl_NL' => 'Zomertijd'
 ];

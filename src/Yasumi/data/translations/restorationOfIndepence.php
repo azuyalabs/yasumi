@@ -13,5 +13,5 @@
 // Translations for Restoration of Independence
 return [
     'en_US' => 'Restoration of Independence',
-    'pt_PT' => 'Restauração da Independência',
+    'pt_PT' => 'Restauração da Independência'
 ];

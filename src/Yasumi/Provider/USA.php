@@ -77,7 +77,7 @@ class USA extends AbstractProvider
     {
         if ($this->year >= 1986) {
             $this->addHoliday(new Holiday('martinLutherKingDay', [
-                'en_US' => 'Dr. Martin Luther King Jr\'s Birthday',
+                'en_US' => 'Dr. Martin Luther King Jr\'s Birthday'
             ], new DateTime("third monday of january $this->year", new DateTimeZone($this->timezone)), $this->locale));
         }
     }
@@ -102,7 +102,7 @@ class USA extends AbstractProvider
                 $date = new DateTime("last monday of may $this->year", new DateTimeZone($this->timezone));
             }
             $this->addHoliday(new Holiday('memorialDay', [
-                'en_US' => 'Memorial Day',
+                'en_US' => 'Memorial Day'
             ], $date, $this->locale));
         }
     }
@@ -123,7 +123,7 @@ class USA extends AbstractProvider
     {
         if ($this->year >= 1776) {
             $this->addHoliday(new Holiday('independenceDay', [
-                'en_US' => 'Independence Day',
+                'en_US' => 'Independence Day'
             ], new DateTime("$this->year-7-4", new DateTimeZone($this->timezone)), $this->locale));
         }
     }
@@ -144,7 +144,7 @@ class USA extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'labourDay',
                 [
-                    'en_US' => 'Labour Day',
+                    'en_US' => 'Labour Day'
                 ],
                 new DateTime("first monday of september $this->year", new DateTimeZone($this->timezone)),
                 $this->locale
@@ -173,7 +173,7 @@ class USA extends AbstractProvider
                 $date = new DateTime("second monday of october $this->year", new DateTimeZone($this->timezone));
             }
             $this->addHoliday(new Holiday('columbusDay', [
-                'en_US' => 'Columbus Day',
+                'en_US' => 'Columbus Day'
             ], $date, $this->locale));
         }
     }
@@ -195,7 +195,7 @@ class USA extends AbstractProvider
             $name = ($this->year < 1954) ? 'Armistice Day' : 'Veterans Day';
 
             $this->addHoliday(new Holiday('veteransDay', [
-                'en_US' => $name,
+                'en_US' => $name
             ], new DateTime("$this->year-11-11", new DateTimeZone($this->timezone)), $this->locale));
         }
     }
@@ -218,7 +218,7 @@ class USA extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'thanksgivingDay',
                 [
-                    'en_US' => 'Thanksgiving Day',
+                    'en_US' => 'Thanksgiving Day'
                 ],
                 new DateTime("fourth thursday of november $this->year", new DateTimeZone($this->timezone)),
                 $this->locale
@@ -249,7 +249,7 @@ class USA extends AbstractProvider
                 $date = new DateTime("third monday of february $this->year", new DateTimeZone($this->timezone));
             }
             $this->addHoliday(new Holiday('washingtonsBirthday', [
-                'en_US' => 'Washington\'s Birthday',
+                'en_US' => 'Washington\'s Birthday'
             ], $date, $this->locale));
         }
     }
@@ -287,7 +287,7 @@ class USA extends AbstractProvider
             // Add substitute holiday
             if ($substituteHoliday instanceof Holiday) {
                 $this->addHoliday(new Holiday('substituteHoliday:' . $substituteHoliday->shortName, [
-                    'en_US' => $substituteHoliday->getName() . ' observed',
+                    'en_US' => $substituteHoliday->getName() . ' observed'
                 ], $substituteHoliday, $this->locale));
             }
 

@@ -14,5 +14,5 @@
 return [
     'en_NZ' => 'Day after New Year\'s Day',
     'en_US' => 'Day after New Year\'s Day',
-    'ko_KR' => '새해 연휴',
+    'ko_KR' => '새해 연휴'
 ];

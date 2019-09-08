@@ -48,5 +48,5 @@ return [
     'ru_UA' => 'Рождество',
     'sk_SK' => 'Prvý sviatok vianočný',
     'sv_SE' => 'juldagen',
-    'uk_UA' => 'Різдво',
+    'uk_UA' => 'Різдво'
 ];

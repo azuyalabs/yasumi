@@ -108,7 +108,7 @@ class Ireland extends AbstractProvider
             $substituteHoliday->modify('next monday');
 
             $this->addHoliday(new Holiday('substituteHoliday:' . $substituteHoliday->shortName, [
-                'en_IE' => $substituteHoliday->getName() . ' observed',
+                'en_IE' => $substituteHoliday->getName() . ' observed'
             ], $substituteHoliday, $this->locale));
         }
     }
@@ -166,7 +166,7 @@ class Ireland extends AbstractProvider
             $substituteHoliday->modify('next tuesday');
 
             $this->addHoliday(new Holiday('substituteHoliday:' . $substituteHoliday->shortName, [
-                'en_IE' => $substituteHoliday->getName() . ' observed',
+                'en_IE' => $substituteHoliday->getName() . ' observed'
             ], $substituteHoliday, $this->locale));
         }
     }
@@ -203,7 +203,7 @@ class Ireland extends AbstractProvider
             $substituteHoliday->modify('next monday');
 
             $this->addHoliday(new Holiday('substituteHoliday:' . $substituteHoliday->shortName, [
-                'en_IE' => $substituteHoliday->getName() . ' observed',
+                'en_IE' => $substituteHoliday->getName() . ' observed'
             ], $substituteHoliday, $this->locale));
         }
     }
@@ -245,7 +245,7 @@ class Ireland extends AbstractProvider
             $substituteHoliday->modify('next monday');
 
             $this->addHoliday(new Holiday('substituteHoliday:' . $substituteHoliday->shortName, [
-                'en_IE' => $substituteHoliday->getName() . ' observed',
+                'en_IE' => $substituteHoliday->getName() . ' observed'
             ], $substituteHoliday, $this->locale));
         }
     }

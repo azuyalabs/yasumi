@@ -13,5 +13,5 @@
 // Translations for Walpurgis Night
 return [
     'en_US' => 'Walpurgis Night',
-    'sv_SE' => 'valborgsmässoafton',
+    'sv_SE' => 'valborgsmässoafton'
 ];

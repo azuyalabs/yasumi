@@ -14,5 +14,5 @@
 return [
     'da_DK' => 'Sommertid slutter',
     'en_US' => 'Wintertime',
-    'nl_NL' => 'Wintertijd',
+    'nl_NL' => 'Wintertijd'
 ];

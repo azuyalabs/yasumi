@@ -343,7 +343,7 @@ class SouthAfrica extends AbstractProvider
                 $substituteHoliday->add(new DateInterval('P1D'));
 
                 $this->addHoliday(new Holiday('substituteHoliday:' . $substituteHoliday->shortName, [
-                    'en_ZA' => $substituteHoliday->getName() . ' observed',
+                    'en_ZA' => $substituteHoliday->getName() . ' observed'
                 ], $substituteHoliday, $this->locale));
             }
 

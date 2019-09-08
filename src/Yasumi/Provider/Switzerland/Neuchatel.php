@@ -82,7 +82,7 @@ class Neuchatel extends Switzerland
                 'instaurationRepublique',
                 [
                     'fr_FR' => 'Instauration de la République',
-                    'fr_CH' => 'Instauration de la République',
+                    'fr_CH' => 'Instauration de la République'
                 ],
                 new DateTime($this->year . '-03-01', new DateTimeZone($this->timezone)),
                 $this->locale,

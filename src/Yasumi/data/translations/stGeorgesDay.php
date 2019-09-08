@@ -14,5 +14,5 @@
 return [
     'el_GR' => 'Αγίου Γεωργίου',
     'en_US' => 'St. George\'s Day',
-    'es_ES' => 'San Jorge',
+    'es_ES' => 'San Jorge'
 ];

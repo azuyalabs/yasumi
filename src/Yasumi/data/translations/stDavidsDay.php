@@ -14,5 +14,5 @@
 return [
     'cy_GB' => 'Dydd Gŵyl Dewi',
     'en_GB' => 'St. David\'s Day',
-    'en_US' => 'St. David\'s Day',
+    'en_US' => 'St. David\'s Day'
 ];

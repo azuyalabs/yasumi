@@ -15,5 +15,5 @@ return [
     'el_GR' => 'Ευαγγελισμός της Θεοτόκου',
     'en_US' => 'Annunciation',
     'fr_BE' => 'Annonciation',
-    'fr_FR' => 'Annonciation',
+    'fr_FR' => 'Annonciation'
 ];

@@ -42,5 +42,5 @@ return [
     'ro_RO' => 'Paștele',
     'ru_UA' => 'Пасха',
     'sv_SE' => 'påskdagen',
-    'uk_UA' => 'Великдень',
+    'uk_UA' => 'Великдень'
 ];
