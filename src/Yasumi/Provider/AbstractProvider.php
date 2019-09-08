@@ -189,9 +189,11 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     public function isWorkingDay(\DateTimeInterface $date): bool
     {
+        $isWorkingDay = true;
+
         // First check if the given date is a holiday
         if ($this->isHoliday($date)) {
-            return false;
+            $isWorkingDay = false;
         }
 
         // Check if given date is a falls in the weekend or not
@@ -201,10 +203,10 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         $weekend_days = $weekend_data[$this::ID] ?? [0, 6];
 
         if (\in_array((int)$date->format('w'), $weekend_days, true)) {
-            return false;
+            $isWorkingDay = false;
         }
 
-        return true;
+        return $isWorkingDay;
     }
 
     /**
