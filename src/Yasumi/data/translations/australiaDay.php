@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -13,5 +13,5 @@
 // Translations for Australia Day
 return [
     'en_AU' => 'Australia Day',
-    'en_US' => 'Australia Day',
+    'en_US' => 'Australia Day'
 ];

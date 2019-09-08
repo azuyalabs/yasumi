@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -40,7 +40,7 @@ return [
     'lv_LV' => 'Ziemassvētki',
     'nb_NO' => 'Første juledag',
     'nl_BE' => 'Kerstmis',
-    'nl_NL' => 'Kerstmis',
+    'nl_NL' => 'Eerste kerstdag',
     'pl_PL' => 'pierwszy dzień Bożego Narodzenia',
     'pt_BR' => 'Natal',
     'pt_PT' => 'Natal',
@@ -48,5 +48,5 @@ return [
     'ru_UA' => 'Рождество',
     'sk_SK' => 'Prvý sviatok vianočný',
     'sv_SE' => 'juldagen',
-    'uk_UA' => 'Різдво',
+    'uk_UA' => 'Різдво'
 ];

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\USA;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -35,8 +37,8 @@ class ColumbusDayTest extends USABaseTestCase implements YasumiTestCaseInterface
     /**
      * Tests Columbus Day on or after 1970. Columbus Day was established in 1937 on October 12th, but has been fixed to
      * the second Monday in October since 1970.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testColumbusDayOnAfter1970()
     {
@@ -52,8 +54,8 @@ class ColumbusDayTest extends USABaseTestCase implements YasumiTestCaseInterface
     /**
      * Tests Columbus Day between 1937 and 1969. Columbus Day was established in 1937 on October 12th, but has been
      * fixed to the second Monday in October since 1970.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testColumbusBetween1937And1969()
     {
@@ -69,7 +71,7 @@ class ColumbusDayTest extends USABaseTestCase implements YasumiTestCaseInterface
     /**
      * Tests Columbus Day before 1937. Columbus Day was established in 1937 on October 12th, but has been fixed to
      * the second Monday in October since 1970.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testColumbusDayBefore1937()
     {
@@ -82,7 +84,7 @@ class ColumbusDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -96,7 +98,7 @@ class ColumbusDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

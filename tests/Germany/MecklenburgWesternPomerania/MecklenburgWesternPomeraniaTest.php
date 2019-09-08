@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Germany\MecklenburgWesternPomerania;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class MecklenburgWesternPomeraniaTest extends MecklenburgWesternPomeraniaBaseTes
 
     /**
      * Tests if all official holidays in Mecklenburg-Western Pomerania (Germany) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -54,7 +55,7 @@ class MecklenburgWesternPomeraniaTest extends MecklenburgWesternPomeraniaBaseTes
 
     /**
      * Tests if all observed holidays in Mecklenburg-Western Pomerania (Germany) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -63,7 +64,7 @@ class MecklenburgWesternPomeraniaTest extends MecklenburgWesternPomeraniaBaseTes
 
     /**
      * Tests if all seasonal holidays in Mecklenburg-Western Pomerania (Germany) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -72,7 +73,7 @@ class MecklenburgWesternPomeraniaTest extends MecklenburgWesternPomeraniaBaseTes
 
     /**
      * Tests if all bank holidays in Mecklenburg-Western Pomerania (Germany) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -81,7 +82,7 @@ class MecklenburgWesternPomeraniaTest extends MecklenburgWesternPomeraniaBaseTes
 
     /**
      * Tests if all other holidays in Mecklenburg-Western Pomerania (Germany) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -91,7 +92,7 @@ class MecklenburgWesternPomeraniaTest extends MecklenburgWesternPomeraniaBaseTes
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->year = $this->generateRandomYear();
     }

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Japan;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -38,7 +40,7 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCase
      * festival called Shūki kōrei-sai (秋季皇霊祭).
      *
      * After 2150 no calculations are available yet.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testAutumnalEquinoxDayOnAfter2150()
     {
@@ -54,12 +56,12 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCase
      *
      * @dataProvider autumnalEquinoxHolidaysProvider
      *
-     * @param $year  int year of example data to be tested
-     * @param $month int month (number) of example data to be tested
-     * @param $day   int day of the month (number) of example data to be tested
+     * @param int $year year of example data to be tested
+     * @param int $month month (number) of example data to be tested
+     * @param int $day day of the month (number) of example data to be tested
      *
-     * @throws \ReflectionException
-     * @throws \Exception
+     * @throws ReflectionException
+     * @throws Exception
      */
     public function testAutumnalEquinoxDayBetween1948And2150($year, $month, $day)
     {
@@ -83,7 +85,7 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCase
             [1999, 9, 23],
             [2013, 9, 23],
             [2016, 9, 22],
-            [2122, 9, 23],
+            [2122, 9, 23]
         ];
     }
 
@@ -91,7 +93,7 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCase
      * Tests Vernal Equinox Day before 1948. This national holiday was established in 1948 as a day on which to honor
      * one's ancestors and remember the dead. Prior to 1948, the autumnal equinox was an imperial ancestor worship
      * festival called Shūki kōrei-sai (秋季皇霊祭).
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testAutumnalEquinoxDayBefore1948()
     {
@@ -106,7 +108,7 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCase
      * Tests Vernal Equinox Day between 1851 and 1948. This national holiday was established in 1948 as a day on
      * which to honor one's ancestors and remember the dead. Prior to 1948, the autumnal equinox was an imperial
      * ancestor worship festival called Shūki kōrei-sai (秋季皇霊祭).
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testAutumnalEquinoxDayBetween1851And1948()
     {
@@ -119,7 +121,7 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCase
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -133,7 +135,7 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCase
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

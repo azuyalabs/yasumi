@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\Provider;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
 /**
@@ -32,9 +34,9 @@ class Italy extends AbstractProvider
     /**
      * Initialize holidays for Italy.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -71,9 +73,9 @@ class Italy extends AbstractProvider
      *
      * @link http://en.wikipedia.org/wiki/Liberation_Day_%28Italy%29
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      * @throws \Exception
      */
@@ -99,9 +101,9 @@ class Italy extends AbstractProvider
      *
      * @link http://en.wikipedia.org/wiki/Festa_della_Repubblica
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      * @throws \Exception
      */
@@ -110,7 +112,7 @@ class Italy extends AbstractProvider
         if ($this->year >= 1946) {
             $this->addHoliday(new Holiday(
                 'republicDay',
-                ['it_IT' => 'Festa della Republica'],
+                ['it_IT' => 'Festa della Repubblica'],
                 new DateTime("$this->year-6-2", new DateTimeZone($this->timezone)),
                 $this->locale
             ));

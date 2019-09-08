@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -13,6 +13,8 @@
 namespace Yasumi\tests\CzechRepublic;
 
 use DateTime;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -35,10 +37,10 @@ class ChristmasEveTest extends CzechRepublicBaseTestCase implements YasumiTestCa
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int      $year     the year for which Christmas Eve needs to be tested
+     * @param int $year the year for which Christmas Eve needs to be tested
      * @param DateTime $expected the expected date
      *
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testChristmasDay($year, $expected)
     {
@@ -49,7 +51,7 @@ class ChristmasEveTest extends CzechRepublicBaseTestCase implements YasumiTestCa
      * Returns a list of random test dates used for assertion of the holiday defined in this test
      *
      * @return array list of test dates for the holiday defined in this test
-     * @throws \Exception
+     * @throws Exception
      */
     public function HolidayDataProvider(): array
     {
@@ -58,7 +60,7 @@ class ChristmasEveTest extends CzechRepublicBaseTestCase implements YasumiTestCa
 
     /**
      * Tests translated name of Christmas Day.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -72,7 +74,7 @@ class ChristmasEveTest extends CzechRepublicBaseTestCase implements YasumiTestCa
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

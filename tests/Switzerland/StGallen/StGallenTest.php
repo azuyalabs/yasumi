@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Switzerland\StGallen;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class StGallenTest extends StGallenBaseTestCase
 
     /**
      * Tests if all official holidays in St. Gallen (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -39,7 +40,7 @@ class StGallenTest extends StGallenBaseTestCase
 
     /**
      * Tests if all regional holidays in St. Gallen (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testRegionalHolidays(): void
     {
@@ -57,7 +58,7 @@ class StGallenTest extends StGallenBaseTestCase
 
     /**
      * Tests if all observed holidays in St. Gallen (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -71,7 +72,7 @@ class StGallenTest extends StGallenBaseTestCase
 
     /**
      * Tests if all seasonal holidays in St. Gallen (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -80,7 +81,7 @@ class StGallenTest extends StGallenBaseTestCase
 
     /**
      * Tests if all bank holidays in St. Gallen (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -89,7 +90,7 @@ class StGallenTest extends StGallenBaseTestCase
 
     /**
      * Tests if all other holidays in St. Gallen (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -99,7 +100,7 @@ class StGallenTest extends StGallenBaseTestCase
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->year = $this->generateRandomYear(1945);
     }

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * This file is part of the Yasumi package.
@@ -14,6 +14,7 @@
 
 namespace Yasumi\tests\Slovakia;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -33,23 +34,23 @@ class SlovakiaTest extends SlovakiaBaseTestCase
 
     /**
      * Tests if all official holidays in Slovakia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
         $this->assertDefinedHolidays([
-            'newYearsDay',
+            'slovakIndependenceDay',
             'slovakConstitutionDay',
             'slovakNationalUprisingDay',
             'saintsCyrilAndMethodiusDay',
-            'struggleForFreedomAndDemocracyDay',
+            'struggleForFreedomAndDemocracyDay'
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
 
     /**
      * Tests if all bank holidays in Slovakia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -63,14 +64,14 @@ class SlovakiaTest extends SlovakiaBaseTestCase
             'christmasDay',
             'secondChristmasDay',
             'goodFriday',
-            'easterMonday',
+            'easterMonday'
         ], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
 
 
     /**
      * Tests if all observed holidays in Slovakia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -80,7 +81,7 @@ class SlovakiaTest extends SlovakiaBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Slovakia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -90,7 +91,7 @@ class SlovakiaTest extends SlovakiaBaseTestCase
 
     /**
      * Tests if all other holidays in Slovakia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -101,7 +102,7 @@ class SlovakiaTest extends SlovakiaBaseTestCase
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         // NOTE: 1993 is the year Slovakia was founded as an independent state
         $this->year = $this->generateRandomYear(1993, 2100);

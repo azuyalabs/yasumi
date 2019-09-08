@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -22,5 +22,5 @@ return [
     'ga_IE' => 'Lá Fhéile Stiofáin',
     'hr_HR' => 'Sveti Stjepan',
     'it_CH' => 'Santo Stefano',
-    'it_IT' => 'Santo Stefano',
+    'it_IT' => 'Santo Stefano'
 ];

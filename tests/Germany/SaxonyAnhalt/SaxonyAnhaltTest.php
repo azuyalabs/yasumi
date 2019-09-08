@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Germany\SaxonyAnhalt;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class SaxonyAnhaltTest extends SaxonyAnhaltBaseTestCase
 
     /**
      * Tests if all official holidays in Saxony-Anhalt (Germany) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -54,7 +55,7 @@ class SaxonyAnhaltTest extends SaxonyAnhaltBaseTestCase
 
     /**
      * Tests if all observed holidays in Saxony-Anhalt (Germany) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -63,7 +64,7 @@ class SaxonyAnhaltTest extends SaxonyAnhaltBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Saxony-Anhalt (Germany) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -72,7 +73,7 @@ class SaxonyAnhaltTest extends SaxonyAnhaltBaseTestCase
 
     /**
      * Tests if all bank holidays in Saxony-Anhalt (Germany) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -81,7 +82,7 @@ class SaxonyAnhaltTest extends SaxonyAnhaltBaseTestCase
 
     /**
      * Tests if all other holidays in Saxony-Anhalt (Germany) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -91,7 +92,7 @@ class SaxonyAnhaltTest extends SaxonyAnhaltBaseTestCase
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->year = $this->generateRandomYear();
     }

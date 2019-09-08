@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Belgium;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class BelgiumTest extends BelgiumBaseTestCase
 
     /**
      * Tests if all official holidays in Belgium are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -48,7 +49,7 @@ class BelgiumTest extends BelgiumBaseTestCase
 
     /**
      * Tests if all observed holidays in Belgium are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -57,7 +58,7 @@ class BelgiumTest extends BelgiumBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Belgium are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -66,7 +67,7 @@ class BelgiumTest extends BelgiumBaseTestCase
 
     /**
      * Tests if all bank holidays in Belgium are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -75,7 +76,7 @@ class BelgiumTest extends BelgiumBaseTestCase
 
     /**
      * Tests if all other holidays in Belgium are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -85,7 +86,7 @@ class BelgiumTest extends BelgiumBaseTestCase
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->year = $this->generateRandomYear();
     }

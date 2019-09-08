@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -13,7 +13,7 @@
 // Translations for Second Christmas Day
 return [
     'cs_CZ' => '2. svátek vánoční',
-    'da_DK' => '2. Juledag',
+    'da_DK' => '2. juledag',
     'de_AT' => 'Stefanitag',
     'de_DE' => '2. Weihnachtsfeiertag',
     'el_GR' => 'Σύναξις Υπεραγίας Θεοτόκου Μαρίας',
@@ -34,5 +34,5 @@ return [
     'pl_PL' => 'drugi dzień Bożego Narodzenia',
     'ro_RO' => 'A doua zi de Crăciun',
     'sk_SK' => 'Druhý sviatok vianočný',
-    'sv_SE' => 'annandag jul',
+    'sv_SE' => 'annandag jul'
 ];

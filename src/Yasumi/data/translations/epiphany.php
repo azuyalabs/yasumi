@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -29,5 +29,5 @@ return [
     'nl_NL' => 'Drie Koningen',
     'pl_PL' => 'Święto Trzech Króli',
     'sk_SK' => 'Zjavenie Pána / Traja králi',
-    'sv_SE' => 'trettondedag jul',
+    'sv_SE' => 'trettondedag jul'
 ];

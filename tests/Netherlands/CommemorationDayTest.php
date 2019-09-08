@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Netherlands;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -34,7 +36,7 @@ class CommemorationDayTest extends NetherlandsBaseTestCase implements YasumiTest
 
     /**
      * Tests Commemoration Day before 1947. Commemoration Day was established after WWII in 1947.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testCommemorationDayBefore1947()
     {
@@ -47,8 +49,8 @@ class CommemorationDayTest extends NetherlandsBaseTestCase implements YasumiTest
 
     /**
      * Tests Commemoration Day after 1947. Commemoration Day was established after WWII in 1947.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testCommemorationDayOnAfter1947()
     {
@@ -63,7 +65,7 @@ class CommemorationDayTest extends NetherlandsBaseTestCase implements YasumiTest
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -77,7 +79,7 @@ class CommemorationDayTest extends NetherlandsBaseTestCase implements YasumiTest
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

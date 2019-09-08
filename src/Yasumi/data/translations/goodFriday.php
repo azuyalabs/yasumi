@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -42,5 +42,5 @@ return [
     'pt_BR' => 'Sexta feira santa',
     'pt_PT' => 'Sexta-feira Santa',
     'sk_SK' => 'Veľký piatok',
-    'sv_SE' => 'långfredagen',
+    'sv_SE' => 'långfredagen'
 ];

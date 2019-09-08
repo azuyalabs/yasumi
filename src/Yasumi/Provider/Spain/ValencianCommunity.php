@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\Provider\Spain;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\Spain;
@@ -43,9 +45,9 @@ class ValencianCommunity extends Spain
     /**
      * Initialize holidays for the Valencian Community (Spain).
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -73,16 +75,16 @@ class ValencianCommunity extends Spain
      *
      * @link http://www.timeanddate.com/holidays/spain/the-valencian-community-day
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateValencianCommunityDay(): void
     {
         if ($this->year >= 1239) {
             $this->addHoliday(new Holiday('valencianCommunityDay', [
-                'es_ES' => 'Día de la Comunidad Valenciana',
+                'es_ES' => 'Día de la Comunidad Valenciana'
             ], new DateTime("$this->year-10-9", new DateTimeZone($this->timezone)), $this->locale));
         }
     }

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * This file is part of the Yasumi package.
@@ -13,6 +13,7 @@
 
 namespace Yasumi\tests\Estonia;
 
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Estonia;
 
@@ -25,7 +26,7 @@ class EstoniaTest extends EstoniaBaseTestCase
 {
     /**
      * Tests if all official holidays in Estonia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -38,7 +39,7 @@ class EstoniaTest extends EstoniaBaseTestCase
             'newYearsDay',
             'pentecost',
             'secondChristmasDay',
-            'stJohnsDay',
+            'stJohnsDay'
         ];
 
         $year = $this->generateRandomYear();
@@ -60,7 +61,7 @@ class EstoniaTest extends EstoniaBaseTestCase
 
     /**
      * Tests if all observed holidays in Estonia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -69,7 +70,7 @@ class EstoniaTest extends EstoniaBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Estonia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -78,7 +79,7 @@ class EstoniaTest extends EstoniaBaseTestCase
 
     /**
      * Tests if all bank holidays in Estonia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -87,7 +88,7 @@ class EstoniaTest extends EstoniaBaseTestCase
 
     /**
      * Tests if all other holidays in Estonia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {

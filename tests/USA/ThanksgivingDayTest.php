@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\USA;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -35,8 +37,8 @@ class ThanksgivingDayTest extends USABaseTestCase implements YasumiTestCaseInter
     /**
      * Tests Thanksgiving Day on or after 1863. Thanksgiving Day is celebrated since 1863 on the fourth Thursday
      * of November.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testThanksgivingDayOnAfter1863()
     {
@@ -52,7 +54,7 @@ class ThanksgivingDayTest extends USABaseTestCase implements YasumiTestCaseInter
     /**
      * Tests Thanksgiving Day before 1863. ThanksgivingDay Day is celebrated since 1863 on the fourth Thursday
      * of November.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testThanksgivingDayBefore1863()
     {
@@ -65,7 +67,7 @@ class ThanksgivingDayTest extends USABaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -79,7 +81,7 @@ class ThanksgivingDayTest extends USABaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,9 +12,10 @@
 
 namespace Yasumi\Provider;
 
-use DateInterval;
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
 /**
@@ -33,9 +34,9 @@ class Finland extends AbstractProvider
     /**
      * Initialize holidays for Finland.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -77,28 +78,21 @@ class Finland extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Midsummer#Finland
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateStJohnsDay(): void
     {
-        if ($this->year < 1955) {
-            $this->addHoliday(new Holiday(
-                'stJohnsDay',
-                [],
-                new DateTime("$this->year-6-24", new DateTimeZone($this->timezone)),
-                $this->locale
-            ));
-        } else {
-            $this->addHoliday(new Holiday(
-                'stJohnsDay',
-                [],
-                new DateTime("$this->year-6-20 this saturday", new DateTimeZone($this->timezone)),
-                $this->locale
-            ));
-        }
+        $stJohnsDay = ($this->year < 1955) ? "$this->year-6-24" : "$this->year-6-20 this saturday";
+
+        $this->addHoliday(new Holiday(
+            'stJohnsDay',
+            [],
+            new DateTime($stJohnsDay, new DateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /**
@@ -118,9 +112,9 @@ class Finland extends AbstractProvider
      * @link https://en.wikipedia.org/wiki/All_Saints%27_Day
      * @link https://fi.wikipedia.org/wiki/Pyh%C3%A4inp%C3%A4iv%C3%A4
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateAllSaintsDay(): void
@@ -146,9 +140,9 @@ class Finland extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Independence_Day_(Finland)
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateIndependenceDay(): void

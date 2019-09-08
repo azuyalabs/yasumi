@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -19,5 +19,5 @@ return [
     'ko_KR' => '노동절',
     'nl_BE' => 'Dag van de arbeid',
     'nl_NL' => 'Dag van de arbeid',
-    'sk_SK' => 'Sviatok práce',
+    'sk_SK' => 'Sviatok práce'
 ];

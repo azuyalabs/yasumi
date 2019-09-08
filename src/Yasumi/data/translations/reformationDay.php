@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -13,5 +13,5 @@
 // Translations for Reformation Day
 return [
     'de_DE' => 'Reformationstag',
-    'en_US' => 'Reformation Day',
+    'en_US' => 'Reformation Day'
 ];

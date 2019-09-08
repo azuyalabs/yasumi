@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Ireland;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -32,11 +34,11 @@ class AugustHolidayTest extends IrelandBaseTestCase implements YasumiTestCaseInt
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int    $year     the year for which the holiday defined in this test needs to be tested
+     * @param int $year the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
-     * @throws \ReflectionException
-     * @throws \Exception
+     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHoliday($year, $expected)
     {
@@ -53,7 +55,7 @@ class AugustHolidayTest extends IrelandBaseTestCase implements YasumiTestCaseInt
      * Returns a list of test dates
      *
      * @return array list of test dates for the holiday defined in this test
-     * @throws \Exception
+     * @throws Exception
      */
     public function HolidayDataProvider(): array
     {
@@ -72,7 +74,7 @@ class AugustHolidayTest extends IrelandBaseTestCase implements YasumiTestCaseInt
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -92,7 +94,7 @@ class AugustHolidayTest extends IrelandBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

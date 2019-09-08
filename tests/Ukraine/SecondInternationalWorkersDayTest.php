@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,6 +12,9 @@
 
 namespace Yasumi\tests\Ukraine;
 
+use DateTime;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -31,10 +34,10 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements Y
      *
      * @dataProvider SecondInternationalWorkersDayDataProvider
      *
-     * @param int       $year     the year for which International Workers' Day needs to be tested
-     * @param \DateTime $expected the expected date
+     * @param int $year the year for which International Workers' Day needs to be tested
+     * @param DateTime $expected the expected date
      *
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSecondInternationalWorkersDay($year, $expected)
     {
@@ -43,7 +46,7 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements Y
 
     /**
      * Tests translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -57,7 +60,7 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements Y
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {
@@ -68,7 +71,7 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements Y
      * Returns a list of random test dates used for assertion of International Workers' Day.
      *
      * @return array list of test dates for International Workers' Day
-     * @throws \Exception
+     * @throws Exception
      */
     public function SecondInternationalWorkersDayDataProvider(): array
     {

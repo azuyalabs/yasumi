@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\Provider\Spain;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\Spain;
@@ -40,9 +42,9 @@ class LaRioja extends Spain
     /**
      * Initialize holidays for La Rioja (Spain).
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -65,16 +67,16 @@ class LaRioja extends Spain
      *
      * @link http://www.timeanddate.com/holidays/spain/rioja-day
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateLaRiojaDay(): void
     {
         if ($this->year >= 1983) {
             $this->addHoliday(new Holiday('laRiojaDay', [
-                'es_ES' => 'Día de La Rioja',
+                'es_ES' => 'Día de La Rioja'
             ], new DateTime("$this->year-6-9", new DateTimeZone($this->timezone)), $this->locale));
         }
     }

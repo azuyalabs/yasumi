@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -28,5 +28,5 @@ return [
     'nb_NO' => 'Andre pinsedag',
     'nl_BE' => 'Pinkstermaandag',
     'nl_NL' => 'Tweede pinksterdag',
-    'ro_RO' => 'A doua zi de Rusalii',
+    'ro_RO' => 'A doua zi de Rusalii'
 ];

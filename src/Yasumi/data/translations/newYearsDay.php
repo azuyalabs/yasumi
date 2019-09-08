@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -13,7 +13,7 @@
 // Translations for New Year's Day
 return [
     'bs_Latn_BA' => 'Nova godina',
-    'cs_CZ' => 'Den obnovy samostatného českého státu a Nový rok',
+    'cs_CZ' => 'Nový rok',
     'cy_GB' => 'Dydd Calan',
     'da_DK' => 'Nytårsdag',
     'de_AT' => 'Neujahr',
@@ -50,7 +50,7 @@ return [
     'ro_RO' => 'Anul Nou',
     'ru_RU' => 'Новый год',
     'ru_UA' => 'Новый Год',
-    'sk_SK' => 'Deň vzniku Slovenskej republiky',
+    'sk_SK' => 'Nový rok',
     'sv_SE' => 'nyårsdagen',
-    'uk_UA' => 'Новий Рік',
+    'uk_UA' => 'Новий Рік'
 ];

@@ -20,13 +20,15 @@
     }
   ],
   "require": {
-    "php": ">=7.1"
+    "php": ">=7.1",
+    "ext-json": "*"
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^2.14",
     "fzaninotto/faker": "~1.8",
     "mikey179/vfsstream": "~1.6",
-    "phpunit/phpunit": "~7.5"
+    "phan/phan": "^2.2",
+    "phpunit/phpunit": "~8.3"
   },
   "autoload": {
     "psr-4": {
@@ -44,5 +46,8 @@
   },
   "config": {
     "sort-packages": true
+  },
+  "suggest": {
+    "ext-calendar": "For calculating the date of Easter"
   }
 }

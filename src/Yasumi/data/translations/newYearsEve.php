@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -16,4 +16,5 @@ return [
     'en_US' => 'New Year\'s Eve',
     'ko_KR' => '신년전야',
     'lv_LV' => 'Vecgada vakars',
+    'sv_SE' => 'nyårsafton'
 ];

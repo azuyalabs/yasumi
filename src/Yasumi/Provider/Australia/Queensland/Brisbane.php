@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -15,6 +15,7 @@ namespace Yasumi\Provider\Australia\Queensland;
 use DateInterval;
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia\Queensland;
 
@@ -37,7 +38,7 @@ class Brisbane extends Queensland
      * Initialize holidays for Brisbane (Australia).
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -46,7 +47,7 @@ class Brisbane extends Queensland
 
         $this->calculatePeoplesDay();
     }
-    
+
     /**
      * Ekka People's Day.
      *
@@ -61,7 +62,7 @@ class Brisbane extends Queensland
      * @link https://en.wikipedia.org/wiki/Ekka
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculatePeoplesDay(): void

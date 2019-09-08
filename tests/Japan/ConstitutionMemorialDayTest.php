@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Japan;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -34,8 +36,8 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements YasumiTes
 
     /**
      * Tests Constitution Memorial Day after 1948. Constitution Memorial Day was established after 1948
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testConstitutionMemorialDayOnAfter1948()
     {
@@ -51,8 +53,8 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements YasumiTes
     /**
      * Tests Constitution Memorial Day after 1948 substituted next working day (when Constitution Memorial Day falls on
      * a Sunday)
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testConstitutionMemorialDayOnAfter1948SubstitutedNextWorkingDay()
     {
@@ -67,7 +69,7 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements YasumiTes
 
     /**
      * Tests Constitution Memorial Day before 1948. Constitution Memorial Day was established after 1948
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testConstitutionMemorialDayBefore1948()
     {
@@ -80,7 +82,7 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements YasumiTes
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -94,7 +96,7 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements YasumiTes
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

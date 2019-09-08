@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\USA;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -29,8 +31,8 @@ class ChristmasDayTest extends USABaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * Tests Christmas Day. Christmas Day is celebrated on December 25th.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testChristmasDay()
     {
@@ -45,8 +47,8 @@ class ChristmasDayTest extends USABaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * Tests Christmas Day substituted on Monday (when Christmas Day falls on Sunday).
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testChristmasDaySubstitutedMonday()
     {
@@ -62,8 +64,8 @@ class ChristmasDayTest extends USABaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * Tests Christmas Day substituted on Monday (when Christmas Day falls on Saturday).
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testChristmasDaySubstitutedFriday()
     {
@@ -79,7 +81,7 @@ class ChristmasDayTest extends USABaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * Tests translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -93,7 +95,7 @@ class ChristmasDayTest extends USABaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\France\HautRhin;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class HautRhinTest extends HautRhinBaseTestCase
 
     /**
      * Tests if all official holidays in Haut-Rhin are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -49,7 +50,7 @@ class HautRhinTest extends HautRhinBaseTestCase
 
     /**
      * Tests if all observed holidays in Haut-Rhin (France) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -58,7 +59,7 @@ class HautRhinTest extends HautRhinBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Haut-Rhin (France) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -67,7 +68,7 @@ class HautRhinTest extends HautRhinBaseTestCase
 
     /**
      * Tests if all bank holidays in Haut-Rhin (France) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -76,7 +77,7 @@ class HautRhinTest extends HautRhinBaseTestCase
 
     /**
      * Tests if all other holidays in Haut-Rhin (France) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -86,7 +87,7 @@ class HautRhinTest extends HautRhinBaseTestCase
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->year = $this->generateRandomYear(1945);
     }

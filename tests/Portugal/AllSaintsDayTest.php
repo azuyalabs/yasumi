@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Portugal;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -28,9 +30,9 @@ class AllSaintsDayTest extends PortugalBaseTestCase implements YasumiTestCaseInt
     public const HOLIDAY = 'allSaintsDay';
 
     /**
-     * Holiday was abolished by the portuguese government in 2014.
+     * Holiday was abolished by the portuguese government in 2013.
      */
-    public const HOLIDAY_YEAR_ABOLISHED = 2014;
+    public const HOLIDAY_YEAR_ABOLISHED = 2013;
 
     /**
      * Holiday was restored by the portuguese government in 2016.
@@ -39,35 +41,35 @@ class AllSaintsDayTest extends PortugalBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests the holiday defined in this test.
-     * @throws \ReflectionException
-     * @throws \Exception
-     * @throws \ReflectionException
-     * @throws \Exception
+     * @throws ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHoliday()
     {
-        $year     = 2016;
+        $year = 2016;
         $expected = new DateTime("$year-11-01", new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
 
-        $year     = 2013;
+        $year = 2012;
         $expected = new DateTime("$year-11-01", new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
-     * Test that the holiday did not happen in 2014 and 2015.
-     * @throws \ReflectionException
+     * Test that the holiday did not happen in 2013-2015.
+     * @throws ReflectionException
      */
     public function testNotHoliday()
     {
-        $year = $this->generateRandomYear(2014, 2015);
+        $year = $this->generateRandomYear(2013, 2015);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
     }
 
     /**
      * Tests translated name of Corpus Christi.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -83,7 +85,7 @@ class AllSaintsDayTest extends PortugalBaseTestCase implements YasumiTestCaseInt
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

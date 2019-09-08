@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Japan;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -35,8 +37,8 @@ class ComingOfAgeDayTest extends JapanBaseTestCase implements YasumiTestCaseInte
     /**
      * Tests Coming of Age Day after 2000. Coming of Age Day was established after 1948 on January 15th. After 2000 it
      * was changed to be the second monday of January.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testComingOfAgeDayOnAfter2000()
     {
@@ -53,8 +55,8 @@ class ComingOfAgeDayTest extends JapanBaseTestCase implements YasumiTestCaseInte
     /**
      * Tests Coming of Age Day between 1948 and 2000. Coming of Age Day was established after 1948 on January 15th.
      * After 2000 it was changed to be the second monday of January.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testComingOfAgeDayBetween1948And2000()
     {
@@ -70,7 +72,7 @@ class ComingOfAgeDayTest extends JapanBaseTestCase implements YasumiTestCaseInte
     /**
      * Tests Coming of Age Day before 1948. Coming of Age Day was established after 1948 on January 15th. After 2000 it
      * was changed to be the second monday of January.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testConstitutionMemorialDayBefore1948()
     {
@@ -83,7 +85,7 @@ class ComingOfAgeDayTest extends JapanBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -97,7 +99,7 @@ class ComingOfAgeDayTest extends JapanBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

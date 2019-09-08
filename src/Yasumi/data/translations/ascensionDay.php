@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -26,5 +26,5 @@ return [
     'nb_NO' => 'Kristi himmelfartsdag',
     'nl_BE' => 'Hemelvaart',
     'nl_NL' => 'Hemelvaart',
-    'sv_SE' => 'Kristi himmelsfärdsdag',
+    'sv_SE' => 'Kristi himmelsfärdsdag'
 ];

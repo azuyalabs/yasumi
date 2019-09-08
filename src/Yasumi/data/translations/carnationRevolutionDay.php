@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -13,5 +13,5 @@
 // Translations for Freedom Day
 return [
     'en_US' => 'Freedom Day',
-    'pt_PT' => 'Dia da Liberdade',
+    'pt_PT' => 'Dia da Liberdade'
 ];

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\Provider;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
 /**
@@ -34,9 +36,9 @@ class Bosnia extends AbstractProvider
     /**
      * Initialize holidays for Bosnia.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -57,8 +59,7 @@ class Bosnia extends AbstractProvider
         $this->addHoliday(new Holiday('orthodoxChristmasDay', [
             'en_US' => 'Orthodox Christmas Day',
             'bs_Latn_BA' => 'Pravoslavni Božić'
-        ], new \DateTime("{$this->year}-01-07", new \DateTimeZone($this->timezone))));
-
+        ], new DateTime("{$this->year}-01-07", new DateTimeZone($this->timezone))));
 
         /**
          * Independence Day

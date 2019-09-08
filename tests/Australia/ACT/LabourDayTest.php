@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Australia\ACT;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -32,11 +34,11 @@ class LabourDayTest extends ACTBaseTestCase implements YasumiTestCaseInterface
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int    $year     the year for which the holiday defined in this test needs to be tested
+     * @param int $year the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
-     * @throws \ReflectionException
-     * @throws \Exception
+     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHoliday($year, $expected)
     {
@@ -66,7 +68,7 @@ class LabourDayTest extends ACTBaseTestCase implements YasumiTestCaseInterface
             [2017, '2017-10-02'],
             [2018, '2018-10-01'],
             [2019, '2019-10-07'],
-            [2020, '2020-10-05'],
+            [2020, '2020-10-05']
         ];
 
         return $data;
@@ -74,7 +76,7 @@ class LabourDayTest extends ACTBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -88,7 +90,7 @@ class LabourDayTest extends ACTBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

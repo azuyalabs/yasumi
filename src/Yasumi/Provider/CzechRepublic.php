@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -13,6 +13,8 @@
 namespace Yasumi\Provider;
 
 use DateTime;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
 /**
@@ -35,9 +37,9 @@ class CzechRepublic extends AbstractProvider
     /**
      * Initialize holidays for the Czech Republic.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -45,6 +47,7 @@ class CzechRepublic extends AbstractProvider
         $this->timezone = 'Europe/Prague';
 
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
+        $this->calculateRenewalOfCzechIndependenceDay();
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
@@ -57,6 +60,29 @@ class CzechRepublic extends AbstractProvider
         $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
+    }
+
+    /**
+     * Day of renewal of independent Czech state
+     *
+     * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
+     *
+     * @throws InvalidDateException
+     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws \Exception
+     */
+    private function calculateRenewalOfCzechIndependenceDay(): void
+    {
+        $this->addHoliday(new Holiday(
+            'czechRenewalOfIndependentStateDay',
+            [
+                'cs_CZ' => 'Den obnovy samostatného českého státu',
+                'en_US' => 'Day of renewal of the independent Czech state'
+            ],
+            new DateTime($this->year . '-01-01', new \DateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /**
@@ -75,9 +101,9 @@ class CzechRepublic extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Saints_Cyril_and_Methodius
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateSaintsCyrilAndMethodiusDay(): void
@@ -100,9 +126,9 @@ class CzechRepublic extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Jan_Hus
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateJanHusDay(): void
@@ -128,9 +154,9 @@ class CzechRepublic extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Wenceslaus_I,_Duke_of_Bohemia
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateCzechStatehoodDay(): void
@@ -148,9 +174,9 @@ class CzechRepublic extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateIndependentCzechoslovakStateDay(): void
@@ -166,9 +192,9 @@ class CzechRepublic extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateStruggleForFreedomAndDemocracyDay(): void

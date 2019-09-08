@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -15,6 +15,8 @@ namespace Yasumi\Provider;
 use DateInterval;
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
 /**
@@ -33,9 +35,9 @@ class Netherlands extends AbstractProvider
     /**
      * Initialize holidays for the Netherlands.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -86,192 +88,6 @@ class Netherlands extends AbstractProvider
     }
 
     /**
-     * Commemoration Day and Liberation Day.
-     *
-     * Instituted after WWII in 1947.
-     *
-     * @throws \Exception
-     */
-    private function calculateCommemorationLiberationDay(): void
-    {
-        if ($this->year >= 1947) {
-            $this->addHoliday(new Holiday(
-                'commemorationDay',
-                ['en_US' => 'Commemoration Day', 'nl_NL' => 'Dodenherdenking'],
-                new DateTime("$this->year-5-4", new DateTimeZone($this->timezone)),
-                $this->locale,
-                Holiday::TYPE_OBSERVANCE
-            ));
-            $this->addHoliday(new Holiday(
-                'liberationDay',
-                ['en_US' => 'Liberation Day', 'nl_NL' => 'Bevrijdingsdag'],
-                new DateTime("$this->year-5-5", new DateTimeZone($this->timezone)),
-                $this->locale,
-                Holiday::TYPE_OBSERVANCE
-            ));
-        }
-    }
-
-    /**
-     * Kings Day.
-     *
-     * King's Day is celebrated from 2014 onwards on April 27th. If this happens to be on a Sunday, it will be
-     * celebrated the day before instead.
-     *
-     * @throws \Exception
-     */
-    private function calculateKingsday(): void
-    {
-        if ($this->year >= 2014) {
-            $date = new DateTime("$this->year-4-27", new DateTimeZone($this->timezone));
-
-            if (0 === (int)$date->format('w')) {
-                $date->sub(new DateInterval('P1D'));
-            }
-
-            $this->addHoliday(new Holiday(
-                'kingsDay',
-                ['en_US' => 'Kings Day', 'nl_NL' => 'Koningsdag'],
-                $date,
-                $this->locale
-            ));
-        }
-    }
-
-    /**
-     * Queen's Day.
-     *
-     * Queen's Day was celebrated between 1891 and 1948 (inclusive) on August 31. Between 1949 and 2013 (inclusive) it
-     * was celebrated April 30. If these dates are on a Sunday, Queen's Day was celebrated one day later until 1980
-     * (on the following Monday), starting 1980 one day earlier (on the preceding Saturday).
-     *
-     * @throws \Exception
-     */
-    private function calculateQueensday(): void
-    {
-        if ($this->year >= 1891 && $this->year <= 2013) {
-            $date = new DateTime("$this->year-4-30", new DateTimeZone($this->timezone));
-            if ($this->year <= 1948) {
-                $date = new DateTime("$this->year-8-31", new DateTimeZone($this->timezone));
-            }
-
-            // Determine substitution day
-            if (0 === (int)$date->format('w')) {
-                ($this->year < 1980) ? $date->add(new DateInterval('P1D')) : $date->sub(new DateInterval('P1D'));
-            }
-
-            $this->addHoliday(new Holiday(
-                'queensDay',
-                ['en_US' => 'Queen\'s Day', 'nl_NL' => 'Koninginnedag'],
-                $date,
-                $this->locale
-            ));
-        }
-    }
-
-    /**
-     * Prince's Day.
-     *
-     * Prinsjesdag (English: Prince's Day) is the day on which the reigning monarch of the Netherlands addresses a joint
-     * session of the Dutch Senate and House of Representatives.
-     *
-     * @throws \Exception
-     */
-    private function calculatePrincesDay(): void
-    {
-        $this->addHoliday(new Holiday(
-            'princesDay',
-            ['en_US' => 'Prince\'s Day', 'nl_NL' => 'Prinsjesdag'],
-            new DateTime("third tuesday of september $this->year", new DateTimeZone($this->timezone)),
-            $this->locale,
-            Holiday::TYPE_OTHER
-        ));
-    }
-
-    /**
-     * Halloween
-     *
-     * Halloween or Hallowe'en (a contraction of Hallows' Even or Hallows' Evening), is a celebration observed in
-     * several countries on 31 October, the eve of the Western Christian feast of All Hallows' Day.
-     * It begins the three-day observance of Allhallowtide, the time in the liturgical year dedicated to remembering the
-     * dead, including saints (hallows), martyrs, and all the faithful departed.
-     *
-     * @link https://en.wikipedia.org/wiki/Halloween
-     *
-     * @throws \Exception
-     */
-    private function calculateHalloween(): void
-    {
-        $this->addHoliday(new Holiday(
-            'halloween',
-            ['en_US' => 'Halloween', 'nl_NL' => 'Halloween'],
-            new DateTime("$this->year-10-31", new DateTimeZone($this->timezone)),
-            $this->locale,
-            Holiday::TYPE_OBSERVANCE
-        ));
-    }
-
-    /**
-     * St. Nicholas' Day
-     *
-     * The feast of Sinterklaas celebrates the name day of Saint Nicholas on 6 December.
-     * The feast is celebrated annually with the giving of gifts on St. Nicholas' Eve (5 December) in the Netherlands
-     * and on the morning of 6 December, Saint Nicholas Day, in Belgium, Luxembourg and northern France
-     * (French Flanders, Lorraine and Artois).
-     *
-     * @link https://en.wikipedia.org/wiki/Sinterklaas
-     *
-     * @throws \Exception
-     */
-    private function calculateStNicholasDay(): void
-    {
-        /**
-         * St. Nicholas' Day
-         */
-        $this->addHoliday(new Holiday(
-            'stNicholasDay',
-            ['en_US' => 'St. Nicholas\' Day', 'nl_NL' => 'Sinterklaas'],
-            new DateTime("$this->year-12-5", new DateTimeZone($this->timezone)),
-            $this->locale,
-            Holiday::TYPE_OBSERVANCE
-        ));
-    }
-
-    /**
-     * Summer Time.
-     *
-     * The beginning of summer time. Summer time is also known as day lights saving time.
-     *
-     * @see \Yasumi\Provider\CommonHolidays::summerTime()
-     *
-     * @throws \Exception
-     */
-    private function calculateSummerTime(): void
-    {
-        $summerTime = $this->summerTime($this->year, $this->timezone, $this->locale);
-        if ($summerTime !== null) {
-            $this->addHoliday($summerTime);
-        }
-    }
-
-    /**
-     * Winter Time.
-     *
-     * The beginning of winter time. Winter time is also known as standard time.
-     *
-     * @see \Yasumi\Provider\CommonHolidays::winterTime()
-     *
-     * @throws \Exception
-     */
-    private function calculateWinterTime(): void
-    {
-        $winterTime = $this->winterTime($this->year, $this->timezone, $this->locale);
-        if ($winterTime !== null) {
-            $this->addHoliday($winterTime);
-        }
-    }
-
-    /**
      * Carnival.
      *
      * Carnival (Dutch: Carnaval) is originally an European Pagan spring festival, with an emphasis on role-reversal
@@ -282,7 +98,7 @@ class Netherlands extends AbstractProvider
      */
     private function calculateCarnival(): void
     {
-        $easter       = $this->calculateEaster($this->year, $this->timezone);
+        $easter = $this->calculateEaster($this->year, $this->timezone);
         $carnivalDay1 = clone $easter;
         $this->addHoliday(new Holiday(
             'carnivalDay',
@@ -315,5 +131,191 @@ class Netherlands extends AbstractProvider
             $this->locale,
             Holiday::TYPE_OBSERVANCE
         ));
+    }
+
+    /**
+     * Winter Time.
+     *
+     * The beginning of winter time. Winter time is also known as standard time.
+     *
+     * @throws \Exception
+     * @see \Yasumi\Provider\CommonHolidays::winterTime()
+     *
+     */
+    private function calculateWinterTime(): void
+    {
+        $winterTime = $this->winterTime($this->year, $this->timezone, $this->locale);
+        if ($winterTime instanceof Holiday) {
+            $this->addHoliday($winterTime);
+        }
+    }
+
+    /**
+     * Summer Time.
+     *
+     * The beginning of summer time. Summer time is also known as day lights saving time.
+     *
+     * @throws \Exception
+     * @see \Yasumi\Provider\CommonHolidays::summerTime()
+     *
+     */
+    private function calculateSummerTime(): void
+    {
+        $summerTime = $this->summerTime($this->year, $this->timezone, $this->locale);
+        if ($summerTime instanceof Holiday) {
+            $this->addHoliday($summerTime);
+        }
+    }
+
+    /**
+     * St. Nicholas' Day
+     *
+     * The feast of Sinterklaas celebrates the name day of Saint Nicholas on 6 December.
+     * The feast is celebrated annually with the giving of gifts on St. Nicholas' Eve (5 December) in the Netherlands
+     * and on the morning of 6 December, Saint Nicholas Day, in Belgium, Luxembourg and northern France
+     * (French Flanders, Lorraine and Artois).
+     *
+     * @link https://en.wikipedia.org/wiki/Sinterklaas
+     *
+     * @throws \Exception
+     */
+    private function calculateStNicholasDay(): void
+    {
+        /**
+         * St. Nicholas' Day
+         */
+        $this->addHoliday(new Holiday(
+            'stNicholasDay',
+            ['en_US' => 'St. Nicholas\' Day', 'nl_NL' => 'Sinterklaas'],
+            new DateTime("$this->year-12-5", new DateTimeZone($this->timezone)),
+            $this->locale,
+            Holiday::TYPE_OBSERVANCE
+        ));
+    }
+
+    /**
+     * Halloween
+     *
+     * Halloween or Hallowe'en (a contraction of Hallows' Even or Hallows' Evening), is a celebration observed in
+     * several countries on 31 October, the eve of the Western Christian feast of All Hallows' Day.
+     * It begins the three-day observance of Allhallowtide, the time in the liturgical year dedicated to remembering the
+     * dead, including saints (hallows), martyrs, and all the faithful departed.
+     *
+     * @link https://en.wikipedia.org/wiki/Halloween
+     *
+     * @throws \Exception
+     */
+    private function calculateHalloween(): void
+    {
+        $this->addHoliday(new Holiday(
+            'halloween',
+            ['en_US' => 'Halloween', 'nl_NL' => 'Halloween'],
+            new DateTime("$this->year-10-31", new DateTimeZone($this->timezone)),
+            $this->locale,
+            Holiday::TYPE_OBSERVANCE
+        ));
+    }
+
+    /**
+     * Prince's Day.
+     *
+     * Prinsjesdag (English: Prince's Day) is the day on which the reigning monarch of the Netherlands addresses a joint
+     * session of the Dutch Senate and House of Representatives.
+     *
+     * @throws \Exception
+     */
+    private function calculatePrincesDay(): void
+    {
+        $this->addHoliday(new Holiday(
+            'princesDay',
+            ['en_US' => 'Prince\'s Day', 'nl_NL' => 'Prinsjesdag'],
+            new DateTime("third tuesday of september $this->year", new DateTimeZone($this->timezone)),
+            $this->locale,
+            Holiday::TYPE_OTHER
+        ));
+    }
+
+    /**
+     * Queen's Day.
+     *
+     * Queen's Day was celebrated between 1891 and 1948 (inclusive) on August 31. Between 1949 and 2013 (inclusive) it
+     * was celebrated April 30. If these dates are on a Sunday, Queen's Day was celebrated one day later until 1980
+     * (on the following Monday), starting 1980 one day earlier (on the preceding Saturday).
+     *
+     * @throws \Exception
+     */
+    private function calculateQueensday(): void
+    {
+        if ($this->year >= 1891 && $this->year <= 2013) {
+            $date = new DateTime("$this->year-4-30", new DateTimeZone($this->timezone));
+            if ($this->year <= 1948) {
+                $date = new DateTime("$this->year-8-31", new DateTimeZone($this->timezone));
+            }
+
+            // Determine substitution day
+            if (0 === (int)$date->format('w')) {
+                $this->year < 1980 ? $date->add(new DateInterval('P1D')) : $date->sub(new DateInterval('P1D'));
+            }
+
+            $this->addHoliday(new Holiday(
+                'queensDay',
+                ['en_US' => 'Queen\'s Day', 'nl_NL' => 'Koninginnedag'],
+                $date,
+                $this->locale
+            ));
+        }
+    }
+
+    /**
+     * Kings Day.
+     *
+     * King's Day is celebrated from 2014 onwards on April 27th. If this happens to be on a Sunday, it will be
+     * celebrated the day before instead.
+     *
+     * @throws \Exception
+     */
+    private function calculateKingsday(): void
+    {
+        if ($this->year >= 2014) {
+            $date = new DateTime("$this->year-4-27", new DateTimeZone($this->timezone));
+
+            if (0 === (int)$date->format('w')) {
+                $date->sub(new DateInterval('P1D'));
+            }
+
+            $this->addHoliday(new Holiday(
+                'kingsDay',
+                ['en_US' => 'Kings Day', 'nl_NL' => 'Koningsdag'],
+                $date,
+                $this->locale
+            ));
+        }
+    }
+
+    /**
+     * Commemoration Day and Liberation Day.
+     *
+     * Instituted after WWII in 1947.
+     *
+     * @throws \Exception
+     */
+    private function calculateCommemorationLiberationDay(): void
+    {
+        if ($this->year >= 1947) {
+            $this->addHoliday(new Holiday(
+                'commemorationDay',
+                ['en_US' => 'Commemoration Day', 'nl_NL' => 'Dodenherdenking'],
+                new DateTime("$this->year-5-4", new DateTimeZone($this->timezone)),
+                $this->locale,
+                Holiday::TYPE_OBSERVANCE
+            ));
+            $this->addHoliday(new Holiday(
+                'liberationDay',
+                ['en_US' => 'Liberation Day', 'nl_NL' => 'Bevrijdingsdag'],
+                new DateTime("$this->year-5-5", new DateTimeZone($this->timezone)),
+                $this->locale,
+                Holiday::TYPE_OFFICIAL
+            ));
+        }
     }
 }

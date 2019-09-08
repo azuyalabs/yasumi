@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Australia;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -37,11 +39,11 @@ class AnzacDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInterf
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int      $year     the year for which the holiday defined in this test needs to be tested
+     * @param int $year the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
      *
-     * @throws \ReflectionException
-     * @throws \Exception
+     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHoliday($year, $expected)
     {
@@ -55,7 +57,7 @@ class AnzacDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInterf
 
     /**
      *  Tests that ANZAC Day is not present before 1921
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testNotHoliday()
     {
@@ -81,7 +83,7 @@ class AnzacDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInterf
             [2018, '2018-04-25'],
             [2019, '2019-04-25'],
             [2019, '2019-04-25'],
-            [2020, '2020-04-25'],
+            [2020, '2020-04-25']
         ];
 
         return $data;
@@ -89,7 +91,7 @@ class AnzacDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -103,7 +105,7 @@ class AnzacDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -18,6 +18,7 @@ use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use ReflectionClass;
 use RuntimeException;
+use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\InvalidYearException;
 use Yasumi\Exception\ProviderNotFoundException;
 use Yasumi\Exception\UnknownLocaleException;
@@ -53,7 +54,7 @@ class Yasumi
     private static $ignoredProvider = [
         'AbstractProvider.php',
         'CommonHolidays.php',
-        'ChristianHolidays.php',
+        'ChristianHolidays.php'
     ];
 
     /**
@@ -63,18 +64,18 @@ class Yasumi
      * by this Holiday Provider. The workingDays parameter can be used how far ahead (in days) the next working day
      * must be searched for.
      *
-     * @param string             $class       Holiday Provider name
-     * @param \DateTimeInterface $startDate   Start date, defaults to today
-     * @param int                $workingDays Number of days to look ahead for the (first) next working day
+     * @param string $class Holiday Provider name
+     * @param \DateTimeInterface $startDate Start date, defaults to today
+     * @param int $workingDays Number of days to look ahead for the (first) next working day
      *
      * @return \DateTimeInterface
      *
      * @throws \ReflectionException
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     * @throws \RuntimeException
-     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws RuntimeException
+     * @throws InvalidArgumentException
      * @throws \Exception
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      *
      * @TODO we should accept a timezone so we can accept int/string for $startDate
      *
@@ -92,7 +93,7 @@ class Yasumi
 
         while ($workingDays > 0) {
             $date = $date->add(new \DateInterval('P1D'));
-            if (! $provider || $provider->getYear() !== \getdate()['year']) {
+            if (!$provider || $provider->getYear() !== \getdate()['year']) {
                 $provider = self::create($class, (int)$date->format('Y'));
             }
             if ($provider->isWorkingDay($date)) {
@@ -110,18 +111,18 @@ class Yasumi
      * already with Yasumi, or your own provider by giving the name of your class in the first parameter. Your provider
      * class needs to implement the 'ProviderInterface' class.
      *
-     * @param string $class  holiday provider name
-     * @param int    $year   year for which the country provider needs to be created. Year needs to be a valid integer
+     * @param string $class holiday provider name
+     * @param int $year year for which the country provider needs to be created. Year needs to be a valid integer
      *                       between 1000 and 9999.
      * @param string $locale The locale to use. If empty we'll use the default locale (en_US)
      *
-     * @throws \ReflectionException
+     * @return AbstractProvider An instance of class $class is created and returned
+     *
      * @throws RuntimeException          If no such holiday provider is found
      * @throws InvalidYearException      if the year parameter is not between 1000 and 9999
      * @throws UnknownLocaleException    if the locale parameter is invalid
      * @throws ProviderNotFoundException if the holiday provider for the given country does not exist
-     *
-     * @return AbstractProvider An instance of class $class is created and returned
+     * @throws \ReflectionException
      */
     public static function create(string $class, int $year = 0, string $locale = self::DEFAULT_LOCALE): ProviderInterface
     {
@@ -132,13 +133,13 @@ class Yasumi
             $providerClass = $class;
         }
 
-        if ($class === 'AbstractProvider' || ! \class_exists($providerClass)) {
+        if ('AbstractProvider' === $class || !\class_exists($providerClass)) {
             throw new ProviderNotFoundException(\sprintf('Unable to find holiday provider "%s".', $class));
         }
 
         // Assert year input
         if ($year < 1000 || $year > 9999) {
-            throw new InvalidYearException(\sprintf('Year needs to be between 1000 and 9999 (%s given).', $year));
+            throw new InvalidYearException(\sprintf('Year needs to be between 1000 and 9999 (%d given).', $year));
         }
 
         // Load internal locales variable
@@ -153,7 +154,7 @@ class Yasumi
         }
 
         // Assert locale input
-        if (! \in_array($locale, self::$locales, true)) {
+        if (!\in_array($locale, self::$locales, true)) {
             throw new UnknownLocaleException(\sprintf('Locale "%s" is not a valid locale.', $locale));
         }
 
@@ -178,17 +179,17 @@ class Yasumi
      * your class in the first parameter. Your provider class needs to implement the 'ProviderInterface' class.
      *
      * @param string $iso3166_2 ISO3166-2 Coded region, holiday provider will be searched for
-     * @param int    $year      year for which the country provider needs to be created. Year needs to be a valid
+     * @param int $year year for which the country provider needs to be created. Year needs to be a valid
      *                          integer between 1000 and 9999.
-     * @param string $locale    The locale to use. If empty we'll use the default locale (en_US)
+     * @param string $locale The locale to use. If empty we'll use the default locale (en_US)
      *
-     * @throws \ReflectionException
+     * @return AbstractProvider An instance of class $class is created and returned
+     *
      * @throws RuntimeException          If no such holiday provider is found
      * @throws InvalidArgumentException  if the year parameter is not between 1000 and 9999
      * @throws UnknownLocaleException    if the locale parameter is invalid
      * @throws ProviderNotFoundException if the holiday provider for the given ISO3166-2 code does not exist
-     *
-     * @return AbstractProvider An instance of class $class is created and returned
+     * @throws \ReflectionException
      */
     public static function createByISO3166_2(
         string $iso3166_2,
@@ -222,14 +223,14 @@ class Yasumi
             return $providers;
         }
 
-        $providers     = [];
+        $providers = [];
         $filesIterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(
             __DIR__ . DIRECTORY_SEPARATOR . 'Provider',
             FilesystemIterator::SKIP_DOTS
         ), RecursiveIteratorIterator::SELF_FIRST);
 
         foreach ($filesIterator as $file) {
-            if ($file->isDir() || $file->getExtension() !== 'php' || \in_array(
+            if ($file->isDir() || 'php' !== $file->getExtension() || \in_array(
                 $file->getBasename('.php'),
                 self::$ignoredProvider,
                 true
@@ -258,21 +259,20 @@ class Yasumi
      * by this Holiday Provider. The workingDays parameter can be used how far back (in days) the previous working day
      * must be searched for.
      *
-     * @param string             $class       Holiday Provider name
-     * @param \DateTimeInterface $startDate   Start date, defaults to today
-     * @param int                $workingDays Number of days to look back for the (first) previous working day
+     * @param string $class Holiday Provider name
+     * @param \DateTimeInterface $startDate Start date, defaults to today
+     * @param int $workingDays Number of days to look back for the (first) previous working day
      *
      * @return \DateTimeInterface
      *
      * @throws \ReflectionException
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     * @throws \RuntimeException
-     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws RuntimeException
+     * @throws InvalidArgumentException
      * @throws \Exception
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      *
      * @TODO we should accept a timezone so we can accept int/string for $startDate
-     *
      */
     public static function prevWorkingDay(
         string $class,
@@ -287,7 +287,7 @@ class Yasumi
 
         while ($workingDays > 0) {
             $date = $date->sub(new \DateInterval('P1D'));
-            if (! $provider || $provider->getYear() !== \getdate()['year']) {
+            if (!$provider || $provider->getYear() !== \getdate()['year']) {
                 $provider = self::create($class, (int)$date->format('Y'));
             }
             if ($provider->isWorkingDay($date)) {

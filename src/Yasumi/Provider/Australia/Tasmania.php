@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,7 @@ namespace Yasumi\Provider\Australia;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia;
 
@@ -35,7 +36,7 @@ class Tasmania extends Australia
      * Initialize holidays for Tasmania (Australia).
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -58,7 +59,7 @@ class Tasmania extends Australia
 
         $this->addHoliday(new Holiday('eightHourDay', ['en_AU' => 'Eight Hour Day'], $date, $this->locale));
     }
-    
+
     /**
      * Queens Birthday.
      *
@@ -84,7 +85,7 @@ class Tasmania extends Australia
             false
         );
     }
-    
+
     /**
      * Recreation Day
      *

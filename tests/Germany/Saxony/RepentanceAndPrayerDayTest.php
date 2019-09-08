@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Germany\Saxony;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -39,13 +41,13 @@ class RepentanceAndPrayerDayTest extends SaxonyBaseTestCase implements YasumiTes
 
     /**
      * Tests the holiday defined in this test on or after establishment.
-     * @throws \ReflectionException
-     * @throws \Exception
+     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayOnAfterEstablishment()
     {
         // Check between the 16th and 22nd day the one that is a Wednesday
-        $year    = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $holiday = new DateTime("next wednesday $year-11-15", new DateTimeZone(self::TIMEZONE)); // Default date
 
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $holiday);
@@ -58,7 +60,7 @@ class RepentanceAndPrayerDayTest extends SaxonyBaseTestCase implements YasumiTes
 
     /**
      * Tests the holiday defined in this test before establishment.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayBeforeEstablishment()
     {
@@ -71,7 +73,7 @@ class RepentanceAndPrayerDayTest extends SaxonyBaseTestCase implements YasumiTes
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -85,7 +87,7 @@ class RepentanceAndPrayerDayTest extends SaxonyBaseTestCase implements YasumiTes
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

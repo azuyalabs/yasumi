@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -16,5 +16,5 @@ return [
     'el_GR' => 'Μεγάλη Πέμπτη',
     'en_US' => 'Maundy Thursday',
     'es_ES' => 'Jueves Santo',
-    'nb_NO' => 'Skjærtorsdag',
+    'nb_NO' => 'Skjærtorsdag'
 ];

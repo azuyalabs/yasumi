@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Australia\Tasmania;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class TasmaniaTest extends TasmaniaBaseTestCase
 
     /**
      * Tests if all official holidays in Tasmania (Australia) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -40,14 +41,14 @@ class TasmaniaTest extends TasmaniaBaseTestCase
             'anzacDay',
             'queensBirthday',
             'eightHourDay',
-            'recreationDay',
+            'recreationDay'
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->year = $this->generateRandomYear(1921);
     }

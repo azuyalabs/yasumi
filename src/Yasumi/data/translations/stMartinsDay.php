@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,5 +14,5 @@
 return [
     'en_US' => 'St. Martin\'s Day',
     'nl_BE' => 'Sint Maarten',
-    'nl_NL' => 'Sint Maarten',
+    'nl_NL' => 'Sint Maarten'
 ];

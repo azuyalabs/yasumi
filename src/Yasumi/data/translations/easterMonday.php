@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -33,7 +33,7 @@ return [
     'hr_HR' => 'Uskršnji ponedjeljak',
     'hu_HU' => 'Húsvéthétfő',
     'it_CH' => 'Lunedi di Pasqua',
-    'it_IT' => 'Lunedi` dell\'Angelo',
+    'it_IT' => 'Lunedì dell\'Angelo',
     'lt_LT' => 'Antroji Velykų diena',
     'lv_LV' => 'Otrās Lieldienas',
     'nb_NO' => 'Andre påskedag',
@@ -42,5 +42,5 @@ return [
     'pl_PL' => 'Poniedziałek Wielkanocny',
     'ro_RO' => 'A doua zi de Paște',
     'sk_SK' => 'Veľkonočný pondelok',
-    'sv_SE' => 'annandag påsk',
+    'sv_SE' => 'annandag påsk'
 ];

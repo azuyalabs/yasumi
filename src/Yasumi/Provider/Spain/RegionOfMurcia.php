@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\Provider\Spain;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\Spain;
@@ -40,9 +42,9 @@ class RegionOfMurcia extends Spain
     /**
      * Initialize holidays for the Region of Murcia (Spain).
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -66,16 +68,16 @@ class RegionOfMurcia extends Spain
      *
      * @link http://www.timeanddate.com/holidays/spain/murcia-day
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateDayOfMurcia(): void
     {
         if ($this->year >= 1983) {
             $this->addHoliday(new Holiday('murciaDay', [
-                'es_ES' => 'Día de la Región de Murcia',
+                'es_ES' => 'Día de la Región de Murcia'
             ], new DateTime("$this->year-6-9", new DateTimeZone($this->timezone)), $this->locale));
         }
     }

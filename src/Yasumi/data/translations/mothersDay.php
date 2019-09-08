@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -22,5 +22,5 @@ return [
     'nl_NL' => 'Moederdag',
     'pt_PT' => 'Dia da Mãe',
     'ro_RO' => 'Ziua Mamei',
-    'sk_SK' => 'Deň matiek',
+    'sk_SK' => 'Deň matiek'
 ];

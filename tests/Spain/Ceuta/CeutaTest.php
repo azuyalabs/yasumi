@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Spain\Ceuta;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class CeutaTest extends CeutaBaseTestCase
 
     /**
      * Tests if all official holidays in Ceuta (Spain) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -41,25 +42,25 @@ class CeutaTest extends CeutaBaseTestCase
             'allSaintsDay',
             'constitutionDay',
             'immaculateConception',
-            'christmasDay',
+            'christmasDay'
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
      * Tests if all observed holidays in Ceuta are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
         $this->assertDefinedHolidays([
             'maundyThursday',
-            'easter',
+            'easter'
         ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**
      * Tests if all seasonal holidays in Ceuta are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -68,7 +69,7 @@ class CeutaTest extends CeutaBaseTestCase
 
     /**
      * Tests if all bank holidays in Ceuta are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -77,7 +78,7 @@ class CeutaTest extends CeutaBaseTestCase
 
     /**
      * Tests if all other holidays in Ceuta are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -87,7 +88,7 @@ class CeutaTest extends CeutaBaseTestCase
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->year = $this->generateRandomYear(1981);
     }

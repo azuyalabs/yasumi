@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -554,5 +554,5 @@ return [
     'zh_Hant_HK',
     'zh_Hant_MO',
     'zh_Hant_TW',
-    'zu_ZA',
+    'zu_ZA'
 ];

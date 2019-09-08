@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\CzechRepublic;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -30,12 +31,13 @@ class CzechRepublicTest extends CzechRepublicBaseTestCase
 
     /**
      * Tests if all official holidays in Finland are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
+            'czechRenewalOfIndependentStateDay',
             'victoryInEuropeDay',
             'goodFriday',
             'easterMonday',
@@ -46,22 +48,22 @@ class CzechRepublicTest extends CzechRepublicBaseTestCase
             'janHusDay',
             'czechStateHoodDay',
             'independentCzechoslovakStateDay',
-            'struggleForFreedomAndDemocracyDay',
+            'struggleForFreedomAndDemocracyDay'
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
      * Tests if all observed holidays in the Czech Republic are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
-        $this->assertDefinedHolidays(['christmasEve',], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays(['christmasEve'], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**
      * Tests if all seasonal holidays in the Czech Republic are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -70,7 +72,7 @@ class CzechRepublicTest extends CzechRepublicBaseTestCase
 
     /**
      * Tests if all bank holidays in the Czech Republic are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -79,7 +81,7 @@ class CzechRepublicTest extends CzechRepublicBaseTestCase
 
     /**
      * Tests if all other holidays in the Czech Republic are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -89,7 +91,7 @@ class CzechRepublicTest extends CzechRepublicBaseTestCase
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->year = $this->generateRandomYear(1990);
     }

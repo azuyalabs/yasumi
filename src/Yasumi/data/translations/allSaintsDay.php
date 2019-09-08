@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -33,5 +33,5 @@ return [
     'pt_PT' => 'Dia de todos os Santos',
     'ro_RO' => 'Ziua tuturor sfinților',
     'sk_SK' => 'Sviatok Všetkých svätých',
-    'sv_SE' => 'alla helgons dag',
+    'sv_SE' => 'alla helgons dag'
 ];

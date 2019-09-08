@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,7 @@ namespace Yasumi\Provider\Australia;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia;
 
@@ -35,7 +36,7 @@ class WA extends Australia
      * Initialize holidays for Western Australia (Australia).
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -45,6 +46,50 @@ class WA extends Australia
         $this->calculateQueensBirthday();
         $this->calculateLabourDay();
         $this->calculateWesternAustraliaDay();
+    }
+
+    /**
+     * Queens Birthday.
+     *
+     * The Queen's Birthday is an Australian public holiday but the date varies across
+     * states and territories. Australia celebrates this holiday because it is a constitutional
+     * monarchy, with the English monarch as head of state.
+     *
+     * Her actual birthday is on April 21, but it's celebrated as a public holiday on the second Monday of June.
+     *  (Except QLD & WA)
+     *
+     * @link https://www.timeanddate.com/holidays/australia/queens-birthday
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Exception
+     */
+    private function calculateQueensBirthday(): void
+    {
+        if (2011 === $this->year) {
+            $this->calculateHoliday(
+                'queensBirthday',
+                ['en_AU' => "Queen's Birthday"],
+                new DateTime('2011-10-28', new DateTimeZone($this->timezone)),
+                false,
+                false
+            );
+        } elseif (2012 === $this->year) {
+            $this->calculateHoliday(
+                'queensBirthday',
+                ['en_AU' => "Queen's Birthday"],
+                new DateTime('2012-10-01', new DateTimeZone($this->timezone)),
+                false,
+                false
+            );
+        } else {
+            $this->calculateHoliday(
+                'queensBirthday',
+                ['en_AU' => "Queen's Birthday"],
+                new DateTime('last monday of september ' . $this->year, new DateTimeZone($this->timezone)),
+                false,
+                false
+            );
+        }
     }
 
     /**
@@ -76,49 +121,5 @@ class WA extends Australia
             false,
             false
         );
-    }
-    
-    /**
-     * Queens Birthday.
-     *
-     * The Queen's Birthday is an Australian public holiday but the date varies across
-     * states and territories. Australia celebrates this holiday because it is a constitutional
-     * monarchy, with the English monarch as head of state.
-     *
-     * Her actual birthday is on April 21, but it's celebrated as a public holiday on the second Monday of June.
-     *  (Except QLD & WA)
-     *
-     * @link https://www.timeanddate.com/holidays/australia/queens-birthday
-     *
-     * @throws \InvalidArgumentException
-     * @throws \Exception
-     */
-    private function calculateQueensBirthday(): void
-    {
-        if ($this->year === 2011) {
-            $this->calculateHoliday(
-                'queensBirthday',
-                ['en_AU' => "Queen's Birthday"],
-                new DateTime('2011-10-28', new DateTimeZone($this->timezone)),
-                false,
-                false
-            );
-        } elseif ($this->year === 2012) {
-            $this->calculateHoliday(
-                'queensBirthday',
-                ['en_AU' => "Queen's Birthday"],
-                new DateTime('2012-10-01', new DateTimeZone($this->timezone)),
-                false,
-                false
-            );
-        } else {
-            $this->calculateHoliday(
-                'queensBirthday',
-                ['en_AU' => "Queen's Birthday"],
-                new DateTime('last monday of september ' . $this->year, new DateTimeZone($this->timezone)),
-                false,
-                false
-            );
-        }
     }
 }

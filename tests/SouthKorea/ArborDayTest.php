@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * This file is part of the Yasumi package.
@@ -15,6 +15,8 @@ namespace Yasumi\tests\SouthKorea;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -26,12 +28,12 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInter
     /**
      * The name of the holiday
      */
-    public const HOLIDAY = 'arborDay';
+    private const HOLIDAY = 'arborDay';
 
     /**
      * The year in which the holiday was first established
      */
-    public const ESTABLISHMENT_YEAR = 1949;
+    private const ESTABLISHMENT_YEAR = 1949;
 
     /**
      * The year in which the holiday was removed
@@ -39,14 +41,20 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInter
     public const REMOVED_YEAR = 2005;
 
     /**
+     * The year in which the holiday was not celebrated
+     */
+    public const YEAR_NOT_CELEBRATED = 1960;
+
+    /**
      * Tests the holiday defined in this test.
-     * @throws \Exception
-     * @throws \ReflectionException
+     *
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testHoliday()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::REMOVED_YEAR);
-        if ($year === 1960) {
+        if (self::YEAR_NOT_CELEBRATED === $year) {
             $this->assertNotHoliday(
                 self::REGION,
                 self::HOLIDAY,
@@ -64,7 +72,8 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests the holiday defined in this test after removal.
-     * @throws \ReflectionException
+     *
+     * @throws ReflectionException
      */
     public function testHolidayAfterRemoval()
     {
@@ -77,7 +86,8 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests the holiday defined in this test before establishment.
-     * @throws \ReflectionException
+     *
+     * @throws ReflectionException
      */
     public function testHolidayBeforeEstablishment()
     {
@@ -90,12 +100,13 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     *
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::REMOVED_YEAR);
-        if ($year !== 1960) {
+        if (self::YEAR_NOT_CELEBRATED !== $year) {
             $this->assertTranslatedHolidayName(
                 self::REGION,
                 self::HOLIDAY,
@@ -107,12 +118,13 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     *
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::REMOVED_YEAR);
-        if ($year !== 1960) {
+        if (self::YEAR_NOT_CELEBRATED !== $year) {
             $this->assertHolidayType(
                 self::REGION,
                 self::HOLIDAY,

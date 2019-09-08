@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * This file is part of the Yasumi package.
@@ -16,6 +16,8 @@ namespace Yasumi\Provider;
 use DateInterval;
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\SubstituteHoliday;
 
@@ -39,9 +41,9 @@ class SouthAfrica extends AbstractProvider
     /**
      * Initialize holidays for South Africa.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -88,9 +90,9 @@ class SouthAfrica extends AbstractProvider
      *
      * @link http://www.gov.za/about-sa/public-holidays#21march
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateHumanRightsDay(): void
@@ -110,9 +112,9 @@ class SouthAfrica extends AbstractProvider
      *
      * @link http://www.gov.za/sites/www.gov.za/files/Act36of1994.pdf
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateFamilyDay(): void
@@ -133,9 +135,9 @@ class SouthAfrica extends AbstractProvider
      * @link http://www.gov.za/sites/www.gov.za/files/Act36of1994.pdf
      * @link http://www.gov.za/freedom-day-2014
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateFreedomDay(): void
@@ -160,9 +162,9 @@ class SouthAfrica extends AbstractProvider
      * @link http://www.gov.za/sites/www.gov.za/files/Act36of1994.pdf
      * @link http://www.gov.za/youth-day-2014
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateYouthDay(): void
@@ -183,14 +185,14 @@ class SouthAfrica extends AbstractProvider
      *
      * @link http://www.gov.za/speeches/president-jacob-zuma-declares-3-august-2016-public-holiday-24-jun-2016-0000
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculate2016MunicipalElectionsDay(): void
     {
-        if ($this->year !== 2016) {
+        if (2016 !== $this->year) {
             return;
         }
 
@@ -212,9 +214,9 @@ class SouthAfrica extends AbstractProvider
      * @link http://www.gov.za/about-sa/public-holidays#women
      * @link http://www.gov.za/womens-day
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateNationalWomensDay(): void
@@ -237,9 +239,9 @@ class SouthAfrica extends AbstractProvider
      * @link http://www.gov.za/sites/www.gov.za/files/Act36of1994.pdf
      * @link http://www.gov.za/heritage-day-2014
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateHeritageDay(): void
@@ -264,9 +266,9 @@ class SouthAfrica extends AbstractProvider
      * @link http://www.gov.za/sites/www.gov.za/files/Act36of1994.pdf
      * @link http://www.gov.za/day-reconciliation-2014
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateDayOfReconciliation(): void
@@ -290,14 +292,14 @@ class SouthAfrica extends AbstractProvider
      *
      * @link http://www.gov.za/sites/www.gov.za/files/Act36of1994.pdf
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateSubstituteDayOfGoodwill(): void
     {
-        if ($this->year !== 2016) {
+        if (2016 !== $this->year) {
             return;
         }
 
@@ -315,9 +317,9 @@ class SouthAfrica extends AbstractProvider
      * The Public Holidays Act (Act No 36 of 1994) determines whenever any public holiday falls on a Sunday, the Monday
      * following on it shall be a public holiday.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateSubstituteHolidays(): void

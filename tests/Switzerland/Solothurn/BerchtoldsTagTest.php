@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Switzerland\Solothurn;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -30,8 +32,8 @@ class BerchtoldsTagTest extends SolothurnBaseTestCase implements YasumiTestCaseI
     /**
      * Tests BerchtoldsTag
      *
-     * @throws \ReflectionException
-     * @throws \Exception
+     * @throws ReflectionException
+     * @throws Exception
      */
     public function testBerchtoldsTag()
     {
@@ -44,7 +46,7 @@ class BerchtoldsTagTest extends SolothurnBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests translated name of BerchtoldsTag.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -58,7 +60,7 @@ class BerchtoldsTagTest extends SolothurnBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {
