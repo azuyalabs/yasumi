@@ -15,7 +15,6 @@ namespace Yasumi\Filters;
 use Countable;
 use FilterIterator;
 use Yasumi\Holiday;
-use Yasumi\SubstituteHoliday;
 
 /**
  * SeasonalHolidaysFilter is a class for filtering all seasonal holidays.
@@ -44,14 +43,6 @@ class SeasonalHolidaysFilter extends FilterIterator implements Countable
      */
     public function count(): int
     {
-        $names = \array_map(static function (&$holiday) {
-            if ($holiday instanceof SubstituteHoliday) {
-                return $holiday->substitutedHoliday->shortName;
-            } else {
-                return $holiday->shortName;
-            }
-        }, \iterator_to_array($this));
-
-        return \count(\array_unique($names));
+        return Holiday::count($this);
     }
 }

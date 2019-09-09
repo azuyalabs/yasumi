@@ -15,6 +15,7 @@ namespace Yasumi;
 use DateTime;
 use InvalidArgumentException;
 use JsonSerializable;
+use Traversable;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 
@@ -182,5 +183,31 @@ class Holiday extends DateTime implements JsonSerializable
     public function __toString(): string
     {
         return $this->format('Y-m-d');
+    }
+
+    /**
+     * Returns the number of unique holidays.
+     *
+     * In case a holiday is substituted (e.g. observed), the holiday is only counted once.
+     *
+     * @param iterable $holidays Holidays to count
+     *
+     * @return int number of holidays
+     */
+    public static function count(iterable $holidays): int
+    {
+        if ($holidays instanceof Traversable) {
+            $holidays = \iterator_to_array($holidays);
+        }
+
+        $names = \array_map(static function (&$holiday) {
+            if ($holiday instanceof SubstituteHoliday) {
+                return $holiday->substitutedHoliday->shortName;
+            } else {
+                return $holiday->shortName;
+            }
+        }, $holidays);
+
+        return \count(\array_unique($names));
     }
 }

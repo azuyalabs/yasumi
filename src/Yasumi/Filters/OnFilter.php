@@ -16,7 +16,7 @@ namespace Yasumi\Filters;
 use Countable;
 use FilterIterator;
 use Iterator;
-use Yasumi\SubstituteHoliday;
+use Yasumi\Holiday;
 
 /**
  * OnFilter is a class used for filtering holidays based on a given date.
@@ -64,14 +64,6 @@ class OnFilter extends FilterIterator implements Countable
      */
     public function count(): int
     {
-        $names = \array_map(static function (&$holiday) {
-            if ($holiday instanceof SubstituteHoliday) {
-                return $holiday->substitutedHoliday->shortName;
-            } else {
-                return $holiday->shortName;
-            }
-        }, \iterator_to_array($this));
-
-        return \count(\array_unique($names));
+        return Holiday::count($this);
     }
 }
