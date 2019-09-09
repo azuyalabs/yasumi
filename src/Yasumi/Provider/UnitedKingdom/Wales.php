@@ -12,8 +12,6 @@
 
 namespace Yasumi\Provider\UnitedKingdom;
 
-use DateTime;
-use DateTimeZone;
 use Yasumi\Holiday;
 use Yasumi\Provider\UnitedKingdom;
 

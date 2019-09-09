@@ -58,14 +58,14 @@ class SpringBankHolidayTest extends EnglandBaseTestCase implements YasumiTestCas
             self::REGION,
             self::HOLIDAY,
             2002,
-            new DateTime("2002-6-4", new DateTimeZone(self::TIMEZONE))
+            new DateTime('2002-6-4', new DateTimeZone(self::TIMEZONE))
         );
 
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             2012,
-            new DateTime("2012-6-4", new DateTimeZone(self::TIMEZONE))
+            new DateTime('2012-6-4', new DateTimeZone(self::TIMEZONE))
         );
     }
 

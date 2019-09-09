@@ -58,14 +58,14 @@ class MayDayBankHolidayTest extends WalesBaseTestCase implements YasumiTestCaseI
             self::REGION,
             self::HOLIDAY,
             1995,
-            new DateTime("1995-5-8", new DateTimeZone(self::TIMEZONE))
+            new DateTime('1995-5-8', new DateTimeZone(self::TIMEZONE))
         );
 
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             2020,
-            new DateTime("2020-5-8", new DateTimeZone(self::TIMEZONE))
+            new DateTime('2020-5-8', new DateTimeZone(self::TIMEZONE))
         );
     }
 
