@@ -535,7 +535,7 @@ trait CommonHolidays
                 [],
                 $date,
                 $locale,
-                $type = Holiday::TYPE_SEASON
+                $type ?? Holiday::TYPE_SEASON
             );
         }
 
