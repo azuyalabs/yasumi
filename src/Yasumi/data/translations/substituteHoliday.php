@@ -10,7 +10,7 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-// Translations for Whitsunday
+// Translation pattern for substitute holidays.
 return [
     'da_DK' => '{0} (erstatning)',
     'en_GB' => '{0} (substitute day)',
