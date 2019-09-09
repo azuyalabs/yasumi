@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -17,5 +17,5 @@ return [
     'ko_KR' => '국제 여성의 날',
     'ru_RU' => 'Международный женский день',
     'ru_UA' => 'Международный женский день',
-    'uk_UA' => 'Міжнародний жіночий день',
+    'uk_UA' => 'Міжнародний жіночий день'
 ];

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,5 +14,5 @@
 return [
     'en_US' => 'World Animal Day',
     'nl_BE' => 'Werelddierendag',
-    'nl_NL' => 'Werelddierendag',
+    'nl_NL' => 'Werelddierendag'
 ];

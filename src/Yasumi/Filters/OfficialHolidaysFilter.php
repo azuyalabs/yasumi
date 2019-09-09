@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -39,7 +39,7 @@ class OfficialHolidaysFilter extends FilterIterator implements Countable
     }
 
     /**
-     * @return integer Returns the number of filtered holidays.
+     * @return int Returns the number of filtered holidays.
      */
     public function count(): int
     {

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -15,5 +15,5 @@ return [
     'el_GR' => 'Ευαγγελισμός της Θεοτόκου',
     'en_US' => 'Annunciation',
     'fr_BE' => 'Annonciation',
-    'fr_FR' => 'Annonciation',
+    'fr_FR' => 'Annonciation'
 ];

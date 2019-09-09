@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -15,6 +15,8 @@ namespace Yasumi\Provider;
 use DateInterval;
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
 /**
@@ -36,7 +38,7 @@ class Australia extends AbstractProvider
      * Initialize holidays for Australia.
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -53,62 +55,6 @@ class Australia extends AbstractProvider
     }
 
     /**
-     * Australia Day.
-     *
-     * Australia Day is the official National Day of Australia. Celebrated annually on 26 January,
-     * it marks the anniversary of the 1788 arrival of the First Fleet of British Ships at
-     * Port Jackson, New South Wales, and the raising of the Flag of Great Britain at Sydney Cove
-     * by Governor Arthur Phillip. In present-day Australia, celebrations reflect the diverse
-     * society and landscape of the nation, and are marked by community and family events,
-     * reflections on Australian history, official community awards, and citizenship ceremonies
-     * welcoming new immigrants into the Australian community.
-     *
-     * @link https://en.wikipedia.org/wiki/Waitangi_Day
-     * @link https://www.timeanddate.com/holidays/australia/australia-day
-     *
-     * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     * @throws \Exception
-     */
-    private function calculateAustraliaDay(): void
-    {
-        $date = new DateTime("$this->year-01-26", new DateTimeZone($this->timezone));
-
-        $this->calculateHoliday('australiaDay', ['en_AU' => 'Australia Day'], $date);
-    }
-
-    /**
-     * Function to simplify moving holidays to mondays if required
-     *
-     * @param string    $shortName
-     * @param array     $names
-     * @param DateTime  $date
-     * @param bool      $moveFromSaturday
-     * @param bool      $moveFromSunday
-     * @param string    $type
-     *
-     * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     * @throws \Exception
-     */
-    public function calculateHoliday(
-        string $shortName,
-        array $names = [],
-        $date,
-        $moveFromSaturday = true,
-        $moveFromSunday = true,
-        $type = Holiday::TYPE_OFFICIAL
-    ): void {
-        $day = (int)$date->format('w');
-        if (($day === 0 && $moveFromSunday) || ($day === 6 && $moveFromSaturday)) {
-            $date = $date->add($day === 0 ? new DateInterval('P1D') : new DateInterval('P2D'));
-        }
-
-        $this->addHoliday(new Holiday($shortName, $names, $date, $this->locale, $type));
-    }
-
-    /**
      * Holidays associated with the start of the modern Gregorian calendar.
      *
      * New Year's Day is on January 1 and is the first day of a new year in the Gregorian calendar,
@@ -119,7 +65,7 @@ class Australia extends AbstractProvider
      * @link https://www.timeanddate.com/holidays/australia/new-year-day
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateNewYearHolidays(): void
@@ -139,6 +85,62 @@ class Australia extends AbstractProvider
     }
 
     /**
+     * Function to simplify moving holidays to mondays if required
+     *
+     * @param string $shortName
+     * @param array $names
+     * @param DateTime $date
+     * @param bool $moveFromSaturday
+     * @param bool $moveFromSunday
+     * @param string $type
+     *
+     * @throws InvalidDateException
+     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws \Exception
+     */
+    public function calculateHoliday(
+        string $shortName,
+        array $names = [],
+        $date,
+        $moveFromSaturday = null,
+        $moveFromSunday = null,
+        $type = null
+    ): void {
+        $day = (int)$date->format('w');
+        if ((0 === $day && ($moveFromSunday ?? true)) || (6 === $day && ($moveFromSaturday ?? true))) {
+            $date = $date->add(0 === $day ? new DateInterval('P1D') : new DateInterval('P2D'));
+        }
+
+        $this->addHoliday(new Holiday($shortName, $names, $date, $this->locale, $type ?? Holiday::TYPE_OFFICIAL));
+    }
+
+    /**
+     * Australia Day.
+     *
+     * Australia Day is the official National Day of Australia. Celebrated annually on 26 January,
+     * it marks the anniversary of the 1788 arrival of the First Fleet of British Ships at
+     * Port Jackson, New South Wales, and the raising of the Flag of Great Britain at Sydney Cove
+     * by Governor Arthur Phillip. In present-day Australia, celebrations reflect the diverse
+     * society and landscape of the nation, and are marked by community and family events,
+     * reflections on Australian history, official community awards, and citizenship ceremonies
+     * welcoming new immigrants into the Australian community.
+     *
+     * @link https://en.wikipedia.org/wiki/Waitangi_Day
+     * @link https://www.timeanddate.com/holidays/australia/australia-day
+     *
+     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws \Exception
+     */
+    private function calculateAustraliaDay(): void
+    {
+        $date = new DateTime("$this->year-01-26", new DateTimeZone($this->timezone));
+
+        $this->calculateHoliday('australiaDay', ['en_AU' => 'Australia Day'], $date);
+    }
+
+    /**
      * ANZAC Day.
      *
      * Anzac Day is a national day of remembrance in Australia and New Zealand that broadly commemorates all Australians
@@ -151,7 +153,7 @@ class Australia extends AbstractProvider
      * @link https://www.timeanddate.com/holidays/australia/anzac-day
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateAnzacDay(): void
@@ -184,13 +186,13 @@ class Australia extends AbstractProvider
      * @link https://www.timeanddate.com/holidays/australia/christmas-day-holiday
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateChristmasDay(): void
     {
         $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->timezone));
-        $boxingDay    = new DateTime("$this->year-12-26", new DateTimeZone($this->timezone));
+        $boxingDay = new DateTime("$this->year-12-26", new DateTimeZone($this->timezone));
         $this->calculateHoliday('christmasDay', ['en_AU' => 'Christmas Day'], $christmasDay, false, false);
         $this->calculateHoliday('secondChristmasDay', ['en_AU' => 'Boxing Day'], $boxingDay, false, false);
 

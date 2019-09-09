@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -30,5 +30,5 @@ return [
     'pl_PL' => 'Wniebowzięcie Najświętszej Marii Panny',
     'pt_PT' => 'Assunção de Nossa Senhora',
     'ro_RO' => 'Adormirea Maicii Domnului',
-    'sk_SK' => 'Nanebovzatie Panny Márie',
+    'sk_SK' => 'Nanebovzatie Panny Márie'
 ];

@@ -33,7 +33,6 @@ class BrazilTest extends BrazilBaseTestCase
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
-            'goodFriday',
             'tiradentesDay',
             'internationalWorkersDay',
             'independenceDay',
@@ -53,6 +52,7 @@ class BrazilTest extends BrazilBaseTestCase
         $this->assertDefinedHolidays([
             'carnavalMonday',
             'carnavalTuesday',
+            'goodFriday',
             'easter',
             'corpusChristi',
             'ashWednesday'

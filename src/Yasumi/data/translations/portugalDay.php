@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -13,5 +13,5 @@
 // Translations for Portugal Day
 return [
     'en_US' => 'Portugal Day',
-    'pt_PT' => 'Dia de Portugal',
+    'pt_PT' => 'Dia de Portugal'
 ];

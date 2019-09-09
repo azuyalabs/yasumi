@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -42,5 +42,5 @@ return [
     'ro_RO' => 'Paștele',
     'ru_UA' => 'Пасха',
     'sv_SE' => 'påskdagen',
-    'uk_UA' => 'Великдень',
+    'uk_UA' => 'Великдень'
 ];

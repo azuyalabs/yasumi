@@ -39,7 +39,7 @@ class SouthKoreaTest extends SouthKoreaBaseTestCase
             $officialHolidays[] = 'liberationDay';
             $officialHolidays[] = 'nationalFoundationDay';
             $officialHolidays[] = 'christmasDay';
-            if ($this->year !== 1960 && $this->year < 2006) {
+            if ($this->year !== ArborDayTest::YEAR_NOT_CELEBRATED && $this->year < ArborDayTest::REMOVED_YEAR + 1) {
                 $officialHolidays[] = 'arborDay';
             }
             if ($this->year <= 1990 || $this->year > 2012) {

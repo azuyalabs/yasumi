@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,5 +14,5 @@
 return [
     'da_DK' => 'Sankthansaften',
     'en_US' => 'St. John\'s Eve',
-    'sv_SE' => 'midsommarafton',
+    'sv_SE' => 'midsommarafton'
 ];

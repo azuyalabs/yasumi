@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -20,5 +20,5 @@ return [
     'fi_FI' => 'Juhannuspäivä',
     'lt_LT' => 'Rasos ir Joninių diena',
     'lv_LV' => 'Jāņi',
-    'sv_SE' => 'midsommardagen',
+    'sv_SE' => 'midsommardagen'
 ];

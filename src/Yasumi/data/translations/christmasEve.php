@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -27,5 +27,5 @@ return [
     'pt_PT' => 'Véspera de Natal',
     'ro_RO' => 'Ajunul Crãciunului',
     'sk_SK' => 'Štedrý deň',
-    'sv_SE' => 'julafton',
+    'sv_SE' => 'julafton'
 ];

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -15,6 +15,8 @@ namespace Yasumi\Provider;
 use DateInterval;
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
 /**
@@ -34,9 +36,9 @@ class UnitedKingdom extends AbstractProvider
     /**
      * Initialize holidays for the United Kingdom.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -67,9 +69,9 @@ class UnitedKingdom extends AbstractProvider
      * @link https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom
      * @link http://www.timeanddate.com/holidays/uk/new-year-day
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateNewYearsDay(): void
@@ -106,9 +108,9 @@ class UnitedKingdom extends AbstractProvider
      *
      * @link http://www.timeanddate.com/holidays/uk/early-may-bank-holiday
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateMayDayBankHoliday(): void
@@ -119,7 +121,7 @@ class UnitedKingdom extends AbstractProvider
         }
 
         // Moved to 8 May to commemorate the 50th (1995) and 75th (2020) anniversary of VE Day.
-        if ($this->year === 1995 || $this->year === 2020) {
+        if (1995 === $this->year || 2020 === $this->year) {
             $this->addHoliday(new Holiday(
                 'mayDayBankHoliday',
                 ['en_GB' => 'May Day Bank Holiday'],
@@ -151,9 +153,9 @@ class UnitedKingdom extends AbstractProvider
      * @link http://www.timeanddate.com/holidays/uk/spring-bank-holiday
      * @link https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateSpringBankHoliday(): void
@@ -165,7 +167,7 @@ class UnitedKingdom extends AbstractProvider
 
         // Moved to 4 June for the celebration of the Golden (2002) and Diamond (2012) Jubilee
         // of Elizabeth II.
-        if ($this->year === 2002 || $this->year === 2012) {
+        if (2002 === $this->year || 2012 === $this->year) {
             $this->addHoliday(new Holiday(
                 'springBankHoliday',
                 ['en_GB' => 'Spring Bank Holiday'],
@@ -197,9 +199,9 @@ class UnitedKingdom extends AbstractProvider
      * @link https://www.timeanddate.com/holidays/uk/summer-bank-holiday
      * @link https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateSummerBankHoliday(): void
@@ -223,7 +225,7 @@ class UnitedKingdom extends AbstractProvider
         // Statutory bank holiday from 1971, following a trial period from 1965 to 1970.
         // During the trial period, the definition was different than today, causing exceptions
         // in 1968 and 1969.
-        if ($this->year === 1968 || $this->year === 1969) {
+        if (1968 === $this->year || 1969 === $this->year) {
             $this->addHoliday(new Holiday(
                 'summerBankHoliday',
                 ['en_GB' => 'Summer Bank Holiday'],
@@ -261,21 +263,21 @@ class UnitedKingdom extends AbstractProvider
      * @link http://www.timeanddate.com/holidays/uk/christmas-day
      * @link http://www.timeanddate.com/holidays/uk/boxing-day
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateChristmasHolidays(): void
     {
         $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->timezone));
-        $boxingDay    = new DateTime("$this->year-12-26", new DateTimeZone($this->timezone));
+        $boxingDay = new DateTime("$this->year-12-26", new DateTimeZone($this->timezone));
 
         $this->addHoliday(new Holiday('christmasDay', [], $christmasDay, $this->locale));
         $this->addHoliday(new Holiday('secondChristmasDay', [], $boxingDay, $this->locale, Holiday::TYPE_BANK));
 
         $substituteChristmasDay = clone $christmasDay;
-        $substituteBoxingDay    = clone $boxingDay;
+        $substituteBoxingDay = clone $boxingDay;
 
         if (\in_array((int)$christmasDay->format('w'), [0, 6], true)) {
             $substituteChristmasDay->add(new DateInterval('P2D'));

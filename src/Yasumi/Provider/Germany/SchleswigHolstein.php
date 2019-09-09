@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,6 +12,8 @@
 
 namespace Yasumi\Provider\Germany;
 
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Provider\Germany;
 
 /**
@@ -30,13 +32,13 @@ class SchleswigHolstein extends Germany
      * country or sub-region.
      */
     public const ID = 'DE-SH';
-    
+
     /**
      * Initialize holidays for Schleswig-Holstein (Germany).
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -51,9 +53,9 @@ class SchleswigHolstein extends Germany
      * For the German state of Schleswig-Holstein, Reformation Day is celebrated since 2018.
      * Note: In 2017 all German states will celebrate Reformation Day for its 500th anniversary.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateReformationDay(): void

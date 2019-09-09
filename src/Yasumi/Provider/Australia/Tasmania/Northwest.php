@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -15,6 +15,7 @@ namespace Yasumi\Provider\Australia\Tasmania;
 use DateInterval;
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia\Tasmania;
 
@@ -35,7 +36,7 @@ class Northwest extends Tasmania
      * Initialize holidays for northwestern Tasmania (Australia).
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void

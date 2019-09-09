@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * This file is part of the Yasumi package.
@@ -15,6 +15,8 @@ namespace Yasumi\Provider;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
 /**
@@ -33,9 +35,9 @@ class Denmark extends AbstractProvider
     /**
      * Initialize holidays for Denmark.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -63,11 +65,11 @@ class Denmark extends AbstractProvider
         $this->calculateConstitutionDay();
 
         $summerTime = $this->summerTime($this->year, $this->timezone, $this->locale);
-        if ($summerTime !== null) {
+        if ($summerTime instanceof Holiday) {
             $this->addHoliday($summerTime);
         }
         $winterTime = $this->winterTime($this->year, $this->timezone, $this->locale);
-        if ($winterTime !== null) {
+        if ($winterTime instanceof Holiday) {
             $this->addHoliday($winterTime);
         }
     }
@@ -83,9 +85,9 @@ class Denmark extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Store_Bededag
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateGreatPrayerDay(): void
@@ -113,9 +115,9 @@ class Denmark extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Constitution_Day_(Denmark)
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateConstitutionDay(): void

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -45,5 +45,5 @@ return [
     'ru_UA' => 'День международной солидарности трудящихся',
     'sk_SK' => 'Sviatok práce',
     'sv_SE' => 'Första maj',
-    'uk_UA' => 'День міжнародної солідарності трудящих',
+    'uk_UA' => 'День міжнародної солідарності трудящих'
 ];

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,5 +14,5 @@
 return [
     'cy_GB' => 'Dydd Gŵyl Dewi',
     'en_GB' => 'St. David\'s Day',
-    'en_US' => 'St. David\'s Day',
+    'en_US' => 'St. David\'s Day'
 ];

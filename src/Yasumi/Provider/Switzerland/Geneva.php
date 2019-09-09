@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -15,6 +15,8 @@ namespace Yasumi\Provider\Switzerland;
 use DateInterval;
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\Switzerland;
@@ -37,9 +39,9 @@ class Geneva extends Switzerland
     /**
      * Initialize holidays for Geneva (Switzerland).
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -65,9 +67,9 @@ class Geneva extends Switzerland
      *
      * @link https://en.wikipedia.org/wiki/Je%C3%BBne_genevois
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateJeuneGenevois(): void
@@ -80,12 +82,12 @@ class Geneva extends Switzerland
         if (($this->year >= 1840 && $this->year <= 1869) || $this->year >= 1966) {
             $this->addHoliday(new Holiday('jeuneGenevois', [
                 'fr_FR' => 'Jeûne genevois',
-                'fr_CH' => 'Jeûne genevois',
+                'fr_CH' => 'Jeûne genevois'
             ], $date, $this->locale, Holiday::TYPE_OTHER));
         } elseif ($this->year > 1869 && $this->year < 1966) {
             $this->addHoliday(new Holiday('jeuneGenevois', [
                 'fr_FR' => 'Jeûne genevois',
-                'fr_CH' => 'Jeûne genevois',
+                'fr_CH' => 'Jeûne genevois'
             ], $date, $this->locale, Holiday::TYPE_OBSERVANCE));
         }
     }
@@ -100,9 +102,9 @@ class Geneva extends Switzerland
      *
      * @link https://fr.wikipedia.org/wiki/Restauration_genevoise
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateRestaurationGenevoise(): void
@@ -112,7 +114,7 @@ class Geneva extends Switzerland
                 'restaurationGenevoise',
                 [
                     'fr_FR' => 'Restauration de la République',
-                    'fr_CH' => 'Restauration de la République',
+                    'fr_CH' => 'Restauration de la République'
                 ],
                 new DateTime($this->year . '-12-31', new DateTimeZone($this->timezone)),
                 $this->locale,

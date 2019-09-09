@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -13,5 +13,5 @@
 // Translations for Walpurgis Night
 return [
     'en_US' => 'Walpurgis Night',
-    'sv_SE' => 'valborgsmässoafton',
+    'sv_SE' => 'valborgsmässoafton'
 ];

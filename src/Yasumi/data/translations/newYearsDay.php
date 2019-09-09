@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -52,5 +52,5 @@ return [
     'ru_UA' => 'Новый Год',
     'sk_SK' => 'Nový rok',
     'sv_SE' => 'nyårsdagen',
-    'uk_UA' => 'Новий Рік',
+    'uk_UA' => 'Новий Рік'
 ];

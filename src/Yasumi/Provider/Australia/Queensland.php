@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,7 @@ namespace Yasumi\Provider\Australia;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia;
 
@@ -35,7 +36,7 @@ class Queensland extends Australia
      * Initialize holidays for Queensland (Australia).
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -44,22 +45,6 @@ class Queensland extends Australia
 
         $this->calculateQueensBirthday();
         $this->calculateLabourDay();
-    }
-
-    /**
-     * Labour Day
-     *
-     * @throws \Exception
-     */
-    private function calculateLabourDay(): void
-    {
-        if ($this->year === 2013 || $this->year === 2014 || $this->year === 2015) {
-            $date = new DateTime("first monday of october $this->year", new DateTimeZone($this->timezone));
-        } else {
-            $date = new DateTime("first monday of may $this->year", new DateTimeZone($this->timezone));
-        }
-        
-        $this->addHoliday(new Holiday('labourDay', [], $date, $this->locale));
     }
 
     /**
@@ -79,7 +64,7 @@ class Queensland extends Australia
      */
     private function calculateQueensBirthday(): void
     {
-        if ($this->year < 2012 || $this->year === 2013 || $this->year === 2014 || $this->year === 2015) {
+        if ($this->year < 2012 || 2013 === $this->year || 2014 === $this->year || 2015 === $this->year) {
             $this->calculateHoliday(
                 'queensBirthday',
                 ['en_AU' => "Queen's Birthday"],
@@ -96,5 +81,21 @@ class Queensland extends Australia
                 false
             );
         }
+    }
+
+    /**
+     * Labour Day
+     *
+     * @throws \Exception
+     */
+    private function calculateLabourDay(): void
+    {
+        if (2013 === $this->year || 2014 === $this->year || 2015 === $this->year) {
+            $date = new DateTime("first monday of october $this->year", new DateTimeZone($this->timezone));
+        } else {
+            $date = new DateTime("first monday of may $this->year", new DateTimeZone($this->timezone));
+        }
+
+        $this->addHoliday(new Holiday('labourDay', [], $date, $this->locale));
     }
 }

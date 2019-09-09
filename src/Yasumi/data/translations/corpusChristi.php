@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -22,5 +22,5 @@ return [
     'it_CH' => 'Corpus Domini',
     'pl_PL' => 'Boże Ciało',
     'pt_BR' => 'Corpus Christi',
-    'pt_PT' => 'Corpo de Deus',
+    'pt_PT' => 'Corpo de Deus'
 ];

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -42,5 +42,5 @@ return [
     'pl_PL' => 'Poniedziałek Wielkanocny',
     'ro_RO' => 'A doua zi de Paște',
     'sk_SK' => 'Veľkonočný pondelok',
-    'sv_SE' => 'annandag påsk',
+    'sv_SE' => 'annandag påsk'
 ];

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,6 +12,8 @@
 
 namespace Yasumi\Provider;
 
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
 /**
@@ -35,9 +37,9 @@ class Ukraine extends AbstractProvider
     /**
      * Initialize holidays for Ukraine.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -65,9 +67,9 @@ class Ukraine extends AbstractProvider
     /**
      * Christmas Day.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateChristmasDay(): void
@@ -85,9 +87,9 @@ class Ukraine extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/International_Workers%27_Day#Ukraine
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateSecondInternationalWorkersDay(): void
@@ -109,9 +111,9 @@ class Ukraine extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Victory_Day_over_Nazism_in_World_War_II
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateVictoryDay(): void
@@ -131,9 +133,9 @@ class Ukraine extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Constitution_Day_(Ukraine)
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateConstitutionDay(): void
@@ -159,9 +161,9 @@ class Ukraine extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Declaration_of_Independence_of_Ukraine
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateIndependenceDay(): void
@@ -188,9 +190,9 @@ class Ukraine extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Defender_of_Ukraine_Day
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateDefenderOfUkraineDay(): void
@@ -208,7 +210,7 @@ class Ukraine extends AbstractProvider
     }
 
     /**
-     * @param int    $year
+     * @param int $year
      * @param string $timezone
      *
      * @return \DateTime

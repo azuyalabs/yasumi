@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * This file is part of the Yasumi package.
@@ -14,6 +14,8 @@
 namespace Yasumi\Provider;
 
 use DateTime;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
 /**
@@ -32,9 +34,9 @@ class Germany extends AbstractProvider
     /**
      * Initialize holidays for Germany.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -57,7 +59,7 @@ class Germany extends AbstractProvider
         $this->calculateGermanUnityDay();
 
         // Note: all German states have agreed this to be a nationwide holiday in 2017 to celebrate the 500th anniversary.
-        if ($this->year === 2017) {
+        if (2017 === $this->year) {
             $this->addHoliday($this->reformationDay($this->year, $this->timezone, $this->locale));
         }
     }
@@ -74,9 +76,9 @@ class Germany extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/German_Unity_Day
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateGermanUnityDay(): void

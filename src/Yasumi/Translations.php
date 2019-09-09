@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * This file is part of the Yasumi package.
@@ -47,17 +47,17 @@ class Translations implements TranslationsInterface
      *
      * @param string $directoryPath directory path for translation files
      *
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws InvalidArgumentException
      */
     public function loadTranslations(string $directoryPath): void
     {
-        if (! \file_exists($directoryPath)) {
+        if (!\file_exists($directoryPath)) {
             throw new InvalidArgumentException('Directory with translations not found');
         }
 
         $directoryPath = \rtrim($directoryPath, '/\\') . DIRECTORY_SEPARATOR;
-        $extension     = 'php';
+        $extension = 'php';
 
         foreach (new DirectoryIterator($directoryPath) as $file) {
             if ($file->isDot() || $file->isDir()) {
@@ -68,7 +68,7 @@ class Translations implements TranslationsInterface
                 continue;
             }
 
-            $filename  = $file->getFilename();
+            $filename = $file->getFilename();
             $shortName = $file->getBasename('.' . $extension);
 
             $translations = require $directoryPath . $filename;
@@ -88,14 +88,14 @@ class Translations implements TranslationsInterface
      *
      * @param string $locale locale the locale to be validated
      *
+     * @return true upon success, otherwise an UnknownLocaleException is thrown
      * @throws UnknownLocaleException An UnknownLocaleException is thrown if the given locale is not
      *                                valid/available.
      *
-     * @return true upon success, otherwise an UnknownLocaleException is thrown
      */
     protected function isValidLocale(string $locale): bool
     {
-        if (! \in_array($locale, $this->availableLocales, true)) {
+        if (!\in_array($locale, $this->availableLocales, true)) {
             throw new UnknownLocaleException(\sprintf('Locale "%s" is not a valid locale.', $locale));
         }
 
@@ -105,17 +105,17 @@ class Translations implements TranslationsInterface
     /**
      * Adds translation for holiday in specific locale.
      *
-     * @param string $shortName   holiday short name
-     * @param string $locale      locale
+     * @param string $shortName holiday short name
+     * @param string $locale locale
      * @param string $translation translation
      *
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      */
     public function addTranslation(string $shortName, string $locale, string $translation): void
     {
         $this->isValidLocale($locale); // Validate the given locale
 
-        if (! \array_key_exists($shortName, $this->translations)) {
+        if (!\array_key_exists($shortName, $this->translations)) {
             $this->translations[$shortName] = [];
         }
 
@@ -126,17 +126,14 @@ class Translations implements TranslationsInterface
      * Returns translation for holiday in specific locale.
      *
      * @param string $shortName holiday short name
-     * @param string $locale    locale
+     * @param string $locale locale
      *
      * @return string|null translated holiday name
      */
     public function getTranslation(string $shortName, string $locale): ?string
     {
-        if (! \array_key_exists($shortName, $this->translations)) {
-            return null;
-        }
-
-        if (! \array_key_exists($locale, $this->translations[$shortName])) {
+        if (!\array_key_exists($shortName, $this->translations)
+            || !\array_key_exists($locale, $this->translations[$shortName])) {
             return null;
         }
 
@@ -152,7 +149,7 @@ class Translations implements TranslationsInterface
      */
     public function getTranslations(string $shortName): array
     {
-        if (! \array_key_exists($shortName, $this->translations)) {
+        if (!\array_key_exists($shortName, $this->translations)) {
             return [];
         }
 
