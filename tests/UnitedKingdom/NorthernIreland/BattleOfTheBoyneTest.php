@@ -96,7 +96,7 @@ class BattleOfTheBoyneTest extends NorthernIrelandBaseTestCase implements Yasumi
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => 'Battle of the Boyne']
         );
     }
@@ -110,7 +110,7 @@ class BattleOfTheBoyneTest extends NorthernIrelandBaseTestCase implements Yasumi
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_BANK
         );
     }
