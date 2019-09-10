@@ -96,7 +96,7 @@ class StPatricksDayTest extends NorthernIrelandBaseTestCase implements YasumiTes
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => 'St. Patrick\'s Day']
         );
     }
@@ -110,7 +110,7 @@ class StPatricksDayTest extends NorthernIrelandBaseTestCase implements YasumiTes
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_BANK
         );
     }
