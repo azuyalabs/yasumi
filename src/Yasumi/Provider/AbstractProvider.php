@@ -302,7 +302,13 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     public function count(): int
     {
-        return Holiday::count($this->getHolidays());
+        $list = $this->getHolidayNames();
+
+        \array_walk($list, static function (&$holiday) {
+            $holiday = \str_replace('substituteHoliday:', '', $holiday);
+        });
+
+        return \count(\array_unique($list));
     }
 
     /**
