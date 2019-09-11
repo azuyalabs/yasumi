@@ -13,10 +13,8 @@
 
 namespace Yasumi\Filters;
 
-use Countable;
 use FilterIterator;
 use Iterator;
-use Yasumi\Holiday;
 
 /**
  * OnFilter is a class used for filtering holidays based on a given date.
@@ -27,7 +25,7 @@ use Yasumi\Holiday;
  *
  * @package Yasumi\Filters
  */
-class OnFilter extends FilterIterator implements Countable
+class OnFilter extends AbstractFilter
 {
     /**
      * @var string date to check for holidays
@@ -57,13 +55,5 @@ class OnFilter extends FilterIterator implements Countable
     {
         $holiday = $this->getInnerIterator()->current()->format('Y-m-d');
         return $holiday === $this->date;
-    }
-
-    /**
-     * @return int Returns the number of holidays that happen on the specified date
-     */
-    public function count(): int
-    {
-        return Holiday::count($this);
     }
 }
