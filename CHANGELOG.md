@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Observance holidays for Sweden [\#172](https://github.com/azuyalabs/yasumi/pull/172) ([c960657](https://github.com/c960657))
 - Added additional code style fixers and aligning StyleCI settings with PHP-CS.
 - Included extra requirement for some PHP Extensions in the composer file.
+- Special subclass of Holiday for substitute holidays [\#162](https://github.com/azuyalabs/yasumi/pull/162) ([c960657](https://github.com/c960657))
 - Holiday providers for England, Wales, Scotland and Northern Ireland [\#166](https://github.com/azuyalabs/yasumi/pull/166) ([c960657](https://github.com/c960657))
 
 ### Changed

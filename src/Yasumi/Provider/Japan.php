@@ -20,6 +20,7 @@ use DateTimeZone;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
+use Yasumi\SubstituteHoliday;
 
 /**
  * Provider for all holidays in the Japan.
@@ -524,20 +525,20 @@ class Japan extends AbstractProvider
         $dates = $this->getHolidayDates();
 
         // Loop through all holidays
-        foreach ($this->getHolidays() as $shortName => $date) {
-            $substituteDay = clone $date;
+        foreach ($this->getHolidays() as $shortName => $holiday) {
+            $date = clone $holiday;
 
             // If holidays falls on a Sunday
-            if (0 === (int)$date->format('w')) {
+            if (0 === (int)$holiday->format('w')) {
                 if ($this->year >= 2007) {
                     // Find next week day (not being another holiday)
-                    while (\in_array($substituteDay, $dates, false)) {
-                        $substituteDay->add(new DateInterval('P1D'));
+                    while (\in_array($date, $dates, false)) {
+                        $date->add(new DateInterval('P1D'));
                         continue;
                     }
-                } elseif ($date >= '1973-04-12') {
-                    $substituteDay->add(new DateInterval('P1D'));
-                    if (\in_array($substituteDay, $dates, false)) {
+                } elseif ($holiday >= '1973-04-12') {
+                    $date->add(new DateInterval('P1D'));
+                    if (\in_array($date, $dates, false)) {
                         continue; // @codeCoverageIgnore
                     }
                 } else {
@@ -545,12 +546,14 @@ class Japan extends AbstractProvider
                 }
 
                 // Add a new holiday that is substituting the original holiday
-                $substituteHoliday = new Holiday('substituteHoliday:' . $shortName, [
-                    'en_US' => $date->translations['en_US'] . ' Observed',
-                    'ja_JP' => '振替休日 (' . $date->translations['ja_JP'] . ')'
-                ], $substituteDay, $this->locale);
+                $substitute = new SubstituteHoliday(
+                    $holiday,
+                    [],
+                    $date,
+                    $this->locale
+                );
 
-                $this->addHoliday($substituteHoliday);
+                $this->addHoliday($substitute);
             }
         }
     }
