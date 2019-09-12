@@ -13,7 +13,6 @@
 
 namespace Yasumi\Filters;
 
-use Countable;
 use FilterIterator;
 use Iterator;
 
@@ -27,7 +26,7 @@ use Iterator;
  *
  * @package Yasumi\Filters
  */
-class BetweenFilter extends FilterIterator implements Countable
+class BetweenFilter extends AbstractFilter
 {
     /**
      * @var string start date of the time frame to check against
@@ -77,19 +76,5 @@ class BetweenFilter extends FilterIterator implements Countable
         }
 
         return $holiday > $this->start_date && $holiday < $this->end_date;
-    }
-
-    /**
-     * @return int Returns the number of holidays between the given start and end date.
-     */
-    public function count(): int
-    {
-        $days = \array_keys(\iterator_to_array($this));
-
-        \array_walk($days, static function (&$day) {
-            $day = \str_replace('substituteHoliday:', '', $day);
-        });
-
-        return \count(\array_unique($days));
     }
 }

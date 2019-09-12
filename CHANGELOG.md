@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Observance holidays for Sweden [\#172](https://github.com/azuyalabs/yasumi/pull/172) ([c960657](https://github.com/c960657))
 - Added additional code style fixers and aligning StyleCI settings with PHP-CS.
 - Included extra requirement for some PHP Extensions in the composer file.
+- Special subclass of Holiday for substitute holidays [\#162](https://github.com/azuyalabs/yasumi/pull/162) ([c960657](https://github.com/c960657))
 - Added `Yasumi::setDefaultLocale()` and `Yasumi::getDefaultLocale()`. [\#123](https://github.com/azuyalabs/yasumi/pull/123) ([c960657](https://github.com/c960657))
 - Added optional $argument for `Holiday::getName($locale)` for overriding the default locale. [\#123](https://github.com/azuyalabs/yasumi/pull/123) ([c960657](https://github.com/c960657))
 
@@ -40,6 +41,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Liberation Day is official in the Netherlands [\#169](https://github.com/azuyalabs/yasumi/pull/169) ([c960657](https://github.com/c960657))
 - Typos in Easter Monday and Republic Day for the 'it_IT' locale [\#171](https://github.com/azuyalabs/yasumi/pull/171) ([c960657](https://github.com/c960657))
 - Corrected the name of the Emperors Birthday function and variable.
+- Good Friday is not official in Brazil [\#174](https://github.com/azuyalabs/yasumi/pull/174) ([c960657](https://github.com/c960657))
 
 ### Removed
 - Unused constants.

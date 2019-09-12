@@ -18,6 +18,7 @@ use DateTimeZone;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
+use Yasumi\SubstituteHoliday;
 
 /**
  * Provider for all holidays in the USA.
@@ -267,31 +268,31 @@ class USA extends AbstractProvider
      */
     private function calculateSubstituteHolidays(): void
     {
-        $datesIterator = $this->getIterator();
-        $substituteHoliday = null;
-
         // Loop through all defined holidays
-        while ($datesIterator->valid()) {
+        foreach ($this->getHolidays() as $holiday) {
+            $date = null;
+
             // Substitute holiday is on a Monday in case the holiday falls on a Sunday
-            if (0 === (int)$datesIterator->current()->format('w')) {
-                $substituteHoliday = clone $datesIterator->current();
-                $substituteHoliday->add(new DateInterval('P1D'));
+            if (0 === (int)$holiday->format('w')) {
+                $date = clone $holiday;
+                $date->add(new DateInterval('P1D'));
             }
 
             // Substitute holiday is on a Friday in case the holiday falls on a Saturday
-            if (6 === (int)$datesIterator->current()->format('w')) {
-                $substituteHoliday = clone $datesIterator->current();
-                $substituteHoliday->sub(new DateInterval('P1D'));
+            if (6 === (int)$holiday->format('w')) {
+                $date = clone $holiday;
+                $date->sub(new DateInterval('P1D'));
             }
 
             // Add substitute holiday
-            if ($substituteHoliday instanceof Holiday) {
-                $this->addHoliday(new Holiday('substituteHoliday:' . $substituteHoliday->shortName, [
-                    'en_US' => $substituteHoliday->getName() . ' observed'
-                ], $substituteHoliday, $this->locale));
+            if ($date instanceof Holiday) {
+                $this->addHoliday(new SubstituteHoliday(
+                    $holiday,
+                    [],
+                    $date,
+                    $this->locale
+                ));
             }
-
-            $datesIterator->next();
         }
     }
 }

@@ -12,8 +12,6 @@
 
 namespace Yasumi\Filters;
 
-use Countable;
-use FilterIterator;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +24,7 @@ use Yasumi\Holiday;
  * $holidays = Yasumi::create('Netherlands', 2015);
  * $bank = new BankHolidaysFilter($holidays->getIterator());
  */
-class BankHolidaysFilter extends FilterIterator implements Countable
+class BankHolidaysFilter extends AbstractFilter
 {
     /**
      * Checks whether the current element of the iterator is an observed holiday.
@@ -36,19 +34,5 @@ class BankHolidaysFilter extends FilterIterator implements Countable
     public function accept(): bool
     {
         return $this->getInnerIterator()->current()->getType() === Holiday::TYPE_BANK;
-    }
-
-    /**
-     * @return integer Returns the number of filtered holidays.
-     */
-    public function count(): int
-    {
-        $days = \array_keys(\iterator_to_array($this));
-
-        \array_walk($days, static function (&$day) {
-            $day = \str_replace('substituteHoliday:', '', $day);
-        });
-
-        return \count(\array_unique($days));
     }
 }

@@ -71,12 +71,12 @@ class Holiday extends DateTime implements JsonSerializable
     /**
      * @var string identifies the type of holiday
      */
-    private $type;
+    protected $type;
 
     /**
      * @var string Locale (i.e. language) in which the holiday information needs to be displayed in. (Default 'en_US')
      */
-    private $displayLocale;
+    protected $displayLocale;
 
     /**
      * Creates a new Holiday.
