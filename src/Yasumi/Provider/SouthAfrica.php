@@ -19,6 +19,7 @@ use DateTimeZone;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
+use Yasumi\SubstituteHoliday;
 
 /**
  * Provider for all holidays in South Africa.
@@ -323,31 +324,20 @@ class SouthAfrica extends AbstractProvider
      */
     private function calculateSubstituteHolidays(): void
     {
-        $datesIterator = $this->getIterator();
-
         // Loop through all defined holidays
-        while ($datesIterator->valid()) {
-
-            // Exclude Good Friday, Family Day, 2016 Municipal Elections Day as these don't fall in the weekend
-            if (\in_array(
-                $datesIterator->current()->shortName,
-                ['goodFriday', 'familyDay', '2016MunicipalElectionsDay'],
-                true
-            )) {
-                $datesIterator->next();
-            }
-
+        foreach ($this->getHolidays() as $holiday) {
             // Substitute holiday is on a Monday in case the holiday falls on a Sunday
-            if (0 === (int)$datesIterator->current()->format('w')) {
-                $substituteHoliday = clone $datesIterator->current();
-                $substituteHoliday->add(new DateInterval('P1D'));
+            if (0 === (int)$holiday->format('w')) {
+                $date = clone $holiday;
+                $date->add(new DateInterval('P1D'));
 
-                $this->addHoliday(new Holiday('substituteHoliday:' . $substituteHoliday->shortName, [
-                    'en_ZA' => $substituteHoliday->getName() . ' observed'
-                ], $substituteHoliday, $this->locale));
+                $this->addHoliday(new SubstituteHoliday(
+                    $holiday,
+                    [],
+                    $date,
+                    $this->locale
+                ));
             }
-
-            $datesIterator->next();
         }
     }
 }

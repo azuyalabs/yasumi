@@ -13,7 +13,6 @@
 
 namespace Yasumi\Filters;
 
-use Countable;
 use FilterIterator;
 use Iterator;
 
@@ -26,7 +25,7 @@ use Iterator;
  *
  * @package Yasumi\Filters
  */
-class OnFilter extends FilterIterator implements Countable
+class OnFilter extends AbstractFilter
 {
     /**
      * @var string date to check for holidays
@@ -56,19 +55,5 @@ class OnFilter extends FilterIterator implements Countable
     {
         $holiday = $this->getInnerIterator()->current()->format('Y-m-d');
         return $holiday === $this->date;
-    }
-
-    /**
-     * @return int Returns the number of holidays that happen on the specified date
-     */
-    public function count(): int
-    {
-        $days = \array_keys(\iterator_to_array($this));
-
-        \array_walk($days, static function (&$day) {
-            $day = \str_replace('substituteHoliday:', '', $day);
-        });
-
-        return \count(\array_unique($days));
     }
 }
