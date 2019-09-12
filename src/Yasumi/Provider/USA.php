@@ -151,9 +151,12 @@ class USA extends AbstractProvider
     private function calculateIndependenceDay(): void
     {
         if ($this->year >= 1776) {
-            $this->addHoliday(new Holiday('independenceDay', [
-                'en_US' => 'Independence Day'
-            ], new DateTime("$this->year-7-4", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'independenceDay',
+                [],
+                new DateTime("$this->year-7-4", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
     }
 

@@ -85,10 +85,12 @@ class Poland extends AbstractProvider
             return;
         }
 
-        $this->addHoliday(new Holiday('independenceDay', [
-            'en_US' => 'Independence Day',
-            'pl_PL' => 'Narodowe Święto Niepodległości'
-        ], new DateTime("$this->year-11-11", new DateTimeZone($this->timezone)), $this->locale));
+        $this->addHoliday(new Holiday(
+            'independenceDay',
+            [],
+            new DateTime("$this->year-11-11", new DateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /**

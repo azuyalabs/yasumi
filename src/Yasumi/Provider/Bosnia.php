@@ -65,10 +65,12 @@ class Bosnia extends AbstractProvider
          * Independence Day
          */
         if ($this->year >= 1992) {
-            $this->addHoliday(new Holiday('independenceDay', [
-                'en_US' => 'Independence Day',
-                'bs_Latn_BA' => 'Dan Nezavisnosti'
-            ], new DateTime("$this->year-3-1", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'independenceDay',
+                [],
+                new DateTime("$this->year-3-1", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
 
         /**

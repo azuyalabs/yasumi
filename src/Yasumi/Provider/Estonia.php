@@ -68,10 +68,12 @@ class Estonia extends AbstractProvider
     private function addIndependenceDay(): void
     {
         if ($this->year >= self::DECLARATION_OF_INDEPENDENCE_YEAR) {
-            $this->addHoliday(new Holiday('independenceDay', [
-                'en_US' => 'Independence Day',
-                'et_EE' => 'Iseseisvuspäev'
-            ], new \DateTime("{$this->year}-02-24", new \DateTimeZone($this->timezone))));
+            $this->addHoliday(new Holiday(
+                'independenceDay',
+                [],
+                new \DateTime("{$this->year}-02-24", new \DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
     }
 

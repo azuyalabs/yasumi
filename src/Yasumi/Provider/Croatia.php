@@ -93,10 +93,12 @@ class Croatia extends AbstractProvider
          * Independence Day
          */
         if ($this->year >= 1991) {
-            $this->addHoliday(new Holiday('independenceDay', [
-                'en_US' => 'Independence Day',
-                'hr_HR' => 'Dan neovisnosti'
-            ], new DateTime("$this->year-10-8", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'independenceDay',
+                [],
+                new DateTime("$this->year-10-8", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
     }
 }
