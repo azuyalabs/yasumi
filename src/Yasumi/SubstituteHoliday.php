@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,6 +12,7 @@
 
 namespace Yasumi;
 
+use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 
 /**
@@ -50,7 +51,7 @@ class SubstituteHoliday extends Holiday
      *                                               TYPE_OBSERVANCE, TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default
      *                                               an official holiday is considered.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
