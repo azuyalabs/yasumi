@@ -25,6 +25,7 @@ use TypeError;
 use Yasumi\Exception\InvalidYearException;
 use Yasumi\Exception\ProviderNotFoundException;
 use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Provider\AbstractProvider;
 use Yasumi\tests\YasumiBase;
 use Yasumi\Yasumi;
 
@@ -557,5 +558,40 @@ class YasumiTest extends TestCase
         $this->assertArrayNotHasKey('juneHoliday', $holidaysAfterRemoval);
         $this->assertArrayNotHasKey('augustHoliday', $holidaysAfterRemoval);
         $this->assertArrayNotHasKey('octoberHoliday', $holidaysAfterRemoval);
+    }
+
+    /**
+     * Tests that a holiday provider instance can be created by using the ISO3166-2
+     * country/region code. (Using the Yasumi::createByISO3166_2 method)
+     *
+     * @throws ReflectionException
+     */
+    public function testCreateByISO3166_2(): void
+    {
+        $year = Factory::create()->numberBetween(
+            self::YEAR_LOWER_BOUND,
+            self::YEAR_UPPER_BOUND
+        );
+
+        $provider = Yasumi::createByISO3166_2(
+            'JP',
+            $year
+        );
+
+        $this->assertInstanceOf(AbstractProvider::class, $provider);
+        $this->assertEquals($year, $provider->getYear());
+    }
+
+    /**
+     * Tests that a ProviderNotFoundException is thrown when providing a invalid
+     * ISO3166-2 code when using the Yasumi::createByISO3166_2 method.
+     *
+     * @throws ReflectionException
+     */
+    public function testCreateByISO3166_2WithInvalidCode(): void
+    {
+        $this->expectException(ProviderNotFoundException::class);
+
+        Yasumi::createByISO3166_2('XX', 2019);
     }
 }
