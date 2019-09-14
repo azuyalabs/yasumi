@@ -15,7 +15,6 @@ namespace Yasumi\Filters;
 
 use Countable;
 use FilterIterator;
-use Iterator;
 use Yasumi\SubstituteHoliday;
 
 /**
@@ -37,9 +36,9 @@ abstract class AbstractFilter extends FilterIterator implements Countable
         $names = \array_map(static function (&$holiday) {
             if ($holiday instanceof SubstituteHoliday) {
                 return $holiday->substitutedHoliday->shortName;
-            } else {
-                return $holiday->shortName;
             }
+
+            return $holiday->shortName;
         }, \iterator_to_array($this));
 
         return \count(\array_unique($names));
