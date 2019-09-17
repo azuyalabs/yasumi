@@ -12,6 +12,6 @@
 
 // Translations for Freedom Day
 return [
-    'en_US' => 'Freedom Day',
-    'pt_PT' => 'Dia da Liberdade'
+    'en' => 'Freedom Day',
+    'pt' => 'Dia da Liberdade'
 ];

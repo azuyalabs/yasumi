@@ -76,7 +76,7 @@ class LaRioja extends Spain
     {
         if ($this->year >= 1983) {
             $this->addHoliday(new Holiday('laRiojaDay', [
-                'es_ES' => 'Día de La Rioja'
+                'es' => 'Día de La Rioja'
             ], new DateTime("$this->year-6-9", new DateTimeZone($this->timezone)), $this->locale));
         }
     }

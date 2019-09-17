@@ -150,7 +150,7 @@ class Finland extends AbstractProvider
         if ($this->year >= 1917) {
             $this->addHoliday(new Holiday(
                 'independenceDay',
-                ['fi_FI' => 'Itsenäisyyspäivä'],
+                ['fi' => 'Itsenäisyyspäivä'],
                 new DateTime("$this->year-12-6", new DateTimeZone($this->timezone)),
                 $this->locale
             ));

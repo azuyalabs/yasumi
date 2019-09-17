@@ -69,7 +69,7 @@ class Brazil extends AbstractProvider
             $carnavalMonday = clone $easter;
             $this->addHoliday(new Holiday(
                 'carnavalMonday',
-                ['pt_BR' => 'Segunda-feira de Carnaval'],
+                ['pt' => 'Segunda-feira de Carnaval'],
                 $carnavalMonday->sub(new DateInterval('P48D')),
                 $this->locale,
                 Holiday::TYPE_OBSERVANCE
@@ -78,7 +78,7 @@ class Brazil extends AbstractProvider
             $carnavalTuesday = clone $easter;
             $this->addHoliday(new Holiday(
                 'carnavalTuesday',
-                ['pt_BR' => 'Terça-feira de Carnaval'],
+                ['pt' => 'Terça-feira de Carnaval'],
                 $carnavalTuesday->sub(new DateInterval('P47D')),
                 $this->locale,
                 Holiday::TYPE_OBSERVANCE
@@ -97,7 +97,7 @@ class Brazil extends AbstractProvider
         if ($this->year >= 1792) {
             $this->addHoliday(new Holiday(
                 'tiradentesDay',
-                ['pt_BR' => 'Dia de Tiradentes'],
+                ['pt' => 'Dia de Tiradentes'],
                 new DateTime("$this->year-04-21", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -114,7 +114,7 @@ class Brazil extends AbstractProvider
         if ($this->year >= 1822) {
             $this->addHoliday(new Holiday(
                 'independenceDay',
-                ['pt_BR' => 'Dia da Independência do Brasil'],
+                ['pt' => 'Dia da Independência do Brasil'],
                 new DateTime("$this->year-09-07", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -134,7 +134,7 @@ class Brazil extends AbstractProvider
         if ($this->year >= 1980) {
             $this->addHoliday(new Holiday(
                 'ourLadyOfAparecidaDay',
-                ['pt_BR' => 'Dia de Nossa Senhora Aparecida'],
+                ['pt' => 'Dia de Nossa Senhora Aparecida'],
                 new DateTime("$this->year-10-12", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -150,7 +150,7 @@ class Brazil extends AbstractProvider
         if ($this->year >= 1300) {
             $this->addHoliday(new Holiday(
                 'allSoulsDay',
-                ['pt_BR' => 'Dia de Finados'],
+                ['pt' => 'Dia de Finados'],
                 new DateTime("$this->year-11-02", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -168,7 +168,7 @@ class Brazil extends AbstractProvider
         if ($this->year >= 1889) {
             $this->addHoliday(new Holiday(
                 'proclamationOfRepublicDay',
-                ['pt_BR' => 'Dia da Proclamação da República'],
+                ['pt' => 'Dia da Proclamação da República'],
                 new DateTime("$this->year-11-15", new DateTimeZone($this->timezone)),
                 $this->locale
             ));

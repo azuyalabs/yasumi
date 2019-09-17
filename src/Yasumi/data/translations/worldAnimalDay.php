@@ -12,7 +12,6 @@
 
 // Translations for World Animal Day
 return [
-    'en_US' => 'World Animal Day',
-    'nl_BE' => 'Werelddierendag',
-    'nl_NL' => 'Werelddierendag'
+    'en' => 'World Animal Day',
+    'nl' => 'Werelddierendag'
 ];

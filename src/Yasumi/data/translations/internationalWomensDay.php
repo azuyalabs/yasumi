@@ -12,10 +12,9 @@
 
 // Translations for International Women's Day
 return [
-    'de_DE' => 'Internationaler Frauentag',
-    'en_US' => 'International Women\'s Day',
-    'ko_KR' => '국제 여성의 날',
-    'ru_RU' => 'Международный женский день',
-    'ru_UA' => 'Международный женский день',
-    'uk_UA' => 'Міжнародний жіночий день'
+    'de' => 'Internationaler Frauentag',
+    'en' => 'International Women\'s Day',
+    'ko' => '국제 여성의 날',
+    'ru' => 'Международный женский день',
+    'uk' => 'Міжнародний жіночий день'
 ];

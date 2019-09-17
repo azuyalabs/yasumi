@@ -626,4 +626,14 @@ class YasumiTest extends TestCase
         $this->assertEquals($newHolidays, $provider->getHolidayNames());
         $this->assertNotEquals($originalHolidays, $provider->getHolidayNames());
     }
+
+    /**
+     * Tests that default locale can be set and retrieved.
+     */
+    public function testGetParentLocales(): void
+    {
+        $this->assertEquals([], Yasumi::getParentLocales('az'));
+        $this->assertEquals(['az'], Yasumi::getParentLocales('az_Cyrl'));
+        $this->assertEquals(['az_Cyrl', 'az'], Yasumi::getParentLocales('az_Cyrl_AZ'));
+    }
 }

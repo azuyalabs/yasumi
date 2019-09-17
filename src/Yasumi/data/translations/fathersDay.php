@@ -12,15 +12,13 @@
 
 // Translations for Father's Day
 return [
-    'de_CH' => 'Vatertag',
-    'el_GR' => 'Γιορτή του πατέρα',
-    'en_US' => 'Father\'s Day',
-    'fr_BE' => 'Fête des pères',
-    'fr_CH' => 'Fête des pères',
-    'it_CH' => 'Festa del papà',
-    'nl_BE' => 'Vaderdag',
-    'nl_NL' => 'Vaderdag',
-    'pt_PT' => 'Dia do Pai',
-    'ro_RO' => 'Ziua Tatălui',
-    'sk_SK' => 'Deň otcov'
+    'de' => 'Vatertag',
+    'el' => 'Γιορτή του πατέρα',
+    'en' => 'Father\'s Day',
+    'fr' => 'Fête des pères',
+    'it' => 'Festa del papà',
+    'nl' => 'Vaderdag',
+    'pt' => 'Dia do Pai',
+    'ro' => 'Ziua Tatălui',
+    'sk' => 'Deň otcov'
 ];

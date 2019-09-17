@@ -54,6 +54,6 @@ class CentralNorth extends Tasmania
     {
         $date = new DateTime($this->year . '-12-02', new DateTimeZone($this->timezone));
         $date = $date->modify('previous friday');
-        $this->addHoliday(new Holiday('devonportShow', ['en_AU' => 'Devonport Show'], $date, $this->locale));
+        $this->addHoliday(new Holiday('devonportShow', ['en' => 'Devonport Show'], $date, $this->locale));
     }
 }

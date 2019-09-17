@@ -81,8 +81,7 @@ class Neuchatel extends Switzerland
             $this->addHoliday(new Holiday(
                 'instaurationRepublique',
                 [
-                    'fr_FR' => 'Instauration de la République',
-                    'fr_CH' => 'Instauration de la République'
+                    'fr' => 'Instauration de la République'
                 ],
                 new DateTime($this->year . '-03-01', new DateTimeZone($this->timezone)),
                 $this->locale,

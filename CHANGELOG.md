@@ -29,6 +29,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Code using class imports rather than Fully Qualified Class names.
 - Upgraded to PHPUnit 8.
 - Replaced the standard 'InvalidArgumentException' when an invalid year or holiday provider are given by a new exception for each of these two situations separately ('InvalidYearException' and 'ProviderNotFoundException'). This allows you to better distinguish which exception may occur when instantiating the Yasumi class. [\#95](https://github.com/azuyalabs/yasumi/pull/95) ([qneyrat](https://github.com/qneyrat))
+- Fallback support added to getName() to allow e.g. fallback from 'de_AT' to 'de'. [\#176](https://github.com/azuyalabs/yasumi/pull/176) ([c960657](https://github.com/c960657))
 
 ### Fixed
 - Late Summer Bank Holiday in 1968 and 1969 in United Kingdom [\#161](https://github.com/azuyalabs/yasumi/pull/161) ([c960657](https://github.com/c960657))

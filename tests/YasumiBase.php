@@ -164,10 +164,21 @@ trait YasumiBase
 
         if (\is_array($translations) && !empty($translations)) {
             foreach ($translations as $locale => $name) {
-                $translationExists = isset($holiday->translations[$locale]) ? true : false;
+                $locales = \array_merge(
+                    [$locale],
+                    Yasumi::getParentLocales($locale)
+                );
 
-                $this->assertTrue($translationExists);
-                $this->assertEquals($name, $holiday->translations[$locale]);
+                $translation = null;
+                foreach ($locales as $l) {
+                    if (isset($holiday->translations[$l])) {
+                        $translation = $holiday->translations[$l];
+                        break;
+                    }
+                }
+
+                $this->assertTrue(isset($translation));
+                $this->assertEquals($name, $translation);
             }
         }
 

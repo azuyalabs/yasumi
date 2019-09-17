@@ -125,7 +125,7 @@ class UnitedKingdom extends AbstractProvider
         if (1995 === $this->year || 2020 === $this->year) {
             $this->addHoliday(new Holiday(
                 'mayDayBankHoliday',
-                ['en_GB' => 'May Day Bank Holiday'],
+                ['en' => 'May Day Bank Holiday'],
                 new DateTime("$this->year-5-8", new DateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_BANK
@@ -136,7 +136,7 @@ class UnitedKingdom extends AbstractProvider
 
         $this->addHoliday(new Holiday(
             'mayDayBankHoliday',
-            ['en_GB' => 'May Day Bank Holiday'],
+            ['en' => 'May Day Bank Holiday'],
             new DateTime("first monday of may $this->year", new DateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
@@ -171,7 +171,7 @@ class UnitedKingdom extends AbstractProvider
         if (2002 === $this->year || 2012 === $this->year) {
             $this->addHoliday(new Holiday(
                 'springBankHoliday',
-                ['en_GB' => 'Spring Bank Holiday'],
+                ['en' => 'Spring Bank Holiday'],
                 new DateTime("$this->year-6-4", new DateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_BANK
@@ -182,7 +182,7 @@ class UnitedKingdom extends AbstractProvider
 
         $this->addHoliday(new Holiday(
             'springBankHoliday',
-            ['en_GB' => 'Spring Bank Holiday'],
+            ['en' => 'Spring Bank Holiday'],
             new DateTime("last monday of may $this->year", new DateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
@@ -214,7 +214,7 @@ class UnitedKingdom extends AbstractProvider
         if ($this->year < 1965) {
             $this->addHoliday(new Holiday(
                 'summerBankHoliday',
-                ['en_GB' => 'August Bank Holiday'],
+                ['en' => 'August Bank Holiday'],
                 new DateTime("first monday of august $this->year", new DateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_BANK
@@ -229,7 +229,7 @@ class UnitedKingdom extends AbstractProvider
         if (1968 === $this->year || 1969 === $this->year) {
             $this->addHoliday(new Holiday(
                 'summerBankHoliday',
-                ['en_GB' => 'Summer Bank Holiday'],
+                ['en' => 'Summer Bank Holiday'],
                 new DateTime("first monday of september $this->year", new DateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_BANK
@@ -240,7 +240,7 @@ class UnitedKingdom extends AbstractProvider
 
         $this->addHoliday(new Holiday(
             'summerBankHoliday',
-            ['en_GB' => 'Summer Bank Holiday'],
+            ['en' => 'Summer Bank Holiday'],
             new DateTime("last monday of august $this->year", new DateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK

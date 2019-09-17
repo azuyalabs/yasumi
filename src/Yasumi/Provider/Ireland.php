@@ -68,7 +68,7 @@ class Ireland extends AbstractProvider
         $this->calculateJuneHoliday();
         $this->addHoliday(new Holiday(
             'augustHoliday',
-            ['en_IE' => 'August Holiday', 'ga_IE' => 'Lá Saoire i mí Lúnasa'],
+            ['en' => 'August Holiday', 'ga' => 'Lá Saoire i mí Lúnasa'],
             new DateTime("next monday $this->year-7-31", new DateTimeZone($this->timezone)),
             $this->locale
         ));
@@ -157,7 +157,7 @@ class Ireland extends AbstractProvider
     {
         $holiday = new Holiday(
             'christmasDay',
-            ['en_IE' => 'Christmas Day', 'ga_IE' => 'Lá Nollag'],
+            ['en' => 'Christmas Day', 'ga' => 'Lá Nollag'],
             new DateTime($this->year . '-12-25', new DateTimeZone($this->timezone)),
             $this->locale
         );
@@ -242,7 +242,7 @@ class Ireland extends AbstractProvider
         }
         $holiday = new Holiday(
             'stPatricksDay',
-            ['en_IE' => 'St. Patrick\'s Day', 'ga_IE' => 'Lá Fhéile Pádraig'],
+            ['en' => 'St. Patrick\'s Day', 'ga' => 'Lá Fhéile Pádraig'],
             new DateTime($this->year . '-3-17', new DateTimeZone($this->timezone)),
             $this->locale
         );
@@ -288,7 +288,7 @@ class Ireland extends AbstractProvider
 
         $this->addHoliday(new Holiday(
             'mayDay',
-            ['en_IE' => 'May Day', 'ga_IE' => 'Lá Bealtaine'],
+            ['en' => 'May Day', 'ga' => 'Lá Bealtaine'],
             new DateTime("next monday $this->year-4-30", new DateTimeZone($this->timezone)),
             $this->locale
         ));
@@ -316,7 +316,7 @@ class Ireland extends AbstractProvider
 
         $this->addHoliday(new Holiday(
             'juneHoliday',
-            ['en_IE' => 'June Holiday', 'ga_IE' => 'Lá Saoire i mí an Mheithimh'],
+            ['en' => 'June Holiday', 'ga' => 'Lá Saoire i mí an Mheithimh'],
             new DateTime("next monday $this->year-5-31", new DateTimeZone($this->timezone)),
             $this->locale
         ));
@@ -343,7 +343,7 @@ class Ireland extends AbstractProvider
 
         $this->addHoliday(new Holiday(
             'octoberHoliday',
-            ['en_IE' => 'October Holiday', 'ga_IE' => 'Lá Saoire i mí Dheireadh Fómhair'],
+            ['en' => 'October Holiday', 'ga' => 'Lá Saoire i mí Dheireadh Fómhair'],
             new DateTime("previous monday $this->year-11-01", new DateTimeZone($this->timezone)),
             $this->locale
         ));

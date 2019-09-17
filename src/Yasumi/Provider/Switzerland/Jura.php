@@ -83,8 +83,7 @@ class Jura extends Switzerland
             $this->addHoliday(new Holiday(
                 'plebisciteJurassien',
                 [
-                    'fr_FR' => 'Commémoration du plébiscite jurassien',
-                    'fr_CH' => 'Commémoration du plébiscite jurassien'
+                    'fr' => 'Commémoration du plébiscite jurassien',
                 ],
                 new DateTime($this->year . '-06-23', new DateTimeZone($this->timezone)),
                 $this->locale,

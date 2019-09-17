@@ -12,8 +12,8 @@
 
 // Translations for Victory in Europe Day
 return [
-    'cs_CZ' => 'Den vítězství',
-    'en_US' => 'Victory in Europe Day',
-    'fr_FR' => 'Victoire 1945',
-    'sk_SK' => 'Deň víťazstva nad fašizmom'
+    'cs' => 'Den vítězství',
+    'en' => 'Victory in Europe Day',
+    'fr' => 'Victoire 1945',
+    'sk' => 'Deň víťazstva nad fašizmom'
 ];

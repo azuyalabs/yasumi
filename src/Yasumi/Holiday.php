@@ -160,7 +160,19 @@ class Holiday extends DateTime implements JsonSerializable
      */
     public function getName(): string
     {
-        return $this->translations[$this->displayLocale] ?? $this->translations[self::DEFAULT_LOCALE] ?? $this->shortName;
+        $locales = \array_merge(
+            [$locale ?? $this->displayLocale],
+            Yasumi::getParentLocales($this->displayLocale),
+            [self::DEFAULT_LOCALE]
+        );
+
+        foreach ($locales as $locale) {
+            if (isset($this->translations[$locale])) {
+                return $this->translations[$locale];
+            }
+        }
+
+        return $this->shortName;
     }
 
     /**

@@ -55,6 +55,6 @@ class Northwest extends Tasmania
     {
         $date = new DateTime('first saturday of october ' . $this->year, new DateTimeZone($this->timezone));
         $date = $date->sub(new DateInterval('P1D'));
-        $this->addHoliday(new Holiday('burnieShow', ['en_AU' => 'Burnie Show'], $date, $this->locale));
+        $this->addHoliday(new Holiday('burnieShow', ['en' => 'Burnie Show'], $date, $this->locale));
     }
 }

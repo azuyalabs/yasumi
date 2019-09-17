@@ -12,7 +12,7 @@
 
 // Translations for All Saints' Eve
 return [
-    'da_DK' => 'Allehelgensaften',
-    'en_US' => 'All Saints\' Eve',
-    'sv_SE' => 'alla helgons afton'
+    'da' => 'Allehelgensaften',
+    'en' => 'All Saints\' Eve',
+    'sv' => 'alla helgons afton'
 ];

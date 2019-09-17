@@ -68,7 +68,7 @@ class WA extends Australia
         if (2011 === $this->year) {
             $this->calculateHoliday(
                 'queensBirthday',
-                ['en_AU' => "Queen's Birthday"],
+                ['en' => "Queen's Birthday"],
                 new DateTime('2011-10-28', new DateTimeZone($this->timezone)),
                 false,
                 false
@@ -76,7 +76,7 @@ class WA extends Australia
         } elseif (2012 === $this->year) {
             $this->calculateHoliday(
                 'queensBirthday',
-                ['en_AU' => "Queen's Birthday"],
+                ['en' => "Queen's Birthday"],
                 new DateTime('2012-10-01', new DateTimeZone($this->timezone)),
                 false,
                 false
@@ -84,7 +84,7 @@ class WA extends Australia
         } else {
             $this->calculateHoliday(
                 'queensBirthday',
-                ['en_AU' => "Queen's Birthday"],
+                ['en' => "Queen's Birthday"],
                 new DateTime('last monday of september ' . $this->year, new DateTimeZone($this->timezone)),
                 false,
                 false
@@ -116,7 +116,7 @@ class WA extends Australia
     {
         $this->calculateHoliday(
             'westernAustraliaDay',
-            ['en_AU' => 'Western Australia Day'],
+            ['en' => 'Western Australia Day'],
             new DateTime('first monday of june ' . $this->year, new DateTimeZone($this->timezone)),
             false,
             false

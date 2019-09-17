@@ -53,7 +53,7 @@ class KingIsland extends Tasmania
     {
         $this->calculateHoliday(
             'kingIslandShow',
-            ['en_AU' => 'King Island Show'],
+            ['en' => 'King Island Show'],
             new DateTime('first tuesday of march ' . $this->year, new DateTimeZone($this->timezone)),
             false,
             false
