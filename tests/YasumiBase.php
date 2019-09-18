@@ -164,10 +164,11 @@ trait YasumiBase
 
         if (\is_array($translations) && !empty($translations)) {
             foreach ($translations as $locale => $name) {
-                $locales = \array_merge(
-                    [$locale],
-                    Yasumi::getParentLocales($locale)
-                );
+                $locales = [$locale];
+                $parts = \explode('_', $locale);
+                while (\array_pop($parts) && $parts) {
+                    $locales[] = \implode('_', $parts);
+                }
 
                 $translation = null;
                 foreach ($locales as $l) {

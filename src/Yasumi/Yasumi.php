@@ -297,19 +297,4 @@ class Yasumi
 
         return $date;
     }
-
-    /**
-     * Returns the parent locales for the specified locale.
-     *
-     * @return array All ancestor locales starting with the direct parent
-     */
-    public static function getParentLocales(string $locale): array
-    {
-        $locales = [];
-        $parts = \explode('_', $locale);
-        while (\array_pop($parts) && $parts) {
-            $locales[] = \implode('_', $parts);
-        }
-        return $locales;
-    }
 }
