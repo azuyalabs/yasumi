@@ -43,7 +43,7 @@ class RomaniaTest extends RomaniaBaseTestCase
             'pentecost',
             'pentecostMonday',
             'assumptionOfMary',
-            'stAndrewDay',
+            'stAndrewsDay',
             'nationalDay',
             'christmasDay',
             'secondChristmasDay'
