@@ -15,8 +15,8 @@ namespace Yasumi\Provider\UnitedKingdom;
 use DateTime;
 use DateTimeZone;
 use Yasumi\Holiday;
-use Yasumi\SubstituteHoliday;
 use Yasumi\Provider\UnitedKingdom;
+use Yasumi\SubstituteHoliday;
 
 /**
  * Provider for all holidays in Northern Ireland (United Kingdom).
