@@ -22,7 +22,7 @@ use Yasumi\Provider\UnitedKingdom;
  * (8,023 sq mi), and has a population of 3,125,000. Cardiff, Wales's capital and largest city, is the
  * eleventh largest city in the United Kingdom.
  *
- * @link https://en.wikipedia.org/wiki/England
+ * @link https://en.wikipedia.org/wiki/Wales
  */
 class Wales extends UnitedKingdom
 {
