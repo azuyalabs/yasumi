@@ -16,6 +16,7 @@ use DateInterval;
 use DateTime;
 use DateTimeZone;
 use Yasumi\Holiday;
+use Yasumi\SubstituteHoliday;
 use Yasumi\Provider\UnitedKingdom;
 
 /**
@@ -93,32 +94,37 @@ class Scotland extends UnitedKingdom
             $type = Holiday::TYPE_BANK;
         }
 
-        $christmasDay = new DateTime("$this->year-1-1", new DateTimeZone($this->timezone));
-        $boxingDay    = new DateTime("$this->year-1-2", new DateTimeZone($this->timezone));
+        $newYearsDay = $this->newYearsDay($this->year, $this->timezone, $this->locale, $type);
+        $secondNewYearsDay = new Holiday(
+            'secondNewYearsDay',
+            [],
+            new DateTime("$this->year-1-2", new DateTimeZone($this->timezone)),
+            $this->locale,
+            $type
+        );
 
-        $this->addHoliday(new Holiday('newYearsDay', [], $christmasDay, $this->locale, $type));
-        $this->addHoliday(new Holiday('secondNewYearsDay', [], $boxingDay, $this->locale, $type));
+        $this->addHoliday($newYearsDay);
+        $this->addHoliday($secondNewYearsDay);
 
-        $substituteChristmasDay = clone $christmasDay;
-        $substituteBoxingDay    = clone $boxingDay;
-
-        if (\in_array((int)$christmasDay->format('w'), [0, 6], true)) {
-            $substituteChristmasDay->add(new DateInterval('P2D'));
-            $this->addHoliday(new Holiday(
-                'substituteHoliday:newYearsDay',
+        if (\in_array((int)$newYearsDay->format('w'), [0, 6], true)) {
+            $date = clone $newYearsDay;
+            $date->add(new DateInterval('P2D'));
+            $this->addHoliday(new SubstituteHoliday(
+                $newYearsDay,
                 [],
-                $substituteChristmasDay,
+                $date,
                 $this->locale,
                 $type
             ));
         }
 
-        if (\in_array((int)$boxingDay->format('w'), [0, 6], true)) {
-            $substituteBoxingDay->add(new DateInterval('P2D'));
-            $this->addHoliday(new Holiday(
-                'substituteHoliday:secondNewYearsDay',
+        if (\in_array((int)$secondNewYearsDay->format('w'), [0, 6], true)) {
+            $date = clone $secondNewYearsDay;
+            $date->add(new DateInterval('P2D'));
+            $this->addHoliday(new SubstituteHoliday(
+                $secondNewYearsDay,
                 [],
-                $substituteBoxingDay,
+                $date,
                 $this->locale,
                 $type
             ));
@@ -182,13 +188,13 @@ class Scotland extends UnitedKingdom
 
         // Substitute holiday is on the next available weekday if a holiday falls on a Saturday or Sunday
         if (\in_array((int)$holiday->format('w'), [0, 6], true)) {
-            $substituteHoliday = clone $holiday;
-            $substituteHoliday->modify('next monday');
+            $date = clone $holiday;
+            $date->modify('next monday');
 
-            $this->addHoliday(new Holiday(
-                'substituteHoliday:' . $substituteHoliday->shortName,
-                ['en_GB' => $substituteHoliday->getName() . ' (substitute day)'],
-                $substituteHoliday,
+            $this->addHoliday(new SubstituteHoliday(
+                $holiday,
+                [],
+                $date,
                 $this->locale,
                 Holiday::TYPE_BANK
             ));

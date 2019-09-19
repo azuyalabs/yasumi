@@ -15,6 +15,7 @@ namespace Yasumi\Provider\UnitedKingdom;
 use DateTime;
 use DateTimeZone;
 use Yasumi\Holiday;
+use Yasumi\SubstituteHoliday;
 use Yasumi\Provider\UnitedKingdom;
 
 /**
@@ -87,13 +88,13 @@ class NorthernIreland extends UnitedKingdom
 
         // Substitute holiday is on the next available weekday if a holiday falls on a Saturday or Sunday
         if (\in_array((int)$holiday->format('w'), [0, 6], true)) {
-            $substituteHoliday = clone $holiday;
-            $substituteHoliday->modify('next monday');
+            $date = clone $holiday;
+            $date->modify('next monday');
 
-            $this->addHoliday(new Holiday(
-                'substituteHoliday:' . $substituteHoliday->shortName,
-                ['en_GB' => $substituteHoliday->getName() . ' (substitute day)'],
-                $substituteHoliday,
+            $this->addHoliday(new SubstituteHoliday(
+                $holiday,
+                [],
+                $date,
                 $this->locale,
                 Holiday::TYPE_BANK
             ));
@@ -133,13 +134,13 @@ class NorthernIreland extends UnitedKingdom
 
         // Substitute holiday is on the next available weekday if a holiday falls on a Saturday or Sunday
         if (\in_array((int)$holiday->format('w'), [0, 6], true)) {
-            $substituteHoliday = clone $holiday;
-            $substituteHoliday->modify('next monday');
+            $date = clone $holiday;
+            $date->modify('next monday');
 
-            $this->addHoliday(new Holiday(
-                'substituteHoliday:' . $substituteHoliday->shortName,
-                ['en_GB' => $substituteHoliday->getName() . ' (substitute day)'],
-                $substituteHoliday,
+            $this->addHoliday(new SubstituteHoliday(
+                $holiday,
+                [],
+                $date,
                 $this->locale,
                 Holiday::TYPE_BANK
             ));
