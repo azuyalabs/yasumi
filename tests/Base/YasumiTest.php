@@ -25,6 +25,8 @@ use TypeError;
 use Yasumi\Exception\InvalidYearException;
 use Yasumi\Exception\ProviderNotFoundException;
 use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Holiday;
+use Yasumi\Provider\AbstractProvider;
 use Yasumi\tests\YasumiBase;
 use Yasumi\Yasumi;
 
@@ -557,5 +559,71 @@ class YasumiTest extends TestCase
         $this->assertArrayNotHasKey('juneHoliday', $holidaysAfterRemoval);
         $this->assertArrayNotHasKey('augustHoliday', $holidaysAfterRemoval);
         $this->assertArrayNotHasKey('octoberHoliday', $holidaysAfterRemoval);
+    }
+
+    /**
+     * Tests that a holiday provider instance can be created by using the ISO3166-2
+     * country/region code. (Using the Yasumi::createByISO3166_2 method)
+     *
+     * @throws ReflectionException
+     */
+    public function testCreateByISO3166_2(): void
+    {
+        $year = Factory::create()->numberBetween(
+            self::YEAR_LOWER_BOUND,
+            self::YEAR_UPPER_BOUND
+        );
+
+        $provider = Yasumi::createByISO3166_2(
+            'JP',
+            $year
+        );
+
+        $this->assertInstanceOf(AbstractProvider::class, $provider);
+        $this->assertEquals($year, $provider->getYear());
+    }
+
+    /**
+     * Tests that a ProviderNotFoundException is thrown when providing a invalid
+     * ISO3166-2 code when using the Yasumi::createByISO3166_2 method.
+     *
+     * @throws ReflectionException
+     */
+    public function testCreateByISO3166_2WithInvalidCode(): void
+    {
+        $this->expectException(ProviderNotFoundException::class);
+
+        Yasumi::createByISO3166_2('XX', 2019);
+    }
+
+    /**
+     * Tests that a holiday can be added to a provider. In addition, it
+     * tests that the same holiday instance isn't added twice.
+     *
+     * @throws ReflectionException
+     * @throws Exception
+     */
+    public function testAddExistingHoliday(): void
+    {
+        $provider = Yasumi::createByISO3166_2('NL', 2019);
+        $holidayName = 'testHoliday';
+
+        $holiday = new Holiday($holidayName, [], new DateTime());
+        $originalHolidays = $provider->getHolidayNames();
+
+        // Add a new holiday
+        $provider->addHoliday($holiday);
+        $newHolidays = $provider->getHolidayNames();
+        $this->assertContains($holidayName, $provider->getHolidayNames());
+        $this->assertNotSameSize($originalHolidays, $newHolidays);
+        $this->assertNotEquals($newHolidays, $originalHolidays);
+
+        // Add same holiday again
+        $provider->addHoliday($holiday);
+        $this->assertContains($holidayName, $provider->getHolidayNames());
+        $this->assertSameSize($newHolidays, $provider->getHolidayNames());
+        $this->assertNotSameSize($originalHolidays, $provider->getHolidayNames());
+        $this->assertEquals($newHolidays, $provider->getHolidayNames());
+        $this->assertNotEquals($originalHolidays, $provider->getHolidayNames());
     }
 }

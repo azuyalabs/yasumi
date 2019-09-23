@@ -13,7 +13,6 @@
 
 namespace Yasumi\Filters;
 
-use FilterIterator;
 use Iterator;
 
 /**

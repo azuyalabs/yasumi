@@ -27,7 +27,6 @@
     "friendsofphp/php-cs-fixer": "^2.14",
     "fzaninotto/faker": "~1.8",
     "mikey179/vfsstream": "~1.6",
-    "phan/phan": "^2.2",
     "phpunit/phpunit": "~8.3"
   },
   "autoload": {

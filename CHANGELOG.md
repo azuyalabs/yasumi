@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Added additional code style fixers and aligning StyleCI settings with PHP-CS.
 - Included extra requirement for some PHP Extensions in the composer file.
 - Special subclass of Holiday for substitute holidays [\#162](https://github.com/azuyalabs/yasumi/pull/162) ([c960657](https://github.com/c960657))
+- Holiday providers for England, Wales, Scotland and Northern Ireland [\#166](https://github.com/azuyalabs/yasumi/pull/166) ([c960657](https://github.com/c960657))
 - Holiday provider for India. [\#175](https://github.com/azuyalabs/yasumi/pull/175) ([c960657](https://github.com/c960657))
 
 ### Changed
@@ -30,6 +31,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Code using class imports rather than Fully Qualified Class names.
 - Upgraded to PHPUnit 8.
 - Replaced the standard 'InvalidArgumentException' when an invalid year or holiday provider are given by a new exception for each of these two situations separately ('InvalidYearException' and 'ProviderNotFoundException'). This allows you to better distinguish which exception may occur when instantiating the Yasumi class. [\#95](https://github.com/azuyalabs/yasumi/pull/95) ([qneyrat](https://github.com/qneyrat))
+- Refactored the AbstractProvider::count method to use the newly added SubstituteHoliday class.
 
 ### Fixed
 - Late Summer Bank Holiday in 1968 and 1969 in United Kingdom [\#161](https://github.com/azuyalabs/yasumi/pull/161) ([c960657](https://github.com/c960657))
