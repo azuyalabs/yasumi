@@ -137,10 +137,12 @@ class Romania extends AbstractProvider
     private function calculateStAndrewDay(): void
     {
         if ($this->year >= 2012) {
-            $this->addHoliday(new Holiday('stAndrewDay', [
-                'en' => 'Saint Andrew\'s Day',
-                'ro' => 'Sfântul Andrei'
-            ], new DateTime($this->year . '-11-30', new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'stAndrewsDay',
+                [],
+                new DateTime($this->year . '-11-30', new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
     }
 
