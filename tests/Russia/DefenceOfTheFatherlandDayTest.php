@@ -79,7 +79,7 @@ class DefenceOfTheFatherlandDayTest extends RussiaBaseTestCase implements Yasumi
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(Russia::DEFENCE_OF_THE_FATHERLAND_START_YEAR),
-            ['en_US' => 'Defence of the Fatherland Day']
+            ['en' => 'Defence of the Fatherland Day']
         );
     }
 

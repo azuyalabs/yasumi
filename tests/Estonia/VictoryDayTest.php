@@ -80,7 +80,7 @@ class VictoryDayTest extends EstoniaBaseTestCase implements YasumiTestCaseInterf
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(Estonia::VICTORY_DAY_START_YEAR),
-            ['en_US' => 'Victory Day']
+            ['en' => 'Victory Day']
         );
     }
 

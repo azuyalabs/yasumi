@@ -63,7 +63,7 @@ class MidsummerEveDayTest extends LatviaBaseTestCase implements YasumiTestCaseIn
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'Līgo Diena', 'en_US' => 'Midsummer Eve']
+            [self::LOCALE => 'Līgo Diena', 'en' => 'Midsummer Eve']
         );
     }
 

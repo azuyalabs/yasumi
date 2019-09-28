@@ -80,7 +80,7 @@ class StatehoodDayTest extends LithuaniaBaseTestCase implements YasumiTestCaseIn
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(Lithuania::STATEHOOD_YEAR),
-            ['en_US' => 'Statehood Day (Lithuania)']
+            ['en' => 'Statehood Day (Lithuania)']
         );
     }
 

@@ -63,7 +63,7 @@ class NewYearsEveDayTest extends LatviaBaseTestCase implements YasumiTestCaseInt
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'Vecgada vakars', 'en_US' => 'New Year\'s Eve']
+            [self::LOCALE => 'Vecgada vakars', 'en' => 'New Year\'s Eve']
         );
     }
 

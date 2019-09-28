@@ -80,7 +80,7 @@ class RestorationOfIndependenceDayTest extends EstoniaBaseTestCase implements Ya
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(Estonia::RESTORATION_OF_INDEPENDENCE_YEAR),
-            ['en_US' => 'Day of Restoration of Independence']
+            ['en' => 'Day of Restoration of Independence']
         );
     }
 

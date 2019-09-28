@@ -80,7 +80,7 @@ class UnityDayTest extends RussiaBaseTestCase implements YasumiTestCaseInterface
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(Russia::UNITY_DAY_START_YEAR),
-            ['en_US' => 'Unity Day']
+            ['en' => 'Unity Day']
         );
     }
 
