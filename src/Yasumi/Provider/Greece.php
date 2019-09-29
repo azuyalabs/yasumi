@@ -85,7 +85,7 @@ class Greece extends AbstractProvider
     {
         $this->addHoliday(new Holiday(
             'threeHolyHierarchs',
-            ['el_GR' => 'Τριών Ιεραρχών'],
+            ['el' => 'Τριών Ιεραρχών'],
             new DateTime("$this->year-1-30", new DateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OTHER
@@ -110,7 +110,7 @@ class Greece extends AbstractProvider
     {
         $this->addHoliday(new Holiday(
             'cleanMonday',
-            ['el_GR' => 'Καθαρά Δευτέρα'],
+            ['el' => 'Καθαρά Δευτέρα'],
             $this->calculateEaster($this->year, $this->timezone)->sub(new DateInterval('P48D')),
             $this->locale
         ));
@@ -149,7 +149,7 @@ class Greece extends AbstractProvider
         if ($this->year >= 1821) {
             $this->addHoliday(new Holiday(
                 'independenceDay',
-                ['el_GR' => 'Εικοστή Πέμπτη Μαρτίου'],
+                ['el' => 'Εικοστή Πέμπτη Μαρτίου'],
                 new DateTime("$this->year-3-25", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -173,7 +173,7 @@ class Greece extends AbstractProvider
         if ($this->year >= 1940) {
             $this->addHoliday(new Holiday(
                 'ohiDay',
-                ['el_GR' => 'Επέτειος του Όχι'],
+                ['el' => 'Επέτειος του Όχι'],
                 new DateTime("$this->year-10-28", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -197,7 +197,7 @@ class Greece extends AbstractProvider
         if ($this->year >= 1973) {
             $this->addHoliday(new Holiday(
                 'polytechnio',
-                ['el_GR' => 'Πολυτεχνείο'],
+                ['el' => 'Πολυτεχνείο'],
                 new DateTime("$this->year-11-17", new DateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OTHER

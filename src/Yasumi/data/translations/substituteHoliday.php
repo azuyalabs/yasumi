@@ -12,11 +12,10 @@
 
 // Translation pattern for substitute holidays.
 return [
-    'da_DK' => '{0} (erstatning)',
-    'en_GB' => '{0} (substitute day)',
-    'en_IE' => '{0} observed',
+    'da' => '{0} (erstatning)',
+    'en' => '{0} (substitute day)',
     'en_US' => '{0} observed',
-    'en_ZA' => '{0} observed',
-    'ja_JP' => '振替休日 ({0})',
-    'ko_KR' => '대체공휴일',
+    'en_CA' => '{0} observed',
+    'ja' => '振替休日 ({0})',
+    'ko' => '대체공휴일',
 ];

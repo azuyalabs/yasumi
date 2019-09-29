@@ -72,6 +72,6 @@ class Brisbane extends Queensland
             $date = $date->add(new DateInterval('P7D'));
         }
         $date = $date->add(new DateInterval('P5D'));
-        $this->addHoliday(new Holiday('peoplesDay', ['en_AU' => 'Ekka People\'s Day'], $date, $this->locale));
+        $this->addHoliday(new Holiday('peoplesDay', ['en' => 'Ekka People\'s Day'], $date, $this->locale));
     }
 }

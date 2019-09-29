@@ -55,6 +55,6 @@ class Northeast extends Tasmania
     {
         $date = new DateTime('second saturday of october ' . $this->year, new DateTimeZone($this->timezone));
         $date = $date->sub(new DateInterval('P2D'));
-        $this->addHoliday(new Holiday('launcestonShow', ['en_AU' => 'Royal Launceston Show'], $date, $this->locale));
+        $this->addHoliday(new Holiday('launcestonShow', ['en' => 'Royal Launceston Show'], $date, $this->locale));
     }
 }

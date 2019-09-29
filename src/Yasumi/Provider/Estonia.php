@@ -69,8 +69,8 @@ class Estonia extends AbstractProvider
     {
         if ($this->year >= self::DECLARATION_OF_INDEPENDENCE_YEAR) {
             $this->addHoliday(new Holiday('independenceDay', [
-                'en_US' => 'Independence Day',
-                'et_EE' => 'Iseseisvuspäev'
+                'en' => 'Independence Day',
+                'et' => 'Iseseisvuspäev'
             ], new \DateTime("{$this->year}-02-24", new \DateTimeZone($this->timezone))));
         }
     }
@@ -83,8 +83,8 @@ class Estonia extends AbstractProvider
     {
         if ($this->year >= self::VICTORY_DAY_START_YEAR) {
             $this->addHoliday(new Holiday('victoryDay', [
-                'en_US' => 'Victory Day',
-                'et_EE' => 'Võidupüha'
+                'en' => 'Victory Day',
+                'et' => 'Võidupüha'
             ], new \DateTime("{$this->year}-06-23", new \DateTimeZone($this->timezone))));
         }
     }
@@ -97,8 +97,8 @@ class Estonia extends AbstractProvider
     {
         if ($this->year >= self::RESTORATION_OF_INDEPENDENCE_YEAR) {
             $this->addHoliday(new Holiday('restorationOfIndependenceDay', [
-                'en_US' => 'Day of Restoration of Independence',
-                'et_EE' => 'Tasiseseisvumispäev'
+                'en' => 'Day of Restoration of Independence',
+                'et' => 'Tasiseseisvumispäev'
             ], new \DateTime("{$this->year}-08-20", new \DateTimeZone($this->timezone))));
         }
     }

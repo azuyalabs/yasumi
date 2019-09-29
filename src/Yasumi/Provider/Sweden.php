@@ -233,7 +233,7 @@ class Sweden extends AbstractProvider
 
         $this->addHoliday(new Holiday(
             'nationalDay',
-            ['sv_SE' => $holiday_name],
+            ['sv' => $holiday_name],
             new DateTime("$this->year-6-6", new DateTimeZone($this->timezone)),
             $this->locale
         ));

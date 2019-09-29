@@ -88,7 +88,7 @@ class Austria extends AbstractProvider
 
         $this->addHoliday(new Holiday(
             'nationalDay',
-            ['de_AT' => 'Nationalfeiertag'],
+            ['de' => 'Nationalfeiertag'],
             new DateTime($this->year . '-10-26', new \DateTimeZone($this->timezone)),
             $this->locale
         ));

@@ -80,7 +80,7 @@ class RestorationOfTheStateOfLithuaniaDayTest extends LithuaniaBaseTestCase impl
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(Lithuania::RESTORATION_OF_THE_STATE_YEAR),
-            ['en_US' => 'Day of Restoration of the State of Lithuania']
+            ['en' => 'Day of Restoration of the State of Lithuania']
         );
     }
 

@@ -80,7 +80,7 @@ class BasqueCountry extends Spain
         if ($this->year >= 2011 && $this->year <= 2013) {
             $this->addHoliday(new Holiday(
                 'basqueCountryDay',
-                ['es_ES' => 'Euskadi Eguna'],
+                ['es' => 'Euskadi Eguna'],
                 new DateTime("$this->year-10-25", new DateTimeZone($this->timezone)),
                 $this->locale
             ));

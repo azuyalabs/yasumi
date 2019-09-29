@@ -83,7 +83,7 @@ class CastillaLaMancha extends Spain
         if ($this->year >= 1984) {
             $this->addHoliday(new Holiday(
                 'castillaLaManchaDay',
-                ['es_ES' => 'Día de la Región Castilla-La Mancha'],
+                ['es' => 'Día de la Región Castilla-La Mancha'],
                 new DateTime("$this->year-5-31", new DateTimeZone($this->timezone)),
                 $this->locale
             ));

@@ -102,7 +102,7 @@ class Netherlands extends AbstractProvider
         $carnivalDay1 = clone $easter;
         $this->addHoliday(new Holiday(
             'carnivalDay',
-            ['en_US' => 'Carnival', 'nl_NL' => 'Carnaval'],
+            ['en' => 'Carnival', 'nl' => 'Carnaval'],
             $carnivalDay1->sub(new DateInterval('P49D')),
             $this->locale,
             Holiday::TYPE_OBSERVANCE
@@ -114,7 +114,7 @@ class Netherlands extends AbstractProvider
         $carnivalDay2 = clone $easter;
         $this->addHoliday(new Holiday(
             'secondCarnivalDay',
-            ['en_US' => 'Carnival', 'nl_NL' => 'Carnaval'],
+            ['en' => 'Carnival', 'nl' => 'Carnaval'],
             $carnivalDay2->sub(new DateInterval('P48D')),
             $this->locale,
             Holiday::TYPE_OBSERVANCE
@@ -126,7 +126,7 @@ class Netherlands extends AbstractProvider
         $carnivalDay3 = clone $easter;
         $this->addHoliday(new Holiday(
             'thirdCarnivalDay',
-            ['en_US' => 'Carnival', 'nl_NL' => 'Carnaval'],
+            ['en' => 'Carnival', 'nl' => 'Carnaval'],
             $carnivalDay3->sub(new DateInterval('P47D')),
             $this->locale,
             Holiday::TYPE_OBSERVANCE
@@ -186,7 +186,7 @@ class Netherlands extends AbstractProvider
          */
         $this->addHoliday(new Holiday(
             'stNicholasDay',
-            ['en_US' => 'St. Nicholas\' Day', 'nl_NL' => 'Sinterklaas'],
+            ['en' => 'St. Nicholas\' Day', 'nl' => 'Sinterklaas'],
             new DateTime("$this->year-12-5", new DateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OBSERVANCE
@@ -209,7 +209,7 @@ class Netherlands extends AbstractProvider
     {
         $this->addHoliday(new Holiday(
             'halloween',
-            ['en_US' => 'Halloween', 'nl_NL' => 'Halloween'],
+            ['en' => 'Halloween', 'nl' => 'Halloween'],
             new DateTime("$this->year-10-31", new DateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OBSERVANCE
@@ -228,7 +228,7 @@ class Netherlands extends AbstractProvider
     {
         $this->addHoliday(new Holiday(
             'princesDay',
-            ['en_US' => 'Prince\'s Day', 'nl_NL' => 'Prinsjesdag'],
+            ['en' => 'Prince\'s Day', 'nl' => 'Prinsjesdag'],
             new DateTime("third tuesday of september $this->year", new DateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OTHER
@@ -259,7 +259,7 @@ class Netherlands extends AbstractProvider
 
             $this->addHoliday(new Holiday(
                 'queensDay',
-                ['en_US' => 'Queen\'s Day', 'nl_NL' => 'Koninginnedag'],
+                ['en' => 'Queen\'s Day', 'nl' => 'Koninginnedag'],
                 $date,
                 $this->locale
             ));
@@ -285,7 +285,7 @@ class Netherlands extends AbstractProvider
 
             $this->addHoliday(new Holiday(
                 'kingsDay',
-                ['en_US' => 'Kings Day', 'nl_NL' => 'Koningsdag'],
+                ['en' => 'Kings Day', 'nl' => 'Koningsdag'],
                 $date,
                 $this->locale
             ));
@@ -304,14 +304,14 @@ class Netherlands extends AbstractProvider
         if ($this->year >= 1947) {
             $this->addHoliday(new Holiday(
                 'commemorationDay',
-                ['en_US' => 'Commemoration Day', 'nl_NL' => 'Dodenherdenking'],
+                ['en' => 'Commemoration Day', 'nl' => 'Dodenherdenking'],
                 new DateTime("$this->year-5-4", new DateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OBSERVANCE
             ));
             $this->addHoliday(new Holiday(
                 'liberationDay',
-                ['en_US' => 'Liberation Day', 'nl_NL' => 'Bevrijdingsdag'],
+                ['en' => 'Liberation Day', 'nl' => 'Bevrijdingsdag'],
                 new DateTime("$this->year-5-5", new DateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OFFICIAL

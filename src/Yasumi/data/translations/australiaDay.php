@@ -12,6 +12,5 @@
 
 // Translations for Australia Day
 return [
-    'en_AU' => 'Australia Day',
-    'en_US' => 'Australia Day'
+    'en' => 'Australia Day',
 ];

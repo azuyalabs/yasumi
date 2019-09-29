@@ -151,7 +151,7 @@ class Scotland extends UnitedKingdom
 
         $this->addHoliday(new Holiday(
             'summerBankHoliday',
-            ['en_GB' => 'August Bank Holiday'],
+            ['en' => 'August Bank Holiday'],
             new DateTime("first monday of august $this->year", new DateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK

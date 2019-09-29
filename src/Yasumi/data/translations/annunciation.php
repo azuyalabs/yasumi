@@ -12,8 +12,7 @@
 
 // Translations for Annunciation
 return [
-    'el_GR' => 'Ευαγγελισμός της Θεοτόκου',
-    'en_US' => 'Annunciation',
-    'fr_BE' => 'Annonciation',
-    'fr_FR' => 'Annonciation'
+    'el' => 'Ευαγγελισμός της Θεοτόκου',
+    'en' => 'Annunciation',
+    'fr' => 'Annonciation',
 ];

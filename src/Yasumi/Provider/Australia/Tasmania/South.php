@@ -55,6 +55,6 @@ class South extends Tasmania
     {
         $date = new DateTime('fourth saturday of october ' . $this->year, new DateTimeZone($this->timezone));
         $date = $date->sub(new DateInterval('P2D'));
-        $this->addHoliday(new Holiday('hobartShow', ['en_AU' => 'Royal Hobart Show'], $date, $this->locale));
+        $this->addHoliday(new Holiday('hobartShow', ['en' => 'Royal Hobart Show'], $date, $this->locale));
     }
 }

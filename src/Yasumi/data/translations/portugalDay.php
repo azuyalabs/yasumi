@@ -12,6 +12,6 @@
 
 // Translations for Portugal Day
 return [
-    'en_US' => 'Portugal Day',
-    'pt_PT' => 'Dia de Portugal'
+    'en' => 'Portugal Day',
+    'pt' => 'Dia de Portugal'
 ];

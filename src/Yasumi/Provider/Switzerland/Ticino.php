@@ -89,13 +89,10 @@ class Ticino extends Switzerland
         $this->addHoliday(new Holiday(
             'stPeterPaul',
             [
-                'it_IT' => 'Santi Pietro e Paolo',
-                'it_CH' => 'Santi Pietro e Paolo',
-                'en_US' => 'Feast of Saints Peter and Paul',
-                'fr_FR' => 'Solennité des saints Pierre et Paul',
-                'fr_CH' => 'Solennité des saints Pierre et Paul',
-                'de_DE' => 'St. Peter und Paul',
-                'de_CH' => 'St. Peter und Paul'
+                'it' => 'Santi Pietro e Paolo',
+                'en' => 'Feast of Saints Peter and Paul',
+                'fr' => 'Solennité des saints Pierre et Paul',
+                'de' => 'St. Peter und Paul',
             ],
             new DateTime($this->year . '-06-29', new DateTimeZone($this->timezone)),
             $this->locale,

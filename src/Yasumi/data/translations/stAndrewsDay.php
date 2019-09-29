@@ -12,7 +12,6 @@
 
 // Translations for St. Andrew's Day
 return [
-    'en_US' => 'St. Andrew\'s Day',
-    'en_GB' => 'St. Andrew\'s Day',
-    'ro_RO' => 'Sfântul Andrei',
+    'en' => 'St. Andrew\'s Day',
+    'ro' => 'Sfântul Andrei',
 ];

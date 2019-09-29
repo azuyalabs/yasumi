@@ -12,7 +12,7 @@
 
 // Translations for St. George's Day
 return [
-    'el_GR' => 'Αγίου Γεωργίου',
-    'en_US' => 'St. George\'s Day',
-    'es_ES' => 'San Jorge'
+    'el' => 'Αγίου Γεωργίου',
+    'en' => 'St. George\'s Day',
+    'es' => 'San Jorge'
 ];

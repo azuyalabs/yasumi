@@ -55,6 +55,6 @@ class CircularHead extends Northwest
     {
         $date = new DateTime('first thursday of may ' . $this->year, new DateTimeZone($this->timezone));
         $date = $date->add(new DateInterval('P1D'));
-        $this->addHoliday(new Holiday('agfest', ['en_AU' => 'AGFEST'], $date, $this->locale));
+        $this->addHoliday(new Holiday('agfest', ['en' => 'AGFEST'], $date, $this->locale));
     }
 }

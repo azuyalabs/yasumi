@@ -12,7 +12,7 @@
 
 // Translations for St. John's Eve
 return [
-    'da_DK' => 'Sankthansaften',
-    'en_US' => 'St. John\'s Eve',
-    'sv_SE' => 'midsommarafton'
+    'da' => 'Sankthansaften',
+    'en' => 'St. John\'s Eve',
+    'sv' => 'midsommarafton'
 ];

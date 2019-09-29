@@ -86,7 +86,7 @@ class Germany extends AbstractProvider
         if ($this->year >= 1990) {
             $this->addHoliday(new Holiday(
                 'germanUnityDay',
-                ['de_DE' => 'Tag der Deutschen Einheit'],
+                ['de' => 'Tag der Deutschen Einheit'],
                 new DateTime($this->year . '-10-3', new \DateTimeZone($this->timezone)),
                 $this->locale
             ));

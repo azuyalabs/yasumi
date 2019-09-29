@@ -80,7 +80,7 @@ class RussiaDayTest extends RussiaBaseTestCase implements YasumiTestCaseInterfac
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(Russia::RUSSIA_DAY_START_YEAR),
-            ['en_US' => 'Russia Day']
+            ['en' => 'Russia Day']
         );
     }
 
