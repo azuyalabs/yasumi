@@ -264,14 +264,13 @@ class UnitedKingdom extends AbstractProvider
      * @link http://www.timeanddate.com/holidays/uk/christmas-day
      * @link http://www.timeanddate.com/holidays/uk/boxing-day
      *
-     * @throws InvalidDateException
-     * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @param string|null $type the Holiday Type (e.g. Official, Seasonal, etc.)
+     *
      * @throws \Exception
      */
-    protected function calculateChristmasHolidays($type = Holiday::TYPE_OFFICIAL): void
+    protected function calculateChristmasHolidays(string $type = null): void
     {
-        $christmasDay = $this->christmasDay($this->year, $this->timezone, $this->locale, $type);
+        $christmasDay = $this->christmasDay($this->year, $this->timezone, $this->locale, $type ?? Holiday::TYPE_OFFICIAL);
         $secondChristmasDay = $this->secondChristmasDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK);
 
         $this->addHoliday($christmasDay);
