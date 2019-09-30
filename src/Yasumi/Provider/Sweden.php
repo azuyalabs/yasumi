@@ -177,7 +177,7 @@ class Sweden extends AbstractProvider
      * In many Lutheran Churches, it is moved to the first Sunday of November.
      *
      * @link https://en.wikipedia.org/wiki/All_Saints%27_Day
-     * @link http://www.timeanddate.com/holidays/sweden/all-saints-day
+     * @link https://www.timeanddate.com/holidays/sweden/all-saints-day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

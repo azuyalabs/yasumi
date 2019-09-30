@@ -29,7 +29,7 @@ use Yasumi\Provider\Spain;
  * communities. Albacete is the largest and most populous city. Its capital city is Toledo, and its judicial capital
  * city is Albacete.
  *
- * @link http://en.wikipedia.org/wiki/Castilla-La_Mancha
+ * @link https://en.wikipedia.org/wiki/Castilla-La_Mancha
  */
 class CastillaLaMancha extends Spain
 {
@@ -71,7 +71,7 @@ class CastillaLaMancha extends Spain
      * first time on May 31, 1983. The Day of Castilla-La Mancha was a public holiday for the first time on
      * May 31, 1984.
      *
-     * @link http://www.timeanddate.com/holidays/spain/castile-la-mancha-day
+     * @link https://www.timeanddate.com/holidays/spain/castile-la-mancha-day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

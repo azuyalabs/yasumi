@@ -82,7 +82,7 @@ class Ireland extends AbstractProvider
      * Ireland. It became a public holiday following the Holidays (Employees) Act 1973. The public holiday was first
      * observed in 1974.
      *
-     * @link http://www.timeanddate.com/holidays/ireland/new-year-day
+     * @link https://www.timeanddate.com/holidays/ireland/new-year-day
      * @link http://www.irishstatutebook.ie/eli/1974/si/341
      *
      * @TODO : Check substitution of New Years Day when it falls on a Saturday. The Holidays (Employees) Act 1973

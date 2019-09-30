@@ -58,7 +58,7 @@ class NSW extends Australia
      * on a date based on a certain number of days after March 21st. The date of Easter Day was defined by the Council
      * of Nicaea in AD325 as the Sunday after the first full moon which falls on or after the Spring Equinox.
      *
-     * @link http://en.wikipedia.org/wiki/Easter
+     * @link https://en.wikipedia.org/wiki/Easter
      *
      * @param int $year the year for which Easter Saturday need to be created
      * @param string $timezone the timezone in which Easter Saturday is celebrated

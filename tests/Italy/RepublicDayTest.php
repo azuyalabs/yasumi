@@ -27,7 +27,7 @@ use Yasumi\tests\YasumiTestCaseInterface;
  * the Italian people were called to the polls to decide on the form of government, following the Second World War and
  * the fall of Fascism.
  *
- * @link http://en.wikipedia.org/wiki/Festa_della_Repubblica
+ * @link https://en.wikipedia.org/wiki/Festa_della_Repubblica
  */
 class RepublicDayTest extends ItalyBaseTestCase implements YasumiTestCaseInterface
 {

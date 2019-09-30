@@ -77,7 +77,7 @@ class France extends AbstractProvider
      * is held on the morning of 14 July, on the Champs-Élysées in Paris in front of the President of the Republic,
      * French officials and foreign guests.
      *
-     * @link http://en.wikipedia.org/wiki/Bastille_Day
+     * @link https://en.wikipedia.org/wiki/Bastille_Day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
