@@ -276,9 +276,6 @@ class UnitedKingdom extends AbstractProvider
         $this->addHoliday($christmasDay);
         $this->addHoliday($secondChristmasDay);
 
-        $substituteChristmasDay = clone $christmasDay;
-        $substituteSecondChristmasDay = clone $secondChristmasDay;
-
         if (\in_array((int)$christmasDay->format('w'), [0, 6], true)) {
             $date = clone $christmasDay;
             $date->add(new DateInterval('P2D'));
