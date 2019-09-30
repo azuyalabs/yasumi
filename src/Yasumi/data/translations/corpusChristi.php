@@ -19,5 +19,5 @@ return [
     'it' => 'Corpus Domini',
     'pl' => 'Boże Ciało',
     'pt' => 'Corpus Christi',
-    'pt_PT' => 'Corpo de Deus'
+    'pt_PT' => 'Corpo de Deus',
 ];

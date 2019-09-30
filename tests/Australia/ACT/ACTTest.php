@@ -44,7 +44,7 @@ class ACTTest extends ACTBaseTestCase
             'queensBirthday',
             'labourDay',
             'canberraDay',
-            'reconciliationDay'
+            'reconciliationDay',
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

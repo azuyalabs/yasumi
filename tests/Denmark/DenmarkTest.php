@@ -42,7 +42,7 @@ class DenmarkTest extends DenmarkBaseTestCase
             'pentecost',
             'pentecostMonday',
             'christmasDay',
-            'secondChristmasDay'
+            'secondChristmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -56,7 +56,7 @@ class DenmarkTest extends DenmarkBaseTestCase
             'internationalWorkersDay',
             'constitutionDay',
             'christmasEve',
-            'newYearsEve'
+            'newYearsEve',
         ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 

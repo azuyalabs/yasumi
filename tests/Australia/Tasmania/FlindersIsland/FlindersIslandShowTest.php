@@ -68,7 +68,7 @@ class FlindersIslandShowTest extends FlindersIslandBaseTestCase implements Yasum
             [2017, '2017-10-20'],
             [2018, '2018-10-19'],
             [2019, '2019-10-18'],
-            [2020, '2020-10-16']
+            [2020, '2020-10-16'],
         ];
 
         return $data;

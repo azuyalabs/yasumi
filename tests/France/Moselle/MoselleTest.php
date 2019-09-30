@@ -44,7 +44,7 @@ class MoselleTest extends MoselleBaseTestCase
             'armisticeDay',
             'christmasDay',
             'stStephensDay',
-            'bastilleDay'
+            'bastilleDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

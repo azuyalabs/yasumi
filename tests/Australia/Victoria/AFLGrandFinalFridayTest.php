@@ -102,7 +102,7 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements YasumiTest
             [2015, '2015-10-02'],
             [2016, '2016-09-30'],
             [2017, '2017-09-29'],
-            [2018, '2018-09-28']
+            [2018, '2018-09-28'],
         ];
 
         return $data;

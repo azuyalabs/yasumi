@@ -68,7 +68,7 @@ class ProclamationDayTest extends SABaseTestCase implements YasumiTestCaseInterf
             [2017, '2017-12-26'],
             [2018, '2018-12-26'],
             [2019, '2019-12-26'],
-            [2020, '2020-12-28']
+            [2020, '2020-12-28'],
         ];
 
         return $data;

@@ -40,7 +40,7 @@ class SchleswigHolsteinTest extends SchleswigHolsteinBaseTestCase
             'pentecostMonday',
             'germanUnityDay',
             'christmasDay',
-            'secondChristmasDay'
+            'secondChristmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

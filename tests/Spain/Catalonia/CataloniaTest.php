@@ -42,7 +42,7 @@ class CataloniaTest extends CataloniaBaseTestCase
             'allSaintsDay',
             'constitutionDay',
             'immaculateConception',
-            'christmasDay'
+            'christmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -56,7 +56,7 @@ class CataloniaTest extends CataloniaBaseTestCase
             'easter',
             'easterMonday',
             'stJohnsDay',
-            'stStephensDay'
+            'stStephensDay',
         ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 

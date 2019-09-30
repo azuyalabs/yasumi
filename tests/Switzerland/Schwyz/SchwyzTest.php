@@ -57,7 +57,7 @@ class SchwyzTest extends SchwyzBaseTestCase
             'christmasDay',
             'ascensionDay',
             'easterMonday',
-            'pentecostMonday'
+            'pentecostMonday',
         ], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 

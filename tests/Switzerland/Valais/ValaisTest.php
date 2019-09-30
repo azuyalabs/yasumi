@@ -52,7 +52,7 @@ class ValaisTest extends ValaisBaseTestCase
             'assumptionOfMary',
             'allSaintsDay',
             'immaculateConception',
-            'stJosephsDay'
+            'stJosephsDay',
         ], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 

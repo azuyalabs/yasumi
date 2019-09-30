@@ -38,7 +38,7 @@ class AustraliaTest extends AustraliaBaseTestCase
             'christmasDay',
             'secondChristmasDay',
             'australiaDay',
-            'anzacDay'
+            'anzacDay',
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

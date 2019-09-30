@@ -20,5 +20,5 @@ return [
     'fi' => 'Juhannuspäivä',
     'lt' => 'Rasos ir Joninių diena',
     'lv' => 'Jāņi',
-    'sv' => 'midsommardagen'
+    'sv' => 'midsommardagen',
 ];

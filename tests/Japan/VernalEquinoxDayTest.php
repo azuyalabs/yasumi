@@ -86,7 +86,7 @@ class VernalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCaseIn
             [2013, 3, 20],
             [2016, 3, 20],
             [2025, 3, 20],
-            [2143, 3, 21]
+            [2143, 3, 21],
         ];
     }
 

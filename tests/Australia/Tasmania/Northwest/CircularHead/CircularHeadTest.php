@@ -44,7 +44,7 @@ class CircularHeadTest extends CircularHeadBaseTestCase
             'eightHourDay',
             'recreationDay',
             'burnieShow',
-            'agfest'
+            'agfest',
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

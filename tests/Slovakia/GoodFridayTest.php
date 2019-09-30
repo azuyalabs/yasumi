@@ -70,7 +70,7 @@ class GoodFridayTest extends SlovakiaBaseTestCase implements YasumiTestCaseInter
             [2018, new DateTime('2018-3-30', new DateTimeZone($timezone))],
             [2019, new DateTime('2019-4-19', new DateTimeZone($timezone))],
             [2020, new DateTime('2020-4-10', new DateTimeZone($timezone))],
-            [2050, new DateTime('2050-4-8', new DateTimeZone($timezone))]
+            [2050, new DateTime('2050-4-8', new DateTimeZone($timezone))],
         ];
     }
 

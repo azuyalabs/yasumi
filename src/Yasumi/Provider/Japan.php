@@ -121,7 +121,7 @@ class Japan extends AbstractProvider
                 'nationalFoundationDay',
                 [
                     'en' => 'National Foundation Day',
-                    'ja' => '建国記念の日'
+                    'ja' => '建国記念の日',
                 ],
                 new DateTime("$this->year-2-11", new DateTimeZone($this->timezone)),
                 $this->locale
@@ -141,7 +141,7 @@ class Japan extends AbstractProvider
                 'showaDay',
                 [
                     'en' => 'Showa Day',
-                    'ja' => '昭和の日'
+                    'ja' => '昭和の日',
                 ],
                 new DateTime("$this->year-4-29", new DateTimeZone($this->timezone)),
                 $this->locale
@@ -161,7 +161,7 @@ class Japan extends AbstractProvider
                 'constitutionMemorialDay',
                 [
                     'en' => 'Constitution Memorial Day',
-                    'ja' => '憲法記念日'
+                    'ja' => '憲法記念日',
                 ],
                 new DateTime("$this->year-5-3", new DateTimeZone($this->timezone)),
                 $this->locale
@@ -181,7 +181,7 @@ class Japan extends AbstractProvider
                 'childrensDay',
                 [
                     'en' => 'Children\'s Day',
-                    'ja' => 'こどもの日'
+                    'ja' => 'こどもの日',
                 ],
                 new DateTime("$this->year-5-5", new DateTimeZone($this->timezone)),
                 $this->locale
@@ -639,7 +639,7 @@ class Japan extends AbstractProvider
 
                 $this->addHoliday(new Holiday('bridgeDay' . $counter, [
                     'en' => 'Bridge Public holiday',
-                    'ja' => '国民の休日'
+                    'ja' => '国民の休日',
                 ], $bridgeDate, $this->locale));
                 $counter++;
             }

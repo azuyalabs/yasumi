@@ -43,7 +43,7 @@ class UkraineTest extends UkraineBaseTestCase
             'victoryDay',
             'constitutionDay',
             'independenceDay',
-            'defenderOfUkraineDay'
+            'defenderOfUkraineDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

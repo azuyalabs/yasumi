@@ -47,7 +47,7 @@ class JapanTest extends JapanBaseTestCase
             'sportsDay',
             'cultureDay',
             'laborThanksgivingDay',
-            'emperorsBirthday'
+            'emperorsBirthday',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -74,7 +74,7 @@ class JapanTest extends JapanBaseTestCase
             'cultureDay',
             'laborThanksgivingDay',
             'coronationDay',
-            'enthronementProclamationCeremony'
+            'enthronementProclamationCeremony',
         ], self::REGION, 2019, Holiday::TYPE_OFFICIAL);
     }
 

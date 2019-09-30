@@ -83,7 +83,7 @@ class AnzacDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInterf
             [2018, '2018-04-25'],
             [2019, '2019-04-25'],
             [2019, '2019-04-25'],
-            [2020, '2020-04-25']
+            [2020, '2020-04-25'],
         ];
 
         return $data;

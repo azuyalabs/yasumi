@@ -68,7 +68,7 @@ class LauncestonShowTest extends NortheastBaseTestCase implements YasumiTestCase
             [2017, '2017-10-12'],
             [2018, '2018-10-11'],
             [2019, '2019-10-10'],
-            [2020, '2020-10-08']
+            [2020, '2020-10-08'],
         ];
 
         return $data;

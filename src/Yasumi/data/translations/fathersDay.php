@@ -20,5 +20,5 @@ return [
     'nl' => 'Vaderdag',
     'pt' => 'Dia do Pai',
     'ro' => 'Ziua Tatălui',
-    'sk' => 'Deň otcov'
+    'sk' => 'Deň otcov',
 ];

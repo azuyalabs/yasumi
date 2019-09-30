@@ -44,7 +44,7 @@ class FinlandTest extends FinlandBaseTestCase
             'allSaintsDay',
             'independenceDay',
             'christmasDay',
-            'secondChristmasDay'
+            'secondChristmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

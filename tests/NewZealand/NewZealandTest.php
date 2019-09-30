@@ -40,7 +40,7 @@ class NewZealandTest extends NewZealandBaseTestCase
             'waitangiDay',
             'anzacDay',
             'queensBirthday',
-            'labourDay'
+            'labourDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

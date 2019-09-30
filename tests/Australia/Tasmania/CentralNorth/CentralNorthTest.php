@@ -42,7 +42,7 @@ class CentralNorthTest extends CentralNorthBaseTestCase
             'queensBirthday',
             'eightHourDay',
             'recreationDay',
-            'devonportShow'
+            'devonportShow',
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

@@ -50,7 +50,7 @@ class SolothurnTest extends SolothurnBaseTestCase
             'newYearsDay',
             'christmasDay',
             'ascensionDay',
-            'berchtoldsTag'
+            'berchtoldsTag',
         ], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 

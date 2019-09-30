@@ -85,7 +85,7 @@ class Obwalden extends Switzerland
             $this->addHoliday(new Holiday(
                 'bruderKlausenFest',
                 [
-                    'de' => 'Bruder-Klausen-Fest'
+                    'de' => 'Bruder-Klausen-Fest',
                 ],
                 new DateTime($this->year . '-09-25', new DateTimeZone($this->timezone)),
                 $this->locale,

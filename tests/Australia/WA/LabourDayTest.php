@@ -68,7 +68,7 @@ class LabourDayTest extends WABaseTestCase implements YasumiTestCaseInterface
             [2017, '2017-03-06'],
             [2018, '2018-03-05'],
             [2019, '2019-03-04'],
-            [2020, '2020-03-02']
+            [2020, '2020-03-02'],
         ];
 
         return $data;

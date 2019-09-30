@@ -77,7 +77,7 @@ class RegionOfMurcia extends Spain
     {
         if ($this->year >= 1983) {
             $this->addHoliday(new Holiday('murciaDay', [
-                'es' => 'Día de la Región de Murcia'
+                'es' => 'Día de la Región de Murcia',
             ], new DateTime("$this->year-6-9", new DateTimeZone($this->timezone)), $this->locale));
         }
     }

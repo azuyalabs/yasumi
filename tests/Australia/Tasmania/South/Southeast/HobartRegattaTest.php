@@ -68,7 +68,7 @@ class HobartRegattaTest extends SoutheastBaseTestCase implements YasumiTestCaseI
             [2017, '2017-02-13'],
             [2018, '2018-02-12'],
             [2019, '2019-02-11'],
-            [2020, '2020-02-10']
+            [2020, '2020-02-10'],
         ];
 
         return $data;

@@ -43,7 +43,7 @@ class SlovakiaTest extends SlovakiaBaseTestCase
             'slovakConstitutionDay',
             'slovakNationalUprisingDay',
             'saintsCyrilAndMethodiusDay',
-            'struggleForFreedomAndDemocracyDay'
+            'struggleForFreedomAndDemocracyDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -64,7 +64,7 @@ class SlovakiaTest extends SlovakiaBaseTestCase
             'christmasDay',
             'secondChristmasDay',
             'goodFriday',
-            'easterMonday'
+            'easterMonday',
         ], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
 

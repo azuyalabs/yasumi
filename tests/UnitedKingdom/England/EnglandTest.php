@@ -65,7 +65,7 @@ class EnglandTest extends EnglandBaseTestCase
             'easterMonday',
             'mayDayBankHoliday',
             'springBankHoliday',
-            'secondChristmasDay'
+            'secondChristmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
 

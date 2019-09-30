@@ -33,5 +33,5 @@ return [
     'pt' => 'Sexta feira santa',
     'pt_PT' => 'Sexta-feira Santa',
     'sk' => 'Veľký piatok',
-    'sv' => 'långfredagen'
+    'sv' => 'långfredagen',
 ];

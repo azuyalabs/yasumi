@@ -18,5 +18,5 @@ return [
     'es' => 'Inmaculada Concepción',
     'fr' => 'Immaculée Conception',
     'it' => 'Immacolata Concezione',
-    'pt' => 'Dia da Imaculada Conceição'
+    'pt' => 'Dia da Imaculada Conceição',
 ];

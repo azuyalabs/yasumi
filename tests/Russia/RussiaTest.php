@@ -41,7 +41,7 @@ class RussiaTest extends RussiaBaseTestCase
             'orthodoxChristmasDay',
             'internationalWomensDay',
             'springAndLabourDay',
-            'victoryDay'
+            'victoryDay',
         ];
 
         $year = $this->generateRandomYear();

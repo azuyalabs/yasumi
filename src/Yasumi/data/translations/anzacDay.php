@@ -12,5 +12,5 @@
 
 // Translations for ANZAC Day
 return [
-    'en' => 'ANZAC Day'
+    'en' => 'ANZAC Day',
 ];

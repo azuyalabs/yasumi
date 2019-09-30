@@ -157,7 +157,7 @@ class HolidayTest extends TestCase
 
         $translations = [
             'en_US' => 'New Year\'s Day',
-            'pl_PL' => 'Nowy Rok'
+            'pl_PL' => 'Nowy Rok',
         ];
 
         $translationsStub->expects($this->once())->method('getTranslations')->with($this->equalTo('newYearsDay'))->willReturn($translations);
@@ -183,7 +183,7 @@ class HolidayTest extends TestCase
 
         $translations = [
             'en_US' => 'New Year\'s Day',
-            'pl' => 'Nowy Rok'
+            'pl' => 'Nowy Rok',
         ];
 
         $translationsStub->expects($this->once())->method('getTranslations')->with($this->equalTo('newYearsDay'))->willReturn($translations);
@@ -209,7 +209,7 @@ class HolidayTest extends TestCase
 
         $translations = [
             'en_US' => 'New Year\'s Day',
-            'pl_PL' => 'Nowy Rok'
+            'pl_PL' => 'Nowy Rok',
         ];
 
         $translationsStub->expects($this->once())->method('getTranslations')->with($this->equalTo('newYearsDay'))->willReturn($translations);
@@ -241,7 +241,7 @@ class HolidayTest extends TestCase
 
         $translations = [
             'en_US' => 'New Year\'s Day',
-            'pl_PL' => 'Nowy Rok'
+            'pl_PL' => 'Nowy Rok',
         ];
 
         $translationsStub->expects($this->once())->method('getTranslations')->with($this->equalTo('newYearsDay'))->willReturn($translations);

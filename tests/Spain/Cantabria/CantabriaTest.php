@@ -42,7 +42,7 @@ class CantabriaTest extends CantabriaBaseTestCase
             'allSaintsDay',
             'constitutionDay',
             'immaculateConception',
-            'christmasDay'
+            'christmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -54,7 +54,7 @@ class CantabriaTest extends CantabriaBaseTestCase
     {
         $this->assertDefinedHolidays([
             'maundyThursday',
-            'easter'
+            'easter',
         ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 

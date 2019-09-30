@@ -40,7 +40,7 @@ class HesseTest extends HesseBaseTestCase
             'pentecostMonday',
             'germanUnityDay',
             'christmasDay',
-            'secondChristmasDay'
+            'secondChristmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

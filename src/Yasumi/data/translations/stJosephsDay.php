@@ -16,5 +16,5 @@ return [
     'en' => 'St. Joseph\'s Day',
     'es' => 'San José',
     'fr' => 'Saint-Joseph',
-    'it' => 'San Giuseppe'
+    'it' => 'San Giuseppe',
 ];

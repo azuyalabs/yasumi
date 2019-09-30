@@ -57,7 +57,7 @@ class ObwaldenTest extends ObwaldenBaseTestCase
             'easterMonday',
             'pentecostMonday',
             'berchtoldsTag',
-            'bruderKlausenFest'
+            'bruderKlausenFest',
         ], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 

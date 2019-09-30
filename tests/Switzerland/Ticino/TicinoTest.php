@@ -58,7 +58,7 @@ class TicinoTest extends TicinoBaseTestCase
             'epiphany',
             'stJosephsDay',
             'internationalWorkersDay',
-            'stPeterPaul'
+            'stPeterPaul',
         ], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 

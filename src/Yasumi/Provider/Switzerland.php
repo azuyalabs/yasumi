@@ -69,7 +69,7 @@ class Switzerland extends AbstractProvider
             'fr' => 'Jour de la fête nationale',
             'de' => 'Bundesfeiertag',
             'it' => 'Giorno festivo federale',
-            'rm' => 'Fiasta naziunala'
+            'rm' => 'Fiasta naziunala',
         ];
         if ($this->year >= 1994) {
             $this->addHoliday(new Holiday(
@@ -111,7 +111,7 @@ class Switzerland extends AbstractProvider
             [
                 'de' => 'Berchtoldstag',
                 'fr' => 'Jour de la Saint-Berthold',
-                'en' => 'Berchtoldstag'
+                'en' => 'Berchtoldstag',
             ],
             new DateTime($this->year . '-01-02', new DateTimeZone($this->timezone)),
             $this->locale,

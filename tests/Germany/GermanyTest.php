@@ -40,7 +40,7 @@ class GermanyTest extends GermanyBaseTestCase
             'internationalWorkersDay',
             'newYearsDay',
             'pentecostMonday',
-            'secondChristmasDay'
+            'secondChristmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

@@ -43,7 +43,7 @@ class KingIslandTest extends KingIslandBaseTestCase
             'queensBirthday',
             'eightHourDay',
             'recreationDay',
-            'kingIslandShow'
+            'kingIslandShow',
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

@@ -26,5 +26,5 @@ return [
     'pt' => 'Véspera de Natal',
     'ro' => 'Ajunul Crãciunului',
     'sk' => 'Štedrý deň',
-    'sv' => 'julafton'
+    'sv' => 'julafton',
 ];

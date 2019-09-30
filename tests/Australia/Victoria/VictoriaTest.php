@@ -45,7 +45,7 @@ class VictoriaTest extends VictoriaBaseTestCase
             'queensBirthday',
             'labourDay',
             'aflGrandFinalFriday',
-            'melbourneCup'
+            'melbourneCup',
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

@@ -22,5 +22,5 @@ return [
     'it' => 'Ascensione',
     'nb' => 'Kristi himmelfartsdag',
     'nl' => 'Hemelvaart',
-    'sv' => 'Kristi himmelsfärdsdag'
+    'sv' => 'Kristi himmelsfärdsdag',
 ];

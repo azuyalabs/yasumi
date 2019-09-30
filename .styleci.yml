@@ -9,3 +9,4 @@ enabled:
   - no_unused_imports
   - single_quote
   - space_after_semicolon
+  - trailing_comma_in_multiline_array

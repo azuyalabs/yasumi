@@ -26,5 +26,5 @@ return [
     'nl' => 'Drie Koningen',
     'pl' => 'Święto Trzech Króli',
     'sk' => 'Zjavenie Pána / Traja králi',
-    'sv' => 'trettondedag jul'
+    'sv' => 'trettondedag jul',
 ];

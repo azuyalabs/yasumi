@@ -46,7 +46,7 @@ class GreeceTest extends GreeceBaseTestCase
             'christmasDay',
             'cleanMonday',
             'independenceDay',
-            'ohiDay'
+            'ohiDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

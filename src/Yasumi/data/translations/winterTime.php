@@ -14,5 +14,5 @@
 return [
     'da' => 'Sommertid slutter',
     'en' => 'Wintertime',
-    'nl' => 'Wintertijd'
+    'nl' => 'Wintertijd',
 ];

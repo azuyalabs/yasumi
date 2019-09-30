@@ -51,7 +51,7 @@ class AppenzellAusserrhodenTest extends AppenzellAusserrhodenBaseTestCase
             'christmasDay',
             'ascensionDay',
             'easterMonday',
-            'pentecostMonday'
+            'pentecostMonday',
         ], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 

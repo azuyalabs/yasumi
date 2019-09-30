@@ -43,7 +43,7 @@ class PortugalTest extends PortugalBaseTestCase
             '25thApril',
             'portugueseRepublic',
             'restorationOfIndependence',
-            'portugalDay'
+            'portugalDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

@@ -117,7 +117,7 @@ class Romania extends AbstractProvider
         if ($this->year > 2014) {
             $this->addHoliday(new Holiday('unitedPrincipalitiesDay', [
                 'en' => 'Union Day / Small Union',
-                'ro' => 'Unirea Principatelor Române / Mica Unire'
+                'ro' => 'Unirea Principatelor Române / Mica Unire',
             ], new DateTime("$this->year-01-24", new DateTimeZone($this->timezone)), $this->locale));
         }
     }
@@ -182,7 +182,7 @@ class Romania extends AbstractProvider
         if (\is_string($national_day)) {
             $this->addHoliday(new Holiday('nationalDay', [
                 'en' => 'National Day',
-                'ro' => 'Ziua Națională'
+                'ro' => 'Ziua Națională',
             ], new DateTime($national_day, new DateTimeZone($this->timezone)), $this->locale));
         }
     }
@@ -205,7 +205,7 @@ class Romania extends AbstractProvider
                 'constantinBrancusiDay',
                 [
                     'en' => 'Constantin Brâncuși day',
-                    'ro' => 'Ziua Constantin Brâncuși'
+                    'ro' => 'Ziua Constantin Brâncuși',
                 ],
                 new DateTime("$this->year-02-19", new DateTimeZone($this->timezone)),
                 $this->locale,
@@ -234,7 +234,7 @@ class Romania extends AbstractProvider
                 'childrensDay',
                 [
                     'en' => 'International Children\'s Day',
-                    'ro' => 'Ziua Copilului'
+                    'ro' => 'Ziua Copilului',
                 ],
                 new DateTime("$this->year-06-01", new DateTimeZone($this->timezone)),
                 $this->locale,
@@ -245,7 +245,7 @@ class Romania extends AbstractProvider
         if ($this->year >= 2017) {
             $this->addHoliday(new Holiday('childrensDay', [
                 'en' => 'International Children\'s Day',
-                'ro' => 'Ziua Copilului'
+                'ro' => 'Ziua Copilului',
             ], new DateTime("$this->year-06-01", new DateTimeZone($this->timezone)), $this->locale));
         }
     }

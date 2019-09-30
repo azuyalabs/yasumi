@@ -41,7 +41,7 @@ class BosniaTest extends BosniaBaseTestCase
             'allSaintsDay',
             'statehoodDay',
             'independenceDay',
-            'orthodoxChristmasDay'
+            'orthodoxChristmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

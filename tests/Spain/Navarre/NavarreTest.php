@@ -41,7 +41,7 @@ class NavarreTest extends NavarreBaseTestCase
             'allSaintsDay',
             'constitutionDay',
             'immaculateConception',
-            'christmasDay'
+            'christmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -55,7 +55,7 @@ class NavarreTest extends NavarreBaseTestCase
             'stJosephsDay',
             'maundyThursday',
             'easter',
-            'easterMonday'
+            'easterMonday',
         ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 

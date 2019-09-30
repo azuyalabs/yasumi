@@ -43,7 +43,7 @@ class NorwayTest extends NorwayBaseTestCase
             'pentecostMonday',
             'constitutionDay',
             'christmasDay',
-            'secondChristmasDay'
+            'secondChristmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

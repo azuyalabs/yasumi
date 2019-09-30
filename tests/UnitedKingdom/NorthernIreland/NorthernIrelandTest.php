@@ -66,7 +66,7 @@ class NorthernIrelandTest extends NorthernIrelandBaseTestCase
             'mayDayBankHoliday',
             'springBankHoliday',
             'battleOfTheBoyne',
-            'secondChristmasDay'
+            'secondChristmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
 

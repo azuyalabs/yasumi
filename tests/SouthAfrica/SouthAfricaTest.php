@@ -47,7 +47,7 @@ class SouthAfricaTest extends SouthAfricaBaseTestCase
             'heritageDay',
             'reconciliationDay',
             'christmasDay',
-            'secondChristmasDay'
+            'secondChristmasDay',
         ];
 
         if (2016 === $this->year) {

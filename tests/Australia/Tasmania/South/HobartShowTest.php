@@ -68,7 +68,7 @@ class HobartShowTest extends SouthBaseTestCase implements YasumiTestCaseInterfac
             [2017, '2017-10-26'],
             [2018, '2018-10-25'],
             [2019, '2019-10-24'],
-            [2020, '2020-10-22']
+            [2020, '2020-10-22'],
         ];
 
         return $data;

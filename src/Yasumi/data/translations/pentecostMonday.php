@@ -23,5 +23,5 @@ return [
     'nb' => 'Andre pinsedag',
     'nl' => 'Tweede pinksterdag',
     'nl_BE' => 'Pinkstermaandag',
-    'ro' => 'A doua zi de Rusalii'
+    'ro' => 'A doua zi de Rusalii',
 ];

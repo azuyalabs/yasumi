@@ -43,7 +43,7 @@ class ItalyTest extends ItalyBaseTestCase
             'christmasDay',
             'stStephensDay',
             'liberationDay',
-            'republicDay'
+            'republicDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

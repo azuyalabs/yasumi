@@ -22,5 +22,5 @@ return [
     'ko' => '발렌타인 데이',
     'nl' => 'Valentijnsdag',
     'pl' => 'Walentynki',
-    'pt' => 'Dia dos Namorados'
+    'pt' => 'Dia dos Namorados',
 ];

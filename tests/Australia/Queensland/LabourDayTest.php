@@ -68,7 +68,7 @@ class LabourDayTest extends QueenslandBaseTestCase implements YasumiTestCaseInte
             [2017, '2017-05-01'],
             [2018, '2018-05-07'],
             [2019, '2019-05-06'],
-            [2020, '2020-05-04']
+            [2020, '2020-05-04'],
         ];
 
         return $data;

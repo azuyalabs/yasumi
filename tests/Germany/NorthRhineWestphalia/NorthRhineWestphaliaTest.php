@@ -40,7 +40,7 @@ class NorthRhineWestphaliaTest extends NorthRhineWestphaliaBaseTestCase
             'pentecostMonday',
             'germanUnityDay',
             'christmasDay',
-            'secondChristmasDay'
+            'secondChristmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

@@ -42,7 +42,7 @@ class WATest extends WABaseTestCase
             'anzacDay',
             'queensBirthday',
             'labourDay',
-            'westernAustraliaDay'
+            'westernAustraliaDay',
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

@@ -12,5 +12,5 @@
 
 // Translations for Waitangi Day
 return [
-    'en' => 'Waitangi Day'
+    'en' => 'Waitangi Day',
 ];

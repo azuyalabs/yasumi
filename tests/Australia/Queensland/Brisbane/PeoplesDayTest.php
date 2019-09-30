@@ -68,7 +68,7 @@ class PeoplesDayTest extends BrisbaneBaseTestCase implements YasumiTestCaseInter
             [2017, '2017-08-16'],
             [2018, '2018-08-15'],
             [2019, '2019-08-14'],
-            [2020, '2020-08-12']
+            [2020, '2020-08-12'],
         ];
 
         return $data;

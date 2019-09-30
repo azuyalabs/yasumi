@@ -39,7 +39,7 @@ class ThuringiaTest extends ThuringiaBaseTestCase
             'ascensionDay',
             'pentecostMonday',
             'christmasDay',
-            'secondChristmasDay'
+            'secondChristmasDay',
         ];
 
         if ($this->year >= 1990) {

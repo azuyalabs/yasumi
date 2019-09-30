@@ -40,7 +40,7 @@ class LithuaniaTest extends LithuaniaBaseTestCase
             'allSaintsDay',
             'christmasEve',
             'christmasDay',
-            'secondChristmasDay'
+            'secondChristmasDay',
         ];
 
         $year = $this->generateRandomYear();

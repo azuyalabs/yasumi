@@ -756,5 +756,5 @@ return [
     'zh_Hant_MO',
     'zh_Hant_TW',
     'zu',
-    'zu_ZA'
+    'zu_ZA',
 ];

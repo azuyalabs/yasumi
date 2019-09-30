@@ -41,7 +41,7 @@ class BrandenburgTest extends BrandenburgBaseTestCase
             'pentecost',
             'pentecostMonday',
             'christmasDay',
-            'secondChristmasDay'
+            'secondChristmasDay',
         ];
 
         if ($this->year >= 1990) {

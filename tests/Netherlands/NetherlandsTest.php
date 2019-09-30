@@ -41,7 +41,7 @@ class NetherlandsTest extends NetherlandsBaseTestCase
             'pentecostMonday',
             'liberationDay',
             'christmasDay',
-            'secondChristmasDay'
+            'secondChristmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -60,7 +60,7 @@ class NetherlandsTest extends NetherlandsBaseTestCase
             'stNicholasDay',
             'carnivalDay',
             'secondCarnivalDay',
-            'thirdCarnivalDay'
+            'thirdCarnivalDay',
         ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
@@ -96,7 +96,7 @@ class NetherlandsTest extends NetherlandsBaseTestCase
             'fathersDay',
             'mothersDay',
             'epiphany',
-            'princesDay'
+            'princesDay',
         ], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 

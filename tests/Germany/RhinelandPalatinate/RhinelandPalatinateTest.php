@@ -40,7 +40,7 @@ class RhinelandPalatinateTest extends RhinelandPalatinateBaseTestCase
             'pentecostMonday',
             'germanUnityDay',
             'christmasDay',
-            'secondChristmasDay'
+            'secondChristmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

@@ -50,7 +50,7 @@ class AargauTest extends AargauBaseTestCase
             'goodFriday',
             'newYearsDay',
             'christmasDay',
-            'ascensionDay'
+            'ascensionDay',
         ], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 

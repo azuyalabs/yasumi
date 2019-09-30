@@ -43,7 +43,7 @@ class BelgiumTest extends BelgiumBaseTestCase
             'nationalDay',
             'allSaintsDay',
             'armisticeDay',
-            'christmasDay'
+            'christmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

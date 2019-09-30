@@ -41,7 +41,7 @@ class LatviaTest extends LatviaBaseTestCase
             'christmasEve',
             'christmasDay',
             'secondChristmasDay',
-            'newYearsEve'
+            'newYearsEve',
         ];
 
         $year = $this->generateRandomYear();

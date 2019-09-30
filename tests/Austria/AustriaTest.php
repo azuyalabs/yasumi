@@ -44,7 +44,7 @@ class AustriaTest extends AustriaBaseTestCase
             'pentecostMonday',
             'christmasDay',
             'secondChristmasDay',
-            'nationalDay'
+            'nationalDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

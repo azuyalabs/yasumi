@@ -13,5 +13,5 @@
 // Translations for St. David's Day
 return [
     'cy' => 'Dydd Gŵyl Dewi',
-    'en' => 'St. David\'s Day'
+    'en' => 'St. David\'s Day',
 ];

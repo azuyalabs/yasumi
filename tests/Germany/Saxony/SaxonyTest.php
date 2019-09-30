@@ -39,7 +39,7 @@ class SaxonyTest extends SaxonyBaseTestCase
             'ascensionDay',
             'pentecostMonday',
             'christmasDay',
-            'secondChristmasDay'
+            'secondChristmasDay',
         ];
 
         if ($this->year >= 1990) {

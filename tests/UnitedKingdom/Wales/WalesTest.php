@@ -65,7 +65,7 @@ class WalesTest extends WalesBaseTestCase
             'easterMonday',
             'mayDayBankHoliday',
             'springBankHoliday',
-            'secondChristmasDay'
+            'secondChristmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
 

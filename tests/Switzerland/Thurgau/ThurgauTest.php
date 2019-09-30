@@ -53,7 +53,7 @@ class ThurgauTest extends ThurgauBaseTestCase
             'ascensionDay',
             'easterMonday',
             'pentecostMonday',
-            'berchtoldsTag'
+            'berchtoldsTag',
         ], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 

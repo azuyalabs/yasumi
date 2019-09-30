@@ -16,5 +16,5 @@ return [
     'ja' => '労働の日',
     'ko' => '노동절',
     'nl' => 'Dag van de arbeid',
-    'sk' => 'Sviatok práce'
+    'sk' => 'Sviatok práce',
 ];

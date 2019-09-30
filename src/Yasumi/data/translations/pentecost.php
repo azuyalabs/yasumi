@@ -30,5 +30,5 @@ return [
     'ro' => 'Rusaliile',
     'ru' => 'Троица',
     'sv' => 'Pingstdagen',
-    'uk' => 'Трійця'
+    'uk' => 'Трійця',
 ];

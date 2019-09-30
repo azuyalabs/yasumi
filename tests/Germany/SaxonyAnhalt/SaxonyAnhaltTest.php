@@ -39,7 +39,7 @@ class SaxonyAnhaltTest extends SaxonyAnhaltBaseTestCase
             'ascensionDay',
             'pentecostMonday',
             'christmasDay',
-            'secondChristmasDay'
+            'secondChristmasDay',
         ];
 
         if ($this->year >= 1990) {

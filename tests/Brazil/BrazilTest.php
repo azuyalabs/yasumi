@@ -39,7 +39,7 @@ class BrazilTest extends BrazilBaseTestCase
             'ourLadyOfAparecidaDay',
             'allSoulsDay',
             'proclamationOfRepublicDay',
-            'christmasDay'
+            'christmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -55,7 +55,7 @@ class BrazilTest extends BrazilBaseTestCase
             'goodFriday',
             'easter',
             'corpusChristi',
-            'ashWednesday'
+            'ashWednesday',
         ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 

@@ -68,7 +68,7 @@ class RecreationDayTest extends TasmaniaBaseTestCase implements YasumiTestCaseIn
             [2017, '2017-11-06'],
             [2018, '2018-11-05'],
             [2019, '2019-11-04'],
-            [2020, '2020-11-02']
+            [2020, '2020-11-02'],
         ];
 
         return $data;

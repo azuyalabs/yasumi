@@ -42,7 +42,7 @@ class FranceTest extends FranceBaseTestCase
             'allSaintsDay',
             'armisticeDay',
             'christmasDay',
-            'bastilleDay'
+            'bastilleDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

@@ -42,7 +42,7 @@ class BalearicIslandsTest extends BalearicIslandsBaseTestCase
             'allSaintsDay',
             'constitutionDay',
             'immaculateConception',
-            'christmasDay'
+            'christmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -57,7 +57,7 @@ class BalearicIslandsTest extends BalearicIslandsBaseTestCase
             'maundyThursday',
             'easter',
             'easterMonday',
-            'stStephensDay'
+            'stStephensDay',
         ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 

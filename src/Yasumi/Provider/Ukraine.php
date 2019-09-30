@@ -96,7 +96,7 @@ class Ukraine extends AbstractProvider
     {
         $this->addHoliday(new Holiday('secondInternationalWorkersDay', [
             'uk' => 'День міжнародної солідарності трудящих',
-            'ru' => 'День международной солидарности трудящихся'
+            'ru' => 'День международной солидарности трудящихся',
         ], new \DateTime("$this->year-05-02", new \DateTimeZone($this->timezone)), $this->locale));
     }
 

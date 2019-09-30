@@ -65,7 +65,7 @@ class Croatia extends AbstractProvider
         if ($this->year >= 1941) {
             $this->addHoliday(new Holiday('antifascistStruggleDay', [
                 'en' => 'Day of Antifascist Struggle',
-                'hr' => 'Dan antifašističke borbe'
+                'hr' => 'Dan antifašističke borbe',
             ], new DateTime("$this->year-6-22", new DateTimeZone($this->timezone)), $this->locale));
         }
 
@@ -75,7 +75,7 @@ class Croatia extends AbstractProvider
         if ($this->year >= 1991) {
             $this->addHoliday(new Holiday('statehoodDay', [
                 'en' => 'Statehood Day',
-                'hr' => 'Dan državnosti'
+                'hr' => 'Dan državnosti',
             ], new DateTime("$this->year-6-25", new DateTimeZone($this->timezone)), $this->locale));
         }
 
@@ -85,7 +85,7 @@ class Croatia extends AbstractProvider
         if ($this->year >= 1995) {
             $this->addHoliday(new Holiday('homelandThanksgiving', [
                 'en' => 'Homeland Thanksgiving Day',
-                'hr' => 'Dan domovinske zahvalnosti'
+                'hr' => 'Dan domovinske zahvalnosti',
             ], new DateTime("$this->year-8-5", new DateTimeZone($this->timezone)), $this->locale));
         }
 
@@ -95,7 +95,7 @@ class Croatia extends AbstractProvider
         if ($this->year >= 1991) {
             $this->addHoliday(new Holiday('independenceDay', [
                 'en' => 'Independence Day',
-                'hr' => 'Dan neovisnosti'
+                'hr' => 'Dan neovisnosti',
             ], new DateTime("$this->year-10-8", new DateTimeZone($this->timezone)), $this->locale));
         }
     }

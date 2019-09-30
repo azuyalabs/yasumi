@@ -40,7 +40,7 @@ class BerlinTest extends BerlinBaseTestCase
             'pentecostMonday',
             'germanUnityDay',
             'christmasDay',
-            'secondChristmasDay'
+            'secondChristmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

@@ -31,5 +31,5 @@ return [
     'pl' => 'drugi dzień Bożego Narodzenia',
     'ro' => 'A doua zi de Crăciun',
     'sk' => 'Druhý sviatok vianočný',
-    'sv' => 'annandag jul'
+    'sv' => 'annandag jul',
 ];

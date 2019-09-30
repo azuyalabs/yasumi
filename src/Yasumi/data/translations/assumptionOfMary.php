@@ -25,5 +25,5 @@ return [
     'pl' => 'Wniebowzięcie Najświętszej Marii Panny',
     'pt' => 'Assunção de Nossa Senhora',
     'ro' => 'Adormirea Maicii Domnului',
-    'sk' => 'Nanebovzatie Panny Márie'
+    'sk' => 'Nanebovzatie Panny Márie',
 ];

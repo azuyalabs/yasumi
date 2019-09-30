@@ -44,7 +44,7 @@ class SwedenTest extends SwedenBaseTestCase
             'stJohnsDay', // Midsummer's Day
             'allSaintsDay',
             'christmasDay',
-            'secondChristmasDay'
+            'secondChristmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -60,7 +60,7 @@ class SwedenTest extends SwedenBaseTestCase
             'stJohnsEve',
             'allSaintsEve',
             'christmasEve',
-            'newYearsEve'
+            'newYearsEve',
         ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 

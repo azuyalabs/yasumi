@@ -52,7 +52,7 @@ class BernTest extends BernBaseTestCase
             'ascensionDay',
             'easterMonday',
             'pentecostMonday',
-            'berchtoldsTag'
+            'berchtoldsTag',
         ], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 

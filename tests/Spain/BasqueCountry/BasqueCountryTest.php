@@ -42,7 +42,7 @@ class BasqueCountryTest extends BasqueCountryBaseTestCase
             'allSaintsDay',
             'constitutionDay',
             'immaculateConception',
-            'christmasDay'
+            'christmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -55,7 +55,7 @@ class BasqueCountryTest extends BasqueCountryBaseTestCase
         $this->assertDefinedHolidays([
             'maundyThursday',
             'easter',
-            'easterMonday'
+            'easterMonday',
         ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 

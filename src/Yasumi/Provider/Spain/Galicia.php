@@ -81,7 +81,7 @@ class Galicia extends Spain
         if ($this->year >= 1991) {
             $this->addHoliday(new Holiday('galicianLiteratureDay', [
                 'es' => 'Día de las Letras Gallegas',
-                'gl' => 'Día das Letras Galegas'
+                'gl' => 'Día das Letras Galegas',
             ], new DateTime("$this->year-5-17", new DateTimeZone($this->timezone)), $this->locale));
         }
     }
@@ -108,7 +108,7 @@ class Galicia extends Spain
     {
         if ($this->year >= 2000) {
             $this->addHoliday(new Holiday('stJamesDay', [
-                'es' => 'Santiago Apostol'
+                'es' => 'Santiago Apostol',
             ], new DateTime("$this->year-7-25", new DateTimeZone($this->timezone)), $this->locale));
         }
     }

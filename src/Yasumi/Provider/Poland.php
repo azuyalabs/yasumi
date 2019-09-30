@@ -87,7 +87,7 @@ class Poland extends AbstractProvider
 
         $this->addHoliday(new Holiday('independenceDay', [
             'en' => 'Independence Day',
-            'pl' => 'Narodowe Święto Niepodległości'
+            'pl' => 'Narodowe Święto Niepodległości',
         ], new DateTime("$this->year-11-11", new DateTimeZone($this->timezone)), $this->locale));
     }
 
@@ -115,7 +115,7 @@ class Poland extends AbstractProvider
 
         $this->addHoliday(new Holiday('constitutionDay', [
             'en' => 'Constitution Day',
-            'pl' => 'Święto Narodowe Trzeciego Maja'
+            'pl' => 'Święto Narodowe Trzeciego Maja',
         ], new DateTime("$this->year-5-3", new DateTimeZone($this->timezone)), $this->locale));
     }
 }

@@ -43,7 +43,7 @@ class NorthwestTest extends NorthwestBaseTestCase
             'queensBirthday',
             'eightHourDay',
             'recreationDay',
-            'burnieShow'
+            'burnieShow',
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

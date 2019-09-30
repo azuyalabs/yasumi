@@ -68,7 +68,7 @@ class KingIslandShowTest extends KingIslandBaseTestCase implements YasumiTestCas
             [2017, '2017-03-07'],
             [2018, '2018-03-06'],
             [2019, '2019-03-05'],
-            [2020, '2020-03-03']
+            [2020, '2020-03-03'],
         ];
 
         return $data;

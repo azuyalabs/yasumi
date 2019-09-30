@@ -41,7 +41,7 @@ class QueenslandTest extends QueenslandBaseTestCase
             'australiaDay',
             'anzacDay',
             'queensBirthday',
-            'labourDay'
+            'labourDay',
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

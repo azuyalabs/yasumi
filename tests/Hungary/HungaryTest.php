@@ -39,7 +39,7 @@ class HungaryTest extends HungaryBaseTestCase
             'internationalWorkersDay',
             'pentecostMonday',
             'christmasDay',
-            'secondChristmasDay'
+            'secondChristmasDay',
         ];
 
         if ($this->year >= 1891) {

@@ -29,5 +29,5 @@ return [
     'pt' => 'Dia de todos os Santos',
     'ro' => 'Ziua tuturor sfinților',
     'sk' => 'Sviatok Všetkých svätých',
-    'sv' => 'alla helgons dag'
+    'sv' => 'alla helgons dag',
 ];

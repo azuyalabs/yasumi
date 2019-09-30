@@ -42,7 +42,7 @@ class CommunityOfMadridTest extends CommunityOfMadridBaseTestCase
             'allSaintsDay',
             'constitutionDay',
             'immaculateConception',
-            'christmasDay'
+            'christmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -56,7 +56,7 @@ class CommunityOfMadridTest extends CommunityOfMadridBaseTestCase
             'stJosephsDay',
             'maundyThursday',
             'easter',
-            'corpusChristi'
+            'corpusChristi',
         ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 

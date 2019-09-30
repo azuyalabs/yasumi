@@ -42,7 +42,7 @@ class BrisbaneTest extends BrisbaneBaseTestCase
             'anzacDay',
             'queensBirthday',
             'labourDay',
-            'peoplesDay'
+            'peoplesDay',
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

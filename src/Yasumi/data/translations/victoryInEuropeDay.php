@@ -15,5 +15,5 @@ return [
     'cs' => 'Den vítězství',
     'en' => 'Victory in Europe Day',
     'fr' => 'Victoire 1945',
-    'sk' => 'Deň víťazstva nad fašizmom'
+    'sk' => 'Deň víťazstva nad fašizmom',
 ];

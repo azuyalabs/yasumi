@@ -57,7 +57,7 @@ class UriTest extends UriBaseTestCase
             'easterMonday',
             'pentecostMonday',
             'stJosephsDay',
-            'epiphany'
+            'epiphany',
         ], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 

@@ -50,7 +50,7 @@ class GenevaTest extends GenevaBaseTestCase
             'christmasDay',
             'ascensionDay',
             'easterMonday',
-            'pentecostMonday'
+            'pentecostMonday',
         ];
 
         if ($this->year > 1813) {

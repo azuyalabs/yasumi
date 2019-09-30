@@ -41,7 +41,7 @@ class MelillaTest extends MelillaBaseTestCase
             'allSaintsDay',
             'constitutionDay',
             'immaculateConception',
-            'christmasDay'
+            'christmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -54,7 +54,7 @@ class MelillaTest extends MelillaBaseTestCase
         $this->assertDefinedHolidays([
             'stJosephsDay',
             'maundyThursday',
-            'easter'
+            'easter',
         ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 

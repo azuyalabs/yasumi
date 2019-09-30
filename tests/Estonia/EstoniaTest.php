@@ -39,7 +39,7 @@ class EstoniaTest extends EstoniaBaseTestCase
             'newYearsDay',
             'pentecost',
             'secondChristmasDay',
-            'stJohnsDay'
+            'stJohnsDay',
         ];
 
         $year = $this->generateRandomYear();

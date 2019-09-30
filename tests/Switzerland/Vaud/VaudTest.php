@@ -52,7 +52,7 @@ class VaudTest extends VaudBaseTestCase
             'easterMonday',
             'pentecostMonday',
             'berchtoldsTag',
-            'bettagsMontag'
+            'bettagsMontag',
         ], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 

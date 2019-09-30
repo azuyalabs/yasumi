@@ -41,7 +41,7 @@ class USATest extends USABaseTestCase
             'columbusDay',
             'veteransDay',
             'thanksgivingDay',
-            'christmasDay'
+            'christmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

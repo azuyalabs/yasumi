@@ -14,5 +14,5 @@
 return [
     'da' => 'Sankthansaften',
     'en' => 'St. John\'s Eve',
-    'sv' => 'midsommarafton'
+    'sv' => 'midsommarafton',
 ];

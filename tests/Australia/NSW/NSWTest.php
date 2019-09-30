@@ -42,7 +42,7 @@ class NSWTest extends NSWBaseTestCase
             'easter',
             'easterSaturday',
             'queensBirthday',
-            'labourDay'
+            'labourDay',
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -53,7 +53,7 @@ class NSWTest extends NSWBaseTestCase
     public function testBankHolidays(): void
     {
         $this->assertDefinedHolidays([
-            'bankHoliday'
+            'bankHoliday',
         ], $this->region, $this->year, Holiday::TYPE_BANK);
     }
 

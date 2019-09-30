@@ -54,7 +54,7 @@ class GlarusTest extends GlarusBaseTestCase
             'easterMonday',
             'pentecostMonday',
             'berchtoldsTag',
-            'nafelserFahrt'
+            'nafelserFahrt',
         ], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 

@@ -68,7 +68,7 @@ class BurnieShowTest extends NorthwestBaseTestCase implements YasumiTestCaseInte
             [2017, '2017-10-06'],
             [2018, '2018-10-05'],
             [2019, '2019-10-04'],
-            [2020, '2020-10-02']
+            [2020, '2020-10-02'],
         ];
 
         return $data;

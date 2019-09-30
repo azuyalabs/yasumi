@@ -123,7 +123,7 @@ class Slovakia extends AbstractProvider
             'slovakIndependenceDay',
             [
                 'sk' => 'Deň vzniku Slovenskej republiky',
-                'en' => 'Day of the Establishment of the Slovak Republic'
+                'en' => 'Day of the Establishment of the Slovak Republic',
             ],
             new DateTime($this->year . '-01-01', new DateTimeZone($this->timezone)),
             $this->locale
@@ -149,7 +149,7 @@ class Slovakia extends AbstractProvider
             [
                 'sk' => 'Sviatok svätého Cyrila a Metoda',
                 'cs' => 'Den slovanských věrozvěstů Cyrila a Metoděje',
-                'en' => 'Saints Cyril and Methodius Day'
+                'en' => 'Saints Cyril and Methodius Day',
             ],
             new DateTime($this->year . '-07-05', new DateTimeZone($this->timezone)),
             $this->locale,
@@ -173,7 +173,7 @@ class Slovakia extends AbstractProvider
             'slovakNationalUprisingDay',
             [
                 'sk' => 'Výročie Slovenského národného povstania',
-                'en' => 'Slovak National Uprising Day'
+                'en' => 'Slovak National Uprising Day',
             ],
             new DateTime($this->year . '-08-29', new DateTimeZone($this->timezone)),
             $this->locale,
@@ -197,7 +197,7 @@ class Slovakia extends AbstractProvider
             'slovakConstitutionDay',
             [
                 'sk' => 'Deň Ústavy Slovenskej republiky',
-                'en' => 'Day of the Constitution of the Slovak Republic'
+                'en' => 'Day of the Constitution of the Slovak Republic',
             ],
             new DateTime($this->year . '-09-01', new DateTimeZone($this->timezone)),
             $this->locale,
@@ -223,7 +223,7 @@ class Slovakia extends AbstractProvider
     {
         $this->addHoliday(new Holiday('ourLadyOfSorrowsDay', [
             'sk' => 'Sviatok Sedembolestnej Panny Márie',
-            'en' => 'Our Lady of Sorrows Day'
+            'en' => 'Our Lady of Sorrows Day',
         ], new DateTime($this->year . '-09-15', new DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_BANK));
     }
 
@@ -244,7 +244,7 @@ class Slovakia extends AbstractProvider
             [
                 'sk' => 'Deň boja za slobodu a demokraciu',
                 'cs' => 'Den boje za svobodu a demokracii',
-                'en' => 'Struggle for Freedom and Democracy Day'
+                'en' => 'Struggle for Freedom and Democracy Day',
             ],
             new DateTime($this->year . '-11-17', new DateTimeZone($this->timezone)),
             $this->locale,

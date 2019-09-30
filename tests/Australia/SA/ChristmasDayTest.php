@@ -84,7 +84,7 @@ class ChristmasDayTest extends SABaseTestCase implements YasumiTestCaseInterface
             [2017, '2017-12-25', null],
             [2018, '2018-12-25', null],
             [2019, '2019-12-25', null],
-            [2020, '2020-12-25', null]
+            [2020, '2020-12-25', null],
         ];
 
         return $data;

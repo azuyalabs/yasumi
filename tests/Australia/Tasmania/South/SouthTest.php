@@ -43,7 +43,7 @@ class SouthTest extends SouthBaseTestCase
             'queensBirthday',
             'eightHourDay',
             'recreationDay',
-            'hobartShow'
+            'hobartShow',
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

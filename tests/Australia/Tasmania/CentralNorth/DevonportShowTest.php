@@ -68,7 +68,7 @@ class DevonportShowTest extends CentralNorthBaseTestCase implements YasumiTestCa
             [2017, '2017-12-01'],
             [2018, '2018-11-30'],
             [2019, '2019-11-29'],
-            [2020, '2020-11-27']
+            [2020, '2020-11-27'],
         ];
 
         return $data;

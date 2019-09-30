@@ -56,7 +56,7 @@ class LucerneTest extends LucerneBaseTestCase
             'ascensionDay',
             'easterMonday',
             'pentecostMonday',
-            'berchtoldsTag'
+            'berchtoldsTag',
         ], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 

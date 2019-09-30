@@ -43,7 +43,7 @@ class FlindersIslandTest extends FlindersIslandBaseTestCase
             'queensBirthday',
             'eightHourDay',
             'recreationDay',
-            'flindersIslandShow'
+            'flindersIslandShow',
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

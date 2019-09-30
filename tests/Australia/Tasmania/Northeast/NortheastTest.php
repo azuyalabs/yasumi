@@ -43,7 +43,7 @@ class NortheastTest extends NortheastBaseTestCase
             'queensBirthday',
             'eightHourDay',
             'recreationDay',
-            'launcestonShow'
+            'launcestonShow',
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

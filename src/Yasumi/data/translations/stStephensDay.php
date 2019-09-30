@@ -19,5 +19,5 @@ return [
     'fr' => 'Saint-Étienne',
     'ga' => 'Lá Fhéile Stiofáin',
     'hr' => 'Sveti Stjepan',
-    'it' => 'Santo Stefano'
+    'it' => 'Santo Stefano',
 ];

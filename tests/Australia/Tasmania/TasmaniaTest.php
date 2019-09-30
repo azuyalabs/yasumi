@@ -41,7 +41,7 @@ class TasmaniaTest extends TasmaniaBaseTestCase
             'anzacDay',
             'queensBirthday',
             'eightHourDay',
-            'recreationDay'
+            'recreationDay',
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

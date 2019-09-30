@@ -44,7 +44,7 @@ class BasRhinTest extends BasRhinBaseTestCase
             'armisticeDay',
             'christmasDay',
             'stStephensDay',
-            'bastilleDay'
+            'bastilleDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

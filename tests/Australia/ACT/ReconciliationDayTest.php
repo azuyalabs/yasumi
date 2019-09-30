@@ -75,7 +75,7 @@ class ReconciliationDayTest extends ACTBaseTestCase implements YasumiTestCaseInt
             [2027, '2027-05-31'],
             [2028, '2028-05-29'],
             [2029, '2029-05-28'],
-            [2030, '2030-05-27']
+            [2030, '2030-05-27'],
         ];
 
         return $data;

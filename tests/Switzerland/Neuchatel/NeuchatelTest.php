@@ -54,7 +54,7 @@ class NeuchatelTest extends NeuchatelBaseTestCase
             'internationalWorkersDay',
             'berchtoldsTag',
             'bettagsMontag',
-            'instaurationRepublique'
+            'instaurationRepublique',
         ], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 

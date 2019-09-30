@@ -42,7 +42,7 @@ class SATest extends SABaseTestCase
             'easterSaturday',
             'queensBirthday',
             'labourDay',
-            'adelaideCup'
+            'adelaideCup',
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

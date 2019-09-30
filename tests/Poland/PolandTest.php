@@ -44,7 +44,7 @@ class PolandTest extends PolandBaseTestCase
             'corpusChristi',
             'secondChristmasDay',
             'constitutionDay',
-            'independenceDay'
+            'independenceDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

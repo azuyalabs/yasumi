@@ -68,7 +68,7 @@ class LabourDayTest extends VictoriaBaseTestCase implements YasumiTestCaseInterf
             [2017, '2017-03-13'],
             [2018, '2018-03-12'],
             [2019, '2019-03-11'],
-            [2020, '2020-03-09']
+            [2020, '2020-03-09'],
         ];
 
         return $data;

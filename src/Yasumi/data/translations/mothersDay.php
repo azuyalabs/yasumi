@@ -20,5 +20,5 @@ return [
     'nl' => 'Moederdag',
     'pt' => 'Dia da Mãe',
     'ro' => 'Ziua Mamei',
-    'sk' => 'Deň matiek'
+    'sk' => 'Deň matiek',
 ];

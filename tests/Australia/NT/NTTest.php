@@ -42,7 +42,7 @@ class NTTest extends NTBaseTestCase
             'easterSaturday',
             'queensBirthday',
             'mayDay',
-            'picnicDay'
+            'picnicDay',
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

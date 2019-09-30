@@ -70,7 +70,7 @@ class EasterMondayTest extends SlovakiaBaseTestCase implements YasumiTestCaseInt
             [2018, new DateTime('2018-4-2', new DateTimeZone($timezone))],
             [2019, new DateTime('2019-4-22', new DateTimeZone($timezone))],
             [2020, new DateTime('2020-4-13', new DateTimeZone($timezone))],
-            [2050, new DateTime('2050-4-11', new DateTimeZone($timezone))]
+            [2050, new DateTime('2050-4-11', new DateTimeZone($timezone))],
         ];
     }
 

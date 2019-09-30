@@ -68,7 +68,7 @@ class AGFESTTest extends CircularHeadBaseTestCase implements YasumiTestCaseInter
             [2017, '2017-05-05'],
             [2018, '2018-05-04'],
             [2019, '2019-05-03'],
-            [2020, '2020-05-08']
+            [2020, '2020-05-08'],
         ];
 
         return $data;

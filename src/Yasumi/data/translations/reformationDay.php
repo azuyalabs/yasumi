@@ -13,5 +13,5 @@
 // Translations for Reformation Day
 return [
     'de' => 'Reformationstag',
-    'en' => 'Reformation Day'
+    'en' => 'Reformation Day',
 ];

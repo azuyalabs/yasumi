@@ -68,7 +68,7 @@ class WesternAustraliaDayTest extends WABaseTestCase implements YasumiTestCaseIn
             [2017, '2017-06-05'],
             [2018, '2018-06-04'],
             [2019, '2019-06-03'],
-            [2020, '2020-06-01']
+            [2020, '2020-06-01'],
         ];
 
         return $data;

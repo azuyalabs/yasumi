@@ -16,5 +16,5 @@ return [
     'en' => 'Armistice Day',
     'fr' => 'Armistice',
     'fr_FR' => 'Armistice 1918',
-    'nl' => 'Wapenstilstand'
+    'nl' => 'Wapenstilstand',
 ];

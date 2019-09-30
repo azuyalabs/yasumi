@@ -40,7 +40,7 @@ class SaarlandTest extends SaarlandBaseTestCase
             'pentecostMonday',
             'germanUnityDay',
             'christmasDay',
-            'secondChristmasDay'
+            'secondChristmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -80,7 +80,7 @@ class SaarlandTest extends SaarlandBaseTestCase
         $this->assertDefinedHolidays([
             'corpusChristi',
             'assumptionOfMary',
-            'allSaintsDay'
+            'allSaintsDay',
         ], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 

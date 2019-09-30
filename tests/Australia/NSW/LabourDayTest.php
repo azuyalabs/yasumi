@@ -68,7 +68,7 @@ class LabourDayTest extends NSWBaseTestCase implements YasumiTestCaseInterface
             [2017, '2017-10-02'],
             [2018, '2018-10-01'],
             [2019, '2019-10-07'],
-            [2020, '2020-10-05']
+            [2020, '2020-10-05'],
         ];
 
         return $data;

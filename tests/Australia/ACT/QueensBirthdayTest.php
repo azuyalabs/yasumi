@@ -73,7 +73,7 @@ class QueensBirthdayTest extends ACTBaseTestCase implements YasumiTestCaseInterf
             [2017, '2017-06-12'],
             [2018, '2018-06-11'],
             [2019, '2019-06-10'],
-            [2020, '2020-06-08']
+            [2020, '2020-06-08'],
         ];
 
         return $data;

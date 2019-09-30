@@ -28,7 +28,7 @@ class TranslationsTest extends TestCase
     public const LOCALES = [
         'en_US',
         'nl_NL',
-        'pl_PL'
+        'pl_PL',
     ];
 
     /**
@@ -280,8 +280,8 @@ FILE;
         vfsStream::setup('root', null, [
             'lang' => [
                 $firstShortName . '.php' => $firstFileContents,
-                $secondShortName . '.php' => $secondFileContents
-            ]
+                $secondShortName . '.php' => $secondFileContents,
+            ],
         ]);
 
         $translations = new Translations(self::LOCALES);

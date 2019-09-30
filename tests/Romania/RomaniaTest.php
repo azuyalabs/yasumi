@@ -46,7 +46,7 @@ class RomaniaTest extends RomaniaBaseTestCase
             'stAndrewsDay',
             'nationalDay',
             'christmasDay',
-            'secondChristmasDay'
+            'secondChristmasDay',
         ];
 
         if ($this->year >= 2017) {

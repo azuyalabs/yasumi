@@ -85,7 +85,7 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCase
             [1999, 9, 23],
             [2013, 9, 23],
             [2016, 9, 22],
-            [2122, 9, 23]
+            [2122, 9, 23],
         ];
     }
 

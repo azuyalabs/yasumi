@@ -54,7 +54,7 @@ class Yasumi
     private static $ignoredProvider = [
         'AbstractProvider.php',
         'CommonHolidays.php',
-        'ChristianHolidays.php'
+        'ChristianHolidays.php',
     ];
 
     /**
