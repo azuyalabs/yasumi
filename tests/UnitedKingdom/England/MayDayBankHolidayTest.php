@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -34,6 +34,7 @@ class MayDayBankHolidayTest extends EnglandBaseTestCase implements YasumiTestCas
 
     /**
      * Tests the holiday defined in this test.
+     *
      * @throws \Exception
      * @throws \ReflectionException
      */
@@ -50,7 +51,9 @@ class MayDayBankHolidayTest extends EnglandBaseTestCase implements YasumiTestCas
 
     /**
      * Tests the holiday exception in 1995 and 2020.
+     *
      * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHolidayExceptions()
     {
