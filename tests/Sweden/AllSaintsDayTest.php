@@ -61,7 +61,7 @@ class AllSaintsDayTest extends SwedenBaseTestCase implements YasumiTestCaseInter
 
             // Check between 31 October and 6th of November the day that is a Saturday
             for ($d = 0; $d <= 7; ++$d) {
-                if ($date->format('l') === 'Saturday') {
+                if ('Saturday' === $date->format('l')) {
                     $data[] = [$year, $date];
                     break;
                 }

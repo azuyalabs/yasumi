@@ -61,7 +61,7 @@ class AllSaintsEveTest extends SwedenBaseTestCase implements YasumiTestCaseInter
 
             // Check between 30 October and 5th of November the day that is a Friday
             for ($d = 0; $d <= 7; ++$d) {
-                if ($date->format('l') === 'Friday') {
+                if ('Friday' === $date->format('l')) {
                     $data[] = [$year, $date];
                     break;
                 }
