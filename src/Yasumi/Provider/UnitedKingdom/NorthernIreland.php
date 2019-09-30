@@ -14,6 +14,8 @@ namespace Yasumi\Provider\UnitedKingdom;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\UnitedKingdom;
 use Yasumi\SubstituteHoliday;
@@ -35,14 +37,12 @@ class NorthernIreland extends UnitedKingdom
      */
     public const ID = 'GB-NIR';
 
-    public $timezone = 'Europe/Belfast';
-
     /**
      * Initialize holidays for Northern Ireland (United Kingdom).
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -64,9 +64,9 @@ class NorthernIreland extends UnitedKingdom
      *
      * @link https://en.wikipedia.org/wiki/Saint_Patrick%27s_Day
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      * @throws \Exception
      */
@@ -110,9 +110,9 @@ class NorthernIreland extends UnitedKingdom
      *
      * @link https://en.wikipedia.org/wiki/The_Twelfth
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      * @throws \Exception
      */

@@ -15,6 +15,8 @@ namespace Yasumi\Provider\UnitedKingdom;
 use DateInterval;
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\UnitedKingdom;
 use Yasumi\SubstituteHoliday;
@@ -41,18 +43,18 @@ class Scotland extends UnitedKingdom
      */
     public const ID = 'GB-SCT';
 
-    public $timezone = 'Europe/London';
-
     /**
      * Initialize holidays for the United Kingdom.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
     {
+        parent::initialize();
+
         // Add common holidays
         $this->calculateNewYearsHolidays();
         $this->calculateMayDayBankHoliday();
@@ -76,9 +78,9 @@ class Scotland extends UnitedKingdom
      * @link https://en.wikipedia.org/wiki/Public_holidays_in_Scotland
      * @link http://www.timeanddate.com/holidays/uk/new-year-day
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     protected function calculateNewYearsHolidays(): void
@@ -138,9 +140,9 @@ class Scotland extends UnitedKingdom
      * @link https://www.timeanddate.com/holidays/uk/summer-bank-holiday
      * @link https://en.wikipedia.org/wiki/Public_holidays_in_Scotland
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     protected function calculateSummerBankHoliday(): void
@@ -165,9 +167,9 @@ class Scotland extends UnitedKingdom
      *
      * @link https://en.wikipedia.org/wiki/Saint_Andrew%27s_Day
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      * @throws \Exception
      */
