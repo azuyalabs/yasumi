@@ -315,6 +315,16 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     }
 
     /**
+     * Gets all of the holidays defined by this holiday provider (for the given year).
+     *
+     * @return Holiday[] list of all holidays defined for the given year
+     */
+    public function getHolidays(): array
+    {
+        return $this->holidays;
+    }
+
+    /**
      * Gets all of the holiday names defined by this holiday provider (for the given year).
      *
      * @return array list of all holiday names defined for the given year
@@ -392,16 +402,6 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         $holidays = $this->getHolidays();
 
         return $holidays[$shortName] ?? null;
-    }
-
-    /**
-     * Gets all of the holidays defined by this holiday provider (for the given year).
-     *
-     * @return Holiday[] list of all holidays defined for the given year
-     */
-    public function getHolidays(): array
-    {
-        return $this->holidays;
     }
 
     /**

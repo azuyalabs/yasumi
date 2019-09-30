@@ -497,7 +497,7 @@ class SouthKorea extends AbstractProvider
 
                     // Find next week day (not being another holiday)
                     while (0 === (int)$date->format('w')
-                           || (6 === (int)$date->format('w') && 'childrensDay' === $shortName)
+                        || (6 === (int)$date->format('w') && 'childrensDay' === $shortName)
                         || \in_array($date, $holidayDates, false)) {
                         $date->add(new DateInterval('P1D'));
                         continue;
