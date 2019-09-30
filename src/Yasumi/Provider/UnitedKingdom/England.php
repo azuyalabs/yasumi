@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,7 +12,6 @@
 
 namespace Yasumi\Provider\UnitedKingdom;
 
-use Yasumi\Holiday;
 use Yasumi\Provider\UnitedKingdom;
 
 /**
