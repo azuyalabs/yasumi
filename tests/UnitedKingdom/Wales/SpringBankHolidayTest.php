@@ -50,7 +50,9 @@ class SpringBankHolidayTest extends WalesBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests the holiday exceptions in 2002 and 2012.
+     *
      * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHolidayException()
     {

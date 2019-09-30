@@ -50,7 +50,9 @@ class SummerBankHolidayTest extends NorthernIrelandBaseTestCase implements Yasum
 
     /**
      * Tests the holiday exception in 2020.
+     *
      * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHolidayBefore1965()
     {
@@ -66,6 +68,12 @@ class SummerBankHolidayTest extends NorthernIrelandBaseTestCase implements Yasum
     /**
      * Tests the holiday during trial period in 1965-1970.
      * @throws \ReflectionException
+     * @throws \Exception
+     * @throws \Exception
+     * @throws \Exception
+     * @throws \Exception
+     * @throws \Exception
+     * @throws \Exception
      */
     public function testHolidayTrialPeriod()
     {

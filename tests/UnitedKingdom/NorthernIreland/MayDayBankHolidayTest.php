@@ -50,7 +50,9 @@ class MayDayBankHolidayTest extends NorthernIrelandBaseTestCase implements Yasum
 
     /**
      * Tests the holiday exception in 1995 and 2020.
+     *
      * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHolidayExceptions()
     {
