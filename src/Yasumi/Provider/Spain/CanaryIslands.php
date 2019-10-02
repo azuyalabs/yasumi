@@ -67,7 +67,7 @@ class CanaryIslands extends Spain
      * year. This event celebrates the islands' culture and people. It also marks the anniversary of the autonomous
      * Canary Islands Parliament's first session, which was on May 30, 1983.
      *
-     * @link https://www.timeanddate.com/holidays/spain/canaries-day-observed
+     * @link https://www.timeanddate.com/holidays/spain/canaries-day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

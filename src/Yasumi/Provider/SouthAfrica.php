@@ -110,7 +110,7 @@ class SouthAfrica extends AbstractProvider
      *
      * Family Day in South Africa takes place on the Monday following Easter Sunday.
      *
-     * @link https://www.gov.za/sites/www.gov.za/files/Act36of1994.pdf
+     * @link https://www.gov.za/documents/public-holidays-act
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -132,7 +132,7 @@ class SouthAfrica extends AbstractProvider
      *
      * Freedom Day commemorates the first democratic elections held in South Africa on 27 April 1994.
      *
-     * @link https://www.gov.za/sites/www.gov.za/files/Act36of1994.pdf
+     * @link https://www.gov.za/documents/public-holidays-act
      * @link https://www.gov.za/freedom-day-2014
      *
      * @throws InvalidDateException
@@ -159,7 +159,7 @@ class SouthAfrica extends AbstractProvider
      * police, and the violence that ensued during the next few weeks, approximately 700 hundred people, many of them
      * youths, were killed and property destroyed. Youth Day, previously known as Soweto Day, commemorates these events.
      *
-     * @link https://www.gov.za/sites/www.gov.za/files/Act36of1994.pdf
+     * @link https://www.gov.za/documents/public-holidays-act
      * @link https://www.gov.za/youth-day-2014
      *
      * @throws InvalidDateException
@@ -236,7 +236,7 @@ class SouthAfrica extends AbstractProvider
      * Africans celebrate the day by remembering the cultural heritage of the many cultures that make up the population
      * of South Africa.
      *
-     * @link https://www.gov.za/sites/www.gov.za/files/Act36of1994.pdf
+     * @link https://www.gov.za/documents/public-holidays-act
      * @link https://www.gov.za/heritage-day-2014
      *
      * @throws InvalidDateException
@@ -263,7 +263,7 @@ class SouthAfrica extends AbstractProvider
      * of democracy in South Africa 16 December retained its status as a public holiday, however, this time with the
      * purpose of fostering reconciliation and national unity.
      *
-     * @link https://www.gov.za/sites/www.gov.za/files/Act36of1994.pdf
+     * @link https://www.gov.za/documents/public-holidays-act
      * @link https://www.gov.za/day-reconciliation-2014
      *
      * @throws InvalidDateException
@@ -290,7 +290,7 @@ class SouthAfrica extends AbstractProvider
      * Note: Not entirely sure if this is a common rule as the Public Holidays Act doesn't mention such specific
      * situation.
      *
-     * @link https://www.gov.za/sites/www.gov.za/files/Act36of1994.pdf
+     * @link https://www.gov.za/documents/public-holidays-act
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

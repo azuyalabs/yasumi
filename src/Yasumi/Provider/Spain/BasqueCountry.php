@@ -68,7 +68,7 @@ class BasqueCountry extends Spain
      *
      * In 2016, this holiday is replaced by the Day of the First Constitiution of the Basque Country.
      *
-     * @link https://www.officeholidays.com/countries/spain/basque_community_day.php
+     * @link https://www.officeholidays.com/holidays/day-of-the-basque-country
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

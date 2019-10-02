@@ -856,7 +856,7 @@ trait ChristianHolidays
      *
      * @throws \Exception
      * @link https://en.wikipedia.org/wiki/Computus#Meeus.27s_Julian_algorithm
-     * @link https://php.net/manual/en/function.easter-date.php#83794
+     * @link https://www.php.net/manual/en/function.easter-date.php#83794
      */
     public function calculateOrthodoxEaster(int $year, string $timezone): DateTime
     {
