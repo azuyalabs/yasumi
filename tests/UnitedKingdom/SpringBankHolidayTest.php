@@ -54,7 +54,6 @@ class SpringBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
      * Tests the holiday exceptions in 2002 and 2012.
      * @throws ReflectionException
      * @throws Exception
-     * @throws Exception
      */
     public function testHolidayException()
     {

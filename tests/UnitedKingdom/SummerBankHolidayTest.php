@@ -75,11 +75,6 @@ class SummerBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
      * Tests the holiday during trial period in 1965-1970.
      * @throws ReflectionException
      * @throws Exception
-     * @throws Exception
-     * @throws Exception
-     * @throws Exception
-     * @throws Exception
-     * @throws Exception
      */
     public function testHolidayTrialPeriod()
     {
@@ -136,7 +131,7 @@ class SummerBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -150,7 +145,7 @@ class SummerBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslationBeforeRename(): void
     {

@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\UnitedKingdom\Scotland;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class ScotlandTest extends ScotlandBaseTestCase
 
     /**
      * Tests if all official holidays in Scotland are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -36,7 +37,7 @@ class ScotlandTest extends ScotlandBaseTestCase
 
     /**
      * Tests if all observed holidays in Scotland are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -45,7 +46,7 @@ class ScotlandTest extends ScotlandBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Scotland are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -54,7 +55,7 @@ class ScotlandTest extends ScotlandBaseTestCase
 
     /**
      * Tests if all bank holidays in Scotland are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -70,7 +71,7 @@ class ScotlandTest extends ScotlandBaseTestCase
 
     /**
      * Tests if all other holidays in Scotland are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {

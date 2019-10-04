@@ -14,6 +14,8 @@ namespace Yasumi\tests\UnitedKingdom\NorthernIreland;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -39,8 +41,8 @@ class SummerBankHolidayTest extends NorthernIrelandBaseTestCase implements Yasum
 
     /**
      * Tests the holiday defined in this test.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testHoliday()
     {
@@ -56,8 +58,8 @@ class SummerBankHolidayTest extends NorthernIrelandBaseTestCase implements Yasum
     /**
      * Tests the holiday exception in 2020.
      *
-     * @throws \ReflectionException
-     * @throws \Exception
+     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayBefore1965()
     {
@@ -72,13 +74,13 @@ class SummerBankHolidayTest extends NorthernIrelandBaseTestCase implements Yasum
 
     /**
      * Tests the holiday during trial period in 1965-1970.
-     * @throws \ReflectionException
-     * @throws \Exception
-     * @throws \Exception
-     * @throws \Exception
-     * @throws \Exception
-     * @throws \Exception
-     * @throws \Exception
+     * @throws ReflectionException
+     * @throws Exception
+     * @throws Exception
+     * @throws Exception
+     * @throws Exception
+     * @throws Exception
+     * @throws Exception
      */
     public function testHolidayTrialPeriod()
     {
@@ -122,7 +124,7 @@ class SummerBankHolidayTest extends NorthernIrelandBaseTestCase implements Yasum
 
     /**
      * Tests the holiday defined in this test before establishment.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayBeforeEstablishment()
     {
@@ -135,7 +137,7 @@ class SummerBankHolidayTest extends NorthernIrelandBaseTestCase implements Yasum
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -149,7 +151,7 @@ class SummerBankHolidayTest extends NorthernIrelandBaseTestCase implements Yasum
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslationBeforeRename(): void
     {
@@ -163,7 +165,7 @@ class SummerBankHolidayTest extends NorthernIrelandBaseTestCase implements Yasum
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

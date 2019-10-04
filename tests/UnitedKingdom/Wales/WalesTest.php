@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\UnitedKingdom\Wales;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class WalesTest extends WalesBaseTestCase
 
     /**
      * Tests if all official holidays in Wales are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -38,7 +39,7 @@ class WalesTest extends WalesBaseTestCase
 
     /**
      * Tests if all observed holidays in Wales are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -47,7 +48,7 @@ class WalesTest extends WalesBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Wales are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -56,7 +57,7 @@ class WalesTest extends WalesBaseTestCase
 
     /**
      * Tests if all bank holidays in Wales are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -71,7 +72,7 @@ class WalesTest extends WalesBaseTestCase
 
     /**
      * Tests if all other holidays in Wales are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
