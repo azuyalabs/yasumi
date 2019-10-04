@@ -29,7 +29,7 @@ use Yasumi\Provider\Spain;
  * 910 of the Kingdom of Castile appears in 1230 and again in 1230. It is the largest autonomous community in Spain and
  * the third largest region of the European Union
  *
- * @link http://en.wikipedia.org/wiki/Castile_and_León
+ * @link https://en.wikipedia.org/wiki/Castile_and_León
  */
 class CastileAndLeon extends Spain
 {
@@ -68,7 +68,7 @@ class CastileAndLeon extends Spain
      * Comuneros were dealt a crushing defeat by the royalist forces of King Charles I in the Revolt of the Comuneros on
      * April 23, 1521.
      *
-     * @link http://en.wikipedia.org/wiki/Castile_and_León_Day
+     * @link https://en.wikipedia.org/wiki/Castile_and_León_Day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

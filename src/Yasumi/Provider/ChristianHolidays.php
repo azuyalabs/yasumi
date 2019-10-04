@@ -34,7 +34,7 @@ trait ChristianHolidays
      * on a date based on a certain number of days after March 21st. The date of Easter Day was defined by the Council
      * of Nicaea in AD325 as the Sunday after the first full moon which falls on or after the Spring Equinox.
      *
-     * @link http://en.wikipedia.org/wiki/Easter
+     * @link https://en.wikipedia.org/wiki/Easter
      *
      * @param int $year the year for which Easter need to be created
      * @param string $timezone the timezone in which Easter is celebrated
@@ -75,7 +75,7 @@ trait ChristianHolidays
      *
      * @link https://github.com/php/php-src/blob/c8aa6f3a9a3d2c114d0c5e0c9fdd0a465dbb54a5/ext/calendar/easter.c
      * @link http://www.gmarts.org/index.php?go=415#EasterMallen
-     * @link http://www.tondering.dk/claus/cal/easter.php
+     * @link https://www.tondering.dk/claus/cal/easter.php
      *
      */
     protected function calculateEaster(int $year, string $timezone): DateTime
@@ -140,7 +140,7 @@ trait ChristianHolidays
      * on a date based on a certain number of days after March 21st. The date of Easter Day was defined by the Council
      * of Nicaea in AD325 as the Sunday after the first full moon which falls on or after the Spring Equinox.
      *
-     * @link http://en.wikipedia.org/wiki/Easter
+     * @link https://en.wikipedia.org/wiki/Easter
      *
      * @param int $year the year for which Easter Monday need to be created
      * @param string $timezone the timezone in which Easter Monday is celebrated
@@ -177,7 +177,7 @@ trait ChristianHolidays
      * Christian churches. Ascension Day is traditionally celebrated on a Thursday, the fortieth day of Easter although
      * some Catholic provinces have moved the observance to the following Sunday.
      *
-     * @link http://en.wikipedia.org/wiki/Feast_of_the_Ascension
+     * @link https://en.wikipedia.org/wiki/Feast_of_the_Ascension
      *
      * @param int $year the year for which Ascension need to be created
      * @param string $timezone the timezone in which Ascension is celebrated
@@ -428,7 +428,7 @@ trait ChristianHolidays
      * after Pentecost in Eastern Catholicism and Eastern Orthodoxy, in honour of all the saints, known and unknown.
      * The liturgical celebration begins at Vespers on the evening of 31 October and ends at the close of 1 November.
      *
-     * @link http://en.wikipedia.org/wiki/All_Saints%27_Day
+     * @link https://en.wikipedia.org/wiki/All_Saints%27_Day
      *
      * @param int $year the year for which All Saints' Day need to be created
      * @param string $timezone the timezone in which All Saints' Day is celebrated
@@ -459,7 +459,7 @@ trait ChristianHolidays
      * of the Virgin Mary into Heaven at the end of her earthly life. In the churches that observe it, the
      * Assumption is a major feast day, commonly celebrated on August 15.
      *
-     * @link http://en.wikipedia.org/wiki/Assumption_of_Mary
+     * @link https://en.wikipedia.org/wiki/Assumption_of_Mary
      *
      * @param int $year the year for which the day of the Assumption of Mary need to be created
      * @param string $timezone the timezone in which the day of the Assumption of Mary is celebrated
@@ -533,7 +533,7 @@ trait ChristianHolidays
      * for most countries is January 19 because of the 13-day difference today between that calendar and the generally
      * used Gregorian calendar.
      *
-     * @link http://en.wikipedia.org/wiki/Epiphany_(holiday)
+     * @link https://en.wikipedia.org/wiki/Epiphany_(holiday)
      *
      * @param int $year the year for which Epiphany need to be created
      * @param string $timezone the timezone in which Epiphany is celebrated
@@ -564,7 +564,7 @@ trait ChristianHolidays
      * days, if the 6 Sundays, which are not days of fast, are excluded) before Easter and can fall as early as 4
      * February or as late as 10 March.
      *
-     * @link http://en.wikipedia.org/wiki/Ash_Wednesday
+     * @link https://en.wikipedia.org/wiki/Ash_Wednesday
      *
      * @param int $year the year for which Ash Wednesday need to be created
      * @param string $timezone the timezone in which Ash Wednesday is celebrated
@@ -602,7 +602,7 @@ trait ChristianHolidays
      * which is celebrated on September 8. It is one of the most important Marian feasts celebrated in the liturgical
      * calendar of the Roman Catholic Church.
      *
-     * @link http://en.wikipedia.org/wiki/Feast_of_the_Immaculate_Conception
+     * @link https://en.wikipedia.org/wiki/Feast_of_the_Immaculate_Conception
      *
      * @param int $year the year for which Immaculate Conception need to be created
      * @param string $timezone the timezone in which Immaculate Conception is celebrated
@@ -641,7 +641,7 @@ trait ChristianHolidays
      * December according to that calendar, which places it on 8 January of the Gregorian calendar used in secular
      * contexts.
      *
-     * @link http://en.wikipedia.org/wiki/St._Stephen%27s_Day
+     * @link https://en.wikipedia.org/wiki/St._Stephen%27s_Day
      *
      * @param int $year the year for which St. Stephen's Day need to be created
      * @param string $timezone the timezone in which St. Stephen's Day is celebrated
@@ -680,7 +680,7 @@ trait ChristianHolidays
      * Pope St. Pius V extended its use to the entire Roman Rite by his Apostolic Constitution Quo primum
      * (July 14, 1570). Since 1969, Episcopal Conferences may, if they wish, transfer it to a date outside Lent.
      *
-     * @link http://en.wikipedia.org/wiki/St_Joseph's_Day
+     * @link https://en.wikipedia.org/wiki/St_Joseph's_Day
      *
      * @param int $year the year for which St. Joseph's Day need to be created
      * @param string $timezone the timezone in which St. Joseph's Day is celebrated
@@ -712,7 +712,7 @@ trait ChristianHolidays
      * Maundy and Last Supper of Jesus Christ with the Apostles as described in the Canonical gospels. It is the fifth
      * day of Holy Week, and is preceded by Holy Wednesday and followed by Good Friday.
      *
-     * @link http://en.wikipedia.org/wiki/Maundy_Thursday
+     * @link https://en.wikipedia.org/wiki/Maundy_Thursday
      *
      * @param int $year the year for which Maundy Thursday need to be created
      * @param string $timezone the timezone in which Maundy Thursday is celebrated
@@ -750,7 +750,7 @@ trait ChristianHolidays
      * celebrated on 23 April, the traditionally accepted date of Saint George's death in 303 AD. For Eastern Orthodox
      * Churches (which use the Julian calendar), '23 April' currently falls on 6 May of the Gregorian calendar.
      *
-     * @link http://en.wikipedia.org/wiki/St_George%27s_Day
+     * @link https://en.wikipedia.org/wiki/St_George%27s_Day
      *
      * @param int $year the year for which St. George's Day need to be created
      * @param string $timezone the timezone in which St. George's Day is celebrated
@@ -855,8 +855,8 @@ trait ChristianHolidays
      * @return DateTime date of Orthodox Easter
      *
      * @throws \Exception
-     * @link https://en.wikipedia.org/wiki/Computus#Adaptation_for_Western_Easter_of_Meeus.27_Julian_algorithm
-     * @link http://php.net/manual/en/function.easter-date.php#83794
+     * @link https://en.wikipedia.org/wiki/Computus#Meeus.27s_Julian_algorithm
+     * @link https://www.php.net/manual/en/function.easter-date.php#83794
      */
     public function calculateOrthodoxEaster(int $year, string $timezone): DateTime
     {

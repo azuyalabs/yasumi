@@ -76,7 +76,7 @@ class Scotland extends UnitedKingdom
      * If New Years Day falls on a Saturday, the following Monday and Tuesday are bank holidays.
      *
      * @link https://en.wikipedia.org/wiki/Public_holidays_in_Scotland
-     * @link http://www.timeanddate.com/holidays/uk/new-year-day
+     * @link https://www.timeanddate.com/holidays/uk/new-year-day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

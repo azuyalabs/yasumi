@@ -25,7 +25,7 @@ use Yasumi\Provider\Spain;
  * Basque Country, La Rioja, and Aragon in Spain and Aquitaine in France. The capital city is Pamplona (or Iruña in
  * Basque).
  *
- * @link http://en.wikipedia.org/wiki/Navarre
+ * @link https://en.wikipedia.org/wiki/Navarre
  */
 class Navarre extends Spain
 {

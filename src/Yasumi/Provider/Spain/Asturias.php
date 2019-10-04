@@ -28,7 +28,7 @@ use Yasumi\Provider\Spain;
  * Middle Ages. Divided into eight comarcas (counties), the autonomous community of Asturias is bordered by Cantabria to
  * the east, by Castile and León to the south, by Galicia to the west, and by the Bay of Biscay to the north.
  *
- * @link http://en.wikipedia.org/wiki/Asturias
+ * @link https://en.wikipedia.org/wiki/Asturias
  */
 class Asturias extends Spain
 {
@@ -68,7 +68,7 @@ class Asturias extends Spain
      * June 28, 1984. This date was chosen as it is the day on which the birth of Mary is traditionally celebrated.
      * The public holiday was first observed on September 8, 1984.
      *
-     * @link http://www.timeanddate.com/holidays/spain/asturias-day
+     * @link https://www.timeanddate.com/holidays/spain/asturias-day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

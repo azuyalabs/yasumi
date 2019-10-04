@@ -27,7 +27,7 @@ use Yasumi\Holiday;
  *        dňoch pracovného pokoja a pamätných dňoch"
  *        [national law]
  *
- *    2/    http://www.zakonypreludi.sk/zz/1993-241
+ *    2/    https://www.zakonypreludi.sk/zz/1993-241
  *
  *
  * English:

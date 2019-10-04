@@ -13,7 +13,7 @@ When contributing there are a few guidelines we'd like you to keep in mind:
   $ composer format
   ```
 
-  This will check/correct all the code for the PSR-2 Coding Standard using the wonderful [php-cs-fixer](http://cs.sensiolabs.org/) .
+  This will check/correct all the code for the PSR-2 Coding Standard using the wonderful [php-cs-fixer](https://cs.symfony.com).
   
 - **Add unit tests!** - Your Pull Request won't be accepted if it doesn't have tests:
 
@@ -30,7 +30,7 @@ When contributing there are a few guidelines we'd like you to keep in mind:
 
 - **One pull request per feature** - If you want to contribute more than one thing, send multiple pull requests.
 
-- **Send coherent history** - Make sure each individual commit in your pull request is meaningful. If you had to make multiple intermediate commits while developing, please [squash them](http://www.git-scm.com/book/en/v2/Git-Tools-Rewriting-History#Changing-Multiple-Commit-Messages) before submitting.
+- **Send coherent history** - Make sure each individual commit in your pull request is meaningful. If you had to make multiple intermediate commits while developing, please [squash them](https://www.git-scm.com/book/en/v2/Git-Tools-Rewriting-History#_changing_multiple) before submitting.
 
 
 ## Running Tests

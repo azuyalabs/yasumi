@@ -26,7 +26,7 @@ use Yasumi\Provider\Spain;
  * Teruel. Its capital is Zaragoza (also called Saragossa in English). The current Statute of Autonomy declares Aragon a
  * nationality of Spain.
  *
- * @link http://en.wikipedia.org/wiki/Aragon
+ * @link https://en.wikipedia.org/wiki/Aragon
  */
 class Aragon extends Spain
 {

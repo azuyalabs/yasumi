@@ -68,7 +68,7 @@ class UnitedKingdom extends AbstractProvider
      * Since 1974 (by Royal Proclamation) it was established as a bank holiday.
      *
      * @link https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom
-     * @link http://www.timeanddate.com/holidays/uk/new-year-day
+     * @link https://www.timeanddate.com/holidays/uk/new-year-day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -107,7 +107,7 @@ class UnitedKingdom extends AbstractProvider
      * and schools are closed, while stores may be open or closed, according to local custom. Public transport systems
      * often run to a holiday timetable.
      *
-     * @link http://www.timeanddate.com/holidays/uk/early-may-bank-holiday
+     * @link https://www.timeanddate.com/holidays/uk/early-may-bank-holiday
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -151,7 +151,7 @@ class UnitedKingdom extends AbstractProvider
      * The last Monday in May is a bank holiday. Many organizations, businesses and schools are closed. Stores may be
      * open or closed, according to local custom. Public transport systems often run to a holiday timetable.
      *
-     * @link http://www.timeanddate.com/holidays/uk/spring-bank-holiday
+     * @link https://www.timeanddate.com/holidays/uk/spring-bank-holiday
      * @link https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom
      *
      * @throws InvalidDateException
@@ -261,8 +261,8 @@ class UnitedKingdom extends AbstractProvider
      * If Christmas Day falls on a Saturday, the following Monday and Tuesday are bank holidays. All schools and many
      * organizations are closed in this period. Some may close for the whole week between Christmas and New Year.
      *
-     * @link http://www.timeanddate.com/holidays/uk/christmas-day
-     * @link http://www.timeanddate.com/holidays/uk/boxing-day
+     * @link https://www.timeanddate.com/holidays/uk/christmas-day
+     * @link https://www.timeanddate.com/holidays/uk/boxing-day
      *
      * @param string|null $type the Holiday Type (e.g. Official, Seasonal, etc.)
      *

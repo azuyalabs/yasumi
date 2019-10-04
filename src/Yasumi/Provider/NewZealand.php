@@ -64,9 +64,9 @@ class NewZealand extends AbstractProvider
      * if either of these holidays occur on a weekend, the dates need to be adjusted.
      *
      * @link https://en.wikipedia.org/wiki/Public_holidays_in_New_Zealand#Statutory_holidays
-     * @link http://www.timeanddate.com/holidays/new-zealand/new-year-day
-     * @link http://www.timeanddate.com/holidays/new-zealand/day-after-new-years-day
-     * @link http://employment.govt.nz/er/holidaysandleave/publicholidays/mondayisation.asp
+     * @link https://www.timeanddate.com/holidays/new-zealand/new-year-day
+     * @link https://www.timeanddate.com/holidays/new-zealand/day-after-new-years-day
+     * @link https://www.employment.govt.nz/leave-and-holidays/public-holidays/public-holidays-falling-on-a-weekend/
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -106,7 +106,7 @@ class NewZealand extends AbstractProvider
      * the Monday that immediately follows becomes a public holiday.
      *
      * @link https://en.wikipedia.org/wiki/Waitangi_Day
-     * @link http://employment.govt.nz/er/holidaysandleave/publicholidays/mondayisation.asp
+     * @link https://www.employment.govt.nz/leave-and-holidays/public-holidays/public-holidays-falling-on-a-weekend/
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -136,7 +136,7 @@ class NewZealand extends AbstractProvider
      * Observed on 25 April each year.
      *
      * @link https://en.wikipedia.org/wiki/Anzac_Day
-     * @link http://employment.govt.nz/er/holidaysandleave/publicholidays/mondayisation.asp
+     * @link https://www.employment.govt.nz/leave-and-holidays/public-holidays/public-holidays-falling-on-a-weekend/
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -169,7 +169,7 @@ class NewZealand extends AbstractProvider
      *
      * Her actual birthday is on April 21, but it's celebrated as a public holiday on the first Monday of June.
      *
-     * @link http://www.timeanddate.com/holidays/new-zealand/queen-birthday
+     * @link https://www.timeanddate.com/holidays/new-zealand/queen-birthday
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -202,7 +202,7 @@ class NewZealand extends AbstractProvider
      * second Wednesday in October in 1900. The holiday was moved to the fourth Monday of October in 1910
      * has remained on this date since then.
      *
-     * @link http://www.timeanddate.com/holidays/new-zealand/labour-day
+     * @link https://www.timeanddate.com/holidays/new-zealand/labour-day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -229,9 +229,9 @@ class NewZealand extends AbstractProvider
      * Christmas day, and Boxing day are public holidays in New Zealand,
      * they are subject to mondayisation rules.
      *
-     * @link http://www.timeanddate.com/holidays/new-zealand/boxing-day
-     * @link http://www.timeanddate.com/holidays/new-zealand/christmas-day
-     * @link http://employment.govt.nz/er/holidaysandleave/publicholidays/mondayisation.asp
+     * @link https://www.timeanddate.com/holidays/new-zealand/boxing-day
+     * @link https://www.timeanddate.com/holidays/new-zealand/christmas-day
+     * @link https://www.employment.govt.nz/leave-and-holidays/public-holidays/public-holidays-falling-on-a-weekend/
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

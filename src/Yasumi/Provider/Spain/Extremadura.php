@@ -28,7 +28,7 @@ use Yasumi\Provider\Spain;
  * Salamanca and Ávila); to the south, it borders Andalusia (provinces of Huelva, Seville, and Córdoba); and to the
  * east, it borders Castile–La Mancha (provinces of Toledo and Ciudad Real).
  *
- * @link http://en.wikipedia.org/wiki/Extremadura
+ * @link https://en.wikipedia.org/wiki/Extremadura
  */
 class Extremadura extends Spain
 {
@@ -68,7 +68,7 @@ class Extremadura extends Spain
      * A law enacted on June 3, 1985, proclaimed September 8 to be a public holiday known as the Day of Extremadura.
      * The public holiday was first observed on September 8, 1985.
      *
-     * @link http://www.timeanddate.com/holidays/spain/extremadura-day
+     * @link https://www.timeanddate.com/holidays/spain/extremadura-day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

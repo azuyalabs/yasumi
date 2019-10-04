@@ -70,7 +70,7 @@ class USA extends AbstractProvider
      * Honors Dr. Martin Luther King, Jr., Civil Rights leader, who was actually born on January 15, 1929; combined
      * with other holidays in several states. It is observed on the third Monday of January since 1986.
      *
-     * @link http://en.wikipedia.org/wiki/Martin_Luther_King,_Jr._Day
+     * @link https://en.wikipedia.org/wiki/Martin_Luther_King,_Jr._Day
      *
      * @throws \Exception
      */
@@ -94,7 +94,7 @@ class USA extends AbstractProvider
      * Act, 1968 shifted the date of the commemoration of Washington's Birthday from February 22 to the third Monday
      * in February.
      *
-     * @link http://en.wikipedia.org/wiki/Washington%27s_Birthday
+     * @link https://en.wikipedia.org/wiki/Washington%27s_Birthday
      *
      * @throws \Exception
      */
@@ -119,7 +119,7 @@ class USA extends AbstractProvider
      * Memorial Day was first declared a federal holiday on May 1, 1865. The Uniform Holidays Act, 1968 shifted the
      * date of the commemoration of Memorial Day from May 30 to the last Monday in May.
      *
-     * @link http://en.wikipedia.org/wiki/Memorial_Day
+     * @link https://en.wikipedia.org/wiki/Memorial_Day
      *
      * @throws \Exception
      */
@@ -144,7 +144,7 @@ class USA extends AbstractProvider
      * from Great Britain. In case Independence Day falls on a Sunday, a substituted holiday is observed the
      * following Monday. If it falls on a Saturday, a substituted holiday is observed the previous Friday.
      *
-     * @link http://en.wikipedia.org/wiki/Independence_Day_(United_States)
+     * @link https://en.wikipedia.org/wiki/Independence_Day_(United_States)
      *
      * @throws \Exception
      */
@@ -163,7 +163,7 @@ class USA extends AbstractProvider
      * Labor Day in the United States is a holiday celebrated on the first Monday in September. It is a celebration
      * of the American labor movement and is dedicated to the social and economic achievements of workers.
      *
-     * @link http://en.wikipedia.org/wiki/Labor_Day
+     * @link https://en.wikipedia.org/wiki/Labor_Day
      *
      * @throws \Exception
      */
@@ -190,7 +190,7 @@ class USA extends AbstractProvider
      * though people have celebrated Columbus's voyage since the colonial period. Since 1970 (Oct. 12), the holiday
      * has been fixed to the second Monday in October.
      *
-     * @link http://en.wikipedia.org/wiki/Columbus_Day
+     * @link https://en.wikipedia.org/wiki/Columbus_Day
      *
      * @throws \Exception
      */
@@ -214,7 +214,7 @@ class USA extends AbstractProvider
      * also known as veterans. It is a federal holiday that is observed on November 11 since 1919. Congress amended
      * a bill on June 1, 1954, replacing "Armistice" with "Veterans," and it has been known as Veterans Day since.
      *
-     * @link http://en.wikipedia.org/wiki/Veterans_Day
+     * @link https://en.wikipedia.org/wiki/Veterans_Day
      *
      * @throws \Exception
      */
@@ -237,7 +237,7 @@ class USA extends AbstractProvider
      * President Abraham Lincoln proclaimed a national day of "Thanksgiving and Praise to our beneficent Father who
      * dwelleth in the Heavens", to be celebrated on the last Thursday in November.
      *
-     * @link http://en.wikipedia.org/wiki/Thanksgiving_(United_States)
+     * @link https://en.wikipedia.org/wiki/Thanksgiving_(United_States)
      *
      * @throws \Exception
      */
