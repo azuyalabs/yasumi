@@ -76,11 +76,6 @@ class SummerBankHolidayTest extends NorthernIrelandBaseTestCase implements Yasum
      * Tests the holiday during trial period in 1965-1970.
      * @throws ReflectionException
      * @throws Exception
-     * @throws Exception
-     * @throws Exception
-     * @throws Exception
-     * @throws Exception
-     * @throws Exception
      */
     public function testHolidayTrialPeriod()
     {
