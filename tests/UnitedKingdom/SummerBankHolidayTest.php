@@ -75,11 +75,6 @@ class SummerBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
      * Tests the holiday during trial period in 1965-1970.
      * @throws ReflectionException
      * @throws Exception
-     * @throws Exception
-     * @throws Exception
-     * @throws Exception
-     * @throws Exception
-     * @throws Exception
      */
     public function testHolidayTrialPeriod()
     {
@@ -145,6 +140,20 @@ class SummerBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
             self::HOLIDAY,
             $this->generateRandomYear(self::RENAME_YEAR),
             [self::LOCALE => 'Summer Bank Holiday']
+        );
+    }
+
+    /**
+     * Tests the translated name of the holiday defined in this test.
+     * @throws ReflectionException
+     */
+    public function testTranslationBeforeRename(): void
+    {
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::RENAME_YEAR - 1),
+            [self::LOCALE => 'August Bank Holiday']
         );
     }
 

@@ -15,6 +15,8 @@ namespace Yasumi\tests\UnitedKingdom\Scotland;
 use DateInterval;
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -46,8 +48,8 @@ class NewYearsDayTest extends ScotlandBaseTestCase implements YasumiTestCaseInte
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
-     * @throws \ReflectionException
-     * @throws \Exception
+     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayOnAfterEstablishment($year, $expected)
     {
@@ -62,7 +64,7 @@ class NewYearsDayTest extends ScotlandBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests the holiday defined in this test before establishment.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayBeforeEstablishment()
     {
@@ -75,7 +77,7 @@ class NewYearsDayTest extends ScotlandBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests that the holiday defined in this test is of the type 'observance' before the year it was changed.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayIsObservedTypeBeforeChange()
     {
@@ -91,7 +93,7 @@ class NewYearsDayTest extends ScotlandBaseTestCase implements YasumiTestCaseInte
      * Returns a list of random test dates used for assertion of the holiday defined in this test
      *
      * @return array list of test dates for the holiday defined in this test
-     * @throws \Exception
+     * @throws Exception
      */
     public function HolidayDataProvider(): array
     {
@@ -108,7 +110,7 @@ class NewYearsDayTest extends ScotlandBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -122,7 +124,7 @@ class NewYearsDayTest extends ScotlandBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {
