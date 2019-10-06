@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,26 +12,23 @@
 
 // Translations for Whitsunday
 return [
-    'da_DK' => 'Pinsedag',
+    'da' => 'Pinsedag',
+    'de' => 'Pfingstsonntag',
     'de_AT' => 'Pfingsten',
     'de_CH' => 'Pfingsten',
-    'de_DE' => 'Pfingstsonntag',
-    'el_GR' => 'Πεντηκοστή',
-    'en_IE' => 'Whitsunday',
-    'en_US' => 'Whitsunday',
-    'et_EE' => 'Nelipühade 1. püha',
-    'fi_FI' => 'Helluntaipäivä',
-    'fr_BE' => 'Pentecôte',
-    'fr_CH' => 'Pentecôte',
-    'ga_IE' => 'Domhnach Cincíse',
-    'hu_HU' => 'Pünkösd',
-    'it_CH' => 'Pentecoste',
-    'nb_NO' => 'Første pinsedag',
-    'nl_BE' => 'Eerste Pinksterdag',
-    'nl_NL' => 'Eerste Pinksterdag',
-    'pl_PL' => 'Zielone Świątki',
-    'ro_RO' => 'Rusaliile',
-    'ru_UA' => 'Троица',
-    'sv_SE' => 'Pingstdagen',
-    'uk_UA' => 'Трійця',
+    'el' => 'Πεντηκοστή',
+    'en' => 'Whitsunday',
+    'et' => 'Nelipühade 1. püha',
+    'fi' => 'Helluntaipäivä',
+    'fr' => 'Pentecôte',
+    'ga' => 'Domhnach Cincíse',
+    'hu' => 'Pünkösd',
+    'it' => 'Pentecoste',
+    'nb' => 'Første pinsedag',
+    'nl' => 'Eerste pinksterdag',
+    'pl' => 'Zielone Świątki',
+    'ro' => 'Rusaliile',
+    'ru' => 'Троица',
+    'sv' => 'Pingstdagen',
+    'uk' => 'Трійця',
 ];

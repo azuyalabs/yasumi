@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\Provider\Spain;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\Spain;
@@ -25,7 +27,7 @@ use Yasumi\Provider\Spain;
  * Iberian Peninsula. The four largest islands are Majorca, Minorca, Ibiza and Formentera. There are many minor islands
  * and islets in close proximity to the larger islands, including Cabrera, Dragonera and S'Espalmador.
  *
- * @link http://en.wikipedia.org/wiki/Balearic_Islands
+ * @link https://en.wikipedia.org/wiki/Balearic_Islands
  */
 class BalearicIslands extends Spain
 {
@@ -40,9 +42,9 @@ class BalearicIslands extends Spain
     /**
      * Initialize holidays for Balearic Islands (Spain).
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -66,19 +68,19 @@ class BalearicIslands extends Spain
      * which are part of Spain, on March 1 each year. This date commemorates when the Balearic Islands' Statute of
      * Autonomy came into effect on March 1, 1983.
      *
-     * @link http://www.timeanddate.com/holidays/spain/the-balearic-islands-day
+     * @link https://www.timeanddate.com/holidays/spain/the-balearic-islands-day
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateBalearicIslandsDay(): void
+    private function calculateBalearicIslandsDay(): void
     {
         if ($this->year >= 1983) {
             $this->addHoliday(new Holiday(
                 'balearicIslandsDay',
-                ['es_ES' => 'Día de les Illes Balears'],
+                ['es' => 'Día de les Illes Balears'],
                 new DateTime("$this->year-3-1", new DateTimeZone($this->timezone)),
                 $this->locale
             ));

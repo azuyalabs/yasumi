@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Netherlands;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class NetherlandsTest extends NetherlandsBaseTestCase
 
     /**
      * Tests if all official holidays in Netherlands are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -38,14 +39,15 @@ class NetherlandsTest extends NetherlandsBaseTestCase
             'ascensionDay',
             'pentecost',
             'pentecostMonday',
+            'liberationDay',
             'christmasDay',
-            'secondChristmasDay'
+            'secondChristmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
      * Tests if all observed holidays in Netherlands are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -54,18 +56,17 @@ class NetherlandsTest extends NetherlandsBaseTestCase
             'goodFriday',
             'ashWednesday',
             'commemorationDay',
-            'liberationDay',
             'halloween',
             'stNicholasDay',
             'carnivalDay',
             'secondCarnivalDay',
-            'thirdCarnivalDay'
+            'thirdCarnivalDay',
         ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**
      * Tests if all seasonal holidays in Netherlands are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -75,7 +76,7 @@ class NetherlandsTest extends NetherlandsBaseTestCase
 
     /**
      * Tests if all bank holidays in Netherlands are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -84,7 +85,7 @@ class NetherlandsTest extends NetherlandsBaseTestCase
 
     /**
      * Tests if all other holidays in Netherlands are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -95,14 +96,14 @@ class NetherlandsTest extends NetherlandsBaseTestCase
             'fathersDay',
             'mothersDay',
             'epiphany',
-            'princesDay'
+            'princesDay',
         ], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->year = $this->generateRandomYear(2014);
     }

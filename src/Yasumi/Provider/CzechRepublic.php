@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -13,6 +13,8 @@
 namespace Yasumi\Provider;
 
 use DateTime;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
 /**
@@ -35,9 +37,9 @@ class CzechRepublic extends AbstractProvider
     /**
      * Initialize holidays for the Czech Republic.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -45,6 +47,7 @@ class CzechRepublic extends AbstractProvider
         $this->timezone = 'Europe/Prague';
 
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
+        $this->calculateRenewalOfCzechIndependenceDay();
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
@@ -57,6 +60,29 @@ class CzechRepublic extends AbstractProvider
         $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
+    }
+
+    /**
+     * Day of renewal of independent Czech state
+     *
+     * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
+     *
+     * @throws InvalidDateException
+     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws \Exception
+     */
+    private function calculateRenewalOfCzechIndependenceDay(): void
+    {
+        $this->addHoliday(new Holiday(
+            'czechRenewalOfIndependentStateDay',
+            [
+                'cs' => 'Den obnovy samostatného českého státu',
+                'en' => 'Day of renewal of the independent Czech state',
+            ],
+            new DateTime($this->year . '-01-01', new \DateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /**
@@ -75,16 +101,19 @@ class CzechRepublic extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Saints_Cyril_and_Methodius
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateSaintsCyrilAndMethodiusDay(): void
+    private function calculateSaintsCyrilAndMethodiusDay(): void
     {
         $this->addHoliday(new Holiday(
             'saintsCyrilAndMethodiusDay',
-            ['cs_CZ' => 'Den slovanských věrozvěstů Cyrila a Metoděje', 'en_US' => 'Saints Cyril and Methodius Day'],
+            [
+                'cs' => 'Den slovanských věrozvěstů Cyrila a Metoděje',
+                'en' => 'Saints Cyril and Methodius Day',
+            ],
             new DateTime($this->year . '-07-5', new \DateTimeZone($this->timezone)),
             $this->locale
         ));
@@ -100,16 +129,16 @@ class CzechRepublic extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Jan_Hus
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateJanHusDay(): void
+    private function calculateJanHusDay(): void
     {
         $this->addHoliday(new Holiday(
             'janHusDay',
-            ['cs_CZ' => 'Den upálení mistra Jana Husa', 'en_US' => 'Jan Hus Day'],
+            ['cs' => 'Den upálení mistra Jana Husa', 'en' => 'Jan Hus Day'],
             new DateTime($this->year . '-07-6', new \DateTimeZone($this->timezone)),
             $this->locale
         ));
@@ -128,16 +157,19 @@ class CzechRepublic extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Wenceslaus_I,_Duke_of_Bohemia
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateCzechStatehoodDay(): void
+    private function calculateCzechStatehoodDay(): void
     {
         $this->addHoliday(new Holiday(
             'czechStateHoodDay',
-            ['cs_CZ' => 'Den české státnosti', 'en_US' => 'St. Wenceslas Day (Czech Statehood Day)'],
+            [
+                'cs' => 'Den české státnosti',
+                'en' => 'St. Wenceslas Day (Czech Statehood Day)',
+            ],
             new DateTime($this->year . '-09-28', new \DateTimeZone($this->timezone)),
             $this->locale
         ));
@@ -148,16 +180,16 @@ class CzechRepublic extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateIndependentCzechoslovakStateDay(): void
+    private function calculateIndependentCzechoslovakStateDay(): void
     {
         $this->addHoliday(new Holiday('independentCzechoslovakStateDay', [
-            'cs_CZ' => 'Den vzniku samostatného československého státu',
-            'en_US' => 'Independent Czechoslovak State Day'
+            'cs' => 'Den vzniku samostatného československého státu',
+            'en' => 'Independent Czechoslovak State Day',
         ], new DateTime($this->year . '-10-28', new \DateTimeZone($this->timezone)), $this->locale));
     }
 
@@ -166,16 +198,19 @@ class CzechRepublic extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateStruggleForFreedomAndDemocracyDay(): void
+    private function calculateStruggleForFreedomAndDemocracyDay(): void
     {
         $this->addHoliday(new Holiday(
             'struggleForFreedomAndDemocracyDay',
-            ['cs_CZ' => 'Den boje za svobodu a demokracii', 'en_US' => 'Struggle for Freedom and Democracy Day'],
+            [
+                'cs' => 'Den boje za svobodu a demokracii',
+                'en' => 'Struggle for Freedom and Democracy Day',
+            ],
             new DateTime($this->year . '-11-17', new \DateTimeZone($this->timezone)),
             $this->locale
         ));

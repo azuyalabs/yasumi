@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,7 +12,6 @@
 
 // Translations for St. Martin's Day
 return [
-    'en_US' => 'St. Martin\'s Day',
-    'nl_BE' => 'Sint Maarten',
-    'nl_NL' => 'Sint Maarten',
+    'en' => 'St. Martin\'s Day',
+    'nl' => 'Sint Maarten',
 ];

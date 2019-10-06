@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\Provider\Spain;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\Spain;
@@ -25,7 +27,7 @@ use Yasumi\Provider\Spain;
  * Africa, sharing a western border with Morocco. Separated from the Iberian peninsula by the Strait of Gibraltar, Ceuta
  * lies along the boundary between the Mediterranean Sea and the Atlantic Ocean.
  *
- * @link http://en.wikipedia.org/wiki/Ceuta
+ * @link https://en.wikipedia.org/wiki/Ceuta
  */
 class Ceuta extends Spain
 {
@@ -40,9 +42,9 @@ class Ceuta extends Spain
     /**
      * Initialize holidays for Ceuta (Spain).
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -63,19 +65,19 @@ class Ceuta extends Spain
      * This local holiday marks the date when Pedro de Menezes (or Meneses), Count of Viana do Alentejo, took control of
      * the city from King John I of Portugal on September 2, 1415.
      *
-     * @link http://www.timeanddate.com/holidays/spain/the-independent-city-ceuta-day
+     * @link https://www.timeanddate.com/holidays/spain/the-independent-city-ceuta-day
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateDayOfCeuta(): void
+    private function calculateDayOfCeuta(): void
     {
         if ($this->year >= 1416) {
             $this->addHoliday(new Holiday(
                 'ceutaDay',
-                ['es_ES' => 'Día de Ceuta'],
+                ['es' => 'Día de Ceuta'],
                 new DateTime("$this->year-9-2", new DateTimeZone($this->timezone)),
                 $this->locale
             ));

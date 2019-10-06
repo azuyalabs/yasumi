@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,7 +12,8 @@
 
 // Translations for Summertime
 return [
-    'da_DK' => 'Sommertid starter',
-    'en_US' => 'Summertime',
-    'nl_NL' => 'Zomertijd',
+    'da' => 'Sommertid starter',
+    'en' => 'Summertime',
+    'ko' => '서머타임',
+    'nl' => 'Zomertijd',
 ];

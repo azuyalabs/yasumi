@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Romania;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -34,8 +36,8 @@ class ChildrensDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests Children's Day on or after 1950.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testChildrensDayOnAfter1950()
     {
@@ -50,7 +52,7 @@ class ChildrensDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests Children's Day before 1950.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testChildrensDayBefore1950()
     {
@@ -63,7 +65,7 @@ class ChildrensDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -78,7 +80,7 @@ class ChildrensDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInte
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

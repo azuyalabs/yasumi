@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Brazil;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,32 +27,32 @@ class BrazilTest extends BrazilBaseTestCase
 
     /**
      * Tests if all official holidays in Brazil are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
-            'goodFriday',
             'tiradentesDay',
             'internationalWorkersDay',
             'independenceDay',
             'ourLadyOfAparecidaDay',
             'allSoulsDay',
             'proclamationOfRepublicDay',
-            'christmasDay'
+            'christmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
      * Tests if all observed holidays in Brazil are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
         $this->assertDefinedHolidays([
             'carnavalMonday',
             'carnavalTuesday',
+            'goodFriday',
             'easter',
             'corpusChristi',
             'ashWednesday',
@@ -60,7 +61,7 @@ class BrazilTest extends BrazilBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Brazil are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -69,7 +70,7 @@ class BrazilTest extends BrazilBaseTestCase
 
     /**
      * Tests if all bank holidays in Brazil are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -78,7 +79,7 @@ class BrazilTest extends BrazilBaseTestCase
 
     /**
      * Tests if all other holidays in Brazil are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -88,7 +89,7 @@ class BrazilTest extends BrazilBaseTestCase
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->year = $this->generateRandomYear(1980);
     }

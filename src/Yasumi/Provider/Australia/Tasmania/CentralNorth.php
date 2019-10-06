@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,7 @@ namespace Yasumi\Provider\Australia\Tasmania;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia\Tasmania;
 
@@ -34,7 +35,7 @@ class CentralNorth extends Tasmania
      * Initialize holidays for northeastern Tasmania (Australia).
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -49,10 +50,10 @@ class CentralNorth extends Tasmania
      *
      * @throws \Exception
      */
-    public function calculateDevonportShow(): void
+    private function calculateDevonportShow(): void
     {
         $date = new DateTime($this->year . '-12-02', new DateTimeZone($this->timezone));
         $date = $date->modify('previous friday');
-        $this->addHoliday(new Holiday('devonportShow', ['en_AU' => 'Devonport Show'], $date, $this->locale));
+        $this->addHoliday(new Holiday('devonportShow', ['en' => 'Devonport Show'], $date, $this->locale));
     }
 }

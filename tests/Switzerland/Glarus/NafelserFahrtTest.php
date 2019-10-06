@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Switzerland\Glarus;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -34,8 +36,8 @@ class NafelserFahrtTest extends GlarusBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests Näfelser Fahrt on or after 1389
-     * @throws \ReflectionException
-     * @throws \Exception
+     * @throws ReflectionException
+     * @throws Exception
      */
     public function testNafelserFahrtOnAfter1389()
     {
@@ -47,7 +49,7 @@ class NafelserFahrtTest extends GlarusBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests Näfelser Fahrt before 1389
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testNafelserFahrtBefore1389()
     {
@@ -57,7 +59,7 @@ class NafelserFahrtTest extends GlarusBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests translated name of Näfelser Fahrt.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -71,7 +73,7 @@ class NafelserFahrtTest extends GlarusBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

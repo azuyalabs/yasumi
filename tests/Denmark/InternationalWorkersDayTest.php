@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -13,6 +13,8 @@
 namespace Yasumi\tests\Denmark;
 
 use DateTime;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -31,10 +33,10 @@ class InternationalWorkersDayTest extends DenmarkBaseTestCase implements YasumiT
      *
      * @dataProvider InternationalWorkersDayDataProvider
      *
-     * @param int      $year     the year for which International Workers' Day needs to be tested
+     * @param int $year the year for which International Workers' Day needs to be tested
      * @param DateTime $expected the expected date
      *
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testInternationalWorkersDay($year, $expected)
     {
@@ -45,7 +47,7 @@ class InternationalWorkersDayTest extends DenmarkBaseTestCase implements YasumiT
      * Returns a list of random test dates used for assertion of International Workers' Day.
      *
      * @return array list of test dates for International Workers' Day
-     * @throws \Exception
+     * @throws Exception
      */
     public function InternationalWorkersDayDataProvider(): array
     {
@@ -54,7 +56,7 @@ class InternationalWorkersDayTest extends DenmarkBaseTestCase implements YasumiT
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -68,7 +70,7 @@ class InternationalWorkersDayTest extends DenmarkBaseTestCase implements YasumiT
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

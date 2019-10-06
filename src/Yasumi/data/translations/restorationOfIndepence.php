@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,6 +12,6 @@
 
 // Translations for Restoration of Independence
 return [
-    'en_US' => 'Restoration of Independence',
-    'pt_PT' => 'Restauração da Independência',
+    'en' => 'Restoration of Independence',
+    'pt' => 'Restauração da Independência',
 ];

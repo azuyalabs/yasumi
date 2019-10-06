@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\CzechRepublic;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -33,8 +35,8 @@ class GoodFridayTest extends CzechRepublicBaseTestCase implements YasumiTestCase
 
     /**
      * Tests Good Friday.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testGoodFriday()
     {
@@ -49,7 +51,7 @@ class GoodFridayTest extends CzechRepublicBaseTestCase implements YasumiTestCase
 
     /**
      * Tests translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -63,7 +65,7 @@ class GoodFridayTest extends CzechRepublicBaseTestCase implements YasumiTestCase
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

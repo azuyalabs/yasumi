@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Brazil;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -34,8 +36,8 @@ class TiradentesDayTest extends BrazilBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests Dia de Tiradentes on or after 1792.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testDiaDeTiradentesAfter1792()
     {
@@ -50,7 +52,7 @@ class TiradentesDayTest extends BrazilBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests Dia de Tiradentes on or before 1792.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testDiaDeTiradentesBefore1792()
     {
@@ -60,7 +62,7 @@ class TiradentesDayTest extends BrazilBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -70,7 +72,7 @@ class TiradentesDayTest extends BrazilBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

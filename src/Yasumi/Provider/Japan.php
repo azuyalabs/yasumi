@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * This file is part of the Yasumi package.
@@ -15,8 +15,12 @@ namespace Yasumi\Provider;
 
 use DateInterval;
 use DateTime;
+use DateTimeInterface;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
+use Yasumi\SubstituteHoliday;
 
 /**
  * Provider for all holidays in the Japan.
@@ -52,11 +56,6 @@ class Japan extends AbstractProvider
     private const VERNAL_EQUINOX_PARAM_2150 = 21.8510;
 
     /**
-     * The initial parameter of the approximate expression to calculate autumnal equinox day from 1851 to 1899.
-     */
-    private const AUTUMNAL_EQUINOX_PARAM_1899 = 22.2588;
-
-    /**
      * The initial parameter of the approximate expression to calculate autumnal equinox day from 1900 to 1979.
      */
     private const AUTUMNAL_EQUINOX_PARAM_1979 = 23.2588;
@@ -74,9 +73,9 @@ class Japan extends AbstractProvider
     /**
      * Initialize holidays for Japan.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -95,16 +94,18 @@ class Japan extends AbstractProvider
         $this->calculateChildrensDay();
         $this->calculateCultureDay();
         $this->calculateLaborThanksgivingDay();
-        $this->calculateEmporersBirthday();
+        $this->calculateEmperorsBirthday();
         $this->calculateVernalEquinoxDay();
         $this->calculateComingOfAgeDay();
         $this->calculateGreeneryDay();
         $this->calculateMarineDay();
         $this->calculateMountainDay();
         $this->calculateRespectForTheAgeDay();
-        $this->calculateHealthAndSportsDay();
+        $this->calculateSportsDay();
         $this->calculateAutumnalEquinoxDay();
         $this->calculateSubstituteHolidays();
+        $this->calculateCoronationDay();
+        $this->calculateEnthronementProclamationCeremony();
         $this->calculateBridgeHolidays();
     }
 
@@ -118,7 +119,10 @@ class Japan extends AbstractProvider
         if ($this->year >= 1966) {
             $this->addHoliday(new Holiday(
                 'nationalFoundationDay',
-                ['en_US' => 'National Foundation Day', 'ja_JP' => '建国記念の日'],
+                [
+                    'en' => 'National Foundation Day',
+                    'ja' => '建国記念の日',
+                ],
                 new DateTime("$this->year-2-11", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -135,7 +139,10 @@ class Japan extends AbstractProvider
         if ($this->year >= 2007) {
             $this->addHoliday(new Holiday(
                 'showaDay',
-                ['en_US' => 'Showa Day', 'ja_JP' => '昭和の日'],
+                [
+                    'en' => 'Showa Day',
+                    'ja' => '昭和の日',
+                ],
                 new DateTime("$this->year-4-29", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -152,12 +159,16 @@ class Japan extends AbstractProvider
         if ($this->year >= 1948) {
             $this->addHoliday(new Holiday(
                 'constitutionMemorialDay',
-                ['en_US' => 'Constitution Memorial Day', 'ja_JP' => '憲法記念日'],
+                [
+                    'en' => 'Constitution Memorial Day',
+                    'ja' => '憲法記念日',
+                ],
                 new DateTime("$this->year-5-3", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
     }
+
     /**
      * Children's Day. Children's Day is held on May 5th and established since 1948.
      *
@@ -168,7 +179,10 @@ class Japan extends AbstractProvider
         if ($this->year >= 1948) {
             $this->addHoliday(new Holiday(
                 'childrensDay',
-                ['en_US' => 'Children\'s Day', 'ja_JP' => 'こどもの日'],
+                [
+                    'en' => 'Children\'s Day',
+                    'ja' => 'こどもの日',
+                ],
                 new DateTime("$this->year-5-5", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -185,7 +199,7 @@ class Japan extends AbstractProvider
         if ($this->year >= 1948) {
             $this->addHoliday(new Holiday(
                 'cultureDay',
-                ['en_US' => 'Culture Day', 'ja_JP' => '文化の日'],
+                ['en' => 'Culture Day', 'ja' => '文化の日'],
                 new DateTime("$this->year-11-3", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -202,7 +216,7 @@ class Japan extends AbstractProvider
         if ($this->year >= 1948) {
             $this->addHoliday(new Holiday(
                 'laborThanksgivingDay',
-                ['en_US' => 'Labor Thanksgiving Day', 'ja_JP' => '勤労感謝の日'],
+                ['en' => 'Labor Thanksgiving Day', 'ja' => '勤労感謝の日'],
                 new DateTime("$this->year-11-23", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -210,18 +224,29 @@ class Japan extends AbstractProvider
     }
 
     /**
-     * Emperors Birthday. The Emperors Birthday is on December 23rd and celebrated as such since 1989.
-     * Prior to the death of Emperor Hirohito in 1989, this holiday was celebrated on April 29. See also "Shōwa Day".
+     * Emperors Birthday.
+     * The Emperors Birthday is on April 29rd and celebrated as such since 1949 to 1988.
+     * December 23rd and celebrated as such since 1989 to 2018.
+     * February 23rd and celebrated as such since 2020.(Coronation Day of the new Emperor, May 1, 2019)
      *
      * @throws \Exception
      */
-    private function calculateEmporersBirthday(): void
+    private function calculateEmperorsBirthday(): void
     {
-        if ($this->year >= 1989) {
+        $emperorsBirthday = false;
+        if ($this->year >= 2020) {
+            $emperorsBirthday = "$this->year-2-23";
+        } elseif ($this->year >= 1989 && $this->year < 2019) {
+            $emperorsBirthday = "$this->year-12-23";
+        } elseif ($this->year >= 1949 && $this->year < 1988) {
+            $emperorsBirthday = "$this->year-4-29";
+        }
+
+        if (\is_string($emperorsBirthday)) {
             $this->addHoliday(new Holiday(
                 'emperorsBirthday',
-                ['en_US' => 'Emperors Birthday', 'ja_JP' => '天皇誕生日'],
-                new DateTime("$this->year-12-23", new DateTimeZone($this->timezone)),
+                ['en' => 'Emperors Birthday', 'ja' => '天皇誕生日'],
+                new DateTime($emperorsBirthday, new DateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -236,9 +261,9 @@ class Japan extends AbstractProvider
      *
      * @link http://www.h3.dion.ne.jp/~sakatsu/holiday_topic.htm (in Japanese)
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateVernalEquinoxDay(): void
@@ -254,10 +279,10 @@ class Japan extends AbstractProvider
             $day = \floor(self::VERNAL_EQUINOX_PARAM_2150 + self::EQUINOX_GRADIENT * ($this->year - 1980) - \floor(($this->year - 1980) / 4));
         }
 
-        if (null !== $day) {
+        if (\is_numeric($day)) {
             $this->addHoliday(new Holiday(
                 'vernalEquinoxDay',
-                ['en_US' => 'Vernal Equinox Day', 'ja_JP' => '春分の日'],
+                ['en' => 'Vernal Equinox Day', 'ja' => '春分の日'],
                 new DateTime("$this->year-3-$day", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -270,9 +295,9 @@ class Japan extends AbstractProvider
      * Coming of Age Day was established after 1948 on January 15th. After 2000 it was changed to be the second monday
      * of January.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      * @throws \Exception
      */
@@ -285,10 +310,10 @@ class Japan extends AbstractProvider
             $date = new DateTime("$this->year-1-15", new DateTimeZone($this->timezone));
         }
 
-        if (null !== $date) {
+        if ($date instanceof DateTimeInterface) {
             $this->addHoliday(new Holiday(
                 'comingOfAgeDay',
-                ['en_US' => 'Coming of Age Day', 'ja_JP' => '成人の日'],
+                ['en' => 'Coming of Age Day', 'ja' => '成人の日'],
                 $date,
                 $this->locale
             ));
@@ -300,9 +325,9 @@ class Japan extends AbstractProvider
      *
      * Greenery Day was established from 1989 on April 29th. After 2007 it was changed to be May 4th.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      * @throws \Exception
      */
@@ -315,10 +340,10 @@ class Japan extends AbstractProvider
             $date = new DateTime("$this->year-4-29", new DateTimeZone($this->timezone));
         }
 
-        if (null !== $date) {
+        if ($date instanceof DateTimeInterface) {
             $this->addHoliday(new Holiday(
                 'greeneryDay',
-                ['en_US' => 'Greenery Day', 'ja_JP' => 'みどりの日'],
+                ['en' => 'Greenery Day', 'ja' => 'みどりの日'],
                 $date,
                 $this->locale
             ));
@@ -331,9 +356,9 @@ class Japan extends AbstractProvider
      * Marine Day was established since 1996 on July 20th. After 2003 it was changed to be the third monday of July.In
      * 2020 is July 23th.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      * @throws \Exception
      * @throws \Exception
@@ -341,7 +366,7 @@ class Japan extends AbstractProvider
     private function calculateMarineDay(): void
     {
         $date = null;
-        if ($this->year === 2020) {
+        if (2020 === $this->year) {
             $date = new DateTime("$this->year-7-23", new DateTimeZone($this->timezone));
         } elseif ($this->year >= 2003) {
             $date = new DateTime("third monday of july $this->year", new DateTimeZone($this->timezone));
@@ -349,10 +374,10 @@ class Japan extends AbstractProvider
             $date = new DateTime("$this->year-7-20", new DateTimeZone($this->timezone));
         }
 
-        if (null !== $date) {
+        if ($date instanceof DateTimeInterface) {
             $this->addHoliday(new Holiday(
                 'marineDay',
-                ['en_US' => 'Marine Day', 'ja_JP' => '海の日'],
+                ['en' => 'Marine Day', 'ja' => '海の日'],
                 $date,
                 $this->locale
             ));
@@ -365,23 +390,23 @@ class Japan extends AbstractProvider
      * Mountain Day. Mountain Day is held on August 11th and established since 2016.In 2020 is August 10th.
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      * @throws \Exception
      */
     private function calculateMountainDay(): void
     {
         $date = null;
-        if ($this->year === 2020) {
+        if (2020 === $this->year) {
             $date = new DateTime("$this->year-8-10", new DateTimeZone($this->timezone));
         } elseif ($this->year >= 2016) {
             $date = new DateTime("$this->year-8-11", new DateTimeZone($this->timezone));
         }
 
-        if (null !== $date) {
+        if ($date instanceof DateTimeInterface) {
             $this->addHoliday(new Holiday(
                 'mountainDay',
-                ['en_US' => 'Mountain Day', 'ja_JP' => '山の日'],
+                ['en' => 'Mountain Day', 'ja' => '山の日'],
                 $date,
                 $this->locale
             ));
@@ -394,9 +419,9 @@ class Japan extends AbstractProvider
      * Respect for the Age Day was established since 1996 on September 15th. After 2003 it was changed to be the third
      * monday of September.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      * @throws \Exception
      */
@@ -409,10 +434,10 @@ class Japan extends AbstractProvider
             $date = new DateTime("$this->year-9-15", new DateTimeZone($this->timezone));
         }
 
-        if (null !== $date) {
+        if ($date instanceof DateTimeInterface) {
             $this->addHoliday(new Holiday(
                 'respectfortheAgedDay',
-                ['en_US' => 'Respect for the Aged Day', 'ja_JP' => '敬老の日'],
+                ['en' => 'Respect for the Aged Day', 'ja' => '敬老の日'],
                 $date,
                 $this->locale
             ));
@@ -425,17 +450,17 @@ class Japan extends AbstractProvider
      * Health And Sports Day was established since 1966 on October 10th. After 2000 it was changed to be the second
      * monday of October.In 2020 is July 24th.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      * @throws \Exception
      * @throws \Exception
      */
-    private function calculateHealthAndSportsDay(): void
+    private function calculateSportsDay(): void
     {
         $date = null;
-        if ($this->year === 2020) {
+        if (2020 === $this->year) {
             $date = new DateTime("$this->year-7-24", new DateTimeZone($this->timezone));
         } elseif ($this->year >= 2000) {
             $date = new DateTime("second monday of october $this->year", new DateTimeZone($this->timezone));
@@ -443,10 +468,15 @@ class Japan extends AbstractProvider
             $date = new DateTime("$this->year-10-10", new DateTimeZone($this->timezone));
         }
 
-        if (null !== $date) {
+        $holiday_name = ['en' => 'Health And Sports Day', 'ja' => '体育の日'];
+        if ($this->year >= 2020) {
+            $holiday_name = ['en' => 'Sports Day', 'ja' => 'スポーツの日'];
+        }
+
+        if ($date instanceof DateTimeInterface) {
             $this->addHoliday(new Holiday(
-                'healthandSportsDay',
-                ['en_US' => 'Health And Sports Day', 'ja_JP' => '体育の日'],
+                'sportsDay',
+                $holiday_name,
                 $date,
                 $this->locale
             ));
@@ -462,9 +492,9 @@ class Japan extends AbstractProvider
      *
      * @link http://www.h3.dion.ne.jp/~sakatsu/holiday_topic.htm (in Japanese)
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateAutumnalEquinoxDay(): void
@@ -480,10 +510,10 @@ class Japan extends AbstractProvider
             $day = \floor(self::AUTUMNAL_EQUINOX_PARAM_2150 + self::EQUINOX_GRADIENT * ($this->year - 1980) - \floor(($this->year - 1980) / 4));
         }
 
-        if (null !== $day) {
+        if (\is_numeric($day)) {
             $this->addHoliday(new Holiday(
                 'autumnalEquinoxDay',
-                ['en_US' => 'Autumnal Equinox Day', 'ja_JP' => '秋分の日'],
+                ['en' => 'Autumnal Equinox Day', 'ja' => '秋分の日'],
                 new DateTime("$this->year-9-$day", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -496,9 +526,9 @@ class Japan extends AbstractProvider
      * Generally if a national holiday falls on a Sunday, the holiday is observed the next working day (not being
      * another holiday).
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateSubstituteHolidays(): void
@@ -507,20 +537,20 @@ class Japan extends AbstractProvider
         $dates = $this->getHolidayDates();
 
         // Loop through all holidays
-        foreach ($this->getHolidays() as $shortName => $date) {
-            $substituteDay = clone $date;
+        foreach ($this->getHolidays() as $shortName => $holiday) {
+            $date = clone $holiday;
 
             // If holidays falls on a Sunday
-            if (0 === (int)$date->format('w')) {
+            if (0 === (int)$holiday->format('w')) {
                 if ($this->year >= 2007) {
                     // Find next week day (not being another holiday)
-                    while (\in_array($substituteDay, $dates, false)) {
-                        $substituteDay->add(new DateInterval('P1D'));
+                    while (\in_array($date, $dates, false)) {
+                        $date->add(new DateInterval('P1D'));
                         continue;
                     }
-                } elseif ($date >= '1973-04-12') {
-                    $substituteDay->add(new DateInterval('P1D'));
-                    if (\in_array($substituteDay, $dates, false)) {
+                } elseif ($holiday >= '1973-04-12') {
+                    $date->add(new DateInterval('P1D'));
+                    if (\in_array($date, $dates, false)) {
                         continue; // @codeCoverageIgnore
                     }
                 } else {
@@ -528,13 +558,51 @@ class Japan extends AbstractProvider
                 }
 
                 // Add a new holiday that is substituting the original holiday
-                $substituteHoliday = new Holiday('substituteHoliday:' . $shortName, [
-                    'en_US' => $date->translations['en_US'] . ' Observed',
-                    'ja_JP' => '振替休日 (' . $date->translations['ja_JP'] . ')',
-                ], $substituteDay, $this->locale);
+                $substitute = new SubstituteHoliday(
+                    $holiday,
+                    [],
+                    $date,
+                    $this->locale
+                );
 
-                $this->addHoliday($substituteHoliday);
+                $this->addHoliday($substitute);
             }
+        }
+    }
+
+    /**
+     * Coronation Day. Coronation Day is The new Emperor Coronation.
+     * This holiday is only 2019.
+     *
+     * @throws \Exception
+     */
+    private function calculateCoronationDay(): void
+    {
+        if (2019 === $this->year) {
+            $this->addHoliday(new Holiday(
+                'coronationDay',
+                ['en' => 'Coronation Day', 'ja' => '即位の日'],
+                new DateTime("$this->year-5-1", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        }
+    }
+
+    /**
+     * Enthronement Proclamation Ceremony. Enthronement Proclamation Ceremony is The New Emperor enthronement ceremony.
+     * This holiday only 2019.
+     *
+     * @throws \Exception
+     */
+    private function calculateEnthronementProclamationCeremony(): void
+    {
+        if (2019 === $this->year) {
+            $this->addHoliday(new Holiday(
+                'enthronementProclamationCeremony',
+                ['en' => 'Enthronement Proclamation Ceremony', 'ja' => '即位礼正殿の儀'],
+                new DateTime("$this->year-10-22", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
     }
 
@@ -543,9 +611,9 @@ class Japan extends AbstractProvider
      *
      * Any day that falls between two other national holidays also becomes a holiday, known as a bridge holiday.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateBridgeHolidays(): void
@@ -553,6 +621,7 @@ class Japan extends AbstractProvider
         // Get initial list of holidays and iterator
         $datesIterator = $this->getIterator();
 
+        $counter = 1;
         // Loop through all defined holidays
         while ($datesIterator->valid()) {
             $previous = $datesIterator->current();
@@ -568,10 +637,11 @@ class Japan extends AbstractProvider
                 $bridgeDate = clone $previous;
                 $bridgeDate->add(new DateInterval('P1D'));
 
-                $this->addHoliday(new Holiday('bridgeDay', [
-                    'en_US' => 'Bridge Public holiday',
-                    'ja_JP' => '国民の休日',
+                $this->addHoliday(new Holiday('bridgeDay' . $counter, [
+                    'en' => 'Bridge Public holiday',
+                    'ja' => '国民の休日',
                 ], $bridgeDate, $this->locale));
+                $counter++;
             }
         }
     }

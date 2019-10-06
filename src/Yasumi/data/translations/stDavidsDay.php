@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,7 +12,6 @@
 
 // Translations for St. David's Day
 return [
-    'cy_GB' => 'Dydd Gŵyl Dewi',
-    'en_GB' => 'St. David\'s Day',
-    'en_US' => 'St. David\'s Day',
+    'cy' => 'Dydd Gŵyl Dewi',
+    'en' => 'St. David\'s Day',
 ];

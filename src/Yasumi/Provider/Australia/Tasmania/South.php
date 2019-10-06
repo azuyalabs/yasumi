@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -15,6 +15,7 @@ namespace Yasumi\Provider\Australia\Tasmania;
 use DateInterval;
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia\Tasmania;
 
@@ -35,7 +36,7 @@ class South extends Tasmania
      * Initialize holidays for southern Tasmania (Australia).
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -50,10 +51,10 @@ class South extends Tasmania
      *
      * @throws \Exception
      */
-    public function calculateHobartShow(): void
+    private function calculateHobartShow(): void
     {
         $date = new DateTime('fourth saturday of october ' . $this->year, new DateTimeZone($this->timezone));
         $date = $date->sub(new DateInterval('P2D'));
-        $this->addHoliday(new Holiday('hobartShow', ['en_AU' => 'Royal Hobart Show'], $date, $this->locale));
+        $this->addHoliday(new Holiday('hobartShow', ['en' => 'Royal Hobart Show'], $date, $this->locale));
     }
 }

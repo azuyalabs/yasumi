@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * This file is part of the Yasumi package.
@@ -13,8 +13,6 @@
 
 namespace Yasumi\Filters;
 
-use Countable;
-use FilterIterator;
 use Iterator;
 
 /**
@@ -27,7 +25,7 @@ use Iterator;
  *
  * @package Yasumi\Filters
  */
-class BetweenFilter extends FilterIterator implements Countable
+class BetweenFilter extends AbstractFilter
 {
     /**
      * @var string start date of the time frame to check against
@@ -47,10 +45,10 @@ class BetweenFilter extends FilterIterator implements Countable
     /**
      * Construct the Between FilterIterator Object
      *
-     * @param \Iterator          $iterator   Iterator object of the Holidays Provider
+     * @param Iterator $iterator Iterator object of the Holidays Provider
      * @param \DateTimeInterface $start_date Start date of the time frame to check against
-     * @param \DateTimeInterface $end_date   End date of the time frame to check against
-     * @param  bool              $equal      Indicate whether the start and end dates should be included in the
+     * @param \DateTimeInterface $end_date End date of the time frame to check against
+     * @param bool $equal Indicate whether the start and end dates should be included in the
      *                                       comparison
      */
     public function __construct(
@@ -60,9 +58,9 @@ class BetweenFilter extends FilterIterator implements Countable
         $equal = true
     ) {
         parent::__construct($iterator);
-        $this->equal      = $equal;
+        $this->equal = $equal;
         $this->start_date = $start_date->format('Y-m-d');
-        $this->end_date   = $end_date->format('Y-m-d');
+        $this->end_date = $end_date->format('Y-m-d');
     }
 
     /**
@@ -77,19 +75,5 @@ class BetweenFilter extends FilterIterator implements Countable
         }
 
         return $holiday > $this->start_date && $holiday < $this->end_date;
-    }
-
-    /**
-     * @return integer Returns the number of holidays between the given start and end date.
-     */
-    public function count(): int
-    {
-        $days = \array_keys(\iterator_to_array($this));
-
-        \array_walk($days, function (&$day) {
-            $day = \str_replace('substituteHoliday:', '', $day);
-        });
-
-        return \count(\array_unique($days));
     }
 }

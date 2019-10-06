@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -67,8 +67,8 @@ class Russia extends AbstractProvider
 
         foreach ($holidayDays as $day) {
             $this->addHoliday(new Holiday('newYearHolidaysDay' . $day, [
-                'en_US' => 'New Year\'s holidays',
-                'ru_RU' => 'Новогодние каникулы'
+                'en' => 'New Year\'s holidays',
+                'ru' => 'Новогодние каникулы',
             ], new \DateTime("{$this->year}-01-{$day}", new \DateTimeZone($this->timezone)), $this->locale));
         }
     }
@@ -80,8 +80,8 @@ class Russia extends AbstractProvider
     private function addOrthodoxChristmasDay(): void
     {
         $this->addHoliday(new Holiday('orthodoxChristmasDay', [
-            'en_US' => 'Orthodox Christmas Day',
-            'ru_RU' => 'Рождество'
+            'en' => 'Orthodox Christmas Day',
+            'ru' => 'Рождество',
         ], new \DateTime("{$this->year}-01-07", new \DateTimeZone($this->timezone)), $this->locale));
     }
 
@@ -96,8 +96,8 @@ class Russia extends AbstractProvider
         }
 
         $this->addHoliday(new Holiday('defenceOfTheFatherlandDay', [
-            'en_US' => 'Defence of the Fatherland Day',
-            'ru_RU' => 'День защитника Отечества'
+            'en' => 'Defence of the Fatherland Day',
+            'ru' => 'День защитника Отечества',
         ], new \DateTime("{$this->year}-02-23", new \DateTimeZone($this->timezone)), $this->locale));
     }
 
@@ -117,8 +117,8 @@ class Russia extends AbstractProvider
     private function addSpringAndLabourDay(): void
     {
         $this->addHoliday(new Holiday('springAndLabourDay', [
-            'en_US' => 'Spring and Labour Day',
-            'ru_RU' => 'Праздник Весны и Труда'
+            'en' => 'Spring and Labour Day',
+            'ru' => 'Праздник Весны и Труда',
         ], new \DateTime("{$this->year}-05-01", new \DateTimeZone($this->timezone)), $this->locale));
     }
 
@@ -129,8 +129,8 @@ class Russia extends AbstractProvider
     private function addVictoryDay(): void
     {
         $this->addHoliday(new Holiday('victoryDay', [
-            'en_US' => 'Victory Day',
-            'ru_RU' => 'День Победы'
+            'en' => 'Victory Day',
+            'ru' => 'День Победы',
         ], new \DateTime("{$this->year}-05-09", new \DateTimeZone($this->timezone)), $this->locale));
     }
 
@@ -145,8 +145,8 @@ class Russia extends AbstractProvider
         }
 
         $this->addHoliday(new Holiday('russiaDay', [
-            'en_US' => 'Russia Day',
-            'ru_RU' => 'День России'
+            'en' => 'Russia Day',
+            'ru' => 'День России',
         ], new \DateTime("{$this->year}-06-12", new \DateTimeZone($this->timezone)), $this->locale));
     }
 
@@ -161,8 +161,8 @@ class Russia extends AbstractProvider
         }
 
         $this->addHoliday(new Holiday('unityDay', [
-            'en_US' => 'Unity Day',
-            'ru_RU' => 'День народного единства'
+            'en' => 'Unity Day',
+            'ru' => 'День народного единства',
         ], new \DateTime("{$this->year}-11-04", new \DateTimeZone($this->timezone)), $this->locale));
     }
 }

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\Provider;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
 /**
@@ -32,9 +34,9 @@ class Belgium extends AbstractProvider
     /**
      * Initialize holidays for Belgium.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -62,11 +64,9 @@ class Belgium extends AbstractProvider
          * Belgian National Day is the National Day of Belgium celebrated on 21 July each year.
          */
         $this->addHoliday(new Holiday('nationalDay', [
-            'fr_FR' => 'Fête nationale',
-            'fr_BE' => 'Fête nationale',
-            'en_US' => 'Belgian National Day',
-            'nl_NL' => 'Nationale feestdag',
-            'nl_BE' => 'Nationale feestdag',
+            'fr' => 'Fête nationale',
+            'en' => 'Belgian National Day',
+            'nl' => 'Nationale feestdag',
         ], new DateTime("$this->year-7-21", new DateTimeZone($this->timezone)), $this->locale));
     }
 }

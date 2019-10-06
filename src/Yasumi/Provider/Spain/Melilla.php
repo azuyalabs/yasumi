@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,6 +12,8 @@
 
 namespace Yasumi\Provider\Spain;
 
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\Spain;
@@ -23,7 +25,7 @@ use Yasumi\Provider\Spain;
  * square kilometres (4.7 sq mi). Melilla, along with Ceuta, is one of two permanently inhabited Spanish cities in
  * mainland Africa. It was part of Málaga province until 14 March 1995, when the city's Statute of Autonomy was passed.
  *
- * @link http://en.wikipedia.org/wiki/Melilla
+ * @link https://en.wikipedia.org/wiki/Melilla
  */
 class Melilla extends Spain
 {
@@ -38,9 +40,9 @@ class Melilla extends Spain
     /**
      * Initialize holidays for Melilla (Spain).
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Netherlands;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -29,8 +31,8 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests Queens Day between 1891 and 1948.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testQueensBetween1891and1948()
     {
@@ -45,8 +47,8 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests Queens Day between 1891 and 1948 substituted one day later (when Queens Day falls on a Sunday).
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testQueensBetween1891and1948SubstitutedLater()
     {
@@ -61,8 +63,8 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests Queens Day between 1949 and 2013.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testQueensBetween1949and2013()
     {
@@ -77,8 +79,8 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests Queens Day between 1949 and 2013 substituted one day later.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testQueensBetween1949and2013SubstitutedLater()
     {
@@ -93,8 +95,8 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests Queens Day between 1949 and 2013 substituted one day earlier.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testQueensBetween1949and2013SubstitutedEarlier()
     {
@@ -109,7 +111,7 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests Queen's Day before 1891.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testQueensDayBefore1891()
     {
@@ -118,7 +120,7 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests Queen's Day after 2013.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testQueensDayAfter2013()
     {
@@ -127,7 +129,7 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -141,7 +143,7 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

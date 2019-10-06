@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -15,6 +15,8 @@ namespace Yasumi\Provider;
 use DateInterval;
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
 /**
@@ -33,9 +35,9 @@ class Sweden extends AbstractProvider
     /**
      * Initialize holidays for Sweden.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -48,19 +50,78 @@ class Sweden extends AbstractProvider
 
         // Add common Christian holidays (common in Sweden)
         $this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale));
+        $this->calculateEpiphanyEve();
+        $this->calculateWalpurgisEve();
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale));
-        $this->calculateStJohnsDay(); // aka Midsummer's Day
-        $this->calculateAllSaintsDay();
-        $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale, Holiday::TYPE_OFFICIAL));
+        $this->calculateStJohnsHolidays(); // aka Midsummer
+        $this->calculateAllSaintsHolidays();
+        $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
 
+        $this->addHoliday($this->newYearsEve($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
+
         // Calculate other holidays
         $this->calculateNationalDay();
+    }
+
+    /**
+     * Epiphany Eve.
+     *
+     * Epiphany is a Christian feast day that celebrates the revelation of God the Son as a human being in Jesus Christ.
+     * The traditional date for the feast is January 6. In Sweden the holiday is celebrated on the evening before, also
+     * known as Twelfth Night.
+     *
+     * Epiphany Eve is often treated with the afternoon off, but this varies depending on employer.
+     *
+     * @link https://en.wikipedia.org/wiki/Twelfth_Night_(holiday)
+     *
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
+     * @throws \InvalidArgumentException
+     * @throws \Exception
+     */
+    public function calculateEpiphanyEve(): void
+    {
+        $this->addHoliday(new Holiday(
+            'epiphanyEve',
+            [],
+            new DateTime("$this->year-1-5", new DateTimeZone($this->timezone)),
+            $this->locale,
+            Holiday::TYPE_OBSERVANCE
+        ));
+    }
+
+
+    /**
+     * Walpurgis Night.
+     *
+     * Walpurgis Night is the eve of the Christian feast day of Saint Walpurga, an 8th-century abbess in Francia.
+     * This feast commemorates the canonization of Saint Walpurga and the movement of her relics to Eichstätt,
+     * both of which occurred on 1 May 870
+     *
+     * Walpurgis Night is often treated with the afternoon off, but this varies depending on employer.
+     *
+     * @link https://en.wikipedia.org/wiki/Walpurgis_Night
+     *
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
+     * @throws \InvalidArgumentException
+     * @throws \Exception
+     */
+    public function calculateWalpurgisEve(): void
+    {
+        $this->addHoliday(new Holiday(
+            'walpurgisEve',
+            [],
+            new DateTime("$this->year-4-30", new DateTimeZone($this->timezone)),
+            $this->locale,
+            Holiday::TYPE_OBSERVANCE
+        ));
     }
 
     /**
@@ -77,24 +138,29 @@ class Sweden extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Midsummer#Sweden
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateStJohnsDay(): void
+    private function calculateStJohnsHolidays(): void
     {
-        $date = new DateTime("$this->year-6-20", new DateTimeZone($this->timezone)); // Default date
+        $date = new DateTime("$this->year-6-20 this saturday", new DateTimeZone($this->timezone));
+        $this->addHoliday(new Holiday(
+            'stJohnsDay',
+            [],
+            $date,
+            $this->locale
+        ));
 
-        // Check between the 20th and 26th day which one is a Saturday
-        for ($d = 0; $d <= 7; ++$d) {
-            if ($date->format('l') === 'Saturday') {
-                break;
-            }
-            $date->add(new DateInterval('P1D'));
-        }
-
-        $this->addHoliday(new Holiday('stJohnsDay', ['sv_SE' => 'midsommardagen'], $date, $this->locale));
+        $date->sub(new DateInterval('P1D'));
+        $this->addHoliday(new Holiday(
+            'stJohnsEve',
+            [],
+            $date,
+            $this->locale,
+            Holiday::TYPE_OBSERVANCE
+        ));
     }
 
     /**
@@ -111,26 +177,31 @@ class Sweden extends AbstractProvider
      * In many Lutheran Churches, it is moved to the first Sunday of November.
      *
      * @link https://en.wikipedia.org/wiki/All_Saints%27_Day
-     * @link http://www.timeanddate.com/holidays/sweden/all-saints-day
+     * @link https://www.timeanddate.com/holidays/sweden/all-saints-day
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateAllSaintsDay(): void
+    private function calculateAllSaintsHolidays(): void
     {
-        $date = new DateTime("$this->year-10-31", new DateTimeZone($this->timezone));
+        $date = new DateTime("$this->year-10-31 this saturday", new DateTimeZone($this->timezone));
+        $this->addHoliday(new Holiday(
+            'allSaintsDay',
+            [],
+            $date,
+            $this->locale
+        ));
 
-        // Check between 31 October and 6th of November the day that is a Saturday
-        for ($d = 0; $d <= 7; ++$d) {
-            if ($date->format('l') === 'Saturday') {
-                break;
-            }
-            $date->add(new DateInterval('P1D'));
-        }
-
-        $this->addHoliday(new Holiday('allSaintsDay', [], $date, $this->locale));
+        $date->sub(new DateInterval('P1D'));
+        $this->addHoliday(new Holiday(
+            'allSaintsEve',
+            [],
+            $date,
+            $this->locale,
+            Holiday::TYPE_OBSERVANCE
+        ));
     }
 
     /**
@@ -142,12 +213,12 @@ class Sweden extends AbstractProvider
      * Olympic Stadium, in honour of the election of King Gustav Vasa in 1523, as this was considered the foundation of
      * modern Sweden.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateNationalDay(): void
+    private function calculateNationalDay(): void
     {
         if ($this->year < 1916) {
             return;
@@ -162,7 +233,7 @@ class Sweden extends AbstractProvider
 
         $this->addHoliday(new Holiday(
             'nationalDay',
-            ['sv_SE' => $holiday_name],
+            ['sv' => $holiday_name],
             new DateTime("$this->year-6-6", new DateTimeZone($this->timezone)),
             $this->locale
         ));

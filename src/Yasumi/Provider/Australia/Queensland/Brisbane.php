@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -15,6 +15,7 @@ namespace Yasumi\Provider\Australia\Queensland;
 use DateInterval;
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia\Queensland;
 
@@ -37,7 +38,7 @@ class Brisbane extends Queensland
      * Initialize holidays for Brisbane (Australia).
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -46,7 +47,7 @@ class Brisbane extends Queensland
 
         $this->calculatePeoplesDay();
     }
-    
+
     /**
      * Ekka People's Day.
      *
@@ -61,16 +62,16 @@ class Brisbane extends Queensland
      * @link https://en.wikipedia.org/wiki/Ekka
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculatePeoplesDay(): void
+    private function calculatePeoplesDay(): void
     {
         $date = new DateTime('first friday of august ' . $this->year, new DateTimeZone($this->timezone));
         if ($date->format('d') < 5) {
             $date = $date->add(new DateInterval('P7D'));
         }
         $date = $date->add(new DateInterval('P5D'));
-        $this->addHoliday(new Holiday('peoplesDay', ['en_AU' => 'Ekka People\'s Day'], $date, $this->locale));
+        $this->addHoliday(new Holiday('peoplesDay', ['en' => 'Ekka People\'s Day'], $date, $this->locale));
     }
 }

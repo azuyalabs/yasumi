@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Italy;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -25,7 +27,7 @@ use Yasumi\tests\YasumiTestCaseInterface;
  * April 25 is a national Italian holiday commemorating the end of the second world war and the end of Nazi occupation
  * of the country. On May 27, 1949, bill 260 made the anniversary a permanent, annual national holiday.
  *
- * @link http://en.wikipedia.org/wiki/Liberation_Day_%28Italy%29
+ * @link https://en.wikipedia.org/wiki/Liberation_Day_%28Italy%29
  */
 class LiberationDayTest extends ItalyBaseTestCase implements YasumiTestCaseInterface
 {
@@ -41,8 +43,8 @@ class LiberationDayTest extends ItalyBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests Liberation Day on or after 1949.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testLiberationDayOnAfter1949()
     {
@@ -57,7 +59,7 @@ class LiberationDayTest extends ItalyBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests Liberation Day before 1949.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testLiberationDayBefore1949()
     {
@@ -70,7 +72,7 @@ class LiberationDayTest extends ItalyBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests translated name of Liberation Day.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -84,7 +86,7 @@ class LiberationDayTest extends ItalyBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

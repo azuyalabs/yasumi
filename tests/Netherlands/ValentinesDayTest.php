@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -13,6 +13,8 @@
 namespace Yasumi\tests\Netherlands;
 
 use DateTime;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -31,10 +33,10 @@ class ValentinesDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
      *
      * @dataProvider ValentinesDayDataProvider
      *
-     * @param int      $year     the year for which Valentines Day needs to be tested
+     * @param int $year the year for which Valentines Day needs to be tested
      * @param DateTime $expected the expected date
      *
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testValentinesDay($year, $expected)
     {
@@ -45,7 +47,7 @@ class ValentinesDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
      * Returns a list of random test dates used for assertion of Valentines Day.
      *
      * @return array list of test dates for Valentines Day
-     * @throws \Exception
+     * @throws Exception
      */
     public function ValentinesDayDataProvider(): array
     {
@@ -55,7 +57,7 @@ class ValentinesDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {
@@ -64,7 +66,7 @@ class ValentinesDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {

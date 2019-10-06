@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\NewZealand;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -37,11 +39,11 @@ class WaitangiDayTest extends NewZealandBaseTestCase implements YasumiTestCaseIn
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int      $year     the year for which the holiday defined in this test needs to be tested
+     * @param int $year the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
      *
-     * @throws \ReflectionException
-     * @throws \Exception
+     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHoliday($year, $expected)
     {
@@ -55,7 +57,7 @@ class WaitangiDayTest extends NewZealandBaseTestCase implements YasumiTestCaseIn
 
     /**
      *  Tests that Holiday is not present before 1974
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testNotHoliday()
     {
@@ -64,7 +66,7 @@ class WaitangiDayTest extends NewZealandBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -78,7 +80,7 @@ class WaitangiDayTest extends NewZealandBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {
@@ -94,11 +96,11 @@ class WaitangiDayTest extends NewZealandBaseTestCase implements YasumiTestCaseIn
      * Returns a list of test dates
      *
      * @return array list of test dates for the holiday defined in this test
-     * @throws \Exception
+     * @throws Exception
      */
     public function HolidayDataProvider(): array
     {
-        return $this->generateRandomDatesWithModifier(2, 06, function ($year, \DateTime $date) {
+        return $this->generateRandomDatesWithModifier(2, 06, function ($year, DateTime $date) {
             // in 2015 some policy was introduced to make sure this holiday was celebrated during the working week.
             if ($year >= 2015 && $this->isWeekend($date)) {
                 $date->modify('next monday');

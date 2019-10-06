@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,8 +12,7 @@
 
 // Translations for Annunciation
 return [
-    'el_GR' => 'Ευαγγελισμός της Θεοτόκου',
-    'en_US' => 'Annunciation',
-    'fr_BE' => 'Annonciation',
-    'fr_FR' => 'Annonciation',
+    'el' => 'Ευαγγελισμός της Θεοτόκου',
+    'en' => 'Annunciation',
+    'fr' => 'Annonciation',
 ];

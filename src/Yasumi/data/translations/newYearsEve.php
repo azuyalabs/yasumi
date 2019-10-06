@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,7 +12,9 @@
 
 // Translations for New Year's Eve
 return [
-    'da_DK' => 'Nytårsaften',
-    'en_US' => 'New Year\'s Eve',
-    'lv_LV' => 'Vecgada vakars',
+    'da' => 'Nytårsaften',
+    'en' => 'New Year\'s Eve',
+    'ko' => '신년전야',
+    'lv' => 'Vecgada vakars',
+    'sv' => 'nyårsafton',
 ];

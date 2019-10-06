@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Japan;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -33,42 +35,48 @@ class PublicBridgeDayTest extends JapanBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests public bridge days.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testPublicBridgeDay()
     {
         $this->assertHoliday(
             self::REGION,
-            self::HOLIDAY,
+            self::HOLIDAY . '1',
             $this->year,
-            new DateTime("$this->year-9-22", new DateTimeZone(self::TIMEZONE))
+            new DateTime("$this->year-4-30", new DateTimeZone(self::TIMEZONE))
+        );
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY . '2',
+            $this->year,
+            new DateTime("$this->year-5-2", new DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $this->year, [self::LOCALE => '国民の休日']);
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY . '1', $this->year, [self::LOCALE => '国民の休日']);
     }
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->year, Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY . '1', $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
-        $this->year = 2015;
+        $this->year = 2019;
     }
 }

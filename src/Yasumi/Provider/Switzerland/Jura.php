@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\Provider\Switzerland;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\Switzerland;
@@ -36,9 +38,9 @@ class Jura extends Switzerland
     /**
      * Initialize holidays for Jura (Switzerland).
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -70,19 +72,18 @@ class Jura extends Switzerland
      *
      * @link https://fr.wikipedia.org/wiki/Pl%C3%A9biscite_jurassien
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculatePlebisciteJurassien(): void
+    private function calculatePlebisciteJurassien(): void
     {
         if ($this->year > 1974) {
             $this->addHoliday(new Holiday(
                 'plebisciteJurassien',
                 [
-                    'fr_FR' => 'Commémoration du plébiscite jurassien',
-                    'fr_CH' => 'Commémoration du plébiscite jurassien',
+                    'fr' => 'Commémoration du plébiscite jurassien',
                 ],
                 new DateTime($this->year . '-06-23', new DateTimeZone($this->timezone)),
                 $this->locale,

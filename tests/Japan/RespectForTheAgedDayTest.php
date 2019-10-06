@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Japan;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -35,8 +37,8 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase implements YasumiTestCa
     /**
      * Tests Respect for the Aged Day after 2003. Respect for the Aged Day was established since 1996 on September
      * 15th. After 2003 it was changed to be the third monday of September.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testRespectForTheAgedDayOnAfter2003()
     {
@@ -52,8 +54,8 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase implements YasumiTestCa
     /**
      * Tests Respect for the Aged Day between 1996 and 2003. Respect for the Aged Day was established since 1996 on
      * September 15th. After 2003 it was changed to be the third monday of September.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testRespectForTheAgedDayBetween1996And2003()
     {
@@ -69,8 +71,8 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase implements YasumiTestCa
     /**
      * Tests Respect for the Aged Day between 1996 and 2003 substituted next working day (when Respect for the Aged Day
      * falls on a Sunday)
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testRespectForTheAgedDayBetween1996And2003SubstitutedNextWorkingDay()
     {
@@ -86,7 +88,7 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase implements YasumiTestCa
     /**
      * Tests Respect for the Aged Day before 1996. Respect for the Aged Day was established since 1996 on September
      * 15th. After 2003 it was changed to be the third monday of September.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testRespectForTheAgedDayBefore1996()
     {
@@ -99,7 +101,7 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase implements YasumiTestCa
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -113,7 +115,7 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase implements YasumiTestCa
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

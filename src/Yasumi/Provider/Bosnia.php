@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\Provider;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
 /**
@@ -34,9 +36,9 @@ class Bosnia extends AbstractProvider
     /**
      * Initialize holidays for Bosnia.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -55,18 +57,17 @@ class Bosnia extends AbstractProvider
         // Add Orthodox holidays
 
         $this->addHoliday(new Holiday('orthodoxChristmasDay', [
-            'en_US' => 'Orthodox Christmas Day',
-            'bs_Latn_BA' => 'Pravoslavni Božić'
-        ], new \DateTime("{$this->year}-01-07", new \DateTimeZone($this->timezone))));
-
+            'en' => 'Orthodox Christmas Day',
+            'bs_Latn' => 'Pravoslavni Božić',
+        ], new DateTime("{$this->year}-01-07", new DateTimeZone($this->timezone))));
 
         /**
          * Independence Day
          */
         if ($this->year >= 1992) {
             $this->addHoliday(new Holiday('independenceDay', [
-                'en_US' => 'Independence Day',
-                'bs_Latn_BA' => 'Dan Nezavisnosti'
+                'en' => 'Independence Day',
+                'bs_Latn' => 'Dan Nezavisnosti',
             ], new DateTime("$this->year-3-1", new DateTimeZone($this->timezone)), $this->locale));
         }
 
@@ -75,8 +76,8 @@ class Bosnia extends AbstractProvider
          */
         if ($this->year >= 1943) {
             $this->addHoliday(new Holiday('statehoodDay', [
-                'en_US' => 'Statehood Day',
-                'bs_Latn_BA' => 'Dan državnosti'
+                'en' => 'Statehood Day',
+                'bs_Latn' => 'Dan državnosti',
             ], new DateTime("$this->year-11-25", new DateTimeZone($this->timezone)), $this->locale));
         }
 
@@ -84,16 +85,16 @@ class Bosnia extends AbstractProvider
          * Day after New Years Day
          */
         $this->addHoliday(new Holiday('dayAfterNewYearsDay', [
-            'en_US' => 'Day after New Year\'s Day',
-            'ro_RO' => 'Nova godina - drugi dan'
+            'en' => 'Day after New Year\'s Day',
+            'bs_Latn' => 'Nova godina - drugi dan',
         ], new DateTime("$this->year-01-02", new DateTimeZone($this->timezone)), $this->locale));
 
         /**
          * Second Labour day
          */
         $this->addHoliday(new Holiday('secondLabourDay', [
-            'en_US' => 'Second Labour Day',
-            'ro_RO' => 'Praznik rada - drugi dan'
+            'en' => 'Second Labour Day',
+            'bs_Latn' => 'Praznik rada - drugi dan',
         ], new DateTime("$this->year-05-02", new DateTimeZone($this->timezone)), $this->locale));
     }
 }

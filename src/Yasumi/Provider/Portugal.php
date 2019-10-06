@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\Provider;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
 /**
@@ -36,9 +38,9 @@ class Portugal extends AbstractProvider
     /**
      * Initialize holidays for Portugal.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -76,17 +78,17 @@ class Portugal extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Carnation_Revolution
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateCarnationRevolutionDay(): void
+    private function calculateCarnationRevolutionDay(): void
     {
         if ($this->year >= 1974) {
             $this->addHoliday(new Holiday(
                 '25thApril',
-                ['pt_PT' => 'Dia da Liberdade'],
+                ['pt' => 'Dia da Liberdade'],
                 new DateTime("$this->year-04-25", new DateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OFFICIAL
@@ -98,14 +100,14 @@ class Portugal extends AbstractProvider
      * In Portugal, between 2013 andd 2015 (inclusive) this holiday did not happen due to government deliberation.
      * It was restored in 2016.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateCorpusChristi(): void
+    private function calculateCorpusChristi(): void
     {
-        if ($this->year <= 2013 || $this->year >= 2016) {
+        if ($this->year <= 2012 || $this->year >= 2016) {
             $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale));
         }
     }
@@ -123,17 +125,17 @@ class Portugal extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Portugal_Day
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculatePortugalDay(): void
+    private function calculatePortugalDay(): void
     {
         if ($this->year <= 1932 || $this->year >= 1974) {
             $this->addHoliday(new Holiday(
                 'portugalDay',
-                ['pt_PT' => 'Dia de Portugal'],
+                ['pt' => 'Dia de Portugal'],
                 new DateTime("$this->year-06-10", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -153,19 +155,21 @@ class Portugal extends AbstractProvider
      * presented itself as the only one that had a programme that was capable of returning to the country its lost
      * status and place Portugal on the way of progress.
      *
+     * The holiday was revoked in 2013 due to government deliberation. It was restored in 2016.
+     *
      * @link https://en.wikipedia.org/wiki/5_October_1910_revolution
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculatePortugueseRepublicDay(): void
+    private function calculatePortugueseRepublicDay(): void
     {
-        if ($this->year >= 1910) {
+        if (($this->year >= 1910 && $this->year <= 2012) || $this->year >= 2016) {
             $this->addHoliday(new Holiday(
                 'portugueseRepublic',
-                ['pt_PT' => 'Implantação da República Portuguesa'],
+                ['pt' => 'Implantação da República Portuguesa'],
                 new DateTime("$this->year-10-05", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -173,17 +177,17 @@ class Portugal extends AbstractProvider
     }
 
     /**
-     * In Portugal, between 2013 andd 2015 (inclusive) this holiday did not happen due to government deliberation.
+     * In Portugal, between 2013 and 2015 (inclusive) this holiday did not happen due to government deliberation.
      * It was restored in 2016.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateAllSaintsDay(): void
+    private function calculateAllSaintsDay(): void
     {
-        if ($this->year <= 2013 || $this->year >= 2016) {
+        if ($this->year <= 2012 || $this->year >= 2016) {
             $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale));
         }
     }
@@ -205,21 +209,23 @@ class Portugal extends AbstractProvider
      * and elsewhere, as the Acclamation War. The war established the House of Braganza as Portugal's new ruling
      * dynasty, replacing the House of Habsburg. This ended the so-called Iberian Union.
      *
+     * The holiday was revoked in 2013 due to government deliberation. It was restored in 2016.
+     *
      * @link https://pt.wikipedia.org/wiki/Restauração_da_Independência (portuguese link)
      * @link https://pt.wikipedia.org/wiki/Guerra_da_Restauração (english link)
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateRestorationOfIndependenceDay(): void
+    private function calculateRestorationOfIndependenceDay(): void
     {
         // The Wikipedia article mentions that this has been a holiday since the second of half of the XIX century.
-        if (($this->year >= 1850 && $this->year <= 2013) || $this->year >= 2016) {
+        if (($this->year >= 1850 && $this->year <= 2012) || $this->year >= 2016) {
             $this->addHoliday(new Holiday(
                 'restorationOfIndependence',
-                ['pt_PT' => 'Restauração da Independência'],
+                ['pt' => 'Restauração da Independência'],
                 new DateTime("$this->year-12-01", new DateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OFFICIAL

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\Provider\Spain;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\Spain;
@@ -27,7 +29,7 @@ use Yasumi\Provider\Spain;
  * city of Madrid, which is also the national capital of Spain. It is bounded to the south and east by Castile–La Mancha
  * and to the north and west by Castile and León.
  *
- * @link http://en.wikipedia.org/wiki/Community_of_Madrid
+ * @link https://en.wikipedia.org/wiki/Community_of_Madrid
  */
 class CommunityOfMadrid extends Spain
 {
@@ -42,9 +44,9 @@ class CommunityOfMadrid extends Spain
     /**
      * Initialize holidays for the Community Of Madrid (Spain).
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -70,18 +72,18 @@ class CommunityOfMadrid extends Spain
      * Malasaña in memory of one of the heroines of the revolt, the teenager Manuela Malasaña, who was executed by
      * French troops in the aftermath of the revolt.
      *
-     * @link http://en.wikipedia.org/wiki/Dos_de_Mayo_Uprising
+     * @link https://en.wikipedia.org/wiki/Dos_de_Mayo_Uprising
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateDosdeMayoUprisingDay(): void
+    private function calculateDosdeMayoUprisingDay(): void
     {
         $this->addHoliday(new Holiday(
             'dosdeMayoUprisingDay',
-            ['es_ES' => 'Fiesta de la Comunidad de Madrid'],
+            ['es' => 'Fiesta de la Comunidad de Madrid'],
             new DateTime("$this->year-5-2", new DateTimeZone($this->timezone)),
             $this->locale
         ));

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,18 +14,20 @@ namespace Yasumi\tests\Japan;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
  * Class for testing Health And Sports Day in Japan.
  */
-class HealthAndSportsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
+class SportsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
      */
-    public const HOLIDAY = 'healthandSportsDay';
+    public const HOLIDAY = 'sportsDay';
 
     /**
      * The year in which the holiday was first established
@@ -34,10 +36,10 @@ class HealthAndSportsDayTest extends JapanBaseTestCase implements YasumiTestCase
 
     /**
      * Tests Health And Sports Day in 2020. Health And Sports Day in 2020 is July 24th for the Olympic Games.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
-    public function testHealthAndSportsDayIn2020()
+    public function testSportsDayIn2020()
     {
         $year = 2020;
         $this->assertHoliday(
@@ -51,10 +53,10 @@ class HealthAndSportsDayTest extends JapanBaseTestCase implements YasumiTestCase
     /**
      * Tests Health And Sports Day after 2000. Health And Sports Day was established since 1996 on October 10th. After
      * 2000 it was changed to be the second monday of October.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
-    public function testHealthAndSportsDayOnAfter2000()
+    public function testSportsDayOnAfter2000()
     {
         $year = $this->generateRandomYear(2001);
         $this->assertHoliday(
@@ -68,10 +70,10 @@ class HealthAndSportsDayTest extends JapanBaseTestCase implements YasumiTestCase
     /**
      * Tests Health And Sports Day between 1996 and 2000. Health And Sports Day was established since 1996 on October
      * 10th. After 2000 it was changed to be the second monday of October.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
-    public function testHealthAndSportsDayBetween1996And2000()
+    public function testSportsDayBetween1996And2000()
     {
         $year = 1997;
         $this->assertHoliday(
@@ -85,10 +87,10 @@ class HealthAndSportsDayTest extends JapanBaseTestCase implements YasumiTestCase
     /**
      * Tests Health And Sports Day between 1996 and 2000 substituted next working day (when Health And Sports Day falls
      * on a Sunday)
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
-    public function testHealthAndSportsDayBetween1996And2000SubstitutedNextWorkingDay()
+    public function testSportsDayBetween1996And2000SubstitutedNextWorkingDay()
     {
         $year = 1999;
         $this->assertHoliday(
@@ -102,9 +104,9 @@ class HealthAndSportsDayTest extends JapanBaseTestCase implements YasumiTestCase
     /**
      * Tests Health And Sports Day before. Health And Sports Day was established since 1996 on October 10th. After
      * 2000 it was changed to be the second monday of October.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
-    public function testHealthAndSportsDayBefore1996()
+    public function testSportsDayBefore1996()
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -115,21 +117,38 @@ class HealthAndSportsDayTest extends JapanBaseTestCase implements YasumiTestCase
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * 1996-2019:Health And Sports Day
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2019),
             [self::LOCALE => '体育の日']
         );
     }
 
     /**
+     * Tests the translated name of the holiday defined in this test.
+     * 2020 - :Sports Day
+     * @throws ReflectionException
+     */
+    public function testTranslationFrom2020(): void
+    {
+        $year = 2020;
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear($year),
+            [self::LOCALE => 'スポーツの日']
+        );
+    }
+
+    /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

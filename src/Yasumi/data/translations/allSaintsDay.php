@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,26 +12,22 @@
 
 // Translations for All Saints' Day
 return [
-    'de_AT' => 'Allerheiligen',
-    'de_CH' => 'Allerheiligen',
-    'de_DE' => 'Allerheiligen',
-    'el_GR' => 'Άγιοι Πάντες',
-    'en_US' => 'All Saints\' Day',
-    'es_ES' => 'Día de todos los Santos',
-    'fi_FI' => 'Pyhäinpäivä',
+    'de' => 'Allerheiligen',
+    'el' => 'Άγιοι Πάντες',
+    'en' => 'All Saints\' Day',
+    'es' => 'Día de todos los Santos',
+    'fi' => 'Pyhäinpäivä',
     'fr_BE' => 'La Toussaint',
-    'fr_CH' => 'Toussaint',
-    'fr_FR' => 'La Toussaint',
-    'hr_HR' => 'Dan svih svetih',
-    'hu_HU' => 'Mindenszentek',
+    'fr' => 'Toussaint',
+    'hr' => 'Dan svih svetih',
+    'hu' => 'Mindenszentek',
+    'it' => 'Festa di Tutti i Santi',
     'it_CH' => 'Ognissanti',
-    'it_IT' => 'Festa di Tutti i Santi',
-    'lt_LT' => 'Visų šventųjų diena (Vėlinės)',
-    'nl_BE' => 'Allerheiligen',
-    'nl_NL' => 'Allerheiligen',
-    'pl_PL' => 'Uroczystość Wszystkich Świętych',
-    'pt_PT' => 'Dia de todos os Santos',
-    'ro_RO' => 'Ziua tuturor sfinților',
-    'sk_SK' => 'Sviatok Všetkých svätých',
-    'sv_SE' => 'alla helgons dag',
+    'lt' => 'Visų šventųjų diena (Vėlinės)',
+    'nl' => 'Allerheiligen',
+    'pl' => 'Uroczystość Wszystkich Świętych',
+    'pt' => 'Dia de todos os Santos',
+    'ro' => 'Ziua tuturor sfinților',
+    'sk' => 'Sviatok Všetkých svätých',
+    'sv' => 'alla helgons dag',
 ];

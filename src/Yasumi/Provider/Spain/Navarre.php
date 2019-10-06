@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,6 +12,8 @@
 
 namespace Yasumi\Provider\Spain;
 
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\Spain;
@@ -23,7 +25,7 @@ use Yasumi\Provider\Spain;
  * Basque Country, La Rioja, and Aragon in Spain and Aquitaine in France. The capital city is Pamplona (or Iruña in
  * Basque).
  *
- * @link http://en.wikipedia.org/wiki/Navarre
+ * @link https://en.wikipedia.org/wiki/Navarre
  */
 class Navarre extends Spain
 {
@@ -38,9 +40,9 @@ class Navarre extends Spain
     /**
      * Initialize holidays for Navarre (Spain).
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void

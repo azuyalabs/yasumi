@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\Provider\Switzerland;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\Switzerland;
@@ -36,9 +38,9 @@ class Ticino extends Switzerland
     /**
      * Initialize holidays for Ticino (Switzerland).
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -77,23 +79,20 @@ class Ticino extends Switzerland
      *
      * @link https://en.wikipedia.org/wiki/Feast_of_Saints_Peter_and_Paul
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateStPeterPaul(): void
+    private function calculateStPeterPaul(): void
     {
         $this->addHoliday(new Holiday(
             'stPeterPaul',
             [
-                'it_IT' => 'Santi Pietro e Paolo',
-                'it_CH' => 'Santi Pietro e Paolo',
-                'en_US' => 'Feast of Saints Peter and Paul',
-                'fr_FR' => 'Solennité des saints Pierre et Paul',
-                'fr_CH' => 'Solennité des saints Pierre et Paul',
-                'de_DE' => 'St. Peter und Paul',
-                'de_CH' => 'St. Peter und Paul',
+                'it' => 'Santi Pietro e Paolo',
+                'en' => 'Feast of Saints Peter and Paul',
+                'fr' => 'Solennité des saints Pierre et Paul',
+                'de' => 'St. Peter und Paul',
             ],
             new DateTime($this->year . '-06-29', new DateTimeZone($this->timezone)),
             $this->locale,

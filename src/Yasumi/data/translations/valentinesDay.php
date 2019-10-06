@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,16 +12,15 @@
 
 // Translations for Valentine's Day
 return [
-    'de_CH' => 'Valentinstag',
-    'el_GR' => 'Αγίου Βαλεντίνου',
-    'en_US' => 'Valentine\'s Day',
-    'es_ES' => 'San Valentín',
-    'fr_BE' => 'Saint-Valentin',
-    'fr_CH' => 'Saint-Valentin',
-    'it_CH' => 'San Valentino',
-    'ja_JP' => 'バレンタイン·デー',
-    'nl_BE' => 'Valentijnsdag',
-    'nl_NL' => 'Valentijnsdag',
-    'pl_PL' => 'Walentynki',
-    'pt_PT' => 'Dia dos Namorados',
+    'de' => 'Valentinstag',
+    'el' => 'Αγίου Βαλεντίνου',
+    'en' => 'Valentine\'s Day',
+    'es' => 'San Valentín',
+    'fr' => 'Saint-Valentin',
+    'it' => 'San Valentino',
+    'ja' => 'バレンタイン·デー',
+    'ko' => '발렌타인 데이',
+    'nl' => 'Valentijnsdag',
+    'pl' => 'Walentynki',
+    'pt' => 'Dia dos Namorados',
 ];

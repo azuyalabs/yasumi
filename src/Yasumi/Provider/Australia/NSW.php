@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -15,6 +15,7 @@ namespace Yasumi\Provider\Australia;
 use DateInterval;
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia;
 
@@ -36,30 +37,18 @@ class NSW extends Australia
      * Initialize holidays for New South Wales (Australia).
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
     {
         parent::initialize();
 
-        $this->addHoliday(new Holiday('easter', ['en_AU' => 'Easter Sunday'], $this->calculateEaster($this->year, $this->timezone), $this->locale));
+        $this->addHoliday(new Holiday('easter', [], $this->calculateEaster($this->year, $this->timezone), $this->locale));
         $this->addHoliday($this->easterSaturday($this->year, $this->timezone, $this->locale));
         $this->calculateQueensBirthday();
         $this->calculateLabourDay();
         $this->calculateBankHoliday();
-    }
-
-    /**
-     * Labour Day
-     *
-     * @throws \Exception
-     */
-    public function calculateLabourDay(): void
-    {
-        $date = new DateTime("first monday of october $this->year", new DateTimeZone($this->timezone));
-
-        $this->addHoliday(new Holiday('labourDay', [], $date, $this->locale));
     }
 
     /**
@@ -69,28 +58,28 @@ class NSW extends Australia
      * on a date based on a certain number of days after March 21st. The date of Easter Day was defined by the Council
      * of Nicaea in AD325 as the Sunday after the first full moon which falls on or after the Spring Equinox.
      *
-     * @link http://en.wikipedia.org/wiki/Easter
+     * @link https://en.wikipedia.org/wiki/Easter
      *
-     * @param int    $year     the year for which Easter Saturday need to be created
+     * @param int $year the year for which Easter Saturday need to be created
      * @param string $timezone the timezone in which Easter Saturday is celebrated
-     * @param string $locale   the locale for which Easter Saturday need to be displayed in.
-     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     * @param string $locale the locale for which Easter Saturday need to be displayed in.
+     * @param string $type The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return \Yasumi\Holiday
+     * @return Holiday
      *
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function easterSaturday($year, $timezone, $locale, $type = Holiday::TYPE_OFFICIAL): Holiday
+    private function easterSaturday($year, $timezone, $locale, $type = null): Holiday
     {
         return new Holiday(
             'easterSaturday',
-            ['en_AU' => 'Easter Saturday'],
+            ['en' => 'Easter Saturday'],
             $this->calculateEaster($year, $timezone)->sub(new DateInterval('P1D')),
             $locale,
-            $type
+            $type ?? Holiday::TYPE_OFFICIAL
         );
     }
 
@@ -109,29 +98,41 @@ class NSW extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function calculateQueensBirthday(): void
+    private function calculateQueensBirthday(): void
     {
         $this->calculateHoliday(
             'queensBirthday',
-            ['en_AU' => "Queen's Birthday"],
+            ['en' => "Queen's Birthday"],
             new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->timezone)),
             false,
             false
         );
     }
-    
+
+    /**
+     * Labour Day
+     *
+     * @throws \Exception
+     */
+    private function calculateLabourDay(): void
+    {
+        $date = new DateTime("first monday of october $this->year", new DateTimeZone($this->timezone));
+
+        $this->addHoliday(new Holiday('labourDay', [], $date, $this->locale));
+    }
+
     /**
      * Bank Holiday.
      *
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function calculateBankHoliday(): void
+    private function calculateBankHoliday(): void
     {
         $this->calculateHoliday(
             'bankHoliday',
-            ['en_AU' => 'Bank Holiday'],
-            new DateTime('first monday of august '. $this->year, new DateTimeZone($this->timezone)),
+            ['en' => 'Bank Holiday'],
+            new DateTime('first monday of august ' . $this->year, new DateTimeZone($this->timezone)),
             false,
             false,
             Holiday::TYPE_BANK

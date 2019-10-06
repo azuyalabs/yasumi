@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,8 +12,6 @@
 
 namespace Yasumi\Filters;
 
-use Countable;
-use FilterIterator;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +24,7 @@ use Yasumi\Holiday;
  * $holidays = Yasumi::create('Netherlands', 2015);
  * $official = new OfficialHolidaysFilter($holidays->getIterator());
  */
-class OfficialHolidaysFilter extends FilterIterator implements Countable
+class OfficialHolidaysFilter extends AbstractFilter
 {
     /**
      * Checks whether the current element of the iterator is an official holiday.
@@ -36,19 +34,5 @@ class OfficialHolidaysFilter extends FilterIterator implements Countable
     public function accept(): bool
     {
         return $this->getInnerIterator()->current()->getType() === Holiday::TYPE_OFFICIAL;
-    }
-
-    /**
-     * @return integer Returns the number of filtered holidays.
-     */
-    public function count(): int
-    {
-        $days = \array_keys(\iterator_to_array($this));
-
-        \array_walk($days, function (&$day) {
-            $day = \str_replace('substituteHoliday:', '', $day);
-        });
-
-        return \count(\array_unique($days));
     }
 }

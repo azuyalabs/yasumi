@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,9 +12,9 @@
 
 // Translations for St. Joseph's Day
 return [
-    'de_CH' => 'Josephstag',
-    'en_US' => 'St. Joseph\'s Day',
-    'es_ES' => 'San José',
-    'fr_CH' => 'Saint-Joseph',
-    'it_CH' => 'San Giuseppe',
+    'de' => 'Josephstag',
+    'en' => 'St. Joseph\'s Day',
+    'es' => 'San José',
+    'fr' => 'Saint-Joseph',
+    'it' => 'San Giuseppe',
 ];

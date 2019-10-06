@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -15,7 +15,10 @@ namespace Yasumi\Provider;
 use DateInterval;
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
+use Yasumi\SubstituteHoliday;
 
 /**
  * Provider for all holidays in the USA.
@@ -33,9 +36,9 @@ class USA extends AbstractProvider
     /**
      * Initialize holidays for the USA.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -67,7 +70,7 @@ class USA extends AbstractProvider
      * Honors Dr. Martin Luther King, Jr., Civil Rights leader, who was actually born on January 15, 1929; combined
      * with other holidays in several states. It is observed on the third Monday of January since 1986.
      *
-     * @link http://en.wikipedia.org/wiki/Martin_Luther_King,_Jr._Day
+     * @link https://en.wikipedia.org/wiki/Martin_Luther_King,_Jr._Day
      *
      * @throws \Exception
      */
@@ -75,8 +78,36 @@ class USA extends AbstractProvider
     {
         if ($this->year >= 1986) {
             $this->addHoliday(new Holiday('martinLutherKingDay', [
-                'en_US' => 'Dr. Martin Luther King Jr\'s Birthday',
+                'en' => 'Dr. Martin Luther King Jr\'s Birthday',
             ], new DateTime("third monday of january $this->year", new DateTimeZone($this->timezone)), $this->locale));
+        }
+    }
+
+    /**
+     * Washington's Birthday.
+     *
+     * Washington's Birthday is a United States federal holiday celebrated on the third Monday of February in honor
+     * of George Washington, the first President of the United States. Colloquially, it is widely known as
+     * Presidents Day and is often an occasion to remember all the presidents.
+     *
+     * Washington's Birthday was first declared a federal holiday by an 1879 act of Congress. The Uniform Holidays
+     * Act, 1968 shifted the date of the commemoration of Washington's Birthday from February 22 to the third Monday
+     * in February.
+     *
+     * @link https://en.wikipedia.org/wiki/Washington%27s_Birthday
+     *
+     * @throws \Exception
+     */
+    private function calculateWashingtonsBirthday(): void
+    {
+        if ($this->year >= 1879) {
+            $date = new DateTime("$this->year-2-22", new DateTimeZone($this->timezone));
+            if ($this->year >= 1968) {
+                $date = new DateTime("third monday of february $this->year", new DateTimeZone($this->timezone));
+            }
+            $this->addHoliday(new Holiday('washingtonsBirthday', [
+                'en' => 'Washington\'s Birthday',
+            ], $date, $this->locale));
         }
     }
 
@@ -88,7 +119,7 @@ class USA extends AbstractProvider
      * Memorial Day was first declared a federal holiday on May 1, 1865. The Uniform Holidays Act, 1968 shifted the
      * date of the commemoration of Memorial Day from May 30 to the last Monday in May.
      *
-     * @link http://en.wikipedia.org/wiki/Memorial_Day
+     * @link https://en.wikipedia.org/wiki/Memorial_Day
      *
      * @throws \Exception
      */
@@ -100,7 +131,7 @@ class USA extends AbstractProvider
                 $date = new DateTime("last monday of may $this->year", new DateTimeZone($this->timezone));
             }
             $this->addHoliday(new Holiday('memorialDay', [
-                'en_US' => 'Memorial Day',
+                'en' => 'Memorial Day',
             ], $date, $this->locale));
         }
     }
@@ -113,7 +144,7 @@ class USA extends AbstractProvider
      * from Great Britain. In case Independence Day falls on a Sunday, a substituted holiday is observed the
      * following Monday. If it falls on a Saturday, a substituted holiday is observed the previous Friday.
      *
-     * @link http://en.wikipedia.org/wiki/Independence_Day_(United_States)
+     * @link https://en.wikipedia.org/wiki/Independence_Day_(United_States)
      *
      * @throws \Exception
      */
@@ -121,7 +152,7 @@ class USA extends AbstractProvider
     {
         if ($this->year >= 1776) {
             $this->addHoliday(new Holiday('independenceDay', [
-                'en_US' => 'Independence Day',
+                'en' => 'Independence Day',
             ], new DateTime("$this->year-7-4", new DateTimeZone($this->timezone)), $this->locale));
         }
     }
@@ -132,7 +163,7 @@ class USA extends AbstractProvider
      * Labor Day in the United States is a holiday celebrated on the first Monday in September. It is a celebration
      * of the American labor movement and is dedicated to the social and economic achievements of workers.
      *
-     * @link http://en.wikipedia.org/wiki/Labor_Day
+     * @link https://en.wikipedia.org/wiki/Labor_Day
      *
      * @throws \Exception
      */
@@ -142,7 +173,7 @@ class USA extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'labourDay',
                 [
-                    'en_US' => 'Labour Day',
+                    'en' => 'Labour Day',
                 ],
                 new DateTime("first monday of september $this->year", new DateTimeZone($this->timezone)),
                 $this->locale
@@ -159,7 +190,7 @@ class USA extends AbstractProvider
      * though people have celebrated Columbus's voyage since the colonial period. Since 1970 (Oct. 12), the holiday
      * has been fixed to the second Monday in October.
      *
-     * @link http://en.wikipedia.org/wiki/Columbus_Day
+     * @link https://en.wikipedia.org/wiki/Columbus_Day
      *
      * @throws \Exception
      */
@@ -171,7 +202,7 @@ class USA extends AbstractProvider
                 $date = new DateTime("second monday of october $this->year", new DateTimeZone($this->timezone));
             }
             $this->addHoliday(new Holiday('columbusDay', [
-                'en_US' => 'Columbus Day',
+                'en' => 'Columbus Day',
             ], $date, $this->locale));
         }
     }
@@ -183,17 +214,17 @@ class USA extends AbstractProvider
      * also known as veterans. It is a federal holiday that is observed on November 11 since 1919. Congress amended
      * a bill on June 1, 1954, replacing "Armistice" with "Veterans," and it has been known as Veterans Day since.
      *
-     * @link http://en.wikipedia.org/wiki/Veterans_Day
+     * @link https://en.wikipedia.org/wiki/Veterans_Day
      *
      * @throws \Exception
      */
     private function calculateVeteransDay(): void
     {
         if ($this->year >= 1919) {
-            $name = ($this->year < 1954) ? 'Armistice Day' : 'Veterans Day';
+            $name = $this->year < 1954 ? 'Armistice Day' : 'Veterans Day';
 
             $this->addHoliday(new Holiday('veteransDay', [
-                'en_US' => $name,
+                'en' => $name,
             ], new DateTime("$this->year-11-11", new DateTimeZone($this->timezone)), $this->locale));
         }
     }
@@ -206,7 +237,7 @@ class USA extends AbstractProvider
      * President Abraham Lincoln proclaimed a national day of "Thanksgiving and Praise to our beneficent Father who
      * dwelleth in the Heavens", to be celebrated on the last Thursday in November.
      *
-     * @link http://en.wikipedia.org/wiki/Thanksgiving_(United_States)
+     * @link https://en.wikipedia.org/wiki/Thanksgiving_(United_States)
      *
      * @throws \Exception
      */
@@ -216,39 +247,11 @@ class USA extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'thanksgivingDay',
                 [
-                    'en_US' => 'Thanksgiving Day',
+                    'en' => 'Thanksgiving Day',
                 ],
                 new DateTime("fourth thursday of november $this->year", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
-        }
-    }
-
-    /**
-     * Washington's Birthday.
-     *
-     * Washington's Birthday is a United States federal holiday celebrated on the third Monday of February in honor
-     * of George Washington, the first President of the United States. Colloquially, it is widely known as
-     * Presidents Day and is often an occasion to remember all the presidents.
-     *
-     * Washington's Birthday was first declared a federal holiday by an 1879 act of Congress. The Uniform Holidays
-     * Act, 1968 shifted the date of the commemoration of Washington's Birthday from February 22 to the third Monday
-     * in February.
-     *
-     * @link http://en.wikipedia.org/wiki/Washington%27s_Birthday
-     *
-     * @throws \Exception
-     */
-    private function calculateWashingtonsBirthday(): void
-    {
-        if ($this->year >= 1879) {
-            $date = new DateTime("$this->year-2-22", new DateTimeZone($this->timezone));
-            if ($this->year >= 1968) {
-                $date = new DateTime("third monday of february $this->year", new DateTimeZone($this->timezone));
-            }
-            $this->addHoliday(new Holiday('washingtonsBirthday', [
-                'en_US' => 'Washington\'s Birthday',
-            ], $date, $this->locale));
         }
     }
 
@@ -258,46 +261,38 @@ class USA extends AbstractProvider
      * When New Year's Day, Independence Day, or Christmas Day falls on a Saturday, the previous day is also a holiday.
      * When one of these holidays fall on a Sunday, the next day is also a holiday.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateSubstituteHolidays(): void
     {
-        $datesIterator     = $this->getIterator();
-        $substituteHoliday = null;
-
         // Loop through all defined holidays
-        while ($datesIterator->valid()) {
+        foreach ($this->getHolidays() as $holiday) {
+            $date = null;
 
-            // Only process New Year's Day, Independence Day, or Christmas Day
-            if (\in_array(
-                $datesIterator->current()->shortName,
-                ['newYearsDay', 'independenceDay', 'christmasDay'],
-                true
-            )) {
-
-                // Substitute holiday is on a Monday in case the holiday falls on a Sunday
-                if (0 === (int)$datesIterator->current()->format('w')) {
-                    $substituteHoliday = clone $datesIterator->current();
-                    $substituteHoliday->add(new DateInterval('P1D'));
-                }
-
-                // Substitute holiday is on a Friday in case the holiday falls on a Saturday
-                if (6 === (int)$datesIterator->current()->format('w')) {
-                    $substituteHoliday = clone $datesIterator->current();
-                    $substituteHoliday->sub(new DateInterval('P1D'));
-                }
-
-                // Add substitute holiday
-                if (null !== $substituteHoliday) {
-                    $this->addHoliday(new Holiday('substituteHoliday:' . $substituteHoliday->shortName, [
-                        'en_US' => $substituteHoliday->getName() . ' observed',
-                    ], $substituteHoliday, $this->locale));
-                }
+            // Substitute holiday is on a Monday in case the holiday falls on a Sunday
+            if (0 === (int)$holiday->format('w')) {
+                $date = clone $holiday;
+                $date->add(new DateInterval('P1D'));
             }
-            $datesIterator->next();
+
+            // Substitute holiday is on a Friday in case the holiday falls on a Saturday
+            if (6 === (int)$holiday->format('w')) {
+                $date = clone $holiday;
+                $date->sub(new DateInterval('P1D'));
+            }
+
+            // Add substitute holiday
+            if ($date instanceof Holiday) {
+                $this->addHoliday(new SubstituteHoliday(
+                    $holiday,
+                    [],
+                    $date,
+                    $this->locale
+                ));
+            }
         }
     }
 }

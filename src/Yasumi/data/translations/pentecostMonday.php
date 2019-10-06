@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,21 +12,16 @@
 
 // Translations for Whitmonday
 return [
-    'da_DK' => '2. pinsedag',
-    'de_AT' => 'Pfingstmontag',
-    'de_CH' => 'Pfingstmontag',
-    'de_DE' => 'Pfingstmontag',
-    'el_GR' => 'Αγίου Πνεύματος',
-    'en_IE' => 'Whitmonday',
-    'en_US' => 'Whitmonday',
-    'fr_BE' => 'Lundi de Pentecôte',
-    'fr_CH' => 'Lundi de Pentecôte',
-    'fr_FR' => 'Lundi de Pentecôte',
-    'ga_IE' => 'Luan Cincíse',
-    'hu_HU' => 'Pünkösdhétfő',
-    'it_CH' => 'Lunedi di Pentecoste',
-    'nb_NO' => 'Andre pinsedag',
+    'da' => '2. pinsedag',
+    'de' => 'Pfingstmontag',
+    'el' => 'Αγίου Πνεύματος',
+    'en' => 'Whitmonday',
+    'fr' => 'Lundi de Pentecôte',
+    'ga' => 'Luan Cincíse',
+    'hu' => 'Pünkösdhétfő',
+    'it' => 'Lunedi di Pentecoste',
+    'nb' => 'Andre pinsedag',
+    'nl' => 'Tweede pinksterdag',
     'nl_BE' => 'Pinkstermaandag',
-    'nl_NL' => 'Tweede Pinksterdag',
-    'ro_RO' => 'A doua zi de Rusalii',
+    'ro' => 'A doua zi de Rusalii',
 ];

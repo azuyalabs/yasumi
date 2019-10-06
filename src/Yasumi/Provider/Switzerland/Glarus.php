@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\Provider\Switzerland;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\Switzerland;
@@ -36,9 +38,9 @@ class Glarus extends Switzerland
     /**
      * Initialize holidays for Glarus (Switzerland).
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -67,18 +69,17 @@ class Glarus extends Switzerland
      *
      * @link https://en.wikipedia.org/wiki/Battle_of_N%C3%A4fels
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateNafelserFahrt(): void
+    private function calculateNafelserFahrt(): void
     {
         if ($this->year >= 1389) {
             $date = new DateTime('First Thursday of ' . $this->year . '-04', new DateTimeZone($this->timezone));
             $this->addHoliday(new Holiday('nafelserFahrt', [
-                'de_DE' => 'Näfelser Fahrt',
-                'de_CH' => 'Näfelser Fahrt',
+                'de' => 'Näfelser Fahrt',
             ], $date, $this->locale, Holiday::TYPE_OTHER));
         }
     }

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Switzerland\Jura;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -34,8 +36,8 @@ class PlebisciteJurassienTest extends JuraBaseTestCase implements YasumiTestCase
 
     /**
      * Tests Plébiscite jurassien on or after 1975.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testInstaurationRepubliqueOnAfter1975()
     {
@@ -50,7 +52,7 @@ class PlebisciteJurassienTest extends JuraBaseTestCase implements YasumiTestCase
 
     /**
      * Tests Plébiscite jurassien before 1975.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testInstaurationRepubliqueBefore1975()
     {
@@ -63,7 +65,7 @@ class PlebisciteJurassienTest extends JuraBaseTestCase implements YasumiTestCase
 
     /**
      * Tests translated name of Plébiscite jurassien.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -77,7 +79,7 @@ class PlebisciteJurassienTest extends JuraBaseTestCase implements YasumiTestCase
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

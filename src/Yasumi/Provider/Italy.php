@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\Provider;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
 /**
@@ -32,9 +34,9 @@ class Italy extends AbstractProvider
     /**
      * Initialize holidays for Italy.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -69,20 +71,20 @@ class Italy extends AbstractProvider
      * Nazi occupation of the country. On May 27, 1949, bill 260 made the anniversary a permanent, annual national
      * holiday.
      *
-     * @link http://en.wikipedia.org/wiki/Liberation_Day_%28Italy%29
+     * @link https://en.wikipedia.org/wiki/Liberation_Day_%28Italy%29
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      * @throws \Exception
      */
-    public function calculateLiberationDay(): void
+    private function calculateLiberationDay(): void
     {
         if ($this->year >= 1949) {
             $this->addHoliday(new Holiday(
                 'liberationDay',
-                ['it_IT' => 'Festa della Liberazione'],
+                ['it' => 'Festa della Liberazione'],
                 new DateTime("$this->year-4-25", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -97,20 +99,20 @@ class Italy extends AbstractProvider
      * in 1946, in which the Italian people were called to the polls to decide on the form of government, following
      * the Second World War and the fall of Fascism.
      *
-     * @link http://en.wikipedia.org/wiki/Festa_della_Repubblica
+     * @link https://en.wikipedia.org/wiki/Festa_della_Repubblica
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      * @throws \Exception
      */
-    public function calculateRepublicDay(): void
+    private function calculateRepublicDay(): void
     {
         if ($this->year >= 1946) {
             $this->addHoliday(new Holiday(
                 'republicDay',
-                ['it_IT' => 'Festa della Republica'],
+                ['it' => 'Festa della Repubblica'],
                 new DateTime("$this->year-6-2", new DateTimeZone($this->timezone)),
                 $this->locale
             ));

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Switzerland;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -44,8 +46,8 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements YasumiTest
 
     /**
      * Tests National Day on or after 1994.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testNationalDayOnAfter1994()
     {
@@ -60,9 +62,9 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements YasumiTest
 
     /**
      * Tests National Day on or after 1899 and before 1994.
-     * @throws \ReflectionException
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testNationalDayOnAfter1899()
     {
@@ -78,9 +80,9 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements YasumiTest
 
     /**
      * Tests National Day on 1891
-     * @throws \ReflectionException
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testNationalDayOn1891()
     {
@@ -96,7 +98,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements YasumiTest
 
     /**
      * Tests National Day before 1891.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testNationalDayBefore1891()
     {
@@ -109,7 +111,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements YasumiTest
 
     /**
      * Tests National Day between 1891 and 1899.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testNationalDayBetween1891And1899()
     {
@@ -119,7 +121,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements YasumiTest
 
     /**
      * Tests translated name of National Day.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -133,7 +135,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements YasumiTest
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

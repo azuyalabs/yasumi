@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,6 +12,8 @@
 
 namespace Yasumi\Provider;
 
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
 /**
@@ -35,9 +37,9 @@ class Ukraine extends AbstractProvider
     /**
      * Initialize holidays for Ukraine.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -65,12 +67,12 @@ class Ukraine extends AbstractProvider
     /**
      * Christmas Day.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateChristmasDay(): void
+    private function calculateChristmasDay(): void
     {
         $this->addHoliday(new Holiday(
             'christmasDay',
@@ -85,16 +87,16 @@ class Ukraine extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/International_Workers%27_Day#Ukraine
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateSecondInternationalWorkersDay(): void
+    private function calculateSecondInternationalWorkersDay(): void
     {
         $this->addHoliday(new Holiday('secondInternationalWorkersDay', [
-            'uk_UA' => 'День міжнародної солідарності трудящих',
-            'ru_UA' => 'День международной солидарности трудящихся'
+            'uk' => 'День міжнародної солідарності трудящих',
+            'ru' => 'День международной солидарности трудящихся',
         ], new \DateTime("$this->year-05-02", new \DateTimeZone($this->timezone)), $this->locale));
     }
 
@@ -109,16 +111,16 @@ class Ukraine extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Victory_Day_over_Nazism_in_World_War_II
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateVictoryDay(): void
+    private function calculateVictoryDay(): void
     {
         $this->addHoliday(new Holiday(
             'victoryDay',
-            ['uk_UA' => 'День перемоги', 'ru_UA' => 'День победы'],
+            ['uk' => 'День перемоги', 'ru' => 'День победы'],
             new \DateTime("$this->year-05-09", new \DateTimeZone($this->timezone)),
             $this->locale
         ));
@@ -131,12 +133,12 @@ class Ukraine extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Constitution_Day_(Ukraine)
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateConstitutionDay(): void
+    private function calculateConstitutionDay(): void
     {
         if ($this->year < 1996) {
             return;
@@ -144,7 +146,7 @@ class Ukraine extends AbstractProvider
 
         $this->addHoliday(new Holiday(
             'constitutionDay',
-            ['uk_UA' => 'День Конституції', 'ru_UA' => 'День Конституции'],
+            ['uk' => 'День Конституції', 'ru' => 'День Конституции'],
             new \DateTime("$this->year-06-28", new \DateTimeZone($this->timezone)),
             $this->locale
         ));
@@ -159,12 +161,12 @@ class Ukraine extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Declaration_of_Independence_of_Ukraine
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateIndependenceDay(): void
+    private function calculateIndependenceDay(): void
     {
         if ($this->year < 1991) {
             return;
@@ -172,7 +174,7 @@ class Ukraine extends AbstractProvider
 
         $this->addHoliday(new Holiday(
             'independenceDay',
-            ['uk_UA' => 'День Незалежності', 'ru_UA' => 'День Независимости'],
+            ['uk' => 'День Незалежності', 'ru' => 'День Независимости'],
             new \DateTime("$this->year-08-24", new \DateTimeZone($this->timezone)),
             $this->locale
         ));
@@ -188,12 +190,12 @@ class Ukraine extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Defender_of_Ukraine_Day
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateDefenderOfUkraineDay(): void
+    private function calculateDefenderOfUkraineDay(): void
     {
         if ($this->year < 2015) {
             return;
@@ -201,14 +203,14 @@ class Ukraine extends AbstractProvider
 
         $this->addHoliday(new Holiday(
             'defenderOfUkraineDay',
-            ['uk_UA' => 'День захисника України', 'ru_UA' => 'День Защитника Украины'],
+            ['uk' => 'День захисника України', 'ru' => 'День Защитника Украины'],
             new \DateTime("$this->year-10-14", new \DateTimeZone($this->timezone)),
             $this->locale
         ));
     }
 
     /**
-     * @param int    $year
+     * @param int $year
      * @param string $timezone
      *
      * @return \DateTime

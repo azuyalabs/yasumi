@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -14,6 +14,7 @@ namespace Yasumi\Provider\Australia\Tasmania;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Provider\Australia\Tasmania;
 
 /**
@@ -33,7 +34,7 @@ class KingIsland extends Tasmania
      * Initialize holidays for King Island (Australia).
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -48,11 +49,11 @@ class KingIsland extends Tasmania
      *
      * @throws \Exception
      */
-    public function calculateKingIslandShow(): void
+    private function calculateKingIslandShow(): void
     {
         $this->calculateHoliday(
             'kingIslandShow',
-            ['en_AU' => 'King Island Show'],
+            ['en' => 'King Island Show'],
             new DateTime('first tuesday of march ' . $this->year, new DateTimeZone($this->timezone)),
             false,
             false

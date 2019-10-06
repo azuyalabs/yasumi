@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,12 +12,13 @@
 
 // Translations for St. John's Day
 return [
-    'el_GR' => 'Σύναξις Προφήτου Προδρόμου και Βαπτιστού Ιωάννου',
-    'en_US' => 'St. John\'s Day',
-    'es_ES' => 'Sant Joan',
-    'et_EE' => 'Jaanipäev',
-    'fi_FI' => 'Juhannuspäivä',
-    'lt_LT' => 'Rasos ir Joninių diena',
-    'lv_LV' => 'Jāņi',
-    'sv_SE' => 'midsommardagen',
+    'da' => 'Sankthansaften',
+    'el' => 'Σύναξις Προφήτου Προδρόμου και Βαπτιστού Ιωάννου',
+    'en' => 'St. John\'s Day',
+    'es' => 'Sant Joan',
+    'et' => 'Jaanipäev',
+    'fi' => 'Juhannuspäivä',
+    'lt' => 'Rasos ir Joninių diena',
+    'lv' => 'Jāņi',
+    'sv' => 'midsommardagen',
 ];

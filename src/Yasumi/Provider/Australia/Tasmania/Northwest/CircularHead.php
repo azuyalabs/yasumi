@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -15,6 +15,7 @@ namespace Yasumi\Provider\Australia\Tasmania\Northwest;
 use DateInterval;
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia\Tasmania\Northwest;
 
@@ -35,7 +36,7 @@ class CircularHead extends Northwest
      * Initialize holidays for Circular Head (Australia).
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -50,10 +51,10 @@ class CircularHead extends Northwest
      *
      * @throws \Exception
      */
-    public function calculateAGFEST(): void
+    private function calculateAGFEST(): void
     {
         $date = new DateTime('first thursday of may ' . $this->year, new DateTimeZone($this->timezone));
         $date = $date->add(new DateInterval('P1D'));
-        $this->addHoliday(new Holiday('agfest', ['en_AU' => 'AGFEST'], $date, $this->locale));
+        $this->addHoliday(new Holiday('agfest', ['en' => 'AGFEST'], $date, $this->locale));
     }
 }

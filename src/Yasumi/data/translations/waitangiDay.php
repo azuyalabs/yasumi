@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -12,6 +12,5 @@
 
 // Translations for Waitangi Day
 return [
-    'en_NZ' => 'Waitangi Day',
-    'en_US' => 'Waitangi Day',
+    'en' => 'Waitangi Day',
 ];
