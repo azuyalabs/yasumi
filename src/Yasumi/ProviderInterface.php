@@ -24,5 +24,5 @@ interface ProviderInterface
     /**
      * Initialize country holidays.
      */
-    public function initialize();
+    public function initialize(): void;
 }

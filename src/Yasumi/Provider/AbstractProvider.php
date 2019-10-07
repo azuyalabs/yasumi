@@ -120,7 +120,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     /**
      * Clear all holidays.
      */
-    protected function clearHolidays()
+    protected function clearHolidays(): void
     {
         $this->holidays = [];
     }
@@ -149,7 +149,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * @param Holiday $holiday Holiday instance (representing a holiday) to be added to the internal list
      *                         of holidays of this country.
      */
-    public function addHoliday(Holiday $holiday)
+    public function addHoliday(Holiday $holiday): void
     {
         if ($this->globalTranslations instanceof TranslationsInterface) {
             $holiday->mergeGlobalTranslations($this->globalTranslations);

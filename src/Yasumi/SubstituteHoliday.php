@@ -102,7 +102,7 @@ class SubstituteHoliday extends Holiday
      *
      * @param TranslationsInterface $globalTranslations global translations
      */
-    public function mergeGlobalTranslations(TranslationsInterface $globalTranslations)
+    public function mergeGlobalTranslations(TranslationsInterface $globalTranslations): void
     {
         $this->substituteHolidayTranslations = $globalTranslations->getTranslations('substituteHoliday');
 

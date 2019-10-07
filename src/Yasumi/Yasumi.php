@@ -115,7 +115,7 @@ class Yasumi
      *                       between 1000 and 9999.
      * @param string $locale The locale to use. If empty we'll use the default locale (en_US)
      *
-     * @return AbstractProvider An instance of class $class is created and returned
+     * @return ProviderInterface An instance of class $class is created and returned
      *
      * @throws RuntimeException          If no such holiday provider is found
      * @throws InvalidYearException      if the year parameter is not between 1000 and 9999
