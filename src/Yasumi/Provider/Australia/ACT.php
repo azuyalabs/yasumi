@@ -161,12 +161,16 @@ class ACT extends Australia
      */
     private function calculateCanberraDay(): void
     {
-        if ($this->year < 2007) {
-            $date = new DateTime("third monday of march $this->year", new DateTimeZone($this->timezone));
-        } else {
-            $date = new DateTime("second monday of march $this->year", new DateTimeZone($this->timezone));
-        }
-        $this->addHoliday(new Holiday('canberraDay', ['en' => 'Canberra Day'], $date, $this->locale));
+        $datePattern = $this->year < 2007 ? "third monday of march $this->year" : "second monday of march $this->year";
+
+        $this->addHoliday(
+            new Holiday(
+                'canberraDay',
+                ['en' => 'Canberra Day'],
+                new DateTime($datePattern, new DateTimeZone($this->timezone)),
+                $this->locale
+            )
+        );
     }
 
     /**
