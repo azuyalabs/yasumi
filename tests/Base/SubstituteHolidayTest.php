@@ -138,12 +138,35 @@ class SubstituteHolidayTest extends TestCase
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
         $translationsStub->expects($this->at(0))->method('getTranslations')->with($this->equalTo('substituteHoliday'))->willReturn([$locale => 'foo']);
         $translationsStub->expects($this->at(1))->method('getTranslations')->with($this->equalTo('substituteHoliday:testHoliday'))->willReturn([$locale => 'foo']);
-        $translationsStub->expects($this->at(2))->method('getTranslations')->with($this->equalTo('testHoliday'))->willReturn([$locale => 'foo']);
+        $translationsStub->expects($this->at(2))->method('getTranslations')->with($this->equalTo('testHoliday'))->willReturn(['en' => 'foo']);
 
         $substitute->mergeGlobalTranslations($translationsStub);
 
         $this->assertIsString($substitute->getName());
         $this->assertEquals($translation, $substitute->getName());
+    }
+
+    /**
+     * Tests the getName function of the SubstituteHoliday object when substitute holiday pattern uses fallback.
+     * @throws \Exception
+     */
+    public function testSubstituteHolidayGetNameWithPatternFallback(): void
+    {
+        $name        = 'testHoliday';
+        $translation = 'My Holiday';
+        $locale      = 'en_US';
+        $holiday     = new Holiday($name, [], new DateTime('2019-01-01'), $locale);
+        $substitute  = new SubstituteHoliday($holiday, [], new DateTime('2019-01-02'), $locale);
+
+        $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
+        $translationsStub->expects($this->at(0))->method('getTranslations')->with($this->equalTo('substituteHoliday'))->willReturn(['en' => '{0} obs']);
+        $translationsStub->expects($this->at(1))->method('getTranslations')->with($this->equalTo('substituteHoliday:testHoliday'))->willReturn([]);
+        $translationsStub->expects($this->at(2))->method('getTranslations')->with($this->equalTo('testHoliday'))->willReturn([$locale => $translation]);
+
+        $substitute->mergeGlobalTranslations($translationsStub);
+
+        $this->assertIsString($substitute->getName());
+        $this->assertEquals('My Holiday obs', $substitute->getName());
     }
 
     /**
