@@ -85,7 +85,7 @@ class Finland extends AbstractProvider
      */
     private function calculateStJohnsDay(): void
     {
-        $stJohnsDay = ($this->year < 1955) ? "$this->year-6-24" : "$this->year-6-20 this saturday";
+        $stJohnsDay = $this->year < 1955 ? "$this->year-6-24" : "$this->year-6-20 this saturday";
 
         $this->addHoliday(new Holiday(
             'stJohnsDay',

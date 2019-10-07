@@ -140,7 +140,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
             return 0;
         }
 
-        return ($dateA < $dateB) ? -1 : 1;
+        return $dateA < $dateB ? -1 : 1;
     }
 
     /**
