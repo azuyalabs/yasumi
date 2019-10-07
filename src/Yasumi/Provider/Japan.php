@@ -537,7 +537,7 @@ class Japan extends AbstractProvider
         $dates = $this->getHolidayDates();
 
         // Loop through all holidays
-        foreach ($this->getHolidays() as $shortName => $holiday) {
+        foreach ($this->getHolidays() as $holiday) {
             $date = clone $holiday;
 
             // If holidays falls on a Sunday
