@@ -174,7 +174,8 @@ class Holiday extends DateTime implements JsonSerializable
      *
      * @return array
      */
-    protected function getLocales(): array {
+    protected function getLocales(): array
+    {
         $locales = [$this->displayLocale];
         $parts = \explode('_', $this->displayLocale);
         while (\array_pop($parts) && $parts) {
