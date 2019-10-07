@@ -455,7 +455,7 @@ trait CommonHolidays
     {
         $date = $this->calculateSummerWinterTime($year, $timezone, true);
 
-        if ($date) {
+        if ($date instanceof \DateTimeImmutable) {
             return new Holiday(
                 'summerTime',
                 [],
@@ -485,11 +485,11 @@ trait CommonHolidays
      * @param string $timezone the timezone in which Easter is celebrated
      * @param bool $summer whether to calculate the start of summer or winter time
      *
-     * @return DateTime|null A DateTime object representing the summer or winter transition time for the given
+     * @return \DateTimeImmutable|null A DateTime object representing the summer or winter transition time for the given
      *                        timezone. If no transition time is found, a null value is returned.
      * @throws \Exception
      */
-    protected function calculateSummerWinterTime($year, $timezone, $summer): ?DateTime
+    protected function calculateSummerWinterTime($year, $timezone, $summer): ?\DateTimeImmutable
     {
         $zone = new DateTimeZone($timezone);
 
@@ -500,7 +500,7 @@ trait CommonHolidays
 
         foreach ($transitions as $transition) {
             if ($transition['isdst'] !== $dst && $transition['isdst'] === $summer) {
-                return new DateTime(\substr($transition['time'], 0, 10), $zone);
+                return new \DateTimeImmutable(\substr($transition['time'], 0, 10), $zone);
             }
             $dst = $transition['isdst'];
         }
@@ -529,7 +529,7 @@ trait CommonHolidays
     {
         $date = $this->calculateSummerWinterTime($year, $timezone, false);
 
-        if ($date) {
+        if ($date instanceof \DateTimeImmutable) {
             return new Holiday(
                 'winterTime',
                 [],
