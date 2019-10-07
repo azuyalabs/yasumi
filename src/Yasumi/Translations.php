@@ -89,6 +89,7 @@ class Translations implements TranslationsInterface
      * @param string $locale locale the locale to be validated
      *
      * @return true upon success, otherwise an UnknownLocaleException is thrown
+     *
      * @throws UnknownLocaleException An UnknownLocaleException is thrown if the given locale is not
      *                                valid/available.
      *

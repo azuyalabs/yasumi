@@ -78,7 +78,6 @@ class Yasumi
      * @throws InvalidDateException
      *
      * @TODO we should accept a timezone so we can accept int/string for $startDate
-     *
      */
     public static function nextWorkingDay(
         string $class,
