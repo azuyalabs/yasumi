@@ -106,7 +106,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *                                                       represented
      * @param TranslationsInterface|null $globalTranslations global translations
      */
-    public function __construct($year, $locale = null, TranslationsInterface $globalTranslations = null)
+    public function __construct($year, $locale = null, ?TranslationsInterface $globalTranslations = null)
     {
         $this->clearHolidays();
 

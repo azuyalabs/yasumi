@@ -268,7 +268,7 @@ class UnitedKingdom extends AbstractProvider
      *
      * @throws \Exception
      */
-    protected function calculateChristmasHolidays(string $type = null): void
+    protected function calculateChristmasHolidays(?string $type = null): void
     {
         $christmasDay = $this->christmasDay($this->year, $this->timezone, $this->locale, $type ?? Holiday::TYPE_OFFICIAL);
         $secondChristmasDay = $this->secondChristmasDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK);
