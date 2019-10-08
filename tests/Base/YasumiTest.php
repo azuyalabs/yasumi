@@ -12,7 +12,6 @@
 
 namespace Yasumi\tests\Base;
 
-use ArrayIterator;
 use DateTime;
 use DateTimeImmutable;
 use Exception;
@@ -26,8 +25,6 @@ use Yasumi\Exception\InvalidYearException;
 use Yasumi\Exception\ProviderNotFoundException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
-use Yasumi\Provider\AbstractProvider;
-use Yasumi\ProviderInterface;
 use Yasumi\tests\YasumiBase;
 use Yasumi\Yasumi;
 
@@ -109,6 +106,7 @@ class YasumiTest extends TestCase
             $class,
             Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND)
         );
+        $this->assertInstanceOf(YasumiExternalProvider::class, $instance);
     }
 
     /**
@@ -125,19 +123,6 @@ class YasumiTest extends TestCase
             Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND),
             'wx_YZ'
         );
-    }
-
-    /**
-     * Tests that the getIterator function returns an ArrayIterator object
-     * @throws ReflectionException
-     */
-    public function testGetIterator(): void
-    {
-        $holidays = Yasumi::create(
-            'Japan',
-            Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND)
-        );
-
     }
 
     /**
