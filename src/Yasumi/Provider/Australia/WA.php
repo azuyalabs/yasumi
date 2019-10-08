@@ -65,31 +65,22 @@ class WA extends Australia
      */
     private function calculateQueensBirthday(): void
     {
+        $birthDay = 'last monday of september ' . $this->year;
         if (2011 === $this->year) {
-            $this->calculateHoliday(
-                'queensBirthday',
-                ['en' => "Queen's Birthday"],
-                new DateTime('2011-10-28', new DateTimeZone($this->timezone)),
-                false,
-                false
-            );
-        } elseif (2012 === $this->year) {
-            $this->calculateHoliday(
-                'queensBirthday',
-                ['en' => "Queen's Birthday"],
-                new DateTime('2012-10-01', new DateTimeZone($this->timezone)),
-                false,
-                false
-            );
-        } else {
-            $this->calculateHoliday(
-                'queensBirthday',
-                ['en' => "Queen's Birthday"],
-                new DateTime('last monday of september ' . $this->year, new DateTimeZone($this->timezone)),
-                false,
-                false
-            );
+            $birthDay = '2011-10-28';
         }
+
+        if (2012 === $this->year) {
+            $birthDay = '2012-10-01';
+        }
+
+        $this->calculateHoliday(
+            'queensBirthday',
+            ['en' => "Queen's Birthday"],
+            new DateTime($birthDay, new DateTimeZone($this->timezone)),
+            false,
+            false
+        );
     }
 
     /**

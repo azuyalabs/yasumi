@@ -139,23 +139,19 @@ class SA extends Australia
     private function calculateAdelaideCupDay(): void
     {
         if ($this->year >= 1973) {
+            $cupDay = 'second monday of march ' . $this->year;
+
             if ($this->year < 2006) {
-                $this->calculateHoliday(
-                    'adelaideCup',
-                    ['en' => 'Adelaide Cup'],
-                    new DateTime('third monday of may ' . $this->year, new DateTimeZone($this->timezone)),
-                    false,
-                    false
-                );
-            } else {
-                $this->calculateHoliday(
-                    'adelaideCup',
-                    ['en' => 'Adelaide Cup'],
-                    new DateTime('second monday of march ' . $this->year, new DateTimeZone($this->timezone)),
-                    false,
-                    false
-                );
+                $cupDay = 'third monday of may ' . $this->year;
             }
+
+            $this->calculateHoliday(
+                'adelaideCup',
+                ['en' => 'Adelaide Cup'],
+                new DateTime($cupDay, new DateTimeZone($this->timezone)),
+                false,
+                false
+            );
         }
     }
 
