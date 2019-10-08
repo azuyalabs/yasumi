@@ -181,7 +181,7 @@ class Holiday extends DateTime implements JsonSerializable
      *
      * @param TranslationsInterface $globalTranslations global translations
      */
-    public function mergeGlobalTranslations(TranslationsInterface $globalTranslations)
+    public function mergeGlobalTranslations(TranslationsInterface $globalTranslations): void
     {
         $holidayGlobalTranslations = $globalTranslations->getTranslations($this->shortName);
         $this->translations = \array_merge($holidayGlobalTranslations, $this->translations);
