@@ -27,6 +27,7 @@ use Yasumi\Exception\ProviderNotFoundException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\AbstractProvider;
+use Yasumi\ProviderInterface;
 use Yasumi\tests\YasumiBase;
 use Yasumi\Yasumi;
 
@@ -108,7 +109,6 @@ class YasumiTest extends TestCase
             $class,
             Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND)
         );
-        $this->assertInstanceOf($class, $instance);
     }
 
     /**
@@ -138,7 +138,6 @@ class YasumiTest extends TestCase
             Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND)
         );
 
-        $this->assertInstanceOf(ArrayIterator::class, $holidays->getIterator());
     }
 
     /**
@@ -579,7 +578,6 @@ class YasumiTest extends TestCase
             $year
         );
 
-        $this->assertInstanceOf(AbstractProvider::class, $provider);
         $this->assertEquals($year, $provider->getYear());
     }
 
