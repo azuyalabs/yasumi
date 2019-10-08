@@ -115,7 +115,7 @@ class Yasumi
      *                       between 1000 and 9999.
      * @param string $locale The locale to use. If empty we'll use the default locale (en_US)
      *
-     * @return ProviderInterface An instance of class $class is created and returned
+     * @return AbstractProvider An instance of class $class is created and returned
      *
      * @throws RuntimeException          If no such holiday provider is found
      * @throws InvalidYearException      if the year parameter is not between 1000 and 9999
@@ -123,7 +123,7 @@ class Yasumi
      * @throws ProviderNotFoundException if the holiday provider for the given country does not exist
      * @throws \ReflectionException
      */
-    public static function create(string $class, int $year = 0, string $locale = self::DEFAULT_LOCALE): ProviderInterface
+    public static function create(string $class, int $year = 0, string $locale = self::DEFAULT_LOCALE): AbstractProvider
     {
         // Find and return holiday provider instance
         $providerClass = \sprintf('Yasumi\Provider\%s', \str_replace('/', '\\', $class));

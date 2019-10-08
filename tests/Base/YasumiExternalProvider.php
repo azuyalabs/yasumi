@@ -12,14 +12,14 @@
 
 namespace Yasumi\tests\Base;
 
-use Yasumi\ProviderInterface;
+use Yasumi\Provider\AbstractProvider;
 
 /**
  * Class YasumiExternalProvider.
  *
  * Class for testing the use of an external holiday provider class.
  */
-class YasumiExternalProvider implements ProviderInterface
+class YasumiExternalProvider extends AbstractProvider
 {
     /**
      * Initialize country holidays.
