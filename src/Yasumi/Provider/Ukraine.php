@@ -22,6 +22,7 @@ use Yasumi\Holiday;
  *
  * Class Ukraine
  * @package Yasumi\Provider
+ *
  * @author  Dmitry Machin <machin.dmitry@gmail.com>
  */
 class Ukraine extends AbstractProvider
@@ -214,6 +215,7 @@ class Ukraine extends AbstractProvider
      * @param string $timezone
      *
      * @return \DateTime
+     *
      * @throws \Exception
      */
     public function calculateEaster($year, $timezone): \DateTime

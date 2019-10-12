@@ -265,7 +265,6 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @return true upon success, otherwise an InvalidArgumentException is thrown
      * @throws InvalidArgumentException An InvalidArgumentException is thrown if the given holiday parameter is empty.
-     *
      */
     protected function isHolidayNameNotEmpty($shortName): bool
     {
