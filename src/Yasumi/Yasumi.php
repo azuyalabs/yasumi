@@ -177,7 +177,7 @@ class Yasumi
      * already with Yasumi, or your own provider by giving the 'const ID', corresponding to the ISO3166-2 Code, set in
      * your class in the first parameter. Your provider class needs to implement the 'ProviderInterface' class.
      *
-     * @param string $iso3166_2 ISO3166-2 Coded region, holiday provider will be searched for
+     * @param string $isoCode ISO3166-2 Coded region, holiday provider will be searched for
      * @param int $year year for which the country provider needs to be created. Year needs to be a valid
      *                          integer between 1000 and 9999.
      * @param string $locale The locale to use. If empty we'll use the default locale (en_US)
@@ -191,20 +191,20 @@ class Yasumi
      * @throws \ReflectionException
      */
     public static function createByISO3166_2(
-        string $iso3166_2,
+        string $isoCode,
         int $year = 0,
         string $locale = self::DEFAULT_LOCALE
     ): AbstractProvider {
         $availableProviders = self::getProviders();
 
-        if (false === isset($availableProviders[$iso3166_2])) {
+        if (false === isset($availableProviders[$isoCode])) {
             throw new ProviderNotFoundException(\sprintf(
                 'Unable to find holiday provider by ISO3166-2 "%s".',
-                $iso3166_2
+                $isoCode
             ));
         }
 
-        return self::create($availableProviders[$iso3166_2], $year, $locale);
+        return self::create($availableProviders[$isoCode], $year, $locale);
     }
 
     /**

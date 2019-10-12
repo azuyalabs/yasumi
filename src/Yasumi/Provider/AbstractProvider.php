@@ -200,10 +200,10 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         // Check if given date is a falls in the weekend or not
         // If no data is defined for this Holiday Provider, the function falls back to the global weekend definition.
         // @TODO Ideally avoid late static binding here (static::ID)
-        $weekend_data = self::WEEKEND_DATA;
-        $weekend_days = $weekend_data[$this::ID] ?? [0, 6];
+        $weekendData = self::WEEKEND_DATA;
+        $weekendDays = $weekendData[$this::ID] ?? [0, 6];
 
-        if (\in_array((int)$date->format('w'), $weekend_days, true)) {
+        if (\in_array((int)$date->format('w'), $weekendDays, true)) {
             $isWorkingDay = false;
         }
 
@@ -434,8 +434,8 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * timezone for these parameters versus the instantiated Holiday Provider, the outcome might be unexpected (but
      * correct).
      *
-     * @param \DateTimeInterface $start_date Start date of the time frame to check against
-     * @param \DateTimeInterface $end_date End date of the time frame to check against
+     * @param \DateTimeInterface $startDate Start date of the time frame to check against
+     * @param \DateTimeInterface $endDate End date of the time frame to check against
      * @param bool $equals indicate whether the start and end dates should be included in the
      *                                       comparison
      *
@@ -444,13 +444,13 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *                                  date.
      *
      */
-    public function between(\DateTimeInterface $start_date, \DateTimeInterface $end_date, $equals = null): BetweenFilter
+    public function between(\DateTimeInterface $startDate, \DateTimeInterface $endDate, $equals = null): BetweenFilter
     {
-        if ($start_date > $end_date) {
+        if ($startDate > $endDate) {
             throw new InvalidArgumentException('Start date must be a date before the end date.');
         }
 
-        return new BetweenFilter($this->getIterator(), $start_date, $end_date, $equals ?? true);
+        return new BetweenFilter($this->getIterator(), $startDate, $endDate, $equals ?? true);
     }
 
     /**

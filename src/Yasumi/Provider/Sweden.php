@@ -224,16 +224,16 @@ class Sweden extends AbstractProvider
             return;
         }
 
-        $holiday_name = 'Svenska flaggans dag';
+        $holidayName = 'Svenska flaggans dag';
 
         // Since 1983 this day was named 'Sveriges nationaldag'
         if ($this->year >= 1983) {
-            $holiday_name = 'Sveriges nationaldag';
+            $holidayName = 'Sveriges nationaldag';
         }
 
         $this->addHoliday(new Holiday(
             'nationalDay',
-            ['sv' => $holiday_name],
+            ['sv' => $holidayName],
             new DateTime("$this->year-6-6", new DateTimeZone($this->timezone)),
             $this->locale
         ));

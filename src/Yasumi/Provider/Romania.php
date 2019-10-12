@@ -164,26 +164,26 @@ class Romania extends AbstractProvider
      */
     private function calculateNationalDay(): void
     {
-        $national_day = null;
+        $nationalDay = null;
 
         //@link https://en.wikipedia.org/wiki/Great_Union_Day
         if ($this->year >= 1990) {
-            $national_day = "$this->year-12-01";
+            $nationalDay = "$this->year-12-01";
         }
 
         if ($this->year >= 1948 && $this->year <= 1989) {
-            $national_day = "$this->year-08-23";
+            $nationalDay = "$this->year-08-23";
         }
 
         if ($this->year >= 1866 && $this->year <= 1947) {
-            $national_day = "$this->year-05-10";
+            $nationalDay = "$this->year-05-10";
         }
 
-        if (\is_string($national_day)) {
+        if (\is_string($nationalDay)) {
             $this->addHoliday(new Holiday('nationalDay', [
                 'en' => 'National Day',
                 'ro' => 'Ziua Națională',
-            ], new DateTime($national_day, new DateTimeZone($this->timezone)), $this->locale));
+            ], new DateTime($nationalDay, new DateTimeZone($this->timezone)), $this->locale));
         }
     }
 
