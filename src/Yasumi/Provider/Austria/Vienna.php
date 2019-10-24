@@ -66,10 +66,10 @@ class Vienna extends Austria
     private function calculateStLeopoldsDay(): void
     {
         $this->addHoliday(new Holiday(
-          'stLeopoldsDay',
-          [],
-          new DateTime($this->year . '-11-15', new \DateTimeZone($this->timezone)),
-          $this->locale
+            'stLeopoldsDay',
+            [],
+            new DateTime($this->year . '-11-15', new \DateTimeZone($this->timezone)),
+            $this->locale
         ));
     }
 }
