@@ -67,7 +67,7 @@ class Salzburg extends Austria
     {
       $this->addHoliday(new Holiday(
         'stRupertsDay',
-        ['en' => 'Saint Rupert\'s Day', 'de' => 'Rupert'],
+        [],
         new DateTime($this->year . '-9-24', new \DateTimeZone($this->timezone)),
         $this->locale
       ));

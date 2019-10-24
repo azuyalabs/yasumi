@@ -67,7 +67,7 @@ class Carinthia extends Austria
     {
       $this->addHoliday(new Holiday(
         'plebisciteDay',
-        ['en' => 'Plebiscite Day', 'de' => 'Tag der Volksabstimmung'],
+        [],
         new DateTime($this->year . '-10-10', new \DateTimeZone($this->timezone)),
         $this->locale
       ));

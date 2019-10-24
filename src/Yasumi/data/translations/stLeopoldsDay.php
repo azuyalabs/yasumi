@@ -11,9 +11,8 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-// Translations for St. Martin's Day
+// Translations for Saint Leopold's Day.
 return [
-    'en' => 'St. Martin\'s Day',
-    'nl' => 'Sint Maarten',
-    'de_AT' => 'Martin',
+  'en' => 'Saint Leopold\'s Day',
+  'de_AT' => 'Leopold',
 ];

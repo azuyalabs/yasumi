@@ -67,7 +67,7 @@ class LowerAustria extends Austria
     {
       $this->addHoliday(new Holiday(
         'stLeopoldsDay',
-        ['en' => 'Saint Leopold\'s Day', 'de' => 'Leopold'],
+        [],
         new DateTime($this->year . '-11-15', new \DateTimeZone($this->timezone)),
         $this->locale
       ));

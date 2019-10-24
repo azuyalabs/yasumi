@@ -69,7 +69,7 @@ class UpperAustria extends Austria
     {
       $this->addHoliday(new Holiday(
         'stFloriansDay',
-        ['en' => 'Saint Florian\'s Day', 'de' => 'Florian'],
+        [],
         new DateTime($this->year . '-5-4', new \DateTimeZone($this->timezone)),
         $this->locale
       ));
