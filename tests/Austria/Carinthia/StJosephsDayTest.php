@@ -40,7 +40,7 @@ class StJosephsDayTest extends CarinthiaBaseTestCase implements YasumiTestCaseIn
      */
     public function testStJosephsDay($year, $expected)
     {
-      $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
@@ -51,7 +51,7 @@ class StJosephsDayTest extends CarinthiaBaseTestCase implements YasumiTestCaseIn
      */
     public function StJosephsDayDataProvider(): array
     {
-      return $this->generateRandomDates(3, 19, self::TIMEZONE);
+        return $this->generateRandomDates(3, 19, self::TIMEZONE);
     }
 
     /**
@@ -60,12 +60,12 @@ class StJosephsDayTest extends CarinthiaBaseTestCase implements YasumiTestCaseIn
      */
     public function testTranslation(): void
     {
-      $this->assertTranslatedHolidayName(
-        self::REGION,
-        self::HOLIDAY,
-        $this->generateRandomYear(),
-        [self::LOCALE => 'Josephstag']
-      );
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Josephstag']
+        );
     }
 
     /**
@@ -74,6 +74,6 @@ class StJosephsDayTest extends CarinthiaBaseTestCase implements YasumiTestCaseIn
      */
     public function testHolidayType(): void
     {
-      $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }
