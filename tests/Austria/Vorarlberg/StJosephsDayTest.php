@@ -40,7 +40,7 @@ class StJosephsDayTest extends VorarlbergBaseTestCase implements YasumiTestCaseI
      */
     public function testStJosephsDay($year, $expected)
     {
-       $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
