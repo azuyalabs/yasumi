@@ -67,11 +67,11 @@ class UpperAustria extends Austria
      */
     private function calculateStFloriansDay(): void
     {
-      $this->addHoliday(new Holiday(
-        'stFloriansDay',
-        [],
-        new DateTime($this->year . '-5-4', new \DateTimeZone($this->timezone)),
-        $this->locale
-      ));
+        $this->addHoliday(new Holiday(
+          'stFloriansDay',
+          [],
+          new DateTime($this->year . '-5-4', new \DateTimeZone($this->timezone)),
+          $this->locale
+        ));
     }
 }

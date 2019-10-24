@@ -65,11 +65,11 @@ class Salzburg extends Austria
      */
     private function calculateStRupertsDay(): void
     {
-      $this->addHoliday(new Holiday(
-        'stRupertsDay',
-        [],
-        new DateTime($this->year . '-9-24', new \DateTimeZone($this->timezone)),
-        $this->locale
-      ));
+        $this->addHoliday(new Holiday(
+          'stRupertsDay',
+          [],
+          new DateTime($this->year . '-9-24', new \DateTimeZone($this->timezone)),
+          $this->locale
+        ));
     }
 }
