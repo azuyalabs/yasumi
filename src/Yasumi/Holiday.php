@@ -181,7 +181,11 @@ class Holiday extends DateTime implements JsonSerializable
         while (\array_pop($parts) && $parts) {
             $locales[] = \implode('_', $parts);
         }
-        $locales[] = self::DEFAULT_LOCALE;
+
+        // DEFAULT_LOCALE is en_US
+        $locales[] = 'en_US';
+        $locales[] = 'en';
+
         return $locales;
     }
 
