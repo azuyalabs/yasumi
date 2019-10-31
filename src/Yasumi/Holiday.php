@@ -157,10 +157,12 @@ class Holiday extends DateTime implements JsonSerializable
      * The name of this holiday is returned translated in the given locale. If for the given locale no translation is
      * defined, the name in the default locale ('en_US') is returned. In case there is no translation at all, the short
      * internal name is returned.
+     *
+     * @param string $locale the locale to use; if omitted, the display locale is used
      */
-    public function getName(): string
+    public function getName(string $locale = null): string
     {
-        foreach ($this->getLocales() as $locale) {
+        foreach ($this->getLocales($locale) as $locale) {
             if (isset($this->translations[$locale])) {
                 return $this->translations[$locale];
             }
@@ -172,12 +174,18 @@ class Holiday extends DateTime implements JsonSerializable
     /**
      * Returns the display locale and its fallback locales.
      *
+     * @param string $locale the locale to use; if omitted, the display locale is used
+     *
      * @return array
      */
-    protected function getLocales(): array
+    protected function getLocales(?string $locale): array
     {
-        $locales = [$this->displayLocale];
-        $parts = \explode('_', $this->displayLocale);
+        if (!$locale) {
+            $locale = $this->displayLocale;
+        }
+
+        $locales = [$locale];
+        $parts = \explode('_', $locale);
         while (\array_pop($parts) && $parts) {
             $locales[] = \implode('_', $parts);
         }

@@ -81,13 +81,15 @@ class SubstituteHoliday extends Holiday
      * The name of this holiday is returned translated in the given locale. If for the given locale no translation is
      * defined, the name in the default locale ('en_US') is returned. In case there is no translation at all, the short
      * internal name is returned.
+     *
+     * @param string $locale the locale to use; if omitted, the display locale is used
      */
-    public function getName(): string
+    public function getName(string $locale = null): string
     {
         $name = parent::getName();
 
         if ($name === $this->shortName) {
-            foreach ($this->getLocales() as $locale) {
+            foreach ($this->getLocales($locale) as $locale) {
                 $pattern = $this->substituteHolidayTranslations[$locale] ?? null;
                 if ($pattern) {
                     return \str_replace('{0}', $this->substitutedHoliday->getName(), $pattern);
