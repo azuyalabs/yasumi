@@ -88,11 +88,11 @@ class Yasumi
         // Setup start date, if its an instance of \DateTime, clone to prevent modification to original
         $date = $startDate instanceof \DateTime ? clone $startDate : $startDate;
 
-        $provider = false;
+        $provider = null;
 
         while ($workingDays > 0) {
             $date = $date->add(new \DateInterval('P1D'));
-            if (!$provider || $provider->getYear() !== \getdate()['year']) {
+            if (! $provider instanceof ProviderInterface || $provider->getYear() !== \getdate()['year']) {
                 $provider = self::create($class, (int)$date->format('Y'));
             }
             if ($provider->isWorkingDay($date)) {
@@ -282,11 +282,11 @@ class Yasumi
         // Setup start date, if its an instance of \DateTime, clone to prevent modification to original
         $date = $startDate instanceof \DateTime ? clone $startDate : $startDate;
 
-        $provider = false;
+        $provider = null;
 
         while ($workingDays > 0) {
             $date = $date->sub(new \DateInterval('P1D'));
-            if (!$provider || $provider->getYear() !== \getdate()['year']) {
+            if (! $provider instanceof ProviderInterface || $provider->getYear() !== \getdate()['year']) {
                 $provider = self::create($class, (int)$date->format('Y'));
             }
             if ($provider->isWorkingDay($date)) {
