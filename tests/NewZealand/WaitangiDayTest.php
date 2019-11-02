@@ -105,6 +105,6 @@ class WaitangiDayTest extends NewZealandBaseTestCase implements YasumiTestCaseIn
             if ($year >= 2015 && $this->isWeekend($date)) {
                 $date->modify('next monday');
             }
-        }, self::TIMEZONE, 100, self::ESTABLISHMENT_YEAR);
+        }, 100, self::ESTABLISHMENT_YEAR, self::TIMEZONE);
     }
 }

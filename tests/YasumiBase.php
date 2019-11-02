@@ -479,7 +479,7 @@ trait YasumiBase
             if ($this->isWeekend($date)) {
                 $date->modify('next monday');
             }
-        }, $timezone ?? 'UTC', $iterations ?? 10, $range);
+        }, $iterations ?? 10, $range, $timezone ?? 'UTC');
     }
 
     /**
@@ -488,10 +488,10 @@ trait YasumiBase
      * @param int $month month (number) for which the test date needs to be generated
      * @param int $day day (number) for which the test date needs to be generated
      * @param callable $callback callback(int $year, \DateTime $dateTime) to modify $dateTime by custom rules
-     * @param string $timezone name of the timezone for which the dates need to be generated
      * @param int $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
      * @param int $range year range from which dates will be generated (default: 1000)
      *
+     * @param string $timezone name of the timezone for which the dates need to be generated
      * @return array list of random test dates used for assertion of holidays with applied callback.
      * @throws Exception
      */
@@ -499,9 +499,9 @@ trait YasumiBase
         $month,
         $day,
         callable $callback,
-        $timezone = null,
         $iterations,
-        $range
+        $range,
+        $timezone = null
     ): array {
         $data = [];
 

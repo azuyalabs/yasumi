@@ -101,8 +101,8 @@ class NT extends Australia
     {
         $this->calculateHoliday(
             'queensBirthday',
-            ['en' => "Queen's Birthday"],
             new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->timezone)),
+            ['en' => "Queen's Birthday"],
             false,
             false
         );
@@ -132,8 +132,8 @@ class NT extends Australia
     {
         $this->calculateHoliday(
             'picnicDay',
-            ['en' => 'Picnic Day'],
             new DateTime('first monday of august ' . $this->year, new DateTimeZone($this->timezone)),
+            ['en' => 'Picnic Day'],
             false,
             false
         );

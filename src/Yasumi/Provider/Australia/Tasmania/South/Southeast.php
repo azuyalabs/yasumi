@@ -56,8 +56,8 @@ class Southeast extends South
     {
         $this->calculateHoliday(
             'hobartRegatta',
-            ['en' => 'Royal Hobart Regatta'],
             new DateTime('second monday of february ' . $this->year, new DateTimeZone($this->timezone)),
+            ['en' => 'Royal Hobart Regatta'],
             false,
             false
         );
