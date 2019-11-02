@@ -218,7 +218,7 @@ class Ukraine extends AbstractProvider
      *
      * @throws \Exception
      */
-    public function calculateEaster($year, $timezone): \DateTime
+    public function calculateEaster(int $year, string $timezone): \DateTime
     {
         return $this->calculateOrthodoxEaster($year, $timezone);
     }

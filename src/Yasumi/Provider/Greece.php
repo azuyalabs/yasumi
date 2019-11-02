@@ -126,7 +126,7 @@ class Greece extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateEaster($year, $timezone): DateTime
+    private function calculateEaster(int $year, string $timezone): DateTime
     {
         return $this->calculateOrthodoxEaster($year, $timezone);
     }

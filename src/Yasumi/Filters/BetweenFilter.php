@@ -55,7 +55,7 @@ class BetweenFilter extends AbstractFilter
         Iterator $iterator,
         \DateTimeInterface $startDate,
         \DateTimeInterface $endDate,
-        $equal = true
+        bool $equal = true
     ) {
         parent::__construct($iterator);
         $this->equal = $equal;

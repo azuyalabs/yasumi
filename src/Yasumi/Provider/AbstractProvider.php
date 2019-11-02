@@ -106,8 +106,11 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *                                                       represented
      * @param TranslationsInterface|null $globalTranslations global translations
      */
-    public function __construct($year, $locale = null, ?TranslationsInterface $globalTranslations = null)
-    {
+    public function __construct(
+        int $year,
+        ?string $locale = null,
+        ?TranslationsInterface $globalTranslations = null
+    ) {
         $this->clearHolidays();
 
         $this->year = $year ?: \getdate()['year'];
@@ -170,7 +173,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @return void
      */
-    public function removeHoliday($shortName): void
+    public function removeHoliday(string $shortName): void
     {
         unset($this->holidays[$shortName]);
     }
@@ -251,7 +254,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * @throws InvalidArgumentException when the given name is blank or empty.
      *
      */
-    public function whenIs($shortName): string
+    public function whenIs(string $shortName): string
     {
         $this->isHolidayNameNotEmpty($shortName); // Validate if short name is not empty
 
@@ -266,7 +269,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * @return true upon success, otherwise an InvalidArgumentException is thrown
      * @throws InvalidArgumentException An InvalidArgumentException is thrown if the given holiday parameter is empty.
      */
-    protected function isHolidayNameNotEmpty($shortName): bool
+    protected function isHolidayNameNotEmpty(string $shortName): bool
     {
         if (empty($shortName)) {
             throw new InvalidArgumentException('Holiday name can not be blank.');
@@ -287,7 +290,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * @throws InvalidArgumentException when the given name is blank or empty.
      *
      */
-    public function whatWeekDayIs($shortName): int
+    public function whatWeekDayIs(string $shortName): int
     {
         $this->isHolidayNameNotEmpty($shortName); // Validate if short name is not empty
 
@@ -357,7 +360,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @covers AbstractProvider::anotherTime
      */
-    public function next($shortName): ?Holiday
+    public function next(string $shortName): ?Holiday
     {
         return $this->anotherTime($this->year + 1, $shortName);
     }
@@ -375,7 +378,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * @throws UnknownLocaleException
      * @throws \RuntimeException
      */
-    private function anotherTime($year, $shortName): ?Holiday
+    private function anotherTime(int $year, string $shortName): ?Holiday
     {
         $this->isHolidayNameNotEmpty($shortName); // Validate if short name is not empty
 
@@ -394,7 +397,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * @throws InvalidArgumentException when the given name is blank or empty.
      *
      */
-    public function getHoliday($shortName): ?Holiday
+    public function getHoliday(string $shortName): ?Holiday
     {
         $this->isHolidayNameNotEmpty($shortName); // Validate if short name is not empty
 
@@ -417,7 +420,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @covers AbstractProvider::anotherTime
      */
-    public function previous($shortName): ?Holiday
+    public function previous(string $shortName): ?Holiday
     {
         return $this->anotherTime($this->year - 1, $shortName);
     }
@@ -444,8 +447,11 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *                                  date.
      *
      */
-    public function between(\DateTimeInterface $startDate, \DateTimeInterface $endDate, $equals = null): BetweenFilter
-    {
+    public function between(
+        \DateTimeInterface $startDate,
+        \DateTimeInterface $endDate,
+        ?bool $equals = null
+    ): BetweenFilter {
         if ($startDate > $endDate) {
             throw new InvalidArgumentException('Start date must be a date before the end date.');
         }

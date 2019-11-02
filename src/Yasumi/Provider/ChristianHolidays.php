@@ -49,8 +49,12 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function easter(int $year, string $timezone, string $locale, string $type = Holiday::TYPE_OFFICIAL): Holiday
-    {
+    public function easter(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
         return new Holiday('easter', [], $this->calculateEaster($year, $timezone), $locale, $type);
     }
 

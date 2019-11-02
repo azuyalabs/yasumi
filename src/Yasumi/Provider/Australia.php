@@ -101,11 +101,11 @@ class Australia extends AbstractProvider
      */
     public function calculateHoliday(
         string $shortName,
-        $date,
+        DateTime $date,
         array $names = [],
-        $moveFromSaturday = null,
-        $moveFromSunday = null,
-        $type = null
+        ?bool $moveFromSaturday = null,
+        ?bool $moveFromSunday = null,
+        ?string $type = null
     ): void {
         $day = (int)$date->format('w');
         if ((0 === $day && ($moveFromSunday ?? true)) || (6 === $day && ($moveFromSaturday ?? true))) {
