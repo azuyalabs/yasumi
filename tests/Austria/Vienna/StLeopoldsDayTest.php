@@ -80,7 +80,7 @@ class StLeopoldsDayTest extends ViennaBaseTestCase implements YasumiTestCaseInte
         );
     }
 
-  /**
+    /**
      * Tests translated name of the holiday defined in this test.
      * @throws ReflectionException
      */

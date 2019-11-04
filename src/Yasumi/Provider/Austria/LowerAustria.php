@@ -12,10 +12,8 @@
 
 namespace Yasumi\Provider\Austria;
 
-use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
-use Yasumi\Holiday;
 use Yasumi\Provider\Austria;
 
 /**
