@@ -65,6 +65,10 @@ class Carinthia extends Austria
      */
     private function calculatePlebisciteDay(): void
     {
+        if ($this->year < 1920) {
+          return;
+        }
+
         $this->addHoliday(new Holiday(
             'plebisciteDay',
             [],
