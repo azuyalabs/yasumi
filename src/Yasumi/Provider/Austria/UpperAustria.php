@@ -68,7 +68,7 @@ class UpperAustria extends Austria
     private function calculateStFloriansDay(): void
     {
         if ($this->year < 304) {
-          return;
+            return;
         }
 
         $this->addHoliday(new Holiday(

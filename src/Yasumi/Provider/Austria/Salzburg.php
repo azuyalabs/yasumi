@@ -66,7 +66,7 @@ class Salzburg extends Austria
     private function calculateStRupertsDay(): void
     {
         if ($this->year < 710) {
-          return;
+            return;
         }
 
         $this->addHoliday(new Holiday(
