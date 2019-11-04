@@ -65,6 +65,10 @@ class Vienna extends Austria
      */
     private function calculateStLeopoldsDay(): void
     {
+        if ($this->year < 1136) {
+          return;
+        }
+
         $this->addHoliday(new Holiday(
             'stLeopoldsDay',
             [],
