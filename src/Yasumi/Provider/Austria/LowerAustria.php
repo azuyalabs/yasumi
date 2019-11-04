@@ -46,34 +46,4 @@ class LowerAustria extends Austria
         // Add custom holidays.
         $this->calculateStLeopoldsDay();
     }
-
-    /**
-     * Saint Leopold's Day.
-     *
-     * Saint Leopold III, known as Leopold the Good, was the Margrave of Austria
-     * from 1095 to his death in 1136. He was a member of the House of
-     * Babenberg. He was canonized on 6 January 1485 and became the patron saint
-     * of Austria, Lower Austria, Upper Austria, and Vienna. His feast day is 15
-     * November.
-     *
-     * @link https://en.wikipedia.org/wiki/Leopold_III,_Margrave_of_Austria
-     *
-     * @throws InvalidDateException
-     * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
-     * @throws \Exception
-     */
-    private function calculateStLeopoldsDay(): void
-    {
-        if ($this->year < 1136) {
-          return;
-        }
-
-        $this->addHoliday(new Holiday(
-            'stLeopoldsDay',
-            [],
-            new DateTime($this->year . '-11-15', new \DateTimeZone($this->timezone)),
-            $this->locale
-        ));
-    }
 }
