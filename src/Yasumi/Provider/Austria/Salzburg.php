@@ -54,7 +54,8 @@ class Salzburg extends Austria
      * Salzburg and abbot of St. Peter's in Salzburg. He was a contemporary of
      * the Frankish king Childebert III and is venerated as a saint in the
      * Roman Catholic and Eastern Orthodox Churches. Rupert is also patron
-     * saint of the Austrian state of Salzburg.
+     * saint of the Austrian state of Salzburg. His feast day in Austria is
+     * September 24 (since 710).
      *
      * @link https://en.wikipedia.org/wiki/Rupert_of_Salzburg
      *

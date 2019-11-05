@@ -52,11 +52,11 @@ class UpperAustria extends Austria
      *
      * St. Florian was born around 250 AD in the ancient Roman city of Aelium
      * Cetium, present-day Sankt Pölten, Austria. He joined the Roman Army and
-     * advanced in the ranks,[3] rising to commander of the imperial army in the
+     * advanced in the ranks, rising to commander of the imperial army in the
      * Roman province of Noricum. In addition to his military duties, he was
      * also responsible for organizing and leading firefighting brigades.
      * Florian organized and trained an elite group of soldiers whose sole duty
-     * was to fight fires.
+     * was to fight fires. His feast day is May 4 (since 304).
      *
      * @link https://en.wikipedia.org/wiki/Saint_Florian
      *
