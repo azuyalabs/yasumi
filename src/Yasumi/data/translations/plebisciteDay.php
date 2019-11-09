@@ -11,9 +11,8 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-// Translations for St. Martin's Day
+// Translations for Plebiscite Day.
 return [
-    'en' => 'St. Martin\'s Day',
-    'nl' => 'Sint Maarten',
-    'de_AT' => 'Martin',
+  'en' => 'Plebiscite Day',
+  'de_AT' => 'Tag der Volksabstimmung',
 ];
