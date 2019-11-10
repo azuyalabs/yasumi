@@ -122,9 +122,21 @@ class HolidayTest extends TestCase
     public function testHolidayGetNameWithOnlyDefaultTranslation(): void
     {
         $name = 'testHoliday';
+        $holiday = new Holiday($name, ['en' => 'Holiday EN', 'en_US' => 'Holiday EN-US'], new DateTime(), 'nl_NL');
+
+        $this->assertIsString($holiday->getName());
+        $this->assertEquals('Holiday EN-US', $holiday->getName());
+    }
+
+    /**
+     * Tests the getName function of the Holiday object with only a default translation for the name given.
+     * @throws Exception
+     */
+    public function testHolidayGetNameWithOnlyDefaultTranslationAndFallback(): void
+    {
+        $name = 'testHoliday';
         $translation = 'My Holiday';
-        $locale = 'en_US';
-        $holiday = new Holiday($name, [$locale => $translation], new DateTime(), $locale);
+        $holiday = new Holiday($name, ['en' => $translation], new DateTime(), 'nl_NL');
 
         $this->assertIsString($holiday->getName());
         $this->assertEquals($translation, $holiday->getName());
