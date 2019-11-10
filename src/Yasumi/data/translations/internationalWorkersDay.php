@@ -13,6 +13,7 @@
 // Translations for International Workers' Day
 return [
     'bs_Latn' => 'Praznik rada',
+    'ca' => 'Dia del Treball',
     'cs' => 'Svátek práce',
     'da' => 'Første maj',
     'de' => 'Tag der Arbeit',

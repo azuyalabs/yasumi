@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 ## [Unreleased]
 
 ### Added
+- Catalan translations for holidays in Catalonia, Valencian Community, Balearic Islands and Aragon [\#999](https://github.com/azuyalabs/yasumi/pull/999) ([pioc92](https://github.com/c960657))
 
 ### Changed
 

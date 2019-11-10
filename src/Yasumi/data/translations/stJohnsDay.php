@@ -12,6 +12,7 @@
 
 // Translations for St. John's Day
 return [
+    'ca' => 'Sant Joan',
     'da' => 'Sankthansaften',
     'el' => 'Σύναξις Προφήτου Προδρόμου και Βαπτιστού Ιωάννου',
     'en' => 'St. John\'s Day',

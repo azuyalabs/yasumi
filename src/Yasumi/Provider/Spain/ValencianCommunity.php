@@ -83,9 +83,15 @@ class ValencianCommunity extends Spain
     private function calculateValencianCommunityDay(): void
     {
         if ($this->year >= 1239) {
-            $this->addHoliday(new Holiday('valencianCommunityDay', [
-                'es' => 'Día de la Comunidad Valenciana',
-            ], new DateTime("$this->year-10-9", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'valencianCommunityDay',
+                [
+                    'ca' => 'Diada Nacional del País Valencià',
+                    'es' => 'Día de la Comunidad Valenciana',
+                ],
+                new DateTime("$this->year-10-9", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
     }
 }

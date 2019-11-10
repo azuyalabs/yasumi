@@ -83,7 +83,10 @@ class Catalonia extends Spain
         if ($this->year >= 1886) {
             $this->addHoliday(new Holiday(
                 'nationalCataloniaDay',
-                ['es' => 'Diada Nacional de Catalunya'],
+                [
+                    'ca' => 'Diada Nacional de Catalunya',
+                    'es' => 'Diada Nacional de Cataluña',
+                ],
                 new DateTime("$this->year-9-11", new DateTimeZone($this->timezone)),
                 $this->locale
             ));

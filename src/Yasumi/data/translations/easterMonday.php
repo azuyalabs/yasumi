@@ -12,6 +12,7 @@
 
 // Translations for Easter Monday
 return [
+    'ca' => 'dilluns de Pasqua',
     'cs' => 'Velikonoční pondělí',
     'cy' => 'Llun y Pasg',
     'da' => '2. påskedag',
