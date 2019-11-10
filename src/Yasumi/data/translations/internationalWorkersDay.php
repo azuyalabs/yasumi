@@ -14,7 +14,7 @@
 return [
     'bs_Latn' => 'Praznik rada',
     'cs' => 'Svátek práce',
-    'da' => 'Første maj',
+    'da' => 'første maj',
     'de' => 'Tag der Arbeit',
     'de_AT' => 'Staatsfeiertag',
     'el' => 'Εργατική Πρωτομαγιά',
@@ -32,7 +32,7 @@ return [
     'ko' => '노동절',
     'lt' => 'Tarptautinė darbo diena',
     'lv' => 'Darba svētki',
-    'nb' => 'Arbeidernes dag',
+    'nb' => 'arbeidernes dag',
     'nl' => 'Dag van de arbeid',
     'pl' => 'Święto Pracy',
     'pt' => 'Dia internacional do trabalhador',
@@ -40,6 +40,6 @@ return [
     'ro' => 'Ziua internațională a muncii',
     'ru' => 'День международной солидарности трудящихся',
     'sk' => 'Sviatok práce',
-    'sv' => 'Första maj',
+    'sv' => 'första maj',
     'uk' => 'День міжнародної солідарності трудящих',
 ];

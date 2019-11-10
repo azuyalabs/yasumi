@@ -73,7 +73,7 @@ class ConstitutionDayTest extends DenmarkBaseTestCase implements YasumiTestCaseI
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Grundlovsdag']
+            [self::LOCALE => 'grundlovsdag']
         );
     }
 

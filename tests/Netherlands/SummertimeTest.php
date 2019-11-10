@@ -66,7 +66,7 @@ class SummertimeTest extends NetherlandsBaseTestCase implements YasumiTestCaseIn
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(1978, 2037),
-            [self::LOCALE => 'Zomertijd']
+            [self::LOCALE => 'zomertijd']
         );
     }
 

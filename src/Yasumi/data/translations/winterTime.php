@@ -12,7 +12,7 @@
 
 // Translations for Wintertime
 return [
-    'da' => 'Sommertid slutter',
+    'da' => 'sommertid slutter',
     'en' => 'Wintertime',
-    'nl' => 'Wintertijd',
+    'nl' => 'wintertijd',
 ];

@@ -55,7 +55,7 @@ class EasterTest extends DenmarkBaseTestCase implements YasumiTestCaseInterface
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'Påskedag']
+            [self::LOCALE => 'påskedag']
         );
     }
 

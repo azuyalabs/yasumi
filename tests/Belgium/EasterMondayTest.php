@@ -55,7 +55,7 @@ class EasterMondayTest extends BelgiumBaseTestCase implements YasumiTestCaseInte
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'Paasmaandag']
+            [self::LOCALE => 'paasmaandag']
         );
     }
 

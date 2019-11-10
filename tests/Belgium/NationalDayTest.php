@@ -64,7 +64,7 @@ class NationalDayTest extends BelgiumBaseTestCase implements YasumiTestCaseInter
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'Nationale feestdag']
+            [self::LOCALE => 'nationale feestdag']
         );
     }
 

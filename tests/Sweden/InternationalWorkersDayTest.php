@@ -53,7 +53,7 @@ class InternationalWorkersDayTest extends SwedenBaseTestCase implements YasumiTe
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'Första maj']
+            [self::LOCALE => 'första maj']
         );
     }
 

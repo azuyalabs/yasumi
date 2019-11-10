@@ -65,7 +65,7 @@ class SummerTimeTest extends DenmarkBaseTestCase implements YasumiTestCaseInterf
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(1980, 2037),
-            [self::LOCALE => 'Sommertid starter']
+            [self::LOCALE => 'sommertid starter']
         );
     }
 

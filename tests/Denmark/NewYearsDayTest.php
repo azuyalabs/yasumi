@@ -64,7 +64,7 @@ class NewYearsDayTest extends DenmarkBaseTestCase implements YasumiTestCaseInter
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'Nytårsdag']
+            [self::LOCALE => 'nytårsdag']
         );
     }
 

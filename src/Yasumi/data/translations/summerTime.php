@@ -12,8 +12,8 @@
 
 // Translations for Summertime
 return [
-    'da' => 'Sommertid starter',
+    'da' => 'sommertid starter',
     'en' => 'Summertime',
     'ko' => '서머타임',
-    'nl' => 'Zomertijd',
+    'nl' => 'zomertijd',
 ];
