@@ -1,10 +1,9 @@
 language: php
 
 php:
-  - 7.1
   - 7.2
   - 7.3
-  - 7.4snapshot
+  - 7.4
   - nightly
 
 dist: trusty
@@ -30,19 +29,15 @@ script:
 
 matrix:
   allow_failures:
-    - php: 7.1
-    - php: 7.4snapshot
     - php: hhvm
     - php: nightly
 
   include:
-    - php: 7.1
-      env: PHPSTAN=1
     - php: 7.2
       env: PHPSTAN=1
     - php: 7.3
       env: PHPSTAN=1
-    - php: 7.4snapshot
+    - php: 7.4
       env: PHPSTAN=1
     - php: hhvm
       env: HHVM=true

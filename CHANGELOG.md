@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 ### Fixed
 
 ### Removed
+- PHP 7.1 Support, as it has reached its end of life.
 
 
 ## [2.2.0] - 2019-10-06
