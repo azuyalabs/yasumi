@@ -24,8 +24,8 @@
     "ext-json": "*"
   },
   "require-dev": {
-    "friendsofphp/php-cs-fixer": "^2.14",
-    "fzaninotto/faker": "~1.8",
+    "friendsofphp/php-cs-fixer": "^2.16",
+    "fzaninotto/faker": "~1.9",
     "mikey179/vfsstream": "~1.6",
     "phpunit/phpunit": "~8.4"
   },
