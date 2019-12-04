@@ -61,7 +61,7 @@ class SolothurnTest extends SolothurnBaseTestCase
     public function testObservedHolidays(): void
     {
         $observedHolidays = [];
-        if (($this->year >= 1899 && $this->year < 1994) || $this->year = 1891) {
+        if (($this->year >= 1899 && $this->year < 1994) || 1891 === $this->year) {
             $observedHolidays[] = 'swissNationalDay';
         }
 
