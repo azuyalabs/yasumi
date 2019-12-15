@@ -85,7 +85,7 @@ class Spain extends AbstractProvider
                 'nationalDay',
                 [
                     'ca' => 'Festa Nacional d\'Espanya',
-                    'es' => 'Fiesta Nacional de España'
+                    'es' => 'Fiesta Nacional de España',
                 ],
                 new DateTime("$this->year-10-12", new DateTimeZone($this->timezone)),
                 $this->locale
@@ -114,7 +114,7 @@ class Spain extends AbstractProvider
                 'constitutionDay',
                 [
                     'ca' => 'Dia de la Constitució',
-                    'es' => 'Día de la Constitución'
+                    'es' => 'Día de la Constitución',
                 ],
                 new DateTime("$this->year-12-6", new DateTimeZone($this->timezone)),
                 $this->locale
