@@ -198,7 +198,7 @@ class Victoria extends Australia
                 $aflGrandFinalFriday = '2019-09-27';
                 break;
             case 2020:
-                $aflGrandFinalFriday = '2018-09-25';
+                $aflGrandFinalFriday = '2020-09-25';
                 break;
             default:
                 return;
