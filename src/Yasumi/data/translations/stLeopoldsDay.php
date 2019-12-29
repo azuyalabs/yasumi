@@ -13,6 +13,6 @@
 
 // Translations for Saint Leopold's Day.
 return [
-  'en' => 'Saint Leopold\'s Day',
-  'de_AT' => 'Leopold',
+    'en' => 'Saint Leopold\'s Day',
+    'de_AT' => 'Leopold',
 ];

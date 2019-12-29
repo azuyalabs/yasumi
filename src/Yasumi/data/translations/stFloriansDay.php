@@ -13,6 +13,6 @@
 
 // Translations for Saint Florian's Day.
 return [
-  'en' => 'Saint Florian\'s Day',
-  'de_AT' => 'Florian',
+    'en' => 'Saint Florian\'s Day',
+    'de_AT' => 'Florian',
 ];

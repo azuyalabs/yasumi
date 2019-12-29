@@ -13,6 +13,6 @@
 
 // Translations for Plebiscite Day.
 return [
-  'en' => 'Plebiscite Day',
-  'de_AT' => 'Tag der Volksabstimmung',
+    'en' => 'Plebiscite Day',
+    'de_AT' => 'Tag der Volksabstimmung',
 ];
