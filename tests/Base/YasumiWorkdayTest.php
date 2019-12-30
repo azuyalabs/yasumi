@@ -155,7 +155,7 @@ class YasumiWorkdayTest extends TestCase
      * @throws Exception
      * @group test
      */
-    public function testDeliveryDates(string $start, int $workdays, string $expectedNext): void
+    public function testWorkdayIsNextYear(string $start, int $workdays, string $expectedNext): void
     {
         $provider = 'USA';
         $timezone = 'America/New_York';
