@@ -180,7 +180,7 @@ class YasumiWorkdayTest extends TestCase
                 '2018-12-28',
                 2,
                 '2019-01-02',
-            ]
+            ],
         ];
     }
 }
