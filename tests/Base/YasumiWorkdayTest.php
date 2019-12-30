@@ -142,4 +142,45 @@ class YasumiWorkdayTest extends TestCase
         $result = Yasumi::prevWorkingDay($provider, $startDate, $interval);
         $this->assertEquals($expectedPrevious, $result->format(self::FORMAT_DATE));
     }
+
+
+    /**
+     * Tests when the next working day happens to be in the next year.
+     *
+     * @dataProvider dataProviderWorkDayNextYear
+     * @param string $start
+     * @param int $workdays
+     * @param string $expectedNext
+     * @throws ReflectionException
+     * @throws Exception
+     * @group test
+     */
+    public function testDeliveryDates(string $start, int $workdays, string $expectedNext): void
+    {
+        $provider = 'USA';
+        $timezone = 'America/New_York';
+        $startDate = new DateTime($start, new DateTimeZone($timezone));
+        $result = Yasumi::nextWorkingDay($provider, $startDate, $workdays);
+
+        $this->assertEquals($expectedNext, $result->format(self::FORMAT_DATE));
+    }
+
+    /**
+     * @return array
+     */
+    public function dataProviderWorkDayNextYear(): array
+    {
+        return [
+            [
+                '2019-12-30',
+                2,
+                '2020-01-02',
+            ],
+            [
+                '2018-12-28',
+                2,
+                '2019-01-02',
+            ]
+        ];
+    }
 }
