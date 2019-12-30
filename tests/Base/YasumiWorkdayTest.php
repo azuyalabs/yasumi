@@ -153,9 +153,8 @@ class YasumiWorkdayTest extends TestCase
      * @param string $expectedNext
      * @throws ReflectionException
      * @throws Exception
-     * @group test
      */
-    public function testWorkdayIsNextYear(string $start, int $workdays, string $expectedNext): void
+    public function testWorkDayIsNextYear(string $start, int $workdays, string $expectedNext): void
     {
         $provider = 'USA';
         $timezone = 'America/New_York';
