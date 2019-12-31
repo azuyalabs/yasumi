@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 ### Changed
 
 ### Fixed
+- Fixed issue if the next working day happens to be in the next year
 
 ### Removed
 - PHP 7.1 Support, as it has reached its end of life.
