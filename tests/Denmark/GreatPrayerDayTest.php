@@ -73,7 +73,7 @@ class GreatPrayerDayTest extends DenmarkBaseTestCase implements YasumiTestCaseIn
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Store bededag']
+            [self::LOCALE => 'store bededag']
         );
     }
 

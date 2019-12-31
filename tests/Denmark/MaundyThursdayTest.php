@@ -55,7 +55,7 @@ class MaundyThursdayTest extends DenmarkBaseTestCase implements YasumiTestCaseIn
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'Skærtorsdag']
+            [self::LOCALE => 'skærtorsdag']
         );
     }
 

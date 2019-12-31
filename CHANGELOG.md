@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 ### Added
 - Additional Dates for Australia/Victoria:AFL Grand Final Friday  [\#190](https://github.com/azuyalabs/yasumi/pull/190) ([brucealdridge](https://github.com/brucealdridge))
 ### Changed
+- Holiday names in Danish, Dutch, and Norwegian are no longer capitalized. [\#185](https://github.com/azuyalabs/yasumi/pull/185) ([c960657](https://github.com/c960657))
 
 ### Fixed
 - Fixed issue if the next working day happens to be in the next year

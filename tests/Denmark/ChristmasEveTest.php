@@ -64,7 +64,7 @@ class ChristmasEveTest extends DenmarkBaseTestCase implements YasumiTestCaseInte
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'Juleaften']
+            [self::LOCALE => 'juleaften']
         );
     }
 

@@ -73,7 +73,7 @@ class CommemorationDayTest extends NetherlandsBaseTestCase implements YasumiTest
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Dodenherdenking']
+            [self::LOCALE => 'dodenherdenking']
         );
     }
 

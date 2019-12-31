@@ -304,7 +304,7 @@ class Netherlands extends AbstractProvider
         if ($this->year >= 1947) {
             $this->addHoliday(new Holiday(
                 'commemorationDay',
-                ['en' => 'Commemoration Day', 'nl' => 'Dodenherdenking'],
+                ['en' => 'Commemoration Day', 'nl' => 'dodenherdenking'],
                 new DateTime("$this->year-5-4", new DateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OBSERVANCE

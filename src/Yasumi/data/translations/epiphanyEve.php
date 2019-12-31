@@ -13,7 +13,7 @@
 
 // Translations for Epiphany Eve
 return [
-    'da' => 'Helligtrekongersaften',
+    'da' => 'helligtrekongersaften',
     'en' => 'Epiphany Eve',
     'sv' => 'trettondagsafton',
 ];

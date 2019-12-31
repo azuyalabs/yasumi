@@ -66,7 +66,7 @@ class Belgium extends AbstractProvider
         $this->addHoliday(new Holiday('nationalDay', [
             'fr' => 'Fête nationale',
             'en' => 'Belgian National Day',
-            'nl' => 'Nationale feestdag',
+            'nl' => 'nationale feestdag',
         ], new DateTime("$this->year-7-21", new DateTimeZone($this->timezone)), $this->locale));
     }
 }

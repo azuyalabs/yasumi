@@ -55,7 +55,7 @@ class GoodFridayTest extends DenmarkBaseTestCase implements YasumiTestCaseInterf
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'Langfredag']
+            [self::LOCALE => 'langfredag']
         );
     }
 

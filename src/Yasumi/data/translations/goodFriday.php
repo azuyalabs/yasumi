@@ -15,7 +15,7 @@
 return [
     'cs' => 'Velký pátek',
     'cy' => 'Gwener y Groglith',
-    'da' => 'Langfredag',
+    'da' => 'langfredag',
     'de' => 'Karfreitag',
     'el' => 'Μεγάλη Παρασκευή',
     'en' => 'Good Friday',
@@ -28,7 +28,7 @@ return [
     'it' => 'Venerdi Santo',
     'ja' => 'グッドフライデー',
     'lv' => 'Lielā Piektdiena',
-    'nb' => 'Langfredag',
+    'nb' => 'langfredag',
     'nl' => 'Goede Vrijdag',
     'pl' => 'Wielki Piątek',
     'pt' => 'Sexta feira santa',

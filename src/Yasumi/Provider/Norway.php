@@ -85,7 +85,7 @@ class Norway extends AbstractProvider
         if ($this->year >= 1836) {
             $this->addHoliday(new Holiday(
                 'constitutionDay',
-                ['nb' => 'Grunnlovsdagen'],
+                ['nb' => 'grunnlovsdagen'],
                 new DateTime("$this->year-5-17", new DateTimeZone($this->timezone)),
                 $this->locale
             ));

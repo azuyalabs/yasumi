@@ -55,7 +55,7 @@ class PentecostTest extends DenmarkBaseTestCase implements YasumiTestCaseInterfa
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'Pinsedag']
+            [self::LOCALE => 'pinsedag']
         );
     }
 
