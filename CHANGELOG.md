@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 ## [Unreleased]
 
 ### Added
-
+- Additional Dates for Australia/Victoria:AFL Grand Final Friday  [\#190](https://github.com/azuyalabs/yasumi/pull/190) ([brucealdridge](https://github.com/brucealdridge))
 ### Changed
 
 ### Fixed

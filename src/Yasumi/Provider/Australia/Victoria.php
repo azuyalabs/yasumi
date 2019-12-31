@@ -194,6 +194,12 @@ class Victoria extends Australia
             case 2018:
                 $aflGrandFinalFriday = '2018-09-28';
                 break;
+            case 2019:
+                $aflGrandFinalFriday = '2019-09-27';
+                break;
+            case 2020:
+                $aflGrandFinalFriday = '2020-09-25';
+                break;
             default:
                 return;
         }

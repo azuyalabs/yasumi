@@ -30,7 +30,7 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements YasumiTest
     public const HOLIDAY = 'aflGrandFinalFriday';
 
     public const ESTABLISHMENT_YEAR = 2015;
-    public const LAST_KNOWN_YEAR = 2018;
+    public const LAST_KNOWN_YEAR = 2020;
 
     /**
      * Tests AFL Grand Final Friday
@@ -103,6 +103,8 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements YasumiTest
             [2016, '2016-09-30'],
             [2017, '2017-09-29'],
             [2018, '2018-09-28'],
+            [2019, '2019-09-27'],
+            [2020, '2020-09-25'],
         ];
 
         return $data;
