@@ -13,6 +13,7 @@
 
 // Translations for St. Stephen's Day
 return [
+    'ca' => 'Sant Esteve',
     'cy' => 'Gŵyl San Steffan',
     'de' => 'Stephanstag',
     'en' => 'St. Stephen\'s Day',

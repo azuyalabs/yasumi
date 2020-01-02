@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 ## [Unreleased]
 
 ### Added
+- Catalan translations for holidays in Catalonia, Valencian Community, Balearic Islands and Aragon [\#189](https://github.com/azuyalabs/yasumi/pull/189) ([c960657](https://github.com/c960657))
 - Additional Dates for Australia/Victoria:AFL Grand Final Friday  [\#190](https://github.com/azuyalabs/yasumi/pull/190) ([brucealdridge](https://github.com/brucealdridge))
 
 ### Changed

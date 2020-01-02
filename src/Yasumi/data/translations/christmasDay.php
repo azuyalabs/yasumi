@@ -14,6 +14,7 @@
 // Translations for Christmas
 return [
     'bs_Latn' => 'Božić',
+    'ca' => 'Nadal',
     'cs' => '1. svátek vánoční',
     'cy' => 'Nadolig',
     'da' => 'juledag',

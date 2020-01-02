@@ -13,6 +13,7 @@
 
 // Translations for Immaculate Conception
 return [
+    'ca' => 'Immaculada Concepció',
     'de' => 'Mariä Empfängnis',
     'el' => 'Ευαγγελισμός της Θεοτόκου',
     'en' => 'Immaculate Conception',

@@ -73,7 +73,10 @@ class nationalCataloniaDayTest extends CataloniaBaseTestCase implements YasumiTe
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Diada Nacional de Catalunya']
+            [
+                'es' => 'Diada Nacional de Cataluña',
+                'ca' => 'Diada Nacional de Catalunya',
+            ]
         );
     }
 

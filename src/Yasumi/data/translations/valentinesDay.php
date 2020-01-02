@@ -13,6 +13,7 @@
 
 // Translations for Valentine's Day
 return [
+    'ca' => 'Dia de Sant Valentí',
     'de' => 'Valentinstag',
     'el' => 'Αγίου Βαλεντίνου',
     'en' => 'Valentine\'s Day',

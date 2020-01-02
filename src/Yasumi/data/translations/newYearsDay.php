@@ -14,6 +14,7 @@
 // Translations for New Year's Day
 return [
     'bs_Latn' => 'Nova godina',
+    'ca' => 'Cap d\'any',
     'cs' => 'Nový rok',
     'cy' => 'Dydd Calan',
     'da' => 'nytårsdag',

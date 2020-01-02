@@ -13,6 +13,7 @@
 
 // Translations for Maundy Thursday
 return [
+    'ca' => 'dijous Sant',
     'da' => 'skærtorsdag',
     'el' => 'Μεγάλη Πέμπτη',
     'en' => 'Maundy Thursday',
