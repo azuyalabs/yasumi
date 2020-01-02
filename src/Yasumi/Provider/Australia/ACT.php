@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -73,8 +73,12 @@ class ACT extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function easterSunday($year, $timezone, $locale, $type = null): Holiday
-    {
+    private function easterSunday(
+        int $year,
+        string $timezone,
+        string $locale,
+        ?string $type = null
+    ): Holiday {
         return new Holiday(
             'easter',
             ['en' => 'Easter Sunday'],
@@ -105,8 +109,12 @@ class ACT extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function easterSaturday($year, $timezone, $locale, $type = null): Holiday
-    {
+    private function easterSaturday(
+        int $year,
+        string $timezone,
+        string $locale,
+        ?string $type = null
+    ): Holiday {
         return new Holiday(
             'easterSaturday',
             ['en' => 'Easter Saturday'],
@@ -135,8 +143,8 @@ class ACT extends Australia
     {
         $this->calculateHoliday(
             'queensBirthday',
-            ['en' => "Queen's Birthday"],
             new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->timezone)),
+            ['en' => "Queen's Birthday"],
             false,
             false
         );

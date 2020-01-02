@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -451,8 +451,12 @@ trait CommonHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function summerTime($year, $timezone, $locale, $type = null): ?Holiday
-    {
+    public function summerTime(
+        int $year,
+        string $timezone,
+        string $locale,
+        ?string $type = null
+    ): ?Holiday {
         $date = $this->calculateSummerWinterTime($year, $timezone, true);
 
         if ($date instanceof \DateTimeImmutable) {
@@ -489,8 +493,11 @@ trait CommonHolidays
      *                        timezone. If no transition time is found, a null value is returned.
      * @throws \Exception
      */
-    protected function calculateSummerWinterTime($year, $timezone, $summer): ?\DateTimeImmutable
-    {
+    protected function calculateSummerWinterTime(
+        int $year,
+        string $timezone,
+        bool $summer
+    ): ?\DateTimeImmutable {
         $zone = new DateTimeZone($timezone);
 
         $transitions = $zone->getTransitions(\mktime(0, 0, 0, 1, 1, $year), \mktime(23, 59, 59, 12, 31, $year));
@@ -525,8 +532,12 @@ trait CommonHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function winterTime($year, $timezone, $locale, $type = null): ?Holiday
-    {
+    public function winterTime(
+        int $year,
+        string $timezone,
+        string $locale,
+        ?string $type = null
+    ): ?Holiday {
         $date = $this->calculateSummerWinterTime($year, $timezone, false);
 
         if ($date instanceof \DateTimeImmutable) {

@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -72,8 +72,12 @@ class NSW extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function easterSaturday($year, $timezone, $locale, $type = null): Holiday
-    {
+    private function easterSaturday(
+        int $year,
+        string $timezone,
+        string $locale,
+        ?string $type = null
+    ): Holiday {
         return new Holiday(
             'easterSaturday',
             ['en' => 'Easter Saturday'],
@@ -102,8 +106,8 @@ class NSW extends Australia
     {
         $this->calculateHoliday(
             'queensBirthday',
-            ['en' => "Queen's Birthday"],
             new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->timezone)),
+            ['en' => "Queen's Birthday"],
             false,
             false
         );
@@ -131,8 +135,8 @@ class NSW extends Australia
     {
         $this->calculateHoliday(
             'bankHoliday',
-            ['en' => 'Bank Holiday'],
             new DateTime('first monday of august ' . $this->year, new DateTimeZone($this->timezone)),
+            ['en' => 'Bank Holiday'],
             false,
             false,
             Holiday::TYPE_BANK

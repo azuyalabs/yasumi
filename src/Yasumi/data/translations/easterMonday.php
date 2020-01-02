@@ -1,8 +1,9 @@
 <?php declare(strict_types=1);
+
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -29,9 +30,9 @@ return [
     'it_CH' => 'Lunedi di Pasqua',
     'lt' => 'Antroji Velykų diena',
     'lv' => 'Otrās Lieldienas',
-    'nb' => 'Andre påskedag',
-    'nl_BE' => 'Paasmaandag',
-    'nl' => 'Tweede paasdag',
+    'nb' => 'andre påskedag',
+    'nl_BE' => 'paasmaandag',
+    'nl' => 'tweede paasdag',
     'pl' => 'Poniedziałek Wielkanocny',
     'ro' => 'A doua zi de Paște',
     'sk' => 'Veľkonočný pondelok',

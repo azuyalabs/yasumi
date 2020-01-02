@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -181,7 +181,11 @@ class Holiday extends DateTime implements JsonSerializable
         while (\array_pop($parts) && $parts) {
             $locales[] = \implode('_', $parts);
         }
-        $locales[] = self::DEFAULT_LOCALE;
+
+        // DEFAULT_LOCALE is en_US
+        $locales[] = 'en_US';
+        $locales[] = 'en';
+
         return $locales;
     }
 

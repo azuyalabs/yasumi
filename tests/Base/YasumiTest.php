@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -193,7 +193,7 @@ class YasumiTest extends TestCase
             'Netherlands',
             Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND - 1)
         );
-        $holidays->next(null);
+        $holidays->next('');
     }
 
     /**
@@ -231,7 +231,7 @@ class YasumiTest extends TestCase
             'Netherlands',
             Factory::create()->numberBetween(self::YEAR_LOWER_BOUND + 1, self::YEAR_UPPER_BOUND)
         );
-        $holidays->previous(null);
+        $holidays->previous('');
     }
 
     /**
@@ -272,7 +272,7 @@ class YasumiTest extends TestCase
         $this->expectException(InvalidArgumentException::class);
 
         $holidays = Yasumi::create('Japan', 2010);
-        $holidays->whenIs(null);
+        $holidays->whenIs('');
     }
 
     /**
@@ -285,7 +285,7 @@ class YasumiTest extends TestCase
         $this->expectException(InvalidArgumentException::class);
 
         $holidays = Yasumi::create('Netherlands', 1999);
-        $holidays->getHoliday(null);
+        $holidays->getHoliday('');
     }
 
     /**
@@ -312,7 +312,7 @@ class YasumiTest extends TestCase
         $this->expectException(InvalidArgumentException::class);
 
         $holidays = Yasumi::create('Netherlands', 2388);
-        $holidays->whatWeekDayIs(null);
+        $holidays->whatWeekDayIs('');
     }
 
     /**

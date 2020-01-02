@@ -6,13 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 ## [Unreleased]
 
 ### Added
-- Catalan translations for holidays in Catalonia, Valencian Community, Balearic Islands and Aragon [\#999](https://github.com/azuyalabs/yasumi/pull/999) ([pioc92](https://github.com/c960657))
+- Catalan translations for holidays in Catalonia, Valencian Community, Balearic Islands and Aragon [\#189](https://github.com/azuyalabs/yasumi/pull/189) ([c960657](https://github.com/c960657))
+- Additional Dates for Australia/Victoria:AFL Grand Final Friday  [\#190](https://github.com/azuyalabs/yasumi/pull/190) ([brucealdridge](https://github.com/brucealdridge))
 
 ### Changed
+- Holiday names in Danish, Dutch, and Norwegian are no longer capitalized. [\#185](https://github.com/azuyalabs/yasumi/pull/185) ([c960657](https://github.com/c960657))
 
 ### Fixed
+- Fixed issue if the next working day happens to be in the next year  (i.e. not in the year of the Yasumi instance) [\#192](https://github.com/azuyalabs/yasumi/issues/192) ([tniemann](https://github.com/tniemann))
+- Fixed issue if the previous working day happens to be in the previous year (i.e. not in the year of the Yasumi instance)
 
 ### Removed
+- PHP 7.1 Support, as it has reached its end of life.
 
 
 ## [2.2.0] - 2019-10-06

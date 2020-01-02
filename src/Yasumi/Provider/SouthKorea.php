@@ -3,7 +3,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -50,7 +50,7 @@ class SouthKorea extends AbstractProvider
      * There is no perfect formula, and as it moves away from the current date, the error becomes bigger.
      * Korea Astronomy and Space Science Institute (KASI) is supporting the converter until 2050.
      * For more information, please refer to the paper below.
-     * 박한얼, 민병희, 안영숙,(2017).한국 음력의 운용과 계산법 연구.천문학논총,32(3),407-420.
+     * 박(2017)총,32(3),407-420.
      * @link https://www.kasi.re.kr/kor/research/paper/20170259 - Korea Astronomy and Space Science Institute
      */
     public const LUNAR_HOLIDAY = [
@@ -458,65 +458,67 @@ class SouthKorea extends AbstractProvider
 
     /**
      * Substitute Holidays.
-     * related statutes: Article 3 Alternative Statutory Holidays of the Regulations on Holidays of Government Offices
+     * Related statutes: Article 3 Alternative Statutory Holidays of the Regulations on Holidays of Government Offices
      *
      * Since 2014, it has been applied only on Seollal, Chuseok and Children's Day.
      * Due to the lunar calendar, public holidays can overlap even if it's not a Sunday.
-     * When public holidays fall each other, the first non-public holiday after the holiday become as a public holiday.
+     * When public holidays fall on each other, the first non-public holiday after the holiday becomes a public holiday.
      * As an exception, Children's Day also applies on Saturday.
      *
      * @throws \Exception
      */
     public function calculateSubstituteHolidays(): void
     {
-        if ($this->year > 2013) {
-            // Initialize holidays variable
-            $holidays = $this->getHolidays();
-            $acceptedHolidays = [
-                'dayBeforeSeollal', 'seollal', 'dayAfterSeollal',
-                'dayBeforeChuseok', 'chuseok', 'dayAfterChuseok',
-                'childrensDay',
-            ];
+        if ($this->year <= 2013) {
+            return;
+        }
 
-            // Loop through all holidays
-            foreach ($holidays as $shortName => $holiday) {
-                // Get list of holiday dates except this
-                $holidayDates = \array_map(static function ($holiday) use ($shortName) {
-                    return $holiday->shortName === $shortName ? false : (string)$holiday;
-                }, $holidays);
+        // Initialize holidays variable
+        $holidays = $this->getHolidays();
+        $acceptedHolidays = [
+            'dayBeforeSeollal', 'seollal', 'dayAfterSeollal',
+            'dayBeforeChuseok', 'chuseok', 'dayAfterChuseok',
+            'childrensDay',
+        ];
 
-                // Only process accepted holidays and conditions
-                if (\in_array($shortName, $acceptedHolidays, true)
-                    && (
-                        0 === (int)$holiday->format('w')
-                        || \in_array($holiday, $holidayDates, false)
-                        || (6 === (int)$holiday->format('w') && 'childrensDay' === $shortName)
-                    )
-                ) {
-                    $date = clone $holiday;
+        // Loop through all holidays
+        foreach ($holidays as $shortName => $holiday) {
+            // Get list of holiday dates except this
+            $holidayDates = \array_map(static function ($holiday) use ($shortName) {
+                return $holiday->shortName === $shortName ? false : (string)$holiday;
+            }, $holidays);
 
-                    // Find next week day (not being another holiday)
-                    while (0 === (int)$date->format('w')
-                        || (6 === (int)$date->format('w') && 'childrensDay' === $shortName)
-                        || \in_array($date, $holidayDates, false)) {
-                        $date->add(new DateInterval('P1D'));
-                        continue;
-                    }
+            // Only process accepted holidays and conditions
+            if (\in_array($shortName, $acceptedHolidays, true)
+                && (
+                    0 === (int)$holiday->format('w')
+                    || \in_array($holiday, $holidayDates, false)
+                    || (6 === (int)$holiday->format('w') && 'childrensDay' === $shortName)
+                )
+            ) {
+                $date = clone $holiday;
 
-                    // Add a new holiday that is substituting the original holiday
-                    $substitute = new SubstituteHoliday(
-                        $holiday,
-                        [],
-                        $date,
-                        $this->locale
-                    );
-
-                    // Add a new holiday that is substituting the original holiday
-                    $this->addHoliday($substitute);
-
-                    // Add substitute holiday to the list
-                    $holidays[] = $substitute;
+                // Find next week day (not being another holiday)
+                while (0 === (int)$date->format('w')
+                    || (6 === (int)$date->format('w') && 'childrensDay' === $shortName)
+                    || \in_array($date, $holidayDates, false)) {
+                    $date->add(new DateInterval('P1D'));
+                    continue;
                 }
+
+                // Add a new holiday that is substituting the original holiday
+                $substitute = new SubstituteHoliday(
+                    $holiday,
+                    [],
+                    $date,
+                    $this->locale
+                );
+
+                // Add a new holiday that is substituting the original holiday
+                $this->addHoliday($substitute);
+
+                // Add substitute holiday to the list
+                $holidays[] = $substitute;
             }
         }
     }
