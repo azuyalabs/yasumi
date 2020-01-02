@@ -23,6 +23,7 @@ return [
     'en_ZA' => 'Day of Goodwill',
     'et' => 'Teine Jõulupüha',
     'fi' => '2. joulupäivä',
+    'fr' => 'Lendemain de Noël',
     'hu' => 'Karácsony másnapja',
     'ko' => '성탄절 연휴',
     'lt' => 'Kalėdos (antra diena)',
