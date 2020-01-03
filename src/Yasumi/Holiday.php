@@ -16,6 +16,7 @@ use DateTime;
 use InvalidArgumentException;
 use JsonSerializable;
 use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\MissingTranslationException;
 use Yasumi\Exception\UnknownLocaleException;
 
 /**
@@ -52,6 +53,11 @@ class Holiday extends DateTime implements JsonSerializable
      * The default locale. Used for translations of holiday names and other text strings.
      */
     public const DEFAULT_LOCALE = 'en_US';
+
+    /**
+     * Pseudo-locale representing the short name (internal name) of the holiday.
+     */
+    public const LOCALE_SHORT_NAME = 'shortName';
 
     /**
      * @var array list of all defined locales
@@ -152,49 +158,75 @@ class Holiday extends DateTime implements JsonSerializable
     }
 
     /**
-     * Returns the name of this holiday.
+     * Returns the localized name of this holiday
      *
-     * The name of this holiday is returned translated in the given locale. If for the given locale no translation is
-     * defined, the name in the default locale ('en_US') is returned. In case there is no translation at all, the short
-     * internal name is returned.
+     * The provided locales are searched for a translation. The first locale containing a translation will be used.
      *
-     * @param string $locale the locale to use; if omitted, the display locale is used
+     * If no locale is provided, proceed as if an array containing the display locale, Holiday::DEFAULT_LOCALE ('en_US'), and
+     * Holiday::LOCALE_SHORT_NAME (the short name (internal name) of this holiday) was provided.
+     *
+     * @param array $locales The locales to search for translations
+     *
+     * @see Holiday::DEFAULT_LOCALE
+     * @see Holiday::LOCALE_SHORT_NAME
      */
-    public function getName(string $locale = null): string
+    public function getName(array $locales = null): string
     {
-        foreach ($this->getLocales($locale) as $locale) {
+        $locales = $this->getLocales($locales);
+        foreach ($locales as $locale) {
+            if ($locale === self::LOCALE_SHORT_NAME) {
+                return $this->shortName;
+            }
             if (isset($this->translations[$locale])) {
                 return $this->translations[$locale];
             }
         }
 
-        return $this->shortName;
+        throw new MissingTranslationException($this->shortName, $locales);
     }
 
     /**
-     * Returns the display locale and its fallback locales.
+     * Expands the provided locale into an array of locales to check for translations.
      *
-     * @param string $locale the locale to use; if omitted, the display locale is used
+     * For each provided locale, return all locales including their parent locales. E.g.
+     * ['ca_ES_VALENCIA', 'es_ES'] is expanded into ['ca_ES_VALENCIA', 'ca_ES', 'ca', 'es_ES', 'es'].
+     *
+     * If a string is provided, return as if this string, Holiday::DEFAULT_LOCALE, and Holiday::LOCALE_SHORT_NAM
+     * was provided. E.g. 'de_DE' is expanded into ['de_DE', 'de', 'en_US', 'en', Holiday::LOCALE_SHORT_NAME].
+     *
+     * If null is provided, return as if the display locale was provided as a string.
+     *
+     * @param string|array|null Array of locales, or null if the display locale should be used
      *
      * @return array
+     *
+     * @throws MissingTranslationException
+     *
+     * @see Holiday::DEFAULT_LOCALE
+     * @see Holiday::LOCALE_SHORT_NAME
      */
-    protected function getLocales(?string $locale): array
+    protected function getLocales(?array $locales): array
     {
-        if (!$locale) {
-            $locale = $this->displayLocale;
+        if ($locales) {
+            $expanded = [];
+            $locales = $locales;
+        } else {
+            $locales = [$this->displayLocale];
+            // DEFAULT_LOCALE is 'en_US', and its parent is 'en'.
+            $expanded = [self::LOCALE_SHORT_NAME, 'en', 'en_US'];
         }
 
-        $locales = [$locale];
-        $parts = \explode('_', $locale);
-        while (\array_pop($parts) && $parts) {
-            $locales[] = \implode('_', $parts);
+        // Expand e.g. ['de_DE', 'en_GB'] into  ['de_DE', 'de', 'en_GB', 'en'].
+        foreach (\array_reverse($locales) as $locale) {
+            $parent = \strtok($locale, '_');
+            while ($child = \strtok('_')) {
+                $expanded[] = $parent;
+                $parent .= '_' . $child;
+            }
+            $expanded[] = $locale;
         }
 
-        // DEFAULT_LOCALE is en_US
-        $locales[] = 'en_US';
-        $locales[] = 'en';
-
-        return $locales;
+        return \array_reverse($expanded);
     }
 
     /**

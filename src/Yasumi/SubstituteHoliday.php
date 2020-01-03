@@ -76,15 +76,19 @@ class SubstituteHoliday extends Holiday
     }
 
     /**
-     * Returns the name of this holiday.
+     * Returns the localized name of this holiday for the specified locale(s).
      *
-     * The name of this holiday is returned translated in the given locale. If for the given locale no translation is
-     * defined, the name in the default locale ('en_US') is returned. In case there is no translation at all, the short
-     * internal name is returned.
+     * If no locale is provided, return as if the display locale was provided as a string.
      *
-     * @param string $locale the locale to use; if omitted, the display locale is used
+     * If a string or no locale is provided, additionally fall back to Holiday::DEFAULT_LOCALE ('en_US') and
+     * Holiday::LOCALE_SHORT_NAME (the short name (internal name) of this holiday).
+     *
+     * @param string|array $locales the locale(s) to use; if omitted, the display locale is used
+     *
+     * @see Holiday::DEFAULT_LOCALE
+     * @see Holiday::LOCALE_SHORT_NAME
      */
-    public function getName(string $locale = null): string
+    public function getName($locale = null): string
     {
         $name = parent::getName();
 

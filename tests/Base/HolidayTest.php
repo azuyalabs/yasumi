@@ -17,6 +17,7 @@ use DateTimeImmutable;
 use Exception;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
+use Yasumi\Exception\MissingTranslationException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiBase;
@@ -89,10 +90,73 @@ class HolidayTest extends TestCase
     }
 
     /**
-     * Tests the getName function of the Holiday object with parent translation fallback.
-     * @throws Exception
+     * Tests the getLocales function of the Holiday object.
      */
-    public function testHolidayGetNameWithParentLocaleTranslation(): void
+    public function testHolidayGetLocales(): void
+    {
+        $holiday = new Holiday('testHoliday', [], new DateTime(), 'ca_ES_VALENCIA');
+        $method = new \ReflectionMethod(Holiday::class, 'getLocales');
+        $method->setAccessible(true);
+
+        $this->assertEquals(['ca_ES_VALENCIA', 'ca_ES', 'ca', 'en_US', 'en', Holiday::LOCALE_SHORT_NAME], $method->invoke($holiday, null));
+        $this->assertEquals(['de_DE', 'de', 'es_ES', 'es'], $method->invoke($holiday, ['de_DE', 'es_ES']));
+        $this->assertEquals(['de_DE', 'de', Holiday::LOCALE_SHORT_NAME], $method->invoke($holiday, ['de_DE', Holiday::LOCALE_SHORT_NAME]));
+    }
+
+    /**
+     * Tests the getName function of the Holiday object without any arguments provided.
+     */
+    public function testHolidayGetNameWithoutArgument(): void
+    {
+        // 'en_US' fallback
+        $translations = [
+            'de' => 'Holiday DE',
+            'de_AT' => 'Holiday DE-AT',
+            'en' => 'Holiday EN',
+            'en_US' => 'Holiday EN-US',
+        ];
+
+        $holiday = new Holiday('testHoliday', $translations, new DateTime(), 'de_AT');
+        $this->assertEquals('Holiday DE-AT', $holiday->getName());
+
+        $holiday = new Holiday('testHoliday', $translations, new DateTime(), 'de');
+        $this->assertEquals('Holiday DE', $holiday->getName());
+
+        $holiday = new Holiday('testHoliday', $translations, new DateTime(), 'de_DE');
+        $this->assertEquals('Holiday DE', $holiday->getName());
+
+        $holiday = new Holiday('testHoliday', $translations, new DateTime(), 'ja');
+        $this->assertEquals('Holiday EN-US', $holiday->getName());
+
+        // 'en' fallback
+        $translations = [
+            'de' => 'Holiday DE',
+            'en' => 'Holiday EN',
+        ];
+
+        $holiday = new Holiday('testHoliday', $translations, new DateTime(), 'de_DE');
+        $this->assertEquals('Holiday DE', $holiday->getName());
+
+        $holiday = new Holiday('testHoliday', $translations, new DateTime(), 'ja');
+        $this->assertEquals('Holiday EN', $holiday->getName());
+
+
+        // No 'en' or 'en_US' fallback
+        $translations = [
+            'de' => 'Holiday DE',
+        ];
+
+        $holiday = new Holiday('testHoliday', $translations, new DateTime(), 'de_DE');
+        $this->assertEquals('Holiday DE', $holiday->getName());
+
+        $holiday = new Holiday('testHoliday', $translations, new DateTime(), 'ja');
+        $this->assertEquals('testHoliday', $holiday->getName());
+    }
+
+    /**
+     * Tests the getName function of the Holiday object with an explicit list of locales.
+     */
+    public function testHolidayGetNameWithArgument(): void
     {
         $translations = [
             'de' => 'Holiday DE',
@@ -103,98 +167,24 @@ class HolidayTest extends TestCase
         ];
         $holiday = new Holiday('testHoliday', $translations, new DateTime(), 'de_DE');
 
-        $this->assertEquals('Holiday DE', $holiday->getName());
-        $this->assertEquals('Holiday DE', $holiday->getName('de'));
-        $this->assertEquals('Holiday DE', $holiday->getName('de_DE'));
-        $this->assertEquals('Holiday DE', $holiday->getName('de_DE_berlin'));
-        $this->assertEquals('Holiday DE-AT', $holiday->getName('de_AT'));
-        $this->assertEquals('Holiday DE-AT', $holiday->getName('de_AT_vienna'));
-        $this->assertEquals('Holiday NL', $holiday->getName('nl'));
-        $this->assertEquals('Holiday NL', $holiday->getName('nl_NL'));
-        $this->assertEquals('Holiday IT-IT', $holiday->getName('it_IT'));
-        $this->assertEquals('Holiday EN-US', $holiday->getName('it'));
-        $this->assertEquals('Holiday EN-US', $holiday->getName('da'));
-    }
+        $this->assertEquals('Holiday DE', $holiday->getName(['de']));
+        $this->assertEquals('Holiday DE', $holiday->getName(['ja', 'de', 'nl', 'it_IT']));
+        $this->assertEquals('Holiday DE', $holiday->getName(['de_DE']));
+        $this->assertEquals('Holiday DE', $holiday->getName(['de_DE_berlin']));
+        $this->assertEquals('Holiday DE', $holiday->getName(['de_DE_berlin', 'nl', 'it_IT']));
+        $this->assertEquals('Holiday DE-AT', $holiday->getName(['de_AT']));
+        $this->assertEquals('Holiday DE-AT', $holiday->getName(['de_AT_vienna']));
+        $this->assertEquals('Holiday NL', $holiday->getName(['nl']));
+        $this->assertEquals('Holiday NL', $holiday->getName(['nl_NL']));
+        $this->assertEquals('Holiday IT-IT', $holiday->getName(['it_IT']));
+        $this->assertEquals('Holiday IT-IT', $holiday->getName(['it_IT', Holiday::LOCALE_SHORT_NAME]));
+        $this->assertEquals('testHoliday', $holiday->getName([Holiday::LOCALE_SHORT_NAME]));
 
-    /**
-     * Tests the getName function of the Holiday object with no translation for the display locale.
-     * @throws Exception
-     */
-    public function testHolidayGetNameWithoutDisplayLocaleTranslation(): void
-    {
-        $translations = [
-            'en_US' => 'Holiday EN-US',
-            'de_DE' => 'Holiday DE-DE',
-        ];
-        $holiday = new Holiday('testHoliday', $translations, new DateTime(), 'ja_JP');
-
+        $holiday = new Holiday('testHoliday', $translations, new DateTime(), 'ja');
         $this->assertEquals('Holiday EN-US', $holiday->getName());
-        $this->assertEquals('Holiday EN-US', $holiday->getName('ja_JP'));
-        $this->assertEquals('Holiday EN-US', $holiday->getName('de'));
-        $this->assertEquals('Holiday DE-DE', $holiday->getName('de_DE'));
-        $this->assertEquals('Holiday EN-US', $holiday->getName('en_US'));
-    }
 
-    /**
-     * Tests the getName function of the Holiday object with no translations.
-     * @throws Exception
-     */
-    public function testHolidayGetNameWithNoFallback(): void
-    {
-        $holiday = new Holiday('testHoliday', [], new DateTime(), 'ja_JP');
-
-        $this->assertEquals('testHoliday', $holiday->getName());
-        $this->assertEquals('testHoliday', $holiday->getName('en'));
-        $this->assertEquals('testHoliday', $holiday->getName('en_US'));
-        $this->assertEquals('testHoliday', $holiday->getName('ja_JP'));
-    }
-
-    /**
-     * Tests the getName function of the Holiday object with an 'en_US' fallback translation.
-     *
-     * @throws Exception
-     */
-    public function testHolidayGetNameWithEnUsFallback(): void
-    {
-        $name = 'testHoliday';
-        $holiday = new Holiday($name, [
-            'en' => 'Holiday EN',
-            'en_US' => 'Holiday EN-US',
-            'de_DE' => 'Holiday DE',
-        ], new DateTime(), 'de_DE');
-
-        $this->assertNotNull($holiday->getName());
-        $this->assertIsString($holiday->getName());
-        $this->assertEquals('Holiday DE', $holiday->getName());
-        $this->assertEquals('Holiday EN-US', $holiday->getName('de'));
-        $this->assertEquals('Holiday DE', $holiday->getName('de_DE'));
-        $this->assertEquals('Holiday EN-US', $holiday->getName('nl_NL'));
-        $this->assertEquals('Holiday EN', $holiday->getName('en'));
-        $this->assertEquals('Holiday EN-US', $holiday->getName('en_US'));
-        $this->assertEquals('Holiday EN-US', $holiday->getName('en-GB'));
-    }
-
-    /**
-     * Tests the getName function of the Holiday object with an 'en' fallback translation.
-     *
-     * @throws Exception
-     */
-    public function testHolidayGetNameWithEnFallback(): void
-    {
-        $translations = [
-            'en' => 'Holiday EN',
-            'en_GB' => 'Holiday EN-GB',
-            'de_DE' => 'Holiday DE',
-        ];
-        $holiday = new Holiday('testHoliday', $translations, new DateTime(), 'de_DE');
-
-        $this->assertEquals('Holiday DE', $holiday->getName());
-        $this->assertEquals('Holiday EN', $holiday->getName('de'));
-        $this->assertEquals('Holiday DE', $holiday->getName('de_DE'));
-        $this->assertEquals('Holiday EN', $holiday->getName('nl_NL'));
-        $this->assertEquals('Holiday EN', $holiday->getName('en'));
-        $this->assertEquals('Holiday EN', $holiday->getName('en_US'));
-        $this->assertEquals('Holiday EN-GB', $holiday->getName('en_GB'));
+        $this->expectException(MissingTranslationException::class);
+        $holiday->getName(['it']);
     }
 
     /**
