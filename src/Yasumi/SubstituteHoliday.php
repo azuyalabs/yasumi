@@ -76,14 +76,16 @@ class SubstituteHoliday extends Holiday
     }
 
     /**
-     * Returns the localized name of this holiday for the specified locale(s).
+     * Returns the localized name of this holiday
      *
-     * If no locale is provided, return as if the display locale was provided as a string.
+     * The provided locales are searched for a translation. The first locale containing a translation will be used.
      *
-     * If a string or no locale is provided, additionally fall back to Holiday::DEFAULT_LOCALE ('en_US') and
-     * Holiday::LOCALE_SHORT_NAME (the short name (internal name) of this holiday).
+     * If no locale is provided, proceed as if an array containing the display locale, Holiday::DEFAULT_LOCALE ('en_US'), and
+     * Holiday::LOCALE_SHORT_NAME (the short name (internal name) of this holiday) was provided.
      *
-     * @param string|array $locales the locale(s) to use; if omitted, the display locale is used
+     * @param array $locales The locales to search for translations
+     *
+     * @throws MissingTranslationException
      *
      * @see Holiday::DEFAULT_LOCALE
      * @see Holiday::LOCALE_SHORT_NAME
