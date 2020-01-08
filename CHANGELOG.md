@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 ## [Unreleased]
 
 ### Added
+- Day of Liberation (Tag der Befreiung) is an one-time official holiday in 2020 in Berlin (Germany).
 
 ### Changed
 
