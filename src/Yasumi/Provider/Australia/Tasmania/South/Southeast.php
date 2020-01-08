@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -56,8 +56,8 @@ class Southeast extends South
     {
         $this->calculateHoliday(
             'hobartRegatta',
-            ['en' => 'Royal Hobart Regatta'],
             new DateTime('second monday of february ' . $this->year, new DateTimeZone($this->timezone)),
+            ['en' => 'Royal Hobart Regatta'],
             false,
             false
         );

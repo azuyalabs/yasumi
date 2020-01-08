@@ -3,7 +3,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -89,6 +89,7 @@ class Translations implements TranslationsInterface
      * @param string $locale locale the locale to be validated
      *
      * @return true upon success, otherwise an UnknownLocaleException is thrown
+     *
      * @throws UnknownLocaleException An UnknownLocaleException is thrown if the given locale is not
      *                                valid/available.
      *

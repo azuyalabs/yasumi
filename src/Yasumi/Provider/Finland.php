@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -85,7 +85,7 @@ class Finland extends AbstractProvider
      */
     private function calculateStJohnsDay(): void
     {
-        $stJohnsDay = ($this->year < 1955) ? "$this->year-6-24" : "$this->year-6-20 this saturday";
+        $stJohnsDay = $this->year < 1955 ? "$this->year-6-24" : "$this->year-6-20 this saturday";
 
         $this->addHoliday(new Holiday(
             'stJohnsDay',

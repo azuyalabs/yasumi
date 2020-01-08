@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -22,6 +22,7 @@ use Yasumi\Holiday;
  *
  * Class Ukraine
  * @package Yasumi\Provider
+ *
  * @author  Dmitry Machin <machin.dmitry@gmail.com>
  */
 class Ukraine extends AbstractProvider
@@ -214,9 +215,10 @@ class Ukraine extends AbstractProvider
      * @param string $timezone
      *
      * @return \DateTime
+     *
      * @throws \Exception
      */
-    public function calculateEaster($year, $timezone): \DateTime
+    public function calculateEaster(int $year, string $timezone): \DateTime
     {
         return $this->calculateOrthodoxEaster($year, $timezone);
     }

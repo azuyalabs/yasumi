@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -268,7 +268,7 @@ class UnitedKingdom extends AbstractProvider
      *
      * @throws \Exception
      */
-    protected function calculateChristmasHolidays(string $type = null): void
+    protected function calculateChristmasHolidays(?string $type = null): void
     {
         $christmasDay = $this->christmasDay($this->year, $this->timezone, $this->locale, $type ?? Holiday::TYPE_OFFICIAL);
         $secondChristmasDay = $this->secondChristmasDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK);

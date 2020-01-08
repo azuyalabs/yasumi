@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -35,7 +35,7 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCase
     public const ESTABLISHMENT_YEAR = 1948;
 
     /**
-     * Tests Vernal Equinox Day after 2150. This national holiday was established in 1948 as a day on which to honor
+     * Tests Autumnal Equinox Day after 2150. This national holiday was established in 1948 as a day on which to honor
      * one's ancestors and remember the dead. Prior to 1948, the autumnal equinox was an imperial ancestor worship
      * festival called Shūki kōrei-sai (秋季皇霊祭).
      *
@@ -48,7 +48,7 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCase
     }
 
     /**
-     * Tests Vernal Equinox Day between 1948 and 2150. This national holiday was established in 1948 as a day on which
+     * Tests Autumnal Equinox Day between 1948 and 2150. This national holiday was established in 1948 as a day on which
      * to honor one's ancestors and remember the dead. Prior to 1948, the autumnal equinox was an imperial ancestor
      * worship festival called Shūki kōrei-sai (秋季皇霊祭).
      *
@@ -90,7 +90,7 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCase
     }
 
     /**
-     * Tests Vernal Equinox Day before 1948. This national holiday was established in 1948 as a day on which to honor
+     * Tests Autumnal Equinox Day before 1948. This national holiday was established in 1948 as a day on which to honor
      * one's ancestors and remember the dead. Prior to 1948, the autumnal equinox was an imperial ancestor worship
      * festival called Shūki kōrei-sai (秋季皇霊祭).
      * @throws ReflectionException
@@ -101,21 +101,6 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCase
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
-        );
-    }
-
-    /**
-     * Tests Vernal Equinox Day between 1851 and 1948. This national holiday was established in 1948 as a day on
-     * which to honor one's ancestors and remember the dead. Prior to 1948, the autumnal equinox was an imperial
-     * ancestor worship festival called Shūki kōrei-sai (秋季皇霊祭).
-     * @throws ReflectionException
-     */
-    public function testAutumnalEquinoxDayBetween1851And1948()
-    {
-        $this->assertNotHoliday(
-            self::REGION,
-            self::HOLIDAY,
-            $this->generateRandomYear(1851, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 

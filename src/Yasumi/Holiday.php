@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -160,14 +160,7 @@ class Holiday extends DateTime implements JsonSerializable
      */
     public function getName(): string
     {
-        $locales = [$this->displayLocale];
-        $parts = \explode('_', $this->displayLocale);
-        while (\array_pop($parts) && $parts) {
-            $locales[] = \implode('_', $parts);
-        }
-        $locales[] = self::DEFAULT_LOCALE;
-
-        foreach ($locales as $locale) {
+        foreach ($this->getLocales() as $locale) {
             if (isset($this->translations[$locale])) {
                 return $this->translations[$locale];
             }
@@ -177,11 +170,31 @@ class Holiday extends DateTime implements JsonSerializable
     }
 
     /**
+     * Returns the display locale and its fallback locales.
+     *
+     * @return array
+     */
+    protected function getLocales(): array
+    {
+        $locales = [$this->displayLocale];
+        $parts = \explode('_', $this->displayLocale);
+        while (\array_pop($parts) && $parts) {
+            $locales[] = \implode('_', $parts);
+        }
+
+        // DEFAULT_LOCALE is en_US
+        $locales[] = 'en_US';
+        $locales[] = 'en';
+
+        return $locales;
+    }
+
+    /**
      * Merges local translations (preferred) with global translations.
      *
      * @param TranslationsInterface $globalTranslations global translations
      */
-    public function mergeGlobalTranslations(TranslationsInterface $globalTranslations)
+    public function mergeGlobalTranslations(TranslationsInterface $globalTranslations): void
     {
         $holidayGlobalTranslations = $globalTranslations->getTranslations($this->shortName);
         $this->translations = \array_merge($holidayGlobalTranslations, $this->translations);

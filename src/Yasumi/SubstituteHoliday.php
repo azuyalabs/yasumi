@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -87,11 +87,12 @@ class SubstituteHoliday extends Holiday
         $name = parent::getName();
 
         if ($name === $this->shortName) {
-            $pattern = $this->substituteHolidayTranslations[$this->displayLocale]
-                ?? $this->substituteHolidayTranslations[self::DEFAULT_LOCALE]
-                ?? $this->shortName;
-
-            $name = \str_replace('{0}', $this->substitutedHoliday->getName(), $pattern);
+            foreach ($this->getLocales() as $locale) {
+                $pattern = $this->substituteHolidayTranslations[$locale] ?? null;
+                if ($pattern) {
+                    return \str_replace('{0}', $this->substitutedHoliday->getName(), $pattern);
+                }
+            }
         }
 
         return $name;
@@ -102,7 +103,7 @@ class SubstituteHoliday extends Holiday
      *
      * @param TranslationsInterface $globalTranslations global translations
      */
-    public function mergeGlobalTranslations(TranslationsInterface $globalTranslations)
+    public function mergeGlobalTranslations(TranslationsInterface $globalTranslations): void
     {
         $this->substituteHolidayTranslations = $globalTranslations->getTranslations('substituteHoliday');
 

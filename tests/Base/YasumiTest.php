@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,7 +12,6 @@
 
 namespace Yasumi\tests\Base;
 
-use ArrayIterator;
 use DateTime;
 use DateTimeImmutable;
 use Exception;
@@ -26,7 +25,6 @@ use Yasumi\Exception\InvalidYearException;
 use Yasumi\Exception\ProviderNotFoundException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
-use Yasumi\Provider\AbstractProvider;
 use Yasumi\tests\YasumiBase;
 use Yasumi\Yasumi;
 
@@ -108,7 +106,7 @@ class YasumiTest extends TestCase
             $class,
             Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND)
         );
-        $this->assertInstanceOf($class, $instance);
+        $this->assertInstanceOf(YasumiExternalProvider::class, $instance);
     }
 
     /**
@@ -125,20 +123,6 @@ class YasumiTest extends TestCase
             Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND),
             'wx_YZ'
         );
-    }
-
-    /**
-     * Tests that the getIterator function returns an ArrayIterator object
-     * @throws ReflectionException
-     */
-    public function testGetIterator(): void
-    {
-        $holidays = Yasumi::create(
-            'Japan',
-            Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND)
-        );
-
-        $this->assertInstanceOf(ArrayIterator::class, $holidays->getIterator());
     }
 
     /**
@@ -209,7 +193,7 @@ class YasumiTest extends TestCase
             'Netherlands',
             Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND - 1)
         );
-        $holidays->next(null);
+        $holidays->next('');
     }
 
     /**
@@ -247,7 +231,7 @@ class YasumiTest extends TestCase
             'Netherlands',
             Factory::create()->numberBetween(self::YEAR_LOWER_BOUND + 1, self::YEAR_UPPER_BOUND)
         );
-        $holidays->previous(null);
+        $holidays->previous('');
     }
 
     /**
@@ -288,7 +272,7 @@ class YasumiTest extends TestCase
         $this->expectException(InvalidArgumentException::class);
 
         $holidays = Yasumi::create('Japan', 2010);
-        $holidays->whenIs(null);
+        $holidays->whenIs('');
     }
 
     /**
@@ -301,7 +285,7 @@ class YasumiTest extends TestCase
         $this->expectException(InvalidArgumentException::class);
 
         $holidays = Yasumi::create('Netherlands', 1999);
-        $holidays->getHoliday(null);
+        $holidays->getHoliday('');
     }
 
     /**
@@ -328,7 +312,7 @@ class YasumiTest extends TestCase
         $this->expectException(InvalidArgumentException::class);
 
         $holidays = Yasumi::create('Netherlands', 2388);
-        $holidays->whatWeekDayIs(null);
+        $holidays->whatWeekDayIs('');
     }
 
     /**
@@ -579,7 +563,6 @@ class YasumiTest extends TestCase
             $year
         );
 
-        $this->assertInstanceOf(AbstractProvider::class, $provider);
         $this->assertEquals($year, $provider->getYear());
     }
 

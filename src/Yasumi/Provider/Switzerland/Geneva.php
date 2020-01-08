@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -35,6 +35,8 @@ class Geneva extends Switzerland
      * country or sub-region.
      */
     public const ID = 'CH-GE';
+
+    public const JEUNE_GENEVOIS_ESTABLISHMENT_YEAR = 1840;
 
     /**
      * Initialize holidays for Geneva (Switzerland).
@@ -74,20 +76,23 @@ class Geneva extends Switzerland
      */
     private function calculateJeuneGenevois(): void
     {
+        if (self::JEUNE_GENEVOIS_ESTABLISHMENT_YEAR > $this->year) {
+            return;
+        }
+
         // Find first Sunday of September
         $date = new DateTime('First Sunday of ' . $this->year . '-09', new DateTimeZone($this->timezone));
         // Go to next Thursday
         $date->add(new DateInterval('P4D'));
 
-        if (($this->year >= 1840 && $this->year <= 1869) || $this->year >= 1966) {
-            $this->addHoliday(new Holiday('jeuneGenevois', [
-                'fr' => 'Jeûne genevois',
-            ], $date, $this->locale, Holiday::TYPE_OTHER));
-        } elseif ($this->year > 1869 && $this->year < 1966) {
-            $this->addHoliday(new Holiday('jeuneGenevois', [
-                'fr' => 'Jeûne genevois',
-            ], $date, $this->locale, Holiday::TYPE_OBSERVANCE));
+        $type = Holiday::TYPE_OTHER;
+        if ($this->year > 1869 && $this->year < 1966) {
+            $type = Holiday::TYPE_OBSERVANCE;
         }
+
+        $this->addHoliday(new Holiday('jeuneGenevois', [
+            'fr' => 'Jeûne genevois',
+        ], $date, $this->locale, $type));
     }
 
     /**

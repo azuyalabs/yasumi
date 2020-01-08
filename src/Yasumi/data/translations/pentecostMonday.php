@@ -1,8 +1,9 @@
 <?php declare(strict_types=1);
+
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -20,8 +21,8 @@ return [
     'ga' => 'Luan Cincíse',
     'hu' => 'Pünkösdhétfő',
     'it' => 'Lunedi di Pentecoste',
-    'nb' => 'Andre pinsedag',
-    'nl' => 'Tweede pinksterdag',
-    'nl_BE' => 'Pinkstermaandag',
+    'nb' => 'andre pinsedag',
+    'nl' => 'tweede pinksterdag',
+    'nl_BE' => 'pinkstermaandag',
     'ro' => 'A doua zi de Rusalii',
 ];

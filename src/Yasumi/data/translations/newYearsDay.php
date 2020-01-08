@@ -1,8 +1,9 @@
 <?php declare(strict_types=1);
+
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,9 +14,10 @@
 // Translations for New Year's Day
 return [
     'bs_Latn' => 'Nova godina',
+    'ca' => 'Cap d\'any',
     'cs' => 'Nový rok',
     'cy' => 'Dydd Calan',
-    'da' => 'Nytårsdag',
+    'da' => 'nytårsdag',
     'de' => 'Neujahr',
     'el' => 'Πρωτοχρονιά',
     'en' => 'New Year\'s Day',
@@ -33,7 +35,7 @@ return [
     'ko' => '새해',
     'lt' => 'Naujųjų metų diena',
     'lv' => 'Jaunais Gads',
-    'nb' => 'Første nyttårsdag',
+    'nb' => 'første nyttårsdag',
     'nl' => 'Nieuwjaar',
     'pl' => 'Nowy Rok',
     'pt' => 'Ano novo',
