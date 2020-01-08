@@ -24,7 +24,7 @@ use Yasumi\tests\YasumiTestCaseInterface;
  */
 class DayOfLiberation2020Test extends BerlinBaseTestCase implements YasumiTestCaseInterface
 {
-	/**
+    /**
      * The name of the holiday to be tested
      */
     public const HOLIDAY = 'dayOfLiberation';

@@ -13,5 +13,5 @@
 // Translations for Day of Liberation
 return [
     'de' => 'Tag der Befreiung',
-    'en' => 'Day of Liberation'
+    'en' => 'Day of Liberation',
 ];
