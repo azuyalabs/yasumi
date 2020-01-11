@@ -27,6 +27,6 @@ class MissingTranslationException extends BaseException implements Exception
      */
     public function __construct(string $shortName, array $locales)
     {
-        parent::__construct(\sprintf("Translation for '%s' not found for any locale: '%s'", $shortName, \implode($locales, "', '")));
+        parent::__construct(\sprintf("Translation for '%s' not found for any locale: '%s'", $shortName, \implode("', '", $locales)));
     }
 }
