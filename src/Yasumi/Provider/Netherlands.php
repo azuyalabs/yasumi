@@ -186,7 +186,7 @@ class Netherlands extends AbstractProvider
          */
         $this->addHoliday(new Holiday(
             'stNicholasDay',
-            ['en' => 'St. Nicholas\' Day', 'nl' => 'Sinterklaas'],
+            ['en' => 'St. Nicholas’ Day', 'nl' => 'Sinterklaas'],
             new DateTime("$this->year-12-5", new DateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OBSERVANCE
@@ -228,7 +228,7 @@ class Netherlands extends AbstractProvider
     {
         $this->addHoliday(new Holiday(
             'princesDay',
-            ['en' => 'Prince\'s Day', 'nl' => 'Prinsjesdag'],
+            ['en' => 'Prince’s Day', 'nl' => 'Prinsjesdag'],
             new DateTime("third tuesday of september $this->year", new DateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OTHER
@@ -259,7 +259,7 @@ class Netherlands extends AbstractProvider
 
             $this->addHoliday(new Holiday(
                 'queensDay',
-                ['en' => 'Queen\'s Day', 'nl' => 'Koninginnedag'],
+                ['en' => 'Queen’s Day', 'nl' => 'Koninginnedag'],
                 $date,
                 $this->locale
             ));

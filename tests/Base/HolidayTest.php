@@ -168,7 +168,7 @@ class HolidayTest extends TestCase
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
 
         $translations = [
-            'en_US' => 'New Year\'s Day',
+            'en_US' => 'New Year’s Day',
             'pl_PL' => 'Nowy Rok',
         ];
 
@@ -194,7 +194,7 @@ class HolidayTest extends TestCase
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
 
         $translations = [
-            'en_US' => 'New Year\'s Day',
+            'en_US' => 'New Year’s Day',
             'pl' => 'Nowy Rok',
         ];
 
@@ -220,7 +220,7 @@ class HolidayTest extends TestCase
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
 
         $translations = [
-            'en_US' => 'New Year\'s Day',
+            'en_US' => 'New Year’s Day',
             'pl_PL' => 'Nowy Rok',
         ];
 
@@ -252,7 +252,7 @@ class HolidayTest extends TestCase
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
 
         $translations = [
-            'en_US' => 'New Year\'s Day',
+            'en_US' => 'New Year’s Day',
             'pl_PL' => 'Nowy Rok',
         ];
 

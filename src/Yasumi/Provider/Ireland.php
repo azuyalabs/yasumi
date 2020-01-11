@@ -242,7 +242,7 @@ class Ireland extends AbstractProvider
         }
         $holiday = new Holiday(
             'stPatricksDay',
-            ['en' => 'St. Patrick\'s Day', 'ga' => 'Lá Fhéile Pádraig'],
+            ['en' => 'St. Patrick’s Day', 'ga' => 'Lá Fhéile Pádraig'],
             new DateTime($this->year . '-3-17', new DateTimeZone($this->timezone)),
             $this->locale
         );

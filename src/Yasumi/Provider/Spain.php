@@ -84,7 +84,7 @@ class Spain extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'nationalDay',
                 [
-                    'ca' => 'Festa Nacional d\'Espanya',
+                    'ca' => 'Festa Nacional d’Espanya',
                     'es' => 'Fiesta Nacional de España',
                 ],
                 new DateTime("$this->year-10-12", new DateTimeZone($this->timezone)),

@@ -104,7 +104,7 @@ class NationalWomensDayTest extends SouthAfricaBaseTestCase implements YasumiTes
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'National Women\'s Day']
+            [self::LOCALE => 'National Women’s Day']
         );
     }
 

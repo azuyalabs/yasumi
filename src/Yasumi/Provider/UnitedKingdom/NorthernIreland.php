@@ -78,7 +78,7 @@ class NorthernIreland extends UnitedKingdom
 
         $holiday = new Holiday(
             'stPatricksDay',
-            ['en' => 'St. Patrick\'s Day'],
+            ['en' => 'St. Patrick’s Day'],
             new DateTime($this->year . '-3-17', new DateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK

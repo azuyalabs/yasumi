@@ -16,7 +16,7 @@ return [
     'ca' => 'Dia de Sant Valentí',
     'de' => 'Valentinstag',
     'el' => 'Αγίου Βαλεντίνου',
-    'en' => 'Valentine\'s Day',
+    'en' => 'Valentine’s Day',
     'es' => 'San Valentín',
     'fr' => 'Saint-Valentin',
     'it' => 'San Valentino',

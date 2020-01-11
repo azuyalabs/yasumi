@@ -26,7 +26,7 @@ return [
     'ga' => 'Luan Cásca',
     'hr' => 'Uskršnji ponedjeljak',
     'hu' => 'Húsvéthétfő',
-    'it' => 'Lunedì dell\'Angelo',
+    'it' => 'Lunedì dell’Angelo',
     'it_CH' => 'Lunedi di Pasqua',
     'lt' => 'Antroji Velykų diena',
     'lv' => 'Otrās Lieldienas',

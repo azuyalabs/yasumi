@@ -85,7 +85,7 @@ class Bosnia extends AbstractProvider
          * Day after New Years Day
          */
         $this->addHoliday(new Holiday('dayAfterNewYearsDay', [
-            'en' => 'Day after New Year\'s Day',
+            'en' => 'Day after New Year’s Day',
             'bs_Latn' => 'Nova godina - drugi dan',
         ], new DateTime("$this->year-01-02", new DateTimeZone($this->timezone)), $this->locale));
 

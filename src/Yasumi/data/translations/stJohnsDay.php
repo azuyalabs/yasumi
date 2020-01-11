@@ -16,7 +16,7 @@ return [
     'ca' => 'Sant Joan',
     'da' => 'sankthansaften',
     'el' => 'Σύναξις Προφήτου Προδρόμου και Βαπτιστού Ιωάννου',
-    'en' => 'St. John\'s Day',
+    'en' => 'St. John’s Day',
     'es' => 'Sant Joan',
     'et' => 'Jaanipäev',
     'fi' => 'Juhannuspäivä',

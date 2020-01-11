@@ -61,7 +61,7 @@ class DayAfterNewYearsDayTest extends NewZealandBaseTestCase implements YasumiTe
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'Day after New Year\'s Day']
+            [self::LOCALE => 'Day after New Year’s Day']
         );
     }
 

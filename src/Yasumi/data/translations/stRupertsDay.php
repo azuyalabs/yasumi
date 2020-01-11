@@ -13,6 +13,6 @@
 
 // Translations for Saint Rupert's Day.
 return [
-    'en' => 'Saint Rupert\'s Day',
+    'en' => 'Saint Rupert’s Day',
     'de_AT' => 'Rupert',
 ];

@@ -172,7 +172,7 @@ class SouthKorea extends AbstractProvider
             if ($this->year <= 1990) {
                 $this->addHoliday(new Holiday(
                     'twoDaysLaterNewYearsDay',
-                    ['en' => 'Two Days Later New Year\'s Day', 'ko' => '새해 연휴'],
+                    ['en' => 'Two Days Later New Year’s Day', 'ko' => '새해 연휴'],
                     new DateTime("$this->year-1-3", new DateTimeZone($this->timezone)),
                     $this->locale
                 ));
@@ -231,7 +231,7 @@ class SouthKorea extends AbstractProvider
         if ($this->year >= 1975 && isset(self::LUNAR_HOLIDAY['buddhasBirthday'][$this->year])) {
             $this->addHoliday(new Holiday(
                 'buddhasBirthday',
-                ['en' => 'Buddha\'s Birthday', 'ko' => '부처님오신날'],
+                ['en' => 'Buddha’s Birthday', 'ko' => '부처님오신날'],
                 new DateTime(self::LUNAR_HOLIDAY['buddhasBirthday'][$this->year], new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -332,7 +332,7 @@ class SouthKorea extends AbstractProvider
         if ($this->year >= 1970) {
             $this->addHoliday(new Holiday(
                 'childrensDay',
-                ['en' => 'Children\'s Day', 'ko' => '어린이날'],
+                ['en' => 'Children’s Day', 'ko' => '어린이날'],
                 new DateTime("$this->year-5-5", new DateTimeZone($this->timezone)),
                 $this->locale
             ));

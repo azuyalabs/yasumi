@@ -16,7 +16,7 @@ return [
     'ca' => 'Dia de Tots Sants',
     'de' => 'Allerheiligen',
     'el' => 'Άγιοι Πάντες',
-    'en' => 'All Saints\' Day',
+    'en' => 'All Saints’ Day',
     'es' => 'Día de todos los Santos',
     'fi' => 'Pyhäinpäivä',
     'fr_BE' => 'La Toussaint',

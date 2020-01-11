@@ -89,7 +89,7 @@ class QueensBirthdayTest extends TasmaniaBaseTestCase implements YasumiTestCaseI
             $this->region,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Queen\'s Birthday']
+            [self::LOCALE => 'Queen’s Birthday']
         );
     }
 

@@ -84,7 +84,7 @@ class PeoplesDayTest extends BrisbaneBaseTestCase implements YasumiTestCaseInter
             $this->region,
             self::HOLIDAY,
             $this->generateRandomYear(1990),
-            [self::LOCALE => 'Ekka People\'s Day']
+            [self::LOCALE => 'Ekka People’s Day']
         );
     }
 

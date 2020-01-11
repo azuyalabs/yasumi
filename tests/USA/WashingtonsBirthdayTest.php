@@ -92,7 +92,7 @@ class WashingtonsBirthdayTest extends USABaseTestCase implements YasumiTestCaseI
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Washington\'s Birthday']
+            [self::LOCALE => 'Washington’s Birthday']
         );
     }
 

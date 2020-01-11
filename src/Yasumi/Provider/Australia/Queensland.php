@@ -73,7 +73,7 @@ class Queensland extends Australia
         $this->calculateHoliday(
             'queensBirthday',
             new DateTime($birthDay, new DateTimeZone($this->timezone)),
-            ['en' => "Queen's Birthday"],
+            [],
             false,
             false
         );

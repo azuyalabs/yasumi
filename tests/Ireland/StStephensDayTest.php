@@ -81,7 +81,7 @@ class StStephensDayTest extends IrelandBaseTestCase implements YasumiTestCaseInt
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'St. Stephen\'s Day']
+            [self::LOCALE => 'St. Stephen’s Day']
         );
         $this->assertTranslatedHolidayName(
             self::REGION,

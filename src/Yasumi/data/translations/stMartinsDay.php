@@ -13,7 +13,7 @@
 
 // Translations for St. Martin's Day
 return [
-    'en' => 'St. Martin\'s Day',
+    'en' => 'St. Martin’s Day',
     'nl' => 'Sint Maarten',
     'de_AT' => 'Martin',
 ];

@@ -75,11 +75,11 @@ class Australia extends AbstractProvider
         switch ($newyearsday->format('w')) {
             case 0: // sunday
                 $newyearsday->add(new DateInterval('P1D'));
-                $this->calculateHoliday('newYearsHoliday', $newyearsday, ['en' => 'New Year\'s Holiday'], false, false);
+                $this->calculateHoliday('newYearsHoliday', $newyearsday, ['en' => 'New Year’s Holiday'], false, false);
                 break;
             case 6: // saturday
                 $newyearsday->add(new DateInterval('P2D'));
-                $this->calculateHoliday('newYearsHoliday', $newyearsday, ['en' => 'New Year\'s Holiday'], false, false);
+                $this->calculateHoliday('newYearsHoliday', $newyearsday, ['en' => 'New Year’s Holiday'], false, false);
                 break;
         }
     }

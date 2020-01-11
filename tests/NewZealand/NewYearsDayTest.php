@@ -90,7 +90,7 @@ class NewYearsDayTest extends NewZealandBaseTestCase implements YasumiTestCaseIn
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'New Year\'s Day']
+            [self::LOCALE => 'New Year’s Day']
         );
     }
 
