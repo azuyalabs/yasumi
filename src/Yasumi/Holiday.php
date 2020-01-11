@@ -198,7 +198,7 @@ class Holiday extends DateTime implements JsonSerializable
      *
      * If null is provided, return as if the display locale was provided as a string.
      *
-     * @param array Array of locales, or null if the display locale should be used
+     * @param array $locales Array of locales, or null if the display locale should be used
      *
      * @return array
      *

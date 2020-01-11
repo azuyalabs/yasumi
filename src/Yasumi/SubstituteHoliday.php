@@ -13,6 +13,7 @@
 namespace Yasumi;
 
 use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\MissingTranslationException;
 use Yasumi\Exception\UnknownLocaleException;
 
 /**
@@ -90,13 +91,13 @@ class SubstituteHoliday extends Holiday
      * @see Holiday::DEFAULT_LOCALE
      * @see Holiday::LOCALE_SHORT_NAME
      */
-    public function getName($locale = null): string
+    public function getName($locales = null): string
     {
         $name = parent::getName();
 
         if ($name === $this->shortName) {
-            foreach ($this->getLocales($locale) as $locale) {
-                $pattern = $this->substituteHolidayTranslations[$locale] ?? null;
+            foreach ($this->getLocales($locales) as $locales) {
+                $pattern = $this->substituteHolidayTranslations[$locales] ?? null;
                 if ($pattern) {
                     return \str_replace('{0}', $this->substitutedHoliday->getName(), $pattern);
                 }
