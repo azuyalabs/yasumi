@@ -11,8 +11,11 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-// Translations for Saint Leopold's Day.
+// Translations for Queen's Birthday
 return [
-    'en' => 'Saint Leopold’s Day',
-    'de_AT' => 'Leopold',
+    'da' => 'Dronningens fødselsdag',
+    'en' => 'Queen’s Birthday',
+    'pt' => 'Aniversário da Rainha',
+    'fr' => 'Anniversaire officiel de la reine',
+    'ru' => 'Официальный день рождения королевы',
 ];

@@ -99,7 +99,7 @@ class StPatricksDayTest extends IrelandBaseTestCase implements YasumiTestCaseInt
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'St. Patrick\'s Day']
+            [self::LOCALE => 'St. Patrick’s Day']
         );
         $this->assertTranslatedHolidayName(
             self::REGION,

@@ -15,7 +15,7 @@
 return [
     'ca' => 'Sant Josep',
     'de' => 'Josephstag',
-    'en' => 'St. Joseph\'s Day',
+    'en' => 'St. Joseph’s Day',
     'es' => 'San José',
     'fr' => 'Saint-Joseph',
     'it' => 'San Giuseppe',

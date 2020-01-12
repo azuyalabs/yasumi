@@ -13,6 +13,6 @@
 
 // Translations for St. Andrew's Day
 return [
-    'en' => 'St. Andrew\'s Day',
+    'en' => 'St. Andrew’s Day',
     'ro' => 'Sfântul Andrei',
 ];

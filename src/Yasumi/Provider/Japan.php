@@ -180,7 +180,7 @@ class Japan extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'childrensDay',
                 [
-                    'en' => 'Children\'s Day',
+                    'en' => 'Children’s Day',
                     'ja' => 'こどもの日',
                 ],
                 new DateTime("$this->year-5-5", new DateTimeZone($this->timezone)),

@@ -233,7 +233,7 @@ class Romania extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'childrensDay',
                 [
-                    'en' => 'International Children\'s Day',
+                    'en' => 'International Children’s Day',
                     'ro' => 'Ziua Copilului',
                 ],
                 new DateTime("$this->year-06-01", new DateTimeZone($this->timezone)),
@@ -244,7 +244,7 @@ class Romania extends AbstractProvider
 
         if ($this->year >= 2017) {
             $this->addHoliday(new Holiday('childrensDay', [
-                'en' => 'International Children\'s Day',
+                'en' => 'International Children’s Day',
                 'ro' => 'Ziua Copilului',
             ], new DateTime("$this->year-06-01", new DateTimeZone($this->timezone)), $this->locale));
         }

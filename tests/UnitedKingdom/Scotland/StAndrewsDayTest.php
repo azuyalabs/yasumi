@@ -86,7 +86,7 @@ class StAndrewsDayTest extends ScotlandBaseTestCase implements YasumiTestCaseInt
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'St. Andrew\'s Day']
+            [self::LOCALE => 'St. Andrew’s Day']
         );
     }
 

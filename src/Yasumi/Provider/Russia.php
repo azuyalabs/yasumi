@@ -67,7 +67,7 @@ class Russia extends AbstractProvider
 
         foreach ($holidayDays as $day) {
             $this->addHoliday(new Holiday('newYearHolidaysDay' . $day, [
-                'en' => 'New Year\'s holidays',
+                'en' => 'New Year’s holidays',
                 'ru' => 'Новогодние каникулы',
             ], new \DateTime("{$this->year}-01-{$day}", new \DateTimeZone($this->timezone)), $this->locale));
         }

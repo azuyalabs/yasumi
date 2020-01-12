@@ -15,7 +15,7 @@
 return [
     'de' => 'Vatertag',
     'el' => 'Γιορτή του πατέρα',
-    'en' => 'Father\'s Day',
+    'en' => 'Father’s Day',
     'fr' => 'Fête des pères',
     'it' => 'Festa del papà',
     'nl' => 'Vaderdag',

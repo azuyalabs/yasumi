@@ -99,7 +99,7 @@ class NewYearsDayTest extends IrelandBaseTestCase implements YasumiTestCaseInter
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'New Year\'s Day']
+            [self::LOCALE => 'New Year’s Day']
         );
         $this->assertTranslatedHolidayName(
             self::REGION,

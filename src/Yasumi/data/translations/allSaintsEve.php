@@ -14,6 +14,6 @@
 // Translations for All Saints' Eve
 return [
     'da' => 'allehelgensaften',
-    'en' => 'All Saints\' Eve',
+    'en' => 'All Saints’ Eve',
     'sv' => 'alla helgons afton',
 ];

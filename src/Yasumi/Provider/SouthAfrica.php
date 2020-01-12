@@ -223,7 +223,7 @@ class SouthAfrica extends AbstractProvider
     {
         $this->addHoliday(new Holiday(
             'nationalWomensDay',
-            ['en' => 'National Women\'s Day'],
+            ['en' => 'National Women’s Day'],
             new DateTime($this->year . '-8-9', new DateTimeZone($this->timezone)),
             $this->locale
         ));

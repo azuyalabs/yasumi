@@ -101,13 +101,13 @@ class NewYearsDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInt
             $this->region,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'New Year\'s Day']
+            [self::LOCALE => 'New Year’s Day']
         );
         $this->assertTranslatedHolidayName(
             $this->region,
             self::HOLIDAY2,
             2017,
-            [self::LOCALE => 'New Year\'s Holiday']
+            [self::LOCALE => 'New Year’s Holiday']
         );
     }
 

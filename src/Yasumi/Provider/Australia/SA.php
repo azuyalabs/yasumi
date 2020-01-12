@@ -114,7 +114,7 @@ class SA extends Australia
         $this->calculateHoliday(
             'queensBirthday',
             new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->timezone)),
-            ['en' => "Queen's Birthday"],
+            [],
             false,
             false
         );
