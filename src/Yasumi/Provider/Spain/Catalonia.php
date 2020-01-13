@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,6 +14,8 @@ namespace Yasumi\Provider\Spain;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\Spain;
@@ -28,7 +30,7 @@ use Yasumi\Provider\Spain;
  * Catalonia is bordered by France and Andorra to the north, the Mediterranean Sea to the east, and the Spanish regions
  * of Aragon and the Valencian Community to west and south respectively.
  *
- * @link http://en.wikipedia.org/wiki/Catalonia
+ * @link https://en.wikipedia.org/wiki/Catalonia
  */
 class Catalonia extends Spain
 {
@@ -43,9 +45,9 @@ class Catalonia extends Spain
     /**
      * Initialize holidays for Catalonia (Spain).
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -71,9 +73,9 @@ class Catalonia extends Spain
      *
      * @link https://en.wikipedia.org/wiki/National_Day_of_Catalonia
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateNationalDayOfCatalonia(): void
@@ -81,7 +83,10 @@ class Catalonia extends Spain
         if ($this->year >= 1886) {
             $this->addHoliday(new Holiday(
                 'nationalCataloniaDay',
-                ['es_ES' => 'Diada Nacional de Catalunya'],
+                [
+                    'ca' => 'Diada Nacional de Catalunya',
+                    'es' => 'Diada Nacional de Cataluña',
+                ],
                 new DateTime("$this->year-9-11", new DateTimeZone($this->timezone)),
                 $this->locale
             ));

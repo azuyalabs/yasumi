@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Switzerland\Bern;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class BernTest extends BernBaseTestCase
 
     /**
      * Tests if all official holidays in Bern (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -39,7 +40,7 @@ class BernTest extends BernBaseTestCase
 
     /**
      * Tests if all regional holidays in Bern (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testRegionalHolidays(): void
     {
@@ -51,18 +52,18 @@ class BernTest extends BernBaseTestCase
             'ascensionDay',
             'easterMonday',
             'pentecostMonday',
-            'berchtoldsTag'
+            'berchtoldsTag',
         ], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**
      * Tests if all observed holidays in Bern (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
         $observedHolidays = [];
-        if (($this->year >= 1899 && $this->year < 1994) || $this->year = 1891) {
+        if (($this->year >= 1899 && $this->year < 1994) || 1891 === $this->year) {
             $observedHolidays[] = 'swissNationalDay';
         }
 
@@ -71,7 +72,7 @@ class BernTest extends BernBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Bern (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -80,7 +81,7 @@ class BernTest extends BernBaseTestCase
 
     /**
      * Tests if all bank holidays in Bern (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -89,7 +90,7 @@ class BernTest extends BernBaseTestCase
 
     /**
      * Tests if all other holidays in Bern (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -99,7 +100,7 @@ class BernTest extends BernBaseTestCase
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->year = $this->generateRandomYear(1945);
     }

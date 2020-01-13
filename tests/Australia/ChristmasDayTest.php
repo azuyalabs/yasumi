@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Australia;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -33,12 +35,12 @@ class ChristmasDayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int    $year          the year for which the holiday defined in this test needs to be tested
-     * @param string $expected      the expected date
+     * @param int $year the year for which the holiday defined in this test needs to be tested
+     * @param string $expected the expected date
      * @param string $expectedExtra the expected date for the additional holiday, or null if no additional holiday
      *
-     * @throws \ReflectionException
-     * @throws \Exception
+     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHoliday($year, $expected, $expectedExtra)
     {
@@ -48,7 +50,7 @@ class ChristmasDayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
             $year,
             new DateTime($expected, new DateTimeZone($this->timezone))
         );
-        if ($expectedExtra === null) {
+        if (null === $expectedExtra) {
             $this->assertNotHoliday(
                 $this->region,
                 self::HOLIDAY2,
@@ -91,7 +93,7 @@ class ChristmasDayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -112,7 +114,7 @@ class ChristmasDayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

@@ -1,9 +1,9 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,6 +13,10 @@
 
 namespace Yasumi\tests\Estonia;
 
+use DateTime;
+use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Estonia;
 use Yasumi\tests\YasumiTestCaseInterface;
@@ -31,7 +35,7 @@ class VictoryDayTest extends EstoniaBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Test if holiday is not defined before
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayBefore()
     {
@@ -44,8 +48,8 @@ class VictoryDayTest extends EstoniaBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Test if holiday is defined after
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testHolidayAfter()
     {
@@ -55,14 +59,14 @@ class VictoryDayTest extends EstoniaBaseTestCase implements YasumiTestCaseInterf
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("{$year}-06-23", new \DateTimeZone(self::TIMEZONE))
+            new DateTime("{$year}-06-23", new DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * {@inheritdoc}
      *
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -76,13 +80,13 @@ class VictoryDayTest extends EstoniaBaseTestCase implements YasumiTestCaseInterf
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(Estonia::VICTORY_DAY_START_YEAR),
-            ['en_US' => 'Victory Day']
+            ['en' => 'Victory Day']
         );
     }
 
     /**
      * {@inheritdoc}
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

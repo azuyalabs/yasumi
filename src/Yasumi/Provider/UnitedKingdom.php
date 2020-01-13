@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,7 +15,10 @@ namespace Yasumi\Provider;
 use DateInterval;
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
+use Yasumi\SubstituteHoliday;
 
 /**
  * Provider for all holidays in the United Kingdom. Local holidays/observances (e.g. Wales, England, Guernsey, etc.)
@@ -31,18 +34,18 @@ class UnitedKingdom extends AbstractProvider
      */
     public const ID = 'GB';
 
+    public $timezone = 'Europe/London';
+
     /**
      * Initialize holidays for the United Kingdom.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
     {
-        $this->timezone = 'Europe/London';
-
         // Add common holidays
         $this->calculateNewYearsDay();
         $this->calculateMayDayBankHoliday();
@@ -65,14 +68,14 @@ class UnitedKingdom extends AbstractProvider
      * Since 1974 (by Royal Proclamation) it was established as a bank holiday.
      *
      * @link https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom
-     * @link http://www.timeanddate.com/holidays/uk/new-year-day
+     * @link https://www.timeanddate.com/holidays/uk/new-year-day
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateNewYearsDay(): void
+    protected function calculateNewYearsDay(): void
     {
         // Before 1871 it was not an observed or statutory holiday
         if ($this->year < 1871) {
@@ -104,23 +107,36 @@ class UnitedKingdom extends AbstractProvider
      * and schools are closed, while stores may be open or closed, according to local custom. Public transport systems
      * often run to a holiday timetable.
      *
-     * @link http://www.timeanddate.com/holidays/uk/early-may-bank-holiday
+     * @link https://www.timeanddate.com/holidays/uk/early-may-bank-holiday
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateMayDayBankHoliday(): void
+    protected function calculateMayDayBankHoliday(): void
     {
         // From 1978, by Royal Proclamation annually
         if ($this->year < 1978) {
             return;
         }
 
+        // Moved to 8 May to commemorate the 50th (1995) and 75th (2020) anniversary of VE Day.
+        if (1995 === $this->year || 2020 === $this->year) {
+            $this->addHoliday(new Holiday(
+                'mayDayBankHoliday',
+                ['en' => 'May Day Bank Holiday'],
+                new DateTime("$this->year-5-8", new DateTimeZone($this->timezone)),
+                $this->locale,
+                Holiday::TYPE_BANK
+            ));
+
+            return;
+        }
+
         $this->addHoliday(new Holiday(
             'mayDayBankHoliday',
-            ['en_GB' => 'May Day Bank Holiday'],
+            ['en' => 'May Day Bank Holiday'],
             new DateTime("first monday of may $this->year", new DateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
@@ -135,24 +151,38 @@ class UnitedKingdom extends AbstractProvider
      * The last Monday in May is a bank holiday. Many organizations, businesses and schools are closed. Stores may be
      * open or closed, according to local custom. Public transport systems often run to a holiday timetable.
      *
-     * @link http://www.timeanddate.com/holidays/uk/spring-bank-holiday
+     * @link https://www.timeanddate.com/holidays/uk/spring-bank-holiday
      * @link https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateSpringBankHoliday(): void
+    protected function calculateSpringBankHoliday(): void
     {
         // Statutory bank holiday from 1971, following a trial period from 1965 to 1970.
         if ($this->year < 1965) {
             return;
         }
 
+        // Moved to 4 June for the celebration of the Golden (2002) and Diamond (2012) Jubilee
+        // of Elizabeth II.
+        if (2002 === $this->year || 2012 === $this->year) {
+            $this->addHoliday(new Holiday(
+                'springBankHoliday',
+                ['en' => 'Spring Bank Holiday'],
+                new DateTime("$this->year-6-4", new DateTimeZone($this->timezone)),
+                $this->locale,
+                Holiday::TYPE_BANK
+            ));
+
+            return;
+        }
+
         $this->addHoliday(new Holiday(
             'springBankHoliday',
-            ['en_GB' => 'Spring Bank Holiday'],
+            ['en' => 'Spring Bank Holiday'],
             new DateTime("last monday of may $this->year", new DateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
@@ -162,7 +192,7 @@ class UnitedKingdom extends AbstractProvider
     /**
      * The Summer Bank holiday, also known as the Late Summer bank holiday, is a time for people in the United Kingdom
      * to have a day off work or school. It falls on the last Monday of August replacing the first Monday in August
-     * (formerly commonly known as "August Bank Holiday".
+     * (formerly commonly known as "August Bank Holiday").
      *
      * Many organizations, businesses and schools are closed. Stores may be open or closed, according to local custom.
      * Public transport systems often run to a holiday timetable.
@@ -170,21 +200,47 @@ class UnitedKingdom extends AbstractProvider
      * @link https://www.timeanddate.com/holidays/uk/summer-bank-holiday
      * @link https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateSummerBankHoliday(): void
+    protected function calculateSummerBankHoliday(): void
     {
-        // Statutory bank holiday from 1971, following a trial period from 1965 to 1970.
+        if ($this->year < 1871) {
+            return;
+        }
+
         if ($this->year < 1965) {
+            $this->addHoliday(new Holiday(
+                'summerBankHoliday',
+                ['en' => 'August Bank Holiday'],
+                new DateTime("first monday of august $this->year", new DateTimeZone($this->timezone)),
+                $this->locale,
+                Holiday::TYPE_BANK
+            ));
+
+            return;
+        }
+
+        // Statutory bank holiday from 1971, following a trial period from 1965 to 1970.
+        // During the trial period, the definition was different than today, causing exceptions
+        // in 1968 and 1969.
+        if (1968 === $this->year || 1969 === $this->year) {
+            $this->addHoliday(new Holiday(
+                'summerBankHoliday',
+                ['en' => 'Summer Bank Holiday'],
+                new DateTime("first monday of september $this->year", new DateTimeZone($this->timezone)),
+                $this->locale,
+                Holiday::TYPE_BANK
+            ));
+
             return;
         }
 
         $this->addHoliday(new Holiday(
             'summerBankHoliday',
-            ['en_GB' => 'Summer Bank Holiday'],
+            ['en' => 'Summer Bank Holiday'],
             new DateTime("last monday of august $this->year", new DateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
@@ -205,42 +261,40 @@ class UnitedKingdom extends AbstractProvider
      * If Christmas Day falls on a Saturday, the following Monday and Tuesday are bank holidays. All schools and many
      * organizations are closed in this period. Some may close for the whole week between Christmas and New Year.
      *
-     * @link http://www.timeanddate.com/holidays/uk/christmas-day
-     * @link http://www.timeanddate.com/holidays/uk/boxing-day
+     * @link https://www.timeanddate.com/holidays/uk/christmas-day
+     * @link https://www.timeanddate.com/holidays/uk/boxing-day
      *
-     * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @param string|null $type the Holiday Type (e.g. Official, Seasonal, etc.)
+     *
      * @throws \Exception
      */
-    private function calculateChristmasHolidays(): void
+    protected function calculateChristmasHolidays(?string $type = null): void
     {
-        $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->timezone));
-        $boxingDay    = new DateTime("$this->year-12-26", new DateTimeZone($this->timezone));
+        $christmasDay = $this->christmasDay($this->year, $this->timezone, $this->locale, $type ?? Holiday::TYPE_OFFICIAL);
+        $secondChristmasDay = $this->secondChristmasDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK);
 
-        $this->addHoliday(new Holiday('christmasDay', [], $christmasDay, $this->locale));
-        $this->addHoliday(new Holiday('secondChristmasDay', [], $boxingDay, $this->locale, Holiday::TYPE_BANK));
-
-        $substituteChristmasDay = clone $christmasDay;
-        $substituteBoxingDay    = clone $boxingDay;
+        $this->addHoliday($christmasDay);
+        $this->addHoliday($secondChristmasDay);
 
         if (\in_array((int)$christmasDay->format('w'), [0, 6], true)) {
-            $substituteChristmasDay->add(new DateInterval('P2D'));
-            $this->addHoliday(new Holiday(
-                'substituteHoliday:christmasDay',
+            $date = clone $christmasDay;
+            $date->add(new DateInterval('P2D'));
+            $this->addHoliday(new SubstituteHoliday(
+                $christmasDay,
                 [],
-                $substituteChristmasDay,
+                $date,
                 $this->locale,
                 Holiday::TYPE_BANK
             ));
         }
 
-        if (\in_array((int)$boxingDay->format('w'), [0, 6], true)) {
-            $substituteBoxingDay->add(new DateInterval('P2D'));
-            $this->addHoliday(new Holiday(
-                'substituteHoliday:secondChristmasDay',
+        if (\in_array((int)$secondChristmasDay->format('w'), [0, 6], true)) {
+            $date = clone $secondChristmasDay;
+            $date->add(new DateInterval('P2D'));
+            $this->addHoliday(new SubstituteHoliday(
+                $secondChristmasDay,
                 [],
-                $substituteBoxingDay,
+                $date,
                 $this->locale,
                 Holiday::TYPE_BANK
             ));

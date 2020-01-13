@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Switzerland;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class SwitzerlandTest extends SwitzerlandBaseTestCase
 
     /**
      * Tests if all official holidays in Switzerland are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -39,12 +40,12 @@ class SwitzerlandTest extends SwitzerlandBaseTestCase
 
     /**
      * Tests if all observed holidays in Switzerland are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
         $observedHolidays = [];
-        if (($this->year >= 1899 && $this->year < 1994) || $this->year = 1891) {
+        if (($this->year >= 1899 && $this->year < 1994) || 1891 === $this->year) {
             $observedHolidays[] = 'swissNationalDay';
         }
 
@@ -53,7 +54,7 @@ class SwitzerlandTest extends SwitzerlandBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Switzerland are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -62,7 +63,7 @@ class SwitzerlandTest extends SwitzerlandBaseTestCase
 
     /**
      * Tests if all bank holidays in Switzerland are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -71,7 +72,7 @@ class SwitzerlandTest extends SwitzerlandBaseTestCase
 
     /**
      * Tests if all other holidays in Switzerland are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -81,7 +82,7 @@ class SwitzerlandTest extends SwitzerlandBaseTestCase
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->year = $this->generateRandomYear(1945);
     }

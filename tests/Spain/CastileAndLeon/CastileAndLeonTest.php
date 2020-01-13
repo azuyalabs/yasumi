@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Spain\CastileAndLeon;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class CastileAndLeonTest extends CastileAndLeonBaseTestCase
 
     /**
      * Tests if all official holidays in Castile And Leon (Spain) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -47,7 +48,7 @@ class CastileAndLeonTest extends CastileAndLeonBaseTestCase
 
     /**
      * Tests if all observed holidays in Castile And Leon are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -59,7 +60,7 @@ class CastileAndLeonTest extends CastileAndLeonBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Castile And Leon are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -68,7 +69,7 @@ class CastileAndLeonTest extends CastileAndLeonBaseTestCase
 
     /**
      * Tests if all bank holidays in Castile And Leon are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -77,7 +78,7 @@ class CastileAndLeonTest extends CastileAndLeonBaseTestCase
 
     /**
      * Tests if all other holidays in Castile And Leon are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -87,7 +88,7 @@ class CastileAndLeonTest extends CastileAndLeonBaseTestCase
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->year = $this->generateRandomYear(1981);
     }

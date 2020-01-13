@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,6 +14,8 @@ namespace Yasumi\tests\UnitedKingdom;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -34,8 +36,8 @@ class SpringBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
 
     /**
      * Tests the holiday defined in this test.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testHoliday()
     {
@@ -49,8 +51,30 @@ class SpringBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
     }
 
     /**
+     * Tests the holiday exceptions in 2002 and 2012.
+     * @throws ReflectionException
+     * @throws Exception
+     */
+    public function testHolidayException()
+    {
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2002,
+            new DateTime('2002-6-4', new DateTimeZone(self::TIMEZONE))
+        );
+
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2012,
+            new DateTime('2012-6-4', new DateTimeZone(self::TIMEZONE))
+        );
+    }
+
+    /**
      * Tests the holiday defined in this test before establishment.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayBeforeEstablishment()
     {
@@ -63,7 +87,7 @@ class SpringBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -77,7 +101,7 @@ class SpringBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

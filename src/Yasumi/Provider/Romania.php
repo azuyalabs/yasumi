@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,6 +14,8 @@ namespace Yasumi\Provider;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
 /**
@@ -37,9 +39,9 @@ class Romania extends AbstractProvider
     /**
      * Initialize holidays for Romania.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -79,17 +81,19 @@ class Romania extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Public_holidays_in_Romania
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateDayAfterNewYearsDay(): void
     {
-        $this->addHoliday(new Holiday('dayAfterNewYearsDay', [
-            'en_US' => 'Day after New Year\'s Day',
-            'ro_RO' => 'A doua zi după Anul Nou'
-        ], new DateTime("$this->year-01-02", new DateTimeZone($this->timezone)), $this->locale));
+        $this->addHoliday(new Holiday(
+            'dayAfterNewYearsDay',
+            [],
+            new DateTime("$this->year-01-02", new DateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /**
@@ -102,9 +106,9 @@ class Romania extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/United_Principalities
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateUnitedPrincipalitiesDay(): void
@@ -112,8 +116,8 @@ class Romania extends AbstractProvider
         // The law is official since 21.12.2014.
         if ($this->year > 2014) {
             $this->addHoliday(new Holiday('unitedPrincipalitiesDay', [
-                'en_US' => 'Union Day / Small Union',
-                'ro_RO' => 'Unirea Principatelor Române / Mica Unire'
+                'en' => 'Union Day / Small Union',
+                'ro' => 'Unirea Principatelor Române / Mica Unire',
             ], new DateTime("$this->year-01-24", new DateTimeZone($this->timezone)), $this->locale));
         }
     }
@@ -125,18 +129,20 @@ class Romania extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/St._Andrew%27s_Day
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateStAndrewDay(): void
     {
         if ($this->year >= 2012) {
-            $this->addHoliday(new Holiday('stAndrewDay', [
-                'en_US' => 'Saint Andrew\'s Day',
-                'ro_RO' => 'Sfântul Andrei'
-            ], new DateTime($this->year . '-11-30', new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'stAndrewsDay',
+                [],
+                new DateTime($this->year . '-11-30', new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
     }
 
@@ -151,33 +157,33 @@ class Romania extends AbstractProvider
      * @link https://en.wikipedia.org/wiki/Great_Union_Day
      * @link https://ro.wikipedia.org/wiki/Ziua_na%C8%9Bional%C4%83_a_Rom%C3%A2niei
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateNationalDay(): void
     {
-        $national_day = null;
+        $nationalDay = null;
 
         //@link https://en.wikipedia.org/wiki/Great_Union_Day
         if ($this->year >= 1990) {
-            $national_day = "$this->year-12-01";
+            $nationalDay = "$this->year-12-01";
         }
 
         if ($this->year >= 1948 && $this->year <= 1989) {
-            $national_day = "$this->year-08-23";
+            $nationalDay = "$this->year-08-23";
         }
 
         if ($this->year >= 1866 && $this->year <= 1947) {
-            $national_day = "$this->year-05-10";
+            $nationalDay = "$this->year-05-10";
         }
 
-        if (null !== $national_day) {
+        if (\is_string($nationalDay)) {
             $this->addHoliday(new Holiday('nationalDay', [
-                'en_US' => 'National Day',
-                'ro_RO' => 'Ziua Națională'
-            ], new DateTime($national_day, new DateTimeZone($this->timezone)), $this->locale));
+                'en' => 'National Day',
+                'ro' => 'Ziua Națională',
+            ], new DateTime($nationalDay, new DateTimeZone($this->timezone)), $this->locale));
         }
     }
 
@@ -187,9 +193,9 @@ class Romania extends AbstractProvider
      * Constantin Brâncuși (February 19, 1876 – March 16, 1957) was a Romanian sculptor, painter and photographer.
      *
      * @link https://en.wikipedia.org/wiki/Constantin_Br%C3%A2ncu%C8%99i
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateConstantinBrancusiDay(): void
@@ -198,8 +204,8 @@ class Romania extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'constantinBrancusiDay',
                 [
-                    'en_US' => 'Constantin Brâncuși day',
-                    'ro_RO' => 'Ziua Constantin Brâncuși'
+                    'en' => 'Constantin Brâncuși day',
+                    'ro' => 'Ziua Constantin Brâncuși',
                 ],
                 new DateTime("$this->year-02-19", new DateTimeZone($this->timezone)),
                 $this->locale,
@@ -215,9 +221,9 @@ class Romania extends AbstractProvider
      * according to the Law 220/2016 (18.11.2016)
      *
      * @link https://en.wikipedia.org/wiki/Children%27s_Day
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      * @throws \Exception
      */
@@ -227,8 +233,8 @@ class Romania extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'childrensDay',
                 [
-                    'en_US' => 'International Children\'s Day',
-                    'ro_RO' => 'Ziua Copilului'
+                    'en' => 'International Children’s Day',
+                    'ro' => 'Ziua Copilului',
                 ],
                 new DateTime("$this->year-06-01", new DateTimeZone($this->timezone)),
                 $this->locale,
@@ -238,21 +244,21 @@ class Romania extends AbstractProvider
 
         if ($this->year >= 2017) {
             $this->addHoliday(new Holiday('childrensDay', [
-                'en_US' => 'International Children\'s Day',
-                'ro_RO' => 'Ziua Copilului'
+                'en' => 'International Children’s Day',
+                'ro' => 'Ziua Copilului',
             ], new DateTime("$this->year-06-01", new DateTimeZone($this->timezone)), $this->locale));
         }
     }
 
     /**
-     * @param int    $year
+     * @param int $year
      * @param string $timezone
      *
-     * @return \DateTime
+     * @return DateTime
      *
      * @throws \Exception
      */
-    public function calculateEaster($year, $timezone): DateTime
+    public function calculateEaster(int $year, string $timezone): DateTime
     {
         return $this->calculateOrthodoxEaster($year, $timezone);
     }

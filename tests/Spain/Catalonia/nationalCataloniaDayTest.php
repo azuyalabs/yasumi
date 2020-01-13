@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,6 +14,8 @@ namespace Yasumi\tests\Spain\Catalonia;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -34,8 +36,8 @@ class nationalCataloniaDayTest extends CataloniaBaseTestCase implements YasumiTe
 
     /**
      * Tests the holiday defined in this test on or after establishment.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testHolidayOnAfterEstablishment()
     {
@@ -50,7 +52,7 @@ class nationalCataloniaDayTest extends CataloniaBaseTestCase implements YasumiTe
 
     /**
      * Tests the holiday defined in this test before establishment.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayBeforeEstablishment()
     {
@@ -63,7 +65,7 @@ class nationalCataloniaDayTest extends CataloniaBaseTestCase implements YasumiTe
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -71,13 +73,16 @@ class nationalCataloniaDayTest extends CataloniaBaseTestCase implements YasumiTe
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Diada Nacional de Catalunya']
+            [
+                'es' => 'Diada Nacional de Cataluña',
+                'ca' => 'Diada Nacional de Catalunya',
+            ]
         );
     }
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

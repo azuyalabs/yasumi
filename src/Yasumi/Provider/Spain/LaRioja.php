@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,6 +14,8 @@ namespace Yasumi\Provider\Spain;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\Spain;
@@ -25,7 +27,7 @@ use Yasumi\Provider\Spain;
  * capital is Logroño. Other cities and towns in the province include Calahorra, Arnedo, Alfaro, Haro, Santo Domingo de
  * la Calzada, and Nájera. It has an estimated population of 322,415 inhabitants.
  *
- * @link http://en.wikipedia.org/wiki/La_Rioja_(Spain)
+ * @link https://en.wikipedia.org/wiki/La_Rioja_(Spain)
  */
 class LaRioja extends Spain
 {
@@ -40,9 +42,9 @@ class LaRioja extends Spain
     /**
      * Initialize holidays for La Rioja (Spain).
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -63,18 +65,18 @@ class LaRioja extends Spain
      * La Rioja, on June 9. It marks the anniversary of when the autonomous community of La Rioja's statute was approved
      * on June 9, 1982. The Day of La Rioja was first observed on June 9, 1983.
      *
-     * @link http://www.timeanddate.com/holidays/spain/rioja-day
+     * @link https://www.timeanddate.com/holidays/spain/rioja-day
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateLaRiojaDay(): void
     {
         if ($this->year >= 1983) {
             $this->addHoliday(new Holiday('laRiojaDay', [
-                'es_ES' => 'Día de La Rioja',
+                'es' => 'Día de La Rioja',
             ], new DateTime("$this->year-6-9", new DateTimeZone($this->timezone)), $this->locale));
         }
     }

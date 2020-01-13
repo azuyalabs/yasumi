@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,6 +13,8 @@
 namespace Yasumi\tests\Sweden;
 
 use DateTime;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -31,10 +33,10 @@ class InternationalWorkersDayTest extends SwedenBaseTestCase implements YasumiTe
      *
      * @dataProvider InternationalWorkersDayDataProvider
      *
-     * @param int      $year     the year for which International Workers' Day needs to be tested
+     * @param int $year the year for which International Workers' Day needs to be tested
      * @param DateTime $expected the expected date
      *
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testInternationalWorkersDay($year, $expected)
     {
@@ -43,7 +45,7 @@ class InternationalWorkersDayTest extends SwedenBaseTestCase implements YasumiTe
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -51,13 +53,13 @@ class InternationalWorkersDayTest extends SwedenBaseTestCase implements YasumiTe
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'Första maj']
+            [self::LOCALE => 'första maj']
         );
     }
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {
@@ -68,7 +70,7 @@ class InternationalWorkersDayTest extends SwedenBaseTestCase implements YasumiTe
      * Returns a list of random test dates used for assertion of International Workers' Day.
      *
      * @return array list of test dates for International Workers' Day
-     * @throws \Exception
+     * @throws Exception
      */
     public function InternationalWorkersDayDataProvider(): array
     {

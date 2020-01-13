@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,6 +14,8 @@ namespace Yasumi\Provider\Spain;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\Spain;
@@ -26,7 +28,7 @@ use Yasumi\Provider\Spain;
  * (provinces of León, Palencia and Burgos), on the west by the Principality of Asturias, and on the north by the
  * Cantabrian Sea (Bay of Biscay).
  *
- * @link http://en.wikipedia.org/wiki/Cantabria
+ * @link https://en.wikipedia.org/wiki/Cantabria
  */
 class Cantabria extends Spain
 {
@@ -41,9 +43,9 @@ class Cantabria extends Spain
     /**
      * Initialize holidays for Cantabria (Spain).
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -69,11 +71,11 @@ class Cantabria extends Spain
      * "Special Regional Interest" in 1983. Following the establishment of the autonomous community of Cantabria in
      * 1982, the event became known as the Day of Cantabria.
      *
-     * @link http://www.timeanddate.com/holidays/spain/cantabria-day
+     * @link https://www.timeanddate.com/holidays/spain/cantabria-day
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateCantabriaDay(): void
@@ -81,7 +83,7 @@ class Cantabria extends Spain
         if ($this->year >= 1967) {
             $this->addHoliday(new Holiday(
                 'cantabriaDay',
-                ['es_ES' => 'Día de Cantabria'],
+                ['es' => 'Día de Cantabria'],
                 new DateTime("second sunday of august $this->year", new DateTimeZone($this->timezone)),
                 $this->locale
             ));

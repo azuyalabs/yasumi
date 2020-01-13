@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,6 +14,7 @@ namespace Yasumi\Provider\Australia\Tasmania;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Provider\Australia\Tasmania;
 
 /**
@@ -33,7 +34,7 @@ class KingIsland extends Tasmania
      * Initialize holidays for King Island (Australia).
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -52,8 +53,8 @@ class KingIsland extends Tasmania
     {
         $this->calculateHoliday(
             'kingIslandShow',
-            ['en_AU' => 'King Island Show'],
             new DateTime('first tuesday of march ' . $this->year, new DateTimeZone($this->timezone)),
+            ['en' => 'King Island Show'],
             false,
             false
         );

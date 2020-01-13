@@ -7,14 +7,6 @@
 [![StyleCI](https://styleci.io/repos/32797151/shield?branch=master)](https://styleci.io/repos/32797151)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/azuyalabs/yasumi/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/azuyalabs/yasumi/?branch=master)
 
-Important!
------------
-Yasumi version 2.0 has been released with support for PHP 7 only. As of January 2019 support for PHP 5 has ended.
-
-For the previous code base (1.8.0) a separate support branch has been created that will only receive the most critical bug fixes (for those still using PHP 5). Please note that although v1.8.x works both in PHP 5 and PHP 7, the code base hasn't been upgraded to PHP 7. 
-
-It is highly recommended to upgrade to PHP7 and Yasumi v2.0.0 to enjoy the latest changes and improvements. More information can be found on the blog here: [Yasumi Release v2](https://azuyalabs.github.io/yasumi/blog/release_v2)
-
 Introduction
 ------------
 Yasumi (Japanese for 'Holiday'「休み」) is an easy PHP library to help you calculate the dates and names of holidays and other
@@ -34,6 +26,14 @@ Yasumi’s documentation is available on [https://azuyalabs.github.io/yasumi/](h
 Blog
 ----
 Checkout the [blog](https://azuyalabs.github.io/yasumi/blog/) section on documentation site regularly for latest updates. Keeping you informed about any news, releases, etc. in a handy blog post format!
+
+## Contributing
+
+Contributions are encouraged and welcome; I am always happy to get feedback or pull requests on Github :) Create [Github Issues](https://github.com/azuyalabs/yasumi/issues) for bugs and new features and comment on the ones you are interested in.
+
+If you enjoy what I am making, an extra cup of coffee is very much appreciated :). Your support helps me to put more time into Open-Source Software projects like this.
+
+<a href="https://www.buymeacoffee.com/sachatelgenhof" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 
 License
 -------

@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,6 +15,8 @@ namespace Yasumi\Provider;
 use DateInterval;
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
 /**
@@ -36,7 +38,7 @@ class Australia extends AbstractProvider
      * Initialize holidays for Australia.
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -50,6 +52,67 @@ class Australia extends AbstractProvider
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
         $this->calculateChristmasDay();
+    }
+
+    /**
+     * Holidays associated with the start of the modern Gregorian calendar.
+     *
+     * New Year's Day is on January 1 and is the first day of a new year in the Gregorian calendar,
+     * which is used in Australia and many other countries. Due to its geographical position close
+     * to the International Date Line, Australia is one of the first countries in the world to welcome the New Year.
+     * If it falls on a weekend an additional public holiday is held on the next available weekday.
+     *
+     * @link https://www.timeanddate.com/holidays/australia/new-year-day
+     *
+     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws \Exception
+     */
+    private function calculateNewYearHolidays(): void
+    {
+        $newyearsday = new DateTime("$this->year-01-01", new DateTimeZone($this->timezone));
+        $this->calculateHoliday('newYearsDay', $newyearsday, [], false, false);
+        switch ($newyearsday->format('w')) {
+            case 0: // sunday
+                $newyearsday->add(new DateInterval('P1D'));
+                $this->calculateHoliday('newYearsHoliday', $newyearsday, ['en' => 'New Year’s Holiday'], false, false);
+                break;
+            case 6: // saturday
+                $newyearsday->add(new DateInterval('P2D'));
+                $this->calculateHoliday('newYearsHoliday', $newyearsday, ['en' => 'New Year’s Holiday'], false, false);
+                break;
+        }
+    }
+
+    /**
+     * Function to simplify moving holidays to mondays if required
+     *
+     * @param string $shortName
+     * @param DateTime $date
+     * @param array $names
+     * @param bool $moveFromSaturday
+     * @param bool $moveFromSunday
+     * @param string $type
+     *
+     * @throws InvalidDateException
+     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws \Exception
+     */
+    public function calculateHoliday(
+        string $shortName,
+        DateTime $date,
+        array $names = [],
+        ?bool $moveFromSaturday = null,
+        ?bool $moveFromSunday = null,
+        ?string $type = null
+    ): void {
+        $day = (int)$date->format('w');
+        if ((0 === $day && ($moveFromSunday ?? true)) || (6 === $day && ($moveFromSaturday ?? true))) {
+            $date = $date->add(0 === $day ? new DateInterval('P1D') : new DateInterval('P2D'));
+        }
+
+        $this->addHoliday(new Holiday($shortName, $names, $date, $this->locale, $type ?? Holiday::TYPE_OFFICIAL));
     }
 
     /**
@@ -67,75 +130,14 @@ class Australia extends AbstractProvider
      * @link https://www.timeanddate.com/holidays/australia/australia-day
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateAustraliaDay(): void
     {
         $date = new DateTime("$this->year-01-26", new DateTimeZone($this->timezone));
 
-        $this->calculateHoliday('australiaDay', ['en_AU' => 'Australia Day'], $date);
-    }
-
-    /**
-     * Function to simplify moving holidays to mondays if required
-     *
-     * @param string    $shortName
-     * @param array     $names
-     * @param DateTime  $date
-     * @param bool      $moveFromSaturday
-     * @param bool      $moveFromSunday
-     * @param string    $type
-     *
-     * @throws \Yasumi\Exception\InvalidDateException
-     * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     * @throws \Exception
-     */
-    public function calculateHoliday(
-        string $shortName,
-        array $names = [],
-        $date,
-        $moveFromSaturday = true,
-        $moveFromSunday = true,
-        $type = Holiday::TYPE_OFFICIAL
-    ): void {
-        $day = (int)$date->format('w');
-        if (($day === 0 && $moveFromSunday) || ($day === 6 && $moveFromSaturday)) {
-            $date = $date->add($day === 0 ? new DateInterval('P1D') : new DateInterval('P2D'));
-        }
-
-        $this->addHoliday(new Holiday($shortName, $names, $date, $this->locale, $type));
-    }
-
-    /**
-     * Holidays associated with the start of the modern Gregorian calendar.
-     *
-     * New Year's Day is on January 1 and is the first day of a new year in the Gregorian calendar,
-     * which is used in Australia and many other countries. Due to its geographical position close
-     * to the International Date Line, Australia is one of the first countries in the world to welcome the New Year.
-     * If it falls on a weekend an additional public holiday is held on the next available weekday.
-     *
-     * @link https://www.timeanddate.com/holidays/australia/new-year-day
-     *
-     * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     * @throws \Exception
-     */
-    private function calculateNewYearHolidays(): void
-    {
-        $newyearsday = new DateTime("$this->year-01-01", new DateTimeZone($this->timezone));
-        $this->calculateHoliday('newYearsDay', ['en_AU' => 'New Year\'s Day'], $newyearsday, false, false);
-        switch ($newyearsday->format('w')) {
-            case 0: // sunday
-                $newyearsday->add(new DateInterval('P1D'));
-                $this->calculateHoliday('newYearsHoliday', ['en_AU' => 'New Year\'s Holiday'], $newyearsday, false, false);
-                break;
-            case 6: // saturday
-                $newyearsday->add(new DateInterval('P2D'));
-                $this->calculateHoliday('newYearsHoliday', ['en_AU' => 'New Year\'s Holiday'], $newyearsday, false, false);
-                break;
-        }
+        $this->calculateHoliday('australiaDay', $date, ['en' => 'Australia Day']);
     }
 
     /**
@@ -151,7 +153,7 @@ class Australia extends AbstractProvider
      * @link https://www.timeanddate.com/holidays/australia/anzac-day
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateAnzacDay(): void
@@ -161,7 +163,7 @@ class Australia extends AbstractProvider
         }
 
         $date = new DateTime("$this->year-04-25", new DateTimeZone($this->timezone));
-        $this->calculateHoliday('anzacDay', ['en_AU' => 'ANZAC Day'], $date, false, false);
+        $this->calculateHoliday('anzacDay', $date, [], false, false);
         $easter = $this->calculateEaster($this->year, $this->timezone);
 
         $easterMonday = $this->calculateEaster($this->year, $this->timezone);
@@ -170,7 +172,7 @@ class Australia extends AbstractProvider
         $fDate = $date->format('Y-m-d');
         if ($fDate === $easter->format('Y-m-d') || $fDate === $easterMonday->format('Y-m-d')) {
             $easterMonday->add(new DateInterval('P1D'));
-            $this->calculateHoliday('easterTuesday', ['en_AU' => 'Easter Tuesday'], $easterMonday, false, false);
+            $this->calculateHoliday('easterTuesday', $easterMonday, ['en' => 'Easter Tuesday'], false, false);
         }
         unset($fDate);
     }
@@ -184,30 +186,30 @@ class Australia extends AbstractProvider
      * @link https://www.timeanddate.com/holidays/australia/christmas-day-holiday
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateChristmasDay(): void
     {
         $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->timezone));
-        $boxingDay    = new DateTime("$this->year-12-26", new DateTimeZone($this->timezone));
-        $this->calculateHoliday('christmasDay', ['en_AU' => 'Christmas Day'], $christmasDay, false, false);
-        $this->calculateHoliday('secondChristmasDay', ['en_AU' => 'Boxing Day'], $boxingDay, false, false);
+        $boxingDay = new DateTime("$this->year-12-26", new DateTimeZone($this->timezone));
+        $this->calculateHoliday('christmasDay', $christmasDay, [], false, false);
+        $this->calculateHoliday('secondChristmasDay', $boxingDay, [], false, false);
 
         switch ($christmasDay->format('w')) {
             case 0: // sunday
                 $christmasDay->add(new DateInterval('P2D'));
-                $this->calculateHoliday('christmasHoliday', ['en_AU' => 'Christmas Holiday'], $christmasDay, false, false);
+                $this->calculateHoliday('christmasHoliday', $christmasDay, ['en' => 'Christmas Holiday'], false, false);
                 break;
             case 5: // friday
                 $boxingDay->add(new DateInterval('P2D'));
-                $this->calculateHoliday('secondChristmasHoliday', ['en_AU' => 'Boxing Day Holiday'], $boxingDay, false, false);
+                $this->calculateHoliday('secondChristmasHoliday', $boxingDay, ['en' => 'Boxing Day Holiday'], false, false);
                 break;
             case 6: // saturday
                 $christmasDay->add(new DateInterval('P2D'));
                 $boxingDay->add(new DateInterval('P2D'));
-                $this->calculateHoliday('christmasHoliday', ['en_AU' => 'Christmas Holiday'], $christmasDay, false, false);
-                $this->calculateHoliday('secondChristmasHoliday', ['en_AU' => 'Boxing Day Holiday'], $boxingDay, false, false);
+                $this->calculateHoliday('christmasHoliday', $christmasDay, ['en' => 'Christmas Holiday'], false, false);
+                $this->calculateHoliday('secondChristmasHoliday', $boxingDay, ['en' => 'Boxing Day Holiday'], false, false);
                 break;
         }
     }

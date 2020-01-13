@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Spain\RegionOfMurcia;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class RegionOfMurciaTest extends RegionOfMurciaBaseTestCase
 
     /**
      * Tests if all official holidays in the Region of Murcia (Spain) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -47,7 +48,7 @@ class RegionOfMurciaTest extends RegionOfMurciaBaseTestCase
 
     /**
      * Tests if all observed holidays in the Region of Murcia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -60,7 +61,7 @@ class RegionOfMurciaTest extends RegionOfMurciaBaseTestCase
 
     /**
      * Tests if all seasonal holidays in the Region of Murcia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -69,7 +70,7 @@ class RegionOfMurciaTest extends RegionOfMurciaBaseTestCase
 
     /**
      * Tests if all bank holidays in the Region of Murcia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -78,7 +79,7 @@ class RegionOfMurciaTest extends RegionOfMurciaBaseTestCase
 
     /**
      * Tests if all other holidays in the Region of Murcia are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -88,7 +89,7 @@ class RegionOfMurciaTest extends RegionOfMurciaBaseTestCase
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->year = $this->generateRandomYear(1981);
     }

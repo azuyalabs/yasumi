@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\UnitedKingdom;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class UnitedKingdomTest extends UnitedKingdomBaseTestCase
 
     /**
      * Tests if all official holidays in the United Kingdom are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -38,7 +39,7 @@ class UnitedKingdomTest extends UnitedKingdomBaseTestCase
 
     /**
      * Tests if all observed holidays in the United Kingdom are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -47,7 +48,7 @@ class UnitedKingdomTest extends UnitedKingdomBaseTestCase
 
     /**
      * Tests if all seasonal holidays in the United Kingdom are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -56,7 +57,7 @@ class UnitedKingdomTest extends UnitedKingdomBaseTestCase
 
     /**
      * Tests if all bank holidays in the United Kingdom are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -65,13 +66,13 @@ class UnitedKingdomTest extends UnitedKingdomBaseTestCase
             'easterMonday',
             'mayDayBankHoliday',
             'springBankHoliday',
-            'secondChristmasDay'
+            'secondChristmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
 
     /**
      * Tests if all other holidays in the United Kingdom are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -81,7 +82,7 @@ class UnitedKingdomTest extends UnitedKingdomBaseTestCase
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->year = $this->generateRandomYear(1978);
     }

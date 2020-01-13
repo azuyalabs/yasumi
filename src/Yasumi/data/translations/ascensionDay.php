@@ -1,8 +1,9 @@
-<?php
+<?php declare(strict_types=1);
+
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,19 +13,15 @@
 
 // Translations for Ascension Day
 return [
-    'da_DK' => 'Kristi himmelfartsdag',
-    'de_AT' => 'Christi Himmelfahrt',
+    'da' => 'Kristi himmelfartsdag',
+    'de' => 'Christi Himmelfahrt',
     'de_CH' => 'Auffahrt',
-    'de_DE' => 'Christi Himmelfahrt',
-    'el_GR' => 'Ανάληψη του Χριστού',
-    'en_US' => 'Ascension Day',
-    'fi_FI' => 'Helatorstai',
-    'fr_BE' => 'Ascension',
-    'fr_CH' => 'Ascension',
-    'fr_FR' => 'Ascension',
-    'it_CH' => 'Ascensione',
-    'nb_NO' => 'Kristi himmelfartsdag',
-    'nl_BE' => 'Hemelvaart',
-    'nl_NL' => 'Hemelvaart',
-    'sv_SE' => 'Kristi himmelsfärdsdag',
+    'el' => 'Ανάληψη του Χριστού',
+    'en' => 'Ascension Day',
+    'fi' => 'Helatorstai',
+    'fr' => 'Ascension',
+    'it' => 'Ascensione',
+    'nb' => 'Kristi himmelfartsdag',
+    'nl' => 'Hemelvaart',
+    'sv' => 'Kristi himmelsfärdsdag',
 ];

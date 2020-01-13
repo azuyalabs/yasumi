@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,6 +14,8 @@ namespace Yasumi\Provider\Spain;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\Spain;
@@ -26,7 +28,7 @@ use Yasumi\Provider\Spain;
  * Salamanca and Ávila); to the south, it borders Andalusia (provinces of Huelva, Seville, and Córdoba); and to the
  * east, it borders Castile–La Mancha (provinces of Toledo and Ciudad Real).
  *
- * @link http://en.wikipedia.org/wiki/Extremadura
+ * @link https://en.wikipedia.org/wiki/Extremadura
  */
 class Extremadura extends Spain
 {
@@ -41,9 +43,9 @@ class Extremadura extends Spain
     /**
      * Initialize holidays for Extremadura (Spain).
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -66,11 +68,11 @@ class Extremadura extends Spain
      * A law enacted on June 3, 1985, proclaimed September 8 to be a public holiday known as the Day of Extremadura.
      * The public holiday was first observed on September 8, 1985.
      *
-     * @link http://www.timeanddate.com/holidays/spain/extremadura-day
+     * @link https://www.timeanddate.com/holidays/spain/extremadura-day
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateDayOfExtremadura(): void
@@ -78,7 +80,7 @@ class Extremadura extends Spain
         if ($this->year >= 1985) {
             $this->addHoliday(new Holiday(
                 'extremaduraDay',
-                ['es_ES' => 'Día de Extremadura'],
+                ['es' => 'Día de Extremadura'],
                 new DateTime("$this->year-9-8", new DateTimeZone($this->timezone)),
                 $this->locale
             ));

@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,6 +14,8 @@ namespace Yasumi\Provider\Spain;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\Spain;
@@ -25,7 +27,7 @@ use Yasumi\Provider\Spain;
  * Valencian Community, on the Mediterranean coast. The city of Murcia is the capital of the region and seat of
  * government organs, except for the parliament, the Regional Assembly of Murcia, which is located in Cartagena.
  *
- * @link http://en.wikipedia.org/wiki/Region_of_Murcia
+ * @link https://en.wikipedia.org/wiki/Region_of_Murcia
  */
 class RegionOfMurcia extends Spain
 {
@@ -40,9 +42,9 @@ class RegionOfMurcia extends Spain
     /**
      * Initialize holidays for the Region of Murcia (Spain).
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -64,18 +66,18 @@ class RegionOfMurcia extends Spain
      * community of Murcia, Spain, on June 9. It marks the anniversary of the approval of the statute of autonomy of
      * Murcia on June 9, 1982. The Day of the Region of Murcia was first celebrated on June 9, 1983.
      *
-     * @link http://www.timeanddate.com/holidays/spain/murcia-day
+     * @link https://www.timeanddate.com/holidays/spain/murcia-day
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateDayOfMurcia(): void
     {
         if ($this->year >= 1983) {
             $this->addHoliday(new Holiday('murciaDay', [
-                'es_ES' => 'Día de la Región de Murcia',
+                'es' => 'Día de la Región de Murcia',
             ], new DateTime("$this->year-6-9", new DateTimeZone($this->timezone)), $this->locale));
         }
     }

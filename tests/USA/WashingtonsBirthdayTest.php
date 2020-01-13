@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,6 +14,8 @@ namespace Yasumi\tests\USA;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -35,8 +37,8 @@ class WashingtonsBirthdayTest extends USABaseTestCase implements YasumiTestCaseI
     /**
      * Tests Washington's Birthday on or after 1968. Washington's Birthday was established since 1879 on February 22
      * and was changed in 1968 to the third Monday in February.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testWashingtonsBirthdayOnAfter1968()
     {
@@ -52,8 +54,8 @@ class WashingtonsBirthdayTest extends USABaseTestCase implements YasumiTestCaseI
     /**
      * Tests Washington's Birthday between 1879 and 1967. Washington's Birthday was established since 1879 on February
      * 22 and was changed in 1968 to the third Monday in February.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testWashingtonsBirthdayBetween1879And1967()
     {
@@ -69,7 +71,7 @@ class WashingtonsBirthdayTest extends USABaseTestCase implements YasumiTestCaseI
     /**
      * Tests Washington's Birthday before 1879. Washington's Birthday was established since 1879 on February 22 and was
      * changed in 1968 to the third Monday in February.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testWashingtonsBirthdayBefore1879()
     {
@@ -82,7 +84,7 @@ class WashingtonsBirthdayTest extends USABaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests translated name of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -90,13 +92,13 @@ class WashingtonsBirthdayTest extends USABaseTestCase implements YasumiTestCaseI
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Washington\'s Birthday']
+            [self::LOCALE => 'Washington’s Birthday']
         );
     }
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

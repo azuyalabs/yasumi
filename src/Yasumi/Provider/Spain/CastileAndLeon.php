@@ -1,9 +1,9 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,6 +15,8 @@ namespace Yasumi\Provider\Spain;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\Spain;
@@ -27,7 +29,7 @@ use Yasumi\Provider\Spain;
  * 910 of the Kingdom of Castile appears in 1230 and again in 1230. It is the largest autonomous community in Spain and
  * the third largest region of the European Union
  *
- * @link http://en.wikipedia.org/wiki/Castile_and_León
+ * @link https://en.wikipedia.org/wiki/Castile_and_León
  */
 class CastileAndLeon extends Spain
 {
@@ -42,9 +44,9 @@ class CastileAndLeon extends Spain
     /**
      * Initialize holidays for Castile and León (Spain).
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -66,11 +68,11 @@ class CastileAndLeon extends Spain
      * Comuneros were dealt a crushing defeat by the royalist forces of King Charles I in the Revolt of the Comuneros on
      * April 23, 1521.
      *
-     * @link http://en.wikipedia.org/wiki/Castile_and_León_Day
+     * @link https://en.wikipedia.org/wiki/Castile_and_León_Day
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateCastileAndLeonDay(): void
@@ -78,7 +80,7 @@ class CastileAndLeon extends Spain
         if ($this->year >= 1976) {
             $this->addHoliday(new Holiday(
                 'castileAndLeonDay',
-                ['es_ES' => 'Día de Castilla y León'],
+                ['es' => 'Día de Castilla y León'],
                 new DateTime("$this->year-4-23", new DateTimeZone($this->timezone)),
                 $this->locale
             ));

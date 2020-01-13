@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Switzerland\Solothurn;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class SolothurnTest extends SolothurnBaseTestCase
 
     /**
      * Tests if all official holidays in Solothurn (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -40,7 +41,7 @@ class SolothurnTest extends SolothurnBaseTestCase
 
     /**
      * Tests if all regional holidays in Solothurn (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testRegionalHolidays(): void
     {
@@ -49,18 +50,18 @@ class SolothurnTest extends SolothurnBaseTestCase
             'newYearsDay',
             'christmasDay',
             'ascensionDay',
-            'berchtoldsTag'
+            'berchtoldsTag',
         ], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**
      * Tests if all observed holidays in Solothurn (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
         $observedHolidays = [];
-        if (($this->year >= 1899 && $this->year < 1994) || $this->year = 1891) {
+        if (($this->year >= 1899 && $this->year < 1994) || 1891 === $this->year) {
             $observedHolidays[] = 'swissNationalDay';
         }
 
@@ -69,7 +70,7 @@ class SolothurnTest extends SolothurnBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Solothurn (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -78,7 +79,7 @@ class SolothurnTest extends SolothurnBaseTestCase
 
     /**
      * Tests if all bank holidays in Solothurn (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -87,7 +88,7 @@ class SolothurnTest extends SolothurnBaseTestCase
 
     /**
      * Tests if all other holidays in Solothurn (Switzerland) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -97,7 +98,7 @@ class SolothurnTest extends SolothurnBaseTestCase
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->year = $this->generateRandomYear(1945);
     }

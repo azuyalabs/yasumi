@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,6 +15,8 @@ namespace Yasumi\Provider\Switzerland;
 use DateInterval;
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\Switzerland;
@@ -34,12 +36,14 @@ class Geneva extends Switzerland
      */
     public const ID = 'CH-GE';
 
+    public const JEUNE_GENEVOIS_ESTABLISHMENT_YEAR = 1840;
+
     /**
      * Initialize holidays for Geneva (Switzerland).
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -65,29 +69,30 @@ class Geneva extends Switzerland
      *
      * @link https://en.wikipedia.org/wiki/Je%C3%BBne_genevois
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateJeuneGenevois(): void
     {
+        if (self::JEUNE_GENEVOIS_ESTABLISHMENT_YEAR > $this->year) {
+            return;
+        }
+
         // Find first Sunday of September
         $date = new DateTime('First Sunday of ' . $this->year . '-09', new DateTimeZone($this->timezone));
         // Go to next Thursday
         $date->add(new DateInterval('P4D'));
 
-        if (($this->year >= 1840 && $this->year <= 1869) || $this->year >= 1966) {
-            $this->addHoliday(new Holiday('jeuneGenevois', [
-                'fr_FR' => 'Jeûne genevois',
-                'fr_CH' => 'Jeûne genevois',
-            ], $date, $this->locale, Holiday::TYPE_OTHER));
-        } elseif ($this->year > 1869 && $this->year < 1966) {
-            $this->addHoliday(new Holiday('jeuneGenevois', [
-                'fr_FR' => 'Jeûne genevois',
-                'fr_CH' => 'Jeûne genevois',
-            ], $date, $this->locale, Holiday::TYPE_OBSERVANCE));
+        $type = Holiday::TYPE_OTHER;
+        if ($this->year > 1869 && $this->year < 1966) {
+            $type = Holiday::TYPE_OBSERVANCE;
         }
+
+        $this->addHoliday(new Holiday('jeuneGenevois', [
+            'fr' => 'Jeûne genevois',
+        ], $date, $this->locale, $type));
     }
 
     /**
@@ -100,9 +105,9 @@ class Geneva extends Switzerland
      *
      * @link https://fr.wikipedia.org/wiki/Restauration_genevoise
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateRestaurationGenevoise(): void
@@ -111,8 +116,7 @@ class Geneva extends Switzerland
             $this->addHoliday(new Holiday(
                 'restaurationGenevoise',
                 [
-                    'fr_FR' => 'Restauration de la République',
-                    'fr_CH' => 'Restauration de la République',
+                    'fr' => 'Restauration de la République',
                 ],
                 new DateTime($this->year . '-12-31', new DateTimeZone($this->timezone)),
                 $this->locale,

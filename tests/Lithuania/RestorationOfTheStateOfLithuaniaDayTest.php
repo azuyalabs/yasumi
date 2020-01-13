@@ -1,9 +1,9 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,6 +13,10 @@
 
 namespace Yasumi\tests\Lithuania;
 
+use DateTime;
+use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Lithuania;
 use Yasumi\tests\YasumiTestCaseInterface;
@@ -31,7 +35,7 @@ class RestorationOfTheStateOfLithuaniaDayTest extends LithuaniaBaseTestCase impl
 
     /**
      * Test if holiday is not defined before restoration
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayBeforeRestoration()
     {
@@ -44,8 +48,8 @@ class RestorationOfTheStateOfLithuaniaDayTest extends LithuaniaBaseTestCase impl
 
     /**
      * Test if holiday is defined after restoration
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testHolidayAfterRestoration()
     {
@@ -55,14 +59,14 @@ class RestorationOfTheStateOfLithuaniaDayTest extends LithuaniaBaseTestCase impl
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("{$year}-02-16", new \DateTimeZone(self::TIMEZONE))
+            new DateTime("{$year}-02-16", new DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * {@inheritdoc}
      *
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -76,13 +80,13 @@ class RestorationOfTheStateOfLithuaniaDayTest extends LithuaniaBaseTestCase impl
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(Lithuania::RESTORATION_OF_THE_STATE_YEAR),
-            ['en_US' => 'Day of Restoration of the State of Lithuania']
+            ['en' => 'Day of Restoration of the State of Lithuania']
         );
     }
 
     /**
      * {@inheritdoc}
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

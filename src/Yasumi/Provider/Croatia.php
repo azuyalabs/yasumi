@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,6 +14,8 @@ namespace Yasumi\Provider;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
 /**
@@ -34,9 +36,9 @@ class Croatia extends AbstractProvider
     /**
      * Initialize holidays for Croatia.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -62,8 +64,8 @@ class Croatia extends AbstractProvider
          */
         if ($this->year >= 1941) {
             $this->addHoliday(new Holiday('antifascistStruggleDay', [
-                'en_US' => 'Day of Antifascist Struggle',
-                'hr_HR' => 'Dan antifašističke borbe'
+                'en' => 'Day of Antifascist Struggle',
+                'hr' => 'Dan antifašističke borbe',
             ], new DateTime("$this->year-6-22", new DateTimeZone($this->timezone)), $this->locale));
         }
 
@@ -72,8 +74,8 @@ class Croatia extends AbstractProvider
          */
         if ($this->year >= 1991) {
             $this->addHoliday(new Holiday('statehoodDay', [
-                'en_US' => 'Statehood Day',
-                'hr_HR' => 'Dan državnosti'
+                'en' => 'Statehood Day',
+                'hr' => 'Dan državnosti',
             ], new DateTime("$this->year-6-25", new DateTimeZone($this->timezone)), $this->locale));
         }
 
@@ -82,8 +84,8 @@ class Croatia extends AbstractProvider
          */
         if ($this->year >= 1995) {
             $this->addHoliday(new Holiday('homelandThanksgiving', [
-                'en_US' => 'Homeland Thanksgiving Day',
-                'hr_HR' => 'Dan domovinske zahvalnosti'
+                'en' => 'Homeland Thanksgiving Day',
+                'hr' => 'Dan domovinske zahvalnosti',
             ], new DateTime("$this->year-8-5", new DateTimeZone($this->timezone)), $this->locale));
         }
 
@@ -92,8 +94,8 @@ class Croatia extends AbstractProvider
          */
         if ($this->year >= 1991) {
             $this->addHoliday(new Holiday('independenceDay', [
-                'en_US' => 'Independence Day',
-                'hr_HR' => 'Dan neovisnosti'
+                'en' => 'Independence Day',
+                'hr' => 'Dan neovisnosti',
             ], new DateTime("$this->year-10-8", new DateTimeZone($this->timezone)), $this->locale));
         }
     }

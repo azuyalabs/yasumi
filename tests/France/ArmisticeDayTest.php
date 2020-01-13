@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,6 +14,8 @@ namespace Yasumi\tests\France;
 
 use DateTime;
 use DateTimeZone;
+use Exception;
+use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
@@ -34,8 +36,8 @@ class ArmisticeDayTest extends FranceBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests Armistice Day on or after 1919.
-     * @throws \Exception
-     * @throws \ReflectionException
+     * @throws Exception
+     * @throws ReflectionException
      */
     public function testArmisticeDayOnAfter1919()
     {
@@ -50,7 +52,7 @@ class ArmisticeDayTest extends FranceBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests Armistice Day before 1919.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testArmisticeDayBefore1919()
     {
@@ -63,7 +65,7 @@ class ArmisticeDayTest extends FranceBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests translated name of Armistice Day.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -71,13 +73,13 @@ class ArmisticeDayTest extends FranceBaseTestCase implements YasumiTestCaseInter
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Armistice']
+            [self::LOCALE => 'Armistice 1918']
         );
     }
 
     /**
      * Tests type of the holiday defined in this test.
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

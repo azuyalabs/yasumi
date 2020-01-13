@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,6 +14,8 @@ namespace Yasumi\Provider\Spain;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\Spain;
@@ -26,7 +28,7 @@ use Yasumi\Provider\Spain;
  * Spanish autonomous communities of Castile and León and Asturias to the east, and the Atlantic Ocean to the west and
  * the north.
  *
- * @link http://en.wikipedia.org/wiki/Galicia_(Spain)
+ * @link https://en.wikipedia.org/wiki/Galicia_(Spain)
  */
 class Galicia extends Spain
 {
@@ -41,9 +43,9 @@ class Galicia extends Spain
     /**
      * Initialize holidays for Galicia (Spain).
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -67,19 +69,19 @@ class Galicia extends Spain
      * taken place on May 17 each year since 1963. In the year 1991 Galician Literature Day was declared a public
      * holiday in all Galicia.
      *
-     * @link http://en.wikipedia.org/wiki/Galician_Literature_Day
+     * @link https://en.wikipedia.org/wiki/Galician_Literature_Day
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateGalicianLiteratureDay(): void
     {
         if ($this->year >= 1991) {
             $this->addHoliday(new Holiday('galicianLiteratureDay', [
-                'es_ES' => 'Día de las Letras Gallegas',
-                'gl_ES' => 'Día das Letras Galegas',
+                'es' => 'Día de las Letras Gallegas',
+                'gl' => 'Día das Letras Galegas',
             ], new DateTime("$this->year-5-17", new DateTimeZone($this->timezone)), $this->locale));
         }
     }
@@ -95,18 +97,18 @@ class Galicia extends Spain
      * Sunday. If July 25 falls on a Tuesday or Thursday, many businesses and organizations are also closed on Monday,
      * July 24, or Friday, July 26. In the rest of Spain, July 25 is not a public holiday.
      *
-     * @link http://www.timeanddate.com/holidays/spain/santiago-apostle
+     * @link https://www.timeanddate.com/holidays/spain/santiago-apostle
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateStJamesDay(): void
     {
         if ($this->year >= 2000) {
             $this->addHoliday(new Holiday('stJamesDay', [
-                'es_ES' => 'Santiago Apostol',
+                'es' => 'Santiago Apostol',
             ], new DateTime("$this->year-7-25", new DateTimeZone($this->timezone)), $this->locale));
         }
     }

@@ -1,8 +1,9 @@
-<?php
+<?php declare(strict_types=1);
+
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,40 +13,35 @@
 
 // Translations for Christmas
 return [
-    'bs_Latn_BA' => 'Božić',
-    'cs_CZ' => '1. svátek vánoční',
-    'cy_GB' => 'Nadolig',
-    'da_DK' => 'Juledag',
+    'bs_Latn' => 'Božić',
+    'ca' => 'Nadal',
+    'cs' => '1. svátek vánoční',
+    'cy' => 'Nadolig',
+    'da' => 'juledag',
+    'de' => '1. Weihnachtsfeiertag',
     'de_AT' => 'Christtag',
     'de_CH' => 'Weihnachtstag',
-    'de_DE' => '1. Weihnachtsfeiertag',
-    'el_GR' => 'Χριστούγεννα',
-    'en_AU' => 'Christmas Day',
-    'en_GB' => 'Christmas Day',
-    'en_NZ' => 'Christmas Day',
+    'el' => 'Χριστούγεννα',
+    'en' => 'Christmas Day',
     'en_US' => 'Christmas',
-    'en_ZA' => 'Christmas Day',
-    'es_ES' => 'Navidad',
-    'et_EE' => 'Esimene jõulupüha',
-    'fi_FI' => 'Joulupäivä',
-    'fr_BE' => 'Noël',
-    'fr_CH' => 'Noël',
-    'fr_FR' => 'Noël',
-    'hr_HR' => 'Božić',
-    'hu_HU' => 'Karácsony',
-    'it_CH' => 'Natale',
-    'it_IT' => 'Natale',
-    'lt_LT' => 'Šv. Kalėdos',
-    'lv_LV' => 'Ziemassvētki',
-    'nb_NO' => 'Første juledag',
+    'es' => 'Navidad',
+    'et' => 'Esimene jõulupüha',
+    'fi' => 'Joulupäivä',
+    'fr' => 'Noël',
+    'hr' => 'Božić',
+    'hu' => 'Karácsony',
+    'it' => 'Natale',
+    'ko' => '기독탄신일',
+    'lt' => 'Šv. Kalėdos',
+    'lv' => 'Ziemassvētki',
+    'nb' => 'første juledag',
+    'nl' => 'eerste kerstdag',
     'nl_BE' => 'Kerstmis',
-    'nl_NL' => 'Kerstmis',
-    'pl_PL' => 'pierwszy dzień Bożego Narodzenia',
-    'pt_BR' => 'Natal',
-    'pt_PT' => 'Natal',
-    'ro_RO' => 'Crăciunul',
-    'ru_UA' => 'Рождество',
-    'sk_SK' => 'Prvý sviatok vianočný',
-    'sv_SE' => 'juldagen',
-    'uk_UA' => 'Різдво',
+    'pl' => 'pierwszy dzień Bożego Narodzenia',
+    'pt' => 'Natal',
+    'ro' => 'Crăciunul',
+    'ru' => 'Рождество',
+    'sk' => 'Prvý sviatok vianočný',
+    'sv' => 'juldagen',
+    'uk' => 'Різдво',
 ];

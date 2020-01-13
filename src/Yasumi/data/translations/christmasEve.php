@@ -1,8 +1,9 @@
-<?php
+<?php declare(strict_types=1);
+
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,19 +13,19 @@
 
 // Translations for Christmas Eve
 return [
-    'cs_CZ' => 'Štědrý den',
-    'cy_GB' => 'Noswyl Nadolig',
-    'da_DK' => 'Juleaften',
-    'de_CH' => 'Heiliger Abend',
-    'en_US' => 'Christmas Eve',
-    'et_EE' => 'Jõululaupäev',
-    'fr_BE' => 'Réveillon de Noël',
-    'fr_CH' => 'Réveillon de Noël',
-    'it_CH' => 'Vigilia di Natale',
-    'lt_LT' => 'Šv. Kūčios',
-    'lv_LV' => 'Ziemassvētku vakars',
-    'pt_PT' => 'Véspera de Natal',
-    'ro_RO' => 'Ajunul Crãciunului',
-    'sk_SK' => 'Štedrý deň',
-    'sv_SE' => 'julafton',
+    'cs' => 'Štědrý den',
+    'cy' => 'Noswyl Nadolig',
+    'da' => 'juleaften',
+    'de' => 'Heiliger Abend',
+    'en' => 'Christmas Eve',
+    'et' => 'Jõululaupäev',
+    'fr' => 'Réveillon de Noël',
+    'it' => 'Vigilia di Natale',
+    'ko' => '크리스마스 이브',
+    'lt' => 'Šv. Kūčios',
+    'lv' => 'Ziemassvētku vakars',
+    'pt' => 'Véspera de Natal',
+    'ro' => 'Ajunul Crãciunului',
+    'sk' => 'Štedrý deň',
+    'sv' => 'julafton',
 ];

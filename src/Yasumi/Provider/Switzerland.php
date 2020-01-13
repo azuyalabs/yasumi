@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,6 +15,8 @@ namespace Yasumi\Provider;
 use DateInterval;
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
 /**
@@ -33,9 +35,9 @@ class Switzerland extends AbstractProvider
     /**
      * Initialize holidays for Switzerland.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -54,23 +56,20 @@ class Switzerland extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Swiss_National_Day
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      * @throws \Exception
      */
     private function calculateNationalDay(): void
     {
         $translations = [
-            'en_US' => 'National Day',
-            'fr_FR' => 'Jour de la fête nationale',
-            'fr_CH' => 'Jour de la fête nationale',
-            'de_DE' => 'Bundesfeiertag',
-            'de_CH' => 'Bundesfeiertag',
-            'it_IT' => 'Giorno festivo federale',
-            'it_CH' => 'Giorno festivo federale',
-            'rm_CH' => 'Fiasta naziunala',
+            'en' => 'National Day',
+            'fr' => 'Jour de la fête nationale',
+            'de' => 'Bundesfeiertag',
+            'it' => 'Giorno festivo federale',
+            'rm' => 'Fiasta naziunala',
         ];
         if ($this->year >= 1994) {
             $this->addHoliday(new Holiday(
@@ -80,7 +79,7 @@ class Switzerland extends AbstractProvider
                 $this->locale,
                 Holiday::TYPE_OFFICIAL
             ));
-        } elseif ($this->year >= 1899 || $this->year === 1891) {
+        } elseif ($this->year >= 1899 || 1891 === $this->year) {
             $this->addHoliday(new Holiday(
                 'swissNationalDay',
                 $translations,
@@ -100,9 +99,9 @@ class Switzerland extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Berchtoldstag
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function calculateBerchtoldsTag(): void
@@ -110,11 +109,9 @@ class Switzerland extends AbstractProvider
         $this->addHoliday(new Holiday(
             'berchtoldsTag',
             [
-                'de_DE' => 'Berchtoldstag',
-                'de_CH' => 'Berchtoldstag',
-                'fr_FR' => 'Jour de la Saint-Berthold',
-                'fr_CH' => 'Jour de la Saint-Berthold',
-                'en_US' => 'Berchtoldstag',
+                'de' => 'Berchtoldstag',
+                'fr' => 'Jour de la Saint-Berthold',
+                'en' => 'Berchtoldstag',
             ],
             new DateTime($this->year . '-01-02', new DateTimeZone($this->timezone)),
             $this->locale,
@@ -132,9 +129,9 @@ class Switzerland extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Federal_Day_of_Thanksgiving,_Repentance_and_Prayer
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function calculateBettagsMontag(): void
@@ -146,12 +143,9 @@ class Switzerland extends AbstractProvider
             $date->add(new DateInterval('P1D'));
 
             $this->addHoliday(new Holiday('bettagsMontag', [
-                'fr_FR' => 'Jeûne fédéral',
-                'fr_CH' => 'Jeûne fédéral',
-                'de_DE' => 'Eidgenössischer Dank-, Buss- und Bettag',
-                'de_CH' => 'Eidgenössischer Dank-, Buss- und Bettag',
-                'it_IT' => 'Festa federale di ringraziamento, pentimento e preghiera',
-                'it_CH' => 'Festa federale di ringraziamento, pentimento e preghiera',
+                'fr' => 'Jeûne fédéral',
+                'de' => 'Eidgenössischer Dank-, Buss- und Bettag',
+                'it' => 'Festa federale di ringraziamento, pentimento e preghiera',
             ], $date, $this->locale, Holiday::TYPE_OTHER));
         }
     }

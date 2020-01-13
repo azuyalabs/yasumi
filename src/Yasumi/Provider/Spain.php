@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,6 +14,8 @@ namespace Yasumi\Provider;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
 /**
@@ -32,9 +34,9 @@ class Spain extends AbstractProvider
     /**
      * Initialize holidays for Spain.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -69,11 +71,11 @@ class Spain extends AbstractProvider
      * Hispanidad, the international Hispanic community. On November 27, 1981, a royal decree established Día de la
      * Hispanidad as a national holiday.
      *
-     * @link http://en.wikipedia.org/wiki/Fiesta_Nacional_de_España
+     * @link https://en.wikipedia.org/wiki/Fiesta_Nacional_de_España
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateNationalDay(): void
@@ -81,7 +83,10 @@ class Spain extends AbstractProvider
         if ($this->year >= 1981) {
             $this->addHoliday(new Holiday(
                 'nationalDay',
-                ['es_ES' => 'Fiesta Nacional de España'],
+                [
+                    'ca' => 'Festa Nacional d’Espanya',
+                    'es' => 'Fiesta Nacional de España',
+                ],
                 new DateTime("$this->year-10-12", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -95,11 +100,11 @@ class Spain extends AbstractProvider
      * 1978. In this referendum, a new constitution was approved. This was an important step in Spain's transition to
      * becoming a constitutional monarchy and democracy.
      *
-     * @link http://www.timeanddate.com/holidays/spain/constitution-day
+     * @link https://www.timeanddate.com/holidays/spain/constitution-day
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateConstitutionDay(): void
@@ -107,7 +112,10 @@ class Spain extends AbstractProvider
         if ($this->year >= 1978) {
             $this->addHoliday(new Holiday(
                 'constitutionDay',
-                ['es_ES' => 'Día de la Constitución'],
+                [
+                    'ca' => 'Dia de la Constitució',
+                    'es' => 'Día de la Constitución',
+                ],
                 new DateTime("$this->year-12-6", new DateTimeZone($this->timezone)),
                 $this->locale
             ));

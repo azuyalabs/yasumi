@@ -1,9 +1,9 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,6 +15,8 @@ namespace Yasumi\Provider;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
 /**
@@ -33,9 +35,9 @@ class Denmark extends AbstractProvider
     /**
      * Initialize holidays for Denmark.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -63,11 +65,11 @@ class Denmark extends AbstractProvider
         $this->calculateConstitutionDay();
 
         $summerTime = $this->summerTime($this->year, $this->timezone, $this->locale);
-        if ($summerTime !== null) {
+        if ($summerTime instanceof Holiday) {
             $this->addHoliday($summerTime);
         }
         $winterTime = $this->winterTime($this->year, $this->timezone, $this->locale);
-        if ($winterTime !== null) {
+        if ($winterTime instanceof Holiday) {
             $this->addHoliday($winterTime);
         }
     }
@@ -83,9 +85,9 @@ class Denmark extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Store_Bededag
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateGreatPrayerDay(): void
@@ -95,7 +97,7 @@ class Denmark extends AbstractProvider
         if ($this->year >= 1686) {
             $this->addHoliday(new Holiday(
                 'greatPrayerDay',
-                ['da_DK' => 'Store bededag'],
+                ['da' => 'store bededag'],
                 new DateTime("fourth friday $easter", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -113,9 +115,9 @@ class Denmark extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Constitution_Day_(Denmark)
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateConstitutionDay(): void
@@ -123,7 +125,7 @@ class Denmark extends AbstractProvider
         if ($this->year >= 1849) {
             $this->addHoliday(new Holiday(
                 'constitutionDay',
-                ['da_DK' => 'Grundlovsdag'],
+                ['da' => 'grundlovsdag'],
                 new DateTime("$this->year-6-5", new DateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OBSERVANCE

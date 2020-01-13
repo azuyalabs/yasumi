@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,9 +12,10 @@
 
 namespace Yasumi\Provider;
 
-use DateInterval;
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
 /**
@@ -33,9 +34,9 @@ class Finland extends AbstractProvider
     /**
      * Initialize holidays for Finland.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -77,31 +78,21 @@ class Finland extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Midsummer#Finland
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateStJohnsDay(): void
     {
-        $translation = ['fi_FI' => 'Juhannuspäivä'];
-        $shortName   = 'stJohnsDay';
-        $date        = new DateTime("$this->year-6-24", new DateTimeZone($this->timezone)); // Default date
+        $stJohnsDay = $this->year < 1955 ? "$this->year-6-24" : "$this->year-6-20 this saturday";
 
-        if ($this->year < 1955) {
-            $this->addHoliday(new Holiday($shortName, $translation, $date, $this->locale));
-        } else {
-
-            // Check between the 20th and 26th day which one is a Saturday
-            for ($d = 20; $d <= 26; ++$d) {
-                $date->setDate($this->year, 6, $d);
-                if ($date->format('l') === 'Saturday') {
-                    break;
-                }
-            }
-
-            $this->addHoliday(new Holiday($shortName, $translation, $date, $this->locale));
-        }
+        $this->addHoliday(new Holiday(
+            'stJohnsDay',
+            [],
+            new DateTime($stJohnsDay, new DateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /**
@@ -121,24 +112,19 @@ class Finland extends AbstractProvider
      * @link https://en.wikipedia.org/wiki/All_Saints%27_Day
      * @link https://fi.wikipedia.org/wiki/Pyh%C3%A4inp%C3%A4iv%C3%A4
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateAllSaintsDay(): void
     {
-        $date = new DateTime("$this->year-10-31", new DateTimeZone($this->timezone));
-
-        // Check between 31 October and 6th of November the day that is a Saturday
-        for ($d = 0; $d <= 7; ++$d) {
-            if ($date->format('l') === 'Saturday') {
-                break;
-            }
-            $date->add(new DateInterval('P1D'));
-        }
-
-        $this->addHoliday(new Holiday('allSaintsDay', [], $date, $this->locale));
+        $this->addHoliday(new Holiday(
+            'allSaintsDay',
+            [],
+            new DateTime("$this->year-10-31 this saturday", new DateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /**
@@ -154,9 +140,9 @@ class Finland extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Independence_Day_(Finland)
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateIndependenceDay(): void
@@ -164,7 +150,7 @@ class Finland extends AbstractProvider
         if ($this->year >= 1917) {
             $this->addHoliday(new Holiday(
                 'independenceDay',
-                ['fi_FI' => 'Itsenäisyyspäivä'],
+                ['fi' => 'Itsenäisyyspäivä'],
                 new DateTime("$this->year-12-6", new DateTimeZone($this->timezone)),
                 $this->locale
             ));

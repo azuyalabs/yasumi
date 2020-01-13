@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Italy;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +27,7 @@ class ItalyTest extends ItalyBaseTestCase
 
     /**
      * Tests if all official holidays in Italy are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -42,13 +43,13 @@ class ItalyTest extends ItalyBaseTestCase
             'christmasDay',
             'stStephensDay',
             'liberationDay',
-            'republicDay'
+            'republicDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
      * Tests if all observed holidays in Italy are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -57,7 +58,7 @@ class ItalyTest extends ItalyBaseTestCase
 
     /**
      * Tests if all seasonal holidays in Italy are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -66,7 +67,7 @@ class ItalyTest extends ItalyBaseTestCase
 
     /**
      * Tests if all bank holidays in Italy are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -75,7 +76,7 @@ class ItalyTest extends ItalyBaseTestCase
 
     /**
      * Tests if all other holidays in Italy are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -85,7 +86,7 @@ class ItalyTest extends ItalyBaseTestCase
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->year = $this->generateRandomYear(1949);
     }

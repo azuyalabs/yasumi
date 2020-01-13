@@ -1,8 +1,9 @@
-<?php
+<?php declare(strict_types=1);
+
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,22 +13,20 @@
 
 // Translations for Epiphany
 return [
+    'ca' => 'Epifania',
     'de_AT' => 'Heilige Drei Könige',
     'de_CH' => 'Heilige Drei Könige',
-    'de_DE' => 'Heilige 3 Könige',
-    'el_GR' => 'Θεοφάνεια',
-    'en_US' => 'Epiphany',
-    'es_ES' => 'Día de Reyes',
-    'fi_FI' => 'Loppiainen',
-    'fr_BE' => 'Epiphanie',
-    'fr_CH' => 'Epiphanie',
-    'hr_HR' => 'Sveta tri kralja',
-    'it_CH' => 'Epifania',
-    'it_IT' => 'Epifania',
-    'ja_JP' => 'エピファニー',
-    'nl_BE' => 'Drie Koningen',
-    'nl_NL' => 'Drie Koningen',
-    'pl_PL' => 'Święto Trzech Króli',
-    'sk_SK' => 'Zjavenie Pána / Traja králi',
-    'sv_SE' => 'trettondedag jul',
+    'de' => 'Heilige 3 Könige',
+    'el' => 'Θεοφάνεια',
+    'en' => 'Epiphany',
+    'es' => 'Día de Reyes',
+    'fi' => 'Loppiainen',
+    'fr' => 'Epiphanie',
+    'hr' => 'Sveta tri kralja',
+    'it' => 'Epifania',
+    'ja' => 'エピファニー',
+    'nl' => 'Drie Koningen',
+    'pl' => 'Święto Trzech Króli',
+    'sk' => 'Zjavenie Pána / Traja králi',
+    'sv' => 'trettondedag jul',
 ];

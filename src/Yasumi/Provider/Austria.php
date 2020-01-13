@@ -1,9 +1,9 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,6 +14,8 @@
 namespace Yasumi\Provider;
 
 use DateTime;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
 /**
@@ -32,9 +34,9 @@ class Austria extends AbstractProvider
     /**
      * Initialize holidays for Austria.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -73,9 +75,9 @@ class Austria extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Declaration_of_Neutrality
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateNationalDay(): void
@@ -86,8 +88,38 @@ class Austria extends AbstractProvider
 
         $this->addHoliday(new Holiday(
             'nationalDay',
-            ['de_AT' => 'Nationalfeiertag'],
+            ['de' => 'Nationalfeiertag'],
             new DateTime($this->year . '-10-26', new \DateTimeZone($this->timezone)),
+            $this->locale
+        ));
+    }
+
+    /**
+     * Saint Leopold's Day.
+     *
+     * Saint Leopold III, known as Leopold the Good, was the Margrave of Austria
+     * from 1095 to his death in 1136. He was a member of the House of
+     * Babenberg. He was canonized on 6 January 1485 and became the patron saint
+     * of Austria, Lower Austria, Upper Austria, and Vienna. His feast day is 15
+     * November.
+     *
+     * @link https://en.wikipedia.org/wiki/Leopold_III,_Margrave_of_Austria
+     *
+     * @throws InvalidDateException
+     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws \Exception
+     */
+    protected function calculateStLeopoldsDay(): void
+    {
+        if ($this->year < 1136) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday(
+            'stLeopoldsDay',
+            [],
+            new DateTime($this->year . '-11-15', new \DateTimeZone($this->timezone)),
             $this->locale
         ));
     }

@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -21,7 +21,7 @@ interface TranslationsInterface
      * Returns translation for holiday in specific locale.
      *
      * @param string $shortName holiday short name
-     * @param string $locale    locale
+     * @param string $locale locale
      *
      * @return string|null translated holiday name
      */

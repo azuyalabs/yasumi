@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,6 +14,8 @@ namespace Yasumi\Provider;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
 /**
@@ -32,9 +34,9 @@ class Norway extends AbstractProvider
     /**
      * Initialize holidays for Norway.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -73,9 +75,9 @@ class Norway extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Norwegian_Constitution_Day
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateConstitutionDay(): void
@@ -83,7 +85,7 @@ class Norway extends AbstractProvider
         if ($this->year >= 1836) {
             $this->addHoliday(new Holiday(
                 'constitutionDay',
-                ['nb_NO' => 'Grunnlovsdagen'],
+                ['nb' => 'grunnlovsdagen'],
                 new DateTime("$this->year-5-17", new DateTimeZone($this->timezone)),
                 $this->locale
             ));

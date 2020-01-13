@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,8 +12,6 @@
 
 namespace Yasumi\Filters;
 
-use Countable;
-use FilterIterator;
 use Yasumi\Holiday;
 
 /**
@@ -26,7 +24,7 @@ use Yasumi\Holiday;
  * $holidays = Yasumi::create('Netherlands', 2015);
  * $seasonal = new SeasonalHolidaysFilter($holidays->getIterator());
  */
-class SeasonalHolidaysFilter extends FilterIterator implements Countable
+class SeasonalHolidaysFilter extends AbstractFilter
 {
     /**
      * Checks whether the current element of the iterator is a seasonal holiday.
@@ -36,19 +34,5 @@ class SeasonalHolidaysFilter extends FilterIterator implements Countable
     public function accept(): bool
     {
         return $this->getInnerIterator()->current()->getType() === Holiday::TYPE_SEASON;
-    }
-
-    /**
-     * @return integer Returns the number of filtered holidays.
-     */
-    public function count(): int
-    {
-        $days = \array_keys(\iterator_to_array($this));
-
-        \array_walk($days, function (&$day) {
-            $day = \str_replace('substituteHoliday:', '', $day);
-        });
-
-        return \count(\array_unique($days));
     }
 }

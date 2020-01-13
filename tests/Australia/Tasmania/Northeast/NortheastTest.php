@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,6 +12,7 @@
 
 namespace Yasumi\tests\Australia\Tasmania\Northeast;
 
+use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -27,7 +28,7 @@ class NortheastTest extends NortheastBaseTestCase
 
     /**
      * Tests if all official holidays in northeastern Tasmania (Australia) are defined by the provider class
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -42,14 +43,14 @@ class NortheastTest extends NortheastBaseTestCase
             'queensBirthday',
             'eightHourDay',
             'recreationDay',
-            'launcestonShow'
+            'launcestonShow',
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
      * Initial setup of this Test Case
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->year = $this->generateRandomYear(1921);
     }

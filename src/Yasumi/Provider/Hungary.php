@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,6 +14,8 @@ namespace Yasumi\Provider;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
 /**
@@ -34,9 +36,9 @@ class Hungary extends AbstractProvider
     /**
      * Initialize holidays for Hungary.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -64,8 +66,8 @@ class Hungary extends AbstractProvider
          */
         if ($this->year >= 1927) {
             $this->addHoliday(new Holiday('memorialDay1848', [
-                'en_US' => 'Memorial day of the 1848 Revolution',
-                'hu_HU' => 'Az 1848-as forradalom ünnepe',
+                'en' => 'Memorial day of the 1848 Revolution',
+                'hu' => 'Az 1848-as forradalom ünnepe',
             ], new DateTime("$this->year-3-15", new DateTimeZone($this->timezone)), $this->locale));
         }
 
@@ -74,8 +76,8 @@ class Hungary extends AbstractProvider
          */
         if ($this->year >= 1891) {
             $this->addHoliday(new Holiday('stateFoundation', [
-                'en_US' => 'State Foundation Day',
-                'hu_HU' => 'Az államalapítás ünnepe',
+                'en' => 'State Foundation Day',
+                'hu' => 'Az államalapítás ünnepe',
             ], new DateTime("$this->year-8-20", new DateTimeZone($this->timezone)), $this->locale));
         }
 
@@ -84,8 +86,8 @@ class Hungary extends AbstractProvider
          */
         if ($this->year >= 1991) {
             $this->addHoliday(new Holiday('memorialDay1956', [
-                'en_US' => 'Memorial day of the 1956 Revolution',
-                'hu_HU' => 'Az 1956-os forradalom ünnepe',
+                'en' => 'Memorial day of the 1956 Revolution',
+                'hu' => 'Az 1956-os forradalom ünnepe',
             ], new DateTime("$this->year-10-23", new DateTimeZone($this->timezone)), $this->locale));
         }
     }

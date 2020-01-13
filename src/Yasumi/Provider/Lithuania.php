@@ -1,9 +1,9 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -81,8 +81,8 @@ class Lithuania extends AbstractProvider
     {
         if ($this->year >= self::RESTORATION_OF_THE_STATE_YEAR) {
             $this->addHoliday(new Holiday('restorationOfTheStateOfLithuaniaDay', [
-                'en_US' => 'Day of Restoration of the State of Lithuania',
-                'lt_LT' => 'Lietuvos valstybės atkūrimo diena'
+                'en' => 'Day of Restoration of the State of Lithuania',
+                'lt' => 'Lietuvos valstybės atkūrimo diena',
             ], new \DateTime("{$this->year}-02-16", new \DateTimeZone($this->timezone))));
         }
     }
@@ -97,8 +97,8 @@ class Lithuania extends AbstractProvider
     {
         if ($this->year >= self::RESTORATION_OF_INDEPENDENCE_YEAR) {
             $this->addHoliday(new Holiday('restorationOfIndependenceOfLithuaniaDay', [
-                'en_US' => 'Day of Restoration of Independence of Lithuania',
-                'lt_LT' => 'Lietuvos nepriklausomybės atkūrimo diena'
+                'en' => 'Day of Restoration of Independence of Lithuania',
+                'lt' => 'Lietuvos nepriklausomybės atkūrimo diena',
             ], new \DateTime("{$this->year}-03-11", new \DateTimeZone($this->timezone))));
         }
     }
@@ -114,8 +114,8 @@ class Lithuania extends AbstractProvider
     {
         if ($this->year >= self::STATEHOOD_YEAR) {
             $this->addHoliday(new Holiday('statehoodDay', [
-                'en_US' => 'Statehood Day (Lithuania)',
-                'lt_LT' => 'Valstybės (Lietuvos karaliaus Mindaugo karūnavimo) diena'
+                'en' => 'Statehood Day (Lithuania)',
+                'lt' => 'Valstybės (Lietuvos karaliaus Mindaugo karūnavimo) diena',
             ], new \DateTime("{$this->year}-07-06", new \DateTimeZone($this->timezone)), $this->locale));
         }
     }

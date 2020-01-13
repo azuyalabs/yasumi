@@ -1,9 +1,9 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -72,13 +72,13 @@ class Latvia extends AbstractProvider
         if ($this->year >= self::RESTORATION_OF_INDEPENDENCE_YEAR) {
             $date = new \DateTime("{$this->year}-05-04", new \DateTimeZone($this->timezone));
 
-            if (! $this->isWorkingDay($date)) {
+            if (!$this->isWorkingDay($date)) {
                 $date->modify('next monday');
             }
 
             $this->addHoliday(new Holiday('restorationOfIndependenceOfLatviaDay', [
-                'en_US' => 'Restoration of Independence day',
-                'lv_LV' => 'Latvijas Republikas Neatkarības atjaunošanas diena'
+                'en' => 'Restoration of Independence day',
+                'lv' => 'Latvijas Republikas Neatkarības atjaunošanas diena',
             ], $date));
         }
     }
@@ -90,8 +90,8 @@ class Latvia extends AbstractProvider
     private function addMidsummerEveDay(): void
     {
         $this->addHoliday(new Holiday('midsummerEveDay', [
-            'en_US' => 'Midsummer Eve',
-            'lv_LV' => 'Līgo Diena'
+            'en' => 'Midsummer Eve',
+            'lv' => 'Līgo Diena',
         ], new \DateTime("{$this->year}-06-23", new \DateTimeZone($this->timezone))));
     }
 
@@ -107,13 +107,13 @@ class Latvia extends AbstractProvider
         if ($this->year >= self::PROCLAMATION_OF_INDEPENDENCE_YEAR) {
             $date = new \DateTime("{$this->year}-11-18", new \DateTimeZone($this->timezone));
 
-            if (! $this->isWorkingDay($date)) {
+            if (!$this->isWorkingDay($date)) {
                 $date->modify('next monday');
             }
 
             $this->addHoliday(new Holiday('proclamationOfTheRepublicOfLatviaDay', [
-                'en_US' => 'Proclamation Day of the Republic of Latvia',
-                'lv_LV' => 'Latvijas Republikas proklamēšanas diena'
+                'en' => 'Proclamation Day of the Republic of Latvia',
+                'lv' => 'Latvijas Republikas proklamēšanas diena',
             ], $date));
         }
     }

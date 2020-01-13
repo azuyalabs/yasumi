@@ -1,8 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,6 +14,7 @@ namespace Yasumi\Provider\Australia;
 
 use DateTime;
 use DateTimeZone;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia;
 
@@ -35,7 +36,7 @@ class Tasmania extends Australia
      * Initialize holidays for Tasmania (Australia).
      *
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -56,9 +57,9 @@ class Tasmania extends Australia
     {
         $date = new DateTime("second monday of march $this->year", new DateTimeZone($this->timezone));
 
-        $this->addHoliday(new Holiday('eightHourDay', ['en_AU' => 'Eight Hour Day'], $date, $this->locale));
+        $this->addHoliday(new Holiday('eightHourDay', ['en' => 'Eight Hour Day'], $date, $this->locale));
     }
-    
+
     /**
      * Queens Birthday.
      *
@@ -78,13 +79,13 @@ class Tasmania extends Australia
     {
         $this->calculateHoliday(
             'queensBirthday',
-            ['en_AU' => 'Queen\'s Birthday'],
             new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->timezone)),
+            [],
             false,
             false
         );
     }
-    
+
     /**
      * Recreation Day
      *
@@ -97,8 +98,8 @@ class Tasmania extends Australia
     {
         $this->calculateHoliday(
             'recreationDay',
-            ['en_AU' => 'Recreation Day'],
             new DateTime('first monday of november ' . $this->year, new DateTimeZone($this->timezone)),
+            ['en' => 'Recreation Day'],
             false,
             false
         );
