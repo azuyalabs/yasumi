@@ -354,6 +354,10 @@ class YasumiTest extends TestCase
 
     /**
      * Tests that the isHoliday function returns a boolean true for a date that is defined as a holiday.
+     *
+     * Note that this function does *NOT* determine whether a date is a working or non-working day. It
+     * only asserts that it is a date calculated by the Holiday Provider.
+     *
      * @throws Exception
      * @throws ReflectionException
      * @throws Exception
@@ -380,6 +384,10 @@ class YasumiTest extends TestCase
 
     /**
      * Tests that the isHoliday function returns a boolean false for a date that is not defined as a holiday.
+     *
+     * Note that this function does *NOT* determine whether a date is a working or non-working day. It
+     * only asserts that it is a date calculated by the Holiday Provider.
+     *
      * @throws Exception
      * @throws ReflectionException
      * @throws Exception
@@ -407,6 +415,7 @@ class YasumiTest extends TestCase
     /**
      * Tests that the isHoliday function throws a TypeError when the given argument is not an instance that
      * implements the DateTimeInterface (e.g. DateTime or DateTimeImmutable)
+     *
      * @throws ReflectionException
      */
     public function testIsHolidayException(): void
