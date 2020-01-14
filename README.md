@@ -10,7 +10,9 @@
 Introduction
 ------------
 Yasumi (Japanese for 'Holiday'「休み」) is an easy PHP library to help you calculate the dates and names of holidays and other
-special celebrations from various countries/states. Many services exist on the internet that provide holidays, however
+special celebrations from various countries/states. 
+
+Many services exist on the internet that provide holidays, however
 are either not free or offer only limited information. In addition, no complete PHP library seems to exist today
 that covers a wide range of holidays and countries, except maybe [PEAR's Date_Holidays](https://pear.php.net/package/Date_Holidays) which unfortunately hasn't been updated for a long time.
 
