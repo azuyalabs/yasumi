@@ -18,6 +18,7 @@ use DateTimeZone;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
+use Yasumi\SubstituteHoliday;
 
 /**
  * Provider for all holidays in Australia.
@@ -107,12 +108,28 @@ class Australia extends AbstractProvider
         ?bool $moveFromSunday = null,
         ?string $type = null
     ): void {
+        $holiday = new Holiday(
+            $shortName,
+            $names,
+            $date,
+            $this->locale,
+            $type ?? Holiday::TYPE_OFFICIAL
+        );
+        $this->addHoliday($holiday);
+
         $day = (int)$date->format('w');
         if ((0 === $day && ($moveFromSunday ?? true)) || (6 === $day && ($moveFromSaturday ?? true))) {
+            $date = clone $date;
             $date = $date->add(0 === $day ? new DateInterval('P1D') : new DateInterval('P2D'));
-        }
 
-        $this->addHoliday(new Holiday($shortName, $names, $date, $this->locale, $type ?? Holiday::TYPE_OFFICIAL));
+            $this->addHoliday(new SubstituteHoliday(
+                $holiday,
+                [],
+                $date,
+                $this->locale,
+                $type ?? Holiday::TYPE_OFFICIAL
+            ));
+        }
     }
 
     /**

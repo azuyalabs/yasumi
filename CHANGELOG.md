@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 - Holiday providers for states of Austria. [\#182](https://github.com/azuyalabs/yasumi/pull/182) ([aprog](https://github.com/aprog))
 - Added missing return (correct) and parameter types in various methods.
 - Day of Liberation (Tag der Befreiung) is an one-time official holiday in 2020 in Berlin (Germany).
+- Substituted holidays (holidays that fall in the weekend) for Australia. [\#201](https://github.com/azuyalabs/yasumi/pull/201) ([c960657](https://github.com/c960657))
 
 ### Changed
 - Holiday names in Danish, Dutch, and Norwegian are no longer capitalized. [\#185](https://github.com/azuyalabs/yasumi/pull/185) ([c960657](https://github.com/c960657))
