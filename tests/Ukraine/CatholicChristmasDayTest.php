@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -19,15 +21,15 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class SecondInternationalWorkersDayTest
+ * Class CatholicChristmasDayTest
  * @package Yasumi\tests\Ukraine
  */
-class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements YasumiTestCaseInterface
+class CatholicChristmasDayTest extends UkraineBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
      */
-    public const HOLIDAY = 'secondInternationalWorkersDay';
+    public const HOLIDAY = 'catholicChristmasDay';
 
     /**
      * Tests International Workers' Day.
@@ -54,7 +56,7 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements Y
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'День міжнародної солідарності трудящих']
+            [self::LOCALE => 'Католицький день Різдва']
         );
     }
 
@@ -75,6 +77,6 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements Y
      */
     public function SecondInternationalWorkersDayDataProvider(): array
     {
-        return $this->generateRandomDates(5, 2, self::TIMEZONE);
+        return $this->generateRandomDates(12, 25, self::TIMEZONE);
     }
 }

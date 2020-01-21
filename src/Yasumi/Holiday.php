@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -76,7 +78,7 @@ class Holiday extends DateTime implements JsonSerializable
     /**
      * @var string Locale (i.e. language) in which the holiday information needs to be displayed in. (Default 'en_US')
      */
-    protected $displayLocale;
+    public $displayLocale;
 
     /**
      * Creates a new Holiday.

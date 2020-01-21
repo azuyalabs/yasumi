@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -35,7 +37,6 @@ class UkraineTest extends UkraineBaseTestCase
         $this->assertDefinedHolidays([
             'newYearsDay',
             'internationalWorkersDay',
-            'secondInternationalWorkersDay',
             'christmasDay',
             'easter',
             'pentecost',
@@ -44,6 +45,7 @@ class UkraineTest extends UkraineBaseTestCase
             'constitutionDay',
             'independenceDay',
             'defenderOfUkraineDay',
+            'catholicChristmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
