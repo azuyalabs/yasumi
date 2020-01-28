@@ -1,6 +1,5 @@
-<?php
+<?php declare(strict_types=1);
 
-declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -39,13 +38,6 @@ class Ukraine extends AbstractProvider
     public const ID = 'UA';
 
     /**
-     * Type definition for postponed holidays due to weekend holidays.
-     * Normally holidays on a weekend will be postponed to monday.
-     * These mondays will get this type.
-     */
-    public const TYPE_POSTPONED = 'postponed';
-
-    /**
      * Initialize holidays for Ukraine.
      *
      * @throws InvalidDateException
@@ -58,7 +50,7 @@ class Ukraine extends AbstractProvider
         $this->timezone = 'Europe/Kiev';
 
         // Add common holidays
-        // New Years Day will not be postponed to an monday if it's on a weekend!
+        // New Years Day will not be substituted to an monday if it's on a weekend!
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale), false);
         $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->internationalWomensDay($this->year, $this->timezone, $this->locale));
@@ -69,6 +61,7 @@ class Ukraine extends AbstractProvider
 
         // Add other holidays
         $this->calculateChristmasDay();
+        $this->calculateSecondInternationalWorkersDay();
         $this->calculateVictoryDay();
         $this->calculateConstitutionDay();
         $this->calculateIndependenceDay();
@@ -81,73 +74,27 @@ class Ukraine extends AbstractProvider
      *
      * @param Holiday $holiday Holiday instance (representing a holiday) to be added to the internal list
      *                         of holidays of this country.
-     * @param bool $postpone Holidays on a weekend will be postponed to the next monday.
-     * @param bool $addOnlyPostpone If $postpone is true add holidays on a weekend on the postponed day.
+     * @param bool $substitutable Holidays on a weekend will be substituted to the next monday.
      */
-    public function addHoliday(Holiday $holiday, bool $postpone = true, bool $addOnlyPostpone = false): void
+    public function addHoliday(Holiday $holiday, bool $substitutable = true): void
     {
-        if (!$postpone || !$this->isWeekendDay($holiday)) {
-            parent::addHoliday($holiday);
-            return;
+        parent::addHoliday($holiday);
+
+        if (!$substitutable) return;
+
+        // Substitute holiday is on the next available weekday
+        // if a holiday falls on a Saturday or Sunday.
+        if ($this->isWeekendDay($holiday)) {
+            $date = clone $holiday;
+            $date->modify('next monday');
+
+            parent::addHoliday(new SubstituteHoliday(
+                $holiday,
+                [],
+                $date,
+                $this->locale
+            ));
         }
-
-        // Special case: Holiday on a weekend and should be postpone to monday.
-
-        // Add original holiday.
-        if (!$addOnlyPostpone) {
-            parent::addHoliday($holiday);
-        }
-
-        // Create postponed holiday.
-        $postponed = new Holiday(
-            $holiday->shortName . 'Postponed',
-            $holiday->translations,
-            $holiday,
-            $holiday->displayLocale,
-            self::TYPE_POSTPONED
-        );
-
-        // Holidays on weekends will be postponed to monday.
-        do {
-            $postponed->modify('+1 days');
-        } while ($this->isWeekendDay($postponed));
-
-        // Create add holiday.
-        parent::addHoliday($postponed);
-    }
-
-    /**
-     * Returns the number of defined holidays (for the given country and the given year).
-     * In case a holiday is substituted (e.g. observed), the holiday is only counted once.
-     *
-     * @param bool $ignorePostponedHolidays Do not count postponed holidays.
-     *
-     * @return int number of holidays
-     */
-    public function count(bool $ignorePostponedHolidays = true): int
-    {
-        $names = \array_reduce(
-            $this->getHolidays(),
-            static function (&$carry, &$holiday) use (&$ignorePostponedHolidays) {
-                // Ignore postponed holidays.
-                if ($ignorePostponedHolidays) {
-                    if ($holiday->getType() == self::TYPE_POSTPONED) {
-                        return $carry;
-                    }
-                }
-
-                if ($holiday instanceof SubstituteHoliday) {
-                    $carry[] = $holiday->substitutedHoliday->shortName;
-                    return $carry;
-                }
-
-                $carry[] =  $holiday->shortName;
-                return $carry;
-            },
-            []
-        );
-
-        return \count(\array_unique($names));
     }
 
     /**
@@ -166,6 +113,29 @@ class Ukraine extends AbstractProvider
             new \DateTime("$this->year-01-07", new \DateTimeZone($this->timezone)),
             $this->locale
         ));
+    }
+
+    /**
+     * International Workers' Day.
+     * National holiday until 2018.
+     *
+     * @link https://en.wikipedia.org/wiki/International_Workers%27_Day#Ukraine
+     *
+     * @throws InvalidDateException
+     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws \Exception
+     */
+    private function calculateSecondInternationalWorkersDay(): void
+    {
+        if ($this->year >= 2018) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday('secondInternationalWorkersDay', [
+            'uk' => 'День міжнародної солідарності трудящих',
+            'ru' => 'День международной солидарности трудящихся',
+        ], new \DateTime("$this->year-05-02", new \DateTimeZone($this->timezone)), $this->locale));
     }
 
     /**
@@ -303,6 +273,10 @@ class Ukraine extends AbstractProvider
      */
     private function calculateCatholicChristmasDay(): void
     {
+        if ($this->year < 2017) {
+            return;
+        }
+
         $this->addHoliday(
             new Holiday(
                 'catholicChristmasDay',
@@ -313,7 +287,7 @@ class Ukraine extends AbstractProvider
                 new \DateTime("$this->year-12-25", new \DateTimeZone($this->timezone)),
                 $this->locale
             ),
-            false  // Catholic Christmas Day will not be postponed to an monday if it's on a weekend!
+            false  // Catholic Christmas Day will not be substituted to an monday if it's on a weekend!
         );
     }
 }

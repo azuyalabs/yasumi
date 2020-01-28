@@ -1,6 +1,5 @@
-<?php
+<?php declare(strict_types=1);
 
-declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -19,94 +18,102 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\Provider\Ukraine;
+use Yasumi\SubstituteHoliday;
 use Yasumi\tests\YasumiTestCaseInterface;
 use Yasumi\Yasumi;
 
 /**
- * Class PostponedHolidayTest
+ * Class SubstitutedHolidayTest
  * @package Yasumi\tests\Ukraine
  */
-class PostponedHolidayTest extends UkraineBaseTestCase implements YasumiTestCaseInterface
+class SubstitutedHolidayTest extends UkraineBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * Tests the postponement of holidays on saturday (weekend).
+     * Tests the substitution of holidays on saturday (weekend).
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testSaturdayPostponement()
+    public function testSaturdaySubstitution()
     {
         // 2020-05-09 victoryDay (День перемоги)
         $year = 2020;
         $holiday = 'victoryDay';
 
-        $this->assertHolidayWithPostponement(
+        $this->assertHolidayWithSubstitution(
             self::REGION,
             $holiday,
             $year,
             new DateTime("$year-05-09", new DateTimeZone(self::TIMEZONE)),
             new DateTime("$year-05-11", new DateTimeZone(self::TIMEZONE))
         );
+
+        unset($year, $holiday);
     }
 
     /**
-     * Tests the postponement of holidays on sunday (weekend).
+     * Tests the substitution of holidays on sunday (weekend).
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testSundayPostponement(): void
+    public function testSundaySubstitution(): void
     {
         // 2020-06-28 constitutionDay (День Конституції)
         $year = 2020;
         $holiday = 'constitutionDay';
 
-        $this->assertHolidayWithPostponement(
+        $this->assertHolidayWithSubstitution(
             self::REGION,
             $holiday,
             $year,
             new DateTime("$year-06-28", new DateTimeZone(self::TIMEZONE)),
             new DateTime("$year-06-29", new DateTimeZone(self::TIMEZONE))
         );
+
+        unset($year, $holiday);
     }
 
     /**
-     * Tests the postponement of new year (1. January) on a weekend.
-     * Special: no postponement at new year (1. January) on a weekend.
+     * Tests the substitution of new year (1. January) on a weekend.
+     * Special: no substitution at new year (1. January) on a weekend.
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testNewYearNoPostponement(): void
+    public function testNewYearNoSubstitution(): void
     {
         // 2022-01-01 (Saturday) constitutionDay (Новий Рік)
         $year = 2022;
         $holiday = 'newYearsDay';
 
-        $this->assertHolidayWithPostponement(
+        $this->assertHolidayWithSubstitution(
             self::REGION,
             $holiday,
             $year,
             new DateTime("$year-01-01", new DateTimeZone(self::TIMEZONE))
         );
+
+        unset($year, $holiday);
     }
 
     /**
-     * Tests the postponement of Catholic Christmas Day (25. December) on a weekend.
-     * Special: no postponement at Catholic Christmas Day (25. December) on a weekend.
+     * Tests the substitution of Catholic Christmas Day (25. December) on a weekend.
+     * Special: no substitution at Catholic Christmas Day (25. December) on a weekend.
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testCatholicChristmasDayNoPostponement(): void
+    public function testCatholicChristmasDayNoSubstitution(): void
     {
         // 2022-12-25 (Sunday) catholicChristmasDay (Католицький день Різдва)
         $year = 2022;
         $holiday = 'catholicChristmasDay';
 
-        $this->assertHolidayWithPostponement(
+        $this->assertHolidayWithSubstitution(
             self::REGION,
             $holiday,
             $year,
             new DateTime("$year-12-25", new DateTimeZone(self::TIMEZONE))
         );
+
+        unset($year, $holiday);
     }
 
     /**
@@ -134,7 +141,7 @@ class PostponedHolidayTest extends UkraineBaseTestCase implements YasumiTestCase
      * @param string $shortName string the short name of the holiday to be checked against
      * @param int $year holiday calendar year
      * @param DateTime $expected the official date to be checked against
-     * @param DateTime $expected the postponed date to be checked against
+     * @param DateTime $expected the substituted date to be checked against
      *
      * @throws UnknownLocaleException
      * @throws InvalidDateException
@@ -143,12 +150,12 @@ class PostponedHolidayTest extends UkraineBaseTestCase implements YasumiTestCase
      * @throws AssertionFailedError
      * @throws ReflectionException
      */
-    public function assertHolidayWithPostponement(
+    public function assertHolidayWithSubstitution(
         string $provider,
         string $shortName,
         int $year,
         DateTime $expectedOfficial,
-        DateTime $expectedPostponed = null
+        DateTime $expectedSubstitution = null
     ): void {
         $holidays = Yasumi::create($provider, $year);
 
@@ -159,19 +166,19 @@ class PostponedHolidayTest extends UkraineBaseTestCase implements YasumiTestCase
         $this->assertTrue($holidays->isHoliday($holidayOfficial));
         $this->assertEquals(Holiday::TYPE_OFFICIAL, $holidayOfficial->getType());
 
-        $holidayPostponed = $holidays->getHoliday($shortName . 'Postponed');
-        if ($expectedPostponed === null) {
-            // without postponement
-            $this->assertNull($holidayPostponed);
+        $holidaySubstitution = $holidays->getHoliday('substituteHoliday:' . $holidayOfficial->shortName);
+        if ($expectedSubstitution === null) {
+            // without substitution
+            $this->assertNull($holidaySubstitution);
         } else {
-            // with postponement
-            $this->assertInstanceOf(Holiday::class, $holidayPostponed);
-            $this->assertNotNull($holidayPostponed);
-            $this->assertEquals($expectedPostponed, $holidayPostponed);
-            $this->assertTrue($holidays->isHoliday($holidayPostponed));
-            $this->assertEquals(Ukraine::TYPE_POSTPONED, $holidayPostponed->getType());
+            // with substitution
+            $this->assertNotNull($holidaySubstitution);
+            $this->assertInstanceOf(SubstituteHoliday::class, $holidaySubstitution);
+            $this->assertEquals($expectedSubstitution, $holidaySubstitution);
+            $this->assertTrue($holidays->isHoliday($holidaySubstitution));
+            $this->assertEquals(Holiday::TYPE_OFFICIAL, $holidaySubstitution->getType());
         }
 
-        unset($holidayOfficial, $holidayPostponed, $holidays);
+        unset($holidayOfficial, $holidaySubstitution, $holidays);
     }
 }
