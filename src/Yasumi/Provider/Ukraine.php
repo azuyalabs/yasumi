@@ -80,7 +80,9 @@ class Ukraine extends AbstractProvider
     {
         parent::addHoliday($holiday);
 
-        if (!$substitutable) return;
+        if (!$substitutable) {
+            return;
+        }
 
         // Substitute holiday is on the next available weekday
         // if a holiday falls on a Saturday or Sunday.
