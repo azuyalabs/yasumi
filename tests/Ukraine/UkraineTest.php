@@ -36,6 +36,7 @@ class UkraineTest extends UkraineBaseTestCase
         $this->assertDefinedHolidays([
             'newYearsDay',
             'internationalWorkersDay',
+            //'secondInternationalWorkersDay',  // until 2018
             'christmasDay',
             'easter',
             'pentecost',
@@ -89,6 +90,6 @@ class UkraineTest extends UkraineBaseTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(2015, 2025);
+        $this->year = $this->generateRandomYear(2017, 2025);
     }
 }
