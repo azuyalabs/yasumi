@@ -64,9 +64,9 @@ class UkraineTest extends UkraineBaseTestCase
         }
 
         $this->assertDefinedHolidays(
-            $holidays, 
-            self::REGION, 
-            $this->year, 
+            $holidays,
+            self::REGION,
+            $this->year,
             Holiday::TYPE_OFFICIAL
         );
     }
