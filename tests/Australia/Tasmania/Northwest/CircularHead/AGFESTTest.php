@@ -57,7 +57,7 @@ class AGFESTTest extends CircularHeadBaseTestCase implements YasumiTestCaseInter
      */
     public function HolidayDataProvider(): array
     {
-        $data = [
+        return [
             [2010, '2010-05-07'],
             [2011, '2011-05-06'],
             [2012, '2012-05-04'],
@@ -70,8 +70,6 @@ class AGFESTTest extends CircularHeadBaseTestCase implements YasumiTestCaseInter
             [2019, '2019-05-03'],
             [2020, '2020-05-08'],
         ];
-
-        return $data;
     }
 
     /**

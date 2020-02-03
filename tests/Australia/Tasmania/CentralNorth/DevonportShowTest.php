@@ -57,7 +57,7 @@ class DevonportShowTest extends CentralNorthBaseTestCase implements YasumiTestCa
      */
     public function HolidayDataProvider(): array
     {
-        $data = [
+        return [
             [2010, '2010-11-26'],
             [2011, '2011-11-25'],
             [2012, '2012-11-30'],
@@ -70,8 +70,6 @@ class DevonportShowTest extends CentralNorthBaseTestCase implements YasumiTestCa
             [2019, '2019-11-29'],
             [2020, '2020-11-27'],
         ];
-
-        return $data;
     }
 
     /**

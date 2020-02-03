@@ -57,7 +57,7 @@ class LabourDayTest extends NSWBaseTestCase implements YasumiTestCaseInterface
      */
     public function HolidayDataProvider(): array
     {
-        $data = [
+        return [
             [2010, '2010-10-04'],
             [2011, '2011-10-03'],
             [2012, '2012-10-01'],
@@ -70,8 +70,6 @@ class LabourDayTest extends NSWBaseTestCase implements YasumiTestCaseInterface
             [2019, '2019-10-07'],
             [2020, '2020-10-05'],
         ];
-
-        return $data;
     }
 
     /**

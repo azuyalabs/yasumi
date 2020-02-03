@@ -71,7 +71,7 @@ class AnzacDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInterf
      */
     public function HolidayDataProvider(): array
     {
-        $data = [
+        return [
             [2010, '2010-04-25'],
             [2011, '2011-04-25'],
             [2012, '2012-04-25'],
@@ -85,8 +85,6 @@ class AnzacDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInterf
             [2019, '2019-04-25'],
             [2020, '2020-04-25'],
         ];
-
-        return $data;
     }
 
     /**

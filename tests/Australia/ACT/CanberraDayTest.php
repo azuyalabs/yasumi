@@ -62,7 +62,7 @@ class CanberraDayTest extends ACTBaseTestCase implements YasumiTestCaseInterface
      */
     public function HolidayDataProvider(): array
     {
-        $data = [
+        return [
             [2010, '2010-03-08'],
             [2011, '2011-03-14'],
             [2012, '2012-03-12'],
@@ -75,8 +75,6 @@ class CanberraDayTest extends ACTBaseTestCase implements YasumiTestCaseInterface
             [2019, '2019-03-11'],
             [2020, '2020-03-09'],
         ];
-
-        return $data;
     }
 
     /**

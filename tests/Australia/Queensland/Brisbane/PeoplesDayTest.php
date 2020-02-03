@@ -57,7 +57,7 @@ class PeoplesDayTest extends BrisbaneBaseTestCase implements YasumiTestCaseInter
      */
     public function HolidayDataProvider(): array
     {
-        $data = [
+        return [
             [2010, '2010-08-11'],
             [2011, '2011-08-10'],
             [2012, '2012-08-15'],
@@ -70,8 +70,6 @@ class PeoplesDayTest extends BrisbaneBaseTestCase implements YasumiTestCaseInter
             [2019, '2019-08-14'],
             [2020, '2020-08-12'],
         ];
-
-        return $data;
     }
 
     /**

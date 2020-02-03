@@ -57,7 +57,7 @@ class BankHolidayTest extends NSWBaseTestCase implements YasumiTestCaseInterface
      */
     public function HolidayDataProvider(): array
     {
-        $data = [
+        return [
             [2010, '2010-08-02'],
             [2011, '2011-08-01'],
             [2012, '2012-08-06'],
@@ -70,8 +70,6 @@ class BankHolidayTest extends NSWBaseTestCase implements YasumiTestCaseInterface
             [2019, '2019-08-05'],
             [2020, '2020-08-03'],
         ];
-
-        return $data;
     }
 
     /**

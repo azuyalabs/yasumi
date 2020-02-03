@@ -57,7 +57,7 @@ class LabourDayTest extends QueenslandBaseTestCase implements YasumiTestCaseInte
      */
     public function HolidayDataProvider(): array
     {
-        $data = [
+        return [
             [2010, '2010-05-03'],
             [2011, '2011-05-02'],
             [2012, '2012-05-07'],
@@ -70,8 +70,6 @@ class LabourDayTest extends QueenslandBaseTestCase implements YasumiTestCaseInte
             [2019, '2019-05-06'],
             [2020, '2020-05-04'],
         ];
-
-        return $data;
     }
 
     /**

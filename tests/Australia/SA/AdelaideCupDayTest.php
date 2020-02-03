@@ -62,7 +62,7 @@ class AdelaideCupDayTest extends SABaseTestCase implements YasumiTestCaseInterfa
      */
     public function HolidayDataProvider(): array
     {
-        $data = [
+        return [
             [2000, '2000-05-15'],
             [2001, '2001-05-21'],
             [2002, '2002-05-20'],
@@ -85,8 +85,6 @@ class AdelaideCupDayTest extends SABaseTestCase implements YasumiTestCaseInterfa
             [2019, '2019-03-11'],
             [2020, '2020-03-09'],
         ];
-
-        return $data;
     }
 
     /**

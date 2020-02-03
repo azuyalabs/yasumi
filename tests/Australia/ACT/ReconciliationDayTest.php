@@ -62,7 +62,7 @@ class ReconciliationDayTest extends ACTBaseTestCase implements YasumiTestCaseInt
      */
     public function HolidayDataProvider(): array
     {
-        $data = [
+        return [
             [2018, '2018-05-28'],
             [2019, '2019-05-27'],
             [2020, '2020-06-01'],
@@ -77,8 +77,6 @@ class ReconciliationDayTest extends ACTBaseTestCase implements YasumiTestCaseInt
             [2029, '2029-05-28'],
             [2030, '2030-05-27'],
         ];
-
-        return $data;
     }
 
     /**
