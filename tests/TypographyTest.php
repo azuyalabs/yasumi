@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -37,7 +38,7 @@ class TypographyTest extends TestCase
      * @param string $shortName The short name (internal name) of the holiday
      * @param string $locale    The locale
      */
-    public function testTranslations($name, $class, $shortName, $locale)
+    public function testTranslations($name, $class, $shortName, $locale): void
     {
         $this->assertStringNotContainsString("'", $name, 'Translation contains typewriter apostrophe');
         $this->assertStringNotContainsString('"', $name, 'Translation contains typewriter quote');
