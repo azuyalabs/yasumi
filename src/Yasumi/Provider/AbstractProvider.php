@@ -203,7 +203,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *                                 \DateTime)
      *
      * @return bool true if date represents a weekend day, otherwise false
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      *
      */
     public function isWeekendDay(\DateTimeInterface $date): bool
