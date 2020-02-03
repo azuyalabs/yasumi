@@ -33,20 +33,42 @@ class UkraineTest extends UkraineBaseTestCase
      */
     public function testOfficialHolidays(): void
     {
-        $this->assertDefinedHolidays([
+        $holidays = [
             'newYearsDay',
             'internationalWorkersDay',
-            //'secondInternationalWorkersDay',  // until 2018
             'christmasDay',
             'easter',
             'pentecost',
             'internationalWomensDay',
             'victoryDay',
-            'constitutionDay',
-            'independenceDay',
-            'defenderOfUkraineDay',
-            'catholicChristmasDay',
-        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
+        ];
+
+        if ($this->year >= 1996) {
+            $holidays[] = 'constitutionDay';
+        }
+
+        if ($this->year >= 1991) {
+            $holidays[] = 'independenceDay';
+        }
+
+        if ($this->year >= 2015) {
+            $holidays[] = 'defenderOfUkraineDay';
+        }
+
+        if ($this->year < 2018) {
+            $holidays[] = 'secondInternationalWorkersDay';
+        }
+
+        if ($this->year >= 2017) {
+            $holidays[] = 'catholicChristmasDay';
+        }
+
+        $this->assertDefinedHolidays(
+            $holidays, 
+            self::REGION, 
+            $this->year, 
+            Holiday::TYPE_OFFICIAL
+        );
     }
 
     /**
@@ -90,6 +112,6 @@ class UkraineTest extends UkraineBaseTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(2017, 2025);
+        $this->year = $this->generateRandomYear();
     }
 }

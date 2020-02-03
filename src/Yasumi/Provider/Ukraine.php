@@ -75,6 +75,11 @@ class Ukraine extends AbstractProvider
      * @param Holiday $holiday Holiday instance (representing a holiday) to be added to the internal list
      *                         of holidays of this country.
      * @param bool $substitutable Holidays on a weekend will be substituted to the next monday.
+     * 
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
+     * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function addHoliday(Holiday $holiday, bool $substitutable = true): void
     {

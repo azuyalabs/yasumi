@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 - Holiday providers for states of Austria. [\#182](https://github.com/azuyalabs/yasumi/pull/182) ([aprog](https://github.com/aprog))
 - Added missing return (correct) and parameter types in various methods.
 - Day of Liberation (Tag der Befreiung) is an one-time official holiday in 2020 in Berlin (Germany).
+- Catholic Christmas Day is a new official holiday since 2017 in the Ukraine. [\#202](https://github.com/azuyalabs/yasumi/pull/202)
 
 ### Changed
 - Holiday names in Danish, Dutch, and Norwegian are no longer capitalized. [\#185](https://github.com/azuyalabs/yasumi/pull/185) ([c960657](https://github.com/c960657))
@@ -21,12 +22,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 - Refactored various conditional structures.
 - Changed signature of some methods as parameters with defaults should come after required parameters.
 - Updated third party dependencies.
+- Second International Workers Day was an official holiday only until 2018. [\#202](https://github.com/azuyalabs/yasumi/pull/202)
 
 ### Fixed
 - Fixed issue if the next working day happens to be in the next year  (i.e. not in the year of the Yasumi instance) [\#192](https://github.com/azuyalabs/yasumi/issues/192) ([tniemann](https://github.com/tniemann))
 - Fixed issue if the previous working day happens to be in the previous year (i.e. not in the year of the Yasumi instance)
 - Fix locale fallback for substitute holidays [\#180](https://github.com/azuyalabs/yasumi/pull/180) ([c960657](https://github.com/c960657))
 - Fixed compound conditions that are always true by simplifying the condition steps.
+- Fixed Ukraine holidays on weekends. These days need to be substituted. [\#202](https://github.com/azuyalabs/yasumi/pull/202)
 
 ### Removed
 - PHP 7.1 Support, as it has reached its end of life.
