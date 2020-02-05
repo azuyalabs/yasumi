@@ -1,4 +1,5 @@
 <?php declare(strict_types=1);
+
 /**
  * This file is part of the Yasumi package.
  *
@@ -15,6 +16,7 @@ namespace Yasumi\Provider;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
+use Yasumi\SubstituteHoliday;
 
 /**
  * Provider for all holidays in Ukraine.
@@ -48,7 +50,8 @@ class Ukraine extends AbstractProvider
         $this->timezone = 'Europe/Kiev';
 
         // Add common holidays
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
+        // New Years Day will not be substituted to an monday if it's on a weekend!
+        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale), false);
         $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->internationalWomensDay($this->year, $this->timezone, $this->locale));
 
@@ -63,6 +66,42 @@ class Ukraine extends AbstractProvider
         $this->calculateConstitutionDay();
         $this->calculateIndependenceDay();
         $this->calculateDefenderOfUkraineDay();
+        $this->calculateCatholicChristmasDay();
+    }
+
+    /**
+     * Adds a holiday to the holidays providers (i.e. country/state) list of holidays.
+     *
+     * @param Holiday $holiday Holiday instance (representing a holiday) to be added to the internal list
+     *                         of holidays of this country.
+     * @param bool $substitutable Holidays on a weekend will be substituted to the next monday.
+     *
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
+     * @throws \InvalidArgumentException
+     * @throws \Exception
+     */
+    public function addHoliday(Holiday $holiday, bool $substitutable = true): void
+    {
+        parent::addHoliday($holiday);
+
+        if (!$substitutable) {
+            return;
+        }
+
+        // Substitute holiday is on the next available weekday
+        // if a holiday falls on a Saturday or Sunday.
+        if ($this->isWeekendDay($holiday)) {
+            $date = clone $holiday;
+            $date->modify('next monday');
+
+            parent::addHoliday(new SubstituteHoliday(
+                $holiday,
+                [],
+                $date,
+                $this->locale
+            ));
+        }
     }
 
     /**
@@ -85,6 +124,7 @@ class Ukraine extends AbstractProvider
 
     /**
      * International Workers' Day.
+     * National holiday until 2018.
      *
      * @link https://en.wikipedia.org/wiki/International_Workers%27_Day#Ukraine
      *
@@ -95,6 +135,10 @@ class Ukraine extends AbstractProvider
      */
     private function calculateSecondInternationalWorkersDay(): void
     {
+        if ($this->year >= 2018) {
+            return;
+        }
+
         $this->addHoliday(new Holiday('secondInternationalWorkersDay', [
             'uk' => 'День міжнародної солідарності трудящих',
             'ru' => 'День международной солидарности трудящихся',
@@ -221,5 +265,36 @@ class Ukraine extends AbstractProvider
     public function calculateEaster(int $year, string $timezone): \DateTime
     {
         return $this->calculateOrthodoxEaster($year, $timezone);
+    }
+
+    /**
+     * Catholic Christmas Day.
+     * (since 2017 instead of International Workers' Day 2. May)
+     *
+     * @link https://en.wikipedia.org/wiki/Christmas_in_Ukraine
+     *
+     * @throws InvalidDateException
+     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws \Exception
+     */
+    private function calculateCatholicChristmasDay(): void
+    {
+        if ($this->year < 2017) {
+            return;
+        }
+
+        $this->addHoliday(
+            new Holiday(
+                'catholicChristmasDay',
+                [
+                    'uk' => 'Католицький день Різдва',
+                    'ru' => 'Католическое рождество',
+                ],
+                new \DateTime("$this->year-12-25", new \DateTimeZone($this->timezone)),
+                $this->locale
+            ),
+            false  // Catholic Christmas Day will not be substituted to an monday if it's on a weekend!
+        );
     }
 }

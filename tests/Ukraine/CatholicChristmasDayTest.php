@@ -14,44 +14,45 @@
 namespace Yasumi\tests\Ukraine;
 
 use DateTime;
+use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 use Yasumi\Yasumi;
 
 /**
- * Class SecondInternationalWorkersDayTest
+ * Class CatholicChristmasDayTest
  * @package Yasumi\tests\Ukraine
  */
-class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements YasumiTestCaseInterface
+class CatholicChristmasDayTest extends UkraineBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
      */
-    public const HOLIDAY = 'secondInternationalWorkersDay';
+    public const HOLIDAY = 'catholicChristmasDay';
 
     /**
-     * Tests International Workers' Day.
+     * Tests Catholic Christmas Day.
      *
-     * @dataProvider SecondInternationalWorkersDayDataProvider
+     * @dataProvider CatholicChristmasDayDataProvider
      *
      * @param int $year the year for which International Workers' Day needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws ReflectionException
      */
-    public function testSecondInternationalWorkersDay($year, $expected)
+    public function testCatholicChristmasDay($year, $expected)
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
-     * Tests International Workers' Day since 2018.
+     * Tests Catholic Christmas Day before 2017.
      * @throws ReflectionException
      */
-    public function testNoSecondInternationalWorkersDaySince2018()
+    public function testNoCatholicChristmasDayBefore2017()
     {
-        $year = $this->generateRandomYear(2018);
+        $year = $this->generateRandomYear(null, 2016);
         $holidays = Yasumi::create(self::REGION, $year);
         $holiday = $holidays->getHoliday(self::HOLIDAY);
 
@@ -69,8 +70,8 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements Y
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(null, 2017),
-            [self::LOCALE => 'День міжнародної солідарності трудящих']
+            $this->generateRandomYear(2017),
+            [self::LOCALE => 'Католицький день Різдва']
         );
     }
 
@@ -80,27 +81,22 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements Y
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(
-            self::REGION,
-            self::HOLIDAY,
-            $this->generateRandomYear(null, 2017),
-            Holiday::TYPE_OFFICIAL
-        );
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(2017), Holiday::TYPE_OFFICIAL);
     }
 
     /**
-     * Returns a list of random test dates used for assertion of International Workers' Day.
+     * Returns a list of random test dates used for assertion of Catholic Christmas Day.
      *
-     * @return array list of test dates for International Workers' Day
+     * @return array list of test dates for Catholic Christmas Day
      * @throws Exception
      */
-    public function SecondInternationalWorkersDayDataProvider(): array
+    public function CatholicChristmasDayDataProvider(): array
     {
         $data = [];
 
         for ($y = 0; $y < 10; $y++) {
-            $year = $this->generateRandomYear(null, 2017);
-            $data[] = [$year, new \DateTime("$year-05-02", new \DateTimeZone(self::TIMEZONE))];
+            $year = $this->generateRandomYear(2017);
+            $data[] = [$year, new \DateTime("$year-12-25", new \DateTimeZone(self::TIMEZONE))];
         }
 
         return $data;
