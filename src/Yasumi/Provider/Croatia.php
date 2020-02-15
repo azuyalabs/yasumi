@@ -113,9 +113,12 @@ class Croatia extends AbstractProvider
         }
 
         if ($names != null) {
-            $this->addHoliday(new Holiday('homelandThanksgiving',
+            $this->addHoliday(new Holiday(
+                'homelandThanksgiving',
                 $names,
-                new DateTime("$this->year-8-5", new DateTimeZone($this->timezone)), $this->locale));
+                new DateTime("$this->year-8-5", new DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
     }
 
