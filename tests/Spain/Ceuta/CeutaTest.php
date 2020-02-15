@@ -82,7 +82,7 @@ class CeutaTest extends CeutaBaseTestCase
      */
     public function testOtherHolidays(): void
     {
-        $this->assertDefinedHolidays(['valentinesDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**

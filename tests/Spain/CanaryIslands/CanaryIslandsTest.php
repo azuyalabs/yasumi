@@ -82,7 +82,7 @@ class CanaryIslandsTest extends CanaryIslandsBaseTestCase
      */
     public function testOtherHolidays(): void
     {
-        $this->assertDefinedHolidays(['valentinesDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**
