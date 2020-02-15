@@ -20,46 +20,42 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class containing tests for Homeland Thanksgiving Day in Croatia.
+ * Class containing tests for Statehood Day in Croatia.
  */
-class HomelandThanksgivingDayTest extends CroatiaBaseTestCase implements YasumiTestCaseInterface
+class RemembranceDayTest extends CroatiaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
      */
-    public const HOLIDAY = 'homelandThanksgiving';
+    public const HOLIDAY = 'remembranceDay';
 
     /**
      * The year in which the holiday was first established
      */
-    public const ESTABLISHMENT_YEAR = 1995;
+    public const ESTABLISHMENT_YEAR = 2020;
 
     /**
-     * The year in which the holiday name was changed
-     */
-    public const NAME_CHANGED_YEAR = 2020;
-
-    /**
-     * Tests Homeland Thanksgiving Day on or after 1995.
+     * Tests Remembrance Day
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHomelandThanksgivingDayOnAfter1995()
+    public function testRemembranceDayAfterItWasEstablished()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-8-5", new DateTimeZone(self::TIMEZONE))
+            new DateTime("$year-11-18", new DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
-     * Tests Homeland Thanksgiving Day before 1995.
+     * Tests Remembrance Day
+     * @throws Exception
      * @throws ReflectionException
      */
-    public function testHomelandThanksgivingDayBefore1995()
+    public function testRemembranceDayBeforeItWasEstablished()
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -69,27 +65,16 @@ class HomelandThanksgivingDayTest extends CroatiaBaseTestCase implements YasumiT
     }
 
     /**
-     * Tests translated name of Homeland Thanksgiving Day.
+     * Tests translated name of Remembrance Day.
      * @throws ReflectionException
      */
     public function testTranslation(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::NAME_CHANGED_YEAR - 1);
-        $expectedText = 'Dan domovinske zahvalnosti';
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $year,
-            [self::LOCALE => $expectedText]
-        );
-
-        $year = $this->generateRandomYear(self::NAME_CHANGED_YEAR);
-        $expectedText = 'Dan pobjede i domovinske zahvalnosti i Dan hrvatskih branitelja';
-        $this->assertTranslatedHolidayName(
-            self::REGION,
-            self::HOLIDAY,
-            $year,
-            [self::LOCALE => $expectedText]
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => 'Dan sjećanja na žrtve Domovinskog rata i Dan sjećanja na žrtvu Vukovara i Škabrnje']
         );
     }
 
