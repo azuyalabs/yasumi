@@ -79,12 +79,13 @@ class Croatia extends AbstractProvider
      * Starting from the year 2020. statehood day is celebrated at a new date
      * Source: https://narodne-novine.nn.hr/clanci/sluzbeni/2019_11_110_2212.html
      */
-    private function calculateStatehoodDay(): void {
+    private function calculateStatehoodDay(): void
+    {
         $statehoodDayDate = null;
 
         if ($this->year >= 1991 && $this->year < 2020) {
             $statehoodDayDate = new DateTime("$this->year-6-25", new DateTimeZone($this->timezone));
-        } else if ($this->year >= 2020) {
+        } elseif ($this->year >= 2020) {
             $statehoodDayDate = new DateTime("$this->year-5-30", new DateTimeZone($this->timezone));
         }
 
@@ -92,7 +93,7 @@ class Croatia extends AbstractProvider
             $this->addHoliday(new Holiday('statehoodDay', [
                 'en' => 'Statehood Day',
                 'hr' => 'Dan državnosti',
-            ],$statehoodDayDate, $this->locale));
+            ], $statehoodDayDate, $this->locale));
         }
     }
 
@@ -100,12 +101,13 @@ class Croatia extends AbstractProvider
      * Starting from the year 2020. homeland thanksgiving day name is slightly changed
      * Source: https://narodne-novine.nn.hr/clanci/sluzbeni/2019_11_110_2212.html
      */
-    private function calculateHomelandThanksgivingDay(): void {
+    private function calculateHomelandThanksgivingDay(): void
+    {
         $names = null;
         if ($this->year >= 1995 && $this->year < 2020) {
             $names['en'] = 'Homeland Thanksgiving Day';
             $names['hr'] = 'Dan domovinske zahvalnosti';
-        } else if ($this->year >= 2020) {
+        } elseif ($this->year >= 2020) {
             $names['en'] = 'Victory and Homeland Thanksgiving Day and the Day of Croatian Defenders';
             $names['hr'] = 'Dan pobjede i domovinske zahvalnosti i Dan hrvatskih branitelja';
         }
@@ -122,7 +124,8 @@ class Croatia extends AbstractProvider
      * (Day of Croatian Paralment, Dan Hrvatskog sabora)
      * Source: https://narodne-novine.nn.hr/clanci/sluzbeni/2019_11_110_2212.html
      */
-    private function calculateIndependenceDay(): void {
+    private function calculateIndependenceDay(): void
+    {
         if ($this->year >= 1991 && $this->year < 2020) {
             $this->addHoliday(new Holiday('independenceDay', [
                 'en' => 'Independence Day',
@@ -131,7 +134,8 @@ class Croatia extends AbstractProvider
         }
     }
 
-    private function calculateRemembranceDayForHomelandWarVictims(): void {
+    private function calculateRemembranceDayForHomelandWarVictims(): void
+    {
         if ($this->year >= 2020) {
             $this->addHoliday(new Holiday('remembranceDay', [
                 'en' => 'Remembrance Day for Homeland War Victims and Remembrance Day for the Victims of Vukovar and Skabrnja',
