@@ -98,7 +98,7 @@ class Croatia extends AbstractProvider
     }
 
     /**
-     * Starting from the year 2020. homeland thanksgiving day name is slightly changed
+     * Starting from the year 2020. Homeland Thanksgiving Day name is slightly changed
      * Source: https://narodne-novine.nn.hr/clanci/sluzbeni/2019_11_110_2212.html
      */
     private function calculateHomelandThanksgivingDay(): void
@@ -123,8 +123,8 @@ class Croatia extends AbstractProvider
     }
 
     /**
-     * Starting from the year 2020. independane day is no longer a holiday, but is still remembered (under a different name)
-     * (Day of Croatian Paralment, Dan Hrvatskog sabora)
+     * Starting from the year 2020. Independence Day is no longer an official holiday,
+     * but is still remembered under a different name as Croatian Parliament Day (Dan Hrvatskog sabora)
      * Source: https://narodne-novine.nn.hr/clanci/sluzbeni/2019_11_110_2212.html
      */
     private function calculateIndependenceDay(): void
@@ -137,6 +137,10 @@ class Croatia extends AbstractProvider
         }
     }
 
+    /**
+     * Starting from the year 2020. a new holiday was added
+     * Source: https://narodne-novine.nn.hr/clanci/sluzbeni/2019_11_110_2212.html
+     */
     private function calculateRemembranceDayForHomelandWarVictims(): void
     {
         if ($this->year >= 2020) {
