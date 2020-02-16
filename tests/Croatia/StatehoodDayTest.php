@@ -35,18 +35,33 @@ class StatehoodDayTest extends CroatiaBaseTestCase implements YasumiTestCaseInte
     public const ESTABLISHMENT_YEAR = 1991;
 
     /**
-     * Tests Statehood Day on or after 1991.
+     * The year in which the holiday celebration date has changed
+     */
+    public const DATE_CHANGE_YEAR = 2020;
+
+    /**
+     * Tests Statehood Day
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testStatehoodDayOnAfter1991()
+    public function testStatehoodDay()
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::DATE_CHANGE_YEAR - 1);
+        $expectedDate = "$year-6-25";
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-6-25", new DateTimeZone(self::TIMEZONE))
+            new DateTime($expectedDate, new DateTimeZone(self::TIMEZONE))
+        );
+
+        $year = $this->generateRandomYear(self::DATE_CHANGE_YEAR);
+        $expectedDate = "$year-5-30";
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime($expectedDate, new DateTimeZone(self::TIMEZONE))
         );
     }
 
