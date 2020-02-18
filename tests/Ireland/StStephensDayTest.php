@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -81,7 +81,7 @@ class StStephensDayTest extends IrelandBaseTestCase implements YasumiTestCaseInt
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'St. Stephen\'s Day']
+            [self::LOCALE => 'St. Stephen’s Day']
         );
         $this->assertTranslatedHolidayName(
             self::REGION,

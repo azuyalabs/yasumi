@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -83,7 +83,10 @@ class Catalonia extends Spain
         if ($this->year >= 1886) {
             $this->addHoliday(new Holiday(
                 'nationalCataloniaDay',
-                ['es' => 'Diada Nacional de Catalunya'],
+                [
+                    'ca' => 'Diada Nacional de Catalunya',
+                    'es' => 'Diada Nacional de Cataluña',
+                ],
                 new DateTime("$this->year-9-11", new DateTimeZone($this->timezone)),
                 $this->locale
             ));

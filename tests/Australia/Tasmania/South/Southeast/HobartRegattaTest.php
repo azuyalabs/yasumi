@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -57,7 +57,7 @@ class HobartRegattaTest extends SoutheastBaseTestCase implements YasumiTestCaseI
      */
     public function HolidayDataProvider(): array
     {
-        $data = [
+        return [
             [2010, '2010-02-08'],
             [2011, '2011-02-14'],
             [2012, '2012-02-13'],
@@ -70,8 +70,6 @@ class HobartRegattaTest extends SoutheastBaseTestCase implements YasumiTestCaseI
             [2019, '2019-02-11'],
             [2020, '2020-02-10'],
         ];
-
-        return $data;
     }
 
     /**

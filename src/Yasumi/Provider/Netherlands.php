@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -186,7 +186,7 @@ class Netherlands extends AbstractProvider
          */
         $this->addHoliday(new Holiday(
             'stNicholasDay',
-            ['en' => 'St. Nicholas\' Day', 'nl' => 'Sinterklaas'],
+            ['en' => 'St. Nicholas’ Day', 'nl' => 'Sinterklaas'],
             new DateTime("$this->year-12-5", new DateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OBSERVANCE
@@ -228,7 +228,7 @@ class Netherlands extends AbstractProvider
     {
         $this->addHoliday(new Holiday(
             'princesDay',
-            ['en' => 'Prince\'s Day', 'nl' => 'Prinsjesdag'],
+            ['en' => 'Prince’s Day', 'nl' => 'Prinsjesdag'],
             new DateTime("third tuesday of september $this->year", new DateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OTHER
@@ -259,7 +259,7 @@ class Netherlands extends AbstractProvider
 
             $this->addHoliday(new Holiday(
                 'queensDay',
-                ['en' => 'Queen\'s Day', 'nl' => 'Koninginnedag'],
+                ['en' => 'Queen’s Day', 'nl' => 'Koninginnedag'],
                 $date,
                 $this->locale
             ));
@@ -304,7 +304,7 @@ class Netherlands extends AbstractProvider
         if ($this->year >= 1947) {
             $this->addHoliday(new Holiday(
                 'commemorationDay',
-                ['en' => 'Commemoration Day', 'nl' => 'Dodenherdenking'],
+                ['en' => 'Commemoration Day', 'nl' => 'dodenherdenking'],
                 new DateTime("$this->year-5-4", new DateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OBSERVANCE

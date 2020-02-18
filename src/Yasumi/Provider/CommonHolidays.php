@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -451,11 +451,15 @@ trait CommonHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function summerTime($year, $timezone, $locale, $type = null): ?Holiday
-    {
+    public function summerTime(
+        int $year,
+        string $timezone,
+        string $locale,
+        ?string $type = null
+    ): ?Holiday {
         $date = $this->calculateSummerWinterTime($year, $timezone, true);
 
-        if ($date) {
+        if ($date instanceof \DateTimeImmutable) {
             return new Holiday(
                 'summerTime',
                 [],
@@ -485,12 +489,15 @@ trait CommonHolidays
      * @param string $timezone the timezone in which Easter is celebrated
      * @param bool $summer whether to calculate the start of summer or winter time
      *
-     * @return DateTime|null A DateTime object representing the summer or winter transition time for the given
+     * @return \DateTimeImmutable|null A DateTime object representing the summer or winter transition time for the given
      *                        timezone. If no transition time is found, a null value is returned.
      * @throws \Exception
      */
-    protected function calculateSummerWinterTime($year, $timezone, $summer): ?DateTime
-    {
+    protected function calculateSummerWinterTime(
+        int $year,
+        string $timezone,
+        bool $summer
+    ): ?\DateTimeImmutable {
         $zone = new DateTimeZone($timezone);
 
         $transitions = $zone->getTransitions(\mktime(0, 0, 0, 1, 1, $year), \mktime(23, 59, 59, 12, 31, $year));
@@ -500,7 +507,7 @@ trait CommonHolidays
 
         foreach ($transitions as $transition) {
             if ($transition['isdst'] !== $dst && $transition['isdst'] === $summer) {
-                return new DateTime(\substr($transition['time'], 0, 10), $zone);
+                return new \DateTimeImmutable(\substr($transition['time'], 0, 10), $zone);
             }
             $dst = $transition['isdst'];
         }
@@ -525,11 +532,15 @@ trait CommonHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function winterTime($year, $timezone, $locale, $type = null): ?Holiday
-    {
+    public function winterTime(
+        int $year,
+        string $timezone,
+        string $locale,
+        ?string $type = null
+    ): ?Holiday {
         $date = $this->calculateSummerWinterTime($year, $timezone, false);
 
-        if ($date) {
+        if ($date instanceof \DateTimeImmutable) {
             return new Holiday(
                 'winterTime',
                 [],

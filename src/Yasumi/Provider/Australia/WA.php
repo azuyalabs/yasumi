@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -65,31 +65,22 @@ class WA extends Australia
      */
     private function calculateQueensBirthday(): void
     {
+        $birthDay = 'last monday of september ' . $this->year;
         if (2011 === $this->year) {
-            $this->calculateHoliday(
-                'queensBirthday',
-                ['en' => "Queen's Birthday"],
-                new DateTime('2011-10-28', new DateTimeZone($this->timezone)),
-                false,
-                false
-            );
-        } elseif (2012 === $this->year) {
-            $this->calculateHoliday(
-                'queensBirthday',
-                ['en' => "Queen's Birthday"],
-                new DateTime('2012-10-01', new DateTimeZone($this->timezone)),
-                false,
-                false
-            );
-        } else {
-            $this->calculateHoliday(
-                'queensBirthday',
-                ['en' => "Queen's Birthday"],
-                new DateTime('last monday of september ' . $this->year, new DateTimeZone($this->timezone)),
-                false,
-                false
-            );
+            $birthDay = '2011-10-28';
         }
+
+        if (2012 === $this->year) {
+            $birthDay = '2012-10-01';
+        }
+
+        $this->calculateHoliday(
+            'queensBirthday',
+            new DateTime($birthDay, new DateTimeZone($this->timezone)),
+            [],
+            false,
+            false
+        );
     }
 
     /**
@@ -116,8 +107,8 @@ class WA extends Australia
     {
         $this->calculateHoliday(
             'westernAustraliaDay',
-            ['en' => 'Western Australia Day'],
             new DateTime('first monday of june ' . $this->year, new DateTimeZone($this->timezone)),
+            ['en' => 'Western Australia Day'],
             false,
             false
         );

@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -73,8 +73,12 @@ class Victoria extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function easterSunday($year, $timezone, $locale, $type = null): Holiday
-    {
+    private function easterSunday(
+        int $year,
+        string $timezone,
+        string $locale,
+        ?string $type = null
+    ): Holiday {
         return new Holiday(
             'easter',
             ['en' => 'Easter Sunday'],
@@ -105,8 +109,12 @@ class Victoria extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function easterSaturday($year, $timezone, $locale, $type = null): Holiday
-    {
+    private function easterSaturday(
+        int $year,
+        string $timezone,
+        string $locale,
+        ?string $type = null
+    ): Holiday {
         return new Holiday(
             'easterSaturday',
             ['en' => 'Easter Saturday'],
@@ -147,8 +155,8 @@ class Victoria extends Australia
     {
         $this->calculateHoliday(
             'queensBirthday',
-            ['en' => 'Queen\'s Birthday'],
             new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->timezone)),
+            [],
             false,
             false
         );
@@ -185,6 +193,12 @@ class Victoria extends Australia
                 break;
             case 2018:
                 $aflGrandFinalFriday = '2018-09-28';
+                break;
+            case 2019:
+                $aflGrandFinalFriday = '2019-09-27';
+                break;
+            case 2020:
+                $aflGrandFinalFriday = '2020-09-25';
                 break;
             default:
                 return;

@@ -4,15 +4,42 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org).
 
 ## [Unreleased]
+- Statehood Day is celebrated at a new date since 2020 in Croatia. [\#203](https://github.com/azuyalabs/yasumi/pull/203) ([krukru](https://github.com/krukru))
+- Homeland Thanksgiving Day has been renamed to "Victory and Homeland Thanksgiving Day and the Day of Croatian Defenders" since 2020 in Croatia. [\#203](https://github.com/azuyalabs/yasumi/pull/203) ([krukru](https://github.com/krukru))
+- Independence Day is no longer an official holiday since 2020 in Croatia. [\#203](https://github.com/azuyalabs/yasumi/pull/203) ([krukru](https://github.com/krukru))
+- Remembrance Day for Homeland War Victims and Remembrance Day for the Victims of Vukovar and Skabrnja is a new official holiday since 2020 in Croatia. [\#203](https://github.com/azuyalabs/yasumi/pull/203) ([krukru](https://github.com/krukru))
 
 ### Added
 - Added Luxembourg Provider [\#205](https://github.com/azuyalabs/yasumi/pull/205) ([Arkounay](https://github.com/Arkounay))
+- Catalan translations for holidays in Catalonia, Valencian Community, Balearic Islands and Aragon [\#189](https://github.com/azuyalabs/yasumi/pull/189) ([c960657](https://github.com/c960657))
+- Added French translation for Second Christmas Day [\#188](https://github.com/azuyalabs/yasumi/pull/188) ([Arkounay](https://github.com/Arkounay))
+- Additional Dates for Australia/Victoria:AFL Grand Final Friday  [\#190](https://github.com/azuyalabs/yasumi/pull/190) ([brucealdridge](https://github.com/brucealdridge))
+- Holiday providers for states of Austria. [\#182](https://github.com/azuyalabs/yasumi/pull/182) ([aprog](https://github.com/aprog))
+- Added missing return (correct) and parameter types in various methods.
+- Day of Liberation (Tag der Befreiung) is an one-time official holiday in 2020 in Berlin (Germany).
+- Catholic Christmas Day is a new official holiday since 2017 in the Ukraine. [\#202](https://github.com/azuyalabs/yasumi/pull/202)
 
 ### Changed
+- Holiday names in Danish, Dutch, and Norwegian are no longer capitalized. [\#185](https://github.com/azuyalabs/yasumi/pull/185) ([c960657](https://github.com/c960657))
+- Changed fallback from DEFAULT_LANGUAGE to 'en'. [\#183](https://github.com/azuyalabs/yasumi/pull/183) ([c960657](https://github.com/c960657))
+- Changed DateTime to DateTimeImmutable as dates should be that: immutable (by default)
+- Explicitly set nullable parameters as such.
+- Refactored various conditional structures.
+- Changed signature of some methods as parameters with defaults should come after required parameters.
+- Updated third party dependencies.
+- Second International Workers Day was an official holiday only until 2018. [\#202](https://github.com/azuyalabs/yasumi/pull/202)
 
 ### Fixed
+- Fixed issue if the next working day happens to be in the next year  (i.e. not in the year of the Yasumi instance) [\#192](https://github.com/azuyalabs/yasumi/issues/192) ([tniemann](https://github.com/tniemann))
+- Fixed issue if the previous working day happens to be in the previous year (i.e. not in the year of the Yasumi instance)
+- Fix locale fallback for substitute holidays [\#180](https://github.com/azuyalabs/yasumi/pull/180) ([c960657](https://github.com/c960657))
+- Fixed compound conditions that are always true by simplifying the condition steps.
+- Fixed Ukraine holidays on weekends. These days need to be substituted. [\#202](https://github.com/azuyalabs/yasumi/pull/202)
 
 ### Removed
+- PHP 7.1 Support, as it has reached its end of life.
+- Removed the assertion of the instance type in some functions as it is already defined by the return type.
+- Removed unused variables, brackets, empty tests, etc.
 
 
 ## [2.2.0] - 2019-10-06

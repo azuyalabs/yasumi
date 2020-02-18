@@ -1,8 +1,9 @@
 <?php declare(strict_types=1);
+
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,7 +13,7 @@
 
 // Translations for Whitsunday
 return [
-    'da' => 'Pinsedag',
+    'da' => 'pinsedag',
     'de' => 'Pfingstsonntag',
     'de_AT' => 'Pfingsten',
     'de_CH' => 'Pfingsten',
@@ -24,11 +25,11 @@ return [
     'ga' => 'Domhnach Cincíse',
     'hu' => 'Pünkösd',
     'it' => 'Pentecoste',
-    'nb' => 'Første pinsedag',
-    'nl' => 'Eerste pinksterdag',
+    'nb' => 'første pinsedag',
+    'nl' => 'eerste pinksterdag',
     'pl' => 'Zielone Świątki',
     'ro' => 'Rusaliile',
     'ru' => 'Троица',
-    'sv' => 'Pingstdagen',
+    'sv' => 'pingstdagen',
     'uk' => 'Трійця',
 ];

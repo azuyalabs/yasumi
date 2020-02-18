@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -72,6 +72,6 @@ class Brisbane extends Queensland
             $date = $date->add(new DateInterval('P7D'));
         }
         $date = $date->add(new DateInterval('P5D'));
-        $this->addHoliday(new Holiday('peoplesDay', ['en' => 'Ekka People\'s Day'], $date, $this->locale));
+        $this->addHoliday(new Holiday('peoplesDay', ['en' => 'Ekka People’s Day'], $date, $this->locale));
     }
 }

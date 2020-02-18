@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -131,7 +131,6 @@ class YasumiWorkdayTest extends TestCase
         $result = Yasumi::prevWorkingDay($provider, $startDate, $interval);
         $this->assertEquals($expectedPrevious, $result->format(self::FORMAT_DATE));
 
-
         // Assertion using a DateTimeImmutable instance
         $startDate = new DateTimeImmutable($start, new DateTimeZone($timezone));
         $result = Yasumi::nextWorkingDay($provider, $startDate, $interval);
@@ -141,5 +140,87 @@ class YasumiWorkdayTest extends TestCase
         $startDate = new DateTimeImmutable($expectedNext, new DateTimeZone($timezone));
         $result = Yasumi::prevWorkingDay($provider, $startDate, $interval);
         $this->assertEquals($expectedPrevious, $result->format(self::FORMAT_DATE));
+    }
+
+    /**
+     * Tests when the next working day happens to be in the next year.
+     *
+     * @dataProvider dataProviderWorkDayNextYear
+     *
+     * @param string $start
+     * @param int $workdays
+     * @param string $expectedNext
+     *
+     * @throws ReflectionException
+     * @throws Exception
+     */
+    public function testWorkDayIsNextYear(string $start, int $workdays, string $expectedNext): void
+    {
+        $provider = 'USA';
+        $timezone = 'America/New_York';
+        $startDate = new DateTime($start, new DateTimeZone($timezone));
+        $result = Yasumi::nextWorkingDay($provider, $startDate, $workdays);
+
+        $this->assertEquals($expectedNext, $result->format(self::FORMAT_DATE));
+    }
+
+    /**
+     * @return array
+     */
+    public function dataProviderWorkDayNextYear(): array
+    {
+        return [
+            [
+                '2019-12-30',
+                2,
+                '2020-01-02',
+            ],
+            [
+                '2018-12-28',
+                2,
+                '2019-01-02',
+            ],
+        ];
+    }
+
+    /**
+     * Tests when the previous working day happens to be in the previous year.
+     *
+     * @dataProvider dataProviderWorkDayPreviousYear
+     *
+     * @param string $start
+     * @param int $workdays
+     * @param string $expectedNext
+     *
+     * @throws ReflectionException
+     * @throws Exception
+     */
+    public function testWorkDayIsPreviousYear(string $start, int $workdays, string $expectedNext): void
+    {
+        $provider = 'USA';
+        $timezone = 'America/New_York';
+        $startDate = new DateTime($start, new DateTimeZone($timezone));
+        $result = Yasumi::prevWorkingDay($provider, $startDate, $workdays);
+
+        $this->assertEquals($expectedNext, $result->format(self::FORMAT_DATE));
+    }
+
+    /**
+     * @return array
+     */
+    public function dataProviderWorkDayPreviousYear(): array
+    {
+        return [
+            [
+                '2020-01-02',
+                2,
+                '2019-12-30',
+            ],
+            [
+                '2019-01-02',
+                2,
+                '2018-12-28',
+            ],
+        ];
     }
 }

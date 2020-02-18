@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -73,7 +73,7 @@ class ChristmasDayTest extends SABaseTestCase implements YasumiTestCaseInterface
      */
     public function HolidayDataProvider(): array
     {
-        $data = [
+        return [
             [2010, '2010-12-25', '2010-12-27'],
             [2011, '2011-12-25', '2011-12-26'],
             [2012, '2012-12-25', null],
@@ -86,8 +86,6 @@ class ChristmasDayTest extends SABaseTestCase implements YasumiTestCaseInterface
             [2019, '2019-12-25', null],
             [2020, '2020-12-25', null],
         ];
-
-        return $data;
     }
 
     /**

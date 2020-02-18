@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -122,9 +122,21 @@ class HolidayTest extends TestCase
     public function testHolidayGetNameWithOnlyDefaultTranslation(): void
     {
         $name = 'testHoliday';
+        $holiday = new Holiday($name, ['en' => 'Holiday EN', 'en_US' => 'Holiday EN-US'], new DateTime(), 'nl_NL');
+
+        $this->assertIsString($holiday->getName());
+        $this->assertEquals('Holiday EN-US', $holiday->getName());
+    }
+
+    /**
+     * Tests the getName function of the Holiday object with only a default translation for the name given.
+     * @throws Exception
+     */
+    public function testHolidayGetNameWithOnlyDefaultTranslationAndFallback(): void
+    {
+        $name = 'testHoliday';
         $translation = 'My Holiday';
-        $locale = 'en_US';
-        $holiday = new Holiday($name, [$locale => $translation], new DateTime(), $locale);
+        $holiday = new Holiday($name, ['en' => $translation], new DateTime(), 'nl_NL');
 
         $this->assertIsString($holiday->getName());
         $this->assertEquals($translation, $holiday->getName());
@@ -156,7 +168,7 @@ class HolidayTest extends TestCase
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
 
         $translations = [
-            'en_US' => 'New Year\'s Day',
+            'en_US' => 'New Year’s Day',
             'pl_PL' => 'Nowy Rok',
         ];
 
@@ -182,7 +194,7 @@ class HolidayTest extends TestCase
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
 
         $translations = [
-            'en_US' => 'New Year\'s Day',
+            'en_US' => 'New Year’s Day',
             'pl' => 'Nowy Rok',
         ];
 
@@ -208,7 +220,7 @@ class HolidayTest extends TestCase
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
 
         $translations = [
-            'en_US' => 'New Year\'s Day',
+            'en_US' => 'New Year’s Day',
             'pl_PL' => 'Nowy Rok',
         ];
 
@@ -240,7 +252,7 @@ class HolidayTest extends TestCase
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
 
         $translations = [
-            'en_US' => 'New Year\'s Day',
+            'en_US' => 'New Year’s Day',
             'pl_PL' => 'Nowy Rok',
         ];
 

@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -80,7 +80,10 @@ class BalearicIslands extends Spain
         if ($this->year >= 1983) {
             $this->addHoliday(new Holiday(
                 'balearicIslandsDay',
-                ['es' => 'Día de les Illes Balears'],
+                [
+                    'ca' => 'Diada de les Illes Balears',
+                    'es' => 'Día de les Illes Balears',
+                ],
                 new DateTime("$this->year-3-1", new DateTimeZone($this->timezone)),
                 $this->locale
             ));

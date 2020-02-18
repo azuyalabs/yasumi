@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -35,13 +35,18 @@ class IndependenceDayTest extends CroatiaBaseTestCase implements YasumiTestCaseI
     public const ESTABLISHMENT_YEAR = 1991;
 
     /**
+     * The year after which this is no longer a holiday
+     */
+    public const DISBANDMENT_YEAR = 2020;
+
+    /**
      * Tests Independence Day on or after 1991.
      * @throws Exception
      * @throws ReflectionException
      */
     public function testIndependenceDayOnAfter1991()
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::DISBANDMENT_YEAR - 1);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -64,6 +69,19 @@ class IndependenceDayTest extends CroatiaBaseTestCase implements YasumiTestCaseI
     }
 
     /**
+     * Tests Independence Day before 1991.
+     * @throws ReflectionException
+     */
+    public function testIndependenceDayAfterDisbandment()
+    {
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::DISBANDMENT_YEAR)
+        );
+    }
+
+    /**
      * Tests translated name of Independence Day.
      * @throws ReflectionException
      */
@@ -72,7 +90,7 @@ class IndependenceDayTest extends CroatiaBaseTestCase implements YasumiTestCaseI
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::DISBANDMENT_YEAR - 1),
             [self::LOCALE => 'Dan neovisnosti']
         );
     }
@@ -86,7 +104,7 @@ class IndependenceDayTest extends CroatiaBaseTestCase implements YasumiTestCaseI
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::DISBANDMENT_YEAR - 1),
             Holiday::TYPE_OFFICIAL
         );
     }

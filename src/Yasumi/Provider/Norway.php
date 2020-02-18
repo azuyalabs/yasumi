@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -85,7 +85,7 @@ class Norway extends AbstractProvider
         if ($this->year >= 1836) {
             $this->addHoliday(new Holiday(
                 'constitutionDay',
-                ['nb' => 'Grunnlovsdagen'],
+                ['nb' => 'grunnlovsdagen'],
                 new DateTime("$this->year-5-17", new DateTimeZone($this->timezone)),
                 $this->locale
             ));

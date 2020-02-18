@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -78,7 +78,7 @@ class USA extends AbstractProvider
     {
         if ($this->year >= 1986) {
             $this->addHoliday(new Holiday('martinLutherKingDay', [
-                'en' => 'Dr. Martin Luther King Jr\'s Birthday',
+                'en' => 'Dr. Martin Luther King Jr’s Birthday',
             ], new DateTime("third monday of january $this->year", new DateTimeZone($this->timezone)), $this->locale));
         }
     }
@@ -106,7 +106,7 @@ class USA extends AbstractProvider
                 $date = new DateTime("third monday of february $this->year", new DateTimeZone($this->timezone));
             }
             $this->addHoliday(new Holiday('washingtonsBirthday', [
-                'en' => 'Washington\'s Birthday',
+                'en' => 'Washington’s Birthday',
             ], $date, $this->locale));
         }
     }

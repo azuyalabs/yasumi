@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -67,7 +67,7 @@ class Russia extends AbstractProvider
 
         foreach ($holidayDays as $day) {
             $this->addHoliday(new Holiday('newYearHolidaysDay' . $day, [
-                'en' => 'New Year\'s holidays',
+                'en' => 'New Year’s holidays',
                 'ru' => 'Новогодние каникулы',
             ], new \DateTime("{$this->year}-01-{$day}", new \DateTimeZone($this->timezone)), $this->locale));
         }

@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -57,7 +57,7 @@ class PicnicDayTest extends NTBaseTestCase implements YasumiTestCaseInterface
      */
     public function HolidayDataProvider(): array
     {
-        $data = [
+        return [
             [2010, '2010-08-02'],
             [2011, '2011-08-01'],
             [2012, '2012-08-06'],
@@ -70,8 +70,6 @@ class PicnicDayTest extends NTBaseTestCase implements YasumiTestCaseInterface
             [2019, '2019-08-05'],
             [2020, '2020-08-03'],
         ];
-
-        return $data;
     }
 
     /**

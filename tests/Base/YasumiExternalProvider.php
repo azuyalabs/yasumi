@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,14 +12,14 @@
 
 namespace Yasumi\tests\Base;
 
-use Yasumi\ProviderInterface;
+use Yasumi\Provider\AbstractProvider;
 
 /**
  * Class YasumiExternalProvider.
  *
  * Class for testing the use of an external holiday provider class.
  */
-class YasumiExternalProvider implements ProviderInterface
+class YasumiExternalProvider extends AbstractProvider
 {
     /**
      * Initialize country holidays.

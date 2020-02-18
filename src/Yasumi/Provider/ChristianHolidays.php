@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -49,8 +49,12 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function easter(int $year, string $timezone, string $locale, string $type = Holiday::TYPE_OFFICIAL): Holiday
-    {
+    public function easter(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
         return new Holiday('easter', [], $this->calculateEaster($year, $timezone), $locale, $type);
     }
 
@@ -81,7 +85,7 @@ trait ChristianHolidays
     protected function calculateEaster(int $year, string $timezone): DateTime
     {
         if (\extension_loaded('calendar')) {
-            $easter_days = \easter_days($year);
+            $easterDays = \easter_days($year);
         } else {
             $golden = ($year % 19) + 1; // The Golden Number
 
@@ -124,11 +128,11 @@ trait ChristianHolidays
                 $tmp += 7;
             }
 
-            $easter_days = $pfm + $tmp + 1; // Easter as the number of days after 21st March
+            $easterDays = $pfm + $tmp + 1; // Easter as the number of days after 21st March
         }
 
         $easter = new DateTime("$year-3-21", new DateTimeZone($timezone));
-        $easter->add(new DateInterval('P' . $easter_days . 'D'));
+        $easter->add(new DateInterval('P' . $easterDays . 'D'));
 
         return $easter;
     }

@@ -3,7 +3,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -180,7 +180,7 @@ class Japan extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'childrensDay',
                 [
-                    'en' => 'Children\'s Day',
+                    'en' => 'Children’s Day',
                     'ja' => 'こどもの日',
                 ],
                 new DateTime("$this->year-5-5", new DateTimeZone($this->timezone)),
@@ -269,14 +269,16 @@ class Japan extends AbstractProvider
     private function calculateVernalEquinoxDay(): void
     {
         $day = null;
-        if ($this->year < 1948 || $this->year > 2150) {
-            $day = null;
-        } elseif ($this->year >= 1948 && $this->year <= 1979) {
+        if ($this->year >= 1948 && $this->year <= 1979) {
             $day = \floor(self::VERNAL_EQUINOX_PARAM_1979 + self::EQUINOX_GRADIENT * ($this->year - 1980) - \floor(($this->year - 1983) / 4));
         } elseif ($this->year <= 2099) {
             $day = \floor(self::VERNAL_EQUINOX_PARAM_2099 + self::EQUINOX_GRADIENT * ($this->year - 1980) - \floor(($this->year - 1980) / 4));
         } elseif ($this->year <= 2150) {
             $day = \floor(self::VERNAL_EQUINOX_PARAM_2150 + self::EQUINOX_GRADIENT * ($this->year - 1980) - \floor(($this->year - 1980) / 4));
+        }
+
+        if ($this->year < 1948 || $this->year > 2150) {
+            $day = null;
         }
 
         if (\is_numeric($day)) {
@@ -468,15 +470,15 @@ class Japan extends AbstractProvider
             $date = new DateTime("$this->year-10-10", new DateTimeZone($this->timezone));
         }
 
-        $holiday_name = ['en' => 'Health And Sports Day', 'ja' => '体育の日'];
+        $holidayName = ['en' => 'Health And Sports Day', 'ja' => '体育の日'];
         if ($this->year >= 2020) {
-            $holiday_name = ['en' => 'Sports Day', 'ja' => 'スポーツの日'];
+            $holidayName = ['en' => 'Sports Day', 'ja' => 'スポーツの日'];
         }
 
         if ($date instanceof DateTimeInterface) {
             $this->addHoliday(new Holiday(
                 'sportsDay',
-                $holiday_name,
+                $holidayName,
                 $date,
                 $this->locale
             ));
@@ -500,14 +502,16 @@ class Japan extends AbstractProvider
     private function calculateAutumnalEquinoxDay(): void
     {
         $day = null;
-        if ($this->year < 1948 || $this->year > 2150) {
-            $day = null;
-        } elseif ($this->year >= 1948 && $this->year <= 1979) {
+        if ($this->year >= 1948 && $this->year <= 1979) {
             $day = \floor(self::AUTUMNAL_EQUINOX_PARAM_1979 + self::EQUINOX_GRADIENT * ($this->year - 1980) - \floor(($this->year - 1983) / 4));
         } elseif ($this->year <= 2099) {
             $day = \floor(self::AUTUMNAL_EQUINOX_PARAM_2099 + self::EQUINOX_GRADIENT * ($this->year - 1980) - \floor(($this->year - 1980) / 4));
         } elseif ($this->year <= 2150) {
             $day = \floor(self::AUTUMNAL_EQUINOX_PARAM_2150 + self::EQUINOX_GRADIENT * ($this->year - 1980) - \floor(($this->year - 1980) / 4));
+        }
+
+        if ($this->year < 1948 || $this->year > 2150) {
+            $day = null;
         }
 
         if (\is_numeric($day)) {
@@ -537,7 +541,7 @@ class Japan extends AbstractProvider
         $dates = $this->getHolidayDates();
 
         // Loop through all holidays
-        foreach ($this->getHolidays() as $shortName => $holiday) {
+        foreach ($this->getHolidays() as $holiday) {
             $date = clone $holiday;
 
             // If holidays falls on a Sunday

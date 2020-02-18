@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -224,16 +224,16 @@ class Sweden extends AbstractProvider
             return;
         }
 
-        $holiday_name = 'Svenska flaggans dag';
+        $holidayName = 'Svenska flaggans dag';
 
         // Since 1983 this day was named 'Sveriges nationaldag'
         if ($this->year >= 1983) {
-            $holiday_name = 'Sveriges nationaldag';
+            $holidayName = 'Sveriges nationaldag';
         }
 
         $this->addHoliday(new Holiday(
             'nationalDay',
-            ['sv' => $holiday_name],
+            ['sv' => $holidayName],
             new DateTime("$this->year-6-6", new DateTimeZone($this->timezone)),
             $this->locale
         ));

@@ -3,7 +3,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -223,7 +223,7 @@ class SouthAfrica extends AbstractProvider
     {
         $this->addHoliday(new Holiday(
             'nationalWomensDay',
-            ['en' => 'National Women\'s Day'],
+            ['en' => 'National Women’s Day'],
             new DateTime($this->year . '-8-9', new DateTimeZone($this->timezone)),
             $this->locale
         ));

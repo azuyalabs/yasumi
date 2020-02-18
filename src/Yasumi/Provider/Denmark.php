@@ -3,7 +3,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -97,7 +97,7 @@ class Denmark extends AbstractProvider
         if ($this->year >= 1686) {
             $this->addHoliday(new Holiday(
                 'greatPrayerDay',
-                ['da' => 'Store bededag'],
+                ['da' => 'store bededag'],
                 new DateTime("fourth friday $easter", new DateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -125,7 +125,7 @@ class Denmark extends AbstractProvider
         if ($this->year >= 1849) {
             $this->addHoliday(new Holiday(
                 'constitutionDay',
-                ['da' => 'Grundlovsdag'],
+                ['da' => 'grundlovsdag'],
                 new DateTime("$this->year-6-5", new DateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OBSERVANCE

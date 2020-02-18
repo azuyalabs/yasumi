@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -62,7 +62,7 @@ class QueensBirthdayTest extends WABaseTestCase implements YasumiTestCaseInterfa
      */
     public function HolidayDataProvider(): array
     {
-        $data = [
+        return [
             [2010, '2010-09-27'],
             [2011, '2011-10-28'],
             [2012, '2012-10-01'],
@@ -75,8 +75,6 @@ class QueensBirthdayTest extends WABaseTestCase implements YasumiTestCaseInterfa
             [2019, '2019-09-30'],
             [2020, '2020-09-28'],
         ];
-
-        return $data;
     }
 
     /**
@@ -89,7 +87,7 @@ class QueensBirthdayTest extends WABaseTestCase implements YasumiTestCaseInterfa
             $this->region,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Queen\'s Birthday']
+            [self::LOCALE => 'Queen’s Birthday']
         );
     }
 

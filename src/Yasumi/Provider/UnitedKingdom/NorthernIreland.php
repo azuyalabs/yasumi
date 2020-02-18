@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -78,7 +78,7 @@ class NorthernIreland extends UnitedKingdom
 
         $holiday = new Holiday(
             'stPatricksDay',
-            ['en' => 'St. Patrick\'s Day'],
+            ['en' => 'St. Patrick’s Day'],
             new DateTime($this->year . '-3-17', new DateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK

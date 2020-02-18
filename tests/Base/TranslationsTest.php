@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -40,7 +40,7 @@ class TranslationsTest extends TestCase
 
         $locale = 'en_US';
         $shortName = 'newYearsDay';
-        $translation = 'New Year\'s Day';
+        $translation = 'New Year’s Day';
 
         $this->assertNull($translations->getTranslation($shortName, $locale));
         $this->assertEmpty($translations->getTranslations($shortName));
@@ -65,7 +65,7 @@ class TranslationsTest extends TestCase
 
         $firstLocale = 'en_US';
         $firstShortName = 'newYearsDay';
-        $firstTranslation = 'New Year\'s Day';
+        $firstTranslation = 'New Year’s Day';
 
         $translations->addTranslation($firstShortName, $firstLocale, $firstTranslation);
 
@@ -121,7 +121,7 @@ class TranslationsTest extends TestCase
 
         $unknownLocale = 'en_XY';
         $shortName = 'newYearsDay';
-        $translation = 'New Year\'s Day';
+        $translation = 'New Year’s Day';
 
         $translations->addTranslation($shortName, $unknownLocale, $translation);
     }
@@ -135,7 +135,7 @@ class TranslationsTest extends TestCase
 
         $locale = 'en_US';
         $shortName = 'newYearsDay';
-        $translation = 'New Year\'s Day';
+        $translation = 'New Year’s Day';
 
         $unknownShortName = 'unknownHoliday';
 
@@ -154,7 +154,7 @@ class TranslationsTest extends TestCase
 
         $locale = 'en_US';
         $shortName = 'newYearsDay';
-        $translation = 'New Year\'s Day';
+        $translation = 'New Year’s Day';
 
         $unknownLocale = 'pl_PL';
 
@@ -172,7 +172,7 @@ class TranslationsTest extends TestCase
         $fileContents = <<<'FILE'
 <?php
 return [
-    'en_US' => 'New Year\'s Day',
+    'en_US' => 'New Year’s Day',
     'nl_NL' => 'Nieuwjaar',
     'pl_PL' => 'Nowy Rok',
 ];
@@ -184,7 +184,7 @@ FILE;
         $translations->loadTranslations(vfsStream::url('root/lang'));
 
         $locale = 'en_US';
-        $translation = 'New Year\'s Day';
+        $translation = 'New Year’s Day';
 
         $this->assertNotNull($translations->getTranslations($shortName));
         $this->assertNotEmpty($translations->getTranslations($shortName));
@@ -201,7 +201,7 @@ FILE;
         $fileContents = <<<'FILE'
 <?php
 return [
-    'en_US' => 'New Year\'s Day',
+    'en_US' => 'New Year’s Day',
     'nl_NL' => 'Nieuwjaar',
     'pl_PL' => 'Nowy Rok',
 ];
@@ -228,7 +228,7 @@ FILE;
         $fileContents = <<<'FILE'
 <?php
 return [
-    'en_XY' => 'New Year\'s Day',
+    'en_XY' => 'New Year’s Day',
     'nl_NL' => 'Nieuwjaar',
 ];
 FILE;
@@ -262,7 +262,7 @@ FILE;
         $firstFileContents = <<<'FILE'
 <?php
 return [
-    'en_US' => 'New Year\'s Day',
+    'en_US' => 'New Year’s Day',
     'nl_NL' => 'Nieuwjaar',
     'pl_PL' => 'Nowy Rok',
 ];
@@ -289,7 +289,7 @@ FILE;
         $translations->loadTranslations(vfsStream::url('root/lang'));
 
         $locale = 'en_US';
-        $translation = 'New Year\'s Day';
+        $translation = 'New Year’s Day';
 
         $this->assertNotNull($translations->getTranslations($firstShortName));
         $this->assertNotEmpty($translations->getTranslations($firstShortName));

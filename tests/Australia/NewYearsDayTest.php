@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -73,7 +73,7 @@ class NewYearsDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInt
      */
     public function HolidayDataProvider(): array
     {
-        $data = [
+        return [
             [2010, '2010-01-01', null],
             [2011, '2011-01-01', '2011-01-03'],
             [2012, '2012-01-01', '2012-01-02'],
@@ -86,8 +86,6 @@ class NewYearsDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInt
             [2019, '2019-01-01', null],
             [2020, '2020-01-01', null],
         ];
-
-        return $data;
     }
 
     /**
@@ -101,13 +99,13 @@ class NewYearsDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInt
             $this->region,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'New Year\'s Day']
+            [self::LOCALE => 'New Year’s Day']
         );
         $this->assertTranslatedHolidayName(
             $this->region,
             self::HOLIDAY2,
             2017,
-            [self::LOCALE => 'New Year\'s Holiday']
+            [self::LOCALE => 'New Year’s Holiday']
         );
     }
 

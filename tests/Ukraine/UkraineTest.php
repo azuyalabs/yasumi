@@ -1,8 +1,9 @@
 <?php declare(strict_types=1);
+
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -32,19 +33,42 @@ class UkraineTest extends UkraineBaseTestCase
      */
     public function testOfficialHolidays(): void
     {
-        $this->assertDefinedHolidays([
+        $holidays = [
             'newYearsDay',
             'internationalWorkersDay',
-            'secondInternationalWorkersDay',
             'christmasDay',
             'easter',
             'pentecost',
             'internationalWomensDay',
             'victoryDay',
-            'constitutionDay',
-            'independenceDay',
-            'defenderOfUkraineDay',
-        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
+        ];
+
+        if ($this->year >= 1996) {
+            $holidays[] = 'constitutionDay';
+        }
+
+        if ($this->year >= 1991) {
+            $holidays[] = 'independenceDay';
+        }
+
+        if ($this->year >= 2015) {
+            $holidays[] = 'defenderOfUkraineDay';
+        }
+
+        if ($this->year < 2018) {
+            $holidays[] = 'secondInternationalWorkersDay';
+        }
+
+        if ($this->year >= 2017) {
+            $holidays[] = 'catholicChristmasDay';
+        }
+
+        $this->assertDefinedHolidays(
+            $holidays,
+            self::REGION,
+            $this->year,
+            Holiday::TYPE_OFFICIAL
+        );
     }
 
     /**
@@ -88,6 +112,6 @@ class UkraineTest extends UkraineBaseTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(2015, 2025);
+        $this->year = $this->generateRandomYear();
     }
 }
