@@ -29,6 +29,7 @@ return [
     'it' => 'Lunedì dell’Angelo',
     'it_CH' => 'Lunedi di Pasqua',
     'lt' => 'Antroji Velykų diena',
+    'lu' => 'Lundi de Pâques',
     'lv' => 'Otrās Lieldienas',
     'nb' => 'andre påskedag',
     'nl_BE' => 'paasmaandag',

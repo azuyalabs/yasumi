@@ -34,6 +34,7 @@ return [
     'ja' => '元日',
     'ko' => '새해',
     'lt' => 'Naujųjų metų diena',
+    'lu' => 'Jour de l\'An',
     'lv' => 'Jaunais Gads',
     'nb' => 'første nyttårsdag',
     'nl' => 'Nieuwjaar',

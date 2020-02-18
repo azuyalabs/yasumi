@@ -33,6 +33,7 @@ return [
     'it' => 'Natale',
     'ko' => '기독탄신일',
     'lt' => 'Šv. Kalėdos',
+    'lu' => 'Noël',
     'lv' => 'Ziemassvētki',
     'nb' => 'første juledag',
     'nl' => 'eerste kerstdag',

@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 - Remembrance Day for Homeland War Victims and Remembrance Day for the Victims of Vukovar and Skabrnja is a new official holiday since 2020 in Croatia. [\#203](https://github.com/azuyalabs/yasumi/pull/203) ([krukru](https://github.com/krukru))
 
 ### Added
+- Added Luxembourg Provider [\#205](https://github.com/azuyalabs/yasumi/pull/205) ([Arkounay](https://github.com/Arkounay))
 - Catalan translations for holidays in Catalonia, Valencian Community, Balearic Islands and Aragon [\#189](https://github.com/azuyalabs/yasumi/pull/189) ([c960657](https://github.com/c960657))
 - Added French translation for Second Christmas Day [\#188](https://github.com/azuyalabs/yasumi/pull/188) ([Arkounay](https://github.com/Arkounay))
 - Additional Dates for Australia/Victoria:AFL Grand Final Friday  [\#190](https://github.com/azuyalabs/yasumi/pull/190) ([brucealdridge](https://github.com/brucealdridge))
