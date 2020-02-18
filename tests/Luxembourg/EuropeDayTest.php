@@ -20,7 +20,7 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class containing tests for Victory in Europe Day in Luxembourg.
+ * Class containing tests for Europe Day in Luxembourg.
  */
 class EuropeDayTest extends LuxembourgBaseTestCase implements YasumiTestCaseInterface
 {
@@ -35,11 +35,11 @@ class EuropeDayTest extends LuxembourgBaseTestCase implements YasumiTestCaseInte
     public const ESTABLISHMENT_YEAR = 2019;
 
     /**
-     * Tests Victory In Europe Day on or after 1945.
+     * Tests Europe Day on or after 2019.
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testEuropeDayOnAfter1945()
+    public function testEuropeDayOnAfter2019()
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -51,7 +51,7 @@ class EuropeDayTest extends LuxembourgBaseTestCase implements YasumiTestCaseInte
     }
 
     /**
-     * Tests Victory In Europe Day before 1945.
+     * Tests Europe Day before 2019.
      * @throws ReflectionException
      */
     public function testEuropeDayBefore2019()
@@ -64,7 +64,7 @@ class EuropeDayTest extends LuxembourgBaseTestCase implements YasumiTestCaseInte
     }
 
     /**
-     * Tests translated name of Victory in Europe Day.
+     * Tests translated name of Europe Day.
      * @throws ReflectionException
      */
     public function testTranslation(): void

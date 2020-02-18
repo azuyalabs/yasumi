@@ -14,6 +14,7 @@ namespace Yasumi\tests\Luxembourg;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\Provider\Luxembourg;
 
 /**
  * Class for testing holidays in Luxembourg.
@@ -31,11 +32,10 @@ class LuxembourgTest extends LuxembourgBaseTestCase
      */
     public function testOfficialHolidays(): void
     {
-        $this->assertDefinedHolidays([
+        $holidays = [
             'newYearsDay',
             'easterMonday',
             'internationalWorkersDay',
-            'europeDay',
             'ascensionDay',
             'pentecostMonday',
             'nationalDay',
@@ -43,7 +43,15 @@ class LuxembourgTest extends LuxembourgBaseTestCase
             'allSaintsDay',
             'christmasDay',
             'secondChristmasDay',
-        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
+        ];
+
+        $year = $this->generateRandomYear();
+
+        if ($year >= Luxembourg::EUROPE_DAY_START_YEAR) {
+            $holidays[] = 'europeDay';
+        }
+
+        $this->assertDefinedHolidays($holidays, self::REGION, $year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
@@ -52,7 +60,7 @@ class LuxembourgTest extends LuxembourgBaseTestCase
      */
     public function testObservedHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_OBSERVANCE);
     }
 
     /**
@@ -61,7 +69,7 @@ class LuxembourgTest extends LuxembourgBaseTestCase
      */
     public function testSeasonalHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
+        $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_SEASON);
     }
 
     /**
@@ -70,7 +78,7 @@ class LuxembourgTest extends LuxembourgBaseTestCase
      */
     public function testBankHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_BANK);
+        $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_BANK);
     }
 
     /**
@@ -79,14 +87,6 @@ class LuxembourgTest extends LuxembourgBaseTestCase
      */
     public function testOtherHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
-    }
-
-    /**
-     * Initial setup of this Test Case
-     */
-    protected function setUp(): void
-    {
-        $this->year = $this->generateRandomYear(1945);
+        $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_OTHER);
     }
 }

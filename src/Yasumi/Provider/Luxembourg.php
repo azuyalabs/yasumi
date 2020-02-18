@@ -15,6 +15,8 @@ class Luxembourg extends AbstractProvider
 {
     use CommonHolidays, ChristianHolidays;
 
+    public const EUROPE_DAY_START_YEAR = 2019;
+
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
