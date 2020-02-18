@@ -24,6 +24,7 @@ return [
     'it' => 'Festa di Tutti i Santi',
     'it_CH' => 'Ognissanti',
     'lt' => 'Visų šventųjų diena (Vėlinės)',
+    'lu' => 'Toussaint',
     'nl' => 'Allerheiligen',
     'pl' => 'Uroczystość Wszystkich Świętych',
     'pt' => 'Dia de todos os Santos',

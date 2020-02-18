@@ -20,6 +20,7 @@ return [
     'fi' => 'Helatorstai',
     'fr' => 'Ascension',
     'it' => 'Ascensione',
+    'lu' => 'Ascension',
     'nb' => 'Kristi himmelfartsdag',
     'nl' => 'Hemelvaart',
     'sv' => 'Kristi himmelsfärdsdag',
