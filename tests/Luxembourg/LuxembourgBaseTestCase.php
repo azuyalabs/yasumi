@@ -35,5 +35,5 @@ abstract class LuxembourgBaseTestCase extends TestCase
     /**
      * Locale that is considered common for this provider
      */
-    public const LOCALE = 'lu';
+    public const LOCALE = 'fr_LU';
 }

@@ -70,8 +70,7 @@ class Luxembourg extends AbstractProvider
         if ($this->year >= 2019) {
             $this->addHoliday(new Holiday('europeDay', [
                 'en_US' => 'Europe day',
-                'fr_FR' => 'La Journée de l\'Europe',
-                'lu' => 'La Journée de l\'Europe',
+                'fr' => 'La Journée de l’Europe',
             ], new DateTime("$this->year-5-9", new DateTimeZone($this->timezone)), $this->locale));
         }
     }
@@ -96,8 +95,7 @@ class Luxembourg extends AbstractProvider
     {
         $this->addHoliday(new Holiday('nationalDay', [
             'en_US' => 'National day',
-            'fr_FR' => 'La Fête nationale',
-            'lu' => 'La Fête nationale',
+            'fr' => 'La Fête nationale',
         ], new DateTime("$this->year-6-23", new DateTimeZone($this->timezone)), $this->locale));
     }
 }

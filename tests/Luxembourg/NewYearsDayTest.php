@@ -53,7 +53,7 @@ class NewYearsDayTest extends LuxembourgBaseTestCase implements YasumiTestCaseIn
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'Jour de l\'An']
+            [self::LOCALE => 'Jour de l’An']
         );
     }
 
