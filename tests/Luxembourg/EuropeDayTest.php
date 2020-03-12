@@ -73,7 +73,7 @@ class EuropeDayTest extends LuxembourgBaseTestCase implements YasumiTestCaseInte
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'La Journée de l\'Europe']
+            [self::LOCALE => 'La Journée de l’Europe']
         );
     }
 

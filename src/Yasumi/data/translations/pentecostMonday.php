@@ -21,9 +21,8 @@ return [
     'ga' => 'Luan Cincíse',
     'hu' => 'Pünkösdhétfő',
     'it' => 'Lunedi di Pentecoste',
-    'lu' => 'Lundi de Pentecôte',
-    'nb' => 'Andre pinsedag',
-    'nl' => 'Tweede pinksterdag',
-    'nl_BE' => 'Pinkstermaandag',
+    'nb' => 'andre pinsedag',
+    'nl' => 'tweede pinksterdag',
+    'nl_BE' => 'pinkstermaandag',
     'ro' => 'A doua zi de Rusalii',
 ];

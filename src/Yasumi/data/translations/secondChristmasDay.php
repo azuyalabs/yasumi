@@ -27,7 +27,6 @@ return [
     'hu' => 'Karácsony másnapja',
     'ko' => '성탄절 연휴',
     'lt' => 'Kalėdos (antra diena)',
-    'lu' => 'Lendemain de Noël',
     'lv' => 'Otrie Ziemassvētki',
     'nb' => 'andre juledag',
     'nl' => 'tweede kerstdag',

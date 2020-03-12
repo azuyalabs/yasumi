@@ -23,7 +23,6 @@ return [
     'it' => 'Assunzione di Maria Vergine',
     'it_CH' => 'Assunzione',
     'lt' => 'Žolinė (Švč. Mergelės Marijos ėmimo į dangų diena)',
-    'lu' => 'Assomption',
     'nl' => 'Onze Lieve Vrouw hemelvaart',
     'pl' => 'Wniebowzięcie Najświętszej Marii Panny',
     'pt' => 'Assunção de Nossa Senhora',
