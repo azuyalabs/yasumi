@@ -25,7 +25,7 @@ return [
     'fi' => '2. joulupäivä',
     'fr' => 'Saint-Étienne',
     'fr_CA' => 'Lendemain de Noël',
-    'fr_LU' => 'Lendemain de Noël',
+    'fr_LU' => 'Deuxième jour de Noël',
     'hu' => 'Karácsony másnapja',
     'ko' => '성탄절 연휴',
     'lt' => 'Kalėdos (antra diena)',
