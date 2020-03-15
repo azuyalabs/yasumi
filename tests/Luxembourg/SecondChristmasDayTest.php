@@ -64,7 +64,7 @@ class SecondChristmasDayTest extends LuxembourgBaseTestCase implements YasumiTes
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'Lendemain de Noël']
+            [self::LOCALE => 'Deuxième jour de Noël']
         );
     }
 
