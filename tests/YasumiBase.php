@@ -85,8 +85,6 @@ trait YasumiBase
         foreach ($expectedHolidays as $holiday) {
             $this->assertArrayHasKey($holiday, \iterator_to_array($holidays));
         }
-
-        unset($holidays);
     }
 
     /**
@@ -114,11 +112,8 @@ trait YasumiBase
         $holiday = $holidays->getHoliday($shortName);
 
         $this->assertInstanceOf(Holiday::class, $holiday);
-        $this->assertNotNull($holiday);
         $this->assertEquals($expected, $holiday);
         $this->assertTrue($holidays->isHoliday($holiday));
-
-        unset($holiday, $holidays);
     }
 
     /**
@@ -144,8 +139,6 @@ trait YasumiBase
         $holiday = $holidays->getHoliday($shortName);
 
         $this->assertNull($holiday);
-
-        unset($holiday, $holidays);
     }
 
     /**
@@ -173,11 +166,8 @@ trait YasumiBase
         $holiday = $holidays->getHoliday('substituteHoliday:' . $shortName);
 
         $this->assertInstanceOf(SubstituteHoliday::class, $holiday);
-        $this->assertNotNull($holiday);
         $this->assertEquals($expected, $holiday);
         $this->assertTrue($holidays->isHoliday($holiday));
-
-        unset($holiday, $holidays);
     }
 
     /**
@@ -230,7 +220,6 @@ trait YasumiBase
         $holiday = $holidays->getHoliday($shortName);
 
         $this->assertInstanceOf(Holiday::class, $holiday);
-        $this->assertNotNull($holiday);
         $this->assertTrue($holidays->isHoliday($holiday));
 
         if (\is_array($translations) && !empty($translations)) {
@@ -253,8 +242,6 @@ trait YasumiBase
                 $this->assertEquals($name, $translation);
             }
         }
-
-        unset($holiday, $holidays);
     }
 
     /**
@@ -281,10 +268,7 @@ trait YasumiBase
         $holiday = $holidays->getHoliday($shortName);
 
         $this->assertInstanceOf(Holiday::class, $holiday);
-        $this->assertNotNull($holiday);
         $this->assertEquals($type, $holiday->getType());
-
-        unset($holiday, $holidays);
     }
 
     /**
@@ -312,11 +296,8 @@ trait YasumiBase
         $holiday = $holidays->getHoliday($shortName);
 
         $this->assertInstanceOf(Holiday::class, $holiday);
-        $this->assertNotNull($holiday);
         $this->assertTrue($holidays->isHoliday($holiday));
         $this->assertEquals($expectedDayOfWeek, $holiday->format('l'));
-
-        unset($holiday, $holidays);
     }
 
     /**
