@@ -104,53 +104,6 @@ class Australia extends AbstractProvider
     }
 
     /**
-     * Function to simplify moving holidays to mondays if required
-     *
-     * @param string $shortName
-     * @param DateTime $date
-     * @param array $names
-     * @param bool $moveFromSaturday
-     * @param bool $moveFromSunday
-     * @param string $type
-     *
-     * @throws InvalidDateException
-     * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
-     * @throws \Exception
-     */
-    public function calculateHoliday(
-        string $shortName,
-        DateTime $date,
-        array $names = [],
-        ?bool $moveFromSaturday = null,
-        ?bool $moveFromSunday = null,
-        ?string $type = null
-    ): void {
-        $holiday = new Holiday(
-            $shortName,
-            $names,
-            $date,
-            $this->locale,
-            $type ?? Holiday::TYPE_OFFICIAL
-        );
-        $this->addHoliday($holiday);
-
-        $day = (int)$date->format('w');
-        if ((0 === $day && ($moveFromSunday ?? true)) || (6 === $day && ($moveFromSaturday ?? true))) {
-            $date = clone $date;
-            $date = $date->add(0 === $day ? new DateInterval('P1D') : new DateInterval('P2D'));
-
-            $this->addHoliday(new SubstituteHoliday(
-                $holiday,
-                [],
-                $date,
-                $this->locale,
-                $type ?? Holiday::TYPE_OFFICIAL
-            ));
-        }
-    }
-
-    /**
      * Australia Day.
      *
      * Australia Day is the official National Day of Australia. Celebrated annually on 26 January,
@@ -172,7 +125,27 @@ class Australia extends AbstractProvider
     {
         $date = new DateTime("$this->year-01-26", new DateTimeZone($this->timezone));
 
-        $this->calculateHoliday('australiaDay', $date, ['en' => 'Australia Day']);
+        $holiday = new Holiday(
+            'australiaDay',
+            ['en' => 'Australia Day'],
+            $date,
+            $this->locale,
+            Holiday::TYPE_OFFICIAL
+        );
+        $this->addHoliday($holiday);
+
+        $day = (int)$date->format('w');
+        if (0 === $day || 6 === $day) {
+            $date = $date->add(0 === $day ? new DateInterval('P1D') : new DateInterval('P2D'));
+
+            $this->addHoliday(new SubstituteHoliday(
+                $holiday,
+                [],
+                $date,
+                $this->locale,
+                Holiday::TYPE_OFFICIAL
+            ));
+        }
     }
 
     /**
