@@ -15,7 +15,6 @@ namespace Yasumi\Provider;
 use DateInterval;
 use DateTime;
 use DateTimeZone;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\SubstituteHoliday;
