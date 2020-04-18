@@ -57,7 +57,7 @@ class HobartShowTest extends SouthBaseTestCase implements YasumiTestCaseInterfac
      */
     public function HolidayDataProvider(): array
     {
-        $data = [
+        return [
             [2010, '2010-10-21'],
             [2011, '2011-10-20'],
             [2012, '2012-10-25'],
@@ -70,8 +70,6 @@ class HobartShowTest extends SouthBaseTestCase implements YasumiTestCaseInterfac
             [2019, '2019-10-24'],
             [2020, '2020-10-22'],
         ];
-
-        return $data;
     }
 
     /**

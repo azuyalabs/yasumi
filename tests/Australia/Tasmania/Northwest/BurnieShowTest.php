@@ -57,7 +57,7 @@ class BurnieShowTest extends NorthwestBaseTestCase implements YasumiTestCaseInte
      */
     public function HolidayDataProvider(): array
     {
-        $data = [
+        return [
             [2010, '2010-10-01'],
             [2011, '2011-09-30'],
             [2012, '2012-10-05'],
@@ -70,8 +70,6 @@ class BurnieShowTest extends NorthwestBaseTestCase implements YasumiTestCaseInte
             [2019, '2019-10-04'],
             [2020, '2020-10-02'],
         ];
-
-        return $data;
     }
 
     /**

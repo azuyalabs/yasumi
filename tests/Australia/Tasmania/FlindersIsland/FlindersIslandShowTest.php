@@ -57,7 +57,7 @@ class FlindersIslandShowTest extends FlindersIslandBaseTestCase implements Yasum
      */
     public function HolidayDataProvider(): array
     {
-        $data = [
+        return [
             [2010, '2010-10-15'],
             [2011, '2011-10-14'],
             [2012, '2012-10-19'],
@@ -70,8 +70,6 @@ class FlindersIslandShowTest extends FlindersIslandBaseTestCase implements Yasum
             [2019, '2019-10-18'],
             [2020, '2020-10-16'],
         ];
-
-        return $data;
     }
 
     /**

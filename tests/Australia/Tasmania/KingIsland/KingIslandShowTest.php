@@ -57,7 +57,7 @@ class KingIslandShowTest extends KingIslandBaseTestCase implements YasumiTestCas
      */
     public function HolidayDataProvider(): array
     {
-        $data = [
+        return [
             [2010, '2010-03-02'],
             [2011, '2011-03-01'],
             [2012, '2012-03-06'],
@@ -70,8 +70,6 @@ class KingIslandShowTest extends KingIslandBaseTestCase implements YasumiTestCas
             [2019, '2019-03-05'],
             [2020, '2020-03-03'],
         ];
-
-        return $data;
     }
 
     /**

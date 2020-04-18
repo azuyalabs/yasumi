@@ -62,7 +62,7 @@ class QueensBirthdayTest extends QueenslandBaseTestCase implements YasumiTestCas
      */
     public function HolidayDataProvider(): array
     {
-        $data = [
+        return [
             [2010, '2010-06-14'],
             [2011, '2011-06-13'],
             [2012, '2012-10-01'],
@@ -75,8 +75,6 @@ class QueensBirthdayTest extends QueenslandBaseTestCase implements YasumiTestCas
             [2019, '2019-10-07'],
             [2020, '2020-10-05'],
         ];
-
-        return $data;
     }
 
     /**

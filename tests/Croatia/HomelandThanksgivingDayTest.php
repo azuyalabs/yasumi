@@ -35,6 +35,11 @@ class HomelandThanksgivingDayTest extends CroatiaBaseTestCase implements YasumiT
     public const ESTABLISHMENT_YEAR = 1995;
 
     /**
+     * The year in which the holiday name was changed
+     */
+    public const NAME_CHANGED_YEAR = 2020;
+
+    /**
      * Tests Homeland Thanksgiving Day on or after 1995.
      * @throws Exception
      * @throws ReflectionException
@@ -69,11 +74,22 @@ class HomelandThanksgivingDayTest extends CroatiaBaseTestCase implements YasumiT
      */
     public function testTranslation(): void
     {
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::NAME_CHANGED_YEAR - 1);
+        $expectedText = 'Dan domovinske zahvalnosti';
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Dan domovinske zahvalnosti']
+            $year,
+            [self::LOCALE => $expectedText]
+        );
+
+        $year = $this->generateRandomYear(self::NAME_CHANGED_YEAR);
+        $expectedText = 'Dan pobjede i domovinske zahvalnosti i Dan hrvatskih branitelja';
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            [self::LOCALE => $expectedText]
         );
     }
 

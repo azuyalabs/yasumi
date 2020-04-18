@@ -53,7 +53,7 @@ class Berlin extends Germany
             $this->addHoliday($this->internationalWomensDay($this->year, $this->timezone, $this->locale));
         }
 
-        if ($this->year == 2020) {
+        if (2020 === $this->year) {
             $this->addHoliday($this->dayOfLiberation($this->timezone, $this->locale));
         }
     }

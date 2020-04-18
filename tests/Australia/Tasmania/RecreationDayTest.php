@@ -57,7 +57,7 @@ class RecreationDayTest extends TasmaniaBaseTestCase implements YasumiTestCaseIn
      */
     public function HolidayDataProvider(): array
     {
-        $data = [
+        return [
             [2010, '2010-11-01'],
             [2011, '2011-11-07'],
             [2012, '2012-11-05'],
@@ -70,8 +70,6 @@ class RecreationDayTest extends TasmaniaBaseTestCase implements YasumiTestCaseIn
             [2019, '2019-11-04'],
             [2020, '2020-11-02'],
         ];
-
-        return $data;
     }
 
     /**

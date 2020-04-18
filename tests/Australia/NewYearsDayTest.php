@@ -73,7 +73,7 @@ class NewYearsDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInt
      */
     public function HolidayDataProvider(): array
     {
-        $data = [
+        return [
             [2010, '2010-01-01', null],
             [2011, '2011-01-01', '2011-01-03'],
             [2012, '2012-01-01', '2012-01-02'],
@@ -86,8 +86,6 @@ class NewYearsDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInt
             [2019, '2019-01-01', null],
             [2020, '2020-01-01', null],
         ];
-
-        return $data;
     }
 
     /**

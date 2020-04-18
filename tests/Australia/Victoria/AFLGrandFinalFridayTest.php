@@ -98,7 +98,7 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements YasumiTest
      */
     public function HolidayDataProvider(): array
     {
-        $data = [
+        return [
             [2015, '2015-10-02'],
             [2016, '2016-09-30'],
             [2017, '2017-09-29'],
@@ -106,7 +106,5 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements YasumiTest
             [2019, '2019-09-27'],
             [2020, '2020-09-25'],
         ];
-
-        return $data;
     }
 }

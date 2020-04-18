@@ -62,7 +62,7 @@ class MelbourneCupDayTest extends VictoriaBaseTestCase implements YasumiTestCase
      */
     public function HolidayDataProvider(): array
     {
-        $data = [
+        return [
             [2010, '2010-11-02'],
             [2011, '2011-11-01'],
             [2012, '2012-11-06'],
@@ -75,8 +75,6 @@ class MelbourneCupDayTest extends VictoriaBaseTestCase implements YasumiTestCase
             [2019, '2019-11-05'],
             [2020, '2020-11-03'],
         ];
-
-        return $data;
     }
 
     /**

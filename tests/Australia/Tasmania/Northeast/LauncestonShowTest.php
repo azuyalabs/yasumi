@@ -57,7 +57,7 @@ class LauncestonShowTest extends NortheastBaseTestCase implements YasumiTestCase
      */
     public function HolidayDataProvider(): array
     {
-        $data = [
+        return [
             [2010, '2010-10-07'],
             [2011, '2011-10-06'],
             [2012, '2012-10-11'],
@@ -70,8 +70,6 @@ class LauncestonShowTest extends NortheastBaseTestCase implements YasumiTestCase
             [2019, '2019-10-10'],
             [2020, '2020-10-08'],
         ];
-
-        return $data;
     }
 
     /**

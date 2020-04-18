@@ -62,7 +62,7 @@ class QueensBirthdayTest extends NTBaseTestCase implements YasumiTestCaseInterfa
      */
     public function HolidayDataProvider(): array
     {
-        $data = [
+        return [
             [2010, '2010-06-14'],
             [2011, '2011-06-13'],
             [2012, '2012-06-11'],
@@ -75,8 +75,6 @@ class QueensBirthdayTest extends NTBaseTestCase implements YasumiTestCaseInterfa
             [2019, '2019-06-10'],
             [2020, '2020-06-08'],
         ];
-
-        return $data;
     }
 
     /**
