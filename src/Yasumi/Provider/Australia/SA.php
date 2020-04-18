@@ -111,13 +111,13 @@ class SA extends Australia
      */
     private function calculateQueensBirthday(): void
     {
-        $this->calculateHoliday(
+        $this->addHoliday(new Holiday(
             'queensBirthday',
-            new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->timezone)),
             [],
-            false,
-            false
-        );
+            new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->timezone)),
+            $this->locale,
+            Holiday::TYPE_OFFICIAL
+        ));
     }
 
     /**
@@ -149,13 +149,13 @@ class SA extends Australia
                 $cupDay = 'third monday of may ' . $this->year;
             }
 
-            $this->calculateHoliday(
+            $this->addHoliday(new Holiday(
                 'adelaideCup',
-                new DateTime($cupDay, new DateTimeZone($this->timezone)),
                 ['en' => 'Adelaide Cup'],
-                false,
-                false
-            );
+                new DateTime($cupDay, new DateTimeZone($this->timezone)),
+                $this->locale,
+                Holiday::TYPE_OFFICIAL
+            ));
         }
     }
 
@@ -167,27 +167,69 @@ class SA extends Australia
     private function calculateProclamationDay(): void
     {
         $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->timezone));
-        $this->calculateHoliday('christmasDay', $christmasDay, [], false, false);
+        $this->addHoliday(new Holiday(
+            'christmasDay',
+            [],
+            $christmasDay,
+            $this->locale,
+            Holiday::TYPE_OFFICIAL
+        ));
         switch ($christmasDay->format('w')) {
             case 0: // sunday
                 $christmasDay->add(new DateInterval('P1D'));
-                $this->calculateHoliday('christmasHoliday', $christmasDay, ['en' => 'Christmas Holiday'], false, false);
+                $this->addHoliday(new Holiday(
+                    'christmasHoliday',
+                    ['en' => 'Christmas Holiday'],
+                    $christmasDay,
+                    $this->locale,
+                    Holiday::TYPE_OFFICIAL
+                ));
                 $proclamationDay = $christmasDay->add(new DateInterval('P1D'));
-                $this->calculateHoliday('proclamationDay', $proclamationDay, ['en' => 'Proclamation Day'], false, false);
+                $this->addHoliday(new Holiday(
+                    'proclamationDay',
+                    ['en' => 'Proclamation Day'],
+                    $christmasDay,
+                    $this->locale,
+                    Holiday::TYPE_OFFICIAL
+                ));
                 break;
             case 5: // friday
                 $proclamationDay = $christmasDay->add(new DateInterval('P3D'));
-                $this->calculateHoliday('proclamationDay', $proclamationDay, ['en' => 'Proclamation Day'], false, false);
+                $this->addHoliday(new Holiday(
+                    'proclamationDay',
+                    ['en' => 'Proclamation Day'],
+                    $christmasDay,
+                    $this->locale,
+                    Holiday::TYPE_OFFICIAL
+                ));
                 break;
             case 6: // saturday
                 $christmasDay->add(new DateInterval('P2D'));
-                $this->calculateHoliday('christmasHoliday', $christmasDay, ['en' => 'Christmas Holiday'], false, false);
+                $this->addHoliday(new Holiday(
+                    'christmasHoliday',
+                    ['en' => 'Christmas Holiday'],
+                    $christmasDay,
+                    $this->locale,
+                    Holiday::TYPE_OFFICIAL
+                ));
                 $proclamationDay = $christmasDay->add(new DateInterval('P1D'));
-                $this->calculateHoliday('proclamationDay', $proclamationDay, ['en' => 'Proclamation Day'], false, false);
+                $this->addHoliday(new Holiday(
+                    'proclamationDay',
+                    ['en' => 'Proclamation Day'],
+                    $christmasDay,
+                    $this->locale,
+                    Holiday::TYPE_OFFICIAL
+                ));
                 break;
             default: // monday-thursday
                 $proclamationDay = $christmasDay->add(new DateInterval('P1D'));
-                $this->calculateHoliday('proclamationDay', $proclamationDay, ['en' => 'Proclamation Day'], false, false);
+                $this->addHoliday(new Holiday(
+                    'proclamationDay',
+                    ['en' => 'Proclamation Day'],
+                    $christmasDay,
+                    $this->locale,
+                    Holiday::TYPE_OFFICIAL
+                ));
                 break;
         }
     }

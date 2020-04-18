@@ -74,13 +74,13 @@ class WA extends Australia
             $birthDay = '2012-10-01';
         }
 
-        $this->calculateHoliday(
+        $this->addHoliday(new Holiday(
             'queensBirthday',
-            new DateTime($birthDay, new DateTimeZone($this->timezone)),
             [],
-            false,
-            false
-        );
+            new DateTime($birthDay, new DateTimeZone($this->timezone)),
+            $this->locale,
+            Holiday::TYPE_OFFICIAL
+        ));
     }
 
     /**
@@ -105,12 +105,12 @@ class WA extends Australia
      */
     private function calculateWesternAustraliaDay(): void
     {
-        $this->calculateHoliday(
+        $this->addHoliday(new Holiday(
             'westernAustraliaDay',
-            new DateTime('first monday of june ' . $this->year, new DateTimeZone($this->timezone)),
             ['en' => 'Western Australia Day'],
-            false,
-            false
-        );
+            new DateTime('first monday of june ' . $this->year, new DateTimeZone($this->timezone)),
+            $this->locale,
+            Holiday::TYPE_OFFICIAL
+        ));
     }
 }
