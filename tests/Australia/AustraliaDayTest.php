@@ -58,16 +58,16 @@ class AustraliaDayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
     public function testSubstituteHoliday($year, $expected)
     {
         if ($expected) {
-            $this->assertHoliday(
+            $this->assertSubstituteHoliday(
                 $this->region,
-                'substituteHoliday:' . self::HOLIDAY,
+                self::HOLIDAY,
                 $year,
                 new DateTime($expected, new DateTimeZone($this->timezone))
             );
         } else {
-            $this->assertNotHoliday(
+            $this->assertNotSubstituteHoliday(
                 $this->region,
-                'substituteHoliday:' . self::HOLIDAY,
+                self::HOLIDAY,
                 $year
             );
         }
