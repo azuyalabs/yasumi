@@ -13,10 +13,10 @@
 namespace Yasumi\Provider\Australia;
 
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia;
+use Yasumi\Provider\DateTimeZoneFactory;
 
 /**
  * Provider for all holidays in Queensland (Australia).
@@ -72,7 +72,7 @@ class Queensland extends Australia
 
         $this->calculateHoliday(
             'queensBirthday',
-            new DateTime($birthDay, new DateTimeZone($this->timezone)),
+            new DateTime($birthDay, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             [],
             false,
             false
@@ -86,9 +86,9 @@ class Queensland extends Australia
      */
     private function calculateLabourDay(): void
     {
-        $date = new DateTime("first monday of may $this->year", new DateTimeZone($this->timezone));
+        $date = new DateTime("first monday of may $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         if (2013 === $this->year || 2014 === $this->year || 2015 === $this->year) {
-            $date = new DateTime("first monday of october $this->year", new DateTimeZone($this->timezone));
+            $date = new DateTime("first monday of october $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         }
 
         $this->addHoliday(new Holiday('labourDay', [], $date, $this->locale));

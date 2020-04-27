@@ -13,11 +13,11 @@
 namespace Yasumi\Provider\Switzerland;
 
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
+use Yasumi\Provider\DateTimeZoneFactory;
 use Yasumi\Provider\Switzerland;
 
 /**
@@ -83,7 +83,7 @@ class Neuchatel extends Switzerland
                 [
                     'fr' => 'Instauration de la République',
                 ],
-                new DateTime($this->year . '-03-01', new DateTimeZone($this->timezone)),
+                new DateTime($this->year . '-03-01', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OTHER
             ));

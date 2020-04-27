@@ -13,11 +13,11 @@
 namespace Yasumi\Provider\Spain;
 
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
+use Yasumi\Provider\DateTimeZoneFactory;
 use Yasumi\Provider\Spain;
 
 /**
@@ -81,7 +81,7 @@ class Asturias extends Spain
             $this->addHoliday(new Holiday(
                 'asturiasDay',
                 ['es' => 'Día de Asturias'],
-                new DateTime("$this->year-9-8", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-9-8", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

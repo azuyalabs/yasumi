@@ -14,7 +14,6 @@
 namespace Yasumi\Provider;
 
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -69,7 +68,7 @@ class Ireland extends AbstractProvider
         $this->addHoliday(new Holiday(
             'augustHoliday',
             ['en' => 'August Holiday', 'ga' => 'Lá Saoire i mí Lúnasa'],
-            new DateTime("next monday $this->year-7-31", new DateTimeZone($this->timezone)),
+            new DateTime("next monday $this->year-7-31", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
         $this->calculateOctoberHoliday();
@@ -158,7 +157,7 @@ class Ireland extends AbstractProvider
         $holiday = new Holiday(
             'christmasDay',
             ['en' => 'Christmas Day', 'ga' => 'Lá Nollag'],
-            new DateTime($this->year . '-12-25', new DateTimeZone($this->timezone)),
+            new DateTime($this->year . '-12-25', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         );
 
@@ -198,7 +197,7 @@ class Ireland extends AbstractProvider
         $holiday = new Holiday(
             'stStephensDay',
             [],
-            new DateTime($this->year . '-12-26', new DateTimeZone($this->timezone)),
+            new DateTime($this->year . '-12-26', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         );
 
@@ -243,7 +242,7 @@ class Ireland extends AbstractProvider
         $holiday = new Holiday(
             'stPatricksDay',
             ['en' => 'St. Patrick’s Day', 'ga' => 'Lá Fhéile Pádraig'],
-            new DateTime($this->year . '-3-17', new DateTimeZone($this->timezone)),
+            new DateTime($this->year . '-3-17', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         );
 
@@ -289,7 +288,7 @@ class Ireland extends AbstractProvider
         $this->addHoliday(new Holiday(
             'mayDay',
             ['en' => 'May Day', 'ga' => 'Lá Bealtaine'],
-            new DateTime("next monday $this->year-4-30", new DateTimeZone($this->timezone)),
+            new DateTime("next monday $this->year-4-30", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -317,7 +316,7 @@ class Ireland extends AbstractProvider
         $this->addHoliday(new Holiday(
             'juneHoliday',
             ['en' => 'June Holiday', 'ga' => 'Lá Saoire i mí an Mheithimh'],
-            new DateTime("next monday $this->year-5-31", new DateTimeZone($this->timezone)),
+            new DateTime("next monday $this->year-5-31", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -344,7 +343,7 @@ class Ireland extends AbstractProvider
         $this->addHoliday(new Holiday(
             'octoberHoliday',
             ['en' => 'October Holiday', 'ga' => 'Lá Saoire i mí Dheireadh Fómhair'],
-            new DateTime("previous monday $this->year-11-01", new DateTimeZone($this->timezone)),
+            new DateTime("previous monday $this->year-11-01", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }

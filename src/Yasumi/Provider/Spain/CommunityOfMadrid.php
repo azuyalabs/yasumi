@@ -13,11 +13,11 @@
 namespace Yasumi\Provider\Spain;
 
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
+use Yasumi\Provider\DateTimeZoneFactory;
 use Yasumi\Provider\Spain;
 
 /**
@@ -84,7 +84,7 @@ class CommunityOfMadrid extends Spain
         $this->addHoliday(new Holiday(
             'dosdeMayoUprisingDay',
             ['es' => 'Fiesta de la Comunidad de Madrid'],
-            new DateTime("$this->year-5-2", new DateTimeZone($this->timezone)),
+            new DateTime("$this->year-5-2", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }

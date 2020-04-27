@@ -14,10 +14,10 @@ namespace Yasumi\Provider\UnitedKingdom;
 
 use DateInterval;
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
+use Yasumi\Provider\DateTimeZoneFactory;
 use Yasumi\Provider\UnitedKingdom;
 use Yasumi\SubstituteHoliday;
 
@@ -99,7 +99,7 @@ class Scotland extends UnitedKingdom
         $secondNewYearsDay = new Holiday(
             'secondNewYearsDay',
             [],
-            new DateTime("$this->year-1-2", new DateTimeZone($this->timezone)),
+            new DateTime("$this->year-1-2", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             $type
         );
@@ -153,7 +153,7 @@ class Scotland extends UnitedKingdom
         $this->addHoliday(new Holiday(
             'summerBankHoliday',
             ['en' => 'August Bank Holiday'],
-            new DateTime("first monday of august $this->year", new DateTimeZone($this->timezone)),
+            new DateTime("first monday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
         ));
@@ -180,7 +180,7 @@ class Scotland extends UnitedKingdom
         $holiday = new Holiday(
             'stAndrewsDay',
             [],
-            new DateTime($this->year . '-11-30', new DateTimeZone($this->timezone)),
+            new DateTime($this->year . '-11-30', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
         );

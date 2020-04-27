@@ -14,11 +14,11 @@
 namespace Yasumi\Provider\Spain;
 
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
+use Yasumi\Provider\DateTimeZoneFactory;
 use Yasumi\Provider\Spain;
 
 /**
@@ -81,7 +81,7 @@ class CastileAndLeon extends Spain
             $this->addHoliday(new Holiday(
                 'castileAndLeonDay',
                 ['es' => 'Día de Castilla y León'],
-                new DateTime("$this->year-4-23", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-4-23", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

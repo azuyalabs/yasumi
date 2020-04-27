@@ -13,10 +13,10 @@
 namespace Yasumi\Provider\Australia;
 
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia;
+use Yasumi\Provider\DateTimeZoneFactory;
 
 /**
  * Provider for all holidays in Western Australia (Australia).
@@ -76,7 +76,7 @@ class WA extends Australia
 
         $this->calculateHoliday(
             'queensBirthday',
-            new DateTime($birthDay, new DateTimeZone($this->timezone)),
+            new DateTime($birthDay, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             [],
             false,
             false
@@ -90,7 +90,7 @@ class WA extends Australia
      */
     private function calculateLabourDay(): void
     {
-        $date = new DateTime("first monday of march $this->year", new DateTimeZone($this->timezone));
+        $date = new DateTime("first monday of march $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
         $this->addHoliday(new Holiday('labourDay', [], $date, $this->locale));
     }
@@ -107,7 +107,7 @@ class WA extends Australia
     {
         $this->calculateHoliday(
             'westernAustraliaDay',
-            new DateTime('first monday of june ' . $this->year, new DateTimeZone($this->timezone)),
+            new DateTime('first monday of june ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             ['en' => 'Western Australia Day'],
             false,
             false

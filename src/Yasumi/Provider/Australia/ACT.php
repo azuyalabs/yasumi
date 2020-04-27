@@ -14,10 +14,10 @@ namespace Yasumi\Provider\Australia;
 
 use DateInterval;
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia;
+use Yasumi\Provider\DateTimeZoneFactory;
 
 /**
  * Provider for all holidays in Australian Capital Territory (Australia).
@@ -143,7 +143,7 @@ class ACT extends Australia
     {
         $this->calculateHoliday(
             'queensBirthday',
-            new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->timezone)),
+            new DateTime('second monday of june ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             [],
             false,
             false
@@ -157,7 +157,7 @@ class ACT extends Australia
      */
     private function calculateLabourDay(): void
     {
-        $date = new DateTime("first monday of october $this->year", new DateTimeZone($this->timezone));
+        $date = new DateTime("first monday of october $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
         $this->addHoliday(new Holiday('labourDay', [], $date, $this->locale));
     }
@@ -175,7 +175,7 @@ class ACT extends Australia
             new Holiday(
                 'canberraDay',
                 ['en' => 'Canberra Day'],
-                new DateTime($datePattern, new DateTimeZone($this->timezone)),
+                new DateTime($datePattern, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             )
         );
@@ -192,7 +192,7 @@ class ACT extends Australia
             return;
         }
 
-        $date = new DateTime($this->year . '-05-27', new DateTimeZone($this->timezone));
+        $date = new DateTime($this->year . '-05-27', DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $day = (int)$date->format('w');
         if (1 !== $day) {
             $date = $date->add(0 === $day ? new DateInterval('P1D') : new DateInterval('P' . (8 - $day) . 'D'));
