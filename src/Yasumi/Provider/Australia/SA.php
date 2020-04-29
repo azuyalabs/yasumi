@@ -14,10 +14,10 @@ namespace Yasumi\Provider\Australia;
 
 use DateInterval;
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia;
+use Yasumi\Provider\DateTimeZoneFactory;
 
 /**
  * Provider for all holidays in South Australia (Australia).
@@ -113,7 +113,7 @@ class SA extends Australia
     {
         $this->calculateHoliday(
             'queensBirthday',
-            new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->timezone)),
+            new DateTime('second monday of june ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             [],
             false,
             false
@@ -127,7 +127,7 @@ class SA extends Australia
      */
     private function calculateLabourDay(): void
     {
-        $date = new DateTime("first monday of october $this->year", new DateTimeZone($this->timezone));
+        $date = new DateTime("first monday of october $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
         $this->addHoliday(new Holiday('labourDay', ['en' => 'Labour Day'], $date, $this->locale));
     }
@@ -151,7 +151,7 @@ class SA extends Australia
 
             $this->calculateHoliday(
                 'adelaideCup',
-                new DateTime($cupDay, new DateTimeZone($this->timezone)),
+                new DateTime($cupDay, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 ['en' => 'Adelaide Cup'],
                 false,
                 false
@@ -166,7 +166,7 @@ class SA extends Australia
      */
     private function calculateProclamationDay(): void
     {
-        $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->timezone));
+        $christmasDay = new DateTime("$this->year-12-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $this->calculateHoliday('christmasDay', $christmasDay, [], false, false);
         switch ($christmasDay->format('w')) {
             case 0: // sunday

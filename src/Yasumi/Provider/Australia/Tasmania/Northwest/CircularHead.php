@@ -14,10 +14,10 @@ namespace Yasumi\Provider\Australia\Tasmania\Northwest;
 
 use DateInterval;
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia\Tasmania\Northwest;
+use Yasumi\Provider\DateTimeZoneFactory;
 
 /**
  * Provider for all holidays in Circular Head (Australia).
@@ -53,7 +53,7 @@ class CircularHead extends Northwest
      */
     private function calculateAGFEST(): void
     {
-        $date = new DateTime('first thursday of may ' . $this->year, new DateTimeZone($this->timezone));
+        $date = new DateTime('first thursday of may ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $date = $date->add(new DateInterval('P1D'));
         $this->addHoliday(new Holiday('agfest', ['en' => 'AGFEST'], $date, $this->locale));
     }
