@@ -25,9 +25,9 @@ class Luxembourg extends AbstractProvider
     /**
      * Initialize holidays for Luxembourg.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
