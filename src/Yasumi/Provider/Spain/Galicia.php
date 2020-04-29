@@ -13,11 +13,11 @@
 namespace Yasumi\Provider\Spain;
 
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
+use Yasumi\Provider\DateTimeZoneFactory;
 use Yasumi\Provider\Spain;
 
 /**
@@ -82,7 +82,7 @@ class Galicia extends Spain
             $this->addHoliday(new Holiday('galicianLiteratureDay', [
                 'es' => 'Día de las Letras Gallegas',
                 'gl' => 'Día das Letras Galegas',
-            ], new DateTime("$this->year-5-17", new DateTimeZone($this->timezone)), $this->locale));
+            ], new DateTime("$this->year-5-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
     }
 
@@ -109,7 +109,7 @@ class Galicia extends Spain
         if ($this->year >= 2000) {
             $this->addHoliday(new Holiday('stJamesDay', [
                 'es' => 'Santiago Apostol',
-            ], new DateTime("$this->year-7-25", new DateTimeZone($this->timezone)), $this->locale));
+            ], new DateTime("$this->year-7-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
     }
 }

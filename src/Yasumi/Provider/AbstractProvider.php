@@ -313,7 +313,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     public function count(): int
     {
-        $names = \array_map(static function (&$holiday) {
+        $names = \array_map(static function ($holiday) {
             if ($holiday instanceof SubstituteHoliday) {
                 return $holiday->substitutedHoliday->shortName;
             }

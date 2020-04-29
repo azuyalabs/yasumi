@@ -14,10 +14,10 @@ namespace Yasumi\Provider\Australia;
 
 use DateInterval;
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia;
+use Yasumi\Provider\DateTimeZoneFactory;
 
 /**
  * Provider for all holidays in Northern Territory (Australia).
@@ -106,7 +106,7 @@ class NT extends Australia
         $this->addHoliday(new Holiday(
             'queensBirthday',
             [],
-            new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->timezone)),
+            new DateTime('second monday of june ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));
@@ -119,7 +119,7 @@ class NT extends Australia
      */
     private function calculateMayDay(): void
     {
-        $date = new DateTime("first monday of may $this->year", new DateTimeZone($this->timezone));
+        $date = new DateTime("first monday of may $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
         $this->addHoliday(new Holiday('mayDay', ['en' => 'May Day'], $date, $this->locale));
     }
@@ -137,7 +137,7 @@ class NT extends Australia
         $this->addHoliday(new Holiday(
             'picnicDay',
             ['en' => 'Picnic Day'],
-            new DateTime('first monday of august ' . $this->year, new DateTimeZone($this->timezone)),
+            new DateTime('first monday of august ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));

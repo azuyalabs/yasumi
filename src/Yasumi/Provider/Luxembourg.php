@@ -3,7 +3,6 @@
 namespace Yasumi\Provider;
 
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -26,9 +25,9 @@ class Luxembourg extends AbstractProvider
     /**
      * Initialize holidays for Luxembourg.
      *
-     * @throws \Yasumi\Exception\InvalidDateException
+     * @throws InvalidDateException
      * @throws \InvalidArgumentException
-     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws UnknownLocaleException
      * @throws \Exception
      */
     public function initialize(): void
@@ -71,7 +70,7 @@ class Luxembourg extends AbstractProvider
             $this->addHoliday(new Holiday('europeDay', [
                 'en_US' => 'Europe day',
                 'fr' => 'La Journée de l’Europe',
-            ], new DateTime("$this->year-5-9", new DateTimeZone($this->timezone)), $this->locale));
+            ], new DateTime("$this->year-5-9", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
     }
 
@@ -96,6 +95,6 @@ class Luxembourg extends AbstractProvider
         $this->addHoliday(new Holiday('nationalDay', [
             'en_US' => 'National day',
             'fr' => 'La Fête nationale',
-        ], new DateTime("$this->year-6-23", new DateTimeZone($this->timezone)), $this->locale));
+        ], new DateTime("$this->year-6-23", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
     }
 }

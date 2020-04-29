@@ -14,7 +14,6 @@ namespace Yasumi\Provider;
 
 use DateInterval;
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\SubstituteHoliday;
@@ -70,7 +69,7 @@ class Australia extends AbstractProvider
      */
     private function calculateNewYearHolidays(): void
     {
-        $newYearsDay = new DateTime("$this->year-01-01", new DateTimeZone($this->timezone));
+        $newYearsDay = new DateTime("$this->year-01-01", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $this->addHoliday(new Holiday(
             'newYearsDay',
             [],
@@ -122,7 +121,7 @@ class Australia extends AbstractProvider
      */
     private function calculateAustraliaDay(): void
     {
-        $date = new DateTime("$this->year-01-26", new DateTimeZone($this->timezone));
+        $date = new DateTime("$this->year-01-26", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
         $holiday = new Holiday(
             'australiaDay',
@@ -169,7 +168,7 @@ class Australia extends AbstractProvider
             return;
         }
 
-        $date = new DateTime("$this->year-04-25", new DateTimeZone($this->timezone));
+        $date = new DateTime("$this->year-04-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $this->addHoliday(new Holiday(
             'anzacDay',
             [],
@@ -209,8 +208,8 @@ class Australia extends AbstractProvider
      */
     private function calculateChristmasDay(): void
     {
-        $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->timezone));
-        $boxingDay = new DateTime("$this->year-12-26", new DateTimeZone($this->timezone));
+        $christmasDay = new DateTime("$this->year-12-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $boxingDay = new DateTime("$this->year-12-26", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $this->addHoliday(new Holiday(
             'christmasDay',
             [],

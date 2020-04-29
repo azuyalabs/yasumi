@@ -13,7 +13,6 @@
 namespace Yasumi\Provider;
 
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -68,7 +67,7 @@ class Hungary extends AbstractProvider
             $this->addHoliday(new Holiday('memorialDay1848', [
                 'en' => 'Memorial day of the 1848 Revolution',
                 'hu' => 'Az 1848-as forradalom ünnepe',
-            ], new DateTime("$this->year-3-15", new DateTimeZone($this->timezone)), $this->locale));
+            ], new DateTime("$this->year-3-15", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
 
         /**
@@ -78,7 +77,7 @@ class Hungary extends AbstractProvider
             $this->addHoliday(new Holiday('stateFoundation', [
                 'en' => 'State Foundation Day',
                 'hu' => 'Az államalapítás ünnepe',
-            ], new DateTime("$this->year-8-20", new DateTimeZone($this->timezone)), $this->locale));
+            ], new DateTime("$this->year-8-20", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
 
         /**
@@ -88,7 +87,7 @@ class Hungary extends AbstractProvider
             $this->addHoliday(new Holiday('memorialDay1956', [
                 'en' => 'Memorial day of the 1956 Revolution',
                 'hu' => 'Az 1956-os forradalom ünnepe',
-            ], new DateTime("$this->year-10-23", new DateTimeZone($this->timezone)), $this->locale));
+            ], new DateTime("$this->year-10-23", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
     }
 }

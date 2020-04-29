@@ -13,10 +13,10 @@
 namespace Yasumi\Provider\Australia\Tasmania;
 
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia\Tasmania;
+use Yasumi\Provider\DateTimeZoneFactory;
 
 /**
  * Provider for all holidays in King Island (Australia).
@@ -55,7 +55,7 @@ class KingIsland extends Tasmania
         $this->addHoliday(new Holiday(
             'kingIslandShow',
             ['en' => 'King Island Show'],
-            new DateTime('first tuesday of march ' . $this->year, new DateTimeZone($this->timezone)),
+            new DateTime('first tuesday of march ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));

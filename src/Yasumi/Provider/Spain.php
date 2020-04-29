@@ -13,7 +13,6 @@
 namespace Yasumi\Provider;
 
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -87,7 +86,7 @@ class Spain extends AbstractProvider
                     'ca' => 'Festa Nacional d’Espanya',
                     'es' => 'Fiesta Nacional de España',
                 ],
-                new DateTime("$this->year-10-12", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-10-12", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -116,7 +115,7 @@ class Spain extends AbstractProvider
                     'ca' => 'Dia de la Constitució',
                     'es' => 'Día de la Constitución',
                 ],
-                new DateTime("$this->year-12-6", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-12-6", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

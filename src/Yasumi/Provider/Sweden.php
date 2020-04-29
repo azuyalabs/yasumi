@@ -14,7 +14,6 @@ namespace Yasumi\Provider;
 
 use DateInterval;
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -90,7 +89,7 @@ class Sweden extends AbstractProvider
         $this->addHoliday(new Holiday(
             'epiphanyEve',
             [],
-            new DateTime("$this->year-1-5", new DateTimeZone($this->timezone)),
+            new DateTime("$this->year-1-5", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OBSERVANCE
         ));
@@ -118,7 +117,7 @@ class Sweden extends AbstractProvider
         $this->addHoliday(new Holiday(
             'walpurgisEve',
             [],
-            new DateTime("$this->year-4-30", new DateTimeZone($this->timezone)),
+            new DateTime("$this->year-4-30", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OBSERVANCE
         ));
@@ -145,7 +144,7 @@ class Sweden extends AbstractProvider
      */
     private function calculateStJohnsHolidays(): void
     {
-        $date = new DateTime("$this->year-6-20 this saturday", new DateTimeZone($this->timezone));
+        $date = new DateTime("$this->year-6-20 this saturday", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $this->addHoliday(new Holiday(
             'stJohnsDay',
             [],
@@ -186,7 +185,7 @@ class Sweden extends AbstractProvider
      */
     private function calculateAllSaintsHolidays(): void
     {
-        $date = new DateTime("$this->year-10-31 this saturday", new DateTimeZone($this->timezone));
+        $date = new DateTime("$this->year-10-31 this saturday", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $this->addHoliday(new Holiday(
             'allSaintsDay',
             [],
@@ -234,7 +233,7 @@ class Sweden extends AbstractProvider
         $this->addHoliday(new Holiday(
             'nationalDay',
             ['sv' => $holidayName],
-            new DateTime("$this->year-6-6", new DateTimeZone($this->timezone)),
+            new DateTime("$this->year-6-6", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }

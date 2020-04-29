@@ -15,7 +15,6 @@ namespace Yasumi\Provider;
 
 use DateInterval;
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -165,7 +164,7 @@ class SouthKorea extends AbstractProvider
                 $this->addHoliday(new Holiday(
                     'dayAfterNewYearsDay',
                     [],
-                    new DateTime("$this->year-1-2", new DateTimeZone($this->timezone)),
+                    new DateTime("$this->year-1-2", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                     $this->locale
                 ));
             }
@@ -173,7 +172,7 @@ class SouthKorea extends AbstractProvider
                 $this->addHoliday(new Holiday(
                     'twoDaysLaterNewYearsDay',
                     ['en' => 'Two Days Later New Year’s Day', 'ko' => '새해 연휴'],
-                    new DateTime("$this->year-1-3", new DateTimeZone($this->timezone)),
+                    new DateTime("$this->year-1-3", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                     $this->locale
                 ));
             }
@@ -191,7 +190,7 @@ class SouthKorea extends AbstractProvider
     public function calculateSeollal(): void
     {
         if ($this->year >= 1985 && isset(self::LUNAR_HOLIDAY['seollal'][$this->year])) {
-            $seollal = new DateTime(self::LUNAR_HOLIDAY['seollal'][$this->year], new DateTimeZone($this->timezone));
+            $seollal = new DateTime(self::LUNAR_HOLIDAY['seollal'][$this->year], DateTimeZoneFactory::getDateTimeZone($this->timezone));
             $this->addHoliday(new Holiday(
                 'seollal',
                 ['en' => 'Seollal', 'ko' => '설날'],
@@ -232,7 +231,7 @@ class SouthKorea extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'buddhasBirthday',
                 ['en' => 'Buddha’s Birthday', 'ko' => '부처님오신날'],
-                new DateTime(self::LUNAR_HOLIDAY['buddhasBirthday'][$this->year], new DateTimeZone($this->timezone)),
+                new DateTime(self::LUNAR_HOLIDAY['buddhasBirthday'][$this->year], DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -255,7 +254,7 @@ class SouthKorea extends AbstractProvider
             $chuseok = new Holiday(
                 'chuseok',
                 ['en' => 'Chuseok', 'ko' => '추석'],
-                new DateTime(self::LUNAR_HOLIDAY['chuseok'][$this->year], new DateTimeZone($this->timezone)),
+                new DateTime(self::LUNAR_HOLIDAY['chuseok'][$this->year], DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             );
             $this->addHoliday($chuseok);
@@ -295,7 +294,7 @@ class SouthKorea extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'independenceMovementDay',
                 ['en' => 'Independence Movement Day', 'ko' => '삼일절'],
-                new DateTime("$this->year-3-1", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-3-1", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -314,7 +313,7 @@ class SouthKorea extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'arborDay',
                 ['en' => 'Arbor Day', 'ko' => '식목일'],
-                new DateTime("$this->year-4-5", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-4-5", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -333,7 +332,7 @@ class SouthKorea extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'childrensDay',
                 ['en' => 'Children’s Day', 'ko' => '어린이날'],
-                new DateTime("$this->year-5-5", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-5-5", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -352,7 +351,7 @@ class SouthKorea extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'memorialDay',
                 ['en' => 'Memorial Day', 'ko' => '현충일'],
-                new DateTime("$this->year-6-6", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-6-6", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -374,7 +373,7 @@ class SouthKorea extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'constitutionDay',
                 ['en' => 'Constitution Day', 'ko' => '제헌절'],
-                new DateTime("$this->year-7-17", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-7-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -393,7 +392,7 @@ class SouthKorea extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'liberationDay',
                 ['en' => 'Liberation Day', 'ko' => '광복절'],
-                new DateTime("$this->year-8-15", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-8-15", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -412,7 +411,7 @@ class SouthKorea extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'armedForcesDay',
                 ['en' => 'Armed Forces Day', 'ko' => '국군의 날'],
-                new DateTime("$this->year-10-1", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-10-1", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -431,7 +430,7 @@ class SouthKorea extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'nationalFoundationDay',
                 ['en' => 'National Foundation Day', 'ko' => '개천절'],
-                new DateTime("$this->year-10-3", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-10-3", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -450,7 +449,7 @@ class SouthKorea extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'hangulDay',
                 ['en' => 'Hangul Day', 'ko' => '한글날'],
-                new DateTime("$this->year-10-9", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-10-9", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

@@ -14,10 +14,10 @@ namespace Yasumi\Provider\Australia;
 
 use DateInterval;
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia;
+use Yasumi\Provider\DateTimeZoneFactory;
 
 /**
  * Provider for all holidays in New South Wales (Australia).
@@ -107,7 +107,7 @@ class NSW extends Australia
         $this->addHoliday(new Holiday(
             'queensBirthday',
             [],
-            new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->timezone)),
+            new DateTime('second monday of june ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));
@@ -120,7 +120,7 @@ class NSW extends Australia
      */
     private function calculateLabourDay(): void
     {
-        $date = new DateTime("first monday of october $this->year", new DateTimeZone($this->timezone));
+        $date = new DateTime("first monday of october $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
         $this->addHoliday(new Holiday('labourDay', [], $date, $this->locale));
     }
@@ -136,7 +136,7 @@ class NSW extends Australia
         $this->addHoliday(new Holiday(
             'bankHoliday',
             ['en' => 'Bank Holiday'],
-            new DateTime('first monday of august ' . $this->year, new DateTimeZone($this->timezone)),
+            new DateTime('first monday of august ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
         ));

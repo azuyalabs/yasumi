@@ -13,7 +13,6 @@
 namespace Yasumi\Provider;
 
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -90,7 +89,7 @@ class France extends AbstractProvider
             $this->addHoliday(new Holiday('bastilleDay', [
                 'en' => 'Bastille Day',
                 'fr' => 'La Fête nationale',
-            ], new DateTime("$this->year-7-14", new DateTimeZone($this->timezone)), $this->locale));
+            ], new DateTime("$this->year-7-14", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
     }
 }
