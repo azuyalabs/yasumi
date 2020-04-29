@@ -77,13 +77,13 @@ class Tasmania extends Australia
      */
     private function calculateQueensBirthday(): void
     {
-        $this->calculateHoliday(
+        $this->addHoliday(new Holiday(
             'queensBirthday',
-            new DateTime('second monday of june ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             [],
-            false,
-            false
-        );
+            new DateTime('second monday of june ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale,
+            Holiday::TYPE_OFFICIAL
+        ));
     }
 
     /**
@@ -96,12 +96,12 @@ class Tasmania extends Australia
      */
     private function calculateRecreationDay(): void
     {
-        $this->calculateHoliday(
+        $this->addHoliday(new Holiday(
             'recreationDay',
-            new DateTime('first monday of november ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             ['en' => 'Recreation Day'],
-            false,
-            false
-        );
+            new DateTime('first monday of november ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale,
+            Holiday::TYPE_OFFICIAL
+        ));
     }
 }

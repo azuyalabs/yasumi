@@ -13,8 +13,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 - Additional Dates for Australia/Victoria:AFL Grand Final Friday [\#190](https://github.com/azuyalabs/yasumi/pull/190) ([brucealdridge](https://github.com/brucealdridge))
 - Holiday providers for states of Austria. [\#182](https://github.com/azuyalabs/yasumi/pull/182) ([aprog](https://github.com/aprog))
 - Day of Liberation (Tag der Befreiung) is a one-time official holiday in 2020 in Berlin (Germany).
-
 - Added missing return (correct) and parameter types in various methods.
+- Substituted holidays (holidays that fall in the weekend) for Australia. [\#201](https://github.com/azuyalabs/yasumi/pull/201) ([c960657](https://github.com/c960657))
 
 ### Changed
 - Statehood Day is celebrated at a new date since 2020 in Croatia. [\#203](https://github.com/azuyalabs/yasumi/pull/203) ([krukru](https://github.com/krukru))

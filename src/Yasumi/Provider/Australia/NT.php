@@ -103,13 +103,13 @@ class NT extends Australia
      */
     private function calculateQueensBirthday(): void
     {
-        $this->calculateHoliday(
+        $this->addHoliday(new Holiday(
             'queensBirthday',
-            new DateTime('second monday of june ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             [],
-            false,
-            false
-        );
+            new DateTime('second monday of june ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale,
+            Holiday::TYPE_OFFICIAL
+        ));
     }
 
     /**
@@ -134,12 +134,12 @@ class NT extends Australia
      */
     private function calculatePicnicDay(): void
     {
-        $this->calculateHoliday(
+        $this->addHoliday(new Holiday(
             'picnicDay',
-            new DateTime('first monday of august ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             ['en' => 'Picnic Day'],
-            false,
-            false
-        );
+            new DateTime('first monday of august ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale,
+            Holiday::TYPE_OFFICIAL
+        ));
     }
 }

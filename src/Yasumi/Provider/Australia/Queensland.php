@@ -70,13 +70,13 @@ class Queensland extends Australia
             $birthDay = 'second monday of june ' . $this->year;
         }
 
-        $this->calculateHoliday(
+        $this->addHoliday(new Holiday(
             'queensBirthday',
-            new DateTime($birthDay, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             [],
-            false,
-            false
-        );
+            new DateTime($birthDay, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale,
+            Holiday::TYPE_OFFICIAL
+        ));
     }
 
     /**

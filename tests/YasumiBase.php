@@ -30,6 +30,7 @@ use Yasumi\Filters\OfficialHolidaysFilter;
 use Yasumi\Filters\OtherHolidaysFilter;
 use Yasumi\Filters\SeasonalHolidaysFilter;
 use Yasumi\Holiday;
+use Yasumi\SubstituteHoliday;
 use Yasumi\Yasumi;
 
 /**
@@ -84,8 +85,6 @@ trait YasumiBase
         foreach ($expectedHolidays as $holiday) {
             $this->assertArrayHasKey($holiday, \iterator_to_array($holidays));
         }
-
-        unset($holidays);
     }
 
     /**
@@ -113,11 +112,8 @@ trait YasumiBase
         $holiday = $holidays->getHoliday($shortName);
 
         $this->assertInstanceOf(Holiday::class, $holiday);
-        $this->assertNotNull($holiday);
         $this->assertEquals($expected, $holiday);
         $this->assertTrue($holidays->isHoliday($holiday));
-
-        unset($holiday, $holidays);
     }
 
     /**
@@ -143,8 +139,61 @@ trait YasumiBase
         $holiday = $holidays->getHoliday($shortName);
 
         $this->assertNull($holiday);
+    }
 
-        unset($holiday, $holidays);
+    /**
+     * Asserts that the expected date is indeed a substitute holiday for that given year and name
+     *
+     * @param string $provider the holiday provider (i.e. country/state) for which the holiday need to be tested
+     * @param string $shortName string the short name of the substituted holiday to be checked against
+     * @param int $year holiday calendar year
+     * @param DateTime $expected the date to be checked against
+     *
+     * @throws UnknownLocaleException
+     * @throws InvalidDateException
+     * @throws InvalidArgumentException
+     * @throws RuntimeException
+     * @throws AssertionFailedError
+     * @throws ReflectionException
+     */
+    public function assertSubstituteHoliday(
+        string $provider,
+        string $shortName,
+        int $year,
+        DateTime $expected
+    ): void {
+        $holidays = Yasumi::create($provider, $year);
+        $holiday = $holidays->getHoliday('substituteHoliday:' . $shortName);
+
+        $this->assertInstanceOf(SubstituteHoliday::class, $holiday);
+        $this->assertEquals($expected, $holiday);
+        $this->assertTrue($holidays->isHoliday($holiday));
+    }
+
+    /**
+     * Asserts that the given substitute holiday for that given year does not exist.
+     *
+     * @param string $provider the holiday provider (i.e. country/state) for which the holiday need to be tested
+     * @param string $shortName the short name of the substituted holiday to be checked against
+     * @param int $year holiday calendar year
+     *
+     * @throws InvalidArgumentException
+     * @throws RuntimeException
+     * @throws UnknownLocaleException
+     * @throws InvalidDateException
+     * @throws AssertionFailedError
+     * @throws ReflectionException
+     */
+    public function assertNotSubstituteHoliday(
+        string $provider,
+        string $shortName,
+        int $year
+    ): void {
+        $this->assertNotHoliday(
+            $provider,
+            'substituteHoliday:' . $shortName,
+            $year
+        );
     }
 
     /**
@@ -171,7 +220,6 @@ trait YasumiBase
         $holiday = $holidays->getHoliday($shortName);
 
         $this->assertInstanceOf(Holiday::class, $holiday);
-        $this->assertNotNull($holiday);
         $this->assertTrue($holidays->isHoliday($holiday));
 
         if (\is_array($translations) && !empty($translations)) {
@@ -194,8 +242,6 @@ trait YasumiBase
                 $this->assertEquals($name, $translation);
             }
         }
-
-        unset($holiday, $holidays);
     }
 
     /**
@@ -222,10 +268,7 @@ trait YasumiBase
         $holiday = $holidays->getHoliday($shortName);
 
         $this->assertInstanceOf(Holiday::class, $holiday);
-        $this->assertNotNull($holiday);
         $this->assertEquals($type, $holiday->getType());
-
-        unset($holiday, $holidays);
     }
 
     /**
@@ -253,11 +296,8 @@ trait YasumiBase
         $holiday = $holidays->getHoliday($shortName);
 
         $this->assertInstanceOf(Holiday::class, $holiday);
-        $this->assertNotNull($holiday);
         $this->assertTrue($holidays->isHoliday($holiday));
         $this->assertEquals($expectedDayOfWeek, $holiday->format('l'));
-
-        unset($holiday, $holidays);
     }
 
     /**
