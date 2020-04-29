@@ -111,7 +111,7 @@ class Croatia extends AbstractProvider
             $names['hr'] = 'Dan pobjede i domovinske zahvalnosti i Dan hrvatskih branitelja';
         }
 
-        if ($names != null) {
+        if ($names !== null) {
             $this->addHoliday(new Holiday(
                 'homelandThanksgiving',
                 $names,
