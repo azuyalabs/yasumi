@@ -10,15 +10,15 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\ACT;
+namespace Yasumi\tests\Australia\AustralianCapitalTerritory;
 
 use ReflectionException;
 use Yasumi\Holiday;
 
 /**
- * Class for testing holidays in ACT (Australia).
+ * Class for testing holidays in Australian Capital Territory (Australia).
  */
-class ACTTest extends ACTBaseTestCase
+class AustralianCapitalTerritoryTest extends AustralianCapitalTerritoryBaseTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -26,7 +26,7 @@ class ACTTest extends ACTBaseTestCase
     protected $year;
 
     /**
-     * Tests if all official holidays in ACT (Australia) are defined by the provider class
+     * Tests if all official holidays in Australian Capital Territory (Australia) are defined by the provider class
      * @throws ReflectionException
      */
     public function testOfficialHolidays(): void

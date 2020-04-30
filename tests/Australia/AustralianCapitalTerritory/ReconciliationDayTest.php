@@ -10,7 +10,7 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\ACT;
+namespace Yasumi\tests\Australia\AustralianCapitalTerritory;
 
 use DateTime;
 use DateTimeZone;
@@ -20,9 +20,9 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Reconciliation Day in ACT (Australia)..
+ * Class for testing Reconciliation Day in Australian Capital Territory (Australia)..
  */
-class ReconciliationDayTest extends ACTBaseTestCase implements YasumiTestCaseInterface
+class ReconciliationDayTest extends AustralianCapitalTerritoryBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday

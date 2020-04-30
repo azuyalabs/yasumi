@@ -10,11 +10,11 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\ACT;
+namespace Yasumi\tests\Australia\AustralianCapitalTerritory;
 
 /**
- * Class for testing Good Friday in ACT (Australia)..
+ * Class for testing Australia day in Australian Capital Territory (Australia)..
  */
-class GoodFridayTest extends \Yasumi\tests\Australia\GoodFridayTest
+class AustraliaDayTest extends \Yasumi\tests\Australia\AustraliaDayTest
 {
 }

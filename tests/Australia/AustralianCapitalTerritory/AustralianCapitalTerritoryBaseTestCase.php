@@ -10,22 +10,22 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\ACT;
+namespace Yasumi\tests\Australia\AustralianCapitalTerritory;
 
 use Yasumi\tests\Australia\AustraliaBaseTestCase;
 use Yasumi\tests\YasumiBase;
 
 /**
- * Base class for test cases of the ACT holiday provider.
+ * Base class for test cases of the Australian Capital Territory holiday provider.
  */
-abstract class ACTBaseTestCase extends AustraliaBaseTestCase
+abstract class AustralianCapitalTerritoryBaseTestCase extends AustraliaBaseTestCase
 {
     use YasumiBase;
 
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    public $region = 'Australia\ACT';
+    public $region = 'Australia\AustralianCapitalTerritory';
 
     /**
      * Timezone in which this provider has holidays defined

@@ -10,11 +10,11 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\ACT;
+namespace Yasumi\tests\Australia\AustralianCapitalTerritory;
 
 /**
- * Class for testing New Years Day in ACT (Australia)..
+ * Class for testing Christmas Day in Australian Capital Territory (Australia)..
  */
-class NewYearsDayTest extends \Yasumi\tests\Australia\NewYearsDayTest
+class ChristmasDayTest extends \Yasumi\tests\Australia\ChristmasDayTest
 {
 }

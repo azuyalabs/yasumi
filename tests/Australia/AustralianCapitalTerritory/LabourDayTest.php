@@ -10,9 +10,8 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\ACT;
+namespace Yasumi\tests\Australia\AustralianCapitalTerritory;
 
-use DateInterval;
 use DateTime;
 use DateTimeZone;
 use Exception;
@@ -21,17 +20,17 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Easter Saturday in ACT (Australia)..
+ * Class for testing Labour Day in Australian Capital Territory (Australia)..
  */
-class EasterSaturdayTest extends ACTBaseTestCase implements YasumiTestCaseInterface
+class LabourDayTest extends AustralianCapitalTerritoryBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
      */
-    public const HOLIDAY = 'easterSaturday';
+    public const HOLIDAY = 'labourDay';
 
     /**
-     * Tests Easter Saturday
+     * Tests Labour Day
      *
      * @dataProvider HolidayDataProvider
      *
@@ -55,21 +54,22 @@ class EasterSaturdayTest extends ACTBaseTestCase implements YasumiTestCaseInterf
      * Returns a list of test dates
      *
      * @return array list of test dates for the holiday defined in this test
-     * @throws Exception
      */
     public function HolidayDataProvider(): array
     {
-        $data = [];
-
-        for ($y = 0; $y < 50; $y++) {
-            $year = $this->generateRandomYear();
-            $date = $this->calculateEaster($year, $this->timezone);
-            $date->sub(new DateInterval('P1D'));
-
-            $data[] = [$year, $date->format('Y-m-d')];
-        }
-
-        return $data;
+        return [
+            [2010, '2010-10-04'],
+            [2011, '2011-10-03'],
+            [2012, '2012-10-01'],
+            [2013, '2013-10-07'],
+            [2014, '2014-10-06'],
+            [2015, '2015-10-05'],
+            [2016, '2016-10-03'],
+            [2017, '2017-10-02'],
+            [2018, '2018-10-01'],
+            [2019, '2019-10-07'],
+            [2020, '2020-10-05'],
+        ];
     }
 
     /**
@@ -81,8 +81,8 @@ class EasterSaturdayTest extends ACTBaseTestCase implements YasumiTestCaseInterf
         $this->assertTranslatedHolidayName(
             $this->region,
             self::HOLIDAY,
-            $this->generateRandomYear(),
-            [self::LOCALE => 'Easter Saturday']
+            $this->generateRandomYear(1990),
+            [self::LOCALE => 'Labour Day']
         );
     }
 
@@ -92,6 +92,6 @@ class EasterSaturdayTest extends ACTBaseTestCase implements YasumiTestCaseInterf
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(1990), Holiday::TYPE_OFFICIAL);
     }
 }

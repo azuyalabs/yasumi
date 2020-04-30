@@ -10,8 +10,9 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\ACT;
+namespace Yasumi\tests\Australia\AustralianCapitalTerritory;
 
+use DateInterval;
 use DateTime;
 use DateTimeZone;
 use Exception;
@@ -20,17 +21,17 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Easter Sunday in ACT (Australia)..
+ * Class for testing Easter Saturday in Australian Capital Territory (Australia)..
  */
-class EasterSundayTest extends ACTBaseTestCase implements YasumiTestCaseInterface
+class EasterSaturdayTest extends AustralianCapitalTerritoryBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
      */
-    public const HOLIDAY = 'easter';
+    public const HOLIDAY = 'easterSaturday';
 
     /**
-     * Tests Easter Sunday
+     * Tests Easter Saturday
      *
      * @dataProvider HolidayDataProvider
      *
@@ -63,6 +64,7 @@ class EasterSundayTest extends ACTBaseTestCase implements YasumiTestCaseInterfac
         for ($y = 0; $y < 50; $y++) {
             $year = $this->generateRandomYear();
             $date = $this->calculateEaster($year, $this->timezone);
+            $date->sub(new DateInterval('P1D'));
 
             $data[] = [$year, $date->format('Y-m-d')];
         }
@@ -80,7 +82,7 @@ class EasterSundayTest extends ACTBaseTestCase implements YasumiTestCaseInterfac
             $this->region,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'Easter Sunday']
+            [self::LOCALE => 'Easter Saturday']
         );
     }
 

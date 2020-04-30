@@ -23,7 +23,7 @@ use Yasumi\Provider\DateTimeZoneFactory;
  * Provider for all holidays in Australian Capital Territory (Australia).
  *
  */
-class ACT extends Australia
+class AustralianCapitalTerritory extends Australia
 {
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective

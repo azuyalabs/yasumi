@@ -10,11 +10,11 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\ACT;
+namespace Yasumi\tests\Australia\AustralianCapitalTerritory;
 
 /**
- * Class for testing Australia day in ACT (Australia)..
+ * Class for testing ANZAC day in Australian Capital Territory (Australia)..
  */
-class AustraliaDayTest extends \Yasumi\tests\Australia\AustraliaDayTest
+class AnzacDayTest extends \Yasumi\tests\Australia\AnzacDayTest
 {
 }

@@ -10,10 +10,10 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\ACT;
+namespace Yasumi\tests\Australia\AustralianCapitalTerritory;
 
 /**
- * Class for testing Boxing Day in ACT (Australia)..
+ * Class for testing Boxing Day in Australian Capital Territory (Australia)..
  */
 class BoxingDayTest extends \Yasumi\tests\Australia\BoxingDayTest
 {
