@@ -10,10 +10,10 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\NT;
+namespace Yasumi\tests\Australia\NorthernTerritory;
 
 /**
- * Class for testing Boxing Day in NT (Australia)..
+ * Class for testing Boxing Day in Northern Territory (Australia).
  */
 class BoxingDayTest extends \Yasumi\tests\Australia\BoxingDayTest
 {

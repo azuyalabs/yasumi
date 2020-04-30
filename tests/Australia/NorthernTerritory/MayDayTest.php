@@ -10,7 +10,7 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\NT;
+namespace Yasumi\tests\Australia\NorthernTerritory;
 
 use DateTime;
 use DateTimeZone;
@@ -20,9 +20,9 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing May Day in NT (Australia)..
+ * Class for testing May Day in Northern Territory (Australia).
  */
-class MayDayTest extends NTBaseTestCase implements YasumiTestCaseInterface
+class MayDayTest extends NorthernTerritoryBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday

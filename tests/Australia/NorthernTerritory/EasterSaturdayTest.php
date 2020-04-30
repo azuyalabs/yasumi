@@ -10,7 +10,7 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\NT;
+namespace Yasumi\tests\Australia\NorthernTerritory;
 
 use DateInterval;
 use DateTime;
@@ -21,9 +21,9 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Easter Saturday in NT (Australia)..
+ * Class for testing Easter Saturday in Northern Territory (Australia).
  */
-class EasterSaturdayTest extends NTBaseTestCase implements YasumiTestCaseInterface
+class EasterSaturdayTest extends NorthernTerritoryBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday

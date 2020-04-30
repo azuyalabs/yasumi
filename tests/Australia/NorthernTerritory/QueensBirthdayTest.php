@@ -10,7 +10,7 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\NT;
+namespace Yasumi\tests\Australia\NorthernTerritory;
 
 use DateTime;
 use DateTimeZone;
@@ -20,17 +20,22 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Picnic Day in NT (Australia)..
+ * Class for testing Queen's Birthday in Northern Territory (Australia).
  */
-class PicnicDayTest extends NTBaseTestCase implements YasumiTestCaseInterface
+class QueensBirthdayTest extends NorthernTerritoryBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
      */
-    public const HOLIDAY = 'picnicDay';
+    public const HOLIDAY = 'queensBirthday';
 
     /**
-     * Tests Picnic Day
+     * The year in which the holiday was first established
+     */
+    public const ESTABLISHMENT_YEAR = 1950;
+
+    /**
+     * Tests Queen's Birthday
      *
      * @dataProvider HolidayDataProvider
      *
@@ -58,17 +63,17 @@ class PicnicDayTest extends NTBaseTestCase implements YasumiTestCaseInterface
     public function HolidayDataProvider(): array
     {
         return [
-            [2010, '2010-08-02'],
-            [2011, '2011-08-01'],
-            [2012, '2012-08-06'],
-            [2013, '2013-08-05'],
-            [2014, '2014-08-04'],
-            [2015, '2015-08-03'],
-            [2016, '2016-08-01'],
-            [2017, '2017-08-07'],
-            [2018, '2018-08-06'],
-            [2019, '2019-08-05'],
-            [2020, '2020-08-03'],
+            [2010, '2010-06-14'],
+            [2011, '2011-06-13'],
+            [2012, '2012-06-11'],
+            [2013, '2013-06-10'],
+            [2014, '2014-06-09'],
+            [2015, '2015-06-08'],
+            [2016, '2016-06-13'],
+            [2017, '2017-06-12'],
+            [2018, '2018-06-11'],
+            [2019, '2019-06-10'],
+            [2020, '2020-06-08'],
         ];
     }
 
@@ -81,8 +86,8 @@ class PicnicDayTest extends NTBaseTestCase implements YasumiTestCaseInterface
         $this->assertTranslatedHolidayName(
             $this->region,
             self::HOLIDAY,
-            $this->generateRandomYear(1990),
-            [self::LOCALE => 'Picnic Day']
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => 'Queen’s Birthday']
         );
     }
 
@@ -92,6 +97,11 @@ class PicnicDayTest extends NTBaseTestCase implements YasumiTestCaseInterface
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(1990), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(
+            $this->region,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2100),
+            Holiday::TYPE_OFFICIAL
+        );
     }
 }

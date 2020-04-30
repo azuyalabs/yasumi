@@ -10,11 +10,11 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\NT;
+namespace Yasumi\tests\Australia\NorthernTerritory;
 
 /**
- * Class for testing ANZAC day in NT (Australia)..
+ * Class for testing Good Friday in Northern Territory (Australia).
  */
-class AnzacDayTest extends \Yasumi\tests\Australia\AnzacDayTest
+class GoodFridayTest extends \Yasumi\tests\Australia\GoodFridayTest
 {
 }

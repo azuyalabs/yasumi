@@ -10,15 +10,15 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\NT;
+namespace Yasumi\tests\Australia\NorthernTerritory;
 
 use ReflectionException;
 use Yasumi\Holiday;
 
 /**
- * Class for testing holidays in NT (Australia).
+ * Class for testing holidays in Northern Territory (Australia).
  */
-class NTTest extends NTBaseTestCase
+class NorthernTerritoryTest extends NorthernTerritoryBaseTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -26,7 +26,7 @@ class NTTest extends NTBaseTestCase
     protected $year;
 
     /**
-     * Tests if all official holidays in NT (Australia) are defined by the provider class
+     * Tests if all official holidays in Northern Territory (Australia) are defined by the provider class
      * @throws ReflectionException
      */
     public function testOfficialHolidays(): void

@@ -23,7 +23,7 @@ use Yasumi\Provider\DateTimeZoneFactory;
  * Provider for all holidays in Northern Territory (Australia).
  *
  */
-class NT extends Australia
+class NorthernTerritory extends Australia
 {
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective

@@ -10,22 +10,22 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\NT;
+namespace Yasumi\tests\Australia\NorthernTerritory;
 
 use Yasumi\tests\Australia\AustraliaBaseTestCase;
 use Yasumi\tests\YasumiBase;
 
 /**
- * Base class for test cases of the NT holiday provider.
+ * Base class for test cases of the Northern Territory holiday provider.
  */
-abstract class NTBaseTestCase extends AustraliaBaseTestCase
+abstract class NorthernTerritoryBaseTestCase extends AustraliaBaseTestCase
 {
     use YasumiBase;
 
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    public $region = 'Australia\NT';
+    public $region = 'Australia\NorthernTerritory';
 
     /**
      * Timezone in which this provider has holidays defined
