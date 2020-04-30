@@ -10,8 +10,9 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\NSW;
+namespace Yasumi\tests\Australia\NewSouthWales;
 
+use DateInterval;
 use DateTime;
 use DateTimeZone;
 use Exception;
@@ -20,17 +21,17 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Labour Day in NSW (Australia)..
+ * Class for testing Easter Saturday in New South Wales (Australia)..
  */
-class LabourDayTest extends NSWBaseTestCase implements YasumiTestCaseInterface
+class EasterSaturdayTest extends NewSouthWalesBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
      */
-    public const HOLIDAY = 'labourDay';
+    public const HOLIDAY = 'easterSaturday';
 
     /**
-     * Tests Labour Day
+     * Tests Easter Saturday
      *
      * @dataProvider HolidayDataProvider
      *
@@ -54,22 +55,21 @@ class LabourDayTest extends NSWBaseTestCase implements YasumiTestCaseInterface
      * Returns a list of test dates
      *
      * @return array list of test dates for the holiday defined in this test
+     * @throws Exception
      */
     public function HolidayDataProvider(): array
     {
-        return [
-            [2010, '2010-10-04'],
-            [2011, '2011-10-03'],
-            [2012, '2012-10-01'],
-            [2013, '2013-10-07'],
-            [2014, '2014-10-06'],
-            [2015, '2015-10-05'],
-            [2016, '2016-10-03'],
-            [2017, '2017-10-02'],
-            [2018, '2018-10-01'],
-            [2019, '2019-10-07'],
-            [2020, '2020-10-05'],
-        ];
+        $data = [];
+
+        for ($y = 0; $y < 50; $y++) {
+            $year = $this->generateRandomYear();
+            $date = $this->calculateEaster($year, $this->timezone);
+            $date->sub(new DateInterval('P1D'));
+
+            $data[] = [$year, $date->format('Y-m-d')];
+        }
+
+        return $data;
     }
 
     /**
@@ -81,8 +81,8 @@ class LabourDayTest extends NSWBaseTestCase implements YasumiTestCaseInterface
         $this->assertTranslatedHolidayName(
             $this->region,
             self::HOLIDAY,
-            $this->generateRandomYear(1990),
-            [self::LOCALE => 'Labour Day']
+            $this->generateRandomYear(),
+            [self::LOCALE => 'Easter Saturday']
         );
     }
 
@@ -92,6 +92,6 @@ class LabourDayTest extends NSWBaseTestCase implements YasumiTestCaseInterface
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(1990), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

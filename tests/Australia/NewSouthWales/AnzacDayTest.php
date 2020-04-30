@@ -10,10 +10,10 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\NSW;
+namespace Yasumi\tests\Australia\NewSouthWales;
 
 /**
- * Class for testing ANZAC day in NSW (Australia)..
+ * Class for testing ANZAC day in New South Wales (Australia)..
  */
 class AnzacDayTest extends \Yasumi\tests\Australia\AnzacDayTest
 {

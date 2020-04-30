@@ -10,22 +10,22 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\NSW;
+namespace Yasumi\tests\Australia\NewSouthWales;
 
 use Yasumi\tests\Australia\AustraliaBaseTestCase;
 use Yasumi\tests\YasumiBase;
 
 /**
- * Base class for test cases of the NSW holiday provider.
+ * Base class for test cases of the New South Wales holiday provider.
  */
-abstract class NSWBaseTestCase extends AustraliaBaseTestCase
+abstract class NewSouthWalesBaseTestCase extends AustraliaBaseTestCase
 {
     use YasumiBase;
 
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    public $region = 'Australia\NSW';
+    public $region = 'Australia\NewSouthWales';
 
     /**
      * Timezone in which this provider has holidays defined

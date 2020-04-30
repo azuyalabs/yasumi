@@ -10,15 +10,15 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\NSW;
+namespace Yasumi\tests\Australia\NewSouthWales;
 
 use ReflectionException;
 use Yasumi\Holiday;
 
 /**
- * Class for testing holidays in NSW (Australia).
+ * Class for testing holidays in New South Wales (Australia).
  */
-class NSWTest extends NSWBaseTestCase
+class NewSouthWalesTest extends NewSouthWalesBaseTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -26,7 +26,7 @@ class NSWTest extends NSWBaseTestCase
     protected $year;
 
     /**
-     * Tests if all official holidays in NSW (Australia) are defined by the provider class
+     * Tests if all official holidays in New South Wales (Australia) are defined by the provider class
      * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
@@ -47,7 +47,7 @@ class NSWTest extends NSWBaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in NSW (Australia) are defined by the provider class
+     * Tests if all bank holidays in New South Wales (Australia) are defined by the provider class
      * @throws ReflectionException
      */
     public function testBankHolidays(): void

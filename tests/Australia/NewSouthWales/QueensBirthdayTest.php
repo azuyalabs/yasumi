@@ -10,9 +10,8 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\NSW;
+namespace Yasumi\tests\Australia\NewSouthWales;
 
-use DateInterval;
 use DateTime;
 use DateTimeZone;
 use Exception;
@@ -21,17 +20,22 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Easter Saturday in NSW (Australia)..
+ * Class for testing Queen's Birthday in New South Wales (Australia)..
  */
-class EasterSaturdayTest extends NSWBaseTestCase implements YasumiTestCaseInterface
+class QueensBirthdayTest extends NewSouthWalesBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
      */
-    public const HOLIDAY = 'easterSaturday';
+    public const HOLIDAY = 'queensBirthday';
 
     /**
-     * Tests Easter Saturday
+     * The year in which the holiday was first established
+     */
+    public const ESTABLISHMENT_YEAR = 1950;
+
+    /**
+     * Tests Queen's Birthday
      *
      * @dataProvider HolidayDataProvider
      *
@@ -55,21 +59,22 @@ class EasterSaturdayTest extends NSWBaseTestCase implements YasumiTestCaseInterf
      * Returns a list of test dates
      *
      * @return array list of test dates for the holiday defined in this test
-     * @throws Exception
      */
     public function HolidayDataProvider(): array
     {
-        $data = [];
-
-        for ($y = 0; $y < 50; $y++) {
-            $year = $this->generateRandomYear();
-            $date = $this->calculateEaster($year, $this->timezone);
-            $date->sub(new DateInterval('P1D'));
-
-            $data[] = [$year, $date->format('Y-m-d')];
-        }
-
-        return $data;
+        return [
+            [2010, '2010-06-14'],
+            [2011, '2011-06-13'],
+            [2012, '2012-06-11'],
+            [2013, '2013-06-10'],
+            [2014, '2014-06-09'],
+            [2015, '2015-06-08'],
+            [2016, '2016-06-13'],
+            [2017, '2017-06-12'],
+            [2018, '2018-06-11'],
+            [2019, '2019-06-10'],
+            [2020, '2020-06-08'],
+        ];
     }
 
     /**
@@ -81,8 +86,8 @@ class EasterSaturdayTest extends NSWBaseTestCase implements YasumiTestCaseInterf
         $this->assertTranslatedHolidayName(
             $this->region,
             self::HOLIDAY,
-            $this->generateRandomYear(),
-            [self::LOCALE => 'Easter Saturday']
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => 'Queen’s Birthday']
         );
     }
 
@@ -92,6 +97,11 @@ class EasterSaturdayTest extends NSWBaseTestCase implements YasumiTestCaseInterf
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(
+            $this->region,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2100),
+            Holiday::TYPE_OFFICIAL
+        );
     }
 }

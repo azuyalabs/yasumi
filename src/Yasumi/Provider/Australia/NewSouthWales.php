@@ -23,7 +23,7 @@ use Yasumi\Provider\DateTimeZoneFactory;
  * Provider for all holidays in New South Wales (Australia).
  *
  */
-class NSW extends Australia
+class NewSouthWales extends Australia
 {
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective

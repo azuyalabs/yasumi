@@ -10,11 +10,11 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\NSW;
+namespace Yasumi\tests\Australia\NewSouthWales;
 
 /**
- * Class for testing New Years Day in NSW (Australia)..
+ * Class for testing Good Friday in New South Wales (Australia)..
  */
-class NewYearsDayTest extends \Yasumi\tests\Australia\NewYearsDayTest
+class GoodFridayTest extends \Yasumi\tests\Australia\GoodFridayTest
 {
 }

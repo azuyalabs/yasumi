@@ -10,11 +10,11 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\NSW;
+namespace Yasumi\tests\Australia\NewSouthWales;
 
 /**
- * Class for testing Boxing Day in NSW (Australia)..
+ * Class for testing Easter Monday in New South Wales (Australia)..
  */
-class BoxingDayTest extends \Yasumi\tests\Australia\BoxingDayTest
+class EasterMondayTest extends \Yasumi\tests\Australia\EasterMondayTest
 {
 }
