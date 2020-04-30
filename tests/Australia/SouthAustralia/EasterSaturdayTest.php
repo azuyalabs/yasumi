@@ -10,8 +10,9 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\SA;
+namespace Yasumi\tests\Australia\SouthAustralia;
 
+use DateInterval;
 use DateTime;
 use DateTimeZone;
 use Exception;
@@ -20,29 +21,27 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Christmas Day in South Australia.
+ * Class for testing Easter Saturday in South Australia (Australia)..
  */
-class ChristmasDayTest extends SABaseTestCase implements YasumiTestCaseInterface
+class EasterSaturdayTest extends SouthAustraliaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
      */
-    public const HOLIDAY = 'christmasDay';
-    public const HOLIDAY2 = 'christmasHoliday';
+    public const HOLIDAY = 'easterSaturday';
 
     /**
-     * Tests Christmas Day
+     * Tests Easter Saturday
      *
      * @dataProvider HolidayDataProvider
      *
      * @param int $year the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
-     * @param string $expectedExtra the expected date for the additional holiday, or null if no additional holiday
      *
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected, $expectedExtra)
+    public function testHoliday($year, $expected)
     {
         $this->assertHoliday(
             $this->region,
@@ -50,47 +49,31 @@ class ChristmasDayTest extends SABaseTestCase implements YasumiTestCaseInterface
             $year,
             new DateTime($expected, new DateTimeZone($this->timezone))
         );
-        if (null === $expectedExtra) {
-            $this->assertNotHoliday(
-                $this->region,
-                self::HOLIDAY2,
-                $year
-            );
-        } else {
-            $this->assertHoliday(
-                $this->region,
-                self::HOLIDAY2,
-                $year,
-                new DateTime($expectedExtra, new DateTimeZone($this->timezone))
-            );
-        }
     }
 
     /**
      * Returns a list of test dates
      *
      * @return array list of test dates for the holiday defined in this test
+     * @throws Exception
      */
     public function HolidayDataProvider(): array
     {
-        return [
-            [2010, '2010-12-25', '2010-12-27'],
-            [2011, '2011-12-25', '2011-12-26'],
-            [2012, '2012-12-25', null],
-            [2013, '2013-12-25', null],
-            [2014, '2014-12-25', null],
-            [2015, '2015-12-25', null],
-            [2016, '2016-12-25', '2016-12-26'],
-            [2017, '2017-12-25', null],
-            [2018, '2018-12-25', null],
-            [2019, '2019-12-25', null],
-            [2020, '2020-12-25', null],
-        ];
+        $data = [];
+
+        for ($y = 0; $y < 50; $y++) {
+            $year = $this->generateRandomYear();
+            $date = $this->calculateEaster($year, $this->timezone);
+            $date->sub(new DateInterval('P1D'));
+
+            $data[] = [$year, $date->format('Y-m-d')];
+        }
+
+        return $data;
     }
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -99,24 +82,16 @@ class ChristmasDayTest extends SABaseTestCase implements YasumiTestCaseInterface
             $this->region,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'Christmas Day']
-        );
-        $this->assertTranslatedHolidayName(
-            $this->region,
-            self::HOLIDAY2,
-            2016,
-            [self::LOCALE => 'Christmas Holiday']
+            [self::LOCALE => 'Easter Saturday']
         );
     }
 
     /**
      * Tests type of the holiday defined in this test.
-     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void
     {
         $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
-        $this->assertHolidayType($this->region, self::HOLIDAY2, 2016, Holiday::TYPE_OFFICIAL);
     }
 }

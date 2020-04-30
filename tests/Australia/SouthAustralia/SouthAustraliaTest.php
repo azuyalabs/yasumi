@@ -10,15 +10,15 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\SA;
+namespace Yasumi\tests\Australia\SouthAustralia;
 
 use ReflectionException;
 use Yasumi\Holiday;
 
 /**
- * Class for testing holidays in SA (Australia).
+ * Class for testing holidays in South Australia (Australia).
  */
-class SATest extends SABaseTestCase
+class SouthAustraliaTest extends SouthAustraliaBaseTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -26,7 +26,7 @@ class SATest extends SABaseTestCase
     protected $year;
 
     /**
-     * Tests if all official holidays in SA (Australia) are defined by the provider class
+     * Tests if all official holidays in South Australia (Australia) are defined by the provider class
      * @throws ReflectionException
      */
     public function testOfficialHolidays(): void

@@ -10,7 +10,7 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\SA;
+namespace Yasumi\tests\Australia\SouthAustralia;
 
 use DateTime;
 use DateTimeZone;
@@ -20,22 +20,17 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Queen's Birthday in SA (Australia)..
+ * Class for testing Labour Day in South Australia (Australia)..
  */
-class QueensBirthdayTest extends SABaseTestCase implements YasumiTestCaseInterface
+class LabourDayTest extends SouthAustraliaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
      */
-    public const HOLIDAY = 'queensBirthday';
+    public const HOLIDAY = 'labourDay';
 
     /**
-     * The year in which the holiday was first established
-     */
-    public const ESTABLISHMENT_YEAR = 1950;
-
-    /**
-     * Tests Queen's Birthday
+     * Tests Labour Day
      *
      * @dataProvider HolidayDataProvider
      *
@@ -63,17 +58,17 @@ class QueensBirthdayTest extends SABaseTestCase implements YasumiTestCaseInterfa
     public function HolidayDataProvider(): array
     {
         return [
-            [2010, '2010-06-14'],
-            [2011, '2011-06-13'],
-            [2012, '2012-06-11'],
-            [2013, '2013-06-10'],
-            [2014, '2014-06-09'],
-            [2015, '2015-06-08'],
-            [2016, '2016-06-13'],
-            [2017, '2017-06-12'],
-            [2018, '2018-06-11'],
-            [2019, '2019-06-10'],
-            [2020, '2020-06-08'],
+            [2010, '2010-10-04'],
+            [2011, '2011-10-03'],
+            [2012, '2012-10-01'],
+            [2013, '2013-10-07'],
+            [2014, '2014-10-06'],
+            [2015, '2015-10-05'],
+            [2016, '2016-10-03'],
+            [2017, '2017-10-02'],
+            [2018, '2018-10-01'],
+            [2019, '2019-10-07'],
+            [2020, '2020-10-05'],
         ];
     }
 
@@ -86,8 +81,8 @@ class QueensBirthdayTest extends SABaseTestCase implements YasumiTestCaseInterfa
         $this->assertTranslatedHolidayName(
             $this->region,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Queen’s Birthday']
+            $this->generateRandomYear(1990),
+            [self::LOCALE => 'Labour Day']
         );
     }
 
@@ -97,11 +92,6 @@ class QueensBirthdayTest extends SABaseTestCase implements YasumiTestCaseInterfa
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(
-            $this->region,
-            self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2100),
-            Holiday::TYPE_OFFICIAL
-        );
+        $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(1990), Holiday::TYPE_OFFICIAL);
     }
 }

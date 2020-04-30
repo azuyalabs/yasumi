@@ -10,7 +10,7 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\SA;
+namespace Yasumi\tests\Australia\SouthAustralia;
 
 use DateTime;
 use DateTimeZone;
@@ -20,9 +20,9 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Adelaide Cup Day in SA (Australia)..
+ * Class for testing Adelaide Cup Day in South Australia (Australia)..
  */
-class AdelaideCupDayTest extends SABaseTestCase implements YasumiTestCaseInterface
+class AdelaideCupDayTest extends SouthAustraliaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday

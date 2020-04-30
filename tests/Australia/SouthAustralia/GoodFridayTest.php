@@ -10,11 +10,11 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\SA;
+namespace Yasumi\tests\Australia\SouthAustralia;
 
 /**
- * Class for testing Easter Monday in SA (Australia)..
+ * Class for testing Good Friday in South Australia (Australia)..
  */
-class EasterMondayTest extends \Yasumi\tests\Australia\EasterMondayTest
+class GoodFridayTest extends \Yasumi\tests\Australia\GoodFridayTest
 {
 }

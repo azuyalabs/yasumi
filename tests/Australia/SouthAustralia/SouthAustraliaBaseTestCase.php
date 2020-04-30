@@ -10,7 +10,7 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\SA;
+namespace Yasumi\tests\Australia\SouthAustralia;
 
 use Yasumi\tests\Australia\AustraliaBaseTestCase;
 use Yasumi\tests\YasumiBase;
@@ -18,14 +18,14 @@ use Yasumi\tests\YasumiBase;
 /**
  * Base class for test cases of the Victoria holiday provider.
  */
-abstract class SABaseTestCase extends AustraliaBaseTestCase
+abstract class SouthAustraliaBaseTestCase extends AustraliaBaseTestCase
 {
     use YasumiBase;
 
     /**
      * Name of the region (e.g. country / state) to be tested
      */
-    public $region = 'Australia\SA';
+    public $region = 'Australia\SouthAustralia';
 
     /**
      * Timezone in which this provider has holidays defined

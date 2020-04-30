@@ -10,7 +10,7 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\SA;
+namespace Yasumi\tests\Australia\SouthAustralia;
 
 use DateTime;
 use DateTimeZone;
@@ -20,9 +20,9 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Proclamation Day in SA (Australia)..
+ * Class for testing Proclamation Day in South Australia (Australia)..
  */
-class ProclamationDayTest extends SABaseTestCase implements YasumiTestCaseInterface
+class ProclamationDayTest extends SouthAustraliaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
