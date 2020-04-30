@@ -10,7 +10,7 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\WA;
+namespace Yasumi\tests\Australia\WesternAustralia;
 
 use DateTime;
 use DateTimeZone;
@@ -20,9 +20,9 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Queen's Birthday in WA (Australia)..
+ * Class for testing Queen's Birthday in Western Australia (Australia)..
  */
-class QueensBirthdayTest extends WABaseTestCase implements YasumiTestCaseInterface
+class QueensBirthdayTest extends WesternAustraliaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday

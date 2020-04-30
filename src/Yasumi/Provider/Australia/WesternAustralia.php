@@ -22,7 +22,7 @@ use Yasumi\Provider\DateTimeZoneFactory;
  * Provider for all holidays in Western Australia (Australia).
  *
  */
-class WA extends Australia
+class WesternAustralia extends Australia
 {
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective

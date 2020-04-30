@@ -10,11 +10,11 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\WA;
+namespace Yasumi\tests\Australia\WesternAustralia;
 
 /**
- * Class for testing ANZAC day in WA (Australia)..
+ * Class for testing New Years Day in Western Australia (Australia)..
  */
-class AnzacDayTest extends \Yasumi\tests\Australia\AnzacDayTest
+class NewYearsDayTest extends \Yasumi\tests\Australia\NewYearsDayTest
 {
 }

@@ -10,11 +10,11 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\WA;
+namespace Yasumi\tests\Australia\WesternAustralia;
 
 /**
- * Class for testing Boxing Day in WA (Australia)..
+ * Class for testing Christmas Day in Western Australia (Australia)..
  */
-class BoxingDayTest extends \Yasumi\tests\Australia\BoxingDayTest
+class ChristmasDayTest extends \Yasumi\tests\Australia\ChristmasDayTest
 {
 }

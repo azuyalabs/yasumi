@@ -10,15 +10,15 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\WA;
+namespace Yasumi\tests\Australia\WesternAustralia;
 
 use ReflectionException;
 use Yasumi\Holiday;
 
 /**
- * Class for testing holidays in WA (Australia).
+ * Class for testing holidays in Western Australia (Australia).
  */
-class WATest extends WABaseTestCase
+class WesternAustraliaTest extends WesternAustraliaBaseTestCase
 {
 
     /**
@@ -27,7 +27,7 @@ class WATest extends WABaseTestCase
     protected $year;
 
     /**
-     * Tests if all official holidays in WA (Australia) are defined by the provider class
+     * Tests if all official holidays in Western Australia (Australia) are defined by the provider class
      * @throws ReflectionException
      */
     public function testOfficialHolidays(): void

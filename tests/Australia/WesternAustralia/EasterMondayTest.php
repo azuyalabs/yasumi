@@ -10,11 +10,11 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\WA;
+namespace Yasumi\tests\Australia\WesternAustralia;
 
 /**
- * Class for testing Good Friday in WA (Australia)..
+ * Class for testing Easter Monday in Western Australia (Australia)..
  */
-class GoodFridayTest extends \Yasumi\tests\Australia\GoodFridayTest
+class EasterMondayTest extends \Yasumi\tests\Australia\EasterMondayTest
 {
 }

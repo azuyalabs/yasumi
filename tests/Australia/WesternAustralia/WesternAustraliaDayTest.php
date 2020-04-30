@@ -10,7 +10,7 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Australia\WA;
+namespace Yasumi\tests\Australia\WesternAustralia;
 
 use DateTime;
 use DateTimeZone;
@@ -20,17 +20,17 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Labour Day in WA (Australia)..
+ * Class for testing Western Australia Day in Western Australia (Australia)..
  */
-class LabourDayTest extends WABaseTestCase implements YasumiTestCaseInterface
+class WesternAustraliaDayTest extends WesternAustraliaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday
      */
-    public const HOLIDAY = 'labourDay';
+    public const HOLIDAY = 'westernAustraliaDay';
 
     /**
-     * Tests Labour Day
+     * Tests Western Australia Day
      *
      * @dataProvider HolidayDataProvider
      *
@@ -58,17 +58,17 @@ class LabourDayTest extends WABaseTestCase implements YasumiTestCaseInterface
     public function HolidayDataProvider(): array
     {
         return [
-            [2010, '2010-03-01'],
-            [2011, '2011-03-07'],
-            [2012, '2012-03-05'],
-            [2013, '2013-03-04'],
-            [2014, '2014-03-03'],
-            [2015, '2015-03-02'],
-            [2016, '2016-03-07'],
-            [2017, '2017-03-06'],
-            [2018, '2018-03-05'],
-            [2019, '2019-03-04'],
-            [2020, '2020-03-02'],
+            [2010, '2010-06-07'],
+            [2011, '2011-06-06'],
+            [2012, '2012-06-04'],
+            [2013, '2013-06-03'],
+            [2014, '2014-06-02'],
+            [2015, '2015-06-01'],
+            [2016, '2016-06-06'],
+            [2017, '2017-06-05'],
+            [2018, '2018-06-04'],
+            [2019, '2019-06-03'],
+            [2020, '2020-06-01'],
         ];
     }
 
@@ -82,7 +82,7 @@ class LabourDayTest extends WABaseTestCase implements YasumiTestCaseInterface
             $this->region,
             self::HOLIDAY,
             $this->generateRandomYear(1990),
-            [self::LOCALE => 'Labour Day']
+            [self::LOCALE => 'Western Australia Day']
         );
     }
 
