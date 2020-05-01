@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 - Substituted holidays (holidays that fall in the weekend) for Australia. [\#201](https://github.com/azuyalabs/yasumi/pull/201) ([c960657](https://github.com/c960657))
 
 ### Changed
+- Renamed the Australian states to be full names in stead of abbreviations to be in line with other Holiday Providers [\#214](https://github.com/azuyalabs/yasumi/pull/214)
 - Statehood Day is celebrated at a new date since 2020 in Croatia. [\#203](https://github.com/azuyalabs/yasumi/pull/203) ([krukru](https://github.com/krukru))
 - Independence Day is no longer an official holiday since 2020 in Croatia. [\#203](https://github.com/azuyalabs/yasumi/pull/203) ([krukru](https://github.com/krukru))
 - Homeland Thanksgiving Day has been renamed to "Victory and Homeland Thanksgiving Day and the Day of Croatian Defenders" since 2020 in Croatia. [\#203](https://github.com/azuyalabs/yasumi/pull/203) ([krukru](https://github.com/krukru))
