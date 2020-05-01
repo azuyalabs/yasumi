@@ -88,7 +88,7 @@ class Croatia extends AbstractProvider
             $statehoodDayDate = new DateTime("$this->year-5-30", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         }
 
-        if ($statehoodDayDate != null) {
+        if (null != $statehoodDayDate) {
             $this->addHoliday(new Holiday('statehoodDay', [
                 'en' => 'Statehood Day',
                 'hr' => 'Dan državnosti',
@@ -111,7 +111,7 @@ class Croatia extends AbstractProvider
             $names['hr'] = 'Dan pobjede i domovinske zahvalnosti i Dan hrvatskih branitelja';
         }
 
-        if ($names !== null) {
+        if (null !== $names) {
             $this->addHoliday(new Holiday(
                 'homelandThanksgiving',
                 $names,
