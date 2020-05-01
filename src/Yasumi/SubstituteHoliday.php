@@ -13,6 +13,7 @@
 namespace Yasumi;
 
 use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\MissingTranslationException;
 use Yasumi\Exception\UnknownLocaleException;
 
 /**
@@ -76,19 +77,27 @@ class SubstituteHoliday extends Holiday
     }
 
     /**
-     * Returns the name of this holiday.
+     * Returns the localized name of this holiday
      *
-     * The name of this holiday is returned translated in the given locale. If for the given locale no translation is
-     * defined, the name in the default locale ('en_US') is returned. In case there is no translation at all, the short
-     * internal name is returned.
+     * The provided locales are searched for a translation. The first locale containing a translation will be used.
+     *
+     * If no locale is provided, proceed as if an array containing the display locale, Holiday::DEFAULT_LOCALE ('en_US'), and
+     * Holiday::LOCALE_SHORT_NAME (the short name (internal name) of this holiday) was provided.
+     *
+     * @param array $locales The locales to search for translations
+     *
+     * @throws MissingTranslationException
+     *
+     * @see Holiday::DEFAULT_LOCALE
+     * @see Holiday::LOCALE_SHORT_NAME
      */
-    public function getName(): string
+    public function getName($locales = null): string
     {
         $name = parent::getName();
 
         if ($name === $this->shortName) {
-            foreach ($this->getLocales() as $locale) {
-                $pattern = $this->substituteHolidayTranslations[$locale] ?? null;
+            foreach ($this->getLocales($locales) as $locales) {
+                $pattern = $this->substituteHolidayTranslations[$locales] ?? null;
                 if ($pattern) {
                     return \str_replace('{0}', $this->substitutedHoliday->getName(), $pattern);
                 }
