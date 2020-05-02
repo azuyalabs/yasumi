@@ -17,7 +17,7 @@ use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\DateTimeZoneFactory;
-use Yasumi\Provider\UnitedKingdom;
+use Yasumi\Provider\Canada;
 use Yasumi\SubstituteHoliday;
 
 /**
@@ -27,7 +27,7 @@ use Yasumi\SubstituteHoliday;
  *
  * @link https://en.wikipedia.org/wiki/Northwest_Territories
  */
-class Alberta extends Canada
+class NorthwestTerritories extends Canada
 {
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective

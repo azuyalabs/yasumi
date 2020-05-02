@@ -17,23 +17,23 @@ use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\DateTimeZoneFactory;
-use Yasumi\Provider\UnitedKingdom;
+use Yasumi\Provider\Canada;
 use Yasumi\SubstituteHoliday;
 
 /**
- * Provider for all holidays in Alberta (Canada).
+ * Provider for all holidays in NewfoundlandAndLabrador (Canada).
  *
  * Manitoba is a province of Canada.
  *
  * @link https://en.wikipedia.org/wiki/Alberta
  */
-class Alberta extends Canada
+class NewfoundlandAndLabrador extends Canada
 {
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
-    public const ID = 'CA-AB';
+    public const ID = 'CA-NL';
 
     /**
      * Initialize holidays for Northern Ireland (United Kingdom).

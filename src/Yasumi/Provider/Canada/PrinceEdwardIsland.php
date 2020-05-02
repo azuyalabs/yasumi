@@ -17,7 +17,7 @@ use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\DateTimeZoneFactory;
-use Yasumi\Provider\UnitedKingdom;
+use Yasumi\Provider\Canada;
 use Yasumi\SubstituteHoliday;
 
 /**
