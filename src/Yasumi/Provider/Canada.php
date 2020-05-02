@@ -50,38 +50,13 @@ class Canada extends AbstractProvider
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
+        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
 
         // Calculate other holidays
-        $this->calculateDominionDay ();
         $this->calculateCanadaDay();
         $this->calculateLabourDay();
         $this->calculateThanksgivingDay();
         $this->calculateRemembranceDay();
-    }
-
-    /**
-     * Dominion Day.
-     *
-     * @link https://en.wikipedia.org/wiki/Dominion_Day
-     *
-     * @throws InvalidDateException
-     * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
-     * @throws \Exception
-     */
-    protected function calculateDominionDay(): void
-    {
-        if ($this->year < 1879 || $this->year > 1982) {
-            return;
-        }
-
-        $this->addHoliday(new Holiday(
-            'dominionDay',
-            ['en' => 'Dominion Day', 'fr' => 'Le Jour de la Confédération'],
-            new DateTime($this->year . '-07-01', new \DateTimeZone($this->timezone)),
-            $this->locale
-        ));
     }
 
     /**
@@ -142,14 +117,14 @@ class Canada extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    protected function calculateThanksgiving(): void
+    protected function calculateThanksgivingDay(): void
     {
         if ($this->year < 1879) {
             return;
         }
 
         $this->addHoliday(new Holiday(
-            'thanksgiving',
+            'thanksgivingDay',
             ['en' => 'Thanksgiving', 'fr' => 'Action de grâce'],
             new DateTime("second monday of october $this->year", new \DateTimeZone($this->timezone)),
             $this->locale
