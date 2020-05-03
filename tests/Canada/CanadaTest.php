@@ -40,7 +40,7 @@ class CanadaTest extends CanadaBaseTestCase
             'remembranceDay',
             'thanksgivingDay',
             'christmasDay',
-            'secondChristmasDay'
+            'secondChristmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
