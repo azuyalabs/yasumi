@@ -45,6 +45,8 @@ class BritishColumbia extends Canada
     {
         parent::initialize();
         
+        $this->timezone = 'America/Vancouver';
+        
         $this->calculateCivicHoliday();
         $this->calculateFamilyDay();
         $this->calculateVictoriaDay();

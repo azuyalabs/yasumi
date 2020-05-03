@@ -45,6 +45,8 @@ class NewBrunswick extends Canada
     {
         parent::initialize();
         
+        $this->timezone = 'America/Halifax';
+        
         $this->calculateCivicHoliday();
         $this->calculateFamilyDay();
         $this->calculateVictoriaDay();

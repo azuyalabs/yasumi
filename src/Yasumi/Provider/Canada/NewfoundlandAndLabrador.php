@@ -46,6 +46,8 @@ class NewfoundlandAndLabrador extends Canada
     public function initialize(): void
     {
         parent::initialize();
+        
+        $this->timezone = 'America/St_Johns';
 
         $this->calculateStPatricksDay();
         $this->calculateOrangemensDay();

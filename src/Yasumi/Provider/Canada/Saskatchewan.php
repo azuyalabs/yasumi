@@ -45,6 +45,8 @@ class Saskatchewan extends Canada
     {
         parent::initialize();
         
+        $this->timezone = 'America/Regina';
+        
         $this->calculateCivicHoliday();
         $this->calculateFamilyDay();
         $this->calculateVictoriaDay();

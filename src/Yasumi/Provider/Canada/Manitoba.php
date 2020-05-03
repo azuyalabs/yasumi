@@ -45,6 +45,8 @@ class Manitoba extends Canada
     {
         parent::initialize();
         
+        $this->timezone = 'America/Winnipeg';
+        
         $this->calculateCivicHoliday();
         $this->calculateLouisRielDay();
         $this->calculateVictoriaDay();

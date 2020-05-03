@@ -45,6 +45,8 @@ class Yukon extends Canada
     {
         parent::initialize();
         
+        $this->timezone = 'America/Whitehorse';
+        
         $this->calculateDiscoveryDay();
         $this->calculateHeritageDay();
         $this->calculateNationalIndigenousPeoplesDay();

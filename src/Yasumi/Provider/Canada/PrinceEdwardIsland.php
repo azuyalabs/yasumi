@@ -45,6 +45,8 @@ class PrinceEdwardIsland extends Canada
     {
         parent::initialize();
         
+        $this->timezone = 'America/Halifax';
+        
         $this->calculateIslanderDay();
         $this->calculateGoldCupParadeDay();
         $this->calculateVictoriaDay();

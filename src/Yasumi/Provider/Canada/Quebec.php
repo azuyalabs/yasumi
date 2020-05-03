@@ -46,6 +46,8 @@ class Quebec extends Canada
     {
         parent::initialize();
         
+        $this->timezone = 'America/Toronto';
+        
         $this->addHoliday($this->saintJeanBaptisteDay($this->year, $this->timezone, $this->locale));
         $this->calculateNationalPatriotsDay();
     }

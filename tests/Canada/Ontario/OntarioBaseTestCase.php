@@ -30,7 +30,7 @@ abstract class OntarioBaseTestCase extends CanadaBaseTestCase
     /**
      * Timezone in which this provider has holidays defined
      */
-    public const TIMEZONE = 'America/Winnipeg';
+    public const TIMEZONE = 'America/Toronto';
 
     /**
      * Locale that is considered common for this provider

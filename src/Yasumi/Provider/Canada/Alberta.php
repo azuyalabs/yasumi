@@ -45,6 +45,8 @@ class Alberta extends Canada
     {
         parent::initialize();
         
+        $this->timezone = 'America/Edmonton';
+        
         $this->calculateCivicHoliday();
         $this->calculateFamilyDay();
         $this->calculateVictoriaDay();

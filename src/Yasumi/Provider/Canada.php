@@ -41,7 +41,7 @@ class Canada extends AbstractProvider
      */
     public function initialize(): void
     {
-        $this->timezone = 'America/Winnipeg';
+        $this->timezone = 'America/Toronto';
 
         // Add common holidays
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));

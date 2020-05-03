@@ -30,7 +30,7 @@ abstract class NewfoundlandAndLabradorBaseTestCase extends CanadaBaseTestCase
     /**
      * Timezone in which this provider has holidays defined
      */
-    public const TIMEZONE = 'America/Winnipeg';
+    public const TIMEZONE = 'America/St_Johns';
 
     /**
      * Locale that is considered common for this provider

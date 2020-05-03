@@ -30,7 +30,7 @@ abstract class YukonBaseTestCase extends CanadaBaseTestCase
     /**
      * Timezone in which this provider has holidays defined
      */
-    public const TIMEZONE = 'America/Winnipeg';
+    public const TIMEZONE = 'America/Whitehorse';
 
     /**
      * Locale that is considered common for this provider

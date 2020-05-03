@@ -45,6 +45,8 @@ class NovaScotia extends Canada
     {
         parent::initialize();
         
+        $this->timezone = 'America/Halifax';
+        
         $this->calculateCivicHoliday();
         $this->calculateHeritageDay();
         $this->calculateVictoriaDay();
