@@ -16,9 +16,7 @@ use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
-use Yasumi\Provider\DateTimeZoneFactory;
 use Yasumi\Provider\Canada;
-use Yasumi\SubstituteHoliday;
 
 /**
  * Provider for all holidays in Nova Scotia (Canada).
@@ -48,7 +46,7 @@ class NovaScotia extends Canada
         parent::initialize();
         
         $this->calculateCivicHoliday();
-        $this->calculateHeritageDay ();
+        $this->calculateHeritageDay();
         $this->calculateVictoriaDay();
     }
 

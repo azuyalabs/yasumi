@@ -35,7 +35,7 @@ class QuebecTest extends QuebecBaseTestCase
             'goodFriday',
             'christmasDay',
             'saintJeanBaptisteDay',
-            'nationalPatriotsDay'
+            'nationalPatriotsDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

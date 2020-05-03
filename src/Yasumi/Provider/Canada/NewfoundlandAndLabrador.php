@@ -16,8 +16,8 @@ use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
-use Yasumi\Provider\DateTimeZoneFactory;
 use Yasumi\Provider\Canada;
+use Yasumi\Provider\DateTimeZoneFactory;
 use Yasumi\SubstituteHoliday;
 
 /**
@@ -49,7 +49,7 @@ class NewfoundlandAndLabrador extends Canada
 
         $this->calculateStPatricksDay();
         $this->calculateOrangemensDay();
-        $this->addHoliday($this->stGeorgesDay ($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->stGeorgesDay($this->year, $this->timezone, $this->locale));
     }
 
     /**

@@ -16,9 +16,8 @@ use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
-use Yasumi\Provider\DateTimeZoneFactory;
 use Yasumi\Provider\Canada;
-use Yasumi\SubstituteHoliday;
+use Yasumi\Provider\DateTimeZoneFactory;
 
 /**
  * Provider for all holidays in Quebec (Canada).
@@ -47,7 +46,7 @@ class Quebec extends Canada
     {
         parent::initialize();
         
-        $this->addHoliday($this->saintJeanBaptisteDay ($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->saintJeanBaptisteDay($this->year, $this->timezone, $this->locale));
         $this->calculateNationalPatriotsDay();
     }
 
@@ -82,11 +81,11 @@ class Quebec extends Canada
         string $type = Holiday::TYPE_OFFICIAL
     ): Holiday {
         return new Holiday(
-        	'saintJeanBaptisteDay',
-        	['en' => 'Saint-Jean-Baptiste Day', 'fr' => 'Fête de la Saint-Jean-Baptiste'],
-        	new DateTime("$year-06-24", DateTimeZoneFactory::getDateTimeZone($timezone)),
-        	$locale,
-        	$type
+            'saintJeanBaptisteDay',
+            ['en' => 'Saint-Jean-Baptiste Day', 'fr' => 'Fête de la Saint-Jean-Baptiste'],
+            new DateTime("$year-06-24", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
         );
     }
 

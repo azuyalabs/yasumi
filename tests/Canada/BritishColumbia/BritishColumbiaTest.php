@@ -36,7 +36,7 @@ class BritishColumbiaTest extends BritishColumbiaBaseTestCase
             'christmasDay',
             'victoriaDay',
             'civicHoliday',
-            'familyDay'
+            'familyDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

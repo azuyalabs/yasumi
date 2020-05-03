@@ -36,7 +36,7 @@ class NorthwestTerritoriesTest extends NorthwestTerritoriesBaseTestCase
             'christmasDay',
             'victoriaDay',
             'civicHoliday',
-            'nationalIndigenousPeoplesDay'
+            'nationalIndigenousPeoplesDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

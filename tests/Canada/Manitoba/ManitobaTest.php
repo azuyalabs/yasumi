@@ -36,7 +36,7 @@ class ManitobaTest extends ManitobaBaseTestCase
             'christmasDay',
             'victoriaDay',
             'civicHoliday',
-            'louisRielDay'
+            'louisRielDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

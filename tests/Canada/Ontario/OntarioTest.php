@@ -36,7 +36,7 @@ class OntarioTest extends OntarioBaseTestCase
             'christmasDay',
             'victoriaDay',
             'civicHoliday',
-            'familyDay'
+            'familyDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

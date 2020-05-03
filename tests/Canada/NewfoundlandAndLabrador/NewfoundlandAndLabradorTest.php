@@ -34,7 +34,7 @@ class NewfoundlandAndLabradorTest extends NewfoundlandAndLabradorBaseTestCase
         $this->assertDefinedHolidays([
             'goodFriday',
             'christmasDay',
-            'stGeorgesDay'
+            'stGeorgesDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -63,8 +63,8 @@ class NewfoundlandAndLabradorTest extends NewfoundlandAndLabradorBaseTestCase
     public function testBankHolidays(): void
     {
         $this->assertDefinedHolidays([
-        	'stPatricksDay',
-        	'orangemensDay'
+            'stPatricksDay',
+            'orangemensDay',
         ], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
 

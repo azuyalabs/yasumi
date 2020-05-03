@@ -35,7 +35,7 @@ class NunavutTest extends NunavutBaseTestCase
             'goodFriday',
             'christmasDay',
             'victoriaDay',
-            'civicHoliday'
+            'civicHoliday',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

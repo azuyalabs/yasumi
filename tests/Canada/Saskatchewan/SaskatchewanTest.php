@@ -36,7 +36,7 @@ class SaskatchewanTest extends SaskatchewanBaseTestCase
             'christmasDay',
             'victoriaDay',
             'civicHoliday',
-            'familyDay'
+            'familyDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

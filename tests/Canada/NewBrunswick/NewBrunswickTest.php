@@ -36,7 +36,7 @@ class NewBrunswickTest extends NewBrunswickBaseTestCase
             'christmasDay',
             'victoriaDay',
             'civicHoliday',
-            'familyDay'
+            'familyDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

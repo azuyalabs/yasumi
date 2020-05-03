@@ -36,7 +36,7 @@ class PrinceEdwardIslandTest extends PrinceEdwardIslandBaseTestCase
             'christmasDay',
             'victoriaDay',
             'goldCupParadeDay',
-            'islanderDay'
+            'islanderDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

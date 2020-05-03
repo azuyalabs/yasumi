@@ -18,7 +18,6 @@ use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
-use Yasumi\Yasumi;
 
 /**
  * Class for testing Remembrance Day in Canada.
