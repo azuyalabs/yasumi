@@ -17,6 +17,7 @@ use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Canada;
+use Yasumi\Provider\DateTimeZoneFactory;
 
 /**
  * Provider for all holidays in Prince Edward Island (Canada).
@@ -71,7 +72,7 @@ class PrinceEdwardIsland extends Canada
         $this->addHoliday(new Holiday(
             'victoriaDay',
             ['en' => 'Victoria Day', 'fr' => 'Fête de la Reine'],
-            new DateTime("last monday front of $this->year-05-25", new \DateTimeZone($this->timezone)),
+            new DateTime("last monday front of $this->year-05-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -95,7 +96,7 @@ class PrinceEdwardIsland extends Canada
         $this->addHoliday(new Holiday(
             'islanderDay',
             ['en' => 'Islander Day'],
-            new DateTime("third monday of february $this->year", new \DateTimeZone($this->timezone)),
+            new DateTime("third monday of february $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -119,7 +120,7 @@ class PrinceEdwardIsland extends Canada
         $this->addHoliday(new Holiday(
             'goldCupParadeDay',
             ['en' => 'Gold Cup Parade Day'],
-            new DateTime("third friday of august $this->year", new \DateTimeZone($this->timezone)),
+            new DateTime("third friday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }

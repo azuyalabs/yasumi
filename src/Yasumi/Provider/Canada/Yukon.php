@@ -17,6 +17,7 @@ use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Canada;
+use Yasumi\Provider\DateTimeZoneFactory;
 
 /**
  * Provider for all holidays in Yukon (Canada).
@@ -72,7 +73,7 @@ class Yukon extends Canada
         $this->addHoliday(new Holiday(
             'victoriaDay',
             ['en' => 'Victoria Day', 'fr' => 'Fête de la Reine'],
-            new DateTime("last monday front of $this->year-05-25", new \DateTimeZone($this->timezone)),
+            new DateTime("last monday front of $this->year-05-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -96,7 +97,7 @@ class Yukon extends Canada
         $this->addHoliday(new Holiday(
             'discoveryDay',
             ['en' => 'Discovery Day'],
-            new DateTime("third monday of august $this->year", new \DateTimeZone($this->timezone)),
+            new DateTime("third monday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -120,7 +121,7 @@ class Yukon extends Canada
         $this->addHoliday(new Holiday(
             'heritageDay',
             ['en' => 'Yukon Heritage Day'],
-            new DateTime("first monday of august $this->year", new \DateTimeZone($this->timezone)),
+            new DateTime("first monday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -144,7 +145,7 @@ class Yukon extends Canada
         $this->addHoliday(new Holiday(
             'nationalIndigenousPeoplesDay',
             ['en' => 'National Indigenous Peopls Day', 'fr' => 'Journée nationale des peuples autochtones'],
-            new DateTime("$this->year-06-21", new \DateTimeZone($this->timezone)),
+            new DateTime("$this->year-06-21", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }

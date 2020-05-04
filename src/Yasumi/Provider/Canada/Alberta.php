@@ -17,6 +17,7 @@ use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Canada;
+use Yasumi\Provider\DateTimeZoneFactory;
 
 /**
  * Provider for all holidays in Alberta (Canada).
@@ -71,7 +72,7 @@ class Alberta extends Canada
         $this->addHoliday(new Holiday(
             'victoriaDay',
             ['en' => 'Victoria Day', 'fr' => 'Fête de la Reine'],
-            new DateTime("last monday front of $this->year-05-25", new \DateTimeZone($this->timezone)),
+            new DateTime("last monday front of $this->year-05-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -95,7 +96,7 @@ class Alberta extends Canada
         $this->addHoliday(new Holiday(
             'civicHoliday',
             ['en' => 'Heritage Day'],
-            new DateTime("first monday of august $this->year", new \DateTimeZone($this->timezone)),
+            new DateTime("first monday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -119,7 +120,7 @@ class Alberta extends Canada
         $this->addHoliday(new Holiday(
             'familyDay',
             ['en' => 'Family Day'],
-            new DateTime("third monday of february $this->year", new \DateTimeZone($this->timezone)),
+            new DateTime("third monday of february $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }

@@ -17,6 +17,7 @@ use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
+use Yasumi\Provider\DateTimeZoneFactory;
 
 /**
  * Provider for all holidays in Austria.
@@ -78,7 +79,7 @@ class Canada extends AbstractProvider
         $this->addHoliday(new Holiday(
             'canadaDay',
             ['en' => 'Canada Day', 'fr' => 'Fête du Canada'],
-            new DateTime($this->year . '-07-01', new \DateTimeZone($this->timezone)),
+            new DateTime($this->year . '-07-01', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -102,7 +103,7 @@ class Canada extends AbstractProvider
         $this->addHoliday(new Holiday(
             'labourDay',
             ['en' => 'Labour Day', 'fr' => 'Fête du Travail'],
-            new DateTime("first monday of september $this->year", new \DateTimeZone($this->timezone)),
+            new DateTime("first monday of september $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -126,7 +127,7 @@ class Canada extends AbstractProvider
         $this->addHoliday(new Holiday(
             'thanksgivingDay',
             ['en' => 'Thanksgiving', 'fr' => 'Action de grâce'],
-            new DateTime("second monday of october $this->year", new \DateTimeZone($this->timezone)),
+            new DateTime("second monday of october $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -150,7 +151,7 @@ class Canada extends AbstractProvider
         $this->addHoliday(new Holiday(
             'remembranceDay',
             ['en' => 'Remembrance Day', 'fr' => 'Action de grâce'],
-            new DateTime("$this->year-11-11", new \DateTimeZone($this->timezone)),
+            new DateTime("$this->year-11-11", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
