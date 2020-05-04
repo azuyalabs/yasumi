@@ -17,10 +17,9 @@ use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
-use Yasumi\Provider\DateTimeZoneFactory;
 
 /**
- * Provider for all holidays in Austria.
+ * Provider for all holidays in Canada.
  */
 class Canada extends AbstractProvider
 {
