@@ -35,7 +35,7 @@ class Manitoba extends Canada
     public const ID = 'CA-MB';
 
     /**
-     * Initialize holidays for Northern Ireland (United Kingdom).
+     * Initialize holidays for Manitoba (Canada).
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -51,30 +51,6 @@ class Manitoba extends Canada
         $this->calculateCivicHoliday();
         $this->calculateLouisRielDay();
         $this->calculateVictoriaDay();
-    }
-
-    /**
-     * Victoria Day.
-     *
-     * @link https://en.wikipedia.org/wiki/Victoria_Day
-     *
-     * @throws InvalidDateException
-     * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
-     * @throws \Exception
-     */
-    private function calculateVictoriaDay(): void
-    {
-        if ($this->year < 1845) {
-            return;
-        }
-
-        $this->addHoliday(new Holiday(
-            'victoriaDay',
-            ['en' => 'Victoria Day', 'fr' => 'Fête de la Reine'],
-            new DateTime("last monday front of $this->year-05-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-            $this->locale
-        ));
     }
 
     /**

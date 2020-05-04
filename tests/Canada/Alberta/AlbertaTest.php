@@ -35,7 +35,7 @@ class AlbertaTest extends AlbertaBaseTestCase
             'goodFriday',
             'christmasDay',
             'victoriaDay',
-            'civicHoliday',
+            'heritageDay',
             'familyDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }

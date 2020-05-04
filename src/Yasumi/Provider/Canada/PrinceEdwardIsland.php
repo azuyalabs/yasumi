@@ -54,30 +54,6 @@ class PrinceEdwardIsland extends Canada
     }
 
     /**
-     * Victoria Day.
-     *
-     * @link https://en.wikipedia.org/wiki/Victoria_Day
-     *
-     * @throws InvalidDateException
-     * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
-     * @throws \Exception
-     */
-    private function calculateVictoriaDay(): void
-    {
-        if ($this->year < 1845) {
-            return;
-        }
-
-        $this->addHoliday(new Holiday(
-            'victoriaDay',
-            ['en' => 'Victoria Day', 'fr' => 'Fête de la Reine'],
-            new DateTime("last monday front of $this->year-05-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-            $this->locale
-        ));
-    }
-
-    /**
      * Islander Day.
      *
      * @link https://en.wikipedia.org/wiki/Family_Day_(Canada)

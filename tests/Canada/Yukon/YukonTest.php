@@ -36,7 +36,7 @@ class YukonTest extends YukonBaseTestCase
             'christmasDay',
             'discoveryDay',
             'victoriaDay',
-            'heritageDay',
+            'yukonHeritageDay',
             'nationalIndigenousPeoplesDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }

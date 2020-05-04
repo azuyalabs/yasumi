@@ -21,11 +21,11 @@ use Yasumi\Provider\DateTimeZoneFactory;
 use Yasumi\SubstituteHoliday;
 
 /**
- * Provider for all holidays in NewfoundlandAndLabrador (Canada).
+ * Provider for all holidays in Newfoundland and Labrador (Canada).
  *
  * Manitoba is a province of Canada.
  *
- * @link https://en.wikipedia.org/wiki/Alberta
+ * @link https://en.wikipedia.org/wiki/Newfoundland_and_Labrador
  */
 class NewfoundlandAndLabrador extends Canada
 {
@@ -36,7 +36,7 @@ class NewfoundlandAndLabrador extends Canada
     public const ID = 'CA-NL';
 
     /**
-     * Initialize holidays for Northern Ireland (United Kingdom).
+     * Initialize holidays for Newfoundland and Labrador (Canada).
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

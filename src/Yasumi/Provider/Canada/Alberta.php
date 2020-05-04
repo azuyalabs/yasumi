@@ -35,7 +35,7 @@ class Alberta extends Canada
     public const ID = 'CA-AB';
 
     /**
-     * Initialize holidays for Northern Ireland (United Kingdom).
+     * Initialize holidays for Alberta (Canada).
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -48,37 +48,13 @@ class Alberta extends Canada
         
         $this->timezone = 'America/Edmonton';
         
-        $this->calculateCivicHoliday();
+        $this->calculateHeritageDay();
         $this->calculateFamilyDay();
         $this->calculateVictoriaDay();
     }
 
     /**
-     * Victoria Day.
-     *
-     * @link https://en.wikipedia.org/wiki/Victoria_Day
-     *
-     * @throws InvalidDateException
-     * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
-     * @throws \Exception
-     */
-    private function calculateVictoriaDay(): void
-    {
-        if ($this->year < 1845) {
-            return;
-        }
-
-        $this->addHoliday(new Holiday(
-            'victoriaDay',
-            ['en' => 'Victoria Day', 'fr' => 'Fête de la Reine'],
-            new DateTime("last monday front of $this->year-05-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-            $this->locale
-        ));
-    }
-
-    /**
-     * Civic Holiday.
+     * Heritage Day.
      *
      * @link https://en.wikipedia.org/wiki/Civic_Holiday
      *
@@ -87,40 +63,16 @@ class Alberta extends Canada
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    protected function calculateCivicHoliday(): void
+    protected function calculateHeritageDay(): void
     {
         if ($this->year < 1879) {
             return;
         }
 
         $this->addHoliday(new Holiday(
-            'civicHoliday',
-            ['en' => 'Heritage Day'],
+            'heritageDay',
+            [],
             new DateTime("first monday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-            $this->locale
-        ));
-    }
-
-    /**
-     * Family Day.
-     *
-     * @link https://en.wikipedia.org/wiki/Family_Day_(Canada)
-     *
-     * @throws InvalidDateException
-     * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
-     * @throws \Exception
-     */
-    protected function calculateFamilyDay(): void
-    {
-        if ($this->year < 2009) {
-            return;
-        }
-
-        $this->addHoliday(new Holiday(
-            'familyDay',
-            ['en' => 'Family Day'],
-            new DateTime("third monday of february $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }

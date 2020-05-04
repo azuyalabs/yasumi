@@ -55,30 +55,6 @@ class Yukon extends Canada
     }
 
     /**
-     * Victoria Day.
-     *
-     * @link https://en.wikipedia.org/wiki/Victoria_Day
-     *
-     * @throws InvalidDateException
-     * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
-     * @throws \Exception
-     */
-    private function calculateVictoriaDay(): void
-    {
-        if ($this->year < 1845) {
-            return;
-        }
-
-        $this->addHoliday(new Holiday(
-            'victoriaDay',
-            ['en' => 'Victoria Day', 'fr' => 'Fête de la Reine'],
-            new DateTime("last monday front of $this->year-05-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-            $this->locale
-        ));
-    }
-
-    /**
      * Discovery Day.
      *
      * @link https://en.wikipedia.org/wiki/Civic_Holiday
@@ -119,7 +95,7 @@ class Yukon extends Canada
         }
 
         $this->addHoliday(new Holiday(
-            'heritageDay',
+            'yukonHeritageDay',
             ['en' => 'Yukon Heritage Day'],
             new DateTime("first monday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
@@ -144,7 +120,7 @@ class Yukon extends Canada
 
         $this->addHoliday(new Holiday(
             'nationalIndigenousPeoplesDay',
-            ['en' => 'National Indigenous Peopls Day', 'fr' => 'Journée nationale des peuples autochtones'],
+            ['en' => 'National Indigenous Peoples Day', 'fr' => 'Journée nationale des peuples autochtones'],
             new DateTime("$this->year-06-21", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));

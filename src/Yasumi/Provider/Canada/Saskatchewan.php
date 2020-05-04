@@ -48,33 +48,9 @@ class Saskatchewan extends Canada
         
         $this->timezone = 'America/Regina';
         
-        $this->calculateCivicHoliday();
+        $this->calculateSaskatchewanDay();
         $this->calculateFamilyDay();
         $this->calculateVictoriaDay();
-    }
-
-    /**
-     * Victoria Day.
-     *
-     * @link https://en.wikipedia.org/wiki/Victoria_Day
-     *
-     * @throws InvalidDateException
-     * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
-     * @throws \Exception
-     */
-    private function calculateVictoriaDay(): void
-    {
-        if ($this->year < 1845) {
-            return;
-        }
-
-        $this->addHoliday(new Holiday(
-            'victoriaDay',
-            ['en' => 'Victoria Day', 'fr' => 'Fête de la Reine'],
-            new DateTime("last monday front of $this->year-05-25", new \DateTimeZone($this->timezone)),
-            $this->locale
-        ));
     }
 
     /**
@@ -87,40 +63,16 @@ class Saskatchewan extends Canada
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    protected function calculateCivicHoliday(): void
+    protected function calculateSaskatchewanDay(): void
     {
         if ($this->year < 1879) {
             return;
         }
 
         $this->addHoliday(new Holiday(
-            'civicHoliday',
+            'saskatchewanDay',
             ['en' => 'Saskatchewan Day'],
             new DateTime("first monday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-            $this->locale
-        ));
-    }
-
-    /**
-     * Family Day.
-     *
-     * @link https://en.wikipedia.org/wiki/Family_Day_(Canada)
-     *
-     * @throws InvalidDateException
-     * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
-     * @throws \Exception
-     */
-    protected function calculateFamilyDay(): void
-    {
-        if ($this->year < 2009) {
-            return;
-        }
-
-        $this->addHoliday(new Holiday(
-            'familyDay',
-            ['en' => 'Family Day'],
-            new DateTime("third monday of february $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
