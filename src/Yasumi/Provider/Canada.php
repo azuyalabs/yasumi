@@ -60,6 +60,54 @@ class Canada extends AbstractProvider
     }
 
     /**
+     * Family Day.
+     *
+     * @link https://en.wikipedia.org/wiki/Family_Day_(Canada)
+     *
+     * @throws InvalidDateException
+     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws \Exception
+     */
+    protected function calculateFamilyDay(): void
+    {
+        if ($this->year < 2009) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday(
+            'familyDay',
+            [],
+            new DateTime("third monday of february $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale
+        ));
+    }
+
+    /**
+     * Victoria Day.
+     *
+     * @link https://en.wikipedia.org/wiki/Victoria_Day
+     *
+     * @throws InvalidDateException
+     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws \Exception
+     */
+    protected function calculateVictoriaDay(): void
+    {
+        if ($this->year < 1845) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday(
+            'victoriaDay',
+            [],
+            new DateTime("last monday front of $this->year-05-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale
+        ));
+    }
+
+    /**
      * Canada Day.
      *
      * @link https://en.wikipedia.org/wiki/Canada_Day
@@ -77,8 +125,32 @@ class Canada extends AbstractProvider
 
         $this->addHoliday(new Holiday(
             'canadaDay',
-            ['en' => 'Canada Day', 'fr' => 'Fête du Canada'],
+            [],
             new DateTime($this->year . '-07-01', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale
+        ));
+    }
+
+    /**
+     * Civic Holiday.
+     *
+     * @link https://en.wikipedia.org/wiki/Civic_Holiday
+     *
+     * @throws InvalidDateException
+     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws \Exception
+     */
+    protected function calculateCivicHoliday(): void
+    {
+        if ($this->year < 1879) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday(
+            'civicHoliday',
+            [],
+            new DateTime("first monday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -101,7 +173,7 @@ class Canada extends AbstractProvider
 
         $this->addHoliday(new Holiday(
             'labourDay',
-            ['en' => 'Labour Day', 'fr' => 'Fête du Travail'],
+            [],
             new DateTime("first monday of september $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
@@ -125,7 +197,7 @@ class Canada extends AbstractProvider
 
         $this->addHoliday(new Holiday(
             'thanksgivingDay',
-            ['en' => 'Thanksgiving', 'fr' => 'Action de grâce'],
+            [],
             new DateTime("second monday of october $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
@@ -149,7 +221,7 @@ class Canada extends AbstractProvider
 
         $this->addHoliday(new Holiday(
             'remembranceDay',
-            ['en' => 'Remembrance Day', 'fr' => 'Action de grâce'],
+            [],
             new DateTime("$this->year-11-11", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
