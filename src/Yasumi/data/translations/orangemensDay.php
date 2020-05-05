@@ -11,12 +11,8 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-// Translations for Labour Day
+// Translations for Orangemen's Day
 return [
-    'en' => 'Labour Day',
-    'ja' => '労働の日',
-    'ko' => '노동절',
-    'nl' => 'Dag van de arbeid',
-    'sk' => 'Sviatok práce',
-    'fr' => 'Fête du travail',
+    'en' => 'Orangemen’s Day',
+    'fr' => 'Fête des orangistes',
 ];

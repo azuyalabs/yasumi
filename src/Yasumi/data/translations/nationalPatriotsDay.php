@@ -11,12 +11,8 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-// Translations for Labour Day
+// Translations for National Patriot's Day
 return [
-    'en' => 'Labour Day',
-    'ja' => '労働の日',
-    'ko' => '노동절',
-    'nl' => 'Dag van de arbeid',
-    'sk' => 'Sviatok práce',
-    'fr' => 'Fête du travail',
+    'en' => 'National Patriot’s Day',
+    'fr' => 'Journée nationale des patriotes',
 ];
