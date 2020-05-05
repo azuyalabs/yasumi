@@ -70,8 +70,8 @@ class Manitoba extends Canada
         }
 
         $this->addHoliday(new Holiday(
-            'civicHoliday',
-            ['en' => 'Terry Fox Day'],
+            'terryFoxDay',
+            [],
             new DateTime("first monday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
@@ -95,7 +95,7 @@ class Manitoba extends Canada
 
         $this->addHoliday(new Holiday(
             'louisRielDay',
-            ['en' => 'Louis Riel Day', 'fr' => 'Journée Louis Riel'],
+            [],
             new DateTime("third monday of february $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));

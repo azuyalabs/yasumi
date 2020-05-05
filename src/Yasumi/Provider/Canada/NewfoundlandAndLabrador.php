@@ -125,7 +125,7 @@ class NewfoundlandAndLabrador extends Canada
 
         $holiday = new Holiday(
             'orangemensDay',
-            ['en' => 'Orangemen’s Day'],
+            [],
             new DateTime($this->year . '-7-12', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK

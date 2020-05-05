@@ -71,7 +71,7 @@ class Saskatchewan extends Canada
 
         $this->addHoliday(new Holiday(
             'saskatchewanDay',
-            ['en' => 'Saskatchewan Day'],
+            [],
             new DateTime("first monday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));

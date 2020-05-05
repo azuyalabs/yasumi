@@ -35,8 +35,8 @@ class NovaScotiaTest extends NovaScotiaBaseTestCase
             'goodFriday',
             'christmasDay',
             'victoriaDay',
-            'civicHoliday',
-            'heritageDay',
+            'natalHoliday',
+            'novaScotiaHeritageDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

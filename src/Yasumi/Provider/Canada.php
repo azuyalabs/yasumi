@@ -108,6 +108,30 @@ class Canada extends AbstractProvider
     }
 
     /**
+     * National Indigenous Peoples Day.
+     *
+     * @link https://www.rcaanc-cirnac.gc.ca/eng/1100100013248/1534872397533
+     *
+     * @throws InvalidDateException
+     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws \Exception
+     */
+    protected function calculateNationalIndigenousPeoplesDay(): void
+    {
+        if ($this->year < 1996) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday(
+            'nationalIndigenousPeoplesDay',
+            [],
+            new DateTime("$this->year-06-21", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale
+        ));
+    }
+
+    /**
      * Canada Day.
      *
      * @link https://en.wikipedia.org/wiki/Canada_Day

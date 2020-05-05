@@ -70,8 +70,8 @@ class NovaScotia extends Canada
         }
 
         $this->addHoliday(new Holiday(
-            'civicHoliday',
-            ['en' => 'Natal Holiday'],
+            'natalHoliday',
+            [],
             new DateTime("first monday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
@@ -94,8 +94,8 @@ class NovaScotia extends Canada
         }
 
         $this->addHoliday(new Holiday(
-            'heritageDay',
-            ['en' => 'Nova Scotia Heritage Day'],
+            'novaScotiaHeritageDay',
+            [],
             new DateTime("third monday of february $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));

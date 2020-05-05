@@ -84,7 +84,7 @@ class Quebec extends Canada
     ): Holiday {
         return new Holiday(
             'saintJeanBaptisteDay',
-            ['en' => 'Saint-Jean-Baptiste Day', 'fr' => 'Fête de la Saint-Jean-Baptiste'],
+            [],
             new DateTime("$year-06-24", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -109,7 +109,7 @@ class Quebec extends Canada
 
         $this->addHoliday(new Holiday(
             'nationalPatriotsDay',
-            ['en' => 'National Patriot’s Day', 'fr' => 'Journée nationale des patriotes'],
+            [],
             new DateTime("last monday front of $this->year-05-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));

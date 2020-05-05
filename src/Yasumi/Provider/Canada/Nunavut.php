@@ -70,7 +70,7 @@ class Nunavut extends Canada
 
         $this->addHoliday(new Holiday(
             'civicHoliday',
-            ['en' => 'Civic Holiday', 'fr' => 'Premier lundi d\'août'],
+            [],
             new DateTime("first monday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));

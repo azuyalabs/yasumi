@@ -72,7 +72,7 @@ class Yukon extends Canada
 
         $this->addHoliday(new Holiday(
             'discoveryDay',
-            ['en' => 'Discovery Day'],
+            [],
             new DateTime("third monday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
@@ -96,32 +96,8 @@ class Yukon extends Canada
 
         $this->addHoliday(new Holiday(
             'yukonHeritageDay',
-            ['en' => 'Yukon Heritage Day'],
+            [],
             new DateTime("first monday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-            $this->locale
-        ));
-    }
-
-    /**
-     * National Indigenous Peoples Day.
-     *
-     * @link https://www.rcaanc-cirnac.gc.ca/eng/1100100013248/1534872397533
-     *
-     * @throws InvalidDateException
-     * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
-     * @throws \Exception
-     */
-    protected function calculateNationalIndigenousPeoplesDay(): void
-    {
-        if ($this->year < 1996) {
-            return;
-        }
-
-        $this->addHoliday(new Holiday(
-            'nationalIndigenousPeoplesDay',
-            ['en' => 'National Indigenous Peoples Day', 'fr' => 'Journée nationale des peuples autochtones'],
-            new DateTime("$this->year-06-21", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
