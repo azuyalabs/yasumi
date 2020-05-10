@@ -255,19 +255,6 @@ class Ukraine extends AbstractProvider
     }
 
     /**
-     * @param int $year
-     * @param string $timezone
-     *
-     * @return \DateTime
-     *
-     * @throws \Exception
-     */
-    public function calculateEaster(int $year, string $timezone): \DateTime
-    {
-        return $this->calculateOrthodoxEaster($year, $timezone);
-    }
-
-    /**
      * Catholic Christmas Day.
      * (since 2017 instead of International Workers' Day 2. May)
      *
@@ -296,5 +283,18 @@ class Ukraine extends AbstractProvider
             ),
             false  // Catholic Christmas Day will not be substituted to an monday if it's on a weekend!
         );
+    }
+
+    /**
+     * @param int $year
+     * @param string $timezone
+     *
+     * @return \DateTime
+     *
+     * @throws \Exception
+     */
+    public function calculateEaster(int $year, string $timezone): \DateTime
+    {
+        return $this->calculateOrthodoxEaster($year, $timezone);
     }
 }

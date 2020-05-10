@@ -197,31 +197,6 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     }
 
     /**
-     * Determines whether a date represents a weekend day or not.
-     *
-     * @param \DateTimeInterface $date any date object that implements the DateTimeInterface (e.g. Yasumi\Holiday,
-     *                                 \DateTime)
-     *
-     * @return bool true if date represents a weekend day, otherwise false
-     * @throws InvalidDateException
-     *
-     */
-    public function isWeekendDay(\DateTimeInterface $date): bool
-    {
-        // If no data is defined for this Holiday Provider, the function falls back to the global weekend definition.
-        if (\in_array(
-            (int)$date->format('w'),
-            self::WEEKEND_DATA[$this::ID] ?? [0, 6],
-            true
-        )
-        ) {
-            return true;
-        }
-
-        return false;
-    }
-
-    /**
      * Determines whether a date represents a holiday or not.
      *
      * @param \DateTimeInterface $date any date object that implements the DateTimeInterface (e.g. Yasumi\Holiday,
@@ -251,6 +226,31 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         return \array_map(static function ($holiday) {
             return (string)$holiday;
         }, $this->holidays);
+    }
+
+    /**
+     * Determines whether a date represents a weekend day or not.
+     *
+     * @param \DateTimeInterface $date any date object that implements the DateTimeInterface (e.g. Yasumi\Holiday,
+     *                                 \DateTime)
+     *
+     * @return bool true if date represents a weekend day, otherwise false
+     * @throws InvalidDateException
+     *
+     */
+    public function isWeekendDay(\DateTimeInterface $date): bool
+    {
+        // If no data is defined for this Holiday Provider, the function falls back to the global weekend definition.
+        if (\in_array(
+            (int)$date->format('w'),
+            self::WEEKEND_DATA[$this::ID] ?? [0, 6],
+            true
+        )
+        ) {
+            return true;
+        }
+
+        return false;
     }
 
     /**

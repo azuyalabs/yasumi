@@ -23,7 +23,7 @@ class MissingTranslationException extends BaseException implements Exception
      * Initializes the Exception instance
      *
      * @param string $shortName The short name (internal name) of the holiday
-     * @param array  $locales   The locales that was searched
+     * @param array $locales The locales that was searched
      */
     public function __construct(string $shortName, array $locales)
     {
