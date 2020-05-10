@@ -11,9 +11,10 @@ declare(strict_types=1);
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests;
+namespace Yasumi\tests\Base;
 
 use PHPUnit\Framework\TestCase;
+use Yasumi\tests\YasumiBase;
 use Yasumi\Yasumi;
 
 /**
