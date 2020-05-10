@@ -117,31 +117,6 @@ trait YasumiBase
     }
 
     /**
-     * Asserts that the given holiday for that given year does not exist.
-     *
-     * @param string $provider the holiday provider (i.e. country/state) for which the holiday need to be tested
-     * @param string $shortName the short name of the holiday to be checked against
-     * @param int $year holiday calendar year
-     *
-     * @throws InvalidArgumentException
-     * @throws RuntimeException
-     * @throws UnknownLocaleException
-     * @throws InvalidDateException
-     * @throws AssertionFailedError
-     * @throws ReflectionException
-     */
-    public function assertNotHoliday(
-        string $provider,
-        string $shortName,
-        int $year
-    ): void {
-        $holidays = Yasumi::create($provider, $year);
-        $holiday = $holidays->getHoliday($shortName);
-
-        $this->assertNull($holiday);
-    }
-
-    /**
      * Asserts that the expected date is indeed a substitute holiday for that given year and name
      *
      * @param string $provider the holiday provider (i.e. country/state) for which the holiday need to be tested
@@ -194,6 +169,31 @@ trait YasumiBase
             'substituteHoliday:' . $shortName,
             $year
         );
+    }
+
+    /**
+     * Asserts that the given holiday for that given year does not exist.
+     *
+     * @param string $provider the holiday provider (i.e. country/state) for which the holiday need to be tested
+     * @param string $shortName the short name of the holiday to be checked against
+     * @param int $year holiday calendar year
+     *
+     * @throws InvalidArgumentException
+     * @throws RuntimeException
+     * @throws UnknownLocaleException
+     * @throws InvalidDateException
+     * @throws AssertionFailedError
+     * @throws ReflectionException
+     */
+    public function assertNotHoliday(
+        string $provider,
+        string $shortName,
+        int $year
+    ): void {
+        $holidays = Yasumi::create($provider, $year);
+        $holiday = $holidays->getHoliday($shortName);
+
+        $this->assertNull($holiday);
     }
 
     /**

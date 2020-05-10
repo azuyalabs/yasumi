@@ -39,7 +39,7 @@ class BattleOfTheBoyneTest extends NorthernIrelandBaseTestCase implements Yasumi
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int       $year     the year for which the holiday defined in this test needs to be tested
+     * @param int $year the year for which the holiday defined in this test needs to be tested
      * @param \DateTime $expected the expected date
      *
      * @throws ReflectionException
@@ -80,8 +80,8 @@ class BattleOfTheBoyneTest extends NorthernIrelandBaseTestCase implements Yasumi
         $data = [];
 
         for ($y = 0; $y < self::TEST_ITERATIONS; $y++) {
-            $year   = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-            $date   = new DateTime("$year-7-12", new DateTimeZone(self::TIMEZONE));
+            $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+            $date = new DateTime("$year-7-12", new DateTimeZone(self::TIMEZONE));
             $data[] = [$year, $date->format('Y-m-d')];
         }
 

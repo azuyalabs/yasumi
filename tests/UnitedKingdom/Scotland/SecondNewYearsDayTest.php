@@ -45,7 +45,7 @@ class SecondNewYearsDayTest extends ScotlandBaseTestCase implements YasumiTestCa
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int    $year     the year for which the holiday defined in this test needs to be tested
+     * @param int $year the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
      * @throws ReflectionException
@@ -100,8 +100,8 @@ class SecondNewYearsDayTest extends ScotlandBaseTestCase implements YasumiTestCa
         $data = [];
 
         for ($y = 0; $y < self::TEST_ITERATIONS; $y++) {
-            $year   = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-            $date   = new DateTime("$year-1-2", new DateTimeZone(self::TIMEZONE));
+            $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+            $date = new DateTime("$year-1-2", new DateTimeZone(self::TIMEZONE));
             $data[] = [$year, $date->format('Y-m-d')];
         }
 

@@ -14,7 +14,6 @@ declare(strict_types=1);
 namespace Yasumi\tests;
 
 use PHPUnit\Framework\TestCase;
-use Yasumi\Translations;
 use Yasumi\Yasumi;
 
 /**
@@ -33,10 +32,10 @@ class TypographyTest extends TestCase
     /**
      * @dataProvider translationProvider
      *
-     * @param string $name      The localized holiday name
-     * @param string $class     The provider
+     * @param string $name The localized holiday name
+     * @param string $class The provider
      * @param string $shortName The short name (internal name) of the holiday
-     * @param string $locale    The locale
+     * @param string $locale The locale
      */
     public function testTranslations($name, $class, $shortName, $locale): void
     {

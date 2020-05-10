@@ -51,6 +51,54 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements YasumiTestCa
     }
 
     /**
+     * Asserts that the expected date is indeed a holiday for that given year and name
+     *
+     * @param string $provider the holiday provider (i.e. country/state) for which the holiday need to be tested
+     * @param string $shortName string the short name of the holiday to be checked against
+     * @param int $year holiday calendar year
+     * @param DateTime $expected the official date to be checked against
+     * @param DateTime $expected the substituted date to be checked against
+     *
+     * @throws UnknownLocaleException
+     * @throws InvalidDateException
+     * @throws InvalidArgumentException
+     * @throws RuntimeException
+     * @throws AssertionFailedError
+     * @throws ReflectionException
+     */
+    public function assertHolidayWithSubstitution(
+        string $provider,
+        string $shortName,
+        int $year,
+        DateTime $expectedOfficial,
+        DateTime $expectedSubstitution = null
+    ): void {
+        $holidays = Yasumi::create($provider, $year);
+
+        $holidayOfficial = $holidays->getHoliday($shortName);
+        $this->assertInstanceOf(Holiday::class, $holidayOfficial);
+        $this->assertNotNull($holidayOfficial);
+        $this->assertEquals($expectedOfficial, $holidayOfficial);
+        $this->assertTrue($holidays->isHoliday($holidayOfficial));
+        $this->assertEquals(Holiday::TYPE_OFFICIAL, $holidayOfficial->getType());
+
+        $holidaySubstitution = $holidays->getHoliday('substituteHoliday:' . $holidayOfficial->shortName);
+        if ($expectedSubstitution === null) {
+            // without substitution
+            $this->assertNull($holidaySubstitution);
+        } else {
+            // with substitution
+            $this->assertNotNull($holidaySubstitution);
+            $this->assertInstanceOf(SubstituteHoliday::class, $holidaySubstitution);
+            $this->assertEquals($expectedSubstitution, $holidaySubstitution);
+            $this->assertTrue($holidays->isHoliday($holidaySubstitution));
+            $this->assertEquals(Holiday::TYPE_OFFICIAL, $holidaySubstitution->getType());
+        }
+
+        unset($holidayOfficial, $holidaySubstitution, $holidays);
+    }
+
+    /**
      * Tests the substitution of holidays on sunday (weekend).
      * @throws Exception
      * @throws ReflectionException
@@ -132,53 +180,5 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements YasumiTestCa
     public function testHolidayType(): void
     {
         $this->assertTrue(true);
-    }
-
-    /**
-     * Asserts that the expected date is indeed a holiday for that given year and name
-     *
-     * @param string $provider the holiday provider (i.e. country/state) for which the holiday need to be tested
-     * @param string $shortName string the short name of the holiday to be checked against
-     * @param int $year holiday calendar year
-     * @param DateTime $expected the official date to be checked against
-     * @param DateTime $expected the substituted date to be checked against
-     *
-     * @throws UnknownLocaleException
-     * @throws InvalidDateException
-     * @throws InvalidArgumentException
-     * @throws RuntimeException
-     * @throws AssertionFailedError
-     * @throws ReflectionException
-     */
-    public function assertHolidayWithSubstitution(
-        string $provider,
-        string $shortName,
-        int $year,
-        DateTime $expectedOfficial,
-        DateTime $expectedSubstitution = null
-    ): void {
-        $holidays = Yasumi::create($provider, $year);
-
-        $holidayOfficial = $holidays->getHoliday($shortName);
-        $this->assertInstanceOf(Holiday::class, $holidayOfficial);
-        $this->assertNotNull($holidayOfficial);
-        $this->assertEquals($expectedOfficial, $holidayOfficial);
-        $this->assertTrue($holidays->isHoliday($holidayOfficial));
-        $this->assertEquals(Holiday::TYPE_OFFICIAL, $holidayOfficial->getType());
-
-        $holidaySubstitution = $holidays->getHoliday('substituteHoliday:' . $holidayOfficial->shortName);
-        if ($expectedSubstitution === null) {
-            // without substitution
-            $this->assertNull($holidaySubstitution);
-        } else {
-            // with substitution
-            $this->assertNotNull($holidaySubstitution);
-            $this->assertInstanceOf(SubstituteHoliday::class, $holidaySubstitution);
-            $this->assertEquals($expectedSubstitution, $holidaySubstitution);
-            $this->assertTrue($holidays->isHoliday($holidaySubstitution));
-            $this->assertEquals(Holiday::TYPE_OFFICIAL, $holidaySubstitution->getType());
-        }
-
-        unset($holidayOfficial, $holidaySubstitution, $holidays);
     }
 }

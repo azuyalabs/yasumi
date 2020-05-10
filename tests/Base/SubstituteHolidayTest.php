@@ -79,9 +79,9 @@ class SubstituteHolidayTest extends TestCase
      */
     public function testSubstituteHolidayIsJsonSerializable(): void
     {
-        $holiday    = new Holiday('testHoliday', [], new DateTime('2019-01-01'), 'en_US');
+        $holiday = new Holiday('testHoliday', [], new DateTime('2019-01-01'), 'en_US');
         $substitute = new SubstituteHoliday($holiday, [], new DateTime('2019-01-02'), 'en_US');
-        $json     = \json_encode($substitute);
+        $json = \json_encode($substitute);
         $instance = \json_decode($json, true);
 
         $this->assertIsArray($instance);
@@ -129,11 +129,11 @@ class SubstituteHolidayTest extends TestCase
      */
     public function testSubstituteHolidayGetNameWithCustomSubstituteTranslation(): void
     {
-        $name        = 'testHoliday';
+        $name = 'testHoliday';
         $translation = 'My Holiday';
-        $locale      = 'en_US';
-        $holiday     = new Holiday($name, [$locale => 'foo'], new DateTime('2019-01-01'), $locale);
-        $substitute  = new SubstituteHoliday($holiday, [$locale => $translation], new DateTime('2019-01-02'), $locale);
+        $locale = 'en_US';
+        $holiday = new Holiday($name, [$locale => 'foo'], new DateTime('2019-01-01'), $locale);
+        $substitute = new SubstituteHoliday($holiday, [$locale => $translation], new DateTime('2019-01-02'), $locale);
 
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
         $translationsStub->expects($this->at(0))->method('getTranslations')->with($this->equalTo('substituteHoliday'))->willReturn([$locale => 'foo']);
@@ -152,11 +152,11 @@ class SubstituteHolidayTest extends TestCase
      */
     public function testSubstituteHolidayGetNameWithPatternFallback(): void
     {
-        $name        = 'testHoliday';
+        $name = 'testHoliday';
         $translation = 'My Holiday';
-        $locale      = 'en_US';
-        $holiday     = new Holiday($name, [], new DateTime('2019-01-01'), $locale);
-        $substitute  = new SubstituteHoliday($holiday, [], new DateTime('2019-01-02'), $locale);
+        $locale = 'en_US';
+        $holiday = new Holiday($name, [], new DateTime('2019-01-01'), $locale);
+        $substitute = new SubstituteHoliday($holiday, [], new DateTime('2019-01-02'), $locale);
 
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
         $translationsStub->expects($this->at(0))->method('getTranslations')->with($this->equalTo('substituteHoliday'))->willReturn(['en' => '{0} obs']);
@@ -175,11 +175,11 @@ class SubstituteHolidayTest extends TestCase
      */
     public function testSubstituteHolidayGetNameWithGlobalSubstituteTranslation(): void
     {
-        $name        = 'testHoliday';
+        $name = 'testHoliday';
         $translation = 'My Substitute';
-        $locale      = 'en_US';
-        $holiday     = new Holiday($name, [$locale => 'foo'], new DateTime('2019-01-01'), $locale);
-        $substitute  = new SubstituteHoliday($holiday, [$locale => $translation], new DateTime('2019-01-02'), $locale);
+        $locale = 'en_US';
+        $holiday = new Holiday($name, [$locale => 'foo'], new DateTime('2019-01-01'), $locale);
+        $substitute = new SubstituteHoliday($holiday, [$locale => $translation], new DateTime('2019-01-02'), $locale);
 
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
         $translationsStub->expects($this->at(0))->method('getTranslations')->with($this->equalTo('substituteHoliday'))->willReturn([$locale => '{0} observed']);
@@ -198,11 +198,11 @@ class SubstituteHolidayTest extends TestCase
      */
     public function testSubstituteHolidayGetNameWithSubstitutedTranslation(): void
     {
-        $name        = 'testHoliday';
+        $name = 'testHoliday';
         $translation = 'My Holiday';
-        $locale      = 'en_US';
-        $holiday     = new Holiday($name, [$locale => $translation], new DateTime('2019-01-01'), $locale);
-        $substitute  = new SubstituteHoliday($holiday, [], new DateTime('2019-01-02'), $locale);
+        $locale = 'en_US';
+        $holiday = new Holiday($name, [$locale => $translation], new DateTime('2019-01-01'), $locale);
+        $substitute = new SubstituteHoliday($holiday, [], new DateTime('2019-01-02'), $locale);
 
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
         $translationsStub->expects($this->at(0))->method('getTranslations')->with($this->equalTo('substituteHoliday'))->willReturn([$locale => '{0} observed']);
