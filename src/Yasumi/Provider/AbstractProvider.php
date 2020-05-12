@@ -481,4 +481,38 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     {
         return new OnFilter($this->getIterator(), $date);
     }
+
+    /**
+     * Retrieves a list of all workdays between the given start and end date.
+     *
+     * @param \DateTimeInterface $startDate Start date of the time frame to check against
+     * @param \DateTimeInterface $endDate End date of the time frame to check against
+     *
+     * @return array
+     * @throws InvalidArgumentException An InvalidArgumentException is thrown if the start date is set after the end
+     *                                  date.
+     */
+    public function getWorkdays(\DateTimeInterface $startDate, \DateTimeInterface $endDate) : array
+    {
+        if ($startDate > $endDate) {
+            throw new InvalidArgumentException('Start date must be a date before the end date.');
+        }
+
+        // Setup start date, if its an instance of DateTime, clone to prevent modification to original
+        $date = $startDate instanceof \DateTime ? clone $startDate : $startDate;
+
+        // 1 day interval that will be used as increment
+        $interval = new \DateInterval('P1D');
+
+        $workDayList = [];
+        while ($date <= $endDate) {
+            if ($this->isWorkingDay($date)) {
+                $workDayList[] = clone $date;
+            }
+
+            $date = $date->add($interval);
+        }
+
+        return $workDayList;
+    }
 }
