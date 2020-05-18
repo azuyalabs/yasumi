@@ -1,4 +1,4 @@
-![Logo](https://github.com/azuyalabs/yasumi/blob/gh-pages/images/yasumi_logo_wb.png)
+![Logo](https://www.yasumi.dev/assets/img/yasumi_logo.svg)
 
 [![GitHub Release](https://img.shields.io/github/release/azuyalabs/yasumi.svg?style=flat-square)](https://github.com/azuyalabs/yasumi/releases)
 [![Total Downloads](https://img.shields.io/packagist/dt/azuyalabs/yasumi.svg?style=flat-square)](https://packagist.org/packages/azuyalabs/yasumi)
@@ -6,6 +6,11 @@
 [![Build Status](https://img.shields.io/travis/azuyalabs/yasumi.svg?style=flat-square)](https://travis-ci.org/azuyalabs/yasumi)
 [![StyleCI](https://styleci.io/repos/32797151/shield?branch=master)](https://styleci.io/repos/32797151)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/azuyalabs/yasumi/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/azuyalabs/yasumi/?branch=master)
+
+Update!
+-------
+Yasumi has now its own domain https://yasumi.dev and a brand-new documentation website! 
+Thanks to the [Jigsaw](http://jigsaw.tighten.co) documentation template created by the amazing [TightenCo](https://tighten.co) and [TailwindCSS](http://tailwindcss.com) brothers. Read more about it in this blog post: https://yasumi.dev/blog/new_docs_site…
 
 Introduction
 ------------
