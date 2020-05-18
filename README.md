@@ -10,7 +10,9 @@
 Update!
 -------
 Yasumi has now its own domain https://yasumi.dev and a brand-new documentation website! 
-Thanks to the [Jigsaw](http://jigsaw.tighten.co) documentation template created by the amazing [TightenCo](https://tighten.co) and [TailwindCSS](http://tailwindcss.com) brothers. Read more about it in this blog post: https://yasumi.dev/blog/new_docs_site…
+Thanks to the [Jigsaw](http://jigsaw.tighten.co) documentation template created by the amazing [TightenCo](https://tighten.co) and [TailwindCSS](http://tailwindcss.com) brothers. Read more about it in this blog post: https://www.yasumi.dev/blog/new_docs_site
+
+Please don't forget to update your bookmarks! The documentation site at https://azuyalabs.github.io/yasumi/ will be removed soon.
 
 Introduction
 ------------
@@ -28,11 +30,11 @@ holidays. The methods of Yasumi can be used to get a holiday's date and name in 
 Documentation
 -------------
 
-Yasumi’s documentation is available on [https://azuyalabs.github.io/yasumi/](https://azuyalabs.github.io/yasumi/). You will find all the necessary information how to install Yasumi and also recipes how you can use Yasumi in your project.
+Yasumi’s documentation is available on [https://www.yasumi.dev](https://www.yasumi.dev). You will find all the necessary information how to install Yasumi and also recipes how you can use Yasumi in your project.
 
 Blog
 ----
-Checkout the [blog](https://azuyalabs.github.io/yasumi/blog/) section on documentation site regularly for latest updates. Keeping you informed about any news, releases, etc. in a handy blog post format!
+Checkout the [blog](https://www.yasumi.dev/blog/) section on documentation site regularly for latest updates. Keeping you informed about any news, releases, etc. in a handy blog post format!
 
 ## Contributing
 
