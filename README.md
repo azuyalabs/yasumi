@@ -9,10 +9,10 @@
 
 Update!
 -------
-Yasumi has now its own domain https://yasumi.dev and a brand-new documentation website! 
-Thanks to the [Jigsaw](http://jigsaw.tighten.co) documentation template created by the amazing [TightenCo](https://tighten.co) and [TailwindCSS](http://tailwindcss.com) brothers. Read more about it in this blog post: https://www.yasumi.dev/blog/new_docs_site
+Yasumi has now its own domain [https://www.yasumi.dev](https://www.yasumi.dev) and a brand-new documentation website! 
+Thanks to the [Jigsaw](https://jigsaw.tighten.co) documentation template created by the amazing [TightenCo](https://tighten.co) and [TailwindCSS](https://tailwindcss.com) brothers. Read more about it in this blog post: [https://www.yasumi.dev/blog/new_docs_site](https://www.yasumi.dev/blog/new_docs_site)
 
-Please don't forget to update your bookmarks! The documentation site at https://azuyalabs.github.io/yasumi/ will be removed soon.
+Please don't forget to update your bookmarks! The documentation site at [https://azuyalabs.github.io/yasumi/](https://azuyalabs.github.io/yasumi/) will be removed soon.
 
 Introduction
 ------------
@@ -24,7 +24,7 @@ are either not free or offer only limited information. In addition, no complete 
 that covers a wide range of holidays and countries, except maybe [PEAR's Date_Holidays](https://pear.php.net/package/Date_Holidays) which unfortunately hasn't been updated for a long time.
 
 The goal of Yasumi is to be powerful while remaining lightweight, by utilizing PHP native classes wherever possible.
-Yasumi's calculation is provider-based (i.e. by country/state) so it's easy to add new holiday providers that calculate
+Yasumi's calculation is provider-based (i.e. by country/state), so it's easy to add new holiday providers that calculate
 holidays. The methods of Yasumi can be used to get a holiday's date and name in various languages.
 
 Documentation
