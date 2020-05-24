@@ -1,6 +1,16 @@
 {
   "name": "azuyalabs/yasumi",
-  "description": "Yasumi is an easy PHP Library for calculating national holidays.",
+  "description": "The easy PHP Library for calculating holidays.",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Sacha Telgenhof",
+      "email": "me@sachatelgenhof.com",
+      "role": "Maintainer"
+    }
+  ],
+  "homepage": "https://www.yasumi.dev",
+  "license": "MIT",
   "keywords": [
     "holiday",
     "holidays",
@@ -12,11 +22,16 @@
     "bank",
     "national"
   ],
-  "license": "MIT",
-  "authors": [
+  "readme": "README.md",
+  "support": {
+    "issues": "https://github.com/azuyalabs/yasumi/issues",
+    "source": "https://github.com/azuyalabs/yasumi",
+    "docs": "https://www.yasumi.dev"
+  },
+  "funding": [
     {
-      "name": "Sacha Telgenhof",
-      "email": "me@sachatelgenhof.com"
+      "type": "other",
+      "url": "https://www.buymeacoffee.com/sachatelgenhof"
     }
   ],
   "require": {
