@@ -15,6 +15,7 @@ namespace Yasumi\Provider\Germany;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Provider\Germany;
+use Yasumi\Holiday;
 
 /**
  * Provider for all holidays in Thuringia (Germany).
@@ -48,6 +49,9 @@ class Thuringia extends Germany
 
         // Add custom Christian holidays
         $this->calculateReformationDay();
+
+        // Add custom common holidays
+        $this->calculateChildrensDay();
     }
 
     /**
@@ -66,5 +70,27 @@ class Thuringia extends Germany
         }
 
         $this->addHoliday($this->reformationDay($this->year, $this->timezone, $this->locale));
+    }
+
+    /**
+     * Overrides the children's day from provider Germany.
+     * Sets type to official when the year is 2019 and above.
+     *
+     * @throws \Exception
+     */
+    private function calculateChildrensDay(): void
+    {
+        if ($this->year < 2019) {
+            return;
+        }
+
+        $this->addHoliday($this->childrensDay(
+            $this->year,
+            9,
+            20,
+            $this->locale,
+            $this->timezone,
+            Holiday::TYPE_OFFICIAL
+        ));
     }
 }
