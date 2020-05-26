@@ -551,4 +551,41 @@ trait CommonHolidays
 
         return null;
     }
+
+     /**
+     * (international) children's Day
+     *
+     * Children's Day is a day celebrated in over 145 states to honor children.
+     * However, it has no uniform date and is therefore celebrated differently in many states.
+     *
+     * @link https://en.wikipedia.org/wiki/Children%27s_Day
+     *
+     * @param int $year the year for which children's day need to be created
+     * @param int $month the month for which children's day need to be created
+     * @param int $day the day for which children's day need to be created
+     * @param string $locale the locale for which summer time need to be displayed in.
+     * @param string $timezone the timezone in which children's day occurs
+     * @param string $type The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an seasonal holiday is considered.
+     *
+     * @return Holiday
+     * @throws \Exception
+     *
+     */
+    public function childrensDay(
+        int $year,
+        int $month,
+        int $day,
+        string $locale,
+        string $timezone,
+        string $type = Holiday::TYPE_SEASON
+    ): Holiday {
+        return new Holiday(
+            'childrensDay',
+            [],
+            new DateTime("$year-$month-$day", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
 }
