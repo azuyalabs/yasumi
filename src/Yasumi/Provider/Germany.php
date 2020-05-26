@@ -45,6 +45,7 @@ class Germany extends AbstractProvider
 
         // Add common holidays
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
+        $this->calculateChildrensDay();
 
         // Add common Christian holidays (common in Germany)
         $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale));
@@ -91,5 +92,24 @@ class Germany extends AbstractProvider
                 $this->locale
             ));
         }
+    }
+
+    /**
+     * @throws \Exception
+     */
+    private function calculateChildrensDay(): void
+    {
+        if ($this->year < 1954) {
+            return;
+        }
+
+        $this->addHoliday($this->childrensDay(
+            $this->year,
+            9,
+            20,
+            $this->locale,
+            $this->timezone,
+            Holiday::TYPE_SEASON
+        ));
     }
 }
