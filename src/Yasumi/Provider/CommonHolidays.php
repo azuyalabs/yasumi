@@ -551,4 +551,37 @@ trait CommonHolidays
 
         return null;
     }
+
+    /**
+     * Halloween
+     *
+     * Halloween is a celebration in many countries, which takes place on October 31,
+     * the eve before all saint's day.
+     *
+     * @Link https://en.wikipedia.org/wiki/Halloween
+     *
+     * @param int $year the year for which Halloween need to be created
+     * @param string $timezon the timezone in which Halloween is celebratede
+     * @param string $locale the locale for which Halloween need to be displayed in.
+     * @param string $type The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an other holiday is considered.
+     *
+     * @return Holiday
+     *
+     * @throws \Exception
+     */
+    public function halloween(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OTHER
+    ):Holiday {
+        return new Holiday(
+            'halloween',
+            [],
+            new DateTime("$year-10-31", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
 }
