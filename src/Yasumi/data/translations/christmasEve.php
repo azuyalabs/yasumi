@@ -16,7 +16,7 @@ return [
     'cs' => 'Štědrý den',
     'cy' => 'Noswyl Nadolig',
     'da' => 'juleaften',
-    'de' => 'Heiliger Abend',
+    'de' => 'Heilig Abend',
     'en' => 'Christmas Eve',
     'et' => 'Jõululaupäev',
     'fr' => 'Réveillon de Noël',
