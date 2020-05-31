@@ -7,13 +7,6 @@
 [![StyleCI](https://styleci.io/repos/32797151/shield?branch=master)](https://styleci.io/repos/32797151)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/azuyalabs/yasumi/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/azuyalabs/yasumi/?branch=master)
 
-Update!
--------
-Yasumi has now its own domain [https://www.yasumi.dev](https://www.yasumi.dev) and a brand-new documentation website! 
-Thanks to the [Jigsaw](https://jigsaw.tighten.co) documentation template created by the amazing [TightenCo](https://tighten.co) and [TailwindCSS](https://tailwindcss.com) brothers. Read more about it in this blog post: [https://www.yasumi.dev/blog/new_docs_site](https://www.yasumi.dev/blog/new_docs_site)
-
-Please don't forget to update your bookmarks! The documentation site at [https://azuyalabs.github.io/yasumi/](https://azuyalabs.github.io/yasumi/) will be removed soon.
-
 Introduction
 ------------
 Yasumi (Japanese for 'Holiday'「休み」) is an easy PHP library to help you calculate the dates and names of holidays and other
