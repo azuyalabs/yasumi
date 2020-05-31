@@ -9,16 +9,27 @@
 
 Introduction
 ------------
-Yasumi (Japanese for 'Holiday'「休み」) is an easy PHP library to help you calculate the dates and names of holidays and other
-special celebrations from various countries/states. 
+Yasumi (Japanese for 'Holiday'「休み」) is the easy PHP library that helps you retrieve the dates and names of holidays and other special celebrations from various countries/states. It is calculation and rule driven avoiding the need of a comprehensive database.
 
-Many services exist on the internet that provide holidays, however
-are either not free or offer only limited information. In addition, no complete PHP library seems to exist today
-that covers a wide range of holidays and countries, except maybe [PEAR's Date_Holidays](https://pear.php.net/package/Date_Holidays) which unfortunately hasn't been updated for a long time.
+Many services exist that can provide holiday information, however are either not entirely free or only offer limited information. In addition, no exhaustive PHP library exists today covering a wide range of holidays and countries. [PEAR's Date_Holidays](https://pear.php.net/package/Date_Holidays) library was a similar attempt, however it hasn't been updated for a long time.
 
-The goal of Yasumi is to be powerful while remaining lightweight, by utilizing PHP native classes wherever possible.
-Yasumi's calculation is provider-based (i.e. by country/state), so it's easy to add new holiday providers that calculate
-holidays. The methods of Yasumi can be used to get a holiday's date and name in various languages.
+Highlights
+----------
+The goal of Yasumi is to be powerful while remaining lightweight, by utilizing PHP native classes wherever possible. Yasumi's calculation is provider-based (i.e. by country/state), making it easy to add new holiday providers that calculate holidays.
+
+- Straightforward API
+- Framework-agnostic
+- Use of Providers to easily extend and expand new Holidays
+- Common Holiday Providers
+- Accounts for the date/time when holidays have been officially established and/or abolished
+- Filters enabling to easily select certain holiday types (Official, Observed, Bank, Seasonal or Other)
+- Global Translations
+- Timezone aware
+- Implements [ArrayIterator](https://www.php.net/manual/en/class.arrayiterator.php) to easily process a provider's holidays
+- Fully documented
+- Fully unit tested
+- [Composer](https://getcomposer.org) ready, [PSR-2](https://www.php-fig.org/psr/psr-2/) and [PSR-4](https://www.php-fig.org/psr/psr-4/) compliant
+
 
 Documentation
 -------------
