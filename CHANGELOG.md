@@ -9,25 +9,26 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 - Added Canada Provider [\#215](https://github.com/azuyalabs/yasumi/pull/215) ([lux](https://github.com/lux))
 - Added Luxembourg Provider [\#205](https://github.com/azuyalabs/yasumi/pull/205) ([Arkounay](https://github.com/Arkounay))
 - Catholic Christmas Day is a new official holiday since 2017 in the Ukraine. [\#202](https://github.com/azuyalabs/yasumi/pull/202)
+- Holiday providers for states of Austria. [\#182](https://github.com/azuyalabs/yasumi/pull/182) ([aprog](https://github.com/aprog))
+- Additional Dates for Australia/Victoria:AFL Grand Final Friday [\#190](https://github.com/azuyalabs/yasumi/pull/190) ([brucealdridge](https://github.com/brucealdridge))
+- Substituted holidays (holidays that fall in the weekend) for Australia. [\#201](https://github.com/azuyalabs/yasumi/pull/201) ([c960657](https://github.com/c960657))
+- Day of Liberation (Tag der Befreiung) is a one-time official holiday in 2020 in Berlin (Germany).
 - Catalan translations for holidays in Catalonia, Valencian Community, Balearic Islands and Aragon [\#189](https://github.com/azuyalabs/yasumi/pull/189) ([c960657](https://github.com/c960657))
 - Added American English spelling for Labour Day [\#216](https://github.com/azuyalabs/yasumi/issues/216)
 - Added French translation for Second Christmas Day [\#188](https://github.com/azuyalabs/yasumi/pull/188) ([Arkounay](https://github.com/Arkounay))
-- Additional Dates for Australia/Victoria:AFL Grand Final Friday [\#190](https://github.com/azuyalabs/yasumi/pull/190) ([brucealdridge](https://github.com/brucealdridge))
-- Holiday providers for states of Austria. [\#182](https://github.com/azuyalabs/yasumi/pull/182) ([aprog](https://github.com/aprog))
-- Day of Liberation (Tag der Befreiung) is a one-time official holiday in 2020 in Berlin (Germany).
+
 - Added missing return (correct) and parameter types in various methods.
-- Substituted holidays (holidays that fall in the weekend) for Australia. [\#201](https://github.com/azuyalabs/yasumi/pull/201) ([c960657](https://github.com/c960657))
 
 ### Changed
-- Renamed the Australian states to be full names in stead of abbreviations to be in line with other Holiday Providers [\#214](https://github.com/azuyalabs/yasumi/pull/214)
+- Renamed the Australian states to be full names instead of abbreviations to be in line with other Holiday Providers [\#214](https://github.com/azuyalabs/yasumi/pull/214)
 - Statehood Day is celebrated at a new date since 2020 in Croatia. [\#203](https://github.com/azuyalabs/yasumi/pull/203) ([krukru](https://github.com/krukru))
 - Independence Day is no longer an official holiday since 2020 in Croatia. [\#203](https://github.com/azuyalabs/yasumi/pull/203) ([krukru](https://github.com/krukru))
 - Homeland Thanksgiving Day has been renamed to "Victory and Homeland Thanksgiving Day and the Day of Croatian Defenders" since 2020 in Croatia. [\#203](https://github.com/azuyalabs/yasumi/pull/203) ([krukru](https://github.com/krukru))
 - Remembrance Day for Homeland War Victims and Remembrance Day for the Victims of Vukovar and Skabrnja is a new official holiday since 2020 in Croatia. [\#203](https://github.com/azuyalabs/yasumi/pull/203) ([krukru](https://github.com/krukru))
-- Second International Workers Day was an official holiday only until 2018. [\#202](https://github.com/azuyalabs/yasumi/pull/202)
+- Second International Workers Day in Ukraine was an official holiday only until 2018. [\#202](https://github.com/azuyalabs/yasumi/pull/202)
 - Holiday names in Danish, Dutch, and Norwegian are no longer capitalized. [\#185](https://github.com/azuyalabs/yasumi/pull/185) ([c960657](https://github.com/c960657))
-- Changed the fallback from DEFAULT_LANGUAGE to 'en'. [\#183](https://github.com/azuyalabs/yasumi/pull/183) ([c960657](https://github.com/c960657))
 
+- Changed the fallback from DEFAULT_LANGUAGE to 'en'. [\#183](https://github.com/azuyalabs/yasumi/pull/183) ([c960657](https://github.com/c960657))
 - Introduced a DateTimeZoneFactory class to improve performance. This will keep a static reference to the instantiated DateTimezone, thus saving resources. [\#213](https://github.com/azuyalabs/yasumi/pull/213) ([pvgnd](https://github.com/pvgn))
 - Changed DateTime to DateTimeImmutable as dates should be that: immutable (by default)
 - Explicitly set nullable parameters as such.
