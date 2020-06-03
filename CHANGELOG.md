@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 - Added Luxembourg Provider [\#205](https://github.com/azuyalabs/yasumi/pull/205) ([Arkounay](https://github.com/Arkounay))
 - Catholic Christmas Day is a new official holiday since 2017 in the Ukraine. [\#202](https://github.com/azuyalabs/yasumi/pull/202)
 - Catalan translations for holidays in Catalonia, Valencian Community, Balearic Islands and Aragon [\#189](https://github.com/azuyalabs/yasumi/pull/189) ([c960657](https://github.com/c960657))
+- Added American English spelling for Labour Day [\#216](https://github.com/azuyalabs/yasumi/issues/216)
 - Added French translation for Second Christmas Day [\#188](https://github.com/azuyalabs/yasumi/pull/188) ([Arkounay](https://github.com/Arkounay))
 - Additional Dates for Australia/Victoria:AFL Grand Final Friday [\#190](https://github.com/azuyalabs/yasumi/pull/190) ([brucealdridge](https://github.com/brucealdridge))
 - Holiday providers for states of Austria. [\#182](https://github.com/azuyalabs/yasumi/pull/182) ([aprog](https://github.com/aprog))
