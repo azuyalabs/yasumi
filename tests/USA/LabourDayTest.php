@@ -73,7 +73,7 @@ class LabourDayTest extends USABaseTestCase implements YasumiTestCaseInterface
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Labour Day']
+            [self::LOCALE => 'Labor Day']
         );
     }
 
