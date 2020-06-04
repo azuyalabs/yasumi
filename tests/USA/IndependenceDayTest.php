@@ -39,7 +39,7 @@ class IndependenceDayTest extends USABaseTestCase implements YasumiTestCaseInter
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testIndependenceDayOnAfter1776()
+    public function testIndependenceDayOnAfter1776(): void
     {
         $year = 1955;
         $this->assertHoliday(
@@ -55,7 +55,7 @@ class IndependenceDayTest extends USABaseTestCase implements YasumiTestCaseInter
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testIndependenceDayOnAfter1776SubstitutedMonday()
+    public function testIndependenceDayOnAfter1776SubstitutedMonday(): void
     {
         $year = 3362;
         $this->assertHoliday(
@@ -71,7 +71,7 @@ class IndependenceDayTest extends USABaseTestCase implements YasumiTestCaseInter
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testIndependenceDayOnAfter1776SubstitutedFriday()
+    public function testIndependenceDayOnAfter1776SubstitutedFriday(): void
     {
         $year = 8291;
         $this->assertHoliday(
@@ -86,7 +86,7 @@ class IndependenceDayTest extends USABaseTestCase implements YasumiTestCaseInter
      * Tests Independence Day before 1776. Independence Day is celebrated since 1776 on July 4th.
      * @throws ReflectionException
      */
-    public function testIndependenceDayBefore1776()
+    public function testIndependenceDayBefore1776(): void
     {
         $this->assertNotHoliday(
             self::REGION,

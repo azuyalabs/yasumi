@@ -40,7 +40,7 @@ class WashingtonsBirthdayTest extends USABaseTestCase implements YasumiTestCaseI
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testWashingtonsBirthdayOnAfter1968()
+    public function testWashingtonsBirthdayOnAfter1968(): void
     {
         $year = $this->generateRandomYear(1968);
         $this->assertHoliday(
@@ -57,7 +57,7 @@ class WashingtonsBirthdayTest extends USABaseTestCase implements YasumiTestCaseI
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testWashingtonsBirthdayBetween1879And1967()
+    public function testWashingtonsBirthdayBetween1879And1967(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1967);
         $this->assertHoliday(
@@ -73,7 +73,7 @@ class WashingtonsBirthdayTest extends USABaseTestCase implements YasumiTestCaseI
      * changed in 1968 to the third Monday in February.
      * @throws ReflectionException
      */
-    public function testWashingtonsBirthdayBefore1879()
+    public function testWashingtonsBirthdayBefore1879(): void
     {
         $this->assertNotHoliday(
             self::REGION,

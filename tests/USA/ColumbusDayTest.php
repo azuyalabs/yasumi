@@ -40,7 +40,7 @@ class ColumbusDayTest extends USABaseTestCase implements YasumiTestCaseInterface
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testColumbusDayOnAfter1970()
+    public function testColumbusDayOnAfter1970(): void
     {
         $year = $this->generateRandomYear(1970);
         $this->assertHoliday(
@@ -57,7 +57,7 @@ class ColumbusDayTest extends USABaseTestCase implements YasumiTestCaseInterface
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testColumbusBetween1937And1969()
+    public function testColumbusBetween1937And1969(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1969);
         $this->assertHoliday(
@@ -73,7 +73,7 @@ class ColumbusDayTest extends USABaseTestCase implements YasumiTestCaseInterface
      * the second Monday in October since 1970.
      * @throws ReflectionException
      */
-    public function testColumbusDayBefore1937()
+    public function testColumbusDayBefore1937(): void
     {
         $this->assertNotHoliday(
             self::REGION,
