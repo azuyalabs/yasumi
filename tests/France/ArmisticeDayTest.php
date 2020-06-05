@@ -39,7 +39,7 @@ class ArmisticeDayTest extends FranceBaseTestCase implements YasumiTestCaseInter
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testArmisticeDayOnAfter1919()
+    public function testArmisticeDayOnAfter1919(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -54,7 +54,7 @@ class ArmisticeDayTest extends FranceBaseTestCase implements YasumiTestCaseInter
      * Tests Armistice Day before 1919.
      * @throws ReflectionException
      */
-    public function testArmisticeDayBefore1919()
+    public function testArmisticeDayBefore1919(): void
     {
         $this->assertNotHoliday(
             self::REGION,

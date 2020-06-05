@@ -39,7 +39,7 @@ class IndependenceDayTest extends BrazilBaseTestCase implements YasumiTestCaseIn
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testDiaDaIndependenciaDoBrasilAfter1822()
+    public function testDiaDaIndependenciaDoBrasilAfter1822(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -54,7 +54,7 @@ class IndependenceDayTest extends BrazilBaseTestCase implements YasumiTestCaseIn
      * Tests Dia da independência do Brasil on or before 1822.
      * @throws ReflectionException
      */
-    public function testDiaDaIndependenciaDoBrasilBefore1822()
+    public function testDiaDaIndependenciaDoBrasilBefore1822(): void
     {
         $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);

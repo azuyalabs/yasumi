@@ -34,7 +34,7 @@ class AscensionDayTest extends DenmarkBaseTestCase implements YasumiTestCaseInte
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testAscensionDay()
+    public function testAscensionDay(): void
     {
         $year = 2806;
         $this->assertHoliday(

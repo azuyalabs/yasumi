@@ -51,7 +51,7 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInter
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHoliday()
+    public function testHoliday(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::REMOVED_YEAR);
         if (self::YEAR_NOT_CELEBRATED === $year) {
@@ -75,7 +75,7 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInter
      *
      * @throws ReflectionException
      */
-    public function testHolidayAfterRemoval()
+    public function testHolidayAfterRemoval(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -89,7 +89,7 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInter
      *
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,

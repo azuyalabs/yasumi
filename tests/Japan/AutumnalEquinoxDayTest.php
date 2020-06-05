@@ -42,7 +42,7 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCase
      * After 2150 no calculations are available yet.
      * @throws ReflectionException
      */
-    public function testAutumnalEquinoxDayOnAfter2150()
+    public function testAutumnalEquinoxDayOnAfter2150(): void
     {
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(2151));
     }
@@ -63,7 +63,7 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCase
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testAutumnalEquinoxDayBetween1948And2150($year, $month, $day)
+    public function testAutumnalEquinoxDayBetween1948And2150($year, $month, $day): void
     {
         $this->assertHoliday(
             self::REGION,
@@ -95,7 +95,7 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCase
      * festival called Shūki kōrei-sai (秋季皇霊祭).
      * @throws ReflectionException
      */
-    public function testAutumnalEquinoxDayBefore1948()
+    public function testAutumnalEquinoxDayBefore1948(): void
     {
         $this->assertNotHoliday(
             self::REGION,

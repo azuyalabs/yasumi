@@ -37,7 +37,7 @@ class RussiaDayTest extends RussiaBaseTestCase implements YasumiTestCaseInterfac
      * Test if holiday is not defined before
      * @throws ReflectionException
      */
-    public function testHolidayBefore()
+    public function testHolidayBefore(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -51,7 +51,7 @@ class RussiaDayTest extends RussiaBaseTestCase implements YasumiTestCaseInterfac
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHolidayAfter()
+    public function testHolidayAfter(): void
     {
         $year = $this->generateRandomYear(Russia::RUSSIA_DAY_START_YEAR);
 

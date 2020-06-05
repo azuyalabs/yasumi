@@ -46,7 +46,7 @@ class pentecostMondayTest extends IrelandBaseTestCase implements YasumiTestCaseI
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected)
+    public function testHoliday($year, $expected): void
     {
         $this->assertHoliday(
             self::REGION,
@@ -80,7 +80,7 @@ class pentecostMondayTest extends IrelandBaseTestCase implements YasumiTestCaseI
      * Tests the holiday defined in this test after abolishment.
      * @throws ReflectionException
      */
-    public function testHolidayDayAfterAbolishment()
+    public function testHolidayDayAfterAbolishment(): void
     {
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ABOLISHMENT_YEAR + 1));
     }

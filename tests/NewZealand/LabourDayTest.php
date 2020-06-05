@@ -45,7 +45,7 @@ class LabourDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInte
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected)
+    public function testHoliday($year, $expected): void
     {
         $this->assertHoliday(
             self::REGION,
@@ -59,7 +59,7 @@ class LabourDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInte
      *  Tests that Labour Day is not present before 1900
      * @throws ReflectionException
      */
-    public function testNotHoliday()
+    public function testNotHoliday(): void
     {
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, self::ESTABLISHMENT_YEAR - 1);
     }

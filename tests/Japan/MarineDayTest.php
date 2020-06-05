@@ -39,7 +39,7 @@ class MarineDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testMarineDayIn2020()
+    public function testMarineDayIn2020(): void
     {
         $year = 2020;
         $this->assertHoliday(
@@ -56,7 +56,7 @@ class MarineDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testMarineDayOnAfter2003()
+    public function testMarineDayOnAfter2003(): void
     {
         $year = $this->generateRandomYear(2004);
         $this->assertHoliday(
@@ -73,7 +73,7 @@ class MarineDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testMarineDayBetween1996And2003()
+    public function testMarineDayBetween1996And2003(): void
     {
         $year = 2001;
         $this->assertHoliday(
@@ -89,7 +89,7 @@ class MarineDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testMarineDayBetween1996And2003SubstitutedNextWorkingDay()
+    public function testMarineDayBetween1996And2003SubstitutedNextWorkingDay(): void
     {
         $year = 1997;
         $this->assertHoliday(
@@ -105,7 +105,7 @@ class MarineDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
      * to be the third monday of July.
      * @throws ReflectionException
      */
-    public function testMarineDayBefore1996()
+    public function testMarineDayBefore1996(): void
     {
         $this->assertNotHoliday(
             self::REGION,

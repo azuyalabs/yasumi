@@ -34,7 +34,7 @@ class PentecostMondayTest extends DenmarkBaseTestCase implements YasumiTestCaseI
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHoliday()
+    public function testHoliday(): void
     {
         $year = 2020;
         $this->assertHoliday(

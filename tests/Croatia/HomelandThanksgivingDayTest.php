@@ -44,7 +44,7 @@ class HomelandThanksgivingDayTest extends CroatiaBaseTestCase implements YasumiT
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHomelandThanksgivingDayOnAfter1995()
+    public function testHomelandThanksgivingDayOnAfter1995(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -59,7 +59,7 @@ class HomelandThanksgivingDayTest extends CroatiaBaseTestCase implements YasumiT
      * Tests Homeland Thanksgiving Day before 1995.
      * @throws ReflectionException
      */
-    public function testHomelandThanksgivingDayBefore1995()
+    public function testHomelandThanksgivingDayBefore1995(): void
     {
         $this->assertNotHoliday(
             self::REGION,

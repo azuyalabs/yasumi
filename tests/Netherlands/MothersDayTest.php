@@ -34,7 +34,7 @@ class MothersDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseIn
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testMothersDay()
+    public function testMothersDay(): void
     {
         $year = $this->generateRandomYear();
         $this->assertHoliday(

@@ -41,7 +41,7 @@ class EasterMondayTest extends IrelandBaseTestCase implements YasumiTestCaseInte
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected)
+    public function testHoliday($year, $expected): void
     {
         $this->assertHoliday(
             self::REGION,

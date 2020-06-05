@@ -40,7 +40,7 @@ class LabourThanksgivingDayTest extends JapanBaseTestCase implements YasumiTestC
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testLabourThanksgivingDayOnAfter1948()
+    public function testLabourThanksgivingDayOnAfter1948(): void
     {
         $year = 4884;
         $this->assertHoliday(
@@ -57,7 +57,7 @@ class LabourThanksgivingDayTest extends JapanBaseTestCase implements YasumiTestC
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testLabourThanksgivingDayOnAfter1948SubstitutedNextWorkingDay()
+    public function testLabourThanksgivingDayOnAfter1948SubstitutedNextWorkingDay(): void
     {
         $year = 1986;
         $this->assertHoliday(
@@ -73,7 +73,7 @@ class LabourThanksgivingDayTest extends JapanBaseTestCase implements YasumiTestC
      * 1948.
      * @throws ReflectionException
      */
-    public function testLabourThanksgivingDayBefore1948()
+    public function testLabourThanksgivingDayBefore1948(): void
     {
         $this->assertNotHoliday(
             self::REGION,

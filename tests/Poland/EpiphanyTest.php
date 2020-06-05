@@ -38,7 +38,7 @@ class EpiphanyTest extends PolandBaseTestCase implements YasumiTestCaseInterface
      *
      * @throws ReflectionException
      */
-    public function testEpiphany($year, $expected)
+    public function testEpiphany($year, $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

@@ -38,7 +38,7 @@ class CommemorationDayTest extends NetherlandsBaseTestCase implements YasumiTest
      * Tests Commemoration Day before 1947. Commemoration Day was established after WWII in 1947.
      * @throws ReflectionException
      */
-    public function testCommemorationDayBefore1947()
+    public function testCommemorationDayBefore1947(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -52,7 +52,7 @@ class CommemorationDayTest extends NetherlandsBaseTestCase implements YasumiTest
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testCommemorationDayOnAfter1947()
+    public function testCommemorationDayOnAfter1947(): void
     {
         $year = 2105;
         $this->assertHoliday(

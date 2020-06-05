@@ -39,7 +39,7 @@ class IndependenceDayTest extends BosniaBaseTestCase implements YasumiTestCaseIn
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testIndependenceDayOnAfter1992()
+    public function testIndependenceDayOnAfter1992(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -54,7 +54,7 @@ class IndependenceDayTest extends BosniaBaseTestCase implements YasumiTestCaseIn
      * Tests Independence Day before 1992.
      * @throws ReflectionException
      */
-    public function testIndependenceDayBefore1992()
+    public function testIndependenceDayBefore1992(): void
     {
         $this->assertNotHoliday(
             self::REGION,

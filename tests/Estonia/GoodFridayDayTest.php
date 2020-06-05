@@ -53,7 +53,7 @@ class GoodFridayDayTest extends EstoniaBaseTestCase implements YasumiTestCaseInt
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected)
+    public function testHoliday($year, $expected): void
     {
         $this->assertHoliday(
             self::REGION,

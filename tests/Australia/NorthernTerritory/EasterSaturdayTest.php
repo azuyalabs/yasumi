@@ -41,7 +41,7 @@ class EasterSaturdayTest extends NorthernTerritoryBaseTestCase implements Yasumi
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected)
+    public function testHoliday($year, $expected): void
     {
         $this->assertHoliday(
             $this->region,

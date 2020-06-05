@@ -45,7 +45,7 @@ class JuneHolidayTest extends IrelandBaseTestCase implements YasumiTestCaseInter
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected)
+    public function testHoliday($year, $expected): void
     {
         $this->assertHoliday(
             self::REGION,
@@ -80,7 +80,7 @@ class JuneHolidayTest extends IrelandBaseTestCase implements YasumiTestCaseInter
      * Tests the holiday defined in this test before establishment.
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,

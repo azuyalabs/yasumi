@@ -39,7 +39,7 @@ class ShowaDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHolidayOnAfter2007()
+    public function testHolidayOnAfter2007(): void
     {
         $year = 2110;
         $this->assertHoliday(
@@ -55,7 +55,7 @@ class ShowaDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHolidayOnAfterEstablishmentSubstitutedNextWorkingDay()
+    public function testHolidayOnAfterEstablishmentSubstitutedNextWorkingDay(): void
     {
         $year = 2210;
         $this->assertHoliday(
@@ -70,7 +70,7 @@ class ShowaDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
      * Tests the holiday defined in the test before establishment.
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,

@@ -53,7 +53,7 @@ class PentecostTest extends EstoniaBaseTestCase implements YasumiTestCaseInterfa
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected)
+    public function testHoliday($year, $expected): void
     {
         $this->assertHoliday(
             self::REGION,

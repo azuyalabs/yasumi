@@ -45,7 +45,7 @@ class ArmedForcesDayTest extends SouthKoreaBaseTestCase implements YasumiTestCas
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHoliday()
+    public function testHoliday(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::REMOVED_YEAR);
         $this->assertHoliday(
@@ -60,7 +60,7 @@ class ArmedForcesDayTest extends SouthKoreaBaseTestCase implements YasumiTestCas
      * Tests the holiday defined in this test after removal.
      * @throws ReflectionException
      */
-    public function testHolidayAfterRemoval()
+    public function testHolidayAfterRemoval(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -73,7 +73,7 @@ class ArmedForcesDayTest extends SouthKoreaBaseTestCase implements YasumiTestCas
      * Tests the holiday defined in this test before establishment.
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,

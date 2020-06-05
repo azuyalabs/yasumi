@@ -39,7 +39,7 @@ class AustraliaDayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
      *
      * @throws ReflectionException
      */
-    public function testHoliday($year, $expected)
+    public function testHoliday($year, $expected): void
     {
         $this->assertHoliday($this->region, self::HOLIDAY, $year, $expected);
     }
@@ -55,7 +55,7 @@ class AustraliaDayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testSubstituteHoliday($year, $expected)
+    public function testSubstituteHoliday($year, $expected): void
     {
         if ($expected) {
             $this->assertSubstituteHoliday(

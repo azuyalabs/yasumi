@@ -34,7 +34,7 @@ class GoodFridayTest extends NorwayBaseTestCase implements YasumiTestCaseInterfa
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHoliday()
+    public function testHoliday(): void
     {
         $year = 1908;
         $this->assertHoliday(

@@ -48,7 +48,7 @@ class NewYearHolidaysDay5Test extends RussiaBaseTestCase implements YasumiTestCa
      *
      * @throws ReflectionException
      */
-    public function testHoliday($year, DateTime $expected)
+    public function testHoliday($year, DateTime $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

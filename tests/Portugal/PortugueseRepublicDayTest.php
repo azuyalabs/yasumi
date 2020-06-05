@@ -46,7 +46,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements YasumiTe
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHolidayOnAfterRestoration()
+    public function testHolidayOnAfterRestoration(): void
     {
         $year = self::HOLIDAY_YEAR_RESTORED;
 
@@ -63,7 +63,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements YasumiTe
      * Test that the holiday did not happen in 2013-2015.
      * @throws ReflectionException
      */
-    public function testNotHolidayDuringAbolishment()
+    public function testNotHolidayDuringAbolishment(): void
     {
         $year = $this->generateRandomYear(2013, 2015);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
@@ -76,7 +76,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements YasumiTe
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHolidayOnAfterEstablishment()
+    public function testHolidayOnAfterEstablishment(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
 
@@ -93,7 +93,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements YasumiTe
      *
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);

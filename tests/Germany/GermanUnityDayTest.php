@@ -39,7 +39,7 @@ class GermanUnityDayTest extends GermanyBaseTestCase implements YasumiTestCaseIn
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHolidayOnAfterEstablishment()
+    public function testHolidayOnAfterEstablishment(): void
     {
         $year = 2022;
         $this->assertHoliday(
@@ -54,7 +54,7 @@ class GermanUnityDayTest extends GermanyBaseTestCase implements YasumiTestCaseIn
      * Tests the holiday defined in this test before establishment.
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,

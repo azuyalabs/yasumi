@@ -38,7 +38,7 @@ class PublicBridgeDayTest extends JapanBaseTestCase implements YasumiTestCaseInt
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testPublicBridgeDay()
+    public function testPublicBridgeDay(): void
     {
         $this->assertHoliday(
             self::REGION,

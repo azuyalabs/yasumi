@@ -39,7 +39,7 @@ class DayOfLiberation2020Test extends BerlinBaseTestCase implements YasumiTestCa
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHolidayInYear()
+    public function testHolidayInYear(): void
     {
         $this->assertHoliday(
             self::REGION,
@@ -53,7 +53,7 @@ class DayOfLiberation2020Test extends BerlinBaseTestCase implements YasumiTestCa
      * Test the holiday defined in this test in the years before
      * @throws ReflectionException
      */
-    public function testHolidayBeforeYear()
+    public function testHolidayBeforeYear(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -66,7 +66,7 @@ class DayOfLiberation2020Test extends BerlinBaseTestCase implements YasumiTestCa
      * Test the holiday defined in this test in the years after
      * @throws ReflectionException
      */
-    public function testHolidayAfterYear()
+    public function testHolidayAfterYear(): void
     {
         $this->assertNotHoliday(
             self::REGION,

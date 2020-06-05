@@ -39,7 +39,7 @@ class EuropeDayTest extends LuxembourgBaseTestCase implements YasumiTestCaseInte
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testEuropeDayOnAfter2019()
+    public function testEuropeDayOnAfter2019(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -54,7 +54,7 @@ class EuropeDayTest extends LuxembourgBaseTestCase implements YasumiTestCaseInte
      * Tests Europe Day before 2019.
      * @throws ReflectionException
      */
-    public function testEuropeDayBefore2019()
+    public function testEuropeDayBefore2019(): void
     {
         $this->assertNotHoliday(
             self::REGION,

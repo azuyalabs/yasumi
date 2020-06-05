@@ -46,7 +46,7 @@ class PortugalDayTest extends PortugalBaseTestCase implements YasumiTestCaseInte
      * @throws Exception
      * @see Portugal::calculatePortugalDay()
      */
-    public function testHolidayBeforeAbolishment()
+    public function testHolidayBeforeAbolishment(): void
     {
         $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR_BEFORE);
         $expected = new DateTime("$year-06-10", new DateTimeZone(self::TIMEZONE));
@@ -59,7 +59,7 @@ class PortugalDayTest extends PortugalBaseTestCase implements YasumiTestCaseInte
      * @throws Exception
      * @see Portugal::calculatePortugalDay()
      */
-    public function testHolidayAfterRestoration()
+    public function testHolidayAfterRestoration(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR_AFTER);
         $expected = new DateTime("$year-06-10", new DateTimeZone(self::TIMEZONE));
@@ -72,7 +72,7 @@ class PortugalDayTest extends PortugalBaseTestCase implements YasumiTestCaseInte
      * @see Portugal::calculatePortugalDay()
      *
      */
-    public function testNotHolidayDuringAbolishment()
+    public function testNotHolidayDuringAbolishment(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR_BEFORE + 1, self::ESTABLISHMENT_YEAR_AFTER - 1);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);

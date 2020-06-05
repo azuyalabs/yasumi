@@ -39,7 +39,7 @@ class VictoryInEuropeDayTest extends FranceBaseTestCase implements YasumiTestCas
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testVictoryInEuropeDayOnAfter1945()
+    public function testVictoryInEuropeDayOnAfter1945(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -54,7 +54,7 @@ class VictoryInEuropeDayTest extends FranceBaseTestCase implements YasumiTestCas
      * Tests Victory In Europe Day before 1945.
      * @throws ReflectionException
      */
-    public function testVictoryInEuropeDayBefore1945()
+    public function testVictoryInEuropeDayBefore1945(): void
     {
         $this->assertNotHoliday(
             self::REGION,

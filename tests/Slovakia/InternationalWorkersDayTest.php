@@ -45,7 +45,7 @@ class InternationalWorkersDayTest extends SlovakiaBaseTestCase implements Yasumi
      *
      * @throws ReflectionException
      */
-    public function testHoliday($year, $expected)
+    public function testHoliday($year, $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

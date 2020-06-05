@@ -44,7 +44,7 @@ class DayOfReformationTest extends HamburgBaseTestCase implements YasumiTestCase
      *
      * @throws ReflectionException
      */
-    public function testHoliday($year, $expected)
+    public function testHoliday($year, $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
@@ -71,7 +71,7 @@ class DayOfReformationTest extends HamburgBaseTestCase implements YasumiTestCase
      * Tests the holiday defined in this test before establishment.
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,

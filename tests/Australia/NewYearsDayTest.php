@@ -42,7 +42,7 @@ class NewYearsDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInt
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected, $expectedExtra)
+    public function testHoliday($year, $expected, $expectedExtra): void
     {
         $this->assertHoliday(
             $this->region,

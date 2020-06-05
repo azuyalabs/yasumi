@@ -37,7 +37,7 @@ class CorpusChristiTest extends NorthRhineWestphaliaBaseTestCase implements Yasu
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testCorpusChristi()
+    public function testCorpusChristi(): void
     {
         $year = 2016;
         $this->assertHoliday(

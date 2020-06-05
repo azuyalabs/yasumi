@@ -37,7 +37,7 @@ class RestorationOfIndependenceDayTest extends EstoniaBaseTestCase implements Ya
      * Test if holiday is not defined before
      * @throws ReflectionException
      */
-    public function testHolidayBefore()
+    public function testHolidayBefore(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -51,7 +51,7 @@ class RestorationOfIndependenceDayTest extends EstoniaBaseTestCase implements Ya
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHolidayAfter()
+    public function testHolidayAfter(): void
     {
         $year = $this->generateRandomYear(Estonia::RESTORATION_OF_INDEPENDENCE_YEAR);
 

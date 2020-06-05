@@ -40,7 +40,7 @@ class ComingOfAgeDayTest extends JapanBaseTestCase implements YasumiTestCaseInte
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testComingOfAgeDayOnAfter2000()
+    public function testComingOfAgeDayOnAfter2000(): void
     {
         $year = $this->generateRandomYear(2001);
         $this->assertHoliday(
@@ -58,7 +58,7 @@ class ComingOfAgeDayTest extends JapanBaseTestCase implements YasumiTestCaseInte
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testComingOfAgeDayBetween1948And2000()
+    public function testComingOfAgeDayBetween1948And2000(): void
     {
         $year = 1991;
         $this->assertHoliday(
@@ -74,7 +74,7 @@ class ComingOfAgeDayTest extends JapanBaseTestCase implements YasumiTestCaseInte
      * was changed to be the second monday of January.
      * @throws ReflectionException
      */
-    public function testConstitutionMemorialDayBefore1948()
+    public function testConstitutionMemorialDayBefore1948(): void
     {
         $this->assertNotHoliday(
             self::REGION,

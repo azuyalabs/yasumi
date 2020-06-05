@@ -39,7 +39,7 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements YasumiTes
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testConstitutionMemorialDayOnAfter1948()
+    public function testConstitutionMemorialDayOnAfter1948(): void
     {
         $year = 1967;
         $this->assertHoliday(
@@ -56,7 +56,7 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements YasumiTes
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testConstitutionMemorialDayOnAfter1948SubstitutedNextWorkingDay()
+    public function testConstitutionMemorialDayOnAfter1948SubstitutedNextWorkingDay(): void
     {
         $year = 2009;
         $this->assertHoliday(
@@ -71,7 +71,7 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements YasumiTes
      * Tests Constitution Memorial Day before 1948. Constitution Memorial Day was established after 1948
      * @throws ReflectionException
      */
-    public function testConstitutionMemorialDayBefore1948()
+    public function testConstitutionMemorialDayBefore1948(): void
     {
         $this->assertNotHoliday(
             self::REGION,

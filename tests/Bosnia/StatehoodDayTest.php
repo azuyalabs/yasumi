@@ -39,7 +39,7 @@ class StatehoodDayTest extends BosniaBaseTestCase implements YasumiTestCaseInter
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testStatehoodDayOnAfter1943()
+    public function testStatehoodDayOnAfter1943(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -54,7 +54,7 @@ class StatehoodDayTest extends BosniaBaseTestCase implements YasumiTestCaseInter
      * Tests Statehood Day before 1943.
      * @throws ReflectionException
      */
-    public function testStatehoodDayBefore1943()
+    public function testStatehoodDayBefore1943(): void
     {
         $this->assertNotHoliday(
             self::REGION,

@@ -45,7 +45,7 @@ class ChristmasEveTest extends SlovakiaBaseTestCase implements YasumiTestCaseInt
      *
      * @throws ReflectionException
      */
-    public function testChristmasEve($year, $expected)
+    public function testChristmasEve($year, $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

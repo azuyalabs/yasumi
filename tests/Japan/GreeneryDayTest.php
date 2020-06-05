@@ -40,7 +40,7 @@ class GreeneryDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHolidayOnAfter2007()
+    public function testHolidayOnAfter2007(): void
     {
         $year = 2112;
         $this->assertHoliday(
@@ -56,7 +56,7 @@ class GreeneryDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHolidayOnAfter2007SubstitutedNextWorkingDay()
+    public function testHolidayOnAfter2007SubstitutedNextWorkingDay(): void
     {
         $year = 2014;
         $this->assertHoliday(
@@ -73,7 +73,7 @@ class GreeneryDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHolidayBetween1989And2007()
+    public function testHolidayBetween1989And2007(): void
     {
         $year = 1997;
         $this->assertHoliday(
@@ -89,7 +89,7 @@ class GreeneryDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHolidayBetween1989And2007SubstitutedNextWorkingDay()
+    public function testHolidayBetween1989And2007SubstitutedNextWorkingDay(): void
     {
         $year = 2001;
         $this->assertHoliday(
@@ -105,7 +105,7 @@ class GreeneryDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
      * it was changed to be May 4th.
      * @throws ReflectionException
      */
-    public function testHolidayBefore1989()
+    public function testHolidayBefore1989(): void
     {
         $this->assertNotHoliday(
             self::REGION,

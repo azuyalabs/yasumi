@@ -34,7 +34,7 @@ class WintertimeTest extends NetherlandsBaseTestCase implements YasumiTestCaseIn
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testWintertime()
+    public function testWintertime(): void
     {
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(1946, 1976));
 
