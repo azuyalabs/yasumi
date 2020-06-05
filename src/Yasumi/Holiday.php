@@ -211,7 +211,6 @@ class Holiday extends DateTime implements JsonSerializable
     {
         if ($locales) {
             $expanded = [];
-            $locales = $locales;
         } else {
             $locales = [$this->displayLocale];
             // DEFAULT_LOCALE is 'en_US', and its parent is 'en'.
