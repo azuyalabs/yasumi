@@ -10,7 +10,7 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests;
+namespace Yasumi\tests\Base;
 
 use DateTime;
 use DateTimeImmutable;
