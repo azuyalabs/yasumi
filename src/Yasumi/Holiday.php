@@ -168,6 +168,7 @@ class Holiday extends DateTime implements JsonSerializable
      *
      * @param array $locales The locales to search for translations
      *
+     * @return string
      * @throws MissingTranslationException
      *
      * @see Holiday::DEFAULT_LOCALE
