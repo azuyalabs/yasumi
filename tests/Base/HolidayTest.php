@@ -91,6 +91,7 @@ class HolidayTest extends TestCase
 
     /**
      * Tests the getLocales function of the Holiday object.
+     * @throws Exception
      */
     public function testHolidayGetLocales(): void
     {
@@ -105,6 +106,7 @@ class HolidayTest extends TestCase
 
     /**
      * Tests the getName function of the Holiday object without any arguments provided.
+     * @throws Exception
      */
     public function testHolidayGetNameWithoutArgument(): void
     {
@@ -155,6 +157,8 @@ class HolidayTest extends TestCase
 
     /**
      * Tests the getName function of the Holiday object with an explicit list of locales.
+     * @throws MissingTranslationException
+     * @throws Exception
      */
     public function testHolidayGetNameWithArgument(): void
     {

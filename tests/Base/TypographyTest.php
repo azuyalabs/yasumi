@@ -46,6 +46,7 @@ class TypographyTest extends TestCase
 
     /**
      * Provides test data for testProvider().
+     * @throws \ReflectionException
      */
     public function translationProvider(): array
     {
