@@ -50,7 +50,7 @@ class NewYearsDayTest extends UnitedKingdomBaseTestCase implements YasumiTestCas
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHolidayOnAfterEstablishment($year, $expected)
+    public function testHolidayOnAfterEstablishment($year, $expected): void
     {
         $this->assertHoliday(
             self::REGION,
@@ -64,7 +64,7 @@ class NewYearsDayTest extends UnitedKingdomBaseTestCase implements YasumiTestCas
      * Tests the holiday defined in this test before establishment.
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -77,7 +77,7 @@ class NewYearsDayTest extends UnitedKingdomBaseTestCase implements YasumiTestCas
      * Tests that the holiday defined in this test is of the type 'observance' before the year it was changed.
      * @throws ReflectionException
      */
-    public function testHolidayIsObservedTypeBeforeChange()
+    public function testHolidayIsObservedTypeBeforeChange(): void
     {
         $this->assertHolidayType(
             self::REGION,

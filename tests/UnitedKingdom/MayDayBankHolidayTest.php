@@ -39,7 +39,7 @@ class MayDayBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHoliday()
+    public function testHoliday(): void
     {
         $year = 2101;
         $this->assertHoliday(
@@ -55,7 +55,7 @@ class MayDayBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHolidayExceptions()
+    public function testHolidayExceptions(): void
     {
         $this->assertHoliday(
             self::REGION,
@@ -76,7 +76,7 @@ class MayDayBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
      * Tests the holiday defined in this test before establishment.
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,

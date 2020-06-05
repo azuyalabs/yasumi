@@ -40,7 +40,7 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements Y
      *
      * @throws ReflectionException
      */
-    public function testSecondInternationalWorkersDay($year, $expected)
+    public function testSecondInternationalWorkersDay($year, $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
@@ -49,7 +49,7 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements Y
      * Tests International Workers' Day since 2018.
      * @throws ReflectionException
      */
-    public function testNoSecondInternationalWorkersDaySince2018()
+    public function testNoSecondInternationalWorkersDaySince2018(): void
     {
         $year = $this->generateRandomYear(2018);
         $holidays = Yasumi::create(self::REGION, $year);
@@ -92,7 +92,7 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements Y
      * Returns a list of random test dates used for assertion of International Workers' Day.
      *
      * @return array list of test dates for International Workers' Day
-     * @throws Exception
+     * @throws \Exception
      */
     public function SecondInternationalWorkersDayDataProvider(): array
     {

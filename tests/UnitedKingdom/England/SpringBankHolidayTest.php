@@ -40,7 +40,7 @@ class SpringBankHolidayTest extends EnglandBaseTestCase implements YasumiTestCas
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHoliday()
+    public function testHoliday(): void
     {
         $year = 1988;
         $this->assertHoliday(
@@ -57,7 +57,7 @@ class SpringBankHolidayTest extends EnglandBaseTestCase implements YasumiTestCas
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHolidayException()
+    public function testHolidayException(): void
     {
         $this->assertHoliday(
             self::REGION,
@@ -78,7 +78,7 @@ class SpringBankHolidayTest extends EnglandBaseTestCase implements YasumiTestCas
      * Tests the holiday defined in this test before establishment.
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,

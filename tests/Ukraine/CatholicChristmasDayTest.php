@@ -41,7 +41,7 @@ class CatholicChristmasDayTest extends UkraineBaseTestCase implements YasumiTest
      *
      * @throws ReflectionException
      */
-    public function testCatholicChristmasDay($year, $expected)
+    public function testCatholicChristmasDay($year, $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
@@ -50,7 +50,7 @@ class CatholicChristmasDayTest extends UkraineBaseTestCase implements YasumiTest
      * Tests Catholic Christmas Day before 2017.
      * @throws ReflectionException
      */
-    public function testNoCatholicChristmasDayBefore2017()
+    public function testNoCatholicChristmasDayBefore2017(): void
     {
         $year = $this->generateRandomYear(null, 2016);
         $holidays = Yasumi::create(self::REGION, $year);

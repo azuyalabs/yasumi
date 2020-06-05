@@ -44,7 +44,7 @@ class SummerBankHolidayTest extends NorthernIrelandBaseTestCase implements Yasum
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHoliday()
+    public function testHoliday(): void
     {
         $year = $this->generateRandomYear(1970);
         $this->assertHoliday(
@@ -61,7 +61,7 @@ class SummerBankHolidayTest extends NorthernIrelandBaseTestCase implements Yasum
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHolidayBefore1965()
+    public function testHolidayBefore1965(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1964);
         $this->assertHoliday(
@@ -77,7 +77,7 @@ class SummerBankHolidayTest extends NorthernIrelandBaseTestCase implements Yasum
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHolidayTrialPeriod()
+    public function testHolidayTrialPeriod(): void
     {
         $this->assertHoliday(
             self::REGION,
@@ -121,7 +121,7 @@ class SummerBankHolidayTest extends NorthernIrelandBaseTestCase implements Yasum
      * Tests the holiday defined in this test before establishment.
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,
