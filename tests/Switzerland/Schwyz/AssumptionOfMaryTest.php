@@ -38,7 +38,7 @@ class AssumptionOfMaryTest extends SchwyzBaseTestCase implements YasumiTestCaseI
      *
      * @throws ReflectionException
      */
-    public function testAssumptionOfMary($year, $expected)
+    public function testAssumptionOfMary($year, $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

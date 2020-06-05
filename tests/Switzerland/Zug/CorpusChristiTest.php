@@ -37,7 +37,7 @@ class CorpusChristiTest extends ZugBaseTestCase implements YasumiTestCaseInterfa
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testCorpusChristi()
+    public function testCorpusChristi(): void
     {
         $year = 2016;
         $this->assertHoliday(

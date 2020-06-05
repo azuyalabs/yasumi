@@ -37,7 +37,7 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements YasumiTestCaseInte
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testJeuneGenevoisBetween1870And1965()
+    public function testJeuneGenevoisBetween1870And1965(): void
     {
         $year = $this->generateRandomYear(1870, 1965);
         // Find first Sunday of September
@@ -55,7 +55,7 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements YasumiTestCaseInte
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testJeuneGenevoisBetween1840And1869()
+    public function testJeuneGenevoisBetween1840And1869(): void
     {
         $year = $this->generateRandomYear(Geneva::JEUNE_GENEVOIS_ESTABLISHMENT_YEAR, 1869);
         // Find first Sunday of September
@@ -71,7 +71,7 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements YasumiTestCaseInte
      * Tests Jeune Genevois before 1840
      * @throws ReflectionException
      */
-    public function testJeuneGenevoisBefore1840()
+    public function testJeuneGenevoisBefore1840(): void
     {
         $year = $this->generateRandomYear(1000, Geneva::JEUNE_GENEVOIS_ESTABLISHMENT_YEAR - 1);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);

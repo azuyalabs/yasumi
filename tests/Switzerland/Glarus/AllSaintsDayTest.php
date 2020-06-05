@@ -38,7 +38,7 @@ class AllSaintsDayTest extends GlarusBaseTestCase implements YasumiTestCaseInter
      *
      * @throws ReflectionException
      */
-    public function testAllSaintsDay($year, $expected)
+    public function testAllSaintsDay($year, $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

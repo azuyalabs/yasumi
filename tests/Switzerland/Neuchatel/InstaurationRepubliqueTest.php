@@ -39,7 +39,7 @@ class InstaurationRepubliqueTest extends NeuchatelBaseTestCase implements Yasumi
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testInstaurationRepubliqueOnAfter1849()
+    public function testInstaurationRepubliqueOnAfter1849(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -54,7 +54,7 @@ class InstaurationRepubliqueTest extends NeuchatelBaseTestCase implements Yasumi
      * Tests Instauration de la République before 1849.
      * @throws ReflectionException
      */
-    public function testInstaurationRepubliqueBefore1849()
+    public function testInstaurationRepubliqueBefore1849(): void
     {
         $this->assertNotHoliday(
             self::REGION,

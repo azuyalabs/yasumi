@@ -39,7 +39,7 @@ class AsturiasDayTest extends AsturiasBaseTestCase implements YasumiTestCaseInte
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHolidayOnAfterEstablishment()
+    public function testHolidayOnAfterEstablishment(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -54,7 +54,7 @@ class AsturiasDayTest extends AsturiasBaseTestCase implements YasumiTestCaseInte
      * Tests the holiday defined in this test before establishment.
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,

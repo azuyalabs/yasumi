@@ -34,7 +34,7 @@ class StGeorgesDayTest extends AragonBaseTestCase implements YasumiTestCaseInter
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHoliday()
+    public function testHoliday(): void
     {
         $year = $this->generateRandomYear();
         $this->assertHoliday(
