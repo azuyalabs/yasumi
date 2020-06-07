@@ -67,6 +67,8 @@ class Holiday extends DateTime implements JsonSerializable
 
     /**
      * @var string short name (internal name) of this holiday
+     * @deprecated public access to this property is deprecated in favor of getShortName()
+     * @see getShortName()
      */
     public $shortName;
 
