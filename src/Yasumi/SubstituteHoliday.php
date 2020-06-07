@@ -66,7 +66,7 @@ class SubstituteHoliday extends Holiday
     ) {
         $this->substitutedHoliday = $substitutedHoliday;
 
-        $shortName = 'substituteHoliday:' . $substitutedHoliday->shortName;
+        $shortName = 'substituteHoliday:' . $substitutedHoliday->getShortName();
 
         if ($date == $substitutedHoliday) {
             throw new \InvalidArgumentException('Date must differ from the substituted holiday');
@@ -74,6 +74,16 @@ class SubstituteHoliday extends Holiday
 
         // Construct instance
         parent::__construct($shortName, $names, $date, $displayLocale, $type);
+    }
+
+    /**
+     * Returns the holiday being substituted.
+     *
+     * @return Holiday the holiday being substituted.
+     */
+    public function getSubstitutedHoliday(): Holiday
+    {
+        return $this->substitutedHoliday;
     }
 
     /**
@@ -95,7 +105,7 @@ class SubstituteHoliday extends Holiday
     {
         $name = parent::getName();
 
-        if ($name === $this->shortName) {
+        if ($name === $this->getShortName()) {
             foreach ($this->getLocales($locales) as $locales) {
                 $pattern = $this->substituteHolidayTranslations[$locales] ?? null;
                 if ($pattern) {

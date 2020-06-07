@@ -59,7 +59,7 @@ class TypographyTest extends TestCase
 
             foreach ($provider->getHolidays() as $holiday) {
                 foreach ($holiday->translations as $locale => $name) {
-                    $tests[$name] = [$name, $class, $holiday->shortName, $locale];
+                    $tests[$name] = [$name, $class, $holiday->getShortName(), $locale];
                 }
             }
         }

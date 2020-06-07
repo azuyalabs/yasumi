@@ -139,6 +139,16 @@ class Holiday extends DateTime implements JsonSerializable
     }
 
     /**
+     * Returns the short name for this holiday.
+     *
+     * @return string the short name, e.g. "newYearsDay".
+     */
+    public function getShortName(): string
+    {
+        return $this->shortName;
+    }
+
+    /**
      * Returns what type this holiday is.
      *
      * @return string the type of holiday (official, observance, season, bank or other).

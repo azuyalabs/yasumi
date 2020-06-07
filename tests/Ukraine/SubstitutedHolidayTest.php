@@ -87,7 +87,7 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements YasumiTestCa
         $this->assertTrue($holidays->isHoliday($holidayOfficial));
         $this->assertEquals(Holiday::TYPE_OFFICIAL, $holidayOfficial->getType());
 
-        $holidaySubstitution = $holidays->getHoliday('substituteHoliday:' . $holidayOfficial->shortName);
+        $holidaySubstitution = $holidays->getHoliday('substituteHoliday:' . $holidayOfficial->getShortName());
         if ($expectedSubstitution === null) {
             // without substitution
             $this->assertNull($holidaySubstitution);
