@@ -65,7 +65,7 @@ class ChildrensDayTest extends GermanyBaseTestCase implements YasumiTestCaseInte
             self::REGION,
             self::HOLIDAY,
             $year,
-            Holiday::TYPE_SEASON
+            Holiday::TYPE_OTHER
         );
     }
 }

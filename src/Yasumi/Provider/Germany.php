@@ -109,7 +109,7 @@ class Germany extends AbstractProvider
             20,
             $this->locale,
             $this->timezone,
-            Holiday::TYPE_SEASON
+            Holiday::TYPE_OTHER
         ));
     }
 }

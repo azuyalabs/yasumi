@@ -14,8 +14,8 @@ namespace Yasumi\Provider\Germany;
 
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
-use Yasumi\Provider\Germany;
 use Yasumi\Holiday;
+use Yasumi\Provider\Germany;
 
 /**
  * Provider for all holidays in Thuringia (Germany).

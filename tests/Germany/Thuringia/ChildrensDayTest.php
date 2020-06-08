@@ -64,7 +64,7 @@ class ChildrensDayTest extends ThuringiaBaseTestCase implements YasumiTestCaseIn
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(1954, 2018),
-            Holiday::TYPE_SEASON
+            Holiday::TYPE_OTHER
         );
 
         //after 2019
