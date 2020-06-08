@@ -17,7 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 - Added American English spelling for Labour Day [\#216](https://github.com/azuyalabs/yasumi/issues/216)
 - Added French translation for Second Christmas Day [\#188](https://github.com/azuyalabs/yasumi/pull/188) ([Arkounay](https://github.com/Arkounay))
 
-- Added accessor methods Holiday::getShortName() and SubstituteHoliday::getSubstitutedHoliday() [\#220](https://github.com/azuyalabs/yasumi/pull/220) ([c960657](https://github.com/c960657))
+- Added accessor methods Holiday::getKey() and SubstituteHoliday::getSubstitutedHoliday() [\#220](https://github.com/azuyalabs/yasumi/pull/220)+[\#221](https://github.com/azuyalabs/yasumi/pull/221) ([c960657](https://github.com/c960657))
 - Added missing return (correct) and parameter types in various methods.
 
 ### Changed

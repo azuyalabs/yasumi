@@ -22,11 +22,11 @@ class MissingTranslationException extends BaseException implements Exception
     /**
      * Initializes the Exception instance
      *
-     * @param string $shortName The short name (internal name) of the holiday
+     * @param string $key The holiday key
      * @param array $locales The locales that was searched
      */
-    public function __construct(string $shortName, array $locales)
+    public function __construct(string $key, array $locales)
     {
-        parent::__construct(\sprintf("Translation for '%s' not found for any locale: '%s'", $shortName, \implode("', '", $locales)));
+        parent::__construct(\sprintf("Translation for '%s' not found for any locale: '%s'", $key, \implode("', '", $locales)));
     }
 }

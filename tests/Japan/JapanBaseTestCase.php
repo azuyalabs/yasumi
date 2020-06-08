@@ -33,7 +33,7 @@ abstract class JapanBaseTestCase extends TestCase
     public const TIMEZONE = 'Asia/Tokyo';
 
     /**
-     * Prefix for short name used when holiday is substituted
+     * Prefix for holiday key used when holiday is substituted
      */
     public const SUBSTITUTE_PREFIX = 'substituteHoliday:';
 
