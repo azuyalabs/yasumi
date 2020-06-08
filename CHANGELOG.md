@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 ## [Unreleased]
 
 ### Added
+- Added Pentecost (Sunday) to Germany [\#225](https://github.com/azuyalabs/yasumi/pull/225)
 - Added Canada Provider [\#215](https://github.com/azuyalabs/yasumi/pull/215) ([lux](https://github.com/lux))
 - Added Luxembourg Provider [\#205](https://github.com/azuyalabs/yasumi/pull/205) ([Arkounay](https://github.com/Arkounay))
 - Catholic Christmas Day is a new official holiday since 2017 in the Ukraine. [\#202](https://github.com/azuyalabs/yasumi/pull/202)
