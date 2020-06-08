@@ -484,7 +484,7 @@ class SouthKorea extends AbstractProvider
         foreach ($holidays as $shortName => $holiday) {
             // Get list of holiday dates except this
             $holidayDates = \array_map(static function ($holiday) use ($shortName) {
-                return $holiday->shortName === $shortName ? false : (string)$holiday;
+                return $holiday->getShortName() === $shortName ? false : (string)$holiday;
             }, $holidays);
 
             // Only process accepted holidays and conditions

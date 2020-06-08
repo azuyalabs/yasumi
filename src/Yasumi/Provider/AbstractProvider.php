@@ -158,7 +158,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
             $holiday->mergeGlobalTranslations($this->globalTranslations);
         }
 
-        $this->holidays[$holiday->shortName] = $holiday;
+        $this->holidays[$holiday->getShortName()] = $holiday;
         \uasort($this->holidays, [__CLASS__, 'compareDates']);
     }
 
@@ -315,10 +315,10 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     {
         $names = \array_map(static function ($holiday) {
             if ($holiday instanceof SubstituteHoliday) {
-                return $holiday->substitutedHoliday->shortName;
+                return $holiday->getSubstitutedHoliday()->getShortName();
             }
 
-            return $holiday->shortName;
+            return $holiday->getShortName();
         }, $this->getHolidays());
 
         return \count(\array_unique($names));

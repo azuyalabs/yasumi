@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 - Added American English spelling for Labour Day [\#216](https://github.com/azuyalabs/yasumi/issues/216)
 - Added French translation for Second Christmas Day [\#188](https://github.com/azuyalabs/yasumi/pull/188) ([Arkounay](https://github.com/Arkounay))
 
+- Added accessor methods Holiday::getShortName() and SubstituteHoliday::getSubstitutedHoliday() [\#220](https://github.com/azuyalabs/yasumi/pull/220) ([c960657](https://github.com/c960657))
 - Added missing return (correct) and parameter types in various methods.
 
 ### Changed
@@ -43,6 +44,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 - Fixed issue if the previous working day happens to be in the previous year (i.e. not in the year of the Yasumi instance)
 
 - Fixed compound conditions that are always true by simplifying the condition steps.
+
+### Deprecated
+- Deprecated direct access to public properties Holiday::$shortName and SubstituteHoliday::$substitutedHoliday in favor of accessor methods [\#220](https://github.com/azuyalabs/yasumi/pull/220) ([c960657](https://github.com/c960657))
 
 ### Removed
 - PHP 7.1 Support, as it has reached its end of life.

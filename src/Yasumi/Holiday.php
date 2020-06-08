@@ -67,6 +67,8 @@ class Holiday extends DateTime implements JsonSerializable
 
     /**
      * @var string short name (internal name) of this holiday
+     * @deprecated public access to this property is deprecated in favor of getShortName()
+     * @see getShortName()
      */
     public $shortName;
 
@@ -136,6 +138,16 @@ class Holiday extends DateTime implements JsonSerializable
 
         // Construct instance
         parent::__construct($date->format('Y-m-d'), $date->getTimezone());
+    }
+
+    /**
+     * Returns the short name for this holiday.
+     *
+     * @return string the short name, e.g. "newYearsDay".
+     */
+    public function getShortName(): string
+    {
+        return $this->shortName;
     }
 
     /**
