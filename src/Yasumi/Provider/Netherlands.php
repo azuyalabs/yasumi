@@ -139,7 +139,6 @@ class Netherlands extends AbstractProvider
      *
      * @throws \Exception
      * @see \Yasumi\Provider\CommonHolidays::winterTime()
-     *
      */
     private function calculateWinterTime(): void
     {
@@ -156,7 +155,6 @@ class Netherlands extends AbstractProvider
      *
      * @throws \Exception
      * @see \Yasumi\Provider\CommonHolidays::summerTime()
-     *
      */
     private function calculateSummerTime(): void
     {

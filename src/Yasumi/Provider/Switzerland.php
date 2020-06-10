@@ -59,7 +59,6 @@ class Switzerland extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
-     * @throws \Exception
      */
     private function calculateNationalDay(): void
     {

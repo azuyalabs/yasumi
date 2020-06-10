@@ -22,7 +22,6 @@ use Yasumi\Holiday;
  * Trait ChristianHolidays.
  *
  * Trait containing base Christian Western churches calendar based holidays.
- *
  */
 trait ChristianHolidays
 {
@@ -79,7 +78,6 @@ trait ChristianHolidays
      * @link https://github.com/php/php-src/blob/c8aa6f3a9a3d2c114d0c5e0c9fdd0a465dbb54a5/ext/calendar/easter.c
      * @link http://www.gmarts.org/index.php?go=415#EasterMallen
      * @link https://www.tondering.dk/claus/cal/easter.php
-     *
      */
     protected function calculateEaster(int $year, string $timezone): DateTime
     {
