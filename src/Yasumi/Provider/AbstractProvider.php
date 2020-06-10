@@ -224,7 +224,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     public function getHolidayDates(): array
     {
         return \array_map(static function ($holiday) {
-            return (string)$holiday;
+            return (string) $holiday;
         }, $this->holidays);
     }
 
@@ -242,7 +242,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     {
         // If no data is defined for this Holiday Provider, the function falls back to the global weekend definition.
         if (\in_array(
-            (int)$date->format('w'),
+            (int) $date->format('w'),
             self::WEEKEND_DATA[$this::ID] ?? [0, 6],
             true
         )
@@ -266,7 +266,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     {
         $this->isHolidayNameNotEmpty($shortName); // Validate if short name is not empty
 
-        return (string)$this->holidays[$shortName];
+        return (string) $this->holidays[$shortName];
     }
 
     /**
@@ -302,7 +302,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     {
         $this->isHolidayNameNotEmpty($shortName); // Validate if short name is not empty
 
-        return (int)$this->holidays[$shortName]->format('w');
+        return (int) $this->holidays[$shortName]->format('w');
     }
 
     /**

@@ -46,7 +46,7 @@ class ChristmasDayTest extends EnglandBaseTestCase implements YasumiTestCaseInte
         $date = new DateTime($expected, new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
 
-        if (\in_array((int)$date->format('w'), [0, 6], true)) {
+        if (\in_array((int) $date->format('w'), [0, 6], true)) {
             $date->add(new DateInterval('P2D'));
             $this->assertHoliday(self::REGION, 'substituteHoliday:' . self::HOLIDAY, $year, $date);
             $this->assertHolidayType(self::REGION, 'substituteHoliday:' . self::HOLIDAY, $year, Holiday::TYPE_BANK);

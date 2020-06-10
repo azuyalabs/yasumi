@@ -88,7 +88,7 @@ class NewfoundlandAndLabrador extends Canada
         $this->addHoliday($holiday);
 
         // Substitute holiday is on the next available weekday if a holiday falls on a Saturday or Sunday
-        if (\in_array((int)$holiday->format('w'), [0, 6], true)) {
+        if (\in_array((int) $holiday->format('w'), [0, 6], true)) {
             $date = clone $holiday;
             $date->modify('next monday');
 
@@ -134,7 +134,7 @@ class NewfoundlandAndLabrador extends Canada
         $this->addHoliday($holiday);
 
         // Substitute holiday is on the next available weekday if a holiday falls on a Saturday or Sunday
-        if (\in_array((int)$holiday->format('w'), [0, 6], true)) {
+        if (\in_array((int) $holiday->format('w'), [0, 6], true)) {
             $date = clone $holiday;
             $date->modify('next monday');
 

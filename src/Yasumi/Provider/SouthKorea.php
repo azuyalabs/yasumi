@@ -484,22 +484,22 @@ class SouthKorea extends AbstractProvider
         foreach ($holidays as $shortName => $holiday) {
             // Get list of holiday dates except this
             $holidayDates = \array_map(static function ($holiday) use ($shortName) {
-                return $holiday->getShortName() === $shortName ? false : (string)$holiday;
+                return $holiday->getShortName() === $shortName ? false : (string) $holiday;
             }, $holidays);
 
             // Only process accepted holidays and conditions
             if (\in_array($shortName, $acceptedHolidays, true)
                 && (
-                    0 === (int)$holiday->format('w')
+                    0 === (int) $holiday->format('w')
                     || \in_array($holiday, $holidayDates, false)
-                    || (6 === (int)$holiday->format('w') && 'childrensDay' === $shortName)
+                    || (6 === (int) $holiday->format('w') && 'childrensDay' === $shortName)
                 )
             ) {
                 $date = clone $holiday;
 
                 // Find next week day (not being another holiday)
-                while (0 === (int)$date->format('w')
-                    || (6 === (int)$date->format('w') && 'childrensDay' === $shortName)
+                while (0 === (int) $date->format('w')
+                    || (6 === (int) $date->format('w') && 'childrensDay' === $shortName)
                     || \in_array($date, $holidayDates, false)) {
                     $date->add(new DateInterval('P1D'));
                     continue;

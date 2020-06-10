@@ -103,7 +103,7 @@ class Ireland extends AbstractProvider
         $this->addHoliday($holiday);
 
         // Substitute holiday is on the next available weekday if a holiday falls on a Sunday.
-        if (0 === (int)$holiday->format('w')) {
+        if (0 === (int) $holiday->format('w')) {
             $date = clone $holiday;
             $date->modify('next monday');
 
@@ -164,7 +164,7 @@ class Ireland extends AbstractProvider
         $this->addHoliday($holiday);
 
         // Whenever Christmas Day does not fall on a weekday, the Tuesday following on it shall be a public holiday.
-        if (\in_array((int)$holiday->format('w'), [0, 6], true)) {
+        if (\in_array((int) $holiday->format('w'), [0, 6], true)) {
             $date = clone $holiday;
             $date->modify('next tuesday');
 
@@ -204,7 +204,7 @@ class Ireland extends AbstractProvider
         $this->addHoliday($holiday);
 
         // Whenever St. Stephens Day does not fall on a weekday, the Monday following on it shall be a public holiday.
-        if (\in_array((int)$holiday->format('w'), [0, 6], true)) {
+        if (\in_array((int) $holiday->format('w'), [0, 6], true)) {
             $date = clone $holiday;
             $date->modify('next monday');
 
@@ -249,7 +249,7 @@ class Ireland extends AbstractProvider
         $this->addHoliday($holiday);
 
         // Substitute holiday is on the next available weekday if a holiday falls on a Saturday or Sunday
-        if (\in_array((int)$holiday->format('w'), [0, 6], true)) {
+        if (\in_array((int) $holiday->format('w'), [0, 6], true)) {
             $date = clone $holiday;
             $date->modify('next monday');
 

@@ -34,7 +34,7 @@ class InvalidDateException extends InvalidArgumentException implements Exception
                 break;
             case 'integer':
             case 'double':
-                $displayName = (string)$argumentValue;
+                $displayName = (string) $argumentValue;
                 break;
             case 'string':
                 $displayName = $argumentValue;

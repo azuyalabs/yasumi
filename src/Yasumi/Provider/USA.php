@@ -272,13 +272,13 @@ class USA extends AbstractProvider
             $date = null;
 
             // Substitute holiday is on a Monday in case the holiday falls on a Sunday
-            if (0 === (int)$holiday->format('w')) {
+            if (0 === (int) $holiday->format('w')) {
                 $date = clone $holiday;
                 $date->add(new DateInterval('P1D'));
             }
 
             // Substitute holiday is on a Friday in case the holiday falls on a Saturday
-            if (6 === (int)$holiday->format('w')) {
+            if (6 === (int) $holiday->format('w')) {
                 $date = clone $holiday;
                 $date->sub(new DateInterval('P1D'));
             }

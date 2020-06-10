@@ -91,7 +91,7 @@ trait ChristianHolidays
             // 1583 AD to 4099 (A day adjustment is required in or shortly after 4100 AD).
             // After 1752, most western churches have adopted the current algorithm.
             if ($year <= 1752) {
-                $dom = ($year + (int)($year / 4) + 5) % 7; // The 'Dominical number' - finding a Sunday
+                $dom = ($year + (int) ($year / 4) + 5) % 7; // The 'Dominical number' - finding a Sunday
                 if ($dom < 0) {
                     $dom += 7;
                 }
@@ -101,13 +101,13 @@ trait ChristianHolidays
                     $pfm += 30;
                 }
             } else {
-                $dom = ($year + (int)($year / 4) - (int)($year / 100) + (int)($year / 400)) % 7; // The 'Dominical number' - finding a Sunday
+                $dom = ($year + (int) ($year / 4) - (int) ($year / 100) + (int) ($year / 400)) % 7; // The 'Dominical number' - finding a Sunday
                 if ($dom < 0) {
                     $dom += 7;
                 }
 
-                $solar = (int)(($year - 1600) / 100) - (int)(($year - 1600) / 400); // The solar correction
-                $lunar = (int)(((int)(($year - 1400) / 100) * 8) / 25); // The lunar correction
+                $solar = (int) (($year - 1600) / 100) - (int) (($year - 1600) / 400); // The solar correction
+                $lunar = (int) (((int) (($year - 1400) / 100) * 8) / 25); // The lunar correction
 
                 $pfm = (3 - (11 * $golden) + $solar - $lunar) % 30; // Uncorrected date of the Paschal full moon
                 if ($pfm < 0) {
