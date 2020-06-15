@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 ## [Unreleased]
 
 ### Added
+- Added All Souls Day to Lithuania [\#227](https://github.com/azuyalabs/yasumi/pull/227)
 - Added New Years Eve to Germany [\#226](https://github.com/azuyalabs/yasumi/pull/226)
 - Added Canada Provider [\#215](https://github.com/azuyalabs/yasumi/pull/215) ([lux](https://github.com/lux))
 - Added Luxembourg Provider [\#205](https://github.com/azuyalabs/yasumi/pull/205) ([Arkounay](https://github.com/Arkounay))

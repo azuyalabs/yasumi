@@ -149,7 +149,7 @@ class Brazil extends AbstractProvider
         if ($this->year >= 1300) {
             $this->addHoliday(new Holiday(
                 'allSoulsDay',
-                ['pt' => 'Dia de Finados'],
+                [],
                 new DateTime("$this->year-11-02", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
