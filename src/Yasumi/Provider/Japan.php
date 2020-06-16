@@ -544,7 +544,7 @@ class Japan extends AbstractProvider
             $date = clone $holiday;
 
             // If holidays falls on a Sunday
-            if (0 === (int)$holiday->format('w')) {
+            if (0 === (int) $holiday->format('w')) {
                 if ($this->year >= 2007) {
                     // Find next week day (not being another holiday)
                     while (\in_array($date, $dates, false)) {
@@ -636,7 +636,7 @@ class Japan extends AbstractProvider
             }
 
             // Determine if gap between holidays is one day and create bridge holiday
-            if (2 === (int)$previous->diff($datesIterator->current())->format('%a')) {
+            if (2 === (int) $previous->diff($datesIterator->current())->format('%a')) {
                 $bridgeDate = clone $previous;
                 $bridgeDate->add(new DateInterval('P1D'));
 

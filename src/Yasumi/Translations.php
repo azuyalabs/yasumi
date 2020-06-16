@@ -92,7 +92,6 @@ class Translations implements TranslationsInterface
      *
      * @throws UnknownLocaleException An UnknownLocaleException is thrown if the given locale is not
      *                                valid/available.
-     *
      */
     protected function isValidLocale(string $locale): bool
     {

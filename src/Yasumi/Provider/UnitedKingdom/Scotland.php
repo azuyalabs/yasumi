@@ -107,7 +107,7 @@ class Scotland extends UnitedKingdom
         $this->addHoliday($newYearsDay);
         $this->addHoliday($secondNewYearsDay);
 
-        if (\in_array((int)$newYearsDay->format('w'), [0, 6], true)) {
+        if (\in_array((int) $newYearsDay->format('w'), [0, 6], true)) {
             $date = clone $newYearsDay;
             $date->add(new DateInterval('P2D'));
             $this->addHoliday(new SubstituteHoliday(
@@ -119,7 +119,7 @@ class Scotland extends UnitedKingdom
             ));
         }
 
-        if (\in_array((int)$secondNewYearsDay->format('w'), [0, 6], true)) {
+        if (\in_array((int) $secondNewYearsDay->format('w'), [0, 6], true)) {
             $date = clone $secondNewYearsDay;
             $date->add(new DateInterval('P2D'));
             $this->addHoliday(new SubstituteHoliday(
@@ -188,7 +188,7 @@ class Scotland extends UnitedKingdom
         $this->addHoliday($holiday);
 
         // Substitute holiday is on the next available weekday if a holiday falls on a Saturday or Sunday
-        if (\in_array((int)$holiday->format('w'), [0, 6], true)) {
+        if (\in_array((int) $holiday->format('w'), [0, 6], true)) {
             $date = clone $holiday;
             $date->modify('next monday');
 

@@ -221,7 +221,7 @@ class Holiday extends DateTime implements JsonSerializable
      */
     protected function getLocales(?array $locales): array
     {
-        if ($locales) {
+        if (! empty($locales)) {
             $expanded = [];
         } else {
             $locales = [$this->displayLocale];

@@ -89,7 +89,7 @@ class UnitedKingdom extends AbstractProvider
         $newYearsDay = new DateTime("$this->year-01-01", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
         // If New Years Day falls on a Saturday or Sunday, it is observed the next Monday (January 2nd or 3rd)
-        if (\in_array((int)$newYearsDay->format('w'), [0, 6], true)) {
+        if (\in_array((int) $newYearsDay->format('w'), [0, 6], true)) {
             $newYearsDay->modify('next monday');
         }
 
@@ -275,7 +275,7 @@ class UnitedKingdom extends AbstractProvider
         $this->addHoliday($christmasDay);
         $this->addHoliday($secondChristmasDay);
 
-        if (\in_array((int)$christmasDay->format('w'), [0, 6], true)) {
+        if (\in_array((int) $christmasDay->format('w'), [0, 6], true)) {
             $date = clone $christmasDay;
             $date->add(new DateInterval('P2D'));
             $this->addHoliday(new SubstituteHoliday(
@@ -287,7 +287,7 @@ class UnitedKingdom extends AbstractProvider
             ));
         }
 
-        if (\in_array((int)$secondChristmasDay->format('w'), [0, 6], true)) {
+        if (\in_array((int) $secondChristmasDay->format('w'), [0, 6], true)) {
             $date = clone $secondChristmasDay;
             $date->add(new DateInterval('P2D'));
             $this->addHoliday(new SubstituteHoliday(

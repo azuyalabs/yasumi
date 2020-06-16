@@ -104,7 +104,7 @@ class Croatia extends AbstractProvider
      */
     private function calculateHomelandThanksgivingDay(): void
     {
-        $names = null;
+        $names = [];
         if ($this->year >= 1995 && $this->year < 2020) {
             $names['en'] = 'Homeland Thanksgiving Day';
             $names['hr'] = 'Dan domovinske zahvalnosti';
@@ -113,7 +113,7 @@ class Croatia extends AbstractProvider
             $names['hr'] = 'Dan pobjede i domovinske zahvalnosti i Dan hrvatskih branitelja';
         }
 
-        if (null !== $names) {
+        if (! empty($names)) {
             $this->addHoliday(new Holiday(
                 'homelandThanksgiving',
                 $names,

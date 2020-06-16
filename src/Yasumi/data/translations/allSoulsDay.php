@@ -11,12 +11,9 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-// Translations for New Year's Eve
+// Translations for All Souls' Day
 return [
-    'da' => 'nytårsaften',
-    'de' => 'Silvester',
-    'en' => 'New Year’s Eve',
-    'ko' => '신년전야',
-    'lv' => 'Vecgada vakars',
-    'sv' => 'nyårsafton',
+    'en' => 'All Souls’ Day',
+    'lt' => 'Vėlinės',
+    'pt' => 'Dia de Finados',
 ];

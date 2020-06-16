@@ -132,7 +132,7 @@ class Australia extends AbstractProvider
         );
         $this->addHoliday($holiday);
 
-        $day = (int)$date->format('w');
+        $day = (int) $date->format('w');
         if (0 === $day || 6 === $day) {
             $date = $date->add(0 === $day ? new DateInterval('P1D') : new DateInterval('P2D'));
 

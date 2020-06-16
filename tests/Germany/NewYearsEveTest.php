@@ -10,25 +10,23 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\UnitedKingdom\England;
+namespace Yasumi\tests\Germany;
 
-use DateInterval;
 use DateTime;
-use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Boxing Day in England.
+ * Class for testing New Years Eve in Germany.
  */
-class BoxingDayTest extends EnglandBaseTestCase implements YasumiTestCaseInterface
+class NewYearsEveTest extends GermanyBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday to be tested
      */
-    public const HOLIDAY = 'secondChristmasDay';
+    public const HOLIDAY = 'newYearsEve';
 
     /**
      * Tests the holiday defined in this test.
@@ -36,41 +34,24 @@ class BoxingDayTest extends EnglandBaseTestCase implements YasumiTestCaseInterfa
      * @dataProvider HolidayDataProvider
      *
      * @param int $year the year for which the holiday defined in this test needs to be tested
-     * @param string $expected the expected date
+     * @param DateTime $expected the expected date
      *
      * @throws ReflectionException
-     * @throws Exception
      */
-    public function testHoliday($year, $expected): void
+    public function testHoliday($year, $expected)
     {
-        $date = new DateTime($expected, new DateTimeZone(self::TIMEZONE));
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
-
-        if (\in_array((int) $date->format('w'), [0, 6], true)) {
-            $date->add(new DateInterval('P2D'));
-            $this->assertHoliday(self::REGION, 'substituteHoliday:' . self::HOLIDAY, $year, $date);
-            $this->assertHolidayType(self::REGION, 'substituteHoliday:' . self::HOLIDAY, $year, Holiday::TYPE_BANK);
-        }
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
-     * Returns a list of test dates
+     * Returns a list of random test dates used for assertion of the holiday defined in this test
      *
      * @return array list of test dates for the holiday defined in this test
      * @throws Exception
      */
     public function HolidayDataProvider(): array
     {
-        $data = [];
-
-        for ($y = 0; $y < self::TEST_ITERATIONS; $y++) {
-            $year = $this->generateRandomYear();
-            $date = new DateTime("$year-12-26", new DateTimeZone(self::TIMEZONE));
-
-            $data[] = [$year, $date->format('Y-m-d')];
-        }
-
-        return $data;
+        return $this->generateRandomDates(12, 31, self::TIMEZONE);
     }
 
     /**
@@ -83,7 +64,7 @@ class BoxingDayTest extends EnglandBaseTestCase implements YasumiTestCaseInterfa
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'Boxing Day']
+            [self::LOCALE => 'Silvester']
         );
     }
 
@@ -93,6 +74,6 @@ class BoxingDayTest extends EnglandBaseTestCase implements YasumiTestCaseInterfa
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_BANK);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OTHER);
     }
 }
