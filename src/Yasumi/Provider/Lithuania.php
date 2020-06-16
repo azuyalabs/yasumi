@@ -46,6 +46,11 @@ class Lithuania extends AbstractProvider
     public const STATEHOOD_YEAR = 1253;
 
     /**
+     * The year when All Souls Day became a holiday
+     */
+    public const ALL_SOULS_DAY = 2020;
+
+    /**
      * Initialize holidays for Lithuania.
      *
      * @throws \InvalidArgumentException
@@ -66,6 +71,7 @@ class Lithuania extends AbstractProvider
         $this->addStatehoodDay();
         $this->addHoliday($this->assumptionOfMary($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale));
+        $this->addAllSoulsDay();
         $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale, Holiday::TYPE_OFFICIAL));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
@@ -117,6 +123,24 @@ class Lithuania extends AbstractProvider
                 'en' => 'Statehood Day (Lithuania)',
                 'lt' => 'Valstybės (Lietuvos karaliaus Mindaugo karūnavimo) diena',
             ], new \DateTime("{$this->year}-07-06", new \DateTimeZone($this->timezone)), $this->locale));
+        }
+    }
+
+    /**
+     * All Souls Day, also known as the Commemoration of All the Faithful Departed and the Day of the Dead.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Exception
+     */
+    private function addAllSoulsDay(): void
+    {
+        if ($this->year >= self::ALL_SOULS_DAY) {
+            $this->addHoliday(new Holiday(
+                'allSoulsDay',
+                [],
+                new \DateTime("$this->year-11-02", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
     }
 }
