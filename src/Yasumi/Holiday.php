@@ -56,9 +56,9 @@ class Holiday extends DateTime implements JsonSerializable
     public const DEFAULT_LOCALE = 'en_US';
 
     /**
-     * Pseudo-locale representing the short name (internal name) of the holiday.
+     * Pseudo-locale representing the holiday key.
      */
-    public const LOCALE_SHORT_NAME = 'shortName';
+    public const LOCALE_KEY = '_key';
 
     /**
      * @var array list of all defined locales
@@ -66,9 +66,9 @@ class Holiday extends DateTime implements JsonSerializable
     private static $locales = [];
 
     /**
-     * @var string short name (internal name) of this holiday
-     * @deprecated public access to this property is deprecated in favor of getShortName()
-     * @see getShortName()
+     * @var string holiday key
+     * @deprecated Public access to this property is deprecated in favor of getKey()
+     * @see getKey()
      */
     public $shortName;
 
@@ -93,7 +93,7 @@ class Holiday extends DateTime implements JsonSerializable
      * If a holiday date needs to be defined for a specific timezone, make sure that the date instance
      * (DateTimeInterface) has the correct timezone set. Otherwise the default system timezone is used.
      *
-     * @param string $shortName The short name (internal name) of this holiday
+     * @param string $key Holiday key
      * @param array $names An array containing the name/description of this holiday in various
      *                                          languages. Overrides global translations
      * @param \DateTimeInterface $date A DateTimeInterface instance representing the date of the holiday
@@ -109,14 +109,14 @@ class Holiday extends DateTime implements JsonSerializable
      * @throws \Exception
      */
     public function __construct(
-        string $shortName,
+        string $key,
         array $names,
         \DateTimeInterface $date,
         string $displayLocale = self::DEFAULT_LOCALE,
         string $type = self::TYPE_OFFICIAL
     ) {
-        // Validate if short name is not empty
-        if (empty($shortName)) {
+        // Validate if key is not empty
+        if (empty($key)) {
             throw new InvalidArgumentException('Holiday name can not be blank.');
         }
 
@@ -131,7 +131,7 @@ class Holiday extends DateTime implements JsonSerializable
         }
 
         // Set additional attributes
-        $this->shortName = $shortName;
+        $this->shortName = $key;
         $this->translations = $names;
         $this->displayLocale = $displayLocale;
         $this->type = $type;
@@ -141,11 +141,11 @@ class Holiday extends DateTime implements JsonSerializable
     }
 
     /**
-     * Returns the short name for this holiday.
+     * Returns the key for this holiday.
      *
-     * @return string the short name, e.g. "newYearsDay".
+     * @return string the key, e.g. "newYearsDay".
      */
-    public function getShortName(): string
+    public function getKey(): string
     {
         return $this->shortName;
     }
@@ -176,7 +176,7 @@ class Holiday extends DateTime implements JsonSerializable
      * The provided locales are searched for a translation. The first locale containing a translation will be used.
      *
      * If no locale is provided, proceed as if an array containing the display locale, Holiday::DEFAULT_LOCALE ('en_US'), and
-     * Holiday::LOCALE_SHORT_NAME (the short name (internal name) of this holiday) was provided.
+     * Holiday::LOCALE_KEY (the holiday key) was provided.
      *
      * @param array $locales The locales to search for translations
      *
@@ -184,13 +184,13 @@ class Holiday extends DateTime implements JsonSerializable
      * @throws MissingTranslationException
      *
      * @see Holiday::DEFAULT_LOCALE
-     * @see Holiday::LOCALE_SHORT_NAME
+     * @see Holiday::LOCALE_KEY
      */
     public function getName(array $locales = null): string
     {
         $locales = $this->getLocales($locales);
         foreach ($locales as $locale) {
-            if ($locale === self::LOCALE_SHORT_NAME) {
+            if ($locale === self::LOCALE_KEY) {
                 return $this->shortName;
             }
             if (isset($this->translations[$locale])) {
@@ -208,7 +208,7 @@ class Holiday extends DateTime implements JsonSerializable
      * ['ca_ES_VALENCIA', 'es_ES'] is expanded into ['ca_ES_VALENCIA', 'ca_ES', 'ca', 'es_ES', 'es'].
      *
      * If a string is provided, return as if this string, Holiday::DEFAULT_LOCALE, and Holiday::LOCALE_SHORT_NAM
-     * was provided. E.g. 'de_DE' is expanded into ['de_DE', 'de', 'en_US', 'en', Holiday::LOCALE_SHORT_NAME].
+     * was provided. E.g. 'de_DE' is expanded into ['de_DE', 'de', 'en_US', 'en', Holiday::LOCALE_KEY].
      *
      * If null is provided, return as if the display locale was provided as a string.
      *
@@ -217,7 +217,7 @@ class Holiday extends DateTime implements JsonSerializable
      * @return array
      *
      * @see Holiday::DEFAULT_LOCALE
-     * @see Holiday::LOCALE_SHORT_NAME
+     * @see Holiday::LOCALE_KEY
      */
     protected function getLocales(?array $locales): array
     {
@@ -226,7 +226,7 @@ class Holiday extends DateTime implements JsonSerializable
         } else {
             $locales = [$this->displayLocale];
             // DEFAULT_LOCALE is 'en_US', and its parent is 'en'.
-            $expanded = [self::LOCALE_SHORT_NAME, 'en', 'en_US'];
+            $expanded = [self::LOCALE_KEY, 'en', 'en_US'];
         }
 
         // Expand e.g. ['de_DE', 'en_GB'] into  ['de_DE', 'de', 'en_GB', 'en'].

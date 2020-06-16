@@ -33,11 +33,11 @@ class HolidayTest extends TestCase
     use YasumiBase;
 
     /**
-     * Tests that an InvalidArgumentException is thrown in case an blank short name is given.
+     * Tests that an InvalidArgumentException is thrown in case a blank key is given.
      *
      * @throws Exception
      */
-    public function testHolidayBlankNameInvalidArgumentException(): void
+    public function testHolidayBlankKeyInvalidArgumentException(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -99,9 +99,9 @@ class HolidayTest extends TestCase
         $method = new \ReflectionMethod(Holiday::class, 'getLocales');
         $method->setAccessible(true);
 
-        $this->assertEquals(['ca_ES_VALENCIA', 'ca_ES', 'ca', 'en_US', 'en', Holiday::LOCALE_SHORT_NAME], $method->invoke($holiday, null));
+        $this->assertEquals(['ca_ES_VALENCIA', 'ca_ES', 'ca', 'en_US', 'en', Holiday::LOCALE_KEY], $method->invoke($holiday, null));
         $this->assertEquals(['de_DE', 'de', 'es_ES', 'es'], $method->invoke($holiday, ['de_DE', 'es_ES']));
-        $this->assertEquals(['de_DE', 'de', Holiday::LOCALE_SHORT_NAME], $method->invoke($holiday, ['de_DE', Holiday::LOCALE_SHORT_NAME]));
+        $this->assertEquals(['de_DE', 'de', Holiday::LOCALE_KEY], $method->invoke($holiday, ['de_DE', Holiday::LOCALE_KEY]));
     }
 
     /**
@@ -181,8 +181,8 @@ class HolidayTest extends TestCase
         $this->assertEquals('Holiday NL', $holiday->getName(['nl']));
         $this->assertEquals('Holiday NL', $holiday->getName(['nl_NL']));
         $this->assertEquals('Holiday IT-IT', $holiday->getName(['it_IT']));
-        $this->assertEquals('Holiday IT-IT', $holiday->getName(['it_IT', Holiday::LOCALE_SHORT_NAME]));
-        $this->assertEquals('testHoliday', $holiday->getName([Holiday::LOCALE_SHORT_NAME]));
+        $this->assertEquals('Holiday IT-IT', $holiday->getName(['it_IT', Holiday::LOCALE_KEY]));
+        $this->assertEquals('testHoliday', $holiday->getName([Holiday::LOCALE_KEY]));
 
         $holiday = new Holiday('testHoliday', $translations, new DateTime(), 'ja');
         $this->assertEquals('Holiday EN-US', $holiday->getName());

@@ -91,7 +91,7 @@ trait YasumiBase
      * Asserts that the expected date is indeed a holiday for that given year and name
      *
      * @param string $provider the holiday provider (i.e. country/state) for which the holiday need to be tested
-     * @param string $shortName string the short name of the holiday to be checked against
+     * @param string $key string the key of the holiday to be checked against
      * @param int $year holiday calendar year
      * @param DateTime $expected the date to be checked against
      *
@@ -104,12 +104,12 @@ trait YasumiBase
      */
     public function assertHoliday(
         string $provider,
-        string $shortName,
+        string $key,
         int $year,
         DateTime $expected
     ): void {
         $holidays = Yasumi::create($provider, $year);
-        $holiday = $holidays->getHoliday($shortName);
+        $holiday = $holidays->getHoliday($key);
 
         $this->assertInstanceOf(Holiday::class, $holiday);
         $this->assertEquals($expected, $holiday);
@@ -120,7 +120,7 @@ trait YasumiBase
      * Asserts that the expected date is indeed a substitute holiday for that given year and name
      *
      * @param string $provider the holiday provider (i.e. country/state) for which the holiday need to be tested
-     * @param string $shortName string the short name of the substituted holiday to be checked against
+     * @param string $key string the key of the substituted holiday to be checked against
      * @param int $year holiday calendar year
      * @param DateTime $expected the date to be checked against
      *
@@ -133,12 +133,12 @@ trait YasumiBase
      */
     public function assertSubstituteHoliday(
         string $provider,
-        string $shortName,
+        string $key,
         int $year,
         DateTime $expected
     ): void {
         $holidays = Yasumi::create($provider, $year);
-        $holiday = $holidays->getHoliday('substituteHoliday:' . $shortName);
+        $holiday = $holidays->getHoliday('substituteHoliday:' . $key);
 
         $this->assertInstanceOf(SubstituteHoliday::class, $holiday);
         $this->assertEquals($expected, $holiday);
@@ -149,7 +149,7 @@ trait YasumiBase
      * Asserts that the given substitute holiday for that given year does not exist.
      *
      * @param string $provider the holiday provider (i.e. country/state) for which the holiday need to be tested
-     * @param string $shortName the short name of the substituted holiday to be checked against
+     * @param string $key the key of the substituted holiday to be checked against
      * @param int $year holiday calendar year
      *
      * @throws InvalidArgumentException
@@ -161,12 +161,12 @@ trait YasumiBase
      */
     public function assertNotSubstituteHoliday(
         string $provider,
-        string $shortName,
+        string $key,
         int $year
     ): void {
         $this->assertNotHoliday(
             $provider,
-            'substituteHoliday:' . $shortName,
+            'substituteHoliday:' . $key,
             $year
         );
     }
@@ -175,7 +175,7 @@ trait YasumiBase
      * Asserts that the given holiday for that given year does not exist.
      *
      * @param string $provider the holiday provider (i.e. country/state) for which the holiday need to be tested
-     * @param string $shortName the short name of the holiday to be checked against
+     * @param string $key the key of the holiday to be checked against
      * @param int $year holiday calendar year
      *
      * @throws InvalidArgumentException
@@ -187,11 +187,11 @@ trait YasumiBase
      */
     public function assertNotHoliday(
         string $provider,
-        string $shortName,
+        string $key,
         int $year
     ): void {
         $holidays = Yasumi::create($provider, $year);
-        $holiday = $holidays->getHoliday($shortName);
+        $holiday = $holidays->getHoliday($key);
 
         $this->assertNull($holiday);
     }
@@ -200,7 +200,7 @@ trait YasumiBase
      * Asserts that the expected name is indeed provided as a translated holiday name for that given year and name
      *
      * @param string $provider the holiday provider (i.e. country/state) for which the holiday need to be tested
-     * @param string $shortName string the short name of the holiday to be checked against
+     * @param string $key string the key of the holiday to be checked against
      * @param int $year holiday calendar year
      * @param array $translations the translations to be checked against
      *
@@ -212,12 +212,12 @@ trait YasumiBase
      */
     public function assertTranslatedHolidayName(
         string $provider,
-        string $shortName,
+        string $key,
         int $year,
         array $translations
     ): void {
         $holidays = Yasumi::create($provider, $year);
-        $holiday = $holidays->getHoliday($shortName);
+        $holiday = $holidays->getHoliday($key);
 
         $this->assertInstanceOf(Holiday::class, $holiday);
         $this->assertTrue($holidays->isHoliday($holiday));
@@ -248,7 +248,7 @@ trait YasumiBase
      * Asserts that the expected type is indeed the associated type of the given holiday
      *
      * @param string $provider the holiday provider (i.e. country/region) for which the holiday need to be tested
-     * @param string $shortName string the short name of the holiday to be checked against
+     * @param string $key string the key of the holiday to be checked against
      * @param int $year holiday calendar year
      * @param string $type the type to be checked against
      *
@@ -260,12 +260,12 @@ trait YasumiBase
      */
     public function assertHolidayType(
         string $provider,
-        string $shortName,
+        string $key,
         int $year,
         string $type
     ): void {
         $holidays = Yasumi::create($provider, $year);
-        $holiday = $holidays->getHoliday($shortName);
+        $holiday = $holidays->getHoliday($key);
 
         $this->assertInstanceOf(Holiday::class, $holiday);
         $this->assertEquals($type, $holiday->getType());
@@ -276,7 +276,7 @@ trait YasumiBase
      *
      * @param string $provider the holiday provider (i.e. country/state) for which the holiday need to be
      *                                  tested
-     * @param string $shortName string the short name of the holiday to be checked against
+     * @param string $key string the key of the holiday to be checked against
      * @param int $year holiday calendar year
      * @param string $expectedDayOfWeek the expected week day (i.e. "Saturday", "Sunday", etc.)
      *
@@ -288,12 +288,12 @@ trait YasumiBase
      */
     public function assertDayOfWeek(
         string $provider,
-        string $shortName,
+        string $key,
         int $year,
         string $expectedDayOfWeek
     ): void {
         $holidays = Yasumi::create($provider, $year);
-        $holiday = $holidays->getHoliday($shortName);
+        $holiday = $holidays->getHoliday($key);
 
         $this->assertInstanceOf(Holiday::class, $holiday);
         $this->assertTrue($holidays->isHoliday($holiday));
