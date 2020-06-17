@@ -12,12 +12,10 @@
 
 namespace Yasumi\Provider\Canada;
 
-use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Canada;
-use Yasumi\Provider\DateTimeZoneFactory;
 
 /**
  * Provider for all holidays in Nunavut (Canada).
@@ -51,5 +49,4 @@ class Nunavut extends Canada
         $this->calculateCivicHoliday();
         $this->calculateVictoriaDay();
     }
-
 }
