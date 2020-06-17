@@ -82,6 +82,6 @@ class AllSoulsDayTest extends LithuaniaBaseTestCase implements YasumiTestCaseInt
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(Lithuania::ALL_SOULS_DAY), Holiday::TYPE_OFFICIAL);
     }
 }
