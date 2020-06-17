@@ -31,14 +31,19 @@ class YukonTest extends YukonBaseTestCase
      */
     public function testOfficialHolidays(): void
     {
-        $this->assertDefinedHolidays([
+        $holidays = [
             'goodFriday',
             'christmasDay',
             'discoveryDay',
             'victoriaDay',
-            'yukonHeritageDay',
             'nationalIndigenousPeoplesDay',
-        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
+        ];
+
+        if (2009 < $this->year) {
+            $holidays[] = 'yukonHeritageDay';
+        }
+
+        $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
