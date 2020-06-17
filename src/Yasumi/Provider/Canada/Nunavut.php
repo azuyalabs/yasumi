@@ -52,27 +52,4 @@ class Nunavut extends Canada
         $this->calculateVictoriaDay();
     }
 
-    /**
-     * Civic Holiday.
-     *
-     * @link https://en.wikipedia.org/wiki/Civic_Holiday
-     *
-     * @throws InvalidDateException
-     * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
-     * @throws \Exception
-     */
-    protected function calculateCivicHoliday(): void
-    {
-        if ($this->year < 1879) {
-            return;
-        }
-
-        $this->addHoliday(new Holiday(
-            'civicHoliday',
-            [],
-            new DateTime("first monday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-            $this->locale
-        ));
-    }
 }
