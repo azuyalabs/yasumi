@@ -98,6 +98,7 @@ class SubstituteHoliday extends Holiday
      *
      * @param array $locales The locales to search for translations
      *
+     * @return string
      * @throws MissingTranslationException
      *
      * @see Holiday::DEFAULT_LOCALE
