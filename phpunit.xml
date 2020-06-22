@@ -58,6 +58,11 @@
                 <directory suffix="Test.php">./tests/Brazil</directory>
             </testsuite>
 
+            <!-- Test Suite for holidays in Canada -->
+            <testsuite name="Canada">
+                <directory suffix="Test.php">./tests/Canada</directory>
+            </testsuite>
+
             <!-- Test Suite for holidays in Croatia -->
             <testsuite name="Croatia">
                 <directory suffix="Test.php">./tests/Croatia</directory>
@@ -126,6 +131,11 @@
             <!-- Test Suite for holidays in Lithuania -->
             <testsuite name="Lithuania">
                 <directory suffix="Test.php">./tests/Lithuania</directory>
+            </testsuite>
+
+            <!-- Test Suite for holidays in Luxembourg -->
+            <testsuite name="Luxembourg">
+                <directory suffix="Test.php">./tests/Luxembourg</directory>
             </testsuite>
 
             <!-- Test Suite for holidays in Netherlands -->

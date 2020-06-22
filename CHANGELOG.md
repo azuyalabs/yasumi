@@ -6,6 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 ## [Unreleased]
 
 ### Added
+
+### Changed
+
+### Fixed
+
+### Deprecated
+
+### Removed
+
+
+## [2.3.0] - 2020-06-22
+
+### Added
 - Added Canada Provider [\#215](https://github.com/azuyalabs/yasumi/pull/215) ([lux](https://github.com/lux))
 - Added Luxembourg Provider [\#205](https://github.com/azuyalabs/yasumi/pull/205) ([Arkounay](https://github.com/Arkounay))
 - Holiday providers for states of Austria. [\#182](https://github.com/azuyalabs/yasumi/pull/182) ([aprog](https://github.com/aprog))
@@ -13,7 +26,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 - Catholic Christmas Day is a new official holiday since 2017 in the Ukraine. [\#202](https://github.com/azuyalabs/yasumi/pull/202)
 - Additional Dates for Australia/Victoria:AFL Grand Final Friday [\#190](https://github.com/azuyalabs/yasumi/pull/190) ([brucealdridge](https://github.com/brucealdridge))
 - Substituted holidays (holidays that fall in the weekend) for Australia. [\#201](https://github.com/azuyalabs/yasumi/pull/201) ([c960657](https://github.com/c960657))
-- Added New Years Eve to Germany [\#226](https://github.com/azuyalabs/yasumi/pull/226)
+- Added New Years Eve to Germany [\#226](https://github.com/azuyalabs/yasumi/pull/226) ([Patrick-Root](https://github.com/Patrick-Root))
 - Day of Liberation (Tag der Befreiung) is a one-time official holiday in 2020 in Berlin (Germany).
 - Catalan translations for holidays in Catalonia, Valencian Community, Balearic Islands and Aragon [\#189](https://github.com/azuyalabs/yasumi/pull/189) ([c960657](https://github.com/c960657))
 - Added American English spelling for Labour Day [\#216](https://github.com/azuyalabs/yasumi/issues/216)
