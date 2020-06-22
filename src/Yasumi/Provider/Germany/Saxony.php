@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,10 +13,10 @@
 namespace Yasumi\Provider\Germany;
 
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
+use Yasumi\Provider\DateTimeZoneFactory;
 use Yasumi\Provider\Germany;
 
 /**
@@ -93,7 +93,7 @@ class Saxony extends Germany
             $this->addHoliday(new Holiday(
                 'repentanceAndPrayerDay',
                 ['de' => 'Buß- und Bettag'],
-                new DateTime("next wednesday $this->year-11-15", new DateTimeZone($this->timezone)),
+                new DateTime("next wednesday $this->year-11-15", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OFFICIAL
             ));

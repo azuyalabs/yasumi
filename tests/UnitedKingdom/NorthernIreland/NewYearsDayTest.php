@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -44,13 +44,13 @@ class NewYearsDayTest extends NorthernIrelandBaseTestCase implements YasumiTestC
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int    $year     the year for which the holiday defined in this test needs to be tested
+     * @param int $year the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHolidayOnAfterEstablishment($year, $expected)
+    public function testHolidayOnAfterEstablishment($year, $expected): void
     {
         $this->assertHoliday(
             self::REGION,
@@ -64,7 +64,7 @@ class NewYearsDayTest extends NorthernIrelandBaseTestCase implements YasumiTestC
      * Tests the holiday defined in this test before establishment.
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -77,7 +77,7 @@ class NewYearsDayTest extends NorthernIrelandBaseTestCase implements YasumiTestC
      * Tests that the holiday defined in this test is of the type 'observance' before the year it was changed.
      * @throws ReflectionException
      */
-    public function testHolidayIsObservedTypeBeforeChange()
+    public function testHolidayIsObservedTypeBeforeChange(): void
     {
         $this->assertHolidayType(
             self::REGION,
@@ -108,7 +108,7 @@ class NewYearsDayTest extends NorthernIrelandBaseTestCase implements YasumiTestC
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'New Year\'s Day']
+            [self::LOCALE => 'New Year’s Day']
         );
     }
 

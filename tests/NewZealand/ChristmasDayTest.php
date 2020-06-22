@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -41,7 +41,7 @@ class ChristmasDayTest extends NewZealandBaseTestCase implements YasumiTestCaseI
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected)
+    public function testHoliday($year, $expected): void
     {
         $this->assertHoliday(
             self::REGION,
@@ -65,7 +65,7 @@ class ChristmasDayTest extends NewZealandBaseTestCase implements YasumiTestCaseI
             $year = $this->generateRandomYear();
             $date = new DateTime("$year-12-25", new DateTimeZone(self::TIMEZONE));
 
-            if (\in_array((int)$date->format('w'), [0, 6], true)) {
+            if (\in_array((int) $date->format('w'), [0, 6], true)) {
                 $date->add(new DateInterval('P2D'));
             }
 

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  ~  This file is part of the Yasumi package.
+  ~ This file is part of the Yasumi package.
   ~
-  ~  Copyright (c) 2015 - 2019 AzuyaLabs
+  ~ Copyright (c) 2015 - 2020 AzuyaLabs
   ~
-  ~  For the full copyright and license information, please view the LICENSE
-  ~  file that was distributed with this source code.
+  ~ For the full copyright and license information, please view the LICENSE
+  ~ file that was distributed with this source code.
   ~
-  ~  @author Sacha Telgenhof <me@sachatelgenhof.com>
+  ~ @author Sacha Telgenhof <me@sachatelgenhof.com>
   -->
 
 <phpunit backupGlobals="false"
@@ -56,6 +56,11 @@
             <!-- Test Suite for holidays in Brazil -->
             <testsuite name="Brazil">
                 <directory suffix="Test.php">./tests/Brazil</directory>
+            </testsuite>
+
+            <!-- Test Suite for holidays in Canada -->
+            <testsuite name="Canada">
+                <directory suffix="Test.php">./tests/Canada</directory>
             </testsuite>
 
             <!-- Test Suite for holidays in Croatia -->
@@ -126,6 +131,11 @@
             <!-- Test Suite for holidays in Lithuania -->
             <testsuite name="Lithuania">
                 <directory suffix="Test.php">./tests/Lithuania</directory>
+            </testsuite>
+
+            <!-- Test Suite for holidays in Luxembourg -->
+            <testsuite name="Luxembourg">
+                <directory suffix="Test.php">./tests/Luxembourg</directory>
             </testsuite>
 
             <!-- Test Suite for holidays in Netherlands -->

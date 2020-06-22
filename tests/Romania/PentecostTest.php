@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -40,7 +40,7 @@ class PentecostTest extends RomaniaBaseTestCase implements YasumiTestCaseInterfa
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testPentecostDayOnAfter2008()
+    public function testPentecostDayOnAfter2008(): void
     {
         $year = 2020;
         $this->assertHoliday(
@@ -55,7 +55,7 @@ class PentecostTest extends RomaniaBaseTestCase implements YasumiTestCaseInterfa
      * Tests the Pentecost Day before 2008.
      * @throws ReflectionException
      */
-    public function testPentecostDayBefore2008()
+    public function testPentecostDayBefore2008(): void
     {
         $this->assertNotHoliday(
             self::REGION,

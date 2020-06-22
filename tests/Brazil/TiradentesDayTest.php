@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -39,7 +39,7 @@ class TiradentesDayTest extends BrazilBaseTestCase implements YasumiTestCaseInte
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testDiaDeTiradentesAfter1792()
+    public function testDiaDeTiradentesAfter1792(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -54,7 +54,7 @@ class TiradentesDayTest extends BrazilBaseTestCase implements YasumiTestCaseInte
      * Tests Dia de Tiradentes on or before 1792.
      * @throws ReflectionException
      */
-    public function testDiaDeTiradentesBefore1792()
+    public function testDiaDeTiradentesBefore1792(): void
     {
         $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);

@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -34,7 +34,7 @@ class EasterMondayTest extends BaselLandschaftBaseTestCase implements YasumiTest
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testEasterMonday()
+    public function testEasterMonday(): void
     {
         $year = 2016;
         $this->assertHoliday(

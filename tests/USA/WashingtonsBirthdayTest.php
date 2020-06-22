@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -40,7 +40,7 @@ class WashingtonsBirthdayTest extends USABaseTestCase implements YasumiTestCaseI
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testWashingtonsBirthdayOnAfter1968()
+    public function testWashingtonsBirthdayOnAfter1968(): void
     {
         $year = $this->generateRandomYear(1968);
         $this->assertHoliday(
@@ -57,7 +57,7 @@ class WashingtonsBirthdayTest extends USABaseTestCase implements YasumiTestCaseI
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testWashingtonsBirthdayBetween1879And1967()
+    public function testWashingtonsBirthdayBetween1879And1967(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1967);
         $this->assertHoliday(
@@ -73,7 +73,7 @@ class WashingtonsBirthdayTest extends USABaseTestCase implements YasumiTestCaseI
      * changed in 1968 to the third Monday in February.
      * @throws ReflectionException
      */
-    public function testWashingtonsBirthdayBefore1879()
+    public function testWashingtonsBirthdayBefore1879(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -92,7 +92,7 @@ class WashingtonsBirthdayTest extends USABaseTestCase implements YasumiTestCaseI
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Washington\'s Birthday']
+            [self::LOCALE => 'Washington’s Birthday']
         );
     }
 

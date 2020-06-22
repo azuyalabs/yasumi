@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -46,7 +46,7 @@ class RepublicDayTest extends ItalyBaseTestCase implements YasumiTestCaseInterfa
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testRepublicDayOnAfter1946()
+    public function testRepublicDayOnAfter1946(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -61,7 +61,7 @@ class RepublicDayTest extends ItalyBaseTestCase implements YasumiTestCaseInterfa
      * Tests Republic Day before 1946.
      * @throws ReflectionException
      */
-    public function testRepublicDayBefore1946()
+    public function testRepublicDayBefore1946(): void
     {
         $this->assertNotHoliday(
             self::REGION,

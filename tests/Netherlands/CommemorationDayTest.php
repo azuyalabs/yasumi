@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -38,7 +38,7 @@ class CommemorationDayTest extends NetherlandsBaseTestCase implements YasumiTest
      * Tests Commemoration Day before 1947. Commemoration Day was established after WWII in 1947.
      * @throws ReflectionException
      */
-    public function testCommemorationDayBefore1947()
+    public function testCommemorationDayBefore1947(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -52,7 +52,7 @@ class CommemorationDayTest extends NetherlandsBaseTestCase implements YasumiTest
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testCommemorationDayOnAfter1947()
+    public function testCommemorationDayOnAfter1947(): void
     {
         $year = 2105;
         $this->assertHoliday(
@@ -73,7 +73,7 @@ class CommemorationDayTest extends NetherlandsBaseTestCase implements YasumiTest
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Dodenherdenking']
+            [self::LOCALE => 'dodenherdenking']
         );
     }
 

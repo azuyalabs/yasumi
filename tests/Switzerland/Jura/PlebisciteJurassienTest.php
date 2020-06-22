@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -39,7 +39,7 @@ class PlebisciteJurassienTest extends JuraBaseTestCase implements YasumiTestCase
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testInstaurationRepubliqueOnAfter1975()
+    public function testInstaurationRepubliqueOnAfter1975(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -54,7 +54,7 @@ class PlebisciteJurassienTest extends JuraBaseTestCase implements YasumiTestCase
      * Tests Plébiscite jurassien before 1975.
      * @throws ReflectionException
      */
-    public function testInstaurationRepubliqueBefore1975()
+    public function testInstaurationRepubliqueBefore1975(): void
     {
         $this->assertNotHoliday(
             self::REGION,

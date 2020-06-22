@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,10 +14,9 @@ namespace Yasumi\Provider;
 
 use DateInterval;
 use DateTime;
-use DateTimeZone;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
+use Yasumi\SubstituteHoliday;
 
 /**
  * Provider for all holidays in Australia.
@@ -70,49 +69,36 @@ class Australia extends AbstractProvider
      */
     private function calculateNewYearHolidays(): void
     {
-        $newyearsday = new DateTime("$this->year-01-01", new DateTimeZone($this->timezone));
-        $this->calculateHoliday('newYearsDay', [], $newyearsday, false, false);
-        switch ($newyearsday->format('w')) {
+        $newYearsDay = new DateTime("$this->year-01-01", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $this->addHoliday(new Holiday(
+            'newYearsDay',
+            [],
+            $newYearsDay,
+            $this->locale,
+            Holiday::TYPE_OFFICIAL
+        ));
+        switch ($newYearsDay->format('w')) {
             case 0: // sunday
-                $newyearsday->add(new DateInterval('P1D'));
-                $this->calculateHoliday('newYearsHoliday', ['en' => 'New Year\'s Holiday'], $newyearsday, false, false);
+                $newYearsDay->add(new DateInterval('P1D'));
+                $this->addHoliday(new Holiday(
+                    'newYearsHoliday',
+                    ['en' => 'New Year’s Holiday'],
+                    $newYearsDay,
+                    $this->locale,
+                    Holiday::TYPE_OFFICIAL
+                ));
                 break;
             case 6: // saturday
-                $newyearsday->add(new DateInterval('P2D'));
-                $this->calculateHoliday('newYearsHoliday', ['en' => 'New Year\'s Holiday'], $newyearsday, false, false);
+                $newYearsDay->add(new DateInterval('P2D'));
+                $this->addHoliday(new Holiday(
+                    'newYearsHoliday',
+                    ['en' => 'New Year’s Holiday'],
+                    $newYearsDay,
+                    $this->locale,
+                    Holiday::TYPE_OFFICIAL
+                ));
                 break;
         }
-    }
-
-    /**
-     * Function to simplify moving holidays to mondays if required
-     *
-     * @param string $shortName
-     * @param array $names
-     * @param DateTime $date
-     * @param bool $moveFromSaturday
-     * @param bool $moveFromSunday
-     * @param string $type
-     *
-     * @throws InvalidDateException
-     * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
-     * @throws \Exception
-     */
-    public function calculateHoliday(
-        string $shortName,
-        array $names = [],
-        $date,
-        $moveFromSaturday = null,
-        $moveFromSunday = null,
-        $type = null
-    ): void {
-        $day = (int)$date->format('w');
-        if ((0 === $day && ($moveFromSunday ?? true)) || (6 === $day && ($moveFromSaturday ?? true))) {
-            $date = $date->add(0 === $day ? new DateInterval('P1D') : new DateInterval('P2D'));
-        }
-
-        $this->addHoliday(new Holiday($shortName, $names, $date, $this->locale, $type ?? Holiday::TYPE_OFFICIAL));
     }
 
     /**
@@ -135,9 +121,29 @@ class Australia extends AbstractProvider
      */
     private function calculateAustraliaDay(): void
     {
-        $date = new DateTime("$this->year-01-26", new DateTimeZone($this->timezone));
+        $date = new DateTime("$this->year-01-26", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
-        $this->calculateHoliday('australiaDay', ['en' => 'Australia Day'], $date);
+        $holiday = new Holiday(
+            'australiaDay',
+            ['en' => 'Australia Day'],
+            $date,
+            $this->locale,
+            Holiday::TYPE_OFFICIAL
+        );
+        $this->addHoliday($holiday);
+
+        $day = (int) $date->format('w');
+        if (0 === $day || 6 === $day) {
+            $date = $date->add(0 === $day ? new DateInterval('P1D') : new DateInterval('P2D'));
+
+            $this->addHoliday(new SubstituteHoliday(
+                $holiday,
+                [],
+                $date,
+                $this->locale,
+                Holiday::TYPE_OFFICIAL
+            ));
+        }
     }
 
     /**
@@ -162,8 +168,14 @@ class Australia extends AbstractProvider
             return;
         }
 
-        $date = new DateTime("$this->year-04-25", new DateTimeZone($this->timezone));
-        $this->calculateHoliday('anzacDay', [], $date, false, false);
+        $date = new DateTime("$this->year-04-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $this->addHoliday(new Holiday(
+            'anzacDay',
+            [],
+            $date,
+            $this->locale,
+            Holiday::TYPE_OFFICIAL
+        ));
         $easter = $this->calculateEaster($this->year, $this->timezone);
 
         $easterMonday = $this->calculateEaster($this->year, $this->timezone);
@@ -172,9 +184,14 @@ class Australia extends AbstractProvider
         $fDate = $date->format('Y-m-d');
         if ($fDate === $easter->format('Y-m-d') || $fDate === $easterMonday->format('Y-m-d')) {
             $easterMonday->add(new DateInterval('P1D'));
-            $this->calculateHoliday('easterTuesday', ['en' => 'Easter Tuesday'], $easterMonday, false, false);
+            $this->addHoliday(new Holiday(
+                'easterTuesday',
+                ['en' => 'Easter Tuesday'],
+                $easterMonday,
+                $this->locale,
+                Holiday::TYPE_OFFICIAL
+            ));
         }
-        unset($fDate);
     }
 
     /**
@@ -191,25 +208,61 @@ class Australia extends AbstractProvider
      */
     private function calculateChristmasDay(): void
     {
-        $christmasDay = new DateTime("$this->year-12-25", new DateTimeZone($this->timezone));
-        $boxingDay = new DateTime("$this->year-12-26", new DateTimeZone($this->timezone));
-        $this->calculateHoliday('christmasDay', [], $christmasDay, false, false);
-        $this->calculateHoliday('secondChristmasDay', [], $boxingDay, false, false);
+        $christmasDay = new DateTime("$this->year-12-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $boxingDay = new DateTime("$this->year-12-26", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $this->addHoliday(new Holiday(
+            'christmasDay',
+            [],
+            $christmasDay,
+            $this->locale,
+            Holiday::TYPE_OFFICIAL
+        ));
+        $this->addHoliday(new Holiday(
+            'secondChristmasDay',
+            [],
+            $boxingDay,
+            $this->locale,
+            Holiday::TYPE_OFFICIAL
+        ));
 
         switch ($christmasDay->format('w')) {
             case 0: // sunday
                 $christmasDay->add(new DateInterval('P2D'));
-                $this->calculateHoliday('christmasHoliday', ['en' => 'Christmas Holiday'], $christmasDay, false, false);
+                $this->addHoliday(new Holiday(
+                    'christmasHoliday',
+                    ['en' => 'Christmas Holiday'],
+                    $christmasDay,
+                    $this->locale,
+                    Holiday::TYPE_OFFICIAL
+                ));
                 break;
             case 5: // friday
                 $boxingDay->add(new DateInterval('P2D'));
-                $this->calculateHoliday('secondChristmasHoliday', ['en' => 'Boxing Day Holiday'], $boxingDay, false, false);
+                $this->addHoliday(new Holiday(
+                    'secondChristmasHoliday',
+                    ['en' => 'Boxing Day Holiday'],
+                    $boxingDay,
+                    $this->locale,
+                    Holiday::TYPE_OFFICIAL
+                ));
                 break;
             case 6: // saturday
                 $christmasDay->add(new DateInterval('P2D'));
                 $boxingDay->add(new DateInterval('P2D'));
-                $this->calculateHoliday('christmasHoliday', ['en' => 'Christmas Holiday'], $christmasDay, false, false);
-                $this->calculateHoliday('secondChristmasHoliday', ['en' => 'Boxing Day Holiday'], $boxingDay, false, false);
+                $this->addHoliday(new Holiday(
+                    'christmasHoliday',
+                    ['en' => 'Christmas Holiday'],
+                    $christmasDay,
+                    $this->locale,
+                    Holiday::TYPE_OFFICIAL
+                ));
+                $this->addHoliday(new Holiday(
+                    'secondChristmasHoliday',
+                    ['en' => 'Boxing Day Holiday'],
+                    $boxingDay,
+                    $this->locale,
+                    Holiday::TYPE_OFFICIAL
+                ));
                 break;
         }
     }

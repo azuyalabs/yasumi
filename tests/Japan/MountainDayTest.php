@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -39,7 +39,7 @@ class MountainDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testMountainDayIn2020()
+    public function testMountainDayIn2020(): void
     {
         $year = 2020;
         $this->assertHoliday(
@@ -55,7 +55,7 @@ class MountainDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testMountainDayOnAfter2016()
+    public function testMountainDayOnAfter2016(): void
     {
         $year = 2016;
         $this->assertHoliday(
@@ -71,7 +71,7 @@ class MountainDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testMountainDayOnAfter2016SubstitutedNextWorkingDay()
+    public function testMountainDayOnAfter2016SubstitutedNextWorkingDay(): void
     {
         $year = 2019;
         $this->assertHoliday(
@@ -86,7 +86,7 @@ class MountainDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
      * Tests Mountain Day before 2016. Mountain Day was established in 2014 and is held from 2016 on August 11th.
      * @throws ReflectionException
      */
-    public function testMountainDayBefore2016()
+    public function testMountainDayBefore2016(): void
     {
         $this->assertNotHoliday(
             self::REGION,

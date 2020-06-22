@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -39,7 +39,7 @@ class AntifascistStruggleDayTest extends CroatiaBaseTestCase implements YasumiTe
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testAntifascistStruggleDayOnAfter1941()
+    public function testAntifascistStruggleDayOnAfter1941(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -54,7 +54,7 @@ class AntifascistStruggleDayTest extends CroatiaBaseTestCase implements YasumiTe
      * Tests Day of Antifascist Struggle before 1941.
      * @throws ReflectionException
      */
-    public function testAntifascistStruggleDayBefore1941()
+    public function testAntifascistStruggleDayBefore1941(): void
     {
         $this->assertNotHoliday(
             self::REGION,

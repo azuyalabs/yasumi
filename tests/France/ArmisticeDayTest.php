@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -39,7 +39,7 @@ class ArmisticeDayTest extends FranceBaseTestCase implements YasumiTestCaseInter
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testArmisticeDayOnAfter1919()
+    public function testArmisticeDayOnAfter1919(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -54,7 +54,7 @@ class ArmisticeDayTest extends FranceBaseTestCase implements YasumiTestCaseInter
      * Tests Armistice Day before 1919.
      * @throws ReflectionException
      */
-    public function testArmisticeDayBefore1919()
+    public function testArmisticeDayBefore1919(): void
     {
         $this->assertNotHoliday(
             self::REGION,

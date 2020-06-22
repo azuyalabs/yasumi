@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -78,7 +78,6 @@ class Yasumi
      * @throws InvalidDateException
      *
      * @TODO we should accept a timezone so we can accept int/string for $startDate
-     *
      */
     public static function nextWorkingDay(
         string $class,
@@ -89,12 +88,12 @@ class Yasumi
         // Setup start date, if its an instance of \DateTime, clone to prevent modification to original
         $date = $startDate instanceof \DateTime ? clone $startDate : $startDate;
 
-        $provider = false;
+        $provider = null;
 
         while ($workingDays > 0) {
             $date = $date->add(new \DateInterval('P1D'));
-            if (!$provider || $provider->getYear() !== \getdate()['year']) {
-                $provider = self::create($class, (int)$date->format('Y'));
+            if (!$provider instanceof ProviderInterface || $provider->getYear() !== (int) $date->format('Y')) {
+                $provider = self::create($class, (int) $date->format('Y'));
             }
             if ($provider->isWorkingDay($date)) {
                 $workingDays--;
@@ -124,7 +123,7 @@ class Yasumi
      * @throws ProviderNotFoundException if the holiday provider for the given country does not exist
      * @throws \ReflectionException
      */
-    public static function create(string $class, int $year = 0, string $locale = self::DEFAULT_LOCALE): ProviderInterface
+    public static function create(string $class, int $year = 0, string $locale = self::DEFAULT_LOCALE): AbstractProvider
     {
         // Find and return holiday provider instance
         $providerClass = \sprintf('Yasumi\Provider\%s', \str_replace('/', '\\', $class));
@@ -178,7 +177,7 @@ class Yasumi
      * already with Yasumi, or your own provider by giving the 'const ID', corresponding to the ISO3166-2 Code, set in
      * your class in the first parameter. Your provider class needs to implement the 'ProviderInterface' class.
      *
-     * @param string $iso3166_2 ISO3166-2 Coded region, holiday provider will be searched for
+     * @param string $isoCode ISO3166-2 Coded region, holiday provider will be searched for
      * @param int $year year for which the country provider needs to be created. Year needs to be a valid
      *                          integer between 1000 and 9999.
      * @param string $locale The locale to use. If empty we'll use the default locale (en_US)
@@ -192,20 +191,20 @@ class Yasumi
      * @throws \ReflectionException
      */
     public static function createByISO3166_2(
-        string $iso3166_2,
+        string $isoCode,
         int $year = 0,
         string $locale = self::DEFAULT_LOCALE
     ): AbstractProvider {
         $availableProviders = self::getProviders();
 
-        if (false === isset($availableProviders[$iso3166_2])) {
+        if (false === isset($availableProviders[$isoCode])) {
             throw new ProviderNotFoundException(\sprintf(
                 'Unable to find holiday provider by ISO3166-2 "%s".',
-                $iso3166_2
+                $isoCode
             ));
         }
 
-        return self::create($availableProviders[$iso3166_2], $year, $locale);
+        return self::create($availableProviders[$isoCode], $year, $locale);
     }
 
     /**
@@ -283,12 +282,12 @@ class Yasumi
         // Setup start date, if its an instance of \DateTime, clone to prevent modification to original
         $date = $startDate instanceof \DateTime ? clone $startDate : $startDate;
 
-        $provider = false;
+        $provider = null;
 
         while ($workingDays > 0) {
             $date = $date->sub(new \DateInterval('P1D'));
-            if (!$provider || $provider->getYear() !== \getdate()['year']) {
-                $provider = self::create($class, (int)$date->format('Y'));
+            if (!$provider instanceof ProviderInterface || $provider->getYear() !== (int) $date->format('Y')) {
+                $provider = self::create($class, (int) $date->format('Y'));
             }
             if ($provider->isWorkingDay($date)) {
                 $workingDays--;

@@ -3,7 +3,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -40,7 +40,7 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseI
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testMainHoliday()
+    public function testMainHoliday(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -56,7 +56,7 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseI
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testSubstituteHolidayByBuddhasBirthday()
+    public function testSubstituteHolidayByBuddhasBirthday(): void
     {
         foreach ([2025, 2044] as $year) {
             $this->assertHoliday(
@@ -73,7 +73,7 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseI
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testSubstituteHolidayBySaturday()
+    public function testSubstituteHolidayBySaturday(): void
     {
         $year = 2029;
         $this->assertHoliday(
@@ -89,7 +89,7 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseI
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testSubstituteHolidayBySunday()
+    public function testSubstituteHolidayBySunday(): void
     {
         $year = 2019;
         $this->assertHoliday(
@@ -104,7 +104,7 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseI
      * Tests the holiday defined in this test before establishment.
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,

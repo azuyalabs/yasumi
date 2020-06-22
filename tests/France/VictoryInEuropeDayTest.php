@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -39,7 +39,7 @@ class VictoryInEuropeDayTest extends FranceBaseTestCase implements YasumiTestCas
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testVictoryInEuropeDayOnAfter1945()
+    public function testVictoryInEuropeDayOnAfter1945(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -54,7 +54,7 @@ class VictoryInEuropeDayTest extends FranceBaseTestCase implements YasumiTestCas
      * Tests Victory In Europe Day before 1945.
      * @throws ReflectionException
      */
-    public function testVictoryInEuropeDayBefore1945()
+    public function testVictoryInEuropeDayBefore1945(): void
     {
         $this->assertNotHoliday(
             self::REGION,

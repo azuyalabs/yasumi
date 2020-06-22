@@ -1,8 +1,9 @@
 <?php declare(strict_types=1);
+
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,9 +13,10 @@
 
 // Translations for Good Friday
 return [
+    'ca' => 'Divendres Sant',
     'cs' => 'Velký pátek',
     'cy' => 'Gwener y Groglith',
-    'da' => 'Langfredag',
+    'da' => 'langfredag',
     'de' => 'Karfreitag',
     'el' => 'Μεγάλη Παρασκευή',
     'en' => 'Good Friday',
@@ -27,7 +29,7 @@ return [
     'it' => 'Venerdi Santo',
     'ja' => 'グッドフライデー',
     'lv' => 'Lielā Piektdiena',
-    'nb' => 'Langfredag',
+    'nb' => 'langfredag',
     'nl' => 'Goede Vrijdag',
     'pl' => 'Wielki Piątek',
     'pt' => 'Sexta feira santa',

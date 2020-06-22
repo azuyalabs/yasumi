@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,6 +13,7 @@
 namespace Yasumi;
 
 use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\MissingTranslationException;
 use Yasumi\Exception\UnknownLocaleException;
 
 /**
@@ -27,6 +28,8 @@ class SubstituteHoliday extends Holiday
 {
     /**
      * @var Holiday
+     * @deprecated public access to this property is deprecated in favor of getSubstitutedHoliday()
+     * @see getSubstitutedHoliday()
      */
     public $substitutedHoliday;
 
@@ -65,33 +68,53 @@ class SubstituteHoliday extends Holiday
     ) {
         $this->substitutedHoliday = $substitutedHoliday;
 
-        $shortName = 'substituteHoliday:' . $substitutedHoliday->shortName;
+        $key = 'substituteHoliday:' . $substitutedHoliday->getKey();
 
         if ($date == $substitutedHoliday) {
             throw new \InvalidArgumentException('Date must differ from the substituted holiday');
         }
 
         // Construct instance
-        parent::__construct($shortName, $names, $date, $displayLocale, $type);
+        parent::__construct($key, $names, $date, $displayLocale, $type);
     }
 
     /**
-     * Returns the name of this holiday.
+     * Returns the holiday being substituted.
      *
-     * The name of this holiday is returned translated in the given locale. If for the given locale no translation is
-     * defined, the name in the default locale ('en_US') is returned. In case there is no translation at all, the short
-     * internal name is returned.
+     * @return Holiday the holiday being substituted.
      */
-    public function getName(): string
+    public function getSubstitutedHoliday(): Holiday
+    {
+        return $this->substitutedHoliday;
+    }
+
+    /**
+     * Returns the localized name of this holiday
+     *
+     * The provided locales are searched for a translation. The first locale containing a translation will be used.
+     *
+     * If no locale is provided, proceed as if an array containing the display locale, Holiday::DEFAULT_LOCALE ('en_US'), and
+     * Holiday::LOCALE_KEY (the holiday key) was provided.
+     *
+     * @param array $locales The locales to search for translations
+     *
+     * @return string
+     * @throws MissingTranslationException
+     *
+     * @see Holiday::DEFAULT_LOCALE
+     * @see Holiday::LOCALE_KEY
+     */
+    public function getName(array $locales = null): string
     {
         $name = parent::getName();
 
-        if ($name === $this->shortName) {
-            $pattern = $this->substituteHolidayTranslations[$this->displayLocale]
-                ?? $this->substituteHolidayTranslations[self::DEFAULT_LOCALE]
-                ?? $this->shortName;
-
-            $name = \str_replace('{0}', $this->substitutedHoliday->getName(), $pattern);
+        if ($name === $this->getKey()) {
+            foreach ($this->getLocales($locales) as $locales) {
+                $pattern = $this->substituteHolidayTranslations[$locales] ?? null;
+                if ($pattern) {
+                    return \str_replace('{0}', $this->substitutedHoliday->getName(), $pattern);
+                }
+            }
         }
 
         return $name;
@@ -102,7 +125,7 @@ class SubstituteHoliday extends Holiday
      *
      * @param TranslationsInterface $globalTranslations global translations
      */
-    public function mergeGlobalTranslations(TranslationsInterface $globalTranslations)
+    public function mergeGlobalTranslations(TranslationsInterface $globalTranslations): void
     {
         $this->substituteHolidayTranslations = $globalTranslations->getTranslations('substituteHoliday');
 

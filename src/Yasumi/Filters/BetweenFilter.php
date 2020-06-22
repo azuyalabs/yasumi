@@ -3,7 +3,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -30,12 +30,12 @@ class BetweenFilter extends AbstractFilter
     /**
      * @var string start date of the time frame to check against
      */
-    private $start_date;
+    private $startDate;
 
     /**
      * @var string end date of the time frame to check against
      */
-    private $end_date;
+    private $endDate;
 
     /**
      * @var bool indicates whether the start and end dates should be included in the comparison
@@ -46,21 +46,21 @@ class BetweenFilter extends AbstractFilter
      * Construct the Between FilterIterator Object
      *
      * @param Iterator $iterator Iterator object of the Holidays Provider
-     * @param \DateTimeInterface $start_date Start date of the time frame to check against
-     * @param \DateTimeInterface $end_date End date of the time frame to check against
+     * @param \DateTimeInterface $startDate Start date of the time frame to check against
+     * @param \DateTimeInterface $endDate End date of the time frame to check against
      * @param bool $equal Indicate whether the start and end dates should be included in the
      *                                       comparison
      */
     public function __construct(
         Iterator $iterator,
-        \DateTimeInterface $start_date,
-        \DateTimeInterface $end_date,
-        $equal = true
+        \DateTimeInterface $startDate,
+        \DateTimeInterface $endDate,
+        bool $equal = true
     ) {
         parent::__construct($iterator);
         $this->equal = $equal;
-        $this->start_date = $start_date->format('Y-m-d');
-        $this->end_date = $end_date->format('Y-m-d');
+        $this->startDate = $startDate->format('Y-m-d');
+        $this->endDate = $endDate->format('Y-m-d');
     }
 
     /**
@@ -70,10 +70,10 @@ class BetweenFilter extends AbstractFilter
     {
         $holiday = $this->getInnerIterator()->current()->format('Y-m-d');
 
-        if ($this->equal && $holiday >= $this->start_date && $holiday <= $this->end_date) {
+        if ($this->equal && $holiday >= $this->startDate && $holiday <= $this->endDate) {
             return true;
         }
 
-        return $holiday > $this->start_date && $holiday < $this->end_date;
+        return $holiday > $this->startDate && $holiday < $this->endDate;
     }
 }

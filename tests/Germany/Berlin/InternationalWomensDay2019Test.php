@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -39,7 +39,7 @@ class InternationalWomensDay2019Test extends BerlinBaseTestCase implements Yasum
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHolidayOnEstablishment()
+    public function testHolidayOnEstablishment(): void
     {
         $this->assertHoliday(
             self::REGION,
@@ -53,7 +53,7 @@ class InternationalWomensDay2019Test extends BerlinBaseTestCase implements Yasum
      * Test the holiday defined in this test before establishment
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -66,7 +66,7 @@ class InternationalWomensDay2019Test extends BerlinBaseTestCase implements Yasum
      * Test the holiday defined in this test after completion
      * @throws ReflectionException
      */
-    public function testHolidayAfterCompletion()
+    public function testHolidayAfterCompletion(): void
     {
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(1900, self::ESTABLISHMENT_YEAR - 1));
     }

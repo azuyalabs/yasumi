@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,7 +13,6 @@
 namespace Yasumi\Provider;
 
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -54,7 +53,7 @@ trait CommonHolidays
         string $locale,
         string $type = Holiday::TYPE_OFFICIAL
     ): Holiday {
-        return new Holiday('newYearsEve', [], new DateTime("$year-12-31", new DateTimeZone($timezone)), $locale, $type);
+        return new Holiday('newYearsEve', [], new DateTime("$year-12-31", DateTimeZoneFactory::getDateTimeZone($timezone)), $locale, $type);
     }
 
     /**
@@ -88,7 +87,7 @@ trait CommonHolidays
         string $locale,
         string $type = Holiday::TYPE_OFFICIAL
     ): Holiday {
-        return new Holiday('newYearsDay', [], new DateTime("$year-1-1", new DateTimeZone($timezone)), $locale, $type);
+        return new Holiday('newYearsDay', [], new DateTime("$year-1-1", DateTimeZoneFactory::getDateTimeZone($timezone)), $locale, $type);
     }
 
     /**
@@ -124,7 +123,7 @@ trait CommonHolidays
         return new Holiday(
             'internationalWorkersDay',
             [],
-            new DateTime("$year-5-1", new DateTimeZone($timezone)),
+            new DateTime("$year-5-1", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
@@ -163,7 +162,7 @@ trait CommonHolidays
         return new Holiday(
             'valentinesDay',
             [],
-            new DateTime("$year-2-14", new DateTimeZone($timezone)),
+            new DateTime("$year-2-14", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
@@ -200,7 +199,7 @@ trait CommonHolidays
         return new Holiday(
             'worldAnimalDay',
             [],
-            new DateTime("$year-10-4", new DateTimeZone($timezone)),
+            new DateTime("$year-10-4", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
@@ -239,7 +238,7 @@ trait CommonHolidays
         return new Holiday(
             'stMartinsDay',
             [],
-            new DateTime("$year-11-11", new DateTimeZone($timezone)),
+            new DateTime("$year-11-11", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
@@ -277,7 +276,7 @@ trait CommonHolidays
         return new Holiday(
             'fathersDay',
             [],
-            new DateTime("third sunday of june $year", new DateTimeZone($timezone)),
+            new DateTime("third sunday of june $year", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
@@ -315,7 +314,7 @@ trait CommonHolidays
         return new Holiday(
             'mothersDay',
             [],
-            new DateTime("second sunday of may $year", new DateTimeZone($timezone)),
+            new DateTime("second sunday of may $year", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
@@ -353,7 +352,7 @@ trait CommonHolidays
         return new Holiday(
             'victoryInEuropeDay',
             [],
-            new DateTime("$year-5-8", new DateTimeZone($timezone)),
+            new DateTime("$year-5-8", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
@@ -393,7 +392,7 @@ trait CommonHolidays
         return new Holiday(
             'armisticeDay',
             [],
-            new DateTime("$year-11-11", new DateTimeZone($timezone)),
+            new DateTime("$year-11-11", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
@@ -428,7 +427,7 @@ trait CommonHolidays
         return new Holiday(
             'internationalWomensDay',
             [],
-            new DateTime("$year-03-08", new DateTimeZone($timezone)),
+            new DateTime("$year-03-08", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
@@ -451,11 +450,15 @@ trait CommonHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function summerTime($year, $timezone, $locale, $type = null): ?Holiday
-    {
+    public function summerTime(
+        int $year,
+        string $timezone,
+        string $locale,
+        ?string $type = null
+    ): ?Holiday {
         $date = $this->calculateSummerWinterTime($year, $timezone, true);
 
-        if ($date) {
+        if ($date instanceof \DateTimeImmutable) {
             return new Holiday(
                 'summerTime',
                 [],
@@ -485,13 +488,16 @@ trait CommonHolidays
      * @param string $timezone the timezone in which Easter is celebrated
      * @param bool $summer whether to calculate the start of summer or winter time
      *
-     * @return DateTime|null A DateTime object representing the summer or winter transition time for the given
+     * @return \DateTimeImmutable|null A DateTime object representing the summer or winter transition time for the given
      *                        timezone. If no transition time is found, a null value is returned.
      * @throws \Exception
      */
-    protected function calculateSummerWinterTime($year, $timezone, $summer): ?DateTime
-    {
-        $zone = new DateTimeZone($timezone);
+    protected function calculateSummerWinterTime(
+        int $year,
+        string $timezone,
+        bool $summer
+    ): ?\DateTimeImmutable {
+        $zone = DateTimeZoneFactory::getDateTimeZone($timezone);
 
         $transitions = $zone->getTransitions(\mktime(0, 0, 0, 1, 1, $year), \mktime(23, 59, 59, 12, 31, $year));
 
@@ -500,7 +506,7 @@ trait CommonHolidays
 
         foreach ($transitions as $transition) {
             if ($transition['isdst'] !== $dst && $transition['isdst'] === $summer) {
-                return new DateTime(\substr($transition['time'], 0, 10), $zone);
+                return new \DateTimeImmutable(\substr($transition['time'], 0, 10), $zone);
             }
             $dst = $transition['isdst'];
         }
@@ -525,11 +531,15 @@ trait CommonHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function winterTime($year, $timezone, $locale, $type = null): ?Holiday
-    {
+    public function winterTime(
+        int $year,
+        string $timezone,
+        string $locale,
+        ?string $type = null
+    ): ?Holiday {
         $date = $this->calculateSummerWinterTime($year, $timezone, false);
 
-        if ($date) {
+        if ($date instanceof \DateTimeImmutable) {
             return new Holiday(
                 'winterTime',
                 [],

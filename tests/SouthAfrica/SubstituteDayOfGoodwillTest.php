@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -43,7 +43,7 @@ class SubstituteDayOfGoodwillTest extends SouthAfricaBaseTestCase implements Yas
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHolidayOnAfterEstablishment()
+    public function testHolidayOnAfterEstablishment(): void
     {
         $this->assertHoliday(
             self::REGION,
@@ -57,7 +57,7 @@ class SubstituteDayOfGoodwillTest extends SouthAfricaBaseTestCase implements Yas
      * Tests the holiday defined in this test before establishment.
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -70,7 +70,7 @@ class SubstituteDayOfGoodwillTest extends SouthAfricaBaseTestCase implements Yas
      * Tests the holiday defined in this test after completion.
      * @throws ReflectionException
      */
-    public function testHolidayDayAfterCompletion()
+    public function testHolidayDayAfterCompletion(): void
     {
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR + 1));
     }

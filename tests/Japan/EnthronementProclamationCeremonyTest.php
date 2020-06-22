@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -41,7 +41,7 @@ class EnthronementProclamationCeremonyTest extends JapanBaseTestCase implements 
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testEmperorsCoronationDay()
+    public function testEmperorsCoronationDay(): void
     {
         $this->assertHoliday(
             self::REGION,
@@ -55,7 +55,7 @@ class EnthronementProclamationCeremonyTest extends JapanBaseTestCase implements 
     /**
      * @throws ReflectionException
      */
-    public function testEmperorsBirthdayBefore2019()
+    public function testEmperorsBirthdayBefore2019(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -67,7 +67,7 @@ class EnthronementProclamationCeremonyTest extends JapanBaseTestCase implements 
     /**
      * @throws ReflectionException
      */
-    public function testEmperorsBirthdayAfter2020()
+    public function testEmperorsBirthdayAfter2020(): void
     {
         $this->assertNotHoliday(
             self::REGION,

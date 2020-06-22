@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -39,7 +39,7 @@ class NationalFoundationDayTest extends JapanBaseTestCase implements YasumiTestC
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testNationalFoundationDayOnAfter1966()
+    public function testNationalFoundationDayOnAfter1966(): void
     {
         $year = 1972;
         $this->assertHoliday(
@@ -56,7 +56,7 @@ class NationalFoundationDayTest extends JapanBaseTestCase implements YasumiTestC
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testNationalFoundationDayOnAfter1966SubstitutedNextWorkingDay()
+    public function testNationalFoundationDayOnAfter1966SubstitutedNextWorkingDay(): void
     {
         $year = 2046;
         $this->assertHoliday(
@@ -71,7 +71,7 @@ class NationalFoundationDayTest extends JapanBaseTestCase implements YasumiTestC
      * Tests National Foundation Day before 1966. National Foundation day was established after 1966
      * @throws ReflectionException
      */
-    public function testNationalFoundationDayBefore1966()
+    public function testNationalFoundationDayBefore1966(): void
     {
         $this->assertNotHoliday(
             self::REGION,

@@ -1,8 +1,9 @@
 <?php declare(strict_types=1);
+
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,8 +14,9 @@
 // Translations for Easter Sunday
 return [
     'bs_Latn' => 'Uskrs',
+    'ca' => 'Pasqua',
     'cy' => 'Sul y Pasg',
-    'da' => 'Påskedag',
+    'da' => 'påskedag',
     'de' => 'Ostersonntag',
     'de_CH' => 'Ostern',
     'el' => 'Κυριακή του Πάσχα',
@@ -28,8 +30,8 @@ return [
     'it' => 'Pasqua',
     'lt' => 'Velykos',
     'lv' => 'Lieldienas',
-    'nb' => 'Første påskedag',
-    'nl' => 'Eerste paasdag',
+    'nb' => 'første påskedag',
+    'nl' => 'eerste paasdag',
     'pl' => 'Wielkanoc',
     'pt' => 'Páscoa',
     'ro' => 'Paștele',

@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,7 +14,6 @@ namespace Yasumi\Provider;
 
 use DateInterval;
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -90,7 +89,7 @@ class Sweden extends AbstractProvider
         $this->addHoliday(new Holiday(
             'epiphanyEve',
             [],
-            new DateTime("$this->year-1-5", new DateTimeZone($this->timezone)),
+            new DateTime("$this->year-1-5", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OBSERVANCE
         ));
@@ -118,7 +117,7 @@ class Sweden extends AbstractProvider
         $this->addHoliday(new Holiday(
             'walpurgisEve',
             [],
-            new DateTime("$this->year-4-30", new DateTimeZone($this->timezone)),
+            new DateTime("$this->year-4-30", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OBSERVANCE
         ));
@@ -145,7 +144,7 @@ class Sweden extends AbstractProvider
      */
     private function calculateStJohnsHolidays(): void
     {
-        $date = new DateTime("$this->year-6-20 this saturday", new DateTimeZone($this->timezone));
+        $date = new DateTime("$this->year-6-20 this saturday", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $this->addHoliday(new Holiday(
             'stJohnsDay',
             [],
@@ -186,7 +185,7 @@ class Sweden extends AbstractProvider
      */
     private function calculateAllSaintsHolidays(): void
     {
-        $date = new DateTime("$this->year-10-31 this saturday", new DateTimeZone($this->timezone));
+        $date = new DateTime("$this->year-10-31 this saturday", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $this->addHoliday(new Holiday(
             'allSaintsDay',
             [],
@@ -224,17 +223,17 @@ class Sweden extends AbstractProvider
             return;
         }
 
-        $holiday_name = 'Svenska flaggans dag';
+        $holidayName = 'Svenska flaggans dag';
 
         // Since 1983 this day was named 'Sveriges nationaldag'
         if ($this->year >= 1983) {
-            $holiday_name = 'Sveriges nationaldag';
+            $holidayName = 'Sveriges nationaldag';
         }
 
         $this->addHoliday(new Holiday(
             'nationalDay',
-            ['sv' => $holiday_name],
-            new DateTime("$this->year-6-6", new DateTimeZone($this->timezone)),
+            ['sv' => $holidayName],
+            new DateTime("$this->year-6-6", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }

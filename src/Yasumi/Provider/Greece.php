@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,7 +14,6 @@ namespace Yasumi\Provider;
 
 use DateInterval;
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -86,7 +85,7 @@ class Greece extends AbstractProvider
         $this->addHoliday(new Holiday(
             'threeHolyHierarchs',
             ['el' => 'Τριών Ιεραρχών'],
-            new DateTime("$this->year-1-30", new DateTimeZone($this->timezone)),
+            new DateTime("$this->year-1-30", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OTHER
         ));
@@ -126,7 +125,7 @@ class Greece extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateEaster($year, $timezone): DateTime
+    private function calculateEaster(int $year, string $timezone): DateTime
     {
         return $this->calculateOrthodoxEaster($year, $timezone);
     }
@@ -150,7 +149,7 @@ class Greece extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'independenceDay',
                 ['el' => 'Εικοστή Πέμπτη Μαρτίου'],
-                new DateTime("$this->year-3-25", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-3-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -174,7 +173,7 @@ class Greece extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'ohiDay',
                 ['el' => 'Επέτειος του Όχι'],
-                new DateTime("$this->year-10-28", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-10-28", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -198,7 +197,7 @@ class Greece extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'polytechnio',
                 ['el' => 'Πολυτεχνείο'],
-                new DateTime("$this->year-11-17", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-11-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OTHER
             ));

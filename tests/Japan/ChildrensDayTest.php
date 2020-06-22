@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -20,7 +20,7 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class testing Childrens Day in Japan.
+ * Class testing Children's Day in Japan.
  */
 class ChildrensDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 {
@@ -39,7 +39,7 @@ class ChildrensDayTest extends JapanBaseTestCase implements YasumiTestCaseInterf
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testChildrensDayOnAfter1948()
+    public function testChildrensDayOnAfter1948(): void
     {
         $year = 1955;
         $this->assertHoliday(
@@ -52,10 +52,11 @@ class ChildrensDayTest extends JapanBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests Children's Day after 1948 substituted next working day (when Children's Day falls on a Sunday)
+     *
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testChildrensDayOnAfter1948SubstitutedNextWorkingDay()
+    public function testChildrensDayOnAfter1948SubstitutedNextWorkingDay(): void
     {
         $year = 2120;
         $this->assertHoliday(
@@ -68,9 +69,10 @@ class ChildrensDayTest extends JapanBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests Children's Day before 1948. Children's Day was established after 1948
+     *
      * @throws ReflectionException
      */
-    public function testChildrensDayBefore1948()
+    public function testChildrensDayBefore1948(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -81,6 +83,7 @@ class ChildrensDayTest extends JapanBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -95,6 +98,7 @@ class ChildrensDayTest extends JapanBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

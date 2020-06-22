@@ -3,7 +3,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,7 +14,6 @@
 namespace Yasumi\Provider;
 
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -97,8 +96,8 @@ class Denmark extends AbstractProvider
         if ($this->year >= 1686) {
             $this->addHoliday(new Holiday(
                 'greatPrayerDay',
-                ['da' => 'Store bededag'],
-                new DateTime("fourth friday $easter", new DateTimeZone($this->timezone)),
+                ['da' => 'store bededag'],
+                new DateTime("fourth friday $easter", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -125,8 +124,8 @@ class Denmark extends AbstractProvider
         if ($this->year >= 1849) {
             $this->addHoliday(new Holiday(
                 'constitutionDay',
-                ['da' => 'Grundlovsdag'],
-                new DateTime("$this->year-6-5", new DateTimeZone($this->timezone)),
+                ['da' => 'grundlovsdag'],
+                new DateTime("$this->year-6-5", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OBSERVANCE
             ));

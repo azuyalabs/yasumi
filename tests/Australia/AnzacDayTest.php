@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -45,7 +45,7 @@ class AnzacDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInterf
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected)
+    public function testHoliday($year, $expected): void
     {
         $this->assertHoliday(
             $this->region,
@@ -59,7 +59,7 @@ class AnzacDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInterf
      *  Tests that ANZAC Day is not present before 1921
      * @throws ReflectionException
      */
-    public function testNotHoliday()
+    public function testNotHoliday(): void
     {
         $this->assertNotHoliday($this->region, self::HOLIDAY, self::ESTABLISHMENT_YEAR - 1);
     }
@@ -71,7 +71,7 @@ class AnzacDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInterf
      */
     public function HolidayDataProvider(): array
     {
-        $data = [
+        return [
             [2010, '2010-04-25'],
             [2011, '2011-04-25'],
             [2012, '2012-04-25'],
@@ -85,8 +85,6 @@ class AnzacDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInterf
             [2019, '2019-04-25'],
             [2020, '2020-04-25'],
         ];
-
-        return $data;
     }
 
     /**

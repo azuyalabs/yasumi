@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -34,7 +34,7 @@ class ChristmasDayTest extends USABaseTestCase implements YasumiTestCaseInterfac
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testChristmasDay()
+    public function testChristmasDay(): void
     {
         $year = 2001;
         $this->assertHoliday(
@@ -50,7 +50,7 @@ class ChristmasDayTest extends USABaseTestCase implements YasumiTestCaseInterfac
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testChristmasDaySubstitutedMonday()
+    public function testChristmasDaySubstitutedMonday(): void
     {
         // Substituted Holiday on Monday (Christmas Day falls on Sunday)
         $year = 6101;
@@ -67,7 +67,7 @@ class ChristmasDayTest extends USABaseTestCase implements YasumiTestCaseInterfac
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testChristmasDaySubstitutedFriday()
+    public function testChristmasDaySubstitutedFriday(): void
     {
         // Substituted Holiday on Friday (Christmas Day falls on Saturday)
         $year = 2060;

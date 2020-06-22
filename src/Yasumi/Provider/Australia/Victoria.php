@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,10 +14,10 @@ namespace Yasumi\Provider\Australia;
 
 use DateInterval;
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia;
+use Yasumi\Provider\DateTimeZoneFactory;
 
 /**
  * Provider for all holidays in Victoria (Australia).
@@ -73,8 +73,12 @@ class Victoria extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function easterSunday($year, $timezone, $locale, $type = null): Holiday
-    {
+    private function easterSunday(
+        int $year,
+        string $timezone,
+        string $locale,
+        ?string $type = null
+    ): Holiday {
         return new Holiday(
             'easter',
             ['en' => 'Easter Sunday'],
@@ -105,8 +109,12 @@ class Victoria extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function easterSaturday($year, $timezone, $locale, $type = null): Holiday
-    {
+    private function easterSaturday(
+        int $year,
+        string $timezone,
+        string $locale,
+        ?string $type = null
+    ): Holiday {
         return new Holiday(
             'easterSaturday',
             ['en' => 'Easter Saturday'],
@@ -123,7 +131,7 @@ class Victoria extends Australia
      */
     private function calculateLabourDay(): void
     {
-        $date = new DateTime("second monday of march $this->year", new DateTimeZone($this->timezone));
+        $date = new DateTime("second monday of march $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
         $this->addHoliday(new Holiday('labourDay', [], $date, $this->locale));
     }
@@ -145,13 +153,13 @@ class Victoria extends Australia
      */
     private function calculateQueensBirthday(): void
     {
-        $this->calculateHoliday(
+        $this->addHoliday(new Holiday(
             'queensBirthday',
-            ['en' => 'Queen\'s Birthday'],
-            new DateTime('second monday of june ' . $this->year, new DateTimeZone($this->timezone)),
-            false,
-            false
-        );
+            [],
+            new DateTime('second monday of june ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale,
+            Holiday::TYPE_OFFICIAL
+        ));
     }
 
     /**
@@ -161,7 +169,7 @@ class Victoria extends Australia
      */
     private function calculateMelbourneCupDay(): void
     {
-        $date = new DateTime('first Tuesday of November' . " $this->year", new DateTimeZone($this->timezone));
+        $date = new DateTime('first Tuesday of November' . " $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
         $this->addHoliday(new Holiday('melbourneCup', ['en' => 'Melbourne Cup'], $date, $this->locale));
     }
@@ -186,11 +194,17 @@ class Victoria extends Australia
             case 2018:
                 $aflGrandFinalFriday = '2018-09-28';
                 break;
+            case 2019:
+                $aflGrandFinalFriday = '2019-09-27';
+                break;
+            case 2020:
+                $aflGrandFinalFriday = '2020-09-25';
+                break;
             default:
                 return;
         }
 
-        $date = new DateTime($aflGrandFinalFriday, new DateTimeZone($this->timezone));
+        $date = new DateTime($aflGrandFinalFriday, DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
         $this->addHoliday(new Holiday(
             'aflGrandFinalFriday',

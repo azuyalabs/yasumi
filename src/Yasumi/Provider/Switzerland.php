@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,7 +14,6 @@ namespace Yasumi\Provider;
 
 use DateInterval;
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -60,7 +59,6 @@ class Switzerland extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
-     * @throws \Exception
      */
     private function calculateNationalDay(): void
     {
@@ -75,7 +73,7 @@ class Switzerland extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'swissNationalDay',
                 $translations,
-                new DateTime($this->year . '-08-01', new DateTimeZone($this->timezone)),
+                new DateTime($this->year . '-08-01', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OFFICIAL
             ));
@@ -83,7 +81,7 @@ class Switzerland extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'swissNationalDay',
                 $translations,
-                new DateTime($this->year . '-08-01', new DateTimeZone($this->timezone)),
+                new DateTime($this->year . '-08-01', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OBSERVANCE
             ));
@@ -113,7 +111,7 @@ class Switzerland extends AbstractProvider
                 'fr' => 'Jour de la Saint-Berthold',
                 'en' => 'Berchtoldstag',
             ],
-            new DateTime($this->year . '-01-02', new DateTimeZone($this->timezone)),
+            new DateTime($this->year . '-01-02', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OTHER
         ));
@@ -138,7 +136,7 @@ class Switzerland extends AbstractProvider
     {
         if ($this->year >= 1832) {
             // Find third Sunday of September
-            $date = new DateTime('Third Sunday of ' . $this->year . '-09', new DateTimeZone($this->timezone));
+            $date = new DateTime('Third Sunday of ' . $this->year . '-09', DateTimeZoneFactory::getDateTimeZone($this->timezone));
             // Go to next Thursday
             $date->add(new DateInterval('P1D'));
 

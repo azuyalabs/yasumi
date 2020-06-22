@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,11 +13,11 @@
 namespace Yasumi\Provider\Switzerland;
 
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
+use Yasumi\Provider\DateTimeZoneFactory;
 use Yasumi\Provider\Switzerland;
 
 /**
@@ -87,7 +87,7 @@ class Obwalden extends Switzerland
                 [
                     'de' => 'Bruder-Klausen-Fest',
                 ],
-                new DateTime($this->year . '-09-25', new DateTimeZone($this->timezone)),
+                new DateTime($this->year . '-09-25', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OTHER
             ));
@@ -97,7 +97,7 @@ class Obwalden extends Switzerland
                 [
                     'de' => 'Bruder-Klausen-Fest',
                 ],
-                new DateTime($this->year . '-09-21', new DateTimeZone($this->timezone)),
+                new DateTime($this->year . '-09-21', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OTHER
             ));

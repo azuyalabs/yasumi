@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -39,7 +39,7 @@ class WorldAnimalDayTest extends NetherlandsBaseTestCase implements YasumiTestCa
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testWorldAnimalDayOnAfter1931()
+    public function testWorldAnimalDayOnAfter1931(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -54,7 +54,7 @@ class WorldAnimalDayTest extends NetherlandsBaseTestCase implements YasumiTestCa
      * Tests World Animal Day before 1931.
      * @throws ReflectionException
      */
-    public function testWorldAnimalBefore1931()
+    public function testWorldAnimalBefore1931(): void
     {
         $this->assertNotHoliday(
             self::REGION,

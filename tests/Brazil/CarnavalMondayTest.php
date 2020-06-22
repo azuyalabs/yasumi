@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -42,7 +42,7 @@ class CarnavalMondayTest extends BrazilBaseTestCase implements YasumiTestCaseInt
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testCarnavalMondayAfter1700()
+    public function testCarnavalMondayAfter1700(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -57,7 +57,7 @@ class CarnavalMondayTest extends BrazilBaseTestCase implements YasumiTestCaseInt
      * Tests Carnaval Monday on or before 1700.
      * @throws ReflectionException
      */
-    public function testCarnavalMondayBefore1700()
+    public function testCarnavalMondayBefore1700(): void
     {
         $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);

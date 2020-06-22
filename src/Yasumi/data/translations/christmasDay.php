@@ -1,8 +1,9 @@
 <?php declare(strict_types=1);
+
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,9 +14,10 @@
 // Translations for Christmas
 return [
     'bs_Latn' => 'Božić',
+    'ca' => 'Nadal',
     'cs' => '1. svátek vánoční',
     'cy' => 'Nadolig',
-    'da' => 'Juledag',
+    'da' => 'juledag',
     'de' => '1. Weihnachtsfeiertag',
     'de_AT' => 'Christtag',
     'de_CH' => 'Weihnachtstag',
@@ -32,8 +34,8 @@ return [
     'ko' => '기독탄신일',
     'lt' => 'Šv. Kalėdos',
     'lv' => 'Ziemassvētki',
-    'nb' => 'Første juledag',
-    'nl' => 'Eerste kerstdag',
+    'nb' => 'første juledag',
+    'nl' => 'eerste kerstdag',
     'nl_BE' => 'Kerstmis',
     'pl' => 'pierwszy dzień Bożego Narodzenia',
     'pt' => 'Natal',

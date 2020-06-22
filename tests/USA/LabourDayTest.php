@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -39,7 +39,7 @@ class LabourDayTest extends USABaseTestCase implements YasumiTestCaseInterface
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testLabourDayOnAfter1887()
+    public function testLabourDayOnAfter1887(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -54,7 +54,7 @@ class LabourDayTest extends USABaseTestCase implements YasumiTestCaseInterface
      * Tests Labour Day before 1887. Labour Day was established since 1887 on the first Monday of September.
      * @throws ReflectionException
      */
-    public function testLabourDayBefore1887()
+    public function testLabourDayBefore1887(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -73,7 +73,7 @@ class LabourDayTest extends USABaseTestCase implements YasumiTestCaseInterface
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Labour Day']
+            [self::LOCALE => 'Labor Day']
         );
     }
 

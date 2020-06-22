@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -39,7 +39,7 @@ class AssumptionOfMaryTest extends RomaniaBaseTestCase implements YasumiTestCase
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testAssumptionOfMaryDayOnAfter2008()
+    public function testAssumptionOfMaryDayOnAfter2008(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -54,7 +54,7 @@ class AssumptionOfMaryTest extends RomaniaBaseTestCase implements YasumiTestCase
      * Tests Assumption of Mary Day before 2008.
      * @throws ReflectionException
      */
-    public function testAssumptionOfMaryDayBefore2008()
+    public function testAssumptionOfMaryDayBefore2008(): void
     {
         $this->assertNotHoliday(
             self::REGION,

@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -39,7 +39,7 @@ class SportsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testSportsDayIn2020()
+    public function testSportsDayIn2020(): void
     {
         $year = 2020;
         $this->assertHoliday(
@@ -56,7 +56,7 @@ class SportsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testSportsDayOnAfter2000()
+    public function testSportsDayOnAfter2000(): void
     {
         $year = $this->generateRandomYear(2001);
         $this->assertHoliday(
@@ -73,7 +73,7 @@ class SportsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testSportsDayBetween1996And2000()
+    public function testSportsDayBetween1996And2000(): void
     {
         $year = 1997;
         $this->assertHoliday(
@@ -90,7 +90,7 @@ class SportsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testSportsDayBetween1996And2000SubstitutedNextWorkingDay()
+    public function testSportsDayBetween1996And2000SubstitutedNextWorkingDay(): void
     {
         $year = 1999;
         $this->assertHoliday(
@@ -106,7 +106,7 @@ class SportsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
      * 2000 it was changed to be the second monday of October.
      * @throws ReflectionException
      */
-    public function testSportsDayBefore1996()
+    public function testSportsDayBefore1996(): void
     {
         $this->assertNotHoliday(
             self::REGION,

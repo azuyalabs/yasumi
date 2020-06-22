@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -40,7 +40,7 @@ class MayDayBankHolidayTest extends ScotlandBaseTestCase implements YasumiTestCa
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHoliday()
+    public function testHoliday(): void
     {
         $year = 2101;
         $this->assertHoliday(
@@ -57,7 +57,7 @@ class MayDayBankHolidayTest extends ScotlandBaseTestCase implements YasumiTestCa
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHolidayExceptions()
+    public function testHolidayExceptions(): void
     {
         $this->assertHoliday(
             self::REGION,
@@ -78,7 +78,7 @@ class MayDayBankHolidayTest extends ScotlandBaseTestCase implements YasumiTestCa
      * Tests the holiday defined in this test before establishment.
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,

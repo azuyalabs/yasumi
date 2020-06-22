@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -39,7 +39,7 @@ class KingsDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInte
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testKingsDayOnAfter2014()
+    public function testKingsDayOnAfter2014(): void
     {
         $year = 2015;
         $this->assertHoliday(
@@ -55,7 +55,7 @@ class KingsDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInte
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testKingsDayOnAfter2014SubstitutedDay()
+    public function testKingsDayOnAfter2014SubstitutedDay(): void
     {
         $year = 2188;
         $this->assertHoliday(
@@ -70,7 +70,7 @@ class KingsDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInte
      * Tests Kings Day before 2014. King's Day is celebrated from 2014 onwards on April 27th.
      * @throws ReflectionException
      */
-    public function testKingsDayBefore2014()
+    public function testKingsDayBefore2014(): void
     {
         $this->assertNotHoliday(
             self::REGION,

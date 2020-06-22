@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,7 +13,6 @@
 namespace Yasumi\Provider;
 
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -91,7 +90,7 @@ class Romania extends AbstractProvider
         $this->addHoliday(new Holiday(
             'dayAfterNewYearsDay',
             [],
-            new DateTime("$this->year-01-02", new DateTimeZone($this->timezone)),
+            new DateTime("$this->year-01-02", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -118,7 +117,7 @@ class Romania extends AbstractProvider
             $this->addHoliday(new Holiday('unitedPrincipalitiesDay', [
                 'en' => 'Union Day / Small Union',
                 'ro' => 'Unirea Principatelor Române / Mica Unire',
-            ], new DateTime("$this->year-01-24", new DateTimeZone($this->timezone)), $this->locale));
+            ], new DateTime("$this->year-01-24", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
     }
 
@@ -140,7 +139,7 @@ class Romania extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'stAndrewsDay',
                 [],
-                new DateTime($this->year . '-11-30', new DateTimeZone($this->timezone)),
+                new DateTime($this->year . '-11-30', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -164,26 +163,26 @@ class Romania extends AbstractProvider
      */
     private function calculateNationalDay(): void
     {
-        $national_day = null;
+        $nationalDay = null;
 
         //@link https://en.wikipedia.org/wiki/Great_Union_Day
         if ($this->year >= 1990) {
-            $national_day = "$this->year-12-01";
+            $nationalDay = "$this->year-12-01";
         }
 
         if ($this->year >= 1948 && $this->year <= 1989) {
-            $national_day = "$this->year-08-23";
+            $nationalDay = "$this->year-08-23";
         }
 
         if ($this->year >= 1866 && $this->year <= 1947) {
-            $national_day = "$this->year-05-10";
+            $nationalDay = "$this->year-05-10";
         }
 
-        if (\is_string($national_day)) {
+        if (\is_string($nationalDay)) {
             $this->addHoliday(new Holiday('nationalDay', [
                 'en' => 'National Day',
                 'ro' => 'Ziua Națională',
-            ], new DateTime($national_day, new DateTimeZone($this->timezone)), $this->locale));
+            ], new DateTime($nationalDay, DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
     }
 
@@ -207,7 +206,7 @@ class Romania extends AbstractProvider
                     'en' => 'Constantin Brâncuși day',
                     'ro' => 'Ziua Constantin Brâncuși',
                 ],
-                new DateTime("$this->year-02-19", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-02-19", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OBSERVANCE
             ));
@@ -233,10 +232,10 @@ class Romania extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'childrensDay',
                 [
-                    'en' => 'International Children\'s Day',
+                    'en' => 'International Children’s Day',
                     'ro' => 'Ziua Copilului',
                 ],
-                new DateTime("$this->year-06-01", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-06-01", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OBSERVANCE
             ));
@@ -244,9 +243,9 @@ class Romania extends AbstractProvider
 
         if ($this->year >= 2017) {
             $this->addHoliday(new Holiday('childrensDay', [
-                'en' => 'International Children\'s Day',
+                'en' => 'International Children’s Day',
                 'ro' => 'Ziua Copilului',
-            ], new DateTime("$this->year-06-01", new DateTimeZone($this->timezone)), $this->locale));
+            ], new DateTime("$this->year-06-01", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
     }
 
@@ -258,7 +257,7 @@ class Romania extends AbstractProvider
      *
      * @throws \Exception
      */
-    public function calculateEaster($year, $timezone): DateTime
+    public function calculateEaster(int $year, string $timezone): DateTime
     {
         return $this->calculateOrthodoxEaster($year, $timezone);
     }

@@ -3,7 +3,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -42,7 +42,7 @@ class SeollalTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterf
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHoliday()
+    public function testHoliday(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2050);
         if (isset(SouthKorea::LUNAR_HOLIDAY[self::HOLIDAY][$year])) {
@@ -76,7 +76,7 @@ class SeollalTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterf
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testSubstituteHolidayBySunday()
+    public function testSubstituteHolidayBySunday(): void
     {
         $this->assertHoliday(
             self::REGION,
@@ -102,7 +102,7 @@ class SeollalTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterf
      * Tests the holiday defined in this test before establishment.
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,

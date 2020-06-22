@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -44,7 +44,7 @@ class stJohnsDayTest extends FinlandBaseTestCase implements YasumiTestCaseInterf
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHolidayBeforeAdjustment()
+    public function testHolidayBeforeAdjustment(): void
     {
         $year = 1944;
         $this->assertHoliday(
@@ -59,7 +59,7 @@ class stJohnsDayTest extends FinlandBaseTestCase implements YasumiTestCaseInterf
      * Tests the holiday before it was adjusted.
      * @throws ReflectionException
      */
-    public function testHolidayAfterAdjustment()
+    public function testHolidayAfterAdjustment(): void
     {
         $year = $this->generateRandomYear(self::ADJUSTMENT_YEAR);
 
@@ -67,7 +67,6 @@ class stJohnsDayTest extends FinlandBaseTestCase implements YasumiTestCaseInterf
         $holiday = $holidays->getHoliday(self::HOLIDAY);
 
         // Some basic assertions
-        $this->assertInstanceOf('Yasumi\Provider\\' . \str_replace('/', '\\', self::REGION), $holidays);
         $this->assertInstanceOf(Holiday::class, $holiday);
         $this->assertNotNull($holiday);
 

@@ -1,8 +1,9 @@
 <?php declare(strict_types=1);
+
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,10 +14,10 @@
 namespace Yasumi\tests\Ukraine;
 
 use DateTime;
-use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\Yasumi;
 
 /**
  * Class SecondInternationalWorkersDayTest
@@ -39,9 +40,24 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements Y
      *
      * @throws ReflectionException
      */
-    public function testSecondInternationalWorkersDay($year, $expected)
+    public function testSecondInternationalWorkersDay($year, $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
+    }
+
+    /**
+     * Tests International Workers' Day since 2018.
+     * @throws ReflectionException
+     */
+    public function testNoSecondInternationalWorkersDaySince2018(): void
+    {
+        $year = $this->generateRandomYear(2018);
+        $holidays = Yasumi::create(self::REGION, $year);
+        $holiday = $holidays->getHoliday(self::HOLIDAY);
+
+        $this->assertNull($holiday);
+
+        unset($year, $holiday, $holidays);
     }
 
     /**
@@ -53,7 +69,7 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements Y
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            $this->generateRandomYear(null, 2017),
             [self::LOCALE => 'День міжнародної солідарності трудящих']
         );
     }
@@ -64,17 +80,29 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements Y
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(null, 2017),
+            Holiday::TYPE_OFFICIAL
+        );
     }
 
     /**
      * Returns a list of random test dates used for assertion of International Workers' Day.
      *
      * @return array list of test dates for International Workers' Day
-     * @throws Exception
+     * @throws \Exception
      */
     public function SecondInternationalWorkersDayDataProvider(): array
     {
-        return $this->generateRandomDates(5, 2, self::TIMEZONE);
+        $data = [];
+
+        for ($y = 0; $y < 10; $y++) {
+            $year = $this->generateRandomYear(null, 2017);
+            $data[] = [$year, new \DateTime("$year-05-02", new \DateTimeZone(self::TIMEZONE))];
+        }
+
+        return $data;
     }
 }

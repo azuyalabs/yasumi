@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,11 +13,11 @@
 namespace Yasumi\Provider\Spain;
 
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
+use Yasumi\Provider\DateTimeZoneFactory;
 use Yasumi\Provider\Spain;
 
 /**
@@ -83,9 +83,15 @@ class ValencianCommunity extends Spain
     private function calculateValencianCommunityDay(): void
     {
         if ($this->year >= 1239) {
-            $this->addHoliday(new Holiday('valencianCommunityDay', [
-                'es' => 'Día de la Comunidad Valenciana',
-            ], new DateTime("$this->year-10-9", new DateTimeZone($this->timezone)), $this->locale));
+            $this->addHoliday(new Holiday(
+                'valencianCommunityDay',
+                [
+                    'ca' => 'Diada Nacional del País Valencià',
+                    'es' => 'Día de la Comunidad Valenciana',
+                ],
+                new DateTime("$this->year-10-9", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
     }
 }

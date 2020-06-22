@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -44,7 +44,7 @@ class BasqueCountryDayTest extends BasqueCountryBaseTestCase implements YasumiTe
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHolidayOnAfterEstablishment()
+    public function testHolidayOnAfterEstablishment(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::ABOLISHMENT_YEAR);
         $this->assertHoliday(
@@ -59,7 +59,7 @@ class BasqueCountryDayTest extends BasqueCountryBaseTestCase implements YasumiTe
      * Tests the holiday defined in this test before establishment.
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -72,7 +72,7 @@ class BasqueCountryDayTest extends BasqueCountryBaseTestCase implements YasumiTe
      * Tests the holiday defined in this test after abolishment.
      * @throws ReflectionException
      */
-    public function testHolidayDayAfterAbolishment()
+    public function testHolidayDayAfterAbolishment(): void
     {
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ABOLISHMENT_YEAR + 1));
     }

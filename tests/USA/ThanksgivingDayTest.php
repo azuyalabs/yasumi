@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -40,7 +40,7 @@ class ThanksgivingDayTest extends USABaseTestCase implements YasumiTestCaseInter
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testThanksgivingDayOnAfter1863()
+    public function testThanksgivingDayOnAfter1863(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -56,7 +56,7 @@ class ThanksgivingDayTest extends USABaseTestCase implements YasumiTestCaseInter
      * of November.
      * @throws ReflectionException
      */
-    public function testThanksgivingDayBefore1863()
+    public function testThanksgivingDayBefore1863(): void
     {
         $this->assertNotHoliday(
             self::REGION,

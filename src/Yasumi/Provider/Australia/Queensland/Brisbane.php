@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,10 +14,10 @@ namespace Yasumi\Provider\Australia\Queensland;
 
 use DateInterval;
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia\Queensland;
+use Yasumi\Provider\DateTimeZoneFactory;
 
 /**
  * Provider for all holidays in Brisbane (Australia).
@@ -67,11 +67,11 @@ class Brisbane extends Queensland
      */
     private function calculatePeoplesDay(): void
     {
-        $date = new DateTime('first friday of august ' . $this->year, new DateTimeZone($this->timezone));
+        $date = new DateTime('first friday of august ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone));
         if ($date->format('d') < 5) {
             $date = $date->add(new DateInterval('P7D'));
         }
         $date = $date->add(new DateInterval('P5D'));
-        $this->addHoliday(new Holiday('peoplesDay', ['en' => 'Ekka People\'s Day'], $date, $this->locale));
+        $this->addHoliday(new Holiday('peoplesDay', ['en' => 'Ekka People’s Day'], $date, $this->locale));
     }
 }

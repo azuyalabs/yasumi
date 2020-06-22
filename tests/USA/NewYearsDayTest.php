@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -34,7 +34,7 @@ class NewYearsDayTest extends USABaseTestCase implements YasumiTestCaseInterface
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testNewYearsDay()
+    public function testNewYearsDay(): void
     {
         $year = 1997;
         $this->assertHoliday(
@@ -50,7 +50,7 @@ class NewYearsDayTest extends USABaseTestCase implements YasumiTestCaseInterface
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testNewYearsDaySubstitutedMonday()
+    public function testNewYearsDaySubstitutedMonday(): void
     {
         $year = 2445;
         $this->assertHoliday(
@@ -66,7 +66,7 @@ class NewYearsDayTest extends USABaseTestCase implements YasumiTestCaseInterface
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testNewYearsDaySubstitutedFriday()
+    public function testNewYearsDaySubstitutedFriday(): void
     {
         $year = 1938;
         $subYear = $year - 1;
@@ -88,7 +88,7 @@ class NewYearsDayTest extends USABaseTestCase implements YasumiTestCaseInterface
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'New Year\'s Day']
+            [self::LOCALE => 'New Year’s Day']
         );
     }
 

@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -40,7 +40,7 @@ class LabourDayTest extends VictoriaBaseTestCase implements YasumiTestCaseInterf
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected)
+    public function testHoliday($year, $expected): void
     {
         $this->assertHoliday(
             $this->region,
@@ -57,7 +57,7 @@ class LabourDayTest extends VictoriaBaseTestCase implements YasumiTestCaseInterf
      */
     public function HolidayDataProvider(): array
     {
-        $data = [
+        return [
             [2010, '2010-03-08'],
             [2011, '2011-03-14'],
             [2012, '2012-03-12'],
@@ -70,8 +70,6 @@ class LabourDayTest extends VictoriaBaseTestCase implements YasumiTestCaseInterf
             [2019, '2019-03-11'],
             [2020, '2020-03-09'],
         ];
-
-        return $data;
     }
 
     /**

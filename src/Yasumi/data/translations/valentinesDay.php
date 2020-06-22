@@ -1,8 +1,9 @@
 <?php declare(strict_types=1);
+
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,9 +13,10 @@
 
 // Translations for Valentine's Day
 return [
+    'ca' => 'Dia de Sant Valentí',
     'de' => 'Valentinstag',
     'el' => 'Αγίου Βαλεντίνου',
-    'en' => 'Valentine\'s Day',
+    'en' => 'Valentine’s Day',
     'es' => 'San Valentín',
     'fr' => 'Saint-Valentin',
     'it' => 'San Valentino',

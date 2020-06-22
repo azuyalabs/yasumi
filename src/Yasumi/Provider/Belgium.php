@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,7 +13,6 @@
 namespace Yasumi\Provider;
 
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -66,7 +65,7 @@ class Belgium extends AbstractProvider
         $this->addHoliday(new Holiday('nationalDay', [
             'fr' => 'Fête nationale',
             'en' => 'Belgian National Day',
-            'nl' => 'Nationale feestdag',
-        ], new DateTime("$this->year-7-21", new DateTimeZone($this->timezone)), $this->locale));
+            'nl' => 'nationale feestdag',
+        ], new DateTime("$this->year-7-21", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
     }
 }

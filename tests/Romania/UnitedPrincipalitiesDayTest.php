@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -39,7 +39,7 @@ class UnitedPrincipalitiesDayTest extends RomaniaBaseTestCase implements YasumiT
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testUnitedPrincipalitiesDayOnAfter2015()
+    public function testUnitedPrincipalitiesDayOnAfter2015(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -54,7 +54,7 @@ class UnitedPrincipalitiesDayTest extends RomaniaBaseTestCase implements YasumiT
      * Tests unitedPrincipalitiesDay before 2015.
      * @throws ReflectionException
      */
-    public function testUnitedPrincipalitiesDayBefore2015()
+    public function testUnitedPrincipalitiesDayBefore2015(): void
     {
         $this->assertNotHoliday(
             self::REGION,

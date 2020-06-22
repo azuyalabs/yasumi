@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -30,7 +30,7 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements YasumiTest
     public const HOLIDAY = 'aflGrandFinalFriday';
 
     public const ESTABLISHMENT_YEAR = 2015;
-    public const LAST_KNOWN_YEAR = 2018;
+    public const LAST_KNOWN_YEAR = 2020;
 
     /**
      * Tests AFL Grand Final Friday
@@ -43,7 +43,7 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements YasumiTest
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected)
+    public function testHoliday($year, $expected): void
     {
         $this->assertHoliday(
             $this->region,
@@ -86,7 +86,7 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements YasumiTest
      *  Tests that Holiday is not present before establishment year
      * @throws ReflectionException
      */
-    public function testNotHoliday()
+    public function testNotHoliday(): void
     {
         $this->assertNotHoliday($this->region, self::HOLIDAY, self::ESTABLISHMENT_YEAR - 1);
     }
@@ -98,13 +98,13 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements YasumiTest
      */
     public function HolidayDataProvider(): array
     {
-        $data = [
+        return [
             [2015, '2015-10-02'],
             [2016, '2016-09-30'],
             [2017, '2017-09-29'],
             [2018, '2018-09-28'],
+            [2019, '2019-09-27'],
+            [2020, '2020-09-25'],
         ];
-
-        return $data;
     }
 }

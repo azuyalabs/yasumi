@@ -3,7 +3,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,7 +15,6 @@ namespace Yasumi\Provider;
 
 use DateInterval;
 use DateTime;
-use DateTimeZone;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -50,7 +49,7 @@ class SouthKorea extends AbstractProvider
      * There is no perfect formula, and as it moves away from the current date, the error becomes bigger.
      * Korea Astronomy and Space Science Institute (KASI) is supporting the converter until 2050.
      * For more information, please refer to the paper below.
-     * 박한얼, 민병희, 안영숙,(2017).한국 음력의 운용과 계산법 연구.천문학논총,32(3),407-420.
+     * 박(2017)총,32(3),407-420.
      * @link https://www.kasi.re.kr/kor/research/paper/20170259 - Korea Astronomy and Space Science Institute
      */
     public const LUNAR_HOLIDAY = [
@@ -165,15 +164,15 @@ class SouthKorea extends AbstractProvider
                 $this->addHoliday(new Holiday(
                     'dayAfterNewYearsDay',
                     [],
-                    new DateTime("$this->year-1-2", new DateTimeZone($this->timezone)),
+                    new DateTime("$this->year-1-2", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                     $this->locale
                 ));
             }
             if ($this->year <= 1990) {
                 $this->addHoliday(new Holiday(
                     'twoDaysLaterNewYearsDay',
-                    ['en' => 'Two Days Later New Year\'s Day', 'ko' => '새해 연휴'],
-                    new DateTime("$this->year-1-3", new DateTimeZone($this->timezone)),
+                    ['en' => 'Two Days Later New Year’s Day', 'ko' => '새해 연휴'],
+                    new DateTime("$this->year-1-3", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                     $this->locale
                 ));
             }
@@ -191,7 +190,7 @@ class SouthKorea extends AbstractProvider
     public function calculateSeollal(): void
     {
         if ($this->year >= 1985 && isset(self::LUNAR_HOLIDAY['seollal'][$this->year])) {
-            $seollal = new DateTime(self::LUNAR_HOLIDAY['seollal'][$this->year], new DateTimeZone($this->timezone));
+            $seollal = new DateTime(self::LUNAR_HOLIDAY['seollal'][$this->year], DateTimeZoneFactory::getDateTimeZone($this->timezone));
             $this->addHoliday(new Holiday(
                 'seollal',
                 ['en' => 'Seollal', 'ko' => '설날'],
@@ -231,8 +230,8 @@ class SouthKorea extends AbstractProvider
         if ($this->year >= 1975 && isset(self::LUNAR_HOLIDAY['buddhasBirthday'][$this->year])) {
             $this->addHoliday(new Holiday(
                 'buddhasBirthday',
-                ['en' => 'Buddha\'s Birthday', 'ko' => '부처님오신날'],
-                new DateTime(self::LUNAR_HOLIDAY['buddhasBirthday'][$this->year], new DateTimeZone($this->timezone)),
+                ['en' => 'Buddha’s Birthday', 'ko' => '부처님오신날'],
+                new DateTime(self::LUNAR_HOLIDAY['buddhasBirthday'][$this->year], DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -255,7 +254,7 @@ class SouthKorea extends AbstractProvider
             $chuseok = new Holiday(
                 'chuseok',
                 ['en' => 'Chuseok', 'ko' => '추석'],
-                new DateTime(self::LUNAR_HOLIDAY['chuseok'][$this->year], new DateTimeZone($this->timezone)),
+                new DateTime(self::LUNAR_HOLIDAY['chuseok'][$this->year], DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             );
             $this->addHoliday($chuseok);
@@ -295,7 +294,7 @@ class SouthKorea extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'independenceMovementDay',
                 ['en' => 'Independence Movement Day', 'ko' => '삼일절'],
-                new DateTime("$this->year-3-1", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-3-1", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -314,7 +313,7 @@ class SouthKorea extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'arborDay',
                 ['en' => 'Arbor Day', 'ko' => '식목일'],
-                new DateTime("$this->year-4-5", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-4-5", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -332,8 +331,8 @@ class SouthKorea extends AbstractProvider
         if ($this->year >= 1970) {
             $this->addHoliday(new Holiday(
                 'childrensDay',
-                ['en' => 'Children\'s Day', 'ko' => '어린이날'],
-                new DateTime("$this->year-5-5", new DateTimeZone($this->timezone)),
+                ['en' => 'Children’s Day', 'ko' => '어린이날'],
+                new DateTime("$this->year-5-5", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -352,7 +351,7 @@ class SouthKorea extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'memorialDay',
                 ['en' => 'Memorial Day', 'ko' => '현충일'],
-                new DateTime("$this->year-6-6", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-6-6", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -374,7 +373,7 @@ class SouthKorea extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'constitutionDay',
                 ['en' => 'Constitution Day', 'ko' => '제헌절'],
-                new DateTime("$this->year-7-17", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-7-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -393,7 +392,7 @@ class SouthKorea extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'liberationDay',
                 ['en' => 'Liberation Day', 'ko' => '광복절'],
-                new DateTime("$this->year-8-15", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-8-15", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -412,7 +411,7 @@ class SouthKorea extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'armedForcesDay',
                 ['en' => 'Armed Forces Day', 'ko' => '국군의 날'],
-                new DateTime("$this->year-10-1", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-10-1", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -431,7 +430,7 @@ class SouthKorea extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'nationalFoundationDay',
                 ['en' => 'National Foundation Day', 'ko' => '개천절'],
-                new DateTime("$this->year-10-3", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-10-3", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -450,7 +449,7 @@ class SouthKorea extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'hangulDay',
                 ['en' => 'Hangul Day', 'ko' => '한글날'],
-                new DateTime("$this->year-10-9", new DateTimeZone($this->timezone)),
+                new DateTime("$this->year-10-9", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -458,65 +457,67 @@ class SouthKorea extends AbstractProvider
 
     /**
      * Substitute Holidays.
-     * related statutes: Article 3 Alternative Statutory Holidays of the Regulations on Holidays of Government Offices
+     * Related statutes: Article 3 Alternative Statutory Holidays of the Regulations on Holidays of Government Offices
      *
      * Since 2014, it has been applied only on Seollal, Chuseok and Children's Day.
      * Due to the lunar calendar, public holidays can overlap even if it's not a Sunday.
-     * When public holidays fall each other, the first non-public holiday after the holiday become as a public holiday.
+     * When public holidays fall on each other, the first non-public holiday after the holiday becomes a public holiday.
      * As an exception, Children's Day also applies on Saturday.
      *
      * @throws \Exception
      */
     public function calculateSubstituteHolidays(): void
     {
-        if ($this->year > 2013) {
-            // Initialize holidays variable
-            $holidays = $this->getHolidays();
-            $acceptedHolidays = [
-                'dayBeforeSeollal', 'seollal', 'dayAfterSeollal',
-                'dayBeforeChuseok', 'chuseok', 'dayAfterChuseok',
-                'childrensDay',
-            ];
+        if ($this->year <= 2013) {
+            return;
+        }
 
-            // Loop through all holidays
-            foreach ($holidays as $shortName => $holiday) {
-                // Get list of holiday dates except this
-                $holidayDates = \array_map(static function ($holiday) use ($shortName) {
-                    return $holiday->shortName === $shortName ? false : (string)$holiday;
-                }, $holidays);
+        // Initialize holidays variable
+        $holidays = $this->getHolidays();
+        $acceptedHolidays = [
+            'dayBeforeSeollal', 'seollal', 'dayAfterSeollal',
+            'dayBeforeChuseok', 'chuseok', 'dayAfterChuseok',
+            'childrensDay',
+        ];
 
-                // Only process accepted holidays and conditions
-                if (\in_array($shortName, $acceptedHolidays, true)
-                    && (
-                        0 === (int)$holiday->format('w')
-                        || \in_array($holiday, $holidayDates, false)
-                        || (6 === (int)$holiday->format('w') && 'childrensDay' === $shortName)
-                    )
-                ) {
-                    $date = clone $holiday;
+        // Loop through all holidays
+        foreach ($holidays as $key => $holiday) {
+            // Get list of holiday dates except this
+            $holidayDates = \array_map(static function ($holiday) use ($key) {
+                return $holiday->getKey() === $key ? false : (string) $holiday;
+            }, $holidays);
 
-                    // Find next week day (not being another holiday)
-                    while (0 === (int)$date->format('w')
-                        || (6 === (int)$date->format('w') && 'childrensDay' === $shortName)
-                        || \in_array($date, $holidayDates, false)) {
-                        $date->add(new DateInterval('P1D'));
-                        continue;
-                    }
+            // Only process accepted holidays and conditions
+            if (\in_array($key, $acceptedHolidays, true)
+                && (
+                    0 === (int) $holiday->format('w')
+                    || \in_array($holiday, $holidayDates, false)
+                    || (6 === (int) $holiday->format('w') && 'childrensDay' === $key)
+                )
+            ) {
+                $date = clone $holiday;
 
-                    // Add a new holiday that is substituting the original holiday
-                    $substitute = new SubstituteHoliday(
-                        $holiday,
-                        [],
-                        $date,
-                        $this->locale
-                    );
-
-                    // Add a new holiday that is substituting the original holiday
-                    $this->addHoliday($substitute);
-
-                    // Add substitute holiday to the list
-                    $holidays[] = $substitute;
+                // Find next week day (not being another holiday)
+                while (0 === (int) $date->format('w')
+                    || (6 === (int) $date->format('w') && 'childrensDay' === $key)
+                    || \in_array($date, $holidayDates, false)) {
+                    $date->add(new DateInterval('P1D'));
+                    continue;
                 }
+
+                // Add a new holiday that is substituting the original holiday
+                $substitute = new SubstituteHoliday(
+                    $holiday,
+                    [],
+                    $date,
+                    $this->locale
+                );
+
+                // Add a new holiday that is substituting the original holiday
+                $this->addHoliday($substitute);
+
+                // Add substitute holiday to the list
+                $holidays[] = $substitute;
             }
         }
     }

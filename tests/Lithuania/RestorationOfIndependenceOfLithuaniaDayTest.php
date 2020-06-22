@@ -3,7 +3,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -37,7 +37,7 @@ class RestorationOfIndependenceOfLithuaniaDayTest extends LithuaniaBaseTestCase 
      * Test if holiday is not defined before restoration
      * @throws ReflectionException
      */
-    public function testHolidayBeforeRestoration()
+    public function testHolidayBeforeRestoration(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -51,7 +51,7 @@ class RestorationOfIndependenceOfLithuaniaDayTest extends LithuaniaBaseTestCase 
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHolidayAfterRestoration()
+    public function testHolidayAfterRestoration(): void
     {
         $year = $this->generateRandomYear(Lithuania::RESTORATION_OF_INDEPENDENCE_YEAR);
 

@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -40,7 +40,7 @@ class MemorialDayTest extends USABaseTestCase implements YasumiTestCaseInterface
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testMemorialDayOnAfter1968()
+    public function testMemorialDayOnAfter1968(): void
     {
         $year = $this->generateRandomYear(1968);
         $this->assertHoliday(
@@ -57,7 +57,7 @@ class MemorialDayTest extends USABaseTestCase implements YasumiTestCaseInterface
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testMemorialDayBetween1865And1967()
+    public function testMemorialDayBetween1865And1967(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1967);
         $this->assertHoliday(
@@ -73,7 +73,7 @@ class MemorialDayTest extends USABaseTestCase implements YasumiTestCaseInterface
      * last Monday in May.
      * @throws ReflectionException
      */
-    public function testMemorialDayBefore1865()
+    public function testMemorialDayBefore1865(): void
     {
         $this->assertNotHoliday(
             self::REGION,

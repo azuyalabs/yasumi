@@ -3,7 +3,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -33,12 +33,12 @@ abstract class AbstractFilter extends FilterIterator implements Countable
      */
     public function count(): int
     {
-        $names = \array_map(static function (&$holiday) {
+        $names = \array_map(static function ($holiday) {
             if ($holiday instanceof SubstituteHoliday) {
-                return $holiday->substitutedHoliday->shortName;
+                return $holiday->getSubstitutedHoliday()->getKey();
             }
 
-            return $holiday->shortName;
+            return $holiday->getKey();
         }, \iterator_to_array($this));
 
         return \count(\array_unique($names));

@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2019 AzuyaLabs
+ * Copyright (c) 2015 - 2020 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -45,7 +45,7 @@ class WaitangiDayTest extends NewZealandBaseTestCase implements YasumiTestCaseIn
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected)
+    public function testHoliday($year, $expected): void
     {
         $this->assertHoliday(
             self::REGION,
@@ -59,7 +59,7 @@ class WaitangiDayTest extends NewZealandBaseTestCase implements YasumiTestCaseIn
      *  Tests that Holiday is not present before 1974
      * @throws ReflectionException
      */
-    public function testNotHoliday()
+    public function testNotHoliday(): void
     {
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, self::ESTABLISHMENT_YEAR - 1);
     }
@@ -105,6 +105,6 @@ class WaitangiDayTest extends NewZealandBaseTestCase implements YasumiTestCaseIn
             if ($year >= 2015 && $this->isWeekend($date)) {
                 $date->modify('next monday');
             }
-        }, self::TIMEZONE, 100, self::ESTABLISHMENT_YEAR);
+        }, 100, self::ESTABLISHMENT_YEAR, self::TIMEZONE);
     }
 }
