@@ -34,13 +34,22 @@ class YukonTest extends YukonBaseTestCase
         $holidays = [
             'goodFriday',
             'christmasDay',
-            'discoveryDay',
-            'victoriaDay',
-            'nationalIndigenousPeoplesDay',
         ];
 
         if (2009 < $this->year) {
             $holidays[] = 'yukonHeritageDay';
+        }
+
+        if (1996 >= $this->year) {
+            $holidays[] = 'nationalIndigenousPeoplesDay';
+        }
+
+        if (1897 >= $this->year) {
+            $holidays[] = 'discoveryDay';
+        }
+
+        if (1845 >= $this->year) {
+            $holidays[] = 'victoriaDay';
         }
 
         $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
