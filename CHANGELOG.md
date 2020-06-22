@@ -9,7 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 - Added Canada Provider [\#215](https://github.com/azuyalabs/yasumi/pull/215) ([lux](https://github.com/lux))
 - Added Luxembourg Provider [\#205](https://github.com/azuyalabs/yasumi/pull/205) ([Arkounay](https://github.com/Arkounay))
 - Holiday providers for states of Austria. [\#182](https://github.com/azuyalabs/yasumi/pull/182) ([aprog](https://github.com/aprog))
-- Added All Souls Day to Lithuania [\#227](https://github.com/azuyalabs/yasumi/pull/227)
+- Added All Souls Day to Lithuania [\#227](https://github.com/azuyalabs/yasumi/pull/227) ([norkunas](https://github.com/norkunas))
 - Catholic Christmas Day is a new official holiday since 2017 in the Ukraine. [\#202](https://github.com/azuyalabs/yasumi/pull/202)
 - Additional Dates for Australia/Victoria:AFL Grand Final Friday [\#190](https://github.com/azuyalabs/yasumi/pull/190) ([brucealdridge](https://github.com/brucealdridge))
 - Substituted holidays (holidays that fall in the weekend) for Australia. [\#201](https://github.com/azuyalabs/yasumi/pull/201) ([c960657](https://github.com/c960657))
