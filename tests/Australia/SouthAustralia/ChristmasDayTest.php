@@ -42,7 +42,7 @@ class ChristmasDayTest extends SouthAustraliaBaseTestCase implements YasumiTestC
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected, $expectedExtra)
+    public function testHoliday($year, $expected, $expectedExtra): void
     {
         $this->assertHoliday(
             $this->region,

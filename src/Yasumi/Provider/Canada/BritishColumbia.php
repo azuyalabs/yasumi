@@ -14,7 +14,6 @@ namespace Yasumi\Provider\Canada;
 
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
-use Yasumi\Holiday;
 use Yasumi\Provider\Canada;
 
 /**

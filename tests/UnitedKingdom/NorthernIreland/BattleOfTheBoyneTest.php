@@ -45,12 +45,12 @@ class BattleOfTheBoyneTest extends NorthernIrelandBaseTestCase implements Yasumi
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected)
+    public function testHoliday($year, $expected): void
     {
         $date = new DateTime($expected, new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
 
-        if (\in_array((int)$date->format('w'), [0, 6], true)) {
+        if (\in_array((int) $date->format('w'), [0, 6], true)) {
             $date->modify('next monday');
             $this->assertHoliday(self::REGION, 'substituteHoliday:' . self::HOLIDAY, $year, $date);
         }
@@ -60,7 +60,7 @@ class BattleOfTheBoyneTest extends NorthernIrelandBaseTestCase implements Yasumi
      * Tests the holiday defined in this test before establishment.
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,

@@ -34,7 +34,7 @@ class DefenderOfUkraineDayTest extends UkraineBaseTestCase implements YasumiTest
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday()
+    public function testHoliday(): void
     {
         $year = 2020;
         $this->assertHoliday(

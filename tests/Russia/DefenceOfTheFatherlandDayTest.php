@@ -36,7 +36,7 @@ class DefenceOfTheFatherlandDayTest extends RussiaBaseTestCase implements Yasumi
      * Test if holiday is not defined before
      * @throws ReflectionException
      */
-    public function testHolidayBefore()
+    public function testHolidayBefore(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -50,7 +50,7 @@ class DefenceOfTheFatherlandDayTest extends RussiaBaseTestCase implements Yasumi
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHolidayAfter()
+    public function testHolidayAfter(): void
     {
         $year = $this->generateRandomYear(Russia::DEFENCE_OF_THE_FATHERLAND_START_YEAR);
 

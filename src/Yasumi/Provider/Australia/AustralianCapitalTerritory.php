@@ -193,7 +193,7 @@ class AustralianCapitalTerritory extends Australia
         }
 
         $date = new DateTime($this->year . '-05-27', DateTimeZoneFactory::getDateTimeZone($this->timezone));
-        $day = (int)$date->format('w');
+        $day = (int) $date->format('w');
         if (1 !== $day) {
             $date = $date->add(0 === $day ? new DateInterval('P1D') : new DateInterval('P' . (8 - $day) . 'D'));
         }

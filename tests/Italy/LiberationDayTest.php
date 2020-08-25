@@ -46,7 +46,7 @@ class LiberationDayTest extends ItalyBaseTestCase implements YasumiTestCaseInter
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testLiberationDayOnAfter1949()
+    public function testLiberationDayOnAfter1949(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -61,7 +61,7 @@ class LiberationDayTest extends ItalyBaseTestCase implements YasumiTestCaseInter
      * Tests Liberation Day before 1949.
      * @throws ReflectionException
      */
-    public function testLiberationDayBefore1949()
+    public function testLiberationDayBefore1949(): void
     {
         $this->assertNotHoliday(
             self::REGION,

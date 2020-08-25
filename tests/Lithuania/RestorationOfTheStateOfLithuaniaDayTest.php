@@ -37,7 +37,7 @@ class RestorationOfTheStateOfLithuaniaDayTest extends LithuaniaBaseTestCase impl
      * Test if holiday is not defined before restoration
      * @throws ReflectionException
      */
-    public function testHolidayBeforeRestoration()
+    public function testHolidayBeforeRestoration(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -51,7 +51,7 @@ class RestorationOfTheStateOfLithuaniaDayTest extends LithuaniaBaseTestCase impl
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHolidayAfterRestoration()
+    public function testHolidayAfterRestoration(): void
     {
         $year = $this->generateRandomYear(Lithuania::RESTORATION_OF_THE_STATE_YEAR);
 

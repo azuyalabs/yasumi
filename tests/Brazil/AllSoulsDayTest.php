@@ -39,7 +39,7 @@ class AllSoulsDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterf
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testDiaDosFinadosAfter1300()
+    public function testDiaDosFinadosAfter1300(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -54,7 +54,7 @@ class AllSoulsDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterf
      * Tests Dia dos Finados on or before 1300.
      * @throws ReflectionException
      */
-    public function testDiaDosFinadosBefore1300()
+    public function testDiaDosFinadosBefore1300(): void
     {
         $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);

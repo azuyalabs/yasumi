@@ -39,7 +39,7 @@ class ChildrensDayTest extends JapanBaseTestCase implements YasumiTestCaseInterf
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testChildrensDayOnAfter1948()
+    public function testChildrensDayOnAfter1948(): void
     {
         $year = 1955;
         $this->assertHoliday(
@@ -56,7 +56,7 @@ class ChildrensDayTest extends JapanBaseTestCase implements YasumiTestCaseInterf
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testChildrensDayOnAfter1948SubstitutedNextWorkingDay()
+    public function testChildrensDayOnAfter1948SubstitutedNextWorkingDay(): void
     {
         $year = 2120;
         $this->assertHoliday(
@@ -72,7 +72,7 @@ class ChildrensDayTest extends JapanBaseTestCase implements YasumiTestCaseInterf
      *
      * @throws ReflectionException
      */
-    public function testChildrensDayBefore1948()
+    public function testChildrensDayBefore1948(): void
     {
         $this->assertNotHoliday(
             self::REGION,

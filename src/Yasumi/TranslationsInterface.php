@@ -20,19 +20,19 @@ interface TranslationsInterface
     /**
      * Returns translation for holiday in specific locale.
      *
-     * @param string $shortName holiday short name
+     * @param string $key holiday key
      * @param string $locale locale
      *
      * @return string|null translated holiday name
      */
-    public function getTranslation(string $shortName, string $locale): ?string;
+    public function getTranslation(string $key, string $locale): ?string;
 
     /**
      * Returns all available translations for holiday.
      *
-     * @param string $shortName holiday short name
+     * @param string $key holiday key
      *
      * @return array holiday name translations ['<locale>' => '<translation>', ...]
      */
-    public function getTranslations(string $shortName): array;
+    public function getTranslations(string $key): array;
 }

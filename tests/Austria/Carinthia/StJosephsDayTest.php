@@ -38,7 +38,7 @@ class StJosephsDayTest extends CarinthiaBaseTestCase implements YasumiTestCaseIn
      *
      * @throws ReflectionException
      */
-    public function testStJosephsDay($year, $expected)
+    public function testStJosephsDay($year, $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

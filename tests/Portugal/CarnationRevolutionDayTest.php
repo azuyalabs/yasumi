@@ -39,7 +39,7 @@ class CarnationRevolutionDayTest extends PortugalBaseTestCase implements YasumiT
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHolidayAfterEstablishment()
+    public function testHolidayAfterEstablishment(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $expected = new DateTime("$year-04-25", new DateTimeZone(self::TIMEZONE));
@@ -50,7 +50,7 @@ class CarnationRevolutionDayTest extends PortugalBaseTestCase implements YasumiT
      * Tests that the holiday is not a holiday before the year of establishment
      * @throws ReflectionException
      */
-    public function testNotHolidayBeforeEstablishment()
+    public function testNotHolidayBeforeEstablishment(): void
     {
         $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);

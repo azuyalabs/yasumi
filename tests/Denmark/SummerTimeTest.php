@@ -35,7 +35,7 @@ class SummerTimeTest extends DenmarkBaseTestCase implements YasumiTestCaseInterf
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testSummerTime()
+    public function testSummerTime(): void
     {
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(1949, 1979));
 

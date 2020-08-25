@@ -39,7 +39,7 @@ class RemembranceDayTest extends CanadaBaseTestCase implements YasumiTestCaseInt
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testRemembranceDayOnAfter1919()
+    public function testRemembranceDayOnAfter1919(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -54,7 +54,7 @@ class RemembranceDayTest extends CanadaBaseTestCase implements YasumiTestCaseInt
      * Tests Remembrance Day before 1919. Remembrance Day was established in 1919 on November 11.
      * @throws ReflectionException
      */
-    public function testVeteransDayBefore1919()
+    public function testVeteransDayBefore1919(): void
     {
         $this->assertNotHoliday(
             self::REGION,

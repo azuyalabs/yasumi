@@ -39,7 +39,7 @@ class IndepencenceDayTest extends GreeceBaseTestCase implements YasumiTestCaseIn
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHoliday()
+    public function testHoliday(): void
     {
         $year = 2018;
         $this->assertHoliday(
@@ -54,7 +54,7 @@ class IndepencenceDayTest extends GreeceBaseTestCase implements YasumiTestCaseIn
      * Tests the holiday defined in this test before establishment.
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,

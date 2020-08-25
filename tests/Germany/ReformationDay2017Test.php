@@ -39,7 +39,7 @@ class ReformationDay2017Test extends GermanyBaseTestCase implements YasumiTestCa
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHolidayOnEstablishment()
+    public function testHolidayOnEstablishment(): void
     {
         $this->assertHoliday(
             self::REGION,
@@ -53,7 +53,7 @@ class ReformationDay2017Test extends GermanyBaseTestCase implements YasumiTestCa
      * Test the holiday defined in this test before establishment
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -66,7 +66,7 @@ class ReformationDay2017Test extends GermanyBaseTestCase implements YasumiTestCa
      * Test the holiday defined in this test after completion
      * @throws ReflectionException
      */
-    public function testHolidayAfterCompletion()
+    public function testHolidayAfterCompletion(): void
     {
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR + 1));
     }

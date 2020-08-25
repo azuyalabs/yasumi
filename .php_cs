@@ -20,5 +20,7 @@ return PhpCsFixer\Config::create()->setRiskyAllowed(true)->setRules([
         'no_unused_imports'                 => true,
         'single_quote'                      => true,
         'space_after_semicolon'             => true,
-        'trailing_comma_in_multiline_array' => true
+        'trailing_comma_in_multiline_array' => true,
+        'cast_spaces'                       => ['space' => 'single'],
+        'declare_strict_types'              => true,
     ])->setLineEnding("\n")->setFinder($finder);

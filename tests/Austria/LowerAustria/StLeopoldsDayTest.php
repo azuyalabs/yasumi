@@ -44,7 +44,7 @@ class StLeopoldsDayTest extends LowerAustriaBaseTestCase implements YasumiTestCa
      *
      * @throws ReflectionException
      */
-    public function testStLeopoldsDay($year, $expected)
+    public function testStLeopoldsDay($year, $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
@@ -71,7 +71,7 @@ class StLeopoldsDayTest extends LowerAustriaBaseTestCase implements YasumiTestCa
      * Tests the holiday defined in this test before establishment.
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,

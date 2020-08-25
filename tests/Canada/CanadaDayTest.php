@@ -39,7 +39,7 @@ class CanadaDayTest extends CanadaBaseTestCase implements YasumiTestCaseInterfac
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testCanadaDayOnAfter1983()
+    public function testCanadaDayOnAfter1983(): void
     {
         $year = $this->generateRandomYear(1983);
         $this->assertHoliday(
@@ -54,7 +54,7 @@ class CanadaDayTest extends CanadaBaseTestCase implements YasumiTestCaseInterfac
      * Tests Canada Day before 1879. Canada Day was established as Dominion Day in 1879 on July 1st.
      * @throws ReflectionException
      */
-    public function testCanadaDayBefore1879()
+    public function testCanadaDayBefore1879(): void
     {
         $this->assertNotHoliday(
             self::REGION,

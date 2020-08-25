@@ -38,7 +38,7 @@ class StFloriansDayTest extends UpperAustriaBaseTestCase implements YasumiTestCa
      *
      * @throws ReflectionException
      */
-    public function testStFloriansDay($year, $expected)
+    public function testStFloriansDay($year, $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

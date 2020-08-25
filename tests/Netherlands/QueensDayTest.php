@@ -34,7 +34,7 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testQueensBetween1891and1948()
+    public function testQueensBetween1891and1948(): void
     {
         $year = 1901;
         $this->assertHoliday(
@@ -50,7 +50,7 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testQueensBetween1891and1948SubstitutedLater()
+    public function testQueensBetween1891and1948SubstitutedLater(): void
     {
         $year = 1947;
         $this->assertHoliday(
@@ -66,7 +66,7 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testQueensBetween1949and2013()
+    public function testQueensBetween1949and2013(): void
     {
         $year = 1965;
         $this->assertHoliday(
@@ -82,7 +82,7 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testQueensBetween1949and2013SubstitutedLater()
+    public function testQueensBetween1949and2013SubstitutedLater(): void
     {
         $year = 1967;
         $this->assertHoliday(
@@ -98,7 +98,7 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testQueensBetween1949and2013SubstitutedEarlier()
+    public function testQueensBetween1949and2013SubstitutedEarlier(): void
     {
         $year = 2006;
         $this->assertHoliday(
@@ -113,7 +113,7 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
      * Tests Queen's Day before 1891.
      * @throws ReflectionException
      */
-    public function testQueensDayBefore1891()
+    public function testQueensDayBefore1891(): void
     {
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(1000, 1890));
     }
@@ -122,7 +122,7 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
      * Tests Queen's Day after 2013.
      * @throws ReflectionException
      */
-    public function testQueensDayAfter2013()
+    public function testQueensDayAfter2013(): void
     {
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(2014));
     }

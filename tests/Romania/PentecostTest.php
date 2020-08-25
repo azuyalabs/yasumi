@@ -40,7 +40,7 @@ class PentecostTest extends RomaniaBaseTestCase implements YasumiTestCaseInterfa
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testPentecostDayOnAfter2008()
+    public function testPentecostDayOnAfter2008(): void
     {
         $year = 2020;
         $this->assertHoliday(
@@ -55,7 +55,7 @@ class PentecostTest extends RomaniaBaseTestCase implements YasumiTestCaseInterfa
      * Tests the Pentecost Day before 2008.
      * @throws ReflectionException
      */
-    public function testPentecostDayBefore2008()
+    public function testPentecostDayBefore2008(): void
     {
         $this->assertNotHoliday(
             self::REGION,

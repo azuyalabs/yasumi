@@ -35,7 +35,7 @@ class BerchtoldsTagTest extends ObwaldenBaseTestCase implements YasumiTestCaseIn
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testBerchtoldsTag()
+    public function testBerchtoldsTag(): void
     {
         $year = $this->generateRandomYear();
         $date = new DateTime($year . '-01-02', new DateTimeZone(self::TIMEZONE));

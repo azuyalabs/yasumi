@@ -39,7 +39,7 @@ class WorldAnimalDayTest extends NetherlandsBaseTestCase implements YasumiTestCa
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testWorldAnimalDayOnAfter1931()
+    public function testWorldAnimalDayOnAfter1931(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -54,7 +54,7 @@ class WorldAnimalDayTest extends NetherlandsBaseTestCase implements YasumiTestCa
      * Tests World Animal Day before 1931.
      * @throws ReflectionException
      */
-    public function testWorldAnimalBefore1931()
+    public function testWorldAnimalBefore1931(): void
     {
         $this->assertNotHoliday(
             self::REGION,

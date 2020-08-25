@@ -91,7 +91,7 @@ trait YasumiBase
      * Asserts that the expected date is indeed a holiday for that given year and name
      *
      * @param string $provider the holiday provider (i.e. country/state) for which the holiday need to be tested
-     * @param string $shortName string the short name of the holiday to be checked against
+     * @param string $key string the key of the holiday to be checked against
      * @param int $year holiday calendar year
      * @param DateTime $expected the date to be checked against
      *
@@ -104,12 +104,12 @@ trait YasumiBase
      */
     public function assertHoliday(
         string $provider,
-        string $shortName,
+        string $key,
         int $year,
         DateTime $expected
     ): void {
         $holidays = Yasumi::create($provider, $year);
-        $holiday = $holidays->getHoliday($shortName);
+        $holiday = $holidays->getHoliday($key);
 
         $this->assertInstanceOf(Holiday::class, $holiday);
         $this->assertEquals($expected, $holiday);
@@ -120,7 +120,7 @@ trait YasumiBase
      * Asserts that the expected date is indeed a substitute holiday for that given year and name
      *
      * @param string $provider the holiday provider (i.e. country/state) for which the holiday need to be tested
-     * @param string $shortName string the short name of the substituted holiday to be checked against
+     * @param string $key string the key of the substituted holiday to be checked against
      * @param int $year holiday calendar year
      * @param DateTime $expected the date to be checked against
      *
@@ -133,12 +133,12 @@ trait YasumiBase
      */
     public function assertSubstituteHoliday(
         string $provider,
-        string $shortName,
+        string $key,
         int $year,
         DateTime $expected
     ): void {
         $holidays = Yasumi::create($provider, $year);
-        $holiday = $holidays->getHoliday('substituteHoliday:' . $shortName);
+        $holiday = $holidays->getHoliday('substituteHoliday:' . $key);
 
         $this->assertInstanceOf(SubstituteHoliday::class, $holiday);
         $this->assertEquals($expected, $holiday);
@@ -149,7 +149,7 @@ trait YasumiBase
      * Asserts that the given substitute holiday for that given year does not exist.
      *
      * @param string $provider the holiday provider (i.e. country/state) for which the holiday need to be tested
-     * @param string $shortName the short name of the substituted holiday to be checked against
+     * @param string $key the key of the substituted holiday to be checked against
      * @param int $year holiday calendar year
      *
      * @throws InvalidArgumentException
@@ -161,12 +161,12 @@ trait YasumiBase
      */
     public function assertNotSubstituteHoliday(
         string $provider,
-        string $shortName,
+        string $key,
         int $year
     ): void {
         $this->assertNotHoliday(
             $provider,
-            'substituteHoliday:' . $shortName,
+            'substituteHoliday:' . $key,
             $year
         );
     }
@@ -175,7 +175,7 @@ trait YasumiBase
      * Asserts that the given holiday for that given year does not exist.
      *
      * @param string $provider the holiday provider (i.e. country/state) for which the holiday need to be tested
-     * @param string $shortName the short name of the holiday to be checked against
+     * @param string $key the key of the holiday to be checked against
      * @param int $year holiday calendar year
      *
      * @throws InvalidArgumentException
@@ -187,11 +187,11 @@ trait YasumiBase
      */
     public function assertNotHoliday(
         string $provider,
-        string $shortName,
+        string $key,
         int $year
     ): void {
         $holidays = Yasumi::create($provider, $year);
-        $holiday = $holidays->getHoliday($shortName);
+        $holiday = $holidays->getHoliday($key);
 
         $this->assertNull($holiday);
     }
@@ -200,7 +200,7 @@ trait YasumiBase
      * Asserts that the expected name is indeed provided as a translated holiday name for that given year and name
      *
      * @param string $provider the holiday provider (i.e. country/state) for which the holiday need to be tested
-     * @param string $shortName string the short name of the holiday to be checked against
+     * @param string $key string the key of the holiday to be checked against
      * @param int $year holiday calendar year
      * @param array $translations the translations to be checked against
      *
@@ -212,12 +212,12 @@ trait YasumiBase
      */
     public function assertTranslatedHolidayName(
         string $provider,
-        string $shortName,
+        string $key,
         int $year,
         array $translations
     ): void {
         $holidays = Yasumi::create($provider, $year);
-        $holiday = $holidays->getHoliday($shortName);
+        $holiday = $holidays->getHoliday($key);
 
         $this->assertInstanceOf(Holiday::class, $holiday);
         $this->assertTrue($holidays->isHoliday($holiday));
@@ -248,7 +248,7 @@ trait YasumiBase
      * Asserts that the expected type is indeed the associated type of the given holiday
      *
      * @param string $provider the holiday provider (i.e. country/region) for which the holiday need to be tested
-     * @param string $shortName string the short name of the holiday to be checked against
+     * @param string $key string the key of the holiday to be checked against
      * @param int $year holiday calendar year
      * @param string $type the type to be checked against
      *
@@ -260,12 +260,12 @@ trait YasumiBase
      */
     public function assertHolidayType(
         string $provider,
-        string $shortName,
+        string $key,
         int $year,
         string $type
     ): void {
         $holidays = Yasumi::create($provider, $year);
-        $holiday = $holidays->getHoliday($shortName);
+        $holiday = $holidays->getHoliday($key);
 
         $this->assertInstanceOf(Holiday::class, $holiday);
         $this->assertEquals($type, $holiday->getType());
@@ -276,7 +276,7 @@ trait YasumiBase
      *
      * @param string $provider the holiday provider (i.e. country/state) for which the holiday need to be
      *                                  tested
-     * @param string $shortName string the short name of the holiday to be checked against
+     * @param string $key string the key of the holiday to be checked against
      * @param int $year holiday calendar year
      * @param string $expectedDayOfWeek the expected week day (i.e. "Saturday", "Sunday", etc.)
      *
@@ -288,12 +288,12 @@ trait YasumiBase
      */
     public function assertDayOfWeek(
         string $provider,
-        string $shortName,
+        string $key,
         int $year,
         string $expectedDayOfWeek
     ): void {
         $holidays = Yasumi::create($provider, $year);
-        $holiday = $holidays->getHoliday($shortName);
+        $holiday = $holidays->getHoliday($key);
 
         $this->assertInstanceOf(Holiday::class, $holiday);
         $this->assertTrue($holidays->isHoliday($holiday));
@@ -322,7 +322,7 @@ trait YasumiBase
         $data = [];
         $range = $range ?? 1000;
         for ($y = 1; $y <= ($iterations ?? 10); $y++) {
-            $year = (int)Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
+            $year = (int) Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
             $data[] = [$year, new DateTime("$year-$month-$day", new DateTimeZone($timezone ?? 'UTC'))];
         }
 
@@ -348,7 +348,7 @@ trait YasumiBase
         $range = $range ?? 1000;
 
         for ($i = 1; $i <= ($iterations ?? 10); ++$i) {
-            $year = (int)Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
+            $year = (int) Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
             $date = $this->calculateEaster($year, $timezone ?? 'UTC');
 
             $data[] = [$year, $date->format('Y-m-d')];
@@ -393,7 +393,7 @@ trait YasumiBase
             // 1583 AD to 4099 (A day adjustment is required in or shortly after 4100 AD).
             // After 1752, most western churches have adopted the current algorithm.
             if ($year <= 1752) {
-                $dom = ($year + (int)($year / 4) + 5) % 7; // The 'Dominical number' - finding a Sunday
+                $dom = ($year + (int) ($year / 4) + 5) % 7; // The 'Dominical number' - finding a Sunday
                 if ($dom < 0) {
                     $dom += 7;
                 }
@@ -403,13 +403,13 @@ trait YasumiBase
                     $pfm += 30;
                 }
             } else {
-                $dom = ($year + (int)($year / 4) - (int)($year / 100) + (int)($year / 400)) % 7; // The 'Dominical number' - finding a Sunday
+                $dom = ($year + (int) ($year / 4) - (int) ($year / 100) + (int) ($year / 400)) % 7; // The 'Dominical number' - finding a Sunday
                 if ($dom < 0) {
                     $dom += 7;
                 }
 
-                $solar = (int)(($year - 1600) / 100) - (int)(($year - 1600) / 400); // The solar correction
-                $lunar = (int)(((int)(($year - 1400) / 100) * 8) / 25); // The lunar correction
+                $solar = (int) (($year - 1600) / 100) - (int) (($year - 1600) / 400); // The solar correction
+                $lunar = (int) (((int) (($year - 1400) / 100) * 8) / 25); // The lunar correction
 
                 $pfm = (3 - (11 * $golden) + $solar - $lunar) % 30; // Uncorrected date of the Paschal full moon
                 if ($pfm < 0) {
@@ -478,7 +478,7 @@ trait YasumiBase
         $data = [];
         $range = $range ?? 1000;
         for ($i = 1; $i <= ($iterations ?? 10); ++$i) {
-            $year = (int)Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
+            $year = (int) Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
             $date = $this->calculateEaster($year, $timezone ?? 'UTC');
 
             $cb($date);
@@ -610,7 +610,7 @@ trait YasumiBase
         int $lowerLimit = null,
         int $upperLimit = null
     ): int {
-        return (int)Faker::create()->numberBetween($lowerLimit ?? 1000, $upperLimit ?? 9999);
+        return (int) Faker::create()->numberBetween($lowerLimit ?? 1000, $upperLimit ?? 9999);
     }
 
     /**
@@ -625,6 +625,6 @@ trait YasumiBase
         DateTimeInterface $dateTime,
         array $weekendDays = [0, 6]
     ): bool {
-        return \in_array((int)$dateTime->format('w'), $weekendDays, true);
+        return \in_array((int) $dateTime->format('w'), $weekendDays, true);
     }
 }

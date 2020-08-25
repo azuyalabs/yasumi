@@ -39,7 +39,7 @@ class OurLadyOfAparecidaDayTest extends BrazilBaseTestCase implements YasumiTest
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testNossaSenhoraAparecidaAfter1980()
+    public function testNossaSenhoraAparecidaAfter1980(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -54,7 +54,7 @@ class OurLadyOfAparecidaDayTest extends BrazilBaseTestCase implements YasumiTest
      * Tests Nossa Senhora Aparecida on or before 1980.
      * @throws ReflectionException
      */
-    public function testNossaSenhoraAparecidaBefore1980()
+    public function testNossaSenhoraAparecidaBefore1980(): void
     {
         $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);

@@ -23,7 +23,7 @@ use Yasumi\Exception\UnknownLocaleException;
 class Translations implements TranslationsInterface
 {
     /**
-     * @var array translations array: ['<holiday short name>' => ['<locale>' => 'translation', ...], ... ]
+     * @var array translations array: ['<holiday key>' => ['<locale>' => 'translation', ...], ... ]
      */
     public $translations = [];
 
@@ -69,7 +69,7 @@ class Translations implements TranslationsInterface
             }
 
             $filename = $file->getFilename();
-            $shortName = $file->getBasename('.' . $extension);
+            $key = $file->getBasename('.' . $extension);
 
             $translations = require $directoryPath . $filename;
 
@@ -78,7 +78,7 @@ class Translations implements TranslationsInterface
                     $this->isValidLocale($locale); // Validate the given locale
                 }
 
-                $this->translations[$shortName] = $translations;
+                $this->translations[$key] = $translations;
             }
         }
     }
@@ -92,7 +92,6 @@ class Translations implements TranslationsInterface
      *
      * @throws UnknownLocaleException An UnknownLocaleException is thrown if the given locale is not
      *                                valid/available.
-     *
      */
     protected function isValidLocale(string $locale): bool
     {
@@ -106,54 +105,60 @@ class Translations implements TranslationsInterface
     /**
      * Adds translation for holiday in specific locale.
      *
-     * @param string $shortName holiday short name
+     * @param string $key holiday key
+
+
      * @param string $locale locale
      * @param string $translation translation
      *
      * @throws UnknownLocaleException
      */
-    public function addTranslation(string $shortName, string $locale, string $translation): void
+    public function addTranslation(string $key, string $locale, string $translation): void
     {
         $this->isValidLocale($locale); // Validate the given locale
 
-        if (!\array_key_exists($shortName, $this->translations)) {
-            $this->translations[$shortName] = [];
+        if (!\array_key_exists($key, $this->translations)) {
+            $this->translations[$key] = [];
         }
 
-        $this->translations[$shortName][$locale] = $translation;
+        $this->translations[$key][$locale] = $translation;
     }
 
     /**
      * Returns translation for holiday in specific locale.
      *
-     * @param string $shortName holiday short name
+     * @param string $key holiday key
+
+
      * @param string $locale locale
      *
      * @return string|null translated holiday name
      */
-    public function getTranslation(string $shortName, string $locale): ?string
+    public function getTranslation(string $key, string $locale): ?string
     {
-        if (!\array_key_exists($shortName, $this->translations)
-            || !\array_key_exists($locale, $this->translations[$shortName])) {
+        if (!\array_key_exists($key, $this->translations)
+            || !\array_key_exists($locale, $this->translations[$key])) {
             return null;
         }
 
-        return $this->translations[$shortName][$locale];
+        return $this->translations[$key][$locale];
     }
 
     /**
      * Returns all available translations for holiday.
      *
-     * @param string $shortName holiday short name
+     * @param string $key holiday key
+
+
      *
      * @return array holiday name translations ['<locale>' => '<translation>', ...]
      */
-    public function getTranslations(string $shortName): array
+    public function getTranslations(string $key): array
     {
-        if (!\array_key_exists($shortName, $this->translations)) {
+        if (!\array_key_exists($key, $this->translations)) {
             return [];
         }
 
-        return $this->translations[$shortName];
+        return $this->translations[$key];
     }
 }

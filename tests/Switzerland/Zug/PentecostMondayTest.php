@@ -34,7 +34,7 @@ class PentecostMondayTest extends ZugBaseTestCase implements YasumiTestCaseInter
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testPentecostMonday()
+    public function testPentecostMonday(): void
     {
         $year = 1977;
         $this->assertHoliday(

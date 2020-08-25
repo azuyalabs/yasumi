@@ -44,7 +44,7 @@ class QueensBirthdayTest extends NewZealandBaseTestCase implements YasumiTestCas
      *
      * @throws ReflectionException
      */
-    public function testHoliday($year, $expected)
+    public function testHoliday($year, $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
@@ -53,7 +53,7 @@ class QueensBirthdayTest extends NewZealandBaseTestCase implements YasumiTestCas
      *  Tests that Holiday is not present before 1952
      * @throws ReflectionException
      */
-    public function testNotHoliday()
+    public function testNotHoliday(): void
     {
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, self::ESTABLISHMENT_YEAR - 1);
     }

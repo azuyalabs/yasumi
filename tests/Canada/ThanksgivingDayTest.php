@@ -40,7 +40,7 @@ class ThanksgivingDayTest extends CanadaBaseTestCase implements YasumiTestCaseIn
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testThanksgivingDayOnAfter1879()
+    public function testThanksgivingDayOnAfter1879(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -56,7 +56,7 @@ class ThanksgivingDayTest extends CanadaBaseTestCase implements YasumiTestCaseIn
      * of October.
      * @throws ReflectionException
      */
-    public function testThanksgivingDayBefore1879()
+    public function testThanksgivingDayBefore1879(): void
     {
         $this->assertNotHoliday(
             self::REGION,

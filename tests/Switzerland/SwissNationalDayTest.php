@@ -49,7 +49,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements YasumiTest
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testNationalDayOnAfter1994()
+    public function testNationalDayOnAfter1994(): void
     {
         $year = $this->generateRandomYear(self::NATIONAL_ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -66,7 +66,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements YasumiTest
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testNationalDayOnAfter1899()
+    public function testNationalDayOnAfter1899(): void
     {
         $year = $this->generateRandomYear(self::FIRST_ESTABLISHMENT_YEAR, self::NATIONAL_ESTABLISHMENT_YEAR - 1);
         $this->assertHoliday(
@@ -84,7 +84,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements YasumiTest
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testNationalDayOn1891()
+    public function testNationalDayOn1891(): void
     {
         $year = self::FIRST_OBSERVANCE_YEAR;
         $this->assertHoliday(
@@ -100,7 +100,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements YasumiTest
      * Tests National Day before 1891.
      * @throws ReflectionException
      */
-    public function testNationalDayBefore1891()
+    public function testNationalDayBefore1891(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -113,7 +113,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements YasumiTest
      * Tests National Day between 1891 and 1899.
      * @throws ReflectionException
      */
-    public function testNationalDayBetween1891And1899()
+    public function testNationalDayBetween1891And1899(): void
     {
         $year = $this->generateRandomYear(self::FIRST_OBSERVANCE_YEAR + 1, self::FIRST_ESTABLISHMENT_YEAR - 1);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);

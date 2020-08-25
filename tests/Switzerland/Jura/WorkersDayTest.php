@@ -40,7 +40,7 @@ class WorkersDayTest extends JuraBaseTestCase implements YasumiTestCaseInterface
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected)
+    public function testHoliday($year, $expected): void
     {
         $date = new DateTime($expected, new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);

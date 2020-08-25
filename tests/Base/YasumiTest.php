@@ -185,7 +185,7 @@ class YasumiTest extends TestCase
      *
      * @throws ReflectionException
      */
-    public function testNextWithBlankName(): void
+    public function testNextWithBlankKey(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -223,7 +223,7 @@ class YasumiTest extends TestCase
      *
      * @throws ReflectionException
      */
-    public function testPreviousWithBlankName(): void
+    public function testPreviousWithBlankKey(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -263,11 +263,11 @@ class YasumiTest extends TestCase
     }
 
     /**
-     * Tests that the WhenIs function throws an InvalidArgumentException when a blank name is given.
+     * Tests that the WhenIs function throws an InvalidArgumentException when a blank key is given.
      *
      * @throws ReflectionException
      */
-    public function testWhenIsWithBlankName(): void
+    public function testWhenIsWithBlankKey(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -280,7 +280,7 @@ class YasumiTest extends TestCase
      *
      * @throws ReflectionException
      */
-    public function testGetHolidayWithBlankName(): void
+    public function testGetHolidayWithBlankKey(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -307,7 +307,7 @@ class YasumiTest extends TestCase
      *
      * @throws ReflectionException
      */
-    public function testWhatWeekDayIsWithBlankName(): void
+    public function testWhatWeekDayIsWithBlankKey(): void
     {
         $this->expectException(InvalidArgumentException::class);
 

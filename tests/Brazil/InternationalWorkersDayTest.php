@@ -34,7 +34,7 @@ class InternationalWorkersDayTest extends BrazilBaseTestCase implements YasumiTe
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testInternationalWorkersDay()
+    public function testInternationalWorkersDay(): void
     {
         $year = 1927;
         $this->assertHoliday(

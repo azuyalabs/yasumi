@@ -39,7 +39,7 @@ class NewYearsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testNewYearsDayOnAfter1948()
+    public function testNewYearsDayOnAfter1948(): void
     {
         $year = 1997;
         $this->assertHoliday(
@@ -55,7 +55,7 @@ class NewYearsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testNewYearsDayOnAfter1948SubstitutedNextWorkingDay()
+    public function testNewYearsDayOnAfter1948SubstitutedNextWorkingDay(): void
     {
         $year = 4473;
         $this->assertHoliday(
@@ -70,7 +70,7 @@ class NewYearsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
      * Tests New Years Day before 1948. New Years Day was established after 1948
      * @throws ReflectionException
      */
-    public function testNewYearsDayBefore1948()
+    public function testNewYearsDayBefore1948(): void
     {
         $this->assertNotHoliday(
             self::REGION,

@@ -45,12 +45,12 @@ class NewYearsDayTest extends IrelandBaseTestCase implements YasumiTestCaseInter
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected)
+    public function testHoliday($year, $expected): void
     {
         $date = new DateTime($expected, new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
 
-        if (0 === (int)$date->format('w')) {
+        if (0 === (int) $date->format('w')) {
             $date->modify('next monday');
             $this->assertHoliday(self::REGION, 'substituteHoliday:' . self::HOLIDAY, $year, $date);
         }
@@ -79,7 +79,7 @@ class NewYearsDayTest extends IrelandBaseTestCase implements YasumiTestCaseInter
      * Tests the holiday defined in this test before establishment.
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,

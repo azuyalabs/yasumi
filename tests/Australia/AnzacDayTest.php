@@ -45,7 +45,7 @@ class AnzacDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInterf
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected)
+    public function testHoliday($year, $expected): void
     {
         $this->assertHoliday(
             $this->region,
@@ -59,7 +59,7 @@ class AnzacDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInterf
      *  Tests that ANZAC Day is not present before 1921
      * @throws ReflectionException
      */
-    public function testNotHoliday()
+    public function testNotHoliday(): void
     {
         $this->assertNotHoliday($this->region, self::HOLIDAY, self::ESTABLISHMENT_YEAR - 1);
     }

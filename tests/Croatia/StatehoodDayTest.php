@@ -44,7 +44,7 @@ class StatehoodDayTest extends CroatiaBaseTestCase implements YasumiTestCaseInte
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testStatehoodDay()
+    public function testStatehoodDay(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::DATE_CHANGE_YEAR - 1);
         $expectedDate = "$year-6-25";
@@ -69,7 +69,7 @@ class StatehoodDayTest extends CroatiaBaseTestCase implements YasumiTestCaseInte
      * Tests Statehood Day before 1991.
      * @throws ReflectionException
      */
-    public function testStatehoodDayBefore1991()
+    public function testStatehoodDayBefore1991(): void
     {
         $this->assertNotHoliday(
             self::REGION,

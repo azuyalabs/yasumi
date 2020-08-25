@@ -39,7 +39,7 @@ class ConstitutionDayTest extends PolandBaseTestCase implements YasumiTestCaseIn
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHolidayOnAfterEstablishment()
+    public function testHolidayOnAfterEstablishment(): void
     {
         $year = 2077;
         $this->assertHoliday(
@@ -54,7 +54,7 @@ class ConstitutionDayTest extends PolandBaseTestCase implements YasumiTestCaseIn
      * Tests the holiday defined in this test before establishment.
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,

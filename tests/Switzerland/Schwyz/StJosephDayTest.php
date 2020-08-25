@@ -41,7 +41,7 @@ class StJosephDayTest extends SchwyzBaseTestCase implements YasumiTestCaseInterf
      *
      * @throws ReflectionException
      */
-    public function testStJosephDay($year, $expected)
+    public function testStJosephDay($year, $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

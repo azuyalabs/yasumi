@@ -39,7 +39,7 @@ class ConstantinBrancusiDayTest extends RomaniaBaseTestCase implements YasumiTes
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testConstantinBrancusiDayOnAfter2016()
+    public function testConstantinBrancusiDayOnAfter2016(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -54,7 +54,7 @@ class ConstantinBrancusiDayTest extends RomaniaBaseTestCase implements YasumiTes
      * Tests Constantin Brancusi Day before 2016.
      * @throws ReflectionException
      */
-    public function testConstantinBrancusiDayBefore2016()
+    public function testConstantinBrancusiDayBefore2016(): void
     {
         $this->assertNotHoliday(
             self::REGION,

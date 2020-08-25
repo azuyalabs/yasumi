@@ -56,7 +56,7 @@ class ReformationDayTest extends MecklenburgWesternPomeraniaBaseTestCase impleme
      * Tests the holiday defined in this test before establishment.
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,

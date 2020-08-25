@@ -14,6 +14,7 @@
 // Translations for New Year's Eve
 return [
     'da' => 'nytårsaften',
+    'de' => 'Silvester',
     'en' => 'New Year’s Eve',
     'ko' => '신년전야',
     'lv' => 'Vecgada vakars',

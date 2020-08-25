@@ -38,7 +38,7 @@ class ValentinesDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
      *
      * @throws ReflectionException
      */
-    public function testValentinesDay($year, $expected)
+    public function testValentinesDay($year, $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

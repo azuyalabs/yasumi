@@ -34,7 +34,7 @@ class ChristmasDayTest extends USABaseTestCase implements YasumiTestCaseInterfac
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testChristmasDay()
+    public function testChristmasDay(): void
     {
         $year = 2001;
         $this->assertHoliday(
@@ -50,7 +50,7 @@ class ChristmasDayTest extends USABaseTestCase implements YasumiTestCaseInterfac
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testChristmasDaySubstitutedMonday()
+    public function testChristmasDaySubstitutedMonday(): void
     {
         // Substituted Holiday on Monday (Christmas Day falls on Sunday)
         $year = 6101;
@@ -67,7 +67,7 @@ class ChristmasDayTest extends USABaseTestCase implements YasumiTestCaseInterfac
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testChristmasDaySubstitutedFriday()
+    public function testChristmasDaySubstitutedFriday(): void
     {
         // Substituted Holiday on Friday (Christmas Day falls on Saturday)
         $year = 2060;

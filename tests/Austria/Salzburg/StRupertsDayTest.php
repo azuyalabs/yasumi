@@ -38,7 +38,7 @@ class StRupertsDayTest extends SalzburgBaseTestCase implements YasumiTestCaseInt
      *
      * @throws ReflectionException
      */
-    public function testStRupertsDay($year, $expected)
+    public function testStRupertsDay($year, $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

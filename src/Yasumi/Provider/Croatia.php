@@ -77,6 +77,7 @@ class Croatia extends AbstractProvider
     /**
      * Starting from the year 2020. statehood day is celebrated at a new date
      * Source: https://narodne-novine.nn.hr/clanci/sluzbeni/2019_11_110_2212.html
+     * @throws \Exception
      */
     private function calculateStatehoodDay(): void
     {
@@ -99,10 +100,11 @@ class Croatia extends AbstractProvider
     /**
      * Starting from the year 2020. Homeland Thanksgiving Day name is slightly changed
      * Source: https://narodne-novine.nn.hr/clanci/sluzbeni/2019_11_110_2212.html
+     * @throws \Exception
      */
     private function calculateHomelandThanksgivingDay(): void
     {
-        $names = null;
+        $names = [];
         if ($this->year >= 1995 && $this->year < 2020) {
             $names['en'] = 'Homeland Thanksgiving Day';
             $names['hr'] = 'Dan domovinske zahvalnosti';
@@ -111,7 +113,7 @@ class Croatia extends AbstractProvider
             $names['hr'] = 'Dan pobjede i domovinske zahvalnosti i Dan hrvatskih branitelja';
         }
 
-        if (null !== $names) {
+        if (! empty($names)) {
             $this->addHoliday(new Holiday(
                 'homelandThanksgiving',
                 $names,
@@ -125,6 +127,7 @@ class Croatia extends AbstractProvider
      * Starting from the year 2020. Independence Day is no longer an official holiday,
      * but is still remembered under a different name as Croatian Parliament Day (Dan Hrvatskog sabora)
      * Source: https://narodne-novine.nn.hr/clanci/sluzbeni/2019_11_110_2212.html
+     * @throws \Exception
      */
     private function calculateIndependenceDay(): void
     {
@@ -139,6 +142,7 @@ class Croatia extends AbstractProvider
     /**
      * Starting from the year 2020. a new holiday was added
      * Source: https://narodne-novine.nn.hr/clanci/sluzbeni/2019_11_110_2212.html
+     * @throws \Exception
      */
     private function calculateRemembranceDayForHomelandWarVictims(): void
     {

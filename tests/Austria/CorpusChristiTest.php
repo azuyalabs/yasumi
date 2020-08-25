@@ -37,7 +37,7 @@ class CorpusChristiTest extends AustriaBaseTestCase implements YasumiTestCaseInt
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHoliday()
+    public function testHoliday(): void
     {
         $year = 1988;
         $this->assertHoliday(

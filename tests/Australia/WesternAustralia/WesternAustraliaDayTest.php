@@ -40,7 +40,7 @@ class WesternAustraliaDayTest extends WesternAustraliaBaseTestCase implements Ya
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected)
+    public function testHoliday($year, $expected): void
     {
         $this->assertHoliday(
             $this->region,

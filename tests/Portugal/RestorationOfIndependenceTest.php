@@ -51,7 +51,7 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Yasu
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHolidayOnAfterEstablishment()
+    public function testHolidayOnAfterEstablishment(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::HOLIDAY_YEAR_ABOLISHED - 1);
 
@@ -70,7 +70,7 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Yasu
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHolidayOnAfterRestoration()
+    public function testHolidayOnAfterRestoration(): void
     {
         $year = 2016;
 
@@ -87,7 +87,7 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Yasu
      * Test that the holiday did not happen in 2013-2015.
      * @throws ReflectionException
      */
-    public function testNotHolidayDuringAbolishment()
+    public function testNotHolidayDuringAbolishment(): void
     {
         $year = $this->generateRandomYear(2013, 2015);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
@@ -98,7 +98,7 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Yasu
      *
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);

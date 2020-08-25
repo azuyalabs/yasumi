@@ -31,12 +31,17 @@ class QuebecTest extends QuebecBaseTestCase
      */
     public function testOfficialHolidays(): void
     {
-        $this->assertDefinedHolidays([
+        $holidays = [
             'goodFriday',
             'christmasDay',
             'saintJeanBaptisteDay',
-            'nationalPatriotsDay',
-        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
+        ];
+
+        if ($this->year >= 2003) {
+            $holidays[] = 'nationalPatriotsDay';
+        }
+
+        $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

@@ -40,7 +40,7 @@ class MartinLutherKingDayTest extends USABaseTestCase implements YasumiTestCaseI
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testMartinLutherKingDayOnAfter1986()
+    public function testMartinLutherKingDayOnAfter1986(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -56,7 +56,7 @@ class MartinLutherKingDayTest extends USABaseTestCase implements YasumiTestCaseI
      * Monday of January.
      * @throws ReflectionException
      */
-    public function testMartinLutherKingDayBefore1986()
+    public function testMartinLutherKingDayBefore1986(): void
     {
         $this->assertNotHoliday(
             self::REGION,

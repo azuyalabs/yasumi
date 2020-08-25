@@ -44,7 +44,7 @@ class CorpusChristiTest extends PortugalBaseTestCase implements YasumiTestCaseIn
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday()
+    public function testHoliday(): void
     {
         $year = 2016;
         $expected = new DateTime("$year-5-26", new DateTimeZone(self::TIMEZONE));
@@ -55,7 +55,7 @@ class CorpusChristiTest extends PortugalBaseTestCase implements YasumiTestCaseIn
      * Test that the holiday did not happen in 2013-2015.
      * @throws ReflectionException
      */
-    public function testNotHoliday()
+    public function testNotHoliday(): void
     {
         $year = $this->generateRandomYear(2013, 2015);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);

@@ -45,6 +45,7 @@ class Germany extends AbstractProvider
 
         // Add common holidays
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->newYearsEve($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
 
         // Add common Christian holidays (common in Germany)
         $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale));

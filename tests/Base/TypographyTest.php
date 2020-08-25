@@ -35,10 +35,10 @@ class TypographyTest extends TestCase
      *
      * @param string $name The localized holiday name
      * @param string $class The provider
-     * @param string $shortName The short name (internal name) of the holiday
+     * @param string $key The holiday key
      * @param string $locale The locale
      */
-    public function testTranslations($name, $class, $shortName, $locale): void
+    public function testTranslations($name, $class, $key, $locale): void
     {
         $this->assertStringNotContainsString("'", $name, 'Translation contains typewriter apostrophe');
         $this->assertStringNotContainsString('"', $name, 'Translation contains typewriter quote');
@@ -46,6 +46,7 @@ class TypographyTest extends TestCase
 
     /**
      * Provides test data for testProvider().
+     * @throws \ReflectionException
      */
     public function translationProvider(): array
     {
@@ -58,7 +59,7 @@ class TypographyTest extends TestCase
 
             foreach ($provider->getHolidays() as $holiday) {
                 foreach ($holiday->translations as $locale => $name) {
-                    $tests[$name] = [$name, $class, $holiday->shortName, $locale];
+                    $tests[$name] = [$name, $class, $holiday->getKey(), $locale];
                 }
             }
         }

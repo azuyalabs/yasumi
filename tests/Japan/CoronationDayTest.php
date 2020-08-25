@@ -41,7 +41,7 @@ class CoronationDayTest extends JapanBaseTestCase implements YasumiTestCaseInter
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testEmperorsCoronationDay()
+    public function testEmperorsCoronationDay(): void
     {
         $this->assertHoliday(
             self::REGION,
@@ -55,7 +55,7 @@ class CoronationDayTest extends JapanBaseTestCase implements YasumiTestCaseInter
     /**
      * @throws ReflectionException
      */
-    public function testEmperorsBirthdayBefore2019()
+    public function testEmperorsBirthdayBefore2019(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -67,7 +67,7 @@ class CoronationDayTest extends JapanBaseTestCase implements YasumiTestCaseInter
     /**
      * @throws ReflectionException
      */
-    public function testEmperorsBirthdayAfter2020()
+    public function testEmperorsBirthdayAfter2020(): void
     {
         $this->assertNotHoliday(
             self::REGION,

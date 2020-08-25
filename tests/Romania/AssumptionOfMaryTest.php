@@ -39,7 +39,7 @@ class AssumptionOfMaryTest extends RomaniaBaseTestCase implements YasumiTestCase
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testAssumptionOfMaryDayOnAfter2008()
+    public function testAssumptionOfMaryDayOnAfter2008(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -54,7 +54,7 @@ class AssumptionOfMaryTest extends RomaniaBaseTestCase implements YasumiTestCase
      * Tests Assumption of Mary Day before 2008.
      * @throws ReflectionException
      */
-    public function testAssumptionOfMaryDayBefore2008()
+    public function testAssumptionOfMaryDayBefore2008(): void
     {
         $this->assertNotHoliday(
             self::REGION,

@@ -34,7 +34,7 @@ class AshWednesdayTest extends NetherlandsBaseTestCase implements YasumiTestCase
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHoliday()
+    public function testHoliday(): void
     {
         $year = 1999;
         $this->assertHoliday(

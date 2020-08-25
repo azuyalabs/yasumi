@@ -39,7 +39,7 @@ class RemembranceDayTest extends CroatiaBaseTestCase implements YasumiTestCaseIn
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testRemembranceDayAfterItWasEstablished()
+    public function testRemembranceDayAfterItWasEstablished(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -55,7 +55,7 @@ class RemembranceDayTest extends CroatiaBaseTestCase implements YasumiTestCaseIn
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testRemembranceDayBeforeItWasEstablished()
+    public function testRemembranceDayBeforeItWasEstablished(): void
     {
         $this->assertNotHoliday(
             self::REGION,

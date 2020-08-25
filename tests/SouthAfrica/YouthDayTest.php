@@ -50,13 +50,13 @@ class YouthDayTest extends SouthAfricaBaseTestCase implements YasumiTestCaseInte
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected)
+    public function testHoliday($year, $expected): void
     {
         $date = new DateTime($expected, new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
 
         // Whenever any public holiday falls on a Sunday, the Monday following on it shall be a public holiday.
-        if (0 === (int)$date->format('w')) {
+        if (0 === (int) $date->format('w')) {
             $date->add(new DateInterval('P1D'));
             $this->assertHoliday(self::REGION, 'substituteHoliday:' . self::HOLIDAY, $year, $date);
         }
@@ -85,7 +85,7 @@ class YouthDayTest extends SouthAfricaBaseTestCase implements YasumiTestCaseInte
      * Tests the holiday defined in this test before establishment.
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,

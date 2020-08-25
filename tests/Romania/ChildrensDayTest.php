@@ -39,7 +39,7 @@ class ChildrensDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInte
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testChildrensDayOnAfter1950()
+    public function testChildrensDayOnAfter1950(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -54,7 +54,7 @@ class ChildrensDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInte
      * Tests Children's Day before 1950.
      * @throws ReflectionException
      */
-    public function testChildrensDayBefore1950()
+    public function testChildrensDayBefore1950(): void
     {
         $this->assertNotHoliday(
             self::REGION,

@@ -43,7 +43,7 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements YasumiTest
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected)
+    public function testHoliday($year, $expected): void
     {
         $this->assertHoliday(
             $this->region,
@@ -86,7 +86,7 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements YasumiTest
      *  Tests that Holiday is not present before establishment year
      * @throws ReflectionException
      */
-    public function testNotHoliday()
+    public function testNotHoliday(): void
     {
         $this->assertNotHoliday($this->region, self::HOLIDAY, self::ESTABLISHMENT_YEAR - 1);
     }

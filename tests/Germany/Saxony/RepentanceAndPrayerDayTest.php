@@ -44,7 +44,7 @@ class RepentanceAndPrayerDayTest extends SaxonyBaseTestCase implements YasumiTes
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHolidayOnAfterEstablishment()
+    public function testHolidayOnAfterEstablishment(): void
     {
         // Check between the 16th and 22nd day the one that is a Wednesday
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
@@ -62,7 +62,7 @@ class RepentanceAndPrayerDayTest extends SaxonyBaseTestCase implements YasumiTes
      * Tests the holiday defined in this test before establishment.
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,

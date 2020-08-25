@@ -31,7 +31,7 @@ class StJohnsDayTest extends SwedenBaseTestCase implements YasumiTestCaseInterfa
      * Tests the holiday defined in this test.
      * @throws ReflectionException
      */
-    public function testHoliday()
+    public function testHoliday(): void
     {
         $year = $this->generateRandomYear();
 

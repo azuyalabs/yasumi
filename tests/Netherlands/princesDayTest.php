@@ -34,7 +34,7 @@ class princesDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseIn
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testPrincesDay()
+    public function testPrincesDay(): void
     {
         $year = $this->generateRandomYear();
         $this->assertHoliday(

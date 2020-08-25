@@ -16,6 +16,7 @@ use DateTime;
 use DateTimeZone;
 use Exception;
 use ReflectionException;
+use Yasumi\Exception\MissingTranslationException;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 use Yasumi\Yasumi;
@@ -40,7 +41,7 @@ class VeteransDayTest extends USABaseTestCase implements YasumiTestCaseInterface
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testVeteransDayOnAfter1919()
+    public function testVeteransDayOnAfter1919(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -56,7 +57,7 @@ class VeteransDayTest extends USABaseTestCase implements YasumiTestCaseInterface
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testVeteransDayOnAfter1919SubstitutedMonday()
+    public function testVeteransDayOnAfter1919SubstitutedMonday(): void
     {
         $year = 2018;
         $this->assertHoliday(
@@ -72,7 +73,7 @@ class VeteransDayTest extends USABaseTestCase implements YasumiTestCaseInterface
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testVeteransDayOnAfter1919SubstitutedFriday()
+    public function testVeteransDayOnAfter1919SubstitutedFriday(): void
     {
         $year = 2017;
         $this->assertHoliday(
@@ -87,7 +88,7 @@ class VeteransDayTest extends USABaseTestCase implements YasumiTestCaseInterface
      * Tests Veterans Day before 1919. Veterans Day was established in 1919 on November 11.
      * @throws ReflectionException
      */
-    public function testVeteransDayBefore1919()
+    public function testVeteransDayBefore1919(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -99,8 +100,9 @@ class VeteransDayTest extends USABaseTestCase implements YasumiTestCaseInterface
     /**
      * Tests name of Veterans Day before 1954. Veterans Day was named 'Armistice Day' before 1954.
      * @throws ReflectionException
+     * @throws MissingTranslationException
      */
-    public function testVeteransDayNameBefore1954()
+    public function testVeteransDayNameBefore1954(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1953);
 
@@ -112,8 +114,9 @@ class VeteransDayTest extends USABaseTestCase implements YasumiTestCaseInterface
     /**
      * Tests name of Veterans Day after 1954. Veterans Day was named 'Armistice Day' before 1954.
      * @throws ReflectionException
+     * @throws MissingTranslationException
      */
-    public function testVeteransDayNameAfter1954()
+    public function testVeteransDayNameAfter1954(): void
     {
         $year = $this->generateRandomYear(1954);
 

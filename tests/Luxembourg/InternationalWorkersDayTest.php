@@ -38,7 +38,7 @@ class InternationalWorkersDayTest extends LuxembourgBaseTestCase implements Yasu
      *
      * @throws ReflectionException
      */
-    public function testInternationalWorkersDay($year, $expected)
+    public function testInternationalWorkersDay($year, $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

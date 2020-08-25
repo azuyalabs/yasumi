@@ -34,7 +34,7 @@ class RestaurationGenevoiseTest extends GenevaBaseTestCase implements YasumiTest
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testRestaurationGenevoiseAfter1813()
+    public function testRestaurationGenevoiseAfter1813(): void
     {
         $year = $this->generateRandomYear(1814);
 

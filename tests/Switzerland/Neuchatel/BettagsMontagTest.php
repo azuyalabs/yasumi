@@ -36,7 +36,7 @@ class BettagsMontagTest extends NeuchatelBaseTestCase implements YasumiTestCaseI
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testBettagsMontagOnAfter1832()
+    public function testBettagsMontagOnAfter1832(): void
     {
         $year = $this->generateRandomYear(1832);
 
@@ -52,7 +52,7 @@ class BettagsMontagTest extends NeuchatelBaseTestCase implements YasumiTestCaseI
      * Tests Bettags Montag before 1832
      * @throws ReflectionException
      */
-    public function testBettagsMontagBefore1832()
+    public function testBettagsMontagBefore1832(): void
     {
         $year = $this->generateRandomYear(1000, 1831);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);

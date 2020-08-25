@@ -98,7 +98,7 @@ class Estonia extends AbstractProvider
         if ($this->year >= self::RESTORATION_OF_INDEPENDENCE_YEAR) {
             $this->addHoliday(new Holiday('restorationOfIndependenceDay', [
                 'en' => 'Day of Restoration of Independence',
-                'et' => 'Tasiseseisvumispäev',
+                'et' => 'Taasiseseisvumispäev',
             ], new \DateTime("{$this->year}-08-20", new \DateTimeZone($this->timezone))));
         }
     }

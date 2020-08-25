@@ -34,7 +34,7 @@ class NewYearsDayTest extends USABaseTestCase implements YasumiTestCaseInterface
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testNewYearsDay()
+    public function testNewYearsDay(): void
     {
         $year = 1997;
         $this->assertHoliday(
@@ -50,7 +50,7 @@ class NewYearsDayTest extends USABaseTestCase implements YasumiTestCaseInterface
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testNewYearsDaySubstitutedMonday()
+    public function testNewYearsDaySubstitutedMonday(): void
     {
         $year = 2445;
         $this->assertHoliday(
@@ -66,7 +66,7 @@ class NewYearsDayTest extends USABaseTestCase implements YasumiTestCaseInterface
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testNewYearsDaySubstitutedFriday()
+    public function testNewYearsDaySubstitutedFriday(): void
     {
         $year = 1938;
         $subYear = $year - 1;

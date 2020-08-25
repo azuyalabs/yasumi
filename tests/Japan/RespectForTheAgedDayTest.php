@@ -40,7 +40,7 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase implements YasumiTestCa
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testRespectForTheAgedDayOnAfter2003()
+    public function testRespectForTheAgedDayOnAfter2003(): void
     {
         $year = $this->generateRandomYear(2004);
         $this->assertHoliday(
@@ -57,7 +57,7 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase implements YasumiTestCa
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testRespectForTheAgedDayBetween1996And2003()
+    public function testRespectForTheAgedDayBetween1996And2003(): void
     {
         $year = 1998;
         $this->assertHoliday(
@@ -74,7 +74,7 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase implements YasumiTestCa
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testRespectForTheAgedDayBetween1996And2003SubstitutedNextWorkingDay()
+    public function testRespectForTheAgedDayBetween1996And2003SubstitutedNextWorkingDay(): void
     {
         $year = 2002;
         $this->assertHoliday(
@@ -90,7 +90,7 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase implements YasumiTestCa
      * 15th. After 2003 it was changed to be the third monday of September.
      * @throws ReflectionException
      */
-    public function testRespectForTheAgedDayBefore1996()
+    public function testRespectForTheAgedDayBefore1996(): void
     {
         $this->assertNotHoliday(
             self::REGION,

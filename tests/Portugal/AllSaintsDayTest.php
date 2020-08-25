@@ -46,7 +46,7 @@ class AllSaintsDayTest extends PortugalBaseTestCase implements YasumiTestCaseInt
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday()
+    public function testHoliday(): void
     {
         $year = 2016;
         $expected = new DateTime("$year-11-01", new DateTimeZone(self::TIMEZONE));
@@ -61,7 +61,7 @@ class AllSaintsDayTest extends PortugalBaseTestCase implements YasumiTestCaseInt
      * Test that the holiday did not happen in 2013-2015.
      * @throws ReflectionException
      */
-    public function testNotHoliday()
+    public function testNotHoliday(): void
     {
         $year = $this->generateRandomYear(2013, 2015);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);

@@ -38,7 +38,7 @@ class LiberationDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
      * Tests Liberation Day before 1947. Liberation Day was established after WWII in 1947.
      * @throws ReflectionException
      */
-    public function testLiberationDayBefore1947()
+    public function testLiberationDayBefore1947(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -52,7 +52,7 @@ class LiberationDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testLiberationDayOnAfter1947()
+    public function testLiberationDayOnAfter1947(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(

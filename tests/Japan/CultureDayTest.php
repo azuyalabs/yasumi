@@ -39,7 +39,7 @@ class CultureDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfac
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testCultureDayOnAfter1948()
+    public function testCultureDayOnAfter1948(): void
     {
         $year = 1973;
         $this->assertHoliday(
@@ -55,7 +55,7 @@ class CultureDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfac
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testCultureDayOnAfter1948SubstitutedNextWorkingDay()
+    public function testCultureDayOnAfter1948SubstitutedNextWorkingDay(): void
     {
         $year = 2661;
         $this->assertHoliday(
@@ -70,7 +70,7 @@ class CultureDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfac
      * Tests Culture Day before 1948. Culture Day was established after 1948
      * @throws ReflectionException
      */
-    public function testCultureDayBefore1948()
+    public function testCultureDayBefore1948(): void
     {
         $this->assertNotHoliday(
             self::REGION,

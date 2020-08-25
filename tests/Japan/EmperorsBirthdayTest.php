@@ -41,7 +41,7 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements YasumiTestCaseIn
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testEmperorsBirthdayOnAfter1949()
+    public function testEmperorsBirthdayOnAfter1949(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1987);
         $this->assertHoliday(
@@ -59,7 +59,7 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements YasumiTestCaseIn
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testEmperorsBirthdayOnAfter1989()
+    public function testEmperorsBirthdayOnAfter1989(): void
     {
         $year = $this->generateRandomYear(1989, 2018);
         $this->assertHoliday(
@@ -76,7 +76,7 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements YasumiTestCaseIn
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testEmperorsBirthdayOnAfter2020()
+    public function testEmperorsBirthdayOnAfter2020(): void
     {
         $year = $this->generateRandomYear(2020);
         $this->assertHoliday(
@@ -93,7 +93,7 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements YasumiTestCaseIn
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testEmperorsBirthdayOnAfter1989SubstitutedNextWorkingDay()
+    public function testEmperorsBirthdayOnAfter1989SubstitutedNextWorkingDay(): void
     {
         $year = 2001;
         $this->assertHoliday(
@@ -110,7 +110,7 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements YasumiTestCaseIn
      * Day"/"Greenery Day"
      * @throws ReflectionException
      */
-    public function testEmperorsBirthdayBefore1989()
+    public function testEmperorsBirthdayBefore1989(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -124,7 +124,7 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements YasumiTestCaseIn
      *
      * @throws ReflectionException
      */
-    public function testEmperorsBirthdayAt2019()
+    public function testEmperorsBirthdayAt2019(): void
     {
         $this->assertNotHoliday(
             self::REGION,

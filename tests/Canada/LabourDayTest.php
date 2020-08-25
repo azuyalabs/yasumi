@@ -39,7 +39,7 @@ class LabourDayTest extends CanadaBaseTestCase implements YasumiTestCaseInterfac
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testLabourDayOnAfter1894()
+    public function testLabourDayOnAfter1894(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -54,7 +54,7 @@ class LabourDayTest extends CanadaBaseTestCase implements YasumiTestCaseInterfac
      * Tests Labour Day before 1894. Labour Day was established since 1894 on the first Monday of September.
      * @throws ReflectionException
      */
-    public function testLabourDayBefore1894()
+    public function testLabourDayBefore1894(): void
     {
         $this->assertNotHoliday(
             self::REGION,

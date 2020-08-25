@@ -51,12 +51,12 @@ class SecondNewYearsDayTest extends ScotlandBaseTestCase implements YasumiTestCa
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHolidayOnAfterEstablishment($year, $expected)
+    public function testHolidayOnAfterEstablishment($year, $expected): void
     {
         $date = new DateTime($expected, new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
 
-        if (\in_array((int)$date->format('w'), [0, 6], true)) {
+        if (\in_array((int) $date->format('w'), [0, 6], true)) {
             $date->add(new DateInterval('P2D'));
             $this->assertHoliday(self::REGION, 'substituteHoliday:' . self::HOLIDAY, $year, $date);
         }
@@ -66,7 +66,7 @@ class SecondNewYearsDayTest extends ScotlandBaseTestCase implements YasumiTestCa
      * Tests the holiday defined in this test before establishment.
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -79,7 +79,7 @@ class SecondNewYearsDayTest extends ScotlandBaseTestCase implements YasumiTestCa
      * Tests that the holiday defined in this test is of the type 'observance' before the year it was changed.
      * @throws ReflectionException
      */
-    public function testHolidayIsObservedTypeBeforeChange()
+    public function testHolidayIsObservedTypeBeforeChange(): void
     {
         $this->assertHolidayType(
             self::REGION,

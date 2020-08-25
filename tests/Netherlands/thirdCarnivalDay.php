@@ -44,7 +44,7 @@ class thirdCarnivalDay extends NetherlandsBaseTestCase implements YasumiTestCase
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday()
+    public function testHoliday(): void
     {
         $year = 2015;
         $this->assertHoliday(

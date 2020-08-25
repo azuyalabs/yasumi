@@ -67,8 +67,8 @@ class SubstituteHolidayTest extends TestCase
         $holiday = new Holiday('testHoliday', [], new DateTime('2019-01-01'), 'en_US', Holiday::TYPE_BANK);
         $substitute = new SubstituteHoliday($holiday, [], new DateTime('2019-01-02'), 'en_US', Holiday::TYPE_SEASON);
 
-        $this->assertSame($holiday, $substitute->substitutedHoliday);
-        $this->assertEquals('substituteHoliday:testHoliday', $substitute->shortName);
+        $this->assertSame($holiday, $substitute->getSubstitutedHoliday());
+        $this->assertEquals('substituteHoliday:testHoliday', $substitute->getKey());
         $this->assertEquals(Holiday::TYPE_SEASON, $substitute->getType());
         $this->assertEquals(new DateTime('2019-01-02'), $substitute);
     }

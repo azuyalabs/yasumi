@@ -39,7 +39,7 @@ class SummerBankHolidayTest extends ScotlandBaseTestCase implements YasumiTestCa
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHoliday()
+    public function testHoliday(): void
     {
         $year = $this->generateRandomYear(1970);
         $this->assertHoliday(
@@ -54,7 +54,7 @@ class SummerBankHolidayTest extends ScotlandBaseTestCase implements YasumiTestCa
      * Tests the holiday defined in this test before establishment.
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,

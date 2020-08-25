@@ -139,7 +139,6 @@ class Netherlands extends AbstractProvider
      *
      * @throws \Exception
      * @see \Yasumi\Provider\CommonHolidays::winterTime()
-     *
      */
     private function calculateWinterTime(): void
     {
@@ -156,7 +155,6 @@ class Netherlands extends AbstractProvider
      *
      * @throws \Exception
      * @see \Yasumi\Provider\CommonHolidays::summerTime()
-     *
      */
     private function calculateSummerTime(): void
     {
@@ -252,7 +250,7 @@ class Netherlands extends AbstractProvider
             }
 
             // Determine substitution day
-            if (0 === (int)$date->format('w')) {
+            if (0 === (int) $date->format('w')) {
                 $this->year < 1980 ? $date->add(new DateInterval('P1D')) : $date->sub(new DateInterval('P1D'));
             }
 
@@ -278,7 +276,7 @@ class Netherlands extends AbstractProvider
         if ($this->year >= 2014) {
             $date = new DateTime("$this->year-4-27", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
-            if (0 === (int)$date->format('w')) {
+            if (0 === (int) $date->format('w')) {
                 $date->sub(new DateInterval('P1D'));
             }
 

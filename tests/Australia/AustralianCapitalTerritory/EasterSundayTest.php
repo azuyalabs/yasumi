@@ -40,7 +40,7 @@ class EasterSundayTest extends AustralianCapitalTerritoryBaseTestCase implements
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected)
+    public function testHoliday($year, $expected): void
     {
         $this->assertHoliday(
             $this->region,

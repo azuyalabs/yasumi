@@ -41,7 +41,7 @@ class BuddhasBirthdayTest extends SouthKoreaBaseTestCase implements YasumiTestCa
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHoliday()
+    public function testHoliday(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2050);
         if (isset(SouthKorea::LUNAR_HOLIDAY[self::HOLIDAY][$year])) {
@@ -58,7 +58,7 @@ class BuddhasBirthdayTest extends SouthKoreaBaseTestCase implements YasumiTestCa
      * Tests the holiday defined in this test before establishment.
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,

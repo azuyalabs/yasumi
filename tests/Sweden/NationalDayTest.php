@@ -39,7 +39,7 @@ class NationalDayTest extends SwedenBaseTestCase implements YasumiTestCaseInterf
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHolidayOnAfterEstablishment()
+    public function testHolidayOnAfterEstablishment(): void
     {
         $year = 2022;
         $this->assertHoliday(
@@ -54,7 +54,7 @@ class NationalDayTest extends SwedenBaseTestCase implements YasumiTestCaseInterf
      * Tests the holiday defined in this test before establishment.
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment()
+    public function testHolidayBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -95,7 +95,7 @@ class NationalDayTest extends SwedenBaseTestCase implements YasumiTestCaseInterf
      * Tests the translated name of the holiday defined in this test on or after establishment.
      * @throws ReflectionException
      */
-    public function testTranslationOnAfterNameChange()
+    public function testTranslationOnAfterNameChange(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,

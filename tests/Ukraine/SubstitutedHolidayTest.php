@@ -16,7 +16,12 @@ namespace Yasumi\tests\Ukraine;
 use DateTime;
 use DateTimeZone;
 use Exception;
+use InvalidArgumentException;
+use PHPUnit\Framework\AssertionFailedError;
 use ReflectionException;
+use RuntimeException;
+use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\SubstituteHoliday;
 use Yasumi\tests\YasumiTestCaseInterface;
@@ -33,7 +38,7 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements YasumiTestCa
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testSaturdaySubstitution()
+    public function testSaturdaySubstitution(): void
     {
         // 2020-05-09 victoryDay (День перемоги)
         $year = 2020;
@@ -54,10 +59,10 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements YasumiTestCa
      * Asserts that the expected date is indeed a holiday for that given year and name
      *
      * @param string $provider the holiday provider (i.e. country/state) for which the holiday need to be tested
-     * @param string $shortName string the short name of the holiday to be checked against
+     * @param string $key string the key of the holiday to be checked against
      * @param int $year holiday calendar year
-     * @param DateTime $expected the official date to be checked against
-     * @param DateTime $expected the substituted date to be checked against
+     * @param DateTime $expectedOfficial the official date to be checked against
+     * @param DateTime $expectedSubstitution the substituted date to be checked against
      *
      * @throws UnknownLocaleException
      * @throws InvalidDateException
@@ -68,21 +73,21 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements YasumiTestCa
      */
     public function assertHolidayWithSubstitution(
         string $provider,
-        string $shortName,
+        string $key,
         int $year,
         DateTime $expectedOfficial,
         DateTime $expectedSubstitution = null
     ): void {
         $holidays = Yasumi::create($provider, $year);
 
-        $holidayOfficial = $holidays->getHoliday($shortName);
+        $holidayOfficial = $holidays->getHoliday($key);
         $this->assertInstanceOf(Holiday::class, $holidayOfficial);
         $this->assertNotNull($holidayOfficial);
         $this->assertEquals($expectedOfficial, $holidayOfficial);
         $this->assertTrue($holidays->isHoliday($holidayOfficial));
         $this->assertEquals(Holiday::TYPE_OFFICIAL, $holidayOfficial->getType());
 
-        $holidaySubstitution = $holidays->getHoliday('substituteHoliday:' . $holidayOfficial->shortName);
+        $holidaySubstitution = $holidays->getHoliday('substituteHoliday:' . $holidayOfficial->getKey());
         if ($expectedSubstitution === null) {
             // without substitution
             $this->assertNull($holidaySubstitution);
@@ -166,7 +171,6 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements YasumiTestCa
 
     /**
      * Dummy: Tests the translated name of the holiday defined in this test.
-     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -175,7 +179,6 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements YasumiTestCa
 
     /**
      * Dummy: Tests type of the holiday defined in this test.
-     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

@@ -34,7 +34,7 @@ class DosdeMayoUprisingDayTest extends CommunityOfMadridBaseTestCase implements 
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHoliday()
+    public function testHoliday(): void
     {
         $year = $this->generateRandomYear();
         $this->assertHoliday(
