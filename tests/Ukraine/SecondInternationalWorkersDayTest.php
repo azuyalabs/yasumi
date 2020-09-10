@@ -55,7 +55,7 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements Y
         $holidays = Yasumi::create(self::REGION, $year);
         $holiday = $holidays->getHoliday(self::HOLIDAY);
 
-        $this->assertNull($holiday);
+        self::assertNull($holiday);
 
         unset($year, $holiday, $holidays);
     }

@@ -53,9 +53,9 @@ class RepentanceAndPrayerDayTest extends SaxonyBaseTestCase implements YasumiTes
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $holiday);
 
         // Holiday specific assertions
-        $this->assertEquals('Wednesday', $holiday->format('l'));
-        $this->assertGreaterThanOrEqual(16, $holiday->format('j'));
-        $this->assertLessThanOrEqual(22, $holiday->format('j'));
+        self::assertEquals('Wednesday', $holiday->format('l'));
+        self::assertGreaterThanOrEqual(16, $holiday->format('j'));
+        self::assertLessThanOrEqual(22, $holiday->format('j'));
     }
 
     /**

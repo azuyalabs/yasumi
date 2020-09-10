@@ -47,15 +47,15 @@ class YasumiWorkdayTest extends TestCase
         $startDate = new DateTime($date, new DateTimeZone($timezone));
         $result = Yasumi::nextWorkingDay($provider, $startDate);
 
-        $this->assertInstanceOf(DateTime::class, $result);
-        $this->assertEquals($expectedDate, $result->format(self::FORMAT_DATE));
+        self::assertInstanceOf(DateTime::class, $result);
+        self::assertEquals($expectedDate, $result->format(self::FORMAT_DATE));
 
         // Assertion using a DateTimeImmutable instance
         $startDate = new DateTimeImmutable($date, new DateTimeZone($timezone));
         $result = Yasumi::nextWorkingDay($provider, $startDate);
 
-        $this->assertInstanceOf(DateTimeImmutable::class, $result);
-        $this->assertEquals($expectedDate, $result->format(self::FORMAT_DATE));
+        self::assertInstanceOf(DateTimeImmutable::class, $result);
+        self::assertEquals($expectedDate, $result->format(self::FORMAT_DATE));
     }
 
     /**
@@ -76,15 +76,15 @@ class YasumiWorkdayTest extends TestCase
         $startDate = new DateTime($date, new DateTimeZone($timezone));
         $result = Yasumi::prevWorkingDay($provider, $startDate);
 
-        $this->assertInstanceOf(DateTime::class, $result);
-        $this->assertEquals($expectedDate, $result->format(self::FORMAT_DATE));
+        self::assertInstanceOf(DateTime::class, $result);
+        self::assertEquals($expectedDate, $result->format(self::FORMAT_DATE));
 
         // Assertion using a DateTimeImmutable instance
         $startDate = new DateTimeImmutable($date, new DateTimeZone($timezone));
         $result = Yasumi::prevWorkingDay($provider, $startDate);
 
-        $this->assertInstanceOf(DateTimeImmutable::class, $result);
-        $this->assertEquals($expectedDate, $result->format(self::FORMAT_DATE));
+        self::assertInstanceOf(DateTimeImmutable::class, $result);
+        self::assertEquals($expectedDate, $result->format(self::FORMAT_DATE));
     }
 
     /**
@@ -125,21 +125,21 @@ class YasumiWorkdayTest extends TestCase
         $startDate = new DateTime($start, new DateTimeZone($timezone));
         $result = Yasumi::nextWorkingDay($provider, $startDate, $interval);
 
-        $this->assertEquals($expectedNext, $result->format(self::FORMAT_DATE));
+        self::assertEquals($expectedNext, $result->format(self::FORMAT_DATE));
 
         $startDate = new DateTime($expectedNext, new DateTimeZone($timezone));
         $result = Yasumi::prevWorkingDay($provider, $startDate, $interval);
-        $this->assertEquals($expectedPrevious, $result->format(self::FORMAT_DATE));
+        self::assertEquals($expectedPrevious, $result->format(self::FORMAT_DATE));
 
         // Assertion using a DateTimeImmutable instance
         $startDate = new DateTimeImmutable($start, new DateTimeZone($timezone));
         $result = Yasumi::nextWorkingDay($provider, $startDate, $interval);
 
-        $this->assertEquals($expectedNext, $result->format(self::FORMAT_DATE));
+        self::assertEquals($expectedNext, $result->format(self::FORMAT_DATE));
 
         $startDate = new DateTimeImmutable($expectedNext, new DateTimeZone($timezone));
         $result = Yasumi::prevWorkingDay($provider, $startDate, $interval);
-        $this->assertEquals($expectedPrevious, $result->format(self::FORMAT_DATE));
+        self::assertEquals($expectedPrevious, $result->format(self::FORMAT_DATE));
     }
 
     /**
@@ -161,7 +161,7 @@ class YasumiWorkdayTest extends TestCase
         $startDate = new DateTime($start, new DateTimeZone($timezone));
         $result = Yasumi::nextWorkingDay($provider, $startDate, $workdays);
 
-        $this->assertEquals($expectedNext, $result->format(self::FORMAT_DATE));
+        self::assertEquals($expectedNext, $result->format(self::FORMAT_DATE));
     }
 
     /**
@@ -202,7 +202,7 @@ class YasumiWorkdayTest extends TestCase
         $startDate = new DateTime($start, new DateTimeZone($timezone));
         $result = Yasumi::prevWorkingDay($provider, $startDate, $workdays);
 
-        $this->assertEquals($expectedNext, $result->format(self::FORMAT_DATE));
+        self::assertEquals($expectedNext, $result->format(self::FORMAT_DATE));
     }
 
     /**

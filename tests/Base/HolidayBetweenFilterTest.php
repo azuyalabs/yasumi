@@ -49,41 +49,41 @@ class HolidayBetweenFilterTest extends TestCase
 
         $betweenHolidays = \iterator_to_array($between);
 
-        $this->assertArrayHasKey('goodFriday', $betweenHolidays);
-        $this->assertArrayHasKey('easter', $betweenHolidays);
-        $this->assertArrayHasKey('summerTime', $betweenHolidays);
-        $this->assertArrayHasKey('easterMonday', $betweenHolidays);
-        $this->assertArrayHasKey('kingsDay', $betweenHolidays);
-        $this->assertArrayHasKey('internationalWorkersDay', $betweenHolidays);
-        $this->assertArrayHasKey('commemorationDay', $betweenHolidays);
-        $this->assertArrayHasKey('ascensionDay', $betweenHolidays);
-        $this->assertArrayHasKey('liberationDay', $betweenHolidays);
-        $this->assertArrayHasKey('mothersDay', $betweenHolidays);
-        $this->assertArrayHasKey('pentecost', $betweenHolidays);
-        $this->assertArrayHasKey('pentecostMonday', $betweenHolidays);
-        $this->assertArrayHasKey('fathersDay', $betweenHolidays);
+        self::assertArrayHasKey('goodFriday', $betweenHolidays);
+        self::assertArrayHasKey('easter', $betweenHolidays);
+        self::assertArrayHasKey('summerTime', $betweenHolidays);
+        self::assertArrayHasKey('easterMonday', $betweenHolidays);
+        self::assertArrayHasKey('kingsDay', $betweenHolidays);
+        self::assertArrayHasKey('internationalWorkersDay', $betweenHolidays);
+        self::assertArrayHasKey('commemorationDay', $betweenHolidays);
+        self::assertArrayHasKey('ascensionDay', $betweenHolidays);
+        self::assertArrayHasKey('liberationDay', $betweenHolidays);
+        self::assertArrayHasKey('mothersDay', $betweenHolidays);
+        self::assertArrayHasKey('pentecost', $betweenHolidays);
+        self::assertArrayHasKey('pentecostMonday', $betweenHolidays);
+        self::assertArrayHasKey('fathersDay', $betweenHolidays);
 
-        $this->assertArrayNotHasKey('newYearsDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('epiphany', $betweenHolidays);
-        $this->assertArrayNotHasKey('carnivalDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('secondCarnivalDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('thirdCarnivalDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('ashWednesday', $betweenHolidays);
-        $this->assertArrayNotHasKey('valentinesDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('princesDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('worldAnimalDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('winterTime', $betweenHolidays);
-        $this->assertArrayNotHasKey('halloween', $betweenHolidays);
-        $this->assertArrayNotHasKey('stMartinsDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('stNicholasDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('christmasDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('secondChristmasDay', $betweenHolidays);
+        self::assertArrayNotHasKey('newYearsDay', $betweenHolidays);
+        self::assertArrayNotHasKey('epiphany', $betweenHolidays);
+        self::assertArrayNotHasKey('carnivalDay', $betweenHolidays);
+        self::assertArrayNotHasKey('secondCarnivalDay', $betweenHolidays);
+        self::assertArrayNotHasKey('thirdCarnivalDay', $betweenHolidays);
+        self::assertArrayNotHasKey('ashWednesday', $betweenHolidays);
+        self::assertArrayNotHasKey('valentinesDay', $betweenHolidays);
+        self::assertArrayNotHasKey('princesDay', $betweenHolidays);
+        self::assertArrayNotHasKey('worldAnimalDay', $betweenHolidays);
+        self::assertArrayNotHasKey('winterTime', $betweenHolidays);
+        self::assertArrayNotHasKey('halloween', $betweenHolidays);
+        self::assertArrayNotHasKey('stMartinsDay', $betweenHolidays);
+        self::assertArrayNotHasKey('stNicholasDay', $betweenHolidays);
+        self::assertArrayNotHasKey('christmasDay', $betweenHolidays);
+        self::assertArrayNotHasKey('secondChristmasDay', $betweenHolidays);
 
-        $this->assertCount(13, $between);
-        $this->assertNotCount(\count($holidays), $between);
+        self::assertCount(13, $between);
+        self::assertNotCount(\count($holidays), $between);
 
-        $this->assertEquals(13, $between->count());
-        $this->assertNotEquals(\count($holidays), $between->count());
+        self::assertEquals(13, $between->count());
+        self::assertNotEquals(\count($holidays), $between->count());
     }
 
     /**
@@ -104,41 +104,41 @@ class HolidayBetweenFilterTest extends TestCase
 
         $betweenHolidays = \iterator_to_array($between);
 
-        $this->assertArrayHasKey('goodFriday', $betweenHolidays);
-        $this->assertArrayHasKey('easter', $betweenHolidays);
-        $this->assertArrayHasKey('summerTime', $betweenHolidays);
-        $this->assertArrayHasKey('easterMonday', $betweenHolidays);
-        $this->assertArrayHasKey('kingsDay', $betweenHolidays);
-        $this->assertArrayHasKey('internationalWorkersDay', $betweenHolidays);
-        $this->assertArrayHasKey('commemorationDay', $betweenHolidays);
-        $this->assertArrayHasKey('ascensionDay', $betweenHolidays);
-        $this->assertArrayHasKey('liberationDay', $betweenHolidays);
-        $this->assertArrayHasKey('mothersDay', $betweenHolidays);
-        $this->assertArrayHasKey('pentecost', $betweenHolidays);
-        $this->assertArrayHasKey('pentecostMonday', $betweenHolidays);
-        $this->assertArrayHasKey('fathersDay', $betweenHolidays);
+        self::assertArrayHasKey('goodFriday', $betweenHolidays);
+        self::assertArrayHasKey('easter', $betweenHolidays);
+        self::assertArrayHasKey('summerTime', $betweenHolidays);
+        self::assertArrayHasKey('easterMonday', $betweenHolidays);
+        self::assertArrayHasKey('kingsDay', $betweenHolidays);
+        self::assertArrayHasKey('internationalWorkersDay', $betweenHolidays);
+        self::assertArrayHasKey('commemorationDay', $betweenHolidays);
+        self::assertArrayHasKey('ascensionDay', $betweenHolidays);
+        self::assertArrayHasKey('liberationDay', $betweenHolidays);
+        self::assertArrayHasKey('mothersDay', $betweenHolidays);
+        self::assertArrayHasKey('pentecost', $betweenHolidays);
+        self::assertArrayHasKey('pentecostMonday', $betweenHolidays);
+        self::assertArrayHasKey('fathersDay', $betweenHolidays);
 
-        $this->assertArrayNotHasKey('newYearsDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('epiphany', $betweenHolidays);
-        $this->assertArrayNotHasKey('carnivalDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('secondCarnivalDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('thirdCarnivalDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('ashWednesday', $betweenHolidays);
-        $this->assertArrayNotHasKey('valentinesDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('princesDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('worldAnimalDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('winterTime', $betweenHolidays);
-        $this->assertArrayNotHasKey('halloween', $betweenHolidays);
-        $this->assertArrayNotHasKey('stMartinsDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('stNicholasDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('christmasDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('secondChristmasDay', $betweenHolidays);
+        self::assertArrayNotHasKey('newYearsDay', $betweenHolidays);
+        self::assertArrayNotHasKey('epiphany', $betweenHolidays);
+        self::assertArrayNotHasKey('carnivalDay', $betweenHolidays);
+        self::assertArrayNotHasKey('secondCarnivalDay', $betweenHolidays);
+        self::assertArrayNotHasKey('thirdCarnivalDay', $betweenHolidays);
+        self::assertArrayNotHasKey('ashWednesday', $betweenHolidays);
+        self::assertArrayNotHasKey('valentinesDay', $betweenHolidays);
+        self::assertArrayNotHasKey('princesDay', $betweenHolidays);
+        self::assertArrayNotHasKey('worldAnimalDay', $betweenHolidays);
+        self::assertArrayNotHasKey('winterTime', $betweenHolidays);
+        self::assertArrayNotHasKey('halloween', $betweenHolidays);
+        self::assertArrayNotHasKey('stMartinsDay', $betweenHolidays);
+        self::assertArrayNotHasKey('stNicholasDay', $betweenHolidays);
+        self::assertArrayNotHasKey('christmasDay', $betweenHolidays);
+        self::assertArrayNotHasKey('secondChristmasDay', $betweenHolidays);
 
-        $this->assertCount(13, $between);
-        $this->assertNotCount(\count($holidays), $between);
+        self::assertCount(13, $between);
+        self::assertNotCount(\count($holidays), $between);
 
-        $this->assertEquals(13, $between->count());
-        $this->assertNotEquals(\count($holidays), $between->count());
+        self::assertEquals(13, $between->count());
+        self::assertNotEquals(\count($holidays), $between->count());
     }
 
     /**
@@ -158,13 +158,13 @@ class HolidayBetweenFilterTest extends TestCase
                 new DateTime('01/01/2016', new DateTimeZone($timezone)),
                 new DateTime('01/01/2016', new DateTimeZone($timezone))
             );
-            $this->assertCount(1, $between);
+            self::assertCount(1, $between);
 
             $between = $holidays->between(
                 new DateTime('01/01/2016 23:59:59', new DateTimeZone($timezone)),
                 new DateTime('01/01/2016 23:59:59', new DateTimeZone($timezone))
             );
-            $this->assertCount(1, $between);
+            self::assertCount(1, $between);
         }
     }
 
@@ -187,41 +187,41 @@ class HolidayBetweenFilterTest extends TestCase
 
         $betweenHolidays = \iterator_to_array($between);
 
-        $this->assertArrayHasKey('epiphany', $betweenHolidays);
-        $this->assertArrayHasKey('carnivalDay', $betweenHolidays);
-        $this->assertArrayHasKey('secondCarnivalDay', $betweenHolidays);
-        $this->assertArrayHasKey('thirdCarnivalDay', $betweenHolidays);
-        $this->assertArrayHasKey('ashWednesday', $betweenHolidays);
-        $this->assertArrayHasKey('valentinesDay', $betweenHolidays);
-        $this->assertArrayHasKey('goodFriday', $betweenHolidays);
-        $this->assertArrayHasKey('easter', $betweenHolidays);
-        $this->assertArrayHasKey('summerTime', $betweenHolidays);
-        $this->assertArrayHasKey('easterMonday', $betweenHolidays);
-        $this->assertArrayHasKey('kingsDay', $betweenHolidays);
-        $this->assertArrayHasKey('internationalWorkersDay', $betweenHolidays);
-        $this->assertArrayHasKey('commemorationDay', $betweenHolidays);
-        $this->assertArrayHasKey('ascensionDay', $betweenHolidays);
-        $this->assertArrayHasKey('liberationDay', $betweenHolidays);
-        $this->assertArrayHasKey('mothersDay', $betweenHolidays);
-        $this->assertArrayHasKey('pentecost', $betweenHolidays);
-        $this->assertArrayHasKey('pentecostMonday', $betweenHolidays);
-        $this->assertArrayHasKey('fathersDay', $betweenHolidays);
+        self::assertArrayHasKey('epiphany', $betweenHolidays);
+        self::assertArrayHasKey('carnivalDay', $betweenHolidays);
+        self::assertArrayHasKey('secondCarnivalDay', $betweenHolidays);
+        self::assertArrayHasKey('thirdCarnivalDay', $betweenHolidays);
+        self::assertArrayHasKey('ashWednesday', $betweenHolidays);
+        self::assertArrayHasKey('valentinesDay', $betweenHolidays);
+        self::assertArrayHasKey('goodFriday', $betweenHolidays);
+        self::assertArrayHasKey('easter', $betweenHolidays);
+        self::assertArrayHasKey('summerTime', $betweenHolidays);
+        self::assertArrayHasKey('easterMonday', $betweenHolidays);
+        self::assertArrayHasKey('kingsDay', $betweenHolidays);
+        self::assertArrayHasKey('internationalWorkersDay', $betweenHolidays);
+        self::assertArrayHasKey('commemorationDay', $betweenHolidays);
+        self::assertArrayHasKey('ascensionDay', $betweenHolidays);
+        self::assertArrayHasKey('liberationDay', $betweenHolidays);
+        self::assertArrayHasKey('mothersDay', $betweenHolidays);
+        self::assertArrayHasKey('pentecost', $betweenHolidays);
+        self::assertArrayHasKey('pentecostMonday', $betweenHolidays);
+        self::assertArrayHasKey('fathersDay', $betweenHolidays);
 
-        $this->assertArrayNotHasKey('newYearsDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('princesDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('worldAnimalDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('winterTime', $betweenHolidays);
-        $this->assertArrayNotHasKey('halloween', $betweenHolidays);
-        $this->assertArrayNotHasKey('stMartinsDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('stNicholasDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('christmasDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('secondChristmasDay', $betweenHolidays);
+        self::assertArrayNotHasKey('newYearsDay', $betweenHolidays);
+        self::assertArrayNotHasKey('princesDay', $betweenHolidays);
+        self::assertArrayNotHasKey('worldAnimalDay', $betweenHolidays);
+        self::assertArrayNotHasKey('winterTime', $betweenHolidays);
+        self::assertArrayNotHasKey('halloween', $betweenHolidays);
+        self::assertArrayNotHasKey('stMartinsDay', $betweenHolidays);
+        self::assertArrayNotHasKey('stNicholasDay', $betweenHolidays);
+        self::assertArrayNotHasKey('christmasDay', $betweenHolidays);
+        self::assertArrayNotHasKey('secondChristmasDay', $betweenHolidays);
 
-        $this->assertCount(19, $between);
-        $this->assertNotCount(\count($holidays), $between);
+        self::assertCount(19, $between);
+        self::assertNotCount(\count($holidays), $between);
 
-        $this->assertEquals(19, $between->count());
-        $this->assertNotEquals(\count($holidays), $between->count());
+        self::assertEquals(19, $between->count());
+        self::assertNotEquals(\count($holidays), $between->count());
     }
 
     /**
@@ -243,25 +243,25 @@ class HolidayBetweenFilterTest extends TestCase
 
         $betweenHolidays = \iterator_to_array($between);
 
-        $this->assertArrayHasKey('newYearsDay', $betweenHolidays);
-        $this->assertArrayHasKey('maundyThursday', $betweenHolidays);
-        $this->assertArrayHasKey('goodFriday', $betweenHolidays);
-        $this->assertArrayHasKey('easter', $betweenHolidays);
-        $this->assertArrayHasKey('easterMonday', $betweenHolidays);
-        $this->assertArrayHasKey('internationalWorkersDay', $betweenHolidays);
-        $this->assertArrayHasKey('ascensionDay', $betweenHolidays);
-        $this->assertArrayHasKey('constitutionDay', $betweenHolidays);
+        self::assertArrayHasKey('newYearsDay', $betweenHolidays);
+        self::assertArrayHasKey('maundyThursday', $betweenHolidays);
+        self::assertArrayHasKey('goodFriday', $betweenHolidays);
+        self::assertArrayHasKey('easter', $betweenHolidays);
+        self::assertArrayHasKey('easterMonday', $betweenHolidays);
+        self::assertArrayHasKey('internationalWorkersDay', $betweenHolidays);
+        self::assertArrayHasKey('ascensionDay', $betweenHolidays);
+        self::assertArrayHasKey('constitutionDay', $betweenHolidays);
 
-        $this->assertArrayNotHasKey('pentecost', $betweenHolidays);
-        $this->assertArrayNotHasKey('pentecostMonday', $betweenHolidays);
-        $this->assertArrayNotHasKey('christmasDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('secondChristmasDay', $betweenHolidays);
+        self::assertArrayNotHasKey('pentecost', $betweenHolidays);
+        self::assertArrayNotHasKey('pentecostMonday', $betweenHolidays);
+        self::assertArrayNotHasKey('christmasDay', $betweenHolidays);
+        self::assertArrayNotHasKey('secondChristmasDay', $betweenHolidays);
 
-        $this->assertCount(8, $between);
-        $this->assertNotCount(\count($holidays), $between);
+        self::assertCount(8, $between);
+        self::assertNotCount(\count($holidays), $between);
 
-        $this->assertEquals(8, $between->count());
-        $this->assertNotEquals(\count($holidays), $between->count());
+        self::assertEquals(8, $between->count());
+        self::assertNotEquals(\count($holidays), $between->count());
     }
 
     /**
@@ -283,25 +283,25 @@ class HolidayBetweenFilterTest extends TestCase
 
         $betweenHolidays = \iterator_to_array($between);
 
-        $this->assertArrayNotHasKey('newYearsDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('epiphany', $betweenHolidays);
+        self::assertArrayNotHasKey('newYearsDay', $betweenHolidays);
+        self::assertArrayNotHasKey('epiphany', $betweenHolidays);
 
-        $this->assertArrayHasKey('easter', $betweenHolidays);
-        $this->assertArrayHasKey('easterMonday', $betweenHolidays);
-        $this->assertArrayHasKey('liberationDay', $betweenHolidays);
-        $this->assertArrayHasKey('internationalWorkersDay', $betweenHolidays);
-        $this->assertArrayHasKey('republicDay', $betweenHolidays);
-        $this->assertArrayHasKey('assumptionOfMary', $betweenHolidays);
-        $this->assertArrayHasKey('allSaintsDay', $betweenHolidays);
-        $this->assertArrayHasKey('immaculateConception', $betweenHolidays);
-        $this->assertArrayHasKey('christmasDay', $betweenHolidays);
-        $this->assertArrayHasKey('stStephensDay', $betweenHolidays);
+        self::assertArrayHasKey('easter', $betweenHolidays);
+        self::assertArrayHasKey('easterMonday', $betweenHolidays);
+        self::assertArrayHasKey('liberationDay', $betweenHolidays);
+        self::assertArrayHasKey('internationalWorkersDay', $betweenHolidays);
+        self::assertArrayHasKey('republicDay', $betweenHolidays);
+        self::assertArrayHasKey('assumptionOfMary', $betweenHolidays);
+        self::assertArrayHasKey('allSaintsDay', $betweenHolidays);
+        self::assertArrayHasKey('immaculateConception', $betweenHolidays);
+        self::assertArrayHasKey('christmasDay', $betweenHolidays);
+        self::assertArrayHasKey('stStephensDay', $betweenHolidays);
 
-        $this->assertCount(10, $between);
-        $this->assertNotCount(\count($holidays), $between);
+        self::assertCount(10, $between);
+        self::assertNotCount(\count($holidays), $between);
 
-        $this->assertEquals(10, $between->count());
-        $this->assertNotEquals(\count($holidays), $between->count());
+        self::assertEquals(10, $between->count());
+        self::assertNotEquals(\count($holidays), $between->count());
     }
 
     /**
@@ -347,22 +347,22 @@ class HolidayBetweenFilterTest extends TestCase
         $betweenHolidays = \iterator_to_array($between);
 
         // Assert array definitions
-        $this->assertArrayHasKey('newYearsDay', $betweenHolidays);
-        $this->assertArrayHasKey('stPatricksDay', $betweenHolidays);
-        $this->assertArrayHasKey('easter', $betweenHolidays);
-        $this->assertArrayHasKey('easterMonday', $betweenHolidays);
-        $this->assertArrayHasKey('mayDay', $betweenHolidays);
-        $this->assertArrayHasKey('juneHoliday', $betweenHolidays);
-        $this->assertArrayHasKey('augustHoliday', $betweenHolidays);
-        $this->assertArrayHasKey('octoberHoliday', $betweenHolidays);
-        $this->assertArrayHasKey('christmasDay', $betweenHolidays);
-        $this->assertArrayHasKey('stStephensDay', $betweenHolidays);
-        $this->assertArrayHasKey('pentecost', $betweenHolidays);
-        $this->assertArrayHasKey('goodFriday', $betweenHolidays);
-        $this->assertArrayNotHasKey('pentecostMonday', $betweenHolidays);
+        self::assertArrayHasKey('newYearsDay', $betweenHolidays);
+        self::assertArrayHasKey('stPatricksDay', $betweenHolidays);
+        self::assertArrayHasKey('easter', $betweenHolidays);
+        self::assertArrayHasKey('easterMonday', $betweenHolidays);
+        self::assertArrayHasKey('mayDay', $betweenHolidays);
+        self::assertArrayHasKey('juneHoliday', $betweenHolidays);
+        self::assertArrayHasKey('augustHoliday', $betweenHolidays);
+        self::assertArrayHasKey('octoberHoliday', $betweenHolidays);
+        self::assertArrayHasKey('christmasDay', $betweenHolidays);
+        self::assertArrayHasKey('stStephensDay', $betweenHolidays);
+        self::assertArrayHasKey('pentecost', $betweenHolidays);
+        self::assertArrayHasKey('goodFriday', $betweenHolidays);
+        self::assertArrayNotHasKey('pentecostMonday', $betweenHolidays);
 
-        $this->assertCount(12, $between);
-        $this->assertEquals(12, $between->count());
+        self::assertCount(12, $between);
+        self::assertEquals(12, $between->count());
     }
 
     /**
@@ -388,25 +388,25 @@ class HolidayBetweenFilterTest extends TestCase
         $betweenHolidays = \iterator_to_array($between);
 
         // Assert array definitions
-        $this->assertArrayHasKey('newYearsDay', $betweenHolidays);
-        $this->assertArrayHasKey('stPatricksDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('mayDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('juneHoliday', $betweenHolidays);
-        $this->assertArrayNotHasKey('augustHoliday', $betweenHolidays);
-        $this->assertArrayNotHasKey('octoberHoliday', $betweenHolidays);
-        $this->assertArrayNotHasKey('christmasDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('stStephensDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('pentecost', $betweenHolidays);
-        $this->assertArrayNotHasKey('goodFriday', $betweenHolidays);
-        $this->assertArrayNotHasKey('easter', $betweenHolidays);
-        $this->assertArrayNotHasKey('easterMonday', $betweenHolidays);
-        $this->assertArrayNotHasKey('pentecostMonday', $betweenHolidays);
+        self::assertArrayHasKey('newYearsDay', $betweenHolidays);
+        self::assertArrayHasKey('stPatricksDay', $betweenHolidays);
+        self::assertArrayNotHasKey('mayDay', $betweenHolidays);
+        self::assertArrayNotHasKey('juneHoliday', $betweenHolidays);
+        self::assertArrayNotHasKey('augustHoliday', $betweenHolidays);
+        self::assertArrayNotHasKey('octoberHoliday', $betweenHolidays);
+        self::assertArrayNotHasKey('christmasDay', $betweenHolidays);
+        self::assertArrayNotHasKey('stStephensDay', $betweenHolidays);
+        self::assertArrayNotHasKey('pentecost', $betweenHolidays);
+        self::assertArrayNotHasKey('goodFriday', $betweenHolidays);
+        self::assertArrayNotHasKey('easter', $betweenHolidays);
+        self::assertArrayNotHasKey('easterMonday', $betweenHolidays);
+        self::assertArrayNotHasKey('pentecostMonday', $betweenHolidays);
 
-        $this->assertCount(2, $between);
-        $this->assertNotCount(\count($holidays), $between);
+        self::assertCount(2, $between);
+        self::assertNotCount(\count($holidays), $between);
 
-        $this->assertEquals(2, $between->count());
-        $this->assertNotEquals(\count($holidays), $between->count());
+        self::assertEquals(2, $between->count());
+        self::assertNotEquals(\count($holidays), $between->count());
     }
 
     /**
@@ -433,26 +433,26 @@ class HolidayBetweenFilterTest extends TestCase
         $betweenHolidays = \iterator_to_array($between);
 
         // Assert array definitions
-        $this->assertArrayHasKey('newYearsDay', $betweenHolidays);
-        $this->assertArrayHasKey('stPatricksDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('easterMonday', $betweenHolidays);
-        $this->assertArrayNotHasKey('mayDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('juneHoliday', $betweenHolidays);
-        $this->assertArrayNotHasKey('augustHoliday', $betweenHolidays);
-        $this->assertArrayNotHasKey('octoberHoliday', $betweenHolidays);
-        $this->assertArrayNotHasKey('christmasDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('stStephensDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('pentecost', $betweenHolidays);
-        $this->assertArrayNotHasKey('goodFriday', $betweenHolidays);
-        $this->assertArrayNotHasKey('easter', $betweenHolidays);
-        $this->assertArrayNotHasKey('easterMonday', $betweenHolidays);
-        $this->assertArrayNotHasKey('pentecostMonday', $betweenHolidays);
+        self::assertArrayHasKey('newYearsDay', $betweenHolidays);
+        self::assertArrayHasKey('stPatricksDay', $betweenHolidays);
+        self::assertArrayNotHasKey('easterMonday', $betweenHolidays);
+        self::assertArrayNotHasKey('mayDay', $betweenHolidays);
+        self::assertArrayNotHasKey('juneHoliday', $betweenHolidays);
+        self::assertArrayNotHasKey('augustHoliday', $betweenHolidays);
+        self::assertArrayNotHasKey('octoberHoliday', $betweenHolidays);
+        self::assertArrayNotHasKey('christmasDay', $betweenHolidays);
+        self::assertArrayNotHasKey('stStephensDay', $betweenHolidays);
+        self::assertArrayNotHasKey('pentecost', $betweenHolidays);
+        self::assertArrayNotHasKey('goodFriday', $betweenHolidays);
+        self::assertArrayNotHasKey('easter', $betweenHolidays);
+        self::assertArrayNotHasKey('easterMonday', $betweenHolidays);
+        self::assertArrayNotHasKey('pentecostMonday', $betweenHolidays);
 
-        $this->assertCount(2, $between);
-        $this->assertNotCount(\count($holidays), $between);
+        self::assertCount(2, $between);
+        self::assertNotCount(\count($holidays), $between);
 
-        $this->assertEquals(2, $between->count());
-        $this->assertNotEquals(\count($holidays), $between->count());
+        self::assertEquals(2, $between->count());
+        self::assertNotEquals(\count($holidays), $between->count());
     }
 
     /**
@@ -479,24 +479,24 @@ class HolidayBetweenFilterTest extends TestCase
         $betweenHolidays = \iterator_to_array($between);
 
         // Assert array definitions
-        $this->assertArrayHasKey('newYearsDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('stPatricksDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('mayDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('juneHoliday', $betweenHolidays);
-        $this->assertArrayNotHasKey('augustHoliday', $betweenHolidays);
-        $this->assertArrayNotHasKey('octoberHoliday', $betweenHolidays);
-        $this->assertArrayNotHasKey('christmasDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('stStephensDay', $betweenHolidays);
-        $this->assertArrayNotHasKey('pentecost', $betweenHolidays);
-        $this->assertArrayNotHasKey('goodFriday', $betweenHolidays);
-        $this->assertArrayNotHasKey('easter', $betweenHolidays);
-        $this->assertArrayNotHasKey('easterMonday', $betweenHolidays);
-        $this->assertArrayNotHasKey('pentecostMonday', $betweenHolidays);
+        self::assertArrayHasKey('newYearsDay', $betweenHolidays);
+        self::assertArrayNotHasKey('stPatricksDay', $betweenHolidays);
+        self::assertArrayNotHasKey('mayDay', $betweenHolidays);
+        self::assertArrayNotHasKey('juneHoliday', $betweenHolidays);
+        self::assertArrayNotHasKey('augustHoliday', $betweenHolidays);
+        self::assertArrayNotHasKey('octoberHoliday', $betweenHolidays);
+        self::assertArrayNotHasKey('christmasDay', $betweenHolidays);
+        self::assertArrayNotHasKey('stStephensDay', $betweenHolidays);
+        self::assertArrayNotHasKey('pentecost', $betweenHolidays);
+        self::assertArrayNotHasKey('goodFriday', $betweenHolidays);
+        self::assertArrayNotHasKey('easter', $betweenHolidays);
+        self::assertArrayNotHasKey('easterMonday', $betweenHolidays);
+        self::assertArrayNotHasKey('pentecostMonday', $betweenHolidays);
 
-        $this->assertCount(1, $between);
-        $this->assertNotCount(\count($holidays), $between);
+        self::assertCount(1, $between);
+        self::assertNotCount(\count($holidays), $between);
 
-        $this->assertEquals(1, $between->count());
-        $this->assertNotEquals(\count($holidays), $between->count());
+        self::assertEquals(1, $between->count());
+        self::assertNotEquals(\count($holidays), $between->count());
     }
 }

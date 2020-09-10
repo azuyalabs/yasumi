@@ -106,7 +106,7 @@ class YasumiTest extends TestCase
             $class,
             Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND)
         );
-        $this->assertInstanceOf(YasumiExternalProvider::class, $instance);
+        self::assertInstanceOf(YasumiExternalProvider::class, $instance);
     }
 
     /**
@@ -134,9 +134,9 @@ class YasumiTest extends TestCase
         // There are 16 holidays in Japan in the year 2015, with 1 substituted holiday.
         $holidays = Yasumi::create('Japan', 2015);
 
-        $this->assertIsInt($holidays->count());
-        $this->assertEquals(16, $holidays->count());
-        $this->assertNotEquals(17, $holidays->count());
+        self::assertIsInt($holidays->count());
+        self::assertEquals(16, $holidays->count());
+        self::assertNotEquals(17, $holidays->count());
     }
 
     /**
@@ -148,7 +148,7 @@ class YasumiTest extends TestCase
         $holidays = Yasumi::create('Japan', Factory::create()->numberBetween(1949, self::YEAR_UPPER_BOUND));
         $holiday = $holidays->getHoliday('newYearsDay');
 
-        $this->assertIsString($holiday->getType());
+        self::assertIsString($holiday->getType());
     }
 
     /**
@@ -160,8 +160,8 @@ class YasumiTest extends TestCase
         $year = Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND);
         $holidays = Yasumi::create('Netherlands', $year);
 
-        $this->assertIsInt($holidays->getYear());
-        $this->assertEquals($year, $holidays->getYear());
+        self::assertIsInt($holidays->getYear());
+        self::assertEquals($year, $holidays->getYear());
     }
 
     /**
@@ -243,9 +243,9 @@ class YasumiTest extends TestCase
         $holidays = Yasumi::create('Japan', 2015);
         $holidayNames = $holidays->getHolidayNames();
 
-        $this->assertIsArray($holidayNames);
-        $this->assertCount(17, $holidayNames);
-        $this->assertContains('newYearsDay', $holidayNames);
+        self::assertIsArray($holidayNames);
+        self::assertCount(17, $holidayNames);
+        self::assertContains('newYearsDay', $holidayNames);
     }
 
     /**
@@ -258,8 +258,8 @@ class YasumiTest extends TestCase
 
         $when = $holidays->whenIs('autumnalEquinoxDay');
 
-        $this->assertIsString($when);
-        $this->assertEquals('2010-09-23', $when);
+        self::assertIsString($when);
+        self::assertEquals('2010-09-23', $when);
     }
 
     /**
@@ -298,8 +298,8 @@ class YasumiTest extends TestCase
         $holidays = Yasumi::create('Netherlands', 2110);
         $weekDay = $holidays->whatWeekDayIs('stMartinsDay');
 
-        $this->assertIsInt($weekDay);
-        $this->assertEquals(2, $weekDay);
+        self::assertIsInt($weekDay);
+        self::assertEquals(2, $weekDay);
     }
 
     /**
@@ -323,11 +323,11 @@ class YasumiTest extends TestCase
     {
         $providers = Yasumi::getProviders();
 
-        $this->assertNotEmpty($providers);
-        $this->assertIsArray($providers);
-        $this->assertContains('Netherlands', $providers);
-        $this->assertEquals('USA', $providers['US']);
-        $this->assertNotContains('AbstractProvider', $providers);
+        self::assertNotEmpty($providers);
+        self::assertIsArray($providers);
+        self::assertContains('Netherlands', $providers);
+        self::assertEquals('USA', $providers['US']);
+        self::assertNotContains('AbstractProvider', $providers);
     }
 
     /**
@@ -341,15 +341,15 @@ class YasumiTest extends TestCase
         $providers = Yasumi::getProviders();
         $initial_providers = $providers;
 
-        $this->assertNotEmpty($providers);
-        $this->assertIsArray($providers);
-        $this->assertContains($provider, $providers);
+        self::assertNotEmpty($providers);
+        self::assertIsArray($providers);
+        self::assertContains($provider, $providers);
 
         $providers = Yasumi::getProviders();
-        $this->assertNotEmpty($providers);
-        $this->assertIsArray($providers);
-        $this->assertContains($provider, $providers);
-        $this->assertEquals($initial_providers, $providers);
+        self::assertNotEmpty($providers);
+        self::assertIsArray($providers);
+        self::assertContains($provider, $providers);
+        self::assertEquals($initial_providers, $providers);
     }
 
     /**
@@ -371,13 +371,13 @@ class YasumiTest extends TestCase
 
         // Assertion using a DateTime instance
         $isHoliday = Yasumi::create($provider, $year)->isHoliday(new DateTime($date));
-        $this->assertIsBool($isHoliday);
-        $this->assertTrue($isHoliday);
+        self::assertIsBool($isHoliday);
+        self::assertTrue($isHoliday);
 
         // Assertion using a DateTimeImmutable instance
         $isHoliday = Yasumi::create($provider, $year)->isHoliday(new DateTimeImmutable($date));
-        $this->assertIsBool($isHoliday);
-        $this->assertTrue($isHoliday);
+        self::assertIsBool($isHoliday);
+        self::assertTrue($isHoliday);
 
         unset($isHoliday);
     }
@@ -401,13 +401,13 @@ class YasumiTest extends TestCase
 
         // Assertion using a DateTime instance
         $isHoliday = Yasumi::create($provider, $year)->isHoliday(new DateTime($date));
-        $this->assertIsBool($isHoliday);
-        $this->assertFalse($isHoliday);
+        self::assertIsBool($isHoliday);
+        self::assertFalse($isHoliday);
 
         // Assertion using a DateTimeImmutable instance
         $isHoliday = Yasumi::create($provider, $year)->isHoliday(new DateTimeImmutable($date));
-        $this->assertIsBool($isHoliday);
-        $this->assertFalse($isHoliday);
+        self::assertIsBool($isHoliday);
+        self::assertFalse($isHoliday);
 
         unset($isHoliday);
     }
@@ -447,13 +447,13 @@ class YasumiTest extends TestCase
 
         // Assertion using a DateTime instance
         $isWorkingDay = Yasumi::create($provider, $year)->isWorkingDay(new DateTime($date));
-        $this->assertIsBool($isWorkingDay);
-        $this->assertTrue($isWorkingDay);
+        self::assertIsBool($isWorkingDay);
+        self::assertTrue($isWorkingDay);
 
         // Assertion using a DateTimeImmutable instance
         $isWorkingDay = Yasumi::create($provider, $year)->isWorkingDay(new DateTimeImmutable($date));
-        $this->assertIsBool($isWorkingDay);
-        $this->assertTrue($isWorkingDay);
+        self::assertIsBool($isWorkingDay);
+        self::assertTrue($isWorkingDay);
 
         unset($isWorkingDay);
     }
@@ -476,13 +476,13 @@ class YasumiTest extends TestCase
 
         // Assertion using a DateTime instance
         $isNotWorkingDay = Yasumi::create($provider, $year)->isWorkingDay(new DateTime($date));
-        $this->assertIsBool($isNotWorkingDay);
-        $this->assertFalse($isNotWorkingDay);
+        self::assertIsBool($isNotWorkingDay);
+        self::assertFalse($isNotWorkingDay);
 
         // Assertion using a DateTimeImmutable instance
         $isNotWorkingDay = Yasumi::create($provider, $year)->isWorkingDay(new DateTimeImmutable($date));
-        $this->assertIsBool($isNotWorkingDay);
-        $this->assertFalse($isNotWorkingDay);
+        self::assertIsBool($isNotWorkingDay);
+        self::assertFalse($isNotWorkingDay);
 
         unset($isNotWorkingDay);
     }
@@ -516,20 +516,20 @@ class YasumiTest extends TestCase
         $holidays = $provider->getHolidays();
 
         // Assert initial list of holidays
-        $this->assertCount(13, $holidays);
-        $this->assertArrayHasKey('newYearsDay', $holidays);
-        $this->assertArrayHasKey('stPatricksDay', $holidays);
-        $this->assertArrayHasKey('substituteHoliday:stPatricksDay', $holidays);
-        $this->assertArrayHasKey('goodFriday', $holidays);
-        $this->assertArrayHasKey('easter', $holidays);
-        $this->assertArrayHasKey('easterMonday', $holidays);
-        $this->assertArrayHasKey('mayDay', $holidays);
-        $this->assertArrayHasKey('pentecost', $holidays);
-        $this->assertArrayHasKey('juneHoliday', $holidays);
-        $this->assertArrayHasKey('augustHoliday', $holidays);
-        $this->assertArrayHasKey('octoberHoliday', $holidays);
-        $this->assertArrayHasKey('christmasDay', $holidays);
-        $this->assertArrayHasKey('stStephensDay', $holidays);
+        self::assertCount(13, $holidays);
+        self::assertArrayHasKey('newYearsDay', $holidays);
+        self::assertArrayHasKey('stPatricksDay', $holidays);
+        self::assertArrayHasKey('substituteHoliday:stPatricksDay', $holidays);
+        self::assertArrayHasKey('goodFriday', $holidays);
+        self::assertArrayHasKey('easter', $holidays);
+        self::assertArrayHasKey('easterMonday', $holidays);
+        self::assertArrayHasKey('mayDay', $holidays);
+        self::assertArrayHasKey('pentecost', $holidays);
+        self::assertArrayHasKey('juneHoliday', $holidays);
+        self::assertArrayHasKey('augustHoliday', $holidays);
+        self::assertArrayHasKey('octoberHoliday', $holidays);
+        self::assertArrayHasKey('christmasDay', $holidays);
+        self::assertArrayHasKey('stStephensDay', $holidays);
 
         $provider->removeHoliday('juneHoliday');
         $provider->removeHoliday('augustHoliday');
@@ -538,20 +538,20 @@ class YasumiTest extends TestCase
         $holidaysAfterRemoval = $provider->getHolidays();
 
         // Assert list of holidays after removal of some holidays
-        $this->assertCount(10, $holidaysAfterRemoval);
-        $this->assertArrayHasKey('newYearsDay', $holidaysAfterRemoval);
-        $this->assertArrayHasKey('stPatricksDay', $holidaysAfterRemoval);
-        $this->assertArrayHasKey('substituteHoliday:stPatricksDay', $holidaysAfterRemoval);
-        $this->assertArrayHasKey('goodFriday', $holidaysAfterRemoval);
-        $this->assertArrayHasKey('easter', $holidaysAfterRemoval);
-        $this->assertArrayHasKey('easterMonday', $holidaysAfterRemoval);
-        $this->assertArrayHasKey('mayDay', $holidaysAfterRemoval);
-        $this->assertArrayHasKey('pentecost', $holidaysAfterRemoval);
-        $this->assertArrayHasKey('christmasDay', $holidaysAfterRemoval);
-        $this->assertArrayHasKey('stStephensDay', $holidaysAfterRemoval);
-        $this->assertArrayNotHasKey('juneHoliday', $holidaysAfterRemoval);
-        $this->assertArrayNotHasKey('augustHoliday', $holidaysAfterRemoval);
-        $this->assertArrayNotHasKey('octoberHoliday', $holidaysAfterRemoval);
+        self::assertCount(10, $holidaysAfterRemoval);
+        self::assertArrayHasKey('newYearsDay', $holidaysAfterRemoval);
+        self::assertArrayHasKey('stPatricksDay', $holidaysAfterRemoval);
+        self::assertArrayHasKey('substituteHoliday:stPatricksDay', $holidaysAfterRemoval);
+        self::assertArrayHasKey('goodFriday', $holidaysAfterRemoval);
+        self::assertArrayHasKey('easter', $holidaysAfterRemoval);
+        self::assertArrayHasKey('easterMonday', $holidaysAfterRemoval);
+        self::assertArrayHasKey('mayDay', $holidaysAfterRemoval);
+        self::assertArrayHasKey('pentecost', $holidaysAfterRemoval);
+        self::assertArrayHasKey('christmasDay', $holidaysAfterRemoval);
+        self::assertArrayHasKey('stStephensDay', $holidaysAfterRemoval);
+        self::assertArrayNotHasKey('juneHoliday', $holidaysAfterRemoval);
+        self::assertArrayNotHasKey('augustHoliday', $holidaysAfterRemoval);
+        self::assertArrayNotHasKey('octoberHoliday', $holidaysAfterRemoval);
     }
 
     /**
@@ -572,7 +572,7 @@ class YasumiTest extends TestCase
             $year
         );
 
-        $this->assertEquals($year, $provider->getYear());
+        self::assertEquals($year, $provider->getYear());
     }
 
     /**
@@ -606,16 +606,16 @@ class YasumiTest extends TestCase
         // Add a new holiday
         $provider->addHoliday($holiday);
         $newHolidays = $provider->getHolidayNames();
-        $this->assertContains($holidayName, $provider->getHolidayNames());
-        $this->assertNotSameSize($originalHolidays, $newHolidays);
-        $this->assertNotEquals($newHolidays, $originalHolidays);
+        self::assertContains($holidayName, $provider->getHolidayNames());
+        self::assertNotSameSize($originalHolidays, $newHolidays);
+        self::assertNotEquals($newHolidays, $originalHolidays);
 
         // Add same holiday again
         $provider->addHoliday($holiday);
-        $this->assertContains($holidayName, $provider->getHolidayNames());
-        $this->assertSameSize($newHolidays, $provider->getHolidayNames());
-        $this->assertNotSameSize($originalHolidays, $provider->getHolidayNames());
-        $this->assertEquals($newHolidays, $provider->getHolidayNames());
-        $this->assertNotEquals($originalHolidays, $provider->getHolidayNames());
+        self::assertContains($holidayName, $provider->getHolidayNames());
+        self::assertSameSize($newHolidays, $provider->getHolidayNames());
+        self::assertNotSameSize($originalHolidays, $provider->getHolidayNames());
+        self::assertEquals($newHolidays, $provider->getHolidayNames());
+        self::assertNotEquals($originalHolidays, $provider->getHolidayNames());
     }
 }

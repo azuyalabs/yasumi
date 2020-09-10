@@ -67,10 +67,10 @@ class SubstituteHolidayTest extends TestCase
         $holiday = new Holiday('testHoliday', [], new DateTime('2019-01-01'), 'en_US', Holiday::TYPE_BANK);
         $substitute = new SubstituteHoliday($holiday, [], new DateTime('2019-01-02'), 'en_US', Holiday::TYPE_SEASON);
 
-        $this->assertSame($holiday, $substitute->getSubstitutedHoliday());
-        $this->assertEquals('substituteHoliday:testHoliday', $substitute->getKey());
-        $this->assertEquals(Holiday::TYPE_SEASON, $substitute->getType());
-        $this->assertEquals(new DateTime('2019-01-02'), $substitute);
+        self::assertSame($holiday, $substitute->getSubstitutedHoliday());
+        self::assertEquals('substituteHoliday:testHoliday', $substitute->getKey());
+        self::assertEquals(Holiday::TYPE_SEASON, $substitute->getType());
+        self::assertEquals(new DateTime('2019-01-02'), $substitute);
     }
 
     /**
@@ -84,10 +84,10 @@ class SubstituteHolidayTest extends TestCase
         $json = \json_encode($substitute);
         $instance = \json_decode($json, true);
 
-        $this->assertIsArray($instance);
-        $this->assertNotNull($instance);
-        $this->assertArrayHasKey('shortName', $instance);
-        $this->assertArrayHasKey('substitutedHoliday', $instance);
+        self::assertIsArray($instance);
+        self::assertNotNull($instance);
+        self::assertArrayHasKey('shortName', $instance);
+        self::assertArrayHasKey('substitutedHoliday', $instance);
     }
 
     /**
@@ -100,13 +100,13 @@ class SubstituteHolidayTest extends TestCase
         // Assert with DateTime instance
         $holiday = new Holiday('testHoliday', [], new DateTime('2019-01-01'), 'en_US');
         $substitute = new SubstituteHoliday($holiday, [], new DateTime('2019-01-02'), 'en_US');
-        $this->assertNotNull($holiday);
-        $this->assertInstanceOf(SubstituteHoliday::class, $substitute);
+        self::assertNotNull($holiday);
+        self::assertInstanceOf(SubstituteHoliday::class, $substitute);
 
         // Assert with DateTimeImmutable instance
         $substitute = new SubstituteHoliday($holiday, [], new \DateTimeImmutable(), 'en_US');
-        $this->assertNotNull($holiday);
-        $this->assertInstanceOf(SubstituteHoliday::class, $substitute);
+        self::assertNotNull($holiday);
+        self::assertInstanceOf(SubstituteHoliday::class, $substitute);
     }
 
     /**
@@ -119,8 +119,8 @@ class SubstituteHolidayTest extends TestCase
         $holiday = new Holiday($name, [], new DateTime('2019-01-01'));
         $substitute = new SubstituteHoliday($holiday, [], new DateTime('2019-01-02'), 'en_US');
 
-        $this->assertIsString($substitute->getName());
-        $this->assertEquals('substituteHoliday:' . $name, $substitute->getName());
+        self::assertIsString($substitute->getName());
+        self::assertEquals('substituteHoliday:' . $name, $substitute->getName());
     }
 
     /**
@@ -136,14 +136,14 @@ class SubstituteHolidayTest extends TestCase
         $substitute = new SubstituteHoliday($holiday, [$locale => $translation], new DateTime('2019-01-02'), $locale);
 
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
-        $translationsStub->expects($this->at(0))->method('getTranslations')->with($this->equalTo('substituteHoliday'))->willReturn([$locale => 'foo']);
-        $translationsStub->expects($this->at(1))->method('getTranslations')->with($this->equalTo('substituteHoliday:testHoliday'))->willReturn([$locale => 'foo']);
-        $translationsStub->expects($this->at(2))->method('getTranslations')->with($this->equalTo('testHoliday'))->willReturn(['en' => 'foo']);
+        $translationsStub->expects(self::at(0))->method('getTranslations')->with(self::equalTo('substituteHoliday'))->willReturn([$locale => 'foo']);
+        $translationsStub->expects(self::at(1))->method('getTranslations')->with(self::equalTo('substituteHoliday:testHoliday'))->willReturn([$locale => 'foo']);
+        $translationsStub->expects(self::at(2))->method('getTranslations')->with(self::equalTo('testHoliday'))->willReturn(['en' => 'foo']);
 
         $substitute->mergeGlobalTranslations($translationsStub);
 
-        $this->assertIsString($substitute->getName());
-        $this->assertEquals($translation, $substitute->getName());
+        self::assertIsString($substitute->getName());
+        self::assertEquals($translation, $substitute->getName());
     }
 
     /**
@@ -159,14 +159,14 @@ class SubstituteHolidayTest extends TestCase
         $substitute = new SubstituteHoliday($holiday, [], new DateTime('2019-01-02'), $locale);
 
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
-        $translationsStub->expects($this->at(0))->method('getTranslations')->with($this->equalTo('substituteHoliday'))->willReturn(['en' => '{0} obs']);
-        $translationsStub->expects($this->at(1))->method('getTranslations')->with($this->equalTo('substituteHoliday:testHoliday'))->willReturn([]);
-        $translationsStub->expects($this->at(2))->method('getTranslations')->with($this->equalTo('testHoliday'))->willReturn([$locale => $translation]);
+        $translationsStub->expects(self::at(0))->method('getTranslations')->with(self::equalTo('substituteHoliday'))->willReturn(['en' => '{0} obs']);
+        $translationsStub->expects(self::at(1))->method('getTranslations')->with(self::equalTo('substituteHoliday:testHoliday'))->willReturn([]);
+        $translationsStub->expects(self::at(2))->method('getTranslations')->with(self::equalTo('testHoliday'))->willReturn([$locale => $translation]);
 
         $substitute->mergeGlobalTranslations($translationsStub);
 
-        $this->assertIsString($substitute->getName());
-        $this->assertEquals('My Holiday obs', $substitute->getName());
+        self::assertIsString($substitute->getName());
+        self::assertEquals('My Holiday obs', $substitute->getName());
     }
 
     /**
@@ -182,14 +182,14 @@ class SubstituteHolidayTest extends TestCase
         $substitute = new SubstituteHoliday($holiday, [$locale => $translation], new DateTime('2019-01-02'), $locale);
 
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
-        $translationsStub->expects($this->at(0))->method('getTranslations')->with($this->equalTo('substituteHoliday'))->willReturn([$locale => '{0} observed']);
-        $translationsStub->expects($this->at(1))->method('getTranslations')->with($this->equalTo('substituteHoliday:testHoliday'))->willReturn([$locale => $translation]);
-        $translationsStub->expects($this->at(2))->method('getTranslations')->with($this->equalTo('testHoliday'))->willReturn([$locale => 'foo']);
+        $translationsStub->expects(self::at(0))->method('getTranslations')->with(self::equalTo('substituteHoliday'))->willReturn([$locale => '{0} observed']);
+        $translationsStub->expects(self::at(1))->method('getTranslations')->with(self::equalTo('substituteHoliday:testHoliday'))->willReturn([$locale => $translation]);
+        $translationsStub->expects(self::at(2))->method('getTranslations')->with(self::equalTo('testHoliday'))->willReturn([$locale => 'foo']);
 
         $substitute->mergeGlobalTranslations($translationsStub);
 
-        $this->assertIsString($substitute->getName());
-        $this->assertEquals($translation, $substitute->getName());
+        self::assertIsString($substitute->getName());
+        self::assertEquals($translation, $substitute->getName());
     }
 
     /**
@@ -205,13 +205,13 @@ class SubstituteHolidayTest extends TestCase
         $substitute = new SubstituteHoliday($holiday, [], new DateTime('2019-01-02'), $locale);
 
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
-        $translationsStub->expects($this->at(0))->method('getTranslations')->with($this->equalTo('substituteHoliday'))->willReturn([$locale => '{0} observed']);
-        $translationsStub->expects($this->at(1))->method('getTranslations')->with($this->equalTo('substituteHoliday:testHoliday'))->willReturn([]);
-        $translationsStub->expects($this->at(2))->method('getTranslations')->with($this->equalTo('testHoliday'))->willReturn([$locale => $translation]);
+        $translationsStub->expects(self::at(0))->method('getTranslations')->with(self::equalTo('substituteHoliday'))->willReturn([$locale => '{0} observed']);
+        $translationsStub->expects(self::at(1))->method('getTranslations')->with(self::equalTo('substituteHoliday:testHoliday'))->willReturn([]);
+        $translationsStub->expects(self::at(2))->method('getTranslations')->with(self::equalTo('testHoliday'))->willReturn([$locale => $translation]);
 
         $substitute->mergeGlobalTranslations($translationsStub);
 
-        $this->assertIsString($substitute->getName());
-        $this->assertEquals('My Holiday observed', $substitute->getName());
+        self::assertIsString($substitute->getName());
+        self::assertEquals('My Holiday observed', $substitute->getName());
     }
 }

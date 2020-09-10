@@ -83,7 +83,7 @@ trait YasumiBase
 
         // Loop through all known holidays and assert they are defined by the provider class
         foreach ($expectedHolidays as $holiday) {
-            $this->assertArrayHasKey($holiday, \iterator_to_array($holidays));
+            self::assertArrayHasKey($holiday, \iterator_to_array($holidays));
         }
     }
 
@@ -111,9 +111,9 @@ trait YasumiBase
         $holidays = Yasumi::create($provider, $year);
         $holiday = $holidays->getHoliday($key);
 
-        $this->assertInstanceOf(Holiday::class, $holiday);
-        $this->assertEquals($expected, $holiday);
-        $this->assertTrue($holidays->isHoliday($holiday));
+        self::assertInstanceOf(Holiday::class, $holiday);
+        self::assertEquals($expected, $holiday);
+        self::assertTrue($holidays->isHoliday($holiday));
     }
 
     /**
@@ -140,9 +140,9 @@ trait YasumiBase
         $holidays = Yasumi::create($provider, $year);
         $holiday = $holidays->getHoliday('substituteHoliday:' . $key);
 
-        $this->assertInstanceOf(SubstituteHoliday::class, $holiday);
-        $this->assertEquals($expected, $holiday);
-        $this->assertTrue($holidays->isHoliday($holiday));
+        self::assertInstanceOf(SubstituteHoliday::class, $holiday);
+        self::assertEquals($expected, $holiday);
+        self::assertTrue($holidays->isHoliday($holiday));
     }
 
     /**
@@ -193,7 +193,7 @@ trait YasumiBase
         $holidays = Yasumi::create($provider, $year);
         $holiday = $holidays->getHoliday($key);
 
-        $this->assertNull($holiday);
+        self::assertNull($holiday);
     }
 
     /**
@@ -219,8 +219,8 @@ trait YasumiBase
         $holidays = Yasumi::create($provider, $year);
         $holiday = $holidays->getHoliday($key);
 
-        $this->assertInstanceOf(Holiday::class, $holiday);
-        $this->assertTrue($holidays->isHoliday($holiday));
+        self::assertInstanceOf(Holiday::class, $holiday);
+        self::assertTrue($holidays->isHoliday($holiday));
 
         if (\is_array($translations) && !empty($translations)) {
             foreach ($translations as $locale => $name) {
@@ -238,8 +238,8 @@ trait YasumiBase
                     }
                 }
 
-                $this->assertTrue(isset($translation));
-                $this->assertEquals($name, $translation);
+                self::assertTrue(isset($translation));
+                self::assertEquals($name, $translation);
             }
         }
     }
@@ -267,8 +267,8 @@ trait YasumiBase
         $holidays = Yasumi::create($provider, $year);
         $holiday = $holidays->getHoliday($key);
 
-        $this->assertInstanceOf(Holiday::class, $holiday);
-        $this->assertEquals($type, $holiday->getType());
+        self::assertInstanceOf(Holiday::class, $holiday);
+        self::assertEquals($type, $holiday->getType());
     }
 
     /**
@@ -295,9 +295,9 @@ trait YasumiBase
         $holidays = Yasumi::create($provider, $year);
         $holiday = $holidays->getHoliday($key);
 
-        $this->assertInstanceOf(Holiday::class, $holiday);
-        $this->assertTrue($holidays->isHoliday($holiday));
-        $this->assertEquals($expectedDayOfWeek, $holiday->format('l'));
+        self::assertInstanceOf(Holiday::class, $holiday);
+        self::assertTrue($holidays->isHoliday($holiday));
+        self::assertEquals($expectedDayOfWeek, $holiday->format('l'));
     }
 
     /**

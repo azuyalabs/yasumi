@@ -40,8 +40,8 @@ class TypographyTest extends TestCase
      */
     public function testTranslations($name, $class, $key, $locale): void
     {
-        $this->assertStringNotContainsString("'", $name, 'Translation contains typewriter apostrophe');
-        $this->assertStringNotContainsString('"', $name, 'Translation contains typewriter quote');
+        self::assertStringNotContainsString("'", $name, 'Translation contains typewriter apostrophe');
+        self::assertStringNotContainsString('"', $name, 'Translation contains typewriter quote');
     }
 
     /**

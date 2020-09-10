@@ -39,13 +39,13 @@ class StJohnsEveTest extends SwedenBaseTestCase implements YasumiTestCaseInterfa
         $holiday = $holidays->getHoliday(self::HOLIDAY);
 
         // Some basic assertions
-        $this->assertInstanceOf(Holiday::class, $holiday);
-        $this->assertNotNull($holiday);
+        self::assertInstanceOf(Holiday::class, $holiday);
+        self::assertNotNull($holiday);
 
         // Holiday specific assertions
-        $this->assertEquals('Friday', $holiday->format('l'));
-        $this->assertGreaterThanOrEqual(19, $holiday->format('j'));
-        $this->assertLessThanOrEqual(25, $holiday->format('j'));
+        self::assertEquals('Friday', $holiday->format('l'));
+        self::assertGreaterThanOrEqual(19, $holiday->format('j'));
+        self::assertLessThanOrEqual(25, $holiday->format('j'));
 
         unset($holiday, $holidays);
     }

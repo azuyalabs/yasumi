@@ -81,23 +81,23 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements YasumiTestCa
         $holidays = Yasumi::create($provider, $year);
 
         $holidayOfficial = $holidays->getHoliday($key);
-        $this->assertInstanceOf(Holiday::class, $holidayOfficial);
-        $this->assertNotNull($holidayOfficial);
-        $this->assertEquals($expectedOfficial, $holidayOfficial);
-        $this->assertTrue($holidays->isHoliday($holidayOfficial));
-        $this->assertEquals(Holiday::TYPE_OFFICIAL, $holidayOfficial->getType());
+        self::assertInstanceOf(Holiday::class, $holidayOfficial);
+        self::assertNotNull($holidayOfficial);
+        self::assertEquals($expectedOfficial, $holidayOfficial);
+        self::assertTrue($holidays->isHoliday($holidayOfficial));
+        self::assertEquals(Holiday::TYPE_OFFICIAL, $holidayOfficial->getType());
 
         $holidaySubstitution = $holidays->getHoliday('substituteHoliday:' . $holidayOfficial->getKey());
         if ($expectedSubstitution === null) {
             // without substitution
-            $this->assertNull($holidaySubstitution);
+            self::assertNull($holidaySubstitution);
         } else {
             // with substitution
-            $this->assertNotNull($holidaySubstitution);
-            $this->assertInstanceOf(SubstituteHoliday::class, $holidaySubstitution);
-            $this->assertEquals($expectedSubstitution, $holidaySubstitution);
-            $this->assertTrue($holidays->isHoliday($holidaySubstitution));
-            $this->assertEquals(Holiday::TYPE_OFFICIAL, $holidaySubstitution->getType());
+            self::assertNotNull($holidaySubstitution);
+            self::assertInstanceOf(SubstituteHoliday::class, $holidaySubstitution);
+            self::assertEquals($expectedSubstitution, $holidaySubstitution);
+            self::assertTrue($holidays->isHoliday($holidaySubstitution));
+            self::assertEquals(Holiday::TYPE_OFFICIAL, $holidaySubstitution->getType());
         }
 
         unset($holidayOfficial, $holidaySubstitution, $holidays);
@@ -174,7 +174,7 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements YasumiTestCa
      */
     public function testTranslation(): void
     {
-        $this->assertTrue(true);
+        self::assertTrue(true);
     }
 
     /**
@@ -182,6 +182,6 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements YasumiTestCa
      */
     public function testHolidayType(): void
     {
-        $this->assertTrue(true);
+        self::assertTrue(true);
     }
 }
