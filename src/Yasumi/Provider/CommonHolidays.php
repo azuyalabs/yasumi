@@ -441,13 +441,11 @@ trait CommonHolidays
      * @param int $year the year for which summer time need to be created
      * @param string $timezone the timezone in which summer time transition occurs
      * @param string $locale the locale for which summer time need to be displayed in.
-     * @param string $type The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     * @param string|null $type The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
      * @return Holiday|null
      *
-     * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
      * @throws \Exception
      */
     public function summerTime(
@@ -522,13 +520,11 @@ trait CommonHolidays
      * @param int $year the year for which summer time need to be created
      * @param string $timezone the timezone in which summer time transition occurs
      * @param string $locale the locale for which summer time need to be displayed in.
-     * @param string $type The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     * @param string|null $type The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
      * @return Holiday|null
      *
-     * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
      * @throws \Exception
      */
     public function winterTime(

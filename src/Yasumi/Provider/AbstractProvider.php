@@ -102,7 +102,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * Creates a new holiday provider (i.e. country/state).
      *
      * @param int $year the year for which to provide holidays
-     * @param string $locale |null the locale/language in which holidays need to be
+     * @param string|null $locale |null the locale/language in which holidays need to be
      *                                                       represented
      * @param TranslationsInterface|null $globalTranslations global translations
      */
