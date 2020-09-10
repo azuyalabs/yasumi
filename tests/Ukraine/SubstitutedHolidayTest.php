@@ -62,13 +62,8 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements YasumiTestCa
      * @param string $key string the key of the holiday to be checked against
      * @param int $year holiday calendar year
      * @param DateTime $expectedOfficial the official date to be checked against
-     * @param DateTime $expectedSubstitution the substituted date to be checked against
+     * @param DateTime|null $expectedSubstitution the substituted date to be checked against
      *
-     * @throws UnknownLocaleException
-     * @throws InvalidDateException
-     * @throws InvalidArgumentException
-     * @throws RuntimeException
-     * @throws AssertionFailedError
      * @throws ReflectionException
      */
     public function assertHolidayWithSubstitution(

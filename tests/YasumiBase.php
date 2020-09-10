@@ -305,9 +305,9 @@ trait YasumiBase
      *
      * @param int $month month (number) for which the test date needs to be generated
      * @param int $day day (number) for which the test date needs to be generated
-     * @param string $timezone name of the timezone for which the dates need to be generated
-     * @param int $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
-     * @param int $range year range from which dates will be generated (default: 1000)
+     * @param string|null $timezone name of the timezone for which the dates need to be generated
+     * @param int|null $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
+     * @param int|null $range year range from which dates will be generated (default: 1000)
      *
      * @return array list of random test dates used for assertion of holidays.
      * @throws Exception
@@ -332,9 +332,9 @@ trait YasumiBase
     /**
      * Returns a list of random easter test dates used for assertion of holidays.
      *
-     * @param string $timezone name of the timezone for which the dates need to be generated
-     * @param int $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
-     * @param int $range year range from which dates will be generated (default: 1000)
+     * @param string|null $timezone name of the timezone for which the dates need to be generated
+     * @param int|null $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
+     * @param int|null $range year range from which dates will be generated (default: 1000)
      *
      * @return array list of random easter test dates used for assertion of holidays.
      * @throws Exception
@@ -439,9 +439,9 @@ trait YasumiBase
     /**
      * Returns a list of random Easter Monday test dates used for assertion of holidays.
      *
-     * @param string $timezone name of the timezone for which the dates need to be generated
-     * @param int $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
-     * @param int $range year range from which dates will be generated (default: 1000)
+     * @param string|null $timezone name of the timezone for which the dates need to be generated
+     * @param int|null $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
+     * @param int|null $range year range from which dates will be generated (default: 1000)
      *
      * @return array list of random Easter Monday test dates used for assertion of holidays.
      *
@@ -462,9 +462,9 @@ trait YasumiBase
      * Returns a list of random modified Easter day test dates for assertion of holidays.
      *
      * @param callable $cb callback(DateTime $date) to modify $date by custom rules
-     * @param string $timezone name of the timezone for which the dates need to be generated
-     * @param int $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
-     * @param int $range year range from which dates will be generated (default: 1000)
+     * @param string|null $timezone name of the timezone for which the dates need to be generated
+     * @param int|null $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
+     * @param int|null $range year range from which dates will be generated (default: 1000)
      *
      * @return array list of random modified Easter day test dates for assertion of holidays.
      * @throws Exception
@@ -492,9 +492,9 @@ trait YasumiBase
     /**
      * Returns a list of random Good Friday test dates used for assertion of holidays.
      *
-     * @param string $timezone name of the timezone for which the dates need to be generated
-     * @param int $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
-     * @param int $range year range from which dates will be generated (default: 1000)
+     * @param string|null $timezone name of the timezone for which the dates need to be generated
+     * @param int|null $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
+     * @param int|null $range year range from which dates will be generated (default: 1000)
      *
      * @return array list of random Good Friday test dates used for assertion of holidays.
      *
@@ -515,9 +515,9 @@ trait YasumiBase
     /**
      * Returns a list of random Pentecost test dates used for assertion of holidays.
      *
-     * @param string $timezone name of the timezone for which the dates need to be generated
-     * @param int $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
-     * @param int $range year range from which dates will be generated (default: 1000)
+     * @param string|null $timezone name of the timezone for which the dates need to be generated
+     * @param int|null $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
+     * @param int|null $range year range from which dates will be generated (default: 1000)
      *
      * @return array list of random Pentecost test dates used for assertion of holidays.
      *
@@ -541,9 +541,9 @@ trait YasumiBase
      *
      * @param int $month month (number) for which the test date needs to be generated
      * @param int $day day (number) for which the test date needs to be generated
-     * @param string $timezone name of the timezone for which the dates need to be generated
-     * @param int $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
-     * @param int $range year range from which dates will be generated (default: 1000)
+     * @param string|null $timezone name of the timezone for which the dates need to be generated
+     * @param int|null $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
+     * @param int|null $range year range from which dates will be generated (default: 1000)
      *
      * @return array list of random test dates used for assertion of holidays.
      * @throws Exception
@@ -570,7 +570,7 @@ trait YasumiBase
      * @param callable $callback callback(int $year, \DateTime $dateTime) to modify $dateTime by custom rules
      * @param int $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
      * @param int $range year range from which dates will be generated (default: 1000)
-     * @param string $timezone name of the timezone for which the dates need to be generated
+     * @param string|null $timezone name of the timezone for which the dates need to be generated
      *
      * @return array list of random test dates used for assertion of holidays with applied callback.
      *
@@ -601,8 +601,8 @@ trait YasumiBase
     /**
      * Generates a random year (number).
      *
-     * @param int $lowerLimit the lower limit for generating a year number (default: 1000)
-     * @param int $upperLimit the upper limit for generating a year number (default: 9999)
+     * @param int|null $lowerLimit the lower limit for generating a year number (default: 1000)
+     * @param int|null $upperLimit the upper limit for generating a year number (default: 9999)
      *
      * @return int a year number
      */
