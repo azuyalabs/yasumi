@@ -88,6 +88,11 @@ class Holiday extends DateTime implements JsonSerializable
     protected $displayLocale;
 
     /**
+     * @var bool to differentiate between a non-working day and a working day. (Default: if type is official)
+     */
+    protected $nonWorkingDay;
+
+    /**
      * Creates a new Holiday.
      *
      * If a holiday date needs to be defined for a specific timezone, make sure that the date instance
@@ -102,6 +107,8 @@ class Holiday extends DateTime implements JsonSerializable
      * @param string $type The type of holiday. Use the following constants: TYPE_OFFICIAL,
      *                                          TYPE_OBSERVANCE, TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an
      *                                          official holiday is considered.
+     * @param bool $nonWorkingDay Flag that determines if the holiday is a non-working day or not. Usually, the
+     *                                          TYPE_OFFICIAL holiday is considered non-working day.
      *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
@@ -113,7 +120,8 @@ class Holiday extends DateTime implements JsonSerializable
         array $names,
         \DateTimeInterface $date,
         string $displayLocale = self::DEFAULT_LOCALE,
-        string $type = self::TYPE_OFFICIAL
+        string $type = self::TYPE_OFFICIAL,
+        bool $nonWorkingDay = null
     ) {
         // Validate if key is not empty
         if (empty($key)) {
@@ -135,6 +143,7 @@ class Holiday extends DateTime implements JsonSerializable
         $this->translations = $names;
         $this->displayLocale = $displayLocale;
         $this->type = $type;
+        $this->nonWorkingDay = $nonWorkingDay ?? $type === self::TYPE_OFFICIAL;
 
         // Construct instance
         parent::__construct($date->format('Y-m-d'), $date->getTimezone());
@@ -158,6 +167,16 @@ class Holiday extends DateTime implements JsonSerializable
     public function getType(): string
     {
         return $this->type;
+    }
+
+    /**
+     * A boolean flag that determines whether this is a non-working day or not.
+     *
+     * @return bool - true if the holiday is a non-working day, false otherwise.
+     */
+    public function isNonWorkingDay(): bool
+    {
+        return $this->nonWorkingDay;
     }
 
     /**

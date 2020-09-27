@@ -151,6 +151,14 @@ class YasumiTest extends TestCase
         self::assertIsString($holiday->getType());
     }
 
+    public function testIsNonWorkingDay(): void
+    {
+        $holidays = Yasumi::create('Romania', Factory::create()->numberBetween(1949, self::YEAR_UPPER_BOUND));
+        $holiday = $holidays->getHoliday('nationalDay');
+
+        self::assertTrue($holiday->isNonWorkingDay());
+    }
+
     /**
      * Tests that the getYear function returns an integer for the test holiday provider
      * @throws ReflectionException
