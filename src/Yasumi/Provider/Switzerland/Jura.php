@@ -24,6 +24,7 @@ use Yasumi\Provider\Switzerland;
  * Provider for all holidays in Jura (Switzerland).
  *
  * @link https://en.wikipedia.org/wiki/Canton_of_Jura
+ * @link https://rsju.jura.ch/fr/viewdocument.html?idn=20105&id=26766
  */
 class Jura extends Switzerland
 {
@@ -60,11 +61,14 @@ class Jura extends Switzerland
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
 
         $this->calculateBerchtoldsTag();
         $this->calculatePlebisciteJurassien();
+        $this->calculateBettagsMontag();
     }
 
     /**

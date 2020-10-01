@@ -22,6 +22,7 @@ use Yasumi\Provider\Switzerland;
  * Provider for all holidays in Bern (Switzerland).
  *
  * @link https://en.wikipedia.org/wiki/Canton_of_Bern
+ * @link https://www.fin.be.ch/fin/fr/index/personal/personalrecht/wdb.thema.212.html
  */
 class Bern extends Switzerland
 {

@@ -25,6 +25,7 @@ use Yasumi\Provider\Switzerland;
  * Provider for all holidays in Geneva (Switzerland).
  *
  * @link https://en.wikipedia.org/wiki/Canton_of_Geneva
+ * @link https://www.ge.ch/legislation/rsg/f/s/rsg_j1_45.html
  */
 class Geneva extends Switzerland
 {
@@ -91,6 +92,7 @@ class Geneva extends Switzerland
         }
 
         $this->addHoliday(new Holiday('jeuneGenevois', [
+            'en' => 'Jeûne genevois',
             'fr' => 'Jeûne genevois',
         ], $date, $this->locale, $type));
     }
@@ -116,6 +118,7 @@ class Geneva extends Switzerland
             $this->addHoliday(new Holiday(
                 'restaurationGenevoise',
                 [
+                    'en' => 'Restauration de la République',
                     'fr' => 'Restauration de la République',
                 ],
                 new DateTime($this->year . '-12-31', DateTimeZoneFactory::getDateTimeZone($this->timezone)),

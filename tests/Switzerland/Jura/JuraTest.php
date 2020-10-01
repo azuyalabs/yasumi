@@ -53,10 +53,13 @@ class JuraTest extends JuraBaseTestCase
             'newYearsDay',
             'christmasDay',
             'ascensionDay',
+            'easter',
             'easterMonday',
+            'pentecost',
             'pentecostMonday',
             'berchtoldsTag',
             'plebisciteJurassien',
+            'bettagsMontag',
         ], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 

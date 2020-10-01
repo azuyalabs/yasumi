@@ -22,6 +22,7 @@ use Yasumi\Provider\Switzerland;
  * Provider for all holidays in Zürich (Switzerland).
  *
  * @link https://en.wikipedia.org/wiki/Canton_of_Z%C3%BCrich
+ * @link https://www.zh.ch/de/wirtschaft-arbeit/arbeitsbedingungen/arbeitsssicherheit-gesundheitsschutz/arbeits-ruhezeiten/feiertage.html
  */
 class Zurich extends Switzerland
 {
@@ -58,7 +59,5 @@ class Zurich extends Switzerland
         $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-
-        $this->calculateBerchtoldsTag();
     }
 }

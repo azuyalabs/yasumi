@@ -22,6 +22,7 @@ use Yasumi\Provider\Switzerland;
  * Provider for all holidays in Valais (Switzerland).
  *
  * @link https://en.wikipedia.org/wiki/Valais
+ * @link https://www.vs.ch/web/spt/jours-feries
  */
 class Valais extends Switzerland
 {

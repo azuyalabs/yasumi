@@ -10,7 +10,7 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Switzerland\Neuchatel;
+namespace Yasumi\tests\Switzerland\Jura;
 
 use DateTime;
 use DateTimeZone;
@@ -20,32 +20,33 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing BerchtoldsTag in Neuchatel (Switzerland).
+ * Class containing tests for Easter in Jura (Switzerland).
  */
-class BerchtoldsTagTest extends NeuchatelBaseTestCase implements YasumiTestCaseInterface
+class EasterTest extends JuraBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday to be tested
      */
-    public const HOLIDAY = 'berchtoldsTag';
+    public const HOLIDAY = 'easter';
 
     /**
-     * Tests BerchtoldsTag
-     *
-     * @throws ReflectionException
+     * Tests the holiday defined in this test.
      * @throws Exception
+     * @throws ReflectionException
      */
-    public function testBerchtoldsTag(): void
+    public function testHoliday(): void
     {
-        $year = $this->generateRandomYear();
-        $date = new DateTime($year . '-01-02', new DateTimeZone(self::TIMEZONE));
-
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OTHER);
+        $year = 2009;
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-4-12", new DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
-     * Tests translated name of BerchtoldsTag.
+     * Tests the translated name of the holiday defined in this test.
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -54,7 +55,7 @@ class BerchtoldsTagTest extends NeuchatelBaseTestCase implements YasumiTestCaseI
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'Jour de la Saint-Berthold']
+            [self::LOCALE => 'Pâques']
         );
     }
 
