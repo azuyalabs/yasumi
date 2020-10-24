@@ -12,16 +12,19 @@
 
 namespace Yasumi\Provider\Switzerland;
 
+use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
+use Yasumi\Provider\DateTimeZoneFactory;
 use Yasumi\Provider\Switzerland;
 
 /**
  * Provider for all holidays in Fribourg (Switzerland).
  *
  * @link https://en.wikipedia.org/wiki/Canton_of_Fribourg
+ * @link https://www.fr.ch/travail-et-entreprises/employes/jour-ferie-jour-chome-quelle-difference
  */
 class Fribourg extends Switzerland
 {
@@ -45,11 +48,44 @@ class Fribourg extends Switzerland
     {
         parent::initialize();
 
+        // For the whole canton
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
+
+        // For the roman catholic communes
+        $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->assumptionOfMary($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->immaculateConception($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
+
+        // For the reformed evangelical communes
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
+        $this->calculateBerchtoldsTag($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER);
+        $this->calculateDecember26th($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER);
+    }
+
+    /**
+     * December 26th
+     *
+     * @throws InvalidDateException
+     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws \Exception
+     */
+    private function calculateDecember26th(): void
+    {
+        $this->addHoliday(new Holiday(
+            'december26th',
+            [
+                'en' => 'December 26th',
+                'fr' => '26 décembre',
+            ],
+            new DateTime($this->year . '-12-26', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale,
+            Holiday::TYPE_OTHER
+        ));
     }
 }

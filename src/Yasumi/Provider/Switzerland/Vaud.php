@@ -22,6 +22,7 @@ use Yasumi\Provider\Switzerland;
  * Provider for all holidays in Vaud (Switzerland).
  *
  * @link https://en.wikipedia.org/wiki/Vaud
+ * @link https://www.vd.ch/themes/formation/jours-feries-et-vacances-scolaires/
  */
 class Vaud extends Switzerland
 {

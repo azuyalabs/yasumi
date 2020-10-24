@@ -53,7 +53,6 @@ class ZurichTest extends ZurichBaseTestCase
             'ascensionDay',
             'easterMonday',
             'pentecostMonday',
-            'berchtoldsTag',
         ], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
