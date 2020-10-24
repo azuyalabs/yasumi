@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 ## [Unreleased]
 
 ### Added
+- Added Pentecost (Sunday) to Germany [\#225](https://github.com/azuyalabs/yasumi/pull/225)
 
 ### Changed
 
