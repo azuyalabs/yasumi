@@ -25,6 +25,7 @@ use Yasumi\Provider\Switzerland;
  * Provider for all holidays in Geneva (Switzerland).
  *
  * @link https://en.wikipedia.org/wiki/Canton_of_Geneva
+ * @link https://www.ge.ch/legislation/rsg/f/s/rsg_j1_45.html
  */
 class Geneva extends Switzerland
 {
