@@ -243,7 +243,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         // If no data is defined for this Holiday Provider, the function falls back to the global weekend definition.
         if (\in_array(
             (int) $date->format('w'),
-            self::WEEKEND_DATA[$this::ID] ?? [0, 6],
+            static::WEEKEND_DATA[$this::ID] ?? [0, 6],
             true
         )
         ) {
