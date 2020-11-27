@@ -15,7 +15,6 @@ namespace Yasumi\tests\Base;
 use DateTime;
 use DateTimeImmutable;
 use Exception;
-use Faker\Factory;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 use ReflectionException;
@@ -104,7 +103,7 @@ class YasumiTest extends TestCase
         $class = YasumiExternalProvider::class;
         $instance = Yasumi::create(
             $class,
-            Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND)
+            self::numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND)
         );
         self::assertInstanceOf(YasumiExternalProvider::class, $instance);
     }
@@ -120,7 +119,7 @@ class YasumiTest extends TestCase
 
         Yasumi::create(
             'Japan',
-            Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND),
+            self::numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND),
             'wx_YZ'
         );
     }
@@ -145,7 +144,7 @@ class YasumiTest extends TestCase
      */
     public function testGetType(): void
     {
-        $holidays = Yasumi::create('Japan', Factory::create()->numberBetween(1949, self::YEAR_UPPER_BOUND));
+        $holidays = Yasumi::create('Japan', self::numberBetween(1949, self::YEAR_UPPER_BOUND));
         $holiday = $holidays->getHoliday('newYearsDay');
 
         self::assertIsString($holiday->getType());
@@ -157,7 +156,7 @@ class YasumiTest extends TestCase
      */
     public function testGetYear(): void
     {
-        $year = Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND);
+        $year = self::numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND);
         $holidays = Yasumi::create('Netherlands', $year);
 
         self::assertIsInt($holidays->getYear());
@@ -173,7 +172,7 @@ class YasumiTest extends TestCase
     {
         $country = 'Japan';
         $name = 'childrensDay';
-        $year = Factory::create()->numberBetween(1949, self::YEAR_UPPER_BOUND - 1);
+        $year = self::numberBetween(1949, self::YEAR_UPPER_BOUND - 1);
 
         $holidays = Yasumi::create($country, $year);
 
@@ -191,7 +190,7 @@ class YasumiTest extends TestCase
 
         $holidays = Yasumi::create(
             'Netherlands',
-            Factory::create()->numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND - 1)
+            self::numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND - 1)
         );
         $holidays->next('');
     }
@@ -206,7 +205,7 @@ class YasumiTest extends TestCase
         $country = 'Netherlands';
         $name = 'liberationDay';
         $year_lower_limit = 1949;
-        $year = Factory::create()->numberBetween($year_lower_limit, self::YEAR_UPPER_BOUND);
+        $year = self::numberBetween($year_lower_limit, self::YEAR_UPPER_BOUND);
 
         $holidays = Yasumi::create($country, $year);
 
@@ -229,7 +228,7 @@ class YasumiTest extends TestCase
 
         $holidays = Yasumi::create(
             'Netherlands',
-            Factory::create()->numberBetween(self::YEAR_LOWER_BOUND + 1, self::YEAR_UPPER_BOUND)
+            self::numberBetween(self::YEAR_LOWER_BOUND + 1, self::YEAR_UPPER_BOUND)
         );
         $holidays->previous('');
     }
@@ -423,7 +422,7 @@ class YasumiTest extends TestCase
         $this->expectException(TypeError::class);
 
         /** @noinspection PhpParamsInspection */
-        Yasumi::create('Spain', Factory::create()->numberBetween(
+        Yasumi::create('Spain', self::numberBetween(
             self::YEAR_LOWER_BOUND,
             self::YEAR_UPPER_BOUND
         ))->isHoliday(new stdClass());
@@ -499,7 +498,7 @@ class YasumiTest extends TestCase
         $this->expectException(TypeError::class);
 
         /** @noinspection PhpParamsInspection */
-        Yasumi::create('SouthAfrica', Factory::create()->numberBetween(
+        Yasumi::create('SouthAfrica', self::numberBetween(
             self::YEAR_LOWER_BOUND,
             self::YEAR_UPPER_BOUND
         ))->isWorkingDay(new stdClass());
@@ -562,7 +561,7 @@ class YasumiTest extends TestCase
      */
     public function testCreateByISO3166_2(): void
     {
-        $year = Factory::create()->numberBetween(
+        $year = self::numberBetween(
             self::YEAR_LOWER_BOUND,
             self::YEAR_UPPER_BOUND
         );
