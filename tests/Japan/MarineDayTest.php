@@ -35,6 +35,22 @@ class MarineDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
     public const ESTABLISHMENT_YEAR = 1996;
 
     /**
+     * Tests Marine Day in 2021. Marine Day in 2021 is July 22th for rescheduled Olympic Games after COVID-19.
+     * @throws Exception
+     * @throws ReflectionException
+     */
+    public function testMarineDayIn2021(): void
+    {
+        $year = 2021;
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-7-22", new DateTimeZone(self::TIMEZONE))
+        );
+    }
+
+    /**
      * Tests Marine Day in 2020. Marine Day in 2020 is July 23th for the Olympic Games.
      * @throws Exception
      * @throws ReflectionException
