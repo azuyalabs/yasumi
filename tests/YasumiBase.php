@@ -17,7 +17,6 @@ use DateTime;
 use DateTimeInterface;
 use DateTimeZone;
 use Exception;
-use Faker\Factory as Faker;
 use InvalidArgumentException;
 use PHPUnit\Framework\AssertionFailedError;
 use ReflectionException;
@@ -40,6 +39,8 @@ use Yasumi\Yasumi;
  */
 trait YasumiBase
 {
+    protected static $defaultTimezone = null;
+
     /**
      * Asserts that the expected holidays are indeed a holiday for the given provider and year
      *
@@ -322,7 +323,7 @@ trait YasumiBase
         $data = [];
         $range = $range ?? 1000;
         for ($y = 1; $y <= ($iterations ?? 10); $y++) {
-            $year = (int) Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
+            $year = (int) self::dateTimeBetween("-$range years", "+$range years")->format('Y');
             $data[] = [$year, new DateTime("$year-$month-$day", new DateTimeZone($timezone ?? 'UTC'))];
         }
 
@@ -348,7 +349,7 @@ trait YasumiBase
         $range = $range ?? 1000;
 
         for ($i = 1; $i <= ($iterations ?? 10); ++$i) {
-            $year = (int) Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
+            $year = (int) self::dateTimeBetween("-$range years", "+$range years")->format('Y');
             $date = $this->calculateEaster($year, $timezone ?? 'UTC');
 
             $data[] = [$year, $date->format('Y-m-d')];
@@ -478,7 +479,7 @@ trait YasumiBase
         $data = [];
         $range = $range ?? 1000;
         for ($i = 1; $i <= ($iterations ?? 10); ++$i) {
-            $year = (int) Faker::create()->dateTimeBetween("-$range years", "+$range years")->format('Y');
+            $year = (int) self::dateTimeBetween("-$range years", "+$range years")->format('Y');
             $date = $this->calculateEaster($year, $timezone ?? 'UTC');
 
             $cb($date);
@@ -610,7 +611,7 @@ trait YasumiBase
         int $lowerLimit = null,
         int $upperLimit = null
     ): int {
-        return (int) Faker::create()->numberBetween($lowerLimit ?? 1000, $upperLimit ?? 9999);
+        return (int) self::numberBetween($lowerLimit ?? 1000, $upperLimit ?? 9999);
     }
 
     /**
@@ -626,5 +627,89 @@ trait YasumiBase
         array $weekendDays = [0, 6]
     ): bool {
         return \in_array((int) $dateTime->format('w'), $weekendDays, true);
+    }
+
+    /**
+     * Returns a random number between $int1 and $int2 (any order)
+     *
+     * @param integer $int1 default to 0
+     * @param integer $int2 defaults to 32 bit max integer, ie 2147483647
+     * @example 79907610
+     *
+     * @return integer
+     */
+    public static function numberBetween($int1 = 0, $int2 = 2147483647)
+    {
+        $min = $int1 < $int2 ? $int1 : $int2;
+        $max = $int1 < $int2 ? $int2 : $int1;
+        return \mt_rand($min, $max);
+    }
+
+    /**
+     * Get a DateTime object based on a random date between two given dates.
+     * Accepts date strings that can be recognized by strtotime().
+     *
+     * @param \DateTime|string $startDate Defaults to 30 years ago
+     * @param \DateTime|string $endDate   Defaults to "now"
+     * @param string|null $timezone time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
+     * @example DateTime('1999-02-02 11:42:52')
+     * @return \DateTime
+     * @see http://php.net/manual/en/timezones.php
+     * @see http://php.net/manual/en/function.date-default-timezone-get.php
+     */
+    public static function dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null)
+    {
+        $startTimestamp = $startDate instanceof \DateTime ? $startDate->getTimestamp() : \strtotime($startDate);
+        $endTimestamp = static::getMaxTimestamp($endDate);
+
+        if ($startTimestamp > $endTimestamp) {
+            throw new \InvalidArgumentException('Start date must be anterior to end date.');
+        }
+
+        $timestamp = \mt_rand($startTimestamp, $endTimestamp);
+
+        return static::setTimezone(
+            new \DateTime('@' . $timestamp),
+            $timezone
+        );
+    }
+
+    /**
+     * @param \DateTime|string|float|int $max
+     * @return int|false
+     */
+    protected static function getMaxTimestamp($max = 'now')
+    {
+        if (\is_numeric($max)) {
+            return (int) $max;
+        }
+
+        if ($max instanceof \DateTime) {
+            return $max->getTimestamp();
+        }
+
+        return \strtotime(empty($max) ? 'now' : $max);
+    }
+
+    /**
+     * Internal method to set the time zone on a DateTime.
+     *
+     * @param \DateTime $dt
+     * @param string|null $timezone
+     *
+     * @return \DateTime
+     */
+    private static function setTimezone(\DateTime $dt, $timezone)
+    {
+        return $dt->setTimezone(new \DateTimeZone(static::resolveTimezone($timezone)));
+    }
+
+    /**
+     * @param string|null $timezone
+     * @return null|string
+     */
+    private static function resolveTimezone($timezone)
+    {
+        return ((null === $timezone) ? ((null === static::$defaultTimezone) ? \date_default_timezone_get() : static::$defaultTimezone) : $timezone);
     }
 }
