@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 - Rescheduled exceptional Japanese holidays for Olympic Games 2020 after COVID-19 [\#240](https://github.com/azuyalabs/yasumi/pull/240) ([tanakahisateru](https://github.com/tanakahisateru))
 
 ### Fixed
+- Incorrect invocation of Fribourg::calculateBerchtoldsTag() and Fribourg::calculateDecember26th (Switzerland)
 
 ### Deprecated
 

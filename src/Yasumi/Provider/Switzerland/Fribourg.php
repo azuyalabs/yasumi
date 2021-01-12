@@ -63,8 +63,8 @@ class Fribourg extends Switzerland
         // For the reformed evangelical communes
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        $this->calculateBerchtoldsTag($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER);
-        $this->calculateDecember26th($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER);
+        $this->calculateBerchtoldsTag();
+        $this->calculateDecember26th();
     }
 
     /**
