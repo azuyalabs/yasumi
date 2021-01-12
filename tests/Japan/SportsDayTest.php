@@ -35,6 +35,23 @@ class SportsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
     public const ESTABLISHMENT_YEAR = 1996;
 
     /**
+     * Tests Health And Sports Day in 2021. Health And Sports Day in 2021 is July 23th for rescheduled Olympic Games
+     * after COVID-19.
+     * @throws Exception
+     * @throws ReflectionException
+     */
+    public function testSportsDayIn2021(): void
+    {
+        $year = 2021;
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-7-23", new DateTimeZone(self::TIMEZONE))
+        );
+    }
+
+    /**
      * Tests Health And Sports Day in 2020. Health And Sports Day in 2020 is July 24th for the Olympic Games.
      * @throws Exception
      * @throws ReflectionException

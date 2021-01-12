@@ -367,7 +367,11 @@ class Japan extends AbstractProvider
     private function calculateMarineDay(): void
     {
         $date = null;
-        if (2020 === $this->year) {
+        if (2021 === $this->year) {
+            // For Olympic 2021 Tokyo (after COVID-19)
+            $date = new DateTime("$this->year-7-22", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        } elseif (2020 === $this->year) {
+            // For Olympic 2020 Tokyo
             $date = new DateTime("$this->year-7-23", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         } elseif ($this->year >= 2003) {
             $date = new DateTime("third monday of july $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
@@ -398,7 +402,11 @@ class Japan extends AbstractProvider
     private function calculateMountainDay(): void
     {
         $date = null;
-        if (2020 === $this->year) {
+        if (2021 === $this->year) {
+            // For Olympic 2021 Tokyo (after COVID-19)
+            $date = new DateTime("$this->year-8-8", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        } elseif (2020 === $this->year) {
+            // For Olympic 2020 Tokyo
             $date = new DateTime("$this->year-8-10", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         } elseif ($this->year >= 2016) {
             $date = new DateTime("$this->year-8-11", DateTimeZoneFactory::getDateTimeZone($this->timezone));
@@ -461,7 +469,11 @@ class Japan extends AbstractProvider
     private function calculateSportsDay(): void
     {
         $date = null;
-        if (2020 === $this->year) {
+        if (2021 === $this->year) {
+            // For Olympic 2021 Tokyo (after COVID-19)
+            $date = new DateTime("$this->year-7-23", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        } elseif (2020 === $this->year) {
+            // For Olympic 2020 Tokyo
             $date = new DateTime("$this->year-7-24", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         } elseif ($this->year >= 2000) {
             $date = new DateTime("second monday of october $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));

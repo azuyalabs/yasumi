@@ -35,6 +35,22 @@ class MountainDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
     public const ESTABLISHMENT_YEAR = 2016;
 
     /**
+     * Tests Mountain Day in 2021. Mountain Day in 2021 is August 8th for rescheduled Olympic Games after COVID-19.
+     * @throws Exception
+     * @throws ReflectionException
+     */
+    public function testMountainDayIn2021(): void
+    {
+        $year = 2021;
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-8-8", new DateTimeZone(self::TIMEZONE))
+        );
+    }
+
+    /**
      * Tests Mountain Day in 2020. Mountain Day in 2020 is August 10th for the Olympic Games.
      * @throws Exception
      * @throws ReflectionException
