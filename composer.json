@@ -41,6 +41,7 @@
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^2.16",
     "mikey179/vfsstream": "^1.6",
+    "phpstan/phpstan": "^0.12.66",
     "phpunit/phpunit": "^8.5 | ^9.4"
   },
   "autoload": {
@@ -55,6 +56,7 @@
   },
   "scripts": {
     "format": "./vendor/bin/php-cs-fixer fix .",
+    "phpstan": "vendor/bin/phpstan --level=5 analyse src",
     "test": "vendor/bin/phpunit"
   },
   "config": {
