@@ -42,7 +42,7 @@ jobs:
         run: vendor/bin/phpunit --coverage-clover=build/logs/clover.xml
 
       - name: Run static analysis
-        run: vendor/bin/phpstan --level=5 analyse src tests
+        run: vendor/bin/phpstan --level=5 analyse src
 
       - name: Check code styling
         run: vendor/bin/php-cs-fixer --diff --dry-run -v fix
