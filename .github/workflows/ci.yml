@@ -6,6 +6,9 @@ jobs:
       matrix:
         operating-system: [ 'ubuntu-latest' ]
         php-versions: [ '7.3', '7.4', '8.0' ]
+        include:
+          - php-version: 8.0
+            PHP_CS_FIXER_IGNORE_ENV: 1
 
     runs-on: ${{ matrix.operating-system }}
 
