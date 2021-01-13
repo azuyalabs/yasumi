@@ -44,7 +44,7 @@ class PlebisciteDayTest extends CarinthiaBaseTestCase implements YasumiTestCaseI
      *
      * @throws ReflectionException
      */
-    public function testPlebisciteDay($year, $expected): void
+    public function testPlebisciteDay(int $year, DateTime $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

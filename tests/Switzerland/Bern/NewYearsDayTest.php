@@ -38,7 +38,7 @@ class NewYearsDayTest extends BernBaseTestCase implements YasumiTestCaseInterfac
      *
      * @throws ReflectionException
      */
-    public function testNewYearsDay($year, $expected): void
+    public function testNewYearsDay(int $year, DateTime $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

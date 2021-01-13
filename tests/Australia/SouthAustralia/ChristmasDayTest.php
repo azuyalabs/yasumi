@@ -37,12 +37,12 @@ class ChristmasDayTest extends SouthAustraliaBaseTestCase implements YasumiTestC
      *
      * @param int $year the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
-     * @param string $expectedExtra the expected date for the additional holiday, or null if no additional holiday
+     * @param ?string $expectedExtra the expected date for the additional holiday, or null if no additional holiday
      *
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected, $expectedExtra): void
+    public function testHoliday(int $year, string $expected, ?string $expectedExtra): void
     {
         $this->assertHoliday(
             $this->region,

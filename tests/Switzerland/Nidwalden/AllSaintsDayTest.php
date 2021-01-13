@@ -38,7 +38,7 @@ class AllSaintsDayTest extends NidwaldenBaseTestCase implements YasumiTestCaseIn
      *
      * @throws ReflectionException
      */
-    public function testAllSaintsDay($year, $expected): void
+    public function testAllSaintsDay(int $year, DateTime $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

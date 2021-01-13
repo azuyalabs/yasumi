@@ -45,7 +45,7 @@ class AdelaideCupDayTest extends SouthAustraliaBaseTestCase implements YasumiTes
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected): void
+    public function testHoliday(int $year, string $expected): void
     {
         $this->assertHoliday(
             $this->region,

@@ -63,7 +63,7 @@ class VernalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCaseIn
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testVernalEquinoxDayBetween1948And2150($year, $month, $day): void
+    public function testVernalEquinoxDayBetween1948And2150(int $year, int $month, int $day): void
     {
         $this->assertHoliday(
             self::REGION,

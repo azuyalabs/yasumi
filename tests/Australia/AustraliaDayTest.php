@@ -39,7 +39,7 @@ class AustraliaDayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
      *
      * @throws ReflectionException
      */
-    public function testHoliday($year, $expected): void
+    public function testHoliday(int $year, DateTime $expected): void
     {
         $this->assertHoliday($this->region, self::HOLIDAY, $year, $expected);
     }
@@ -50,12 +50,12 @@ class AustraliaDayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
      * @dataProvider SubstituteHolidayDataProvider
      *
      * @param int $year the year for which the holiday defined in this test needs to be tested
-     * @param DateTime $expected the expected date
+     * @param ?string $expected the expected date
      *
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testSubstituteHoliday($year, $expected): void
+    public function testSubstituteHoliday(int $year, ?string $expected): void
     {
         if ($expected) {
             $this->assertSubstituteHoliday(

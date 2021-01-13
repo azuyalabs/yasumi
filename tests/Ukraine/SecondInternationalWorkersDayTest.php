@@ -40,7 +40,7 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements Y
      *
      * @throws ReflectionException
      */
-    public function testSecondInternationalWorkersDay($year, $expected): void
+    public function testSecondInternationalWorkersDay(int $year, DateTime $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

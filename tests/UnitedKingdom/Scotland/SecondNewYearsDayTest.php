@@ -51,7 +51,7 @@ class SecondNewYearsDayTest extends ScotlandBaseTestCase implements YasumiTestCa
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHolidayOnAfterEstablishment($year, $expected): void
+    public function testHolidayOnAfterEstablishment(int $year, string $expected): void
     {
         $date = new DateTime($expected, new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);

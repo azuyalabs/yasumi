@@ -39,7 +39,7 @@ class stNicholasDayTest extends NetherlandsBaseTestCase implements YasumiTestCas
      *
      * @throws ReflectionException
      */
-    public function teststNicholasDay($year, $expected): void
+    public function teststNicholasDay(int $year, DateTime $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

@@ -699,7 +699,7 @@ trait YasumiBase
      *
      * @return \DateTime
      */
-    private static function setTimezone(\DateTime $dt, $timezone)
+    private static function setTimezone(\DateTime $dt, ?string $timezone)
     {
         return $dt->setTimezone(new \DateTimeZone(static::resolveTimezone($timezone)));
     }
@@ -708,7 +708,7 @@ trait YasumiBase
      * @param string|null $timezone
      * @return null|string
      */
-    private static function resolveTimezone($timezone)
+    private static function resolveTimezone(?string $timezone)
     {
         return ((null === $timezone) ? ((null === static::$defaultTimezone) ? \date_default_timezone_get() : static::$defaultTimezone) : $timezone);
     }

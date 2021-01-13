@@ -44,7 +44,7 @@ class StLeopoldsDayTest extends ViennaBaseTestCase implements YasumiTestCaseInte
      *
      * @throws ReflectionException
      */
-    public function testStLeopoldsDay($year, $expected): void
+    public function testStLeopoldsDay(int $year, DateTime $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

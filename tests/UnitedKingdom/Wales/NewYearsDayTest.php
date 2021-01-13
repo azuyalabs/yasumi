@@ -50,7 +50,7 @@ class NewYearsDayTest extends WalesBaseTestCase implements YasumiTestCaseInterfa
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHolidayOnAfterEstablishment($year, $expected): void
+    public function testHolidayOnAfterEstablishment(int $year, string $expected): void
     {
         $this->assertHoliday(
             self::REGION,

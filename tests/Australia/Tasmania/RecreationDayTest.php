@@ -40,7 +40,7 @@ class RecreationDayTest extends TasmaniaBaseTestCase implements YasumiTestCaseIn
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected): void
+    public function testHoliday(int $year, string $expected): void
     {
         $this->assertHoliday(
             $this->region,

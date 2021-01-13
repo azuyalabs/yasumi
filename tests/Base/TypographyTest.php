@@ -38,7 +38,7 @@ class TypographyTest extends TestCase
      * @param string $key The holiday key
      * @param string $locale The locale
      */
-    public function testTranslations($name, $class, $key, $locale): void
+    public function testTranslations(string $name, string $class, string $key, string $locale): void
     {
         self::assertStringNotContainsString("'", $name, 'Translation contains typewriter apostrophe');
         self::assertStringNotContainsString('"', $name, 'Translation contains typewriter quote');

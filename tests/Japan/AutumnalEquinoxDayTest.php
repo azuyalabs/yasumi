@@ -63,7 +63,7 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCase
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testAutumnalEquinoxDayBetween1948And2150($year, $month, $day): void
+    public function testAutumnalEquinoxDayBetween1948And2150(int $year, int $month, int $day): void
     {
         $this->assertHoliday(
             self::REGION,

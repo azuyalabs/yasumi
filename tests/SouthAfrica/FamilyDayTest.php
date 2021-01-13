@@ -45,12 +45,12 @@ class FamilyDayTest extends SouthAfricaBaseTestCase implements YasumiTestCaseInt
      * @dataProvider HolidayDataProvider
      *
      * @param int $year the year for which the holiday defined in this test needs to be tested
-     * @param DateTime $expected the expected date
+     * @param string $expected the expected date
      *
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected): void
+    public function testHoliday(int $year, string $expected): void
     {
         $this->assertHoliday(
             self::REGION,
