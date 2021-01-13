@@ -6,17 +6,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 ## [Unreleased]
 
 ### Added
-- Added Pentecost (Sunday) to Germany [\#225](https://github.com/azuyalabs/yasumi/pull/225)
+- Pentecost (Sunday) to Germany [\#225](https://github.com/azuyalabs/yasumi/pull/225)
+- PHPStan to the dependencies allowing for local analysis.
+- `.gitattributes` file to reduce the size of a release package [\#237](https://github.com/azuyalabs/yasumi/pull/237) ([Stéphane](https://github.com/fezfez))
 
 ### Changed
 - Rescheduled exceptional Japanese holidays for Olympic Games 2020 after COVID-19 [\#240](https://github.com/azuyalabs/yasumi/pull/240) ([tanakahisateru](https://github.com/tanakahisateru))
+- Reformatted code using new/updated Code Styling rules.
+- Use Github Actions for CI replacing Travis/StyleCI/Scrutinizer...[WIP]
+- Updated Copyright year
 
 ### Fixed
 - Incorrect invocation of Fribourg::calculateBerchtoldsTag() and Fribourg::calculateDecember26th (Switzerland)
+- Use parameter type hinting
 
 ### Deprecated
 
 ### Removed
+- PHP 7.2 Support (PHP 7.2 is EOL)
+- Faker library as it has been sunset [\#238](https://github.com/azuyalabs/yasumi/pull/238) ([Stéphane](https://github.com/fezfez))
 
 
 ## [2.3.0] - 2020-06-22
