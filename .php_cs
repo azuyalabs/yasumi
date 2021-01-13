@@ -14,8 +14,15 @@ $finder = PhpCsFixer\Finder::create()->in(__DIR__);
 
 return PhpCsFixer\Config::create()->setRiskyAllowed(true)->setRules([
         '@PSR2'                             => true,
+        '@Symfony'                          => true,
         'array_syntax'                      => ['syntax' => 'short'],
         'native_function_invocation'        => true,
+        'blank_line_after_opening_tag'      => true,
+        'is_null'                           => true,
+        'modernize_types_casting'           => true,
+        'self_accessor'                     => true,
+        'dir_constant'                      => true,
+        'ordered_class_elements'            => true,
         'ordered_imports'                   => ['sortAlgorithm' => 'alpha'],
         'no_unused_imports'                 => true,
         'single_quote'                      => true,
