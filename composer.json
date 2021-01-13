@@ -55,7 +55,7 @@
     }
   },
   "scripts": {
-    "format": "./vendor/bin/php-cs-fixer fix .",
+    "format": "./vendor/bin/php-cs-fixer fix",
     "phpstan": "vendor/bin/phpstan --level=5 analyse src",
     "test": "vendor/bin/phpunit"
   },
