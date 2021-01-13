@@ -572,7 +572,7 @@ trait YasumiBase
         $min = $int1 < $int2 ? $int1 : $int2;
         $max = $int1 < $int2 ? $int2 : $int1;
 
-        return \mt_rand($min, $max);
+        return \random_int($min, $max);
     }
 
     /**
@@ -599,7 +599,7 @@ trait YasumiBase
             throw new \InvalidArgumentException('Start date must be anterior to end date.');
         }
 
-        $timestamp = \mt_rand($startTimestamp, $endTimestamp);
+        $timestamp = \random_int($startTimestamp, $endTimestamp);
 
         return static::setTimezone(
             new \DateTime('@'.$timestamp),
