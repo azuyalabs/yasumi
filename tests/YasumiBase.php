@@ -41,7 +41,7 @@ use Yasumi\Yasumi;
  */
 trait YasumiBase
 {
-    protected static $defaultTimezone = null;
+    protected static $defaultTimezone;
 
     /**
      * Asserts that the expected holidays are indeed a holiday for the given provider and year.
