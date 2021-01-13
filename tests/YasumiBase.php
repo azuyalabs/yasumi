@@ -564,8 +564,6 @@ trait YasumiBase
      * @param int $int2 defaults to 32 bit max integer, ie 2147483647
      *
      * @example 79907610
-     *
-     * @return int
      */
     public static function numberBetween($int1 = 0, $int2 = 2147483647): int
     {
@@ -584,8 +582,6 @@ trait YasumiBase
      * @param string|null      $timezone  time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
      *
      * @example DateTime('1999-02-02 11:42:52')
-     *
-     * @return \DateTime
      *
      * @see http://php.net/manual/en/timezones.php
      * @see http://php.net/manual/en/function.date-default-timezone-get.php
@@ -706,17 +702,12 @@ trait YasumiBase
 
     /**
      * Internal method to set the time zone on a DateTime.
-     *
-     * @return \DateTime
      */
     private static function setTimezone(DateTime $dt, ?string $timezone): DateTime
     {
         return $dt->setTimezone(new \DateTimeZone(static::resolveTimezone($timezone)));
     }
 
-    /**
-     * @return string|null
-     */
     private static function resolveTimezone(?string $timezone): ?string
     {
         return (null === $timezone) ? ((null === static::$defaultTimezone) ? \date_default_timezone_get() : static::$defaultTimezone) : $timezone;
