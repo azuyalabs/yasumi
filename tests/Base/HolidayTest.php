@@ -204,7 +204,6 @@ class HolidayTest extends TestCase
      */
     public function testHolidayGetNameWithGlobalTranslations(): void
     {
-        /** @var TranslationsInterface|PHPUnit_Framework_MockObject_MockObject $translationsStub */
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
 
         $translations = [
@@ -231,7 +230,6 @@ class HolidayTest extends TestCase
      */
     public function testHolidayGetNameWithGlobalParentLocaleTranslations(): void
     {
-        /** @var TranslationsInterface|PHPUnit_Framework_MockObject_MockObject $translationsStub */
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
 
         $translations = [
@@ -258,7 +256,6 @@ class HolidayTest extends TestCase
      */
     public function testHolidayGetNameWithGlobalAndCustomTranslations(): void
     {
-        /** @var TranslationsInterface|PHPUnit_Framework_MockObject_MockObject $translationsStub */
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
 
         $translations = [
@@ -291,7 +288,6 @@ class HolidayTest extends TestCase
      */
     public function testHolidayGetNameWithOverridenGlobalTranslations(): void
     {
-        /** @var TranslationsInterface|PHPUnit_Framework_MockObject_MockObject $translationsStub */
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
 
         $translations = [
