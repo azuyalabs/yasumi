@@ -567,7 +567,7 @@ trait YasumiBase
      *
      * @return int
      */
-    public static function numberBetween($int1 = 0, $int2 = 2147483647)
+    public static function numberBetween($int1 = 0, $int2 = 2147483647): int
     {
         $min = $int1 < $int2 ? $int1 : $int2;
         $max = $int1 < $int2 ? $int2 : $int1;
@@ -590,7 +590,7 @@ trait YasumiBase
      * @see http://php.net/manual/en/timezones.php
      * @see http://php.net/manual/en/function.date-default-timezone-get.php
      */
-    public static function dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null)
+    public static function dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null): DateTime
     {
         $startTimestamp = $startDate instanceof \DateTime ? $startDate->getTimestamp() : \strtotime($startDate);
         $endTimestamp = static::getMaxTimestamp($endDate);
@@ -709,7 +709,7 @@ trait YasumiBase
      *
      * @return \DateTime
      */
-    private static function setTimezone(DateTime $dt, ?string $timezone)
+    private static function setTimezone(DateTime $dt, ?string $timezone): DateTime
     {
         return $dt->setTimezone(new \DateTimeZone(static::resolveTimezone($timezone)));
     }
@@ -717,7 +717,7 @@ trait YasumiBase
     /**
      * @return string|null
      */
-    private static function resolveTimezone(?string $timezone)
+    private static function resolveTimezone(?string $timezone): ?string
     {
         return (null === $timezone) ? ((null === static::$defaultTimezone) ? \date_default_timezone_get() : static::$defaultTimezone) : $timezone;
     }

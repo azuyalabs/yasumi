@@ -18,7 +18,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 ### Fixed
 - Incorrect invocation of Fribourg::calculateBerchtoldsTag() and Fribourg::calculateDecember26th (Switzerland)
-- Use parameter type hinting
+- Use parameter and return type hinting
 
 ### Deprecated
 

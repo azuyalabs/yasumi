@@ -37,7 +37,7 @@ class PentecostTest extends GermanyBaseTestCase implements YasumiTestCaseInterfa
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testHoliday()
+    public function testHoliday(): void
     {
         $year = $this->generateRandomYear();
         $time_stamp = \strtotime(
