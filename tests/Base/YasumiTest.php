@@ -20,8 +20,6 @@ use Exception;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 use ReflectionException;
-use stdClass;
-use TypeError;
 use Yasumi\Exception\InvalidYearException;
 use Yasumi\Exception\ProviderNotFoundException;
 use Yasumi\Exception\UnknownLocaleException;
@@ -422,23 +420,6 @@ class YasumiTest extends TestCase
     }
 
     /**
-     * Tests that the isHoliday function throws a TypeError when the given argument is not an instance that
-     * implements the DateTimeInterface (e.g. DateTime or DateTimeImmutable).
-     *
-     * @throws ReflectionException
-     */
-    public function testIsHolidayException(): void
-    {
-        $this->expectException(TypeError::class);
-
-        /* @noinspection PhpParamsInspection */
-        Yasumi::create('Spain', self::numberBetween(
-            self::YEAR_LOWER_BOUND,
-            self::YEAR_UPPER_BOUND
-        ))->isHoliday(new stdClass());
-    }
-
-    /**
      * Tests that the isWorkingDay function returns a boolean true for a date that is defined as a holiday or falls in
      * the weekend.
      *
@@ -496,25 +477,6 @@ class YasumiTest extends TestCase
         self::assertFalse($isNotWorkingDay);
 
         unset($isNotWorkingDay);
-    }
-
-    /**
-     * Tests that the isWorkingDay function throws a TypeError when the given argument is not an instance
-     * that implements the DateTimeInterface (e.g. DateTime or DateTimeImmutable).
-     *
-     * @TODO Add additional unit tests for those holiday providers that differ from the global definition
-     *
-     * @throws ReflectionException
-     */
-    public function testIsWorkingDayException(): void
-    {
-        $this->expectException(TypeError::class);
-
-        /* @noinspection PhpParamsInspection */
-        Yasumi::create('SouthAfrica', self::numberBetween(
-            self::YEAR_LOWER_BOUND,
-            self::YEAR_UPPER_BOUND
-        ))->isWorkingDay(new stdClass());
     }
 
     /**
