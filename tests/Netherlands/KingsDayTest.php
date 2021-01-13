@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,17 +27,18 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class KingsDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'kingsDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 2014;
 
     /**
      * Tests Kings Day on or after 2014. King's Day is celebrated from 2014 onwards on April 27th.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -51,7 +54,8 @@ class KingsDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInte
     }
 
     /**
-     * Tests Kings Day substituted on Saturday (when Kings Day falls on a Sunday)
+     * Tests Kings Day substituted on Saturday (when Kings Day falls on a Sunday).
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -68,6 +72,7 @@ class KingsDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests Kings Day before 2014. King's Day is celebrated from 2014 onwards on April 27th.
+     *
      * @throws ReflectionException
      */
     public function testKingsDayBefore2014(): void
@@ -81,6 +86,7 @@ class KingsDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -95,6 +101,7 @@ class KingsDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

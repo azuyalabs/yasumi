@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,17 +27,18 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class AntifascistStruggleDayTest extends CroatiaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'antifascistStruggleDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1941;
 
     /**
      * Tests Day of Antifascist Struggle on or after 1941.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -52,6 +55,7 @@ class AntifascistStruggleDayTest extends CroatiaBaseTestCase implements YasumiTe
 
     /**
      * Tests Day of Antifascist Struggle before 1941.
+     *
      * @throws ReflectionException
      */
     public function testAntifascistStruggleDayBefore1941(): void
@@ -65,6 +69,7 @@ class AntifascistStruggleDayTest extends CroatiaBaseTestCase implements YasumiTe
 
     /**
      * Tests translated name of Day of Antifascist Struggle.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -79,6 +84,7 @@ class AntifascistStruggleDayTest extends CroatiaBaseTestCase implements YasumiTe
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

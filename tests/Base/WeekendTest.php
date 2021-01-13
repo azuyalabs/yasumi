@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /*
  * This file is part of the Yasumi package.
@@ -34,7 +36,6 @@ class WeekendTest extends TestCase
      *
      * @dataProvider dataProviderWeekendDays
      *
-     * @param \DateTimeImmutable $date
      * @throws \ReflectionException
      */
     public function testWeekendDay(\DateTimeImmutable $date): void
@@ -47,7 +48,6 @@ class WeekendTest extends TestCase
     }
 
     /**
-     * @return array
      * @throws \Exception
      */
     public function dataProviderWeekendDays(): array
@@ -78,7 +78,6 @@ class WeekendTest extends TestCase
      *
      * @dataProvider dataProviderNonWeekendDays
      *
-     * @param \DateTimeImmutable $date
      * @throws \ReflectionException
      */
     public function testNonWeekendDay(\DateTimeImmutable $date): void
@@ -91,7 +90,6 @@ class WeekendTest extends TestCase
     }
 
     /**
-     * @return array
      * @throws \Exception
      */
     public function dataProviderNonWeekendDays(): array

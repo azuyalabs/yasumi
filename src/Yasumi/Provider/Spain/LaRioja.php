@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -27,7 +29,7 @@ use Yasumi\Provider\Spain;
  * capital is Logroño. Other cities and towns in the province include Calahorra, Arnedo, Alfaro, Haro, Santo Domingo de
  * la Calzada, and Nájera. It has an estimated population of 322,415 inhabitants.
  *
- * @link https://en.wikipedia.org/wiki/La_Rioja_(Spain)
+ * @see https://en.wikipedia.org/wiki/La_Rioja_(Spain)
  */
 class LaRioja extends Spain
 {
@@ -65,7 +67,7 @@ class LaRioja extends Spain
      * La Rioja, on June 9. It marks the anniversary of when the autonomous community of La Rioja's statute was approved
      * on June 9, 1982. The Day of La Rioja was first observed on June 9, 1983.
      *
-     * @link https://www.timeanddate.com/holidays/spain/rioja-day
+     * @see https://www.timeanddate.com/holidays/spain/rioja-day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

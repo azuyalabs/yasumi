@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -24,7 +26,7 @@ use Yasumi\Provider\DateTimeZoneFactory;
  *
  * Nova Scotia is a province of Canada.
  *
- * @link https://en.wikipedia.org/wiki/Nova_Scotia
+ * @see https://en.wikipedia.org/wiki/Nova_Scotia
  */
 class NovaScotia extends Canada
 {
@@ -45,9 +47,9 @@ class NovaScotia extends Canada
     public function initialize(): void
     {
         parent::initialize();
-        
+
         $this->timezone = 'America/Halifax';
-        
+
         $this->calculateCivicHoliday();
         $this->calculateHeritageDay();
         $this->calculateVictoriaDay();
@@ -56,7 +58,7 @@ class NovaScotia extends Canada
     /**
      * Civic Holiday.
      *
-     * @link https://en.wikipedia.org/wiki/Civic_Holiday
+     * @see https://en.wikipedia.org/wiki/Civic_Holiday
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -80,7 +82,7 @@ class NovaScotia extends Canada
     /**
      * Nova Scotia Heritage Day.
      *
-     * @link https://en.wikipedia.org/wiki/Family_Day_(Canada)
+     * @see https://en.wikipedia.org/wiki/Family_Day_(Canada)
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

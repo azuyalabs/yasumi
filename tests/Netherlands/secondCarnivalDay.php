@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -28,9 +30,8 @@ use Yasumi\tests\YasumiTestCaseInterface;
  */
 class secondCarnivalDay extends NetherlandsBaseTestCase implements YasumiTestCaseInterface
 {
-
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     public const HOLIDAY = 'secondCarnivalDay';
 

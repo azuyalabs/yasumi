@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,18 +27,19 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class MartinLutherKingDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'martinLutherKingDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1986;
 
     /**
      * Tests Dr. Martin Luther King Day on or after 1986. Dr. Martin Luther King Day was established since 1986 on the
      * third Monday of January.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -54,6 +57,7 @@ class MartinLutherKingDayTest extends USABaseTestCase implements YasumiTestCaseI
     /**
      * Tests Dr. Martin Luther King Day before 1986. Dr. Martin Luther King Day was established since 1996 on the third
      * Monday of January.
+     *
      * @throws ReflectionException
      */
     public function testMartinLutherKingDayBefore1986(): void
@@ -67,6 +71,7 @@ class MartinLutherKingDayTest extends USABaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -81,6 +86,7 @@ class MartinLutherKingDayTest extends USABaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

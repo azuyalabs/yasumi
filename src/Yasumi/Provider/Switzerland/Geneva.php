@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -24,8 +26,8 @@ use Yasumi\Provider\Switzerland;
 /**
  * Provider for all holidays in Geneva (Switzerland).
  *
- * @link https://en.wikipedia.org/wiki/Canton_of_Geneva
- * @link https://www.ge.ch/legislation/rsg/f/s/rsg_j1_45.html
+ * @see https://en.wikipedia.org/wiki/Canton_of_Geneva
+ * @see https://www.ge.ch/legislation/rsg/f/s/rsg_j1_45.html
  */
 class Geneva extends Switzerland
 {
@@ -63,12 +65,12 @@ class Geneva extends Switzerland
     }
 
     /**
-     * Jeûne genevois
+     * Jeûne genevois.
      *
      * Jeûne genevois (meaning Genevan fast) is a public holiday in the canton of Geneva which occurs
      * on the Thursday following the first Sunday of September. It dates back to the 16th century.
      *
-     * @link https://en.wikipedia.org/wiki/Je%C3%BBne_genevois
+     * @see https://en.wikipedia.org/wiki/Je%C3%BBne_genevois
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -82,7 +84,7 @@ class Geneva extends Switzerland
         }
 
         // Find first Sunday of September
-        $date = new DateTime('First Sunday of ' . $this->year . '-09', DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new DateTime('First Sunday of '.$this->year.'-09', DateTimeZoneFactory::getDateTimeZone($this->timezone));
         // Go to next Thursday
         $date->add(new DateInterval('P4D'));
 
@@ -97,14 +99,14 @@ class Geneva extends Switzerland
     }
 
     /**
-     * Restauration de la République
+     * Restauration de la République.
      *
      * On April 15, 1798, French troops entered Geneva; the annexation of the canton by France would
      * last more than fifteen years, until 1813. On December 30, 1813, the last of Napoleon’s troops
      * left Geneva, and the last French warden departed the next day. On December 31, 1813, the
      * Restoration of the Republic of Geneva was declared.
      *
-     * @link https://fr.wikipedia.org/wiki/Restauration_genevoise
+     * @see https://fr.wikipedia.org/wiki/Restauration_genevoise
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -119,7 +121,7 @@ class Geneva extends Switzerland
                 [
                     'fr' => 'Restauration de la République',
                 ],
-                new DateTime($this->year . '-12-31', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new DateTime($this->year.'-12-31', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OTHER
             ));

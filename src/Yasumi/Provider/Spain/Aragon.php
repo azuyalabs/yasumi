@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -26,7 +28,7 @@ use Yasumi\Provider\Spain;
  * Teruel. Its capital is Zaragoza (also called Saragossa in English). The current Statute of Autonomy declares Aragon a
  * nationality of Spain.
  *
- * @link https://en.wikipedia.org/wiki/Aragon
+ * @see https://en.wikipedia.org/wiki/Aragon
  */
 class Aragon extends Spain
 {

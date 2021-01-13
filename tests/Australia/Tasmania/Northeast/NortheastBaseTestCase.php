@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -23,7 +25,7 @@ abstract class NortheastBaseTestCase extends TasmaniaBaseTestCase
     use YasumiBase;
 
     /**
-     * Name of the region (e.g. country / state) to be tested
+     * Name of the region (e.g. country / state) to be tested.
      */
     public $region = 'Australia\Tasmania\Northeast';
 }

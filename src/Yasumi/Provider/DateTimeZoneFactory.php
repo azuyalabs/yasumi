@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -13,7 +15,7 @@
 namespace Yasumi\Provider;
 
 /**
- * This factory keep references to already instantiated DateTimeZone to save CPU time resources
+ * This factory keep references to already instantiated DateTimeZone to save CPU time resources.
  *
  * @author Pierrick VIGNAND <pierrick.vignand@gmail.com>
  */

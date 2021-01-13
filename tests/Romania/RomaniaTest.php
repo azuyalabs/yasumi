@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /*
  * This file is part of the Yasumi package.
@@ -17,8 +19,7 @@ use ReflectionException;
 use Yasumi\Holiday;
 
 /**
- * Class RomaniaTest
- * @package Yasumi\tests\Romania
+ * Class RomaniaTest.
  */
 class RomaniaTest extends RomaniaBaseTestCase
 {
@@ -28,7 +29,16 @@ class RomaniaTest extends RomaniaBaseTestCase
     protected $year;
 
     /**
-     * Tests if all official holidays in Romania are defined by the provider class
+     * Initial setup of this Test Case.
+     */
+    protected function setUp(): void
+    {
+        $this->year = $this->generateRandomYear(2015, 2025);
+    }
+
+    /**
+     * Tests if all official holidays in Romania are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
@@ -57,7 +67,8 @@ class RomaniaTest extends RomaniaBaseTestCase
     }
 
     /**
-     * Tests if all observed holidays in Romania are defined by the provider class
+     * Tests if all observed holidays in Romania are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testObservedHolidays(): void
@@ -76,7 +87,8 @@ class RomaniaTest extends RomaniaBaseTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in Romania are defined by the provider class
+     * Tests if all seasonal holidays in Romania are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
@@ -85,7 +97,8 @@ class RomaniaTest extends RomaniaBaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in Romania are defined by the provider class
+     * Tests if all bank holidays in Romania are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testBankHolidays(): void
@@ -94,19 +107,12 @@ class RomaniaTest extends RomaniaBaseTestCase
     }
 
     /**
-     * Tests if all other holidays in Romania are defined by the provider class
+     * Tests if all other holidays in Romania are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
-    }
-
-    /**
-     * Initial setup of this Test Case
-     */
-    protected function setUp(): void
-    {
-        $this->year = $this->generateRandomYear(2015, 2025);
     }
 }

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,18 +27,19 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class WashingtonsBirthdayTest extends USABaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'washingtonsBirthday';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1879;
 
     /**
      * Tests Washington's Birthday on or after 1968. Washington's Birthday was established since 1879 on February 22
      * and was changed in 1968 to the third Monday in February.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -54,6 +57,7 @@ class WashingtonsBirthdayTest extends USABaseTestCase implements YasumiTestCaseI
     /**
      * Tests Washington's Birthday between 1879 and 1967. Washington's Birthday was established since 1879 on February
      * 22 and was changed in 1968 to the third Monday in February.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -71,6 +75,7 @@ class WashingtonsBirthdayTest extends USABaseTestCase implements YasumiTestCaseI
     /**
      * Tests Washington's Birthday before 1879. Washington's Birthday was established since 1879 on February 22 and was
      * changed in 1968 to the third Monday in February.
+     *
      * @throws ReflectionException
      */
     public function testWashingtonsBirthdayBefore1879(): void
@@ -84,6 +89,7 @@ class WashingtonsBirthdayTest extends USABaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -98,6 +104,7 @@ class WashingtonsBirthdayTest extends USABaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

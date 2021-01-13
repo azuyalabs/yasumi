@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,17 +27,18 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class ChildrensDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     public const HOLIDAY = 'childrensDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1950;
 
     /**
      * Tests Children's Day on or after 1950.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -52,6 +55,7 @@ class ChildrensDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests Children's Day before 1950.
+     *
      * @throws ReflectionException
      */
     public function testChildrensDayBefore1950(): void
@@ -65,6 +69,7 @@ class ChildrensDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void

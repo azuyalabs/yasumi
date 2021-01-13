@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -24,7 +26,7 @@ use Yasumi\Provider\DateTimeZoneFactory;
  *
  * Manitoba is a province of Canada.
  *
- * @link https://en.wikipedia.org/wiki/Alberta
+ * @see https://en.wikipedia.org/wiki/Alberta
  */
 class Alberta extends Canada
 {
@@ -45,9 +47,9 @@ class Alberta extends Canada
     public function initialize(): void
     {
         parent::initialize();
-        
+
         $this->timezone = 'America/Edmonton';
-        
+
         $this->calculateHeritageDay();
         $this->calculateFamilyDay();
         $this->calculateVictoriaDay();
@@ -56,7 +58,7 @@ class Alberta extends Canada
     /**
      * Heritage Day.
      *
-     * @link https://en.wikipedia.org/wiki/Civic_Holiday
+     * @see https://en.wikipedia.org/wiki/Civic_Holiday
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

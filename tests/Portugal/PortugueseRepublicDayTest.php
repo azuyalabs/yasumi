@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,7 +27,7 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class PortugueseRepublicDayTest extends PortugalBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1910;
 
@@ -35,12 +37,13 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements YasumiTe
     public const HOLIDAY_YEAR_RESTORED = 2016;
 
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     public const HOLIDAY = 'portugueseRepublic';
 
     /**
      * Test that the holiday if in effect in 2016 and later dates.
+     *
      * @throws ReflectionException
      * @throws Exception
      * @throws ReflectionException
@@ -61,6 +64,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements YasumiTe
 
     /**
      * Test that the holiday did not happen in 2013-2015.
+     *
      * @throws ReflectionException
      */
     public function testNotHolidayDuringAbolishment(): void
@@ -71,6 +75,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements YasumiTe
 
     /**
      * Tests the holiday defined in this test on or after establishment.
+     *
      * @throws ReflectionException
      * @throws Exception
      * @throws ReflectionException
@@ -104,6 +109,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements YasumiTe
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -118,6 +124,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements YasumiTe
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

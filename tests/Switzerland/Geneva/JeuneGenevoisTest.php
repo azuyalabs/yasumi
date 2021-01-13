@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -27,12 +29,12 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class JeuneGenevoisTest extends GenevaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'jeuneGenevois';
 
     /**
-     * Tests Jeune Genevois between 1870 and 1965
+     * Tests Jeune Genevois between 1870 and 1965.
      *
      * @throws ReflectionException
      * @throws Exception
@@ -41,7 +43,7 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements YasumiTestCaseInte
     {
         $year = $this->generateRandomYear(1870, 1965);
         // Find first Sunday of September
-        $date = new DateTime('First Sunday of ' . $year . '-09', new DateTimeZone(self::TIMEZONE));
+        $date = new DateTime('First Sunday of '.$year.'-09', new DateTimeZone(self::TIMEZONE));
         // Go to next Thursday
         $date->add(new DateInterval('P4D'));
 
@@ -50,7 +52,7 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements YasumiTestCaseInte
     }
 
     /**
-     * Tests Jeune Genevois between 1840 and 1869
+     * Tests Jeune Genevois between 1840 and 1869.
      *
      * @throws ReflectionException
      * @throws Exception
@@ -59,7 +61,7 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements YasumiTestCaseInte
     {
         $year = $this->generateRandomYear(Geneva::JEUNE_GENEVOIS_ESTABLISHMENT_YEAR, 1869);
         // Find first Sunday of September
-        $date = new DateTime('First Sunday of ' . $year . '-09', new DateTimeZone(self::TIMEZONE));
+        $date = new DateTime('First Sunday of '.$year.'-09', new DateTimeZone(self::TIMEZONE));
         // Go to next Thursday
         $date->add(new DateInterval('P4D'));
 
@@ -68,7 +70,8 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements YasumiTestCaseInte
     }
 
     /**
-     * Tests Jeune Genevois before 1840
+     * Tests Jeune Genevois before 1840.
+     *
      * @throws ReflectionException
      */
     public function testJeuneGenevoisBefore1840(): void
@@ -79,6 +82,7 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests translated name of Jeune Genevois.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -93,6 +97,7 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

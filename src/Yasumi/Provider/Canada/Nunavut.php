@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -22,7 +24,7 @@ use Yasumi\Provider\Canada;
  *
  * Nunavut is a territory of Canada.
  *
- * @link https://en.wikipedia.org/wiki/Nunavut
+ * @see https://en.wikipedia.org/wiki/Nunavut
  */
 class Nunavut extends Canada
 {
@@ -43,9 +45,9 @@ class Nunavut extends Canada
     public function initialize(): void
     {
         parent::initialize();
-        
+
         $this->timezone = 'America/Iqaluit';
-        
+
         $this->calculateCivicHoliday();
         $this->calculateVictoriaDay();
     }

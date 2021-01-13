@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /*
  * This file is part of the Yasumi package.
@@ -11,7 +13,6 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-
 namespace Yasumi\tests\Slovakia;
 
 use DateTime;
@@ -23,24 +24,21 @@ use Yasumi\tests\YasumiTestCaseInterface;
 /**
  * Class for testing Christmas eve in Slovakia.
  *
- *
- * @package Yasumi\tests\Slovakia
  * @author  Andrej Rypak (dakujem) <xrypak@gmail.com>
  */
 class ChristmasEveTest extends SlovakiaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'christmasEve';
-
 
     /**
      * Tests Christmas Eve.
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int $year the year for which Christmas Day needs to be tested
+     * @param int      $year     the year for which Christmas Day needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws ReflectionException
@@ -50,11 +48,11 @@ class ChristmasEveTest extends SlovakiaBaseTestCase implements YasumiTestCaseInt
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
-
     /**
-     * Returns a list of random test dates used for assertion of the holiday defined in this test
+     * Returns a list of random test dates used for assertion of the holiday defined in this test.
      *
      * @return array list of test dates for the holiday defined in this test
+     *
      * @throws Exception
      */
     public function HolidayDataProvider(): array
@@ -62,9 +60,9 @@ class ChristmasEveTest extends SlovakiaBaseTestCase implements YasumiTestCaseInt
         return $this->generateRandomDates(12, 24, self::TIMEZONE);
     }
 
-
     /**
      * Tests translated name of Christmas Eve.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -77,9 +75,9 @@ class ChristmasEveTest extends SlovakiaBaseTestCase implements YasumiTestCaseInt
         );
     }
 
-
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

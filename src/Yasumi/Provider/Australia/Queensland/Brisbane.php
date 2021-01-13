@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -21,7 +23,6 @@ use Yasumi\Provider\DateTimeZoneFactory;
 
 /**
  * Provider for all holidays in Brisbane (Australia).
- *
  */
 class Brisbane extends Queensland
 {
@@ -59,7 +60,7 @@ class Brisbane extends Queensland
      * "People's Day". The Ekka starts on the first Friday in August, except if the first Friday is before 5 August, in
      * which case it starts on the second Friday of August. People's Day is then the Wednesday after the Ekka commences.
      *
-     * @link https://en.wikipedia.org/wiki/Ekka
+     * @see https://en.wikipedia.org/wiki/Ekka
      *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
@@ -67,7 +68,7 @@ class Brisbane extends Queensland
      */
     private function calculatePeoplesDay(): void
     {
-        $date = new DateTime('first friday of august ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new DateTime('first friday of august '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone));
         if ($date->format('d') < 5) {
             $date = $date->add(new DateInterval('P7D'));
         }

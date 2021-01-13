@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -21,7 +23,7 @@ use Yasumi\Provider\Canada;
  *
  * Northwest Territories is a territory of Canada.
  *
- * @link https://en.wikipedia.org/wiki/Northwest_Territories
+ * @see https://en.wikipedia.org/wiki/Northwest_Territories
  */
 class NorthwestTerritories extends Canada
 {
@@ -42,9 +44,9 @@ class NorthwestTerritories extends Canada
     public function initialize(): void
     {
         parent::initialize();
-        
+
         $this->timezone = 'America/Yellowknife';
-        
+
         $this->calculateCivicHoliday();
         $this->calculateNationalIndigenousPeoplesDay();
         $this->calculateVictoriaDay();

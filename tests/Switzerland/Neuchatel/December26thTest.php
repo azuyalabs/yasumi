@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,17 +27,18 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class December26thTest extends NeuchatelBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'december26th';
 
     /**
-     * One of the year the holiday is observed
+     * One of the year the holiday is observed.
      */
     public const OBSERVANCE_YEAR = 2022;
 
     /**
      * Tests December 26th.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -71,6 +74,7 @@ class December26thTest extends NeuchatelBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests translated name of December 26th.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -85,6 +89,7 @@ class December26thTest extends NeuchatelBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

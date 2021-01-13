@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,12 +27,13 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'queensDay';
 
     /**
      * Tests Queens Day between 1891 and 1948.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -47,6 +50,7 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests Queens Day between 1891 and 1948 substituted one day later (when Queens Day falls on a Sunday).
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -63,6 +67,7 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests Queens Day between 1949 and 2013.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -79,6 +84,7 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests Queens Day between 1949 and 2013 substituted one day later.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -95,6 +101,7 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests Queens Day between 1949 and 2013 substituted one day earlier.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -111,6 +118,7 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests Queen's Day before 1891.
+     *
      * @throws ReflectionException
      */
     public function testQueensDayBefore1891(): void
@@ -120,6 +128,7 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests Queen's Day after 2013.
+     *
      * @throws ReflectionException
      */
     public function testQueensDayAfter2013(): void
@@ -129,6 +138,7 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -143,6 +153,7 @@ class QueensDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -23,12 +25,12 @@ abstract class VictoriaBaseTestCase extends AustraliaBaseTestCase
     use YasumiBase;
 
     /**
-     * Name of the region (e.g. country / state) to be tested
+     * Name of the region (e.g. country / state) to be tested.
      */
     public $region = 'Australia\Victoria';
 
     /**
-     * Timezone in which this provider has holidays defined
+     * Timezone in which this provider has holidays defined.
      */
     public $timezone = 'Australia/Victoria';
 }

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -22,7 +24,8 @@ use Yasumi\Holiday;
  */
 class Spain extends AbstractProvider
 {
-    use CommonHolidays, ChristianHolidays;
+    use CommonHolidays;
+    use ChristianHolidays;
 
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
@@ -70,7 +73,7 @@ class Spain extends AbstractProvider
      * Hispanidad, the international Hispanic community. On November 27, 1981, a royal decree established Día de la
      * Hispanidad as a national holiday.
      *
-     * @link https://en.wikipedia.org/wiki/Fiesta_Nacional_de_España
+     * @see https://en.wikipedia.org/wiki/Fiesta_Nacional_de_España
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -99,7 +102,7 @@ class Spain extends AbstractProvider
      * 1978. In this referendum, a new constitution was approved. This was an important step in Spain's transition to
      * becoming a constitutional monarchy and democracy.
      *
-     * @link https://www.timeanddate.com/holidays/spain/constitution-day
+     * @see https://www.timeanddate.com/holidays/spain/constitution-day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

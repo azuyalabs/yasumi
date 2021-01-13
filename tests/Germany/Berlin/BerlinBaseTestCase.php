@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -23,12 +25,12 @@ abstract class BerlinBaseTestCase extends GermanyBaseTestCase
     use YasumiBase;
 
     /**
-     * Name of the region (e.g. country / state) to be tested
+     * Name of the region (e.g. country / state) to be tested.
      */
     public const REGION = 'Germany/Berlin';
 
     /**
-     * Timezone in which this provider has holidays defined
+     * Timezone in which this provider has holidays defined.
      */
     public const TIMEZONE = 'Europe/Berlin';
 }

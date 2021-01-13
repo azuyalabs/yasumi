@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,7 +27,7 @@ use Yasumi\Provider\Germany;
  * million inhabitants, Germany's second most populous state. Munich, Bavaria's capital and largest city, is the third
  * largest city in Germany.
  *
- * @link https://en.wikipedia.org/wiki/Bavaria
+ * @see https://en.wikipedia.org/wiki/Bavaria
  */
 class Bavaria extends Germany
 {

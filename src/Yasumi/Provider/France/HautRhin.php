@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -24,7 +26,7 @@ use Yasumi\Provider\France;
  * Its name means Upper Rhine. Haut-Rhin is the smaller and less populated of the two departments of the traditional
  * Alsace region, although it is still densely populated compared to the rest of France.
  *
- * @link https://en.wikipedia.org/wiki/Haut-Rhin
+ * @see https://en.wikipedia.org/wiki/Haut-Rhin
  */
 class HautRhin extends France
 {

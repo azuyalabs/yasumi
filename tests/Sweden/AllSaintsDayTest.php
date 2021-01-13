@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -26,7 +28,7 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class AllSaintsDayTest extends SwedenBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     public const HOLIDAY = 'allSaintsDay';
 
@@ -35,7 +37,7 @@ class AllSaintsDayTest extends SwedenBaseTestCase implements YasumiTestCaseInter
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int $year the year for which the holiday defined in this test needs to be tested
+     * @param int      $year     the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws ReflectionException
@@ -46,16 +48,17 @@ class AllSaintsDayTest extends SwedenBaseTestCase implements YasumiTestCaseInter
     }
 
     /**
-     * Returns a list of random test dates used for assertion of the holiday defined in this test
+     * Returns a list of random test dates used for assertion of the holiday defined in this test.
      *
      * @return array list of test dates for the holiday defined in this test
+     *
      * @throws Exception
      */
     public function HolidayDataProvider(): array
     {
         $data = [];
 
-        for ($y = 0; $y < 50; $y++) {
+        for ($y = 0; $y < 50; ++$y) {
             $year = $this->generateRandomYear();
             $date = new DateTime("$year-10-31", new DateTimeZone(self::TIMEZONE));
 
@@ -74,6 +77,7 @@ class AllSaintsDayTest extends SwedenBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -88,6 +92,7 @@ class AllSaintsDayTest extends SwedenBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

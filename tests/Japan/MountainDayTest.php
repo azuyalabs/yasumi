@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,17 +27,18 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class MountainDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'mountainDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 2016;
 
     /**
      * Tests Mountain Day in 2021. Mountain Day in 2021 is August 8th for rescheduled Olympic Games after COVID-19.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -52,6 +55,7 @@ class MountainDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests Mountain Day in 2020. Mountain Day in 2020 is August 10th for the Olympic Games.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -68,6 +72,7 @@ class MountainDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests Mountain Day after 2016. Mountain Day was established in 2014 and is held from 2016 on August 11th.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -83,7 +88,8 @@ class MountainDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
     }
 
     /**
-     * Tests Mountain Day after 2016 substituted next working day (when Mountain Day falls on a Sunday)
+     * Tests Mountain Day after 2016 substituted next working day (when Mountain Day falls on a Sunday).
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -92,7 +98,7 @@ class MountainDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
         $year = 2019;
         $this->assertHoliday(
             self::REGION,
-            self::SUBSTITUTE_PREFIX . self::HOLIDAY,
+            self::SUBSTITUTE_PREFIX.self::HOLIDAY,
             $year,
             new DateTime("$year-8-12", new DateTimeZone(self::TIMEZONE))
         );
@@ -100,6 +106,7 @@ class MountainDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests Mountain Day before 2016. Mountain Day was established in 2014 and is held from 2016 on August 11th.
+     *
      * @throws ReflectionException
      */
     public function testMountainDayBefore2016(): void
@@ -113,6 +120,7 @@ class MountainDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -127,6 +135,7 @@ class MountainDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

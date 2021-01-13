@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -27,7 +29,7 @@ use Yasumi\Provider\Spain;
  * Africa, sharing a western border with Morocco. Separated from the Iberian peninsula by the Strait of Gibraltar, Ceuta
  * lies along the boundary between the Mediterranean Sea and the Atlantic Ocean.
  *
- * @link https://en.wikipedia.org/wiki/Ceuta
+ * @see https://en.wikipedia.org/wiki/Ceuta
  */
 class Ceuta extends Spain
 {
@@ -65,7 +67,7 @@ class Ceuta extends Spain
      * This local holiday marks the date when Pedro de Menezes (or Meneses), Count of Viana do Alentejo, took control of
      * the city from King John I of Portugal on September 2, 1415.
      *
-     * @link https://www.timeanddate.com/holidays/spain/the-independent-city-ceuta-day
+     * @see https://www.timeanddate.com/holidays/spain/the-independent-city-ceuta-day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

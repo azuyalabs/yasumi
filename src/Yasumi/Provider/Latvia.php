@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /*
  * This file is part of the Yasumi package.
@@ -22,7 +24,8 @@ use Yasumi\Holiday;
  */
 class Latvia extends AbstractProvider
 {
-    use CommonHolidays, ChristianHolidays;
+    use CommonHolidays;
+    use ChristianHolidays;
 
     public const RESTORATION_OF_INDEPENDENCE_YEAR = 1990;
 

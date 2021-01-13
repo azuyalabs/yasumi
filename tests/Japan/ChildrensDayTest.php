@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,17 +27,18 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class ChildrensDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'childrensDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1948;
 
     /**
-     * Tests Children's Day after 1948. Children's Day was established after 1948
+     * Tests Children's Day after 1948. Children's Day was established after 1948.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -51,7 +54,7 @@ class ChildrensDayTest extends JapanBaseTestCase implements YasumiTestCaseInterf
     }
 
     /**
-     * Tests Children's Day after 1948 substituted next working day (when Children's Day falls on a Sunday)
+     * Tests Children's Day after 1948 substituted next working day (when Children's Day falls on a Sunday).
      *
      * @throws Exception
      * @throws ReflectionException
@@ -61,14 +64,14 @@ class ChildrensDayTest extends JapanBaseTestCase implements YasumiTestCaseInterf
         $year = 2120;
         $this->assertHoliday(
             self::REGION,
-            self::SUBSTITUTE_PREFIX . self::HOLIDAY,
+            self::SUBSTITUTE_PREFIX.self::HOLIDAY,
             $year,
             new DateTime("$year-5-6", new DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
-     * Tests Children's Day before 1948. Children's Day was established after 1948
+     * Tests Children's Day before 1948. Children's Day was established after 1948.
      *
      * @throws ReflectionException
      */

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -19,15 +21,16 @@ use Yasumi\Holiday;
 
 /**
  * Provider for all holidays in Romania.
- * https://en.wikipedia.org/wiki/Public_holidays_in_Romania
+ * https://en.wikipedia.org/wiki/Public_holidays_in_Romania.
  *
  * Class Romania
- * @package Yasumi\Provider
+ *
  * @author  Angelin Calu <angelin.calu@gmail.com>
  */
 class Romania extends AbstractProvider
 {
-    use CommonHolidays, ChristianHolidays;
+    use CommonHolidays;
+    use ChristianHolidays;
 
     /**
      * Code to identify this Holiday Provider.
@@ -74,11 +77,19 @@ class Romania extends AbstractProvider
     }
 
     /**
-     * Day after New Year's Day
+     * @throws \Exception
+     */
+    public function calculateEaster(int $year, string $timezone): DateTime
+    {
+        return $this->calculateOrthodoxEaster($year, $timezone);
+    }
+
+    /**
+     * Day after New Year's Day.
      *
      * 2nd of January one of Romania's official non-working holidays
      *
-     * @link https://en.wikipedia.org/wiki/Public_holidays_in_Romania
+     * @see https://en.wikipedia.org/wiki/Public_holidays_in_Romania
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -96,14 +107,13 @@ class Romania extends AbstractProvider
     }
 
     /**
-     * Celebration of United Principalities
+     * Celebration of United Principalities.
      *
      * On 24 January 1862, the Principality of Moldavia and the Principality of Wallachia
      * formally united to create the Romanian United Principalities.
      * It is officially a non-working holiday since 7 October 2016.
      *
-     *
-     * @link https://en.wikipedia.org/wiki/United_Principalities
+     * @see https://en.wikipedia.org/wiki/United_Principalities
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -122,11 +132,11 @@ class Romania extends AbstractProvider
     }
 
     /**
-     * St. Andrew's day
+     * St. Andrew's day.
      *
      * Saint Andrew is the patron saint of Romania.
      *
-     * @link https://en.wikipedia.org/wiki/St._Andrew%27s_Day
+     * @see https://en.wikipedia.org/wiki/St._Andrew%27s_Day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -139,7 +149,7 @@ class Romania extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'stAndrewsDay',
                 [],
-                new DateTime($this->year . '-11-30', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new DateTime($this->year.'-11-30', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -153,8 +163,8 @@ class Romania extends AbstractProvider
      * It commemorates the assembly of the delegates of ethnic Romanians held in Alba Iulia,
      * which declared the Union of Transylvania with Romania.
      *
-     * @link https://en.wikipedia.org/wiki/Great_Union_Day
-     * @link https://ro.wikipedia.org/wiki/Ziua_na%C8%9Bional%C4%83_a_Rom%C3%A2niei
+     * @see https://en.wikipedia.org/wiki/Great_Union_Day
+     * @see https://ro.wikipedia.org/wiki/Ziua_na%C8%9Bional%C4%83_a_Rom%C3%A2niei
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -187,11 +197,12 @@ class Romania extends AbstractProvider
     }
 
     /**
-     * Constantin Brancusi Day
+     * Constantin Brancusi Day.
      *
      * Constantin Brâncuși (February 19, 1876 – March 16, 1957) was a Romanian sculptor, painter and photographer.
      *
-     * @link https://en.wikipedia.org/wiki/Constantin_Br%C3%A2ncu%C8%99i
+     * @see https://en.wikipedia.org/wiki/Constantin_Br%C3%A2ncu%C8%99i
+     *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
@@ -214,12 +225,13 @@ class Romania extends AbstractProvider
     }
 
     /**
-     * Children's Day
+     * Children's Day.
      *
      * International Children's Day becamed a public Holiday in Romania starting with 2017
      * according to the Law 220/2016 (18.11.2016)
      *
-     * @link https://en.wikipedia.org/wiki/Children%27s_Day
+     * @see https://en.wikipedia.org/wiki/Children%27s_Day
+     *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
@@ -247,18 +259,5 @@ class Romania extends AbstractProvider
                 'ro' => 'Ziua Copilului',
             ], new DateTime("$this->year-06-01", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
-    }
-
-    /**
-     * @param int $year
-     * @param string $timezone
-     *
-     * @return DateTime
-     *
-     * @throws \Exception
-     */
-    public function calculateEaster(int $year, string $timezone): DateTime
-    {
-        return $this->calculateOrthodoxEaster($year, $timezone);
     }
 }

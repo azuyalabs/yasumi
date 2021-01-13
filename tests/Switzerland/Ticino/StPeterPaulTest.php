@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -23,9 +25,8 @@ use Yasumi\tests\YasumiTestCaseInterface;
  */
 class StPeterPaulTest extends TicinoBaseTestCase implements YasumiTestCaseInterface
 {
-
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'stPeterPaul';
 
@@ -34,7 +35,7 @@ class StPeterPaulTest extends TicinoBaseTestCase implements YasumiTestCaseInterf
      *
      * @dataProvider StPeterPaulDataProvider
      *
-     * @param int $year the year for which Feast of Saints Peter and Paul needs to be tested
+     * @param int      $year     the year for which Feast of Saints Peter and Paul needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws ReflectionException
@@ -48,6 +49,7 @@ class StPeterPaulTest extends TicinoBaseTestCase implements YasumiTestCaseInterf
      * Returns a list of random test dates used for assertion of Feast of Saints Peter and Paul.
      *
      * @return array list of test dates for Feast of Saints Peter and Paul
+     *
      * @throws Exception
      */
     public function StPeterPaulDataProvider(): array
@@ -57,6 +59,7 @@ class StPeterPaulTest extends TicinoBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -71,6 +74,7 @@ class StPeterPaulTest extends TicinoBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

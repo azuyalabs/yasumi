@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,19 +27,16 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class EnthronementProclamationCeremonyTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'enthronementProclamationCeremony';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const IMPLEMENT_YEAR = 2019;
 
     /**
-     *
-     *
-     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -50,7 +49,6 @@ class EnthronementProclamationCeremonyTest extends JapanBaseTestCase implements 
             new DateTime('2019-10-22', new DateTimeZone(self::TIMEZONE))
         );
     }
-
 
     /**
      * @throws ReflectionException
@@ -78,6 +76,7 @@ class EnthronementProclamationCeremonyTest extends JapanBaseTestCase implements 
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -92,6 +91,7 @@ class EnthronementProclamationCeremonyTest extends JapanBaseTestCase implements 
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

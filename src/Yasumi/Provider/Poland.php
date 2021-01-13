@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -22,7 +24,8 @@ use Yasumi\Holiday;
  */
 class Poland extends AbstractProvider
 {
-    use CommonHolidays, ChristianHolidays;
+    use CommonHolidays;
+    use ChristianHolidays;
 
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
@@ -70,14 +73,13 @@ class Poland extends AbstractProvider
      * May 3, 1791. Festivities date back to the Duchy of Warsaw early in the 19th century, but it became an official
      * holiday only in 1919 in the Second Polish Republic.
      *
-     * @link https://en.wikipedia.org/wiki/May_3rd_Constitution_Day
+     * @see https://en.wikipedia.org/wiki/May_3rd_Constitution_Day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-
     private function calculateIndependenceDay(): void
     {
         if ($this->year < 1918) {
@@ -98,14 +100,13 @@ class Poland extends AbstractProvider
      * Republic in 1918, after 123 years of partition by the Russian Empire, the Kingdom of Prussia and the Habsburg
      * Empire.
      *
-     * @link https://en.wikipedia.org/wiki/National_Independence_Day_(Poland)
+     * @see https://en.wikipedia.org/wiki/National_Independence_Day_(Poland)
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-
     private function calculateConstitutionDay(): void
     {
         if ($this->year < 1791) {

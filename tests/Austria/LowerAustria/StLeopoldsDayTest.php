@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -39,8 +41,8 @@ class StLeopoldsDayTest extends LowerAustriaBaseTestCase implements YasumiTestCa
      *
      * @dataProvider StLeopoldsDayDataProvider
      *
-     * @param int $year the year for which Saint Leopold's Day needs to be tested.
-     * @param DateTime $expected the expected date.
+     * @param int      $year     the year for which Saint Leopold's Day needs to be tested
+     * @param DateTime $expected the expected date
      *
      * @throws ReflectionException
      */
@@ -52,14 +54,15 @@ class StLeopoldsDayTest extends LowerAustriaBaseTestCase implements YasumiTestCa
     /**
      * Returns a list of random test dates used for assertion of Saint Leopold's Day.
      *
-     * @return array list of test dates for Saint Leopold's Day.
+     * @return array list of test dates for Saint Leopold's Day
+     *
      * @throws Exception
      */
     public function StLeopoldsDayDataProvider(): array
     {
         $data = [];
 
-        for ($y = 0; $y < self::TEST_ITERATIONS; $y++) {
+        for ($y = 0; $y < self::TEST_ITERATIONS; ++$y) {
             $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
             $data[] = [$year, new DateTime("$year-11-15", new DateTimeZone(self::TIMEZONE))];
         }
@@ -69,6 +72,7 @@ class StLeopoldsDayTest extends LowerAustriaBaseTestCase implements YasumiTestCa
 
     /**
      * Tests the holiday defined in this test before establishment.
+     *
      * @throws ReflectionException
      */
     public function testHolidayBeforeEstablishment(): void
@@ -82,6 +86,7 @@ class StLeopoldsDayTest extends LowerAustriaBaseTestCase implements YasumiTestCa
 
     /**
      * Tests translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -96,6 +101,7 @@ class StLeopoldsDayTest extends LowerAustriaBaseTestCase implements YasumiTestCa
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

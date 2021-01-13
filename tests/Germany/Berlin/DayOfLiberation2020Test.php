@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,17 +27,18 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class DayOfLiberation2020Test extends BerlinBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     public const HOLIDAY = 'dayOfLiberation';
 
     /**
-     * The year in which the holiday takes place
+     * The year in which the holiday takes place.
      */
     public const YEAR = 2020;
 
     /**
-     * Test the holiday defined in this test
+     * Test the holiday defined in this test.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -45,12 +48,13 @@ class DayOfLiberation2020Test extends BerlinBaseTestCase implements YasumiTestCa
             self::REGION,
             self::HOLIDAY,
             self::YEAR,
-            new DateTime(self::YEAR . '-05-08', new DateTimeZone(self::TIMEZONE))
+            new DateTime(self::YEAR.'-05-08', new DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
-     * Test the holiday defined in this test in the years before
+     * Test the holiday defined in this test in the years before.
+     *
      * @throws ReflectionException
      */
     public function testHolidayBeforeYear(): void
@@ -63,7 +67,8 @@ class DayOfLiberation2020Test extends BerlinBaseTestCase implements YasumiTestCa
     }
 
     /**
-     * Test the holiday defined in this test in the years after
+     * Test the holiday defined in this test in the years after.
+     *
      * @throws ReflectionException
      */
     public function testHolidayAfterYear(): void
@@ -77,6 +82,7 @@ class DayOfLiberation2020Test extends BerlinBaseTestCase implements YasumiTestCa
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -91,6 +97,7 @@ class DayOfLiberation2020Test extends BerlinBaseTestCase implements YasumiTestCa
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

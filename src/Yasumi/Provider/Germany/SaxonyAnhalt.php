@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -24,7 +26,7 @@ use Yasumi\Provider\Germany;
  * Lower Saxony, Brandenburg, Saxony and Thuringia. Its capital is Magdeburg and its largest city is Halle (Saale).
  * Saxony-Anhalt covers an area of 20,447.7 square kilometres (7,894.9 sq mi)[4] and has a population of 2.34 million.
  *
- * @link https://en.wikipedia.org/wiki/Saxony-Anhalt
+ * @see https://en.wikipedia.org/wiki/Saxony-Anhalt
  */
 class SaxonyAnhalt extends Germany
 {

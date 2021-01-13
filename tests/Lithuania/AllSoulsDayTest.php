@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /*
  * This file is part of the Yasumi package.
@@ -29,7 +31,7 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class AllSoulsDayTest extends LithuaniaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     public const HOLIDAY = 'allSoulsDay';
 
@@ -46,7 +48,8 @@ class AllSoulsDayTest extends LithuaniaBaseTestCase implements YasumiTestCaseInt
     }
 
     /**
-     * Test if holiday is defined after restoration
+     * Test if holiday is defined after restoration.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -64,6 +67,7 @@ class AllSoulsDayTest extends LithuaniaBaseTestCase implements YasumiTestCaseInt
 
     /**
      * {@inheritdoc}
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -78,6 +82,7 @@ class AllSoulsDayTest extends LithuaniaBaseTestCase implements YasumiTestCaseInt
 
     /**
      * {@inheritdoc}
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /*
  * This file is part of the Yasumi package.
@@ -23,7 +25,8 @@ use Yasumi\Holiday;
  */
 class Germany extends AbstractProvider
 {
-    use CommonHolidays, ChristianHolidays;
+    use CommonHolidays;
+    use ChristianHolidays;
 
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
@@ -76,7 +79,7 @@ class Germany extends AbstractProvider
      * 3 October has been the German national holiday since 1990, when the reunification was formally completed. It
      * is a legal holiday for the Federal Republic of Germany.
      *
-     * @link https://en.wikipedia.org/wiki/German_Unity_Day
+     * @see https://en.wikipedia.org/wiki/German_Unity_Day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -89,7 +92,7 @@ class Germany extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'germanUnityDay',
                 ['de' => 'Tag der Deutschen Einheit'],
-                new DateTime($this->year . '-10-3', new \DateTimeZone($this->timezone)),
+                new DateTime($this->year.'-10-3', new \DateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /*
  * This file is part of the Yasumi package.
@@ -25,7 +27,8 @@ use Yasumi\Provider\Lithuania;
 class LithuaniaTest extends LithuaniaBaseTestCase
 {
     /**
-     * Tests if all official holidays in Lithuania are defined by the provider class
+     * Tests if all official holidays in Lithuania are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
@@ -61,7 +64,8 @@ class LithuaniaTest extends LithuaniaBaseTestCase
     }
 
     /**
-     * Tests if all observed holidays in Lithuania are defined by the provider class
+     * Tests if all observed holidays in Lithuania are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testObservedHolidays(): void
@@ -70,7 +74,8 @@ class LithuaniaTest extends LithuaniaBaseTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in Lithuania are defined by the provider class
+     * Tests if all seasonal holidays in Lithuania are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
@@ -79,7 +84,8 @@ class LithuaniaTest extends LithuaniaBaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in Lithuania are defined by the provider class
+     * Tests if all bank holidays in Lithuania are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testBankHolidays(): void
@@ -88,7 +94,8 @@ class LithuaniaTest extends LithuaniaBaseTestCase
     }
 
     /**
-     * Tests if all other holidays in Lithuania are defined by the provider class
+     * Tests if all other holidays in Lithuania are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testOtherHolidays(): void

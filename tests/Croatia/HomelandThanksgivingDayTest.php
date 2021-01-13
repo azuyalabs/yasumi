@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,22 +27,23 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class HomelandThanksgivingDayTest extends CroatiaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'homelandThanksgiving';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1995;
 
     /**
-     * The year in which the holiday name was changed
+     * The year in which the holiday name was changed.
      */
     public const NAME_CHANGED_YEAR = 2020;
 
     /**
      * Tests Homeland Thanksgiving Day on or after 1995.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -57,6 +60,7 @@ class HomelandThanksgivingDayTest extends CroatiaBaseTestCase implements YasumiT
 
     /**
      * Tests Homeland Thanksgiving Day before 1995.
+     *
      * @throws ReflectionException
      */
     public function testHomelandThanksgivingDayBefore1995(): void
@@ -70,6 +74,7 @@ class HomelandThanksgivingDayTest extends CroatiaBaseTestCase implements YasumiT
 
     /**
      * Tests translated name of Homeland Thanksgiving Day.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -95,6 +100,7 @@ class HomelandThanksgivingDayTest extends CroatiaBaseTestCase implements YasumiT
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

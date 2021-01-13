@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,17 +27,18 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class WorldAnimalDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'worldAnimalDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1931;
 
     /**
      * Tests World Animal Day on or after 1931.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -52,6 +55,7 @@ class WorldAnimalDayTest extends NetherlandsBaseTestCase implements YasumiTestCa
 
     /**
      * Tests World Animal Day before 1931.
+     *
      * @throws ReflectionException
      */
     public function testWorldAnimalBefore1931(): void
@@ -65,6 +69,7 @@ class WorldAnimalDayTest extends NetherlandsBaseTestCase implements YasumiTestCa
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void
@@ -79,6 +84,7 @@ class WorldAnimalDayTest extends NetherlandsBaseTestCase implements YasumiTestCa
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void

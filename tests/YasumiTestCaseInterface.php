@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -21,7 +23,6 @@ namespace Yasumi\tests;
  */
 interface YasumiTestCaseInterface
 {
-
     /**
      * Tests the translated name of the holiday defined in this test.
      */

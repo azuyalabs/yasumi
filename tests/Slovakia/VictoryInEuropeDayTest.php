@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /*
  * This file is part of the Yasumi package.
@@ -11,7 +13,6 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-
 namespace Yasumi\tests\Slovakia;
 
 use DateTime;
@@ -23,24 +24,21 @@ use Yasumi\tests\YasumiTestCaseInterface;
 /**
  * Class for testing a holiday in Slovakia.
  *
- *
- * @package Yasumi\tests\Slovakia
  * @author  Andrej Rypak (dakujem) <xrypak@gmail.com>
  */
 class VictoryInEuropeDayTest extends SlovakiaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'victoryInEuropeDay';
-
 
     /**
      * Tests Christmas Day.
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int $year the year for which Christmas Day needs to be tested
+     * @param int      $year     the year for which Christmas Day needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws ReflectionException
@@ -50,11 +48,11 @@ class VictoryInEuropeDayTest extends SlovakiaBaseTestCase implements YasumiTestC
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
-
     /**
-     * Returns a list of random test dates used for assertion of the holiday defined in this test
+     * Returns a list of random test dates used for assertion of the holiday defined in this test.
      *
      * @return array list of test dates for the holiday defined in this test
+     *
      * @throws Exception
      */
     public function HolidayDataProvider(): array
@@ -62,9 +60,9 @@ class VictoryInEuropeDayTest extends SlovakiaBaseTestCase implements YasumiTestC
         return $this->generateRandomDates(5, 8, self::TIMEZONE);
     }
 
-
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -77,9 +75,9 @@ class VictoryInEuropeDayTest extends SlovakiaBaseTestCase implements YasumiTestC
         );
     }
 
-
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

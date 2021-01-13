@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -22,7 +24,8 @@ use Yasumi\Holiday;
  */
 class Norway extends AbstractProvider
 {
-    use CommonHolidays, ChristianHolidays;
+    use CommonHolidays;
+    use ChristianHolidays;
 
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
@@ -62,7 +65,7 @@ class Norway extends AbstractProvider
     }
 
     /**
-     * Constitution Day
+     * Constitution Day.
      *
      * Norway’s Constitution Day is May 17 and commemorates the signing of Norways's constitution at Eidsvoll on
      * May 17, 1814. It’s usually referred to as Grunnlovsdag(en) ((The) Constitution Day), syttende mai (May 17) or
@@ -72,7 +75,7 @@ class Norway extends AbstractProvider
      * coalition with Sweden, proceeded by nearly 400 years of Danish rule. The Norwegian Parliament, known as
      * Stortinget, held the first May 17 celebrations in 1836, and since it has been regarded as Norway’s National Day.
      *
-     * @link https://en.wikipedia.org/wiki/Norwegian_Constitution_Day
+     * @see https://en.wikipedia.org/wiki/Norwegian_Constitution_Day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

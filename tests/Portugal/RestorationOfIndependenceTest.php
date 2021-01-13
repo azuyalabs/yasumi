@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,7 +27,7 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class RestorationOfIndependenceTest extends PortugalBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1850;
 
@@ -40,12 +42,13 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Yasu
     public const HOLIDAY_YEAR_RESTORED = 2016;
 
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     public const HOLIDAY = 'restorationOfIndependence';
 
     /**
      * Tests the holiday defined in this test on or after establishment.
+     *
      * @throws ReflectionException
      * @throws Exception
      * @throws ReflectionException
@@ -65,6 +68,7 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Yasu
 
     /**
      * Test that the holiday if in effect in 2016 and later dates.
+     *
      * @throws ReflectionException
      * @throws Exception
      * @throws ReflectionException
@@ -85,6 +89,7 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Yasu
 
     /**
      * Test that the holiday did not happen in 2013-2015.
+     *
      * @throws ReflectionException
      */
     public function testNotHolidayDuringAbolishment(): void

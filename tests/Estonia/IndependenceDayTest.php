@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /*
  * This file is part of the Yasumi package.
@@ -29,12 +31,13 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class IndependenceDayTest extends EstoniaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     public const HOLIDAY = 'independenceDay';
 
     /**
-     * Test if holiday is not defined before
+     * Test if holiday is not defined before.
+     *
      * @throws ReflectionException
      */
     public function testHolidayBefore(): void
@@ -47,7 +50,8 @@ class IndependenceDayTest extends EstoniaBaseTestCase implements YasumiTestCaseI
     }
 
     /**
-     * Test if holiday is defined after
+     * Test if holiday is defined after.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -86,6 +90,7 @@ class IndependenceDayTest extends EstoniaBaseTestCase implements YasumiTestCaseI
 
     /**
      * {@inheritdoc}
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

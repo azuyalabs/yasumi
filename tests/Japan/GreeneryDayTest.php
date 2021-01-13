@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,18 +27,19 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class GreeneryDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday defined in the test
+     * The name of the holiday defined in the test.
      */
     public const HOLIDAY = 'greeneryDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1989;
 
     /**
      * Tests Greenery Day after 2007. Greenery Day was established from 1989 on April 29th. After 2007
      * it was changed to be May 4th.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -52,7 +55,8 @@ class GreeneryDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
     }
 
     /**
-     * Tests Greenery Day after 2007 substituted next working day (when Greenery Day falls on a Sunday)
+     * Tests Greenery Day after 2007 substituted next working day (when Greenery Day falls on a Sunday).
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -61,7 +65,7 @@ class GreeneryDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
         $year = 2014;
         $this->assertHoliday(
             self::REGION,
-            self::SUBSTITUTE_PREFIX . self::HOLIDAY,
+            self::SUBSTITUTE_PREFIX.self::HOLIDAY,
             $year,
             new DateTime("$year-5-6", new DateTimeZone(self::TIMEZONE))
         );
@@ -70,6 +74,7 @@ class GreeneryDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
     /**
      * Tests Greenery Day between 1989 and 2007. Greenery Day was established from 1989 on April 29th. After 2007
      * it was changed to be May 4th.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -85,7 +90,8 @@ class GreeneryDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
     }
 
     /**
-     * Tests Greenery Day between 1989 and 2007 substituted next working day (when Greenery Day falls on a Sunday)
+     * Tests Greenery Day between 1989 and 2007 substituted next working day (when Greenery Day falls on a Sunday).
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -94,7 +100,7 @@ class GreeneryDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
         $year = 2001;
         $this->assertHoliday(
             self::REGION,
-            self::SUBSTITUTE_PREFIX . self::HOLIDAY,
+            self::SUBSTITUTE_PREFIX.self::HOLIDAY,
             $year,
             new DateTime("$year-4-30", new DateTimeZone(self::TIMEZONE))
         );
@@ -103,6 +109,7 @@ class GreeneryDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
     /**
      * Tests Greenery Day before 1989. Greenery Day was established from 1989 on April 29th. After 2007
      * it was changed to be May 4th.
+     *
      * @throws ReflectionException
      */
     public function testHolidayBefore1989(): void
@@ -116,6 +123,7 @@ class GreeneryDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -130,6 +138,7 @@ class GreeneryDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

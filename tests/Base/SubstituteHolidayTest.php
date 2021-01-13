@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -46,6 +48,7 @@ class SubstituteHolidayTest extends TestCase
 
     /**
      * Tests that an InvalidArgumentException is thrown in case the substitute is on the same date as the substituted.
+     *
      * @throws \Exception
      */
     public function testCreateSubstituteHolidaySameDate(): void
@@ -75,6 +78,7 @@ class SubstituteHolidayTest extends TestCase
 
     /**
      * Tests that a Yasumi holiday instance can be serialized to a JSON object.
+     *
      * @throws \Exception
      */
     public function testSubstituteHolidayIsJsonSerializable(): void
@@ -92,7 +96,8 @@ class SubstituteHolidayTest extends TestCase
 
     /**
      * Tests that a Yasumi holiday instance can be created using an object that implements the DateTimeInterface (e.g.
-     * DateTime or DateTimeImmutable)
+     * DateTime or DateTimeImmutable).
+     *
      * @throws \Exception
      */
     public function testSubstituteHolidayWithDateTimeInterface(): void
@@ -111,6 +116,7 @@ class SubstituteHolidayTest extends TestCase
 
     /**
      * Tests the getName function of the SubstituteHoliday object with no translations for the name given.
+     *
      * @throws \Exception
      */
     public function testSubstituteHolidayGetNameWithNoTranslations(): void
@@ -120,11 +126,12 @@ class SubstituteHolidayTest extends TestCase
         $substitute = new SubstituteHoliday($holiday, [], new DateTime('2019-01-02'), 'en_US');
 
         self::assertIsString($substitute->getName());
-        self::assertEquals('substituteHoliday:' . $name, $substitute->getName());
+        self::assertEquals('substituteHoliday:'.$name, $substitute->getName());
     }
 
     /**
      * Tests the getName function of the SubstituteHoliday object when it has a custom translation.
+     *
      * @throws \Exception
      */
     public function testSubstituteHolidayGetNameWithCustomSubstituteTranslation(): void
@@ -148,6 +155,7 @@ class SubstituteHolidayTest extends TestCase
 
     /**
      * Tests the getName function of the SubstituteHoliday object when substitute holiday pattern uses fallback.
+     *
      * @throws \Exception
      */
     public function testSubstituteHolidayGetNameWithPatternFallback(): void
@@ -171,6 +179,7 @@ class SubstituteHolidayTest extends TestCase
 
     /**
      * Tests the getName function of the SubstituteHoliday object when it has a global translation.
+     *
      * @throws \Exception
      */
     public function testSubstituteHolidayGetNameWithGlobalSubstituteTranslation(): void
@@ -194,6 +203,7 @@ class SubstituteHolidayTest extends TestCase
 
     /**
      * Tests the getName function of the SubstituteHoliday object when only the substituted holiday has a translation.
+     *
      * @throws \Exception
      */
     public function testSubstituteHolidayGetNameWithSubstitutedTranslation(): void

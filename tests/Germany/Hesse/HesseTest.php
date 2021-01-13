@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -16,7 +18,7 @@ use ReflectionException;
 use Yasumi\Holiday;
 
 /**
- * Class for testing holidays in Hesse (Germany)
+ * Class for testing holidays in Hesse (Germany).
  */
 class HesseTest extends HesseBaseTestCase
 {
@@ -26,7 +28,16 @@ class HesseTest extends HesseBaseTestCase
     protected $year;
 
     /**
-     * Tests if all official holidays in Hesse (Germany) are defined by the provider class
+     * Initial setup of this Test Case.
+     */
+    protected function setUp(): void
+    {
+        $this->year = $this->generateRandomYear(1990);
+    }
+
+    /**
+     * Tests if all official holidays in Hesse (Germany) are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
@@ -45,7 +56,8 @@ class HesseTest extends HesseBaseTestCase
     }
 
     /**
-     * Tests if all observed holidays in Hesse (Germany) are defined by the provider class
+     * Tests if all observed holidays in Hesse (Germany) are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testObservedHolidays(): void
@@ -54,7 +66,8 @@ class HesseTest extends HesseBaseTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in Hesse (Germany) are defined by the provider class
+     * Tests if all seasonal holidays in Hesse (Germany) are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
@@ -63,7 +76,8 @@ class HesseTest extends HesseBaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in Hesse (Germany) are defined by the provider class
+     * Tests if all bank holidays in Hesse (Germany) are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testBankHolidays(): void
@@ -72,19 +86,12 @@ class HesseTest extends HesseBaseTestCase
     }
 
     /**
-     * Tests if all other holidays in Hesse (Germany) are defined by the provider class
+     * Tests if all other holidays in Hesse (Germany) are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays(['corpusChristi'], self::REGION, $this->year, Holiday::TYPE_OTHER);
-    }
-
-    /**
-     * Initial setup of this Test Case
-     */
-    protected function setUp(): void
-    {
-        $this->year = $this->generateRandomYear(1990);
     }
 }

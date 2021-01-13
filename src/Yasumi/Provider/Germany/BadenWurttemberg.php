@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -24,7 +26,7 @@ use Yasumi\Provider\Germany;
  * largest state in terms of size and population, with an area of 36,410 square kilometres (14,060 sq mi) and 10.7
  * million inhabitants. The state capital and largest city is Stuttgart.
  *
- * @link https://en.wikipedia.org/wiki/Baden-W%C3%BCrttemberg
+ * @see https://en.wikipedia.org/wiki/Baden-W%C3%BCrttemberg
  */
 class BadenWurttemberg extends Germany
 {

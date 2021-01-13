@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /*
  * This file is part of the Yasumi package.
@@ -28,17 +30,18 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class SeollalTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'seollal';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1985;
 
     /**
      * Tests the holiday defined in this test.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -73,6 +76,7 @@ class SeollalTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests the substitute holiday defined in this test (conflict with Sunday).
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -100,6 +104,7 @@ class SeollalTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests the holiday defined in this test before establishment.
+     *
      * @throws ReflectionException
      */
     public function testHolidayBeforeEstablishment(): void
@@ -113,6 +118,7 @@ class SeollalTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -144,6 +150,7 @@ class SeollalTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

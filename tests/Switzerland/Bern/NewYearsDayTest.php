@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -24,7 +26,7 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class NewYearsDayTest extends BernBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'newYearsDay';
 
@@ -33,7 +35,7 @@ class NewYearsDayTest extends BernBaseTestCase implements YasumiTestCaseInterfac
      *
      * @dataProvider NewYearsDayDataProvider
      *
-     * @param int $year the year for which New Years Day needs to be tested
+     * @param int      $year     the year for which New Years Day needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws ReflectionException
@@ -45,6 +47,7 @@ class NewYearsDayTest extends BernBaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * Tests translated name of New Years Day.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -59,6 +62,7 @@ class NewYearsDayTest extends BernBaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void
@@ -70,6 +74,7 @@ class NewYearsDayTest extends BernBaseTestCase implements YasumiTestCaseInterfac
      * Returns a list of random test dates used for assertion of New Years Day.
      *
      * @return array list of test dates for New Years Day
+     *
      * @throws Exception
      */
     public function NewYearsDayDataProvider(): array

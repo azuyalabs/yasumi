@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,7 +27,7 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class CorpusChristiTest extends PortugalBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'corpusChristi';
 
@@ -41,6 +43,7 @@ class CorpusChristiTest extends PortugalBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests the holiday defined in this test.
+     *
      * @throws ReflectionException
      * @throws Exception
      */
@@ -53,6 +56,7 @@ class CorpusChristiTest extends PortugalBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Test that the holiday did not happen in 2013-2015.
+     *
      * @throws ReflectionException
      */
     public function testNotHoliday(): void
@@ -63,6 +67,7 @@ class CorpusChristiTest extends PortugalBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests translated name of Corpus Christi.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void

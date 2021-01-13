@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -23,7 +25,8 @@ use Yasumi\Holiday;
  */
 class Greece extends AbstractProvider
 {
-    use CommonHolidays, ChristianHolidays;
+    use CommonHolidays;
+    use ChristianHolidays;
 
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
@@ -116,12 +119,7 @@ class Greece extends AbstractProvider
     }
 
     /**
-     * Orthodox Easter
-     *
-     * @param int $year
-     * @param string $timezone
-     *
-     * @return DateTime
+     * Orthodox Easter.
      *
      * @throws \Exception
      */
@@ -135,14 +133,13 @@ class Greece extends AbstractProvider
      *
      * Anniversary of the declaration of the start of Greek War of Independence from the Ottoman Empire, in 1821.
      *
-     * @link https://en.wikipedia.org/wiki/Greek_War_of_Independence
+     * @see https://en.wikipedia.org/wiki/Greek_War_of_Independence
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-
     private function calculateIndependenceDay(): void
     {
         if ($this->year >= 1821) {
@@ -160,7 +157,7 @@ class Greece extends AbstractProvider
      *
      * Celebration of the Greek refusal to the Italian ultimatum of 1940.
      *
-     * @link https://en.wikipedia.org/wiki/Ohi_Day
+     * @see https://en.wikipedia.org/wiki/Ohi_Day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -184,7 +181,7 @@ class Greece extends AbstractProvider
      *
      * Anniversary of the 1973 students protests against the junta of the colonels (1967–1974).
      *
-     * @link https://en.wikipedia.org/wiki/Athens_Polytechnic_uprising
+     * @see https://en.wikipedia.org/wiki/Athens_Polytechnic_uprising
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

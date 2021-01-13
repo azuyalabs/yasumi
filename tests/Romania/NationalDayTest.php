@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,17 +27,18 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class NationalDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     public const HOLIDAY = 'nationalDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1866;
 
     /**
      * Tests National Day on or after 1990.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -52,10 +55,11 @@ class NationalDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests National Day between 1948 - 1989.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testNationalDayBetween1948_1989(): void
+    public function testNationalDayBetween19481989(): void
     {
         $year = $this->generateRandomYear(1948, 1989);
         $this->assertHoliday(
@@ -68,10 +72,11 @@ class NationalDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests National Day between 1866 - 1947.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testNationalDayBetween1866_1947(): void
+    public function testNationalDayBetween18661947(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1947);
         $this->assertHoliday(
@@ -84,6 +89,7 @@ class NationalDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests National Day before 1865.
+     *
      * @throws ReflectionException
      */
     public function testNationalDayBefore1865(): void
@@ -97,6 +103,7 @@ class NationalDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -111,6 +118,7 @@ class NationalDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -23,18 +25,19 @@ use Yasumi\tests\YasumiTestCaseInterface;
  * Class for testing Good Friday in the Czech Republic.
  *
  * Class GoodFridayTest
- * @package Yasumi\tests\CzechRepublic
+ *
  * @author  Dennis Fridrich <fridrich.dennis@gmail.com>
  */
 class GoodFridayTest extends CzechRepublicBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     public const HOLIDAY = 'goodFriday';
 
     /**
      * Tests Good Friday.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -51,6 +54,7 @@ class GoodFridayTest extends CzechRepublicBaseTestCase implements YasumiTestCase
 
     /**
      * Tests translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -65,6 +69,7 @@ class GoodFridayTest extends CzechRepublicBaseTestCase implements YasumiTestCase
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

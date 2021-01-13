@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,17 +27,18 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class StatehoodDayTest extends BosniaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'statehoodDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1943;
 
     /**
      * Tests Statehood Day on or after 1943.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -52,6 +55,7 @@ class StatehoodDayTest extends BosniaBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests Statehood Day before 1943.
+     *
      * @throws ReflectionException
      */
     public function testStatehoodDayBefore1943(): void
@@ -65,6 +69,7 @@ class StatehoodDayTest extends BosniaBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests translated name of Statehood Day.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -79,6 +84,7 @@ class StatehoodDayTest extends BosniaBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -21,7 +23,6 @@ use Yasumi\Provider\DateTimeZoneFactory;
 
 /**
  * Provider for all holidays in northwestern Tasmania (Australia).
- *
  */
 class Northwest extends Tasmania
 {
@@ -47,13 +48,13 @@ class Northwest extends Tasmania
     }
 
     /**
-     * Burnie Show
+     * Burnie Show.
      *
      * @throws \Exception
      */
     private function calculateBurnieShow(): void
     {
-        $date = new DateTime('first saturday of october ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new DateTime('first saturday of october '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $date = $date->sub(new DateInterval('P1D'));
         $this->addHoliday(new Holiday('burnieShow', ['en' => 'Burnie Show'], $date, $this->locale));
     }

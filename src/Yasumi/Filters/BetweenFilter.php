@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /*
  * This file is part of the Yasumi package.
@@ -22,8 +24,6 @@ use Iterator;
  * start and end date need to be included in the comparison.
  *
  * Note: this class can be used separately, however is implemented by the AbstractProvider::between method.
- *
- * @package Yasumi\Filters
  */
 class BetweenFilter extends AbstractFilter
 {
@@ -43,13 +43,13 @@ class BetweenFilter extends AbstractFilter
     private $equal;
 
     /**
-     * Construct the Between FilterIterator Object
+     * Construct the Between FilterIterator Object.
      *
-     * @param Iterator $iterator Iterator object of the Holidays Provider
+     * @param Iterator           $iterator  Iterator object of the Holidays Provider
      * @param \DateTimeInterface $startDate Start date of the time frame to check against
-     * @param \DateTimeInterface $endDate End date of the time frame to check against
-     * @param bool $equal Indicate whether the start and end dates should be included in the
-     *                                       comparison
+     * @param \DateTimeInterface $endDate   End date of the time frame to check against
+     * @param bool               $equal     Indicate whether the start and end dates should be included in the
+     *                                      comparison
      */
     public function __construct(
         Iterator $iterator,

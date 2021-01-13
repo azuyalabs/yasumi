@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -21,12 +23,13 @@ use Yasumi\Holiday;
  * Provider for all holidays in Czech republic.
  *
  * Class CzechRepublic
- * @package Yasumi\Provider
+ *
  * @author  Dennis Fridrich <fridrich.dennis@gmail.com>
  */
 class CzechRepublic extends AbstractProvider
 {
-    use CommonHolidays, ChristianHolidays;
+    use CommonHolidays;
+    use ChristianHolidays;
 
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
@@ -63,7 +66,7 @@ class CzechRepublic extends AbstractProvider
     }
 
     /**
-     * Day of renewal of independent Czech state
+     * Day of renewal of independent Czech state.
      *
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      *
@@ -80,13 +83,13 @@ class CzechRepublic extends AbstractProvider
                 'cs' => 'Den obnovy samostatného českého státu',
                 'en' => 'Day of renewal of the independent Czech state',
             ],
-            new DateTime($this->year . '-01-01', new \DateTimeZone($this->timezone)),
+            new DateTime($this->year.'-01-01', new \DateTimeZone($this->timezone)),
             $this->locale
         ));
     }
 
     /**
-     * Saints Cyril and Methodius Day
+     * Saints Cyril and Methodius Day.
      *
      * Saints Cyril and Methodius were two Byzantine Christian theologians and Christian missionaries who were brothers.
      * Through their work they influenced the cultural development of all Slavs, for which they received the title
@@ -114,13 +117,13 @@ class CzechRepublic extends AbstractProvider
                 'cs' => 'Den slovanských věrozvěstů Cyrila a Metoděje',
                 'en' => 'Saints Cyril and Methodius Day',
             ],
-            new DateTime($this->year . '-07-5', new \DateTimeZone($this->timezone)),
+            new DateTime($this->year.'-07-5', new \DateTimeZone($this->timezone)),
             $this->locale
         ));
     }
 
     /**
-     * Jan Hus Day
+     * Jan Hus Day.
      *
      * Jan Hus, often referred to in English as John Hus or John Huss, was a Czech priest, philosopher, early Christian
      * reformer and Master at Charles University in Prague. After John Wycliffe, the theorist of ecclesiastical
@@ -139,13 +142,13 @@ class CzechRepublic extends AbstractProvider
         $this->addHoliday(new Holiday(
             'janHusDay',
             ['cs' => 'Den upálení mistra Jana Husa', 'en' => 'Jan Hus Day'],
-            new DateTime($this->year . '-07-6', new \DateTimeZone($this->timezone)),
+            new DateTime($this->year.'-07-6', new \DateTimeZone($this->timezone)),
             $this->locale
         ));
     }
 
     /**
-     * St. Wenceslas Day (Czech Statehood Day)
+     * St. Wenceslas Day (Czech Statehood Day).
      *
      * Wenceslaus I, Wenceslas I, or Vaclav the Good was the duke of Bohemia from 921 until his assassination in 935,
      * in a plot by his brother, Boleslav the Cruel.
@@ -170,13 +173,13 @@ class CzechRepublic extends AbstractProvider
                 'cs' => 'Den české státnosti',
                 'en' => 'St. Wenceslas Day (Czech Statehood Day)',
             ],
-            new DateTime($this->year . '-09-28', new \DateTimeZone($this->timezone)),
+            new DateTime($this->year.'-09-28', new \DateTimeZone($this->timezone)),
             $this->locale
         ));
     }
 
     /**
-     * Independent Czechoslovak State Day
+     * Independent Czechoslovak State Day.
      *
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      *
@@ -190,11 +193,11 @@ class CzechRepublic extends AbstractProvider
         $this->addHoliday(new Holiday('independentCzechoslovakStateDay', [
             'cs' => 'Den vzniku samostatného československého státu',
             'en' => 'Independent Czechoslovak State Day',
-        ], new DateTime($this->year . '-10-28', new \DateTimeZone($this->timezone)), $this->locale));
+        ], new DateTime($this->year.'-10-28', new \DateTimeZone($this->timezone)), $this->locale));
     }
 
     /**
-     * Struggle for Freedom and Democracy Day
+     * Struggle for Freedom and Democracy Day.
      *
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      *
@@ -211,7 +214,7 @@ class CzechRepublic extends AbstractProvider
                 'cs' => 'Den boje za svobodu a demokracii',
                 'en' => 'Struggle for Freedom and Democracy Day',
             ],
-            new DateTime($this->year . '-11-17', new \DateTimeZone($this->timezone)),
+            new DateTime($this->year.'-11-17', new \DateTimeZone($this->timezone)),
             $this->locale
         ));
     }

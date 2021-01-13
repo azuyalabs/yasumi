@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,12 +27,13 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class WintertimeTest extends NetherlandsBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'winterTime';
 
     /**
      * Tests Wintertime.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -57,6 +60,7 @@ class WintertimeTest extends NetherlandsBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -71,6 +75,7 @@ class WintertimeTest extends NetherlandsBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

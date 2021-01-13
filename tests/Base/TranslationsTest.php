@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -111,7 +113,6 @@ class TranslationsTest extends TestCase
 
     /**
      * Tests that an UnknownLocaleException is thrown when adding translation for unknown locale.
-     *
      */
     public function testAddTranslationUnknownLocaleException(): void
     {
@@ -178,7 +179,7 @@ return [
 ];
 FILE;
 
-        vfsStream::setup('root', null, ['lang' => [$key . '.php' => $fileContents]]);
+        vfsStream::setup('root', null, ['lang' => [$key.'.php' => $fileContents]]);
 
         $translations = new Translations(self::LOCALES);
         $translations->loadTranslations(vfsStream::url('root/lang'));
@@ -207,7 +208,7 @@ return [
 ];
 FILE;
 
-        vfsStream::setup('root', null, ['lang' => [$key . '.translation' => $fileContents]]);
+        vfsStream::setup('root', null, ['lang' => [$key.'.translation' => $fileContents]]);
 
         $translations = new Translations(self::LOCALES);
         $translations->loadTranslations(vfsStream::url('root/lang'));
@@ -218,7 +219,6 @@ FILE;
 
     /**
      * Tests that an UnknownLocaleException is thrown when loading translation with unknown locale(s).
-     *
      */
     public function testLoadingTranslationsFromDirectoryWithUnknownLocaleException(): void
     {
@@ -233,7 +233,7 @@ return [
 ];
 FILE;
 
-        vfsStream::setup('root', null, ['lang' => [$key . '.php' => $fileContents]]);
+        vfsStream::setup('root', null, ['lang' => [$key.'.php' => $fileContents]]);
 
         $translations = new Translations(self::LOCALES);
         $translations->loadTranslations(vfsStream::url('root/lang'));
@@ -241,7 +241,6 @@ FILE;
 
     /**
      * Tests that an InvalidArgumentException is thrown when loading translation from inexistent directory.
-     *
      */
     public function testLoadingTranslationsFromInexistentDirectory(): void
     {
@@ -279,8 +278,8 @@ FILE;
 
         vfsStream::setup('root', null, [
             'lang' => [
-                $firstIdentifier . '.php' => $firstFileContents,
-                $secondIdentifier . '.php' => $secondFileContents,
+                $firstIdentifier.'.php' => $firstFileContents,
+                $secondIdentifier.'.php' => $secondFileContents,
             ],
         ]);
 

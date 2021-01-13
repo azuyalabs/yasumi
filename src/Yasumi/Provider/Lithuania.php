@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /*
  * This file is part of the Yasumi package.
@@ -22,7 +24,8 @@ use Yasumi\Holiday;
  */
 class Lithuania extends AbstractProvider
 {
-    use CommonHolidays, ChristianHolidays;
+    use CommonHolidays;
+    use ChristianHolidays;
 
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
@@ -46,7 +49,7 @@ class Lithuania extends AbstractProvider
     public const STATEHOOD_YEAR = 1253;
 
     /**
-     * The year when All Souls Day became a holiday
+     * The year when All Souls Day became a holiday.
      */
     public const ALL_SOULS_DAY = 2020;
 

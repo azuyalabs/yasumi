@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,30 +27,32 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class NafelserFahrtTest extends GlarusBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'nafelserFahrt';
 
     /**
-     * The year in which the holiday was established
+     * The year in which the holiday was established.
      */
     public const ESTABLISHMENT_YEAR = 1389;
 
     /**
-     * Tests Näfelser Fahrt on or after 1389
+     * Tests Näfelser Fahrt on or after 1389.
+     *
      * @throws ReflectionException
      * @throws Exception
      */
     public function testNafelserFahrtOnAfter1389(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $date = new DateTime('First Thursday of ' . $year . '-04', new DateTimeZone(self::TIMEZONE));
+        $date = new DateTime('First Thursday of '.$year.'-04', new DateTimeZone(self::TIMEZONE));
 
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
     }
 
     /**
-     * Tests Näfelser Fahrt before 1389
+     * Tests Näfelser Fahrt before 1389.
+     *
      * @throws ReflectionException
      */
     public function testNafelserFahrtBefore1389(): void
@@ -59,6 +63,7 @@ class NafelserFahrtTest extends GlarusBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests translated name of Näfelser Fahrt.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -73,6 +78,7 @@ class NafelserFahrtTest extends GlarusBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

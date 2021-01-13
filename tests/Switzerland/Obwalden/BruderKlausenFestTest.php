@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,12 +27,12 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class BruderKlausenFestTest extends ObwaldenBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'bruderKlausenFest';
 
     /**
-     * Tests Bruder-Klausen-Fest on or after 1947
+     * Tests Bruder-Klausen-Fest on or after 1947.
      *
      * @throws ReflectionException
      * @throws Exception
@@ -38,14 +40,14 @@ class BruderKlausenFestTest extends ObwaldenBaseTestCase implements YasumiTestCa
     public function testBruderKlausenFestOnAfter1947(): void
     {
         $year = $this->generateRandomYear(1947);
-        $date = new DateTime($year . '-09-25', new DateTimeZone(self::TIMEZONE));
+        $date = new DateTime($year.'-09-25', new DateTimeZone(self::TIMEZONE));
 
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OTHER);
     }
 
     /**
-     * Tests Bruder-Klausen-Fest between 1649 and 1946
+     * Tests Bruder-Klausen-Fest between 1649 and 1946.
      *
      * @throws ReflectionException
      * @throws Exception
@@ -53,14 +55,15 @@ class BruderKlausenFestTest extends ObwaldenBaseTestCase implements YasumiTestCa
     public function testBruderKlausenFestBetween1649And1946(): void
     {
         $year = $this->generateRandomYear(1649, 1946);
-        $date = new DateTime($year . '-09-21', new DateTimeZone(self::TIMEZONE));
+        $date = new DateTime($year.'-09-21', new DateTimeZone(self::TIMEZONE));
 
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OTHER);
     }
 
     /**
-     * Tests Bruder-Klausen-Fest before 1648
+     * Tests Bruder-Klausen-Fest before 1648.
+     *
      * @throws ReflectionException
      */
     public function testBruderKlausenFestBefore1648(): void
@@ -71,6 +74,7 @@ class BruderKlausenFestTest extends ObwaldenBaseTestCase implements YasumiTestCa
 
     /**
      * Tests translated name of Bruder-Klausen-Fest.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -85,6 +89,7 @@ class BruderKlausenFestTest extends ObwaldenBaseTestCase implements YasumiTestCa
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

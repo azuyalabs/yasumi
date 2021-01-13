@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -24,7 +26,8 @@ use Yasumi\Holiday;
  */
 class Hungary extends AbstractProvider
 {
-    use CommonHolidays, ChristianHolidays;
+    use CommonHolidays;
+    use ChristianHolidays;
 
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
@@ -60,7 +63,7 @@ class Hungary extends AbstractProvider
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
 
-        /**
+        /*
          * Day of Memorial day of the 1848 Revolution
          */
         if ($this->year >= 1927) {
@@ -70,7 +73,7 @@ class Hungary extends AbstractProvider
             ], new DateTime("$this->year-3-15", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
 
-        /**
+        /*
          * State Foundation Day
          */
         if ($this->year >= 1891) {
@@ -80,7 +83,7 @@ class Hungary extends AbstractProvider
             ], new DateTime("$this->year-8-20", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
 
-        /**
+        /*
          * Memorial day of the 1956 Revolution
          */
         if ($this->year >= 1991) {

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,17 +27,18 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class nationalCataloniaDayTest extends CataloniaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     public const HOLIDAY = 'nationalCataloniaDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1886;
 
     /**
      * Tests the holiday defined in this test on or after establishment.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -52,6 +55,7 @@ class nationalCataloniaDayTest extends CataloniaBaseTestCase implements YasumiTe
 
     /**
      * Tests the holiday defined in this test before establishment.
+     *
      * @throws ReflectionException
      */
     public function testHolidayBeforeEstablishment(): void
@@ -65,6 +69,7 @@ class nationalCataloniaDayTest extends CataloniaBaseTestCase implements YasumiTe
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -82,6 +87,7 @@ class nationalCataloniaDayTest extends CataloniaBaseTestCase implements YasumiTe
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

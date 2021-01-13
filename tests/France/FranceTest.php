@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -26,7 +28,16 @@ class FranceTest extends FranceBaseTestCase
     protected $year;
 
     /**
-     * Tests if all official holidays in France are defined by the provider class
+     * Initial setup of this Test Case.
+     */
+    protected function setUp(): void
+    {
+        $this->year = $this->generateRandomYear(1945);
+    }
+
+    /**
+     * Tests if all official holidays in France are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
@@ -47,7 +58,8 @@ class FranceTest extends FranceBaseTestCase
     }
 
     /**
-     * Tests if all observed holidays in France are defined by the provider class
+     * Tests if all observed holidays in France are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testObservedHolidays(): void
@@ -56,7 +68,8 @@ class FranceTest extends FranceBaseTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in France are defined by the provider class
+     * Tests if all seasonal holidays in France are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
@@ -65,7 +78,8 @@ class FranceTest extends FranceBaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in France are defined by the provider class
+     * Tests if all bank holidays in France are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testBankHolidays(): void
@@ -74,19 +88,12 @@ class FranceTest extends FranceBaseTestCase
     }
 
     /**
-     * Tests if all other holidays in France are defined by the provider class
+     * Tests if all other holidays in France are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
-    }
-
-    /**
-     * Initial setup of this Test Case
-     */
-    protected function setUp(): void
-    {
-        $this->year = $this->generateRandomYear(1945);
     }
 }

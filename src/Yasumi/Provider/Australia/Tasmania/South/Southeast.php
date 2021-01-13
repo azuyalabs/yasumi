@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -20,7 +22,6 @@ use Yasumi\Provider\DateTimeZoneFactory;
 
 /**
  * Provider for all holidays in southeastern Tasmania (Australia).
- *
  */
 class Southeast extends South
 {
@@ -49,7 +50,7 @@ class Southeast extends South
     }
 
     /**
-     * Royal Hobart Regatta
+     * Royal Hobart Regatta.
      *
      * @throws \Exception
      */
@@ -58,7 +59,7 @@ class Southeast extends South
         $this->addHoliday(new Holiday(
             'hobartRegatta',
             ['en' => 'Royal Hobart Regatta'],
-            new DateTime('second monday of february ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new DateTime('second monday of february '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));

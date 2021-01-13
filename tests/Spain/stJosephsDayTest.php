@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -19,12 +21,12 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing St. Joseph's Day in Spain
+ * Class for testing St. Joseph's Day in Spain.
  */
 class stJosephsDayTest extends SpainBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     public const HOLIDAY = 'stJosephsDay';
 
@@ -39,7 +41,7 @@ class stJosephsDayTest extends SpainBaseTestCase implements YasumiTestCaseInterf
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int $year the year for which the holiday defined in this test needs to be tested
+     * @param int      $year     the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws ReflectionException
@@ -50,9 +52,10 @@ class stJosephsDayTest extends SpainBaseTestCase implements YasumiTestCaseInterf
     }
 
     /**
-     * Returns a list of random test dates used for assertion of the holiday defined in this test
+     * Returns a list of random test dates used for assertion of the holiday defined in this test.
      *
      * @return array list of test dates for the holiday defined in this test
+     *
      * @throws Exception
      */
     public function HolidayDataProvider(): array
@@ -62,6 +65,7 @@ class stJosephsDayTest extends SpainBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -76,6 +80,7 @@ class stJosephsDayTest extends SpainBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

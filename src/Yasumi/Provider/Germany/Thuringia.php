@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -24,7 +26,7 @@ use Yasumi\Provider\Germany;
  * fifth smallest by population of Germany's sixteen states. Most of Thuringia is within the watershed of the Saale, a
  * left tributary of the Elbe. Its capital is Erfurt.
  *
- * @link https://en.wikipedia.org/wiki/Thuringia
+ * @see https://en.wikipedia.org/wiki/Thuringia
  */
 class Thuringia extends Germany
 {

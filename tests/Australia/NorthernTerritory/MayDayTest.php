@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,16 +27,16 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class MayDayTest extends NorthernTerritoryBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'mayDay';
 
     /**
-     * Tests May Day
+     * Tests May Day.
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int $year the year for which the holiday defined in this test needs to be tested
+     * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
      * @throws ReflectionException
@@ -51,7 +53,7 @@ class MayDayTest extends NorthernTerritoryBaseTestCase implements YasumiTestCase
     }
 
     /**
-     * Returns a list of test dates
+     * Returns a list of test dates.
      *
      * @return array list of test dates for the holiday defined in this test
      */
@@ -74,6 +76,7 @@ class MayDayTest extends NorthernTerritoryBaseTestCase implements YasumiTestCase
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -88,6 +91,7 @@ class MayDayTest extends NorthernTerritoryBaseTestCase implements YasumiTestCase
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

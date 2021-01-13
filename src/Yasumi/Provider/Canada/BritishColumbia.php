@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -21,7 +23,7 @@ use Yasumi\Provider\Canada;
  *
  * British Columbia is a province of Canada.
  *
- * @link https://en.wikipedia.org/wiki/British_Columbia
+ * @see https://en.wikipedia.org/wiki/British_Columbia
  */
 class BritishColumbia extends Canada
 {
@@ -42,9 +44,9 @@ class BritishColumbia extends Canada
     public function initialize(): void
     {
         parent::initialize();
-        
+
         $this->timezone = 'America/Vancouver';
-        
+
         $this->calculateCivicHoliday();
         $this->calculateFamilyDay();
         $this->calculateVictoriaDay();

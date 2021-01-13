@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -66,7 +68,7 @@ class Russia extends AbstractProvider
         $holidayDays = [2, 3, 4, 5, 6, 8];
 
         foreach ($holidayDays as $day) {
-            $this->addHoliday(new Holiday('newYearHolidaysDay' . $day, [
+            $this->addHoliday(new Holiday('newYearHolidaysDay'.$day, [
                 'en' => 'New Year’s holidays',
                 'ru' => 'Новогодние каникулы',
             ], new \DateTime("{$this->year}-01-{$day}", new \DateTimeZone($this->timezone)), $this->locale));

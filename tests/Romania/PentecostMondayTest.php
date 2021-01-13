@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -20,23 +22,23 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class PentecostMondayTest
- * @package Yasumi\tests\Romania
+ * Class PentecostMondayTest.
  */
 class PentecostMondayTest extends RomaniaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'pentecostMonday';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 2008;
 
     /**
      * Tests the Pentecost Monday Day on and after 2008.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -53,6 +55,7 @@ class PentecostMondayTest extends RomaniaBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests the Pentecost Day before 2008.
+     *
      * @throws ReflectionException
      */
     public function testPentecostMondayBefore2008(): void
@@ -66,6 +69,7 @@ class PentecostMondayTest extends RomaniaBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -80,6 +84,7 @@ class PentecostMondayTest extends RomaniaBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /*
  * This file is part of the Yasumi package.
@@ -23,13 +25,13 @@ use Yasumi\tests\YasumiTestCaseInterface;
 use Yasumi\Yasumi;
 
 /**
- * Class SubstitutedHolidayTest
- * @package Yasumi\tests\Ukraine
+ * Class SubstitutedHolidayTest.
  */
 class SubstitutedHolidayTest extends UkraineBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * Tests the substitution of holidays on saturday (weekend).
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -51,12 +53,12 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements YasumiTestCa
     }
 
     /**
-     * Asserts that the expected date is indeed a holiday for that given year and name
+     * Asserts that the expected date is indeed a holiday for that given year and name.
      *
-     * @param string $provider the holiday provider (i.e. country/state) for which the holiday need to be tested
-     * @param string $key string the key of the holiday to be checked against
-     * @param int $year holiday calendar year
-     * @param DateTime $expectedOfficial the official date to be checked against
+     * @param string        $provider             the holiday provider (i.e. country/state) for which the holiday need to be tested
+     * @param string        $key                  string the key of the holiday to be checked against
+     * @param int           $year                 holiday calendar year
+     * @param DateTime      $expectedOfficial     the official date to be checked against
      * @param DateTime|null $expectedSubstitution the substituted date to be checked against
      *
      * @throws ReflectionException
@@ -77,8 +79,8 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements YasumiTestCa
         self::assertTrue($holidays->isHoliday($holidayOfficial));
         self::assertEquals(Holiday::TYPE_OFFICIAL, $holidayOfficial->getType());
 
-        $holidaySubstitution = $holidays->getHoliday('substituteHoliday:' . $holidayOfficial->getKey());
-        if ($expectedSubstitution === null) {
+        $holidaySubstitution = $holidays->getHoliday('substituteHoliday:'.$holidayOfficial->getKey());
+        if (null === $expectedSubstitution) {
             // without substitution
             self::assertNull($holidaySubstitution);
         } else {
@@ -95,6 +97,7 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements YasumiTestCa
 
     /**
      * Tests the substitution of holidays on sunday (weekend).
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -118,6 +121,7 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements YasumiTestCa
     /**
      * Tests the substitution of new year (1. January) on a weekend.
      * Special: no substitution at new year (1. January) on a weekend.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -140,6 +144,7 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements YasumiTestCa
     /**
      * Tests the substitution of Catholic Christmas Day (25. December) on a weekend.
      * Special: no substitution at Catholic Christmas Day (25. December) on a weekend.
+     *
      * @throws Exception
      * @throws ReflectionException
      */

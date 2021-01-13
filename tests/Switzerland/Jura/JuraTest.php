@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -26,7 +28,16 @@ class JuraTest extends JuraBaseTestCase
     protected $year;
 
     /**
-     * Tests if all official holidays in Jura (Switzerland) are defined by the provider class
+     * Initial setup of this Test Case.
+     */
+    protected function setUp(): void
+    {
+        $this->year = $this->generateRandomYear(1975);
+    }
+
+    /**
+     * Tests if all official holidays in Jura (Switzerland) are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
@@ -39,7 +50,8 @@ class JuraTest extends JuraBaseTestCase
     }
 
     /**
-     * Tests if all regional holidays in Jura (Switzerland) are defined by the provider class
+     * Tests if all regional holidays in Jura (Switzerland) are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testRegionalHolidays(): void
@@ -64,7 +76,8 @@ class JuraTest extends JuraBaseTestCase
     }
 
     /**
-     * Tests if all observed holidays in Jura (Switzerland) are defined by the provider class
+     * Tests if all observed holidays in Jura (Switzerland) are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testObservedHolidays(): void
@@ -78,7 +91,8 @@ class JuraTest extends JuraBaseTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in Jura (Switzerland) are defined by the provider class
+     * Tests if all seasonal holidays in Jura (Switzerland) are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
@@ -87,7 +101,8 @@ class JuraTest extends JuraBaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in Jura (Switzerland) are defined by the provider class
+     * Tests if all bank holidays in Jura (Switzerland) are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testBankHolidays(): void
@@ -96,19 +111,12 @@ class JuraTest extends JuraBaseTestCase
     }
 
     /**
-     * Tests if all other holidays in Jura (Switzerland) are defined by the provider class
+     * Tests if all other holidays in Jura (Switzerland) are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
-    }
-
-    /**
-     * Initial setup of this Test Case
-     */
-    protected function setUp(): void
-    {
-        $this->year = $this->generateRandomYear(1975);
     }
 }

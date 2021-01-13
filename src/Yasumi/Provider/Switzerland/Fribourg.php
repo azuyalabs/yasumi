@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -23,8 +25,8 @@ use Yasumi\Provider\Switzerland;
 /**
  * Provider for all holidays in Fribourg (Switzerland).
  *
- * @link https://en.wikipedia.org/wiki/Canton_of_Fribourg
- * @link https://www.fr.ch/travail-et-entreprises/employes/jour-ferie-jour-chome-quelle-difference
+ * @see https://en.wikipedia.org/wiki/Canton_of_Fribourg
+ * @see https://www.fr.ch/travail-et-entreprises/employes/jour-ferie-jour-chome-quelle-difference
  */
 class Fribourg extends Switzerland
 {
@@ -68,7 +70,7 @@ class Fribourg extends Switzerland
     }
 
     /**
-     * December 26th
+     * December 26th.
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -83,7 +85,7 @@ class Fribourg extends Switzerland
                 'en' => 'December 26th',
                 'fr' => '26 décembre',
             ],
-            new DateTime($this->year . '-12-26', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new DateTime($this->year.'-12-26', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OTHER
         ));

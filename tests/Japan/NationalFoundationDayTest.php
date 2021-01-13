@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,17 +27,18 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class NationalFoundationDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'nationalFoundationDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1966;
 
     /**
-     * Tests National Foundation Day after 1966. National Foundation day was established after 1966
+     * Tests National Foundation Day after 1966. National Foundation day was established after 1966.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -52,7 +55,8 @@ class NationalFoundationDayTest extends JapanBaseTestCase implements YasumiTestC
 
     /**
      * Tests National Foundation Day after 1966. substituted next working day (when National Foundation Day falls on a
-     * Sunday)
+     * Sunday).
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -61,14 +65,15 @@ class NationalFoundationDayTest extends JapanBaseTestCase implements YasumiTestC
         $year = 2046;
         $this->assertHoliday(
             self::REGION,
-            self::SUBSTITUTE_PREFIX . self::HOLIDAY,
+            self::SUBSTITUTE_PREFIX.self::HOLIDAY,
             $year,
             new DateTime("$year-2-12", new DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
-     * Tests National Foundation Day before 1966. National Foundation day was established after 1966
+     * Tests National Foundation Day before 1966. National Foundation day was established after 1966.
+     *
      * @throws ReflectionException
      */
     public function testNationalFoundationDayBefore1966(): void
@@ -82,6 +87,7 @@ class NationalFoundationDayTest extends JapanBaseTestCase implements YasumiTestC
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -96,6 +102,7 @@ class NationalFoundationDayTest extends JapanBaseTestCase implements YasumiTestC
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

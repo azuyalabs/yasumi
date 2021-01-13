@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -33,8 +35,8 @@ class stMartinsDayTest extends BurgenlandBaseTestCase implements YasumiTestCaseI
      *
      * @dataProvider stMartinsDayDataProvider
      *
-     * @param int $year the year for which Saint Martins Day needs to be tested.
-     * @param DateTime $expected the expected date.
+     * @param int      $year     the year for which Saint Martins Day needs to be tested
+     * @param DateTime $expected the expected date
      *
      * @throws ReflectionException
      */
@@ -47,6 +49,7 @@ class stMartinsDayTest extends BurgenlandBaseTestCase implements YasumiTestCaseI
      * Returns a list of random test dates used for assertion of Saint Martins Day.
      *
      * @return array list of test dates for Saint Martins Day
+     *
      * @throws Exception
      */
     public function stMartinsDayDataProvider(): array
@@ -71,6 +74,7 @@ class stMartinsDayTest extends BurgenlandBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -23,22 +25,22 @@ abstract class IrelandBaseTestCase extends TestCase
     use YasumiBase;
 
     /**
-     * Name of the region (e.g. country / state) to be tested
+     * Name of the region (e.g. country / state) to be tested.
      */
     public const REGION = 'Ireland';
 
     /**
-     * Timezone in which this provider has holidays defined
+     * Timezone in which this provider has holidays defined.
      */
     public const TIMEZONE = 'Europe/Dublin';
 
     /**
-     * Locale that is considered common for this provider
+     * Locale that is considered common for this provider.
      */
     public const LOCALE = 'en_IE';
 
     /**
-     * Number of iterations to be used for the various unit test of this provider
+     * Number of iterations to be used for the various unit test of this provider.
      */
     public const TEST_ITERATIONS = 50;
 }

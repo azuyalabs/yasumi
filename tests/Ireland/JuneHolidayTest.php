@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,12 +27,12 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class JuneHolidayTest extends IrelandBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'juneHoliday';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1974;
 
@@ -39,7 +41,7 @@ class JuneHolidayTest extends IrelandBaseTestCase implements YasumiTestCaseInter
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int $year the year for which the holiday defined in this test needs to be tested
+     * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
      * @throws ReflectionException
@@ -57,16 +59,17 @@ class JuneHolidayTest extends IrelandBaseTestCase implements YasumiTestCaseInter
     }
 
     /**
-     * Returns a list of test dates
+     * Returns a list of test dates.
      *
      * @return array list of test dates for the holiday defined in this test
+     *
      * @throws Exception
      */
     public function HolidayDataProvider(): array
     {
         $data = [];
 
-        for ($y = 0; $y < self::TEST_ITERATIONS; $y++) {
+        for ($y = 0; $y < self::TEST_ITERATIONS; ++$y) {
             $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
             $date = new DateTime("next monday $year-5-31", new DateTimeZone(self::TIMEZONE));
 
@@ -78,6 +81,7 @@ class JuneHolidayTest extends IrelandBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests the holiday defined in this test before establishment.
+     *
      * @throws ReflectionException
      */
     public function testHolidayBeforeEstablishment(): void
@@ -112,6 +116,7 @@ class JuneHolidayTest extends IrelandBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

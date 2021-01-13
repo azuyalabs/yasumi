@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -21,7 +23,6 @@ use Yasumi\Provider\DateTimeZoneFactory;
 
 /**
  * Provider for all holidays in Flinders Island (Australia).
- *
  */
 class FlindersIsland extends Tasmania
 {
@@ -47,13 +48,13 @@ class FlindersIsland extends Tasmania
     }
 
     /**
-     * Flinders Island Show
+     * Flinders Island Show.
      *
      * @throws \Exception
      */
     private function calculateFlindersIslandShow(): void
     {
-        $date = new DateTime('third saturday of october ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new DateTime('third saturday of october '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $date = $date->sub(new DateInterval('P1D'));
         $this->addHoliday(new Holiday('flindersIslandShow', ['en' => 'Flinders Island Show'], $date, $this->locale));
     }

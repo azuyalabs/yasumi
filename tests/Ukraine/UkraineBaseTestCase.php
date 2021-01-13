@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -16,25 +18,24 @@ use PHPUnit\Framework\TestCase;
 use Yasumi\tests\YasumiBase;
 
 /**
- * Class UkraineBaseTestCase
- * @package Yasumi\tests\Ukraine
+ * Class UkraineBaseTestCase.
  */
 class UkraineBaseTestCase extends TestCase
 {
     use YasumiBase;
 
     /**
-     * Name of the region (e.g. country / state) to be tested
+     * Name of the region (e.g. country / state) to be tested.
      */
     public const REGION = 'Ukraine';
 
     /**
-     * Timezone in which this provider has holidays defined
+     * Timezone in which this provider has holidays defined.
      */
     public const TIMEZONE = 'Europe/Kiev';
 
     /**
-     * Locale that is considered common for this provider
+     * Locale that is considered common for this provider.
      */
     public const LOCALE = 'uk_UA';
 }

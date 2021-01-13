@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -19,9 +21,8 @@ use InvalidArgumentException;
  */
 class InvalidDateException extends InvalidArgumentException implements Exception
 {
-
     /**
-     * Initializes the Exception instance
+     * Initializes the Exception instance.
      *
      * @param mixed $argumentValue The value of the invalid argument
      */

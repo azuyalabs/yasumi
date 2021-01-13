@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,12 +27,12 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class SummerBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'summerBankHoliday';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1871;
 
@@ -41,6 +43,7 @@ class SummerBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
 
     /**
      * Tests the holiday defined in this test.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -57,6 +60,7 @@ class SummerBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
 
     /**
      * Tests the holiday exception in 2020.
+     *
      * @throws ReflectionException
      * @throws Exception
      */
@@ -73,6 +77,7 @@ class SummerBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
 
     /**
      * Tests the holiday during trial period in 1965-1970.
+     *
      * @throws ReflectionException
      * @throws Exception
      */
@@ -118,6 +123,7 @@ class SummerBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
 
     /**
      * Tests the holiday defined in this test before establishment.
+     *
      * @throws ReflectionException
      */
     public function testHolidayBeforeEstablishment(): void
@@ -131,6 +137,7 @@ class SummerBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -145,6 +152,7 @@ class SummerBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslationBeforeRename(): void
@@ -159,6 +167,7 @@ class SummerBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -21,7 +23,7 @@ use Yasumi\Provider\Switzerland;
 /**
  * Provider for all holidays in Aargau (Switzerland).
  *
- * @link https://en.wikipedia.org/wiki/Aargau
+ * @see https://en.wikipedia.org/wiki/Aargau
  */
 class Aargau extends Switzerland
 {

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -22,7 +24,8 @@ use Yasumi\Holiday;
  */
 class Italy extends AbstractProvider
 {
-    use CommonHolidays, ChristianHolidays;
+    use CommonHolidays;
+    use ChristianHolidays;
 
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
@@ -70,7 +73,7 @@ class Italy extends AbstractProvider
      * Nazi occupation of the country. On May 27, 1949, bill 260 made the anniversary a permanent, annual national
      * holiday.
      *
-     * @link https://en.wikipedia.org/wiki/Liberation_Day_%28Italy%29
+     * @see https://en.wikipedia.org/wiki/Liberation_Day_%28Italy%29
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -98,7 +101,7 @@ class Italy extends AbstractProvider
      * in 1946, in which the Italian people were called to the polls to decide on the form of government, following
      * the Second World War and the fall of Fascism.
      *
-     * @link https://en.wikipedia.org/wiki/Festa_della_Repubblica
+     * @see https://en.wikipedia.org/wiki/Festa_della_Repubblica
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

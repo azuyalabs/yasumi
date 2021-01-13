@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -30,7 +32,7 @@ use Yasumi\Provider\Spain;
  * Catalonia is bordered by France and Andorra to the north, the Mediterranean Sea to the east, and the Spanish regions
  * of Aragon and the Valencian Community to west and south respectively.
  *
- * @link https://en.wikipedia.org/wiki/Catalonia
+ * @see https://en.wikipedia.org/wiki/Catalonia
  */
 class Catalonia extends Spain
 {
@@ -71,7 +73,7 @@ class Catalonia extends Spain
      * on 11 September 1886, was suppressed by the Franco dictatorship in 1939 and reinstated in 1980 by the autonomous
      * government of Catalonia, the Generalitat de Catalunya, upon its restoration after the Franco dictatorship.
      *
-     * @link https://en.wikipedia.org/wiki/National_Day_of_Catalonia
+     * @see https://en.wikipedia.org/wiki/National_Day_of_Catalonia
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

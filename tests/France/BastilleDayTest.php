@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,17 +27,18 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class BastilleDayTest extends FranceBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'bastilleDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1790;
 
     /**
      * Tests Bastille Day on or after 1790.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -52,6 +55,7 @@ class BastilleDayTest extends FranceBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests Bastille Day before 1790.
+     *
      * @throws ReflectionException
      */
     public function testBastilleDayBefore1790(): void
@@ -65,6 +69,7 @@ class BastilleDayTest extends FranceBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests translated name of Bastille Day.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -79,6 +84,7 @@ class BastilleDayTest extends FranceBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

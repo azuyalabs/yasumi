@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,7 +27,7 @@ use Yasumi\Provider\Germany;
  * 1,012,000. In terms of both area and population size – apart from the city-states of Berlin, Bremen and Hamburg – it
  * is Germany's smallest federal state.
  *
- * @link https://en.wikipedia.org/wiki/Saarland
+ * @see https://en.wikipedia.org/wiki/Saarland
  */
 class Saarland extends Germany
 {

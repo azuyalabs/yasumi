@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -22,7 +24,8 @@ use Yasumi\Holiday;
  */
 class France extends AbstractProvider
 {
-    use CommonHolidays, ChristianHolidays;
+    use CommonHolidays;
+    use ChristianHolidays;
 
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
@@ -76,7 +79,7 @@ class France extends AbstractProvider
      * is held on the morning of 14 July, on the Champs-Élysées in Paris in front of the President of the Republic,
      * French officials and foreign guests.
      *
-     * @link https://en.wikipedia.org/wiki/Bastille_Day
+     * @see https://en.wikipedia.org/wiki/Bastille_Day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

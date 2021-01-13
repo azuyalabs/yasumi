@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -27,7 +29,7 @@ use Yasumi\Provider\Spain;
  * autonomous community is officially recognized as a nationality of Spain. The territory is divided into eight
  * provinces: Almería, Cádiz, Córdoba, Granada, Huelva, Jaén, Málaga and Seville. Its capital is the city of Seville.
  *
- * @link https://en.wikipedia.org/wiki/Andalusia
+ * @see https://en.wikipedia.org/wiki/Andalusia
  */
 class Andalusia extends Spain
 {
@@ -66,7 +68,7 @@ class Andalusia extends Spain
      * for the statute that made Andalusia an autonomous community of Andalusia (Spain). The Day of Andalucía is not a
      * public holiday in the rest of Spain on February 28.
      *
-     * @link https://en.wikipedia.org/wiki/D%C3%ADa_de_Andaluc%C3%ADa
+     * @see https://en.wikipedia.org/wiki/D%C3%ADa_de_Andaluc%C3%ADa
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

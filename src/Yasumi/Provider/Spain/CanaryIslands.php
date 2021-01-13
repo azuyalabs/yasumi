@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -28,7 +30,7 @@ use Yasumi\Provider\Spain;
  * Spain's 17 autonomous communities and are among the outermost regions of the European Union proper. The main islands
  * are (from largest to smallest) Tenerife, Fuerteventura, Gran Canaria, Lanzarote, La Palma, La Gomera and El Hierro.
  *
- * @link https://en.wikipedia.org/wiki/Canary_Islands
+ * @see https://en.wikipedia.org/wiki/Canary_Islands
  */
 class CanaryIslands extends Spain
 {
@@ -67,7 +69,7 @@ class CanaryIslands extends Spain
      * year. This event celebrates the islands' culture and people. It also marks the anniversary of the autonomous
      * Canary Islands Parliament's first session, which was on May 30, 1983.
      *
-     * @link https://www.timeanddate.com/holidays/spain/canaries-day
+     * @see https://www.timeanddate.com/holidays/spain/canaries-day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

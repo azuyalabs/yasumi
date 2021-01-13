@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,7 +27,8 @@ use Yasumi\SubstituteHoliday;
  */
 class UnitedKingdom extends AbstractProvider
 {
-    use CommonHolidays, ChristianHolidays;
+    use CommonHolidays;
+    use ChristianHolidays;
 
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
@@ -66,8 +69,8 @@ class UnitedKingdom extends AbstractProvider
      * Before 1871 it was not an observed or statutory holiday, after 1871 only an observed holiday.
      * Since 1974 (by Royal Proclamation) it was established as a bank holiday.
      *
-     * @link https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom
-     * @link https://www.timeanddate.com/holidays/uk/new-year-day
+     * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom
+     * @see https://www.timeanddate.com/holidays/uk/new-year-day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -106,7 +109,7 @@ class UnitedKingdom extends AbstractProvider
      * and schools are closed, while stores may be open or closed, according to local custom. Public transport systems
      * often run to a holiday timetable.
      *
-     * @link https://www.timeanddate.com/holidays/uk/early-may-bank-holiday
+     * @see https://www.timeanddate.com/holidays/uk/early-may-bank-holiday
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -150,8 +153,8 @@ class UnitedKingdom extends AbstractProvider
      * The last Monday in May is a bank holiday. Many organizations, businesses and schools are closed. Stores may be
      * open or closed, according to local custom. Public transport systems often run to a holiday timetable.
      *
-     * @link https://www.timeanddate.com/holidays/uk/spring-bank-holiday
-     * @link https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom
+     * @see https://www.timeanddate.com/holidays/uk/spring-bank-holiday
+     * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -196,8 +199,8 @@ class UnitedKingdom extends AbstractProvider
      * Many organizations, businesses and schools are closed. Stores may be open or closed, according to local custom.
      * Public transport systems often run to a holiday timetable.
      *
-     * @link https://www.timeanddate.com/holidays/uk/summer-bank-holiday
-     * @link https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom
+     * @see https://www.timeanddate.com/holidays/uk/summer-bank-holiday
+     * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -260,8 +263,8 @@ class UnitedKingdom extends AbstractProvider
      * If Christmas Day falls on a Saturday, the following Monday and Tuesday are bank holidays. All schools and many
      * organizations are closed in this period. Some may close for the whole week between Christmas and New Year.
      *
-     * @link https://www.timeanddate.com/holidays/uk/christmas-day
-     * @link https://www.timeanddate.com/holidays/uk/boxing-day
+     * @see https://www.timeanddate.com/holidays/uk/christmas-day
+     * @see https://www.timeanddate.com/holidays/uk/boxing-day
      *
      * @param string|null $type the Holiday Type (e.g. Official, Seasonal, etc.)
      *

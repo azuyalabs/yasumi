@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -27,7 +29,7 @@ use Yasumi\Provider\Spain;
  * Iberian Peninsula. The four largest islands are Majorca, Minorca, Ibiza and Formentera. There are many minor islands
  * and islets in close proximity to the larger islands, including Cabrera, Dragonera and S'Espalmador.
  *
- * @link https://en.wikipedia.org/wiki/Balearic_Islands
+ * @see https://en.wikipedia.org/wiki/Balearic_Islands
  */
 class BalearicIslands extends Spain
 {
@@ -68,7 +70,7 @@ class BalearicIslands extends Spain
      * which are part of Spain, on March 1 each year. This date commemorates when the Balearic Islands' Statute of
      * Autonomy came into effect on March 1, 1983.
      *
-     * @link https://www.timeanddate.com/holidays/spain/the-balearic-islands-day
+     * @see https://www.timeanddate.com/holidays/spain/the-balearic-islands-day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

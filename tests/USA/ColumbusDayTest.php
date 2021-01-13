@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,18 +27,19 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class ColumbusDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'columbusDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1937;
 
     /**
      * Tests Columbus Day on or after 1970. Columbus Day was established in 1937 on October 12th, but has been fixed to
      * the second Monday in October since 1970.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -54,6 +57,7 @@ class ColumbusDayTest extends USABaseTestCase implements YasumiTestCaseInterface
     /**
      * Tests Columbus Day between 1937 and 1969. Columbus Day was established in 1937 on October 12th, but has been
      * fixed to the second Monday in October since 1970.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -71,6 +75,7 @@ class ColumbusDayTest extends USABaseTestCase implements YasumiTestCaseInterface
     /**
      * Tests Columbus Day before 1937. Columbus Day was established in 1937 on October 12th, but has been fixed to
      * the second Monday in October since 1970.
+     *
      * @throws ReflectionException
      */
     public function testColumbusDayBefore1937(): void
@@ -84,6 +89,7 @@ class ColumbusDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -98,6 +104,7 @@ class ColumbusDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

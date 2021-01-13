@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,17 +27,18 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class IndependenceDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'independenceDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1822;
 
     /**
      * Tests Dia da independência do Brasil on or after 1822.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -52,6 +55,7 @@ class IndependenceDayTest extends BrazilBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests Dia da independência do Brasil on or before 1822.
+     *
      * @throws ReflectionException
      */
     public function testDiaDaIndependenciaDoBrasilBefore1822(): void
@@ -62,6 +66,7 @@ class IndependenceDayTest extends BrazilBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -77,6 +82,7 @@ class IndependenceDayTest extends BrazilBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

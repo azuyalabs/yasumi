@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /*
  * This file is part of the Yasumi package.
@@ -23,12 +25,13 @@ use Yasumi\Exception\UnknownLocaleException;
  * A substitute holiday is a holiday given in lieu of another holiday, if that day falls in a weekend or
  * overlaps with other holidays, so that people do not "lose" a day off in these years.
  *
- * @link https://en.wikipedia.org/wiki/Substitute_holiday
+ * @see https://en.wikipedia.org/wiki/Substitute_holiday
  */
 class SubstituteHoliday extends Holiday
 {
     /**
      * @var Holiday
+     *
      * @deprecated public access to this property is deprecated in favor of getSubstitutedHoliday()
      * @see getSubstitutedHoliday()
      */
@@ -45,13 +48,13 @@ class SubstituteHoliday extends Holiday
      * If a holiday date needs to be defined for a specific timezone, make sure that the date instance
      * (DateTimeInterface) has the correct timezone set. Otherwise the default system timezone is used.
      *
-     * @param Holiday $substitutedHoliday The holiday being substituted
-     * @param array $names An array containing the name/description of this holiday
+     * @param Holiday            $substitutedHoliday The holiday being substituted
+     * @param array              $names              An array containing the name/description of this holiday
      *                                               in various languages. Overrides global translations
-     * @param \DateTimeInterface $date A DateTimeInterface instance representing the date of the holiday
-     * @param string $displayLocale Locale (i.e. language) in which the holiday information needs to
+     * @param \DateTimeInterface $date               A DateTimeInterface instance representing the date of the holiday
+     * @param string             $displayLocale      Locale (i.e. language) in which the holiday information needs to
      *                                               be displayed in. (Default 'en_US')
-     * @param string $type The type of holiday. Use the following constants: TYPE_OFFICIAL,
+     * @param string             $type               The type of holiday. Use the following constants: TYPE_OFFICIAL,
      *                                               TYPE_OBSERVANCE, TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default
      *                                               an official holiday is considered.
      *
@@ -69,7 +72,7 @@ class SubstituteHoliday extends Holiday
     ) {
         $this->substitutedHoliday = $substitutedHoliday;
 
-        $key = 'substituteHoliday:' . $substitutedHoliday->getKey();
+        $key = 'substituteHoliday:'.$substitutedHoliday->getKey();
 
         if ($date == $substitutedHoliday) {
             throw new \InvalidArgumentException('Date must differ from the substituted holiday');
@@ -82,7 +85,7 @@ class SubstituteHoliday extends Holiday
     /**
      * Returns the holiday being substituted.
      *
-     * @return Holiday the holiday being substituted.
+     * @return Holiday the holiday being substituted
      */
     public function getSubstitutedHoliday(): Holiday
     {
@@ -90,7 +93,7 @@ class SubstituteHoliday extends Holiday
     }
 
     /**
-     * Returns the localized name of this holiday
+     * Returns the localized name of this holiday.
      *
      * The provided locales are searched for a translation. The first locale containing a translation will be used.
      *
@@ -99,8 +102,8 @@ class SubstituteHoliday extends Holiday
      *
      * @param array|null $locales The locales to search for translations
      *
-     * @return string
      * @throws MissingTranslationException
+     *
      * @see Holiday::DEFAULT_LOCALE
      * @see Holiday::LOCALE_KEY
      */

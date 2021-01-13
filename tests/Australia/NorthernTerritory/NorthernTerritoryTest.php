@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -26,7 +28,16 @@ class NorthernTerritoryTest extends NorthernTerritoryBaseTestCase
     protected $year;
 
     /**
-     * Tests if all official holidays in Northern Territory (Australia) are defined by the provider class
+     * Initial setup of this Test Case.
+     */
+    protected function setUp(): void
+    {
+        $this->year = $this->generateRandomYear(1921);
+    }
+
+    /**
+     * Tests if all official holidays in Northern Territory (Australia) are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
@@ -44,13 +55,5 @@ class NorthernTerritoryTest extends NorthernTerritoryBaseTestCase
             'mayDay',
             'picnicDay',
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
-    }
-
-    /**
-     * Initial setup of this Test Case
-     */
-    protected function setUp(): void
-    {
-        $this->year = $this->generateRandomYear(1921);
     }
 }

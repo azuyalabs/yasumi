@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,17 +27,18 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class NewYearsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'newYearsDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1948;
 
     /**
-     * Tests New Years Day after 1948. New Years Day was established after 1948
+     * Tests New Years Day after 1948. New Years Day was established after 1948.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -51,7 +54,8 @@ class NewYearsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
     }
 
     /**
-     * Tests New Years Day after 1948 substituted next working day (when New Years Day falls on a Sunday)
+     * Tests New Years Day after 1948 substituted next working day (when New Years Day falls on a Sunday).
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -60,14 +64,15 @@ class NewYearsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
         $year = 4473;
         $this->assertHoliday(
             self::REGION,
-            self::SUBSTITUTE_PREFIX . self::HOLIDAY,
+            self::SUBSTITUTE_PREFIX.self::HOLIDAY,
             $year,
             new DateTime("$year-1-2", new DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
-     * Tests New Years Day before 1948. New Years Day was established after 1948
+     * Tests New Years Day before 1948. New Years Day was established after 1948.
+     *
      * @throws ReflectionException
      */
     public function testNewYearsDayBefore1948(): void
@@ -81,6 +86,7 @@ class NewYearsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -95,6 +101,7 @@ class NewYearsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /*
  * This file is part of the Yasumi package.
@@ -20,13 +22,12 @@ use Yasumi\tests\YasumiTestCaseInterface;
 use Yasumi\Yasumi;
 
 /**
- * Class SecondInternationalWorkersDayTest
- * @package Yasumi\tests\Ukraine
+ * Class SecondInternationalWorkersDayTest.
  */
 class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'secondInternationalWorkersDay';
 
@@ -35,7 +36,7 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements Y
      *
      * @dataProvider SecondInternationalWorkersDayDataProvider
      *
-     * @param int $year the year for which International Workers' Day needs to be tested
+     * @param int      $year     the year for which International Workers' Day needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws ReflectionException
@@ -47,6 +48,7 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements Y
 
     /**
      * Tests International Workers' Day since 2018.
+     *
      * @throws ReflectionException
      */
     public function testNoSecondInternationalWorkersDaySince2018(): void
@@ -62,6 +64,7 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements Y
 
     /**
      * Tests translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -76,6 +79,7 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements Y
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void
@@ -92,13 +96,14 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements Y
      * Returns a list of random test dates used for assertion of International Workers' Day.
      *
      * @return array list of test dates for International Workers' Day
+     *
      * @throws \Exception
      */
     public function SecondInternationalWorkersDayDataProvider(): array
     {
         $data = [];
 
-        for ($y = 0; $y < 10; $y++) {
+        for ($y = 0; $y < 10; ++$y) {
             $year = $this->generateRandomYear(null, 2017);
             $data[] = [$year, new \DateTime("$year-05-02", new \DateTimeZone(self::TIMEZONE))];
         }

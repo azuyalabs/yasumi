@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,17 +27,18 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class ReformationDay2017Test extends GermanyBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     public const HOLIDAY = 'reformationDay';
 
     /**
-     * The year in which the holiday was established
+     * The year in which the holiday was established.
      */
     public const ESTABLISHMENT_YEAR = 2017;
 
     /**
-     * Test the holiday defined in this test upon establishment
+     * Test the holiday defined in this test upon establishment.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -45,12 +48,13 @@ class ReformationDay2017Test extends GermanyBaseTestCase implements YasumiTestCa
             self::REGION,
             self::HOLIDAY,
             self::ESTABLISHMENT_YEAR,
-            new DateTime(self::ESTABLISHMENT_YEAR . '-10-31', new DateTimeZone(self::TIMEZONE))
+            new DateTime(self::ESTABLISHMENT_YEAR.'-10-31', new DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
-     * Test the holiday defined in this test before establishment
+     * Test the holiday defined in this test before establishment.
+     *
      * @throws ReflectionException
      */
     public function testHolidayBeforeEstablishment(): void
@@ -63,7 +67,8 @@ class ReformationDay2017Test extends GermanyBaseTestCase implements YasumiTestCa
     }
 
     /**
-     * Test the holiday defined in this test after completion
+     * Test the holiday defined in this test after completion.
+     *
      * @throws ReflectionException
      */
     public function testHolidayAfterCompletion(): void
@@ -73,6 +78,7 @@ class ReformationDay2017Test extends GermanyBaseTestCase implements YasumiTestCa
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -87,6 +93,7 @@ class ReformationDay2017Test extends GermanyBaseTestCase implements YasumiTestCa
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

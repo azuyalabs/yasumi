@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -28,11 +30,9 @@ class OtherHolidaysFilter extends AbstractFilter
 {
     /**
      * Checks whether the current element of the iterator is an other type of holiday.
-     *
-     * @return bool
      */
     public function accept(): bool
     {
-        return $this->getInnerIterator()->current()->getType() === Holiday::TYPE_OTHER;
+        return Holiday::TYPE_OTHER === $this->getInnerIterator()->current()->getType();
     }
 }

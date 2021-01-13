@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -24,7 +26,7 @@ use Yasumi\Provider\Germany;
  * of Germany. It has an area of 19,846 square kilometres (7,663 sq mi) and about four million inhabitants. The city of
  * Mainz functions as the state capital.
  *
- * @link https://en.wikipedia.org/wiki/Rhineland-Palatinate
+ * @see https://en.wikipedia.org/wiki/Rhineland-Palatinate
  */
 class RhinelandPalatinate extends Germany
 {

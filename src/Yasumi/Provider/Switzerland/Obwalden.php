@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -23,7 +25,7 @@ use Yasumi\Provider\Switzerland;
 /**
  * Provider for all holidays in Obwalden (Switzerland).
  *
- * @link https://en.wikipedia.org/wiki/Obwalden
+ * @see https://en.wikipedia.org/wiki/Obwalden
  */
 class Obwalden extends Switzerland
 {
@@ -69,9 +71,9 @@ class Obwalden extends Switzerland
     }
 
     /**
-     * Bruder-Klausen-Fest
+     * Bruder-Klausen-Fest.
      *
-     * @link http://www.lebendigetraditionen.ch/traditionen/00210/index.html?lang=en
+     * @see http://www.lebendigetraditionen.ch/traditionen/00210/index.html?lang=en
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -87,7 +89,7 @@ class Obwalden extends Switzerland
                 [
                     'de' => 'Bruder-Klausen-Fest',
                 ],
-                new DateTime($this->year . '-09-25', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new DateTime($this->year.'-09-25', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OTHER
             ));
@@ -97,7 +99,7 @@ class Obwalden extends Switzerland
                 [
                     'de' => 'Bruder-Klausen-Fest',
                 ],
-                new DateTime($this->year . '-09-21', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new DateTime($this->year.'-09-21', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OTHER
             ));

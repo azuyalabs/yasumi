@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -23,7 +25,8 @@ use Yasumi\Holiday;
  */
 class Brazil extends AbstractProvider
 {
-    use CommonHolidays, ChristianHolidays;
+    use CommonHolidays;
+    use ChristianHolidays;
 
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
@@ -54,7 +57,7 @@ class Brazil extends AbstractProvider
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
         $this->addHoliday($this->ashWednesday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
 
-        /**
+        /*
          * Carnaval
          *
          * Carnaval is the biggest popular festival of country. The festival it happens during 4 days and the last day above
@@ -84,7 +87,7 @@ class Brazil extends AbstractProvider
             ));
         }
 
-        /**
+        /*
          * Tiradentes Day
          *
          * Tiradentes Day is a the Brazilian national holidays. Is the a tribute to national Brazilian hero Joaquim José
@@ -102,7 +105,7 @@ class Brazil extends AbstractProvider
             ));
         }
 
-        /**
+        /*
          * Independence Day
          *
          * The Homeland Day is a national holiday of Brazilian homeland celebrated on 7 September. The date is
@@ -119,7 +122,7 @@ class Brazil extends AbstractProvider
             ));
         }
 
-        /**
+        /*
          * Our Lady of Aparecida Day
          *
          * Our Lady of Conceição Aparecida, popularly called Our Lady Aparecida, Brazil's patroness. She is
@@ -139,7 +142,7 @@ class Brazil extends AbstractProvider
             ));
         }
 
-        /**
+        /*
          * All Souls Day
          *
          * The All Souls day (known like Deads Day in Mexico), is celebrated for Catholic Church on 2 November.
@@ -155,7 +158,7 @@ class Brazil extends AbstractProvider
             ));
         }
 
-        /**
+        /*
          * Proclamation of Republic Day
          *
          * The Brazilian Proclamation of Republic was an act relevant military politic it happened on 15 November 1889

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /*
  * This file is part of the Yasumi package.
@@ -21,13 +23,12 @@ use Yasumi\tests\YasumiTestCaseInterface;
 use Yasumi\Yasumi;
 
 /**
- * Class CatholicChristmasDayTest
- * @package Yasumi\tests\Ukraine
+ * Class CatholicChristmasDayTest.
  */
 class CatholicChristmasDayTest extends UkraineBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'catholicChristmasDay';
 
@@ -36,7 +37,7 @@ class CatholicChristmasDayTest extends UkraineBaseTestCase implements YasumiTest
      *
      * @dataProvider CatholicChristmasDayDataProvider
      *
-     * @param int $year the year for which International Workers' Day needs to be tested
+     * @param int      $year     the year for which International Workers' Day needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws ReflectionException
@@ -48,6 +49,7 @@ class CatholicChristmasDayTest extends UkraineBaseTestCase implements YasumiTest
 
     /**
      * Tests Catholic Christmas Day before 2017.
+     *
      * @throws ReflectionException
      */
     public function testNoCatholicChristmasDayBefore2017(): void
@@ -63,6 +65,7 @@ class CatholicChristmasDayTest extends UkraineBaseTestCase implements YasumiTest
 
     /**
      * Tests translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -77,6 +80,7 @@ class CatholicChristmasDayTest extends UkraineBaseTestCase implements YasumiTest
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void
@@ -88,13 +92,14 @@ class CatholicChristmasDayTest extends UkraineBaseTestCase implements YasumiTest
      * Returns a list of random test dates used for assertion of Catholic Christmas Day.
      *
      * @return array list of test dates for Catholic Christmas Day
+     *
      * @throws Exception
      */
     public function CatholicChristmasDayDataProvider(): array
     {
         $data = [];
 
-        for ($y = 0; $y < 10; $y++) {
+        for ($y = 0; $y < 10; ++$y) {
             $year = $this->generateRandomYear(2017);
             $data[] = [$year, new \DateTime("$year-12-25", new \DateTimeZone(self::TIMEZONE))];
         }

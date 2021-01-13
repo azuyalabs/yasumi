@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,12 +27,13 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class AscensionDayTest extends DenmarkBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     public const HOLIDAY = 'ascensionDay';
 
     /**
      * Tests Ascension Day.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -46,7 +49,8 @@ class AscensionDayTest extends DenmarkBaseTestCase implements YasumiTestCaseInte
     }
 
     /**
-     * Tests translated name of Ascension Day
+     * Tests translated name of Ascension Day.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -61,6 +65,7 @@ class AscensionDayTest extends DenmarkBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

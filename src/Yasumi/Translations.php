@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /*
  * This file is part of the Yasumi package.
@@ -56,7 +58,7 @@ class Translations implements TranslationsInterface
             throw new InvalidArgumentException('Directory with translations not found');
         }
 
-        $directoryPath = \rtrim($directoryPath, '/\\') . DIRECTORY_SEPARATOR;
+        $directoryPath = \rtrim($directoryPath, '/\\').DIRECTORY_SEPARATOR;
         $extension = 'php';
 
         foreach (new DirectoryIterator($directoryPath) as $file) {
@@ -69,9 +71,9 @@ class Translations implements TranslationsInterface
             }
 
             $filename = $file->getFilename();
-            $key = $file->getBasename('.' . $extension);
+            $key = $file->getBasename('.'.$extension);
 
-            $translations = require $directoryPath . $filename;
+            $translations = require $directoryPath.$filename;
 
             if (\is_array($translations)) {
                 foreach (\array_keys($translations) as $locale) {
@@ -84,31 +86,10 @@ class Translations implements TranslationsInterface
     }
 
     /**
-     * Checks whether the given locale is a valid/available locale.
-     *
-     * @param string $locale locale the locale to be validated
-     *
-     * @return true upon success, otherwise an UnknownLocaleException is thrown
-     *
-     * @throws UnknownLocaleException An UnknownLocaleException is thrown if the given locale is not
-     *                                valid/available.
-     */
-    protected function isValidLocale(string $locale): bool
-    {
-        if (!\in_array($locale, $this->availableLocales, true)) {
-            throw new UnknownLocaleException(\sprintf('Locale "%s" is not a valid locale.', $locale));
-        }
-
-        return true;
-    }
-
-    /**
      * Adds translation for holiday in specific locale.
      *
-     * @param string $key holiday key
-
-
-     * @param string $locale locale
+     * @param string $key         holiday key
+     * @param string $locale      locale
      * @param string $translation translation
      *
      * @throws UnknownLocaleException
@@ -127,9 +108,7 @@ class Translations implements TranslationsInterface
     /**
      * Returns translation for holiday in specific locale.
      *
-     * @param string $key holiday key
-
-
+     * @param string $key    holiday key
      * @param string $locale locale
      *
      * @return string|null translated holiday name
@@ -148,8 +127,6 @@ class Translations implements TranslationsInterface
      * Returns all available translations for holiday.
      *
      * @param string $key holiday key
-
-
      *
      * @return array holiday name translations ['<locale>' => '<translation>', ...]
      */
@@ -160,5 +137,24 @@ class Translations implements TranslationsInterface
         }
 
         return $this->translations[$key];
+    }
+
+    /**
+     * Checks whether the given locale is a valid/available locale.
+     *
+     * @param string $locale locale the locale to be validated
+     *
+     * @return true upon success, otherwise an UnknownLocaleException is thrown
+     *
+     * @throws UnknownLocaleException an UnknownLocaleException is thrown if the given locale is not
+     *                                valid/available
+     */
+    protected function isValidLocale(string $locale): bool
+    {
+        if (!\in_array($locale, $this->availableLocales, true)) {
+            throw new UnknownLocaleException(\sprintf('Locale "%s" is not a valid locale.', $locale));
+        }
+
+        return true;
     }
 }

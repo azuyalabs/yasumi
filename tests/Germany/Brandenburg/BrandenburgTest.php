@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -16,7 +18,7 @@ use ReflectionException;
 use Yasumi\Holiday;
 
 /**
- * Class for testing holidays in Brandenburg (Germany)
+ * Class for testing holidays in Brandenburg (Germany).
  */
 class BrandenburgTest extends BrandenburgBaseTestCase
 {
@@ -26,7 +28,16 @@ class BrandenburgTest extends BrandenburgBaseTestCase
     protected $year;
 
     /**
-     * Tests if all official holidays in Brandenburg (Germany) are defined by the provider class
+     * Initial setup of this Test Case.
+     */
+    protected function setUp(): void
+    {
+        $this->year = $this->generateRandomYear();
+    }
+
+    /**
+     * Tests if all official holidays in Brandenburg (Germany) are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
@@ -56,7 +67,8 @@ class BrandenburgTest extends BrandenburgBaseTestCase
     }
 
     /**
-     * Tests if all observed holidays in Brandenburg (Germany) are defined by the provider class
+     * Tests if all observed holidays in Brandenburg (Germany) are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testObservedHolidays(): void
@@ -65,7 +77,8 @@ class BrandenburgTest extends BrandenburgBaseTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in Brandenburg (Germany) are defined by the provider class
+     * Tests if all seasonal holidays in Brandenburg (Germany) are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
@@ -74,7 +87,8 @@ class BrandenburgTest extends BrandenburgBaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in Brandenburg (Germany) are defined by the provider class
+     * Tests if all bank holidays in Brandenburg (Germany) are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testBankHolidays(): void
@@ -83,19 +97,12 @@ class BrandenburgTest extends BrandenburgBaseTestCase
     }
 
     /**
-     * Tests if all other holidays in Brandenburg (Germany) are defined by the provider class
+     * Tests if all other holidays in Brandenburg (Germany) are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
-    }
-
-    /**
-     * Initial setup of this Test Case
-     */
-    protected function setUp(): void
-    {
-        $this->year = $this->generateRandomYear();
     }
 }

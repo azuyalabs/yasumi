@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -27,7 +29,7 @@ class StJosephDayTest extends NidwaldenBaseTestCase implements YasumiTestCaseInt
     use ChristianHolidays;
 
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'stJosephsDay';
 
@@ -36,7 +38,7 @@ class StJosephDayTest extends NidwaldenBaseTestCase implements YasumiTestCaseInt
      *
      * @dataProvider StJosephDayDataProvider
      *
-     * @param int $year the year for which St. Joseph's Day needs to be tested
+     * @param int      $year     the year for which St. Joseph's Day needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws ReflectionException
@@ -50,6 +52,7 @@ class StJosephDayTest extends NidwaldenBaseTestCase implements YasumiTestCaseInt
      * Returns a list of random test dates used for assertion of St. Joseph's Day.
      *
      * @return array list of test dates for St. Joseph's Day
+     *
      * @throws Exception
      */
     public function StJosephDayDataProvider(): array
@@ -59,6 +62,7 @@ class StJosephDayTest extends NidwaldenBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -73,6 +77,7 @@ class StJosephDayTest extends NidwaldenBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

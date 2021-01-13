@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,17 +27,18 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class CarnationRevolutionDayTest extends PortugalBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The year in which the holiday was established
+     * The year in which the holiday was established.
      */
     public const ESTABLISHMENT_YEAR = 1974;
 
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     public const HOLIDAY = '25thApril';
 
     /**
-     * Test that the holiday is valid after the year of establishment
+     * Test that the holiday is valid after the year of establishment.
+     *
      * @throws ReflectionException
      * @throws Exception
      */
@@ -47,7 +50,8 @@ class CarnationRevolutionDayTest extends PortugalBaseTestCase implements YasumiT
     }
 
     /**
-     * Tests that the holiday is not a holiday before the year of establishment
+     * Tests that the holiday is not a holiday before the year of establishment.
+     *
      * @throws ReflectionException
      */
     public function testNotHolidayBeforeEstablishment(): void
@@ -58,6 +62,7 @@ class CarnationRevolutionDayTest extends PortugalBaseTestCase implements YasumiT
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -68,6 +73,7 @@ class CarnationRevolutionDayTest extends PortugalBaseTestCase implements YasumiT
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

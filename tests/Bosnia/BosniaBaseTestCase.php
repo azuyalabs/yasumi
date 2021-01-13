@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,17 +27,17 @@ abstract class BosniaBaseTestCase extends TestCase
     use YasumiBase;
 
     /**
-     * Country (name) to be tested
+     * Country (name) to be tested.
      */
     public const REGION = 'Bosnia';
 
     /**
-     * Timezone in which this provider has holidays defined
+     * Timezone in which this provider has holidays defined.
      */
     public const TIMEZONE = 'Europe/Sarajevo';
 
     /**
-     * Locale that is considered common for this provider
+     * Locale that is considered common for this provider.
      */
     public const LOCALE = 'bs_Latn_BA';
 }

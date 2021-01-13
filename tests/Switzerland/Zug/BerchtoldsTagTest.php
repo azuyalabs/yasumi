@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,12 +27,12 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class BerchtoldsTagTest extends ZugBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'berchtoldsTag';
 
     /**
-     * Tests BerchtoldsTag
+     * Tests BerchtoldsTag.
      *
      * @throws ReflectionException
      * @throws Exception
@@ -38,7 +40,7 @@ class BerchtoldsTagTest extends ZugBaseTestCase implements YasumiTestCaseInterfa
     public function testBerchtoldsTag(): void
     {
         $year = $this->generateRandomYear();
-        $date = new DateTime($year . '-01-02', new DateTimeZone(self::TIMEZONE));
+        $date = new DateTime($year.'-01-02', new DateTimeZone(self::TIMEZONE));
 
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OTHER);
@@ -46,6 +48,7 @@ class BerchtoldsTagTest extends ZugBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests translated name of BerchtoldsTag.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -60,6 +63,7 @@ class BerchtoldsTagTest extends ZugBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

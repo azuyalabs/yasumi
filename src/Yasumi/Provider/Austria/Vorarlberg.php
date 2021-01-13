@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -19,7 +21,7 @@ use Yasumi\Provider\Austria;
 /**
  * Provider for all holidays in Vorarlberg (Austria).
  *
- * @link https://en.wikipedia.org/wiki/Vorarlberg
+ * @see https://en.wikipedia.org/wiki/Vorarlberg
  */
 class Vorarlberg extends Austria
 {

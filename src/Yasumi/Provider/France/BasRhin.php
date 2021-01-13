@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -24,7 +26,7 @@ use Yasumi\Provider\France;
  * It is the more populous and densely populated of the two departments of the traditional Alsace region, with 1,109,460
  * inhabitants in 2013. The prefecture and the General Council are based in Strasbourg.
  *
- * @link https://en.wikipedia.org/wiki/Bas-Rhin
+ * @see https://en.wikipedia.org/wiki/Bas-Rhin
  */
 class BasRhin extends France
 {

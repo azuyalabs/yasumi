@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,18 +27,18 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class ChristmasDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'christmasDay';
     public const HOLIDAY2 = 'christmasHoliday';
 
     /**
-     * Tests Christmas Day
+     * Tests Christmas Day.
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int $year the year for which the holiday defined in this test needs to be tested
-     * @param string $expected the expected date
+     * @param int     $year          the year for which the holiday defined in this test needs to be tested
+     * @param string  $expected      the expected date
      * @param ?string $expectedExtra the expected date for the additional holiday, or null if no additional holiday
      *
      * @throws ReflectionException
@@ -67,7 +69,7 @@ class ChristmasDayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
     }
 
     /**
-     * Returns a list of test dates
+     * Returns a list of test dates.
      *
      * @return array list of test dates for the holiday defined in this test
      */

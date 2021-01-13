@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -21,7 +23,6 @@ use Yasumi\Provider\DateTimeZoneFactory;
 
 /**
  * Provider for all holidays in Circular Head (Australia).
- *
  */
 class CircularHead extends Northwest
 {
@@ -47,13 +48,13 @@ class CircularHead extends Northwest
     }
 
     /**
-     * AGFEST
+     * AGFEST.
      *
      * @throws \Exception
      */
     private function calculateAGFEST(): void
     {
-        $date = new DateTime('first thursday of may ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new DateTime('first thursday of may '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $date = $date->add(new DateInterval('P1D'));
         $this->addHoliday(new Holiday('agfest', ['en' => 'AGFEST'], $date, $this->locale));
     }

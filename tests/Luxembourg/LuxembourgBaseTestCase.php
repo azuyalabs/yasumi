@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -23,17 +25,17 @@ abstract class LuxembourgBaseTestCase extends TestCase
     use YasumiBase;
 
     /**
-     * Country (name) to be tested
+     * Country (name) to be tested.
      */
     public const REGION = 'Luxembourg';
 
     /**
-     * Timezone in which this provider has holidays defined
+     * Timezone in which this provider has holidays defined.
      */
     public const TIMEZONE = 'Europe/Luxembourg';
 
     /**
-     * Locale that is considered common for this provider
+     * Locale that is considered common for this provider.
      */
     public const LOCALE = 'fr_LU';
 }

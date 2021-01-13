@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,17 +27,18 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class OurLadyOfAparecidaDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'ourLadyOfAparecidaDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1980;
 
     /**
      * Tests Nossa Senhora Aparecida on or after 1980.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -52,6 +55,7 @@ class OurLadyOfAparecidaDayTest extends BrazilBaseTestCase implements YasumiTest
 
     /**
      * Tests Nossa Senhora Aparecida on or before 1980.
+     *
      * @throws ReflectionException
      */
     public function testNossaSenhoraAparecidaBefore1980(): void
@@ -62,6 +66,7 @@ class OurLadyOfAparecidaDayTest extends BrazilBaseTestCase implements YasumiTest
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -77,6 +82,7 @@ class OurLadyOfAparecidaDayTest extends BrazilBaseTestCase implements YasumiTest
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

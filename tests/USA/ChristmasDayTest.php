@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,12 +27,13 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class ChristmasDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'christmasDay';
 
     /**
      * Tests Christmas Day. Christmas Day is celebrated on December 25th.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -47,6 +50,7 @@ class ChristmasDayTest extends USABaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * Tests Christmas Day substituted on Monday (when Christmas Day falls on Sunday).
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -64,6 +68,7 @@ class ChristmasDayTest extends USABaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * Tests Christmas Day substituted on Monday (when Christmas Day falls on Saturday).
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -81,6 +86,7 @@ class ChristmasDayTest extends USABaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * Tests translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -95,6 +101,7 @@ class ChristmasDayTest extends USABaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

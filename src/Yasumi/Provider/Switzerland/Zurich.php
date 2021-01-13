@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -21,8 +23,8 @@ use Yasumi\Provider\Switzerland;
 /**
  * Provider for all holidays in Zürich (Switzerland).
  *
- * @link https://en.wikipedia.org/wiki/Canton_of_Z%C3%BCrich
- * @link https://www.zh.ch/de/wirtschaft-arbeit/arbeitsbedingungen/arbeitsssicherheit-gesundheitsschutz/arbeits-ruhezeiten/feiertage.html
+ * @see https://en.wikipedia.org/wiki/Canton_of_Z%C3%BCrich
+ * @see https://www.zh.ch/de/wirtschaft-arbeit/arbeitsbedingungen/arbeitsssicherheit-gesundheitsschutz/arbeits-ruhezeiten/feiertage.html
  */
 class Zurich extends Switzerland
 {

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,7 +27,7 @@ use Yasumi\Provider\France;
  * Momerstroff, and Créhange (Kriechingen) - all possessions of princes of the German Holy Roman Empire - and
  * incorporated them into the Moselle département.
  *
- * @link https://en.wikipedia.org/wiki/Moselle_(department)
+ * @see https://en.wikipedia.org/wiki/Moselle_(department)
  */
 class Moselle extends France
 {

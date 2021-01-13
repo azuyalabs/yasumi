@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -58,6 +60,7 @@ class HolidayTest extends TestCase
 
     /**
      * Tests that a Yasumi holiday instance can be serialized to a JSON object.
+     *
      * @throws Exception
      */
     public function testHolidayIsJsonSerializable(): void
@@ -73,7 +76,8 @@ class HolidayTest extends TestCase
 
     /**
      * Tests that a Yasumi holiday instance can be created using an object that implements the DateTimeInterface (e.g.
-     * DateTime or DateTimeImmutable)
+     * DateTime or DateTimeImmutable).
+     *
      * @throws Exception
      */
     public function testHolidayWithDateTimeInterface(): void
@@ -91,6 +95,7 @@ class HolidayTest extends TestCase
 
     /**
      * Tests the getLocales function of the Holiday object.
+     *
      * @throws Exception
      */
     public function testHolidayGetLocales(): void
@@ -106,6 +111,7 @@ class HolidayTest extends TestCase
 
     /**
      * Tests the getName function of the Holiday object without any arguments provided.
+     *
      * @throws Exception
      */
     public function testHolidayGetNameWithoutArgument(): void
@@ -142,7 +148,6 @@ class HolidayTest extends TestCase
         $holiday = new Holiday('testHoliday', $translations, new DateTime(), 'ja');
         self::assertEquals('Holiday EN', $holiday->getName());
 
-
         // No 'en' or 'en_US' fallback
         $translations = [
             'de' => 'Holiday DE',
@@ -157,6 +162,7 @@ class HolidayTest extends TestCase
 
     /**
      * Tests the getName function of the Holiday object with an explicit list of locales.
+     *
      * @throws MissingTranslationException
      * @throws Exception
      */
@@ -193,6 +199,7 @@ class HolidayTest extends TestCase
 
     /**
      * Tests the getName function of the Holiday object with global translations and no custom translation.
+     *
      * @throws Exception
      */
     public function testHolidayGetNameWithGlobalTranslations(): void
@@ -219,6 +226,7 @@ class HolidayTest extends TestCase
 
     /**
      * Tests the getName function of the Holiday object with global translations and no custom translation.
+     *
      * @throws Exception
      */
     public function testHolidayGetNameWithGlobalParentLocaleTranslations(): void
@@ -245,6 +253,7 @@ class HolidayTest extends TestCase
 
     /**
      * Tests the getName function of the Holiday object with global translations and a new custom translation.
+     *
      * @throws Exception
      */
     public function testHolidayGetNameWithGlobalAndCustomTranslations(): void
@@ -277,6 +286,7 @@ class HolidayTest extends TestCase
 
     /**
      * Tests the getName function of the Holiday object with global translations and an overriding custom translation.
+     *
      * @throws Exception
      */
     public function testHolidayGetNameWithOverridenGlobalTranslations(): void

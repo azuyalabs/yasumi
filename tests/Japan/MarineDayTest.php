@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,17 +27,18 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class MarineDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'marineDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1996;
 
     /**
      * Tests Marine Day in 2021. Marine Day in 2021 is July 22th for rescheduled Olympic Games after COVID-19.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -52,6 +55,7 @@ class MarineDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests Marine Day in 2020. Marine Day in 2020 is July 23th for the Olympic Games.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -69,6 +73,7 @@ class MarineDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
     /**
      * Tests Marine Day after 2003. Marine Day was established since 1996 on July 20th. After 2003 it was changed
      * to be the third monday of July.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -86,6 +91,7 @@ class MarineDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
     /**
      * Tests Marine Day between 1996 and 2003. Marine Day was established since 1996 on July 20th. After 2003 it was
      * changed to be the third monday of July.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -101,7 +107,8 @@ class MarineDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
     }
 
     /**
-     * Tests Marine Day between 1996 and 2003 substituted next working day (when Marine Day falls on a Sunday)
+     * Tests Marine Day between 1996 and 2003 substituted next working day (when Marine Day falls on a Sunday).
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -110,7 +117,7 @@ class MarineDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
         $year = 1997;
         $this->assertHoliday(
             self::REGION,
-            self::SUBSTITUTE_PREFIX . self::HOLIDAY,
+            self::SUBSTITUTE_PREFIX.self::HOLIDAY,
             $year,
             new DateTime("$year-7-21", new DateTimeZone(self::TIMEZONE))
         );
@@ -119,6 +126,7 @@ class MarineDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
     /**
      * Tests Marine Day before 1996. Marine Day was established since 1996 on July 20th. After 2003 it was changed
      * to be the third monday of July.
+     *
      * @throws ReflectionException
      */
     public function testMarineDayBefore1996(): void
@@ -132,6 +140,7 @@ class MarineDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -146,6 +155,7 @@ class MarineDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

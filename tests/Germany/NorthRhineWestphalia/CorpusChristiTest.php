@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -27,7 +29,7 @@ class CorpusChristiTest extends NorthRhineWestphaliaBaseTestCase implements Yasu
     use ChristianHolidays;
 
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'corpusChristi';
 
@@ -50,6 +52,7 @@ class CorpusChristiTest extends NorthRhineWestphaliaBaseTestCase implements Yasu
 
     /**
      * Tests translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -64,6 +67,7 @@ class CorpusChristiTest extends NorthRhineWestphaliaBaseTestCase implements Yasu
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,17 +27,18 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class RemembranceDayTest extends CroatiaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'remembranceDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 2020;
 
     /**
-     * Tests Remembrance Day
+     * Tests Remembrance Day.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -51,7 +54,8 @@ class RemembranceDayTest extends CroatiaBaseTestCase implements YasumiTestCaseIn
     }
 
     /**
-     * Tests Remembrance Day
+     * Tests Remembrance Day.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -66,6 +70,7 @@ class RemembranceDayTest extends CroatiaBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests translated name of Remembrance Day.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -80,6 +85,7 @@ class RemembranceDayTest extends CroatiaBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

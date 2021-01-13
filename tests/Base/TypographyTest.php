@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /*
  * This file is part of the Yasumi package.
@@ -23,8 +25,8 @@ use Yasumi\Yasumi;
  * Verifies that translations uses typographic apostrophe (’) and quotation marks (“ ”)
  * rather than their typewriter versions (' and ").
  *
- * @link https://en.wikipedia.org/wiki/Apostrophe
- * @link https://en.wikipedia.org/wiki/Quotation_mark
+ * @see https://en.wikipedia.org/wiki/Apostrophe
+ * @see https://en.wikipedia.org/wiki/Quotation_mark
  */
 class TypographyTest extends TestCase
 {
@@ -33,9 +35,9 @@ class TypographyTest extends TestCase
     /**
      * @dataProvider translationProvider
      *
-     * @param string $name The localized holiday name
-     * @param string $class The provider
-     * @param string $key The holiday key
+     * @param string $name   The localized holiday name
+     * @param string $class  The provider
+     * @param string $key    The holiday key
      * @param string $locale The locale
      */
     public function testTranslations(string $name, string $class, string $key, string $locale): void
@@ -46,6 +48,7 @@ class TypographyTest extends TestCase
 
     /**
      * Provides test data for testProvider().
+     *
      * @throws \ReflectionException
      */
     public function translationProvider(): array

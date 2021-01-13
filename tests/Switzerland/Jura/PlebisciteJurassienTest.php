@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,17 +27,18 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class PlebisciteJurassienTest extends JuraBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'plebisciteJurassien';
 
     /**
-     * The year in which the holiday was established
+     * The year in which the holiday was established.
      */
     public const ESTABLISHMENT_YEAR = 1975;
 
     /**
      * Tests Plébiscite jurassien on or after 1975.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -52,6 +55,7 @@ class PlebisciteJurassienTest extends JuraBaseTestCase implements YasumiTestCase
 
     /**
      * Tests Plébiscite jurassien before 1975.
+     *
      * @throws ReflectionException
      */
     public function testInstaurationRepubliqueBefore1975(): void
@@ -65,6 +69,7 @@ class PlebisciteJurassienTest extends JuraBaseTestCase implements YasumiTestCase
 
     /**
      * Tests translated name of Plébiscite jurassien.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -79,6 +84,7 @@ class PlebisciteJurassienTest extends JuraBaseTestCase implements YasumiTestCase
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

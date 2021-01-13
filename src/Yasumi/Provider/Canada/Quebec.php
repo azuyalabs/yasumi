@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -24,7 +26,7 @@ use Yasumi\Provider\DateTimeZoneFactory;
  *
  * Quebec is a province of Canada.
  *
- * @link https://en.wikipedia.org/wiki/Quebec
+ * @see https://en.wikipedia.org/wiki/Quebec
  */
 class Quebec extends Canada
 {
@@ -45,9 +47,9 @@ class Quebec extends Canada
     public function initialize(): void
     {
         parent::initialize();
-        
+
         $this->timezone = 'America/Toronto';
-        
+
         $this->addHoliday($this->saintJeanBaptisteDay($this->year, $this->timezone, $this->locale));
         $this->calculateNationalPatriotsDay();
     }
@@ -61,15 +63,13 @@ class Quebec extends Canada
      * celebration on March 25 of the Annunciation, when the angel Gabriel told Mary that her cousin Elizabeth was in
      * her sixth month of pregnancy.
      *
-     * @link https://en.wikipedia.org/wiki/Saint-Jean-Baptiste_Day
+     * @see https://en.wikipedia.org/wiki/Saint-Jean-Baptiste_Day
      *
-     * @param int $year the year for which St. John's Day need to be created
+     * @param int    $year     the year for which St. John's Day need to be created
      * @param string $timezone the timezone in which St. John's Day is celebrated
-     * @param string $locale the locale for which St. John's Day need to be displayed in.
-     * @param string $type The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     * @param string $locale   the locale for which St. John's Day need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
-     *
-     * @return Holiday
      *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
@@ -94,7 +94,7 @@ class Quebec extends Canada
     /**
      * National Patriot's Day.
      *
-     * @link https://en.wikipedia.org/wiki/National_Patriots%27_Day
+     * @see https://en.wikipedia.org/wiki/National_Patriots%27_Day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

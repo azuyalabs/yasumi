@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,17 +27,18 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class ShowaDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday defined in the test
+     * The name of the holiday defined in the test.
      */
     public const HOLIDAY = 'showaDay';
 
     /**
-     * The year in which the holiday defined in the test was first established
+     * The year in which the holiday defined in the test was first established.
      */
     public const ESTABLISHMENT_YEAR = 2007;
 
     /**
      * Tests the holiday defined in the test on or after establishment.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -52,6 +55,7 @@ class ShowaDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests the holiday defined in the test on or after the establishment and substituted next working day.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -60,7 +64,7 @@ class ShowaDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
         $year = 2210;
         $this->assertHoliday(
             self::REGION,
-            self::SUBSTITUTE_PREFIX . self::HOLIDAY,
+            self::SUBSTITUTE_PREFIX.self::HOLIDAY,
             $year,
             new DateTime("$year-4-30", new DateTimeZone(self::TIMEZONE))
         );
@@ -68,6 +72,7 @@ class ShowaDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests the holiday defined in the test before establishment.
+     *
      * @throws ReflectionException
      */
     public function testHolidayBeforeEstablishment(): void
@@ -81,6 +86,7 @@ class ShowaDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -95,6 +101,7 @@ class ShowaDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

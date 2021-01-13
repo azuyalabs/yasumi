@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -20,10 +22,10 @@ use Exception as BaseException;
 class MissingTranslationException extends BaseException implements Exception
 {
     /**
-     * Initializes the Exception instance
+     * Initializes the Exception instance.
      *
-     * @param string $key The holiday key
-     * @param array $locales The locales that was searched
+     * @param string $key     The holiday key
+     * @param array  $locales The locales that was searched
      */
     public function __construct(string $key, array $locales)
     {

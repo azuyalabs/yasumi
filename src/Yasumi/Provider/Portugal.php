@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -20,13 +22,12 @@ use Yasumi\Holiday;
 /**
  * Holidays for Portugal.
  *
- * @link    https://pt.wikipedia.org/wiki/Feriados_em_Portugal
- *
- * @package Yasumi\Provider
+ * @see    https://pt.wikipedia.org/wiki/Feriados_em_Portugal
  */
 class Portugal extends AbstractProvider
 {
-    use CommonHolidays, ChristianHolidays;
+    use CommonHolidays;
+    use ChristianHolidays;
 
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
@@ -62,7 +63,7 @@ class Portugal extends AbstractProvider
     }
 
     /**
-     * Carnation Revolution (25th of April 1974) / Revolução dos Cravos (25 de Abril 1974)
+     * Carnation Revolution (25th of April 1974) / Revolução dos Cravos (25 de Abril 1974).
      *
      * The Carnation Revolution (Portuguese: Revolução dos Cravos), also referred to as the 25 April (Portuguese: 25 de
      * Abril), was initially a military coup in Lisbon, Portugal, on 25 April 1974 which overthrew the regime of the
@@ -75,7 +76,7 @@ class Portugal extends AbstractProvider
      * of rifles and on the uniforms of the army men. In Portugal, the 25th of April is a national holiday, known as
      * Freedom Day (Portuguese: Dia da Liberdade), to celebrate the event.
      *
-     * @link https://en.wikipedia.org/wiki/Carnation_Revolution
+     * @see https://en.wikipedia.org/wiki/Carnation_Revolution
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -112,7 +113,7 @@ class Portugal extends AbstractProvider
     }
 
     /**
-     * Day of Portugal, Camões and the Portuguese Communities / Dia de Portugal, de Camões e das Comunidades Portuguesas
+     * Day of Portugal, Camões and the Portuguese Communities / Dia de Portugal, de Camões e das Comunidades Portuguesas.
      *
      * The Wikipedia article mentions that this holiday changed names during the Portuguese dictatorship that ran
      * between 1933 and 1974 (ended with the Carnation Revolution). This is the name that is currently standing.
@@ -122,7 +123,7 @@ class Portugal extends AbstractProvider
      * officially observed only in Portugal, Portuguese citizens and emigrants throughout the world celebrate this
      * holiday. The date commemorates the death of national literary icon Luís de Camões on 10 June 1580.
      *
-     * @link https://en.wikipedia.org/wiki/Portugal_Day
+     * @see https://en.wikipedia.org/wiki/Portugal_Day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -142,7 +143,7 @@ class Portugal extends AbstractProvider
     }
 
     /**
-     * Establishment of the Portuguese Republic / Implantação da República Portuguesa
+     * Establishment of the Portuguese Republic / Implantação da República Portuguesa.
      *
      * The establishment of the Portuguese Republic was the result of a coup d'état organised by the Portuguese
      * Republican Party which, on 5 October 1910, deposed the constitutional monarchy and established a republican
@@ -156,7 +157,7 @@ class Portugal extends AbstractProvider
      *
      * The holiday was revoked in 2013 due to government deliberation. It was restored in 2016.
      *
-     * @link https://en.wikipedia.org/wiki/5_October_1910_revolution
+     * @see https://en.wikipedia.org/wiki/5_October_1910_revolution
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -192,7 +193,7 @@ class Portugal extends AbstractProvider
     }
 
     /**
-     * Restoration of Independence / Reguesstauração da Independência
+     * Restoration of Independence / Reguesstauração da Independência.
      *
      * There is no Wikipedia article referencing this holiday directly so we are using the War that motivated the
      * holiday instead until we can find something better.
@@ -210,8 +211,8 @@ class Portugal extends AbstractProvider
      *
      * The holiday was revoked in 2013 due to government deliberation. It was restored in 2016.
      *
-     * @link https://pt.wikipedia.org/wiki/Restauração_da_Independência (portuguese link)
-     * @link https://pt.wikipedia.org/wiki/Guerra_da_Restauração (english link)
+     * @see https://pt.wikipedia.org/wiki/Restauração_da_Independência (portuguese link)
+     * @see https://pt.wikipedia.org/wiki/Guerra_da_Restauração (english link)
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -26,16 +28,16 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class BoxingDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'secondChristmasDay';
 
     /**
-     * Tests Boxing Day
+     * Tests Boxing Day.
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int $year the year for which the holiday defined in this test needs to be tested
+     * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
      * @throws ReflectionException
@@ -52,16 +54,17 @@ class BoxingDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInte
     }
 
     /**
-     * Returns a list of test dates
+     * Returns a list of test dates.
      *
      * @return array list of test dates for the holiday defined in this test
+     *
      * @throws Exception
      */
     public function HolidayDataProvider(): array
     {
         $data = [];
 
-        for ($y = 0; $y < 50; $y++) {
+        for ($y = 0; $y < 50; ++$y) {
             $year = $this->generateRandomYear();
             $date = new DateTime("$year-12-26", new DateTimeZone(self::TIMEZONE));
 
@@ -77,6 +80,7 @@ class BoxingDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -91,6 +95,7 @@ class BoxingDayTest extends NewZealandBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

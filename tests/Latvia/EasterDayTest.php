@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /*
  * This file is part of the Yasumi package.
@@ -28,12 +30,11 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class EasterDayTest extends LatviaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     public const HOLIDAY = 'easter';
 
     /**
-     * @return array
      * @throws Exception
      */
     public function holidayDataProvider(): array
@@ -42,11 +43,11 @@ class EasterDayTest extends LatviaBaseTestCase implements YasumiTestCaseInterfac
     }
 
     /**
-     * Test defined holiday in the test
+     * Test defined holiday in the test.
      *
      * @dataProvider holidayDataProvider
      *
-     * @param int $year the year for which the holiday defined in this test needs to be tested
+     * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
      * @throws ReflectionException
@@ -64,6 +65,7 @@ class EasterDayTest extends LatviaBaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * {@inheritdoc}
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -78,6 +80,7 @@ class EasterDayTest extends LatviaBaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * {@inheritdoc}
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

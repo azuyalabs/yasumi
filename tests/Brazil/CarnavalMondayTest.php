@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -27,12 +29,12 @@ class CarnavalMondayTest extends BrazilBaseTestCase implements YasumiTestCaseInt
     use ChristianHolidays;
 
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'carnavalMonday';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1700;
 
@@ -55,6 +57,7 @@ class CarnavalMondayTest extends BrazilBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests Carnaval Monday on or before 1700.
+     *
      * @throws ReflectionException
      */
     public function testCarnavalMondayBefore1700(): void
@@ -65,6 +68,7 @@ class CarnavalMondayTest extends BrazilBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -75,6 +79,7 @@ class CarnavalMondayTest extends BrazilBaseTestCase implements YasumiTestCaseInt
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

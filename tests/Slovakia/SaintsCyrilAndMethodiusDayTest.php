@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /*
  * This file is part of the Yasumi package.
@@ -11,7 +13,6 @@
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-
 namespace Yasumi\tests\Slovakia;
 
 use DateTime;
@@ -23,24 +24,21 @@ use Yasumi\tests\YasumiTestCaseInterface;
 /**
  * Class for testing a official holiday in Slovakia.
  *
- *
- * @package Yasumi\tests\Slovakia
  * @author  Andrej Rypak (dakujem) <xrypak@gmail.com>
  */
 class SaintsCyrilAndMethodiusDayTest extends SlovakiaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     public const HOLIDAY = 'saintsCyrilAndMethodiusDay';
-
 
     /**
      * Tests the holiday defined in this test.
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int $year the year for which the holiday defined in this test needs to be tested
+     * @param int      $year     the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws ReflectionException
@@ -50,11 +48,11 @@ class SaintsCyrilAndMethodiusDayTest extends SlovakiaBaseTestCase implements Yas
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
-
     /**
-     * Returns a list of random test dates used for assertion of the holiday defined in this test
+     * Returns a list of random test dates used for assertion of the holiday defined in this test.
      *
      * @return array list of test dates for the holiday defined in this test
+     *
      * @throws Exception
      */
     public function HolidayDataProvider(): array
@@ -62,9 +60,9 @@ class SaintsCyrilAndMethodiusDayTest extends SlovakiaBaseTestCase implements Yas
         return $this->generateRandomDates(7, 5, self::TIMEZONE);
     }
 
-
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -77,9 +75,9 @@ class SaintsCyrilAndMethodiusDayTest extends SlovakiaBaseTestCase implements Yas
         );
     }
 
-
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

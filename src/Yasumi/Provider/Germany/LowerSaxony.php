@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -24,7 +26,7 @@ use Yasumi\Provider\Germany;
  * of Germany. In rural areas Northern Low Saxon, a dialect of Low German, and Saterland Frisian, a variety of Frisian,
  * are still spoken, but the number of speakers is declining.
  *
- * @link https://en.wikipedia.org/wiki/Lower_Saxony
+ * @see https://en.wikipedia.org/wiki/Lower_Saxony
  */
 class LowerSaxony extends Germany
 {
@@ -54,7 +56,7 @@ class LowerSaxony extends Germany
      * For the German state of Lower Saxony, Reformation Day is celebrated since 2018.
      * Note: In 2017 all German states will celebrate Reformation Day for its 500th anniversary.
      *
-     * @link https://www.zeit.de/gesellschaft/zeitgeschehen/2018-06/reformationstag-niedersachsen-neuer-feiertag
+     * @see https://www.zeit.de/gesellschaft/zeitgeschehen/2018-06/reformationstag-niedersachsen-neuer-feiertag
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

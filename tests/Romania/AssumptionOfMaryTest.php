@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,17 +27,18 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class AssumptionOfMaryTest extends RomaniaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     public const HOLIDAY = 'assumptionOfMary';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 2008;
 
     /**
      * Tests Assumption Of Mary Day on or after 2008.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -52,6 +55,7 @@ class AssumptionOfMaryTest extends RomaniaBaseTestCase implements YasumiTestCase
 
     /**
      * Tests Assumption of Mary Day before 2008.
+     *
      * @throws ReflectionException
      */
     public function testAssumptionOfMaryDayBefore2008(): void
@@ -65,6 +69,7 @@ class AssumptionOfMaryTest extends RomaniaBaseTestCase implements YasumiTestCase
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -79,6 +84,7 @@ class AssumptionOfMaryTest extends RomaniaBaseTestCase implements YasumiTestCase
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -27,22 +29,23 @@ use Yasumi\tests\YasumiTestCaseInterface;
  * the Italian people were called to the polls to decide on the form of government, following the Second World War and
  * the fall of Fascism.
  *
- * @link https://en.wikipedia.org/wiki/Festa_della_Repubblica
+ * @see https://en.wikipedia.org/wiki/Festa_della_Repubblica
  */
 class RepublicDayTest extends ItalyBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'republicDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1946;
 
     /**
      * Tests Republic Day on or after 1946.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -59,6 +62,7 @@ class RepublicDayTest extends ItalyBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests Republic Day before 1946.
+     *
      * @throws ReflectionException
      */
     public function testRepublicDayBefore1946(): void
@@ -72,6 +76,7 @@ class RepublicDayTest extends ItalyBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests translated name of Republic Day.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -86,6 +91,7 @@ class RepublicDayTest extends ItalyBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

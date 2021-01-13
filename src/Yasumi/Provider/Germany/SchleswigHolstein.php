@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -23,7 +25,7 @@ use Yasumi\Provider\Germany;
  * Holstein and the southern part of the former Duchy of Schleswig. Its capital city is Kiel; other notable cities are
  * Lübeck and Flensburg.
  *
- * @link https://en.wikipedia.org/wiki/Schleswig-Holstein
+ * @see https://en.wikipedia.org/wiki/Schleswig-Holstein
  */
 class SchleswigHolstein extends Germany
 {

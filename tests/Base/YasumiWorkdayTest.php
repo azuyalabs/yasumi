@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -30,7 +32,7 @@ class YasumiWorkdayTest extends TestCase
     public const FORMAT_DATE = 'Y-m-d';
 
     /**
-     * Tests that the nextWorkingDay function returns an object that implements the DateTimeInterface (e.g. DateTime)
+     * Tests that the nextWorkingDay function returns an object that implements the DateTimeInterface (e.g. DateTime).
      *
      * @throws Exception
      * @throws ReflectionException
@@ -59,7 +61,7 @@ class YasumiWorkdayTest extends TestCase
     }
 
     /**
-     * Tests that the prevWorkingDay function returns an object that implements the DateTimeInterface (e.g. DateTime)
+     * Tests that the prevWorkingDay function returns an object that implements the DateTimeInterface (e.g. DateTime).
      *
      * @throws Exception
      * @throws ReflectionException
@@ -89,7 +91,7 @@ class YasumiWorkdayTest extends TestCase
 
     /**
      * Tests that the prevWorkingDay and nextWorkingDay functions returns an object that implements the
-     * DateTimeInterface (e.g. DateTime) when an interval is chosen that passes the year boundary (i.e. beyond 12/31)
+     * DateTimeInterface (e.g. DateTime) when an interval is chosen that passes the year boundary (i.e. beyond 12/31).
      *
      * @throws Exception
      * @throws ReflectionException
@@ -97,7 +99,7 @@ class YasumiWorkdayTest extends TestCase
     public function testYearBoundary(): void
     {
         /**
-         * Use Case (USA):
+         * Use Case (USA):.
          *
          * 20 working days between 20th Dec and 20th Jan
          * 2015-12-20 is a Sunday
@@ -113,7 +115,6 @@ class YasumiWorkdayTest extends TestCase
          *
          * @see https://www.timeanddate.com/calendar/?year=2016&country=1
          */
-
         $provider = 'USA';
         $timezone = 'America/New_York';
         $interval = 20;
@@ -147,10 +148,6 @@ class YasumiWorkdayTest extends TestCase
      *
      * @dataProvider dataProviderWorkDayNextYear
      *
-     * @param string $start
-     * @param int $workdays
-     * @param string $expectedNext
-     *
      * @throws ReflectionException
      * @throws Exception
      */
@@ -164,9 +161,6 @@ class YasumiWorkdayTest extends TestCase
         self::assertEquals($expectedNext, $result->format(self::FORMAT_DATE));
     }
 
-    /**
-     * @return array
-     */
     public function dataProviderWorkDayNextYear(): array
     {
         return [
@@ -188,10 +182,6 @@ class YasumiWorkdayTest extends TestCase
      *
      * @dataProvider dataProviderWorkDayPreviousYear
      *
-     * @param string $start
-     * @param int $workdays
-     * @param string $expectedNext
-     *
      * @throws ReflectionException
      * @throws Exception
      */
@@ -205,9 +195,6 @@ class YasumiWorkdayTest extends TestCase
         self::assertEquals($expectedNext, $result->format(self::FORMAT_DATE));
     }
 
-    /**
-     * @return array
-     */
     public function dataProviderWorkDayPreviousYear(): array
     {
         return [

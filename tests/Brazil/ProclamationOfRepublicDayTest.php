@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,17 +27,18 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class ProclamationOfRepublicDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'proclamationOfRepublicDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1889;
 
     /**
      * Tests Proclamação da República on or after 1889.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -52,6 +55,7 @@ class ProclamationOfRepublicDayTest extends BrazilBaseTestCase implements Yasumi
 
     /**
      * Tests Proclamação da República on or before 1889.
+     *
      * @throws ReflectionException
      */
     public function testProclamacaoDaRepublicaBefore1889(): void
@@ -62,6 +66,7 @@ class ProclamationOfRepublicDayTest extends BrazilBaseTestCase implements Yasumi
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -77,6 +82,7 @@ class ProclamationOfRepublicDayTest extends BrazilBaseTestCase implements Yasumi
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

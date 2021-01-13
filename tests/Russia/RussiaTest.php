@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /*
  * This file is part of the Yasumi package.
@@ -25,7 +27,8 @@ use Yasumi\Provider\Russia;
 class RussiaTest extends RussiaBaseTestCase
 {
     /**
-     * Tests if all official holidays in Russia are defined by the provider class
+     * Tests if all official holidays in Russia are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
@@ -62,7 +65,8 @@ class RussiaTest extends RussiaBaseTestCase
     }
 
     /**
-     * Tests if all observed holidays in Russia are defined by the provider class
+     * Tests if all observed holidays in Russia are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testObservedHolidays(): void
@@ -71,7 +75,8 @@ class RussiaTest extends RussiaBaseTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in Russia are defined by the provider class
+     * Tests if all seasonal holidays in Russia are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
@@ -80,7 +85,8 @@ class RussiaTest extends RussiaBaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in Russia are defined by the provider class
+     * Tests if all bank holidays in Russia are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testBankHolidays(): void
@@ -89,7 +95,8 @@ class RussiaTest extends RussiaBaseTestCase
     }
 
     /**
-     * Tests if all other holidays in Russia are defined by the provider class
+     * Tests if all other holidays in Russia are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testOtherHolidays(): void

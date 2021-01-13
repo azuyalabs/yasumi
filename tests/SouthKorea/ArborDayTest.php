@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /*
  * This file is part of the Yasumi package.
@@ -26,24 +28,23 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class ArborDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
-     */
-    private const HOLIDAY = 'arborDay';
-
-    /**
-     * The year in which the holiday was first established
-     */
-    private const ESTABLISHMENT_YEAR = 1949;
-
-    /**
-     * The year in which the holiday was removed
+     * The year in which the holiday was removed.
      */
     public const REMOVED_YEAR = 2005;
 
     /**
-     * The year in which the holiday was not celebrated
+     * The year in which the holiday was not celebrated.
      */
     public const YEAR_NOT_CELEBRATED = 1960;
+    /**
+     * The name of the holiday.
+     */
+    private const HOLIDAY = 'arborDay';
+
+    /**
+     * The year in which the holiday was first established.
+     */
+    private const ESTABLISHMENT_YEAR = 1949;
 
     /**
      * Tests the holiday defined in this test.

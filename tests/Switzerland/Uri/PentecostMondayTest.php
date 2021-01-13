@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,12 +27,13 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class PentecostMondayTest extends UriBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'pentecostMonday';
 
     /**
      * Tests Pentecost Monday.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -47,6 +50,7 @@ class PentecostMondayTest extends UriBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests translated name of Pentecost Monday.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -61,6 +65,7 @@ class PentecostMondayTest extends UriBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

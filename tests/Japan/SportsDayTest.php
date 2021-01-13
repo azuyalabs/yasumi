@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,18 +27,19 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class SportsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'sportsDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1996;
 
     /**
      * Tests Health And Sports Day in 2021. Health And Sports Day in 2021 is July 23th for rescheduled Olympic Games
      * after COVID-19.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -53,6 +56,7 @@ class SportsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests Health And Sports Day in 2020. Health And Sports Day in 2020 is July 24th for the Olympic Games.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -70,6 +74,7 @@ class SportsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
     /**
      * Tests Health And Sports Day after 2000. Health And Sports Day was established since 1996 on October 10th. After
      * 2000 it was changed to be the second monday of October.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -87,6 +92,7 @@ class SportsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
     /**
      * Tests Health And Sports Day between 1996 and 2000. Health And Sports Day was established since 1996 on October
      * 10th. After 2000 it was changed to be the second monday of October.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -103,7 +109,8 @@ class SportsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests Health And Sports Day between 1996 and 2000 substituted next working day (when Health And Sports Day falls
-     * on a Sunday)
+     * on a Sunday).
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -112,7 +119,7 @@ class SportsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
         $year = 1999;
         $this->assertHoliday(
             self::REGION,
-            self::SUBSTITUTE_PREFIX . self::HOLIDAY,
+            self::SUBSTITUTE_PREFIX.self::HOLIDAY,
             $year,
             new DateTime("$year-10-11", new DateTimeZone(self::TIMEZONE))
         );
@@ -121,6 +128,7 @@ class SportsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
     /**
      * Tests Health And Sports Day before. Health And Sports Day was established since 1996 on October 10th. After
      * 2000 it was changed to be the second monday of October.
+     *
      * @throws ReflectionException
      */
     public function testSportsDayBefore1996(): void
@@ -134,7 +142,8 @@ class SportsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * 1996-2019:Health And Sports Day
+     * 1996-2019:Health And Sports Day.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -149,7 +158,8 @@ class SportsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * 2020 - :Sports Day
+     * 2020 - :Sports Day.
+     *
      * @throws ReflectionException
      */
     public function testTranslationFrom2020(): void
@@ -165,6 +175,7 @@ class SportsDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

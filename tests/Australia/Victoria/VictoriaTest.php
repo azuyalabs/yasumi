@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -20,14 +22,22 @@ use Yasumi\Holiday;
  */
 class VictoriaTest extends VictoriaBaseTestCase
 {
-
     /**
      * @var int year random year number used for all tests in this Test Case
      */
     protected $year;
 
     /**
-     * Tests if all official holidays in Victoria (Australia) are defined by the provider class
+     * Initial setup of this Test Case.
+     */
+    protected function setUp(): void
+    {
+        $this->year = $this->generateRandomYear(2015, 2018);
+    }
+
+    /**
+     * Tests if all official holidays in Victoria (Australia) are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
@@ -47,13 +57,5 @@ class VictoriaTest extends VictoriaBaseTestCase
             'aflGrandFinalFriday',
             'melbourneCup',
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
-    }
-
-    /**
-     * Initial setup of this Test Case
-     */
-    protected function setUp(): void
-    {
-        $this->year = $this->generateRandomYear(2015, 2018);
     }
 }

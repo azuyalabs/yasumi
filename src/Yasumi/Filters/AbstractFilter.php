@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /*
  * This file is part of the Yasumi package.
@@ -19,8 +21,6 @@ use Yasumi\SubstituteHoliday;
 
 /**
  * AbstractFilter.
- *
- * @package Yasumi\Filters
  */
 abstract class AbstractFilter extends FilterIterator implements Countable
 {
@@ -29,7 +29,7 @@ abstract class AbstractFilter extends FilterIterator implements Countable
      *
      * In case a holiday is substituted (e.g. observed), the holiday is only counted once.
      *
-     * @return int Number of unique holidays.
+     * @return int number of unique holidays
      */
     public function count(): int
     {

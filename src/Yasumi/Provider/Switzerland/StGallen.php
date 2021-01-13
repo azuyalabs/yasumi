@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -21,7 +23,7 @@ use Yasumi\Provider\Switzerland;
 /**
  * Provider for all holidays in St. Gallen (Switzerland).
  *
- * @link https://en.wikipedia.org/wiki/Canton_of_St._Gallen
+ * @see https://en.wikipedia.org/wiki/Canton_of_St._Gallen
  */
 class StGallen extends Switzerland
 {

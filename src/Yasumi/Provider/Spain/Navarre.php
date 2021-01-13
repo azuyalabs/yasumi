@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,7 +27,7 @@ use Yasumi\Provider\Spain;
  * Basque Country, La Rioja, and Aragon in Spain and Aquitaine in France. The capital city is Pamplona (or Iruña in
  * Basque).
  *
- * @link https://en.wikipedia.org/wiki/Navarre
+ * @see https://en.wikipedia.org/wiki/Navarre
  */
 class Navarre extends Spain
 {

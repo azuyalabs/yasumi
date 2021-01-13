@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -23,7 +25,7 @@ use Yasumi\Provider\Germany;
  * official contexts, is Land Bremen ('State of Bremen'). The state consists of two enclaves with two cities (Bremen
  * and Bremerhaven) in the North of Germany, surrounded by the larger state of Lower Saxony.
  *
- * @link https://en.wikipedia.org/wiki/Bremen_(state)
+ * @see https://en.wikipedia.org/wiki/Bremen_(state)
  */
 class Bremen extends Germany
 {

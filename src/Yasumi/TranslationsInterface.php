@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -20,7 +22,7 @@ interface TranslationsInterface
     /**
      * Returns translation for holiday in specific locale.
      *
-     * @param string $key holiday key
+     * @param string $key    holiday key
      * @param string $locale locale
      *
      * @return string|null translated holiday name

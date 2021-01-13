@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -24,7 +26,7 @@ use Yasumi\Provider\Germany;
  * and Vorpommern after the Second World War, dissolved in 1952 and recreated at the time of the German reunification in
  * 1990.
  *
- * @link https://en.wikipedia.org/wiki/Mecklenburg-Vorpommern
+ * @see https://en.wikipedia.org/wiki/Mecklenburg-Vorpommern
  */
 class MecklenburgWesternPomerania extends Germany
 {

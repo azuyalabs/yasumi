@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,12 +27,13 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class PentecostTest extends GermanyBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'pentecost';
 
     /**
      * Tests the holiday defined in this test.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -38,7 +41,7 @@ class PentecostTest extends GermanyBaseTestCase implements YasumiTestCaseInterfa
     {
         $year = $this->generateRandomYear();
         $time_stamp = \strtotime(
-            $year . '-03-21' . \easter_days($year) . ' day + 49 day'
+            $year.'-03-21'.\easter_days($year).' day + 49 day'
         );
         $date = \date('Y-m-d', $time_stamp);
 
@@ -52,6 +55,7 @@ class PentecostTest extends GermanyBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -66,6 +70,7 @@ class PentecostTest extends GermanyBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

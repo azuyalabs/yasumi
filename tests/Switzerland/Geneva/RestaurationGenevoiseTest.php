@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,12 +27,13 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class RestaurationGenevoiseTest extends GenevaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'restaurationGenevoise';
 
     /**
      * Tests Restauration Genevoise.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -42,12 +45,13 @@ class RestaurationGenevoiseTest extends GenevaBaseTestCase implements YasumiTest
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime($year . '-12-31', new DateTimeZone(self::TIMEZONE))
+            new DateTime($year.'-12-31', new DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests translated name of Restauration Genevoise.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -62,6 +66,7 @@ class RestaurationGenevoiseTest extends GenevaBaseTestCase implements YasumiTest
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
@@ -25,18 +27,19 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class ThanksgivingDayTest extends CanadaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'thanksgivingDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1879;
 
     /**
      * Tests Thanksgiving Day on or after 1879. Thanksgiving Day is celebrated since 1879 on the second Monday
      * of October.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -54,6 +57,7 @@ class ThanksgivingDayTest extends CanadaBaseTestCase implements YasumiTestCaseIn
     /**
      * Tests Thanksgiving Day before 1879. ThanksgivingDay Day is celebrated since 1879 on the second Monday
      * of October.
+     *
      * @throws ReflectionException
      */
     public function testThanksgivingDayBefore1879(): void
@@ -67,6 +71,7 @@ class ThanksgivingDayTest extends CanadaBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -81,6 +86,7 @@ class ThanksgivingDayTest extends CanadaBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void
