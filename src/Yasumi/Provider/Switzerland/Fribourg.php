@@ -57,7 +57,7 @@ class Fribourg extends Switzerland
         $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
 
         // For the roman catholic communes
-        $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->assumptionOfMary($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->immaculateConception($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
