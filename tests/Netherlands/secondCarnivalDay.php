@@ -18,7 +18,6 @@ use DateTime;
 use DateTimeZone;
 use Exception;
 use InvalidArgumentException;
-use PHPUnit_Framework_AssertionFailedError;
 use ReflectionException;
 use RuntimeException;
 use Yasumi\Exception\UnknownLocaleException;
@@ -40,7 +39,6 @@ class secondCarnivalDay extends NetherlandsBaseTestCase implements YasumiTestCas
      *
      * @throws UnknownLocaleException
      * @throws InvalidArgumentException
-     * @throws PHPUnit_Framework_AssertionFailedError
      * @throws RuntimeException
      * @throws ReflectionException
      * @throws Exception
@@ -60,7 +58,6 @@ class secondCarnivalDay extends NetherlandsBaseTestCase implements YasumiTestCas
      * Tests type of the holiday defined in this test.
      *
      * @throws InvalidArgumentException
-     * @throws PHPUnit_Framework_AssertionFailedError
      * @throws RuntimeException
      * @throws UnknownLocaleException
      * @throws ReflectionException
@@ -74,7 +71,6 @@ class secondCarnivalDay extends NetherlandsBaseTestCase implements YasumiTestCas
      * Tests the translated name of the holiday defined in this test.
      *
      * @throws InvalidArgumentException
-     * @throws PHPUnit_Framework_AssertionFailedError
      * @throws RuntimeException
      * @throws UnknownLocaleException
      * @throws ReflectionException
