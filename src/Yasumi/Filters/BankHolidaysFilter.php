@@ -28,9 +28,6 @@ use Yasumi\Holiday;
  */
 class BankHolidaysFilter extends AbstractFilter
 {
-    /**
-     * Checks whether the current element of the iterator is an observed holiday.
-     */
     public function accept(): bool
     {
         return Holiday::TYPE_BANK === $this->getInnerIterator()->current()->getType();

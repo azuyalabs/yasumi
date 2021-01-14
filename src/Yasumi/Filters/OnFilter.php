@@ -45,9 +45,6 @@ class OnFilter extends AbstractFilter
         $this->date = $date->format('Y-m-d');
     }
 
-    /**
-     * @return bool Check whether the current element of the iterator is acceptable
-     */
     public function accept(): bool
     {
         $holiday = $this->getInnerIterator()->current()->format('Y-m-d');

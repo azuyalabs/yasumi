@@ -28,9 +28,6 @@ use Yasumi\Holiday;
  */
 class ObservedHolidaysFilter extends AbstractFilter
 {
-    /**
-     * Checks whether the current element of the iterator is an observed holiday.
-     */
     public function accept(): bool
     {
         return Holiday::TYPE_OBSERVANCE === $this->getInnerIterator()->current()->getType();
