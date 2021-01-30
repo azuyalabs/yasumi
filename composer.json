@@ -61,7 +61,11 @@
     "phpstan": "vendor/bin/phpstan --level=5 analyse src tests",
     "psalm": "vendor/bin/psalm --threads=2",
     "test": "vendor/bin/phpunit",
-    "infection": "vendor/bin/infection run -j 2"
+    "infection": "vendor/bin/infection run -j 2",
+    "analyse": [
+      "@phpstan",
+      "@psalm"
+    ]
   },
   "config": {
     "sort-packages": true
