@@ -143,9 +143,15 @@ class SubstituteHolidayTest extends TestCase
         $substitute = new SubstituteHoliday($holiday, [$locale => $translation], new DateTime('2019-01-02'), $locale);
 
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
-        $translationsStub->expects(self::at(0))->method('getTranslations')->with(self::equalTo('substituteHoliday'))->willReturn([$locale => 'foo']);
-        $translationsStub->expects(self::at(1))->method('getTranslations')->with(self::equalTo('substituteHoliday:testHoliday'))->willReturn([$locale => 'foo']);
-        $translationsStub->expects(self::at(2))->method('getTranslations')->with(self::equalTo('testHoliday'))->willReturn(['en' => 'foo']);
+        $translationsStub
+            ->expects(self::exactly(3))
+            ->method('getTranslations')
+            ->withConsecutive([self::equalTo('substituteHoliday')], [self::equalTo('substituteHoliday:testHoliday')], [self::equalTo('testHoliday')])
+            ->willReturnOnConsecutiveCalls(
+                [$locale => 'foo'],
+                [$locale => 'foo'],
+                ['en' => 'foo']
+            );
 
         $substitute->mergeGlobalTranslations($translationsStub);
 
@@ -167,9 +173,15 @@ class SubstituteHolidayTest extends TestCase
         $substitute = new SubstituteHoliday($holiday, [], new DateTime('2019-01-02'), $locale);
 
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
-        $translationsStub->expects(self::at(0))->method('getTranslations')->with(self::equalTo('substituteHoliday'))->willReturn(['en' => '{0} obs']);
-        $translationsStub->expects(self::at(1))->method('getTranslations')->with(self::equalTo('substituteHoliday:testHoliday'))->willReturn([]);
-        $translationsStub->expects(self::at(2))->method('getTranslations')->with(self::equalTo('testHoliday'))->willReturn([$locale => $translation]);
+        $translationsStub
+            ->expects(self::exactly(3))
+            ->method('getTranslations')
+            ->withConsecutive([self::equalTo('substituteHoliday')], [self::equalTo('substituteHoliday:testHoliday')], [self::equalTo('testHoliday')])
+            ->willReturnOnConsecutiveCalls(
+                ['en' => '{0} obs'],
+                [],
+                [$locale => $translation]
+            );
 
         $substitute->mergeGlobalTranslations($translationsStub);
 
@@ -191,9 +203,15 @@ class SubstituteHolidayTest extends TestCase
         $substitute = new SubstituteHoliday($holiday, [$locale => $translation], new DateTime('2019-01-02'), $locale);
 
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
-        $translationsStub->expects(self::at(0))->method('getTranslations')->with(self::equalTo('substituteHoliday'))->willReturn([$locale => '{0} observed']);
-        $translationsStub->expects(self::at(1))->method('getTranslations')->with(self::equalTo('substituteHoliday:testHoliday'))->willReturn([$locale => $translation]);
-        $translationsStub->expects(self::at(2))->method('getTranslations')->with(self::equalTo('testHoliday'))->willReturn([$locale => 'foo']);
+        $translationsStub
+            ->expects(self::exactly(3))
+            ->method('getTranslations')
+            ->withConsecutive([self::equalTo('substituteHoliday')], [self::equalTo('substituteHoliday:testHoliday')], [self::equalTo('testHoliday')])
+            ->willReturnOnConsecutiveCalls(
+                [$locale => '{0} observed'],
+                [$locale => $translation],
+                [$locale => 'foo'],
+            );
 
         $substitute->mergeGlobalTranslations($translationsStub);
 
@@ -215,9 +233,15 @@ class SubstituteHolidayTest extends TestCase
         $substitute = new SubstituteHoliday($holiday, [], new DateTime('2019-01-02'), $locale);
 
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
-        $translationsStub->expects(self::at(0))->method('getTranslations')->with(self::equalTo('substituteHoliday'))->willReturn([$locale => '{0} observed']);
-        $translationsStub->expects(self::at(1))->method('getTranslations')->with(self::equalTo('substituteHoliday:testHoliday'))->willReturn([]);
-        $translationsStub->expects(self::at(2))->method('getTranslations')->with(self::equalTo('testHoliday'))->willReturn([$locale => $translation]);
+        $translationsStub
+            ->expects(self::exactly(3))
+            ->method('getTranslations')
+            ->withConsecutive([self::equalTo('substituteHoliday')], [self::equalTo('substituteHoliday:testHoliday')], [self::equalTo('testHoliday')])
+            ->willReturnOnConsecutiveCalls(
+                [$locale => '{0} observed'],
+                [],
+                [$locale => $translation],
+            );
 
         $substitute->mergeGlobalTranslations($translationsStub);
 
