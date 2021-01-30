@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 - Updated Copyright year
 
 ### Fixed
+- Issue in the test for Ontario that IslanderDay was considered for all years: it is only celebrated since 2009.
 - Incorrect invocation of Fribourg::calculateBerchtoldsTag() and Fribourg::calculateDecember26th (Switzerland)
 - Use parameter and return type hinting
 
