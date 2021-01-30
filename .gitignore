@@ -5,3 +5,4 @@ composer.lock
 .php_cs.cache
 bin/_*
 .phpunit.result.cache
+var

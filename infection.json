@@ -5,10 +5,10 @@
     ]
   },
   "logs": {
-    "text": "build/infection.log",
-    "summary": "build/summary.log",
-    "debug": "build/debug.log",
-    "perMutator": "build/per-mutator.md",
+    "text": "var/infection.log",
+    "summary": "var/summary.log",
+    "debug": "var/debug.log",
+    "perMutator": "var/per-mutator.md",
     "badge": {
       "branch": "master"
     }
