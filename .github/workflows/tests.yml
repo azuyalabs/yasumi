@@ -1,4 +1,4 @@
-name: "Code Style"
+name: "Unit tests"
 
 on:
   - push
@@ -11,8 +11,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        operating-system: [ ubuntu-latest ]
-        php-versions: [ '7.4', '8.0' ]
+        operating-system: [ ubuntu-latest, windows-latest, macOS-latest ]
+        php-versions: [ '7.4' ]
 
     steps:
       - name: Set git to use LF
@@ -48,5 +48,5 @@ jobs:
       - name: Install dependencies
         run: composer install --no-progress --prefer-dist --optimize-autoloader
 
-      - name: Check Code Style
-        run: vendor/bin/php-cs-fixer --allow-risky=yes --diff --dry-run -v fix
+      - name: Run unit tests
+        run: vendor/bin/phpunit --coverage-clover=build/logs/clover.xml
