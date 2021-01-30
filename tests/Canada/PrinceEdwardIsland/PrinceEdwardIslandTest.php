@@ -42,13 +42,18 @@ class PrinceEdwardIslandTest extends PrinceEdwardIslandBaseTestCase
      */
     public function testOfficialHolidays(): void
     {
-        $this->assertDefinedHolidays([
+        $holidays = [
             'goodFriday',
             'christmasDay',
             'victoriaDay',
             'goldCupParadeDay',
-            'islanderDay',
-        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
+        ];
+
+        if ($this->year >= 2009) {
+            $holidays[] = 'islanderDay';
+        }
+
+        $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
