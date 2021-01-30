@@ -42,7 +42,8 @@
     "friendsofphp/php-cs-fixer": "^2.16",
     "mikey179/vfsstream": "^1.6",
     "phpstan/phpstan": "^0.12.66",
-    "phpunit/phpunit": "^8.5 | ^9.4"
+    "phpunit/phpunit": "^8.5 | ^9.4",
+    "infection/infection": "^0.21.0"
   },
   "autoload": {
     "psr-4": {
@@ -57,7 +58,8 @@
   "scripts": {
     "format": "./vendor/bin/php-cs-fixer fix",
     "phpstan": "vendor/bin/phpstan --level=5 analyse src tests",
-    "test": "vendor/bin/phpunit"
+    "test": "vendor/bin/phpunit",
+    "infection": "vendor/bin/infection run -j 2"
   },
   "config": {
     "sort-packages": true
