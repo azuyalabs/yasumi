@@ -52,4 +52,4 @@ jobs:
         run: vendor/bin/phpstan --level=5 analyse src
 
       - name: Run static analysis - Psalm
-        run: vendor/bin/psalm --threads=2
+        run: vendor/bin/psalm
