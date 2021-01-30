@@ -1,4 +1,4 @@
-name: "Code Style"
+name: "Testing"
 
 on:
   - push
@@ -48,5 +48,5 @@ jobs:
       - name: Install dependencies
         run: composer install --no-progress --prefer-dist --optimize-autoloader
 
-      - name: Check Code Style
-        run: vendor/bin/php-cs-fixer --allow-risky=yes --diff --dry-run -v fix
+      - name: Run unit tests
+        run: vendor/bin/phpunit --coverage-clover=build/logs/clover.xml

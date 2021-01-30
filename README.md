@@ -2,9 +2,9 @@
 
 [![GitHub Release](https://img.shields.io/github/release/azuyalabs/yasumi.svg?style=flat-square)](https://github.com/azuyalabs/yasumi/releases)
 [![Total Downloads](https://img.shields.io/packagist/dt/azuyalabs/yasumi.svg?style=flat-square)](https://packagist.org/packages/azuyalabs/yasumi)
-![Code Style](https://img.shields.io/github/workflow/status/azuyalabs/yasumi/Code%20Style?label=Code%20Style&style=flat-square)
+![Coding Standard](https://img.shields.io/github/workflow/status/azuyalabs/yasumi/Coding%20Standard?label=Coding%20Standard&style=flat-square)
 ![Static analysis](https://img.shields.io/github/workflow/status/azuyalabs/yasumi/Static%20analysis?label=Static%20analysis&style=flat-square)
-![Unit tests](https://img.shields.io/github/workflow/status/azuyalabs/yasumi/Unit%20tests?label=Unit%20tests&style=flat-square)
+![Testing](https://img.shields.io/github/workflow/status/azuyalabs/yasumi/Testing?label=Testing&style=flat-square)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/azuyalabs/yasumi/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/azuyalabs/yasumi/?branch=master)
 
