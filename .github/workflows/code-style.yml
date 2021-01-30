@@ -51,4 +51,3 @@ jobs:
         if: ${{ failure() }}
         run: |
           vendor/bin/php-cs-fixer --allow-risky=yes --diff -v fix --dry-run --format=checkstyle
-  s
