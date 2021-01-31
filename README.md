@@ -6,7 +6,6 @@
 ![Static analysis](https://img.shields.io/github/workflow/status/azuyalabs/yasumi/Static%20analysis?label=Static%20analysis&style=flat-square)
 ![Testing](https://img.shields.io/github/workflow/status/azuyalabs/yasumi/Testing?label=Testing&style=flat-square)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/azuyalabs/yasumi/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/azuyalabs/yasumi/?branch=master)
 
 Introduction
 ------------
