@@ -42,13 +42,18 @@ class NovaScotiaTest extends NovaScotiaBaseTestCase
      */
     public function testOfficialHolidays(): void
     {
-        $this->assertDefinedHolidays([
+        $holidays = [
             'goodFriday',
             'christmasDay',
             'victoriaDay',
             'natalHoliday',
-            'novaScotiaHeritageDay',
-        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
+        ];
+
+        if ($this->year >= 2015) {
+            $holidays[] = 'novaScotiaHeritageDay';
+        }
+
+        $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
