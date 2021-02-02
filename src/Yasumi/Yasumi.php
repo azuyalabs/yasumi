@@ -31,10 +31,11 @@ use Yasumi\Provider\AbstractProvider;
  */
 class Yasumi
 {
-    /**
-     * Default locale.
-     */
     public const DEFAULT_LOCALE = 'en_US';
+
+    public const YEAR_LOWER_BOUND = 1000;
+
+    public const YEAR_UPPER_BOUND = 9999;
 
     /**
      * @var array list of all defined locales
@@ -111,13 +112,13 @@ class Yasumi
      *
      * @param string $class  holiday provider name
      * @param int    $year   year for which the country provider needs to be created. Year needs to be a valid integer
-     *                       between 1000 and 9999.
+     *                       between the defined lower and upper bounds.
      * @param string $locale The locale to use. If empty we'll use the default locale (en_US)
      *
      * @return AbstractProvider An instance of class $class is created and returned
      *
      * @throws RuntimeException          If no such holiday provider is found
-     * @throws InvalidYearException      if the year parameter is not between 1000 and 9999
+     * @throws InvalidYearException      if the year parameter is not between the defined lower and upper bounds
      * @throws UnknownLocaleException    if the locale parameter is invalid
      * @throws ProviderNotFoundException if the holiday provider for the given country does not exist
      * @throws \ReflectionException
@@ -136,8 +137,8 @@ class Yasumi
         }
 
         // Assert year input
-        if ($year < 1000 || $year > 9999) {
-            throw new InvalidYearException(\sprintf('Year needs to be between 1000 and 9999 (%d given).', $year));
+        if ($year < self::YEAR_LOWER_BOUND || $year > self::YEAR_UPPER_BOUND) {
+            throw new InvalidYearException(\sprintf('Year needs to be between %d and %d (%d given).', self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND, $year));
         }
 
         // Load internal locales variable
@@ -178,13 +179,13 @@ class Yasumi
      *
      * @param string $isoCode ISO3166-2 Coded region, holiday provider will be searched for
      * @param int    $year    year for which the country provider needs to be created. Year needs to be a valid
-     *                        integer between 1000 and 9999.
+     *                        integer between the defined lower and upper bounds.
      * @param string $locale  The locale to use. If empty we'll use the default locale (en_US)
      *
      * @return AbstractProvider An instance of class $class is created and returned
      *
      * @throws RuntimeException          If no such holiday provider is found
-     * @throws InvalidArgumentException  if the year parameter is not between 1000 and 9999
+     * @throws InvalidArgumentException  if the year parameter is not between the defined lower and upper bounds
      * @throws UnknownLocaleException    if the locale parameter is invalid
      * @throws ProviderNotFoundException if the holiday provider for the given ISO3166-2 code does not exist
      * @throws \ReflectionException
@@ -226,10 +227,10 @@ class Yasumi
 
         foreach ($filesIterator as $file) {
             if ($file->isDir() || 'php' !== $file->getExtension() || \in_array(
-                $file->getBasename('.php'),
-                self::$ignoredProvider,
-                true
-            )) {
+                    $file->getBasename('.php'),
+                    self::$ignoredProvider,
+                    true
+                )) {
                 continue;
             }
 

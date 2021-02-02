@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 ### Changed
 - Rescheduled exceptional Japanese holidays for Olympic Games 2020 after COVID-19 [\#240](https://github.com/azuyalabs/yasumi/pull/240) ([tanakahisateru](https://github.com/tanakahisateru))
+- Refactored removing the magic numbers for the lower and upper limits of the calendar year.
 - Reformatted code using new/updated Code Styling rules.
 - Use Github Actions for CI replacing Travis/StyleCI/Scrutinizer...[WIP]
 - Updated Copyright year
