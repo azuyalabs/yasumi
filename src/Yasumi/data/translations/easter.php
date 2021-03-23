@@ -30,6 +30,7 @@ return [
     'hr' => 'Uskrs',
     'hu' => 'Húsvét',
     'it' => 'Pasqua',
+    'ka' => 'აღდგომა',
     'lt' => 'Velykos',
     'lv' => 'Lieldienas',
     'nb' => 'første påskedag',

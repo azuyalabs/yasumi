@@ -34,6 +34,7 @@ return [
     'hu' => 'Újév',
     'it' => 'Capodanno',
     'ja' => '元日',
+    'ka' => 'ახალი წელი',
     'ko' => '새해',
     'lt' => 'Naujųjų metų diena',
     'lv' => 'Jaunais Gads',
