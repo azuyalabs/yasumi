@@ -43,7 +43,7 @@
     "mikey179/vfsstream": "^1.6",
     "phpstan/phpstan": "^0.12.66",
     "phpunit/phpunit": "^8.5 | ^9.4",
-    "infection/infection": "^0.21.0",
+    "infection/infection": "^0.17 | ^0.21.0",
     "vimeo/psalm": "^4"
   },
   "autoload": {
