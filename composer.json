@@ -40,10 +40,11 @@
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^2.16",
+    "infection/infection": "^0.17 | ^0.21.0",
     "mikey179/vfsstream": "^1.6",
+    "phan/phan": "^4.0",
     "phpstan/phpstan": "^0.12.66",
     "phpunit/phpunit": "^8.5 | ^9.4",
-    "infection/infection": "^0.17 | ^0.21.0",
     "vimeo/psalm": "^4"
   },
   "autoload": {
@@ -60,6 +61,7 @@
     "format": "./vendor/bin/php-cs-fixer fix",
     "phpstan": "vendor/bin/phpstan --level=5 analyse src tests",
     "psalm": "vendor/bin/psalm --threads=2",
+    "phan": "vendor/bin/phan",
     "test": "vendor/bin/phpunit",
     "infection": "vendor/bin/infection run -j 2",
     "analyse": [
