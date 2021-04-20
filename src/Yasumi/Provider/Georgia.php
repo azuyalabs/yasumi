@@ -135,7 +135,7 @@ class Georgia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addVictoryDay()
+    private function addVictoryDay(): void
     {
         $date = new \DateTime("{$this->year}-05-09", new \DateTimeZone($this->timezone));
 
