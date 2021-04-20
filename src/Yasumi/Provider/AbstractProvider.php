@@ -40,9 +40,9 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     public const ID = 'US';
 
     /**
-     * @var array list of the days of the week (the index of the weekdays) that are considered weekend days.
-     *            This list only concerns those countries that deviate from the global common definition,
-     *            where the weekend starts on Saturday and ends on Sunday (0 = Sunday, 1 = Monday, etc.).
+     * @var array<int> list of the days of the week (the index of the weekdays) that are considered weekend days.
+     *                 This list only concerns those countries that deviate from the global common definition,
+     *                 where the weekend starts on Saturday and ends on Sunday (0 = Sunday, 1 = Monday, etc.).
      */
     public const WEEKEND_DATA = [
         // Thursday and Friday
@@ -292,7 +292,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     /**
      * Gets all of the holiday names defined by this holiday provider (for the given year).
      *
-     * @return array list of all holiday names defined for the given year
+     * @return array<string> list of all holiday names defined for the given year
      */
     public function getHolidayNames(): array
     {
@@ -379,7 +379,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @param \DateTimeInterface $startDate Start date of the time frame to check against
      * @param \DateTimeInterface $endDate   End date of the time frame to check against
-     * @param bool               $equals    indicate whether the start and end dates should be included in the
+     * @param ?bool              $equals    indicate whether the start and end dates should be included in the
      *                                      comparison
      *
      * @throws InvalidArgumentException an InvalidArgumentException is thrown if the start date is set after the end
