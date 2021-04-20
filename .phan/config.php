@@ -9,7 +9,7 @@ use Phan\Issue;
  *
  * - Go through this file and verify that there are no missing/unnecessary files/directories.
  *   (E.g. this only includes direct composer dependencies - You may have to manually add indirect composer dependencies to 'directory_list')
- * - Look at 'plugins' and add or remove plugins if appropriate (see https://github.com/phan/phan/tree/master/.phan/plugins#plugins)
+ * - Look at 'plugins' and add or remove plugins if appropriate (see https://github.com/phan/phan/tree/v4/.phan/plugins#plugins)
  * - Add global suppressions for pre-existing issues to suppress_issue_types (https://github.com/phan/phan/wiki/Tutorial-for-Analyzing-a-Large-Sloppy-Code-Base)
  *   - Consider setting up a baseline if there are a large number of pre-existing issues (see `phan --extended-help`)
  *
@@ -18,7 +18,7 @@ use Phan\Issue;
  * after this file is read.
  *
  * @see https://github.com/phan/phan/wiki/Phan-Config-Settings for all configurable options
- * @see https://github.com/phan/phan/tree/master/src/Phan/Config.php
+ * @see https://github.com/phan/phan/tree/v4/src/Phan/Config.php
  *
  * A Note About Paths
  * ==================
@@ -298,7 +298,7 @@ return [
 
     // The number of processes to fork off during the analysis
     // phase.
-    'processes' => 1,
+    'processes' => 2,
 
     // List of case-insensitive file extensions supported by Phan.
     // (e.g. `['php', 'html', 'htm']`)
@@ -321,7 +321,7 @@ return [
     //
     // Plugins which are bundled with Phan can be added here by providing their name (e.g. `'AlwaysReturnPlugin'`)
     //
-    // Documentation about available bundled plugins can be found [here](https://github.com/phan/phan/tree/master/.phan/plugins).
+    // Documentation about available bundled plugins can be found [here](https://github.com/phan/phan/tree/v4/.phan/plugins).
     //
     // Alternately, you can pass in the full path to a PHP file with the plugin's implementation (e.g. `'vendor/phan/phan/.phan/plugins/AlwaysReturnPlugin.php'`)
     'plugins' => [
@@ -342,6 +342,7 @@ return [
         'vendor/friendsofphp/php-cs-fixer/src',
         'vendor/infection/infection/src',
         'vendor/mikey179/vfsstream/src/main/php',
+        'vendor/phan/phan/src/Phan',
         'vendor/phpunit/phpunit/src',
         'vendor/vimeo/psalm/src/Psalm',
     ],
