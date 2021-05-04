@@ -26,10 +26,10 @@ interface YasumiTestCaseInterface
     /**
      * Tests the translated name of the holiday defined in this test.
      */
-    public function testTranslation();
+    public function testTranslation(): void;
 
     /**
      * Tests type of the holiday defined in this test.
      */
-    public function testHolidayType();
+    public function testHolidayType(): void;
 }
