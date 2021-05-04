@@ -517,7 +517,7 @@ trait YasumiBase
 
         for ($i = 1; $i <= $iterations; ++$i) {
             $year = $this->generateRandomYear($range);
-            $date = new DateTime("{$year}-{$month}-{$day}", new DateTimeZone($timezone ?? 'UTC'));
+            $date = new DateTime("$year-$month-$day", new DateTimeZone($timezone ?? 'UTC'));
 
             $callback($year, $date);
 
@@ -539,7 +539,7 @@ trait YasumiBase
         int $lowerLimit = null,
         int $upperLimit = null
     ): int {
-        return (int) self::numberBetween($lowerLimit ?? 1000, $upperLimit ?? 9999);
+        return self::numberBetween($lowerLimit ?? 1000, $upperLimit ?? 9999);
     }
 
     /**
@@ -710,6 +710,6 @@ trait YasumiBase
 
     private static function resolveTimezone(?string $timezone): ?string
     {
-        return (null === $timezone) ? ((null === static::$defaultTimezone) ? \date_default_timezone_get() : static::$defaultTimezone) : $timezone;
+        return $timezone ?? (static::$defaultTimezone ?? \date_default_timezone_get());
     }
 }

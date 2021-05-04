@@ -63,7 +63,7 @@ class RussiaDayTest extends RussiaBaseTestCase implements YasumiTestCaseInterfac
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("{$year}-06-12", new DateTimeZone(self::TIMEZONE))
+            new DateTime("$year-06-12", new DateTimeZone(self::TIMEZONE))
         );
     }
 

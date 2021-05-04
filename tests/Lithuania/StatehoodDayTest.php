@@ -63,7 +63,7 @@ class StatehoodDayTest extends LithuaniaBaseTestCase implements YasumiTestCaseIn
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("{$year}-07-06", new DateTimeZone(self::TIMEZONE))
+            new DateTime("$year-07-06", new DateTimeZone(self::TIMEZONE))
         );
     }
 

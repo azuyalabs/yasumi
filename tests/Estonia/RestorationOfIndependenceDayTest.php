@@ -63,7 +63,7 @@ class RestorationOfIndependenceDayTest extends EstoniaBaseTestCase implements Ya
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("{$year}-08-20", new DateTimeZone(self::TIMEZONE))
+            new DateTime("$year-08-20", new DateTimeZone(self::TIMEZONE))
         );
     }
 

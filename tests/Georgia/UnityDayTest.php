@@ -40,7 +40,7 @@ class UnityDayTest extends GeorgiaBaseTestCase implements YasumiTestCaseInterfac
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("{$year}-04-09", new DateTimeZone(self::TIMEZONE))
+            new DateTime("$year-04-09", new DateTimeZone(self::TIMEZONE))
         );
     }
 

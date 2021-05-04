@@ -40,7 +40,7 @@ class IndependenceDayTest extends GeorgiaBaseTestCase implements YasumiTestCaseI
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("{$year}-05-26", new DateTimeZone(self::TIMEZONE))
+            new DateTime("$year-05-26", new DateTimeZone(self::TIMEZONE))
         );
     }
 

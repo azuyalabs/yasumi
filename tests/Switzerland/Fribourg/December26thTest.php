@@ -44,7 +44,7 @@ class December26thTest extends FribourgBaseTestCase implements YasumiTestCaseInt
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("${year}-12-26", new DateTimeZone(self::TIMEZONE))
+            new DateTime("$year-12-26", new DateTimeZone(self::TIMEZONE))
         );
     }
 
