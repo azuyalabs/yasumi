@@ -49,7 +49,7 @@ class IndependenceDayTest extends GeorgiaBaseTestCase implements YasumiTestCaseI
      *
      * @throws ReflectionException
      */
-    public function testTranslation()
+    public function testTranslation(): void
     {
         $year = 2019;
 
@@ -66,7 +66,7 @@ class IndependenceDayTest extends GeorgiaBaseTestCase implements YasumiTestCaseI
      *
      * @throws ReflectionException
      */
-    public function testHolidayType()
+    public function testHolidayType(): void
     {
         $year = 2019;
 
