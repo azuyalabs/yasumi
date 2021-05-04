@@ -506,7 +506,6 @@ class SouthKorea extends AbstractProvider
                     || (6 === (int) $date->format('w') && 'childrensDay' === $key)
                     || \in_array($date, $holidayDates, false)) {
                     $date->add(new DateInterval('P1D'));
-                    continue;
                 }
 
                 // Add a new holiday that is substituting the original holiday

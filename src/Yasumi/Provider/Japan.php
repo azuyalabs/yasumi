@@ -563,7 +563,6 @@ class Japan extends AbstractProvider
                     // Find next week day (not being another holiday)
                     while (\in_array($date, $dates, false)) {
                         $date->add(new DateInterval('P1D'));
-                        continue;
                     }
                 } elseif ($holiday >= '1973-04-12') {
                     $date->add(new DateInterval('P1D'));

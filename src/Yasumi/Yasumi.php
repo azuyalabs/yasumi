@@ -227,10 +227,10 @@ class Yasumi
 
         foreach ($filesIterator as $file) {
             if ($file->isDir() || 'php' !== $file->getExtension() || \in_array(
-                    $file->getBasename('.php'),
-                    self::$ignoredProvider,
-                    true
-                )) {
+                $file->getBasename('.php'),
+                self::$ignoredProvider,
+                true
+            )) {
                 continue;
             }
 
