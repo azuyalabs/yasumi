@@ -61,7 +61,7 @@ class Bosnia extends AbstractProvider
         $this->addHoliday(new Holiday('orthodoxChristmasDay', [
             'en' => 'Orthodox Christmas Day',
             'bs_Latn' => 'Pravoslavni Božić',
-        ], new DateTime("{$this->year}-01-07", DateTimeZoneFactory::getDateTimeZone($this->timezone))));
+        ], new DateTime("$this->year-01-07", DateTimeZoneFactory::getDateTimeZone($this->timezone))));
 
         /*
          * Independence Day

@@ -71,7 +71,7 @@ class Hamburg extends Germany
             new Holiday(
                 'dayOfReformation',
                 [],
-                new \DateTime("{$this->year}-10-31", new \DateTimeZone($this->timezone)),
+                new \DateTime("$this->year-10-31", new \DateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OFFICIAL
             )
