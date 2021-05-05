@@ -16,8 +16,6 @@ $config = new PhpCsFixer\Config();
 $config->setRiskyAllowed(true)->setRules([
     '@PSR2' => true,
     '@Symfony' => true,
-    'array_syntax' => ['syntax' => 'short'],
-    'native_function_invocation' => true,
     'blank_line_after_opening_tag' => true,
     'is_null' => true,
     'modernize_types_casting' => true,
