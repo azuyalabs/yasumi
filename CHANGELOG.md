@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 - Georgia Provider [\#245](https://github.com/azuyalabs/yasumi/pull/245) ([Zurab Sardarov](https://github.com/zsardarov))
 - Pentecost (Sunday) to Germany [\#225](https://github.com/azuyalabs/yasumi/pull/225)
 
+- Infection PHP to perform mutation testing.
 - PHPStan to the dependencies allowing for local analysis.
 - `.gitattributes` file to reduce the size of a release package [\#237](https://github.com/azuyalabs/yasumi/pull/237) ([Stéphane](https://github.com/fezfez))
 
@@ -18,13 +19,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 - Rescheduled exceptional Japanese holidays for Olympic Games 2020 after COVID-19 [\#240](https://github.com/azuyalabs/yasumi/pull/240) ([tanakahisateru](https://github.com/tanakahisateru))
 - Some improvements/refactoring of the Swiss holiday providers (including links to sources) [\#233](https://github.com/azuyalabs/yasumi/pull/233) ([Quentin Ligier](https://github.com/qligier))
-
+    
 - Allow the `WEEKEND_DATA` constant in provider classes to be overridden. [\#235](https://github.com/azuyalabs/yasumi/pull/235) ([Mahmood Dhia](https://github.com/mdhia))
+- Upgraded PHPUnit's XML configuration.
 - Refactored removing the magic numbers for the lower and upper limits of the calendar year.
 - Reformatted code using new/updated Code Styling rules.
-- Use Github Actions for CI replacing Travis/StyleCI/Scrutinizer
 - Hardened error handling of json functions.
-- Updated Copyright year
+- Updated Copyright year.
 
 ### Fixed
 
@@ -34,7 +35,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 - The substitute holiday unit test as the use of the `at()` method will be deprecated in PHPUnit 10.
 - Incorrect invocation of `Fribourg::calculateBerchtoldsTag()` and `Fribourg::calculateDecember26th` (Switzerland)
-- Use parameter and return type hinting
+- Use proper parameter and return type hinting
 - Replaced the `mt_rand` function with the `random_int` function as it is cryptographically insecure.
 - Some static functions were used as if they are object functions.
 
@@ -42,10 +43,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 ### Removed
 
-- Use Github Actions for CI replacing Travis/StyleCI/Scrutinizer
+- Travis/StyleCI/Scrutinizer services replaced by Github Actions.
 - PHP 7.2 Support (PHP 7.2 is EOL)
 - Faker library as it has been sunset [\#238](https://github.com/azuyalabs/yasumi/pull/238) ([Stéphane](https://github.com/fezfez))
+- Native function invocations.
 - Various undefined class references, unused imports, etc.
+- Unnecessary curly braces in strings, `continue` keyword in while loops, typecasting.
 
 ## [2.3.0] - 2020-06-22
 
