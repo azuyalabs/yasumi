@@ -453,3 +453,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 ## [1.0.0] - 2015-04-21
 
 - Initial Release
+
+[Unreleased]: https://github.com/azuyalabs/yasumi/compare/2.3.0...HEAD
+[2.3.0]: https://github.com/azuyalabs/yasumi/compare/2.2.0...2.3.0
+[1.0.0]: https://github.com/azuyalabs/yasumi/compare/releases/tag/1.0.0
