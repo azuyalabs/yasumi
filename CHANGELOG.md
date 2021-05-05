@@ -19,7 +19,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 - Rescheduled exceptional Japanese holidays for Olympic Games 2020 after COVID-19 [\#240](https://github.com/azuyalabs/yasumi/pull/240) ([tanakahisateru](https://github.com/tanakahisateru))
 - Some improvements/refactoring of the Swiss holiday providers (including links to sources) [\#233](https://github.com/azuyalabs/yasumi/pull/233) ([Quentin Ligier](https://github.com/qligier))
-    
+
 - Allow the `WEEKEND_DATA` constant in provider classes to be overridden. [\#235](https://github.com/azuyalabs/yasumi/pull/235) ([Mahmood Dhia](https://github.com/mdhia))
 - Upgraded PHPUnit's XML configuration.
 - Refactored removing the magic numbers for the lower and upper limits of the calendar year.
@@ -180,7 +180,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 - Deprecation warning for the package mikey179/vfStream. Composer 2.0 requires package names to not contain any upper case characters. [\#135](https://github.com/azuyalabs/yasumi/pull/135) ([IceShack](https://github.com/IceShack))
 - Incorrect comment about weekends in India [\#126](https://github.com/azuyalabs/yasumi/pull/126) ([c960657](https://github.com/c960657))
 - Correction to the test of New Year's Day in the United Kingdom. It has been identified as a Bank Holiday only since 1975 (not from 1974).
-  
+
 ### Removed
 
 - Duplicate definition of newYearsDay [\#125](https://github.com/azuyalabs/yasumi/pull/125) ([c960657](https://github.com/c960657))
