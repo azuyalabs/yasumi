@@ -456,4 +456,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 [Unreleased]: https://github.com/azuyalabs/yasumi/compare/2.3.0...HEAD
 [2.3.0]: https://github.com/azuyalabs/yasumi/compare/2.2.0...2.3.0
-[1.0.0]: https://github.com/azuyalabs/yasumi/compare/releases/tag/1.0.0
+[2.2.0]: https://github.com/azuyalabs/yasumi/compare/2.1.0...2.2.0
+[2.1.0]: https://github.com/azuyalabs/yasumi/compare/2.0.0...2.1.0
+[2.0.0]: https://github.com/azuyalabs/yasumi/compare/1.8.0...2.0.0
+[1.8.0]: https://github.com/azuyalabs/yasumi/compare/1.7.0...1.8.0
+[1.7.0]: https://github.com/azuyalabs/yasumi/compare/1.6.1...1.7.0
+[1.6.1]: https://github.com/azuyalabs/yasumi/compare/1.6.1...1.6.0
+[1.6.0]: https://github.com/azuyalabs/yasumi/compare/1.5.0...1.6.0
+[1.5.0]: https://github.com/azuyalabs/yasumi/compare/1.4.0...1.5.0
+[1.4.0]: https://github.com/azuyalabs/yasumi/compare/1.3.0...1.4.0
+[1.3.0]: https://github.com/azuyalabs/yasumi/compare/1.2.0...1.3.0
+[1.2.0]: https://github.com/azuyalabs/yasumi/compare/1.1.0...1.2.0
+[1.1.0]: https://github.com/azuyalabs/yasumi/compare/1.0.0...1.1.0
+[1.0.0]: https://github.com/azuyalabs/yasumi/releases/tag/1.0.0
