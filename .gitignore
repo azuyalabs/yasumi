@@ -3,6 +3,7 @@
 vendor
 composer.lock
 .php-cs-fixer.cache
+.php_cs.cache
 bin/_*
 .phpunit.result.cache
 var
