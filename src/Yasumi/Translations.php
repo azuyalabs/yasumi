@@ -54,11 +54,11 @@ class Translations implements TranslationsInterface
      */
     public function loadTranslations(string $directoryPath): void
     {
-        if (!\file_exists($directoryPath)) {
+        if (!file_exists($directoryPath)) {
             throw new InvalidArgumentException('Directory with translations not found');
         }
 
-        $directoryPath = \rtrim($directoryPath, '/\\').DIRECTORY_SEPARATOR;
+        $directoryPath = rtrim($directoryPath, '/\\').DIRECTORY_SEPARATOR;
         $extension = 'php';
 
         foreach (new DirectoryIterator($directoryPath) as $file) {
@@ -76,7 +76,7 @@ class Translations implements TranslationsInterface
             $translations = require $directoryPath.$filename;
 
             if (\is_array($translations)) {
-                foreach (\array_keys($translations) as $locale) {
+                foreach (array_keys($translations) as $locale) {
                     $this->isValidLocale($locale); // Validate the given locale
                 }
 
@@ -152,7 +152,7 @@ class Translations implements TranslationsInterface
     protected function isValidLocale(string $locale): bool
     {
         if (!\in_array($locale, $this->availableLocales, true)) {
-            throw new UnknownLocaleException(\sprintf('Locale "%s" is not a valid locale.', $locale));
+            throw new UnknownLocaleException(sprintf('Locale "%s" is not a valid locale.', $locale));
         }
 
         return true;

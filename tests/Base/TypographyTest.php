@@ -67,6 +67,6 @@ class TypographyTest extends TestCase
             }
         }
 
-        return \array_values($tests);
+        return array_values($tests);
     }
 }

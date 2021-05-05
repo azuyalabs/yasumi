@@ -114,7 +114,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     ) {
         $this->clearHolidays();
 
-        $this->year = $year ?: \getdate()['year'];
+        $this->year = $year ?: getdate()['year'];
         $this->locale = $locale ?? 'en_US';
         $this->globalTranslations = $globalTranslations;
 
@@ -134,7 +134,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         }
 
         $this->holidays[$holiday->getKey()] = $holiday;
-        \uasort($this->holidays, [__CLASS__, 'compareDates']);
+        uasort($this->holidays, [__CLASS__, 'compareDates']);
     }
 
     /**
@@ -181,7 +181,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     public function isHoliday(\DateTimeInterface $date): bool
     {
         // Check if given date is a holiday or not
-        if (\in_array($date->format('Y-m-d'), \array_values($this->getHolidayDates()), true)) {
+        if (\in_array($date->format('Y-m-d'), array_values($this->getHolidayDates()), true)) {
             return true;
         }
 
@@ -195,7 +195,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     public function getHolidayDates(): array
     {
-        return \array_map(static function ($holiday) {
+        return array_map(static function ($holiday) {
             return (string) $holiday;
         }, $this->holidays);
     }
@@ -268,7 +268,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     public function count(): int
     {
-        $names = \array_map(static function ($holiday) {
+        $names = array_map(static function ($holiday) {
             if ($holiday instanceof SubstituteHoliday) {
                 return $holiday->getSubstitutedHoliday()->getKey();
             }
@@ -276,7 +276,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
             return $holiday->getKey();
         }, $this->getHolidays());
 
-        return \count(\array_unique($names));
+        return \count(array_unique($names));
     }
 
     /**
@@ -296,7 +296,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     public function getHolidayNames(): array
     {
-        return \array_keys($this->holidays);
+        return array_keys($this->holidays);
     }
 
     /**

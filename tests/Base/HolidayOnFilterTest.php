@@ -53,7 +53,7 @@ class HolidayOnFilterTest extends TestCase
                 $date
             );
 
-            self::assertArrayHasKey($name, \iterator_to_array($holidaysOnDate));
+            self::assertArrayHasKey($name, iterator_to_array($holidaysOnDate));
         }
     }
 
@@ -77,7 +77,7 @@ class HolidayOnFilterTest extends TestCase
                 $date
             );
 
-            self::assertArrayNotHasKey($name, \iterator_to_array($holidaysOnDate));
+            self::assertArrayNotHasKey($name, iterator_to_array($holidaysOnDate));
         }
     }
 

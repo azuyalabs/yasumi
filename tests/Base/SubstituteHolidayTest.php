@@ -85,8 +85,8 @@ class SubstituteHolidayTest extends TestCase
     {
         $holiday = new Holiday('testHoliday', [], new DateTime('2019-01-01'), 'en_US');
         $substitute = new SubstituteHoliday($holiday, [], new DateTime('2019-01-02'), 'en_US');
-        $json = \json_encode($substitute, JSON_THROW_ON_ERROR);
-        $instance = \json_decode($json, true, 512, JSON_THROW_ON_ERROR);
+        $json = json_encode($substitute, JSON_THROW_ON_ERROR);
+        $instance = json_decode($json, true, 512, JSON_THROW_ON_ERROR);
 
         self::assertIsArray($instance);
         self::assertNotNull($instance);

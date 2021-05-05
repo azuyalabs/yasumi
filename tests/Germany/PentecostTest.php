@@ -40,10 +40,10 @@ class PentecostTest extends GermanyBaseTestCase implements YasumiTestCaseInterfa
     public function testHoliday(): void
     {
         $year = $this->generateRandomYear();
-        $time_stamp = \strtotime(
-            $year.'-03-21'.\easter_days($year).' day + 49 day'
+        $time_stamp = strtotime(
+            $year.'-03-21'.easter_days($year).' day + 49 day'
         );
-        $date = \date('Y-m-d', $time_stamp);
+        $date = date('Y-m-d', $time_stamp);
 
         $this->assertHoliday(
             self::REGION,

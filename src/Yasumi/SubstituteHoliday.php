@@ -115,7 +115,7 @@ class SubstituteHoliday extends Holiday
             foreach ($this->getLocales($locales) as $localeList) {
                 $pattern = $this->substituteHolidayTranslations[$localeList] ?? null;
                 if ($pattern) {
-                    return \str_replace('{0}', $this->substitutedHoliday->getName(), $pattern);
+                    return str_replace('{0}', $this->substitutedHoliday->getName(), $pattern);
                 }
             }
         }

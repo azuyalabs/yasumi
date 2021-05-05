@@ -49,7 +49,7 @@ class HolidayBetweenFilterTest extends TestCase
             new DateTime('07/25/2016', new DateTimeZone($timezone))
         );
 
-        $betweenHolidays = \iterator_to_array($between);
+        $betweenHolidays = iterator_to_array($between);
 
         self::assertArrayHasKey('goodFriday', $betweenHolidays);
         self::assertArrayHasKey('easter', $betweenHolidays);
@@ -104,7 +104,7 @@ class HolidayBetweenFilterTest extends TestCase
             new DateTimeImmutable('07/25/2016', new DateTimeZone($timezone))
         );
 
-        $betweenHolidays = \iterator_to_array($between);
+        $betweenHolidays = iterator_to_array($between);
 
         self::assertArrayHasKey('goodFriday', $betweenHolidays);
         self::assertArrayHasKey('easter', $betweenHolidays);
@@ -187,7 +187,7 @@ class HolidayBetweenFilterTest extends TestCase
             false
         );
 
-        $betweenHolidays = \iterator_to_array($between);
+        $betweenHolidays = iterator_to_array($between);
 
         self::assertArrayHasKey('epiphany', $betweenHolidays);
         self::assertArrayHasKey('carnivalDay', $betweenHolidays);
@@ -243,7 +243,7 @@ class HolidayBetweenFilterTest extends TestCase
             new DateTime('05/17/'.$year, new DateTimeZone($timezone))
         );
 
-        $betweenHolidays = \iterator_to_array($between);
+        $betweenHolidays = iterator_to_array($between);
 
         self::assertArrayHasKey('newYearsDay', $betweenHolidays);
         self::assertArrayHasKey('maundyThursday', $betweenHolidays);
@@ -283,7 +283,7 @@ class HolidayBetweenFilterTest extends TestCase
             new DateTime('09/21/2021', new DateTimeZone($timezone))
         );
 
-        $betweenHolidays = \iterator_to_array($between);
+        $betweenHolidays = iterator_to_array($between);
 
         self::assertArrayNotHasKey('newYearsDay', $betweenHolidays);
         self::assertArrayNotHasKey('epiphany', $betweenHolidays);
@@ -346,7 +346,7 @@ class HolidayBetweenFilterTest extends TestCase
             new DateTime('12/31/'.$year, new DateTimeZone($timezone))
         );
 
-        $betweenHolidays = \iterator_to_array($between);
+        $betweenHolidays = iterator_to_array($between);
 
         // Assert array definitions
         self::assertArrayHasKey('newYearsDay', $betweenHolidays);
@@ -387,7 +387,7 @@ class HolidayBetweenFilterTest extends TestCase
             new DateTime('03/20/'.$year, new DateTimeZone($timezone))
         );
 
-        $betweenHolidays = \iterator_to_array($between);
+        $betweenHolidays = iterator_to_array($between);
 
         // Assert array definitions
         self::assertArrayHasKey('newYearsDay', $betweenHolidays);
@@ -432,7 +432,7 @@ class HolidayBetweenFilterTest extends TestCase
             new DateTime('03/18/'.$year, new DateTimeZone($timezone))
         );
 
-        $betweenHolidays = \iterator_to_array($between);
+        $betweenHolidays = iterator_to_array($between);
 
         // Assert array definitions
         self::assertArrayHasKey('newYearsDay', $betweenHolidays);
@@ -478,7 +478,7 @@ class HolidayBetweenFilterTest extends TestCase
             new DateTime('03/16/'.$year, new DateTimeZone($timezone))
         );
 
-        $betweenHolidays = \iterator_to_array($between);
+        $betweenHolidays = iterator_to_array($between);
 
         // Assert array definitions
         self::assertArrayHasKey('newYearsDay', $betweenHolidays);

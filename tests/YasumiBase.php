@@ -86,7 +86,7 @@ trait YasumiBase
 
         // Loop through all known holidays and assert they are defined by the provider class
         foreach ($expectedHolidays as $holiday) {
-            self::assertArrayHasKey($holiday, \iterator_to_array($holidays));
+            self::assertArrayHasKey($holiday, iterator_to_array($holidays));
         }
     }
 
@@ -228,9 +228,9 @@ trait YasumiBase
         if (\is_array($translations) && !empty($translations)) {
             foreach ($translations as $locale => $name) {
                 $locales = [$locale];
-                $parts = \explode('_', $locale);
-                while (\array_pop($parts) && $parts) {
-                    $locales[] = \implode('_', $parts);
+                $parts = explode('_', $locale);
+                while (array_pop($parts) && $parts) {
+                    $locales[] = implode('_', $parts);
                 }
 
                 $translation = null;
@@ -570,7 +570,7 @@ trait YasumiBase
         $min = $int1 < $int2 ? $int1 : $int2;
         $max = $int1 < $int2 ? $int2 : $int1;
 
-        return \random_int($min, $max);
+        return random_int($min, $max);
     }
 
     /**
@@ -588,14 +588,14 @@ trait YasumiBase
      */
     public static function dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null): DateTime
     {
-        $startTimestamp = $startDate instanceof \DateTime ? $startDate->getTimestamp() : \strtotime($startDate);
+        $startTimestamp = $startDate instanceof \DateTime ? $startDate->getTimestamp() : strtotime($startDate);
         $endTimestamp = static::getMaxTimestamp($endDate);
 
         if ($startTimestamp > $endTimestamp) {
             throw new \InvalidArgumentException('Start date must be anterior to end date.');
         }
 
-        $timestamp = \random_int($startTimestamp, $endTimestamp);
+        $timestamp = random_int($startTimestamp, $endTimestamp);
 
         return static::setTimezone(
             new \DateTime('@'.$timestamp),
@@ -630,7 +630,7 @@ trait YasumiBase
     protected function calculateEaster(int $year, string $timezone): DateTime
     {
         if (\extension_loaded('calendar')) {
-            $easter_days = \easter_days($year);
+            $easter_days = easter_days($year);
         } else {
             $golden = (($year % 19) + 1); // The Golden Number
 
@@ -689,7 +689,7 @@ trait YasumiBase
      */
     protected static function getMaxTimestamp($max = 'now')
     {
-        if (\is_numeric($max)) {
+        if (is_numeric($max)) {
             return (int) $max;
         }
 
@@ -697,7 +697,7 @@ trait YasumiBase
             return $max->getTimestamp();
         }
 
-        return \strtotime(empty($max) ? 'now' : $max);
+        return strtotime(empty($max) ? 'now' : $max);
     }
 
     /**
@@ -710,6 +710,6 @@ trait YasumiBase
 
     private static function resolveTimezone(?string $timezone): ?string
     {
-        return $timezone ?? (static::$defaultTimezone ?? \date_default_timezone_get());
+        return $timezone ?? (static::$defaultTimezone ?? date_default_timezone_get());
     }
 }

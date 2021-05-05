@@ -510,14 +510,14 @@ trait CommonHolidays
     ): ?\DateTimeImmutable {
         $zone = DateTimeZoneFactory::getDateTimeZone($timezone);
 
-        $transitions = $zone->getTransitions(\mktime(0, 0, 0, 1, 1, $year), \mktime(23, 59, 59, 12, 31, $year));
+        $transitions = $zone->getTransitions(mktime(0, 0, 0, 1, 1, $year), mktime(23, 59, 59, 12, 31, $year));
 
-        $transition = \array_shift($transitions);
+        $transition = array_shift($transitions);
         $dst = $transition['isdst'];
 
         foreach ($transitions as $transition) {
             if ($transition['isdst'] !== $dst && $transition['isdst'] === $summer) {
-                return new \DateTimeImmutable(\substr($transition['time'], 0, 10), $zone);
+                return new \DateTimeImmutable(substr($transition['time'], 0, 10), $zone);
             }
             $dst = $transition['isdst'];
         }

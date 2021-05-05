@@ -48,6 +48,6 @@ class InvalidDateException extends InvalidArgumentException implements Exception
                 break;
         }
 
-        parent::__construct(\sprintf('\'%s\' is not a valid DateTime(Immutable) instance', $displayName));
+        parent::__construct(sprintf('\'%s\' is not a valid DateTime(Immutable) instance', $displayName));
     }
 }
