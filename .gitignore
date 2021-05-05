@@ -2,7 +2,7 @@
 .idea/
 vendor
 composer.lock
-.php_cs.cache
+.php-cs-fixer.cache
 bin/_*
 .phpunit.result.cache
 var
