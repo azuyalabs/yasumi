@@ -370,11 +370,8 @@ class Japan extends AbstractProvider
     {
         $date = null;
         if (2021 === $this->year) {
-            // For Olympic 2021 Tokyo (after COVID-19)
+            // For Olympic 2021 Tokyo (rescheduled due to the COVID-19 pandemic)
             $date = new DateTime("$this->year-7-22", DateTimeZoneFactory::getDateTimeZone($this->timezone));
-        } elseif (2020 === $this->year) {
-            // For Olympic 2020 Tokyo
-            $date = new DateTime("$this->year-7-23", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         } elseif ($this->year >= 2003) {
             $date = new DateTime("third monday of july $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         } elseif ($this->year >= 1996) {
