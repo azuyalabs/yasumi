@@ -29,8 +29,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 ### Fixed
 
+- The test for North West Territories (Canada) in that the National Indigenous Peoples Day was considered for all years: it is only celebrated since 1996.
 - The test for NovaScotia (Canada) in that novaScotiaHeritageDay was considered for all years: it is only celebrated since 2015.
 - The test for Ontario (Canada) in that IslanderDay was considered for all years: it is only celebrated since 2009.
+- The test for Marine Day (Japan) as the rescheduled day was moved to 2021 (due to the COVID-19 pandemic).
 - Typo for Estonian Day of Restoration of Independence [\#228](https://github.com/azuyalabs/yasumi/pull/228) ([Reijo Vosu](https://github.com/reijovosu))
 
 - The substitute holiday unit test as the use of the `at()` method will be deprecated in PHPUnit 10.
