@@ -9,7 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 ### Added
 
 - Georgia Provider [\#245](https://github.com/azuyalabs/yasumi/pull/245) ([Zurab Sardarov](https://github.com/zsardarov))
-- Pentecost (Sunday) to Germany [\#225](https://github.com/azuyalabs/yasumi/pull/225)
+- Pentecost (Sunday) to Germany [\#225](https://github.com/azuyalabs/yasumi/pull/225) ([Patrick-Root](https://github.com/Patrick-Root))
 
 - Infection PHP to perform mutation testing.
 - PHPStan to the dependencies allowing for local analysis.
