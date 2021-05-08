@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 - Georgia Provider [\#245](https://github.com/azuyalabs/yasumi/pull/245) ([Zurab Sardarov](https://github.com/zsardarov))
 - Pentecost (Sunday) to Germany [\#225](https://github.com/azuyalabs/yasumi/pull/225) ([Patrick-Root](https://github.com/Patrick-Root))
 
+- PHP8 Support [\238](https://github.com/azuyalabs/yasumi/pull/238) ([Stéphane](https://github.com/fezfez))
 - Infection PHP to perform mutation testing.
 - PHPStan to the dependencies allowing for local analysis.
 - `.gitattributes` file to reduce the size of a release package [\#237](https://github.com/azuyalabs/yasumi/pull/237) ([Stéphane](https://github.com/fezfez))
