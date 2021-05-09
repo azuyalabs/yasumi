@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -30,7 +32,7 @@ use Yasumi\Provider\Spain;
  * Castile–La Mancha to the west, and Murcia to the south. It is formed by the provinces of Castelló, València and
  * Alacant.
  *
- * @link https://en.wikipedia.org/wiki/Valencian_Community
+ * @see https://en.wikipedia.org/wiki/Valencian_Community
  */
 class ValencianCommunity extends Spain
 {
@@ -73,7 +75,7 @@ class ValencianCommunity extends Spain
      * autonomous communities of Catalonia, Aragon, Castile-La Mancha, and Mercia. The Balearic Islands are close by in
      * the Mediterranean. The Valencia region gained some autonomy in 1977 and full autonomy in 1982.
      *
-     * @link https://www.timeanddate.com/holidays/spain/the-valencian-community-day
+     * @see https://www.timeanddate.com/holidays/spain/the-valencian-community-day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

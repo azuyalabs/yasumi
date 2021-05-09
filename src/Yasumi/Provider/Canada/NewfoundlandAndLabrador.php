@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -25,7 +27,7 @@ use Yasumi\SubstituteHoliday;
  *
  * Manitoba is a province of Canada.
  *
- * @link https://en.wikipedia.org/wiki/Newfoundland_and_Labrador
+ * @see https://en.wikipedia.org/wiki/Newfoundland_and_Labrador
  */
 class NewfoundlandAndLabrador extends Canada
 {
@@ -46,7 +48,7 @@ class NewfoundlandAndLabrador extends Canada
     public function initialize(): void
     {
         parent::initialize();
-        
+
         $this->timezone = 'America/St_Johns';
 
         $this->calculateStPatricksDay();
@@ -63,7 +65,7 @@ class NewfoundlandAndLabrador extends Canada
      * of Ireland, Northern Ireland, the Canadian province of Newfoundland and Labrador, and the British Overseas
      * Territory of Montserrat.
      *
-     * @link https://en.wikipedia.org/wiki/Saint_Patrick%27s_Day
+     * @see https://en.wikipedia.org/wiki/Saint_Patrick%27s_Day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -80,7 +82,7 @@ class NewfoundlandAndLabrador extends Canada
         $holiday = new Holiday(
             'stPatricksDay',
             ['en' => 'St. Patrick’s Day'],
-            new DateTime($this->year . '-3-17', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new DateTime($this->year.'-3-17', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
         );
@@ -109,7 +111,7 @@ class NewfoundlandAndLabrador extends Canada
      * and victory of Protestant King William of Orange over Catholic king James II at the Battle of the
      * Boyne (1690), which began the Protestant Ascendancy in Ireland.
      *
-     * @link https://en.wikipedia.org/wiki/The_Twelfth
+     * @see https://en.wikipedia.org/wiki/The_Twelfth
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -126,7 +128,7 @@ class NewfoundlandAndLabrador extends Canada
         $holiday = new Holiday(
             'orangemensDay',
             [],
-            new DateTime($this->year . '-7-12', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new DateTime($this->year.'-7-12', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
         );

@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -25,7 +27,7 @@ use Yasumi\Provider\Germany;
  * city is Cologne. Four of Germany's ten biggest cities—Cologne, Düsseldorf, Dortmund, and Essen—are located within the
  * state, as well as the biggest metropolitan area of the European continent, Rhine-Ruhr.
  *
- * @link https://en.wikipedia.org/wiki/North_Rhine-Westphalia
+ * @see https://en.wikipedia.org/wiki/North_Rhine-Westphalia
  */
 class NorthRhineWestphalia extends Germany
 {

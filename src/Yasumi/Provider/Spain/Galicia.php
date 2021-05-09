@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -28,7 +30,7 @@ use Yasumi\Provider\Spain;
  * Spanish autonomous communities of Castile and León and Asturias to the east, and the Atlantic Ocean to the west and
  * the north.
  *
- * @link https://en.wikipedia.org/wiki/Galicia_(Spain)
+ * @see https://en.wikipedia.org/wiki/Galicia_(Spain)
  */
 class Galicia extends Spain
 {
@@ -69,7 +71,7 @@ class Galicia extends Spain
      * taken place on May 17 each year since 1963. In the year 1991 Galician Literature Day was declared a public
      * holiday in all Galicia.
      *
-     * @link https://en.wikipedia.org/wiki/Galician_Literature_Day
+     * @see https://en.wikipedia.org/wiki/Galician_Literature_Day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -97,7 +99,7 @@ class Galicia extends Spain
      * Sunday. If July 25 falls on a Tuesday or Thursday, many businesses and organizations are also closed on Monday,
      * July 24, or Friday, July 26. In the rest of Spain, July 25 is not a public holiday.
      *
-     * @link https://www.timeanddate.com/holidays/spain/santiago-apostle
+     * @see https://www.timeanddate.com/holidays/spain/santiago-apostle
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

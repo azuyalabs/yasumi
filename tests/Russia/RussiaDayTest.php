@@ -1,9 +1,11 @@
-<?php declare(strict_types=1);
+<?php
 
-/**
+declare(strict_types=1);
+
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -29,12 +31,13 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class RussiaDayTest extends RussiaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     public const HOLIDAY = 'russiaDay';
 
     /**
-     * Test if holiday is not defined before
+     * Test if holiday is not defined before.
+     *
      * @throws ReflectionException
      */
     public function testHolidayBefore(): void
@@ -47,7 +50,8 @@ class RussiaDayTest extends RussiaBaseTestCase implements YasumiTestCaseInterfac
     }
 
     /**
-     * Test if holiday is defined after
+     * Test if holiday is defined after.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -59,7 +63,7 @@ class RussiaDayTest extends RussiaBaseTestCase implements YasumiTestCaseInterfac
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("{$year}-06-12", new DateTimeZone(self::TIMEZONE))
+            new DateTime("$year-06-12", new DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -86,6 +90,7 @@ class RussiaDayTest extends RussiaBaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * {@inheritdoc}
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -25,7 +27,7 @@ use Yasumi\Provider\Germany;
  * modern federal state does not cover the entire cultural region of Hesse which includes both the State of Hesse and
  * the area known as Rhenish Hesse (Rheinhessen) in the neighbouring state of Rhineland-Palatinate.
  *
- * @link https://en.wikipedia.org/wiki/Hesse
+ * @see https://en.wikipedia.org/wiki/Hesse
  */
 class Hesse extends Germany
 {

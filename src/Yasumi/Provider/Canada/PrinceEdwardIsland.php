@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -24,7 +26,7 @@ use Yasumi\Provider\DateTimeZoneFactory;
  *
  * Prince Edward Island is a province of Canada.
  *
- * @link https://en.wikipedia.org/wiki/Prince_Edward_Island
+ * @see https://en.wikipedia.org/wiki/Prince_Edward_Island
  */
 class PrinceEdwardIsland extends Canada
 {
@@ -45,9 +47,9 @@ class PrinceEdwardIsland extends Canada
     public function initialize(): void
     {
         parent::initialize();
-        
+
         $this->timezone = 'America/Halifax';
-        
+
         $this->calculateIslanderDay();
         $this->calculateGoldCupParadeDay();
         $this->calculateVictoriaDay();
@@ -56,7 +58,7 @@ class PrinceEdwardIsland extends Canada
     /**
      * Islander Day.
      *
-     * @link https://en.wikipedia.org/wiki/Family_Day_(Canada)
+     * @see https://en.wikipedia.org/wiki/Family_Day_(Canada)
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -80,7 +82,7 @@ class PrinceEdwardIsland extends Canada
     /**
      * Gold Cup Parade Day.
      *
-     * @link https://en.wikipedia.org/wiki/Public_holidays_in_Canada#Statutory_holidays
+     * @see https://en.wikipedia.org/wiki/Public_holidays_in_Canada#Statutory_holidays
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

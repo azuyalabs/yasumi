@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -24,7 +26,8 @@ use Yasumi\SubstituteHoliday;
  */
 class USA extends AbstractProvider
 {
-    use CommonHolidays, ChristianHolidays;
+    use CommonHolidays;
+    use ChristianHolidays;
 
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
@@ -69,7 +72,7 @@ class USA extends AbstractProvider
      * Honors Dr. Martin Luther King, Jr., Civil Rights leader, who was actually born on January 15, 1929; combined
      * with other holidays in several states. It is observed on the third Monday of January since 1986.
      *
-     * @link https://en.wikipedia.org/wiki/Martin_Luther_King,_Jr._Day
+     * @see https://en.wikipedia.org/wiki/Martin_Luther_King,_Jr._Day
      *
      * @throws \Exception
      */
@@ -93,7 +96,7 @@ class USA extends AbstractProvider
      * Act, 1968 shifted the date of the commemoration of Washington's Birthday from February 22 to the third Monday
      * in February.
      *
-     * @link https://en.wikipedia.org/wiki/Washington%27s_Birthday
+     * @see https://en.wikipedia.org/wiki/Washington%27s_Birthday
      *
      * @throws \Exception
      */
@@ -118,7 +121,7 @@ class USA extends AbstractProvider
      * Memorial Day was first declared a federal holiday on May 1, 1865. The Uniform Holidays Act, 1968 shifted the
      * date of the commemoration of Memorial Day from May 30 to the last Monday in May.
      *
-     * @link https://en.wikipedia.org/wiki/Memorial_Day
+     * @see https://en.wikipedia.org/wiki/Memorial_Day
      *
      * @throws \Exception
      */
@@ -143,7 +146,7 @@ class USA extends AbstractProvider
      * from Great Britain. In case Independence Day falls on a Sunday, a substituted holiday is observed the
      * following Monday. If it falls on a Saturday, a substituted holiday is observed the previous Friday.
      *
-     * @link https://en.wikipedia.org/wiki/Independence_Day_(United_States)
+     * @see https://en.wikipedia.org/wiki/Independence_Day_(United_States)
      *
      * @throws \Exception
      */
@@ -162,7 +165,7 @@ class USA extends AbstractProvider
      * Labor Day in the United States is a holiday celebrated on the first Monday in September. It is a celebration
      * of the American labor movement and is dedicated to the social and economic achievements of workers.
      *
-     * @link https://en.wikipedia.org/wiki/Labor_Day
+     * @see https://en.wikipedia.org/wiki/Labor_Day
      *
      * @throws \Exception
      */
@@ -189,7 +192,7 @@ class USA extends AbstractProvider
      * though people have celebrated Columbus's voyage since the colonial period. Since 1970 (Oct. 12), the holiday
      * has been fixed to the second Monday in October.
      *
-     * @link https://en.wikipedia.org/wiki/Columbus_Day
+     * @see https://en.wikipedia.org/wiki/Columbus_Day
      *
      * @throws \Exception
      */
@@ -213,7 +216,7 @@ class USA extends AbstractProvider
      * also known as veterans. It is a federal holiday that is observed on November 11 since 1919. Congress amended
      * a bill on June 1, 1954, replacing "Armistice" with "Veterans," and it has been known as Veterans Day since.
      *
-     * @link https://en.wikipedia.org/wiki/Veterans_Day
+     * @see https://en.wikipedia.org/wiki/Veterans_Day
      *
      * @throws \Exception
      */
@@ -236,7 +239,7 @@ class USA extends AbstractProvider
      * President Abraham Lincoln proclaimed a national day of "Thanksgiving and Praise to our beneficent Father who
      * dwelleth in the Heavens", to be celebrated on the last Thursday in November.
      *
-     * @link https://en.wikipedia.org/wiki/Thanksgiving_(United_States)
+     * @see https://en.wikipedia.org/wiki/Thanksgiving_(United_States)
      *
      * @throws \Exception
      */

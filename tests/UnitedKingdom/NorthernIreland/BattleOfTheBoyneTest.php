@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -25,12 +27,12 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class BattleOfTheBoyneTest extends NorthernIrelandBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     public const HOLIDAY = 'battleOfTheBoyne';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1926;
 
@@ -39,25 +41,26 @@ class BattleOfTheBoyneTest extends NorthernIrelandBaseTestCase implements Yasumi
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int $year the year for which the holiday defined in this test needs to be tested
-     * @param \DateTime $expected the expected date
+     * @param int    $year     the year for which the holiday defined in this test needs to be tested
+     * @param string $expected the expected date
      *
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected): void
+    public function testHoliday(int $year, string $expected): void
     {
         $date = new DateTime($expected, new DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
 
         if (\in_array((int) $date->format('w'), [0, 6], true)) {
             $date->modify('next monday');
-            $this->assertHoliday(self::REGION, 'substituteHoliday:' . self::HOLIDAY, $year, $date);
+            $this->assertHoliday(self::REGION, 'substituteHoliday:'.self::HOLIDAY, $year, $date);
         }
     }
 
     /**
      * Tests the holiday defined in this test before establishment.
+     *
      * @throws ReflectionException
      */
     public function testHolidayBeforeEstablishment(): void
@@ -70,16 +73,17 @@ class BattleOfTheBoyneTest extends NorthernIrelandBaseTestCase implements Yasumi
     }
 
     /**
-     * Returns a list of random test dates used for assertion of the holiday defined in this test
+     * Returns a list of random test dates used for assertion of the holiday defined in this test.
      *
      * @return array list of test dates for the holiday defined in this test
+     *
      * @throws Exception
      */
     public function HolidayDataProvider(): array
     {
         $data = [];
 
-        for ($y = 0; $y < self::TEST_ITERATIONS; $y++) {
+        for ($y = 0; $y < self::TEST_ITERATIONS; ++$y) {
             $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
             $date = new DateTime("$year-7-12", new DateTimeZone(self::TIMEZONE));
             $data[] = [$year, $date->format('Y-m-d')];
@@ -105,6 +109,7 @@ class BattleOfTheBoyneTest extends NorthernIrelandBaseTestCase implements Yasumi
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

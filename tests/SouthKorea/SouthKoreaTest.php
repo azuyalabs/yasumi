@@ -1,9 +1,11 @@
-<?php declare(strict_types=1);
+<?php
 
-/**
+declare(strict_types=1);
+
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -28,7 +30,16 @@ class SouthKoreaTest extends SouthKoreaBaseTestCase
     protected $year;
 
     /**
-     * Tests if all official holidays in South Korea are defined by the provider class
+     * Initial setup of this Test Case.
+     */
+    protected function setUp(): void
+    {
+        $this->year = $this->generateRandomYear(1949, 2050);
+    }
+
+    /**
+     * Tests if all official holidays in South Korea are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
@@ -39,7 +50,7 @@ class SouthKoreaTest extends SouthKoreaBaseTestCase
             $officialHolidays[] = 'liberationDay';
             $officialHolidays[] = 'nationalFoundationDay';
             $officialHolidays[] = 'christmasDay';
-            if ($this->year !== ArborDayTest::YEAR_NOT_CELEBRATED && $this->year < ArborDayTest::REMOVED_YEAR + 1) {
+            if (ArborDayTest::YEAR_NOT_CELEBRATED !== $this->year && $this->year < ArborDayTest::REMOVED_YEAR + 1) {
                 $officialHolidays[] = 'arborDay';
             }
             if ($this->year <= 1990 || $this->year > 2012) {
@@ -90,7 +101,8 @@ class SouthKoreaTest extends SouthKoreaBaseTestCase
     }
 
     /**
-     * Tests if all observed holidays in South Korea are defined by the provider class
+     * Tests if all observed holidays in South Korea are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testObservedHolidays(): void
@@ -99,7 +111,8 @@ class SouthKoreaTest extends SouthKoreaBaseTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in South Korea are defined by the provider class
+     * Tests if all seasonal holidays in South Korea are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
@@ -108,7 +121,8 @@ class SouthKoreaTest extends SouthKoreaBaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in South Korea are defined by the provider class
+     * Tests if all bank holidays in South Korea are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testBankHolidays(): void
@@ -117,19 +131,12 @@ class SouthKoreaTest extends SouthKoreaBaseTestCase
     }
 
     /**
-     * Tests if all other holidays in South Korea are defined by the provider class
+     * Tests if all other holidays in South Korea are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
-    }
-
-    /**
-     * Initial setup of this Test Case
-     */
-    protected function setUp(): void
-    {
-        $this->year = $this->generateRandomYear(1949, 2050);
     }
 }

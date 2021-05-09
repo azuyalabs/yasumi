@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -25,17 +27,18 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class ConstitutionMemorialDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'constitutionMemorialDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1948;
 
     /**
-     * Tests Constitution Memorial Day after 1948. Constitution Memorial Day was established after 1948
+     * Tests Constitution Memorial Day after 1948. Constitution Memorial Day was established after 1948.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -52,7 +55,8 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements YasumiTes
 
     /**
      * Tests Constitution Memorial Day after 1948 substituted next working day (when Constitution Memorial Day falls on
-     * a Sunday)
+     * a Sunday).
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -61,14 +65,15 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements YasumiTes
         $year = 2009;
         $this->assertHoliday(
             self::REGION,
-            self::SUBSTITUTE_PREFIX . self::HOLIDAY,
+            self::SUBSTITUTE_PREFIX.self::HOLIDAY,
             $year,
             new DateTime("$year-5-6", new DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
-     * Tests Constitution Memorial Day before 1948. Constitution Memorial Day was established after 1948
+     * Tests Constitution Memorial Day before 1948. Constitution Memorial Day was established after 1948.
+     *
      * @throws ReflectionException
      */
     public function testConstitutionMemorialDayBefore1948(): void
@@ -82,6 +87,7 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements YasumiTes
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -96,6 +102,7 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements YasumiTes
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

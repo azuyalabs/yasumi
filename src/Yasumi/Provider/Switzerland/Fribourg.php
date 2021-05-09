@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -23,8 +25,8 @@ use Yasumi\Provider\Switzerland;
 /**
  * Provider for all holidays in Fribourg (Switzerland).
  *
- * @link https://en.wikipedia.org/wiki/Canton_of_Fribourg
- * @link https://www.fr.ch/travail-et-entreprises/employes/jour-ferie-jour-chome-quelle-difference
+ * @see https://en.wikipedia.org/wiki/Canton_of_Fribourg
+ * @see https://www.fr.ch/travail-et-entreprises/employes/jour-ferie-jour-chome-quelle-difference
  */
 class Fribourg extends Switzerland
 {
@@ -55,7 +57,7 @@ class Fribourg extends Switzerland
         $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
 
         // For the roman catholic communes
-        $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->assumptionOfMary($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->immaculateConception($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
@@ -63,12 +65,12 @@ class Fribourg extends Switzerland
         // For the reformed evangelical communes
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        $this->calculateBerchtoldsTag($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER);
-        $this->calculateDecember26th($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER);
+        $this->calculateBerchtoldsTag();
+        $this->calculateDecember26th();
     }
 
     /**
-     * December 26th
+     * December 26th.
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -83,7 +85,7 @@ class Fribourg extends Switzerland
                 'en' => 'December 26th',
                 'fr' => '26 décembre',
             ],
-            new DateTime($this->year . '-12-26', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new DateTime($this->year.'-12-26', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OTHER
         ));

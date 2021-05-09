@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -20,7 +22,6 @@ use Yasumi\Provider\DateTimeZoneFactory;
 
 /**
  * Provider for all holidays in King Island (Australia).
- *
  */
 class KingIsland extends Tasmania
 {
@@ -46,7 +47,7 @@ class KingIsland extends Tasmania
     }
 
     /**
-     * King Island Show
+     * King Island Show.
      *
      * @throws \Exception
      */
@@ -55,7 +56,7 @@ class KingIsland extends Tasmania
         $this->addHoliday(new Holiday(
             'kingIslandShow',
             ['en' => 'King Island Show'],
-            new DateTime('first tuesday of march ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new DateTime('first tuesday of march '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));

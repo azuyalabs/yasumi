@@ -1,9 +1,11 @@
-<?php declare(strict_types=1);
+<?php
 
-/**
+declare(strict_types=1);
+
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -25,11 +27,12 @@ use Yasumi\SubstituteHoliday;
  * Note: All calculations are based on the schedule published in the Holidays (Employees) Act, 1973 and its amendments
  * thereafter.
  *
- * @link: http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
+ * @see: http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
  */
 class Ireland extends AbstractProvider
 {
-    use CommonHolidays, ChristianHolidays;
+    use CommonHolidays;
+    use ChristianHolidays;
 
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
@@ -81,8 +84,8 @@ class Ireland extends AbstractProvider
      * Ireland. It became a public holiday following the Holidays (Employees) Act 1973. The public holiday was first
      * observed in 1974.
      *
-     * @link https://www.timeanddate.com/holidays/ireland/new-year-day
-     * @link http://www.irishstatutebook.ie/eli/1974/si/341
+     * @see https://www.timeanddate.com/holidays/ireland/new-year-day
+     * @see http://www.irishstatutebook.ie/eli/1974/si/341
      *
      * @TODO : Check substitution of New Years Day when it falls on a Saturday. The Holidays (Employees) Act 1973
      *       states that New Years Day is substituted the *next* day if it does not fall on a weekday. So what if it
@@ -121,8 +124,8 @@ class Ireland extends AbstractProvider
      *
      * Whitmonday (Pentecost Monday) was considered a public holiday in Ireland until 1973.
      *
-     * @link http://www.irishstatutebook.ie/eli/1939/act/1/section/8/enacted/en/html
-     * @link http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
+     * @see http://www.irishstatutebook.ie/eli/1939/act/1/section/8/enacted/en/html
+     * @see http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -144,7 +147,7 @@ class Ireland extends AbstractProvider
      * Most people in Ireland start Christmas celebrations on Christmas Eve (Oíche Nollag), including taking time
      * off work.
      *
-     * @link http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
+     * @see http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -157,7 +160,7 @@ class Ireland extends AbstractProvider
         $holiday = new Holiday(
             'christmasDay',
             ['en' => 'Christmas Day', 'ga' => 'Lá Nollag'],
-            new DateTime($this->year . '-12-25', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new DateTime($this->year.'-12-25', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         );
 
@@ -182,8 +185,8 @@ class Ireland extends AbstractProvider
      *
      * The day after Christmas celebrating the feast day of Saint Stephen.
      *
-     * @link http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
-     * @link https://en.wikipedia.org/wiki/St._Stephen%27s_Day
+     * @see http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
+     * @see https://en.wikipedia.org/wiki/St._Stephen%27s_Day
      * @see  ChristianHolidays
      *
      * @throws InvalidDateException
@@ -197,7 +200,7 @@ class Ireland extends AbstractProvider
         $holiday = new Holiday(
             'stStephensDay',
             [],
-            new DateTime($this->year . '-12-26', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new DateTime($this->year.'-12-26', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         );
 
@@ -226,7 +229,7 @@ class Ireland extends AbstractProvider
      * of Ireland, Northern Ireland, the Canadian province of Newfoundland and Labrador, and the British Overseas
      * Territory of Montserrat.
      *
-     * @link https://en.wikipedia.org/wiki/Saint_Patrick%27s_Day
+     * @see https://en.wikipedia.org/wiki/Saint_Patrick%27s_Day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -242,7 +245,7 @@ class Ireland extends AbstractProvider
         $holiday = new Holiday(
             'stPatricksDay',
             ['en' => 'St. Patrick’s Day', 'ga' => 'Lá Fhéile Pádraig'],
-            new DateTime($this->year . '-3-17', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new DateTime($this->year.'-3-17', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         );
 
@@ -271,7 +274,7 @@ class Ireland extends AbstractProvider
      * longer widely observed, though the practice still persists in some places across the country. Limerick, Clare
      * and many other people in other counties still keep on this tradition.
      *
-     * @link https://en.wikipedia.org/wiki/May_Day
+     * @see https://en.wikipedia.org/wiki/May_Day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -299,7 +302,7 @@ class Ireland extends AbstractProvider
      * The first Monday in June is considered a public holiday since 1974. Previously observed as Whit Monday until
      * 1973.
      *
-     * @link http://www.irishstatutebook.ie/eli/1961/act/33/section/8/enacted/en/html
+     * @see http://www.irishstatutebook.ie/eli/1961/act/33/section/8/enacted/en/html
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -326,7 +329,7 @@ class Ireland extends AbstractProvider
      *
      * The last Monday in October is considered a public holiday since 1977.
      *
-     * @link http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
+     * @see http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

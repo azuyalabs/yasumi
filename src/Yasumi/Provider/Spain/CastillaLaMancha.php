@@ -1,9 +1,11 @@
-<?php declare(strict_types=1);
+<?php
 
-/**
+declare(strict_types=1);
+
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -29,7 +31,7 @@ use Yasumi\Provider\Spain;
  * communities. Albacete is the largest and most populous city. Its capital city is Toledo, and its judicial capital
  * city is Albacete.
  *
- * @link https://en.wikipedia.org/wiki/Castilla-La_Mancha
+ * @see https://en.wikipedia.org/wiki/Castilla-La_Mancha
  */
 class CastillaLaMancha extends Spain
 {
@@ -71,7 +73,7 @@ class CastillaLaMancha extends Spain
      * first time on May 31, 1983. The Day of Castilla-La Mancha was a public holiday for the first time on
      * May 31, 1984.
      *
-     * @link https://www.timeanddate.com/holidays/spain/castile-la-mancha-day
+     * @see https://www.timeanddate.com/holidays/spain/castile-la-mancha-day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

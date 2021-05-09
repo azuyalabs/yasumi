@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -25,7 +27,7 @@ use Yasumi\Provider\Spain;
  * square kilometres (4.7 sq mi). Melilla, along with Ceuta, is one of two permanently inhabited Spanish cities in
  * mainland Africa. It was part of Málaga province until 14 March 1995, when the city's Statute of Autonomy was passed.
  *
- * @link https://en.wikipedia.org/wiki/Melilla
+ * @see https://en.wikipedia.org/wiki/Melilla
  */
 class Melilla extends Spain
 {

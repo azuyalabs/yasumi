@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -24,7 +26,7 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class NewYearsDayTest extends LucerneBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'newYearsDay';
 
@@ -33,18 +35,19 @@ class NewYearsDayTest extends LucerneBaseTestCase implements YasumiTestCaseInter
      *
      * @dataProvider NewYearsDayDataProvider
      *
-     * @param int $year the year for which New Years Day needs to be tested
+     * @param int      $year     the year for which New Years Day needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws ReflectionException
      */
-    public function testNewYearsDay($year, $expected): void
+    public function testNewYearsDay(int $year, DateTime $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
      * Tests translated name of New Years Day.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -59,6 +62,7 @@ class NewYearsDayTest extends LucerneBaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void
@@ -70,6 +74,7 @@ class NewYearsDayTest extends LucerneBaseTestCase implements YasumiTestCaseInter
      * Returns a list of random test dates used for assertion of New Years Day.
      *
      * @return array list of test dates for New Years Day
+     *
      * @throws Exception
      */
     public function NewYearsDayDataProvider(): array

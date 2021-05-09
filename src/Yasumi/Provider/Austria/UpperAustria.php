@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -21,7 +23,7 @@ use Yasumi\Provider\Austria;
 /**
  * Provider for all holidays in Upper Austria (Austria).
  *
- * @link https://en.wikipedia.org/wiki/Upper_Austria
+ * @see https://en.wikipedia.org/wiki/Upper_Austria
  */
 class UpperAustria extends Austria
 {
@@ -58,7 +60,7 @@ class UpperAustria extends Austria
      * Florian organized and trained an elite group of soldiers whose sole duty
      * was to fight fires. His feast day is May 4 (since 304).
      *
-     * @link https://en.wikipedia.org/wiki/Saint_Florian
+     * @see https://en.wikipedia.org/wiki/Saint_Florian
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -74,7 +76,7 @@ class UpperAustria extends Austria
         $this->addHoliday(new Holiday(
             'stFloriansDay',
             [],
-            new DateTime($this->year . '-5-4', new \DateTimeZone($this->timezone)),
+            new DateTime($this->year.'-5-4', new \DateTimeZone($this->timezone)),
             $this->locale
         ));
     }

@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -21,7 +23,6 @@ use Yasumi\Provider\DateTimeZoneFactory;
 
 /**
  * Provider for all holidays in Australian Capital Territory (Australia).
- *
  */
 class AustralianCapitalTerritory extends Australia
 {
@@ -59,18 +60,14 @@ class AustralianCapitalTerritory extends Australia
      * on a date based on a certain number of days after March 21st. The date of Easter Day was defined by the Council
      * of Nicaea in AD325 as the Sunday after the first full moon which falls on or after the Spring Equinox.
      *
-     * @link https://en.wikipedia.org/wiki/Easter
+     * @see https://en.wikipedia.org/wiki/Easter
      *
-     * @param int $year the year for which Easter Saturday need to be created
-     * @param string $timezone the timezone in which Easter Saturday is celebrated
-     * @param string $locale the locale for which Easter Saturday need to be displayed in.
-     * @param string $type The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
-     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
+     * @param int         $year     the year for which Easter Saturday need to be created
+     * @param string      $timezone the timezone in which Easter Saturday is celebrated
+     * @param string      $locale   the locale for which Easter Saturday need to be displayed in
+     * @param string|null $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                              TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return Holiday
-     *
-     * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
      * @throws \Exception
      */
     private function easterSunday(
@@ -95,18 +92,14 @@ class AustralianCapitalTerritory extends Australia
      * on a date based on a certain number of days after March 21st. The date of Easter Day was defined by the Council
      * of Nicaea in AD325 as the Sunday after the first full moon which falls on or after the Spring Equinox.
      *
-     * @link https://en.wikipedia.org/wiki/Easter
+     * @see https://en.wikipedia.org/wiki/Easter
      *
-     * @param int $year the year for which Easter Saturday need to be created
-     * @param string $timezone the timezone in which Easter Saturday is celebrated
-     * @param string $locale the locale for which Easter Saturday need to be displayed in.
-     * @param string $type The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
-     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
+     * @param int         $year     the year for which Easter Saturday need to be created
+     * @param string      $timezone the timezone in which Easter Saturday is celebrated
+     * @param string      $locale   the locale for which Easter Saturday need to be displayed in
+     * @param string|null $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                              TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return Holiday
-     *
-     * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
      * @throws \Exception
      */
     private function easterSaturday(
@@ -134,7 +127,7 @@ class AustralianCapitalTerritory extends Australia
      * Her actual birthday is on April 21, but it's celebrated as a public holiday on the second Monday of June.
      *  (Except QLD & WA)
      *
-     * @link https://www.timeanddate.com/holidays/australia/queens-birthday
+     * @see https://www.timeanddate.com/holidays/australia/queens-birthday
      *
      * @throws \InvalidArgumentException
      * @throws \Exception
@@ -144,14 +137,14 @@ class AustralianCapitalTerritory extends Australia
         $this->addHoliday(new Holiday(
             'queensBirthday',
             [],
-            new DateTime('second monday of june ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new DateTime('second monday of june '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));
     }
 
     /**
-     * Labour Day
+     * Labour Day.
      *
      * @throws \Exception
      */
@@ -163,7 +156,7 @@ class AustralianCapitalTerritory extends Australia
     }
 
     /**
-     * Canberra Day
+     * Canberra Day.
      *
      * @throws \Exception
      */
@@ -182,7 +175,7 @@ class AustralianCapitalTerritory extends Australia
     }
 
     /**
-     * Reconciliation Day
+     * Reconciliation Day.
      *
      * @throws \Exception
      */
@@ -192,10 +185,10 @@ class AustralianCapitalTerritory extends Australia
             return;
         }
 
-        $date = new DateTime($this->year . '-05-27', DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new DateTime($this->year.'-05-27', DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $day = (int) $date->format('w');
         if (1 !== $day) {
-            $date = $date->add(0 === $day ? new DateInterval('P1D') : new DateInterval('P' . (8 - $day) . 'D'));
+            $date = $date->add(0 === $day ? new DateInterval('P1D') : new DateInterval('P'.(8 - $day).'D'));
         }
         $this->addHoliday(new Holiday('reconciliationDay', ['en' => 'Reconciliation Day'], $date, $this->locale));
     }

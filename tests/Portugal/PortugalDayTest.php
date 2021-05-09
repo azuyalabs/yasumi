@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -26,24 +28,26 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class PortugalDayTest extends PortugalBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The year in which the holiday was abolished
+     * The year in which the holiday was abolished.
      */
     public const ESTABLISHMENT_YEAR_BEFORE = 1932;
 
     /**
-     * The year in which the holiday was restored
+     * The year in which the holiday was restored.
      */
     public const ESTABLISHMENT_YEAR_AFTER = 1974;
 
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     public const HOLIDAY = 'portugalDay';
 
     /**
      * Tests the holiday defined in this test before it was abolished.
+     *
      * @throws ReflectionException
      * @throws Exception
+     *
      * @see Portugal::calculatePortugalDay()
      */
     public function testHolidayBeforeAbolishment(): void
@@ -54,9 +58,11 @@ class PortugalDayTest extends PortugalBaseTestCase implements YasumiTestCaseInte
     }
 
     /**
-     * Tests the holiday defined in this test after it was restored
+     * Tests the holiday defined in this test after it was restored.
+     *
      * @throws ReflectionException
      * @throws Exception
+     *
      * @see Portugal::calculatePortugalDay()
      */
     public function testHolidayAfterRestoration(): void
@@ -67,10 +73,11 @@ class PortugalDayTest extends PortugalBaseTestCase implements YasumiTestCaseInte
     }
 
     /**
-     * Tests that the holiday defined in this test does not exist during the period that it was abolished
-     * @throws ReflectionException
-     * @see Portugal::calculatePortugalDay()
+     * Tests that the holiday defined in this test does not exist during the period that it was abolished.
      *
+     * @throws ReflectionException
+     *
+     * @see Portugal::calculatePortugalDay()
      */
     public function testNotHolidayDuringAbolishment(): void
     {

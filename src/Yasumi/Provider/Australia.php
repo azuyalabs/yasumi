@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -23,7 +25,8 @@ use Yasumi\SubstituteHoliday;
  */
 class Australia extends AbstractProvider
 {
-    use CommonHolidays, ChristianHolidays;
+    use CommonHolidays;
+    use ChristianHolidays;
 
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
@@ -61,7 +64,7 @@ class Australia extends AbstractProvider
      * to the International Date Line, Australia is one of the first countries in the world to welcome the New Year.
      * If it falls on a weekend an additional public holiday is held on the next available weekday.
      *
-     * @link https://www.timeanddate.com/holidays/australia/new-year-day
+     * @see https://www.timeanddate.com/holidays/australia/new-year-day
      *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
@@ -112,8 +115,8 @@ class Australia extends AbstractProvider
      * reflections on Australian history, official community awards, and citizenship ceremonies
      * welcoming new immigrants into the Australian community.
      *
-     * @link https://en.wikipedia.org/wiki/Waitangi_Day
-     * @link https://www.timeanddate.com/holidays/australia/australia-day
+     * @see https://en.wikipedia.org/wiki/Waitangi_Day
+     * @see https://www.timeanddate.com/holidays/australia/australia-day
      *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
@@ -155,8 +158,8 @@ class Australia extends AbstractProvider
      * to the next available weekday, nor is there an additional public holiday held. However, if it clashes with Easter,
      * an additional public holiday is held for Easter.
      *
-     * @link https://en.wikipedia.org/wiki/Anzac_Day
-     * @link https://www.timeanddate.com/holidays/australia/anzac-day
+     * @see https://en.wikipedia.org/wiki/Anzac_Day
+     * @see https://www.timeanddate.com/holidays/australia/anzac-day
      *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
@@ -200,7 +203,7 @@ class Australia extends AbstractProvider
      * Christmas day, and Boxing day are public holidays in Australia,
      * if they fall on the weekend an additional public holiday is held on the next available weekday.
      *
-     * @link https://www.timeanddate.com/holidays/australia/christmas-day-holiday
+     * @see https://www.timeanddate.com/holidays/australia/christmas-day-holiday
      *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException

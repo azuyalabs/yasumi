@@ -1,9 +1,11 @@
-<?php declare(strict_types=1);
+<?php
 
-/**
+declare(strict_types=1);
+
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -19,7 +21,6 @@ use Yasumi\Holiday;
 /**
  * Class for testing holidays in South Africa.
  *
- * @package Yasumi\tests\SouthAfrica
  * @author  Sacha Telgenhof <me@sachatelgenhof.com>
  */
 class SouthAfricaTest extends SouthAfricaBaseTestCase
@@ -30,7 +31,16 @@ class SouthAfricaTest extends SouthAfricaBaseTestCase
     protected $year;
 
     /**
-     * Tests if all official holidays in SouthAfrica are defined by the provider class
+     * Initial setup of this Test Case.
+     */
+    protected function setUp(): void
+    {
+        $this->year = $this->generateRandomYear(1994);
+    }
+
+    /**
+     * Tests if all official holidays in SouthAfrica are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
@@ -59,7 +69,8 @@ class SouthAfricaTest extends SouthAfricaBaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in South Africa are defined by the provider class
+     * Tests if all bank holidays in South Africa are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testBankHolidays(): void
@@ -68,7 +79,8 @@ class SouthAfricaTest extends SouthAfricaBaseTestCase
     }
 
     /**
-     * Tests if all observed holidays in South Africa are defined by the provider class
+     * Tests if all observed holidays in South Africa are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testObservedHolidays(): void
@@ -77,7 +89,8 @@ class SouthAfricaTest extends SouthAfricaBaseTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in South Africa are defined by the provider class
+     * Tests if all seasonal holidays in South Africa are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
@@ -86,19 +99,12 @@ class SouthAfricaTest extends SouthAfricaBaseTestCase
     }
 
     /**
-     * Tests if all other holidays in South Africa are defined by the provider class
+     * Tests if all other holidays in South Africa are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
-    }
-
-    /**
-     * Initial setup of this Test Case
-     */
-    protected function setUp(): void
-    {
-        $this->year = $this->generateRandomYear(1994);
     }
 }

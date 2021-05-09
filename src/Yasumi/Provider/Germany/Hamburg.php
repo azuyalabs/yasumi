@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -25,7 +27,7 @@ use Yasumi\Provider\Germany;
  * population is over 1.7 million people, and the Hamburg Metropolitan Region (including parts of the neighbouring
  * Federal States of Lower Saxony and Schleswig-Holstein) has more than 5 million inhabitants.
  *
- * @link https://en.wikipedia.org/wiki/Hamburg
+ * @see https://en.wikipedia.org/wiki/Hamburg
  */
 class Hamburg extends Germany
 {
@@ -52,7 +54,7 @@ class Hamburg extends Germany
 
     /**
      * Since 2018 Hamburg celebrates the "Day of Reformation".
-     * It is not called "Reformation Day" like other states to prevent church-based associations
+     * It is not called "Reformation Day" like other states to prevent church-based associations.
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -69,7 +71,7 @@ class Hamburg extends Germany
             new Holiday(
                 'dayOfReformation',
                 [],
-                new \DateTime("{$this->year}-10-31", new \DateTimeZone($this->timezone)),
+                new \DateTime("$this->year-10-31", new \DateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OFFICIAL
             )

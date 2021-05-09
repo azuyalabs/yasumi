@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -26,7 +28,16 @@ class NorthernIrelandTest extends NorthernIrelandBaseTestCase
     protected $year;
 
     /**
-     * Tests if all official holidays in Northern Ireland are defined by the provider class
+     * Initial setup of this Test Case.
+     */
+    protected function setUp(): void
+    {
+        $this->year = $this->generateRandomYear(1978);
+    }
+
+    /**
+     * Tests if all official holidays in Northern Ireland are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
@@ -38,7 +49,8 @@ class NorthernIrelandTest extends NorthernIrelandBaseTestCase
     }
 
     /**
-     * Tests if all observed holidays in Northern Ireland are defined by the provider class
+     * Tests if all observed holidays in Northern Ireland are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testObservedHolidays(): void
@@ -47,7 +59,8 @@ class NorthernIrelandTest extends NorthernIrelandBaseTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in Northern Ireland are defined by the provider class
+     * Tests if all seasonal holidays in Northern Ireland are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
@@ -56,7 +69,8 @@ class NorthernIrelandTest extends NorthernIrelandBaseTestCase
     }
 
     /**
-     * Tests if all bank holidays in Northern Ireland are defined by the provider class
+     * Tests if all bank holidays in Northern Ireland are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testBankHolidays(): void
@@ -72,19 +86,12 @@ class NorthernIrelandTest extends NorthernIrelandBaseTestCase
     }
 
     /**
-     * Tests if all other holidays in Northern Ireland are defined by the provider class
+     * Tests if all other holidays in Northern Ireland are defined by the provider class.
+     *
      * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
-    }
-
-    /**
-     * Initial setup of this Test Case
-     */
-    protected function setUp(): void
-    {
-        $this->year = $this->generateRandomYear(1978);
     }
 }

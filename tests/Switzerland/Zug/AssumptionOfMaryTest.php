@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -24,7 +26,7 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class AssumptionOfMaryTest extends ZugBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'assumptionOfMary';
 
@@ -33,18 +35,19 @@ class AssumptionOfMaryTest extends ZugBaseTestCase implements YasumiTestCaseInte
      *
      * @dataProvider AssumptionOfMaryDataProvider
      *
-     * @param int $year the year for which the day of the Assumption of Mary needs to be tested
+     * @param int      $year     the year for which the day of the Assumption of Mary needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws ReflectionException
      */
-    public function testAssumptionOfMary($year, $expected): void
+    public function testAssumptionOfMary(int $year, DateTime $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
      * Tests translated name of the day of the Assumption of Mary.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -59,6 +62,7 @@ class AssumptionOfMaryTest extends ZugBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void
@@ -70,6 +74,7 @@ class AssumptionOfMaryTest extends ZugBaseTestCase implements YasumiTestCaseInte
      * Returns a list of random test dates used for assertion of the day of the Assumption of Mary.
      *
      * @return array list of test dates for the day of the Assumption of Mary
+     *
      * @throws Exception
      */
     public function AssumptionOfMaryDataProvider(): array

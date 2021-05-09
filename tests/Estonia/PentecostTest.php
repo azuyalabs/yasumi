@@ -1,9 +1,11 @@
-<?php declare(strict_types=1);
+<?php
 
-/**
+declare(strict_types=1);
+
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -28,13 +30,11 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class PentecostTest extends EstoniaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     public const HOLIDAY = 'pentecost';
 
     /**
-     * @return array
-     *
      * @throws Exception
      */
     public function holidayDataProvider(): array
@@ -43,17 +43,17 @@ class PentecostTest extends EstoniaBaseTestCase implements YasumiTestCaseInterfa
     }
 
     /**
-     * Test defined holiday in the test
+     * Test defined holiday in the test.
      *
      * @dataProvider holidayDataProvider
      *
-     * @param int $year the year for which the holiday defined in this test needs to be tested
+     * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected): void
+    public function testHoliday(int $year, string $expected): void
     {
         $this->assertHoliday(
             self::REGION,
@@ -65,6 +65,7 @@ class PentecostTest extends EstoniaBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * {@inheritdoc}
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -79,6 +80,7 @@ class PentecostTest extends EstoniaBaseTestCase implements YasumiTestCaseInterfa
 
     /**
      * {@inheritdoc}
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

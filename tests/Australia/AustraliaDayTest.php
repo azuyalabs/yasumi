@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -25,7 +27,7 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class AustraliaDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'australiaDay';
 
@@ -34,28 +36,28 @@ class AustraliaDayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int $year the year for which the holiday defined in this test needs to be tested
+     * @param int      $year     the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws ReflectionException
      */
-    public function testHoliday($year, $expected): void
+    public function testHoliday(int $year, DateTime $expected): void
     {
         $this->assertHoliday($this->region, self::HOLIDAY, $year, $expected);
     }
 
     /**
-     * Tests Australia Day
+     * Tests Australia Day.
      *
      * @dataProvider SubstituteHolidayDataProvider
      *
-     * @param int $year the year for which the holiday defined in this test needs to be tested
-     * @param DateTime $expected the expected date
+     * @param int     $year     the year for which the holiday defined in this test needs to be tested
+     * @param ?string $expected the expected date
      *
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testSubstituteHoliday($year, $expected): void
+    public function testSubstituteHoliday(int $year, ?string $expected): void
     {
         if ($expected) {
             $this->assertSubstituteHoliday(
@@ -73,9 +75,9 @@ class AustraliaDayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
         }
     }
 
-
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -90,6 +92,7 @@ class AustraliaDayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void
@@ -98,9 +101,10 @@ class AustraliaDayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
     }
 
     /**
-     * Returns a list of random test dates used for assertion of the holiday defined in this test
+     * Returns a list of random test dates used for assertion of the holiday defined in this test.
      *
      * @return array list of test dates for the holiday defined in this test
+     *
      * @throws Exception
      */
     public function HolidayDataProvider(): array
@@ -109,7 +113,7 @@ class AustraliaDayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
     }
 
     /**
-     * Returns a list of test dates
+     * Returns a list of test dates.
      *
      * @return array list of test dates for the holiday defined in this test
      */

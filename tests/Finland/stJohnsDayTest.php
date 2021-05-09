@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -28,19 +30,19 @@ use Yasumi\Yasumi;
  */
 class stJohnsDayTest extends FinlandBaseTestCase implements YasumiTestCaseInterface
 {
-
     /**
-     * The year in which the holiday was adjusted
+     * The year in which the holiday was adjusted.
      */
     public const ADJUSTMENT_YEAR = 1955;
 
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     public const HOLIDAY = 'stJohnsDay';
 
     /**
      * Tests the holiday before it was adjusted.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -57,6 +59,7 @@ class stJohnsDayTest extends FinlandBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests the holiday before it was adjusted.
+     *
      * @throws ReflectionException
      */
     public function testHolidayAfterAdjustment(): void
@@ -67,19 +70,20 @@ class stJohnsDayTest extends FinlandBaseTestCase implements YasumiTestCaseInterf
         $holiday = $holidays->getHoliday(self::HOLIDAY);
 
         // Some basic assertions
-        $this->assertInstanceOf(Holiday::class, $holiday);
-        $this->assertNotNull($holiday);
+        self::assertInstanceOf(Holiday::class, $holiday);
+        self::assertNotNull($holiday);
 
         // Holiday specific assertions
-        $this->assertEquals('Saturday', $holiday->format('l'));
-        $this->assertGreaterThanOrEqual(20, $holiday->format('j'));
-        $this->assertLessThanOrEqual(26, $holiday->format('j'));
+        self::assertEquals('Saturday', $holiday->format('l'));
+        self::assertGreaterThanOrEqual(20, $holiday->format('j'));
+        self::assertLessThanOrEqual(26, $holiday->format('j'));
 
         unset($holiday, $holidays);
     }
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -94,6 +98,7 @@ class stJohnsDayTest extends FinlandBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -25,18 +27,19 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class LabourThanksgivingDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'laborThanksgivingDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1948;
 
     /**
      * Tests Labor Thanksgiving Day after 1948. Labor Thanksgiving Day is held on November 23rd and established since
      * 1948.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -53,7 +56,8 @@ class LabourThanksgivingDayTest extends JapanBaseTestCase implements YasumiTestC
 
     /**
      * Tests Labor Thanksgiving Day after 1948 substituted next working day (when Labor Thanksgiving Day falls on a
-     * Sunday)
+     * Sunday).
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -62,7 +66,7 @@ class LabourThanksgivingDayTest extends JapanBaseTestCase implements YasumiTestC
         $year = 1986;
         $this->assertHoliday(
             self::REGION,
-            self::SUBSTITUTE_PREFIX . self::HOLIDAY,
+            self::SUBSTITUTE_PREFIX.self::HOLIDAY,
             $year,
             new DateTime("$year-11-24", new DateTimeZone(self::TIMEZONE))
         );
@@ -71,6 +75,7 @@ class LabourThanksgivingDayTest extends JapanBaseTestCase implements YasumiTestC
     /**
      * Tests Labor Thanksgiving Day before 1948. Labor Thanksgiving Day is held on November 23rd and established since
      * 1948.
+     *
      * @throws ReflectionException
      */
     public function testLabourThanksgivingDayBefore1948(): void
@@ -84,6 +89,7 @@ class LabourThanksgivingDayTest extends JapanBaseTestCase implements YasumiTestC
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -98,6 +104,7 @@ class LabourThanksgivingDayTest extends JapanBaseTestCase implements YasumiTestC
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -25,22 +27,23 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class StatehoodDayTest extends CroatiaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'statehoodDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1991;
 
     /**
-     * The year in which the holiday celebration date has changed
+     * The year in which the holiday celebration date has changed.
      */
     public const DATE_CHANGE_YEAR = 2020;
 
     /**
-     * Tests Statehood Day
+     * Tests Statehood Day.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -67,6 +70,7 @@ class StatehoodDayTest extends CroatiaBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests Statehood Day before 1991.
+     *
      * @throws ReflectionException
      */
     public function testStatehoodDayBefore1991(): void
@@ -80,6 +84,7 @@ class StatehoodDayTest extends CroatiaBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests translated name of Statehood Day.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -94,6 +99,7 @@ class StatehoodDayTest extends CroatiaBaseTestCase implements YasumiTestCaseInte
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

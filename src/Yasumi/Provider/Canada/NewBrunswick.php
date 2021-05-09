@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -21,7 +23,7 @@ use Yasumi\Provider\Canada;
  *
  * New Brunswick is a province of Canada.
  *
- * @link https://en.wikipedia.org/wiki/New_Brunswick
+ * @see https://en.wikipedia.org/wiki/New_Brunswick
  */
 class NewBrunswick extends Canada
 {
@@ -42,9 +44,9 @@ class NewBrunswick extends Canada
     public function initialize(): void
     {
         parent::initialize();
-        
+
         $this->timezone = 'America/Halifax';
-        
+
         $this->calculateCivicHoliday();
         $this->calculateFamilyDay();
         $this->calculateVictoriaDay();

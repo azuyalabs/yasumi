@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -25,17 +27,18 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class CanadaDayTest extends CanadaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'canadaDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1983;
 
     /**
      * Tests Canada Day on or after 1983. Canada Day was established in 1983 on July 1st.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -52,6 +55,7 @@ class CanadaDayTest extends CanadaBaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * Tests Canada Day before 1879. Canada Day was established as Dominion Day in 1879 on July 1st.
+     *
      * @throws ReflectionException
      */
     public function testCanadaDayBefore1879(): void
@@ -65,6 +69,7 @@ class CanadaDayTest extends CanadaBaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * Tests translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -79,6 +84,7 @@ class CanadaDayTest extends CanadaBaseTestCase implements YasumiTestCaseInterfac
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

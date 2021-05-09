@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -26,23 +28,23 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class EasterMondayTest extends AustraliaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'easterMonday';
     public const HOLIDAY2 = 'easterTuesday';
 
     /**
-     * Tests Easter Monday
+     * Tests Easter Monday.
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int $year the year for which the holiday defined in this test needs to be tested
+     * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected): void
+    public function testHoliday(int $year, string $expected): void
     {
         $this->assertHoliday(
             $this->region,
@@ -53,17 +55,17 @@ class EasterMondayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
     }
 
     /**
-     * Tests Easter Tuesday for those years when ANZAC Day clashes with Easter Sunday or Monday
+     * Tests Easter Tuesday for those years when ANZAC Day clashes with Easter Sunday or Monday.
      *
      * @dataProvider HolidayDataProvider2
      *
-     * @param int $year the year for which the holiday defined in this test needs to be tested
+     * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday2($year, $expected): void
+    public function testHoliday2(int $year, string $expected): void
     {
         $this->assertHoliday(
             $this->region,
@@ -74,16 +76,17 @@ class EasterMondayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
     }
 
     /**
-     * Returns a list of test dates
+     * Returns a list of test dates.
      *
      * @return array list of test dates for the holiday defined in this test
+     *
      * @throws Exception
      */
     public function HolidayDataProvider(): array
     {
         $data = [];
 
-        for ($y = 0; $y < 50; $y++) {
+        for ($y = 0; $y < 50; ++$y) {
             $year = $this->generateRandomYear();
             $date = $this->calculateEaster($year, $this->timezone);
             $date->add(new DateInterval('P1D'));
@@ -95,7 +98,7 @@ class EasterMondayTest extends AustraliaBaseTestCase implements YasumiTestCaseIn
     }
 
     /**
-     * Returns a list of test dates
+     * Returns a list of test dates.
      *
      * @return array list of test dates for the holiday defined in this test
      */

@@ -1,9 +1,11 @@
-<?php declare(strict_types=1);
+<?php
 
-/**
+declare(strict_types=1);
+
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -22,7 +24,8 @@ use Yasumi\Holiday;
  */
 class Estonia extends AbstractProvider
 {
-    use CommonHolidays, ChristianHolidays;
+    use CommonHolidays;
+    use ChristianHolidays;
 
     public const DECLARATION_OF_INDEPENDENCE_YEAR = 1918;
 
@@ -71,7 +74,7 @@ class Estonia extends AbstractProvider
             $this->addHoliday(new Holiday('independenceDay', [
                 'en' => 'Independence Day',
                 'et' => 'Iseseisvuspäev',
-            ], new \DateTime("{$this->year}-02-24", new \DateTimeZone($this->timezone))));
+            ], new \DateTime("$this->year-02-24", new \DateTimeZone($this->timezone))));
         }
     }
 
@@ -85,7 +88,7 @@ class Estonia extends AbstractProvider
             $this->addHoliday(new Holiday('victoryDay', [
                 'en' => 'Victory Day',
                 'et' => 'Võidupüha',
-            ], new \DateTime("{$this->year}-06-23", new \DateTimeZone($this->timezone))));
+            ], new \DateTime("$this->year-06-23", new \DateTimeZone($this->timezone))));
         }
     }
 
@@ -98,8 +101,8 @@ class Estonia extends AbstractProvider
         if ($this->year >= self::RESTORATION_OF_INDEPENDENCE_YEAR) {
             $this->addHoliday(new Holiday('restorationOfIndependenceDay', [
                 'en' => 'Day of Restoration of Independence',
-                'et' => 'Tasiseseisvumispäev',
-            ], new \DateTime("{$this->year}-08-20", new \DateTimeZone($this->timezone))));
+                'et' => 'Taasiseseisvumispäev',
+            ], new \DateTime("$this->year-08-20", new \DateTimeZone($this->timezone))));
         }
     }
 }

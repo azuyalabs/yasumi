@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -23,7 +25,7 @@ use Yasumi\Provider\Switzerland;
 /**
  * Provider for all holidays in Ticino (Switzerland).
  *
- * @link https://en.wikipedia.org/wiki/Ticino
+ * @see https://en.wikipedia.org/wiki/Ticino
  */
 class Ticino extends Switzerland
 {
@@ -75,9 +77,9 @@ class Ticino extends Switzerland
     }
 
     /**
-     * Feast of Saints Peter and Paul
+     * Feast of Saints Peter and Paul.
      *
-     * @link https://en.wikipedia.org/wiki/Feast_of_Saints_Peter_and_Paul
+     * @see https://en.wikipedia.org/wiki/Feast_of_Saints_Peter_and_Paul
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -94,7 +96,7 @@ class Ticino extends Switzerland
                 'fr' => 'Solennité des saints Pierre et Paul',
                 'de' => 'St. Peter und Paul',
             ],
-            new DateTime($this->year . '-06-29', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new DateTime($this->year.'-06-29', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OTHER
         ));

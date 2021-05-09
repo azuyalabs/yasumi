@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -20,7 +22,6 @@ use Yasumi\Provider\DateTimeZoneFactory;
 
 /**
  * Provider for all holidays in Western Australia (Australia).
- *
  */
 class WesternAustralia extends Australia
 {
@@ -58,14 +59,14 @@ class WesternAustralia extends Australia
      * Her actual birthday is on April 21, but it's celebrated as a public holiday on the second Monday of June.
      *  (Except QLD & WA)
      *
-     * @link https://www.timeanddate.com/holidays/australia/queens-birthday
+     * @see https://www.timeanddate.com/holidays/australia/queens-birthday
      *
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
     private function calculateQueensBirthday(): void
     {
-        $birthDay = 'last monday of september ' . $this->year;
+        $birthDay = 'last monday of september '.$this->year;
         if (2011 === $this->year) {
             $birthDay = '2011-10-28';
         }
@@ -84,7 +85,7 @@ class WesternAustralia extends Australia
     }
 
     /**
-     * Labour Day
+     * Labour Day.
      *
      * @throws \Exception
      */
@@ -96,9 +97,9 @@ class WesternAustralia extends Australia
     }
 
     /**
-     * Western Australia Day
+     * Western Australia Day.
      *
-     * @link https://en.wikipedia.org/wiki/Western_Australia_Day
+     * @see https://en.wikipedia.org/wiki/Western_Australia_Day
      *
      * @throws \InvalidArgumentException
      * @throws \Exception
@@ -108,7 +109,7 @@ class WesternAustralia extends Australia
         $this->addHoliday(new Holiday(
             'westernAustraliaDay',
             ['en' => 'Western Australia Day'],
-            new DateTime('first monday of june ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new DateTime('first monday of june '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));

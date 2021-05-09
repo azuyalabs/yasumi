@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -21,7 +23,7 @@ use Yasumi\Provider\Austria;
 /**
  * Provider for all holidays in Carinthia (Austria).
  *
- * @link https://en.wikipedia.org/wiki/Carinthia
+ * @see https://en.wikipedia.org/wiki/Carinthia
  */
 class Carinthia extends Austria
 {
@@ -56,7 +58,7 @@ class Carinthia extends Austria
      * southern border between the Republic of Austria and the newly formed
      * Kingdom of Serbs, Croats and Slovenes (Yugoslavia) after World War I.
      *
-     * @link https://en.wikipedia.org/wiki/1920_Carinthian_plebiscite
+     * @see https://en.wikipedia.org/wiki/1920_Carinthian_plebiscite
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -72,7 +74,7 @@ class Carinthia extends Austria
         $this->addHoliday(new Holiday(
             'plebisciteDay',
             [],
-            new DateTime($this->year . '-10-10', new \DateTimeZone($this->timezone)),
+            new DateTime($this->year.'-10-10', new \DateTimeZone($this->timezone)),
             $this->locale
         ));
     }

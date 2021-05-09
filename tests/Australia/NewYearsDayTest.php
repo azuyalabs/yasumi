@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -25,24 +27,24 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class NewYearsDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'newYearsDay';
     public const HOLIDAY2 = 'newYearsHoliday';
 
     /**
-     * Tests New Years Day
+     * Tests New Years Day.
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int $year the year for which the holiday defined in this test needs to be tested
-     * @param string $expected the expected date
-     * @param string $expectedExtra the expected date for the additional holiday, or null if no additional holiday
+     * @param int     $year          the year for which the holiday defined in this test needs to be tested
+     * @param string  $expected      the expected date
+     * @param ?string $expectedExtra the expected date for the additional holiday, or null if no additional holiday
      *
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected, $expectedExtra): void
+    public function testHoliday(int $year, string $expected, ?string $expectedExtra): void
     {
         $this->assertHoliday(
             $this->region,
@@ -67,7 +69,7 @@ class NewYearsDayTest extends AustraliaBaseTestCase implements YasumiTestCaseInt
     }
 
     /**
-     * Returns a list of test dates
+     * Returns a list of test dates.
      *
      * @return array list of test dates for the holiday defined in this test
      */

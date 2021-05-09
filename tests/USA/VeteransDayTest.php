@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -27,17 +29,18 @@ use Yasumi\Yasumi;
 class VeteransDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'veteransDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1919;
 
     /**
      * Tests Veterans Day on or after 1919. Veterans Day was established in 1919 on November 11.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -53,7 +56,8 @@ class VeteransDayTest extends USABaseTestCase implements YasumiTestCaseInterface
     }
 
     /**
-     * Tests Veterans Day on or after 1919 when substituted on Monday (when Veterans Day falls on Sunday)
+     * Tests Veterans Day on or after 1919 when substituted on Monday (when Veterans Day falls on Sunday).
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -69,7 +73,8 @@ class VeteransDayTest extends USABaseTestCase implements YasumiTestCaseInterface
     }
 
     /**
-     * Tests Veterans Day on or after 1919 when substituted on Friday (when Veterans Day falls on Saturday)
+     * Tests Veterans Day on or after 1919 when substituted on Friday (when Veterans Day falls on Saturday).
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -86,6 +91,7 @@ class VeteransDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests Veterans Day before 1919. Veterans Day was established in 1919 on November 11.
+     *
      * @throws ReflectionException
      */
     public function testVeteransDayBefore1919(): void
@@ -99,6 +105,7 @@ class VeteransDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests name of Veterans Day before 1954. Veterans Day was named 'Armistice Day' before 1954.
+     *
      * @throws ReflectionException
      * @throws MissingTranslationException
      */
@@ -108,11 +115,12 @@ class VeteransDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 
         $holidays = Yasumi::create(self::REGION, $year);
         $holiday = $holidays->getHoliday(self::HOLIDAY);
-        $this->assertEquals('Armistice Day', $holiday->getName());
+        self::assertEquals('Armistice Day', $holiday->getName());
     }
 
     /**
      * Tests name of Veterans Day after 1954. Veterans Day was named 'Armistice Day' before 1954.
+     *
      * @throws ReflectionException
      * @throws MissingTranslationException
      */
@@ -122,11 +130,12 @@ class VeteransDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 
         $holidays = Yasumi::create(self::REGION, $year);
         $holiday = $holidays->getHoliday(self::HOLIDAY);
-        $this->assertEquals('Veterans Day', $holiday->getName());
+        self::assertEquals('Veterans Day', $holiday->getName());
     }
 
     /**
      * Tests translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -141,6 +150,7 @@ class VeteransDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

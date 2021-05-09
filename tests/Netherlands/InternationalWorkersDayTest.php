@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -24,7 +26,7 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class InternationalWorkersDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'internationalWorkersDay';
 
@@ -33,12 +35,12 @@ class InternationalWorkersDayTest extends NetherlandsBaseTestCase implements Yas
      *
      * @dataProvider InternationalWorkersDayDataProvider
      *
-     * @param int $year the year for which International Workers' Day needs to be tested
+     * @param int      $year     the year for which International Workers' Day needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws ReflectionException
      */
-    public function testInternationalWorkersDay($year, $expected): void
+    public function testInternationalWorkersDay(int $year, DateTime $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
@@ -47,6 +49,7 @@ class InternationalWorkersDayTest extends NetherlandsBaseTestCase implements Yas
      * Returns a list of random test dates used for assertion of International Workers' Day.
      *
      * @return array list of test dates for International Workers' Day
+     *
      * @throws Exception
      */
     public function InternationalWorkersDayDataProvider(): array
@@ -56,6 +59,7 @@ class InternationalWorkersDayTest extends NetherlandsBaseTestCase implements Yas
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -70,6 +74,7 @@ class InternationalWorkersDayTest extends NetherlandsBaseTestCase implements Yas
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

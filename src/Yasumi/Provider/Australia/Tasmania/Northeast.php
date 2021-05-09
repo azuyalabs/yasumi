@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -21,7 +23,6 @@ use Yasumi\Provider\DateTimeZoneFactory;
 
 /**
  * Provider for all holidays in northeastern Tasmania (Australia).
- *
  */
 class Northeast extends Tasmania
 {
@@ -47,13 +48,13 @@ class Northeast extends Tasmania
     }
 
     /**
-     * Royal Launceston Show
+     * Royal Launceston Show.
      *
      * @throws \Exception
      */
     private function calculateLauncestonShow(): void
     {
-        $date = new DateTime('second saturday of october ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new DateTime('second saturday of october '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $date = $date->sub(new DateInterval('P2D'));
         $this->addHoliday(new Holiday('launcestonShow', ['en' => 'Royal Launceston Show'], $date, $this->locale));
     }

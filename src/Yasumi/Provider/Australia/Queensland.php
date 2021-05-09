@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -20,7 +22,6 @@ use Yasumi\Provider\DateTimeZoneFactory;
 
 /**
  * Provider for all holidays in Queensland (Australia).
- *
  */
 class Queensland extends Australia
 {
@@ -57,17 +58,17 @@ class Queensland extends Australia
      * Her actual birthday is on April 21, but it's celebrated as a public holiday on the second Monday of June.
      *  (Except QLD & WA)
      *
-     * @link https://www.timeanddate.com/holidays/australia/queens-birthday
+     * @see https://www.timeanddate.com/holidays/australia/queens-birthday
      *
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
     private function calculateQueensBirthday(): void
     {
-        $birthDay = 'first monday of october ' . $this->year;
+        $birthDay = 'first monday of october '.$this->year;
 
         if ($this->year < 2012 || 2013 === $this->year || 2014 === $this->year || 2015 === $this->year) {
-            $birthDay = 'second monday of june ' . $this->year;
+            $birthDay = 'second monday of june '.$this->year;
         }
 
         $this->addHoliday(new Holiday(
@@ -80,7 +81,7 @@ class Queensland extends Australia
     }
 
     /**
-     * Labour Day
+     * Labour Day.
      *
      * @throws \Exception
      */

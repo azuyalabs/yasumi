@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -22,13 +24,13 @@ use Yasumi\tests\YasumiTestCaseInterface;
  * Class for testing Christmas day in the Czech Republic.
  *
  * Class ChristmasDayTest
- * @package Yasumi\tests\CzechRepublic
+ *
  * @author  Dennis Fridrich <fridrich.dennis@gmail.com>
  */
 class ChristmasDayTest extends CzechRepublicBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'christmasDay';
 
@@ -37,20 +39,21 @@ class ChristmasDayTest extends CzechRepublicBaseTestCase implements YasumiTestCa
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int $year the year for which Christmas Day needs to be tested
+     * @param int      $year     the year for which Christmas Day needs to be tested
      * @param DateTime $expected the expected date
      *
      * @throws ReflectionException
      */
-    public function testChristmasDay($year, $expected): void
+    public function testChristmasDay(int $year, DateTime $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
-     * Returns a list of random test dates used for assertion of the holiday defined in this test
+     * Returns a list of random test dates used for assertion of the holiday defined in this test.
      *
      * @return array list of test dates for the holiday defined in this test
+     *
      * @throws Exception
      */
     public function HolidayDataProvider(): array
@@ -60,6 +63,7 @@ class ChristmasDayTest extends CzechRepublicBaseTestCase implements YasumiTestCa
 
     /**
      * Tests translated name of Christmas Day.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -74,6 +78,7 @@ class ChristmasDayTest extends CzechRepublicBaseTestCase implements YasumiTestCa
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

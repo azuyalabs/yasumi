@@ -1,9 +1,11 @@
-<?php declare(strict_types=1);
+<?php
 
-/**
+declare(strict_types=1);
+
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -23,7 +25,8 @@ use Yasumi\Holiday;
  */
 class Denmark extends AbstractProvider
 {
-    use CommonHolidays, ChristianHolidays;
+    use CommonHolidays;
+    use ChristianHolidays;
 
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
@@ -74,7 +77,7 @@ class Denmark extends AbstractProvider
     }
 
     /**
-     * Great Prayer Day
+     * Great Prayer Day.
      *
      * Store Bededag, translated literally as Great Prayer Day or more loosely as General Prayer Day, "All Prayers" Day,
      * Great Day of Prayers or Common Prayer Day, is a Danish holiday celebrated on the 4th Friday after Easter. It is a
@@ -82,7 +85,7 @@ class Denmark extends AbstractProvider
      * Denmark in 1686 by King Christian V as a consolidation of several minor (or local) Roman Catholic holidays which
      * the Church observed that had survived the Reformation.
      *
-     * @link https://en.wikipedia.org/wiki/Store_Bededag
+     * @see https://en.wikipedia.org/wiki/Store_Bededag
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -104,7 +107,7 @@ class Denmark extends AbstractProvider
     }
 
     /**
-     * Constitution Day
+     * Constitution Day.
      *
      * Denmark’s Constitution Day is June 5 and commemorates the signing of Denmark's constitution
      * on June 5 1849, when Denmark peacefully became as a constitutional monarchy.
@@ -112,7 +115,7 @@ class Denmark extends AbstractProvider
      * While not a public holiday, some companies and public offices are closed. Traditionally,
      * members of parliament gives political speeches around the country.
      *
-     * @link https://en.wikipedia.org/wiki/Constitution_Day_(Denmark)
+     * @see https://en.wikipedia.org/wiki/Constitution_Day_(Denmark)
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

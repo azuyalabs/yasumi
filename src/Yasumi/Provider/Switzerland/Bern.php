@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -21,8 +23,8 @@ use Yasumi\Provider\Switzerland;
 /**
  * Provider for all holidays in Bern (Switzerland).
  *
- * @link https://en.wikipedia.org/wiki/Canton_of_Bern
- * @link https://www.fin.be.ch/fin/fr/index/personal/personalrecht/wdb.thema.212.html
+ * @see https://en.wikipedia.org/wiki/Canton_of_Bern
+ * @see https://www.fin.be.ch/fin/fr/index/personal/personalrecht/wdb.thema.212.html
  */
 class Bern extends Switzerland
 {

@@ -1,4 +1,15 @@
 <?php
+/*
+ * This file is part of the Yasumi package.
+ *
+ * Copyright (c) 2015 - 2021 AzuyaLabs
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
+ */
+
 declare(strict_types=1);
 
 namespace Yasumi\Provider;
@@ -13,7 +24,8 @@ use Yasumi\Holiday;
  */
 class Luxembourg extends AbstractProvider
 {
-    use CommonHolidays, ChristianHolidays;
+    use CommonHolidays;
+    use ChristianHolidays;
 
     public const EUROPE_DAY_START_YEAR = 2019;
 
@@ -58,7 +70,7 @@ class Luxembourg extends AbstractProvider
      * Schuman Declaration, leading it to be referred to by some as "Schuman Day".
      * Both days are celebrated by displaying the Flag of Europe.
      *
-     * @link https://en.wikipedia.org/wiki/Europe_Day
+     * @see https://en.wikipedia.org/wiki/Europe_Day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -84,7 +96,7 @@ class Luxembourg extends AbstractProvider
      * It is celebrated on 23 June, although this has never been the actual birthday of any ruler of Luxembourg.
      * When the monarch of Luxembourg is female, it is known as the Grand Duchess' Official Birthday.
      *
-     * @link https://en.wikipedia.org/wiki/Grand_Duke%27s_Official_Birthday
+     * @see https://en.wikipedia.org/wiki/Grand_Duke%27s_Official_Birthday
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

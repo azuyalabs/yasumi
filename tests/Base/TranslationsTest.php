@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -42,18 +44,18 @@ class TranslationsTest extends TestCase
         $key = 'newYearsDay';
         $translation = 'New Year’s Day';
 
-        $this->assertNull($translations->getTranslation($key, $locale));
-        $this->assertEmpty($translations->getTranslations($key));
+        self::assertNull($translations->getTranslation($key, $locale));
+        self::assertEmpty($translations->getTranslations($key));
 
         $translations->addTranslation($key, $locale, $translation);
 
-        $this->assertNotNull($translations->getTranslations($key));
-        $this->assertNotEmpty($translations->getTranslations($key));
-        $this->assertEquals([$locale => $translation], $translations->getTranslations($key));
+        self::assertNotNull($translations->getTranslations($key));
+        self::assertNotEmpty($translations->getTranslations($key));
+        self::assertEquals([$locale => $translation], $translations->getTranslations($key));
 
-        $this->assertNotNull($translations->getTranslation($key, $locale));
-        $this->assertIsString($translations->getTranslation($key, $locale));
-        $this->assertEquals($translation, $translations->getTranslation($key, $locale));
+        self::assertNotNull($translations->getTranslation($key, $locale));
+        self::assertIsString($translations->getTranslation($key, $locale));
+        self::assertEquals($translation, $translations->getTranslation($key, $locale));
     }
 
     /**
@@ -69,13 +71,13 @@ class TranslationsTest extends TestCase
 
         $translations->addTranslation($firstIdentifier, $firstLocale, $firstTranslation);
 
-        $this->assertNotNull($translations->getTranslations($firstIdentifier));
-        $this->assertNotEmpty($translations->getTranslations($firstIdentifier));
-        $this->assertEquals([$firstLocale => $firstTranslation], $translations->getTranslations($firstIdentifier));
+        self::assertNotNull($translations->getTranslations($firstIdentifier));
+        self::assertNotEmpty($translations->getTranslations($firstIdentifier));
+        self::assertEquals([$firstLocale => $firstTranslation], $translations->getTranslations($firstIdentifier));
 
-        $this->assertNotNull($translations->getTranslation($firstIdentifier, $firstLocale));
-        $this->assertIsString($translations->getTranslation($firstIdentifier, $firstLocale));
-        $this->assertEquals($firstTranslation, $translations->getTranslation($firstIdentifier, $firstLocale));
+        self::assertNotNull($translations->getTranslation($firstIdentifier, $firstLocale));
+        self::assertIsString($translations->getTranslation($firstIdentifier, $firstLocale));
+        self::assertEquals($firstTranslation, $translations->getTranslation($firstIdentifier, $firstLocale));
 
         $secondLocale = 'nl_NL';
         $secondIdentifier = 'easter';
@@ -83,13 +85,13 @@ class TranslationsTest extends TestCase
 
         $translations->addTranslation($secondIdentifier, $secondLocale, $secondTranslation);
 
-        $this->assertNotNull($translations->getTranslations($secondIdentifier));
-        $this->assertNotEmpty($translations->getTranslations($secondIdentifier));
-        $this->assertEquals([$secondLocale => $secondTranslation], $translations->getTranslations($secondIdentifier));
+        self::assertNotNull($translations->getTranslations($secondIdentifier));
+        self::assertNotEmpty($translations->getTranslations($secondIdentifier));
+        self::assertEquals([$secondLocale => $secondTranslation], $translations->getTranslations($secondIdentifier));
 
-        $this->assertNotNull($translations->getTranslation($secondIdentifier, $secondLocale));
-        $this->assertIsString($translations->getTranslation($secondIdentifier, $secondLocale));
-        $this->assertEquals($secondTranslation, $translations->getTranslation($secondIdentifier, $secondLocale));
+        self::assertNotNull($translations->getTranslation($secondIdentifier, $secondLocale));
+        self::assertIsString($translations->getTranslation($secondIdentifier, $secondLocale));
+        self::assertEquals($secondTranslation, $translations->getTranslation($secondIdentifier, $secondLocale));
 
         $thirdLocale = 'en_US';
         $thirdIdentifier = 'easter';
@@ -97,21 +99,20 @@ class TranslationsTest extends TestCase
 
         $translations->addTranslation($thirdIdentifier, $thirdLocale, $thirdTranslation);
 
-        $this->assertNotNull($translations->getTranslations($thirdIdentifier));
-        $this->assertNotEmpty($translations->getTranslations($thirdIdentifier));
-        $this->assertEquals(
+        self::assertNotNull($translations->getTranslations($thirdIdentifier));
+        self::assertNotEmpty($translations->getTranslations($thirdIdentifier));
+        self::assertEquals(
             [$thirdLocale => $thirdTranslation, $secondLocale => $secondTranslation],
             $translations->getTranslations($thirdIdentifier)
         );
 
-        $this->assertNotNull($translations->getTranslation($thirdIdentifier, $thirdLocale));
-        $this->assertIsString($translations->getTranslation($thirdIdentifier, $thirdLocale));
-        $this->assertEquals($thirdTranslation, $translations->getTranslation($thirdIdentifier, $thirdLocale));
+        self::assertNotNull($translations->getTranslation($thirdIdentifier, $thirdLocale));
+        self::assertIsString($translations->getTranslation($thirdIdentifier, $thirdLocale));
+        self::assertEquals($thirdTranslation, $translations->getTranslation($thirdIdentifier, $thirdLocale));
     }
 
     /**
      * Tests that an UnknownLocaleException is thrown when adding translation for unknown locale.
-     *
      */
     public function testAddTranslationUnknownLocaleException(): void
     {
@@ -141,8 +142,8 @@ class TranslationsTest extends TestCase
 
         $translations->addTranslation($key, $locale, $translation);
 
-        $this->assertNull($translations->getTranslation($unknownIdentifier, $locale));
-        $this->assertEmpty($translations->getTranslations($unknownIdentifier));
+        self::assertNull($translations->getTranslation($unknownIdentifier, $locale));
+        self::assertEmpty($translations->getTranslations($unknownIdentifier));
     }
 
     /**
@@ -160,7 +161,7 @@ class TranslationsTest extends TestCase
 
         $translations->addTranslation($key, $locale, $translation);
 
-        $this->assertNull($translations->getTranslation($key, $unknownLocale));
+        self::assertNull($translations->getTranslation($key, $unknownLocale));
     }
 
     /**
@@ -178,7 +179,7 @@ return [
 ];
 FILE;
 
-        vfsStream::setup('root', null, ['lang' => [$key . '.php' => $fileContents]]);
+        vfsStream::setup('root', null, ['lang' => [$key.'.php' => $fileContents]]);
 
         $translations = new Translations(self::LOCALES);
         $translations->loadTranslations(vfsStream::url('root/lang'));
@@ -186,10 +187,10 @@ FILE;
         $locale = 'en_US';
         $translation = 'New Year’s Day';
 
-        $this->assertNotNull($translations->getTranslations($key));
-        $this->assertNotEmpty($translations->getTranslations($key));
-        $this->assertIsString($translations->getTranslation($key, $locale));
-        $this->assertEquals($translation, $translations->getTranslation($key, $locale));
+        self::assertNotNull($translations->getTranslations($key));
+        self::assertNotEmpty($translations->getTranslations($key));
+        self::assertIsString($translations->getTranslation($key, $locale));
+        self::assertEquals($translation, $translations->getTranslation($key, $locale));
     }
 
     /**
@@ -207,18 +208,17 @@ return [
 ];
 FILE;
 
-        vfsStream::setup('root', null, ['lang' => [$key . '.translation' => $fileContents]]);
+        vfsStream::setup('root', null, ['lang' => [$key.'.translation' => $fileContents]]);
 
         $translations = new Translations(self::LOCALES);
         $translations->loadTranslations(vfsStream::url('root/lang'));
 
-        $this->assertNotNull($translations->getTranslations($key));
-        $this->assertEmpty($translations->getTranslations($key));
+        self::assertNotNull($translations->getTranslations($key));
+        self::assertEmpty($translations->getTranslations($key));
     }
 
     /**
      * Tests that an UnknownLocaleException is thrown when loading translation with unknown locale(s).
-     *
      */
     public function testLoadingTranslationsFromDirectoryWithUnknownLocaleException(): void
     {
@@ -233,7 +233,7 @@ return [
 ];
 FILE;
 
-        vfsStream::setup('root', null, ['lang' => [$key . '.php' => $fileContents]]);
+        vfsStream::setup('root', null, ['lang' => [$key.'.php' => $fileContents]]);
 
         $translations = new Translations(self::LOCALES);
         $translations->loadTranslations(vfsStream::url('root/lang'));
@@ -241,7 +241,6 @@ FILE;
 
     /**
      * Tests that an InvalidArgumentException is thrown when loading translation from inexistent directory.
-     *
      */
     public function testLoadingTranslationsFromInexistentDirectory(): void
     {
@@ -279,8 +278,8 @@ FILE;
 
         vfsStream::setup('root', null, [
             'lang' => [
-                $firstIdentifier . '.php' => $firstFileContents,
-                $secondIdentifier . '.php' => $secondFileContents,
+                $firstIdentifier.'.php' => $firstFileContents,
+                $secondIdentifier.'.php' => $secondFileContents,
             ],
         ]);
 
@@ -291,17 +290,17 @@ FILE;
         $locale = 'en_US';
         $translation = 'New Year’s Day';
 
-        $this->assertNotNull($translations->getTranslations($firstIdentifier));
-        $this->assertNotEmpty($translations->getTranslations($firstIdentifier));
-        $this->assertIsString($translations->getTranslation($firstIdentifier, $locale));
-        $this->assertEquals($translation, $translations->getTranslation($firstIdentifier, $locale));
+        self::assertNotNull($translations->getTranslations($firstIdentifier));
+        self::assertNotEmpty($translations->getTranslations($firstIdentifier));
+        self::assertIsString($translations->getTranslation($firstIdentifier, $locale));
+        self::assertEquals($translation, $translations->getTranslation($firstIdentifier, $locale));
 
         $locale = 'nl_NL';
         $translation = 'Eerste Paasdag';
 
-        $this->assertNotNull($translations->getTranslations($secondIdentifier));
-        $this->assertNotEmpty($translations->getTranslations($secondIdentifier));
-        $this->assertIsString($translations->getTranslation($secondIdentifier, $locale));
-        $this->assertEquals($translation, $translations->getTranslation($secondIdentifier, $locale));
+        self::assertNotNull($translations->getTranslations($secondIdentifier));
+        self::assertNotEmpty($translations->getTranslations($secondIdentifier));
+        self::assertIsString($translations->getTranslation($secondIdentifier, $locale));
+        self::assertEquals($translation, $translations->getTranslation($secondIdentifier, $locale));
     }
 }

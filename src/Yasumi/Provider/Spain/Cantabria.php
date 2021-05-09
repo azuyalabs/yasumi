@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -28,7 +30,7 @@ use Yasumi\Provider\Spain;
  * (provinces of León, Palencia and Burgos), on the west by the Principality of Asturias, and on the north by the
  * Cantabrian Sea (Bay of Biscay).
  *
- * @link https://en.wikipedia.org/wiki/Cantabria
+ * @see https://en.wikipedia.org/wiki/Cantabria
  */
 class Cantabria extends Spain
 {
@@ -71,7 +73,7 @@ class Cantabria extends Spain
      * "Special Regional Interest" in 1983. Following the establishment of the autonomous community of Cantabria in
      * 1982, the event became known as the Day of Cantabria.
      *
-     * @link https://www.timeanddate.com/holidays/spain/cantabria-day
+     * @see https://www.timeanddate.com/holidays/spain/cantabria-day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

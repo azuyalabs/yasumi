@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -33,12 +35,12 @@ class StFloriansDayTest extends UpperAustriaBaseTestCase implements YasumiTestCa
      *
      * @dataProvider StFloriansDayDataProvider
      *
-     * @param int $year the year for which Saint Florian's Day needs to be tested.
-     * @param DateTime $expected the expected date.
+     * @param int      $year     the year for which Saint Florian's Day needs to be tested
+     * @param DateTime $expected the expected date
      *
      * @throws ReflectionException
      */
-    public function testStFloriansDay($year, $expected): void
+    public function testStFloriansDay(int $year, DateTime $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
@@ -46,7 +48,8 @@ class StFloriansDayTest extends UpperAustriaBaseTestCase implements YasumiTestCa
     /**
      * Returns a list of random test dates used for assertion of Saint Florian's Day.
      *
-     * @return array list of test dates for Saint Florian's Day.
+     * @return array list of test dates for Saint Florian's Day
+     *
      * @throws Exception
      */
     public function StFloriansDayDataProvider(): array
@@ -56,6 +59,7 @@ class StFloriansDayTest extends UpperAustriaBaseTestCase implements YasumiTestCa
 
     /**
      * Tests translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -70,6 +74,7 @@ class StFloriansDayTest extends UpperAustriaBaseTestCase implements YasumiTestCa
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

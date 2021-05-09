@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -33,12 +35,12 @@ class StJosephsDayTest extends TyrolBaseTestCase implements YasumiTestCaseInterf
      *
      * @dataProvider StJosephsDayDataProvider
      *
-     * @param int $year the year for which St. Joseph's Day needs to be tested.
-     * @param DateTime $expected the expected date.
+     * @param int      $year     the year for which St. Joseph's Day needs to be tested.
+     * @param DateTime $expected the expected date
      *
      * @throws ReflectionException
      */
-    public function testStJosephsDay($year, $expected): void
+    public function testStJosephsDay(int $year, DateTime $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
@@ -47,6 +49,7 @@ class StJosephsDayTest extends TyrolBaseTestCase implements YasumiTestCaseInterf
      * Returns a list of random test dates used for assertion of St. Joseph's Day.
      *
      * @return array list of test dates for St. Joseph's Day.
+     *
      * @throws Exception
      */
     public function StJosephsDayDataProvider(): array
@@ -56,6 +59,7 @@ class StJosephsDayTest extends TyrolBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -70,6 +74,7 @@ class StJosephsDayTest extends TyrolBaseTestCase implements YasumiTestCaseInterf
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

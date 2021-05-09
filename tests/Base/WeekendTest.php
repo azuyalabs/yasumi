@@ -1,9 +1,11 @@
-<?php declare(strict_types=1);
+<?php
 
-/**
+declare(strict_types=1);
+
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -34,7 +36,6 @@ class WeekendTest extends TestCase
      *
      * @dataProvider dataProviderWeekendDays
      *
-     * @param \DateTimeImmutable $date
      * @throws \ReflectionException
      */
     public function testWeekendDay(\DateTimeImmutable $date): void
@@ -42,12 +43,11 @@ class WeekendTest extends TestCase
         $yasumiProvider = Yasumi::create(self::HOLIDAY_PROVIDER, (int) $date->format('Y'));
         $isWeekendDay = $yasumiProvider->isWeekendDay($date);
 
-        $this->assertIsBool($isWeekendDay);
-        $this->assertTrue($isWeekendDay);
+        self::assertIsBool($isWeekendDay);
+        self::assertTrue($isWeekendDay);
     }
 
     /**
-     * @return array
      * @throws \Exception
      */
     public function dataProviderWeekendDays(): array
@@ -78,7 +78,6 @@ class WeekendTest extends TestCase
      *
      * @dataProvider dataProviderNonWeekendDays
      *
-     * @param \DateTimeImmutable $date
      * @throws \ReflectionException
      */
     public function testNonWeekendDay(\DateTimeImmutable $date): void
@@ -86,12 +85,11 @@ class WeekendTest extends TestCase
         $yasumiProvider = Yasumi::create(self::HOLIDAY_PROVIDER, (int) $date->format('Y'));
         $isWeekendDay = $yasumiProvider->isWeekendDay($date);
 
-        $this->assertIsBool($isWeekendDay);
-        $this->assertFalse($isWeekendDay);
+        self::assertIsBool($isWeekendDay);
+        self::assertFalse($isWeekendDay);
     }
 
     /**
-     * @return array
      * @throws \Exception
      */
     public function dataProviderNonWeekendDays(): array

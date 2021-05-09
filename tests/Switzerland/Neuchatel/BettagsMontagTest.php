@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -26,12 +28,12 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class BettagsMontagTest extends NeuchatelBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'bettagsMontag';
 
     /**
-     * Tests Bettags Montag on or after 1832
+     * Tests Bettags Montag on or after 1832.
      *
      * @throws ReflectionException
      * @throws Exception
@@ -41,7 +43,7 @@ class BettagsMontagTest extends NeuchatelBaseTestCase implements YasumiTestCaseI
         $year = $this->generateRandomYear(1832);
 
         // Find third Sunday of September
-        $date = new DateTime('Third Sunday of ' . $year . '-09', new DateTimeZone(self::TIMEZONE));
+        $date = new DateTime('Third Sunday of '.$year.'-09', new DateTimeZone(self::TIMEZONE));
         // Go to next Thursday
         $date->add(new DateInterval('P1D'));
 
@@ -49,7 +51,8 @@ class BettagsMontagTest extends NeuchatelBaseTestCase implements YasumiTestCaseI
     }
 
     /**
-     * Tests Bettags Montag before 1832
+     * Tests Bettags Montag before 1832.
+     *
      * @throws ReflectionException
      */
     public function testBettagsMontagBefore1832(): void
@@ -60,6 +63,7 @@ class BettagsMontagTest extends NeuchatelBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests translated name of Bettags Montag.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -74,6 +78,7 @@ class BettagsMontagTest extends NeuchatelBaseTestCase implements YasumiTestCaseI
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

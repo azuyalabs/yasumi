@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -21,7 +23,6 @@ use Yasumi\Provider\DateTimeZoneFactory;
 
 /**
  * Provider for all holidays in Victoria (Australia).
- *
  */
 class Victoria extends Australia
 {
@@ -59,18 +60,14 @@ class Victoria extends Australia
      * on a date based on a certain number of days after March 21st. The date of Easter Day was defined by the Council
      * of Nicaea in AD325 as the Sunday after the first full moon which falls on or after the Spring Equinox.
      *
-     * @link https://en.wikipedia.org/wiki/Easter
+     * @see https://en.wikipedia.org/wiki/Easter
      *
-     * @param int $year the year for which Easter Saturday need to be created
-     * @param string $timezone the timezone in which Easter Saturday is celebrated
-     * @param string $locale the locale for which Easter Saturday need to be displayed in.
-     * @param string $type The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
-     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
+     * @param int         $year     the year for which Easter Saturday need to be created
+     * @param string      $timezone the timezone in which Easter Saturday is celebrated
+     * @param string      $locale   the locale for which Easter Saturday need to be displayed in
+     * @param string|null $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                              TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return Holiday
-     *
-     * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
      * @throws \Exception
      */
     private function easterSunday(
@@ -95,18 +92,14 @@ class Victoria extends Australia
      * on a date based on a certain number of days after March 21st. The date of Easter Day was defined by the Council
      * of Nicaea in AD325 as the Sunday after the first full moon which falls on or after the Spring Equinox.
      *
-     * @link https://en.wikipedia.org/wiki/Easter
+     * @see https://en.wikipedia.org/wiki/Easter
      *
-     * @param int $year the year for which Easter Saturday need to be created
-     * @param string $timezone the timezone in which Easter Saturday is celebrated
-     * @param string $locale the locale for which Easter Saturday need to be displayed in.
-     * @param string $type The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
-     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
+     * @param int         $year     the year for which Easter Saturday need to be created
+     * @param string      $timezone the timezone in which Easter Saturday is celebrated
+     * @param string      $locale   the locale for which Easter Saturday need to be displayed in
+     * @param string|null $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                              TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return Holiday
-     *
-     * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
      * @throws \Exception
      */
     private function easterSaturday(
@@ -125,7 +118,7 @@ class Victoria extends Australia
     }
 
     /**
-     * Labour Day
+     * Labour Day.
      *
      * @throws \Exception
      */
@@ -146,7 +139,7 @@ class Victoria extends Australia
      * Her actual birthday is on April 21, but it's celebrated as a public holiday on the second Monday of June.
      *  (Except QLD & WA)
      *
-     * @link https://www.timeanddate.com/holidays/australia/queens-birthday
+     * @see https://www.timeanddate.com/holidays/australia/queens-birthday
      *
      * @throws \InvalidArgumentException
      * @throws \Exception
@@ -156,26 +149,26 @@ class Victoria extends Australia
         $this->addHoliday(new Holiday(
             'queensBirthday',
             [],
-            new DateTime('second monday of june ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new DateTime('second monday of june '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));
     }
 
     /**
-     * Melbourne Cup Day
+     * Melbourne Cup Day.
      *
      * @throws \Exception
      */
     private function calculateMelbourneCupDay(): void
     {
-        $date = new DateTime('first Tuesday of November' . " $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new DateTime('first Tuesday of November'." $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
         $this->addHoliday(new Holiday('melbourneCup', ['en' => 'Melbourne Cup'], $date, $this->locale));
     }
 
     /**
-     * AFL Grand Final Day
+     * AFL Grand Final Day.
      *
      * @throws \Exception
      */

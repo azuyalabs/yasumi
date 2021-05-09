@@ -1,9 +1,11 @@
-<?php declare(strict_types=1);
+<?php
 
-/**
+declare(strict_types=1);
+
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -29,12 +31,13 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class StatehoodDayTest extends LithuaniaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     public const HOLIDAY = 'statehoodDay';
 
     /**
-     * Test if holiday is not defined before restoration
+     * Test if holiday is not defined before restoration.
+     *
      * @throws ReflectionException
      */
     public function testHolidayBeforeRestoration(): void
@@ -47,7 +50,8 @@ class StatehoodDayTest extends LithuaniaBaseTestCase implements YasumiTestCaseIn
     }
 
     /**
-     * Test if holiday is defined after restoration
+     * Test if holiday is defined after restoration.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -59,7 +63,7 @@ class StatehoodDayTest extends LithuaniaBaseTestCase implements YasumiTestCaseIn
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("{$year}-07-06", new DateTimeZone(self::TIMEZONE))
+            new DateTime("$year-07-06", new DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -86,6 +90,7 @@ class StatehoodDayTest extends LithuaniaBaseTestCase implements YasumiTestCaseIn
 
     /**
      * {@inheritdoc}
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

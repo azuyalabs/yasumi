@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -21,7 +23,7 @@ use Yasumi\Provider\UnitedKingdom;
  * (8,023 sq mi), and has a population of 3,125,000. Cardiff, Wales's capital and largest city, is the
  * eleventh largest city in the United Kingdom.
  *
- * @link https://en.wikipedia.org/wiki/Wales
+ * @see https://en.wikipedia.org/wiki/Wales
  */
 class Wales extends UnitedKingdom
 {

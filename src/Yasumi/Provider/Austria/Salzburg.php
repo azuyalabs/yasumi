@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -21,7 +23,7 @@ use Yasumi\Provider\Austria;
 /**
  * Provider for all holidays in Salzburg (Austria).
  *
- * @link https://en.wikipedia.org/wiki/Salzburg_(state)
+ * @see https://en.wikipedia.org/wiki/Salzburg_(state)
  */
 class Salzburg extends Austria
 {
@@ -57,7 +59,7 @@ class Salzburg extends Austria
      * saint of the Austrian state of Salzburg. His feast day in Austria is
      * September 24 (since 710).
      *
-     * @link https://en.wikipedia.org/wiki/Rupert_of_Salzburg
+     * @see https://en.wikipedia.org/wiki/Rupert_of_Salzburg
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -73,7 +75,7 @@ class Salzburg extends Austria
         $this->addHoliday(new Holiday(
             'stRupertsDay',
             [],
-            new DateTime($this->year . '-9-24', new \DateTimeZone($this->timezone)),
+            new DateTime($this->year.'-9-24', new \DateTimeZone($this->timezone)),
             $this->locale
         ));
     }

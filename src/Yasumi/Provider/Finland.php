@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -22,7 +24,8 @@ use Yasumi\Holiday;
  */
 class Finland extends AbstractProvider
 {
-    use CommonHolidays, ChristianHolidays;
+    use CommonHolidays;
+    use ChristianHolidays;
 
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
@@ -75,7 +78,7 @@ class Finland extends AbstractProvider
      * always on June 24. Many of the celebrations of midsummer take place on midsummer eve, when many workplaces are
      * closed and shops must close their doors at noon.
      *
-     * @link https://en.wikipedia.org/wiki/Midsummer#Finland
+     * @see https://en.wikipedia.org/wiki/Midsummer#Finland
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -108,8 +111,8 @@ class Finland extends AbstractProvider
      * the dead. In the Swedish and Finnish calendar, the observance takes place on the Saturday between 31 October and
      * 6 November. In many Lutheran Churches, it is moved to the first Sunday of November.
      *
-     * @link https://en.wikipedia.org/wiki/All_Saints%27_Day
-     * @link https://fi.wikipedia.org/wiki/Pyh%C3%A4inp%C3%A4iv%C3%A4
+     * @see https://en.wikipedia.org/wiki/All_Saints%27_Day
+     * @see https://fi.wikipedia.org/wiki/Pyh%C3%A4inp%C3%A4iv%C3%A4
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -127,7 +130,7 @@ class Finland extends AbstractProvider
     }
 
     /**
-     * Independence Day
+     * Independence Day.
      *
      * Finland's Independence Day (Finnish: itsenäisyyspäivä, Swedish: självständighetsdagen) is a national public
      * holiday, and a flag day, held on 6 December to celebrate Finland's declaration of independence from the Russian
@@ -137,7 +140,7 @@ class Finland extends AbstractProvider
      * some parts of Finland was only a minor holiday compared to 16 May, the Whites' day of celebration for prevailing
      * in the Finnish Civil War.
      *
-     * @link https://en.wikipedia.org/wiki/Independence_Day_(Finland)
+     * @see https://en.wikipedia.org/wiki/Independence_Day_(Finland)
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

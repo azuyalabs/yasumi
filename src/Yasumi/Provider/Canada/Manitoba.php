@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -24,7 +26,7 @@ use Yasumi\Provider\DateTimeZoneFactory;
  *
  * Manitoba is a province of Canada.
  *
- * @link https://en.wikipedia.org/wiki/Manitoba
+ * @see https://en.wikipedia.org/wiki/Manitoba
  */
 class Manitoba extends Canada
 {
@@ -45,9 +47,9 @@ class Manitoba extends Canada
     public function initialize(): void
     {
         parent::initialize();
-        
+
         $this->timezone = 'America/Winnipeg';
-        
+
         $this->calculateCivicHoliday();
         $this->calculateLouisRielDay();
         $this->calculateVictoriaDay();
@@ -56,7 +58,7 @@ class Manitoba extends Canada
     /**
      * Civic Holiday.
      *
-     * @link https://en.wikipedia.org/wiki/Civic_Holiday
+     * @see https://en.wikipedia.org/wiki/Civic_Holiday
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -80,7 +82,7 @@ class Manitoba extends Canada
     /**
      * Louis Riel Day.
      *
-     * @link https://en.wikipedia.org/wiki/Family_Day_(Canada)
+     * @see https://en.wikipedia.org/wiki/Family_Day_(Canada)
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -26,7 +28,7 @@ use Yasumi\Provider\Germany;
  * states of Brandenburg, Saxony Anhalt, Thuringia, and Bavaria, as well as the countries of Poland and the Czech
  * Republic. Its capital is Dresden, and its largest city is Leipzig.
  *
- * @link https://en.wikipedia.org/wiki/Saxony
+ * @see https://en.wikipedia.org/wiki/Saxony
  */
 class Saxony extends Germany
 {
@@ -38,6 +40,7 @@ class Saxony extends Germany
 
     /**
      * Initialize holidays for Saxony (Germany).
+     *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
@@ -80,7 +83,7 @@ class Saxony extends Germany
      * it is the Wednesday that falls between 16th and 22nd November. However, it is not a statutory non-working holiday
      * any more, except in the Free State of Saxony.
      *
-     * @link https://en.wikipedia.org/wiki/Bu%C3%9F-_und_Bettag
+     * @see https://en.wikipedia.org/wiki/Bu%C3%9F-_und_Bettag
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

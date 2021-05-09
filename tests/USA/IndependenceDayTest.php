@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -25,17 +27,18 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class IndependenceDayTest extends USABaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'independenceDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1776;
 
     /**
      * Tests Independence Day on or after 1776. Independence Day is celebrated since 1776 on July 4th.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -51,7 +54,8 @@ class IndependenceDayTest extends USABaseTestCase implements YasumiTestCaseInter
     }
 
     /**
-     * Tests Independence Day on or after 1776 when substituted on Monday (when Independence Day falls on Sunday)
+     * Tests Independence Day on or after 1776 when substituted on Monday (when Independence Day falls on Sunday).
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -67,7 +71,8 @@ class IndependenceDayTest extends USABaseTestCase implements YasumiTestCaseInter
     }
 
     /**
-     * Tests Independence Day on or after 1776 when substituted on Friday (when Independence Day falls on Saturday)
+     * Tests Independence Day on or after 1776 when substituted on Friday (when Independence Day falls on Saturday).
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -84,6 +89,7 @@ class IndependenceDayTest extends USABaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests Independence Day before 1776. Independence Day is celebrated since 1776 on July 4th.
+     *
      * @throws ReflectionException
      */
     public function testIndependenceDayBefore1776(): void
@@ -97,6 +103,7 @@ class IndependenceDayTest extends USABaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -111,6 +118,7 @@ class IndependenceDayTest extends USABaseTestCase implements YasumiTestCaseInter
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

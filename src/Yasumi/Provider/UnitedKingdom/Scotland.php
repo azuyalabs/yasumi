@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -33,7 +35,7 @@ use Yasumi\SubstituteHoliday;
  * holidays are not recognised as statutory public holidays in Scotland, as most public holidays are
  * determined by local authorities across Scotland.
  *
- * @link https://en.wikipedia.org/wiki/Scotland
+ * @see https://en.wikipedia.org/wiki/Scotland
  */
 class Scotland extends UnitedKingdom
 {
@@ -75,8 +77,8 @@ class Scotland extends UnitedKingdom
      * In Scotland, January 2 is also a bank holiday. If January 2 falls on a Saturday, the following Monday is a bank holiday.
      * If New Years Day falls on a Saturday, the following Monday and Tuesday are bank holidays.
      *
-     * @link https://en.wikipedia.org/wiki/Public_holidays_in_Scotland
-     * @link https://www.timeanddate.com/holidays/uk/new-year-day
+     * @see https://en.wikipedia.org/wiki/Public_holidays_in_Scotland
+     * @see https://www.timeanddate.com/holidays/uk/new-year-day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -136,8 +138,8 @@ class Scotland extends UnitedKingdom
      * The Summer Bank holiday, also known as the Late Summer bank holiday, is a time for people in the United Kingdom
      * to have a day off work or school. In Scotland it falls on the first Monday of August.
      *
-     * @link https://www.timeanddate.com/holidays/uk/summer-bank-holiday
-     * @link https://en.wikipedia.org/wiki/Public_holidays_in_Scotland
+     * @see https://www.timeanddate.com/holidays/uk/summer-bank-holiday
+     * @see https://en.wikipedia.org/wiki/Public_holidays_in_Scotland
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -164,7 +166,7 @@ class Scotland extends UnitedKingdom
      *
      * Saint Andrew's Day is Scotland's national day, celebrated on 30 November.
      *
-     * @link https://en.wikipedia.org/wiki/Saint_Andrew%27s_Day
+     * @see https://en.wikipedia.org/wiki/Saint_Andrew%27s_Day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -180,7 +182,7 @@ class Scotland extends UnitedKingdom
         $holiday = new Holiday(
             'stAndrewsDay',
             [],
-            new DateTime($this->year . '-11-30', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new DateTime($this->year.'-11-30', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
         );

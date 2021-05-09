@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -23,7 +25,8 @@ use Yasumi\Holiday;
  */
 class Netherlands extends AbstractProvider
 {
-    use CommonHolidays, ChristianHolidays;
+    use CommonHolidays;
+    use ChristianHolidays;
 
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
@@ -138,6 +141,7 @@ class Netherlands extends AbstractProvider
      * The beginning of winter time. Winter time is also known as standard time.
      *
      * @throws \Exception
+     *
      * @see \Yasumi\Provider\CommonHolidays::winterTime()
      */
     private function calculateWinterTime(): void
@@ -154,6 +158,7 @@ class Netherlands extends AbstractProvider
      * The beginning of summer time. Summer time is also known as day lights saving time.
      *
      * @throws \Exception
+     *
      * @see \Yasumi\Provider\CommonHolidays::summerTime()
      */
     private function calculateSummerTime(): void
@@ -165,20 +170,20 @@ class Netherlands extends AbstractProvider
     }
 
     /**
-     * St. Nicholas' Day
+     * St. Nicholas' Day.
      *
      * The feast of Sinterklaas celebrates the name day of Saint Nicholas on 6 December.
      * The feast is celebrated annually with the giving of gifts on St. Nicholas' Eve (5 December) in the Netherlands
      * and on the morning of 6 December, Saint Nicholas Day, in Belgium, Luxembourg and northern France
      * (French Flanders, Lorraine and Artois).
      *
-     * @link https://en.wikipedia.org/wiki/Sinterklaas
+     * @see https://en.wikipedia.org/wiki/Sinterklaas
      *
      * @throws \Exception
      */
     private function calculateStNicholasDay(): void
     {
-        /**
+        /*
          * St. Nicholas' Day
          */
         $this->addHoliday(new Holiday(
@@ -191,14 +196,14 @@ class Netherlands extends AbstractProvider
     }
 
     /**
-     * Halloween
+     * Halloween.
      *
      * Halloween or Hallowe'en (a contraction of Hallows' Even or Hallows' Evening), is a celebration observed in
      * several countries on 31 October, the eve of the Western Christian feast of All Hallows' Day.
      * It begins the three-day observance of Allhallowtide, the time in the liturgical year dedicated to remembering the
      * dead, including saints (hallows), martyrs, and all the faithful departed.
      *
-     * @link https://en.wikipedia.org/wiki/Halloween
+     * @see https://en.wikipedia.org/wiki/Halloween
      *
      * @throws \Exception
      */

@@ -1,9 +1,11 @@
-<?php declare(strict_types=1);
+<?php
 
-/**
+declare(strict_types=1);
+
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -21,8 +23,6 @@ use Iterator;
  * Filters for all holidays that happen on the given date.
  *
  * Note: this class can be used separately, however is implemented by the AbstractProvider::on method.
- *
- * @package Yasumi\Filters
  */
 class OnFilter extends AbstractFilter
 {
@@ -31,14 +31,12 @@ class OnFilter extends AbstractFilter
      */
     private $date;
 
-
     /**
-     * Construct the On FilterIterator Object
+     * Construct the On FilterIterator Object.
      *
-     * @param Iterator $iterator Iterator object of the Holidays Provider
-     * @param \DateTimeInterface $date Start date of the time frame to check against
+     * @param Iterator           $iterator Iterator object of the Holidays Provider
+     * @param \DateTimeInterface $date     Start date of the time frame to check against
      */
-
     public function __construct(
         Iterator $iterator,
         \DateTimeInterface $date
@@ -47,12 +45,10 @@ class OnFilter extends AbstractFilter
         $this->date = $date->format('Y-m-d');
     }
 
-    /**
-     * @return bool Check whether the current element of the iterator is acceptable
-     */
     public function accept(): bool
     {
         $holiday = $this->getInnerIterator()->current()->format('Y-m-d');
+
         return $holiday === $this->date;
     }
 }

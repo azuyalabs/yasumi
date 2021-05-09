@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -25,17 +27,18 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class InstaurationRepubliqueTest extends NeuchatelBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'instaurationRepublique';
 
     /**
-     * The year in which the holiday was established
+     * The year in which the holiday was established.
      */
     public const ESTABLISHMENT_YEAR = 1849;
 
     /**
      * Tests Instauration de la République on or after 1849.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -52,6 +55,7 @@ class InstaurationRepubliqueTest extends NeuchatelBaseTestCase implements Yasumi
 
     /**
      * Tests Instauration de la République before 1849.
+     *
      * @throws ReflectionException
      */
     public function testInstaurationRepubliqueBefore1849(): void
@@ -65,6 +69,7 @@ class InstaurationRepubliqueTest extends NeuchatelBaseTestCase implements Yasumi
 
     /**
      * Tests translated name of Instauration de la République.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -79,6 +84,7 @@ class InstaurationRepubliqueTest extends NeuchatelBaseTestCase implements Yasumi
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

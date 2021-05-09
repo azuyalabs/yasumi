@@ -1,9 +1,11 @@
-<?php declare(strict_types=1);
+<?php
 
-/**
+declare(strict_types=1);
+
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -40,15 +42,15 @@ use Yasumi\Holiday;
  *
  * Note: Slovak holidays are valid since 1993-01-01, the day od dissolution of Czechoslovakia into Czech republic and
  * Slovakia.
+ *
  * @see     https://en.wikipedia.org/wiki/Dissolution_of_Czechoslovakia
  *
- *
- * @package Yasumi\Provider
  * @author  Andrej Rypak (dakujem) <xrypak@gmail.com>
  */
 class Slovakia extends AbstractProvider
 {
-    use CommonHolidays, ChristianHolidays;
+    use CommonHolidays;
+    use ChristianHolidays;
 
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
@@ -105,9 +107,8 @@ class Slovakia extends AbstractProvider
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
     }
 
-
     /**
-     * New Year's Day
+     * New Year's Day.
      *
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_Slovakia
      *
@@ -124,13 +125,13 @@ class Slovakia extends AbstractProvider
                 'sk' => 'Deň vzniku Slovenskej republiky',
                 'en' => 'Day of the Establishment of the Slovak Republic',
             ],
-            new DateTime($this->year . '-01-01', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new DateTime($this->year.'-01-01', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
 
     /**
-     * Saints Cyril and Methodius Day
+     * Saints Cyril and Methodius Day.
      *
      * @see https://en.wikipedia.org/wiki/Saints_Cyril_and_Methodius
      *
@@ -150,14 +151,14 @@ class Slovakia extends AbstractProvider
                 'cs' => 'Den slovanských věrozvěstů Cyrila a Metoděje',
                 'en' => 'Saints Cyril and Methodius Day',
             ],
-            new DateTime($this->year . '-07-05', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new DateTime($this->year.'-07-05', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));
     }
 
     /**
-     * Slovak National Uprising Day
+     * Slovak National Uprising Day.
      *
      * @see https://en.wikipedia.org/wiki/Slovak_National_Uprising
      *
@@ -174,14 +175,14 @@ class Slovakia extends AbstractProvider
                 'sk' => 'Výročie Slovenského národného povstania',
                 'en' => 'Slovak National Uprising Day',
             ],
-            new DateTime($this->year . '-08-29', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new DateTime($this->year.'-08-29', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));
     }
 
     /**
-     * Day of the Constitution of the Slovak Republic
+     * Day of the Constitution of the Slovak Republic.
      *
      * @see https://en.wikipedia.org/wiki/Constitution_of_Slovakia
      *
@@ -198,7 +199,7 @@ class Slovakia extends AbstractProvider
                 'sk' => 'Deň Ústavy Slovenskej republiky',
                 'en' => 'Day of the Constitution of the Slovak Republic',
             ],
-            new DateTime($this->year . '-09-01', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new DateTime($this->year.'-09-01', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));
@@ -223,11 +224,11 @@ class Slovakia extends AbstractProvider
         $this->addHoliday(new Holiday('ourLadyOfSorrowsDay', [
             'sk' => 'Sviatok Sedembolestnej Panny Márie',
             'en' => 'Our Lady of Sorrows Day',
-        ], new DateTime($this->year . '-09-15', DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_BANK));
+        ], new DateTime($this->year.'-09-15', DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_BANK));
     }
 
     /**
-     * Struggle for Freedom and Democracy Day
+     * Struggle for Freedom and Democracy Day.
      *
      * Note: this national day is common for Czech republic and Slovakia.
      *
@@ -245,7 +246,7 @@ class Slovakia extends AbstractProvider
                 'cs' => 'Den boje za svobodu a demokracii',
                 'en' => 'Struggle for Freedom and Democracy Day',
             ],
-            new DateTime($this->year . '-11-17', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new DateTime($this->year.'-11-17', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));

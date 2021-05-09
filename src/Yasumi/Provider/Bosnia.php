@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -24,7 +26,8 @@ use Yasumi\Holiday;
  */
 class Bosnia extends AbstractProvider
 {
-    use CommonHolidays, ChristianHolidays;
+    use CommonHolidays;
+    use ChristianHolidays;
 
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
@@ -58,9 +61,9 @@ class Bosnia extends AbstractProvider
         $this->addHoliday(new Holiday('orthodoxChristmasDay', [
             'en' => 'Orthodox Christmas Day',
             'bs_Latn' => 'Pravoslavni Božić',
-        ], new DateTime("{$this->year}-01-07", DateTimeZoneFactory::getDateTimeZone($this->timezone))));
+        ], new DateTime("$this->year-01-07", DateTimeZoneFactory::getDateTimeZone($this->timezone))));
 
-        /**
+        /*
          * Independence Day
          */
         if ($this->year >= 1992) {
@@ -70,7 +73,7 @@ class Bosnia extends AbstractProvider
             ], new DateTime("$this->year-3-1", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
 
-        /**
+        /*
          * Bosnian Statehood Day
          */
         if ($this->year >= 1943) {
@@ -80,7 +83,7 @@ class Bosnia extends AbstractProvider
             ], new DateTime("$this->year-11-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
 
-        /**
+        /*
          * Day after New Years Day
          */
         $this->addHoliday(new Holiday('dayAfterNewYearsDay', [
@@ -88,7 +91,7 @@ class Bosnia extends AbstractProvider
             'bs_Latn' => 'Nova godina - drugi dan',
         ], new DateTime("$this->year-01-02", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
 
-        /**
+        /*
          * Second Labour day
          */
         $this->addHoliday(new Holiday('secondLabourDay', [

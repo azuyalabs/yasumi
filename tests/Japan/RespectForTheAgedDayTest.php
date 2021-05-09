@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -25,18 +27,19 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class RespectForTheAgedDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'respectfortheAgedDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1996;
 
     /**
      * Tests Respect for the Aged Day after 2003. Respect for the Aged Day was established since 1996 on September
      * 15th. After 2003 it was changed to be the third monday of September.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -54,6 +57,7 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase implements YasumiTestCa
     /**
      * Tests Respect for the Aged Day between 1996 and 2003. Respect for the Aged Day was established since 1996 on
      * September 15th. After 2003 it was changed to be the third monday of September.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -70,7 +74,8 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase implements YasumiTestCa
 
     /**
      * Tests Respect for the Aged Day between 1996 and 2003 substituted next working day (when Respect for the Aged Day
-     * falls on a Sunday)
+     * falls on a Sunday).
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -79,7 +84,7 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase implements YasumiTestCa
         $year = 2002;
         $this->assertHoliday(
             self::REGION,
-            self::SUBSTITUTE_PREFIX . self::HOLIDAY,
+            self::SUBSTITUTE_PREFIX.self::HOLIDAY,
             $year,
             new DateTime("$year-9-16", new DateTimeZone(self::TIMEZONE))
         );
@@ -88,6 +93,7 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase implements YasumiTestCa
     /**
      * Tests Respect for the Aged Day before 1996. Respect for the Aged Day was established since 1996 on September
      * 15th. After 2003 it was changed to be the third monday of September.
+     *
      * @throws ReflectionException
      */
     public function testRespectForTheAgedDayBefore1996(): void
@@ -101,6 +107,7 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase implements YasumiTestCa
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -115,6 +122,7 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase implements YasumiTestCa
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

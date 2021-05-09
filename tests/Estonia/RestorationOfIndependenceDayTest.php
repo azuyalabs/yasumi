@@ -1,9 +1,11 @@
-<?php declare(strict_types=1);
+<?php
 
-/**
+declare(strict_types=1);
+
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -29,12 +31,13 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class RestorationOfIndependenceDayTest extends EstoniaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     public const HOLIDAY = 'restorationOfIndependenceDay';
 
     /**
-     * Test if holiday is not defined before
+     * Test if holiday is not defined before.
+     *
      * @throws ReflectionException
      */
     public function testHolidayBefore(): void
@@ -47,7 +50,8 @@ class RestorationOfIndependenceDayTest extends EstoniaBaseTestCase implements Ya
     }
 
     /**
-     * Test if holiday is defined after
+     * Test if holiday is defined after.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -59,7 +63,7 @@ class RestorationOfIndependenceDayTest extends EstoniaBaseTestCase implements Ya
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("{$year}-08-20", new DateTimeZone(self::TIMEZONE))
+            new DateTime("$year-08-20", new DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -74,7 +78,7 @@ class RestorationOfIndependenceDayTest extends EstoniaBaseTestCase implements Ya
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(Estonia::RESTORATION_OF_INDEPENDENCE_YEAR),
-            [self::LOCALE => 'Tasiseseisvumispäev']
+            [self::LOCALE => 'Taasiseseisvumispäev']
         );
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -86,6 +90,7 @@ class RestorationOfIndependenceDayTest extends EstoniaBaseTestCase implements Ya
 
     /**
      * {@inheritdoc}
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

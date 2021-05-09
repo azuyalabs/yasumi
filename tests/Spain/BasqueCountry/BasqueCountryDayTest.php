@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -25,22 +27,23 @@ use Yasumi\tests\YasumiTestCaseInterface;
 class BasqueCountryDayTest extends BasqueCountryBaseTestCase implements YasumiTestCaseInterface
 {
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     public const HOLIDAY = 'basqueCountryDay';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 2011;
 
     /**
-     * The year in which the holiday was abolished
+     * The year in which the holiday was abolished.
      */
     public const ABOLISHMENT_YEAR = 2013;
 
     /**
      * Tests the holiday defined in this test on or after establishment.
+     *
      * @throws Exception
      * @throws ReflectionException
      */
@@ -57,6 +60,7 @@ class BasqueCountryDayTest extends BasqueCountryBaseTestCase implements YasumiTe
 
     /**
      * Tests the holiday defined in this test before establishment.
+     *
      * @throws ReflectionException
      */
     public function testHolidayBeforeEstablishment(): void
@@ -70,6 +74,7 @@ class BasqueCountryDayTest extends BasqueCountryBaseTestCase implements YasumiTe
 
     /**
      * Tests the holiday defined in this test after abolishment.
+     *
      * @throws ReflectionException
      */
     public function testHolidayDayAfterAbolishment(): void
@@ -79,6 +84,7 @@ class BasqueCountryDayTest extends BasqueCountryBaseTestCase implements YasumiTe
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -93,6 +99,7 @@ class BasqueCountryDayTest extends BasqueCountryBaseTestCase implements YasumiTe
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

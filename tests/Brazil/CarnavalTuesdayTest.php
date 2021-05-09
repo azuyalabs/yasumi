@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -27,12 +29,12 @@ class CarnavalTuesdayTest extends BrazilBaseTestCase implements YasumiTestCaseIn
     use ChristianHolidays;
 
     /**
-     * The name of the holiday
+     * The name of the holiday.
      */
     public const HOLIDAY = 'carnavalTuesday';
 
     /**
-     * The year in which the holiday was first established
+     * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1700;
 
@@ -55,6 +57,7 @@ class CarnavalTuesdayTest extends BrazilBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests Carnaval Tuesday on or before 1700.
+     *
      * @throws ReflectionException
      */
     public function testCarnavalTuesdayBefore1700(): void
@@ -65,6 +68,7 @@ class CarnavalTuesdayTest extends BrazilBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests the translated name of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -75,6 +79,7 @@ class CarnavalTuesdayTest extends BrazilBaseTestCase implements YasumiTestCaseIn
 
     /**
      * Tests type of the holiday defined in this test.
+     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

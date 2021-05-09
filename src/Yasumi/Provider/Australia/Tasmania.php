@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -20,7 +22,6 @@ use Yasumi\Provider\DateTimeZoneFactory;
 
 /**
  * Provider for all holidays in Tasmania (Australia).
- *
  */
 class Tasmania extends Australia
 {
@@ -49,7 +50,7 @@ class Tasmania extends Australia
     }
 
     /**
-     * Eight Hours Day
+     * Eight Hours Day.
      *
      * @throws \Exception
      */
@@ -70,7 +71,7 @@ class Tasmania extends Australia
      * Her actual birthday is on April 21, but it's celebrated as a public holiday on the second Monday of June.
      *  (Except QLD & WA)
      *
-     * @link https://www.timeanddate.com/holidays/australia/queens-birthday
+     * @see https://www.timeanddate.com/holidays/australia/queens-birthday
      *
      * @throws \InvalidArgumentException
      * @throws \Exception
@@ -80,16 +81,16 @@ class Tasmania extends Australia
         $this->addHoliday(new Holiday(
             'queensBirthday',
             [],
-            new DateTime('second monday of june ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new DateTime('second monday of june '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));
     }
 
     /**
-     * Recreation Day
+     * Recreation Day.
      *
-     * @link https://en.wikipedia.org/wiki/Recreation_Day_holiday
+     * @see https://en.wikipedia.org/wiki/Recreation_Day_holiday
      *
      * @throws \InvalidArgumentException
      * @throws \Exception
@@ -99,7 +100,7 @@ class Tasmania extends Australia
         $this->addHoliday(new Holiday(
             'recreationDay',
             ['en' => 'Recreation Day'],
-            new DateTime('first monday of november ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new DateTime('first monday of november '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));

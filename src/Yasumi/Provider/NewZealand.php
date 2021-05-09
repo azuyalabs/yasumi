@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -23,7 +25,8 @@ use Yasumi\Holiday;
  */
 class NewZealand extends AbstractProvider
 {
-    use CommonHolidays, ChristianHolidays;
+    use CommonHolidays;
+    use ChristianHolidays;
 
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
@@ -62,10 +65,10 @@ class NewZealand extends AbstractProvider
      * New Zealanders celebrate New Years Day and The Day After New Years Day,
      * if either of these holidays occur on a weekend, the dates need to be adjusted.
      *
-     * @link https://en.wikipedia.org/wiki/Public_holidays_in_New_Zealand#Statutory_holidays
-     * @link https://www.timeanddate.com/holidays/new-zealand/new-year-day
-     * @link https://www.timeanddate.com/holidays/new-zealand/day-after-new-years-day
-     * @link https://www.employment.govt.nz/leave-and-holidays/public-holidays/public-holidays-falling-on-a-weekend/
+     * @see https://en.wikipedia.org/wiki/Public_holidays_in_New_Zealand#Statutory_holidays
+     * @see https://www.timeanddate.com/holidays/new-zealand/new-year-day
+     * @see https://www.timeanddate.com/holidays/new-zealand/day-after-new-years-day
+     * @see https://www.employment.govt.nz/leave-and-holidays/public-holidays/public-holidays-falling-on-a-weekend/
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -104,8 +107,8 @@ class NewZealand extends AbstractProvider
      * on that date in 1840. In recent legislation, if 6 February falls on a Saturday or Sunday,
      * the Monday that immediately follows becomes a public holiday.
      *
-     * @link https://en.wikipedia.org/wiki/Waitangi_Day
-     * @link https://www.employment.govt.nz/leave-and-holidays/public-holidays/public-holidays-falling-on-a-weekend/
+     * @see https://en.wikipedia.org/wiki/Waitangi_Day
+     * @see https://www.employment.govt.nz/leave-and-holidays/public-holidays/public-holidays-falling-on-a-weekend/
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -134,8 +137,8 @@ class NewZealand extends AbstractProvider
      * and New Zealanders "who served and died in all wars, conflicts, and peacekeeping operations"
      * Observed on 25 April each year.
      *
-     * @link https://en.wikipedia.org/wiki/Anzac_Day
-     * @link https://www.employment.govt.nz/leave-and-holidays/public-holidays/public-holidays-falling-on-a-weekend/
+     * @see https://en.wikipedia.org/wiki/Anzac_Day
+     * @see https://www.employment.govt.nz/leave-and-holidays/public-holidays/public-holidays-falling-on-a-weekend/
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -168,7 +171,7 @@ class NewZealand extends AbstractProvider
      *
      * Her actual birthday is on April 21, but it's celebrated as a public holiday on the first Monday of June.
      *
-     * @link https://www.timeanddate.com/holidays/new-zealand/queen-birthday
+     * @see https://www.timeanddate.com/holidays/new-zealand/queen-birthday
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -201,7 +204,7 @@ class NewZealand extends AbstractProvider
      * second Wednesday in October in 1900. The holiday was moved to the fourth Monday of October in 1910
      * has remained on this date since then.
      *
-     * @link https://www.timeanddate.com/holidays/new-zealand/labour-day
+     * @see https://www.timeanddate.com/holidays/new-zealand/labour-day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -215,7 +218,7 @@ class NewZealand extends AbstractProvider
         }
 
         $date = new DateTime(
-            ($this->year < 1910 ? 'second wednesday of october' : 'fourth monday of october') . " $this->year",
+            ($this->year < 1910 ? 'second wednesday of october' : 'fourth monday of october')." $this->year",
             DateTimeZoneFactory::getDateTimeZone($this->timezone)
         );
 
@@ -228,9 +231,9 @@ class NewZealand extends AbstractProvider
      * Christmas day, and Boxing day are public holidays in New Zealand,
      * they are subject to mondayisation rules.
      *
-     * @link https://www.timeanddate.com/holidays/new-zealand/boxing-day
-     * @link https://www.timeanddate.com/holidays/new-zealand/christmas-day
-     * @link https://www.employment.govt.nz/leave-and-holidays/public-holidays/public-holidays-falling-on-a-weekend/
+     * @see https://www.timeanddate.com/holidays/new-zealand/boxing-day
+     * @see https://www.timeanddate.com/holidays/new-zealand/christmas-day
+     * @see https://www.employment.govt.nz/leave-and-holidays/public-holidays/public-holidays-falling-on-a-weekend/
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

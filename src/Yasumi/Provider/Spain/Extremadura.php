@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -28,7 +30,7 @@ use Yasumi\Provider\Spain;
  * Salamanca and Ávila); to the south, it borders Andalusia (provinces of Huelva, Seville, and Córdoba); and to the
  * east, it borders Castile–La Mancha (provinces of Toledo and Ciudad Real).
  *
- * @link https://en.wikipedia.org/wiki/Extremadura
+ * @see https://en.wikipedia.org/wiki/Extremadura
  */
 class Extremadura extends Spain
 {
@@ -68,7 +70,7 @@ class Extremadura extends Spain
      * A law enacted on June 3, 1985, proclaimed September 8 to be a public holiday known as the Day of Extremadura.
      * The public holiday was first observed on September 8, 1985.
      *
-     * @link https://www.timeanddate.com/holidays/spain/extremadura-day
+     * @see https://www.timeanddate.com/holidays/spain/extremadura-day
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
