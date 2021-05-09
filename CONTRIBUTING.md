@@ -1,6 +1,6 @@
 # Contributing
 
-Contributions are encouraged and welcome; we are always happy to get feedback or pull requests on [Github](https://github.com/azuyalabs/yasumi).
+Contributions are encouraged and welcome; we are always happy to get feedback or pull requests on [GitHub](https://github.com/azuyalabs/yasumi).
 
 When contributing there are a few guidelines we'd like you to keep in mind:
  
