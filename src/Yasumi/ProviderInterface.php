@@ -27,4 +27,12 @@ interface ProviderInterface
      * Initialize country holidays.
      */
     public function initialize(): void;
+
+    /**
+     * Returns a list of sources (i.e. references to websites, books, scientific papers, etc.) that are
+     * used for determining the calculation logic of the providers' holidays.
+     *
+     * @return array<string>|null a list of external sources
+     */
+    public function getSources(): ?array;
 }
