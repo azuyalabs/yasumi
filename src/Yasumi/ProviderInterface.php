@@ -32,7 +32,7 @@ interface ProviderInterface
      * Returns a list of sources (i.e. references to websites, books, scientific papers, etc.) that are
      * used for determining the calculation logic of the providers' holidays.
      *
-     * @return array<string>|null a list of external sources
+     * @return array<string> a list of external sources (empty when no sources are defined)
      */
-    public function getSources(): ?array;
+    public function getSources(): array;
 }

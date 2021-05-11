@@ -76,6 +76,13 @@ class Denmark extends AbstractProvider
         }
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Denmark',
+        ];
+    }
+
     /**
      * Great Prayer Day.
      *

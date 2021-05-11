@@ -56,7 +56,7 @@ class Australia extends AbstractProvider
         $this->calculateChristmasDay();
     }
 
-    public function getSources(): ?array
+    public function getSources(): array
     {
         return [
             'https://en.wikipedia.org/wiki/Public_holidays_in_Australia',

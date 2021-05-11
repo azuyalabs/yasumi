@@ -71,4 +71,11 @@ class Belgium extends AbstractProvider
             'nl' => 'nationale feestdag',
         ], new DateTime("$this->year-7-21", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
     }
+
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Belgium',
+        ];
+    }
 }
