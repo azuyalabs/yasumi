@@ -16,11 +16,12 @@ namespace Yasumi\tests\Finland;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in Finland.
  */
-class FinlandTest extends FinlandBaseTestCase
+class FinlandTest extends FinlandBaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
