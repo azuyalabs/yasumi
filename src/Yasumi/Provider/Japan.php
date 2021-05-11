@@ -110,6 +110,14 @@ class Japan extends AbstractProvider
         $this->calculateBridgeHolidays();
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Japan',
+            'https://ja.wikipedia.org/wiki/%E5%9B%BD%E6%B0%91%E3%81%AE%E7%A5%9D%E6%97%A5',
+        ];
+    }
+
     /**
      * National Foundation Day. National Foundation Day is held on February 11th and established since 1966.
      *
