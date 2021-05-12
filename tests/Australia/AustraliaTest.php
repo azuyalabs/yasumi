@@ -16,11 +16,12 @@ namespace Yasumi\tests\Australia;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in Australia.
  */
-class AustraliaTest extends AustraliaBaseTestCase
+class AustraliaTest extends AustraliaBaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -91,5 +92,13 @@ class AustraliaTest extends AustraliaBaseTestCase
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], $this->region, $this->year, Holiday::TYPE_OTHER);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources($this->region, 1); // TODO: Investigate why not a constant is used for region.
     }
 }
