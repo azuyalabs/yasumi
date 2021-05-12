@@ -99,4 +99,12 @@ class Bosnia extends AbstractProvider
             'bs_Latn' => 'Praznik rada - drugi dan',
         ], new DateTime("$this->year-05-02", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
     }
+
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Bosnia_and_Herzegovina',
+            'https://bs.wikipedia.org/wiki/Praznici_i_blagdani_u_Bosni_i_Hercegovini',
+        ];
+    }
 }

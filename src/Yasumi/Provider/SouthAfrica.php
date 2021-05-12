@@ -80,6 +80,15 @@ class SouthAfrica extends AbstractProvider
         $this->calculateSubstituteHolidays();
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_South_Africa',
+            'https://af.wikipedia.org/wiki/Lys_van_openbare_vakansiedae_in_Suid-Afrika',
+            'https://zu.wikipedia.org/wiki/Amaholide_omphakathi_eNingizimu_Afrika',
+        ];
+    }
+
     /**
      * Human Rights Day.
      *
