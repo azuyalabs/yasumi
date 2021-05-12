@@ -18,13 +18,14 @@ namespace Yasumi\tests\Estonia;
 use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Estonia;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in Estonia.
  *
  * @author Gedas Lukošius <gedas@lukosius.me>
  */
-class EstoniaTest extends EstoniaBaseTestCase
+class EstoniaTest extends EstoniaBaseTestCase implements ProviderTestCase
 {
     /**
      * Tests if all official holidays in Estonia are defined by the provider class.
@@ -100,5 +101,13 @@ class EstoniaTest extends EstoniaBaseTestCase
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_OTHER);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources(self::REGION, 2);
     }
 }
