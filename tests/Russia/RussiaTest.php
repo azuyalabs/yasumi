@@ -18,13 +18,14 @@ namespace Yasumi\tests\Russia;
 use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Russia;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in Russia.
  *
  * @author Gedas Lukošius <gedas@lukosius.me>
  */
-class RussiaTest extends RussiaBaseTestCase
+class RussiaTest extends RussiaBaseTestCase implements ProviderTestCase
 {
     /**
      * Tests if all official holidays in Russia are defined by the provider class.
@@ -102,5 +103,13 @@ class RussiaTest extends RussiaBaseTestCase
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_OTHER);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources(self::REGION, 2);
     }
 }

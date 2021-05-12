@@ -65,6 +65,14 @@ class Poland extends AbstractProvider
         $this->calculateConstitutionDay();
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Poland',
+            'https://pl.wikipedia.org/wiki/Dni_wolne_od_pracy_w_Polsce',
+        ];
+    }
+
     /**
      * Constitution Day.
      *

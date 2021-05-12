@@ -423,11 +423,6 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         return new OnFilter($this->getIterator(), $date);
     }
 
-    public function getSources(): array
-    {
-        return [];
-    }
-
     /**
      * Clear all holidays.
      */
