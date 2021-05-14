@@ -66,6 +66,13 @@ class USA extends AbstractProvider
         $this->calculateSubstituteHolidays();
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_the_United_States',
+        ];
+    }
+
     /**
      * Dr. Martin Luther King Day.
      *

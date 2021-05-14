@@ -70,6 +70,14 @@ class France extends AbstractProvider
         $this->calculateBastilleDay();
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_France',
+            'https://fr.wikipedia.org/wiki/F%C3%AAtes_et_jours_f%C3%A9ri%C3%A9s_en_France',
+        ];
+    }
+
     /**
      * French National Day.
      *
