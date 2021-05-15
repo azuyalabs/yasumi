@@ -59,6 +59,13 @@ class NewZealand extends AbstractProvider
         $this->calculateChristmasHolidays();
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_New_Zealand',
+        ];
+    }
+
     /**
      * Holidays associated with the start of the modern Gregorian calendar.
      *

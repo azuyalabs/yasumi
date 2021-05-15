@@ -69,6 +69,14 @@ class Germany extends AbstractProvider
         }
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Germany',
+            'https://de.wikipedia.org/wiki/Gesetzliche_Feiertage_in_Deutschland',
+        ];
+    }
+
     /**
      * German Unity Day.
      *
