@@ -76,6 +76,14 @@ class Romania extends AbstractProvider
         $this->calculateChildrensDay(); // Since 18.11.2016 (Law 220/2016), Celebrated on 1st of June
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Romania',
+            'https://ro.wikipedia.org/wiki/S%C4%83rb%C4%83tori_publice_%C3%AEn_Rom%C3%A2nia',
+        ];
+    }
+
     /**
      * @throws \Exception
      */

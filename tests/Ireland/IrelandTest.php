@@ -16,11 +16,12 @@ namespace Yasumi\tests\Ireland;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in Ireland.
  */
-class IrelandTest extends IrelandBaseTestCase
+class IrelandTest extends IrelandBaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -105,5 +106,13 @@ class IrelandTest extends IrelandBaseTestCase
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources(self::REGION, 1);
     }
 }

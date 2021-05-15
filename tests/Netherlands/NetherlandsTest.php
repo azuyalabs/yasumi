@@ -16,11 +16,12 @@ namespace Yasumi\tests\Netherlands;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in Netherlands.
  */
-class NetherlandsTest extends NetherlandsBaseTestCase
+class NetherlandsTest extends NetherlandsBaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -113,5 +114,13 @@ class NetherlandsTest extends NetherlandsBaseTestCase
             'epiphany',
             'princesDay',
         ], self::REGION, $this->year, Holiday::TYPE_OTHER);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources(self::REGION, 2);
     }
 }
