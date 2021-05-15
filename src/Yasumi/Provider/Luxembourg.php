@@ -61,6 +61,14 @@ class Luxembourg extends AbstractProvider
         $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Luxembourg',
+            'https://lb.wikipedia.org/wiki/Gesetzlech_Feierdeeg_zu_L%C3%ABtzebuerg',
+        ];
+    }
+
     /**
      * Europe Day.
      *

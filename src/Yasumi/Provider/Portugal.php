@@ -21,8 +21,6 @@ use Yasumi\Holiday;
 
 /**
  * Holidays for Portugal.
- *
- * @see    https://pt.wikipedia.org/wiki/Feriados_em_Portugal
  */
 class Portugal extends AbstractProvider
 {
@@ -60,6 +58,14 @@ class Portugal extends AbstractProvider
         $this->calculateRestorationOfIndependenceDay();
         $this->addHoliday($this->immaculateConception($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
+    }
+
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Portugal',
+            'https://pt.wikipedia.org/wiki/Feriados_em_Portugal',
+        ];
     }
 
     /**
