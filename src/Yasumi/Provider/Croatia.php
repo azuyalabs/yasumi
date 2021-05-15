@@ -77,6 +77,15 @@ class Croatia extends AbstractProvider
         $this->calculateRemembranceDayForHomelandWarVictims();
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Croatia',
+            'https://sh.wikipedia.org/wiki/Praznici_u_Hrvatskoj',
+            'https://hr.wikipedia.org/wiki/Blagdani_i_spomendani_u_Hrvatskoj',
+        ];
+    }
+
     /**
      * Starting from the year 2020. statehood day is celebrated at a new date
      * Source: https://narodne-novine.nn.hr/clanci/sluzbeni/2019_11_110_2212.html.
