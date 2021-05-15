@@ -107,6 +107,14 @@ class Slovakia extends AbstractProvider
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Slovakia',
+            'https://cs.wikipedia.org/wiki/St%C3%A1tn%C3%AD_sv%C3%A1tky_Slovenska',
+        ];
+    }
+
     /**
      * New Year's Day.
      *

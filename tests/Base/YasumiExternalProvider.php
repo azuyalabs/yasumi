@@ -30,4 +30,9 @@ class YasumiExternalProvider extends AbstractProvider
     {
         // We don't actually have to do anything here.
     }
+
+    public function getSources(): array
+    {
+        return [];
+    }
 }

@@ -53,7 +53,7 @@ class CroatiaTest extends CroatiaBaseTestCase implements ProviderTestCase
             'assumptionOfMary',
             'allSaintsDay',
             'christmasDay',
-            'stStephensDay'
+            'stStephensDay',
         ];
 
         if ($this->year >= 1941) {
@@ -124,6 +124,6 @@ class CroatiaTest extends CroatiaBaseTestCase implements ProviderTestCase
      */
     public function testSources(): void
     {
-        $this->assertSources(self::REGION, 2);
+        $this->assertSources(self::REGION, 3);
     }
 }
