@@ -18,11 +18,12 @@ namespace Yasumi\tests\SouthKorea;
 use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\SouthKorea;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in South Korea.
  */
-class SouthKoreaTest extends SouthKoreaBaseTestCase
+class SouthKoreaTest extends SouthKoreaBaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -138,5 +139,13 @@ class SouthKoreaTest extends SouthKoreaBaseTestCase
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources(self::REGION, 2);
     }
 }

@@ -152,6 +152,14 @@ class SouthKorea extends AbstractProvider
         $this->calculateSubstituteHolidays();
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_South_Korea',
+            'https://ko.wikipedia.org/wiki/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%EC%9D%98_%EA%B3%B5%ED%9C%B4%EC%9D%BC',
+        ];
+    }
+
     /**
      * New Year's Day. New Year's Day is held on January 1st and established since 1950.
      * From the enactment of the First Law to 1998, there was a two or three-day break in the New Year.

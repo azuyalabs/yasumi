@@ -109,6 +109,15 @@ class Switzerland extends AbstractProvider
         }
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Switzerland',
+            'https://fr.wikipedia.org/wiki/Jours_f%C3%A9ri%C3%A9s_en_Suisse',
+            'https://it.wikipedia.org/wiki/Festivit%C3%A0_in_Svizzera',
+        ];
+    }
+
     /**
      * Swiss National Day.
      *
