@@ -16,11 +16,12 @@ namespace Yasumi\tests\Switzerland\BaselLandschaft;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in Basel Landschaft (Switzerland).
  */
-class BaselLandschaftTest extends BaselLandschaftBaseTestCase
+class BaselLandschaftTest extends BaselLandschaftBaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -111,5 +112,13 @@ class BaselLandschaftTest extends BaselLandschaftBaseTestCase
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources(self::REGION, 3);
     }
 }

@@ -16,11 +16,12 @@ namespace Yasumi\tests\Switzerland\Thurgau;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in Thurgau (Switzerland).
  */
-class ThurgauTest extends ThurgauBaseTestCase
+class ThurgauTest extends ThurgauBaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -112,5 +113,13 @@ class ThurgauTest extends ThurgauBaseTestCase
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources(self::REGION, 3);
     }
 }
