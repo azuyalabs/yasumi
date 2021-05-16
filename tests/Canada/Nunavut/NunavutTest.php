@@ -16,11 +16,12 @@ namespace Yasumi\tests\Canada\Nunavut;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in Nunavut.
  */
-class NunavutTest extends NunavutBaseTestCase
+class NunavutTest extends NunavutBaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -88,5 +89,13 @@ class NunavutTest extends NunavutBaseTestCase
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources(self::REGION, 1);
     }
 }
