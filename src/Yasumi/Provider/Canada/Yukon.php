@@ -24,7 +24,7 @@ use Yasumi\Provider\DateTimeZoneFactory;
 /**
  * Provider for all holidays in Yukon (Canada).
  *
- * Manitoba is a territory of Canada.
+ * Yukon is a province of Canada.
  *
  * @see https://en.wikipedia.org/wiki/Yukon
  */

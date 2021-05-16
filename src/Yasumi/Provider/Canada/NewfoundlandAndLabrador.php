@@ -25,7 +25,7 @@ use Yasumi\SubstituteHoliday;
 /**
  * Provider for all holidays in Newfoundland and Labrador (Canada).
  *
- * Manitoba is a province of Canada.
+ * Newfoundland and Labrador is a province of Canada.
  *
  * @see https://en.wikipedia.org/wiki/Newfoundland_and_Labrador
  */

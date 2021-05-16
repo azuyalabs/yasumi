@@ -21,7 +21,7 @@ use Yasumi\Provider\Canada;
 /**
  * Provider for all holidays in Nunavut (Canada).
  *
- * Nunavut is a territory of Canada.
+ * Nunavut is a province of Canada.
  *
  * @see https://en.wikipedia.org/wiki/Nunavut
  */

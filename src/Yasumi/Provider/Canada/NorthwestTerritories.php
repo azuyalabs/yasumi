@@ -21,7 +21,7 @@ use Yasumi\Provider\Canada;
 /**
  * Provider for all holidays in Northwest Territories (Canada).
  *
- * Northwest Territories is a territory of Canada.
+ * Northwest Territories is a province of Canada.
  *
  * @see https://en.wikipedia.org/wiki/Northwest_Territories
  */
