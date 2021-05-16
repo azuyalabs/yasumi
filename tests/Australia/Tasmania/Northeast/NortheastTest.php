@@ -16,11 +16,12 @@ namespace Yasumi\tests\Australia\Tasmania\Northeast;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in northeastern Tasmania (Australia).
  */
-class NortheastTest extends NortheastBaseTestCase
+class NortheastTest extends NortheastBaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -55,5 +56,13 @@ class NortheastTest extends NortheastBaseTestCase
             'recreationDay',
             'launcestonShow',
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources($this->region, 1);
     }
 }

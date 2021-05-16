@@ -16,11 +16,12 @@ namespace Yasumi\tests\Australia\AustralianCapitalTerritory;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in Australian Capital Territory (Australia).
  */
-class AustralianCapitalTerritoryTest extends AustralianCapitalTerritoryBaseTestCase
+class AustralianCapitalTerritoryTest extends AustralianCapitalTerritoryBaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -57,5 +58,13 @@ class AustralianCapitalTerritoryTest extends AustralianCapitalTerritoryBaseTestC
             'canberraDay',
             'reconciliationDay',
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources($this->region, 1);
     }
 }

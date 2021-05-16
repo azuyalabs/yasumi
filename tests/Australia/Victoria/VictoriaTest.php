@@ -16,11 +16,12 @@ namespace Yasumi\tests\Australia\Victoria;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in Victoria (Australia).
  */
-class VictoriaTest extends VictoriaBaseTestCase
+class VictoriaTest extends VictoriaBaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -57,5 +58,13 @@ class VictoriaTest extends VictoriaBaseTestCase
             'aflGrandFinalFriday',
             'melbourneCup',
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources($this->region, 1);
     }
 }

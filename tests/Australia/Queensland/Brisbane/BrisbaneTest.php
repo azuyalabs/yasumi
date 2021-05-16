@@ -16,11 +16,12 @@ namespace Yasumi\tests\Australia\Queensland\Brisbane;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in Queensland (Australia).
  */
-class BrisbaneTest extends BrisbaneBaseTestCase
+class BrisbaneTest extends BrisbaneBaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -54,5 +55,13 @@ class BrisbaneTest extends BrisbaneBaseTestCase
             'labourDay',
             'peoplesDay',
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources($this->region, 1);
     }
 }

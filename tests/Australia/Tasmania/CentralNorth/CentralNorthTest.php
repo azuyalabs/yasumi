@@ -16,11 +16,12 @@ namespace Yasumi\tests\Australia\Tasmania\CentralNorth;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in central north Tasmania (Australia).
  */
-class CentralNorthTest extends CentralNorthBaseTestCase
+class CentralNorthTest extends CentralNorthBaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -55,5 +56,13 @@ class CentralNorthTest extends CentralNorthBaseTestCase
             'recreationDay',
             'devonportShow',
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources($this->region, 1);
     }
 }
