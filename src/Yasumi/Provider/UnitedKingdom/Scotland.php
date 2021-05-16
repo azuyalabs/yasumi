@@ -69,6 +69,11 @@ class Scotland extends UnitedKingdom
         $this->calculateChristmasHolidays(Holiday::TYPE_BANK);
     }
 
+    public function getSources(): array
+    {
+        return ['https://en.wikipedia.org/wiki/Public_and_bank_holidays_in_Scotland'];
+    }
+
     /**
      * New Year's Day is a public holiday in the United Kingdom on January 1 each year. It marks
      * the start of the New Year in the Gregorian calendar. For many people have a quiet day on
@@ -77,7 +82,6 @@ class Scotland extends UnitedKingdom
      * In Scotland, January 2 is also a bank holiday. If January 2 falls on a Saturday, the following Monday is a bank holiday.
      * If New Years Day falls on a Saturday, the following Monday and Tuesday are bank holidays.
      *
-     * @see https://en.wikipedia.org/wiki/Public_holidays_in_Scotland
      * @see https://www.timeanddate.com/holidays/uk/new-year-day
      *
      * @throws InvalidDateException
@@ -139,7 +143,6 @@ class Scotland extends UnitedKingdom
      * to have a day off work or school. In Scotland it falls on the first Monday of August.
      *
      * @see https://www.timeanddate.com/holidays/uk/summer-bank-holiday
-     * @see https://en.wikipedia.org/wiki/Public_holidays_in_Scotland
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException

@@ -32,4 +32,11 @@ class Wales extends UnitedKingdom
      * country or sub-region.
      */
     public const ID = 'GB-WLS';
+
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Holidays_in_Wales',
+        ];
+    }
 }
