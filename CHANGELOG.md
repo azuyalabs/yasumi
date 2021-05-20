@@ -473,7 +473,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 - Initial Release
 
-[Unreleased]: https://github.com/azuyalabs/yasumi/compare/2.3.0...HEAD
+[Unreleased]: https://github.com/azuyalabs/yasumi/compare/2.4.0...HEAD
+[2.4.0]: https://github.com/azuyalabs/yasumi/compare/2.3.0...2.4.0
 [2.3.0]: https://github.com/azuyalabs/yasumi/compare/2.2.0...2.3.0
 [2.2.0]: https://github.com/azuyalabs/yasumi/compare/2.1.0...2.2.0
 [2.1.0]: https://github.com/azuyalabs/yasumi/compare/2.0.0...2.1.0
