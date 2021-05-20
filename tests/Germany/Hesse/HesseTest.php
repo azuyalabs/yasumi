@@ -16,11 +16,12 @@ namespace Yasumi\tests\Germany\Hesse;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in Hesse (Germany).
  */
-class HesseTest extends HesseBaseTestCase
+class HesseTest extends HesseBaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -93,5 +94,13 @@ class HesseTest extends HesseBaseTestCase
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays(['corpusChristi'], self::REGION, $this->year, Holiday::TYPE_OTHER);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources(self::REGION, 2);
     }
 }

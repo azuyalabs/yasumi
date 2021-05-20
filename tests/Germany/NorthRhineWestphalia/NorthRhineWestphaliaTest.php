@@ -16,11 +16,12 @@ namespace Yasumi\tests\Germany\NorthRhineWestphalia;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in North Rhine-Westphalia (Germany).
  */
-class NorthRhineWestphaliaTest extends NorthRhineWestphaliaBaseTestCase
+class NorthRhineWestphaliaTest extends NorthRhineWestphaliaBaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -93,5 +94,13 @@ class NorthRhineWestphaliaTest extends NorthRhineWestphaliaBaseTestCase
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays(['corpusChristi', 'allSaintsDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources(self::REGION, 2);
     }
 }

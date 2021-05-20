@@ -16,11 +16,12 @@ namespace Yasumi\tests\Germany\MecklenburgWesternPomerania;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in Mecklenburg-Western Pomerania (Germany).
  */
-class MecklenburgWesternPomeraniaTest extends MecklenburgWesternPomeraniaBaseTestCase
+class MecklenburgWesternPomeraniaTest extends MecklenburgWesternPomeraniaBaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -102,5 +103,13 @@ class MecklenburgWesternPomeraniaTest extends MecklenburgWesternPomeraniaBaseTes
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources(self::REGION, 2);
     }
 }

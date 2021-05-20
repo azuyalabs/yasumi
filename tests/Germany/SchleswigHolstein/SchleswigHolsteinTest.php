@@ -16,11 +16,12 @@ namespace Yasumi\tests\Germany\SchleswigHolstein;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in Schleswig-Holstein (Germany).
  */
-class SchleswigHolsteinTest extends SchleswigHolsteinBaseTestCase
+class SchleswigHolsteinTest extends SchleswigHolsteinBaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -93,5 +94,13 @@ class SchleswigHolsteinTest extends SchleswigHolsteinBaseTestCase
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources(self::REGION, 2);
     }
 }

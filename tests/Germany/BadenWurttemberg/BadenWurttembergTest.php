@@ -16,11 +16,12 @@ namespace Yasumi\tests\Germany\BadenWurttemberg;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in Baden-Württemberg (Germany).
  */
-class BadenWurttembergTest extends BadenWurttembergBaseTestCase
+class BadenWurttembergTest extends BadenWurttembergBaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -98,5 +99,13 @@ class BadenWurttembergTest extends BadenWurttembergBaseTestCase
             $this->year,
             Holiday::TYPE_OTHER
         );
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources(self::REGION, 2);
     }
 }
