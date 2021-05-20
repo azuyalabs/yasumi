@@ -18,12 +18,12 @@ use DateTime;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class containing tests for the Second International Workers' Day (i.e. Labour Day) in Bosnia.
  */
-class SecondLabourDay extends BosniaBaseTestCase implements YasumiTestCaseInterface
+class SecondLabourDay extends BosniaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

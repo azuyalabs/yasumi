@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Castile and León Day in Castile and León (Spain).
  */
-class CastileAndLeonDayTest extends CastileAndLeonBaseTestCase implements YasumiTestCaseInterface
+class CastileAndLeonDayTest extends CastileAndLeonBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

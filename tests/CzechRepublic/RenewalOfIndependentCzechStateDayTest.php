@@ -18,7 +18,7 @@ use DateTime;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Day of renewal of independent czech state in Czechia.
@@ -26,7 +26,7 @@ use Yasumi\tests\YasumiTestCaseInterface;
  * @author  Andrej Rypak (dakujem) <xrypak@gmail.com>
  * @author Jan Langer <mail@janlanger.cz>
  */
-class RenewalOfIndependentCzechStateDayTest extends CzechRepublicBaseTestCase implements YasumiTestCaseInterface
+class RenewalOfIndependentCzechStateDayTest extends CzechRepublicBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

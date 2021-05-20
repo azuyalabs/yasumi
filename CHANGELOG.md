@@ -8,7 +8,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 ### Added
 
+- All providers now include a method that returns a list of external sources (i.e. references to websites, books, scientific papers, etc.) that are used for determining the calculation logic of the providers' holidays.
+
 ### Changed
+
+- Provider tests must implement the `ProviderTestCase` interface to ensure all required test methods are defined.
+- `YasumiTestCaseInterface` was renamed to `HolidayTestCase` to better match the newly added `ProviderTestCase` interface.
 
 ### Fixed
 

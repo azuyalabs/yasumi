@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class testing Vernal Equinox Day in Japan.
  */
-class VernalEquinoxDayTest extends JapanBaseTestCase implements YasumiTestCaseInterface
+class VernalEquinoxDayTest extends JapanBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

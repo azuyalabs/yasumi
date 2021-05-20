@@ -19,14 +19,14 @@ use DateTime;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class containing tests for St. John's Day in Estonia.
  *
  * @author Gedas Lukošius <gedas@lukosius.me>
  */
-class StJohnsDayTest extends EstoniaBaseTestCase implements YasumiTestCaseInterface
+class StJohnsDayTest extends EstoniaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

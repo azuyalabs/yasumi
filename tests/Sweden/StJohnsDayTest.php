@@ -16,13 +16,13 @@ namespace Yasumi\tests\Sweden;
 
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 use Yasumi\Yasumi;
 
 /**
  * Class for testing St. John's Day / Midsummer's Day in Sweden.
  */
-class StJohnsDayTest extends SwedenBaseTestCase implements YasumiTestCaseInterface
+class StJohnsDayTest extends SwedenBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

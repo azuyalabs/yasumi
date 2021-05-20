@@ -22,12 +22,12 @@ use ReflectionException;
 use RuntimeException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing the second day of Carnival in the Netherlands.
  */
-class secondCarnivalDay extends NetherlandsBaseTestCase implements YasumiTestCaseInterface
+class secondCarnivalDay extends NetherlandsBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

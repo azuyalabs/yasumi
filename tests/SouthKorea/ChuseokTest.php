@@ -22,12 +22,12 @@ use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\SouthKorea;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Chuseok in South Korea.
  */
-class ChuseokTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterface
+class ChuseokTest extends SouthKoreaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

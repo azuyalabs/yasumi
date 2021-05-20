@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Devonport Show Day in central north Tasmania (Australia)..
  */
-class DevonportShowTest extends CentralNorthBaseTestCase implements YasumiTestCaseInterface
+class DevonportShowTest extends CentralNorthBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

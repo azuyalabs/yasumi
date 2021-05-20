@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing AGFEST in northwestern Tasmania (Australia)..
  */
-class AGFESTTest extends CircularHeadBaseTestCase implements YasumiTestCaseInterface
+class AGFESTTest extends CircularHeadBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

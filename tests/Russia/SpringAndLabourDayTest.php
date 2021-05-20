@@ -19,14 +19,14 @@ use DateTime;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class containing tests for Spring and Labour day in Russia.
  *
  * @author Gedas Lukošius <gedas@lukosius.me>
  */
-class SpringAndLabourDayTest extends RussiaBaseTestCase implements YasumiTestCaseInterface
+class SpringAndLabourDayTest extends RussiaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Our Lady Aparecida Day in Brazil.
  */
-class OurLadyOfAparecidaDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterface
+class OurLadyOfAparecidaDayTest extends BrazilBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

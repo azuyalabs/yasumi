@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing St. Stephen's Day in Ireland.
  */
-class StStephensDayTest extends IrelandBaseTestCase implements YasumiTestCaseInterface
+class StStephensDayTest extends IrelandBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

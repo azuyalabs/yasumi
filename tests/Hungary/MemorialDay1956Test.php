@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class containing tests for Memorial Day of 1986 in Hungary.
  */
-class MemorialDay1956Test extends HungaryBaseTestCase implements YasumiTestCaseInterface
+class MemorialDay1956Test extends HungaryBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

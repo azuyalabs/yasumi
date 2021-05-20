@@ -21,7 +21,7 @@ namespace Yasumi\tests;
  *
  * @see     AbstractProvider
  */
-interface YasumiTestCaseInterface
+interface HolidayTestCase
 {
     /**
      * Tests the translated name of the holiday defined in this test.

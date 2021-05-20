@@ -21,14 +21,14 @@ use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Latvia;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class containing tests for Restoration of Independence of Latvia day.
  *
  * @author Gedas Lukošius <gedas@lukosius.me>
  */
-class ProclamationOfTheRepublicOfLatviaDayTest extends LatviaBaseTestCase implements YasumiTestCaseInterface
+class ProclamationOfTheRepublicOfLatviaDayTest extends LatviaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

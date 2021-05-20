@@ -18,12 +18,12 @@ use DateTime;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class containing tests for New Years Day in Uri (Switzerland).
  */
-class NewYearsDayTest extends UriBaseTestCase implements YasumiTestCaseInterface
+class NewYearsDayTest extends UriBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

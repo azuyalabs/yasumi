@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Queen's Birthday in South Australia (Australia)..
  */
-class QueensBirthdayTest extends SouthAustraliaBaseTestCase implements YasumiTestCaseInterface
+class QueensBirthdayTest extends SouthAustraliaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Bruder-Klausen-Fest in Obwalden (Switzerland).
  */
-class BruderKlausenFestTest extends ObwaldenBaseTestCase implements YasumiTestCaseInterface
+class BruderKlausenFestTest extends ObwaldenBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing the Summer Bank Holiday in Wales.
  */
-class SummerBankHolidayTest extends WalesBaseTestCase implements YasumiTestCaseInterface
+class SummerBankHolidayTest extends WalesBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

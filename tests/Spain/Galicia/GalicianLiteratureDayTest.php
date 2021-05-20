@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Galician Literature Day in Galicia (Spain).
  */
-class GalicianLiteratureDayTest extends GaliciaBaseTestCase implements YasumiTestCaseInterface
+class GalicianLiteratureDayTest extends GaliciaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

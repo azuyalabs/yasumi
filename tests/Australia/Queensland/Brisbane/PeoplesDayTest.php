@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Ekka People's Day in Brisbane (Australia)..
  */
-class PeoplesDayTest extends BrisbaneBaseTestCase implements YasumiTestCaseInterface
+class PeoplesDayTest extends BrisbaneBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

@@ -20,12 +20,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Gaecheonjeol (National Foundation Day) in South Korea.
  */
-class GaecheonjeolTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterface
+class GaecheonjeolTest extends SouthKoreaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

@@ -18,12 +18,12 @@ use DateTime;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class containing tests for International Workers' Day (i.e. Labour Day) in the Netherlands.
  */
-class InternationalWorkersDayTest extends NetherlandsBaseTestCase implements YasumiTestCaseInterface
+class InternationalWorkersDayTest extends NetherlandsBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

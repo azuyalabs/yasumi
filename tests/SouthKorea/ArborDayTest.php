@@ -20,12 +20,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing day after Arbor Day in South Korea.
  */
-class ArborDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterface
+class ArborDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
 {
     /**
      * The year in which the holiday was removed.

@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Ascension Day in Jura (Switzerland).
  */
-class AscensionDayTest extends JuraBaseTestCase implements YasumiTestCaseInterface
+class AscensionDayTest extends JuraBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

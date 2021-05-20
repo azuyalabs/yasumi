@@ -19,14 +19,14 @@ use DateTime;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class containing tests for New Year's holidays day 5 in Russia.
  *
  * @author Gedas Lukošius <gedas@lukosius.me>
  */
-class NewYearHolidaysDay5Test extends RussiaBaseTestCase implements YasumiTestCaseInterface
+class NewYearHolidaysDay5Test extends RussiaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

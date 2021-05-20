@@ -20,12 +20,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Boxing Day in Scotland.
  */
-class BoxingDayTest extends ScotlandBaseTestCase implements YasumiTestCaseInterface
+class BoxingDayTest extends ScotlandBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

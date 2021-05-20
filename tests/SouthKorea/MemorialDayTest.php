@@ -20,12 +20,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Memorial Day in South Korea.
  */
-class MemorialDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterface
+class MemorialDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

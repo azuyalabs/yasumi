@@ -18,12 +18,12 @@ use DateTime;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing the Struggle for Freedom and Democracy Day in the Czech Republic.
  */
-class StruggleForFreedomAndDemocracyDayTest extends CzechRepublicBaseTestCase implements YasumiTestCaseInterface
+class StruggleForFreedomAndDemocracyDayTest extends CzechRepublicBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

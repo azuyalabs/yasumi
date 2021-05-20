@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing the German Unity Day in Germany.
  */
-class GermanUnityDayTest extends GermanyBaseTestCase implements YasumiTestCaseInterface
+class GermanUnityDayTest extends GermanyBaseTestCase implements HolidayTestCase
 {
     /**
      * The year in which the holiday was first established.

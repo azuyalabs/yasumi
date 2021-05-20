@@ -19,12 +19,12 @@ use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Corpus Christi in the Croatia.
  */
-class CorpusChristiTest extends CroatiaBaseTestCase implements YasumiTestCaseInterface
+class CorpusChristiTest extends CroatiaBaseTestCase implements HolidayTestCase
 {
     use ChristianHolidays;
 

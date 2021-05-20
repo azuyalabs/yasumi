@@ -20,12 +20,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Bettags Montag in Neuchatel (Switzerland).
  */
-class BettagsMontagTest extends NeuchatelBaseTestCase implements YasumiTestCaseInterface
+class BettagsMontagTest extends NeuchatelBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

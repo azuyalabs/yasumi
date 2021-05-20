@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Columbus Day in the USA.
  */
-class ColumbusDayTest extends USABaseTestCase implements YasumiTestCaseInterface
+class ColumbusDayTest extends USABaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Saint Leopold's Day in Lower Austria (Austria).
  */
-class StLeopoldsDayTest extends ViennaBaseTestCase implements YasumiTestCaseInterface
+class StLeopoldsDayTest extends ViennaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

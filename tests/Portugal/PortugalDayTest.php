@@ -20,12 +20,12 @@ use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Portugal;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Portugal Day in Portugal.
  */
-class PortugalDayTest extends PortugalBaseTestCase implements YasumiTestCaseInterface
+class PortugalDayTest extends PortugalBaseTestCase implements HolidayTestCase
 {
     /**
      * The year in which the holiday was abolished.

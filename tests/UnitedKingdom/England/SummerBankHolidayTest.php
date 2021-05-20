@@ -17,12 +17,12 @@ namespace Yasumi\tests\UnitedKingdom\England;
 use DateTime;
 use DateTimeZone;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing the Summer Bank Holiday England.
  */
-class SummerBankHolidayTest extends EnglandBaseTestCase implements YasumiTestCaseInterface
+class SummerBankHolidayTest extends EnglandBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

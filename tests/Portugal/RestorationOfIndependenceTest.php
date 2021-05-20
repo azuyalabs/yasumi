@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Restoration of Independence Day in Portugal.
  */
-class RestorationOfIndependenceTest extends PortugalBaseTestCase implements YasumiTestCaseInterface
+class RestorationOfIndependenceTest extends PortugalBaseTestCase implements HolidayTestCase
 {
     /**
      * The year in which the holiday was first established.

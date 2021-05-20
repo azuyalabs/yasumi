@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing May Day in Ireland.
  */
-class MayDayTest extends IrelandBaseTestCase implements YasumiTestCaseInterface
+class MayDayTest extends IrelandBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

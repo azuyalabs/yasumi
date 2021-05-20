@@ -20,13 +20,13 @@ use Exception;
 use ReflectionException;
 use Yasumi\Exception\MissingTranslationException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 use Yasumi\Yasumi;
 
 /**
  * Class for testing Veterans Day in the USA.
  */
-class VeteransDayTest extends USABaseTestCase implements YasumiTestCaseInterface
+class VeteransDayTest extends USABaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

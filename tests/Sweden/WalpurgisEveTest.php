@@ -18,12 +18,12 @@ use DateTime;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class containing tests for Walpurgis Night in Sweden.
  */
-class WalpurgisEveTest extends SwedenBaseTestCase implements YasumiTestCaseInterface
+class WalpurgisEveTest extends SwedenBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

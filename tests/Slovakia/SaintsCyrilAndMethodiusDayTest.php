@@ -19,14 +19,14 @@ use DateTime;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing a official holiday in Slovakia.
  *
  * @author  Andrej Rypak (dakujem) <xrypak@gmail.com>
  */
-class SaintsCyrilAndMethodiusDayTest extends SlovakiaBaseTestCase implements YasumiTestCaseInterface
+class SaintsCyrilAndMethodiusDayTest extends SlovakiaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

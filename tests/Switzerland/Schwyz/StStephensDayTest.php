@@ -18,12 +18,12 @@ use DateTime;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing St. Stephen's Day in Schwyz (Switzerland).
  */
-class StStephensDayTest extends SchwyzBaseTestCase implements YasumiTestCaseInterface
+class StStephensDayTest extends SchwyzBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

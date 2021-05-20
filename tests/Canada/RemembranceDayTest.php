@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Remembrance Day in Canada.
  */
-class RemembranceDayTest extends CanadaBaseTestCase implements YasumiTestCaseInterface
+class RemembranceDayTest extends CanadaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

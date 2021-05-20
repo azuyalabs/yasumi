@@ -20,12 +20,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing New Years Day in Scotland.
  */
-class SecondNewYearsDayTest extends ScotlandBaseTestCase implements YasumiTestCaseInterface
+class SecondNewYearsDayTest extends ScotlandBaseTestCase implements HolidayTestCase
 {
     /**
      * The year in which the holiday was first established.
