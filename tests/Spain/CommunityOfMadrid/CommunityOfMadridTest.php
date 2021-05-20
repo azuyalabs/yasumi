@@ -16,11 +16,12 @@ namespace Yasumi\tests\Spain\CommunityOfMadrid;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in the Community of Madrid (Spain).
  */
-class CommunityOfMadridTest extends CommunityOfMadridBaseTestCase
+class CommunityOfMadridTest extends CommunityOfMadridBaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -100,5 +101,13 @@ class CommunityOfMadridTest extends CommunityOfMadridBaseTestCase
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays(['valentinesDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources(self::REGION, 1);
     }
 }

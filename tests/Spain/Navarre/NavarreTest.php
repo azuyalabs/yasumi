@@ -16,11 +16,12 @@ namespace Yasumi\tests\Spain\Navarre;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in Navarre (Spain).
  */
-class NavarreTest extends NavarreBaseTestCase
+class NavarreTest extends NavarreBaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -99,5 +100,13 @@ class NavarreTest extends NavarreBaseTestCase
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays(['valentinesDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources(self::REGION, 1);
     }
 }

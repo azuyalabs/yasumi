@@ -16,11 +16,12 @@ namespace Yasumi\tests\Spain\Melilla;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in Melilla (Spain).
  */
-class MelillaTest extends MelillaBaseTestCase
+class MelillaTest extends MelillaBaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -98,5 +99,13 @@ class MelillaTest extends MelillaBaseTestCase
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays(['valentinesDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources(self::REGION, 1);
     }
 }

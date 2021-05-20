@@ -16,11 +16,12 @@ namespace Yasumi\tests\Spain\Ceuta;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in Ceuta (Spain).
  */
-class CeutaTest extends CeutaBaseTestCase
+class CeutaTest extends CeutaBaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -98,5 +99,13 @@ class CeutaTest extends CeutaBaseTestCase
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays(['valentinesDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources(self::REGION, 1);
     }
 }

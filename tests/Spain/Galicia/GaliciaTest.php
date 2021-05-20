@@ -16,11 +16,12 @@ namespace Yasumi\tests\Spain\Galicia;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in Galicia (Spain).
  */
-class GaliciaTest extends GaliciaBaseTestCase
+class GaliciaTest extends GaliciaBaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -100,5 +101,13 @@ class GaliciaTest extends GaliciaBaseTestCase
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays(['valentinesDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources(self::REGION, 1);
     }
 }
