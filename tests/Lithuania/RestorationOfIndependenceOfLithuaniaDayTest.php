@@ -21,14 +21,14 @@ use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Lithuania;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class containing tests for Restoration of Independence of Lithuania day.
  *
  * @author Gedas Lukošius <gedas@lukosius.me>
  */
-class RestorationOfIndependenceOfLithuaniaDayTest extends LithuaniaBaseTestCase implements YasumiTestCaseInterface
+class RestorationOfIndependenceOfLithuaniaDayTest extends LithuaniaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

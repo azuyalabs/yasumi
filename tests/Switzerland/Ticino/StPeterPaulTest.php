@@ -18,12 +18,12 @@ use DateTime;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Feast of Saints Peter and Paul in Ticino (Switzerland).
  */
-class StPeterPaulTest extends TicinoBaseTestCase implements YasumiTestCaseInterface
+class StPeterPaulTest extends TicinoBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

@@ -65,6 +65,14 @@ class Finland extends AbstractProvider
         $this->calculateIndependenceDay();
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Finland',
+            'https://fi.wikipedia.org/wiki/Suomen_juhlap%C3%A4iv%C3%A4t',
+        ];
+    }
+
     /**
      * St. John's Day / Midsummer.
      *

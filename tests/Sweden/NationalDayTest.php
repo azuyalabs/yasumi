@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing the National Day of Sweden in Sweden.
  */
-class NationalDayTest extends SwedenBaseTestCase implements YasumiTestCaseInterface
+class NationalDayTest extends SwedenBaseTestCase implements HolidayTestCase
 {
     /**
      * The year in which the holiday was first established.

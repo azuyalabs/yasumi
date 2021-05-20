@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Dia dos Finados in Brazil.
  */
-class AllSoulsDayTest extends BrazilBaseTestCase implements YasumiTestCaseInterface
+class AllSoulsDayTest extends BrazilBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

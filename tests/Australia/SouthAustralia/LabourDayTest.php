@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Labour Day in South Australia (Australia)..
  */
-class LabourDayTest extends SouthAustraliaBaseTestCase implements YasumiTestCaseInterface
+class LabourDayTest extends SouthAustraliaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

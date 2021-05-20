@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class containing tests for Statehood Day in Bosnia.
  */
-class StatehoodDayTest extends BosniaBaseTestCase implements YasumiTestCaseInterface
+class StatehoodDayTest extends BosniaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

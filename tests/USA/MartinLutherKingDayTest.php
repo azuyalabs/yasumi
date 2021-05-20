@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class to test Dr. Martin Luther King Day.
  */
-class MartinLutherKingDayTest extends USABaseTestCase implements YasumiTestCaseInterface
+class MartinLutherKingDayTest extends USABaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

@@ -19,7 +19,7 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 use Yasumi\Yasumi;
 
 /**
@@ -28,7 +28,7 @@ use Yasumi\Yasumi;
  * Since 1955, the holiday has always been on a Saturday (between June 20 and June 26). Earlier it was always on
  * June 24.
  */
-class stJohnsDayTest extends FinlandBaseTestCase implements YasumiTestCaseInterface
+class stJohnsDayTest extends FinlandBaseTestCase implements HolidayTestCase
 {
     /**
      * The year in which the holiday was adjusted.

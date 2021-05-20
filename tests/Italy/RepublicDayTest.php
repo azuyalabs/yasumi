@@ -19,7 +19,7 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class containing tests for Republic Day in Italy.
@@ -31,7 +31,7 @@ use Yasumi\tests\YasumiTestCaseInterface;
  *
  * @see https://en.wikipedia.org/wiki/Festa_della_Repubblica
  */
-class RepublicDayTest extends ItalyBaseTestCase implements YasumiTestCaseInterface
+class RepublicDayTest extends ItalyBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

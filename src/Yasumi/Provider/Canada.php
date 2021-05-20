@@ -62,6 +62,13 @@ class Canada extends AbstractProvider
         $this->calculateRemembranceDay();
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Canada',
+        ];
+    }
+
     /**
      * Family Day.
      *

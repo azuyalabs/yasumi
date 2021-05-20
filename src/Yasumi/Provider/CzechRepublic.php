@@ -65,6 +65,14 @@ class CzechRepublic extends AbstractProvider
         $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic',
+            'https://cs.wikipedia.org/wiki/%C4%8Cesk%C3%BD_st%C3%A1tn%C3%AD_sv%C3%A1tek',
+        ];
+    }
+
     /**
      * Day of renewal of independent Czech state.
      *

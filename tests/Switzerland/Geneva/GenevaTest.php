@@ -16,11 +16,12 @@ namespace Yasumi\tests\Switzerland\Geneva;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in Geneva (Switzerland).
  */
-class GenevaTest extends GenevaBaseTestCase
+class GenevaTest extends GenevaBaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -124,5 +125,13 @@ class GenevaTest extends GenevaBaseTestCase
         }
 
         $this->assertDefinedHolidays($otherHolidays, self::REGION, $this->year, Holiday::TYPE_OTHER);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources(self::REGION, 3);
     }
 }

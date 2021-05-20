@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Workers' Day in Jura (Switzerland).
  */
-class WorkersDayTest extends JuraBaseTestCase implements YasumiTestCaseInterface
+class WorkersDayTest extends JuraBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

@@ -22,7 +22,6 @@ use Yasumi\SubstituteHoliday;
 
 /**
  * Provider for all holidays in Ukraine.
- * https://en.wikipedia.org/wiki/Public_holidays_in_Ukraine.
  *
  * Class Ukraine
  *
@@ -69,6 +68,14 @@ class Ukraine extends AbstractProvider
         $this->calculateIndependenceDay();
         $this->calculateDefenderOfUkraineDay();
         $this->calculateCatholicChristmasDay();
+    }
+
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Ukraine',
+            'https://uk.wikipedia.org/wiki/%D0%9D%D0%B5%D1%80%D0%BE%D0%B1%D0%BE%D1%87%D1%96_%D0%B4%D0%BD%D1%96_%D0%B2_%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%96',
+        ];
     }
 
     /**

@@ -18,12 +18,12 @@ use DateTime;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class containing tests for The Three Holy Hierarchs in Greece.
  */
-class ThreeHolyHierarchsTest extends GreeceBaseTestCase implements YasumiTestCaseInterface
+class ThreeHolyHierarchsTest extends GreeceBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

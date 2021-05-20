@@ -60,6 +60,13 @@ class UnitedKingdom extends AbstractProvider
         $this->calculateChristmasHolidays();
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom',
+        ];
+    }
+
     /**
      * New Year's Day is a public holiday in the United Kingdom on January 1 each year. It marks
      * the start of the New Year in the Gregorian calendar. For many people have a quiet day on

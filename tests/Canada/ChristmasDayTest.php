@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing New Years Day in the USA.
  */
-class ChristmasDayTest extends CanadaBaseTestCase implements YasumiTestCaseInterface
+class ChristmasDayTest extends CanadaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

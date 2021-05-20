@@ -20,14 +20,14 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class containing tests for Pentecost in Estonia.
  *
  * @author Gedas Lukošius <gedas@lukosius.me>
  */
-class PentecostTest extends EstoniaBaseTestCase implements YasumiTestCaseInterface
+class PentecostTest extends EstoniaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

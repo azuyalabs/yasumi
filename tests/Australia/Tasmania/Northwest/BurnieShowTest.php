@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Burnie Show Day in northwestern Tasmania (Australia)..
  */
-class BurnieShowTest extends NorthwestBaseTestCase implements YasumiTestCaseInterface
+class BurnieShowTest extends NorthwestBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

@@ -80,6 +80,14 @@ class Lithuania extends AbstractProvider
         $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Lithuania',
+            'https://lt.wikipedia.org/wiki/S%C4%85ra%C5%A1as:Lietuvos_%C5%A1vent%C4%97s',
+        ];
+    }
+
     /**
      * The Act of Reinstating Independence of Lithuania was signed on February 16, 1918.
      *

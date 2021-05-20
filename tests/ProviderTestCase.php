@@ -15,21 +15,12 @@ declare(strict_types=1);
 namespace Yasumi\tests;
 
 /**
- * Interface YasumiTestCaseInterface - Yasumi TestCase Interface.
- *
  * This interface class defines the standard functions that any holiday provider PHPUnit test case needs to define.
- *
- * @see     AbstractProvider
  */
-interface YasumiTestCaseInterface
+interface ProviderTestCase
 {
     /**
-     * Tests the translated name of the holiday defined in this test.
+     * Tests whether the expected number of sources are actually defined.
      */
-    public function testTranslation(): void;
-
-    /**
-     * Tests type of the holiday defined in this test.
-     */
-    public function testHolidayType(): void;
+    public function testSources(): void;
 }

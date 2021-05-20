@@ -20,14 +20,14 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class containing tests for Estonia's Good Friday day.
  *
  * @author Gedas Lukošius <gedas@lukosius.me>
  */
-class GoodFridayDayTest extends EstoniaBaseTestCase implements YasumiTestCaseInterface
+class GoodFridayDayTest extends EstoniaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

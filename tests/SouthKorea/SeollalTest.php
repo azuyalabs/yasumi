@@ -22,12 +22,12 @@ use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\SouthKorea;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Seollal (Korean New Year's Day) in South Korea.
  */
-class SeollalTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterface
+class SeollalTest extends SouthKoreaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

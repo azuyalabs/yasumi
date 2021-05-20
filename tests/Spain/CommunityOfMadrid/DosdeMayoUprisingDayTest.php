@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class containing tests for the day of Dos de Mayo Uprising in the Community of Madrid (Spain).
  */
-class DosdeMayoUprisingDayTest extends CommunityOfMadridBaseTestCase implements YasumiTestCaseInterface
+class DosdeMayoUprisingDayTest extends CommunityOfMadridBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

@@ -16,11 +16,12 @@ namespace Yasumi\tests\Germany\Hamburg;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in Hamburg (Germany).
  */
-class HamburgTest extends HamburgBaseTestCase
+class HamburgTest extends HamburgBaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -93,5 +94,13 @@ class HamburgTest extends HamburgBaseTestCase
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources(self::REGION, 2);
     }
 }

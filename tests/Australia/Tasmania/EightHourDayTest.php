@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Eight Hour Day in Tasmania (Australia)..
  */
-class EightHourDayTest extends TasmaniaBaseTestCase implements YasumiTestCaseInterface
+class EightHourDayTest extends TasmaniaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

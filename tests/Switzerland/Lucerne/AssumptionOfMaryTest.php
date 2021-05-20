@@ -18,12 +18,12 @@ use DateTime;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing the day of the Assumption of Mary in Lucerne (Switzerland).
  */
-class AssumptionOfMaryTest extends LucerneBaseTestCase implements YasumiTestCaseInterface
+class AssumptionOfMaryTest extends LucerneBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

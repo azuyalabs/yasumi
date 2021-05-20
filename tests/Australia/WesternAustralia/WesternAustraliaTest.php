@@ -16,11 +16,12 @@ namespace Yasumi\tests\Australia\WesternAustralia;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in Western Australia (Australia).
  */
-class WesternAustraliaTest extends WesternAustraliaBaseTestCase
+class WesternAustraliaTest extends WesternAustraliaBaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -54,5 +55,13 @@ class WesternAustraliaTest extends WesternAustraliaBaseTestCase
             'labourDay',
             'westernAustraliaDay',
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources($this->region, 1);
     }
 }

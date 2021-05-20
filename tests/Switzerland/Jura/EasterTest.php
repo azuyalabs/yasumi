@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class containing tests for Easter in Jura (Switzerland).
  */
-class EasterTest extends JuraBaseTestCase implements YasumiTestCaseInterface
+class EasterTest extends JuraBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

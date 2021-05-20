@@ -21,13 +21,13 @@ use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\SubstituteHoliday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 use Yasumi\Yasumi;
 
 /**
  * Class SubstitutedHolidayTest.
  */
-class SubstitutedHolidayTest extends UkraineBaseTestCase implements YasumiTestCaseInterface
+class SubstitutedHolidayTest extends UkraineBaseTestCase implements HolidayTestCase
 {
     /**
      * Tests the substitution of holidays on saturday (weekend).

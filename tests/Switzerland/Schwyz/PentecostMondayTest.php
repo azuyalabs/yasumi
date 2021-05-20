@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Pentecost Monday in Schwyz (Switzerland).
  */
-class PentecostMondayTest extends SchwyzBaseTestCase implements YasumiTestCaseInterface
+class PentecostMondayTest extends SchwyzBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

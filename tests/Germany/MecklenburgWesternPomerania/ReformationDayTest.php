@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Reformation Day in Mecklenburg-Western Pomerania (Germany).
  */
-class ReformationDayTest extends MecklenburgWesternPomeraniaBaseTestCase implements YasumiTestCaseInterface
+class ReformationDayTest extends MecklenburgWesternPomeraniaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

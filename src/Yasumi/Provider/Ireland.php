@@ -77,6 +77,13 @@ class Ireland extends AbstractProvider
         $this->calculateOctoberHoliday();
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Ireland',
+        ];
+    }
+
     /**
      * New Years Day.
      *

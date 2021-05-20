@@ -16,11 +16,12 @@ namespace Yasumi\tests\Switzerland\Neuchatel;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in Neuchatel (Switzerland).
  */
-class NeuchatelTest extends NeuchatelBaseTestCase
+class NeuchatelTest extends NeuchatelBaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -112,5 +113,13 @@ class NeuchatelTest extends NeuchatelBaseTestCase
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources(self::REGION, 3);
     }
 }

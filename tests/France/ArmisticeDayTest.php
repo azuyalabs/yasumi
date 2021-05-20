@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Armistice Day in France.
  */
-class ArmisticeDayTest extends FranceBaseTestCase implements YasumiTestCaseInterface
+class ArmisticeDayTest extends FranceBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

@@ -16,11 +16,12 @@ namespace Yasumi\tests\Australia\Tasmania;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in Tasmania (Australia).
  */
-class TasmaniaTest extends TasmaniaBaseTestCase
+class TasmaniaTest extends TasmaniaBaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -54,5 +55,13 @@ class TasmaniaTest extends TasmaniaBaseTestCase
             'eightHourDay',
             'recreationDay',
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources($this->region, 1);
     }
 }

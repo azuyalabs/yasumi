@@ -19,14 +19,14 @@ use DateTime;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class containing tests for Assumption of Mary day in Lithuania.
  *
  * @author Gedas Lukošius <gedas@lukosius.me>
  */
-class AssumptionOfMaryDayTest extends LithuaniaBaseTestCase implements YasumiTestCaseInterface
+class AssumptionOfMaryDayTest extends LithuaniaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

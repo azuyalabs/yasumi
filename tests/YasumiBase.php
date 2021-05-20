@@ -304,6 +304,22 @@ trait YasumiBase
     }
 
     /**
+     * Asserts that the holiday provider has the number of expected sources defined.
+     *
+     * @param string $provider            the holiday provider (i.e. country/state) for which the holiday need to be
+     *                                    tested
+     * @param int    $expectedSourceCount the expected number of sources
+     *
+     * @throws ReflectionException
+     */
+    public function assertSources(string $provider, int $expectedSourceCount): void
+    {
+        $holidayProvider = Yasumi::create($provider, $this->generateRandomYear());
+
+        self::assertCount($expectedSourceCount, $holidayProvider->getSources());
+    }
+
+    /**
      * Returns a list of random test dates used for assertion of holidays.
      *
      * @param int         $month      month (number) for which the test date needs to be generated

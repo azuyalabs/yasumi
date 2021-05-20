@@ -63,6 +63,14 @@ class Latvia extends AbstractProvider
         $this->addHoliday($this->newYearsEve($this->year, $this->timezone, $this->locale));
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Latvia',
+            'https://lt.wikipedia.org/wiki/S%C4%85ra%C5%A1as:Latvijos_%C5%A1vent%C4%97s',
+        ];
+    }
+
     /**
      * On 4 May 1990. Latvia proclaimed its independence from the USSR, and restoration of the Republic of Latvia.
      * If the day is on the weekend the next Monday is a holiday.

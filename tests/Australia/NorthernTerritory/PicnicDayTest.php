@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Picnic Day in Northern Territory (Australia).
  */
-class PicnicDayTest extends NorthernTerritoryBaseTestCase implements YasumiTestCaseInterface
+class PicnicDayTest extends NorthernTerritoryBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

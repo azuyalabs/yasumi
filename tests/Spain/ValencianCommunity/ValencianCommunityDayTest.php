@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing the Valencian Community Day in the Valencian Community (Spain).
  */
-class ValencianCommunityDayTest extends ValencianCommunityBaseTestCase implements YasumiTestCaseInterface
+class ValencianCommunityDayTest extends ValencianCommunityBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

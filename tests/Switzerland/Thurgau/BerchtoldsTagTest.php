@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing BerchtoldsTag in Thurgau (Switzerland).
  */
-class BerchtoldsTagTest extends ThurgauBaseTestCase implements YasumiTestCaseInterface
+class BerchtoldsTagTest extends ThurgauBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

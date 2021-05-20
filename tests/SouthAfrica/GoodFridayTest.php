@@ -20,7 +20,7 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Good Friday in South Africa.
@@ -29,7 +29,7 @@ use Yasumi\tests\YasumiTestCaseInterface;
  * determines whenever any public holiday falls on a Sunday, the Monday following on it shall be a public holiday.
  * Yasumi currently implements all South African holidays based on this act.
  */
-class GoodFridayTest extends SouthAfricaBaseTestCase implements YasumiTestCaseInterface
+class GoodFridayTest extends SouthAfricaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

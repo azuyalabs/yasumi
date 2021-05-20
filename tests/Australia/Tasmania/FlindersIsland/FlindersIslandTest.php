@@ -16,11 +16,12 @@ namespace Yasumi\tests\Australia\Tasmania\FlindersIsland;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in Flinders Island (Australia).
  */
-class FlindersIslandTest extends FlindersIslandBaseTestCase
+class FlindersIslandTest extends FlindersIslandBaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -55,5 +56,13 @@ class FlindersIslandTest extends FlindersIslandBaseTestCase
             'recreationDay',
             'flindersIslandShow',
         ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources($this->region, 1);
     }
 }

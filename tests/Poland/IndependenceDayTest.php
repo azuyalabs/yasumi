@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing the Independence Day of Poland in Poland.
  */
-class IndependenceDayTest extends PolandBaseTestCase implements YasumiTestCaseInterface
+class IndependenceDayTest extends PolandBaseTestCase implements HolidayTestCase
 {
     /**
      * The year in which the holiday was first established.

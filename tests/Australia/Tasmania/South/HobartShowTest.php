@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Royal Hobart Show Day in southern Tasmania (Australia)..
  */
-class HobartShowTest extends SouthBaseTestCase implements YasumiTestCaseInterface
+class HobartShowTest extends SouthBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

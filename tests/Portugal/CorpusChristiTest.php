@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class containing tests for Corpus Christi in Portugal.
  */
-class CorpusChristiTest extends PortugalBaseTestCase implements YasumiTestCaseInterface
+class CorpusChristiTest extends PortugalBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

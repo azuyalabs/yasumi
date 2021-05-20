@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing the National Day of Spain.
  */
-class NationalDayTest extends SpainBaseTestCase implements YasumiTestCaseInterface
+class NationalDayTest extends SpainBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

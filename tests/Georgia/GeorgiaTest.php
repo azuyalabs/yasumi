@@ -18,13 +18,14 @@ namespace Yasumi\tests\Georgia;
 use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Georgia;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in Georgia.
  *
  * @author Zurab Sardarov <zurab.sardarov@gmail.com>
  */
-class GeorgiaTest extends GeorgiaBaseTestCase
+class GeorgiaTest extends GeorgiaBaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -109,5 +110,13 @@ class GeorgiaTest extends GeorgiaBaseTestCase
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources(self::REGION, 3);
     }
 }

@@ -93,4 +93,12 @@ class Hungary extends AbstractProvider
             ], new DateTime("$this->year-10-23", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
     }
+
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Hungary',
+            'https://hu.wikipedia.org/wiki/Magyarorsz%C3%A1gi_%C3%BCnnepek_%C3%A9s_eml%C3%A9knapok_list%C3%A1ja',
+        ];
+    }
 }

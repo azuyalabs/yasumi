@@ -20,14 +20,14 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class containing tests for Latvia.
  *
  * @author Gedas Lukošius <gedas@lukosius.me>
  */
-class GoodFridayDayTest extends LatviaBaseTestCase implements YasumiTestCaseInterface
+class GoodFridayDayTest extends LatviaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

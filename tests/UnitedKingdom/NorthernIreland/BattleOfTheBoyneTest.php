@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Batthe of the Boyne in Northern Ireland.
  */
-class BattleOfTheBoyneTest extends NorthernIrelandBaseTestCase implements YasumiTestCaseInterface
+class BattleOfTheBoyneTest extends NorthernIrelandBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

@@ -68,6 +68,14 @@ class Austria extends AbstractProvider
         $this->calculateNationalDay();
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Austria',
+            'https://de.wikipedia.org/wiki/Feiertage_in_%C3%96sterreich',
+        ];
+    }
+
     /**
      * Saint Leopold's Day.
      *

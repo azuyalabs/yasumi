@@ -64,6 +64,14 @@ class Estonia extends AbstractProvider
         $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Estonia',
+            'https://et.wikipedia.org/wiki/Eesti_riigip%C3%BChad',
+        ];
+    }
+
     /**
      * @throws \InvalidArgumentException
      * @throws \Exception

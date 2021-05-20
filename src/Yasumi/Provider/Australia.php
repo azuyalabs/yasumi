@@ -56,6 +56,13 @@ class Australia extends AbstractProvider
         $this->calculateChristmasDay();
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Australia',
+        ];
+    }
+
     /**
      * Holidays associated with the start of the modern Gregorian calendar.
      *

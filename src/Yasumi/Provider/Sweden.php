@@ -71,6 +71,14 @@ class Sweden extends AbstractProvider
         $this->calculateNationalDay();
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Sweden',
+            'https://sv.wikipedia.org/wiki/Helgdagar_i_Sverige',
+        ];
+    }
+
     /**
      * Epiphany Eve.
      *

@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Flinders Island Show Day in Flinders Island (Australia)..
  */
-class FlindersIslandShowTest extends FlindersIslandBaseTestCase implements YasumiTestCaseInterface
+class FlindersIslandShowTest extends FlindersIslandBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

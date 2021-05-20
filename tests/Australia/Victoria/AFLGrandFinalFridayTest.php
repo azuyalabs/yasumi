@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing AFL Grand Final Friday in Victoria (Australia)..
  */
-class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements YasumiTestCaseInterface
+class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

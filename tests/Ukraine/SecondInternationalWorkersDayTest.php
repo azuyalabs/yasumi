@@ -18,13 +18,13 @@ namespace Yasumi\tests\Ukraine;
 use DateTime;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 use Yasumi\Yasumi;
 
 /**
  * Class SecondInternationalWorkersDayTest.
  */
-class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements YasumiTestCaseInterface
+class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

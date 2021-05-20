@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Murcia Day in the Region of Murcia (Spain).
  */
-class RegionOfMurciaDayTest extends RegionOfMurciaBaseTestCase implements YasumiTestCaseInterface
+class RegionOfMurciaDayTest extends RegionOfMurciaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

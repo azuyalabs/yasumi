@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing the Polytechnio in Greece.
  */
-class PolytechnioTest extends GreeceBaseTestCase implements YasumiTestCaseInterface
+class PolytechnioTest extends GreeceBaseTestCase implements HolidayTestCase
 {
     /**
      * The year in which the holiday was first established.

@@ -89,6 +89,14 @@ class Netherlands extends AbstractProvider
         $this->calculateCommemorationLiberationDay();
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_the_Netherlands',
+            'https://nl.wikipedia.org/wiki/Feestdagen_in_Nederland',
+        ];
+    }
+
     /**
      * Carnival.
      *

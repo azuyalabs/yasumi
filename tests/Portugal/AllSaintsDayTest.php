@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class containing tests for All Saints Day in Portugal.
  */
-class AllSaintsDayTest extends PortugalBaseTestCase implements YasumiTestCaseInterface
+class AllSaintsDayTest extends PortugalBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

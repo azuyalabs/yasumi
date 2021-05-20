@@ -19,12 +19,12 @@ use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing St. Joseph's Day in Ticino (Switzerland).
  */
-class StJosephDayTest extends TicinoBaseTestCase implements YasumiTestCaseInterface
+class StJosephDayTest extends TicinoBaseTestCase implements HolidayTestCase
 {
     use ChristianHolidays;
 

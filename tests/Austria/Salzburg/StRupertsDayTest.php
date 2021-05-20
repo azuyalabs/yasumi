@@ -18,12 +18,12 @@ use DateTime;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Saint Rupert's Day in Salzburg (Austria).
  */
-class StRupertsDayTest extends SalzburgBaseTestCase implements YasumiTestCaseInterface
+class StRupertsDayTest extends SalzburgBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

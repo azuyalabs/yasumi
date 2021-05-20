@@ -19,7 +19,7 @@ use DateTime;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Slovak independence day in Slovakia.
@@ -27,7 +27,7 @@ use Yasumi\tests\YasumiTestCaseInterface;
  * @author  Andrej Rypak (dakujem) <xrypak@gmail.com>
  * @author Jan Langer <mail@janlanger.cz>
  */
-class SlovakIndependeceDayTest extends SlovakiaBaseTestCase implements YasumiTestCaseInterface
+class SlovakIndependeceDayTest extends SlovakiaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

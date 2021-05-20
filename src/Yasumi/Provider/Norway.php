@@ -64,6 +64,14 @@ class Norway extends AbstractProvider
         $this->calculateConstitutionDay();
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Norway',
+            'https://no.wikipedia.org/wiki/Helligdager_i_Norge',
+        ];
+    }
+
     /**
      * Constitution Day.
      *

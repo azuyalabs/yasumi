@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class containing tests for Instauration de la République in Neuchatel (Switzerland).
  */
-class InstaurationRepubliqueTest extends NeuchatelBaseTestCase implements YasumiTestCaseInterface
+class InstaurationRepubliqueTest extends NeuchatelBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

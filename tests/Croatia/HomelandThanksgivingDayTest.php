@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class containing tests for Homeland Thanksgiving Day in Croatia.
  */
-class HomelandThanksgivingDayTest extends CroatiaBaseTestCase implements YasumiTestCaseInterface
+class HomelandThanksgivingDayTest extends CroatiaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.

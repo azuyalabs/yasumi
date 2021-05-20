@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing St. James Day in Galicia (Spain).
  */
-class stJamesDayTest extends GaliciaBaseTestCase implements YasumiTestCaseInterface
+class stJamesDayTest extends GaliciaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

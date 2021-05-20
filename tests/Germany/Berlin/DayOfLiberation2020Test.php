@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Day of Liberation 2020 in Berlin (Germany).
  */
-class DayOfLiberation2020Test extends BerlinBaseTestCase implements YasumiTestCaseInterface
+class DayOfLiberation2020Test extends BerlinBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

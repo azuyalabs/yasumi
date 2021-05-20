@@ -63,6 +63,15 @@ class Georgia extends AbstractProvider
         $this->addStGeorgesDay();
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Georgia_(country)',
+            'https://ka.wikipedia.org/wiki/%E1%83%A3%E1%83%A5%E1%83%9B%E1%83%94_%E1%83%93%E1%83%A6%E1%83%94%E1%83%94%E1%83%91%E1%83%98_%E1%83%A1%E1%83%90%E1%83%A5%E1%83%90%E1%83%A0%E1%83%97%E1%83%95%E1%83%94%E1%83%9A%E1%83%9D%E1%83%A8%E1%83%98',
+            'https://xmf.wikipedia.org/wiki/%E1%83%9D%E1%83%A4%E1%83%98%E1%83%AA%E1%83%98%E1%83%90%E1%83%9A%E1%83%A3%E1%83%A0%E1%83%98_%E1%83%A3%E1%83%A5%E1%83%95%E1%83%98_%E1%83%93%E1%83%A6%E1%83%90%E1%83%9A%E1%83%94%E1%83%A4%E1%83%98_%E1%83%A1%E1%83%90%E1%83%A5%E1%83%9D%E1%83%A0%E1%83%97%E1%83%A3%E1%83%9D%E1%83%A1',
+        ];
+    }
+
     /**
      * @throws \Exception
      */

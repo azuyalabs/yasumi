@@ -64,6 +64,14 @@ class Italy extends AbstractProvider
         $this->calculateRepublicDay();
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Italy',
+            'https://it.wikipedia.org/wiki/Festivit%C3%A0_in_Italia',
+        ];
+    }
+
     /**
      * Liberation Day.
      *

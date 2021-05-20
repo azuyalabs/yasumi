@@ -21,12 +21,12 @@ use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Switzerland\Geneva;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Jeune Genevois in Geneva (Switzerland).
  */
-class JeuneGenevoisTest extends GenevaBaseTestCase implements YasumiTestCaseInterface
+class JeuneGenevoisTest extends GenevaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.
