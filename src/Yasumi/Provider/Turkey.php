@@ -16,6 +16,7 @@ namespace Yasumi\Provider;
 
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Holiday;
 
 class Turkey extends AbstractProvider
 {
@@ -38,6 +39,7 @@ class Turkey extends AbstractProvider
 
         // Add common holidays
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
+        $this->addLabourDay();
     }
 
     /** {@inheritdoc} */
@@ -47,5 +49,15 @@ class Turkey extends AbstractProvider
             'https://en.wikipedia.org/wiki/Public_holidays_in_Turkey',
             'https://tr.wikipedia.org/wiki/T%C3%BCrkiye%27deki_resm%C3%AE_tatiller',
         ];
+    }
+
+    /**
+     * @throws \Exception
+     */
+    private function addLabourDay(): void
+    {
+        $this->addHoliday(new Holiday('labourDay', [
+            'tr' => 'Emek ve Dayanışma Günü',
+        ], new \DateTime("$this->year-05-01", new \DateTimeZone($this->timezone)), $this->locale));
     }
 }
