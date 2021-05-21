@@ -43,13 +43,18 @@ class ManitobaTest extends ManitobaBaseTestCase implements ProviderTestCase
      */
     public function testOfficialHolidays(): void
     {
-        $this->assertDefinedHolidays([
+        $holidays = [
             'goodFriday',
             'christmasDay',
             'victoriaDay',
             'terryFoxDay',
-            'louisRielDay',
-        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
+        ];
+
+        if (2008 <= $this->year) {
+            $holidays[] = 'louisRielDay';
+        }
+
+        $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
