@@ -38,12 +38,21 @@ class TurkeyTest extends TurkeyBaseTestCase implements ProviderTestCase
      */
     public function testOfficialHolidays(): void
     {
-        $national_holidays = [
+        $holidays = [
             'newYearsDay',
             'labourDay',
         ];
 
-        $this->assertDefinedHolidays($national_holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
+        /*
+         * @see: https://en.wikipedia.org/wiki/Commemoration_of_Atat%C3%BCrk,_Youth_and_Sports_Day
+         * Not sure if 1920 is the first year of celebration as above source mentions Law No. 3466 that "May 19" was
+         * made official June 20, 1938.
+         **/
+        if (1920 <= $this->year) {
+            $holidays[] = 'commemorationAtaturk';
+        }
+
+        $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

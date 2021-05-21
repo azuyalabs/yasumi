@@ -40,6 +40,7 @@ class Turkey extends AbstractProvider
         // Add common holidays
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
         $this->addLabourDay();
+        $this->addCommemorationOfAtaturk();
     }
 
     /** {@inheritdoc} */
@@ -59,5 +60,27 @@ class Turkey extends AbstractProvider
         $this->addHoliday(new Holiday('labourDay', [
             'tr' => 'Emek ve Dayanışma Günü',
         ], new \DateTime("$this->year-05-01", new \DateTimeZone($this->timezone)), $this->locale));
+    }
+
+    /**
+     * Commemoration of the first opening of the Grand National Assembly of Turkey at Ankara in 1920.
+     * Dedicated to the children.
+     *
+     * Not sure if 1920 is the first year of celebration as above source mentions Law No. 3466 that "May 19" was
+     * made official June 20, 1938.
+     *
+     * @see https://en.wikipedia.org/wiki/Commemoration_of_Atat%C3%BCrk,_Youth_and_Sports_Day
+     *
+     * @throws \Exception
+     */
+    private function addCommemorationOfAtaturk(): void
+    {
+        if (1920 > $this->year) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday('commemorationAtaturk', [
+            'tr' => "Atatürk'ü Anma, Gençlik ve Spor Bayramı",
+        ], new \DateTime("$this->year-05-19", new \DateTimeZone($this->timezone)), $this->locale));
     }
 }
