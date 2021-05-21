@@ -40,6 +40,7 @@ class TurkeyTest extends TurkeyBaseTestCase implements ProviderTestCase
     {
         $national_holidays = [
             'newYearsDay',
+            'labourDay',
         ];
 
         $this->assertDefinedHolidays($national_holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
