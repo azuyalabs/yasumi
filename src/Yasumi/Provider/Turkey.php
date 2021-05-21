@@ -80,7 +80,7 @@ class Turkey extends AbstractProvider
         }
 
         $this->addHoliday(new Holiday('commemorationAtaturk', [
-            'tr' => "Atatürk'ü Anma, Gençlik ve Spor Bayramı",
+            'tr' => "Atatürk’ü Anma, Gençlik ve Spor Bayramı",
         ], new \DateTime("$this->year-05-19", new \DateTimeZone($this->timezone)), $this->locale));
     }
 }

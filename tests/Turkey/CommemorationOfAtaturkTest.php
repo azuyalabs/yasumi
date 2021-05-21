@@ -67,7 +67,7 @@ class CommemorationOfAtaturkTest extends TurkeyBaseTestCase implements HolidayTe
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => "Atatürk'ü Anma, Gençlik ve Spor Bayramı"]
+            [self::LOCALE => "Atatürk’ü Anma, Gençlik ve Spor Bayramı"]
         );
     }
 
