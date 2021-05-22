@@ -41,6 +41,7 @@ class Turkey extends AbstractProvider
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
         $this->addLabourDay();
         $this->addCommemorationOfAtaturk();
+        $this->addNationalSovereigntyDay();
     }
 
     /** {@inheritdoc} */
@@ -82,5 +83,32 @@ class Turkey extends AbstractProvider
         $this->addHoliday(new Holiday('commemorationAtaturk', [
             'tr' => 'Atatürk’ü Anma, Gençlik ve Spor Bayramı',
         ], new \DateTime("$this->year-05-19", new \DateTimeZone($this->timezone)), $this->locale));
+    }
+
+    /**
+     * National Sovereignty and Children's Day (Turkish: Ulusal Egemenlik ve Çocuk Bayramı) is a public holiday in
+     * Turkey commemorating the foundation of the Grand National Assembly of Turkey, on 23 April 1920.
+     * Since 1927, the holiday has also been celebrated as a children's day.
+     *
+     * @see https://en.wikipedia.org/wiki/National_Sovereignty_and_Children%27s_Day
+     *
+     * @throws \Exception
+     */
+    private function addNationalSovereigntyDay(): void
+    {
+        if (1922 > $this->year) {
+            return;
+        }
+
+        $holidayName = 'Ulusal Egemenlik Bayramı';
+
+        // In 1981 this day was officially named 'Ulusal Egemenlik ve Çocuk Bayramı'
+        if (1981 <= $this->year) {
+            $holidayName = 'Ulusal Egemenlik ve Çocuk Bayramı';
+        }
+
+        $this->addHoliday(new Holiday('nationalSovereigntyDay', [
+            'tr' => $holidayName,
+        ], new \DateTime("$this->year-04-23", new \DateTimeZone($this->timezone)), $this->locale));
     }
 }

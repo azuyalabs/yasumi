@@ -44,12 +44,16 @@ class TurkeyTest extends TurkeyBaseTestCase implements ProviderTestCase
         ];
 
         /*
-         * @see: https://en.wikipedia.org/wiki/Commemoration_of_Atat%C3%BCrk,_Youth_and_Sports_Day
          * Not sure if 1920 is the first year of celebration as above source mentions Law No. 3466 that "May 19" was
          * made official June 20, 1938.
-         **/
+         * @see: https://en.wikipedia.org/wiki/Commemoration_of_Atat%C3%BCrk,_Youth_and_Sports_Day
+         */
         if (1920 <= $this->year) {
             $holidays[] = 'commemorationAtaturk';
+        }
+
+        if (1922 <= $this->year) {
+            $holidays[] = 'nationalSovereigntyDay';
         }
 
         $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
