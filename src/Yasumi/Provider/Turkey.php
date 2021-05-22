@@ -40,6 +40,7 @@ class Turkey extends AbstractProvider
         $this->addNationalSovereigntyDay();
         $this->addLabourDay();
         $this->addCommemorationOfAtaturk();
+        $this->addDemocracyDay();
     }
 
     /** {@inheritdoc} */
@@ -108,5 +109,24 @@ class Turkey extends AbstractProvider
         $this->addHoliday(new Holiday('nationalSovereigntyDay', [
             'tr' => $holidayName,
         ], new \DateTime("$this->year-04-23", new \DateTimeZone($this->timezone)), $this->locale));
+    }
+
+    /**
+     * The Democracy and National Unity Day of Turkey (Turkish: Demokrasi ve Milli Birlik Günü) is one of the public
+     * holidays in Turkey, commemorating the national unity against the coup d'état attempt for democracy in 2016.
+     *
+     * @see https://en.wikipedia.org/wiki/Democracy_and_National_Unity_Day
+     *
+     * @throws \Exception
+     */
+    private function addDemocracyDay(): void
+    {
+        if (2017 > $this->year) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday('democracyDay', [
+            'tr' => 'Demokrasi ve Millî Birlik Günü',
+        ], new \DateTime("$this->year-07-15", new \DateTimeZone($this->timezone)), $this->locale));
     }
 }
