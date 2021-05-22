@@ -21,18 +21,9 @@ class TurkeyBaseTestCase extends TestCase
 {
     use YasumiBase;
 
-    /**
-     * Name of the region (e.g. country / state) to be tested.
-     */
     public const REGION = 'Turkey';
 
-    /**
-     * Timezone in which this provider has holidays defined.
-     */
     public const TIMEZONE = 'Europe/Istanbul';
 
-    /**
-     * Locale that is considered common for this provider.
-     */
     public const LOCALE = 'tr_TR';
 }

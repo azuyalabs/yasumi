@@ -26,8 +26,6 @@ class Turkey extends AbstractProvider
     public const ID = 'TR';
 
     /**
-     * Initialize holidays for Turkey.
-     *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
@@ -39,9 +37,9 @@ class Turkey extends AbstractProvider
 
         // Add common holidays
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
+        $this->addNationalSovereigntyDay();
         $this->addLabourDay();
         $this->addCommemorationOfAtaturk();
-        $this->addNationalSovereigntyDay();
     }
 
     /** {@inheritdoc} */

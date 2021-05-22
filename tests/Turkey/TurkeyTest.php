@@ -32,8 +32,6 @@ class TurkeyTest extends TurkeyBaseTestCase implements ProviderTestCase
     }
 
     /**
-     * Tests if all official holidays in Turkey are defined by the provider class.
-     *
      * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
@@ -60,8 +58,6 @@ class TurkeyTest extends TurkeyBaseTestCase implements ProviderTestCase
     }
 
     /**
-     * Tests if all observed holidays in Turkey are defined by the provider class.
-     *
      * @throws ReflectionException
      */
     public function testObservedHolidays(): void
@@ -72,8 +68,6 @@ class TurkeyTest extends TurkeyBaseTestCase implements ProviderTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in Turkey are defined by the provider class.
-     *
      * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
@@ -82,8 +76,6 @@ class TurkeyTest extends TurkeyBaseTestCase implements ProviderTestCase
     }
 
     /**
-     * Tests if all bank holidays in Turkey are defined by the provider class.
-     *
      * @throws ReflectionException
      */
     public function testBankHolidays(): void
@@ -92,8 +84,6 @@ class TurkeyTest extends TurkeyBaseTestCase implements ProviderTestCase
     }
 
     /**
-     * Tests if all other holidays in Turkey are defined by the provider class.
-     *
      * @throws ReflectionException
      */
     public function testOtherHolidays(): void

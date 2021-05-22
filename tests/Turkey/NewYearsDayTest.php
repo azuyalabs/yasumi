@@ -25,8 +25,6 @@ class NewYearsDayTest extends TurkeyBaseTestCase implements HolidayTestCase
     public const HOLIDAY = 'newYearsDay';
 
     /**
-     * Tests the holiday defined in this test.
-     *
      * @dataProvider HolidayDataProvider
      *
      * @param int      $year     the year for which the holiday defined in this test needs to be tested
@@ -40,8 +38,6 @@ class NewYearsDayTest extends TurkeyBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * Returns a list of random test dates used for assertion of the holiday defined in this test.
-     *
      * @return array list of test dates for the holiday defined in this test
      *
      * @throws Exception
@@ -52,8 +48,6 @@ class NewYearsDayTest extends TurkeyBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * Tests the translated name of the holiday defined in this test.
-     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -67,8 +61,6 @@ class NewYearsDayTest extends TurkeyBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * Tests type of the holiday defined in this test.
-     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void

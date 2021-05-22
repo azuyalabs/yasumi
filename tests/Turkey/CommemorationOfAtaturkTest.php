@@ -26,8 +26,6 @@ class CommemorationOfAtaturkTest extends TurkeyBaseTestCase implements HolidayTe
     public const ESTABLISHMENT_YEAR = 1920;
 
     /**
-     * Tests Commemoration Of Ataturk before establishment.
-     *
      * @throws ReflectionException
      */
     public function testHolidayBeforeEstablishment(): void
@@ -40,8 +38,6 @@ class CommemorationOfAtaturkTest extends TurkeyBaseTestCase implements HolidayTe
     }
 
     /**
-     * Tests Commemoration Of Ataturk on or after establishment.
-     *
      * @throws ReflectionException
      * @throws \Exception
      */
@@ -57,8 +53,6 @@ class CommemorationOfAtaturkTest extends TurkeyBaseTestCase implements HolidayTe
     }
 
     /**
-     * Tests the translated name of the holiday defined in this test.
-     *
      * @throws ReflectionException
      */
     public function testTranslation(): void
@@ -72,8 +66,6 @@ class CommemorationOfAtaturkTest extends TurkeyBaseTestCase implements HolidayTe
     }
 
     /**
-     * Tests type of the holiday defined in this test.
-     *
      * @throws ReflectionException
      */
     public function testHolidayType(): void
