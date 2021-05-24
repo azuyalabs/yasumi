@@ -58,6 +58,10 @@ class TurkeyTest extends TurkeyBaseTestCase implements ProviderTestCase
             $holidays[] = 'democracyDay';
         }
 
+        if (1926 <= $this->year) {
+            $holidays[] = 'victoryDay';
+        }
+
         $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -66,9 +70,13 @@ class TurkeyTest extends TurkeyBaseTestCase implements ProviderTestCase
      */
     public function testObservedHolidays(): void
     {
-        $ObservedHolidays = [];
+        $holidays = [];
 
-        $this->assertDefinedHolidays($ObservedHolidays, self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+        if (1923 <= $this->year && 1926 > $this->year) {
+            $holidays[] = 'victoryDay';
+        }
+
+        $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**

@@ -41,6 +41,7 @@ class Turkey extends AbstractProvider
         $this->addLabourDay();
         $this->addCommemorationOfAtaturk();
         $this->addDemocracyDay();
+        $this->addVictoryDay();
     }
 
     /** {@inheritdoc} */
@@ -128,5 +129,32 @@ class Turkey extends AbstractProvider
         $this->addHoliday(new Holiday('democracyDay', [
             'tr' => 'Demokrasi ve Millî Birlik Günü',
         ], new \DateTime("$this->year-07-15", new \DateTimeZone($this->timezone)), $this->locale));
+    }
+
+    /**
+     * Victory Day (Turkish: Zafer Bayramı), also known as Turkish Armed Forces Day, is a public holiday in Turkey
+     * commemorating the decisive victory in the Battle of Dumlupınar, on 30 August 1922.
+     *
+     * @see https://en.wikipedia.org/wiki/Victory_Day_(Turkey)
+     *
+     * @throws \Exception
+     */
+    private function addVictoryDay(): void
+    {
+        if (1923 > $this->year) {
+            return;
+        }
+
+        $holidayType = Holiday::TYPE_OFFICIAL;
+
+        // Victory Day has been celebrated as an official holiday since 1926, and was first celebrated on 30 August
+        // 1923.
+        if (1923 <= $this->year && 1926 > $this->year) {
+            $holidayType = Holiday::TYPE_OBSERVANCE;
+        }
+
+        $this->addHoliday(new Holiday('victoryDay', [
+            'tr' => 'Zafer Bayramı',
+        ], new \DateTime("$this->year-08-30", new \DateTimeZone($this->timezone)), $this->locale, $holidayType));
     }
 }
