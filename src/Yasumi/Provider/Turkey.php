@@ -18,6 +18,10 @@ use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
+/**
+ * Note: Any Islamic holidays are not part of this provider yet. Islamic holidays are quite complex and at first,
+ * only other holidays are implemented.
+ */
 class Turkey extends AbstractProvider
 {
     use CommonHolidays;
@@ -42,6 +46,7 @@ class Turkey extends AbstractProvider
         $this->addCommemorationOfAtaturk();
         $this->addDemocracyDay();
         $this->addVictoryDay();
+        $this->addRepublicDay();
     }
 
     /** {@inheritdoc} */
@@ -156,5 +161,27 @@ class Turkey extends AbstractProvider
         $this->addHoliday(new Holiday('victoryDay', [
             'tr' => 'Zafer Bayramı',
         ], new \DateTime("$this->year-08-30", new \DateTimeZone($this->timezone)), $this->locale, $holidayType));
+    }
+
+    /**
+     * Republic Day (Turkish: Cumhuriyet Bayramı) is a public holiday in Turkey commemorating the proclamation of the
+     * Republic of Turkey, on 29 October 1923. The annual celebrations start at 1:00 pm on 28 October and continue for
+     * 35 hours.
+     *
+     * Note: the start of the celebrations the preceding day at 1:00pm is not covered in this library.
+     *
+     * @see https://en.wikipedia.org/wiki/Republic_Day_(Turkey)
+     *
+     * @throws \Exception
+     */
+    private function addRepublicDay(): void
+    {
+        if (1923 > $this->year) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday('republicDay', [
+            'tr' => 'Cumhuriyet Bayramı',
+        ], new \DateTime("$this->year-10-29", new \DateTimeZone($this->timezone)), $this->locale));
     }
 }

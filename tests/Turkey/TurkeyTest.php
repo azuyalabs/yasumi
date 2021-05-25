@@ -62,6 +62,10 @@ class TurkeyTest extends TurkeyBaseTestCase implements ProviderTestCase
             $holidays[] = 'victoryDay';
         }
 
+        if (1923 < $this->year) {
+            $holidays[] = 'republicDay';
+        }
+
         $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
