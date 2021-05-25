@@ -50,7 +50,7 @@ class NorthwestTerritoriesTest extends NorthwestTerritoriesBaseTestCase implemen
             'civicHoliday',
         ];
 
-        if (1996 >= $this->year) {
+        if (1996 <= $this->year) {
             $holidays[] = 'nationalIndigenousPeoplesDay';
         }
 

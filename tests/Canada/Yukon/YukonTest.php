@@ -52,7 +52,7 @@ class YukonTest extends YukonBaseTestCase implements ProviderTestCase
             $holidays[] = 'yukonHeritageDay';
         }
 
-        if (1996 >= $this->year) {
+        if (1996 <= $this->year) {
             $holidays[] = 'nationalIndigenousPeoplesDay';
         }
 
