@@ -43,7 +43,7 @@ class PortugalTest extends PortugalBaseTestCase implements ProviderTestCase
      */
     public function testOfficialHolidays(): void
     {
-        $this->assertDefinedHolidays([
+        $holidays = [
             'newYearsDay',
             'internationalWorkersDay',
             'easter',
@@ -53,10 +53,15 @@ class PortugalTest extends PortugalBaseTestCase implements ProviderTestCase
             'immaculateConception',
             'christmasDay',
             '25thApril',
-            'portugueseRepublic',
             'restorationOfIndependence',
             'portugalDay',
-        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
+        ];
+
+        if (($this->year >= 1910 && $this->year <= 2012) || $this->year >= 2016) {
+            $holidays[] = 'portugueseRepublic';
+        }
+
+        $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
