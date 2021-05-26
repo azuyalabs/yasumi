@@ -47,5 +47,6 @@ return [
     'ru' => 'Новый год',
     'sk' => 'Nový rok',
     'sv' => 'nyårsdagen',
+    'tr' => 'Yılbaşı',
     'uk' => 'Новий Рік',
 ];

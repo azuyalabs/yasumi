@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 /*
  * This file is part of the Yasumi package.
  *
@@ -13,14 +12,18 @@ declare(strict_types=1);
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-// Translations for Labour Day
-return [
-    'en' => 'Labour Day',
-    'en_US' => 'Labor Day',
-    'ja' => '労働の日',
-    'ko' => '노동절',
-    'nl' => 'Dag van de arbeid',
-    'sk' => 'Sviatok práce',
-    'fr' => 'Fête du travail',
-    'tr' => 'Emek ve Dayanışma Günü',
-];
+namespace Yasumi\tests\Turkey;
+
+use PHPUnit\Framework\TestCase;
+use Yasumi\tests\YasumiBase;
+
+class TurkeyBaseTestCase extends TestCase
+{
+    use YasumiBase;
+
+    public const REGION = 'Turkey';
+
+    public const TIMEZONE = 'Europe/Istanbul';
+
+    public const LOCALE = 'tr_TR';
+}

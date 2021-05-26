@@ -59,7 +59,7 @@
   },
   "scripts": {
     "format": "./vendor/bin/php-cs-fixer fix",
-    "phpstan": "vendor/bin/phpstan --level=5 analyse src tests",
+    "phpstan": "vendor/bin/phpstan analyse",
     "psalm": "vendor/bin/psalm --threads=2",
     "phan": "vendor/bin/phan",
     "test": "vendor/bin/phpunit",

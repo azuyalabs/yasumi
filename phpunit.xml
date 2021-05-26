@@ -162,6 +162,10 @@
     <testsuite name="Switzerland">
       <directory suffix="Test.php">./tests/Switzerland</directory>
     </testsuite>
+    <!-- Test Suite for holidays in Turkey -->
+    <testsuite name="Turkey">
+      <directory suffix="Test.php">./tests/Turkey</directory>
+    </testsuite>
     <!-- Test Suite for holidays in United States -->
     <testsuite name="USA">
       <directory suffix="Test.php">./tests/USA</directory>
