@@ -14,7 +14,6 @@ $finder = PhpCsFixer\Finder::create()->in(__DIR__);
 
 $config = new PhpCsFixer\Config();
 $config->setRiskyAllowed(true)->setRules([
-    '@PSR2' => true,
     '@Symfony' => true,
     'blank_line_after_opening_tag' => true,
     'is_null' => true,
@@ -29,6 +28,6 @@ $config->setRiskyAllowed(true)->setRules([
     'trailing_comma_in_multiline' => true,
     'cast_spaces' => ['space' => 'single'],
     'declare_strict_types' => true,
-])->setLineEnding("\n")->setFinder($finder);
+])->setFinder($finder);
 
 return $config;
