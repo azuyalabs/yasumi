@@ -8,6 +8,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 ### Added
 
+- Added new Juneteenth National Independence Day to USA [\#253](https://github.com/azuyalabs/yasumi/pull/253) ([Mark Heintz](https://github.com/mheintz))
+
+
 ### Changed
 
 ### Fixed
