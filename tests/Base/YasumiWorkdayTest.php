@@ -47,17 +47,17 @@ class YasumiWorkdayTest extends TestCase
 
         // Assertion using a DateTime instance
         $startDate = new DateTime($date, new DateTimeZone($timezone));
-        $result = Yasumi::nextWorkingDay($provider, $startDate);
+        $nextWorkingDay = Yasumi::nextWorkingDay($provider, $startDate);
 
-        self::assertInstanceOf(DateTime::class, $result);
-        self::assertEquals($expectedDate, $result->format(self::FORMAT_DATE));
+        self::assertInstanceOf(DateTime::class, $nextWorkingDay);
+        self::assertEquals($expectedDate, $nextWorkingDay->format(self::FORMAT_DATE));
 
         // Assertion using a DateTimeImmutable instance
         $startDate = new DateTimeImmutable($date, new DateTimeZone($timezone));
-        $result = Yasumi::nextWorkingDay($provider, $startDate);
+        $nextWorkingDay = Yasumi::nextWorkingDay($provider, $startDate);
 
-        self::assertInstanceOf(DateTimeImmutable::class, $result);
-        self::assertEquals($expectedDate, $result->format(self::FORMAT_DATE));
+        self::assertInstanceOf(DateTimeImmutable::class, $nextWorkingDay);
+        self::assertEquals($expectedDate, $nextWorkingDay->format(self::FORMAT_DATE));
     }
 
     /**
@@ -76,17 +76,17 @@ class YasumiWorkdayTest extends TestCase
 
         // Assertion using a DateTime instance
         $startDate = new DateTime($date, new DateTimeZone($timezone));
-        $result = Yasumi::prevWorkingDay($provider, $startDate);
+        $previousWorkingDay = Yasumi::prevWorkingDay($provider, $startDate);
 
-        self::assertInstanceOf(DateTime::class, $result);
-        self::assertEquals($expectedDate, $result->format(self::FORMAT_DATE));
+        self::assertInstanceOf(DateTime::class, $previousWorkingDay);
+        self::assertEquals($expectedDate, $previousWorkingDay->format(self::FORMAT_DATE));
 
         // Assertion using a DateTimeImmutable instance
         $startDate = new DateTimeImmutable($date, new DateTimeZone($timezone));
-        $result = Yasumi::prevWorkingDay($provider, $startDate);
+        $previousWorkingDay = Yasumi::prevWorkingDay($provider, $startDate);
 
-        self::assertInstanceOf(DateTimeImmutable::class, $result);
-        self::assertEquals($expectedDate, $result->format(self::FORMAT_DATE));
+        self::assertInstanceOf(DateTimeImmutable::class, $previousWorkingDay);
+        self::assertEquals($expectedDate, $previousWorkingDay->format(self::FORMAT_DATE));
     }
 
     /**
@@ -124,23 +124,23 @@ class YasumiWorkdayTest extends TestCase
 
         // Assertion using a DateTime instance
         $startDate = new DateTime($start, new DateTimeZone($timezone));
-        $result = Yasumi::nextWorkingDay($provider, $startDate, $interval);
+        $nextWorkingDay = Yasumi::nextWorkingDay($provider, $startDate, $interval);
 
-        self::assertEquals($expectedNext, $result->format(self::FORMAT_DATE));
+        self::assertEquals($expectedNext, $nextWorkingDay->format(self::FORMAT_DATE));
 
         $startDate = new DateTime($expectedNext, new DateTimeZone($timezone));
-        $result = Yasumi::prevWorkingDay($provider, $startDate, $interval);
-        self::assertEquals($expectedPrevious, $result->format(self::FORMAT_DATE));
+        $previousWorkingDay = Yasumi::prevWorkingDay($provider, $startDate, $interval);
+        self::assertEquals($expectedPrevious, $previousWorkingDay->format(self::FORMAT_DATE));
 
         // Assertion using a DateTimeImmutable instance
         $startDate = new DateTimeImmutable($start, new DateTimeZone($timezone));
-        $result = Yasumi::nextWorkingDay($provider, $startDate, $interval);
+        $nextWorkingDay = Yasumi::nextWorkingDay($provider, $startDate, $interval);
 
-        self::assertEquals($expectedNext, $result->format(self::FORMAT_DATE));
+        self::assertEquals($expectedNext, $nextWorkingDay->format(self::FORMAT_DATE));
 
         $startDate = new DateTimeImmutable($expectedNext, new DateTimeZone($timezone));
-        $result = Yasumi::prevWorkingDay($provider, $startDate, $interval);
-        self::assertEquals($expectedPrevious, $result->format(self::FORMAT_DATE));
+        $previousWorkingDay = Yasumi::prevWorkingDay($provider, $startDate, $interval);
+        self::assertEquals($expectedPrevious, $previousWorkingDay->format(self::FORMAT_DATE));
     }
 
     /**
@@ -156,9 +156,9 @@ class YasumiWorkdayTest extends TestCase
         $provider = 'USA';
         $timezone = 'America/New_York';
         $startDate = new DateTime($start, new DateTimeZone($timezone));
-        $result = Yasumi::nextWorkingDay($provider, $startDate, $workdays);
+        $nextWorkingDay = Yasumi::nextWorkingDay($provider, $startDate, $workdays);
 
-        self::assertEquals($expectedNext, $result->format(self::FORMAT_DATE));
+        self::assertEquals($expectedNext, $nextWorkingDay->format(self::FORMAT_DATE));
     }
 
     public function dataProviderWorkDayNextYear(): array
@@ -190,9 +190,9 @@ class YasumiWorkdayTest extends TestCase
         $provider = 'USA';
         $timezone = 'America/New_York';
         $startDate = new DateTime($start, new DateTimeZone($timezone));
-        $result = Yasumi::prevWorkingDay($provider, $startDate, $workdays);
+        $previousWorkingDay = Yasumi::prevWorkingDay($provider, $startDate, $workdays);
 
-        self::assertEquals($expectedNext, $result->format(self::FORMAT_DATE));
+        self::assertEquals($expectedNext, $previousWorkingDay->format(self::FORMAT_DATE));
     }
 
     public function dataProviderWorkDayPreviousYear(): array
