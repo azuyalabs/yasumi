@@ -22,6 +22,9 @@ $config->setRiskyAllowed(true)->setRules([
     'dir_constant' => true,
     'ordered_class_elements' => true,
     'declare_strict_types' => true,
+    'no_superfluous_elseif' => true,
+    'combine_consecutive_issets' => true,
+    'combine_consecutive_unsets' => true,
 ])->setFinder($finder);
 
 return $config;
