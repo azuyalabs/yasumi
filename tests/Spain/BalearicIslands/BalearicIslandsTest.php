@@ -43,10 +43,9 @@ class BalearicIslandsTest extends BalearicIslandsBaseTestCase implements Provide
      */
     public function testOfficialHolidays(): void
     {
-        $this->assertDefinedHolidays([
+        $holidays = [
             'newYearsDay',
             'epiphany',
-            'balearicIslandsDay',
             'goodFriday',
             'internationalWorkersDay',
             'assumptionOfMary',
@@ -55,7 +54,13 @@ class BalearicIslandsTest extends BalearicIslandsBaseTestCase implements Provide
             'constitutionDay',
             'immaculateConception',
             'christmasDay',
-        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
+        ];
+
+        if ($this->year >= 1983) {
+            $holidays[] = 'balearicIslandsDay';
+        }
+
+        $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
