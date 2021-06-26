@@ -21,12 +21,6 @@ $config->setRiskyAllowed(true)->setRules([
     'self_accessor' => true,
     'dir_constant' => true,
     'ordered_class_elements' => true,
-    'ordered_imports' => ['sort_algorithm' => 'alpha'],
-    'no_unused_imports' => true,
-    'single_quote' => true,
-    'space_after_semicolon' => true,
-    'trailing_comma_in_multiline' => true,
-    'cast_spaces' => ['space' => 'single'],
     'declare_strict_types' => true,
 ])->setFinder($finder);
 
