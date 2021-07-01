@@ -47,6 +47,7 @@ class USATest extends USABaseTestCase
             'martinLutherKingDay',
             'washingtonsBirthday',
             'memorialDay',
+            'juneteenth',
             'independenceDay',
             'labourDay',
             'columbusDay',
