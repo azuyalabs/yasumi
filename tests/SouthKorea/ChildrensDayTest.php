@@ -91,7 +91,7 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             2019,
-            new DateTime("2019-5-6", $tz)
+            new DateTime('2019-5-6', $tz)
         );
 
         // By saturday
@@ -99,7 +99,7 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             2029,
-            new DateTime("2029-5-7", $tz)
+            new DateTime('2029-5-7', $tz)
         );
 
         // By sunday
@@ -107,7 +107,7 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             2024,
-            new DateTime("2024-5-6", $tz)
+            new DateTime('2024-5-6', $tz)
         );
     }
 

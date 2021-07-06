@@ -535,6 +535,7 @@ class SouthKorea extends AbstractProvider
     {
         if ($this->year < 2022) {
             $this->calculateOldSubstituteHolidays();
+
             return;
         }
 
@@ -554,7 +555,7 @@ class SouthKorea extends AbstractProvider
         $dates = [];
         foreach ($acceptedHolidays as $name) {
             $holiday = $this->getHoliday($name);
-            if ($holiday === null) {
+            if (null === $holiday) {
                 continue;
             }
 
@@ -565,7 +566,7 @@ class SouthKorea extends AbstractProvider
 
             // if holiday is overlaps weekend, it should be mark on the table
             if ($this->isWeekendDay($holiday)) {
-                $dates[$day]['weekend:' . $day] = $name;
+                $dates[$day]['weekend:'.$day] = $name;
             }
         }
 
@@ -575,8 +576,7 @@ class SouthKorea extends AbstractProvider
             $count = count($names);
             if ($count < 2) {
                 continue;
-            }
-            else {
+            } else {
                 // In a temporary table, public holidays are keyed by numeric number.
                 // And weekends are keyed by string start with 'weekend:'.
                 // For the substitute, we will use first item in queue.
@@ -589,10 +589,6 @@ class SouthKorea extends AbstractProvider
 
     /**
      * Helper method to find a first working day after specific date.
-     *
-     * @param DateTime $date
-     *
-     * @return DateTime
      */
     protected function nextWorkingDay(DateTime $date): DateTime
     {
