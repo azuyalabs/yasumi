@@ -538,8 +538,9 @@ class SouthKorea extends AbstractProvider
             return;
         }
 
-        // Public Holidays for substitution
-        // Place lunar holidays first for substitution.
+        // Holiday list to allowed to substitute.
+        // When deciding on alternative holidays, place lunar holidays first for consistent rules.
+        // Holiday with fixed dates do not overlap, so if they overlap with lunar holidays, substitute lunar holiday instead of them.
         $acceptedHolidays = [
             'dayBeforeSeollal', 'seollal', 'dayAfterSeollal',
             'dayBeforeChuseok', 'chuseok', 'dayAfterChuseok',
@@ -557,6 +558,8 @@ class SouthKorea extends AbstractProvider
                 continue;
             }
 
+            // Each days consists like stacks and it works as FIFO.
+            // $dates[$day] is considered a FIFO queue. So, lunar holiday come first.
             $day = $holiday->format('Y-m-d');
             $dates[$day][] = $name;
 
@@ -576,6 +579,7 @@ class SouthKorea extends AbstractProvider
             else {
                 // In a temporary table, public holidays are keyed by numeric number.
                 // And weekends are keyed by string start with 'weekend:'.
+                // For the substitute, we will use first item in queue.
                 $origin = $this->getHoliday($names[0]);
                 $workDay = $this->nextWorkingDay(DateTime::createFromFormat('Y-m-d', $day, $tz));
                 $this->addSubstituteHoliday($origin, $workDay->format('Y-m-d'));
