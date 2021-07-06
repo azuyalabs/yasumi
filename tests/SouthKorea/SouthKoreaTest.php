@@ -146,6 +146,6 @@ class SouthKoreaTest extends SouthKoreaBaseTestCase implements ProviderTestCase
      */
     public function testSources(): void
     {
-        $this->assertSources(self::REGION, 2);
+        $this->assertSources(self::REGION, 3);
     }
 }
