@@ -80,25 +80,57 @@ class SeollalTest extends SouthKoreaBaseTestCase implements HolidayTestCase
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testSubstituteHolidayBySunday(): void
+    public function testSubstituteHoliday(): void
     {
-        $this->assertHoliday(
+        $tz = new DateTimeZone(self::TIMEZONE);
+
+        // Before 2022
+        $this->assertSubstituteHoliday(
             self::REGION,
-            'substituteHoliday:dayBeforeSeollal',
+            'dayBeforeSeollal',
             2016,
-            new DateTime('2016-2-10', new DateTimeZone(self::TIMEZONE))
+            new DateTime('2016-2-10', $tz)
         );
-        $this->assertHoliday(
+        $this->assertNotSubstituteHoliday(self::REGION, 'dayAfterSeollal', 2021);
+
+        // By saturday
+        $this->assertSubstituteHoliday(
             self::REGION,
-            'substituteHoliday:seollal',
-            2034,
-            new DateTime('2034-2-21', new DateTimeZone(self::TIMEZONE))
+            'dayBeforeSeollal',
+            2023,
+            new DateTime('2023-1-24', $tz)
         );
-        $this->assertHoliday(
+        $this->assertSubstituteHoliday(
             self::REGION,
-            'substituteHoliday:dayAfterSeollal',
+            'seollal',
             2024,
-            new DateTime('2024-2-12', new DateTimeZone(self::TIMEZONE))
+            new DateTime('2024-2-12', $tz)
+        );
+        $this->assertSubstituteHoliday(
+            self::REGION,
+            'dayAfterSeollal',
+            2041,
+            new DateTime('2041-2-4', $tz)
+        );
+
+        // By sunday
+        $this->assertSubstituteHoliday(
+            self::REGION,
+            'dayBeforeSeollal',
+            2033,
+            new DateTime('2033-2-2', $tz)
+        );
+        $this->assertSubstituteHoliday(
+            self::REGION,
+            'seollal',
+            2034,
+            new DateTime('2034-2-22', $tz)
+        );
+        $this->assertSubstituteHoliday(
+            self::REGION,
+            'dayAfterSeollal',
+            2024,
+            new DateTime('2024-2-13', $tz)
         );
     }
 
