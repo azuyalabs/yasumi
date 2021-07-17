@@ -95,7 +95,7 @@ class Sweden extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function calculateEpiphanyEve(): void
+    private function calculateEpiphanyEve(): void
     {
         $this->addHoliday(new Holiday(
             'epiphanyEve',
@@ -122,7 +122,7 @@ class Sweden extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function calculateWalpurgisEve(): void
+    private function calculateWalpurgisEve(): void
     {
         $this->addHoliday(new Holiday(
             'walpurgisEve',

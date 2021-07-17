@@ -47,7 +47,7 @@ trait CommonHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function newYearsEve(
+    protected function newYearsEve(
         int $year,
         string $timezone,
         string $locale,
@@ -79,7 +79,7 @@ trait CommonHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function newYearsDay(
+    protected function newYearsDay(
         int $year,
         string $timezone,
         string $locale,
@@ -110,7 +110,7 @@ trait CommonHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function internationalWorkersDay(
+    protected function internationalWorkersDay(
         int $year,
         string $timezone,
         string $locale,
@@ -147,7 +147,7 @@ trait CommonHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function valentinesDay(
+    protected function valentinesDay(
         int $year,
         string $timezone,
         string $locale,
@@ -182,7 +182,7 @@ trait CommonHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function worldAnimalDay(
+    protected function worldAnimalDay(
         int $year,
         string $timezone,
         string $locale,
@@ -219,7 +219,7 @@ trait CommonHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function stMartinsDay(
+    protected function stMartinsDay(
         int $year,
         string $timezone,
         string $locale,
@@ -255,7 +255,7 @@ trait CommonHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function fathersDay(
+    protected function fathersDay(
         int $year,
         string $timezone,
         string $locale,
@@ -291,7 +291,7 @@ trait CommonHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function mothersDay(
+    protected function mothersDay(
         int $year,
         string $timezone,
         string $locale,
@@ -327,7 +327,7 @@ trait CommonHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function victoryInEuropeDay(
+    protected function victoryInEuropeDay(
         int $year,
         string $timezone,
         string $locale,
@@ -365,7 +365,7 @@ trait CommonHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function armisticeDay(
+    protected function armisticeDay(
         int $year,
         string $timezone,
         string $locale,
@@ -398,7 +398,7 @@ trait CommonHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function internationalWomensDay(
+    protected function internationalWomensDay(
         int $year,
         string $timezone,
         string $locale,
@@ -426,7 +426,7 @@ trait CommonHolidays
      *
      * @throws \Exception
      */
-    public function summerTime(
+    protected function summerTime(
         int $year,
         string $timezone,
         string $locale,
@@ -460,7 +460,7 @@ trait CommonHolidays
      *
      * @throws \Exception
      */
-    public function winterTime(
+    protected function winterTime(
         int $year,
         string $timezone,
         string $locale,

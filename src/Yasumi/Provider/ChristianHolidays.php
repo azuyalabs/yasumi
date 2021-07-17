@@ -47,7 +47,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function easter(
+    protected function easter(
         int $year,
         string $timezone,
         string $locale,
@@ -76,7 +76,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function easterMonday(
+    protected function easterMonday(
         int $year,
         string $timezone,
         string $locale,
@@ -111,7 +111,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function ascensionDay(
+    protected function ascensionDay(
         int $year,
         string $timezone,
         string $locale,
@@ -143,7 +143,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function pentecost(
+    protected function pentecost(
         int $year,
         string $timezone,
         string $locale,
@@ -175,7 +175,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function pentecostMonday(
+    protected function pentecostMonday(
         int $year,
         string $timezone,
         string $locale,
@@ -210,7 +210,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function corpusChristi(
+    protected function corpusChristi(
         int $year,
         string $timezone,
         string $locale,
@@ -246,7 +246,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function christmasEve(
+    protected function christmasEve(
         int $year,
         string $timezone,
         string $locale,
@@ -279,7 +279,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function christmasDay(
+    protected function christmasDay(
         int $year,
         string $timezone,
         string $locale,
@@ -312,7 +312,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function secondChristmasDay(
+    protected function secondChristmasDay(
         int $year,
         string $timezone,
         string $locale,
@@ -348,7 +348,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function allSaintsDay(
+    protected function allSaintsDay(
         int $year,
         string $timezone,
         string $locale,
@@ -377,7 +377,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function assumptionOfMary(
+    protected function assumptionOfMary(
         int $year,
         string $timezone,
         string $locale,
@@ -410,7 +410,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function goodFriday(
+    protected function goodFriday(
         int $year,
         string $timezone,
         string $locale,
@@ -447,7 +447,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function epiphany(
+    protected function epiphany(
         int $year,
         string $timezone,
         string $locale,
@@ -476,7 +476,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function ashWednesday(
+    protected function ashWednesday(
         int $year,
         string $timezone,
         string $locale,
@@ -512,7 +512,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function immaculateConception(
+    protected function immaculateConception(
         int $year,
         string $timezone,
         string $locale,
@@ -549,7 +549,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function stStephensDay(
+    protected function stStephensDay(
         int $year,
         string $timezone,
         string $locale,
@@ -586,7 +586,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function stJosephsDay(
+    protected function stJosephsDay(
         int $year,
         string $timezone,
         string $locale,
@@ -616,7 +616,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function maundyThursday(
+    protected function maundyThursday(
         int $year,
         string $timezone,
         string $locale,
@@ -652,7 +652,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function stGeorgesDay(
+    protected function stGeorgesDay(
         int $year,
         string $timezone,
         string $locale,
@@ -683,7 +683,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function stJohnsDay(
+    protected function stJohnsDay(
         int $year,
         string $timezone,
         string $locale,
@@ -714,7 +714,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function annunciation(
+    protected function annunciation(
         int $year,
         string $timezone,
         string $locale,
@@ -742,7 +742,7 @@ trait ChristianHolidays
      * @see https://en.wikipedia.org/wiki/Computus#Meeus.27s_Julian_algorithm
      * @see https://www.php.net/manual/en/function.easter-date.php#83794
      */
-    public function calculateOrthodoxEaster(int $year, string $timezone): DateTime
+    protected function calculateOrthodoxEaster(int $year, string $timezone): DateTime
     {
         $a = $year % 4;
         $b = $year % 7;
@@ -781,7 +781,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function reformationDay(
+    protected function reformationDay(
         int $year,
         string $timezone,
         string $locale,
