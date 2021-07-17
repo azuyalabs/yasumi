@@ -27,36 +27,6 @@ use Yasumi\Holiday;
 trait CommonHolidays
 {
     /**
-     * New Year's Eve.
-     *
-     * New Year's Eve is observed on December 31, the last day of the year on the modern Gregorian calendar as well as
-     * the Julian calendar. In present day, with most countries now using the Gregorian calendar as their de facto
-     * calendar, New Year's Eve is probably the most celebrated holiday, often observed with fireworks at the stroke of
-     * midnight as the new year starts in each time zone.
-     *
-     * @see https://en.wikipedia.org/wiki/New_Year%27s_Eve
-     *
-     * @param int    $year     the year for which New Year's Eve need to be created
-     * @param string $timezone the timezone in which New Year's Eve is celebrated
-     * @param string $locale   the locale for which New Year's Eve need to be displayed in
-     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
-     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
-     *
-     * @throws InvalidDateException
-     * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
-     * @throws \Exception
-     */
-    protected function newYearsEve(
-        int $year,
-        string $timezone,
-        string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
-    ): Holiday {
-        return new Holiday('newYearsEve', [], new DateTime("$year-12-31", DateTimeZoneFactory::getDateTimeZone($timezone)), $locale, $type);
-    }
-
-    /**
      * New Year's Day.
      *
      * New Year's Day is observed on January 1, the first day of the year on the modern Gregorian calendar as well as
@@ -126,78 +96,6 @@ trait CommonHolidays
     }
 
     /**
-     * Valentine's Day.
-     *
-     * Valentine's Day, also known as Saint Valentine's Day or the Feast of Saint Valentine, is a celebration observed
-     * on February 14 each year. It is celebrated in many countries around the world, although it is not a public
-     * holiday in most of them. In 18th-century England, it evolved into an occasion in which lovers expressed their
-     * love for each other by presenting flowers, offering confectionery, and sending greeting cards (known as
-     * "valentines").
-     *
-     * @see https://en.wikipedia.org/wiki/Valentine%27s_Day
-     *
-     * @param int    $year     the year for which Valentine's Day need to be created
-     * @param string $timezone the timezone in which Valentine's Day is celebrated
-     * @param string $locale   the locale for which Valentine's Day need to be displayed in
-     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
-     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
-     *
-     * @throws InvalidDateException
-     * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
-     * @throws \Exception
-     */
-    protected function valentinesDay(
-        int $year,
-        string $timezone,
-        string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
-    ): Holiday {
-        return new Holiday(
-            'valentinesDay',
-            [],
-            new DateTime("$year-2-14", DateTimeZoneFactory::getDateTimeZone($timezone)),
-            $locale,
-            $type
-        );
-    }
-
-    /**
-     * World Animal Day.
-     *
-     * World Animal Day is an international day of action for animal rights and welfare celebrated annually on October
-     * 4, the Feast Day of St Francis of Assisi, the patron saint of animals. It started in 1931 at a convention of
-     * ecologists in Florence, Italy who wished to highlight the plight of endangered species.
-     *
-     * @see https://en.wikipedia.org/wiki/World_Animal_Day
-     *
-     * @param int    $year     the year for which World Animal Day need to be created
-     * @param string $timezone the timezone in which World Animal Day is celebrated
-     * @param string $locale   the locale for which World Animal Day need to be displayed in
-     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
-     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
-     *
-     * @throws InvalidDateException
-     * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
-     * @throws \Exception
-     */
-    protected function worldAnimalDay(
-        int $year,
-        string $timezone,
-        string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
-    ): Holiday {
-        return new Holiday(
-            'worldAnimalDay',
-            [],
-            new DateTime("$year-10-4", DateTimeZoneFactory::getDateTimeZone($timezone)),
-            $locale,
-            $type
-        );
-    }
-
-    /**
      * St. Martin's Day.
      *
      * St. Martin's Day, also known as the Feast of St. Martin, Martinstag or Martinmas, the Feast of St Martin of Tours
@@ -227,152 +125,6 @@ trait CommonHolidays
     ): Holiday {
         return new Holiday(
             'stMartinsDay',
-            [],
-            new DateTime("$year-11-11", DateTimeZoneFactory::getDateTimeZone($timezone)),
-            $locale,
-            $type
-        );
-    }
-
-    /**
-     * Father's Day.
-     *
-     * Father's Day is a celebration honoring fathers and celebrating fatherhood, paternal bonds, and the influence of
-     * fathers in society. Many countries celebrate it on the third Sunday of June, though it is also celebrated widely
-     * on other days by many other countries. Father's Day was created to complement Mother's Day, a celebration that
-     * honors mothers and motherhood.
-     *
-     * @see https://en.wikipedia.org/wiki/Father%27s_Day
-     *
-     * @param int    $year     the year for which Father's Day need to be created
-     * @param string $timezone the timezone in which Father's Day is celebrated
-     * @param string $locale   the locale for which Father's Day need to be displayed in
-     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
-     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
-     *
-     * @throws InvalidDateException
-     * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
-     * @throws \Exception
-     */
-    protected function fathersDay(
-        int $year,
-        string $timezone,
-        string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
-    ): Holiday {
-        return new Holiday(
-            'fathersDay',
-            [],
-            new DateTime("third sunday of june $year", DateTimeZoneFactory::getDateTimeZone($timezone)),
-            $locale,
-            $type
-        );
-    }
-
-    /**
-     * Mother's Day.
-     *
-     * Mother's Day is a modern celebration honoring one's own mother, as well as motherhood, maternal bonds, and the
-     * influence of mothers in society. It is celebrated on various days in many parts of the world, most commonly in
-     * the months of March or May. It complements similar celebrations honoring family members, such as Father's Day and
-     * Siblings Day.
-     *
-     * @see https://en.wikipedia.org/wiki/Mother%27s_Day
-     *
-     * @param int    $year     the year for which Mother's Day need to be created
-     * @param string $timezone the timezone in which Mother's Day is celebrated
-     * @param string $locale   the locale for which Mother's Day need to be displayed in
-     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
-     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
-     *
-     * @throws InvalidDateException
-     * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
-     * @throws \Exception
-     */
-    protected function mothersDay(
-        int $year,
-        string $timezone,
-        string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
-    ): Holiday {
-        return new Holiday(
-            'mothersDay',
-            [],
-            new DateTime("second sunday of may $year", DateTimeZoneFactory::getDateTimeZone($timezone)),
-            $locale,
-            $type
-        );
-    }
-
-    /**
-     * Victory in Europe Day.
-     *
-     * Victory in Europe Day, generally known as V-E Day, VE Day, or simply V Day was the public holiday celebrated on 8
-     * May 1945 (7 May in Commonwealth realms) to mark the formal acceptance by the Allies of World War II of Nazi
-     * Germany's unconditional surrender of its armed forces. It thus marked the end of World War II in Europe. Some
-     * countries commemorate the end of the war on a different date.
-     *
-     * @see https://en.wikipedia.org/wiki/Victory_in_Europe_Day
-     *
-     * @param int    $year     the year for which Victory in Europe Day need to be created
-     * @param string $timezone the timezone in which Victory in Europe Day is celebrated
-     * @param string $locale   the locale for which Victory in Europe Day need to be displayed in
-     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
-     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
-     *
-     * @throws InvalidDateException
-     * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
-     * @throws \Exception
-     */
-    protected function victoryInEuropeDay(
-        int $year,
-        string $timezone,
-        string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
-    ): Holiday {
-        return new Holiday(
-            'victoryInEuropeDay',
-            [],
-            new DateTime("$year-5-8", DateTimeZoneFactory::getDateTimeZone($timezone)),
-            $locale,
-            $type
-        );
-    }
-
-    /**
-     * Armistice Day.
-     *
-     * Armistice Day is commemorated every year on 11 November to mark the armistice signed between the Allies of World
-     * War I and Germany at Compiègne, France, for the cessation of hostilities on the Western Front of World War I.
-     * The date was declared a national holiday in many allied nations, to commemorate those members of the armed forces
-     * who were killed during war. An exception is Italy, where the end of the war is commemorated on 4 November, the
-     * day of the Armistice of Villa Giusti. In the Netherlands, Denmark and Norway World War I is not commemorated as
-     * the three countries all remained neutral.
-     *
-     * @see https://en.wikipedia.org/wiki/Armistice_Day
-     *
-     * @param int    $year     the year for which Armistice Day need to be created
-     * @param string $timezone the timezone in which Armistice Day is celebrated
-     * @param string $locale   the locale for which Armistice Day need to be displayed in
-     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
-     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
-     *
-     * @throws InvalidDateException
-     * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
-     * @throws \Exception
-     */
-    protected function armisticeDay(
-        int $year,
-        string $timezone,
-        string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
-    ): Holiday {
-        return new Holiday(
-            'armisticeDay',
             [],
             new DateTime("$year-11-11", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
@@ -414,6 +166,254 @@ trait CommonHolidays
     }
 
     /**
+     * New Year's Eve.
+     *
+     * New Year's Eve is observed on December 31, the last day of the year on the modern Gregorian calendar as well as
+     * the Julian calendar. In present day, with most countries now using the Gregorian calendar as their de facto
+     * calendar, New Year's Eve is probably the most celebrated holiday, often observed with fireworks at the stroke of
+     * midnight as the new year starts in each time zone.
+     *
+     * @see https://en.wikipedia.org/wiki/New_Year%27s_Eve
+     *
+     * @param int    $year     the year for which New Year's Eve need to be created
+     * @param string $timezone the timezone in which New Year's Eve is celebrated
+     * @param string $locale   the locale for which New Year's Eve need to be displayed in
+     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
+     *
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
+     * @throws \InvalidArgumentException
+     * @throws \Exception
+     */
+    private function newYearsEve(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday('newYearsEve', [], new DateTime("$year-12-31", DateTimeZoneFactory::getDateTimeZone($timezone)), $locale, $type);
+    }
+
+    /**
+     * Valentine's Day.
+     *
+     * Valentine's Day, also known as Saint Valentine's Day or the Feast of Saint Valentine, is a celebration observed
+     * on February 14 each year. It is celebrated in many countries around the world, although it is not a public
+     * holiday in most of them. In 18th-century England, it evolved into an occasion in which lovers expressed their
+     * love for each other by presenting flowers, offering confectionery, and sending greeting cards (known as
+     * "valentines").
+     *
+     * @see https://en.wikipedia.org/wiki/Valentine%27s_Day
+     *
+     * @param int    $year     the year for which Valentine's Day need to be created
+     * @param string $timezone the timezone in which Valentine's Day is celebrated
+     * @param string $locale   the locale for which Valentine's Day need to be displayed in
+     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
+     *
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
+     * @throws \InvalidArgumentException
+     * @throws \Exception
+     */
+    private function valentinesDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'valentinesDay',
+            [],
+            new DateTime("$year-2-14", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    /**
+     * World Animal Day.
+     *
+     * World Animal Day is an international day of action for animal rights and welfare celebrated annually on October
+     * 4, the Feast Day of St Francis of Assisi, the patron saint of animals. It started in 1931 at a convention of
+     * ecologists in Florence, Italy who wished to highlight the plight of endangered species.
+     *
+     * @see https://en.wikipedia.org/wiki/World_Animal_Day
+     *
+     * @param int    $year     the year for which World Animal Day need to be created
+     * @param string $timezone the timezone in which World Animal Day is celebrated
+     * @param string $locale   the locale for which World Animal Day need to be displayed in
+     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
+     *
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
+     * @throws \InvalidArgumentException
+     * @throws \Exception
+     */
+    private function worldAnimalDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'worldAnimalDay',
+            [],
+            new DateTime("$year-10-4", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    /**
+     * Father's Day.
+     *
+     * Father's Day is a celebration honoring fathers and celebrating fatherhood, paternal bonds, and the influence of
+     * fathers in society. Many countries celebrate it on the third Sunday of June, though it is also celebrated widely
+     * on other days by many other countries. Father's Day was created to complement Mother's Day, a celebration that
+     * honors mothers and motherhood.
+     *
+     * @see https://en.wikipedia.org/wiki/Father%27s_Day
+     *
+     * @param int    $year     the year for which Father's Day need to be created
+     * @param string $timezone the timezone in which Father's Day is celebrated
+     * @param string $locale   the locale for which Father's Day need to be displayed in
+     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
+     *
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
+     * @throws \InvalidArgumentException
+     * @throws \Exception
+     */
+    private function fathersDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'fathersDay',
+            [],
+            new DateTime("third sunday of june $year", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    /**
+     * Mother's Day.
+     *
+     * Mother's Day is a modern celebration honoring one's own mother, as well as motherhood, maternal bonds, and the
+     * influence of mothers in society. It is celebrated on various days in many parts of the world, most commonly in
+     * the months of March or May. It complements similar celebrations honoring family members, such as Father's Day and
+     * Siblings Day.
+     *
+     * @see https://en.wikipedia.org/wiki/Mother%27s_Day
+     *
+     * @param int    $year     the year for which Mother's Day need to be created
+     * @param string $timezone the timezone in which Mother's Day is celebrated
+     * @param string $locale   the locale for which Mother's Day need to be displayed in
+     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
+     *
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
+     * @throws \InvalidArgumentException
+     * @throws \Exception
+     */
+    private function mothersDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'mothersDay',
+            [],
+            new DateTime("second sunday of may $year", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    /**
+     * Victory in Europe Day.
+     *
+     * Victory in Europe Day, generally known as V-E Day, VE Day, or simply V Day was the public holiday celebrated on 8
+     * May 1945 (7 May in Commonwealth realms) to mark the formal acceptance by the Allies of World War II of Nazi
+     * Germany's unconditional surrender of its armed forces. It thus marked the end of World War II in Europe. Some
+     * countries commemorate the end of the war on a different date.
+     *
+     * @see https://en.wikipedia.org/wiki/Victory_in_Europe_Day
+     *
+     * @param int    $year     the year for which Victory in Europe Day need to be created
+     * @param string $timezone the timezone in which Victory in Europe Day is celebrated
+     * @param string $locale   the locale for which Victory in Europe Day need to be displayed in
+     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
+     *
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
+     * @throws \InvalidArgumentException
+     * @throws \Exception
+     */
+    private function victoryInEuropeDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'victoryInEuropeDay',
+            [],
+            new DateTime("$year-5-8", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    /**
+     * Armistice Day.
+     *
+     * Armistice Day is commemorated every year on 11 November to mark the armistice signed between the Allies of World
+     * War I and Germany at Compiègne, France, for the cessation of hostilities on the Western Front of World War I.
+     * The date was declared a national holiday in many allied nations, to commemorate those members of the armed forces
+     * who were killed during war. An exception is Italy, where the end of the war is commemorated on 4 November, the
+     * day of the Armistice of Villa Giusti. In the Netherlands, Denmark and Norway World War I is not commemorated as
+     * the three countries all remained neutral.
+     *
+     * @see https://en.wikipedia.org/wiki/Armistice_Day
+     *
+     * @param int    $year     the year for which Armistice Day need to be created
+     * @param string $timezone the timezone in which Armistice Day is celebrated
+     * @param string $locale   the locale for which Armistice Day need to be displayed in
+     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
+     *
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
+     * @throws \InvalidArgumentException
+     * @throws \Exception
+     */
+    private function armisticeDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'armisticeDay',
+            [],
+            new DateTime("$year-11-11", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    /**
      * The beginning of summer time.
      *
      * Summer time is also known as daylight save time.
@@ -426,7 +426,7 @@ trait CommonHolidays
      *
      * @throws \Exception
      */
-    protected function summerTime(
+    private function summerTime(
         int $year,
         string $timezone,
         string $locale,
@@ -460,7 +460,7 @@ trait CommonHolidays
      *
      * @throws \Exception
      */
-    protected function winterTime(
+    private function winterTime(
         int $year,
         string $timezone,
         string $locale,
@@ -503,7 +503,7 @@ trait CommonHolidays
      *
      * @throws \Exception
      */
-    protected function calculateSummerWinterTime(
+    private function calculateSummerWinterTime(
         int $year,
         string $timezone,
         bool $summer

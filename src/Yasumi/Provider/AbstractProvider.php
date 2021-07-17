@@ -189,18 +189,6 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     }
 
     /**
-     * Gets all of the holiday dates defined by this holiday provider (for the given year).
-     *
-     * @return array list of all holiday dates defined for the given year
-     */
-    protected function getHolidayDates(): array
-    {
-        return array_map(static function ($holiday) {
-            return (string) $holiday;
-        }, $this->holidays);
-    }
-
-    /**
      * Determines whether a date represents a weekend day or not.
      *
      * @param \DateTimeInterface $date any date object that implements the DateTimeInterface (e.g. Yasumi\Holiday,
@@ -424,29 +412,15 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     }
 
     /**
-     * Clear all holidays.
+     * Gets all of the holiday dates defined by this holiday provider (for the given year).
+     *
+     * @return array list of all holiday dates defined for the given year
      */
-    protected function clearHolidays(): void
+    protected function getHolidayDates(): array
     {
-        $this->holidays = [];
-    }
-
-    /**
-     * Checks whether the given holiday is not empty.
-     *
-     * @param string $key key of the holiday to be checked
-     *
-     * @return true upon success, otherwise an InvalidArgumentException is thrown
-     *
-     * @throws InvalidArgumentException an InvalidArgumentException is thrown if the given holiday parameter is empty
-     */
-    protected function isHolidayKeyNotEmpty(string $key): bool
-    {
-        if (empty($key)) {
-            throw new InvalidArgumentException('Holiday key can not be blank.');
-        }
-
-        return true;
+        return array_map(static function ($holiday) {
+            return (string) $holiday;
+        }, $this->holidays);
     }
 
     /**
@@ -464,6 +438,32 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     protected function isHolidayNameNotEmpty(string $key): bool
     {
         return $this->isHolidayKeyNotEmpty($key);
+    }
+
+    /**
+     * Clear all holidays.
+     */
+    private function clearHolidays(): void
+    {
+        $this->holidays = [];
+    }
+
+    /**
+     * Checks whether the given holiday is not empty.
+     *
+     * @param string $key key of the holiday to be checked
+     *
+     * @return true upon success, otherwise an InvalidArgumentException is thrown
+     *
+     * @throws InvalidArgumentException an InvalidArgumentException is thrown if the given holiday parameter is empty
+     */
+    private function isHolidayKeyNotEmpty(string $key): bool
+    {
+        if (empty($key)) {
+            throw new InvalidArgumentException('Holiday key can not be blank.');
+        }
+
+        return true;
     }
 
     /**
