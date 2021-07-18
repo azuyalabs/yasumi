@@ -123,7 +123,7 @@ class Yasumi
      * @throws ProviderNotFoundException if the holiday provider for the given country does not exist
      * @throws \ReflectionException
      */
-    public static function create(string $class, int $year = 0, string $locale = self::DEFAULT_LOCALE): AbstractProvider
+    public static function create(string $class, int $year = self::YEAR_LOWER_BOUND, string $locale = self::DEFAULT_LOCALE): AbstractProvider
     {
         // Find and return holiday provider instance
         $providerClass = sprintf('Yasumi\Provider\%s', str_replace('/', '\\', $class));
@@ -192,7 +192,7 @@ class Yasumi
      */
     public static function createByISO3166_2(
         string $isoCode,
-        int $year = 0,
+        int $year = self::YEAR_LOWER_BOUND,
         string $locale = self::DEFAULT_LOCALE
     ): AbstractProvider {
         $availableProviders = self::getProviders();
