@@ -85,7 +85,7 @@ class Scotland extends UnitedKingdom
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    protected function calculateSummerBankHoliday(): void
+    private function calculateSummerBankHoliday(): void
     {
         if ($this->year < 1871) {
             return;
