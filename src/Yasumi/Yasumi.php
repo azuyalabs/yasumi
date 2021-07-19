@@ -281,7 +281,7 @@ class Yasumi
         while ($workingDays > 0) {
             $date = $date->sub(new \DateInterval('P1D'));
             if (!$provider instanceof ProviderInterface || $provider->getYear() !== $date->format('Y')) {
-                $provider = self::create($class, (int)$date->format('Y'));
+                $provider = self::create($class, (int) $date->format('Y'));
             }
             if ($provider->isWorkingDay($date)) {
                 --$workingDays;
