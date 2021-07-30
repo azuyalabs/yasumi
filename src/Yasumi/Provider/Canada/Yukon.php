@@ -66,7 +66,7 @@ class Yukon extends Canada
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    protected function calculateDiscoveryDay(): void
+    private function calculateDiscoveryDay(): void
     {
         if ($this->year < 1897) {
             return;
@@ -90,7 +90,7 @@ class Yukon extends Canada
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    protected function calculateHeritageDay(): void
+    private function calculateHeritageDay(): void
     {
         if ($this->year < 2009) {
             return;

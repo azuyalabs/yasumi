@@ -169,7 +169,7 @@ class SouthKorea extends AbstractProvider
      *
      * @throws \Exception
      */
-    public function calculateNewYearsDay(): void
+    private function calculateNewYearsDay(): void
     {
         if ($this->year >= 1950) {
             $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
@@ -200,7 +200,7 @@ class SouthKorea extends AbstractProvider
      *
      * @throws \Exception
      */
-    public function calculateSeollal(): void
+    private function calculateSeollal(): void
     {
         if ($this->year >= 1985 && isset(self::LUNAR_HOLIDAY['seollal'][$this->year])) {
             $seollal = new DateTime(self::LUNAR_HOLIDAY['seollal'][$this->year], DateTimeZoneFactory::getDateTimeZone($this->timezone));
@@ -238,7 +238,7 @@ class SouthKorea extends AbstractProvider
      *
      * @throws \Exception
      */
-    public function calculateBuddhasBirthday(): void
+    private function calculateBuddhasBirthday(): void
     {
         if ($this->year >= 1975 && isset(self::LUNAR_HOLIDAY['buddhasBirthday'][$this->year])) {
             $this->addHoliday(new Holiday(
@@ -260,7 +260,7 @@ class SouthKorea extends AbstractProvider
      *
      * @throws \Exception
      */
-    public function calculateChuseok(): void
+    private function calculateChuseok(): void
     {
         if ($this->year >= 1949 && isset(self::LUNAR_HOLIDAY['chuseok'][$this->year])) {
             // Chuseok
@@ -301,7 +301,7 @@ class SouthKorea extends AbstractProvider
      *
      * @throws \Exception
      */
-    public function calculateIndependenceMovementDay(): void
+    private function calculateIndependenceMovementDay(): void
     {
         if ($this->year >= 1949) {
             $this->addHoliday(new Holiday(
@@ -320,7 +320,7 @@ class SouthKorea extends AbstractProvider
      *
      * @throws \Exception
      */
-    public function calculateArborDay(): void
+    private function calculateArborDay(): void
     {
         if (($this->year >= 1949 && $this->year < 1960) || ($this->year > 1960 && $this->year < 2006)) {
             $this->addHoliday(new Holiday(
@@ -339,7 +339,7 @@ class SouthKorea extends AbstractProvider
      *
      * @throws \Exception
      */
-    public function calculateChildrensDay(): void
+    private function calculateChildrensDay(): void
     {
         if ($this->year >= 1970) {
             $this->addHoliday(new Holiday(
@@ -358,7 +358,7 @@ class SouthKorea extends AbstractProvider
      *
      * @throws \Exception
      */
-    public function calculateMemorialDay(): void
+    private function calculateMemorialDay(): void
     {
         if ($this->year >= 1966) {
             $this->addHoliday(new Holiday(
@@ -380,7 +380,7 @@ class SouthKorea extends AbstractProvider
      *
      * @throws \Exception
      */
-    public function calculateConstitutionDay(): void
+    private function calculateConstitutionDay(): void
     {
         if ($this->year >= 1949 && $this->year < 2008) {
             $this->addHoliday(new Holiday(
@@ -399,7 +399,7 @@ class SouthKorea extends AbstractProvider
      *
      * @throws \Exception
      */
-    public function calculateLiberationDay(): void
+    private function calculateLiberationDay(): void
     {
         if ($this->year >= 1949) {
             $this->addHoliday(new Holiday(
@@ -418,7 +418,7 @@ class SouthKorea extends AbstractProvider
      *
      * @throws \Exception
      */
-    public function calculateArmedForcesDay(): void
+    private function calculateArmedForcesDay(): void
     {
         if ($this->year >= 1956 && $this->year <= 1990) {
             $this->addHoliday(new Holiday(
@@ -437,7 +437,7 @@ class SouthKorea extends AbstractProvider
      *
      * @throws \Exception
      */
-    public function calculateNationalFoundationDay(): void
+    private function calculateNationalFoundationDay(): void
     {
         if ($this->year >= 1949) {
             $this->addHoliday(new Holiday(
@@ -456,7 +456,7 @@ class SouthKorea extends AbstractProvider
      *
      * @throws \Exception
      */
-    public function calculateHangulDay(): void
+    private function calculateHangulDay(): void
     {
         if (($this->year >= 1949 && $this->year <= 1990) || $this->year > 2012) {
             $this->addHoliday(new Holiday(
@@ -482,7 +482,7 @@ class SouthKorea extends AbstractProvider
      *
      * @throws \Exception
      */
-    public function calculateOldSubstituteHolidays(): void
+    private function calculateOldSubstituteHolidays(): void
     {
         if ($this->year < 2014) {
             return;
@@ -531,7 +531,7 @@ class SouthKorea extends AbstractProvider
      *
      * @throws \Exception
      */
-    public function calculateSubstituteHolidays(): void
+    private function calculateSubstituteHolidays(): void
     {
         if ($this->year < 2022) {
             $this->calculateOldSubstituteHolidays();

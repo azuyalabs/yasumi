@@ -49,6 +49,15 @@ class Switzerland extends AbstractProvider
         $this->calculateNationalDay();
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Switzerland',
+            'https://fr.wikipedia.org/wiki/Jours_f%C3%A9ri%C3%A9s_en_Suisse',
+            'https://it.wikipedia.org/wiki/Festivit%C3%A0_in_Svizzera',
+        ];
+    }
+
     /**
      * Berchtoldstag.
      *
@@ -63,7 +72,7 @@ class Switzerland extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateBerchtoldsTag(): void
+    protected function calculateBerchtoldsTag(): void
     {
         $this->addHoliday(new Holiday(
             'berchtoldsTag',
@@ -93,7 +102,7 @@ class Switzerland extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateBettagsMontag(): void
+    protected function calculateBettagsMontag(): void
     {
         if ($this->year >= 1832) {
             // Find third Sunday of September
@@ -107,15 +116,6 @@ class Switzerland extends AbstractProvider
                 'it' => 'Festa federale di ringraziamento, pentimento e preghiera',
             ], $date, $this->locale, Holiday::TYPE_OTHER));
         }
-    }
-
-    public function getSources(): array
-    {
-        return [
-            'https://en.wikipedia.org/wiki/Public_holidays_in_Switzerland',
-            'https://fr.wikipedia.org/wiki/Jours_f%C3%A9ri%C3%A9s_en_Suisse',
-            'https://it.wikipedia.org/wiki/Festivit%C3%A0_in_Svizzera',
-        ];
     }
 
     /**

@@ -78,7 +78,7 @@ class Berlin extends Germany
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function dayOfLiberation(
+    private function dayOfLiberation(
         string $timezone,
         string $locale,
         string $type = Holiday::TYPE_OFFICIAL

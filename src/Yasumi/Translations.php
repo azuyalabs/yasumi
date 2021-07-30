@@ -77,7 +77,7 @@ class Translations implements TranslationsInterface
 
             if (\is_array($translations)) {
                 foreach (array_keys($translations) as $locale) {
-                    $this->isValidLocale($locale); // Validate the given locale
+                    $this->checkLocale($locale);
                 }
 
                 $this->translations[$key] = $translations;
@@ -96,7 +96,7 @@ class Translations implements TranslationsInterface
      */
     public function addTranslation(string $key, string $locale, string $translation): void
     {
-        $this->isValidLocale($locale); // Validate the given locale
+        $this->checkLocale($locale);
 
         if (!\array_key_exists($key, $this->translations)) {
             $this->translations[$key] = [];
@@ -139,22 +139,10 @@ class Translations implements TranslationsInterface
         return $this->translations[$key];
     }
 
-    /**
-     * Checks whether the given locale is a valid/available locale.
-     *
-     * @param string $locale locale the locale to be validated
-     *
-     * @return true upon success, otherwise an UnknownLocaleException is thrown
-     *
-     * @throws UnknownLocaleException an UnknownLocaleException is thrown if the given locale is not
-     *                                valid/available
-     */
-    protected function isValidLocale(string $locale): bool
+    private function checkLocale(string $locale): void
     {
         if (!\in_array($locale, $this->availableLocales, true)) {
             throw new UnknownLocaleException(sprintf('Locale "%s" is not a valid locale.', $locale));
         }
-
-        return true;
     }
 }

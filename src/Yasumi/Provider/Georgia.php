@@ -75,7 +75,7 @@ class Georgia extends AbstractProvider
     /**
      * @throws \Exception
      */
-    public function calculateEaster(int $year, string $timezone): \DateTime
+    protected function calculateEaster(int $year, string $timezone): \DateTime
     {
         return $this->calculateOrthodoxEaster($year, $timezone);
     }

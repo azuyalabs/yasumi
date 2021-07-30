@@ -142,30 +142,6 @@ class Canada extends AbstractProvider
     }
 
     /**
-     * Canada Day.
-     *
-     * @see https://en.wikipedia.org/wiki/Canada_Day
-     *
-     * @throws InvalidDateException
-     * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
-     * @throws \Exception
-     */
-    protected function calculateCanadaDay(): void
-    {
-        if ($this->year < 1983) {
-            return;
-        }
-
-        $this->addHoliday(new Holiday(
-            'canadaDay',
-            [],
-            new DateTime($this->year.'-07-01', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-            $this->locale
-        ));
-    }
-
-    /**
      * Civic Holiday.
      *
      * @see https://en.wikipedia.org/wiki/Civic_Holiday
@@ -190,6 +166,30 @@ class Canada extends AbstractProvider
     }
 
     /**
+     * Canada Day.
+     *
+     * @see https://en.wikipedia.org/wiki/Canada_Day
+     *
+     * @throws InvalidDateException
+     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws \Exception
+     */
+    private function calculateCanadaDay(): void
+    {
+        if ($this->year < 1983) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday(
+            'canadaDay',
+            [],
+            new DateTime($this->year.'-07-01', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale
+        ));
+    }
+
+    /**
      * Thanksgiving.
      *
      * @see https://en.wikipedia.org/wiki/Thanksgiving_(Canada)
@@ -199,7 +199,7 @@ class Canada extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    protected function calculateThanksgivingDay(): void
+    private function calculateThanksgivingDay(): void
     {
         if ($this->year < 1879) {
             return;
@@ -223,7 +223,7 @@ class Canada extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    protected function calculateRemembranceDay(): void
+    private function calculateRemembranceDay(): void
     {
         if ($this->year < 1919) {
             return;
