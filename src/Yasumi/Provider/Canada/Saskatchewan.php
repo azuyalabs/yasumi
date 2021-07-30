@@ -65,7 +65,7 @@ class Saskatchewan extends Canada
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    protected function calculateSaskatchewanDay(): void
+    private function calculateSaskatchewanDay(): void
     {
         if ($this->year < 1879) {
             return;

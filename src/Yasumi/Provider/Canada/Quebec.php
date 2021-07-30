@@ -76,7 +76,7 @@ class Quebec extends Canada
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    public function saintJeanBaptisteDay(
+    private function saintJeanBaptisteDay(
         int $year,
         string $timezone,
         string $locale,
