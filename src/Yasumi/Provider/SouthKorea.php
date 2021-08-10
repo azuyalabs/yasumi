@@ -517,7 +517,6 @@ class SouthKorea extends AbstractProvider
                 $this->addSubstituteHoliday($this->getHoliday('liberationDay'), "$this->year-8-16");
                 $this->addSubstituteHoliday($this->getHoliday('nationalFoundationDay'), "$this->year-10-4");
                 $this->addSubstituteHoliday($this->getHoliday('hangulDay'), "$this->year-10-11");
-                $this->addSubstituteHoliday($this->getHoliday('christmasDay'), "$this->year-12-27");
                 break;
         }
     }
@@ -540,32 +539,33 @@ class SouthKorea extends AbstractProvider
         }
 
         // Holiday list to allowed to substitute.
+        $accptedHolidays = [];
+
         // When deciding on alternative holidays, place lunar holidays first for consistent rules.
-        // Holiday with fixed dates do not overlap, so if they overlap with lunar holidays, substitute lunar holiday instead of them.
-        $acceptedHolidays = [
+        // These holidays will substitute for the sunday only.
+        $accptedHolidays += array_fill_keys([
             'dayBeforeSeollal', 'seollal', 'dayAfterSeollal',
             'dayBeforeChuseok', 'chuseok', 'dayAfterChuseok',
-            'buddhasBirthday',
-            'newYearsDay', 'independenceMovementDay', 'childrensDay',
-            'memorialDay', 'liberationDay', 'nationalFoundationDay',
-            'hangulDay', 'christmasDay',
-        ];
+        ], [0]);
+
+        // These holidays will substitute for any weekend days (Sunday and Saturday).
+        $accptedHolidays += array_fill_keys([
+            'childrensDay', 'independenceMovementDay', 'liberationDay',
+            'nationalFoundationDay', 'hangulDay',
+        ], [0, 6]);
 
         // Step 1. Build a temporary table that aggregates holidays by date.
         $dates = [];
-        foreach ($acceptedHolidays as $name) {
+        foreach ($this->getHolidayDates() as $name => $day) {
             $holiday = $this->getHoliday($name);
-            if (null === $holiday) {
+            $dates[$day][] = $name;
+
+            if (!isset($accptedHolidays[$name])) {
                 continue;
             }
 
-            // Each days consists like stacks and it works as FIFO.
-            // $dates[$day] is considered a FIFO queue. So, lunar holiday come first.
-            $day = $holiday->format('Y-m-d');
-            $dates[$day][] = $name;
-
-            // if holiday is overlaps weekend, it should be mark on the table
-            if ($this->isWeekendDay($holiday)) {
+            $dayOfWeek = (int) $holiday->format('w');
+            if (in_array($dayOfWeek, $accptedHolidays[$name], true)) {
                 $dates[$day]['weekend:'.$day] = $name;
             }
         }
@@ -590,7 +590,7 @@ class SouthKorea extends AbstractProvider
     /**
      * Helper method to find a first working day after specific date.
      */
-    protected function nextWorkingDay(DateTime $date): DateTime
+    private function nextWorkingDay(DateTime $date): DateTime
     {
         $interval = new DateInterval('P1D');
         $next = clone $date;
@@ -608,7 +608,7 @@ class SouthKorea extends AbstractProvider
      *
      * @throws \Exception
      */
-    protected function addSubstituteHoliday(Holiday $origin, string $date_str): void
+    private function addSubstituteHoliday(Holiday $origin, string $date_str): void
     {
         $this->addHoliday(new SubstituteHoliday(
             $origin,
