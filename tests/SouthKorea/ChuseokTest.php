@@ -117,7 +117,7 @@ class ChuseokTest extends SouthKoreaBaseTestCase implements HolidayTestCase
             self::REGION,
             'dayAfterChuseok',
             2039,
-            new DateTime('2039-10-6', $tz)
+            new DateTime('2039-10-5', $tz)
         );
     }
 
@@ -139,26 +139,6 @@ class ChuseokTest extends SouthKoreaBaseTestCase implements HolidayTestCase
             new DateTime('2014-9-10', $tz)
         );
 
-        // By saturday
-        $this->assertSubstituteHoliday(
-            self::REGION,
-            'dayBeforeChuseok',
-            2035,
-            new DateTime('2035-9-18', $tz)
-        );
-        $this->assertSubstituteHoliday(
-            self::REGION,
-            'chuseok',
-            2036,
-            new DateTime('2036-10-7', $tz)
-        );
-        $this->assertSubstituteHoliday(
-            self::REGION,
-            'dayAfterChuseok',
-            2040,
-            new DateTime('2040-9-24', $tz)
-        );
-
         // By sunday
         $this->assertSubstituteHoliday(
             self::REGION,
@@ -170,13 +150,13 @@ class ChuseokTest extends SouthKoreaBaseTestCase implements HolidayTestCase
             self::REGION,
             'chuseok',
             2032,
-            new DateTime('2032-9-22', $tz)
+            new DateTime('2032-9-21', $tz)
         );
         $this->assertSubstituteHoliday(
             self::REGION,
             'dayAfterChuseok',
             2036,
-            new DateTime('2036-10-8', $tz)
+            new DateTime('2036-10-7', $tz)
         );
     }
 

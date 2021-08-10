@@ -58,62 +58,6 @@ class BuddhasBirthdayTest extends SouthKoreaBaseTestCase implements HolidayTestC
     }
 
     /**
-     * Tests the substitute holiday defined in this test (conflict with ChildrensDay).
-     *
-     * @throws Exception
-     * @throws ReflectionException
-     */
-    public function testSubstituteHolidayByChildrensDay(): void
-    {
-        $tz = new DateTimeZone(self::TIMEZONE);
-
-        foreach ([2025, 2044] as $year) {
-            $this->assertHoliday(
-                self::REGION,
-                'childrensDay',
-                $year,
-                new DateTime("$year-5-5", $tz)
-            );
-            $this->assertSubstituteHoliday(
-                self::REGION,
-                self::HOLIDAY,
-                $year,
-                new DateTime("$year-5-6", $tz)
-            );
-        }
-    }
-
-    /**
-     * Tests the substitute holiday defined in this test.
-     *
-     * @throws Exception
-     * @throws ReflectionException
-     */
-    public function testSubstituteHoliday(): void
-    {
-        $tz = new DateTimeZone(self::TIMEZONE);
-
-        // Before 2022
-        $this->assertNotSubstituteHoliday(self::REGION, self::HOLIDAY, 2016);
-
-        // By saturday
-        $this->assertSubstituteHoliday(
-            self::REGION,
-            self::HOLIDAY,
-            2023,
-            new DateTime('2023-5-29', $tz)
-        );
-
-        // By sunday
-        $this->assertSubstituteHoliday(
-            self::REGION,
-            self::HOLIDAY,
-            2026,
-            new DateTime('2026-5-25', $tz)
-        );
-    }
-
-    /**
      * Tests the holiday defined in this test before establishment.
      *
      * @throws ReflectionException

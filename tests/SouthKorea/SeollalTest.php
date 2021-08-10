@@ -93,26 +93,6 @@ class SeollalTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         );
         $this->assertNotSubstituteHoliday(self::REGION, 'dayAfterSeollal', 2021);
 
-        // By saturday
-        $this->assertSubstituteHoliday(
-            self::REGION,
-            'dayBeforeSeollal',
-            2023,
-            new DateTime('2023-1-24', $tz)
-        );
-        $this->assertSubstituteHoliday(
-            self::REGION,
-            'seollal',
-            2024,
-            new DateTime('2024-2-12', $tz)
-        );
-        $this->assertSubstituteHoliday(
-            self::REGION,
-            'dayAfterSeollal',
-            2041,
-            new DateTime('2041-2-4', $tz)
-        );
-
         // By sunday
         $this->assertSubstituteHoliday(
             self::REGION,
@@ -124,13 +104,13 @@ class SeollalTest extends SouthKoreaBaseTestCase implements HolidayTestCase
             self::REGION,
             'seollal',
             2034,
-            new DateTime('2034-2-22', $tz)
+            new DateTime('2034-2-21', $tz)
         );
         $this->assertSubstituteHoliday(
             self::REGION,
             'dayAfterSeollal',
             2024,
-            new DateTime('2024-2-13', $tz)
+            new DateTime('2024-2-12', $tz)
         );
     }
 

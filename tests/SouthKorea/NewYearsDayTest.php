@@ -74,36 +74,6 @@ class NewYearsDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * Tests the substitute holiday defined in this test.
-     *
-     * @throws Exception
-     * @throws ReflectionException
-     */
-    public function testSubstituteHoliday(): void
-    {
-        $tz = new DateTimeZone(self::TIMEZONE);
-
-        // Before 2022
-        $this->assertNotSubstituteHoliday(self::REGION, self::HOLIDAY, 2017);
-
-        // By saturday
-        $this->assertSubstituteHoliday(
-            self::REGION,
-            self::HOLIDAY,
-            2039,
-            new DateTime('2039-1-3', $tz)
-        );
-
-        // By sunday
-        $this->assertSubstituteHoliday(
-            self::REGION,
-            self::HOLIDAY,
-            2040,
-            new DateTime('2040-1-2', $tz)
-        );
-    }
-
-    /**
      * Tests the holiday defined in this test after removal.
      *
      * @throws ReflectionException

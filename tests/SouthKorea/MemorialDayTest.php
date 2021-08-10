@@ -55,37 +55,6 @@ class MemorialDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * Tests the substitute holiday defined in this test.
-     *
-     * @throws Exception
-     * @throws ReflectionException
-     */
-    public function testSubstituteHoliday(): void
-    {
-        $tz = new DateTimeZone(self::TIMEZONE);
-
-        // Before 2022
-        $this->assertNotSubstituteHoliday(self::REGION, self::HOLIDAY, 2020);
-        $this->assertNotSubstituteHoliday(self::REGION, self::HOLIDAY, 2021);
-
-        // By saturday
-        $this->assertSubstituteHoliday(
-            self::REGION,
-            self::HOLIDAY,
-            2026,
-            new DateTime('2026-6-8', $tz)
-        );
-
-        // By sunday
-        $this->assertSubstituteHoliday(
-            self::REGION,
-            self::HOLIDAY,
-            2032,
-            new DateTime('2032-6-7', $tz)
-        );
-    }
-
-    /**
      * Tests the holiday defined in this test before establishment.
      *
      * @throws ReflectionException
