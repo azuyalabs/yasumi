@@ -42,7 +42,7 @@
     "friendsofphp/php-cs-fixer": "^2.16",
     "infection/infection": "^0.17 | ^0.23",
     "mikey179/vfsstream": "^1.6",
-    "phan/phan": "^4.0",
+    "phan/phan": "^5.0",
     "phpstan/phpstan": "^0.12.66",
     "phpunit/phpunit": "^8.5 | ^9.4",
     "vimeo/psalm": "^4"
