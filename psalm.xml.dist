@@ -18,9 +18,5 @@
 >
     <projectFiles>
         <directory name="src" />
-        <ignoreFiles>
-            <directory name="vendor" />
-            <directory name="tests" />
-        </ignoreFiles>
     </projectFiles>
 </psalm>
