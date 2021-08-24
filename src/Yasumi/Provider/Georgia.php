@@ -31,7 +31,7 @@ class Georgia extends AbstractProvider
     public const APRIL_NINE_TRAGEDY_YEAR = 1989;
 
     /**
-     * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * Code to identify this Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
     public const ID = 'GE';

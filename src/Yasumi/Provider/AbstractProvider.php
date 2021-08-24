@@ -34,7 +34,7 @@ use Yasumi\Yasumi;
 abstract class AbstractProvider implements ProviderInterface, Countable, IteratorAggregate
 {
     /**
-     * Code to identify the Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * Code to identify the Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
     public const ID = 'US';
@@ -268,7 +268,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     }
 
     /**
-     * Gets all of the holidays defined by this holiday provider (for the given year).
+     * Gets all the holidays defined by this holiday provider (for the given year).
      *
      * @return Holiday[] list of all holidays defined for the given year
      */
@@ -278,7 +278,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     }
 
     /**
-     * Gets all of the holiday names defined by this holiday provider (for the given year).
+     * Gets all the holiday names defined by this holiday provider (for the given year).
      *
      * @return array<string> list of all holiday names defined for the given year
      */
@@ -398,7 +398,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     /**
      * Retrieves a list of all holidays that happen on the given date.
      *
-     * Yasumi only calculates holidays for a single year, so a date outside of the given year will not appear to
+     * Yasumi only calculates holidays for a single year, so a date outside the given year will not appear to
      * contain any holidays.
      *
      * Please take care to use the appropriate timezone for the date parameters. If there is a different timezone used
@@ -412,7 +412,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     }
 
     /**
-     * Gets all of the holiday dates defined by this holiday provider (for the given year).
+     * Gets all the holiday dates defined by this holiday provider (for the given year).
      *
      * @return array list of all holiday dates defined for the given year
      */

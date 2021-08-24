@@ -46,7 +46,7 @@ class SubstituteHoliday extends Holiday
      * Creates a new SubstituteHoliday.
      *
      * If a holiday date needs to be defined for a specific timezone, make sure that the date instance
-     * (DateTimeInterface) has the correct timezone set. Otherwise the default system timezone is used.
+     * (DateTimeInterface) has the correct timezone set. Otherwise, the default system timezone is used.
      *
      * @param Holiday            $substitutedHoliday The holiday being substituted
      * @param array              $names              An array containing the name/description of this holiday
@@ -55,7 +55,7 @@ class SubstituteHoliday extends Holiday
      * @param string             $displayLocale      Locale (i.e. language) in which the holiday information needs to
      *                                               be displayed in. (Default 'en_US')
      * @param string             $type               The type of holiday. Use the following constants: TYPE_OFFICIAL,
-     *                                               TYPE_OBSERVANCE, TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default
+     *                                               TYPE_OBSERVANCE, TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default,
      *                                               an official holiday is considered.
      *
      * @throws InvalidDateException

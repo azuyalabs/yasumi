@@ -27,7 +27,7 @@ use Yasumi\Provider\DateTimeZoneFactory;
 class Brisbane extends Queensland
 {
     /**
-     * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * Code to identify this Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
      * country or sub-region. This one is not a proper ISO3166 code, but there isn't one specifically for Brisbane,
      * and I believe this is a logical extension.
      */

@@ -71,7 +71,6 @@ class Yasumi
      * @param \DateTimeInterface $startDate   Start date, defaults to today
      * @param int                $workingDays Number of days to look ahead for the (first) next working day
      *
-     * @throws \ReflectionException
      * @throws UnknownLocaleException
      * @throws RuntimeException
      * @throws InvalidArgumentException
@@ -85,7 +84,7 @@ class Yasumi
         \DateTimeInterface $startDate,
         int $workingDays = 1
     ): \DateTimeInterface {
-        // Setup start date, if its an instance of \DateTime, clone to prevent modification to original
+        // Setup start date, if it's an instance of \DateTime, clone to prevent modification to original
         $date = $startDate instanceof \DateTime ? clone $startDate : $startDate;
 
         $provider = null;
@@ -121,7 +120,6 @@ class Yasumi
      * @throws InvalidYearException      if the year parameter is not between the defined lower and upper bounds
      * @throws UnknownLocaleException    if the locale parameter is invalid
      * @throws ProviderNotFoundException if the holiday provider for the given country does not exist
-     * @throws \ReflectionException
      */
     public static function create(string $class, int $year = self::YEAR_LOWER_BOUND, string $locale = self::DEFAULT_LOCALE): AbstractProvider
     {
@@ -259,7 +257,6 @@ class Yasumi
      * @param \DateTimeInterface $startDate   Start date, defaults to today
      * @param int                $workingDays Number of days to look back for the (first) previous working day
      *
-     * @throws \ReflectionException
      * @throws UnknownLocaleException
      * @throws RuntimeException
      * @throws InvalidArgumentException
@@ -273,7 +270,7 @@ class Yasumi
         \DateTimeInterface $startDate,
         int $workingDays = 1
     ): \DateTimeInterface {
-        // Setup start date, if its an instance of \DateTime, clone to prevent modification to original
+        // Setup start date, if it's an instance of \DateTime, clone to prevent modification to original
         $date = $startDate instanceof \DateTime ? clone $startDate : $startDate;
 
         $provider = null;
