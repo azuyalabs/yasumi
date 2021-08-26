@@ -1,7 +1,8 @@
 {
   "name": "azuyalabs/yasumi",
-  "description": "The easy PHP Library for calculating holidays.",
   "type": "library",
+  "description": "The easy PHP Library for calculating holidays.",
+  "license": "MIT",
   "authors": [
     {
       "name": "Sacha Telgenhof",
@@ -10,7 +11,6 @@
     }
   ],
   "homepage": "https://www.yasumi.dev",
-  "license": "MIT",
   "keywords": [
     "holiday",
     "holidays",
@@ -34,6 +34,7 @@
       "url": "https://www.buymeacoffee.com/sachatelgenhof"
     }
   ],
+  "prefer-stable": true,
   "require": {
     "php": ">=7.3",
     "ext-json": "*"
@@ -42,10 +43,13 @@
     "friendsofphp/php-cs-fixer": "^2.16",
     "infection/infection": "^0.17 | ^0.23",
     "mikey179/vfsstream": "^1.6",
-    "phan/phan": "^4.0",
+    "phan/phan": "^5.0",
     "phpstan/phpstan": "^0.12.66",
     "phpunit/phpunit": "^8.5 | ^9.4",
     "vimeo/psalm": "^4"
+  },
+  "config": {
+    "sort-packages": true
   },
   "autoload": {
     "psr-4": {
@@ -61,16 +65,13 @@
     "format": "./vendor/bin/php-cs-fixer fix",
     "phpstan": "vendor/bin/phpstan analyse",
     "psalm": "vendor/bin/psalm --threads=2",
-    "phan": "vendor/bin/phan",
+    "phan": "vendor/bin/phan -C",
     "test": "vendor/bin/phpunit",
     "infection": "vendor/bin/infection run -j 2",
     "analyse": [
       "@phpstan",
       "@psalm"
     ]
-  },
-  "config": {
-    "sort-packages": true
   },
   "suggest": {
     "ext-calendar": "For calculating the date of Easter"

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ This file is part of the Yasumi package.
+  ~
+  ~ Copyright (c) 2015 - 2021 AzuyaLabs
+  ~
+  ~ For the full copyright and license information, please view the LICENSE
+  ~ file that was distributed with this source code.
+  ~
+  ~ @author Sacha Telgenhof <me@sachatelgenhof.com>
+  -->
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         beStrictAboutTestsThatDoNotTestAnything="false" bootstrap="vendor/autoload.php" colors="true"
+         verbose="true"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.5/phpunit.xsd">
+    <coverage processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">./src/Yasumi</directory>
+        </include>
+        <exclude>
+            <directory suffix=".php">./src/Yasumi/data</directory>
+        </exclude>
+    </coverage>
+    <testsuites>
+        <testsuite name="Yasumi Test Suite">
+            <directory>./tests</directory>
+        </testsuite>
+        <!-- Test Suite base functionality of Yasumi -->
+        <testsuite name="Base">
+            <directory>./tests/Base</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Australia -->
+        <testsuite name="Australia">
+            <directory>./tests/Australia</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Austria -->
+        <testsuite name="Austria">
+            <directory>./tests/Austria</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Belgium -->
+        <testsuite name="Belgium">
+            <directory>./tests/Belgium</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Bosnia & Herzegovina -->
+        <testsuite name="Bosnia">
+            <directory>./tests/Bosnia</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Brazil -->
+        <testsuite name="Brazil">
+            <directory>./tests/Brazil</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Canada -->
+        <testsuite name="Canada">
+            <directory>./tests/Canada</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Croatia -->
+        <testsuite name="Croatia">
+            <directory>./tests/Croatia</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Czechia -->
+        <testsuite name="CzechRepublic">
+            <directory>./tests/CzechRepublic</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Denmark -->
+        <testsuite name="Denmark">
+            <directory>./tests/Denmark</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Estonia -->
+        <testsuite name="Estonia">
+            <directory>./tests/Estonia</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Finland -->
+        <testsuite name="Finland">
+            <directory>./tests/Finland</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in France -->
+        <testsuite name="France">
+            <directory>./tests/France</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Germany -->
+        <testsuite name="Germany">
+            <directory>./tests/Germany</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Greece -->
+        <testsuite name="Greece">
+            <directory>./tests/Greece</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Hungary -->
+        <testsuite name="Hungary">
+            <directory>./tests/Hungary</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Ireland -->
+        <testsuite name="Ireland">
+            <directory>./tests/Ireland</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Italy -->
+        <testsuite name="Italy">
+            <directory>./tests/Italy</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Japan -->
+        <testsuite name="Japan">
+            <directory>./tests/Japan</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Latvia -->
+        <testsuite name="Latvia">
+            <directory>./tests/Latvia</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Lithuania -->
+        <testsuite name="Lithuania">
+            <directory>./tests/Lithuania</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Luxembourg -->
+        <testsuite name="Luxembourg">
+            <directory>./tests/Luxembourg</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Netherlands -->
+        <testsuite name="Netherlands">
+            <directory>./tests/Netherlands</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in New Zealand -->
+        <testsuite name="NewZealand">
+            <directory>./tests/NewZealand</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Norway -->
+        <testsuite name="Norway">
+            <directory>./tests/Norway</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Poland -->
+        <testsuite name="Poland">
+            <directory>./tests/Poland</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Portugal -->
+        <testsuite name="Portugal">
+            <directory>./tests/Portugal</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Romania -->
+        <testsuite name="Romania">
+            <directory>./tests/Romania</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Russia -->
+        <testsuite name="Russia">
+            <directory>./tests/Russia</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Slovakia -->
+        <testsuite name="Slovakia">
+            <directory>./tests/Slovakia</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in South Africa -->
+        <testsuite name="SouthAfrica">
+            <directory>./tests/SouthAfrica</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in South Korea -->
+        <testsuite name="SouthKorea">
+            <directory>./tests/SouthKorea</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Spain -->
+        <testsuite name="Spain">
+            <directory>./tests/Spain</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Sweden -->
+        <testsuite name="Sweden">
+            <directory>./tests/Sweden</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Switzerland -->
+        <testsuite name="Switzerland">
+            <directory>./tests/Switzerland</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Turkey -->
+        <testsuite name="Turkey">
+            <directory>./tests/Turkey</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in United States -->
+        <testsuite name="USA">
+            <directory>./tests/USA</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Ukraine -->
+        <testsuite name="Ukraine">
+            <directory>./tests/Ukraine</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in United Kingdom -->
+        <testsuite name="UnitedKingdom">
+            <directory>./tests/UnitedKingdom</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

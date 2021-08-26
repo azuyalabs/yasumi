@@ -34,7 +34,7 @@ class Estonia extends AbstractProvider
     public const RESTORATION_OF_INDEPENDENCE_YEAR = 1991;
 
     /**
-     * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * Code to identify this Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
     public const ID = 'EE';
