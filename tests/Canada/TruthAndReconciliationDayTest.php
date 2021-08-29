@@ -22,50 +22,45 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 
 /**
- * Class for testing Canada Day in Canada.
+ * Class for testing National Day For Truth And Reconciliation in Canada.
  */
-class CanadaDayTest extends CanadaBaseTestCase implements YasumiTestCaseInterface
+class TruthAndReconciliationDayTest extends CanadaBaseTestCase implements YasumiTestCaseInterface
 {
     /**
      * The name of the holiday.
      */
-    public const HOLIDAY = 'canadaDay';
+    public const HOLIDAY = 'truthAndReconciliationDay';
 
     /**
      * The year in which the holiday was first established.
      */
-    public const ESTABLISHMENT_YEAR = 1983;
+    public const ESTABLISHMENT_YEAR = 2021;
 
     /**
-     * Tests Canada Day on or after 1983. Canada Day was established in 1983 on July 1st.
+     * Tests TruthAndReconciliationDay on or after 2021. Thanksgiving Day is celebrated since 2021 on the last day
+     * of September.
      *
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testCanadaDayOnAfter1983(): void
+    public function testTruthAndReconciliationDayOnAfter2021(): void
     {
-        $year = 2019; // July 1 is not Sunday
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-07-01", new DateTimeZone(self::TIMEZONE))
-        );
-        $year = 2018; // July 1 is Sunday
-        $this->assertHoliday(
-            self::REGION,
-            self::HOLIDAY,
-            $year,
-            new DateTime("$year-07-02", new DateTimeZone(self::TIMEZONE))
+            new DateTime("last day of september $year", new DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
-     * Tests Canada Day before 1879. Canada Day was established as Dominion Day in 1879 on July 1st.
+     * Tests TruthAndReconciliationDay before 2021. TruthAndReconciliationDay is celebrated since 2021 on the last day
+     * of September.
      *
      * @throws ReflectionException
      */
-    public function testCanadaDayBefore1879(): void
+    public function testTruthAndReconciliationDayBefore2021(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -85,7 +80,7 @@ class CanadaDayTest extends CanadaBaseTestCase implements YasumiTestCaseInterfac
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Canada Day']
+            [self::LOCALE => 'National Day For Truth And Reconciliation']
         );
     }
 
