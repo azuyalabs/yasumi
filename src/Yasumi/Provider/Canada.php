@@ -60,6 +60,7 @@ class Canada extends AbstractProvider
         $this->calculateLabourDay();
         $this->calculateThanksgivingDay();
         $this->calculateRemembranceDay();
+        $this->calculateNationalDayForTruthAndReconciliation();
     }
 
     /**
@@ -137,7 +138,8 @@ class Canada extends AbstractProvider
     /**
      * Canada Day.
      *
-     * @see https://en.wikipedia.org/wiki/Canada_Day
+     * @see https://en.wikipedia.org/wiki/Canada_Day and Holidays Act, R.S.C., 1985, c. H-5
+     * by statute, Canada Day is July 1 if that day is not Sunday, and July 2 if July 1 is a Sunday
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -149,11 +151,14 @@ class Canada extends AbstractProvider
         if ($this->year < 1983) {
             return;
         }
-
+        $date = new DateTime($this->year.'-07-01', DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        if (7 === (int) $date->format('N')) {
+            $date = new DateTime($this->year.'-07-02', DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        }
         $this->addHoliday(new Holiday(
             'canadaDay',
             [],
-            new DateTime($this->year.'-07-01', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $date,
             $this->locale
         ));
     }
@@ -250,6 +255,20 @@ class Canada extends AbstractProvider
             'labourDay',
             [],
             new DateTime("first monday of september $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale
+        ));
+    }
+
+    private function calculateNationalDayForTruthAndReconciliation()
+    {
+        if ($this->year < 2021) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday(
+            'truthAndReconciliationDay',
+            [],
+            new DateTime("last day of september $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
