@@ -9,11 +9,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 ### Added
 
 - Added new Juneteenth National Independence Day to USA [\#253](https://github.com/azuyalabs/yasumi/pull/253) ([Mark Heintz](https://github.com/mheintz))
-
+- Added new National Day for Truth and Reconciliation to Canada [\#256](https://github.com/azuyalabs/yasumi/pull/256) ([O.V. Gray](https://github.com/adrx))
 
 ### Changed
 
 ### Fixed
+- Corrected definition of Canada Day in Canada [\#256](https://github.com/azuyalabs/yasumi/pull/256) ([O.V. Gray](https://github.com/adrx))
 
 ### Deprecated
 
