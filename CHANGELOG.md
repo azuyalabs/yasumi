@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 ### Added
 
 - All providers now include a method that returns a list of external sources (i.e. references to websites, books, scientific papers, etc.) that are used for determining the calculation logic of the providers' holidays.
+- Added new National Day for Truth and Reconciliation to Canada [\#256](https://github.com/azuyalabs/yasumi/pull/256) ([Owen V. Gray](https://github.com/adrx))
 
 ### Changed
 
@@ -16,6 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 - `YasumiTestCaseInterface` was renamed to `HolidayTestCase` to better match the newly added `ProviderTestCase` interface.
 
 ### Fixed
+- Corrected definition of Canada Day in Canada [\#256](https://github.com/azuyalabs/yasumi/pull/256) ([Owen V. Gray](https://github.com/adrx))
 
 ### Deprecated
 
