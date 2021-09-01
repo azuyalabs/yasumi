@@ -77,7 +77,7 @@ class Translations implements TranslationsInterface
 
             if (\is_array($translations)) {
                 foreach (array_keys($translations) as $locale) {
-                    $this->checkLocale($locale);
+                    $this->checkLocale((string) $locale);
                 }
 
                 $this->translations[$key] = $translations;

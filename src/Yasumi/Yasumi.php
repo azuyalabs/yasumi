@@ -91,9 +91,13 @@ class Yasumi
 
         while ($workingDays > 0) {
             $date = $date->add(new \DateInterval('P1D'));
-            if (!$provider instanceof ProviderInterface || $provider->getYear() !== $date->format('Y')) {
+
+            if (!$provider instanceof ProviderInterface) {
+                $provider = self::create($class, (int) $date->format('Y'));
+            } elseif ($provider->getYear() !== $date->format('Y')) {
                 $provider = self::create($class, (int) $date->format('Y'));
             }
+
             if ($provider->isWorkingDay($date)) {
                 --$workingDays;
             }
@@ -225,10 +229,10 @@ class Yasumi
 
         foreach ($filesIterator as $file) {
             if ($file->isDir() || 'php' !== $file->getExtension() || \in_array(
-                $file->getBasename('.php'),
-                self::$ignoredProvider,
-                true
-            )) {
+                    $file->getBasename('.php'),
+                    self::$ignoredProvider,
+                    true
+                )) {
                 continue;
             }
 
@@ -277,9 +281,13 @@ class Yasumi
 
         while ($workingDays > 0) {
             $date = $date->sub(new \DateInterval('P1D'));
-            if (!$provider instanceof ProviderInterface || $provider->getYear() !== $date->format('Y')) {
+
+            if (!$provider instanceof ProviderInterface) {
+                $provider = self::create($class, (int) $date->format('Y'));
+            } elseif ($provider->getYear() !== $date->format('Y')) {
                 $provider = self::create($class, (int) $date->format('Y'));
             }
+
             if ($provider->isWorkingDay($date)) {
                 --$workingDays;
             }
