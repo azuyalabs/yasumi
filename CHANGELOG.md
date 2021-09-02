@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 ### Added
 
+- Added new Juneteenth National Independence Day to USA [\#253](https://github.com/azuyalabs/yasumi/pull/253) ([Mark Heintz](https://github.com/mheintz))
 - All providers now include a method that returns a list of external sources (i.e. references to websites, books, scientific papers, etc.) that are used for determining the calculation logic of the providers' holidays.
 
 ### Changed
