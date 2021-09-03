@@ -361,9 +361,6 @@ trait ChristianHolidays
                 }
 
                 $pfm = (3 - (11 * $golden) - 7) % 30; // Uncorrected date of the Paschal full moon
-                if ($pfm < 0) {
-                    $pfm += 30;
-                }
             } else {
                 $dom = ($year + (int) ($year / 4) - (int) ($year / 100) + (int) ($year / 400)) % 7; // The 'Dominical number' - finding a Sunday
                 if ($dom < 0) {
@@ -374,9 +371,10 @@ trait ChristianHolidays
                 $lunar = (int) (((int) (($year - 1400) / 100) * 8) / 25); // The lunar correction
 
                 $pfm = (3 - (11 * $golden) + $solar - $lunar) % 30; // Uncorrected date of the Paschal full moon
-                if ($pfm < 0) {
-                    $pfm += 30;
-                }
+            }
+
+            if ($pfm < 0) {
+                $pfm += 30;
             }
 
             // Corrected date of the Paschal full moon, - days after 21st March
