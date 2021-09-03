@@ -8,17 +8,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 ### Added
 
-- Added new Juneteenth National Independence Day to USA [\#253](https://github.com/azuyalabs/yasumi/pull/253) ([Mark Heintz](https://github.com/mheintz))
-- All providers now include a method that returns a list of external sources (i.e. references to websites, books, scientific papers, etc.) that are used for determining the calculation logic of the providers' holidays.
-- Added new National Day for Truth and Reconciliation to Canada [\#256](https://github.com/azuyalabs/yasumi/pull/256) ([Owen V. Gray](https://github.com/adrx))
+- New National Day for Truth and Reconciliation to
+  Canada [\#257](https://github.com/azuyalabs/yasumi/pull/257) ([Owen V. Gray](https://github.com/adrx))
+- New Juneteenth National Independence Day to
+  USA [\#253](https://github.com/azuyalabs/yasumi/pull/253) ([Mark Heintz](https://github.com/mheintz))
+- All providers now include a method that returns a list of external sources (i.e. references to websites, books,
+  scientific papers, etc.) that are used for determining the calculation logic of the providers' holidays.
 
 ### Changed
 
 - Provider tests must implement the `ProviderTestCase` interface to ensure all required test methods are defined.
-- `YasumiTestCaseInterface` was renamed to `HolidayTestCase` to better match the newly added `ProviderTestCase` interface.
+- `YasumiTestCaseInterface` was renamed to `HolidayTestCase` to better match the newly added `ProviderTestCase`
+  interface.
 
 ### Fixed
-- Corrected definition of Canada Day in Canada [\#256](https://github.com/azuyalabs/yasumi/pull/256) ([Owen V. Gray](https://github.com/adrx))
+
+- Definition of Canada Day in Canada [\#257](https://github.com/azuyalabs/yasumi/pull/257) in that, Canada Day is July 1
+  if that day is not Sunday, and July 2 if July 1 is a Sunday.([Owen V. Gray](https://github.com/adrx))
 
 ### Deprecated
 
