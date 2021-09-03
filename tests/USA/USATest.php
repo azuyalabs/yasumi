@@ -48,6 +48,7 @@ class USATest extends USABaseTestCase implements ProviderTestCase
             'martinLutherKingDay',
             'washingtonsBirthday',
             'memorialDay',
+            'juneteenth',
             'independenceDay',
             'labourDay',
             'columbusDay',

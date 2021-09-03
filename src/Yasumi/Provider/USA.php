@@ -57,6 +57,7 @@ class USA extends AbstractProvider
         $this->calculateMartinLutherKingday();
         $this->calculateWashingtonsBirthday();
         $this->calculateMemorialDay();
+        $this->calculateJuneteenth();
         $this->calculateIndependenceDay();
         $this->calculateLabourDay();
         $this->calculateColumbusDay();
@@ -142,6 +143,27 @@ class USA extends AbstractProvider
             $this->addHoliday(new Holiday('memorialDay', [
                 'en' => 'Memorial Day',
             ], $date, $this->locale));
+        }
+    }
+
+    /**
+     * Juneteenth National Independence Day.
+     *
+     * Juneteenth National Independence Day, commonly known simply as Juneteenth, is a federal holiday in the United
+     * States commemorating the end of slavery. Established as a federal holiday on June 17, 2021, Juneteenth is
+     * celebrated annually on June 19. In case Juneteenth falls on a Sunday, a substituted holiday is observed
+     * the following Monday. If it falls on a Saturday, a substituted holiday is observed the previous Friday.
+     *
+     * @see https://en.wikipedia.org/wiki/Juneteenth
+     *
+     * @throws \Exception
+     */
+    private function calculateJuneteenth(): void
+    {
+        if ($this->year >= 2021) {
+            $this->addHoliday(new Holiday('juneteenth', [
+                'en' => 'Juneteenth',
+            ], new DateTime("$this->year-6-19", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
     }
 
