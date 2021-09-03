@@ -492,7 +492,6 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @return Holiday|null a Holiday instance for the given holiday and year
      *
-     * @throws \ReflectionException
      * @throws InvalidArgumentException when the given name is blank or empty
      * @throws UnknownLocaleException
      * @throws \RuntimeException
