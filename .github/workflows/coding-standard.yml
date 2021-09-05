@@ -49,4 +49,4 @@ jobs:
         run: composer install --no-progress --prefer-dist --optimize-autoloader
 
       - name: Check Code Style
-        run: vendor/bin/php-cs-fixer --allow-risky=yes --diff --dry-run -v fix
+        run: vendor/bin/php-cs-fixer --diff --dry-run -v fix
