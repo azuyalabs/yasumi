@@ -564,6 +564,10 @@ class SouthKorea extends AbstractProvider
                 continue;
             }
 
+            if (null === $holiday) {
+                continue;
+            }
+
             $dayOfWeek = (int) $holiday->format('w');
             if (\in_array($dayOfWeek, $acceptedHolidays[$name], true)) {
                 $dates[$day]['weekend:'.$day] = $name;
@@ -608,8 +612,12 @@ class SouthKorea extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function addSubstituteHoliday(Holiday $origin, string $date_str): void
+    private function addSubstituteHoliday(?Holiday $origin, string $date_str): void
     {
+        if (null === $origin) {
+            return;
+        }
+
         $this->addHoliday(new SubstituteHoliday(
             $origin,
             [],
