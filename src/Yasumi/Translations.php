@@ -25,19 +25,19 @@ use Yasumi\Exception\UnknownLocaleException;
 class Translations implements TranslationsInterface
 {
     /**
-     * @var array translations array: ['<holiday key>' => ['<locale>' => 'translation', ...], ... ]
+     * @var array<string, array>     translations array: ['<holiday key>' => ['<locale>' => 'translation', ...], ... ]
      */
     public $translations = [];
 
     /**
-     * @var array list of all defined locales
+     * @var array<string> list of all defined locales
      */
     private $availableLocales;
 
     /**
      * Constructor.
      *
-     * @param array $availableLocales list of all defined locales
+     * @param array<string> $availableLocales list of all defined locales
      */
     public function __construct(array $availableLocales)
     {
@@ -128,7 +128,7 @@ class Translations implements TranslationsInterface
      *
      * @param string $key holiday key
      *
-     * @return array holiday name translations ['<locale>' => '<translation>', ...]
+     * @return array<string, string> holiday name translations ['<locale>' => '<translation>', ...]
      */
     public function getTranslations(string $key): array
     {

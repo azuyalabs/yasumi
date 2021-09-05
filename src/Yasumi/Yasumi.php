@@ -38,7 +38,7 @@ class Yasumi
     public const YEAR_UPPER_BOUND = 9999;
 
     /**
-     * @var array list of all defined locales
+     * @var array<string> list of all defined locales
      */
     private static $locales = [];
 
@@ -52,7 +52,7 @@ class Yasumi
     /**
      * Provider class to be ignored (Abstract, trait, other).
      *
-     * @var array
+     * @var array<string>
      */
     private static $ignoredProvider = [
         'AbstractProvider.php',
@@ -118,14 +118,14 @@ class Yasumi
      *                       between the defined lower and upper bounds.
      * @param string $locale The locale to use. If empty we'll use the default locale (en_US)
      *
-     * @return AbstractProvider An instance of class $class is created and returned
+     * @return ProviderInterface An instance of class $class is created and returned
      *
      * @throws RuntimeException          If no such holiday provider is found
      * @throws InvalidYearException      if the year parameter is not between the defined lower and upper bounds
      * @throws UnknownLocaleException    if the locale parameter is invalid
      * @throws ProviderNotFoundException if the holiday provider for the given country does not exist
      */
-    public static function create(string $class, int $year = self::YEAR_LOWER_BOUND, string $locale = self::DEFAULT_LOCALE): AbstractProvider
+    public static function create(string $class, int $year = self::YEAR_LOWER_BOUND, string $locale = self::DEFAULT_LOCALE): ProviderInterface
     {
         // Find and return holiday provider instance
         $providerClass = sprintf('Yasumi\Provider\%s', str_replace('/', '\\', $class));
@@ -165,7 +165,7 @@ class Yasumi
     /**
      * Returns a list of available locales.
      *
-     * @return array list of available locales
+     * @return array<string> list of available locales
      */
     public static function getAvailableLocales(): array
     {
@@ -184,7 +184,7 @@ class Yasumi
      *                        integer between the defined lower and upper bounds.
      * @param string $locale  The locale to use. If empty we'll use the default locale (en_US)
      *
-     * @return AbstractProvider An instance of class $class is created and returned
+     * @return ProviderInterface An instance of class $class is created and returned
      *
      * @throws RuntimeException          If no such holiday provider is found
      * @throws InvalidArgumentException  if the year parameter is not between the defined lower and upper bounds
@@ -196,7 +196,7 @@ class Yasumi
         string $isoCode,
         int $year = self::YEAR_LOWER_BOUND,
         string $locale = self::DEFAULT_LOCALE
-    ): AbstractProvider {
+    ): ProviderInterface {
         $availableProviders = self::getProviders();
 
         if (false === isset($availableProviders[$isoCode])) {
@@ -209,7 +209,7 @@ class Yasumi
     /**
      * Returns a list of available holiday providers.
      *
-     * @return array list of available holiday providers
+     * @return array<string> list of available holiday providers
      *
      * @throws \ReflectionException
      */

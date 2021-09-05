@@ -38,7 +38,7 @@ class SubstituteHoliday extends Holiday
     public $substitutedHoliday;
 
     /**
-     * @var array list of translations of the "{0} observed" pattern
+     * @var array<string> list of translations of the "{0} observed" pattern
      */
     public $substituteHolidayTranslations;
 
@@ -48,15 +48,15 @@ class SubstituteHoliday extends Holiday
      * If a holiday date needs to be defined for a specific timezone, make sure that the date instance
      * (DateTimeInterface) has the correct timezone set. Otherwise, the default system timezone is used.
      *
-     * @param Holiday            $substitutedHoliday The holiday being substituted
-     * @param array              $names              An array containing the name/description of this holiday
-     *                                               in various languages. Overrides global translations
-     * @param \DateTimeInterface $date               A DateTimeInterface instance representing the date of the holiday
-     * @param string             $displayLocale      Locale (i.e. language) in which the holiday information needs to
-     *                                               be displayed in. (Default 'en_US')
-     * @param string             $type               The type of holiday. Use the following constants: TYPE_OFFICIAL,
-     *                                               TYPE_OBSERVANCE, TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default,
-     *                                               an official holiday is considered.
+     * @param Holiday               $substitutedHoliday The holiday being substituted
+     * @param array<string, string> $names              An array containing the name/description of this holiday
+     *                                                  in various languages. Overrides global translations
+     * @param \DateTimeInterface    $date               A DateTimeInterface instance representing the date of the holiday
+     * @param string                $displayLocale      Locale (i.e. language) in which the holiday information needs to
+     *                                                  be displayed in. (Default 'en_US')
+     * @param string                $type               The type of holiday. Use the following constants: TYPE_OFFICIAL,
+     *                                                  TYPE_OBSERVANCE, TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default,
+     *                                                  an official holiday is considered.
      *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
@@ -100,7 +100,7 @@ class SubstituteHoliday extends Holiday
      * If no locale is provided, proceed as if an array containing the display locale, Holiday::DEFAULT_LOCALE ('en_US'), and
      * Holiday::LOCALE_KEY (the holiday key) was provided.
      *
-     * @param array|null $locales The locales to search for translations
+     * @param array<string>|null $locales The locales to search for translations
      *
      * @throws MissingTranslationException
      *

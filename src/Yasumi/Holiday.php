@@ -191,7 +191,7 @@ class Holiday extends DateTime implements JsonSerializable
      * If no locale is provided, proceed as if an array containing the display locale, Holiday::DEFAULT_LOCALE ('en_US'), and
      * Holiday::LOCALE_KEY (the holiday key) was provided.
      *
-     * @param array|null $locales The locales to search for translations
+     * @param array<string>|null $locales The locales to search for translations
      *
      * @throws MissingTranslationException
      *
@@ -236,6 +236,8 @@ class Holiday extends DateTime implements JsonSerializable
      * If null is provided, return as if the display locale was provided as a string.
      *
      * @param array<string>|null $locales Array of locales, or null if the display locale should be used
+     *
+     * @return array<string> an array of locales to check for translations
      *
      * @see Holiday::DEFAULT_LOCALE
      * @see Holiday::LOCALE_KEY

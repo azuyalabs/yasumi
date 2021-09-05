@@ -150,19 +150,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         unset($this->holidays[$key]);
     }
 
-    /**
-     * Determines whether a date represents a working day or not.
-     *
-     * A working day is defined as a day that is not a holiday nor falls in the weekend. The index of the weekdays of
-     * the defined date is used for establishing this (0 = Sunday, 1 = Monday, etc.)
-     *
-     * @param \DateTimeInterface $date any date object that implements the DateTimeInterface (e.g. Yasumi\Holiday,
-     *                                 \DateTime)
-     *
-     * @return bool true if date represents a working day, otherwise false
-     *
-     * @throws InvalidDateException
-     */
+    /** {@inheritdoc} */
     public function isWorkingDay(\DateTimeInterface $date): bool
     {
         return !$this->isHoliday($date) && !$this->isWeekendDay($date);
@@ -287,11 +275,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         return array_keys($this->holidays);
     }
 
-    /**
-     * Returns the current year set for this Holiday calendar.
-     *
-     * @return int the year set for this Holiday calendar
-     */
+    /** @inheritdoc  */
     public function getYear(): int
     {
         return $this->year;
@@ -316,15 +300,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         return $this->anotherTime($this->year + 1, $key);
     }
 
-    /**
-     * Retrieves the holiday object for the given holiday.
-     *
-     * @param string $key the name of the holiday
-     *
-     * @return Holiday|null a Holiday instance for the given holiday
-     *
-     * @throws InvalidArgumentException when the given name is blank or empty
-     */
+    /** {@inheritdoc} */
     public function getHoliday(string $key): ?Holiday
     {
         $this->isHolidayNameNotEmpty($key); // Validate if key is not empty
@@ -414,7 +390,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     /**
      * Gets all the holiday dates defined by this holiday provider (for the given year).
      *
-     * @return array list of all holiday dates defined for the given year
+     * @return array<string> list of all holiday dates defined for the given year
      */
     protected function getHolidayDates(): array
     {
