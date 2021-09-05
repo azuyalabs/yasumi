@@ -1,7 +1,8 @@
 parameters:
-    level: 5
+    level: 6
     paths:
         - src
+    checkGenericClassInNonGenericObjectType: false
     ignoreErrors:
         -
             message: '#Comparison operation "<=" between [0-9]+ and int<[0-9]+, max> is always true.#'
