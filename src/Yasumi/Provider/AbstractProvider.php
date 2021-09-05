@@ -212,7 +212,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     public function whenIs(string $key): string
     {
-        $this->isHolidayNameNotEmpty($key); // Validate if key is not empty
+        $this->isHolidayKeyNotEmpty($key); // Validate if key is not empty
 
         return (string) $this->holidays[$key];
     }
@@ -231,7 +231,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     public function whatWeekDayIs(string $key): int
     {
-        $this->isHolidayNameNotEmpty($key); // Validate if key is not empty
+        $this->isHolidayKeyNotEmpty($key); // Validate if key is not empty
 
         return (int) $this->holidays[$key]->format('w');
     }
@@ -302,7 +302,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     /** {@inheritdoc} */
     public function getHoliday(string $key): ?Holiday
     {
-        $this->isHolidayNameNotEmpty($key); // Validate if key is not empty
+        $this->isHolidayKeyNotEmpty($key); // Validate if key is not empty
 
         $holidays = $this->getHolidays();
 
@@ -472,7 +472,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     private function anotherTime(int $year, string $key): ?Holiday
     {
-        $this->isHolidayNameNotEmpty($key); // Validate if key is not empty
+        $this->isHolidayKeyNotEmpty($key); // Validate if key is not empty
 
         // Get calling class name
         $hReflectionClass = new \ReflectionClass(\get_class($this));
