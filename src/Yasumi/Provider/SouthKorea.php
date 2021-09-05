@@ -157,6 +157,7 @@ class SouthKorea extends AbstractProvider
         return [
             'https://en.wikipedia.org/wiki/Public_holidays_in_South_Korea',
             'https://ko.wikipedia.org/wiki/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%EC%9D%98_%EA%B3%B5%ED%9C%B4%EC%9D%BC',
+            'https://english.visitkorea.or.kr/enu/TRV/TV_ENG_1_1.jsp',
         ];
     }
 
@@ -468,7 +469,7 @@ class SouthKorea extends AbstractProvider
     }
 
     /**
-     * Substitute Holidays.
+     * Substitute Holidays up to 2021.
      * Related statutes: Article 3 Alternative Statutory Holidays of the Regulations on Holidays of Government Offices.
      *
      * Since 2014, it has been applied only on Seollal, Chuseok and Children's Day.
@@ -476,60 +477,144 @@ class SouthKorea extends AbstractProvider
      * When public holidays fall on each other, the first non-public holiday after the holiday becomes a public holiday.
      * As an exception, Children's Day also applies on Saturday.
      *
+     * Since new legislation about public holiday was enacted in June 2021,
+     * this function is used to calculate the holidays up to 2021.
+     *
+     * @throws \Exception
+     */
+    private function calculateOldSubstituteHolidays(): void
+    {
+        if ($this->year < 2014) {
+            return;
+        }
+
+        // Add substitute holidays by fixed entries.
+        switch ($this->year) {
+            case 2014:
+                $this->addSubstituteHoliday($this->getHoliday('dayBeforeChuseok'), "$this->year-9-10");
+                break;
+            case 2015:
+                $this->addSubstituteHoliday($this->getHoliday('chuseok'), "$this->year-9-29");
+                break;
+            case 2016:
+                $this->addSubstituteHoliday($this->getHoliday('dayBeforeSeollal'), "$this->year-2-10");
+                break;
+            case 2017:
+                $this->addSubstituteHoliday($this->getHoliday('dayAfterSeollal'), "$this->year-1-30");
+                $this->addSubstituteHoliday($this->getHoliday('dayBeforeChuseok'), "$this->year-10-6");
+                break;
+            case 2018:
+                $this->addSubstituteHoliday($this->getHoliday('childrensDay'), "$this->year-5-7");
+                $this->addSubstituteHoliday($this->getHoliday('dayBeforeChuseok'), "$this->year-9-26");
+                break;
+            case 2019:
+                $this->addSubstituteHoliday($this->getHoliday('childrensDay'), "$this->year-5-6");
+                break;
+            case 2020:
+                $this->addSubstituteHoliday($this->getHoliday('dayAfterSeollal'), "$this->year-1-27");
+                break;
+            case 2021:
+                $this->addSubstituteHoliday($this->getHoliday('liberationDay'), "$this->year-8-16");
+                $this->addSubstituteHoliday($this->getHoliday('nationalFoundationDay'), "$this->year-10-4");
+                $this->addSubstituteHoliday($this->getHoliday('hangulDay'), "$this->year-10-11");
+                break;
+        }
+    }
+
+    /**
+     * Substitute Holidays.
+     *
+     * Since 2022, it has been applied for all public holidays.
+     * When public holidays overlap on each other or weekend,
+     * the first working day after the holiday becomes a substitute holiday.
+     *
      * @throws \Exception
      */
     private function calculateSubstituteHolidays(): void
     {
-        if ($this->year <= 2013) {
+        if ($this->year < 2022) {
+            $this->calculateOldSubstituteHolidays();
+
             return;
         }
 
-        // Initialize holidays variable
-        $holidays = $this->getHolidays();
-        $acceptedHolidays = [
+        // Holiday list to allowed to substitute.
+        $accptedHolidays = [];
+
+        // When deciding on alternative holidays, place lunar holidays first for consistent rules.
+        // These holidays will substitute for the sunday only.
+        $accptedHolidays += array_fill_keys([
             'dayBeforeSeollal', 'seollal', 'dayAfterSeollal',
             'dayBeforeChuseok', 'chuseok', 'dayAfterChuseok',
-            'childrensDay',
-        ];
+        ], [0]);
 
-        // Loop through all holidays
-        foreach ($holidays as $key => $holiday) {
-            // Get list of holiday dates except this
-            $holidayDates = array_map(static function ($holiday) use ($key) {
-                return $holiday->getKey() === $key ? false : $holiday;
-            }, $holidays);
+        // These holidays will substitute for any weekend days (Sunday and Saturday).
+        $accptedHolidays += array_fill_keys([
+            'childrensDay', 'independenceMovementDay', 'liberationDay',
+            'nationalFoundationDay', 'hangulDay',
+        ], [0, 6]);
 
-            // Only process accepted holidays and conditions
-            if (\in_array($key, $acceptedHolidays, true)
-                && (
-                    0 === (int) $holiday->format('w')
-                    || \in_array($holiday, $holidayDates, false)
-                    || (6 === (int) $holiday->format('w') && 'childrensDay' === $key)
-                )
-            ) {
-                $date = clone $holiday;
+        // Step 1. Build a temporary table that aggregates holidays by date.
+        $dates = [];
+        foreach ($this->getHolidayDates() as $name => $day) {
+            $holiday = $this->getHoliday($name);
+            $dates[$day][] = $name;
 
-                // Find next week day (not being another holiday)
-                while (0 === (int) $date->format('w')
-                    || (6 === (int) $date->format('w') && 'childrensDay' === $key)
-                    || \in_array($date, $holidayDates, false)) {
-                    $date->add(new DateInterval('P1D'));
-                }
+            if (!isset($accptedHolidays[$name])) {
+                continue;
+            }
 
-                // Add a new holiday that is substituting the original holiday
-                $substitute = new SubstituteHoliday(
-                    $holiday,
-                    [],
-                    $date,
-                    $this->locale
-                );
-
-                // Add a new holiday that is substituting the original holiday
-                $this->addHoliday($substitute);
-
-                // Add substitute holiday to the list
-                $holidays[] = $substitute;
+            $dayOfWeek = (int) $holiday->format('w');
+            if (in_array($dayOfWeek, $accptedHolidays[$name], true)) {
+                $dates[$day]['weekend:'.$day] = $name;
             }
         }
+
+        // Step 2. Add substitute holidays by referring to the temporary table.
+        $tz = DateTimeZoneFactory::getDateTimeZone($this->timezone);
+        foreach ($dates as $day => $names) {
+            $count = count($names);
+            if ($count < 2) {
+                continue;
+            } else {
+                // In a temporary table, public holidays are keyed by numeric number.
+                // And weekends are keyed by string start with 'weekend:'.
+                // For the substitute, we will use first item in queue.
+                $origin = $this->getHoliday($names[0]);
+                $workDay = $this->nextWorkingDay(DateTime::createFromFormat('Y-m-d', $day, $tz));
+                $this->addSubstituteHoliday($origin, $workDay->format('Y-m-d'));
+            }
+        }
+    }
+
+    /**
+     * Helper method to find a first working day after specific date.
+     */
+    private function nextWorkingDay(DateTime $date): DateTime
+    {
+        $interval = new DateInterval('P1D');
+        $next = clone $date;
+        do {
+            $next->add($interval);
+        } while (!$this->isWorkingDay($next));
+
+        return $next;
+    }
+
+    /**
+     * Helper method to add substitute holiday.
+     *
+     * Add a substitute holiday from origin holiday to different date.
+     *
+     * @throws \Exception
+     */
+    private function addSubstituteHoliday(Holiday $origin, string $date_str): void
+    {
+        $this->addHoliday(new SubstituteHoliday(
+            $origin,
+            [],
+            new DateTime($date_str, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 }

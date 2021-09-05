@@ -12,14 +12,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
   Canada [\#257](https://github.com/azuyalabs/yasumi/pull/257) ([Owen V. Gray](https://github.com/adrx))
 - New Juneteenth National Independence Day to
   USA [\#253](https://github.com/azuyalabs/yasumi/pull/253) ([Mark Heintz](https://github.com/mheintz))
+- The Korea Tourism Organization's holiday guide link was added to the source of SouthKorea Provider. [\#255](https://github.com/azuyalabs/yasumi/pull/253) ([barami](https://github.com/barami)) 
 - All providers now include a method that returns a list of external sources (i.e. references to websites, books,
   scientific papers, etc.) that are used for determining the calculation logic of the providers' holidays.
 
 ### Changed
 
 - Provider tests must implement the `ProviderTestCase` interface to ensure all required test methods are defined.
-- `YasumiTestCaseInterface` was renamed to `HolidayTestCase` to better match the newly added `ProviderTestCase`
-  interface.
+- `YasumiTestCaseInterface` was renamed to `HolidayTestCase` to better match the newly added `ProviderTestCase` interface.
+- Revised rules to calculate substitution holidays of SouthKorea to apply the newly enacted law on June 2021. [\#255](https://github.com/azuyalabs/yasumi/pull/253) ([barami](https://github.com/barami))
+- Seperate `calculateSubstituteHolidays` method of SouthKorea Provider to `calculateSubstituteHolidays` and `calculateOldSubstituteHolidays`. [\#255](https://github.com/azuyalabs/yasumi/pull/253) ([barami](https://github.com/barami))
+- Refactored the tests of SouthKorea provider to testing substitution holidays. [\#255](https://github.com/azuyalabs/yasumi/pull/253) ([barami](https://github.com/barami))
 
 ### Fixed
 

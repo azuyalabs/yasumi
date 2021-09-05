@@ -55,6 +55,70 @@ class GaecheonjeolTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     }
 
     /**
+     * Tests the substitute holiday defined in this test (conflict with Chuseok).
+     *
+     * @throws Exception
+     * @throws ReflectionException
+     */
+    public function testSubstituteByChuseok(): void
+    {
+        $tz = new DateTimeZone(self::TIMEZONE);
+
+        $this->assertHoliday(
+            self::REGION,
+            'chuseok',
+            2028,
+            new DateTime('2028-10-3', $tz)
+        );
+        $this->assertHoliday(
+            self::REGION,
+            'dayBeforeChuseok',
+            2036,
+            new DateTime('2036-10-3', $tz)
+        );
+        // Chuseok will be substitute instead of Gaecheonjeol.
+        $this->assertNotSubstituteHoliday(self::REGION, self::HOLIDAY, 2028);
+        $this->assertNotSubstituteHoliday(self::REGION, self::HOLIDAY, 2036);
+    }
+
+    /**
+     * Tests the substitute holiday defined in this test.
+     *
+     * @throws Exception
+     * @throws ReflectionException
+     */
+    public function testSubstituteHoliday(): void
+    {
+        $tz = new DateTimeZone(self::TIMEZONE);
+
+        // Before 2022
+        $this->assertNotSubstituteHoliday(self::REGION, self::HOLIDAY, 2015);
+        $this->assertNotSubstituteHoliday(self::REGION, self::HOLIDAY, 2020);
+        $this->assertSubstituteHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2021,
+            new DateTime('2021-10-4', $tz)
+        );
+
+        // By saturday
+        $this->assertSubstituteHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2026,
+            new DateTime('2026-10-5', $tz)
+        );
+
+        // By sunday
+        $this->assertSubstituteHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2032,
+            new DateTime('2032-10-4', $tz)
+        );
+    }
+
+    /**
      * Tests the holiday defined in this test before establishment.
      *
      * @throws ReflectionException
