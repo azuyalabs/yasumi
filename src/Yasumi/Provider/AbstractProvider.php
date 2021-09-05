@@ -288,7 +288,6 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @return Holiday|null a Holiday instance for the given holiday
      *
-     * @throws \ReflectionException
      * @throws UnknownLocaleException
      * @throws \RuntimeException
      * @throws InvalidArgumentException
@@ -317,7 +316,6 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @return Holiday|null a Holiday instance for the given holiday
      *
-     * @throws \ReflectionException
      * @throws UnknownLocaleException
      * @throws \RuntimeException
      * @throws InvalidArgumentException
