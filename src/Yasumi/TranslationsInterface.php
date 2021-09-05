@@ -34,7 +34,7 @@ interface TranslationsInterface
      *
      * @param string $key holiday key
      *
-     * @return array holiday name translations ['<locale>' => '<translation>', ...]
+     * @return array<string, string> holiday name translations ['<locale>' => '<translation>', ...]
      */
     public function getTranslations(string $key): array;
 }
