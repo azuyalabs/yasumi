@@ -586,8 +586,11 @@ class SouthKorea extends AbstractProvider
             // And weekends are keyed by string start with 'weekend:'.
             // For the substitute, we will use first item in queue.
             $origin = $this->getHoliday($names[0]);
-            $workDay = $this->nextWorkingDay(DateTime::createFromFormat('Y-m-d', $day, $tz));
-            $this->addSubstituteHoliday($origin, $workDay->format('Y-m-d'));
+            $nextWorkingDay = DateTime::createFromFormat('Y-m-d', $day, $tz);
+            if ($nextWorkingDay instanceof DateTime) {
+                $workDay = $this->nextWorkingDay($nextWorkingDay);
+                $this->addSubstituteHoliday($origin, $workDay->format('Y-m-d'));
+            }
         }
     }
 
