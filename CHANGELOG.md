@@ -8,9 +8,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 ### Added
 
-- Added new Juneteenth National Independence Day to USA [\#253](https://github.com/azuyalabs/yasumi/pull/253) ([Mark Heintz](https://github.com/mheintz))
-- All providers now include a method that returns a list of external sources (i.e. references to websites, books, scientific papers, etc.) that are used for determining the calculation logic of the providers' holidays.
+- New National Day for Truth and Reconciliation to
+  Canada [\#257](https://github.com/azuyalabs/yasumi/pull/257) ([Owen V. Gray](https://github.com/adrx))
+- New Juneteenth National Independence Day to
+  USA [\#253](https://github.com/azuyalabs/yasumi/pull/253) ([Mark Heintz](https://github.com/mheintz))
 - The Korea Tourism Organization's holiday guide link was added to the source of SouthKorea Provider. [\#255](https://github.com/azuyalabs/yasumi/pull/253) ([barami](https://github.com/barami)) 
+- All providers now include a method that returns a list of external sources (i.e. references to websites, books,
+  scientific papers, etc.) that are used for determining the calculation logic of the providers' holidays.
 
 ### Changed
 
@@ -21,6 +25,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 - Refactored the tests of SouthKorea provider to testing substitution holidays. [\#255](https://github.com/azuyalabs/yasumi/pull/253) ([barami](https://github.com/barami))
 
 ### Fixed
+
+- Definition of Canada Day in Canada [\#257](https://github.com/azuyalabs/yasumi/pull/257) in that, Canada Day is July 1
+  if that day is not Sunday, and July 2 if July 1 is a Sunday.([Owen V. Gray](https://github.com/adrx))
 
 ### Deprecated
 
