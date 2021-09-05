@@ -52,4 +52,4 @@ jobs:
         run: composer phpstan
 
       - name: Run static analysis - Psalm
-        run: composer psalm
+        run: vendor/bin/psalm
