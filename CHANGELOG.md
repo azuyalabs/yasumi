@@ -32,6 +32,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 ### Fixed
 
+- The test for the USA in that juneteenthDay was considered for all years: it is only celebrated since 2021.
 - Definition of Canada Day in Canada [\#257](https://github.com/azuyalabs/yasumi/pull/257) in that, Canada Day is July 1
   if that day is not Sunday, and July 2 if July 1 is a Sunday.([Owen V. Gray](https://github.com/adrx))
 

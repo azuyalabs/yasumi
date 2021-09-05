@@ -43,19 +43,24 @@ class USATest extends USABaseTestCase implements ProviderTestCase
      */
     public function testOfficialHolidays(): void
     {
-        $this->assertDefinedHolidays([
+        $holidays = [
             'newYearsDay',
             'martinLutherKingDay',
             'washingtonsBirthday',
             'memorialDay',
-            'juneteenth',
             'independenceDay',
             'labourDay',
             'columbusDay',
             'veteransDay',
             'thanksgivingDay',
             'christmasDay',
-        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
+        ];
+
+        if (2021 <= $this->year) {
+            $holidays[] = 'juneteenth';
+        }
+
+        $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
