@@ -538,18 +538,18 @@ class SouthKorea extends AbstractProvider
             return;
         }
 
-        // Holiday list to allowed to substitute.
-        $accptedHolidays = [];
+        // List of holidays allowed for substitution.
+        $acceptedHolidays = [];
 
         // When deciding on alternative holidays, place lunar holidays first for consistent rules.
         // These holidays will substitute for the sunday only.
-        $accptedHolidays += array_fill_keys([
+        $acceptedHolidays += array_fill_keys([
             'dayBeforeSeollal', 'seollal', 'dayAfterSeollal',
             'dayBeforeChuseok', 'chuseok', 'dayAfterChuseok',
         ], [0]);
 
         // These holidays will substitute for any weekend days (Sunday and Saturday).
-        $accptedHolidays += array_fill_keys([
+        $acceptedHolidays += array_fill_keys([
             'childrensDay', 'independenceMovementDay', 'liberationDay',
             'nationalFoundationDay', 'hangulDay',
         ], [0, 6]);
@@ -560,12 +560,12 @@ class SouthKorea extends AbstractProvider
             $holiday = $this->getHoliday($name);
             $dates[$day][] = $name;
 
-            if (!isset($accptedHolidays[$name])) {
+            if (!isset($acceptedHolidays[$name])) {
                 continue;
             }
 
             $dayOfWeek = (int) $holiday->format('w');
-            if (in_array($dayOfWeek, $accptedHolidays[$name], true)) {
+            if (\in_array($dayOfWeek, $acceptedHolidays[$name], true)) {
                 $dates[$day]['weekend:'.$day] = $name;
             }
         }
@@ -573,17 +573,17 @@ class SouthKorea extends AbstractProvider
         // Step 2. Add substitute holidays by referring to the temporary table.
         $tz = DateTimeZoneFactory::getDateTimeZone($this->timezone);
         foreach ($dates as $day => $names) {
-            $count = count($names);
+            $count = \count($names);
             if ($count < 2) {
                 continue;
-            } else {
-                // In a temporary table, public holidays are keyed by numeric number.
-                // And weekends are keyed by string start with 'weekend:'.
-                // For the substitute, we will use first item in queue.
-                $origin = $this->getHoliday($names[0]);
-                $workDay = $this->nextWorkingDay(DateTime::createFromFormat('Y-m-d', $day, $tz));
-                $this->addSubstituteHoliday($origin, $workDay->format('Y-m-d'));
             }
+
+            // In a temporary table, public holidays are keyed by numeric number.
+            // And weekends are keyed by string start with 'weekend:'.
+            // For the substitute, we will use first item in queue.
+            $origin = $this->getHoliday($names[0]);
+            $workDay = $this->nextWorkingDay(DateTime::createFromFormat('Y-m-d', $day, $tz));
+            $this->addSubstituteHoliday($origin, $workDay->format('Y-m-d'));
         }
     }
 
