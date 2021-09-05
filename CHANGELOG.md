@@ -12,17 +12,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
   Canada [\#257](https://github.com/azuyalabs/yasumi/pull/257) ([Owen V. Gray](https://github.com/adrx))
 - New Juneteenth National Independence Day to
   USA [\#253](https://github.com/azuyalabs/yasumi/pull/253) ([Mark Heintz](https://github.com/mheintz))
-- The Korea Tourism Organization's holiday guide link was added to the source of SouthKorea Provider. [\#255](https://github.com/azuyalabs/yasumi/pull/253) ([barami](https://github.com/barami)) 
+- The Korea Tourism Organization's holiday guide link was added to the source of SouthKorea
+  Provider. [\#255](https://github.com/azuyalabs/yasumi/pull/253) ([barami](https://github.com/barami))
 - All providers now include a method that returns a list of external sources (i.e. references to websites, books,
   scientific papers, etc.) that are used for determining the calculation logic of the providers' holidays.
 
 ### Changed
 
+- Revised rules to calculate substitution holidays of SouthKorea to apply the newly enacted law on June
+  2021. [\#255](https://github.com/azuyalabs/yasumi/pull/253) ([barami](https://github.com/barami))
+- Separate `calculateSubstituteHolidays` method of SouthKorea Provider to `calculateSubstituteHolidays`
+  and `calculateOldSubstituteHolidays`
+  . [\#255](https://github.com/azuyalabs/yasumi/pull/253) ([barami](https://github.com/barami))
+- Refactored the tests of SouthKorea provider to testing substitution
+  holidays. [\#255](https://github.com/azuyalabs/yasumi/pull/253) ([barami](https://github.com/barami))
 - Provider tests must implement the `ProviderTestCase` interface to ensure all required test methods are defined.
-- `YasumiTestCaseInterface` was renamed to `HolidayTestCase` to better match the newly added `ProviderTestCase` interface.
-- Revised rules to calculate substitution holidays of SouthKorea to apply the newly enacted law on June 2021. [\#255](https://github.com/azuyalabs/yasumi/pull/253) ([barami](https://github.com/barami))
-- Seperate `calculateSubstituteHolidays` method of SouthKorea Provider to `calculateSubstituteHolidays` and `calculateOldSubstituteHolidays`. [\#255](https://github.com/azuyalabs/yasumi/pull/253) ([barami](https://github.com/barami))
-- Refactored the tests of SouthKorea provider to testing substitution holidays. [\#255](https://github.com/azuyalabs/yasumi/pull/253) ([barami](https://github.com/barami))
+- `YasumiTestCaseInterface` was renamed to `HolidayTestCase` to better match the newly added `ProviderTestCase`
+  interface.
 
 ### Fixed
 
@@ -49,7 +55,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 ### Changed
 
 - Rescheduled exceptional Japanese holidays for Olympic Games 2020 after COVID-19 [\#240](https://github.com/azuyalabs/yasumi/pull/240) ([tanakahisateru](https://github.com/tanakahisateru))
-- Some improvements/refactoring of the Swiss holiday providers (including links to sources) [\#233](https://github.com/azuyalabs/yasumi/pull/233) ([Quentin Ligier](https://github.com/qligier))
+- Some improvements/refactoring of the Swiss holiday providers (including source references) [\#233](https://github.com/azuyalabs/yasumi/pull/233) ([Quentin Ligier](https://github.com/qligier))
 
 - Allow the `WEEKEND_DATA` constant in provider classes to be overridden. [\#235](https://github.com/azuyalabs/yasumi/pull/235) ([Mahmood Dhia](https://github.com/mdhia))
 - Upgraded PHPUnit's XML configuration.
@@ -144,8 +150,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 - Holiday providers for England, Wales, Scotland and Northern Ireland [\#166](https://github.com/azuyalabs/yasumi/pull/166) ([c960657](https://github.com/c960657))
 - Holiday Provider for South Korea. [\#156](https://github.com/azuyalabs/yasumi/pull/156) ([blood72](https://github.com/blood72))
-- Translation for the Easter holiday for the 'fr_FR' locale [\#146](https://github.com/azuyalabs/yasumi/pull/146) ([pioc92](https://github.com/pioc92))
-- Translation for the Pentecost holiday for the 'fr_FR' locale [\#145](https://github.com/azuyalabs/yasumi/pull/145) ([pioc92](https://github.com/pioc92))
+- Translation for the Easter holiday for the `fr_FR` locale [\#146](https://github.com/azuyalabs/yasumi/pull/146) ([pioc92](https://github.com/pioc92))
+- Translation for the Pentecost holiday for the `fr_FR` locale [\#145](https://github.com/azuyalabs/yasumi/pull/145) ([pioc92](https://github.com/pioc92))
 - Late Summer Bank Holiday in the United Kingdom prior to 1965 [\#161](https://github.com/azuyalabs/yasumi/pull/161) ([c960657](https://github.com/c960657))
 - Observance holidays for Sweden [\#172](https://github.com/azuyalabs/yasumi/pull/172) ([c960657](https://github.com/c960657))
 - Created a special subclass of Holiday for substitute holidays [\#162](https://github.com/azuyalabs/yasumi/pull/162) ([c960657](https://github.com/c960657))
@@ -154,11 +160,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 ### Changed
 
-- Updated the translation for the All Saints holiday for the 'fr_FR' locale [\#152](https://github.com/azuyalabs/yasumi/pull/152) ([pioc92](https://github.com/pioc92))
-- Updated the translation for the Armistice holiday for the 'fr_FR' locale [\#154](https://github.com/azuyalabs/yasumi/pull/154) ([pioc92](https://github.com/pioc92))
-- Updated the translation for the Victory in Europe holiday for the 'fr_FR' locale [\#153](https://github.com/azuyalabs/yasumi/pull/153) ([pioc92](https://github.com/pioc92))
-- Updated the translation for the Assumption of Mary holiday for the 'fr_FR' locale [\#155](https://github.com/azuyalabs/yasumi/pull/155) ([pioc92](https://github.com/pioc92))
-- Updated the translation for Christmas Day for the 'nl_NL' locale [\#160](https://github.com/azuyalabs/yasumi/pull/160) ([pioc92](https://github.com/pioc92))
+- Updated the translation for the All Saints holiday for the `fr_FR` locale [\#152](https://github.com/azuyalabs/yasumi/pull/152) ([pioc92](https://github.com/pioc92))
+- Updated the translation for the Armistice holiday for the `fr_FR` locale [\#154](https://github.com/azuyalabs/yasumi/pull/154) ([pioc92](https://github.com/pioc92))
+- Updated the translation for the Victory in Europe holiday for the `fr_FR` locale [\#153](https://github.com/azuyalabs/yasumi/pull/153) ([pioc92](https://github.com/pioc92))
+- Updated the translation for the Assumption of Mary holiday for the `fr_FR` locale [\#155](https://github.com/azuyalabs/yasumi/pull/155) ([pioc92](https://github.com/pioc92))
+- Updated the translation for Christmas Day for the `nl_NL` locale [\#160](https://github.com/azuyalabs/yasumi/pull/160) ([pioc92](https://github.com/pioc92))
 - Reordered arguments to Yoda style.
 - Replaced null checks by appropriate instance / type checks.
 - Moved default method values to method body as parameters should be nullable.
@@ -168,7 +174,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 - Upgraded to PHPUnit 8.
 - Replaced the standard 'InvalidArgumentException' when an invalid year or holiday provider is given by a new exception for each of these two situations separately ('InvalidYearException' and 'ProviderNotFoundException'). This allows you to better distinguish which exception may occur when instantiating the Yasumi class. [\#95](https://github.com/azuyalabs/yasumi/pull/95) ([qneyrat](https://github.com/qneyrat))
 - Refactored the AbstractProvider::count method to use the newly added SubstituteHoliday class.
-- Fallback support added to getName() to allow e.g. fallback from 'de_AT' to 'de'. [\#176](https://github.com/azuyalabs/yasumi/pull/176) ([c960657](https://github.com/c960657))
+- Fallback support added to getName() to allow e.g. fallback from `de_AT` to `de`. [\#176](https://github.com/azuyalabs/yasumi/pull/176) ([c960657](https://github.com/c960657))
 
 ### Fixed
 
@@ -397,8 +403,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 - Added Holiday Provider for New Zealand. [\#13](https://github.com/azuyalabs/yasumi/pull/13) ([badams](https://github.com/badams))
 - Added Holiday Provider for Greece. [\#10](https://github.com/azuyalabs/yasumi/pull/10) ([sebdesign](https://github.com/sebdesign))
 - Added Holiday Provider for Germany. [\#9](https://github.com/azuyalabs/yasumi/pull/9) ([eaglefsd](https://github.com/eaglefsd))
-- Added translations ('fr_FR', 'fr_BE') for Belgium National day [\#864d250](https://github.com/azuyalabs/yasumi/commit/864d25097abbeedbee15bcc37702a34c36a5b696) ([R2c](https://github.com/R2c))
-- Added missing English ('en_US') translations for the Christian holidays 'Immaculate Conception', 'Maundy Thursday',
+- Added translations (`fr_FR`, `fr_BE`) for Belgium National day [\#864d250](https://github.com/azuyalabs/yasumi/commit/864d25097abbeedbee15bcc37702a34c36a5b696) ([R2c](https://github.com/R2c))
+- Added missing English (`en_US`) translations for the Christian holidays 'Immaculate Conception', 'Maundy Thursday',
   'St. Georges Day', 'St. John's Day', 'St. Josephs Day' and 'St. Stephens Day'.
 - Added Test Interface class to ensure the unit tests contain a some minimal assertions.
 
@@ -464,7 +470,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
   Holidays.
 - Created separate tests for holidays that are substituted on different days.
 - Allow for namespaced holiday providers.
-- Added test for translation of Ash Wednesday and Valentines day in the Netherlands.
+- Added test for translation of Ash Wednesday and Valentine's Day in the Netherlands.
 - Added test to check whether all holidays for a Holiday Provider are defined by the respective provider class.
 
 ### Changed
