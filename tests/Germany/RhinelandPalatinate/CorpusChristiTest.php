@@ -14,44 +14,41 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Germany\RhinelandPalatinate;
 
-use DateInterval;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\Provider\ChristianHolidays;
 use Yasumi\tests\HolidayTestCase;
 
 /**
- * Class for testing Corpus Christi in Rhineland Palatinate (Germany).
+ * Class for testing Corpus Christi ('Fronleichnam') in Rhineland Palatinate (Germany).
  */
 class CorpusChristiTest extends RhinelandPalatinateBaseTestCase implements HolidayTestCase
 {
-    use ChristianHolidays;
-
     /**
-     * The name of the holiday.
+     * The name of the holiday to be tested.
      */
     public const HOLIDAY = 'corpusChristi';
 
     /**
-     * Tests Corpus Christi.
+     * Tests the holiday defined in this test.
      *
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testCorpusChristi(): void
+    public function testHoliday(): void
     {
-        $year = 2016;
+        $year = $this->generateRandomYear();
+
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             $year,
-            $this->calculateEaster($year, self::TIMEZONE)->add(new DateInterval('P60D'))
+            $this->calculateEaster($year, self::TIMEZONE)->add(new \DateInterval('P60D'))
         );
     }
 
     /**
-     * Tests translated name of the holiday defined in this test.
+     * Tests the translated name of the holiday defined in this test.
      *
      * @throws ReflectionException
      */
@@ -72,6 +69,6 @@ class CorpusChristiTest extends RhinelandPalatinateBaseTestCase implements Holid
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OTHER);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }
