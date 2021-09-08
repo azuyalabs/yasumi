@@ -41,7 +41,7 @@
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^v3.1.0",
-    "infection/infection": "^0.17 | ^0.23",
+    "infection/infection": "^0.23",
     "mikey179/vfsstream": "^1.6",
     "phan/phan": "^5.2",
     "phpstan/phpstan": "^0.12",
