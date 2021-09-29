@@ -9,7 +9,7 @@ declare(strict_types=1);
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <me@sachatelgenhof.com>
+ * @author Cameron Macfarlane <cammac1984@gmail.com>
  */
 
 namespace Yasumi\tests\USA;
@@ -22,30 +22,30 @@ use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
 /**
- * Class for testing Columbus Day in the USA.
+ * Class for testing Indigenous Peoples' Day in the USA.
  */
-class ColumbusDayTest extends USABaseTestCase implements HolidayTestCase
+class IndigenousPeoplesDayTest extends USABaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.
      */
-    public const HOLIDAY = 'columbusDay';
+    public const HOLIDAY = 'indigenousPeoplesDay';
 
     /**
      * The year in which the holiday was first established.
      */
-    public const ESTABLISHMENT_YEAR = 1937;
+    public const ESTABLISHMENT_YEAR = 1992;
 
     /**
-     * Tests Columbus Day on or after 1970. Columbus Day was established in 1937 on October 12th, but has been fixed to
-     * the second Monday in October since 1970.
+     * Tests Indigenous Peoples' Day on or after 2014. Indigenous Peoples' Day was established in 1992 on October 11th, but has been fixed to
+     * the second Monday in October since 2014.
      *
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testColumbusDayOnAfter1970(): void
+    public function testIndigenousPeoplesDayOnAfter2014(): void
     {
-        $year = $this->generateRandomYear(1970);
+        $year = $this->generateRandomYear(2014);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -55,15 +55,15 @@ class ColumbusDayTest extends USABaseTestCase implements HolidayTestCase
     }
 
     /**
-     * Tests Columbus Day between 1937 and 1969. Columbus Day was established in 1937 on October 12th, but has been
-     * fixed to the second Monday in October since 1970.
+     * Tests Indigenous Peoples' Day between 1992 and 2013. Indigenous Peoples' Day was established in 1992 on October 11th, but has been
+     * fixed to the second Monday in October since 2014.
      *
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testColumbusBetween1937And1969(): void
+    public function testIndigenousPeoplesDayBetween1992And2013(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1969);
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2013);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -73,12 +73,12 @@ class ColumbusDayTest extends USABaseTestCase implements HolidayTestCase
     }
 
     /**
-     * Tests Columbus Day before 1937. Columbus Day was established in 1937 on October 12th, but has been fixed to
-     * the second Monday in October since 1970.
+     * Tests Indigenous Peoples' Day before 1992. Indigenous Peoples' Day was established in 1992 on October 11th, but has been fixed to
+     * the second Monday in October since 2014.
      *
      * @throws ReflectionException
      */
-    public function testColumbusDayBefore1937(): void
+    public function testIndigenousPeoplesDayBefore1992(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -98,7 +98,7 @@ class ColumbusDayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Columbus Day']
+            [self::LOCALE => 'Indigenous Peoples\' Day']
         );
     }
 
@@ -117,3 +117,4 @@ class ColumbusDayTest extends USABaseTestCase implements HolidayTestCase
         );
     }
 }
+

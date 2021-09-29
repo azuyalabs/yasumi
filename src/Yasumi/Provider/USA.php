@@ -60,7 +60,7 @@ class USA extends AbstractProvider
         $this->calculateJuneteenth();
         $this->calculateIndependenceDay();
         $this->calculateLabourDay();
-        $this->calculateColumbusDay();
+        $this->calculateIndigenousPeoplesDay();
         $this->calculateVeteransDay();
         $this->calculateThanksgivingDay();
 
@@ -213,27 +213,29 @@ class USA extends AbstractProvider
     }
 
     /**
-     * Columbus Day.
+     * Indigenous Peoples' Day.
      *
-     * Honors Christopher Columbus, traditional discoverer of the Americas. In some areas it is also a celebration
-     * of Indigenous Peoples, or Italian culture and heritage. (traditionally October 12). Columbus Day first became
-     * an official state holiday in Colorado in 1906, and became a federal holiday in the United States in 1937,
-     * though people have celebrated Columbus's voyage since the colonial period. Since 1970 (Oct. 12), the holiday
-     * has been fixed to the second Monday in October.
+     * Indigenous Peoples' Day is a holiday that celebrates and honors Native American peoples and commemorates their
+     * histories and cultures. It is celebrated across the United States on the second Monday in October, and is an
+     * official city and state holiday in various localities. It began as a counter-celebration held on the same day as
+     * the U.S. federal holiday of Columbus Day, which honors Italian explorer Christopher Columbus. Many reject
+     * celebrating him, saying that he represents "the violent history of the colonization in the Western Hemisphere",
+     * and that Columbus Day is a sanitization or covering-up of Christopher Columbus' actions such as enslaving Native
+     * Americans.
      *
-     * @see https://en.wikipedia.org/wiki/Columbus_Day
+     * @see https://en.wikipedia.org/wiki/Indigenous_Peoples%27_Day
      *
      * @throws \Exception
      */
-    private function calculateColumbusDay(): void
+    private function calculateIndigenousPeoplesDay(): void
     {
         if ($this->year >= 1937) {
             $date = new DateTime("$this->year-10-12", DateTimeZoneFactory::getDateTimeZone($this->timezone));
             if ($this->year >= 1970) {
                 $date = new DateTime("second monday of october $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
             }
-            $this->addHoliday(new Holiday('columbusDay', [
-                'en' => 'Columbus Day',
+            $this->addHoliday(new Holiday('indigenousPeoplesDay', [
+                'en' => 'Indigenous Peoples\' Day',
             ], $date, $this->locale));
         }
     }
