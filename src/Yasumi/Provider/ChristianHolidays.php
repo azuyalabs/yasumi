@@ -258,14 +258,14 @@ trait ChristianHolidays
      * @param int    $year     the year for which Easter needs to be calculated
      * @param string $timezone the timezone in which Easter is celebrated
      *
-     * @return DateTime date of Orthodox Easter
+     * @return \DateTime|\DateTimeImmutable date of Orthodox Easter
      *
      * @throws \Exception
      *
      * @see https://en.wikipedia.org/wiki/Computus#Meeus.27s_Julian_algorithm
      * @see https://www.php.net/manual/en/function.easter-date.php#83794
      */
-    protected function calculateOrthodoxEaster(int $year, string $timezone): DateTime
+    protected function calculateOrthodoxEaster(int $year, string $timezone): \DateTimeInterface
     {
         $a = $year % 4;
         $b = $year % 7;
@@ -334,7 +334,7 @@ trait ChristianHolidays
      * @param int    $year     the year for which Easter needs to be calculated
      * @param string $timezone the timezone in which Easter is celebrated
      *
-     * @return DateTime date of Easter
+     * @return \DateTime|\DateTimeImmutable date of Easter
      *
      * @throws \Exception
      *
@@ -343,7 +343,7 @@ trait ChristianHolidays
      * @see http://www.gmarts.org/index.php?go=415#EasterMallen
      * @see https://www.tondering.dk/claus/cal/easter.php
      */
-    protected function calculateEaster(int $year, string $timezone): DateTime
+    protected function calculateEaster(int $year, string $timezone): \DateTimeInterface
     {
         if (\extension_loaded('calendar')) {
             $easterDays = easter_days($year);

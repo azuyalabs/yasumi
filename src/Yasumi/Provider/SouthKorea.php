@@ -564,7 +564,7 @@ class SouthKorea extends AbstractProvider
                 continue;
             }
 
-            if (null === $holiday) {
+            if (!$holiday instanceof Holiday) {
                 continue;
             }
 
@@ -617,7 +617,7 @@ class SouthKorea extends AbstractProvider
      */
     private function addSubstituteHoliday(?Holiday $origin, string $date_str): void
     {
-        if (null === $origin) {
+        if (!$origin instanceof Holiday) {
             return;
         }
 

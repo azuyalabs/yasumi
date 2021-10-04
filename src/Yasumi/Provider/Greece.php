@@ -130,8 +130,10 @@ class Greece extends AbstractProvider
      * Orthodox Easter.
      *
      * @throws \Exception
+     *
+     * @return \DateTime|\DateTimeImmutable
      */
-    private function calculateEaster(int $year, string $timezone): DateTime
+    private function calculateEaster(int $year, string $timezone): \DateTimeInterface
     {
         return $this->calculateOrthodoxEaster($year, $timezone);
     }

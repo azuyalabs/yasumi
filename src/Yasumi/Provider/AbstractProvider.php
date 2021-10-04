@@ -169,11 +169,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     public function isHoliday(\DateTimeInterface $date): bool
     {
         // Check if given date is a holiday or not
-        if (\in_array($date->format('Y-m-d'), array_values($this->getHolidayDates()), true)) {
-            return true;
-        }
-
-        return false;
+        return \in_array($date->format('Y-m-d'), $this->getHolidayDates(), true);
     }
 
     /**
@@ -189,16 +185,11 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     public function isWeekendDay(\DateTimeInterface $date): bool
     {
         // If no data is defined for this Holiday Provider, the function falls back to the global weekend definition.
-        if (\in_array(
+        return \in_array(
             (int) $date->format('w'),
             static::WEEKEND_DATA[$this::ID] ?? [0, 6],
             true
-        )
-        ) {
-            return true;
-        }
-
-        return false;
+        );
     }
 
     /**
@@ -244,7 +235,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     public function count(): int
     {
-        $names = array_map(static function ($holiday) {
+        $names = array_map(static function ($holiday): string {
             if ($holiday instanceof SubstituteHoliday) {
                 return $holiday->getSubstitutedHoliday()->getKey();
             }
@@ -392,7 +383,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     protected function getHolidayDates(): array
     {
-        return array_map(static function ($holiday) {
+        return array_map(static function ($holiday): string {
             return (string) $holiday;
         }, $this->holidays);
     }
@@ -451,11 +442,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     private static function compareDates(\DateTimeInterface $dateA, \DateTimeInterface $dateB): int
     {
-        if ($dateA === $dateB) {
-            return 0;
-        }
-
-        return $dateA < $dateB ? -1 : 1;
+        return $dateA <=> $dateB;
     }
 
     /**

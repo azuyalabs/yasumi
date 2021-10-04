@@ -643,7 +643,7 @@ trait YasumiBase
      * @see http://www.gmarts.org/index.php?go=415#EasterMallen
      * @see http://www.tondering.dk/claus/cal/easter.php
      */
-    protected function calculateEaster(int $year, string $timezone): DateTime
+    protected function calculateEaster(int $year, string $timezone): DateTimeInterface
     {
         if (\extension_loaded('calendar')) {
             $easter_days = easter_days($year);

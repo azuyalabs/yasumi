@@ -199,7 +199,7 @@ class Yasumi
     ): ProviderInterface {
         $availableProviders = self::getProviders();
 
-        if (false === isset($availableProviders[$isoCode])) {
+        if (!isset($availableProviders[$isoCode])) {
             throw new ProviderNotFoundException(sprintf('Unable to find holiday provider by ISO3166-2 "%s".', $isoCode));
         }
 

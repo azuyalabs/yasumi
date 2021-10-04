@@ -56,8 +56,6 @@ class CentralNorth extends Tasmania
         $date = new DateTime($this->year.'-12-02', DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $date = $date->modify('previous friday');
 
-        if ($date instanceof \DateTimeInterface) {
-            $this->addHoliday(new Holiday('devonportShow', ['en' => 'Devonport Show'], $date, $this->locale));
-        }
+        $this->addHoliday(new Holiday('devonportShow', ['en' => 'Devonport Show'], $date, $this->locale));
     }
 }
