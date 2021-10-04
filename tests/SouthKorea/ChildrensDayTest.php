@@ -71,9 +71,10 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
                 $year,
                 new DateTime("$year-5-5", $tz)
             );
+
             $this->assertSubstituteHoliday(
                 self::REGION,
-                self::HOLIDAY,
+                'buddhasBirthday',
                 $year,
                 new DateTime("$year-5-6", $tz)
             );
