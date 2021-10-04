@@ -62,6 +62,10 @@ class ThuringiaTest extends ThuringiaBaseTestCase implements ProviderTestCase
             $holidays[] = 'reformationDay';
         }
 
+        if ($this->year >= 2019) {
+            $holidays[] = 'worldChildrensDay';
+        }
+
         $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

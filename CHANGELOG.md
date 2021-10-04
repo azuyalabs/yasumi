@@ -9,23 +9,24 @@ to [Semantic Versioning](https://semver.org).
 
 ### Added
 
+- World Children's Day for Thuringia (Germany) [\#260](https://github.com/azuyalabs/yasumi/issues/260)
 - New National Day for Truth and Reconciliation to
   Canada [\#257](https://github.com/azuyalabs/yasumi/pull/257) ([Owen V. Gray](https://github.com/adrx))
 - New Juneteenth National Independence Day to
   USA [\#253](https://github.com/azuyalabs/yasumi/pull/253) ([Mark Heintz](https://github.com/mheintz))
-- The Korea Tourism Organization's holiday guide link was added to the source of SouthKorea
+- The Korea Tourism Organization's holiday guide link was added to the source of South Korea
   Provider. [\#255](https://github.com/azuyalabs/yasumi/pull/255) ([barami](https://github.com/barami))
 - All providers now include a method that returns a list of external sources (i.e. references to websites, books,
   scientific papers, etc.) that are used for determining the calculation logic of the providers' holidays.
 
 ### Changed
 
-- Revised rules to calculate substitution holidays of SouthKorea to apply the newly enacted law on June
+- Revised rules to calculate substitution holidays of South Korea to apply the newly enacted law on June
     2021. [\#255](https://github.com/azuyalabs/yasumi/pull/255) ([barami](https://github.com/barami))
-- Separate `calculateSubstituteHolidays` method of SouthKorea Provider to `calculateSubstituteHolidays`
+- Separate `calculateSubstituteHolidays` method of South Korea Provider to `calculateSubstituteHolidays`
   and `calculateOldSubstituteHolidays`
   . [\#255](https://github.com/azuyalabs/yasumi/pull/255) ([barami](https://github.com/barami))
-- Refactored the tests of SouthKorea provider to testing substitution
+- Refactored the tests of South Korea provider to testing substitution
   holidays. [\#255](https://github.com/azuyalabs/yasumi/pull/255) ([barami](https://github.com/barami))
 - Provider tests must implement the `ProviderTestCase` interface to ensure all required test methods are defined.
 - `YasumiTestCaseInterface` was renamed to `HolidayTestCase` to better match the newly added `ProviderTestCase`
@@ -143,7 +144,7 @@ to [Semantic Versioning](https://semver.org).
   holiday since 2020 in
   Croatia. [\#203](https://github.com/azuyalabs/yasumi/pull/203) ([krukru](https://github.com/krukru))
 - Second International Workers' Day in Ukraine was an official holiday only until
-  2018. [\#202](https://github.com/azuyalabs/yasumi/pull/202)
+    2018. [\#202](https://github.com/azuyalabs/yasumi/pull/202)
 - Holiday names in Danish, Dutch, and Norwegian are no longer
   capitalized. [\#185](https://github.com/azuyalabs/yasumi/pull/185) ([c960657](https://github.com/c960657))
 
@@ -263,14 +264,14 @@ to [Semantic Versioning](https://semver.org).
 - As the Japanese Emperor will abdicate the throne on May 1st 2019, the holiday of the Emperors Birthday will change to
   February 23rd from 2020 (No holiday in 2019). In addition, Coronation Day and the Enthronement Proclamation Ceremony
   will be extra holidays in
-  2019. [\#130](https://github.com/azuyalabs/yasumi/pull/130) ([cookie-maker](https://github.com/cookie-maker))
+    2019. [\#130](https://github.com/azuyalabs/yasumi/pull/130) ([cookie-maker](https://github.com/cookie-maker))
 - International Women's Day is an official holiday since 2019 in Berlin (Germany)
   . [#133](https://github.com/azuyalabs/yasumi/pull/133) ([huehnerhose](https://github.com/huehnerhose))
 
 ### Changed
 
 - Japanese Health And Sports Day will be renamed to Sports Day from
-  2020. [\#129](https://github.com/azuyalabs/yasumi/pull/129) ([cookie-maker](https://github.com/cookie-maker))
+    2020. [\#129](https://github.com/azuyalabs/yasumi/pull/129) ([cookie-maker](https://github.com/cookie-maker))
 - Dutch spelling for Easter/Pentecost/Christmas to use lower
   case. [\#128](https://github.com/azuyalabs/yasumi/pull/128) ([c960657](https://github.com/c960657))
 - Refactored the Netherlands Holiday provider by moving the calculation of individual holidays to private methods. This

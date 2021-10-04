@@ -16,6 +16,8 @@ namespace Yasumi\Provider\Germany;
 
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Holiday;
+use Yasumi\Provider\DateTimeZoneFactory;
 use Yasumi\Provider\Germany;
 
 /**
@@ -50,6 +52,9 @@ class Thuringia extends Germany
 
         // Add custom Christian holidays
         $this->calculateReformationDay();
+
+        // Other holidays
+        $this->calculateWorldChildrensDay();
     }
 
     /**
@@ -68,5 +73,25 @@ class Thuringia extends Germany
         }
 
         $this->addHoliday($this->reformationDay($this->year, $this->timezone, $this->locale));
+    }
+
+    /**
+     * For the German state of Thuringia, World Childrens's Day is celebrated since 2019.
+     *
+     * @throws \Exception
+     */
+    private function calculateWorldChildrensDay(): void
+    {
+        if ($this->year < 2019) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday(
+            'worldChildrensDay',
+            ['de' => 'Weltkindertag'],
+            new \DateTimeImmutable(sprintf('%s-09-20', $this->year), DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale,
+            Holiday::TYPE_OFFICIAL
+        ));
     }
 }
