@@ -89,7 +89,7 @@ class Thuringia extends Germany
         $this->addHoliday(new Holiday(
             'worldChildrensDay',
             ['de' => 'Weltkindertag'],
-            new \DateTimeImmutable(sprintf('%s-09-20', $this->year), DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTimeImmutable(sprintf('%d-09-20', $this->year), DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));
