@@ -22,8 +22,8 @@ use Yasumi\Provider\Germany;
 /**
  * Provider for all holidays in Baden-Württemberg (Germany).
  *
- * Baden-Württemberg is a state in Germany located in the southwest, east of the Upper Rhine. It is Germany’s third
- * largest state in terms of size and population, with an area of 36,410 square kilometres (14,060 sq mi) and 10.7
+ * Baden-Württemberg is a state in Germany located in the southwest, east of the Upper Rhine. It is Germany’s
+ * third-largest state in terms of size and population, with an area of 36,410 square kilometres (14,060 sq mi) and 10.7
  * million inhabitants. The state capital and largest city is Stuttgart.
  *
  * @see https://en.wikipedia.org/wiki/Baden-W%C3%BCrttemberg
@@ -50,7 +50,7 @@ class BadenWurttemberg extends Germany
 
         // Add custom Christian holidays
         $this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale, Holiday::TYPE_OFFICIAL));
         $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
     }
 }

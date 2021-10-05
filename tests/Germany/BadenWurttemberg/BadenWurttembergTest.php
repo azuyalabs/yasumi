@@ -50,6 +50,7 @@ class BadenWurttembergTest extends BadenWurttembergBaseTestCase implements Provi
             'internationalWorkersDay',
             'ascensionDay',
             'pentecostMonday',
+            'corpusChristi',
             'germanUnityDay',
             'christmasDay',
             'secondChristmasDay',
@@ -94,7 +95,7 @@ class BadenWurttembergTest extends BadenWurttembergBaseTestCase implements Provi
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays(
-            ['epiphany', 'corpusChristi', 'allSaintsDay'],
+            ['epiphany', 'allSaintsDay'],
             self::REGION,
             $this->year,
             Holiday::TYPE_OTHER
