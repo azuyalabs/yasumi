@@ -31,6 +31,7 @@ to [Semantic Versioning](https://semver.org).
 - Provider tests must implement the `ProviderTestCase` interface to ensure all required test methods are defined.
 - `YasumiTestCaseInterface` was renamed to `HolidayTestCase` to better match the newly added `ProviderTestCase`
   interface.
+- Upgraded PHP CS Fixer to v3.
 
 ### Fixed
 
