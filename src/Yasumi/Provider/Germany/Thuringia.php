@@ -24,8 +24,8 @@ use Yasumi\Provider\Germany;
  * Provider for all holidays in Thuringia (Germany).
  *
  * The Free State of Thuringia is a federal state of Germany, located in the central part of the country. It has an area
- * of 16,171 square kilometres (6,244 sq mi) and 2.29 million inhabitants, making it the sixth smallest by area and the
- * fifth smallest by population of Germany's sixteen states. Most of Thuringia is within the watershed of the Saale, a
+ * of 16,171 square kilometres (6,244 sq mi) and 2.29 million inhabitants, making it the sixth-smallest by area and the
+ * fifth-smallest by population of Germany's sixteen states. Most of Thuringia is within the watershed of the Saale, a
  * left tributary of the Elbe. Its capital is Erfurt.
  *
  * @see https://en.wikipedia.org/wiki/Thuringia
@@ -76,7 +76,7 @@ class Thuringia extends Germany
     }
 
     /**
-     * For the German state of Thuringia, World Childrens's Day is celebrated since 2019.
+     * For the German state of Thuringia, World Children's Day is celebrated since 2019.
      *
      * @throws \Exception
      */
