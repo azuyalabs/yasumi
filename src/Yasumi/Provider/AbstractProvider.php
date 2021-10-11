@@ -266,7 +266,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         return array_keys($this->holidays);
     }
 
-    /** @inheritdoc  */
+    /** {@inheritdoc} */
     public function getYear(): int
     {
         return $this->year;
