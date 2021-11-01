@@ -54,6 +54,7 @@ class RhinelandPalatinateTest extends RhinelandPalatinateBaseTestCase implements
             'germanUnityDay',
             'christmasDay',
             'secondChristmasDay',
+            'allSaintsDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -94,7 +95,7 @@ class RhinelandPalatinateTest extends RhinelandPalatinateBaseTestCase implements
      */
     public function testOtherHolidays(): void
     {
-        $this->assertDefinedHolidays(['allSaintsDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**

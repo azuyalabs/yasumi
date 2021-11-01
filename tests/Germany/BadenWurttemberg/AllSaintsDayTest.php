@@ -48,7 +48,7 @@ class AllSaintsDayTest extends BadenWurttembergBaseTestCase implements HolidayTe
     /**
      * Returns a list of random test dates used for assertion of the holiday defined in this test.
      *
-     * @return array list of test dates for the holiday defined in this test
+     * @return array<DateTime> list of test dates for the holiday defined in this test
      *
      * @throws Exception
      */
@@ -79,6 +79,6 @@ class AllSaintsDayTest extends BadenWurttembergBaseTestCase implements HolidayTe
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OTHER);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

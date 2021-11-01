@@ -54,6 +54,7 @@ class NorthRhineWestphaliaTest extends NorthRhineWestphaliaBaseTestCase implemen
             'germanUnityDay',
             'christmasDay',
             'secondChristmasDay',
+            'allSaintsDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -94,7 +95,7 @@ class NorthRhineWestphaliaTest extends NorthRhineWestphaliaBaseTestCase implemen
      */
     public function testOtherHolidays(): void
     {
-        $this->assertDefinedHolidays(['allSaintsDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**

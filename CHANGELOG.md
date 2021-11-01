@@ -35,8 +35,12 @@ to [Semantic Versioning](https://semver.org).
 
 ### Fixed
 
-- Corpus Christi (German: 'Fronleichnam') was classified as `Other` for states celebrating this day. This was incorrect
-  and has been changed to `Official`. [\#252](https://github.com/azuyalabs/yasumi/issues/252)
+- All Saints Day (German: 'AllerHeiligen') was classified as `Other` for states celebrating this day. This was
+  incorrect (or officially changed) and has been altered to `Official`
+  . [\#263](https://github.com/azuyalabs/yasumi/issues/263)
+- Corpus Christi (German: 'Fronleichnam') was classified as `Other` for states celebrating this day. This was
+  incorrect (or officially changed)
+  and has been altered to `Official`. [\#252](https://github.com/azuyalabs/yasumi/issues/252)
 - The test for the USA in that juneteenthDay was considered for all years: it is only celebrated since 2021.
 - Definition of Canada Day in Canada [\#257](https://github.com/azuyalabs/yasumi/pull/257) in that, Canada Day is July 1
   if that day is not Sunday, and July 2 if July 1 is a Sunday.([Owen V. Gray](https://github.com/adrx))
