@@ -58,8 +58,8 @@ class Argentina extends AbstractProvider
         /*
          * Carnaval
          *
-         * Carnaval is the biggest popular festival of country. The festival it happens during 4 days and the last day above
-         * the wednesday of ashes (initiation of lent).
+         * Carnaval is the biggest popular festival of country. The festival
+         * happens on Day 48 and 47 before Easter.
          *
          * @link https://en.wikipedia.org/wiki/Brazilian_Carnival
          */
@@ -69,16 +69,16 @@ class Argentina extends AbstractProvider
             $carnavalMonday = clone $easter;
             $this->addHoliday(new Holiday(
               'carnavalMonday',
-              ['es' => 'Segunda-feira de Carnaval'],
+              ['es' => 'Lunes de Carnaval'],
               $carnavalMonday->sub(new DateInterval('P48D')),
               $this->locale,
               Holiday::TYPE_OBSERVANCE
-      ));
+            ));
 
             $carnavalTuesday = clone $easter;
             $this->addHoliday(new Holiday(
               'carnavalTuesday',
-              ['pt' => 'Terça-feira de Carnaval'],
+              ['es' => 'Martes de Carnaval'],
               $carnavalTuesday->sub(new DateInterval('P47D')),
               $this->locale,
               Holiday::TYPE_OBSERVANCE
@@ -86,90 +86,177 @@ class Argentina extends AbstractProvider
         }
 
         /*
-         * Tiradentes Day
+         * Day of Remembrance for Truth and Justice.
          *
-         * Tiradentes Day is a the Brazilian national holidays. Is the a tribute to national Brazilian hero Joaquim José
-         * da Silva Xavier, martyr of Inconfidência Mineira. Is celebrated on 21 Abril, because the execution of
-         * Tiradentes got in the day, in 1792.
+         * The Day of Remembrance for Truth and Justice (Spanish: Día de la
+         * Memoria por la Verdad y la Justicia) is a public holiday in
+         * Argentina, commemorating the victims of the Dirty War. It is held on
+         * 24 March, the anniversary of the coup d'état of 1976 that brought the
+         *  National Reorganization Process to power.
          *
-         * @link https://en.wikipedia.org/wiki/Tiradentes
+         * @link https://en.wikipedia.org/wiki/Day_of_Remembrance_for_Truth_and_Justice
          */
-        if ($this->year >= 1792) {
+        if ($this->year >= 2006) {
             $this->addHoliday(new Holiday(
-              'tiradentesDay',
-              ['es' => 'Dia de Tiradentes'],
-              new DateTime("$this->year-04-21", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+              'RemembranceDay',
+              ['es' => 'Día Nacional de la Memoria por la Verdad y la Justicia'],
+              new DateTime("$this->year-03-24", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
               $this->locale
             ));
         }
 
         /*
-         * Independence Day
+         * Malvinas Day.
          *
-         * The Homeland Day is a national holiday of Brazilian homeland celebrated on 7 September. The date is
-         * celebrated the independence declaration of Brazil to Portuguese empire on 7 September 1822.
+         * Malvinas Day (Spanish: Día de las Malvinas), officially Day of the
+         * Veterans and Fallen of the Malvinas War (Día del Veterano y de los
+         * Caídos en la Guerra de las Malvinas), is a public holiday in
+         * Argentina, observed each year on 2 April.[1] The name refers to the
+         * Malvinas Islands, known in Spanish as the Islas Malvinas.
          *
-         * @link https://en.wikipedia.org/wiki/Independence_of_Brazil
+         * @link https://en.wikipedia.org/wiki/Malvinas_Day
          */
-        if ($this->year >= 1822) {
+        if ($this->year >= 1982) {
+            $this->addHoliday(new Holiday(
+              'MalvinasDay',
+              ['es' => 'Día del Veterano y de los Caídos en la Guerra de Malvinas'],
+              new DateTime("$this->year-04-02", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+              $this->locale
+            ));
+        }
+
+        /*
+         * First National Government.
+         *
+         * The Anniversary of the First National Government
+         * (Spanish: Primer gobierno patrio) is a public holiday of Argentina,
+         * commemorating the May Revolution and the creation of the Primera
+         * Junta on May 25, 1810, which is considered the first patriotic
+         * government of Argentina. Along with the 9 July, which commemorates
+         * the Declaration of Independence, it is considered a National Day of
+         * Argentina.
+         *
+         * @link https://en.wikipedia.org/wiki/First_National_Government
+         */
+        if ($this->year >= 1810) {
+            $this->addHoliday(new Holiday(
+              'MayRevolution',
+              ['es' => 'Día de la Revolución de Mayo'],
+              new DateTime("$this->year-05-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+              $this->locale
+            ));
+        }
+
+        /*
+         * Anniversary of the Passing of General Martín Miguel de Güemes.
+         *
+         * Anniversary of the death of Martín Miguel de Güemes, general of the
+         * Argentine War of Independence.
+         */
+        if ($this->year >= 1821) {
+            $this->addHoliday(new Holiday(
+              'GeneralMartínMigueldeGüemesDay',
+              ['es' => 'Paso a la Inmortalidad del General Martín Miguel de Güemes'],
+              new DateTime("$this->year-06-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+              $this->locale
+            ));
+        }
+
+        /*
+         * General Manuel Belgrano Memorial Day.
+         *
+         * Anniversary of the death of Manuel Belgrano, creator of the Flag of
+         * Argentina.
+         *
+         * @link https://en.wikipedia.org/wiki/Flag_Day_(Argentina)
+         */
+        if ($this->year >= 1938) {
+            $this->addHoliday(new Holiday(
+              'FlagDay',
+              ['es' => 'Paso a la Inmortalidad del General Manuel Belgrano'],
+              new DateTime("$this->year-06-20", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+              $this->locale
+            ));
+        }
+
+        /*
+         * Independence Day.
+         *
+         * Anniversary of the Declaration of Independence in 1816.
+         *
+         * @link https://en.wikipedia.org/wiki/Argentine_Declaration_of_Independence
+         */
+        if ($this->year >= 1816) {
             $this->addHoliday(new Holiday(
               'independenceDay',
               ['es' => 'Día de la Independencia'],
-              new DateTime("$this->year-09-07", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+              new DateTime("$this->year-07-09", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
               $this->locale
             ));
         }
 
         /*
-         * Our Lady of Aparecida Day
+         * General José de San Martín Memorial Day.
          *
-         * Our Lady of Conceição Aparecida, popularly called Our Lady Aparecida, Brazil's patroness. She is
-         * venerated in Catholic Church. Our Lady Aparecida is represented like a little image of Virgen Maria,
-         * currently in Basílica of Our Lady Aparecida, localized in São Paulo.
-         *
-         * The event is celebrated on 12 October, a national holiday in Brazil since 1980.
-         *
-         * @link https://en.wikipedia.org/wiki/Our_Lady_of_Aparecida
+         * Anniversary of the death of José de San Martín, liberator of
+         * Argentina, Chile and Peru.
          */
-        if ($this->year >= 1980) {
+        if ($this->year >= 1850) {
             $this->addHoliday(new Holiday(
-              'ourLadyOfAparecidaDay',
-              ['es' => ''],
+              'GeneralJoséSanMartínDay',
+              ['es' => 'Paso a la Inmortalidad del General José de San Martín'],
+              new DateTime("$this->year-08-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+              $this->locale
+            ));
+        }
+
+        /*
+         * Day of Respect for Cultural Diversity.
+         *
+         * Former "Día de la raza" (English: Race day), anniversary of the
+         * arrival of Columbus to the Americas.
+         *
+         * @link https://en.wikipedia.org/wiki/Columbus_Day
+         */
+        if ($this->year >= 1492) {
+            $this->addHoliday(new Holiday(
+              'RaceDay',
+              ['es' => 'Día del Respeto a la Diversidad Cultural'],
               new DateTime("$this->year-10-12", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
               $this->locale
             ));
         }
 
         /*
-         * All Souls Day
+         * National Sovereignty Day.
          *
-         * The All Souls day (known like Deads Day in Mexico), is celebrated for Catholic Church on 2 November.
+         * Anniversary of the 1845 Battle of Vuelta de Obligado against the
+         * Anglo-French blockade of the Río de la Plata.
          *
-         * @link http://www.johninbrazil.org/all-souls-day-o-dia-dos-finados/
+         * @link https://en.wikipedia.org/wiki/National_Sovereignty_Day
          */
-        if ($this->year >= 1300) {
+        if ($this->year >= 2010) {
             $this->addHoliday(new Holiday(
-              'allSoulsDay',
-              [],
-              new DateTime("$this->year-11-02", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+              'NationalSovereigntyDay',
+              ['es' => 'Día de la Soberanía Nacional'],
+              new DateTime("$this->year-11-20", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
               $this->locale
             ));
         }
 
         /*
-         * Proclamation of Republic Day
+         * Immaculate Conception Day.
          *
-         * The Brazilian Proclamation of Republic was an act relevant military politic it happened on 15 November 1889
-         * that initiated the build federative presidential of govern in Brazil, downed the monarchy constitutional
-         * parlamentary of Brazil's Empire.
+         * Christian holiday, conception of the Virgin Mary free from original
+         * sin.
          *
-         * @link https://en.wikipedia.org/wiki/Proclamation_of_the_Republic_(Brazil)
+         * @link https://en.wikipedia.org/wiki/Immaculate_Conception
          */
-        if ($this->year >= 1889) {
+        if ($this->year >= 2010) {
             $this->addHoliday(new Holiday(
-              'proclamationOfRepublicDay',
-              ['es' => ''],
-              new DateTime("$this->year-11-15", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+              'ImmaculateConceptionDay',
+              ['es' => 'Día de la Inmaculada Concepción de María'],
+              new DateTime("$this->year-12-08", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
               $this->locale
             ));
         }
