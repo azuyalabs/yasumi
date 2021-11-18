@@ -44,7 +44,7 @@ class Argentina extends AbstractProvider
      */
     public function initialize(): void
     {
-        $this->timezone = 'America/Santiago';
+        $this->timezone = 'America/Argentina/Buenos_Aires';
 
         // Add common holidays
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
