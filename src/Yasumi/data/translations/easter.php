@@ -23,6 +23,7 @@ return [
     'de_CH' => 'Ostern',
     'el' => 'Κυριακή του Πάσχα',
     'en' => 'Easter Sunday',
+    'es' => 'Pascua de Resurrección',
     'et' => 'Ülestõusmispühade 1. püha',
     'fi' => 'Pääsiäispäivä',
     'fr' => 'Pâques',
