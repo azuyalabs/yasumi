@@ -20,6 +20,7 @@ use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
+
 /**
  * Class for testing Corpus Christi in Argentina.
  */
@@ -31,6 +32,11 @@ class NationalSovereigntyDayTest extends ArgentinaBaseTestCase implements Holida
     public const HOLIDAY = 'nationalSovereigntyDay';
 
     /**
+     * The year in which the holiday was first established.
+     */
+    public const ESTABLISHMENT_YEAR = 2010;
+
+    /**
      * Tests the holiday defined in this test.
      *
      * @throws Exception
@@ -38,13 +44,23 @@ class NationalSovereigntyDayTest extends ArgentinaBaseTestCase implements Holida
      */
     public function testHoliday(): void
     {
-        $year = 2010;
+        $year = self::ESTABLISHMENT_YEAR;
         $this->assertHoliday(
           self::REGION,
           self::HOLIDAY,
           $year,
           new DateTime("$year-11-20", new DateTimeZone(self::TIMEZONE))
         );
+    }
+
+    /**
+     *  Tests that holiday is not present before establishment year.
+     *
+     * @throws ReflectionException
+     */
+    public function testNotHoliday(): void
+    {
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, self::ESTABLISHMENT_YEAR - 1);
     }
 
     /**
@@ -69,6 +85,6 @@ class NationalSovereigntyDayTest extends ArgentinaBaseTestCase implements Holida
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR), Holiday::TYPE_OFFICIAL);
     }
 }
