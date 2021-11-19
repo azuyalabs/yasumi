@@ -42,7 +42,7 @@ class RemembranceDayTest extends ArgentinaBaseTestCase implements HolidayTestCas
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testDiaDosFinadosAfter2006(): void
+    public function testRemembranceDayAfter2006(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
