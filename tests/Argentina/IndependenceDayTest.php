@@ -53,7 +53,6 @@ class IndependenceDayTest extends ArgentinaBaseTestCase implements HolidayTestCa
         );
     }
 
-
     /**
      *  Tests that holiday is not present before establishment year.
      *
