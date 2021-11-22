@@ -74,7 +74,7 @@ class IndependenceDayTest extends ArgentinaBaseTestCase implements HolidayTestCa
         $this->assertTranslatedHolidayName(
           self::REGION,
           self::HOLIDAY,
-          $this->generateRandomYear(),
+          $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
           [self::LOCALE => 'Día de la Independencia']
         );
     }

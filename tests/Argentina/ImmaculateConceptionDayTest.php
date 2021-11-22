@@ -73,7 +73,7 @@ class ImmaculateConceptionDayTest extends ArgentinaBaseTestCase implements Holid
         $this->assertTranslatedHolidayName(
           self::REGION,
           self::HOLIDAY,
-          $this->generateRandomYear(),
+          $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
           [self::LOCALE => 'Día de la Inmaculada Concepción de María']
         );
     }

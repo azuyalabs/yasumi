@@ -73,7 +73,7 @@ class MalvinasDayTest extends ArgentinaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => 'Día del Veterano y de los Caídos en la Guerra de Malvinas']
         );
     }

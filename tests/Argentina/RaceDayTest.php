@@ -73,7 +73,7 @@ class RaceDayTest extends ArgentinaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
           self::REGION,
           self::HOLIDAY,
-          $this->generateRandomYear(),
+          $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
           [self::LOCALE => 'Día del Respeto a la Diversidad Cultural']
         );
     }

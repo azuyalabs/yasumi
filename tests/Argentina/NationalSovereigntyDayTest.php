@@ -73,7 +73,7 @@ class NationalSovereigntyDayTest extends ArgentinaBaseTestCase implements Holida
         $this->assertTranslatedHolidayName(
           self::REGION,
           self::HOLIDAY,
-          $this->generateRandomYear(),
+          $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
           [self::LOCALE => 'Día de la Soberanía Nacional']
         );
     }

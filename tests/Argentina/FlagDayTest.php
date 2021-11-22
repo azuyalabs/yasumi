@@ -73,7 +73,7 @@ class FlagDayTest extends ArgentinaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
           self::REGION,
           self::HOLIDAY,
-          $this->generateRandomYear(),
+          $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
           [self::LOCALE => 'Paso a la Inmortalidad del General Manuel Belgrano']
         );
     }
