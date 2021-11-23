@@ -9,7 +9,7 @@ declare(strict_types=1);
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Nader Safadi <nader@gizra.com>
+ * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
 namespace Yasumi\Provider;
@@ -55,6 +55,27 @@ class Argentina extends AbstractProvider
         $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
 
+        $this->addCustomArgentinaHolidays();
+    }
+
+    /**
+     * The source of the holidays.
+     *
+     * @return string[]
+     *                  The source URL
+     */
+    public function getSources(): array
+    {
+        return [
+          'https://en.wikipedia.org/wiki/Public_holidays_in_Argentina',
+        ];
+    }
+
+    /**
+     * Adds the custom holidays for Argentina.
+     */
+    protected function addCustomArgentinaHolidays(): void
+    {
         /*
          * Carnaval
          *
@@ -67,28 +88,34 @@ class Argentina extends AbstractProvider
             $easter = $this->calculateEaster($this->year, $this->timezone);
 
             $carnavalMonday = clone $easter;
-            $this->addHoliday(new Holiday(
-              'carnavalMonday',
-              [
-                'en' => 'Carnival Monday',
-                'es' => 'Lunes de Carnaval',
-              ],
-              $carnavalMonday->sub(new DateInterval('P48D')),
-              $this->locale,
-              Holiday::TYPE_OBSERVANCE
-            ));
+            $carnavalMondayDate = $carnavalMonday->sub(new DateInterval('P48D'));
+            if ($carnavalMondayDate) {
+                $this->addHoliday(new Holiday(
+                  'carnavalMonday',
+                  [
+                    'en' => 'Carnival Monday',
+                    'es' => 'Lunes de Carnaval',
+                  ],
+                  $carnavalMondayDate,
+                  $this->locale,
+                  Holiday::TYPE_OBSERVANCE
+                ));
+            }
 
             $carnavalTuesday = clone $easter;
-            $this->addHoliday(new Holiday(
-              'carnavalTuesday',
-              [
-                'en' => 'Carnival Tuesday',
-                'es' => 'Martes de Carnaval',
-              ],
-              $carnavalTuesday->sub(new DateInterval('P47D')),
-              $this->locale,
-              Holiday::TYPE_OBSERVANCE
-            ));
+            $carnavalTuesdayDate = $carnavalTuesday->sub(new DateInterval('P47D'));
+            if ($carnavalTuesdayDate) {
+                $this->addHoliday(new Holiday(
+                  'carnavalTuesday',
+                  [
+                    'en' => 'Carnival Tuesday',
+                    'es' => 'Martes de Carnaval',
+                  ],
+                  $carnavalTuesdayDate,
+                  $this->locale,
+                  Holiday::TYPE_OBSERVANCE
+                ));
+            }
         }
 
         /*
@@ -296,12 +323,5 @@ class Argentina extends AbstractProvider
               $this->locale
             ));
         }
-    }
-
-    public function getSources(): array
-    {
-        return [
-          'https://en.wikipedia.org/wiki/Public_holidays_in_Argentina',
-        ];
     }
 }
