@@ -55,7 +55,18 @@ class Argentina extends AbstractProvider
         $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
 
-        $this->addCustomArgentinaHolidays();
+        $this->addCarnvalHolidays();
+        $this->addRemembranceDay();
+        $this->addMalvinasDay();
+        $this->addMayRevolution();
+        $this->addGeneralMartinMigueldeGuemesDay();
+        $this->addFlagDay();
+        $this->addGeneralMartinMigueldeGuemesDay();
+        $this->addIndependenceDay();
+        $this->addGeneralJoseSanMartinDay();
+        $this->addRaceDay();
+        $this->addNationalSovereigntyDay();
+        $this->addImmaculateConceptionDay();
     }
 
     /**
@@ -72,18 +83,15 @@ class Argentina extends AbstractProvider
     }
 
     /**
-     * Adds the custom holidays for Argentina.
+     * Carnaval.
+     *
+     * Carnaval is the biggest popular festival of country. The festival
+     * happens on Day 48 and 47 before Easter.
+     *
+     * @see https://en.wikipedia.org/wiki/Brazilian_Carnival
      */
-    protected function addCustomArgentinaHolidays(): void
+    private function addCarnvalHolidays(): void
     {
-        /*
-         * Carnaval
-         *
-         * Carnaval is the biggest popular festival of country. The festival
-         * happens on Day 48 and 47 before Easter.
-         *
-         * @link https://en.wikipedia.org/wiki/Brazilian_Carnival
-         */
         if ($this->year >= 1700) {
             $easter = $this->calculateEaster($this->year, $this->timezone);
 
@@ -117,18 +125,21 @@ class Argentina extends AbstractProvider
                 ));
             }
         }
+    }
 
-        /*
-         * Day of Remembrance for Truth and Justice.
-         *
-         * The Day of Remembrance for Truth and Justice (Spanish: Día de la
-         * Memoria por la Verdad y la Justicia) is a public holiday in
-         * Argentina, commemorating the victims of the Dirty War. It is held on
-         * 24 March, the anniversary of the coup d'état of 1976 that brought the
-         *  National Reorganization Process to power.
-         *
-         * @link https://en.wikipedia.org/wiki/Day_of_Remembrance_for_Truth_and_Justice
-         */
+    /*
+     * Day of Remembrance for Truth and Justice.
+     *
+     * The Day of Remembrance for Truth and Justice (Spanish: Día de la
+     * Memoria por la Verdad y la Justicia) is a public holiday in
+     * Argentina, commemorating the victims of the Dirty War. It is held on
+     * 24 March, the anniversary of the coup d'état of 1976 that brought the
+     *  National Reorganization Process to power.
+     *
+     * @link https://en.wikipedia.org/wiki/Day_of_Remembrance_for_Truth_and_Justice
+     */
+    private function addRemembranceDay(): void
+    {
         if ($this->year >= 2006) {
             $this->addHoliday(new Holiday(
               'remembranceDay',
@@ -140,18 +151,21 @@ class Argentina extends AbstractProvider
               $this->locale
             ));
         }
+    }
 
-        /*
-         * Malvinas Day.
-         *
-         * Malvinas Day (Spanish: Día de las Malvinas), officially Day of the
-         * Veterans and Fallen of the Malvinas War (Día del Veterano y de los
-         * Caídos en la Guerra de las Malvinas), is a public holiday in
-         * Argentina, observed each year on 2 April.[1] The name refers to the
-         * Malvinas Islands, known in Spanish as the Islas Malvinas.
-         *
-         * @link https://en.wikipedia.org/wiki/Malvinas_Day
-         */
+    /*
+     * Malvinas Day.
+     *
+     * Malvinas Day (Spanish: Día de las Malvinas), officially Day of the
+     * Veterans and Fallen of the Malvinas War (Día del Veterano y de los
+     * Caídos en la Guerra de las Malvinas), is a public holiday in
+     * Argentina, observed each year on 2 April.[1] The name refers to the
+     * Malvinas Islands, known in Spanish as the Islas Malvinas.
+     *
+     * @link https://en.wikipedia.org/wiki/Malvinas_Day
+     */
+    private function addMalvinasDay(): void
+    {
         if ($this->year >= 1982) {
             $this->addHoliday(new Holiday(
               'malvinasDay',
@@ -163,20 +177,23 @@ class Argentina extends AbstractProvider
               $this->locale
             ));
         }
+    }
 
-        /*
-         * First National Government.
-         *
-         * The Anniversary of the First National Government
-         * (Spanish: Primer gobierno patrio) is a public holiday of Argentina,
-         * commemorating the May Revolution and the creation of the Primera
-         * Junta on May 25, 1810, which is considered the first patriotic
-         * government of Argentina. Along with the 9 July, which commemorates
-         * the Declaration of Independence, it is considered a National Day of
-         * Argentina.
-         *
-         * @link https://en.wikipedia.org/wiki/First_National_Government
-         */
+    /*
+     * First National Government.
+     *
+     * The Anniversary of the First National Government
+     * (Spanish: Primer gobierno patrio) is a public holiday of Argentina,
+     * commemorating the May Revolution and the creation of the Primera
+     * Junta on May 25, 1810, which is considered the first patriotic
+     * government of Argentina. Along with the 9 July, which commemorates
+     * the Declaration of Independence, it is considered a National Day of
+     * Argentina.
+     *
+     * @link https://en.wikipedia.org/wiki/First_National_Government
+     */
+    private function addMayRevolution(): void
+    {
         if ($this->year >= 1810) {
             $this->addHoliday(new Holiday(
               'mayRevolution',
@@ -188,13 +205,16 @@ class Argentina extends AbstractProvider
               $this->locale
             ));
         }
+    }
 
-        /*
-         * Anniversary of the Passing of General Martín Miguel de Güemes.
-         *
-         * Anniversary of the death of Martín Miguel de Güemes, general of the
-         * Argentine War of Independence.
-         */
+    /*
+     * Anniversary of the Passing of General Martín Miguel de Güemes.
+     *
+     * Anniversary of the death of Martín Miguel de Güemes, general of the
+     * Argentine War of Independence.
+     */
+    private function addGeneralMartinMigueldeGuemesDay(): void
+    {
         if ($this->year >= 1821) {
             $this->addHoliday(new Holiday(
               'generalMartinMigueldeGuemesDay',
@@ -206,15 +226,18 @@ class Argentina extends AbstractProvider
               $this->locale
             ));
         }
+    }
 
-        /*
-         * General Manuel Belgrano Memorial Day.
-         *
-         * Anniversary of the death of Manuel Belgrano, creator of the Flag of
-         * Argentina.
-         *
-         * @link https://en.wikipedia.org/wiki/Flag_Day_(Argentina)
-         */
+    /*
+     * General Manuel Belgrano Memorial Day.
+     *
+     * Anniversary of the death of Manuel Belgrano, creator of the Flag of
+     * Argentina.
+     *
+     * @link https://en.wikipedia.org/wiki/Flag_Day_(Argentina)
+     */
+    private function addFlagDay(): void
+    {
         if ($this->year >= 1938) {
             $this->addHoliday(new Holiday(
               'flagDay',
@@ -226,14 +249,17 @@ class Argentina extends AbstractProvider
               $this->locale
             ));
         }
+    }
 
-        /*
-         * Independence Day.
-         *
-         * Anniversary of the Declaration of Independence in 1816.
-         *
-         * @link https://en.wikipedia.org/wiki/Argentine_Declaration_of_Independence
-         */
+    /*
+     * Independence Day.
+     *
+     * Anniversary of the Declaration of Independence in 1816.
+     *
+     * @link https://en.wikipedia.org/wiki/Argentine_Declaration_of_Independence
+     */
+    private function addIndependenceDay(): void
+    {
         if ($this->year >= 1816) {
             $this->addHoliday(new Holiday(
               'independenceDay',
@@ -245,13 +271,16 @@ class Argentina extends AbstractProvider
               $this->locale
             ));
         }
+    }
 
-        /*
-         * General José de San Martín Memorial Day.
-         *
-         * Anniversary of the death of José de San Martín, liberator of
-         * Argentina, Chile and Peru.
-         */
+    /*
+     * General José de San Martín Memorial Day.
+     *
+     * Anniversary of the death of José de San Martín, liberator of
+     * Argentina, Chile and Peru.
+     */
+    private function addGeneralJoseSanMartinDay(): void
+    {
         if ($this->year >= 1850) {
             $this->addHoliday(new Holiday(
               'generalJoseSanMartinDay',
@@ -263,15 +292,18 @@ class Argentina extends AbstractProvider
               $this->locale
             ));
         }
+    }
 
-        /*
-         * Day of Respect for Cultural Diversity.
-         *
-         * Former "Día de la raza" (English: Race day), anniversary of the
-         * arrival of Columbus to the Americas.
-         *
-         * @link https://en.wikipedia.org/wiki/Columbus_Day
-         */
+    /*
+     * Day of Respect for Cultural Diversity.
+     *
+     * Former "Día de la raza" (English: Race day), anniversary of the
+     * arrival of Columbus to the Americas.
+     *
+     * @link https://en.wikipedia.org/wiki/Columbus_Day
+     */
+    private function addRaceDay(): void
+    {
         if ($this->year >= 1492) {
             $this->addHoliday(new Holiday(
               'raceDay',
@@ -283,15 +315,18 @@ class Argentina extends AbstractProvider
               $this->locale
             ));
         }
+    }
 
-        /*
-         * National Sovereignty Day.
-         *
-         * Anniversary of the 1845 Battle of Vuelta de Obligado against the
-         * Anglo-French blockade of the Río de la Plata.
-         *
-         * @link https://en.wikipedia.org/wiki/National_Sovereignty_Day
-         */
+    /*
+     * National Sovereignty Day.
+     *
+     * Anniversary of the 1845 Battle of Vuelta de Obligado against the
+     * Anglo-French blockade of the Río de la Plata.
+     *
+     * @link https://en.wikipedia.org/wiki/National_Sovereignty_Day
+     */
+    private function addNationalSovereigntyDay(): void
+    {
         if ($this->year >= 2010) {
             $this->addHoliday(new Holiday(
               'nationalSovereigntyDay',
@@ -303,15 +338,18 @@ class Argentina extends AbstractProvider
               $this->locale
             ));
         }
+    }
 
-        /*
-         * Immaculate Conception Day.
-         *
-         * Christian holiday, conception of the Virgin Mary free from original
-         * sin.
-         *
-         * @link https://en.wikipedia.org/wiki/Immaculate_Conception
-         */
+    /*
+     * Immaculate Conception Day.
+     *
+     * Christian holiday, conception of the Virgin Mary free from original
+     * sin.
+     *
+     * @link https://en.wikipedia.org/wiki/Immaculate_Conception
+     */
+    private function addImmaculateConceptionDay(): void
+    {
         if ($this->year >= 1900) {
             $this->addHoliday(new Holiday(
               'immaculateConceptionDay',
