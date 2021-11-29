@@ -28,6 +28,8 @@ class Argentina extends AbstractProvider
     use CommonHolidays;
     use ChristianHolidays;
 
+    public const PROCLAMATION_OF_INDEPENDENCE_YEAR = 1816;
+
     /**
      * Code to identify this Holiday Provider. Typically, this is the ISO3166
      * code corresponding to the respective country or sub-region.
@@ -97,7 +99,7 @@ class Argentina extends AbstractProvider
 
             $carnavalMonday = clone $easter;
             $carnavalMondayDate = $carnavalMonday->sub(new DateInterval('P48D'));
-            if ($carnavalMondayDate) {
+            if (false !== $carnavalMondayDate) {
                 $this->addHoliday(new Holiday(
                   'carnavalMonday',
                   [
@@ -112,7 +114,7 @@ class Argentina extends AbstractProvider
 
             $carnavalTuesday = clone $easter;
             $carnavalTuesdayDate = $carnavalTuesday->sub(new DateInterval('P47D'));
-            if ($carnavalTuesdayDate) {
+            if (false !== $carnavalTuesdayDate) {
                 $this->addHoliday(new Holiday(
                   'carnavalTuesday',
                   [
@@ -260,7 +262,7 @@ class Argentina extends AbstractProvider
      */
     private function addIndependenceDay(): void
     {
-        if ($this->year >= 1816) {
+        if ($this->year >= self::PROCLAMATION_OF_INDEPENDENCE_YEAR) {
             $this->addHoliday(new Holiday(
               'independenceDay',
               [

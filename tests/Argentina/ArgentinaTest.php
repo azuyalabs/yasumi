@@ -16,6 +16,7 @@ namespace Yasumi\tests\Argentina;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\Provider\Argentina;
 use Yasumi\tests\ProviderTestCase;
 
 /**
@@ -43,7 +44,7 @@ class ArgentinaTest extends ArgentinaBaseTestCase implements ProviderTestCase
      */
     public function testOfficialHolidays(): void
     {
-        $this->assertDefinedHolidays([
+        $holidays = [
             'newYearsDay',
             'internationalWorkersDay',
             'remembranceDay',
@@ -51,13 +52,18 @@ class ArgentinaTest extends ArgentinaBaseTestCase implements ProviderTestCase
             'mayRevolution',
             'generalMartinMigueldeGuemesDay',
             'flagDay',
-            'independenceDay',
             'generalJoseSanMartinDay',
             'raceDay',
             'nationalSovereigntyDay',
             'immaculateConceptionDay',
             'christmasDay',
-        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
+        ];
+
+        if ($this->year >= Argentina::PROCLAMATION_OF_INDEPENDENCE_YEAR) {
+            $holidays[] = 'independenceDay';
+        }
+
+        $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
