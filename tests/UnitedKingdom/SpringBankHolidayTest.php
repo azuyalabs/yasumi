@@ -54,7 +54,7 @@ class SpringBankHolidayTest extends UnitedKingdomBaseTestCase implements Holiday
     }
 
     /**
-     * Tests the holiday exceptions in 2002 and 2012.
+     * Tests the holiday exceptions in 2002, 2012 and 2022.
      *
      * @throws ReflectionException
      * @throws Exception
@@ -73,6 +73,13 @@ class SpringBankHolidayTest extends UnitedKingdomBaseTestCase implements Holiday
             self::HOLIDAY,
             2012,
             new DateTime('2012-6-4', new DateTimeZone(self::TIMEZONE))
+        );
+
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2022,
+            new DateTime('2022-6-2', new DateTimeZone(self::TIMEZONE))
         );
     }
 

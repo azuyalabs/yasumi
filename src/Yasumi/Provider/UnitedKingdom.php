@@ -150,6 +150,19 @@ class UnitedKingdom extends AbstractProvider
             return;
         }
 
+        // Moved to the 2nd June due to the celebration of the Platinum (2022) Jubilee
+        if (2022 === $this->year) {
+            $this->addHoliday(new Holiday(
+                'springBankHoliday',
+                ['en' => 'Spring Bank Holiday'],
+                new DateTime("$this->year-6-2", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                $this->locale,
+                Holiday::TYPE_BANK
+            ));
+
+            return;
+        }
+
         $this->addHoliday(new Holiday(
             'springBankHoliday',
             ['en' => 'Spring Bank Holiday'],

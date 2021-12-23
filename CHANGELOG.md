@@ -9,6 +9,7 @@ to [Semantic Versioning](https://semver.org).
 
 ### Added
 
+- United Kingdom spring bank holiday 2022 is moved to the 2nd june, due to the platinum jubilee [\#270](https://github.com/azuyalabs/yasumi/issues/270)
 - World Children's Day for Thuringia (Germany) [\#260](https://github.com/azuyalabs/yasumi/issues/260)
 - New National Day for Truth and Reconciliation to
   Canada [\#257](https://github.com/azuyalabs/yasumi/pull/257) ([Owen V. Gray](https://github.com/adrx))
