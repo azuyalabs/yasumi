@@ -9,6 +9,7 @@ to [Semantic Versioning](https://semver.org).
 
 ### Added
 
+- Christmas day for Spain: if it's on a sunday, the holiday will be on monday [\#267](https://github.com/azuyalabs/yasumi/issues/267)
 - World Children's Day for Thuringia (Germany) [\#260](https://github.com/azuyalabs/yasumi/issues/260)
 - New National Day for Truth and Reconciliation to
   Canada [\#257](https://github.com/azuyalabs/yasumi/pull/257) ([Owen V. Gray](https://github.com/adrx))

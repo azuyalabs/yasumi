@@ -72,6 +72,31 @@ class Spain extends AbstractProvider
     }
 
     /**
+     * In Spain, when Christmas is on a sunday, the holiday will be on Monday.
+     *
+     * @inherits
+     */
+    private function christmasDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        $christmasDay = new DateTime("$year-12-25", DateTimeZoneFactory::getDateTimeZone($timezone));
+        if (7 === (int) $christmasDay->format('N')) {
+            $christmasDay->add(new \DateInterval('P1D'));
+        }
+
+        return new Holiday(
+            'christmasDay',
+            [],
+            $christmasDay,
+            $locale,
+            $type
+        );
+    }
+
+    /**
      * National Day.
      *
      * The Fiesta Nacional de España is the national day of Spain. It is held annually on October 12 and is a national

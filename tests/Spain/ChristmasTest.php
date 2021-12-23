@@ -42,7 +42,27 @@ class ChristmasTest extends SpainBaseTestCase implements HolidayTestCase
      */
     public function testHoliday(int $year, DateTime $expected): void
     {
+        if (7 === (int) $expected->format('N')) {
+            $expected->add(new \DateInterval('P1D'));
+        }
+
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
+    }
+
+    /**
+     * Specific 2022 Christmas day test, it's on a sunday,
+     * we expect to have the monday returned as holiday.
+     *
+     * @throws ReflectionException
+     */
+    public function test2022SundayChristmas(): void
+    {
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2022,
+            new \DateTime('2022-12-26', new \DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
