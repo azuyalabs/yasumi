@@ -25,7 +25,7 @@ use Yasumi\Exception\UnknownLocaleException;
 class Translations implements TranslationsInterface
 {
     /**
-     * @var array<string, array> translations array: ['<holiday key>' => ['<locale>' => 'translation', ...], ... ]
+     * @var array<string,array> translations array: ['<holiday key>' => ['<locale>' => 'translation', ...], ... ]
      */
     public $translations = [];
 

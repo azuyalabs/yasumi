@@ -40,9 +40,9 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     public const ID = 'US';
 
     /**
-     * @var array<int> list of the days of the week (the index of the weekdays) that are considered weekend days.
-     *                 This list only concerns those countries that deviate from the global common definition,
-     *                 where the weekend starts on Saturday and ends on Sunday (0 = Sunday, 1 = Monday, etc.).
+     * @var array<string,array> list of the days of the week (the index of the weekdays) that are considered weekend days.
+     *                          This list only concerns those countries that deviate from the global common definition,
+     *                          where the weekend starts on Saturday and ends on Sunday (0 = Sunday, 1 = Monday, etc.).
      */
     public const WEEKEND_DATA = [
         // Thursday and Friday
