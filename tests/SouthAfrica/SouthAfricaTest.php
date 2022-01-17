@@ -10,7 +10,7 @@ declare(strict_types=1);
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <me@sachatelgenhof.com>
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
 namespace Yasumi\tests\SouthAfrica;
@@ -22,7 +22,7 @@ use Yasumi\tests\ProviderTestCase;
 /**
  * Class for testing holidays in South Africa.
  *
- * @author  Sacha Telgenhof <me@sachatelgenhof.com>
+ * @author  Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 class SouthAfricaTest extends SouthAfricaBaseTestCase implements ProviderTestCase
 {
