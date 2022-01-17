@@ -40,16 +40,20 @@
     "ext-json": "*"
   },
   "require-dev": {
-    "friendsofphp/php-cs-fixer": "v2.19 | v3.2",
-    "infection/infection": "^0.17 | ^0.25",
+    "friendsofphp/php-cs-fixer": "v2.19 | v3.5",
+    "infection/infection": "^0.17 | ^0.26",
     "mikey179/vfsstream": "^1.6",
     "phan/phan": "^5.2",
-    "phpstan/phpstan": "^0.12",
+    "phpstan/phpstan": "^1.4",
     "phpunit/phpunit": "^8.5 | ^9.5",
     "vimeo/psalm": "^4.9"
   },
   "config": {
-    "sort-packages": true
+    "sort-packages": true,
+    "allow-plugins": {
+      "composer/package-versions-deprecated": true,
+      "infection/extension-installer": true
+    }
   },
   "autoload": {
     "psr-4": {
