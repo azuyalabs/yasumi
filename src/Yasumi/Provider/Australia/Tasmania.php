@@ -31,7 +31,7 @@ class Tasmania extends Australia
      */
     public const ID = 'AU-TAS';
 
-    public $timezone = 'Australia/Tasmania';
+    public string $timezone = 'Australia/Tasmania';
 
     /**
      * Initialize holidays for Tasmania (Australia).

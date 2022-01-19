@@ -36,7 +36,7 @@ class UnitedKingdom extends AbstractProvider
      */
     public const ID = 'GB';
 
-    public $timezone = 'Europe/London';
+    public string $timezone = 'Europe/London';
 
     /**
      * Initialize holidays for the United Kingdom.

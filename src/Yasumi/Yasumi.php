@@ -42,12 +42,8 @@ class Yasumi
      */
     private static $locales = [];
 
-    /**
-     * Global translations.
-     *
-     * @var Translations
-     */
-    private static $globalTranslations;
+    /** Global translations */
+    private static ?Translations $globalTranslations = null;
 
     /**
      * Provider class to be ignored (Abstract, trait, other).

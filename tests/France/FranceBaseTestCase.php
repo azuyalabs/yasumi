@@ -29,13 +29,9 @@ abstract class FranceBaseTestCase extends TestCase
      */
     public const REGION = 'France';
 
-    /**
-     * Timezone in which this provider has holidays defined.
-     */
+    /** Timezone in which this provider has holidays defined. */
     public const TIMEZONE = 'Europe/Paris';
 
-    /**
-     * Locale that is considered common for this provider.
-     */
+    /** Locale that is considered common for this provider. */
     public const LOCALE = 'fr_FR';
 }

@@ -24,13 +24,9 @@ abstract class NewSouthWalesBaseTestCase extends AustraliaBaseTestCase
 {
     use YasumiBase;
 
-    /**
-     * Name of the region (e.g. country / state) to be tested.
-     */
-    public $region = 'Australia\NewSouthWales';
+    /** Name of the region (e.g. country / state) to be tested. */
+    public string $region = 'Australia\NewSouthWales';
 
-    /**
-     * Timezone in which this provider has holidays defined.
-     */
-    public $timezone = 'Australia/NSW';
+    /** Timezone in which this provider has holidays defined. */
+    public string $timezone = 'Australia/NSW';
 }

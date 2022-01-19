@@ -24,8 +24,6 @@ abstract class SouthBaseTestCase extends TasmaniaBaseTestCase
 {
     use YasumiBase;
 
-    /**
-     * Name of the region (e.g. country / state) to be tested.
-     */
-    public $region = 'Australia\Tasmania\South';
+    /** Name of the region (e.g. country / state) to be tested. */
+    public string $region = 'Australia\Tasmania\South';
 }

@@ -24,13 +24,9 @@ abstract class AustralianCapitalTerritoryBaseTestCase extends AustraliaBaseTestC
 {
     use YasumiBase;
 
-    /**
-     * Name of the region (e.g. country / state) to be tested.
-     */
-    public $region = 'Australia\AustralianCapitalTerritory';
+    /** Name of the region (e.g. country / state) to be tested. */
+    public string $region = 'Australia\AustralianCapitalTerritory';
 
-    /**
-     * Timezone in which this provider has holidays defined.
-     */
-    public $timezone = 'Australia/ACT';
+    /** Timezone in which this provider has holidays defined. */
+    public string $timezone = 'Australia/ACT';
 }

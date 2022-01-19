@@ -25,18 +25,12 @@ abstract class SouthKoreaBaseTestCase extends TestCase
 {
     use YasumiBase;
 
-    /**
-     * Name of the region (e.g. country / state) to be tested.
-     */
+    /** Name of the region (e.g. country / state) to be tested. */
     public const REGION = 'SouthKorea';
 
-    /**
-     * Timezone in which this provider has holidays defined.
-     */
+    /** Timezone in which this provider has holidays defined. */
     public const TIMEZONE = 'Asia/Seoul';
 
-    /**
-     * Locale that is considered common for this provider.
-     */
+    /** Locale that is considered common for this provider. */
     public const LOCALE = 'ko_KR';
 }

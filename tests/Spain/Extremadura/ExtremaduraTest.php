@@ -26,7 +26,7 @@ class ExtremaduraTest extends ExtremaduraBaseTestCase implements ProviderTestCas
     /**
      * @var int year random year number used for all tests in this Test Case
      */
-    protected $year;
+    protected int $year;
 
     /**
      * Initial setup of this Test Case.

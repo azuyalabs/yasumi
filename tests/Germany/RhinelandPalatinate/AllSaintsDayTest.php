@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Germany\RhinelandPalatinate;
 
-use Cassandra\Date;
 use DateTime;
 use Exception;
 use ReflectionException;

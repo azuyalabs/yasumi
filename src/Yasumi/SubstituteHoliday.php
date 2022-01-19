@@ -30,17 +30,15 @@ use Yasumi\Exception\UnknownLocaleException;
 class SubstituteHoliday extends Holiday
 {
     /**
-     * @var Holiday
-     *
      * @deprecated public access to this property is deprecated in favor of getSubstitutedHoliday()
      * @see getSubstitutedHoliday()
      */
-    public $substitutedHoliday;
+    public Holiday $substitutedHoliday;
 
     /**
      * @var array<string> list of translations of the "{0} observed" pattern
      */
-    public $substituteHolidayTranslations;
+    public array $substituteHolidayTranslations;
 
     /**
      * Creates a new SubstituteHoliday.

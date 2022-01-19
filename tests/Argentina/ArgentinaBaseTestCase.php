@@ -29,13 +29,9 @@ abstract class ArgentinaBaseTestCase extends TestCase
      */
     public const REGION = 'Argentina';
 
-    /**
-     * Timezone in which this provider has holidays defined.
-     */
+    /** Timezone in which this provider has holidays defined. */
     public const TIMEZONE = 'America/Argentina/Buenos_Aires';
 
-    /**
-     * Locale that is considered common for this provider.
-     */
+    /** Locale that is considered common for this provider. */
     public const LOCALE = 'es';
 }

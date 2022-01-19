@@ -29,13 +29,9 @@ abstract class USABaseTestCase extends TestCase
      */
     public const REGION = 'USA';
 
-    /**
-     * Timezone in which this provider has holidays defined.
-     */
+    /** Timezone in which this provider has holidays defined. */
     public const TIMEZONE = 'America/New_York';
 
-    /**
-     * Locale that is considered common for this provider.
-     */
+    /** Locale that is considered common for this provider. */
     public const LOCALE = 'en_US';
 }

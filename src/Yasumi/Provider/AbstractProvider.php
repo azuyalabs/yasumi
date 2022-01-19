@@ -79,25 +79,19 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     protected $year;
 
-    /**
-     * @var string the object's current timezone
-     */
-    protected $timezone;
+    /** the object's current timezone */
+    protected string $timezone;
 
-    /**
-     * @var string the object's current locale
-     */
-    protected $locale;
+    /** the object's current locale */
+    protected string $locale;
 
     /**
      * @var Holiday[] list of dates of the available holidays
      */
-    private $holidays = [];
+    private array $holidays = [];
 
-    /**
-     * @var TranslationsInterface|null global translations
-     */
-    private $globalTranslations;
+    /** global translations */
+    private ?TranslationsInterface $globalTranslations;
 
     /**
      * Creates a new holiday provider (i.e. country/state).

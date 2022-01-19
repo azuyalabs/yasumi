@@ -32,7 +32,7 @@ class Southeast extends South
      */
     public const ID = 'AU-TAS-SOU-SE';
 
-    public $timezone = 'Australia/Hobart';
+    public string $timezone = 'Australia/Hobart';
 
     /**
      * Initialize holidays for southeastern Tasmania (Australia).

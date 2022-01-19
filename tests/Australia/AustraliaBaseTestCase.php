@@ -24,16 +24,12 @@ abstract class AustraliaBaseTestCase extends TestCase
 {
     use YasumiBase;
 
-    /**
-     * Locale that is considered common for this provider.
-     */
+    /** Locale that is considered common for this provider. */
     public const LOCALE = 'en_AU';
-    /**
-     * Name of the region (e.g. country / state) to be tested.
-     */
-    public $region = 'Australia';
-    /**
-     * Timezone in which this provider has holidays defined.
-     */
-    public $timezone = 'Australia/Melbourne';
+
+    /** Name of the region (e.g. country / state) to be tested. */
+    public string $region = 'Australia';
+
+    /** Timezone in which this provider has holidays defined. */
+    public string $timezone = 'Australia/Melbourne';
 }

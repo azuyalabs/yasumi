@@ -32,7 +32,7 @@ class Victoria extends Australia
      */
     public const ID = 'AU-VIC';
 
-    public $timezone = 'Australia/Victoria';
+    public string $timezone = 'Australia/Victoria';
 
     /**
      * Initialize holidays for Victoria (Australia).

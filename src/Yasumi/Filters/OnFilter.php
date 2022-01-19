@@ -27,10 +27,8 @@ use Yasumi\Provider\AbstractProvider;
  */
 class OnFilter extends AbstractFilter
 {
-    /**
-     * @var string date to check for holidays
-     */
-    private $date;
+    /** date to check for holidays */
+    private string $date;
 
     /**
      * Construct the On FilterIterator Object.

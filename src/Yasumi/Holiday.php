@@ -63,32 +63,26 @@ class Holiday extends DateTime implements JsonSerializable
     public const LOCALE_KEY = '_key';
 
     /**
-     * @var string holiday key
-     *
      * @deprecated Public access to this property is deprecated in favor of getKey()
      * @see getKey()
      */
-    public $shortName;
+    public string $shortName;
 
     /**
      * @var array<string, string> list of translations of this holiday
      */
-    public $translations;
+    public array $translations;
 
-    /**
-     * @var string identifies the type of holiday
-     */
-    protected $type;
+    /** identifies the type of holiday */
+    protected string $type;
 
-    /**
-     * @var string Locale (i.e. language) in which the holiday information needs to be displayed in. (Default 'en_US')
-     */
-    protected $displayLocale;
+    /** locale (i.e. language) in which the holiday information needs to be displayed in. (Default 'en_US') */
+    protected string $displayLocale;
 
     /**
      * @var array<string> list of all defined locales
      */
-    private static $locales = [];
+    private static array $locales = [];
 
     /**
      * Creates a new Holiday.

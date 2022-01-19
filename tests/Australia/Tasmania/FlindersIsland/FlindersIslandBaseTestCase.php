@@ -24,8 +24,6 @@ abstract class FlindersIslandBaseTestCase extends TasmaniaBaseTestCase
 {
     use YasumiBase;
 
-    /**
-     * Name of the region (e.g. country / state) to be tested.
-     */
-    public $region = 'Australia\Tasmania\FlindersIsland';
+    /** Name of the region (e.g. country / state) to be tested. */
+    public string $region = 'Australia\Tasmania\FlindersIsland';
 }

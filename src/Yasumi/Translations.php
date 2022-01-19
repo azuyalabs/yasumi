@@ -27,12 +27,12 @@ class Translations implements TranslationsInterface
     /**
      * @var array<string,array> translations array: ['<holiday key>' => ['<locale>' => 'translation', ...], ... ]
      */
-    public $translations = [];
+    public array $translations = [];
 
     /**
      * @var array<string> list of all defined locales
      */
-    private $availableLocales;
+    private array $availableLocales;
 
     /**
      * Constructor.

@@ -24,7 +24,7 @@ class TurkeyTest extends TurkeyBaseTestCase implements ProviderTestCase
     /**
      * @var int year random year number used for all tests in this Test Case
      */
-    protected $year;
+    protected int $year;
 
     protected function setUp(): void
     {

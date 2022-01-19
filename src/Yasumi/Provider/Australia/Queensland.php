@@ -31,7 +31,7 @@ class Queensland extends Australia
      */
     public const ID = 'AU-QLD';
 
-    public $timezone = 'Australia/Queensland';
+    public string $timezone = 'Australia/Queensland';
 
     /**
      * Initialize holidays for Queensland (Australia).

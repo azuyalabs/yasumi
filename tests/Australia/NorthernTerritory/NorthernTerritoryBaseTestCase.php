@@ -24,13 +24,9 @@ abstract class NorthernTerritoryBaseTestCase extends AustraliaBaseTestCase
 {
     use YasumiBase;
 
-    /**
-     * Name of the region (e.g. country / state) to be tested.
-     */
-    public $region = 'Australia\NorthernTerritory';
+    /** Name of the region (e.g. country / state) to be tested. */
+    public string $region = 'Australia\NorthernTerritory';
 
-    /**
-     * Timezone in which this provider has holidays defined.
-     */
-    public $timezone = 'Australia/North';
+    /** Timezone in which this provider has holidays defined. */
+    public string $timezone = 'Australia/North';
 }

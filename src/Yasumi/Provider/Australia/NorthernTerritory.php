@@ -32,7 +32,7 @@ class NorthernTerritory extends Australia
      */
     public const ID = 'AU-NT';
 
-    public $timezone = 'Australia/North';
+    public string $timezone = 'Australia/North';
 
     /**
      * Initialize holidays for Northern Territory (Australia).

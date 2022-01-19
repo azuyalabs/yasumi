@@ -24,8 +24,6 @@ abstract class BurgenlandBaseTestCase extends AustriaBaseTestCase
 {
     use YasumiBase;
 
-    /**
-     * Name of the region (e.g. country / state) to be tested.
-     */
+    /** Name of the region (e.g. country / state) to be tested. */
     public const REGION = 'Austria/Burgenland';
 }

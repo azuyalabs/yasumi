@@ -34,7 +34,7 @@ class Australia extends AbstractProvider
      */
     public const ID = 'AU';
 
-    public $timezone = 'Australia/Melbourne';
+    public string $timezone = 'Australia/Melbourne';
 
     /**
      * Initialize holidays for Australia.

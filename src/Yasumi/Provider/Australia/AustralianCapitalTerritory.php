@@ -32,7 +32,7 @@ class AustralianCapitalTerritory extends Australia
      */
     public const ID = 'AU-ACT';
 
-    public $timezone = 'Australia/ACT';
+    public string $timezone = 'Australia/ACT';
 
     /**
      * Initialize holidays for Australian Capital Territory (Australia).

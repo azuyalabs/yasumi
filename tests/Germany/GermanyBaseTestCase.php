@@ -24,19 +24,13 @@ abstract class GermanyBaseTestCase extends TestCase
 {
     use YasumiBase;
 
-    /**
-     * Name of the region (e.g. country / state) to be tested.
-     */
+    /** Name of the region (e.g. country / state) to be tested. */
     public const REGION = 'Germany';
 
-    /**
-     * Timezone in which this provider has holidays defined.
-     */
+    /** Timezone in which this provider has holidays defined. */
     public const TIMEZONE = 'Europe/Berlin';
 
-    /**
-     * Locale that is considered common for this provider.
-     */
+    /** Locale that is considered common for this provider. */
     public const LOCALE = 'de_DE';
 
     /**

@@ -26,7 +26,7 @@ class BerlinTest extends BerlinBaseTestCase implements ProviderTestCase
     /**
      * @var int year random year number used for all tests in this Test Case
      */
-    protected $year;
+    protected int $year;
 
     /**
      * Initial setup of this Test Case.

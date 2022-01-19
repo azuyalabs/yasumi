@@ -28,18 +28,12 @@ abstract class CzechRepublicBaseTestCase extends TestCase
 {
     use YasumiBase;
 
-    /**
-     * Name of the region (e.g. country / state) to be tested.
-     */
+    /** Name of the region (e.g. country / state) to be tested. */
     public const REGION = 'CzechRepublic';
 
-    /**
-     * Timezone in which this provider has holidays defined.
-     */
+    /** Timezone in which this provider has holidays defined. */
     public const TIMEZONE = 'Europe/Prague';
 
-    /**
-     * Locale that is considered common for this provider.
-     */
+    /** Locale that is considered common for this provider. */
     public const LOCALE = 'cs_CZ';
 }

@@ -32,7 +32,7 @@ class SouthAustralia extends Australia
      */
     public const ID = 'AU-SA';
 
-    public $timezone = 'Australia/South';
+    public string $timezone = 'Australia/South';
 
     /**
      * Initialize holidays for South Australia (Australia).

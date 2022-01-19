@@ -33,7 +33,7 @@ class Brisbane extends Queensland
      */
     public const ID = 'AU-QLD-BRI';
 
-    public $timezone = 'Australia/Brisbane';
+    public string $timezone = 'Australia/Brisbane';
 
     /**
      * Initialize holidays for Brisbane (Australia).

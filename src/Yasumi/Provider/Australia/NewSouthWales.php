@@ -32,7 +32,7 @@ class NewSouthWales extends Australia
      */
     public const ID = 'AU-NSW';
 
-    public $timezone = 'Australia/NSW';
+    public string $timezone = 'Australia/NSW';
 
     /**
      * Initialize holidays for New South Wales (Australia).

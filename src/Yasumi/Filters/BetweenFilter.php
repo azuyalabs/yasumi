@@ -28,20 +28,14 @@ use Yasumi\Provider\AbstractProvider;
  */
 class BetweenFilter extends AbstractFilter
 {
-    /**
-     * @var string start date of the time frame to check against
-     */
-    private $startDate;
+    /** start date of the time frame to check against. */
+    private string $startDate;
 
-    /**
-     * @var string end date of the time frame to check against
-     */
-    private $endDate;
+    /** end date of the time frame to check against */
+    private string $endDate;
 
-    /**
-     * @var bool indicates whether the start and end dates should be included in the comparison
-     */
-    private $equal;
+    /**indicates whether the start and end dates should be included in the comparison */
+    private bool $equal;
 
     /**
      * Construct the Between FilterIterator Object.

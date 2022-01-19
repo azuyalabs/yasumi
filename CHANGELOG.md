@@ -21,6 +21,7 @@ to [Semantic Versioning](https://semver.org).
 
 ### Changed
 
+- Updated codebase using PHP7.4 syntax features.
 - Revised rules to calculate substitution holidays of South Korea to apply the newly enacted law on June
     2021. [\#255](https://github.com/azuyalabs/yasumi/pull/255) ([barami](https://github.com/barami))
 - Separate `calculateSubstituteHolidays` method of South Korea Provider to `calculateSubstituteHolidays`
@@ -48,6 +49,8 @@ to [Semantic Versioning](https://semver.org).
 ### Deprecated
 
 ### Removed
+
+- PHP7.3 Support
 
 ## [2.4.0] - 2021-05-09
 

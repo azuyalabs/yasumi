@@ -30,13 +30,9 @@ abstract class GeorgiaBaseTestCase extends TestCase
      */
     public const REGION = 'Georgia';
 
-    /**
-     * Timezone in which this provider has holidays defined.
-     */
+    /** Timezone in which this provider has holidays defined. */
     public const TIMEZONE = 'Asia/Tbilisi';
 
-    /**
-     * Locale that is considered common for this provider.
-     */
+    /** Locale that is considered common for this provider. */
     public const LOCALE = 'ka_GE';
 }

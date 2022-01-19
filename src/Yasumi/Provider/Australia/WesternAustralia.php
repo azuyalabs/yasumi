@@ -31,7 +31,7 @@ class WesternAustralia extends Australia
      */
     public const ID = 'AU-WA';
 
-    public $timezone = 'Australia/West';
+    public string $timezone = 'Australia/West';
 
     /**
      * Initialize holidays for Western Australia (Australia).

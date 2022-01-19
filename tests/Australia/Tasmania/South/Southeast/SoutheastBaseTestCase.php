@@ -24,13 +24,9 @@ abstract class SoutheastBaseTestCase extends SouthBaseTestCase
 {
     use YasumiBase;
 
-    /**
-     * Name of the region (e.g. country / state) to be tested.
-     */
-    public $region = 'Australia\Tasmania\South\Southeast';
+    /** Name of the region (e.g. country / state) to be tested. */
+    public string $region = 'Australia\Tasmania\South\Southeast';
 
-    /**
-     * Timezone in which this provider has holidays defined.
-     */
-    public $timezone = 'Australia/Hobart';
+    /** Timezone in which this provider has holidays defined. */
+    public string $timezone = 'Australia/Hobart';
 }
