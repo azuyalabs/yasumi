@@ -11,6 +11,8 @@ to [Semantic Versioning](https://semver.org).
 
 ### Changed
 
+- Moved Spring Bank Holiday to 2nd June and added Platinum Jubilee bank holiday on 3rd June for 2022 (UK) [\#270](https://github.com/azuyalabs/yasumi/issues/270)
+
 ### Fixed
 
 ### Deprecated
