@@ -9,29 +9,45 @@ to [Semantic Versioning](https://semver.org).
 
 ### Added
 
-- World Children's Day for Thuringia (Germany) [\#260](https://github.com/azuyalabs/yasumi/issues/260)
+### Changed
+
+### Fixed
+
+### Deprecated
+
+### Removed
+
+## [2.5.0] - 2022-01-??
+
+### Added
+
+- Argentina Provider [\#264](https://github.com/azuyalabs/yasumi/pull/264) ([Nader Safadi](https://github.com/nedSaf)).
+- Turkey Provider [\#250](https://github.com/azuyalabs/yasumi/pull/250).
+- World Children's Day for Thuringia (Germany) [\#260](https://github.com/azuyalabs/yasumi/issues/260).
 - New National Day for Truth and Reconciliation to
-  Canada [\#257](https://github.com/azuyalabs/yasumi/pull/257) ([Owen V. Gray](https://github.com/adrx))
+  Canada [\#257](https://github.com/azuyalabs/yasumi/pull/257) ([Owen V. Gray](https://github.com/adrx)).
 - New Juneteenth National Independence Day to
-  USA [\#253](https://github.com/azuyalabs/yasumi/pull/253) ([Mark Heintz](https://github.com/mheintz))
+  USA [\#253](https://github.com/azuyalabs/yasumi/pull/253) ([Mark Heintz](https://github.com/mheintz)).
 - The Korea Tourism Organization's holiday guide link was added to the source of South Korea
-  Provider. [\#255](https://github.com/azuyalabs/yasumi/pull/255) ([barami](https://github.com/barami))
-- All providers now include a method that returns a list of external sources (i.e. references to websites, books,
-  scientific papers, etc.) that are used for determining the calculation logic of the providers' holidays.
+  Provider. [\#255](https://github.com/azuyalabs/yasumi/pull/255) ([barami](https://github.com/barami)).
+
+- All holiday providers now include a method that returns a list of external sources (i.e. references to websites,
+  books, scientific papers, etc.) that are used for determining the calculation logic of the providers' holidays.
 
 ### Changed
 
-- Updated codebase using PHP7.4 syntax features.
 - Revised rules to calculate substitution holidays of South Korea to apply the newly enacted law on June
-    2021. [\#255](https://github.com/azuyalabs/yasumi/pull/255) ([barami](https://github.com/barami))
+    2021. [\#255](https://github.com/azuyalabs/yasumi/pull/255) ([barami](https://github.com/barami)).
 - Separate `calculateSubstituteHolidays` method of South Korea Provider to `calculateSubstituteHolidays`
   and `calculateOldSubstituteHolidays`
   . [\#255](https://github.com/azuyalabs/yasumi/pull/255) ([barami](https://github.com/barami))
 - Refactored the tests of South Korea provider to testing substitution
-  holidays. [\#255](https://github.com/azuyalabs/yasumi/pull/255) ([barami](https://github.com/barami))
+  holidays. [\#255](https://github.com/azuyalabs/yasumi/pull/255) ([barami](https://github.com/barami)).
+
 - Provider tests must implement the `ProviderTestCase` interface to ensure all required test methods are defined.
 - `YasumiTestCaseInterface` was renamed to `HolidayTestCase` to better match the newly added `ProviderTestCase`
   interface.
+- Updated codebase using PHP7.4 syntax features.
 - Upgraded PHP CS Fixer to v3.
 
 ### Fixed
@@ -41,16 +57,16 @@ to [Semantic Versioning](https://semver.org).
   . [\#263](https://github.com/azuyalabs/yasumi/issues/263)
 - Corpus Christi (German: 'Fronleichnam') was classified as `Other` for states celebrating this day. This was
   incorrect (or officially changed)
-  and has been altered to `Official`. [\#252](https://github.com/azuyalabs/yasumi/issues/252)
+  and has been altered to `Official`. [\#252](https://github.com/azuyalabs/yasumi/issues/252).
 - The test for the USA in that juneteenthDay was considered for all years: it is only celebrated since 2021.
 - Definition of Canada Day in Canada [\#257](https://github.com/azuyalabs/yasumi/pull/257) in that, Canada Day is July 1
-  if that day is not Sunday, and July 2 if July 1 is a Sunday.([Owen V. Gray](https://github.com/adrx))
+  if that day is not Sunday, and July 2 if July 1 is a Sunday.([Owen V. Gray](https://github.com/adrx)).
 
-### Deprecated
+- Reverted the visibility of the `AbstractProvider->getHolidaDates()` method as it incorrectly was set to `protectecd`.
 
 ### Removed
 
-- PHP7.3 Support
+- PHP7.3 Support as it is End of Life.
 
 ## [2.4.0] - 2021-05-09
 
@@ -668,7 +684,9 @@ to [Semantic Versioning](https://semver.org).
 
 - Initial Release
 
-[Unreleased]: https://github.com/azuyalabs/yasumi/compare/2.4.0...HEAD
+[Unreleased]: https://github.com/azuyalabs/yasumi/compare/2.5.0...HEAD
+
+[2.5.0]: https://github.com/azuyalabs/yasumi/compare/2.4.0...2.5.0
 
 [2.4.0]: https://github.com/azuyalabs/yasumi/compare/2.3.0...2.4.0
 
