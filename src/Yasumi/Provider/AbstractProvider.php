@@ -375,7 +375,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @return array<string> list of all holiday dates defined for the given year
      */
-    protected function getHolidayDates(): array
+    public function getHolidayDates(): array
     {
         return array_map(static function ($holiday): string {
             return (string) $holiday;
