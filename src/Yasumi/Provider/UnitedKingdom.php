@@ -58,6 +58,9 @@ class UnitedKingdom extends AbstractProvider
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
         $this->calculateChristmasHolidays();
+
+        // Add any other holidays
+        $this->calculateMotheringSunday();
     }
 
     public function getSources(): array
@@ -307,6 +310,29 @@ class UnitedKingdom extends AbstractProvider
             new DateTime("last monday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
+        ));
+    }
+
+    /**
+     * Mothering Sunday is a day honouring mothers and mother churches, celebrated in the United Kingdom, Ireland on the
+     * fourth Sunday in Lent since the Middle Ages. On Mothering Sunday, Christians have historically visited their
+     * mother church—the church in which they received the sacrament of baptism.
+     *
+     * @see https://en.wikipedia.org/wiki/Mothering_Sunday
+     *
+     * @throws \Exception
+     */
+    private function calculateMotheringSunday(): void
+    {
+        $date = $this->calculateEaster($this->year, $this->timezone);
+        $date->sub(new DateInterval('P3W'));
+
+        $this->addHoliday(new Holiday(
+            'motheringSunday',
+            ['en' => 'Mothering Sunday'],
+            $date,
+            $this->locale,
+            Holiday::TYPE_OTHER
         ));
     }
 }
