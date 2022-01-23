@@ -28,7 +28,7 @@ When contributing there are a few guidelines we'd like you to keep in mind:
        Some holidays are only established from a certain year and having the test year number smaller than the minimum
        establishment year (amongst all holidays) can result in false errors.
 
-- **Document any change** - Make sure the `README.md` and any other relevant documentation are kept up-to-date.
+- **Document any change** - Make sure the `CHANGELOG.md` and any other relevant documentation are kept up-to-date.
 
 - **One pull request per feature** - If you want to contribute more than one thing, send multiple pull requests.
 
