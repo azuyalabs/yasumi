@@ -22,19 +22,24 @@ use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
 /**
- * Class for testing the Spring Bank Holiday in the United Kingdom.
+ * Class for testing the Platinum Jubilee Bank Holiday in the United Kingdom.
  */
-class SpringBankHolidayTest extends UnitedKingdomBaseTestCase implements HolidayTestCase
+class PlatinumJubileeBankHolidayTest extends UnitedKingdomBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.
      */
-    public const HOLIDAY = 'springBankHoliday';
+    public const HOLIDAY = 'platinumJubileeBankHoliday';
 
     /**
-     * The year in which the holiday was first established.
+     * The year in which the holiday occurred.
      */
-    public const ESTABLISHMENT_YEAR = 1965;
+    public const ACTIVE_YEAR = 2022;
+
+    /**
+     * The date on which the holiday occurred.
+     */
+    public const ACTIVE_DATE = '2022-6-3';
 
     /**
      * Tests the holiday defined in this test.
@@ -44,56 +49,39 @@ class SpringBankHolidayTest extends UnitedKingdomBaseTestCase implements Holiday
      */
     public function testHoliday(): void
     {
-        $year = 1988;
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
-            $year,
-            new DateTime("$year-5-30", new DateTimeZone(self::TIMEZONE))
+            self::ACTIVE_YEAR,
+            new DateTime(self::ACTIVE_DATE, new DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
-     * Tests the holiday exceptions in 2002, 2012 and 2022.
-     *
-     * @throws ReflectionException
-     * @throws Exception
-     */
-    public function testHolidayException(): void
-    {
-        $this->assertHoliday(
-            self::REGION,
-            self::HOLIDAY,
-            2002,
-            new DateTime('2002-6-4', new DateTimeZone(self::TIMEZONE))
-        );
-
-        $this->assertHoliday(
-            self::REGION,
-            self::HOLIDAY,
-            2012,
-            new DateTime('2012-6-4', new DateTimeZone(self::TIMEZONE))
-        );
-
-        $this->assertHoliday(
-            self::REGION,
-            self::HOLIDAY,
-            2022,
-            new DateTime('2022-6-2', new DateTimeZone(self::TIMEZONE))
-        );
-    }
-
-    /**
-     * Tests the holiday defined in this test before establishment.
+     * Tests the holiday defined in this test before the year in which it occurred.
      *
      * @throws ReflectionException
      */
-    public function testHolidayBeforeEstablishment(): void
+    public function testHolidayBeforeActive(): void
     {
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            $this->generateRandomYear(1000, self::ACTIVE_YEAR - 1)
+        );
+    }
+
+    /**
+     * Tests the holiday defined in this test after the year in which it occurred.
+     *
+     * @throws ReflectionException
+     */
+    public function testHolidayAfterActive(): void
+    {
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ACTIVE_YEAR + 1)
         );
     }
 
@@ -107,8 +95,8 @@ class SpringBankHolidayTest extends UnitedKingdomBaseTestCase implements Holiday
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Spring Bank Holiday']
+            self::ACTIVE_YEAR,
+            [self::LOCALE => 'Platinum Jubilee Bank Holiday']
         );
     }
 
@@ -122,7 +110,7 @@ class SpringBankHolidayTest extends UnitedKingdomBaseTestCase implements Holiday
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            self::ACTIVE_YEAR,
             Holiday::TYPE_BANK
         );
     }
