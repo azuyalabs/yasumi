@@ -60,6 +60,7 @@ class UnitedKingdom extends AbstractProvider
         $this->calculateChristmasHolidays();
 
         // Add any other holidays
+        $this->calculatePlatinumJubileeBankHoliday();
         $this->calculateMotheringSunday();
     }
 
@@ -153,10 +154,50 @@ class UnitedKingdom extends AbstractProvider
             return;
         }
 
+        // Moved to 2 June in 2022 for the celebration of the Platinum Jubilee of Elizabeth II.
+        if (2022 === $this->year) {
+            $this->addHoliday(new Holiday(
+                'springBankHoliday',
+                ['en' => 'Spring Bank Holiday'],
+                new DateTime("$this->year-6-2", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                $this->locale,
+                Holiday::TYPE_BANK
+            ));
+
+            return;
+        }
+
         $this->addHoliday(new Holiday(
             'springBankHoliday',
             ['en' => 'Spring Bank Holiday'],
             new DateTime("last monday of may $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale,
+            Holiday::TYPE_BANK
+        ));
+    }
+
+    /**
+     * The Platinum Jubilee bank holiday is an extra bank holiday added on 3 June 2022
+     * for the celebration of the Platinum Jubilee of Elizabeth II.
+     *
+     * @see https://www.timeanddate.com/holidays/uk/queen-platinum-jubilee
+     * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom#Special_holidays
+     *
+     * @throws InvalidDateException
+     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws \Exception
+     */
+    protected function calculatePlatinumJubileeBankHoliday(): void
+    {
+        if (2022 !== $this->year) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday(
+            'platinumJubileeBankHoliday',
+            ['en' => 'Platinum Jubilee Bank Holiday'],
+            new DateTime("$this->year-6-3", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
         ));

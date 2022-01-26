@@ -40,7 +40,7 @@ class Yasumi
     /**
      * @var array<string> list of all defined locales
      */
-    private static $locales = [];
+    private static array $locales = [];
 
     /** Global translations */
     private static ?Translations $globalTranslations = null;
@@ -50,7 +50,7 @@ class Yasumi
      *
      * @var array<string>
      */
-    private static $ignoredProvider = [
+    private static array $ignoredProvider = [
         'AbstractProvider.php',
         'CommonHolidays.php',
         'ChristianHolidays.php',
