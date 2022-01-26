@@ -32,6 +32,7 @@ to [Semantic Versioning](https://semver.org).
   USA [\#253](https://github.com/azuyalabs/yasumi/pull/253) ([Mark Heintz](https://github.com/mheintz)).
 - The Korea Tourism Organization's holiday guide link was added to the source of South Korea
   Provider. [\#255](https://github.com/azuyalabs/yasumi/pull/255) ([barami](https://github.com/barami)).
+- Mothering Day for the United Kingdom [\#266](https://github.com/azuyalabs/yasumi/issues/266).
 
 - All holiday providers now include a method that returns a list of external sources (i.e. references to websites,
   books, scientific papers, etc.) that are used for determining the calculation logic of the providers' holidays.
