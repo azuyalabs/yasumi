@@ -62,5 +62,4 @@ time into Open-Source Software projects like this.
 
 # License
 
-Yasumi is open-sourced software licensed under the MIT License (MIT). Please see [LICENSE](LICENSE) for more
-information.
+Yasumi is open-source software licensed under the MIT License (MIT). Please see [LICENSE](LICENSE) for more information.

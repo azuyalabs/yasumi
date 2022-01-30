@@ -11,15 +11,13 @@ to [Semantic Versioning](https://semver.org).
 
 ### Changed
 
-- Moved Spring Bank Holiday to 2nd June and added Platinum Jubilee bank holiday on 3rd June for 2022 (UK) [\#270](https://github.com/azuyalabs/yasumi/issues/270)
-
 ### Fixed
 
 ### Deprecated
 
 ### Removed
 
-## [2.5.0] - 2022-01-??
+## [2.5.0] - 2022-01-30
 
 ### Added
 
@@ -46,6 +44,8 @@ to [Semantic Versioning](https://semver.org).
   . [\#255](https://github.com/azuyalabs/yasumi/pull/255) ([barami](https://github.com/barami))
 - Refactored the tests of South Korea provider to testing substitution
   holidays. [\#255](https://github.com/azuyalabs/yasumi/pull/255) ([barami](https://github.com/barami)).
+- Moved the United Kingdom Spring Bank Holiday to June 2nd and added Platinum Jubilee bank holiday on June 3rd
+  for [\#270](https://github.com/azuyalabs/yasumi/issues/270) ([Dan](https://github.com/dch-dev)).
 
 - Provider tests must implement the `ProviderTestCase` interface to ensure all required test methods are defined.
 - `YasumiTestCaseInterface` was renamed to `HolidayTestCase` to better match the newly added `ProviderTestCase`
