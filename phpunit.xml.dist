@@ -29,6 +29,10 @@
         <testsuite name="Base">
             <directory>./tests/Base</directory>
         </testsuite>
+        <!-- Test Suite for holidays in Argentina -->
+        <testsuite name="Argentina">
+            <directory>./tests/Argentina</directory>
+        </testsuite>
         <!-- Test Suite for holidays in Australia -->
         <testsuite name="Australia">
             <directory>./tests/Australia</directory>
@@ -76,6 +80,10 @@
         <!-- Test Suite for holidays in France -->
         <testsuite name="France">
             <directory>./tests/France</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in Georgia -->
+        <testsuite name="Georgia">
+            <directory>./tests/Georgia</directory>
         </testsuite>
         <!-- Test Suite for holidays in Germany -->
         <testsuite name="Germany">
@@ -169,10 +177,6 @@
         <testsuite name="Turkey">
             <directory>./tests/Turkey</directory>
         </testsuite>
-        <!-- Test Suite for holidays in United States -->
-        <testsuite name="USA">
-            <directory>./tests/USA</directory>
-        </testsuite>
         <!-- Test Suite for holidays in Ukraine -->
         <testsuite name="Ukraine">
             <directory>./tests/Ukraine</directory>
@@ -180,6 +184,10 @@
         <!-- Test Suite for holidays in United Kingdom -->
         <testsuite name="UnitedKingdom">
             <directory>./tests/UnitedKingdom</directory>
+        </testsuite>
+        <!-- Test Suite for holidays in United States -->
+        <testsuite name="USA">
+            <directory>./tests/USA</directory>
         </testsuite>
     </testsuites>
 </phpunit>
