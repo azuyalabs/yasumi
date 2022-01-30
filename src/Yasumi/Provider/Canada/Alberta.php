@@ -4,12 +4,12 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2021 AzuyaLabs
+ * Copyright (c) 2015 - 2022 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <me@sachatelgenhof.com>
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
 namespace Yasumi\Provider\Canada;
@@ -24,14 +24,14 @@ use Yasumi\Provider\DateTimeZoneFactory;
 /**
  * Provider for all holidays in Alberta (Canada).
  *
- * Manitoba is a province of Canada.
+ * Alberta is a province of Canada.
  *
  * @see https://en.wikipedia.org/wiki/Alberta
  */
 class Alberta extends Canada
 {
     /**
-     * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * Code to identify this Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
     public const ID = 'CA-AB';
@@ -65,7 +65,7 @@ class Alberta extends Canada
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    protected function calculateHeritageDay(): void
+    private function calculateHeritageDay(): void
     {
         if ($this->year < 1879) {
             return;

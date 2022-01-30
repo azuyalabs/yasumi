@@ -5,12 +5,12 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2021 AzuyaLabs
+ * Copyright (c) 2015 - 2022 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <me@sachatelgenhof.com>
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
 namespace Yasumi;
@@ -25,19 +25,19 @@ use Yasumi\Exception\UnknownLocaleException;
 class Translations implements TranslationsInterface
 {
     /**
-     * @var array translations array: ['<holiday key>' => ['<locale>' => 'translation', ...], ... ]
+     * @var array<string,array> translations array: ['<holiday key>' => ['<locale>' => 'translation', ...], ... ]
      */
-    public $translations = [];
+    public array $translations = [];
 
     /**
-     * @var array list of all defined locales
+     * @var array<string> list of all defined locales
      */
-    private $availableLocales;
+    private array $availableLocales;
 
     /**
      * Constructor.
      *
-     * @param array $availableLocales list of all defined locales
+     * @param array<string> $availableLocales list of all defined locales
      */
     public function __construct(array $availableLocales)
     {
@@ -77,7 +77,7 @@ class Translations implements TranslationsInterface
 
             if (\is_array($translations)) {
                 foreach (array_keys($translations) as $locale) {
-                    $this->isValidLocale($locale); // Validate the given locale
+                    $this->checkLocale((string) $locale);
                 }
 
                 $this->translations[$key] = $translations;
@@ -96,7 +96,7 @@ class Translations implements TranslationsInterface
      */
     public function addTranslation(string $key, string $locale, string $translation): void
     {
-        $this->isValidLocale($locale); // Validate the given locale
+        $this->checkLocale($locale);
 
         if (!\array_key_exists($key, $this->translations)) {
             $this->translations[$key] = [];
@@ -128,7 +128,7 @@ class Translations implements TranslationsInterface
      *
      * @param string $key holiday key
      *
-     * @return array holiday name translations ['<locale>' => '<translation>', ...]
+     * @return array<string, string> holiday name translations ['<locale>' => '<translation>', ...]
      */
     public function getTranslations(string $key): array
     {
@@ -139,22 +139,10 @@ class Translations implements TranslationsInterface
         return $this->translations[$key];
     }
 
-    /**
-     * Checks whether the given locale is a valid/available locale.
-     *
-     * @param string $locale locale the locale to be validated
-     *
-     * @return true upon success, otherwise an UnknownLocaleException is thrown
-     *
-     * @throws UnknownLocaleException an UnknownLocaleException is thrown if the given locale is not
-     *                                valid/available
-     */
-    protected function isValidLocale(string $locale): bool
+    private function checkLocale(string $locale): void
     {
         if (!\in_array($locale, $this->availableLocales, true)) {
             throw new UnknownLocaleException(sprintf('Locale "%s" is not a valid locale.', $locale));
         }
-
-        return true;
     }
 }

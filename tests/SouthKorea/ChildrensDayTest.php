@@ -5,12 +5,12 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2021 AzuyaLabs
+ * Copyright (c) 2015 - 2022 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <me@sachatelgenhof.com>
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
 namespace Yasumi\tests\SouthKorea;
@@ -20,12 +20,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Children's Day in South Korea.
  */
-class ChildrensDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterface
+class ChildrensDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.
@@ -43,7 +43,7 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseI
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testMainHoliday(): void
+    public function testHoliday(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
@@ -62,47 +62,58 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseI
      */
     public function testSubstituteHolidayByBuddhasBirthday(): void
     {
+        $tz = new DateTimeZone(self::TIMEZONE);
+
         foreach ([2025, 2044] as $year) {
             $this->assertHoliday(
                 self::REGION,
-                'substituteHoliday:childrensDay',
+                'buddhasBirthday',
                 $year,
-                new DateTime("$year-5-6", new DateTimeZone(self::TIMEZONE))
+                new DateTime("$year-5-5", $tz)
+            );
+
+            $this->assertSubstituteHoliday(
+                self::REGION,
+                'buddhasBirthday',
+                $year,
+                new DateTime("$year-5-6", $tz)
             );
         }
     }
 
     /**
-     * Tests the substitute holiday defined in this test (conflict with Saturday).
+     * Tests the substitute holiday defined in this test.
      *
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testSubstituteHolidayBySaturday(): void
+    public function testSubstituteHoliday(): void
     {
-        $year = 2029;
-        $this->assertHoliday(
-            self::REGION,
-            'substituteHoliday:childrensDay',
-            $year,
-            new DateTime("$year-5-7", new DateTimeZone(self::TIMEZONE))
-        );
-    }
+        $tz = new DateTimeZone(self::TIMEZONE);
 
-    /**
-     * Tests the substitute holiday defined in this test (conflict with Sunday).
-     *
-     * @throws Exception
-     * @throws ReflectionException
-     */
-    public function testSubstituteHolidayBySunday(): void
-    {
-        $year = 2019;
-        $this->assertHoliday(
+        // Before 2022
+        $this->assertNotSubstituteHoliday(self::REGION, self::HOLIDAY, 2013);
+        $this->assertSubstituteHoliday(
             self::REGION,
-            'substituteHoliday:childrensDay',
-            $year,
-            new DateTime("$year-5-6", new DateTimeZone(self::TIMEZONE))
+            self::HOLIDAY,
+            2019,
+            new DateTime('2019-5-6', $tz)
+        );
+
+        // By saturday
+        $this->assertSubstituteHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2029,
+            new DateTime('2029-5-7', $tz)
+        );
+
+        // By sunday
+        $this->assertSubstituteHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2024,
+            new DateTime('2024-5-6', $tz)
         );
     }
 

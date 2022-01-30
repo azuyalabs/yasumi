@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         operating-system: [ ubuntu-latest, windows-latest, macOS-latest ]
-        php-versions: [ '7.3', '7.4', '8.0' ]
+        php-versions: [ '7.4', '8.0' ]
 
     steps:
       - name: Set git to use LF
@@ -49,4 +49,4 @@ jobs:
         run: composer install --no-progress --prefer-dist --optimize-autoloader
 
       - name: Check Code Style
-        run: vendor/bin/php-cs-fixer --allow-risky=yes --diff --dry-run -v fix
+        run: vendor/bin/php-cs-fixer --diff --dry-run -v fix

@@ -4,12 +4,12 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2021 AzuyaLabs
+ * Copyright (c) 2015 - 2022 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <me@sachatelgenhof.com>
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
 namespace Yasumi\Provider;
@@ -29,7 +29,7 @@ class Switzerland extends AbstractProvider
     use ChristianHolidays;
 
     /**
-     * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * Code to identify this Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
     public const ID = 'CH';
@@ -49,6 +49,15 @@ class Switzerland extends AbstractProvider
         $this->calculateNationalDay();
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Switzerland',
+            'https://fr.wikipedia.org/wiki/Jours_f%C3%A9ri%C3%A9s_en_Suisse',
+            'https://it.wikipedia.org/wiki/Festivit%C3%A0_in_Svizzera',
+        ];
+    }
+
     /**
      * Berchtoldstag.
      *
@@ -63,7 +72,7 @@ class Switzerland extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateBerchtoldsTag(): void
+    protected function calculateBerchtoldsTag(): void
     {
         $this->addHoliday(new Holiday(
             'berchtoldsTag',
@@ -93,7 +102,7 @@ class Switzerland extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateBettagsMontag(): void
+    protected function calculateBettagsMontag(): void
     {
         if ($this->year >= 1832) {
             // Find third Sunday of September

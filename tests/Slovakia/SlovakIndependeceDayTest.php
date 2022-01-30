@@ -5,12 +5,12 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2021 AzuyaLabs
+ * Copyright (c) 2015 - 2022 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <me@sachatelgenhof.com>
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
 namespace Yasumi\tests\Slovakia;
@@ -19,7 +19,7 @@ use DateTime;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Slovak independence day in Slovakia.
@@ -27,7 +27,7 @@ use Yasumi\tests\YasumiTestCaseInterface;
  * @author  Andrej Rypak (dakujem) <xrypak@gmail.com>
  * @author Jan Langer <mail@janlanger.cz>
  */
-class SlovakIndependeceDayTest extends SlovakiaBaseTestCase implements YasumiTestCaseInterface
+class SlovakIndependeceDayTest extends SlovakiaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

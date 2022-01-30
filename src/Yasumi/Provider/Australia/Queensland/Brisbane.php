@@ -4,12 +4,12 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2021 AzuyaLabs
+ * Copyright (c) 2015 - 2022 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <me@sachatelgenhof.com>
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
 namespace Yasumi\Provider\Australia\Queensland;
@@ -27,13 +27,13 @@ use Yasumi\Provider\DateTimeZoneFactory;
 class Brisbane extends Queensland
 {
     /**
-     * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * Code to identify this Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
      * country or sub-region. This one is not a proper ISO3166 code, but there isn't one specifically for Brisbane,
      * and I believe this is a logical extension.
      */
     public const ID = 'AU-QLD-BRI';
 
-    public $timezone = 'Australia/Brisbane';
+    public string $timezone = 'Australia/Brisbane';
 
     /**
      * Initialize holidays for Brisbane (Australia).

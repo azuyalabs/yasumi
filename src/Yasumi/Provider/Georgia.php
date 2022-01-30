@@ -4,12 +4,12 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2021 AzuyaLabs
+ * Copyright (c) 2015 - 2022 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <me@sachatelgenhof.com>
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
 namespace Yasumi\Provider;
@@ -31,7 +31,7 @@ class Georgia extends AbstractProvider
     public const APRIL_NINE_TRAGEDY_YEAR = 1989;
 
     /**
-     * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * Code to identify this Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
     public const ID = 'GE';
@@ -63,10 +63,21 @@ class Georgia extends AbstractProvider
         $this->addStGeorgesDay();
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Georgia_(country)',
+            'https://ka.wikipedia.org/wiki/%E1%83%A3%E1%83%A5%E1%83%9B%E1%83%94_%E1%83%93%E1%83%A6%E1%83%94%E1%83%94%E1%83%91%E1%83%98_%E1%83%A1%E1%83%90%E1%83%A5%E1%83%90%E1%83%A0%E1%83%97%E1%83%95%E1%83%94%E1%83%9A%E1%83%9D%E1%83%A8%E1%83%98',
+            'https://xmf.wikipedia.org/wiki/%E1%83%9D%E1%83%A4%E1%83%98%E1%83%AA%E1%83%98%E1%83%90%E1%83%9A%E1%83%A3%E1%83%A0%E1%83%98_%E1%83%A3%E1%83%A5%E1%83%95%E1%83%98_%E1%83%93%E1%83%A6%E1%83%90%E1%83%9A%E1%83%94%E1%83%A4%E1%83%98_%E1%83%A1%E1%83%90%E1%83%A5%E1%83%9D%E1%83%A0%E1%83%97%E1%83%A3%E1%83%9D%E1%83%A1',
+        ];
+    }
+
     /**
      * @throws \Exception
+     *
+     * @return \DateTime|\DateTimeImmutable
      */
-    public function calculateEaster(int $year, string $timezone): \DateTime
+    protected function calculateEaster(int $year, string $timezone): \DateTimeInterface
     {
         return $this->calculateOrthodoxEaster($year, $timezone);
     }

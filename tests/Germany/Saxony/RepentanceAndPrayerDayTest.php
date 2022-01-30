@@ -4,12 +4,12 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2021 AzuyaLabs
+ * Copyright (c) 2015 - 2022 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <me@sachatelgenhof.com>
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
 namespace Yasumi\tests\Germany\Saxony;
@@ -19,7 +19,7 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Repentance And Prayer Day in Saxony (Germany).
@@ -29,7 +29,7 @@ use Yasumi\tests\YasumiTestCaseInterface;
  * Buß- und Bettag has undergone many changes as either a working or non-working holiday in Germany. At the moment,
  * Yasumi only considers (for now) the time it was established as non-working day in Saxony.
  */
-class RepentanceAndPrayerDayTest extends SaxonyBaseTestCase implements YasumiTestCaseInterface
+class RepentanceAndPrayerDayTest extends SaxonyBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

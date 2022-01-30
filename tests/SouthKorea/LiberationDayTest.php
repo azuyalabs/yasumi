@@ -5,12 +5,12 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2021 AzuyaLabs
+ * Copyright (c) 2015 - 2022 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <me@sachatelgenhof.com>
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
 namespace Yasumi\tests\SouthKorea;
@@ -20,12 +20,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Independence Movement Day in South Korea.
  */
-class LiberationDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterface
+class LiberationDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.
@@ -51,6 +51,44 @@ class LiberationDayTest extends SouthKoreaBaseTestCase implements YasumiTestCase
             self::HOLIDAY,
             $year,
             new DateTime("$year-8-15", new DateTimeZone(self::TIMEZONE))
+        );
+    }
+
+    /**
+     * Tests the substitute holiday defined in this test.
+     *
+     * @throws Exception
+     * @throws ReflectionException
+     */
+    public function testSubstituteHoliday(): void
+    {
+        $tz = new DateTimeZone(self::TIMEZONE);
+
+        // Before 2022
+        $this->assertNotSubstituteHoliday(self::REGION, self::HOLIDAY, 2020);
+
+        // Year 2021
+        $this->assertSubstituteHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2021,
+            new DateTime('2021-8-16', $tz)
+        );
+
+        // By saturday
+        $this->assertSubstituteHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2037,
+            new DateTime('2037-8-17', $tz)
+        );
+
+        // By sunday
+        $this->assertSubstituteHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2027,
+            new DateTime('2027-8-16', $tz)
         );
     }
 

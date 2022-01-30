@@ -5,12 +5,12 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2021 AzuyaLabs
+ * Copyright (c) 2015 - 2022 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <me@sachatelgenhof.com>
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
 namespace Yasumi\tests\Lithuania;
@@ -21,14 +21,14 @@ use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Lithuania;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class containing tests for Restoration of Independence of Lithuania day.
  *
  * @author Gedas Lukošius <gedas@lukosius.me>
  */
-class RestorationOfIndependenceOfLithuaniaDayTest extends LithuaniaBaseTestCase implements YasumiTestCaseInterface
+class RestorationOfIndependenceOfLithuaniaDayTest extends LithuaniaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

@@ -4,12 +4,12 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2021 AzuyaLabs
+ * Copyright (c) 2015 - 2022 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <me@sachatelgenhof.com>
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
 namespace Yasumi\Provider\Australia;
@@ -27,12 +27,12 @@ use Yasumi\Provider\DateTimeZoneFactory;
 class SouthAustralia extends Australia
 {
     /**
-     * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * Code to identify this Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
     public const ID = 'AU-SA';
 
-    public $timezone = 'Australia/South';
+    public string $timezone = 'Australia/South';
 
     /**
      * Initialize holidays for South Australia (Australia).
@@ -164,6 +164,7 @@ class SouthAustralia extends Australia
     private function calculateProclamationDay(): void
     {
         $christmasDay = new DateTime("$this->year-12-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+
         $this->addHoliday(new Holiday(
             'christmasDay',
             [],
@@ -171,6 +172,7 @@ class SouthAustralia extends Australia
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));
+
         switch ($christmasDay->format('w')) {
             case 0: // sunday
                 $christmasDay->add(new DateInterval('P1D'));
@@ -182,23 +184,9 @@ class SouthAustralia extends Australia
                     Holiday::TYPE_OFFICIAL
                 ));
                 $christmasDay->add(new DateInterval('P1D'));
-                $this->addHoliday(new Holiday(
-                    'proclamationDay',
-                    ['en' => 'Proclamation Day'],
-                    $christmasDay,
-                    $this->locale,
-                    Holiday::TYPE_OFFICIAL
-                ));
                 break;
             case 5: // friday
                 $christmasDay->add(new DateInterval('P3D'));
-                $this->addHoliday(new Holiday(
-                    'proclamationDay',
-                    ['en' => 'Proclamation Day'],
-                    $christmasDay,
-                    $this->locale,
-                    Holiday::TYPE_OFFICIAL
-                ));
                 break;
             case 6: // saturday
                 $christmasDay->add(new DateInterval('P2D'));
@@ -210,24 +198,18 @@ class SouthAustralia extends Australia
                     Holiday::TYPE_OFFICIAL
                 ));
                 $christmasDay->add(new DateInterval('P1D'));
-                $this->addHoliday(new Holiday(
-                    'proclamationDay',
-                    ['en' => 'Proclamation Day'],
-                    $christmasDay,
-                    $this->locale,
-                    Holiday::TYPE_OFFICIAL
-                ));
                 break;
             default: // monday-thursday
                 $christmasDay->add(new DateInterval('P1D'));
-                $this->addHoliday(new Holiday(
-                    'proclamationDay',
-                    ['en' => 'Proclamation Day'],
-                    $christmasDay,
-                    $this->locale,
-                    Holiday::TYPE_OFFICIAL
-                ));
                 break;
         }
+
+        $this->addHoliday(new Holiday(
+            'proclamationDay',
+            ['en' => 'Proclamation Day'],
+            $christmasDay,
+            $this->locale,
+            Holiday::TYPE_OFFICIAL
+        ));
     }
 }

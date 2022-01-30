@@ -5,17 +5,18 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2021 AzuyaLabs
+ * Copyright (c) 2015 - 2022 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <me@sachatelgenhof.com>
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
 namespace Yasumi\Filters;
 
 use Iterator;
+use Yasumi\Provider\AbstractProvider;
 
 /**
  * BetweenFilter is a class used for filtering holidays based on given date range.
@@ -27,29 +28,23 @@ use Iterator;
  */
 class BetweenFilter extends AbstractFilter
 {
-    /**
-     * @var string start date of the time frame to check against
-     */
-    private $startDate;
+    /** start date of the time frame to check against. */
+    private string $startDate;
 
-    /**
-     * @var string end date of the time frame to check against
-     */
-    private $endDate;
+    /** end date of the time frame to check against */
+    private string $endDate;
 
-    /**
-     * @var bool indicates whether the start and end dates should be included in the comparison
-     */
-    private $equal;
+    /**indicates whether the start and end dates should be included in the comparison */
+    private bool $equal;
 
     /**
      * Construct the Between FilterIterator Object.
      *
-     * @param Iterator           $iterator  Iterator object of the Holidays Provider
-     * @param \DateTimeInterface $startDate Start date of the time frame to check against
-     * @param \DateTimeInterface $endDate   End date of the time frame to check against
-     * @param bool               $equal     Indicate whether the start and end dates should be included in the
-     *                                      comparison
+     * @param Iterator<AbstractProvider> $iterator  Iterator object of the Holidays Provider
+     * @param \DateTimeInterface         $startDate Start date of the time frame to check against
+     * @param \DateTimeInterface         $endDate   End date of the time frame to check against
+     * @param bool                       $equal     Indicate whether the start and end dates should be included in the
+     *                                              comparison
      */
     public function __construct(
         Iterator $iterator,

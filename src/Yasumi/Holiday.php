@@ -5,12 +5,12 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2021 AzuyaLabs
+ * Copyright (c) 2015 - 2022 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <me@sachatelgenhof.com>
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
 namespace Yasumi;
@@ -63,48 +63,42 @@ class Holiday extends DateTime implements JsonSerializable
     public const LOCALE_KEY = '_key';
 
     /**
-     * @var string holiday key
-     *
      * @deprecated Public access to this property is deprecated in favor of getKey()
      * @see getKey()
      */
-    public $shortName;
+    public string $shortName;
 
     /**
-     * @var array list of translations of this holiday
+     * @var array<string, string> list of translations of this holiday
      */
-    public $translations;
+    public array $translations;
+
+    /** identifies the type of holiday */
+    protected string $type;
+
+    /** locale (i.e. language) in which the holiday information needs to be displayed in. (Default 'en_US') */
+    protected string $displayLocale;
 
     /**
-     * @var string identifies the type of holiday
+     * @var array<string> list of all defined locales
      */
-    protected $type;
-
-    /**
-     * @var string Locale (i.e. language) in which the holiday information needs to be displayed in. (Default 'en_US')
-     */
-    protected $displayLocale;
-
-    /**
-     * @var array list of all defined locales
-     */
-    private static $locales = [];
+    private static array $locales = [];
 
     /**
      * Creates a new Holiday.
      *
      * If a holiday date needs to be defined for a specific timezone, make sure that the date instance
-     * (DateTimeInterface) has the correct timezone set. Otherwise the default system timezone is used.
+     * (DateTimeInterface) has the correct timezone set. Otherwise, the default system timezone is used.
      *
-     * @param string             $key           Holiday key
-     * @param array              $names         An array containing the name/description of this holiday in various
-     *                                          languages. Overrides global translations
-     * @param \DateTimeInterface $date          A DateTimeInterface instance representing the date of the holiday
-     * @param string             $displayLocale Locale (i.e. language) in which the holiday information needs to be
-     *                                          displayed in. (Default 'en_US')
-     * @param string             $type          The type of holiday. Use the following constants: TYPE_OFFICIAL,
-     *                                          TYPE_OBSERVANCE, TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an
-     *                                          official holiday is considered.
+     * @param string                $key           Holiday key
+     * @param array<string, string> $names         An array containing the name/description of this holiday in various
+     *                                             languages. Overrides global translations
+     * @param \DateTimeInterface    $date          A DateTimeInterface instance representing the date of the holiday
+     * @param string                $displayLocale Locale (i.e. language) in which the holiday information needs to be
+     *                                             displayed in. (Default 'en_US')
+     * @param string                $type          The type of holiday. Use the following constants: TYPE_OFFICIAL,
+     *                                             TYPE_OBSERVANCE, TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default, an
+     *                                             official holiday is considered.
      *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
@@ -175,8 +169,6 @@ class Holiday extends DateTime implements JsonSerializable
 
     /**
      * Serializes the object to a value that can be serialized natively by json_encode().
-     *
-     * @return $this
      */
     public function jsonSerialize(): self
     {
@@ -191,7 +183,7 @@ class Holiday extends DateTime implements JsonSerializable
      * If no locale is provided, proceed as if an array containing the display locale, Holiday::DEFAULT_LOCALE ('en_US'), and
      * Holiday::LOCALE_KEY (the holiday key) was provided.
      *
-     * @param array|null $locales The locales to search for translations
+     * @param array<string>|null $locales The locales to search for translations
      *
      * @throws MissingTranslationException
      *
@@ -235,7 +227,9 @@ class Holiday extends DateTime implements JsonSerializable
      *
      * If null is provided, return as if the display locale was provided as a string.
      *
-     * @param array|null $locales Array of locales, or null if the display locale should be used
+     * @param array<string>|null $locales Array of locales, or null if the display locale should be used
+     *
+     * @return array<string> an array of locales to check for translations
      *
      * @see Holiday::DEFAULT_LOCALE
      * @see Holiday::LOCALE_KEY

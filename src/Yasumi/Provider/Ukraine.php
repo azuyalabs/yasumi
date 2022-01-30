@@ -5,12 +5,12 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2021 AzuyaLabs
+ * Copyright (c) 2015 - 2022 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <me@sachatelgenhof.com>
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
 namespace Yasumi\Provider;
@@ -22,7 +22,6 @@ use Yasumi\SubstituteHoliday;
 
 /**
  * Provider for all holidays in Ukraine.
- * https://en.wikipedia.org/wiki/Public_holidays_in_Ukraine.
  *
  * Class Ukraine
  *
@@ -35,7 +34,7 @@ class Ukraine extends AbstractProvider
 
     /**
      * Code to identify this Holiday Provider.
-     * Typically this is the ISO3166 code corresponding to the respective country or sub-region.
+     * Typically, this is the ISO3166 code corresponding to the respective country or sub-region.
      */
     public const ID = 'UA';
 
@@ -69,6 +68,14 @@ class Ukraine extends AbstractProvider
         $this->calculateIndependenceDay();
         $this->calculateDefenderOfUkraineDay();
         $this->calculateCatholicChristmasDay();
+    }
+
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Ukraine',
+            'https://uk.wikipedia.org/wiki/%D0%9D%D0%B5%D1%80%D0%BE%D0%B1%D0%BE%D1%87%D1%96_%D0%B4%D0%BD%D1%96_%D0%B2_%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%96',
+        ];
     }
 
     /**
@@ -108,8 +115,10 @@ class Ukraine extends AbstractProvider
 
     /**
      * @throws \Exception
+     *
+     * @return \DateTime|\DateTimeImmutable
      */
-    public function calculateEaster(int $year, string $timezone): \DateTime
+    protected function calculateEaster(int $year, string $timezone): \DateTimeInterface
     {
         return $this->calculateOrthodoxEaster($year, $timezone);
     }

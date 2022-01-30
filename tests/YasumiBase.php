@@ -4,12 +4,12 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2021 AzuyaLabs
+ * Copyright (c) 2015 - 2022 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <me@sachatelgenhof.com>
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
 namespace Yasumi\tests;
@@ -301,6 +301,22 @@ trait YasumiBase
         self::assertInstanceOf(Holiday::class, $holiday);
         self::assertTrue($holidays->isHoliday($holiday));
         self::assertEquals($expectedDayOfWeek, $holiday->format('l'));
+    }
+
+    /**
+     * Asserts that the holiday provider has the number of expected sources defined.
+     *
+     * @param string $provider            the holiday provider (i.e. country/state) for which the holiday need to be
+     *                                    tested
+     * @param int    $expectedSourceCount the expected number of sources
+     *
+     * @throws ReflectionException
+     */
+    public function assertSources(string $provider, int $expectedSourceCount): void
+    {
+        $holidayProvider = Yasumi::create($provider, $this->generateRandomYear());
+
+        self::assertCount($expectedSourceCount, $holidayProvider->getSources());
     }
 
     /**
@@ -627,7 +643,7 @@ trait YasumiBase
      * @see http://www.gmarts.org/index.php?go=415#EasterMallen
      * @see http://www.tondering.dk/claus/cal/easter.php
      */
-    protected function calculateEaster(int $year, string $timezone): DateTime
+    protected function calculateEaster(int $year, string $timezone): DateTimeInterface
     {
         if (\extension_loaded('calendar')) {
             $easter_days = easter_days($year);

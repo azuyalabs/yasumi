@@ -1,0 +1,9 @@
+parameters:
+    level: 6
+    paths:
+        - src
+    ignoreErrors:
+        -
+            message: '#Comparison operation "<=" between [0-9]+ and int<[0-9]+, max> is always true.#'
+            path: src/Yasumi/Provider/Turkey.php
+    checkGenericClassInNonGenericObjectType: false

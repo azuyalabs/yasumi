@@ -5,12 +5,12 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2021 AzuyaLabs
+ * Copyright (c) 2015 - 2022 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <me@sachatelgenhof.com>
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
 namespace Yasumi\tests\SouthKorea;
@@ -22,12 +22,12 @@ use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\SouthKorea;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Chuseok in South Korea.
  */
-class ChuseokTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterface
+class ChuseokTest extends SouthKoreaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.
@@ -84,23 +84,40 @@ class ChuseokTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterf
      */
     public function testSubstituteHolidayByGaecheonjeol(): void
     {
-        $this->assertHoliday(
+        $tz = new DateTimeZone(self::TIMEZONE);
+
+        foreach ([2017, 2028, 2036, 2039] as $year) {
+            $this->assertHoliday(
+                self::REGION,
+                'nationalFoundationDay',
+                $year,
+                new DateTime("$year-10-3", $tz)
+            );
+        }
+
+        $this->assertSubstituteHoliday(
             self::REGION,
-            'substituteHoliday:dayBeforeChuseok',
+            'dayBeforeChuseok',
             2017,
-            new DateTime('2017-10-6', new DateTimeZone(self::TIMEZONE))
+            new DateTime('2017-10-6', $tz)
         );
-        $this->assertHoliday(
+        $this->assertSubstituteHoliday(
             self::REGION,
-            'substituteHoliday:chuseok',
+            'chuseok',
             2028,
-            new DateTime('2028-10-5', new DateTimeZone(self::TIMEZONE))
+            new DateTime('2028-10-5', $tz)
         );
-        $this->assertHoliday(
+        $this->assertSubstituteHoliday(
             self::REGION,
-            'substituteHoliday:dayAfterChuseok',
+            'dayBeforeChuseok',
+            2036,
+            new DateTime('2036-10-6', $tz)
+        );
+        $this->assertSubstituteHoliday(
+            self::REGION,
+            'dayAfterChuseok',
             2039,
-            new DateTime('2039-10-5', new DateTimeZone(self::TIMEZONE))
+            new DateTime('2039-10-5', $tz)
         );
     }
 
@@ -110,25 +127,36 @@ class ChuseokTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterf
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testSubstituteHolidayBySunday(): void
+    public function testSubstituteHoliday(): void
     {
-        $this->assertHoliday(
+        $tz = new DateTimeZone(self::TIMEZONE);
+
+        // Before 2022
+        $this->assertSubstituteHoliday(
             self::REGION,
-            'substituteHoliday:dayBeforeChuseok',
+            'dayBeforeChuseok',
             2014,
-            new DateTime('2014-9-10', new DateTimeZone(self::TIMEZONE))
+            new DateTime('2014-9-10', $tz)
         );
-        $this->assertHoliday(
+
+        // By sunday
+        $this->assertSubstituteHoliday(
             self::REGION,
-            'substituteHoliday:chuseok',
-            2039,
-            new DateTime('2039-10-4', new DateTimeZone(self::TIMEZONE))
+            'dayBeforeChuseok',
+            2025,
+            new DateTime('2025-10-8', $tz)
         );
-        $this->assertHoliday(
+        $this->assertSubstituteHoliday(
             self::REGION,
-            'substituteHoliday:dayAfterChuseok',
-            2022,
-            new DateTime('2022-9-12', new DateTimeZone(self::TIMEZONE))
+            'chuseok',
+            2032,
+            new DateTime('2032-9-21', $tz)
+        );
+        $this->assertSubstituteHoliday(
+            self::REGION,
+            'dayAfterChuseok',
+            2036,
+            new DateTime('2036-10-7', $tz)
         );
     }
 

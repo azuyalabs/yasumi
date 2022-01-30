@@ -4,12 +4,12 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2021 AzuyaLabs
+ * Copyright (c) 2015 - 2022 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <me@sachatelgenhof.com>
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
 namespace Yasumi\Provider;
@@ -30,7 +30,7 @@ class Croatia extends AbstractProvider
     use ChristianHolidays;
 
     /**
-     * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * Code to identify this Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
     public const ID = 'HR';
@@ -77,6 +77,15 @@ class Croatia extends AbstractProvider
         $this->calculateRemembranceDayForHomelandWarVictims();
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Croatia',
+            'https://sh.wikipedia.org/wiki/Praznici_u_Hrvatskoj',
+            'https://hr.wikipedia.org/wiki/Blagdani_i_spomendani_u_Hrvatskoj',
+        ];
+    }
+
     /**
      * Starting from the year 2020. statehood day is celebrated at a new date
      * Source: https://narodne-novine.nn.hr/clanci/sluzbeni/2019_11_110_2212.html.
@@ -93,7 +102,7 @@ class Croatia extends AbstractProvider
             $statehoodDayDate = new DateTime("$this->year-5-30", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         }
 
-        if (null != $statehoodDayDate) {
+        if (null !== $statehoodDayDate) {
             $this->addHoliday(new Holiday('statehoodDay', [
                 'en' => 'Statehood Day',
                 'hr' => 'Dan državnosti',

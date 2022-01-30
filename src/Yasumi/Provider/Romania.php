@@ -4,12 +4,12 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2021 AzuyaLabs
+ * Copyright (c) 2015 - 2022 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <me@sachatelgenhof.com>
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
 namespace Yasumi\Provider;
@@ -34,7 +34,7 @@ class Romania extends AbstractProvider
 
     /**
      * Code to identify this Holiday Provider.
-     * Typically this is the ISO3166 code corresponding to the respective country or sub-region.
+     * Typically, this is the ISO3166 code corresponding to the respective country or sub-region.
      */
     public const ID = 'RO';
 
@@ -76,10 +76,20 @@ class Romania extends AbstractProvider
         $this->calculateChildrensDay(); // Since 18.11.2016 (Law 220/2016), Celebrated on 1st of June
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Romania',
+            'https://ro.wikipedia.org/wiki/S%C4%83rb%C4%83tori_publice_%C3%AEn_Rom%C3%A2nia',
+        ];
+    }
+
     /**
      * @throws \Exception
+     *
+     * @return \DateTime|\DateTimeImmutable
      */
-    public function calculateEaster(int $year, string $timezone): DateTime
+    protected function calculateEaster(int $year, string $timezone): \DateTimeInterface
     {
         return $this->calculateOrthodoxEaster($year, $timezone);
     }

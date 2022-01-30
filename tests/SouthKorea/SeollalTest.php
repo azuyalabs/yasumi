@@ -5,12 +5,12 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2021 AzuyaLabs
+ * Copyright (c) 2015 - 2022 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <me@sachatelgenhof.com>
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
 namespace Yasumi\tests\SouthKorea;
@@ -22,12 +22,12 @@ use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\SouthKorea;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Seollal (Korean New Year's Day) in South Korea.
  */
-class SeollalTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterface
+class SeollalTest extends SouthKoreaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.
@@ -80,25 +80,37 @@ class SeollalTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterf
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testSubstituteHolidayBySunday(): void
+    public function testSubstituteHoliday(): void
     {
-        $this->assertHoliday(
+        $tz = new DateTimeZone(self::TIMEZONE);
+
+        // Before 2022
+        $this->assertSubstituteHoliday(
             self::REGION,
-            'substituteHoliday:dayBeforeSeollal',
+            'dayBeforeSeollal',
             2016,
-            new DateTime('2016-2-10', new DateTimeZone(self::TIMEZONE))
+            new DateTime('2016-2-10', $tz)
         );
-        $this->assertHoliday(
+        $this->assertNotSubstituteHoliday(self::REGION, 'dayAfterSeollal', 2021);
+
+        // By sunday
+        $this->assertSubstituteHoliday(
             self::REGION,
-            'substituteHoliday:seollal',
+            'dayBeforeSeollal',
+            2033,
+            new DateTime('2033-2-2', $tz)
+        );
+        $this->assertSubstituteHoliday(
+            self::REGION,
+            'seollal',
             2034,
-            new DateTime('2034-2-21', new DateTimeZone(self::TIMEZONE))
+            new DateTime('2034-2-21', $tz)
         );
-        $this->assertHoliday(
+        $this->assertSubstituteHoliday(
             self::REGION,
-            'substituteHoliday:dayAfterSeollal',
+            'dayAfterSeollal',
             2024,
-            new DateTime('2024-2-12', new DateTimeZone(self::TIMEZONE))
+            new DateTime('2024-2-12', $tz)
         );
     }
 

@@ -4,28 +4,29 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2021 AzuyaLabs
+ * Copyright (c) 2015 - 2022 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <me@sachatelgenhof.com>
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
 namespace Yasumi\tests\Germany\RhinelandPalatinate;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in Rhineland Palatinate (Germany).
  */
-class RhinelandPalatinateTest extends RhinelandPalatinateBaseTestCase
+class RhinelandPalatinateTest extends RhinelandPalatinateBaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
      */
-    protected $year;
+    protected int $year;
 
     /**
      * Initial setup of this Test Case.
@@ -48,10 +49,12 @@ class RhinelandPalatinateTest extends RhinelandPalatinateBaseTestCase
             'easterMonday',
             'internationalWorkersDay',
             'ascensionDay',
+            'corpusChristi',
             'pentecostMonday',
             'germanUnityDay',
             'christmasDay',
             'secondChristmasDay',
+            'allSaintsDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -92,6 +95,14 @@ class RhinelandPalatinateTest extends RhinelandPalatinateBaseTestCase
      */
     public function testOtherHolidays(): void
     {
-        $this->assertDefinedHolidays(['corpusChristi', 'allSaintsDay'], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources(self::REGION, 2);
     }
 }

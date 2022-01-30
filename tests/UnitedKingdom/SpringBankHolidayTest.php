@@ -4,12 +4,12 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2021 AzuyaLabs
+ * Copyright (c) 2015 - 2022 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <me@sachatelgenhof.com>
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
 namespace Yasumi\tests\UnitedKingdom;
@@ -19,12 +19,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing the Spring Bank Holiday in the United Kingdom.
  */
-class SpringBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiTestCaseInterface
+class SpringBankHolidayTest extends UnitedKingdomBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.
@@ -54,7 +54,7 @@ class SpringBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
     }
 
     /**
-     * Tests the holiday exceptions in 2002 and 2012.
+     * Tests the holiday exceptions in 2002, 2012 and 2022.
      *
      * @throws ReflectionException
      * @throws Exception
@@ -73,6 +73,13 @@ class SpringBankHolidayTest extends UnitedKingdomBaseTestCase implements YasumiT
             self::HOLIDAY,
             2012,
             new DateTime('2012-6-4', new DateTimeZone(self::TIMEZONE))
+        );
+
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2022,
+            new DateTime('2022-6-2', new DateTimeZone(self::TIMEZONE))
         );
     }
 

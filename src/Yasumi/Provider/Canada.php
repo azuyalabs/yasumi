@@ -5,12 +5,12 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2021 AzuyaLabs
+ * Copyright (c) 2015 - 2022 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <me@sachatelgenhof.com>
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
 namespace Yasumi\Provider;
@@ -29,7 +29,7 @@ class Canada extends AbstractProvider
     use ChristianHolidays;
 
     /**
-     * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * Code to identify this Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
     public const ID = 'CA';
@@ -60,6 +60,14 @@ class Canada extends AbstractProvider
         $this->calculateLabourDay();
         $this->calculateThanksgivingDay();
         $this->calculateRemembranceDay();
+        $this->calculateNationalDayForTruthAndReconciliation();
+    }
+
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Canada',
+        ];
     }
 
     /**
@@ -135,30 +143,6 @@ class Canada extends AbstractProvider
     }
 
     /**
-     * Canada Day.
-     *
-     * @see https://en.wikipedia.org/wiki/Canada_Day
-     *
-     * @throws InvalidDateException
-     * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
-     * @throws \Exception
-     */
-    protected function calculateCanadaDay(): void
-    {
-        if ($this->year < 1983) {
-            return;
-        }
-
-        $this->addHoliday(new Holiday(
-            'canadaDay',
-            [],
-            new DateTime($this->year.'-07-01', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-            $this->locale
-        ));
-    }
-
-    /**
      * Civic Holiday.
      *
      * @see https://en.wikipedia.org/wiki/Civic_Holiday
@@ -183,6 +167,37 @@ class Canada extends AbstractProvider
     }
 
     /**
+     * Canada Day.
+     *
+     * @see https://en.wikipedia.org/wiki/Canada_Day.
+     * @see Holidays Act, R.S.C., 1985, c. H-5, https://laws-lois.justice.gc.ca/eng/acts/h-5/page-1.html
+     *
+     * by statute, Canada Day is July 1 if that day is not Sunday, and July 2 if July 1 is a Sunday.
+
+     *
+     * @throws InvalidDateException
+     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws \Exception
+     */
+    private function calculateCanadaDay(): void
+    {
+        if ($this->year < 1983) {
+            return;
+        }
+        $date = new DateTime($this->year.'-07-01', DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        if (7 === (int) $date->format('N')) {
+            $date = new DateTime($this->year.'-07-02', DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        }
+        $this->addHoliday(new Holiday(
+            'canadaDay',
+            [],
+            $date,
+            $this->locale
+        ));
+    }
+
+    /**
      * Thanksgiving.
      *
      * @see https://en.wikipedia.org/wiki/Thanksgiving_(Canada)
@@ -192,7 +207,7 @@ class Canada extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    protected function calculateThanksgivingDay(): void
+    private function calculateThanksgivingDay(): void
     {
         if ($this->year < 1879) {
             return;
@@ -216,7 +231,7 @@ class Canada extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    protected function calculateRemembranceDay(): void
+    private function calculateRemembranceDay(): void
     {
         if ($this->year < 1919) {
             return;
@@ -250,6 +265,30 @@ class Canada extends AbstractProvider
             'labourDay',
             [],
             new DateTime("first monday of september $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale
+        ));
+    }
+
+    /**
+     * National Day For Truth And Reconciliation.
+     *
+     * @see https://parl.ca/Content/Bills/432/Government/C-5/C-5_4/C-5_4.PDF, S. C. 2021, C.11.
+     *
+     * @throws InvalidDateException
+     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws \Exception
+     */
+    private function calculateNationalDayForTruthAndReconciliation(): void
+    {
+        if ($this->year < 2021) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday(
+            'truthAndReconciliationDay',
+            [],
+            new DateTime("last day of september $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }

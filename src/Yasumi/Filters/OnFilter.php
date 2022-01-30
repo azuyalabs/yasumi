@@ -5,17 +5,18 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2021 AzuyaLabs
+ * Copyright (c) 2015 - 2022 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <me@sachatelgenhof.com>
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
 namespace Yasumi\Filters;
 
 use Iterator;
+use Yasumi\Provider\AbstractProvider;
 
 /**
  * OnFilter is a class used for filtering holidays based on a given date.
@@ -26,16 +27,14 @@ use Iterator;
  */
 class OnFilter extends AbstractFilter
 {
-    /**
-     * @var string date to check for holidays
-     */
-    private $date;
+    /** date to check for holidays */
+    private string $date;
 
     /**
      * Construct the On FilterIterator Object.
      *
-     * @param Iterator           $iterator Iterator object of the Holidays Provider
-     * @param \DateTimeInterface $date     Start date of the time frame to check against
+     * @param Iterator<AbstractProvider> $iterator Iterator object of the Holidays Provider
+     * @param \DateTimeInterface         $date     Start date of the time frame to check against
      */
     public function __construct(
         Iterator $iterator,

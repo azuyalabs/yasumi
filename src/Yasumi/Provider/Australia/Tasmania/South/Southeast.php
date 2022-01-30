@@ -4,12 +4,12 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2021 AzuyaLabs
+ * Copyright (c) 2015 - 2022 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Sacha Telgenhof <me@sachatelgenhof.com>
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
 namespace Yasumi\Provider\Australia\Tasmania\South;
@@ -26,13 +26,13 @@ use Yasumi\Provider\DateTimeZoneFactory;
 class Southeast extends South
 {
     /**
-     * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * Code to identify this Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
      * country or sub-region. This one is not a proper ISO3166 code, but there aren't any for areas within Tasmania,
      * and I believe it to be a logical extension.
      */
     public const ID = 'AU-TAS-SOU-SE';
 
-    public $timezone = 'Australia/Hobart';
+    public string $timezone = 'Australia/Hobart';
 
     /**
      * Initialize holidays for southeastern Tasmania (Australia).
