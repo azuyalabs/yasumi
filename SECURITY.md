@@ -6,7 +6,7 @@ Please refer to the below table for the supported versions of Yasumi.
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 2.5 (dev)     | :white_check_mark: |
+| 2.5     | :white_check_mark: |
 | < 2.4   | :x:                |
 | < 1.8   | :x:                |
 
