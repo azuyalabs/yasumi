@@ -34,6 +34,8 @@ class InternationalWorkersDayTest extends EstoniaBaseTestCase implements Holiday
     public const HOLIDAY = 'internationalWorkersDay';
 
     /**
+     * @return array<array> list of test dates for the holiday defined in this test
+     *
      * @throws Exception
      */
     public function holidayDataProvider(): array

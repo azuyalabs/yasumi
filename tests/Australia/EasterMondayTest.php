@@ -78,7 +78,7 @@ class EasterMondayTest extends AustraliaBaseTestCase implements HolidayTestCase
     /**
      * Returns a list of test dates.
      *
-     * @return array list of test dates for the holiday defined in this test
+     * @return array<array> list of test dates for the holiday defined in this test
      *
      * @throws Exception
      */
@@ -100,7 +100,7 @@ class EasterMondayTest extends AustraliaBaseTestCase implements HolidayTestCase
     /**
      * Returns a list of test dates.
      *
-     * @return array list of test dates for the holiday defined in this test
+     * @return array<array> list of test dates for the holiday defined in this test
      */
     public function HolidayDataProvider2(): array
     {

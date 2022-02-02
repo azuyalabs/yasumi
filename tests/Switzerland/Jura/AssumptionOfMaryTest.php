@@ -73,7 +73,7 @@ class AssumptionOfMaryTest extends JuraBaseTestCase implements HolidayTestCase
     /**
      * Returns a list of random test dates used for assertion of the day of the Assumption of Mary.
      *
-     * @return array list of test dates for the day of the Assumption of Mary
+     * @return array<array> list of test dates for the day of the Assumption of Mary
      *
      * @throws Exception
      */

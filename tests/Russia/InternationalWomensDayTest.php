@@ -34,6 +34,8 @@ class InternationalWomensDayTest extends RussiaBaseTestCase implements HolidayTe
     public const HOLIDAY = 'internationalWomensDay';
 
     /**
+     * @return array<array> list of test dates for the holiday defined in this test
+     *
      * @throws Exception
      */
     public function holidayDataProvider(): array

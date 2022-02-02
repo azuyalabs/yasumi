@@ -34,6 +34,8 @@ class AssumptionOfMaryDayTest extends LithuaniaBaseTestCase implements HolidayTe
     public const HOLIDAY = 'assumptionOfMary';
 
     /**
+     * @return array<array> list of test dates for the holiday defined in this test
+     *
      * @throws Exception
      */
     public function holidayDataProvider(): array

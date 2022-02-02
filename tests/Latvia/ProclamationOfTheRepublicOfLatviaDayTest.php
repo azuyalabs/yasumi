@@ -50,6 +50,8 @@ class ProclamationOfTheRepublicOfLatviaDayTest extends LatviaBaseTestCase implem
     }
 
     /**
+     * @return array<array> list of test dates for the holiday defined in this test
+     *
      * @throws Exception
      */
     public function holidayDataProvider(): array

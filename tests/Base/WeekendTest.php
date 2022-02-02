@@ -48,6 +48,8 @@ class WeekendTest extends TestCase
     }
 
     /**
+     * @return array<array> list of test dates that are considered a weekend date
+     *
      * @throws \Exception
      */
     public function dataProviderWeekendDays(): array
@@ -90,6 +92,8 @@ class WeekendTest extends TestCase
     }
 
     /**
+     * @return array<array> list of test dates that are considered not a weekend date
+     *
      * @throws \Exception
      */
     public function dataProviderNonWeekendDays(): array

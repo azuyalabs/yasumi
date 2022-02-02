@@ -41,17 +41,17 @@ use Yasumi\Yasumi;
  */
 trait YasumiBase
 {
-    protected static $defaultTimezone;
+    protected static string $defaultTimezone;
 
     /**
      * Asserts that the expected holidays are indeed a holiday for the given provider and year.
      *
-     * @param array  $expectedHolidays list of all known holidays of the given provider
-     * @param string $provider         the holiday provider (i.e. country/state) for which the holidays need to be
-     *                                 tested
-     * @param int    $year             holiday calendar year
-     * @param string $type             The type of holiday. Use the following constants: TYPE_OFFICIAL,
-     *                                 TYPE_OBSERVANCE, TYPE_SEASON, TYPE_BANK or TYPE_OTHER.
+     * @param array<string> $expectedHolidays list of all known holidays of the given provider
+     * @param string        $provider         the holiday provider (i.e. country/state) for which the holidays need to be
+     *                                        tested
+     * @param int           $year             holiday calendar year
+     * @param string        $type             The type of holiday. Use the following constants: TYPE_OFFICIAL,
+     *                                        TYPE_OBSERVANCE, TYPE_SEASON, TYPE_BANK or TYPE_OTHER.
      *
      * @throws InvalidArgumentException
      * @throws RuntimeException
@@ -202,10 +202,10 @@ trait YasumiBase
     /**
      * Asserts that the expected name is indeed provided as a translated holiday name for that given year and name.
      *
-     * @param string $provider     the holiday provider (i.e. country/state) for which the holiday need to be tested
-     * @param string $key          string the key of the holiday to be checked against
-     * @param int    $year         holiday calendar year
-     * @param array  $translations the translations to be checked against
+     * @param string                $provider     the holiday provider (i.e. country/state) for which the holiday need to be tested
+     * @param string                $key          string the key of the holiday to be checked against
+     * @param int                   $year         holiday calendar year
+     * @param array<string, string> $translations the translations to be checked against
      *
      * @throws InvalidArgumentException
      * @throws RuntimeException
@@ -328,7 +328,7 @@ trait YasumiBase
      * @param int|null    $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
      * @param int|null    $range      year range from which dates will be generated (default: 1000)
      *
-     * @return array list of random test dates used for assertion of holidays
+     * @return array<array> list of random test dates used for assertion of holidays
      *
      * @throws Exception
      */
@@ -356,7 +356,7 @@ trait YasumiBase
      * @param int|null    $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
      * @param int|null    $range      year range from which dates will be generated (default: 1000)
      *
-     * @return array list of random easter test dates used for assertion of holidays
+     * @return array<array> list of random easter test dates used for assertion of holidays
      *
      * @throws Exception
      */
@@ -385,7 +385,7 @@ trait YasumiBase
      * @param int|null    $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
      * @param int|null    $range      year range from which dates will be generated (default: 1000)
      *
-     * @return array list of random Easter Monday test dates used for assertion of holidays
+     * @return array<array> list of random Easter Monday test dates used for assertion of holidays
      *
      * @throws Exception
      */
@@ -409,7 +409,7 @@ trait YasumiBase
      * @param int|null    $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
      * @param int|null    $range      year range from which dates will be generated (default: 1000)
      *
-     * @return array list of random modified Easter day test dates for assertion of holidays
+     * @return array<array> list of random modified Easter day test dates for assertion of holidays
      *
      * @throws Exception
      */
@@ -440,7 +440,7 @@ trait YasumiBase
      * @param int|null    $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
      * @param int|null    $range      year range from which dates will be generated (default: 1000)
      *
-     * @return array list of random Good Friday test dates used for assertion of holidays
+     * @return array<array> list of random Good Friday test dates used for assertion of holidays
      *
      * @throws Exception
      */
@@ -463,7 +463,7 @@ trait YasumiBase
      * @param int|null    $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
      * @param int|null    $range      year range from which dates will be generated (default: 1000)
      *
-     * @return array list of random Pentecost test dates used for assertion of holidays
+     * @return array<array> list of random Pentecost test dates used for assertion of holidays
      *
      * @throws Exception
      */
@@ -489,7 +489,7 @@ trait YasumiBase
      * @param int|null    $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
      * @param int|null    $range      year range from which dates will be generated (default: 1000)
      *
-     * @return array list of random test dates used for assertion of holidays
+     * @return array<array> list of random test dates used for assertion of holidays
      *
      * @throws Exception
      */
@@ -517,7 +517,7 @@ trait YasumiBase
      * @param int         $range      year range from which dates will be generated (default: 1000)
      * @param string|null $timezone   name of the timezone for which the dates need to be generated
      *
-     * @return array list of random test dates used for assertion of holidays with applied callback
+     * @return array<array> list of random test dates used for assertion of holidays with applied callback
      *
      * @throws Exception
      */
@@ -562,7 +562,7 @@ trait YasumiBase
      * Checks if given $dateTime is a weekend.
      *
      * @param DateTimeInterface $dateTime    date for which weekend will be checked
-     * @param array             $weekendDays weekend days. Saturday and Sunday are used by default.
+     * @param array<int>        $weekendDays weekend days. Saturday and Sunday are used by default.
      *
      * @return bool true if $dateTime is a weekend, false otherwise
      */
@@ -724,7 +724,7 @@ trait YasumiBase
         return $dt->setTimezone(new \DateTimeZone(static::resolveTimezone($timezone)));
     }
 
-    private static function resolveTimezone(?string $timezone): ?string
+    private static function resolveTimezone(?string $timezone): string
     {
         return $timezone ?? (static::$defaultTimezone ?? date_default_timezone_get());
     }

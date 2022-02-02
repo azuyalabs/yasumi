@@ -161,6 +161,9 @@ class YasumiWorkdayTest extends TestCase
         self::assertEquals($expectedNext, $nextWorkingDay->format(self::FORMAT_DATE));
     }
 
+    /**
+     * @return array<array> list of test dates that are considered working days the next year
+     */
     public function dataProviderWorkDayNextYear(): array
     {
         return [
@@ -195,6 +198,9 @@ class YasumiWorkdayTest extends TestCase
         self::assertEquals($expectedNext, $previousWorkingDay->format(self::FORMAT_DATE));
     }
 
+    /**
+     * @return array<array> list of test dates that are considered working days the previous year
+     */
     public function dataProviderWorkDayPreviousYear(): array
     {
         return [

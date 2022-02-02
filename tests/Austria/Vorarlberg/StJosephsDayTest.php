@@ -48,7 +48,7 @@ class StJosephsDayTest extends VorarlbergBaseTestCase implements HolidayTestCase
     /**
      * Returns a list of random test dates used for assertion of St. Joseph's Day.
      *
-     * @return array list of test dates for St. Joseph's Day.
+     * @return array<array> list of test dates for St. Joseph's Day.
      *
      * @throws Exception
      */

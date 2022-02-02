@@ -35,6 +35,8 @@ class EasterDayTest extends LithuaniaBaseTestCase implements HolidayTestCase
     public const HOLIDAY = 'easter';
 
     /**
+     * @return array<array> list of test dates for the holiday defined in this test
+     *
      * @throws Exception
      */
     public function holidayDataProvider(): array

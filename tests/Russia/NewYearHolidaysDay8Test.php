@@ -33,6 +33,8 @@ class NewYearHolidaysDay8Test extends RussiaBaseTestCase implements HolidayTestC
     public const HOLIDAY = 'newYearHolidaysDay8';
 
     /**
+     * @return array<array> list of test dates for the holiday defined in this test
+     *
      * @throws Exception
      */
     public function holidayDataProvider(): array

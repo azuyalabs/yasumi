@@ -79,7 +79,7 @@ class VernalEquinoxDayTest extends JapanBaseTestCase implements HolidayTestCase
     /**
      * Returns a list of all Japanese Vernal Equinox holidays used for assertions.
      *
-     * @return array list of Japanese Vernal Equinox holidays
+     * @return array<array> list of test dates for the holiday defined in this test
      */
     public function vernalEquinoxHolidaysProvider(): array
     {

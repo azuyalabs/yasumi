@@ -48,7 +48,7 @@ class stStephensDayTest extends ItalyBaseTestCase implements HolidayTestCase
     /**
      * Returns a list of random test dates used for assertion of St. Stephen's Day.
      *
-     * @return array list of test dates for St. Stephen's Day
+     * @return array<array> list of test dates for St. Stephen's Day
      *
      * @throws Exception
      */

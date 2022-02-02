@@ -56,7 +56,7 @@ class EasterSaturdayTest extends AustralianCapitalTerritoryBaseTestCase implemen
     /**
      * Returns a list of test dates.
      *
-     * @return array list of test dates for the holiday defined in this test
+     * @return array<array> list of test dates for the holiday defined in this test
      *
      * @throws Exception
      */

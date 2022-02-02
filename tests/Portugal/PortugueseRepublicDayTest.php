@@ -124,6 +124,9 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements HolidayT
         }
     }
 
+    /**
+     * @return \Generator<int>
+     */
     private function randomEstablishedYear(): \Generator
     {
         yield $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::HOLIDAY_YEAR_SUSPENDED - 1);

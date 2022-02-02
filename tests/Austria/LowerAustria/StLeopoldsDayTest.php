@@ -54,7 +54,7 @@ class StLeopoldsDayTest extends LowerAustriaBaseTestCase implements HolidayTestC
     /**
      * Returns a list of random test dates used for assertion of Saint Leopold's Day.
      *
-     * @return array list of test dates for Saint Leopold's Day
+     * @return array<array> list of test dates for Saint Leopold's Day
      *
      * @throws Exception
      */

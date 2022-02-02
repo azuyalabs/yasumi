@@ -48,7 +48,7 @@ class StRupertsDayTest extends SalzburgBaseTestCase implements HolidayTestCase
     /**
      * Returns a list of random test dates used for assertion of Saint Rupert's Day.
      *
-     * @return array list of test dates for Saint Rupert's Day
+     * @return array<array> list of test dates for Saint Rupert's Day
      *
      * @throws Exception
      */

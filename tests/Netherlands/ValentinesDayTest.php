@@ -48,7 +48,7 @@ class ValentinesDayTest extends NetherlandsBaseTestCase implements HolidayTestCa
     /**
      * Returns a list of random test dates used for assertion of Valentines Day.
      *
-     * @return array list of test dates for Valentines Day
+     * @return array<array> list of test dates for Valentines Day
      *
      * @throws Exception
      */

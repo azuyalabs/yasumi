@@ -48,7 +48,7 @@ class ChristmasDayTest extends GenevaBaseTestCase implements HolidayTestCase
     /**
      * Returns a list of random test dates used for assertion of Christmas Day.
      *
-     * @return array list of test dates for Christmas Day
+     * @return array<array> list of test dates for Christmas Day
      *
      * @throws Exception
      */

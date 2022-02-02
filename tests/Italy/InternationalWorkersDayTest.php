@@ -48,7 +48,7 @@ class InternationalWorkersDayTest extends ItalyBaseTestCase implements HolidayTe
     /**
      * Returns a list of random test dates used for assertion of International Workers' Day.
      *
-     * @return array list of test dates for International Workers' Day
+     * @return array<array> list of test dates for International Workers' Day
      *
      * @throws Exception
      */

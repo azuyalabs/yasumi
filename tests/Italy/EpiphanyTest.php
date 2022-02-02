@@ -48,7 +48,7 @@ class EpiphanyTest extends ItalyBaseTestCase implements HolidayTestCase
     /**
      * Returns a list of random test dates used for assertion of Epiphany.
      *
-     * @return array list of test dates for Epiphany
+     * @return array<array> list of test dates for Epiphany
      *
      * @throws Exception
      */

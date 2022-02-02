@@ -48,7 +48,7 @@ class stNicholasDayTest extends NetherlandsBaseTestCase implements HolidayTestCa
     /**
      * Returns a list of random test dates used for assertion of Sint Nicholas Day.
      *
-     * @return array list of test dates for Sint Nicholas Day
+     * @return array<array> list of test dates for Sint Nicholas Day
      *
      * @throws Exception
      */

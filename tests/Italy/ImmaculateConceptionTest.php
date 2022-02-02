@@ -48,7 +48,7 @@ class ImmaculateConceptionTest extends ItalyBaseTestCase implements HolidayTestC
     /**
      * Returns a list of random test dates used for assertion of the day of Immaculate Conception.
      *
-     * @return array list of test dates for the day of Immaculate Conception
+     * @return array<array> list of test dates for the day of Immaculate Conception
      *
      * @throws Exception
      */

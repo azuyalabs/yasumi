@@ -34,6 +34,8 @@ class SecondChristmasDayTest extends LatviaBaseTestCase implements HolidayTestCa
     public const HOLIDAY = 'secondChristmasDay';
 
     /**
+     * @return array<array> list of test dates for the holiday defined in this test
+     *
      * @throws Exception
      */
     public function holidayDataProvider(): array

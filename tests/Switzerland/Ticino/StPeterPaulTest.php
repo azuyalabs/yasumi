@@ -48,7 +48,7 @@ class StPeterPaulTest extends TicinoBaseTestCase implements HolidayTestCase
     /**
      * Returns a list of random test dates used for assertion of Feast of Saints Peter and Paul.
      *
-     * @return array list of test dates for Feast of Saints Peter and Paul
+     * @return array<array> list of test dates for Feast of Saints Peter and Paul
      *
      * @throws Exception
      */

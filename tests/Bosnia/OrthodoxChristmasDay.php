@@ -31,6 +31,8 @@ class OrthodoxChristmasDay extends BosniaBaseTestCase implements HolidayTestCase
     public const HOLIDAY = 'orthodoxChristmasDay';
 
     /**
+     * @return array<array> list of test dates for the holiday defined in this test
+     *
      * @throws Exception
      */
     public function holidayDataProvider(): array

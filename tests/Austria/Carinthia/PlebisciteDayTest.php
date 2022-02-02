@@ -54,7 +54,7 @@ class PlebisciteDayTest extends CarinthiaBaseTestCase implements HolidayTestCase
     /**
      * Returns a list of random test dates used for assertion of Plebiscite Day.
      *
-     * @return array list of test dates for Plebiscite Day
+     * @return array<array> list of test dates for Plebiscite Day
      *
      * @throws Exception
      */

@@ -35,6 +35,8 @@ class GoodFridayDayTest extends LatviaBaseTestCase implements HolidayTestCase
     public const HOLIDAY = 'goodFriday';
 
     /**
+     * @return array<array> list of test dates for the holiday defined in this test
+     *
      * @throws Exception
      */
     public function holidayDataProvider(): array

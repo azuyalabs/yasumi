@@ -35,6 +35,8 @@ class PentecostTest extends EstoniaBaseTestCase implements HolidayTestCase
     public const HOLIDAY = 'pentecost';
 
     /**
+     * @return array<array> list of test dates for the holiday defined in this test
+     *
      * @throws Exception
      */
     public function holidayDataProvider(): array

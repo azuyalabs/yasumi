@@ -91,7 +91,7 @@ class CatholicChristmasDayTest extends UkraineBaseTestCase implements HolidayTes
     /**
      * Returns a list of random test dates used for assertion of Catholic Christmas Day.
      *
-     * @return array list of test dates for Catholic Christmas Day
+     * @return array<array> list of test dates for Catholic Christmas Day
      *
      * @throws Exception
      */

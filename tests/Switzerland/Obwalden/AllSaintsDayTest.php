@@ -73,7 +73,7 @@ class AllSaintsDayTest extends ObwaldenBaseTestCase implements HolidayTestCase
     /**
      * Returns a list of random test dates used for assertion of All Saints' Day.
      *
-     * @return array list of test dates for All Saints' Day
+     * @return array<array> list of test dates for All Saints' Day
      *
      * @throws Exception
      */

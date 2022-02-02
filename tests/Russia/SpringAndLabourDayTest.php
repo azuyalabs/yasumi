@@ -34,6 +34,8 @@ class SpringAndLabourDayTest extends RussiaBaseTestCase implements HolidayTestCa
     public const HOLIDAY = 'springAndLabourDay';
 
     /**
+     * @return array<array> list of test dates for the holiday defined in this test
+     *
      * @throws Exception
      */
     public function holidayDataProvider(): array

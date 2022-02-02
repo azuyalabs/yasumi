@@ -48,7 +48,7 @@ class HalloweenTest extends NetherlandsBaseTestCase implements HolidayTestCase
     /**
      * Returns a list of random test dates used for assertion of Halloween.
      *
-     * @return array list of test dates for Halloween
+     * @return array<array> list of test dates for Halloween
      *
      * @throws Exception
      */

@@ -79,7 +79,7 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase implements HolidayTestCas
     /**
      * Returns a list of all Japanese Autumnal Equinox holidays used for assertions.
      *
-     * @return array list of Japanese Autumnal Equinox holidays
+     * @return array<array> list of test dates for the holiday defined in this test
      */
     public function autumnalEquinoxHolidaysProvider(): array
     {

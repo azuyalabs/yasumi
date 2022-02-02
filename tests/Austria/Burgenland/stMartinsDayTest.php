@@ -48,7 +48,7 @@ class stMartinsDayTest extends BurgenlandBaseTestCase implements HolidayTestCase
     /**
      * Returns a list of random test dates used for assertion of Saint Martins Day.
      *
-     * @return array list of test dates for Saint Martins Day
+     * @return array<array> list of test dates for Saint Martins Day
      *
      * @throws Exception
      */

@@ -38,7 +38,7 @@ class NewYearsDayTest extends TurkeyBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * @return array list of test dates for the holiday defined in this test
+     * @return array<array> list of test dates for the holiday defined in this test
      *
      * @throws Exception
      */

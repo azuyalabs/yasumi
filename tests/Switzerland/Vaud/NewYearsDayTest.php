@@ -73,7 +73,7 @@ class NewYearsDayTest extends VaudBaseTestCase implements HolidayTestCase
     /**
      * Returns a list of random test dates used for assertion of New Years Day.
      *
-     * @return array list of test dates for New Years Day
+     * @return array<array> list of test dates for New Years Day
      *
      * @throws Exception
      */

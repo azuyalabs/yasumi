@@ -51,7 +51,7 @@ class RenewalOfIndependentCzechStateDayTest extends CzechRepublicBaseTestCase im
     /**
      * Returns a list of random test dates used for assertion of the holiday defined in this test.
      *
-     * @return array list of test dates for the holiday defined in this test
+     * @return array<array> list of test dates for the holiday defined in this test
      *
      * @throws Exception
      */

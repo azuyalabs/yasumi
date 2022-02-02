@@ -48,7 +48,7 @@ class StFloriansDayTest extends UpperAustriaBaseTestCase implements HolidayTestC
     /**
      * Returns a list of random test dates used for assertion of Saint Florian's Day.
      *
-     * @return array list of test dates for Saint Florian's Day
+     * @return array<array> list of test dates for Saint Florian's Day
      *
      * @throws Exception
      */
