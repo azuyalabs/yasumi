@@ -70,4 +70,11 @@ interface ProviderInterface
      * @throws \InvalidArgumentException when the given name is blank or empty
      */
     public function getHoliday(string $key): ?Holiday;
+
+    /**
+     * Gets all the holidays defined by this holiday provider (for the given year).
+     *
+     * @return Holiday[] list of all holidays defined for the given year
+     */
+    public function getHolidays(): array;
 }
