@@ -18,25 +18,14 @@ use DateTime;
 use DateTimeZone;
 use Exception;
 use PHPUnit\Framework\TestCase;
-use ReflectionException;
 use Yasumi\tests\YasumiBase;
 use Yasumi\Yasumi;
 
-/**
- * Class HolidayOnFilterTest.
- *
- * Contains tests for testing the OnFilter class
- */
 class HolidayOnFilterTest extends TestCase
 {
     use YasumiBase;
 
-    /**
-     * Tests the basic usage of the OnFilter.
-     *
-     * @throws ReflectionException
-     * @throws Exception
-     */
+    /** @throws Exception */
     public function testHolidaysOnDate(): void
     {
         $timezone = 'Europe/Amsterdam';
@@ -57,10 +46,7 @@ class HolidayOnFilterTest extends TestCase
         }
     }
 
-    /**
-     * @throws ReflectionException
-     * @throws Exception
-     */
+    /** @throws Exception */
     public function testHolidaysNotOnDate(): void
     {
         $timezone = 'Europe/Amsterdam';
@@ -81,10 +67,7 @@ class HolidayOnFilterTest extends TestCase
         }
     }
 
-    /**
-     * @throws ReflectionException
-     * @throws Exception
-     */
+    /** @throws Exception */
     public function testCorrectNumberOfHolidaysOnDate(): void
     {
         $timezone = 'Europe/Amsterdam';

@@ -27,7 +27,7 @@ use Yasumi\Filters\OnFilter;
  *
  * @see     AbstractProvider
  */
-interface ProviderInterface
+interface ProviderInterface extends \Countable
 {
     /**
      * Initialize country holidays.

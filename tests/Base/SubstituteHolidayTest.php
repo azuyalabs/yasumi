@@ -23,20 +23,11 @@ use Yasumi\SubstituteHoliday;
 use Yasumi\tests\YasumiBase;
 use Yasumi\TranslationsInterface;
 
-/**
- * Class SubstituteHolidayTest.
- *
- * Contains tests for testing the SubstituteHoliday class
- */
 class SubstituteHolidayTest extends TestCase
 {
     use YasumiBase;
 
-    /**
-     * Tests that an UnknownLocaleException is thrown in case an invalid locale is given.
-     *
-     * @throws \Exception
-     */
+    /** @throws \Exception */
     public function testCreateSubstituteHolidayUnknownLocaleException(): void
     {
         $holiday = new Holiday('testHoliday', [], new DateTime());
@@ -60,11 +51,7 @@ class SubstituteHolidayTest extends TestCase
         new SubstituteHoliday($holiday, [], new DateTime('2019-01-01'));
     }
 
-    /**
-     * Tests the constructor.
-     *
-     * @throws \Exception
-     */
+    /** @throws \Exception */
     public function testConstructor(): void
     {
         $holiday = new Holiday('testHoliday', [], new DateTime('2019-01-01'), 'en_US', Holiday::TYPE_BANK);
@@ -76,11 +63,7 @@ class SubstituteHolidayTest extends TestCase
         self::assertEquals(new DateTime('2019-01-02'), $substitute);
     }
 
-    /**
-     * Tests that a Yasumi holiday instance can be serialized to a JSON object.
-     *
-     * @throws \Exception
-     */
+    /** @throws \Exception */
     public function testSubstituteHolidayIsJsonSerializable(): void
     {
         $holiday = new Holiday('testHoliday', [], new DateTime('2019-01-01'), 'en_US');
@@ -94,12 +77,7 @@ class SubstituteHolidayTest extends TestCase
         self::assertArrayHasKey('substitutedHoliday', $instance);
     }
 
-    /**
-     * Tests that a Yasumi holiday instance can be created using an object that implements the DateTimeInterface (e.g.
-     * DateTime or DateTimeImmutable).
-     *
-     * @throws \Exception
-     */
+    /** @throws \Exception */
     public function testSubstituteHolidayWithDateTimeInterface(): void
     {
         // Assert with DateTime instance
@@ -114,11 +92,7 @@ class SubstituteHolidayTest extends TestCase
         self::assertInstanceOf(SubstituteHoliday::class, $substitute);
     }
 
-    /**
-     * Tests the getName function of the SubstituteHoliday object with no translations for the name given.
-     *
-     * @throws \Exception
-     */
+    /** @throws \Exception */
     public function testSubstituteHolidayGetNameWithNoTranslations(): void
     {
         $name = 'testHoliday';
@@ -129,11 +103,7 @@ class SubstituteHolidayTest extends TestCase
         self::assertEquals('substituteHoliday:'.$name, $substitute->getName());
     }
 
-    /**
-     * Tests the getName function of the SubstituteHoliday object when it has a custom translation.
-     *
-     * @throws \Exception
-     */
+    /** @throws \Exception */
     public function testSubstituteHolidayGetNameWithCustomSubstituteTranslation(): void
     {
         $name = 'testHoliday';
@@ -159,11 +129,7 @@ class SubstituteHolidayTest extends TestCase
         self::assertEquals($translation, $substitute->getName());
     }
 
-    /**
-     * Tests the getName function of the SubstituteHoliday object when substitute holiday pattern uses fallback.
-     *
-     * @throws \Exception
-     */
+    /** @throws \Exception */
     public function testSubstituteHolidayGetNameWithPatternFallback(): void
     {
         $name = 'testHoliday';
@@ -189,11 +155,7 @@ class SubstituteHolidayTest extends TestCase
         self::assertEquals('My Holiday obs', $substitute->getName());
     }
 
-    /**
-     * Tests the getName function of the SubstituteHoliday object when it has a global translation.
-     *
-     * @throws \Exception
-     */
+    /** @throws \Exception */
     public function testSubstituteHolidayGetNameWithGlobalSubstituteTranslation(): void
     {
         $name = 'testHoliday';
@@ -219,11 +181,7 @@ class SubstituteHolidayTest extends TestCase
         self::assertEquals($translation, $substitute->getName());
     }
 
-    /**
-     * Tests the getName function of the SubstituteHoliday object when only the substituted holiday has a translation.
-     *
-     * @throws \Exception
-     */
+    /** @throws \Exception */
     public function testSubstituteHolidayGetNameWithSubstitutedTranslation(): void
     {
         $name = 'testHoliday';

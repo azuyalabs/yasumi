@@ -20,25 +20,14 @@ use DateTimeZone;
 use Exception;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
-use ReflectionException;
 use Yasumi\tests\YasumiBase;
 use Yasumi\Yasumi;
 
-/**
- * Class HolidayBetweenFilterTest.
- *
- * Contains tests for testing the BetweenFilter class
- */
 class HolidayBetweenFilterTest extends TestCase
 {
     use YasumiBase;
 
-    /**
-     * Tests the basic usage of the BetweenFilter.
-     *
-     * @throws Exception
-     * @throws ReflectionException
-     */
+    /** @throws Exception */
     public function testHolidaysBetweenDateRange(): void
     {
         $timezone = 'Europe/Amsterdam';
@@ -88,12 +77,7 @@ class HolidayBetweenFilterTest extends TestCase
         self::assertNotEquals(\count($holidays), $between->count());
     }
 
-    /**
-     * Tests the basic usage of the BetweenFilter using DateTimeImmutable objects.
-     *
-     * @throws Exception
-     * @throws ReflectionException
-     */
+    /** @throws Exception */
     public function testHolidaysBetweenDateRangeWithDateTimeImmutable(): void
     {
         $timezone = 'Europe/Amsterdam';
@@ -143,12 +127,7 @@ class HolidayBetweenFilterTest extends TestCase
         self::assertNotEquals(\count($holidays), $between->count());
     }
 
-    /**
-     * Tests that BetweenFilter considers the date and ignores timezones and time of day.
-     *
-     * @throws Exception
-     * @throws ReflectionException
-     */
+    /** @throws Exception */
     public function testHolidaysBetweenDateRangeDifferentTimezone(): void
     {
         $holidays = Yasumi::create('Netherlands', 2016);
@@ -170,12 +149,7 @@ class HolidayBetweenFilterTest extends TestCase
         }
     }
 
-    /**
-     * Tests the BetweenFilter with date range where start and end date are exclusive of the comparison.
-     *
-     * @throws Exception
-     * @throws ReflectionException
-     */
+    /** @throws Exception */
     public function testHolidaysBetweenDateRangeExclusiveStartEndDate(): void
     {
         $timezone = 'Europe/Amsterdam';
@@ -226,12 +200,7 @@ class HolidayBetweenFilterTest extends TestCase
         self::assertNotEquals(\count($holidays), $between->count());
     }
 
-    /**
-     * Tests the BetweenFilter where the start date lies before the year of the Holiday Provider instance.
-     *
-     * @throws Exception
-     * @throws ReflectionException
-     */
+    /** @throws Exception */
     public function testHolidaysBetweenDateRangeWithStartBeforeInstanceYear(): void
     {
         $year = 2015;
@@ -266,12 +235,7 @@ class HolidayBetweenFilterTest extends TestCase
         self::assertNotEquals(\count($holidays), $between->count());
     }
 
-    /**
-     * Tests the BetweenFilter where the end date lies beyond the year of the Holiday Provider instance.
-     *
-     * @throws Exception
-     * @throws ReflectionException
-     */
+    /** @throws Exception */
     public function testHolidaysBetweenDateRangeWithEndAfterInstanceYear(): void
     {
         $year = 2000;
@@ -306,12 +270,7 @@ class HolidayBetweenFilterTest extends TestCase
         self::assertNotEquals(\count($holidays), $between->count());
     }
 
-    /**
-     * Tests that an InvalidArgumentException is thrown in case an invalid holiday provider is given.
-     *
-     * @throws Exception
-     * @throws ReflectionException
-     */
+    /** @throws Exception */
     public function testWrongDates(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -332,7 +291,6 @@ class HolidayBetweenFilterTest extends TestCase
      * This test covers the scenario that the requested date range covers all know holidays.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testCountBetweenWithSubstitutes(): void
     {
@@ -373,7 +331,6 @@ class HolidayBetweenFilterTest extends TestCase
      * This test covers the scenario that the requested date range excludes a substituted holiday.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testCountBetweenExcludingSubstituteHoliday(): void
     {
@@ -418,7 +375,6 @@ class HolidayBetweenFilterTest extends TestCase
      * the original substituted holiday.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testCountBetweenExcludingSubstituteHolidayIncludingOriginalHoliday(): void
     {
@@ -464,7 +420,6 @@ class HolidayBetweenFilterTest extends TestCase
      * the original substituted holiday.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testCountBetweenExcludingSubstituteHolidayAndOriginalHoliday(): void
     {

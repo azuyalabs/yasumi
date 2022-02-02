@@ -19,14 +19,8 @@ use DateTimeImmutable;
 use DateTimeZone;
 use Exception;
 use PHPUnit\Framework\TestCase;
-use ReflectionException;
 use Yasumi\Yasumi;
 
-/**
- * Class YasumiWorkdayTest.
- *
- * Class for testing the workday functions.
- */
 class YasumiWorkdayTest extends TestCase
 {
     public const FORMAT_DATE = 'Y-m-d';
@@ -35,7 +29,6 @@ class YasumiWorkdayTest extends TestCase
      * Tests that the nextWorkingDay function returns an object that implements the DateTimeInterface (e.g. DateTime).
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testNextWorkingDay(): void
     {
@@ -64,7 +57,6 @@ class YasumiWorkdayTest extends TestCase
      * Tests that the prevWorkingDay function returns an object that implements the DateTimeInterface (e.g. DateTime).
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testPreviousWorkingDay(): void
     {
@@ -94,7 +86,6 @@ class YasumiWorkdayTest extends TestCase
      * DateTimeInterface (e.g. DateTime) when an interval is chosen that passes the year boundary (i.e. beyond 12/31).
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testYearBoundary(): void
     {
@@ -148,7 +139,6 @@ class YasumiWorkdayTest extends TestCase
      *
      * @dataProvider dataProviderWorkDayNextYear
      *
-     * @throws ReflectionException
      * @throws Exception
      */
     public function testWorkDayIsNextYear(string $start, int $workdays, string $expectedNext): void
@@ -185,7 +175,6 @@ class YasumiWorkdayTest extends TestCase
      *
      * @dataProvider dataProviderWorkDayPreviousYear
      *
-     * @throws ReflectionException
      * @throws Exception
      */
     public function testWorkDayIsPreviousYear(string $start, int $workdays, string $expectedNext): void

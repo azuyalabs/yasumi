@@ -15,7 +15,6 @@ declare(strict_types=1);
 namespace Yasumi\tests\Base;
 
 use PHPUnit\Framework\TestCase;
-use ReflectionException;
 use Yasumi\Filters\BankHolidaysFilter;
 use Yasumi\Filters\ObservedHolidaysFilter;
 use Yasumi\Filters\OfficialHolidaysFilter;
@@ -24,20 +23,10 @@ use Yasumi\Filters\SeasonalHolidaysFilter;
 use Yasumi\tests\YasumiBase;
 use Yasumi\Yasumi;
 
-/**
- * Class HolidayFiltersTest.
- *
- * Contains tests for testing the filter classes
- */
 class HolidayFiltersTest extends TestCase
 {
     use YasumiBase;
 
-    /**
-     * Tests the Official Holidays filter.
-     *
-     * @throws ReflectionException
-     */
     public function testOfficialHolidaysFilter(): void
     {
         // There are 11 official holidays in Ireland in the year 2018, with 1 substituted holiday.
@@ -68,11 +57,6 @@ class HolidayFiltersTest extends TestCase
         self::assertNotEquals(\count($holidays), $filteredHolidays->count());
     }
 
-    /**
-     * Tests the Observed Holidays filter.
-     *
-     * @throws ReflectionException
-     */
     public function testObservedHolidaysFilter(): void
     {
         // There are 2 observed holidays in Ireland in the year 2018.
@@ -103,11 +87,6 @@ class HolidayFiltersTest extends TestCase
         self::assertNotEquals(\count($holidays), $filteredHolidays->count());
     }
 
-    /**
-     * Tests Bank Holidays.
-     *
-     * @throws ReflectionException
-     */
     public function testBankHolidaysFilter(): void
     {
         // There are no bank holidays in Ireland in the year 2018.
@@ -138,11 +117,6 @@ class HolidayFiltersTest extends TestCase
         self::assertNotEquals(\count($holidays), $filteredHolidays->count());
     }
 
-    /**
-     * Tests Seasonal Holidays.
-     *
-     * @throws ReflectionException
-     */
     public function testSeasonalHolidaysFilter(): void
     {
         $holidays = Yasumi::create('Netherlands', 2017);
@@ -187,11 +161,6 @@ class HolidayFiltersTest extends TestCase
         self::assertNotEquals(\count($holidays), $filteredHolidays->count());
     }
 
-    /**
-     * Tests other type of Holidays.
-     *
-     * @throws ReflectionException
-     */
     public function testOtherHolidaysFilter(): void
     {
         $holidays = Yasumi::create('Netherlands', 2017);

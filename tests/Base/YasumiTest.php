@@ -27,30 +27,14 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiBase;
 use Yasumi\Yasumi;
 
-/**
- * Class YasumiTest.
- *
- * Contains tests for testing the Holiday class
- */
 class YasumiTest extends TestCase
 {
     use YasumiBase;
 
-    /**
-     * The lower year limit supported by Yasumi.
-     */
     public const YEAR_LOWER_BOUND = 1000;
 
-    /**
-     * The upper year limit supported by Yasumi.
-     */
     public const YEAR_UPPER_BOUND = 9999;
 
-    /**
-     * Tests that an InvalidArgumentException is thrown in case an invalid year is given.
-     *
-     * @throws ReflectionException
-     */
     public function testCreateWithInvalidYear(): void
     {
         $this->expectException(InvalidYearException::class);
@@ -58,11 +42,6 @@ class YasumiTest extends TestCase
         Yasumi::create('Japan', 10100);
     }
 
-    /**
-     * Tests that an InvalidArgumentException is thrown in case an invalid holiday provider is given.
-     *
-     * @throws ReflectionException
-     */
     public function testCreateWithInvalidProvider(): void
     {
         $this->expectException(ProviderNotFoundException::class);
@@ -70,11 +49,6 @@ class YasumiTest extends TestCase
         Yasumi::create('Mars');
     }
 
-    /**
-     * Tests that an InvalidArgumentException is thrown in case we try to load a Trait as provider.
-     *
-     * @throws ReflectionException
-     */
     public function testCreateWithInvalidProviderBecauseItsATrait(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -82,11 +56,6 @@ class YasumiTest extends TestCase
         Yasumi::create('CommonHolidays');
     }
 
-    /**
-     * Tests that an InvalidArgumentException is thrown in case we try to load the AbstractProvider as provider.
-     *
-     * @throws ReflectionException
-     */
     public function testCreateWithAbstractClassProvider(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -94,11 +63,6 @@ class YasumiTest extends TestCase
         Yasumi::create('AbstractProvider');
     }
 
-    /**
-     * Tests that Yasumi allows external classes that extend the ProviderInterface.
-     *
-     * @throws ReflectionException
-     */
     public function testCreateWithAbstractExtension(): void
     {
         $class = YasumiExternalProvider::class;
@@ -109,11 +73,6 @@ class YasumiTest extends TestCase
         self::assertInstanceOf(YasumiExternalProvider::class, $instance);
     }
 
-    /**
-     * Tests that an Yasumi\Exception\UnknownLocaleException is thrown in case an invalid locale is given.
-     *
-     * @throws ReflectionException
-     */
     public function testCreateWithInvalidLocale(): void
     {
         $this->expectException(UnknownLocaleException::class);
@@ -125,11 +84,6 @@ class YasumiTest extends TestCase
         );
     }
 
-    /**
-     * Tests that the count function returns an integer and a correct count for the test holiday provider.
-     *
-     * @throws ReflectionException
-     */
     public function testCount(): void
     {
         // There are 16 holidays in Japan in the year 2015, with 1 substituted holiday.
@@ -140,11 +94,6 @@ class YasumiTest extends TestCase
         self::assertNotEquals(17, $holidays->count());
     }
 
-    /**
-     * Tests that the getType function returns a string for the test holiday provider.
-     *
-     * @throws ReflectionException
-     */
     public function testGetType(): void
     {
         $holidays = Yasumi::create('Japan', self::numberBetween(1949, self::YEAR_UPPER_BOUND));
@@ -153,11 +102,6 @@ class YasumiTest extends TestCase
         self::assertIsString($holiday->getType());
     }
 
-    /**
-     * Tests that the getYear function returns an integer for the test holiday provider.
-     *
-     * @throws ReflectionException
-     */
     public function testGetYear(): void
     {
         $year = self::numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND);
@@ -183,11 +127,6 @@ class YasumiTest extends TestCase
         $this->assertHoliday($country, $name, $year + 1, $holidays->next($name));
     }
 
-    /**
-     * Tests the next function that an InvalidArgumentException is thrown in case a blank name is given.
-     *
-     * @throws ReflectionException
-     */
     public function testNextWithBlankKey(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -221,11 +160,6 @@ class YasumiTest extends TestCase
         );
     }
 
-    /**
-     * Tests the previous function that an InvalidArgumentException is thrown in case a blank name is given.
-     *
-     * @throws ReflectionException
-     */
     public function testPreviousWithBlankKey(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -237,11 +171,6 @@ class YasumiTest extends TestCase
         $holidays->previous('');
     }
 
-    /**
-     * Tests that the getHolidayNames function returns an array and a correct count for the test holiday provider.
-     *
-     * @throws ReflectionException
-     */
     public function testGetHolidayNames(): void
     {
         $holidays = Yasumi::create('Japan', 2015);
@@ -252,11 +181,6 @@ class YasumiTest extends TestCase
         self::assertContains('newYearsDay', $holidayNames);
     }
 
-    /**
-     * Tests that the WhenIs function returns a string representation of the date the given holiday occurs.
-     *
-     * @throws ReflectionException
-     */
     public function testWhenIs(): void
     {
         $holidays = Yasumi::create('Japan', 2010);
@@ -267,11 +191,6 @@ class YasumiTest extends TestCase
         self::assertEquals('2010-09-23', $when);
     }
 
-    /**
-     * Tests that the WhenIs function throws an InvalidArgumentException when a blank key is given.
-     *
-     * @throws ReflectionException
-     */
     public function testWhenIsWithBlankKey(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -280,11 +199,6 @@ class YasumiTest extends TestCase
         $holidays->whenIs('');
     }
 
-    /**
-     * Tests that an InvalidArgumentException is thrown in case a blank name is given for the getHoliday function.
-     *
-     * @throws ReflectionException
-     */
     public function testGetHolidayWithBlankKey(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -293,12 +207,6 @@ class YasumiTest extends TestCase
         $holidays->getHoliday('');
     }
 
-    /**
-     * Tests that the whatWeekDayIs function returns an integer representation of the day of the week the given holiday
-     * is occurring.
-     *
-     * @throws ReflectionException
-     */
     public function testWhatWeekDayIs(): void
     {
         $holidays = Yasumi::create('Netherlands', 2110);
@@ -308,11 +216,6 @@ class YasumiTest extends TestCase
         self::assertEquals(2, $weekDay);
     }
 
-    /**
-     * Tests that the whatWeekDayIs function throws an InvalidArgumentException when a blank name is given.
-     *
-     * @throws ReflectionException
-     */
     public function testWhatWeekDayIsWithBlankKey(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -366,9 +269,6 @@ class YasumiTest extends TestCase
      * only asserts that it is a date calculated by the Holiday Provider.
      *
      * @throws Exception
-     * @throws ReflectionException
-     * @throws Exception
-     * @throws ReflectionException
      */
     public function testIsHoliday(): void
     {
@@ -396,9 +296,6 @@ class YasumiTest extends TestCase
      * only asserts that it is a date calculated by the Holiday Provider.
      *
      * @throws Exception
-     * @throws ReflectionException
-     * @throws Exception
-     * @throws ReflectionException
      */
     public function testIsNotHoliday(): void
     {
@@ -426,9 +323,6 @@ class YasumiTest extends TestCase
      * @TODO Add additional unit tests for those holiday providers that differ from the global definition
      *
      * @throws Exception
-     * @throws ReflectionException
-     * @throws Exception
-     * @throws ReflectionException
      */
     public function testIsWorkingDay(): void
     {
@@ -456,9 +350,6 @@ class YasumiTest extends TestCase
      * @TODO Add additional unit tests for those holiday providers that differ from the global definition
      *
      * @throws Exception
-     * @throws ReflectionException
-     * @throws Exception
-     * @throws ReflectionException
      */
     public function testIsNotWorkingDay(): void
     {
@@ -479,11 +370,6 @@ class YasumiTest extends TestCase
         unset($isNotWorkingDay);
     }
 
-    /**
-     * Tests that holidays successfully can be removed from the list of holidays of a provider.
-     *
-     * @throws ReflectionException
-     */
     public function testRemoveHoliday(): void
     {
         $provider = Yasumi::create('Ireland', 2018);
