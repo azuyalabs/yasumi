@@ -15,6 +15,8 @@ to [Semantic Versioning](https://semver.org).
 
 ### Fixed
 
+- The test for Remembrance Day (Argentina) in that Remembrance Day was considered for all years: it is only celebrated
+  since 2006.
 - Created the interface methods of the `ProviderInterface` that the abstract provider class implements. Since the return
   type of the Yasumi factory methods is now `ProviderInterface`, those missing methods generated errors especially by
   statistic analyzers.
