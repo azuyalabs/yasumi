@@ -11,11 +11,20 @@ to [Semantic Versioning](https://semver.org).
 
 ### Changed
 
+- Included the unit tests directory for checking by PHPStan.
+
 ### Fixed
+
+- Created the interface methods of the `ProviderInterface` that the abstract provider class implements. Since the return
+  type of the Yasumi factory methods is now `ProviderInterface`, those missing methods generated errors especially by
+  statistic analyzers.
+- Included the data type for test methods that return an array.
 
 ### Deprecated
 
 ### Removed
+
+- Superfluous notes/comments.
 
 ## [2.5.0] - 2022-01-30
 
