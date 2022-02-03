@@ -30,7 +30,7 @@ use Yasumi\Yasumi;
 /**
  * Class AbstractProvider.
  */
-abstract class AbstractProvider implements ProviderInterface, Countable, IteratorAggregate
+abstract class AbstractProvider implements Countable, ProviderInterface, IteratorAggregate
 {
     /**
      * Code to identify the Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
@@ -171,7 +171,12 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         return (int) $this->holidays[$key]->format('w');
     }
 
-    /** {@inheritdoc} */
+    /**
+     * Returns the number of defined holidays (for the given country and the given year).
+     * In case a holiday is substituted (e.g. observed), the holiday is only counted once.
+     *
+     * @return int number of holidays
+     */
     public function count(): int
     {
         $names = array_map(static function ($holiday): string {

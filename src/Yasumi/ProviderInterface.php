@@ -29,9 +29,7 @@ use Yasumi\Filters\OnFilter;
  */
 interface ProviderInterface extends \Countable
 {
-    /**
-     * Initialize country holidays.
-     */
+    /** Initialize country holidays */
     public function initialize(): void;
 
     /**
@@ -155,14 +153,6 @@ interface ProviderInterface extends \Countable
      * @throws \InvalidArgumentException when the given name is blank or empty
      */
     public function whatWeekDayIs(string $key): int;
-
-    /**
-     * Returns the number of defined holidays (for the given country and the given year).
-     * In case a holiday is substituted (e.g. observed), the holiday is only counted once.
-     *
-     * @return int number of holidays
-     */
-    public function count(): int;
 
     /**
      * Gets all the holiday names defined by this holiday provider (for the given year).
