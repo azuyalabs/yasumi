@@ -37,10 +37,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements HolidayT
      */
     public function testHolidayOnAfterRestoration(): void
     {
-        foreach (function () {
-            yield $this->generateRandomYear(self::HOLIDAY_YEAR_RESTORED);
-            yield self::HOLIDAY_YEAR_RESTORED;
-        } as $year) {
+        foreach ($this->randomYearsOnAfterRestoration() as $year) {
             $this->assertHoliday(
                 self::REGION,
                 self::HOLIDAY,
@@ -68,10 +65,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements HolidayT
      */
     public function testHolidayOnAfterEstablishment(): void
     {
-        foreach (function () {
-            yield $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-            yield self::ESTABLISHMENT_YEAR;
-        } as $year) {
+        foreach ($this->randomYearsOnAfterEstablishment() as $year) {
             $this->assertHoliday(
                 self::REGION,
                 self::HOLIDAY,
@@ -86,10 +80,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements HolidayT
      */
     public function testHolidayBeforeEstablishment(): void
     {
-        foreach (function () {
-            yield $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1);
-            yield self::ESTABLISHMENT_YEAR - 1;
-        } as $year) {
+        foreach ($this->randomYearsBeforeEstablishment() as $year) {
             $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
         }
     }
@@ -124,12 +115,31 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements HolidayT
         }
     }
 
-    /**
-     * @return \Generator<int>
-     */
+    /** @return \Generator<int> */
     private function randomEstablishedYear(): \Generator
     {
         yield $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::HOLIDAY_YEAR_SUSPENDED - 1);
         yield $this->generateRandomYear(self::HOLIDAY_YEAR_RESTORED);
+    }
+
+    /** @return \Generator<int> */
+    private function randomYearsBeforeEstablishment(): \Generator
+    {
+        yield $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1);
+        yield self::ESTABLISHMENT_YEAR - 1;
+    }
+
+    /** @return \Generator<int> */
+    private function randomYearsOnAfterEstablishment(): \Generator
+    {
+        yield $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        yield self::ESTABLISHMENT_YEAR;
+    }
+
+    /** @return \Generator<int> */
+    private function randomYearsOnAfterRestoration(): \Generator
+    {
+        yield $this->generateRandomYear(self::HOLIDAY_YEAR_RESTORED);
+        yield self::HOLIDAY_YEAR_RESTORED;
     }
 }
