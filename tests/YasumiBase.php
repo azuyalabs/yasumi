@@ -21,7 +21,6 @@ use DateTimeZone;
 use Exception;
 use InvalidArgumentException;
 use PHPUnit\Framework\AssertionFailedError;
-use ReflectionException;
 use RuntimeException;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
@@ -157,7 +156,6 @@ trait YasumiBase
      * @throws UnknownLocaleException
      * @throws InvalidDateException
      * @throws AssertionFailedError
-     * @throws ReflectionException
      */
     public function assertNotSubstituteHoliday(
         string $provider,
@@ -302,6 +300,8 @@ trait YasumiBase
      * @param string $provider            the holiday provider (i.e. country/state) for which the holiday need to be
      *                                    tested
      * @param int    $expectedSourceCount the expected number of sources
+     *
+     * @throws Exception
      */
     public function assertSources(string $provider, int $expectedSourceCount): void
     {
@@ -541,6 +541,8 @@ trait YasumiBase
      * @param int|null $upperLimit the upper limit for generating a year number (default: 9999)
      *
      * @return int a year number
+     *
+     * @throws Exception
      */
     public function generateRandomYear(
         int $lowerLimit = null,
@@ -587,15 +589,26 @@ trait YasumiBase
      * @param \DateTime|string $endDate   Defaults to "now"
      * @param string|null      $timezone  time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
      *
-     * @example DateTime('1999-02-02 11:42:52')
+     * @throws Exception
      *
      * @see http://php.net/manual/en/timezones.php
      * @see http://php.net/manual/en/function.date-default-timezone-get.php
+     *
+     * @example DateTime('1999-02-02 11:42:52')
      */
     public static function dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null): DateTime
     {
         $startTimestamp = $startDate instanceof \DateTime ? $startDate->getTimestamp() : strtotime($startDate);
+
+        if (!$startTimestamp) {
+            throw new \RuntimeException('unable to get timestamp for the start date');
+        }
+
         $endTimestamp = static::getMaxTimestamp($endDate);
+
+        if (!$endTimestamp) {
+            throw new \RuntimeException('unable to get timestamp for the end date');
+        }
 
         if ($startTimestamp > $endTimestamp) {
             throw new \InvalidArgumentException('Start date must be anterior to end date.');
