@@ -568,12 +568,10 @@ trait YasumiBase
     /**
      * Returns a random number between $int1 and $int2 (any order).
      *
-     * @param int $int1 default to 0
-     * @param int $int2 defaults to 32 bit max integer, ie 2147483647
-     *
+     * @throws Exception
      * @example 79907610
      */
-    public static function numberBetween($int1 = 0, $int2 = 2147483647): int
+    public static function numberBetween(int $int1 = 0, int $int2 = 2147483647): int
     {
         $min = $int1 < $int2 ? $int1 : $int2;
         $max = $int1 < $int2 ? $int2 : $int1;
