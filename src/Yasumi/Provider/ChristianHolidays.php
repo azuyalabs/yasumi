@@ -477,7 +477,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function easterMonday(
+    protected function easterMonday(
         int $year,
         string $timezone,
         string $locale,
@@ -512,7 +512,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function ascensionDay(
+    protected function ascensionDay(
         int $year,
         string $timezone,
         string $locale,
@@ -544,7 +544,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function pentecostMonday(
+    protected function pentecostMonday(
         int $year,
         string $timezone,
         string $locale,
@@ -580,7 +580,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function christmasEve(
+    protected function christmasEve(
         int $year,
         string $timezone,
         string $locale,
@@ -613,7 +613,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function christmasDay(
+    protected function christmasDay(
         int $year,
         string $timezone,
         string $locale,
@@ -646,7 +646,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function secondChristmasDay(
+    protected function secondChristmasDay(
         int $year,
         string $timezone,
         string $locale,
@@ -681,7 +681,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function ashWednesday(
+    protected function ashWednesday(
         int $year,
         string $timezone,
         string $locale,
@@ -717,7 +717,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function immaculateConception(
+    protected function immaculateConception(
         int $year,
         string $timezone,
         string $locale,
@@ -754,7 +754,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function stStephensDay(
+    protected function stStephensDay(
         int $year,
         string $timezone,
         string $locale,
@@ -790,7 +790,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function maundyThursday(
+    protected function maundyThursday(
         int $year,
         string $timezone,
         string $locale,
@@ -827,7 +827,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function stJohnsDay(
+    protected function stJohnsDay(
         int $year,
         string $timezone,
         string $locale,
@@ -858,7 +858,7 @@ trait ChristianHolidays
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function annunciation(
+    protected function annunciation(
         int $year,
         string $timezone,
         string $locale,
