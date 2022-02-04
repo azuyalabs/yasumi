@@ -350,11 +350,13 @@ return [
     // your application should be included in this list.
     'directory_list' => [
         'src',
+        'test'
     ],
 
     // A list of individual files to include in analysis
     // with a path relative to the root directory of the
     // project.
     'file_list' => [
+        'vendor/phpunit/phpunit/src/Framework/Assert.php'
     ],
 ];
