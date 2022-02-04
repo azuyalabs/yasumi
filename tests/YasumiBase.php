@@ -207,7 +207,7 @@ trait YasumiBase
      * @throws RuntimeException
      * @throws UnknownLocaleException
      * @throws AssertionFailedError
-        */
+     */
     public function assertTranslatedHolidayName(
         string $provider,
         string $key,
@@ -302,7 +302,6 @@ trait YasumiBase
      * @param string $provider            the holiday provider (i.e. country/state) for which the holiday need to be
      *                                    tested
      * @param int    $expectedSourceCount the expected number of sources
-     *
      */
     public function assertSources(string $provider, int $expectedSourceCount): void
     {
@@ -569,6 +568,7 @@ trait YasumiBase
      * Returns a random number between $int1 and $int2 (any order).
      *
      * @throws Exception
+     *
      * @example 79907610
      */
     public static function numberBetween(int $int1 = 0, int $int2 = 2147483647): int
