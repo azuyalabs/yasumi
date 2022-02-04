@@ -56,7 +56,6 @@ trait YasumiBase
      * @throws InvalidArgumentException
      * @throws RuntimeException
      * @throws UnknownLocaleException
-     * @throws ReflectionException
      */
     public function assertDefinedHolidays(
         array $expectedHolidays,
@@ -103,7 +102,6 @@ trait YasumiBase
      * @throws InvalidArgumentException
      * @throws RuntimeException
      * @throws AssertionFailedError
-     * @throws ReflectionException
      */
     public function assertHoliday(
         string $provider,
@@ -132,7 +130,6 @@ trait YasumiBase
      * @throws InvalidArgumentException
      * @throws RuntimeException
      * @throws AssertionFailedError
-     * @throws ReflectionException
      */
     public function assertSubstituteHoliday(
         string $provider,
@@ -186,7 +183,6 @@ trait YasumiBase
      * @throws UnknownLocaleException
      * @throws InvalidDateException
      * @throws AssertionFailedError
-     * @throws ReflectionException
      */
     public function assertNotHoliday(
         string $provider,
@@ -211,8 +207,7 @@ trait YasumiBase
      * @throws RuntimeException
      * @throws UnknownLocaleException
      * @throws AssertionFailedError
-     * @throws ReflectionException
-     */
+        */
     public function assertTranslatedHolidayName(
         string $provider,
         string $key,
@@ -259,7 +254,6 @@ trait YasumiBase
      * @throws RuntimeException
      * @throws AssertionFailedError
      * @throws UnknownLocaleException
-     * @throws ReflectionException
      */
     public function assertHolidayType(
         string $provider,
@@ -287,7 +281,6 @@ trait YasumiBase
      * @throws InvalidArgumentException
      * @throws RuntimeException
      * @throws UnknownLocaleException
-     * @throws ReflectionException
      */
     public function assertDayOfWeek(
         string $provider,
@@ -310,7 +303,6 @@ trait YasumiBase
      *                                    tested
      * @param int    $expectedSourceCount the expected number of sources
      *
-     * @throws ReflectionException
      */
     public function assertSources(string $provider, int $expectedSourceCount): void
     {
@@ -340,7 +332,7 @@ trait YasumiBase
         int $range = null
     ): array {
         $data = [];
-        $range = $range ?? 1000;
+        $range ??= 1000;
         for ($y = 1; $y <= ($iterations ?? 10); ++$y) {
             $year = (int) self::dateTimeBetween("-$range years", "+$range years")->format('Y');
             $data[] = [$year, new DateTime("$year-$month-$day", new DateTimeZone($timezone ?? 'UTC'))];
@@ -366,7 +358,7 @@ trait YasumiBase
         int $range = null
     ): array {
         $data = [];
-        $range = $range ?? 1000;
+        $range ??= 1000;
 
         for ($i = 1; $i <= ($iterations ?? 10); ++$i) {
             $year = (int) self::dateTimeBetween("-$range years", "+$range years")->format('Y');
@@ -394,7 +386,7 @@ trait YasumiBase
         int $iterations = null,
         int $range = null
     ): array {
-        $range = $range ?? 1000;
+        $range ??= 1000;
 
         return $this->generateRandomModifiedEasterDates(static function (DateTime $date) {
             $date->add(new DateInterval('P1D'));
@@ -420,7 +412,7 @@ trait YasumiBase
         int $range = null
     ): array {
         $data = [];
-        $range = $range ?? 1000;
+        $range ??= 1000;
         for ($i = 1; $i <= ($iterations ?? 10); ++$i) {
             $year = (int) self::dateTimeBetween("-$range years", "+$range years")->format('Y');
             $date = $this->calculateEaster($year, $timezone ?? 'UTC');
@@ -449,7 +441,7 @@ trait YasumiBase
         int $iterations = null,
         int $range = null
     ): array {
-        $range = $range ?? 1000;
+        $range ??= 1000;
 
         return $this->generateRandomModifiedEasterDates(static function (DateTime $date) {
             $date->sub(new DateInterval('P2D'));
@@ -472,7 +464,7 @@ trait YasumiBase
         int $iterations = null,
         int $range = null
     ): array {
-        $range = $range ?? 1000;
+        $range ??= 1000;
 
         return $this->generateRandomModifiedEasterDates(static function (DateTime $date) {
             $date->add(new DateInterval('P49D'));
