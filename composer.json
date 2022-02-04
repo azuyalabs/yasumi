@@ -44,7 +44,7 @@
     "infection/infection": "^0.17 | ^0.26",
     "mikey179/vfsstream": "^1.6",
     "phan/phan": "^5.2",
-    "phpstan/phpstan": "^0.12",
+    "phpstan/phpstan": "^1.4",
     "phpunit/phpunit": "^8.5 | ^9.5",
     "vimeo/psalm": "^4.9"
   },
