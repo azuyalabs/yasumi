@@ -503,7 +503,7 @@ trait CommonHolidays
      *
      * @throws \Exception
      */
-    protected function calculateSummerWinterTime(
+    private function calculateSummerWinterTime(
         int $year,
         string $timezone,
         bool $summer
