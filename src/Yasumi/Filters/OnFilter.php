@@ -17,6 +17,7 @@ namespace Yasumi\Filters;
 
 use Iterator;
 use Yasumi\Provider\AbstractProvider;
+use Yasumi\ProviderInterface;
 
 /**
  * OnFilter is a class used for filtering holidays based on a given date.
@@ -33,8 +34,8 @@ class OnFilter extends AbstractFilter
     /**
      * Construct the On FilterIterator Object.
      *
-     * @param Iterator<AbstractProvider> $iterator Iterator object of the Holidays Provider
-     * @param \DateTimeInterface         $date     Start date of the time frame to check against
+     * @param Iterator<ProviderInterface> $iterator Iterator object of the Holidays Provider
+     * @param \DateTimeInterface          $date     Start date of the time frame to check against
      */
     public function __construct(
         Iterator $iterator,
