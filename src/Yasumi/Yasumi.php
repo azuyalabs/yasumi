@@ -90,7 +90,7 @@ class Yasumi
 
             if (!$provider instanceof ProviderInterface) {
                 $provider = self::create($class, (int) $date->format('Y'));
-            } elseif ($provider->getYear() !== $date->format('Y')) {
+            } elseif ($provider->getYear() !== (int) $date->format('Y')) {
                 $provider = self::create($class, (int) $date->format('Y'));
             }
 
@@ -280,7 +280,7 @@ class Yasumi
 
             if (!$provider instanceof ProviderInterface) {
                 $provider = self::create($class, (int) $date->format('Y'));
-            } elseif ($provider->getYear() !== $date->format('Y')) {
+            } elseif ($provider->getYear() !== (int) $date->format('Y')) {
                 $provider = self::create($class, (int) $date->format('Y'));
             }
 
