@@ -19,7 +19,6 @@ use DateInterval;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 use Yasumi\tests\UnitedKingdom\England\EnglandBaseTestCase;
@@ -31,7 +30,6 @@ class MotheringSundayTest extends EnglandBaseTestCase implements HolidayTestCase
     /**
      * @dataProvider HolidayDataProvider
      *
-     * @throws ReflectionException
      * @throws Exception
      */
     public function testHoliday(int $year, string $expected): void
@@ -69,7 +67,7 @@ class MotheringSundayTest extends EnglandBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -82,7 +80,7 @@ class MotheringSundayTest extends EnglandBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

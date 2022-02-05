@@ -30,6 +30,8 @@ class DenmarkTest extends DenmarkBaseTestCase implements ProviderTestCase
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +40,6 @@ class DenmarkTest extends DenmarkBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all official holidays in Denmark are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -60,8 +60,6 @@ class DenmarkTest extends DenmarkBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all observed holidays in Denmark are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -76,7 +74,7 @@ class DenmarkTest extends DenmarkBaseTestCase implements ProviderTestCase
     /**
      * Tests if all seasonal holidays in Denmark are defined by the provider class.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSeasonalHolidays(): void
     {
@@ -86,8 +84,6 @@ class DenmarkTest extends DenmarkBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all bank holidays in Denmark are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -96,8 +92,6 @@ class DenmarkTest extends DenmarkBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all other holidays in Denmark are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -106,6 +100,7 @@ class DenmarkTest extends DenmarkBaseTestCase implements ProviderTestCase
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

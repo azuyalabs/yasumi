@@ -17,7 +17,6 @@ namespace Yasumi\tests\Germany\Berlin;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,7 +39,6 @@ class DayOfLiberation2020Test extends BerlinBaseTestCase implements HolidayTestC
      * Test the holiday defined in this test.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testHolidayInYear(): void
     {
@@ -55,7 +53,7 @@ class DayOfLiberation2020Test extends BerlinBaseTestCase implements HolidayTestC
     /**
      * Test the holiday defined in this test in the years before.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayBeforeYear(): void
     {
@@ -69,7 +67,7 @@ class DayOfLiberation2020Test extends BerlinBaseTestCase implements HolidayTestC
     /**
      * Test the holiday defined in this test in the years after.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayAfterYear(): void
     {
@@ -82,8 +80,6 @@ class DayOfLiberation2020Test extends BerlinBaseTestCase implements HolidayTestC
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     *
-     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -97,8 +93,6 @@ class DayOfLiberation2020Test extends BerlinBaseTestCase implements HolidayTestC
 
     /**
      * Tests type of the holiday defined in this test.
-     *
-     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

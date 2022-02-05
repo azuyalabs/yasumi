@@ -17,7 +17,6 @@ namespace Yasumi\tests\Japan;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,7 +39,6 @@ class MarineDayTest extends JapanBaseTestCase implements HolidayTestCase
      * Tests Marine Day in 2021. Marine Day in 2021 is July 22th for rescheduled Olympic Games after COVID-19.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testMarineDayIn2021(): void
     {
@@ -58,7 +56,6 @@ class MarineDayTest extends JapanBaseTestCase implements HolidayTestCase
      * to be the third monday of July.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testMarineDayOnAfter2003(): void
     {
@@ -81,7 +78,6 @@ class MarineDayTest extends JapanBaseTestCase implements HolidayTestCase
      * changed to be the third monday of July.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testMarineDayBetween1996And2003(): void
     {
@@ -98,7 +94,6 @@ class MarineDayTest extends JapanBaseTestCase implements HolidayTestCase
      * Tests Marine Day between 1996 and 2003 substituted next working day (when Marine Day falls on a Sunday).
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testMarineDayBetween1996And2003SubstitutedNextWorkingDay(): void
     {
@@ -115,7 +110,7 @@ class MarineDayTest extends JapanBaseTestCase implements HolidayTestCase
      * Tests Marine Day before 1996. Marine Day was established since 1996 on July 20th. After 2003 it was changed
      * to be the third monday of July.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testMarineDayBefore1996(): void
     {
@@ -129,7 +124,7 @@ class MarineDayTest extends JapanBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -144,7 +139,7 @@ class MarineDayTest extends JapanBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

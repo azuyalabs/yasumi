@@ -17,7 +17,6 @@ namespace Yasumi\tests\USA;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -35,7 +34,6 @@ class NewYearsDayTest extends USABaseTestCase implements HolidayTestCase
      * Tests New Years Day.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testNewYearsDay(): void
     {
@@ -52,7 +50,6 @@ class NewYearsDayTest extends USABaseTestCase implements HolidayTestCase
      * Tests New Years Day when substituted on Monday (when New Years Day falls on Sunday).
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testNewYearsDaySubstitutedMonday(): void
     {
@@ -69,7 +66,6 @@ class NewYearsDayTest extends USABaseTestCase implements HolidayTestCase
      * Tests New Years Day when substituted on Friday (when New Years Day falls on Saturday).
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testNewYearsDaySubstitutedFriday(): void
     {
@@ -86,7 +82,7 @@ class NewYearsDayTest extends USABaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -101,7 +97,7 @@ class NewYearsDayTest extends USABaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

@@ -17,7 +17,6 @@ namespace Yasumi\tests\USA;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -35,7 +34,6 @@ class ChristmasDayTest extends USABaseTestCase implements HolidayTestCase
      * Tests Christmas Day. Christmas Day is celebrated on December 25th.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testChristmasDay(): void
     {
@@ -52,7 +50,6 @@ class ChristmasDayTest extends USABaseTestCase implements HolidayTestCase
      * Tests Christmas Day substituted on Monday (when Christmas Day falls on Sunday).
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testChristmasDaySubstitutedMonday(): void
     {
@@ -70,7 +67,6 @@ class ChristmasDayTest extends USABaseTestCase implements HolidayTestCase
      * Tests Christmas Day substituted on Monday (when Christmas Day falls on Saturday).
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testChristmasDaySubstitutedFriday(): void
     {
@@ -87,7 +83,7 @@ class ChristmasDayTest extends USABaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -102,7 +98,7 @@ class ChristmasDayTest extends USABaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

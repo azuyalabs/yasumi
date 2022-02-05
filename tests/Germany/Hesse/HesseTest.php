@@ -30,6 +30,8 @@ class HesseTest extends HesseBaseTestCase implements ProviderTestCase
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +40,6 @@ class HesseTest extends HesseBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all official holidays in Hesse (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -59,8 +59,6 @@ class HesseTest extends HesseBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all observed holidays in Hesse (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -69,8 +67,6 @@ class HesseTest extends HesseBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all seasonal holidays in Hesse (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -79,8 +75,6 @@ class HesseTest extends HesseBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all bank holidays in Hesse (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -89,8 +83,6 @@ class HesseTest extends HesseBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all other holidays in Hesse (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -99,6 +91,7 @@ class HesseTest extends HesseBaseTestCase implements ProviderTestCase
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

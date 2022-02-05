@@ -17,7 +17,6 @@ namespace Yasumi\tests\UnitedKingdom\NorthernIreland;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -44,7 +43,6 @@ class StPatricksDayTest extends NorthernIrelandBaseTestCase implements HolidayTe
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
-     * @throws ReflectionException
      * @throws Exception
      */
     public function testHoliday(int $year, string $expected): void
@@ -61,7 +59,7 @@ class StPatricksDayTest extends NorthernIrelandBaseTestCase implements HolidayTe
     /**
      * Tests the holiday defined in this test before establishment.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -95,7 +93,7 @@ class StPatricksDayTest extends NorthernIrelandBaseTestCase implements HolidayTe
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -110,7 +108,7 @@ class StPatricksDayTest extends NorthernIrelandBaseTestCase implements HolidayTe
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

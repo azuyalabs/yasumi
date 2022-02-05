@@ -17,7 +17,6 @@ namespace Yasumi\tests\Japan;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,7 +39,6 @@ class NationalFoundationDayTest extends JapanBaseTestCase implements HolidayTest
      * Tests National Foundation Day after 1966. National Foundation day was established after 1966.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testNationalFoundationDayOnAfter1966(): void
     {
@@ -58,7 +56,6 @@ class NationalFoundationDayTest extends JapanBaseTestCase implements HolidayTest
      * Sunday).
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testNationalFoundationDayOnAfter1966SubstitutedNextWorkingDay(): void
     {
@@ -74,7 +71,7 @@ class NationalFoundationDayTest extends JapanBaseTestCase implements HolidayTest
     /**
      * Tests National Foundation Day before 1966. National Foundation day was established after 1966.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testNationalFoundationDayBefore1966(): void
     {
@@ -88,7 +85,7 @@ class NationalFoundationDayTest extends JapanBaseTestCase implements HolidayTest
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -103,7 +100,7 @@ class NationalFoundationDayTest extends JapanBaseTestCase implements HolidayTest
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

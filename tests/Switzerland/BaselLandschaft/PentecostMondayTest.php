@@ -17,7 +17,6 @@ namespace Yasumi\tests\Switzerland\BaselLandschaft;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -35,7 +34,6 @@ class PentecostMondayTest extends BaselLandschaftBaseTestCase implements Holiday
      * Tests Pentecost Monday.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testPentecostMonday(): void
     {
@@ -51,7 +49,7 @@ class PentecostMondayTest extends BaselLandschaftBaseTestCase implements Holiday
     /**
      * Tests translated name of Pentecost Monday.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -66,7 +64,7 @@ class PentecostMondayTest extends BaselLandschaftBaseTestCase implements Holiday
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

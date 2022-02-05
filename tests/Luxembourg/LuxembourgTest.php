@@ -27,12 +27,12 @@ class LuxembourgTest extends LuxembourgBaseTestCase implements ProviderTestCase
     /**
      * @var int year random year number used for all tests in this Test Case
      */
-    protected $year;
+    protected int $year;
 
     /**
      * Tests if all official holidays in Luxembourg are defined by the provider class.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testOfficialHolidays(): void
     {
@@ -61,7 +61,7 @@ class LuxembourgTest extends LuxembourgBaseTestCase implements ProviderTestCase
     /**
      * Tests if all observed holidays in Luxembourg are defined by the provider class.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testObservedHolidays(): void
     {
@@ -71,7 +71,7 @@ class LuxembourgTest extends LuxembourgBaseTestCase implements ProviderTestCase
     /**
      * Tests if all seasonal holidays in Luxembourg are defined by the provider class.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSeasonalHolidays(): void
     {
@@ -81,7 +81,7 @@ class LuxembourgTest extends LuxembourgBaseTestCase implements ProviderTestCase
     /**
      * Tests if all bank holidays in Luxembourg are defined by the provider class.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testBankHolidays(): void
     {
@@ -91,7 +91,7 @@ class LuxembourgTest extends LuxembourgBaseTestCase implements ProviderTestCase
     /**
      * Tests if all other holidays in Luxembourg are defined by the provider class.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testOtherHolidays(): void
     {
@@ -100,6 +100,7 @@ class LuxembourgTest extends LuxembourgBaseTestCase implements ProviderTestCase
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

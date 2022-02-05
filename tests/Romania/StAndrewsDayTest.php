@@ -17,7 +17,6 @@ namespace Yasumi\tests\Romania;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,7 +39,6 @@ class StAndrewsDayTest extends RomaniaBaseTestCase implements HolidayTestCase
      * Tests Saint Andrew Day on or after 2012.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testStAndrewDayOnAfter2012(): void
     {
@@ -56,7 +54,7 @@ class StAndrewsDayTest extends RomaniaBaseTestCase implements HolidayTestCase
     /**
      * Tests Saint Andrew before 2012.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testStAndrewDayBefore2012(): void
     {
@@ -70,7 +68,7 @@ class StAndrewsDayTest extends RomaniaBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -85,7 +83,7 @@ class StAndrewsDayTest extends RomaniaBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

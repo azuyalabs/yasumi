@@ -16,7 +16,6 @@ namespace Yasumi\tests\Switzerland\Uri;
 
 use DateInterval;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\tests\HolidayTestCase;
@@ -37,7 +36,6 @@ class CorpusChristiTest extends UriBaseTestCase implements HolidayTestCase
      * Tests Corpus Christi.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testCorpusChristi(): void
     {
@@ -53,7 +51,7 @@ class CorpusChristiTest extends UriBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -68,7 +66,7 @@ class CorpusChristiTest extends UriBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

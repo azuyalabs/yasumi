@@ -17,7 +17,6 @@ namespace Yasumi\tests\Japan;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,7 +39,6 @@ class MountainDayTest extends JapanBaseTestCase implements HolidayTestCase
      * Tests Mountain Day in 2021. Mountain Day in 2021 is August 8th for rescheduled Olympic Games after COVID-19.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testMountainDayIn2021(): void
     {
@@ -57,7 +55,6 @@ class MountainDayTest extends JapanBaseTestCase implements HolidayTestCase
      * Tests Mountain Day in 2020. Mountain Day in 2020 is August 10th for the Olympic Games.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testMountainDayIn2020(): void
     {
@@ -74,7 +71,6 @@ class MountainDayTest extends JapanBaseTestCase implements HolidayTestCase
      * Tests Mountain Day after 2016. Mountain Day was established in 2014 and is held from 2016 on August 11th.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testMountainDayOnAfter2016(): void
     {
@@ -91,7 +87,6 @@ class MountainDayTest extends JapanBaseTestCase implements HolidayTestCase
      * Tests Mountain Day after 2016 substituted next working day (when Mountain Day falls on a Sunday).
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testMountainDayOnAfter2016SubstitutedNextWorkingDay(): void
     {
@@ -107,7 +102,7 @@ class MountainDayTest extends JapanBaseTestCase implements HolidayTestCase
     /**
      * Tests Mountain Day before 2016. Mountain Day was established in 2014 and is held from 2016 on August 11th.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testMountainDayBefore2016(): void
     {
@@ -121,7 +116,7 @@ class MountainDayTest extends JapanBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -136,7 +131,7 @@ class MountainDayTest extends JapanBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

@@ -17,7 +17,6 @@ namespace Yasumi\tests\Switzerland\Geneva;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -35,7 +34,6 @@ class AscensionDayTest extends GenevaBaseTestCase implements HolidayTestCase
      * Tests Ascension Day.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testAscensionDay(): void
     {
@@ -51,7 +49,7 @@ class AscensionDayTest extends GenevaBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of Ascension Day.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -66,7 +64,7 @@ class AscensionDayTest extends GenevaBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

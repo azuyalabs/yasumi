@@ -30,6 +30,8 @@ class CataloniaTest extends CataloniaBaseTestCase implements ProviderTestCase
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +40,6 @@ class CataloniaTest extends CataloniaBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all official holidays in Catalonia (Spain) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -60,8 +60,6 @@ class CataloniaTest extends CataloniaBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all observed holidays in Catalonia are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -75,8 +73,6 @@ class CataloniaTest extends CataloniaBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all seasonal holidays in Catalonia are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -85,8 +81,6 @@ class CataloniaTest extends CataloniaBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all bank holidays in Catalonia are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -95,8 +89,6 @@ class CataloniaTest extends CataloniaBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all other holidays in Catalonia are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -105,6 +97,7 @@ class CataloniaTest extends CataloniaBaseTestCase implements ProviderTestCase
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

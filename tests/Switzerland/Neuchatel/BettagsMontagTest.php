@@ -18,7 +18,6 @@ use DateInterval;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -35,7 +34,6 @@ class BettagsMontagTest extends NeuchatelBaseTestCase implements HolidayTestCase
     /**
      * Tests Bettags Montag on or after 1832.
      *
-     * @throws ReflectionException
      * @throws Exception
      */
     public function testBettagsMontagOnAfter1832(): void
@@ -53,7 +51,7 @@ class BettagsMontagTest extends NeuchatelBaseTestCase implements HolidayTestCase
     /**
      * Tests Bettags Montag before 1832.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testBettagsMontagBefore1832(): void
     {
@@ -64,7 +62,7 @@ class BettagsMontagTest extends NeuchatelBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of Bettags Montag.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -79,7 +77,7 @@ class BettagsMontagTest extends NeuchatelBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

@@ -30,6 +30,8 @@ class LowerSaxonyTest extends LowerSaxonyBaseTestCase implements ProviderTestCas
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +40,6 @@ class LowerSaxonyTest extends LowerSaxonyBaseTestCase implements ProviderTestCas
 
     /**
      * Tests if all official holidays in Lower Saxony (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -58,8 +58,6 @@ class LowerSaxonyTest extends LowerSaxonyBaseTestCase implements ProviderTestCas
 
     /**
      * Tests if all observed holidays in Lower Saxony (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -68,8 +66,6 @@ class LowerSaxonyTest extends LowerSaxonyBaseTestCase implements ProviderTestCas
 
     /**
      * Tests if all seasonal holidays in Lower Saxony (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -78,8 +74,6 @@ class LowerSaxonyTest extends LowerSaxonyBaseTestCase implements ProviderTestCas
 
     /**
      * Tests if all bank holidays in Lower Saxony (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -88,8 +82,6 @@ class LowerSaxonyTest extends LowerSaxonyBaseTestCase implements ProviderTestCas
 
     /**
      * Tests if all other holidays in Lower Saxony (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -98,6 +90,7 @@ class LowerSaxonyTest extends LowerSaxonyBaseTestCase implements ProviderTestCas
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

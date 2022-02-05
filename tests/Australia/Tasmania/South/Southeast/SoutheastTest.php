@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Australia\Tasmania\South\Southeast;
 
-use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -29,6 +28,8 @@ class SoutheastTest extends SoutheastBaseTestCase
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -37,8 +38,6 @@ class SoutheastTest extends SoutheastBaseTestCase
 
     /**
      * Tests if all official holidays in Circular Head (Australia) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {

@@ -17,7 +17,6 @@ namespace Yasumi\tests\Brazil;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,7 +39,6 @@ class ProclamationOfRepublicDayTest extends BrazilBaseTestCase implements Holida
      * Tests Proclamação da República on or after 1889.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testProclamacaoDaRepublicaAfter1889(): void
     {
@@ -56,7 +54,7 @@ class ProclamationOfRepublicDayTest extends BrazilBaseTestCase implements Holida
     /**
      * Tests Proclamação da República on or before 1889.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testProclamacaoDaRepublicaBefore1889(): void
     {
@@ -67,7 +65,7 @@ class ProclamationOfRepublicDayTest extends BrazilBaseTestCase implements Holida
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -83,7 +81,7 @@ class ProclamationOfRepublicDayTest extends BrazilBaseTestCase implements Holida
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

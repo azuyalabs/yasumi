@@ -17,7 +17,6 @@ namespace Yasumi\tests\USA;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -41,7 +40,6 @@ class MartinLutherKingDayTest extends USABaseTestCase implements HolidayTestCase
      * third Monday of January.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testMartinLutherKingDayOnAfter1986(): void
     {
@@ -58,7 +56,7 @@ class MartinLutherKingDayTest extends USABaseTestCase implements HolidayTestCase
      * Tests Dr. Martin Luther King Day before 1986. Dr. Martin Luther King Day was established since 1996 on the third
      * Monday of January.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testMartinLutherKingDayBefore1986(): void
     {
@@ -72,7 +70,7 @@ class MartinLutherKingDayTest extends USABaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -87,7 +85,7 @@ class MartinLutherKingDayTest extends USABaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

@@ -17,7 +17,6 @@ namespace Yasumi\tests\Japan;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,7 +39,6 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements HolidayTe
      * Tests Constitution Memorial Day after 1948. Constitution Memorial Day was established after 1948.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testConstitutionMemorialDayOnAfter1948(): void
     {
@@ -58,7 +56,6 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements HolidayTe
      * a Sunday).
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testConstitutionMemorialDayOnAfter1948SubstitutedNextWorkingDay(): void
     {
@@ -74,7 +71,7 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements HolidayTe
     /**
      * Tests Constitution Memorial Day before 1948. Constitution Memorial Day was established after 1948.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testConstitutionMemorialDayBefore1948(): void
     {
@@ -88,7 +85,7 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements HolidayTe
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -103,7 +100,7 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements HolidayTe
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

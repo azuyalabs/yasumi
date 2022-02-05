@@ -16,7 +16,6 @@ namespace Yasumi\tests\Switzerland\Ticino;
 
 use DateTime;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -37,8 +36,6 @@ class NewYearsDayTest extends TicinoBaseTestCase implements HolidayTestCase
      *
      * @param int      $year     the year for which New Years Day needs to be tested
      * @param DateTime $expected the expected date
-     *
-     * @throws ReflectionException
      */
     public function testNewYearsDay(int $year, DateTime $expected): void
     {
@@ -48,7 +45,7 @@ class NewYearsDayTest extends TicinoBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of New Years Day.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -63,7 +60,7 @@ class NewYearsDayTest extends TicinoBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

@@ -17,7 +17,6 @@ namespace Yasumi\tests\Netherlands;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -39,7 +38,7 @@ class CommemorationDayTest extends NetherlandsBaseTestCase implements HolidayTes
     /**
      * Tests Commemoration Day before 1947. Commemoration Day was established after WWII in 1947.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testCommemorationDayBefore1947(): void
     {
@@ -54,7 +53,6 @@ class CommemorationDayTest extends NetherlandsBaseTestCase implements HolidayTes
      * Tests Commemoration Day after 1947. Commemoration Day was established after WWII in 1947.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testCommemorationDayOnAfter1947(): void
     {
@@ -70,7 +68,7 @@ class CommemorationDayTest extends NetherlandsBaseTestCase implements HolidayTes
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -85,7 +83,7 @@ class CommemorationDayTest extends NetherlandsBaseTestCase implements HolidayTes
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

@@ -17,7 +17,6 @@ namespace Yasumi\tests\Japan;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -41,7 +40,6 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase implements HolidayTestC
      * 15th. After 2003 it was changed to be the third monday of September.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testRespectForTheAgedDayOnAfter2003(): void
     {
@@ -59,7 +57,6 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase implements HolidayTestC
      * September 15th. After 2003 it was changed to be the third monday of September.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testRespectForTheAgedDayBetween1996And2003(): void
     {
@@ -77,7 +74,6 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase implements HolidayTestC
      * falls on a Sunday).
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testRespectForTheAgedDayBetween1996And2003SubstitutedNextWorkingDay(): void
     {
@@ -94,7 +90,7 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase implements HolidayTestC
      * Tests Respect for the Aged Day before 1996. Respect for the Aged Day was established since 1996 on September
      * 15th. After 2003 it was changed to be the third monday of September.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testRespectForTheAgedDayBefore1996(): void
     {
@@ -108,7 +104,7 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase implements HolidayTestC
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -123,7 +119,7 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase implements HolidayTestC
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

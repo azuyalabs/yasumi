@@ -16,7 +16,6 @@ namespace Yasumi\tests\Brazil;
 
 use DateInterval;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\tests\HolidayTestCase;
@@ -42,7 +41,6 @@ class CarnavalMondayTest extends BrazilBaseTestCase implements HolidayTestCase
      * Tests Carnaval Monday on or after 1700.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testCarnavalMondayAfter1700(): void
     {
@@ -58,7 +56,7 @@ class CarnavalMondayTest extends BrazilBaseTestCase implements HolidayTestCase
     /**
      * Tests Carnaval Monday on or before 1700.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testCarnavalMondayBefore1700(): void
     {
@@ -69,7 +67,7 @@ class CarnavalMondayTest extends BrazilBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -80,7 +78,7 @@ class CarnavalMondayTest extends BrazilBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

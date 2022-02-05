@@ -17,7 +17,6 @@ namespace Yasumi\tests\Spain\BasqueCountry;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -45,7 +44,6 @@ class BasqueCountryDayTest extends BasqueCountryBaseTestCase implements HolidayT
      * Tests the holiday defined in this test on or after establishment.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testHolidayOnAfterEstablishment(): void
     {
@@ -61,7 +59,7 @@ class BasqueCountryDayTest extends BasqueCountryBaseTestCase implements HolidayT
     /**
      * Tests the holiday defined in this test before establishment.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -75,7 +73,7 @@ class BasqueCountryDayTest extends BasqueCountryBaseTestCase implements HolidayT
     /**
      * Tests the holiday defined in this test after abolishment.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayDayAfterAbolishment(): void
     {
@@ -85,7 +83,7 @@ class BasqueCountryDayTest extends BasqueCountryBaseTestCase implements HolidayT
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -100,7 +98,7 @@ class BasqueCountryDayTest extends BasqueCountryBaseTestCase implements HolidayT
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

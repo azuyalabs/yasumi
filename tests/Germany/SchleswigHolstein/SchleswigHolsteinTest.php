@@ -30,6 +30,8 @@ class SchleswigHolsteinTest extends SchleswigHolsteinBaseTestCase implements Pro
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +40,6 @@ class SchleswigHolsteinTest extends SchleswigHolsteinBaseTestCase implements Pro
 
     /**
      * Tests if all official holidays in Schleswig-Holstein (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -58,8 +58,6 @@ class SchleswigHolsteinTest extends SchleswigHolsteinBaseTestCase implements Pro
 
     /**
      * Tests if all observed holidays in Schleswig-Holstein (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -68,8 +66,6 @@ class SchleswigHolsteinTest extends SchleswigHolsteinBaseTestCase implements Pro
 
     /**
      * Tests if all seasonal holidays in Schleswig-Holstein (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -78,8 +74,6 @@ class SchleswigHolsteinTest extends SchleswigHolsteinBaseTestCase implements Pro
 
     /**
      * Tests if all bank holidays in Schleswig-Holstein (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -88,8 +82,6 @@ class SchleswigHolsteinTest extends SchleswigHolsteinBaseTestCase implements Pro
 
     /**
      * Tests if all other holidays in Schleswig-Holstein (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -98,6 +90,7 @@ class SchleswigHolsteinTest extends SchleswigHolsteinBaseTestCase implements Pro
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

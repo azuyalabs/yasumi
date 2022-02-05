@@ -17,7 +17,6 @@ namespace Yasumi\tests\USA;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -41,7 +40,6 @@ class WashingtonsBirthdayTest extends USABaseTestCase implements HolidayTestCase
      * and was changed in 1968 to the third Monday in February.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testWashingtonsBirthdayOnAfter1968(): void
     {
@@ -59,7 +57,6 @@ class WashingtonsBirthdayTest extends USABaseTestCase implements HolidayTestCase
      * 22 and was changed in 1968 to the third Monday in February.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testWashingtonsBirthdayBetween1879And1967(): void
     {
@@ -76,7 +73,7 @@ class WashingtonsBirthdayTest extends USABaseTestCase implements HolidayTestCase
      * Tests Washington's Birthday before 1879. Washington's Birthday was established since 1879 on February 22 and was
      * changed in 1968 to the third Monday in February.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testWashingtonsBirthdayBefore1879(): void
     {
@@ -90,7 +87,7 @@ class WashingtonsBirthdayTest extends USABaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -105,7 +102,7 @@ class WashingtonsBirthdayTest extends USABaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

@@ -17,7 +17,6 @@ namespace Yasumi\tests\Canada;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -41,7 +40,6 @@ class ThanksgivingDayTest extends CanadaBaseTestCase implements HolidayTestCase
      * of October.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testThanksgivingDayOnAfter1879(): void
     {
@@ -58,7 +56,7 @@ class ThanksgivingDayTest extends CanadaBaseTestCase implements HolidayTestCase
      * Tests Thanksgiving Day before 1879. ThanksgivingDay Day is celebrated since 1879 on the second Monday
      * of October.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testThanksgivingDayBefore1879(): void
     {
@@ -72,7 +70,7 @@ class ThanksgivingDayTest extends CanadaBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -87,7 +85,7 @@ class ThanksgivingDayTest extends CanadaBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

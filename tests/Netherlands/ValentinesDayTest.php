@@ -16,7 +16,6 @@ namespace Yasumi\tests\Netherlands;
 
 use DateTime;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -37,8 +36,6 @@ class ValentinesDayTest extends NetherlandsBaseTestCase implements HolidayTestCa
      *
      * @param int      $year     the year for which Valentines Day needs to be tested
      * @param DateTime $expected the expected date
-     *
-     * @throws ReflectionException
      */
     public function testValentinesDay(int $year, DateTime $expected): void
     {
@@ -60,7 +57,7 @@ class ValentinesDayTest extends NetherlandsBaseTestCase implements HolidayTestCa
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {
@@ -70,7 +67,7 @@ class ValentinesDayTest extends NetherlandsBaseTestCase implements HolidayTestCa
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {

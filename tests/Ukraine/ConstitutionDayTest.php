@@ -17,7 +17,6 @@ namespace Yasumi\tests\Ukraine;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -32,7 +31,6 @@ class ConstitutionDayTest extends UkraineBaseTestCase implements HolidayTestCase
     public const HOLIDAY = 'constitutionDay';
 
     /**
-     * @throws ReflectionException
      * @throws Exception
      */
     public function testHoliday(): void
@@ -48,8 +46,6 @@ class ConstitutionDayTest extends UkraineBaseTestCase implements HolidayTestCase
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     *
-     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -58,8 +54,6 @@ class ConstitutionDayTest extends UkraineBaseTestCase implements HolidayTestCase
 
     /**
      * Tests type of the holiday defined in this test.
-     *
-     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

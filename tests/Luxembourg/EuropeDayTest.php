@@ -17,7 +17,6 @@ namespace Yasumi\tests\Luxembourg;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,7 +39,6 @@ class EuropeDayTest extends LuxembourgBaseTestCase implements HolidayTestCase
      * Tests Europe Day on or after 2019.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testEuropeDayOnAfter2019(): void
     {
@@ -56,7 +54,7 @@ class EuropeDayTest extends LuxembourgBaseTestCase implements HolidayTestCase
     /**
      * Tests Europe Day before 2019.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testEuropeDayBefore2019(): void
     {
@@ -70,7 +68,7 @@ class EuropeDayTest extends LuxembourgBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of Europe Day.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -85,7 +83,7 @@ class EuropeDayTest extends LuxembourgBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

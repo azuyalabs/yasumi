@@ -17,7 +17,6 @@ namespace Yasumi\tests\Switzerland\Obwalden;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -34,7 +33,6 @@ class BruderKlausenFestTest extends ObwaldenBaseTestCase implements HolidayTestC
     /**
      * Tests Bruder-Klausen-Fest on or after 1947.
      *
-     * @throws ReflectionException
      * @throws Exception
      */
     public function testBruderKlausenFestOnAfter1947(): void
@@ -49,7 +47,6 @@ class BruderKlausenFestTest extends ObwaldenBaseTestCase implements HolidayTestC
     /**
      * Tests Bruder-Klausen-Fest between 1649 and 1946.
      *
-     * @throws ReflectionException
      * @throws Exception
      */
     public function testBruderKlausenFestBetween1649And1946(): void
@@ -64,7 +61,7 @@ class BruderKlausenFestTest extends ObwaldenBaseTestCase implements HolidayTestC
     /**
      * Tests Bruder-Klausen-Fest before 1648.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testBruderKlausenFestBefore1648(): void
     {
@@ -75,7 +72,7 @@ class BruderKlausenFestTest extends ObwaldenBaseTestCase implements HolidayTestC
     /**
      * Tests translated name of Bruder-Klausen-Fest.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -90,7 +87,7 @@ class BruderKlausenFestTest extends ObwaldenBaseTestCase implements HolidayTestC
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

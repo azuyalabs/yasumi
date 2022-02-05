@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Turkey;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 use Yasumi\Yasumi;
@@ -30,7 +29,7 @@ class NationalSovereigntyDayTest extends TurkeyBaseTestCase implements HolidayTe
     public const NAME_CHANGED_YEAR = 1981;
 
     /**
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -42,7 +41,6 @@ class NationalSovereigntyDayTest extends TurkeyBaseTestCase implements HolidayTe
     }
 
     /**
-     * @throws ReflectionException
      * @throws \Exception
      */
     public function testHolidayOnAfterEstablishment(): void
@@ -57,7 +55,7 @@ class NationalSovereigntyDayTest extends TurkeyBaseTestCase implements HolidayTe
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -70,7 +68,7 @@ class NationalSovereigntyDayTest extends TurkeyBaseTestCase implements HolidayTe
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testTranslationOnAfterNameChange(): void
     {
@@ -83,7 +81,7 @@ class NationalSovereigntyDayTest extends TurkeyBaseTestCase implements HolidayTe
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

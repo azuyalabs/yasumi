@@ -18,7 +18,6 @@ use DateInterval;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Switzerland\Geneva;
 use Yasumi\tests\HolidayTestCase;
@@ -36,7 +35,6 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements HolidayTestCase
     /**
      * Tests Jeune Genevois between 1870 and 1965.
      *
-     * @throws ReflectionException
      * @throws Exception
      */
     public function testJeuneGenevoisBetween1870And1965(): void
@@ -54,7 +52,6 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements HolidayTestCase
     /**
      * Tests Jeune Genevois between 1840 and 1869.
      *
-     * @throws ReflectionException
      * @throws Exception
      */
     public function testJeuneGenevoisBetween1840And1869(): void
@@ -72,7 +69,7 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements HolidayTestCase
     /**
      * Tests Jeune Genevois before 1840.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testJeuneGenevoisBefore1840(): void
     {
@@ -83,7 +80,7 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of Jeune Genevois.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -98,7 +95,7 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

@@ -30,6 +30,8 @@ class ItalyTest extends ItalyBaseTestCase implements ProviderTestCase
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +40,6 @@ class ItalyTest extends ItalyBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all official holidays in Italy are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -61,8 +61,6 @@ class ItalyTest extends ItalyBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all observed holidays in Italy are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -71,8 +69,6 @@ class ItalyTest extends ItalyBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all seasonal holidays in Italy are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -81,8 +77,6 @@ class ItalyTest extends ItalyBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all bank holidays in Italy are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -91,8 +85,6 @@ class ItalyTest extends ItalyBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all other holidays in Italy are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -101,6 +93,7 @@ class ItalyTest extends ItalyBaseTestCase implements ProviderTestCase
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

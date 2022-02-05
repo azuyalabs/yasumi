@@ -17,7 +17,6 @@ namespace Yasumi\tests\Italy;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -47,7 +46,6 @@ class LiberationDayTest extends ItalyBaseTestCase implements HolidayTestCase
      * Tests Liberation Day on or after 1949.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testLiberationDayOnAfter1949(): void
     {
@@ -63,7 +61,7 @@ class LiberationDayTest extends ItalyBaseTestCase implements HolidayTestCase
     /**
      * Tests Liberation Day before 1949.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testLiberationDayBefore1949(): void
     {
@@ -77,7 +75,7 @@ class LiberationDayTest extends ItalyBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of Liberation Day.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -92,7 +90,7 @@ class LiberationDayTest extends ItalyBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

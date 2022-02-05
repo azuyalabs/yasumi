@@ -30,6 +30,8 @@ class CastillaLaManchaTest extends CastillaLaManchaBaseTestCase implements Provi
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +40,6 @@ class CastillaLaManchaTest extends CastillaLaManchaBaseTestCase implements Provi
 
     /**
      * Tests if all official holidays in Castilla-La Mancha (Spain) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -60,8 +60,6 @@ class CastillaLaManchaTest extends CastillaLaManchaBaseTestCase implements Provi
 
     /**
      * Tests if all observed holidays in Castilla-La Mancha are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -74,8 +72,6 @@ class CastillaLaManchaTest extends CastillaLaManchaBaseTestCase implements Provi
 
     /**
      * Tests if all seasonal holidays in Castilla-La Mancha are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -84,8 +80,6 @@ class CastillaLaManchaTest extends CastillaLaManchaBaseTestCase implements Provi
 
     /**
      * Tests if all bank holidays in Castilla-La Mancha are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -94,8 +88,6 @@ class CastillaLaManchaTest extends CastillaLaManchaBaseTestCase implements Provi
 
     /**
      * Tests if all other holidays in Castilla-La Mancha are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -104,6 +96,7 @@ class CastillaLaManchaTest extends CastillaLaManchaBaseTestCase implements Provi
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

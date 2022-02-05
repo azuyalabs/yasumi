@@ -17,7 +17,6 @@ namespace Yasumi\tests\CzechRepublic;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -39,7 +38,6 @@ class EasterMondayTest extends CzechRepublicBaseTestCase implements HolidayTestC
      * Tests the holiday defined in this test.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testHoliday(): void
     {
@@ -55,7 +53,7 @@ class EasterMondayTest extends CzechRepublicBaseTestCase implements HolidayTestC
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -70,7 +68,7 @@ class EasterMondayTest extends CzechRepublicBaseTestCase implements HolidayTestC
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

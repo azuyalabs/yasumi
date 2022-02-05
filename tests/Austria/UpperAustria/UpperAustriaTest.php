@@ -30,6 +30,8 @@ class UpperAustriaTest extends UpperAustriaBaseTestCase implements ProviderTestC
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +40,6 @@ class UpperAustriaTest extends UpperAustriaBaseTestCase implements ProviderTestC
 
     /**
      * Tests if all official holidays in Upper Austria (Austria) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -71,8 +71,6 @@ class UpperAustriaTest extends UpperAustriaBaseTestCase implements ProviderTestC
 
     /**
      * Tests if all observed holidays in Upper Austria (Austria) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -81,8 +79,6 @@ class UpperAustriaTest extends UpperAustriaBaseTestCase implements ProviderTestC
 
     /**
      * Tests if all seasonal holidays in Upper Austria (Austria) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -91,8 +87,6 @@ class UpperAustriaTest extends UpperAustriaBaseTestCase implements ProviderTestC
 
     /**
      * Tests if all bank holidays in Upper Austria (Austria) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -101,8 +95,6 @@ class UpperAustriaTest extends UpperAustriaBaseTestCase implements ProviderTestC
 
     /**
      * Tests if all other holidays in Upper Austria (Austria) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -111,6 +103,7 @@ class UpperAustriaTest extends UpperAustriaBaseTestCase implements ProviderTestC
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

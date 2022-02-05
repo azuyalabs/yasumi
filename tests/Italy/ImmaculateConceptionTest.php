@@ -16,7 +16,6 @@ namespace Yasumi\tests\Italy;
 
 use DateTime;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -37,8 +36,6 @@ class ImmaculateConceptionTest extends ItalyBaseTestCase implements HolidayTestC
      *
      * @param int      $year     the year for which the day of Immaculate Conception needs to be tested
      * @param DateTime $expected the expected date
-     *
-     * @throws ReflectionException
      */
     public function testImmaculateConception(int $year, DateTime $expected): void
     {
@@ -60,7 +57,7 @@ class ImmaculateConceptionTest extends ItalyBaseTestCase implements HolidayTestC
     /**
      * Tests translated name of the day of Immaculate Conception.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -75,7 +72,7 @@ class ImmaculateConceptionTest extends ItalyBaseTestCase implements HolidayTestC
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

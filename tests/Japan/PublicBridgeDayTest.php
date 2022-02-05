@@ -17,7 +17,6 @@ namespace Yasumi\tests\Japan;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -47,7 +46,6 @@ class PublicBridgeDayTest extends JapanBaseTestCase implements HolidayTestCase
      * Tests public bridge days.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testPublicBridgeDay(): void
     {
@@ -67,8 +65,6 @@ class PublicBridgeDayTest extends JapanBaseTestCase implements HolidayTestCase
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     *
-     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -77,8 +73,6 @@ class PublicBridgeDayTest extends JapanBaseTestCase implements HolidayTestCase
 
     /**
      * Tests type of the holiday defined in this test.
-     *
-     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

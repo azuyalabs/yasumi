@@ -114,7 +114,7 @@ class YasumiTest extends TestCase
     /**
      * Tests that the next function returns the next upcoming date (i.e. next year) for the given holiday.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testNext(): void
     {
@@ -141,7 +141,7 @@ class YasumiTest extends TestCase
     /**
      * Tests the previous function returns the previous date (i.e. previous year) for the given holiday.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testPrevious(): void
     {

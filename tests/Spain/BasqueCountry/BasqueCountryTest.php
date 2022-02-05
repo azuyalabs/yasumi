@@ -30,6 +30,8 @@ class BasqueCountryTest extends BasqueCountryBaseTestCase implements ProviderTes
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +40,6 @@ class BasqueCountryTest extends BasqueCountryBaseTestCase implements ProviderTes
 
     /**
      * Tests if all official holidays in Basque Country (Spain) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -60,8 +60,6 @@ class BasqueCountryTest extends BasqueCountryBaseTestCase implements ProviderTes
 
     /**
      * Tests if all observed holidays in Basque Country are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -74,8 +72,6 @@ class BasqueCountryTest extends BasqueCountryBaseTestCase implements ProviderTes
 
     /**
      * Tests if all seasonal holidays in Basque Country are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -84,8 +80,6 @@ class BasqueCountryTest extends BasqueCountryBaseTestCase implements ProviderTes
 
     /**
      * Tests if all bank holidays in Basque Country are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -94,8 +88,6 @@ class BasqueCountryTest extends BasqueCountryBaseTestCase implements ProviderTes
 
     /**
      * Tests if all other holidays in Basque Country are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -104,6 +96,7 @@ class BasqueCountryTest extends BasqueCountryBaseTestCase implements ProviderTes
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

@@ -30,6 +30,8 @@ class NewfoundlandAndLabradorTest extends NewfoundlandAndLabradorBaseTestCase im
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +40,6 @@ class NewfoundlandAndLabradorTest extends NewfoundlandAndLabradorBaseTestCase im
 
     /**
      * Tests if all official holidays in NewfoundlandAndLabrador are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -52,8 +52,6 @@ class NewfoundlandAndLabradorTest extends NewfoundlandAndLabradorBaseTestCase im
 
     /**
      * Tests if all observed holidays in NewfoundlandAndLabrador are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -62,8 +60,6 @@ class NewfoundlandAndLabradorTest extends NewfoundlandAndLabradorBaseTestCase im
 
     /**
      * Tests if all seasonal holidays in NewfoundlandAndLabrador are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -72,8 +68,6 @@ class NewfoundlandAndLabradorTest extends NewfoundlandAndLabradorBaseTestCase im
 
     /**
      * Tests if all bank holidays in NewfoundlandAndLabrador are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -85,8 +79,6 @@ class NewfoundlandAndLabradorTest extends NewfoundlandAndLabradorBaseTestCase im
 
     /**
      * Tests if all other holidays in NewfoundlandAndLabrador are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -95,6 +87,7 @@ class NewfoundlandAndLabradorTest extends NewfoundlandAndLabradorBaseTestCase im
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

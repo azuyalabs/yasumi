@@ -35,8 +35,6 @@ class WeekendTest extends TestCase
      * Holiday Provider is created.
      *
      * @dataProvider dataProviderWeekendDays
-     *
-     * @throws \ReflectionException
      */
     public function testWeekendDay(\DateTimeImmutable $date): void
     {
@@ -79,8 +77,6 @@ class WeekendTest extends TestCase
      * Holiday Provider is created.
      *
      * @dataProvider dataProviderNonWeekendDays
-     *
-     * @throws \ReflectionException
      */
     public function testNonWeekendDay(\DateTimeImmutable $date): void
     {

@@ -17,7 +17,6 @@ namespace Yasumi\tests\Brazil;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,7 +39,6 @@ class OurLadyOfAparecidaDayTest extends BrazilBaseTestCase implements HolidayTes
      * Tests Nossa Senhora Aparecida on or after 1980.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testNossaSenhoraAparecidaAfter1980(): void
     {
@@ -56,7 +54,7 @@ class OurLadyOfAparecidaDayTest extends BrazilBaseTestCase implements HolidayTes
     /**
      * Tests Nossa Senhora Aparecida on or before 1980.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testNossaSenhoraAparecidaBefore1980(): void
     {
@@ -67,7 +65,7 @@ class OurLadyOfAparecidaDayTest extends BrazilBaseTestCase implements HolidayTes
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -83,7 +81,7 @@ class OurLadyOfAparecidaDayTest extends BrazilBaseTestCase implements HolidayTes
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

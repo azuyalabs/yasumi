@@ -17,7 +17,6 @@ namespace Yasumi\tests\USA;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,7 +39,6 @@ class JuneteenthTest extends USABaseTestCase implements HolidayTestCase
      * Tests Juneteenth on or after 2021. Juneteenth is celebrated since 2021 on June 19th.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testJuneteenthOnAfter2021(): void
     {
@@ -57,7 +55,6 @@ class JuneteenthTest extends USABaseTestCase implements HolidayTestCase
      * Tests Juneteenth on or after 2021 when substituted on Monday (when Juneteenth falls on Sunday).
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testJuneteenthOnAfter2021SubstitutedMonday(): void
     {
@@ -74,7 +71,6 @@ class JuneteenthTest extends USABaseTestCase implements HolidayTestCase
      * Tests Juneteenth on or after 2021 when substituted on Friday (when Juneteenth falls on Saturday).
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testJuneteenthOnAfter2021SubstitutedFriday(): void
     {
@@ -90,7 +86,7 @@ class JuneteenthTest extends USABaseTestCase implements HolidayTestCase
     /**
      * Tests Juneteenth before 2021. Juneteenth is celebrated since 2021 on June 19th.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testJuneteenthBefore2021(): void
     {
@@ -104,7 +100,7 @@ class JuneteenthTest extends USABaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -119,7 +115,7 @@ class JuneteenthTest extends USABaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

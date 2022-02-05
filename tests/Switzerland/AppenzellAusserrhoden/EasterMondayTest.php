@@ -17,7 +17,6 @@ namespace Yasumi\tests\Switzerland\AppenzellAusserrhoden;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -35,7 +34,6 @@ class EasterMondayTest extends AppenzellAusserrhodenBaseTestCase implements Holi
      * Tests Easter Monday.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testEasterMonday(): void
     {
@@ -51,7 +49,7 @@ class EasterMondayTest extends AppenzellAusserrhodenBaseTestCase implements Holi
     /**
      * Tests translated name of Easter Monday.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -66,7 +64,7 @@ class EasterMondayTest extends AppenzellAusserrhodenBaseTestCase implements Holi
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

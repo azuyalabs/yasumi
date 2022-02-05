@@ -17,7 +17,6 @@ namespace Yasumi\tests\NewZealand;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -43,8 +42,6 @@ class QueensBirthdayTest extends NewZealandBaseTestCase implements HolidayTestCa
      *
      * @param int      $year     the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
-     *
-     * @throws ReflectionException
      */
     public function testHoliday(int $year, DateTime $expected): void
     {
@@ -53,8 +50,6 @@ class QueensBirthdayTest extends NewZealandBaseTestCase implements HolidayTestCa
 
     /**
      *  Tests that Holiday is not present before 1952.
-     *
-     * @throws ReflectionException
      */
     public function testNotHoliday(): void
     {
@@ -84,7 +79,7 @@ class QueensBirthdayTest extends NewZealandBaseTestCase implements HolidayTestCa
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -99,7 +94,7 @@ class QueensBirthdayTest extends NewZealandBaseTestCase implements HolidayTestCa
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

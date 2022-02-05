@@ -30,6 +30,8 @@ class CentralNorthTest extends CentralNorthBaseTestCase implements ProviderTestC
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +40,6 @@ class CentralNorthTest extends CentralNorthBaseTestCase implements ProviderTestC
 
     /**
      * Tests if all official holidays in central north Tasmania (Australia) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -60,6 +60,7 @@ class CentralNorthTest extends CentralNorthBaseTestCase implements ProviderTestC
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

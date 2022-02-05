@@ -17,7 +17,6 @@ namespace Yasumi\tests\Japan;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -42,7 +41,6 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements HolidayTestCase
      * 1949.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testEmperorsBirthdayOnAfter1949(): void
     {
@@ -61,7 +59,6 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements HolidayTestCase
      * Day".
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testEmperorsBirthdayOnAfter1989(): void
     {
@@ -79,7 +76,6 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements HolidayTestCase
      * 2020.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testEmperorsBirthdayOnAfter2020(): void
     {
@@ -97,7 +93,6 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements HolidayTestCase
      * Sunday).
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testEmperorsBirthdayOnAfter1989SubstitutedNextWorkingDay(): void
     {
@@ -115,7 +110,7 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements HolidayTestCase
      * 1989. Prior to the death of Emperor Hirohito in 1989, this holiday was celebrated on April 29. See also "Shōwa
      * Day"/"Greenery Day".
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testEmperorsBirthdayBefore1989(): void
     {
@@ -128,8 +123,6 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements HolidayTestCase
 
     /**
      * Tests the Emperors Birthday at 2019.
-     *
-     * @throws ReflectionException
      */
     public function testEmperorsBirthdayAt2019(): void
     {
@@ -143,7 +136,7 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -158,7 +151,7 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

@@ -17,7 +17,6 @@ namespace Yasumi\tests\France;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,7 +39,6 @@ class ArmisticeDayTest extends FranceBaseTestCase implements HolidayTestCase
      * Tests Armistice Day on or after 1919.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testArmisticeDayOnAfter1919(): void
     {
@@ -56,7 +54,7 @@ class ArmisticeDayTest extends FranceBaseTestCase implements HolidayTestCase
     /**
      * Tests Armistice Day before 1919.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testArmisticeDayBefore1919(): void
     {
@@ -70,7 +68,7 @@ class ArmisticeDayTest extends FranceBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of Armistice Day.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -85,7 +83,7 @@ class ArmisticeDayTest extends FranceBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

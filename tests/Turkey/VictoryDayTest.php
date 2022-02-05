@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Turkey;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 use Yasumi\Yasumi;
@@ -28,7 +27,7 @@ class VictoryDayTest extends TurkeyBaseTestCase implements HolidayTestCase
     public const CELEBRATION_YEAR = 1923;
 
     /**
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHoliday(): void
     {
@@ -43,7 +42,7 @@ class VictoryDayTest extends TurkeyBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayBeforeCelebration(): void
     {
@@ -55,7 +54,7 @@ class VictoryDayTest extends TurkeyBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -68,7 +67,7 @@ class VictoryDayTest extends TurkeyBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {
@@ -81,7 +80,7 @@ class VictoryDayTest extends TurkeyBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayTypeBeforeEstablishment(): void
     {

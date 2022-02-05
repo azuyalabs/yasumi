@@ -26,10 +26,12 @@ class BaselLandschaftTest extends BaselLandschaftBaseTestCase implements Provide
     /**
      * @var int year random year number used for all tests in this Test Case
      */
-    protected $year;
+    protected int $year;
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +40,6 @@ class BaselLandschaftTest extends BaselLandschaftBaseTestCase implements Provide
 
     /**
      * Tests if all official holidays in BaselLandschaft (Switzerland) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -52,8 +52,6 @@ class BaselLandschaftTest extends BaselLandschaftBaseTestCase implements Provide
 
     /**
      * Tests if all regional holidays in BaselLandschaft (Switzerland) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testRegionalHolidays(): void
     {
@@ -71,8 +69,6 @@ class BaselLandschaftTest extends BaselLandschaftBaseTestCase implements Provide
 
     /**
      * Tests if all observed holidays in BaselLandschaft (Switzerland) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -86,8 +82,6 @@ class BaselLandschaftTest extends BaselLandschaftBaseTestCase implements Provide
 
     /**
      * Tests if all seasonal holidays in BaselLandschaft (Switzerland) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -96,8 +90,6 @@ class BaselLandschaftTest extends BaselLandschaftBaseTestCase implements Provide
 
     /**
      * Tests if all bank holidays in BaselLandschaft (Switzerland) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -106,8 +98,6 @@ class BaselLandschaftTest extends BaselLandschaftBaseTestCase implements Provide
 
     /**
      * Tests if all other holidays in BaselLandschaft (Switzerland) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -116,6 +106,7 @@ class BaselLandschaftTest extends BaselLandschaftBaseTestCase implements Provide
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

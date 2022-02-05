@@ -17,7 +17,6 @@ namespace Yasumi\tests\Brazil;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,7 +39,6 @@ class TiradentesDayTest extends BrazilBaseTestCase implements HolidayTestCase
      * Tests Dia de Tiradentes on or after 1792.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testDiaDeTiradentesAfter1792(): void
     {
@@ -56,7 +54,7 @@ class TiradentesDayTest extends BrazilBaseTestCase implements HolidayTestCase
     /**
      * Tests Dia de Tiradentes on or before 1792.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testDiaDeTiradentesBefore1792(): void
     {
@@ -67,7 +65,7 @@ class TiradentesDayTest extends BrazilBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -78,7 +76,7 @@ class TiradentesDayTest extends BrazilBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

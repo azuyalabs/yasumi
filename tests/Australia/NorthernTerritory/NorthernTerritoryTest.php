@@ -26,10 +26,12 @@ class NorthernTerritoryTest extends NorthernTerritoryBaseTestCase implements Pro
     /**
      * @var int year random year number used for all tests in this Test Case
      */
-    protected $year;
+    protected int $year;
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +40,6 @@ class NorthernTerritoryTest extends NorthernTerritoryBaseTestCase implements Pro
 
     /**
      * Tests if all official holidays in Northern Territory (Australia) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -60,6 +60,7 @@ class NorthernTerritoryTest extends NorthernTerritoryBaseTestCase implements Pro
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

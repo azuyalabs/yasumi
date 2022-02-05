@@ -30,7 +30,7 @@ class EstoniaTest extends EstoniaBaseTestCase implements ProviderTestCase
     /**
      * Tests if all official holidays in Estonia are defined by the provider class.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testOfficialHolidays(): void
     {
@@ -66,7 +66,7 @@ class EstoniaTest extends EstoniaBaseTestCase implements ProviderTestCase
     /**
      * Tests if all observed holidays in Estonia are defined by the provider class.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testObservedHolidays(): void
     {
@@ -76,7 +76,7 @@ class EstoniaTest extends EstoniaBaseTestCase implements ProviderTestCase
     /**
      * Tests if all seasonal holidays in Estonia are defined by the provider class.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSeasonalHolidays(): void
     {
@@ -86,7 +86,7 @@ class EstoniaTest extends EstoniaBaseTestCase implements ProviderTestCase
     /**
      * Tests if all bank holidays in Estonia are defined by the provider class.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testBankHolidays(): void
     {
@@ -96,7 +96,7 @@ class EstoniaTest extends EstoniaBaseTestCase implements ProviderTestCase
     /**
      * Tests if all other holidays in Estonia are defined by the provider class.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testOtherHolidays(): void
     {
@@ -105,6 +105,7 @@ class EstoniaTest extends EstoniaBaseTestCase implements ProviderTestCase
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

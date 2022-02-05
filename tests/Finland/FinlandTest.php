@@ -30,6 +30,8 @@ class FinlandTest extends FinlandBaseTestCase implements ProviderTestCase
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +40,6 @@ class FinlandTest extends FinlandBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all official holidays in Finland are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -62,8 +62,6 @@ class FinlandTest extends FinlandBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all observed holidays in Finland are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -72,8 +70,6 @@ class FinlandTest extends FinlandBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all seasonal holidays in Finland are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -82,8 +78,6 @@ class FinlandTest extends FinlandBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all bank holidays in Finland are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -92,8 +86,6 @@ class FinlandTest extends FinlandBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all other holidays in Finland are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -102,6 +94,7 @@ class FinlandTest extends FinlandBaseTestCase implements ProviderTestCase
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

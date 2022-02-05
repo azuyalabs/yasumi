@@ -30,6 +30,8 @@ class NunavutTest extends NunavutBaseTestCase implements ProviderTestCase
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +40,6 @@ class NunavutTest extends NunavutBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all official holidays in Nunavut are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -53,8 +53,6 @@ class NunavutTest extends NunavutBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all observed holidays in Nunavut are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -63,8 +61,6 @@ class NunavutTest extends NunavutBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all seasonal holidays in Nunavut are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -73,8 +69,6 @@ class NunavutTest extends NunavutBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all bank holidays in Nunavut are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -83,8 +77,6 @@ class NunavutTest extends NunavutBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all other holidays in Nunavut are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -93,6 +85,7 @@ class NunavutTest extends NunavutBaseTestCase implements ProviderTestCase
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

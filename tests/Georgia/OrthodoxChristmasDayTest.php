@@ -17,7 +17,6 @@ namespace Yasumi\tests\Georgia;
 
 use DateTime;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -30,8 +29,6 @@ class OrthodoxChristmasDayTest extends GeorgiaBaseTestCase implements HolidayTes
 
     /**
      * @dataProvider HolidayDataProvider
-     *
-     * @throws ReflectionException
      */
     public function testHoliday(int $year, DateTime $expected): void
     {
@@ -53,7 +50,7 @@ class OrthodoxChristmasDayTest extends GeorgiaBaseTestCase implements HolidayTes
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -68,7 +65,7 @@ class OrthodoxChristmasDayTest extends GeorgiaBaseTestCase implements HolidayTes
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

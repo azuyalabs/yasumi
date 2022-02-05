@@ -26,10 +26,12 @@ class WesternAustraliaTest extends WesternAustraliaBaseTestCase implements Provi
     /**
      * @var int year random year number used for all tests in this Test Case
      */
-    protected $year;
+    protected int $year;
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +40,6 @@ class WesternAustraliaTest extends WesternAustraliaBaseTestCase implements Provi
 
     /**
      * Tests if all official holidays in Western Australia (Australia) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -59,6 +59,7 @@ class WesternAustraliaTest extends WesternAustraliaBaseTestCase implements Provi
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

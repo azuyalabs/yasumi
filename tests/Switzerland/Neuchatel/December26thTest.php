@@ -17,7 +17,6 @@ namespace Yasumi\tests\Switzerland\Neuchatel;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,7 +39,6 @@ class December26thTest extends NeuchatelBaseTestCase implements HolidayTestCase
      * Tests December 26th.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testDecember26th(): void
     {
@@ -74,8 +72,6 @@ class December26thTest extends NeuchatelBaseTestCase implements HolidayTestCase
 
     /**
      * Tests translated name of December 26th.
-     *
-     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -89,8 +85,6 @@ class December26thTest extends NeuchatelBaseTestCase implements HolidayTestCase
 
     /**
      * Tests type of the holiday defined in this test.
-     *
-     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

@@ -30,6 +30,8 @@ class KingIslandTest extends KingIslandBaseTestCase implements ProviderTestCase
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +40,6 @@ class KingIslandTest extends KingIslandBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all official holidays in King Island (Australia) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -60,6 +60,7 @@ class KingIslandTest extends KingIslandBaseTestCase implements ProviderTestCase
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

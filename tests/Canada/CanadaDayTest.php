@@ -17,7 +17,6 @@ namespace Yasumi\tests\Canada;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,7 +39,6 @@ class CanadaDayTest extends CanadaBaseTestCase implements HolidayTestCase
      * Tests Canada Day on or after 1983. Canada Day was established in 1983 on July 1st.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testCanadaDayOnAfter1983(): void
     {
@@ -63,7 +61,7 @@ class CanadaDayTest extends CanadaBaseTestCase implements HolidayTestCase
     /**
      * Tests Canada Day before 1879. Canada Day was established as Dominion Day in 1879 on July 1st.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testCanadaDayBefore1879(): void
     {
@@ -77,7 +75,7 @@ class CanadaDayTest extends CanadaBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -92,7 +90,7 @@ class CanadaDayTest extends CanadaBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

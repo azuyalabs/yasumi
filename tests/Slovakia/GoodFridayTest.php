@@ -18,7 +18,6 @@ namespace Yasumi\tests\Slovakia;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -41,8 +40,6 @@ class GoodFridayTest extends SlovakiaBaseTestCase implements HolidayTestCase
      *
      * @param int      $year     the year for which Christmas Day needs to be tested
      * @param DateTime $expected the expected date
-     *
-     * @throws ReflectionException
      */
     public function testHoliday(int $year, DateTime $expected): void
     {
@@ -75,7 +72,7 @@ class GoodFridayTest extends SlovakiaBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -90,7 +87,7 @@ class GoodFridayTest extends SlovakiaBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

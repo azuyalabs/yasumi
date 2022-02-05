@@ -30,6 +30,8 @@ class CastileAndLeonTest extends CastileAndLeonBaseTestCase implements ProviderT
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +40,6 @@ class CastileAndLeonTest extends CastileAndLeonBaseTestCase implements ProviderT
 
     /**
      * Tests if all official holidays in Castile And Leon (Spain) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -60,8 +60,6 @@ class CastileAndLeonTest extends CastileAndLeonBaseTestCase implements ProviderT
 
     /**
      * Tests if all observed holidays in Castile And Leon are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -73,8 +71,6 @@ class CastileAndLeonTest extends CastileAndLeonBaseTestCase implements ProviderT
 
     /**
      * Tests if all seasonal holidays in Castile And Leon are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -83,8 +79,6 @@ class CastileAndLeonTest extends CastileAndLeonBaseTestCase implements ProviderT
 
     /**
      * Tests if all bank holidays in Castile And Leon are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -93,8 +87,6 @@ class CastileAndLeonTest extends CastileAndLeonBaseTestCase implements ProviderT
 
     /**
      * Tests if all other holidays in Castile And Leon are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -103,6 +95,7 @@ class CastileAndLeonTest extends CastileAndLeonBaseTestCase implements ProviderT
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

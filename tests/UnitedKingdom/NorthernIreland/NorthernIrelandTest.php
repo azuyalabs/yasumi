@@ -26,10 +26,12 @@ class NorthernIrelandTest extends NorthernIrelandBaseTestCase implements Provide
     /**
      * @var int year random year number used for all tests in this Test Case
      */
-    protected $year;
+    protected int $year;
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +40,6 @@ class NorthernIrelandTest extends NorthernIrelandBaseTestCase implements Provide
 
     /**
      * Tests if all official holidays in Northern Ireland are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -51,8 +51,6 @@ class NorthernIrelandTest extends NorthernIrelandBaseTestCase implements Provide
 
     /**
      * Tests if all observed holidays in Northern Ireland are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -61,8 +59,6 @@ class NorthernIrelandTest extends NorthernIrelandBaseTestCase implements Provide
 
     /**
      * Tests if all seasonal holidays in Northern Ireland are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -71,8 +67,6 @@ class NorthernIrelandTest extends NorthernIrelandBaseTestCase implements Provide
 
     /**
      * Tests if all bank holidays in Northern Ireland are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -88,8 +82,6 @@ class NorthernIrelandTest extends NorthernIrelandBaseTestCase implements Provide
 
     /**
      * Tests if all other holidays in Northern Ireland are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -98,6 +90,7 @@ class NorthernIrelandTest extends NorthernIrelandBaseTestCase implements Provide
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

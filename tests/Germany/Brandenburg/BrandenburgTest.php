@@ -30,6 +30,8 @@ class BrandenburgTest extends BrandenburgBaseTestCase implements ProviderTestCas
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +40,6 @@ class BrandenburgTest extends BrandenburgBaseTestCase implements ProviderTestCas
 
     /**
      * Tests if all official holidays in Brandenburg (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -69,8 +69,6 @@ class BrandenburgTest extends BrandenburgBaseTestCase implements ProviderTestCas
 
     /**
      * Tests if all observed holidays in Brandenburg (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -79,8 +77,6 @@ class BrandenburgTest extends BrandenburgBaseTestCase implements ProviderTestCas
 
     /**
      * Tests if all seasonal holidays in Brandenburg (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -89,8 +85,6 @@ class BrandenburgTest extends BrandenburgBaseTestCase implements ProviderTestCas
 
     /**
      * Tests if all bank holidays in Brandenburg (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -99,8 +93,6 @@ class BrandenburgTest extends BrandenburgBaseTestCase implements ProviderTestCas
 
     /**
      * Tests if all other holidays in Brandenburg (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -109,6 +101,7 @@ class BrandenburgTest extends BrandenburgBaseTestCase implements ProviderTestCas
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

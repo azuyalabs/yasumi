@@ -17,7 +17,6 @@ namespace Yasumi\tests\Romania;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,7 +39,6 @@ class NationalDayTest extends RomaniaBaseTestCase implements HolidayTestCase
      * Tests National Day on or after 1990.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testNationalDayOnAfter1990(): void
     {
@@ -57,7 +55,6 @@ class NationalDayTest extends RomaniaBaseTestCase implements HolidayTestCase
      * Tests National Day between 1948 - 1989.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testNationalDayBetween19481989(): void
     {
@@ -74,7 +71,6 @@ class NationalDayTest extends RomaniaBaseTestCase implements HolidayTestCase
      * Tests National Day between 1866 - 1947.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testNationalDayBetween18661947(): void
     {
@@ -90,7 +86,7 @@ class NationalDayTest extends RomaniaBaseTestCase implements HolidayTestCase
     /**
      * Tests National Day before 1865.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testNationalDayBefore1865(): void
     {
@@ -104,7 +100,7 @@ class NationalDayTest extends RomaniaBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -119,7 +115,7 @@ class NationalDayTest extends RomaniaBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

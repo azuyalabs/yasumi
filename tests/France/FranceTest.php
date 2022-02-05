@@ -30,6 +30,8 @@ class FranceTest extends FranceBaseTestCase implements ProviderTestCase
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +40,6 @@ class FranceTest extends FranceBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all official holidays in France are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -60,8 +60,6 @@ class FranceTest extends FranceBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all observed holidays in France are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -70,8 +68,6 @@ class FranceTest extends FranceBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all seasonal holidays in France are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -80,8 +76,6 @@ class FranceTest extends FranceBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all bank holidays in France are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -90,8 +84,6 @@ class FranceTest extends FranceBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all other holidays in France are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -100,6 +92,7 @@ class FranceTest extends FranceBaseTestCase implements ProviderTestCase
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

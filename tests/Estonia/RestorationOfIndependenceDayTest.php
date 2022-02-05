@@ -18,7 +18,6 @@ namespace Yasumi\tests\Estonia;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Estonia;
 use Yasumi\tests\HolidayTestCase;
@@ -38,7 +37,7 @@ class RestorationOfIndependenceDayTest extends EstoniaBaseTestCase implements Ho
     /**
      * Test if holiday is not defined before.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayBefore(): void
     {
@@ -53,7 +52,6 @@ class RestorationOfIndependenceDayTest extends EstoniaBaseTestCase implements Ho
      * Test if holiday is defined after.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testHolidayAfter(): void
     {
@@ -70,7 +68,7 @@ class RestorationOfIndependenceDayTest extends EstoniaBaseTestCase implements Ho
     /**
      * {@inheritdoc}
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -91,7 +89,7 @@ class RestorationOfIndependenceDayTest extends EstoniaBaseTestCase implements Ho
     /**
      * {@inheritdoc}
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

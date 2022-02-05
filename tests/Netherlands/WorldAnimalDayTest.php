@@ -17,7 +17,6 @@ namespace Yasumi\tests\Netherlands;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,7 +39,6 @@ class WorldAnimalDayTest extends NetherlandsBaseTestCase implements HolidayTestC
      * Tests World Animal Day on or after 1931.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testWorldAnimalDayOnAfter1931(): void
     {
@@ -56,7 +54,7 @@ class WorldAnimalDayTest extends NetherlandsBaseTestCase implements HolidayTestC
     /**
      * Tests World Animal Day before 1931.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testWorldAnimalBefore1931(): void
     {
@@ -70,7 +68,7 @@ class WorldAnimalDayTest extends NetherlandsBaseTestCase implements HolidayTestC
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {
@@ -85,7 +83,7 @@ class WorldAnimalDayTest extends NetherlandsBaseTestCase implements HolidayTestC
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {

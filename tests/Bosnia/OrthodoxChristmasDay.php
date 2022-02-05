@@ -16,7 +16,6 @@ namespace Yasumi\tests\Bosnia;
 
 use DateTime;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -42,8 +41,6 @@ class OrthodoxChristmasDay extends BosniaBaseTestCase implements HolidayTestCase
 
     /**
      * @dataProvider holidayDataProvider
-     *
-     * @throws ReflectionException
      */
     public function testHoliday(int $year, DateTime $expected): void
     {
@@ -53,7 +50,7 @@ class OrthodoxChristmasDay extends BosniaBaseTestCase implements HolidayTestCase
     /**
      * {@inheritdoc}
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -68,7 +65,7 @@ class OrthodoxChristmasDay extends BosniaBaseTestCase implements HolidayTestCase
     /**
      * {@inheritdoc}
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

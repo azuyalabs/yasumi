@@ -17,7 +17,6 @@ namespace Yasumi\tests\Portugal;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -49,9 +48,6 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Holi
     /**
      * Tests the holiday defined in this test on or after establishment.
      *
-     * @throws ReflectionException
-     * @throws Exception
-     * @throws ReflectionException
      * @throws Exception
      */
     public function testHolidayOnAfterEstablishment(): void
@@ -69,9 +65,7 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Holi
     /**
      * Test that the holiday if in effect in 2016 and later dates.
      *
-     * @throws ReflectionException
      * @throws Exception
-     * @throws ReflectionException
      * @throws Exception
      */
     public function testHolidayOnAfterRestoration(): void
@@ -90,7 +84,7 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Holi
     /**
      * Test that the holiday did not happen in 2013-2015.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testNotHolidayDuringAbolishment(): void
     {
@@ -101,7 +95,7 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Holi
     /**
      * Tests the holiday defined in this test before establishment.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -115,7 +109,7 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Holi
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -139,7 +133,7 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Holi
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

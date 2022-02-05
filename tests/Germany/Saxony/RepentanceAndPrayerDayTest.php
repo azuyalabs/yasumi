@@ -17,7 +17,6 @@ namespace Yasumi\tests\Germany\Saxony;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -44,7 +43,6 @@ class RepentanceAndPrayerDayTest extends SaxonyBaseTestCase implements HolidayTe
     /**
      * Tests the holiday defined in this test on or after establishment.
      *
-     * @throws ReflectionException
      * @throws Exception
      */
     public function testHolidayOnAfterEstablishment(): void
@@ -64,7 +62,7 @@ class RepentanceAndPrayerDayTest extends SaxonyBaseTestCase implements HolidayTe
     /**
      * Tests the holiday defined in this test before establishment.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -78,7 +76,7 @@ class RepentanceAndPrayerDayTest extends SaxonyBaseTestCase implements HolidayTe
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -93,7 +91,7 @@ class RepentanceAndPrayerDayTest extends SaxonyBaseTestCase implements HolidayTe
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

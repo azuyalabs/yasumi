@@ -16,7 +16,6 @@ namespace Yasumi\tests\Turkey;
 
 use DateTime;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -29,8 +28,6 @@ class LabourDayTest extends TurkeyBaseTestCase implements HolidayTestCase
      *
      * @param int      $year     the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
-     *
-     * @throws ReflectionException
      */
     public function testHoliday(int $year, DateTime $expected): void
     {
@@ -38,7 +35,7 @@ class LabourDayTest extends TurkeyBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -51,7 +48,7 @@ class LabourDayTest extends TurkeyBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

@@ -17,7 +17,6 @@ namespace Yasumi\tests\Japan;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -43,7 +42,7 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase implements HolidayTestCas
      *
      * After 2150 no calculations are available yet.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testAutumnalEquinoxDayOnAfter2150(): void
     {
@@ -63,7 +62,6 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase implements HolidayTestCas
      * @param int $month month (number) of example data to be tested
      * @param int $day   day of the month (number) of example data to be tested
      *
-     * @throws ReflectionException
      * @throws Exception
      */
     public function testAutumnalEquinoxDayBetween1948And2150(int $year, int $month, int $day): void
@@ -97,7 +95,7 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase implements HolidayTestCas
      * one's ancestors and remember the dead. Prior to 1948, the autumnal equinox was an imperial ancestor worship
      * festival called Shūki kōrei-sai (秋季皇霊祭).
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testAutumnalEquinoxDayBefore1948(): void
     {
@@ -111,7 +109,7 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase implements HolidayTestCas
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -126,7 +124,7 @@ class AutumnalEquinoxDayTest extends JapanBaseTestCase implements HolidayTestCas
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

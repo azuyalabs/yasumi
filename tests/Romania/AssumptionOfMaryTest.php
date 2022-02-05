@@ -17,7 +17,6 @@ namespace Yasumi\tests\Romania;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,7 +39,6 @@ class AssumptionOfMaryTest extends RomaniaBaseTestCase implements HolidayTestCas
      * Tests Assumption Of Mary Day on or after 2008.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testAssumptionOfMaryDayOnAfter2008(): void
     {
@@ -56,7 +54,7 @@ class AssumptionOfMaryTest extends RomaniaBaseTestCase implements HolidayTestCas
     /**
      * Tests Assumption of Mary Day before 2008.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testAssumptionOfMaryDayBefore2008(): void
     {
@@ -70,7 +68,7 @@ class AssumptionOfMaryTest extends RomaniaBaseTestCase implements HolidayTestCas
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -85,7 +83,7 @@ class AssumptionOfMaryTest extends RomaniaBaseTestCase implements HolidayTestCas
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

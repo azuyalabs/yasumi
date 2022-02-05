@@ -17,7 +17,6 @@ namespace Yasumi\tests\Croatia;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -45,7 +44,6 @@ class StatehoodDayTest extends CroatiaBaseTestCase implements HolidayTestCase
      * Tests Statehood Day.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testStatehoodDay(): void
     {
@@ -71,7 +69,7 @@ class StatehoodDayTest extends CroatiaBaseTestCase implements HolidayTestCase
     /**
      * Tests Statehood Day before 1991.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testStatehoodDayBefore1991(): void
     {
@@ -85,7 +83,7 @@ class StatehoodDayTest extends CroatiaBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of Statehood Day.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -100,7 +98,7 @@ class StatehoodDayTest extends CroatiaBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

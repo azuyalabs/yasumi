@@ -18,7 +18,6 @@ namespace Yasumi\tests\SouthKorea;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -46,7 +45,6 @@ class ConstitutionDayTest extends SouthKoreaBaseTestCase implements HolidayTestC
      * Tests the holiday defined in this test.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testHoliday(): void
     {
@@ -62,7 +60,7 @@ class ConstitutionDayTest extends SouthKoreaBaseTestCase implements HolidayTestC
     /**
      * Tests the holiday defined in this test after removal.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayAfterRemoval(): void
     {
@@ -76,7 +74,7 @@ class ConstitutionDayTest extends SouthKoreaBaseTestCase implements HolidayTestC
     /**
      * Tests the holiday defined in this test before establishment.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -90,7 +88,7 @@ class ConstitutionDayTest extends SouthKoreaBaseTestCase implements HolidayTestC
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -105,7 +103,7 @@ class ConstitutionDayTest extends SouthKoreaBaseTestCase implements HolidayTestC
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

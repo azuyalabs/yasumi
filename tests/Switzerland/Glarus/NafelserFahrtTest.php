@@ -17,7 +17,6 @@ namespace Yasumi\tests\Switzerland\Glarus;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -39,7 +38,6 @@ class NafelserFahrtTest extends GlarusBaseTestCase implements HolidayTestCase
     /**
      * Tests Näfelser Fahrt on or after 1389.
      *
-     * @throws ReflectionException
      * @throws Exception
      */
     public function testNafelserFahrtOnAfter1389(): void
@@ -53,7 +51,7 @@ class NafelserFahrtTest extends GlarusBaseTestCase implements HolidayTestCase
     /**
      * Tests Näfelser Fahrt before 1389.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testNafelserFahrtBefore1389(): void
     {
@@ -64,7 +62,7 @@ class NafelserFahrtTest extends GlarusBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of Näfelser Fahrt.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -79,7 +77,7 @@ class NafelserFahrtTest extends GlarusBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Argentina;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Argentina;
 use Yasumi\tests\ProviderTestCase;
@@ -31,6 +30,8 @@ class ArgentinaTest extends ArgentinaBaseTestCase implements ProviderTestCase
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -39,8 +40,6 @@ class ArgentinaTest extends ArgentinaBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all official holidays in Argentina are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -71,8 +70,6 @@ class ArgentinaTest extends ArgentinaBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all observed holidays in Argentina are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -84,9 +81,7 @@ class ArgentinaTest extends ArgentinaBaseTestCase implements ProviderTestCase
         ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
-    /**
-     * @throws ReflectionException
-     */
+    /** @throws \Exception */
     public function testSources(): void
     {
         $this->assertSources(self::REGION, 1);

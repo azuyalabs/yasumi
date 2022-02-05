@@ -18,7 +18,6 @@ use DateTime;
 use DateTimeZone;
 use Exception;
 use InvalidArgumentException;
-use ReflectionException;
 use RuntimeException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -40,7 +39,6 @@ class thirdCarnivalDay extends NetherlandsBaseTestCase implements HolidayTestCas
      * @throws UnknownLocaleException
      * @throws InvalidArgumentException
      * @throws RuntimeException
-     * @throws ReflectionException
      * @throws Exception
      */
     public function testHoliday(): void
@@ -60,7 +58,7 @@ class thirdCarnivalDay extends NetherlandsBaseTestCase implements HolidayTestCas
      * @throws InvalidArgumentException
      * @throws RuntimeException
      * @throws UnknownLocaleException
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {
@@ -73,7 +71,7 @@ class thirdCarnivalDay extends NetherlandsBaseTestCase implements HolidayTestCas
      * @throws InvalidArgumentException
      * @throws RuntimeException
      * @throws UnknownLocaleException
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {

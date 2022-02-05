@@ -17,7 +17,6 @@ namespace Yasumi\tests\France;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,7 +39,6 @@ class BastilleDayTest extends FranceBaseTestCase implements HolidayTestCase
      * Tests Bastille Day on or after 1790.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testBastilleDayOnAfter1790(): void
     {
@@ -56,7 +54,7 @@ class BastilleDayTest extends FranceBaseTestCase implements HolidayTestCase
     /**
      * Tests Bastille Day before 1790.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testBastilleDayBefore1790(): void
     {
@@ -70,7 +68,7 @@ class BastilleDayTest extends FranceBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of Bastille Day.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -85,7 +83,7 @@ class BastilleDayTest extends FranceBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

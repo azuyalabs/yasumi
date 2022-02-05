@@ -30,6 +30,8 @@ class CeutaTest extends CeutaBaseTestCase implements ProviderTestCase
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +40,6 @@ class CeutaTest extends CeutaBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all official holidays in Ceuta (Spain) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -60,8 +60,6 @@ class CeutaTest extends CeutaBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all observed holidays in Ceuta are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -73,8 +71,6 @@ class CeutaTest extends CeutaBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all seasonal holidays in Ceuta are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -83,8 +79,6 @@ class CeutaTest extends CeutaBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all bank holidays in Ceuta are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -93,8 +87,6 @@ class CeutaTest extends CeutaBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all other holidays in Ceuta are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -103,6 +95,7 @@ class CeutaTest extends CeutaBaseTestCase implements ProviderTestCase
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

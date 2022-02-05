@@ -17,7 +17,6 @@ namespace Yasumi\tests\Portugal;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Portugal;
 use Yasumi\tests\HolidayTestCase;
@@ -45,7 +44,6 @@ class PortugalDayTest extends PortugalBaseTestCase implements HolidayTestCase
     /**
      * Tests the holiday defined in this test before it was abolished.
      *
-     * @throws ReflectionException
      * @throws Exception
      *
      * @see Portugal::calculatePortugalDay()
@@ -60,7 +58,6 @@ class PortugalDayTest extends PortugalBaseTestCase implements HolidayTestCase
     /**
      * Tests the holiday defined in this test after it was restored.
      *
-     * @throws ReflectionException
      * @throws Exception
      *
      * @see Portugal::calculatePortugalDay()
@@ -75,7 +72,7 @@ class PortugalDayTest extends PortugalBaseTestCase implements HolidayTestCase
     /**
      * Tests that the holiday defined in this test does not exist during the period that it was abolished.
      *
-     * @throws ReflectionException
+     * @throws Exception
      *
      * @see Portugal::calculatePortugalDay()
      */
@@ -91,7 +88,7 @@ class PortugalDayTest extends PortugalBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -105,7 +102,7 @@ class PortugalDayTest extends PortugalBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

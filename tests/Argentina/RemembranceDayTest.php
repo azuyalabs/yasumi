@@ -17,7 +17,6 @@ namespace Yasumi\tests\Argentina;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,7 +39,6 @@ class RemembranceDayTest extends ArgentinaBaseTestCase implements HolidayTestCas
      * Tests Day of Remembrance for Truth and Justice on or after 2006.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testRemembranceDayAfter2006(): void
     {
@@ -56,7 +54,7 @@ class RemembranceDayTest extends ArgentinaBaseTestCase implements HolidayTestCas
     /**
      * Tests Day of Remembrance for Truth and Justice on or before 2006.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testRemembranceDayBefore2006(): void
     {
@@ -67,7 +65,7 @@ class RemembranceDayTest extends ArgentinaBaseTestCase implements HolidayTestCas
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -78,7 +76,7 @@ class RemembranceDayTest extends ArgentinaBaseTestCase implements HolidayTestCas
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

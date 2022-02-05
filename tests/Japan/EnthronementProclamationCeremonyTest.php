@@ -17,7 +17,6 @@ namespace Yasumi\tests\Japan;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -38,7 +37,6 @@ class EnthronementProclamationCeremonyTest extends JapanBaseTestCase implements 
 
     /**
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testEmperorsCoronationDay(): void
     {
@@ -51,7 +49,7 @@ class EnthronementProclamationCeremonyTest extends JapanBaseTestCase implements 
     }
 
     /**
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testEmperorsBirthdayBefore2019(): void
     {
@@ -63,7 +61,7 @@ class EnthronementProclamationCeremonyTest extends JapanBaseTestCase implements 
     }
 
     /**
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testEmperorsBirthdayAfter2020(): void
     {
@@ -76,8 +74,6 @@ class EnthronementProclamationCeremonyTest extends JapanBaseTestCase implements 
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     *
-     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -91,8 +87,6 @@ class EnthronementProclamationCeremonyTest extends JapanBaseTestCase implements 
 
     /**
      * Tests type of the holiday defined in this test.
-     *
-     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

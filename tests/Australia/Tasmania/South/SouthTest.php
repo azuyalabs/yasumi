@@ -30,6 +30,8 @@ class SouthTest extends SouthBaseTestCase implements ProviderTestCase
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +40,6 @@ class SouthTest extends SouthBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all official holidays in northwestern Tasmania (Australia) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -60,6 +60,7 @@ class SouthTest extends SouthBaseTestCase implements ProviderTestCase
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

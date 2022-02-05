@@ -17,7 +17,6 @@ namespace Yasumi\tests\Russia;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Russia;
 use Yasumi\tests\HolidayTestCase;
@@ -37,7 +36,7 @@ class DefenceOfTheFatherlandDayTest extends RussiaBaseTestCase implements Holida
     /**
      * Test if holiday is not defined before.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayBefore(): void
     {
@@ -52,7 +51,6 @@ class DefenceOfTheFatherlandDayTest extends RussiaBaseTestCase implements Holida
      * Test if holiday is defined after.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testHolidayAfter(): void
     {
@@ -69,7 +67,7 @@ class DefenceOfTheFatherlandDayTest extends RussiaBaseTestCase implements Holida
     /**
      * {@inheritdoc}
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -90,7 +88,7 @@ class DefenceOfTheFatherlandDayTest extends RussiaBaseTestCase implements Holida
     /**
      * {@inheritdoc}
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

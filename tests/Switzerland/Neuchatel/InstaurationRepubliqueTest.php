@@ -17,7 +17,6 @@ namespace Yasumi\tests\Switzerland\Neuchatel;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,7 +39,6 @@ class InstaurationRepubliqueTest extends NeuchatelBaseTestCase implements Holida
      * Tests Instauration de la République on or after 1849.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testInstaurationRepubliqueOnAfter1849(): void
     {
@@ -56,7 +54,7 @@ class InstaurationRepubliqueTest extends NeuchatelBaseTestCase implements Holida
     /**
      * Tests Instauration de la République before 1849.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testInstaurationRepubliqueBefore1849(): void
     {
@@ -70,7 +68,7 @@ class InstaurationRepubliqueTest extends NeuchatelBaseTestCase implements Holida
     /**
      * Tests translated name of Instauration de la République.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -85,7 +83,7 @@ class InstaurationRepubliqueTest extends NeuchatelBaseTestCase implements Holida
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

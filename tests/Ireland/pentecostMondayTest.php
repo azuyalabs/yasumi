@@ -18,7 +18,6 @@ use DateInterval;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -45,7 +44,6 @@ class pentecostMondayTest extends IrelandBaseTestCase implements HolidayTestCase
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
-     * @throws ReflectionException
      * @throws Exception
      */
     public function testHoliday(int $year, string $expected): void
@@ -82,7 +80,7 @@ class pentecostMondayTest extends IrelandBaseTestCase implements HolidayTestCase
     /**
      * Tests the holiday defined in this test after abolishment.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayDayAfterAbolishment(): void
     {
@@ -92,7 +90,7 @@ class pentecostMondayTest extends IrelandBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -113,7 +111,7 @@ class pentecostMondayTest extends IrelandBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

@@ -60,8 +60,6 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements HolidayTestC
      * @param int           $year                 holiday calendar year
      * @param DateTime      $expectedOfficial     the official date to be checked against
      * @param DateTime|null $expectedSubstitution the substituted date to be checked against
-     *
-     * @throws ReflectionException
      */
     public function assertHolidayWithSubstitution(
         string $provider,

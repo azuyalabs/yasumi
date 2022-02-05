@@ -17,7 +17,6 @@ namespace Yasumi\tests\Switzerland\Lucerne;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -34,7 +33,6 @@ class BerchtoldsTagTest extends LucerneBaseTestCase implements HolidayTestCase
     /**
      * Tests BerchtoldsTag.
      *
-     * @throws ReflectionException
      * @throws Exception
      */
     public function testBerchtoldsTag(): void
@@ -49,7 +47,7 @@ class BerchtoldsTagTest extends LucerneBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of BerchtoldsTag.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -64,7 +62,7 @@ class BerchtoldsTagTest extends LucerneBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

@@ -17,7 +17,6 @@ namespace Yasumi\tests\Croatia;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,7 +39,6 @@ class AntifascistStruggleDayTest extends CroatiaBaseTestCase implements HolidayT
      * Tests Day of Antifascist Struggle on or after 1941.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testAntifascistStruggleDayOnAfter1941(): void
     {
@@ -56,7 +54,7 @@ class AntifascistStruggleDayTest extends CroatiaBaseTestCase implements HolidayT
     /**
      * Tests Day of Antifascist Struggle before 1941.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testAntifascistStruggleDayBefore1941(): void
     {
@@ -70,7 +68,7 @@ class AntifascistStruggleDayTest extends CroatiaBaseTestCase implements HolidayT
     /**
      * Tests translated name of Day of Antifascist Struggle.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -85,7 +83,7 @@ class AntifascistStruggleDayTest extends CroatiaBaseTestCase implements HolidayT
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

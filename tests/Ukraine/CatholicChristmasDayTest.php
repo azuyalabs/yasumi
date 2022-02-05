@@ -17,7 +17,6 @@ namespace Yasumi\tests\Ukraine;
 
 use DateTime;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 use Yasumi\Yasumi;
@@ -39,8 +38,6 @@ class CatholicChristmasDayTest extends UkraineBaseTestCase implements HolidayTes
      *
      * @param int      $year     the year for which International Workers' Day needs to be tested
      * @param DateTime $expected the expected date
-     *
-     * @throws ReflectionException
      */
     public function testCatholicChristmasDay(int $year, DateTime $expected): void
     {
@@ -50,7 +47,7 @@ class CatholicChristmasDayTest extends UkraineBaseTestCase implements HolidayTes
     /**
      * Tests Catholic Christmas Day before 2017.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testNoCatholicChristmasDayBefore2017(): void
     {
@@ -66,7 +63,7 @@ class CatholicChristmasDayTest extends UkraineBaseTestCase implements HolidayTes
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -81,7 +78,7 @@ class CatholicChristmasDayTest extends UkraineBaseTestCase implements HolidayTes
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

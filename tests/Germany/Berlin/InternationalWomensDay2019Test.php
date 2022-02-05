@@ -17,7 +17,6 @@ namespace Yasumi\tests\Germany\Berlin;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,7 +39,6 @@ class InternationalWomensDay2019Test extends BerlinBaseTestCase implements Holid
      * Test the holiday defined in this test upon establishment.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testHolidayOnEstablishment(): void
     {
@@ -55,7 +53,7 @@ class InternationalWomensDay2019Test extends BerlinBaseTestCase implements Holid
     /**
      * Test the holiday defined in this test before establishment.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -69,7 +67,7 @@ class InternationalWomensDay2019Test extends BerlinBaseTestCase implements Holid
     /**
      * Test the holiday defined in this test after completion.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayAfterCompletion(): void
     {
@@ -79,7 +77,7 @@ class InternationalWomensDay2019Test extends BerlinBaseTestCase implements Holid
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -94,7 +92,7 @@ class InternationalWomensDay2019Test extends BerlinBaseTestCase implements Holid
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

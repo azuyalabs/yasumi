@@ -26,10 +26,12 @@ class SchwyzTest extends SchwyzBaseTestCase implements ProviderTestCase
     /**
      * @var int year random year number used for all tests in this Test Case
      */
-    protected $year;
+    protected int $year;
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +40,6 @@ class SchwyzTest extends SchwyzBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all official holidays in Schwyz (Switzerland) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -52,8 +52,6 @@ class SchwyzTest extends SchwyzBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all regional holidays in Schwyz (Switzerland) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testRegionalHolidays(): void
     {
@@ -76,8 +74,6 @@ class SchwyzTest extends SchwyzBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all observed holidays in Schwyz (Switzerland) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -91,8 +87,6 @@ class SchwyzTest extends SchwyzBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all seasonal holidays in Schwyz (Switzerland) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -101,8 +95,6 @@ class SchwyzTest extends SchwyzBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all bank holidays in Schwyz (Switzerland) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -111,8 +103,6 @@ class SchwyzTest extends SchwyzBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all other holidays in Schwyz (Switzerland) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -121,6 +111,7 @@ class SchwyzTest extends SchwyzBaseTestCase implements ProviderTestCase
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

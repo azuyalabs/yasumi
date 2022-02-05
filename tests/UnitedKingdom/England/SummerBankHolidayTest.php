@@ -43,7 +43,6 @@ class SummerBankHolidayTest extends EnglandBaseTestCase implements HolidayTestCa
      * Tests the holiday defined in this test.
      *
      * @throws \Exception
-     * @throws \ReflectionException
      */
     public function testHoliday(): void
     {
@@ -60,7 +59,6 @@ class SummerBankHolidayTest extends EnglandBaseTestCase implements HolidayTestCa
      * Tests the holiday exception in 2020.
      *
      * @throws \Exception
-     * @throws \ReflectionException
      */
     public function testHolidayBefore1965(): void
     {
@@ -76,7 +74,6 @@ class SummerBankHolidayTest extends EnglandBaseTestCase implements HolidayTestCa
     /**
      * Tests the holiday during trial period in 1965-1970.
      *
-     * @throws \ReflectionException
      * @throws \Exception
      */
     public function testHolidayTrialPeriod(): void
@@ -122,7 +119,7 @@ class SummerBankHolidayTest extends EnglandBaseTestCase implements HolidayTestCa
     /**
      * Tests the holiday defined in this test before establishment.
      *
-     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -136,7 +133,7 @@ class SummerBankHolidayTest extends EnglandBaseTestCase implements HolidayTestCa
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -151,7 +148,7 @@ class SummerBankHolidayTest extends EnglandBaseTestCase implements HolidayTestCa
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testTranslationBeforeRename(): void
     {
@@ -166,7 +163,7 @@ class SummerBankHolidayTest extends EnglandBaseTestCase implements HolidayTestCa
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

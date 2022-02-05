@@ -18,7 +18,6 @@ namespace Yasumi\tests\Georgia;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -30,7 +29,6 @@ class IndependenceDayTest extends GeorgiaBaseTestCase implements HolidayTestCase
     public const HOLIDAY = 'independenceDay';
 
     /**
-     * @throws ReflectionException
      * @throws Exception
      */
     public function testHoliday(): void
@@ -46,8 +44,6 @@ class IndependenceDayTest extends GeorgiaBaseTestCase implements HolidayTestCase
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     *
-     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -63,8 +59,6 @@ class IndependenceDayTest extends GeorgiaBaseTestCase implements HolidayTestCase
 
     /**
      * Tests type of the holiday defined in this test.
-     *
-     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

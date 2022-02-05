@@ -26,10 +26,12 @@ class SchaffhausenTest extends SchaffhausenBaseTestCase implements ProviderTestC
     /**
      * @var int year random year number used for all tests in this Test Case
      */
-    protected $year;
+    protected int $year;
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +40,6 @@ class SchaffhausenTest extends SchaffhausenBaseTestCase implements ProviderTestC
 
     /**
      * Tests if all official holidays in Schaffhausen (Switzerland) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -52,8 +52,6 @@ class SchaffhausenTest extends SchaffhausenBaseTestCase implements ProviderTestC
 
     /**
      * Tests if all regional holidays in Schaffhausen (Switzerland) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testRegionalHolidays(): void
     {
@@ -72,8 +70,6 @@ class SchaffhausenTest extends SchaffhausenBaseTestCase implements ProviderTestC
 
     /**
      * Tests if all observed holidays in Schaffhausen (Switzerland) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -87,8 +83,6 @@ class SchaffhausenTest extends SchaffhausenBaseTestCase implements ProviderTestC
 
     /**
      * Tests if all seasonal holidays in Schaffhausen (Switzerland) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -97,8 +91,6 @@ class SchaffhausenTest extends SchaffhausenBaseTestCase implements ProviderTestC
 
     /**
      * Tests if all bank holidays in Schaffhausen (Switzerland) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -107,8 +99,6 @@ class SchaffhausenTest extends SchaffhausenBaseTestCase implements ProviderTestC
 
     /**
      * Tests if all other holidays in Schaffhausen (Switzerland) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -117,6 +107,7 @@ class SchaffhausenTest extends SchaffhausenBaseTestCase implements ProviderTestC
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

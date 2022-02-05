@@ -30,6 +30,8 @@ class RhinelandPalatinateTest extends RhinelandPalatinateBaseTestCase implements
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +40,6 @@ class RhinelandPalatinateTest extends RhinelandPalatinateBaseTestCase implements
 
     /**
      * Tests if all official holidays in Rhineland Palatinate (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -60,8 +60,6 @@ class RhinelandPalatinateTest extends RhinelandPalatinateBaseTestCase implements
 
     /**
      * Tests if all observed holidays in Rhineland Palatinate (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -70,8 +68,6 @@ class RhinelandPalatinateTest extends RhinelandPalatinateBaseTestCase implements
 
     /**
      * Tests if all seasonal holidays in Rhineland Palatinate (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -80,8 +76,6 @@ class RhinelandPalatinateTest extends RhinelandPalatinateBaseTestCase implements
 
     /**
      * Tests if all bank holidays in Rhineland Palatinate (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -90,8 +84,6 @@ class RhinelandPalatinateTest extends RhinelandPalatinateBaseTestCase implements
 
     /**
      * Tests if all other holidays in Rhineland Palatinate (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -100,6 +92,7 @@ class RhinelandPalatinateTest extends RhinelandPalatinateBaseTestCase implements
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

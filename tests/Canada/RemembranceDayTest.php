@@ -17,7 +17,6 @@ namespace Yasumi\tests\Canada;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,7 +39,6 @@ class RemembranceDayTest extends CanadaBaseTestCase implements HolidayTestCase
      * Tests Remembrance Day on or after 1919. Remembrance Day was established in 1919 on November 11.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testRemembranceDayOnAfter1919(): void
     {
@@ -56,7 +54,7 @@ class RemembranceDayTest extends CanadaBaseTestCase implements HolidayTestCase
     /**
      * Tests Remembrance Day before 1919. Remembrance Day was established in 1919 on November 11.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testVeteransDayBefore1919(): void
     {
@@ -70,7 +68,7 @@ class RemembranceDayTest extends CanadaBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -85,7 +83,7 @@ class RemembranceDayTest extends CanadaBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

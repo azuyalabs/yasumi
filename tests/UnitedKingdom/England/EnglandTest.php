@@ -26,10 +26,12 @@ class EnglandTest extends EnglandBaseTestCase implements ProviderTestCase
     /**
      * @var int year random year number used for all tests in this Test Case
      */
-    protected $year;
+    protected int $year;
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +40,6 @@ class EnglandTest extends EnglandBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all official holidays in England are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -51,8 +51,6 @@ class EnglandTest extends EnglandBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all observed holidays in England are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -61,8 +59,6 @@ class EnglandTest extends EnglandBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all seasonal holidays in England are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -71,8 +67,6 @@ class EnglandTest extends EnglandBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all bank holidays in England are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -87,8 +81,6 @@ class EnglandTest extends EnglandBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all other holidays in England are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -97,6 +89,7 @@ class EnglandTest extends EnglandBaseTestCase implements ProviderTestCase
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

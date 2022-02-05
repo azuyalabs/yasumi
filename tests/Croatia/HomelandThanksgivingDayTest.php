@@ -17,7 +17,6 @@ namespace Yasumi\tests\Croatia;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -45,7 +44,6 @@ class HomelandThanksgivingDayTest extends CroatiaBaseTestCase implements Holiday
      * Tests Homeland Thanksgiving Day on or after 1995.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testHomelandThanksgivingDayOnAfter1995(): void
     {
@@ -61,7 +59,7 @@ class HomelandThanksgivingDayTest extends CroatiaBaseTestCase implements Holiday
     /**
      * Tests Homeland Thanksgiving Day before 1995.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHomelandThanksgivingDayBefore1995(): void
     {
@@ -75,7 +73,7 @@ class HomelandThanksgivingDayTest extends CroatiaBaseTestCase implements Holiday
     /**
      * Tests translated name of Homeland Thanksgiving Day.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -101,7 +99,7 @@ class HomelandThanksgivingDayTest extends CroatiaBaseTestCase implements Holiday
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

@@ -17,7 +17,6 @@ namespace Yasumi\tests\Croatia;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,7 +39,6 @@ class RemembranceDayTest extends CroatiaBaseTestCase implements HolidayTestCase
      * Tests Remembrance Day.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testRemembranceDayAfterItWasEstablished(): void
     {
@@ -57,7 +55,6 @@ class RemembranceDayTest extends CroatiaBaseTestCase implements HolidayTestCase
      * Tests Remembrance Day.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testRemembranceDayBeforeItWasEstablished(): void
     {
@@ -71,7 +68,7 @@ class RemembranceDayTest extends CroatiaBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of Remembrance Day.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -86,7 +83,7 @@ class RemembranceDayTest extends CroatiaBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

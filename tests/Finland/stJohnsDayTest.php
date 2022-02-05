@@ -17,7 +17,6 @@ namespace Yasumi\tests\Finland;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 use Yasumi\Yasumi;
@@ -44,7 +43,6 @@ class stJohnsDayTest extends FinlandBaseTestCase implements HolidayTestCase
      * Tests the holiday before it was adjusted.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testHolidayBeforeAdjustment(): void
     {
@@ -60,7 +58,7 @@ class stJohnsDayTest extends FinlandBaseTestCase implements HolidayTestCase
     /**
      * Tests the holiday before it was adjusted.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayAfterAdjustment(): void
     {
@@ -84,7 +82,7 @@ class stJohnsDayTest extends FinlandBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -99,7 +97,7 @@ class stJohnsDayTest extends FinlandBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

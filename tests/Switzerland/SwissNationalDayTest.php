@@ -17,7 +17,6 @@ namespace Yasumi\tests\Switzerland;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -50,7 +49,6 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements HolidayTes
      * Tests National Day on or after 1994.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testNationalDayOnAfter1994(): void
     {
@@ -66,9 +64,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements HolidayTes
     /**
      * Tests National Day on or after 1899 and before 1994.
      *
-     * @throws ReflectionException
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testNationalDayOnAfter1899(): void
     {
@@ -85,9 +81,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements HolidayTes
     /**
      * Tests National Day on 1891.
      *
-     * @throws ReflectionException
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testNationalDayOn1891(): void
     {
@@ -104,7 +98,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements HolidayTes
     /**
      * Tests National Day before 1891.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testNationalDayBefore1891(): void
     {
@@ -118,7 +112,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements HolidayTes
     /**
      * Tests National Day between 1891 and 1899.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testNationalDayBetween1891And1899(): void
     {
@@ -129,7 +123,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements HolidayTes
     /**
      * Tests translated name of National Day.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -144,7 +138,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements HolidayTes
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

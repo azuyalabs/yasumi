@@ -26,14 +26,14 @@ class TurkeyTest extends TurkeyBaseTestCase implements ProviderTestCase
      */
     protected int $year;
 
+    /**
+     * @throws \Exception
+     */
     protected function setUp(): void
     {
         $this->year = $this->generateRandomYear();
     }
 
-    /**
-     * @throws ReflectionException
-     */
     public function testOfficialHolidays(): void
     {
         $holidays = [
@@ -69,9 +69,6 @@ class TurkeyTest extends TurkeyBaseTestCase implements ProviderTestCase
         $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
-    /**
-     * @throws ReflectionException
-     */
     public function testObservedHolidays(): void
     {
         $holidays = [];
@@ -83,25 +80,16 @@ class TurkeyTest extends TurkeyBaseTestCase implements ProviderTestCase
         $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
-    /**
-     * @throws ReflectionException
-     */
     public function testSeasonalHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
     }
 
-    /**
-     * @throws ReflectionException
-     */
     public function testBankHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
 
-    /**
-     * @throws ReflectionException
-     */
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
@@ -109,6 +97,7 @@ class TurkeyTest extends TurkeyBaseTestCase implements ProviderTestCase
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

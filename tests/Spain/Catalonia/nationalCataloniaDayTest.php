@@ -17,7 +17,6 @@ namespace Yasumi\tests\Spain\Catalonia;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,7 +39,6 @@ class nationalCataloniaDayTest extends CataloniaBaseTestCase implements HolidayT
      * Tests the holiday defined in this test on or after establishment.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testHolidayOnAfterEstablishment(): void
     {
@@ -56,7 +54,7 @@ class nationalCataloniaDayTest extends CataloniaBaseTestCase implements HolidayT
     /**
      * Tests the holiday defined in this test before establishment.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -70,7 +68,7 @@ class nationalCataloniaDayTest extends CataloniaBaseTestCase implements HolidayT
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -88,7 +86,7 @@ class nationalCataloniaDayTest extends CataloniaBaseTestCase implements HolidayT
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

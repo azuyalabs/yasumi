@@ -30,6 +30,8 @@ class TasmaniaTest extends TasmaniaBaseTestCase implements ProviderTestCase
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +40,6 @@ class TasmaniaTest extends TasmaniaBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all official holidays in Tasmania (Australia) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -59,6 +59,7 @@ class TasmaniaTest extends TasmaniaBaseTestCase implements ProviderTestCase
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

@@ -17,7 +17,6 @@ namespace Yasumi\tests\Bosnia;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,7 +39,6 @@ class StatehoodDayTest extends BosniaBaseTestCase implements HolidayTestCase
      * Tests Statehood Day on or after 1943.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testStatehoodDayOnAfter1943(): void
     {
@@ -56,7 +54,7 @@ class StatehoodDayTest extends BosniaBaseTestCase implements HolidayTestCase
     /**
      * Tests Statehood Day before 1943.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testStatehoodDayBefore1943(): void
     {
@@ -70,7 +68,7 @@ class StatehoodDayTest extends BosniaBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of Statehood Day.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -85,7 +83,7 @@ class StatehoodDayTest extends BosniaBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

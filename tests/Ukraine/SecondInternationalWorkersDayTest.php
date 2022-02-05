@@ -16,7 +16,6 @@ declare(strict_types=1);
 namespace Yasumi\tests\Ukraine;
 
 use DateTime;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 use Yasumi\Yasumi;
@@ -38,8 +37,6 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements H
      *
      * @param int      $year     the year for which International Workers' Day needs to be tested
      * @param DateTime $expected the expected date
-     *
-     * @throws ReflectionException
      */
     public function testSecondInternationalWorkersDay(int $year, DateTime $expected): void
     {
@@ -49,7 +46,7 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements H
     /**
      * Tests International Workers' Day since 2018.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testNoSecondInternationalWorkersDaySince2018(): void
     {
@@ -65,7 +62,7 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements H
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -80,7 +77,7 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements H
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

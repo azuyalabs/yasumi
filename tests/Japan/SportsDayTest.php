@@ -17,7 +17,6 @@ namespace Yasumi\tests\Japan;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -41,7 +40,6 @@ class SportsDayTest extends JapanBaseTestCase implements HolidayTestCase
      * after COVID-19.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testSportsDayIn2021(): void
     {
@@ -58,7 +56,6 @@ class SportsDayTest extends JapanBaseTestCase implements HolidayTestCase
      * Tests Health And Sports Day in 2020. Health And Sports Day in 2020 is July 24th for the Olympic Games.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testSportsDayIn2020(): void
     {
@@ -76,7 +73,6 @@ class SportsDayTest extends JapanBaseTestCase implements HolidayTestCase
      * 2000 it was changed to be the second monday of October.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testSportsDayOnAfter2000(): void
     {
@@ -94,7 +90,6 @@ class SportsDayTest extends JapanBaseTestCase implements HolidayTestCase
      * 10th. After 2000 it was changed to be the second monday of October.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testSportsDayBetween1996And2000(): void
     {
@@ -112,7 +107,6 @@ class SportsDayTest extends JapanBaseTestCase implements HolidayTestCase
      * on a Sunday).
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testSportsDayBetween1996And2000SubstitutedNextWorkingDay(): void
     {
@@ -129,7 +123,7 @@ class SportsDayTest extends JapanBaseTestCase implements HolidayTestCase
      * Tests Health And Sports Day before. Health And Sports Day was established since 1996 on October 10th. After
      * 2000 it was changed to be the second monday of October.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testSportsDayBefore1996(): void
     {
@@ -144,7 +138,7 @@ class SportsDayTest extends JapanBaseTestCase implements HolidayTestCase
      * Tests the translated name of the holiday defined in this test.
      * 1996-2019:Health And Sports Day.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -160,7 +154,7 @@ class SportsDayTest extends JapanBaseTestCase implements HolidayTestCase
      * Tests the translated name of the holiday defined in this test.
      * 2020 - :Sports Day.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslationFrom2020(): void
     {
@@ -176,7 +170,7 @@ class SportsDayTest extends JapanBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

@@ -17,7 +17,6 @@ namespace Yasumi\tests\Sweden;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,7 +39,6 @@ class NationalDayTest extends SwedenBaseTestCase implements HolidayTestCase
      * Tests the holiday defined in this test on or after establishment.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testHolidayOnAfterEstablishment(): void
     {
@@ -56,7 +54,7 @@ class NationalDayTest extends SwedenBaseTestCase implements HolidayTestCase
     /**
      * Tests the holiday defined in this test before establishment.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -70,7 +68,7 @@ class NationalDayTest extends SwedenBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test on or after establishment.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -85,7 +83,7 @@ class NationalDayTest extends SwedenBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {
@@ -100,7 +98,7 @@ class NationalDayTest extends SwedenBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test on or after establishment.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslationOnAfterNameChange(): void
     {

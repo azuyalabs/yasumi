@@ -218,7 +218,7 @@ trait YasumiBase
         self::assertInstanceOf(Holiday::class, $holiday);
         self::assertTrue($holidays->isHoliday($holiday));
 
-        if (\is_array($translations) && !empty($translations)) {
+        if (!empty($translations)) {
             foreach ($translations as $locale => $name) {
                 $locales = [$locale];
                 $parts = explode('_', $locale);
@@ -709,14 +709,14 @@ trait YasumiBase
     protected static function getMaxTimestamp($max = 'now')
     {
         if (is_numeric($max)) {
-            return (int) $max;
+            $ts = (int) $max;
+        } elseif ($max instanceof \DateTime) {
+            $ts = $max->getTimestamp();
+        } else {
+            $ts = strtotime(empty($max) ? 'now' : $max);
         }
 
-        if ($max instanceof \DateTime) {
-            return $max->getTimestamp();
-        }
-
-        return strtotime(empty($max) ? 'now' : $max);
+        return $ts;
     }
 
     /**

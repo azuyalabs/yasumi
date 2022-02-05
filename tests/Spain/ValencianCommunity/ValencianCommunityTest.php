@@ -30,6 +30,8 @@ class ValencianCommunityTest extends ValencianCommunityBaseTestCase implements P
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +40,6 @@ class ValencianCommunityTest extends ValencianCommunityBaseTestCase implements P
 
     /**
      * Tests if all official holidays in the Valencian Community (Spain) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -60,8 +60,6 @@ class ValencianCommunityTest extends ValencianCommunityBaseTestCase implements P
 
     /**
      * Tests if all observed holidays in the Valencian Community are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -74,8 +72,6 @@ class ValencianCommunityTest extends ValencianCommunityBaseTestCase implements P
 
     /**
      * Tests if all seasonal holidays in the Valencian Community are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -84,8 +80,6 @@ class ValencianCommunityTest extends ValencianCommunityBaseTestCase implements P
 
     /**
      * Tests if all bank holidays in the Valencian Community are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -94,8 +88,6 @@ class ValencianCommunityTest extends ValencianCommunityBaseTestCase implements P
 
     /**
      * Tests if all other holidays in the Valencian Community are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -104,6 +96,7 @@ class ValencianCommunityTest extends ValencianCommunityBaseTestCase implements P
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

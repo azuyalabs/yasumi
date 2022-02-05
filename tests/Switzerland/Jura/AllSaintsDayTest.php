@@ -16,7 +16,6 @@ namespace Yasumi\tests\Switzerland\Jura;
 
 use DateTime;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -37,8 +36,6 @@ class AllSaintsDayTest extends JuraBaseTestCase implements HolidayTestCase
      *
      * @param int      $year     the year for which All Saints' Day needs to be tested
      * @param DateTime $expected the expected date
-     *
-     * @throws ReflectionException
      */
     public function testAllSaintsDay(int $year, DateTime $expected): void
     {
@@ -48,7 +45,7 @@ class AllSaintsDayTest extends JuraBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of All Saints' Day.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -63,7 +60,7 @@ class AllSaintsDayTest extends JuraBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

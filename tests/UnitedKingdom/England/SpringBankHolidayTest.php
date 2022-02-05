@@ -17,7 +17,6 @@ namespace Yasumi\tests\UnitedKingdom\England;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,7 +39,6 @@ class SpringBankHolidayTest extends EnglandBaseTestCase implements HolidayTestCa
      * Tests the holiday defined in this test.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testHoliday(): void
     {
@@ -56,7 +54,6 @@ class SpringBankHolidayTest extends EnglandBaseTestCase implements HolidayTestCa
     /**
      * Tests the holiday exceptions in 2002 and 2012.
      *
-     * @throws ReflectionException
      * @throws Exception
      */
     public function testHolidayException(): void
@@ -79,7 +76,7 @@ class SpringBankHolidayTest extends EnglandBaseTestCase implements HolidayTestCa
     /**
      * Tests the holiday defined in this test before establishment.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -93,7 +90,7 @@ class SpringBankHolidayTest extends EnglandBaseTestCase implements HolidayTestCa
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -108,7 +105,7 @@ class SpringBankHolidayTest extends EnglandBaseTestCase implements HolidayTestCa
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

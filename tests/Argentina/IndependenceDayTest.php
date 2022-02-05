@@ -17,7 +17,6 @@ namespace Yasumi\tests\Argentina;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,7 +39,6 @@ class IndependenceDayTest extends ArgentinaBaseTestCase implements HolidayTestCa
      * Tests the holiday defined in this test.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testHoliday(): void
     {
@@ -55,8 +53,6 @@ class IndependenceDayTest extends ArgentinaBaseTestCase implements HolidayTestCa
 
     /**
      *  Tests that holiday is not present before establishment year.
-     *
-     * @throws ReflectionException
      */
     public function testNotHoliday(): void
     {
@@ -66,7 +62,7 @@ class IndependenceDayTest extends ArgentinaBaseTestCase implements HolidayTestCa
     /**
      * Tests translated name of the holiday.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -81,7 +77,7 @@ class IndependenceDayTest extends ArgentinaBaseTestCase implements HolidayTestCa
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

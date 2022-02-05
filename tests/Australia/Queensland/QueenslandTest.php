@@ -26,10 +26,12 @@ class QueenslandTest extends QueenslandBaseTestCase implements ProviderTestCase
     /**
      * @var int year random year number used for all tests in this Test Case
      */
-    protected $year;
+    protected int $year;
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +40,6 @@ class QueenslandTest extends QueenslandBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all official holidays in Queensland (Australia) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -58,6 +58,7 @@ class QueenslandTest extends QueenslandBaseTestCase implements ProviderTestCase
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

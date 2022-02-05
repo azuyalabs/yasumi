@@ -17,7 +17,6 @@ namespace Yasumi\tests\USA;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -41,7 +40,6 @@ class ColumbusDayTest extends USABaseTestCase implements HolidayTestCase
      * the second Monday in October since 1970.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testColumbusDayOnAfter1970(): void
     {
@@ -59,7 +57,6 @@ class ColumbusDayTest extends USABaseTestCase implements HolidayTestCase
      * fixed to the second Monday in October since 1970.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testColumbusBetween1937And1969(): void
     {
@@ -76,7 +73,7 @@ class ColumbusDayTest extends USABaseTestCase implements HolidayTestCase
      * Tests Columbus Day before 1937. Columbus Day was established in 1937 on October 12th, but has been fixed to
      * the second Monday in October since 1970.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testColumbusDayBefore1937(): void
     {
@@ -90,7 +87,7 @@ class ColumbusDayTest extends USABaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -105,7 +102,7 @@ class ColumbusDayTest extends USABaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

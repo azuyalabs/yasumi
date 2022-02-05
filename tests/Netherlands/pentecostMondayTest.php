@@ -17,7 +17,6 @@ namespace Yasumi\tests\Netherlands;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -35,7 +34,6 @@ class pentecostMondayTest extends NetherlandsBaseTestCase implements HolidayTest
      * Tests Pentecost Monday.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testPentecostMonday(): void
     {
@@ -51,7 +49,7 @@ class pentecostMondayTest extends NetherlandsBaseTestCase implements HolidayTest
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -66,7 +64,7 @@ class pentecostMondayTest extends NetherlandsBaseTestCase implements HolidayTest
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

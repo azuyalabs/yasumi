@@ -30,7 +30,7 @@ class LatviaTest extends LatviaBaseTestCase implements ProviderTestCase
     /**
      * Tests if all official holidays in Latvia are defined by the provider class.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testOfficialHolidays(): void
     {
@@ -64,7 +64,7 @@ class LatviaTest extends LatviaBaseTestCase implements ProviderTestCase
     /**
      * Tests if all observed holidays in Latvia are defined by the provider class.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testObservedHolidays(): void
     {
@@ -74,7 +74,7 @@ class LatviaTest extends LatviaBaseTestCase implements ProviderTestCase
     /**
      * Tests if all seasonal holidays in Latvia are defined by the provider class.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSeasonalHolidays(): void
     {
@@ -84,7 +84,7 @@ class LatviaTest extends LatviaBaseTestCase implements ProviderTestCase
     /**
      * Tests if all bank holidays in Latvia are defined by the provider class.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testBankHolidays(): void
     {
@@ -94,7 +94,7 @@ class LatviaTest extends LatviaBaseTestCase implements ProviderTestCase
     /**
      * Tests if all other holidays in Latvia are defined by the provider class.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testOtherHolidays(): void
     {
@@ -103,6 +103,7 @@ class LatviaTest extends LatviaBaseTestCase implements ProviderTestCase
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

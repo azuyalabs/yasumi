@@ -18,7 +18,6 @@ namespace Yasumi\tests\Latvia;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Latvia;
 use Yasumi\tests\HolidayTestCase;
@@ -38,7 +37,7 @@ class RestorationOfIndependenceDayTest extends LatviaBaseTestCase implements Hol
     /**
      * Test if holiday is not defined before restoration.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testNotHoliday(): void
     {
@@ -73,7 +72,6 @@ class RestorationOfIndependenceDayTest extends LatviaBaseTestCase implements Hol
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
-     * @throws ReflectionException
      * @throws Exception
      */
     public function testHoliday(int $year, string $expected): void
@@ -89,7 +87,7 @@ class RestorationOfIndependenceDayTest extends LatviaBaseTestCase implements Hol
     /**
      * {@inheritdoc}
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -107,7 +105,7 @@ class RestorationOfIndependenceDayTest extends LatviaBaseTestCase implements Hol
     /**
      * {@inheritdoc}
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

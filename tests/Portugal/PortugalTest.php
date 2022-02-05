@@ -30,6 +30,8 @@ class PortugalTest extends PortugalBaseTestCase implements ProviderTestCase
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +40,6 @@ class PortugalTest extends PortugalBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all official holidays in Portugal are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -66,8 +66,6 @@ class PortugalTest extends PortugalBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all observed holidays in Portugal are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -76,8 +74,6 @@ class PortugalTest extends PortugalBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all seasonal holidays in Portugal are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -86,8 +82,6 @@ class PortugalTest extends PortugalBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all bank holidays in Portugal are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -96,8 +90,6 @@ class PortugalTest extends PortugalBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all other holidays in PortugalPortugal are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -112,6 +104,7 @@ class PortugalTest extends PortugalBaseTestCase implements ProviderTestCase
 
     /**
      * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

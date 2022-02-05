@@ -17,7 +17,6 @@ namespace Yasumi\tests\Slovakia;
 
 use DateTime;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,8 +39,6 @@ class SaintsCyrilAndMethodiusDayTest extends SlovakiaBaseTestCase implements Hol
      *
      * @param int      $year     the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
-     *
-     * @throws ReflectionException
      */
     public function testHoliday(int $year, DateTime $expected): void
     {
@@ -63,7 +60,7 @@ class SaintsCyrilAndMethodiusDayTest extends SlovakiaBaseTestCase implements Hol
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -78,7 +75,7 @@ class SaintsCyrilAndMethodiusDayTest extends SlovakiaBaseTestCase implements Hol
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

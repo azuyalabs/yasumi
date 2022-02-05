@@ -17,7 +17,6 @@ namespace Yasumi\tests\Japan;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,7 +39,6 @@ class ChildrensDayTest extends JapanBaseTestCase implements HolidayTestCase
      * Tests Children's Day after 1948. Children's Day was established after 1948.
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testChildrensDayOnAfter1948(): void
     {
@@ -57,7 +55,6 @@ class ChildrensDayTest extends JapanBaseTestCase implements HolidayTestCase
      * Tests Children's Day after 1948 substituted next working day (when Children's Day falls on a Sunday).
      *
      * @throws Exception
-     * @throws ReflectionException
      */
     public function testChildrensDayOnAfter1948SubstitutedNextWorkingDay(): void
     {
@@ -73,7 +70,7 @@ class ChildrensDayTest extends JapanBaseTestCase implements HolidayTestCase
     /**
      * Tests Children's Day before 1948. Children's Day was established after 1948.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testChildrensDayBefore1948(): void
     {
@@ -87,7 +84,7 @@ class ChildrensDayTest extends JapanBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -102,7 +99,7 @@ class ChildrensDayTest extends JapanBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

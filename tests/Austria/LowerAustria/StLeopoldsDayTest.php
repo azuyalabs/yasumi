@@ -17,7 +17,6 @@ namespace Yasumi\tests\Austria\LowerAustria;
 use DateTime;
 use DateTimeZone;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -43,8 +42,6 @@ class StLeopoldsDayTest extends LowerAustriaBaseTestCase implements HolidayTestC
      *
      * @param int      $year     the year for which Saint Leopold's Day needs to be tested
      * @param DateTime $expected the expected date
-     *
-     * @throws ReflectionException
      */
     public function testStLeopoldsDay(int $year, DateTime $expected): void
     {
@@ -73,7 +70,7 @@ class StLeopoldsDayTest extends LowerAustriaBaseTestCase implements HolidayTestC
     /**
      * Tests the holiday defined in this test before establishment.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -87,7 +84,7 @@ class StLeopoldsDayTest extends LowerAustriaBaseTestCase implements HolidayTestC
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -102,7 +99,7 @@ class StLeopoldsDayTest extends LowerAustriaBaseTestCase implements HolidayTestC
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {

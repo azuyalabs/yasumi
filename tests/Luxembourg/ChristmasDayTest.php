@@ -16,7 +16,6 @@ namespace Yasumi\tests\Luxembourg;
 
 use DateTime;
 use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -37,8 +36,6 @@ class ChristmasDayTest extends LuxembourgBaseTestCase implements HolidayTestCase
      *
      * @param int      $year     the year for which Christmas Day needs to be tested
      * @param DateTime $expected the expected date
-     *
-     * @throws ReflectionException
      */
     public function testChristmasDay(int $year, DateTime $expected): void
     {
@@ -60,7 +57,7 @@ class ChristmasDayTest extends LuxembourgBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of Christmas Day.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testTranslation(): void
     {
@@ -75,7 +72,7 @@ class ChristmasDayTest extends LuxembourgBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws Exception
      */
     public function testHolidayType(): void
     {
