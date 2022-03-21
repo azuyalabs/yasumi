@@ -12,6 +12,7 @@ to [Semantic Versioning](https://semver.org).
 ### Changed
 
 - Included the unit tests directory for checking by PHPStan.
+- Belgium only observes Easter & Pentecost, they're not public holidays. [\#279](https://github.com/azuyalabs/yasumi/pull/279)
 
 ### Fixed
 
