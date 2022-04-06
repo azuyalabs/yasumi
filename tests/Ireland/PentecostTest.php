@@ -62,7 +62,7 @@ class PentecostTest extends IrelandBaseTestCase implements HolidayTestCase
     {
         $data = [];
 
-        //for ($y = 0; $y < self::TEST_ITERATIONS; $y++) {
+        // for ($y = 0; $y < self::TEST_ITERATIONS; $y++) {
         for ($y = 0; $y < 2; ++$y) {
             $year = $this->generateRandomYear();
             $date = $this->calculateEaster($year, self::TIMEZONE);

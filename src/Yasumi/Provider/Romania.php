@@ -68,10 +68,10 @@ class Romania extends AbstractProvider
         }
 
         // Add other holidays
-        $this->calculateDayAfterNewYearsDay();  //2nd of January
-        $this->calculateUnitedPrincipalitiesDay();  //since 21.12.2014 (Law 171/2014), celebrated on 24th of January
-        $this->calculateStAndrewDay();  //since 24.07.2012 (Law 147/2012), celebrated on 30th of November
-        $this->calculateNationalDay();  //after 1990, celebrated on December 1st
+        $this->calculateDayAfterNewYearsDay();  // 2nd of January
+        $this->calculateUnitedPrincipalitiesDay();  // since 21.12.2014 (Law 171/2014), celebrated on 24th of January
+        $this->calculateStAndrewDay();  // since 24.07.2012 (Law 147/2012), celebrated on 30th of November
+        $this->calculateNationalDay();  // after 1990, celebrated on December 1st
         $this->calculateConstantinBrancusiDay();
         $this->calculateChildrensDay(); // Since 18.11.2016 (Law 220/2016), Celebrated on 1st of June
     }
@@ -185,7 +185,7 @@ class Romania extends AbstractProvider
     {
         $nationalDay = null;
 
-        //@link https://en.wikipedia.org/wiki/Great_Union_Day
+        // @link https://en.wikipedia.org/wiki/Great_Union_Day
         if ($this->year >= 1990) {
             $nationalDay = "$this->year-12-01";
         }
