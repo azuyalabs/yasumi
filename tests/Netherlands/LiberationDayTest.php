@@ -81,7 +81,7 @@ class LiberationDayTest extends NetherlandsBaseTestCase implements HolidayTestCa
     }
 
     /**
-     * Tests type of the holiday defined in this test.
+     * Tests Liberation Day official holiday type every 5 years, observance type on other years.
      *
      * @throws Exception
      */
@@ -90,7 +90,19 @@ class LiberationDayTest extends NetherlandsBaseTestCase implements HolidayTestCa
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            $this->generateRandomYear(2001, 2004),
+            Holiday::TYPE_OBSERVANCE
+        );
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            2000,
+            Holiday::TYPE_OFFICIAL
+        );
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            2005,
             Holiday::TYPE_OFFICIAL
         );
     }
