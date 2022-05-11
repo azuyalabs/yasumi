@@ -21,6 +21,7 @@ to [Semantic Versioning](https://semver.org).
   type of the Yasumi factory methods is now `ProviderInterface`, those missing methods generated errors especially by
   statistic analyzers.
 - Included the data type for test methods that return an array.
+- Liberation day for the Netherlands is only an official holiday every 5 years [\#280](https://github.com/azuyalabs/yasumi/pull/280)
 
 ### Deprecated
 
