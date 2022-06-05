@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi;
 
-/**
- * Interface TranslationsInterface.
- */
 interface TranslationsInterface
 {
     /**
