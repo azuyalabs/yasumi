@@ -15,13 +15,16 @@ to [Semantic Versioning](https://semver.org).
 
 ### Fixed
 
+- Pentecost Monday in France was only until 2004 recognized as an official holiday. Since 2004 it is considered a
+  special holiday, a so called 'working holiday'. Hence, it is therefore classified as an observed holiday in Yasumi
+  from 2004 and forward. [\#281](https://github.com/azuyalabs/yasumi/issues/281).
 - The test for Remembrance Day (Argentina) in that Remembrance Day was considered for all years: it is only celebrated
   since 2006.
 - Created the interface methods of the `ProviderInterface` that the abstract provider class implements. Since the return
   type of the Yasumi factory methods is now `ProviderInterface`, those missing methods generated errors especially by
-  statistic analyzers.
+  statistic analysers.
 - Included the data type for test methods that return an array.
-- Liberation day for the Netherlands is only an official holiday every 5 years [\#280](https://github.com/azuyalabs/yasumi/pull/280)
+- Liberation day for the Netherlands is only an official holiday every 5 years [\#280](https://github.com/azuyalabs/yasumi/pull/280).
 
 ### Deprecated
 

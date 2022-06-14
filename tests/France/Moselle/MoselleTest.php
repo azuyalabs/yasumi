@@ -16,6 +16,7 @@ namespace Yasumi\tests\France\Moselle;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\Provider\France;
 use Yasumi\tests\ProviderTestCase;
 
 /**
@@ -43,21 +44,25 @@ class MoselleTest extends MoselleBaseTestCase implements ProviderTestCase
      */
     public function testOfficialHolidays(): void
     {
-        $this->assertDefinedHolidays([
-            'newYearsDay',
-            'victoryInEuropeDay',
-            'goodFriday',
-            'easterMonday',
-            'internationalWorkersDay',
-            'ascensionDay',
-            'pentecostMonday',
-            'assumptionOfMary',
-            'allSaintsDay',
-            'armisticeDay',
-            'christmasDay',
-            'stStephensDay',
-            'bastilleDay',
-        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
+        $holidays =
+            [
+                'newYearsDay',
+                'victoryInEuropeDay',
+                'easterMonday',
+                'internationalWorkersDay',
+                'ascensionDay',
+                'assumptionOfMary',
+                'allSaintsDay',
+                'armisticeDay',
+                'christmasDay',
+                'bastilleDay',
+            ];
+
+        if ($this->year < France::EST_YEAR_DAY_OF_SOLIDARITY_WITH_ELDERLY) {
+            $holidays[] = 'pentecostMonday';
+        }
+
+        $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
@@ -65,7 +70,13 @@ class MoselleTest extends MoselleBaseTestCase implements ProviderTestCase
      */
     public function testObservedHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+        $holidays = [];
+
+        if ($this->year >= France::EST_YEAR_DAY_OF_SOLIDARITY_WITH_ELDERLY) {
+            $holidays[] = 'pentecostMonday';
+        }
+
+        $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**

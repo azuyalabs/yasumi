@@ -71,6 +71,7 @@ class FranceTest extends FranceBaseTestCase implements ProviderTestCase
     public function testObservedHolidays(): void
     {
         $holidays = [];
+
         if ($this->year >= France::EST_YEAR_DAY_OF_SOLIDARITY_WITH_ELDERLY) {
             $holidays[] = 'pentecostMonday';
         }
