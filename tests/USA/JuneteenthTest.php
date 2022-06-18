@@ -59,9 +59,9 @@ class JuneteenthTest extends USABaseTestCase implements HolidayTestCase
     public function testJuneteenthOnAfter2021SubstitutedMonday(): void
     {
         $year = 2022;
-        $this->assertHoliday(
+        $this->assertSubstituteHoliday(
             self::REGION,
-            'substituteHoliday:juneteenth',
+            self::HOLIDAY,
             $year,
             new DateTime("$year-6-20", new DateTimeZone(self::TIMEZONE))
         );
@@ -75,9 +75,9 @@ class JuneteenthTest extends USABaseTestCase implements HolidayTestCase
     public function testJuneteenthOnAfter2021SubstitutedFriday(): void
     {
         $year = 2021;
-        $this->assertHoliday(
+        $this->assertSubstituteHoliday(
             self::REGION,
-            'substituteHoliday:juneteenth',
+            self::HOLIDAY,
             $year,
             new DateTime("$year-6-18", new DateTimeZone(self::TIMEZONE))
         );
