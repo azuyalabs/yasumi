@@ -101,7 +101,7 @@ class CyprusTest extends CyprusBaseTestCase
     public function testBankHolidays(): void
     {
         $this->assertDefinedHolidays([
-            'easterTuesday'
+            'easterTuesday',
         ], self::REGION, $this->year, Holiday::TYPE_BANK);
     }
 
