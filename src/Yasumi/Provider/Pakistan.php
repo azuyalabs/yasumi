@@ -38,7 +38,7 @@ class Pakistan extends AbstractProvider
      */
     public function initialize(): void
     {
-        $this->timezone = '	Asia/Karachi';
+        $this->timezone = 'Asia/Karachi';
 
         // Add common holidays
         $this->addKashmirSolidarityDay();
