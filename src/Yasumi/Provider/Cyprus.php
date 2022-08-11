@@ -192,7 +192,7 @@ class Cyprus extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateGreekCypriotNationalDay()
+    private function calculateGreekCypriotNationalDay(): void
     {
         if ($this->year < 1956) {
             return;
@@ -221,7 +221,7 @@ class Cyprus extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateGreenMonday()
+    private function calculateGreenMonday(): void
     {
         $date = $this->ashWednesday($this->year, $this->timezone, $this->locale)->sub(new DateInterval('P2D'));
 
@@ -248,7 +248,7 @@ class Cyprus extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateDormitionOfTheTheotokos()
+    private function calculateDormitionOfTheTheotokos(): void
     {
         $date = new DateTime($this->year.'-08-15', DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $this->addHoliday(new Holiday(
@@ -274,7 +274,7 @@ class Cyprus extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateCypriotIndependenceDay()
+    private function calculateCypriotIndependenceDay(): void
     {
         if ($this->year < 1960) {
             return;
@@ -307,7 +307,7 @@ class Cyprus extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateGreekNationalDay()
+    private function calculateGreekNationalDay(): void
     {
         if ($this->year < 1940) {
             return;
