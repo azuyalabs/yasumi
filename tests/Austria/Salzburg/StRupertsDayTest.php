@@ -37,7 +37,7 @@ class StRupertsDayTest extends SalzburgBaseTestCase implements HolidayTestCase
      * @param int      $year     the year for which Saint Rupert's Day needs to be tested
      * @param DateTime $expected the expected date
      */
-    public function testStRupertsDay(int $year, DateTime $expected): void
+    public function testStRupertsDay(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

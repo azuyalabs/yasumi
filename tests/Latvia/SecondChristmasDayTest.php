@@ -15,7 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Latvia;
 
-use DateTime;
 use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
@@ -45,7 +44,7 @@ class SecondChristmasDayTest extends LatviaBaseTestCase implements HolidayTestCa
     /**
      * @dataProvider holidayDataProvider
      */
-    public function testHoliday(int $year, DateTime $expected): void
+    public function testHoliday(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

@@ -37,7 +37,7 @@ class StFloriansDayTest extends UpperAustriaBaseTestCase implements HolidayTestC
      * @param int      $year     the year for which Saint Florian's Day needs to be tested
      * @param DateTime $expected the expected date
      */
-    public function testStFloriansDay(int $year, DateTime $expected): void
+    public function testStFloriansDay(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

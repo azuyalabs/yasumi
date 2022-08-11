@@ -37,7 +37,7 @@ class StStephensDayTest extends CroatiaBaseTestCase implements HolidayTestCase
      * @param int      $year     the year for which St. Stephen's Day needs to be tested
      * @param DateTime $expected the expected date
      */
-    public function teststStephensDay(int $year, DateTime $expected): void
+    public function teststStephensDay(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

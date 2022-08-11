@@ -55,18 +55,18 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements HolidayTestC
     /**
      * Asserts that the expected date is indeed a holiday for that given year and name.
      *
-     * @param string        $provider             the holiday provider (i.e. country/state) for which the holiday need to be tested
-     * @param string        $key                  string the key of the holiday to be checked against
-     * @param int           $year                 holiday calendar year
-     * @param DateTime      $expectedOfficial     the official date to be checked against
-     * @param DateTime|null $expectedSubstitution the substituted date to be checked against
+     * @param string             $provider             the holiday provider (i.e. country/state) for which the holiday need to be tested
+     * @param string             $key                  string the key of the holiday to be checked against
+     * @param int                $year                 holiday calendar year
+     * @param \DateTimeInterface $expectedOfficial     the official date to be checked against
+     * @param \DateTimeImmutable $expectedSubstitution the substituted date to be checked against
      */
     public function assertHolidayWithSubstitution(
         string $provider,
         string $key,
         int $year,
-        DateTime $expectedOfficial,
-        DateTime $expectedSubstitution = null
+        \DateTimeInterface $expectedOfficial,
+        \DateTimeInterface $expectedSubstitution = null
     ): void {
         $holidays = Yasumi::create($provider, $year);
 

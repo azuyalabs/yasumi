@@ -37,7 +37,7 @@ class ImmaculateConceptionTest extends ItalyBaseTestCase implements HolidayTestC
      * @param int      $year     the year for which the day of Immaculate Conception needs to be tested
      * @param DateTime $expected the expected date
      */
-    public function testImmaculateConception(int $year, DateTime $expected): void
+    public function testImmaculateConception(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

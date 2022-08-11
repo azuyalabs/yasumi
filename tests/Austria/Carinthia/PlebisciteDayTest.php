@@ -43,7 +43,7 @@ class PlebisciteDayTest extends CarinthiaBaseTestCase implements HolidayTestCase
      * @param int      $year     the year for which Plebiscite Day needs to be tested
      * @param DateTime $expected the expected date
      */
-    public function testPlebisciteDay(int $year, DateTime $expected): void
+    public function testPlebisciteDay(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

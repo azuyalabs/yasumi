@@ -106,7 +106,7 @@ trait YasumiBase
         string $provider,
         string $key,
         int $year,
-        DateTime $expected
+        DateTimeInterface $expected
     ): void {
         $holidays = Yasumi::create($provider, $year);
         $holiday = $holidays->getHoliday($key);
@@ -134,7 +134,7 @@ trait YasumiBase
         string $provider,
         string $key,
         int $year,
-        DateTime $expected
+        DateTimeInterface $expected
     ): void {
         $holidays = Yasumi::create($provider, $year);
         $holiday = $holidays->getHoliday('substituteHoliday:'.$key);
@@ -596,7 +596,7 @@ trait YasumiBase
      *
      * @example DateTime('1999-02-02 11:42:52')
      */
-    public static function dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null): DateTime
+    public static function dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null): DateTimeInterface
     {
         $startTimestamp = $startDate instanceof \DateTime ? $startDate->getTimestamp() : strtotime($startDate);
 
@@ -722,7 +722,7 @@ trait YasumiBase
     /**
      * Internal method to set the time zone on a DateTime.
      */
-    private static function setTimezone(DateTime $dt, ?string $timezone): DateTime
+    private static function setTimezone(DateTimeInterface $dt, ?string $timezone): DateTimeInterface
     {
         return $dt->setTimezone(new \DateTimeZone(static::resolveTimezone($timezone)));
     }
