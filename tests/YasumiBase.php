@@ -387,7 +387,7 @@ trait YasumiBase
     ): array {
         $range ??= 1000;
 
-        return $this->generateRandomModifiedEasterDates(static function (DateTime $date) {
+        return $this->generateRandomModifiedEasterDates(static function (DateTime $date): void {
             $date->add(new DateInterval('P1D'));
         }, $timezone ?? 'UTC', $iterations ?? 10, $range);
     }
@@ -442,7 +442,7 @@ trait YasumiBase
     ): array {
         $range ??= 1000;
 
-        return $this->generateRandomModifiedEasterDates(static function (DateTime $date) {
+        return $this->generateRandomModifiedEasterDates(static function (DateTime $date): void {
             $date->sub(new DateInterval('P2D'));
         }, $timezone ?? 'UTC', $iterations ?? 10, $range);
     }
@@ -465,7 +465,7 @@ trait YasumiBase
     ): array {
         $range ??= 1000;
 
-        return $this->generateRandomModifiedEasterDates(static function (DateTime $date) {
+        return $this->generateRandomModifiedEasterDates(static function (DateTime $date): void {
             $date->add(new DateInterval('P49D'));
         }, $timezone ?? 'UTC', $iterations ?? 10, $range);
     }
@@ -491,7 +491,7 @@ trait YasumiBase
         int $iterations = null,
         int $range = null
     ): array {
-        return $this->generateRandomDatesWithModifier($month, $day, function ($range, DateTime $date) {
+        return $this->generateRandomDatesWithModifier($month, $day, function ($range, DateTime $date): void {
             if ($this->isWeekend($date)) {
                 $date->modify('next monday');
             }
