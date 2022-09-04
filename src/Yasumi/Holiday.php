@@ -229,7 +229,7 @@ class Holiday extends DateTime implements JsonSerializable
      *
      * @param array<string>|null $locales Array of locales, or null if the display locale should be used
      *
-     * @return array<string> an array of locales to check for translations
+     * @return array<int, string> an array of locales to check for translations
      *
      * @see Holiday::DEFAULT_LOCALE
      * @see Holiday::LOCALE_KEY
@@ -247,6 +247,10 @@ class Holiday extends DateTime implements JsonSerializable
         // Expand e.g. ['de_DE', 'en_GB'] into  ['de_DE', 'de', 'en_GB', 'en'].
         foreach (array_reverse($locales) as $locale) {
             $parent = strtok($locale, '_');
+            if (!$parent) {
+                continue;
+            }
+
             while ($child = strtok('_')) {
                 $expanded[] = $parent;
                 $parent .= '_'.$child;
