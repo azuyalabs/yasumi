@@ -218,25 +218,23 @@ trait YasumiBase
         self::assertInstanceOf(Holiday::class, $holiday);
         self::assertTrue($holidays->isHoliday($holiday));
 
-        if (!empty($translations)) {
-            foreach ($translations as $locale => $name) {
-                $locales = [$locale];
-                $parts = explode('_', $locale);
-                while (array_pop($parts) && $parts) {
-                    $locales[] = implode('_', $parts);
-                }
-
-                $translation = null;
-                foreach ($locales as $l) {
-                    if (isset($holiday->translations[$l])) {
-                        $translation = $holiday->translations[$l];
-                        break;
-                    }
-                }
-
-                self::assertTrue(isset($translation));
-                self::assertEquals($name, $translation);
+        foreach ($translations as $locale => $name) {
+            $locales = [$locale];
+            $parts = explode('_', $locale);
+            while (array_pop($parts) && $parts) {
+                $locales[] = implode('_', $parts);
             }
+
+            $translation = null;
+            foreach ($locales as $l) {
+                if (isset($holiday->translations[$l])) {
+                    $translation = $holiday->translations[$l];
+                    break;
+                }
+            }
+
+            self::assertTrue(isset($translation));
+            self::assertEquals($name, $translation);
         }
     }
 
@@ -573,7 +571,7 @@ trait YasumiBase
      *
      * @example 79907610
      */
-    public static function numberBetween(int $int1 = 0, int $int2 = 2147483647): int
+    public static function numberBetween(int $int1 = 0, int $int2 = 2_147_483_647): int
     {
         $min = $int1 < $int2 ? $int1 : $int2;
         $max = $int1 < $int2 ? $int2 : $int1;
