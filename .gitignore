@@ -1,9 +1,9 @@
 .DS_Store
 .idea/
-vendor
-composer.lock
 .php-cs-fixer.cache
 .php_cs.cache
-bin/_*
 .phpunit.result.cache
+bin/_*
+composer.lock
 var
+vendor
