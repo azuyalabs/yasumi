@@ -510,14 +510,14 @@ trait CommonHolidays
     ): ?\DateTimeImmutable {
         $zone = DateTimeZoneFactory::getDateTimeZone($timezone);
 
-        $tsBegin = mktime(0, 0, 0, 1, 1, $year);
-        if (!$tsBegin) {
-            throw new \RuntimeException('unable to create a beginning timestamp');
+        $tsBegin = strtotime(sprintf('%u-01-01 00:00:00', $year));
+        if (false === $tsBegin) {
+            throw new \RuntimeException(sprintf('unable to create a beginning timestamp for the year `%u`', $year));
         }
 
-        $tsEnd = mktime(23, 59, 59, 12, 31, $year);
-        if (!$tsEnd) {
-            throw new \RuntimeException('unable to create an ending timestamp');
+        $tsEnd = strtotime(sprintf('%u-12-31 23:59:59', $year));
+        if (false === $tsEnd) {
+            throw new \RuntimeException(sprintf('unable to create an ending timestamp for the year `%u`', $year));
         }
 
         $transitions = $zone->getTransitions($tsBegin, $tsEnd);
