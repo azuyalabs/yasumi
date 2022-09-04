@@ -129,9 +129,9 @@ class Greece extends AbstractProvider
     /**
      * Orthodox Easter.
      *
-     * @throws \Exception
-     *
      * @return \DateTime|\DateTimeImmutable
+     *
+     * @throws \Exception
      */
     private function calculateEaster(int $year, string $timezone): \DateTimeInterface
     {

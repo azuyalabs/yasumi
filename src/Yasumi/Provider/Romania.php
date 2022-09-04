@@ -85,9 +85,9 @@ class Romania extends AbstractProvider
     }
 
     /**
-     * @throws \Exception
-     *
      * @return \DateTime|\DateTimeImmutable
+     *
+     * @throws \Exception
      */
     protected function calculateEaster(int $year, string $timezone): \DateTimeInterface
     {
