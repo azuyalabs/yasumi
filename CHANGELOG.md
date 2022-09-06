@@ -9,6 +9,9 @@ to [Semantic Versioning](https://semver.org).
 
 ### Added
 
+- Added all examples as shown on the documentation site as a convenience to developers who like to have all
+  information in a single place.
+
 ### Changed
 
 - Included the unit tests directory for checking by PHPStan.
