@@ -44,10 +44,10 @@ class MayRevolutionTest extends ArgentinaBaseTestCase implements HolidayTestCase
     {
         $year = self::ESTABLISHMENT_YEAR;
         $this->assertHoliday(
-          self::REGION,
-          self::HOLIDAY,
-          $year,
-          new DateTime("$year-05-25", new DateTimeZone(self::TIMEZONE))
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-05-25", new DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -67,10 +67,10 @@ class MayRevolutionTest extends ArgentinaBaseTestCase implements HolidayTestCase
     public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
-          self::REGION,
-          self::HOLIDAY,
-          $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-          [self::LOCALE => 'Día de la Revolución de Mayo']
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => 'Día de la Revolución de Mayo']
         );
     }
 

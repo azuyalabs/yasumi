@@ -106,7 +106,7 @@ trait YasumiBase
         string $provider,
         string $key,
         int $year,
-        DateTime $expected
+        DateTimeInterface $expected
     ): void {
         $holidays = Yasumi::create($provider, $year);
         $holiday = $holidays->getHoliday($key);
@@ -134,7 +134,7 @@ trait YasumiBase
         string $provider,
         string $key,
         int $year,
-        DateTime $expected
+        DateTimeInterface $expected
     ): void {
         $holidays = Yasumi::create($provider, $year);
         $holiday = $holidays->getHoliday('substituteHoliday:'.$key);
@@ -218,25 +218,23 @@ trait YasumiBase
         self::assertInstanceOf(Holiday::class, $holiday);
         self::assertTrue($holidays->isHoliday($holiday));
 
-        if (!empty($translations)) {
-            foreach ($translations as $locale => $name) {
-                $locales = [$locale];
-                $parts = explode('_', $locale);
-                while (array_pop($parts) && $parts) {
-                    $locales[] = implode('_', $parts);
-                }
-
-                $translation = null;
-                foreach ($locales as $l) {
-                    if (isset($holiday->translations[$l])) {
-                        $translation = $holiday->translations[$l];
-                        break;
-                    }
-                }
-
-                self::assertTrue(isset($translation));
-                self::assertEquals($name, $translation);
+        foreach ($translations as $locale => $name) {
+            $locales = [$locale];
+            $parts = explode('_', $locale);
+            while (array_pop($parts) && $parts) {
+                $locales[] = implode('_', $parts);
             }
+
+            $translation = null;
+            foreach ($locales as $l) {
+                if (isset($holiday->translations[$l])) {
+                    $translation = $holiday->translations[$l];
+                    break;
+                }
+            }
+
+            self::assertTrue(isset($translation));
+            self::assertEquals($name, $translation);
         }
     }
 
@@ -387,7 +385,7 @@ trait YasumiBase
     ): array {
         $range ??= 1000;
 
-        return $this->generateRandomModifiedEasterDates(static function (DateTime $date) {
+        return $this->generateRandomModifiedEasterDates(static function (DateTime $date): void {
             $date->add(new DateInterval('P1D'));
         }, $timezone ?? 'UTC', $iterations ?? 10, $range);
     }
@@ -442,7 +440,7 @@ trait YasumiBase
     ): array {
         $range ??= 1000;
 
-        return $this->generateRandomModifiedEasterDates(static function (DateTime $date) {
+        return $this->generateRandomModifiedEasterDates(static function (DateTime $date): void {
             $date->sub(new DateInterval('P2D'));
         }, $timezone ?? 'UTC', $iterations ?? 10, $range);
     }
@@ -465,7 +463,7 @@ trait YasumiBase
     ): array {
         $range ??= 1000;
 
-        return $this->generateRandomModifiedEasterDates(static function (DateTime $date) {
+        return $this->generateRandomModifiedEasterDates(static function (DateTime $date): void {
             $date->add(new DateInterval('P49D'));
         }, $timezone ?? 'UTC', $iterations ?? 10, $range);
     }
@@ -491,7 +489,7 @@ trait YasumiBase
         int $iterations = null,
         int $range = null
     ): array {
-        return $this->generateRandomDatesWithModifier($month, $day, function ($range, DateTime $date) {
+        return $this->generateRandomDatesWithModifier($month, $day, function ($range, DateTime $date): void {
             if ($this->isWeekend($date)) {
                 $date->modify('next monday');
             }
@@ -573,7 +571,7 @@ trait YasumiBase
      *
      * @example 79907610
      */
-    public static function numberBetween(int $int1 = 0, int $int2 = 2147483647): int
+    public static function numberBetween(int $int1 = 0, int $int2 = 2_147_483_647): int
     {
         $min = $int1 < $int2 ? $int1 : $int2;
         $max = $int1 < $int2 ? $int2 : $int1;
@@ -596,7 +594,7 @@ trait YasumiBase
      *
      * @example DateTime('1999-02-02 11:42:52')
      */
-    public static function dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null): DateTime
+    public static function dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null): DateTimeInterface
     {
         $startTimestamp = $startDate instanceof \DateTime ? $startDate->getTimestamp() : strtotime($startDate);
 
@@ -722,7 +720,7 @@ trait YasumiBase
     /**
      * Internal method to set the time zone on a DateTime.
      */
-    private static function setTimezone(DateTime $dt, ?string $timezone): DateTime
+    private static function setTimezone(DateTimeInterface $dt, ?string $timezone): DateTimeInterface
     {
         return $dt->setTimezone(new \DateTimeZone(static::resolveTimezone($timezone)));
     }

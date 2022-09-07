@@ -37,7 +37,7 @@ class stMartinsDayTest extends BurgenlandBaseTestCase implements HolidayTestCase
      * @param int      $year     the year for which Saint Martins Day needs to be tested
      * @param DateTime $expected the expected date
      */
-    public function teststMartinsDay(int $year, DateTime $expected): void
+    public function teststMartinsDay(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

@@ -44,10 +44,10 @@ class NationalSovereigntyDayTest extends ArgentinaBaseTestCase implements Holida
     {
         $year = self::ESTABLISHMENT_YEAR;
         $this->assertHoliday(
-          self::REGION,
-          self::HOLIDAY,
-          $year,
-          new DateTime("$year-11-20", new DateTimeZone(self::TIMEZONE))
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-11-20", new DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -67,10 +67,10 @@ class NationalSovereigntyDayTest extends ArgentinaBaseTestCase implements Holida
     public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
-          self::REGION,
-          self::HOLIDAY,
-          $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-          [self::LOCALE => 'Día de la Soberanía Nacional']
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => 'Día de la Soberanía Nacional']
         );
     }
 

@@ -37,7 +37,7 @@ class EpiphanyTest extends SchwyzBaseTestCase implements HolidayTestCase
      * @param int      $year     the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
      */
-    public function testHoliday(int $year, DateTime $expected): void
+    public function testHoliday(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

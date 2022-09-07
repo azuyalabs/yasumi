@@ -155,7 +155,7 @@ class YasumiTest extends TestCase
         $this->assertHoliday(
             $country,
             $name,
-            (($year > $year_lower_limit) ? $year - 1 : $year_lower_limit),
+            ($year > $year_lower_limit) ? $year - 1 : $year_lower_limit,
             $holidays->previous($name)
         );
     }

@@ -44,10 +44,10 @@ class FlagDayTest extends ArgentinaBaseTestCase implements HolidayTestCase
     {
         $year = self::ESTABLISHMENT_YEAR;
         $this->assertHoliday(
-          self::REGION,
-          self::HOLIDAY,
-          $year,
-          new DateTime("$year-06-20", new DateTimeZone(self::TIMEZONE))
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new DateTime("$year-06-20", new DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -67,10 +67,10 @@ class FlagDayTest extends ArgentinaBaseTestCase implements HolidayTestCase
     public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
-          self::REGION,
-          self::HOLIDAY,
-          $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-          [self::LOCALE => 'Paso a la Inmortalidad del General Manuel Belgrano']
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => 'Paso a la Inmortalidad del General Manuel Belgrano']
         );
     }
 

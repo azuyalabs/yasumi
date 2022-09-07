@@ -43,7 +43,7 @@ class StLeopoldsDayTest extends ViennaBaseTestCase implements HolidayTestCase
      * @param int      $year     the year for which Saint Leopold's Day needs to be tested
      * @param DateTime $expected the expected date
      */
-    public function testStLeopoldsDay(int $year, DateTime $expected): void
+    public function testStLeopoldsDay(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

@@ -37,7 +37,7 @@ class AssumptionOfMaryTest extends FranceBaseTestCase implements HolidayTestCase
      * @param int      $year     the year for which the day of the Assumption of Mary needs to be tested
      * @param DateTime $expected the expected date
      */
-    public function testAssumptionOfMary(int $year, DateTime $expected): void
+    public function testAssumptionOfMary(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

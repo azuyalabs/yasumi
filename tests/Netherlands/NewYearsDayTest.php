@@ -37,7 +37,7 @@ class NewYearsDayTest extends NetherlandsBaseTestCase implements HolidayTestCase
      * @param int      $year     the year for which New Years Day needs to be tested
      * @param DateTime $expected the expected date
      */
-    public function testNewYearsDay(int $year, DateTime $expected): void
+    public function testNewYearsDay(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

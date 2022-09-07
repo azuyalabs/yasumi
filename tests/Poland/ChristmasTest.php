@@ -37,7 +37,7 @@ class ChristmasTest extends PolandBaseTestCase implements HolidayTestCase
      * @param int      $year     the year for which Christmas Day needs to be tested
      * @param DateTime $expected the expected date
      */
-    public function testChristmasDay(int $year, DateTime $expected): void
+    public function testChristmasDay(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

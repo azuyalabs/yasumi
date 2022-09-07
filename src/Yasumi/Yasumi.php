@@ -80,13 +80,16 @@ class Yasumi
         \DateTimeInterface $startDate,
         int $workingDays = 1
     ): \DateTimeInterface {
-        // Setup start date, if it's an instance of \DateTime, clone to prevent modification to original
-        $date = $startDate instanceof \DateTime ? clone $startDate : $startDate;
+        // convert to immutable date to prevent modification of the  original
+        $date = $startDate instanceof \DateTime ? \DateTimeImmutable::createFromMutable($startDate) : $startDate;
 
         $provider = null;
 
         while ($workingDays > 0) {
             $date = $date->add(new \DateInterval('P1D'));
+            if (!$date instanceof \DateTimeInterface) {
+                throw new \RuntimeException('unable to perform addition');
+            }
 
             if (!$provider instanceof ProviderInterface) {
                 $provider = self::create($class, (int) $date->format('Y'));
@@ -225,10 +228,10 @@ class Yasumi
 
         foreach ($filesIterator as $file) {
             if ($file->isDir() || 'php' !== $file->getExtension() || \in_array(
-                    $file->getBasename('.php'),
-                    self::$ignoredProvider,
-                    true
-                )) {
+                $file->getBasename('.php'),
+                self::$ignoredProvider,
+                true
+            )) {
                 continue;
             }
 
@@ -270,13 +273,16 @@ class Yasumi
         \DateTimeInterface $startDate,
         int $workingDays = 1
     ): \DateTimeInterface {
-        // Setup start date, if it's an instance of \DateTime, clone to prevent modification to original
-        $date = $startDate instanceof \DateTime ? clone $startDate : $startDate;
+        // convert to immutable date to prevent modification of the  original
+        $date = $startDate instanceof \DateTime ? \DateTimeImmutable::createFromMutable($startDate) : $startDate;
 
         $provider = null;
 
         while ($workingDays > 0) {
             $date = $date->sub(new \DateInterval('P1D'));
+            if (!$date instanceof \DateTimeInterface) {
+                throw new \RuntimeException('unable to perform subtraction');
+            }
 
             if (!$provider instanceof ProviderInterface) {
                 $provider = self::create($class, (int) $date->format('Y'));
