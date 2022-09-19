@@ -62,6 +62,7 @@ class UnitedKingdom extends AbstractProvider
         // Add any other holidays
         $this->calculatePlatinumJubileeBankHoliday();
         $this->calculateMotheringSunday();
+        $this->calculateQueenElizabethFuneralBankHoliday();
     }
 
     public function getSources(): array
@@ -198,6 +199,33 @@ class UnitedKingdom extends AbstractProvider
             'platinumJubileeBankHoliday',
             ['en' => 'Platinum Jubilee Bank Holiday'],
             new DateTime("$this->year-6-3", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale,
+            Holiday::TYPE_BANK
+        ));
+    }
+
+    /**
+     * Queen Elizabeth II’s funeral is an extra bank holiday added on 10 September 2022
+     * to mark the last day of the period of national mourning.
+     *
+     * @see https://www.timeanddate.com/holidays/uk/queen-elizabeth-funeral
+     * @see https://www.gov.uk/government/news/bank-holiday-announced-for-her-majesty-queen-elizabeth-iis-state-funeral-on-monday-19-september
+     *
+     * @throws InvalidDateException
+     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws \Exception
+     */
+    protected function calculateQueenElizabethFuneralBankHoliday(): void
+    {
+        if (2022 !== $this->year) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday(
+            'queenElizabethFuneralBankHoliday',
+            ['en' => 'Queen Elizabeth II’s State Funeral Bank Holiday'],
+            new DateTime("$this->year-9-19", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
         ));
