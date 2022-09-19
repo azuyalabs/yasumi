@@ -68,14 +68,22 @@ class ScotlandTest extends ScotlandBaseTestCase implements ProviderTestCase
      */
     public function testBankHolidays(): void
     {
-        $this->assertDefinedHolidays([
+        $holidays = [
             'goodFriday',
             'mayDayBankHoliday',
             'springBankHoliday',
             'christmasDay',
             'secondChristmasDay',
             'newYearsDay',
-        ], self::REGION, $this->year, Holiday::TYPE_BANK);
+        ];
+
+        $year = $this->generateRandomYear();
+
+        if (2022 === $year) {
+            $holidays[] = 'queenElizabethFuneralBankHoliday';
+        }
+
+        $this->assertDefinedHolidays($holidays, self::REGION, $year, Holiday::TYPE_BANK);
     }
 
     /**

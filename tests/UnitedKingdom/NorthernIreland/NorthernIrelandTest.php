@@ -70,14 +70,22 @@ class NorthernIrelandTest extends NorthernIrelandBaseTestCase implements Provide
      */
     public function testBankHolidays(): void
     {
-        $this->assertDefinedHolidays([
+        $holidays = [
             'newYearsDay',
             'easterMonday',
             'mayDayBankHoliday',
             'springBankHoliday',
             'battleOfTheBoyne',
             'secondChristmasDay',
-        ], self::REGION, $this->year, Holiday::TYPE_BANK);
+        ];
+
+        $year = $this->generateRandomYear();
+
+        if (2022 === $year) {
+            $holidays[] = 'queenElizabethFuneralBankHoliday';
+        }
+
+        $this->assertDefinedHolidays($holidays, self::REGION, $year, Holiday::TYPE_BANK);
     }
 
     /**

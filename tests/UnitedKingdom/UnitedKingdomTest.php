@@ -70,13 +70,21 @@ class UnitedKingdomTest extends UnitedKingdomBaseTestCase implements ProviderTes
      */
     public function testBankHolidays(): void
     {
-        $this->assertDefinedHolidays([
+        $holidays = [
             'newYearsDay',
             'easterMonday',
             'mayDayBankHoliday',
             'springBankHoliday',
             'secondChristmasDay',
-        ], self::REGION, $this->year, Holiday::TYPE_BANK);
+       ];
+
+        $year = $this->generateRandomYear();
+
+        if (2022 === $year) {
+            $holidays[] = 'queenElizabethFuneralBankHoliday';
+        }
+
+        $this->assertDefinedHolidays($holidays, self::REGION, $year, Holiday::TYPE_BANK);
     }
 
     /**
