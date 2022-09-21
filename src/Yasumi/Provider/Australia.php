@@ -49,6 +49,7 @@ class Australia extends AbstractProvider
         $this->calculateNewYearHolidays();
         $this->calculateAustraliaDay();
         $this->calculateAnzacDay();
+        $this->calculateNationalDayOfMourning();
 
         // Add Christian holidays
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
@@ -202,6 +203,34 @@ class Australia extends AbstractProvider
                 Holiday::TYPE_OFFICIAL
             ));
         }
+    }
+
+    /**
+     * National Day of Mourning
+     *
+     * An additional, once off, national public holiday was proclaimed on the 10th of September 2022, to be observed on the 22nd of September 2022, as a
+     *  National day of mourning for the passing of Queen Elizabeth II
+     *
+     * @see https://www.pm.gov.au/media/commemorating-her-majesty-queen-elizabeth-ii
+     * @see https://www.timeanddate.com/holidays/australia/national-day-of-mourning
+     *
+     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws \Exception
+     */
+    private function calculateNationalDayOfMourning(): void
+    {
+        if (2022 !== $this->year) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday(
+                              'nationalDayOfMourning',
+                              ['en' => 'National Day of Mourning'],
+                              new DateTime("$this->year-9-22", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                              $this->locale,
+                              Holiday::TYPE_OFFICIAL
+                          ));
     }
 
     /**
