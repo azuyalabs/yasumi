@@ -43,7 +43,7 @@ class NorthernTerritoryTest extends NorthernTerritoryBaseTestCase implements Pro
      */
     public function testOfficialHolidays(): void
     {
-        $this->assertDefinedHolidays([
+        $expectedHolidays = [
             'newYearsDay',
             'goodFriday',
             'easterMonday',
@@ -55,7 +55,14 @@ class NorthernTerritoryTest extends NorthernTerritoryBaseTestCase implements Pro
             'queensBirthday',
             'mayDay',
             'picnicDay',
-        ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
+        ];
+
+        if(2022 == $this->year)
+        {
+            $expectedHolidays[] = 'nationalDayOfMourning';
+        }
+
+        $this->assertDefinedHolidays($expectedHolidays, $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

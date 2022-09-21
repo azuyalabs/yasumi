@@ -43,7 +43,7 @@ class WesternAustraliaTest extends WesternAustraliaBaseTestCase implements Provi
      */
     public function testOfficialHolidays(): void
     {
-        $this->assertDefinedHolidays([
+        $expectedHolidays = [
             'newYearsDay',
             'goodFriday',
             'easterMonday',
@@ -54,7 +54,12 @@ class WesternAustraliaTest extends WesternAustraliaBaseTestCase implements Provi
             'queensBirthday',
             'labourDay',
             'westernAustraliaDay',
-        ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
+        ];
+        if(2022 == $this->year)
+        {
+            $expectedHolidays[] = 'nationalDayOfMourning';
+        }
+        $this->assertDefinedHolidays($expectedHolidays, $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

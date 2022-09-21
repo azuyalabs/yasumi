@@ -43,7 +43,7 @@ class QueenslandTest extends QueenslandBaseTestCase implements ProviderTestCase
      */
     public function testOfficialHolidays(): void
     {
-        $this->assertDefinedHolidays([
+        $expectedHolidays = [
             'newYearsDay',
             'goodFriday',
             'easterMonday',
@@ -53,7 +53,12 @@ class QueenslandTest extends QueenslandBaseTestCase implements ProviderTestCase
             'anzacDay',
             'queensBirthday',
             'labourDay',
-        ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
+        ];
+        if(2022 == $this->year)
+        {
+            $expectedHolidays[] = 'nationalDayOfMourning';
+        }
+        $this->assertDefinedHolidays($expectedHolidays, $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

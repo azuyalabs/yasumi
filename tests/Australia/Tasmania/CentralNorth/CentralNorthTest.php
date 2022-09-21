@@ -43,7 +43,7 @@ class CentralNorthTest extends CentralNorthBaseTestCase implements ProviderTestC
      */
     public function testOfficialHolidays(): void
     {
-        $this->assertDefinedHolidays([
+        $expectedHolidays = [
             'newYearsDay',
             'goodFriday',
             'easterMonday',
@@ -55,7 +55,12 @@ class CentralNorthTest extends CentralNorthBaseTestCase implements ProviderTestC
             'eightHourDay',
             'recreationDay',
             'devonportShow',
-        ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
+        ];
+        if(2022 == $this->year)
+        {
+            $expectedHolidays[] = 'nationalDayOfMourning';
+        }
+        $this->assertDefinedHolidays($expectedHolidays, $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

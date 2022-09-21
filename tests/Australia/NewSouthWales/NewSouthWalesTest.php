@@ -43,7 +43,7 @@ class NewSouthWalesTest extends NewSouthWalesBaseTestCase implements ProviderTes
      */
     public function testOfficialHolidays(): void
     {
-        $this->assertDefinedHolidays([
+        $holidays = [
             'newYearsDay',
             'goodFriday',
             'easterMonday',
@@ -55,7 +55,14 @@ class NewSouthWalesTest extends NewSouthWalesBaseTestCase implements ProviderTes
             'easterSaturday',
             'queensBirthday',
             'labourDay',
-        ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
+        ];
+
+        if(2022 == $this->year)
+        {
+            $holidays[] = 'nationalDayOfMourning';
+        }
+
+        $this->assertDefinedHolidays($holidays, $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
