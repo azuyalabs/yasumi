@@ -57,8 +57,7 @@ class NewSouthWalesTest extends NewSouthWalesBaseTestCase implements ProviderTes
             'labourDay',
         ];
 
-        if(2022 == $this->year)
-        {
+        if (2022 == $this->year) {
             $holidays[] = 'nationalDayOfMourning';
         }
 

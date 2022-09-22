@@ -56,8 +56,7 @@ class FlindersIslandTest extends FlindersIslandBaseTestCase implements ProviderT
             'recreationDay',
             'flindersIslandShow',
         ];
-        if(2022 == $this->year)
-        {
+        if (2022 == $this->year) {
             $expectedHolidays[] = 'nationalDayOfMourning';
         }
         $this->assertDefinedHolidays($expectedHolidays, $this->region, $this->year, Holiday::TYPE_OFFICIAL);

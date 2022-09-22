@@ -57,8 +57,7 @@ class NorthernTerritoryTest extends NorthernTerritoryBaseTestCase implements Pro
             'picnicDay',
         ];
 
-        if(2022 == $this->year)
-        {
+        if (2022 == $this->year) {
             $expectedHolidays[] = 'nationalDayOfMourning';
         }
 

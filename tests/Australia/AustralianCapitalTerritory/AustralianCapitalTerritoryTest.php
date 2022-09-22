@@ -59,8 +59,7 @@ class AustralianCapitalTerritoryTest extends AustralianCapitalTerritoryBaseTestC
             'reconciliationDay',
         ];
 
-        if(2022 == $this->year)
-        {
+        if (2022 == $this->year) {
             $expectedHolidays[] = 'nationalDayOfMourning';
         }
 
