@@ -71,15 +71,27 @@ class NorthernIrelandTest extends NorthernIrelandBaseTestCase implements Provide
     public function testBankHolidays(): void
     {
         $holidays = [
-            'newYearsDay',
             'easterMonday',
-            'mayDayBankHoliday',
-            'springBankHoliday',
-            'battleOfTheBoyne',
             'secondChristmasDay',
         ];
 
         $year = $this->generateRandomYear();
+
+        if (1926 >= $this->year) {
+            $holidays[] = 'battleOfTheBoyne';
+        }
+
+        if (1965 >= $this->year) {
+            $holidays[] = 'springBankHoliday';
+        }
+
+        if (1974 > $this->year) {
+            $holidays[] = 'newYearsDay';
+        }
+
+        if (1978 >= $this->year) {
+            $holidays[] = 'mayDayBankHoliday';
+        }
 
         if (2022 === $year) {
             $holidays[] = 'queenElizabethFuneralBankHoliday';
