@@ -19,6 +19,7 @@ to [Semantic Versioning](https://semver.org).
 
 ### Fixed
 
+- Tests for New Years Day, Spring Bank Holiday, and May Day Holiday in the United Kingdom (England, Wales, Northern Ireland, and Scotland), as well as Battle of the Boyne in Northern Ireland were considered for any calendar year; however, these are celebrated only since a particular calendar year.
 - Pentecost Monday in France was only until 2004 recognized as an official holiday. Since 2004 it is considered a
   special holiday, a so called 'working holiday'. Hence, it is therefore classified as an observed holiday in Yasumi
   from 2004 and forward. [\#281](https://github.com/azuyalabs/yasumi/issues/281).
