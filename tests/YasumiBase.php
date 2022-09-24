@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 /*
  * This file is part of the Yasumi package.
  *
@@ -14,10 +15,8 @@ declare(strict_types=1);
 
 namespace Yasumi\tests;
 
-use DateInterval;
 use DateTime;
 use DateTimeInterface;
-use DateTimeZone;
 use Exception;
 use InvalidArgumentException;
 use PHPUnit\Framework\AssertionFailedError;
@@ -34,22 +33,20 @@ use Yasumi\SubstituteHoliday;
 use Yasumi\Yasumi;
 
 /**
- * Trait YasumiBase.
- *
- * Trait containing some base function for testing Yasumi.
+ * Trait containing useful functions for the various unit tests.
  */
 trait YasumiBase
 {
-    protected static string $defaultTimezone;
+    use Randomizer;
 
     /**
-     * Asserts that the expected holidays are indeed a holiday for the given provider and year.
+     * Asserts the expected holidays are a holidays for the given provider and year.
      *
      * @param array<string> $expectedHolidays list of all known holidays of the given provider
-     * @param string        $provider         the holiday provider (i.e. country/state) for which the holidays need to be
-     *                                        tested
+     * @param string        $provider         holiday provider (i.e. country/state) for which the holidays need to be
+     *                                        tested.
      * @param int           $year             holiday calendar year
-     * @param string        $type             The type of holiday. Use the following constants: TYPE_OFFICIAL,
+     * @param string        $type             type of holiday. Use the following constants: TYPE_OFFICIAL,
      *                                        TYPE_OBSERVANCE, TYPE_SEASON, TYPE_BANK or TYPE_OTHER.
      *
      * @throws InvalidArgumentException
@@ -82,19 +79,19 @@ trait YasumiBase
                 break;
         }
 
-        // Loop through all known holidays and assert they are defined by the provider class
+        // Loop through all known holidays and assert they are defined by the provider class.
         foreach ($expectedHolidays as $holiday) {
             self::assertArrayHasKey($holiday, iterator_to_array($holidays));
         }
     }
 
     /**
-     * Asserts that the expected date is indeed a holiday for that given year and name.
+     * Asserts expected date is a holiday for the given year and name.
      *
-     * @param string   $provider the holiday provider (i.e. country/state) for which the holiday need to be tested
-     * @param string   $key      string the key of the holiday to be checked against
+     * @param string   $provider holiday provider (i.e. country/state) for which the holiday need to be tested.
+     * @param string   $key      key of the holiday to be checked against
      * @param int      $year     holiday calendar year
-     * @param DateTime $expected the date to be checked against
+     * @param DateTime $expected date to be checked against
      *
      * @throws UnknownLocaleException
      * @throws InvalidDateException
@@ -117,12 +114,12 @@ trait YasumiBase
     }
 
     /**
-     * Asserts that the expected date is indeed a substitute holiday for that given year and name.
+     * Asserts the expected date is a substitute holiday for that given year and name.
      *
-     * @param string   $provider the holiday provider (i.e. country/state) for which the holiday need to be tested
-     * @param string   $key      string the key of the substituted holiday to be checked against
+     * @param string   $provider the holiday provider (i.e. country/state) for which the holiday need to be tested.
+     * @param string   $key      key of the substituted holiday to be checked against
      * @param int      $year     holiday calendar year
-     * @param DateTime $expected the date to be checked against
+     * @param DateTime $expected date to be checked against
      *
      * @throws UnknownLocaleException
      * @throws InvalidDateException
@@ -145,10 +142,10 @@ trait YasumiBase
     }
 
     /**
-     * Asserts that the given substitute holiday for that given year does not exist.
+     * Asserts the given substitute holiday for a given year does not exist.
      *
-     * @param string $provider the holiday provider (i.e. country/state) for which the holiday need to be tested
-     * @param string $key      the key of the substituted holiday to be checked against
+     * @param string $provider holiday provider (i.e. country/state) for which the holiday need to be tested.
+     * @param string $key      key of the substituted holiday to be checked against
      * @param int    $year     holiday calendar year
      *
      * @throws InvalidArgumentException
@@ -170,10 +167,10 @@ trait YasumiBase
     }
 
     /**
-     * Asserts that the given holiday for that given year does not exist.
+     * Asserts the given holiday for a given year does not exist.
      *
-     * @param string $provider the holiday provider (i.e. country/state) for which the holiday need to be tested
-     * @param string $key      the key of the holiday to be checked against
+     * @param string $provider holiday provider (i.e. country/state) for which the holiday need to be tested.
+     * @param string $key      key of the holiday to be checked against
      * @param int    $year     holiday calendar year
      *
      * @throws InvalidArgumentException
@@ -194,12 +191,12 @@ trait YasumiBase
     }
 
     /**
-     * Asserts that the expected name is indeed provided as a translated holiday name for that given year and name.
+     * Asserts the expected name is provided as a translated holiday name for that given year and name.
      *
-     * @param string                $provider     the holiday provider (i.e. country/state) for which the holiday need to be tested
-     * @param string                $key          string the key of the holiday to be checked against
+     * @param string                $provider     holiday provider (i.e. country/state) for which the holiday need to be tested.
+     * @param string                $key          key of the holiday to be checked against
      * @param int                   $year         holiday calendar year
-     * @param array<string, string> $translations the translations to be checked against
+     * @param array<string, string> $translations translations to be checked against
      *
      * @throws InvalidArgumentException
      * @throws RuntimeException
@@ -215,8 +212,8 @@ trait YasumiBase
         $holidays = Yasumi::create($provider, $year);
         $holiday = $holidays->getHoliday($key);
 
-        self::assertInstanceOf(Holiday::class, $holiday);
-        self::assertTrue($holidays->isHoliday($holiday));
+        self::assertInstanceOf(Holiday::class, $holiday, sprintf('No instance for the year `%u`', $year));
+        self::assertTrue($holidays->isHoliday($holiday), sprintf('Holiday `%s` not defined for the year `%u`', $key, $year));
 
         foreach ($translations as $locale => $name) {
             $locales = [$locale];
@@ -239,12 +236,12 @@ trait YasumiBase
     }
 
     /**
-     * Asserts that the expected type is indeed the associated type of the given holiday.
+     * Asserts the expected type is the associated type for the given holiday.
      *
-     * @param string $provider the holiday provider (i.e. country/region) for which the holiday need to be tested
-     * @param string $key      string the key of the holiday to be checked against
+     * @param string $provider holiday provider (i.e. country/region) for which the holiday need to be tested.
+     * @param string $key      the key of the holiday to be checked against
      * @param int    $year     holiday calendar year
-     * @param string $type     the type to be checked against
+     * @param string $type     type to be checked against
      *
      * @throws InvalidArgumentException
      * @throws RuntimeException
@@ -260,18 +257,17 @@ trait YasumiBase
         $holidays = Yasumi::create($provider, $year);
         $holiday = $holidays->getHoliday($key);
 
-        self::assertInstanceOf(Holiday::class, $holiday);
-        self::assertEquals($type, $holiday->getType());
+        self::assertInstanceOf(Holiday::class, $holiday, sprintf('No instance for the year `%u`', $year));
+        self::assertEquals($type, $holiday->getType(), sprintf('Expected type `%s`, got `%s` for the year `%u`', $type, $holiday->getType(), $year));
     }
 
     /**
-     * Asserts that the expected week day is indeed the week day for the given holiday and year.
+     * Asserts the expected week day is the week day for the given holiday and year.
      *
-     * @param string $provider          the holiday provider (i.e. country/state) for which the holiday need to be
-     *                                  tested
-     * @param string $key               string the key of the holiday to be checked against
+     * @param string $provider          holiday provider (i.e. country/state) for which the holiday need to be tested.
+     * @param string $key               key of the holiday to be checked against
      * @param int    $year              holiday calendar year
-     * @param string $expectedDayOfWeek the expected week day (i.e. "Saturday", "Sunday", etc.)
+     * @param string $expectedDayOfWeek expected week day (i.e. "Saturday", "Sunday", etc.).
      *
      * @throws AssertionFailedError
      * @throws InvalidArgumentException
@@ -293,11 +289,10 @@ trait YasumiBase
     }
 
     /**
-     * Asserts that the holiday provider has the number of expected sources defined.
+     * Asserts the holiday provider has the expected sources number.
      *
-     * @param string $provider            the holiday provider (i.e. country/state) for which the holiday need to be
-     *                                    tested
-     * @param int    $expectedSourceCount the expected number of sources
+     * @param string $provider            holiday provider (i.e. country/state) for which the holiday need to be tested.
+     * @param int    $expectedSourceCount expected sources number
      *
      * @throws Exception
      */
@@ -306,427 +301,5 @@ trait YasumiBase
         $holidayProvider = Yasumi::create($provider, $this->generateRandomYear());
 
         self::assertCount($expectedSourceCount, $holidayProvider->getSources());
-    }
-
-    /**
-     * Returns a list of random test dates used for assertion of holidays.
-     *
-     * @param int         $month      month (number) for which the test date needs to be generated
-     * @param int         $day        day (number) for which the test date needs to be generated
-     * @param string|null $timezone   name of the timezone for which the dates need to be generated
-     * @param int|null    $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
-     * @param int|null    $range      year range from which dates will be generated (default: 1000)
-     *
-     * @return array<array> list of random test dates used for assertion of holidays
-     *
-     * @throws Exception
-     */
-    public function generateRandomDates(
-        int $month,
-        int $day,
-        string $timezone = null,
-        int $iterations = null,
-        int $range = null
-    ): array {
-        $data = [];
-        $range ??= 1000;
-        for ($y = 1; $y <= ($iterations ?? 10); ++$y) {
-            $year = (int) self::dateTimeBetween("-$range years", "+$range years")->format('Y');
-            $data[] = [$year, new DateTime("$year-$month-$day", new DateTimeZone($timezone ?? 'UTC'))];
-        }
-
-        return $data;
-    }
-
-    /**
-     * Returns a list of random easter test dates used for assertion of holidays.
-     *
-     * @param string|null $timezone   name of the timezone for which the dates need to be generated
-     * @param int|null    $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
-     * @param int|null    $range      year range from which dates will be generated (default: 1000)
-     *
-     * @return array<array> list of random easter test dates used for assertion of holidays
-     *
-     * @throws Exception
-     */
-    public function generateRandomEasterDates(
-        string $timezone = null,
-        int $iterations = null,
-        int $range = null
-    ): array {
-        $data = [];
-        $range ??= 1000;
-
-        for ($i = 1; $i <= ($iterations ?? 10); ++$i) {
-            $year = (int) self::dateTimeBetween("-$range years", "+$range years")->format('Y');
-            $date = $this->calculateEaster($year, $timezone ?? 'UTC');
-
-            $data[] = [$year, $date->format('Y-m-d')];
-        }
-
-        return $data;
-    }
-
-    /**
-     * Returns a list of random Easter Monday test dates used for assertion of holidays.
-     *
-     * @param string|null $timezone   name of the timezone for which the dates need to be generated
-     * @param int|null    $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
-     * @param int|null    $range      year range from which dates will be generated (default: 1000)
-     *
-     * @return array<array> list of random Easter Monday test dates used for assertion of holidays
-     *
-     * @throws Exception
-     */
-    public function generateRandomEasterMondayDates(
-        string $timezone = null,
-        int $iterations = null,
-        int $range = null
-    ): array {
-        $range ??= 1000;
-
-        return $this->generateRandomModifiedEasterDates(static function (DateTime $date): void {
-            $date->add(new DateInterval('P1D'));
-        }, $timezone ?? 'UTC', $iterations ?? 10, $range);
-    }
-
-    /**
-     * Returns a list of random modified Easter day test dates for assertion of holidays.
-     *
-     * @param callable    $cb         callback(DateTime $date) to modify $date by custom rules
-     * @param string|null $timezone   name of the timezone for which the dates need to be generated
-     * @param int|null    $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
-     * @param int|null    $range      year range from which dates will be generated (default: 1000)
-     *
-     * @return array<array> list of random modified Easter day test dates for assertion of holidays
-     *
-     * @throws Exception
-     */
-    public function generateRandomModifiedEasterDates(
-        callable $cb,
-        string $timezone = null,
-        int $iterations = null,
-        int $range = null
-    ): array {
-        $data = [];
-        $range ??= 1000;
-        for ($i = 1; $i <= ($iterations ?? 10); ++$i) {
-            $year = (int) self::dateTimeBetween("-$range years", "+$range years")->format('Y');
-            $date = $this->calculateEaster($year, $timezone ?? 'UTC');
-
-            $cb($date);
-
-            $data[] = [$year, $date->format('Y-m-d')];
-        }
-
-        return $data;
-    }
-
-    /**
-     * Returns a list of random Good Friday test dates used for assertion of holidays.
-     *
-     * @param string|null $timezone   name of the timezone for which the dates need to be generated
-     * @param int|null    $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
-     * @param int|null    $range      year range from which dates will be generated (default: 1000)
-     *
-     * @return array<array> list of random Good Friday test dates used for assertion of holidays
-     *
-     * @throws Exception
-     */
-    public function generateRandomGoodFridayDates(
-        string $timezone = null,
-        int $iterations = null,
-        int $range = null
-    ): array {
-        $range ??= 1000;
-
-        return $this->generateRandomModifiedEasterDates(static function (DateTime $date): void {
-            $date->sub(new DateInterval('P2D'));
-        }, $timezone ?? 'UTC', $iterations ?? 10, $range);
-    }
-
-    /**
-     * Returns a list of random Pentecost test dates used for assertion of holidays.
-     *
-     * @param string|null $timezone   name of the timezone for which the dates need to be generated
-     * @param int|null    $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
-     * @param int|null    $range      year range from which dates will be generated (default: 1000)
-     *
-     * @return array<array> list of random Pentecost test dates used for assertion of holidays
-     *
-     * @throws Exception
-     */
-    public function generateRandomPentecostDates(
-        string $timezone = null,
-        int $iterations = null,
-        int $range = null
-    ): array {
-        $range ??= 1000;
-
-        return $this->generateRandomModifiedEasterDates(static function (DateTime $date): void {
-            $date->add(new DateInterval('P49D'));
-        }, $timezone ?? 'UTC', $iterations ?? 10, $range);
-    }
-
-    /**
-     * Returns a list of random test dates used for assertion of holidays. If the date falls in a weekend, random
-     * holiday day is moved to to Monday.
-     *
-     * @param int         $month      month (number) for which the test date needs to be generated
-     * @param int         $day        day (number) for which the test date needs to be generated
-     * @param string|null $timezone   name of the timezone for which the dates need to be generated
-     * @param int|null    $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
-     * @param int|null    $range      year range from which dates will be generated (default: 1000)
-     *
-     * @return array<array> list of random test dates used for assertion of holidays
-     *
-     * @throws Exception
-     */
-    public function generateRandomDatesWithHolidayMovedToMonday(
-        int $month,
-        int $day,
-        string $timezone = null,
-        int $iterations = null,
-        int $range = null
-    ): array {
-        return $this->generateRandomDatesWithModifier($month, $day, function ($range, DateTime $date): void {
-            if ($this->isWeekend($date)) {
-                $date->modify('next monday');
-            }
-        }, $iterations ?? 10, $range, $timezone ?? 'UTC');
-    }
-
-    /**
-     * Returns a list of random test dates used for assertion of holidays with applied callback.
-     *
-     * @param int         $month      month (number) for which the test date needs to be generated
-     * @param int         $day        day (number) for which the test date needs to be generated
-     * @param callable    $callback   callback(int $year, \DateTime $dateTime) to modify $dateTime by custom rules
-     * @param int         $iterations number of iterations (i.e. samples) that need to be generated (default: 10)
-     * @param int         $range      year range from which dates will be generated (default: 1000)
-     * @param string|null $timezone   name of the timezone for which the dates need to be generated
-     *
-     * @return array<array> list of random test dates used for assertion of holidays with applied callback
-     *
-     * @throws Exception
-     */
-    public function generateRandomDatesWithModifier(
-        int $month,
-        int $day,
-        callable $callback,
-        int $iterations,
-        int $range,
-        string $timezone = null
-    ): array {
-        $data = [];
-
-        for ($i = 1; $i <= $iterations; ++$i) {
-            $year = $this->generateRandomYear($range);
-            $date = new DateTime("$year-$month-$day", new DateTimeZone($timezone ?? 'UTC'));
-
-            $callback($year, $date);
-
-            $data[] = [$year, $date->format('Y-m-d')];
-        }
-
-        return $data;
-    }
-
-    /**
-     * Generates a random year (number).
-     *
-     * @param int|null $lowerLimit the lower limit for generating a year number (default: 1000)
-     * @param int|null $upperLimit the upper limit for generating a year number (default: 9999)
-     *
-     * @return int a year number
-     *
-     * @throws Exception
-     */
-    public function generateRandomYear(
-        int $lowerLimit = null,
-        int $upperLimit = null
-    ): int {
-        return self::numberBetween($lowerLimit ?? 1000, $upperLimit ?? 9999);
-    }
-
-    /**
-     * Checks if given $dateTime is a weekend.
-     *
-     * @param DateTimeInterface $dateTime    date for which weekend will be checked
-     * @param array<int>        $weekendDays weekend days. Saturday and Sunday are used by default.
-     *
-     * @return bool true if $dateTime is a weekend, false otherwise
-     */
-    public function isWeekend(
-        DateTimeInterface $dateTime,
-        array $weekendDays = [0, 6]
-    ): bool {
-        return \in_array((int) $dateTime->format('w'), $weekendDays, true);
-    }
-
-    /**
-     * Returns a random number between $int1 and $int2 (any order).
-     *
-     * @throws Exception
-     *
-     * @example 79907610
-     */
-    public static function numberBetween(int $int1 = 0, int $int2 = 2_147_483_647): int
-    {
-        $min = $int1 < $int2 ? $int1 : $int2;
-        $max = $int1 < $int2 ? $int2 : $int1;
-
-        return random_int($min, $max);
-    }
-
-    /**
-     * Get a DateTime object based on a random date between two given dates.
-     * Accepts date strings that can be recognized by strtotime().
-     *
-     * @param \DateTime|string $startDate Defaults to 30 years ago
-     * @param \DateTime|string $endDate   Defaults to "now"
-     * @param string|null      $timezone  time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
-     *
-     * @throws Exception
-     *
-     * @see http://php.net/manual/en/timezones.php
-     * @see http://php.net/manual/en/function.date-default-timezone-get.php
-     *
-     * @example DateTime('1999-02-02 11:42:52')
-     */
-    public static function dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null): DateTimeInterface
-    {
-        $startTimestamp = $startDate instanceof \DateTime ? $startDate->getTimestamp() : strtotime($startDate);
-
-        if (!$startTimestamp) {
-            throw new \RuntimeException('unable to get timestamp for the start date');
-        }
-
-        $endTimestamp = static::getMaxTimestamp($endDate);
-
-        if (!$endTimestamp) {
-            throw new \RuntimeException('unable to get timestamp for the end date');
-        }
-
-        if ($startTimestamp > $endTimestamp) {
-            throw new \InvalidArgumentException('Start date must be anterior to end date.');
-        }
-
-        $timestamp = random_int($startTimestamp, $endTimestamp);
-
-        return static::setTimezone(
-            new \DateTime('@'.$timestamp),
-            $timezone
-        );
-    }
-
-    /**
-     * Calculates the date for Easter.
-     *
-     * Easter is a festival and holiday celebrating the resurrection of Jesus Christ from the dead. Easter is celebrated
-     * on a date based on a certain number of days after March 21st.
-     *
-     * This function uses the standard PHP 'easter_days' function if the calendar extension is enabled. In case the
-     * calendar function is not enabled, a fallback calculation has been implemented that is based on the same
-     * 'easter_days' c function.
-     *
-     * Note: In calendrical calculations, frequently operations called integer division are used.
-     *
-     * @param int    $year     the year for which Easter needs to be calculated
-     * @param string $timezone the timezone in which Easter is celebrated
-     *
-     * @return DateTime date of Easter
-     *
-     * @throws Exception
-     *
-     * @see  easter_days
-     * @see https://github.com/php/php-src/blob/c8aa6f3a9a3d2c114d0c5e0c9fdd0a465dbb54a5/ext/calendar/easter.c
-     * @see http://www.gmarts.org/index.php?go=415#EasterMallen
-     * @see http://www.tondering.dk/claus/cal/easter.php
-     */
-    protected function calculateEaster(int $year, string $timezone): DateTimeInterface
-    {
-        if (\extension_loaded('calendar')) {
-            $easter_days = easter_days($year);
-        } else {
-            $golden = (($year % 19) + 1); // The Golden Number
-
-            // The Julian calendar applies to the original method from 326AD. The Gregorian calendar was first
-            // introduced in October 1582 in Italy. Easter algorithms using the Gregorian calendar apply to years
-            // 1583 AD to 4099 (A day adjustment is required in or shortly after 4100 AD).
-            // After 1752, most western churches have adopted the current algorithm.
-            if ($year <= 1752) {
-                $dom = ($year + (int) ($year / 4) + 5) % 7; // The 'Dominical number' - finding a Sunday
-                if ($dom < 0) {
-                    $dom += 7;
-                }
-
-                $pfm = (3 - (11 * $golden) - 7) % 30; // Uncorrected date of the Paschal full moon
-                if ($pfm < 0) {
-                    $pfm += 30;
-                }
-            } else {
-                $dom = ($year + (int) ($year / 4) - (int) ($year / 100) + (int) ($year / 400)) % 7; // The 'Dominical number' - finding a Sunday
-                if ($dom < 0) {
-                    $dom += 7;
-                }
-
-                $solar = (int) (($year - 1600) / 100) - (int) (($year - 1600) / 400); // The solar correction
-                $lunar = (int) (((int) (($year - 1400) / 100) * 8) / 25); // The lunar correction
-
-                $pfm = (3 - (11 * $golden) + $solar - $lunar) % 30; // Uncorrected date of the Paschal full moon
-                if ($pfm < 0) {
-                    $pfm += 30;
-                }
-            }
-
-            // Corrected date of the Paschal full moon, - days after 21st March
-            if ((29 === $pfm) || (28 === $pfm && $golden > 11)) {
-                --$pfm;
-            }
-
-            $tmp = (4 - $pfm - $dom) % 7;
-            if ($tmp < 0) {
-                $tmp += 7;
-            }
-
-            $easter_days = ($pfm + $tmp + 1); // Easter as the number of days after 21st March
-        }
-
-        $easter = new DateTime("$year-3-21", new DateTimeZone($timezone));
-        $easter->add(new DateInterval('P'.$easter_days.'D'));
-
-        return $easter;
-    }
-
-    /**
-     * @param \DateTime|string|float|int $max
-     *
-     * @return int|false
-     */
-    protected static function getMaxTimestamp($max = 'now')
-    {
-        if (is_numeric($max)) {
-            $ts = (int) $max;
-        } elseif ($max instanceof \DateTime) {
-            $ts = $max->getTimestamp();
-        } else {
-            $ts = strtotime(empty($max) ? 'now' : $max);
-        }
-
-        return $ts;
-    }
-
-    /**
-     * Internal method to set the time zone on a DateTime.
-     */
-    private static function setTimezone(DateTimeInterface $dt, ?string $timezone): DateTimeInterface
-    {
-        return $dt->setTimezone(new \DateTimeZone(static::resolveTimezone($timezone)));
-    }
-
-    private static function resolveTimezone(?string $timezone): string
-    {
-        return $timezone ?? (static::$defaultTimezone ?? date_default_timezone_get());
     }
 }
