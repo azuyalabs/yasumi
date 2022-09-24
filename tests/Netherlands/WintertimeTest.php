@@ -18,17 +18,24 @@ use DateTime;
 use DateTimeZone;
 use Exception;
 use Yasumi\Holiday;
-use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Wintertime in the Netherlands.
  */
-class WintertimeTest extends NetherlandsBaseTestCase implements HolidayTestCase
+final class WintertimeTest extends DaylightSavingTime
 {
-    /**
-     * The name of the holiday.
-     */
+    /** The name of the holiday */
     public const HOLIDAY = 'winterTime';
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        // no wintertime defined for 1940
+        if (false !== ($key = array_search(1940, $this->observedYears, true))) {
+            unset($this->observedYears[(int) $key]);
+        }
+    }
 
     /**
      * Tests Wintertime.
@@ -37,7 +44,7 @@ class WintertimeTest extends NetherlandsBaseTestCase implements HolidayTestCase
      */
     public function testWintertime(): void
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(1946, 1976));
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->randomYearFromArray($this->unobservedYears));
 
         $year = $this->generateRandomYear(1979, 1995);
         $this->assertHoliday(
@@ -66,7 +73,7 @@ class WintertimeTest extends NetherlandsBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1978, 2037),
+            $this->randomYearFromArray($this->observedYears),
             [self::LOCALE => 'wintertijd']
         );
     }
@@ -78,6 +85,11 @@ class WintertimeTest extends NetherlandsBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(1978, 2037), Holiday::TYPE_SEASON);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->randomYearFromArray($this->observedYears),
+            Holiday::TYPE_SEASON
+        );
     }
 }

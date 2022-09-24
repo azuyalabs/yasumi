@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 /*
  * This file is part of the Yasumi package.
  *
@@ -18,17 +19,26 @@ use DateTime;
 use DateTimeZone;
 use Exception;
 use Yasumi\Holiday;
-use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing winter time in Denmark.
+ *
+ * @see: https://en.wikipedia.org/wiki/Time_in_the_Danish_Realm#History
  */
-class WinterTimeTest extends DenmarkBaseTestCase implements HolidayTestCase
+final class WinterTimeTest extends DaylightSavingTime
 {
-    /**
-     * The name of the holiday.
-     */
+    /** The name of the holiday */
     public const HOLIDAY = 'winterTime';
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        // no wintertime defined for 1940
+        if (false !== ($key = array_search(1940, $this->observedYears, true))) {
+            unset($this->observedYears[(int) $key]);
+        }
+    }
 
     /**
      * Tests the holiday defined in this test.
@@ -37,7 +47,7 @@ class WinterTimeTest extends DenmarkBaseTestCase implements HolidayTestCase
      */
     public function testWinterTime(): void
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(1949, 1979));
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->randomYearFromArray($this->unobservedYears));
 
         $year = $this->generateRandomYear(1980, 1995);
         $this->assertHoliday(
@@ -66,7 +76,7 @@ class WinterTimeTest extends DenmarkBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1980, 2037),
+            $this->randomYearFromArray($this->observedYears),
             [self::LOCALE => 'sommertid slutter']
         );
     }
@@ -78,6 +88,10 @@ class WinterTimeTest extends DenmarkBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(1980, 2037), Holiday::TYPE_SEASON);
+        $this->assertHolidayType(
+            self::REGION, self::HOLIDAY,
+            $this->randomYearFromArray($this->observedYears),
+            Holiday::TYPE_SEASON
+        );
     }
 }

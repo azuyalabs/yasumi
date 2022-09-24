@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 /*
  * This file is part of the Yasumi package.
  *
@@ -18,17 +19,37 @@ use DateTime;
 use DateTimeZone;
 use Exception;
 use Yasumi\Holiday;
-use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing summer time in Denmark.
+ *
+ * @see: https://en.wikipedia.org/wiki/Time_in_the_Danish_Realm#History
  */
-class SummerTimeTest extends DenmarkBaseTestCase implements HolidayTestCase
+final class SummerTimeTest extends DaylightSavingTime
 {
-    /**
-     * The name of the holiday.
-     */
+    /** The name of the holiday */
     public const HOLIDAY = 'summerTime';
+
+    private array $deviantTransitions = [
+        1916 => '1916-05-14',
+        1940 => '1940-05-14',
+        1943 => '1943-03-29',
+        1944 => '1944-04-03',
+        1945 => '1945-04-02',
+        1946 => '1946-05-01',
+        1947 => '1947-05-04',
+        1948 => '1948-05-09',
+    ];
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        // no summertime defined for 1942
+        if (false !== ($key = array_search(1942, $this->observedYears, true))) {
+            unset($this->observedYears[(int) $key]);
+        }
+    }
 
     /**
      * Tests the holiday defined in this test.
@@ -37,10 +58,14 @@ class SummerTimeTest extends DenmarkBaseTestCase implements HolidayTestCase
      */
     public function testSummerTime(): void
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(1949, 1979));
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->randomYearFromArray($this->unobservedYears));
 
-        $year = $this->generateRandomYear(1980, 2036);
+        $year = $this->randomYearFromArray($this->observedYears);
         $expectedDate = new DateTime("last sunday of march $year", new DateTimeZone(self::TIMEZONE));
+
+        if (array_key_exists($year, $this->deviantTransitions)) {
+            $expectedDate = new DateTime($this->deviantTransitions[$year], new DateTimeZone(self::TIMEZONE));
+        }
 
         // Since 1980 Summertime in Denmark starts on the last day of March. In 1980 itself however, it started on April, 6th.
         if (1980 === $year) {
@@ -65,7 +90,7 @@ class SummerTimeTest extends DenmarkBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1980, 2037),
+            $this->randomYearFromArray($this->observedYears),
             [self::LOCALE => 'sommertid starter']
         );
     }
@@ -77,6 +102,10 @@ class SummerTimeTest extends DenmarkBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(1980, 2037), Holiday::TYPE_SEASON);
+        $this->assertHolidayType(
+            self::REGION, self::HOLIDAY,
+            $this->randomYearFromArray($this->observedYears),
+            Holiday::TYPE_SEASON
+        );
     }
 }
