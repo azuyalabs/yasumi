@@ -45,6 +45,7 @@ class BavariaTest extends BavariaBaseTestCase implements ProviderTestCase
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
+            'epiphany',
             'goodFriday',
             'easterMonday',
             'internationalWorkersDay',
@@ -88,7 +89,7 @@ class BavariaTest extends BavariaBaseTestCase implements ProviderTestCase
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays(
-            ['epiphany'],
+            [],
             self::REGION,
             $this->year,
             Holiday::TYPE_OTHER
