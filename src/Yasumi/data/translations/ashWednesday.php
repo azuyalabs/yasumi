@@ -22,4 +22,5 @@ return [
     'it' => 'Mercoledi delle Ceneri',
     'nl' => 'Aswoensdag',
     'pt' => 'Quarta-feira de Cinzas',
+    'sk' => 'Popolcová streda',
 ];
