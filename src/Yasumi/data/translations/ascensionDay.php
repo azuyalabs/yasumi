@@ -25,5 +25,6 @@ return [
     'it' => 'Ascensione',
     'nb' => 'Kristi himmelfartsdag',
     'nl' => 'Hemelvaart',
+    'sk' => 'Nanebovstúpenie Pána',
     'sv' => 'Kristi himmelsfärdsdag',
 ];
