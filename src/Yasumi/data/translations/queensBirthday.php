@@ -17,7 +17,7 @@ declare(strict_types=1);
 return [
     'da' => 'Dronningens fødselsdag',
     'en' => 'Queen’s Birthday',
-    'pt' => 'Aniversário da Rainha',
     'fr' => 'Anniversaire officiel de la reine',
+    'pt' => 'Aniversário da Rainha',
     'ru' => 'Официальный день рождения королевы',
 ];

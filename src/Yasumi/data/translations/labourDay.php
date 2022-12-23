@@ -17,10 +17,10 @@ declare(strict_types=1);
 return [
     'en' => 'Labour Day',
     'en_US' => 'Labor Day',
+    'fr' => 'Fête du travail',
     'ja' => '労働の日',
     'ko' => '노동절',
     'nl' => 'Dag van de arbeid',
     'sk' => 'Sviatok práce',
-    'fr' => 'Fête du travail',
     'tr' => 'Emek ve Dayanışma Günü',
 ];

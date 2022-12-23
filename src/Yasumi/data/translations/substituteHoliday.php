@@ -17,8 +17,8 @@ declare(strict_types=1);
 return [
     'da' => '{0} (erstatning)',
     'en' => '{0} (substitute day)',
-    'en_US' => '{0} observed',
     'en_CA' => '{0} observed',
+    'en_US' => '{0} observed',
     'ja' => '振替休日 ({0})',
     'ko' => '대체공휴일',
 ];

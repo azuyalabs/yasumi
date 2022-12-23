@@ -15,6 +15,6 @@ declare(strict_types=1);
 
 // Translations for Saint Rupert's Day.
 return [
-    'en' => 'Saint Rupert’s Day',
     'de_AT' => 'Rupert',
+    'en' => 'Saint Rupert’s Day',
 ];
