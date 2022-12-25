@@ -29,10 +29,11 @@ class PublicBridgeDayTest extends JapanBaseTestCase implements HolidayTestCase
      * The name of the holiday.
      */
     public const HOLIDAY = 'bridgeDay';
+
     /**
      * @var number representing the calendar year to be tested against
      */
-    private $year;
+    private int $year;
 
     /**
      * Initial setup of this Test Case.
