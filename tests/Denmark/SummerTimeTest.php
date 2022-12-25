@@ -45,9 +45,16 @@ final class SummerTimeTest extends DaylightSavingTime
     {
         parent::__construct();
 
-        // no summertime defined for 1942
+        // no summertime defined prior to 1942
         if (false !== ($key = array_search(1942, $this->observedYears, true))) {
             unset($this->observedYears[(int) $key]);
+        }
+
+        // In version 2022f of th tz db, a correction for 1947 was made for the summertiime
+        // transition to april the 6th.
+        // See: https://github.com/eggert/tz/blob/2022f/europe
+        if (1 === strcmp(intltz_get_tz_data_version(), '2022f')) {
+            $this->deviantTransitions[1947] = '1947-04-06';
         }
     }
 
