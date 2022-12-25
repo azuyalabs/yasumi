@@ -99,33 +99,29 @@ class Argentina extends AbstractProvider
 
             $carnavalMonday = clone $easter;
             $carnavalMondayDate = $carnavalMonday->sub(new DateInterval('P48D'));
-            if (false !== $carnavalMondayDate) {
-                $this->addHoliday(new Holiday(
-                    'carnavalMonday',
-                    [
-                      'en' => 'Carnival Monday',
-                      'es' => 'Lunes de Carnaval',
-                    ],
-                    $carnavalMondayDate,
-                    $this->locale,
-                    Holiday::TYPE_OBSERVANCE
-                ));
-            }
+            $this->addHoliday(new Holiday(
+                'carnavalMonday',
+                [
+                  'en' => 'Carnival Monday',
+                  'es' => 'Lunes de Carnaval',
+                ],
+                $carnavalMondayDate,
+                $this->locale,
+                Holiday::TYPE_OBSERVANCE
+            ));
 
             $carnavalTuesday = clone $easter;
             $carnavalTuesdayDate = $carnavalTuesday->sub(new DateInterval('P47D'));
-            if (false !== $carnavalTuesdayDate) {
-                $this->addHoliday(new Holiday(
-                    'carnavalTuesday',
-                    [
-                      'en' => 'Carnival Tuesday',
-                      'es' => 'Martes de Carnaval',
-                    ],
-                    $carnavalTuesdayDate,
-                    $this->locale,
-                    Holiday::TYPE_OBSERVANCE
-                ));
-            }
+            $this->addHoliday(new Holiday(
+                'carnavalTuesday',
+                [
+                  'en' => 'Carnival Tuesday',
+                  'es' => 'Martes de Carnaval',
+                ],
+                $carnavalTuesdayDate,
+                $this->locale,
+                Holiday::TYPE_OBSERVANCE
+            ));
         }
     }
 
