@@ -40,7 +40,6 @@
     "ext-json": "*"
   },
   "require-dev": {
-    "ext-intl": "*",
     "friendsofphp/php-cs-fixer": "v2.19 | v3.11",
     "infection/infection": "^0.17 | ^0.26",
     "mikey179/vfsstream": "^1.6",
