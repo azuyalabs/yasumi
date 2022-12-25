@@ -50,10 +50,10 @@ final class SummerTimeTest extends DaylightSavingTime
             unset($this->observedYears[(int) $key]);
         }
 
-        // In version 2022f of th tz db, a correction for 1947 was made for the summertiime
+        // In version 2022f of the tz db, a correction for 1947 was made for the summertiime
         // transition to april the 6th.
         // See: https://github.com/eggert/tz/blob/2022f/europe
-        if (1 === strcmp(intltz_get_tz_data_version(), '2022f')) {
+        if (1 === strcmp(\intltz_get_tz_data_version(), '2022f')) {
             $this->deviantTransitions[1947] = '1947-04-06';
         }
     }
