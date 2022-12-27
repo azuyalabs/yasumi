@@ -225,7 +225,7 @@ class Australia extends AbstractProvider
         $this->addHoliday(new Holiday(
             'nationalDayOfMourning',
             ['en' => 'National Day of Mourning'],
-            new DateTime("$this->year-9-22", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("$this->year-9-22", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));
