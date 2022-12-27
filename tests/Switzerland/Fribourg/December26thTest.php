@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Switzerland\Fribourg;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -33,7 +30,7 @@ class December26thTest extends FribourgBaseTestCase implements HolidayTestCase
     /**
      * Tests December 26th.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testDecember26th(): void
     {
@@ -42,14 +39,14 @@ class December26thTest extends FribourgBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-12-26", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-12-26", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests translated name of December 26th.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -64,7 +61,7 @@ class December26thTest extends FribourgBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

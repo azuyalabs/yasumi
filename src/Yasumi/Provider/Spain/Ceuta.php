@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Spain;
 
-use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -80,7 +79,7 @@ class Ceuta extends Spain
             $this->addHoliday(new Holiday(
                 'ceutaDay',
                 ['es' => 'Día de Ceuta'],
-                new DateTime("$this->year-9-2", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("$this->year-9-2", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

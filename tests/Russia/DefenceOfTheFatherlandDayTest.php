@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Russia;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\Provider\Russia;
 use Yasumi\tests\HolidayTestCase;
@@ -36,7 +33,7 @@ class DefenceOfTheFatherlandDayTest extends RussiaBaseTestCase implements Holida
     /**
      * Test if holiday is not defined before.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayBefore(): void
     {
@@ -50,7 +47,7 @@ class DefenceOfTheFatherlandDayTest extends RussiaBaseTestCase implements Holida
     /**
      * Test if holiday is defined after.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayAfter(): void
     {
@@ -60,14 +57,14 @@ class DefenceOfTheFatherlandDayTest extends RussiaBaseTestCase implements Holida
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-02-23", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-02-23", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * {@inheritdoc}
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -88,7 +85,7 @@ class DefenceOfTheFatherlandDayTest extends RussiaBaseTestCase implements Holida
     /**
      * {@inheritdoc}
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

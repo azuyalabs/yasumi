@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Italy;
 
-use DateTime;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -34,8 +32,8 @@ class InternationalWorkersDayTest extends ItalyBaseTestCase implements HolidayTe
      *
      * @dataProvider InternationalWorkersDayDataProvider
      *
-     * @param int      $year     the year for which International Workers' Day needs to be tested
-     * @param DateTime $expected the expected date
+     * @param int       $year     the year for which International Workers' Day needs to be tested
+     * @param \DateTime $expected the expected date
      */
     public function testInternationalWorkersDay(int $year, \DateTimeInterface $expected): void
     {
@@ -47,7 +45,7 @@ class InternationalWorkersDayTest extends ItalyBaseTestCase implements HolidayTe
      *
      * @return array<array> list of test dates for International Workers' Day
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function InternationalWorkersDayDataProvider(): array
     {
@@ -57,7 +55,7 @@ class InternationalWorkersDayTest extends ItalyBaseTestCase implements HolidayTe
     /**
      * Tests translated name of International Workers' Day.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -72,7 +70,7 @@ class InternationalWorkersDayTest extends ItalyBaseTestCase implements HolidayTe
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

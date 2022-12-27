@@ -15,8 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi;
 
-use DirectoryIterator;
-use InvalidArgumentException;
 use Yasumi\Exception\UnknownLocaleException;
 
 /**
@@ -50,18 +48,18 @@ class Translations implements TranslationsInterface
      * @param string $directoryPath directory path for translation files
      *
      * @throws UnknownLocaleException
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      */
     public function loadTranslations(string $directoryPath): void
     {
         if (!file_exists($directoryPath)) {
-            throw new InvalidArgumentException('Directory with translations not found');
+            throw new \InvalidArgumentException('Directory with translations not found');
         }
 
         $directoryPath = rtrim($directoryPath, '/\\').DIRECTORY_SEPARATOR;
         $extension = 'php';
 
-        foreach (new DirectoryIterator($directoryPath) as $file) {
+        foreach (new \DirectoryIterator($directoryPath) as $file) {
             if ($file->isDot() || $file->isDir()) {
                 continue;
             }

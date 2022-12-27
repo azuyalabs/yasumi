@@ -15,11 +15,7 @@ declare(strict_types=1);
 
 namespace Yasumi\tests;
 
-use DateInterval;
 use DateTime;
-use DateTimeInterface;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 
 /**
@@ -40,7 +36,7 @@ trait Randomizer
      *
      * @return array<array> list of random test dates used for assertion of holidays
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function generateRandomDates(
         int $month,
@@ -53,7 +49,7 @@ trait Randomizer
         $range ??= 1000;
         for ($y = 1; $y <= ($iterations ?? 10); ++$y) {
             $year = (int) self::dateTimeBetween("-$range years", "+$range years")->format('Y');
-            $data[] = [$year, new DateTime("$year-$month-$day", new DateTimeZone($timezone ?? 'UTC'))];
+            $data[] = [$year, new \DateTime("$year-$month-$day", new \DateTimeZone($timezone ?? 'UTC'))];
         }
 
         return $data;
@@ -68,7 +64,7 @@ trait Randomizer
      *
      * @return array<array> list of random easter test dates used for assertion of holidays
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function generateRandomEasterDates(
         string $timezone = null,
@@ -97,7 +93,7 @@ trait Randomizer
      *
      * @return array<array> list of random Easter Monday test dates used for assertion of holidays
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function generateRandomEasterMondayDates(
         string $timezone = null,
@@ -106,8 +102,8 @@ trait Randomizer
     ): array {
         $range ??= 1000;
 
-        return $this->generateRandomModifiedEasterDates(static function (DateTime $date): void {
-            $date->add(new DateInterval('P1D'));
+        return $this->generateRandomModifiedEasterDates(static function (\DateTime $date): void {
+            $date->add(new \DateInterval('P1D'));
         }, $timezone ?? 'UTC', $iterations ?? 10, $range);
     }
 
@@ -121,7 +117,7 @@ trait Randomizer
      *
      * @return array<array> list of random modified Easter day test dates for assertion of holidays
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function generateRandomModifiedEasterDates(
         callable $cb,
@@ -152,7 +148,7 @@ trait Randomizer
      *
      * @return array<array> list of random Good Friday test dates used for assertion of holidays
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function generateRandomGoodFridayDates(
         string $timezone = null,
@@ -161,8 +157,8 @@ trait Randomizer
     ): array {
         $range ??= 1000;
 
-        return $this->generateRandomModifiedEasterDates(static function (DateTime $date): void {
-            $date->sub(new DateInterval('P2D'));
+        return $this->generateRandomModifiedEasterDates(static function (\DateTime $date): void {
+            $date->sub(new \DateInterval('P2D'));
         }, $timezone ?? 'UTC', $iterations ?? 10, $range);
     }
 
@@ -175,7 +171,7 @@ trait Randomizer
      *
      * @return array<array> list of random Pentecost test dates used for assertion of holidays
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function generateRandomPentecostDates(
         string $timezone = null,
@@ -184,8 +180,8 @@ trait Randomizer
     ): array {
         $range ??= 1000;
 
-        return $this->generateRandomModifiedEasterDates(static function (DateTime $date): void {
-            $date->add(new DateInterval('P49D'));
+        return $this->generateRandomModifiedEasterDates(static function (\DateTime $date): void {
+            $date->add(new \DateInterval('P49D'));
         }, $timezone ?? 'UTC', $iterations ?? 10, $range);
     }
 
@@ -201,7 +197,7 @@ trait Randomizer
      *
      * @return array<array> list of random test dates used for assertion of holidays
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function generateRandomDatesWithHolidayMovedToMonday(
         int $month,
@@ -210,7 +206,7 @@ trait Randomizer
         int $iterations = null,
         int $range = null
     ): array {
-        return $this->generateRandomDatesWithModifier($month, $day, function ($range, DateTime $date): void {
+        return $this->generateRandomDatesWithModifier($month, $day, function ($range, \DateTime $date): void {
             if ($this->isWeekend($date)) {
                 $date->modify('next monday');
             }
@@ -229,7 +225,7 @@ trait Randomizer
      *
      * @return array<array> list of random test dates used for assertion of holidays with an applied callback
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function generateRandomDatesWithModifier(
         int $month,
@@ -243,7 +239,7 @@ trait Randomizer
 
         for ($i = 1; $i <= $iterations; ++$i) {
             $year = $this->generateRandomYear($range);
-            $date = new DateTime("$year-$month-$day", new DateTimeZone($timezone ?? 'UTC'));
+            $date = new \DateTime("$year-$month-$day", new \DateTimeZone($timezone ?? 'UTC'));
 
             $callback($year, $date);
 
@@ -261,7 +257,7 @@ trait Randomizer
      *
      * @return int a year number
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function generateRandomYear(
         int $lowerLimit = null,
@@ -273,13 +269,13 @@ trait Randomizer
     /**
      * Checks if given $dateTime is a weekend.
      *
-     * @param DateTimeInterface $dateTime    date for which weekend will be checked
-     * @param array<int>        $weekendDays weekend days. Saturday and Sunday are used by default.
+     * @param \DateTimeInterface $dateTime    date for which weekend will be checked
+     * @param array<int>         $weekendDays weekend days. Saturday and Sunday are used by default.
      *
      * @return bool true if $dateTime is a weekend, false otherwise
      */
     public function isWeekend(
-        DateTimeInterface $dateTime,
+        \DateTimeInterface $dateTime,
         array $weekendDays = [0, 6]
     ): bool {
         return \in_array((int) $dateTime->format('w'), $weekendDays, true);
@@ -288,7 +284,7 @@ trait Randomizer
     /**
      * Returns a random number between $int1 and $int2 (any order).
      *
-     * @throws Exception
+     * @throws \Exception
      *
      * @example 79907610
      */
@@ -308,14 +304,14 @@ trait Randomizer
      * @param \DateTime|string $endDate   Defaults to "now"
      * @param string|null      $timezone  time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
      *
-     * @throws Exception
+     * @throws \Exception
      *
      * @see http://php.net/manual/en/timezones.php
      * @see http://php.net/manual/en/function.date-default-timezone-get.php
      *
      * @example DateTime('1999-02-02 11:42:52')
      */
-    public static function dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null): DateTimeInterface
+    public static function dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null): \DateTimeInterface
     {
         $startTimestamp = $startDate instanceof \DateTime ? $startDate->getTimestamp() : strtotime($startDate);
 
@@ -365,16 +361,16 @@ trait Randomizer
      * @param int    $year     year for which Easter needs to be calculated
      * @param string $timezone timezone in which Easter is celebrated
      *
-     * @return DateTime date of Easter
+     * @return \DateTime date of Easter
      *
-     * @throws Exception
+     * @throws \Exception
      *
      * @see  easter_days
      * @see https://github.com/php/php-src/blob/c8aa6f3a9a3d2c114d0c5e0c9fdd0a465dbb54a5/ext/calendar/easter.c
      * @see http://www.gmarts.org/index.php?go=415#EasterMallen
      * @see http://www.tondering.dk/claus/cal/easter.php
      */
-    protected function calculateEaster(int $year, string $timezone): DateTimeInterface
+    protected function calculateEaster(int $year, string $timezone): \DateTimeInterface
     {
         if (\extension_loaded('calendar')) {
             $easter_days = easter_days($year);
@@ -423,8 +419,8 @@ trait Randomizer
             $easter_days = ($pfm + $tmp + 1); // Easter as the number of days after 21st March
         }
 
-        $easter = new DateTime("$year-3-21", new DateTimeZone($timezone));
-        $easter->add(new DateInterval('P'.$easter_days.'D'));
+        $easter = new \DateTime("$year-3-21", new \DateTimeZone($timezone));
+        $easter->add(new \DateInterval('P'.$easter_days.'D'));
 
         return $easter;
     }
@@ -447,7 +443,7 @@ trait Randomizer
         return $ts;
     }
 
-    private static function setTimezone(DateTimeInterface $dt, ?string $timezone): DateTimeInterface
+    private static function setTimezone(\DateTimeInterface $dt, ?string $timezone): \DateTimeInterface
     {
         return $dt->setTimezone(new \DateTimeZone(static::resolveTimezone($timezone)));
     }

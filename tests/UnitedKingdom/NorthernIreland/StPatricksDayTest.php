@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\UnitedKingdom\NorthernIreland;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -43,11 +40,11 @@ class StPatricksDayTest extends NorthernIrelandBaseTestCase implements HolidayTe
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHoliday(int $year, string $expected): void
     {
-        $date = new DateTime($expected, new DateTimeZone(self::TIMEZONE));
+        $date = new \DateTime($expected, new \DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
 
         if (\in_array((int) $date->format('w'), [0, 6], true)) {
@@ -59,7 +56,7 @@ class StPatricksDayTest extends NorthernIrelandBaseTestCase implements HolidayTe
     /**
      * Tests the holiday defined in this test before establishment.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -75,7 +72,7 @@ class StPatricksDayTest extends NorthernIrelandBaseTestCase implements HolidayTe
      *
      * @return array<array> list of test dates for the holiday defined in this test
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function HolidayDataProvider(): array
     {
@@ -83,7 +80,7 @@ class StPatricksDayTest extends NorthernIrelandBaseTestCase implements HolidayTe
 
         for ($y = 0; $y < self::TEST_ITERATIONS; ++$y) {
             $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-            $date = new DateTime("$year-3-17", new DateTimeZone(self::TIMEZONE));
+            $date = new \DateTime("$year-3-17", new \DateTimeZone(self::TIMEZONE));
             $data[] = [$year, $date->format('Y-m-d')];
         }
 
@@ -93,7 +90,7 @@ class StPatricksDayTest extends NorthernIrelandBaseTestCase implements HolidayTe
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -108,7 +105,7 @@ class StPatricksDayTest extends NorthernIrelandBaseTestCase implements HolidayTe
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

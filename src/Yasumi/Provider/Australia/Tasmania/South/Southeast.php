@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Australia\Tasmania\South;
 
-use DateTime;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia\Tasmania\South;
@@ -59,7 +58,7 @@ class Southeast extends South
         $this->addHoliday(new Holiday(
             'hobartRegatta',
             ['en' => 'Royal Hobart Regatta'],
-            new DateTime('second monday of february '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime('second monday of february '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));

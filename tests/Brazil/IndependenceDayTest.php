@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Brazil;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -38,7 +35,7 @@ class IndependenceDayTest extends BrazilBaseTestCase implements HolidayTestCase
     /**
      * Tests Dia da independência do Brasil on or after 1822.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testDiaDaIndependenciaDoBrasilAfter1822(): void
     {
@@ -47,14 +44,14 @@ class IndependenceDayTest extends BrazilBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-09-07", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-09-07", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests Dia da independência do Brasil on or before 1822.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testDiaDaIndependenciaDoBrasilBefore1822(): void
     {
@@ -65,7 +62,7 @@ class IndependenceDayTest extends BrazilBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -81,7 +78,7 @@ class IndependenceDayTest extends BrazilBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

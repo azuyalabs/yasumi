@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use DateInterval;
-use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -96,7 +94,7 @@ class Greece extends AbstractProvider
         $this->addHoliday(new Holiday(
             'threeHolyHierarchs',
             ['el' => 'Τριών Ιεραρχών'],
-            new DateTime("$this->year-1-30", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("$this->year-1-30", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OTHER
         ));
@@ -121,7 +119,7 @@ class Greece extends AbstractProvider
         $this->addHoliday(new Holiday(
             'cleanMonday',
             ['el' => 'Καθαρά Δευτέρα'],
-            $this->calculateEaster($this->year, $this->timezone)->sub(new DateInterval('P48D')),
+            $this->calculateEaster($this->year, $this->timezone)->sub(new \DateInterval('P48D')),
             $this->locale
         ));
     }
@@ -156,7 +154,7 @@ class Greece extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'independenceDay',
                 ['el' => 'Εικοστή Πέμπτη Μαρτίου'],
-                new DateTime("$this->year-3-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("$this->year-3-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -180,7 +178,7 @@ class Greece extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'ohiDay',
                 ['el' => 'Επέτειος του Όχι'],
-                new DateTime("$this->year-10-28", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("$this->year-10-28", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -204,7 +202,7 @@ class Greece extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'polytechnio',
                 ['el' => 'Πολυτεχνείο'],
-                new DateTime("$this->year-11-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("$this->year-11-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OTHER
             ));

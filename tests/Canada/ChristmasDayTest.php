@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Canada;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -33,7 +30,7 @@ class ChristmasDayTest extends CanadaBaseTestCase implements HolidayTestCase
     /**
      * Tests Christmas Day. Christmas Day is celebrated on December 25th.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testChristmasDay(): void
     {
@@ -42,14 +39,14 @@ class ChristmasDayTest extends CanadaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-12-25", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-12-25", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -64,7 +61,7 @@ class ChristmasDayTest extends CanadaBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

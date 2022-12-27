@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Romania;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -38,7 +35,7 @@ class ChildrensDayTest extends RomaniaBaseTestCase implements HolidayTestCase
     /**
      * Tests Children's Day on or after 1950.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testChildrensDayOnAfter1950(): void
     {
@@ -47,14 +44,14 @@ class ChildrensDayTest extends RomaniaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-06-01", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-06-01", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests Children's Day before 1950.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testChildrensDayBefore1950(): void
     {
@@ -68,7 +65,7 @@ class ChildrensDayTest extends RomaniaBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -83,7 +80,7 @@ class ChildrensDayTest extends RomaniaBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

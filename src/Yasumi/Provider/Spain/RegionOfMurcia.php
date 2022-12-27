@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Spain;
 
-use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -80,7 +79,7 @@ class RegionOfMurcia extends Spain
         if ($this->year >= 1983) {
             $this->addHoliday(new Holiday('murciaDay', [
                 'es' => 'Día de la Región de Murcia',
-            ], new DateTime("$this->year-6-9", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
+            ], new \DateTime("$this->year-6-9", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
     }
 }

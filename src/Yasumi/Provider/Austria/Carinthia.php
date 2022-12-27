@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Austria;
 
-use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -74,7 +73,7 @@ class Carinthia extends Austria
         $this->addHoliday(new Holiday(
             'plebisciteDay',
             [],
-            new DateTime($this->year.'-10-10', new \DateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-10-10', new \DateTimeZone($this->timezone)),
             $this->locale
         ));
     }

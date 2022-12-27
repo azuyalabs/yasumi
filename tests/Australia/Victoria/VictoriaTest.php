@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Australia\Victoria;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\ProviderTestCase;
 
@@ -61,7 +60,7 @@ class VictoriaTest extends VictoriaBaseTestCase implements ProviderTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
      * @throws \Exception
      */
     public function testSources(): void

@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Ireland;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -38,7 +35,7 @@ class AugustHolidayTest extends IrelandBaseTestCase implements HolidayTestCase
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHoliday(int $year, string $expected): void
     {
@@ -46,7 +43,7 @@ class AugustHolidayTest extends IrelandBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime($expected, new DateTimeZone(self::TIMEZONE))
+            new \DateTime($expected, new \DateTimeZone(self::TIMEZONE))
         );
         $this->assertDayOfWeek(self::REGION, self::HOLIDAY, $year, 'Monday');
     }
@@ -56,7 +53,7 @@ class AugustHolidayTest extends IrelandBaseTestCase implements HolidayTestCase
      *
      * @return array<array> list of test dates for the holiday defined in this test
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function HolidayDataProvider(): array
     {
@@ -64,7 +61,7 @@ class AugustHolidayTest extends IrelandBaseTestCase implements HolidayTestCase
 
         for ($y = 0; $y < self::TEST_ITERATIONS; ++$y) {
             $year = $this->generateRandomYear();
-            $date = new DateTime("next monday $year-7-31", new DateTimeZone(self::TIMEZONE));
+            $date = new \DateTime("next monday $year-7-31", new \DateTimeZone(self::TIMEZONE));
 
             $data[] = [$year, $date->format('Y-m-d')];
         }
@@ -75,7 +72,7 @@ class AugustHolidayTest extends IrelandBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -96,7 +93,7 @@ class AugustHolidayTest extends IrelandBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

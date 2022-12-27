@@ -15,9 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Denmark;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 
 /**
@@ -71,21 +68,21 @@ final class WinterTimeTest extends DaylightSavingTime
     /**
      * Tests the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testWinterTime(): void
     {
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->randomYearFromArray($this->unobservedYears));
 
         $year = $this->randomYearFromArray($this->observedYears);
-        $expectedDate = new DateTime("last sunday of september $year", new DateTimeZone(self::TIMEZONE));
+        $expectedDate = new \DateTime("last sunday of september $year", new \DateTimeZone(self::TIMEZONE));
 
         if ($year >= 1996) {
-            $expectedDate = new DateTime("last sunday of october $year", new DateTimeZone(self::TIMEZONE));
+            $expectedDate = new \DateTime("last sunday of october $year", new \DateTimeZone(self::TIMEZONE));
         }
 
         if (array_key_exists($year, $this->deviantTransitions)) {
-            $expectedDate = new DateTime($this->deviantTransitions[$year], new DateTimeZone(self::TIMEZONE));
+            $expectedDate = new \DateTime($this->deviantTransitions[$year], new \DateTimeZone(self::TIMEZONE));
         }
 
         $this->assertHoliday(
@@ -99,7 +96,7 @@ final class WinterTimeTest extends DaylightSavingTime
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -114,7 +111,7 @@ final class WinterTimeTest extends DaylightSavingTime
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

@@ -15,7 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\SouthKorea;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\SouthKorea;
 use Yasumi\tests\ProviderTestCase;
@@ -134,7 +133,7 @@ class SouthKoreaTest extends SouthKoreaBaseTestCase implements ProviderTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
      * @throws \Exception
      */
     public function testSources(): void

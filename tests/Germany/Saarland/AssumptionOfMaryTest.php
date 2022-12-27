@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Germany\Saarland;
 
-use DateTime;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -34,8 +32,8 @@ class AssumptionOfMaryTest extends SaarlandBaseTestCase implements HolidayTestCa
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int      $year     the year for which the holiday defined in this test needs to be tested
-     * @param DateTime $expected the expected date
+     * @param int       $year     the year for which the holiday defined in this test needs to be tested
+     * @param \DateTime $expected the expected date
      */
     public function testHoliday(int $year, \DateTimeInterface $expected): void
     {
@@ -47,7 +45,7 @@ class AssumptionOfMaryTest extends SaarlandBaseTestCase implements HolidayTestCa
      *
      * @return array<array> list of test dates for the holiday defined in this test
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function HolidayDataProvider(): array
     {
@@ -57,7 +55,7 @@ class AssumptionOfMaryTest extends SaarlandBaseTestCase implements HolidayTestCa
     /**
      * Tests translated name of the Assumption of Mary.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -72,7 +70,7 @@ class AssumptionOfMaryTest extends SaarlandBaseTestCase implements HolidayTestCa
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

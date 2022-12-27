@@ -15,9 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi;
 
-use DateTime;
-use InvalidArgumentException;
-use JsonSerializable;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\MissingTranslationException;
 use Yasumi\Exception\UnknownLocaleException;
@@ -25,7 +22,7 @@ use Yasumi\Exception\UnknownLocaleException;
 /**
  * Class Holiday.
  */
-class Holiday extends DateTime implements JsonSerializable
+class Holiday extends \DateTime implements \JsonSerializable
 {
     /**
      * Type definition for Official (i.e. National/Federal) holidays.
@@ -102,7 +99,7 @@ class Holiday extends DateTime implements JsonSerializable
      *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * @throws \Exception
      */
     public function __construct(
@@ -114,7 +111,7 @@ class Holiday extends DateTime implements JsonSerializable
     ) {
         // Validate if key is not empty
         if (empty($key)) {
-            throw new InvalidArgumentException('Holiday name can not be blank.');
+            throw new \InvalidArgumentException('Holiday name can not be blank.');
         }
 
         // Load internal locales variable

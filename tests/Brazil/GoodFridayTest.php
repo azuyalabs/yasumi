@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Brazil;
 
-use DateInterval;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\tests\HolidayTestCase;
@@ -35,7 +33,7 @@ class GoodFridayTest extends BrazilBaseTestCase implements HolidayTestCase
     /**
      * Tests Good Friday.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testGoodFriday(): void
     {
@@ -44,14 +42,14 @@ class GoodFridayTest extends BrazilBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            $this->calculateEaster($year, self::TIMEZONE)->sub(new DateInterval('P2D'))
+            $this->calculateEaster($year, self::TIMEZONE)->sub(new \DateInterval('P2D'))
         );
     }
 
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -66,7 +64,7 @@ class GoodFridayTest extends BrazilBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Argentina;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -38,7 +35,7 @@ class RaceDayTest extends ArgentinaBaseTestCase implements HolidayTestCase
     /**
      * Tests the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHoliday(): void
     {
@@ -47,7 +44,7 @@ class RaceDayTest extends ArgentinaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-10-12", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-10-12", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -62,7 +59,7 @@ class RaceDayTest extends ArgentinaBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of the holiday.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -77,7 +74,7 @@ class RaceDayTest extends ArgentinaBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

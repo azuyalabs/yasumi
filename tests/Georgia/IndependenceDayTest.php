@@ -15,9 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Georgia;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -29,7 +26,7 @@ class IndependenceDayTest extends GeorgiaBaseTestCase implements HolidayTestCase
     public const HOLIDAY = 'independenceDay';
 
     /**
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHoliday(): void
     {
@@ -38,7 +35,7 @@ class IndependenceDayTest extends GeorgiaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-05-26", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-05-26", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

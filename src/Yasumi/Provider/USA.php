@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use DateInterval;
-use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -89,7 +87,7 @@ class USA extends AbstractProvider
         if ($this->year >= 1986) {
             $this->addHoliday(new Holiday('martinLutherKingDay', [
                 'en' => 'Dr. Martin Luther King Jr’s Birthday',
-            ], new DateTime("third monday of january $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
+            ], new \DateTime("third monday of january $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
     }
 
@@ -111,9 +109,9 @@ class USA extends AbstractProvider
     private function calculateWashingtonsBirthday(): void
     {
         if ($this->year >= 1879) {
-            $date = new DateTime("$this->year-2-22", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+            $date = new \DateTime("$this->year-2-22", DateTimeZoneFactory::getDateTimeZone($this->timezone));
             if ($this->year >= 1968) {
-                $date = new DateTime("third monday of february $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+                $date = new \DateTime("third monday of february $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
             }
             $this->addHoliday(new Holiday('washingtonsBirthday', [
                 'en' => 'Washington’s Birthday',
@@ -136,9 +134,9 @@ class USA extends AbstractProvider
     private function calculateMemorialDay(): void
     {
         if ($this->year >= 1865) {
-            $date = new DateTime("$this->year-5-30", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+            $date = new \DateTime("$this->year-5-30", DateTimeZoneFactory::getDateTimeZone($this->timezone));
             if ($this->year >= 1968) {
-                $date = new DateTime("last monday of may $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+                $date = new \DateTime("last monday of may $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
             }
             $this->addHoliday(new Holiday('memorialDay', [
                 'en' => 'Memorial Day',
@@ -163,7 +161,7 @@ class USA extends AbstractProvider
         if ($this->year >= 2021) {
             $this->addHoliday(new Holiday('juneteenth', [
                 'en' => 'Juneteenth',
-            ], new DateTime("$this->year-6-19", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
+            ], new \DateTime("$this->year-6-19", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
     }
 
@@ -184,7 +182,7 @@ class USA extends AbstractProvider
         if ($this->year >= 1776) {
             $this->addHoliday(new Holiday('independenceDay', [
                 'en' => 'Independence Day',
-            ], new DateTime("$this->year-7-4", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
+            ], new \DateTime("$this->year-7-4", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
     }
 
@@ -206,7 +204,7 @@ class USA extends AbstractProvider
                 [
                     'en' => 'Labour Day',
                 ],
-                new DateTime("first monday of september $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("first monday of september $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -228,9 +226,9 @@ class USA extends AbstractProvider
     private function calculateColumbusDay(): void
     {
         if ($this->year >= 1937) {
-            $date = new DateTime("$this->year-10-12", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+            $date = new \DateTime("$this->year-10-12", DateTimeZoneFactory::getDateTimeZone($this->timezone));
             if ($this->year >= 1970) {
-                $date = new DateTime("second monday of october $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+                $date = new \DateTime("second monday of october $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
             }
             $this->addHoliday(new Holiday('columbusDay', [
                 'en' => 'Columbus Day',
@@ -256,7 +254,7 @@ class USA extends AbstractProvider
 
             $this->addHoliday(new Holiday('veteransDay', [
                 'en' => $name,
-            ], new DateTime("$this->year-11-11", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
+            ], new \DateTime("$this->year-11-11", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
     }
 
@@ -280,7 +278,7 @@ class USA extends AbstractProvider
                 [
                     'en' => 'Thanksgiving Day',
                 ],
-                new DateTime("fourth thursday of november $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("fourth thursday of november $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -306,13 +304,13 @@ class USA extends AbstractProvider
             // Substitute holiday is on a Monday in case the holiday falls on a Sunday
             if (0 === (int) $holiday->format('w')) {
                 $date = clone $holiday;
-                $date->add(new DateInterval('P1D'));
+                $date->add(new \DateInterval('P1D'));
             }
 
             // Substitute holiday is on a Friday in case the holiday falls on a Saturday
             if (6 === (int) $holiday->format('w')) {
                 $date = clone $holiday;
-                $date->sub(new DateInterval('P1D'));
+                $date->sub(new \DateInterval('P1D'));
             }
 
             // Add substitute holiday

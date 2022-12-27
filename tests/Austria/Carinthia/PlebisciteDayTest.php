@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Austria\Carinthia;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,8 +37,8 @@ class PlebisciteDayTest extends CarinthiaBaseTestCase implements HolidayTestCase
      *
      * @dataProvider PlebisciteDayDataProvider
      *
-     * @param int      $year     the year for which Plebiscite Day needs to be tested
-     * @param DateTime $expected the expected date
+     * @param int       $year     the year for which Plebiscite Day needs to be tested
+     * @param \DateTime $expected the expected date
      */
     public function testPlebisciteDay(int $year, \DateTimeInterface $expected): void
     {
@@ -53,7 +50,7 @@ class PlebisciteDayTest extends CarinthiaBaseTestCase implements HolidayTestCase
      *
      * @return array<array> list of test dates for Plebiscite Day
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function PlebisciteDayDataProvider(): array
     {
@@ -61,7 +58,7 @@ class PlebisciteDayTest extends CarinthiaBaseTestCase implements HolidayTestCase
 
         for ($y = 0; $y < self::TEST_ITERATIONS; ++$y) {
             $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-            $data[] = [$year, new DateTime("$year-10-10", new DateTimeZone(self::TIMEZONE))];
+            $data[] = [$year, new \DateTime("$year-10-10", new \DateTimeZone(self::TIMEZONE))];
         }
 
         return $data;
@@ -70,7 +67,7 @@ class PlebisciteDayTest extends CarinthiaBaseTestCase implements HolidayTestCase
     /**
      * Tests the holiday defined in this test before establishment.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -84,7 +81,7 @@ class PlebisciteDayTest extends CarinthiaBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -99,7 +96,7 @@ class PlebisciteDayTest extends CarinthiaBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

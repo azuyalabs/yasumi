@@ -15,9 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Lithuania;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\Provider\Lithuania;
 use Yasumi\tests\HolidayTestCase;
@@ -37,7 +34,7 @@ class RestorationOfTheStateOfLithuaniaDayTest extends LithuaniaBaseTestCase impl
     /**
      * Test if holiday is not defined before restoration.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayBeforeRestoration(): void
     {
@@ -51,7 +48,7 @@ class RestorationOfTheStateOfLithuaniaDayTest extends LithuaniaBaseTestCase impl
     /**
      * Test if holiday is defined after restoration.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayAfterRestoration(): void
     {
@@ -61,14 +58,14 @@ class RestorationOfTheStateOfLithuaniaDayTest extends LithuaniaBaseTestCase impl
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-02-16", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-02-16", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * {@inheritdoc}
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -89,7 +86,7 @@ class RestorationOfTheStateOfLithuaniaDayTest extends LithuaniaBaseTestCase impl
     /**
      * {@inheritdoc}
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

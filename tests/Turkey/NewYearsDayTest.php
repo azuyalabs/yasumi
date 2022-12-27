@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Turkey;
 
-use DateTime;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -26,8 +24,8 @@ class NewYearsDayTest extends TurkeyBaseTestCase implements HolidayTestCase
     /**
      * @dataProvider HolidayDataProvider
      *
-     * @param int      $year     the year for which the holiday defined in this test needs to be tested
-     * @param DateTime $expected the expected date
+     * @param int       $year     the year for which the holiday defined in this test needs to be tested
+     * @param \DateTime $expected the expected date
      */
     public function testHoliday(int $year, \DateTimeInterface $expected): void
     {
@@ -37,7 +35,7 @@ class NewYearsDayTest extends TurkeyBaseTestCase implements HolidayTestCase
     /**
      * @return array<array> list of test dates for the holiday defined in this test
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function HolidayDataProvider(): array
     {
@@ -45,7 +43,7 @@ class NewYearsDayTest extends TurkeyBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -58,7 +56,7 @@ class NewYearsDayTest extends TurkeyBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

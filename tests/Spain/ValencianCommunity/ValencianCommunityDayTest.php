@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Spain\ValencianCommunity;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -38,7 +35,7 @@ class ValencianCommunityDayTest extends ValencianCommunityBaseTestCase implement
     /**
      * Tests the holiday defined in this test on or after establishment.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayOnAfterEstablishment(): void
     {
@@ -47,14 +44,14 @@ class ValencianCommunityDayTest extends ValencianCommunityBaseTestCase implement
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-10-9", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-10-9", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests the holiday defined in this test before establishment.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -68,7 +65,7 @@ class ValencianCommunityDayTest extends ValencianCommunityBaseTestCase implement
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -83,7 +80,7 @@ class ValencianCommunityDayTest extends ValencianCommunityBaseTestCase implement
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Australia\Tasmania;
 
-use DateInterval;
-use DateTime;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia\Tasmania;
@@ -54,8 +52,8 @@ class Northwest extends Tasmania
      */
     private function calculateBurnieShow(): void
     {
-        $date = new DateTime('first saturday of october '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone));
-        $date = $date->sub(new DateInterval('P1D'));
+        $date = new \DateTime('first saturday of october '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = $date->sub(new \DateInterval('P1D'));
         $this->addHoliday(new Holiday('burnieShow', ['en' => 'Burnie Show'], $date, $this->locale));
     }
 }

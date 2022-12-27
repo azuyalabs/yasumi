@@ -14,10 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\UnitedKingdom\Scotland;
 
-use DateInterval;
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -39,15 +35,15 @@ class ChristmasDayTest extends ScotlandBaseTestCase implements HolidayTestCase
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHoliday(int $year, string $expected): void
     {
-        $date = new DateTime($expected, new DateTimeZone(self::TIMEZONE));
+        $date = new \DateTime($expected, new \DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
 
         if (\in_array((int) $date->format('w'), [0, 6], true)) {
-            $date->add(new DateInterval('P2D'));
+            $date->add(new \DateInterval('P2D'));
             $this->assertHoliday(self::REGION, 'substituteHoliday:'.self::HOLIDAY, $year, $date);
             $this->assertHolidayType(self::REGION, 'substituteHoliday:'.self::HOLIDAY, $year, Holiday::TYPE_BANK);
         }
@@ -58,7 +54,7 @@ class ChristmasDayTest extends ScotlandBaseTestCase implements HolidayTestCase
      *
      * @return array<array> list of test dates for the holiday defined in this test
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function HolidayDataProvider(): array
     {
@@ -66,7 +62,7 @@ class ChristmasDayTest extends ScotlandBaseTestCase implements HolidayTestCase
 
         for ($y = 0; $y < self::TEST_ITERATIONS; ++$y) {
             $year = $this->generateRandomYear();
-            $date = new DateTime("$year-12-25", new DateTimeZone(self::TIMEZONE));
+            $date = new \DateTime("$year-12-25", new \DateTimeZone(self::TIMEZONE));
 
             $data[] = [$year, $date->format('Y-m-d')];
         }
@@ -77,7 +73,7 @@ class ChristmasDayTest extends ScotlandBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -92,7 +88,7 @@ class ChristmasDayTest extends ScotlandBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

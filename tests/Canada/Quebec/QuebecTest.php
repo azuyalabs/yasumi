@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Canada\Quebec;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\ProviderTestCase;
 
@@ -89,7 +88,7 @@ class QuebecTest extends QuebecBaseTestCase implements ProviderTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
      * @throws \Exception
      */
     public function testSources(): void

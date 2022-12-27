@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Luxembourg;
 
-use DateTime;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -34,8 +32,8 @@ class InternationalWorkersDayTest extends LuxembourgBaseTestCase implements Holi
      *
      * @dataProvider InternationalWorkersDayDataProvider
      *
-     * @param int      $year     the year for which International Workers' Day needs to be tested
-     * @param DateTime $expected the expected date
+     * @param int       $year     the year for which International Workers' Day needs to be tested
+     * @param \DateTime $expected the expected date
      */
     public function testInternationalWorkersDay(int $year, \DateTimeInterface $expected): void
     {
@@ -45,7 +43,7 @@ class InternationalWorkersDayTest extends LuxembourgBaseTestCase implements Holi
     /**
      * Tests translated name of International Workers' Day.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -60,7 +58,7 @@ class InternationalWorkersDayTest extends LuxembourgBaseTestCase implements Holi
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {
@@ -72,7 +70,7 @@ class InternationalWorkersDayTest extends LuxembourgBaseTestCase implements Holi
      *
      * @return array<array> list of test dates for International Workers' Day
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function InternationalWorkersDayDataProvider(): array
     {

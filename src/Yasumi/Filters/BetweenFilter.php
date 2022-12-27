@@ -40,14 +40,14 @@ class BetweenFilter extends AbstractFilter
     /**
      * Construct the Between FilterIterator Object.
      *
-     * @param Iterator<ProviderInterface> $iterator  Iterator object of the Holidays Provider
-     * @param \DateTimeInterface          $startDate Start date of the time frame to check against
-     * @param \DateTimeInterface          $endDate   End date of the time frame to check against
-     * @param bool                        $equal     Indicate whether the start and end dates should be included in the
-     *                                               comparison
+     * @param \Iterator<ProviderInterface> $iterator  Iterator object of the Holidays Provider
+     * @param \DateTimeInterface           $startDate Start date of the time frame to check against
+     * @param \DateTimeInterface           $endDate   End date of the time frame to check against
+     * @param bool                         $equal     Indicate whether the start and end dates should be included in the
+     *                                                comparison
      */
     public function __construct(
-        Iterator $iterator,
+        \Iterator $iterator,
         \DateTimeInterface $startDate,
         \DateTimeInterface $endDate,
         bool $equal = true

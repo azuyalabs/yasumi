@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -91,7 +90,7 @@ class CzechRepublic extends AbstractProvider
                 'cs' => 'Den obnovy samostatného českého státu',
                 'en' => 'Day of renewal of the independent Czech state',
             ],
-            new DateTime($this->year.'-01-01', new \DateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-01-01', new \DateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -125,7 +124,7 @@ class CzechRepublic extends AbstractProvider
                 'cs' => 'Den slovanských věrozvěstů Cyrila a Metoděje',
                 'en' => 'Saints Cyril and Methodius Day',
             ],
-            new DateTime($this->year.'-07-5', new \DateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-07-5', new \DateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -150,7 +149,7 @@ class CzechRepublic extends AbstractProvider
         $this->addHoliday(new Holiday(
             'janHusDay',
             ['cs' => 'Den upálení mistra Jana Husa', 'en' => 'Jan Hus Day'],
-            new DateTime($this->year.'-07-6', new \DateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-07-6', new \DateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -181,7 +180,7 @@ class CzechRepublic extends AbstractProvider
                 'cs' => 'Den české státnosti',
                 'en' => 'St. Wenceslas Day (Czech Statehood Day)',
             ],
-            new DateTime($this->year.'-09-28', new \DateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-09-28', new \DateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -201,7 +200,7 @@ class CzechRepublic extends AbstractProvider
         $this->addHoliday(new Holiday('independentCzechoslovakStateDay', [
             'cs' => 'Den vzniku samostatného československého státu',
             'en' => 'Independent Czechoslovak State Day',
-        ], new DateTime($this->year.'-10-28', new \DateTimeZone($this->timezone)), $this->locale));
+        ], new \DateTime($this->year.'-10-28', new \DateTimeZone($this->timezone)), $this->locale));
     }
 
     /**
@@ -222,7 +221,7 @@ class CzechRepublic extends AbstractProvider
                 'cs' => 'Den boje za svobodu a demokracii',
                 'en' => 'Struggle for Freedom and Democracy Day',
             ],
-            new DateTime($this->year.'-11-17', new \DateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-11-17', new \DateTimeZone($this->timezone)),
             $this->locale
         ));
     }

@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Switzerland\Ticino;
 
-use DateTime;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -34,8 +32,8 @@ class StPeterPaulTest extends TicinoBaseTestCase implements HolidayTestCase
      *
      * @dataProvider StPeterPaulDataProvider
      *
-     * @param int      $year     the year for which Feast of Saints Peter and Paul needs to be tested
-     * @param DateTime $expected the expected date
+     * @param int       $year     the year for which Feast of Saints Peter and Paul needs to be tested
+     * @param \DateTime $expected the expected date
      */
     public function testStPeterPaul(int $year, \DateTimeInterface $expected): void
     {
@@ -47,7 +45,7 @@ class StPeterPaulTest extends TicinoBaseTestCase implements HolidayTestCase
      *
      * @return array<array> list of test dates for Feast of Saints Peter and Paul
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function StPeterPaulDataProvider(): array
     {
@@ -57,7 +55,7 @@ class StPeterPaulTest extends TicinoBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -72,7 +70,7 @@ class StPeterPaulTest extends TicinoBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

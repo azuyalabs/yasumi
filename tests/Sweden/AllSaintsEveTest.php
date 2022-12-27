@@ -14,10 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Sweden;
 
-use DateInterval;
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -36,8 +32,8 @@ class AllSaintsEveTest extends SwedenBaseTestCase implements HolidayTestCase
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int      $year     the year for which the holiday defined in this test needs to be tested
-     * @param DateTime $expected the expected date
+     * @param int       $year     the year for which the holiday defined in this test needs to be tested
+     * @param \DateTime $expected the expected date
      */
     public function testHoliday(int $year, \DateTimeInterface $expected): void
     {
@@ -49,7 +45,7 @@ class AllSaintsEveTest extends SwedenBaseTestCase implements HolidayTestCase
      *
      * @return array<array> list of test dates for the holiday defined in this test
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function HolidayDataProvider(): array
     {
@@ -57,7 +53,7 @@ class AllSaintsEveTest extends SwedenBaseTestCase implements HolidayTestCase
 
         for ($y = 0; $y < 50; ++$y) {
             $year = $this->generateRandomYear();
-            $date = new DateTime("$year-10-30", new DateTimeZone(self::TIMEZONE));
+            $date = new \DateTime("$year-10-30", new \DateTimeZone(self::TIMEZONE));
 
             // Check between 30 October and 5th of November the day that is a Friday
             for ($d = 0; $d <= 7; ++$d) {
@@ -65,7 +61,7 @@ class AllSaintsEveTest extends SwedenBaseTestCase implements HolidayTestCase
                     $data[] = [$year, $date];
                     break;
                 }
-                $date->add(new DateInterval('P1D'));
+                $date->add(new \DateInterval('P1D'));
             }
         }
 
@@ -75,7 +71,7 @@ class AllSaintsEveTest extends SwedenBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -90,7 +86,7 @@ class AllSaintsEveTest extends SwedenBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

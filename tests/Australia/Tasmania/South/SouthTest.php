@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Australia\Tasmania\South;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\ProviderTestCase;
 
@@ -59,7 +58,7 @@ class SouthTest extends SouthBaseTestCase implements ProviderTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
      * @throws \Exception
      */
     public function testSources(): void

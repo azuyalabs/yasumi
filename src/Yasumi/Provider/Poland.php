@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -97,7 +96,7 @@ class Poland extends AbstractProvider
         $this->addHoliday(new Holiday('independenceDay', [
             'en' => 'Independence Day',
             'pl' => 'Narodowe Święto Niepodległości',
-        ], new DateTime("$this->year-11-11", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
+        ], new \DateTime("$this->year-11-11", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
     }
 
     /**
@@ -124,6 +123,6 @@ class Poland extends AbstractProvider
         $this->addHoliday(new Holiday('constitutionDay', [
             'en' => 'Constitution Day',
             'pl' => 'Święto Narodowe Trzeciego Maja',
-        ], new DateTime("$this->year-5-3", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
+        ], new \DateTime("$this->year-5-3", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
     }
 }

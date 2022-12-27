@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Switzerland\Neuchatel;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -38,7 +35,7 @@ class January2ndTest extends NeuchatelBaseTestCase implements HolidayTestCase
     /**
      * Tests January 2nd.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testJanuary2nd(): void
     {
@@ -46,7 +43,7 @@ class January2ndTest extends NeuchatelBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             self::OBSERVANCE_YEAR,
-            new DateTime(self::OBSERVANCE_YEAR.'-1-02', new DateTimeZone(self::TIMEZONE))
+            new \DateTime(self::OBSERVANCE_YEAR.'-1-02', new \DateTimeZone(self::TIMEZONE))
         );
         $this->assertNotHoliday(
             self::REGION,

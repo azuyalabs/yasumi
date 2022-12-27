@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Austria\Salzburg;
 
-use DateTime;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -34,8 +32,8 @@ class StRupertsDayTest extends SalzburgBaseTestCase implements HolidayTestCase
      *
      * @dataProvider StRupertsDayDataProvider
      *
-     * @param int      $year     the year for which Saint Rupert's Day needs to be tested
-     * @param DateTime $expected the expected date
+     * @param int       $year     the year for which Saint Rupert's Day needs to be tested
+     * @param \DateTime $expected the expected date
      */
     public function testStRupertsDay(int $year, \DateTimeInterface $expected): void
     {
@@ -47,7 +45,7 @@ class StRupertsDayTest extends SalzburgBaseTestCase implements HolidayTestCase
      *
      * @return array<array> list of test dates for Saint Rupert's Day
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function StRupertsDayDataProvider(): array
     {
@@ -57,7 +55,7 @@ class StRupertsDayTest extends SalzburgBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -72,7 +70,7 @@ class StRupertsDayTest extends SalzburgBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

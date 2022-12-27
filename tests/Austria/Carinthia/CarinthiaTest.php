@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Austria\Carinthia;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\ProviderTestCase;
 
@@ -103,7 +102,7 @@ class CarinthiaTest extends CarinthiaBaseTestCase implements ProviderTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
      * @throws \Exception
      */
     public function testSources(): void

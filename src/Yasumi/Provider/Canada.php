@@ -15,7 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -89,7 +88,7 @@ class Canada extends AbstractProvider
         $this->addHoliday(new Holiday(
             'familyDay',
             [],
-            new DateTime("third monday of february $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("third monday of february $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -113,7 +112,7 @@ class Canada extends AbstractProvider
         $this->addHoliday(new Holiday(
             'victoriaDay',
             [],
-            new DateTime("last monday front of $this->year-05-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("last monday front of $this->year-05-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -137,7 +136,7 @@ class Canada extends AbstractProvider
         $this->addHoliday(new Holiday(
             'nationalIndigenousPeoplesDay',
             [],
-            new DateTime("$this->year-06-21", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("$this->year-06-21", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -161,7 +160,7 @@ class Canada extends AbstractProvider
         $this->addHoliday(new Holiday(
             'civicHoliday',
             [],
-            new DateTime("first monday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("first monday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -185,9 +184,9 @@ class Canada extends AbstractProvider
         if ($this->year < 1983) {
             return;
         }
-        $date = new DateTime($this->year.'-07-01', DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime($this->year.'-07-01', DateTimeZoneFactory::getDateTimeZone($this->timezone));
         if (7 === (int) $date->format('N')) {
-            $date = new DateTime($this->year.'-07-02', DateTimeZoneFactory::getDateTimeZone($this->timezone));
+            $date = new \DateTime($this->year.'-07-02', DateTimeZoneFactory::getDateTimeZone($this->timezone));
         }
         $this->addHoliday(new Holiday(
             'canadaDay',
@@ -216,7 +215,7 @@ class Canada extends AbstractProvider
         $this->addHoliday(new Holiday(
             'thanksgivingDay',
             [],
-            new DateTime("second monday of october $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("second monday of october $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -240,7 +239,7 @@ class Canada extends AbstractProvider
         $this->addHoliday(new Holiday(
             'remembranceDay',
             [],
-            new DateTime("$this->year-11-11", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("$this->year-11-11", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -264,7 +263,7 @@ class Canada extends AbstractProvider
         $this->addHoliday(new Holiday(
             'labourDay',
             [],
-            new DateTime("first monday of september $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("first monday of september $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -288,7 +287,7 @@ class Canada extends AbstractProvider
         $this->addHoliday(new Holiday(
             'truthAndReconciliationDay',
             [],
-            new DateTime("last day of september $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("last day of september $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }

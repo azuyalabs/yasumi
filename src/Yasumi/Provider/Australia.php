@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use DateInterval;
-use DateTime;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\SubstituteHoliday;
@@ -79,7 +77,7 @@ class Australia extends AbstractProvider
      */
     private function calculateNewYearHolidays(): void
     {
-        $newYearsDay = new DateTime("$this->year-01-01", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $newYearsDay = new \DateTime("$this->year-01-01", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $this->addHoliday(new Holiday(
             'newYearsDay',
             [],
@@ -89,7 +87,7 @@ class Australia extends AbstractProvider
         ));
         switch ($newYearsDay->format('w')) {
             case 0: // sunday
-                $newYearsDay->add(new DateInterval('P1D'));
+                $newYearsDay->add(new \DateInterval('P1D'));
                 $this->addHoliday(new Holiday(
                     'newYearsHoliday',
                     ['en' => 'New Year’s Holiday'],
@@ -99,7 +97,7 @@ class Australia extends AbstractProvider
                 ));
                 break;
             case 6: // saturday
-                $newYearsDay->add(new DateInterval('P2D'));
+                $newYearsDay->add(new \DateInterval('P2D'));
                 $this->addHoliday(new Holiday(
                     'newYearsHoliday',
                     ['en' => 'New Year’s Holiday'],
@@ -131,7 +129,7 @@ class Australia extends AbstractProvider
      */
     private function calculateAustraliaDay(): void
     {
-        $date = new DateTime("$this->year-01-26", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime("$this->year-01-26", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
         $holiday = new Holiday(
             'australiaDay',
@@ -144,7 +142,7 @@ class Australia extends AbstractProvider
 
         $day = (int) $date->format('w');
         if (0 === $day || 6 === $day) {
-            $date = $date->add(0 === $day ? new DateInterval('P1D') : new DateInterval('P2D'));
+            $date = $date->add(0 === $day ? new \DateInterval('P1D') : new \DateInterval('P2D'));
 
             $this->addHoliday(new SubstituteHoliday(
                 $holiday,
@@ -178,7 +176,7 @@ class Australia extends AbstractProvider
             return;
         }
 
-        $date = new DateTime("$this->year-04-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime("$this->year-04-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $this->addHoliday(new Holiday(
             'anzacDay',
             [],
@@ -189,11 +187,11 @@ class Australia extends AbstractProvider
         $easter = $this->calculateEaster($this->year, $this->timezone);
 
         $easterMonday = $this->calculateEaster($this->year, $this->timezone);
-        $easterMonday->add(new DateInterval('P1D'));
+        $easterMonday->add(new \DateInterval('P1D'));
 
         $fDate = $date->format('Y-m-d');
         if ($fDate === $easter->format('Y-m-d') || $fDate === $easterMonday->format('Y-m-d')) {
-            $easterMonday->add(new DateInterval('P1D'));
+            $easterMonday->add(new \DateInterval('P1D'));
             $this->addHoliday(new Holiday(
                 'easterTuesday',
                 ['en' => 'Easter Tuesday'],
@@ -218,8 +216,8 @@ class Australia extends AbstractProvider
      */
     private function calculateChristmasDay(): void
     {
-        $christmasDay = new DateTime("$this->year-12-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
-        $boxingDay = new DateTime("$this->year-12-26", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $christmasDay = new \DateTime("$this->year-12-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $boxingDay = new \DateTime("$this->year-12-26", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $this->addHoliday(new Holiday(
             'christmasDay',
             [],
@@ -237,7 +235,7 @@ class Australia extends AbstractProvider
 
         switch ($christmasDay->format('w')) {
             case 0: // sunday
-                $christmasDay->add(new DateInterval('P2D'));
+                $christmasDay->add(new \DateInterval('P2D'));
                 $this->addHoliday(new Holiday(
                     'christmasHoliday',
                     ['en' => 'Christmas Holiday'],
@@ -247,7 +245,7 @@ class Australia extends AbstractProvider
                 ));
                 break;
             case 5: // friday
-                $boxingDay->add(new DateInterval('P2D'));
+                $boxingDay->add(new \DateInterval('P2D'));
                 $this->addHoliday(new Holiday(
                     'secondChristmasHoliday',
                     ['en' => 'Boxing Day Holiday'],
@@ -257,8 +255,8 @@ class Australia extends AbstractProvider
                 ));
                 break;
             case 6: // saturday
-                $christmasDay->add(new DateInterval('P2D'));
-                $boxingDay->add(new DateInterval('P2D'));
+                $christmasDay->add(new \DateInterval('P2D'));
+                $boxingDay->add(new \DateInterval('P2D'));
                 $this->addHoliday(new Holiday(
                     'christmasHoliday',
                     ['en' => 'Christmas Holiday'],

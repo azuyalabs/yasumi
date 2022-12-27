@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Spain;
 
-use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -81,7 +80,7 @@ class Andalusia extends Spain
             $this->addHoliday(new Holiday(
                 'andalusiaDay',
                 ['es' => 'Día de Andalucía'],
-                new DateTime("$this->year-2-28", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("$this->year-2-28", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

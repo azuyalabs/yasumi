@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Switzerland;
 
-use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -96,7 +95,7 @@ class Ticino extends Switzerland
                 'fr' => 'Solennité des saints Pierre et Paul',
                 'de' => 'St. Peter und Paul',
             ],
-            new DateTime($this->year.'-06-29', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-06-29', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OTHER
         ));

@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Japan;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -38,7 +35,7 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements HolidayTe
     /**
      * Tests Constitution Memorial Day after 1948. Constitution Memorial Day was established after 1948.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testConstitutionMemorialDayOnAfter1948(): void
     {
@@ -47,7 +44,7 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements HolidayTe
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-5-3", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-5-3", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -55,7 +52,7 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements HolidayTe
      * Tests Constitution Memorial Day after 1948 substituted next working day (when Constitution Memorial Day falls on
      * a Sunday).
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testConstitutionMemorialDayOnAfter1948SubstitutedNextWorkingDay(): void
     {
@@ -64,14 +61,14 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements HolidayTe
             self::REGION,
             self::SUBSTITUTE_PREFIX.self::HOLIDAY,
             $year,
-            new DateTime("$year-5-6", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-5-6", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests Constitution Memorial Day before 1948. Constitution Memorial Day was established after 1948.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testConstitutionMemorialDayBefore1948(): void
     {
@@ -85,7 +82,7 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements HolidayTe
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -100,7 +97,7 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements HolidayTe
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

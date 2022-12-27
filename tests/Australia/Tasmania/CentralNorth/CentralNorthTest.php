@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Australia\Tasmania\CentralNorth;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\ProviderTestCase;
 
@@ -59,7 +58,7 @@ class CentralNorthTest extends CentralNorthBaseTestCase implements ProviderTestC
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
      * @throws \Exception
      */
     public function testSources(): void

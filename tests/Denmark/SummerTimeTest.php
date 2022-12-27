@@ -15,9 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Denmark;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 
 /**
@@ -67,22 +64,22 @@ final class SummerTimeTest extends DaylightSavingTime
     /**
      * Tests the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testSummerTime(): void
     {
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->randomYearFromArray($this->unobservedYears));
 
         $year = $this->randomYearFromArray($this->observedYears);
-        $expectedDate = new DateTime("last sunday of march $year", new DateTimeZone(self::TIMEZONE));
+        $expectedDate = new \DateTime("last sunday of march $year", new \DateTimeZone(self::TIMEZONE));
 
         if (array_key_exists($year, $this->deviantTransitions)) {
-            $expectedDate = new DateTime($this->deviantTransitions[$year], new DateTimeZone(self::TIMEZONE));
+            $expectedDate = new \DateTime($this->deviantTransitions[$year], new \DateTimeZone(self::TIMEZONE));
         }
 
         // Since 1980 Summertime in Denmark starts on the last day of March. In 1980 itself however, it started on April, 6th.
         if (1980 === $year) {
-            $expectedDate = new DateTime('1980-04-06', new DateTimeZone(self::TIMEZONE));
+            $expectedDate = new \DateTime('1980-04-06', new \DateTimeZone(self::TIMEZONE));
         }
 
         $this->assertHoliday(
@@ -96,7 +93,7 @@ final class SummerTimeTest extends DaylightSavingTime
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -111,7 +108,7 @@ final class SummerTimeTest extends DaylightSavingTime
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

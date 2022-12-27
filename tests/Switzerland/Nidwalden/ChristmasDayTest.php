@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Switzerland\Nidwalden;
 
-use DateTime;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -34,8 +32,8 @@ class ChristmasDayTest extends NidwaldenBaseTestCase implements HolidayTestCase
      *
      * @dataProvider ChristmasDayDataProvider
      *
-     * @param int      $year     the year for which Christmas Day needs to be tested
-     * @param DateTime $expected the expected date
+     * @param int       $year     the year for which Christmas Day needs to be tested
+     * @param \DateTime $expected the expected date
      */
     public function testChristmasDay(int $year, \DateTimeInterface $expected): void
     {
@@ -47,7 +45,7 @@ class ChristmasDayTest extends NidwaldenBaseTestCase implements HolidayTestCase
      *
      * @return array<array> list of test dates for Christmas Day
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function ChristmasDayDataProvider(): array
     {
@@ -57,7 +55,7 @@ class ChristmasDayTest extends NidwaldenBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of Christmas Day.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -72,7 +70,7 @@ class ChristmasDayTest extends NidwaldenBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

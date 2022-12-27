@@ -15,9 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Estonia;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\Provider\Estonia;
 use Yasumi\tests\HolidayTestCase;
@@ -37,7 +34,7 @@ class VictoryDayTest extends EstoniaBaseTestCase implements HolidayTestCase
     /**
      * Test if holiday is not defined before.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayBefore(): void
     {
@@ -51,7 +48,7 @@ class VictoryDayTest extends EstoniaBaseTestCase implements HolidayTestCase
     /**
      * Test if holiday is defined after.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayAfter(): void
     {
@@ -61,14 +58,14 @@ class VictoryDayTest extends EstoniaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-06-23", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-06-23", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * {@inheritdoc}
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -89,7 +86,7 @@ class VictoryDayTest extends EstoniaBaseTestCase implements HolidayTestCase
     /**
      * {@inheritdoc}
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

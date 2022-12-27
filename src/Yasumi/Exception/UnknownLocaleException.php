@@ -14,11 +14,9 @@ declare(strict_types=1);
 
 namespace Yasumi\Exception;
 
-use InvalidArgumentException;
-
 /**
  * Class UnknownLocaleException.
  */
-class UnknownLocaleException extends InvalidArgumentException implements Exception
+class UnknownLocaleException extends \InvalidArgumentException implements Exception
 {
 }

@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Japan;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -46,7 +43,7 @@ class PublicBridgeDayTest extends JapanBaseTestCase implements HolidayTestCase
     /**
      * Tests public bridge days.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testPublicBridgeDay(): void
     {
@@ -54,13 +51,13 @@ class PublicBridgeDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY.'1',
             $this->year,
-            new DateTime("$this->year-4-30", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$this->year-4-30", new \DateTimeZone(self::TIMEZONE))
         );
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY.'2',
             $this->year,
-            new DateTime("$this->year-5-2", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$this->year-5-2", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

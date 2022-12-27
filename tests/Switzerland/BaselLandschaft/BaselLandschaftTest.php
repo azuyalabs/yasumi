@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Switzerland\BaselLandschaft;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\ProviderTestCase;
 
@@ -105,7 +104,7 @@ class BaselLandschaftTest extends BaselLandschaftBaseTestCase implements Provide
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
      * @throws \Exception
      */
     public function testSources(): void
