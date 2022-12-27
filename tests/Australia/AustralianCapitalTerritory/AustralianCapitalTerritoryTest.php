@@ -42,7 +42,7 @@ class AustralianCapitalTerritoryTest extends AustralianCapitalTerritoryBaseTestC
      */
     public function testOfficialHolidays(): void
     {
-        $this->assertDefinedHolidays([
+        $expectedHolidays = [
             'newYearsDay',
             'goodFriday',
             'easterMonday',
@@ -56,7 +56,13 @@ class AustralianCapitalTerritoryTest extends AustralianCapitalTerritoryBaseTestC
             'labourDay',
             'canberraDay',
             'reconciliationDay',
-        ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
+        ];
+
+        if (2022 == $this->year) {
+            $expectedHolidays[] = 'nationalDayOfMourning';
+        }
+
+        $this->assertDefinedHolidays($expectedHolidays, $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**

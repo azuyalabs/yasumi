@@ -42,7 +42,7 @@ class VictoriaTest extends VictoriaBaseTestCase implements ProviderTestCase
      */
     public function testOfficialHolidays(): void
     {
-        $this->assertDefinedHolidays([
+        $expectedHolidays = [
             'newYearsDay',
             'goodFriday',
             'easterMonday',
@@ -56,7 +56,11 @@ class VictoriaTest extends VictoriaBaseTestCase implements ProviderTestCase
             'labourDay',
             'aflGrandFinalFriday',
             'melbourneCup',
-        ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
+        ];
+        if (2022 == $this->year) {
+            $expectedHolidays[] = 'nationalDayOfMourning';
+        }
+        $this->assertDefinedHolidays($expectedHolidays, $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
