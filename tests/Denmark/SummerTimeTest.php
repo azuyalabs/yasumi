@@ -53,11 +53,16 @@ final class SummerTimeTest extends DaylightSavingTime
         // In version 2022f of the tz db, a correction for some years weere made for the summertime
         // transitions. See: https://github.com/eggert/tz/blob/2022f/europe
         if (1 === strcmp(\intltz_get_tz_data_version(), '2022f')) {
+            $this->swapObservation([1917, 1918, 1949]);
+
             $this->deviantTransitions[1916] = '1916-04-30';
+            $this->deviantTransitions[1917] = '1917-04-16';
+            $this->deviantTransitions[1918] = '1918-04-15';
             $this->deviantTransitions[1940] = '1940-04-01';
             $this->deviantTransitions[1946] = '1946-04-14';
             $this->deviantTransitions[1947] = '1947-04-06';
             $this->deviantTransitions[1948] = '1948-04-18';
+            $this->deviantTransitions[1949] = '1949-04-10';
         }
     }
 
