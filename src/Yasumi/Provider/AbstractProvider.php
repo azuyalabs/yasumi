@@ -332,6 +332,6 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
         // Get calling class name
         $hReflectionClass = new \ReflectionClass(\get_class($this));
 
-        return Yasumi::create($hReflectionClass->getShortName(), $year, $this->locale)->getHoliday($key);
+        return Yasumi::create($hReflectionClass->getName(), $year, $this->locale)->getHoliday($key);
     }
 }

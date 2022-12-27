@@ -31,6 +31,9 @@ to [Semantic Versioning](https://semver.org).
   statistic analysers.
 - Included the data type for test methods that return an array.
 - Liberation day for the Netherlands is only an official holiday every 5 years [\#280](https://github.com/azuyalabs/yasumi/pull/280).
+- Switched from `getShortName()` to `getName()` for the ReflectionClass created by the method `anotherTime()` in the `AbstractProvider`.\
+  Using `getShortName` could result in a `ProviderNotFoundException` for some custom holiday providers, since the namespace is not fully qualified.\
+  This happened, if you would create a custom holiday provider in your own project's namespace implementing the `next()` or `previous()` method from the `AbstractProvider`.
 
 ### Deprecated
 
