@@ -44,6 +44,7 @@ class SaxonyAnhaltTest extends SaxonyAnhaltBaseTestCase implements ProviderTestC
     {
         $holidays = [
             'newYearsDay',
+            'epiphany',
             'goodFriday',
             'easterMonday',
             'internationalWorkersDay',
@@ -93,7 +94,7 @@ class SaxonyAnhaltTest extends SaxonyAnhaltBaseTestCase implements ProviderTestC
      */
     public function testOtherHolidays(): void
     {
-        $this->assertDefinedHolidays(['epiphany'], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**

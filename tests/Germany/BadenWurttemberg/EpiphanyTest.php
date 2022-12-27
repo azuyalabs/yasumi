@@ -74,6 +74,6 @@ class EpiphanyTest extends BadenWurttembergBaseTestCase implements HolidayTestCa
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OTHER);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }
