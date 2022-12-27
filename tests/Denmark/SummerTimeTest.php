@@ -30,6 +30,9 @@ final class SummerTimeTest extends DaylightSavingTime
     /** The name of the holiday */
     public const HOLIDAY = 'summerTime';
 
+    /* List of transition dates that deviate from the known/defined rules.
+     * PHP derives the transition dates from the tz database which appear to
+     * be different for some dates */
     private array $deviantTransitions = [
         1916 => '1916-05-14',
         1940 => '1940-05-14',
@@ -51,8 +54,7 @@ final class SummerTimeTest extends DaylightSavingTime
         }
 
         // In version 2022f of the tz db, a correction for some years weere made for the summertime
-        // transitions.
-        // See: https://github.com/eggert/tz/blob/2022f/europe
+        // transitions. See: https://github.com/eggert/tz/blob/2022f/europe
         if (1 === strcmp(\intltz_get_tz_data_version(), '2022f')) {
             $this->deviantTransitions[1916] = '1916-04-30';
             $this->deviantTransitions[1940] = '1940-04-01';
