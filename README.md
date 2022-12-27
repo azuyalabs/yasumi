@@ -2,9 +2,9 @@
 
 [![GitHub Release](https://img.shields.io/github/release/azuyalabs/yasumi.svg?style=flat-square)](https://github.com/azuyalabs/yasumi/releases)
 [![Total Downloads](https://img.shields.io/packagist/dt/azuyalabs/yasumi.svg?style=flat-square)](https://packagist.org/packages/azuyalabs/yasumi)
-![Coding Standard](https://img.shields.io/github/workflow/status/azuyalabs/yasumi/Coding%20Standard?label=Coding%20Standard&style=flat-square)
-![Static analysis](https://img.shields.io/github/workflow/status/azuyalabs/yasumi/Static%20analysis?label=Static%20analysis&style=flat-square)
-![Testing](https://img.shields.io/github/workflow/status/azuyalabs/yasumi/Testing?label=Testing&style=flat-square)
+![Coding Standard](https://img.shields.io/github/actions/workflow/status/azuyalabs/yasumi/coding-standard.yml?label=Coding%20Standard&style=flat-square)
+![Static analysis](https://img.shields.io/github/actions/workflow/status/azuyalabs/yasumi/static-analysis.yml?label=Static%20analysis&style=flat-square)
+![Testing](https://img.shields.io/github/actions/workflow/status/azuyalabs/yasumi/testing.yml?label=Testing&style=flat-square)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
 # Introduction
