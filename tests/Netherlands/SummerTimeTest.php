@@ -20,7 +20,7 @@ use Yasumi\Holiday;
 /**
  * Class for testing Summertime in the Netherlands.
  */
-final class SummertimeTest extends DaylightSavingTime
+final class SummerTimeTest extends DaylightSavingTime
 {
     /** The name of the holiday */
     public const HOLIDAY = 'summerTime';
@@ -44,20 +44,18 @@ final class SummertimeTest extends DaylightSavingTime
     {
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->randomYearFromArray($this->unobservedYears));
 
-        $year = $this->generateRandomYear(1977, 1980);
-        $this->assertHoliday(
-            self::REGION,
-            self::HOLIDAY,
-            $year,
-            new \DateTime("first sunday of april $year", new \DateTimeZone(self::TIMEZONE))
-        );
+        $year = $this->randomYearFromArray($this->observedYears);
+        $expected = "first sunday of april $year";
 
-        $year = $this->generateRandomYear(1981, 2037);
+        if ($year >= 1981) {
+            $expected = "last sunday of march $year";
+        }
+
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("last sunday of march $year", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime($expected, new \DateTimeZone(self::TIMEZONE))
         );
     }
 
