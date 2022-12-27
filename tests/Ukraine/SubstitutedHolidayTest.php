@@ -15,10 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Ukraine;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\SubstituteHoliday;
 use Yasumi\tests\HolidayTestCase;
@@ -32,8 +28,8 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements HolidayTestC
     /**
      * Tests the substitution of holidays on saturday (weekend).
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testSaturdaySubstitution(): void
     {
@@ -45,8 +41,8 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements HolidayTestC
             self::REGION,
             $holiday,
             $year,
-            new DateTime("$year-05-09", new DateTimeZone(self::TIMEZONE)),
-            new DateTime("$year-05-11", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-05-09", new \DateTimeZone(self::TIMEZONE)),
+            new \DateTime("$year-05-11", new \DateTimeZone(self::TIMEZONE))
         );
 
         unset($year, $holiday);
@@ -96,8 +92,8 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements HolidayTestC
     /**
      * Tests the substitution of holidays on sunday (weekend).
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testSundaySubstitution(): void
     {
@@ -109,8 +105,8 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements HolidayTestC
             self::REGION,
             $holiday,
             $year,
-            new DateTime("$year-06-28", new DateTimeZone(self::TIMEZONE)),
-            new DateTime("$year-06-29", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-06-28", new \DateTimeZone(self::TIMEZONE)),
+            new \DateTime("$year-06-29", new \DateTimeZone(self::TIMEZONE))
         );
 
         unset($year, $holiday);
@@ -120,8 +116,8 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements HolidayTestC
      * Tests the substitution of new year (1. January) on a weekend.
      * Special: no substitution at new year (1. January) on a weekend.
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testNewYearNoSubstitution(): void
     {
@@ -133,7 +129,7 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements HolidayTestC
             self::REGION,
             $holiday,
             $year,
-            new DateTime("$year-01-01", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-01-01", new \DateTimeZone(self::TIMEZONE))
         );
 
         unset($year, $holiday);
@@ -143,8 +139,8 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements HolidayTestC
      * Tests the substitution of Catholic Christmas Day (25. December) on a weekend.
      * Special: no substitution at Catholic Christmas Day (25. December) on a weekend.
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
+     * @throws \ReflectionException
      */
     public function testCatholicChristmasDayNoSubstitution(): void
     {
@@ -156,7 +152,7 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements HolidayTestC
             self::REGION,
             $holiday,
             $year,
-            new DateTime("$year-12-25", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-12-25", new \DateTimeZone(self::TIMEZONE))
         );
 
         unset($year, $holiday);

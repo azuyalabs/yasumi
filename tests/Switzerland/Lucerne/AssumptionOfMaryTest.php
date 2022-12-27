@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Switzerland\Lucerne;
 
-use DateTime;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -34,8 +32,8 @@ class AssumptionOfMaryTest extends LucerneBaseTestCase implements HolidayTestCas
      *
      * @dataProvider AssumptionOfMaryDataProvider
      *
-     * @param int      $year     the year for which the day of the Assumption of Mary needs to be tested
-     * @param DateTime $expected the expected date
+     * @param int       $year     the year for which the day of the Assumption of Mary needs to be tested
+     * @param \DateTime $expected the expected date
      */
     public function testAssumptionOfMary(int $year, \DateTimeInterface $expected): void
     {
@@ -45,7 +43,7 @@ class AssumptionOfMaryTest extends LucerneBaseTestCase implements HolidayTestCas
     /**
      * Tests translated name of the day of the Assumption of Mary.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -60,7 +58,7 @@ class AssumptionOfMaryTest extends LucerneBaseTestCase implements HolidayTestCas
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {
@@ -72,7 +70,7 @@ class AssumptionOfMaryTest extends LucerneBaseTestCase implements HolidayTestCas
      *
      * @return array<array> list of test dates for the day of the Assumption of Mary
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function AssumptionOfMaryDataProvider(): array
     {

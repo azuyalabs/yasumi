@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Austria\UpperAustria;
 
-use DateTime;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -34,8 +32,8 @@ class StFloriansDayTest extends UpperAustriaBaseTestCase implements HolidayTestC
      *
      * @dataProvider StFloriansDayDataProvider
      *
-     * @param int      $year     the year for which Saint Florian's Day needs to be tested
-     * @param DateTime $expected the expected date
+     * @param int       $year     the year for which Saint Florian's Day needs to be tested
+     * @param \DateTime $expected the expected date
      */
     public function testStFloriansDay(int $year, \DateTimeInterface $expected): void
     {
@@ -47,7 +45,7 @@ class StFloriansDayTest extends UpperAustriaBaseTestCase implements HolidayTestC
      *
      * @return array<array> list of test dates for Saint Florian's Day
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function StFloriansDayDataProvider(): array
     {
@@ -57,7 +55,7 @@ class StFloriansDayTest extends UpperAustriaBaseTestCase implements HolidayTestC
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -72,7 +70,7 @@ class StFloriansDayTest extends UpperAustriaBaseTestCase implements HolidayTestC
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

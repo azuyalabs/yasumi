@@ -14,10 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\NewZealand;
 
-use DateInterval;
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -39,7 +35,7 @@ class DayAfterNewYearsDayTest extends NewZealandBaseTestCase implements HolidayT
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHoliday(int $year, string $expected): void
     {
@@ -47,14 +43,14 @@ class DayAfterNewYearsDayTest extends NewZealandBaseTestCase implements HolidayT
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime($expected, new DateTimeZone(self::TIMEZONE))
+            new \DateTime($expected, new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -69,7 +65,7 @@ class DayAfterNewYearsDayTest extends NewZealandBaseTestCase implements HolidayT
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {
@@ -81,7 +77,7 @@ class DayAfterNewYearsDayTest extends NewZealandBaseTestCase implements HolidayT
      *
      * @return array<array> list of test dates for the holiday defined in this test
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function HolidayDataProvider(): array
     {
@@ -89,15 +85,15 @@ class DayAfterNewYearsDayTest extends NewZealandBaseTestCase implements HolidayT
 
         for ($y = 0; $y < 50; ++$y) {
             $year = $this->generateRandomYear();
-            $date = new DateTime("$year-01-02", new DateTimeZone(self::TIMEZONE));
+            $date = new \DateTime("$year-01-02", new \DateTimeZone(self::TIMEZONE));
 
             switch ($date->format('w')) {
                 case 0:
                 case 6:
-                    $date->add(new DateInterval('P2D'));
+                    $date->add(new \DateInterval('P2D'));
                     break;
                 case 1:
-                    $date->add(new DateInterval('P1D'));
+                    $date->add(new \DateInterval('P1D'));
             }
 
             $data[] = [$year, $date->format('Y-m-d')];

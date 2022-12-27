@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Spain;
 
-use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -83,7 +82,7 @@ class Extremadura extends Spain
             $this->addHoliday(new Holiday(
                 'extremaduraDay',
                 ['es' => 'Día de Extremadura'],
-                new DateTime("$this->year-9-8", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("$this->year-9-8", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

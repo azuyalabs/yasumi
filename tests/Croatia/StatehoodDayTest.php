@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Croatia;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -43,7 +40,7 @@ class StatehoodDayTest extends CroatiaBaseTestCase implements HolidayTestCase
     /**
      * Tests Statehood Day.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testStatehoodDay(): void
     {
@@ -53,7 +50,7 @@ class StatehoodDayTest extends CroatiaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime($expectedDate, new DateTimeZone(self::TIMEZONE))
+            new \DateTime($expectedDate, new \DateTimeZone(self::TIMEZONE))
         );
 
         $year = $this->generateRandomYear(self::DATE_CHANGE_YEAR);
@@ -62,14 +59,14 @@ class StatehoodDayTest extends CroatiaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime($expectedDate, new DateTimeZone(self::TIMEZONE))
+            new \DateTime($expectedDate, new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests Statehood Day before 1991.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testStatehoodDayBefore1991(): void
     {
@@ -83,7 +80,7 @@ class StatehoodDayTest extends CroatiaBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of Statehood Day.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -98,7 +95,7 @@ class StatehoodDayTest extends CroatiaBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

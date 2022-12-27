@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Canada\Saskatchewan;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\ProviderTestCase;
 
@@ -90,7 +89,7 @@ class SaskatchewanTest extends SaskatchewanBaseTestCase implements ProviderTestC
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
      * @throws \Exception
      */
     public function testSources(): void

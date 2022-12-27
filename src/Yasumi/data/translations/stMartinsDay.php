@@ -15,7 +15,7 @@ declare(strict_types=1);
 
 // Translations for St. Martin's Day
 return [
+    'de_AT' => 'Martin',
     'en' => 'St. Martin’s Day',
     'nl' => 'Sint Maarten',
-    'de_AT' => 'Martin',
 ];

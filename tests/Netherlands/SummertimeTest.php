@@ -15,9 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Netherlands;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 
 /**
@@ -41,7 +38,7 @@ final class SummertimeTest extends DaylightSavingTime
     /**
      * Tests Summertime.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testSummertime(): void
     {
@@ -52,7 +49,7 @@ final class SummertimeTest extends DaylightSavingTime
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("first sunday of april $year", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("first sunday of april $year", new \DateTimeZone(self::TIMEZONE))
         );
 
         $year = $this->generateRandomYear(1981, 2037);
@@ -60,14 +57,14 @@ final class SummertimeTest extends DaylightSavingTime
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("last sunday of march $year", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("last sunday of march $year", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -82,7 +79,7 @@ final class SummertimeTest extends DaylightSavingTime
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

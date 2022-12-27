@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\USA;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -39,7 +36,7 @@ class MemorialDayTest extends USABaseTestCase implements HolidayTestCase
      * Tests Memorial Day on or after 1968. Memorial Day was established since 1865 on May 30 and was changed in 1968
      * to the last Monday in May.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testMemorialDayOnAfter1968(): void
     {
@@ -48,7 +45,7 @@ class MemorialDayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("last monday of may $year", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("last monday of may $year", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -56,7 +53,7 @@ class MemorialDayTest extends USABaseTestCase implements HolidayTestCase
      * Tests Memorial Day between 1865 and 1967. Memorial Day was established since 1865 on May 30 and was changed in
      * 1968 to the last Monday in May.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testMemorialDayBetween1865And1967(): void
     {
@@ -65,7 +62,7 @@ class MemorialDayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-5-30", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-5-30", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -73,7 +70,7 @@ class MemorialDayTest extends USABaseTestCase implements HolidayTestCase
      * Tests Memorial Day before 1865. Memorial Day was established since 1865 on May 30 and was changed in 1968 to the
      * last Monday in May.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testMemorialDayBefore1865(): void
     {
@@ -87,7 +84,7 @@ class MemorialDayTest extends USABaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -102,7 +99,7 @@ class MemorialDayTest extends USABaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

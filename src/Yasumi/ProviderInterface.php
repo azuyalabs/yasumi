@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi;
 
-use ArrayIterator;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Filters\BetweenFilter;
@@ -95,9 +94,9 @@ interface ProviderInterface extends \Countable
     /**
      * Get an iterator for the holidays.
      *
-     * @return ArrayIterator iterator for the holidays of this calendar
+     * @return \ArrayIterator iterator for the holidays of this calendar
      */
-    public function getIterator(): ArrayIterator;
+    public function getIterator(): \ArrayIterator;
 
     /**
      * Adds a holiday to the holidays providers (i.e. country/state) list of holidays.

@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Switzerland\Ticino;
 
-use DateTime;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\tests\HolidayTestCase;
@@ -37,8 +35,8 @@ class StJosephDayTest extends TicinoBaseTestCase implements HolidayTestCase
      *
      * @dataProvider StJosephDayDataProvider
      *
-     * @param int      $year     the year for which St. Joseph's Day needs to be tested
-     * @param DateTime $expected the expected date
+     * @param int       $year     the year for which St. Joseph's Day needs to be tested
+     * @param \DateTime $expected the expected date
      */
     public function testStJosephDay(int $year, \DateTimeInterface $expected): void
     {
@@ -50,7 +48,7 @@ class StJosephDayTest extends TicinoBaseTestCase implements HolidayTestCase
      *
      * @return array<array> list of test dates for St. Joseph's Day
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function StJosephDayDataProvider(): array
     {
@@ -60,7 +58,7 @@ class StJosephDayTest extends TicinoBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -75,7 +73,7 @@ class StJosephDayTest extends TicinoBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

@@ -23,4 +23,5 @@ return [
     'fr' => 'Immaculée Conception',
     'it' => 'Immacolata Concezione',
     'pt' => 'Dia da Imaculada Conceição',
+    'sk' => 'Nepoškvrnené počatie Panny Márie',
 ];

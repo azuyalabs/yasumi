@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Spain;
 
-use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -91,7 +90,7 @@ class ValencianCommunity extends Spain
                     'ca' => 'Diada Nacional del País Valencià',
                     'es' => 'Día de la Comunidad Valenciana',
                 ],
-                new DateTime("$this->year-10-9", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("$this->year-10-9", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

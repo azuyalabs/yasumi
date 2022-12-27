@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Canada;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -38,7 +35,7 @@ class CanadaDayTest extends CanadaBaseTestCase implements HolidayTestCase
     /**
      * Tests Canada Day on or after 1983. Canada Day was established in 1983 on July 1st.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testCanadaDayOnAfter1983(): void
     {
@@ -47,21 +44,21 @@ class CanadaDayTest extends CanadaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-07-01", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-07-01", new \DateTimeZone(self::TIMEZONE))
         );
         $year = 2018; // July 1 is Sunday
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-07-02", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-07-02", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests Canada Day before 1879. Canada Day was established as Dominion Day in 1879 on July 1st.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testCanadaDayBefore1879(): void
     {
@@ -75,7 +72,7 @@ class CanadaDayTest extends CanadaBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -90,7 +87,7 @@ class CanadaDayTest extends CanadaBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

@@ -16,9 +16,9 @@ declare(strict_types=1);
 // Translations for Epiphany
 return [
     'ca' => 'Epifania',
+    'de' => 'Heilige 3 Könige',
     'de_AT' => 'Heilige Drei Könige',
     'de_CH' => 'Heilige Drei Könige',
-    'de' => 'Heilige 3 Könige',
     'el' => 'Θεοφάνεια',
     'en' => 'Epiphany',
     'es' => 'Día de Reyes',

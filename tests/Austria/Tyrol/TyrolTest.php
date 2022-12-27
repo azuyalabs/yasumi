@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Austria\Tyrol;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\ProviderTestCase;
 
@@ -99,7 +98,7 @@ class TyrolTest extends TyrolBaseTestCase implements ProviderTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
      * @throws \Exception
      */
     public function testSources(): void

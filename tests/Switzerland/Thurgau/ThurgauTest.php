@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Switzerland\Thurgau;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\ProviderTestCase;
 
@@ -106,7 +105,7 @@ class ThurgauTest extends ThurgauBaseTestCase implements ProviderTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
      * @throws \Exception
      */
     public function testSources(): void

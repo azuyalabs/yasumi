@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Spain;
 
-use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -89,7 +88,7 @@ class Catalonia extends Spain
                     'ca' => 'Diada Nacional de Catalunya',
                     'es' => 'Diada Nacional de Cataluña',
                 ],
-                new DateTime("$this->year-9-11", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("$this->year-9-11", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

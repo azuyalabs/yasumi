@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\UnitedKingdom\England;
 
-use DateTime;
-use DateTimeZone;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -51,7 +49,7 @@ class SummerBankHolidayTest extends EnglandBaseTestCase implements HolidayTestCa
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("last monday of august $year", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("last monday of august $year", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -67,7 +65,7 @@ class SummerBankHolidayTest extends EnglandBaseTestCase implements HolidayTestCa
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("first monday of august $year", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("first monday of august $year", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -82,37 +80,37 @@ class SummerBankHolidayTest extends EnglandBaseTestCase implements HolidayTestCa
             self::REGION,
             self::HOLIDAY,
             1965,
-            new DateTime('1965-8-30', new DateTimeZone(self::TIMEZONE))
+            new \DateTime('1965-8-30', new \DateTimeZone(self::TIMEZONE))
         );
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             1966,
-            new DateTime('1966-8-29', new DateTimeZone(self::TIMEZONE))
+            new \DateTime('1966-8-29', new \DateTimeZone(self::TIMEZONE))
         );
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             1967,
-            new DateTime('1967-8-28', new DateTimeZone(self::TIMEZONE))
+            new \DateTime('1967-8-28', new \DateTimeZone(self::TIMEZONE))
         );
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             1968,
-            new DateTime('1968-9-2', new DateTimeZone(self::TIMEZONE))
+            new \DateTime('1968-9-2', new \DateTimeZone(self::TIMEZONE))
         );
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             1969,
-            new DateTime('1969-9-1', new DateTimeZone(self::TIMEZONE))
+            new \DateTime('1969-9-1', new \DateTimeZone(self::TIMEZONE))
         );
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             1970,
-            new DateTime('1970-8-31', new DateTimeZone(self::TIMEZONE))
+            new \DateTime('1970-8-31', new \DateTimeZone(self::TIMEZONE))
         );
     }
 

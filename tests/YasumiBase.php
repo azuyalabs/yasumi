@@ -15,12 +15,7 @@ declare(strict_types=1);
 
 namespace Yasumi\tests;
 
-use DateTime;
-use DateTimeInterface;
-use Exception;
-use InvalidArgumentException;
 use PHPUnit\Framework\AssertionFailedError;
-use RuntimeException;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Filters\BankHolidaysFilter;
@@ -49,8 +44,8 @@ trait YasumiBase
      * @param string        $type             type of holiday. Use the following constants: TYPE_OFFICIAL,
      *                                        TYPE_OBSERVANCE, TYPE_SEASON, TYPE_BANK or TYPE_OTHER.
      *
-     * @throws InvalidArgumentException
-     * @throws RuntimeException
+     * @throws \InvalidArgumentException
+     * @throws \RuntimeException
      * @throws UnknownLocaleException
      */
     public function assertDefinedHolidays(
@@ -88,22 +83,22 @@ trait YasumiBase
     /**
      * Asserts expected date is a holiday for the given year and name.
      *
-     * @param string   $provider holiday provider (i.e. country/state) for which the holiday need to be tested.
-     * @param string   $key      key of the holiday to be checked against
-     * @param int      $year     holiday calendar year
-     * @param DateTime $expected date to be checked against
+     * @param string    $provider holiday provider (i.e. country/state) for which the holiday need to be tested.
+     * @param string    $key      key of the holiday to be checked against
+     * @param int       $year     holiday calendar year
+     * @param \DateTime $expected date to be checked against
      *
      * @throws UnknownLocaleException
      * @throws InvalidDateException
-     * @throws InvalidArgumentException
-     * @throws RuntimeException
+     * @throws \InvalidArgumentException
+     * @throws \RuntimeException
      * @throws AssertionFailedError
      */
     public function assertHoliday(
         string $provider,
         string $key,
         int $year,
-        DateTimeInterface $expected
+        \DateTimeInterface $expected
     ): void {
         $holidays = Yasumi::create($provider, $year);
         $holiday = $holidays->getHoliday($key);
@@ -116,22 +111,22 @@ trait YasumiBase
     /**
      * Asserts the expected date is a substitute holiday for that given year and name.
      *
-     * @param string   $provider the holiday provider (i.e. country/state) for which the holiday need to be tested.
-     * @param string   $key      key of the substituted holiday to be checked against
-     * @param int      $year     holiday calendar year
-     * @param DateTime $expected date to be checked against
+     * @param string    $provider the holiday provider (i.e. country/state) for which the holiday need to be tested.
+     * @param string    $key      key of the substituted holiday to be checked against
+     * @param int       $year     holiday calendar year
+     * @param \DateTime $expected date to be checked against
      *
      * @throws UnknownLocaleException
      * @throws InvalidDateException
-     * @throws InvalidArgumentException
-     * @throws RuntimeException
+     * @throws \InvalidArgumentException
+     * @throws \RuntimeException
      * @throws AssertionFailedError
      */
     public function assertSubstituteHoliday(
         string $provider,
         string $key,
         int $year,
-        DateTimeInterface $expected
+        \DateTimeInterface $expected
     ): void {
         $holidays = Yasumi::create($provider, $year);
         $holiday = $holidays->getHoliday('substituteHoliday:'.$key);
@@ -148,8 +143,8 @@ trait YasumiBase
      * @param string $key      key of the substituted holiday to be checked against
      * @param int    $year     holiday calendar year
      *
-     * @throws InvalidArgumentException
-     * @throws RuntimeException
+     * @throws \InvalidArgumentException
+     * @throws \RuntimeException
      * @throws UnknownLocaleException
      * @throws InvalidDateException
      * @throws AssertionFailedError
@@ -173,8 +168,8 @@ trait YasumiBase
      * @param string $key      key of the holiday to be checked against
      * @param int    $year     holiday calendar year
      *
-     * @throws InvalidArgumentException
-     * @throws RuntimeException
+     * @throws \InvalidArgumentException
+     * @throws \RuntimeException
      * @throws UnknownLocaleException
      * @throws InvalidDateException
      * @throws AssertionFailedError
@@ -198,8 +193,8 @@ trait YasumiBase
      * @param int                   $year         holiday calendar year
      * @param array<string, string> $translations translations to be checked against
      *
-     * @throws InvalidArgumentException
-     * @throws RuntimeException
+     * @throws \InvalidArgumentException
+     * @throws \RuntimeException
      * @throws UnknownLocaleException
      * @throws AssertionFailedError
      */
@@ -243,8 +238,8 @@ trait YasumiBase
      * @param int    $year     holiday calendar year
      * @param string $type     type to be checked against
      *
-     * @throws InvalidArgumentException
-     * @throws RuntimeException
+     * @throws \InvalidArgumentException
+     * @throws \RuntimeException
      * @throws AssertionFailedError
      * @throws UnknownLocaleException
      */
@@ -270,8 +265,8 @@ trait YasumiBase
      * @param string $expectedDayOfWeek expected week day (i.e. "Saturday", "Sunday", etc.).
      *
      * @throws AssertionFailedError
-     * @throws InvalidArgumentException
-     * @throws RuntimeException
+     * @throws \InvalidArgumentException
+     * @throws \RuntimeException
      * @throws UnknownLocaleException
      */
     public function assertDayOfWeek(
@@ -294,7 +289,7 @@ trait YasumiBase
      * @param string $provider            holiday provider (i.e. country/state) for which the holiday need to be tested.
      * @param int    $expectedSourceCount expected sources number
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function assertSources(string $provider, int $expectedSourceCount): void
     {

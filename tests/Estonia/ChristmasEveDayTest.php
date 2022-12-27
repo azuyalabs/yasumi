@@ -15,7 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Estonia;
 
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -34,7 +33,7 @@ class ChristmasEveDayTest extends EstoniaBaseTestCase implements HolidayTestCase
     /**
      * @return array<array> list of test dates for the holiday defined in this test
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function holidayDataProvider(): array
     {
@@ -52,7 +51,7 @@ class ChristmasEveDayTest extends EstoniaBaseTestCase implements HolidayTestCase
     /**
      * {@inheritdoc}
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -67,7 +66,7 @@ class ChristmasEveDayTest extends EstoniaBaseTestCase implements HolidayTestCase
     /**
      * {@inheritdoc}
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

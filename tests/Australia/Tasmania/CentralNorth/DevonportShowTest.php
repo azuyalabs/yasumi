@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Australia\Tasmania\CentralNorth;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -38,7 +35,7 @@ class DevonportShowTest extends CentralNorthBaseTestCase implements HolidayTestC
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHoliday(int $year, string $expected): void
     {
@@ -46,7 +43,7 @@ class DevonportShowTest extends CentralNorthBaseTestCase implements HolidayTestC
             $this->region,
             self::HOLIDAY,
             $year,
-            new DateTime($expected, new DateTimeZone($this->timezone))
+            new \DateTime($expected, new \DateTimeZone($this->timezone))
         );
     }
 
@@ -75,7 +72,7 @@ class DevonportShowTest extends CentralNorthBaseTestCase implements HolidayTestC
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -90,7 +87,7 @@ class DevonportShowTest extends CentralNorthBaseTestCase implements HolidayTestC
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

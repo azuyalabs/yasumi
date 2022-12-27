@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Netherlands;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -38,7 +35,7 @@ class LiberationDayTest extends NetherlandsBaseTestCase implements HolidayTestCa
     /**
      * Tests Liberation Day before 1947. Liberation Day was established after WWII in 1947.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testLiberationDayBefore1947(): void
     {
@@ -52,7 +49,7 @@ class LiberationDayTest extends NetherlandsBaseTestCase implements HolidayTestCa
     /**
      * Tests Liberation Day after 1947. Liberation Day was established after WWII in 1947.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testLiberationDayOnAfter1947(): void
     {
@@ -61,14 +58,14 @@ class LiberationDayTest extends NetherlandsBaseTestCase implements HolidayTestCa
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-5-5", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-5-5", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -83,7 +80,7 @@ class LiberationDayTest extends NetherlandsBaseTestCase implements HolidayTestCa
     /**
      * Tests Liberation Day official holiday type every 5 years, observance type on other years.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

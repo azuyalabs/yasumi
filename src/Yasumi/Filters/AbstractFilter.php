@@ -15,14 +15,12 @@ declare(strict_types=1);
 
 namespace Yasumi\Filters;
 
-use Countable;
-use FilterIterator;
 use Yasumi\SubstituteHoliday;
 
 /**
  * AbstractFilter.
  */
-abstract class AbstractFilter extends FilterIterator implements Countable
+abstract class AbstractFilter extends \FilterIterator implements \Countable
 {
     /**
      * Returns the number of holidays returned by this iterator.

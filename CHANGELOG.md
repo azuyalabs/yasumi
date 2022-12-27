@@ -12,6 +12,7 @@ to [Semantic Versioning](https://semver.org).
 - Added all examples as shown on the documentation site as a convenience to developers who like to have all
   information in a single place.
 - Added bank holiday for Queen Elizabeth II’s State Funeral on 19 September 2022 to United Kingdom
+- Added Public Holiday National Day of Mourning (for Queen Elizabeth II) on 22 September 2022 to Australia
 
 ### Changed
 

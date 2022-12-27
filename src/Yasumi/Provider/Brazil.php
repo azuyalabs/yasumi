@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use DateInterval;
-use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -72,7 +70,7 @@ class Brazil extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'carnavalMonday',
                 ['pt' => 'Segunda-feira de Carnaval'],
-                $carnavalMonday->sub(new DateInterval('P48D')),
+                $carnavalMonday->sub(new \DateInterval('P48D')),
                 $this->locale,
                 Holiday::TYPE_OBSERVANCE
             ));
@@ -81,7 +79,7 @@ class Brazil extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'carnavalTuesday',
                 ['pt' => 'Terça-feira de Carnaval'],
-                $carnavalTuesday->sub(new DateInterval('P47D')),
+                $carnavalTuesday->sub(new \DateInterval('P47D')),
                 $this->locale,
                 Holiday::TYPE_OBSERVANCE
             ));
@@ -100,7 +98,7 @@ class Brazil extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'tiradentesDay',
                 ['pt' => 'Dia de Tiradentes'],
-                new DateTime("$this->year-04-21", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("$this->year-04-21", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -117,7 +115,7 @@ class Brazil extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'independenceDay',
                 ['pt' => 'Dia da Independência do Brasil'],
-                new DateTime("$this->year-09-07", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("$this->year-09-07", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -137,7 +135,7 @@ class Brazil extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'ourLadyOfAparecidaDay',
                 ['pt' => 'Dia de Nossa Senhora Aparecida'],
-                new DateTime("$this->year-10-12", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("$this->year-10-12", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -153,7 +151,7 @@ class Brazil extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'allSoulsDay',
                 [],
-                new DateTime("$this->year-11-02", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("$this->year-11-02", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -171,7 +169,7 @@ class Brazil extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'proclamationOfRepublicDay',
                 ['pt' => 'Dia da Proclamação da República'],
-                new DateTime("$this->year-11-15", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("$this->year-11-15", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

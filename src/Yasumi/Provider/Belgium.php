@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -69,7 +68,7 @@ class Belgium extends AbstractProvider
             'fr' => 'Fête nationale',
             'en' => 'Belgian National Day',
             'nl' => 'nationale feestdag',
-        ], new DateTime("$this->year-7-21", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
+        ], new \DateTime("$this->year-7-21", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
     }
 
     public function getSources(): array

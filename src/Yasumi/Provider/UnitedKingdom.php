@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use DateInterval;
-use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -101,7 +99,7 @@ class UnitedKingdom extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'mayDayBankHoliday',
                 ['en' => 'May Day Bank Holiday'],
-                new DateTime("$this->year-5-8", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("$this->year-5-8", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_BANK
             ));
@@ -112,7 +110,7 @@ class UnitedKingdom extends AbstractProvider
         $this->addHoliday(new Holiday(
             'mayDayBankHoliday',
             ['en' => 'May Day Bank Holiday'],
-            new DateTime("first monday of may $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("first monday of may $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
         ));
@@ -147,7 +145,7 @@ class UnitedKingdom extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'springBankHoliday',
                 ['en' => 'Spring Bank Holiday'],
-                new DateTime("$this->year-6-4", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("$this->year-6-4", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_BANK
             ));
@@ -160,7 +158,7 @@ class UnitedKingdom extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'springBankHoliday',
                 ['en' => 'Spring Bank Holiday'],
-                new DateTime("$this->year-6-2", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("$this->year-6-2", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_BANK
             ));
@@ -171,7 +169,7 @@ class UnitedKingdom extends AbstractProvider
         $this->addHoliday(new Holiday(
             'springBankHoliday',
             ['en' => 'Spring Bank Holiday'],
-            new DateTime("last monday of may $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("last monday of may $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
         ));
@@ -198,7 +196,7 @@ class UnitedKingdom extends AbstractProvider
         $this->addHoliday(new Holiday(
             'platinumJubileeBankHoliday',
             ['en' => 'Platinum Jubilee Bank Holiday'],
-            new DateTime("$this->year-6-3", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("$this->year-6-3", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
         ));
@@ -225,7 +223,7 @@ class UnitedKingdom extends AbstractProvider
         $this->addHoliday(new Holiday(
             'queenElizabethFuneralBankHoliday',
             ['en' => 'Queen Elizabeth II’s State Funeral Bank Holiday'],
-            new DateTime("$this->year-9-19", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("$this->year-9-19", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
         ));
@@ -262,7 +260,7 @@ class UnitedKingdom extends AbstractProvider
 
         if (\in_array((int) $christmasDay->format('w'), [0, 6], true)) {
             $date = clone $christmasDay;
-            $date->add(new DateInterval('P2D'));
+            $date->add(new \DateInterval('P2D'));
             $this->addHoliday(new SubstituteHoliday(
                 $christmasDay,
                 [],
@@ -274,7 +272,7 @@ class UnitedKingdom extends AbstractProvider
 
         if (\in_array((int) $secondChristmasDay->format('w'), [0, 6], true)) {
             $date = clone $secondChristmasDay;
-            $date->add(new DateInterval('P2D'));
+            $date->add(new \DateInterval('P2D'));
             $this->addHoliday(new SubstituteHoliday(
                 $secondChristmasDay,
                 [],
@@ -314,7 +312,7 @@ class UnitedKingdom extends AbstractProvider
             $type = Holiday::TYPE_OBSERVANCE;
         }
 
-        $newYearsDay = new DateTime("$this->year-01-01", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $newYearsDay = new \DateTime("$this->year-01-01", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
         // If New Years Day falls on a Saturday or Sunday, it is observed the next Monday (January 2nd or 3rd)
         if (\in_array((int) $newYearsDay->format('w'), [0, 6], true)) {
@@ -350,7 +348,7 @@ class UnitedKingdom extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'summerBankHoliday',
                 ['en' => 'August Bank Holiday'],
-                new DateTime("first monday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("first monday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_BANK
             ));
@@ -365,7 +363,7 @@ class UnitedKingdom extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'summerBankHoliday',
                 ['en' => 'Summer Bank Holiday'],
-                new DateTime("first monday of september $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("first monday of september $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_BANK
             ));
@@ -376,7 +374,7 @@ class UnitedKingdom extends AbstractProvider
         $this->addHoliday(new Holiday(
             'summerBankHoliday',
             ['en' => 'Summer Bank Holiday'],
-            new DateTime("last monday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("last monday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
         ));
@@ -394,7 +392,7 @@ class UnitedKingdom extends AbstractProvider
     private function calculateMotheringSunday(): void
     {
         $date = $this->calculateEaster($this->year, $this->timezone);
-        $date->sub(new DateInterval('P3W'));
+        $date->sub(new \DateInterval('P3W'));
 
         $this->addHoliday(new Holiday(
             'motheringSunday',

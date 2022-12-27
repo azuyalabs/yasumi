@@ -15,7 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Georgia;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Georgia;
 use Yasumi\tests\ProviderTestCase;
@@ -105,7 +104,7 @@ class GeorgiaTest extends GeorgiaBaseTestCase implements ProviderTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
      * @throws \Exception
      */
     public function testSources(): void

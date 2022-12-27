@@ -15,7 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Latvia;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Latvia;
 use Yasumi\tests\ProviderTestCase;
@@ -102,7 +101,7 @@ class LatviaTest extends LatviaBaseTestCase implements ProviderTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
      * @throws \Exception
      */
     public function testSources(): void

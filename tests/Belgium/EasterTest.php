@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Belgium;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -33,7 +30,7 @@ class EasterTest extends BelgiumBaseTestCase implements HolidayTestCase
     /**
      * Tests Easter.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testEaster(): void
     {
@@ -42,14 +39,14 @@ class EasterTest extends BelgiumBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-4-4", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-4-4", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -64,7 +61,7 @@ class EasterTest extends BelgiumBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Japan;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,7 +37,7 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements HolidayTestCase
      * Tests the Emperors Birthday after 1949 to 1988. The Emperors Birthday is on April 28rd and celebrated as such since
      * 1949.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testEmperorsBirthdayOnAfter1949(): void
     {
@@ -49,7 +46,7 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-4-29", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-4-29", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -58,7 +55,7 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements HolidayTestCase
      * 1989. Prior to the death of Emperor Hirohito in 1989, this holiday was celebrated on April 29. See also "Shōwa
      * Day".
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testEmperorsBirthdayOnAfter1989(): void
     {
@@ -67,7 +64,7 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-12-23", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-12-23", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -75,7 +72,7 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements HolidayTestCase
      * Tests the Emperors Birthday after 2020. The Emperors Birthday is on February 23rd and celebrated as such since
      * 2020.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testEmperorsBirthdayOnAfter2020(): void
     {
@@ -84,7 +81,7 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-2-23", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-2-23", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -92,7 +89,7 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements HolidayTestCase
      * Tests the Emperors Birthday after 1989 substituted next working day (when the Emperors Birthday falls on a
      * Sunday).
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testEmperorsBirthdayOnAfter1989SubstitutedNextWorkingDay(): void
     {
@@ -101,7 +98,7 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::SUBSTITUTE_PREFIX.self::HOLIDAY,
             $year,
-            new DateTime("$year-12-24", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-12-24", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -110,7 +107,7 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements HolidayTestCase
      * 1989. Prior to the death of Emperor Hirohito in 1989, this holiday was celebrated on April 29. See also "Shōwa
      * Day"/"Greenery Day".
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testEmperorsBirthdayBefore1989(): void
     {
@@ -136,7 +133,7 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -151,7 +148,7 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

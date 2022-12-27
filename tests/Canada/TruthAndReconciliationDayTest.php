@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Canada;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -39,7 +36,7 @@ class TruthAndReconciliationDayTest extends CanadaBaseTestCase implements Holida
      * Tests TruthAndReconciliationDay on or after 2021. Thanksgiving Day is celebrated since 2021 on the last day
      * of September.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTruthAndReconciliationDayOnAfter2021(): void
     {
@@ -48,7 +45,7 @@ class TruthAndReconciliationDayTest extends CanadaBaseTestCase implements Holida
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("last day of september $year", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("last day of september $year", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -56,7 +53,7 @@ class TruthAndReconciliationDayTest extends CanadaBaseTestCase implements Holida
      * Tests TruthAndReconciliationDay before 2021. TruthAndReconciliationDay is celebrated since 2021 on the last day
      * of September.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTruthAndReconciliationDayBefore2021(): void
     {
@@ -70,7 +67,7 @@ class TruthAndReconciliationDayTest extends CanadaBaseTestCase implements Holida
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -85,7 +82,7 @@ class TruthAndReconciliationDayTest extends CanadaBaseTestCase implements Holida
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Germany\SaxonyAnhalt;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\ProviderTestCase;
 
@@ -45,6 +44,7 @@ class SaxonyAnhaltTest extends SaxonyAnhaltBaseTestCase implements ProviderTestC
     {
         $holidays = [
             'newYearsDay',
+            'epiphany',
             'goodFriday',
             'easterMonday',
             'internationalWorkersDay',
@@ -94,11 +94,11 @@ class SaxonyAnhaltTest extends SaxonyAnhaltBaseTestCase implements ProviderTestC
      */
     public function testOtherHolidays(): void
     {
-        $this->assertDefinedHolidays(['epiphany'], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
      * @throws \Exception
      */
     public function testSources(): void

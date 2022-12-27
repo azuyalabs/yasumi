@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Australia\SouthAustralia;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -43,7 +40,7 @@ class AdelaideCupDayTest extends SouthAustraliaBaseTestCase implements HolidayTe
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHoliday(int $year, string $expected): void
     {
@@ -51,7 +48,7 @@ class AdelaideCupDayTest extends SouthAustraliaBaseTestCase implements HolidayTe
             $this->region,
             self::HOLIDAY,
             $year,
-            new DateTime($expected, new DateTimeZone($this->timezone))
+            new \DateTime($expected, new \DateTimeZone($this->timezone))
         );
     }
 
@@ -90,7 +87,7 @@ class AdelaideCupDayTest extends SouthAustraliaBaseTestCase implements HolidayTe
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -105,7 +102,7 @@ class AdelaideCupDayTest extends SouthAustraliaBaseTestCase implements HolidayTe
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

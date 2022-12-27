@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Switzerland;
 
-use DateInterval;
-use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -84,9 +82,9 @@ class Geneva extends Switzerland
         }
 
         // Find first Sunday of September
-        $date = new DateTime('First Sunday of '.$this->year.'-09', DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime('First Sunday of '.$this->year.'-09', DateTimeZoneFactory::getDateTimeZone($this->timezone));
         // Go to next Thursday
-        $date->add(new DateInterval('P4D'));
+        $date->add(new \DateInterval('P4D'));
 
         $type = Holiday::TYPE_OTHER;
         if ($this->year > 1869 && $this->year < 1966) {
@@ -121,7 +119,7 @@ class Geneva extends Switzerland
                 [
                     'fr' => 'Restauration de la République',
                 ],
-                new DateTime($this->year.'-12-31', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime($this->year.'-12-31', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OTHER
             ));

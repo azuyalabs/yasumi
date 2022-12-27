@@ -15,7 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Russia;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Russia;
 use Yasumi\tests\ProviderTestCase;
@@ -106,7 +105,7 @@ class RussiaTest extends RussiaBaseTestCase implements ProviderTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
      * @throws \Exception
      */
     public function testSources(): void

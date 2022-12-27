@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Belgium;
 
-use ReflectionException;
 use Yasumi\Holiday;
 
 /**
@@ -91,7 +90,7 @@ class BelgiumTest extends BelgiumBaseTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
      * @throws \Exception
      */
     public function testSources(): void

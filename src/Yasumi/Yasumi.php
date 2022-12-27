@@ -14,12 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi;
 
-use FilesystemIterator;
-use InvalidArgumentException;
-use RecursiveDirectoryIterator;
-use RecursiveIteratorIterator;
-use ReflectionClass;
-use RuntimeException;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\InvalidYearException;
 use Yasumi\Exception\ProviderNotFoundException;
@@ -68,8 +62,8 @@ class Yasumi
      * @param int                $workingDays Number of days to look ahead for the (first) next working day
      *
      * @throws UnknownLocaleException
-     * @throws RuntimeException
-     * @throws InvalidArgumentException
+     * @throws \RuntimeException
+     * @throws \InvalidArgumentException
      * @throws \Exception
      * @throws InvalidDateException
      *
@@ -119,7 +113,7 @@ class Yasumi
      *
      * @return ProviderInterface An instance of class $class is created and returned
      *
-     * @throws RuntimeException          If no such holiday provider is found
+     * @throws \RuntimeException         If no such holiday provider is found
      * @throws InvalidYearException      if the year parameter is not between the defined lower and upper bounds
      * @throws UnknownLocaleException    if the locale parameter is invalid
      * @throws ProviderNotFoundException if the holiday provider for the given country does not exist
@@ -129,7 +123,7 @@ class Yasumi
         // Find and return holiday provider instance
         $providerClass = sprintf('Yasumi\Provider\%s', str_replace('/', '\\', $class));
 
-        if (class_exists($class) && (new ReflectionClass($class))->implementsInterface(ProviderInterface::class)) {
+        if (class_exists($class) && (new \ReflectionClass($class))->implementsInterface(ProviderInterface::class)) {
             $providerClass = $class;
         }
 
@@ -185,8 +179,8 @@ class Yasumi
      *
      * @return ProviderInterface An instance of class $class is created and returned
      *
-     * @throws RuntimeException          If no such holiday provider is found
-     * @throws InvalidArgumentException  if the year parameter is not between the defined lower and upper bounds
+     * @throws \RuntimeException         If no such holiday provider is found
+     * @throws \InvalidArgumentException if the year parameter is not between the defined lower and upper bounds
      * @throws UnknownLocaleException    if the locale parameter is invalid
      * @throws ProviderNotFoundException if the holiday provider for the given ISO3166-2 code does not exist
      * @throws \ReflectionException
@@ -221,10 +215,10 @@ class Yasumi
         }
 
         $providers = [];
-        $filesIterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(
+        $filesIterator = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator(
             __DIR__.DIRECTORY_SEPARATOR.'Provider',
-            FilesystemIterator::SKIP_DOTS
-        ), RecursiveIteratorIterator::SELF_FIRST);
+            \FilesystemIterator::SKIP_DOTS
+        ), \RecursiveIteratorIterator::SELF_FIRST);
 
         foreach ($filesIterator as $file) {
             if ($file->isDir() || 'php' !== $file->getExtension() || \in_array(
@@ -238,7 +232,7 @@ class Yasumi
             $quotedDs = preg_quote(DIRECTORY_SEPARATOR, '');
             $provider = preg_replace("#^.+{$quotedDs}Provider$quotedDs(.+)\\.php$#", '$1', $file->getPathName());
 
-            $class = new ReflectionClass(sprintf('Yasumi\Provider\%s', str_replace('/', '\\', $provider)));
+            $class = new \ReflectionClass(sprintf('Yasumi\Provider\%s', str_replace('/', '\\', $provider)));
 
             $key = 'ID';
             if ($class->isSubclassOf(AbstractProvider::class) && $class->hasConstant($key)) {
@@ -261,8 +255,8 @@ class Yasumi
      * @param int                $workingDays Number of days to look back for the (first) previous working day
      *
      * @throws UnknownLocaleException
-     * @throws RuntimeException
-     * @throws InvalidArgumentException
+     * @throws \RuntimeException
+     * @throws \InvalidArgumentException
      * @throws \Exception
      * @throws InvalidDateException
      *

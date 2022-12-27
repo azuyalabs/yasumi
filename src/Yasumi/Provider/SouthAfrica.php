@@ -15,8 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use DateInterval;
-use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -111,7 +109,7 @@ class SouthAfrica extends AbstractProvider
         $this->addHoliday(new Holiday(
             'humanRightsDay',
             ['en' => 'Human Rights Day'],
-            new DateTime($this->year.'-3-21', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-3-21', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -133,7 +131,7 @@ class SouthAfrica extends AbstractProvider
         $this->addHoliday(new Holiday(
             'familyDay',
             ['en' => 'Family Day'],
-            $this->calculateEaster($this->year, $this->timezone)->add(new DateInterval('P1D')),
+            $this->calculateEaster($this->year, $this->timezone)->add(new \DateInterval('P1D')),
             $this->locale
         ));
     }
@@ -156,7 +154,7 @@ class SouthAfrica extends AbstractProvider
         $this->addHoliday(new Holiday(
             'freedomDay',
             ['en' => 'Freedom Day'],
-            new DateTime($this->year.'-4-27', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-4-27', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -183,7 +181,7 @@ class SouthAfrica extends AbstractProvider
         $this->addHoliday(new Holiday(
             'youthDay',
             ['en' => 'Youth Day'],
-            new DateTime($this->year.'-6-16', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-6-16', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -210,7 +208,7 @@ class SouthAfrica extends AbstractProvider
         $this->addHoliday(new Holiday(
             '2016MunicipalElectionsDay',
             ['en' => '2016 Municipal Elections Day'],
-            new DateTime('2016-8-3', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime('2016-8-3', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -235,7 +233,7 @@ class SouthAfrica extends AbstractProvider
         $this->addHoliday(new Holiday(
             'nationalWomensDay',
             ['en' => 'National Women’s Day'],
-            new DateTime($this->year.'-8-9', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-8-9', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -260,7 +258,7 @@ class SouthAfrica extends AbstractProvider
         $this->addHoliday(new Holiday(
             'heritageDay',
             ['en' => 'Heritage Day'],
-            new DateTime($this->year.'-9-24', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-9-24', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -287,7 +285,7 @@ class SouthAfrica extends AbstractProvider
         $this->addHoliday(new Holiday(
             'reconciliationDay',
             ['en' => 'Day of Reconciliation'],
-            new DateTime($this->year.'-12-16', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-12-16', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -317,7 +315,7 @@ class SouthAfrica extends AbstractProvider
         $this->addHoliday(new Holiday(
             'substituteDayOfGoodwill',
             ['en' => 'Day of Goodwill observed'],
-            new DateTime('2016-12-27', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime('2016-12-27', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -340,7 +338,7 @@ class SouthAfrica extends AbstractProvider
             // Substitute holiday is on a Monday in case the holiday falls on a Sunday
             if (0 === (int) $holiday->format('w')) {
                 $date = clone $holiday;
-                $date->add(new DateInterval('P1D'));
+                $date->add(new \DateInterval('P1D'));
 
                 $this->addHoliday(new SubstituteHoliday(
                     $holiday,

@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use DateInterval;
-use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -56,7 +54,7 @@ trait ChristianHolidays
         return new Holiday(
             'corpusChristi',
             [],
-            $this->calculateEaster($year, $timezone)->add(new DateInterval('P60D')),
+            $this->calculateEaster($year, $timezone)->add(new \DateInterval('P60D')),
             $locale,
             $type
         );
@@ -89,7 +87,7 @@ trait ChristianHolidays
         string $locale,
         string $type = Holiday::TYPE_OFFICIAL
     ): Holiday {
-        return new Holiday('allSaintsDay', [], new DateTime("$year-11-1", DateTimeZoneFactory::getDateTimeZone($timezone)), $locale, $type);
+        return new Holiday('allSaintsDay', [], new \DateTime("$year-11-1", DateTimeZoneFactory::getDateTimeZone($timezone)), $locale, $type);
     }
 
     /**
@@ -121,7 +119,7 @@ trait ChristianHolidays
         return new Holiday(
             'assumptionOfMary',
             [],
-            new DateTime("$year-8-15", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            new \DateTime("$year-8-15", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
@@ -154,7 +152,7 @@ trait ChristianHolidays
         return new Holiday(
             'goodFriday',
             [],
-            $this->calculateEaster($year, $timezone)->sub(new DateInterval('P2D')),
+            $this->calculateEaster($year, $timezone)->sub(new \DateInterval('P2D')),
             $locale,
             $type
         );
@@ -188,7 +186,7 @@ trait ChristianHolidays
         string $locale,
         string $type = Holiday::TYPE_OFFICIAL
     ): Holiday {
-        return new Holiday('epiphany', [], new DateTime("$year-1-6", DateTimeZoneFactory::getDateTimeZone($timezone)), $locale, $type);
+        return new Holiday('epiphany', [], new \DateTime("$year-1-6", DateTimeZoneFactory::getDateTimeZone($timezone)), $locale, $type);
     }
 
     /**
@@ -219,7 +217,7 @@ trait ChristianHolidays
         string $locale,
         string $type = Holiday::TYPE_OFFICIAL
     ): Holiday {
-        return new Holiday('stJosephsDay', [], new DateTime("$year-3-19", DateTimeZoneFactory::getDateTimeZone($timezone)), $locale, $type);
+        return new Holiday('stJosephsDay', [], new \DateTime("$year-3-19", DateTimeZoneFactory::getDateTimeZone($timezone)), $locale, $type);
     }
 
     /**
@@ -249,7 +247,7 @@ trait ChristianHolidays
         string $locale,
         string $type = Holiday::TYPE_OFFICIAL
     ): Holiday {
-        return new Holiday('stGeorgesDay', [], new DateTime("$year-4-23", DateTimeZoneFactory::getDateTimeZone($timezone)), $locale, $type);
+        return new Holiday('stGeorgesDay', [], new \DateTime("$year-4-23", DateTimeZoneFactory::getDateTimeZone($timezone)), $locale, $type);
     }
 
     /**
@@ -275,7 +273,7 @@ trait ChristianHolidays
         $month = floor(($d + $e + 114) / 31);
         $day = (($d + $e + 114) % 31) + 1;
 
-        return (new DateTime("$year-$month-$day", DateTimeZoneFactory::getDateTimeZone($timezone)))->add(new DateInterval('P13D'));
+        return (new \DateTime("$year-$month-$day", DateTimeZoneFactory::getDateTimeZone($timezone)))->add(new \DateInterval('P13D'));
     }
 
     /**
@@ -313,7 +311,7 @@ trait ChristianHolidays
         return new Holiday(
             'reformationDay',
             [],
-            new DateTime("$year-10-31", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            new \DateTime("$year-10-31", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
@@ -390,8 +388,8 @@ trait ChristianHolidays
             $easterDays = $pfm + $tmp + 1; // Easter as the number of days after 21st March
         }
 
-        $easter = new DateTime("$year-3-21", DateTimeZoneFactory::getDateTimeZone($timezone));
-        $easter->add(new DateInterval('P'.$easterDays.'D'));
+        $easter = new \DateTime("$year-3-21", DateTimeZoneFactory::getDateTimeZone($timezone));
+        $easter->add(new \DateInterval('P'.$easterDays.'D'));
 
         return $easter;
     }
@@ -451,7 +449,7 @@ trait ChristianHolidays
         return new Holiday(
             'pentecost',
             [],
-            $this->calculateEaster($year, $timezone)->add(new DateInterval('P49D')),
+            $this->calculateEaster($year, $timezone)->add(new \DateInterval('P49D')),
             $locale,
             $type
         );
@@ -486,7 +484,7 @@ trait ChristianHolidays
         return new Holiday(
             'easterMonday',
             [],
-            $this->calculateEaster($year, $timezone)->add(new DateInterval('P1D')),
+            $this->calculateEaster($year, $timezone)->add(new \DateInterval('P1D')),
             $locale,
             $type
         );
@@ -521,7 +519,7 @@ trait ChristianHolidays
         return new Holiday(
             'ascensionDay',
             [],
-            $this->calculateEaster($year, $timezone)->add(new DateInterval('P39D')),
+            $this->calculateEaster($year, $timezone)->add(new \DateInterval('P39D')),
             $locale,
             $type
         );
@@ -553,7 +551,7 @@ trait ChristianHolidays
         return new Holiday(
             'pentecostMonday',
             [],
-            $this->calculateEaster($year, $timezone)->add(new DateInterval('P50D')),
+            $this->calculateEaster($year, $timezone)->add(new \DateInterval('P50D')),
             $locale,
             $type
         );
@@ -589,7 +587,7 @@ trait ChristianHolidays
         return new Holiday(
             'christmasEve',
             [],
-            new DateTime("$year-12-24", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            new \DateTime("$year-12-24", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
@@ -622,7 +620,7 @@ trait ChristianHolidays
         return new Holiday(
             'christmasDay',
             [],
-            new DateTime("$year-12-25", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            new \DateTime("$year-12-25", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
@@ -655,7 +653,7 @@ trait ChristianHolidays
         return new Holiday(
             'secondChristmasDay',
             [],
-            new DateTime("$year-12-26", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            new \DateTime("$year-12-26", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
@@ -690,7 +688,7 @@ trait ChristianHolidays
         return new Holiday(
             'ashWednesday',
             [],
-            $this->calculateEaster($year, $timezone)->sub(new DateInterval('P46D')),
+            $this->calculateEaster($year, $timezone)->sub(new \DateInterval('P46D')),
             $locale,
             $type
         );
@@ -726,7 +724,7 @@ trait ChristianHolidays
         return new Holiday(
             'immaculateConception',
             [],
-            new DateTime("$year-12-8", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            new \DateTime("$year-12-8", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
@@ -763,7 +761,7 @@ trait ChristianHolidays
         return new Holiday(
             'stStephensDay',
             [],
-            new DateTime("$year-12-26", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            new \DateTime("$year-12-26", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
@@ -799,7 +797,7 @@ trait ChristianHolidays
         return new Holiday(
             'maundyThursday',
             [],
-            $this->calculateEaster($year, $timezone)->sub(new DateInterval('P3D')),
+            $this->calculateEaster($year, $timezone)->sub(new \DateInterval('P3D')),
             $locale,
             $type
         );
@@ -833,7 +831,7 @@ trait ChristianHolidays
         string $locale,
         string $type = Holiday::TYPE_OFFICIAL
     ): Holiday {
-        return new Holiday('stJohnsDay', [], new DateTime("$year-06-24", DateTimeZoneFactory::getDateTimeZone($timezone)), $locale, $type);
+        return new Holiday('stJohnsDay', [], new \DateTime("$year-06-24", DateTimeZoneFactory::getDateTimeZone($timezone)), $locale, $type);
     }
 
     /**
@@ -867,7 +865,7 @@ trait ChristianHolidays
         return new Holiday(
             'annunciation',
             [],
-            new DateTime("$year-03-25", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            new \DateTime("$year-03-25", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );

@@ -14,10 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Australia;
 
-use DateInterval;
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -39,7 +35,7 @@ class GoodFridayTest extends AustraliaBaseTestCase implements HolidayTestCase
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHoliday(int $year, string $expected): void
     {
@@ -47,7 +43,7 @@ class GoodFridayTest extends AustraliaBaseTestCase implements HolidayTestCase
             $this->region,
             self::HOLIDAY,
             $year,
-            new DateTime($expected, new DateTimeZone($this->timezone))
+            new \DateTime($expected, new \DateTimeZone($this->timezone))
         );
     }
 
@@ -56,7 +52,7 @@ class GoodFridayTest extends AustraliaBaseTestCase implements HolidayTestCase
      *
      * @return array<array> list of test dates for the holiday defined in this test
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function HolidayDataProvider(): array
     {
@@ -65,7 +61,7 @@ class GoodFridayTest extends AustraliaBaseTestCase implements HolidayTestCase
         for ($y = 0; $y < 50; ++$y) {
             $year = $this->generateRandomYear();
             $date = $this->calculateEaster($year, $this->timezone);
-            $date->sub(new DateInterval('P2D'));
+            $date->sub(new \DateInterval('P2D'));
             $data[] = [$year, $date->format('Y-m-d')];
         }
 
@@ -75,7 +71,7 @@ class GoodFridayTest extends AustraliaBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -90,7 +86,7 @@ class GoodFridayTest extends AustraliaBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

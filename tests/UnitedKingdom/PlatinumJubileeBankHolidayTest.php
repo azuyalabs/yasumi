@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\UnitedKingdom;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -43,7 +40,7 @@ class PlatinumJubileeBankHolidayTest extends UnitedKingdomBaseTestCase implement
     /**
      * Tests the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHoliday(): void
     {
@@ -51,14 +48,14 @@ class PlatinumJubileeBankHolidayTest extends UnitedKingdomBaseTestCase implement
             self::REGION,
             self::HOLIDAY,
             self::ACTIVE_YEAR,
-            new DateTime(self::ACTIVE_DATE, new DateTimeZone(self::TIMEZONE))
+            new \DateTime(self::ACTIVE_DATE, new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests the holiday defined in this test before the year in which it occurred.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayBeforeActive(): void
     {
@@ -72,7 +69,7 @@ class PlatinumJubileeBankHolidayTest extends UnitedKingdomBaseTestCase implement
     /**
      * Tests the holiday defined in this test after the year in which it occurred.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayAfterActive(): void
     {

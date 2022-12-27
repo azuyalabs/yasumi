@@ -15,10 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\SouthKorea;
 
-use DateInterval;
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\Provider\SouthKorea;
 use Yasumi\tests\HolidayTestCase;
@@ -41,13 +37,13 @@ class ChuseokTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     /**
      * Tests the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHoliday(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2050);
         if (isset(SouthKorea::LUNAR_HOLIDAY[self::HOLIDAY][$year])) {
-            $date = new DateTime(SouthKorea::LUNAR_HOLIDAY[self::HOLIDAY][$year], new DateTimeZone(self::TIMEZONE));
+            $date = new \DateTime(SouthKorea::LUNAR_HOLIDAY[self::HOLIDAY][$year], new \DateTimeZone(self::TIMEZONE));
 
             // Chuseok
             $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
@@ -58,7 +54,7 @@ class ChuseokTest extends SouthKoreaBaseTestCase implements HolidayTestCase
                     self::REGION,
                     'dayAfterChuseok',
                     $year,
-                    (clone $date)->add(new DateInterval('P1D'))
+                    (clone $date)->add(new \DateInterval('P1D'))
                 );
             }
 
@@ -68,7 +64,7 @@ class ChuseokTest extends SouthKoreaBaseTestCase implements HolidayTestCase
                     self::REGION,
                     'dayBeforeChuseok',
                     $year,
-                    (clone $date)->sub(new DateInterval('P1D'))
+                    (clone $date)->sub(new \DateInterval('P1D'))
                 );
             }
         }
@@ -77,18 +73,18 @@ class ChuseokTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     /**
      * Tests the substitute holiday defined in this test (conflict with Gaecheonjeol).
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testSubstituteHolidayByGaecheonjeol(): void
     {
-        $tz = new DateTimeZone(self::TIMEZONE);
+        $tz = new \DateTimeZone(self::TIMEZONE);
 
         foreach ([2017, 2028, 2036, 2039] as $year) {
             $this->assertHoliday(
                 self::REGION,
                 'nationalFoundationDay',
                 $year,
-                new DateTime("$year-10-3", $tz)
+                new \DateTime("$year-10-3", $tz)
             );
         }
 
@@ -96,43 +92,43 @@ class ChuseokTest extends SouthKoreaBaseTestCase implements HolidayTestCase
             self::REGION,
             'dayBeforeChuseok',
             2017,
-            new DateTime('2017-10-6', $tz)
+            new \DateTime('2017-10-6', $tz)
         );
         $this->assertSubstituteHoliday(
             self::REGION,
             'chuseok',
             2028,
-            new DateTime('2028-10-5', $tz)
+            new \DateTime('2028-10-5', $tz)
         );
         $this->assertSubstituteHoliday(
             self::REGION,
             'dayBeforeChuseok',
             2036,
-            new DateTime('2036-10-6', $tz)
+            new \DateTime('2036-10-6', $tz)
         );
         $this->assertSubstituteHoliday(
             self::REGION,
             'dayAfterChuseok',
             2039,
-            new DateTime('2039-10-5', $tz)
+            new \DateTime('2039-10-5', $tz)
         );
     }
 
     /**
      * Tests the substitute holiday defined in this test (conflict with Sunday).
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testSubstituteHoliday(): void
     {
-        $tz = new DateTimeZone(self::TIMEZONE);
+        $tz = new \DateTimeZone(self::TIMEZONE);
 
         // Before 2022
         $this->assertSubstituteHoliday(
             self::REGION,
             'dayBeforeChuseok',
             2014,
-            new DateTime('2014-9-10', $tz)
+            new \DateTime('2014-9-10', $tz)
         );
 
         // By sunday
@@ -140,26 +136,26 @@ class ChuseokTest extends SouthKoreaBaseTestCase implements HolidayTestCase
             self::REGION,
             'dayBeforeChuseok',
             2025,
-            new DateTime('2025-10-8', $tz)
+            new \DateTime('2025-10-8', $tz)
         );
         $this->assertSubstituteHoliday(
             self::REGION,
             'chuseok',
             2032,
-            new DateTime('2032-9-21', $tz)
+            new \DateTime('2032-9-21', $tz)
         );
         $this->assertSubstituteHoliday(
             self::REGION,
             'dayAfterChuseok',
             2036,
-            new DateTime('2036-10-7', $tz)
+            new \DateTime('2036-10-7', $tz)
         );
     }
 
     /**
      * Tests the holiday defined in this test before establishment.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -173,7 +169,7 @@ class ChuseokTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -207,7 +203,7 @@ class ChuseokTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

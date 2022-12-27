@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Portugal;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -31,7 +28,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements HolidayT
     public const HOLIDAY = 'portugueseRepublic';
 
     /**
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayOnAfterRestoration(): void
     {
@@ -40,13 +37,13 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements HolidayT
                 self::REGION,
                 self::HOLIDAY,
                 $year,
-                new DateTime("$year-10-05", new DateTimeZone(self::TIMEZONE))
+                new \DateTime("$year-10-05", new \DateTimeZone(self::TIMEZONE))
             );
         }
     }
 
     /**
-     * @throws Exception
+     * @throws \Exception
      */
     public function testNotHolidayDuringAbolishment(): void
     {
@@ -58,7 +55,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements HolidayT
     }
 
     /**
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayOnAfterEstablishment(): void
     {
@@ -67,7 +64,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements HolidayT
                 self::REGION,
                 self::HOLIDAY,
                 $year,
-                new DateTime("$year-10-05", new DateTimeZone(self::TIMEZONE))
+                new \DateTime("$year-10-05", new \DateTimeZone(self::TIMEZONE))
             );
         }
     }
@@ -78,7 +75,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements HolidayT
             foreach ($this->randomYearsBeforeEstablishment() as $year) {
                 $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
             }
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
         }
     }
 
@@ -93,7 +90,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements HolidayT
                     [self::LOCALE => 'Implantação da República Portuguesa']
                 );
             }
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
         }
     }
 
@@ -108,12 +105,12 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements HolidayT
                     Holiday::TYPE_OFFICIAL
                 );
             }
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
         }
     }
 
     /** @return \Generator<int>
-     * @throws Exception
+     * @throws \Exception
      */
     private function randomEstablishedYear(): \Generator
     {
@@ -122,7 +119,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements HolidayT
     }
 
     /** @return \Generator<int>
-     * @throws Exception
+     * @throws \Exception
      */
     private function randomYearsBeforeEstablishment(): \Generator
     {
@@ -131,7 +128,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements HolidayT
     }
 
     /** @return \Generator<int>
-     * @throws Exception
+     * @throws \Exception
      */
     private function randomYearsOnAfterEstablishment(): \Generator
     {
@@ -140,7 +137,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements HolidayT
     }
 
     /** @return \Generator<int>
-     * @throws Exception
+     * @throws \Exception
      */
     private function randomYearsOnAfterRestoration(): \Generator
     {

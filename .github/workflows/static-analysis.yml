@@ -21,7 +21,7 @@ jobs:
           git config --global core.eol lf
 
       - name: Checkout
-        uses: actions/checkout@v2.3.4
+        uses: actions/checkout@v3.2.0
         with:
           fetch-depth: 1
 
@@ -34,13 +34,12 @@ jobs:
       - name: Get Composer Cache Directory
         id: composer-cache
         run: echo "::set-output name=dir::$(composer config cache-files-dir)"
-
-      - name: Cache Composer dependencies
-        uses: actions/cache@v2
+      - uses: actions/cache@v3
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.json') }}
-          restore-keys: ${{ runner.os }}-composer-
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
 
       - name: Check Composer configuration
         run: composer validate --strict
