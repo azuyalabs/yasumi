@@ -159,9 +159,32 @@ class USA extends AbstractProvider
     private function calculateJuneteenth(): void
     {
         if ($this->year >= 2021) {
-            $this->addHoliday(new Holiday('juneteenth', [
-                'en' => 'Juneteenth',
-            ], new \DateTime("$this->year-6-19", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
+            $date = new DateTime("$this->year-6-19", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+            $label = 'Juneteenth';
+
+            $holiday = new Holiday('juneteenth', [
+              'en' => $label,
+            ], $date, $this->locale);
+            $this->addHoliday($holiday);
+
+            $day_of_week = (int) $date->format('w');
+
+            if (0 === $day_of_week || 6 === $day_of_week) {
+                $date = clone $holiday;
+                if (0 === $day_of_week) {
+                    $date->modify('next monday');
+                } elseif (6 === $day_of_week) {
+                    $date->modify('previous friday');
+                }
+                $this->addHoliday(new SubstituteHoliday(
+                    $holiday,
+                    [
+                      'en' => $label.' (observed)',
+                    ],
+                    $date,
+                    $this->locale
+                ));
+            }
         }
     }
 
