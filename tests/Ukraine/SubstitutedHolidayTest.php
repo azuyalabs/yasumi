@@ -51,11 +51,11 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements HolidayTestC
     /**
      * Asserts that the expected date is indeed a holiday for that given year and name.
      *
-     * @param string             $provider             the holiday provider (i.e. country/state) for which the holiday need to be tested
-     * @param string             $key                  string the key of the holiday to be checked against
-     * @param int                $year                 holiday calendar year
-     * @param \DateTimeInterface $expectedOfficial     the official date to be checked against
-     * @param \DateTimeImmutable $expectedSubstitution the substituted date to be checked against
+     * @param string                  $provider             the holiday provider (i.e. country/state) for which the holiday need to be tested
+     * @param string                  $key                  string the key of the holiday to be checked against
+     * @param int                     $year                 holiday calendar year
+     * @param \DateTimeInterface      $expectedOfficial     the official date to be checked against
+     * @param \DateTimeImmutable|null $expectedSubstitution the substituted date to be checked against
      */
     public function assertHolidayWithSubstitution(
         string $provider,

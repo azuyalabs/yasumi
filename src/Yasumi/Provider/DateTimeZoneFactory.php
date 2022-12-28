@@ -21,7 +21,7 @@ namespace Yasumi\Provider;
  */
 final class DateTimeZoneFactory
 {
-    /** @var array<string, \DateTimeZone> */
+    /** @var array<string, \DateTimeZone>|null */
     private static ?array $dateTimeZones = null;
 
     public static function getDateTimeZone(string $timezone): \DateTimeZone
