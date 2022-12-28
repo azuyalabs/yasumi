@@ -36,4 +36,15 @@ abstract class DaylightSavingTime extends NetherlandsBaseTestCase implements Hol
 
         parent::__construct();
     }
+
+    /* Swaps the observation from observed to unobserved for the given years */
+    protected function swapObservation(array $years): void
+    {
+        foreach ($years as $y) {
+            $this->observedYears[] = $y;
+            if (false !== ($key = array_search($y, $this->unobservedYears, true))) {
+                unset($this->unobservedYears[(int) $key]);
+            }
+        }
+    }
 }
