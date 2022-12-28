@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 /*
  * This file is part of the Yasumi package.
  *
@@ -19,7 +20,7 @@ use Yasumi\Holiday;
 /**
  * Class for testing Wintertime in the Netherlands.
  */
-final class WintertimeTest extends DaylightSavingTime
+final class WinterTimeTest extends DaylightSavingTime
 {
     /** The name of the holiday */
     public const HOLIDAY = 'winterTime';
@@ -32,6 +33,12 @@ final class WintertimeTest extends DaylightSavingTime
         if (false !== ($key = array_search(1940, $this->observedYears, true))) {
             unset($this->observedYears[(int) $key]);
         }
+
+        // In version 2022f of the tz db, a correction for some years weere made for the wintertime
+        // transitions. See: https://github.com/eggert/tz/blob/2022f/europe
+        if (1 === strcmp(\intltz_get_tz_data_version(), '2022f')) {
+            $this->swapObservation([1946]);
+        }
     }
 
     /**
@@ -42,21 +49,26 @@ final class WintertimeTest extends DaylightSavingTime
     public function testWintertime(): void
     {
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->randomYearFromArray($this->unobservedYears));
+        $year = $this->randomYearFromArray($this->observedYears);
+        $expected = "last sunday of september $year";
 
-        $year = $this->generateRandomYear(1979, 1995);
+        if ($year >= 1922) {
+            $expected = "first sunday of october $year";
+        }
+
+        if ($year >= 1977) {
+            $expected = "last sunday of september $year";
+        }
+
+        if ($year >= 1996) {
+            $expected = "last sunday of october $year";
+        }
+
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("last sunday of september $year", new \DateTimeZone(self::TIMEZONE))
-        );
-
-        $year = $this->generateRandomYear(1996, 2037);
-        $this->assertHoliday(
-            self::REGION,
-            self::HOLIDAY,
-            $year,
-            new \DateTime("last sunday of october $year", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime($expected, new \DateTimeZone(self::TIMEZONE))
         );
     }
 
