@@ -115,7 +115,7 @@ class Holiday extends \DateTime implements \JsonSerializable
         }
 
         // Load internal locales variable
-        if (empty(self::$locales)) {
+        if ([] === self::$locales) {
             self::$locales = Yasumi::getAvailableLocales();
         }
 

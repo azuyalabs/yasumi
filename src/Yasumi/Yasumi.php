@@ -137,7 +137,7 @@ class Yasumi
         }
 
         // Load internal locales variable
-        if (empty(self::$locales)) {
+        if ([] === self::$locales) {
             self::$locales = self::getAvailableLocales();
         }
 
