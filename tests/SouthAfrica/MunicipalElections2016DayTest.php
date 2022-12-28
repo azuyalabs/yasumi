@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\SouthAfrica;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -42,7 +39,7 @@ class MunicipalElections2016DayTest extends SouthAfricaBaseTestCase implements H
     /**
      * Tests the holiday defined in this test on or after establishment.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayOnAfterEstablishment(): void
     {
@@ -50,14 +47,14 @@ class MunicipalElections2016DayTest extends SouthAfricaBaseTestCase implements H
             self::REGION,
             self::HOLIDAY,
             self::ESTABLISHMENT_YEAR,
-            new DateTime(self::ESTABLISHMENT_YEAR.'-8-3', new DateTimeZone(self::TIMEZONE))
+            new \DateTime(self::ESTABLISHMENT_YEAR.'-8-3', new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests the holiday defined in this test before establishment.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -71,7 +68,7 @@ class MunicipalElections2016DayTest extends SouthAfricaBaseTestCase implements H
     /**
      * Tests the holiday defined in this test after completion.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayDayAfterCompletion(): void
     {
@@ -81,7 +78,7 @@ class MunicipalElections2016DayTest extends SouthAfricaBaseTestCase implements H
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -96,7 +93,7 @@ class MunicipalElections2016DayTest extends SouthAfricaBaseTestCase implements H
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

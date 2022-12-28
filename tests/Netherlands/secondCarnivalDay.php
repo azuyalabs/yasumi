@@ -14,11 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Netherlands;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
-use InvalidArgumentException;
-use RuntimeException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
@@ -37,9 +32,9 @@ class secondCarnivalDay extends NetherlandsBaseTestCase implements HolidayTestCa
      * Tests the holiday defined in this test.
      *
      * @throws UnknownLocaleException
-     * @throws InvalidArgumentException
-     * @throws RuntimeException
-     * @throws Exception
+     * @throws \InvalidArgumentException
+     * @throws \RuntimeException
+     * @throws \Exception
      */
     public function testHoliday(): void
     {
@@ -48,17 +43,17 @@ class secondCarnivalDay extends NetherlandsBaseTestCase implements HolidayTestCa
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-2-16", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-2-16", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws InvalidArgumentException
-     * @throws RuntimeException
+     * @throws \InvalidArgumentException
+     * @throws \RuntimeException
      * @throws UnknownLocaleException
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {
@@ -68,10 +63,10 @@ class secondCarnivalDay extends NetherlandsBaseTestCase implements HolidayTestCa
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws InvalidArgumentException
-     * @throws RuntimeException
+     * @throws \InvalidArgumentException
+     * @throws \RuntimeException
      * @throws UnknownLocaleException
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {

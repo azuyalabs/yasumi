@@ -14,10 +14,7 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use ArrayIterator;
-use Countable;
 use InvalidArgumentException;
-use IteratorAggregate;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Filters\BetweenFilter;
 use Yasumi\Filters\OnFilter;
@@ -30,7 +27,7 @@ use Yasumi\Yasumi;
 /**
  * Class AbstractProvider.
  */
-abstract class AbstractProvider implements Countable, ProviderInterface, IteratorAggregate
+abstract class AbstractProvider implements \Countable, ProviderInterface, \IteratorAggregate
 {
     /**
      * Code to identify the Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
@@ -73,10 +70,8 @@ abstract class AbstractProvider implements Countable, ProviderInterface, Iterato
         'IN' => [0], // India
     ];
 
-    /**
-     * @var int the object's current year
-     */
-    protected $year;
+    /** @var int the object's current year */
+    protected int $year;
 
     /** the object's current timezone */
     protected string $timezone;
@@ -237,16 +232,16 @@ abstract class AbstractProvider implements Countable, ProviderInterface, Iterato
         ?bool $equals = null
     ): BetweenFilter {
         if ($startDate > $endDate) {
-            throw new InvalidArgumentException('Start date must be a date before the end date.');
+            throw new \InvalidArgumentException('Start date must be a date before the end date.');
         }
 
         return new BetweenFilter($this->getIterator(), $startDate, $endDate, $equals ?? true);
     }
 
     /** {@inheritdoc} */
-    public function getIterator(): ArrayIterator
+    public function getIterator(): \ArrayIterator
     {
-        return new ArrayIterator($this->getHolidays());
+        return new \ArrayIterator($this->getHolidays());
     }
 
     /** {@inheritdoc} */
@@ -268,7 +263,7 @@ abstract class AbstractProvider implements Countable, ProviderInterface, Iterato
      *
      * @return true upon success, otherwise an InvalidArgumentException is thrown
      *
-     * @throws InvalidArgumentException an InvalidArgumentException is thrown if the given holiday parameter is empty
+     * @throws \InvalidArgumentException an InvalidArgumentException is thrown if the given holiday parameter is empty
      *
      * @deprecated deprecated in favor of isHolidayKeyNotEmpty()
      * @deprecated see isHolidayKeyNotEmpty()
@@ -293,12 +288,12 @@ abstract class AbstractProvider implements Countable, ProviderInterface, Iterato
      *
      * @return true upon success, otherwise an InvalidArgumentException is thrown
      *
-     * @throws InvalidArgumentException an InvalidArgumentException is thrown if the given holiday parameter is empty
+     * @throws \InvalidArgumentException an InvalidArgumentException is thrown if the given holiday parameter is empty
      */
     private function isHolidayKeyNotEmpty(string $key): bool
     {
         if (empty($key)) {
-            throw new InvalidArgumentException('Holiday key can not be blank.');
+            throw new \InvalidArgumentException('Holiday key can not be blank.');
         }
 
         return true;
@@ -326,7 +321,7 @@ abstract class AbstractProvider implements Countable, ProviderInterface, Iterato
      *
      * @return Holiday|null a Holiday instance for the given holiday and year
      *
-     * @throws InvalidArgumentException when the given name is blank or empty
+     * @throws \InvalidArgumentException when the given name is blank or empty
      * @throws UnknownLocaleException
      * @throws \RuntimeException
      */
@@ -337,6 +332,6 @@ abstract class AbstractProvider implements Countable, ProviderInterface, Iterato
         // Get calling class name
         $hReflectionClass = new \ReflectionClass(\get_class($this));
 
-        return Yasumi::create($hReflectionClass->getShortName(), $year, $this->locale)->getHoliday($key);
+        return Yasumi::create($hReflectionClass->getName(), $year, $this->locale)->getHoliday($key);
     }
 }

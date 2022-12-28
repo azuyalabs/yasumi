@@ -15,7 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -101,7 +100,7 @@ class Austria extends AbstractProvider
         $this->addHoliday(new Holiday(
             'stLeopoldsDay',
             [],
-            new DateTime($this->year.'-11-15', new \DateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-11-15', new \DateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -130,7 +129,7 @@ class Austria extends AbstractProvider
         $this->addHoliday(new Holiday(
             'nationalDay',
             ['de' => 'Nationalfeiertag'],
-            new DateTime($this->year.'-10-26', new \DateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-10-26', new \DateTimeZone($this->timezone)),
             $this->locale
         ));
     }

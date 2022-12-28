@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Germany;
 
-use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -86,7 +85,7 @@ class Berlin extends Germany
         return new Holiday(
             'dayOfLiberation',
             [],
-            new DateTime('2020-05-08', DateTimeZoneFactory::getDateTimeZone($timezone)),
+            new \DateTime('2020-05-08', DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );

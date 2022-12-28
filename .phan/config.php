@@ -349,7 +349,8 @@ return [
     // Thus, both first-party and third-party code being used by
     // your application should be included in this list.
     'directory_list' => [
-        'src'
+      'src',
+      'examples'
     ],
 
     // A list of individual files to include in analysis

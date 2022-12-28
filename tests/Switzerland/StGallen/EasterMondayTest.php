@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Switzerland\StGallen;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -33,7 +30,7 @@ class EasterMondayTest extends StGallenBaseTestCase implements HolidayTestCase
     /**
      * Tests Easter Monday.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testEasterMonday(): void
     {
@@ -42,14 +39,14 @@ class EasterMondayTest extends StGallenBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-3-28", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-3-28", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests translated name of Easter Monday.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -64,7 +61,7 @@ class EasterMondayTest extends StGallenBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

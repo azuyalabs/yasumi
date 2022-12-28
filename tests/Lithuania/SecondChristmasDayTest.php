@@ -15,8 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Lithuania;
 
-use DateTime;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -35,7 +33,7 @@ class SecondChristmasDayTest extends LithuaniaBaseTestCase implements HolidayTes
     /**
      * @return array<array> list of test dates for the holiday defined in this test
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function holidayDataProvider(): array
     {
@@ -45,7 +43,7 @@ class SecondChristmasDayTest extends LithuaniaBaseTestCase implements HolidayTes
     /**
      * @dataProvider holidayDataProvider
      */
-    public function testHoliday(int $year, DateTime $expected): void
+    public function testHoliday(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
@@ -53,7 +51,7 @@ class SecondChristmasDayTest extends LithuaniaBaseTestCase implements HolidayTes
     /**
      * {@inheritdoc}
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -68,7 +66,7 @@ class SecondChristmasDayTest extends LithuaniaBaseTestCase implements HolidayTes
     /**
      * {@inheritdoc}
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

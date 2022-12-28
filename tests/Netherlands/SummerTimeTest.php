@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 /*
  * This file is part of the Yasumi package.
  *
@@ -14,59 +15,61 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Netherlands;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
-use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Summertime in the Netherlands.
  */
-class SummertimeTest extends NetherlandsBaseTestCase implements HolidayTestCase
+final class SummerTimeTest extends DaylightSavingTime
 {
-    /**
-     * The name of the holiday.
-     */
+    /** The name of the holiday */
     public const HOLIDAY = 'summerTime';
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        // no summertime defined for 1942
+        if (false !== ($key = array_search(1942, $this->observedYears, true))) {
+            unset($this->observedYears[(int) $key]);
+        }
+    }
 
     /**
      * Tests Summertime.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testSummertime(): void
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(1946, 1976));
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->randomYearFromArray($this->unobservedYears));
 
-        $year = $this->generateRandomYear(1977, 1980);
+        $year = $this->randomYearFromArray($this->observedYears);
+        $expected = "first sunday of april $year";
+
+        if ($year >= 1981) {
+            $expected = "last sunday of march $year";
+        }
+
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("first sunday of april $year", new DateTimeZone(self::TIMEZONE))
-        );
-
-        $year = $this->generateRandomYear(1981, 2036);
-        $this->assertHoliday(
-            self::REGION,
-            self::HOLIDAY,
-            $year,
-            new DateTime("last sunday of march $year", new DateTimeZone(self::TIMEZONE))
+            new \DateTime($expected, new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1978, 2037),
+            $this->randomYearFromArray($this->observedYears),
             [self::LOCALE => 'zomertijd']
         );
     }
@@ -74,10 +77,15 @@ class SummertimeTest extends NetherlandsBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(1978, 2037), Holiday::TYPE_SEASON);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->randomYearFromArray($this->observedYears),
+            Holiday::TYPE_SEASON
+        );
     }
 }

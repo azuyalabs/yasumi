@@ -176,7 +176,7 @@ class Turkey extends AbstractProvider
      */
     private function addRepublicDay(): void
     {
-        if (1923 > $this->year) {
+        if (1924 > $this->year) {
             return;
         }
 

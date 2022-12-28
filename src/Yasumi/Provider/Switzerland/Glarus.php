@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Switzerland;
 
-use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -79,7 +78,7 @@ class Glarus extends Switzerland
     private function calculateNafelserFahrt(): void
     {
         if ($this->year >= 1389) {
-            $date = new DateTime('First Thursday of '.$this->year.'-04', DateTimeZoneFactory::getDateTimeZone($this->timezone));
+            $date = new \DateTime('First Thursday of '.$this->year.'-04', DateTimeZoneFactory::getDateTimeZone($this->timezone));
             $this->addHoliday(new Holiday('nafelserFahrt', [
                 'de' => 'Näfelser Fahrt',
             ], $date, $this->locale, Holiday::TYPE_OTHER));

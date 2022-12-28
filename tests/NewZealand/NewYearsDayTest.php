@@ -14,10 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\NewZealand;
 
-use DateInterval;
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -39,7 +35,7 @@ class NewYearsDayTest extends NewZealandBaseTestCase implements HolidayTestCase
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHoliday(int $year, string $expected): void
     {
@@ -47,7 +43,7 @@ class NewYearsDayTest extends NewZealandBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime($expected, new DateTimeZone(self::TIMEZONE))
+            new \DateTime($expected, new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -56,7 +52,7 @@ class NewYearsDayTest extends NewZealandBaseTestCase implements HolidayTestCase
      *
      * @return array<array> list of test dates for the holiday defined in this test
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function HolidayDataProvider(): array
     {
@@ -64,14 +60,14 @@ class NewYearsDayTest extends NewZealandBaseTestCase implements HolidayTestCase
 
         for ($y = 0; $y < 50; ++$y) {
             $year = $this->generateRandomYear();
-            $date = new DateTime("$year-01-01", new DateTimeZone(self::TIMEZONE));
+            $date = new \DateTime("$year-01-01", new \DateTimeZone(self::TIMEZONE));
 
             switch ($date->format('w')) {
                 case 0:
-                    $date->add(new DateInterval('P1D'));
+                    $date->add(new \DateInterval('P1D'));
                     break;
                 case 6:
-                    $date->add(new DateInterval('P2D'));
+                    $date->add(new \DateInterval('P2D'));
                     break;
             }
 
@@ -84,7 +80,7 @@ class NewYearsDayTest extends NewZealandBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -99,7 +95,7 @@ class NewYearsDayTest extends NewZealandBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

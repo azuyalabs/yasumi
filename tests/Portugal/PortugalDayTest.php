@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Portugal;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\Provider\Portugal;
 use Yasumi\tests\HolidayTestCase;
@@ -44,35 +41,35 @@ class PortugalDayTest extends PortugalBaseTestCase implements HolidayTestCase
     /**
      * Tests the holiday defined in this test before it was abolished.
      *
-     * @throws Exception
+     * @throws \Exception
      *
      * @see Portugal::calculatePortugalDay()
      */
     public function testHolidayBeforeAbolishment(): void
     {
         $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR_BEFORE);
-        $expected = new DateTime("$year-06-10", new DateTimeZone(self::TIMEZONE));
+        $expected = new \DateTime("$year-06-10", new \DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
      * Tests the holiday defined in this test after it was restored.
      *
-     * @throws Exception
+     * @throws \Exception
      *
      * @see Portugal::calculatePortugalDay()
      */
     public function testHolidayAfterRestoration(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR_AFTER);
-        $expected = new DateTime("$year-06-10", new DateTimeZone(self::TIMEZONE));
+        $expected = new \DateTime("$year-06-10", new \DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
      * Tests that the holiday defined in this test does not exist during the period that it was abolished.
      *
-     * @throws Exception
+     * @throws \Exception
      *
      * @see Portugal::calculatePortugalDay()
      */
@@ -88,7 +85,7 @@ class PortugalDayTest extends PortugalBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -102,7 +99,7 @@ class PortugalDayTest extends PortugalBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

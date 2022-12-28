@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use DateInterval;
-use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -84,20 +82,20 @@ class NewZealand extends AbstractProvider
      */
     private function calculateNewYearHolidays(): void
     {
-        $newYearsDay = new DateTime("$this->year-01-01", DateTimeZoneFactory::getDateTimeZone($this->timezone));
-        $dayAfterNewYearsDay = new DateTime("$this->year-01-02", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $newYearsDay = new \DateTime("$this->year-01-01", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $dayAfterNewYearsDay = new \DateTime("$this->year-01-02", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
         switch ($newYearsDay->format('w')) {
             case 0:
-                $newYearsDay->add(new DateInterval('P1D'));
-                $dayAfterNewYearsDay->add(new DateInterval('P1D'));
+                $newYearsDay->add(new \DateInterval('P1D'));
+                $dayAfterNewYearsDay->add(new \DateInterval('P1D'));
                 break;
             case 5:
-                $dayAfterNewYearsDay->add(new DateInterval('P2D'));
+                $dayAfterNewYearsDay->add(new \DateInterval('P2D'));
                 break;
             case 6:
-                $newYearsDay->add(new DateInterval('P2D'));
-                $dayAfterNewYearsDay->add(new DateInterval('P2D'));
+                $newYearsDay->add(new \DateInterval('P2D'));
+                $dayAfterNewYearsDay->add(new \DateInterval('P2D'));
                 break;
         }
 
@@ -128,7 +126,7 @@ class NewZealand extends AbstractProvider
             return;
         }
 
-        $date = new DateTime("$this->year-02-6", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime("$this->year-02-6", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
         if ($this->year >= 2015 && !$this->isWorkingDay($date)) {
             $date->modify('next monday');
@@ -158,7 +156,7 @@ class NewZealand extends AbstractProvider
             return;
         }
 
-        $date = new DateTime("$this->year-04-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime("$this->year-04-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
         if ($this->year >= 2015 && !$this->isWorkingDay($date)) {
             $date->modify('next monday');
@@ -194,7 +192,7 @@ class NewZealand extends AbstractProvider
         $this->addHoliday(new Holiday(
             'queensBirthday',
             [],
-            new DateTime("first monday of june $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("first monday of june $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -224,7 +222,7 @@ class NewZealand extends AbstractProvider
             return;
         }
 
-        $date = new DateTime(
+        $date = new \DateTime(
             ($this->year < 1910 ? 'second wednesday of october' : 'fourth monday of october')." $this->year",
             DateTimeZoneFactory::getDateTimeZone($this->timezone)
         );
@@ -249,19 +247,19 @@ class NewZealand extends AbstractProvider
      */
     private function calculateChristmasHolidays(): void
     {
-        $christmasDay = new DateTime("$this->year-12-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
-        $boxingDay = new DateTime("$this->year-12-26", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $christmasDay = new \DateTime("$this->year-12-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $boxingDay = new \DateTime("$this->year-12-26", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
         switch ($christmasDay->format('w')) {
             case 0:
-                $christmasDay->add(new DateInterval('P2D'));
+                $christmasDay->add(new \DateInterval('P2D'));
                 break;
             case 5:
-                $boxingDay->add(new DateInterval('P2D'));
+                $boxingDay->add(new \DateInterval('P2D'));
                 break;
             case 6:
-                $christmasDay->add(new DateInterval('P2D'));
-                $boxingDay->add(new DateInterval('P2D'));
+                $christmasDay->add(new \DateInterval('P2D'));
+                $boxingDay->add(new \DateInterval('P2D'));
                 break;
         }
 

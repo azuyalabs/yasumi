@@ -14,12 +14,10 @@ declare(strict_types=1);
 
 namespace Yasumi\Exception;
 
-use InvalidArgumentException;
-
 /**
  * Class InvalidDateException.
  */
-class InvalidDateException extends InvalidArgumentException implements Exception
+class InvalidDateException extends \InvalidArgumentException implements Exception
 {
     /**
      * Initializes the Exception instance.

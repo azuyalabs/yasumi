@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Base;
 
-use InvalidArgumentException;
 use org\bovigo\vfs\vfsStream;
 use PHPUnit\Framework\TestCase;
 use Yasumi\Exception\UnknownLocaleException;
@@ -212,7 +211,7 @@ FILE;
 
     public function testLoadingTranslationsFromInexistentDirectory(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         vfsStream::setup();
 

@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\USA;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -33,7 +30,7 @@ class NewYearsDayTest extends USABaseTestCase implements HolidayTestCase
     /**
      * Tests New Years Day.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testNewYearsDay(): void
     {
@@ -42,14 +39,14 @@ class NewYearsDayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-1-1", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-1-1", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests New Years Day when substituted on Monday (when New Years Day falls on Sunday).
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testNewYearsDaySubstitutedMonday(): void
     {
@@ -58,14 +55,14 @@ class NewYearsDayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             'substituteHoliday:newYearsDay',
             $year,
-            new DateTime("$year-1-2", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-1-2", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests New Years Day when substituted on Friday (when New Years Day falls on Saturday).
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testNewYearsDaySubstitutedFriday(): void
     {
@@ -75,14 +72,14 @@ class NewYearsDayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             'substituteHoliday:newYearsDay',
             $year,
-            new DateTime("$subYear-12-31", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$subYear-12-31", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -97,7 +94,7 @@ class NewYearsDayTest extends USABaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

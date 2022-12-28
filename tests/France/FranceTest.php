@@ -14,8 +14,8 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\France;
 
-use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\Provider\France;
 use Yasumi\tests\ProviderTestCase;
 
 /**
@@ -43,19 +43,25 @@ class FranceTest extends FranceBaseTestCase implements ProviderTestCase
      */
     public function testOfficialHolidays(): void
     {
-        $this->assertDefinedHolidays([
-            'newYearsDay',
-            'victoryInEuropeDay',
-            'easterMonday',
-            'internationalWorkersDay',
-            'ascensionDay',
-            'pentecostMonday',
-            'assumptionOfMary',
-            'allSaintsDay',
-            'armisticeDay',
-            'christmasDay',
-            'bastilleDay',
-        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
+        $holidays =
+            [
+                'newYearsDay',
+                'victoryInEuropeDay',
+                'easterMonday',
+                'internationalWorkersDay',
+                'ascensionDay',
+                'assumptionOfMary',
+                'allSaintsDay',
+                'armisticeDay',
+                'christmasDay',
+                'bastilleDay',
+            ];
+
+        if ($this->year < France::EST_YEAR_DAY_OF_SOLIDARITY_WITH_ELDERLY) {
+            $holidays[] = 'pentecostMonday';
+        }
+
+        $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
@@ -63,7 +69,13 @@ class FranceTest extends FranceBaseTestCase implements ProviderTestCase
      */
     public function testObservedHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+        $holidays = [];
+
+        if ($this->year >= France::EST_YEAR_DAY_OF_SOLIDARITY_WITH_ELDERLY) {
+            $holidays[] = 'pentecostMonday';
+        }
+
+        $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**
@@ -91,7 +103,7 @@ class FranceTest extends FranceBaseTestCase implements ProviderTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
      * @throws \Exception
      */
     public function testSources(): void

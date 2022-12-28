@@ -15,10 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\SouthKorea;
 
-use DateInterval;
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,12 +36,12 @@ class NewYearsDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     /**
      * Tests the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHoliday(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $date = new DateTime("$year-1-1", new DateTimeZone(self::TIMEZONE));
+        $date = new \DateTime("$year-1-1", new \DateTimeZone(self::TIMEZONE));
 
         // New Year's Day
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
@@ -56,7 +52,7 @@ class NewYearsDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
                 self::REGION,
                 'dayAfterNewYearsDay',
                 $year,
-                (clone $date)->add(new DateInterval('P1D'))
+                (clone $date)->add(new \DateInterval('P1D'))
             );
         }
 
@@ -66,7 +62,7 @@ class NewYearsDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
                 self::REGION,
                 'twoDaysLaterNewYearsDay',
                 $year,
-                (clone $date)->add(new DateInterval('P2D'))
+                (clone $date)->add(new \DateInterval('P2D'))
             );
         }
     }
@@ -74,7 +70,7 @@ class NewYearsDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     /**
      * Tests the holiday defined in this test after removal.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayAfterRemoval(): void
     {
@@ -93,7 +89,7 @@ class NewYearsDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     /**
      * Tests the holiday defined in this test before establishment.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -107,7 +103,7 @@ class NewYearsDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -134,7 +130,7 @@ class NewYearsDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

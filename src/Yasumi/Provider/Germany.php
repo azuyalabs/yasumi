@@ -15,7 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -100,7 +99,7 @@ class Germany extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'germanUnityDay',
                 ['de' => 'Tag der Deutschen Einheit'],
-                new DateTime($this->year.'-10-3', new \DateTimeZone($this->timezone)),
+                new \DateTime($this->year.'-10-3', new \DateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

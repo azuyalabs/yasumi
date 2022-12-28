@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Italy;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -45,7 +42,7 @@ class RepublicDayTest extends ItalyBaseTestCase implements HolidayTestCase
     /**
      * Tests Republic Day on or after 1946.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testRepublicDayOnAfter1946(): void
     {
@@ -54,14 +51,14 @@ class RepublicDayTest extends ItalyBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-6-2", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-6-2", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests Republic Day before 1946.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testRepublicDayBefore1946(): void
     {
@@ -75,7 +72,7 @@ class RepublicDayTest extends ItalyBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of Republic Day.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -90,7 +87,7 @@ class RepublicDayTest extends ItalyBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

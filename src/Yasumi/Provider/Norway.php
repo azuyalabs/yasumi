@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -96,7 +95,7 @@ class Norway extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'constitutionDay',
                 ['nb' => 'grunnlovsdagen'],
-                new DateTime("$this->year-5-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("$this->year-5-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

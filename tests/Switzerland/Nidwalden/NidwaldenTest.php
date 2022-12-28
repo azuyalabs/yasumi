@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Switzerland\Nidwalden;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\ProviderTestCase;
 
@@ -109,7 +108,7 @@ class NidwaldenTest extends NidwaldenBaseTestCase implements ProviderTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
      * @throws \Exception
      */
     public function testSources(): void

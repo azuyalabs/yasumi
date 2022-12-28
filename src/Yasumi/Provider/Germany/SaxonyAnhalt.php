@@ -16,7 +16,6 @@ namespace Yasumi\Provider\Germany;
 
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
-use Yasumi\Holiday;
 use Yasumi\Provider\Germany;
 
 /**
@@ -49,7 +48,7 @@ class SaxonyAnhalt extends Germany
         parent::initialize();
 
         // Add custom Christian holidays
-        $this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale));
         $this->calculateReformationDay();
     }
 

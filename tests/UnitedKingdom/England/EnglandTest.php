@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\UnitedKingdom\England;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\ProviderTestCase;
 
@@ -70,13 +69,30 @@ class EnglandTest extends EnglandBaseTestCase implements ProviderTestCase
      */
     public function testBankHolidays(): void
     {
-        $this->assertDefinedHolidays([
-            'newYearsDay',
+        $holidays = [
             'easterMonday',
-            'mayDayBankHoliday',
-            'springBankHoliday',
             'secondChristmasDay',
-        ], self::REGION, $this->year, Holiday::TYPE_BANK);
+        ];
+
+        $year = $this->generateRandomYear();
+
+        if (1965 >= $this->year) {
+            $holidays[] = 'springBankHoliday';
+        }
+
+        if (1974 > $this->year) {
+            $holidays[] = 'newYearsDay';
+        }
+
+        if (1978 >= $this->year) {
+            $holidays[] = 'mayDayBankHoliday';
+        }
+
+        if (2022 === $year) {
+            $holidays[] = 'queenElizabethFuneralBankHoliday';
+        }
+
+        $this->assertDefinedHolidays($holidays, self::REGION, $year, Holiday::TYPE_BANK);
     }
 
     /**
@@ -88,7 +104,7 @@ class EnglandTest extends EnglandBaseTestCase implements ProviderTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
      * @throws \Exception
      */
     public function testSources(): void

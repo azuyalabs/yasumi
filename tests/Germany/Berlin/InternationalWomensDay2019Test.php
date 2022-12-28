@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Germany\Berlin;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -38,7 +35,7 @@ class InternationalWomensDay2019Test extends BerlinBaseTestCase implements Holid
     /**
      * Test the holiday defined in this test upon establishment.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayOnEstablishment(): void
     {
@@ -46,14 +43,14 @@ class InternationalWomensDay2019Test extends BerlinBaseTestCase implements Holid
             self::REGION,
             self::HOLIDAY,
             self::ESTABLISHMENT_YEAR,
-            new DateTime(self::ESTABLISHMENT_YEAR.'-03-08', new DateTimeZone(self::TIMEZONE))
+            new \DateTime(self::ESTABLISHMENT_YEAR.'-03-08', new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Test the holiday defined in this test before establishment.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -67,7 +64,7 @@ class InternationalWomensDay2019Test extends BerlinBaseTestCase implements Holid
     /**
      * Test the holiday defined in this test after completion.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayAfterCompletion(): void
     {
@@ -77,7 +74,7 @@ class InternationalWomensDay2019Test extends BerlinBaseTestCase implements Holid
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -92,7 +89,7 @@ class InternationalWomensDay2019Test extends BerlinBaseTestCase implements Holid
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

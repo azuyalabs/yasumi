@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Argentina;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -38,16 +35,16 @@ class GeneralMartinMigueldeGuemesDayTest extends ArgentinaBaseTestCase implement
     /**
      * Tests the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHoliday(): void
     {
         $year = self::ESTABLISHMENT_YEAR;
         $this->assertHoliday(
-          self::REGION,
-          self::HOLIDAY,
-          $year,
-          new DateTime("$year-06-17", new DateTimeZone(self::TIMEZONE))
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new \DateTime("$year-06-17", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -62,22 +59,22 @@ class GeneralMartinMigueldeGuemesDayTest extends ArgentinaBaseTestCase implement
     /**
      * Tests translated name of the holiday.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
-          self::REGION,
-          self::HOLIDAY,
-          $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-          [self::LOCALE => 'Paso a la Inmortalidad del General Martín Miguel de Güemes']
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => 'Paso a la Inmortalidad del General Martín Miguel de Güemes']
         );
     }
 
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

@@ -14,37 +14,41 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Netherlands;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
-use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Wintertime in the Netherlands.
  */
-class WintertimeTest extends NetherlandsBaseTestCase implements HolidayTestCase
+final class WintertimeTest extends DaylightSavingTime
 {
-    /**
-     * The name of the holiday.
-     */
+    /** The name of the holiday */
     public const HOLIDAY = 'winterTime';
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        // no wintertime defined for 1940
+        if (false !== ($key = array_search(1940, $this->observedYears, true))) {
+            unset($this->observedYears[(int) $key]);
+        }
+    }
 
     /**
      * Tests Wintertime.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testWintertime(): void
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(1946, 1976));
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->randomYearFromArray($this->unobservedYears));
 
         $year = $this->generateRandomYear(1979, 1995);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("last sunday of september $year", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("last sunday of september $year", new \DateTimeZone(self::TIMEZONE))
         );
 
         $year = $this->generateRandomYear(1996, 2037);
@@ -52,21 +56,21 @@ class WintertimeTest extends NetherlandsBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("last sunday of october $year", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("last sunday of october $year", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1978, 2037),
+            $this->randomYearFromArray($this->observedYears),
             [self::LOCALE => 'wintertijd']
         );
     }
@@ -74,10 +78,15 @@ class WintertimeTest extends NetherlandsBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(1978, 2037), Holiday::TYPE_SEASON);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->randomYearFromArray($this->observedYears),
+            Holiday::TYPE_SEASON
+        );
     }
 }

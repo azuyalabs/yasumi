@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Luxembourg;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Luxembourg;
 use Yasumi\tests\ProviderTestCase;
@@ -99,7 +98,7 @@ class LuxembourgTest extends LuxembourgBaseTestCase implements ProviderTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
      * @throws \Exception
      */
     public function testSources(): void

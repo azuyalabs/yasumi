@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\UnitedKingdom\NorthernIreland;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\ProviderTestCase;
 
@@ -70,14 +69,34 @@ class NorthernIrelandTest extends NorthernIrelandBaseTestCase implements Provide
      */
     public function testBankHolidays(): void
     {
-        $this->assertDefinedHolidays([
-            'newYearsDay',
+        $holidays = [
             'easterMonday',
-            'mayDayBankHoliday',
-            'springBankHoliday',
-            'battleOfTheBoyne',
             'secondChristmasDay',
-        ], self::REGION, $this->year, Holiday::TYPE_BANK);
+        ];
+
+        $year = $this->generateRandomYear();
+
+        if (1926 >= $this->year) {
+            $holidays[] = 'battleOfTheBoyne';
+        }
+
+        if (1965 >= $this->year) {
+            $holidays[] = 'springBankHoliday';
+        }
+
+        if (1974 > $this->year) {
+            $holidays[] = 'newYearsDay';
+        }
+
+        if (1978 >= $this->year) {
+            $holidays[] = 'mayDayBankHoliday';
+        }
+
+        if (2022 === $year) {
+            $holidays[] = 'queenElizabethFuneralBankHoliday';
+        }
+
+        $this->assertDefinedHolidays($holidays, self::REGION, $year, Holiday::TYPE_BANK);
     }
 
     /**
@@ -89,7 +108,7 @@ class NorthernIrelandTest extends NorthernIrelandBaseTestCase implements Provide
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
      * @throws \Exception
      */
     public function testSources(): void

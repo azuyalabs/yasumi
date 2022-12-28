@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Japan;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -38,7 +35,7 @@ class ShowaDayTest extends JapanBaseTestCase implements HolidayTestCase
     /**
      * Tests the holiday defined in the test on or after establishment.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayOnAfter2007(): void
     {
@@ -47,14 +44,14 @@ class ShowaDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-4-29", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-4-29", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests the holiday defined in the test on or after the establishment and substituted next working day.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayOnAfterEstablishmentSubstitutedNextWorkingDay(): void
     {
@@ -63,14 +60,14 @@ class ShowaDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::SUBSTITUTE_PREFIX.self::HOLIDAY,
             $year,
-            new DateTime("$year-4-30", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-4-30", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests the holiday defined in the test before establishment.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -84,7 +81,7 @@ class ShowaDayTest extends JapanBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -99,7 +96,7 @@ class ShowaDayTest extends JapanBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

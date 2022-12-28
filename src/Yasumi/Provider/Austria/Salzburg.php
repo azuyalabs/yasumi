@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Austria;
 
-use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -75,7 +74,7 @@ class Salzburg extends Austria
         $this->addHoliday(new Holiday(
             'stRupertsDay',
             [],
-            new DateTime($this->year.'-9-24', new \DateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-9-24', new \DateTimeZone($this->timezone)),
             $this->locale
         ));
     }

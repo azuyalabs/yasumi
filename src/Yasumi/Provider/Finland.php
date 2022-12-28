@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -100,7 +99,7 @@ class Finland extends AbstractProvider
         $this->addHoliday(new Holiday(
             'stJohnsDay',
             [],
-            new DateTime($stJohnsDay, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($stJohnsDay, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -132,7 +131,7 @@ class Finland extends AbstractProvider
         $this->addHoliday(new Holiday(
             'allSaintsDay',
             [],
-            new DateTime("$this->year-10-31 this saturday", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("$this->year-10-31 this saturday", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -161,7 +160,7 @@ class Finland extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'independenceDay',
                 ['fi' => 'Itsenäisyyspäivä'],
-                new DateTime("$this->year-12-6", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("$this->year-12-6", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

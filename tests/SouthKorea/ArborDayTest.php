@@ -15,9 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\SouthKorea;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -48,7 +45,7 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     /**
      * Tests the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHoliday(): void
     {
@@ -64,7 +61,7 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
                 self::REGION,
                 self::HOLIDAY,
                 $year,
-                new DateTime("$year-4-5", new DateTimeZone(self::TIMEZONE))
+                new \DateTime("$year-4-5", new \DateTimeZone(self::TIMEZONE))
             );
         }
     }
@@ -72,7 +69,7 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     /**
      * Tests the holiday defined in this test after removal.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayAfterRemoval(): void
     {
@@ -86,7 +83,7 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     /**
      * Tests the holiday defined in this test before establishment.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -100,7 +97,7 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -118,7 +115,7 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

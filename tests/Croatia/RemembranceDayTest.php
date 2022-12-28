@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Croatia;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -38,7 +35,7 @@ class RemembranceDayTest extends CroatiaBaseTestCase implements HolidayTestCase
     /**
      * Tests Remembrance Day.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testRemembranceDayAfterItWasEstablished(): void
     {
@@ -47,14 +44,14 @@ class RemembranceDayTest extends CroatiaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-11-18", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-11-18", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests Remembrance Day.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testRemembranceDayBeforeItWasEstablished(): void
     {
@@ -68,7 +65,7 @@ class RemembranceDayTest extends CroatiaBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of Remembrance Day.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -83,7 +80,7 @@ class RemembranceDayTest extends CroatiaBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

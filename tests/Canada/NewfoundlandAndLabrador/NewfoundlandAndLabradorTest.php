@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Canada\NewfoundlandAndLabrador;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\ProviderTestCase;
 
@@ -86,7 +85,7 @@ class NewfoundlandAndLabradorTest extends NewfoundlandAndLabradorBaseTestCase im
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
      * @throws \Exception
      */
     public function testSources(): void

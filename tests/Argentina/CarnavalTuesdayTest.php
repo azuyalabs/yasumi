@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Argentina;
 
-use DateInterval;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\tests\HolidayTestCase;
@@ -40,7 +38,7 @@ class CarnavalTuesdayTest extends ArgentinaBaseTestCase implements HolidayTestCa
     /**
      * Tests Carnaval Tuesday on or after 1700.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testCarnavalTuesdayAfter1700(): void
     {
@@ -49,14 +47,14 @@ class CarnavalTuesdayTest extends ArgentinaBaseTestCase implements HolidayTestCa
             self::REGION,
             self::HOLIDAY,
             $year,
-            $this->calculateEaster($year, self::TIMEZONE)->sub(new DateInterval('P47D'))
+            $this->calculateEaster($year, self::TIMEZONE)->sub(new \DateInterval('P47D'))
         );
     }
 
     /**
      * Tests Carnaval Tuesday on or before 1700.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testCarnavalTuesdayBefore1700(): void
     {
@@ -67,7 +65,7 @@ class CarnavalTuesdayTest extends ArgentinaBaseTestCase implements HolidayTestCa
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -78,7 +76,7 @@ class CarnavalTuesdayTest extends ArgentinaBaseTestCase implements HolidayTestCa
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

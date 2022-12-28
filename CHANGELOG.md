@@ -9,19 +9,31 @@ to [Semantic Versioning](https://semver.org).
 
 ### Added
 
+- Added all examples as shown on the documentation site as a convenience to developers who like to have all
+  information in a single place.
+- Added bank holiday for Queen Elizabeth II’s State Funeral on 19 September 2022 to United Kingdom
+- Added Public Holiday National Day of Mourning (for Queen Elizabeth II) on 22 September 2022 to Australia
+
 ### Changed
 
 - Included the unit tests directory for checking by PHPStan.
 
 ### Fixed
 
+- Tests for New Years Day, Spring Bank Holiday, and May Day Holiday in the United Kingdom (England, Wales, Northern Ireland, and Scotland), as well as Battle of the Boyne in Northern Ireland were considered for any calendar year; however, these are celebrated only since a particular calendar year.
+- Pentecost Monday in France was only until 2004 recognized as an official holiday. Since 2004 it is considered a
+  special holiday, a so called 'working holiday'. Hence, it is therefore classified as an observed holiday in Yasumi
+  from 2004 and forward. [\#281](https://github.com/azuyalabs/yasumi/issues/281).
 - The test for Remembrance Day (Argentina) in that Remembrance Day was considered for all years: it is only celebrated
   since 2006.
 - Created the interface methods of the `ProviderInterface` that the abstract provider class implements. Since the return
   type of the Yasumi factory methods is now `ProviderInterface`, those missing methods generated errors especially by
-  statistic analyzers.
+  statistic analysers.
 - Included the data type for test methods that return an array.
-- Liberation day for the Netherlands is only an official holiday every 5 years [\#280](https://github.com/azuyalabs/yasumi/pull/280)
+- Liberation day for the Netherlands is only an official holiday every 5 years [\#280](https://github.com/azuyalabs/yasumi/pull/280).
+- Switched from `getShortName()` to `getName()` for the ReflectionClass created by the method `anotherTime()` in the `AbstractProvider`.\
+  Using `getShortName` could result in a `ProviderNotFoundException` for some custom holiday providers, since the namespace is not fully qualified.\
+  This happened, if you would create a custom holiday provider in your own project's namespace implementing the `next()` or `previous()` method from the `AbstractProvider`.
 
 ### Deprecated
 

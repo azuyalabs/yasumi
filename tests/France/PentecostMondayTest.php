@@ -14,10 +14,8 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\France;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
+use Yasumi\Provider\France;
 use Yasumi\tests\HolidayTestCase;
 
 /**
@@ -33,7 +31,7 @@ class PentecostMondayTest extends FranceBaseTestCase implements HolidayTestCase
     /**
      * Tests Pentecost Monday.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testPentecostMonday(): void
     {
@@ -42,14 +40,14 @@ class PentecostMondayTest extends FranceBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-5-30", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-5-30", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests translated name of Pentecost Monday.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -64,10 +62,22 @@ class PentecostMondayTest extends FranceBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(null, France::EST_YEAR_DAY_OF_SOLIDARITY_WITH_ELDERLY - 1),
+            Holiday::TYPE_OFFICIAL
+        );
+
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(France::EST_YEAR_DAY_OF_SOLIDARITY_WITH_ELDERLY),
+            Holiday::TYPE_OBSERVANCE
+        );
     }
 }

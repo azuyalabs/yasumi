@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\UnitedKingdom\NorthernIreland;
 
-use DateTime;
-use DateTimeZone;
 use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
@@ -43,7 +41,7 @@ class SummerBankHolidayTest extends NorthernIrelandBaseTestCase implements Holid
     /**
      * Tests the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHoliday(): void
     {
@@ -52,14 +50,14 @@ class SummerBankHolidayTest extends NorthernIrelandBaseTestCase implements Holid
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("last monday of august $year", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("last monday of august $year", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests the holiday exception in 2020.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayBefore1965(): void
     {
@@ -68,14 +66,14 @@ class SummerBankHolidayTest extends NorthernIrelandBaseTestCase implements Holid
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("first monday of august $year", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("first monday of august $year", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests the holiday during trial period in 1965-1970.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayTrialPeriod(): void
     {
@@ -83,44 +81,44 @@ class SummerBankHolidayTest extends NorthernIrelandBaseTestCase implements Holid
             self::REGION,
             self::HOLIDAY,
             1965,
-            new DateTime('1965-8-30', new DateTimeZone(self::TIMEZONE))
+            new \DateTime('1965-8-30', new \DateTimeZone(self::TIMEZONE))
         );
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             1966,
-            new DateTime('1966-8-29', new DateTimeZone(self::TIMEZONE))
+            new \DateTime('1966-8-29', new \DateTimeZone(self::TIMEZONE))
         );
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             1967,
-            new DateTime('1967-8-28', new DateTimeZone(self::TIMEZONE))
+            new \DateTime('1967-8-28', new \DateTimeZone(self::TIMEZONE))
         );
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             1968,
-            new DateTime('1968-9-2', new DateTimeZone(self::TIMEZONE))
+            new \DateTime('1968-9-2', new \DateTimeZone(self::TIMEZONE))
         );
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             1969,
-            new DateTime('1969-9-1', new DateTimeZone(self::TIMEZONE))
+            new \DateTime('1969-9-1', new \DateTimeZone(self::TIMEZONE))
         );
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             1970,
-            new DateTime('1970-8-31', new DateTimeZone(self::TIMEZONE))
+            new \DateTime('1970-8-31', new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests the holiday defined in this test before establishment.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -134,7 +132,7 @@ class SummerBankHolidayTest extends NorthernIrelandBaseTestCase implements Holid
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -149,7 +147,7 @@ class SummerBankHolidayTest extends NorthernIrelandBaseTestCase implements Holid
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslationBeforeRename(): void
     {
@@ -164,7 +162,7 @@ class SummerBankHolidayTest extends NorthernIrelandBaseTestCase implements Holid
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

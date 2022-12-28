@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Argentina;
 
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\tests\HolidayTestCase;
@@ -34,7 +33,7 @@ class EasterTest extends ArgentinaBaseTestCase implements HolidayTestCase
     /**
      * Tests Easter.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testEaster(): void
     {
@@ -45,7 +44,7 @@ class EasterTest extends ArgentinaBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -60,7 +59,7 @@ class EasterTest extends ArgentinaBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Switzerland;
 
-use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -89,7 +88,7 @@ class Obwalden extends Switzerland
                 [
                     'de' => 'Bruder-Klausen-Fest',
                 ],
-                new DateTime($this->year.'-09-25', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime($this->year.'-09-25', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OTHER
             ));
@@ -99,7 +98,7 @@ class Obwalden extends Switzerland
                 [
                     'de' => 'Bruder-Klausen-Fest',
                 ],
-                new DateTime($this->year.'-09-21', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime($this->year.'-09-21', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OTHER
             ));

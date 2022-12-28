@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Switzerland\Jura;
 
-use DateInterval;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\tests\HolidayTestCase;
@@ -35,7 +33,7 @@ class CorpusChristiTest extends JuraBaseTestCase implements HolidayTestCase
     /**
      * Tests Corpus Christi.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testCorpusChristi(): void
     {
@@ -44,14 +42,14 @@ class CorpusChristiTest extends JuraBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            $this->calculateEaster($year, self::TIMEZONE)->add(new DateInterval('P60D'))
+            $this->calculateEaster($year, self::TIMEZONE)->add(new \DateInterval('P60D'))
         );
     }
 
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -66,7 +64,7 @@ class CorpusChristiTest extends JuraBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

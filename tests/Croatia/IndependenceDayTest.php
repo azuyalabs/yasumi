@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Croatia;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -43,7 +40,7 @@ class IndependenceDayTest extends CroatiaBaseTestCase implements HolidayTestCase
     /**
      * Tests Independence Day on or after 1991.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testIndependenceDayOnAfter1991(): void
     {
@@ -52,14 +49,14 @@ class IndependenceDayTest extends CroatiaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-10-8", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-10-8", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests Independence Day before 1991.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testIndependenceDayBefore1991(): void
     {
@@ -73,7 +70,7 @@ class IndependenceDayTest extends CroatiaBaseTestCase implements HolidayTestCase
     /**
      * Tests Independence Day before 1991.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testIndependenceDayAfterDisbandment(): void
     {
@@ -87,7 +84,7 @@ class IndependenceDayTest extends CroatiaBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of Independence Day.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -102,7 +99,7 @@ class IndependenceDayTest extends CroatiaBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

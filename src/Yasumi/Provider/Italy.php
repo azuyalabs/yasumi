@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use DateTime;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -95,7 +94,7 @@ class Italy extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'liberationDay',
                 ['it' => 'Festa della Liberazione'],
-                new DateTime("$this->year-4-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("$this->year-4-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -123,7 +122,7 @@ class Italy extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'republicDay',
                 ['it' => 'Festa della Repubblica'],
-                new DateTime("$this->year-6-2", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("$this->year-6-2", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

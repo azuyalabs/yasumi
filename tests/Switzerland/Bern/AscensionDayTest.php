@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Switzerland\Bern;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -33,7 +30,7 @@ class AscensionDayTest extends BernBaseTestCase implements HolidayTestCase
     /**
      * Tests Ascension Day.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testAscensionDay(): void
     {
@@ -42,14 +39,14 @@ class AscensionDayTest extends BernBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-5-16", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-5-16", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests translated name of Ascension Day.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -64,7 +61,7 @@ class AscensionDayTest extends BernBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

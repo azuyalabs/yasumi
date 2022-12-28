@@ -16,7 +16,6 @@ declare(strict_types=1);
 namespace Yasumi\Filters;
 
 use Iterator;
-use Yasumi\Provider\AbstractProvider;
 use Yasumi\ProviderInterface;
 
 /**
@@ -34,11 +33,11 @@ class OnFilter extends AbstractFilter
     /**
      * Construct the On FilterIterator Object.
      *
-     * @param Iterator<ProviderInterface> $iterator Iterator object of the Holidays Provider
-     * @param \DateTimeInterface          $date     Start date of the time frame to check against
+     * @param \Iterator<ProviderInterface> $iterator Iterator object of the Holidays Provider
+     * @param \DateTimeInterface           $date     Start date of the time frame to check against
      */
     public function __construct(
-        Iterator $iterator,
+        \Iterator $iterator,
         \DateTimeInterface $date
     ) {
         parent::__construct($iterator);

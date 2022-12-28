@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\USA;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -39,7 +36,7 @@ class ColumbusDayTest extends USABaseTestCase implements HolidayTestCase
      * Tests Columbus Day on or after 1970. Columbus Day was established in 1937 on October 12th, but has been fixed to
      * the second Monday in October since 1970.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testColumbusDayOnAfter1970(): void
     {
@@ -48,7 +45,7 @@ class ColumbusDayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("second monday of october $year", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("second monday of october $year", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -56,7 +53,7 @@ class ColumbusDayTest extends USABaseTestCase implements HolidayTestCase
      * Tests Columbus Day between 1937 and 1969. Columbus Day was established in 1937 on October 12th, but has been
      * fixed to the second Monday in October since 1970.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testColumbusBetween1937And1969(): void
     {
@@ -65,7 +62,7 @@ class ColumbusDayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-10-12", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-10-12", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -73,7 +70,7 @@ class ColumbusDayTest extends USABaseTestCase implements HolidayTestCase
      * Tests Columbus Day before 1937. Columbus Day was established in 1937 on October 12th, but has been fixed to
      * the second Monday in October since 1970.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testColumbusDayBefore1937(): void
     {
@@ -87,7 +84,7 @@ class ColumbusDayTest extends USABaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -102,7 +99,7 @@ class ColumbusDayTest extends USABaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

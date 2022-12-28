@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Portugal;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -38,19 +35,19 @@ class CarnationRevolutionDayTest extends PortugalBaseTestCase implements Holiday
     /**
      * Test that the holiday is valid after the year of establishment.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayAfterEstablishment(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $expected = new DateTime("$year-04-25", new DateTimeZone(self::TIMEZONE));
+        $expected = new \DateTime("$year-04-25", new \DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
      * Tests that the holiday is not a holiday before the year of establishment.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testNotHolidayBeforeEstablishment(): void
     {
@@ -61,7 +58,7 @@ class CarnationRevolutionDayTest extends PortugalBaseTestCase implements Holiday
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -72,7 +69,7 @@ class CarnationRevolutionDayTest extends PortugalBaseTestCase implements Holiday
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {
