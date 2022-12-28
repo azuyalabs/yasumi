@@ -238,14 +238,20 @@ class SouthKorea extends AbstractProvider
      */
     private function calculateBuddhasBirthday(): void
     {
-        if ($this->year >= 1975 && isset(self::LUNAR_HOLIDAY['buddhasBirthday'][$this->year])) {
-            $this->addHoliday(new Holiday(
-                'buddhasBirthday',
-                ['en' => 'Buddha’s Birthday', 'ko' => '부처님오신날'],
-                new \DateTime(self::LUNAR_HOLIDAY['buddhasBirthday'][$this->year], DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-                $this->locale
-            ));
+        if ($this->year < 1975) {
+            return;
         }
+
+        if (!isset(self::LUNAR_HOLIDAY['buddhasBirthday'][$this->year])) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday(
+            'buddhasBirthday',
+            ['en' => 'Buddha’s Birthday', 'ko' => '부처님오신날'],
+            new \DateTime(self::LUNAR_HOLIDAY['buddhasBirthday'][$this->year], DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /**
@@ -380,14 +386,20 @@ class SouthKorea extends AbstractProvider
      */
     private function calculateConstitutionDay(): void
     {
-        if ($this->year >= 1949 && $this->year < 2008) {
-            $this->addHoliday(new Holiday(
-                'constitutionDay',
-                ['en' => 'Constitution Day', 'ko' => '제헌절'],
-                new \DateTime("$this->year-7-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-                $this->locale
-            ));
+        if ($this->year < 1949) {
+            return;
         }
+
+        if ($this->year >= 2008) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday(
+            'constitutionDay',
+            ['en' => 'Constitution Day', 'ko' => '제헌절'],
+            new \DateTime("$this->year-7-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /**
@@ -418,14 +430,20 @@ class SouthKorea extends AbstractProvider
      */
     private function calculateArmedForcesDay(): void
     {
-        if ($this->year >= 1956 && $this->year <= 1990) {
-            $this->addHoliday(new Holiday(
-                'armedForcesDay',
-                ['en' => 'Armed Forces Day', 'ko' => '국군의 날'],
-                new \DateTime("$this->year-10-1", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-                $this->locale
-            ));
+        if ($this->year < 1956) {
+            return;
         }
+
+        if ($this->year > 1990) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday(
+            'armedForcesDay',
+            ['en' => 'Armed Forces Day', 'ko' => '국군의 날'],
+            new \DateTime("$this->year-10-1", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /**

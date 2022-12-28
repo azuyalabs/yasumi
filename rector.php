@@ -20,6 +20,7 @@ return static function (RectorConfig $rectorConfig): void {
         SetList::PHP_74,
         SetList::CODE_QUALITY,
         SetList::TYPE_DECLARATION_STRICT,
+        SetList::EARLY_RETURN,
         SetList::DEAD_CODE,
     ]);
 };

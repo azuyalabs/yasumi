@@ -221,14 +221,21 @@ class Yasumi
         ), \RecursiveIteratorIterator::SELF_FIRST);
 
         foreach ($filesIterator as $file) {
-            if ($file->isDir() || 'php' !== $file->getExtension() || \in_array(
+            if ($file->isDir()) {
+                continue;
+            }
+
+            if ('php' !== $file->getExtension()) {
+                continue;
+            }
+
+            if (\in_array(
                 $file->getBasename('.php'),
                 self::$ignoredProvider,
                 true
             )) {
                 continue;
             }
-
             $quotedDs = preg_quote(DIRECTORY_SEPARATOR, '');
             $provider = preg_replace("#^.+{$quotedDs}Provider$quotedDs(.+)\\.php$#", '$1', $file->getPathName());
 

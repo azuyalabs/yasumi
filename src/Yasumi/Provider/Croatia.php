@@ -145,12 +145,18 @@ class Croatia extends AbstractProvider
      */
     private function calculateIndependenceDay(): void
     {
-        if ($this->year >= 1991 && $this->year < 2020) {
-            $this->addHoliday(new Holiday('independenceDay', [
-                'en' => 'Independence Day',
-                'hr' => 'Dan neovisnosti',
-            ], new \DateTime("$this->year-10-8", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
+        if ($this->year < 1991) {
+            return;
         }
+
+        if ($this->year >= 2020) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday('independenceDay', [
+            'en' => 'Independence Day',
+            'hr' => 'Dan neovisnosti',
+        ], new \DateTime("$this->year-10-8", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
     }
 
     /**

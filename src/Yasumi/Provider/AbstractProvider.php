@@ -129,7 +129,11 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
     /** {@inheritdoc} */
     public function isWorkingDay(\DateTimeInterface $date): bool
     {
-        return !$this->isHoliday($date) && !$this->isWeekendDay($date);
+        if ($this->isHoliday($date)) {
+            return false;
+        }
+
+        return !$this->isWeekendDay($date);
     }
 
     /** {@inheritdoc} */

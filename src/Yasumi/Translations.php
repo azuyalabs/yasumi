@@ -60,7 +60,11 @@ class Translations implements TranslationsInterface
         $extension = 'php';
 
         foreach (new \DirectoryIterator($directoryPath) as $file) {
-            if ($file->isDot() || $file->isDir()) {
+            if ($file->isDot()) {
+                continue;
+            }
+
+            if ($file->isDir()) {
                 continue;
             }
 
@@ -113,8 +117,11 @@ class Translations implements TranslationsInterface
      */
     public function getTranslation(string $key, string $locale): ?string
     {
-        if (!\array_key_exists($key, $this->translations)
-            || !\array_key_exists($locale, $this->translations[$key])) {
+        if (!\array_key_exists($key, $this->translations)) {
+            return null;
+        }
+
+        if (!\array_key_exists($locale, $this->translations[$key])) {
             return null;
         }
 

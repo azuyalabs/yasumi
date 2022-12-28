@@ -71,9 +71,15 @@ class AnzacDayTest extends NewZealandBaseTestCase implements HolidayTestCase
     {
         return $this->generateRandomDatesWithModifier(4, 25, function ($year, \DateTime $date): void {
             // in 2015 some policy was introduced to make sure this holiday was celebrated during the working week.
-            if ($year >= 2015 && $this->isWeekend($date)) {
-                $date->modify('next monday');
+            if ($year < 2015) {
+                return;
             }
+
+            if (!$this->isWeekend($date)) {
+                return;
+            }
+
+            $date->modify('next monday');
         }, 100, self::ESTABLISHMENT_YEAR, self::TIMEZONE);
     }
 

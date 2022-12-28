@@ -78,13 +78,19 @@ class BasqueCountry extends Spain
      */
     private function calculateBasqueCountryDay(): void
     {
-        if ($this->year >= 2011 && $this->year <= 2013) {
-            $this->addHoliday(new Holiday(
-                'basqueCountryDay',
-                ['es' => 'Euskadi Eguna'],
-                new \DateTime("$this->year-10-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-                $this->locale
-            ));
+        if ($this->year < 2011) {
+            return;
         }
+
+        if ($this->year > 2013) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday(
+            'basqueCountryDay',
+            ['es' => 'Euskadi Eguna'],
+            new \DateTime("$this->year-10-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 }
