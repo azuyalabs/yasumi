@@ -99,7 +99,7 @@ final class SummerTimeTest extends DaylightSavingTime
         $year = $this->randomYearFromArray($this->observedYears);
         $expected = "first sunday of april $year";
 
-        if ($year >= 1923) {
+        if ($year >= 1922) {
             $expected = "may 15th $year";
         }
 
