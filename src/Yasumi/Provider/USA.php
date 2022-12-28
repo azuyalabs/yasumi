@@ -159,7 +159,7 @@ class USA extends AbstractProvider
     private function calculateJuneteenth(): void
     {
         if ($this->year >= 2021) {
-            $date = new DateTime("$this->year-6-19", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+            $date = new \DateTime("$this->year-6-19", DateTimeZoneFactory::getDateTimeZone($this->timezone));
             $label = 'Juneteenth';
 
             $holiday = new Holiday('juneteenth', [
