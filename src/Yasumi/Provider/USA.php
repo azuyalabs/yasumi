@@ -171,11 +171,12 @@ class USA extends AbstractProvider
 
             if (0 === $day_of_week || 6 === $day_of_week) {
                 $date = clone $holiday;
+                $date->modify('previous friday');
+
                 if (0 === $day_of_week) {
                     $date->modify('next monday');
-                } elseif (6 === $day_of_week) {
-                    $date->modify('previous friday');
                 }
+
                 $this->addHoliday(new SubstituteHoliday(
                     $holiday,
                     [
