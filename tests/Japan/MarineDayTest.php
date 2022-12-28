@@ -17,23 +17,35 @@ namespace Yasumi\tests\Japan;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
-/**
- * Class for testing Marine Day in Japan.
- */
-class MarineDayTest extends JapanBaseTestCase implements HolidayTestCase
+final class MarineDayTest extends JapanBaseTestCase implements HolidayTestCase
 {
-    /**
-     * The name of the holiday.
-     */
     public const HOLIDAY = 'marineDay';
 
-    /**
-     * The year in which the holiday was first established.
-     */
+    // The year in which the holiday was first established.
     public const ESTABLISHMENT_YEAR = 1996;
 
     /**
+     * Tests Marine Day in 2020. Marine Day in 2020 is July 23th for rescheduled Olympic Games after COVID-19.
+     *
+     * @see https://en.wikipedia.org/wiki/Marine_Day
+     *
+     * @throws \Exception
+     */
+    public function testMarineDayIn2020(): void
+    {
+        $year = 2020;
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new \DateTime("$year-7-23", new \DateTimeZone(self::TIMEZONE))
+        );
+    }
+
+    /**
      * Tests Marine Day in 2021. Marine Day in 2021 is July 22th for rescheduled Olympic Games after COVID-19.
+     *
+     * @see https://en.wikipedia.org/wiki/Marine_Day
      *
      * @throws \Exception
      */
@@ -58,8 +70,8 @@ class MarineDayTest extends JapanBaseTestCase implements HolidayTestCase
     {
         $year = $this->generateRandomYear(2004);
 
-        if (2021 === $year) {
-            $this->testMarineDayIn2021();
+        if (in_array($year, [2020, 2021])) {
+            return;
         }
 
         $this->assertHoliday(

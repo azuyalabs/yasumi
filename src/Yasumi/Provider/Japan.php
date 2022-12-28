@@ -373,24 +373,32 @@ class Japan extends AbstractProvider
      */
     private function calculateMarineDay(): void
     {
-        $date = null;
-        if (2021 === $this->year) {
-            // For Olympic 2021 Tokyo (rescheduled due to the COVID-19 pandemic)
-            $date = new \DateTime("$this->year-7-22", DateTimeZoneFactory::getDateTimeZone($this->timezone));
-        } elseif ($this->year >= 2003) {
-            $date = new \DateTime("third monday of july $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
-        } elseif ($this->year >= 1996) {
-            $date = new \DateTime("$this->year-7-20", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        if (1996 > $this->year) {
+            return;
         }
 
-        if ($date instanceof \DateTimeInterface) {
-            $this->addHoliday(new Holiday(
-                'marineDay',
-                ['en' => 'Marine Day', 'ja' => '海の日'],
-                $date,
-                $this->locale
-            ));
+        $date = "$this->year-7-20";
+
+        if ($this->year >= 2003) {
+            $date = "third monday of july $this->year";
         }
+
+        if (2020 === $this->year) {
+            // For the 2020 Tokyo Olympics, Marine Day was rescheduled.
+            $date = "$this->year-7-23";
+        }
+
+        if (2021 === $this->year) {
+            // Due to the COVID-19 pandemic, the 2020 Tokyo Olympics were rescheduled and hence Marine Day as well.
+            $date = "$this->year-7-22";
+        }
+
+        $this->addHoliday(new Holiday(
+            'marineDay',
+            ['en' => 'Marine Day', 'ja' => '海の日'],
+            new \DateTime($date, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /**

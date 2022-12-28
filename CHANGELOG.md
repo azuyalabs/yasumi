@@ -13,6 +13,8 @@ to [Semantic Versioning](https://semver.org).
   information in a single place.
 - Added bank holiday for Queen Elizabeth II’s State Funeral on 19 September 2022 to United Kingdom
 - Added Public Holiday National Day of Mourning (for Queen Elizabeth II) on 22 September 2022 to Australia
+- In Japan, Marine Day was rescheduled to July 23 as the 2020 Tokyo Olypmics took place. The rescheduled Marine
+  Day for 2021 was included, but not the original rescheduled day for 2020.
 
 ### Changed
 
