@@ -81,9 +81,6 @@ class Yasumi
 
         while ($workingDays > 0) {
             $date = $date->add(new \DateInterval('P1D'));
-            if (!$date instanceof \DateTimeInterface) {
-                throw new \RuntimeException('unable to perform addition');
-            }
 
             if (!$provider instanceof ProviderInterface) {
                 $provider = self::create($class, (int) $date->format('Y'));
@@ -281,9 +278,6 @@ class Yasumi
 
         while ($workingDays > 0) {
             $date = $date->sub(new \DateInterval('P1D'));
-            if (!$date instanceof \DateTimeInterface) {
-                throw new \RuntimeException('unable to perform subtraction');
-            }
 
             if (!$provider instanceof ProviderInterface) {
                 $provider = self::create($class, (int) $date->format('Y'));
