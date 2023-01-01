@@ -15,9 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests;
 
-use DateTime;
-use Yasumi\Holiday;
-
 /**
  * Trait containing useful functions that generate random dates/years.
  */

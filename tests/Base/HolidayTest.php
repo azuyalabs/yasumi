@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Base;
 
-use DateTime;
-use DateTimeImmutable;
 use PHPUnit\Framework\TestCase;
 use Yasumi\Exception\MissingTranslationException;
 use Yasumi\Exception\UnknownLocaleException;

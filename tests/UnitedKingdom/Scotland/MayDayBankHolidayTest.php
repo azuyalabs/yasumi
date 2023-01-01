@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\UnitedKingdom\Scotland;
 
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 

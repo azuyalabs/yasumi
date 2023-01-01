@@ -15,7 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Filters;
 
-use Iterator;
 use Yasumi\ProviderInterface;
 
 /**

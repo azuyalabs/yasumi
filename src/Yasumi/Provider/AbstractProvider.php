@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use InvalidArgumentException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Filters\BetweenFilter;
 use Yasumi\Filters\OnFilter;
