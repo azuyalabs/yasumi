@@ -32,7 +32,7 @@ class NYSE extends \Yasumi\Provider\USA
 // Use the factory method to create a new holiday provider instance
 $NYSEHolidays = Yasumi\Yasumi::create(NYSE::class, (int) date('Y'));
 
-// We then can retrieve the NYSE observed holidays in 2022 in the usual manner:
+// We then can retrieve the NYSE observed holidays in the usual manner:
 echo 'List of all the holiday names: '.PHP_EOL;
 foreach ($NYSEHolidays->getHolidayNames() as $day) {
     echo $day.PHP_EOL;
