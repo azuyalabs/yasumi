@@ -24,6 +24,7 @@ The goal of Yasumi is to be powerful while remaining lightweight, by utilizing P
 Yasumi's calculation is provider-based (i.e. by country/state), making it easy to add new holiday providers that
 calculate holidays.
 
+- Pure PHP
 - Straightforward API
 - Framework-agnostic
 - Use of Providers to easily extend and expand new Holidays
@@ -31,7 +32,7 @@ calculate holidays.
 - Accounts for the date/time when holidays have been officially established and/or abolished
 - Filters enabling to easily select certain holiday types (Official, Observed, Bank, Seasonal or Other)
 - Global Translations
-- Timezone aware
+- Time zone aware
 - Implements [ArrayIterator](https://www.php.net/manual/en/class.arrayiterator.php) to easily process a provider's
   holidays
 - Fully documented
