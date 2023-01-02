@@ -101,7 +101,7 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
     ) {
         $this->clearHolidays();
 
-        $this->year = $year ?: getdate()['year'];
+        $this->year = $year ?: (int) date('Y');
         $this->locale = $locale ?? 'en_US';
         $this->globalTranslations = $globalTranslations;
 
