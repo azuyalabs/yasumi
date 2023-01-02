@@ -237,7 +237,6 @@ class Romania extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
-     * @throws \Exception
      */
     private function calculateChildrensDay(): void
     {

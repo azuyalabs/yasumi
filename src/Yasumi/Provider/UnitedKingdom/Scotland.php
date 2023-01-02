@@ -168,7 +168,6 @@ class Scotland extends UnitedKingdom
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
-     * @throws \Exception
      */
     private function calculateStAndrewsDay(): void
     {

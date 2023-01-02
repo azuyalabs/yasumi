@@ -303,7 +303,6 @@ class Japan extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
-     * @throws \Exception
      */
     private function calculateComingOfAgeDay(): void
     {
@@ -331,7 +330,6 @@ class Japan extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
      * @throws \Exception
      */
     private function calculateGreeneryDay(): void
@@ -361,8 +359,6 @@ class Japan extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
-     * @throws \Exception
      * @throws \Exception
      */
     private function calculateMarineDay(): void
@@ -403,7 +399,6 @@ class Japan extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
-     * @throws \Exception
      */
     private function calculateMountainDay(): void
     {
@@ -437,7 +432,6 @@ class Japan extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
-     * @throws \Exception
      */
     private function calculateRespectForTheAgeDay(): void
     {
@@ -466,8 +460,6 @@ class Japan extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
-     * @throws \Exception
      * @throws \Exception
      */
     private function calculateSportsDay(): void

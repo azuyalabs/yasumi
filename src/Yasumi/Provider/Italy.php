@@ -83,7 +83,6 @@ class Italy extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
-     * @throws \Exception
      */
     private function calculateLiberationDay(): void
     {
@@ -109,7 +108,6 @@ class Italy extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
      * @throws \Exception
      */
     private function calculateRepublicDay(): void

@@ -154,7 +154,6 @@ class Ireland extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
-     * @throws \Exception
      */
     private function calculateChristmasDay(): void
     {
@@ -192,7 +191,6 @@ class Ireland extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
      * @throws \Exception
      */
     private function calculateStStephensDay(): void
@@ -233,7 +231,6 @@ class Ireland extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
      * @throws \Exception
      */
     private function calculateStPatricksDay(): void
@@ -278,7 +275,6 @@ class Ireland extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
-     * @throws \Exception
      */
     private function calculateMayDay(): void
     {
@@ -305,7 +301,6 @@ class Ireland extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
-     * @throws \Exception
      */
     private function calculateJuneHoliday(): void
     {
@@ -330,7 +325,6 @@ class Ireland extends AbstractProvider
      *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
      * @throws \Exception
      */
     private function calculateOctoberHoliday(): void

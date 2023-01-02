@@ -75,7 +75,6 @@ class Obwalden extends Switzerland
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
-     * @throws \Exception
      */
     private function calculateBruderKlausenFest(): void
     {
