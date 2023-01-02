@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Spain;
 
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
@@ -44,7 +43,6 @@ class Asturias extends Spain
     /**
      * Initialize holidays for Asturias (Spain).
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -71,7 +69,6 @@ class Asturias extends Spain
      *
      * @see https://www.timeanddate.com/holidays/spain/asturias-day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

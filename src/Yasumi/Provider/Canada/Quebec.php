@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Canada;
 
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Canada;
@@ -38,7 +37,6 @@ class Quebec extends Canada
     /**
      * Initialize holidays for Quebec (Canada).
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -70,7 +68,6 @@ class Quebec extends Canada
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws InvalidDateException
      * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
@@ -95,7 +92,6 @@ class Quebec extends Canada
      *
      * @see https://en.wikipedia.org/wiki/National_Patriots%27_Day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

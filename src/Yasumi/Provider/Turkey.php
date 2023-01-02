@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
@@ -30,7 +29,6 @@ class Turkey extends AbstractProvider
     public const ID = 'TR';
 
     /**
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

@@ -15,7 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi;
 
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\MissingTranslationException;
 use Yasumi\Exception\UnknownLocaleException;
 
@@ -97,7 +96,6 @@ class Holiday extends \DateTime implements \JsonSerializable
      *                                             TYPE_OBSERVANCE, TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default, an
      *                                             official holiday is considered.
      *
-     * @throws InvalidDateException
      * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception

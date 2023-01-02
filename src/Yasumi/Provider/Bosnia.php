@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
@@ -37,7 +36,6 @@ class Bosnia extends AbstractProvider
     /**
      * Initialize holidays for Bosnia.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

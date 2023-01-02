@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
@@ -35,7 +34,6 @@ class Spain extends AbstractProvider
     /**
      * Initialize holidays for Spain.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -81,7 +79,6 @@ class Spain extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Fiesta_Nacional_de_España
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -110,7 +107,6 @@ class Spain extends AbstractProvider
      *
      * @see https://www.timeanddate.com/holidays/spain/constitution-day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

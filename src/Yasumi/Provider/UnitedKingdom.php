@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\SubstituteHoliday;
@@ -39,7 +38,6 @@ class UnitedKingdom extends AbstractProvider
     /**
      * Initialize holidays for the United Kingdom.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -82,7 +80,6 @@ class UnitedKingdom extends AbstractProvider
      *
      * @see https://www.timeanddate.com/holidays/uk/early-may-bank-holiday
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -127,7 +124,6 @@ class UnitedKingdom extends AbstractProvider
      * @see https://www.timeanddate.com/holidays/uk/spring-bank-holiday
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -182,7 +178,6 @@ class UnitedKingdom extends AbstractProvider
      * @see https://www.timeanddate.com/holidays/uk/queen-platinum-jubilee
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom#Special_holidays
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -209,7 +204,6 @@ class UnitedKingdom extends AbstractProvider
      * @see https://www.timeanddate.com/holidays/uk/queen-elizabeth-funeral
      * @see https://www.gov.uk/government/news/bank-holiday-announced-for-her-majesty-queen-elizabeth-iis-state-funeral-on-monday-19-september
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -295,7 +289,6 @@ class UnitedKingdom extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom
      * @see https://www.timeanddate.com/holidays/uk/new-year-day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -333,7 +326,6 @@ class UnitedKingdom extends AbstractProvider
      * @see https://www.timeanddate.com/holidays/uk/summer-bank-holiday
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

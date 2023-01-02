@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Spain;
 
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
@@ -44,7 +43,6 @@ class Galicia extends Spain
     /**
      * Initialize holidays for Galicia (Spain).
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -72,7 +70,6 @@ class Galicia extends Spain
      *
      * @see https://en.wikipedia.org/wiki/Galician_Literature_Day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -100,7 +97,6 @@ class Galicia extends Spain
      *
      * @see https://www.timeanddate.com/holidays/spain/santiago-apostle
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

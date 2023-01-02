@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Switzerland;
 
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
@@ -42,7 +41,6 @@ class Geneva extends Switzerland
     /**
      * Initialize holidays for Geneva (Switzerland).
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -70,7 +68,6 @@ class Geneva extends Switzerland
      *
      * @see https://en.wikipedia.org/wiki/Je%C3%BBne_genevois
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -106,7 +103,6 @@ class Geneva extends Switzerland
      *
      * @see https://fr.wikipedia.org/wiki/Restauration_genevoise
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

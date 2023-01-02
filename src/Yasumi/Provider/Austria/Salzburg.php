@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Austria;
 
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Austria;
@@ -35,7 +34,6 @@ class Salzburg extends Austria
     /**
      * Initialize holidays for Salzburg (Austria).
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -60,7 +58,6 @@ class Salzburg extends Austria
      *
      * @see https://en.wikipedia.org/wiki/Rupert_of_Salzburg
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

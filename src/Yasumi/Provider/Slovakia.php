@@ -15,7 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
@@ -60,7 +59,6 @@ class Slovakia extends AbstractProvider
     /**
      * Initialize holidays for Slovakia.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -119,7 +117,6 @@ class Slovakia extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_Slovakia
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -144,7 +141,6 @@ class Slovakia extends AbstractProvider
      *
      * Note: this holiday is common for Czech republic and Slovakia.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -169,7 +165,6 @@ class Slovakia extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Slovak_National_Uprising
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -193,7 +188,6 @@ class Slovakia extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Constitution_of_Slovakia
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -221,7 +215,6 @@ class Slovakia extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Our_Lady_of_Sorrows
      * @see https://sk.wikipedia.org/wiki/Sedembolestn%C3%A1_Panna_M%C3%A1ria
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -239,7 +232,6 @@ class Slovakia extends AbstractProvider
      *
      * Note: this national day is common for Czech republic and Slovakia.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

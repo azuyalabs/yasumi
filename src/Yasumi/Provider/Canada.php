@@ -15,7 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
@@ -36,7 +35,6 @@ class Canada extends AbstractProvider
     /**
      * Initialize holidays for Canada.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -74,7 +72,6 @@ class Canada extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Family_Day_(Canada)
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -98,7 +95,6 @@ class Canada extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Victoria_Day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -122,7 +118,6 @@ class Canada extends AbstractProvider
      *
      * @see https://www.rcaanc-cirnac.gc.ca/eng/1100100013248/1534872397533
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -146,7 +141,6 @@ class Canada extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Civic_Holiday
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -174,7 +168,6 @@ class Canada extends AbstractProvider
      * by statute, Canada Day is July 1 if that day is not Sunday, and July 2 if July 1 is a Sunday.
 
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -201,7 +194,6 @@ class Canada extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Thanksgiving_(Canada)
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -225,7 +217,6 @@ class Canada extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Remembrance_Day_(Canada)
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -249,7 +240,6 @@ class Canada extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Labour_Day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -273,7 +263,6 @@ class Canada extends AbstractProvider
      *
      * @see https://parl.ca/Content/Bills/432/Government/C-5/C-5_4/C-5_4.PDF, S. C. 2021, C.11.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

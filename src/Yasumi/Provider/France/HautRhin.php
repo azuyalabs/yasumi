@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\France;
 
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\France;
@@ -41,7 +40,6 @@ class HautRhin extends France
     /**
      * Initialize holidays for Haut-Rhin (France).
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

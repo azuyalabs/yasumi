@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi;
 
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Filters\BetweenFilter;
 use Yasumi\Filters\OnFilter;
@@ -56,8 +55,6 @@ interface ProviderInterface extends \Countable
      *                                 \DateTime)
      *
      * @return bool true if date represents a working day, otherwise false
-     *
-     * @throws InvalidDateException
      */
     public function isWorkingDay(\DateTimeInterface $date): bool;
 
@@ -86,8 +83,6 @@ interface ProviderInterface extends \Countable
      *                                 \DateTime)
      *
      * @return bool true if date represents a holiday, otherwise false
-     *
-     * @throws InvalidDateException
      */
     public function isHoliday(\DateTimeInterface $date): bool;
 
@@ -123,8 +118,6 @@ interface ProviderInterface extends \Countable
      *                                 \DateTime)
      *
      * @return bool true if date represents a weekend day, otherwise false
-     *
-     * @throws InvalidDateException
      */
     public function isWeekendDay(\DateTimeInterface $date): bool;
 

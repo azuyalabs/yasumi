@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\UnitedKingdom;
 
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\DateTimeZoneFactory;
@@ -41,7 +40,6 @@ class NorthernIreland extends UnitedKingdom
     /**
      * Initialize holidays for Northern Ireland (United Kingdom).
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -65,7 +63,6 @@ class NorthernIreland extends UnitedKingdom
      *
      * @see https://en.wikipedia.org/wiki/Saint_Patrick%27s_Day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -111,7 +108,6 @@ class NorthernIreland extends UnitedKingdom
      *
      * @see https://en.wikipedia.org/wiki/The_Twelfth
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

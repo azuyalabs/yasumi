@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
@@ -35,7 +34,6 @@ class Greece extends AbstractProvider
     /**
      * Initialize holidays for Greece.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -84,7 +82,6 @@ class Greece extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Three_Holy_Hierarchs
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -109,7 +106,6 @@ class Greece extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Clean_Monday
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -143,7 +139,6 @@ class Greece extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Greek_War_of_Independence
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -167,7 +162,6 @@ class Greece extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Ohi_Day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -191,7 +185,6 @@ class Greece extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Athens_Polytechnic_uprising
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

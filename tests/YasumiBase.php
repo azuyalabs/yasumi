@@ -16,7 +16,6 @@ declare(strict_types=1);
 namespace Yasumi\tests;
 
 use PHPUnit\Framework\AssertionFailedError;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Filters\BankHolidaysFilter;
 use Yasumi\Filters\ObservedHolidaysFilter;
@@ -89,7 +88,6 @@ trait YasumiBase
      * @param \DateTime $expected date to be checked against
      *
      * @throws UnknownLocaleException
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \RuntimeException
      * @throws AssertionFailedError
@@ -117,7 +115,6 @@ trait YasumiBase
      * @param \DateTime $expected date to be checked against
      *
      * @throws UnknownLocaleException
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws \RuntimeException
      * @throws AssertionFailedError
@@ -146,7 +143,6 @@ trait YasumiBase
      * @throws \InvalidArgumentException
      * @throws \RuntimeException
      * @throws UnknownLocaleException
-     * @throws InvalidDateException
      * @throws AssertionFailedError
      */
     public function assertNotSubstituteHoliday(
@@ -171,7 +167,6 @@ trait YasumiBase
      * @throws \InvalidArgumentException
      * @throws \RuntimeException
      * @throws UnknownLocaleException
-     * @throws InvalidDateException
      * @throws AssertionFailedError
      */
     public function assertNotHoliday(

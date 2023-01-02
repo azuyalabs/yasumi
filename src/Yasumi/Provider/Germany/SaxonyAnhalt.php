@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Germany;
 
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Provider\Germany;
 
@@ -38,7 +37,6 @@ class SaxonyAnhalt extends Germany
     /**
      * Initialize holidays for Saxony-Anhalt (Germany).
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -56,7 +54,6 @@ class SaxonyAnhalt extends Germany
      * For the German state of Saxony-Anhalt, Reformation Day was celebrated since 1517.
      * Note: In 2017 all German states will celebrate Reformation Day for its 500th anniversary.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

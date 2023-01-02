@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Switzerland;
 
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
@@ -39,7 +38,6 @@ class Obwalden extends Switzerland
     /**
      * Initialize holidays for Obwalden (Switzerland).
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -74,7 +72,6 @@ class Obwalden extends Switzerland
      *
      * @see http://www.lebendigetraditionen.ch/traditionen/00210/index.html?lang=en
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

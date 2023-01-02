@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\SubstituteHoliday;
@@ -36,7 +35,6 @@ class USA extends AbstractProvider
     /**
      * Initialize holidays for the USA.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -314,7 +312,6 @@ class USA extends AbstractProvider
      * When New Year's Day, Independence Day, or Christmas Day falls on a Saturday, the previous day is also a holiday.
      * When one of these holidays fall on a Sunday, the next day is also a holiday.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

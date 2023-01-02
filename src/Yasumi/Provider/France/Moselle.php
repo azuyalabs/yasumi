@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\France;
 
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\France;
@@ -42,7 +41,6 @@ class Moselle extends France
     /**
      * Initialize holidays for Moselle (France).
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

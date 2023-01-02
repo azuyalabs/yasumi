@@ -41,6 +41,7 @@ to [Semantic Versioning](https://semver.org).
 
 ### Removed
 
+- Unused `InvalidDateException` class.
 - Superfluous notes/comments.
 
 ## [2.5.0] - 2022-01-30

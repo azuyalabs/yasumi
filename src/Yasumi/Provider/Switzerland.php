@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
@@ -35,7 +34,6 @@ class Switzerland extends AbstractProvider
     /**
      * Initialize holidays for Switzerland.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -65,7 +63,6 @@ class Switzerland extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Berchtoldstag
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -95,7 +92,6 @@ class Switzerland extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Federal_Day_of_Thanksgiving,_Repentance_and_Prayer
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -125,7 +121,6 @@ class Switzerland extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Swiss_National_Day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

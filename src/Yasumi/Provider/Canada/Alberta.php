@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Canada;
 
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Canada;
@@ -38,7 +37,6 @@ class Alberta extends Canada
     /**
      * Initialize holidays for Alberta (Canada).
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -59,7 +57,6 @@ class Alberta extends Canada
      *
      * @see https://en.wikipedia.org/wiki/Civic_Holiday
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Switzerland;
 
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
@@ -39,7 +38,6 @@ class Ticino extends Switzerland
     /**
      * Initialize holidays for Ticino (Switzerland).
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -80,7 +78,6 @@ class Ticino extends Switzerland
      *
      * @see https://en.wikipedia.org/wiki/Feast_of_Saints_Peter_and_Paul
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
