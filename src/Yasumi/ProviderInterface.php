@@ -149,7 +149,7 @@ interface ProviderInterface extends \Countable
     /**
      * Gets all the holiday names defined by this holiday provider (for the given year).
      *
-     * @return array<string> list of all holiday names defined for the given year
+     * @return array<string>|array<int> list of all holiday names defined for the given year
      */
     public function getHolidayNames(): array;
 
