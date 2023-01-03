@@ -510,6 +510,10 @@ trait CommonHolidays
         $transitions = $zone->getTransitions($tsBegin, $tsEnd);
 
         $transition = array_shift($transitions);
+        if (!is_array($transition)) {
+            throw new \RuntimeException('unable to get transition details');
+        }
+
         $dst = $transition['isdst'];
 
         foreach ($transitions as $transition) {
