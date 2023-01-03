@@ -320,6 +320,10 @@ class USA extends AbstractProvider
     {
         // Loop through all defined holidays
         foreach ($this->getHolidays() as $holiday) {
+            if (!$holiday instanceof Holiday) {
+                continue;
+            }
+
             $date = null;
 
             // Substitute holiday is on a Monday in case the holiday falls on a Sunday

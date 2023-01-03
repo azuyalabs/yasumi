@@ -547,6 +547,9 @@ class Japan extends AbstractProvider
 
         // Loop through all holidays
         foreach ($this->getHolidays() as $holiday) {
+            if (!$holiday instanceof Holiday) {
+                continue;
+            }
             $date = clone $holiday;
 
             // If holidays falls on a Sunday
@@ -641,6 +644,10 @@ class Japan extends AbstractProvider
 
             // Determine if gap between holidays is one day and create bridge holiday
             if (2 === (int) $previous->diff($datesIterator->current())->format('%a')) {
+                if (!$previous instanceof Holiday) {
+                    throw new \RuntimeException('unable to determine the difference between dates');
+                }
+
                 $bridgeDate = clone $previous;
                 $bridgeDate->add(new \DateInterval('P1D'));
 

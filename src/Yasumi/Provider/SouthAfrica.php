@@ -323,6 +323,10 @@ class SouthAfrica extends AbstractProvider
     {
         // Loop through all defined holidays
         foreach ($this->getHolidays() as $holiday) {
+            if (!$holiday instanceof Holiday) {
+                continue;
+            }
+
             // Substitute holiday is on a Monday in case the holiday falls on a Sunday
             if (0 === (int) $holiday->format('w')) {
                 $date = clone $holiday;
