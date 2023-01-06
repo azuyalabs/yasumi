@@ -59,6 +59,7 @@ class UnitedKingdom extends AbstractProvider
         $this->calculatePlatinumJubileeBankHoliday();
         $this->calculateMotheringSunday();
         $this->calculateQueenElizabethFuneralBankHoliday();
+        $this->calculateKingCharlesCoronationBankHoliday();
     }
 
     public function getSources(): array
@@ -218,6 +219,32 @@ class UnitedKingdom extends AbstractProvider
             'queenElizabethFuneralBankHoliday',
             ['en' => 'Queen Elizabeth II’s State Funeral Bank Holiday'],
             new \DateTime("$this->year-9-19", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale,
+            Holiday::TYPE_BANK
+        ));
+    }
+
+    /**
+     * The coronation of King Charles III is an extra bank holiday added on 6 November 2022
+     * to mark the Coronation of His Majesty King Charles III.
+     *
+     * @see https://www.timeanddate.com/holidays/uk/king-coronation-day-holiday
+     * @see https://www.gov.uk/government/news/bank-holiday-proclaimed-in-honour-of-the-coronation-of-his-majesty-king-charles-iii
+     *
+     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws \Exception
+     */
+    protected function calculateKingCharlesCoronationBankHoliday(): void
+    {
+        if (2023 !== $this->year) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday(
+            'kingCharlesCoronationBankHoliday',
+            ['en' => 'King Charles III’s Coronation Bank Holiday'],
+            new \DateTime("$this->year-5-8", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
         ));
