@@ -20,9 +20,12 @@ $config->setRiskyAllowed(true)->setRules([
   'combine_consecutive_unsets' => true,
   'declare_strict_types' => true,
   'dir_constant' => true,
+  'get_class_to_class_keyword' => true,
   'is_null' => true,
+  'modernize_strpos' => true,
   'modernize_types_casting' => true,
   'no_superfluous_elseif' => true,
+  'no_superfluous_phpdoc_tags' => ['remove_inheritdoc' => true],
   'ordered_class_elements' => true,
   'self_accessor' => true,
 ])->setFinder($finder);
