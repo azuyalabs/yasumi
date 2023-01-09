@@ -18,7 +18,7 @@ use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
 /**
- * Class for testing Corpus Christi in Argentina.
+ * Class for testing National Sovereignty Day in Argentina.
  */
 class NationalSovereigntyDayTest extends ArgentinaBaseTestCase implements HolidayTestCase
 {

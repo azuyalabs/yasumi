@@ -46,13 +46,11 @@ class ArgentinaTest extends ArgentinaBaseTestCase implements ProviderTestCase
         $holidays = [
             'newYearsDay',
             'internationalWorkersDay',
-            'malvinasDay',
             'mayRevolution',
             'generalMartinMigueldeGuemesDay',
             'flagDay',
             'generalJoseSanMartinDay',
             'raceDay',
-            'nationalSovereigntyDay',
             'immaculateConceptionDay',
             'christmasDay',
         ];
@@ -63,6 +61,14 @@ class ArgentinaTest extends ArgentinaBaseTestCase implements ProviderTestCase
 
         if ($this->year >= 2006) {
             $holidays[] = 'remembranceDay';
+        }
+
+        if ($this->year >= 2010) {
+            $holidays[] = 'nationalSovereigntyDay';
+        }
+
+        if ($this->year >= 1982) {
+            $holidays[] = 'malvinasDay';
         }
 
         $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
