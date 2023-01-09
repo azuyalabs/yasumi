@@ -63,8 +63,6 @@ class RestorationOfIndependenceOfLithuaniaDayTest extends LithuaniaBaseTestCase 
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @throws \Exception
      */
     public function testTranslation(): void
@@ -84,8 +82,6 @@ class RestorationOfIndependenceOfLithuaniaDayTest extends LithuaniaBaseTestCase 
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @throws \Exception
      */
     public function testHolidayType(): void

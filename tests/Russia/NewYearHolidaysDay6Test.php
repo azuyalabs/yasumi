@@ -49,8 +49,6 @@ class NewYearHolidaysDay6Test extends RussiaBaseTestCase implements HolidayTestC
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @throws \Exception
      */
     public function testTranslation(): void
@@ -64,8 +62,6 @@ class NewYearHolidaysDay6Test extends RussiaBaseTestCase implements HolidayTestC
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @throws \Exception
      */
     public function testHolidayType(): void

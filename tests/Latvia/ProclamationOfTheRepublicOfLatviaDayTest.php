@@ -82,8 +82,6 @@ class ProclamationOfTheRepublicOfLatviaDayTest extends LatviaBaseTestCase implem
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @throws \Exception
      */
     public function testTranslation(): void
@@ -100,8 +98,6 @@ class ProclamationOfTheRepublicOfLatviaDayTest extends LatviaBaseTestCase implem
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @throws \Exception
      */
     public function testHolidayType(): void

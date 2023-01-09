@@ -46,8 +46,6 @@ class OrthodoxChristmasDay extends BosniaBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @throws \Exception
      */
     public function testTranslation(): void
@@ -61,8 +59,6 @@ class OrthodoxChristmasDay extends BosniaBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @throws \Exception
      */
     public function testHolidayType(): void

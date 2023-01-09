@@ -82,8 +82,6 @@ class RestorationOfIndependenceDayTest extends LatviaBaseTestCase implements Hol
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @throws \Exception
      */
     public function testTranslation(): void
@@ -100,8 +98,6 @@ class RestorationOfIndependenceDayTest extends LatviaBaseTestCase implements Hol
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @throws \Exception
      */
     public function testHolidayType(): void

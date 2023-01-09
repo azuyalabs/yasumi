@@ -49,8 +49,6 @@ class InternationalWorkersDayTest extends EstoniaBaseTestCase implements Holiday
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @throws \Exception
      */
     public function testTranslation(): void
@@ -64,8 +62,6 @@ class InternationalWorkersDayTest extends EstoniaBaseTestCase implements Holiday
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @throws \Exception
      */
     public function testHolidayType(): void

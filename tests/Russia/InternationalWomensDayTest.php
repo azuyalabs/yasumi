@@ -49,8 +49,6 @@ class InternationalWomensDayTest extends RussiaBaseTestCase implements HolidayTe
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @throws \Exception
      */
     public function testTranslation(): void
@@ -64,8 +62,6 @@ class InternationalWomensDayTest extends RussiaBaseTestCase implements HolidayTe
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @throws \Exception
      */
     public function testHolidayType(): void

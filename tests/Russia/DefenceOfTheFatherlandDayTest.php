@@ -62,8 +62,6 @@ class DefenceOfTheFatherlandDayTest extends RussiaBaseTestCase implements Holida
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @throws \Exception
      */
     public function testTranslation(): void
@@ -83,8 +81,6 @@ class DefenceOfTheFatherlandDayTest extends RussiaBaseTestCase implements Holida
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @throws \Exception
      */
     public function testHolidayType(): void

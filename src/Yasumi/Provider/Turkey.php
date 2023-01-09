@@ -47,7 +47,6 @@ class Turkey extends AbstractProvider
         $this->addRepublicDay();
     }
 
-    /** {@inheritdoc} */
     public function getSources(): array
     {
         return [

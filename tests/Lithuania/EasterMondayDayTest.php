@@ -61,8 +61,6 @@ class EasterMondayDayTest extends LithuaniaBaseTestCase implements HolidayTestCa
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @throws \Exception
      */
     public function testTranslation(): void
@@ -76,8 +74,6 @@ class EasterMondayDayTest extends LithuaniaBaseTestCase implements HolidayTestCa
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @throws \Exception
      */
     public function testHolidayType(): void
