@@ -30,6 +30,7 @@ jobs:
         with:
           php-version: ${{ matrix.php-versions }}
           coverage: pcov
+          extensions: intl
 
       - name: Get Composer Cache Directory
         id: composer-cache
