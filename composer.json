@@ -46,7 +46,8 @@
     "phan/phan": "^5.4",
     "phpstan/phpstan": "^1.9",
     "phpunit/phpunit": "^8.5 | ^9.5",
-    "vimeo/psalm": "^4.30"
+    "vimeo/psalm": "^4.30",
+    "ext-intl": "*"
   },
   "config": {
     "sort-packages": true,
