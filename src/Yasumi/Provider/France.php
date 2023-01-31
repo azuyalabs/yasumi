@@ -109,6 +109,7 @@ class France extends AbstractProvider
      * imposed by law to be by default on Pentecost Monday. Pentecost Monday is still a holiday (but a working holiday).
      *
      * @see: https://en.wikipedia.org/wiki/Journ%C3%A9e_de_solidarit%C3%A9_envers_les_personnes_%C3%A2g%C3%A9es
+     *
      * @see: https://fr.wikipedia.org/w/index.php?title=Journ%C3%A9e_de_solidarit%C3%A9_envers_les_personnes_%C3%A2g%C3%A9es_et_handicap%C3%A9es&tableofcontents=0
      *
      * @throws \Exception
