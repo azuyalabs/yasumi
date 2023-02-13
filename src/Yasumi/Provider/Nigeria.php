@@ -61,7 +61,6 @@ class Nigeria extends AbstractProvider
         $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->valentinesDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->eid($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->labourDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->fathersDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->internationalWomensDay($this->year, $this->timezone, $this->locale));
