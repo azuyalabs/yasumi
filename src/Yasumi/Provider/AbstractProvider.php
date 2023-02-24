@@ -69,7 +69,7 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
         'IN' => [0], // India
     ];
 
-    /** @var int the object's current year */
+    /** the object's current year */
     protected int $year;
 
     /** the object's current timezone */
@@ -115,7 +115,7 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
         }
 
         $this->holidays[$holiday->getKey()] = $holiday;
-        uasort($this->holidays, fn (\DateTimeInterface $dateA, \DateTimeInterface $dateB): int => $this::compareDates($dateA, $dateB));
+        uasort($this->holidays, fn (\DateTimeInterface $dateA, \DateTimeInterface $dateB): int => self::compareDates($dateA, $dateB));
     }
 
     public function removeHoliday(string $key): void
