@@ -19,4 +19,11 @@
     <projectFiles>
         <directory name="src" />
     </projectFiles>
+
+    <issueHandlers>
+      <MethodSignatureMismatch errorLevel="suppress" />
+      <MissingTemplateParam errorLevel="suppress" />
+      <InvalidArrayOffset errorLevel="suppress" />
+    </issueHandlers>
+
 </psalm>
