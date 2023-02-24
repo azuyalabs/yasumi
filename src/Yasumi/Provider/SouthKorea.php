@@ -571,7 +571,7 @@ class SouthKorea extends AbstractProvider
         // Step 1. Build a temporary table that aggregates holidays by date.
         $dates = [];
         foreach ($this->getHolidayDates() as $name => $day) {
-            $holiday = $this->getHoliday($name);
+            $holiday = $this->getHoliday((string) $name);
             $dates[$day][] = $name;
 
             if (!isset($acceptedHolidays[$name])) {
@@ -599,8 +599,8 @@ class SouthKorea extends AbstractProvider
             // In a temporary table, public holidays are keyed by numeric number.
             // And weekends are keyed by string start with 'weekend:'.
             // For the substitute, we will use first item in queue.
-            $origin = $this->getHoliday($names[0]);
-            $nextWorkingDay = \DateTime::createFromFormat('Y-m-d', $day, $tz);
+            $origin = $this->getHoliday((string) $names[0]);
+            $nextWorkingDay = \DateTime::createFromFormat('Y-m-d', (string) $day, $tz);
             if ($nextWorkingDay instanceof \DateTime) {
                 $workDay = $this->nextWorkingDay($nextWorkingDay);
                 $this->addSubstituteHoliday($origin, $workDay->format('Y-m-d'));
