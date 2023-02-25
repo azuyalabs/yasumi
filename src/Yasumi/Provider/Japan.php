@@ -242,7 +242,7 @@ class Japan extends AbstractProvider
             $emperorsBirthday = "$this->year-2-23";
         } elseif ($this->year >= 1989 && $this->year < 2019) {
             $emperorsBirthday = "$this->year-12-23";
-        } elseif ($this->year >= 1949 && $this->year < 1988) {
+        } elseif ($this->year >= 1949 && $this->year <= 1988) {
             $emperorsBirthday = "$this->year-4-29";
         }
 
