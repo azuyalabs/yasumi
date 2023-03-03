@@ -29,6 +29,7 @@ return [
     'ja' => 'エピファニー',
     'nl' => 'Drie Koningen',
     'pl' => 'Święto Trzech Króli',
+    'ro' => 'Bobotează',
     'sk' => 'Zjavenie Pána / Traja králi',
     'sv' => 'trettondedag jul',
 ];

@@ -31,5 +31,5 @@ class RomaniaBaseTestCase extends TestCase
     public const TIMEZONE = 'Europe/Bucharest';
 
     /** Locale that is considered common for this provider. */
-    public const LOCALE = 'ro_RO';
+    public const LOCALE = 'ro';
 }
