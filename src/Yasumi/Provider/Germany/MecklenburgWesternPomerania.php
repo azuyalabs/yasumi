@@ -45,7 +45,7 @@ class MecklenburgWesternPomerania extends Germany
     public function initialize(): void
     {
         parent::initialize();
-        
+
         if ($this->year >= 2023) {
             $this->addHoliday($this->internationalWomensDay($this->year, $this->timezone, $this->locale));
         }
