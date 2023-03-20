@@ -40,13 +40,13 @@
     "ext-json": "*"
   },
   "require-dev": {
-    "friendsofphp/php-cs-fixer": "^2.19 | ^3.14",
+    "friendsofphp/php-cs-fixer": "^2.19 | ^3.15",
     "infection/infection": "^0.17 | ^0.26",
     "mikey179/vfsstream": "^1.6",
     "phan/phan": "^5.4",
     "phpstan/phpstan": "^1.10",
     "phpunit/phpunit": "^8.5 | ^9.6",
-    "vimeo/psalm": "^5.7",
+    "vimeo/psalm": "^5.8",
     "ext-intl": "*"
   },
   "config": {
