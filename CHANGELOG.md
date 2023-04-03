@@ -7,17 +7,18 @@ to [Semantic Versioning](https://semver.org).
 
 ## [Unreleased]
 
-(WIP: Added commit message until Dec 25).
+(WIP: Added commit message until Dec 28; list to be further redacted and compressed).
 
 ### Added
 
-- Added all examples as shown on the documentation site as a convenience to developers who like to have all
-  information in a single place.
+- Added all examples as shown on the documentation site as a convenience to developers who like to have all information
+  in a single place.
 - Added bank holiday for Queen Elizabeth II’s State Funeral on 19 September 2022 to United Kingdom. [\#287](https://github.com/azuyalabs/yasumi/pull/287) ([Freshleaf Media](https://www.github.com/freshleafmedia))
 - Added Public Holiday National Day of Mourning (for Queen Elizabeth II) on 22 September 2022 to Australia.
-- In Japan, Marine Day was rescheduled to July 23 as the 2020 Tokyo Olypmics took place. The rescheduled Marine
-  Day for 2021 was included, but not the original rescheduled day for 2020.
+- In Japan, Marine Day was rescheduled to July 23 as the 2020 Tokyo Olypmics took place. The rescheduled Marine Day for
+  2021 was included, but not the original rescheduled day for 2020.
 - Added Slovak translations for a couple of popular holidays. [\#298](https://github.com/azuyalabs/yasumi/pull/298) ([Jozef Grencik](https://www.github.com/jozefgrencik))
+- National Day of Mourning for Australia  [\#288](https://github.com/azuyalabs/yasumi/pull/288) ([FuzzyWuzzyFraggle](https://www.github.com/FuzzyWuzzyFraggle)).
 
 - Added: Throw an exception in case the time stamp of the start and end date in the `dateTimeBetween` method can't be established.
 - Included an `.editorconfig` file to maintain a consistent style for developers using different text editors.
@@ -45,7 +46,8 @@ to [Semantic Versioning](https://semver.org).
 - Split functions that generate random dates/years into its own trait to slim down the overgrown base trait.
 - Refactored summer and winter time tests for Denmark and The Netherlands by introducing a base class holding the domain
   logic.
-
+- Upgraded Psalm to version 4.
+- Switched from `getShortName` to `getName` for reflection class to gain compatibility [\#292](https://github.com/azuyalabs/yasumi/pull/292) ([SupraSmooth](https://github.com/SupraSmooth)).
 
 ### Fixed
 
@@ -64,28 +66,31 @@ to [Semantic Versioning](https://semver.org).
 - Tests for New Years Day, Spring Bank Holiday, and May Day Holiday in the United Kingdom (England, Wales, Northern
   Ireland, and Scotland), as well as Battle of the Boyne in Northern Ireland were considered for any calendar year;
   however, these are celebrated only since a particular calendar year.
+- The holiday of Epiphany (6th of January) was incorrectly categorized as `other` and changed to an official holiday in
+  Baden-Württemberg, Bavaria and SaxonyAnhalt. [\#296](https://github.com/azuyalabs/yasumi/issues/296) ([Anna Damm](https://github.com/AnnaDamm])).
+- In version 2022f of the `tz` db, a correction for 1947 was made for the summertime transition in Denmark to April
+  the 6th. Various corrections have been made to accommodate for this change.
 
 - Updated and corrected various annotations and documentation blocks.
 - Corrected file permissions for files that had the executable flag set, but aren't supposed to be executable.
-
 - Included the data type for test methods that return an array.
-- Switched from `getShortName()` to `getName()` for the `ReflectionClass` created by the method `anotherTime()` in the `AbstractProvider` class.
-  Using `getShortName` could result in a `ProviderNotFoundException` for some custom holiday providers, since the
-  namespace is not fully qualified. This can happen, if you would create a custom holiday provider in your own project's
-  namespace implementing the `next()` or `previous()` method from the `AbstractProvider`.
+- Switched from `getShortName()` to `getName()` for the `ReflectionClass` created by the method `anotherTime()` in the
+  `AbstractProvider` class. Using `getShortName` could result in a `ProviderNotFoundException` for some custom holiday
+  providers, since the namespace is not fully qualified. This can happen, if you would create a custom holiday provider.
+- Fixed `DateTime` classes to be called from the global namespace.
 
 ### Deprecated
 
 ### Removed
 
-- Removed tests folder from analysis by PHPStan (the large number of files make the analysis endlessly long).
+- Removed tests folder from analysis by PHPStan (the large number of files make the analysis needlessly long).
 - The `count` method from the `ProviderInterface` as the `AbstractProvider` class already implements the Countable interface.
 - Unused `InvalidDateException` class.
 - Unused imported classes.
 - Superfluous notes/comments and annotations that are no longer valid or incorrect.
 - Redundant check for empty array.
-- Removed the mutation testing from GitHub Actions as currently the outcome is not actively used. Running mutations tests locally should be sufficient.
-
+- Removed the mutation testing from GitHub Actions as currently the outcome is not actively used. Running mutations
+  tests locally should be sufficient.
 
 ## [2.5.0] - 2022-01-30
 
