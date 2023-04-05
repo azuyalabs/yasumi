@@ -40,7 +40,7 @@
   },
   "require-dev": {
     "ext-intl": "*",
-    "friendsofphp/php-cs-fixer": "^2.19 || ^3.15",
+    "friendsofphp/php-cs-fixer": "^2.19 || ^3.16",
     "infection/infection": "^0.17 || ^0.26",
     "mikey179/vfsstream": "^1.6",
     "phan/phan": "^5.4",
