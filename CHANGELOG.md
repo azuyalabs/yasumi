@@ -7,26 +7,24 @@ to [Semantic Versioning](https://semver.org).
 
 ## [Unreleased]
 
-(WIP: Added commit message until Dec 28; list to be further redacted and compressed).
-
 ### Added
 
-- Added all examples as shown on the documentation site as a convenience to developers who like to have all information
-  in a single place.
-- Added bank holiday for Queen Elizabeth II’s State Funeral on 19 September 2022 to United Kingdom. [\#287](https://github.com/azuyalabs/yasumi/pull/287) ([Freshleaf Media](https://www.github.com/freshleafmedia))
-- Added Public Holiday National Day of Mourning (for Queen Elizabeth II) on 22 September 2022 to Australia.
+- Bank holiday for King Charles III’s Coronation for the United Kingdom [\#305](https://github.com/azuyalabs/yasumi/pull/305) ([Freshleaf Media](https://www.github.com/freshleafmedia))
+- Bank holiday for Queen Elizabeth II’s State Funeral on 19 September 2022 for the United Kingdom. [\#287](https://github.com/azuyalabs/yasumi/pull/287) ([Freshleaf Media](https://www.github.com/freshleafmedia))
+- National Day of Mourning for Australia [\#288](https://github.com/azuyalabs/yasumi/pull/288) ([FuzzyWuzzyFraggle](https://www.github.com/FuzzyWuzzyFraggle)).
 - In Japan, Marine Day was rescheduled to July 23 as the 2020 Tokyo Olypmics took place. The rescheduled Marine Day for
   2021 was included, but not the original rescheduled day for 2020.
-- Added Slovak translations for a couple of popular holidays. [\#298](https://github.com/azuyalabs/yasumi/pull/298) ([Jozef Grencik](https://www.github.com/jozefgrencik))
-- National Day of Mourning for Australia  [\#288](https://github.com/azuyalabs/yasumi/pull/288) ([FuzzyWuzzyFraggle](https://www.github.com/FuzzyWuzzyFraggle)).
-
-- Added: Throw an exception in case the time stamp of the start and end date in the `dateTimeBetween` method can't be established.
+- Slovak translations for a couple of popular holidays. [\#298](https://github.com/azuyalabs/yasumi/pull/298) ([Jozef Grencik](https://www.github.com/jozefgrencik))
+- All examples as shown on the documentation site as a convenience to developers who like to have all information in a
+  single place.
+- An exception is thrown in case the time stamp of the start and end date in the `dateTimeBetween` method can't be established.
 - Included an `.editorconfig` file to maintain a consistent style for developers using different text editors.
-
+- The `ext-intl` extensions as part of the required extensions [\#306](https://github.com/azuyalabs/yasumi/pull/306) ([Freshleaf Media](https://www.github.com/freshleafmedia))
+- PHP version 8.2 included in the version matrix of GitHub actions.
+- Checks in case getting transition details or a date interval subtraction fails.
 
 ### Changed
 
-- Included the unit tests directory for checking by PHPStan.
 - Improved and cleaned up numerous unit tests.
 - Upgraded dependencies to latest working versions.
 - Forced type casting of the output for the year to allow for strict type comparison.
@@ -46,8 +44,11 @@ to [Semantic Versioning](https://semver.org).
 - Split functions that generate random dates/years into its own trait to slim down the overgrown base trait.
 - Refactored summer and winter time tests for Denmark and The Netherlands by introducing a base class holding the domain
   logic.
-- Upgraded Psalm to version 4.
-- Switched from `getShortName` to `getName` for reflection class to gain compatibility [\#292](https://github.com/azuyalabs/yasumi/pull/292) ([SupraSmooth](https://github.com/SupraSmooth)).
+- Switched from `getShortName()` to `getName()` for the `ReflectionClass` created by the method `anotherTime()` in the
+  `AbstractProvider` class. Using `getShortName` could result in a `ProviderNotFoundException` for some custom holiday
+  providers, since the namespace is not fully qualified. This can happen, if you would create a custom holiday provider.
+  [\#292](https://github.com/azuyalabs/yasumi/pull/292) ([SupraSmooth](https://github.com/SupraSmooth)).
+- Updated Copyright year.
 
 ### Fixed
 
@@ -70,26 +71,21 @@ to [Semantic Versioning](https://semver.org).
   Baden-Württemberg, Bavaria and SaxonyAnhalt. [\#296](https://github.com/azuyalabs/yasumi/issues/296) ([Anna Damm](https://github.com/AnnaDamm])).
 - In version 2022f of the `tz` db, a correction for 1947 was made for the summertime transition in Denmark to April
   the 6th. Various corrections have been made to accommodate for this change.
+- The year 1988 was incorrectly omitted from observing the Emperors' birthday in Japan.
 
-- Updated and corrected various annotations and documentation blocks.
-- Corrected file permissions for files that had the executable flag set, but aren't supposed to be executable.
+- Corrected various annotations and documentation blocks.
+- File permissions for files that had the executable flag set, but aren't supposed to be executable.
 - Included the data type for test methods that return an array.
-- Switched from `getShortName()` to `getName()` for the `ReflectionClass` created by the method `anotherTime()` in the
-  `AbstractProvider` class. Using `getShortName` could result in a `ProviderNotFoundException` for some custom holiday
-  providers, since the namespace is not fully qualified. This can happen, if you would create a custom holiday provider.
-- Fixed `DateTime` classes to be called from the global namespace.
-
-### Deprecated
+- `DateTime` classes to be called from the global namespace.
 
 ### Removed
 
-- Removed tests folder from analysis by PHPStan (the large number of files make the analysis needlessly long).
 - The `count` method from the `ProviderInterface` as the `AbstractProvider` class already implements the Countable interface.
-- Unused `InvalidDateException` class.
-- Unused imported classes.
+- Unused `InvalidDateException` class and other unused imported class.
+- `tests` folder from analysis by PHPStan (the large number of files make the analysis needlessly long).
+- Redundant checks for empty array and types.
 - Superfluous notes/comments and annotations that are no longer valid or incorrect.
-- Redundant check for empty array.
-- Removed the mutation testing from GitHub Actions as currently the outcome is not actively used. Running mutations
+- Mutation testing from GitHub Actions as currently the outcome is not actively used. Running mutations
   tests locally should be sufficient.
 
 ## [2.5.0] - 2022-01-30
