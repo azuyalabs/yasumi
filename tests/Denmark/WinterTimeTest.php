@@ -116,7 +116,8 @@ final class WinterTimeTest extends DaylightSavingTime
     public function testHolidayType(): void
     {
         $this->assertHolidayType(
-            self::REGION, self::HOLIDAY,
+            self::REGION,
+            self::HOLIDAY,
             $this->randomYearFromArray($this->observedYears),
             Holiday::TYPE_SEASON
         );
