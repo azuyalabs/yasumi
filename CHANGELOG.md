@@ -9,10 +9,10 @@ to [Semantic Versioning](https://semver.org).
 
 ### Added
 
-- Bank holiday for King Charles III’s Coronation for the United Kingdom [\#305](https://github.com/azuyalabs/yasumi/pull/305) ([Freshleaf Media](https://www.github.com/freshleafmedia))
-- Bank holiday for Queen Elizabeth II’s State Funeral on 19 September 2022 for the United Kingdom. [\#287](https://github.com/azuyalabs/yasumi/pull/287) ([Freshleaf Media](https://www.github.com/freshleafmedia))
+- Bank holiday for King Charles III’s Coronation in the United Kingdom [\#305](https://github.com/azuyalabs/yasumi/pull/305) ([Freshleaf Media](https://www.github.com/freshleafmedia))
+- Bank holiday for Queen Elizabeth II’s State Funeral on September 19, 2022, for the United Kingdom. [\#287](https://github.com/azuyalabs/yasumi/pull/287) ([Freshleaf Media](https://www.github.com/freshleafmedia))
 - National Day of Mourning for Australia [\#288](https://github.com/azuyalabs/yasumi/pull/288) ([FuzzyWuzzyFraggle](https://www.github.com/FuzzyWuzzyFraggle)).
-- In Japan, Marine Day was rescheduled to July 23 as the 2020 Tokyo Olypmics took place. The rescheduled Marine Day for
+- In Japan, Marine Day was rescheduled to July 23 as the 2020 Tokyo Olympics took place. The rescheduled Marine Day for
   2021 was included, but not the original rescheduled day for 2020.
 - Slovak translations for a couple of popular holidays. [\#298](https://github.com/azuyalabs/yasumi/pull/298) ([Jozef Grencik](https://www.github.com/jozefgrencik))
 - All examples as shown on the documentation site as a convenience to developers who like to have all information in a
