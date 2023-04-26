@@ -12,6 +12,16 @@ changes.
 
 ### Added
 
+### Changed
+
+### Fixed
+
+### Removed
+
+## [2.6.0] - 2023-04-27
+
+### Added
+
 - Bank holiday for King Charles III’s Coronation in the United Kingdom. [\#305](https://github.com/azuyalabs/yasumi/pull/305) ([Freshleaf Media](https://www.github.com/freshleafmedia))
 - Bank holiday for Queen Elizabeth II’s State Funeral on September 19, 2022, for the United Kingdom. [\#287](https://github.com/azuyalabs/yasumi/pull/287) ([Freshleaf Media](https://www.github.com/freshleafmedia))
 - National Day of Mourning for Australia. [\#288](https://github.com/azuyalabs/yasumi/pull/288) ([FuzzyWuzzyFraggle](https://www.github.com/FuzzyWuzzyFraggle)).
@@ -748,7 +758,9 @@ changes.
 
 - Initial Release
 
-[Unreleased]: https://github.com/azuyalabs/yasumi/compare/2.5.0...HEAD
+[Unreleased]: https://github.com/azuyalabs/yasumi/compare/2.6.0...HEAD
+
+[2.6.0]: https://github.com/azuyalabs/yasumi/compare/2.5.0...2.6.0
 
 [2.5.0]: https://github.com/azuyalabs/yasumi/compare/2.4.0...2.5.0
 
