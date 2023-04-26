@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,7 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Ukraine;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\ProviderTestCase;
 
@@ -31,6 +30,8 @@ class UkraineTest extends UkraineBaseTestCase implements ProviderTestCase
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -39,8 +40,6 @@ class UkraineTest extends UkraineBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all official holidays in Ukraine are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -84,8 +83,6 @@ class UkraineTest extends UkraineBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all observed holidays in Ukraine are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -94,8 +91,6 @@ class UkraineTest extends UkraineBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all seasonal holidays in Ukraine are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -104,8 +99,6 @@ class UkraineTest extends UkraineBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all bank holidays in Ukraine are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -114,8 +107,6 @@ class UkraineTest extends UkraineBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all other holidays in Ukraine are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -123,7 +114,8 @@ class UkraineTest extends UkraineBaseTestCase implements ProviderTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

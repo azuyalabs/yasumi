@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,10 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Netherlands;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -34,8 +30,7 @@ class QueensDayTest extends NetherlandsBaseTestCase implements HolidayTestCase
     /**
      * Tests Queens Day between 1891 and 1948.
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testQueensBetween1891and1948(): void
     {
@@ -44,15 +39,14 @@ class QueensDayTest extends NetherlandsBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-8-31", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-8-31", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests Queens Day between 1891 and 1948 substituted one day later (when Queens Day falls on a Sunday).
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testQueensBetween1891and1948SubstitutedLater(): void
     {
@@ -61,15 +55,14 @@ class QueensDayTest extends NetherlandsBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-9-1", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-9-1", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests Queens Day between 1949 and 2013.
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testQueensBetween1949and2013(): void
     {
@@ -78,15 +71,14 @@ class QueensDayTest extends NetherlandsBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-4-30", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-4-30", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests Queens Day between 1949 and 2013 substituted one day later.
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testQueensBetween1949and2013SubstitutedLater(): void
     {
@@ -95,15 +87,14 @@ class QueensDayTest extends NetherlandsBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-5-1", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-5-1", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests Queens Day between 1949 and 2013 substituted one day earlier.
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testQueensBetween1949and2013SubstitutedEarlier(): void
     {
@@ -112,14 +103,14 @@ class QueensDayTest extends NetherlandsBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-4-29", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-4-29", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests Queen's Day before 1891.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testQueensDayBefore1891(): void
     {
@@ -129,7 +120,7 @@ class QueensDayTest extends NetherlandsBaseTestCase implements HolidayTestCase
     /**
      * Tests Queen's Day after 2013.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testQueensDayAfter2013(): void
     {
@@ -139,7 +130,7 @@ class QueensDayTest extends NetherlandsBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -154,7 +145,7 @@ class QueensDayTest extends NetherlandsBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

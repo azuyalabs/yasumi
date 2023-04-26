@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Switzerland\Thurgau;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\ProviderTestCase;
 
@@ -26,10 +25,12 @@ class ThurgauTest extends ThurgauBaseTestCase implements ProviderTestCase
     /**
      * @var int year random year number used for all tests in this Test Case
      */
-    protected $year;
+    protected int $year;
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,8 +39,6 @@ class ThurgauTest extends ThurgauBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all official holidays in Thurgau (Switzerland) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -52,8 +51,6 @@ class ThurgauTest extends ThurgauBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all regional holidays in Thurgau (Switzerland) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testRegionalHolidays(): void
     {
@@ -72,8 +69,6 @@ class ThurgauTest extends ThurgauBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all observed holidays in Thurgau (Switzerland) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -87,8 +82,6 @@ class ThurgauTest extends ThurgauBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all seasonal holidays in Thurgau (Switzerland) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -97,8 +90,6 @@ class ThurgauTest extends ThurgauBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all bank holidays in Thurgau (Switzerland) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -107,8 +98,6 @@ class ThurgauTest extends ThurgauBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all other holidays in Thurgau (Switzerland) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -116,7 +105,8 @@ class ThurgauTest extends ThurgauBaseTestCase implements ProviderTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

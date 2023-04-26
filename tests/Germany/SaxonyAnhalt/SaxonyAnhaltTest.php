@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Germany\SaxonyAnhalt;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\ProviderTestCase;
 
@@ -30,6 +29,8 @@ class SaxonyAnhaltTest extends SaxonyAnhaltBaseTestCase implements ProviderTestC
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,13 +39,12 @@ class SaxonyAnhaltTest extends SaxonyAnhaltBaseTestCase implements ProviderTestC
 
     /**
      * Tests if all official holidays in Saxony-Anhalt (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
         $holidays = [
             'newYearsDay',
+            'epiphany',
             'goodFriday',
             'easterMonday',
             'internationalWorkersDay',
@@ -67,8 +67,6 @@ class SaxonyAnhaltTest extends SaxonyAnhaltBaseTestCase implements ProviderTestC
 
     /**
      * Tests if all observed holidays in Saxony-Anhalt (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -77,8 +75,6 @@ class SaxonyAnhaltTest extends SaxonyAnhaltBaseTestCase implements ProviderTestC
 
     /**
      * Tests if all seasonal holidays in Saxony-Anhalt (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -87,8 +83,6 @@ class SaxonyAnhaltTest extends SaxonyAnhaltBaseTestCase implements ProviderTestC
 
     /**
      * Tests if all bank holidays in Saxony-Anhalt (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -97,16 +91,15 @@ class SaxonyAnhaltTest extends SaxonyAnhaltBaseTestCase implements ProviderTestC
 
     /**
      * Tests if all other holidays in Saxony-Anhalt (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
-        $this->assertDefinedHolidays(['epiphany'], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

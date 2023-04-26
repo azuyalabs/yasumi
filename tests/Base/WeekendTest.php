@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -35,8 +35,6 @@ class WeekendTest extends TestCase
      * Holiday Provider is created.
      *
      * @dataProvider dataProviderWeekendDays
-     *
-     * @throws \ReflectionException
      */
     public function testWeekendDay(\DateTimeImmutable $date): void
     {
@@ -48,6 +46,8 @@ class WeekendTest extends TestCase
     }
 
     /**
+     * @return array<array> list of test dates that are considered a weekend date
+     *
      * @throws \Exception
      */
     public function dataProviderWeekendDays(): array
@@ -77,8 +77,6 @@ class WeekendTest extends TestCase
      * Holiday Provider is created.
      *
      * @dataProvider dataProviderNonWeekendDays
-     *
-     * @throws \ReflectionException
      */
     public function testNonWeekendDay(\DateTimeImmutable $date): void
     {
@@ -90,6 +88,8 @@ class WeekendTest extends TestCase
     }
 
     /**
+     * @return array<array> list of test dates that are considered not a weekend date
+     *
      * @throws \Exception
      */
     public function dataProviderNonWeekendDays(): array

@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use DateInterval;
-use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
@@ -37,7 +34,6 @@ class Greece extends AbstractProvider
     /**
      * Initialize holidays for Greece.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -86,7 +82,6 @@ class Greece extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Three_Holy_Hierarchs
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -96,7 +91,7 @@ class Greece extends AbstractProvider
         $this->addHoliday(new Holiday(
             'threeHolyHierarchs',
             ['el' => 'Τριών Ιεραρχών'],
-            new DateTime("$this->year-1-30", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("$this->year-1-30", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OTHER
         ));
@@ -111,7 +106,6 @@ class Greece extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Clean_Monday
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -121,7 +115,7 @@ class Greece extends AbstractProvider
         $this->addHoliday(new Holiday(
             'cleanMonday',
             ['el' => 'Καθαρά Δευτέρα'],
-            $this->calculateEaster($this->year, $this->timezone)->sub(new DateInterval('P48D')),
+            $this->calculateEaster($this->year, $this->timezone)->sub(new \DateInterval('P48D')),
             $this->locale
         ));
     }
@@ -129,9 +123,9 @@ class Greece extends AbstractProvider
     /**
      * Orthodox Easter.
      *
-     * @throws \Exception
-     *
      * @return \DateTime|\DateTimeImmutable
+     *
+     * @throws \Exception
      */
     private function calculateEaster(int $year, string $timezone): \DateTimeInterface
     {
@@ -145,7 +139,6 @@ class Greece extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Greek_War_of_Independence
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -156,7 +149,7 @@ class Greece extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'independenceDay',
                 ['el' => 'Εικοστή Πέμπτη Μαρτίου'],
-                new DateTime("$this->year-3-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("$this->year-3-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -169,7 +162,6 @@ class Greece extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Ohi_Day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -180,7 +172,7 @@ class Greece extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'ohiDay',
                 ['el' => 'Επέτειος του Όχι'],
-                new DateTime("$this->year-10-28", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("$this->year-10-28", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -193,7 +185,6 @@ class Greece extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Athens_Polytechnic_uprising
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -204,7 +195,7 @@ class Greece extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'polytechnio',
                 ['el' => 'Πολυτεχνείο'],
-                new DateTime("$this->year-11-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("$this->year-11-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OTHER
             ));

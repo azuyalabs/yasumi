@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,10 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\USA;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -39,8 +35,7 @@ class JuneteenthTest extends USABaseTestCase implements HolidayTestCase
     /**
      * Tests Juneteenth on or after 2021. Juneteenth is celebrated since 2021 on June 19th.
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testJuneteenthOnAfter2021(): void
     {
@@ -49,48 +44,46 @@ class JuneteenthTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-6-19", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-6-19", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests Juneteenth on or after 2021 when substituted on Monday (when Juneteenth falls on Sunday).
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testJuneteenthOnAfter2021SubstitutedMonday(): void
     {
         $year = 2022;
-        $this->assertHoliday(
+        $this->assertSubstituteHoliday(
             self::REGION,
-            'substituteHoliday:juneteenth',
+            self::HOLIDAY,
             $year,
-            new DateTime("$year-6-20", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-6-20", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests Juneteenth on or after 2021 when substituted on Friday (when Juneteenth falls on Saturday).
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testJuneteenthOnAfter2021SubstitutedFriday(): void
     {
         $year = 2021;
-        $this->assertHoliday(
+        $this->assertSubstituteHoliday(
             self::REGION,
-            'substituteHoliday:juneteenth',
+            self::HOLIDAY,
             $year,
-            new DateTime("$year-6-18", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-6-18", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests Juneteenth before 2021. Juneteenth is celebrated since 2021 on June 19th.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testJuneteenthBefore2021(): void
     {
@@ -104,7 +97,7 @@ class JuneteenthTest extends USABaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -119,7 +112,7 @@ class JuneteenthTest extends USABaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

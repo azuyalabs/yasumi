@@ -291,7 +291,8 @@ return [
     //       should be added to the `directory_list` as well as
     //       to `exclude_analysis_directory_list`.
     'exclude_analysis_directory_list' => [
-        'vendor/',
+      'vendor/',
+      'examples/'
     ],
 
     // Enable this to enable checks of require/include statements referring to valid paths.
@@ -349,7 +350,8 @@ return [
     // Thus, both first-party and third-party code being used by
     // your application should be included in this list.
     'directory_list' => [
-        'src',
+      'src',
+      'examples'
     ],
 
     // A list of individual files to include in analysis

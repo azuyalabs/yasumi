@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,10 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Estonia;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -35,7 +31,9 @@ class EasterDayTest extends EstoniaBaseTestCase implements HolidayTestCase
     public const HOLIDAY = 'easter';
 
     /**
-     * @throws Exception
+     * @return array<array> list of test dates for the holiday defined in this test
+     *
+     * @throws \Exception
      */
     public function holidayDataProvider(): array
     {
@@ -50,8 +48,7 @@ class EasterDayTest extends EstoniaBaseTestCase implements HolidayTestCase
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
-     * @throws ReflectionException
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHoliday(int $year, string $expected): void
     {
@@ -59,14 +56,12 @@ class EasterDayTest extends EstoniaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime($expected, new DateTimeZone(self::TIMEZONE))
+            new \DateTime($expected, new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
-     * {@inheritdoc}
-     *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -79,9 +74,7 @@ class EasterDayTest extends EstoniaBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * {@inheritdoc}
-     *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

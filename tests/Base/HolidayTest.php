@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,10 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Base;
 
-use DateTime;
-use DateTimeImmutable;
-use Exception;
-use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 use Yasumi\Exception\MissingTranslationException;
 use Yasumi\Exception\UnknownLocaleException;
@@ -25,47 +21,30 @@ use Yasumi\Holiday;
 use Yasumi\tests\YasumiBase;
 use Yasumi\TranslationsInterface;
 
-/**
- * Class HolidayTest.
- *
- * Contains tests for testing the Holiday class
- */
 class HolidayTest extends TestCase
 {
     use YasumiBase;
 
-    /**
-     * Tests that an InvalidArgumentException is thrown in case a blank key is given.
-     *
-     * @throws Exception
-     */
+    /** @throws \Exception */
     public function testHolidayBlankKeyInvalidArgumentException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
-        new Holiday('', [], new DateTime());
+        new Holiday('', [], new \DateTime());
     }
 
-    /**
-     * Tests that an Yasumi\Exception\UnknownLocaleException is thrown in case an invalid locale is given.
-     *
-     * @throws Exception
-     */
+    /** @throws \Exception */
     public function testCreateHolidayUnknownLocaleException(): void
     {
         $this->expectException(UnknownLocaleException::class);
 
-        new Holiday('testHoliday', [], new DateTime(), 'wx-YZ');
+        new Holiday('testHoliday', [], new \DateTime(), 'wx-YZ');
     }
 
-    /**
-     * Tests that a Yasumi holiday instance can be serialized to a JSON object.
-     *
-     * @throws Exception
-     */
+    /** @throws \Exception */
     public function testHolidayIsJsonSerializable(): void
     {
-        $holiday = new Holiday('testHoliday', [], new DateTime(), 'en_US');
+        $holiday = new Holiday('testHoliday', [], new \DateTime(), 'en_US');
         $json = json_encode($holiday, JSON_THROW_ON_ERROR);
         $instance = json_decode($json, true, 512, JSON_THROW_ON_ERROR);
 
@@ -74,33 +53,24 @@ class HolidayTest extends TestCase
         self::assertArrayHasKey('shortName', $instance);
     }
 
-    /**
-     * Tests that a Yasumi holiday instance can be created using an object that implements the DateTimeInterface (e.g.
-     * DateTime or DateTimeImmutable).
-     *
-     * @throws Exception
-     */
+    /** @throws \Exception */
     public function testHolidayWithDateTimeInterface(): void
     {
         // Assert with DateTime instance
-        $holiday = new Holiday('testHoliday', [], new DateTime(), 'en_US');
+        $holiday = new Holiday('testHoliday', [], new \DateTime(), 'en_US');
         self::assertNotNull($holiday);
         self::assertInstanceOf(Holiday::class, $holiday);
 
         // Assert with DateTimeImmutable instance
-        $holiday = new Holiday('testHoliday', [], new DateTimeImmutable(), 'en_US');
+        $holiday = new Holiday('testHoliday', [], new \DateTimeImmutable(), 'en_US');
         self::assertNotNull($holiday);
         self::assertInstanceOf(Holiday::class, $holiday);
     }
 
-    /**
-     * Tests the getLocales function of the Holiday object.
-     *
-     * @throws Exception
-     */
+    /** @throws \Exception */
     public function testHolidayGetLocales(): void
     {
-        $holiday = new Holiday('testHoliday', [], new DateTime(), 'ca_ES_VALENCIA');
+        $holiday = new Holiday('testHoliday', [], new \DateTime(), 'ca_ES_VALENCIA');
         $method = new \ReflectionMethod(Holiday::class, 'getLocales');
         $method->setAccessible(true);
 
@@ -109,11 +79,7 @@ class HolidayTest extends TestCase
         self::assertEquals(['de_DE', 'de', Holiday::LOCALE_KEY], $method->invoke($holiday, ['de_DE', Holiday::LOCALE_KEY]));
     }
 
-    /**
-     * Tests the getName function of the Holiday object without any arguments provided.
-     *
-     * @throws Exception
-     */
+    /** @throws \Exception */
     public function testHolidayGetNameWithoutArgument(): void
     {
         // 'en_US' fallback
@@ -124,16 +90,16 @@ class HolidayTest extends TestCase
             'en_US' => 'Holiday EN-US',
         ];
 
-        $holiday = new Holiday('testHoliday', $translations, new DateTime(), 'de_AT');
+        $holiday = new Holiday('testHoliday', $translations, new \DateTime(), 'de_AT');
         self::assertEquals('Holiday DE-AT', $holiday->getName());
 
-        $holiday = new Holiday('testHoliday', $translations, new DateTime(), 'de');
+        $holiday = new Holiday('testHoliday', $translations, new \DateTime(), 'de');
         self::assertEquals('Holiday DE', $holiday->getName());
 
-        $holiday = new Holiday('testHoliday', $translations, new DateTime(), 'de_DE');
+        $holiday = new Holiday('testHoliday', $translations, new \DateTime(), 'de_DE');
         self::assertEquals('Holiday DE', $holiday->getName());
 
-        $holiday = new Holiday('testHoliday', $translations, new DateTime(), 'ja');
+        $holiday = new Holiday('testHoliday', $translations, new \DateTime(), 'ja');
         self::assertEquals('Holiday EN-US', $holiday->getName());
 
         // 'en' fallback
@@ -142,10 +108,10 @@ class HolidayTest extends TestCase
             'en' => 'Holiday EN',
         ];
 
-        $holiday = new Holiday('testHoliday', $translations, new DateTime(), 'de_DE');
+        $holiday = new Holiday('testHoliday', $translations, new \DateTime(), 'de_DE');
         self::assertEquals('Holiday DE', $holiday->getName());
 
-        $holiday = new Holiday('testHoliday', $translations, new DateTime(), 'ja');
+        $holiday = new Holiday('testHoliday', $translations, new \DateTime(), 'ja');
         self::assertEquals('Holiday EN', $holiday->getName());
 
         // No 'en' or 'en_US' fallback
@@ -153,19 +119,14 @@ class HolidayTest extends TestCase
             'de' => 'Holiday DE',
         ];
 
-        $holiday = new Holiday('testHoliday', $translations, new DateTime(), 'de_DE');
+        $holiday = new Holiday('testHoliday', $translations, new \DateTime(), 'de_DE');
         self::assertEquals('Holiday DE', $holiday->getName());
 
-        $holiday = new Holiday('testHoliday', $translations, new DateTime(), 'ja');
+        $holiday = new Holiday('testHoliday', $translations, new \DateTime(), 'ja');
         self::assertEquals('testHoliday', $holiday->getName());
     }
 
-    /**
-     * Tests the getName function of the Holiday object with an explicit list of locales.
-     *
-     * @throws MissingTranslationException
-     * @throws Exception
-     */
+    /** @throws \Exception */
     public function testHolidayGetNameWithArgument(): void
     {
         $translations = [
@@ -175,7 +136,7 @@ class HolidayTest extends TestCase
             'it_IT' => 'Holiday IT-IT',
             'en_US' => 'Holiday EN-US',
         ];
-        $holiday = new Holiday('testHoliday', $translations, new DateTime(), 'de_DE');
+        $holiday = new Holiday('testHoliday', $translations, new \DateTime(), 'de_DE');
 
         self::assertEquals('Holiday DE', $holiday->getName(['de']));
         self::assertEquals('Holiday DE', $holiday->getName(['ja', 'de', 'nl', 'it_IT']));
@@ -190,18 +151,14 @@ class HolidayTest extends TestCase
         self::assertEquals('Holiday IT-IT', $holiday->getName(['it_IT', Holiday::LOCALE_KEY]));
         self::assertEquals('testHoliday', $holiday->getName([Holiday::LOCALE_KEY]));
 
-        $holiday = new Holiday('testHoliday', $translations, new DateTime(), 'ja');
+        $holiday = new Holiday('testHoliday', $translations, new \DateTime(), 'ja');
         self::assertEquals('Holiday EN-US', $holiday->getName());
 
         $this->expectException(MissingTranslationException::class);
         $holiday->getName(['it']);
     }
 
-    /**
-     * Tests the getName function of the Holiday object with global translations and no custom translation.
-     *
-     * @throws Exception
-     */
+    /** @throws \Exception */
     public function testHolidayGetNameWithGlobalTranslations(): void
     {
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
@@ -215,7 +172,7 @@ class HolidayTest extends TestCase
 
         $locale = 'pl_PL';
 
-        $holiday = new Holiday('newYearsDay', [], new DateTime('2015-01-01'), $locale);
+        $holiday = new Holiday('newYearsDay', [], new \DateTime('2015-01-01'), $locale);
         $holiday->mergeGlobalTranslations($translationsStub);
 
         self::assertNotNull($holiday->getName());
@@ -223,11 +180,7 @@ class HolidayTest extends TestCase
         self::assertEquals($translations[$locale], $holiday->getName());
     }
 
-    /**
-     * Tests the getName function of the Holiday object with global translations and no custom translation.
-     *
-     * @throws Exception
-     */
+    /** @throws \Exception */
     public function testHolidayGetNameWithGlobalParentLocaleTranslations(): void
     {
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
@@ -241,7 +194,7 @@ class HolidayTest extends TestCase
 
         $locale = 'pl_PL';
 
-        $holiday = new Holiday('newYearsDay', [], new DateTime('2015-01-01'), $locale);
+        $holiday = new Holiday('newYearsDay', [], new \DateTime('2015-01-01'), $locale);
         $holiday->mergeGlobalTranslations($translationsStub);
 
         self::assertNotNull($holiday->getName());
@@ -249,11 +202,7 @@ class HolidayTest extends TestCase
         self::assertEquals($translations['pl'], $holiday->getName());
     }
 
-    /**
-     * Tests the getName function of the Holiday object with global translations and a new custom translation.
-     *
-     * @throws Exception
-     */
+    /** @throws \Exception */
     public function testHolidayGetNameWithGlobalAndCustomTranslations(): void
     {
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
@@ -271,7 +220,7 @@ class HolidayTest extends TestCase
         $holiday = new Holiday(
             'newYearsDay',
             [$customLocale => $customTranslation],
-            new DateTime('2015-01-01'),
+            new \DateTime('2015-01-01'),
             $customLocale
         );
         $holiday->mergeGlobalTranslations($translationsStub);
@@ -281,11 +230,7 @@ class HolidayTest extends TestCase
         self::assertEquals($customTranslation, $holiday->getName());
     }
 
-    /**
-     * Tests the getName function of the Holiday object with global translations and an overriding custom translation.
-     *
-     * @throws Exception
-     */
+    /** @throws \Exception */
     public function testHolidayGetNameWithOverridenGlobalTranslations(): void
     {
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
@@ -303,7 +248,7 @@ class HolidayTest extends TestCase
         $holiday = new Holiday(
             'newYearsDay',
             [$customLocale => $customTranslation],
-            new DateTime('2014-01-01'),
+            new \DateTime('2014-01-01'),
             $customLocale
         );
         $holiday->mergeGlobalTranslations($translationsStub);

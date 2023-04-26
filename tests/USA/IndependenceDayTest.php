@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,10 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\USA;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -39,8 +35,7 @@ class IndependenceDayTest extends USABaseTestCase implements HolidayTestCase
     /**
      * Tests Independence Day on or after 1776. Independence Day is celebrated since 1776 on July 4th.
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testIndependenceDayOnAfter1776(): void
     {
@@ -49,15 +44,14 @@ class IndependenceDayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-7-4", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-7-4", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests Independence Day on or after 1776 when substituted on Monday (when Independence Day falls on Sunday).
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testIndependenceDayOnAfter1776SubstitutedMonday(): void
     {
@@ -66,15 +60,14 @@ class IndependenceDayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             'substituteHoliday:independenceDay',
             $year,
-            new DateTime("$year-7-5", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-7-5", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests Independence Day on or after 1776 when substituted on Friday (when Independence Day falls on Saturday).
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testIndependenceDayOnAfter1776SubstitutedFriday(): void
     {
@@ -83,14 +76,14 @@ class IndependenceDayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             'substituteHoliday:independenceDay',
             $year,
-            new DateTime("$year-7-3", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-7-3", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests Independence Day before 1776. Independence Day is celebrated since 1776 on July 4th.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testIndependenceDayBefore1776(): void
     {
@@ -104,7 +97,7 @@ class IndependenceDayTest extends USABaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -119,7 +112,7 @@ class IndependenceDayTest extends USABaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

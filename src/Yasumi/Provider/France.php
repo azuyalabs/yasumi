@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
@@ -33,10 +31,11 @@ class France extends AbstractProvider
      */
     public const ID = 'FR';
 
+    public const EST_YEAR_DAY_OF_SOLIDARITY_WITH_ELDERLY = 2004;
+
     /**
      * Initialize holidays for France.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -56,7 +55,6 @@ class France extends AbstractProvider
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->assumptionOfMary($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale));
 
@@ -68,6 +66,7 @@ class France extends AbstractProvider
 
         // Calculate other holidays
         $this->calculateBastilleDay();
+        $this->calculatePentecostMonday();
     }
 
     public function getSources(): array
@@ -89,7 +88,6 @@ class France extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Bastille_Day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -100,7 +98,30 @@ class France extends AbstractProvider
             $this->addHoliday(new Holiday('bastilleDay', [
                 'en' => 'Bastille Day',
                 'fr' => 'La Fête nationale',
-            ], new DateTime("$this->year-7-14", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
+            ], new \DateTime("$this->year-7-14", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
+    }
+
+    /**
+     * Pentecost Monday.
+     *
+     * Until 2004, Pentecost Monday was an official holiday. Since 2004, the holiday is considered a 'working holiday',
+     * imposed by law to be by default on Pentecost Monday. Pentecost Monday is still a holiday (but a working holiday).
+     *
+     * @see: https://en.wikipedia.org/wiki/Journ%C3%A9e_de_solidarit%C3%A9_envers_les_personnes_%C3%A2g%C3%A9es
+     *
+     * @see: https://fr.wikipedia.org/w/index.php?title=Journ%C3%A9e_de_solidarit%C3%A9_envers_les_personnes_%C3%A2g%C3%A9es_et_handicap%C3%A9es&tableofcontents=0
+     *
+     * @throws \Exception
+     */
+    private function calculatePentecostMonday(): void
+    {
+        $type = Holiday::TYPE_OFFICIAL;
+
+        if ($this->year >= 2004) {
+            $type = Holiday::TYPE_OBSERVANCE;
+        }
+
+        $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale, $type));
     }
 }

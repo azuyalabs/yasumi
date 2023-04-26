@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,7 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Georgia;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Georgia;
 use Yasumi\tests\ProviderTestCase;
@@ -34,6 +33,8 @@ class GeorgiaTest extends GeorgiaBaseTestCase implements ProviderTestCase
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -42,8 +43,6 @@ class GeorgiaTest extends GeorgiaBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all official holidays in Georgia are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
@@ -74,8 +73,6 @@ class GeorgiaTest extends GeorgiaBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all observed holidays in Georgia are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -84,8 +81,6 @@ class GeorgiaTest extends GeorgiaBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all seasonal holidays in Georgia are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -94,8 +89,6 @@ class GeorgiaTest extends GeorgiaBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all bank holidays in Georgia are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -104,8 +97,6 @@ class GeorgiaTest extends GeorgiaBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all other holidays in Georgia are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
@@ -113,7 +104,8 @@ class GeorgiaTest extends GeorgiaBaseTestCase implements ProviderTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

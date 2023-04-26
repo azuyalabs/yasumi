@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,10 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Germany\Berlin;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -39,8 +35,7 @@ class DayOfLiberation2020Test extends BerlinBaseTestCase implements HolidayTestC
     /**
      * Test the holiday defined in this test.
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayInYear(): void
     {
@@ -48,14 +43,14 @@ class DayOfLiberation2020Test extends BerlinBaseTestCase implements HolidayTestC
             self::REGION,
             self::HOLIDAY,
             self::YEAR,
-            new DateTime(self::YEAR.'-05-08', new DateTimeZone(self::TIMEZONE))
+            new \DateTime(self::YEAR.'-05-08', new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Test the holiday defined in this test in the years before.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayBeforeYear(): void
     {
@@ -69,7 +64,7 @@ class DayOfLiberation2020Test extends BerlinBaseTestCase implements HolidayTestC
     /**
      * Test the holiday defined in this test in the years after.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayAfterYear(): void
     {
@@ -82,8 +77,6 @@ class DayOfLiberation2020Test extends BerlinBaseTestCase implements HolidayTestC
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     *
-     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -97,8 +90,6 @@ class DayOfLiberation2020Test extends BerlinBaseTestCase implements HolidayTestC
 
     /**
      * Tests type of the holiday defined in this test.
-     *
-     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

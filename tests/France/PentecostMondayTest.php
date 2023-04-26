@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,11 +14,8 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\France;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\Provider\France;
 use Yasumi\tests\HolidayTestCase;
 
 /**
@@ -34,8 +31,7 @@ class PentecostMondayTest extends FranceBaseTestCase implements HolidayTestCase
     /**
      * Tests Pentecost Monday.
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testPentecostMonday(): void
     {
@@ -44,14 +40,14 @@ class PentecostMondayTest extends FranceBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-5-30", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-5-30", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests translated name of Pentecost Monday.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -66,10 +62,22 @@ class PentecostMondayTest extends FranceBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(null, France::EST_YEAR_DAY_OF_SOLIDARITY_WITH_ELDERLY - 1),
+            Holiday::TYPE_OFFICIAL
+        );
+
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(France::EST_YEAR_DAY_OF_SOLIDARITY_WITH_ELDERLY),
+            Holiday::TYPE_OBSERVANCE
+        );
     }
 }

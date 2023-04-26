@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,9 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Ukraine;
 
-use DateTime;
-use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 use Yasumi\Yasumi;
@@ -37,12 +34,10 @@ class CatholicChristmasDayTest extends UkraineBaseTestCase implements HolidayTes
      *
      * @dataProvider CatholicChristmasDayDataProvider
      *
-     * @param int      $year     the year for which International Workers' Day needs to be tested
-     * @param DateTime $expected the expected date
-     *
-     * @throws ReflectionException
+     * @param int       $year     the year for which International Workers' Day needs to be tested
+     * @param \DateTime $expected the expected date
      */
-    public function testCatholicChristmasDay(int $year, DateTime $expected): void
+    public function testCatholicChristmasDay(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
@@ -50,7 +45,7 @@ class CatholicChristmasDayTest extends UkraineBaseTestCase implements HolidayTes
     /**
      * Tests Catholic Christmas Day before 2017.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testNoCatholicChristmasDayBefore2017(): void
     {
@@ -66,7 +61,7 @@ class CatholicChristmasDayTest extends UkraineBaseTestCase implements HolidayTes
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -81,7 +76,7 @@ class CatholicChristmasDayTest extends UkraineBaseTestCase implements HolidayTes
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {
@@ -91,9 +86,9 @@ class CatholicChristmasDayTest extends UkraineBaseTestCase implements HolidayTes
     /**
      * Returns a list of random test dates used for assertion of Catholic Christmas Day.
      *
-     * @return array list of test dates for Catholic Christmas Day
+     * @return array<array> list of test dates for Catholic Christmas Day
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function CatholicChristmasDayDataProvider(): array
     {

@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,10 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\SouthKorea;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -45,8 +41,7 @@ class ArmedForcesDayTest extends SouthKoreaBaseTestCase implements HolidayTestCa
     /**
      * Tests the holiday defined in this test.
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHoliday(): void
     {
@@ -55,14 +50,14 @@ class ArmedForcesDayTest extends SouthKoreaBaseTestCase implements HolidayTestCa
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-10-1", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-10-1", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests the holiday defined in this test after removal.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayAfterRemoval(): void
     {
@@ -76,7 +71,7 @@ class ArmedForcesDayTest extends SouthKoreaBaseTestCase implements HolidayTestCa
     /**
      * Tests the holiday defined in this test before establishment.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -90,7 +85,7 @@ class ArmedForcesDayTest extends SouthKoreaBaseTestCase implements HolidayTestCa
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -105,7 +100,7 @@ class ArmedForcesDayTest extends SouthKoreaBaseTestCase implements HolidayTestCa
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

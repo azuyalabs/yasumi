@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Australia\NewSouthWales;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\ProviderTestCase;
 
@@ -26,10 +25,12 @@ class NewSouthWalesTest extends NewSouthWalesBaseTestCase implements ProviderTes
     /**
      * @var int year random year number used for all tests in this Test Case
      */
-    protected $year;
+    protected int $year;
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,12 +39,10 @@ class NewSouthWalesTest extends NewSouthWalesBaseTestCase implements ProviderTes
 
     /**
      * Tests if all official holidays in New South Wales (Australia) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
-        $this->assertDefinedHolidays([
+        $holidays = [
             'newYearsDay',
             'goodFriday',
             'easterMonday',
@@ -55,13 +54,17 @@ class NewSouthWalesTest extends NewSouthWalesBaseTestCase implements ProviderTes
             'easterSaturday',
             'queensBirthday',
             'labourDay',
-        ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
+        ];
+
+        if (2022 == $this->year) {
+            $holidays[] = 'nationalDayOfMourning';
+        }
+
+        $this->assertDefinedHolidays($holidays, $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
      * Tests if all bank holidays in New South Wales (Australia) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -71,7 +74,8 @@ class NewSouthWalesTest extends NewSouthWalesBaseTestCase implements ProviderTes
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

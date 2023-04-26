@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,10 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Portugal;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -44,26 +40,23 @@ class AllSaintsDayTest extends PortugalBaseTestCase implements HolidayTestCase
     /**
      * Tests the holiday defined in this test.
      *
-     * @throws ReflectionException
-     * @throws Exception
-     * @throws ReflectionException
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHoliday(): void
     {
         $year = 2016;
-        $expected = new DateTime("$year-11-01", new DateTimeZone(self::TIMEZONE));
+        $expected = new \DateTime("$year-11-01", new \DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
 
         $year = 2012;
-        $expected = new DateTime("$year-11-01", new DateTimeZone(self::TIMEZONE));
+        $expected = new \DateTime("$year-11-01", new \DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
      * Test that the holiday did not happen in 2013-2015.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testNotHoliday(): void
     {
@@ -74,7 +67,7 @@ class AllSaintsDayTest extends PortugalBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of Corpus Christi.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -90,7 +83,7 @@ class AllSaintsDayTest extends PortugalBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Spain;
 
-use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
@@ -44,7 +42,6 @@ class BalearicIslands extends Spain
     /**
      * Initialize holidays for Balearic Islands (Spain).
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -72,7 +69,6 @@ class BalearicIslands extends Spain
      *
      * @see https://www.timeanddate.com/holidays/spain/the-balearic-islands-day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -86,7 +82,7 @@ class BalearicIslands extends Spain
                     'ca' => 'Diada de les Illes Balears',
                     'es' => 'Día de les Illes Balears',
                 ],
-                new DateTime("$this->year-3-1", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("$this->year-3-1", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

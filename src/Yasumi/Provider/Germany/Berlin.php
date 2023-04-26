@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Germany;
 
-use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\DateTimeZoneFactory;
@@ -42,7 +40,6 @@ class Berlin extends Germany
     /**
      * Initialize holidays for Berlin (Germany).
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -73,7 +70,6 @@ class Berlin extends Germany
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws InvalidDateException
      * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
@@ -86,7 +82,7 @@ class Berlin extends Germany
         return new Holiday(
             'dayOfLiberation',
             [],
-            new DateTime('2020-05-08', DateTimeZoneFactory::getDateTimeZone($timezone)),
+            new \DateTime('2020-05-08', DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );

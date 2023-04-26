@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,17 +14,11 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Base;
 
-use InvalidArgumentException;
 use org\bovigo\vfs\vfsStream;
 use PHPUnit\Framework\TestCase;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Translations;
 
-/**
- * Class TranslationsTest.
- *
- * Contains tests for testing the Translations class
- */
 class TranslationsTest extends TestCase
 {
     public const LOCALES = [
@@ -33,9 +27,6 @@ class TranslationsTest extends TestCase
         'pl_PL',
     ];
 
-    /**
-     * Tests adding single translation.
-     */
     public function testAddTranslation(): void
     {
         $translations = new Translations(self::LOCALES);
@@ -58,9 +49,6 @@ class TranslationsTest extends TestCase
         self::assertEquals($translation, $translations->getTranslation($key, $locale));
     }
 
-    /**
-     * Tests adding multiple translations.
-     */
     public function testAddMultipleTranslations(): void
     {
         $translations = new Translations(self::LOCALES);
@@ -111,9 +99,6 @@ class TranslationsTest extends TestCase
         self::assertEquals($thirdTranslation, $translations->getTranslation($thirdIdentifier, $thirdLocale));
     }
 
-    /**
-     * Tests that an UnknownLocaleException is thrown when adding translation for unknown locale.
-     */
     public function testAddTranslationUnknownLocaleException(): void
     {
         $this->expectException(UnknownLocaleException::class);
@@ -127,9 +112,6 @@ class TranslationsTest extends TestCase
         $translations->addTranslation($key, $unknownLocale, $translation);
     }
 
-    /**
-     * Tests that no translation is returned for an unknown holiday.
-     */
     public function testNoTranslationForUnknownHoliday(): void
     {
         $translations = new Translations(self::LOCALES);
@@ -146,9 +128,6 @@ class TranslationsTest extends TestCase
         self::assertEmpty($translations->getTranslations($unknownIdentifier));
     }
 
-    /**
-     * Tests that no translation is returned for not translated locale.
-     */
     public function testNoTranslationForNotTranslatedLocale(): void
     {
         $translations = new Translations(self::LOCALES);
@@ -164,9 +143,6 @@ class TranslationsTest extends TestCase
         self::assertNull($translations->getTranslation($key, $unknownLocale));
     }
 
-    /**
-     * Tests loading one translation file from directory.
-     */
     public function testLoadingTranslationsFromDirectory(): void
     {
         $key = 'newYearsDay';
@@ -193,9 +169,6 @@ FILE;
         self::assertEquals($translation, $translations->getTranslation($key, $locale));
     }
 
-    /**
-     * Tests that translation is not loaded from file with invalid extension.
-     */
     public function testNotLoadingTranslationsFromFileWithInvalidExtension(): void
     {
         $key = 'newYearsDay';
@@ -217,9 +190,6 @@ FILE;
         self::assertEmpty($translations->getTranslations($key));
     }
 
-    /**
-     * Tests that an UnknownLocaleException is thrown when loading translation with unknown locale(s).
-     */
     public function testLoadingTranslationsFromDirectoryWithUnknownLocaleException(): void
     {
         $this->expectException(UnknownLocaleException::class);
@@ -239,12 +209,9 @@ FILE;
         $translations->loadTranslations(vfsStream::url('root/lang'));
     }
 
-    /**
-     * Tests that an InvalidArgumentException is thrown when loading translation from inexistent directory.
-     */
     public function testLoadingTranslationsFromInexistentDirectory(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         vfsStream::setup();
 
@@ -252,9 +219,6 @@ FILE;
         $translations->loadTranslations(vfsStream::url('root/lang'));
     }
 
-    /**
-     * Tests loading more than one translation file from directory.
-     */
     public function testLoadingMultipleTranslationsFromDirectory(): void
     {
         $firstIdentifier = 'newYearsDay';

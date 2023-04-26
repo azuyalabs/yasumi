@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,10 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Germany;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -39,8 +35,7 @@ class ReformationDay2017Test extends GermanyBaseTestCase implements HolidayTestC
     /**
      * Test the holiday defined in this test upon establishment.
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayOnEstablishment(): void
     {
@@ -48,14 +43,14 @@ class ReformationDay2017Test extends GermanyBaseTestCase implements HolidayTestC
             self::REGION,
             self::HOLIDAY,
             self::ESTABLISHMENT_YEAR,
-            new DateTime(self::ESTABLISHMENT_YEAR.'-10-31', new DateTimeZone(self::TIMEZONE))
+            new \DateTime(self::ESTABLISHMENT_YEAR.'-10-31', new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Test the holiday defined in this test before establishment.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -69,7 +64,7 @@ class ReformationDay2017Test extends GermanyBaseTestCase implements HolidayTestC
     /**
      * Test the holiday defined in this test after completion.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayAfterCompletion(): void
     {
@@ -79,7 +74,7 @@ class ReformationDay2017Test extends GermanyBaseTestCase implements HolidayTestC
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -94,7 +89,7 @@ class ReformationDay2017Test extends GermanyBaseTestCase implements HolidayTestC
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,10 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Netherlands;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -39,8 +35,7 @@ class KingsDayTest extends NetherlandsBaseTestCase implements HolidayTestCase
     /**
      * Tests Kings Day on or after 2014. King's Day is celebrated from 2014 onwards on April 27th.
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testKingsDayOnAfter2014(): void
     {
@@ -49,15 +44,14 @@ class KingsDayTest extends NetherlandsBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-4-27", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-4-27", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests Kings Day substituted on Saturday (when Kings Day falls on a Sunday).
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testKingsDayOnAfter2014SubstitutedDay(): void
     {
@@ -66,14 +60,14 @@ class KingsDayTest extends NetherlandsBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-4-26", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-4-26", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests Kings Day before 2014. King's Day is celebrated from 2014 onwards on April 27th.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testKingsDayBefore2014(): void
     {
@@ -87,7 +81,7 @@ class KingsDayTest extends NetherlandsBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -102,7 +96,7 @@ class KingsDayTest extends NetherlandsBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

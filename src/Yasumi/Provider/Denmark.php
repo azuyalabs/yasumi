@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,8 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
@@ -37,7 +35,6 @@ class Denmark extends AbstractProvider
     /**
      * Initialize holidays for Denmark.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -94,7 +91,6 @@ class Denmark extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Store_Bededag
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -107,7 +103,7 @@ class Denmark extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'greatPrayerDay',
                 ['da' => 'store bededag'],
-                new DateTime("fourth friday $easter", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("fourth friday $easter", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -124,7 +120,6 @@ class Denmark extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Constitution_Day_(Denmark)
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -135,7 +130,7 @@ class Denmark extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'constitutionDay',
                 ['da' => 'grundlovsdag'],
-                new DateTime("$this->year-6-5", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("$this->year-6-5", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OBSERVANCE
             ));

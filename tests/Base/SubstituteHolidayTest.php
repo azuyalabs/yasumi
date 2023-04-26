@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Base;
 
-use DateTime;
-use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
@@ -23,27 +21,18 @@ use Yasumi\SubstituteHoliday;
 use Yasumi\tests\YasumiBase;
 use Yasumi\TranslationsInterface;
 
-/**
- * Class SubstituteHolidayTest.
- *
- * Contains tests for testing the SubstituteHoliday class
- */
 class SubstituteHolidayTest extends TestCase
 {
     use YasumiBase;
 
-    /**
-     * Tests that an UnknownLocaleException is thrown in case an invalid locale is given.
-     *
-     * @throws \Exception
-     */
+    /** @throws \Exception */
     public function testCreateSubstituteHolidayUnknownLocaleException(): void
     {
-        $holiday = new Holiday('testHoliday', [], new DateTime());
+        $holiday = new Holiday('testHoliday', [], new \DateTime());
 
         $this->expectException(UnknownLocaleException::class);
 
-        new SubstituteHoliday($holiday, [], new DateTime(), 'wx-YZ');
+        new SubstituteHoliday($holiday, [], new \DateTime(), 'wx-YZ');
     }
 
     /**
@@ -53,38 +42,30 @@ class SubstituteHolidayTest extends TestCase
      */
     public function testCreateSubstituteHolidaySameDate(): void
     {
-        $holiday = new Holiday('testHoliday', [], new DateTime('2019-01-01'));
+        $holiday = new Holiday('testHoliday', [], new \DateTime('2019-01-01'));
 
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
-        new SubstituteHoliday($holiday, [], new DateTime('2019-01-01'));
+        new SubstituteHoliday($holiday, [], new \DateTime('2019-01-01'));
     }
 
-    /**
-     * Tests the constructor.
-     *
-     * @throws \Exception
-     */
+    /** @throws \Exception */
     public function testConstructor(): void
     {
-        $holiday = new Holiday('testHoliday', [], new DateTime('2019-01-01'), 'en_US', Holiday::TYPE_BANK);
-        $substitute = new SubstituteHoliday($holiday, [], new DateTime('2019-01-02'), 'en_US', Holiday::TYPE_SEASON);
+        $holiday = new Holiday('testHoliday', [], new \DateTime('2019-01-01'), 'en_US', Holiday::TYPE_BANK);
+        $substitute = new SubstituteHoliday($holiday, [], new \DateTime('2019-01-02'), 'en_US', Holiday::TYPE_SEASON);
 
         self::assertSame($holiday, $substitute->getSubstitutedHoliday());
         self::assertEquals('substituteHoliday:testHoliday', $substitute->getKey());
         self::assertEquals(Holiday::TYPE_SEASON, $substitute->getType());
-        self::assertEquals(new DateTime('2019-01-02'), $substitute);
+        self::assertEquals(new \DateTime('2019-01-02'), $substitute);
     }
 
-    /**
-     * Tests that a Yasumi holiday instance can be serialized to a JSON object.
-     *
-     * @throws \Exception
-     */
+    /** @throws \Exception */
     public function testSubstituteHolidayIsJsonSerializable(): void
     {
-        $holiday = new Holiday('testHoliday', [], new DateTime('2019-01-01'), 'en_US');
-        $substitute = new SubstituteHoliday($holiday, [], new DateTime('2019-01-02'), 'en_US');
+        $holiday = new Holiday('testHoliday', [], new \DateTime('2019-01-01'), 'en_US');
+        $substitute = new SubstituteHoliday($holiday, [], new \DateTime('2019-01-02'), 'en_US');
         $json = json_encode($substitute, JSON_THROW_ON_ERROR);
         $instance = json_decode($json, true, 512, JSON_THROW_ON_ERROR);
 
@@ -94,17 +75,12 @@ class SubstituteHolidayTest extends TestCase
         self::assertArrayHasKey('substitutedHoliday', $instance);
     }
 
-    /**
-     * Tests that a Yasumi holiday instance can be created using an object that implements the DateTimeInterface (e.g.
-     * DateTime or DateTimeImmutable).
-     *
-     * @throws \Exception
-     */
+    /** @throws \Exception */
     public function testSubstituteHolidayWithDateTimeInterface(): void
     {
         // Assert with DateTime instance
-        $holiday = new Holiday('testHoliday', [], new DateTime('2019-01-01'), 'en_US');
-        $substitute = new SubstituteHoliday($holiday, [], new DateTime('2019-01-02'), 'en_US');
+        $holiday = new Holiday('testHoliday', [], new \DateTime('2019-01-01'), 'en_US');
+        $substitute = new SubstituteHoliday($holiday, [], new \DateTime('2019-01-02'), 'en_US');
         self::assertNotNull($holiday);
         self::assertInstanceOf(SubstituteHoliday::class, $substitute);
 
@@ -114,33 +90,25 @@ class SubstituteHolidayTest extends TestCase
         self::assertInstanceOf(SubstituteHoliday::class, $substitute);
     }
 
-    /**
-     * Tests the getName function of the SubstituteHoliday object with no translations for the name given.
-     *
-     * @throws \Exception
-     */
+    /** @throws \Exception */
     public function testSubstituteHolidayGetNameWithNoTranslations(): void
     {
         $name = 'testHoliday';
-        $holiday = new Holiday($name, [], new DateTime('2019-01-01'));
-        $substitute = new SubstituteHoliday($holiday, [], new DateTime('2019-01-02'), 'en_US');
+        $holiday = new Holiday($name, [], new \DateTime('2019-01-01'));
+        $substitute = new SubstituteHoliday($holiday, [], new \DateTime('2019-01-02'), 'en_US');
 
         self::assertIsString($substitute->getName());
         self::assertEquals('substituteHoliday:'.$name, $substitute->getName());
     }
 
-    /**
-     * Tests the getName function of the SubstituteHoliday object when it has a custom translation.
-     *
-     * @throws \Exception
-     */
+    /** @throws \Exception */
     public function testSubstituteHolidayGetNameWithCustomSubstituteTranslation(): void
     {
         $name = 'testHoliday';
         $translation = 'My Holiday';
         $locale = 'en_US';
-        $holiday = new Holiday($name, [$locale => 'foo'], new DateTime('2019-01-01'), $locale);
-        $substitute = new SubstituteHoliday($holiday, [$locale => $translation], new DateTime('2019-01-02'), $locale);
+        $holiday = new Holiday($name, [$locale => 'foo'], new \DateTime('2019-01-01'), $locale);
+        $substitute = new SubstituteHoliday($holiday, [$locale => $translation], new \DateTime('2019-01-02'), $locale);
 
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
         $translationsStub
@@ -159,18 +127,14 @@ class SubstituteHolidayTest extends TestCase
         self::assertEquals($translation, $substitute->getName());
     }
 
-    /**
-     * Tests the getName function of the SubstituteHoliday object when substitute holiday pattern uses fallback.
-     *
-     * @throws \Exception
-     */
+    /** @throws \Exception */
     public function testSubstituteHolidayGetNameWithPatternFallback(): void
     {
         $name = 'testHoliday';
         $translation = 'My Holiday';
         $locale = 'en_US';
-        $holiday = new Holiday($name, [], new DateTime('2019-01-01'), $locale);
-        $substitute = new SubstituteHoliday($holiday, [], new DateTime('2019-01-02'), $locale);
+        $holiday = new Holiday($name, [], new \DateTime('2019-01-01'), $locale);
+        $substitute = new SubstituteHoliday($holiday, [], new \DateTime('2019-01-02'), $locale);
 
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
         $translationsStub
@@ -189,18 +153,14 @@ class SubstituteHolidayTest extends TestCase
         self::assertEquals('My Holiday obs', $substitute->getName());
     }
 
-    /**
-     * Tests the getName function of the SubstituteHoliday object when it has a global translation.
-     *
-     * @throws \Exception
-     */
+    /** @throws \Exception */
     public function testSubstituteHolidayGetNameWithGlobalSubstituteTranslation(): void
     {
         $name = 'testHoliday';
         $translation = 'My Substitute';
         $locale = 'en_US';
-        $holiday = new Holiday($name, [$locale => 'foo'], new DateTime('2019-01-01'), $locale);
-        $substitute = new SubstituteHoliday($holiday, [$locale => $translation], new DateTime('2019-01-02'), $locale);
+        $holiday = new Holiday($name, [$locale => 'foo'], new \DateTime('2019-01-01'), $locale);
+        $substitute = new SubstituteHoliday($holiday, [$locale => $translation], new \DateTime('2019-01-02'), $locale);
 
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
         $translationsStub
@@ -219,18 +179,14 @@ class SubstituteHolidayTest extends TestCase
         self::assertEquals($translation, $substitute->getName());
     }
 
-    /**
-     * Tests the getName function of the SubstituteHoliday object when only the substituted holiday has a translation.
-     *
-     * @throws \Exception
-     */
+    /** @throws \Exception */
     public function testSubstituteHolidayGetNameWithSubstitutedTranslation(): void
     {
         $name = 'testHoliday';
         $translation = 'My Holiday';
         $locale = 'en_US';
-        $holiday = new Holiday($name, [$locale => $translation], new DateTime('2019-01-01'), $locale);
-        $substitute = new SubstituteHoliday($holiday, [], new DateTime('2019-01-02'), $locale);
+        $holiday = new Holiday($name, [$locale => $translation], new \DateTime('2019-01-01'), $locale);
+        $substitute = new SubstituteHoliday($holiday, [], new \DateTime('2019-01-02'), $locale);
 
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
         $translationsStub

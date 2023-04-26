@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Switzerland;
 
-use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
@@ -41,7 +39,6 @@ class Jura extends Switzerland
     /**
      * Initialize holidays for Jura (Switzerland).
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -78,7 +75,6 @@ class Jura extends Switzerland
      *
      * @see https://fr.wikipedia.org/wiki/Pl%C3%A9biscite_jurassien
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -91,7 +87,7 @@ class Jura extends Switzerland
                 [
                     'fr' => 'Commémoration du plébiscite jurassien',
                 ],
-                new DateTime($this->year.'-06-23', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime($this->year.'-06-23', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OTHER
             ));

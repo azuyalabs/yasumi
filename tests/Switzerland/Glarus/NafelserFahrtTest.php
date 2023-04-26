@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,10 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Switzerland\Glarus;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -39,13 +35,12 @@ class NafelserFahrtTest extends GlarusBaseTestCase implements HolidayTestCase
     /**
      * Tests Näfelser Fahrt on or after 1389.
      *
-     * @throws ReflectionException
-     * @throws Exception
+     * @throws \Exception
      */
     public function testNafelserFahrtOnAfter1389(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $date = new DateTime('First Thursday of '.$year.'-04', new DateTimeZone(self::TIMEZONE));
+        $date = new \DateTime('First Thursday of '.$year.'-04', new \DateTimeZone(self::TIMEZONE));
 
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
     }
@@ -53,7 +48,7 @@ class NafelserFahrtTest extends GlarusBaseTestCase implements HolidayTestCase
     /**
      * Tests Näfelser Fahrt before 1389.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testNafelserFahrtBefore1389(): void
     {
@@ -64,7 +59,7 @@ class NafelserFahrtTest extends GlarusBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of Näfelser Fahrt.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -79,7 +74,7 @@ class NafelserFahrtTest extends GlarusBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

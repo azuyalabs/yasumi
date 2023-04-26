@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
@@ -36,7 +34,6 @@ class Italy extends AbstractProvider
     /**
      * Initialize holidays for Italy.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -83,10 +80,8 @@ class Italy extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Liberation_Day_%28Italy%29
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
      * @throws \Exception
      */
     private function calculateLiberationDay(): void
@@ -95,7 +90,7 @@ class Italy extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'liberationDay',
                 ['it' => 'Festa della Liberazione'],
-                new DateTime("$this->year-4-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("$this->year-4-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -111,10 +106,8 @@ class Italy extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Festa_della_Repubblica
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
      * @throws \Exception
      */
     private function calculateRepublicDay(): void
@@ -123,7 +116,7 @@ class Italy extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'republicDay',
                 ['it' => 'Festa della Repubblica'],
-                new DateTime("$this->year-6-2", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("$this->year-6-2", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

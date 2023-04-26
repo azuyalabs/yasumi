@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,8 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
@@ -37,7 +35,6 @@ class Canada extends AbstractProvider
     /**
      * Initialize holidays for Canada.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -75,7 +72,6 @@ class Canada extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Family_Day_(Canada)
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -89,7 +85,7 @@ class Canada extends AbstractProvider
         $this->addHoliday(new Holiday(
             'familyDay',
             [],
-            new DateTime("third monday of february $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("third monday of february $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -99,7 +95,6 @@ class Canada extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Victoria_Day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -113,7 +108,7 @@ class Canada extends AbstractProvider
         $this->addHoliday(new Holiday(
             'victoriaDay',
             [],
-            new DateTime("last monday front of $this->year-05-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("last monday front of $this->year-05-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -123,7 +118,6 @@ class Canada extends AbstractProvider
      *
      * @see https://www.rcaanc-cirnac.gc.ca/eng/1100100013248/1534872397533
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -137,7 +131,7 @@ class Canada extends AbstractProvider
         $this->addHoliday(new Holiday(
             'nationalIndigenousPeoplesDay',
             [],
-            new DateTime("$this->year-06-21", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("$this->year-06-21", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -147,7 +141,6 @@ class Canada extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Civic_Holiday
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -161,7 +154,7 @@ class Canada extends AbstractProvider
         $this->addHoliday(new Holiday(
             'civicHoliday',
             [],
-            new DateTime("first monday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("first monday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -175,7 +168,6 @@ class Canada extends AbstractProvider
      * by statute, Canada Day is July 1 if that day is not Sunday, and July 2 if July 1 is a Sunday.
 
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -185,9 +177,9 @@ class Canada extends AbstractProvider
         if ($this->year < 1983) {
             return;
         }
-        $date = new DateTime($this->year.'-07-01', DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime($this->year.'-07-01', DateTimeZoneFactory::getDateTimeZone($this->timezone));
         if (7 === (int) $date->format('N')) {
-            $date = new DateTime($this->year.'-07-02', DateTimeZoneFactory::getDateTimeZone($this->timezone));
+            $date = new \DateTime($this->year.'-07-02', DateTimeZoneFactory::getDateTimeZone($this->timezone));
         }
         $this->addHoliday(new Holiday(
             'canadaDay',
@@ -202,7 +194,6 @@ class Canada extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Thanksgiving_(Canada)
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -216,7 +207,7 @@ class Canada extends AbstractProvider
         $this->addHoliday(new Holiday(
             'thanksgivingDay',
             [],
-            new DateTime("second monday of october $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("second monday of october $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -226,7 +217,6 @@ class Canada extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Remembrance_Day_(Canada)
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -240,7 +230,7 @@ class Canada extends AbstractProvider
         $this->addHoliday(new Holiday(
             'remembranceDay',
             [],
-            new DateTime("$this->year-11-11", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("$this->year-11-11", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -250,7 +240,6 @@ class Canada extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Labour_Day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -264,7 +253,7 @@ class Canada extends AbstractProvider
         $this->addHoliday(new Holiday(
             'labourDay',
             [],
-            new DateTime("first monday of september $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("first monday of september $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -274,7 +263,6 @@ class Canada extends AbstractProvider
      *
      * @see https://parl.ca/Content/Bills/432/Government/C-5/C-5_4/C-5_4.PDF, S. C. 2021, C.11.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -288,7 +276,7 @@ class Canada extends AbstractProvider
         $this->addHoliday(new Holiday(
             'truthAndReconciliationDay',
             [],
-            new DateTime("last day of september $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("last day of september $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }

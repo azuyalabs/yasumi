@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Switzerland\Ticino;
 
-use DateTime;
-use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\tests\HolidayTestCase;
@@ -38,12 +35,10 @@ class StJosephDayTest extends TicinoBaseTestCase implements HolidayTestCase
      *
      * @dataProvider StJosephDayDataProvider
      *
-     * @param int      $year     the year for which St. Joseph's Day needs to be tested
-     * @param DateTime $expected the expected date
-     *
-     * @throws ReflectionException
+     * @param int       $year     the year for which St. Joseph's Day needs to be tested
+     * @param \DateTime $expected the expected date
      */
-    public function testStJosephDay(int $year, DateTime $expected): void
+    public function testStJosephDay(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
@@ -51,9 +46,9 @@ class StJosephDayTest extends TicinoBaseTestCase implements HolidayTestCase
     /**
      * Returns a list of random test dates used for assertion of St. Joseph's Day.
      *
-     * @return array list of test dates for St. Joseph's Day
+     * @return array<array> list of test dates for St. Joseph's Day
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function StJosephDayDataProvider(): array
     {
@@ -63,7 +58,7 @@ class StJosephDayTest extends TicinoBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -78,7 +73,7 @@ class StJosephDayTest extends TicinoBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

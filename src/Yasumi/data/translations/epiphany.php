@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -16,9 +16,9 @@ declare(strict_types=1);
 // Translations for Epiphany
 return [
     'ca' => 'Epifania',
+    'de' => 'Heilige 3 Könige',
     'de_AT' => 'Heilige Drei Könige',
     'de_CH' => 'Heilige Drei Könige',
-    'de' => 'Heilige 3 Könige',
     'el' => 'Θεοφάνεια',
     'en' => 'Epiphany',
     'es' => 'Día de Reyes',

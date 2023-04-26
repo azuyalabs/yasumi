@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,10 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\SouthKorea;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,8 +36,7 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     /**
      * Tests the holiday defined in this test.
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHoliday(): void
     {
@@ -50,33 +45,32 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-5-5", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-5-5", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests the substitute holiday defined in this test (conflict with Buddha's Birthday).
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSubstituteHolidayByBuddhasBirthday(): void
     {
-        $tz = new DateTimeZone(self::TIMEZONE);
+        $tz = new \DateTimeZone(self::TIMEZONE);
 
         foreach ([2025, 2044] as $year) {
             $this->assertHoliday(
                 self::REGION,
                 'buddhasBirthday',
                 $year,
-                new DateTime("$year-5-5", $tz)
+                new \DateTime("$year-5-5", $tz)
             );
 
             $this->assertSubstituteHoliday(
                 self::REGION,
                 'buddhasBirthday',
                 $year,
-                new DateTime("$year-5-6", $tz)
+                new \DateTime("$year-5-6", $tz)
             );
         }
     }
@@ -84,12 +78,11 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     /**
      * Tests the substitute holiday defined in this test.
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSubstituteHoliday(): void
     {
-        $tz = new DateTimeZone(self::TIMEZONE);
+        $tz = new \DateTimeZone(self::TIMEZONE);
 
         // Before 2022
         $this->assertNotSubstituteHoliday(self::REGION, self::HOLIDAY, 2013);
@@ -97,7 +90,7 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             2019,
-            new DateTime('2019-5-6', $tz)
+            new \DateTime('2019-5-6', $tz)
         );
 
         // By saturday
@@ -105,7 +98,7 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             2029,
-            new DateTime('2029-5-7', $tz)
+            new \DateTime('2029-5-7', $tz)
         );
 
         // By sunday
@@ -113,14 +106,14 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             2024,
-            new DateTime('2024-5-6', $tz)
+            new \DateTime('2024-5-6', $tz)
         );
     }
 
     /**
      * Tests the holiday defined in this test before establishment.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -134,7 +127,7 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -149,7 +142,7 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

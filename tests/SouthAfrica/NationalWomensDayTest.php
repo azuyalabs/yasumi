@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,11 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\SouthAfrica;
 
-use DateInterval;
-use DateTime;
-use DateTimeZone;
-use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -49,17 +44,16 @@ class NationalWomensDayTest extends SouthAfricaBaseTestCase implements HolidayTe
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
-     * @throws ReflectionException
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHoliday(int $year, string $expected): void
     {
-        $date = new DateTime($expected, new DateTimeZone(self::TIMEZONE));
+        $date = new \DateTime($expected, new \DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
 
         // Whenever any public holiday falls on a Sunday, the Monday following on it shall be a public holiday.
         if (0 === (int) $date->format('w')) {
-            $date->add(new DateInterval('P1D'));
+            $date->add(new \DateInterval('P1D'));
             $this->assertHoliday(self::REGION, 'substituteHoliday:'.self::HOLIDAY, $year, $date);
         }
     }
@@ -67,9 +61,9 @@ class NationalWomensDayTest extends SouthAfricaBaseTestCase implements HolidayTe
     /**
      * Returns a list of random test dates used for assertion of the holiday defined in this test.
      *
-     * @return array list of test dates for the holiday defined in this test
+     * @return array<array> list of test dates for the holiday defined in this test
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function HolidayDataProvider(): array
     {
@@ -77,7 +71,7 @@ class NationalWomensDayTest extends SouthAfricaBaseTestCase implements HolidayTe
 
         for ($y = 0; $y < 50; ++$y) {
             $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-            $date = new DateTime("$year-8-9", new DateTimeZone(self::TIMEZONE));
+            $date = new \DateTime("$year-8-9", new \DateTimeZone(self::TIMEZONE));
             $data[] = [$year, $date->format('Y-m-d')];
         }
 
@@ -87,7 +81,7 @@ class NationalWomensDayTest extends SouthAfricaBaseTestCase implements HolidayTe
     /**
      * Tests the holiday defined in this test before establishment.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -101,7 +95,7 @@ class NationalWomensDayTest extends SouthAfricaBaseTestCase implements HolidayTe
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -116,7 +110,7 @@ class NationalWomensDayTest extends SouthAfricaBaseTestCase implements HolidayTe
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

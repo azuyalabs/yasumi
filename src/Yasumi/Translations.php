@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,8 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi;
 
-use DirectoryIterator;
-use InvalidArgumentException;
 use Yasumi\Exception\UnknownLocaleException;
 
 /**
@@ -25,7 +23,7 @@ use Yasumi\Exception\UnknownLocaleException;
 class Translations implements TranslationsInterface
 {
     /**
-     * @var array<string,array> translations array: ['<holiday key>' => ['<locale>' => 'translation', ...], ... ]
+     * @var array<string, array<string, string>> translations array: ['<holiday key>' => ['<locale>' => 'translation', ...], ... ]
      */
     public array $translations = [];
 
@@ -50,19 +48,23 @@ class Translations implements TranslationsInterface
      * @param string $directoryPath directory path for translation files
      *
      * @throws UnknownLocaleException
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      */
     public function loadTranslations(string $directoryPath): void
     {
         if (!file_exists($directoryPath)) {
-            throw new InvalidArgumentException('Directory with translations not found');
+            throw new \InvalidArgumentException('Directory with translations not found');
         }
 
         $directoryPath = rtrim($directoryPath, '/\\').DIRECTORY_SEPARATOR;
         $extension = 'php';
 
-        foreach (new DirectoryIterator($directoryPath) as $file) {
-            if ($file->isDot() || $file->isDir()) {
+        foreach (new \DirectoryIterator($directoryPath) as $file) {
+            if ($file->isDot()) {
+                continue;
+            }
+
+            if ($file->isDir()) {
                 continue;
             }
 
@@ -115,8 +117,11 @@ class Translations implements TranslationsInterface
      */
     public function getTranslation(string $key, string $locale): ?string
     {
-        if (!\array_key_exists($key, $this->translations)
-            || !\array_key_exists($locale, $this->translations[$key])) {
+        if (!\array_key_exists($key, $this->translations)) {
+            return null;
+        }
+
+        if (!\array_key_exists($locale, $this->translations[$key])) {
             return null;
         }
 

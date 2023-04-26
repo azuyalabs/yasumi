@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
@@ -30,7 +29,6 @@ class Turkey extends AbstractProvider
     public const ID = 'TR';
 
     /**
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -49,7 +47,6 @@ class Turkey extends AbstractProvider
         $this->addRepublicDay();
     }
 
-    /** {@inheritdoc} */
     public function getSources(): array
     {
         return [
@@ -176,7 +173,7 @@ class Turkey extends AbstractProvider
      */
     private function addRepublicDay(): void
     {
-        if (1923 > $this->year) {
+        if (1924 > $this->year) {
             return;
         }
 

@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\France;
 
-use DateTime;
-use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -35,12 +32,10 @@ class AllSaintsDayTest extends FranceBaseTestCase implements HolidayTestCase
      *
      * @dataProvider AllSaintsDayDataProvider
      *
-     * @param int      $year     the year for which All Saints' Day needs to be tested
-     * @param DateTime $expected the expected date
-     *
-     * @throws ReflectionException
+     * @param int       $year     the year for which All Saints' Day needs to be tested
+     * @param \DateTime $expected the expected date
      */
-    public function testAllSaintsDay(int $year, DateTime $expected): void
+    public function testAllSaintsDay(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
@@ -48,7 +43,7 @@ class AllSaintsDayTest extends FranceBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of All Saints' Day.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -63,7 +58,7 @@ class AllSaintsDayTest extends FranceBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {
@@ -73,9 +68,9 @@ class AllSaintsDayTest extends FranceBaseTestCase implements HolidayTestCase
     /**
      * Returns a list of random test dates used for assertion of All Saints' Day.
      *
-     * @return array list of test dates for All Saints' Day
+     * @return array<array> list of test dates for All Saints' Day
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function AllSaintsDayDataProvider(): array
     {

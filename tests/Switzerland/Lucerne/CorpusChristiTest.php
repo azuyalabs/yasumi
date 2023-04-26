@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Switzerland\Lucerne;
 
-use DateInterval;
-use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\tests\HolidayTestCase;
@@ -36,8 +33,7 @@ class CorpusChristiTest extends LucerneBaseTestCase implements HolidayTestCase
     /**
      * Tests Corpus Christi.
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testCorpusChristi(): void
     {
@@ -46,14 +42,14 @@ class CorpusChristiTest extends LucerneBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            $this->calculateEaster($year, self::TIMEZONE)->add(new DateInterval('P60D'))
+            $this->calculateEaster($year, self::TIMEZONE)->add(new \DateInterval('P60D'))
         );
     }
 
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -68,7 +64,7 @@ class CorpusChristiTest extends LucerneBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

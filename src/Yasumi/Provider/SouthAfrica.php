@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,9 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use DateInterval;
-use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\SubstituteHoliday;
@@ -43,7 +40,6 @@ class SouthAfrica extends AbstractProvider
     /**
      * Initialize holidays for South Africa.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -101,7 +97,6 @@ class SouthAfrica extends AbstractProvider
      *
      * @see https://www.gov.za/about-sa/public-holidays#21march
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -111,7 +106,7 @@ class SouthAfrica extends AbstractProvider
         $this->addHoliday(new Holiday(
             'humanRightsDay',
             ['en' => 'Human Rights Day'],
-            new DateTime($this->year.'-3-21', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-3-21', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -123,7 +118,6 @@ class SouthAfrica extends AbstractProvider
      *
      * @see https://www.gov.za/documents/public-holidays-act
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -133,7 +127,7 @@ class SouthAfrica extends AbstractProvider
         $this->addHoliday(new Holiday(
             'familyDay',
             ['en' => 'Family Day'],
-            $this->calculateEaster($this->year, $this->timezone)->add(new DateInterval('P1D')),
+            $this->calculateEaster($this->year, $this->timezone)->add(new \DateInterval('P1D')),
             $this->locale
         ));
     }
@@ -146,7 +140,6 @@ class SouthAfrica extends AbstractProvider
      * @see https://www.gov.za/documents/public-holidays-act
      * @see https://www.gov.za/freedom-day-2014
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -156,7 +149,7 @@ class SouthAfrica extends AbstractProvider
         $this->addHoliday(new Holiday(
             'freedomDay',
             ['en' => 'Freedom Day'],
-            new DateTime($this->year.'-4-27', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-4-27', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -173,7 +166,6 @@ class SouthAfrica extends AbstractProvider
      * @see https://www.gov.za/documents/public-holidays-act
      * @see https://www.gov.za/youth-day-2014
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -183,7 +175,7 @@ class SouthAfrica extends AbstractProvider
         $this->addHoliday(new Holiday(
             'youthDay',
             ['en' => 'Youth Day'],
-            new DateTime($this->year.'-6-16', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-6-16', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -196,7 +188,6 @@ class SouthAfrica extends AbstractProvider
      *
      * @see https://www.gov.za/speeches/president-jacob-zuma-declares-3-august-2016-public-holiday-24-jun-2016-0000
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -210,7 +201,7 @@ class SouthAfrica extends AbstractProvider
         $this->addHoliday(new Holiday(
             '2016MunicipalElectionsDay',
             ['en' => '2016 Municipal Elections Day'],
-            new DateTime('2016-8-3', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime('2016-8-3', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -225,7 +216,6 @@ class SouthAfrica extends AbstractProvider
      * @see https://www.gov.za/about-sa/public-holidays#women
      * @see https://www.gov.za/womens-day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -235,7 +225,7 @@ class SouthAfrica extends AbstractProvider
         $this->addHoliday(new Holiday(
             'nationalWomensDay',
             ['en' => 'National Women’s Day'],
-            new DateTime($this->year.'-8-9', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-8-9', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -250,7 +240,6 @@ class SouthAfrica extends AbstractProvider
      * @see https://www.gov.za/documents/public-holidays-act
      * @see https://www.gov.za/heritage-day-2014
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -260,7 +249,7 @@ class SouthAfrica extends AbstractProvider
         $this->addHoliday(new Holiday(
             'heritageDay',
             ['en' => 'Heritage Day'],
-            new DateTime($this->year.'-9-24', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-9-24', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -277,7 +266,6 @@ class SouthAfrica extends AbstractProvider
      * @see https://www.gov.za/documents/public-holidays-act
      * @see https://www.gov.za/day-reconciliation-2014
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -287,7 +275,7 @@ class SouthAfrica extends AbstractProvider
         $this->addHoliday(new Holiday(
             'reconciliationDay',
             ['en' => 'Day of Reconciliation'],
-            new DateTime($this->year.'-12-16', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-12-16', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -303,7 +291,6 @@ class SouthAfrica extends AbstractProvider
      *
      * @see https://www.gov.za/documents/public-holidays-act
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -317,7 +304,7 @@ class SouthAfrica extends AbstractProvider
         $this->addHoliday(new Holiday(
             'substituteDayOfGoodwill',
             ['en' => 'Day of Goodwill observed'],
-            new DateTime('2016-12-27', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime('2016-12-27', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -328,7 +315,6 @@ class SouthAfrica extends AbstractProvider
      * The Public Holidays Act (Act No 36 of 1994) determines whenever any public holiday falls on a Sunday, the Monday
      * following on it shall be a public holiday.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -337,10 +323,14 @@ class SouthAfrica extends AbstractProvider
     {
         // Loop through all defined holidays
         foreach ($this->getHolidays() as $holiday) {
+            if (!$holiday instanceof Holiday) {
+                continue;
+            }
+
             // Substitute holiday is on a Monday in case the holiday falls on a Sunday
             if (0 === (int) $holiday->format('w')) {
                 $date = clone $holiday;
-                $date->add(new DateInterval('P1D'));
+                $date->add(new \DateInterval('P1D'));
 
                 $this->addHoliday(new SubstituteHoliday(
                     $holiday,

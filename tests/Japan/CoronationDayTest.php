@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,10 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Japan;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -37,8 +33,7 @@ class CoronationDayTest extends JapanBaseTestCase implements HolidayTestCase
     public const ESTABLISHMENT_YEAR = 2019;
 
     /**
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testEmperorsCoronationDay(): void
     {
@@ -46,12 +41,12 @@ class CoronationDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             2019,
-            new DateTime('2019-5-1', new DateTimeZone(self::TIMEZONE))
+            new \DateTime('2019-5-1', new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testEmperorsBirthdayBefore2019(): void
     {
@@ -63,7 +58,7 @@ class CoronationDayTest extends JapanBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testEmperorsBirthdayAfter2020(): void
     {
@@ -76,8 +71,6 @@ class CoronationDayTest extends JapanBaseTestCase implements HolidayTestCase
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     *
-     * @throws ReflectionException
      */
     public function testTranslation(): void
     {
@@ -91,8 +84,6 @@ class CoronationDayTest extends JapanBaseTestCase implements HolidayTestCase
 
     /**
      * Tests type of the holiday defined in this test.
-     *
-     * @throws ReflectionException
      */
     public function testHolidayType(): void
     {

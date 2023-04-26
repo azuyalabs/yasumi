@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\UnitedKingdom;
 
-use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\DateTimeZoneFactory;
@@ -42,7 +40,6 @@ class NorthernIreland extends UnitedKingdom
     /**
      * Initialize holidays for Northern Ireland (United Kingdom).
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -66,10 +63,8 @@ class NorthernIreland extends UnitedKingdom
      *
      * @see https://en.wikipedia.org/wiki/Saint_Patrick%27s_Day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
      * @throws \Exception
      */
     private function calculateStPatricksDay(): void
@@ -81,7 +76,7 @@ class NorthernIreland extends UnitedKingdom
         $holiday = new Holiday(
             'stPatricksDay',
             ['en' => 'St. Patrick’s Day'],
-            new DateTime($this->year.'-3-17', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-3-17', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
         );
@@ -112,10 +107,8 @@ class NorthernIreland extends UnitedKingdom
      *
      * @see https://en.wikipedia.org/wiki/The_Twelfth
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
      * @throws \Exception
      */
     private function calculateBattleOfTheBoyne(): void
@@ -127,7 +120,7 @@ class NorthernIreland extends UnitedKingdom
         $holiday = new Holiday(
             'battleOfTheBoyne',
             ['en' => 'Battle of the Boyne'],
-            new DateTime($this->year.'-7-12', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-7-12', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
         );

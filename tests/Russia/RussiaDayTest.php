@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,10 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Russia;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Russia;
 use Yasumi\tests\HolidayTestCase;
@@ -38,7 +34,7 @@ class RussiaDayTest extends RussiaBaseTestCase implements HolidayTestCase
     /**
      * Test if holiday is not defined before.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayBefore(): void
     {
@@ -52,8 +48,7 @@ class RussiaDayTest extends RussiaBaseTestCase implements HolidayTestCase
     /**
      * Test if holiday is defined after.
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayAfter(): void
     {
@@ -63,14 +58,12 @@ class RussiaDayTest extends RussiaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-06-12", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-06-12", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
-     * {@inheritdoc}
-     *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -89,9 +82,7 @@ class RussiaDayTest extends RussiaBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * {@inheritdoc}
-     *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

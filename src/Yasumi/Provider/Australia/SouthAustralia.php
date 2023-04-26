@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Australia;
 
-use DateInterval;
-use DateTime;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia;
@@ -85,7 +83,7 @@ class SouthAustralia extends Australia
         return new Holiday(
             'easterSaturday',
             ['en' => 'Easter Saturday'],
-            $this->calculateEaster($year, $timezone)->sub(new DateInterval('P1D')),
+            $this->calculateEaster($year, $timezone)->sub(new \DateInterval('P1D')),
             $locale,
             $type ?? Holiday::TYPE_OFFICIAL
         );
@@ -111,7 +109,7 @@ class SouthAustralia extends Australia
         $this->addHoliday(new Holiday(
             'queensBirthday',
             [],
-            new DateTime('second monday of june '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime('second monday of june '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));
@@ -124,7 +122,7 @@ class SouthAustralia extends Australia
      */
     private function calculateLabourDay(): void
     {
-        $date = new DateTime("first monday of october $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime("first monday of october $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
         $this->addHoliday(new Holiday('labourDay', ['en' => 'Labour Day'], $date, $this->locale));
     }
@@ -149,7 +147,7 @@ class SouthAustralia extends Australia
             $this->addHoliday(new Holiday(
                 'adelaideCup',
                 ['en' => 'Adelaide Cup'],
-                new DateTime($cupDay, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime($cupDay, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OFFICIAL
             ));
@@ -163,7 +161,7 @@ class SouthAustralia extends Australia
      */
     private function calculateProclamationDay(): void
     {
-        $christmasDay = new DateTime("$this->year-12-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $christmasDay = new \DateTime("$this->year-12-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
         $this->addHoliday(new Holiday(
             'christmasDay',
@@ -175,7 +173,7 @@ class SouthAustralia extends Australia
 
         switch ($christmasDay->format('w')) {
             case 0: // sunday
-                $christmasDay->add(new DateInterval('P1D'));
+                $christmasDay->add(new \DateInterval('P1D'));
                 $this->addHoliday(new Holiday(
                     'christmasHoliday',
                     ['en' => 'Christmas Holiday'],
@@ -183,13 +181,13 @@ class SouthAustralia extends Australia
                     $this->locale,
                     Holiday::TYPE_OFFICIAL
                 ));
-                $christmasDay->add(new DateInterval('P1D'));
+                $christmasDay->add(new \DateInterval('P1D'));
                 break;
             case 5: // friday
-                $christmasDay->add(new DateInterval('P3D'));
+                $christmasDay->add(new \DateInterval('P3D'));
                 break;
             case 6: // saturday
-                $christmasDay->add(new DateInterval('P2D'));
+                $christmasDay->add(new \DateInterval('P2D'));
                 $this->addHoliday(new Holiday(
                     'christmasHoliday',
                     ['en' => 'Christmas Holiday'],
@@ -197,10 +195,10 @@ class SouthAustralia extends Australia
                     $this->locale,
                     Holiday::TYPE_OFFICIAL
                 ));
-                $christmasDay->add(new DateInterval('P1D'));
+                $christmasDay->add(new \DateInterval('P1D'));
                 break;
             default: // monday-thursday
-                $christmasDay->add(new DateInterval('P1D'));
+                $christmasDay->add(new \DateInterval('P1D'));
                 break;
         }
 

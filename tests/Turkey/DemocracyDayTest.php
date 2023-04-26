@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Turkey;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 use Yasumi\Yasumi;
@@ -26,7 +25,7 @@ class DemocracyDayTest extends TurkeyBaseTestCase implements HolidayTestCase
     public const ESTABLISHMENT_YEAR = 2017;
 
     /**
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHoliday(): void
     {
@@ -41,7 +40,7 @@ class DemocracyDayTest extends TurkeyBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -53,7 +52,7 @@ class DemocracyDayTest extends TurkeyBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -66,7 +65,7 @@ class DemocracyDayTest extends TurkeyBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

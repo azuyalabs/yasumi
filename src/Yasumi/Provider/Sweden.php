@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use DateInterval;
-use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
@@ -37,7 +34,6 @@ class Sweden extends AbstractProvider
     /**
      * Initialize holidays for Sweden.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -90,7 +86,6 @@ class Sweden extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Twelfth_Night_(holiday)
      *
-     * @throws InvalidDateException
      * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
@@ -100,7 +95,7 @@ class Sweden extends AbstractProvider
         $this->addHoliday(new Holiday(
             'epiphanyEve',
             [],
-            new DateTime("$this->year-1-5", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("$this->year-1-5", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OBSERVANCE
         ));
@@ -117,7 +112,6 @@ class Sweden extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Walpurgis_Night
      *
-     * @throws InvalidDateException
      * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
@@ -127,7 +121,7 @@ class Sweden extends AbstractProvider
         $this->addHoliday(new Holiday(
             'walpurgisEve',
             [],
-            new DateTime("$this->year-4-30", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("$this->year-4-30", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OBSERVANCE
         ));
@@ -147,14 +141,13 @@ class Sweden extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Midsummer#Sweden
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateStJohnsHolidays(): void
     {
-        $date = new DateTime("$this->year-6-20 this saturday", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime("$this->year-6-20 this saturday", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $this->addHoliday(new Holiday(
             'stJohnsDay',
             [],
@@ -162,7 +155,7 @@ class Sweden extends AbstractProvider
             $this->locale
         ));
 
-        $date->sub(new DateInterval('P1D'));
+        $date->sub(new \DateInterval('P1D'));
         $this->addHoliday(new Holiday(
             'stJohnsEve',
             [],
@@ -188,14 +181,13 @@ class Sweden extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/All_Saints%27_Day
      * @see https://www.timeanddate.com/holidays/sweden/all-saints-day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateAllSaintsHolidays(): void
     {
-        $date = new DateTime("$this->year-10-31 this saturday", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime("$this->year-10-31 this saturday", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $this->addHoliday(new Holiday(
             'allSaintsDay',
             [],
@@ -203,7 +195,7 @@ class Sweden extends AbstractProvider
             $this->locale
         ));
 
-        $date->sub(new DateInterval('P1D'));
+        $date->sub(new \DateInterval('P1D'));
         $this->addHoliday(new Holiday(
             'allSaintsEve',
             [],
@@ -222,7 +214,6 @@ class Sweden extends AbstractProvider
      * Olympic Stadium, in honour of the election of King Gustav Vasa in 1523, as this was considered the foundation of
      * modern Sweden.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -243,7 +234,7 @@ class Sweden extends AbstractProvider
         $this->addHoliday(new Holiday(
             'nationalDay',
             ['sv' => $holidayName],
-            new DateTime("$this->year-6-6", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("$this->year-6-6", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }

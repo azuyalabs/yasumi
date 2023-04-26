@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Turkey;
 
-use DateTime;
-use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -27,20 +24,18 @@ class NewYearsDayTest extends TurkeyBaseTestCase implements HolidayTestCase
     /**
      * @dataProvider HolidayDataProvider
      *
-     * @param int      $year     the year for which the holiday defined in this test needs to be tested
-     * @param DateTime $expected the expected date
-     *
-     * @throws ReflectionException
+     * @param int       $year     the year for which the holiday defined in this test needs to be tested
+     * @param \DateTime $expected the expected date
      */
-    public function testHoliday(int $year, DateTime $expected): void
+    public function testHoliday(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
-     * @return array list of test dates for the holiday defined in this test
+     * @return array<array> list of test dates for the holiday defined in this test
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function HolidayDataProvider(): array
     {
@@ -48,7 +43,7 @@ class NewYearsDayTest extends TurkeyBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -61,7 +56,7 @@ class NewYearsDayTest extends TurkeyBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

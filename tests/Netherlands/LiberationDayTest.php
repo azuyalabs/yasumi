@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,10 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Netherlands;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -39,7 +35,7 @@ class LiberationDayTest extends NetherlandsBaseTestCase implements HolidayTestCa
     /**
      * Tests Liberation Day before 1947. Liberation Day was established after WWII in 1947.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testLiberationDayBefore1947(): void
     {
@@ -53,8 +49,7 @@ class LiberationDayTest extends NetherlandsBaseTestCase implements HolidayTestCa
     /**
      * Tests Liberation Day after 1947. Liberation Day was established after WWII in 1947.
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testLiberationDayOnAfter1947(): void
     {
@@ -63,14 +58,14 @@ class LiberationDayTest extends NetherlandsBaseTestCase implements HolidayTestCa
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-5-5", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-5-5", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -83,16 +78,28 @@ class LiberationDayTest extends NetherlandsBaseTestCase implements HolidayTestCa
     }
 
     /**
-     * Tests type of the holiday defined in this test.
+     * Tests Liberation Day official holiday type every 5 years, observance type on other years.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            $this->generateRandomYear(2001, 2004),
+            Holiday::TYPE_OBSERVANCE
+        );
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            2000,
+            Holiday::TYPE_OFFICIAL
+        );
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            2005,
             Holiday::TYPE_OFFICIAL
         );
     }

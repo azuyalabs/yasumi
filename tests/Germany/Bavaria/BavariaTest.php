@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Germany\Bavaria;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\ProviderTestCase;
 
@@ -30,6 +29,8 @@ class BavariaTest extends BavariaBaseTestCase implements ProviderTestCase
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,13 +39,12 @@ class BavariaTest extends BavariaBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all official holidays in Bavaria (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
+            'epiphany',
             'goodFriday',
             'easterMonday',
             'internationalWorkersDay',
@@ -60,8 +60,6 @@ class BavariaTest extends BavariaBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all observed holidays in Bavaria (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testObservedHolidays(): void
     {
@@ -70,8 +68,6 @@ class BavariaTest extends BavariaBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all seasonal holidays in Bavaria (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testSeasonalHolidays(): void
     {
@@ -80,8 +76,6 @@ class BavariaTest extends BavariaBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all bank holidays in Bavaria (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testBankHolidays(): void
     {
@@ -90,13 +84,11 @@ class BavariaTest extends BavariaBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all other holidays in Bavaria (Germany) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays(
-            ['epiphany'],
+            [],
             self::REGION,
             $this->year,
             Holiday::TYPE_OTHER
@@ -104,7 +96,8 @@ class BavariaTest extends BavariaBaseTestCase implements ProviderTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

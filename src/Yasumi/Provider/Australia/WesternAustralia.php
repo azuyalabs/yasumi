@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Australia;
 
-use DateTime;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia;
@@ -78,7 +77,7 @@ class WesternAustralia extends Australia
         $this->addHoliday(new Holiday(
             'queensBirthday',
             [],
-            new DateTime($birthDay, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($birthDay, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));
@@ -91,7 +90,7 @@ class WesternAustralia extends Australia
      */
     private function calculateLabourDay(): void
     {
-        $date = new DateTime("first monday of march $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime("first monday of march $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
         $this->addHoliday(new Holiday('labourDay', [], $date, $this->locale));
     }
@@ -109,7 +108,7 @@ class WesternAustralia extends Australia
         $this->addHoliday(new Holiday(
             'westernAustraliaDay',
             ['en' => 'Western Australia Day'],
-            new DateTime('first monday of june '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime('first monday of june '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));

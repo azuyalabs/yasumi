@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Australia\Tasmania;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\ProviderTestCase;
 
@@ -30,6 +29,8 @@ class TasmaniaTest extends TasmaniaBaseTestCase implements ProviderTestCase
 
     /**
      * Initial setup of this Test Case.
+     *
+     * @throws \Exception
      */
     protected function setUp(): void
     {
@@ -38,12 +39,10 @@ class TasmaniaTest extends TasmaniaBaseTestCase implements ProviderTestCase
 
     /**
      * Tests if all official holidays in Tasmania (Australia) are defined by the provider class.
-     *
-     * @throws ReflectionException
      */
     public function testOfficialHolidays(): void
     {
-        $this->assertDefinedHolidays([
+        $expectedHolidays = [
             'newYearsDay',
             'goodFriday',
             'easterMonday',
@@ -54,11 +53,16 @@ class TasmaniaTest extends TasmaniaBaseTestCase implements ProviderTestCase
             'queensBirthday',
             'eightHourDay',
             'recreationDay',
-        ], $this->region, $this->year, Holiday::TYPE_OFFICIAL);
+        ];
+        if (2022 == $this->year) {
+            $expectedHolidays[] = 'nationalDayOfMourning';
+        }
+        $this->assertDefinedHolidays($expectedHolidays, $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
+     * @throws \Exception
      */
     public function testSources(): void
     {

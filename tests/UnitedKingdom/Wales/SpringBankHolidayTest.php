@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,10 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\UnitedKingdom\Wales;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -39,8 +35,7 @@ class SpringBankHolidayTest extends WalesBaseTestCase implements HolidayTestCase
     /**
      * Tests the holiday defined in this test.
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHoliday(): void
     {
@@ -49,15 +44,14 @@ class SpringBankHolidayTest extends WalesBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-5-30", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-5-30", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests the holiday exceptions in 2002 and 2012.
      *
-     * @throws ReflectionException
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayException(): void
     {
@@ -65,21 +59,21 @@ class SpringBankHolidayTest extends WalesBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             2002,
-            new DateTime('2002-6-4', new DateTimeZone(self::TIMEZONE))
+            new \DateTime('2002-6-4', new \DateTimeZone(self::TIMEZONE))
         );
 
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             2012,
-            new DateTime('2012-6-4', new DateTimeZone(self::TIMEZONE))
+            new \DateTime('2012-6-4', new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests the holiday defined in this test before establishment.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -93,7 +87,7 @@ class SpringBankHolidayTest extends WalesBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -108,7 +102,7 @@ class SpringBankHolidayTest extends WalesBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Switzerland;
 
-use DateInterval;
-use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
@@ -44,7 +41,6 @@ class Geneva extends Switzerland
     /**
      * Initialize holidays for Geneva (Switzerland).
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -72,7 +68,6 @@ class Geneva extends Switzerland
      *
      * @see https://en.wikipedia.org/wiki/Je%C3%BBne_genevois
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -84,9 +79,9 @@ class Geneva extends Switzerland
         }
 
         // Find first Sunday of September
-        $date = new DateTime('First Sunday of '.$this->year.'-09', DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime('First Sunday of '.$this->year.'-09', DateTimeZoneFactory::getDateTimeZone($this->timezone));
         // Go to next Thursday
-        $date->add(new DateInterval('P4D'));
+        $date->add(new \DateInterval('P4D'));
 
         $type = Holiday::TYPE_OTHER;
         if ($this->year > 1869 && $this->year < 1966) {
@@ -108,7 +103,6 @@ class Geneva extends Switzerland
      *
      * @see https://fr.wikipedia.org/wiki/Restauration_genevoise
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -121,7 +115,7 @@ class Geneva extends Switzerland
                 [
                     'fr' => 'Restauration de la République',
                 ],
-                new DateTime($this->year.'-12-31', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime($this->year.'-12-31', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OTHER
             ));

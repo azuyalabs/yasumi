@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,10 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\SouthKorea;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,8 +36,7 @@ class LiberationDayTest extends SouthKoreaBaseTestCase implements HolidayTestCas
     /**
      * Tests the holiday defined in this test.
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHoliday(): void
     {
@@ -50,19 +45,18 @@ class LiberationDayTest extends SouthKoreaBaseTestCase implements HolidayTestCas
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-8-15", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-8-15", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests the substitute holiday defined in this test.
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testSubstituteHoliday(): void
     {
-        $tz = new DateTimeZone(self::TIMEZONE);
+        $tz = new \DateTimeZone(self::TIMEZONE);
 
         // Before 2022
         $this->assertNotSubstituteHoliday(self::REGION, self::HOLIDAY, 2020);
@@ -72,7 +66,7 @@ class LiberationDayTest extends SouthKoreaBaseTestCase implements HolidayTestCas
             self::REGION,
             self::HOLIDAY,
             2021,
-            new DateTime('2021-8-16', $tz)
+            new \DateTime('2021-8-16', $tz)
         );
 
         // By saturday
@@ -80,7 +74,7 @@ class LiberationDayTest extends SouthKoreaBaseTestCase implements HolidayTestCas
             self::REGION,
             self::HOLIDAY,
             2037,
-            new DateTime('2037-8-17', $tz)
+            new \DateTime('2037-8-17', $tz)
         );
 
         // By sunday
@@ -88,14 +82,14 @@ class LiberationDayTest extends SouthKoreaBaseTestCase implements HolidayTestCas
             self::REGION,
             self::HOLIDAY,
             2027,
-            new DateTime('2027-8-16', $tz)
+            new \DateTime('2027-8-16', $tz)
         );
     }
 
     /**
      * Tests the holiday defined in this test before establishment.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -109,7 +103,7 @@ class LiberationDayTest extends SouthKoreaBaseTestCase implements HolidayTestCas
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -124,7 +118,7 @@ class LiberationDayTest extends SouthKoreaBaseTestCase implements HolidayTestCas
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

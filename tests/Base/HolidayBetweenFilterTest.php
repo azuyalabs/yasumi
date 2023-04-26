@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,39 +14,23 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Base;
 
-use DateTime;
-use DateTimeImmutable;
-use DateTimeZone;
-use Exception;
-use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
-use ReflectionException;
 use Yasumi\tests\YasumiBase;
 use Yasumi\Yasumi;
 
-/**
- * Class HolidayBetweenFilterTest.
- *
- * Contains tests for testing the BetweenFilter class
- */
 class HolidayBetweenFilterTest extends TestCase
 {
     use YasumiBase;
 
-    /**
-     * Tests the basic usage of the BetweenFilter.
-     *
-     * @throws Exception
-     * @throws ReflectionException
-     */
+    /** @throws \Exception */
     public function testHolidaysBetweenDateRange(): void
     {
         $timezone = 'Europe/Amsterdam';
         $holidays = Yasumi::create('Netherlands', 2016);
 
         $between = $holidays->between(
-            new DateTime('03/25/2016', new DateTimeZone($timezone)),
-            new DateTime('07/25/2016', new DateTimeZone($timezone))
+            new \DateTime('03/25/2016', new \DateTimeZone($timezone)),
+            new \DateTime('07/25/2016', new \DateTimeZone($timezone))
         );
 
         $betweenHolidays = iterator_to_array($between);
@@ -88,20 +72,15 @@ class HolidayBetweenFilterTest extends TestCase
         self::assertNotEquals(\count($holidays), $between->count());
     }
 
-    /**
-     * Tests the basic usage of the BetweenFilter using DateTimeImmutable objects.
-     *
-     * @throws Exception
-     * @throws ReflectionException
-     */
+    /** @throws \Exception */
     public function testHolidaysBetweenDateRangeWithDateTimeImmutable(): void
     {
         $timezone = 'Europe/Amsterdam';
         $holidays = Yasumi::create('Netherlands', 2016);
 
         $between = $holidays->between(
-            new DateTimeImmutable('03/25/2016', new DateTimeZone($timezone)),
-            new DateTimeImmutable('07/25/2016', new DateTimeZone($timezone))
+            new \DateTimeImmutable('03/25/2016', new \DateTimeZone($timezone)),
+            new \DateTimeImmutable('07/25/2016', new \DateTimeZone($timezone))
         );
 
         $betweenHolidays = iterator_to_array($between);
@@ -143,12 +122,7 @@ class HolidayBetweenFilterTest extends TestCase
         self::assertNotEquals(\count($holidays), $between->count());
     }
 
-    /**
-     * Tests that BetweenFilter considers the date and ignores timezones and time of day.
-     *
-     * @throws Exception
-     * @throws ReflectionException
-     */
+    /** @throws \Exception */
     public function testHolidaysBetweenDateRangeDifferentTimezone(): void
     {
         $holidays = Yasumi::create('Netherlands', 2016);
@@ -157,33 +131,28 @@ class HolidayBetweenFilterTest extends TestCase
 
         foreach ($timezones as $timezone) {
             $between = $holidays->between(
-                new DateTime('01/01/2016', new DateTimeZone($timezone)),
-                new DateTime('01/01/2016', new DateTimeZone($timezone))
+                new \DateTime('01/01/2016', new \DateTimeZone($timezone)),
+                new \DateTime('01/01/2016', new \DateTimeZone($timezone))
             );
             self::assertCount(1, $between);
 
             $between = $holidays->between(
-                new DateTime('01/01/2016 23:59:59', new DateTimeZone($timezone)),
-                new DateTime('01/01/2016 23:59:59', new DateTimeZone($timezone))
+                new \DateTime('01/01/2016 23:59:59', new \DateTimeZone($timezone)),
+                new \DateTime('01/01/2016 23:59:59', new \DateTimeZone($timezone))
             );
             self::assertCount(1, $between);
         }
     }
 
-    /**
-     * Tests the BetweenFilter with date range where start and end date are exclusive of the comparison.
-     *
-     * @throws Exception
-     * @throws ReflectionException
-     */
+    /** @throws \Exception */
     public function testHolidaysBetweenDateRangeExclusiveStartEndDate(): void
     {
         $timezone = 'Europe/Amsterdam';
         $holidays = Yasumi::create('Netherlands', 2016);
 
         $between = $holidays->between(
-            new DateTime('01/01/2016', new DateTimeZone($timezone)),
-            new DateTime('07/25/2016', new DateTimeZone($timezone)),
+            new \DateTime('01/01/2016', new \DateTimeZone($timezone)),
+            new \DateTime('07/25/2016', new \DateTimeZone($timezone)),
             false
         );
 
@@ -226,12 +195,7 @@ class HolidayBetweenFilterTest extends TestCase
         self::assertNotEquals(\count($holidays), $between->count());
     }
 
-    /**
-     * Tests the BetweenFilter where the start date lies before the year of the Holiday Provider instance.
-     *
-     * @throws Exception
-     * @throws ReflectionException
-     */
+    /** @throws \Exception */
     public function testHolidaysBetweenDateRangeWithStartBeforeInstanceYear(): void
     {
         $year = 2015;
@@ -239,8 +203,8 @@ class HolidayBetweenFilterTest extends TestCase
         $holidays = Yasumi::create('Norway', $year);
 
         $between = $holidays->between(
-            new DateTime('03/25/2011', new DateTimeZone($timezone)),
-            new DateTime('05/17/'.$year, new DateTimeZone($timezone))
+            new \DateTime('03/25/2011', new \DateTimeZone($timezone)),
+            new \DateTime('05/17/'.$year, new \DateTimeZone($timezone))
         );
 
         $betweenHolidays = iterator_to_array($between);
@@ -266,12 +230,7 @@ class HolidayBetweenFilterTest extends TestCase
         self::assertNotEquals(\count($holidays), $between->count());
     }
 
-    /**
-     * Tests the BetweenFilter where the end date lies beyond the year of the Holiday Provider instance.
-     *
-     * @throws Exception
-     * @throws ReflectionException
-     */
+    /** @throws \Exception */
     public function testHolidaysBetweenDateRangeWithEndAfterInstanceYear(): void
     {
         $year = 2000;
@@ -279,8 +238,8 @@ class HolidayBetweenFilterTest extends TestCase
         $holidays = Yasumi::create('Italy', $year);
 
         $between = $holidays->between(
-            new DateTime('03/25/'.$year, new DateTimeZone($timezone)),
-            new DateTime('09/21/2021', new DateTimeZone($timezone))
+            new \DateTime('03/25/'.$year, new \DateTimeZone($timezone)),
+            new \DateTime('09/21/2021', new \DateTimeZone($timezone))
         );
 
         $betweenHolidays = iterator_to_array($between);
@@ -306,23 +265,18 @@ class HolidayBetweenFilterTest extends TestCase
         self::assertNotEquals(\count($holidays), $between->count());
     }
 
-    /**
-     * Tests that an InvalidArgumentException is thrown in case an invalid holiday provider is given.
-     *
-     * @throws Exception
-     * @throws ReflectionException
-     */
+    /** @throws \Exception */
     public function testWrongDates(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         $year = 2017;
         $timezone = 'America/New_York';
         $holidays = Yasumi::create('USA', $year);
 
         $holidays->between(
-            new DateTime('12/31/'.$year, new DateTimeZone($timezone)),
-            new DateTime('01/01/'.$year, new DateTimeZone($timezone))
+            new \DateTime('12/31/'.$year, new \DateTimeZone($timezone)),
+            new \DateTime('01/01/'.$year, new \DateTimeZone($timezone))
         );
     }
 
@@ -331,8 +285,7 @@ class HolidayBetweenFilterTest extends TestCase
      *
      * This test covers the scenario that the requested date range covers all know holidays.
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testCountBetweenWithSubstitutes(): void
     {
@@ -342,8 +295,8 @@ class HolidayBetweenFilterTest extends TestCase
         $holidays = Yasumi::create('Ireland', $year);
 
         $between = $holidays->between(
-            new DateTime('01/01/'.$year, new DateTimeZone($timezone)),
-            new DateTime('12/31/'.$year, new DateTimeZone($timezone))
+            new \DateTime('01/01/'.$year, new \DateTimeZone($timezone)),
+            new \DateTime('12/31/'.$year, new \DateTimeZone($timezone))
         );
 
         $betweenHolidays = iterator_to_array($between);
@@ -372,8 +325,7 @@ class HolidayBetweenFilterTest extends TestCase
      *
      * This test covers the scenario that the requested date range excludes a substituted holiday.
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testCountBetweenExcludingSubstituteHoliday(): void
     {
@@ -383,8 +335,8 @@ class HolidayBetweenFilterTest extends TestCase
         $holidays = Yasumi::create('Ireland', $year);
 
         $between = $holidays->between(
-            new DateTime('01/01/'.$year, new DateTimeZone($timezone)),
-            new DateTime('03/20/'.$year, new DateTimeZone($timezone))
+            new \DateTime('01/01/'.$year, new \DateTimeZone($timezone)),
+            new \DateTime('03/20/'.$year, new \DateTimeZone($timezone))
         );
 
         $betweenHolidays = iterator_to_array($between);
@@ -417,8 +369,7 @@ class HolidayBetweenFilterTest extends TestCase
      * This test covers the scenario that the requested date range excludes a substituted holiday, but includes
      * the original substituted holiday.
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testCountBetweenExcludingSubstituteHolidayIncludingOriginalHoliday(): void
     {
@@ -428,8 +379,8 @@ class HolidayBetweenFilterTest extends TestCase
         $holidays = Yasumi::create('Ireland', $year);
 
         $between = $holidays->between(
-            new DateTime('01/01/'.$year, new DateTimeZone($timezone)),
-            new DateTime('03/18/'.$year, new DateTimeZone($timezone))
+            new \DateTime('01/01/'.$year, new \DateTimeZone($timezone)),
+            new \DateTime('03/18/'.$year, new \DateTimeZone($timezone))
         );
 
         $betweenHolidays = iterator_to_array($between);
@@ -463,8 +414,7 @@ class HolidayBetweenFilterTest extends TestCase
      * This test covers the scenario that the requested date range excludes a substituted holiday and also
      * the original substituted holiday.
      *
-     * @throws Exception
-     * @throws ReflectionException
+     * @throws \Exception
      */
     public function testCountBetweenExcludingSubstituteHolidayAndOriginalHoliday(): void
     {
@@ -474,8 +424,8 @@ class HolidayBetweenFilterTest extends TestCase
         $holidays = Yasumi::create('Ireland', $year);
 
         $between = $holidays->between(
-            new DateTime('01/01/'.$year, new DateTimeZone($timezone)),
-            new DateTime('03/16/'.$year, new DateTimeZone($timezone))
+            new \DateTime('01/01/'.$year, new \DateTimeZone($timezone)),
+            new \DateTime('03/16/'.$year, new \DateTimeZone($timezone))
         );
 
         $betweenHolidays = iterator_to_array($between);

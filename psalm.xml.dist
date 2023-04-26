@@ -2,7 +2,7 @@
 <!--
   ~ This file is part of the Yasumi package.
   ~
-  ~ Copyright (c) 2015 - 2022 AzuyaLabs
+  ~ Copyright (c) 2015 - 2023 AzuyaLabs
   ~
   ~ For the full copyright and license information, please view the LICENSE
   ~ file that was distributed with this source code.
@@ -11,7 +11,7 @@
   -->
 
 <psalm
-        errorLevel="6"
+        errorLevel="4"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns="https://getpsalm.org/schema/config"
         xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
@@ -19,4 +19,11 @@
     <projectFiles>
         <directory name="src" />
     </projectFiles>
+
+    <issueHandlers>
+      <MethodSignatureMismatch errorLevel="suppress" />
+      <MissingTemplateParam errorLevel="suppress" />
+      <InvalidArrayOffset errorLevel="suppress" />
+    </issueHandlers>
+
 </psalm>

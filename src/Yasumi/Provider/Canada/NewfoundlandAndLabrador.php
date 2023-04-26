@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Canada;
 
-use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Canada;
@@ -40,7 +38,6 @@ class NewfoundlandAndLabrador extends Canada
     /**
      * Initialize holidays for Newfoundland and Labrador (Canada).
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -67,10 +64,8 @@ class NewfoundlandAndLabrador extends Canada
      *
      * @see https://en.wikipedia.org/wiki/Saint_Patrick%27s_Day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
      * @throws \Exception
      */
     private function calculateStPatricksDay(): void
@@ -82,7 +77,7 @@ class NewfoundlandAndLabrador extends Canada
         $holiday = new Holiday(
             'stPatricksDay',
             ['en' => 'St. Patrick’s Day'],
-            new DateTime($this->year.'-3-17', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-3-17', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
         );
@@ -113,10 +108,8 @@ class NewfoundlandAndLabrador extends Canada
      *
      * @see https://en.wikipedia.org/wiki/The_Twelfth
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
      * @throws \Exception
      */
     private function calculateOrangemensDay(): void
@@ -128,7 +121,7 @@ class NewfoundlandAndLabrador extends Canada
         $holiday = new Holiday(
             'orangemensDay',
             [],
-            new DateTime($this->year.'-7-12', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-7-12', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
         );

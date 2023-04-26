@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Spain;
 
-use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
@@ -45,7 +43,6 @@ class Galicia extends Spain
     /**
      * Initialize holidays for Galicia (Spain).
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -73,7 +70,6 @@ class Galicia extends Spain
      *
      * @see https://en.wikipedia.org/wiki/Galician_Literature_Day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -84,7 +80,7 @@ class Galicia extends Spain
             $this->addHoliday(new Holiday('galicianLiteratureDay', [
                 'es' => 'Día de las Letras Gallegas',
                 'gl' => 'Día das Letras Galegas',
-            ], new DateTime("$this->year-5-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
+            ], new \DateTime("$this->year-5-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
     }
 
@@ -101,7 +97,6 @@ class Galicia extends Spain
      *
      * @see https://www.timeanddate.com/holidays/spain/santiago-apostle
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -111,7 +106,7 @@ class Galicia extends Spain
         if ($this->year >= 2000) {
             $this->addHoliday(new Holiday('stJamesDay', [
                 'es' => 'Santiago Apostol',
-            ], new DateTime("$this->year-7-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
+            ], new \DateTime("$this->year-7-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
     }
 }

@@ -2,21 +2,25 @@
 
 declare(strict_types=1);
 
-use Rector\Core\Configuration\Option;
+use Rector\CodeQuality\Rector\Class_\InlineConstructorDefaultToPropertyRector;
+use Rector\Config\RectorConfig;
 use Rector\Set\ValueObject\SetList;
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
-return static function (ContainerConfigurator $containerConfigurator): void {
-    $parameters = $containerConfigurator->parameters();
-    $parameters->set(Option::PATHS, [
+return static function (RectorConfig $rectorConfig): void {
+    $rectorConfig->paths([
         __DIR__.'/src',
+        __DIR__.'/tests',
     ]);
 
-    $parameters->set(Option::AUTOLOAD_PATHS, [
-    ]);
+    // single rules
+    $rectorConfig->rule(InlineConstructorDefaultToPropertyRector::class);
 
-    $containerConfigurator->import(SetList::CODE_QUALITY);
-    $containerConfigurator->import(SetList::TYPE_DECLARATION_STRICT);
-    $containerConfigurator->import(SetList::PHP_74);
-    $containerConfigurator->import(SetList::DEAD_CODE);
+    // sets of rules
+    $rectorConfig->sets([
+        SetList::CODE_QUALITY,
+        SetList::DEAD_CODE,
+        SetList::EARLY_RETURN,
+        SetList::PHP_74,
+        SetList::TYPE_DECLARATION,
+    ]);
 };
