@@ -99,7 +99,7 @@ class Denmark extends AbstractProvider
     {
         $easter = $this->calculateEaster($this->year, $this->timezone)->format('Y-m-d');
 
-        if ($this->year >= 1686) {
+        if ($this->year >= 1686 && $this->year < 2024) {
             $this->addHoliday(new Holiday(
                 'greatPrayerDay',
                 ['da' => 'store bededag'],

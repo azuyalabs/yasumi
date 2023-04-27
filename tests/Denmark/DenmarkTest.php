@@ -34,7 +34,7 @@ class DenmarkTest extends DenmarkBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1849);
+        $this->year = $this->generateRandomYear(2024);
     }
 
     /**
@@ -48,7 +48,6 @@ class DenmarkTest extends DenmarkBaseTestCase implements ProviderTestCase
             'goodFriday',
             'easter',
             'easterMonday',
-            'greatPrayerDay',
             'ascensionDay',
             'pentecost',
             'pentecostMonday',

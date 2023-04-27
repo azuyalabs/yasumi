@@ -33,6 +33,11 @@ class GreatPrayerDayTest extends DenmarkBaseTestCase implements HolidayTestCase
     public const ESTABLISHMENT_YEAR = 1686;
 
     /**
+     * The first year the holiday was no longer observed.
+     */
+    public const ABOLISHMENT_YEAR = 2024;
+
+    /**
      * Tests the holiday defined in this test on or after establishment.
      *
      * @throws \Exception
@@ -63,6 +68,20 @@ class GreatPrayerDayTest extends DenmarkBaseTestCase implements HolidayTestCase
     }
 
     /**
+     * Tests the holiday defined in this test after abolishment.
+     *
+     * @throws ReflectionException
+     */
+    public function testHolidayAfterAbolishment(): void
+    {
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ABOLISHMENT_YEAR)
+        );
+    }
+
+    /**
      * Tests the translated name of the holiday defined in this test.
      *
      * @throws \Exception
@@ -72,7 +91,7 @@ class GreatPrayerDayTest extends DenmarkBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::ABOLISHMENT_YEAR - 1),
             [self::LOCALE => 'store bededag']
         );
     }
@@ -87,7 +106,7 @@ class GreatPrayerDayTest extends DenmarkBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::ABOLISHMENT_YEAR - 1),
             Holiday::TYPE_OFFICIAL
         );
     }
