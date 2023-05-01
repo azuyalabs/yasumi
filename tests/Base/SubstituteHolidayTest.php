@@ -58,7 +58,7 @@ class SubstituteHolidayTest extends TestCase
         self::assertSame($holiday, $substitute->getSubstitutedHoliday());
         self::assertEquals('substituteHoliday:testHoliday', $substitute->getKey());
         self::assertEquals(Holiday::TYPE_SEASON, $substitute->getType());
-        self::assertEquals(new \DateTime('2019-01-02'), $substitute);
+        $this->assertDateTime(new \DateTime('2019-01-02'), $substitute);
     }
 
     /** @throws \Exception */
