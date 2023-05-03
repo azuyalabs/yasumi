@@ -533,6 +533,10 @@ class SouthKorea extends AbstractProvider
                 $this->addSubstituteHoliday($this->getHoliday('nationalFoundationDay'), "$this->year-10-4");
                 $this->addSubstituteHoliday($this->getHoliday('hangulDay'), "$this->year-10-11");
                 break;
+            case 2022:
+                $this->addSubstituteHoliday($this->getHoliday('dayAfterChuseok'), "$this->year-9-12");
+                $this->addSubstituteHoliday($this->getHoliday('hangulDay'), "$this->year-10-10");
+                break;
         }
     }
 
@@ -547,7 +551,7 @@ class SouthKorea extends AbstractProvider
      */
     private function calculateSubstituteHolidays(): void
     {
-        if ($this->year < 2022) {
+        if ($this->year < 2023) {
             $this->calculateOldSubstituteHolidays();
 
             return;
@@ -566,7 +570,7 @@ class SouthKorea extends AbstractProvider
         // These holidays will substitute for any weekend days (Sunday and Saturday).
         $acceptedHolidays += array_fill_keys([
             'childrensDay', 'independenceMovementDay', 'liberationDay',
-            'nationalFoundationDay', 'hangulDay',
+            'nationalFoundationDay', 'hangulDay', 'buddhasBirthday', 'christmasDay',
         ], [0, 6]);
 
         // Step 1. Build a temporary table that aggregates holidays by date.
