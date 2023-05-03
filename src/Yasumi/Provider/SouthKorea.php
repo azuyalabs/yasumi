@@ -51,7 +51,8 @@ class SouthKorea extends AbstractProvider
      * Korea Astronomy and Space Science Institute (KASI) is supporting the converter until 2050.
      * For more information, please refer to the paper below.
      * 박(2017)총,32(3),407-420.
-     * @see https://www.kasi.re.kr/kor/research/paper/20170259 - Korea Astronomy and Space Science Institute
+     * @see https://koreascience.kr/article/JAKO201706163145174.pdf - Korea Astronomy and Space Science Institute
+     * @see https://astro.kasi.re.kr/life/pageView/8 - web utility for conversion and retrieve
      */
     public const LUNAR_HOLIDAY = [
         'seollal' => [
