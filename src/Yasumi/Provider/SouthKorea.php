@@ -158,6 +158,299 @@ class SouthKorea extends AbstractProvider
         ];
     }
 
+    protected function dayAfterNewYearsDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'dayAfterNewYearsDay',
+            [],
+            new \DateTime("$year-1-2", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    protected function twoDaysLaterNewYearsDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'twoDaysLaterNewYearsDay',
+            ['en' => 'Two Days Later New Year’s Day', 'ko' => '새해 연휴'],
+            new \DateTime("$year-1-3", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    protected function seollal(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'seollal',
+            ['en' => 'Seollal', 'ko' => '설날'],
+            new \DateTime(self::LUNAR_HOLIDAY['seollal'][$year], DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    protected function dayBeforeSeollal(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        $seollal = self::LUNAR_HOLIDAY['seollal'][$year];
+
+        return new Holiday(
+            'dayBeforeSeollal',
+            ['en' => 'Day before Seollal', 'ko' => '설날 연휴'],
+            new \DateTime("-1 day $seollal", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    protected function dayAfterSeollal(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        $seollal = self::LUNAR_HOLIDAY['seollal'][$year];
+
+        return new Holiday(
+            'dayAfterSeollal',
+            ['en' => 'Day after Seollal', 'ko' => '설날 연휴'],
+            new \DateTime("-1 day $seollal", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    protected function independenceMovementDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'independenceMovementDay',
+            ['en' => 'Independence Movement Day', 'ko' => '삼일절'],
+            new \DateTime("$year-3-1", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    protected function arborDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'arborDay',
+            ['en' => 'Arbor Day', 'ko' => '식목일'],
+            new \DateTime("$year-4-5", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    protected function buddhasBirthday(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'buddhasBirthday',
+            ['en' => 'Buddha’s Birthday', 'ko' => '부처님오신날'],
+            new \DateTime(self::LUNAR_HOLIDAY['buddhasBirthday'][$year], DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    protected function childrensDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'childrensDay',
+            ['en' => 'Children’s Day', 'ko' => '어린이날'],
+            new \DateTime("$year-5-5", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    protected function memorialDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'memorialDay',
+            ['en' => 'Memorial Day', 'ko' => '현충일'],
+            new \DateTime("$year-6-6", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    protected function constitutionDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'constitutionDay',
+            ['en' => 'Constitution Day', 'ko' => '제헌절'],
+            new \DateTime("$year-7-17", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    protected function liberationDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'liberationDay',
+            ['en' => 'Liberation Day', 'ko' => '광복절'],
+            new \DateTime("$year-8-15", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    protected function chuseok(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'chuseok',
+            ['en' => 'Chuseok', 'ko' => '추석'],
+            new \DateTime(self::LUNAR_HOLIDAY['chuseok'][$year], DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    protected function dayBeforeChuseok(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        $choseok = self::LUNAR_HOLIDAY['chuseok'][$year];
+
+        return new Holiday(
+            'dayBeforeChuseok',
+            ['en' => 'Day before Chuseok', 'ko' => '추석 연휴'],
+            new \DateTime("-1 day $choseok", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    protected function dayAfterChuseok(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        $choseok = self::LUNAR_HOLIDAY['chuseok'][$year];
+
+        return new Holiday(
+            'dayAfterChuseok',
+            ['en' => 'Day after Chuseok', 'ko' => '추석 연휴'],
+            new \DateTime("+1 day $choseok", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    protected function armedForcesDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'armedForcesDay',
+            ['en' => 'Armed Forces Day', 'ko' => '국군의 날'],
+            new \DateTime("$year-10-1", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    protected function nationalFoundationDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'nationalFoundationDay',
+            ['en' => 'National Foundation Day', 'ko' => '개천절'],
+            new \DateTime("$year-10-3", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    protected function hangulDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'hangulDay',
+            ['en' => 'Hangul Day', 'ko' => '한글날'],
+            new \DateTime("$year-10-9", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    protected function unitedNationsDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'unitedNationsDay',
+            ['en' => 'United Nations Day', 'ko' => '유엔의 날'],
+            new \DateTime("$year-10-24", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
     /**
      * New Year's Day. New Year's Day is held on January 1st and established since 1950.
      * From the enactment of the First Law to 1998, there was a two or three-day break in the New Year.
