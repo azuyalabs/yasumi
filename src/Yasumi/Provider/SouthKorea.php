@@ -115,6 +115,90 @@ class SouthKorea extends AbstractProvider
     ];
 
     /**
+     * Collection of all historically recognized holidays in South Korea
+     *
+     * Aggregated collection of all historically recognized holidays of South Korea After the government was established.
+     * This collection also includes items that are now obsolete and excluded from holidays.
+     */
+    public const HOLIDAY_NAMES = [
+        'newYearsDay' => [],
+        'dayAfterNewYearsDay' => [],
+        'twoDaysLaterNewYearsDay' => [
+            'en' => 'Two Days Later New Year’s Day',
+            'ko' => '새해 연휴'
+        ],
+        'seollal' => [
+            'en' => 'Seollal',
+            'ko' => '설날'
+        ],
+        'dayBeforeSeollal' => [
+            'en' => 'Day before Seollal',
+            'ko' => '설날 연휴'
+        ],
+        'dayAfterSeollal' => [
+            'en' => 'Day after Seollal',
+            'ko' => '설날 연휴'
+        ],
+        'independenceMovementDay' => [
+            'en' => 'Independence Movement Day',
+            'ko' => '삼일절'
+        ],
+        'arborDay' => [
+            'en' => 'Arbor Day',
+            'ko' => '식목일'
+        ],
+        'buddhasBirthday' => [
+            'en' => 'Buddha’s Birthday',
+            'ko' => '부처님오신날'
+        ],
+        'childrensDay' => [
+            'en' => 'Children’s Day',
+            'ko' => '어린이날'
+        ],
+        'memorialDay' => [
+            'en' => 'Memorial Day',
+            'ko' => '현충일'
+        ],
+        'constitutionDay' => [
+            'en' => 'Constitution Day',
+            'ko' => '제헌절'
+        ],
+        'liberationDay' => [
+            'en' => 'Liberation Day',
+            'ko' => '광복절'
+        ],
+        'chuseok' => [
+            'en' => 'Chuseok',
+            'ko' => '추석'
+        ],
+        'dayBeforeChuseok' => [
+            'en' => 'Day before Chuseok',
+            'ko' => '추석 연휴'
+        ],
+        'dayAfterChuseok' => [
+            'en' => 'Day after Chuseok',
+            'ko' => '추석 연휴'
+        ],
+        'armedForcesDay' => [
+            'en' => 'Armed Forces Day',
+            'ko' => '국군의 날'
+        ],
+        'nationalFoundationDay' => [
+            'en' => 'National Foundation Day',
+            'ko' => '개천절'
+        ],
+        'hangulDay' => [
+            'en' => 'Hangul Day',
+            'ko' => '한글날'
+        ],
+        'unitedNationsDay' => [
+            'en' => 'United Nations Day',
+            'ko' => '유엔의 날'
+        ],
+        'christmasDay' => [],
+    ];
+
+    /**
      * Initialize holidays for South Korea.
      *
      * @throws \InvalidArgumentException
@@ -166,7 +250,7 @@ class SouthKorea extends AbstractProvider
     ): Holiday {
         return new Holiday(
             'dayAfterNewYearsDay',
-            [],
+            static::HOLIDAY_NAMES['dayAfterNewYearsDay'],
             new \DateTime("$year-1-2", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -181,7 +265,7 @@ class SouthKorea extends AbstractProvider
     ): Holiday {
         return new Holiday(
             'twoDaysLaterNewYearsDay',
-            ['en' => 'Two Days Later New Year’s Day', 'ko' => '새해 연휴'],
+            static::HOLIDAY_NAMES['twoDaysLaterNewYearsDay'],
             new \DateTime("$year-1-3", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -194,10 +278,12 @@ class SouthKorea extends AbstractProvider
         string $locale,
         string $type = Holiday::TYPE_OFFICIAL
     ): Holiday {
+        $seollal = self::LUNAR_HOLIDAY['seollal'][$year];
+
         return new Holiday(
             'seollal',
-            ['en' => 'Seollal', 'ko' => '설날'],
-            new \DateTime(self::LUNAR_HOLIDAY['seollal'][$year], DateTimeZoneFactory::getDateTimeZone($timezone)),
+            static::HOLIDAY_NAMES['seollal'],
+            new \DateTime($seollal, DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
@@ -213,7 +299,7 @@ class SouthKorea extends AbstractProvider
 
         return new Holiday(
             'dayBeforeSeollal',
-            ['en' => 'Day before Seollal', 'ko' => '설날 연휴'],
+            static::HOLIDAY_NAMES['dayBeforeSeollal'],
             new \DateTime("-1 day $seollal", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -230,7 +316,7 @@ class SouthKorea extends AbstractProvider
 
         return new Holiday(
             'dayAfterSeollal',
-            ['en' => 'Day after Seollal', 'ko' => '설날 연휴'],
+            static::HOLIDAY_NAMES['dayAfterSeollal'],
             new \DateTime("-1 day $seollal", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -245,7 +331,7 @@ class SouthKorea extends AbstractProvider
     ): Holiday {
         return new Holiday(
             'independenceMovementDay',
-            ['en' => 'Independence Movement Day', 'ko' => '삼일절'],
+            static::HOLIDAY_NAMES['independenceMovementDay'],
             new \DateTime("$year-3-1", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -260,7 +346,7 @@ class SouthKorea extends AbstractProvider
     ): Holiday {
         return new Holiday(
             'arborDay',
-            ['en' => 'Arbor Day', 'ko' => '식목일'],
+            static::HOLIDAY_NAMES['arborDay'],
             new \DateTime("$year-4-5", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -273,10 +359,12 @@ class SouthKorea extends AbstractProvider
         string $locale,
         string $type = Holiday::TYPE_OFFICIAL
     ): Holiday {
+        $buddhasBirthday = self::LUNAR_HOLIDAY['buddhasBirthday'][$year];
+
         return new Holiday(
             'buddhasBirthday',
-            ['en' => 'Buddha’s Birthday', 'ko' => '부처님오신날'],
-            new \DateTime(self::LUNAR_HOLIDAY['buddhasBirthday'][$year], DateTimeZoneFactory::getDateTimeZone($timezone)),
+            static::HOLIDAY_NAMES['buddhasBirthday'],
+            new \DateTime($buddhasBirthday, DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
@@ -290,7 +378,7 @@ class SouthKorea extends AbstractProvider
     ): Holiday {
         return new Holiday(
             'childrensDay',
-            ['en' => 'Children’s Day', 'ko' => '어린이날'],
+            static::HOLIDAY_NAMES['childrensDay'],
             new \DateTime("$year-5-5", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -305,7 +393,7 @@ class SouthKorea extends AbstractProvider
     ): Holiday {
         return new Holiday(
             'memorialDay',
-            ['en' => 'Memorial Day', 'ko' => '현충일'],
+            static::HOLIDAY_NAMES['memorialDay'],
             new \DateTime("$year-6-6", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -320,7 +408,7 @@ class SouthKorea extends AbstractProvider
     ): Holiday {
         return new Holiday(
             'constitutionDay',
-            ['en' => 'Constitution Day', 'ko' => '제헌절'],
+            static::HOLIDAY_NAMES['constitutionDay'],
             new \DateTime("$year-7-17", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -335,7 +423,7 @@ class SouthKorea extends AbstractProvider
     ): Holiday {
         return new Holiday(
             'liberationDay',
-            ['en' => 'Liberation Day', 'ko' => '광복절'],
+            static::HOLIDAY_NAMES['liberationDay'],
             new \DateTime("$year-8-15", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -348,10 +436,12 @@ class SouthKorea extends AbstractProvider
         string $locale,
         string $type = Holiday::TYPE_OFFICIAL
     ): Holiday {
+        $choseok = self::LUNAR_HOLIDAY['chuseok'][$year];
+
         return new Holiday(
             'chuseok',
-            ['en' => 'Chuseok', 'ko' => '추석'],
-            new \DateTime(self::LUNAR_HOLIDAY['chuseok'][$year], DateTimeZoneFactory::getDateTimeZone($timezone)),
+            static::HOLIDAY_NAMES['chuseok'],
+            new \DateTime($choseok, DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
@@ -367,7 +457,7 @@ class SouthKorea extends AbstractProvider
 
         return new Holiday(
             'dayBeforeChuseok',
-            ['en' => 'Day before Chuseok', 'ko' => '추석 연휴'],
+            static::HOLIDAY_NAMES['dayBeforeChuseok'],
             new \DateTime("-1 day $choseok", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -384,7 +474,7 @@ class SouthKorea extends AbstractProvider
 
         return new Holiday(
             'dayAfterChuseok',
-            ['en' => 'Day after Chuseok', 'ko' => '추석 연휴'],
+            static::HOLIDAY_NAMES['dayAfterChuseok'],
             new \DateTime("+1 day $choseok", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -399,7 +489,7 @@ class SouthKorea extends AbstractProvider
     ): Holiday {
         return new Holiday(
             'armedForcesDay',
-            ['en' => 'Armed Forces Day', 'ko' => '국군의 날'],
+            static::HOLIDAY_NAMES['armedForcesDay'],
             new \DateTime("$year-10-1", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -414,7 +504,7 @@ class SouthKorea extends AbstractProvider
     ): Holiday {
         return new Holiday(
             'nationalFoundationDay',
-            ['en' => 'National Foundation Day', 'ko' => '개천절'],
+            static::HOLIDAY_NAMES['nationalFoundationDay'],
             new \DateTime("$year-10-3", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -429,7 +519,7 @@ class SouthKorea extends AbstractProvider
     ): Holiday {
         return new Holiday(
             'hangulDay',
-            ['en' => 'Hangul Day', 'ko' => '한글날'],
+            static::HOLIDAY_NAMES['hangulDay'],
             new \DateTime("$year-10-9", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -444,7 +534,7 @@ class SouthKorea extends AbstractProvider
     ): Holiday {
         return new Holiday(
             'unitedNationsDay',
-            ['en' => 'United Nations Day', 'ko' => '유엔의 날'],
+            static::HOLIDAY_NAMES['unitedNationsDay'],
             new \DateTime("$year-10-24", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type

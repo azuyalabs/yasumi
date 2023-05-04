@@ -18,6 +18,7 @@ namespace Yasumi\tests\SouthKorea;
 use Yasumi\Holiday;
 use Yasumi\Provider\SouthKorea;
 use Yasumi\tests\ProviderTestCase;
+use Yasumi\Yasumi;
 
 /**
  * Class for testing holidays in South Korea.
@@ -139,5 +140,18 @@ class SouthKoreaTest extends SouthKoreaBaseTestCase implements ProviderTestCase
     public function testSources(): void
     {
         $this->assertSources(self::REGION, 3);
+    }
+
+    /**
+     * Tests if all generation methods is exists in provider.
+     */
+    public function testGenerationMethods(): void
+    {
+        $holidayProvider = Yasumi::create(self::REGION, $this->generateRandomYear());
+
+        $this->assertIsArray(SouthKorea::HOLIDAY_NAMES, 'Yasumi\Provider\SouthKorea::HOLIDAY_NAMES is not array');
+        foreach (SouthKorea::HOLIDAY_NAMES as $key => $names) {
+            $this->assertTrue(method_exists($holidayProvider, $key), sprintf('Generation method `%s` is not declared in provider `%s`', $key, self::REGION));
+        }
     }
 }
