@@ -317,7 +317,7 @@ class SouthKorea extends AbstractProvider
         return new Holiday(
             'dayAfterSeollal',
             static::HOLIDAY_NAMES['dayAfterSeollal'],
-            new \DateTime("-1 day $seollal", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            new \DateTime("+1 day $seollal", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
