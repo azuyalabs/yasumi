@@ -230,7 +230,7 @@ class SouthKorea extends AbstractProvider
         $this->calculateArmedForcesDay();
         $this->calculateNationalFoundationDay();
         $this->calculateHangulDay();
-        $this->calculateSubstituteHolidays();
+        $this->calculateSubstituteHolidays($this->year);
     }
 
     public function getSources(): array
@@ -880,45 +880,45 @@ class SouthKorea extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateOldSubstituteHolidays(): void
+    private function calculateOldSubstituteHolidays(int $year): void
     {
         if ($this->year < 2014) {
             return;
         }
 
         // Add substitute holidays by fixed entries.
-        switch ($this->year) {
+        switch ($year) {
             case 2014:
-                $this->addSubstituteHoliday($this->getHoliday('dayBeforeChuseok'), "$this->year-9-10");
+                $this->addSubstituteHoliday($this->getHoliday('dayBeforeChuseok'), "$year-9-10");
                 break;
             case 2015:
-                $this->addSubstituteHoliday($this->getHoliday('chuseok'), "$this->year-9-29");
+                $this->addSubstituteHoliday($this->getHoliday('chuseok'), "$year-9-29");
                 break;
             case 2016:
-                $this->addSubstituteHoliday($this->getHoliday('dayBeforeSeollal'), "$this->year-2-10");
+                $this->addSubstituteHoliday($this->getHoliday('dayBeforeSeollal'), "$year-2-10");
                 break;
             case 2017:
-                $this->addSubstituteHoliday($this->getHoliday('dayAfterSeollal'), "$this->year-1-30");
-                $this->addSubstituteHoliday($this->getHoliday('dayBeforeChuseok'), "$this->year-10-6");
+                $this->addSubstituteHoliday($this->getHoliday('dayAfterSeollal'), "$year-1-30");
+                $this->addSubstituteHoliday($this->getHoliday('dayBeforeChuseok'), "$year-10-6");
                 break;
             case 2018:
-                $this->addSubstituteHoliday($this->getHoliday('childrensDay'), "$this->year-5-7");
-                $this->addSubstituteHoliday($this->getHoliday('dayBeforeChuseok'), "$this->year-9-26");
+                $this->addSubstituteHoliday($this->getHoliday('childrensDay'), "$year-5-7");
+                $this->addSubstituteHoliday($this->getHoliday('dayBeforeChuseok'), "$year-9-26");
                 break;
             case 2019:
-                $this->addSubstituteHoliday($this->getHoliday('childrensDay'), "$this->year-5-6");
+                $this->addSubstituteHoliday($this->getHoliday('childrensDay'), "$year-5-6");
                 break;
             case 2020:
-                $this->addSubstituteHoliday($this->getHoliday('dayAfterSeollal'), "$this->year-1-27");
+                $this->addSubstituteHoliday($this->getHoliday('dayAfterSeollal'), "$year-1-27");
                 break;
             case 2021:
-                $this->addSubstituteHoliday($this->getHoliday('liberationDay'), "$this->year-8-16");
-                $this->addSubstituteHoliday($this->getHoliday('nationalFoundationDay'), "$this->year-10-4");
-                $this->addSubstituteHoliday($this->getHoliday('hangulDay'), "$this->year-10-11");
+                $this->addSubstituteHoliday($this->getHoliday('liberationDay'), "$year-8-16");
+                $this->addSubstituteHoliday($this->getHoliday('nationalFoundationDay'), "$year-10-4");
+                $this->addSubstituteHoliday($this->getHoliday('hangulDay'), "$year-10-11");
                 break;
             case 2022:
-                $this->addSubstituteHoliday($this->getHoliday('dayAfterChuseok'), "$this->year-9-12");
-                $this->addSubstituteHoliday($this->getHoliday('hangulDay'), "$this->year-10-10");
+                $this->addSubstituteHoliday($this->getHoliday('dayAfterChuseok'), "$year-9-12");
+                $this->addSubstituteHoliday($this->getHoliday('hangulDay'), "$year-10-10");
                 break;
         }
     }
@@ -932,10 +932,10 @@ class SouthKorea extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateSubstituteHolidays(): void
+    private function calculateSubstituteHolidays(int $year): void
     {
-        if ($this->year < 2023) {
-            $this->calculateOldSubstituteHolidays();
+        if ($year < 2023) {
+            $this->calculateOldSubstituteHolidays($year);
 
             return;
         }
