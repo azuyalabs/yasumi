@@ -31,7 +31,7 @@ class ArmedForcesDayTest extends SouthKoreaBaseTestCase implements HolidayTestCa
     /**
      * The year in which the holiday was first established.
      */
-    public const ESTABLISHMENT_YEAR = 1956;
+    public const ESTABLISHMENT_YEAR = 1976;
 
     /**
      * The year in which the holiday was removed.
