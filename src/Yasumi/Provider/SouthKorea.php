@@ -882,12 +882,19 @@ class SouthKorea extends AbstractProvider
      */
     private function calculateOldSubstituteHolidays(int $year): void
     {
-        if ($this->year < 2014) {
-            return;
-        }
-
         // Add substitute holidays by fixed entries.
         switch ($year) {
+            case 1959:
+                $this->addSubstituteHoliday($this->getHoliday('arborDay'), "$year-4-6");
+                break;
+            case 1960:
+                $this->addSubstituteHoliday($this->getHoliday('constitutionDay'), "$year-7-18");
+                $this->addSubstituteHoliday($this->getHoliday('hangulDay'), "$year-10-10");
+                $this->addSubstituteHoliday($this->getHoliday('christmasDay'), "$year-12-26");
+                break;
+            case 1989:
+                $this->addSubstituteHoliday($this->getHoliday('armedForcesDay'), "$year-10-2");
+                break;
             case 2014:
                 $this->addSubstituteHoliday($this->getHoliday('dayBeforeChuseok'), "$year-9-10");
                 break;
