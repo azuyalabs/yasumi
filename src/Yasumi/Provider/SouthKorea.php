@@ -948,20 +948,7 @@ class SouthKorea extends AbstractProvider
         }
 
         // List of holidays allowed for substitution.
-        $acceptedHolidays = [];
-
-        // When deciding on alternative holidays, place lunar holidays first for consistent rules.
-        // These holidays will substitute for the sunday only.
-        $acceptedHolidays += array_fill_keys([
-            'dayBeforeSeollal', 'seollal', 'dayAfterSeollal',
-            'dayBeforeChuseok', 'chuseok', 'dayAfterChuseok',
-        ], [0]);
-
-        // These holidays will substitute for any weekend days (Sunday and Saturday).
-        $acceptedHolidays += array_fill_keys([
-            'childrensDay', 'independenceMovementDay', 'liberationDay',
-            'nationalFoundationDay', 'hangulDay', 'buddhasBirthday', 'christmasDay',
-        ], [0, 6]);
+        $acceptedHolidays = $this->calculateAcceptedSubstituteHolidays($year);
 
         // Step 1. Build a temporary table that aggregates holidays by date.
         $dates = [];
@@ -1001,6 +988,40 @@ class SouthKorea extends AbstractProvider
                 $this->addSubstituteHoliday($origin, $workDay->format('Y-m-d'));
             }
         }
+    }
+
+    /**
+     * Return a dictionary of substitute holiday
+     * Government-recognized holidays will be replaced with an alternative holiday if they overlap with a Saturday or Sunday.
+     * This dictionary contains information about which day of the week the holiday is replaced when it falls on.
+     */
+    private function calculateAcceptedSubstituteHolidays(int $year): array
+    {
+        // List of holidays allowed for substitution.
+        // This dictionary has key => value mappings.
+        // each key is key of holiday and value contains day of week (saturday or sunday or both)
+        // value meaning : 0 = saturday, 1 = sunday
+        $acceptedHolidays = [];
+
+        if ($year < 2023) {
+            return $acceptedHolidays;
+        }
+
+        // When deciding on alternative holidays, place lunar holidays first for consistent rules.
+        // These holidays will substitute for the sunday only.
+        $acceptedHolidays += array_fill_keys([
+            'dayBeforeSeollal', 'seollal', 'dayAfterSeollal',
+            'dayBeforeChuseok', 'chuseok', 'dayAfterChuseok',
+        ], [0]);
+
+        // These holidays will substitute for any weekend days (Sunday and Saturday).
+        // 'buddhasBirthday' and 'christmasDay' included as alternative holiday in May 2023.
+        $acceptedHolidays += array_fill_keys([
+            'childrensDay', 'independenceMovementDay', 'liberationDay',
+            'nationalFoundationDay', 'hangulDay', 'buddhasBirthday', 'christmasDay',
+        ], [0, 6]);
+
+        return $acceptedHolidays;
     }
 
     /**
