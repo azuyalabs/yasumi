@@ -242,6 +242,10 @@ class SouthKorea extends AbstractProvider
         ];
     }
 
+    /**
+     * The day after New Year's Day (January 2)
+     * This day was established in 1949 and then removed as a public holiday in 1999.
+     */
     protected function dayAfterNewYearsDay(
         int $year,
         string $timezone,
@@ -257,6 +261,10 @@ class SouthKorea extends AbstractProvider
         );
     }
 
+    /**
+     * Two days after the New Year's (January 3)
+     * This day was established in 1949 and then removed as a public holiday in 1990.
+     */
     protected function twoDaysLaterNewYearsDay(
         int $year,
         string $timezone,
@@ -272,6 +280,14 @@ class SouthKorea extends AbstractProvider
         );
     }
 
+    /**
+     * Seollal (Korean New Year's Day).
+     * Seollal is held on the 1st day of the 1st lunar month and was established from 1985.
+     *
+     * Seollal was celebrated with only one day off when it was established in 1985, and then changed to a three-day holiday in 1989.
+     *
+     * @see https://en.wikipedia.org/wiki/Korean_New_Year
+     */
     protected function seollal(
         int $year,
         string $timezone,
@@ -289,6 +305,14 @@ class SouthKorea extends AbstractProvider
         );
     }
 
+    /**
+     * The day before Seollal (Korean New Year's Day).
+     * Seollal is held on the 1st day of the 1st lunar month and was established from 1985.
+     *
+     * Seollal was celebrated with only one day off when it was established in 1985, and then changed to a three-day holiday in 1989.
+     *
+     * @see https://en.wikipedia.org/wiki/Korean_New_Year
+     */
     protected function dayBeforeSeollal(
         int $year,
         string $timezone,
@@ -306,6 +330,14 @@ class SouthKorea extends AbstractProvider
         );
     }
 
+    /**
+     * The day after Seollal (Korean New Year's Day).
+     * Seollal is held on the 1st day of the 1st lunar month and was established from 1985.
+     *
+     * Seollal was celebrated with only one day off when it was established in 1985, and then changed to a three-day holiday in 1989.
+     *
+     * @see https://en.wikipedia.org/wiki/Korean_New_Year
+     */
     protected function dayAfterSeollal(
         int $year,
         string $timezone,
@@ -323,6 +355,12 @@ class SouthKorea extends AbstractProvider
         );
     }
 
+    /**
+     * Independence Movement Day.
+     * Independence Movement Day is held on March 1st and was established from 1949.
+     *
+     * @see https://en.wikipedia.org/wiki/Independence_Movement_Day
+     */
     protected function independenceMovementDay(
         int $year,
         string $timezone,
@@ -338,6 +376,12 @@ class SouthKorea extends AbstractProvider
         );
     }
 
+    /**
+     * Sikmogil (Arbor Day).
+     * Sikmogil is held on April 5th and established since 1949, but was removed as a public holiday in 2006.
+     *
+     * @see https://en.wikipedia.org/wiki/Sikmogil
+     */
     protected function arborDay(
         int $year,
         string $timezone,
@@ -353,6 +397,12 @@ class SouthKorea extends AbstractProvider
         );
     }
 
+    /**
+     * Buddha's Birthday.
+     * Buddha's Birthday is held on the 8th day of the 4th lunar month and was established since 1975.
+     *
+     * @see https://en.wikipedia.org/wiki/Buddha%27s_Birthday
+     */
     protected function buddhasBirthday(
         int $year,
         string $timezone,
@@ -370,6 +420,12 @@ class SouthKorea extends AbstractProvider
         );
     }
 
+    /**
+     * Children's Day.
+     * Children's Day is held on May 5th and established since 1975.
+     *
+     * @see https://en.wikipedia.org/wiki/Children%27s_Day#South_Korea
+     */
     protected function childrensDay(
         int $year,
         string $timezone,
@@ -385,6 +441,12 @@ class SouthKorea extends AbstractProvider
         );
     }
 
+    /**
+     * Memorial Day.
+     * Memorial Day is held on June 6th and established since 1956.
+     *
+     * @see https://en.wikipedia.org/wiki/Memorial_Day_(South_Korea)
+     */
     protected function memorialDay(
         int $year,
         string $timezone,
@@ -400,6 +462,15 @@ class SouthKorea extends AbstractProvider
         );
     }
 
+    /**
+     * Constitution Day.
+     * Constitution Day is held on July 17th and established since 1949.
+     *
+     * It was originally a public holiday recognized by the South Korean government,
+     * but was removed as a public holiday in 2008 and is now a national day rather than a public holiday.
+     *
+     * @see https://en.wikipedia.org/wiki/Constitution_Day_(South_Korea)
+     */
     protected function constitutionDay(
         int $year,
         string $timezone,
@@ -415,6 +486,12 @@ class SouthKorea extends AbstractProvider
         );
     }
 
+    /**
+     * Liberation Day.
+     * Liberation Day is held on August 15th and established since 1949.
+     *
+     * @see https://en.wikipedia.org/wiki/National_Liberation_Day_of_Korea
+     */
     protected function liberationDay(
         int $year,
         string $timezone,
@@ -430,6 +507,15 @@ class SouthKorea extends AbstractProvider
         );
     }
 
+    /**
+     * Chuseok (Korean Thanksgiving Day).
+     *
+     * Chuseok, one of the biggest holidays in Korea, is a major harvest festival and a three-day holiday celebrated on
+     * the 15th day of the 8th month of the lunar calendar on the full moon.
+     * Chuseok was a one-day holiday when it was established in 1945, but was changed to a three-day holiday in 1989.
+     *
+     * @see https://en.wikipedia.org/wiki/Chuseok
+     */
     protected function chuseok(
         int $year,
         string $timezone,
@@ -447,6 +533,15 @@ class SouthKorea extends AbstractProvider
         );
     }
 
+    /**
+     * The day before Chuseok (Korean Thanksgiving Day).
+     *
+     * Chuseok, one of the biggest holidays in Korea, is a major harvest festival and a three-day holiday celebrated on
+     * the 15th day of the 8th month of the lunar calendar on the full moon.
+     * Chuseok was a one-day holiday when it was established in 1945, but was changed to a three-day holiday in 1989.
+     *
+     * @see https://en.wikipedia.org/wiki/Chuseok
+     */
     protected function dayBeforeChuseok(
         int $year,
         string $timezone,
@@ -464,6 +559,15 @@ class SouthKorea extends AbstractProvider
         );
     }
 
+    /**
+     * The day after Chuseok (Korean Thanksgiving Day).
+     *
+     * Chuseok, one of the biggest holidays in Korea, is a major harvest festival and a three-day holiday celebrated on
+     * the 15th day of the 8th month of the lunar calendar on the full moon.
+     * Chuseok was a one-day holiday when it was established in 1945, but was changed to a three-day holiday in 1989.
+     *
+     * @see https://en.wikipedia.org/wiki/Chuseok
+     */
     protected function dayAfterChuseok(
         int $year,
         string $timezone,
@@ -481,6 +585,15 @@ class SouthKorea extends AbstractProvider
         );
     }
 
+    /**
+     * Armed Forces Day.
+     * Armed Forces Day is held on October 1st and established since 1956.
+     *
+     * Armed Forces Day, established in 1956, was made a public holiday in 1976 and then removed again in 1991.
+     *
+     * @see unitedNationsDay
+     * @see https://en.wikipedia.org/wiki/Armed_Forces_Day_(South_Korea)
+     */
     protected function armedForcesDay(
         int $year,
         string $timezone,
@@ -496,6 +609,12 @@ class SouthKorea extends AbstractProvider
         );
     }
 
+    /**
+     * Gaecheonjeol (National Foundation Day).
+     * Gaecheonjeol is held on October 3rd and established since 1949.
+     *
+     * @see https://en.wikipedia.org/wiki/Gaecheonjeol
+     */
     protected function nationalFoundationDay(
         int $year,
         string $timezone,
@@ -511,6 +630,14 @@ class SouthKorea extends AbstractProvider
         );
     }
 
+    /**
+     * Hangul Day.
+     * Hangul Day is held on October 9th and established since 1949.
+     *
+     * Hangul Day, established in 1949, was removed as a public holiday in 1991 and included again in 2013.
+     *
+     * @see https://en.wikipedia.org/wiki/Hangul_Day
+     */
     protected function hangulDay(
         int $year,
         string $timezone,
@@ -526,6 +653,14 @@ class SouthKorea extends AbstractProvider
         );
     }
 
+    /**
+     * United Nations Day
+     *
+     * On September 18, 1950, the day of the formation of the United Nations, International United Nations Day was established as a public holiday.
+     * Later, on September 3, 1976, United Nations Day was removed as a public holiday and Armed Forces Day was established as a new public holiday.
+     *
+     * @see https://ko.wikipedia.org/wiki/%EC%9C%A0%EC%97%94%EC%9D%98_%EB%82%A0#%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD
+     */
     protected function unitedNationsDay(
         int $year,
         string $timezone,
