@@ -115,7 +115,7 @@ class SouthKorea extends AbstractProvider
     ];
 
     /**
-     * Collection of all historically recognized holidays in South Korea
+     * Collection of all historically recognized holidays in South Korea.
      *
      * Aggregated collection of all historically recognized holidays of South Korea After the government was established.
      * This collection also includes items that are now obsolete and excluded from holidays.
@@ -125,75 +125,75 @@ class SouthKorea extends AbstractProvider
         'dayAfterNewYearsDay' => [],
         'twoDaysLaterNewYearsDay' => [
             'en' => 'Two Days Later New Year’s Day',
-            'ko' => '새해 연휴'
+            'ko' => '새해 연휴',
         ],
         'seollal' => [
             'en' => 'Seollal',
-            'ko' => '설날'
+            'ko' => '설날',
         ],
         'dayBeforeSeollal' => [
             'en' => 'Day before Seollal',
-            'ko' => '설날 연휴'
+            'ko' => '설날 연휴',
         ],
         'dayAfterSeollal' => [
             'en' => 'Day after Seollal',
-            'ko' => '설날 연휴'
+            'ko' => '설날 연휴',
         ],
         'independenceMovementDay' => [
             'en' => 'Independence Movement Day',
-            'ko' => '삼일절'
+            'ko' => '삼일절',
         ],
         'arborDay' => [
             'en' => 'Arbor Day',
-            'ko' => '식목일'
+            'ko' => '식목일',
         ],
         'buddhasBirthday' => [
             'en' => 'Buddha’s Birthday',
-            'ko' => '부처님오신날'
+            'ko' => '부처님오신날',
         ],
         'childrensDay' => [
             'en' => 'Children’s Day',
-            'ko' => '어린이날'
+            'ko' => '어린이날',
         ],
         'memorialDay' => [
             'en' => 'Memorial Day',
-            'ko' => '현충일'
+            'ko' => '현충일',
         ],
         'constitutionDay' => [
             'en' => 'Constitution Day',
-            'ko' => '제헌절'
+            'ko' => '제헌절',
         ],
         'liberationDay' => [
             'en' => 'Liberation Day',
-            'ko' => '광복절'
+            'ko' => '광복절',
         ],
         'chuseok' => [
             'en' => 'Chuseok',
-            'ko' => '추석'
+            'ko' => '추석',
         ],
         'dayBeforeChuseok' => [
             'en' => 'Day before Chuseok',
-            'ko' => '추석 연휴'
+            'ko' => '추석 연휴',
         ],
         'dayAfterChuseok' => [
             'en' => 'Day after Chuseok',
-            'ko' => '추석 연휴'
+            'ko' => '추석 연휴',
         ],
         'armedForcesDay' => [
             'en' => 'Armed Forces Day',
-            'ko' => '국군의 날'
+            'ko' => '국군의 날',
         ],
         'nationalFoundationDay' => [
             'en' => 'National Foundation Day',
-            'ko' => '개천절'
+            'ko' => '개천절',
         ],
         'hangulDay' => [
             'en' => 'Hangul Day',
-            'ko' => '한글날'
+            'ko' => '한글날',
         ],
         'unitedNationsDay' => [
             'en' => 'United Nations Day',
-            'ko' => '유엔의 날'
+            'ko' => '유엔의 날',
         ],
         'christmasDay' => [],
     ];
@@ -217,24 +217,28 @@ class SouthKorea extends AbstractProvider
         //  Holidays in used from 1949 until 1958
         if ($this->year < 1959) {
             $this->calculateBefore1959($this->year);
+
             return;
         }
 
         // Holidays in used from 1959 until 1974
         if ($this->year < 1975) {
             $this->calculateBefore1975($this->year);
+
             return;
         }
 
         // Holidays in used from 1975 until 1988
         if ($this->year < 1989) {
             $this->calculateBefore1989($this->year);
+
             return;
         }
 
         // Holidays in used from 1989 until 2012
         if ($this->year < 2013) {
             $this->calculateBefore2013($this->year);
+
             return;
         }
 
@@ -698,7 +702,7 @@ class SouthKorea extends AbstractProvider
     }
 
     /**
-     * United Nations Day
+     * United Nations Day.
      *
      * On September 18, 1950, the day of the formation of the United Nations, International United Nations Day was established as a public holiday.
      * Later, on September 3, 1976, United Nations Day was removed as a public holiday and Armed Forces Day was established as a new public holiday.
@@ -721,7 +725,7 @@ class SouthKorea extends AbstractProvider
     }
 
     /**
-     * Holidays in used from 1949 until 1958
+     * Holidays in used from 1949 until 1958.
      */
     private function calculateBefore1959(int $year): void
     {
@@ -752,12 +756,12 @@ class SouthKorea extends AbstractProvider
     }
 
     /**
-     * Holidays in used from 1959 until 1974
+     * Holidays in used from 1959 until 1974.
      */
     private function calculateBefore1975(int $year): void
     {
         // Arbor Day was once moved to March 21 in 1960.
-        $arborDay = ($year === 1960)
+        $arborDay = (1960 === $year)
             ? new Holiday('arborDay', ['en' => 'Arbor Day', 'ko' => '사방의 날'], new \DateTime("$year-3-21", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale)
             : $this->arborDay($year, $this->timezone, $this->locale);
 
@@ -779,7 +783,7 @@ class SouthKorea extends AbstractProvider
     }
 
     /**
-     * Holidays in used from 1975 until 1988
+     * Holidays in used from 1975 until 1988.
      */
     private function calculateBefore1989(int $year): void
     {
@@ -819,7 +823,7 @@ class SouthKorea extends AbstractProvider
     }
 
     /**
-     * Holidays in used from 1989 until 2012
+     * Holidays in used from 1989 until 2012.
      */
     private function calculateBefore2013(int $year): void
     {
@@ -858,7 +862,7 @@ class SouthKorea extends AbstractProvider
     }
 
     /**
-     * Holidays in use since 2013
+     * Holidays in use since 2013.
      */
     private function calculateCurrent(int $year): void
     {
