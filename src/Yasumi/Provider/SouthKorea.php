@@ -886,7 +886,7 @@ class SouthKorea extends AbstractProvider
     }
 
     /**
-     * Substitute Holidays up to 2021.
+     * Substitute Holidays up to 2022.
      * Related statutes: Article 3 Alternative Statutory Holidays of the Regulations on Holidays of Government Offices.
      *
      * Since 2014, it has been applied only on Seollal, Chuseok and Children's Day.
@@ -895,7 +895,7 @@ class SouthKorea extends AbstractProvider
      * As an exception, Children's Day also applies on Saturday.
      *
      * Since new legislation about public holiday was enacted in June 2021,
-     * this function is used to calculate the holidays up to 2021.
+     * this function is used to calculate the holidays up to 2022.
      *
      * @throws \Exception
      */
