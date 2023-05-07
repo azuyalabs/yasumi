@@ -70,7 +70,7 @@ class SouthKoreaTest extends SouthKoreaBaseTestCase implements ProviderTestCase
                 $officialHolidays[] = 'dayAfterNewYearsDay';
             }
         }
-        if ($this->year >= 1956 && $this->year <= 1990) {
+        if ($this->year >= 1976 && $this->year <= 1990) {
             $officialHolidays[] = 'armedForcesDay';
         }
         if ($this->year >= 1966) {
