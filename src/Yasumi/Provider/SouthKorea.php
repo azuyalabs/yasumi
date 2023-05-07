@@ -1013,6 +1013,8 @@ class SouthKorea extends AbstractProvider
      * Return a dictionary of substitute holiday
      * Government-recognized holidays will be replaced with an alternative holiday if they overlap with a Saturday or Sunday.
      * This dictionary contains information about which day of the week the holiday is replaced when it falls on.
+     *
+     * @return array<string, array<int>>
      */
     private function calculateAcceptedSubstituteHolidays(int $year): array
     {
