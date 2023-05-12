@@ -53,6 +53,36 @@ class BuddhasBirthdayTest extends SouthKoreaBaseTestCase implements HolidayTestC
     }
 
     /**
+     * Tests substitute holidays.
+     *
+     * @dataProvider SubstituteHolidayDataProvider
+     *
+     * @param int     $year     the year for which the holiday defined in this test needs to be tested
+     * @param ?string $expected the expected date
+     *
+     * @throws \Exception
+     */
+    public function testSubstituteHoliday(int $year, ?string $expected): void
+    {
+        if (isset(SouthKorea::LUNAR_HOLIDAY[self::HOLIDAY][$year])) {
+            if ($expected) {
+                $this->assertSubstituteHoliday(
+                    self::REGION,
+                    self::HOLIDAY,
+                    $year,
+                    new \DateTime($expected, new \DateTimeZone(self::TIMEZONE))
+                );
+            } else {
+                $this->assertNotSubstituteHoliday(
+                    self::REGION,
+                    self::HOLIDAY,
+                    $year
+                );
+            }
+        }
+    }
+
+    /**
      * Tests the holiday defined in this test before establishment.
      *
      * @throws \Exception
@@ -100,5 +130,32 @@ class BuddhasBirthdayTest extends SouthKoreaBaseTestCase implements HolidayTestC
                 Holiday::TYPE_OFFICIAL
             );
         }
+    }
+
+    /**
+     * Returns a list of test dates.
+     *
+     * @return array<array> list of test dates for the holiday defined in this test
+     */
+    public function SubstituteHolidayDataProvider(): array
+    {
+        return [
+            [1975, null],
+            [2005, null],
+            [2020, null],
+            [2021, null],
+            [2022, null],
+            [2023, '2023-05-29'],
+            [2024, null],
+            [2025, '2025-05-06'],
+            [2026, '2026-05-25'],
+            [2027, null],
+            [2028, null],
+            [2029, '2029-05-21'],
+            [2030, null],
+            [2031, null],
+            [2032, '2032-05-17'],
+            [2036, '2036-05-06'],
+        ];
     }
 }
