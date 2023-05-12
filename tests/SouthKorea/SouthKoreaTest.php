@@ -51,7 +51,7 @@ class SouthKoreaTest extends SouthKoreaBaseTestCase implements ProviderTestCase
             $officialHolidays[] = 'liberationDay';
             $officialHolidays[] = 'nationalFoundationDay';
             $officialHolidays[] = 'christmasDay';
-            if (ArborDayTest::YEAR_NOT_CELEBRATED !== $this->year && $this->year < ArborDayTest::REMOVED_YEAR + 1) {
+            if ($this->year < ArborDayTest::REMOVED_YEAR + 1) {
                 $officialHolidays[] = 'arborDay';
             }
             if ($this->year <= 1990 || $this->year > 2012) {
