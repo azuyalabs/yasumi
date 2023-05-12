@@ -45,10 +45,12 @@ class SeollalTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         if (isset(SouthKorea::LUNAR_HOLIDAY[self::HOLIDAY][$year])) {
             $date = new \DateTime(SouthKorea::LUNAR_HOLIDAY[self::HOLIDAY][$year], new \DateTimeZone(self::TIMEZONE));
 
-            // Seollal
-            $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
+            if ($year >= 1985) {
+                // Seollal
+                $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
+            }
 
-            if ($year >= 1990) {
+            if ($year >= 1989) {
                 // Day before Seollal
                 $this->assertHoliday(
                     self::REGION,
