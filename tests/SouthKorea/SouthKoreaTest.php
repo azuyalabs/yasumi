@@ -26,6 +26,11 @@ use Yasumi\Yasumi;
 class SouthKoreaTest extends SouthKoreaBaseTestCase implements ProviderTestCase
 {
     /**
+     * @var int the year of upper limit for tests of lunar date
+     */
+    public const LUNAR_TEST_LIMIT = 2050;
+
+    /**
      * @var int year random year number used for all tests in this Test Case
      */
     protected int $year;
@@ -37,7 +42,7 @@ class SouthKoreaTest extends SouthKoreaBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1949, 2050);
+        $this->year = $this->generateRandomYear(1949, self::LUNAR_TEST_LIMIT);
     }
 
     /**
@@ -78,7 +83,7 @@ class SouthKoreaTest extends SouthKoreaBaseTestCase implements ProviderTestCase
         }
 
         // specific cases (Seollal, Buddha's Birthday and Chuseok)
-        if ($this->year >= 1949 && isset(SouthKorea::LUNAR_HOLIDAY['chuseok'][$this->year])) {
+        if ($this->year >= 1949 && $this->year <= self::LUNAR_TEST_LIMIT) {
             $officialHolidays[] = 'chuseok';
             if ($this->year >= 1986) {
                 $officialHolidays[] = 'dayAfterChuseok';
@@ -87,10 +92,10 @@ class SouthKoreaTest extends SouthKoreaBaseTestCase implements ProviderTestCase
                 $officialHolidays[] = 'dayBeforeChuseok';
             }
         }
-        if ($this->year >= 1975 && isset(SouthKorea::LUNAR_HOLIDAY['buddhasBirthday'][$this->year])) {
+        if ($this->year >= 1975 && $this->year <= self::LUNAR_TEST_LIMIT) {
             $officialHolidays[] = 'buddhasBirthday';
         }
-        if ($this->year >= 1985 && isset(SouthKorea::LUNAR_HOLIDAY['seollal'][$this->year])) {
+        if ($this->year >= 1985 && $this->year <= self::LUNAR_TEST_LIMIT) {
             $officialHolidays[] = 'seollal';
             if ($this->year > 1989) {
                 $officialHolidays[] = 'dayBeforeSeollal';
