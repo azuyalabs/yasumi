@@ -404,7 +404,7 @@ class SouthKorea extends AbstractProvider
         string $locale,
         string $type = Holiday::TYPE_OFFICIAL
     ): Holiday {
-        $datetime = ($year === 1960) ? "$year-3-21" : "$year-4-5";
+        $datetime = (1960 === $year) ? "$year-3-21" : "$year-4-5";
 
         return new Holiday(
             'arborDay',
@@ -719,7 +719,7 @@ class SouthKorea extends AbstractProvider
     {
         switch ($key) {
             case 'arborDay':
-                $names = ($year === 1960)
+                $names = (1960 === $year)
                     ? ['en' => 'Arbor Day', 'ko' => '사방의 날']
                     : self::HOLIDAY_NAMES[$key];
                 break;
@@ -734,7 +734,7 @@ class SouthKorea extends AbstractProvider
     /**
      * Holidays in used from 1949 until 2012.
      *
-     * @return array<string> List of holidays.
+     * @return array<string> list of holidays
      */
     private function calculateBefore2013(int $year): array
     {
@@ -806,7 +806,7 @@ class SouthKorea extends AbstractProvider
     /**
      * Holidays in use since 2013.
      *
-     * @return array<string> List of holidays.
+     * @return array<string> list of holidays
      */
     private function calculateCurrent(int $year): array
     {
