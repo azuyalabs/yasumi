@@ -214,36 +214,20 @@ class SouthKorea extends AbstractProvider
             return;
         }
 
-        //  Holidays in used from 1949 until 1958
-        if ($this->year < 1959) {
-            $this->calculateBefore1959($this->year);
-
-            return;
-        }
-
-        // Holidays in used from 1959 until 1974
-        if ($this->year < 1975) {
-            $this->calculateBefore1975($this->year);
-
-            return;
-        }
-
-        // Holidays in used from 1975 until 1988
-        if ($this->year < 1989) {
-            $this->calculateBefore1989($this->year);
-
-            return;
-        }
-
-        // Holidays in used from 1989 until 2012
         if ($this->year < 2013) {
-            $this->calculateBefore2013($this->year);
-
-            return;
+            // Holidays in used from 1949 until 2012
+            $officialHolidays = $this->calculateBefore2013($this->year);
+        } else {
+            // Holidays in use from 2013
+            $officialHolidays = $this->calculateCurrent($this->year);
         }
 
-        // Holidays in use from 2013
-        $this->calculateCurrent($this->year);
+        foreach ($officialHolidays as $holiday) {
+            $this->addHoliday($this->{$holiday}($this->year, $this->timezone, $this->locale));
+        }
+
+        // Substitute Holidays
+        $this->calculateSubstituteHolidays($this->year);
     }
 
     public function getSources(): array
@@ -274,7 +258,7 @@ class SouthKorea extends AbstractProvider
     ): Holiday {
         return new Holiday(
             'dayAfterNewYearsDay',
-            static::HOLIDAY_NAMES['dayAfterNewYearsDay'],
+            $this->getTranslations('dayAfterNewYearsDay', $year),
             new \DateTime("$year-1-2", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -293,7 +277,7 @@ class SouthKorea extends AbstractProvider
     ): Holiday {
         return new Holiday(
             'twoDaysLaterNewYearsDay',
-            static::HOLIDAY_NAMES['twoDaysLaterNewYearsDay'],
+            $this->getTranslations('twoDaysLaterNewYearsDay', $year),
             new \DateTime("$year-1-3", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -322,7 +306,7 @@ class SouthKorea extends AbstractProvider
 
         return new Holiday(
             'seollal',
-            static::HOLIDAY_NAMES['seollal'],
+            $this->getTranslations('seollal', $year),
             new \DateTime($seollal, DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -351,7 +335,7 @@ class SouthKorea extends AbstractProvider
 
         return new Holiday(
             'dayBeforeSeollal',
-            static::HOLIDAY_NAMES['dayBeforeSeollal'],
+            $this->getTranslations('dayBeforeSeollal', $year),
             new \DateTime("-1 day $seollal", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -380,7 +364,7 @@ class SouthKorea extends AbstractProvider
 
         return new Holiday(
             'dayAfterSeollal',
-            static::HOLIDAY_NAMES['dayAfterSeollal'],
+            $this->getTranslations('dayAfterSeollal', $year),
             new \DateTime("+1 day $seollal", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -401,7 +385,7 @@ class SouthKorea extends AbstractProvider
     ): Holiday {
         return new Holiday(
             'independenceMovementDay',
-            static::HOLIDAY_NAMES['independenceMovementDay'],
+            $this->getTranslations('independenceMovementDay', $year),
             new \DateTime("$year-3-1", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -420,10 +404,12 @@ class SouthKorea extends AbstractProvider
         string $locale,
         string $type = Holiday::TYPE_OFFICIAL
     ): Holiday {
+        $datetime = ($year === 1960) ? "$year-3-21" : "$year-4-5";
+
         return new Holiday(
             'arborDay',
-            static::HOLIDAY_NAMES['arborDay'],
-            new \DateTime("$year-4-5", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $this->getTranslations('arborDay', $year),
+            new \DateTime($datetime, DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
@@ -449,7 +435,7 @@ class SouthKorea extends AbstractProvider
 
         return new Holiday(
             'buddhasBirthday',
-            static::HOLIDAY_NAMES['buddhasBirthday'],
+            $this->getTranslations('buddhasBirthday', $year),
             new \DateTime($buddhasBirthday, DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -470,7 +456,7 @@ class SouthKorea extends AbstractProvider
     ): Holiday {
         return new Holiday(
             'childrensDay',
-            static::HOLIDAY_NAMES['childrensDay'],
+            $this->getTranslations('childrensDay', $year),
             new \DateTime("$year-5-5", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -491,7 +477,7 @@ class SouthKorea extends AbstractProvider
     ): Holiday {
         return new Holiday(
             'memorialDay',
-            static::HOLIDAY_NAMES['memorialDay'],
+            $this->getTranslations('memorialDay', $year),
             new \DateTime("$year-6-6", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -515,7 +501,7 @@ class SouthKorea extends AbstractProvider
     ): Holiday {
         return new Holiday(
             'constitutionDay',
-            static::HOLIDAY_NAMES['constitutionDay'],
+            $this->getTranslations('constitutionDay', $year),
             new \DateTime("$year-7-17", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -536,7 +522,7 @@ class SouthKorea extends AbstractProvider
     ): Holiday {
         return new Holiday(
             'liberationDay',
-            static::HOLIDAY_NAMES['liberationDay'],
+            $this->getTranslations('liberationDay', $year),
             new \DateTime("$year-8-15", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -566,7 +552,7 @@ class SouthKorea extends AbstractProvider
 
         return new Holiday(
             'chuseok',
-            static::HOLIDAY_NAMES['chuseok'],
+            $this->getTranslations('chuseok', $year),
             new \DateTime($choseok, DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -596,7 +582,7 @@ class SouthKorea extends AbstractProvider
 
         return new Holiday(
             'dayBeforeChuseok',
-            static::HOLIDAY_NAMES['dayBeforeChuseok'],
+            $this->getTranslations('dayBeforeChuseok', $year),
             new \DateTime("-1 day $choseok", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -626,7 +612,7 @@ class SouthKorea extends AbstractProvider
 
         return new Holiday(
             'dayAfterChuseok',
-            static::HOLIDAY_NAMES['dayAfterChuseok'],
+            $this->getTranslations('dayAfterChuseok', $year),
             new \DateTime("+1 day $choseok", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -650,7 +636,7 @@ class SouthKorea extends AbstractProvider
     ): Holiday {
         return new Holiday(
             'armedForcesDay',
-            static::HOLIDAY_NAMES['armedForcesDay'],
+            $this->getTranslations('armedForcesDay', $year),
             new \DateTime("$year-10-1", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -671,7 +657,7 @@ class SouthKorea extends AbstractProvider
     ): Holiday {
         return new Holiday(
             'nationalFoundationDay',
-            static::HOLIDAY_NAMES['nationalFoundationDay'],
+            $this->getTranslations('nationalFoundationDay', $year),
             new \DateTime("$year-10-3", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -694,7 +680,7 @@ class SouthKorea extends AbstractProvider
     ): Holiday {
         return new Holiday(
             'hangulDay',
-            static::HOLIDAY_NAMES['hangulDay'],
+            $this->getTranslations('hangulDay', $year),
             new \DateTime("$year-10-9", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -717,7 +703,7 @@ class SouthKorea extends AbstractProvider
     ): Holiday {
         return new Holiday(
             'unitedNationsDay',
-            static::HOLIDAY_NAMES['unitedNationsDay'],
+            $this->getTranslations('unitedNationsDay', $year),
             new \DateTime("$year-10-24", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
@@ -725,164 +711,124 @@ class SouthKorea extends AbstractProvider
     }
 
     /**
-     * Holidays in used from 1949 until 1958.
+     * Get holiday names for translation.
+     *
+     * @return array<string>
      */
-    private function calculateBefore1959(int $year): void
+    protected function getTranslations(string $key, int $year): array
     {
-        // holidays first established in 1949
-        $this->addHoliday($this->newYearsDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->dayAfterNewYearsDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->twoDaysLaterNewYearsDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->independenceMovementDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->arborDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->constitutionDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->liberationDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->chuseok($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->nationalFoundationDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->hangulDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->christmasDay($year, $this->timezone, $this->locale));
-
-        // United Nations Day had been added in 1950
-        if ($year > 1949) {
-            $this->addHoliday($this->unitedNationsDay($year, $this->timezone, $this->locale));
-        }
-
-        // Memorial Day has been added in 1956
-        if ($year > 1955) {
-            $this->addHoliday($this->memorialDay($year, $this->timezone, $this->locale));
-        }
-
-        $this->calculateOldSubstituteHolidays($year);
-    }
-
-    /**
-     * Holidays in used from 1959 until 1974.
-     */
-    private function calculateBefore1975(int $year): void
-    {
-        // Arbor Day was once moved to March 21 in 1960.
-        $arborDay = (1960 === $year)
-            ? new Holiday('arborDay', ['en' => 'Arbor Day', 'ko' => '사방의 날'], new \DateTime("$year-3-21", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale)
-            : $this->arborDay($year, $this->timezone, $this->locale);
-
-        $this->addHoliday($this->newYearsDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->dayAfterNewYearsDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->twoDaysLaterNewYearsDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->independenceMovementDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($arborDay);
-        $this->addHoliday($this->memorialDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->constitutionDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->liberationDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->chuseok($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->nationalFoundationDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->hangulDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->unitedNationsDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->christmasDay($year, $this->timezone, $this->locale));
-
-        $this->calculateOldSubstituteHolidays($year);
-    }
-
-    /**
-     * Holidays in used from 1975 until 1988.
-     */
-    private function calculateBefore1989(int $year): void
-    {
-        $this->addHoliday($this->newYearsDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->dayAfterNewYearsDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->twoDaysLaterNewYearsDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->independenceMovementDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->arborDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->buddhasBirthday($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->childrensDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->memorialDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->constitutionDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->liberationDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->chuseok($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->nationalFoundationDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->hangulDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->christmasDay($year, $this->timezone, $this->locale));
-
-        switch ($year) {
-            case 1975:
-                $this->addHoliday($this->unitedNationsDay($year, $this->timezone, $this->locale));
+        switch ($key) {
+            case 'arborDay':
+                $names = ($year === 1960)
+                    ? ['en' => 'Arbor Day', 'ko' => '사방의 날']
+                    : self::HOLIDAY_NAMES[$key];
                 break;
             default:
-                $this->addHoliday($this->armedForcesDay($year, $this->timezone, $this->locale));
+                $names = isset(self::HOLIDAY_NAMES[$key]) ? self::HOLIDAY_NAMES[$key] : [];
                 break;
         }
 
-        if ($year > 1984) {
-            $this->addHoliday($this->seollal($year, $this->timezone, $this->locale));
-        }
-
-        if ($year > 1985) {
-            $this->addHoliday($this->dayAfterChuseok($year, $this->timezone, $this->locale));
-        }
-
-        $this->calculateOldSubstituteHolidays($year);
+        return $names;
     }
 
     /**
-     * Holidays in used from 1989 until 2012.
+     * Holidays in used from 1949 until 2012.
+     *
+     * @return array<string> List of holidays.
      */
-    private function calculateBefore2013(int $year): void
+    private function calculateBefore2013(int $year): array
     {
-        $this->addHoliday($this->newYearsDay($year, $this->timezone, $this->locale));
-        if ($year < 1999) {
-            $this->addHoliday($this->dayAfterNewYearsDay($year, $this->timezone, $this->locale));
-        }
-        if ($year < 1990) {
-            $this->addHoliday($this->twoDaysLaterNewYearsDay($year, $this->timezone, $this->locale));
-        }
-        $this->addHoliday($this->dayBeforeSeollal($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->seollal($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->dayAfterSeollal($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->independenceMovementDay($year, $this->timezone, $this->locale));
-        if ($year < 2006) {
-            $this->addHoliday($this->arborDay($year, $this->timezone, $this->locale));
-        }
-        $this->addHoliday($this->buddhasBirthday($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->childrensDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->memorialDay($year, $this->timezone, $this->locale));
-        if ($year < 2008) {
-            $this->addHoliday($this->constitutionDay($year, $this->timezone, $this->locale));
-        }
-        $this->addHoliday($this->liberationDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->dayBeforeChuseok($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->chuseok($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->dayAfterChuseok($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->nationalFoundationDay($year, $this->timezone, $this->locale));
-        if ($year < 1991) {
-            $this->addHoliday($this->armedForcesDay($year, $this->timezone, $this->locale));
-            $this->addHoliday($this->hangulDay($year, $this->timezone, $this->locale));
-        }
-        $this->addHoliday($this->christmasDay($year, $this->timezone, $this->locale));
+        $officialHolidays = [];
 
-        $this->calculateOldSubstituteHolidays($year);
+        if ($year >= 1949) {
+            $officialHolidays[] = 'independenceMovementDay';
+            $officialHolidays[] = 'liberationDay';
+            $officialHolidays[] = 'nationalFoundationDay';
+            $officialHolidays[] = 'newYearsDay';
+            $officialHolidays[] = 'chuseok';
+            $officialHolidays[] = 'christmasDay';
+
+            if ($year >= 1950 && $year < 1976) {
+                $officialHolidays[] = 'unitedNationsDay';
+            }
+
+            if ($year >= 1956) {
+                $officialHolidays[] = 'memorialDay';
+            }
+
+            if ($year >= 1975) {
+                $officialHolidays[] = 'childrensDay';
+                $officialHolidays[] = 'buddhasBirthday';
+            }
+
+            if ($year >= 1976 && $year <= 1990) {
+                $officialHolidays[] = 'armedForcesDay';
+            }
+
+            if ($year >= 1985) {
+                $officialHolidays[] = 'seollal';
+            }
+
+            if ($year >= 1986) {
+                $officialHolidays[] = 'dayAfterChuseok';
+            }
+
+            if ($year >= 1989) {
+                $officialHolidays[] = 'dayBeforeChuseok';
+                $officialHolidays[] = 'dayBeforeSeollal';
+                $officialHolidays[] = 'dayAfterSeollal';
+            }
+
+            if ($year <= 1989) {
+                $officialHolidays[] = 'twoDaysLaterNewYearsDay';
+            }
+
+            if ($year <= 1990 || $year > 2012) {
+                $officialHolidays[] = 'hangulDay';
+            }
+
+            if ($year <= 1998) {
+                $officialHolidays[] = 'dayAfterNewYearsDay';
+            }
+
+            if ($year <= 2005) {
+                $officialHolidays[] = 'arborDay';
+            }
+
+            if ($year < 2008) {
+                $officialHolidays[] = 'constitutionDay';
+            }
+        }
+
+        return $officialHolidays;
     }
 
     /**
      * Holidays in use since 2013.
+     *
+     * @return array<string> List of holidays.
      */
-    private function calculateCurrent(int $year): void
+    private function calculateCurrent(int $year): array
     {
-        $this->addHoliday($this->newYearsDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->dayBeforeSeollal($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->seollal($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->dayAfterSeollal($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->independenceMovementDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->buddhasBirthday($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->childrensDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->memorialDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->liberationDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->dayBeforeChuseok($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->chuseok($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->dayAfterChuseok($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->nationalFoundationDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->hangulDay($year, $this->timezone, $this->locale));
-        $this->addHoliday($this->christmasDay($year, $this->timezone, $this->locale));
+        $officialHolidays = [];
 
-        $this->calculateSubstituteHolidays($year);
+        $officialHolidays[] = 'newYearsDay';
+        $officialHolidays[] = 'dayBeforeSeollal';
+        $officialHolidays[] = 'seollal';
+        $officialHolidays[] = 'dayAfterSeollal';
+        $officialHolidays[] = 'independenceMovementDay';
+        $officialHolidays[] = 'buddhasBirthday';
+        $officialHolidays[] = 'childrensDay';
+        $officialHolidays[] = 'memorialDay';
+        $officialHolidays[] = 'liberationDay';
+        $officialHolidays[] = 'dayBeforeChuseok';
+        $officialHolidays[] = 'chuseok';
+        $officialHolidays[] = 'dayAfterChuseok';
+        $officialHolidays[] = 'nationalFoundationDay';
+        $officialHolidays[] = 'hangulDay';
+        $officialHolidays[] = 'christmasDay';
+
+        return $officialHolidays;
     }
 
     /**
