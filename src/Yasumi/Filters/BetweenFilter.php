@@ -33,7 +33,7 @@ class BetweenFilter extends AbstractFilter
     /** end date of the time frame to check against */
     private string $endDate;
 
-    /**indicates whether the start and end dates should be included in the comparison */
+    /** indicates whether the start and end dates should be included in the comparison */
     private bool $equal;
 
     /**
