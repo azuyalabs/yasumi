@@ -115,7 +115,7 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
         }
 
         $this->holidays[$holiday->getKey()] = $holiday;
-        uasort($this->holidays, fn (\DateTimeInterface $dateA, \DateTimeInterface $dateB): int => self::compareDates($dateA, $dateB));
+        uasort($this->holidays, static fn (\DateTimeInterface $dateA, \DateTimeInterface $dateB): int => self::compareDates($dateA, $dateB));
     }
 
     public function removeHoliday(string $key): void
