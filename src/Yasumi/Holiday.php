@@ -118,7 +118,7 @@ class Holiday extends \DateTime implements \JsonSerializable
         }
 
         // Assert display locale input
-        if (!\in_array($displayLocale, self::$locales, true)) {
+        if (! \in_array($displayLocale, self::$locales, true)) {
             throw new UnknownLocaleException(sprintf('Locale "%s" is not a valid locale.', $displayLocale));
         }
 
@@ -185,7 +185,7 @@ class Holiday extends \DateTime implements \JsonSerializable
      * @see Holiday::DEFAULT_LOCALE
      * @see Holiday::LOCALE_KEY
      */
-    public function getName(array $locales = null): string
+    public function getName(?array $locales = null): string
     {
         $locales = $this->getLocales($locales);
         foreach ($locales as $locale) {
@@ -231,7 +231,7 @@ class Holiday extends \DateTime implements \JsonSerializable
      */
     protected function getLocales(?array $locales): array
     {
-        if (!empty($locales)) {
+        if (! empty($locales)) {
             $expanded = [];
         } else {
             $locales = [$this->displayLocale];
@@ -242,7 +242,7 @@ class Holiday extends \DateTime implements \JsonSerializable
         // Expand e.g. ['de_DE', 'en_GB'] into  ['de_DE', 'de', 'en_GB', 'en'].
         foreach (array_reverse($locales) as $locale) {
             $parent = strtok($locale, '_');
-            if (!$parent) {
+            if (! $parent) {
                 continue;
             }
 

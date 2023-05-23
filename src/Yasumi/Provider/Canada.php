@@ -166,7 +166,6 @@ class Canada extends AbstractProvider
      * @see Holidays Act, R.S.C., 1985, c. H-5, https://laws-lois.justice.gc.ca/eng/acts/h-5/page-1.html
      *
      * by statute, Canada Day is July 1 if that day is not Sunday, and July 2 if July 1 is a Sunday.
-
      *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException

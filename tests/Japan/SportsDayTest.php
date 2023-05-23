@@ -76,7 +76,7 @@ class SportsDayTest extends JapanBaseTestCase implements HolidayTestCase
         $year = $this->generateRandomYear(2001);
 
         // Some years the date has changed, so in this test we neeed to skip them.
-        if (!in_array($year, [2020, 2021])) {
+        if (! in_array($year, [2020, 2021])) {
             $this->assertHoliday(
                 self::REGION,
                 self::HOLIDAY,

@@ -320,7 +320,7 @@ class USA extends AbstractProvider
     {
         // Loop through all defined holidays
         foreach ($this->getHolidays() as $holiday) {
-            if (!$holiday instanceof Holiday) {
+            if (! $holiday instanceof Holiday) {
                 continue;
             }
 

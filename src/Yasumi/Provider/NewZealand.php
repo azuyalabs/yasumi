@@ -124,7 +124,7 @@ class NewZealand extends AbstractProvider
 
         $date = new \DateTime("$this->year-02-6", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
-        if ($this->year >= 2015 && !$this->isWorkingDay($date)) {
+        if ($this->year >= 2015 && ! $this->isWorkingDay($date)) {
             $date->modify('next monday');
         }
 
@@ -153,7 +153,7 @@ class NewZealand extends AbstractProvider
 
         $date = new \DateTime("$this->year-04-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
-        if ($this->year >= 2015 && !$this->isWorkingDay($date)) {
+        if ($this->year >= 2015 && ! $this->isWorkingDay($date)) {
             $date->modify('next monday');
         }
 

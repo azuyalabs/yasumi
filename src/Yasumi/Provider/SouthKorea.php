@@ -240,7 +240,7 @@ class SouthKorea extends AbstractProvider
             return;
         }
 
-        if (!isset(self::LUNAR_HOLIDAY['buddhasBirthday'][$this->year])) {
+        if (! isset(self::LUNAR_HOLIDAY['buddhasBirthday'][$this->year])) {
             return;
         }
 
@@ -574,11 +574,11 @@ class SouthKorea extends AbstractProvider
             $holiday = $this->getHoliday((string) $name);
             $dates[$day][] = $name;
 
-            if (!isset($acceptedHolidays[$name])) {
+            if (! isset($acceptedHolidays[$name])) {
                 continue;
             }
 
-            if (!$holiday instanceof Holiday) {
+            if (! $holiday instanceof Holiday) {
                 continue;
             }
 
@@ -617,7 +617,7 @@ class SouthKorea extends AbstractProvider
         $next = clone $date;
         do {
             $next->add($interval);
-        } while (!$this->isWorkingDay($next));
+        } while (! $this->isWorkingDay($next));
 
         return $next;
     }
@@ -631,7 +631,7 @@ class SouthKorea extends AbstractProvider
      */
     private function addSubstituteHoliday(?Holiday $origin, string $date_str): void
     {
-        if (!$origin instanceof Holiday) {
+        if (! $origin instanceof Holiday) {
             return;
         }
 

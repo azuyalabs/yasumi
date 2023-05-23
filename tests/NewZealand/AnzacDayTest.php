@@ -75,7 +75,7 @@ class AnzacDayTest extends NewZealandBaseTestCase implements HolidayTestCase
                 return;
             }
 
-            if (!$this->isWeekend($date)) {
+            if (! $this->isWeekend($date)) {
                 return;
             }
 

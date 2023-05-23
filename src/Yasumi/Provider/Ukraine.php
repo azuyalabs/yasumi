@@ -91,7 +91,7 @@ class Ukraine extends AbstractProvider
     {
         parent::addHoliday($holiday);
 
-        if (!$substitutable) {
+        if (! $substitutable) {
             return;
         }
 

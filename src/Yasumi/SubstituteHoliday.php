@@ -103,7 +103,7 @@ class SubstituteHoliday extends Holiday
      * @see Holiday::DEFAULT_LOCALE
      * @see Holiday::LOCALE_KEY
      */
-    public function getName(array $locales = null): string
+    public function getName(?array $locales = null): string
     {
         $name = parent::getName();
 

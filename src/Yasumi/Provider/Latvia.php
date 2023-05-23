@@ -83,7 +83,7 @@ class Latvia extends AbstractProvider
         if ($this->year >= self::RESTORATION_OF_INDEPENDENCE_YEAR) {
             $date = new \DateTime("$this->year-05-04", new \DateTimeZone($this->timezone));
 
-            if (!$this->isWorkingDay($date)) {
+            if (! $this->isWorkingDay($date)) {
                 $date->modify('next monday');
             }
 
@@ -118,7 +118,7 @@ class Latvia extends AbstractProvider
         if ($this->year >= self::PROCLAMATION_OF_INDEPENDENCE_YEAR) {
             $date = new \DateTime("$this->year-11-18", new \DateTimeZone($this->timezone));
 
-            if (!$this->isWorkingDay($date)) {
+            if (! $this->isWorkingDay($date)) {
                 $date->modify('next monday');
             }
 

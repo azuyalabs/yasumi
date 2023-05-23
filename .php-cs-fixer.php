@@ -20,11 +20,14 @@ $config->setRiskyAllowed(true)->setRules([
   '@PER' => true,
   'combine_consecutive_issets' => true,
   'combine_consecutive_unsets' => true,
-  'declare_strict_types' => true,
   'no_superfluous_elseif' => true,
   'no_superfluous_phpdoc_tags' => ['remove_inheritdoc' => true],
+  'not_operator_with_successor_space' => true,
+  'ordered_class_elements' => true,
+  'nullable_type_declaration_for_default_null_value' => ['use_nullable_type_declaration' => true ],
 
-   // Risky rules
+  // Risky
+  'declare_strict_types' => true,
   'dir_constant' => true,
   'get_class_to_class_keyword' => true,
   'is_null' => true,

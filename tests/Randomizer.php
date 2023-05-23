@@ -38,9 +38,9 @@ trait Randomizer
     public function generateRandomDates(
         int $month,
         int $day,
-        string $timezone = null,
-        int $iterations = null,
-        int $range = null
+        ?string $timezone = null,
+        ?int $iterations = null,
+        ?int $range = null
     ): array {
         $data = [];
         $range ??= 1000;
@@ -64,9 +64,9 @@ trait Randomizer
      * @throws \Exception
      */
     public function generateRandomEasterDates(
-        string $timezone = null,
-        int $iterations = null,
-        int $range = null
+        ?string $timezone = null,
+        ?int $iterations = null,
+        ?int $range = null
     ): array {
         $data = [];
         $range ??= 1000;
@@ -93,9 +93,9 @@ trait Randomizer
      * @throws \Exception
      */
     public function generateRandomEasterMondayDates(
-        string $timezone = null,
-        int $iterations = null,
-        int $range = null
+        ?string $timezone = null,
+        ?int $iterations = null,
+        ?int $range = null
     ): array {
         $range ??= 1000;
 
@@ -118,9 +118,9 @@ trait Randomizer
      */
     public function generateRandomModifiedEasterDates(
         callable $cb,
-        string $timezone = null,
-        int $iterations = null,
-        int $range = null
+        ?string $timezone = null,
+        ?int $iterations = null,
+        ?int $range = null
     ): array {
         $data = [];
         $range ??= 1000;
@@ -148,9 +148,9 @@ trait Randomizer
      * @throws \Exception
      */
     public function generateRandomGoodFridayDates(
-        string $timezone = null,
-        int $iterations = null,
-        int $range = null
+        ?string $timezone = null,
+        ?int $iterations = null,
+        ?int $range = null
     ): array {
         $range ??= 1000;
 
@@ -171,9 +171,9 @@ trait Randomizer
      * @throws \Exception
      */
     public function generateRandomPentecostDates(
-        string $timezone = null,
-        int $iterations = null,
-        int $range = null
+        ?string $timezone = null,
+        ?int $iterations = null,
+        ?int $range = null
     ): array {
         $range ??= 1000;
 
@@ -199,9 +199,9 @@ trait Randomizer
     public function generateRandomDatesWithHolidayMovedToMonday(
         int $month,
         int $day,
-        string $timezone = null,
-        int $iterations = null,
-        int $range = null
+        ?string $timezone = null,
+        ?int $iterations = null,
+        ?int $range = null
     ): array {
         return $this->generateRandomDatesWithModifier($month, $day, function ($range, \DateTime $date): void {
             if ($this->isWeekend($date)) {
@@ -230,7 +230,7 @@ trait Randomizer
         callable $callback,
         int $iterations,
         int $range,
-        string $timezone = null
+        ?string $timezone = null
     ): array {
         $data = [];
 
@@ -257,8 +257,8 @@ trait Randomizer
      * @throws \Exception
      */
     public function generateRandomYear(
-        int $lowerLimit = null,
-        int $upperLimit = null
+        ?int $lowerLimit = null,
+        ?int $upperLimit = null
     ): int {
         return self::numberBetween($lowerLimit ?? 1000, $upperLimit ?? 9999);
     }
@@ -312,13 +312,13 @@ trait Randomizer
     {
         $startTimestamp = $startDate instanceof \DateTime ? $startDate->getTimestamp() : strtotime($startDate);
 
-        if (!$startTimestamp) {
+        if (! $startTimestamp) {
             throw new \RuntimeException('unable to get timestamp for the start date');
         }
 
         $endTimestamp = static::getMaxTimestamp($endDate);
 
-        if (!$endTimestamp) {
+        if (! $endTimestamp) {
             throw new \RuntimeException('unable to get timestamp for the end date');
         }
 
