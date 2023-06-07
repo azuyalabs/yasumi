@@ -19,19 +19,24 @@ use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
 /**
- * Class for testing Memorial Day in South Korea.
+ * Class for testing United Nations Day in South Korea.
  */
-class MemorialDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
+class UnitedNationsDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.
      */
-    public const HOLIDAY = 'memorialDay';
+    public const HOLIDAY = 'unitedNationsDay';
 
     /**
      * The year in which the holiday was first established.
      */
-    public const ESTABLISHMENT_YEAR = 1956;
+    public const ESTABLISHMENT_YEAR = 1950;
+
+    /**
+     * The year in which the holiday was removed.
+     */
+    public const REMOVED_YEAR = 1975;
 
     /**
      * Tests the holiday defined in this test.
@@ -40,12 +45,26 @@ class MemorialDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
      */
     public function testHoliday(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::REMOVED_YEAR);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-6-6", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-10-24", new \DateTimeZone(self::TIMEZONE))
+        );
+    }
+
+    /**
+     * Tests the holiday defined in this test after removal.
+     *
+     * @throws \Exception
+     */
+    public function testHolidayAfterRemoval(): void
+    {
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::REMOVED_YEAR + 1)
         );
     }
 
@@ -73,8 +92,8 @@ class MemorialDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => '현충일']
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::REMOVED_YEAR),
+            [self::LOCALE => '유엔의 날']
         );
     }
 
@@ -88,7 +107,7 @@ class MemorialDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::REMOVED_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

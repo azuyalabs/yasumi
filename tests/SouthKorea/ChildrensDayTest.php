@@ -31,7 +31,7 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     /**
      * The year in which the holiday was first established.
      */
-    public const ESTABLISHMENT_YEAR = 1970;
+    public const ESTABLISHMENT_YEAR = 1975;
 
     /**
      * Tests the holiday defined in this test.

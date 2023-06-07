@@ -12,9 +12,22 @@ changes.
 
 ### Added
 
+- Recently, the South Korean government announced a bill to apply alternative public holidays to Buddha's Day
+  and Christmas Day, which we have reflected in our South Korea provider.
+  [\#314](https://github.com/azuyalabs/yasumi/pull/314) ([barami](https://github.com/barami))
+
 ### Changed
 
+- Updated links to related documentation in the SouthKorea provider's note and added links to conversion utilities.
+  [\#314](https://github.com/azuyalabs/yasumi/pull/314) ([barami](https://github.com/barami))
+- Refactored the complexity of the SouthKorea provider to make it easier to understand in case of future changes.
+  [\#314](https://github.com/azuyalabs/yasumi/pull/314) ([barami](https://github.com/barami))
+
 ### Fixed
+
+- Fixed a bug in the South Korea provider where some of the past dates for Buddha's Day, Chuseok, Armed Forces Day
+  and United Nations Day were incorrect during holidays, and modified the unit tests accordingly.
+  [\#314](https://github.com/azuyalabs/yasumi/pull/314) ([barami](https://github.com/barami))
 
 ### Removed
 
