@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\UnitedKingdom;
 
-use DateInterval;
-use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\DateTimeZoneFactory;
@@ -48,7 +45,6 @@ class Scotland extends UnitedKingdom
     /**
      * Initialize holidays for the United Kingdom.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -80,7 +76,6 @@ class Scotland extends UnitedKingdom
      *
      * @see https://www.timeanddate.com/holidays/uk/summer-bank-holiday
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -94,7 +89,7 @@ class Scotland extends UnitedKingdom
         $this->addHoliday(new Holiday(
             'summerBankHoliday',
             ['en' => 'August Bank Holiday'],
-            new DateTime("first monday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("first monday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
         ));
@@ -110,7 +105,6 @@ class Scotland extends UnitedKingdom
      *
      * @see https://www.timeanddate.com/holidays/uk/new-year-day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -131,7 +125,7 @@ class Scotland extends UnitedKingdom
         $secondNewYearsDay = new Holiday(
             'secondNewYearsDay',
             [],
-            new DateTime("$this->year-1-2", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("$this->year-1-2", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             $type
         );
@@ -141,7 +135,7 @@ class Scotland extends UnitedKingdom
 
         if (\in_array((int) $newYearsDay->format('w'), [0, 6], true)) {
             $date = clone $newYearsDay;
-            $date->add(new DateInterval('P2D'));
+            $date->add(new \DateInterval('P2D'));
             $this->addHoliday(new SubstituteHoliday(
                 $newYearsDay,
                 [],
@@ -153,7 +147,7 @@ class Scotland extends UnitedKingdom
 
         if (\in_array((int) $secondNewYearsDay->format('w'), [0, 6], true)) {
             $date = clone $secondNewYearsDay;
-            $date->add(new DateInterval('P2D'));
+            $date->add(new \DateInterval('P2D'));
             $this->addHoliday(new SubstituteHoliday(
                 $secondNewYearsDay,
                 [],
@@ -171,10 +165,8 @@ class Scotland extends UnitedKingdom
      *
      * @see https://en.wikipedia.org/wiki/Saint_Andrew%27s_Day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
      * @throws \Exception
      */
     private function calculateStAndrewsDay(): void
@@ -185,7 +177,7 @@ class Scotland extends UnitedKingdom
         $holiday = new Holiday(
             'stAndrewsDay',
             [],
-            new DateTime($this->year.'-11-30', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-11-30', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
         );

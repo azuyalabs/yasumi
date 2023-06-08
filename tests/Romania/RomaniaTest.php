@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,7 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Romania;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\ProviderTestCase;
 
@@ -36,7 +35,7 @@ class RomaniaTest extends RomaniaBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(2015, 2025);
+        $this->year = $this->generateRandomYear(2015, 2028);
     }
 
     /**
@@ -62,6 +61,11 @@ class RomaniaTest extends RomaniaBaseTestCase implements ProviderTestCase
 
         if ($this->year >= 2017) {
             $national_holidays[] = 'childrensDay';
+        }
+
+        if ($this->year >= 2024) {
+            $national_holidays[] = 'epiphany';
+            $national_holidays[] = 'stJohnsDay';
         }
 
         $this->assertDefinedHolidays($national_holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
@@ -110,7 +114,7 @@ class RomaniaTest extends RomaniaBaseTestCase implements ProviderTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
      * @throws \Exception
      */
     public function testSources(): void

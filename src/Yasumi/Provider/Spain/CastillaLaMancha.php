@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,8 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Spain;
 
-use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
@@ -46,7 +44,6 @@ class CastillaLaMancha extends Spain
     /**
      * Initialize holidays for Castilla-La Mancha (Spain).
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -75,7 +72,6 @@ class CastillaLaMancha extends Spain
      *
      * @see https://www.timeanddate.com/holidays/spain/castile-la-mancha-day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -86,7 +82,7 @@ class CastillaLaMancha extends Spain
             $this->addHoliday(new Holiday(
                 'castillaLaManchaDay',
                 ['es' => 'Día de la Región Castilla-La Mancha'],
-                new DateTime("$this->year-5-31", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("$this->year-5-31", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

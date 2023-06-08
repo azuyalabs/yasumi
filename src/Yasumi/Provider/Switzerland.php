@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use DateInterval;
-use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
@@ -37,7 +34,6 @@ class Switzerland extends AbstractProvider
     /**
      * Initialize holidays for Switzerland.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -67,7 +63,6 @@ class Switzerland extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Berchtoldstag
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -81,7 +76,7 @@ class Switzerland extends AbstractProvider
                 'fr' => 'Jour de la Saint-Berthold',
                 'en' => 'Berchtoldstag',
             ],
-            new DateTime($this->year.'-01-02', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-01-02', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OTHER
         ));
@@ -97,7 +92,6 @@ class Switzerland extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Federal_Day_of_Thanksgiving,_Repentance_and_Prayer
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -106,9 +100,9 @@ class Switzerland extends AbstractProvider
     {
         if ($this->year >= 1832) {
             // Find third Sunday of September
-            $date = new DateTime('Third Sunday of '.$this->year.'-09', DateTimeZoneFactory::getDateTimeZone($this->timezone));
+            $date = new \DateTime('Third Sunday of '.$this->year.'-09', DateTimeZoneFactory::getDateTimeZone($this->timezone));
             // Go to next Thursday
-            $date->add(new DateInterval('P1D'));
+            $date->add(new \DateInterval('P1D'));
 
             $this->addHoliday(new Holiday('bettagsMontag', [
                 'fr' => 'Jeûne fédéral',
@@ -127,7 +121,6 @@ class Switzerland extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Swiss_National_Day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -145,7 +138,7 @@ class Switzerland extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'swissNationalDay',
                 $translations,
-                new DateTime($this->year.'-08-01', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime($this->year.'-08-01', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OFFICIAL
             ));
@@ -153,7 +146,7 @@ class Switzerland extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'swissNationalDay',
                 $translations,
-                new DateTime($this->year.'-08-01', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime($this->year.'-08-01', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OBSERVANCE
             ));

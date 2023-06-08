@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Portugal;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -48,43 +45,43 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Holi
     /**
      * Tests the holiday defined in this test on or after establishment.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayOnAfterEstablishment(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::HOLIDAY_YEAR_ABOLISHED - 1);
 
-        $expected = new DateTime("$year-12-01", new DateTimeZone(self::TIMEZONE));
+        $expected = new \DateTime("$year-12-01", new \DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
 
         $year = self::ESTABLISHMENT_YEAR;
-        $expected = new DateTime("$year-12-01", new DateTimeZone(self::TIMEZONE));
+        $expected = new \DateTime("$year-12-01", new \DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
      * Test that the holiday if in effect in 2016 and later dates.
      *
-     * @throws Exception
-     * @throws Exception
+     * @throws \Exception
+     * @throws \Exception
      */
     public function testHolidayOnAfterRestoration(): void
     {
         $year = 2016;
 
-        $expected = new DateTime("$year-12-01", new DateTimeZone(self::TIMEZONE));
+        $expected = new \DateTime("$year-12-01", new \DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
 
         $year = $this->generateRandomYear(self::HOLIDAY_YEAR_RESTORED);
 
-        $expected = new DateTime("$year-12-01", new DateTimeZone(self::TIMEZONE));
+        $expected = new \DateTime("$year-12-01", new \DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
      * Test that the holiday did not happen in 2013-2015.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testNotHolidayDuringAbolishment(): void
     {
@@ -95,7 +92,7 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Holi
     /**
      * Tests the holiday defined in this test before establishment.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -109,7 +106,7 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Holi
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -133,7 +130,7 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Holi
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

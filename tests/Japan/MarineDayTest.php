@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,31 +14,40 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Japan;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
-/**
- * Class for testing Marine Day in Japan.
- */
-class MarineDayTest extends JapanBaseTestCase implements HolidayTestCase
+final class MarineDayTest extends JapanBaseTestCase implements HolidayTestCase
 {
-    /**
-     * The name of the holiday.
-     */
     public const HOLIDAY = 'marineDay';
 
-    /**
-     * The year in which the holiday was first established.
-     */
+    // The year in which the holiday was first established.
     public const ESTABLISHMENT_YEAR = 1996;
+
+    /**
+     * Tests Marine Day in 2020. Marine Day in 2020 is July 23th for rescheduled Olympic Games after COVID-19.
+     *
+     * @see https://en.wikipedia.org/wiki/Marine_Day
+     *
+     * @throws \Exception
+     */
+    public function testMarineDayIn2020(): void
+    {
+        $year = 2020;
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new \DateTime("$year-7-23", new \DateTimeZone(self::TIMEZONE))
+        );
+    }
 
     /**
      * Tests Marine Day in 2021. Marine Day in 2021 is July 22th for rescheduled Olympic Games after COVID-19.
      *
-     * @throws Exception
+     * @see https://en.wikipedia.org/wiki/Marine_Day
+     *
+     * @throws \Exception
      */
     public function testMarineDayIn2021(): void
     {
@@ -47,7 +56,7 @@ class MarineDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-7-22", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-7-22", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -55,21 +64,21 @@ class MarineDayTest extends JapanBaseTestCase implements HolidayTestCase
      * Tests Marine Day after 2003. Marine Day was established since 1996 on July 20th. After 2003 it was changed
      * to be the third monday of July.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testMarineDayOnAfter2003(): void
     {
         $year = $this->generateRandomYear(2004);
 
-        if (2021 === $year) {
-            $this->testMarineDayIn2021();
+        if (in_array($year, [2020, 2021])) {
+            return;
         }
 
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("third monday of july $year", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("third monday of july $year", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -77,7 +86,7 @@ class MarineDayTest extends JapanBaseTestCase implements HolidayTestCase
      * Tests Marine Day between 1996 and 2003. Marine Day was established since 1996 on July 20th. After 2003 it was
      * changed to be the third monday of July.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testMarineDayBetween1996And2003(): void
     {
@@ -86,14 +95,14 @@ class MarineDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-7-20", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-7-20", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests Marine Day between 1996 and 2003 substituted next working day (when Marine Day falls on a Sunday).
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testMarineDayBetween1996And2003SubstitutedNextWorkingDay(): void
     {
@@ -102,7 +111,7 @@ class MarineDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::SUBSTITUTE_PREFIX.self::HOLIDAY,
             $year,
-            new DateTime("$year-7-21", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-7-21", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -110,7 +119,7 @@ class MarineDayTest extends JapanBaseTestCase implements HolidayTestCase
      * Tests Marine Day before 1996. Marine Day was established since 1996 on July 20th. After 2003 it was changed
      * to be the third monday of July.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testMarineDayBefore1996(): void
     {
@@ -124,7 +133,7 @@ class MarineDayTest extends JapanBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -139,7 +148,7 @@ class MarineDayTest extends JapanBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

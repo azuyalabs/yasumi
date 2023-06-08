@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Canada;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -38,7 +35,7 @@ class LabourDayTest extends CanadaBaseTestCase implements HolidayTestCase
     /**
      * Tests Labour Day on or after 1894. Labour Day was established since 1894 on the first Monday of September.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testLabourDayOnAfter1894(): void
     {
@@ -47,14 +44,14 @@ class LabourDayTest extends CanadaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("first monday of september $year", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("first monday of september $year", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests Labour Day before 1894. Labour Day was established since 1894 on the first Monday of September.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testLabourDayBefore1894(): void
     {
@@ -68,7 +65,7 @@ class LabourDayTest extends CanadaBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -83,7 +80,7 @@ class LabourDayTest extends CanadaBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

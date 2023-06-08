@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Switzerland\Geneva;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -33,7 +30,7 @@ class RestaurationGenevoiseTest extends GenevaBaseTestCase implements HolidayTes
     /**
      * Tests Restauration Genevoise.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testRestaurationGenevoiseAfter1813(): void
     {
@@ -43,14 +40,14 @@ class RestaurationGenevoiseTest extends GenevaBaseTestCase implements HolidayTes
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime($year.'-12-31', new DateTimeZone(self::TIMEZONE))
+            new \DateTime($year.'-12-31', new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests translated name of Restauration Genevoise.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -65,7 +62,7 @@ class RestaurationGenevoiseTest extends GenevaBaseTestCase implements HolidayTes
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

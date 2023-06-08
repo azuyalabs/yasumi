@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,8 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\SubstituteHoliday;
@@ -43,7 +41,6 @@ class Ireland extends AbstractProvider
     /**
      * Initialize holidays for Ireland.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -71,7 +68,7 @@ class Ireland extends AbstractProvider
         $this->addHoliday(new Holiday(
             'augustHoliday',
             ['en' => 'August Holiday', 'ga' => 'Lá Saoire i mí Lúnasa'],
-            new DateTime("next monday $this->year-7-31", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("next monday $this->year-7-31", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
         $this->calculateOctoberHoliday();
@@ -98,7 +95,6 @@ class Ireland extends AbstractProvider
      *       states that New Years Day is substituted the *next* day if it does not fall on a weekday. So what if it
      *       falls on a Saturday?
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -134,7 +130,6 @@ class Ireland extends AbstractProvider
      * @see http://www.irishstatutebook.ie/eli/1939/act/1/section/8/enacted/en/html
      * @see http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -156,10 +151,8 @@ class Ireland extends AbstractProvider
      *
      * @see http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
      * @throws \Exception
      */
     private function calculateChristmasDay(): void
@@ -167,7 +160,7 @@ class Ireland extends AbstractProvider
         $holiday = new Holiday(
             'christmasDay',
             ['en' => 'Christmas Day', 'ga' => 'Lá Nollag'],
-            new DateTime($this->year.'-12-25', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-12-25', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         );
 
@@ -196,10 +189,8 @@ class Ireland extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/St._Stephen%27s_Day
      * @see  ChristianHolidays
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
      * @throws \Exception
      */
     private function calculateStStephensDay(): void
@@ -207,7 +198,7 @@ class Ireland extends AbstractProvider
         $holiday = new Holiday(
             'stStephensDay',
             [],
-            new DateTime($this->year.'-12-26', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-12-26', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         );
 
@@ -238,10 +229,8 @@ class Ireland extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Saint_Patrick%27s_Day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
      * @throws \Exception
      */
     private function calculateStPatricksDay(): void
@@ -252,7 +241,7 @@ class Ireland extends AbstractProvider
         $holiday = new Holiday(
             'stPatricksDay',
             ['en' => 'St. Patrick’s Day', 'ga' => 'Lá Fhéile Pádraig'],
-            new DateTime($this->year.'-3-17', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-3-17', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         );
 
@@ -283,10 +272,8 @@ class Ireland extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/May_Day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
      * @throws \Exception
      */
     private function calculateMayDay(): void
@@ -298,7 +285,7 @@ class Ireland extends AbstractProvider
         $this->addHoliday(new Holiday(
             'mayDay',
             ['en' => 'May Day', 'ga' => 'Lá Bealtaine'],
-            new DateTime("next monday $this->year-4-30", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("next monday $this->year-4-30", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -311,10 +298,8 @@ class Ireland extends AbstractProvider
      *
      * @see http://www.irishstatutebook.ie/eli/1961/act/33/section/8/enacted/en/html
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
      * @throws \Exception
      */
     private function calculateJuneHoliday(): void
@@ -326,7 +311,7 @@ class Ireland extends AbstractProvider
         $this->addHoliday(new Holiday(
             'juneHoliday',
             ['en' => 'June Holiday', 'ga' => 'Lá Saoire i mí an Mheithimh'],
-            new DateTime("next monday $this->year-5-31", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("next monday $this->year-5-31", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -338,10 +323,8 @@ class Ireland extends AbstractProvider
      *
      * @see http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
      * @throws \Exception
      */
     private function calculateOctoberHoliday(): void
@@ -353,7 +336,7 @@ class Ireland extends AbstractProvider
         $this->addHoliday(new Holiday(
             'octoberHoliday',
             ['en' => 'October Holiday', 'ga' => 'Lá Saoire i mí Dheireadh Fómhair'],
-            new DateTime("previous monday $this->year-11-01", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("previous monday $this->year-11-01", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }

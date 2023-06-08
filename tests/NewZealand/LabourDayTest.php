@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\NewZealand;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -43,7 +40,7 @@ class LabourDayTest extends NewZealandBaseTestCase implements HolidayTestCase
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHoliday(int $year, string $expected): void
     {
@@ -51,7 +48,7 @@ class LabourDayTest extends NewZealandBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime($expected, new DateTimeZone(self::TIMEZONE))
+            new \DateTime($expected, new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -68,7 +65,7 @@ class LabourDayTest extends NewZealandBaseTestCase implements HolidayTestCase
      *
      * @return array<array> list of test dates for the holiday defined in this test
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function HolidayDataProvider(): array
     {
@@ -76,9 +73,9 @@ class LabourDayTest extends NewZealandBaseTestCase implements HolidayTestCase
 
         for ($y = 0; $y < 100; ++$y) {
             $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-            $expected = new DateTime(
+            $expected = new \DateTime(
                 (($year < 1910) ? 'second wednesday of october' : 'fourth monday of october')." $year",
-                new DateTimeZone(self::TIMEZONE)
+                new \DateTimeZone(self::TIMEZONE)
             );
 
             $data[] = [$year, $expected->format('Y-m-d')];
@@ -90,7 +87,7 @@ class LabourDayTest extends NewZealandBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -105,7 +102,7 @@ class LabourDayTest extends NewZealandBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -46,13 +46,11 @@ class ArgentinaTest extends ArgentinaBaseTestCase implements ProviderTestCase
         $holidays = [
             'newYearsDay',
             'internationalWorkersDay',
-            'malvinasDay',
             'mayRevolution',
             'generalMartinMigueldeGuemesDay',
             'flagDay',
             'generalJoseSanMartinDay',
             'raceDay',
-            'nationalSovereigntyDay',
             'immaculateConceptionDay',
             'christmasDay',
         ];
@@ -63,6 +61,14 @@ class ArgentinaTest extends ArgentinaBaseTestCase implements ProviderTestCase
 
         if ($this->year >= 2006) {
             $holidays[] = 'remembranceDay';
+        }
+
+        if ($this->year >= 2010) {
+            $holidays[] = 'nationalSovereigntyDay';
+        }
+
+        if ($this->year >= 1982) {
+            $holidays[] = 'malvinasDay';
         }
 
         $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);

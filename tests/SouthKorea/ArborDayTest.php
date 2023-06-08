@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,9 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\SouthKorea;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -32,9 +29,9 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     public const REMOVED_YEAR = 2005;
 
     /**
-     * The year in which the holiday was not celebrated.
+     * The year the date was temporarily changed.
      */
-    public const YEAR_NOT_CELEBRATED = 1960;
+    public const TEMPORARY_CHANGED_YEAR = 1960;
     /**
      * The name of the holiday.
      */
@@ -48,31 +45,27 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     /**
      * Tests the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHoliday(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::REMOVED_YEAR);
-        if (self::YEAR_NOT_CELEBRATED === $year) {
-            $this->assertNotHoliday(
-                self::REGION,
-                self::HOLIDAY,
-                $year
-            );
-        } else {
-            $this->assertHoliday(
-                self::REGION,
-                self::HOLIDAY,
-                $year,
-                new DateTime("$year-4-5", new DateTimeZone(self::TIMEZONE))
-            );
-        }
+        $date = (self::TEMPORARY_CHANGED_YEAR === $year)
+            ? new \DateTime("$year-3-21", new \DateTimeZone(self::TIMEZONE))
+            : new \DateTime("$year-4-5", new \DateTimeZone(self::TIMEZONE));
+
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            $date
+        );
     }
 
     /**
      * Tests the holiday defined in this test after removal.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayAfterRemoval(): void
     {
@@ -86,7 +79,7 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     /**
      * Tests the holiday defined in this test before establishment.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -100,36 +93,34 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::REMOVED_YEAR);
-        if (self::YEAR_NOT_CELEBRATED !== $year) {
-            $this->assertTranslatedHolidayName(
-                self::REGION,
-                self::HOLIDAY,
-                $year,
-                [self::LOCALE => '식목일']
-            );
-        }
+        $translation = (self::TEMPORARY_CHANGED_YEAR === $year) ? '사방의 날' : '식목일';
+
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            [self::LOCALE => $translation]
+        );
     }
 
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::REMOVED_YEAR);
-        if (self::YEAR_NOT_CELEBRATED !== $year) {
-            $this->assertHolidayType(
-                self::REGION,
-                self::HOLIDAY,
-                $year,
-                Holiday::TYPE_OFFICIAL
-            );
-        }
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            Holiday::TYPE_OFFICIAL
+        );
     }
 }

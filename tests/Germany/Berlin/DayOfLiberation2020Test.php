@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Germany\Berlin;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -38,7 +35,7 @@ class DayOfLiberation2020Test extends BerlinBaseTestCase implements HolidayTestC
     /**
      * Test the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayInYear(): void
     {
@@ -46,14 +43,14 @@ class DayOfLiberation2020Test extends BerlinBaseTestCase implements HolidayTestC
             self::REGION,
             self::HOLIDAY,
             self::YEAR,
-            new DateTime(self::YEAR.'-05-08', new DateTimeZone(self::TIMEZONE))
+            new \DateTime(self::YEAR.'-05-08', new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Test the holiday defined in this test in the years before.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayBeforeYear(): void
     {
@@ -67,7 +64,7 @@ class DayOfLiberation2020Test extends BerlinBaseTestCase implements HolidayTestC
     /**
      * Test the holiday defined in this test in the years after.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayAfterYear(): void
     {

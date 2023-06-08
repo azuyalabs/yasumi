@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,8 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
@@ -37,7 +35,6 @@ class Austria extends AbstractProvider
     /**
      * Initialize holidays for Austria.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -87,7 +84,6 @@ class Austria extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Leopold_III,_Margrave_of_Austria
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -101,7 +97,7 @@ class Austria extends AbstractProvider
         $this->addHoliday(new Holiday(
             'stLeopoldsDay',
             [],
-            new DateTime($this->year.'-11-15', new \DateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-11-15', new \DateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -116,7 +112,6 @@ class Austria extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Declaration_of_Neutrality
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -130,7 +125,7 @@ class Austria extends AbstractProvider
         $this->addHoliday(new Holiday(
             'nationalDay',
             ['de' => 'Nationalfeiertag'],
-            new DateTime($this->year.'-10-26', new \DateTimeZone($this->timezone)),
+            new \DateTime($this->year.'-10-26', new \DateTimeZone($this->timezone)),
             $this->locale
         ));
     }

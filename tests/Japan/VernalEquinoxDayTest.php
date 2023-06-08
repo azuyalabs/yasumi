@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Japan;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -42,7 +39,7 @@ class VernalEquinoxDayTest extends JapanBaseTestCase implements HolidayTestCase
      *
      * After 2150 no calculations are available yet.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testVernalEquinoxDayOnAfter2150(): void
     {
@@ -62,7 +59,7 @@ class VernalEquinoxDayTest extends JapanBaseTestCase implements HolidayTestCase
      * @param int $month month (number) of example data to be tested
      * @param int $day   day of the month (number) of example data to be tested
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testVernalEquinoxDayBetween1948And2150(int $year, int $month, int $day): void
     {
@@ -70,7 +67,7 @@ class VernalEquinoxDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-$month-$day", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-$month-$day", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -95,7 +92,7 @@ class VernalEquinoxDayTest extends JapanBaseTestCase implements HolidayTestCase
      * of nature and the love of living things. Prior to 1948, the vernal equinox was an imperial ancestor worship
      * festival called Shunki kōrei-sai (春季皇霊祭).
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testVernalEquinoxDayBefore1948(): void
     {
@@ -109,7 +106,7 @@ class VernalEquinoxDayTest extends JapanBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -124,7 +121,7 @@ class VernalEquinoxDayTest extends JapanBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Denmark;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -36,9 +33,14 @@ class GreatPrayerDayTest extends DenmarkBaseTestCase implements HolidayTestCase
     public const ESTABLISHMENT_YEAR = 1686;
 
     /**
+     * The first year the holiday was no longer observed.
+     */
+    public const ABOLISHMENT_YEAR = 2024;
+
+    /**
      * Tests the holiday defined in this test on or after establishment.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayOnAfterEstablishment(): void
     {
@@ -47,14 +49,14 @@ class GreatPrayerDayTest extends DenmarkBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-5-13", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-5-13", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests the holiday defined in this test before establishment.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -66,16 +68,30 @@ class GreatPrayerDayTest extends DenmarkBaseTestCase implements HolidayTestCase
     }
 
     /**
+     * Tests the holiday defined in this test after abolishment.
+     *
+     * @throws ReflectionException
+     */
+    public function testHolidayAfterAbolishment(): void
+    {
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ABOLISHMENT_YEAR)
+        );
+    }
+
+    /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::ABOLISHMENT_YEAR - 1),
             [self::LOCALE => 'store bededag']
         );
     }
@@ -83,14 +99,14 @@ class GreatPrayerDayTest extends DenmarkBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::ABOLISHMENT_YEAR - 1),
             Holiday::TYPE_OFFICIAL
         );
     }

@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\France;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\Provider\France;
 use Yasumi\tests\HolidayTestCase;
@@ -34,7 +31,7 @@ class PentecostMondayTest extends FranceBaseTestCase implements HolidayTestCase
     /**
      * Tests Pentecost Monday.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testPentecostMonday(): void
     {
@@ -43,14 +40,14 @@ class PentecostMondayTest extends FranceBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-5-30", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-5-30", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests translated name of Pentecost Monday.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -65,7 +62,7 @@ class PentecostMondayTest extends FranceBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

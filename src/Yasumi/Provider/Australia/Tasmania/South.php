@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Australia\Tasmania;
 
-use DateInterval;
-use DateTime;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia\Tasmania;
@@ -54,8 +52,8 @@ class South extends Tasmania
      */
     private function calculateHobartShow(): void
     {
-        $date = new DateTime('fourth saturday of october '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone));
-        $date = $date->sub(new DateInterval('P2D'));
+        $date = new \DateTime('fourth saturday of october '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = $date->sub(new \DateInterval('P2D'));
         $this->addHoliday(new Holiday('hobartShow', ['en' => 'Royal Hobart Show'], $date, $this->locale));
     }
 }

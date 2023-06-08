@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Canada;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -39,7 +36,7 @@ class ThanksgivingDayTest extends CanadaBaseTestCase implements HolidayTestCase
      * Tests Thanksgiving Day on or after 1879. Thanksgiving Day is celebrated since 1879 on the second Monday
      * of October.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testThanksgivingDayOnAfter1879(): void
     {
@@ -48,7 +45,7 @@ class ThanksgivingDayTest extends CanadaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("second monday of october $year", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("second monday of october $year", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -56,7 +53,7 @@ class ThanksgivingDayTest extends CanadaBaseTestCase implements HolidayTestCase
      * Tests Thanksgiving Day before 1879. ThanksgivingDay Day is celebrated since 1879 on the second Monday
      * of October.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testThanksgivingDayBefore1879(): void
     {
@@ -70,7 +67,7 @@ class ThanksgivingDayTest extends CanadaBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -85,7 +82,7 @@ class ThanksgivingDayTest extends CanadaBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

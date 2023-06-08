@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,10 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Switzerland\Vaud;
 
-use DateInterval;
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -34,16 +30,16 @@ class BettagsMontagTest extends VaudBaseTestCase implements HolidayTestCase
     /**
      * Tests Bettags Montag on or after 1832.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testBettagsMontagOnAfter1832(): void
     {
         $year = $this->generateRandomYear(1832);
 
         // Find third Sunday of September
-        $date = new DateTime('Third Sunday of '.$year.'-09', new DateTimeZone(self::TIMEZONE));
+        $date = new \DateTime('Third Sunday of '.$year.'-09', new \DateTimeZone(self::TIMEZONE));
         // Go to next Thursday
-        $date->add(new DateInterval('P1D'));
+        $date->add(new \DateInterval('P1D'));
 
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
     }
@@ -51,7 +47,7 @@ class BettagsMontagTest extends VaudBaseTestCase implements HolidayTestCase
     /**
      * Tests Bettags Montag before 1832.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testBettagsMontagBefore1832(): void
     {
@@ -62,7 +58,7 @@ class BettagsMontagTest extends VaudBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of Bettags Montag.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -77,7 +73,7 @@ class BettagsMontagTest extends VaudBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

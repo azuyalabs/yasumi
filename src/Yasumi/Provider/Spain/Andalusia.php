@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Spain;
 
-use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
@@ -44,7 +42,6 @@ class Andalusia extends Spain
     /**
      * Initialize holidays for Andalusia (Spain).
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -70,7 +67,6 @@ class Andalusia extends Spain
      *
      * @see https://en.wikipedia.org/wiki/D%C3%ADa_de_Andaluc%C3%ADa
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -81,7 +77,7 @@ class Andalusia extends Spain
             $this->addHoliday(new Holiday(
                 'andalusiaDay',
                 ['es' => 'Día de Andalucía'],
-                new DateTime("$this->year-2-28", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("$this->year-2-28", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

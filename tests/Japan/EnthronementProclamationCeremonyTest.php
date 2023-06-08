@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Japan;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -36,7 +33,7 @@ class EnthronementProclamationCeremonyTest extends JapanBaseTestCase implements 
     public const IMPLEMENT_YEAR = 2019;
 
     /**
-     * @throws Exception
+     * @throws \Exception
      */
     public function testEmperorsCoronationDay(): void
     {
@@ -44,12 +41,12 @@ class EnthronementProclamationCeremonyTest extends JapanBaseTestCase implements 
             self::REGION,
             self::HOLIDAY,
             2019,
-            new DateTime('2019-10-22', new DateTimeZone(self::TIMEZONE))
+            new \DateTime('2019-10-22', new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
-     * @throws Exception
+     * @throws \Exception
      */
     public function testEmperorsBirthdayBefore2019(): void
     {
@@ -61,7 +58,7 @@ class EnthronementProclamationCeremonyTest extends JapanBaseTestCase implements 
     }
 
     /**
-     * @throws Exception
+     * @throws \Exception
      */
     public function testEmperorsBirthdayAfter2020(): void
     {

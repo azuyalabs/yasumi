@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\UnitedKingdom;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -38,7 +35,7 @@ class SpringBankHolidayTest extends UnitedKingdomBaseTestCase implements Holiday
     /**
      * Tests the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHoliday(): void
     {
@@ -47,14 +44,14 @@ class SpringBankHolidayTest extends UnitedKingdomBaseTestCase implements Holiday
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-5-30", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-5-30", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests the holiday exceptions in 2002, 2012 and 2022.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayException(): void
     {
@@ -62,28 +59,28 @@ class SpringBankHolidayTest extends UnitedKingdomBaseTestCase implements Holiday
             self::REGION,
             self::HOLIDAY,
             2002,
-            new DateTime('2002-6-4', new DateTimeZone(self::TIMEZONE))
+            new \DateTime('2002-6-4', new \DateTimeZone(self::TIMEZONE))
         );
 
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             2012,
-            new DateTime('2012-6-4', new DateTimeZone(self::TIMEZONE))
+            new \DateTime('2012-6-4', new \DateTimeZone(self::TIMEZONE))
         );
 
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             2022,
-            new DateTime('2022-6-2', new DateTimeZone(self::TIMEZONE))
+            new \DateTime('2022-6-2', new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests the holiday defined in this test before establishment.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -97,7 +94,7 @@ class SpringBankHolidayTest extends UnitedKingdomBaseTestCase implements Holiday
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -112,7 +109,7 @@ class SpringBankHolidayTest extends UnitedKingdomBaseTestCase implements Holiday
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

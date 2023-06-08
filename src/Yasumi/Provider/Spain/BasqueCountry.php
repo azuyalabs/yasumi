@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Spain;
 
-use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
@@ -43,7 +41,6 @@ class BasqueCountry extends Spain
     /**
      * Initialize holidays for Basque Country (Spain).
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -72,20 +69,25 @@ class BasqueCountry extends Spain
      *
      * @see https://www.officeholidays.com/holidays/day-of-the-basque-country
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateBasqueCountryDay(): void
     {
-        if ($this->year >= 2011 && $this->year <= 2013) {
-            $this->addHoliday(new Holiday(
-                'basqueCountryDay',
-                ['es' => 'Euskadi Eguna'],
-                new DateTime("$this->year-10-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-                $this->locale
-            ));
+        if ($this->year < 2011) {
+            return;
         }
+
+        if ($this->year > 2013) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday(
+            'basqueCountryDay',
+            ['es' => 'Euskadi Eguna'],
+            new \DateTime("$this->year-10-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 }

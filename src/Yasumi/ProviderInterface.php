@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi;
 
-use ArrayIterator;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Filters\BetweenFilter;
 use Yasumi\Filters\OnFilter;
@@ -57,8 +55,6 @@ interface ProviderInterface extends \Countable
      *                                 \DateTime)
      *
      * @return bool true if date represents a working day, otherwise false
-     *
-     * @throws InvalidDateException
      */
     public function isWorkingDay(\DateTimeInterface $date): bool;
 
@@ -87,17 +83,15 @@ interface ProviderInterface extends \Countable
      *                                 \DateTime)
      *
      * @return bool true if date represents a holiday, otherwise false
-     *
-     * @throws InvalidDateException
      */
     public function isHoliday(\DateTimeInterface $date): bool;
 
     /**
      * Get an iterator for the holidays.
      *
-     * @return ArrayIterator iterator for the holidays of this calendar
+     * @return \ArrayIterator iterator for the holidays of this calendar
      */
-    public function getIterator(): ArrayIterator;
+    public function getIterator(): \ArrayIterator;
 
     /**
      * Adds a holiday to the holidays providers (i.e. country/state) list of holidays.
@@ -124,8 +118,6 @@ interface ProviderInterface extends \Countable
      *                                 \DateTime)
      *
      * @return bool true if date represents a weekend day, otherwise false
-     *
-     * @throws InvalidDateException
      */
     public function isWeekendDay(\DateTimeInterface $date): bool;
 
@@ -157,7 +149,7 @@ interface ProviderInterface extends \Countable
     /**
      * Gets all the holiday names defined by this holiday provider (for the given year).
      *
-     * @return array<string> list of all holiday names defined for the given year
+     * @return array<string>|array<int> list of all holiday names defined for the given year
      */
     public function getHolidayNames(): array;
 

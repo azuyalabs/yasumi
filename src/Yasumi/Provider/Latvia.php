@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -83,7 +83,7 @@ class Latvia extends AbstractProvider
         if ($this->year >= self::RESTORATION_OF_INDEPENDENCE_YEAR) {
             $date = new \DateTime("$this->year-05-04", new \DateTimeZone($this->timezone));
 
-            if (!$this->isWorkingDay($date)) {
+            if (! $this->isWorkingDay($date)) {
                 $date->modify('next monday');
             }
 
@@ -118,7 +118,7 @@ class Latvia extends AbstractProvider
         if ($this->year >= self::PROCLAMATION_OF_INDEPENDENCE_YEAR) {
             $date = new \DateTime("$this->year-11-18", new \DateTimeZone($this->timezone));
 
-            if (!$this->isWorkingDay($date)) {
+            if (! $this->isWorkingDay($date)) {
                 $date->modify('next monday');
             }
 

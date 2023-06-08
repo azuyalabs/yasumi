@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Romania;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -38,7 +35,7 @@ class NationalDayTest extends RomaniaBaseTestCase implements HolidayTestCase
     /**
      * Tests National Day on or after 1990.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testNationalDayOnAfter1990(): void
     {
@@ -47,14 +44,14 @@ class NationalDayTest extends RomaniaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-12-1", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-12-1", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests National Day between 1948 - 1989.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testNationalDayBetween19481989(): void
     {
@@ -63,14 +60,14 @@ class NationalDayTest extends RomaniaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-08-23", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-08-23", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests National Day between 1866 - 1947.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testNationalDayBetween18661947(): void
     {
@@ -79,14 +76,14 @@ class NationalDayTest extends RomaniaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-05-10", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-05-10", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests National Day before 1865.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testNationalDayBefore1865(): void
     {
@@ -100,7 +97,7 @@ class NationalDayTest extends RomaniaBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -115,7 +112,7 @@ class NationalDayTest extends RomaniaBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

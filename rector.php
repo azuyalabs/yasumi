@@ -17,9 +17,10 @@ return static function (RectorConfig $rectorConfig): void {
 
     // sets of rules
     $rectorConfig->sets([
-        SetList::PHP_74,
         SetList::CODE_QUALITY,
-        SetList::TYPE_DECLARATION_STRICT,
         SetList::DEAD_CODE,
+        SetList::EARLY_RETURN,
+        SetList::PHP_74,
+        SetList::TYPE_DECLARATION,
     ]);
 };

@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -21,8 +21,8 @@ return [
     'en' => 'All Saints’ Day',
     'es' => 'Día de todos los Santos',
     'fi' => 'Pyhäinpäivä',
-    'fr_BE' => 'La Toussaint',
     'fr' => 'Toussaint',
+    'fr_BE' => 'La Toussaint',
     'hr' => 'Dan svih svetih',
     'hu' => 'Mindenszentek',
     'it' => 'Festa di Tutti i Santi',

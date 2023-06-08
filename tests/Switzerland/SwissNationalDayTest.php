@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Switzerland;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -48,7 +45,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements HolidayTes
     /**
      * Tests National Day on or after 1994.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testNationalDayOnAfter1994(): void
     {
@@ -57,14 +54,14 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements HolidayTes
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-8-01", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-8-01", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests National Day on or after 1899 and before 1994.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testNationalDayOnAfter1899(): void
     {
@@ -73,7 +70,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements HolidayTes
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-8-01", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-8-01", new \DateTimeZone(self::TIMEZONE))
         );
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OBSERVANCE);
     }
@@ -81,7 +78,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements HolidayTes
     /**
      * Tests National Day on 1891.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testNationalDayOn1891(): void
     {
@@ -90,7 +87,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements HolidayTes
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-8-01", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-8-01", new \DateTimeZone(self::TIMEZONE))
         );
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OBSERVANCE);
     }
@@ -98,7 +95,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements HolidayTes
     /**
      * Tests National Day before 1891.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testNationalDayBefore1891(): void
     {
@@ -112,7 +109,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements HolidayTes
     /**
      * Tests National Day between 1891 and 1899.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testNationalDayBetween1891And1899(): void
     {
@@ -123,7 +120,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements HolidayTes
     /**
      * Tests translated name of National Day.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -138,7 +135,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements HolidayTes
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

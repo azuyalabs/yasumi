@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -33,8 +33,8 @@ return [
     'lt' => 'Antroji Velykų diena',
     'lv' => 'Otrās Lieldienas',
     'nb' => 'andre påskedag',
-    'nl_BE' => 'paasmaandag',
     'nl' => 'tweede paasdag',
+    'nl_BE' => 'paasmaandag',
     'pl' => 'Poniedziałek Wielkanocny',
     'ro' => 'A doua zi de Paște',
     'sk' => 'Veľkonočný pondelok',

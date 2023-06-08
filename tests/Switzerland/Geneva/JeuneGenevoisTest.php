@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,10 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Switzerland\Geneva;
 
-use DateInterval;
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\Provider\Switzerland\Geneva;
 use Yasumi\tests\HolidayTestCase;
@@ -35,15 +31,15 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements HolidayTestCase
     /**
      * Tests Jeune Genevois between 1870 and 1965.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testJeuneGenevoisBetween1870And1965(): void
     {
         $year = $this->generateRandomYear(1870, 1965);
         // Find first Sunday of September
-        $date = new DateTime('First Sunday of '.$year.'-09', new DateTimeZone(self::TIMEZONE));
+        $date = new \DateTime('First Sunday of '.$year.'-09', new \DateTimeZone(self::TIMEZONE));
         // Go to next Thursday
-        $date->add(new DateInterval('P4D'));
+        $date->add(new \DateInterval('P4D'));
 
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OBSERVANCE);
@@ -52,15 +48,15 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements HolidayTestCase
     /**
      * Tests Jeune Genevois between 1840 and 1869.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testJeuneGenevoisBetween1840And1869(): void
     {
         $year = $this->generateRandomYear(Geneva::JEUNE_GENEVOIS_ESTABLISHMENT_YEAR, 1869);
         // Find first Sunday of September
-        $date = new DateTime('First Sunday of '.$year.'-09', new DateTimeZone(self::TIMEZONE));
+        $date = new \DateTime('First Sunday of '.$year.'-09', new \DateTimeZone(self::TIMEZONE));
         // Go to next Thursday
-        $date->add(new DateInterval('P4D'));
+        $date->add(new \DateInterval('P4D'));
 
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OTHER);
@@ -69,7 +65,7 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements HolidayTestCase
     /**
      * Tests Jeune Genevois before 1840.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testJeuneGenevoisBefore1840(): void
     {
@@ -80,7 +76,7 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of Jeune Genevois.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -95,7 +91,7 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

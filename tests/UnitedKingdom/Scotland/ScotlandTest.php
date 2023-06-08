@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\UnitedKingdom\Scotland;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\ProviderTestCase;
 
@@ -92,6 +91,10 @@ class ScotlandTest extends ScotlandBaseTestCase implements ProviderTestCase
             $holidays[] = 'queenElizabethFuneralBankHoliday';
         }
 
+        if (2023 === $year) {
+            $holidays[] = 'kingCharlesCoronationBankHoliday';
+        }
+
         $this->assertDefinedHolidays($holidays, self::REGION, $year, Holiday::TYPE_BANK);
     }
 
@@ -104,7 +107,7 @@ class ScotlandTest extends ScotlandBaseTestCase implements ProviderTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
      * @throws \Exception
      */
     public function testSources(): void

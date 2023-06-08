@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Ukraine;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -31,7 +28,7 @@ class ConstitutionDayTest extends UkraineBaseTestCase implements HolidayTestCase
     public const HOLIDAY = 'constitutionDay';
 
     /**
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHoliday(): void
     {
@@ -40,7 +37,7 @@ class ConstitutionDayTest extends UkraineBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-06-28", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-06-28", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

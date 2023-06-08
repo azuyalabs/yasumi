@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
@@ -44,7 +42,6 @@ trait CommonHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws InvalidDateException
      * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
@@ -55,7 +52,7 @@ trait CommonHolidays
         string $locale,
         string $type = Holiday::TYPE_OFFICIAL
     ): Holiday {
-        return new Holiday('newYearsDay', [], new DateTime("$year-1-1", DateTimeZoneFactory::getDateTimeZone($timezone)), $locale, $type);
+        return new Holiday('newYearsDay', [], new \DateTime("$year-1-1", DateTimeZoneFactory::getDateTimeZone($timezone)), $locale, $type);
     }
 
     /**
@@ -75,7 +72,6 @@ trait CommonHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws InvalidDateException
      * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
@@ -89,7 +85,7 @@ trait CommonHolidays
         return new Holiday(
             'internationalWorkersDay',
             [],
-            new DateTime("$year-5-1", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            new \DateTime("$year-5-1", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
@@ -112,7 +108,6 @@ trait CommonHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws InvalidDateException
      * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
@@ -126,7 +121,7 @@ trait CommonHolidays
         return new Holiday(
             'stMartinsDay',
             [],
-            new DateTime("$year-11-11", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            new \DateTime("$year-11-11", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
@@ -145,7 +140,6 @@ trait CommonHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws InvalidDateException
      * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
@@ -159,7 +153,7 @@ trait CommonHolidays
         return new Holiday(
             'internationalWomensDay',
             [],
-            new DateTime("$year-03-08", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            new \DateTime("$year-03-08", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
@@ -181,7 +175,6 @@ trait CommonHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws InvalidDateException
      * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
@@ -192,7 +185,7 @@ trait CommonHolidays
         string $locale,
         string $type = Holiday::TYPE_OFFICIAL
     ): Holiday {
-        return new Holiday('newYearsEve', [], new DateTime("$year-12-31", DateTimeZoneFactory::getDateTimeZone($timezone)), $locale, $type);
+        return new Holiday('newYearsEve', [], new \DateTime("$year-12-31", DateTimeZoneFactory::getDateTimeZone($timezone)), $locale, $type);
     }
 
     /**
@@ -212,7 +205,6 @@ trait CommonHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws InvalidDateException
      * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
@@ -226,7 +218,7 @@ trait CommonHolidays
         return new Holiday(
             'valentinesDay',
             [],
-            new DateTime("$year-2-14", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            new \DateTime("$year-2-14", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
@@ -247,7 +239,6 @@ trait CommonHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws InvalidDateException
      * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
@@ -261,7 +252,7 @@ trait CommonHolidays
         return new Holiday(
             'worldAnimalDay',
             [],
-            new DateTime("$year-10-4", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            new \DateTime("$year-10-4", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
@@ -283,7 +274,6 @@ trait CommonHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws InvalidDateException
      * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
@@ -297,7 +287,7 @@ trait CommonHolidays
         return new Holiday(
             'fathersDay',
             [],
-            new DateTime("third sunday of june $year", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            new \DateTime("third sunday of june $year", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
@@ -319,7 +309,6 @@ trait CommonHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws InvalidDateException
      * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
@@ -333,7 +322,7 @@ trait CommonHolidays
         return new Holiday(
             'mothersDay',
             [],
-            new DateTime("second sunday of may $year", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            new \DateTime("second sunday of may $year", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
@@ -355,7 +344,6 @@ trait CommonHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws InvalidDateException
      * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
@@ -369,7 +357,7 @@ trait CommonHolidays
         return new Holiday(
             'victoryInEuropeDay',
             [],
-            new DateTime("$year-5-8", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            new \DateTime("$year-5-8", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
@@ -393,7 +381,6 @@ trait CommonHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws InvalidDateException
      * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
      * @throws \Exception
@@ -407,7 +394,7 @@ trait CommonHolidays
         return new Holiday(
             'armisticeDay',
             [],
-            new DateTime("$year-11-11", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            new \DateTime("$year-11-11", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
@@ -523,6 +510,10 @@ trait CommonHolidays
         $transitions = $zone->getTransitions($tsBegin, $tsEnd);
 
         $transition = array_shift($transitions);
+        if (! is_array($transition)) {
+            throw new \RuntimeException('unable to get transition details');
+        }
+
         $dst = $transition['isdst'];
 
         foreach ($transitions as $transition) {

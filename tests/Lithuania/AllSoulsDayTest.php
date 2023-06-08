@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,9 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Lithuania;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\Provider\Lithuania;
 use Yasumi\tests\HolidayTestCase;
@@ -35,7 +32,7 @@ class AllSoulsDayTest extends LithuaniaBaseTestCase implements HolidayTestCase
     public const HOLIDAY = 'allSoulsDay';
 
     /**
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayBeforeAnnounce(): void
     {
@@ -49,7 +46,7 @@ class AllSoulsDayTest extends LithuaniaBaseTestCase implements HolidayTestCase
     /**
      * Test if holiday is defined after restoration.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayAfterAnnounce(): void
     {
@@ -59,14 +56,12 @@ class AllSoulsDayTest extends LithuaniaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-11-02", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-11-02", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
-     * {@inheritdoc}
-     *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -79,9 +74,7 @@ class AllSoulsDayTest extends LithuaniaBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * {@inheritdoc}
-     *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

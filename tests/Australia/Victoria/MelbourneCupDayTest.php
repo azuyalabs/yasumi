@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Australia\Victoria;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -43,7 +40,7 @@ class MelbourneCupDayTest extends VictoriaBaseTestCase implements HolidayTestCas
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHoliday(int $year, string $expected): void
     {
@@ -51,7 +48,7 @@ class MelbourneCupDayTest extends VictoriaBaseTestCase implements HolidayTestCas
             $this->region,
             self::HOLIDAY,
             $year,
-            new DateTime($expected, new DateTimeZone($this->timezone))
+            new \DateTime($expected, new \DateTimeZone($this->timezone))
         );
     }
 
@@ -80,7 +77,7 @@ class MelbourneCupDayTest extends VictoriaBaseTestCase implements HolidayTestCas
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -95,7 +92,7 @@ class MelbourneCupDayTest extends VictoriaBaseTestCase implements HolidayTestCas
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

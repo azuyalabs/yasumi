@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
@@ -36,7 +34,6 @@ class Poland extends AbstractProvider
     /**
      * Initialize holidays for Poland.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -83,7 +80,6 @@ class Poland extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/May_3rd_Constitution_Day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -97,7 +93,7 @@ class Poland extends AbstractProvider
         $this->addHoliday(new Holiday('independenceDay', [
             'en' => 'Independence Day',
             'pl' => 'Narodowe Święto Niepodległości',
-        ], new DateTime("$this->year-11-11", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
+        ], new \DateTime("$this->year-11-11", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
     }
 
     /**
@@ -110,7 +106,6 @@ class Poland extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/National_Independence_Day_(Poland)
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -124,6 +119,6 @@ class Poland extends AbstractProvider
         $this->addHoliday(new Holiday('constitutionDay', [
             'en' => 'Constitution Day',
             'pl' => 'Święto Narodowe Trzeciego Maja',
-        ], new DateTime("$this->year-5-3", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
+        ], new \DateTime("$this->year-5-3", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
     }
 }

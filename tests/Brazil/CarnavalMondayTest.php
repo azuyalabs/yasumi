@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Brazil;
 
-use DateInterval;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\tests\HolidayTestCase;
@@ -40,7 +38,7 @@ class CarnavalMondayTest extends BrazilBaseTestCase implements HolidayTestCase
     /**
      * Tests Carnaval Monday on or after 1700.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testCarnavalMondayAfter1700(): void
     {
@@ -49,14 +47,14 @@ class CarnavalMondayTest extends BrazilBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            $this->calculateEaster($year, self::TIMEZONE)->sub(new DateInterval('P48D'))
+            $this->calculateEaster($year, self::TIMEZONE)->sub(new \DateInterval('P48D'))
         );
     }
 
     /**
      * Tests Carnaval Monday on or before 1700.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testCarnavalMondayBefore1700(): void
     {
@@ -67,7 +65,7 @@ class CarnavalMondayTest extends BrazilBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -78,7 +76,7 @@ class CarnavalMondayTest extends BrazilBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

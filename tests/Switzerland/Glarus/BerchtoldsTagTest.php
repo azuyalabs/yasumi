@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Switzerland\Glarus;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -33,12 +30,12 @@ class BerchtoldsTagTest extends GlarusBaseTestCase implements HolidayTestCase
     /**
      * Tests BerchtoldsTag.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testBerchtoldsTag(): void
     {
         $year = $this->generateRandomYear();
-        $date = new DateTime($year.'-01-02', new DateTimeZone(self::TIMEZONE));
+        $date = new \DateTime($year.'-01-02', new \DateTimeZone(self::TIMEZONE));
 
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OTHER);
@@ -47,7 +44,7 @@ class BerchtoldsTagTest extends GlarusBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of BerchtoldsTag.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -62,7 +59,7 @@ class BerchtoldsTagTest extends GlarusBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

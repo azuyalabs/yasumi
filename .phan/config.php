@@ -291,7 +291,8 @@ return [
     //       should be added to the `directory_list` as well as
     //       to `exclude_analysis_directory_list`.
     'exclude_analysis_directory_list' => [
-        'vendor/',
+      'vendor/',
+      'examples/'
     ],
 
     // Enable this to enable checks of require/include statements referring to valid paths.

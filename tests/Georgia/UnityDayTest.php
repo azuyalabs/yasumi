@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,9 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Georgia;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -29,7 +26,7 @@ class UnityDayTest extends GeorgiaBaseTestCase implements HolidayTestCase
     public const HOLIDAY = 'unityDay';
 
     /**
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHoliday(): void
     {
@@ -38,7 +35,7 @@ class UnityDayTest extends GeorgiaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-04-09", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-04-09", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

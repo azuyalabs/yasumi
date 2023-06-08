@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Denmark;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\ProviderTestCase;
 
@@ -35,7 +34,7 @@ class DenmarkTest extends DenmarkBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1849);
+        $this->year = $this->generateRandomYear(2024);
     }
 
     /**
@@ -49,7 +48,6 @@ class DenmarkTest extends DenmarkBaseTestCase implements ProviderTestCase
             'goodFriday',
             'easter',
             'easterMonday',
-            'greatPrayerDay',
             'ascensionDay',
             'pentecost',
             'pentecostMonday',
@@ -99,7 +97,7 @@ class DenmarkTest extends DenmarkBaseTestCase implements ProviderTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
      * @throws \Exception
      */
     public function testSources(): void

@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Australia\Tasmania;
 
-use DateInterval;
-use DateTime;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia\Tasmania;
@@ -54,8 +52,8 @@ class FlindersIsland extends Tasmania
      */
     private function calculateFlindersIslandShow(): void
     {
-        $date = new DateTime('third saturday of october '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone));
-        $date = $date->sub(new DateInterval('P1D'));
+        $date = new \DateTime('third saturday of october '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = $date->sub(new \DateInterval('P1D'));
         $this->addHoliday(new Holiday('flindersIslandShow', ['en' => 'Flinders Island Show'], $date, $this->locale));
     }
 }

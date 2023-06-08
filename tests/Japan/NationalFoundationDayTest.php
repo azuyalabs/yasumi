@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Japan;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -38,7 +35,7 @@ class NationalFoundationDayTest extends JapanBaseTestCase implements HolidayTest
     /**
      * Tests National Foundation Day after 1966. National Foundation day was established after 1966.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testNationalFoundationDayOnAfter1966(): void
     {
@@ -47,7 +44,7 @@ class NationalFoundationDayTest extends JapanBaseTestCase implements HolidayTest
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-2-11", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-2-11", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -55,7 +52,7 @@ class NationalFoundationDayTest extends JapanBaseTestCase implements HolidayTest
      * Tests National Foundation Day after 1966. substituted next working day (when National Foundation Day falls on a
      * Sunday).
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testNationalFoundationDayOnAfter1966SubstitutedNextWorkingDay(): void
     {
@@ -64,14 +61,14 @@ class NationalFoundationDayTest extends JapanBaseTestCase implements HolidayTest
             self::REGION,
             self::SUBSTITUTE_PREFIX.self::HOLIDAY,
             $year,
-            new DateTime("$year-2-12", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-2-12", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests National Foundation Day before 1966. National Foundation day was established after 1966.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testNationalFoundationDayBefore1966(): void
     {
@@ -85,7 +82,7 @@ class NationalFoundationDayTest extends JapanBaseTestCase implements HolidayTest
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -100,7 +97,7 @@ class NationalFoundationDayTest extends JapanBaseTestCase implements HolidayTest
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

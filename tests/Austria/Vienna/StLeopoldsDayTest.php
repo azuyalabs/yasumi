@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Austria\Vienna;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -40,8 +37,8 @@ class StLeopoldsDayTest extends ViennaBaseTestCase implements HolidayTestCase
      *
      * @dataProvider StLeopoldsDayDataProvider
      *
-     * @param int      $year     the year for which Saint Leopold's Day needs to be tested
-     * @param DateTime $expected the expected date
+     * @param int       $year     the year for which Saint Leopold's Day needs to be tested
+     * @param \DateTime $expected the expected date
      */
     public function testStLeopoldsDay(int $year, \DateTimeInterface $expected): void
     {
@@ -53,7 +50,7 @@ class StLeopoldsDayTest extends ViennaBaseTestCase implements HolidayTestCase
      *
      * @return array<array> list of test dates for Saint Leopold's Day
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function StLeopoldsDayDataProvider(): array
     {
@@ -61,7 +58,7 @@ class StLeopoldsDayTest extends ViennaBaseTestCase implements HolidayTestCase
 
         for ($y = 0; $y < self::TEST_ITERATIONS; ++$y) {
             $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-            $data[] = [$year, new DateTime("$year-11-15", new DateTimeZone(self::TIMEZONE))];
+            $data[] = [$year, new \DateTime("$year-11-15", new \DateTimeZone(self::TIMEZONE))];
         }
 
         return $data;
@@ -70,7 +67,7 @@ class StLeopoldsDayTest extends ViennaBaseTestCase implements HolidayTestCase
     /**
      * Tests the holiday defined in this test before establishment.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayBeforeEstablishment(): void
     {
@@ -84,7 +81,7 @@ class StLeopoldsDayTest extends ViennaBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -99,7 +96,7 @@ class StLeopoldsDayTest extends ViennaBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

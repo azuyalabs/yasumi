@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,10 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Base;
 
-use DateTime;
-use DateTimeImmutable;
-use DateTimeZone;
-use Exception;
 use PHPUnit\Framework\TestCase;
 use Yasumi\Yasumi;
 
@@ -28,7 +24,7 @@ class YasumiWorkdayTest extends TestCase
     /**
      * Tests that the nextWorkingDay function returns an object that implements the DateTimeInterface (e.g. DateTime).
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testNextWorkingDay(): void
     {
@@ -39,24 +35,24 @@ class YasumiWorkdayTest extends TestCase
         $expectedDate = '2016-07-05';
 
         // Assertion using a DateTime instance
-        $startDate = new DateTime($date, new DateTimeZone($timezone));
+        $startDate = new \DateTime($date, new \DateTimeZone($timezone));
         $nextWorkingDay = Yasumi::nextWorkingDay($provider, $startDate);
 
-        self::assertInstanceOf(DateTimeImmutable::class, $nextWorkingDay);
+        self::assertInstanceOf(\DateTimeImmutable::class, $nextWorkingDay);
         self::assertEquals($expectedDate, $nextWorkingDay->format(self::FORMAT_DATE));
 
         // Assertion using a DateTimeImmutable instance
-        $startDate = new DateTimeImmutable($date, new DateTimeZone($timezone));
+        $startDate = new \DateTimeImmutable($date, new \DateTimeZone($timezone));
         $nextWorkingDay = Yasumi::nextWorkingDay($provider, $startDate);
 
-        self::assertInstanceOf(DateTimeImmutable::class, $nextWorkingDay);
+        self::assertInstanceOf(\DateTimeImmutable::class, $nextWorkingDay);
         self::assertEquals($expectedDate, $nextWorkingDay->format(self::FORMAT_DATE));
     }
 
     /**
      * Tests that the prevWorkingDay function returns an object that implements the DateTimeInterface (e.g. DateTime).
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testPreviousWorkingDay(): void
     {
@@ -67,17 +63,17 @@ class YasumiWorkdayTest extends TestCase
         $expectedDate = '2016-07-01';
 
         // Assertion using a DateTime instance
-        $startDate = new DateTime($date, new DateTimeZone($timezone));
+        $startDate = new \DateTime($date, new \DateTimeZone($timezone));
         $previousWorkingDay = Yasumi::prevWorkingDay($provider, $startDate);
 
-        self::assertInstanceOf(DateTimeImmutable::class, $previousWorkingDay);
+        self::assertInstanceOf(\DateTimeImmutable::class, $previousWorkingDay);
         self::assertEquals($expectedDate, $previousWorkingDay->format(self::FORMAT_DATE));
 
         // Assertion using a DateTimeImmutable instance
-        $startDate = new DateTimeImmutable($date, new DateTimeZone($timezone));
+        $startDate = new \DateTimeImmutable($date, new \DateTimeZone($timezone));
         $previousWorkingDay = Yasumi::prevWorkingDay($provider, $startDate);
 
-        self::assertInstanceOf(DateTimeImmutable::class, $previousWorkingDay);
+        self::assertInstanceOf(\DateTimeImmutable::class, $previousWorkingDay);
         self::assertEquals($expectedDate, $previousWorkingDay->format(self::FORMAT_DATE));
     }
 
@@ -85,7 +81,7 @@ class YasumiWorkdayTest extends TestCase
      * Tests that the prevWorkingDay and nextWorkingDay functions returns an object that implements the
      * DateTimeInterface (e.g. DateTime) when an interval is chosen that passes the year boundary (i.e. beyond 12/31).
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testYearBoundary(): void
     {
@@ -114,22 +110,22 @@ class YasumiWorkdayTest extends TestCase
         $expectedPrevious = '2015-12-18';
 
         // Assertion using a DateTime instance
-        $startDate = new DateTime($start, new DateTimeZone($timezone));
+        $startDate = new \DateTime($start, new \DateTimeZone($timezone));
         $nextWorkingDay = Yasumi::nextWorkingDay($provider, $startDate, $interval);
 
         self::assertEquals($expectedNext, $nextWorkingDay->format(self::FORMAT_DATE));
 
-        $startDate = new DateTime($expectedNext, new DateTimeZone($timezone));
+        $startDate = new \DateTime($expectedNext, new \DateTimeZone($timezone));
         $previousWorkingDay = Yasumi::prevWorkingDay($provider, $startDate, $interval);
         self::assertEquals($expectedPrevious, $previousWorkingDay->format(self::FORMAT_DATE));
 
         // Assertion using a DateTimeImmutable instance
-        $startDate = new DateTimeImmutable($start, new DateTimeZone($timezone));
+        $startDate = new \DateTimeImmutable($start, new \DateTimeZone($timezone));
         $nextWorkingDay = Yasumi::nextWorkingDay($provider, $startDate, $interval);
 
         self::assertEquals($expectedNext, $nextWorkingDay->format(self::FORMAT_DATE));
 
-        $startDate = new DateTimeImmutable($expectedNext, new DateTimeZone($timezone));
+        $startDate = new \DateTimeImmutable($expectedNext, new \DateTimeZone($timezone));
         $previousWorkingDay = Yasumi::prevWorkingDay($provider, $startDate, $interval);
         self::assertEquals($expectedPrevious, $previousWorkingDay->format(self::FORMAT_DATE));
     }
@@ -139,13 +135,13 @@ class YasumiWorkdayTest extends TestCase
      *
      * @dataProvider dataProviderWorkDayNextYear
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testWorkDayIsNextYear(string $start, int $workdays, string $expectedNext): void
     {
         $provider = 'USA';
         $timezone = 'America/New_York';
-        $startDate = new DateTime($start, new DateTimeZone($timezone));
+        $startDate = new \DateTime($start, new \DateTimeZone($timezone));
         $nextWorkingDay = Yasumi::nextWorkingDay($provider, $startDate, $workdays);
 
         self::assertEquals($expectedNext, $nextWorkingDay->format(self::FORMAT_DATE));
@@ -175,13 +171,13 @@ class YasumiWorkdayTest extends TestCase
      *
      * @dataProvider dataProviderWorkDayPreviousYear
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testWorkDayIsPreviousYear(string $start, int $workdays, string $expectedNext): void
     {
         $provider = 'USA';
         $timezone = 'America/New_York';
-        $startDate = new DateTime($start, new DateTimeZone($timezone));
+        $startDate = new \DateTime($start, new \DateTimeZone($timezone));
         $previousWorkingDay = Yasumi::prevWorkingDay($provider, $startDate, $workdays);
 
         self::assertEquals($expectedNext, $previousWorkingDay->format(self::FORMAT_DATE));

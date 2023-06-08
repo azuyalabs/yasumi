@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Switzerland\Obwalden;
 
-use DateTime;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -34,8 +32,8 @@ class AllSaintsDayTest extends ObwaldenBaseTestCase implements HolidayTestCase
      *
      * @dataProvider AllSaintsDayDataProvider
      *
-     * @param int      $year     the year for which All Saints' Day needs to be tested
-     * @param DateTime $expected the expected date
+     * @param int       $year     the year for which All Saints' Day needs to be tested
+     * @param \DateTime $expected the expected date
      */
     public function testAllSaintsDay(int $year, \DateTimeInterface $expected): void
     {
@@ -45,7 +43,7 @@ class AllSaintsDayTest extends ObwaldenBaseTestCase implements HolidayTestCase
     /**
      * Tests translated name of All Saints' Day.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -60,7 +58,7 @@ class AllSaintsDayTest extends ObwaldenBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {
@@ -72,7 +70,7 @@ class AllSaintsDayTest extends ObwaldenBaseTestCase implements HolidayTestCase
      *
      * @return array<array> list of test dates for All Saints' Day
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function AllSaintsDayDataProvider(): array
     {

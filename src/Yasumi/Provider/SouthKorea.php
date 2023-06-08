@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,9 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use DateInterval;
-use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\SubstituteHoliday;
@@ -54,7 +51,8 @@ class SouthKorea extends AbstractProvider
      * Korea Astronomy and Space Science Institute (KASI) is supporting the converter until 2050.
      * For more information, please refer to the paper below.
      * 박(2017)총,32(3),407-420.
-     * @see https://www.kasi.re.kr/kor/research/paper/20170259 - Korea Astronomy and Space Science Institute
+     * @see https://koreascience.kr/article/JAKO201706163145174.pdf - Korea Astronomy and Space Science Institute
+     * @see https://astro.kasi.re.kr/life/pageView/8 - web utility for conversion and retrieve
      */
     public const LUNAR_HOLIDAY = [
         'seollal' => [
@@ -79,7 +77,7 @@ class SouthKorea extends AbstractProvider
             1985 => '1985-5-27', 1986 => '1986-5-16', 1987 => '1987-5-5', 1988 => '1988-5-23', 1989 => '1989-5-12',
             1990 => '1990-5-2', 1991 => '1991-5-21', 1992 => '1992-5-10', 1993 => '1993-5-28', 1994 => '1994-5-18',
             1995 => '1995-5-7', 1996 => '1996-5-24', 1997 => '1997-5-14', 1998 => '1998-5-3', 1999 => '1999-5-22',
-            2000 => '2000-5-11', 2001 => '2001-4-30', 2002 => '2002-5-19', 2003 => '2003-5-8', 2004 => '2004-5-26',
+            2000 => '2000-5-11', 2001 => '2001-5-1', 2002 => '2002-5-19', 2003 => '2003-5-8', 2004 => '2004-5-26',
             2005 => '2005-5-15', 2006 => '2006-5-5', 2007 => '2007-5-24', 2008 => '2008-5-12', 2009 => '2009-5-2',
             2010 => '2010-5-21', 2011 => '2011-5-10', 2012 => '2012-5-28', 2013 => '2013-5-17', 2014 => '2014-5-6',
             2015 => '2015-5-25', 2016 => '2016-5-14', 2017 => '2017-5-3', 2018 => '2018-5-22', 2019 => '2019-5-12',
@@ -101,7 +99,7 @@ class SouthKorea extends AbstractProvider
             1979 => '1979-10-5', 1980 => '1980-9-23', 1981 => '1981-9-12', 1982 => '1982-10-1', 1983 => '1983-9-21',
             1984 => '1984-9-10', 1985 => '1985-9-29', 1986 => '1986-9-18', 1987 => '1987-10-7', 1988 => '1988-9-25',
             1989 => '1989-9-14', 1990 => '1990-10-3', 1991 => '1991-9-22', 1992 => '1992-9-11', 1993 => '1993-9-30',
-            1994 => '1994-9-20', 1995 => '1950-9-9', 1996 => '1996-9-27', 1997 => '1997-9-16', 1998 => '1998-10-5',
+            1994 => '1994-9-20', 1995 => '1995-9-9', 1996 => '1996-9-27', 1997 => '1997-9-16', 1998 => '1998-10-5',
             1999 => '1999-9-24', 2000 => '2000-9-12', 2001 => '2001-10-1', 2002 => '2002-9-21', 2003 => '2003-9-11',
             2004 => '2004-9-28', 2005 => '2005-9-18', 2006 => '2006-10-6', 2007 => '2007-9-25', 2008 => '2008-9-14',
             2009 => '2009-10-3', 2010 => '2010-9-22', 2011 => '2011-9-12', 2012 => '2012-9-30', 2013 => '2013-9-19',
@@ -117,9 +115,92 @@ class SouthKorea extends AbstractProvider
     ];
 
     /**
+     * Collection of all historically recognized holidays in South Korea.
+     *
+     * Aggregated collection of all historically recognized holidays of South Korea After the government was established.
+     * This collection also includes items that are now obsolete and excluded from holidays.
+     */
+    public const HOLIDAY_NAMES = [
+        'newYearsDay' => [],
+        'dayAfterNewYearsDay' => [],
+        'twoDaysLaterNewYearsDay' => [
+            'en' => 'Two Days Later New Year’s Day',
+            'ko' => '새해 연휴',
+        ],
+        'seollal' => [
+            'en' => 'Seollal',
+            'ko' => '설날',
+        ],
+        'dayBeforeSeollal' => [
+            'en' => 'Day before Seollal',
+            'ko' => '설날 연휴',
+        ],
+        'dayAfterSeollal' => [
+            'en' => 'Day after Seollal',
+            'ko' => '설날 연휴',
+        ],
+        'independenceMovementDay' => [
+            'en' => 'Independence Movement Day',
+            'ko' => '삼일절',
+        ],
+        'arborDay' => [
+            'en' => 'Arbor Day',
+            'ko' => '식목일',
+        ],
+        'buddhasBirthday' => [
+            'en' => 'Buddha’s Birthday',
+            'ko' => '부처님오신날',
+        ],
+        'childrensDay' => [
+            'en' => 'Children’s Day',
+            'ko' => '어린이날',
+        ],
+        'memorialDay' => [
+            'en' => 'Memorial Day',
+            'ko' => '현충일',
+        ],
+        'constitutionDay' => [
+            'en' => 'Constitution Day',
+            'ko' => '제헌절',
+        ],
+        'liberationDay' => [
+            'en' => 'Liberation Day',
+            'ko' => '광복절',
+        ],
+        'chuseok' => [
+            'en' => 'Chuseok',
+            'ko' => '추석',
+        ],
+        'dayBeforeChuseok' => [
+            'en' => 'Day before Chuseok',
+            'ko' => '추석 연휴',
+        ],
+        'dayAfterChuseok' => [
+            'en' => 'Day after Chuseok',
+            'ko' => '추석 연휴',
+        ],
+        'armedForcesDay' => [
+            'en' => 'Armed Forces Day',
+            'ko' => '국군의 날',
+        ],
+        'nationalFoundationDay' => [
+            'en' => 'National Foundation Day',
+            'ko' => '개천절',
+        ],
+        'hangulDay' => [
+            'en' => 'Hangul Day',
+            'ko' => '한글날',
+        ],
+        'unitedNationsDay' => [
+            'en' => 'United Nations Day',
+            'ko' => '유엔의 날',
+        ],
+        'christmasDay' => [],
+    ];
+
+    /**
      * Initialize holidays for South Korea.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -128,28 +209,25 @@ class SouthKorea extends AbstractProvider
     {
         $this->timezone = 'Asia/Seoul';
 
-        // Add common holidays
-        $this->calculateNewYearsDay();
-        if ($this->year >= 1949) {
-            $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
+        // Fast-fail when before 1949
+        if ($this->year < 1949) {
+            return;
         }
 
-        // Calculate lunar holidays
-        $this->calculateSeollal();
-        $this->calculateBuddhasBirthday();
-        $this->calculateChuseok();
+        if ($this->year < 2013) {
+            // Holidays in used from 1949 until 2012
+            $officialHolidays = $this->calculateBefore2013($this->year);
+        } else {
+            // Holidays in use from 2013
+            $officialHolidays = $this->calculateCurrent($this->year);
+        }
 
-        // Calculate other holidays
-        $this->calculateIndependenceMovementDay();
-        $this->calculateArborDay();
-        $this->calculateChildrensDay();
-        $this->calculateMemorialDay();
-        $this->calculateConstitutionDay();
-        $this->calculateLiberationDay();
-        $this->calculateArmedForcesDay();
-        $this->calculateNationalFoundationDay();
-        $this->calculateHangulDay();
-        $this->calculateSubstituteHolidays();
+        foreach ($officialHolidays as $holiday) {
+            $this->addHoliday($this->{$holiday}($this->year, $this->timezone, $this->locale));
+        }
+
+        // Substitute Holidays
+        $this->calculateSubstituteHolidays($this->year);
     }
 
     public function getSources(): array
@@ -161,93 +239,294 @@ class SouthKorea extends AbstractProvider
         ];
     }
 
-    /**
-     * New Year's Day. New Year's Day is held on January 1st and established since 1950.
-     * From the enactment of the First Law to 1998, there was a two or three-day break in the New Year.
-     *
-     * @see https://en.wikipedia.org/wiki/New_Year%27s_Day#East_Asian
-     *
-     * @throws \Exception
-     */
-    private function calculateNewYearsDay(): void
+    public function addHoliday(?Holiday $holiday): void
     {
-        if ($this->year >= 1950) {
-            $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
-            if ($this->year <= 1998) {
-                $this->addHoliday(new Holiday(
-                    'dayAfterNewYearsDay',
-                    [],
-                    new DateTime("$this->year-1-2", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-                    $this->locale
-                ));
-            }
-            if ($this->year <= 1990) {
-                $this->addHoliday(new Holiday(
-                    'twoDaysLaterNewYearsDay',
-                    ['en' => 'Two Days Later New Year’s Day', 'ko' => '새해 연휴'],
-                    new DateTime("$this->year-1-3", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-                    $this->locale
-                ));
-            }
+        if (isset($holiday)) {
+            parent::addHoliday($holiday);
         }
+    }
+
+    /**
+     * The day after New Year's Day (January 2)
+     * This day was established in 1949 and then removed as a public holiday in 1999.
+     */
+    protected function dayAfterNewYearsDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'dayAfterNewYearsDay',
+            $this->getTranslations('dayAfterNewYearsDay', $year),
+            new \DateTime("$year-1-2", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    /**
+     * Two days after the New Year's (January 3)
+     * This day was established in 1949 and then removed as a public holiday in 1990.
+     */
+    protected function twoDaysLaterNewYearsDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'twoDaysLaterNewYearsDay',
+            $this->getTranslations('twoDaysLaterNewYearsDay', $year),
+            new \DateTime("$year-1-3", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
     }
 
     /**
      * Seollal (Korean New Year's Day).
      * Seollal is held on the 1st day of the 1st lunar month and was established from 1985.
      *
-     * @see https://en.wikipedia.org/wiki/Korean_New_Year
+     * Seollal was celebrated with only one day off when it was established in 1985, and then changed to a three-day holiday in 1989.
      *
-     * @throws \Exception
+     * @see https://en.wikipedia.org/wiki/Korean_New_Year
      */
-    private function calculateSeollal(): void
-    {
-        if ($this->year >= 1985 && isset(self::LUNAR_HOLIDAY['seollal'][$this->year])) {
-            $seollal = new DateTime(self::LUNAR_HOLIDAY['seollal'][$this->year], DateTimeZoneFactory::getDateTimeZone($this->timezone));
-            $this->addHoliday(new Holiday(
-                'seollal',
-                ['en' => 'Seollal', 'ko' => '설날'],
-                $seollal,
-                $this->locale
-            ));
-            if ($this->year > 1989) {
-                $dayBeforeSeollal = clone $seollal;
-                $dayBeforeSeollal->sub(new DateInterval('P1D'));
-                $this->addHoliday(new Holiday(
-                    'dayBeforeSeollal',
-                    ['en' => 'Day before Seollal', 'ko' => '설날 연휴'],
-                    $dayBeforeSeollal,
-                    $this->locale
-                ));
-                $dayAfterSeollal = clone $seollal;
-                $dayAfterSeollal->add(new DateInterval('P1D'));
-                $this->addHoliday(new Holiday(
-                    'dayAfterSeollal',
-                    ['en' => 'Day after Seollal', 'ko' => '설날 연휴'],
-                    $dayAfterSeollal,
-                    $this->locale
-                ));
-            }
+    protected function seollal(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): ?Holiday {
+        if (! isset(self::LUNAR_HOLIDAY['seollal'][$year])) {
+            return null;
         }
+
+        $seollal = self::LUNAR_HOLIDAY['seollal'][$year];
+
+        return new Holiday(
+            'seollal',
+            $this->getTranslations('seollal', $year),
+            new \DateTime($seollal, DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
     }
 
     /**
+     * The day before Seollal (Korean New Year's Day).
+     * Seollal is held on the 1st day of the 1st lunar month and was established from 1985.
+     *
+     * Seollal was celebrated with only one day off when it was established in 1985, and then changed to a three-day holiday in 1989.
+     *
+     * @see https://en.wikipedia.org/wiki/Korean_New_Year
+     */
+    protected function dayBeforeSeollal(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): ?Holiday {
+        if (! isset(self::LUNAR_HOLIDAY['seollal'][$year])) {
+            return null;
+        }
+
+        $seollal = self::LUNAR_HOLIDAY['seollal'][$year];
+
+        return new Holiday(
+            'dayBeforeSeollal',
+            $this->getTranslations('dayBeforeSeollal', $year),
+            new \DateTime("-1 day $seollal", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    /**
+     * The day after Seollal (Korean New Year's Day).
+     * Seollal is held on the 1st day of the 1st lunar month and was established from 1985.
+     *
+     * Seollal was celebrated with only one day off when it was established in 1985, and then changed to a three-day holiday in 1989.
+     *
+     * @see https://en.wikipedia.org/wiki/Korean_New_Year
+     */
+    protected function dayAfterSeollal(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): ?Holiday {
+        if (! isset(self::LUNAR_HOLIDAY['seollal'][$year])) {
+            return null;
+        }
+
+        $seollal = self::LUNAR_HOLIDAY['seollal'][$year];
+
+        return new Holiday(
+            'dayAfterSeollal',
+            $this->getTranslations('dayAfterSeollal', $year),
+            new \DateTime("+1 day $seollal", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    /**
+     * Independence Movement Day.
+     * Independence Movement Day is held on March 1st and was established from 1949.
+     *
+     * @see https://en.wikipedia.org/wiki/Independence_Movement_Day
+     */
+    protected function independenceMovementDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'independenceMovementDay',
+            $this->getTranslations('independenceMovementDay', $year),
+            new \DateTime("$year-3-1", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    /**
+     * Sikmogil (Arbor Day).
+     * Sikmogil is held on April 5th and established since 1949, but was removed as a public holiday in 2006.
+     *
+     * @see https://en.wikipedia.org/wiki/Sikmogil
+     */
+    protected function arborDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        $datetime = (1960 === $year) ? "$year-3-21" : "$year-4-5";
+
+        return new Holiday(
+            'arborDay',
+            $this->getTranslations('arborDay', $year),
+            new \DateTime($datetime, DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    /**
+     * Buddha's Birthday.
      * Buddha's Birthday is held on the 8th day of the 4th lunar month and was established since 1975.
      *
      * @see https://en.wikipedia.org/wiki/Buddha%27s_Birthday
-     *
-     * @throws \Exception
      */
-    private function calculateBuddhasBirthday(): void
-    {
-        if ($this->year >= 1975 && isset(self::LUNAR_HOLIDAY['buddhasBirthday'][$this->year])) {
-            $this->addHoliday(new Holiday(
-                'buddhasBirthday',
-                ['en' => 'Buddha’s Birthday', 'ko' => '부처님오신날'],
-                new DateTime(self::LUNAR_HOLIDAY['buddhasBirthday'][$this->year], DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-                $this->locale
-            ));
+    protected function buddhasBirthday(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): ?Holiday {
+        if (! isset(self::LUNAR_HOLIDAY['buddhasBirthday'][$year])) {
+            return null;
         }
+
+        $buddhasBirthday = self::LUNAR_HOLIDAY['buddhasBirthday'][$year];
+
+        return new Holiday(
+            'buddhasBirthday',
+            $this->getTranslations('buddhasBirthday', $year),
+            new \DateTime($buddhasBirthday, DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    /**
+     * Children's Day.
+     * Children's Day is held on May 5th and established since 1975.
+     *
+     * @see https://en.wikipedia.org/wiki/Children%27s_Day#South_Korea
+     */
+    protected function childrensDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'childrensDay',
+            $this->getTranslations('childrensDay', $year),
+            new \DateTime("$year-5-5", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    /**
+     * Memorial Day.
+     * Memorial Day is held on June 6th and established since 1956.
+     *
+     * @see https://en.wikipedia.org/wiki/Memorial_Day_(South_Korea)
+     */
+    protected function memorialDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'memorialDay',
+            $this->getTranslations('memorialDay', $year),
+            new \DateTime("$year-6-6", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    /**
+     * Constitution Day.
+     * Constitution Day is held on July 17th and established since 1949.
+     *
+     * It was originally a public holiday recognized by the South Korean government,
+     * but was removed as a public holiday in 2008 and is now a national day rather than a public holiday.
+     *
+     * @see https://en.wikipedia.org/wiki/Constitution_Day_(South_Korea)
+     */
+    protected function constitutionDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'constitutionDay',
+            $this->getTranslations('constitutionDay', $year),
+            new \DateTime("$year-7-17", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    /**
+     * Liberation Day.
+     * Liberation Day is held on August 15th and established since 1949.
+     *
+     * @see https://en.wikipedia.org/wiki/National_Liberation_Day_of_Korea
+     */
+    protected function liberationDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'liberationDay',
+            $this->getTranslations('liberationDay', $year),
+            new \DateTime("$year-8-15", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
     }
 
     /**
@@ -255,221 +534,305 @@ class SouthKorea extends AbstractProvider
      *
      * Chuseok, one of the biggest holidays in Korea, is a major harvest festival and a three-day holiday celebrated on
      * the 15th day of the 8th month of the lunar calendar on the full moon.
+     * Chuseok was a one-day holiday when it was established in 1945, but was changed to a three-day holiday in 1989.
      *
      * @see https://en.wikipedia.org/wiki/Chuseok
-     *
-     * @throws \Exception
      */
-    private function calculateChuseok(): void
-    {
-        if ($this->year >= 1949 && isset(self::LUNAR_HOLIDAY['chuseok'][$this->year])) {
-            // Chuseok
-            $chuseok = new Holiday(
-                'chuseok',
-                ['en' => 'Chuseok', 'ko' => '추석'],
-                new DateTime(self::LUNAR_HOLIDAY['chuseok'][$this->year], DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-                $this->locale
-            );
-            $this->addHoliday($chuseok);
-
-            // Day after Chuseok
-            if ($this->year >= 1986) {
-                $this->addHoliday(new Holiday(
-                    'dayAfterChuseok',
-                    ['en' => 'Day after Chuseok', 'ko' => '추석 연휴'],
-                    (clone $chuseok)->add(new DateInterval('P1D')),
-                    $this->locale
-                ));
-            }
-
-            // Day before Chuseok
-            if ($this->year >= 1989) {
-                $this->addHoliday(new Holiday(
-                    'dayBeforeChuseok',
-                    ['en' => 'Day before Chuseok', 'ko' => '추석 연휴'],
-                    (clone $chuseok)->sub(new DateInterval('P1D')),
-                    $this->locale
-                ));
-            }
+    protected function chuseok(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): ?Holiday {
+        if (! isset(self::LUNAR_HOLIDAY['chuseok'][$year])) {
+            return null;
         }
+
+        $choseok = self::LUNAR_HOLIDAY['chuseok'][$year];
+
+        return new Holiday(
+            'chuseok',
+            $this->getTranslations('chuseok', $year),
+            new \DateTime($choseok, DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
     }
 
     /**
-     * Independence Movement Day. Independence Movement Day is held on March 1st and was established from 1949.
+     * The day before Chuseok (Korean Thanksgiving Day).
      *
-     * @see https://en.wikipedia.org/wiki/Independence_Movement_Day
+     * Chuseok, one of the biggest holidays in Korea, is a major harvest festival and a three-day holiday celebrated on
+     * the 15th day of the 8th month of the lunar calendar on the full moon.
+     * Chuseok was a one-day holiday when it was established in 1945, but was changed to a three-day holiday in 1989.
      *
-     * @throws \Exception
+     * @see https://en.wikipedia.org/wiki/Chuseok
      */
-    private function calculateIndependenceMovementDay(): void
-    {
-        if ($this->year >= 1949) {
-            $this->addHoliday(new Holiday(
-                'independenceMovementDay',
-                ['en' => 'Independence Movement Day', 'ko' => '삼일절'],
-                new DateTime("$this->year-3-1", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-                $this->locale
-            ));
+    protected function dayBeforeChuseok(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): ?Holiday {
+        if (! isset(self::LUNAR_HOLIDAY['chuseok'][$year])) {
+            return null;
         }
+
+        $choseok = self::LUNAR_HOLIDAY['chuseok'][$year];
+
+        return new Holiday(
+            'dayBeforeChuseok',
+            $this->getTranslations('dayBeforeChuseok', $year),
+            new \DateTime("-1 day $choseok", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
     }
 
     /**
-     * Sikmogil (Arbor Day). Sikmogil is held on May 5th and established since 1949.
+     * The day after Chuseok (Korean Thanksgiving Day).
      *
-     * @see https://en.wikipedia.org/wiki/Sikmogil
+     * Chuseok, one of the biggest holidays in Korea, is a major harvest festival and a three-day holiday celebrated on
+     * the 15th day of the 8th month of the lunar calendar on the full moon.
+     * Chuseok was a one-day holiday when it was established in 1945, but was changed to a three-day holiday in 1989.
      *
-     * @throws \Exception
+     * @see https://en.wikipedia.org/wiki/Chuseok
      */
-    private function calculateArborDay(): void
-    {
-        if (($this->year >= 1949 && $this->year < 1960) || ($this->year > 1960 && $this->year < 2006)) {
-            $this->addHoliday(new Holiday(
-                'arborDay',
-                ['en' => 'Arbor Day', 'ko' => '식목일'],
-                new DateTime("$this->year-4-5", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-                $this->locale
-            ));
+    protected function dayAfterChuseok(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): ?Holiday {
+        if (! isset(self::LUNAR_HOLIDAY['chuseok'][$year])) {
+            return null;
         }
+
+        $choseok = self::LUNAR_HOLIDAY['chuseok'][$year];
+
+        return new Holiday(
+            'dayAfterChuseok',
+            $this->getTranslations('dayAfterChuseok', $year),
+            new \DateTime("+1 day $choseok", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
     }
 
     /**
-     * Children's Day. Children's Day is held on May 5th and established since 1970.
+     * Armed Forces Day.
+     * Armed Forces Day is held on October 1st and established since 1956.
      *
-     * @see https://en.wikipedia.org/wiki/Children%27s_Day#South_Korea
+     * Armed Forces Day, established in 1956, was made a public holiday in 1976 and then removed again in 1991.
      *
-     * @throws \Exception
-     */
-    private function calculateChildrensDay(): void
-    {
-        if ($this->year >= 1970) {
-            $this->addHoliday(new Holiday(
-                'childrensDay',
-                ['en' => 'Children’s Day', 'ko' => '어린이날'],
-                new DateTime("$this->year-5-5", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-                $this->locale
-            ));
-        }
-    }
-
-    /**
-     * Memorial Day. Memorial Day is held on June 6th and established since 1956.
-     *
-     * @see https://en.wikipedia.org/wiki/Memorial_Day_(South_Korea)
-     *
-     * @throws \Exception
-     */
-    private function calculateMemorialDay(): void
-    {
-        if ($this->year >= 1966) {
-            $this->addHoliday(new Holiday(
-                'memorialDay',
-                ['en' => 'Memorial Day', 'ko' => '현충일'],
-                new DateTime("$this->year-6-6", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-                $this->locale
-            ));
-        }
-    }
-
-    /**
-     * Constitution Day.
-     *
-     * Constitution Day is held on July 17th and established since 1949.
-     * Officially, it is a strict national holiday, but government offices and banks work normally after 2008.
-     *
-     * @see https://en.wikipedia.org/wiki/Constitution_Day_(South_Korea)
-     *
-     * @throws \Exception
-     */
-    private function calculateConstitutionDay(): void
-    {
-        if ($this->year >= 1949 && $this->year < 2008) {
-            $this->addHoliday(new Holiday(
-                'constitutionDay',
-                ['en' => 'Constitution Day', 'ko' => '제헌절'],
-                new DateTime("$this->year-7-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-                $this->locale
-            ));
-        }
-    }
-
-    /**
-     * Liberation Day. Liberation Day is held on August 15th and established since 1949.
-     *
-     * @see https://en.wikipedia.org/wiki/National_Liberation_Day_of_Korea
-     *
-     * @throws \Exception
-     */
-    private function calculateLiberationDay(): void
-    {
-        if ($this->year >= 1949) {
-            $this->addHoliday(new Holiday(
-                'liberationDay',
-                ['en' => 'Liberation Day', 'ko' => '광복절'],
-                new DateTime("$this->year-8-15", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-                $this->locale
-            ));
-        }
-    }
-
-    /**
-     * Armed Forces Day. Armed Forces Day is held on October 1st and established since 1956.
-     *
+     * @see unitedNationsDay
      * @see https://en.wikipedia.org/wiki/Armed_Forces_Day_(South_Korea)
-     *
-     * @throws \Exception
      */
-    private function calculateArmedForcesDay(): void
-    {
-        if ($this->year >= 1956 && $this->year <= 1990) {
-            $this->addHoliday(new Holiday(
-                'armedForcesDay',
-                ['en' => 'Armed Forces Day', 'ko' => '국군의 날'],
-                new DateTime("$this->year-10-1", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-                $this->locale
-            ));
-        }
+    protected function armedForcesDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'armedForcesDay',
+            $this->getTranslations('armedForcesDay', $year),
+            new \DateTime("$year-10-1", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
     }
 
     /**
-     * Gaecheonjeol (National Foundation Day). Gaecheonjeol is held on October 3rd and established since 1949.
+     * Gaecheonjeol (National Foundation Day).
+     * Gaecheonjeol is held on October 3rd and established since 1949.
      *
      * @see https://en.wikipedia.org/wiki/Gaecheonjeol
-     *
-     * @throws \Exception
      */
-    private function calculateNationalFoundationDay(): void
-    {
-        if ($this->year >= 1949) {
-            $this->addHoliday(new Holiday(
-                'nationalFoundationDay',
-                ['en' => 'National Foundation Day', 'ko' => '개천절'],
-                new DateTime("$this->year-10-3", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-                $this->locale
-            ));
-        }
+    protected function nationalFoundationDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'nationalFoundationDay',
+            $this->getTranslations('nationalFoundationDay', $year),
+            new \DateTime("$year-10-3", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
     }
 
     /**
-     * Hangul Day. Hangul Day is held on October 9th and established since 1949.
+     * Hangul Day.
+     * Hangul Day is held on October 9th and established since 1949.
+     *
+     * Hangul Day, established in 1949, was removed as a public holiday in 1991 and included again in 2013.
      *
      * @see https://en.wikipedia.org/wiki/Hangul_Day
-     *
-     * @throws \Exception
      */
-    private function calculateHangulDay(): void
-    {
-        if (($this->year >= 1949 && $this->year <= 1990) || $this->year > 2012) {
-            $this->addHoliday(new Holiday(
-                'hangulDay',
-                ['en' => 'Hangul Day', 'ko' => '한글날'],
-                new DateTime("$this->year-10-9", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-                $this->locale
-            ));
-        }
+    protected function hangulDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'hangulDay',
+            $this->getTranslations('hangulDay', $year),
+            new \DateTime("$year-10-9", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
     }
 
     /**
-     * Substitute Holidays up to 2021.
+     * United Nations Day.
+     *
+     * On September 18, 1950, the day of the formation of the United Nations, International United Nations Day was established as a public holiday.
+     * Later, on September 3, 1976, United Nations Day was removed as a public holiday and Armed Forces Day was established as a new public holiday.
+     *
+     * @see https://ko.wikipedia.org/wiki/%EC%9C%A0%EC%97%94%EC%9D%98_%EB%82%A0#%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD
+     */
+    protected function unitedNationsDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'unitedNationsDay',
+            $this->getTranslations('unitedNationsDay', $year),
+            new \DateTime("$year-10-24", DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    /**
+     * Get holiday names for translation.
+     *
+     * @return array<string>
+     */
+    protected function getTranslations(string $key, int $year): array
+    {
+        switch ($key) {
+            case 'arborDay':
+                $names = (1960 === $year)
+                    ? ['en' => 'Arbor Day', 'ko' => '사방의 날']
+                    : self::HOLIDAY_NAMES[$key];
+                break;
+            default:
+                $names = isset(self::HOLIDAY_NAMES[$key]) ? self::HOLIDAY_NAMES[$key] : [];
+                break;
+        }
+
+        return $names;
+    }
+
+    /**
+     * Holidays in used from 1949 until 2012.
+     *
+     * @return array<string> list of holidays
+     */
+    private function calculateBefore2013(int $year): array
+    {
+        $officialHolidays = [];
+
+        if ($year >= 1949) {
+            $officialHolidays[] = 'independenceMovementDay';
+            $officialHolidays[] = 'liberationDay';
+            $officialHolidays[] = 'nationalFoundationDay';
+            $officialHolidays[] = 'newYearsDay';
+            $officialHolidays[] = 'chuseok';
+            $officialHolidays[] = 'christmasDay';
+
+            if ($year >= 1950 && $year < 1976) {
+                $officialHolidays[] = 'unitedNationsDay';
+            }
+
+            if ($year >= 1956) {
+                $officialHolidays[] = 'memorialDay';
+            }
+
+            if ($year >= 1975) {
+                $officialHolidays[] = 'childrensDay';
+                $officialHolidays[] = 'buddhasBirthday';
+            }
+
+            if ($year >= 1976 && $year <= 1990) {
+                $officialHolidays[] = 'armedForcesDay';
+            }
+
+            if ($year >= 1985) {
+                $officialHolidays[] = 'seollal';
+            }
+
+            if ($year >= 1986) {
+                $officialHolidays[] = 'dayAfterChuseok';
+            }
+
+            if ($year >= 1989) {
+                $officialHolidays[] = 'dayBeforeChuseok';
+                $officialHolidays[] = 'dayBeforeSeollal';
+                $officialHolidays[] = 'dayAfterSeollal';
+            }
+
+            if ($year <= 1989) {
+                $officialHolidays[] = 'twoDaysLaterNewYearsDay';
+            }
+
+            if ($year <= 1990 || $year > 2012) {
+                $officialHolidays[] = 'hangulDay';
+            }
+
+            if ($year <= 1998) {
+                $officialHolidays[] = 'dayAfterNewYearsDay';
+            }
+
+            if ($year <= 2005) {
+                $officialHolidays[] = 'arborDay';
+            }
+
+            if ($year < 2008) {
+                $officialHolidays[] = 'constitutionDay';
+            }
+        }
+
+        return $officialHolidays;
+    }
+
+    /**
+     * Holidays in use since 2013.
+     *
+     * @return array<string> list of holidays
+     */
+    private function calculateCurrent(int $year): array
+    {
+        $officialHolidays = [];
+
+        $officialHolidays[] = 'newYearsDay';
+        $officialHolidays[] = 'dayBeforeSeollal';
+        $officialHolidays[] = 'seollal';
+        $officialHolidays[] = 'dayAfterSeollal';
+        $officialHolidays[] = 'independenceMovementDay';
+        $officialHolidays[] = 'buddhasBirthday';
+        $officialHolidays[] = 'childrensDay';
+        $officialHolidays[] = 'memorialDay';
+        $officialHolidays[] = 'liberationDay';
+        $officialHolidays[] = 'dayBeforeChuseok';
+        $officialHolidays[] = 'chuseok';
+        $officialHolidays[] = 'dayAfterChuseok';
+        $officialHolidays[] = 'nationalFoundationDay';
+        $officialHolidays[] = 'hangulDay';
+        $officialHolidays[] = 'christmasDay';
+
+        return $officialHolidays;
+    }
+
+    /**
+     * Substitute Holidays up to 2022.
      * Related statutes: Article 3 Alternative Statutory Holidays of the Regulations on Holidays of Government Offices.
      *
      * Since 2014, it has been applied only on Seollal, Chuseok and Children's Day.
@@ -478,45 +841,56 @@ class SouthKorea extends AbstractProvider
      * As an exception, Children's Day also applies on Saturday.
      *
      * Since new legislation about public holiday was enacted in June 2021,
-     * this function is used to calculate the holidays up to 2021.
+     * this function is used to calculate the holidays up to 2022.
      *
      * @throws \Exception
      */
-    private function calculateOldSubstituteHolidays(): void
+    private function calculateOldSubstituteHolidays(int $year): void
     {
-        if ($this->year < 2014) {
-            return;
-        }
-
         // Add substitute holidays by fixed entries.
-        switch ($this->year) {
+        switch ($year) {
+            case 1959:
+                $this->addSubstituteHoliday($this->getHoliday('arborDay'), "$year-4-6");
+                break;
+            case 1960:
+                $this->addSubstituteHoliday($this->getHoliday('constitutionDay'), "$year-7-18");
+                $this->addSubstituteHoliday($this->getHoliday('hangulDay'), "$year-10-10");
+                $this->addSubstituteHoliday($this->getHoliday('christmasDay'), "$year-12-26");
+                break;
+            case 1989:
+                $this->addSubstituteHoliday($this->getHoliday('armedForcesDay'), "$year-10-2");
+                break;
             case 2014:
-                $this->addSubstituteHoliday($this->getHoliday('dayBeforeChuseok'), "$this->year-9-10");
+                $this->addSubstituteHoliday($this->getHoliday('dayBeforeChuseok'), "$year-9-10");
                 break;
             case 2015:
-                $this->addSubstituteHoliday($this->getHoliday('chuseok'), "$this->year-9-29");
+                $this->addSubstituteHoliday($this->getHoliday('chuseok'), "$year-9-29");
                 break;
             case 2016:
-                $this->addSubstituteHoliday($this->getHoliday('dayBeforeSeollal'), "$this->year-2-10");
+                $this->addSubstituteHoliday($this->getHoliday('dayBeforeSeollal'), "$year-2-10");
                 break;
             case 2017:
-                $this->addSubstituteHoliday($this->getHoliday('dayAfterSeollal'), "$this->year-1-30");
-                $this->addSubstituteHoliday($this->getHoliday('dayBeforeChuseok'), "$this->year-10-6");
+                $this->addSubstituteHoliday($this->getHoliday('dayAfterSeollal'), "$year-1-30");
+                $this->addSubstituteHoliday($this->getHoliday('dayBeforeChuseok'), "$year-10-6");
                 break;
             case 2018:
-                $this->addSubstituteHoliday($this->getHoliday('childrensDay'), "$this->year-5-7");
-                $this->addSubstituteHoliday($this->getHoliday('dayBeforeChuseok'), "$this->year-9-26");
+                $this->addSubstituteHoliday($this->getHoliday('childrensDay'), "$year-5-7");
+                $this->addSubstituteHoliday($this->getHoliday('dayBeforeChuseok'), "$year-9-26");
                 break;
             case 2019:
-                $this->addSubstituteHoliday($this->getHoliday('childrensDay'), "$this->year-5-6");
+                $this->addSubstituteHoliday($this->getHoliday('childrensDay'), "$year-5-6");
                 break;
             case 2020:
-                $this->addSubstituteHoliday($this->getHoliday('dayAfterSeollal'), "$this->year-1-27");
+                $this->addSubstituteHoliday($this->getHoliday('dayAfterSeollal'), "$year-1-27");
                 break;
             case 2021:
-                $this->addSubstituteHoliday($this->getHoliday('liberationDay'), "$this->year-8-16");
-                $this->addSubstituteHoliday($this->getHoliday('nationalFoundationDay'), "$this->year-10-4");
-                $this->addSubstituteHoliday($this->getHoliday('hangulDay'), "$this->year-10-11");
+                $this->addSubstituteHoliday($this->getHoliday('liberationDay'), "$year-8-16");
+                $this->addSubstituteHoliday($this->getHoliday('nationalFoundationDay'), "$year-10-4");
+                $this->addSubstituteHoliday($this->getHoliday('hangulDay'), "$year-10-11");
+                break;
+            case 2022:
+                $this->addSubstituteHoliday($this->getHoliday('dayAfterChuseok'), "$year-9-12");
+                $this->addSubstituteHoliday($this->getHoliday('hangulDay'), "$year-10-10");
                 break;
         }
     }
@@ -530,41 +904,28 @@ class SouthKorea extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateSubstituteHolidays(): void
+    private function calculateSubstituteHolidays(int $year): void
     {
-        if ($this->year < 2022) {
-            $this->calculateOldSubstituteHolidays();
+        if ($year < 2023) {
+            $this->calculateOldSubstituteHolidays($year);
 
             return;
         }
 
         // List of holidays allowed for substitution.
-        $acceptedHolidays = [];
-
-        // When deciding on alternative holidays, place lunar holidays first for consistent rules.
-        // These holidays will substitute for the sunday only.
-        $acceptedHolidays += array_fill_keys([
-            'dayBeforeSeollal', 'seollal', 'dayAfterSeollal',
-            'dayBeforeChuseok', 'chuseok', 'dayAfterChuseok',
-        ], [0]);
-
-        // These holidays will substitute for any weekend days (Sunday and Saturday).
-        $acceptedHolidays += array_fill_keys([
-            'childrensDay', 'independenceMovementDay', 'liberationDay',
-            'nationalFoundationDay', 'hangulDay',
-        ], [0, 6]);
+        $acceptedHolidays = $this->calculateAcceptedSubstituteHolidays($year);
 
         // Step 1. Build a temporary table that aggregates holidays by date.
         $dates = [];
         foreach ($this->getHolidayDates() as $name => $day) {
-            $holiday = $this->getHoliday($name);
+            $holiday = $this->getHoliday((string) $name);
             $dates[$day][] = $name;
 
-            if (!isset($acceptedHolidays[$name])) {
+            if (! isset($acceptedHolidays[$name])) {
                 continue;
             }
 
-            if (!$holiday instanceof Holiday) {
+            if (! $holiday instanceof Holiday) {
                 continue;
             }
 
@@ -585,9 +946,9 @@ class SouthKorea extends AbstractProvider
             // In a temporary table, public holidays are keyed by numeric number.
             // And weekends are keyed by string start with 'weekend:'.
             // For the substitute, we will use first item in queue.
-            $origin = $this->getHoliday($names[0]);
-            $nextWorkingDay = DateTime::createFromFormat('Y-m-d', $day, $tz);
-            if ($nextWorkingDay instanceof DateTime) {
+            $origin = $this->getHoliday((string) $names[0]);
+            $nextWorkingDay = \DateTime::createFromFormat('Y-m-d', $day, $tz);
+            if ($nextWorkingDay instanceof \DateTime) {
                 $workDay = $this->nextWorkingDay($nextWorkingDay);
                 $this->addSubstituteHoliday($origin, $workDay->format('Y-m-d'));
             }
@@ -595,15 +956,51 @@ class SouthKorea extends AbstractProvider
     }
 
     /**
+     * Return a dictionary of substitute holiday
+     * Government-recognized holidays will be replaced with an alternative holiday if they overlap with a Saturday or Sunday.
+     * This dictionary contains information about which day of the week the holiday is replaced when it falls on.
+     *
+     * @return array<string, array<int>>
+     */
+    private function calculateAcceptedSubstituteHolidays(int $year): array
+    {
+        // List of holidays allowed for substitution.
+        // This dictionary has key => value mappings.
+        // each key is key of holiday and value contains day of week (saturday or sunday or both)
+        // value meaning : 0 = saturday, 1 = sunday
+        $acceptedHolidays = [];
+
+        if ($year < 2023) {
+            return $acceptedHolidays;
+        }
+
+        // When deciding on alternative holidays, place lunar holidays first for consistent rules.
+        // These holidays will substitute for the sunday only.
+        $acceptedHolidays += array_fill_keys([
+            'dayBeforeSeollal', 'seollal', 'dayAfterSeollal',
+            'dayBeforeChuseok', 'chuseok', 'dayAfterChuseok',
+        ], [0]);
+
+        // These holidays will substitute for any weekend days (Sunday and Saturday).
+        // 'buddhasBirthday' and 'christmasDay' included as alternative holiday in May 2023.
+        $acceptedHolidays += array_fill_keys([
+            'childrensDay', 'independenceMovementDay', 'liberationDay',
+            'nationalFoundationDay', 'hangulDay', 'buddhasBirthday', 'christmasDay',
+        ], [0, 6]);
+
+        return $acceptedHolidays;
+    }
+
+    /**
      * Helper method to find a first working day after specific date.
      */
-    private function nextWorkingDay(DateTime $date): DateTime
+    private function nextWorkingDay(\DateTime $date): \DateTime
     {
-        $interval = new DateInterval('P1D');
+        $interval = new \DateInterval('P1D');
         $next = clone $date;
         do {
             $next->add($interval);
-        } while (!$this->isWorkingDay($next));
+        } while (! $this->isWorkingDay($next));
 
         return $next;
     }
@@ -617,14 +1014,14 @@ class SouthKorea extends AbstractProvider
      */
     private function addSubstituteHoliday(?Holiday $origin, string $date_str): void
     {
-        if (!$origin instanceof Holiday) {
+        if (! $origin instanceof Holiday) {
             return;
         }
 
         $this->addHoliday(new SubstituteHoliday(
             $origin,
             [],
-            new DateTime($date_str, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($date_str, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }

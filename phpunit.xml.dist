@@ -2,7 +2,7 @@
 <!--
   ~ This file is part of the Yasumi package.
   ~
-  ~ Copyright (c) 2015 - 2022 AzuyaLabs
+  ~ Copyright (c) 2015 - 2023 AzuyaLabs
   ~
   ~ For the full copyright and license information, please view the LICENSE
   ~ file that was distributed with this source code.
@@ -10,7 +10,9 @@
   ~ @author Sacha Telgenhof <me at sachatelgenhof dot com>
   -->
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         beStrictAboutTestsThatDoNotTestAnything="false" bootstrap="vendor/autoload.php" colors="true"
+    beStrictAboutTestsThatDoNotTestAnything="false"
+         bootstrap="vendor/autoload.php"
+         colors="true"
          verbose="true"
          xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.5/phpunit.xsd">
     <coverage processUncoveredFiles="true">

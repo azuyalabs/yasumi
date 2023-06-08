@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,10 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\UnitedKingdom;
 
-use DateInterval;
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 use Yasumi\tests\UnitedKingdom\England\EnglandBaseTestCase;
@@ -30,7 +26,7 @@ class MotheringSundayTest extends EnglandBaseTestCase implements HolidayTestCase
     /**
      * @dataProvider HolidayDataProvider
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHoliday(int $year, string $expected): void
     {
@@ -38,14 +34,14 @@ class MotheringSundayTest extends EnglandBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime($expected, new DateTimeZone(self::TIMEZONE))
+            new \DateTime($expected, new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * @return array<array> list of test dates for the holiday defined in this test
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function HolidayDataProvider(): array
     {
@@ -54,7 +50,7 @@ class MotheringSundayTest extends EnglandBaseTestCase implements HolidayTestCase
         for ($y = 0; $y < 50; ++$y) {
             $year = $this->generateRandomYear();
             $date = $this->calculateEaster($year, self::TIMEZONE);
-            $date->sub(new DateInterval('P3W'));
+            $date->sub(new \DateInterval('P3W'));
 
             $data[] = [$year, $date->format('Y-m-d')];
         }
@@ -67,7 +63,7 @@ class MotheringSundayTest extends EnglandBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -80,7 +76,7 @@ class MotheringSundayTest extends EnglandBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {

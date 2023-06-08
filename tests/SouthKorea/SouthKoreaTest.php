@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,16 +15,21 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\SouthKorea;
 
-use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\Provider\SouthKorea;
 use Yasumi\tests\ProviderTestCase;
+use Yasumi\Yasumi;
 
 /**
  * Class for testing holidays in South Korea.
  */
 class SouthKoreaTest extends SouthKoreaBaseTestCase implements ProviderTestCase
 {
+    /**
+     * @var int the year of upper limit for tests of lunar date
+     */
+    public const LUNAR_TEST_LIMIT = 2050;
+
     /**
      * @var int year random year number used for all tests in this Test Case
      */
@@ -37,7 +42,7 @@ class SouthKoreaTest extends SouthKoreaBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1949, 2050);
+        $this->year = $this->generateRandomYear(1949, self::LUNAR_TEST_LIMIT);
     }
 
     /**
@@ -46,55 +51,64 @@ class SouthKoreaTest extends SouthKoreaBaseTestCase implements ProviderTestCase
     public function testOfficialHolidays(): void
     {
         $officialHolidays = [];
+
         if ($this->year >= 1949) {
             $officialHolidays[] = 'independenceMovementDay';
             $officialHolidays[] = 'liberationDay';
             $officialHolidays[] = 'nationalFoundationDay';
-            $officialHolidays[] = 'christmasDay';
-            if (ArborDayTest::YEAR_NOT_CELEBRATED !== $this->year && $this->year < ArborDayTest::REMOVED_YEAR + 1) {
-                $officialHolidays[] = 'arborDay';
-            }
-            if ($this->year <= 1990 || $this->year > 2012) {
-                $officialHolidays[] = 'hangulDay';
-            }
-            if ($this->year < 2008) {
-                $officialHolidays[] = 'constitutionDay';
-            }
-        }
-        if ($this->year >= 1950) {
             $officialHolidays[] = 'newYearsDay';
-            if ($this->year <= 1990) {
-                $officialHolidays[] = 'twoDaysLaterNewYearsDay';
-            }
-            if ($this->year <= 1998) {
-                $officialHolidays[] = 'dayAfterNewYearsDay';
-            }
-        }
-        if ($this->year >= 1956 && $this->year <= 1990) {
-            $officialHolidays[] = 'armedForcesDay';
-        }
-        if ($this->year >= 1966) {
-            $officialHolidays[] = 'memorialDay';
-        }
-
-        // specific cases (Seollal, Buddha's Birthday and Chuseok)
-        if ($this->year >= 1949 && isset(SouthKorea::LUNAR_HOLIDAY['chuseok'][$this->year])) {
             $officialHolidays[] = 'chuseok';
+            $officialHolidays[] = 'christmasDay';
+
+            if ($this->year >= 1950 && $this->year < 1976) {
+                $officialHolidays[] = 'unitedNationsDay';
+            }
+
+            if ($this->year >= 1956) {
+                $officialHolidays[] = 'memorialDay';
+            }
+
+            if ($this->year >= 1975) {
+                $officialHolidays[] = 'childrensDay';
+                $officialHolidays[] = 'buddhasBirthday';
+            }
+
+            if ($this->year >= 1976 && $this->year <= 1990) {
+                $officialHolidays[] = 'armedForcesDay';
+            }
+
+            if ($this->year >= 1985) {
+                $officialHolidays[] = 'seollal';
+            }
+
             if ($this->year >= 1986) {
                 $officialHolidays[] = 'dayAfterChuseok';
             }
+
             if ($this->year >= 1989) {
                 $officialHolidays[] = 'dayBeforeChuseok';
-            }
-        }
-        if ($this->year >= 1975 && isset(SouthKorea::LUNAR_HOLIDAY['buddhasBirthday'][$this->year])) {
-            $officialHolidays[] = 'buddhasBirthday';
-        }
-        if ($this->year >= 1985 && isset(SouthKorea::LUNAR_HOLIDAY['seollal'][$this->year])) {
-            $officialHolidays[] = 'seollal';
-            if ($this->year > 1989) {
                 $officialHolidays[] = 'dayBeforeSeollal';
                 $officialHolidays[] = 'dayAfterSeollal';
+            }
+
+            if ($this->year <= 1989) {
+                $officialHolidays[] = 'twoDaysLaterNewYearsDay';
+            }
+
+            if ($this->year <= 1990 || $this->year > 2012) {
+                $officialHolidays[] = 'hangulDay';
+            }
+
+            if ($this->year <= 1998) {
+                $officialHolidays[] = 'dayAfterNewYearsDay';
+            }
+
+            if ($this->year <= 2005) {
+                $officialHolidays[] = 'arborDay';
+            }
+
+            if ($this->year < 2008) {
+                $officialHolidays[] = 'constitutionDay';
             }
         }
 
@@ -134,11 +148,24 @@ class SouthKoreaTest extends SouthKoreaBaseTestCase implements ProviderTestCase
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
      * @throws \Exception
      */
     public function testSources(): void
     {
         $this->assertSources(self::REGION, 3);
+    }
+
+    /**
+     * Tests if all generation methods is exists in provider.
+     */
+    public function testGenerationMethods(): void
+    {
+        $holidayProvider = Yasumi::create(self::REGION, $this->year);
+
+        $this->assertIsArray(SouthKorea::HOLIDAY_NAMES, 'Yasumi\Provider\SouthKorea::HOLIDAY_NAMES is not array');
+        foreach (SouthKorea::HOLIDAY_NAMES as $key => $names) {
+            $this->assertTrue(method_exists($holidayProvider, $key), sprintf('Generation method `%s` is not declared in provider `%s`', $key, self::REGION));
+        }
     }
 }

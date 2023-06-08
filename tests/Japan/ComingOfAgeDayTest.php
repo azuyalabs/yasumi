@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2022 AzuyaLabs
+ * Copyright (c) 2015 - 2023 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,9 +14,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Japan;
 
-use DateTime;
-use DateTimeZone;
-use Exception;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
@@ -39,7 +36,7 @@ class ComingOfAgeDayTest extends JapanBaseTestCase implements HolidayTestCase
      * Tests Coming of Age Day after 2000. Coming of Age Day was established after 1948 on January 15th. After 2000 it
      * was changed to be the second monday of January.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testComingOfAgeDayOnAfter2000(): void
     {
@@ -48,7 +45,7 @@ class ComingOfAgeDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("second monday of january $year", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("second monday of january $year", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -56,7 +53,7 @@ class ComingOfAgeDayTest extends JapanBaseTestCase implements HolidayTestCase
      * Tests Coming of Age Day between 1948 and 2000. Coming of Age Day was established after 1948 on January 15th.
      * After 2000 it was changed to be the second monday of January.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testComingOfAgeDayBetween1948And2000(): void
     {
@@ -65,7 +62,7 @@ class ComingOfAgeDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("$year-1-15", new DateTimeZone(self::TIMEZONE))
+            new \DateTime("$year-1-15", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -73,7 +70,7 @@ class ComingOfAgeDayTest extends JapanBaseTestCase implements HolidayTestCase
      * Tests Coming of Age Day before 1948. Coming of Age Day was established after 1948 on January 15th. After 2000 it
      * was changed to be the second monday of January.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testConstitutionMemorialDayBefore1948(): void
     {
@@ -87,7 +84,7 @@ class ComingOfAgeDayTest extends JapanBaseTestCase implements HolidayTestCase
     /**
      * Tests the translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -102,7 +99,7 @@ class ComingOfAgeDayTest extends JapanBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {
