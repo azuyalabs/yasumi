@@ -89,12 +89,12 @@ class Queensland extends Australia
             $name = "King's Birthday";
         }
         $this->addHoliday(new Holiday(
-                              'monarchsBirthday',
-                              ['en' => $name],
-                              new \DateTime('second monday of june '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-                              $this->locale,
-                              Holiday::TYPE_OFFICIAL
-                          ));
+            'monarchsBirthday',
+            ['en' => $name],
+            new \DateTime('second monday of june '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale,
+            Holiday::TYPE_OFFICIAL
+        ));
     }
 
     /**

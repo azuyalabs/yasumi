@@ -22,6 +22,7 @@ changes.
   [\#314](https://github.com/azuyalabs/yasumi/pull/314) ([barami](https://github.com/barami))
 - Refactored the complexity of the SouthKorea provider to make it easier to understand in case of future changes.
   [\#314](https://github.com/azuyalabs/yasumi/pull/314) ([barami](https://github.com/barami))
+- Adjusted the naming of the public holiday in Australia from Queen's Birthday to King's Birthday from 2022/2023 onwards
 
 ### Fixed
 
