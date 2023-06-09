@@ -12,11 +12,11 @@ declare(strict_types=1);
  * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
-namespace Yasumi\tests\Australia\Tasmania\Northwest\CircularHead;
+namespace Yasumi\tests\Australia\Queensland\Brisbane;
 
 /**
- * Class for testing Queen's Birthday in Circular Head (Australia)..
+ * Class for testing Monarch's Birthday in Brisbane (Australia)..
  */
-class QueensBirthdayTest extends \Yasumi\tests\Australia\Tasmania\Northwest\QueensBirthdayTest
+class MonarchsBirthdayTest extends \Yasumi\tests\Australia\Queensland\MonarchsBirthdayTest
 {
 }

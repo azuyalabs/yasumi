@@ -50,7 +50,7 @@ class KingIslandTest extends KingIslandBaseTestCase implements ProviderTestCase
             'secondChristmasDay',
             'australiaDay',
             'anzacDay',
-            'queensBirthday',
+            'monarchsBirthday',
             'eightHourDay',
             'recreationDay',
             'kingIslandShow',

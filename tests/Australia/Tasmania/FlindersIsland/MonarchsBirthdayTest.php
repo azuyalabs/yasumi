@@ -12,11 +12,11 @@ declare(strict_types=1);
  * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
-namespace Yasumi\tests\Australia\Tasmania\KingIsland;
+namespace Yasumi\tests\Australia\Tasmania\FlindersIsland;
 
 /**
- * Class for testing Queen's Birthday in King Island (Australia)..
+ * Class for testing Monarch's Birthday in Flinders Island (Australia)..
  */
-class QueensBirthdayTest extends \Yasumi\tests\Australia\Tasmania\QueensBirthdayTest
+class MonarchsBirthdayTest extends \Yasumi\tests\Australia\Tasmania\MonarchsBirthdayTest
 {
 }
