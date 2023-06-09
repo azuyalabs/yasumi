@@ -52,7 +52,7 @@ class VictoriaTest extends VictoriaBaseTestCase implements ProviderTestCase
             'anzacDay',
             'easter',
             'easterSaturday',
-            'queensBirthday',
+            'monarchsBirthday',
             'labourDay',
             'aflGrandFinalFriday',
             'melbourneCup',

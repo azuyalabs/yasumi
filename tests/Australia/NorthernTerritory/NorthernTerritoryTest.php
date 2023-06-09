@@ -51,7 +51,7 @@ class NorthernTerritoryTest extends NorthernTerritoryBaseTestCase implements Pro
             'australiaDay',
             'anzacDay',
             'easterSaturday',
-            'queensBirthday',
+            'monarchsBirthday',
             'mayDay',
             'picnicDay',
         ];

@@ -50,7 +50,7 @@ class QueenslandTest extends QueenslandBaseTestCase implements ProviderTestCase
             'secondChristmasDay',
             'australiaDay',
             'anzacDay',
-            'queensBirthday',
+            'monarchsBirthday',
             'labourDay',
         ];
         if (2022 == $this->year) {

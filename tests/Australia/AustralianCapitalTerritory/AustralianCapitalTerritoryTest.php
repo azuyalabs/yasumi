@@ -52,7 +52,7 @@ class AustralianCapitalTerritoryTest extends AustralianCapitalTerritoryBaseTestC
             'anzacDay',
             'easter',
             'easterSaturday',
-            'queensBirthday',
+            'monarchsBirthday',
             'labourDay',
             'canberraDay',
             'reconciliationDay',

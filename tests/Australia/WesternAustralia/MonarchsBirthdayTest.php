@@ -18,14 +18,14 @@ use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
 /**
- * Class for testing Queen's Birthday in Western Australia (Australia)..
+ * Class for testing Monarch's Birthday in Western Australia (Australia)..
  */
-class QueensBirthdayTest extends WesternAustraliaBaseTestCase implements HolidayTestCase
+class MonarchsBirthdayTest extends WesternAustraliaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.
      */
-    public const HOLIDAY = 'queensBirthday';
+    public const HOLIDAY = 'monarchsBirthday';
 
     /**
      * The year in which the holiday was first established.
@@ -33,45 +33,42 @@ class QueensBirthdayTest extends WesternAustraliaBaseTestCase implements Holiday
     public const ESTABLISHMENT_YEAR = 1950;
 
     /**
-     * Tests Queen's Birthday.
-     *
-     * @dataProvider HolidayDataProvider
-     *
-     * @param int    $year     the year for which the holiday defined in this test needs to be tested
-     * @param string $expected the expected date
+     * Tests the holiday defined in this test before establishment.
      *
      * @throws \Exception
      */
-    public function testHoliday(int $year, string $expected): void
+    public function testHolidayBeforeActive(): void
     {
-        $this->assertHoliday(
+        $this->assertNotHoliday(
             $this->region,
             self::HOLIDAY,
-            $year,
-            new \DateTime($expected, new \DateTimeZone($this->timezone))
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
     /**
-     * Returns a list of test dates.
+     * Tests the holiday defined in this test on or after establishment.
      *
-     * @return array<array> list of test dates for the holiday defined in this test
+     * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public function testHolidayOnAfterEstablishment(): void
     {
-        return [
-            [2010, '2010-09-27'],
-            [2011, '2011-10-28'],
-            [2012, '2012-10-01'],
-            [2013, '2013-09-30'],
-            [2014, '2014-09-29'],
-            [2015, '2015-09-28'],
-            [2016, '2016-09-26'],
-            [2017, '2017-09-25'],
-            [2018, '2018-09-24'],
-            [2019, '2019-09-30'],
-            [2020, '2020-09-28'],
-        ];
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $birthDay = 'last monday of september '.$year;
+        if (2011 === $year) {
+            $birthDay = '2011-10-28';
+        }
+
+        if (2012 === $year) {
+            $birthDay = '2012-10-01';
+        }
+
+        $this->assertHoliday(
+            $this->region,
+            self::HOLIDAY,
+            $year,
+            new \DateTime($birthDay, new \DateTimeZone($this->timezone))
+        );
     }
 
     /**
@@ -81,11 +78,18 @@ class QueensBirthdayTest extends WesternAustraliaBaseTestCase implements Holiday
      */
     public function testTranslation(): void
     {
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        if (2021 >= $year) {
+            $name = "Queen's Birthday";
+        }
+        if (2022 <= $year) {
+            $name = "King's Birthday";
+        }
         $this->assertTranslatedHolidayName(
             $this->region,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Queen’s Birthday']
+            $year,
+            [self::LOCALE => $name]
         );
     }
 

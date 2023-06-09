@@ -52,7 +52,7 @@ class NewSouthWalesTest extends NewSouthWalesBaseTestCase implements ProviderTes
             'anzacDay',
             'easter',
             'easterSaturday',
-            'queensBirthday',
+            'monarchsBirthday',
             'labourDay',
         ];
 

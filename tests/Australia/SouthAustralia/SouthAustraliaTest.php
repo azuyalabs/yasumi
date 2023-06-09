@@ -51,7 +51,7 @@ class SouthAustraliaTest extends SouthAustraliaBaseTestCase implements ProviderT
             'australiaDay',
             'anzacDay',
             'easterSaturday',
-            'queensBirthday',
+            'monarchsBirthday',
             'labourDay',
             'adelaideCup',
         ];

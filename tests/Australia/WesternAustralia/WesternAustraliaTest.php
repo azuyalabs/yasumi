@@ -50,7 +50,7 @@ class WesternAustraliaTest extends WesternAustraliaBaseTestCase implements Provi
             'secondChristmasDay',
             'australiaDay',
             'anzacDay',
-            'queensBirthday',
+            'monarchsBirthday',
             'labourDay',
             'westernAustraliaDay',
         ];
