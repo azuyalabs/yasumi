@@ -808,27 +808,25 @@ class SouthKorea extends AbstractProvider
      *
      * @return array<string> list of holidays
      */
-    private function calculateCurrent(int $year): array
+    private function calculateCurrent(): array
     {
-        $officialHolidays = [];
-
-        $officialHolidays[] = 'newYearsDay';
-        $officialHolidays[] = 'dayBeforeSeollal';
-        $officialHolidays[] = 'seollal';
-        $officialHolidays[] = 'dayAfterSeollal';
-        $officialHolidays[] = 'independenceMovementDay';
-        $officialHolidays[] = 'buddhasBirthday';
-        $officialHolidays[] = 'childrensDay';
-        $officialHolidays[] = 'memorialDay';
-        $officialHolidays[] = 'liberationDay';
-        $officialHolidays[] = 'dayBeforeChuseok';
-        $officialHolidays[] = 'chuseok';
-        $officialHolidays[] = 'dayAfterChuseok';
-        $officialHolidays[] = 'nationalFoundationDay';
-        $officialHolidays[] = 'hangulDay';
-        $officialHolidays[] = 'christmasDay';
-
-        return $officialHolidays;
+        return [
+                'newYearsDay',
+                'dayBeforeSeollal',
+                'seollal',
+                'dayAfterSeollal',
+                'independenceMovementDay',
+                'buddhasBirthday',
+                'childrensDay',
+                'memorialDay',
+                'liberationDay',
+                'dayBeforeChuseok',
+                'chuseok',
+                'dayAfterChuseok',
+                'nationalFoundationDay',
+                'hangulDay',
+                'christmasDay',
+        ];
     }
 
     /**
