@@ -72,17 +72,17 @@ class Yasumi
         \DateTimeInterface $startDate,
         int $workingDays = 1
     ): \DateTimeInterface {
-        // convert to immutable date to prevent modification of the  original
         $date = $startDate instanceof \DateTime ? \DateTimeImmutable::createFromMutable($startDate) : $startDate;
-
         $provider = null;
 
         while ($workingDays > 0) {
             $date = $date->add(new \DateInterval('P1D'));
 
-            if (! $provider instanceof ProviderInterface) {
-                $provider = self::create($class, (int) $date->format('Y'));
-            } elseif ($provider->getYear() !== (int) $date->format('Y')) {
+            if (! $date instanceof \DateTimeImmutable) {
+                throw new \RuntimeException('Unable to perform date interval addition');
+            }
+
+            if (! $provider instanceof ProviderInterface || $provider->getYear() !== (int) $date->format('Y')) {
                 $provider = self::create($class, (int) $date->format('Y'));
             }
 
@@ -268,21 +268,17 @@ class Yasumi
         \DateTimeInterface $startDate,
         int $workingDays = 1
     ): \DateTimeInterface {
-        // convert to immutable date to prevent modification of the original
         $date = $startDate instanceof \DateTime ? \DateTimeImmutable::createFromMutable($startDate) : $startDate;
-
         $provider = null;
 
         while ($workingDays > 0) {
             $date = $date->sub(new \DateInterval('P1D'));
 
             if (! $date instanceof \DateTimeImmutable) {
-                throw new \RuntimeException('unable to perform date interval subtraction');
+                throw new \RuntimeException('Unable to perform date interval subtraction');
             }
 
-            if (! $provider instanceof ProviderInterface) {
-                $provider = self::create($class, (int) $date->format('Y'));
-            } elseif ($provider->getYear() !== (int) $date->format('Y')) {
+            if (! $provider instanceof ProviderInterface || $provider->getYear() !== (int) $date->format('Y')) {
                 $provider = self::create($class, (int) $date->format('Y'));
             }
 
