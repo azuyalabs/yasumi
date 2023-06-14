@@ -26,6 +26,8 @@ use Yasumi\ProviderInterface;
  */
 class OnFilter extends AbstractFilter
 {
+    private const DATE_FORMAT = 'Y-m-d';
+
     /** date to check for holidays */
     private string $date;
 
@@ -40,12 +42,12 @@ class OnFilter extends AbstractFilter
         \DateTimeInterface $date
     ) {
         parent::__construct($iterator);
-        $this->date = $date->format('Y-m-d');
+        $this->date = $date->format(self::DATE_FORMAT);
     }
 
     public function accept(): bool
     {
-        $holiday = $this->getInnerIterator()->current()->format('Y-m-d');
+        $holiday = $this->getInnerIterator()->current()->format(self::DATE_FORMAT);
 
         return $holiday === $this->date;
     }
