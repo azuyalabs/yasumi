@@ -71,10 +71,10 @@ class MonarchsBirthdayTest extends NewSouthWalesBaseTestCase implements HolidayT
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         if (2022 >= $year) {
-            $name = "Queen's Birthday";
+            $name = "Queen’s Birthday";
         }
         if (2023 <= $year) {
-            $name = "King's Birthday";
+            $name = "King’s Birthday";
         }
         $this->assertTranslatedHolidayName(
             $this->region,

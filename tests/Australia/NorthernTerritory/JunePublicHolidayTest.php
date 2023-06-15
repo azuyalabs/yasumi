@@ -71,10 +71,10 @@ class JunePublicHolidayTest extends NorthernTerritoryBaseTestCase implements Hol
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         if (2022 >= $year) {
-            $name = "June public holiday (Queen's Birthday)";
+            $name = "June public holiday (Queen’s Birthday)";
         }
         if (2023 <= $year) {
-            $name = "June public holiday (King's Birthday)";
+            $name = "June public holiday (King’s Birthday)";
         }
         $this->assertTranslatedHolidayName(
             $this->region,

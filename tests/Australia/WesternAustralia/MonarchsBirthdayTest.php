@@ -80,10 +80,10 @@ class MonarchsBirthdayTest extends WesternAustraliaBaseTestCase implements Holid
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         if (2021 >= $year) {
-            $name = "Queen's Birthday";
+            $name = "Queen’s Birthday";
         }
         if (2022 <= $year) {
-            $name = "King's Birthday";
+            $name = "King’s Birthday";
         }
         $this->assertTranslatedHolidayName(
             $this->region,
