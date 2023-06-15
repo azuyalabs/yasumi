@@ -84,10 +84,10 @@ class WesternAustralia extends Australia
             return;
         }
         if (2021 >= $this->year) {
-            $name = "Queen's Birthday";
+            $name = "Queen’s Birthday";
         }
         if (2022 <= $this->year) {
-            $name = "King's Birthday";
+            $name = "King’s Birthday";
         }
 
         $birthDay = 'last monday of september '.$this->year;

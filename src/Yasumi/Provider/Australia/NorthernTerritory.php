@@ -117,10 +117,10 @@ class NorthernTerritory extends Australia
             return;
         }
         if (2022 >= $this->year) {
-            $name = "June public holiday (Queen's Birthday)";
+            $name = "June public holiday (Queen’s Birthday)";
         }
         if (2023 <= $this->year) {
-            $name = "June public holiday (King's Birthday)";
+            $name = "June public holiday (King’s Birthday)";
         }
         $this->addHoliday(new Holiday(
             'junePublicHoliday',
