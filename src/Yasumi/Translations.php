@@ -17,9 +17,6 @@ namespace Yasumi;
 
 use Yasumi\Exception\UnknownLocaleException;
 
-/**
- * Class Translations.
- */
 class Translations implements TranslationsInterface
 {
     /**
@@ -100,10 +97,6 @@ class Translations implements TranslationsInterface
     {
         $this->checkLocale($locale);
 
-        if (! \array_key_exists($key, $this->translations)) {
-            $this->translations[$key] = [];
-        }
-
         $this->translations[$key][$locale] = $translation;
     }
 
@@ -117,15 +110,7 @@ class Translations implements TranslationsInterface
      */
     public function getTranslation(string $key, string $locale): ?string
     {
-        if (! \array_key_exists($key, $this->translations)) {
-            return null;
-        }
-
-        if (! \array_key_exists($locale, $this->translations[$key])) {
-            return null;
-        }
-
-        return $this->translations[$key][$locale];
+        return $this->translations[$key][$locale] ?? null;
     }
 
     /**
@@ -137,11 +122,7 @@ class Translations implements TranslationsInterface
      */
     public function getTranslations(string $key): array
     {
-        if (! \array_key_exists($key, $this->translations)) {
-            return [];
-        }
-
-        return $this->translations[$key];
+        return $this->translations[$key] ?? [];
     }
 
     private function checkLocale(string $locale): void
