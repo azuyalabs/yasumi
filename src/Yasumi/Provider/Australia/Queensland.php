@@ -83,10 +83,10 @@ class Queensland extends Australia
             return;
         }
         if (2022 >= $this->year) {
-            $name = "Queen’s Birthday";
+            $name = 'Queen’s Birthday';
         }
         if (2023 <= $this->year) {
-            $name = "King’s Birthday";
+            $name = 'King’s Birthday';
         }
         $this->addHoliday(new Holiday(
             'monarchsBirthday',
