@@ -219,7 +219,7 @@ class SouthKorea extends AbstractProvider
             $officialHolidays = $this->calculateBefore2013($this->year);
         } else {
             // Holidays in use from 2013
-            $officialHolidays = $this->calculateCurrent($this->year);
+            $officialHolidays = $this->calculateCurrent();
         }
 
         foreach ($officialHolidays as $holiday) {
@@ -717,15 +717,10 @@ class SouthKorea extends AbstractProvider
      */
     protected function getTranslations(string $key, int $year): array
     {
-        switch ($key) {
-            case 'arborDay':
-                $names = (1960 === $year)
-                    ? ['en' => 'Arbor Day', 'ko' => '사방의 날']
-                    : self::HOLIDAY_NAMES[$key];
-                break;
-            default:
-                $names = isset(self::HOLIDAY_NAMES[$key]) ? self::HOLIDAY_NAMES[$key] : [];
-                break;
+        $names = self::HOLIDAY_NAMES[$key] ?? [];
+
+        if ('arborDay' === $key && 1960 === $year) {
+            $names = ['en' => 'Arbor Day', 'ko' => '사방의 날'];
         }
 
         return $names;
