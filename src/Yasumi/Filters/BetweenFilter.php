@@ -63,8 +63,8 @@ class BetweenFilter extends AbstractFilter
     {
         $holiday = $this->getInnerIterator()->current()->format(self::DATE_FORMAT);
 
-        if ($this->equal && $holiday >= $this->startDate && $holiday <= $this->endDate) {
-            return true;
+        if ($this->equal) {
+            return $holiday >= $this->startDate && $holiday <= $this->endDate;
         }
 
         return $holiday > $this->startDate && $holiday < $this->endDate;

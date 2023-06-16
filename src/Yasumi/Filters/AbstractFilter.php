@@ -17,9 +17,6 @@ namespace Yasumi\Filters;
 
 use Yasumi\SubstituteHoliday;
 
-/**
- * AbstractFilter.
- */
 abstract class AbstractFilter extends \FilterIterator implements \Countable
 {
     /**

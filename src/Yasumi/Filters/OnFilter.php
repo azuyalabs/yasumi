@@ -47,8 +47,6 @@ class OnFilter extends AbstractFilter
 
     public function accept(): bool
     {
-        $holiday = $this->getInnerIterator()->current()->format(self::DATE_FORMAT);
-
-        return $holiday === $this->date;
+        return $this->getInnerIterator()->current()->format(self::DATE_FORMAT) === $this->date;
     }
 }
