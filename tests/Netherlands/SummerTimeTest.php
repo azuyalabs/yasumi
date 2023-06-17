@@ -99,16 +99,16 @@ final class SummerTimeTest extends DaylightSavingTime
         $year = $this->randomYearFromArray($this->observedYears);
         $expected = "first sunday of april $year";
 
-        if ($year >= 1922) {
-            $expected = "may 15th $year";
+        if ($year >= 1981) {
+            $expected = "last sunday of march $year";
         }
 
-        if ($year >= 1943) {
+        if ($year >= 1943 && $year < 1981) {
             $expected = "first sunday of april $year";
         }
 
-        if ($year >= 1981) {
-            $expected = "last sunday of march $year";
+        if ($year >= 1922 && $year < 1943) {
+            $expected = "may 15th $year";
         }
 
         if (array_key_exists($year, $this->deviantTransitions)) {

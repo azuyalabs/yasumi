@@ -27,12 +27,12 @@ abstract class DaylightSavingTime extends NetherlandsBaseTestCase implements Hol
 
     public function __construct()
     {
-        $observedYears = range(1916, 1940);
-        $observedYears = array_merge($observedYears, range(1942, 1945));
-        $observedYears = array_merge($observedYears, range(1977, 2037)); // PHP caps future DST transitions
+        $startYear = 1916;
+        $endYear = 2037; // PHP caps future DST transitions
+        $observedYears = array_merge(range($startYear, 1940), range(1942, 1945), range(1977, $endYear));
 
         $this->observedYears = $observedYears;
-        $this->unobservedYears = array_diff(range(reset($observedYears), end($observedYears)), $observedYears);
+        $this->unobservedYears = array_diff(range($startYear, $endYear), $observedYears);
 
         parent::__construct();
     }

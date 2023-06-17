@@ -90,12 +90,14 @@ class LiberationDayTest extends NetherlandsBaseTestCase implements HolidayTestCa
             $this->generateRandomYear(2001, 2004),
             Holiday::TYPE_OBSERVANCE
         );
+
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
             2000,
             Holiday::TYPE_OFFICIAL
         );
+
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
