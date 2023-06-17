@@ -105,35 +105,32 @@ class Netherlands extends AbstractProvider
     private function calculateCarnival(): void
     {
         $easter = $this->calculateEaster($this->year, $this->timezone);
-        $carnivalDay1 = clone $easter;
         $this->addHoliday(new Holiday(
             'carnivalDay',
             ['en' => 'Carnival', 'nl' => 'Carnaval'],
-            $carnivalDay1->sub(new \DateInterval('P49D')),
+            (clone $easter)->sub(new \DateInterval('P49D')),
             $this->locale,
             Holiday::TYPE_OBSERVANCE
         ));
 
-        /**
+        /*
          * Second Day of Carnival.
          */
-        $carnivalDay2 = clone $easter;
         $this->addHoliday(new Holiday(
             'secondCarnivalDay',
             ['en' => 'Carnival', 'nl' => 'Carnaval'],
-            $carnivalDay2->sub(new \DateInterval('P48D')),
+            (clone $easter)->sub(new \DateInterval('P48D')),
             $this->locale,
             Holiday::TYPE_OBSERVANCE
         ));
 
-        /**
+        /*
          * Third Day of Carnival.
          */
-        $carnivalDay3 = clone $easter;
         $this->addHoliday(new Holiday(
             'thirdCarnivalDay',
             ['en' => 'Carnival', 'nl' => 'Carnaval'],
-            $carnivalDay3->sub(new \DateInterval('P47D')),
+            (clone $easter)->sub(new \DateInterval('P47D')),
             $this->locale,
             Holiday::TYPE_OBSERVANCE
         ));
