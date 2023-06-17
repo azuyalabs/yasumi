@@ -105,35 +105,28 @@ class Netherlands extends AbstractProvider
     private function calculateCarnival(): void
     {
         $easter = $this->calculateEaster($this->year, $this->timezone);
-        $this->addHoliday(new Holiday(
-            'carnivalDay',
-            ['en' => 'Carnival', 'nl' => 'Carnaval'],
-            (clone $easter)->sub(new \DateInterval('P49D')),
-            $this->locale,
-            Holiday::TYPE_OBSERVANCE
-        ));
 
-        /*
-         * Second Day of Carnival.
-         */
-        $this->addHoliday(new Holiday(
-            'secondCarnivalDay',
-            ['en' => 'Carnival', 'nl' => 'Carnaval'],
-            (clone $easter)->sub(new \DateInterval('P48D')),
-            $this->locale,
-            Holiday::TYPE_OBSERVANCE
-        ));
+        $intervals = [
+            'carnivalDay' => 'P49D',
+            'secondCarnivalDay' => 'P48D',
+            'thirdCarnivalDay' => 'P47D',
+        ];
 
-        /*
-         * Third Day of Carnival.
-         */
-        $this->addHoliday(new Holiday(
-            'thirdCarnivalDay',
-            ['en' => 'Carnival', 'nl' => 'Carnaval'],
-            (clone $easter)->sub(new \DateInterval('P47D')),
-            $this->locale,
-            Holiday::TYPE_OBSERVANCE
-        ));
+        foreach ($intervals as $name => $interval) {
+            $date = (clone $easter)->sub(new \DateInterval($interval));
+
+            if (! $date instanceof \DateTime) {
+                throw new \RuntimeException(sprintf('unable to perform a date subtraction for %s:%s', self::class, $name));
+            }
+
+            $this->addHoliday(new Holiday(
+                $name,
+                ['en' => 'Carnival', 'nl' => 'Carnaval'],
+                $date,
+                $this->locale,
+                Holiday::TYPE_OBSERVANCE
+            ));
+        }
     }
 
     /**
