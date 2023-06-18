@@ -30,7 +30,6 @@ class SubstituteHoliday extends Holiday
 {
     /**
      * @deprecated public access to this property is deprecated in favor of getSubstitutedHoliday()
-     *
      * @see getSubstitutedHoliday()
      */
     public Holiday $substitutedHoliday;

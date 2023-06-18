@@ -60,7 +60,6 @@ class Holiday extends \DateTime implements \JsonSerializable
 
     /**
      * @deprecated Public access to this property is deprecated in favor of getKey()
-     *
      * @see getKey()
      */
     public string $shortName;
