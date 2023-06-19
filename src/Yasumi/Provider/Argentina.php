@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 /*
  * This file is part of the Yasumi package.
  *
@@ -70,8 +71,7 @@ class Argentina extends AbstractProvider
     /**
      * The source of the holidays.
      *
-     * @return string[]
-     *                  The source URL
+     * @return string[] The source URL
      */
     public function getSources(): array
     {
@@ -93,31 +93,37 @@ class Argentina extends AbstractProvider
         if ($this->year >= 1700) {
             $easter = $this->calculateEaster($this->year, $this->timezone);
 
-            $carnavalMonday = clone $easter;
-            $carnavalMondayDate = $carnavalMonday->sub(new \DateInterval('P48D'));
-            $this->addHoliday(new Holiday(
-                'carnavalMonday',
-                [
-                  'en' => 'Carnival Monday',
-                  'es' => 'Lunes de Carnaval',
+            $days = [
+                'carnavalMonday' => [
+                    'interval' => 'P48D',
+                    'name' => 'Lunes de Carnaval',
+                    'name_en' => 'Carnival Monday',
                 ],
-                $carnavalMondayDate,
-                $this->locale,
-                Holiday::TYPE_OBSERVANCE
-            ));
+                'carnavalTuesday' => [
+                    'interval' => 'P47D',
+                    'name' => 'Martes de Carnaval',
+                    'name_en' => 'Carnival Tuesday',
+                ],
+            ];
 
-            $carnavalTuesday = clone $easter;
-            $carnavalTuesdayDate = $carnavalTuesday->sub(new \DateInterval('P47D'));
-            $this->addHoliday(new Holiday(
-                'carnavalTuesday',
-                [
-                  'en' => 'Carnival Tuesday',
-                  'es' => 'Martes de Carnaval',
-                ],
-                $carnavalTuesdayDate,
-                $this->locale,
-                Holiday::TYPE_OBSERVANCE
-            ));
+            foreach ($days as $name => $day) {
+                $date = (clone $easter)->sub(new \DateInterval($day['interval']));
+
+                if (! $date instanceof \DateTime) {
+                    throw new \RuntimeException(sprintf('unable to perform a date subtraction for %s:%s', self::class, $name));
+                }
+
+                $this->addHoliday(new Holiday(
+                    $name,
+                    [
+                        'es' => $day['name'],
+                        'en' => $day['name_en'],
+                    ],
+                    $date,
+                    $this->locale,
+                    Holiday::TYPE_OBSERVANCE
+                ));
+            }
         }
     }
 
