@@ -185,23 +185,32 @@ class Brazil extends AbstractProvider
         if ($this->year >= 1700) {
             $easter = $this->calculateEaster($this->year, $this->timezone);
 
-            $carnavalMonday = clone $easter;
-            $this->addHoliday(new Holiday(
-                'carnavalMonday',
-                ['pt' => 'Segunda-feira de Carnaval'],
-                $carnavalMonday->sub(new \DateInterval('P48D')),
-                $this->locale,
-                Holiday::TYPE_OBSERVANCE
-            ));
+            $days = [
+                'carnavalMonday' => [
+                    'interval' => 'P48D',
+                    'name' => 'Segunda-feira de Carnaval',
+                ],
+                'carnavalTuesday' => [
+                    'interval' => 'P47D',
+                    'name' => 'Terça-feira de Carnaval',
+                ],
+            ];
 
-            $carnavalTuesday = clone $easter;
-            $this->addHoliday(new Holiday(
-                'carnavalTuesday',
-                ['pt' => 'Terça-feira de Carnaval'],
-                $carnavalTuesday->sub(new \DateInterval('P47D')),
-                $this->locale,
-                Holiday::TYPE_OBSERVANCE
-            ));
+            foreach ($days as $name => $day) {
+                $date = (clone $easter)->sub(new \DateInterval($day['interval']));
+
+                if (! $date instanceof \DateTime) {
+                    throw new \RuntimeException(sprintf('unable to perform a date subtraction for %s:%s', self::class, $name));
+                }
+
+                $this->addHoliday(new Holiday(
+                    $name,
+                    ['pt' => $day['name']],
+                    $date,
+                    $this->locale,
+                    Holiday::TYPE_OBSERVANCE
+                ));
+            }
         }
     }
 }
