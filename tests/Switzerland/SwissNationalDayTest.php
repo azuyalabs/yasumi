@@ -54,7 +54,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements HolidayTes
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-8-01", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-8-01", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -70,7 +70,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements HolidayTes
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-8-01", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-8-01", new \DateTimeZone(self::TIMEZONE))
         );
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OBSERVANCE);
     }
@@ -87,7 +87,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements HolidayTes
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-8-01", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-8-01", new \DateTimeZone(self::TIMEZONE))
         );
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OBSERVANCE);
     }

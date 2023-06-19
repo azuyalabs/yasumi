@@ -58,7 +58,7 @@ class RestorationOfTheStateOfLithuaniaDayTest extends LithuaniaBaseTestCase impl
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-02-16", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-02-16", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

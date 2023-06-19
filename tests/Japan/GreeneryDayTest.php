@@ -45,7 +45,7 @@ class GreeneryDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-5-4", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-5-4", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -61,7 +61,7 @@ class GreeneryDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::SUBSTITUTE_PREFIX.self::HOLIDAY,
             $year,
-            new \DateTime("$year-5-6", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-5-6", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -78,7 +78,7 @@ class GreeneryDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-4-29", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-4-29", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -94,7 +94,7 @@ class GreeneryDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::SUBSTITUTE_PREFIX.self::HOLIDAY,
             $year,
-            new \DateTime("$year-4-30", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-4-30", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

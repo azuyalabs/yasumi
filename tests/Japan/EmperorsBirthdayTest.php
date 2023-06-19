@@ -47,7 +47,7 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-4-29", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-4-29", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -65,7 +65,7 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-12-23", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-12-23", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -82,7 +82,7 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-2-23", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-2-23", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -99,7 +99,7 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::SUBSTITUTE_PREFIX.self::HOLIDAY,
             $year,
-            new \DateTime("$year-12-24", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-12-24", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

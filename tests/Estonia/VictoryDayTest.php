@@ -58,7 +58,7 @@ class VictoryDayTest extends EstoniaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-06-23", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-06-23", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

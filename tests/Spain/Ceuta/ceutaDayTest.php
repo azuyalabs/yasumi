@@ -44,7 +44,7 @@ class ceutaDayTest extends CeutaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-9-2", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-9-2", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

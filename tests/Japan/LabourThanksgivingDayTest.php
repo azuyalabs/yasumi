@@ -45,7 +45,7 @@ class LabourThanksgivingDayTest extends JapanBaseTestCase implements HolidayTest
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-11-23", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-11-23", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -62,7 +62,7 @@ class LabourThanksgivingDayTest extends JapanBaseTestCase implements HolidayTest
             self::REGION,
             self::SUBSTITUTE_PREFIX.self::HOLIDAY,
             $year,
-            new \DateTime("$year-11-24", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-11-24", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

@@ -49,7 +49,7 @@ class BasqueCountryDayTest extends BasqueCountryBaseTestCase implements HolidayT
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-10-25", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-10-25", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

@@ -71,7 +71,7 @@ class Yukon extends Canada
         $this->addHoliday(new Holiday(
             'discoveryDay',
             [],
-            new \DateTime("third monday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("third monday of august {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -94,7 +94,7 @@ class Yukon extends Canada
         $this->addHoliday(new Holiday(
             'yukonHeritageDay',
             [],
-            new \DateTime("first monday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("first monday of august {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }

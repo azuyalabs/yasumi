@@ -41,8 +41,8 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements HolidayTestC
             self::REGION,
             $holiday,
             $year,
-            new \DateTime("$year-05-09", new \DateTimeZone(self::TIMEZONE)),
-            new \DateTime("$year-05-11", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-05-09", new \DateTimeZone(self::TIMEZONE)),
+            new \DateTime("{$year}-05-11", new \DateTimeZone(self::TIMEZONE))
         );
 
         unset($year, $holiday);
@@ -105,8 +105,8 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements HolidayTestC
             self::REGION,
             $holiday,
             $year,
-            new \DateTime("$year-06-28", new \DateTimeZone(self::TIMEZONE)),
-            new \DateTime("$year-06-29", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-06-28", new \DateTimeZone(self::TIMEZONE)),
+            new \DateTime("{$year}-06-29", new \DateTimeZone(self::TIMEZONE))
         );
 
         unset($year, $holiday);
@@ -129,7 +129,7 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements HolidayTestC
             self::REGION,
             $holiday,
             $year,
-            new \DateTime("$year-01-01", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-01-01", new \DateTimeZone(self::TIMEZONE))
         );
 
         unset($year, $holiday);
@@ -152,7 +152,7 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements HolidayTestC
             self::REGION,
             $holiday,
             $year,
-            new \DateTime("$year-12-25", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-12-25", new \DateTimeZone(self::TIMEZONE))
         );
 
         unset($year, $holiday);

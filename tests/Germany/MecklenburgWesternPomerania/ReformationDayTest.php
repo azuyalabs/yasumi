@@ -45,7 +45,7 @@ class ReformationDayTest extends MecklenburgWesternPomeraniaBaseTestCase impleme
 
         for ($y = 0; $y < self::TEST_ITERATIONS; ++$y) {
             $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-            $data[] = [$year, new \DateTime("$year-10-31", new \DateTimeZone(self::TIMEZONE))];
+            $data[] = [$year, new \DateTime("{$year}-10-31", new \DateTimeZone(self::TIMEZONE))];
         }
 
         return $data;

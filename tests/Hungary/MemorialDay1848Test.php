@@ -44,7 +44,7 @@ class MemorialDay1848Test extends HungaryBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-3-15", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-3-15", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

@@ -49,7 +49,7 @@ class SummerBankHolidayTest extends EnglandBaseTestCase implements HolidayTestCa
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("last monday of august $year", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("last monday of august {$year}", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -65,7 +65,7 @@ class SummerBankHolidayTest extends EnglandBaseTestCase implements HolidayTestCa
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("first monday of august $year", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("first monday of august {$year}", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

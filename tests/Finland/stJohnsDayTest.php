@@ -48,7 +48,7 @@ class stJohnsDayTest extends FinlandBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-6-24", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-6-24", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

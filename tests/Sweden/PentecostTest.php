@@ -39,7 +39,7 @@ class PentecostTest extends SwedenBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-05-17", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-05-17", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

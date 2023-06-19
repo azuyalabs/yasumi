@@ -45,7 +45,7 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-5-5", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-5-5", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -63,14 +63,14 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
                 self::REGION,
                 'buddhasBirthday',
                 $year,
-                new \DateTime("$year-5-5", $tz)
+                new \DateTime("{$year}-5-5", $tz)
             );
 
             $this->assertSubstituteHoliday(
                 self::REGION,
                 'buddhasBirthday',
                 $year,
-                new \DateTime("$year-5-6", $tz)
+                new \DateTime("{$year}-5-6", $tz)
             );
         }
     }

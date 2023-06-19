@@ -62,7 +62,7 @@ class ChristmasDayTest extends EnglandBaseTestCase implements HolidayTestCase
 
         for ($y = 0; $y < self::TEST_ITERATIONS; ++$y) {
             $year = $this->generateRandomYear();
-            $date = new \DateTime("$year-12-25", new \DateTimeZone(self::TIMEZONE));
+            $date = new \DateTime("{$year}-12-25", new \DateTimeZone(self::TIMEZONE));
 
             $data[] = [$year, $date->format('Y-m-d')];
         }

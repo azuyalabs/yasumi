@@ -67,7 +67,7 @@ class VernalEquinoxDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-$month-$day", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-{$month}-{$day}", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

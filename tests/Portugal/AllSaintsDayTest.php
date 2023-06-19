@@ -45,11 +45,11 @@ class AllSaintsDayTest extends PortugalBaseTestCase implements HolidayTestCase
     public function testHoliday(): void
     {
         $year = 2016;
-        $expected = new \DateTime("$year-11-01", new \DateTimeZone(self::TIMEZONE));
+        $expected = new \DateTime("{$year}-11-01", new \DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
 
         $year = 2012;
-        $expected = new \DateTime("$year-11-01", new \DateTimeZone(self::TIMEZONE));
+        $expected = new \DateTime("{$year}-11-01", new \DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 

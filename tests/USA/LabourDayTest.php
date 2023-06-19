@@ -44,7 +44,7 @@ class LabourDayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("first monday of september $year", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("first monday of september {$year}", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

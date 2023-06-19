@@ -37,7 +37,7 @@ class DefenderOfUkraineDayTest extends UkraineBaseTestCase implements HolidayTes
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-10-14", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-10-14", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

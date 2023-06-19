@@ -91,7 +91,7 @@ class Finland extends AbstractProvider
      */
     private function calculateStJohnsDay(): void
     {
-        $stJohnsDay = $this->year < 1955 ? "$this->year-6-24" : "$this->year-6-20 this saturday";
+        $stJohnsDay = $this->year < 1955 ? "{$this->year}-6-24" : "{$this->year}-6-20 this saturday";
 
         $this->addHoliday(new Holiday(
             'stJohnsDay',
@@ -127,7 +127,7 @@ class Finland extends AbstractProvider
         $this->addHoliday(new Holiday(
             'allSaintsDay',
             [],
-            new \DateTime("$this->year-10-31 this saturday", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("{$this->year}-10-31 this saturday", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -155,7 +155,7 @@ class Finland extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'independenceDay',
                 ['fi' => 'Itsenäisyyspäivä'],
-                new \DateTime("$this->year-12-6", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-12-6", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

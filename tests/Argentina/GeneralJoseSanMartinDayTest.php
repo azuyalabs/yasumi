@@ -44,7 +44,7 @@ class GeneralJoseSanMartinDayTest extends ArgentinaBaseTestCase implements Holid
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-08-17", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-08-17", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

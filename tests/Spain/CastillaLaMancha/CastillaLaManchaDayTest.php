@@ -44,7 +44,7 @@ class CastillaLaManchaDayTest extends CastillaLaManchaBaseTestCase implements Ho
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-5-31", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-5-31", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

@@ -86,9 +86,9 @@ class Queensland extends Australia
      */
     private function calculateLabourDay(): void
     {
-        $date = new \DateTime("first monday of may $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime("first monday of may {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         if (2013 === $this->year || 2014 === $this->year || 2015 === $this->year) {
-            $date = new \DateTime("first monday of october $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+            $date = new \DateTime("first monday of october {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         }
 
         $this->addHoliday(new Holiday('labourDay', [], $date, $this->locale));

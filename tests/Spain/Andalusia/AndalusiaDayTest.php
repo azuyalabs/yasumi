@@ -44,7 +44,7 @@ class AndalusiaDayTest extends AndalusiaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-2-28", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-2-28", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

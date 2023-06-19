@@ -45,7 +45,7 @@ class MartinLutherKingDayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("third monday of january $year", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("third monday of january {$year}", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

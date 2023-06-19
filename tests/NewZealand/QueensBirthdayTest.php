@@ -66,7 +66,7 @@ class QueensBirthdayTest extends NewZealandBaseTestCase implements HolidayTestCa
 
         for ($y = 1; $y <= 100; ++$y) {
             $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-            $expected = new \DateTime("first monday of june $year", new \DateTimeZone(self::TIMEZONE));
+            $expected = new \DateTime("first monday of june {$year}", new \DateTimeZone(self::TIMEZONE));
             $data[] = [$year, $expected];
         }
 

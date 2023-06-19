@@ -39,7 +39,7 @@ class princesDayTest extends NetherlandsBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("third tuesday of september $year", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("third tuesday of september {$year}", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

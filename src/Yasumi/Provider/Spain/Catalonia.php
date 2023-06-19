@@ -85,7 +85,7 @@ class Catalonia extends Spain
                     'ca' => 'Diada Nacional de Catalunya',
                     'es' => 'Diada Nacional de Cataluña',
                 ],
-                new \DateTime("$this->year-9-11", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-9-11", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

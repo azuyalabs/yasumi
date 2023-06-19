@@ -44,7 +44,7 @@ class RegionOfMurciaDayTest extends RegionOfMurciaBaseTestCase implements Holida
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-6-9", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-6-9", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

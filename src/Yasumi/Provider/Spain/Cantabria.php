@@ -82,7 +82,7 @@ class Cantabria extends Spain
             $this->addHoliday(new Holiday(
                 'cantabriaDay',
                 ['es' => 'Día de Cantabria'],
-                new \DateTime("second sunday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("second sunday of august {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

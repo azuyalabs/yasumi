@@ -39,7 +39,7 @@ class InternationalWorkersDayTest extends BrazilBaseTestCase implements HolidayT
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-5-1", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-5-1", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

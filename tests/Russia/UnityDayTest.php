@@ -58,7 +58,7 @@ class UnityDayTest extends RussiaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-11-04", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-11-04", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

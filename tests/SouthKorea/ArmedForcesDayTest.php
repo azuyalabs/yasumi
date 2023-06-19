@@ -50,7 +50,7 @@ class ArmedForcesDayTest extends SouthKoreaBaseTestCase implements HolidayTestCa
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-10-1", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-10-1", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

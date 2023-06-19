@@ -132,7 +132,7 @@ class Ukraine extends AbstractProvider
         $this->addHoliday(new Holiday(
             'christmasDay',
             [],
-            new \DateTime("$this->year-01-07", new \DateTimeZone($this->timezone)),
+            new \DateTime("{$this->year}-01-07", new \DateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -156,7 +156,7 @@ class Ukraine extends AbstractProvider
         $this->addHoliday(new Holiday('secondInternationalWorkersDay', [
             'uk' => 'День міжнародної солідарності трудящих',
             'ru' => 'День международной солидарности трудящихся',
-        ], new \DateTime("$this->year-05-02", new \DateTimeZone($this->timezone)), $this->locale));
+        ], new \DateTime("{$this->year}-05-02", new \DateTimeZone($this->timezone)), $this->locale));
     }
 
     /**
@@ -179,7 +179,7 @@ class Ukraine extends AbstractProvider
         $this->addHoliday(new Holiday(
             'victoryDay',
             ['uk' => 'День перемоги', 'ru' => 'День победы'],
-            new \DateTime("$this->year-05-09", new \DateTimeZone($this->timezone)),
+            new \DateTime("{$this->year}-05-09", new \DateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -204,7 +204,7 @@ class Ukraine extends AbstractProvider
         $this->addHoliday(new Holiday(
             'constitutionDay',
             ['uk' => 'День Конституції', 'ru' => 'День Конституции'],
-            new \DateTime("$this->year-06-28", new \DateTimeZone($this->timezone)),
+            new \DateTime("{$this->year}-06-28", new \DateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -231,7 +231,7 @@ class Ukraine extends AbstractProvider
         $this->addHoliday(new Holiday(
             'independenceDay',
             ['uk' => 'День Незалежності', 'ru' => 'День Независимости'],
-            new \DateTime("$this->year-08-24", new \DateTimeZone($this->timezone)),
+            new \DateTime("{$this->year}-08-24", new \DateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -259,7 +259,7 @@ class Ukraine extends AbstractProvider
         $this->addHoliday(new Holiday(
             'defenderOfUkraineDay',
             ['uk' => 'День захисника України', 'ru' => 'День Защитника Украины'],
-            new \DateTime("$this->year-10-14", new \DateTimeZone($this->timezone)),
+            new \DateTime("{$this->year}-10-14", new \DateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -287,7 +287,7 @@ class Ukraine extends AbstractProvider
                     'uk' => 'Католицький день Різдва',
                     'ru' => 'Католическое рождество',
                 ],
-                new \DateTime("$this->year-12-25", new \DateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-12-25", new \DateTimeZone($this->timezone)),
                 $this->locale
             ),
             false  // Catholic Christmas Day will not be substituted to an monday if it's on a weekend!

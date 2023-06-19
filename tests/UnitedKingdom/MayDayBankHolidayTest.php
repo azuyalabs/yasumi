@@ -44,7 +44,7 @@ class MayDayBankHolidayTest extends UnitedKingdomBaseTestCase implements Holiday
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-5-2", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-5-2", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

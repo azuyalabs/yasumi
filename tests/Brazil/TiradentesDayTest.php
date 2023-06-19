@@ -44,7 +44,7 @@ class TiradentesDayTest extends BrazilBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-04-21", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-04-21", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

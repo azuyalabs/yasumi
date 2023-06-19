@@ -44,7 +44,7 @@ class UnitedPrincipalitiesDayTest extends RomaniaBaseTestCase implements Holiday
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-1-24", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-1-24", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

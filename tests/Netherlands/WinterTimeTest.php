@@ -85,13 +85,13 @@ final class WinterTimeTest extends DaylightSavingTime
 
         if (true == $isObserved) {
             if ($year >= 1996) {
-                $expected = "last sunday of october $year";
+                $expected = "last sunday of october {$year}";
             } elseif ($year >= 1977) {
-                $expected = "last sunday of september $year";
+                $expected = "last sunday of september {$year}";
             } elseif ($year >= 1922) {
-                $expected = "first sunday of october $year";
+                $expected = "first sunday of october {$year}";
             } else {
-                $expected = "last monday of september $year";
+                $expected = "last monday of september {$year}";
             }
         } else {
             $expected = $this->deviantTransitions[$year];

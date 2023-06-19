@@ -56,7 +56,7 @@ class WorkersDayTest extends ZurichBaseTestCase implements HolidayTestCase
 
         for ($y = 0; $y < 50; ++$y) {
             $year = $this->generateRandomYear();
-            $date = new \DateTime("$year-5-1", new \DateTimeZone(self::TIMEZONE));
+            $date = new \DateTime("{$year}-5-1", new \DateTimeZone(self::TIMEZONE));
             $data[] = [$year, $date->format('Y-m-d')];
         }
 

@@ -45,8 +45,8 @@ trait Randomizer
         $data = [];
         $range ??= 1000;
         for ($y = 1; $y <= ($iterations ?? 10); ++$y) {
-            $year = (int) self::dateTimeBetween("-$range years", "+$range years")->format('Y');
-            $data[] = [$year, new \DateTime("$year-$month-$day", new \DateTimeZone($timezone ?? 'UTC'))];
+            $year = (int) self::dateTimeBetween("-{$range} years", "+{$range} years")->format('Y');
+            $data[] = [$year, new \DateTime("{$year}-{$month}-{$day}", new \DateTimeZone($timezone ?? 'UTC'))];
         }
 
         return $data;
@@ -72,7 +72,7 @@ trait Randomizer
         $range ??= 1000;
 
         for ($i = 1; $i <= ($iterations ?? 10); ++$i) {
-            $year = (int) self::dateTimeBetween("-$range years", "+$range years")->format('Y');
+            $year = (int) self::dateTimeBetween("-{$range} years", "+{$range} years")->format('Y');
             $date = $this->calculateEaster($year, $timezone ?? 'UTC');
 
             $data[] = [$year, $date->format('Y-m-d')];
@@ -125,7 +125,7 @@ trait Randomizer
         $data = [];
         $range ??= 1000;
         for ($i = 1; $i <= ($iterations ?? 10); ++$i) {
-            $year = (int) self::dateTimeBetween("-$range years", "+$range years")->format('Y');
+            $year = (int) self::dateTimeBetween("-{$range} years", "+{$range} years")->format('Y');
             $date = $this->calculateEaster($year, $timezone ?? 'UTC');
 
             $cb($date);
@@ -236,7 +236,7 @@ trait Randomizer
 
         for ($i = 1; $i <= $iterations; ++$i) {
             $year = $this->generateRandomYear($range);
-            $date = new \DateTime("$year-$month-$day", new \DateTimeZone($timezone ?? 'UTC'));
+            $date = new \DateTime("{$year}-{$month}-{$day}", new \DateTimeZone($timezone ?? 'UTC'));
 
             $callback($year, $date);
 
@@ -416,7 +416,7 @@ trait Randomizer
             $easter_days = ($pfm + $tmp + 1); // Easter as the number of days after 21st March
         }
 
-        $easter = new \DateTime("$year-3-21", new \DateTimeZone($timezone));
+        $easter = new \DateTime("{$year}-3-21", new \DateTimeZone($timezone));
         $easter->add(new \DateInterval('P'.$easter_days.'D'));
 
         return $easter;

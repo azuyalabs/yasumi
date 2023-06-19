@@ -44,7 +44,7 @@ class NationalSovereigntyDayTest extends ArgentinaBaseTestCase implements Holida
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-11-20", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-11-20", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

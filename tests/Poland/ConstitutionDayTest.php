@@ -44,7 +44,7 @@ class ConstitutionDayTest extends PolandBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-5-3", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-5-3", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

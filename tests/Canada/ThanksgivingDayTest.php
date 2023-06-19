@@ -45,7 +45,7 @@ class ThanksgivingDayTest extends CanadaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("second monday of october $year", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("second monday of october {$year}", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

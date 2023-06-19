@@ -44,7 +44,7 @@ class SummerBankHolidayTest extends ScotlandBaseTestCase implements HolidayTestC
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("first monday of august $year", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("first monday of august {$year}", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

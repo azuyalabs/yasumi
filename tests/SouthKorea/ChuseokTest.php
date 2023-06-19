@@ -86,7 +86,7 @@ class ChuseokTest extends SouthKoreaBaseTestCase implements HolidayTestCase
                 self::REGION,
                 'nationalFoundationDay',
                 $year,
-                new \DateTime("$year-10-3", $tz)
+                new \DateTime("{$year}-10-3", $tz)
             );
         }
 

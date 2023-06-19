@@ -44,7 +44,7 @@ class IndependenceDayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-7-4", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-7-4", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -60,7 +60,7 @@ class IndependenceDayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             'substituteHoliday:independenceDay',
             $year,
-            new \DateTime("$year-7-5", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-7-5", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -76,7 +76,7 @@ class IndependenceDayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             'substituteHoliday:independenceDay',
             $year,
-            new \DateTime("$year-7-3", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-7-3", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

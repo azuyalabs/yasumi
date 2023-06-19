@@ -45,7 +45,7 @@ class MemorialDayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("last monday of may $year", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("last monday of may {$year}", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -62,7 +62,7 @@ class MemorialDayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-5-30", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-5-30", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

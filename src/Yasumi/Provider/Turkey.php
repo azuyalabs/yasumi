@@ -62,7 +62,7 @@ class Turkey extends AbstractProvider
     {
         $this->addHoliday(new Holiday('labourDay', [
             'tr' => 'Emek ve Dayanışma Günü',
-        ], new \DateTime("$this->year-05-01", new \DateTimeZone($this->timezone)), $this->locale));
+        ], new \DateTime("{$this->year}-05-01", new \DateTimeZone($this->timezone)), $this->locale));
     }
 
     /**
@@ -84,7 +84,7 @@ class Turkey extends AbstractProvider
 
         $this->addHoliday(new Holiday('commemorationAtaturk', [
             'tr' => 'Atatürk’ü Anma, Gençlik ve Spor Bayramı',
-        ], new \DateTime("$this->year-05-19", new \DateTimeZone($this->timezone)), $this->locale));
+        ], new \DateTime("{$this->year}-05-19", new \DateTimeZone($this->timezone)), $this->locale));
     }
 
     /**
@@ -111,7 +111,7 @@ class Turkey extends AbstractProvider
 
         $this->addHoliday(new Holiday('nationalSovereigntyDay', [
             'tr' => $holidayName,
-        ], new \DateTime("$this->year-04-23", new \DateTimeZone($this->timezone)), $this->locale));
+        ], new \DateTime("{$this->year}-04-23", new \DateTimeZone($this->timezone)), $this->locale));
     }
 
     /**
@@ -130,7 +130,7 @@ class Turkey extends AbstractProvider
 
         $this->addHoliday(new Holiday('democracyDay', [
             'tr' => 'Demokrasi ve Millî Birlik Günü',
-        ], new \DateTime("$this->year-07-15", new \DateTimeZone($this->timezone)), $this->locale));
+        ], new \DateTime("{$this->year}-07-15", new \DateTimeZone($this->timezone)), $this->locale));
     }
 
     /**
@@ -157,7 +157,7 @@ class Turkey extends AbstractProvider
 
         $this->addHoliday(new Holiday('victoryDay', [
             'tr' => 'Zafer Bayramı',
-        ], new \DateTime("$this->year-08-30", new \DateTimeZone($this->timezone)), $this->locale, $holidayType));
+        ], new \DateTime("{$this->year}-08-30", new \DateTimeZone($this->timezone)), $this->locale, $holidayType));
     }
 
     /**
@@ -179,6 +179,6 @@ class Turkey extends AbstractProvider
 
         $this->addHoliday(new Holiday('republicDay', [
             'tr' => 'Cumhuriyet Bayramı',
-        ], new \DateTime("$this->year-10-29", new \DateTimeZone($this->timezone)), $this->locale));
+        ], new \DateTime("{$this->year}-10-29", new \DateTimeZone($this->timezone)), $this->locale));
     }
 }

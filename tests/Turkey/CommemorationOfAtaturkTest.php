@@ -46,7 +46,7 @@ class CommemorationOfAtaturkTest extends TurkeyBaseTestCase implements HolidayTe
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-5-19", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-5-19", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

@@ -75,10 +75,10 @@ final class WinterTimeTest extends DaylightSavingTime
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->randomYearFromArray($this->unobservedYears));
 
         $year = $this->randomYearFromArray($this->observedYears);
-        $expectedDate = new \DateTime("last sunday of september $year", new \DateTimeZone(self::TIMEZONE));
+        $expectedDate = new \DateTime("last sunday of september {$year}", new \DateTimeZone(self::TIMEZONE));
 
         if ($year >= 1996) {
-            $expectedDate = new \DateTime("last sunday of october $year", new \DateTimeZone(self::TIMEZONE));
+            $expectedDate = new \DateTime("last sunday of october {$year}", new \DateTimeZone(self::TIMEZONE));
         }
 
         if (array_key_exists($year, $this->deviantTransitions)) {

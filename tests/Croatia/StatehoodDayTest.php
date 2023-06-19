@@ -45,7 +45,7 @@ class StatehoodDayTest extends CroatiaBaseTestCase implements HolidayTestCase
     public function testStatehoodDay(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::DATE_CHANGE_YEAR - 1);
-        $expectedDate = "$year-6-25";
+        $expectedDate = "{$year}-6-25";
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -54,7 +54,7 @@ class StatehoodDayTest extends CroatiaBaseTestCase implements HolidayTestCase
         );
 
         $year = $this->generateRandomYear(self::DATE_CHANGE_YEAR);
-        $expectedDate = "$year-5-30";
+        $expectedDate = "{$year}-5-30";
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,

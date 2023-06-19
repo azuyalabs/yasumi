@@ -44,7 +44,7 @@ class RemembranceDayTest extends ArgentinaBaseTestCase implements HolidayTestCas
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-03-24", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-03-24", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

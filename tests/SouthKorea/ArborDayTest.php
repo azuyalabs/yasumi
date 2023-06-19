@@ -51,8 +51,8 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::REMOVED_YEAR);
         $date = (self::TEMPORARY_CHANGED_YEAR === $year)
-            ? new \DateTime("$year-3-21", new \DateTimeZone(self::TIMEZONE))
-            : new \DateTime("$year-4-5", new \DateTimeZone(self::TIMEZONE));
+            ? new \DateTime("{$year}-3-21", new \DateTimeZone(self::TIMEZONE))
+            : new \DateTime("{$year}-4-5", new \DateTimeZone(self::TIMEZONE));
 
         $this->assertHoliday(
             self::REGION,

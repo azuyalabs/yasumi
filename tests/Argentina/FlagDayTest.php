@@ -44,7 +44,7 @@ class FlagDayTest extends ArgentinaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-06-20", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-06-20", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

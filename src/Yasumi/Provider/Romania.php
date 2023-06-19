@@ -112,7 +112,7 @@ class Romania extends AbstractProvider
         $this->addHoliday(new Holiday(
             'dayAfterNewYearsDay',
             [],
-            new \DateTime("$this->year-01-02", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("{$this->year}-01-02", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -137,7 +137,7 @@ class Romania extends AbstractProvider
             $this->addHoliday(new Holiday('unitedPrincipalitiesDay', [
                 'en' => 'Union Day / Small Union',
                 'ro' => 'Unirea Principatelor Române / Mica Unire',
-            ], new \DateTime("$this->year-01-24", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
+            ], new \DateTime("{$this->year}-01-24", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
     }
 
@@ -185,15 +185,15 @@ class Romania extends AbstractProvider
 
         // @link https://en.wikipedia.org/wiki/Great_Union_Day
         if ($this->year >= 1990) {
-            $nationalDay = "$this->year-12-01";
+            $nationalDay = "{$this->year}-12-01";
         }
 
         if ($this->year >= 1948 && $this->year <= 1989) {
-            $nationalDay = "$this->year-08-23";
+            $nationalDay = "{$this->year}-08-23";
         }
 
         if ($this->year >= 1866 && $this->year <= 1947) {
-            $nationalDay = "$this->year-05-10";
+            $nationalDay = "{$this->year}-05-10";
         }
 
         if (\is_string($nationalDay)) {
@@ -247,7 +247,7 @@ class Romania extends AbstractProvider
                     'en' => 'Constantin Brâncuși day',
                     'ro' => 'Ziua Constantin Brâncuși',
                 ],
-                new \DateTime("$this->year-02-19", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-02-19", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OBSERVANCE
             ));
@@ -275,7 +275,7 @@ class Romania extends AbstractProvider
                     'en' => 'International Children’s Day',
                     'ro' => 'Ziua Copilului',
                 ],
-                new \DateTime("$this->year-06-01", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-06-01", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OBSERVANCE
             ));
@@ -285,7 +285,7 @@ class Romania extends AbstractProvider
             $this->addHoliday(new Holiday('childrensDay', [
                 'en' => 'International Children’s Day',
                 'ro' => 'Ziua Copilului',
-            ], new \DateTime("$this->year-06-01", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
+            ], new \DateTime("{$this->year}-06-01", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
     }
 }

@@ -50,7 +50,7 @@ class UnitedNationsDayTest extends SouthKoreaBaseTestCase implements HolidayTest
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-10-24", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-10-24", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

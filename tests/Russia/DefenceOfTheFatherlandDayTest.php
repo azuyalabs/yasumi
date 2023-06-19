@@ -57,7 +57,7 @@ class DefenceOfTheFatherlandDayTest extends RussiaBaseTestCase implements Holida
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-02-23", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-02-23", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

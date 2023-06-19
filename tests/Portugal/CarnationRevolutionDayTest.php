@@ -40,7 +40,7 @@ class CarnationRevolutionDayTest extends PortugalBaseTestCase implements Holiday
     public function testHolidayAfterEstablishment(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $expected = new \DateTime("$year-04-25", new \DateTimeZone(self::TIMEZONE));
+        $expected = new \DateTime("{$year}-04-25", new \DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 

@@ -45,7 +45,7 @@ class SportsDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-7-23", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-7-23", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -61,7 +61,7 @@ class SportsDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-7-24", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-7-24", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -81,7 +81,7 @@ class SportsDayTest extends JapanBaseTestCase implements HolidayTestCase
                 self::REGION,
                 self::HOLIDAY,
                 $year,
-                new \DateTime("second monday of october $year", new \DateTimeZone(self::TIMEZONE))
+                new \DateTime("second monday of october {$year}", new \DateTimeZone(self::TIMEZONE))
             );
         }
     }
@@ -99,7 +99,7 @@ class SportsDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-10-10", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-10-10", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -116,7 +116,7 @@ class SportsDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::SUBSTITUTE_PREFIX.self::HOLIDAY,
             $year,
-            new \DateTime("$year-10-11", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-10-11", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

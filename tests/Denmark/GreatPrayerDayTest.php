@@ -49,7 +49,7 @@ class GreatPrayerDayTest extends DenmarkBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-5-13", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-5-13", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

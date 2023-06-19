@@ -85,7 +85,7 @@ class DayAfterNewYearsDayTest extends NewZealandBaseTestCase implements HolidayT
 
         for ($y = 0; $y < 50; ++$y) {
             $year = $this->generateRandomYear();
-            $date = new \DateTime("$year-01-02", new \DateTimeZone(self::TIMEZONE));
+            $date = new \DateTime("{$year}-01-02", new \DateTimeZone(self::TIMEZONE));
 
             switch ($date->format('w')) {
                 case 0:

@@ -76,7 +76,7 @@ final class SummerTimeTest extends DaylightSavingTime
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->randomYearFromArray($this->unobservedYears));
 
         $year = $this->randomYearFromArray($this->observedYears);
-        $expectedDate = new \DateTime("last sunday of march $year", new \DateTimeZone(self::TIMEZONE));
+        $expectedDate = new \DateTime("last sunday of march {$year}", new \DateTimeZone(self::TIMEZONE));
 
         if (array_key_exists($year, $this->deviantTransitions)) {
             $expectedDate = new \DateTime($this->deviantTransitions[$year], new \DateTimeZone(self::TIMEZONE));

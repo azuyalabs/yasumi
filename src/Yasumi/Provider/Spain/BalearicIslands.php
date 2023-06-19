@@ -82,7 +82,7 @@ class BalearicIslands extends Spain
                     'ca' => 'Diada de les Illes Balears',
                     'es' => 'Día de les Illes Balears',
                 ],
-                new \DateTime("$this->year-3-1", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-3-1", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

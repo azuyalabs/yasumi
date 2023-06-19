@@ -44,7 +44,7 @@ class NationalFoundationDayTest extends JapanBaseTestCase implements HolidayTest
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-2-11", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-2-11", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -61,7 +61,7 @@ class NationalFoundationDayTest extends JapanBaseTestCase implements HolidayTest
             self::REGION,
             self::SUBSTITUTE_PREFIX.self::HOLIDAY,
             $year,
-            new \DateTime("$year-2-12", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-2-12", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

@@ -44,7 +44,7 @@ class EuropeDayTest extends LuxembourgBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-5-9", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-5-9", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

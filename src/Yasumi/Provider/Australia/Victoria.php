@@ -122,7 +122,7 @@ class Victoria extends Australia
      */
     private function calculateLabourDay(): void
     {
-        $date = new \DateTime("second monday of march $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime("second monday of march {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
         $this->addHoliday(new Holiday('labourDay', [], $date, $this->locale));
     }
@@ -160,7 +160,7 @@ class Victoria extends Australia
      */
     private function calculateMelbourneCupDay(): void
     {
-        $date = new \DateTime('first Tuesday of November'." $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime('first Tuesday of November'." {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
         $this->addHoliday(new Holiday('melbourneCup', ['en' => 'Melbourne Cup'], $date, $this->locale));
     }

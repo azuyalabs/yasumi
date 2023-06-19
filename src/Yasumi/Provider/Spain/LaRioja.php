@@ -75,7 +75,7 @@ class LaRioja extends Spain
         if ($this->year >= 1983) {
             $this->addHoliday(new Holiday('laRiojaDay', [
                 'es' => 'Día de La Rioja',
-            ], new \DateTime("$this->year-6-9", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
+            ], new \DateTime("{$this->year}-6-9", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
     }
 }

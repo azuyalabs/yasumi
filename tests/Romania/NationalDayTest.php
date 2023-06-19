@@ -44,7 +44,7 @@ class NationalDayTest extends RomaniaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-12-1", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-12-1", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -60,7 +60,7 @@ class NationalDayTest extends RomaniaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-08-23", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-08-23", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -76,7 +76,7 @@ class NationalDayTest extends RomaniaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-05-10", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-05-10", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

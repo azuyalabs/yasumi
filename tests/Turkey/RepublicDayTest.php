@@ -35,7 +35,7 @@ class RepublicDayTest extends TurkeyBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-10-29", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-10-29", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

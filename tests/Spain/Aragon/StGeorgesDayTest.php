@@ -39,7 +39,7 @@ class StGeorgesDayTest extends AragonBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-4-23", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-4-23", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

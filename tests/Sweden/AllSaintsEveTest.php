@@ -53,7 +53,7 @@ class AllSaintsEveTest extends SwedenBaseTestCase implements HolidayTestCase
 
         for ($y = 0; $y < 50; ++$y) {
             $year = $this->generateRandomYear();
-            $date = new \DateTime("$year-10-30", new \DateTimeZone(self::TIMEZONE));
+            $date = new \DateTime("{$year}-10-30", new \DateTimeZone(self::TIMEZONE));
 
             // Check between 30 October and 5th of November the day that is a Friday
             for ($d = 0; $d <= 7; ++$d) {

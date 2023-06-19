@@ -44,7 +44,7 @@ class ImmaculateConceptionDayTest extends ArgentinaBaseTestCase implements Holid
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-12-08", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-12-08", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

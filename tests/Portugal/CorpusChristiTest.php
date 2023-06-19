@@ -45,7 +45,7 @@ class CorpusChristiTest extends PortugalBaseTestCase implements HolidayTestCase
     public function testHoliday(): void
     {
         $year = 2016;
-        $expected = new \DateTime("$year-5-26", new \DateTimeZone(self::TIMEZONE));
+        $expected = new \DateTime("{$year}-5-26", new \DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 

@@ -51,7 +51,7 @@ class RepublicDayTest extends ItalyBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-6-2", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-6-2", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

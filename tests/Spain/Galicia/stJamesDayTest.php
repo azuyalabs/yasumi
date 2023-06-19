@@ -44,7 +44,7 @@ class stJamesDayTest extends GaliciaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-7-25", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-7-25", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

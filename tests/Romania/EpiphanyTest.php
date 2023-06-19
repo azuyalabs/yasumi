@@ -44,7 +44,7 @@ class EpiphanyTest extends RomaniaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-01-06", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-01-06", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

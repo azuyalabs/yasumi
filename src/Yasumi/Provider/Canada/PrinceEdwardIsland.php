@@ -70,7 +70,7 @@ class PrinceEdwardIsland extends Canada
         $this->addHoliday(new Holiday(
             'islanderDay',
             [],
-            new \DateTime("third monday of february $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("third monday of february {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -93,7 +93,7 @@ class PrinceEdwardIsland extends Canada
         $this->addHoliday(new Holiday(
             'goldCupParadeDay',
             [],
-            new \DateTime("third friday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("third friday of august {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }

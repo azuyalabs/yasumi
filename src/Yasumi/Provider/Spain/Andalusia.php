@@ -77,7 +77,7 @@ class Andalusia extends Spain
             $this->addHoliday(new Holiday(
                 'andalusiaDay',
                 ['es' => 'Día de Andalucía'],
-                new \DateTime("$this->year-2-28", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-2-28", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

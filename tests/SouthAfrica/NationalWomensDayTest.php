@@ -71,7 +71,7 @@ class NationalWomensDayTest extends SouthAfricaBaseTestCase implements HolidayTe
 
         for ($y = 0; $y < 50; ++$y) {
             $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-            $date = new \DateTime("$year-8-9", new \DateTimeZone(self::TIMEZONE));
+            $date = new \DateTime("{$year}-8-9", new \DateTimeZone(self::TIMEZONE));
             $data[] = [$year, $date->format('Y-m-d')];
         }
 

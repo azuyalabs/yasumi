@@ -148,7 +148,7 @@ class AustralianCapitalTerritory extends Australia
      */
     private function calculateLabourDay(): void
     {
-        $date = new \DateTime("first monday of october $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime("first monday of october {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
         $this->addHoliday(new Holiday('labourDay', [], $date, $this->locale));
     }
@@ -160,7 +160,7 @@ class AustralianCapitalTerritory extends Australia
      */
     private function calculateCanberraDay(): void
     {
-        $datePattern = $this->year < 2007 ? "third monday of march $this->year" : "second monday of march $this->year";
+        $datePattern = $this->year < 2007 ? "third monday of march {$this->year}" : "second monday of march {$this->year}";
 
         $this->addHoliday(
             new Holiday(

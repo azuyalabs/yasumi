@@ -39,7 +39,7 @@ class carnivalDayTest extends NetherlandsBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-2-15", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-2-15", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

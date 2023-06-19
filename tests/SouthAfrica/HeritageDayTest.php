@@ -71,7 +71,7 @@ class HeritageDayTest extends SouthAfricaBaseTestCase implements HolidayTestCase
 
         for ($y = 0; $y < 50; ++$y) {
             $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-            $date = new \DateTime("$year-9-24", new \DateTimeZone(self::TIMEZONE));
+            $date = new \DateTime("{$year}-9-24", new \DateTimeZone(self::TIMEZONE));
             $data[] = [$year, $date->format('Y-m-d')];
         }
 

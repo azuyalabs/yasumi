@@ -44,7 +44,7 @@ class SpringBankHolidayTest extends NorthernIrelandBaseTestCase implements Holid
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-5-30", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-5-30", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

@@ -58,7 +58,7 @@ class LiberationDayTest extends NetherlandsBaseTestCase implements HolidayTestCa
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-5-5", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-5-5", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

@@ -78,7 +78,7 @@ class CanaryIslands extends Spain
             $this->addHoliday(new Holiday(
                 'canaryIslandsDay',
                 ['es' => 'Día de las Canarias'],
-                new \DateTime("$this->year-5-30", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-5-30", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

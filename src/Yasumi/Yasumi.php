@@ -232,7 +232,7 @@ class Yasumi
                 continue;
             }
             $quotedDs = preg_quote(\DIRECTORY_SEPARATOR, '');
-            $provider = preg_replace("#^.+{$quotedDs}Provider$quotedDs(.+)\\.php$#", '$1', $file->getPathName());
+            $provider = preg_replace("#^.+{$quotedDs}Provider{$quotedDs}(.+)\\.php$#", '$1', $file->getPathName());
 
             $class = new \ReflectionClass(sprintf('Yasumi\Provider\%s', str_replace('/', '\\', $provider)));
 

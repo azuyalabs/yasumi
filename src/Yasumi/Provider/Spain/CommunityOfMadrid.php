@@ -82,7 +82,7 @@ class CommunityOfMadrid extends Spain
         $this->addHoliday(new Holiday(
             'dosdeMayoUprisingDay',
             ['es' => 'Fiesta de la Comunidad de Madrid'],
-            new \DateTime("$this->year-5-2", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("{$this->year}-5-2", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }

@@ -58,7 +58,7 @@ class PlebisciteDayTest extends CarinthiaBaseTestCase implements HolidayTestCase
 
         for ($y = 0; $y < self::TEST_ITERATIONS; ++$y) {
             $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-            $data[] = [$year, new \DateTime("$year-10-10", new \DateTimeZone(self::TIMEZONE))];
+            $data[] = [$year, new \DateTime("{$year}-10-10", new \DateTimeZone(self::TIMEZONE))];
         }
 
         return $data;

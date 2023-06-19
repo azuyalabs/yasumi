@@ -45,7 +45,7 @@ class ColumbusDayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("second monday of october $year", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("second monday of october {$year}", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -62,7 +62,7 @@ class ColumbusDayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-10-12", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-10-12", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

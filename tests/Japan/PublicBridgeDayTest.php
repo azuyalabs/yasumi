@@ -51,13 +51,13 @@ class PublicBridgeDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY.'1',
             $this->year,
-            new \DateTime("$this->year-4-30", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$this->year}-4-30", new \DateTimeZone(self::TIMEZONE))
         );
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY.'2',
             $this->year,
-            new \DateTime("$this->year-5-2", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$this->year}-5-2", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
