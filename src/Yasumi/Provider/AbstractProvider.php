@@ -278,7 +278,7 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
      */
     private function isHolidayKeyNotEmpty(string $key): bool
     {
-        if (empty($key)) {
+        if ('' === $key) {
             throw new \InvalidArgumentException('Holiday key can not be blank.');
         }
 

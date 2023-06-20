@@ -205,7 +205,7 @@ class Yasumi
     {
         // Basic static cache
         static $providers;
-        if (! empty($providers)) {
+        if (null !== $providers && [] !== $providers) {
             return $providers;
         }
 

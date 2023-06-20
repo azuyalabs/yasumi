@@ -434,7 +434,7 @@ trait Randomizer
         } elseif ($max instanceof \DateTime) {
             $ts = $max->getTimestamp();
         } else {
-            $ts = strtotime(empty($max) ? 'now' : $max);
+            $ts = strtotime('' === $max ? 'now' : $max);
         }
 
         return $ts;
