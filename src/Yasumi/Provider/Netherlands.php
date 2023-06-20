@@ -306,7 +306,7 @@ class Netherlands extends AbstractProvider
                 Holiday::TYPE_OBSERVANCE
             ));
             // Liberation day is only an official holiday every 5 years
-            $holidayType = (0 === $this->year % 5) ? Holiday::TYPE_OFFICIAL : Holiday::TYPE_OBSERVANCE;
+            $holidayType = 0 === $this->year % 5 ? Holiday::TYPE_OFFICIAL : Holiday::TYPE_OBSERVANCE;
             $this->addHoliday(new Holiday(
                 'liberationDay',
                 ['en' => 'Liberation Day', 'nl' => 'Bevrijdingsdag'],

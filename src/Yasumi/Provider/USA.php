@@ -161,7 +161,7 @@ class USA extends AbstractProvider
             $label = 'Juneteenth';
 
             $holiday = new Holiday('juneteenth', [
-              'en' => $label,
+                'en' => $label,
             ], $date, $this->locale);
             $this->addHoliday($holiday);
 
@@ -178,7 +178,7 @@ class USA extends AbstractProvider
                 $this->addHoliday(new SubstituteHoliday(
                     $holiday,
                     [
-                      'en' => $label.' (observed)',
+                        'en' => $label.' (observed)',
                     ],
                     $date,
                     $this->locale
