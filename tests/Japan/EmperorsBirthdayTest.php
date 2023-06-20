@@ -19,6 +19,8 @@ use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class testing the Emperors Birthday in Japan.
+ *
+ * @source https://en.wikipedia.org/wiki/The_Emperor's_Birthday
  */
 class EmperorsBirthdayTest extends JapanBaseTestCase implements HolidayTestCase
 {
@@ -31,7 +33,6 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements HolidayTestCase
      * The year in which the holiday was first established.
      */
     public const ESTABLISHMENT_YEAR = 1949;
-    // public const ESTABLISHMENT_YEAR = 1989;
 
     /**
      * Tests the Emperors Birthday after 1949 to 1988. The Emperors Birthday is on April 28rd and celebrated as such since
@@ -41,7 +42,7 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements HolidayTestCase
      */
     public function testEmperorsBirthdayOnAfter1949(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1987);
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1988);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -103,13 +104,11 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * Tests the Emperors Birthday before 1989. The Emperors Birthday is on December 23rd and celebrated as such since
-     * 1989. Prior to the death of Emperor Hirohito in 1989, this holiday was celebrated on April 29. See also "Shōwa
-     * Day"/"Greenery Day".
+     * Tests the Emperors Birthday before 1949.
      *
      * @throws \Exception
      */
-    public function testEmperorsBirthdayBefore1989(): void
+    public function testEmperorsBirthdayBefore1949(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -119,9 +118,9 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * Tests the Emperors Birthday at 2019.
+     * Tests the Emperors Birthday in 2019.
      */
-    public function testEmperorsBirthdayAt2019(): void
+    public function testEmperorsBirthdayIn2019(): void
     {
         $this->assertNotHoliday(
             self::REGION,

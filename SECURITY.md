@@ -6,12 +6,13 @@ Please refer to the below table for the supported versions of Yasumi.
 
 | Version | Supported          |
 | ------- | ------------------ |
+| 2.6     | :white_check_mark: |
 | 2.5     | :white_check_mark: |
 | < 2.4   | :x:                |
 | < 1.8   | :x:                |
 
-As for supported PHP versions, Yasumi supports only the actively supported versions of PHP. Currently, that is PHP 7.4,
-and 8.0. Please refer to the [supported versions](https://www.php.net/supported-versions.php) page, to find more
+As for supported PHP versions, Yasumi generally supports only the actively supported versions of PHP.
+Please refer to the [supported versions](https://www.php.net/supported-versions.php) page, to find more
 details. When a version of PHP becomes EOL, generally a new release of Yasumi will be issued that sunsets the support of
 that retired PHP version.
 
