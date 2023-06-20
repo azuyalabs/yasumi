@@ -46,7 +46,7 @@ class RepentanceAndPrayerDayTest extends SaxonyBaseTestCase implements HolidayTe
     {
         // Check between the 16th and 22nd day the one that is a Wednesday
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $holiday = new \DateTime("next wednesday $year-11-15", new \DateTimeZone(self::TIMEZONE)); // Default date
+        $holiday = new \DateTime("next wednesday {$year}-11-15", new \DateTimeZone(self::TIMEZONE)); // Default date
 
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $holiday);
 

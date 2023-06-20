@@ -96,7 +96,7 @@ class CatholicChristmasDayTest extends UkraineBaseTestCase implements HolidayTes
 
         for ($y = 0; $y < 10; ++$y) {
             $year = $this->generateRandomYear(2017);
-            $data[] = [$year, new \DateTime("$year-12-25", new \DateTimeZone(self::TIMEZONE))];
+            $data[] = [$year, new \DateTime("{$year}-12-25", new \DateTimeZone(self::TIMEZONE))];
         }
 
         return $data;

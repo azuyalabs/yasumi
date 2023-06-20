@@ -39,7 +39,7 @@ class AshWednesdayTest extends BrazilBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-2-17", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-2-17", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

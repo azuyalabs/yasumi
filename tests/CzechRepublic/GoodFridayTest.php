@@ -43,7 +43,7 @@ class GoodFridayTest extends CzechRepublicBaseTestCase implements HolidayTestCas
             self::REGION,
             'goodFriday',
             $year,
-            new \DateTime("$year-4-14", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-4-14", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

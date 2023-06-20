@@ -66,7 +66,7 @@ class OctoberHolidayTest extends IrelandBaseTestCase implements HolidayTestCase
 
         for ($y = 0; $y < self::TEST_ITERATIONS; ++$y) {
             $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-            $date = new \DateTime("previous monday $year-11-1", new \DateTimeZone(self::TIMEZONE));
+            $date = new \DateTime("previous monday {$year}-11-1", new \DateTimeZone(self::TIMEZONE));
 
             $data[] = [$year, $date->format('Y-m-d')];
         }

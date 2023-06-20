@@ -44,7 +44,7 @@ class BastilleDayTest extends FranceBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-7-14", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-7-14", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

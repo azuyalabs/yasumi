@@ -39,7 +39,7 @@ class NewYearsDayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-1-1", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-1-1", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -55,7 +55,7 @@ class NewYearsDayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             'substituteHoliday:newYearsDay',
             $year,
-            new \DateTime("$year-1-2", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-1-2", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -72,7 +72,7 @@ class NewYearsDayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             'substituteHoliday:newYearsDay',
             $year,
-            new \DateTime("$subYear-12-31", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$subYear}-12-31", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

@@ -46,7 +46,7 @@ class VeteransDayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-11-11", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-11-11", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -62,7 +62,7 @@ class VeteransDayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             'substituteHoliday:veteransDay',
             $year,
-            new \DateTime("$year-11-12", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-11-12", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -78,7 +78,7 @@ class VeteransDayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             'substituteHoliday:veteransDay',
             $year,
-            new \DateTime("$year-11-10", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-11-10", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

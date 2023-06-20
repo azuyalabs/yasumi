@@ -37,7 +37,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements HolidayT
                 self::REGION,
                 self::HOLIDAY,
                 $year,
-                new \DateTime("$year-10-05", new \DateTimeZone(self::TIMEZONE))
+                new \DateTime("{$year}-10-05", new \DateTimeZone(self::TIMEZONE))
             );
         }
     }
@@ -64,7 +64,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements HolidayT
                 self::REGION,
                 self::HOLIDAY,
                 $year,
-                new \DateTime("$year-10-05", new \DateTimeZone(self::TIMEZONE))
+                new \DateTime("{$year}-10-05", new \DateTimeZone(self::TIMEZONE))
             );
         }
     }

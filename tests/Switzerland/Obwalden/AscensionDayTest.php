@@ -39,7 +39,7 @@ class AscensionDayTest extends ObwaldenBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-5-16", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-5-16", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

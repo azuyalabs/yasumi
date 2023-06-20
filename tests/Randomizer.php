@@ -38,15 +38,15 @@ trait Randomizer
     public function generateRandomDates(
         int $month,
         int $day,
-        string $timezone = null,
-        int $iterations = null,
-        int $range = null
+        ?string $timezone = null,
+        ?int $iterations = null,
+        ?int $range = null
     ): array {
         $data = [];
         $range ??= 1000;
         for ($y = 1; $y <= ($iterations ?? 10); ++$y) {
-            $year = (int) self::dateTimeBetween("-$range years", "+$range years")->format('Y');
-            $data[] = [$year, new \DateTime("$year-$month-$day", new \DateTimeZone($timezone ?? 'UTC'))];
+            $year = (int) self::dateTimeBetween("-{$range} years", "+{$range} years")->format('Y');
+            $data[] = [$year, new \DateTime("{$year}-{$month}-{$day}", new \DateTimeZone($timezone ?? 'UTC'))];
         }
 
         return $data;
@@ -64,15 +64,15 @@ trait Randomizer
      * @throws \Exception
      */
     public function generateRandomEasterDates(
-        string $timezone = null,
-        int $iterations = null,
-        int $range = null
+        ?string $timezone = null,
+        ?int $iterations = null,
+        ?int $range = null
     ): array {
         $data = [];
         $range ??= 1000;
 
         for ($i = 1; $i <= ($iterations ?? 10); ++$i) {
-            $year = (int) self::dateTimeBetween("-$range years", "+$range years")->format('Y');
+            $year = (int) self::dateTimeBetween("-{$range} years", "+{$range} years")->format('Y');
             $date = $this->calculateEaster($year, $timezone ?? 'UTC');
 
             $data[] = [$year, $date->format('Y-m-d')];
@@ -93,9 +93,9 @@ trait Randomizer
      * @throws \Exception
      */
     public function generateRandomEasterMondayDates(
-        string $timezone = null,
-        int $iterations = null,
-        int $range = null
+        ?string $timezone = null,
+        ?int $iterations = null,
+        ?int $range = null
     ): array {
         $range ??= 1000;
 
@@ -118,14 +118,14 @@ trait Randomizer
      */
     public function generateRandomModifiedEasterDates(
         callable $cb,
-        string $timezone = null,
-        int $iterations = null,
-        int $range = null
+        ?string $timezone = null,
+        ?int $iterations = null,
+        ?int $range = null
     ): array {
         $data = [];
         $range ??= 1000;
         for ($i = 1; $i <= ($iterations ?? 10); ++$i) {
-            $year = (int) self::dateTimeBetween("-$range years", "+$range years")->format('Y');
+            $year = (int) self::dateTimeBetween("-{$range} years", "+{$range} years")->format('Y');
             $date = $this->calculateEaster($year, $timezone ?? 'UTC');
 
             $cb($date);
@@ -148,9 +148,9 @@ trait Randomizer
      * @throws \Exception
      */
     public function generateRandomGoodFridayDates(
-        string $timezone = null,
-        int $iterations = null,
-        int $range = null
+        ?string $timezone = null,
+        ?int $iterations = null,
+        ?int $range = null
     ): array {
         $range ??= 1000;
 
@@ -171,9 +171,9 @@ trait Randomizer
      * @throws \Exception
      */
     public function generateRandomPentecostDates(
-        string $timezone = null,
-        int $iterations = null,
-        int $range = null
+        ?string $timezone = null,
+        ?int $iterations = null,
+        ?int $range = null
     ): array {
         $range ??= 1000;
 
@@ -199,9 +199,9 @@ trait Randomizer
     public function generateRandomDatesWithHolidayMovedToMonday(
         int $month,
         int $day,
-        string $timezone = null,
-        int $iterations = null,
-        int $range = null
+        ?string $timezone = null,
+        ?int $iterations = null,
+        ?int $range = null
     ): array {
         return $this->generateRandomDatesWithModifier($month, $day, function ($range, \DateTime $date): void {
             if ($this->isWeekend($date)) {
@@ -230,13 +230,13 @@ trait Randomizer
         callable $callback,
         int $iterations,
         int $range,
-        string $timezone = null
+        ?string $timezone = null
     ): array {
         $data = [];
 
         for ($i = 1; $i <= $iterations; ++$i) {
             $year = $this->generateRandomYear($range);
-            $date = new \DateTime("$year-$month-$day", new \DateTimeZone($timezone ?? 'UTC'));
+            $date = new \DateTime("{$year}-{$month}-{$day}", new \DateTimeZone($timezone ?? 'UTC'));
 
             $callback($year, $date);
 
@@ -257,8 +257,8 @@ trait Randomizer
      * @throws \Exception
      */
     public function generateRandomYear(
-        int $lowerLimit = null,
-        int $upperLimit = null
+        ?int $lowerLimit = null,
+        ?int $upperLimit = null
     ): int {
         return self::numberBetween($lowerLimit ?? 1000, $upperLimit ?? 9999);
     }
@@ -312,13 +312,13 @@ trait Randomizer
     {
         $startTimestamp = $startDate instanceof \DateTime ? $startDate->getTimestamp() : strtotime($startDate);
 
-        if (!$startTimestamp) {
+        if (! $startTimestamp) {
             throw new \RuntimeException('unable to get timestamp for the start date');
         }
 
         $endTimestamp = static::getMaxTimestamp($endDate);
 
-        if (!$endTimestamp) {
+        if (! $endTimestamp) {
             throw new \RuntimeException('unable to get timestamp for the end date');
         }
 
@@ -416,7 +416,7 @@ trait Randomizer
             $easter_days = ($pfm + $tmp + 1); // Easter as the number of days after 21st March
         }
 
-        $easter = new \DateTime("$year-3-21", new \DateTimeZone($timezone));
+        $easter = new \DateTime("{$year}-3-21", new \DateTimeZone($timezone));
         $easter->add(new \DateInterval('P'.$easter_days.'D'));
 
         return $easter;
@@ -434,7 +434,7 @@ trait Randomizer
         } elseif ($max instanceof \DateTime) {
             $ts = $max->getTimestamp();
         } else {
-            $ts = strtotime(empty($max) ? 'now' : $max);
+            $ts = strtotime('' === $max ? 'now' : $max);
         }
 
         return $ts;

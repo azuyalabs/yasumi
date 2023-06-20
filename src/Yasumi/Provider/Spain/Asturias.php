@@ -79,7 +79,7 @@ class Asturias extends Spain
             $this->addHoliday(new Holiday(
                 'asturiasDay',
                 ['es' => 'Día de Asturias'],
-                new \DateTime("$this->year-9-8", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-9-8", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

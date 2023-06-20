@@ -44,7 +44,7 @@ class WorldAnimalDayTest extends NetherlandsBaseTestCase implements HolidayTestC
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-10-4", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-10-4", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

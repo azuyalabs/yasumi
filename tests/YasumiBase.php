@@ -102,7 +102,7 @@ trait YasumiBase
         $holiday = $holidays->getHoliday($key);
 
         self::assertInstanceOf(Holiday::class, $holiday);
-        self::assertEquals($expected, $holiday);
+        $this->assertDateTime($expected, $holiday);
         self::assertTrue($holidays->isHoliday($holiday));
     }
 
@@ -129,7 +129,7 @@ trait YasumiBase
         $holiday = $holidays->getHoliday('substituteHoliday:'.$key);
 
         self::assertInstanceOf(SubstituteHoliday::class, $holiday);
-        self::assertEquals($expected, $holiday);
+        $this->assertDateTime($expected, $holiday);
         self::assertTrue($holidays->isHoliday($holiday));
     }
 
@@ -291,5 +291,25 @@ trait YasumiBase
         $holidayProvider = Yasumi::create($provider, $this->generateRandomYear());
 
         self::assertCount($expectedSourceCount, $holidayProvider->getSources());
+    }
+
+    /**
+     * Asserts that a DateTime object is canonically equal to an expected DateTime object.
+     *
+     * This helper method employs the 'assertEqualsWithDelta' method to allow for variations
+     * in precision between DateTime objects. The default object comparator will report some
+     * DateTime object pairs as not equal even if they are canonically equal because the
+     * object comparator looks at exact object field values.
+     *
+     * Variations have been seen between different versions of PHP and OS distributions.
+     * Likely this is caused by different editions of the tz database used in those releases.
+     *
+     * The chosen delta is somewhat arbitray and seems to solve the experienced issues.
+     *
+     * @throws \ExpectationFailedException
+     */
+    public function assertDateTime(\DateTimeInterface $expected, \DateTimeInterface $actual): void
+    {
+        self::assertEqualsWithDelta($expected, $actual, 1800);
     }
 }

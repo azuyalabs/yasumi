@@ -85,7 +85,7 @@ class Canada extends AbstractProvider
         $this->addHoliday(new Holiday(
             'familyDay',
             [],
-            new \DateTime("third monday of february $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("third monday of february {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -108,7 +108,7 @@ class Canada extends AbstractProvider
         $this->addHoliday(new Holiday(
             'victoriaDay',
             [],
-            new \DateTime("last monday front of $this->year-05-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("last monday front of {$this->year}-05-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -131,7 +131,7 @@ class Canada extends AbstractProvider
         $this->addHoliday(new Holiday(
             'nationalIndigenousPeoplesDay',
             [],
-            new \DateTime("$this->year-06-21", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("{$this->year}-06-21", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -154,7 +154,7 @@ class Canada extends AbstractProvider
         $this->addHoliday(new Holiday(
             'civicHoliday',
             [],
-            new \DateTime("first monday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("first monday of august {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -166,7 +166,6 @@ class Canada extends AbstractProvider
      * @see Holidays Act, R.S.C., 1985, c. H-5, https://laws-lois.justice.gc.ca/eng/acts/h-5/page-1.html
      *
      * by statute, Canada Day is July 1 if that day is not Sunday, and July 2 if July 1 is a Sunday.
-
      *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
@@ -207,7 +206,7 @@ class Canada extends AbstractProvider
         $this->addHoliday(new Holiday(
             'thanksgivingDay',
             [],
-            new \DateTime("second monday of october $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("second monday of october {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -230,7 +229,7 @@ class Canada extends AbstractProvider
         $this->addHoliday(new Holiday(
             'remembranceDay',
             [],
-            new \DateTime("$this->year-11-11", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("{$this->year}-11-11", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -253,7 +252,7 @@ class Canada extends AbstractProvider
         $this->addHoliday(new Holiday(
             'labourDay',
             [],
-            new \DateTime("first monday of september $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("first monday of september {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -276,7 +275,7 @@ class Canada extends AbstractProvider
         $this->addHoliday(new Holiday(
             'truthAndReconciliationDay',
             [],
-            new \DateTime("last day of september $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("last day of september {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }

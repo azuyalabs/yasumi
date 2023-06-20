@@ -45,7 +45,7 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase implements HolidayTestC
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("third monday of september $year", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("third monday of september {$year}", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -62,7 +62,7 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase implements HolidayTestC
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-9-15", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-9-15", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -79,7 +79,7 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase implements HolidayTestC
             self::REGION,
             self::SUBSTITUTE_PREFIX.self::HOLIDAY,
             $year,
-            new \DateTime("$year-9-16", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-9-16", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

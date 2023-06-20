@@ -45,7 +45,7 @@ class WashingtonsBirthdayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("third monday of february $year", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("third monday of february {$year}", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -62,7 +62,7 @@ class WashingtonsBirthdayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-2-22", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-2-22", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

@@ -60,7 +60,7 @@ class BoxingDayTest extends NewZealandBaseTestCase implements HolidayTestCase
 
         for ($y = 0; $y < 50; ++$y) {
             $year = $this->generateRandomYear();
-            $date = new \DateTime("$year-12-26", new \DateTimeZone(self::TIMEZONE));
+            $date = new \DateTime("{$year}-12-26", new \DateTimeZone(self::TIMEZONE));
 
             if (\in_array((int) $date->format('w'), [0, 6], true)) {
                 $date->add(new \DateInterval('P2D'));

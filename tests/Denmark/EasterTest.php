@@ -39,7 +39,7 @@ class EasterTest extends DenmarkBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-3-26", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-3-26", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

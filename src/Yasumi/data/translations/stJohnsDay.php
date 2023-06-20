@@ -24,5 +24,6 @@ return [
     'fi' => 'Juhannuspäivä',
     'lt' => 'Rasos ir Joninių diena',
     'lv' => 'Jāņi',
+    'ro' => 'Sfântul Ioan Botezătorul',
     'sv' => 'midsommardagen',
 ];

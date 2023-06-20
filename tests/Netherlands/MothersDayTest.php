@@ -39,7 +39,7 @@ class MothersDayTest extends NetherlandsBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("second sunday of may $year", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("second sunday of may {$year}", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

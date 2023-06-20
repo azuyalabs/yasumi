@@ -45,7 +45,7 @@ class GaecheonjeolTest extends SouthKoreaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-10-3", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-10-3", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

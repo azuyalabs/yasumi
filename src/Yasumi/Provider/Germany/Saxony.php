@@ -91,7 +91,7 @@ class Saxony extends Germany
             $this->addHoliday(new Holiday(
                 'repentanceAndPrayerDay',
                 ['de' => 'Buß- und Bettag'],
-                new \DateTime("next wednesday $this->year-11-15", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("next wednesday {$this->year}-11-15", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OFFICIAL
             ));

@@ -44,7 +44,7 @@ class CantabriaDayTest extends CantabriaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("second sunday of august $year", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("second sunday of august {$year}", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

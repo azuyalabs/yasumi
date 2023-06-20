@@ -44,7 +44,7 @@ class ProclamationOfRepublicDayTest extends BrazilBaseTestCase implements Holida
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-11-15", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-11-15", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

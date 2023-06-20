@@ -29,9 +29,9 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     public const REMOVED_YEAR = 2005;
 
     /**
-     * The year in which the holiday was not celebrated.
+     * The year the date was temporarily changed.
      */
-    public const YEAR_NOT_CELEBRATED = 1960;
+    public const TEMPORARY_CHANGED_YEAR = 1960;
     /**
      * The name of the holiday.
      */
@@ -50,20 +50,16 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     public function testHoliday(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::REMOVED_YEAR);
-        if (self::YEAR_NOT_CELEBRATED === $year) {
-            $this->assertNotHoliday(
-                self::REGION,
-                self::HOLIDAY,
-                $year
-            );
-        } else {
-            $this->assertHoliday(
-                self::REGION,
-                self::HOLIDAY,
-                $year,
-                new \DateTime("$year-4-5", new \DateTimeZone(self::TIMEZONE))
-            );
-        }
+        $date = (self::TEMPORARY_CHANGED_YEAR === $year)
+            ? new \DateTime("{$year}-3-21", new \DateTimeZone(self::TIMEZONE))
+            : new \DateTime("{$year}-4-5", new \DateTimeZone(self::TIMEZONE));
+
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            $date
+        );
     }
 
     /**
@@ -102,14 +98,14 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     public function testTranslation(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::REMOVED_YEAR);
-        if (self::YEAR_NOT_CELEBRATED !== $year) {
-            $this->assertTranslatedHolidayName(
-                self::REGION,
-                self::HOLIDAY,
-                $year,
-                [self::LOCALE => '식목일']
-            );
-        }
+        $translation = (self::TEMPORARY_CHANGED_YEAR === $year) ? '사방의 날' : '식목일';
+
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            [self::LOCALE => $translation]
+        );
     }
 
     /**
@@ -120,13 +116,11 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     public function testHolidayType(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::REMOVED_YEAR);
-        if (self::YEAR_NOT_CELEBRATED !== $year) {
-            $this->assertHolidayType(
-                self::REGION,
-                self::HOLIDAY,
-                $year,
-                Holiday::TYPE_OFFICIAL
-            );
-        }
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            Holiday::TYPE_OFFICIAL
+        );
     }
 }

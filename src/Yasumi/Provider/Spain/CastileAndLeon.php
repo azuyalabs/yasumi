@@ -79,7 +79,7 @@ class CastileAndLeon extends Spain
             $this->addHoliday(new Holiday(
                 'castileAndLeonDay',
                 ['es' => 'Día de Castilla y León'],
-                new \DateTime("$this->year-4-23", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-4-23", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

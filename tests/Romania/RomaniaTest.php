@@ -35,7 +35,7 @@ class RomaniaTest extends RomaniaBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(2015, 2025);
+        $this->year = $this->generateRandomYear(2015, 2028);
     }
 
     /**
@@ -61,6 +61,11 @@ class RomaniaTest extends RomaniaBaseTestCase implements ProviderTestCase
 
         if ($this->year >= 2017) {
             $national_holidays[] = 'childrensDay';
+        }
+
+        if ($this->year >= 2024) {
+            $national_holidays[] = 'epiphany';
+            $national_holidays[] = 'stJohnsDay';
         }
 
         $this->assertDefinedHolidays($national_holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);

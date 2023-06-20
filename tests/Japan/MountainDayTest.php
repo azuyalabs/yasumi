@@ -44,7 +44,7 @@ class MountainDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-8-8", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-8-8", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -60,7 +60,7 @@ class MountainDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-8-10", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-8-10", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -76,7 +76,7 @@ class MountainDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-8-11", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-8-11", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -92,7 +92,7 @@ class MountainDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::SUBSTITUTE_PREFIX.self::HOLIDAY,
             $year,
-            new \DateTime("$year-8-12", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-8-12", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

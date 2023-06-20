@@ -47,7 +47,7 @@ class PortugalDayTest extends PortugalBaseTestCase implements HolidayTestCase
     public function testHolidayBeforeAbolishment(): void
     {
         $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR_BEFORE);
-        $expected = new \DateTime("$year-06-10", new \DateTimeZone(self::TIMEZONE));
+        $expected = new \DateTime("{$year}-06-10", new \DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
@@ -61,7 +61,7 @@ class PortugalDayTest extends PortugalBaseTestCase implements HolidayTestCase
     public function testHolidayAfterRestoration(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR_AFTER);
-        $expected = new \DateTime("$year-06-10", new \DateTimeZone(self::TIMEZONE));
+        $expected = new \DateTime("{$year}-06-10", new \DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 

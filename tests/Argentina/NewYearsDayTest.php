@@ -39,7 +39,7 @@ class NewYearsDayTest extends ArgentinaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-1-1", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-1-1", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

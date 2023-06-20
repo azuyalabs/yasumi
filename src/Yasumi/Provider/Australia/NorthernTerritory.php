@@ -114,7 +114,7 @@ class NorthernTerritory extends Australia
      */
     private function calculateMayDay(): void
     {
-        $date = new \DateTime("first monday of may $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime("first monday of may {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
         $this->addHoliday(new Holiday('mayDay', ['en' => 'May Day'], $date, $this->locale));
     }

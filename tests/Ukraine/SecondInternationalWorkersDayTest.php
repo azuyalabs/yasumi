@@ -101,7 +101,7 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements H
 
         for ($y = 0; $y < 10; ++$y) {
             $year = $this->generateRandomYear(null, 2017);
-            $data[] = [$year, new \DateTime("$year-05-02", new \DateTimeZone(self::TIMEZONE))];
+            $data[] = [$year, new \DateTime("{$year}-05-02", new \DateTimeZone(self::TIMEZONE))];
         }
 
         return $data;

@@ -68,7 +68,7 @@ class Ireland extends AbstractProvider
         $this->addHoliday(new Holiday(
             'augustHoliday',
             ['en' => 'August Holiday', 'ga' => 'Lá Saoire i mí Lúnasa'],
-            new \DateTime("next monday $this->year-7-31", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("next monday {$this->year}-7-31", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
         $this->calculateOctoberHoliday();
@@ -285,7 +285,7 @@ class Ireland extends AbstractProvider
         $this->addHoliday(new Holiday(
             'mayDay',
             ['en' => 'May Day', 'ga' => 'Lá Bealtaine'],
-            new \DateTime("next monday $this->year-4-30", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("next monday {$this->year}-4-30", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -311,7 +311,7 @@ class Ireland extends AbstractProvider
         $this->addHoliday(new Holiday(
             'juneHoliday',
             ['en' => 'June Holiday', 'ga' => 'Lá Saoire i mí an Mheithimh'],
-            new \DateTime("next monday $this->year-5-31", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("next monday {$this->year}-5-31", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -336,7 +336,7 @@ class Ireland extends AbstractProvider
         $this->addHoliday(new Holiday(
             'octoberHoliday',
             ['en' => 'October Holiday', 'ga' => 'Lá Saoire i mí Dheireadh Fómhair'],
-            new \DateTime("previous monday $this->year-11-01", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("previous monday {$this->year}-11-01", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }

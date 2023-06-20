@@ -16,7 +16,6 @@ declare(strict_types=1);
 namespace Yasumi\tests\SouthKorea;
 
 use Yasumi\Holiday;
-use Yasumi\Provider\SouthKorea;
 use Yasumi\tests\HolidayTestCase;
 
 /**
@@ -35,38 +34,41 @@ class ChuseokTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     public const ESTABLISHMENT_YEAR = 1949;
 
     /**
+     * The year of upper limit for tests of lunar date.
+     */
+    public const LUNAR_TEST_LIMIT = 2050;
+
+    /**
      * Tests the holiday defined in this test.
      *
      * @throws \Exception
      */
     public function testHoliday(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2050);
-        if (isset(SouthKorea::LUNAR_HOLIDAY[self::HOLIDAY][$year])) {
-            $date = new \DateTime(SouthKorea::LUNAR_HOLIDAY[self::HOLIDAY][$year], new \DateTimeZone(self::TIMEZONE));
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::LUNAR_TEST_LIMIT);
+        $date = new \DateTime(self::LUNAR_HOLIDAY[self::HOLIDAY][$year], new \DateTimeZone(self::TIMEZONE));
 
-            // Chuseok
-            $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
+        // Chuseok
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
 
-            // Day after Chuseok
-            if ($year >= 1986) {
-                $this->assertHoliday(
-                    self::REGION,
-                    'dayAfterChuseok',
-                    $year,
-                    (clone $date)->add(new \DateInterval('P1D'))
-                );
-            }
+        // Day after Chuseok
+        if ($year >= 1986) {
+            $this->assertHoliday(
+                self::REGION,
+                'dayAfterChuseok',
+                $year,
+                (clone $date)->add(new \DateInterval('P1D'))
+            );
+        }
 
-            // Day before Chuseok
-            if ($year >= 1989) {
-                $this->assertHoliday(
-                    self::REGION,
-                    'dayBeforeChuseok',
-                    $year,
-                    (clone $date)->sub(new \DateInterval('P1D'))
-                );
-            }
+        // Day before Chuseok
+        if ($year >= 1989) {
+            $this->assertHoliday(
+                self::REGION,
+                'dayBeforeChuseok',
+                $year,
+                (clone $date)->sub(new \DateInterval('P1D'))
+            );
         }
     }
 
@@ -84,7 +86,7 @@ class ChuseokTest extends SouthKoreaBaseTestCase implements HolidayTestCase
                 self::REGION,
                 'nationalFoundationDay',
                 $year,
-                new \DateTime("$year-10-3", $tz)
+                new \DateTime("{$year}-10-3", $tz)
             );
         }
 
@@ -173,30 +175,31 @@ class ChuseokTest extends SouthKoreaBaseTestCase implements HolidayTestCase
      */
     public function testTranslation(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2050);
-        if (isset(SouthKorea::LUNAR_HOLIDAY[self::HOLIDAY][$year])) {
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::LUNAR_TEST_LIMIT);
+
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            [self::LOCALE => '추석']
+        );
+
+        if ($year >= 1986) {
             $this->assertTranslatedHolidayName(
                 self::REGION,
-                self::HOLIDAY,
+                'dayAfterChuseok',
                 $year,
-                [self::LOCALE => '추석']
+                [self::LOCALE => '추석 연휴']
             );
-            if ($year >= 1986) {
-                $this->assertTranslatedHolidayName(
-                    self::REGION,
-                    'dayAfterChuseok',
-                    $year,
-                    [self::LOCALE => '추석 연휴']
-                );
-            }
-            if ($year >= 1989) {
-                $this->assertTranslatedHolidayName(
-                    self::REGION,
-                    'dayBeforeChuseok',
-                    $year,
-                    [self::LOCALE => '추석 연휴']
-                );
-            }
+        }
+
+        if ($year >= 1989) {
+            $this->assertTranslatedHolidayName(
+                self::REGION,
+                'dayBeforeChuseok',
+                $year,
+                [self::LOCALE => '추석 연휴']
+            );
         }
     }
 
@@ -207,30 +210,31 @@ class ChuseokTest extends SouthKoreaBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2050);
-        if (isset(SouthKorea::LUNAR_HOLIDAY[self::HOLIDAY][$year])) {
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::LUNAR_TEST_LIMIT);
+
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            Holiday::TYPE_OFFICIAL
+        );
+
+        if ($year >= 1986) {
             $this->assertHolidayType(
                 self::REGION,
-                self::HOLIDAY,
+                'dayAfterChuseok',
                 $year,
                 Holiday::TYPE_OFFICIAL
             );
-            if ($year >= 1986) {
-                $this->assertHolidayType(
-                    self::REGION,
-                    'dayAfterChuseok',
-                    $year,
-                    Holiday::TYPE_OFFICIAL
-                );
-            }
-            if ($year >= 1989) {
-                $this->assertHolidayType(
-                    self::REGION,
-                    'dayBeforeChuseok',
-                    $year,
-                    Holiday::TYPE_OFFICIAL
-                );
-            }
+        }
+
+        if ($year >= 1989) {
+            $this->assertHolidayType(
+                self::REGION,
+                'dayBeforeChuseok',
+                $year,
+                Holiday::TYPE_OFFICIAL
+            );
         }
     }
 }

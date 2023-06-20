@@ -92,7 +92,7 @@ class Norway extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'constitutionDay',
                 ['nb' => 'grunnlovsdagen'],
-                new \DateTime("$this->year-5-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-5-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

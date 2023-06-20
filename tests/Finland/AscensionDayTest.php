@@ -39,7 +39,7 @@ class AscensionDayTest extends FinlandBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-5-5", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-5-5", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

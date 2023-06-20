@@ -39,7 +39,7 @@ class pentecostMondayTest extends BelgiumBaseTestCase implements HolidayTestCase
             self::REGION,
             'pentecostMonday',
             $year,
-            new \DateTime("$year-6-1", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-6-1", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

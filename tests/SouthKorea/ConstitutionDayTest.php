@@ -50,7 +50,7 @@ class ConstitutionDayTest extends SouthKoreaBaseTestCase implements HolidayTestC
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-7-17", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-7-17", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

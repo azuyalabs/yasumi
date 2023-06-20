@@ -53,7 +53,7 @@ class AllSaintsDayTest extends SwedenBaseTestCase implements HolidayTestCase
 
         for ($y = 0; $y < 50; ++$y) {
             $year = $this->generateRandomYear();
-            $date = new \DateTime("$year-10-31", new \DateTimeZone(self::TIMEZONE));
+            $date = new \DateTime("{$year}-10-31", new \DateTimeZone(self::TIMEZONE));
 
             // Check between 31 October and 6th of November the day that is a Saturday
             for ($d = 0; $d <= 7; ++$d) {

@@ -44,7 +44,7 @@ class AllSoulsDayTest extends BrazilBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-11-02", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-11-02", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

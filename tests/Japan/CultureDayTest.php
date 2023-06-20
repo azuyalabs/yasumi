@@ -44,7 +44,7 @@ class CultureDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-11-3", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-11-3", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -60,7 +60,7 @@ class CultureDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::SUBSTITUTE_PREFIX.self::HOLIDAY,
             $year,
-            new \DateTime("$year-11-4", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-11-4", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

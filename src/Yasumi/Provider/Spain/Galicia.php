@@ -80,7 +80,7 @@ class Galicia extends Spain
             $this->addHoliday(new Holiday('galicianLiteratureDay', [
                 'es' => 'Día de las Letras Gallegas',
                 'gl' => 'Día das Letras Galegas',
-            ], new \DateTime("$this->year-5-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
+            ], new \DateTime("{$this->year}-5-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
     }
 
@@ -106,7 +106,7 @@ class Galicia extends Spain
         if ($this->year >= 2000) {
             $this->addHoliday(new Holiday('stJamesDay', [
                 'es' => 'Santiago Apostol',
-            ], new \DateTime("$this->year-7-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
+            ], new \DateTime("{$this->year}-7-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
     }
 }

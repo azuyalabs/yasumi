@@ -44,7 +44,7 @@ class IndependenceDayTest extends BosniaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-3-1", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-3-1", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

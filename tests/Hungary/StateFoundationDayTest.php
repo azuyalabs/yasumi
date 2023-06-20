@@ -44,7 +44,7 @@ class StateFoundationDayTest extends HungaryBaseTestCase implements HolidayTestC
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-8-20", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-8-20", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

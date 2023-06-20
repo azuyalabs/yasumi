@@ -44,7 +44,7 @@ class nationalCataloniaDayTest extends CataloniaBaseTestCase implements HolidayT
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-9-11", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-9-11", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

@@ -44,7 +44,7 @@ class StatehoodDayTest extends BosniaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-11-25", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-11-25", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

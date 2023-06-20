@@ -39,7 +39,7 @@ class CleanMondayTest extends GreeceBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-3-14", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-3-14", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

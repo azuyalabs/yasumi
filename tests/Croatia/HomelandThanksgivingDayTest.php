@@ -49,7 +49,7 @@ class HomelandThanksgivingDayTest extends CroatiaBaseTestCase implements Holiday
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-8-5", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-8-5", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

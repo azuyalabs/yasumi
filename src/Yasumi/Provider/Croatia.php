@@ -65,7 +65,7 @@ class Croatia extends AbstractProvider
             $this->addHoliday(new Holiday('antifascistStruggleDay', [
                 'en' => 'Day of Antifascist Struggle',
                 'hr' => 'Dan antifašističke borbe',
-            ], new \DateTime("$this->year-6-22", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
+            ], new \DateTime("{$this->year}-6-22", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
 
         $this->calculateStatehoodDay();
@@ -94,9 +94,9 @@ class Croatia extends AbstractProvider
         $statehoodDayDate = null;
 
         if ($this->year >= 1991 && $this->year < 2020) {
-            $statehoodDayDate = new \DateTime("$this->year-6-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+            $statehoodDayDate = new \DateTime("{$this->year}-6-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         } elseif ($this->year >= 2020) {
-            $statehoodDayDate = new \DateTime("$this->year-5-30", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+            $statehoodDayDate = new \DateTime("{$this->year}-5-30", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         }
 
         if (null !== $statehoodDayDate) {
@@ -124,11 +124,11 @@ class Croatia extends AbstractProvider
             $names['hr'] = 'Dan pobjede i domovinske zahvalnosti i Dan hrvatskih branitelja';
         }
 
-        if (!empty($names)) {
+        if ([] !== $names) {
             $this->addHoliday(new Holiday(
                 'homelandThanksgiving',
                 $names,
-                new \DateTime("$this->year-8-5", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-8-5", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -154,7 +154,7 @@ class Croatia extends AbstractProvider
         $this->addHoliday(new Holiday('independenceDay', [
             'en' => 'Independence Day',
             'hr' => 'Dan neovisnosti',
-        ], new \DateTime("$this->year-10-8", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
+        ], new \DateTime("{$this->year}-10-8", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
     }
 
     /**
@@ -169,7 +169,7 @@ class Croatia extends AbstractProvider
             $this->addHoliday(new Holiday('remembranceDay', [
                 'en' => 'Remembrance Day for Homeland War Victims and Remembrance Day for the Victims of Vukovar and Skabrnja',
                 'hr' => 'Dan sjećanja na žrtve Domovinskog rata i Dan sjećanja na žrtvu Vukovara i Škabrnje',
-            ], new \DateTime("$this->year-11-18", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
+            ], new \DateTime("{$this->year}-11-18", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
     }
 }

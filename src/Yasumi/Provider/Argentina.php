@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 /*
  * This file is part of the Yasumi package.
  *
@@ -70,13 +71,12 @@ class Argentina extends AbstractProvider
     /**
      * The source of the holidays.
      *
-     * @return string[]
-     *                  The source URL
+     * @return string[] The source URL
      */
     public function getSources(): array
     {
         return [
-          'https://en.wikipedia.org/wiki/Public_holidays_in_Argentina',
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Argentina',
         ];
     }
 
@@ -93,31 +93,37 @@ class Argentina extends AbstractProvider
         if ($this->year >= 1700) {
             $easter = $this->calculateEaster($this->year, $this->timezone);
 
-            $carnavalMonday = clone $easter;
-            $carnavalMondayDate = $carnavalMonday->sub(new \DateInterval('P48D'));
-            $this->addHoliday(new Holiday(
-                'carnavalMonday',
-                [
-                  'en' => 'Carnival Monday',
-                  'es' => 'Lunes de Carnaval',
+            $days = [
+                'carnavalMonday' => [
+                    'interval' => 'P48D',
+                    'name' => 'Lunes de Carnaval',
+                    'name_en' => 'Carnival Monday',
                 ],
-                $carnavalMondayDate,
-                $this->locale,
-                Holiday::TYPE_OBSERVANCE
-            ));
+                'carnavalTuesday' => [
+                    'interval' => 'P47D',
+                    'name' => 'Martes de Carnaval',
+                    'name_en' => 'Carnival Tuesday',
+                ],
+            ];
 
-            $carnavalTuesday = clone $easter;
-            $carnavalTuesdayDate = $carnavalTuesday->sub(new \DateInterval('P47D'));
-            $this->addHoliday(new Holiday(
-                'carnavalTuesday',
-                [
-                  'en' => 'Carnival Tuesday',
-                  'es' => 'Martes de Carnaval',
-                ],
-                $carnavalTuesdayDate,
-                $this->locale,
-                Holiday::TYPE_OBSERVANCE
-            ));
+            foreach ($days as $name => $day) {
+                $date = (clone $easter)->sub(new \DateInterval($day['interval']));
+
+                if (! $date instanceof \DateTime) {
+                    throw new \RuntimeException(sprintf('unable to perform a date subtraction for %s:%s', self::class, $name));
+                }
+
+                $this->addHoliday(new Holiday(
+                    $name,
+                    [
+                        'es' => $day['name'],
+                        'en' => $day['name_en'],
+                    ],
+                    $date,
+                    $this->locale,
+                    Holiday::TYPE_OBSERVANCE
+                ));
+            }
         }
     }
 
@@ -138,10 +144,10 @@ class Argentina extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'remembranceDay',
                 [
-                  'en' => 'Day of Remembrance for Truth and Justice',
-                  'es' => 'Día Nacional de la Memoria por la Verdad y la Justicia',
+                    'en' => 'Day of Remembrance for Truth and Justice',
+                    'es' => 'Día Nacional de la Memoria por la Verdad y la Justicia',
                 ],
-                new \DateTime("$this->year-03-24", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-03-24", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -164,10 +170,10 @@ class Argentina extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'malvinasDay',
                 [
-                  'en' => 'Malvinas Day',
-                  'es' => 'Día del Veterano y de los Caídos en la Guerra de Malvinas',
+                    'en' => 'Malvinas Day',
+                    'es' => 'Día del Veterano y de los Caídos en la Guerra de Malvinas',
                 ],
-                new \DateTime("$this->year-04-02", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-04-02", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -192,10 +198,10 @@ class Argentina extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'mayRevolution',
                 [
-                  'en' => 'May Revolution',
-                  'es' => 'Día de la Revolución de Mayo',
+                    'en' => 'May Revolution',
+                    'es' => 'Día de la Revolución de Mayo',
                 ],
-                new \DateTime("$this->year-05-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-05-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -213,10 +219,10 @@ class Argentina extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'generalMartinMigueldeGuemesDay',
                 [
-                  'en' => 'Anniversary of the Passing of General Martín Miguel de Güemes',
-                  'es' => 'Paso a la Inmortalidad del General Martín Miguel de Güemes',
+                    'en' => 'Anniversary of the Passing of General Martín Miguel de Güemes',
+                    'es' => 'Paso a la Inmortalidad del General Martín Miguel de Güemes',
                 ],
-                new \DateTime("$this->year-06-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-06-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -236,10 +242,10 @@ class Argentina extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'flagDay',
                 [
-                  'en' => 'General Manuel Belgrano Memorial Day',
-                  'es' => 'Paso a la Inmortalidad del General Manuel Belgrano',
+                    'en' => 'General Manuel Belgrano Memorial Day',
+                    'es' => 'Paso a la Inmortalidad del General Manuel Belgrano',
                 ],
-                new \DateTime("$this->year-06-20", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-06-20", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -258,10 +264,10 @@ class Argentina extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'independenceDay',
                 [
-                  'en' => 'Independence Day',
-                  'es' => 'Día de la Independencia',
+                    'en' => 'Independence Day',
+                    'es' => 'Día de la Independencia',
                 ],
-                new \DateTime("$this->year-07-09", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-07-09", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -279,10 +285,10 @@ class Argentina extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'generalJoseSanMartinDay',
                 [
-                  'en' => 'General José de San Martín Memorial Day',
-                  'es' => 'Paso a la Inmortalidad del General José de San Martín',
+                    'en' => 'General José de San Martín Memorial Day',
+                    'es' => 'Paso a la Inmortalidad del General José de San Martín',
                 ],
-                new \DateTime("$this->year-08-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-08-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -302,10 +308,10 @@ class Argentina extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'raceDay',
                 [
-                  'en' => 'Day of Respect for Cultural Diversity',
-                  'es' => 'Día del Respeto a la Diversidad Cultural',
+                    'en' => 'Day of Respect for Cultural Diversity',
+                    'es' => 'Día del Respeto a la Diversidad Cultural',
                 ],
-                new \DateTime("$this->year-10-12", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-10-12", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -325,10 +331,10 @@ class Argentina extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'nationalSovereigntyDay',
                 [
-                  'en' => 'National Sovereignty Day',
-                  'es' => 'Día de la Soberanía Nacional',
+                    'en' => 'National Sovereignty Day',
+                    'es' => 'Día de la Soberanía Nacional',
                 ],
-                new \DateTime("$this->year-11-20", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-11-20", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -348,10 +354,10 @@ class Argentina extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'immaculateConceptionDay',
                 [
-                  'en' => 'Immaculate Conception Day',
-                  'es' => 'Día de la Inmaculada Concepción de María',
+                    'en' => 'Immaculate Conception Day',
+                    'es' => 'Día de la Inmaculada Concepción de María',
                 ],
-                new \DateTime("$this->year-12-08", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-12-08", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

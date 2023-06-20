@@ -39,7 +39,7 @@ class EasterMondayTest extends BaselLandschaftBaseTestCase implements HolidayTes
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-3-28", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-3-28", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

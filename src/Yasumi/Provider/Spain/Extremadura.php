@@ -79,7 +79,7 @@ class Extremadura extends Spain
             $this->addHoliday(new Holiday(
                 'extremaduraDay',
                 ['es' => 'Día de Extremadura'],
-                new \DateTime("$this->year-9-8", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-9-8", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

@@ -72,17 +72,17 @@ class Yasumi
         \DateTimeInterface $startDate,
         int $workingDays = 1
     ): \DateTimeInterface {
-        // convert to immutable date to prevent modification of the  original
         $date = $startDate instanceof \DateTime ? \DateTimeImmutable::createFromMutable($startDate) : $startDate;
-
         $provider = null;
 
         while ($workingDays > 0) {
             $date = $date->add(new \DateInterval('P1D'));
 
-            if (!$provider instanceof ProviderInterface) {
-                $provider = self::create($class, (int) $date->format('Y'));
-            } elseif ($provider->getYear() !== (int) $date->format('Y')) {
+            if (! $date instanceof \DateTimeImmutable) {
+                throw new \RuntimeException('Unable to perform date interval addition');
+            }
+
+            if (! $provider instanceof ProviderInterface || $provider->getYear() !== (int) $date->format('Y')) {
                 $provider = self::create($class, (int) $date->format('Y'));
             }
 
@@ -122,7 +122,7 @@ class Yasumi
             $providerClass = $class;
         }
 
-        if ('AbstractProvider' === $class || !class_exists($providerClass)) {
+        if ('AbstractProvider' === $class || ! class_exists($providerClass)) {
             throw new ProviderNotFoundException(sprintf('Unable to find holiday provider "%s".', $class));
         }
 
@@ -143,7 +143,7 @@ class Yasumi
         }
 
         // Assert locale input
-        if (!\in_array($locale, self::$locales, true)) {
+        if (! \in_array($locale, self::$locales, true)) {
             throw new UnknownLocaleException(sprintf('Locale "%s" is not a valid locale.', $locale));
         }
 
@@ -187,7 +187,7 @@ class Yasumi
     ): ProviderInterface {
         $availableProviders = self::getProviders();
 
-        if (!isset($availableProviders[$isoCode])) {
+        if (! isset($availableProviders[$isoCode])) {
             throw new ProviderNotFoundException(sprintf('Unable to find holiday provider by ISO3166-2 "%s".', $isoCode));
         }
 
@@ -205,13 +205,13 @@ class Yasumi
     {
         // Basic static cache
         static $providers;
-        if (!empty($providers)) {
+        if (null !== $providers && [] !== $providers) {
             return $providers;
         }
 
         $providers = [];
         $filesIterator = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator(
-            __DIR__.DIRECTORY_SEPARATOR.'Provider',
+            __DIR__.\DIRECTORY_SEPARATOR.'Provider',
             \FilesystemIterator::SKIP_DOTS
         ), \RecursiveIteratorIterator::SELF_FIRST);
 
@@ -231,8 +231,8 @@ class Yasumi
             )) {
                 continue;
             }
-            $quotedDs = preg_quote(DIRECTORY_SEPARATOR, '');
-            $provider = preg_replace("#^.+{$quotedDs}Provider$quotedDs(.+)\\.php$#", '$1', $file->getPathName());
+            $quotedDs = preg_quote(\DIRECTORY_SEPARATOR, '');
+            $provider = preg_replace("#^.+{$quotedDs}Provider{$quotedDs}(.+)\\.php$#", '$1', $file->getPathName());
 
             $class = new \ReflectionClass(sprintf('Yasumi\Provider\%s', str_replace('/', '\\', $provider)));
 
@@ -268,21 +268,17 @@ class Yasumi
         \DateTimeInterface $startDate,
         int $workingDays = 1
     ): \DateTimeInterface {
-        // convert to immutable date to prevent modification of the original
         $date = $startDate instanceof \DateTime ? \DateTimeImmutable::createFromMutable($startDate) : $startDate;
-
         $provider = null;
 
         while ($workingDays > 0) {
             $date = $date->sub(new \DateInterval('P1D'));
 
-            if (!$date instanceof \DateTimeImmutable) {
-                throw new \RuntimeException('unable to perform date interval subtraction');
+            if (! $date instanceof \DateTimeImmutable) {
+                throw new \RuntimeException('Unable to perform date interval subtraction');
             }
 
-            if (!$provider instanceof ProviderInterface) {
-                $provider = self::create($class, (int) $date->format('Y'));
-            } elseif ($provider->getYear() !== (int) $date->format('Y')) {
+            if (! $provider instanceof ProviderInterface || $provider->getYear() !== (int) $date->format('Y')) {
                 $provider = self::create($class, (int) $date->format('Y'));
             }
 

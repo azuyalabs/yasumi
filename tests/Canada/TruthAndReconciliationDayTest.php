@@ -45,7 +45,7 @@ class TruthAndReconciliationDayTest extends CanadaBaseTestCase implements Holida
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("last day of september $year", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("last day of september {$year}", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

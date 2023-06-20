@@ -44,7 +44,7 @@ class ConstantinBrancusiDayTest extends RomaniaBaseTestCase implements HolidayTe
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-02-19", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-02-19", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

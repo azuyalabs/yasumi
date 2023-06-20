@@ -44,7 +44,7 @@ class BalearicIslandsDayTest extends BalearicIslandsBaseTestCase implements Holi
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-3-1", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-3-1", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

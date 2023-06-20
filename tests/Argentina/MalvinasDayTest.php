@@ -44,7 +44,7 @@ class MalvinasDayTest extends ArgentinaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-04-02", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-04-02", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

@@ -44,7 +44,7 @@ class GeneralMartinMigueldeGuemesDayTest extends ArgentinaBaseTestCase implement
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-06-17", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-06-17", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

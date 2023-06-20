@@ -122,7 +122,7 @@ class SouthAustralia extends Australia
      */
     private function calculateLabourDay(): void
     {
-        $date = new \DateTime("first monday of october $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime("first monday of october {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
         $this->addHoliday(new Holiday('labourDay', ['en' => 'Labour Day'], $date, $this->locale));
     }
@@ -161,7 +161,7 @@ class SouthAustralia extends Australia
      */
     private function calculateProclamationDay(): void
     {
-        $christmasDay = new \DateTime("$this->year-12-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $christmasDay = new \DateTime("{$this->year}-12-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
         $this->addHoliday(new Holiday(
             'christmasDay',

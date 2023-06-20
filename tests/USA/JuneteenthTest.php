@@ -44,7 +44,7 @@ class JuneteenthTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-6-19", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-6-19", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -60,7 +60,7 @@ class JuneteenthTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-6-20", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-6-20", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -76,7 +76,7 @@ class JuneteenthTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-6-18", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-6-18", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

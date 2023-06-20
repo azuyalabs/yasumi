@@ -44,7 +44,7 @@ class AsturiasDayTest extends AsturiasBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-9-8", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-9-8", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

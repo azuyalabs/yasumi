@@ -41,7 +41,7 @@ class NewYearsDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     public function testHoliday(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $date = new \DateTime("$year-1-1", new \DateTimeZone(self::TIMEZONE));
+        $date = new \DateTime("{$year}-1-1", new \DateTimeZone(self::TIMEZONE));
 
         // New Year's Day
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);

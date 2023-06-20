@@ -44,7 +44,7 @@ class InstaurationRepubliqueTest extends NeuchatelBaseTestCase implements Holida
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-03-01", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-03-01", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

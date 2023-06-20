@@ -44,7 +44,7 @@ class AntifascistStruggleDayTest extends CroatiaBaseTestCase implements HolidayT
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-6-22", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-6-22", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

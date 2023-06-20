@@ -74,7 +74,7 @@ class LabourDayTest extends NewZealandBaseTestCase implements HolidayTestCase
         for ($y = 0; $y < 100; ++$y) {
             $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
             $expected = new \DateTime(
-                (($year < 1910) ? 'second wednesday of october' : 'fourth monday of october')." $year",
+                (($year < 1910) ? 'second wednesday of october' : 'fourth monday of october')." {$year}",
                 new \DateTimeZone(self::TIMEZONE)
             );
 

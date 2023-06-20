@@ -50,7 +50,7 @@ class NationalSovereigntyDayTest extends TurkeyBaseTestCase implements HolidayTe
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-4-23", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-4-23", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

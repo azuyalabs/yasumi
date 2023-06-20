@@ -39,7 +39,7 @@ class FathersDayTest extends NetherlandsBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("third sunday of june $year", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("third sunday of june {$year}", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

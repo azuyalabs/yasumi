@@ -45,7 +45,7 @@ class ComingOfAgeDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("second monday of january $year", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("second monday of january {$year}", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -62,7 +62,7 @@ class ComingOfAgeDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-1-15", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-1-15", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

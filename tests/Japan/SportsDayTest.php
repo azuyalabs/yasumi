@@ -45,7 +45,7 @@ class SportsDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-7-23", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-7-23", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -61,7 +61,7 @@ class SportsDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-7-24", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-7-24", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -71,15 +71,19 @@ class SportsDayTest extends JapanBaseTestCase implements HolidayTestCase
      *
      * @throws \Exception
      */
-    public function testSportsDayOnAfter2000(): void
+    public function testSportsDayAfter2000(): void
     {
         $year = $this->generateRandomYear(2001);
-        $this->assertHoliday(
-            self::REGION,
-            self::HOLIDAY,
-            $year,
-            new \DateTime("second monday of october $year", new \DateTimeZone(self::TIMEZONE))
-        );
+
+        // Some years the date has changed, so in this test we neeed to skip them.
+        if (! in_array($year, [2020, 2021])) {
+            $this->assertHoliday(
+                self::REGION,
+                self::HOLIDAY,
+                $year,
+                new \DateTime("second monday of october {$year}", new \DateTimeZone(self::TIMEZONE))
+            );
+        }
     }
 
     /**
@@ -95,7 +99,7 @@ class SportsDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-10-10", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-10-10", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -112,7 +116,7 @@ class SportsDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::SUBSTITUTE_PREFIX.self::HOLIDAY,
             $year,
-            new \DateTime("$year-10-11", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-10-11", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

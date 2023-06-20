@@ -44,7 +44,7 @@ class ShowaDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-4-29", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-4-29", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -60,7 +60,7 @@ class ShowaDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::SUBSTITUTE_PREFIX.self::HOLIDAY,
             $year,
-            new \DateTime("$year-4-30", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-4-30", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

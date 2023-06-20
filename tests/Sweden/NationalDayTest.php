@@ -44,7 +44,7 @@ class NationalDayTest extends SwedenBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-6-6", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-6-6", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

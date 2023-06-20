@@ -55,7 +55,7 @@ class Tasmania extends Australia
      */
     private function calculateEightHoursDay(): void
     {
-        $date = new \DateTime("second monday of march $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime("second monday of march {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
         $this->addHoliday(new Holiday('eightHourDay', ['en' => 'Eight Hour Day'], $date, $this->locale));
     }

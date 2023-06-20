@@ -27,13 +27,15 @@ use Yasumi\ProviderInterface;
  */
 class BetweenFilter extends AbstractFilter
 {
+    private const DATE_FORMAT = 'Y-m-d';
+
     /** start date of the time frame to check against. */
     private string $startDate;
 
     /** end date of the time frame to check against */
     private string $endDate;
 
-    /**indicates whether the start and end dates should be included in the comparison */
+    /** indicates whether the start and end dates should be included in the comparison */
     private bool $equal;
 
     /**
@@ -53,16 +55,16 @@ class BetweenFilter extends AbstractFilter
     ) {
         parent::__construct($iterator);
         $this->equal = $equal;
-        $this->startDate = $startDate->format('Y-m-d');
-        $this->endDate = $endDate->format('Y-m-d');
+        $this->startDate = $startDate->format(self::DATE_FORMAT);
+        $this->endDate = $endDate->format(self::DATE_FORMAT);
     }
 
     public function accept(): bool
     {
-        $holiday = $this->getInnerIterator()->current()->format('Y-m-d');
+        $holiday = $this->getInnerIterator()->current()->format(self::DATE_FORMAT);
 
-        if ($this->equal && $holiday >= $this->startDate && $holiday <= $this->endDate) {
-            return true;
+        if ($this->equal) {
+            return $holiday >= $this->startDate && $holiday <= $this->endDate;
         }
 
         return $holiday > $this->startDate && $holiday < $this->endDate;

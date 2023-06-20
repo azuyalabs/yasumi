@@ -76,7 +76,7 @@ class Ceuta extends Spain
             $this->addHoliday(new Holiday(
                 'ceutaDay',
                 ['es' => 'Día de Ceuta'],
-                new \DateTime("$this->year-9-2", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-9-2", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

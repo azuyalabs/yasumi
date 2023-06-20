@@ -44,7 +44,7 @@ class MayRevolutionTest extends ArgentinaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-05-25", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-05-25", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

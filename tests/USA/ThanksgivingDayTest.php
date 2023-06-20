@@ -45,7 +45,7 @@ class ThanksgivingDayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("fourth thursday of november $year", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("fourth thursday of november {$year}", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
