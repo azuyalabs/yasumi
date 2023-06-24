@@ -306,14 +306,11 @@ class Japan extends AbstractProvider
      */
     private function calculateComingOfAgeDay(): void
     {
-        $date = null;
-        if ($this->year >= 2000) {
-            $date = new \DateTime("second monday of january {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone));
-        } elseif ($this->year >= 1948) {
-            $date = new \DateTime("{$this->year}-1-15", DateTimeZoneFactory::getDateTimeZone($this->timezone));
-        }
+        if ($this->year >= 1948) {
+            $date = ($this->year >= 2000) ?
+                new \DateTime("second monday of january {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)) :
+                new \DateTime("{$this->year}-1-15", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
-        if ($date instanceof \DateTimeInterface) {
             $this->addHoliday(new Holiday(
                 'comingOfAgeDay',
                 ['en' => 'Coming of Age Day', 'ja' => '成人の日'],
