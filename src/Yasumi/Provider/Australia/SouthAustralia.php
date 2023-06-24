@@ -80,10 +80,16 @@ class SouthAustralia extends Australia
         string $locale,
         ?string $type = null
     ): Holiday {
+        $date = $this->calculateEaster($year, $timezone)->sub(new \DateInterval('P1D'));
+
+        if (! $date instanceof \DateTime) {
+            throw new \RuntimeException(sprintf('unable to perform a date subtraction for %s:%s', self::class, 'easterSaturday'));
+        }
+
         return new Holiday(
             'easterSaturday',
             ['en' => 'Easter Saturday'],
-            $this->calculateEaster($year, $timezone)->sub(new \DateInterval('P1D')),
+            $date,
             $locale,
             $type ?? Holiday::TYPE_OFFICIAL
         );
