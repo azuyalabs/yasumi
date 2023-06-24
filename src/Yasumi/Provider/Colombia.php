@@ -41,7 +41,7 @@ class Colombia extends AbstractProvider
         // Add custom Christian holidays
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->maundyThursday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
-        
+
         // Calculate other holidays
         $this->calculateEpiphany();
         $this->calculateIndependenceOfCartagena();
@@ -82,7 +82,7 @@ class Colombia extends AbstractProvider
             ));
         }
     }
-    
+
     /*
      * Epiphany.
      *
