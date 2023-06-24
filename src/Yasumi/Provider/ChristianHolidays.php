@@ -144,13 +144,14 @@ trait ChristianHolidays
         string $locale,
         string $type = Holiday::TYPE_OFFICIAL
     ): Holiday {
-        return new Holiday(
-            'goodFriday',
-            [],
-            $this->calculateEaster($year, $timezone)->sub(new \DateInterval('P2D')),
-            $locale,
-            $type
-        );
+        $holiday = 'goodFriday';
+        $date = $this->calculateEaster($year, $timezone)->sub(new \DateInterval('P2D'));
+
+        if (! $date instanceof \DateTime) {
+            throw new \RuntimeException(sprintf('unable to perform a date subtraction for %s:%s', self::class, $holiday));
+        }
+
+        return new Holiday($holiday, [], $date, $locale, $type);
     }
 
     /**
@@ -667,13 +668,14 @@ trait ChristianHolidays
         string $locale,
         string $type = Holiday::TYPE_OFFICIAL
     ): Holiday {
-        return new Holiday(
-            'ashWednesday',
-            [],
-            $this->calculateEaster($year, $timezone)->sub(new \DateInterval('P46D')),
-            $locale,
-            $type
-        );
+        $holiday = 'ashWednesday';
+        $date = $this->calculateEaster($year, $timezone)->sub(new \DateInterval('P46D'));
+
+        if (! $date instanceof \DateTime) {
+            throw new \RuntimeException(sprintf('unable to perform a date subtraction for %s:%s', self::class, $holiday));
+        }
+
+        return new Holiday($holiday, [], $date, $locale, $type);
     }
 
     /**
@@ -773,13 +775,14 @@ trait ChristianHolidays
         string $locale,
         string $type = Holiday::TYPE_OFFICIAL
     ): Holiday {
-        return new Holiday(
-            'maundyThursday',
-            [],
-            $this->calculateEaster($year, $timezone)->sub(new \DateInterval('P3D')),
-            $locale,
-            $type
-        );
+        $holiday = 'maundyThursday';
+        $date = $this->calculateEaster($year, $timezone)->sub(new \DateInterval('P3D'));
+
+        if (! $date instanceof \DateTime) {
+            throw new \RuntimeException(sprintf('unable to perform a date subtraction for %s:%s', self::class, $holiday));
+        }
+
+        return new Holiday($holiday, [], $date, $locale, $type);
     }
 
     /**

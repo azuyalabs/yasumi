@@ -112,12 +112,16 @@ class Greece extends AbstractProvider
      */
     private function calculateCleanMonday(): void
     {
-        $this->addHoliday(new Holiday(
-            'cleanMonday',
-            ['el' => 'Καθαρά Δευτέρα'],
-            $this->calculateEaster($this->year, $this->timezone)->sub(new \DateInterval('P48D')),
-            $this->locale
-        ));
+        $holiday = 'cleanMonday';
+        $date = $this->calculateEaster($this->year, $this->timezone)->sub(new \DateInterval('P48D'));
+
+        if (! $date instanceof \DateTime) {
+            throw new \RuntimeException(sprintf('unable to perform a date subtraction for %s:%s', self::class, $holiday));
+        }
+
+        $this->addHoliday(
+            new Holiday($holiday, ['el' => 'Καθαρά Δευτέρα'], $date, $this->locale)
+        );
     }
 
     /**
