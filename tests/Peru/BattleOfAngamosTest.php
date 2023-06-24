@@ -57,7 +57,7 @@ class BattleOfAngamosTest extends PeruBaseTestCase implements HolidayTestCase
     public function testTranslation(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $year, [self::LOCALE => 'Translation']);
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $year, [self::LOCALE => 'Combate de Angamos']);
     }
 
     /**

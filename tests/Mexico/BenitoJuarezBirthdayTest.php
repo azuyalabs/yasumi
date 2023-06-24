@@ -32,4 +32,26 @@ class BenitoJuarezBirthdayTest extends MexicoBaseTestCase implements HolidayTest
             new \DateTime("{$year}-03-21", new \DateTimeZone(self::TIMEZONE))
         );
     }
+
+    /**
+     * Tests the translated name of the holiday defined in this test.
+     *
+     * @throws \Exception
+     */
+    public function testTranslation(): void
+    {
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $year, [self::LOCALE => 'Natalicio de Benito Juárez']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     *
+     * @throws \Exception
+     */
+    public function testHolidayType(): void
+    {
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OFFICIAL);
+    }
 }

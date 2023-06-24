@@ -57,7 +57,7 @@ class ImmaculateConceptionTest extends ColombiaBaseTestCase implements HolidayTe
     public function testTranslation(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $year, [self::LOCALE => 'Translation']);
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $year, [self::LOCALE => 'Día de la Inmaculada Concepción']);
     }
 
     /**

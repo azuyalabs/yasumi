@@ -32,4 +32,26 @@ class DayOfTheDeadTest extends MexicoBaseTestCase implements HolidayTestCase
             new \DateTime("{$year}-11-02", new \DateTimeZone(self::TIMEZONE))
         );
     }
+
+    /**
+     * Tests the translated name of the holiday defined in this test.
+     *
+     * @throws \Exception
+     */
+    public function testTranslation(): void
+    {
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $year, [self::LOCALE => 'Día de los Muertos']);
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     *
+     * @throws \Exception
+     */
+    public function testHolidayType(): void
+    {
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OFFICIAL);
+    }
 }
