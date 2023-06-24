@@ -22,7 +22,7 @@ trait CommonHolidays
         return new Holiday(
             'newYearsDay',
             ['es' => 'Año Nuevo'],
-            new \DateTime("$year-01-01", new \DateTimeZone($timezone)),
+            new \DateTime("{$year}-01-01", new \DateTimeZone($timezone)),
             $locale
         );
     }
@@ -38,7 +38,7 @@ trait CommonHolidays
         return new Holiday(
             'independenceDay',
             ['es' => 'Día de la Independencia'],
-            new \DateTime("$year-07-20", new \DateTimeZone($timezone)),
+            new \DateTime("{$year}-07-20", new \DateTimeZone($timezone)),
             $locale
         );
     }
@@ -54,7 +54,7 @@ trait CommonHolidays
         return new Holiday(
             'christmasDay',
             ['es' => 'Navidad'],
-            new \DateTime("$year-12-25", new \DateTimeZone($timezone)),
+            new \DateTime("{$year}-12-25", new \DateTimeZone($timezone)),
             $locale
         );
     }

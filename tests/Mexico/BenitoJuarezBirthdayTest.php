@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Mexico;
 
-use Yasumi\Holiday;
 use Yasumi\Provider\Mexico;
 use Yasumi\tests\HolidayTestCase;
 
@@ -14,7 +13,7 @@ use Yasumi\tests\HolidayTestCase;
 class BenitoJuarezBirthdayTest extends MexicoBaseTestCase implements HolidayTestCase
 {
     /**
-     * The name of the holiday to be tested
+     * The name of the holiday to be tested.
      */
     public const HOLIDAY = 'benitoJuarezBirthday';
 
@@ -30,7 +29,7 @@ class BenitoJuarezBirthdayTest extends MexicoBaseTestCase implements HolidayTest
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-03-21", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-03-21", new \DateTimeZone(self::TIMEZONE))
         );
     }
 }

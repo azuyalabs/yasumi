@@ -30,7 +30,7 @@ class NewYearsDayTest extends ColombiaBaseTestCase implements HolidayTestCase
     public function testNewYearsDayAfter1800(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $year . '-01-01');
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $year.'-01-01');
     }
 
     /**

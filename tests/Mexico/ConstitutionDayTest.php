@@ -25,7 +25,7 @@ class ConstitutionDayTest extends MexicoBaseTestCase implements HolidayTestCase
     public function testConstitutionDayOnAfter1917(): void
     {
         $year = $this->generateRandomYear(1917);
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, new \DateTime("$year-02-05"));
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, new \DateTime("{$year}-02-05"));
     }
 
     /**

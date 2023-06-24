@@ -25,7 +25,7 @@ class NewYearsDayTest extends MexicoBaseTestCase implements HolidayTestCase
     public function testNewYearsDayOnAfter2006(): void
     {
         $year = $this->generateRandomYear(2006);
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, new \DateTime("$year-01-01"));
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, new \DateTime("{$year}-01-01"));
     }
 
     /**
@@ -36,7 +36,7 @@ class NewYearsDayTest extends MexicoBaseTestCase implements HolidayTestCase
     public function testNewYearsDayOnBefore2006(): void
     {
         $year = $this->generateRandomYear(2000, 2005);
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, new \DateTime("$year-01-01"));
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, new \DateTime("{$year}-01-01"));
     }
 
     /**
