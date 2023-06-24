@@ -18,6 +18,11 @@ class VirginOfGuadalupeTest extends MexicoBaseTestCase implements HolidayTestCas
     public const HOLIDAY = 'virginOfGuadalupe';
 
     /**
+     * The year in which the holiday was first established.
+     */
+    public const ESTABLISHMENT_YEAR = 1531;
+
+    /**
      * Tests Virgin of Guadalupe.
      *
      * @throws \Exception

@@ -18,6 +18,11 @@ class ConstitutionDayTest extends MexicoBaseTestCase implements HolidayTestCase
     public const HOLIDAY = 'constitutionDay';
 
     /**
+     * The year in which the holiday was first established.
+     */
+    public const ESTABLISHMENT_YEAR = 1917;
+
+    /**
      * Tests Constitution Day on or after 1917.
      *
      * @throws \Exception

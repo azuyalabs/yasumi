@@ -18,6 +18,11 @@ class DayOfTheDeadTest extends MexicoBaseTestCase implements HolidayTestCase
     public const HOLIDAY = 'dayOfTheDead';
 
     /**
+     * The year in which the holiday was first established.
+     */
+    public const ESTABLISHMENT_YEAR = 1519;
+
+    /**
      * Tests Day of the Dead.
      *
      * @throws \Exception

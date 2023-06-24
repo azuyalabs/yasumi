@@ -18,6 +18,11 @@ class BenitoJuarezBirthdayTest extends MexicoBaseTestCase implements HolidayTest
     public const HOLIDAY = 'benitoJuarezBirthday';
 
     /**
+     * The year in which the holiday was first established.
+     */
+    public const ESTABLISHMENT_YEAR = 1806;
+
+    /**
      * Tests Benito Juárez's Birthday.
      *
      * @throws \Exception
