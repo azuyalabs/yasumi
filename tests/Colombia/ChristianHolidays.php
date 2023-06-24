@@ -18,7 +18,7 @@ trait ChristianHolidays
      */
     private function easterMonday(int $year, string $timezone, string $locale, string $type = Holiday::TYPE_PUBLIC): Holiday
     {
-        $easter = $this->calculateEaster($year, $timezone);        
+        $easter = $this->calculateEaster($year, $timezone);
 
         return new Holiday(
             'easterMonday',
