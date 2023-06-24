@@ -13,6 +13,7 @@ use Yasumi\Holiday;
 class Colombia extends AbstractProvider
 {
     use CommonHolidays;
+    use ChristianHolidays;
 
     /**
      * Code to identify this Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
@@ -57,64 +58,6 @@ class Colombia extends AbstractProvider
             'https://en.wikipedia.org/wiki/Public_holidays_in_Colombia',
         ];
     }
-
-    /**
-     * Calculate Independence Day.
-     *
-     * @return \Yasumi\Holiday
-     *
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     * @throws \Exception
-     */
-    private function independenceDay(): \Yasumi\Holiday
-    {
-        return new \Yasumi\Holiday(
-            'independenceDay',
-            ['es' => 'Día de la Independencia'],
-            new \DateTime("{$this->year}-07-20", new \DateTimeZone($this->timezone)),
-            $this->locale
-        );
-    }
-
-    /**
-     * Calculate Christmas Day.
-     *
-     * @return \Yasumi\Holiday
-     *
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     * @throws \Exception
-     */
-    private function christmasDay(): \Yasumi\Holiday
-    {
-        return new \Yasumi\Holiday(
-            'christmasDay',
-            ['es' => 'Navidad'],
-            new \DateTime("{$this->year}-12-25", new \DateTimeZone($this->timezone)),
-            $this->locale
-        );
-    }
-
-    /**
-     * Calculate Easter Monday.
-     *
-     * @return \Yasumi\Holiday
-     *
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     * @throws \Exception
-     */
-    private function easterMonday(): \Yasumi\Holiday
-    {
-        $easter = $this->calculateEaster($this->year);
-        $easterMonday = $easter->add(new \DateInterval('P1D'));
-
-        return new \Yasumi\Holiday(
-            'easterMonday',
-            ['es' => 'Lunes de Pascua'],
-            $easterMonday,
-            $this->locale
-        );
-    }
-
 
     /*
      * Epiphany

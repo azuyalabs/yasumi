@@ -13,6 +13,7 @@ use Yasumi\Holiday;
 class Peru extends AbstractProvider
 {
     use CommonHolidays;
+    use ChristianHolidays;
 
     /**
      * Code to identify this Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
