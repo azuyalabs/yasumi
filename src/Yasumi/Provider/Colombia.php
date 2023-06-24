@@ -35,12 +35,12 @@ class Colombia extends AbstractProvider
         // Add common holidays
         $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->independenceDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
 
         // Calculate other holidays
         $this->calculateEpiphany();
+        $this->calculateIndependenceDay();
         $this->calculateLabourDay();
         $this->calculateAscensionDay();
         $this->calculateCorpusChristi();
@@ -57,6 +57,44 @@ class Colombia extends AbstractProvider
         return [
             'https://en.wikipedia.org/wiki/Public_holidays_in_Colombia',
         ];
+    }
+
+    /*
+     * Independence Day
+     *
+     * The Independence Day is a national holiday of Colombia celebrated on July 20th. The date commemorates the
+     * declaration of independence of Colombia from Spain on July 20th, 1810.
+     *
+     * @link https://en.wikipedia.org/wiki/Colombian_Declaration_of_Independence
+     */
+    private function calculateIndependenceDay(): void
+    {
+        if ($this->year >= 1810) {
+            $this->addHoliday(new Holiday(
+                'independenceDay',
+                ['es' => 'Día de la Independencia de Colombia'],
+                new \DateTime("{$this->year}-07-20", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                $this->locale
+                ));
+        }
+    }
+
+    /**
+     * Calculate Independence Day.
+     *
+     * @return \Yasumi\Holiday
+     *
+     * @throws \Yasumi\Exception\UnknownLocaleException
+     * @throws \Exception
+     */
+    private function independenceDay(): \Yasumi\Holiday
+    {
+        return new \Yasumi\Holiday(
+            'independenceDay',
+            ['es' => 'Día de la Independencia'],
+            new \DateTime("{$this->year}-09-16", new \DateTimeZone($this->timezone)),
+            $this->locale
+        );
     }
 
     /*

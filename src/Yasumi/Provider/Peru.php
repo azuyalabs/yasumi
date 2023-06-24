@@ -53,60 +53,6 @@ class Peru extends AbstractProvider
         ];
     }
 
-    /**
-     * Calculate Labor Day.
-     *
-     * @return \Yasumi\Holiday
-     *
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     * @throws \Exception
-     */
-    private function laborDay(): \Yasumi\Holiday
-    {
-        return new \Yasumi\Holiday(
-            'laborDay',
-            ['es' => 'Día del Trabajo'],
-            new \DateTime("{$this->year}-05-01", new \DateTimeZone($this->timezone)),
-            $this->locale
-        );
-    }
-
-    /**
-     * Calculate Independence Day.
-     *
-     * @return \Yasumi\Holiday
-     *
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     * @throws \Exception
-     */
-    private function independenceDay(): \Yasumi\Holiday
-    {
-        return new \Yasumi\Holiday(
-            'independenceDay',
-            ['es' => 'Día de la Independencia'],
-            new \DateTime("{$this->year}-07-28", new \DateTimeZone($this->timezone)),
-            $this->locale
-        );
-    }
-
-    /**
-     * Calculate Christmas Day.
-     *
-     * @return \Yasumi\Holiday
-     *
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     * @throws \Exception
-     */
-    private function christmasDay(): \Yasumi\Holiday
-    {
-        return new \Yasumi\Holiday(
-            'christmasDay',
-            ['es' => 'Navidad'],
-            new \DateTime("{$this->year}-12-25", new \DateTimeZone($this->timezone)),
-            $this->locale
-        );
-    }
-
     /*
      * Battle of Angamos
      *
