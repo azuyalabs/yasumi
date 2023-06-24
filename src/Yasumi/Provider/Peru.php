@@ -54,7 +54,7 @@ class Peru extends AbstractProvider
     }
 
     /**
-     * Labor Day
+     * Labor Day.
      *
      * Labor Day is a public holiday in Peru that celebrates the achievements of workers.
      * It is observed on May 1st.
@@ -72,7 +72,7 @@ class Peru extends AbstractProvider
     }
 
     /**
-     * Independence Day
+     * Independence Day.
      *
      * Independence Day is a national holiday in Peru that commemorates the anniversary of the country's independence from Spain.
      * It is observed on July 28th and 29th.
@@ -98,7 +98,7 @@ class Peru extends AbstractProvider
     }
 
     /*
-     * Battle of Angamos
+     * Battle of Angamos.
      *
      * The Battle of Angamos is a public holiday in Peru that commemorates the Battle of Angamos,
      * which was a key battle in the War of the Pacific.
@@ -117,7 +117,7 @@ class Peru extends AbstractProvider
     }
 
     /*
-     * All Saints' Day
+     * All Saints' Day.
      *
      * All Saints' Day is a Christian solemnity celebrated to honor all the saints, known and unknown.
      * It is observed on November 1st.
@@ -135,7 +135,7 @@ class Peru extends AbstractProvider
     }
 
     /*
-     * Immaculate Conception
+     * Immaculate Conception.
      *
      * The Feast of the Immaculate Conception celebrates the belief in the Immaculate Conception of the Virgin Mary.
      * It is observed on December 8th.
@@ -153,7 +153,7 @@ class Peru extends AbstractProvider
     }
 
     /*
-     * Day of the Combatants
+     * Day of the Combatants.
      *
      * The Day of the Combatants (Día del Combate) commemorates the Battle of Arica during the War of the Pacific.
      * It is observed on June 7th.
@@ -171,7 +171,7 @@ class Peru extends AbstractProvider
     }
 
     /*
-     * Teachers' Day
+     * Teachers' Day.
      *
      * Teachers' Day (Día del Maestro) is a day to honor and appreciate teachers in Peru.
      * It is observed on July 6th.

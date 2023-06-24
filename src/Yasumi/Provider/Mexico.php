@@ -54,7 +54,7 @@ class Mexico extends AbstractProvider
     }
 
     /**
-     * Constitution Day
+     * Constitution Day.
      *
      * Constitution Day is a national holiday in Mexico that commemorates the anniversary of the promulgation of the Mexican Constitution.
      * It is observed on February 5th.
@@ -74,7 +74,7 @@ class Mexico extends AbstractProvider
     }
 
     /**
-     * Labor Day
+     * Labor Day.
      *
      * Labor Day, also known as International Workers' Day, is a public holiday in Mexico that celebrates the achievements of workers.
      * It is observed on May 1st.
@@ -92,7 +92,7 @@ class Mexico extends AbstractProvider
     }
 
     /**
-     * Independence Day
+     * Independence Day.
      *
      * Independence Day is a national holiday in Mexico that commemorates the anniversary of the country's independence from Spain.
      * It is observed on September 16th.
@@ -112,7 +112,7 @@ class Mexico extends AbstractProvider
     }
 
     /**
-     * Revolution Day
+     * Revolution Day.
      *
      * Revolution Day is a national holiday in Mexico that commemorates the anniversary of the Mexican Revolution.
      * It is observed on November 20th.
@@ -132,7 +132,7 @@ class Mexico extends AbstractProvider
     }
 
     /*
-     * Benito Juárez's Birthday
+     * Benito Juárez's Birthday.
      *
      * Benito Juárez's Birthday (Natalicio de Benito Juárez) commemorates the birth of Benito Juárez,
      * a former President of Mexico. It is observed on March 21st.
@@ -150,7 +150,7 @@ class Mexico extends AbstractProvider
     }
 
     /*
-     * Day of the Dead
+     * Day of the Dead.
      *
      * The Day of the Dead (Día de los Muertos) is a Mexican holiday that honors and remembers
      * deceased loved ones. It is observed on November 2nd.
@@ -168,7 +168,7 @@ class Mexico extends AbstractProvider
     }
 
     /*
-     * Virgin of Guadalupe
+     * Virgin of Guadalupe.
      *
      * The Virgin of Guadalupe (Día de la Virgen de Guadalupe) is a celebration of the Virgin Mary,
      * who is the patron saint of Mexico. It is observed on December 12th.
