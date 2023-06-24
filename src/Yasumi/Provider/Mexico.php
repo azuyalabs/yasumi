@@ -34,14 +34,11 @@ class Mexico extends AbstractProvider
 
         // Add common holidays
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->constitutionDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->laborDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->independenceDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->revolutionDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
 
         // Additional holidays
         $this->calculateIndependenceDay();
+        $this->calculateRevolutionDay();
         $this->calculateConstitutionDay();
         $this->calculateLaborDay();
         $this->calculateBenitoJuarezBirthday();
@@ -62,7 +59,7 @@ class Mexico extends AbstractProvider
      * Constitution Day is a national holiday in Mexico that commemorates the anniversary of the promulgation of the Mexican Constitution.
      * It is observed on February 5th.
      *
-     * @link https://en.wikipedia.org/wiki/Constitution_of_Mexico
+     * @see https://en.wikipedia.org/wiki/Constitution_of_Mexico
      */
     private function calculateConstitutionDay(): void
     {
@@ -82,7 +79,7 @@ class Mexico extends AbstractProvider
      * Labor Day, also known as International Workers' Day, is a public holiday in Mexico that celebrates the achievements of workers.
      * It is observed on May 1st.
      *
-     * @link https://en.wikipedia.org/wiki/International_Workers%27_Day
+     * @see https://en.wikipedia.org/wiki/International_Workers%27_Day
      */
     private function calculateLaborDay(): void
     {
@@ -100,7 +97,7 @@ class Mexico extends AbstractProvider
      * Independence Day is a national holiday in Mexico that commemorates the anniversary of the country's independence from Spain.
      * It is observed on September 16th.
      *
-     * @link https://en.wikipedia.org/wiki/Grito_de_Dolores
+     * @see https://en.wikipedia.org/wiki/Grito_de_Dolores
      */
     private function calculateIndependenceDay(): void
     {
@@ -109,6 +106,26 @@ class Mexico extends AbstractProvider
                 'independenceDay',
                 ['es' => 'Día de la Independencia'],
                 new \DateTime("{$this->year}-09-16", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        }
+    }
+
+    /**
+     * Revolution Day
+     *
+     * Revolution Day is a national holiday in Mexico that commemorates the anniversary of the Mexican Revolution.
+     * It is observed on November 20th.
+     *
+     * @see https://en.wikipedia.org/wiki/Mexican_Revolution
+     */
+    private function calculateRevolutionDay(): void
+    {
+        if ($this->year >= 1910) {
+            $this->addHoliday(new Holiday(
+                'revolutionDay',
+                ['es' => 'Día de la Revolución'],
+                new \DateTime("{$this->year}-11-20", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

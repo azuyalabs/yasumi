@@ -37,13 +37,14 @@ class Colombia extends AbstractProvider
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
-        
+
         // Add custom Christian holidays
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->maundyThursday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
-
+        
         // Calculate other holidays
         $this->calculateEpiphany();
+        $this->calculateIndependenceOfCartagena();
         $this->calculateIndependenceDay();
         $this->calculateLabourDay();
         $this->calculateAscensionDay();
@@ -68,7 +69,7 @@ class Colombia extends AbstractProvider
      * The Independence Day is a national holiday of Colombia celebrated on July 20th. The date commemorates the
      * declaration of independence of Colombia from Spain on July 20th, 1810.
      *
-     * @link https://en.wikipedia.org/wiki/Colombian_Declaration_of_Independence
+     * @see https://en.wikipedia.org/wiki/Colombian_Declaration_of_Independence
      */
     private function calculateIndependenceDay(): void
     {
@@ -234,7 +235,7 @@ class Colombia extends AbstractProvider
     }
 
     /**
-     * Independence Day Cartagena
+     * Independence Day Cartagena.
      *
      * Independence Day of Cartagena is a national holiday that commemorates the independence of Colombia from Spain.
      * It is observed on November 11th.

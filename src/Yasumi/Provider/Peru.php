@@ -59,7 +59,7 @@ class Peru extends AbstractProvider
      * Labor Day is a public holiday in Peru that celebrates the achievements of workers.
      * It is observed on May 1st.
      *
-     * @link https://en.wikipedia.org/wiki/International_Workers%27_Day
+     * @see https://en.wikipedia.org/wiki/International_Workers%27_Day
      */
     private function calculateLaborDay(): void
     {
@@ -77,7 +77,7 @@ class Peru extends AbstractProvider
      * Independence Day is a national holiday in Peru that commemorates the anniversary of the country's independence from Spain.
      * It is observed on July 28th and 29th.
      *
-     * @link https://en.wikipedia.org/wiki/Peruvian_War_of_Independence
+     * @see https://en.wikipedia.org/wiki/Peruvian_War_of_Independence
      */
     private function calculateIndependenceDay(): void
     {
