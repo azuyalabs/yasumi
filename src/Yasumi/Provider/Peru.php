@@ -34,11 +34,11 @@ class Peru extends AbstractProvider
 
         // Add common holidays
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->laborDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->independenceDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
 
         // Additional holidays
+        $this->calculateIndependenceDay();
+        $this->calculateLaborDay();
         $this->calculateBattleOfAngamos();
         $this->calculateAllSaintsDay();
         $this->calculateImmaculateConception();
@@ -51,6 +51,50 @@ class Peru extends AbstractProvider
         return [
             'https://en.wikipedia.org/wiki/Public_holidays_in_Peru',
         ];
+    }
+
+    /**
+     * Labor Day
+     *
+     * Labor Day is a public holiday in Peru that celebrates the achievements of workers.
+     * It is observed on May 1st.
+     *
+     * @link https://en.wikipedia.org/wiki/International_Workers%27_Day
+     */
+    private function calculateLaborDay(): void
+    {
+        $this->addHoliday(new Holiday(
+            'laborDay',
+            ['es' => 'Día del Trabajo'],
+            new \DateTime("{$this->year}-05-01", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale
+        ));
+    }
+
+    /**
+     * Independence Day
+     *
+     * Independence Day is a national holiday in Peru that commemorates the anniversary of the country's independence from Spain.
+     * It is observed on July 28th and 29th.
+     *
+     * @link https://en.wikipedia.org/wiki/Peruvian_War_of_Independence
+     */
+    private function calculateIndependenceDay(): void
+    {
+        if ($this->year >= 1821) {
+            $this->addHoliday(new Holiday(
+                'independenceDay',
+                ['es' => 'Día de la Independencia'],
+                new \DateTime("{$this->year}-07-28", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                $this->locale
+            ));
+            $this->addHoliday(new Holiday(
+                'independenceDay',
+                ['es' => 'Celebración Día de la Independencia'],
+                new \DateTime("{$this->year}-07-29", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        }
     }
 
     /*

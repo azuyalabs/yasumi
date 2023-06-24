@@ -41,6 +41,9 @@ class Mexico extends AbstractProvider
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
 
         // Additional holidays
+        $this->calculateIndependenceDay();
+        $this->calculateConstitutionDay();
+        $this->calculateLaborDay();
         $this->calculateBenitoJuarezBirthday();
         $this->calculateDayOfTheDead();
         $this->calculateVirginOfGuadalupe();
@@ -51,6 +54,64 @@ class Mexico extends AbstractProvider
         return [
             'https://en.wikipedia.org/wiki/Public_holidays_in_Mexico',
         ];
+    }
+
+    /**
+     * Constitution Day
+     *
+     * Constitution Day is a national holiday in Mexico that commemorates the anniversary of the promulgation of the Mexican Constitution.
+     * It is observed on February 5th.
+     *
+     * @link https://en.wikipedia.org/wiki/Constitution_of_Mexico
+     */
+    private function calculateConstitutionDay(): void
+    {
+        if ($this->year >= 1917) {
+            $this->addHoliday(new Holiday(
+                'constitutionDay',
+                ['es' => 'Día de la Constitución'],
+                new \DateTime("{$this->year}-02-05", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        }
+    }
+
+    /**
+     * Labor Day
+     *
+     * Labor Day, also known as International Workers' Day, is a public holiday in Mexico that celebrates the achievements of workers.
+     * It is observed on May 1st.
+     *
+     * @link https://en.wikipedia.org/wiki/International_Workers%27_Day
+     */
+    private function calculateLaborDay(): void
+    {
+        $this->addHoliday(new Holiday(
+            'laborDay',
+            ['es' => 'Día del Trabajo'],
+            new \DateTime("{$this->year}-05-01", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale
+        ));
+    }
+
+    /**
+     * Independence Day
+     *
+     * Independence Day is a national holiday in Mexico that commemorates the anniversary of the country's independence from Spain.
+     * It is observed on September 16th.
+     *
+     * @link https://en.wikipedia.org/wiki/Grito_de_Dolores
+     */
+    private function calculateIndependenceDay(): void
+    {
+        if ($this->year >= 1810) {
+            $this->addHoliday(new Holiday(
+                'independenceDay',
+                ['es' => 'Día de la Independencia'],
+                new \DateTime("{$this->year}-09-16", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        }
     }
 
     /*

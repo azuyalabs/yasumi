@@ -37,6 +37,10 @@ class Colombia extends AbstractProvider
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
+        
+        // Add custom Christian holidays
+        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->maundyThursday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
 
         // Calculate other holidays
         $this->calculateEpiphany();
@@ -46,7 +50,6 @@ class Colombia extends AbstractProvider
         $this->calculateCorpusChristi();
         $this->calculateSacredHeart();
         $this->calculateBattleOfBoyaca();
-        $this->calculateIndependenceDayColombia();
         $this->calculateDiscoveryOfAmerica();
         $this->calculateAllSaintsDay();
         $this->calculateImmaculateConception();
@@ -75,28 +78,10 @@ class Colombia extends AbstractProvider
                 ['es' => 'Día de la Independencia de Colombia'],
                 new \DateTime("{$this->year}-07-20", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
-                ));
+            ));
         }
     }
-
-    /**
-     * Calculate Independence Day.
-     *
-     * @return \Yasumi\Holiday
-     *
-     * @throws \Yasumi\Exception\UnknownLocaleException
-     * @throws \Exception
-     */
-    private function independenceDay(): \Yasumi\Holiday
-    {
-        return new \Yasumi\Holiday(
-            'independenceDay',
-            ['es' => 'Día de la Independencia'],
-            new \DateTime("{$this->year}-09-16", new \DateTimeZone($this->timezone)),
-            $this->locale
-        );
-    }
-
+    
     /*
      * Epiphany
      *
@@ -213,24 +198,6 @@ class Colombia extends AbstractProvider
     }
 
     /*
-     * Independence Day Colombia
-     *
-     * Independence Day of Colombia is a national holiday that commemorates the independence of Colombia from Spain.
-     * It is observed on July 20th.
-     */
-    private function calculateIndependenceDayColombia(): void
-    {
-        if ($this->year >= 1810) {
-            $this->addHoliday(new Holiday(
-                'independenceDayColombia',
-                ['es' => 'Día de la Independencia de Colombia'],
-                new \DateTime("{$this->year}-07-20", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-                $this->locale
-            ));
-        }
-    }
-
-    /*
      * Discovery of America
      *
      * Discovery of America Day commemorates Christopher Columbus' arrival in the Americas on October 12, 1492.
@@ -264,6 +231,22 @@ class Colombia extends AbstractProvider
                 $this->locale
             ));
         }
+    }
+
+    /**
+     * Independence Day Cartagena
+     *
+     * Independence Day of Cartagena is a national holiday that commemorates the independence of Colombia from Spain.
+     * It is observed on November 11th.
+     */
+    private function calculateIndependenceOfCartagena(): void
+    {
+        $this->addHoliday(new Holiday(
+            'independenceOfCartagena',
+            ['es' => 'Independencia de Cartagena'],
+            new \DateTime("{$this->year}-11-11", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /*
