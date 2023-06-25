@@ -164,7 +164,7 @@ class SouthKoreaTest extends SouthKoreaBaseTestCase implements ProviderTestCase
         $holidayProvider = Yasumi::create(self::REGION, $this->year);
 
         $this->assertIsArray(SouthKorea::HOLIDAY_NAMES, 'Yasumi\Provider\SouthKorea::HOLIDAY_NAMES is not array');
-        foreach (SouthKorea::HOLIDAY_NAMES as $key => $names) {
+        foreach (array_keys(SouthKorea::HOLIDAY_NAMES) as $key) {
             $this->assertTrue(method_exists($holidayProvider, $key), sprintf('Generation method `%s` is not declared in provider `%s`', $key, self::REGION));
         }
     }
