@@ -74,7 +74,8 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements HolidayTestC
         self::assertEquals(Holiday::TYPE_OFFICIAL, $holidayOfficial->getType());
 
         $holidaySubstitution = $holidays->getHoliday('substituteHoliday:'.$holidayOfficial->getKey());
-        if (null === $expectedSubstitution) {
+
+        if (! $expectedSubstitution instanceof \DateTimeInterface) {
             // without substitution
             self::assertNull($holidaySubstitution);
         } else {

@@ -137,7 +137,7 @@ class Yasumi
         }
 
         // Load internal translations variable
-        if (null === self::$globalTranslations) {
+        if (! self::$globalTranslations instanceof Translations) {
             self::$globalTranslations = new Translations(self::$locales);
             self::$globalTranslations->loadTranslations(__DIR__.'/data/translations');
         }
@@ -237,9 +237,16 @@ class Yasumi
             $class = new \ReflectionClass(sprintf('Yasumi\Provider\%s', str_replace('/', '\\', $provider)));
 
             $key = 'ID';
-            if ($class->isSubclassOf(AbstractProvider::class) && $class->hasConstant($key)) {
-                $providers[strtoupper($class->getConstant($key))] = $provider;
+
+            if (! $class->isSubclassOf(AbstractProvider::class)) {
+                continue;
             }
+
+            if (! $class->hasConstant($key)) {
+                continue;
+            }
+
+            $providers[strtoupper($class->getConstant($key))] = $provider;
         }
 
         return $providers;
