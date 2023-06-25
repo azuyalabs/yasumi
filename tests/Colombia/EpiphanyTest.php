@@ -23,13 +23,15 @@ class EpiphanyTest extends ColombiaBaseTestCase implements HolidayTestCase
     public const ESTABLISHMENT_YEAR = 1753;
 
     /**
-     * Tests Epiphany on or after 1753.
+     * Tests the holiday defined in this test.
      *
-     * @throws \Exception
+     * @dataProvider HolidayDataProvider
+     *
+     * @param int       $year     the year for which the holiday defined in this test needs to be tested
+     * @param \DateTime $expected the expected date
      */
-    public function testEpiphanyOnOrAfter1753(int $year, \DateTimeInterface $expected): void
+    public function testHoliday(int $year, \DateTimeInterface $expected): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 

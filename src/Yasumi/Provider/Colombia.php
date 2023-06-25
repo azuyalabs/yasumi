@@ -39,11 +39,11 @@ class Colombia extends AbstractProvider
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
 
         // Add custom Christian holidays
+        $this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->maundyThursday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
 
         // Calculate other holidays
-        $this->calculateEpiphany();
         $this->calculateIndependenceOfCartagena();
         $this->calculateIndependenceDay();
         $this->calculateLabourDay();
@@ -78,24 +78,6 @@ class Colombia extends AbstractProvider
                 'independenceDay',
                 ['es' => 'Día de la Independencia de Colombia'],
                 new \DateTime("{$this->year}-07-20", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-                $this->locale
-            ));
-        }
-    }
-
-    /*
-     * Epiphany.
-     *
-     * The Epiphany, also known as Three Kings' Day, is a Christian feast day that celebrates the revelation of God in
-     * human form in the person of Jesus Christ. It is observed on January 6th.
-     */
-    private function calculateEpiphany(): void
-    {
-        if ($this->year >= 1753) {
-            $this->addHoliday(new Holiday(
-                'epiphany',
-                ['es' => 'Día de Reyes'],
-                new \DateTime("{$this->year}-01-06", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

@@ -30,7 +30,7 @@ class AscensionDayTest extends ColombiaBaseTestCase implements HolidayTestCase
     public function testAscensionDayOnOrAfter1753(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $easter = $this->calculateEaster($year, $this->timezone);
+        $easter = $this->calculateEaster($year, self::TIMEZONE);
         $expectedDate = $easter->add(new \DateInterval('P40D'));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expectedDate->format('Y-m-d'));
     }

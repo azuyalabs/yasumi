@@ -24,7 +24,7 @@ class ColombiaTest extends ColombiaBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1980);
+        $this->year = $this->generateRandomYear(2000);
     }
 
     /**

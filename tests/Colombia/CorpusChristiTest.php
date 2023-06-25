@@ -30,7 +30,7 @@ class CorpusChristiTest extends ColombiaBaseTestCase implements HolidayTestCase
     public function testCorpusChristiOnOrAfter1753(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $easter = $this->calculateEaster($year, $this->timezone);
+        $easter = $this->calculateEaster($year, self::TIMEZONE);
         $expectedDate = $easter->add(new \DateInterval('P60D'));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expectedDate->format('Y-m-d'));
     }
