@@ -27,10 +27,10 @@ class LabourDayTest extends ColombiaBaseTestCase implements HolidayTestCase
      *
      * @throws \Exception
      */
-    public function testLabourDayOnOrAfter1900(): void
+    public function testLabourDayOnOrAfter1900(int $year, \DateTimeInterface $expected): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $year.'-05-01');
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**

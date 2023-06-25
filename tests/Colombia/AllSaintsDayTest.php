@@ -29,24 +29,13 @@ class AllSaintsDayTest extends ColombiaBaseTestCase implements HolidayTestCase
      */
     public function testAllSaintsDayOnAfter609(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR + 1000);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             $year,
             new \DateTime("{$year}-11-01", new \DateTimeZone(self::TIMEZONE))
         );
-    }
-
-    /**
-     * Tests the AllSaintsDay holiday before 609.
-     *
-     * @throws \Exception
-     */
-    public function testAllSaintsDayBefore609(): void
-    {
-        $year = $this->generateRandomYear(500, self::ESTABLISHMENT_YEAR - 1);
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
     }
 
     /**

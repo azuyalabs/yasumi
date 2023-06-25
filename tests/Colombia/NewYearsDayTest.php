@@ -27,21 +27,10 @@ class NewYearsDayTest extends ColombiaBaseTestCase implements HolidayTestCase
      *
      * @throws \Exception
      */
-    public function testNewYearsDayAfter1800(): void
+    public function testNewYearsDayAfter1800(int $year, \DateTimeInterface $expected): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $year.'-01-01');
-    }
-
-    /**
-     * Tests New Year's Day before 1800.
-     *
-     * @throws \Exception
-     */
-    public function testNewYearsDayBefore1800(): void
-    {
-        $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1);
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**

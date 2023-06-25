@@ -27,10 +27,10 @@ class EpiphanyTest extends ColombiaBaseTestCase implements HolidayTestCase
      *
      * @throws \Exception
      */
-    public function testEpiphanyOnOrAfter1753(): void
+    public function testEpiphanyOnOrAfter1753(int $year, \DateTimeInterface $expected): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $year.'-01-06');
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
     /**
