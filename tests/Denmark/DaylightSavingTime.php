@@ -28,7 +28,7 @@ abstract class DaylightSavingTime extends DenmarkBaseTestCase implements Holiday
     public function __construct()
     {
         $observedYears = [1916, 1940];
-        $observedYears = array_merge($observedYears, range(1942, 1948));
+        $observedYears = [...$observedYears, ...range(1942, 1948)];
         $observedYears = array_merge($observedYears, range(1980, 2037)); // PHP caps future DST transitions
 
         $this->observedYears = $observedYears;

@@ -58,6 +58,7 @@ class Denmark extends AbstractProvider
         $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
         $this->calculateGreatPrayerDay();
 
+        // Add other holidays
         $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
         $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->newYearsEve($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
@@ -67,6 +68,7 @@ class Denmark extends AbstractProvider
         if ($summerTime instanceof Holiday) {
             $this->addHoliday($summerTime);
         }
+
         $winterTime = $this->winterTime($this->year, $this->timezone, $this->locale);
         if ($winterTime instanceof Holiday) {
             $this->addHoliday($winterTime);
@@ -99,14 +101,20 @@ class Denmark extends AbstractProvider
     {
         $easter = $this->calculateEaster($this->year, $this->timezone)->format('Y-m-d');
 
-        if ($this->year >= 1686 && $this->year < 2024) {
-            $this->addHoliday(new Holiday(
-                'greatPrayerDay',
-                ['da' => 'store bededag'],
-                new \DateTime("fourth friday {$easter}", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-                $this->locale
-            ));
+        if ($this->year < 1686) {
+            return;
         }
+
+        if ($this->year >= 2024) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday(
+            'greatPrayerDay',
+            ['da' => 'store bededag'],
+            new \DateTime("fourth friday {$easter}", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /**
