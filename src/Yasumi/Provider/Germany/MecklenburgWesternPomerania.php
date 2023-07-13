@@ -54,6 +54,14 @@ class MecklenburgWesternPomerania extends Germany
         $this->calculateReformationDay();
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://www.ndr.de/nachrichten/mecklenburg-vorpommern/Frauentag-in-MV-Landtag-beschliesst-neuen-Feiertag,frauentag370.html',
+            ...parent::getSources(),
+        ];
+    }
+
     /**
      * For the German state of Mecklenburg-Western Pomerania, Reformation Day was celebrated since 1517.
      * Note: In 2017 all German states will celebrate Reformation Day for its 500th anniversary.
