@@ -34,7 +34,7 @@ interface ProviderInterface extends \Countable
      * Returns a list of sources (i.e. references to websites, books, scientific papers, etc.) that are
      * used for determining the calculation logic of the providers' holidays.
      *
-     * @return list<string> a list of external sources (empty when no sources are defined)
+     * @return array<string> a list of external sources (empty when no sources are defined)
      */
     public function getSources(): array;
 

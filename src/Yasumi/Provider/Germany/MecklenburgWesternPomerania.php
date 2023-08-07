@@ -56,10 +56,10 @@ class MecklenburgWesternPomerania extends Germany
 
     public function getSources(): array
     {
-        return [
-            'https://www.ndr.de/nachrichten/mecklenburg-vorpommern/Frauentag-in-MV-Landtag-beschliesst-neuen-Feiertag,frauentag370.html',
-            ...parent::getSources(),
-        ];
+        return array_merge(
+            ['https://www.ndr.de/nachrichten/mecklenburg-vorpommern/Frauentag-in-MV-Landtag-beschliesst-neuen-Feiertag,frauentag370.html'],
+            parent::getSources(),
+        );
     }
 
     /**
