@@ -69,7 +69,7 @@ class CatholicChristmasDayTest extends UkraineBaseTestCase implements HolidayTes
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(2017),
-            [self::LOCALE => 'Католицький день Різдва']
+            [self::LOCALE => 'Різдво Христове (за григоріанським календарем)']
         );
     }
 

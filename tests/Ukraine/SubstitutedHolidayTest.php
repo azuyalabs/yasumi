@@ -33,16 +33,16 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements HolidayTestC
      */
     public function testSaturdaySubstitution(): void
     {
-        // 2020-05-09 victoryDay (День перемоги)
-        $year = 2020;
+        // 2021-05-08 victoryDay (День перемоги над нацизмом у Другій світовій війні)
+        $year = 2021;
         $holiday = 'victoryDay';
 
         $this->assertHolidayWithSubstitution(
             self::REGION,
             $holiday,
             $year,
-            new \DateTime("{$year}-05-09", new \DateTimeZone(self::TIMEZONE)),
-            new \DateTime("{$year}-05-11", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-05-08", new \DateTimeZone(self::TIMEZONE)),
+            new \DateTime("{$year}-05-10", new \DateTimeZone(self::TIMEZONE))
         );
 
         unset($year, $holiday);
@@ -154,6 +154,30 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements HolidayTestC
             $holiday,
             $year,
             new \DateTime("{$year}-12-25", new \DateTimeZone(self::TIMEZONE))
+        );
+
+        unset($year, $holiday);
+    }
+
+    /**
+     * Tests the substitution of Catholic Christmas Day (25. December) on a weekend.
+     * Special: no substitution at Catholic Christmas Day (25. December) on a weekend.
+     *
+     * @throws \Exception
+     * @throws \ReflectionException
+     */
+    public function testCatholicChristmasDaySubstitution(): void
+    {
+        // 2027-12-25 (Sunday) catholicChristmasDay (Католицький день Різдва)
+        $year = 2027;
+        $holiday = 'catholicChristmasDay';
+
+        $this->assertHolidayWithSubstitution(
+            self::REGION,
+            $holiday,
+            $year,
+            new \DateTime("{$year}-12-25", new \DateTimeZone(self::TIMEZONE)),
+            new \DateTime("{$year}-12-27", new \DateTimeZone(self::TIMEZONE))
         );
 
         unset($year, $holiday);

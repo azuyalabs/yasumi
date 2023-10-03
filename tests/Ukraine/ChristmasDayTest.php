@@ -63,7 +63,7 @@ class ChristmasDayTest extends UkraineBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'Різдво']
+            [self::LOCALE => 'Різдво Христове (за юліанським календарем)']
         );
     }
 
@@ -74,6 +74,7 @@ class ChristmasDayTest extends UkraineBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $year = $this->generateRandomYear();
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, ($year >= 1991 && $year <= 2023 ? Holiday::TYPE_OFFICIAL : Holiday::TYPE_OTHER));
     }
 }

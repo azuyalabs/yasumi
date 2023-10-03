@@ -51,7 +51,6 @@ class Ukraine extends AbstractProvider
         // Add common holidays
         // New Years Day will not be substituted to an monday if it's on a weekend!
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale), false);
-        $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->internationalWomensDay($this->year, $this->timezone, $this->locale));
 
         // Add Christian holidays
@@ -59,6 +58,7 @@ class Ukraine extends AbstractProvider
         $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale));
 
         // Add other holidays
+        $this->calculateInternationalWorkersDay();
         $this->calculateChristmasDay();
         $this->calculateSecondInternationalWorkersDay();
         $this->calculateVictoryDay();
@@ -66,6 +66,7 @@ class Ukraine extends AbstractProvider
         $this->calculateIndependenceDay();
         $this->calculateDefenderOfUkraineDay();
         $this->calculateCatholicChristmasDay();
+        $this->calculateStatehoodDay();
     }
 
     public function getSources(): array
@@ -79,9 +80,9 @@ class Ukraine extends AbstractProvider
     /**
      * Adds a holiday to the holidays providers (i.e. country/state) list of holidays.
      *
-     * @param Holiday $holiday       holiday instance (representing a holiday) to be added to the internal list
+     * @param Holiday $holiday holiday instance (representing a holiday) to be added to the internal list
      *                               of holidays of this country
-     * @param bool    $substitutable holidays on a weekend will be substituted to the next monday
+     * @param bool $substitutable holidays on a weekend will be substituted to the next monday
      *
      * @throws UnknownLocaleException
      * @throws \InvalidArgumentException
@@ -91,7 +92,7 @@ class Ukraine extends AbstractProvider
     {
         parent::addHoliday($holiday);
 
-        if (! $substitutable) {
+        if (!$substitutable) {
             return;
         }
 
@@ -123,16 +124,84 @@ class Ukraine extends AbstractProvider
     /**
      * Christmas Day.
      *
+     * @see https://en.wikipedia.org/wiki/Christmas_in_Ukraine
+     *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
      */
     private function calculateChristmasDay(): void
     {
+        if ($this->year >= 1991 && $this->year <= 2023) {
+            $substitutable = true;
+            $type = Holiday::TYPE_OFFICIAL;
+        } else {
+            $substitutable = false;
+            $type = Holiday::TYPE_OTHER;
+        }
+
         $this->addHoliday(new Holiday(
             'christmasDay',
-            [],
+            [
+                'uk' => 'Різдво Христове (за юліанським календарем)',
+                'ru' => 'Рождество Христово (по юлианскому календарю)'
+            ],
             new \DateTime("{$this->year}-01-07", new \DateTimeZone($this->timezone)),
+            $this->locale,
+            $type,
+        ), $substitutable);
+    }
+
+    /**
+     * International Workers' Day.
+     *
+     * @see https://en.wikipedia.org/wiki/International_Workers%27_Day#Ukraine
+     *
+     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws \Exception
+     */
+    private function calculateInternationalWorkersDay(): void
+    {
+        if ($this->year < 2017) {
+            $holidayTranslation = ['uk' => 'День міжнародної солідарності трудящих', 'ru' => 'День международной солидарности трудящихся'];
+        } else {
+            $holidayTranslation = ['uk' => 'День праці', 'ru' => 'День труда'];
+        }
+
+        $this->addHoliday(new Holiday(
+            'internationalWorkersDay',
+            $holidayTranslation,
+            new \DateTime("{$this->year}-05-01", new \DateTimeZone($this->timezone)),
+            $this->locale
+        ));
+    }
+
+    /**
+     * Statehood Day.
+     *
+     * @see https://en.wikipedia.org/wiki/Statehood_Day_(Ukraine)
+     *
+     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws \Exception
+     */
+    private function calculateStatehoodDay(): void
+    {
+        if ($this->year < 2021) {
+            return;
+        }
+
+        if ($this->year === 2022) {
+            $date = new \DateTime("{$this->year}-07-28", new \DateTimeZone($this->timezone));
+        } else {
+            $date = new \DateTime("{$this->year}-07-15", new \DateTimeZone($this->timezone));
+        }
+
+        $this->addHoliday(new Holiday(
+            'statehoodDay',
+            ['uk' => 'День Української Державності', 'ru' => 'День украинской государственности'],
+            $date,
             $this->locale
         ));
     }
@@ -176,12 +245,21 @@ class Ukraine extends AbstractProvider
      */
     private function calculateVictoryDay(): void
     {
-        $this->addHoliday(new Holiday(
-            'victoryDay',
-            ['uk' => 'День перемоги', 'ru' => 'День победы'],
-            new \DateTime("{$this->year}-05-09", new \DateTimeZone($this->timezone)),
-            $this->locale
-        ));
+        if ($this->year >= 2015) {
+            $this->addHoliday(new Holiday(
+                'victoryDay',
+                ['uk' => 'День перемоги над нацизмом у Другій світовій війні', 'ru' => 'День победы над нацизмом во Второй мировой войне'],
+                new \DateTime("{$this->year}-05-08", new \DateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        } else {
+            $this->addHoliday(new Holiday(
+                'victoryDay',
+                ['uk' => 'День перемоги', 'ru' => 'День победы'],
+                new \DateTime("{$this->year}-05-09", new \DateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        }
     }
 
     /**
@@ -243,6 +321,7 @@ class Ukraine extends AbstractProvider
      * is a state holiday in Ukraine celebrated annually on October 14.
      * Its first celebration was in 2015.
      * Starting from 2015, this day is considered a public holiday (this is thus a day off in Ukraine)
+     * Starting from 2023, this holiday is celebrated on October 1.
      *
      * @see https://en.wikipedia.org/wiki/Defender_of_Ukraine_Day
      *
@@ -256,10 +335,16 @@ class Ukraine extends AbstractProvider
             return;
         }
 
+        if ($this->year < 2023) {
+            $date = new \DateTime("{$this->year}-10-14", new \DateTimeZone($this->timezone));
+        } else {
+            $date = new \DateTime("{$this->year}-10-01", new \DateTimeZone($this->timezone));
+        }
+
         $this->addHoliday(new Holiday(
             'defenderOfUkraineDay',
             ['uk' => 'День захисника України', 'ru' => 'День Защитника Украины'],
-            new \DateTime("{$this->year}-10-14", new \DateTimeZone($this->timezone)),
+            $date,
             $this->locale
         ));
     }
@@ -280,17 +365,23 @@ class Ukraine extends AbstractProvider
             return;
         }
 
+        if ($this->year < 2024) {
+            $substitutable = false; // Catholic Christmas Day will not be substituted to an monday if it's on a weekend until 2023!
+        } else {
+            $substitutable = true;
+        }
+
         $this->addHoliday(
             new Holiday(
                 'catholicChristmasDay',
                 [
-                    'uk' => 'Католицький день Різдва',
-                    'ru' => 'Католическое рождество',
+                    'uk' => 'Різдво Христове (за григоріанським календарем)',
+                    'ru' => 'Рождество Христово (по григорианскому календарю)',
                 ],
                 new \DateTime("{$this->year}-12-25", new \DateTimeZone($this->timezone)),
                 $this->locale
             ),
-            false  // Catholic Christmas Day will not be substituted to an monday if it's on a weekend!
+            $substitutable
         );
     }
 }

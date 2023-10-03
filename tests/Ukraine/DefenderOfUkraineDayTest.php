@@ -32,12 +32,12 @@ class DefenderOfUkraineDayTest extends UkraineBaseTestCase implements HolidayTes
      */
     public function testHoliday(): void
     {
-        $year = 2020;
+        $year = $this->generateRandomYear(2015);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("{$year}-10-14", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime(($year >= 2015 && $year < 2023 ? "{$year}-10-14" : "{$year}-10-01"), new \DateTimeZone(self::TIMEZONE))
         );
     }
 

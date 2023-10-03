@@ -46,7 +46,6 @@ class UkraineTest extends UkraineBaseTestCase implements ProviderTestCase
         $holidays = [
             'newYearsDay',
             'internationalWorkersDay',
-            'christmasDay',
             'easter',
             'pentecost',
             'internationalWomensDay',
@@ -71,6 +70,14 @@ class UkraineTest extends UkraineBaseTestCase implements ProviderTestCase
 
         if ($this->year >= 2017) {
             $holidays[] = 'catholicChristmasDay';
+        }
+
+        if ($this->year >= 1991 && $this->year <= 2023) {
+            $holidays[] = 'christmasDay';
+        }
+
+        if ($this->year >= 2022) {
+            $holidays[] = 'statehoodDay';
         }
 
         $this->assertDefinedHolidays(
