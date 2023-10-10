@@ -17,6 +17,4 @@ namespace Yasumi\tests\Australia\Queensland\Brisbane;
 /**
  * Class for testing Boxing Day in Brisbane (Australia)..
  */
-class BoxingDayTest extends \Yasumi\tests\Australia\Queensland\BoxingDayTest
-{
-}
+class BoxingDayTest extends \Yasumi\tests\Australia\Queensland\BoxingDayTest {}

@@ -17,6 +17,4 @@ namespace Yasumi\tests\Australia\Victoria;
 /**
  * Class for testing National Day of Mourning in Victoria (Australia)..
  */
-class NationalDayOfMourningTest extends \Yasumi\tests\Australia\NationalDayOfMourningTest
-{
-}
+class NationalDayOfMourningTest extends \Yasumi\tests\Australia\NationalDayOfMourningTest {}

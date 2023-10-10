@@ -17,6 +17,4 @@ namespace Yasumi\tests\Australia\NorthernTerritory;
 /**
  * Class for testing ANZAC day in Northern Territory (Australia).
  */
-class AnzacDayTest extends \Yasumi\tests\Australia\AnzacDayTest
-{
-}
+class AnzacDayTest extends \Yasumi\tests\Australia\AnzacDayTest {}

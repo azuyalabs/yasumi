@@ -17,6 +17,4 @@ namespace Yasumi\tests\Australia\Tasmania\FlindersIsland;
 /**
  * Class for testing Easter Monday in Flinders Island (Australia)..
  */
-class EasterMondayTest extends \Yasumi\tests\Australia\Tasmania\EasterMondayTest
-{
-}
+class EasterMondayTest extends \Yasumi\tests\Australia\Tasmania\EasterMondayTest {}

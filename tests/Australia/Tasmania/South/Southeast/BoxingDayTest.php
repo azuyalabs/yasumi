@@ -17,6 +17,4 @@ namespace Yasumi\tests\Australia\Tasmania\South\Southeast;
 /**
  * Class for testing Boxing Day in southeastern Tasmania (Australia)..
  */
-class BoxingDayTest extends \Yasumi\tests\Australia\Tasmania\South\BoxingDayTest
-{
-}
+class BoxingDayTest extends \Yasumi\tests\Australia\Tasmania\South\BoxingDayTest {}

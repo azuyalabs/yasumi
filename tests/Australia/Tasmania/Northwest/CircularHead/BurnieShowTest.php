@@ -17,6 +17,4 @@ namespace Yasumi\tests\Australia\Tasmania\Northwest\CircularHead;
 /**
  * Class for testing Burnie Show Day in Circular Head (Australia)..
  */
-class BurnieShowTest extends \Yasumi\tests\Australia\Tasmania\Northwest\BurnieShowTest
-{
-}
+class BurnieShowTest extends \Yasumi\tests\Australia\Tasmania\Northwest\BurnieShowTest {}

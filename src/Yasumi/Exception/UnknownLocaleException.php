@@ -17,6 +17,4 @@ namespace Yasumi\Exception;
 /**
  * Class UnknownLocaleException.
  */
-class UnknownLocaleException extends \InvalidArgumentException implements Exception
-{
-}
+class UnknownLocaleException extends \InvalidArgumentException implements Exception {}

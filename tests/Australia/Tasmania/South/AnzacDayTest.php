@@ -17,6 +17,4 @@ namespace Yasumi\tests\Australia\Tasmania\South;
 /**
  * Class for testing ANZAC day in southern Tasmania (Australia)..
  */
-class AnzacDayTest extends \Yasumi\tests\Australia\Tasmania\AnzacDayTest
-{
-}
+class AnzacDayTest extends \Yasumi\tests\Australia\Tasmania\AnzacDayTest {}

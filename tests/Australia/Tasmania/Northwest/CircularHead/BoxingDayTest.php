@@ -17,6 +17,4 @@ namespace Yasumi\tests\Australia\Tasmania\Northwest\CircularHead;
 /**
  * Class for testing Boxing Day in Circular Head (Australia)..
  */
-class BoxingDayTest extends \Yasumi\tests\Australia\Tasmania\Northwest\BoxingDayTest
-{
-}
+class BoxingDayTest extends \Yasumi\tests\Australia\Tasmania\Northwest\BoxingDayTest {}

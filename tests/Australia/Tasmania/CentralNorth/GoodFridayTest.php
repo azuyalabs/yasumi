@@ -17,6 +17,4 @@ namespace Yasumi\tests\Australia\Tasmania\CentralNorth;
 /**
  * Class for testing Good Friday in central north Tasmania (Australia)..
  */
-class GoodFridayTest extends \Yasumi\tests\Australia\Tasmania\GoodFridayTest
-{
-}
+class GoodFridayTest extends \Yasumi\tests\Australia\Tasmania\GoodFridayTest {}

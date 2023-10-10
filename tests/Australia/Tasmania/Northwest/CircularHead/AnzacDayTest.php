@@ -17,6 +17,4 @@ namespace Yasumi\tests\Australia\Tasmania\Northwest\CircularHead;
 /**
  * Class for testing ANZAC day in Circular Head (Australia)..
  */
-class AnzacDayTest extends \Yasumi\tests\Australia\Tasmania\Northwest\AnzacDayTest
-{
-}
+class AnzacDayTest extends \Yasumi\tests\Australia\Tasmania\Northwest\AnzacDayTest {}

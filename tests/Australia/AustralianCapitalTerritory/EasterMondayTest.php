@@ -17,6 +17,4 @@ namespace Yasumi\tests\Australia\AustralianCapitalTerritory;
 /**
  * Class for testing Easter Monday in Australian Capital Territory (Australia)..
  */
-class EasterMondayTest extends \Yasumi\tests\Australia\EasterMondayTest
-{
-}
+class EasterMondayTest extends \Yasumi\tests\Australia\EasterMondayTest {}

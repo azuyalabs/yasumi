@@ -17,6 +17,4 @@ namespace Yasumi\tests\Australia\AustralianCapitalTerritory;
 /**
  * Class for testing Boxing Day in Australian Capital Territory (Australia)..
  */
-class BoxingDayTest extends \Yasumi\tests\Australia\BoxingDayTest
-{
-}
+class BoxingDayTest extends \Yasumi\tests\Australia\BoxingDayTest {}

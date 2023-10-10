@@ -17,6 +17,4 @@ namespace Yasumi\tests\Australia\Tasmania\South\Southeast;
 /**
  * Class for testing Australia day in southeastern Tasmania (Australia)..
  */
-class AustraliaDayTest extends \Yasumi\tests\Australia\Tasmania\South\AustraliaDayTest
-{
-}
+class AustraliaDayTest extends \Yasumi\tests\Australia\Tasmania\South\AustraliaDayTest {}

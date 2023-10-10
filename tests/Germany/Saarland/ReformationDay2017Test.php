@@ -17,6 +17,4 @@ namespace Yasumi\tests\Germany\Saarland;
 /**
  * Class for testing Reformation Day in Saarland (Germany).
  */
-class ReformationDay2017Test extends \Yasumi\tests\Germany\ReformationDay2017Test
-{
-}
+class ReformationDay2017Test extends \Yasumi\tests\Germany\ReformationDay2017Test {}

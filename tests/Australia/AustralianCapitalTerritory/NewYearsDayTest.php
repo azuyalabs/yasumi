@@ -17,6 +17,4 @@ namespace Yasumi\tests\Australia\AustralianCapitalTerritory;
 /**
  * Class for testing New Years Day in Australian Capital Territory (Australia)..
  */
-class NewYearsDayTest extends \Yasumi\tests\Australia\NewYearsDayTest
-{
-}
+class NewYearsDayTest extends \Yasumi\tests\Australia\NewYearsDayTest {}

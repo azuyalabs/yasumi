@@ -17,6 +17,4 @@ namespace Yasumi\tests\Australia\Tasmania\KingIsland;
 /**
  * Class for testing Eight Hour Day in King Island (Australia)..
  */
-class EightHourDayTest extends \Yasumi\tests\Australia\Tasmania\EightHourDayTest
-{
-}
+class EightHourDayTest extends \Yasumi\tests\Australia\Tasmania\EightHourDayTest {}

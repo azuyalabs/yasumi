@@ -17,6 +17,4 @@ namespace Yasumi\tests\Australia\WesternAustralia;
 /**
  * Class for testing National Day of Mourning in Western Australia (Australia)..
  */
-class NationalDayOfMourningTest extends \Yasumi\tests\Australia\NationalDayOfMourningTest
-{
-}
+class NationalDayOfMourningTest extends \Yasumi\tests\Australia\NationalDayOfMourningTest {}

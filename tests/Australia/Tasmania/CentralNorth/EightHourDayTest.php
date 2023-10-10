@@ -17,6 +17,4 @@ namespace Yasumi\tests\Australia\Tasmania\CentralNorth;
 /**
  * Class for testing Eight Hour Day in central north Tasmania (Australia)..
  */
-class EightHourDayTest extends \Yasumi\tests\Australia\Tasmania\EightHourDayTest
-{
-}
+class EightHourDayTest extends \Yasumi\tests\Australia\Tasmania\EightHourDayTest {}

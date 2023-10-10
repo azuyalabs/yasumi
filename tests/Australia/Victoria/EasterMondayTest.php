@@ -17,6 +17,4 @@ namespace Yasumi\tests\Australia\Victoria;
 /**
  * Class for testing Easter Monday in Victoria (Australia)..
  */
-class EasterMondayTest extends \Yasumi\tests\Australia\EasterMondayTest
-{
-}
+class EasterMondayTest extends \Yasumi\tests\Australia\EasterMondayTest {}

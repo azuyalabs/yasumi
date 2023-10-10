@@ -17,6 +17,4 @@ namespace Yasumi\tests\Australia\Queensland\Brisbane;
 /**
  * Class for testing Labour Day in Brisbane (Australia)..
  */
-class LabourDayTest extends \Yasumi\tests\Australia\Queensland\LabourDayTest
-{
-}
+class LabourDayTest extends \Yasumi\tests\Australia\Queensland\LabourDayTest {}

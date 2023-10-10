@@ -17,6 +17,4 @@ namespace Yasumi\tests\Australia\NewSouthWales;
 /**
  * Class for testing Christmas Day in New South Wales (Australia)..
  */
-class ChristmasDayTest extends \Yasumi\tests\Australia\ChristmasDayTest
-{
-}
+class ChristmasDayTest extends \Yasumi\tests\Australia\ChristmasDayTest {}

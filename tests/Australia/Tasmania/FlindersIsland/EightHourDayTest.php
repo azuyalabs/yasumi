@@ -17,6 +17,4 @@ namespace Yasumi\tests\Australia\Tasmania\FlindersIsland;
 /**
  * Class for testing Eight Hour Day in Flinders Island (Australia)..
  */
-class EightHourDayTest extends \Yasumi\tests\Australia\Tasmania\EightHourDayTest
-{
-}
+class EightHourDayTest extends \Yasumi\tests\Australia\Tasmania\EightHourDayTest {}

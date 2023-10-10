@@ -17,6 +17,4 @@ namespace Yasumi\Exception;
 /**
  * Interface Exception.
  */
-interface Exception
-{
-}
+interface Exception {}

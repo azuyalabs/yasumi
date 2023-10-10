@@ -20,6 +20,4 @@ namespace Yasumi\Exception;
  *
  * @author Quentin Neyrat <quentin.neyrat@gmail.com>
  */
-class InvalidYearException extends \InvalidArgumentException implements Exception
-{
-}
+class InvalidYearException extends \InvalidArgumentException implements Exception {}

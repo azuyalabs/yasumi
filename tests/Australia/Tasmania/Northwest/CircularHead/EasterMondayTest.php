@@ -17,6 +17,4 @@ namespace Yasumi\tests\Australia\Tasmania\Northwest\CircularHead;
 /**
  * Class for testing Easter Monday in Circular Head (Australia)..
  */
-class EasterMondayTest extends \Yasumi\tests\Australia\Tasmania\Northwest\EasterMondayTest
-{
-}
+class EasterMondayTest extends \Yasumi\tests\Australia\Tasmania\Northwest\EasterMondayTest {}

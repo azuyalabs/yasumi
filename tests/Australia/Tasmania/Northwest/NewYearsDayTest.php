@@ -17,6 +17,4 @@ namespace Yasumi\tests\Australia\Tasmania\Northwest;
 /**
  * Class for testing New Years Day in northwestern Tasmania (Australia)..
  */
-class NewYearsDayTest extends \Yasumi\tests\Australia\Tasmania\NewYearsDayTest
-{
-}
+class NewYearsDayTest extends \Yasumi\tests\Australia\Tasmania\NewYearsDayTest {}

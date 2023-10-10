@@ -17,6 +17,4 @@ namespace Yasumi\tests\Australia\Tasmania\Northwest;
 /**
  * Class for testing Easter Monday in northwestern Tasmania (Australia)..
  */
-class EasterMondayTest extends \Yasumi\tests\Australia\Tasmania\EasterMondayTest
-{
-}
+class EasterMondayTest extends \Yasumi\tests\Australia\Tasmania\EasterMondayTest {}

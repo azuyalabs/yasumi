@@ -17,6 +17,4 @@ namespace Yasumi\tests\Australia\Tasmania\FlindersIsland;
 /**
  * Class for testing New Years Day in Flinders Island (Australia)..
  */
-class NewYearsDayTest extends \Yasumi\tests\Australia\Tasmania\NewYearsDayTest
-{
-}
+class NewYearsDayTest extends \Yasumi\tests\Australia\Tasmania\NewYearsDayTest {}

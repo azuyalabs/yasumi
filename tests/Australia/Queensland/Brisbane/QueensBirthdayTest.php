@@ -17,6 +17,4 @@ namespace Yasumi\tests\Australia\Queensland\Brisbane;
 /**
  * Class for testing Queen's Birthday in Brisbane (Australia)..
  */
-class QueensBirthdayTest extends \Yasumi\tests\Australia\Queensland\QueensBirthdayTest
-{
-}
+class QueensBirthdayTest extends \Yasumi\tests\Australia\Queensland\QueensBirthdayTest {}
