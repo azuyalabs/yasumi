@@ -215,6 +215,7 @@ class Yasumi
             \FilesystemIterator::SKIP_DOTS
         ), \RecursiveIteratorIterator::SELF_FIRST);
 
+        /** @var \SplFileInfo $file */
         foreach ($filesIterator as $file) {
             if ($file->isDir()) {
                 continue;
