@@ -237,7 +237,7 @@ class Japan extends AbstractProvider
      */
     private function calculateEmperorsBirthday(): void
     {
-        $emperorsBirthday = false;
+        $emperorsBirthday = null;
         if ($this->year >= 2020) {
             $emperorsBirthday = "{$this->year}-2-23";
         } elseif ($this->year >= 1989 && $this->year < 2019) {
@@ -246,7 +246,7 @@ class Japan extends AbstractProvider
             $emperorsBirthday = "{$this->year}-4-29";
         }
 
-        if (\is_string($emperorsBirthday)) {
+        if (null !== $emperorsBirthday) {
             $this->addHoliday(new Holiday(
                 'emperorsBirthday',
                 ['en' => 'Emperors Birthday', 'ja' => '天皇誕生日'],
