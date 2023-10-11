@@ -70,17 +70,6 @@ class DenmarkTest extends DenmarkBaseTestCase implements ProviderTestCase
     }
 
     /**
-     * Tests if all seasonal holidays in Denmark are defined by the provider class.
-     *
-     * @throws \Exception
-     */
-    public function testSeasonalHolidays(): void
-    {
-        $year = $this->generateRandomYear(1980, 2037);
-        $this->assertDefinedHolidays(['summerTime', 'winterTime'], self::REGION, $year, Holiday::TYPE_SEASON);
-    }
-
-    /**
      * Tests if all bank holidays in Denmark are defined by the provider class.
      */
     public function testBankHolidays(): void
