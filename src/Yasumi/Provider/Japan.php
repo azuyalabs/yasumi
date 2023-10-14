@@ -307,7 +307,7 @@ class Japan extends AbstractProvider
     private function calculateComingOfAgeDay(): void
     {
         if ($this->year >= 1948) {
-            $date = ($this->year >= 2000) ?
+            $date = $this->year >= 2000 ?
                 new \DateTime("second monday of january {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)) :
                 new \DateTime("{$this->year}-1-15", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
