@@ -12,6 +12,8 @@ changes.
 
 ### Added
 
+- For the German state of Mecklenburg-Western Pomerania, International Womens Day is considered to be officially
+  observed. [#322](https://github.com/azuyalabs/yasumi/pull/311) ([ihmels](Yannick Ihmels))
 - Recently, the South Korean government announced a bill to apply alternative public holidays to Buddha's Day
   and Christmas Day, which we have reflected in our South Korea provider.
   [\#314](https://github.com/azuyalabs/yasumi/pull/314) ([barami](https://github.com/barami))
@@ -33,7 +35,7 @@ changes.
 
 - Summertime and Wintertime in the Netherlands and Denmark as these can't be reliably established for historical dates and
   aren't true holidays in the context of Yasumi. Refer to this [discussion](https://github.com/azuyalabs/yasumi/discussions/321)
-  for further details and rationale.
+  for further details and rationale. [#322](https://github.com/azuyalabs/yasumi/pull/322)
 
 ## [2.6.0] - 2023-04-27
 
