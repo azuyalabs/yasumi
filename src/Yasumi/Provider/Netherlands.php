@@ -75,8 +75,6 @@ class Netherlands extends AbstractProvider
 
         // Calculate other holidays
         $this->calculateCarnival();
-        $this->calculateWinterTime();
-        $this->calculateSummerTime();
         $this->calculateStNicholasDay();
         $this->calculateHalloween();
         $this->calculatePrincesDay();
@@ -126,40 +124,6 @@ class Netherlands extends AbstractProvider
                 $this->locale,
                 Holiday::TYPE_OBSERVANCE
             ));
-        }
-    }
-
-    /**
-     * Winter Time.
-     *
-     * The beginning of winter time. Winter time is also known as standard time.
-     *
-     * @throws \Exception
-     *
-     * @see \Yasumi\Provider\CommonHolidays::winterTime()
-     */
-    private function calculateWinterTime(): void
-    {
-        $winterTime = $this->winterTime($this->year, $this->timezone, $this->locale);
-        if ($winterTime instanceof Holiday) {
-            $this->addHoliday($winterTime);
-        }
-    }
-
-    /**
-     * Summer Time.
-     *
-     * The beginning of summer time. Summer time is also known as day lights saving time.
-     *
-     * @throws \Exception
-     *
-     * @see \Yasumi\Provider\CommonHolidays::summerTime()
-     */
-    private function calculateSummerTime(): void
-    {
-        $summerTime = $this->summerTime($this->year, $this->timezone, $this->locale);
-        if ($summerTime instanceof Holiday) {
-            $this->addHoliday($summerTime);
         }
     }
 

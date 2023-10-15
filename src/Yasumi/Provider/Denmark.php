@@ -63,16 +63,6 @@ class Denmark extends AbstractProvider
         $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->newYearsEve($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
         $this->calculateConstitutionDay();
-
-        $summerTime = $this->summerTime($this->year, $this->timezone, $this->locale);
-        if ($summerTime instanceof Holiday) {
-            $this->addHoliday($summerTime);
-        }
-
-        $winterTime = $this->winterTime($this->year, $this->timezone, $this->locale);
-        if ($winterTime instanceof Holiday) {
-            $this->addHoliday($winterTime);
-        }
     }
 
     public function getSources(): array

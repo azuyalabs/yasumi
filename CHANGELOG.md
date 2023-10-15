@@ -31,6 +31,10 @@ changes.
 
 ### Removed
 
+- Summertime and Wintertime in the Netherlands and Denmark as these can't be reliably established for historical dates and
+  aren't true holidays in the context of Yasumi. Refer to this [discussion](https://github.com/azuyalabs/yasumi/discussions/321)
+  for further details and rationale.
+
 ## [2.6.0] - 2023-04-27
 
 ### Added
