@@ -50,9 +50,14 @@ class Mexico extends AbstractProvider
         $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
 
         // Add Christian holidays
-        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
-        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->assumptionOfMary($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->immaculateConception($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
 
         // Mexican holidays
         $this->calculateConstitutionDay();
@@ -60,6 +65,7 @@ class Mexico extends AbstractProvider
         $this->calculateRevolutionDay();
         $this->calculateDiscoveryOfAmerica();
         $this->addIndependenceDay();
+        $this->calculateDayOfTheDeaths();
         $this->calculateChristmasEve();
         $this->calculateNewYearsEve();
     }
@@ -112,7 +118,7 @@ class Mexico extends AbstractProvider
                     'en' => 'Constitution Day',
                     'es' => 'Día de la Constitución',
                 ],
-                new \DateTime("first monday of february {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale)
+                new \DateTime("first monday of february {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OBSERVANCE)
             );
         }
     }
@@ -124,14 +130,25 @@ class Mexico extends AbstractProvider
     */
     private function calculateBenitoJuarezBirthday(): void
     {
-        if ($this->year >= 1806) {
+        if ($this->year >= 1806 && $this->year < 2010) {
             $this->addHoliday(new Holiday(
                 'benitoJuarezBirthday',
                 [
                     'en' => 'Benito Juárez’s birthday',
                     'es' => 'Natalicio de Benito Juárez',
                 ],
-                new \DateTime("third monday of march {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale)
+                new \DateTime("{$this->year}-03-21", new \DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OBSERVANCE)
+            );
+        }
+
+        if ($this->year >= 2010) {
+            $this->addHoliday(new Holiday(
+                'benitoJuarezBirthday',
+                [
+                    'en' => 'Benito Juárez’s birthday',
+                    'es' => 'Natalicio de Benito Juárez',
+                ],
+                new \DateTime("third monday of march {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OBSERVANCE)
             );
         }
     }
@@ -150,7 +167,7 @@ class Mexico extends AbstractProvider
                     'en' => 'Revolution Day',
                     'es' => 'Día de la Revolución',
                 ],
-                new \DateTime("third monday of november {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale)
+                new \DateTime("third monday of november {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OBSERVANCE)
             );
         }
     }
@@ -169,7 +186,7 @@ class Mexico extends AbstractProvider
                     'en' => 'Discovery of America',
                     'es' => 'Día de la Raza',
                 ],
-                new \DateTime("second monday of october {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale)
+                new \DateTime("second monday of october {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OBSERVANCE)
             );
         }
     }
@@ -206,6 +223,24 @@ class Mexico extends AbstractProvider
                 'es' => 'Nochevieja',
             ],
             new \DateTime("{$this->year}-12-31", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale)
+        );
+    }
+
+    /**
+     * Day of the Deaths.
+     *
+     * Day of the Deaths is a Mexican holiday celebrated throughout Mexico, in particular the Central and South regions,
+     * and by people of Mexican heritage elsewhere.
+     */
+    private function calculateDayOfTheDeaths(): void
+    {
+        $this->addHoliday(new Holiday(
+            'dayOfTheDeaths',
+            [
+                'en' => 'Day of the Deaths',
+                'es' => 'Día de los Muertos',
+            ],
+            new \DateTime("{$this->year}-11-02", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OTHER)
         );
     }
 }
