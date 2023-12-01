@@ -128,7 +128,7 @@ class Mexico extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'benitoJuarezBirthday',
                 [
-                    'en' => 'Benito Juárez\'s birthday',
+                    'en' => 'Benito Juárez’s birthday',
                     'es' => 'Natalicio de Benito Juárez',
                 ],
                 new \DateTime("third monday of march {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale)
@@ -202,7 +202,7 @@ class Mexico extends AbstractProvider
         $this->addHoliday(new Holiday(
             'newYearsEve',
             [
-                'en' => 'New Year\'s Eve',
+                'en' => 'New Year’s Eve',
                 'es' => 'Nochevieja',
             ],
             new \DateTime("{$this->year}-12-31", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale)
