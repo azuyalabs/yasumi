@@ -208,5 +208,4 @@ class Mexico extends AbstractProvider
             new \DateTime("{$this->year}-12-31", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale)
         );
     }
-
 }
