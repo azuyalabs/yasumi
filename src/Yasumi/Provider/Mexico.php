@@ -33,7 +33,7 @@ class Mexico extends AbstractProvider
     public const ID = 'MX';
 
     /**
-     * Initialize holidays for the USA.
+     * Initialize holidays for Mexico.
      *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
@@ -41,7 +41,7 @@ class Mexico extends AbstractProvider
      */
     public function initialize(): void
     {
-        $this->timezone = 'America/New_York';
+        $this->timezone = 'America/Mexico_City';
     }
 
     /**
