@@ -32,7 +32,7 @@ class Mexico extends AbstractProvider
      */
     public const ID = 'MX';
 
-        /**
+    /**
      * Initialize holidays for the USA.
      *
      * @throws \InvalidArgumentException
