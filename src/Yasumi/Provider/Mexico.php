@@ -43,4 +43,16 @@ class Mexico extends AbstractProvider
     {
         $this->timezone = 'America/New_York';
     }
+    
+    /**
+     * The source of the holidays.
+     *
+     * @return string[] The source URL
+     */
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Mexico',
+        ];
+    }
 }
