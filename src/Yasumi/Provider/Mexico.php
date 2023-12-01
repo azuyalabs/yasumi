@@ -43,7 +43,7 @@ class Mexico extends AbstractProvider
     {
         $this->timezone = 'America/New_York';
     }
-    
+
     /**
      * The source of the holidays.
      *
