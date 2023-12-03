@@ -15,7 +15,7 @@ changes.
 - From 2024, Romania will officially include the holidays of St. Johns ('Sfântul Ioan Botezătorul') and Epiphany ('Bobotează').
   [#310](https://github.com/azuyalabs/yasumi/pull/310) ([AngelinCalu](https://github.com/AngelinCalu) )
 - For the German state of Mecklenburg-Western Pomerania, International Womens Day is considered to be officially
-  observed. [#311](https://github.com/azuyalabs/yasumi/pull/311) ([ihmels](Yannick Ihmels))
+  observed. [#311](https://github.com/azuyalabs/yasumi/pull/311) ([ihmels](https://github.com/ihmels))
 - Recently, the South Korean government announced a bill to apply alternative public holidays to Buddha's Day
   and Christmas Day, which we have reflected in our South Korea provider.
   [\#314](https://github.com/azuyalabs/yasumi/pull/314) ([barami](https://github.com/barami))
