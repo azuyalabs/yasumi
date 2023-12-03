@@ -41,6 +41,13 @@ class EasterMondayTest extends FranceBaseTestCase implements HolidayTestCase
             $year,
             new \DateTime("{$year}-3-28", new \DateTimeZone(self::TIMEZONE))
         );
+        $year = 2025;
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new \DateTime("{$year}-4-21", new \DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
