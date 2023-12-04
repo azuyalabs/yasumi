@@ -76,6 +76,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements HolidayT
                 $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
             }
         } catch (\Exception $e) {
+            throw new \RuntimeException($e->getMessage(), $e->getCode(), $e);
         }
     }
 
@@ -91,6 +92,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements HolidayT
                 );
             }
         } catch (\Exception $e) {
+            throw new \RuntimeException($e->getMessage(), $e->getCode(), $e);
         }
     }
 
@@ -106,6 +108,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements HolidayT
                 );
             }
         } catch (\Exception $e) {
+            throw new \RuntimeException($e->getMessage(), $e->getCode(), $e);
         }
     }
 
