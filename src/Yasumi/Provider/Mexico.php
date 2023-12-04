@@ -140,7 +140,7 @@ class Mexico extends AbstractProvider
                     'en' => 'Benito Juárez’s birthday',
                     'es' => 'Natalicio de Benito Juárez',
                 ],
-                new \DateTime("{$this->year}-03-21", new \DateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OBSERVANCE)
+                new \DateTime("{$this->year}-03-21", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OBSERVANCE)
             );
         }
 
