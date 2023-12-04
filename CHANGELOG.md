@@ -12,6 +12,7 @@ changes.
 
 ### Added
 
+- Mexico Provider [\#329](https://github.com/azuyalabs/yasumi/pull/329) ([Luis Gonzalez](https://github.com/gogl92)).
 - From 2024, Romania will officially include the holidays of St. Johns ('Sfântul Ioan Botezătorul') and Epiphany ('Bobotează').
   [#310](https://github.com/azuyalabs/yasumi/pull/310) ([AngelinCalu](https://github.com/AngelinCalu) )
 - For the German state of Mecklenburg-Western Pomerania, International Womens Day is considered to be officially
