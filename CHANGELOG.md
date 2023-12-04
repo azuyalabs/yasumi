@@ -12,11 +12,14 @@ changes.
 
 ### Added
 
+- From 2024, Romania will officially include the holidays of St. Johns ('Sfântul Ioan Botezătorul') and Epiphany ('Bobotează').
+  [#310](https://github.com/azuyalabs/yasumi/pull/310) ([AngelinCalu](https://github.com/AngelinCalu) )
 - For the German state of Mecklenburg-Western Pomerania, International Womens Day is considered to be officially
-  observed. [#322](https://github.com/azuyalabs/yasumi/pull/311) ([ihmels](Yannick Ihmels))
+  observed. [#311](https://github.com/azuyalabs/yasumi/pull/311) ([ihmels](https://github.com/ihmels))
 - Recently, the South Korean government announced a bill to apply alternative public holidays to Buddha's Day
   and Christmas Day, which we have reflected in our South Korea provider.
   [\#314](https://github.com/azuyalabs/yasumi/pull/314) ([barami](https://github.com/barami))
+- Include PHP 8.3 in the unit test CI pipeline. [#328](https://github.com/azuyalabs/yasumi/pull/328) ([fezfez](https://github.com/fezfez))
 
 ### Changed
 
@@ -27,15 +30,21 @@ changes.
 
 ### Fixed
 
-- Fixed a bug in the South Korea provider where some of the past dates for Buddha's Day, Chuseok, Armed Forces Day
-  and United Nations Day were incorrect during holidays, and modified the unit tests accordingly.
-  [\#314](https://github.com/azuyalabs/yasumi/pull/314) ([barami](https://github.com/barami))
+- In the South Korea provider some of the past dates for Buddha's Day, Chuseok, Armed Forces Day
+  and United Nations Day were incorrect during holidays. [\#314](https://github.com/azuyalabs/yasumi/pull/314) ([barami](https://github.com/barami))
+- The holiday `twoDaysLaterNewYearsDay` has been removed from 1990, however the unit test for the name and holiday type
+  allowed the possible testing range to include the year 1990.
+- The Easter Date calculation resulted in wrong values for the year 2025, due to an incorrect rounding for the lunar
+  correction when the calendar extension is not used. [#326](https://github.com/azuyalabs/yasumi/pull/326) ([rChassat](https://github.com/rChassat))
 
 ### Removed
 
+- Denmark will abolish Great Prayer Day ('store bededag') from 2024. [#308](https://github.com/azuyalabs/yasumi/pull/308) ([c960657](https://github.com/c960657))
 - Summertime and Wintertime in the Netherlands and Denmark as these can't be reliably established for historical dates and
   aren't true holidays in the context of Yasumi. Refer to this [discussion](https://github.com/azuyalabs/yasumi/discussions/321)
   for further details and rationale. [#322](https://github.com/azuyalabs/yasumi/pull/322)
+- The PHP [Infection](https://infection.github.io/) test package as it was hardly used.
+- Unit tests from a Git export to reduce the export size. [#323](https://github.com/azuyalabs/yasumi/pull/323) ([fezfez](https://github.com/fezfez))
 
 ## [2.6.0] - 2023-04-27
 

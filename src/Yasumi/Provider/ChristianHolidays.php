@@ -358,7 +358,7 @@ trait ChristianHolidays
                 }
 
                 $solar = (int) (($year - 1600) / 100) - (int) (($year - 1600) / 400); // The solar correction
-                $lunar = (int) (($year - 1400) / 100 * 8 / 25); // The lunar correction
+                $lunar = (int) (((int) (($year - 1400) / 100) * 8) / 25); // The lunar correction
 
                 $pfm = (3 - (11 * $golden) + $solar - $lunar) % 30; // Uncorrected date of the Paschal full moon
             }
