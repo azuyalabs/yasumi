@@ -11,8 +11,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        operating-system: [ ubuntu-latest, windows-latest ]
-        php-versions: [ '8.0', '8.1', '8.2']
+        operating-system: [ubuntu-latest, windows-latest]
+        php-versions: ["8.0", "8.1", "8.2", "8.3"]
 
     steps:
       - name: Set git to use LF
