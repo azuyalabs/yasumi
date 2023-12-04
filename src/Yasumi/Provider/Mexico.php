@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-/*
+/**
+ * Provider for all holidays in Mexico.
+ *
  * This file is part of the Yasumi package.
  *
  * Copyright (c) 2015 - 2023 AzuyaLabs
@@ -48,6 +50,7 @@ class Mexico extends AbstractProvider
         // Add common holidays
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
 
         // Add Christian holidays
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
@@ -57,7 +60,6 @@ class Mexico extends AbstractProvider
         $this->addHoliday($this->assumptionOfMary($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->immaculateConception($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
 
         // Mexican holidays
         $this->calculateConstitutionDay();
@@ -65,9 +67,10 @@ class Mexico extends AbstractProvider
         $this->calculateRevolutionDay();
         $this->calculateDiscoveryOfAmerica();
         $this->addIndependenceDay();
-        $this->calculateDayOfTheDeaths();
+        $this->calculateDayOfTheDead();
         $this->calculateChristmasEve();
         $this->calculateNewYearsEve();
+        $this->calculateVirginOfGuadalupe();
     }
 
     /**
@@ -232,15 +235,35 @@ class Mexico extends AbstractProvider
      * Day of the Deaths is a Mexican holiday celebrated throughout Mexico, in particular the Central and South regions,
      * and by people of Mexican heritage elsewhere.
      */
-    private function calculateDayOfTheDeaths(): void
+    private function calculateDayOfTheDead(): void
     {
-        $this->addHoliday(new Holiday(
-            'dayOfTheDeaths',
-            [
-                'en' => 'Day of the Deaths',
-                'es' => 'Día de los Muertos',
-            ],
-            new \DateTime("{$this->year}-11-02", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OTHER)
-        );
+        if ($this->year >= 1800) {
+            $this->addHoliday(new Holiday(
+                'dayOfTheDeaths',
+                [
+                    'en' => 'Day of the Deaths',
+                    'es' => 'Día de los Muertos',
+                ],
+                new \DateTime("{$this->year}-11-02", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OTHER)
+            );
+        }
+    }
+
+    /*
+     * Virgin of Guadalupe.
+     *
+     * The Virgin of Guadalupe (Día de la Virgen de Guadalupe) is a celebration of the Virgin Mary,
+     * who is the patron saint of Mexico. It is observed on December 12th.
+     */
+    private function calculateVirginOfGuadalupe(): void
+    {
+        if ($this->year >= 1531) {
+            $this->addHoliday(new Holiday(
+                'virginOfGuadalupe',
+                ['es' => 'Día de la Virgen de Guadalupe'],
+                new \DateTime("{$this->year}-12-12", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        }
     }
 }
