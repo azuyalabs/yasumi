@@ -35,9 +35,6 @@ class BetweenFilter extends AbstractFilter
     /** end date of the time frame to check against */
     private string $endDate;
 
-    /** indicates whether the start and end dates should be included in the comparison */
-    private bool $equal;
-
     /**
      * Construct the Between FilterIterator Object.
      *
@@ -51,10 +48,9 @@ class BetweenFilter extends AbstractFilter
         \Iterator $iterator,
         \DateTimeInterface $startDate,
         \DateTimeInterface $endDate,
-        bool $equal = true
+        private bool $equal = true
     ) {
         parent::__construct($iterator);
-        $this->equal = $equal;
         $this->startDate = $startDate->format(self::DATE_FORMAT);
         $this->endDate = $endDate->format(self::DATE_FORMAT);
     }

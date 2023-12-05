@@ -83,9 +83,6 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
      */
     private array $holidays = [];
 
-    /** global translations */
-    private ?TranslationsInterface $globalTranslations;
-
     /**
      * Creates a new holiday provider (i.e. country/state).
      *
@@ -97,13 +94,12 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
     public function __construct(
         int $year,
         ?string $locale = null,
-        ?TranslationsInterface $globalTranslations = null
+        private ?TranslationsInterface $globalTranslations = null
     ) {
         $this->clearHolidays();
 
         $this->year = $year ?: (int) date('Y');
         $this->locale = $locale ?? 'en_US';
-        $this->globalTranslations = $globalTranslations;
 
         $this->initialize();
     }
