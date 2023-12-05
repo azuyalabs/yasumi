@@ -309,11 +309,8 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
      */
     private function anotherTime(int $year, string $key): ?Holiday
     {
-        $this->isHolidayKeyNotEmpty($key); // Validate if key is not empty
+        $this->isHolidayKeyNotEmpty($key);
 
-        // Get calling class name
-        $hReflectionClass = new \ReflectionClass(\get_class($this));
-
-        return Yasumi::create($hReflectionClass->getName(), $year, $this->locale)->getHoliday($key);
+        return Yasumi::create(static::class, $year, $this->locale)->getHoliday($key);
     }
 }
