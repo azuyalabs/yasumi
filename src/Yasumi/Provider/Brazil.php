@@ -75,7 +75,7 @@ class Brazil extends AbstractProvider
      *
      * The Brazilian Proclamation of Republic was an act relevant military politic it happened on 15 November 1889
      * that initiated the build federative presidential of govern in Brazil, downed the monarchy constitutional
-     * parlamentary of Brazil's Empire.
+     * parliamentary of Brazil's Empire.
      *
      * @link https://en.wikipedia.org/wiki/Proclamation_of_the_Republic_(Brazil)
      */

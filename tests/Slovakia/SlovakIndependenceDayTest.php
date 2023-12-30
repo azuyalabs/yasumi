@@ -24,7 +24,7 @@ use Yasumi\tests\HolidayTestCase;
  * @author  Andrej Rypak (dakujem) <xrypak@gmail.com>
  * @author Jan Langer <mail@janlanger.cz>
  */
-class SlovakIndependeceDayTest extends SlovakiaBaseTestCase implements HolidayTestCase
+class SlovakIndependenceDayTest extends SlovakiaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.

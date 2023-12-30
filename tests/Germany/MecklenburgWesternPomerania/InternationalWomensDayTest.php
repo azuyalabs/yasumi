@@ -18,7 +18,7 @@ use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
 /**
- * Class containing tests for International Womens Day in Mecklenburg–Western Pomerania, Germany.
+ * Class containing tests for International Women's Day in Mecklenburg–Western Pomerania, Germany.
  */
 class InternationalWomensDayTest extends MecklenburgWesternPomeraniaBaseTestCase implements HolidayTestCase
 {

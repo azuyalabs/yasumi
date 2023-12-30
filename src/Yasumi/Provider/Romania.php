@@ -63,7 +63,7 @@ class Romania extends AbstractProvider
             $this->calculateStJohnsDay();
         }
 
-        // Pentecost (50th and 51st day after Easter) and Asumption of Mary (15.08) were added as legal holidays acc. to the Law '202/2008'
+        // Pentecost (50th and 51st day after Easter) and Assumption of Mary (15.08) were added as legal holidays acc. to the Law '202/2008'
         if ($this->year >= 2008) {
             $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale));
             $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale));

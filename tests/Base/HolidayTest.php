@@ -231,7 +231,7 @@ class HolidayTest extends TestCase
     }
 
     /** @throws \Exception */
-    public function testHolidayGetNameWithOverridenGlobalTranslations(): void
+    public function testHolidayGetNameWithOverriddenGlobalTranslations(): void
     {
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
 

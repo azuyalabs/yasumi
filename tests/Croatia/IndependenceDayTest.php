@@ -18,7 +18,7 @@ use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
 /**
- * Class containing tests for Independece Day in Croatia.
+ * Class containing tests for Independence Day in Croatia.
  */
 class IndependenceDayTest extends CroatiaBaseTestCase implements HolidayTestCase
 {

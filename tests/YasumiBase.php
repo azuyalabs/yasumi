@@ -304,7 +304,7 @@ trait YasumiBase
      * Variations have been seen between different versions of PHP and OS distributions.
      * Likely this is caused by different editions of the tz database used in those releases.
      *
-     * The chosen delta is somewhat arbitray and seems to solve the experienced issues.
+     * The chosen delta is somewhat arbitrary and seems to solve the experienced issues.
      *
      * @throws \ExpectationFailedException
      */

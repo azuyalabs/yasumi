@@ -20,7 +20,7 @@ use Yasumi\tests\HolidayTestCase;
 /**
  * Class for testing the Independence Day of Greece in Greece.
  */
-class IndepencenceDayTest extends GreeceBaseTestCase implements HolidayTestCase
+class IndependenceDayTest extends GreeceBaseTestCase implements HolidayTestCase
 {
     /**
      * The year in which the holiday was first established.

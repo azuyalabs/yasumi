@@ -100,7 +100,7 @@ class Portugal extends AbstractProvider
     }
 
     /**
-     * In Portugal, between 2013 andd 2015 (inclusive) this holiday did not happen due to government deliberation.
+     * In Portugal, between 2013 and 2015 (inclusive) this holiday did not happen due to government deliberation.
      * It was restored in 2016.
      *
      * @throws \InvalidArgumentException
