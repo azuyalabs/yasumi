@@ -17,4 +17,6 @@ namespace Yasumi\tests\Australia\Tasmania\Northwest\CircularHead;
 /**
  * Class for testing Queen's Birthday in Circular Head (Australia)..
  */
-class QueensBirthdayTest extends \Yasumi\tests\Australia\Tasmania\Northwest\QueensBirthdayTest {}
+class QueensBirthdayTest extends \Yasumi\tests\Australia\Tasmania\Northwest\QueensBirthdayTest
+{
+}

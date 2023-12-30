@@ -17,4 +17,6 @@ namespace Yasumi\tests\Australia\Tasmania\FlindersIsland;
 /**
  * Class for testing Christmas Day in Flinders Island (Australia)..
  */
-class ChristmasDayTest extends \Yasumi\tests\Australia\Tasmania\ChristmasDayTest {}
+class ChristmasDayTest extends \Yasumi\tests\Australia\Tasmania\ChristmasDayTest
+{
+}

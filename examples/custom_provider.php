@@ -14,7 +14,7 @@ class NYSE extends \Yasumi\Provider\USA
     /**
      * Initialize holidays for the NYSE.
      *
-     * @throws \Exception
+     * @throws Exception
      */
     public function initialize(): void
     {

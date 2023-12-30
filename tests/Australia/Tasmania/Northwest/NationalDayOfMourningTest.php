@@ -17,4 +17,6 @@ namespace Yasumi\tests\Australia\Tasmania\Northwest;
 /**
  * Class for testing National Day of Mourning in northwestern Tasmania (Australia)..
  */
-class NationalDayOfMourningTest extends \Yasumi\tests\Australia\Tasmania\NationalDayOfMourningTest {}
+class NationalDayOfMourningTest extends \Yasumi\tests\Australia\Tasmania\NationalDayOfMourningTest
+{
+}

@@ -17,4 +17,6 @@ namespace Yasumi\tests\Australia\Tasmania\Northwest\CircularHead;
 /**
  * Class for testing New Years Day in Circular Head (Australia)..
  */
-class NewYearsDayTest extends \Yasumi\tests\Australia\Tasmania\Northwest\NewYearsDayTest {}
+class NewYearsDayTest extends \Yasumi\tests\Australia\Tasmania\Northwest\NewYearsDayTest
+{
+}

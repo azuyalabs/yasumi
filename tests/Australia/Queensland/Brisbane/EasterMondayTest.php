@@ -17,4 +17,6 @@ namespace Yasumi\tests\Australia\Queensland\Brisbane;
 /**
  * Class for testing Easter Monday in Brisbane (Australia)..
  */
-class EasterMondayTest extends \Yasumi\tests\Australia\Queensland\EasterMondayTest {}
+class EasterMondayTest extends \Yasumi\tests\Australia\Queensland\EasterMondayTest
+{
+}

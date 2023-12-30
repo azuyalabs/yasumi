@@ -17,4 +17,6 @@ namespace Yasumi\tests\Australia\Tasmania\KingIsland;
 /**
  * Class for testing Queen's Birthday in King Island (Australia)..
  */
-class QueensBirthdayTest extends \Yasumi\tests\Australia\Tasmania\QueensBirthdayTest {}
+class QueensBirthdayTest extends \Yasumi\tests\Australia\Tasmania\QueensBirthdayTest
+{
+}

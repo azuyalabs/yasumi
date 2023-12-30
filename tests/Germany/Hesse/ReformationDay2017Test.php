@@ -17,4 +17,6 @@ namespace Yasumi\tests\Germany\Hesse;
 /**
  * Class for testing Reformation Day in Hesse (Germany).
  */
-class ReformationDay2017Test extends \Yasumi\tests\Germany\ReformationDay2017Test {}
+class ReformationDay2017Test extends \Yasumi\tests\Germany\ReformationDay2017Test
+{
+}

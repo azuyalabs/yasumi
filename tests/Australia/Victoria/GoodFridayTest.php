@@ -17,4 +17,6 @@ namespace Yasumi\tests\Australia\Victoria;
 /**
  * Class for testing Good Friday in Victoria (Australia)..
  */
-class GoodFridayTest extends \Yasumi\tests\Australia\GoodFridayTest {}
+class GoodFridayTest extends \Yasumi\tests\Australia\GoodFridayTest
+{
+}

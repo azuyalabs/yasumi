@@ -17,4 +17,6 @@ namespace Yasumi\tests\Germany\BadenWurttemberg;
 /**
  * Class for testing Reformation Day in Baden-Württemberg (Germany).
  */
-class ReformationDay2017Test extends \Yasumi\tests\Germany\ReformationDay2017Test {}
+class ReformationDay2017Test extends \Yasumi\tests\Germany\ReformationDay2017Test
+{
+}

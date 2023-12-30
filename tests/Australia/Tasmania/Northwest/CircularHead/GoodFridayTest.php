@@ -17,4 +17,6 @@ namespace Yasumi\tests\Australia\Tasmania\Northwest\CircularHead;
 /**
  * Class for testing Good Friday in Circular Head (Australia)..
  */
-class GoodFridayTest extends \Yasumi\tests\Australia\Tasmania\Northwest\GoodFridayTest {}
+class GoodFridayTest extends \Yasumi\tests\Australia\Tasmania\Northwest\GoodFridayTest
+{
+}

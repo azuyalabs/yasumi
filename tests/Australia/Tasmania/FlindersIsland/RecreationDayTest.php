@@ -17,4 +17,6 @@ namespace Yasumi\tests\Australia\Tasmania\FlindersIsland;
 /**
  * Class for testing Recreation Day in Flinders Island (Australia)..
  */
-class RecreationDayTest extends \Yasumi\tests\Australia\Tasmania\RecreationDayTest {}
+class RecreationDayTest extends \Yasumi\tests\Australia\Tasmania\RecreationDayTest
+{
+}

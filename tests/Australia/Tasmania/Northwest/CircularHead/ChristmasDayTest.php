@@ -17,4 +17,6 @@ namespace Yasumi\tests\Australia\Tasmania\Northwest\CircularHead;
 /**
  * Class for testing Christmas Day in Circular Head (Australia)..
  */
-class ChristmasDayTest extends \Yasumi\tests\Australia\Tasmania\Northwest\ChristmasDayTest {}
+class ChristmasDayTest extends \Yasumi\tests\Australia\Tasmania\Northwest\ChristmasDayTest
+{
+}

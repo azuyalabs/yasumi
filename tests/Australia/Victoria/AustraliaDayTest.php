@@ -17,4 +17,6 @@ namespace Yasumi\tests\Australia\Victoria;
 /**
  * Class for testing Australia day in Victoria (Australia)..
  */
-class AustraliaDayTest extends \Yasumi\tests\Australia\AustraliaDayTest {}
+class AustraliaDayTest extends \Yasumi\tests\Australia\AustraliaDayTest
+{
+}

@@ -17,4 +17,6 @@ namespace Yasumi\tests\Australia\Tasmania\CentralNorth;
 /**
  * Class for testing Queen's Birthday in central north Tasmania (Australia)..
  */
-class QueensBirthdayTest extends \Yasumi\tests\Australia\Tasmania\QueensBirthdayTest {}
+class QueensBirthdayTest extends \Yasumi\tests\Australia\Tasmania\QueensBirthdayTest
+{
+}

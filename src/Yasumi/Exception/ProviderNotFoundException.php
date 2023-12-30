@@ -20,4 +20,6 @@ namespace Yasumi\Exception;
  *
  * @author Quentin Neyrat <quentin.neyrat@gmail.com>
  */
-class ProviderNotFoundException extends \InvalidArgumentException implements Exception {}
+class ProviderNotFoundException extends \InvalidArgumentException implements Exception
+{
+}

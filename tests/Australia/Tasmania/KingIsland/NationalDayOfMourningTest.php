@@ -17,4 +17,6 @@ namespace Yasumi\tests\Australia\Tasmania\KingIsland;
 /**
  * Class for testing National Day of Mourning in King Island (Australia)..
  */
-class NationalDayOfMourningTest extends \Yasumi\tests\Australia\Tasmania\NationalDayOfMourningTest {}
+class NationalDayOfMourningTest extends \Yasumi\tests\Australia\Tasmania\NationalDayOfMourningTest
+{
+}

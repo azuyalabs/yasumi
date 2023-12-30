@@ -19,4 +19,6 @@ use Yasumi\tests\Germany\GermanUnityDayTest as BaseGermanUnityDayTest;
 /**
  * Class for testing German Unity Day in Hesse (Germany).
  */
-class GermanUnityDayTest extends BaseGermanUnityDayTest {}
+class GermanUnityDayTest extends BaseGermanUnityDayTest
+{
+}

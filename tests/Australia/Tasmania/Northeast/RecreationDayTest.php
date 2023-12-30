@@ -17,4 +17,6 @@ namespace Yasumi\tests\Australia\Tasmania\Northeast;
 /**
  * Class for testing Recreation Day in northeastern Tasmania (Australia)..
  */
-class RecreationDayTest extends \Yasumi\tests\Australia\Tasmania\RecreationDayTest {}
+class RecreationDayTest extends \Yasumi\tests\Australia\Tasmania\RecreationDayTest
+{
+}

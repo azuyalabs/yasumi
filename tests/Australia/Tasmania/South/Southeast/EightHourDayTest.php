@@ -17,4 +17,6 @@ namespace Yasumi\tests\Australia\Tasmania\South\Southeast;
 /**
  * Class for testing Eight Hour Day in southeastern Tasmania (Australia)..
  */
-class EightHourDayTest extends \Yasumi\tests\Australia\Tasmania\South\EightHourDayTest {}
+class EightHourDayTest extends \Yasumi\tests\Australia\Tasmania\South\EightHourDayTest
+{
+}

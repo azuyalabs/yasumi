@@ -17,4 +17,6 @@ namespace Yasumi\tests\Australia\Tasmania\KingIsland;
 /**
  * Class for testing Easter Monday in King Island (Australia)..
  */
-class EasterMondayTest extends \Yasumi\tests\Australia\Tasmania\EasterMondayTest {}
+class EasterMondayTest extends \Yasumi\tests\Australia\Tasmania\EasterMondayTest
+{
+}

@@ -17,4 +17,6 @@ namespace Yasumi\tests\Australia\Tasmania\South\Southeast;
 /**
  * Class for testing Hobart Show Day in southeastern Tasmania (Australia)..
  */
-class HobartShowTest extends \Yasumi\tests\Australia\Tasmania\South\HobartShowTest {}
+class HobartShowTest extends \Yasumi\tests\Australia\Tasmania\South\HobartShowTest
+{
+}

@@ -17,4 +17,6 @@ namespace Yasumi\tests\Australia\Tasmania\KingIsland;
 /**
  * Class for testing Boxing Day in King Island (Australia)..
  */
-class BoxingDayTest extends \Yasumi\tests\Australia\Tasmania\BoxingDayTest {}
+class BoxingDayTest extends \Yasumi\tests\Australia\Tasmania\BoxingDayTest
+{
+}

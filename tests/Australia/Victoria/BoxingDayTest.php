@@ -17,4 +17,6 @@ namespace Yasumi\tests\Australia\Victoria;
 /**
  * Class for testing Boxing Day in Victoria (Australia)..
  */
-class BoxingDayTest extends \Yasumi\tests\Australia\BoxingDayTest {}
+class BoxingDayTest extends \Yasumi\tests\Australia\BoxingDayTest
+{
+}

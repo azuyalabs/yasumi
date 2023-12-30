@@ -17,4 +17,6 @@ namespace Yasumi\tests\Australia\Tasmania\KingIsland;
 /**
  * Class for testing Good Friday in King Island (Australia)..
  */
-class GoodFridayTest extends \Yasumi\tests\Australia\Tasmania\GoodFridayTest {}
+class GoodFridayTest extends \Yasumi\tests\Australia\Tasmania\GoodFridayTest
+{
+}
