@@ -214,13 +214,7 @@ class SouthKorea extends AbstractProvider
             return;
         }
 
-        if ($this->year < 2013) {
-            // Holidays in used from 1949 until 2012
-            $officialHolidays = $this->calculateBefore2013($this->year);
-        } else {
-            // Holidays in use from 2013
-            $officialHolidays = $this->calculateCurrent();
-        }
+        $officialHolidays = $this->year < 2013 ? $this->calculateBefore2013($this->year) : $this->calculateCurrent();
 
         foreach ($officialHolidays as $holiday) {
             $this->addHoliday($this->{$holiday}($this->year, $this->timezone, $this->locale));
