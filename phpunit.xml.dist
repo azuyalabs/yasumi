@@ -9,12 +9,15 @@
   ~
   ~ @author Sacha Telgenhof <me at sachatelgenhof dot com>
   -->
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    beStrictAboutTestsThatDoNotTestAnything="false"
-         bootstrap="vendor/autoload.php"
-         colors="true"
-         verbose="true"
-         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.5/phpunit.xsd">
+<phpunit
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.5/phpunit.xsd"
+      beStrictAboutTestsThatDoNotTestAnything="false"
+      bootstrap="vendor/autoload.php"
+      colors="true"
+      verbose="true"
+    >
+
     <coverage processUncoveredFiles="true">
         <include>
             <directory suffix=".php">./src/Yasumi</directory>
@@ -23,6 +26,7 @@
             <directory suffix=".php">./src/Yasumi/data</directory>
         </exclude>
     </coverage>
+
     <testsuites>
         <testsuite name="Yasumi Test Suite">
             <directory>./tests</directory>
