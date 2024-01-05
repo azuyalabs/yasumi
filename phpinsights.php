@@ -60,19 +60,19 @@ return [
     ],
 
     'remove' => [
-        \PHP_CodeSniffer\Standards\Generic\Sniffs\Commenting\TodoSniff::class,
-        \SlevomatCodingStandard\Sniffs\ControlStructures\DisallowShortTernaryOperatorSniff::class,
-        \SlevomatCodingStandard\Sniffs\ControlStructures\DisallowYodaComparisonSniff::class,
-        \SlevomatCodingStandard\Sniffs\Commenting\DocCommentSpacingSniff::class,
+        PHP_CodeSniffer\Standards\Generic\Sniffs\Commenting\TodoSniff::class,
+        SlevomatCodingStandard\Sniffs\ControlStructures\DisallowShortTernaryOperatorSniff::class,
+        SlevomatCodingStandard\Sniffs\ControlStructures\DisallowYodaComparisonSniff::class,
+        SlevomatCodingStandard\Sniffs\Commenting\DocCommentSpacingSniff::class,
 
         // Remove checks for superfluous naming as we follow PER which supports such convention
-        \SlevomatCodingStandard\Sniffs\Classes\SuperfluousInterfaceNamingSniff::class,
-        \SlevomatCodingStandard\Sniffs\Classes\SuperfluousAbstractClassNamingSniff::class,
-        \SlevomatCodingStandard\Sniffs\Classes\SuperfluousExceptionNamingSniff::class,
+        SlevomatCodingStandard\Sniffs\Classes\SuperfluousInterfaceNamingSniff::class,
+        SlevomatCodingStandard\Sniffs\Classes\SuperfluousAbstractClassNamingSniff::class,
+        SlevomatCodingStandard\Sniffs\Classes\SuperfluousExceptionNamingSniff::class,
     ],
 
     'config' => [
-        \PHP_CodeSniffer\Standards\Generic\Sniffs\Files\LineLengthSniff::class => [
+        PHP_CodeSniffer\Standards\Generic\Sniffs\Files\LineLengthSniff::class => [
             'lineLimit' => 120,
             'absoluteLineLimit' => 140,
             'ignoreComments' => false,
