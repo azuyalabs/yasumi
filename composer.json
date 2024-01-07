@@ -73,7 +73,6 @@
       "@psalm"
     ],
     "format": "./vendor/bin/php-cs-fixer fix",
-    "infection": "vendor/bin/infection run -j 2",
     "phan": "vendor/bin/phan -C",
     "phpstan": "vendor/bin/phpstan analyse",
     "psalm": "vendor/bin/psalm --threads=2",
