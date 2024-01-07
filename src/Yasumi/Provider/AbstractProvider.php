@@ -1,10 +1,11 @@
 <?php
 
 declare(strict_types=1);
+
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2023 AzuyaLabs
+ * Copyright (c) 2015 - 2024 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -83,9 +84,6 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
      */
     private array $holidays = [];
 
-    /** global translations */
-    private ?TranslationsInterface $globalTranslations;
-
     /**
      * Creates a new holiday provider (i.e. country/state).
      *
@@ -97,13 +95,12 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
     public function __construct(
         int $year,
         ?string $locale = null,
-        ?TranslationsInterface $globalTranslations = null
+        private ?TranslationsInterface $globalTranslations = null
     ) {
         $this->clearHolidays();
 
         $this->year = $year ?: (int) date('Y');
         $this->locale = $locale ?? 'en_US';
-        $this->globalTranslations = $globalTranslations;
 
         $this->initialize();
     }
@@ -115,7 +112,7 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
         }
 
         $this->holidays[$holiday->getKey()] = $holiday;
-        uasort($this->holidays, fn (\DateTimeInterface $dateA, \DateTimeInterface $dateB): int => self::compareDates($dateA, $dateB));
+        uasort($this->holidays, static fn (\DateTimeInterface $dateA, \DateTimeInterface $dateB): int => self::compareDates($dateA, $dateB));
     }
 
     public function removeHoliday(string $key): void
@@ -129,7 +126,7 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
             return false;
         }
 
-        return !$this->isWeekendDay($date);
+        return ! $this->isWeekendDay($date);
     }
 
     public function isHoliday(\DateTimeInterface $date): bool
@@ -278,7 +275,7 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
      */
     private function isHolidayKeyNotEmpty(string $key): bool
     {
-        if (empty($key)) {
+        if ('' === $key) {
             throw new \InvalidArgumentException('Holiday key can not be blank.');
         }
 
@@ -313,11 +310,8 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
      */
     private function anotherTime(int $year, string $key): ?Holiday
     {
-        $this->isHolidayKeyNotEmpty($key); // Validate if key is not empty
+        $this->isHolidayKeyNotEmpty($key);
 
-        // Get calling class name
-        $hReflectionClass = new \ReflectionClass(\get_class($this));
-
-        return Yasumi::create($hReflectionClass->getName(), $year, $this->locale)->getHoliday($key);
+        return Yasumi::create(static::class, $year, $this->locale)->getHoliday($key);
     }
 }

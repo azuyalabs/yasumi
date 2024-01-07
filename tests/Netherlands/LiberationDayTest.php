@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2023 AzuyaLabs
+ * Copyright (c) 2015 - 2024 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -58,7 +58,7 @@ class LiberationDayTest extends NetherlandsBaseTestCase implements HolidayTestCa
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-5-5", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-5-5", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -90,12 +90,14 @@ class LiberationDayTest extends NetherlandsBaseTestCase implements HolidayTestCa
             $this->generateRandomYear(2001, 2004),
             Holiday::TYPE_OBSERVANCE
         );
+
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
             2000,
             Holiday::TYPE_OFFICIAL
         );
+
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,

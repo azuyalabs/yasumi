@@ -1,10 +1,11 @@
 <?php
 
 declare(strict_types=1);
+
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2023 AzuyaLabs
+ * Copyright (c) 2015 - 2024 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -79,7 +80,7 @@ class Russia extends AbstractProvider
             $this->addHoliday(new Holiday('newYearHolidaysDay'.$day, [
                 'en' => 'New Year’s holidays',
                 'ru' => 'Новогодние каникулы',
-            ], new \DateTime("$this->year-01-$day", new \DateTimeZone($this->timezone)), $this->locale));
+            ], new \DateTime("{$this->year}-01-{$day}", new \DateTimeZone($this->timezone)), $this->locale));
         }
     }
 
@@ -92,7 +93,7 @@ class Russia extends AbstractProvider
         $this->addHoliday(new Holiday('orthodoxChristmasDay', [
             'en' => 'Orthodox Christmas Day',
             'ru' => 'Рождество',
-        ], new \DateTime("$this->year-01-07", new \DateTimeZone($this->timezone)), $this->locale));
+        ], new \DateTime("{$this->year}-01-07", new \DateTimeZone($this->timezone)), $this->locale));
     }
 
     /**
@@ -108,7 +109,7 @@ class Russia extends AbstractProvider
         $this->addHoliday(new Holiday('defenceOfTheFatherlandDay', [
             'en' => 'Defence of the Fatherland Day',
             'ru' => 'День защитника Отечества',
-        ], new \DateTime("$this->year-02-23", new \DateTimeZone($this->timezone)), $this->locale));
+        ], new \DateTime("{$this->year}-02-23", new \DateTimeZone($this->timezone)), $this->locale));
     }
 
     /**
@@ -129,7 +130,7 @@ class Russia extends AbstractProvider
         $this->addHoliday(new Holiday('springAndLabourDay', [
             'en' => 'Spring and Labour Day',
             'ru' => 'Праздник Весны и Труда',
-        ], new \DateTime("$this->year-05-01", new \DateTimeZone($this->timezone)), $this->locale));
+        ], new \DateTime("{$this->year}-05-01", new \DateTimeZone($this->timezone)), $this->locale));
     }
 
     /**
@@ -141,7 +142,7 @@ class Russia extends AbstractProvider
         $this->addHoliday(new Holiday('victoryDay', [
             'en' => 'Victory Day',
             'ru' => 'День Победы',
-        ], new \DateTime("$this->year-05-09", new \DateTimeZone($this->timezone)), $this->locale));
+        ], new \DateTime("{$this->year}-05-09", new \DateTimeZone($this->timezone)), $this->locale));
     }
 
     /**
@@ -157,7 +158,7 @@ class Russia extends AbstractProvider
         $this->addHoliday(new Holiday('russiaDay', [
             'en' => 'Russia Day',
             'ru' => 'День России',
-        ], new \DateTime("$this->year-06-12", new \DateTimeZone($this->timezone)), $this->locale));
+        ], new \DateTime("{$this->year}-06-12", new \DateTimeZone($this->timezone)), $this->locale));
     }
 
     /**
@@ -173,6 +174,6 @@ class Russia extends AbstractProvider
         $this->addHoliday(new Holiday('unityDay', [
             'en' => 'Unity Day',
             'ru' => 'День народного единства',
-        ], new \DateTime("$this->year-11-04", new \DateTimeZone($this->timezone)), $this->locale));
+        ], new \DateTime("{$this->year}-11-04", new \DateTimeZone($this->timezone)), $this->locale));
     }
 }

@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2023 AzuyaLabs
+ * Copyright (c) 2015 - 2024 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -46,8 +46,20 @@ class MecklenburgWesternPomerania extends Germany
     {
         parent::initialize();
 
+        if ($this->year >= 2023) {
+            $this->addHoliday($this->internationalWomensDay($this->year, $this->timezone, $this->locale));
+        }
+
         // Add custom Christian holidays
         $this->calculateReformationDay();
+    }
+
+    public function getSources(): array
+    {
+        return array_merge(
+            ['https://www.ndr.de/nachrichten/mecklenburg-vorpommern/Frauentag-in-MV-Landtag-beschliesst-neuen-Feiertag,frauentag370.html'],
+            parent::getSources(),
+        );
     }
 
     /**

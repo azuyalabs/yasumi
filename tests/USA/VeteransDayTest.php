@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2023 AzuyaLabs
+ * Copyright (c) 2015 - 2024 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -46,7 +46,7 @@ class VeteransDayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-11-11", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-11-11", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -62,7 +62,7 @@ class VeteransDayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             'substituteHoliday:veteransDay',
             $year,
-            new \DateTime("$year-11-12", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-11-12", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -78,7 +78,7 @@ class VeteransDayTest extends USABaseTestCase implements HolidayTestCase
             self::REGION,
             'substituteHoliday:veteransDay',
             $year,
-            new \DateTime("$year-11-10", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-11-10", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -105,12 +105,13 @@ class VeteransDayTest extends USABaseTestCase implements HolidayTestCase
     {
         try {
             $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1953);
-        } catch (\Exception $e) {
-        }
 
-        $holidays = Yasumi::create(self::REGION, $year);
-        $holiday = $holidays->getHoliday(self::HOLIDAY);
-        self::assertEquals('Armistice Day', $holiday->getName());
+            $holidays = Yasumi::create(self::REGION, $year);
+            $holiday = $holidays->getHoliday(self::HOLIDAY);
+            self::assertEquals('Armistice Day', $holiday->getName());
+        } catch (\Exception $e) {
+            throw new \RuntimeException($e->getMessage(), $e->getCode(), $e);
+        }
     }
 
     /**
@@ -122,12 +123,13 @@ class VeteransDayTest extends USABaseTestCase implements HolidayTestCase
     {
         try {
             $year = $this->generateRandomYear(1954);
-        } catch (\Exception $e) {
-        }
 
-        $holidays = Yasumi::create(self::REGION, $year);
-        $holiday = $holidays->getHoliday(self::HOLIDAY);
-        self::assertEquals('Veterans Day', $holiday->getName());
+            $holidays = Yasumi::create(self::REGION, $year);
+            $holiday = $holidays->getHoliday(self::HOLIDAY);
+            self::assertEquals('Veterans Day', $holiday->getName());
+        } catch (\Exception $e) {
+            throw new \RuntimeException($e->getMessage(), $e->getCode(), $e);
+        }
     }
 
     /**

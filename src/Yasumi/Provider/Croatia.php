@@ -1,10 +1,11 @@
 <?php
 
 declare(strict_types=1);
+
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2023 AzuyaLabs
+ * Copyright (c) 2015 - 2024 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -58,16 +59,8 @@ class Croatia extends AbstractProvider
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->stStephensDay($this->year, $this->timezone, $this->locale));
 
-        /*
-         * Day of Antifascist Struggle
-         */
-        if ($this->year >= 1941) {
-            $this->addHoliday(new Holiday('antifascistStruggleDay', [
-                'en' => 'Day of Antifascist Struggle',
-                'hr' => 'Dan antifašističke borbe',
-            ], new \DateTime("$this->year-6-22", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
-        }
-
+        // Add other holidays
+        $this->calculateAntiFascistsStruggleDay();
         $this->calculateStatehoodDay();
         $this->calculateHomelandThanksgivingDay();
         $this->calculateIndependenceDay();
@@ -91,15 +84,8 @@ class Croatia extends AbstractProvider
      */
     private function calculateStatehoodDay(): void
     {
-        $statehoodDayDate = null;
-
-        if ($this->year >= 1991 && $this->year < 2020) {
-            $statehoodDayDate = new \DateTime("$this->year-6-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
-        } elseif ($this->year >= 2020) {
-            $statehoodDayDate = new \DateTime("$this->year-5-30", DateTimeZoneFactory::getDateTimeZone($this->timezone));
-        }
-
-        if (null !== $statehoodDayDate) {
+        if ($this->year >= 1991) {
+            $statehoodDayDate = new \DateTime($this->year >= 2020 ? "{$this->year}-5-30" : "{$this->year}-6-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
             $this->addHoliday(new Holiday('statehoodDay', [
                 'en' => 'Statehood Day',
                 'hr' => 'Dan državnosti',
@@ -124,11 +110,11 @@ class Croatia extends AbstractProvider
             $names['hr'] = 'Dan pobjede i domovinske zahvalnosti i Dan hrvatskih branitelja';
         }
 
-        if (!empty($names)) {
+        if ([] !== $names) {
             $this->addHoliday(new Holiday(
                 'homelandThanksgiving',
                 $names,
-                new \DateTime("$this->year-8-5", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-8-5", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -154,7 +140,7 @@ class Croatia extends AbstractProvider
         $this->addHoliday(new Holiday('independenceDay', [
             'en' => 'Independence Day',
             'hr' => 'Dan neovisnosti',
-        ], new \DateTime("$this->year-10-8", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
+        ], new \DateTime("{$this->year}-10-8", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
     }
 
     /**
@@ -169,7 +155,20 @@ class Croatia extends AbstractProvider
             $this->addHoliday(new Holiday('remembranceDay', [
                 'en' => 'Remembrance Day for Homeland War Victims and Remembrance Day for the Victims of Vukovar and Skabrnja',
                 'hr' => 'Dan sjećanja na žrtve Domovinskog rata i Dan sjećanja na žrtvu Vukovara i Škabrnje',
-            ], new \DateTime("$this->year-11-18", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
+            ], new \DateTime("{$this->year}-11-18", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
+        }
+    }
+
+    /*
+     * Day of Antifascist Struggle
+     */
+    private function calculateAntiFascistsStruggleDay(): void
+    {
+        if ($this->year >= 1941) {
+            $this->addHoliday(new Holiday('antifascistStruggleDay', [
+                'en' => 'Day of Antifascist Struggle',
+                'hr' => 'Dan antifašističke borbe',
+            ], new \DateTime("{$this->year}-6-22", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
         }
     }
 }

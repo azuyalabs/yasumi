@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2023 AzuyaLabs
+ * Copyright (c) 2015 - 2024 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -31,7 +31,7 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     /**
      * The year in which the holiday was first established.
      */
-    public const ESTABLISHMENT_YEAR = 1970;
+    public const ESTABLISHMENT_YEAR = 1975;
 
     /**
      * Tests the holiday defined in this test.
@@ -45,7 +45,7 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-5-5", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-5-5", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -63,14 +63,14 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
                 self::REGION,
                 'buddhasBirthday',
                 $year,
-                new \DateTime("$year-5-5", $tz)
+                new \DateTime("{$year}-5-5", $tz)
             );
 
             $this->assertSubstituteHoliday(
                 self::REGION,
                 'buddhasBirthday',
                 $year,
-                new \DateTime("$year-5-6", $tz)
+                new \DateTime("{$year}-5-6", $tz)
             );
         }
     }

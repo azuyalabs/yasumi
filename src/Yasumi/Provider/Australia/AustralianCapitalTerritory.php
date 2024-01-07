@@ -1,10 +1,11 @@
 <?php
 
 declare(strict_types=1);
+
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2023 AzuyaLabs
+ * Copyright (c) 2015 - 2024 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -106,10 +107,16 @@ class AustralianCapitalTerritory extends Australia
         string $locale,
         ?string $type = null
     ): Holiday {
+        $date = $this->calculateEaster($year, $timezone)->sub(new \DateInterval('P1D'));
+
+        if (! $date instanceof \DateTime) {
+            throw new \RuntimeException(sprintf('unable to perform a date subtraction for %s:%s', self::class, 'easterSaturday'));
+        }
+
         return new Holiday(
             'easterSaturday',
             ['en' => 'Easter Saturday'],
-            $this->calculateEaster($year, $timezone)->sub(new \DateInterval('P1D')),
+            $date,
             $locale,
             $type ?? Holiday::TYPE_OFFICIAL
         );
@@ -148,7 +155,7 @@ class AustralianCapitalTerritory extends Australia
      */
     private function calculateLabourDay(): void
     {
-        $date = new \DateTime("first monday of october $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime("first monday of october {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
         $this->addHoliday(new Holiday('labourDay', [], $date, $this->locale));
     }
@@ -160,7 +167,7 @@ class AustralianCapitalTerritory extends Australia
      */
     private function calculateCanberraDay(): void
     {
-        $datePattern = $this->year < 2007 ? "third monday of march $this->year" : "second monday of march $this->year";
+        $datePattern = $this->year < 2007 ? "third monday of march {$this->year}" : "second monday of march {$this->year}";
 
         $this->addHoliday(
             new Holiday(

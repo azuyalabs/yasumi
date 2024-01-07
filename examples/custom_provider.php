@@ -9,12 +9,12 @@ declare(strict_types=1);
 require 'vendor/autoload.php';
 
 /** Provider for all observed holidays by the NYSE (New York Stock Exchange)  */
-class NYSE extends \Yasumi\Provider\USA
+class NYSE extends Yasumi\Provider\USA
 {
     /**
      * Initialize holidays for the NYSE.
      *
-     * @throws \Exception
+     * @throws Exception
      */
     public function initialize(): void
     {

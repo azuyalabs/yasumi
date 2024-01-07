@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2023 AzuyaLabs
+ * Copyright (c) 2015 - 2024 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -125,8 +125,6 @@ class HolidayFiltersTest extends TestCase
         $filteredHolidaysArray = iterator_to_array($filteredHolidays);
 
         // Assert array definitions
-        self::assertArrayHasKey('summerTime', $filteredHolidaysArray);
-        self::assertArrayHasKey('winterTime', $filteredHolidaysArray);
         self::assertArrayNotHasKey('newYearsDay', $filteredHolidaysArray);
         self::assertArrayNotHasKey('easter', $filteredHolidaysArray);
         self::assertArrayNotHasKey('easterMonday', $filteredHolidaysArray);
@@ -155,9 +153,9 @@ class HolidayFiltersTest extends TestCase
         self::assertArrayNotHasKey('princesDay', $filteredHolidaysArray);
 
         // Assert number of results returned
-        self::assertCount(2, $filteredHolidays);
+        self::assertCount(0, $filteredHolidays);
         self::assertNotCount(\count($holidays), $filteredHolidays);
-        self::assertEquals(2, $filteredHolidays->count());
+        self::assertEquals(0, $filteredHolidays->count());
         self::assertNotEquals(\count($holidays), $filteredHolidays->count());
     }
 
@@ -176,8 +174,6 @@ class HolidayFiltersTest extends TestCase
         self::assertArrayHasKey('mothersDay', $filteredHolidaysArray);
         self::assertArrayHasKey('epiphany', $filteredHolidaysArray);
         self::assertArrayHasKey('princesDay', $filteredHolidaysArray);
-        self::assertArrayNotHasKey('summerTime', $filteredHolidaysArray);
-        self::assertArrayNotHasKey('winterTime', $filteredHolidaysArray);
         self::assertArrayNotHasKey('newYearsDay', $filteredHolidaysArray);
         self::assertArrayNotHasKey('easter', $filteredHolidaysArray);
         self::assertArrayNotHasKey('easterMonday', $filteredHolidaysArray);

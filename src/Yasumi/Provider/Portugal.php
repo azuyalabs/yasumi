@@ -1,10 +1,11 @@
 <?php
 
 declare(strict_types=1);
+
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2023 AzuyaLabs
+ * Copyright (c) 2015 - 2024 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -91,7 +92,7 @@ class Portugal extends AbstractProvider
             $this->addHoliday(new Holiday(
                 '25thApril',
                 ['pt' => 'Dia da Liberdade'],
-                new \DateTime("$this->year-04-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-04-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OFFICIAL
             ));
@@ -99,7 +100,7 @@ class Portugal extends AbstractProvider
     }
 
     /**
-     * In Portugal, between 2013 andd 2015 (inclusive) this holiday did not happen due to government deliberation.
+     * In Portugal, between 2013 and 2015 (inclusive) this holiday did not happen due to government deliberation.
      * It was restored in 2016.
      *
      * @throws \InvalidArgumentException
@@ -136,7 +137,7 @@ class Portugal extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'portugalDay',
                 ['pt' => 'Dia de Portugal'],
-                new \DateTime("$this->year-06-10", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-06-10", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -169,7 +170,7 @@ class Portugal extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'portugueseRepublic',
                 ['pt' => 'Implantação da República Portuguesa'],
-                new \DateTime("$this->year-10-05", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-10-05", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -223,7 +224,7 @@ class Portugal extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'restorationOfIndependence',
                 ['pt' => 'Restauração da Independência'],
-                new \DateTime("$this->year-12-01", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-12-01", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OFFICIAL
             ));

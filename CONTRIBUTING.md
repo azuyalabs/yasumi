@@ -10,7 +10,7 @@ When contributing there are a few guidelines we'd like you to keep in mind:
 - **[PSR-12 Coding Standard](https://www.php-fig.org/psr/psr-12/)**
   Please use the following command after you have completed your work:
 
-  ``` shell
+  ```shell
   composer format
   ```
 
@@ -39,12 +39,12 @@ When contributing there are a few guidelines we'd like you to keep in mind:
 
 ## Running Tests
 
-``` shell
+```shell
 composer test
 ```
 
 Or, alternatively run with:
 
-``` shell
+```shell
 vendor/bin/phpunit
 ```

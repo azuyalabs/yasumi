@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2023 AzuyaLabs
+ * Copyright (c) 2015 - 2024 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -54,13 +54,8 @@ class NetherlandsTest extends NetherlandsBaseTestCase implements ProviderTestCas
             'secondChristmasDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
 
-        $this->assertDefinedHolidays([
-            'liberationDay',
-        ], self::REGION, 2015, Holiday::TYPE_OFFICIAL);
-
-        $this->assertDefinedHolidays([
-            'liberationDay',
-        ], self::REGION, 2020, Holiday::TYPE_OFFICIAL);
+        $this->assertDefinedHolidays(['liberationDay'], self::REGION, 2015, Holiday::TYPE_OFFICIAL);
+        $this->assertDefinedHolidays(['liberationDay'], self::REGION, 2020, Holiday::TYPE_OFFICIAL);
     }
 
     /**
@@ -83,17 +78,6 @@ class NetherlandsTest extends NetherlandsBaseTestCase implements ProviderTestCas
         $this->assertDefinedHolidays([
             'liberationDay',
         ], self::REGION, $this->generateRandomYear(2011, 2014), Holiday::TYPE_OBSERVANCE);
-    }
-
-    /**
-     * Tests if all seasonal holidays in Netherlands are defined by the provider class.
-     *
-     * @throws \Exception
-     */
-    public function testSeasonalHolidays(): void
-    {
-        $year = $this->generateRandomYear(1978, 2037);
-        $this->assertDefinedHolidays(['summerTime', 'winterTime'], self::REGION, $year, Holiday::TYPE_SEASON);
     }
 
     /**

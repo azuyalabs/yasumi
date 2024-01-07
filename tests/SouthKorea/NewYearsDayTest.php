@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2023 AzuyaLabs
+ * Copyright (c) 2015 - 2024 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -41,7 +41,7 @@ class NewYearsDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     public function testHoliday(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $date = new \DateTime("$year-1-1", new \DateTimeZone(self::TIMEZONE));
+        $date = new \DateTime("{$year}-1-1", new \DateTimeZone(self::TIMEZONE));
 
         // New Year's Day
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
@@ -122,7 +122,7 @@ class NewYearsDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             'twoDaysLaterNewYearsDay',
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1990),
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1989),
             [self::LOCALE => '새해 연휴']
         );
     }
@@ -149,7 +149,7 @@ class NewYearsDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             'twoDaysLaterNewYearsDay',
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1990),
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1989),
             Holiday::TYPE_OFFICIAL
         );
     }

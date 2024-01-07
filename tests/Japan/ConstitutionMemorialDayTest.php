@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2023 AzuyaLabs
+ * Copyright (c) 2015 - 2024 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -44,7 +44,7 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements HolidayTe
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-5-3", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-5-3", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -61,7 +61,7 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements HolidayTe
             self::REGION,
             self::SUBSTITUTE_PREFIX.self::HOLIDAY,
             $year,
-            new \DateTime("$year-5-6", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-5-6", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

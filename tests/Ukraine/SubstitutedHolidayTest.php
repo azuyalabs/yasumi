@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2023 AzuyaLabs
+ * Copyright (c) 2015 - 2024 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -41,8 +41,8 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements HolidayTestC
             self::REGION,
             $holiday,
             $year,
-            new \DateTime("$year-05-09", new \DateTimeZone(self::TIMEZONE)),
-            new \DateTime("$year-05-11", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-05-09", new \DateTimeZone(self::TIMEZONE)),
+            new \DateTime("{$year}-05-11", new \DateTimeZone(self::TIMEZONE))
         );
 
         unset($year, $holiday);
@@ -62,26 +62,27 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements HolidayTestC
         string $key,
         int $year,
         \DateTimeInterface $expectedOfficial,
-        \DateTimeInterface $expectedSubstitution = null
+        ?\DateTimeInterface $expectedSubstitution = null
     ): void {
         $holidays = Yasumi::create($provider, $year);
 
         $holidayOfficial = $holidays->getHoliday($key);
         self::assertInstanceOf(Holiday::class, $holidayOfficial);
         self::assertNotNull($holidayOfficial);
-        self::assertEquals($expectedOfficial, $holidayOfficial);
+        $this->assertDateTime($expectedOfficial, $holidayOfficial);
         self::assertTrue($holidays->isHoliday($holidayOfficial));
         self::assertEquals(Holiday::TYPE_OFFICIAL, $holidayOfficial->getType());
 
         $holidaySubstitution = $holidays->getHoliday('substituteHoliday:'.$holidayOfficial->getKey());
-        if (null === $expectedSubstitution) {
+
+        if (! $expectedSubstitution instanceof \DateTimeInterface) {
             // without substitution
             self::assertNull($holidaySubstitution);
         } else {
             // with substitution
             self::assertNotNull($holidaySubstitution);
             self::assertInstanceOf(SubstituteHoliday::class, $holidaySubstitution);
-            self::assertEquals($expectedSubstitution, $holidaySubstitution);
+            $this->assertDateTime($expectedSubstitution, $holidaySubstitution);
             self::assertTrue($holidays->isHoliday($holidaySubstitution));
             self::assertEquals(Holiday::TYPE_OFFICIAL, $holidaySubstitution->getType());
         }
@@ -105,8 +106,8 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements HolidayTestC
             self::REGION,
             $holiday,
             $year,
-            new \DateTime("$year-06-28", new \DateTimeZone(self::TIMEZONE)),
-            new \DateTime("$year-06-29", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-06-28", new \DateTimeZone(self::TIMEZONE)),
+            new \DateTime("{$year}-06-29", new \DateTimeZone(self::TIMEZONE))
         );
 
         unset($year, $holiday);
@@ -129,7 +130,7 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements HolidayTestC
             self::REGION,
             $holiday,
             $year,
-            new \DateTime("$year-01-01", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-01-01", new \DateTimeZone(self::TIMEZONE))
         );
 
         unset($year, $holiday);
@@ -152,7 +153,7 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements HolidayTestC
             self::REGION,
             $holiday,
             $year,
-            new \DateTime("$year-12-25", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-12-25", new \DateTimeZone(self::TIMEZONE))
         );
 
         unset($year, $holiday);

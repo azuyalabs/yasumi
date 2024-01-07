@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2023 AzuyaLabs
+ * Copyright (c) 2015 - 2024 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -66,7 +66,7 @@ class JuneHolidayTest extends IrelandBaseTestCase implements HolidayTestCase
 
         for ($y = 0; $y < self::TEST_ITERATIONS; ++$y) {
             $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-            $date = new \DateTime("next monday $year-5-31", new \DateTimeZone(self::TIMEZONE));
+            $date = new \DateTime("next monday {$year}-5-31", new \DateTimeZone(self::TIMEZONE));
 
             $data[] = [$year, $date->format('Y-m-d')];
         }

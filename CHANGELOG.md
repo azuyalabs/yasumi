@@ -1,9 +1,9 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/) and this project adheres
-to [Semantic Versioning](https://semver.org).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 Changes related to the business logic of the holidays or their providers are listed first, followed by any technical or architectural
 changes.
@@ -17,6 +17,57 @@ changes.
 ### Fixed
 
 ### Removed
+
+## [2.7.0] - 2024-01-02
+
+### Added
+
+- Mexico Provider [\#329](https://github.com/azuyalabs/yasumi/pull/329) ([Luis Gonzalez](https://github.com/gogl92)).
+- From 2024, Romania will officially include the holidays of St. Johns ('Sfântul Ioan Botezătorul') and Epiphany ('Bobotează').
+  [#310](https://github.com/azuyalabs/yasumi/pull/310) ([AngelinCalu](https://github.com/AngelinCalu) )
+- For the German state of Mecklenburg-Western Pomerania, International Women's Day is considered to be officially
+  observed. [#311](https://github.com/azuyalabs/yasumi/pull/311) ([ihmels](https://github.com/ihmels))
+- Recently, the South Korean government announced a bill to apply alternative public holidays to Buddha's Day
+  and Christmas Day.
+  [\#314](https://github.com/azuyalabs/yasumi/pull/314) ([barami](https://github.com/barami))
+- Extra checks in case date subtraction fails for some holiday providers.
+- PHP 8.3 support for the unit test CI pipeline. [#328](https://github.com/azuyalabs/yasumi/pull/328) ([fezfez](https://github.com/fezfez))
+- Add code styling rules to have a space after the `NOT` operator and mark parameters with a default null value as nullable.
+
+### Changed
+
+- Refactor the rules for calculating holidays in South Korea based on the history of holiday changes.
+  ([#314](https://github.com/azuyalabs/yasumi/issues/314)) [barami](https://github.com/barams@gmail.com)
+- Update links to related documentation in the South Korea provider's note and added links to conversion utilities.
+  [\#314](https://github.com/azuyalabs/yasumi/pull/314) ([barami](https://github.com/barami))
+- Optimize the method for the Emperor's birthday calculation in Japan.
+- For Croatia, extract Day of Antifascist Struggle calculation to a private method and simplify Statehood Day calculation
+  to make it more concise.
+- Simplify the conditions for the Coming of Age day (Japan) calculation.
+- Simplify the calculation of Carnival in Argentina, Brazil and the Netherlands to reduce duplication.
+- Avoid silent exceptions by throwing a new one from the previous exception.
+
+### Fixed
+
+- For South Korea, some of the past dates for Buddha's Day, Chuseok, Armed Forces Day
+  and United Nations Day were incorrectly calculated during for certain periods. [\#314](https://github.com/azuyalabs/yasumi/pull/314) ([barami](https://github.com/barami))
+- The holiday `twoDaysLaterNewYearsDay` of South Korea has been removed from 1990, however the unit test for the name
+  and holiday type allowed the possible testing range to include the year 1990.
+- New Years Day tests for South Korea were failing due to incorrect date checks.
+- The Easter Date calculation resulted in wrong values for the year 2025, due to an incorrect rounding for the lunar
+  correction when the calendar extension is not used. [#326](https://github.com/azuyalabs/yasumi/pull/326) ([rChassat](https://github.com/rChassat))
+
+### Removed
+
+- Denmark will abolish Great Prayer Day ('store bededag') from 2024. [#308](https://github.com/azuyalabs/yasumi/pull/308) ([c960657](https://github.com/c960657))
+- Summertime and Wintertime in the Netherlands and Denmark as these can't be reliably established for historical dates and
+  aren't true holidays in the context of Yasumi. Refer to this [discussion](https://github.com/azuyalabs/yasumi/discussions/321)
+  for further details and rationale. [#322](https://github.com/azuyalabs/yasumi/pull/322)
+- PHP 7.4 support.
+- The PHP [Infection](https://infection.github.io/) test package as it was hardly used.
+- Unit tests from a Git export to reduce the export size. [#323](https://github.com/azuyalabs/yasumi/pull/323) ([fezfez](https://github.com/fezfez))
+- Checks for superfluous naming as we follow PER which supports such convention.
+- MacOS from testing matrix as it returns errors (requires further investigation).
 
 ## [2.6.0] - 2023-04-27
 
@@ -758,7 +809,9 @@ changes.
 
 - Initial Release
 
-[Unreleased]: https://github.com/azuyalabs/yasumi/compare/2.6.0...HEAD
+[Unreleased]: https://github.com/azuyalabs/yasumi/compare/2.7.0...HEAD
+
+[2.7.0]: https://github.com/azuyalabs/yasumi/compare/2.6.0...2.7.0
 
 [2.6.0]: https://github.com/azuyalabs/yasumi/compare/2.5.0...2.6.0
 

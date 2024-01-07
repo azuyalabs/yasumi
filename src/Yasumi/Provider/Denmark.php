@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2023 AzuyaLabs
+ * Copyright (c) 2015 - 2024 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -58,19 +58,11 @@ class Denmark extends AbstractProvider
         $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
         $this->calculateGreatPrayerDay();
 
+        // Add other holidays
         $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
         $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->newYearsEve($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
         $this->calculateConstitutionDay();
-
-        $summerTime = $this->summerTime($this->year, $this->timezone, $this->locale);
-        if ($summerTime instanceof Holiday) {
-            $this->addHoliday($summerTime);
-        }
-        $winterTime = $this->winterTime($this->year, $this->timezone, $this->locale);
-        if ($winterTime instanceof Holiday) {
-            $this->addHoliday($winterTime);
-        }
     }
 
     public function getSources(): array
@@ -99,14 +91,20 @@ class Denmark extends AbstractProvider
     {
         $easter = $this->calculateEaster($this->year, $this->timezone)->format('Y-m-d');
 
-        if ($this->year >= 1686) {
-            $this->addHoliday(new Holiday(
-                'greatPrayerDay',
-                ['da' => 'store bededag'],
-                new \DateTime("fourth friday $easter", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-                $this->locale
-            ));
+        if ($this->year < 1686) {
+            return;
         }
+
+        if ($this->year >= 2024) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday(
+            'greatPrayerDay',
+            ['da' => 'store bededag'],
+            new \DateTime("fourth friday {$easter}", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /**
@@ -130,7 +128,7 @@ class Denmark extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'constitutionDay',
                 ['da' => 'grundlovsdag'],
-                new \DateTime("$this->year-6-5", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-6-5", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OBSERVANCE
             ));

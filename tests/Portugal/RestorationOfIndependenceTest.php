@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2023 AzuyaLabs
+ * Copyright (c) 2015 - 2024 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -51,11 +51,11 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Holi
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::HOLIDAY_YEAR_ABOLISHED - 1);
 
-        $expected = new \DateTime("$year-12-01", new \DateTimeZone(self::TIMEZONE));
+        $expected = new \DateTime("{$year}-12-01", new \DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
 
         $year = self::ESTABLISHMENT_YEAR;
-        $expected = new \DateTime("$year-12-01", new \DateTimeZone(self::TIMEZONE));
+        $expected = new \DateTime("{$year}-12-01", new \DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 
@@ -69,12 +69,12 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Holi
     {
         $year = 2016;
 
-        $expected = new \DateTime("$year-12-01", new \DateTimeZone(self::TIMEZONE));
+        $expected = new \DateTime("{$year}-12-01", new \DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
 
         $year = $this->generateRandomYear(self::HOLIDAY_YEAR_RESTORED);
 
-        $expected = new \DateTime("$year-12-01", new \DateTimeZone(self::TIMEZONE));
+        $expected = new \DateTime("{$year}-12-01", new \DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
 

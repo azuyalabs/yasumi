@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2023 AzuyaLabs
+ * Copyright (c) 2015 - 2024 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -34,7 +34,7 @@ class DenmarkTest extends DenmarkBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1849);
+        $this->year = $this->generateRandomYear(2024);
     }
 
     /**
@@ -48,7 +48,6 @@ class DenmarkTest extends DenmarkBaseTestCase implements ProviderTestCase
             'goodFriday',
             'easter',
             'easterMonday',
-            'greatPrayerDay',
             'ascensionDay',
             'pentecost',
             'pentecostMonday',
@@ -68,17 +67,6 @@ class DenmarkTest extends DenmarkBaseTestCase implements ProviderTestCase
             'christmasEve',
             'newYearsEve',
         ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
-    }
-
-    /**
-     * Tests if all seasonal holidays in Denmark are defined by the provider class.
-     *
-     * @throws \Exception
-     */
-    public function testSeasonalHolidays(): void
-    {
-        $year = $this->generateRandomYear(1980, 2037);
-        $this->assertDefinedHolidays(['summerTime', 'winterTime'], self::REGION, $year, Holiday::TYPE_SEASON);
     }
 
     /**

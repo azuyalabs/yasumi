@@ -1,10 +1,11 @@
 <?php
 
 declare(strict_types=1);
+
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2023 AzuyaLabs
+ * Copyright (c) 2015 - 2024 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -95,7 +96,7 @@ class Sweden extends AbstractProvider
         $this->addHoliday(new Holiday(
             'epiphanyEve',
             [],
-            new \DateTime("$this->year-1-5", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("{$this->year}-1-5", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OBSERVANCE
         ));
@@ -121,7 +122,7 @@ class Sweden extends AbstractProvider
         $this->addHoliday(new Holiday(
             'walpurgisEve',
             [],
-            new \DateTime("$this->year-4-30", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("{$this->year}-4-30", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OBSERVANCE
         ));
@@ -147,7 +148,7 @@ class Sweden extends AbstractProvider
      */
     private function calculateStJohnsHolidays(): void
     {
-        $date = new \DateTime("$this->year-6-20 this saturday", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime("{$this->year}-6-20 this saturday", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $this->addHoliday(new Holiday(
             'stJohnsDay',
             [],
@@ -187,7 +188,7 @@ class Sweden extends AbstractProvider
      */
     private function calculateAllSaintsHolidays(): void
     {
-        $date = new \DateTime("$this->year-10-31 this saturday", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime("{$this->year}-10-31 this saturday", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $this->addHoliday(new Holiday(
             'allSaintsDay',
             [],
@@ -234,7 +235,7 @@ class Sweden extends AbstractProvider
         $this->addHoliday(new Holiday(
             'nationalDay',
             ['sv' => $holidayName],
-            new \DateTime("$this->year-6-6", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("{$this->year}-6-6", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }

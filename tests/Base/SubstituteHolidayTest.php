@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2023 AzuyaLabs
+ * Copyright (c) 2015 - 2024 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -58,7 +58,7 @@ class SubstituteHolidayTest extends TestCase
         self::assertSame($holiday, $substitute->getSubstitutedHoliday());
         self::assertEquals('substituteHoliday:testHoliday', $substitute->getKey());
         self::assertEquals(Holiday::TYPE_SEASON, $substitute->getType());
-        self::assertEquals(new \DateTime('2019-01-02'), $substitute);
+        $this->assertDateTime(new \DateTime('2019-01-02'), $substitute);
     }
 
     /** @throws \Exception */

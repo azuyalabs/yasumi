@@ -1,10 +1,11 @@
 <?php
 
 declare(strict_types=1);
+
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2023 AzuyaLabs
+ * Copyright (c) 2015 - 2024 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -78,7 +79,7 @@ class Australia extends AbstractProvider
      */
     private function calculateNewYearHolidays(): void
     {
-        $newYearsDay = new \DateTime("$this->year-01-01", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $newYearsDay = new \DateTime("{$this->year}-01-01", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $this->addHoliday(new Holiday(
             'newYearsDay',
             [],
@@ -130,7 +131,7 @@ class Australia extends AbstractProvider
      */
     private function calculateAustraliaDay(): void
     {
-        $date = new \DateTime("$this->year-01-26", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime("{$this->year}-01-26", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
         $holiday = new Holiday(
             'australiaDay',
@@ -177,7 +178,7 @@ class Australia extends AbstractProvider
             return;
         }
 
-        $date = new \DateTime("$this->year-04-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime("{$this->year}-04-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $this->addHoliday(new Holiday(
             'anzacDay',
             [],
@@ -225,7 +226,7 @@ class Australia extends AbstractProvider
         $this->addHoliday(new Holiday(
             'nationalDayOfMourning',
             ['en' => 'National Day of Mourning'],
-            new \DateTime("$this->year-9-22", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("{$this->year}-9-22", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));
@@ -245,8 +246,8 @@ class Australia extends AbstractProvider
      */
     private function calculateChristmasDay(): void
     {
-        $christmasDay = new \DateTime("$this->year-12-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
-        $boxingDay = new \DateTime("$this->year-12-26", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $christmasDay = new \DateTime("{$this->year}-12-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $boxingDay = new \DateTime("{$this->year}-12-26", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $this->addHoliday(new Holiday(
             'christmasDay',
             [],

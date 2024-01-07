@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2023 AzuyaLabs
+ * Copyright (c) 2015 - 2024 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,44 +12,43 @@ declare(strict_types=1);
  * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
-namespace Yasumi\tests\Greece;
+namespace Yasumi\tests\Germany\MecklenburgWesternPomerania;
 
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
 /**
- * Class for testing the Independence Day of Greece in Greece.
+ * Class containing tests for International Women's Day in Mecklenburg–Western Pomerania, Germany.
  */
-class IndepencenceDayTest extends GreeceBaseTestCase implements HolidayTestCase
+class InternationalWomensDayTest extends MecklenburgWesternPomeraniaBaseTestCase implements HolidayTestCase
 {
     /**
-     * The year in which the holiday was first established.
+     * The name of the holiday to be tested.
      */
-    public const ESTABLISHMENT_YEAR = 1821;
+    public const HOLIDAY = 'internationalWomensDay';
 
     /**
-     * The name of the holiday.
+     * The year in which the holiday was established.
      */
-    public const HOLIDAY = 'independenceDay';
+    public const ESTABLISHMENT_YEAR = 2023;
 
     /**
-     * Tests the holiday defined in this test.
+     * Test the holiday defined in this test upon establishment.
      *
      * @throws \Exception
      */
-    public function testHoliday(): void
+    public function testHolidayOnEstablishment(): void
     {
-        $year = 2018;
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
-            $year,
-            new \DateTime("$year-3-25", new \DateTimeZone(self::TIMEZONE))
+            self::ESTABLISHMENT_YEAR,
+            new \DateTime(self::ESTABLISHMENT_YEAR.'-03-08', new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
-     * Tests the holiday defined in this test before establishment.
+     * Test the holiday defined in this test before establishment.
      *
      * @throws \Exception
      */
@@ -63,6 +62,16 @@ class IndepencenceDayTest extends GreeceBaseTestCase implements HolidayTestCase
     }
 
     /**
+     * Test the holiday defined in this test after completion.
+     *
+     * @throws \Exception
+     */
+    public function testHolidayAfterCompletion(): void
+    {
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(1900, self::ESTABLISHMENT_YEAR - 1));
+    }
+
+    /**
      * Tests the translated name of the holiday defined in this test.
      *
      * @throws \Exception
@@ -72,8 +81,8 @@ class IndepencenceDayTest extends GreeceBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'Εικοστή Πέμπτη Μαρτίου']
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => 'Internationaler Frauentag']
         );
     }
 
@@ -87,7 +96,7 @@ class IndepencenceDayTest extends GreeceBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

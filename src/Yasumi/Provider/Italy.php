@@ -1,10 +1,11 @@
 <?php
 
 declare(strict_types=1);
+
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2023 AzuyaLabs
+ * Copyright (c) 2015 - 2024 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -90,7 +91,7 @@ class Italy extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'liberationDay',
                 ['it' => 'Festa della Liberazione'],
-                new \DateTime("$this->year-4-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-4-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -116,7 +117,7 @@ class Italy extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'republicDay',
                 ['it' => 'Festa della Repubblica'],
-                new \DateTime("$this->year-6-2", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-6-2", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

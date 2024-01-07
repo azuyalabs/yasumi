@@ -35,18 +35,17 @@
     }
   ],
   "require": {
-    "php": ">=7.4",
+    "php": ">=8.0",
     "ext-json": "*"
   },
   "require-dev": {
     "ext-intl": "*",
-    "friendsofphp/php-cs-fixer": "^2.19 || ^3.16",
-    "infection/infection": "^0.17 || ^0.26",
+    "friendsofphp/php-cs-fixer": "^2.19 || ^3.40",
     "mikey179/vfsstream": "^1.6",
     "phan/phan": "^5.4",
     "phpstan/phpstan": "^1.10",
     "phpunit/phpunit": "^8.5 || ^9.6",
-    "vimeo/psalm": "^5.9"
+    "vimeo/psalm": "^5.16"
   },
   "suggest": {
     "ext-calendar": "For calculating the date of Easter"
@@ -64,8 +63,7 @@
   },
   "config": {
     "allow-plugins": {
-      "composer/package-versions-deprecated": true,
-      "infection/extension-installer": true
+      "composer/package-versions-deprecated": true
     },
     "sort-packages": true
   },
@@ -75,7 +73,6 @@
       "@psalm"
     ],
     "format": "./vendor/bin/php-cs-fixer fix",
-    "infection": "vendor/bin/infection run -j 2",
     "phan": "vendor/bin/phan -C",
     "phpstan": "vendor/bin/phpstan analyse",
     "psalm": "vendor/bin/psalm --threads=2",

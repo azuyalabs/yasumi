@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2023 AzuyaLabs
+ * Copyright (c) 2015 - 2024 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -38,7 +38,7 @@ final class MarineDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-7-23", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-7-23", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -56,7 +56,7 @@ final class MarineDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-7-22", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-7-22", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -78,7 +78,7 @@ final class MarineDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("third monday of july $year", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("third monday of july {$year}", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -95,7 +95,7 @@ final class MarineDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("$year-7-20", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-7-20", new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -111,7 +111,7 @@ final class MarineDayTest extends JapanBaseTestCase implements HolidayTestCase
             self::REGION,
             self::SUBSTITUTE_PREFIX.self::HOLIDAY,
             $year,
-            new \DateTime("$year-7-21", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-7-21", new \DateTimeZone(self::TIMEZONE))
         );
     }
 

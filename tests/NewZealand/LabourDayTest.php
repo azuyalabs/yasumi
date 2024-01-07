@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2023 AzuyaLabs
+ * Copyright (c) 2015 - 2024 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -74,7 +74,7 @@ class LabourDayTest extends NewZealandBaseTestCase implements HolidayTestCase
         for ($y = 0; $y < 100; ++$y) {
             $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
             $expected = new \DateTime(
-                (($year < 1910) ? 'second wednesday of october' : 'fourth monday of october')." $year",
+                (($year < 1910) ? 'second wednesday of october' : 'fourth monday of october')." {$year}",
                 new \DateTimeZone(self::TIMEZONE)
             );
 

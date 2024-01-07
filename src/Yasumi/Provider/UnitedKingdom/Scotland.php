@@ -4,7 +4,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2023 AzuyaLabs
+ * Copyright (c) 2015 - 2024 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -89,7 +89,7 @@ class Scotland extends UnitedKingdom
         $this->addHoliday(new Holiday(
             'summerBankHoliday',
             ['en' => 'August Bank Holiday'],
-            new \DateTime("first monday of august $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("first monday of august {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
         ));
@@ -125,7 +125,7 @@ class Scotland extends UnitedKingdom
         $secondNewYearsDay = new Holiday(
             'secondNewYearsDay',
             [],
-            new \DateTime("$this->year-1-2", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("{$this->year}-1-2", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             $type
         );

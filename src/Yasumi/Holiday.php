@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2023 AzuyaLabs
+ * Copyright (c) 2015 - 2024 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -64,14 +64,6 @@ class Holiday extends \DateTime implements \JsonSerializable
      */
     public string $shortName;
 
-    /**
-     * @var array<string, string> list of translations of this holiday
-     */
-    public array $translations;
-
-    /** identifies the type of holiday */
-    protected string $type;
-
     /** locale (i.e. language) in which the holiday information needs to be displayed in. (Default 'en_US') */
     protected string $displayLocale;
 
@@ -87,7 +79,7 @@ class Holiday extends \DateTime implements \JsonSerializable
      * (DateTimeInterface) has the correct timezone set. Otherwise, the default system timezone is used.
      *
      * @param string                $key           Holiday key
-     * @param array<string, string> $names         An array containing the name/description of this holiday in various
+     * @param array<string, string> $translations  An array containing the name/description of this holiday in various
      *                                             languages. Overrides global translations
      * @param \DateTimeInterface    $date          A DateTimeInterface instance representing the date of the holiday
      * @param string                $displayLocale Locale (i.e. language) in which the holiday information needs to be
@@ -102,13 +94,13 @@ class Holiday extends \DateTime implements \JsonSerializable
      */
     public function __construct(
         string $key,
-        array $names,
+        public array $translations,
         \DateTimeInterface $date,
         string $displayLocale = self::DEFAULT_LOCALE,
-        string $type = self::TYPE_OFFICIAL
+        protected string $type = self::TYPE_OFFICIAL
     ) {
         // Validate if key is not empty
-        if (empty($key)) {
+        if ('' === $key) {
             throw new \InvalidArgumentException('Holiday name can not be blank.');
         }
 
@@ -118,15 +110,13 @@ class Holiday extends \DateTime implements \JsonSerializable
         }
 
         // Assert display locale input
-        if (!\in_array($displayLocale, self::$locales, true)) {
+        if (! \in_array($displayLocale, self::$locales, true)) {
             throw new UnknownLocaleException(sprintf('Locale "%s" is not a valid locale.', $displayLocale));
         }
 
         // Set additional attributes
         $this->shortName = $key;
-        $this->translations = $names;
         $this->displayLocale = $displayLocale;
-        $this->type = $type;
 
         // Construct instance
         parent::__construct($date->format('Y-m-d'), $date->getTimezone());
@@ -185,7 +175,7 @@ class Holiday extends \DateTime implements \JsonSerializable
      * @see Holiday::DEFAULT_LOCALE
      * @see Holiday::LOCALE_KEY
      */
-    public function getName(array $locales = null): string
+    public function getName(?array $locales = null): string
     {
         $locales = $this->getLocales($locales);
         foreach ($locales as $locale) {
@@ -217,7 +207,7 @@ class Holiday extends \DateTime implements \JsonSerializable
      * For each provided locale, return all locales including their parent locales. E.g.
      * ['ca_ES_VALENCIA', 'es_ES'] is expanded into ['ca_ES_VALENCIA', 'ca_ES', 'ca', 'es_ES', 'es'].
      *
-     * If a string is provided, return as if this string, Holiday::DEFAULT_LOCALE, and Holiday::LOCALE_SHORT_NAM
+     * If a string is provided, return as if this string, Holiday::DEFAULT_LOCALE, and Holiday::LOCALE_SHORT_NAME
      * was provided. E.g. 'de_DE' is expanded into ['de_DE', 'de', 'en_US', 'en', Holiday::LOCALE_KEY].
      *
      * If null is provided, return as if the display locale was provided as a string.
@@ -231,7 +221,7 @@ class Holiday extends \DateTime implements \JsonSerializable
      */
     protected function getLocales(?array $locales): array
     {
-        if (!empty($locales)) {
+        if (null !== $locales && [] !== $locales) {
             $expanded = [];
         } else {
             $locales = [$this->displayLocale];
@@ -242,7 +232,7 @@ class Holiday extends \DateTime implements \JsonSerializable
         // Expand e.g. ['de_DE', 'en_GB'] into  ['de_DE', 'de', 'en_GB', 'en'].
         foreach (array_reverse($locales) as $locale) {
             $parent = strtok($locale, '_');
-            if (!$parent) {
+            if (! $parent) {
                 continue;
             }
 

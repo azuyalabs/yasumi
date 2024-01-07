@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2023 AzuyaLabs
+ * Copyright (c) 2015 - 2024 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -96,7 +96,7 @@ class CatholicChristmasDayTest extends UkraineBaseTestCase implements HolidayTes
 
         for ($y = 0; $y < 10; ++$y) {
             $year = $this->generateRandomYear(2017);
-            $data[] = [$year, new \DateTime("$year-12-25", new \DateTimeZone(self::TIMEZONE))];
+            $data[] = [$year, new \DateTime("{$year}-12-25", new \DateTimeZone(self::TIMEZONE))];
         }
 
         return $data;

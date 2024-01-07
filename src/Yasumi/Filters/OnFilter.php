@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2023 AzuyaLabs
+ * Copyright (c) 2015 - 2024 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -26,6 +26,8 @@ use Yasumi\ProviderInterface;
  */
 class OnFilter extends AbstractFilter
 {
+    private const DATE_FORMAT = 'Y-m-d';
+
     /** date to check for holidays */
     private string $date;
 
@@ -40,13 +42,11 @@ class OnFilter extends AbstractFilter
         \DateTimeInterface $date
     ) {
         parent::__construct($iterator);
-        $this->date = $date->format('Y-m-d');
+        $this->date = $date->format(self::DATE_FORMAT);
     }
 
     public function accept(): bool
     {
-        $holiday = $this->getInnerIterator()->current()->format('Y-m-d');
-
-        return $holiday === $this->date;
+        return $this->getInnerIterator()->current()->format(self::DATE_FORMAT) === $this->date;
     }
 }

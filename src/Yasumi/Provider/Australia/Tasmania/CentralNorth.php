@@ -1,10 +1,11 @@
 <?php
 
 declare(strict_types=1);
+
 /*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2023 AzuyaLabs
+ * Copyright (c) 2015 - 2024 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -54,6 +55,10 @@ class CentralNorth extends Tasmania
     {
         $date = new \DateTime($this->year.'-12-02', DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $date = $date->modify('previous friday');
+
+        if (! $date instanceof \DateTime) {
+            throw new \RuntimeException(sprintf('unable to perform a date subtraction for %s:%s', self::class, 'devonportShow'));
+        }
 
         $this->addHoliday(new Holiday('devonportShow', ['en' => 'Devonport Show'], $date, $this->locale));
     }
