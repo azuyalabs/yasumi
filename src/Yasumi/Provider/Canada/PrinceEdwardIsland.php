@@ -62,7 +62,7 @@ class PrinceEdwardIsland extends Canada
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateIslanderDay(): void
+    protected function calculateIslanderDay(): void
     {
         if ($this->year < 2009) {
             return;
@@ -85,7 +85,7 @@ class PrinceEdwardIsland extends Canada
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateGoldCupParadeDay(): void
+    protected function calculateGoldCupParadeDay(): void
     {
         if ($this->year < 1962) {
             return;

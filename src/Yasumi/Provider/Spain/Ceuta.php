@@ -70,7 +70,7 @@ class Ceuta extends Spain
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateDayOfCeuta(): void
+    protected function calculateDayOfCeuta(): void
     {
         if ($this->year >= 1416) {
             $this->addHoliday(new Holiday(

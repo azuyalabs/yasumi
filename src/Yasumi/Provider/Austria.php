@@ -116,7 +116,7 @@ class Austria extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateNationalDay(): void
+    protected function calculateNationalDay(): void
     {
         if ($this->year < 1955) {
             return;

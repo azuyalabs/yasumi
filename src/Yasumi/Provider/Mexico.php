@@ -92,7 +92,7 @@ class Mexico extends AbstractProvider
     *
     * @link https://en.wikipedia.org/wiki/Mexican_War_of_Independence
     */
-    private function addIndependenceDay(): void
+    protected function addIndependenceDay(): void
     {
         if ($this->year >= 1810) {
             $this->addHoliday(new Holiday(
@@ -112,7 +112,7 @@ class Mexico extends AbstractProvider
     *
     * Anniversary of the Constitution of 1917, originally February 5, observed on the first Monday of February.
     */
-    private function calculateConstitutionDay(): void
+    protected function calculateConstitutionDay(): void
     {
         if ($this->year >= 1917) {
             $this->addHoliday(new Holiday(
@@ -131,7 +131,7 @@ class Mexico extends AbstractProvider
     *
     * Anniversary of the birth of Benito Juárez on March 21, 1806, observed on the third Monday of March.
     */
-    private function calculateBenitoJuarezBirthday(): void
+    protected function calculateBenitoJuarezBirthday(): void
     {
         if ($this->year >= 1806 && $this->year < 2010) {
             $this->addHoliday(new Holiday(
@@ -161,7 +161,7 @@ class Mexico extends AbstractProvider
     *
     * Anniversary of the start of the Mexican Revolution on November 20, 1910, observed on the third Monday of November.
     */
-    private function calculateRevolutionDay(): void
+    protected function calculateRevolutionDay(): void
     {
         if ($this->year >= 1910) {
             $this->addHoliday(new Holiday(
@@ -180,7 +180,7 @@ class Mexico extends AbstractProvider
     *
     * Anniversary of the Discovery of America on October 12, 1492, observed on the second Monday of October.
     */
-    private function calculateDiscoveryOfAmerica(): void
+    protected function calculateDiscoveryOfAmerica(): void
     {
         if ($this->year >= 1492) {
             $this->addHoliday(new Holiday(
@@ -200,7 +200,7 @@ class Mexico extends AbstractProvider
     * Christmas Eve is the day before Christmas Day, which is annually on December 24, according to the Gregorian
     * calendar.
     */
-    private function calculateChristmasEve(): void
+    protected function calculateChristmasEve(): void
     {
         $this->addHoliday(new Holiday(
             'christmasEve',
@@ -217,7 +217,7 @@ class Mexico extends AbstractProvider
     *
     * New Year's Eve is the last day of the year, December 31, in the Gregorian calendar.
     */
-    private function calculateNewYearsEve(): void
+    protected function calculateNewYearsEve(): void
     {
         $this->addHoliday(new Holiday(
             'newYearsEve',
@@ -235,7 +235,7 @@ class Mexico extends AbstractProvider
      * Day of the Deaths is a Mexican holiday celebrated throughout Mexico, in particular the Central and South regions,
      * and by people of Mexican heritage elsewhere.
      */
-    private function calculateDayOfTheDead(): void
+    protected function calculateDayOfTheDead(): void
     {
         if ($this->year >= 1800) {
             $this->addHoliday(new Holiday(
@@ -255,7 +255,7 @@ class Mexico extends AbstractProvider
      * The Virgin of Guadalupe (Día de la Virgen de Guadalupe) is a celebration of the Virgin Mary,
      * who is the patron saint of Mexico. It is observed on December 12th.
      */
-    private function calculateVirginOfGuadalupe(): void
+    protected function calculateVirginOfGuadalupe(): void
     {
         if ($this->year >= 1531) {
             $this->addHoliday(new Holiday(

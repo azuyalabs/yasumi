@@ -64,7 +64,7 @@ class WesternAustralia extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function calculateQueensBirthday(): void
+    protected function calculateQueensBirthday(): void
     {
         $birthDay = 'last monday of september '.$this->year;
         if (2011 === $this->year) {
@@ -89,7 +89,7 @@ class WesternAustralia extends Australia
      *
      * @throws \Exception
      */
-    private function calculateLabourDay(): void
+    protected function calculateLabourDay(): void
     {
         $date = new \DateTime("first monday of march {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
@@ -104,7 +104,7 @@ class WesternAustralia extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function calculateWesternAustraliaDay(): void
+    protected function calculateWesternAustraliaDay(): void
     {
         $this->addHoliday(new Holiday(
             'westernAustraliaDay',

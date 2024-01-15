@@ -90,7 +90,7 @@ class Finland extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateStJohnsDay(): void
+    protected function calculateStJohnsDay(): void
     {
         $stJohnsDay = $this->year < 1955 ? "{$this->year}-6-24" : "{$this->year}-6-20 this saturday";
 
@@ -123,7 +123,7 @@ class Finland extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateAllSaintsDay(): void
+    protected function calculateAllSaintsDay(): void
     {
         $this->addHoliday(new Holiday(
             'allSaintsDay',
@@ -150,7 +150,7 @@ class Finland extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateIndependenceDay(): void
+    protected function calculateIndependenceDay(): void
     {
         if ($this->year >= 1917) {
             $this->addHoliday(new Holiday(

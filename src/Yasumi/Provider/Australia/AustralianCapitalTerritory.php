@@ -69,7 +69,7 @@ class AustralianCapitalTerritory extends Australia
      *
      * @throws \Exception
      */
-    private function easterSunday(
+    protected function easterSunday(
         int $year,
         string $timezone,
         string $locale,
@@ -101,7 +101,7 @@ class AustralianCapitalTerritory extends Australia
      *
      * @throws \Exception
      */
-    private function easterSaturday(
+    protected function easterSaturday(
         int $year,
         string $timezone,
         string $locale,
@@ -137,7 +137,7 @@ class AustralianCapitalTerritory extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function calculateQueensBirthday(): void
+    protected function calculateQueensBirthday(): void
     {
         $this->addHoliday(new Holiday(
             'queensBirthday',
@@ -153,7 +153,7 @@ class AustralianCapitalTerritory extends Australia
      *
      * @throws \Exception
      */
-    private function calculateLabourDay(): void
+    protected function calculateLabourDay(): void
     {
         $date = new \DateTime("first monday of october {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
@@ -165,7 +165,7 @@ class AustralianCapitalTerritory extends Australia
      *
      * @throws \Exception
      */
-    private function calculateCanberraDay(): void
+    protected function calculateCanberraDay(): void
     {
         $datePattern = $this->year < 2007 ? "third monday of march {$this->year}" : "second monday of march {$this->year}";
 
@@ -184,7 +184,7 @@ class AustralianCapitalTerritory extends Australia
      *
      * @throws \Exception
      */
-    private function calculateReconciliationDay(): void
+    protected function calculateReconciliationDay(): void
     {
         if ($this->year < 2018) {
             return;

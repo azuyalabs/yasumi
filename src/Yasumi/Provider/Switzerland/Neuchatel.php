@@ -86,7 +86,7 @@ class Neuchatel extends Switzerland
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateInstaurationRepublique(): void
+    protected function calculateInstaurationRepublique(): void
     {
         if ($this->year > 1848) {
             $this->addHoliday(new Holiday(
@@ -108,7 +108,7 @@ class Neuchatel extends Switzerland
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateJanuary2nd(): void
+    protected function calculateJanuary2nd(): void
     {
         $this->addHoliday(new Holiday(
             'january2nd',
@@ -129,7 +129,7 @@ class Neuchatel extends Switzerland
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateDecember26th(): void
+    protected function calculateDecember26th(): void
     {
         $this->addHoliday(new Holiday(
             'december26th',

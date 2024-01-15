@@ -68,7 +68,7 @@ class NewSouthWales extends Australia
      *
      * @throws \Exception
      */
-    private function easterSaturday(
+    protected function easterSaturday(
         int $year,
         string $timezone,
         string $locale,
@@ -104,7 +104,7 @@ class NewSouthWales extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function calculateQueensBirthday(): void
+    protected function calculateQueensBirthday(): void
     {
         $this->addHoliday(new Holiday(
             'queensBirthday',
@@ -120,7 +120,7 @@ class NewSouthWales extends Australia
      *
      * @throws \Exception
      */
-    private function calculateLabourDay(): void
+    protected function calculateLabourDay(): void
     {
         $date = new \DateTime("first monday of october {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
@@ -133,7 +133,7 @@ class NewSouthWales extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function calculateBankHoliday(): void
+    protected function calculateBankHoliday(): void
     {
         $this->addHoliday(new Holiday(
             'bankHoliday',

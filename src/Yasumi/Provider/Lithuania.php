@@ -94,7 +94,7 @@ class Lithuania extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addRestorationOfTheStateDay(): void
+    protected function addRestorationOfTheStateDay(): void
     {
         if ($this->year >= self::RESTORATION_OF_THE_STATE_YEAR) {
             $this->addHoliday(new Holiday('restorationOfTheStateOfLithuaniaDay', [
@@ -110,7 +110,7 @@ class Lithuania extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addRestorationOfIndependenceDay(): void
+    protected function addRestorationOfIndependenceDay(): void
     {
         if ($this->year >= self::RESTORATION_OF_INDEPENDENCE_YEAR) {
             $this->addHoliday(new Holiday('restorationOfIndependenceOfLithuaniaDay', [
@@ -127,7 +127,7 @@ class Lithuania extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addStatehoodDay(): void
+    protected function addStatehoodDay(): void
     {
         if ($this->year >= self::STATEHOOD_YEAR) {
             $this->addHoliday(new Holiday('statehoodDay', [
@@ -143,7 +143,7 @@ class Lithuania extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addAllSoulsDay(): void
+    protected function addAllSoulsDay(): void
     {
         if ($this->year >= self::ALL_SOULS_DAY) {
             $this->addHoliday(new Holiday(

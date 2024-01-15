@@ -121,7 +121,7 @@ class Slovakia extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateSlovakIndependenceDay(): void
+    protected function calculateSlovakIndependenceDay(): void
     {
         $this->addHoliday(new Holiday(
             'slovakIndependenceDay',
@@ -145,7 +145,7 @@ class Slovakia extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateSaintsCyrilAndMethodiusDay(): void
+    protected function calculateSaintsCyrilAndMethodiusDay(): void
     {
         $this->addHoliday(new Holiday(
             'saintsCyrilAndMethodiusDay',
@@ -169,7 +169,7 @@ class Slovakia extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateSlovakNationalUprisingDay(): void
+    protected function calculateSlovakNationalUprisingDay(): void
     {
         $this->addHoliday(new Holiday(
             'slovakNationalUprisingDay',
@@ -192,7 +192,7 @@ class Slovakia extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateSlovakConstitutionDay(): void
+    protected function calculateSlovakConstitutionDay(): void
     {
         $this->addHoliday(new Holiday(
             'slovakConstitutionDay',
@@ -219,7 +219,7 @@ class Slovakia extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateOurLadyOfSorrowsDay(): void
+    protected function calculateOurLadyOfSorrowsDay(): void
     {
         $this->addHoliday(new Holiday('ourLadyOfSorrowsDay', [
             'sk' => 'Sviatok Sedembolestnej Panny Márie',
@@ -236,7 +236,7 @@ class Slovakia extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateStruggleForFreedomAndDemocracyDay(): void
+    protected function calculateStruggleForFreedomAndDemocracyDay(): void
     {
         $this->addHoliday(new Holiday(
             'struggleForFreedomAndDemocracyDay',

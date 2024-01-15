@@ -73,7 +73,7 @@ class BasqueCountry extends Spain
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateBasqueCountryDay(): void
+    protected function calculateBasqueCountryDay(): void
     {
         if ($this->year < 2011) {
             return;

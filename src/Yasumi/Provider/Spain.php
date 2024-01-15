@@ -84,7 +84,7 @@ class Spain extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateNationalDay(): void
+    protected function calculateNationalDay(): void
     {
         if ($this->year >= 1981) {
             $this->addHoliday(new Holiday(
@@ -112,7 +112,7 @@ class Spain extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateConstitutionDay(): void
+    protected function calculateConstitutionDay(): void
     {
         if ($this->year >= 1978) {
             $this->addHoliday(new Holiday(

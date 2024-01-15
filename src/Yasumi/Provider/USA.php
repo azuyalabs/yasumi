@@ -81,7 +81,7 @@ class USA extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateMartinLutherKingday(): void
+    protected function calculateMartinLutherKingday(): void
     {
         if ($this->year >= 1986) {
             $this->addHoliday(new Holiday('martinLutherKingDay', [
@@ -105,7 +105,7 @@ class USA extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateWashingtonsBirthday(): void
+    protected function calculateWashingtonsBirthday(): void
     {
         if ($this->year >= 1879) {
             $date = new \DateTime("{$this->year}-2-22", DateTimeZoneFactory::getDateTimeZone($this->timezone));
@@ -130,7 +130,7 @@ class USA extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateMemorialDay(): void
+    protected function calculateMemorialDay(): void
     {
         if ($this->year >= 1865) {
             $date = new \DateTime("{$this->year}-5-30", DateTimeZoneFactory::getDateTimeZone($this->timezone));
@@ -155,7 +155,7 @@ class USA extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateJuneteenth(): void
+    protected function calculateJuneteenth(): void
     {
         if ($this->year >= 2021) {
             $date = new \DateTime("{$this->year}-6-19", DateTimeZoneFactory::getDateTimeZone($this->timezone));
@@ -200,7 +200,7 @@ class USA extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateIndependenceDay(): void
+    protected function calculateIndependenceDay(): void
     {
         if ($this->year >= 1776) {
             $this->addHoliday(new Holiday('independenceDay', [
@@ -219,7 +219,7 @@ class USA extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateLabourDay(): void
+    protected function calculateLabourDay(): void
     {
         if ($this->year >= 1887) {
             $this->addHoliday(new Holiday(
@@ -246,7 +246,7 @@ class USA extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateColumbusDay(): void
+    protected function calculateColumbusDay(): void
     {
         if ($this->year >= 1937) {
             $date = new \DateTime("{$this->year}-10-12", DateTimeZoneFactory::getDateTimeZone($this->timezone));
@@ -270,7 +270,7 @@ class USA extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateVeteransDay(): void
+    protected function calculateVeteransDay(): void
     {
         if ($this->year >= 1919) {
             $name = $this->year < 1954 ? 'Armistice Day' : 'Veterans Day';
@@ -293,7 +293,7 @@ class USA extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateThanksgivingDay(): void
+    protected function calculateThanksgivingDay(): void
     {
         if ($this->year >= 1863) {
             $this->addHoliday(new Holiday(
@@ -317,7 +317,7 @@ class USA extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateSubstituteHolidays(): void
+    protected function calculateSubstituteHolidays(): void
     {
         // Loop through all defined holidays
         foreach ($this->getHolidays() as $holiday) {

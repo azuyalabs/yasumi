@@ -77,7 +77,7 @@ class Australia extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateNewYearHolidays(): void
+    protected function calculateNewYearHolidays(): void
     {
         $newYearsDay = new \DateTime("{$this->year}-01-01", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $this->addHoliday(new Holiday(
@@ -129,7 +129,7 @@ class Australia extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateAustraliaDay(): void
+    protected function calculateAustraliaDay(): void
     {
         $date = new \DateTime("{$this->year}-01-26", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
@@ -172,7 +172,7 @@ class Australia extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateAnzacDay(): void
+    protected function calculateAnzacDay(): void
     {
         if ($this->year < 1921) {
             return;
@@ -217,7 +217,7 @@ class Australia extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateNationalDayOfMourning(): void
+    protected function calculateNationalDayOfMourning(): void
     {
         if (2022 !== $this->year) {
             return;
@@ -244,7 +244,7 @@ class Australia extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateChristmasDay(): void
+    protected function calculateChristmasDay(): void
     {
         $christmasDay = new \DateTime("{$this->year}-12-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $boxingDay = new \DateTime("{$this->year}-12-26", DateTimeZoneFactory::getDateTimeZone($this->timezone));

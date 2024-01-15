@@ -69,7 +69,7 @@ class Victoria extends Australia
      *
      * @throws \Exception
      */
-    private function easterSunday(
+    protected function easterSunday(
         int $year,
         string $timezone,
         string $locale,
@@ -101,7 +101,7 @@ class Victoria extends Australia
      *
      * @throws \Exception
      */
-    private function easterSaturday(
+    protected function easterSaturday(
         int $year,
         string $timezone,
         string $locale,
@@ -127,7 +127,7 @@ class Victoria extends Australia
      *
      * @throws \Exception
      */
-    private function calculateLabourDay(): void
+    protected function calculateLabourDay(): void
     {
         $date = new \DateTime("second monday of march {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
@@ -149,7 +149,7 @@ class Victoria extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function calculateQueensBirthday(): void
+    protected function calculateQueensBirthday(): void
     {
         $this->addHoliday(new Holiday(
             'queensBirthday',
@@ -165,7 +165,7 @@ class Victoria extends Australia
      *
      * @throws \Exception
      */
-    private function calculateMelbourneCupDay(): void
+    protected function calculateMelbourneCupDay(): void
     {
         $date = new \DateTime('first Tuesday of November'." {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
@@ -177,7 +177,7 @@ class Victoria extends Australia
      *
      * @throws \Exception
      */
-    private function calculateAFLGrandFinalDay(): void
+    protected function calculateAFLGrandFinalDay(): void
     {
         switch ($this->year) {
             case 2015:

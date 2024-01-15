@@ -73,7 +73,7 @@ class Asturias extends Spain
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateAsturiasDay(): void
+    protected function calculateAsturiasDay(): void
     {
         if ($this->year >= 1984) {
             $this->addHoliday(new Holiday(

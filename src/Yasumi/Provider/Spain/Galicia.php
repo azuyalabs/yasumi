@@ -74,7 +74,7 @@ class Galicia extends Spain
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateGalicianLiteratureDay(): void
+    protected function calculateGalicianLiteratureDay(): void
     {
         if ($this->year >= 1991) {
             $this->addHoliday(new Holiday('galicianLiteratureDay', [
@@ -101,7 +101,7 @@ class Galicia extends Spain
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateStJamesDay(): void
+    protected function calculateStJamesDay(): void
     {
         if ($this->year >= 2000) {
             $this->addHoliday(new Holiday('stJamesDay', [

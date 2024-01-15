@@ -91,7 +91,7 @@ class Sweden extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function calculateEpiphanyEve(): void
+    protected function calculateEpiphanyEve(): void
     {
         $this->addHoliday(new Holiday(
             'epiphanyEve',
@@ -117,7 +117,7 @@ class Sweden extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function calculateWalpurgisEve(): void
+    protected function calculateWalpurgisEve(): void
     {
         $this->addHoliday(new Holiday(
             'walpurgisEve',
@@ -146,7 +146,7 @@ class Sweden extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateStJohnsHolidays(): void
+    protected function calculateStJohnsHolidays(): void
     {
         $date = new \DateTime("{$this->year}-6-20 this saturday", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $this->addHoliday(new Holiday(
@@ -186,7 +186,7 @@ class Sweden extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateAllSaintsHolidays(): void
+    protected function calculateAllSaintsHolidays(): void
     {
         $date = new \DateTime("{$this->year}-10-31 this saturday", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $this->addHoliday(new Holiday(
@@ -219,7 +219,7 @@ class Sweden extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateNationalDay(): void
+    protected function calculateNationalDay(): void
     {
         if ($this->year < 1916) {
             return;

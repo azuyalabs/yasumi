@@ -64,7 +64,7 @@ class UpperAustria extends Austria
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateStFloriansDay(): void
+    protected function calculateStFloriansDay(): void
     {
         if ($this->year < 304) {
             return;

@@ -78,7 +78,7 @@ class ValencianCommunity extends Spain
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateValencianCommunityDay(): void
+    protected function calculateValencianCommunityDay(): void
     {
         if ($this->year >= 1239) {
             $this->addHoliday(new Holiday(
