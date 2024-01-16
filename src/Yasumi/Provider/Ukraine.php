@@ -127,7 +127,7 @@ class Ukraine extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateChristmasDay(): void
+    protected function calculateChristmasDay(): void
     {
         $this->addHoliday(new Holiday(
             'christmasDay',
@@ -147,7 +147,7 @@ class Ukraine extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateSecondInternationalWorkersDay(): void
+    protected function calculateSecondInternationalWorkersDay(): void
     {
         if ($this->year >= 2018) {
             return;
@@ -174,7 +174,7 @@ class Ukraine extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateVictoryDay(): void
+    protected function calculateVictoryDay(): void
     {
         $this->addHoliday(new Holiday(
             'victoryDay',
@@ -195,7 +195,7 @@ class Ukraine extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateConstitutionDay(): void
+    protected function calculateConstitutionDay(): void
     {
         if ($this->year < 1996) {
             return;
@@ -222,7 +222,7 @@ class Ukraine extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateIndependenceDay(): void
+    protected function calculateIndependenceDay(): void
     {
         if ($this->year < 1991) {
             return;
@@ -250,7 +250,7 @@ class Ukraine extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateDefenderOfUkraineDay(): void
+    protected function calculateDefenderOfUkraineDay(): void
     {
         if ($this->year < 2015) {
             return;
@@ -274,7 +274,7 @@ class Ukraine extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateCatholicChristmasDay(): void
+    protected function calculateCatholicChristmasDay(): void
     {
         if ($this->year < 2017) {
             return;

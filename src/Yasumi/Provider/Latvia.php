@@ -78,7 +78,7 @@ class Latvia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addRestorationOfIndependenceDay(): void
+    protected function addRestorationOfIndependenceDay(): void
     {
         if ($this->year >= self::RESTORATION_OF_INDEPENDENCE_YEAR) {
             $date = new \DateTime("{$this->year}-05-04", new \DateTimeZone($this->timezone));
@@ -98,7 +98,7 @@ class Latvia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addMidsummerEveDay(): void
+    protected function addMidsummerEveDay(): void
     {
         $this->addHoliday(new Holiday('midsummerEveDay', [
             'en' => 'Midsummer Eve',
@@ -113,7 +113,7 @@ class Latvia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addProclamationDay(): void
+    protected function addProclamationDay(): void
     {
         if ($this->year >= self::PROCLAMATION_OF_INDEPENDENCE_YEAR) {
             $date = new \DateTime("{$this->year}-11-18", new \DateTimeZone($this->timezone));

@@ -101,7 +101,7 @@ class Netherlands extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateCarnival(): void
+    protected function calculateCarnival(): void
     {
         $easter = $this->calculateEaster($this->year, $this->timezone);
 
@@ -140,7 +140,7 @@ class Netherlands extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateStNicholasDay(): void
+    protected function calculateStNicholasDay(): void
     {
         /*
          * St. Nicholas' Day
@@ -166,7 +166,7 @@ class Netherlands extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateHalloween(): void
+    protected function calculateHalloween(): void
     {
         $this->addHoliday(new Holiday(
             'halloween',
@@ -185,7 +185,7 @@ class Netherlands extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculatePrincesDay(): void
+    protected function calculatePrincesDay(): void
     {
         $this->addHoliday(new Holiday(
             'princesDay',
@@ -205,7 +205,7 @@ class Netherlands extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateQueensday(): void
+    protected function calculateQueensday(): void
     {
         if ($this->year >= 1891 && $this->year <= 2013) {
             $date = new \DateTime("{$this->year}-4-30", DateTimeZoneFactory::getDateTimeZone($this->timezone));
@@ -235,7 +235,7 @@ class Netherlands extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateKingsday(): void
+    protected function calculateKingsday(): void
     {
         if ($this->year >= 2014) {
             $date = new \DateTime("{$this->year}-4-27", DateTimeZoneFactory::getDateTimeZone($this->timezone));
@@ -260,7 +260,7 @@ class Netherlands extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateCommemorationLiberationDay(): void
+    protected function calculateCommemorationLiberationDay(): void
     {
         if ($this->year >= 1947) {
             $this->addHoliday(new Holiday(

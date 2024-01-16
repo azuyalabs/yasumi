@@ -82,7 +82,7 @@ class Ticino extends Switzerland
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateStPeterPaul(): void
+    protected function calculateStPeterPaul(): void
     {
         $this->addHoliday(new Holiday(
             'stPeterPaul',

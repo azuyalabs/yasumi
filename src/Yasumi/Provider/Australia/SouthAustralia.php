@@ -75,7 +75,7 @@ class SouthAustralia extends Australia
      *
      * @throws \Exception
      */
-    private function easterSaturday(
+    protected function easterSaturday(
         int $year,
         string $timezone,
         string $locale,
@@ -111,7 +111,7 @@ class SouthAustralia extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function calculateQueensBirthday(): void
+    protected function calculateQueensBirthday(): void
     {
         $this->addHoliday(new Holiday(
             'queensBirthday',
@@ -127,7 +127,7 @@ class SouthAustralia extends Australia
      *
      * @throws \Exception
      */
-    private function calculateLabourDay(): void
+    protected function calculateLabourDay(): void
     {
         $date = new \DateTime("first monday of october {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
@@ -142,7 +142,7 @@ class SouthAustralia extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function calculateAdelaideCupDay(): void
+    protected function calculateAdelaideCupDay(): void
     {
         if ($this->year >= 1973) {
             $cupDay = 'second monday of march '.$this->year;
@@ -166,7 +166,7 @@ class SouthAustralia extends Australia
      *
      * @throws \Exception
      */
-    private function calculateProclamationDay(): void
+    protected function calculateProclamationDay(): void
     {
         $christmasDay = new \DateTime("{$this->year}-12-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 

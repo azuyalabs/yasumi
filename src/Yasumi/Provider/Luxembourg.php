@@ -81,7 +81,7 @@ class Luxembourg extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateEuropeDay(): void
+    protected function calculateEuropeDay(): void
     {
         if ($this->year >= 2019) {
             $this->addHoliday(new Holiday('europeDay', [
@@ -106,7 +106,7 @@ class Luxembourg extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateNationalDay(): void
+    protected function calculateNationalDay(): void
     {
         $this->addHoliday(new Holiday('nationalDay', [
             'en_US' => 'National day',

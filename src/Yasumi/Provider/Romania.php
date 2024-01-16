@@ -108,7 +108,7 @@ class Romania extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateDayAfterNewYearsDay(): void
+    protected function calculateDayAfterNewYearsDay(): void
     {
         $this->addHoliday(new Holiday(
             'dayAfterNewYearsDay',
@@ -131,7 +131,7 @@ class Romania extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateUnitedPrincipalitiesDay(): void
+    protected function calculateUnitedPrincipalitiesDay(): void
     {
         // The law is official since 21.12.2014.
         if ($this->year > 2014) {
@@ -153,7 +153,7 @@ class Romania extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateStAndrewDay(): void
+    protected function calculateStAndrewDay(): void
     {
         if ($this->year >= 2012) {
             $this->addHoliday(new Holiday(
@@ -180,7 +180,7 @@ class Romania extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateNationalDay(): void
+    protected function calculateNationalDay(): void
     {
         $nationalDay = null;
 
@@ -216,7 +216,7 @@ class Romania extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateStJohnsDay(): void
+    protected function calculateStJohnsDay(): void
     {
         if ($this->year >= 2024) {
             $this->addHoliday(new Holiday(
@@ -239,7 +239,7 @@ class Romania extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateConstantinBrancusiDay(): void
+    protected function calculateConstantinBrancusiDay(): void
     {
         if ($this->year >= 2016) {
             $this->addHoliday(new Holiday(
@@ -267,7 +267,7 @@ class Romania extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateChildrensDay(): void
+    protected function calculateChildrensDay(): void
     {
         if ($this->year >= 1950 && $this->year <= 2016) {
             $this->addHoliday(new Holiday(

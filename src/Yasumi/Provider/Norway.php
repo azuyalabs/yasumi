@@ -87,7 +87,7 @@ class Norway extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateConstitutionDay(): void
+    protected function calculateConstitutionDay(): void
     {
         if ($this->year >= 1836) {
             $this->addHoliday(new Holiday(

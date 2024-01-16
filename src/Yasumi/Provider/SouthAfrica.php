@@ -101,7 +101,7 @@ class SouthAfrica extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateHumanRightsDay(): void
+    protected function calculateHumanRightsDay(): void
     {
         $this->addHoliday(new Holiday(
             'humanRightsDay',
@@ -122,7 +122,7 @@ class SouthAfrica extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateFamilyDay(): void
+    protected function calculateFamilyDay(): void
     {
         $this->addHoliday(new Holiday(
             'familyDay',
@@ -144,7 +144,7 @@ class SouthAfrica extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateFreedomDay(): void
+    protected function calculateFreedomDay(): void
     {
         $this->addHoliday(new Holiday(
             'freedomDay',
@@ -170,7 +170,7 @@ class SouthAfrica extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateYouthDay(): void
+    protected function calculateYouthDay(): void
     {
         $this->addHoliday(new Holiday(
             'youthDay',
@@ -192,7 +192,7 @@ class SouthAfrica extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculate2016MunicipalElectionsDay(): void
+    protected function calculate2016MunicipalElectionsDay(): void
     {
         if (2016 !== $this->year) {
             return;
@@ -220,7 +220,7 @@ class SouthAfrica extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateNationalWomensDay(): void
+    protected function calculateNationalWomensDay(): void
     {
         $this->addHoliday(new Holiday(
             'nationalWomensDay',
@@ -244,7 +244,7 @@ class SouthAfrica extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateHeritageDay(): void
+    protected function calculateHeritageDay(): void
     {
         $this->addHoliday(new Holiday(
             'heritageDay',
@@ -270,7 +270,7 @@ class SouthAfrica extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateDayOfReconciliation(): void
+    protected function calculateDayOfReconciliation(): void
     {
         $this->addHoliday(new Holiday(
             'reconciliationDay',
@@ -295,7 +295,7 @@ class SouthAfrica extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateSubstituteDayOfGoodwill(): void
+    protected function calculateSubstituteDayOfGoodwill(): void
     {
         if (2016 !== $this->year) {
             return;
@@ -319,7 +319,7 @@ class SouthAfrica extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateSubstituteHolidays(): void
+    protected function calculateSubstituteHolidays(): void
     {
         // Loop through all defined holidays
         foreach ($this->getHolidays() as $holiday) {

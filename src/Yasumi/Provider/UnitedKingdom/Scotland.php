@@ -80,7 +80,7 @@ class Scotland extends UnitedKingdom
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateSummerBankHoliday(): void
+    protected function calculateSummerBankHoliday(): void
     {
         if ($this->year < 1871) {
             return;
@@ -109,7 +109,7 @@ class Scotland extends UnitedKingdom
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateNewYearsHolidays(): void
+    protected function calculateNewYearsHolidays(): void
     {
         // Before 1871 it was not an observed or statutory holiday
         if ($this->year < 1871) {
@@ -169,7 +169,7 @@ class Scotland extends UnitedKingdom
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateStAndrewsDay(): void
+    protected function calculateStAndrewsDay(): void
     {
         if ($this->year < 2007) {
             return;

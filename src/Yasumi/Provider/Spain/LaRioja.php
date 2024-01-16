@@ -70,7 +70,7 @@ class LaRioja extends Spain
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateLaRiojaDay(): void
+    protected function calculateLaRiojaDay(): void
     {
         if ($this->year >= 1983) {
             $this->addHoliday(new Holiday('laRiojaDay', [

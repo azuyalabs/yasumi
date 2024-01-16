@@ -58,7 +58,7 @@ class Hamburg extends Germany
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateDayOfReformation(): void
+    protected function calculateDayOfReformation(): void
     {
         if ($this->year < 2018) {
             return;

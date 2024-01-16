@@ -93,7 +93,7 @@ class France extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateBastilleDay(): void
+    protected function calculateBastilleDay(): void
     {
         if ($this->year >= 1790) {
             $this->addHoliday(new Holiday('bastilleDay', [
@@ -115,7 +115,7 @@ class France extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculatePentecostMonday(): void
+    protected function calculatePentecostMonday(): void
     {
         $type = Holiday::TYPE_OFFICIAL;
 

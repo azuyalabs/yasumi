@@ -71,7 +71,7 @@ class Andalusia extends Spain
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateAndalusiaDay(): void
+    protected function calculateAndalusiaDay(): void
     {
         if ($this->year >= 1980) {
             $this->addHoliday(new Holiday(

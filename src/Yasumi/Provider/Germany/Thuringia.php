@@ -63,7 +63,7 @@ class Thuringia extends Germany
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateReformationDay(): void
+    protected function calculateReformationDay(): void
     {
         if ($this->year < 1517) {
             return;
@@ -77,7 +77,7 @@ class Thuringia extends Germany
      *
      * @throws \Exception
      */
-    private function calculateWorldChildrensDay(): void
+    protected function calculateWorldChildrensDay(): void
     {
         if ($this->year < 2019) {
             return;

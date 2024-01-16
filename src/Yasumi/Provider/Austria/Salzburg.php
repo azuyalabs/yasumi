@@ -63,7 +63,7 @@ class Salzburg extends Austria
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateStRupertsDay(): void
+    protected function calculateStRupertsDay(): void
     {
         if ($this->year < 710) {
             return;

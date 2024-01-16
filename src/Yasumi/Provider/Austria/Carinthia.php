@@ -62,7 +62,7 @@ class Carinthia extends Austria
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculatePlebisciteDay(): void
+    protected function calculatePlebisciteDay(): void
     {
         if ($this->year < 1920) {
             return;

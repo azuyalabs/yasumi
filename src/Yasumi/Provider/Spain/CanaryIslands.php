@@ -72,7 +72,7 @@ class CanaryIslands extends Spain
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateCanaryIslandsDay(): void
+    protected function calculateCanaryIslandsDay(): void
     {
         if ($this->year >= 1984) {
             $this->addHoliday(new Holiday(

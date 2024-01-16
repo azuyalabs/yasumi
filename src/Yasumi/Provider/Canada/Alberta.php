@@ -62,7 +62,7 @@ class Alberta extends Canada
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateHeritageDay(): void
+    protected function calculateHeritageDay(): void
     {
         if ($this->year < 1879) {
             return;

@@ -69,7 +69,7 @@ class NewfoundlandAndLabrador extends Canada
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateStPatricksDay(): void
+    protected function calculateStPatricksDay(): void
     {
         if ($this->year < 1971) {
             return;
@@ -113,7 +113,7 @@ class NewfoundlandAndLabrador extends Canada
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateOrangemensDay(): void
+    protected function calculateOrangemensDay(): void
     {
         if ($this->year < 1926) {
             return;

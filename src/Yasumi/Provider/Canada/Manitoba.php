@@ -85,7 +85,7 @@ class Manitoba extends Canada
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateLouisRielDay(): void
+    protected function calculateLouisRielDay(): void
     {
         if ($this->year < 2008) {
             return;

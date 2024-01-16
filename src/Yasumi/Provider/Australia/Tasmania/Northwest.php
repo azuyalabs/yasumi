@@ -51,7 +51,7 @@ class Northwest extends Tasmania
      *
      * @throws \Exception
      */
-    private function calculateBurnieShow(): void
+    protected function calculateBurnieShow(): void
     {
         $date = new \DateTime('first saturday of october '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $date = $date->sub(new \DateInterval('P1D'));

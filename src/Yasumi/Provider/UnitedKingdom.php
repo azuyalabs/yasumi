@@ -321,7 +321,7 @@ class UnitedKingdom extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateNewYearsDay(): void
+    protected function calculateNewYearsDay(): void
     {
         // Before 1871 it was not an observed or statutory holiday
         if ($this->year < 1871) {
@@ -358,7 +358,7 @@ class UnitedKingdom extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateSummerBankHoliday(): void
+    protected function calculateSummerBankHoliday(): void
     {
         if ($this->year < 1871) {
             return;
@@ -409,7 +409,7 @@ class UnitedKingdom extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateMotheringSunday(): void
+    protected function calculateMotheringSunday(): void
     {
         $date = $this->calculateEaster($this->year, $this->timezone);
         $date->sub(new \DateInterval('P3W'));

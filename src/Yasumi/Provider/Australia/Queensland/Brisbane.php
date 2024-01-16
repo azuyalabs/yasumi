@@ -65,7 +65,7 @@ class Brisbane extends Queensland
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculatePeoplesDay(): void
+    protected function calculatePeoplesDay(): void
     {
         $date = new \DateTime('first friday of august '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone));
         if ($date->format('d') < 5) {

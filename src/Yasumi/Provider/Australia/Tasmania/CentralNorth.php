@@ -51,7 +51,7 @@ class CentralNorth extends Tasmania
      *
      * @throws \Exception
      */
-    private function calculateDevonportShow(): void
+    protected function calculateDevonportShow(): void
     {
         $date = new \DateTime($this->year.'-12-02', DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $date = $date->modify('previous friday');

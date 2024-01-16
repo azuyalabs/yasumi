@@ -58,7 +58,7 @@ class SaxonyAnhalt extends Germany
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateReformationDay(): void
+    protected function calculateReformationDay(): void
     {
         if ($this->year < 1517) {
             return;

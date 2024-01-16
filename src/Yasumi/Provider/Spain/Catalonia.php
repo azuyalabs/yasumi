@@ -76,7 +76,7 @@ class Catalonia extends Spain
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateNationalDayOfCatalonia(): void
+    protected function calculateNationalDayOfCatalonia(): void
     {
         if ($this->year >= 1886) {
             $this->addHoliday(new Holiday(
