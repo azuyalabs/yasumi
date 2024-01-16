@@ -73,7 +73,7 @@ class Fribourg extends Switzerland
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateDecember26th(): void
+    protected function calculateDecember26th(): void
     {
         $this->addHoliday(new Holiday(
             'december26th',

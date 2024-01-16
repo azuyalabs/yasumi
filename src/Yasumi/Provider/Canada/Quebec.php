@@ -73,7 +73,7 @@ class Quebec extends Canada
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function saintJeanBaptisteDay(
+    protected function saintJeanBaptisteDay(
         int $year,
         string $timezone,
         string $locale,
@@ -97,7 +97,7 @@ class Quebec extends Canada
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateNationalPatriotsDay(): void
+    protected function calculateNationalPatriotsDay(): void
     {
         if ($this->year < 2003) {
             return;

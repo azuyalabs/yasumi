@@ -72,7 +72,7 @@ class Geneva extends Switzerland
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateJeuneGenevois(): void
+    protected function calculateJeuneGenevois(): void
     {
         if (self::JEUNE_GENEVOIS_ESTABLISHMENT_YEAR > $this->year) {
             return;
@@ -107,7 +107,7 @@ class Geneva extends Switzerland
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateRestaurationGenevoise(): void
+    protected function calculateRestaurationGenevoise(): void
     {
         if ($this->year > 1813) {
             $this->addHoliday(new Holiday(

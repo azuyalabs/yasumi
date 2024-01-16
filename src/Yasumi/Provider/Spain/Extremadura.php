@@ -73,7 +73,7 @@ class Extremadura extends Spain
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateDayOfExtremadura(): void
+    protected function calculateDayOfExtremadura(): void
     {
         if ($this->year >= 1985) {
             $this->addHoliday(new Holiday(

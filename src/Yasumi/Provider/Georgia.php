@@ -87,7 +87,7 @@ class Georgia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addOrthodoxChristmasDay(): void
+    protected function addOrthodoxChristmasDay(): void
     {
         $date = new \DateTime("{$this->year}-01-07", new \DateTimeZone($this->timezone));
 
@@ -101,7 +101,7 @@ class Georgia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addIndependenceDay(): void
+    protected function addIndependenceDay(): void
     {
         if ($this->year >= self::PROCLAMATION_OF_INDEPENDENCE_YEAR) {
             $date = new \DateTime("{$this->year}-05-26", new \DateTimeZone($this->timezone));
@@ -117,7 +117,7 @@ class Georgia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addUnityDay(): void
+    protected function addUnityDay(): void
     {
         if ($this->year >= self::APRIL_NINE_TRAGEDY_YEAR) {
             $date = new \DateTime("{$this->year}-04-09", new \DateTimeZone($this->timezone));
@@ -133,7 +133,7 @@ class Georgia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addMothersDay(): void
+    protected function addMothersDay(): void
     {
         $date = new \DateTime("{$this->year}-03-03", new \DateTimeZone($this->timezone));
 
@@ -147,7 +147,7 @@ class Georgia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addVictoryDay(): void
+    protected function addVictoryDay(): void
     {
         $date = new \DateTime("{$this->year}-05-09", new \DateTimeZone($this->timezone));
 
@@ -161,7 +161,7 @@ class Georgia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addStAndrewsDay(): void
+    protected function addStAndrewsDay(): void
     {
         $date = new \DateTime("{$this->year}-05-12", new \DateTimeZone($this->timezone));
 
@@ -175,7 +175,7 @@ class Georgia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addOrthodoxEpiphanyDay(): void
+    protected function addOrthodoxEpiphanyDay(): void
     {
         $date = new \DateTime("{$this->year}-01-19", new \DateTimeZone($this->timezone));
 
@@ -189,7 +189,7 @@ class Georgia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addStMarysDay(): void
+    protected function addStMarysDay(): void
     {
         $date = new \DateTime("{$this->year}-08-28", new \DateTimeZone($this->timezone));
 
@@ -203,7 +203,7 @@ class Georgia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addMtskhetobaDay(): void
+    protected function addMtskhetobaDay(): void
     {
         $date = new \DateTime("{$this->year}-10-14", new \DateTimeZone($this->timezone));
 
@@ -217,7 +217,7 @@ class Georgia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addStGeorgesDay(): void
+    protected function addStGeorgesDay(): void
     {
         $date = new \DateTime("{$this->year}-11-23", new \DateTimeZone($this->timezone));
 
@@ -231,7 +231,7 @@ class Georgia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addSecondNewYearDay(): void
+    protected function addSecondNewYearDay(): void
     {
         $date = new \DateTime("{$this->year}-01-02", new \DateTimeZone($this->timezone));
 

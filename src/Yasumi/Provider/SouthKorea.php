@@ -725,7 +725,7 @@ class SouthKorea extends AbstractProvider
      *
      * @return array<string> list of holidays
      */
-    private function calculateBefore2013(int $year): array
+    protected function calculateBefore2013(int $year): array
     {
         $officialHolidays = [];
 
@@ -797,7 +797,7 @@ class SouthKorea extends AbstractProvider
      *
      * @return array<string> list of holidays
      */
-    private function calculateCurrent(): array
+    protected function calculateCurrent(): array
     {
         return [
             'newYearsDay',
@@ -832,7 +832,7 @@ class SouthKorea extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateOldSubstituteHolidays(int $year): void
+    protected function calculateOldSubstituteHolidays(int $year): void
     {
         // Add substitute holidays by fixed entries.
         switch ($year) {
@@ -891,7 +891,7 @@ class SouthKorea extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateSubstituteHolidays(int $year): void
+    protected function calculateSubstituteHolidays(int $year): void
     {
         if ($year < 2023) {
             $this->calculateOldSubstituteHolidays($year);
@@ -949,7 +949,7 @@ class SouthKorea extends AbstractProvider
      *
      * @return array<string, array<int>>
      */
-    private function calculateAcceptedSubstituteHolidays(int $year): array
+    protected function calculateAcceptedSubstituteHolidays(int $year): array
     {
         // List of holidays allowed for substitution.
         // This dictionary has key => value mappings.
@@ -981,7 +981,7 @@ class SouthKorea extends AbstractProvider
     /**
      * Helper method to find a first working day after specific date.
      */
-    private function nextWorkingDay(\DateTime $date): \DateTime
+    protected function nextWorkingDay(\DateTime $date): \DateTime
     {
         $interval = new \DateInterval('P1D');
         $next = clone $date;
@@ -999,7 +999,7 @@ class SouthKorea extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function addSubstituteHoliday(?Holiday $origin, string $date_str): void
+    protected function addSubstituteHoliday(?Holiday $origin, string $date_str): void
     {
         if (! $origin instanceof Holiday) {
             return;

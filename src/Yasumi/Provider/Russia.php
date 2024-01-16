@@ -72,7 +72,7 @@ class Russia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addNewYearsHolidays(): void
+    protected function addNewYearsHolidays(): void
     {
         $holidayDays = [2, 3, 4, 5, 6, 8];
 
@@ -88,7 +88,7 @@ class Russia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addOrthodoxChristmasDay(): void
+    protected function addOrthodoxChristmasDay(): void
     {
         $this->addHoliday(new Holiday('orthodoxChristmasDay', [
             'en' => 'Orthodox Christmas Day',
@@ -100,7 +100,7 @@ class Russia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addDefenceOfTheFatherlandDay(): void
+    protected function addDefenceOfTheFatherlandDay(): void
     {
         if ($this->year < self::DEFENCE_OF_THE_FATHERLAND_START_YEAR) {
             return;
@@ -116,7 +116,7 @@ class Russia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addInternationalWomensDay(): void
+    protected function addInternationalWomensDay(): void
     {
         $this->addHoliday($this->internationalWomensDay($this->year, $this->timezone, $this->locale));
     }
@@ -125,7 +125,7 @@ class Russia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addSpringAndLabourDay(): void
+    protected function addSpringAndLabourDay(): void
     {
         $this->addHoliday(new Holiday('springAndLabourDay', [
             'en' => 'Spring and Labour Day',
@@ -137,7 +137,7 @@ class Russia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addVictoryDay(): void
+    protected function addVictoryDay(): void
     {
         $this->addHoliday(new Holiday('victoryDay', [
             'en' => 'Victory Day',
@@ -149,7 +149,7 @@ class Russia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addRussiaDay(): void
+    protected function addRussiaDay(): void
     {
         if ($this->year < self::RUSSIA_DAY_START_YEAR) {
             return;
@@ -165,7 +165,7 @@ class Russia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addUnityDay(): void
+    protected function addUnityDay(): void
     {
         if ($this->year < self::UNITY_DAY_START_YEAR) {
             return;

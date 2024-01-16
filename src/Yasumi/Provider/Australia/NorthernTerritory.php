@@ -67,7 +67,7 @@ class NorthernTerritory extends Australia
      *
      * @throws \Exception
      */
-    private function easterSaturday(
+    protected function easterSaturday(
         int $year,
         string $timezone,
         string $locale,
@@ -103,7 +103,7 @@ class NorthernTerritory extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function calculateQueensBirthday(): void
+    protected function calculateQueensBirthday(): void
     {
         $this->addHoliday(new Holiday(
             'queensBirthday',
@@ -119,7 +119,7 @@ class NorthernTerritory extends Australia
      *
      * @throws \Exception
      */
-    private function calculateMayDay(): void
+    protected function calculateMayDay(): void
     {
         $date = new \DateTime("first monday of may {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
@@ -134,7 +134,7 @@ class NorthernTerritory extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function calculatePicnicDay(): void
+    protected function calculatePicnicDay(): void
     {
         $this->addHoliday(new Holiday(
             'picnicDay',

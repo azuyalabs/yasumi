@@ -76,7 +76,7 @@ class Obwalden extends Switzerland
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateBruderKlausenFest(): void
+    protected function calculateBruderKlausenFest(): void
     {
         if ($this->year >= 1947) {
             $this->addHoliday(new Holiday(

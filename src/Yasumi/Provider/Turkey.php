@@ -59,7 +59,7 @@ class Turkey extends AbstractProvider
     /**
      * @throws \Exception
      */
-    private function addLabourDay(): void
+    protected function addLabourDay(): void
     {
         $this->addHoliday(new Holiday('labourDay', [
             'tr' => 'Emek ve Dayanışma Günü',
@@ -77,7 +77,7 @@ class Turkey extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function addCommemorationOfAtaturk(): void
+    protected function addCommemorationOfAtaturk(): void
     {
         if (1920 > $this->year) {
             return;
@@ -97,7 +97,7 @@ class Turkey extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function addNationalSovereigntyDay(): void
+    protected function addNationalSovereigntyDay(): void
     {
         if (1922 > $this->year) {
             return;
@@ -123,7 +123,7 @@ class Turkey extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function addDemocracyDay(): void
+    protected function addDemocracyDay(): void
     {
         if (2017 > $this->year) {
             return;
@@ -142,7 +142,7 @@ class Turkey extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function addVictoryDay(): void
+    protected function addVictoryDay(): void
     {
         if (1923 > $this->year) {
             return;
@@ -172,7 +172,7 @@ class Turkey extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function addRepublicDay(): void
+    protected function addRepublicDay(): void
     {
         if (1924 > $this->year) {
             return;

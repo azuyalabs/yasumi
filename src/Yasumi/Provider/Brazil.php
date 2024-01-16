@@ -79,7 +79,7 @@ class Brazil extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Proclamation_of_the_Republic_(Brazil)
      */
-    private function calculateProclamationOfRepublicDay(): void
+    protected function calculateProclamationOfRepublicDay(): void
     {
         if ($this->year >= 1889) {
             $this->addHoliday(new Holiday(
@@ -97,7 +97,7 @@ class Brazil extends AbstractProvider
      *
      * @link http://www.johninbrazil.org/all-souls-day-o-dia-dos-finados/
      */
-    private function calculateAllSoulsDay(): void
+    protected function calculateAllSoulsDay(): void
     {
         if ($this->year >= 1300) {
             $this->addHoliday(new Holiday(
@@ -120,7 +120,7 @@ class Brazil extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Our_Lady_of_Aparecida
      */
-    private function calculateOurLadyOfAparecidaDay(): void
+    protected function calculateOurLadyOfAparecidaDay(): void
     {
         if ($this->year >= 1980) {
             $this->addHoliday(new Holiday(
@@ -140,7 +140,7 @@ class Brazil extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Independence_of_Brazil
      */
-    private function calculateIndependenceDay(): void
+    protected function calculateIndependenceDay(): void
     {
         if ($this->year >= 1822) {
             $this->addHoliday(new Holiday(
@@ -161,7 +161,7 @@ class Brazil extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Tiradentes
      */
-    private function calculateTiradentesDay(): void
+    protected function calculateTiradentesDay(): void
     {
         if ($this->year >= 1792) {
             $this->addHoliday(new Holiday(
@@ -181,7 +181,7 @@ class Brazil extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Brazilian_Carnival
      */
-    private function calculateCarnival(): void
+    protected function calculateCarnival(): void
     {
         if ($this->year >= 1700) {
             $easter = $this->calculateEaster($this->year, $this->timezone);

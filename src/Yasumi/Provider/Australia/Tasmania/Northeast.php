@@ -51,7 +51,7 @@ class Northeast extends Tasmania
      *
      * @throws \Exception
      */
-    private function calculateLauncestonShow(): void
+    protected function calculateLauncestonShow(): void
     {
         $date = new \DateTime('second saturday of october '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $date = $date->sub(new \DateInterval('P2D'));

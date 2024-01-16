@@ -78,7 +78,7 @@ class NewZealand extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateNewYearHolidays(): void
+    protected function calculateNewYearHolidays(): void
     {
         $newYearsDay = new \DateTime("{$this->year}-01-01", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $dayAfterNewYearsDay = new \DateTime("{$this->year}-01-02", DateTimeZoneFactory::getDateTimeZone($this->timezone));
@@ -117,7 +117,7 @@ class NewZealand extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateWaitangiDay(): void
+    protected function calculateWaitangiDay(): void
     {
         if ($this->year < 1974) {
             return;
@@ -146,7 +146,7 @@ class NewZealand extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateAnzacDay(): void
+    protected function calculateAnzacDay(): void
     {
         if ($this->year < 1921) {
             return;
@@ -178,7 +178,7 @@ class NewZealand extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateQueensBirthday(): void
+    protected function calculateQueensBirthday(): void
     {
         if ($this->year < 1952) {
             return;
@@ -210,7 +210,7 @@ class NewZealand extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateLabourDay(): void
+    protected function calculateLabourDay(): void
     {
         if ($this->year < 1900) {
             return;
@@ -238,7 +238,7 @@ class NewZealand extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateChristmasHolidays(): void
+    protected function calculateChristmasHolidays(): void
     {
         $christmasDay = new \DateTime("{$this->year}-12-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $boxingDay = new \DateTime("{$this->year}-12-26", DateTimeZoneFactory::getDateTimeZone($this->timezone));

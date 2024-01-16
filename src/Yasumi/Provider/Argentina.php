@@ -88,7 +88,7 @@ class Argentina extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Brazilian_Carnival
      */
-    private function addCarnvalHolidays(): void
+    protected function addCarnvalHolidays(): void
     {
         if ($this->year >= 1700) {
             $easter = $this->calculateEaster($this->year, $this->timezone);
@@ -138,7 +138,7 @@ class Argentina extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Day_of_Remembrance_for_Truth_and_Justice
      */
-    private function addRemembranceDay(): void
+    protected function addRemembranceDay(): void
     {
         if ($this->year >= 2006) {
             $this->addHoliday(new Holiday(
@@ -164,7 +164,7 @@ class Argentina extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Malvinas_Day
      */
-    private function addMalvinasDay(): void
+    protected function addMalvinasDay(): void
     {
         if ($this->year >= 1982) {
             $this->addHoliday(new Holiday(
@@ -192,7 +192,7 @@ class Argentina extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/First_National_Government
      */
-    private function addMayRevolution(): void
+    protected function addMayRevolution(): void
     {
         if ($this->year >= 1810) {
             $this->addHoliday(new Holiday(
@@ -213,7 +213,7 @@ class Argentina extends AbstractProvider
      * Anniversary of the death of Martín Miguel de Güemes, general of the
      * Argentine War of Independence.
      */
-    private function addGeneralMartinMigueldeGuemesDay(): void
+    protected function addGeneralMartinMigueldeGuemesDay(): void
     {
         if ($this->year >= 1821) {
             $this->addHoliday(new Holiday(
@@ -236,7 +236,7 @@ class Argentina extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Flag_Day_(Argentina)
      */
-    private function addFlagDay(): void
+    protected function addFlagDay(): void
     {
         if ($this->year >= 1938) {
             $this->addHoliday(new Holiday(
@@ -258,7 +258,7 @@ class Argentina extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Argentine_Declaration_of_Independence
      */
-    private function addIndependenceDay(): void
+    protected function addIndependenceDay(): void
     {
         if ($this->year >= self::PROCLAMATION_OF_INDEPENDENCE_YEAR) {
             $this->addHoliday(new Holiday(
@@ -279,7 +279,7 @@ class Argentina extends AbstractProvider
      * Anniversary of the death of José de San Martín, liberator of
      * Argentina, Chile and Peru.
      */
-    private function addGeneralJoseSanMartinDay(): void
+    protected function addGeneralJoseSanMartinDay(): void
     {
         if ($this->year >= 1850) {
             $this->addHoliday(new Holiday(
@@ -302,7 +302,7 @@ class Argentina extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Columbus_Day
      */
-    private function addRaceDay(): void
+    protected function addRaceDay(): void
     {
         if ($this->year >= 1492) {
             $this->addHoliday(new Holiday(
@@ -325,7 +325,7 @@ class Argentina extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/National_Sovereignty_Day
      */
-    private function addNationalSovereigntyDay(): void
+    protected function addNationalSovereigntyDay(): void
     {
         if ($this->year >= 2010) {
             $this->addHoliday(new Holiday(
@@ -348,7 +348,7 @@ class Argentina extends AbstractProvider
      *
      * @link https://en.wikipedia.org/wiki/Immaculate_Conception
      */
-    private function addImmaculateConceptionDay(): void
+    protected function addImmaculateConceptionDay(): void
     {
         if ($this->year >= 1900) {
             $this->addHoliday(new Holiday(

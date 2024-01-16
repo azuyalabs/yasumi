@@ -76,7 +76,7 @@ class Estonia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addIndependenceDay(): void
+    protected function addIndependenceDay(): void
     {
         if ($this->year >= self::DECLARATION_OF_INDEPENDENCE_YEAR) {
             $this->addHoliday(new Holiday('independenceDay', [
@@ -90,7 +90,7 @@ class Estonia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addVictoryDay(): void
+    protected function addVictoryDay(): void
     {
         if ($this->year >= self::VICTORY_DAY_START_YEAR) {
             $this->addHoliday(new Holiday('victoryDay', [
@@ -104,7 +104,7 @@ class Estonia extends AbstractProvider
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    private function addRestorationOfIndependenceDay(): void
+    protected function addRestorationOfIndependenceDay(): void
     {
         if ($this->year >= self::RESTORATION_OF_INDEPENDENCE_YEAR) {
             $this->addHoliday(new Holiday('restorationOfIndependenceDay', [

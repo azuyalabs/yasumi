@@ -126,7 +126,7 @@ class Switzerland extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateNationalDay(): void
+    protected function calculateNationalDay(): void
     {
         $translations = [
             'en' => 'National Day',

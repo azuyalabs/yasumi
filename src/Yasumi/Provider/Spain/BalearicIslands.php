@@ -73,7 +73,7 @@ class BalearicIslands extends Spain
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateBalearicIslandsDay(): void
+    protected function calculateBalearicIslandsDay(): void
     {
         if ($this->year >= 1983) {
             $this->addHoliday(new Holiday(

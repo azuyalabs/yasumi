@@ -87,7 +87,7 @@ class Denmark extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateGreatPrayerDay(): void
+    protected function calculateGreatPrayerDay(): void
     {
         $easter = $this->calculateEaster($this->year, $this->timezone)->format('Y-m-d');
 
@@ -122,7 +122,7 @@ class Denmark extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateConstitutionDay(): void
+    protected function calculateConstitutionDay(): void
     {
         if ($this->year >= 1849) {
             $this->addHoliday(new Holiday(

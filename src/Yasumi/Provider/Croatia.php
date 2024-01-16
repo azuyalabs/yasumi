@@ -82,7 +82,7 @@ class Croatia extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateStatehoodDay(): void
+    protected function calculateStatehoodDay(): void
     {
         if ($this->year >= 1991) {
             $statehoodDayDate = new \DateTime($this->year >= 2020 ? "{$this->year}-5-30" : "{$this->year}-6-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
@@ -99,7 +99,7 @@ class Croatia extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateHomelandThanksgivingDay(): void
+    protected function calculateHomelandThanksgivingDay(): void
     {
         $names = [];
         if ($this->year >= 1995 && $this->year < 2020) {
@@ -127,7 +127,7 @@ class Croatia extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateIndependenceDay(): void
+    protected function calculateIndependenceDay(): void
     {
         if ($this->year < 1991) {
             return;
@@ -149,7 +149,7 @@ class Croatia extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateRemembranceDayForHomelandWarVictims(): void
+    protected function calculateRemembranceDayForHomelandWarVictims(): void
     {
         if ($this->year >= 2020) {
             $this->addHoliday(new Holiday('remembranceDay', [
@@ -162,7 +162,7 @@ class Croatia extends AbstractProvider
     /*
      * Day of Antifascist Struggle
      */
-    private function calculateAntiFascistsStruggleDay(): void
+    protected function calculateAntiFascistsStruggleDay(): void
     {
         if ($this->year >= 1941) {
             $this->addHoliday(new Holiday('antifascistStruggleDay', [

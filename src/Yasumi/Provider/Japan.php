@@ -118,7 +118,7 @@ class Japan extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateNationalFoundationDay(): void
+    protected function calculateNationalFoundationDay(): void
     {
         if ($this->year >= 1966) {
             $this->addHoliday(new Holiday(
@@ -138,7 +138,7 @@ class Japan extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateShowaDay(): void
+    protected function calculateShowaDay(): void
     {
         if ($this->year >= 2007) {
             $this->addHoliday(new Holiday(
@@ -158,7 +158,7 @@ class Japan extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateConstitutionMemorialDay(): void
+    protected function calculateConstitutionMemorialDay(): void
     {
         if ($this->year >= 1948) {
             $this->addHoliday(new Holiday(
@@ -178,7 +178,7 @@ class Japan extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateChildrensDay(): void
+    protected function calculateChildrensDay(): void
     {
         if ($this->year >= 1948) {
             $this->addHoliday(new Holiday(
@@ -198,7 +198,7 @@ class Japan extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateCultureDay(): void
+    protected function calculateCultureDay(): void
     {
         if ($this->year >= 1948) {
             $this->addHoliday(new Holiday(
@@ -215,7 +215,7 @@ class Japan extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateLaborThanksgivingDay(): void
+    protected function calculateLaborThanksgivingDay(): void
     {
         if ($this->year >= 1948) {
             $this->addHoliday(new Holiday(
@@ -235,7 +235,7 @@ class Japan extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateEmperorsBirthday(): void
+    protected function calculateEmperorsBirthday(): void
     {
         $emperorsBirthday = null;
         if ($this->year >= 2020) {
@@ -269,7 +269,7 @@ class Japan extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateVernalEquinoxDay(): void
+    protected function calculateVernalEquinoxDay(): void
     {
         $day = null;
         if ($this->year >= 1948 && $this->year <= 1979) {
@@ -304,7 +304,7 @@ class Japan extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateComingOfAgeDay(): void
+    protected function calculateComingOfAgeDay(): void
     {
         if ($this->year >= 1948) {
             $date = $this->year >= 2000 ?
@@ -329,7 +329,7 @@ class Japan extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateGreeneryDay(): void
+    protected function calculateGreeneryDay(): void
     {
         $date = null;
         if ($this->year >= 2007) {
@@ -358,7 +358,7 @@ class Japan extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateMarineDay(): void
+    protected function calculateMarineDay(): void
     {
         if (1996 > $this->year) {
             return;
@@ -397,7 +397,7 @@ class Japan extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateMountainDay(): void
+    protected function calculateMountainDay(): void
     {
         $date = null;
         if (2021 === $this->year) {
@@ -430,7 +430,7 @@ class Japan extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateRespectForTheAgeDay(): void
+    protected function calculateRespectForTheAgeDay(): void
     {
         $date = null;
         if ($this->year >= 2003) {
@@ -459,7 +459,7 @@ class Japan extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateSportsDay(): void
+    protected function calculateSportsDay(): void
     {
         $date = null;
         if (2021 === $this->year) {
@@ -502,7 +502,7 @@ class Japan extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateAutumnalEquinoxDay(): void
+    protected function calculateAutumnalEquinoxDay(): void
     {
         $day = null;
         if ($this->year >= 1948 && $this->year <= 1979) {
@@ -537,7 +537,7 @@ class Japan extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateSubstituteHolidays(): void
+    protected function calculateSubstituteHolidays(): void
     {
         // Get initial list of holiday dates
         $dates = $this->getHolidayDates();
@@ -584,7 +584,7 @@ class Japan extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateCoronationDay(): void
+    protected function calculateCoronationDay(): void
     {
         if (2019 === $this->year) {
             $this->addHoliday(new Holiday(
@@ -602,7 +602,7 @@ class Japan extends AbstractProvider
      *
      * @throws \Exception
      */
-    private function calculateEnthronementProclamationCeremony(): void
+    protected function calculateEnthronementProclamationCeremony(): void
     {
         if (2019 === $this->year) {
             $this->addHoliday(new Holiday(
@@ -623,7 +623,7 @@ class Japan extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateBridgeHolidays(): void
+    protected function calculateBridgeHolidays(): void
     {
         // Get initial list of holidays and iterator
         $datesIterator = $this->getIterator();

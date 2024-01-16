@@ -171,7 +171,7 @@ class Canada extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateCanadaDay(): void
+    protected function calculateCanadaDay(): void
     {
         if ($this->year < 1983) {
             return;
@@ -197,7 +197,7 @@ class Canada extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateThanksgivingDay(): void
+    protected function calculateThanksgivingDay(): void
     {
         if ($this->year < 1879) {
             return;
@@ -220,7 +220,7 @@ class Canada extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateRemembranceDay(): void
+    protected function calculateRemembranceDay(): void
     {
         if ($this->year < 1919) {
             return;
@@ -243,7 +243,7 @@ class Canada extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateLabourDay(): void
+    protected function calculateLabourDay(): void
     {
         if ($this->year < 1894) {
             return;
@@ -266,7 +266,7 @@ class Canada extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateNationalDayForTruthAndReconciliation(): void
+    protected function calculateNationalDayForTruthAndReconciliation(): void
     {
         if ($this->year < 2021) {
             return;

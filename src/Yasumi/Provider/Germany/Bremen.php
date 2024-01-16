@@ -57,7 +57,7 @@ class Bremen extends Germany
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateReformationDay(): void
+    protected function calculateReformationDay(): void
     {
         if ($this->year < 2018) {
             return;

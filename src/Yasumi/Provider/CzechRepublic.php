@@ -80,7 +80,7 @@ class CzechRepublic extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateRenewalOfCzechIndependenceDay(): void
+    protected function calculateRenewalOfCzechIndependenceDay(): void
     {
         $this->addHoliday(new Holiday(
             'czechRenewalOfIndependentStateDay',
@@ -113,7 +113,7 @@ class CzechRepublic extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateSaintsCyrilAndMethodiusDay(): void
+    protected function calculateSaintsCyrilAndMethodiusDay(): void
     {
         $this->addHoliday(new Holiday(
             'saintsCyrilAndMethodiusDay',
@@ -140,7 +140,7 @@ class CzechRepublic extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateJanHusDay(): void
+    protected function calculateJanHusDay(): void
     {
         $this->addHoliday(new Holiday(
             'janHusDay',
@@ -167,7 +167,7 @@ class CzechRepublic extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateCzechStatehoodDay(): void
+    protected function calculateCzechStatehoodDay(): void
     {
         $this->addHoliday(new Holiday(
             'czechStateHoodDay',
@@ -189,7 +189,7 @@ class CzechRepublic extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateIndependentCzechoslovakStateDay(): void
+    protected function calculateIndependentCzechoslovakStateDay(): void
     {
         $this->addHoliday(new Holiday('independentCzechoslovakStateDay', [
             'cs' => 'Den vzniku samostatného československého státu',
@@ -206,7 +206,7 @@ class CzechRepublic extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    private function calculateStruggleForFreedomAndDemocracyDay(): void
+    protected function calculateStruggleForFreedomAndDemocracyDay(): void
     {
         $this->addHoliday(new Holiday(
             'struggleForFreedomAndDemocracyDay',
