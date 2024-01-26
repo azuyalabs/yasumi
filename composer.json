@@ -40,12 +40,12 @@
   },
   "require-dev": {
     "ext-intl": "*",
-    "friendsofphp/php-cs-fixer": "^2.19 || 3.46",
+    "friendsofphp/php-cs-fixer": "^2.19 || 3.48",
     "mikey179/vfsstream": "^1.6",
     "phan/phan": "^5.4",
     "phpstan/phpstan": "^1.10",
     "phpunit/phpunit": "^8.5 || ^9.6",
-    "vimeo/psalm": "^5.16"
+    "vimeo/psalm": "^5.20"
   },
   "suggest": {
     "ext-calendar": "For calculating the date of Easter"
