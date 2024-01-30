@@ -1,6 +1,6 @@
 {
   "name": "azuyalabs/yasumi",
-  "description": "The easy PHP Library for calculating holidays.",
+  "description": "The easy PHP Library for calculating holidays",
   "license": "MIT",
   "type": "library",
   "keywords": [
@@ -40,6 +40,7 @@
   },
   "require-dev": {
     "ext-intl": "*",
+    "azuyalabs/php-cs-fixer-config": "^0.1",
     "friendsofphp/php-cs-fixer": "^2.19 || 3.48",
     "mikey179/vfsstream": "^1.6",
     "phan/phan": "^5.4",
@@ -72,7 +73,8 @@
       "@phpstan",
       "@psalm"
     ],
-    "format": "./vendor/bin/php-cs-fixer fix",
+    "cs": "vendor/bin/php-cs-fixer fix -v --diff --dry-run",
+    "cs-fix": "vendor/bin/php-cs-fixer fix -v",
     "phan": "vendor/bin/phan -C",
     "phpstan": "vendor/bin/phpstan analyse",
     "psalm": "vendor/bin/psalm --threads=2",
