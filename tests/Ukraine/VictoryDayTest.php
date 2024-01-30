@@ -28,23 +28,17 @@ class VictoryDayTest extends UkraineBaseTestCase implements HolidayTestCase
     public const HOLIDAY = 'victoryDay';
 
     /**
-     * @dataProvider HolidayDataProvider
+     *  Tests Victory Day.
      */
-    public function testHoliday(int $year, \DateTimeInterface $expected): void
+    public function testHoliday(): void
     {
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
-    }
-
-    /**
-     * Returns a list of random test dates used for assertion of the holiday defined in this test.
-     *
-     * @return array<array> list of test dates for the holiday defined in this test
-     *
-     * @throws \Exception
-     */
-    public function HolidayDataProvider(): array
-    {
-        return $this->generateRandomDates(5, 9, self::TIMEZONE);
+        $year = 2017;
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new \DateTime("{$year}-5-8", new \DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -54,11 +48,12 @@ class VictoryDayTest extends UkraineBaseTestCase implements HolidayTestCase
      */
     public function testTranslation(): void
     {
+        $year = $this->generateRandomYear();
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
-            [self::LOCALE => 'День перемоги']
+            $year,
+            [self::LOCALE => ($year < 2015 ? 'День перемоги' : 'День перемоги над нацизмом у Другій світовій війні')]
         );
     }
 

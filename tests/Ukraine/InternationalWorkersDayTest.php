@@ -47,11 +47,12 @@ class InternationalWorkersDayTest extends UkraineBaseTestCase implements Holiday
      */
     public function testTranslation(): void
     {
+        $year = $this->generateRandomYear();
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
-            [self::LOCALE => 'День міжнародної солідарності трудящих']
+            $year,
+            [self::LOCALE => ($year < 2017 ? 'День міжнародної солідарності трудящих' : 'День праці')]
         );
     }
 
