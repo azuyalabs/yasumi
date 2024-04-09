@@ -1,9 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-/*
- * This file is part of the Yasumi package.
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -68,7 +70,7 @@ class SubstituteHoliday extends Holiday
     ) {
         $this->substitutedHoliday = $substitutedHoliday;
 
-        $key = 'substituteHoliday:'.$substitutedHoliday->getKey();
+        $key = 'substituteHoliday:' . $substitutedHoliday->getKey();
 
         if ($date == $substitutedHoliday) {
             throw new \InvalidArgumentException('Date must differ from the substituted holiday');

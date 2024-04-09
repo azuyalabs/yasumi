@@ -1,9 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-/*
- * This file is part of the Yasumi package.
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -382,7 +384,7 @@ trait ChristianHolidays
         }
 
         $easter = new \DateTime("{$year}-3-21", DateTimeZoneFactory::getDateTimeZone($timezone));
-        $easter->add(new \DateInterval('P'.$easterDays.'D'));
+        $easter->add(new \DateInterval('P' . $easterDays . 'D'));
 
         return $easter;
     }

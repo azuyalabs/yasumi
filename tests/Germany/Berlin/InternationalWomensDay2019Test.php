@@ -1,8 +1,11 @@
 <?php
 
-declare(strict_types=1);
-/*
- * This file is part of the Yasumi package.
+declare(strict_types = 1);
+
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -43,7 +46,7 @@ class InternationalWomensDay2019Test extends BerlinBaseTestCase implements Holid
             self::REGION,
             self::HOLIDAY,
             self::ESTABLISHMENT_YEAR,
-            new \DateTime(self::ESTABLISHMENT_YEAR.'-03-08', new \DateTimeZone(self::TIMEZONE))
+            new \DateTime(self::ESTABLISHMENT_YEAR . '-03-08', new \DateTimeZone(self::TIMEZONE))
         );
     }
 

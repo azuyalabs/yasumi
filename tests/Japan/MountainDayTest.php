@@ -1,8 +1,11 @@
 <?php
 
-declare(strict_types=1);
-/*
- * This file is part of the Yasumi package.
+declare(strict_types = 1);
+
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -90,7 +93,7 @@ class MountainDayTest extends JapanBaseTestCase implements HolidayTestCase
         $year = 2019;
         $this->assertHoliday(
             self::REGION,
-            self::SUBSTITUTE_PREFIX.self::HOLIDAY,
+            self::SUBSTITUTE_PREFIX . self::HOLIDAY,
             $year,
             new \DateTime("{$year}-8-12", new \DateTimeZone(self::TIMEZONE))
         );

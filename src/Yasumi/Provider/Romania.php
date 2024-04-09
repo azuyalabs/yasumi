@@ -1,9 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-/*
- * This file is part of the Yasumi package.
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -159,7 +161,7 @@ class Romania extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'stAndrewsDay',
                 [],
-                new \DateTime($this->year.'-11-30', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime($this->year . '-11-30', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -222,7 +224,7 @@ class Romania extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'stJohnsDay',
                 [],
-                new \DateTime($this->year.'-01-07', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime($this->year . '-01-07', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

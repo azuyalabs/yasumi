@@ -1,8 +1,11 @@
 <?php
 
-declare(strict_types=1);
-/*
- * This file is part of the Yasumi package.
+declare(strict_types = 1);
+
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -37,7 +40,7 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements HolidayTestCase
     {
         $year = $this->generateRandomYear(1870, 1965);
         // Find first Sunday of September
-        $date = new \DateTime('First Sunday of '.$year.'-09', new \DateTimeZone(self::TIMEZONE));
+        $date = new \DateTime('First Sunday of ' . $year . '-09', new \DateTimeZone(self::TIMEZONE));
         // Go to next Thursday
         $date->add(new \DateInterval('P4D'));
 
@@ -54,7 +57,7 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements HolidayTestCase
     {
         $year = $this->generateRandomYear(Geneva::JEUNE_GENEVOIS_ESTABLISHMENT_YEAR, 1869);
         // Find first Sunday of September
-        $date = new \DateTime('First Sunday of '.$year.'-09', new \DateTimeZone(self::TIMEZONE));
+        $date = new \DateTime('First Sunday of ' . $year . '-09', new \DateTimeZone(self::TIMEZONE));
         // Go to next Thursday
         $date->add(new \DateInterval('P4D'));
 

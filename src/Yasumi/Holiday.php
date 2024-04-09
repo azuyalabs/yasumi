@@ -1,9 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-/*
- * This file is part of the Yasumi package.
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -238,7 +240,7 @@ class Holiday extends \DateTime implements \JsonSerializable
 
             while ($child = strtok('_')) {
                 $expanded[] = $parent;
-                $parent .= '_'.$child;
+                $parent .= '_' . $child;
             }
             $expanded[] = $locale;
         }

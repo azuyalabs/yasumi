@@ -1,8 +1,11 @@
 <?php
 
-declare(strict_types=1);
-/*
- * This file is part of the Yasumi package.
+declare(strict_types = 1);
+
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -49,13 +52,13 @@ class PublicBridgeDayTest extends JapanBaseTestCase implements HolidayTestCase
     {
         $this->assertHoliday(
             self::REGION,
-            self::HOLIDAY.'1',
+            self::HOLIDAY . '1',
             $this->year,
             new \DateTime("{$this->year}-4-30", new \DateTimeZone(self::TIMEZONE))
         );
         $this->assertHoliday(
             self::REGION,
-            self::HOLIDAY.'2',
+            self::HOLIDAY . '2',
             $this->year,
             new \DateTime("{$this->year}-5-2", new \DateTimeZone(self::TIMEZONE))
         );
@@ -66,7 +69,7 @@ class PublicBridgeDayTest extends JapanBaseTestCase implements HolidayTestCase
      */
     public function testTranslation(): void
     {
-        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY.'1', $this->year, [self::LOCALE => '国民の休日']);
+        $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY . '1', $this->year, [self::LOCALE => '国民の休日']);
     }
 
     /**
@@ -74,6 +77,6 @@ class PublicBridgeDayTest extends JapanBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY.'1', $this->year, Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY . '1', $this->year, Holiday::TYPE_OFFICIAL);
     }
 }
