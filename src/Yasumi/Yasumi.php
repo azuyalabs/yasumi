@@ -1,9 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-/*
- * This file is part of the Yasumi package.
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -140,7 +142,7 @@ class Yasumi
         // Load internal translations variable
         if (! self::$globalTranslations instanceof Translations) {
             self::$globalTranslations = new Translations(self::$locales);
-            self::$globalTranslations->loadTranslations(__DIR__.'/data/translations');
+            self::$globalTranslations->loadTranslations(__DIR__ . '/data/translations');
         }
 
         // Assert locale input
@@ -158,7 +160,7 @@ class Yasumi
      */
     public static function getAvailableLocales(): array
     {
-        return require __DIR__.'/data/locales.php';
+        return require __DIR__ . '/data/locales.php';
     }
 
     /**
@@ -212,7 +214,7 @@ class Yasumi
 
         $providers = [];
         $filesIterator = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator(
-            __DIR__.\DIRECTORY_SEPARATOR.'Provider',
+            __DIR__ . \DIRECTORY_SEPARATOR . 'Provider',
             \FilesystemIterator::SKIP_DOTS
         ), \RecursiveIteratorIterator::SELF_FIRST);
 

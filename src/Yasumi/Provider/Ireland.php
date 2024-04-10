@@ -1,9 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-/*
- * This file is part of the Yasumi package.
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -160,7 +162,7 @@ class Ireland extends AbstractProvider
         $holiday = new Holiday(
             'christmasDay',
             ['en' => 'Christmas Day', 'ga' => 'Lá Nollag'],
-            new \DateTime($this->year.'-12-25', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($this->year . '-12-25', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         );
 
@@ -198,7 +200,7 @@ class Ireland extends AbstractProvider
         $holiday = new Holiday(
             'stStephensDay',
             [],
-            new \DateTime($this->year.'-12-26', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($this->year . '-12-26', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         );
 
@@ -241,7 +243,7 @@ class Ireland extends AbstractProvider
         $holiday = new Holiday(
             'stPatricksDay',
             ['en' => 'St. Patrick’s Day', 'ga' => 'Lá Fhéile Pádraig'],
-            new \DateTime($this->year.'-3-17', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($this->year . '-3-17', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         );
 

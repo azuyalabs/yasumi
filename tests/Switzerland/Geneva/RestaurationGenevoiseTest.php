@@ -1,8 +1,11 @@
 <?php
 
-declare(strict_types=1);
-/*
- * This file is part of the Yasumi package.
+declare(strict_types = 1);
+
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -40,7 +43,7 @@ class RestaurationGenevoiseTest extends GenevaBaseTestCase implements HolidayTes
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime($year.'-12-31', new \DateTimeZone(self::TIMEZONE))
+            new \DateTime($year . '-12-31', new \DateTimeZone(self::TIMEZONE))
         );
     }
 

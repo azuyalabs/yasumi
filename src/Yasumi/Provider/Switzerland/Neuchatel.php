@@ -1,8 +1,11 @@
 <?php
 
-declare(strict_types=1);
-/*
- * This file is part of the Yasumi package.
+declare(strict_types = 1);
+
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -94,7 +97,7 @@ class Neuchatel extends Switzerland
                 [
                     'fr' => 'Instauration de la République',
                 ],
-                new \DateTime($this->year.'-03-01', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime($this->year . '-03-01', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OTHER
             ));
@@ -116,7 +119,7 @@ class Neuchatel extends Switzerland
                 'en' => 'January 2nd',
                 'fr' => '2 janvier',
             ],
-            new \DateTime($this->year.'-01-02', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($this->year . '-01-02', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OTHER
         ));
@@ -137,7 +140,7 @@ class Neuchatel extends Switzerland
                 'en' => 'December 26th',
                 'fr' => '26 décembre',
             ],
-            new \DateTime($this->year.'-12-26', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($this->year . '-12-26', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OTHER
         ));

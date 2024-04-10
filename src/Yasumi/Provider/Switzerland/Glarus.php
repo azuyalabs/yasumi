@@ -1,8 +1,11 @@
 <?php
 
-declare(strict_types=1);
-/*
- * This file is part of the Yasumi package.
+declare(strict_types = 1);
+
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -75,7 +78,7 @@ class Glarus extends Switzerland
     protected function calculateNafelserFahrt(): void
     {
         if ($this->year >= 1389) {
-            $date = new \DateTime('First Thursday of '.$this->year.'-04', DateTimeZoneFactory::getDateTimeZone($this->timezone));
+            $date = new \DateTime('First Thursday of ' . $this->year . '-04', DateTimeZoneFactory::getDateTimeZone($this->timezone));
             $this->addHoliday(new Holiday('nafelserFahrt', [
                 'de' => 'Näfelser Fahrt',
             ], $date, $this->locale, Holiday::TYPE_OTHER));

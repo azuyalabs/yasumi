@@ -1,9 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-/*
- * This file is part of the Yasumi package.
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -77,7 +79,7 @@ class Russia extends AbstractProvider
         $holidayDays = [2, 3, 4, 5, 6, 8];
 
         foreach ($holidayDays as $day) {
-            $this->addHoliday(new Holiday('newYearHolidaysDay'.$day, [
+            $this->addHoliday(new Holiday('newYearHolidaysDay' . $day, [
                 'en' => 'New Year’s holidays',
                 'ru' => 'Новогодние каникулы',
             ], new \DateTime("{$this->year}-01-{$day}", new \DateTimeZone($this->timezone)), $this->locale));

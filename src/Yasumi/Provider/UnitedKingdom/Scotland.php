@@ -1,8 +1,11 @@
 <?php
 
-declare(strict_types=1);
-/*
- * This file is part of the Yasumi package.
+declare(strict_types = 1);
+
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -177,7 +180,7 @@ class Scotland extends UnitedKingdom
         $holiday = new Holiday(
             'stAndrewsDay',
             [],
-            new \DateTime($this->year.'-11-30', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($this->year . '-11-30', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
         );

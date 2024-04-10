@@ -1,8 +1,11 @@
 <?php
 
-declare(strict_types=1);
-/*
- * This file is part of the Yasumi package.
+declare(strict_types = 1);
+
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -79,7 +82,7 @@ class Geneva extends Switzerland
         }
 
         // Find first Sunday of September
-        $date = new \DateTime('First Sunday of '.$this->year.'-09', DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime('First Sunday of ' . $this->year . '-09', DateTimeZoneFactory::getDateTimeZone($this->timezone));
         // Go to next Thursday
         $date->add(new \DateInterval('P4D'));
 
@@ -115,7 +118,7 @@ class Geneva extends Switzerland
                 [
                     'fr' => 'Restauration de la République',
                 ],
-                new \DateTime($this->year.'-12-31', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime($this->year . '-12-31', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OTHER
             ));

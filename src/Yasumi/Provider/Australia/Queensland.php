@@ -1,9 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-/*
- * This file is part of the Yasumi package.
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -65,10 +67,10 @@ class Queensland extends Australia
      */
     protected function calculateQueensBirthday(): void
     {
-        $birthDay = 'first monday of october '.$this->year;
+        $birthDay = 'first monday of october ' . $this->year;
 
         if ($this->year < 2012 || 2013 === $this->year || 2014 === $this->year || 2015 === $this->year) {
-            $birthDay = 'second monday of june '.$this->year;
+            $birthDay = 'second monday of june ' . $this->year;
         }
 
         $this->addHoliday(new Holiday(

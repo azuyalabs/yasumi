@@ -1,9 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-/*
- * This file is part of the Yasumi package.
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -126,7 +128,7 @@ trait YasumiBase
         \DateTimeInterface $expected
     ): void {
         $holidays = Yasumi::create($provider, $year);
-        $holiday = $holidays->getHoliday('substituteHoliday:'.$key);
+        $holiday = $holidays->getHoliday('substituteHoliday:' . $key);
 
         self::assertInstanceOf(SubstituteHoliday::class, $holiday);
         $this->assertDateTime($expected, $holiday);
@@ -152,7 +154,7 @@ trait YasumiBase
     ): void {
         $this->assertNotHoliday(
             $provider,
-            'substituteHoliday:'.$key,
+            'substituteHoliday:' . $key,
             $year
         );
     }

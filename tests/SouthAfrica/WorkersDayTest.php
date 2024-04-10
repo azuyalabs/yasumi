@@ -1,8 +1,11 @@
 <?php
 
-declare(strict_types=1);
-/*
- * This file is part of the Yasumi package.
+declare(strict_types = 1);
+
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -54,7 +57,7 @@ class WorkersDayTest extends SouthAfricaBaseTestCase implements HolidayTestCase
         // Whenever any public holiday falls on a Sunday, the Monday following on it shall be a public holiday.
         if (0 === (int) $date->format('w')) {
             $date->add(new \DateInterval('P1D'));
-            $this->assertHoliday(self::REGION, 'substituteHoliday:'.self::HOLIDAY, $year, $date);
+            $this->assertHoliday(self::REGION, 'substituteHoliday:' . self::HOLIDAY, $year, $date);
         }
     }
 

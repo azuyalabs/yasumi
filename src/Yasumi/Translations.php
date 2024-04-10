@@ -1,9 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-/*
- * This file is part of the Yasumi package.
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -48,7 +50,7 @@ class Translations implements TranslationsInterface
             throw new \InvalidArgumentException('Directory with translations not found');
         }
 
-        $directoryPath = rtrim($directoryPath, '/\\').\DIRECTORY_SEPARATOR;
+        $directoryPath = rtrim($directoryPath, '/\\') . \DIRECTORY_SEPARATOR;
         $extension = 'php';
 
         foreach (new \DirectoryIterator($directoryPath) as $file) {
@@ -65,9 +67,9 @@ class Translations implements TranslationsInterface
             }
 
             $filename = $file->getFilename();
-            $key = $file->getBasename('.'.$extension);
+            $key = $file->getBasename('.' . $extension);
 
-            $translations = require $directoryPath.$filename;
+            $translations = require $directoryPath . $filename;
 
             if (\is_array($translations)) {
                 foreach (array_keys($translations) as $locale) {

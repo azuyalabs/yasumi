@@ -1,9 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-/*
- * This file is part of the Yasumi package.
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -78,7 +80,7 @@ class NewfoundlandAndLabrador extends Canada
         $holiday = new Holiday(
             'stPatricksDay',
             ['en' => 'St. Patrick’s Day'],
-            new \DateTime($this->year.'-3-17', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($this->year . '-3-17', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
         );
@@ -122,7 +124,7 @@ class NewfoundlandAndLabrador extends Canada
         $holiday = new Holiday(
             'orangemensDay',
             [],
-            new \DateTime($this->year.'-7-12', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime($this->year . '-7-12', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
         );

@@ -1,8 +1,11 @@
 <?php
 
-declare(strict_types=1);
-/*
- * This file is part of the Yasumi package.
+declare(strict_types = 1);
+
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -59,7 +62,7 @@ class GreeneryDayTest extends JapanBaseTestCase implements HolidayTestCase
         $year = 2014;
         $this->assertHoliday(
             self::REGION,
-            self::SUBSTITUTE_PREFIX.self::HOLIDAY,
+            self::SUBSTITUTE_PREFIX . self::HOLIDAY,
             $year,
             new \DateTime("{$year}-5-6", new \DateTimeZone(self::TIMEZONE))
         );
@@ -92,7 +95,7 @@ class GreeneryDayTest extends JapanBaseTestCase implements HolidayTestCase
         $year = 2001;
         $this->assertHoliday(
             self::REGION,
-            self::SUBSTITUTE_PREFIX.self::HOLIDAY,
+            self::SUBSTITUTE_PREFIX . self::HOLIDAY,
             $year,
             new \DateTime("{$year}-4-30", new \DateTimeZone(self::TIMEZONE))
         );

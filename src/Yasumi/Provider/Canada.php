@@ -1,9 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-/*
- * This file is part of the Yasumi package.
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -176,9 +178,9 @@ class Canada extends AbstractProvider
         if ($this->year < 1983) {
             return;
         }
-        $date = new \DateTime($this->year.'-07-01', DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime($this->year . '-07-01', DateTimeZoneFactory::getDateTimeZone($this->timezone));
         if (7 === (int) $date->format('N')) {
-            $date = new \DateTime($this->year.'-07-02', DateTimeZoneFactory::getDateTimeZone($this->timezone));
+            $date = new \DateTime($this->year . '-07-02', DateTimeZoneFactory::getDateTimeZone($this->timezone));
         }
         $this->addHoliday(new Holiday(
             'canadaDay',

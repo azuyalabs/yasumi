@@ -1,9 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-/*
- * This file is part of the Yasumi package.
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -648,7 +650,7 @@ class Japan extends AbstractProvider
                 $bridgeDate = clone $previous;
                 $bridgeDate->add(new \DateInterval('P1D'));
 
-                $this->addHoliday(new Holiday('bridgeDay'.$counter, [
+                $this->addHoliday(new Holiday('bridgeDay' . $counter, [
                     'en' => 'Bridge Public holiday',
                     'ja' => '国民の休日',
                 ], $bridgeDate, $this->locale));

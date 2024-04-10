@@ -1,8 +1,11 @@
 <?php
 
-declare(strict_types=1);
-/*
- * This file is part of the Yasumi package.
+declare(strict_types = 1);
+
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -35,7 +38,7 @@ class BerchtoldsTagTest extends ObwaldenBaseTestCase implements HolidayTestCase
     public function testBerchtoldsTag(): void
     {
         $year = $this->generateRandomYear();
-        $date = new \DateTime($year.'-01-02', new \DateTimeZone(self::TIMEZONE));
+        $date = new \DateTime($year . '-01-02', new \DateTimeZone(self::TIMEZONE));
 
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OTHER);

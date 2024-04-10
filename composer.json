@@ -40,8 +40,7 @@
   },
   "require-dev": {
     "ext-intl": "*",
-    "azuyalabs/php-cs-fixer-config": "^0.1",
-    "friendsofphp/php-cs-fixer": "^2.19 || 3.48",
+    "azuyalabs/php-cs-fixer-config": "^0.3",
     "mikey179/vfsstream": "^1.6",
     "phan/phan": "^5.4",
     "phpstan/phpstan": "^1.10",

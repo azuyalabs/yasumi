@@ -1,9 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-/*
- * This file is part of the Yasumi package.
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -217,7 +219,7 @@ class NewZealand extends AbstractProvider
         }
 
         $date = new \DateTime(
-            ($this->year < 1910 ? 'second wednesday of october' : 'fourth monday of october')." {$this->year}",
+            ($this->year < 1910 ? 'second wednesday of october' : 'fourth monday of october') . " {$this->year}",
             DateTimeZoneFactory::getDateTimeZone($this->timezone)
         );
 

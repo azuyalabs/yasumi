@@ -1,9 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-/*
- * This file is part of the Yasumi package.
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -53,7 +55,7 @@ class CircularHead extends Northwest
      */
     protected function calculateAGFEST(): void
     {
-        $date = new \DateTime('first thursday of may '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime('first thursday of may ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $date = $date->add(new \DateInterval('P1D'));
         $this->addHoliday(new Holiday('agfest', ['en' => 'AGFEST'], $date, $this->locale));
     }

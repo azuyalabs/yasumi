@@ -1,9 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-/*
- * This file is part of the Yasumi package.
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -66,7 +68,7 @@ class WesternAustralia extends Australia
      */
     protected function calculateQueensBirthday(): void
     {
-        $birthDay = 'last monday of september '.$this->year;
+        $birthDay = 'last monday of september ' . $this->year;
         if (2011 === $this->year) {
             $birthDay = '2011-10-28';
         }
@@ -109,7 +111,7 @@ class WesternAustralia extends Australia
         $this->addHoliday(new Holiday(
             'westernAustraliaDay',
             ['en' => 'Western Australia Day'],
-            new \DateTime('first monday of june '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime('first monday of june ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));

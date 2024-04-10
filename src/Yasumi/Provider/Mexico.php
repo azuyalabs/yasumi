@@ -1,11 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 /**
- * Provider for all holidays in Mexico.
+ * This file is part of the 'Yasumi' package.
  *
- * This file is part of the Yasumi package.
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
