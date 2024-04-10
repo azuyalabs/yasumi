@@ -138,7 +138,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements HolidayT
      */
     private function randomYearsOnAfterEstablishment(): \Generator
     {
-        yield $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        yield $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::HOLIDAY_YEAR_SUSPENDED - 1);
         yield self::ESTABLISHMENT_YEAR;
     }
 
