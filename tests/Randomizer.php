@@ -1,9 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-/*
- * This file is part of the Yasumi package.
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -329,7 +331,7 @@ trait Randomizer
         $timestamp = random_int($startTimestamp, $endTimestamp);
 
         return static::setTimezone(
-            new \DateTime('@'.$timestamp),
+            new \DateTime('@' . $timestamp),
             $timezone
         );
     }
@@ -417,7 +419,7 @@ trait Randomizer
         }
 
         $easter = new \DateTime("{$year}-3-21", new \DateTimeZone($timezone));
-        $easter->add(new \DateInterval('P'.$easter_days.'D'));
+        $easter->add(new \DateInterval('P' . $easter_days . 'D'));
 
         return $easter;
     }

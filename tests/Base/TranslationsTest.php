@@ -1,8 +1,11 @@
 <?php
 
-declare(strict_types=1);
-/*
- * This file is part of the Yasumi package.
+declare(strict_types = 1);
+
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -155,7 +158,7 @@ return [
 ];
 FILE;
 
-        vfsStream::setup('root', null, ['lang' => [$key.'.php' => $fileContents]]);
+        vfsStream::setup('root', null, ['lang' => [$key . '.php' => $fileContents]]);
 
         $translations = new Translations(self::LOCALES);
         $translations->loadTranslations(vfsStream::url('root/lang'));
@@ -181,7 +184,7 @@ return [
 ];
 FILE;
 
-        vfsStream::setup('root', null, ['lang' => [$key.'.translation' => $fileContents]]);
+        vfsStream::setup('root', null, ['lang' => [$key . '.translation' => $fileContents]]);
 
         $translations = new Translations(self::LOCALES);
         $translations->loadTranslations(vfsStream::url('root/lang'));
@@ -203,7 +206,7 @@ return [
 ];
 FILE;
 
-        vfsStream::setup('root', null, ['lang' => [$key.'.php' => $fileContents]]);
+        vfsStream::setup('root', null, ['lang' => [$key . '.php' => $fileContents]]);
 
         $translations = new Translations(self::LOCALES);
         $translations->loadTranslations(vfsStream::url('root/lang'));
@@ -242,8 +245,8 @@ FILE;
 
         vfsStream::setup('root', null, [
             'lang' => [
-                $firstIdentifier.'.php' => $firstFileContents,
-                $secondIdentifier.'.php' => $secondFileContents,
+                $firstIdentifier . '.php' => $firstFileContents,
+                $secondIdentifier . '.php' => $secondFileContents,
             ],
         ]);
 

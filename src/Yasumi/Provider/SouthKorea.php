@@ -1,9 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-/*
- * This file is part of the Yasumi package.
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -918,7 +920,7 @@ class SouthKorea extends AbstractProvider
 
             $dayOfWeek = (int) $holiday->format('w');
             if (\in_array($dayOfWeek, $acceptedHolidays[$name], true)) {
-                $dates[$day]['weekend:'.$day] = $name;
+                $dates[$day]['weekend:' . $day] = $name;
             }
         }
 

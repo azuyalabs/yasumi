@@ -1,8 +1,11 @@
 <?php
 
-declare(strict_types=1);
-/*
- * This file is part of the Yasumi package.
+declare(strict_types = 1);
+
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -40,7 +43,7 @@ class NafelserFahrtTest extends GlarusBaseTestCase implements HolidayTestCase
     public function testNafelserFahrtOnAfter1389(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $date = new \DateTime('First Thursday of '.$year.'-04', new \DateTimeZone(self::TIMEZONE));
+        $date = new \DateTime('First Thursday of ' . $year . '-04', new \DateTimeZone(self::TIMEZONE));
 
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
     }

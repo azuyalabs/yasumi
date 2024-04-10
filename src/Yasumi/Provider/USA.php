@@ -1,9 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-/*
- * This file is part of the Yasumi package.
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -179,7 +181,7 @@ class USA extends AbstractProvider
                 $this->addHoliday(new SubstituteHoliday(
                     $holiday,
                     [
-                        'en' => $label.' (observed)',
+                        'en' => $label . ' (observed)',
                     ],
                     $date,
                     $this->locale

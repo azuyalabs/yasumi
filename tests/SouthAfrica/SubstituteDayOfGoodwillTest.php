@@ -1,8 +1,11 @@
 <?php
 
-declare(strict_types=1);
-/*
- * This file is part of the Yasumi package.
+declare(strict_types = 1);
+
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -47,7 +50,7 @@ class SubstituteDayOfGoodwillTest extends SouthAfricaBaseTestCase implements Hol
             self::REGION,
             self::HOLIDAY,
             self::ESTABLISHMENT_YEAR,
-            new \DateTime(self::ESTABLISHMENT_YEAR.'-12-27', new \DateTimeZone(self::TIMEZONE))
+            new \DateTime(self::ESTABLISHMENT_YEAR . '-12-27', new \DateTimeZone(self::TIMEZONE))
         );
     }
 
