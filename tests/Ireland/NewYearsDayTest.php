@@ -1,8 +1,11 @@
 <?php
 
-declare(strict_types=1);
-/*
- * This file is part of the Yasumi package.
+declare(strict_types = 1);
+
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -49,7 +52,7 @@ class NewYearsDayTest extends IrelandBaseTestCase implements HolidayTestCase
 
         if (0 === (int) $date->format('w')) {
             $date->modify('next monday');
-            $this->assertHoliday(self::REGION, 'substituteHoliday:'.self::HOLIDAY, $year, $date);
+            $this->assertHoliday(self::REGION, 'substituteHoliday:' . self::HOLIDAY, $year, $date);
         }
     }
 

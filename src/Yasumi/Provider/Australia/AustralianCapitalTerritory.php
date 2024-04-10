@@ -1,9 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-/*
- * This file is part of the Yasumi package.
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -142,7 +144,7 @@ class AustralianCapitalTerritory extends Australia
         $this->addHoliday(new Holiday(
             'queensBirthday',
             [],
-            new \DateTime('second monday of june '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime('second monday of june ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));
@@ -190,10 +192,10 @@ class AustralianCapitalTerritory extends Australia
             return;
         }
 
-        $date = new \DateTime($this->year.'-05-27', DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime($this->year . '-05-27', DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $day = (int) $date->format('w');
         if (1 !== $day) {
-            $date = $date->add(0 === $day ? new \DateInterval('P1D') : new \DateInterval('P'.(8 - $day).'D'));
+            $date = $date->add(0 === $day ? new \DateInterval('P1D') : new \DateInterval('P' . (8 - $day) . 'D'));
         }
         $this->addHoliday(new Holiday('reconciliationDay', ['en' => 'Reconciliation Day'], $date, $this->locale));
     }

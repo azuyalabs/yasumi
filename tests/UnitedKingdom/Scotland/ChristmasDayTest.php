@@ -1,8 +1,11 @@
 <?php
 
-declare(strict_types=1);
-/*
- * This file is part of the Yasumi package.
+declare(strict_types = 1);
+
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -44,8 +47,8 @@ class ChristmasDayTest extends ScotlandBaseTestCase implements HolidayTestCase
 
         if (\in_array((int) $date->format('w'), [0, 6], true)) {
             $date->add(new \DateInterval('P2D'));
-            $this->assertHoliday(self::REGION, 'substituteHoliday:'.self::HOLIDAY, $year, $date);
-            $this->assertHolidayType(self::REGION, 'substituteHoliday:'.self::HOLIDAY, $year, Holiday::TYPE_BANK);
+            $this->assertHoliday(self::REGION, 'substituteHoliday:' . self::HOLIDAY, $year, $date);
+            $this->assertHolidayType(self::REGION, 'substituteHoliday:' . self::HOLIDAY, $year, Holiday::TYPE_BANK);
         }
     }
 

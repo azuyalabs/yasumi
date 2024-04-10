@@ -1,9 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-/*
- * This file is part of the Yasumi package.
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -59,7 +61,7 @@ class Southeast extends South
         $this->addHoliday(new Holiday(
             'hobartRegatta',
             ['en' => 'Royal Hobart Regatta'],
-            new \DateTime('second monday of february '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime('second monday of february ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));

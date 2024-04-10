@@ -1,9 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-/*
- * This file is part of the Yasumi package.
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -67,7 +69,7 @@ class Brisbane extends Queensland
      */
     protected function calculatePeoplesDay(): void
     {
-        $date = new \DateTime('first friday of august '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime('first friday of august ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone));
         if ($date->format('d') < 5) {
             $date = $date->add(new \DateInterval('P7D'));
         }

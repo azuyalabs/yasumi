@@ -1,9 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-/*
- * This file is part of the Yasumi package.
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -73,7 +75,7 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements HolidayTestC
         self::assertTrue($holidays->isHoliday($holidayOfficial));
         self::assertEquals(Holiday::TYPE_OFFICIAL, $holidayOfficial->getType());
 
-        $holidaySubstitution = $holidays->getHoliday('substituteHoliday:'.$holidayOfficial->getKey());
+        $holidaySubstitution = $holidays->getHoliday('substituteHoliday:' . $holidayOfficial->getKey());
 
         if (! $expectedSubstitution instanceof \DateTimeInterface) {
             // without substitution

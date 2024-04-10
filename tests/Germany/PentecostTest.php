@@ -1,8 +1,11 @@
 <?php
 
-declare(strict_types=1);
-/*
- * This file is part of the Yasumi package.
+declare(strict_types = 1);
+
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -36,7 +39,7 @@ class PentecostTest extends GermanyBaseTestCase implements HolidayTestCase
     {
         $year = $this->generateRandomYear();
         $time_stamp = strtotime(
-            $year.'-03-21'.easter_days($year).' day + 49 day'
+            $year . '-03-21' . easter_days($year) . ' day + 49 day'
         );
         $date = date('Y-m-d', $time_stamp);
 

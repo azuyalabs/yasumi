@@ -4,7 +4,20 @@
 // those scenarios where you would need only a subset of holidays of an existing provider. Or, if you you like to
 // extend an existing provider with additional, non-standard holidays.
 
-declare(strict_types=1);
+declare(strict_types = 1);
+
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
+ *
+ * Copyright (c) 2015 - 2024 AzuyaLabs
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
+ */
 
 require 'vendor/autoload.php';
 
@@ -33,11 +46,11 @@ class NYSE extends Yasumi\Provider\USA
 $NYSEHolidays = Yasumi\Yasumi::create(NYSE::class, (int) date('Y'));
 
 // We then can retrieve the NYSE observed holidays in the usual manner:
-echo 'List of all the holiday names: '.PHP_EOL;
+echo 'List of all the holiday names: ' . PHP_EOL;
 foreach ($NYSEHolidays->getHolidayNames() as $day) {
-    echo $day.PHP_EOL;
+    echo $day . PHP_EOL;
 }
 echo PHP_EOL;
 
 // Use the count() method to show how many holidays are returned
-echo 'Number of defined holidays: '.$NYSEHolidays->count().PHP_EOL;
+echo 'Number of defined holidays: ' . $NYSEHolidays->count() . PHP_EOL;

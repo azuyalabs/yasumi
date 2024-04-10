@@ -1,9 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-/*
- * This file is part of the Yasumi package.
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -97,7 +99,7 @@ class Austria extends AbstractProvider
         $this->addHoliday(new Holiday(
             'stLeopoldsDay',
             [],
-            new \DateTime($this->year.'-11-15', new \DateTimeZone($this->timezone)),
+            new \DateTime($this->year . '-11-15', new \DateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -125,7 +127,7 @@ class Austria extends AbstractProvider
         $this->addHoliday(new Holiday(
             'nationalDay',
             ['de' => 'Nationalfeiertag'],
-            new \DateTime($this->year.'-10-26', new \DateTimeZone($this->timezone)),
+            new \DateTime($this->year . '-10-26', new \DateTimeZone($this->timezone)),
             $this->locale
         ));
     }

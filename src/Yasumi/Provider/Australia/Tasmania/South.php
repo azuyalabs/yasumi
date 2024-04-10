@@ -1,9 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-/*
- * This file is part of the Yasumi package.
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -53,7 +55,7 @@ class South extends Tasmania
      */
     protected function calculateHobartShow(): void
     {
-        $date = new \DateTime('fourth saturday of october '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime('fourth saturday of october ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $date = $date->sub(new \DateInterval('P2D'));
         $this->addHoliday(new Holiday('hobartShow', ['en' => 'Royal Hobart Show'], $date, $this->locale));
     }

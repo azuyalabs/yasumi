@@ -1,9 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-/*
- * This file is part of the Yasumi package.
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -116,7 +118,7 @@ class SouthAustralia extends Australia
         $this->addHoliday(new Holiday(
             'queensBirthday',
             [],
-            new \DateTime('second monday of june '.$this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime('second monday of june ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));
@@ -145,10 +147,10 @@ class SouthAustralia extends Australia
     protected function calculateAdelaideCupDay(): void
     {
         if ($this->year >= 1973) {
-            $cupDay = 'second monday of march '.$this->year;
+            $cupDay = 'second monday of march ' . $this->year;
 
             if ($this->year < 2006) {
-                $cupDay = 'third monday of may '.$this->year;
+                $cupDay = 'third monday of may ' . $this->year;
             }
 
             $this->addHoliday(new Holiday(

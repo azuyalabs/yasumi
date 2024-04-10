@@ -1,8 +1,11 @@
 <?php
 
-declare(strict_types=1);
-/*
- * This file is part of the Yasumi package.
+declare(strict_types = 1);
+
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -269,7 +272,7 @@ class YasumiTest extends TestCase
     {
         $year = 2110;
         $provider = 'Spain';
-        $date = $year.'-08-15';
+        $date = $year . '-08-15';
 
         // Assertion using a DateTime instance
         $isHoliday = Yasumi::create($provider, $year)->isHoliday(new \DateTime($date));
@@ -296,7 +299,7 @@ class YasumiTest extends TestCase
     {
         $year = 5220;
         $provider = 'Japan';
-        $date = $year.'-06-10';
+        $date = $year . '-06-10';
 
         // Assertion using a DateTime instance
         $isHoliday = Yasumi::create($provider, $year)->isHoliday(new \DateTime($date));
@@ -323,7 +326,7 @@ class YasumiTest extends TestCase
     {
         $year = 2020;
         $provider = 'Netherlands';
-        $date = $year.'-06-02';
+        $date = $year . '-06-02';
 
         // Assertion using a DateTime instance
         $isWorkingDay = Yasumi::create($provider, $year)->isWorkingDay(new \DateTime($date));
@@ -350,7 +353,7 @@ class YasumiTest extends TestCase
     {
         $year = 2016;
         $provider = 'Japan';
-        $date = $year.'-01-11';
+        $date = $year . '-01-11';
 
         // Assertion using a DateTime instance
         $isNotWorkingDay = Yasumi::create($provider, $year)->isWorkingDay(new \DateTime($date));

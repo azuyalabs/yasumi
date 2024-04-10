@@ -1,9 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-/*
- * This file is part of the Yasumi package.
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -53,7 +55,7 @@ class CentralNorth extends Tasmania
      */
     protected function calculateDevonportShow(): void
     {
-        $date = new \DateTime($this->year.'-12-02', DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime($this->year . '-12-02', DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $date = $date->modify('previous friday');
 
         if (! $date instanceof \DateTime) {

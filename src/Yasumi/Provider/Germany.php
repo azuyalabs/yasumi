@@ -1,9 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-/*
- * This file is part of the Yasumi package.
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -96,7 +98,7 @@ class Germany extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'germanUnityDay',
                 ['de' => 'Tag der Deutschen Einheit'],
-                new \DateTime($this->year.'-10-3', new \DateTimeZone($this->timezone)),
+                new \DateTime($this->year . '-10-3', new \DateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

@@ -1,9 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
-/*
- * This file is part of the Yasumi package.
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
  *
  * Copyright (c) 2015 - 2024 AzuyaLabs
  *
@@ -73,7 +75,7 @@ class UpperAustria extends Austria
         $this->addHoliday(new Holiday(
             'stFloriansDay',
             [],
-            new \DateTime($this->year.'-5-4', new \DateTimeZone($this->timezone)),
+            new \DateTime($this->year . '-5-4', new \DateTimeZone($this->timezone)),
             $this->locale
         ));
     }
