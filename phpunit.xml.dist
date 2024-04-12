@@ -18,6 +18,10 @@
       verbose="true"
     >
 
+    <php>
+        <ini name="memory_limit" value="512M" />
+    </php>
+
     <coverage processUncoveredFiles="true">
         <include>
             <directory suffix=".php">./src/Yasumi</directory>
