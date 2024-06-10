@@ -42,7 +42,7 @@ class DeclarationOfTheSlovakNationTest extends SlovakiaBaseTestCase implements H
      */
     public function testHoliday(int $year, \DateTimeInterface $expected): void
     {
-        if ($year === 2018) {
+        if (2018 === $year) {
             $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
         } else {
             $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
