@@ -128,7 +128,7 @@ class Slovakia extends AbstractProvider
      */
     protected function calculateDeclarationOfTheSlovakNation(): void
     {
-        if ($this->year === 2018) {
+        if (2018 === $this->year) {
             $this->addHoliday(new Holiday(
                 'declarationOfTheSlovakNation',
                 [
@@ -140,7 +140,7 @@ class Slovakia extends AbstractProvider
             ));
         }
     }
-    
+
     /**
      * New Year's Day.
      *
