@@ -23,14 +23,14 @@ use Yasumi\tests\HolidayTestCase;
 /**
  * Class for testing an official holiday in Slovakia.
  *
- * @author  Andrej Rypak (dakujem) <xrypak@gmail.com>
+ * @author  Jan Hamrak <snickom@gmail.com>
  */
-class SlovakConstitutionDayTest extends SlovakiaBaseTestCase implements HolidayTestCase
+class DeclarationOfTheSlovakNationTest extends SlovakiaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.
      */
-    public const HOLIDAY = 'slovakConstitutionDay';
+    public const HOLIDAY = 'declarationOfTheSlovakNation';
 
     /**
      * Tests the holiday defined in this test.
@@ -42,7 +42,7 @@ class SlovakConstitutionDayTest extends SlovakiaBaseTestCase implements HolidayT
      */
     public function testHoliday(int $year, \DateTimeInterface $expected): void
     {
-        if ($year < 2024) {
+        if (2018 === $year) {
             $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
         } else {
             $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
@@ -58,7 +58,7 @@ class SlovakConstitutionDayTest extends SlovakiaBaseTestCase implements HolidayT
      */
     public function HolidayDataProvider(): array
     {
-        return $this->generateRandomDates(9, 1, self::TIMEZONE);
+        return $this->generateRandomDates(10, 30, self::TIMEZONE);
     }
 
     /**
@@ -71,8 +71,8 @@ class SlovakConstitutionDayTest extends SlovakiaBaseTestCase implements HolidayT
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(null, 2013),
-            [self::LOCALE => 'Deň Ústavy Slovenskej republiky']
+            2018,
+            [self::LOCALE => 'Výročie Deklarácie slovenského národa']
         );
     }
 
@@ -83,6 +83,6 @@ class SlovakConstitutionDayTest extends SlovakiaBaseTestCase implements HolidayT
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(null, 2013), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, 2018, Holiday::TYPE_OFFICIAL);
     }
 }

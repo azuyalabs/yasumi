@@ -86,10 +86,12 @@ class Slovakia extends AbstractProvider
         $this->calculateSaintsCyrilAndMethodiusDay();
         // 29.8.
         $this->calculateSlovakNationalUprisingDay();
-        // 1.9.
+        // 1.9.(<2024)
         $this->calculateSlovakConstitutionDay();
         // 15.9.
         $this->calculateOurLadyOfSorrowsDay();
+        // 30.10.2018
+        $this->calculateDeclarationOfTheSlovakNation();
         // 1.11.
         $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
         // 17.11.
@@ -112,6 +114,31 @@ class Slovakia extends AbstractProvider
             'https://en.wikipedia.org/wiki/Public_holidays_in_Slovakia',
             'https://cs.wikipedia.org/wiki/St%C3%A1tn%C3%AD_sv%C3%A1tky_Slovenska',
         ];
+    }
+
+    /**
+     * Anniversary of the Declaration of the Slovak Nation.
+     * In 2018, October 30 was a one-time public holiday. For this reason, it was not a commemorative day in 2018.
+     *
+     * @see https://sk.wikipedia.org/wiki/Zoznam_sviatkov_na_Slovensku#endnote_pozn-01
+     *
+     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws \Exception
+     */
+    protected function calculateDeclarationOfTheSlovakNation(): void
+    {
+        if (2018 === $this->year) {
+            $this->addHoliday(new Holiday(
+                'declarationOfTheSlovakNation',
+                [
+                    'sk' => 'Výročie Deklarácie slovenského národa',
+                    'en' => 'Anniversary of the Declaration of the Slovak Nation',
+                ],
+                new \DateTime($this->year . '-10-30', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        }
     }
 
     /**
@@ -189,6 +216,8 @@ class Slovakia extends AbstractProvider
      * Day of the Constitution of the Slovak Republic.
      *
      * @see https://en.wikipedia.org/wiki/Constitution_of_Slovakia
+     * Removed since 2024
+     * @see https://www.slov-lex.sk/pravne-predpisy/SK/ZZ/1993/241/
      *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
@@ -196,16 +225,18 @@ class Slovakia extends AbstractProvider
      */
     protected function calculateSlovakConstitutionDay(): void
     {
-        $this->addHoliday(new Holiday(
-            'slovakConstitutionDay',
-            [
-                'sk' => 'Deň Ústavy Slovenskej republiky',
-                'en' => 'Day of the Constitution of the Slovak Republic',
-            ],
-            new \DateTime($this->year . '-09-01', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-            $this->locale,
-            Holiday::TYPE_OFFICIAL
-        ));
+        if ($this->year < 2024) {
+            $this->addHoliday(new Holiday(
+                'slovakConstitutionDay',
+                [
+                    'sk' => 'Deň Ústavy Slovenskej republiky',
+                    'en' => 'Day of the Constitution of the Slovak Republic',
+                ],
+                new \DateTime($this->year . '-09-01', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                $this->locale,
+                Holiday::TYPE_OFFICIAL
+            ));
+        }
     }
 
     /**
