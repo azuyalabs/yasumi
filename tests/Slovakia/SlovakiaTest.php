@@ -50,11 +50,18 @@ class SlovakiaTest extends SlovakiaBaseTestCase implements ProviderTestCase
     {
         $this->assertDefinedHolidays([
             'slovakIndependenceDay',
-            'slovakConstitutionDay',
             'slovakNationalUprisingDay',
             'saintsCyrilAndMethodiusDay',
             'struggleForFreedomAndDemocracyDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
+
+        $this->assertDefinedHolidays([
+            'slovakConstitutionDay',
+        ], self::REGION, 2013, Holiday::TYPE_OFFICIAL);
+
+        $this->assertDefinedHolidays([
+            'declarationOfTheSlovakNation',
+        ], self::REGION, 2018, Holiday::TYPE_OFFICIAL);
     }
 
     /**
