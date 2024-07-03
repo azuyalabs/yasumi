@@ -27,7 +27,7 @@ class AnniversaryOfIslamicRevolutionTest extends IranBaseTestCase implements Hol
 
     public const ESTABLISHMENT_YEAR = 1979;
 
-    public function testAnniversaryOfIslamicRevolutionBeforeEstablishment(): void 
+    public function testAnniversaryOfIslamicRevolutionBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -61,7 +61,7 @@ class AnniversaryOfIslamicRevolutionTest extends IranBaseTestCase implements Hol
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
             [
                 self::LOCALE => 'انقلاب اسلامی پنجاه و هفت',
-                'en'         => 'Enqelab e Eslami',
+                'en' => 'Enqelab e Eslami',
             ]
         );
     }

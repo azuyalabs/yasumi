@@ -49,7 +49,7 @@ class SizdahBedarTest extends IranBaseTestCase implements HolidayTestCase
             $this->generateRandomYear(),
             [
                 self::LOCALE => 'سیزده بدر',
-                'en'         => 'Sizdah be dar'
+                'en' => 'Sizdah be dar',
             ]
         );
     }

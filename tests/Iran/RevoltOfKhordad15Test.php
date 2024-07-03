@@ -27,7 +27,7 @@ class RevoltOfKhordad15Test extends IranBaseTestCase implements HolidayTestCase
 
     public const ESTABLISHMENT_YEAR = 1979;
 
-    public function testRevoltOfKhordad15BeforeEstablishment(): void 
+    public function testRevoltOfKhordad15BeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -61,7 +61,7 @@ class RevoltOfKhordad15Test extends IranBaseTestCase implements HolidayTestCase
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
             [
                 self::LOCALE => 'قیام ۱۵ خرداد',
-                'en'         => 'Qiam e Panzdah e Khordad'
+                'en' => 'Qiam e Panzdah e Khordad',
             ]
         );
     }

@@ -69,7 +69,7 @@ class IslamicRepublicDayTest extends IranBaseTestCase implements HolidayTestCase
         );
     }
 
-            /**
+    /**
      * @throws \Exception
      */
     public function testIslamicRepublicDayAfterEquinoxYear(): void
@@ -94,7 +94,7 @@ class IslamicRepublicDayTest extends IranBaseTestCase implements HolidayTestCase
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::EQUINOX_YEAR),
             [
                 self::LOCALE => 'روز جمهوری اسلامی',
-                'en'         => 'Ruz e Jomhuri ye Eslami'
+                'en' => 'Ruz e Jomhuri ye Eslami',
             ]
         );
     }

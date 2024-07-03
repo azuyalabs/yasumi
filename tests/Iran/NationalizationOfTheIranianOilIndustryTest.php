@@ -27,7 +27,7 @@ class NationalizationOfTheIranianOilIndustryTest extends IranBaseTestCase implem
 
     public const ESTABLISHMENT_YEAR = 1951;
 
-    public function testNationalizationOfTheIranianOilIndustryBeforeEstablishment(): void 
+    public function testNationalizationOfTheIranianOilIndustryBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -61,7 +61,7 @@ class NationalizationOfTheIranianOilIndustryTest extends IranBaseTestCase implem
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
             [
                 self::LOCALE => 'ملی شدن صنعت نفت',
-                'en'         => 'Melli Shodan e Saneat e Naft'
+                'en' => 'Melli Shodan e Saneat e Naft',
             ]
         );
     }

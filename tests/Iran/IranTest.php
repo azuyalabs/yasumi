@@ -42,7 +42,7 @@ class IranTest extends IranBaseTestCase implements ProviderTestCase
             'nowruz2',
             'nowruz3',
             'nowruz4',
-            'sizdahBedar'
+            'sizdahBedar',
         ];
 
         if (1979 <= $this->year) {

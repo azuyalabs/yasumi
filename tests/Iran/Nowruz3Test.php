@@ -49,7 +49,7 @@ class Nowruz3Test extends IranBaseTestCase implements HolidayTestCase
             $this->generateRandomYear(),
             [
                 self::LOCALE => 'نوروز',
-                'en'         => 'Nowruz'
+                'en' => 'Nowruz',
             ]
         );
     }

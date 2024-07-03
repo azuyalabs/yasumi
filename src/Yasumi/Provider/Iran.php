@@ -55,10 +55,10 @@ class Iran extends AbstractProvider
         ];
     }
 
-    protected function addNowruz(): void 
+    protected function addNowruz(): void
     {
-        foreach ([21,22,23,24] as $index => $day) {
-            $index ++;
+        foreach ([21, 22, 23, 24] as $index => $day) {
+            ++$index;
             $this->addHoliday(new Holiday("nowruz{$index}", [
                 'en' => 'Nowruz',
                 'fa' => 'نوروز',
@@ -66,12 +66,12 @@ class Iran extends AbstractProvider
         }
     }
 
-    /** 
+    /**
      * The day usually falls on 1 April, however, as it is determined by the vernal equinox, the date can change if the equinox does not fall on 21 March.
      * In 2016, it was on 31 March, and in 2017, 2019, 2021, 2022 and 2023 the date was back to 1 April.
-     * 
+     *
      * @see https://en.wikipedia.org/wiki/Iranian_Islamic_Republic_Day
-     * 
+     *
      * @throws \Exception
      */
     protected function addIslamicRepublicDay(): void
@@ -83,7 +83,7 @@ class Iran extends AbstractProvider
         $month = '04';
         $day = '01';
 
-        if(2016 === $this->year) {
+        if (2016 === $this->year) {
             $month = '03';
             $day = '31';
         }
@@ -123,7 +123,7 @@ class Iran extends AbstractProvider
         $this->addHoliday(new Holiday('revoltOfKhordad15', [
             'en' => 'Qiam e Panzdah e Khordad',
             'fa' => 'قیام ۱۵ خرداد',
-        ], new \DateTime("{$this->year}-06-05", new \DateTimeZone($this->timezone)), $this->locale)); 
+        ], new \DateTime("{$this->year}-06-05", new \DateTimeZone($this->timezone)), $this->locale));
     }
 
     protected function addAnniversaryOfIslamicRevolution(): void
@@ -135,7 +135,7 @@ class Iran extends AbstractProvider
         $this->addHoliday(new Holiday('anniversaryOfIslamicRevolution', [
             'en' => 'Enqelab e Eslami',
             'fa' => 'انقلاب اسلامی پنجاه و هفت',
-        ], new \DateTime("{$this->year}-02-11", new \DateTimeZone($this->timezone)), $this->locale)); 
+        ], new \DateTime("{$this->year}-02-11", new \DateTimeZone($this->timezone)), $this->locale));
     }
 
     protected function addNationalizationOfTheIranianOilIndustry(): void
@@ -147,6 +147,6 @@ class Iran extends AbstractProvider
         $this->addHoliday(new Holiday('nationalizationOfTheIranianOilIndustry', [
             'en' => 'Melli Shodan e Saneat e Naft',
             'fa' => 'ملی شدن صنعت نفت',
-        ], new \DateTime("{$this->year}-03-20", new \DateTimeZone($this->timezone)), $this->locale)); 
+        ], new \DateTime("{$this->year}-03-20", new \DateTimeZone($this->timezone)), $this->locale));
     }
 }

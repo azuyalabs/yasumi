@@ -19,7 +19,6 @@ namespace Yasumi\tests\Iran;
 
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
-use Yasumi\Yasumi;
 
 class Nowruz2Test extends IranBaseTestCase implements HolidayTestCase
 {
@@ -50,7 +49,7 @@ class Nowruz2Test extends IranBaseTestCase implements HolidayTestCase
             $this->generateRandomYear(),
             [
                 self::LOCALE => 'نوروز',
-                'en'         => 'Nowruz'
+                'en' => 'Nowruz',
             ]
         );
     }

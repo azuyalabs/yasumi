@@ -27,7 +27,7 @@ class DeathOfKhomeiniTest extends IranBaseTestCase implements HolidayTestCase
 
     public const ESTABLISHMENT_YEAR = 1989;
 
-    public function testDeathOfKhomeiniBeforeEstablishment(): void 
+    public function testDeathOfKhomeiniBeforeEstablishment(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -61,7 +61,7 @@ class DeathOfKhomeiniTest extends IranBaseTestCase implements HolidayTestCase
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
             [
                 self::LOCALE => 'مرگ خمینی',
-                'en'         => 'Marg e Khomeini',
+                'en' => 'Marg e Khomeini',
             ]
         );
     }
