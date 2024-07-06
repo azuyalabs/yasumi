@@ -87,7 +87,10 @@ class GermanyTest extends GermanyBaseTestCase implements ProviderTestCase
      */
     public function testOtherHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays([
+            'newYearsEve',
+            'pentecost',
+        ], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**
