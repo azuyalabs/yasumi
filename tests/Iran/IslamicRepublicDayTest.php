@@ -47,7 +47,6 @@ class IslamicRepublicDayTest extends IranBaseTestCase implements HolidayTestCase
     public function testIslamicRepublicDayBeforeEquinoxYear(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::EQUINOX_YEAR - 1);
-        var_dump($year);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
