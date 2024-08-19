@@ -51,12 +51,10 @@ class Ukraine extends AbstractProvider
         // the name of the timezone changed at some point and some systems support both names,
         // while others only support the old or the new one -> try out, which version is actually working
         try {
-            new \DateTimeZone('Europe/Kiev');
-            $this->timezone = 'Europe/Kiev';
-        } catch (\Exception $e) {
-            // this is an DateInvalidTimeZoneException only since 8.3
-            // see https://www.php.net/manual/en/datetimezone.construct.php
+            new \DateTimeZone('Europe/Kyiv');
             $this->timezone = 'Europe/Kyiv';
+        } catch (\Exception $e) { // DateInvalidTimeZoneException since 8.3
+            $this->timezone = 'Europe/Kiev';
         }
 
         // Add common holidays

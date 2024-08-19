@@ -34,10 +34,8 @@ class AustralianCapitalTerritory extends Australia
     public const ID = 'AU-ACT';
 
     /**
-     * This was "Australia/ACT" in the past, which is only a link to Australia/Sydney.
-     * In recent versions of PHP "Australia/ACT" was removed, so this is no longer the link version.
-     *
-     * @see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+     * This was "Australia/ACT" in the past, which is a TZ link to "Australia/Sydney".
+     * Recent builds of PHP removed "Australia/ACT", so this was changed as well.
      */
     public string $timezone = 'Australia/Sydney';
 
