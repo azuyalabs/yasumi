@@ -33,7 +33,13 @@ class AustralianCapitalTerritory extends Australia
      */
     public const ID = 'AU-ACT';
 
-    public string $timezone = 'Australia/ACT';
+    /**
+     * This was "Australia/ACT" in the past, which is only a link to Australia/Sydney.
+     * In recent versions of PHP "Australia/ACT" was removed, so this is no longer the link version.
+     *
+     * @see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+     */
+    public string $timezone = 'Australia/Sydney';
 
     /**
      * Initialize holidays for Australian Capital Territory (Australia).
