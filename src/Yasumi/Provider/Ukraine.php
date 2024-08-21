@@ -53,7 +53,8 @@ class Ukraine extends AbstractProvider
         try {
             new \DateTimeZone('Europe/Kyiv');
             $this->timezone = 'Europe/Kyiv';
-        } catch (\Exception $e) { // DateInvalidTimeZoneException since 8.3
+        } catch (\Exception $e) { // @phpstan-ignore-line
+            // DateInvalidTimeZoneException since 8.3
             $this->timezone = 'Europe/Kiev';
         }
 
