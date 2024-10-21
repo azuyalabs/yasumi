@@ -66,7 +66,7 @@ class SubstituteHoliday extends Holiday
         array $names,
         \DateTimeInterface $date,
         string $displayLocale = self::DEFAULT_LOCALE,
-        string $type = self::TYPE_OFFICIAL
+        string $type = self::TYPE_OFFICIAL,
     ) {
         $this->substitutedHoliday = $substitutedHoliday;
 

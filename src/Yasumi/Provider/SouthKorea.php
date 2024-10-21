@@ -250,7 +250,7 @@ class SouthKorea extends AbstractProvider
         int $year,
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): Holiday {
         return new Holiday(
             'dayAfterNewYearsDay',
@@ -269,7 +269,7 @@ class SouthKorea extends AbstractProvider
         int $year,
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): Holiday {
         return new Holiday(
             'twoDaysLaterNewYearsDay',
@@ -292,7 +292,7 @@ class SouthKorea extends AbstractProvider
         int $year,
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): ?Holiday {
         if (! isset(self::LUNAR_HOLIDAY['seollal'][$year])) {
             return null;
@@ -321,7 +321,7 @@ class SouthKorea extends AbstractProvider
         int $year,
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): ?Holiday {
         if (! isset(self::LUNAR_HOLIDAY['seollal'][$year])) {
             return null;
@@ -350,7 +350,7 @@ class SouthKorea extends AbstractProvider
         int $year,
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): ?Holiday {
         if (! isset(self::LUNAR_HOLIDAY['seollal'][$year])) {
             return null;
@@ -377,7 +377,7 @@ class SouthKorea extends AbstractProvider
         int $year,
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): Holiday {
         return new Holiday(
             'independenceMovementDay',
@@ -398,7 +398,7 @@ class SouthKorea extends AbstractProvider
         int $year,
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): Holiday {
         $datetime = 1960 === $year ? "{$year}-3-21" : "{$year}-4-5";
 
@@ -421,7 +421,7 @@ class SouthKorea extends AbstractProvider
         int $year,
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): ?Holiday {
         if (! isset(self::LUNAR_HOLIDAY['buddhasBirthday'][$year])) {
             return null;
@@ -448,7 +448,7 @@ class SouthKorea extends AbstractProvider
         int $year,
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): Holiday {
         return new Holiday(
             'childrensDay',
@@ -469,7 +469,7 @@ class SouthKorea extends AbstractProvider
         int $year,
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): Holiday {
         return new Holiday(
             'memorialDay',
@@ -493,7 +493,7 @@ class SouthKorea extends AbstractProvider
         int $year,
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): Holiday {
         return new Holiday(
             'constitutionDay',
@@ -514,7 +514,7 @@ class SouthKorea extends AbstractProvider
         int $year,
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): Holiday {
         return new Holiday(
             'liberationDay',
@@ -538,7 +538,7 @@ class SouthKorea extends AbstractProvider
         int $year,
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): ?Holiday {
         if (! isset(self::LUNAR_HOLIDAY['chuseok'][$year])) {
             return null;
@@ -568,7 +568,7 @@ class SouthKorea extends AbstractProvider
         int $year,
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): ?Holiday {
         if (! isset(self::LUNAR_HOLIDAY['chuseok'][$year])) {
             return null;
@@ -598,7 +598,7 @@ class SouthKorea extends AbstractProvider
         int $year,
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): ?Holiday {
         if (! isset(self::LUNAR_HOLIDAY['chuseok'][$year])) {
             return null;
@@ -628,7 +628,7 @@ class SouthKorea extends AbstractProvider
         int $year,
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): Holiday {
         return new Holiday(
             'armedForcesDay',
@@ -649,7 +649,7 @@ class SouthKorea extends AbstractProvider
         int $year,
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): Holiday {
         return new Holiday(
             'nationalFoundationDay',
@@ -672,7 +672,7 @@ class SouthKorea extends AbstractProvider
         int $year,
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): Holiday {
         return new Holiday(
             'hangulDay',
@@ -695,7 +695,7 @@ class SouthKorea extends AbstractProvider
         int $year,
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): Holiday {
         return new Holiday(
             'unitedNationsDay',
