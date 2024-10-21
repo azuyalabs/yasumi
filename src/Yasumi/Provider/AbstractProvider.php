@@ -97,7 +97,7 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
     public function __construct(
         int $year,
         ?string $locale = null,
-        private ?TranslationsInterface $globalTranslations = null
+        private ?TranslationsInterface $globalTranslations = null,
     ) {
         $this->clearHolidays();
 
@@ -217,7 +217,7 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
     public function between(
         \DateTimeInterface $startDate,
         \DateTimeInterface $endDate,
-        ?bool $equals = null
+        ?bool $equals = null,
     ): BetweenFilter {
         if ($startDate > $endDate) {
             throw new \InvalidArgumentException('Start date must be a date before the end date.');
