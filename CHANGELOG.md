@@ -12,9 +12,11 @@ changes.
 
 ### Added
 
+- Added another day of liberation on 2025-05-08 ("Tag der Befreiung") in Berlin. See https://gesetze.berlin.de/bsbe/document/jlr-FeiertGBEV8P1
+
 ### Changed
 
-- Holiday calculation methods in providers are now protected instead of private 
+- Holiday calculation methods in providers are now protected instead of private
   to allow use in [custom providers](https://www.yasumi.dev/docs/cookbook/custom_provider/).
   [\#331](https://github.com/azuyalabs/yasumi/issues/331)
 
