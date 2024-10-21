@@ -53,7 +53,7 @@ trait CommonHolidays
         int $year,
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): Holiday {
         return new Holiday('newYearsDay', [], new \DateTime("{$year}-1-1", DateTimeZoneFactory::getDateTimeZone($timezone)), $locale, $type);
     }
@@ -83,7 +83,7 @@ trait CommonHolidays
         int $year,
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): Holiday {
         return new Holiday(
             'internationalWorkersDay',
@@ -119,7 +119,7 @@ trait CommonHolidays
         int $year,
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): Holiday {
         return new Holiday(
             'stMartinsDay',
@@ -151,7 +151,7 @@ trait CommonHolidays
         int $year,
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): Holiday {
         return new Holiday(
             'internationalWomensDay',
@@ -186,7 +186,7 @@ trait CommonHolidays
         int $year,
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): Holiday {
         return new Holiday('newYearsEve', [], new \DateTime("{$year}-12-31", DateTimeZoneFactory::getDateTimeZone($timezone)), $locale, $type);
     }
@@ -216,7 +216,7 @@ trait CommonHolidays
         int $year,
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): Holiday {
         return new Holiday(
             'valentinesDay',
@@ -250,7 +250,7 @@ trait CommonHolidays
         int $year,
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): Holiday {
         return new Holiday(
             'worldAnimalDay',
@@ -285,7 +285,7 @@ trait CommonHolidays
         int $year,
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): Holiday {
         return new Holiday(
             'fathersDay',
@@ -320,7 +320,7 @@ trait CommonHolidays
         int $year,
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): Holiday {
         return new Holiday(
             'mothersDay',
@@ -355,7 +355,7 @@ trait CommonHolidays
         int $year,
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): Holiday {
         return new Holiday(
             'victoryInEuropeDay',
@@ -392,7 +392,7 @@ trait CommonHolidays
         int $year,
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): Holiday {
         return new Holiday(
             'armisticeDay',
@@ -420,7 +420,7 @@ trait CommonHolidays
         int $year,
         string $timezone,
         string $locale,
-        ?string $type = null
+        ?string $type = null,
     ): ?Holiday {
         $date = $this->calculateSummerWinterTime($year, $timezone, true);
 
@@ -454,7 +454,7 @@ trait CommonHolidays
         int $year,
         string $timezone,
         string $locale,
-        ?string $type = null
+        ?string $type = null,
     ): ?Holiday {
         $date = $this->calculateSummerWinterTime($year, $timezone, false);
 
@@ -496,7 +496,7 @@ trait CommonHolidays
     private function calculateSummerWinterTime(
         int $year,
         string $timezone,
-        bool $summer
+        bool $summer,
     ): ?\DateTimeImmutable {
         $zone = DateTimeZoneFactory::getDateTimeZone($timezone);
 
