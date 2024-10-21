@@ -73,7 +73,7 @@ class Yasumi
     public static function nextWorkingDay(
         string $class,
         \DateTimeInterface $startDate,
-        int $workingDays = 1
+        int $workingDays = 1,
     ): \DateTimeInterface {
         $date = $startDate instanceof \DateTime ? \DateTimeImmutable::createFromMutable($startDate) : $startDate;
         $provider = null;
@@ -186,7 +186,7 @@ class Yasumi
     public static function createByISO3166_2(
         string $isoCode,
         int $year = self::YEAR_LOWER_BOUND,
-        string $locale = self::DEFAULT_LOCALE
+        string $locale = self::DEFAULT_LOCALE,
     ): ProviderInterface {
         $availableProviders = self::getProviders();
 
@@ -277,7 +277,7 @@ class Yasumi
     public static function prevWorkingDay(
         string $class,
         \DateTimeInterface $startDate,
-        int $workingDays = 1
+        int $workingDays = 1,
     ): \DateTimeInterface {
         $date = $startDate instanceof \DateTime ? \DateTimeImmutable::createFromMutable($startDate) : $startDate;
         $provider = null;

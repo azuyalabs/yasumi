@@ -209,7 +209,7 @@ interface ProviderInterface extends \Countable
     public function between(
         \DateTimeInterface $startDate,
         \DateTimeInterface $endDate,
-        ?bool $equals = null
+        ?bool $equals = null,
     ): BetweenFilter;
 
     /**

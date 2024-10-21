@@ -41,7 +41,7 @@ class OnFilter extends AbstractFilter
      */
     public function __construct(
         \Iterator $iterator,
-        \DateTimeInterface $date
+        \DateTimeInterface $date,
     ) {
         parent::__construct($iterator);
         $this->date = $date->format(self::DATE_FORMAT);

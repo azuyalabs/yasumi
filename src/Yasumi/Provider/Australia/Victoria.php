@@ -75,7 +75,7 @@ class Victoria extends Australia
         int $year,
         string $timezone,
         string $locale,
-        ?string $type = null
+        ?string $type = null,
     ): Holiday {
         return new Holiday(
             'easter',
@@ -107,7 +107,7 @@ class Victoria extends Australia
         int $year,
         string $timezone,
         string $locale,
-        ?string $type = null
+        ?string $type = null,
     ): Holiday {
         $date = $this->calculateEaster($year, $timezone)->sub(new \DateInterval('P1D'));
 

@@ -64,7 +64,7 @@ class SubstitutedHolidayTest extends UkraineBaseTestCase implements HolidayTestC
         string $key,
         int $year,
         \DateTimeInterface $expectedOfficial,
-        ?\DateTimeInterface $expectedSubstitution = null
+        ?\DateTimeInterface $expectedSubstitution = null,
     ): void {
         $holidays = Yasumi::create($provider, $year);
 

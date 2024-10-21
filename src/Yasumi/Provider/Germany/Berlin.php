@@ -80,7 +80,7 @@ class Berlin extends Germany
     protected function dayOfLiberation(
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): Holiday {
         return new Holiday(
             'dayOfLiberation',

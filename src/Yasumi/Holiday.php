@@ -99,7 +99,7 @@ class Holiday extends \DateTime implements \JsonSerializable
         public array $translations,
         \DateTimeInterface $date,
         string $displayLocale = self::DEFAULT_LOCALE,
-        protected string $type = self::TYPE_OFFICIAL
+        protected string $type = self::TYPE_OFFICIAL,
     ) {
         // Validate if key is not empty
         if ('' === $key) {

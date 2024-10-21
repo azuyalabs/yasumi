@@ -53,7 +53,7 @@ trait YasumiBase
         array $expectedHolidays,
         string $provider,
         int $year,
-        string $type
+        string $type,
     ): void {
         $holidays = Yasumi::create($provider, $year);
 
@@ -98,7 +98,7 @@ trait YasumiBase
         string $provider,
         string $key,
         int $year,
-        \DateTimeInterface $expected
+        \DateTimeInterface $expected,
     ): void {
         $holidays = Yasumi::create($provider, $year);
         $holiday = $holidays->getHoliday($key);
@@ -125,7 +125,7 @@ trait YasumiBase
         string $provider,
         string $key,
         int $year,
-        \DateTimeInterface $expected
+        \DateTimeInterface $expected,
     ): void {
         $holidays = Yasumi::create($provider, $year);
         $holiday = $holidays->getHoliday('substituteHoliday:' . $key);
@@ -150,7 +150,7 @@ trait YasumiBase
     public function assertNotSubstituteHoliday(
         string $provider,
         string $key,
-        int $year
+        int $year,
     ): void {
         $this->assertNotHoliday(
             $provider,
@@ -174,7 +174,7 @@ trait YasumiBase
     public function assertNotHoliday(
         string $provider,
         string $key,
-        int $year
+        int $year,
     ): void {
         $holidays = Yasumi::create($provider, $year);
         $holiday = $holidays->getHoliday($key);
@@ -199,7 +199,7 @@ trait YasumiBase
         string $provider,
         string $key,
         int $year,
-        array $translations
+        array $translations,
     ): void {
         $holidays = Yasumi::create($provider, $year);
         $holiday = $holidays->getHoliday($key);
@@ -244,7 +244,7 @@ trait YasumiBase
         string $provider,
         string $key,
         int $year,
-        string $type
+        string $type,
     ): void {
         $holidays = Yasumi::create($provider, $year);
         $holiday = $holidays->getHoliday($key);
@@ -270,7 +270,7 @@ trait YasumiBase
         string $provider,
         string $key,
         int $year,
-        string $expectedDayOfWeek
+        string $expectedDayOfWeek,
     ): void {
         $holidays = Yasumi::create($provider, $year);
         $holiday = $holidays->getHoliday($key);
