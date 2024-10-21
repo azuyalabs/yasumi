@@ -83,7 +83,7 @@ class Berlin extends Germany
         int $year,
         string $timezone,
         string $locale,
-        string $type = Holiday::TYPE_OFFICIAL
+        string $type = Holiday::TYPE_OFFICIAL,
     ): Holiday {
         return new Holiday(
             'dayOfLiberation',

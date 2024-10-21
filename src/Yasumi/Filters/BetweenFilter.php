@@ -50,7 +50,7 @@ class BetweenFilter extends AbstractFilter
         \Iterator $iterator,
         \DateTimeInterface $startDate,
         \DateTimeInterface $endDate,
-        private bool $equal = true
+        private bool $equal = true,
     ) {
         parent::__construct($iterator);
         $this->startDate = $startDate->format(self::DATE_FORMAT);
