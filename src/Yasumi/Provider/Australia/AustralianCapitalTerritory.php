@@ -33,8 +33,6 @@ class AustralianCapitalTerritory extends Australia
      */
     public const ID = 'AU-ACT';
 
-    public string $timezone = 'Australia/ACT';
-
     /**
      * Initialize holidays for Australian Capital Territory (Australia).
      *
@@ -44,6 +42,16 @@ class AustralianCapitalTerritory extends Australia
      */
     public function initialize(): void
     {
+        // This was "Australia/ACT" in the past, which is a TZ link to "Australia/Sydney".
+        // Recent builds of PHP removed "Australia/ACT", so we have to figure out which one is available on the system
+        try {
+            new \DateTimeZone('Australia/Sydney');
+            $this->timezone = 'Australia/Sydney';
+        } catch (\Exception $e) { // @phpstan-ignore-line
+            // DateInvalidTimeZoneException since 8.3
+            $this->timezone = 'Australia/ACT';
+        }
+
         parent::initialize();
 
         $this->addHoliday($this->easterSunday($this->year, $this->timezone, $this->locale));
