@@ -55,19 +55,21 @@ class Berlin extends Germany
             $this->addHoliday($this->internationalWomensDay($this->year, $this->timezone, $this->locale));
         }
 
-        if (2020 === $this->year) {
-            $this->addHoliday($this->dayOfLiberation($this->timezone, $this->locale));
+        if (2020 === $this->year || 2025 === $this->year) {
+            $this->addHoliday($this->dayOfLiberation($this->year, $this->timezone, $this->locale));
         }
     }
 
     /**
      * Day of Liberation.
      *
-     * Day of Liberation (Tag der Befreiung) is celebrated on May 8 2020 to commemorate the 75th anniversary
+     * Day of Liberation (Tag der Befreiung) is celebrated on
+     * May 8 2020/2025 to commemorate the 75th/80th anniversary
      * of the German Instrument of Surrender.
      *
      * @see https://de.wikipedia.org/wiki/Tag_der_Befreiung
      *
+     * @param int    $year     the year in which Day of Liberation is celebrated
      * @param string $timezone the timezone in which Day of Liberation is celebrated
      * @param string $locale   the locale for which Day of Liberation needs to be displayed in
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
@@ -78,6 +80,7 @@ class Berlin extends Germany
      * @throws \Exception
      */
     protected function dayOfLiberation(
+        int $year,
         string $timezone,
         string $locale,
         string $type = Holiday::TYPE_OFFICIAL
@@ -85,7 +88,7 @@ class Berlin extends Germany
         return new Holiday(
             'dayOfLiberation',
             [],
-            new \DateTime('2020-05-08', DateTimeZoneFactory::getDateTimeZone($timezone)),
+            new \DateTime("{$year}-05-08", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
