@@ -23,7 +23,7 @@ use Yasumi\tests\HolidayTestCase;
 /**
  * Class for testing Day of Liberation 2020 in Berlin (Germany).
  */
-class DayOfLiberation2020Test extends BerlinBaseTestCase implements HolidayTestCase
+class DayOfLiberationTest extends BerlinBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.
