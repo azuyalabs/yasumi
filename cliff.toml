@@ -43,7 +43,7 @@ body = """
 {% if github.contributors | filter(attribute="is_first_time", value=true) | length != 0 %}
   ## New Contributors ❤️
 {% endif %}\
-{% for contributor in github.contributors | filter(attribute="is_first_time", value=true) %}
+{% for contributor in github.contributors | filter(attribute="is_first_time", value=true) | sort(attribute="username") %}
   * @{{ contributor.username }} made their first contribution
 {%- endfor -%}
 {%- endif %}\n\n
