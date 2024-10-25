@@ -21,9 +21,9 @@ use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
 /**
- * Class for testing Day of Liberation 2020 in Berlin (Germany).
+ * Class for testing Day of Liberation in Berlin (Germany).
  */
-class DayOfLiberation2020Test extends BerlinBaseTestCase implements HolidayTestCase
+class DayOfLiberationTest extends BerlinBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.
@@ -31,9 +31,9 @@ class DayOfLiberation2020Test extends BerlinBaseTestCase implements HolidayTestC
     public const HOLIDAY = 'dayOfLiberation';
 
     /**
-     * The year in which the holiday takes place.
+     * The years in which the holiday takes place.
      */
-    public const YEAR = 2020;
+    public static array $years = [2020, 2025];
 
     /**
      * Test the holiday defined in this test.
@@ -42,12 +42,14 @@ class DayOfLiberation2020Test extends BerlinBaseTestCase implements HolidayTestC
      */
     public function testHolidayInYear(): void
     {
-        $this->assertHoliday(
-            self::REGION,
-            self::HOLIDAY,
-            self::YEAR,
-            new \DateTime(self::YEAR . '-05-08', new \DateTimeZone(self::TIMEZONE))
-        );
+        foreach (self::$years as $year) {
+            $this->assertHoliday(
+                self::REGION,
+                self::HOLIDAY,
+                $year,
+                new \DateTime($year . '-05-08', new \DateTimeZone(self::TIMEZONE))
+            );
+        }
     }
 
     /**
@@ -57,10 +59,12 @@ class DayOfLiberation2020Test extends BerlinBaseTestCase implements HolidayTestC
      */
     public function testHolidayBeforeYear(): void
     {
+        reset(self::$years);
+
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::YEAR - 1)
+            $this->generateRandomYear(1000, current(self::$years) - 1)
         );
     }
 
@@ -71,10 +75,12 @@ class DayOfLiberation2020Test extends BerlinBaseTestCase implements HolidayTestC
      */
     public function testHolidayAfterYear(): void
     {
+        end(self::$years);
+
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::YEAR + 1)
+            $this->generateRandomYear(current(self::$years) + 1)
         );
     }
 
@@ -83,10 +89,12 @@ class DayOfLiberation2020Test extends BerlinBaseTestCase implements HolidayTestC
      */
     public function testTranslation(): void
     {
+        reset(self::$years);
+
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            self::YEAR,
+            current(self::$years),
             [self::LOCALE => 'Tag der Befreiung']
         );
     }
@@ -96,10 +104,12 @@ class DayOfLiberation2020Test extends BerlinBaseTestCase implements HolidayTestC
      */
     public function testHolidayType(): void
     {
+        reset(self::$years);
+
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            self::YEAR,
+            current(self::$years),
             Holiday::TYPE_OFFICIAL
         );
     }
