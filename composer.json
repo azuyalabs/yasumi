@@ -43,7 +43,7 @@
     "azuyalabs/php-cs-fixer-config": "^0.3",
     "mikey179/vfsstream": "^1.6",
     "phan/phan": "^5.4",
-    "phpstan/phpstan": "^1.10",
+    "phpstan/phpstan": "^1.10 || ^2.0",
     "phpunit/phpunit": "^8.5 || ^9.6",
     "vimeo/psalm": "^5.20"
   },
