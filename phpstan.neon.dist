@@ -7,7 +7,8 @@ parameters:
     -
       message: '#Comparison operation "<=" between [0-9]+ and int<[0-9]+, max> is always true.#'
       path: src/Yasumi/Provider/Turkey.php
-  checkGenericClassInNonGenericObjectType: false
+    -
+      identifier: missingType.generics
   reportUnmatchedIgnoredErrors: true # Do not allow outdated errors in the baseline
   treatPhpDocTypesAsCertain: false
   tipsOfTheDay: false
