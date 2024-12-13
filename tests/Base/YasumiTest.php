@@ -145,7 +145,7 @@ class YasumiTest extends TestCase
     {
         $country = 'Netherlands';
         $name = 'liberationDay';
-        $year_lower_limit = 1949;
+        $year_lower_limit = 1950;
         $year = self::numberBetween($year_lower_limit, self::YEAR_UPPER_BOUND);
 
         $holidays = Yasumi::create($country, $year);
