@@ -51,13 +51,16 @@ class PortugalTest extends PortugalBaseTestCase implements ProviderTestCase
             'easter',
             'goodFriday',
             'assumptionOfMary',
-            'allSaintsDay',
             'immaculateConception',
             'christmasDay',
             '25thApril',
             'restorationOfIndependence',
             'portugalDay',
         ];
+
+        if ($this->year <= 2012 || $this->year >= 2016) {
+            $holidays[] = 'allSaintsDay';
+        }
 
         if (($this->year >= 1910 && $this->year <= 2012) || $this->year >= 2016) {
             $holidays[] = 'portugueseRepublic';
