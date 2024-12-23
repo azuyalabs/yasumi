@@ -23,7 +23,7 @@ use Yasumi\Exception\UnknownLocaleException;
 /**
  * Class Holiday.
  */
-class Holiday extends \DateTime implements \JsonSerializable
+class Holiday extends \DateTime implements \JsonSerializable, \Stringable
 {
     /**
      * Type definition for Official (i.e. National/Federal) holidays.
