@@ -32,7 +32,7 @@ body = """
     ## [Unreleased]
 {% endif -%}
 
-{% for group, commits in commits | group_by(attribute="group") %}
+{% for group, commits in commits | unique(attribute="message") | filter(attribute="merge_commit", value=false) | group_by(attribute="group") %}
     ### {{ group | striptags | trim | upper_first }}
     {% for commit in commits %}
         - {% if commit.scope %}({{ commit.scope | upper_first }}) {% endif%}{{ commit.message | split(pat="\n") | first | split(pat=": ") | last | trim | upper_first }}\
