@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 /**
  * This file is part of the 'Yasumi' package.
@@ -75,4 +75,4 @@ class StGeorgesDayTest extends BulgariaBaseTestCase implements HolidayTestCase
             Holiday::TYPE_OFFICIAL
         );
     }
-} 
+}

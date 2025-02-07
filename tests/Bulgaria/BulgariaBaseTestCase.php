@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 /**
  * This file is part of the 'Yasumi' package.
@@ -35,4 +35,4 @@ class BulgariaBaseTestCase extends TestCase
 
     /** Locale that is considered common for this provider. */
     public const LOCALE = 'bg';
-} 
+}

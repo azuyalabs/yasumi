@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 /**
  * This file is part of the 'Yasumi' package.
@@ -106,4 +106,4 @@ class BulgariaTest extends BulgariaBaseTestCase implements ProviderTestCase
     {
         $this->assertSources(self::REGION, 2);
     }
-} 
+}

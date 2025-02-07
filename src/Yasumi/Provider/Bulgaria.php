@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 /**
  * This file is part of the 'Yasumi' package.
@@ -69,6 +69,14 @@ class Bulgaria extends AbstractProvider
         $this->calculateAwakenersDay();
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Bulgaria',
+            'https://bg.wikipedia.org/wiki/Официални_празници_в_България',
+        ];
+    }
+
     /**
      * @return \DateTime|\DateTimeImmutable
      *
@@ -77,14 +85,6 @@ class Bulgaria extends AbstractProvider
     protected function calculateEaster(int $year, string $timezone): \DateTimeInterface
     {
         return $this->calculateOrthodoxEaster($year, $timezone);
-    }
-
-    public function getSources(): array
-    {
-        return [
-            'https://en.wikipedia.org/wiki/Public_holidays_in_Bulgaria',
-            'https://bg.wikipedia.org/wiki/Официални_празници_в_България',
-        ];
     }
 
     /**

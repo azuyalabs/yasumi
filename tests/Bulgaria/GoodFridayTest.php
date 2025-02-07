@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 /**
  * This file is part of the 'Yasumi' package.
@@ -17,8 +17,6 @@ declare(strict_types=1);
 
 namespace Yasumi\tests\Bulgaria;
 
-use DateTime;
-use DateTimeZone;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\tests\HolidayTestCase;
@@ -84,4 +82,4 @@ class GoodFridayTest extends BulgariaBaseTestCase implements HolidayTestCase
             Holiday::TYPE_OFFICIAL
         );
     }
-} 
+}
