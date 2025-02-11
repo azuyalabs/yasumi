@@ -7,6 +7,11 @@
 ![Testing](https://img.shields.io/github/actions/workflow/status/azuyalabs/yasumi/testing.yml?label=Testing&style=flat-square)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
+# New Documentation Site 🎉
+
+Yasumi's [documentation site](https://www.yasumi.dev) just got a make-over! Please check out the
+[announcement](https://github.com/azuyalabs/yasumi/discussions/358) or head straight to it.
+
 # Introduction
 
 Yasumi (Japanese for 'Holiday'「休み」) is the easy PHP library that helps you retrieve the dates and names of holidays and
@@ -24,8 +29,7 @@ The goal of Yasumi is to be powerful while remaining lightweight, by utilizing P
 Yasumi's calculation is provider-based (i.e. by country/state), making it easy to add new holiday providers that
 calculate holidays.
 
-- Pure PHP
-- Straightforward API
+- Pure PHP with a straightforward API
 - Framework-agnostic
 - Use of Providers to easily extend and expand new Holidays
 - Common Holiday Providers
@@ -35,7 +39,7 @@ calculate holidays.
 - Time zone aware
 - Implements [ArrayIterator](https://www.php.net/manual/en/class.arrayiterator.php) to easily process a provider's
   holidays
-- Fully documented
+- Fully [documented](https://www.yasumi.dev)
 - Fully unit tested
 - [Composer](https://getcomposer.org) ready, [PSR-12](https://www.php-fig.org/psr/psr-12/)
   and [PSR-4](https://www.php-fig.org/psr/psr-4/) compliant
@@ -44,11 +48,6 @@ calculate holidays.
 
 Yasumi’s documentation is available on [https://www.yasumi.dev](https://www.yasumi.dev). You will find all the necessary
 information how to install Yasumi and also recipes how you can use Yasumi in your project.
-
-# Blog
-
-Checkout the [blog](https://www.yasumi.dev/blog/) section on documentation site regularly for latest updates. Keeping
-you informed about any news, releases, etc. in a handy blog post format!
 
 # Contributing
 
