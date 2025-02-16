@@ -21,9 +21,10 @@
     </projectFiles>
 
     <issueHandlers>
-      <MethodSignatureMismatch errorLevel="suppress" />
-      <MissingTemplateParam errorLevel="suppress" />
-      <InvalidArrayOffset errorLevel="suppress" />
+      <MissingTemplateParam errorLevel="info" />
+      <PossiblyUnusedMethod errorLevel="info" />
+      <UnusedClass errorLevel="info" />
+      <UnusedMethodCall errorLevel="info" />
     </issueHandlers>
 
 </psalm>
