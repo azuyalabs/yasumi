@@ -275,11 +275,11 @@ class Japan extends AbstractProvider
     {
         $day = null;
         if ($this->year >= 1948 && $this->year <= 1979) {
-            $day = floor(self::VERNAL_EQUINOX_PARAM_1979 + self::EQUINOX_GRADIENT * ($this->year - 1980) - floor(($this->year - 1983) / 4));
+            $day = floor(self::VERNAL_EQUINOX_PARAM_1979 + self::EQUINOX_GRADIENT * (float) ($this->year - 1980) - floor(($this->year - 1983) / 4));
         } elseif ($this->year <= 2099) {
-            $day = floor(self::VERNAL_EQUINOX_PARAM_2099 + self::EQUINOX_GRADIENT * ($this->year - 1980) - floor(($this->year - 1980) / 4));
+            $day = floor(self::VERNAL_EQUINOX_PARAM_2099 + self::EQUINOX_GRADIENT * (float) ($this->year - 1980) - floor(($this->year - 1980) / 4));
         } elseif ($this->year <= 2150) {
-            $day = floor(self::VERNAL_EQUINOX_PARAM_2150 + self::EQUINOX_GRADIENT * ($this->year - 1980) - floor(($this->year - 1980) / 4));
+            $day = floor(self::VERNAL_EQUINOX_PARAM_2150 + self::EQUINOX_GRADIENT * (float) ($this->year - 1980) - floor(($this->year - 1980) / 4));
         }
 
         if ($this->year < 1948 || $this->year > 2150) {
@@ -508,11 +508,11 @@ class Japan extends AbstractProvider
     {
         $day = null;
         if ($this->year >= 1948 && $this->year <= 1979) {
-            $day = floor(self::AUTUMNAL_EQUINOX_PARAM_1979 + self::EQUINOX_GRADIENT * ($this->year - 1980) - floor(($this->year - 1983) / 4));
+            $day = floor(self::AUTUMNAL_EQUINOX_PARAM_1979 + self::EQUINOX_GRADIENT * (float) ($this->year - 1980) - floor(($this->year - 1983) / 4));
         } elseif ($this->year <= 2099) {
-            $day = floor(self::AUTUMNAL_EQUINOX_PARAM_2099 + self::EQUINOX_GRADIENT * ($this->year - 1980) - floor(($this->year - 1980) / 4));
+            $day = floor(self::AUTUMNAL_EQUINOX_PARAM_2099 + self::EQUINOX_GRADIENT * (float) ($this->year - 1980) - floor(($this->year - 1980) / 4));
         } elseif ($this->year <= 2150) {
-            $day = floor(self::AUTUMNAL_EQUINOX_PARAM_2150 + self::EQUINOX_GRADIENT * ($this->year - 1980) - floor(($this->year - 1980) / 4));
+            $day = floor(self::AUTUMNAL_EQUINOX_PARAM_2150 + self::EQUINOX_GRADIENT * (float) ($this->year - 1980) - floor(($this->year - 1980) / 4));
         }
 
         if ($this->year < 1948 || $this->year > 2150) {
@@ -650,7 +650,7 @@ class Japan extends AbstractProvider
                 $bridgeDate = clone $previous;
                 $bridgeDate->add(new \DateInterval('P1D'));
 
-                $this->addHoliday(new Holiday('bridgeDay' . $counter, [
+                $this->addHoliday(new Holiday("bridgeDay{$counter}", [
                     'en' => 'Bridge Public holiday',
                     'ja' => '国民の休日',
                 ], $bridgeDate, $this->locale));

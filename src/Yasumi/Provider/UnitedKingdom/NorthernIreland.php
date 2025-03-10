@@ -79,7 +79,7 @@ class NorthernIreland extends UnitedKingdom
         $holiday = new Holiday(
             'stPatricksDay',
             ['en' => 'St. Patrick’s Day'],
-            new \DateTime($this->year . '-3-17', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("{$this->year}-3-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
         );
@@ -123,7 +123,7 @@ class NorthernIreland extends UnitedKingdom
         $holiday = new Holiday(
             'battleOfTheBoyne',
             ['en' => 'Battle of the Boyne'],
-            new \DateTime($this->year . '-7-12', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("{$this->year}-7-12", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
         );

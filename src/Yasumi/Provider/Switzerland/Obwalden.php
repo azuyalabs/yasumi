@@ -87,7 +87,7 @@ class Obwalden extends Switzerland
                 [
                     'de' => 'Bruder-Klausen-Fest',
                 ],
-                new \DateTime($this->year . '-09-25', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-09-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OTHER
             ));
@@ -97,7 +97,7 @@ class Obwalden extends Switzerland
                 [
                     'de' => 'Bruder-Klausen-Fest',
                 ],
-                new \DateTime($this->year . '-09-21', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-09-21", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OTHER
             ));

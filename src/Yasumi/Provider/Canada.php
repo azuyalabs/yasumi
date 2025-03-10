@@ -178,9 +178,9 @@ class Canada extends AbstractProvider
         if ($this->year < 1983) {
             return;
         }
-        $date = new \DateTime($this->year . '-07-01', DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime("{$this->year}-07-01", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         if (7 === (int) $date->format('N')) {
-            $date = new \DateTime($this->year . '-07-02', DateTimeZoneFactory::getDateTimeZone($this->timezone));
+            $date = new \DateTime("{$this->year}-07-02", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         }
         $this->addHoliday(new Holiday(
             'canadaDay',
