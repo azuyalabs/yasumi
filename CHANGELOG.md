@@ -17,6 +17,7 @@ changes.
 - Holiday calculation methods in providers are now protected instead of private 
   to allow use in [custom providers](https://www.yasumi.dev/docs/cookbook/custom_provider/).
   [\#331](https://github.com/azuyalabs/yasumi/issues/331)
+- For Mexico, Constitution Day, Benito Juárez’s birthday, and Revolution Day are not considered official holidays. [\#359](https://github.com/azuyalabs/yasumi/pull/359) ([c960657](https://github.com/c960657))
 
 ### Fixed
 
