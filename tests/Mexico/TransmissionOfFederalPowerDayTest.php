@@ -50,7 +50,7 @@ class TransmissionOfFederalPowerDayTest extends MexicoBaseTestCase implements Ho
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("2024-10-01", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime('2024-10-01', new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -98,6 +98,6 @@ class TransmissionOfFederalPowerDayTest extends MexicoBaseTestCase implements Ho
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY,self::ESTABLISHMENT_YEAR, Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, self::ESTABLISHMENT_YEAR, Holiday::TYPE_OFFICIAL);
     }
 }

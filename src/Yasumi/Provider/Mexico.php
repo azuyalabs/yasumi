@@ -164,7 +164,7 @@ class Mexico extends AbstractProvider
      */
     protected function calculateTransmissionOfFederalPowerDay(): void
     {
-        if ($this->year >= 1934 && $this->year % 6 === 2) {
+        if ($this->year >= 1934 && 2 === $this->year % 6) {
             $day = $this->year < 2024 ? "{$this->year}-12-01" : "{$this->year}-10-01";
             $this->addHoliday(new Holiday(
                 'transmissionOfFederalPowerDay',
@@ -176,7 +176,6 @@ class Mexico extends AbstractProvider
             );
         }
     }
-
 
     /*
     * Revolution Day.
