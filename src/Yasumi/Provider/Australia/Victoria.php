@@ -156,7 +156,7 @@ class Victoria extends Australia
         $this->addHoliday(new Holiday(
             'queensBirthday',
             [],
-            new \DateTime('second monday of june ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("second monday of june {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));
@@ -169,7 +169,7 @@ class Victoria extends Australia
      */
     protected function calculateMelbourneCupDay(): void
     {
-        $date = new \DateTime('first Tuesday of November' . " {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime("first Tuesday of November {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
         $this->addHoliday(new Holiday('melbourneCup', ['en' => 'Melbourne Cup'], $date, $this->locale));
     }

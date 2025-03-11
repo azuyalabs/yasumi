@@ -180,7 +180,7 @@ class Scotland extends UnitedKingdom
         $holiday = new Holiday(
             'stAndrewsDay',
             [],
-            new \DateTime($this->year . '-11-30', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("{$this->year}-11-30", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
         );

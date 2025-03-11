@@ -90,7 +90,7 @@ class Jura extends Switzerland
                 [
                     'fr' => 'Commémoration du plébiscite jurassien',
                 ],
-                new \DateTime($this->year . '-06-23', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-06-23", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OTHER
             ));

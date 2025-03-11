@@ -108,7 +108,7 @@ class SouthAfrica extends AbstractProvider
         $this->addHoliday(new Holiday(
             'humanRightsDay',
             ['en' => 'Human Rights Day'],
-            new \DateTime($this->year . '-3-21', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("{$this->year}-3-21", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -151,7 +151,7 @@ class SouthAfrica extends AbstractProvider
         $this->addHoliday(new Holiday(
             'freedomDay',
             ['en' => 'Freedom Day'],
-            new \DateTime($this->year . '-4-27', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("{$this->year}-4-27", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -177,7 +177,7 @@ class SouthAfrica extends AbstractProvider
         $this->addHoliday(new Holiday(
             'youthDay',
             ['en' => 'Youth Day'],
-            new \DateTime($this->year . '-6-16', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("{$this->year}-6-16", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -227,7 +227,7 @@ class SouthAfrica extends AbstractProvider
         $this->addHoliday(new Holiday(
             'nationalWomensDay',
             ['en' => 'National Women’s Day'],
-            new \DateTime($this->year . '-8-9', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("{$this->year}-8-9", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -251,7 +251,7 @@ class SouthAfrica extends AbstractProvider
         $this->addHoliday(new Holiday(
             'heritageDay',
             ['en' => 'Heritage Day'],
-            new \DateTime($this->year . '-9-24', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("{$this->year}-9-24", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -277,7 +277,7 @@ class SouthAfrica extends AbstractProvider
         $this->addHoliday(new Holiday(
             'reconciliationDay',
             ['en' => 'Day of Reconciliation'],
-            new \DateTime($this->year . '-12-16', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("{$this->year}-12-16", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
