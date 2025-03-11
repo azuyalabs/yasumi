@@ -54,7 +54,7 @@ class Argentina extends AbstractProvider
         // Add Christian holidays
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
-        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
 
         $this->addCarnvalHolidays();
         $this->addRemembranceDay();
@@ -122,8 +122,7 @@ class Argentina extends AbstractProvider
                         'en' => $day['name_en'],
                     ],
                     $date,
-                    $this->locale,
-                    Holiday::TYPE_OBSERVANCE
+                    $this->locale
                 ));
             }
         }

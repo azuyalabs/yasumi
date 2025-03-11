@@ -48,6 +48,9 @@ class ArgentinaTest extends ArgentinaBaseTestCase implements ProviderTestCase
     {
         $holidays = [
             'newYearsDay',
+            'carnavalMonday',
+            'carnavalTuesday',
+            'goodFriday',
             'internationalWorkersDay',
             'mayRevolution',
             'generalMartinMigueldeGuemesDay',
@@ -83,9 +86,6 @@ class ArgentinaTest extends ArgentinaBaseTestCase implements ProviderTestCase
     public function testObservedHolidays(): void
     {
         $this->assertDefinedHolidays([
-            'carnavalMonday',
-            'carnavalTuesday',
-            'goodFriday',
             'easter',
         ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
