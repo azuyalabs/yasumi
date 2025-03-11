@@ -18,6 +18,7 @@ changes.
   to allow use in [custom providers](https://www.yasumi.dev/docs/cookbook/custom_provider/).
   [\#331](https://github.com/azuyalabs/yasumi/issues/331)
 - For Argentina, Carneval Monday and Tuesday, and Good Friday are considered official holidays. [\#360](https://github.com/azuyalabs/yasumi/pull/360) ([c960657](https://github.com/c960657))
+- For Portual, Corpus Christi is considered an official holiday. [\#363](https://github.com/azuyalabs/yasumi/pull/363) ([c960657](https://github.com/c960657))
 
 ### Fixed
 

@@ -112,7 +112,7 @@ class Portugal extends AbstractProvider
     protected function calculateCorpusChristi(): void
     {
         if ($this->year <= 2012 || $this->year >= 2016) {
-            $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale));
+            $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale, Holiday::TYPE_OFFICIAL));
         }
     }
 
