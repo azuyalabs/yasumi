@@ -67,10 +67,10 @@ class Queensland extends Australia
      */
     protected function calculateQueensBirthday(): void
     {
-        $birthDay = 'first monday of october ' . $this->year;
+        $birthDay = "first monday of october {$this->year}";
 
         if ($this->year < 2012 || 2013 === $this->year || 2014 === $this->year || 2015 === $this->year) {
-            $birthDay = 'second monday of june ' . $this->year;
+            $birthDay = "second monday of june {$this->year}";
         }
 
         $this->addHoliday(new Holiday(

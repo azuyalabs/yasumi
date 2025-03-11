@@ -161,7 +161,7 @@ class Romania extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'stAndrewsDay',
                 [],
-                new \DateTime($this->year . '-11-30', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-11-30", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -224,7 +224,7 @@ class Romania extends AbstractProvider
             $this->addHoliday(new Holiday(
                 'stJohnsDay',
                 [],
-                new \DateTime($this->year . '-01-07', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-01-07", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

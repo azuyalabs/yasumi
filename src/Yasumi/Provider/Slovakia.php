@@ -135,7 +135,7 @@ class Slovakia extends AbstractProvider
                     'sk' => 'Výročie Deklarácie slovenského národa',
                     'en' => 'Anniversary of the Declaration of the Slovak Nation',
                 ],
-                new \DateTime($this->year . '-10-30', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-10-30", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -158,7 +158,7 @@ class Slovakia extends AbstractProvider
                 'sk' => 'Deň vzniku Slovenskej republiky',
                 'en' => 'Day of the Establishment of the Slovak Republic',
             ],
-            new \DateTime($this->year . '-01-01', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("{$this->year}-01-01", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -183,7 +183,7 @@ class Slovakia extends AbstractProvider
                 'cs' => 'Den slovanských věrozvěstů Cyrila a Metoděje',
                 'en' => 'Saints Cyril and Methodius Day',
             ],
-            new \DateTime($this->year . '-07-05', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("{$this->year}-07-05", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));
@@ -206,7 +206,7 @@ class Slovakia extends AbstractProvider
                 'sk' => 'Výročie Slovenského národného povstania',
                 'en' => 'Slovak National Uprising Day',
             ],
-            new \DateTime($this->year . '-08-29', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("{$this->year}-08-29", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));
@@ -232,7 +232,7 @@ class Slovakia extends AbstractProvider
                     'sk' => 'Deň Ústavy Slovenskej republiky',
                     'en' => 'Day of the Constitution of the Slovak Republic',
                 ],
-                new \DateTime($this->year . '-09-01', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new \DateTime("{$this->year}-09-01", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OFFICIAL
             ));
@@ -257,7 +257,7 @@ class Slovakia extends AbstractProvider
         $this->addHoliday(new Holiday('ourLadyOfSorrowsDay', [
             'sk' => 'Sviatok Sedembolestnej Panny Márie',
             'en' => 'Our Lady of Sorrows Day',
-        ], new \DateTime($this->year . '-09-15', DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_BANK));
+        ], new \DateTime("{$this->year}-09-15", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_BANK));
     }
 
     /**
@@ -278,7 +278,7 @@ class Slovakia extends AbstractProvider
                 'cs' => 'Den boje za svobodu a demokracii',
                 'en' => 'Struggle for Freedom and Democracy Day',
             ],
-            new \DateTime($this->year . '-11-17', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("{$this->year}-11-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));

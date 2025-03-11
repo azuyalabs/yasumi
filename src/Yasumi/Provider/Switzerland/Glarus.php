@@ -78,7 +78,7 @@ class Glarus extends Switzerland
     protected function calculateNafelserFahrt(): void
     {
         if ($this->year >= 1389) {
-            $date = new \DateTime('First Thursday of ' . $this->year . '-04', DateTimeZoneFactory::getDateTimeZone($this->timezone));
+            $date = new \DateTime("First Thursday of {$this->year}-04", DateTimeZoneFactory::getDateTimeZone($this->timezone));
             $this->addHoliday(new Holiday('nafelserFahrt', [
                 'de' => 'Näfelser Fahrt',
             ], $date, $this->locale, Holiday::TYPE_OTHER));

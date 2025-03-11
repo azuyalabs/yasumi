@@ -111,7 +111,7 @@ class NewSouthWales extends Australia
         $this->addHoliday(new Holiday(
             'queensBirthday',
             [],
-            new \DateTime('second monday of june ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("second monday of june {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));
@@ -140,7 +140,7 @@ class NewSouthWales extends Australia
         $this->addHoliday(new Holiday(
             'bankHoliday',
             ['en' => 'Bank Holiday'],
-            new \DateTime('first monday of august ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("first monday of august {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_BANK
         ));
