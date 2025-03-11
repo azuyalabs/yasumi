@@ -54,12 +54,12 @@ class Mexico extends AbstractProvider
 
         // Add Christian holidays
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
-        $this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->epiphany($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
         $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
-        $this->addHoliday($this->assumptionOfMary($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->immaculateConception($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->assumptionOfMary($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
+        $this->addHoliday($this->immaculateConception($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
 
         // Mexican holidays
         $this->calculateConstitutionDay();
@@ -208,7 +208,7 @@ class Mexico extends AbstractProvider
                 'en' => 'Christmas Eve',
                 'es' => 'Nochebuena',
             ],
-            new \DateTime("{$this->year}-12-24", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale)
+            new \DateTime("{$this->year}-12-24", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OBSERVANCE)
         );
     }
 
@@ -225,8 +225,10 @@ class Mexico extends AbstractProvider
                 'en' => 'New Year’s Eve',
                 'es' => 'Nochevieja',
             ],
-            new \DateTime("{$this->year}-12-31", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale)
-        );
+            new \DateTime("{$this->year}-12-31", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale,
+            Holiday::TYPE_OBSERVANCE
+        ));
     }
 
     /**
@@ -244,8 +246,10 @@ class Mexico extends AbstractProvider
                     'en' => 'Day of the Deaths',
                     'es' => 'Día de los Muertos',
                 ],
-                new \DateTime("{$this->year}-11-02", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OTHER)
-            );
+                new \DateTime("{$this->year}-11-02", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                $this->locale,
+                Holiday::TYPE_OBSERVANCE
+            ));
         }
     }
 
@@ -262,7 +266,8 @@ class Mexico extends AbstractProvider
                 'virginOfGuadalupe',
                 ['es' => 'Día de la Virgen de Guadalupe'],
                 new \DateTime("{$this->year}-12-12", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-                $this->locale
+                $this->locale,
+                Holiday::TYPE_OBSERVANCE
             ));
         }
     }
