@@ -84,7 +84,7 @@ class Fribourg extends Switzerland
                 'en' => 'December 26th',
                 'fr' => '26 décembre',
             ],
-            new \DateTime($this->year . '-12-26', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("{$this->year}-12-26", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OTHER
         ));

@@ -384,7 +384,7 @@ trait ChristianHolidays
         }
 
         $easter = new \DateTime("{$year}-3-21", DateTimeZoneFactory::getDateTimeZone($timezone));
-        $easter->add(new \DateInterval('P' . $easterDays . 'D'));
+        $easter->add(new \DateInterval(sprintf('P%dD', $easterDays)));
 
         return $easter;
     }

@@ -58,7 +58,7 @@ class KingIsland extends Tasmania
         $this->addHoliday(new Holiday(
             'kingIslandShow',
             ['en' => 'King Island Show'],
-            new \DateTime('first tuesday of march ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("first tuesday of march {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));

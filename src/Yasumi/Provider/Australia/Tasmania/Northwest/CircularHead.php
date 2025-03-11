@@ -55,7 +55,7 @@ class CircularHead extends Northwest
      */
     protected function calculateAGFEST(): void
     {
-        $date = new \DateTime('first thursday of may ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $date = new \DateTime("first thursday of may {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         $date = $date->add(new \DateInterval('P1D'));
         $this->addHoliday(new Holiday('agfest', ['en' => 'AGFEST'], $date, $this->locale));
     }

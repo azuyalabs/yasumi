@@ -83,7 +83,7 @@ class Tasmania extends Australia
         $this->addHoliday(new Holiday(
             'queensBirthday',
             [],
-            new \DateTime('second monday of june ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("second monday of june {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));
@@ -102,7 +102,7 @@ class Tasmania extends Australia
         $this->addHoliday(new Holiday(
             'recreationDay',
             ['en' => 'Recreation Day'],
-            new \DateTime('first monday of november ' . $this->year, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("first monday of november {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));
