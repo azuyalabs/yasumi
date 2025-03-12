@@ -65,6 +65,7 @@ class Portugal extends AbstractProvider
         return [
             'https://en.wikipedia.org/wiki/Public_holidays_in_Portugal',
             'https://pt.wikipedia.org/wiki/Feriados_em_Portugal',
+            'https://diariodarepublica.pt/dr/legislacao-consolidada/lei/2009-34546475-73982045'
         ];
     }
 
