@@ -105,6 +105,6 @@ class CzechRepublicTest extends CzechRepublicBaseTestCase implements ProviderTes
      */
     public function testSources(): void
     {
-        $this->assertSources(self::REGION, 2);
+        $this->assertSources(self::REGION, 3);
     }
 }
