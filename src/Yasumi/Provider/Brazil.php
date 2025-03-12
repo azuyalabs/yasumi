@@ -63,6 +63,7 @@ class Brazil extends AbstractProvider
         $this->calculateOurLadyOfAparecidaDay();
         $this->calculateProclamationOfRepublicDay();
         $this->calculateTiradentesDay();
+        $this->calculateBlackConsciousnessDay();
     }
 
     public function getSources(): array
@@ -157,7 +158,7 @@ class Brazil extends AbstractProvider
     /*
      * Tiradentes Day
      *
-     * Tiradentes Day is a the Brazilian national holidays. Is the a tribute to national Brazilian hero Joaquim José
+     * Tiradentes Day is a Brazilian national holiday. Is is a tribute to national Brazilian hero Joaquim José
      * da Silva Xavier, martyr of Inconfidência Mineira. Is celebrated on 21 Abril, because the execution of
      * Tiradentes got in the day, in 1792.
      *
@@ -214,6 +215,29 @@ class Brazil extends AbstractProvider
                     Holiday::TYPE_OBSERVANCE
                 ));
             }
+        }
+    }
+
+    /*
+     * Black Consciousness Day
+     *
+     * Black Consciousness Day is a Brazilian national holiday commemorating Afro-Brazilians and their struggle
+     * to achieve racial equality. It is celebrated on 20 November, the anniversary of the death of resistance
+     * leader Zumbi dos Palmares, and is also known as Zumbi Day.
+     *
+     * @link https://en.wikipedia.org/wiki/Black_Awareness_Day
+     */
+    protected function calculateBlackConsciousnessDay(): void
+    {
+        if ($this->year >= 2011) {
+            $type = $this->year <= 2023 ? Holiday::TYPE_OBSERVANCE : Holiday::TYPE_OFFICIAL;
+            $this->addHoliday(new Holiday(
+                'blackConsciousnessDay',
+                ['pt' => 'Dia Nacional de Zumbi e da Consciência Negra'],
+                new \DateTime("{$this->year}-11-20", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                $this->locale,
+                $type
+            ));
         }
     }
 }
