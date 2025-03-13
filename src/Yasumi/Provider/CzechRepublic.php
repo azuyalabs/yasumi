@@ -60,7 +60,7 @@ class CzechRepublic extends AbstractProvider
         $this->calculateCzechStatehoodDay();
         $this->calculateIndependentCzechoslovakStateDay();
         $this->calculateStruggleForFreedomAndDemocracyDay();
-        $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale, Holiday::TYPE_OFFICIAL));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
     }
@@ -70,6 +70,7 @@ class CzechRepublic extends AbstractProvider
         return [
             'https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic',
             'https://cs.wikipedia.org/wiki/%C4%8Cesk%C3%BD_st%C3%A1tn%C3%AD_sv%C3%A1tek',
+            'https://www.e-sbirka.cz/sb/2000/245/0000-00-00?zalozka=text#par_2',
         ];
     }
 
