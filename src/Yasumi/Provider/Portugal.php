@@ -65,6 +65,7 @@ class Portugal extends AbstractProvider
         return [
             'https://en.wikipedia.org/wiki/Public_holidays_in_Portugal',
             'https://pt.wikipedia.org/wiki/Feriados_em_Portugal',
+            'https://diariodarepublica.pt/dr/legislacao-consolidada/lei/2009-34546475-73982045',
         ];
     }
 
@@ -112,7 +113,7 @@ class Portugal extends AbstractProvider
     protected function calculateCorpusChristi(): void
     {
         if ($this->year <= 2012 || $this->year >= 2016) {
-            $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale));
+            $this->addHoliday($this->corpusChristi($this->year, $this->timezone, $this->locale, Holiday::TYPE_OFFICIAL));
         }
     }
 

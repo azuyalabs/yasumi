@@ -107,7 +107,7 @@ class PortugalTest extends PortugalBaseTestCase implements ProviderTestCase
             $holidays[] = 'corpusChristi';
         }
 
-        $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
@@ -116,6 +116,6 @@ class PortugalTest extends PortugalBaseTestCase implements ProviderTestCase
      */
     public function testSources(): void
     {
-        $this->assertSources(self::REGION, 2);
+        $this->assertSources(self::REGION, 3);
     }
 }

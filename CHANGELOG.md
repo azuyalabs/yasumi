@@ -11,6 +11,7 @@ changes.
 ## [Unreleased]
 
 ### Added
+- Black Consciousness Day ('Dia Nacional de Zumbi e da Consciência Negra') is public holiday in Brazil. [\#365](https://github.com/azuyalabs/yasumi/pull/365) ([c960657](https://github.com/c960657))
 
 ### Changed
 
@@ -18,6 +19,9 @@ changes.
   to allow use in [custom providers](https://www.yasumi.dev/docs/cookbook/custom_provider/).
   [\#331](https://github.com/azuyalabs/yasumi/issues/331)
 - For Mexico, add the Day of Transmission of Federal Executive Power in election years. [\#361](https://github.com/azuyalabs/yasumi/pull/361) ([c960657](https://github.com/c960657))
+- For Argentina, Carneval Monday and Tuesday, and Good Friday are considered official holidays. [\#360](https://github.com/azuyalabs/yasumi/pull/360) ([c960657](https://github.com/c960657))
+- For the Czech Republic, Christmas Eve is considered an official holiday. [\#366](https://github.com/azuyalabs/yasumi/pull/366) ([c960657](https://github.com/c960657))
+- For Portual, Corpus Christi is considered an official holiday. [\#363](https://github.com/azuyalabs/yasumi/pull/363) ([c960657](https://github.com/c960657))
 
 ### Fixed
 

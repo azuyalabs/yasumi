@@ -83,10 +83,10 @@ class CorpusChristiTest extends PortugalBaseTestCase implements HolidayTestCase
     {
         // Before abolishment
         $year = $this->generateRandomYear(1000, self::HOLIDAY_YEAR_ABOLISHED - 1);
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OTHER);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OFFICIAL);
 
         // After restoration
         $year = $this->generateRandomYear(self::HOLIDAY_YEAR_RESTORED);
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OTHER);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OFFICIAL);
     }
 }

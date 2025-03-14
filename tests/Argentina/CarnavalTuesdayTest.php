@@ -84,6 +84,6 @@ class CarnavalTuesdayTest extends ArgentinaBaseTestCase implements HolidayTestCa
     public function testHolidayType(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OBSERVANCE);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OFFICIAL);
     }
 }
