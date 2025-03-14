@@ -122,7 +122,7 @@ class Mexico extends AbstractProvider
                     'en' => 'Constitution Day',
                     'es' => 'Día de la Constitución',
                 ],
-                new \DateTime("first monday of february {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OBSERVANCE)
+                new \DateTime("first monday of february {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale)
             );
         }
     }
@@ -141,7 +141,7 @@ class Mexico extends AbstractProvider
                     'en' => 'Benito Juárez’s birthday',
                     'es' => 'Natalicio de Benito Juárez',
                 ],
-                new \DateTime("{$this->year}-03-21", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OBSERVANCE)
+                new \DateTime("{$this->year}-03-21", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale)
             );
         }
 
@@ -152,7 +152,7 @@ class Mexico extends AbstractProvider
                     'en' => 'Benito Juárez’s birthday',
                     'es' => 'Natalicio de Benito Juárez',
                 ],
-                new \DateTime("third monday of march {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OBSERVANCE)
+                new \DateTime("third monday of march {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale)
             );
         }
     }
@@ -191,7 +191,7 @@ class Mexico extends AbstractProvider
                     'en' => 'Revolution Day',
                     'es' => 'Día de la Revolución',
                 ],
-                new \DateTime("third monday of november {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_OBSERVANCE)
+                new \DateTime("third monday of november {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale)
             );
         }
     }
