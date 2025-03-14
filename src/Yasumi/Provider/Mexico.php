@@ -67,6 +67,7 @@ class Mexico extends AbstractProvider
         $this->calculateRevolutionDay();
         $this->calculateDiscoveryOfAmerica();
         $this->addIndependenceDay();
+        $this->calculateTransmissionOfFederalPowerDay();
         $this->calculateDayOfTheDead();
         $this->calculateChristmasEve();
         $this->calculateNewYearsEve();
@@ -152,6 +153,26 @@ class Mexico extends AbstractProvider
                     'es' => 'Natalicio de Benito Juárez',
                 ],
                 new \DateTime("third monday of march {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale)
+            );
+        }
+    }
+
+    /**
+     * Transmission of Federal Executive Power.
+     *
+     * In years of presidential elections (every 6 years), the new president is inaugurated on 1 October. Prior to 2024, this happened on 1 December.
+     */
+    protected function calculateTransmissionOfFederalPowerDay(): void
+    {
+        if ($this->year >= 1934 && 2 === $this->year % 6) {
+            $day = $this->year < 2024 ? "{$this->year}-12-01" : "{$this->year}-10-01";
+            $this->addHoliday(new Holiday(
+                'transmissionOfFederalPowerDay',
+                [
+                    'en' => 'Transmission of Federal Executive Power',
+                    'es' => 'Transmisión de Poder Ejecutivo Federal',
+                ],
+                new \DateTime($day, DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale)
             );
         }
     }
