@@ -25,6 +25,8 @@ use Yasumi\tests\HolidayTestCase;
  */
 class ChristmasDayTest extends UkraineBaseTestCase implements HolidayTestCase
 {
+    public const ABOLISHMENT_YEAR = 2023;
+
     /**
      * The name of the holiday.
      */
@@ -32,40 +34,36 @@ class ChristmasDayTest extends UkraineBaseTestCase implements HolidayTestCase
 
     /**
      * Tests Christmas Day.
-     *
-     * @dataProvider HolidayDataProvider
-     *
-     * @param int       $year     the year for which Christmas Day needs to be tested
-     * @param \DateTime $expected the expected date
      */
-    public function testChristmasDay(int $year, \DateTimeInterface $expected): void
+    public function testHoliday(): void
     {
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
+        $year = $this->generateRandomYear(1000, self::ABOLISHMENT_YEAR);
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new \DateTime("{$year}-01-07", new \DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
-     * Returns a list of random test dates used for assertion of the holiday defined in this test.
-     *
-     * @return array<array> list of test dates for the holiday defined in this test
-     *
-     * @throws \Exception
+     * Tests Christmas Day was abolished in 2023.
      */
-    public function HolidayDataProvider(): array
+    public function testNotHolidayAfter2023(): void
     {
-        return $this->generateRandomDates(1, 7, self::TIMEZONE);
+        $year = $this->generateRandomYear(self::ABOLISHMENT_YEAR + 1);
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
     }
 
     /**
      * Tests translated name of Christmas Day.
-     *
-     * @throws \Exception
      */
     public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            $this->generateRandomYear(1000, 2023),
             [self::LOCALE => 'Різдво']
         );
     }
@@ -77,6 +75,6 @@ class ChristmasDayTest extends UkraineBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(1000, 2023), Holiday::TYPE_OFFICIAL);
     }
 }

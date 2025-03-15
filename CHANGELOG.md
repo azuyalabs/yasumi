@@ -24,10 +24,12 @@ changes.
 - For the Czech Republic, Christmas Eve is considered an official holiday. [\#366](https://github.com/azuyalabs/yasumi/pull/366) ([c960657](https://github.com/c960657))
 - For Mexico, several holidays are not considered official holidays. [\#362](https://github.com/azuyalabs/yasumi/pull/362) ([c960657](https://github.com/c960657))
 - For Portual, Corpus Christi is considered an official holiday. [\#363](https://github.com/azuyalabs/yasumi/pull/363) ([c960657](https://github.com/c960657))
+- For Ukraine, Victory Day, Day of Ukrainian Statehood, Day of Defenders of Ukraine changed dates in 2023. [\#369](https://github.com/azuyalabs/yasumi/pull/369) ([c960657](https://github.com/c960657))
 
 ### Fixed
 
 ### Removed
+- For Ukraine, Orthodox Christmas was abolished in 2023. [\#369](https://github.com/azuyalabs/yasumi/pull/369) ([c960657](https://github.com/c960657))
 
 ## [2.7.0] - 2024-01-02
 

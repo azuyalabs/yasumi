@@ -31,23 +31,40 @@ class VictoryDayTest extends UkraineBaseTestCase implements HolidayTestCase
     public const HOLIDAY = 'victoryDay';
 
     /**
-     * @dataProvider HolidayDataProvider
+     * Tests the holiday defined in this test.
      */
-    public function testHoliday(int $year, \DateTimeInterface $expected): void
+    public function testHoliday(): void
     {
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
+        $year = $this->generateRandomYear(2024);
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new \DateTime("{$year}-05-08", new \DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
-     * Returns a list of random test dates used for assertion of the holiday defined in this test.
-     *
-     * @return array<array> list of test dates for the holiday defined in this test
-     *
-     * @throws \Exception
+     * Tests the holiday defined in this test.
      */
-    public function HolidayDataProvider(): array
+    public function testHolidayBefore2024(): void
     {
-        return $this->generateRandomDates(5, 9, self::TIMEZONE);
+        $year = $this->generateRandomYear(2015, 2023);
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new \DateTime("{$year}-05-09", new \DateTimeZone(self::TIMEZONE))
+        );
+    }
+
+    /**
+     * Tests the holiday defined in this test.
+     */
+    public function testNotHolidayBeforeEstablishment(): void
+    {
+        $year = $this->generateRandomYear(1000, 2014);
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
     }
 
     /**
@@ -60,7 +77,7 @@ class VictoryDayTest extends UkraineBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            $this->generateRandomYear(2015),
             [self::LOCALE => 'День перемоги']
         );
     }
@@ -72,6 +89,6 @@ class VictoryDayTest extends UkraineBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(2015), Holiday::TYPE_OFFICIAL);
     }
 }

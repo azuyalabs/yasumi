@@ -31,17 +31,40 @@ class DefenderOfUkraineDayTest extends UkraineBaseTestCase implements HolidayTes
     public const HOLIDAY = 'defenderOfUkraineDay';
 
     /**
-     * @throws \Exception
+     * Tests the holiday defined in this test.
      */
     public function testHoliday(): void
     {
-        $year = 2020;
+        $year = $this->generateRandomYear(2023);
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new \DateTime("{$year}-10-01", new \DateTimeZone(self::TIMEZONE))
+        );
+    }
+
+    /**
+     * Tests the holiday defined in this test.
+     */
+    public function testHolidayBefore2023(): void
+    {
+        $year = $this->generateRandomYear(2015, 2022);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             $year,
             new \DateTime("{$year}-10-14", new \DateTimeZone(self::TIMEZONE))
         );
+    }
+
+    /**
+     * Tests the holiday defined in this test.
+     */
+    public function testNotHolidayBeforeEstablishment(): void
+    {
+        $year = $this->generateRandomYear(1000, 2014);
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
     }
 
     /**
