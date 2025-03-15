@@ -12,6 +12,7 @@ changes.
 
 ### Added
 - Black Consciousness Day ('Dia Nacional de Zumbi e da Consciência Negra') is public holiday in Brazil. [\#365](https://github.com/azuyalabs/yasumi/pull/365) ([c960657](https://github.com/c960657))
+- For Argentina, four holidays are movable. [\#367](https://github.com/azuyalabs/yasumi/pull/367) ([c960657](https://github.com/c960657))
 
 ### Changed
 

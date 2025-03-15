@@ -52,6 +52,36 @@ class NationalSovereigntyDayTest extends ArgentinaBaseTestCase implements Holida
     }
 
     /**
+     * Tests the movable holiday adjustment from Thursday to Monday.
+     *
+     * @throws \Exception
+     */
+    public function testMovableHoliday2025(): void
+    {
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2025,
+            new \DateTime('2025-11-24', new \DateTimeZone(self::TIMEZONE))
+        );
+    }
+
+    /**
+     * Tests the movable holiday adjustment does not happen from a Sunday.
+     *
+     * @throws \Exception
+     */
+    public function testNotMovableHoliday2022(): void
+    {
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2022,
+            new \DateTime('2022-11-20', new \DateTimeZone(self::TIMEZONE))
+        );
+    }
+
+    /**
      *  Tests that holiday is not present before establishment year.
      */
     public function testNotHoliday(): void
