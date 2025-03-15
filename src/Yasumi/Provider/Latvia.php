@@ -31,6 +31,8 @@ class Latvia extends AbstractProvider
 
     public const RESTORATION_OF_INDEPENDENCE_YEAR = 1990;
 
+    public const MOTHERS_DAY_YEAR = 1992;
+
     public const PROCLAMATION_OF_INDEPENDENCE_YEAR = 1918;
 
     /**
@@ -54,8 +56,10 @@ class Latvia extends AbstractProvider
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
         $this->addRestorationOfIndependenceDay();
+        $this->addMothersDay();
         $this->addMidsummerEveDay();
         $this->addHoliday($this->stJohnsDay($this->year, $this->timezone, $this->locale));
         $this->addProclamationDay();
@@ -70,6 +74,8 @@ class Latvia extends AbstractProvider
         return [
             'https://en.wikipedia.org/wiki/Public_holidays_in_Latvia',
             'https://lt.wikipedia.org/wiki/S%C4%85ra%C5%A1as:Latvijos_%C5%A1vent%C4%97s',
+            'https://www.mfa.gov.lv/en/11-national-hollidays-and-remembrance-days',
+            'https://likumi.lv/ta/id/72608-par-svetku-atceres-un-atzimejamam-dienam',
         ];
     }
 
@@ -93,6 +99,16 @@ class Latvia extends AbstractProvider
                 'en' => 'Restoration of Independence day',
                 'lv' => 'Latvijas Republikas Neatkarības atjaunošanas diena',
             ], $date));
+        }
+    }
+
+    /**
+     * Mother's day is celebrated on the 2nd Sunday of May.
+     */
+    protected function addMothersDay(): void
+    {
+        if ($this->year >= self::MOTHERS_DAY_YEAR) {
+            $this->addHoliday($this->mothersDay($this->year, $this->timezone, $this->locale));
         }
     }
 
