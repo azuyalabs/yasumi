@@ -170,7 +170,7 @@ class Holiday extends \DateTime implements \JsonSerializable, \Stringable
      * If no locale is provided, proceed as if an array containing the display locale, Holiday::DEFAULT_LOCALE ('en_US'), and
      * Holiday::LOCALE_KEY (the holiday key) was provided.
      *
-     * @param array<string>|null $locales The locales to search for translations
+     * @param array<string> $locales The locales to search for translations
      *
      * @throws MissingTranslationException
      *
