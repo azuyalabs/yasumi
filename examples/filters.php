@@ -1,9 +1,5 @@
 <?php
 
-// This file demonstrates the use of filters; selecting only a number of holidays
-// based on certain conditions. In this examples we show only the holidays that are
-// marked as 'official'.
-
 declare(strict_types = 1);
 
 /**
@@ -18,6 +14,10 @@ declare(strict_types = 1);
  *
  * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
+
+// This file demonstrates the use of filters; selecting only a number of holidays
+// based on certain conditions. In this example we show only the holidays that are
+// marked as 'official'.
 
 require 'vendor/autoload.php';
 

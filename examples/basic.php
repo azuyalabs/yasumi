@@ -1,7 +1,5 @@
 <?php
 
-// This file demonstrates the general use of Yasumi and its basic methods.
-
 declare(strict_types = 1);
 
 /**
@@ -17,13 +15,15 @@ declare(strict_types = 1);
  * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
+// This file demonstrates the general use of Yasumi and its basic methods.
+
 require 'vendor/autoload.php';
 
 // Use the factory to create a new holiday provider instance
 $holidays = Yasumi\Yasumi::create('USA', (int) date('Y'));
 
 // Show the number of defined holidays
-echo 'Number of defined holidays: ' . $holidays->count() . PHP_EOL;
+echo "Number of defined holidays: {$holidays->count()}" . PHP_EOL;
 echo PHP_EOL;
 
 // Display a list all of the holiday names (short names)
@@ -47,7 +47,7 @@ $independenceDay = $holidays->getHoliday('independenceDay');
 echo 'Name of the holiday : ' . $independenceDay->getName() . PHP_EOL;
 
 // Show the date
-echo 'Date of the holiday : ' . $independenceDay . PHP_EOL;
+echo "Date of the holiday : {$independenceDay}" . PHP_EOL;
 
 // Show the type of holiday
 echo 'Type of holiday     : ' . $independenceDay->getType() . PHP_EOL;
