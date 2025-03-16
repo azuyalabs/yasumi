@@ -17,11 +17,13 @@ declare(strict_types = 1);
 
 // Translations for Father's Day
 return [
+    'da' => 'fars dag',
     'de' => 'Vatertag',
     'el' => 'Γιορτή του πατέρα',
     'en' => 'Father’s Day',
     'fr' => 'Fête des pères',
     'it' => 'Festa del papà',
+    'lt' => 'Tėvo dieną',
     'nl' => 'Vaderdag',
     'pt' => 'Dia do Pai',
     'ro' => 'Ziua Tatălui',
