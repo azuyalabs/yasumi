@@ -26,6 +26,7 @@ changes.
 - For Portual, Corpus Christi is considered an official holiday. [\#363](https://github.com/azuyalabs/yasumi/pull/363) ([c960657](https://github.com/c960657))
 
 ### Fixed
+- For United Kingdom, Easter Monday is not a bank holiday in Scotland. [\#372](https://github.com/azuyalabs/yasumi/pull/372) ([c960657](https://github.com/c960657))
 
 ### Removed
 

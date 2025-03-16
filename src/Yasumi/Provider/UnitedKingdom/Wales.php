@@ -17,6 +17,7 @@ declare(strict_types = 1);
 
 namespace Yasumi\Provider\UnitedKingdom;
 
+use Yasumi\Holiday;
 use Yasumi\Provider\UnitedKingdom;
 
 /**
@@ -35,6 +36,16 @@ class Wales extends UnitedKingdom
      * country or sub-region.
      */
     public const ID = 'GB-WLS';
+
+    /**
+     * Initialize holidays for Wales (United Kingdom).
+     */
+    public function initialize(): void
+    {
+        parent::initialize();
+
+        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
+    }
 
     public function getSources(): array
     {

@@ -46,11 +46,7 @@ class Scotland extends UnitedKingdom
     public const ID = 'GB-SCT';
 
     /**
-     * Initialize holidays for the United Kingdom.
-     *
-     * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
-     * @throws \Exception
+     * Initialize holidays for Scotland (United Kingdom)..
      */
     public function initialize(): void
     {
