@@ -60,6 +60,10 @@ class Poland extends AbstractProvider
         $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
 
+        if ($this->year >= 2025) {
+            $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale, Holiday::TYPE_OFFICIAL));
+        }
+
         // Add other holidays
         $this->calculateIndependenceDay();
         $this->calculateConstitutionDay();

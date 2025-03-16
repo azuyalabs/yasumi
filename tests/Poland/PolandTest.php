@@ -45,7 +45,7 @@ class PolandTest extends PolandBaseTestCase implements ProviderTestCase
      */
     public function testOfficialHolidays(): void
     {
-        $this->assertDefinedHolidays([
+        $holidays = [
             'newYearsDay',
             'internationalWorkersDay',
             'allSaintsDay',
@@ -59,7 +59,13 @@ class PolandTest extends PolandBaseTestCase implements ProviderTestCase
             'secondChristmasDay',
             'constitutionDay',
             'independenceDay',
-        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
+        ];
+
+        if ($this->year >= 2025) {
+            $holidays[] = 'christmasEve';
+        }
+
+        $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
