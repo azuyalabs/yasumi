@@ -72,6 +72,8 @@ class Lithuania extends AbstractProvider
         $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
+        $this->addMothersDay();
+        $this->addFathersDay();
         $this->addHoliday($this->stJohnsDay($this->year, $this->timezone, $this->locale));
         $this->addStatehoodDay();
         $this->addHoliday($this->assumptionOfMary($this->year, $this->timezone, $this->locale));
@@ -87,6 +89,7 @@ class Lithuania extends AbstractProvider
         return [
             'https://en.wikipedia.org/wiki/Public_holidays_in_Lithuania',
             'https://lt.wikipedia.org/wiki/S%C4%85ra%C5%A1as:Lietuvos_%C5%A1vent%C4%97s',
+            'https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/10c6bfd07bd511e6a0f68fd135e6f40c/asr',
         ];
     }
 
@@ -120,6 +123,36 @@ class Lithuania extends AbstractProvider
                 'lt' => 'Lietuvos nepriklausomybės atkūrimo diena',
             ], new \DateTime("{$this->year}-03-11", new \DateTimeZone($this->timezone))));
         }
+    }
+
+    /**
+     * Mother's Day.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Exception
+     */
+    protected function addMothersDay(): void
+    {
+        $this->addHoliday(new Holiday(
+            'mothersDay',
+            [],
+            new \DateTime("first sunday of may {$this->year}", new \DateTimeZone($this->timezone))
+        ));
+    }
+
+    /**
+     * Father's Day.
+     *
+     * @throws \InvalidArgumentException
+     * @throws \Exception
+     */
+    protected function addFathersDay(): void
+    {
+        $this->addHoliday(new Holiday(
+            'fathersDay',
+            [],
+            new \DateTime("first sunday of june {$this->year}", new \DateTimeZone($this->timezone))
+        ));
     }
 
     /**
