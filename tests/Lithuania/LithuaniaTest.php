@@ -39,6 +39,8 @@ class LithuaniaTest extends LithuaniaBaseTestCase
             'easter',
             'easterMonday',
             'internationalWorkersDay',
+            'mothersDay',
+            'fathersDay',
             'stJohnsDay',
             'assumptionOfMary',
             'allSaintsDay',
@@ -110,6 +112,6 @@ class LithuaniaTest extends LithuaniaBaseTestCase
      */
     public function testSources(): void
     {
-        $this->assertSources(self::REGION, 2);
+        $this->assertSources(self::REGION, 3);
     }
 }

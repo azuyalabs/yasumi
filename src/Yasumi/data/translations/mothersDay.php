@@ -22,6 +22,7 @@ return [
     'en' => 'Mother’s Day',
     'fr' => 'Fête des mères',
     'it' => 'Festa della mamma',
+    'lt' => 'Motinos dieną',
     'nl' => 'Moederdag',
     'pt' => 'Dia da Mãe',
     'ro' => 'Ziua Mamei',
