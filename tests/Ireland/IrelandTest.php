@@ -45,7 +45,7 @@ class IrelandTest extends IrelandBaseTestCase implements ProviderTestCase
      */
     public function testOfficialHolidays(): void
     {
-        $officialHolidays = ['easter', 'easterMonday', 'augustHoliday', 'christmasDay', 'stStephensDay'];
+        $officialHolidays = ['easterMonday', 'augustHoliday', 'christmasDay', 'stStephensDay'];
         if ($this->year >= 1974) {
             $officialHolidays[] = 'newYearsDay';
             $officialHolidays[] = 'juneHoliday';
@@ -75,7 +75,7 @@ class IrelandTest extends IrelandBaseTestCase implements ProviderTestCase
      */
     public function testObservedHolidays(): void
     {
-        $this->assertDefinedHolidays(['goodFriday', 'pentecost'], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays(['easter', 'goodFriday', 'pentecost'], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**

@@ -24,6 +24,7 @@ changes.
 - For the Czech Republic, Christmas Eve is considered an official holiday. [\#366](https://github.com/azuyalabs/yasumi/pull/366) ([c960657](https://github.com/c960657))
 - For Mexico, several holidays are not considered official holidays. [\#362](https://github.com/azuyalabs/yasumi/pull/362) ([c960657](https://github.com/c960657))
 - For Portual, Corpus Christi is considered an official holiday. [\#363](https://github.com/azuyalabs/yasumi/pull/363) ([c960657](https://github.com/c960657))
+- For Ireland, Easter Sunday is not an official holiday. [\#373](https://github.com/azuyalabs/yasumi/pull/373) ([c960657](https://github.com/c960657))
 
 ### Fixed
 
