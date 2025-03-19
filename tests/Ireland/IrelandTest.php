@@ -67,6 +67,10 @@ class IrelandTest extends IrelandBaseTestCase implements ProviderTestCase
             $officialHolidays[] = 'octoberHoliday';
         }
 
+        if ($this->year >= 2023) {
+            $officialHolidays[] = 'stBrigidsDay';
+        }
+
         $this->assertDefinedHolidays($officialHolidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -108,6 +112,6 @@ class IrelandTest extends IrelandBaseTestCase implements ProviderTestCase
      */
     public function testSources(): void
     {
-        $this->assertSources(self::REGION, 1);
+        $this->assertSources(self::REGION, 3);
     }
 }

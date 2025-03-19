@@ -13,6 +13,7 @@ changes.
 ### Added
 - Black Consciousness Day ('Dia Nacional de Zumbi e da Consciência Negra') is public holiday in Brazil. [\#365](https://github.com/azuyalabs/yasumi/pull/365) ([c960657](https://github.com/c960657))
 - Mother's Day and Father's Day are public holidays in Lithuania. [\#370](https://github.com/azuyalabs/yasumi/pull/370) ([c960657](https://github.com/c960657))
+- Saint Brigid's Day is a public holiday in Ireland since 2023. [\#374](https://github.com/azuyalabs/yasumi/pull/374) ([c960657](https://github.com/c960657))
 
 ### Changed
 
