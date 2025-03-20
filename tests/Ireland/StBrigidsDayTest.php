@@ -21,14 +21,19 @@ use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
 /**
- * Class containing tests for Easter in Ireland.
+ * Class for testing the Saint Brigid's Day in Ireland.
  */
-class EasterTest extends IrelandBaseTestCase implements HolidayTestCase
+class StBrigidsDayTest extends IrelandBaseTestCase implements HolidayTestCase
 {
     /**
-     * The name of the holiday to be tested.
+     * The name of the holiday.
      */
-    public const HOLIDAY = 'easter';
+    public const HOLIDAY = 'stBrigidsDay';
+
+    /**
+     * The year in which the holiday was first established.
+     */
+    public const ESTABLISHMENT_YEAR = 2023;
 
     /**
      * Tests the holiday defined in this test.
@@ -42,11 +47,12 @@ class EasterTest extends IrelandBaseTestCase implements HolidayTestCase
      */
     public function testHoliday(int $year, string $expected): void
     {
+        $dateTime = new \DateTime($expected, new \DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime($expected, new \DateTimeZone(self::TIMEZONE))
+            $dateTime
         );
     }
 
@@ -62,8 +68,11 @@ class EasterTest extends IrelandBaseTestCase implements HolidayTestCase
         $data = [];
 
         for ($y = 0; $y < self::TEST_ITERATIONS; ++$y) {
-            $year = $this->generateRandomYear();
-            $date = $this->calculateEaster($year, self::TIMEZONE);
+            $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+            $date = new \DateTime("{$year}-02-01", new \DateTimeZone(self::TIMEZONE));
+            if ('Friday' !== $date->format('l')) {
+                $date = new \DateTime("{$year}-02-01 first monday", new \DateTimeZone(self::TIMEZONE));
+            }
 
             $data[] = [$year, $date->format('Y-m-d')];
         }
@@ -72,7 +81,21 @@ class EasterTest extends IrelandBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * Tests translated name of the holiday defined in this test.
+     * Tests the holiday defined in this test before establishment.
+     *
+     * @throws \Exception
+     */
+    public function testHolidayBeforeEstablishment(): void
+    {
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+        );
+    }
+
+    /**
+     * Tests the translated name of the holiday defined in this test.
      *
      * @throws \Exception
      */
@@ -81,14 +104,14 @@ class EasterTest extends IrelandBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
-            [self::LOCALE => 'Easter Sunday']
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => 'Saint Brigid’s Day']
         );
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
-            ['ga_IE' => 'Domhnach Cásca']
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            ['ga' => 'Lá Fhéile Bríde']
         );
     }
 
@@ -99,6 +122,11 @@ class EasterTest extends IrelandBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OBSERVANCE);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_OFFICIAL
+        );
     }
 }
