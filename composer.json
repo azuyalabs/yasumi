@@ -43,7 +43,6 @@
     "ext-intl": "*",
     "azuyalabs/php-cs-fixer-config": "^0.3",
     "mikey179/vfsstream": "^1.6",
-    "phan/phan": "^5.4",
     "phpstan/phpstan": "^2.1",
     "phpstan/phpstan-deprecation-rules": "^2.0",
     "phpunit/phpunit": "^8.5 || ^9.6",
@@ -76,7 +75,6 @@
     ],
     "cs": "vendor/bin/php-cs-fixer fix -v --diff --dry-run",
     "cs-fix": "vendor/bin/php-cs-fixer fix -v",
-    "phan": "vendor/bin/phan -C",
     "phpstan": "vendor/bin/phpstan analyse",
     "psalm": "vendor/bin/psalm --threads=2",
     "test": "vendor/bin/phpunit"
