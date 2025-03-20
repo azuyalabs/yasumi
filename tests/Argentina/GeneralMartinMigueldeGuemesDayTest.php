@@ -52,6 +52,51 @@ class GeneralMartinMigueldeGuemesDayTest extends ArgentinaBaseTestCase implement
     }
 
     /**
+     * Tests the movable holiday adjustment from Tuesday to Monday.
+     *
+     * @throws \Exception
+     */
+    public function testMovableHoliday2025(): void
+    {
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2025,
+            new \DateTime('2025-06-16', new \DateTimeZone(self::TIMEZONE))
+        );
+    }
+
+    /**
+     * Tests the movable holiday adjustment does not happen if it coincides with an immovable holiday.
+     *
+     * @throws \Exception
+     */
+    public function testNotMovableHoliday2022(): void
+    {
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2022,
+            new \DateTime('2022-06-17', new \DateTimeZone(self::TIMEZONE))
+        );
+    }
+
+    /**
+     * Tests the movable holiday adjustment does not happen from a Saturday.
+     *
+     * @throws \Exception
+     */
+    public function testNotMovableHoliday2023(): void
+    {
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2023,
+            new \DateTime('2023-06-17', new \DateTimeZone(self::TIMEZONE))
+        );
+    }
+
+    /**
      *  Tests that holiday is not present before establishment year.
      */
     public function testNotHoliday(): void

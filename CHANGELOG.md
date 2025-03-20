@@ -11,6 +11,7 @@ changes.
 ## [Unreleased]
 
 ### Added
+
 - Black Consciousness Day ('Dia Nacional de Zumbi e da Consciência Negra') is public holiday in Brazil. [\#365](https://github.com/azuyalabs/yasumi/pull/365) ([c960657](https://github.com/c960657))
 - Mother's Day and Father's Day are public holidays in Lithuania. [\#370](https://github.com/azuyalabs/yasumi/pull/370) ([c960657](https://github.com/c960657))
 - Christmas Eve is a public holiday in Poland from 2025. [\#371](https://github.com/azuyalabs/yasumi/pull/371) ([c960657](https://github.com/c960657))
@@ -28,6 +29,7 @@ changes.
 - For Mexico, several holidays are not considered official holidays. [\#362](https://github.com/azuyalabs/yasumi/pull/362) ([c960657](https://github.com/c960657))
 - For Portual, Corpus Christi is considered an official holiday. [\#363](https://github.com/azuyalabs/yasumi/pull/363) ([c960657](https://github.com/c960657))
 - For Ireland, Easter Sunday is not an official holiday. [\#373](https://github.com/azuyalabs/yasumi/pull/373) ([c960657](https://github.com/c960657))
+- For Argentina, four holidays are movable. [\#367](https://github.com/azuyalabs/yasumi/pull/367) ([c960657](https://github.com/c960657))
 
 ### Fixed
 
