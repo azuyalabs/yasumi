@@ -96,10 +96,6 @@ class Ireland extends AbstractProvider
      * @see https://www.timeanddate.com/holidays/ireland/new-year-day
      * @see https://www.irishstatutebook.ie/eli/1997/act/20/schedule/2/enacted/en/html
      *
-     * @TODO : Check substitution of New Years Day when it falls on a Saturday. The Holidays (Employees) Act 1973
-     *       states that New Years Day is substituted the *next* day if it does not fall on a weekday. So what if it
-     *       falls on a Saturday?
-     *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -113,8 +109,8 @@ class Ireland extends AbstractProvider
         $holiday = $this->newYearsDay($this->year, $this->timezone, $this->locale);
         $this->addHoliday($holiday);
 
-        // Substitute holiday is on the next available weekday if a holiday falls on a Sunday.
-        if (0 === (int) $holiday->format('w')) {
+        // Substitute holiday is on the next available weekday if a holiday falls on a weekend.
+        if (\in_array((int) $holiday->format('w'), [0, 6], true)) {
             $date = clone $holiday;
             $date->modify('next monday');
 

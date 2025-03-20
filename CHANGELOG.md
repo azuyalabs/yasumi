@@ -29,6 +29,7 @@ changes.
 - For Ireland, Easter Sunday is not an official holiday. [\#373](https://github.com/azuyalabs/yasumi/pull/373) ([c960657](https://github.com/c960657))
 
 ### Fixed
+- For Ireland, New Year's Day has same substitute holidays rules as other holidays. [\#375](https://github.com/azuyalabs/yasumi/pull/375) ([c960657](https://github.com/c960657))
 
 ### Removed
 
