@@ -30,10 +30,12 @@ changes.
 - For Portual, Corpus Christi is considered an official holiday. [\#363](https://github.com/azuyalabs/yasumi/pull/363) ([c960657](https://github.com/c960657))
 - For Ireland, Easter Sunday is not an official holiday. [\#373](https://github.com/azuyalabs/yasumi/pull/373) ([c960657](https://github.com/c960657))
 - For Argentina, four holidays are movable. [\#367](https://github.com/azuyalabs/yasumi/pull/367) ([c960657](https://github.com/c960657))
+- For Ukraine, Victory Day, Day of Ukrainian Statehood, Day of Defenders of Ukraine changed dates in 2023. [\#369](https://github.com/azuyalabs/yasumi/pull/369) ([c960657](https://github.com/c960657))
 
 ### Fixed
 
 ### Removed
+- For Ukraine, Orthodox Christmas was abolished in 2023. [\#369](https://github.com/azuyalabs/yasumi/pull/369) ([c960657](https://github.com/c960657))
 
 ## [2.7.0] - 2024-01-02
 

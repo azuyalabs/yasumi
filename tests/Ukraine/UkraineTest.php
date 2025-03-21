@@ -48,11 +48,9 @@ class UkraineTest extends UkraineBaseTestCase implements ProviderTestCase
         $holidays = [
             'newYearsDay',
             'internationalWorkersDay',
-            'christmasDay',
             'easter',
             'pentecost',
             'internationalWomensDay',
-            'victoryDay',
         ];
 
         if ($this->year >= 1996) {
@@ -64,6 +62,7 @@ class UkraineTest extends UkraineBaseTestCase implements ProviderTestCase
         }
 
         if ($this->year >= 2015) {
+            $holidays[] = 'victoryDay';
             $holidays[] = 'defenderOfUkraineDay';
         }
 
@@ -73,6 +72,10 @@ class UkraineTest extends UkraineBaseTestCase implements ProviderTestCase
 
         if ($this->year >= 2017) {
             $holidays[] = 'catholicChristmasDay';
+        }
+
+        if ($this->year <= 2023) {
+            $holidays[] = 'christmasDay';
         }
 
         $this->assertDefinedHolidays(
@@ -121,6 +124,6 @@ class UkraineTest extends UkraineBaseTestCase implements ProviderTestCase
      */
     public function testSources(): void
     {
-        $this->assertSources(self::REGION, 2);
+        $this->assertSources(self::REGION, 3);
     }
 }

@@ -31,17 +31,40 @@ class ConstitutionDayTest extends UkraineBaseTestCase implements HolidayTestCase
     public const HOLIDAY = 'constitutionDay';
 
     /**
-     * @throws \Exception
+     * Tests the holiday defined in this test.
      */
     public function testHoliday(): void
     {
-        $year = 2020;
+        $year = $this->generateRandomYear(2024);
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new \DateTime("{$year}-06-15", new \DateTimeZone(self::TIMEZONE))
+        );
+    }
+
+    /**
+     * Tests the holiday defined in this test.
+     */
+    public function testHolidayBefore2024(): void
+    {
+        $year = $this->generateRandomYear(1996, 2023);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             $year,
             new \DateTime("{$year}-06-28", new \DateTimeZone(self::TIMEZONE))
         );
+    }
+
+    /**
+     * Tests the holiday defined in this test.
+     */
+    public function testNotHolidayBeforeEstablishment(): void
+    {
+        $year = $this->generateRandomYear(1000, 1995);
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
     }
 
     /**
