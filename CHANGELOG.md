@@ -16,6 +16,7 @@ changes.
 - Mother's Day and Father's Day are public holidays in Lithuania. [\#370](https://github.com/azuyalabs/yasumi/pull/370) ([c960657](https://github.com/c960657))
 - Christmas Eve is a public holiday in Poland from 2025. [\#371](https://github.com/azuyalabs/yasumi/pull/371) ([c960657](https://github.com/c960657))
 - Saint Brigid's Day is a public holiday in Ireland since 2023. [\#374](https://github.com/azuyalabs/yasumi/pull/374) ([c960657](https://github.com/c960657))
+- Pentecost and Mother's Day are public holidays in Latvia. [\#368](https://github.com/azuyalabs/yasumi/pull/368) ([c960657](https://github.com/c960657))
 
 ### Changed
 
