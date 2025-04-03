@@ -34,6 +34,7 @@ changes.
 - For Ukraine, Victory Day, Day of Ukrainian Statehood, Day of Defenders of Ukraine changed dates in 2023. [\#369](https://github.com/azuyalabs/yasumi/pull/369) ([c960657](https://github.com/c960657))
 
 ### Fixed
+- For Ireland, New Year's Day has same substitute holidays rules as other holidays. [\#375](https://github.com/azuyalabs/yasumi/pull/375) ([c960657](https://github.com/c960657))
 
 ### Removed
 - For Ukraine, Orthodox Christmas was abolished in 2023. [\#369](https://github.com/azuyalabs/yasumi/pull/369) ([c960657](https://github.com/c960657))
