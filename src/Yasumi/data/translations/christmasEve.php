@@ -28,6 +28,7 @@ return [
     'ko' => '크리스마스 이브',
     'lt' => 'Šv. Kūčios',
     'lv' => 'Ziemassvētku vakars',
+    'pl' => 'Wigilia Bożego Narodzenia',
     'pt' => 'Véspera de Natal',
     'ro' => 'Ajunul Crãciunului',
     'sk' => 'Štedrý deň',

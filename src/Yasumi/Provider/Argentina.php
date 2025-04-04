@@ -51,23 +51,27 @@ class Argentina extends AbstractProvider
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
 
-        // Add Christian holidays
+        // Add official Christian holidays
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
 
-        $this->addCarnvalHolidays();
+        $this->addCarnavalHolidays();
         $this->addRemembranceDay();
         $this->addMalvinasDay();
         $this->addMayRevolution();
-        $this->addGeneralMartinMigueldeGuemesDay();
         $this->addFlagDay();
-        $this->addGeneralMartinMigueldeGuemesDay();
         $this->addIndependenceDay();
+        $this->addImmaculateConceptionDay();
+
+        // Add movable holidays (these must be added after all immovable official holidays and
+        // before non-official holidays).
+        $this->addGeneralMartinMigueldeGuemesDay();
         $this->addGeneralJoseSanMartinDay();
         $this->addRaceDay();
         $this->addNationalSovereigntyDay();
-        $this->addImmaculateConceptionDay();
+
+        // Non-official holidays
+        $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
     }
 
     /**
@@ -79,6 +83,9 @@ class Argentina extends AbstractProvider
     {
         return [
             'https://en.wikipedia.org/wiki/Public_holidays_in_Argentina',
+            'https://www.argentina.gob.ar/interior/feriados-nacionales-2025',
+            'https://www.argentina.gob.ar/normativa/nacional/ley-27399-281835/texto',
+            'https://www.argentina.gob.ar/normativa/nacional/decreto-789-2021-356678/texto',
         ];
     }
 
@@ -90,7 +97,7 @@ class Argentina extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Brazilian_Carnival
      */
-    protected function addCarnvalHolidays(): void
+    protected function addCarnavalHolidays(): void
     {
         if ($this->year >= 1700) {
             $easter = $this->calculateEaster($this->year, $this->timezone);
@@ -223,7 +230,7 @@ class Argentina extends AbstractProvider
                     'en' => 'Anniversary of the Passing of General Martín Miguel de Güemes',
                     'es' => 'Paso a la Inmortalidad del General Martín Miguel de Güemes',
                 ],
-                new \DateTime("{$this->year}-06-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                $this->adjustMovableHoliday(new \DateTime("{$this->year}-06-17", DateTimeZoneFactory::getDateTimeZone($this->timezone))),
                 $this->locale
             ));
         }
@@ -289,7 +296,7 @@ class Argentina extends AbstractProvider
                     'en' => 'General José de San Martín Memorial Day',
                     'es' => 'Paso a la Inmortalidad del General José de San Martín',
                 ],
-                new \DateTime("{$this->year}-08-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                $this->adjustMovableHoliday(new \DateTime("{$this->year}-08-17", DateTimeZoneFactory::getDateTimeZone($this->timezone))),
                 $this->locale
             ));
         }
@@ -312,7 +319,7 @@ class Argentina extends AbstractProvider
                     'en' => 'Day of Respect for Cultural Diversity',
                     'es' => 'Día del Respeto a la Diversidad Cultural',
                 ],
-                new \DateTime("{$this->year}-10-12", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                $this->adjustMovableHoliday(new \DateTime("{$this->year}-10-12", DateTimeZoneFactory::getDateTimeZone($this->timezone))),
                 $this->locale
             ));
         }
@@ -335,7 +342,7 @@ class Argentina extends AbstractProvider
                     'en' => 'National Sovereignty Day',
                     'es' => 'Día de la Soberanía Nacional',
                 ],
-                new \DateTime("{$this->year}-11-20", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                $this->adjustMovableHoliday(new \DateTime("{$this->year}-11-20", DateTimeZoneFactory::getDateTimeZone($this->timezone))),
                 $this->locale
             ));
         }
@@ -362,5 +369,42 @@ class Argentina extends AbstractProvider
                 $this->locale
             ));
         }
+    }
+
+    /**
+     * Adjusts a movable holiday.
+     *
+     * If certain holidays fall on a weekday, they are moved to a Monday in order to provide "long weekends".
+     * If the holiday falls on a Tuesday or Wednesday, it is moved to the previous Monday; if it falls on
+     * a Thursday or Friday, it is moved to the following Monday.
+     *
+     * These rules were introduced in 2017. Previously the were different rules which are currently not supported
+     * by Yasumi.
+     */
+    protected function adjustMovableHoliday(\DateTime $dateTime): \DateTime
+    {
+        if ($this->year >= 2017) {
+            $adjustedDateTime = clone $dateTime;
+            switch ($adjustedDateTime->format('w')) {
+                case 2:
+                    $adjustedDateTime->sub(new \DateInterval('P1D'));
+                    break;
+                case 3:
+                    $adjustedDateTime->sub(new \DateInterval('P2D'));
+                    break;
+                case 4:
+                    $adjustedDateTime->add(new \DateInterval('P4D'));
+                    break;
+                case 5:
+                    $adjustedDateTime->add(new \DateInterval('P3D'));
+                    break;
+            }
+
+            if (! $this->isHoliday($adjustedDateTime)) {
+                $dateTime = $adjustedDateTime;
+            }
+        }
+
+        return $dateTime;
     }
 }

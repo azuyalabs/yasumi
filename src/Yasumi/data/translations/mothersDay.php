@@ -17,11 +17,15 @@ declare(strict_types = 1);
 
 // Translations for Mother's Day
 return [
+    'da' => 'mors dag',
     'de' => 'Muttertag',
     'el' => 'Ημέρα της μητέρας',
     'en' => 'Mother’s Day',
     'fr' => 'Fête des mères',
     'it' => 'Festa della mamma',
+    'ka' => 'დედის დღე',
+    'lt' => 'Motinos dieną',
+    'lv' => 'Mātes dienu',
     'nl' => 'Moederdag',
     'pt' => 'Dia da Mãe',
     'ro' => 'Ziua Mamei',

@@ -15,25 +15,35 @@ declare(strict_types = 1);
  * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
-namespace Yasumi\tests\Ireland;
+namespace Yasumi\tests\Latvia;
 
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
 /**
- * Class containing tests for Easter in Ireland.
+ * Class containing tests for Pentecost in Latvia.
  */
-class EasterTest extends IrelandBaseTestCase implements HolidayTestCase
+class PentecostTest extends LatviaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.
      */
-    public const HOLIDAY = 'easter';
+    public const HOLIDAY = 'pentecost';
 
     /**
-     * Tests the holiday defined in this test.
+     * @return array<array> list of test dates for the holiday defined in this test
      *
-     * @dataProvider HolidayDataProvider
+     * @throws \Exception
+     */
+    public function holidayDataProvider(): array
+    {
+        return $this->generateRandomPentecostDates(self::TIMEZONE);
+    }
+
+    /**
+     * Test defined holiday in the test.
+     *
+     * @dataProvider holidayDataProvider
      *
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
@@ -51,30 +61,7 @@ class EasterTest extends IrelandBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * Returns a list of test dates.
-     *
-     * @return array<array> list of test dates for the holiday defined in this test
-     *
-     * @throws \Exception
-     */
-    public function HolidayDataProvider(): array
-    {
-        $data = [];
-
-        for ($y = 0; $y < self::TEST_ITERATIONS; ++$y) {
-            $year = $this->generateRandomYear();
-            $date = $this->calculateEaster($year, self::TIMEZONE);
-
-            $data[] = [$year, $date->format('Y-m-d')];
-        }
-
-        return $data;
-    }
-
-    /**
-     * Tests translated name of the holiday defined in this test.
-     *
-     * @throws \Exception
+     * Tests the translated name of the holiday defined in this test.
      */
     public function testTranslation(): void
     {
@@ -82,23 +69,15 @@ class EasterTest extends IrelandBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(),
-            [self::LOCALE => 'Easter Sunday']
-        );
-        $this->assertTranslatedHolidayName(
-            self::REGION,
-            self::HOLIDAY,
-            $this->generateRandomYear(),
-            ['ga_IE' => 'Domhnach Cásca']
+            [self::LOCALE => 'Vasarsvētkus']
         );
     }
 
     /**
      * Tests type of the holiday defined in this test.
-     *
-     * @throws \Exception
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OBSERVANCE);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

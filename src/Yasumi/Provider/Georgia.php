@@ -139,10 +139,7 @@ class Georgia extends AbstractProvider
     {
         $date = new \DateTime("{$this->year}-03-03", new \DateTimeZone($this->timezone));
 
-        $this->addHoliday(new Holiday('mothersDay', [
-            'en' => 'Mothers Day',
-            'ka' => 'დედის დღე',
-        ], $date, $this->locale));
+        $this->addHoliday(new Holiday('mothersDay', [], $date, $this->locale));
     }
 
     /**

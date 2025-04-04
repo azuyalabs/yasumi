@@ -41,7 +41,6 @@ class HolidayFiltersTest extends TestCase
         // Assert array definitions
         self::assertArrayHasKey('newYearsDay', $filteredHolidaysArray);
         self::assertArrayHasKey('stPatricksDay', $filteredHolidaysArray);
-        self::assertArrayHasKey('easter', $filteredHolidaysArray);
         self::assertArrayHasKey('easterMonday', $filteredHolidaysArray);
         self::assertArrayHasKey('mayDay', $filteredHolidaysArray);
         self::assertArrayHasKey('juneHoliday', $filteredHolidaysArray);
@@ -49,14 +48,14 @@ class HolidayFiltersTest extends TestCase
         self::assertArrayHasKey('octoberHoliday', $filteredHolidaysArray);
         self::assertArrayHasKey('christmasDay', $filteredHolidaysArray);
         self::assertArrayHasKey('stStephensDay', $filteredHolidaysArray);
-        self::assertArrayNotHasKey('pentecost', $filteredHolidaysArray);
-        self::assertArrayNotHasKey('pentecostMonday', $filteredHolidaysArray);
         self::assertArrayNotHasKey('goodFriday', $filteredHolidaysArray);
+        self::assertArrayNotHasKey('easter', $filteredHolidaysArray);
+        self::assertArrayNotHasKey('pentecost', $filteredHolidaysArray);
 
         // Assert number of results returned
-        self::assertCount(10, $filteredHolidays);
+        self::assertCount(9, $filteredHolidays);
         self::assertNotCount(\count($holidays), $filteredHolidays);
-        self::assertEquals(10, $filteredHolidays->count());
+        self::assertEquals(9, $filteredHolidays->count());
         self::assertNotEquals(\count($holidays), $filteredHolidays->count());
     }
 
@@ -71,22 +70,21 @@ class HolidayFiltersTest extends TestCase
         // Assert array definitions
         self::assertArrayNotHasKey('newYearsDay', $filteredHolidaysArray);
         self::assertArrayNotHasKey('stPatricksDay', $filteredHolidaysArray);
-        self::assertArrayNotHasKey('easter', $filteredHolidaysArray);
         self::assertArrayNotHasKey('easterMonday', $filteredHolidaysArray);
-        self::assertArrayNotHasKey('pentecostMonday', $filteredHolidaysArray);
         self::assertArrayNotHasKey('mayDay', $filteredHolidaysArray);
         self::assertArrayNotHasKey('juneHoliday', $filteredHolidaysArray);
         self::assertArrayNotHasKey('augustHoliday', $filteredHolidaysArray);
         self::assertArrayNotHasKey('octoberHoliday', $filteredHolidaysArray);
         self::assertArrayNotHasKey('christmasDay', $filteredHolidaysArray);
         self::assertArrayNotHasKey('stStephensDay', $filteredHolidaysArray);
+        self::assertArrayHasKey('easter', $filteredHolidaysArray);
         self::assertArrayHasKey('pentecost', $filteredHolidaysArray);
         self::assertArrayHasKey('goodFriday', $filteredHolidaysArray);
 
         // Assert number of results returned
-        self::assertCount(2, $filteredHolidays);
+        self::assertCount(3, $filteredHolidays);
         self::assertNotCount(\count($holidays), $filteredHolidays);
-        self::assertEquals(2, $filteredHolidays->count());
+        self::assertEquals(3, $filteredHolidays->count());
         self::assertNotEquals(\count($holidays), $filteredHolidays->count());
     }
 

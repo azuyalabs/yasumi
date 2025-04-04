@@ -52,6 +52,36 @@ class RaceDayTest extends ArgentinaBaseTestCase implements HolidayTestCase
     }
 
     /**
+     * Tests the movable holiday adjustment from Thursday to Monday.
+     *
+     * @throws \Exception
+     */
+    public function testMovableHoliday2023(): void
+    {
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2023,
+            new \DateTime('2023-10-16', new \DateTimeZone(self::TIMEZONE))
+        );
+    }
+
+    /**
+     * Tests the movable holiday adjustment does not happen from a Saturday.
+     *
+     * @throws \Exception
+     */
+    public function testNotMovableHoliday2024(): void
+    {
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2024,
+            new \DateTime('2024-10-12', new \DateTimeZone(self::TIMEZONE))
+        );
+    }
+
+    /**
      *  Tests that holiday is not present before establishment year.
      */
     public function testNotHoliday(): void

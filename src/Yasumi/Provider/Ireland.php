@@ -24,10 +24,10 @@ use Yasumi\SubstituteHoliday;
 /**
  * Provider for all holidays in Ireland.
  *
- * Note: All calculations are based on the schedule published in the Holidays (Employees) Act, 1973 and its amendments
- * thereafter.
+ * The public holidays of Ireland are defined in the Organisation of Working Time Act, 1993,
+ * or in statutory instruments issued pursuant on this act.
  *
- * @see: http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
+ * @see https://www.irishstatutebook.ie/eli/1997/act/20
  */
 class Ireland extends AbstractProvider
 {
@@ -53,10 +53,11 @@ class Ireland extends AbstractProvider
 
         // Add common holidays
         $this->calculateNewYearsDay();
+        $this->calculateStBrigidsDay();
 
         // Add common Christian holidays (common in Ireland)
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
-        $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
         $this->calculatePentecostMonday();
@@ -80,6 +81,8 @@ class Ireland extends AbstractProvider
     {
         return [
             'https://en.wikipedia.org/wiki/Public_holidays_in_Ireland',
+            'https://www.irishstatutebook.ie/eli/1997/act/20/schedule/2/enacted/en/html',
+            'https://www.irishstatutebook.ie/eli/2022/si/50/made/en/html',
         ];
     }
 
@@ -91,11 +94,7 @@ class Ireland extends AbstractProvider
      * observed in 1974.
      *
      * @see https://www.timeanddate.com/holidays/ireland/new-year-day
-     * @see http://www.irishstatutebook.ie/eli/1974/si/341
-     *
-     * @TODO : Check substitution of New Years Day when it falls on a Saturday. The Holidays (Employees) Act 1973
-     *       states that New Years Day is substituted the *next* day if it does not fall on a weekday. So what if it
-     *       falls on a Saturday?
+     * @see https://www.irishstatutebook.ie/eli/1997/act/20/schedule/2/enacted/en/html
      *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
@@ -110,8 +109,8 @@ class Ireland extends AbstractProvider
         $holiday = $this->newYearsDay($this->year, $this->timezone, $this->locale);
         $this->addHoliday($holiday);
 
-        // Substitute holiday is on the next available weekday if a holiday falls on a Sunday.
-        if (0 === (int) $holiday->format('w')) {
+        // Substitute holiday is on the next available weekday if a holiday falls on a weekend.
+        if (\in_array((int) $holiday->format('w'), [0, 6], true)) {
             $date = clone $holiday;
             $date->modify('next monday');
 
@@ -125,12 +124,40 @@ class Ireland extends AbstractProvider
     }
 
     /**
+     * Saint Brigid's Day.
+     *
+     * Saint Brigid's Day, also known as Imbolc, is a Gaelic traditional festival. It became an official public
+     * holiday in 2023.
+     *
+     * @see https://www.irishstatutebook.ie/eli/2022/si/50/made/en/html
+     * @see https://en.wikipedia.org/wiki/Imbolc
+     */
+    protected function calculateStBrigidsDay(): void
+    {
+        if ($this->year < 2023) {
+            return;
+        }
+
+        $dateTime = new \DateTime("{$this->year}-02-01", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        if (5 !== (int) $dateTime->format('w')) {
+            $dateTime->modify('next monday');
+        }
+
+        $this->addHoliday(new Holiday(
+            'stBrigidsDay',
+            ['en' => 'Saint Brigid’s Day', 'ga' => 'Lá Fhéile Bríde'],
+            $dateTime,
+            $this->locale
+        ));
+    }
+
+    /**
      * Pentecost Monday.
      *
      * Whitmonday (Pentecost Monday) was considered a public holiday in Ireland until 1973.
      *
-     * @see http://www.irishstatutebook.ie/eli/1939/act/1/section/8/enacted/en/html
-     * @see http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
+     * @see https://www.irishstatutebook.ie/eli/1939/act/1/section/8/enacted/en/html
+     * @see https://www.irishstatutebook.ie/eli/1997/act/20/schedule/2/enacted/en/html
      *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
@@ -151,7 +178,7 @@ class Ireland extends AbstractProvider
      * Most people in Ireland start Christmas celebrations on Christmas Eve (Oíche Nollag), including taking time
      * off work.
      *
-     * @see http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
+     * @see https://www.irishstatutebook.ie/eli/1997/act/20/schedule/2/enacted/en/html
      *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
@@ -187,7 +214,7 @@ class Ireland extends AbstractProvider
      *
      * The day after Christmas celebrating the feast day of Saint Stephen.
      *
-     * @see http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
+     * @see https://www.irishstatutebook.ie/eli/1997/act/20/schedule/2/enacted/en/html
      * @see https://en.wikipedia.org/wiki/St._Stephen%27s_Day
      * @see  ChristianHolidays
      *
@@ -230,6 +257,7 @@ class Ireland extends AbstractProvider
      * Territory of Montserrat.
      *
      * @see https://en.wikipedia.org/wiki/Saint_Patrick%27s_Day
+     * @see https://www.irishstatutebook.ie/eli/1997/act/20/schedule/2/enacted/en/html
      *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
@@ -273,6 +301,7 @@ class Ireland extends AbstractProvider
      * and many other people in other counties still keep on this tradition.
      *
      * @see https://en.wikipedia.org/wiki/May_Day
+     * @see https://www.irishstatutebook.ie/eli/1993/si/91/made/en/html
      *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
@@ -323,7 +352,8 @@ class Ireland extends AbstractProvider
      *
      * The last Monday in October is considered a public holiday since 1977.
      *
-     * @see http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
+     * @see https://www.irishstatutebook.ie/eli/1977/si/193/made/en/html
+     * @see https://www.irishstatutebook.ie/eli/1997/act/20/schedule/2/enacted/en/html
      *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException

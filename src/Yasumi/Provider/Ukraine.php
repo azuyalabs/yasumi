@@ -61,7 +61,7 @@ class Ukraine extends AbstractProvider
         $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale));
 
         // Add other holidays
-        $this->calculateChristmasDay();
+        $this->calculateOrthodoxChristmasDay();
         $this->calculateSecondInternationalWorkersDay();
         $this->calculateVictoryDay();
         $this->calculateConstitutionDay();
@@ -75,6 +75,7 @@ class Ukraine extends AbstractProvider
         return [
             'https://en.wikipedia.org/wiki/Public_holidays_in_Ukraine',
             'https://uk.wikipedia.org/wiki/%D0%9D%D0%B5%D1%80%D0%BE%D0%B1%D0%BE%D1%87%D1%96_%D0%B4%D0%BD%D1%96_%D0%B2_%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%96',
+            'https://zakon.rada.gov.ua/laws/show/322-08',
         ];
     }
 
@@ -129,8 +130,12 @@ class Ukraine extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    protected function calculateChristmasDay(): void
+    protected function calculateOrthodoxChristmasDay(): void
     {
+        if ($this->year >= 2024) {
+            return;
+        }
+
         $this->addHoliday(new Holiday(
             'christmasDay',
             [],
@@ -168,7 +173,7 @@ class Ukraine extends AbstractProvider
      * or Victory Day (Ukrainian: День перемоги) is a national holiday and a day off in Ukraine.
      * It was first celebrated on 9 May 2015 and follows the Day of Remembrance and Reconciliation on May 8.
      * The holiday replaced the Soviet "Victory Day", which was celebrated in the post-Soviet Union states, including
-     * Ukraine, until 2014 inclusive.
+     * Ukraine, until 2014 inclusive. Since 2024, it has been celebrated on May 8.
      *
      * @see https://en.wikipedia.org/wiki/Victory_Day_over_Nazism_in_World_War_II
      *
@@ -178,12 +183,21 @@ class Ukraine extends AbstractProvider
      */
     protected function calculateVictoryDay(): void
     {
-        $this->addHoliday(new Holiday(
-            'victoryDay',
-            ['uk' => 'День перемоги', 'ru' => 'День победы'],
-            new \DateTime("{$this->year}-05-09", new \DateTimeZone($this->timezone)),
-            $this->locale
-        ));
+        if ($this->year >= 2024) {
+            $this->addHoliday(new Holiday(
+                'victoryDay',
+                ['uk' => 'День перемоги', 'ru' => 'День победы'],
+                new \DateTime("{$this->year}-05-08", new \DateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        } elseif ($this->year >= 2015) {
+            $this->addHoliday(new Holiday(
+                'victoryDay',
+                ['uk' => 'День перемоги', 'ru' => 'День победы'],
+                new \DateTime("{$this->year}-05-09", new \DateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        }
     }
 
     /**
@@ -199,16 +213,21 @@ class Ukraine extends AbstractProvider
      */
     protected function calculateConstitutionDay(): void
     {
-        if ($this->year < 1996) {
-            return;
+        if ($this->year >= 2024) {
+            $this->addHoliday(new Holiday(
+                'constitutionDay',
+                ['uk' => 'День Конституції', 'ru' => 'День Конституции'],
+                new \DateTime("{$this->year}-06-15", new \DateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        } elseif ($this->year >= 1996) {
+            $this->addHoliday(new Holiday(
+                'constitutionDay',
+                ['uk' => 'День Конституції', 'ru' => 'День Конституции'],
+                new \DateTime("{$this->year}-06-28", new \DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
-
-        $this->addHoliday(new Holiday(
-            'constitutionDay',
-            ['uk' => 'День Конституції', 'ru' => 'День Конституции'],
-            new \DateTime("{$this->year}-06-28", new \DateTimeZone($this->timezone)),
-            $this->locale
-        ));
     }
 
     /**
@@ -254,16 +273,21 @@ class Ukraine extends AbstractProvider
      */
     protected function calculateDefenderOfUkraineDay(): void
     {
-        if ($this->year < 2015) {
-            return;
+        if ($this->year >= 2023) {
+            $this->addHoliday(new Holiday(
+                'defenderOfUkraineDay',
+                ['uk' => 'День захисника України', 'ru' => 'День Защитника Украины'],
+                new \DateTime("{$this->year}-10-01", new \DateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        } elseif ($this->year >= 2015) {
+            $this->addHoliday(new Holiday(
+                'defenderOfUkraineDay',
+                ['uk' => 'День захисника України', 'ru' => 'День Защитника Украины'],
+                new \DateTime("{$this->year}-10-14", new \DateTimeZone($this->timezone)),
+                $this->locale
+            ));
         }
-
-        $this->addHoliday(new Holiday(
-            'defenderOfUkraineDay',
-            ['uk' => 'День захисника України', 'ru' => 'День Защитника Украины'],
-            new \DateTime("{$this->year}-10-14", new \DateTimeZone($this->timezone)),
-            $this->locale
-        ));
     }
 
     /**

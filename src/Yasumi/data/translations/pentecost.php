@@ -29,6 +29,7 @@ return [
     'ga' => 'Domhnach Cincíse',
     'hu' => 'Pünkösd',
     'it' => 'Pentecoste',
+    'lv' => 'Vasarsvētkus',
     'nb' => 'første pinsedag',
     'nl' => 'eerste pinksterdag',
     'pl' => 'Zielone Świątki',

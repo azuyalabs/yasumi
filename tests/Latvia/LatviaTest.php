@@ -40,6 +40,7 @@ class LatviaTest extends LatviaBaseTestCase implements ProviderTestCase
             'goodFriday',
             'easter',
             'easterMonday',
+            'pentecost',
             'internationalWorkersDay',
             'midsummerEveDay',
             'stJohnsDay',
@@ -53,6 +54,10 @@ class LatviaTest extends LatviaBaseTestCase implements ProviderTestCase
 
         if ($year >= Latvia::RESTORATION_OF_INDEPENDENCE_YEAR) {
             $holidays[] = 'restorationOfIndependenceOfLatviaDay';
+        }
+
+        if ($year >= Latvia::MOTHERS_DAY_YEAR) {
+            $holidays[] = 'mothersDay';
         }
 
         if ($year >= Latvia::PROCLAMATION_OF_INDEPENDENCE_YEAR) {
@@ -108,6 +113,6 @@ class LatviaTest extends LatviaBaseTestCase implements ProviderTestCase
      */
     public function testSources(): void
     {
-        $this->assertSources(self::REGION, 2);
+        $this->assertSources(self::REGION, 4);
     }
 }

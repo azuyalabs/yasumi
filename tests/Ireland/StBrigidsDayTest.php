@@ -21,19 +21,19 @@ use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
 /**
- * Class for testing New Years Day in Ireland.
+ * Class for testing the Saint Brigid's Day in Ireland.
  */
-class NewYearsDayTest extends IrelandBaseTestCase implements HolidayTestCase
+class StBrigidsDayTest extends IrelandBaseTestCase implements HolidayTestCase
 {
     /**
-     * The name of the holiday to be tested.
+     * The name of the holiday.
      */
-    public const HOLIDAY = 'newYearsDay';
+    public const HOLIDAY = 'stBrigidsDay';
 
     /**
      * The year in which the holiday was first established.
      */
-    public const ESTABLISHMENT_YEAR = 1974;
+    public const ESTABLISHMENT_YEAR = 2023;
 
     /**
      * Tests the holiday defined in this test.
@@ -47,17 +47,17 @@ class NewYearsDayTest extends IrelandBaseTestCase implements HolidayTestCase
      */
     public function testHoliday(int $year, string $expected): void
     {
-        $date = new \DateTime($expected, new \DateTimeZone(self::TIMEZONE));
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
-
-        if (\in_array((int) $date->format('w'), [0, 6], true)) {
-            $date->modify('next monday');
-            $this->assertHoliday(self::REGION, 'substituteHoliday:' . self::HOLIDAY, $year, $date);
-        }
+        $dateTime = new \DateTime($expected, new \DateTimeZone(self::TIMEZONE));
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            $dateTime
+        );
     }
 
     /**
-     * Returns a list of random test dates used for assertion of the holiday defined in this test.
+     * Returns a list of test dates.
      *
      * @return array<array> list of test dates for the holiday defined in this test
      *
@@ -69,7 +69,11 @@ class NewYearsDayTest extends IrelandBaseTestCase implements HolidayTestCase
 
         for ($y = 0; $y < self::TEST_ITERATIONS; ++$y) {
             $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
-            $date = new \DateTime("{$year}-1-1", new \DateTimeZone(self::TIMEZONE));
+            $date = new \DateTime("{$year}-02-01", new \DateTimeZone(self::TIMEZONE));
+            if ('Friday' !== $date->format('l')) {
+                $date = new \DateTime("{$year}-02-01 first monday", new \DateTimeZone(self::TIMEZONE));
+            }
+
             $data[] = [$year, $date->format('Y-m-d')];
         }
 
@@ -101,13 +105,13 @@ class NewYearsDayTest extends IrelandBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            [self::LOCALE => 'New Year’s Day']
+            [self::LOCALE => 'Saint Brigid’s Day']
         );
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
             $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
-            ['ga_IE' => 'Lá Caille']
+            ['ga' => 'Lá Fhéile Bríde']
         );
     }
 

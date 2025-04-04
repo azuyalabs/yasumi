@@ -11,7 +11,12 @@ changes.
 ## [Unreleased]
 
 ### Added
+
 - Black Consciousness Day ('Dia Nacional de Zumbi e da Consciência Negra') is public holiday in Brazil. [\#365](https://github.com/azuyalabs/yasumi/pull/365) ([c960657](https://github.com/c960657))
+- Mother's Day and Father's Day are public holidays in Lithuania. [\#370](https://github.com/azuyalabs/yasumi/pull/370) ([c960657](https://github.com/c960657))
+- Christmas Eve is a public holiday in Poland from 2025. [\#371](https://github.com/azuyalabs/yasumi/pull/371) ([c960657](https://github.com/c960657))
+- Saint Brigid's Day is a public holiday in Ireland since 2023. [\#374](https://github.com/azuyalabs/yasumi/pull/374) ([c960657](https://github.com/c960657))
+- Pentecost and Mother's Day are public holidays in Latvia. [\#368](https://github.com/azuyalabs/yasumi/pull/368) ([c960657](https://github.com/c960657))
 
 ### Changed
 
@@ -24,11 +29,16 @@ changes.
 - For the Czech Republic, Christmas Eve is considered an official holiday. [\#366](https://github.com/azuyalabs/yasumi/pull/366) ([c960657](https://github.com/c960657))
 - For Mexico, several holidays are not considered official holidays. [\#362](https://github.com/azuyalabs/yasumi/pull/362) ([c960657](https://github.com/c960657))
 - For Portual, Corpus Christi is considered an official holiday. [\#363](https://github.com/azuyalabs/yasumi/pull/363) ([c960657](https://github.com/c960657))
+- For Ireland, Easter Sunday is not an official holiday. [\#373](https://github.com/azuyalabs/yasumi/pull/373) ([c960657](https://github.com/c960657))
+- For Argentina, four holidays are movable. [\#367](https://github.com/azuyalabs/yasumi/pull/367) ([c960657](https://github.com/c960657))
+- For Ukraine, Victory Day, Day of Ukrainian Statehood, Day of Defenders of Ukraine changed dates in 2023. [\#369](https://github.com/azuyalabs/yasumi/pull/369) ([c960657](https://github.com/c960657))
 
 ### Fixed
+- For Ireland, New Year's Day has same substitute holidays rules as other holidays. [\#375](https://github.com/azuyalabs/yasumi/pull/375) ([c960657](https://github.com/c960657))
 - For United Kingdom, Easter Monday is not a bank holiday in Scotland. [\#372](https://github.com/azuyalabs/yasumi/pull/372) ([c960657](https://github.com/c960657))
 
 ### Removed
+- For Ukraine, Orthodox Christmas was abolished in 2023. [\#369](https://github.com/azuyalabs/yasumi/pull/369) ([c960657](https://github.com/c960657))
 
 ## [2.7.0] - 2024-01-02
 

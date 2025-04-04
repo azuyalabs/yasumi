@@ -52,6 +52,36 @@ class GeneralJoseSanMartinDayTest extends ArgentinaBaseTestCase implements Holid
     }
 
     /**
+     * Tests the movable holiday adjustment from Wednesday to Monday.
+     *
+     * @throws \Exception
+     */
+    public function testMovableHoliday2022(): void
+    {
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2022,
+            new \DateTime('2022-08-15', new \DateTimeZone(self::TIMEZONE))
+        );
+    }
+
+    /**
+     * Tests the movable holiday adjustment does not happen from a Saturday.
+     *
+     * @throws \Exception
+     */
+    public function testNotMovableHoliday2024(): void
+    {
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2024,
+            new \DateTime('2024-08-17', new \DateTimeZone(self::TIMEZONE))
+        );
+    }
+
+    /**
      *  Tests that holiday is not present before establishment year.
      */
     public function testNotHoliday(): void
