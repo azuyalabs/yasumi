@@ -51,6 +51,7 @@ class NorthernIreland extends UnitedKingdom
     {
         parent::initialize();
 
+        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
         $this->calculateStPatricksDay();
         $this->calculateBattleOfTheBoyne();
     }

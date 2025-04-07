@@ -35,6 +35,7 @@ changes.
 
 ### Fixed
 - For Ireland, New Year's Day has same substitute holidays rules as other holidays. [\#375](https://github.com/azuyalabs/yasumi/pull/375) ([c960657](https://github.com/c960657))
+- For United Kingdom, Easter Monday is not a bank holiday in Scotland. [\#372](https://github.com/azuyalabs/yasumi/pull/372) ([c960657](https://github.com/c960657))
 
 ### Removed
 - For Ukraine, Orthodox Christmas was abolished in 2023. [\#369](https://github.com/azuyalabs/yasumi/pull/369) ([c960657](https://github.com/c960657))

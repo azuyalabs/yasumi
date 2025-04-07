@@ -73,7 +73,6 @@ class UnitedKingdomTest extends UnitedKingdomBaseTestCase implements ProviderTes
     public function testBankHolidays(): void
     {
         $holidays = [
-            'easterMonday',
             'secondChristmasDay',
         ];
 

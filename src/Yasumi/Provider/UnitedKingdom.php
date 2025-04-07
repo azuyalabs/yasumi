@@ -55,7 +55,6 @@ class UnitedKingdom extends AbstractProvider
 
         // Add common Christian holidays (common in the United Kingdom)
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
         $this->calculateChristmasHolidays();
 
         // Add any other holidays
