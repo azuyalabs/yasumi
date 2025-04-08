@@ -713,13 +713,11 @@ class SouthKorea extends AbstractProvider
      */
     protected function getTranslations(string $key, int $year): array
     {
-        $names = self::HOLIDAY_NAMES[$key] ?? [];
-
         if ('arborDay' === $key && 1960 === $year) {
-            $names = ['en' => 'Arbor Day', 'ko' => '사방의 날'];
+            return ['en' => 'Arbor Day', 'ko' => '사방의 날'];
         }
 
-        return $names;
+        return self::HOLIDAY_NAMES[$key] ?? [];
     }
 
     /**
