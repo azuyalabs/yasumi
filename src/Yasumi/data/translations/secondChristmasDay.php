@@ -17,6 +17,7 @@ declare(strict_types = 1);
 
 // Translations for Second Christmas Day
 return [
+    'bg' => 'Втори ден на Коледа',
     'cs' => '2. svátek vánoční',
     'da' => '2. juledag',
     'de' => '2. Weihnachtsfeiertag',

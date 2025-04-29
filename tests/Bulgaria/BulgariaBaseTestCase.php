@@ -15,11 +15,18 @@ declare(strict_types = 1);
  * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
-// Translations for St. George's Day
-return [
-    'bg' => 'Гергьовден, ден на храбростта и Българската армия',
-    'ca' => 'Sant Jordi',
-    'el' => 'Αγίου Γεωργίου',
-    'en' => 'St. George’s Day',
-    'es' => 'San Jorge',
-];
+namespace Yasumi\tests\Bulgaria;
+
+use PHPUnit\Framework\TestCase;
+use Yasumi\tests\YasumiBase;
+
+abstract class BulgariaBaseTestCase extends TestCase
+{
+    use YasumiBase;
+
+    public const REGION = 'Bulgaria';
+
+    public const TIMEZONE = 'Europe/Sofia';
+
+    public const LOCALE = 'bg_BG';
+}

@@ -17,6 +17,7 @@ declare(strict_types = 1);
 
 // Translations for Christmas
 return [
+    'bg' => 'Рождество Христово',
     'bs_Latn' => 'Božić',
     'ca' => 'Nadal',
     'cs' => '1. svátek vánoční',

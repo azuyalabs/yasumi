@@ -17,6 +17,7 @@ declare(strict_types = 1);
 
 // Translations for International Workers' Day
 return [
+    'bg' => 'Ден на труда и на международната работническа солидарност',
     'bs_Latn' => 'Praznik rada',
     'ca' => 'Dia del Treball',
     'cs' => 'Svátek práce',

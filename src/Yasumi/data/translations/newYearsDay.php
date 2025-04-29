@@ -18,6 +18,7 @@ declare(strict_types = 1);
 // Translations for New Year's Day
 return [
     'bs_Latn' => 'Nova godina',
+    'bg' => 'Нова година',
     'ca' => 'Cap d’any',
     'cs' => 'Nový rok',
     'cy' => 'Dydd Calan',

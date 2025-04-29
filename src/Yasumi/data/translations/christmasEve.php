@@ -17,6 +17,7 @@ declare(strict_types = 1);
 
 // Translations for Christmas Eve
 return [
+    'bg' => 'Бъдни вечер',
     'cs' => 'Štědrý den',
     'cy' => 'Noswyl Nadolig',
     'da' => 'juleaften',
