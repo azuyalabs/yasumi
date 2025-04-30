@@ -7,11 +7,6 @@
 
 ![Logo](https://www.yasumi.dev/assets/img/yasumi_logo.svg)
 
-## New Documentation Site 🎉
-
-Yasumi's [documentation site](https://www.yasumi.dev) just got a make-over! Please check out the
-[announcement](https://github.com/azuyalabs/yasumi/discussions/358) or head straight to it.
-
 ## Introduction
 
 Yasumi (Japanese for 'Holiday'「休み」) is the easy PHP library that helps you retrieve the dates and names of holidays and
