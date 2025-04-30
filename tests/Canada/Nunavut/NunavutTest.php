@@ -58,7 +58,12 @@ class NunavutTest extends NunavutBaseTestCase implements ProviderTestCase
      */
     public function testObservedHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+        $holidays = [];
+
+        if ($this->year >= 1999) {
+            $holidays[] = 'nunavutDay';
+        }
+        $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**
