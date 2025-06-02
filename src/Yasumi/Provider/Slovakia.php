@@ -94,7 +94,7 @@ class Slovakia extends AbstractProvider
         $this->calculateDeclarationOfTheSlovakNation();
         // 1.11.
         $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
-        // 17.11.
+        // 17.11.(<2025)
         $this->calculateStruggleForFreedomAndDemocracyDay();
         // 24.12.
         $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
@@ -271,16 +271,18 @@ class Slovakia extends AbstractProvider
      */
     protected function calculateStruggleForFreedomAndDemocracyDay(): void
     {
-        $this->addHoliday(new Holiday(
-            'struggleForFreedomAndDemocracyDay',
-            [
-                'sk' => 'Deň boja za slobodu a demokraciu',
-                'cs' => 'Den boje za svobodu a demokracii',
-                'en' => 'Struggle for Freedom and Democracy Day',
-            ],
-            new \DateTime("{$this->year}-11-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-            $this->locale,
-            Holiday::TYPE_OFFICIAL
-        ));
+        if ($this->year < 2025) {
+            $this->addHoliday(new Holiday(
+                'struggleForFreedomAndDemocracyDay',
+                [
+                    'sk' => 'Deň boja za slobodu a demokraciu',
+                    'cs' => 'Den boje za svobodu a demokracii',
+                    'en' => 'Struggle for Freedom and Democracy Day',
+                ],
+                new \DateTime("{$this->year}-11-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                $this->locale,
+                Holiday::TYPE_OFFICIAL
+            ));
+        }
     }
 }
