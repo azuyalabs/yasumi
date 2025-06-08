@@ -46,7 +46,7 @@
     "phpstan/phpstan": "^2.1",
     "phpstan/phpstan-deprecation-rules": "^2.0",
     "phpunit/phpunit": "^8.5 || ^9.6",
-    "vimeo/psalm": "^6.10"
+    "vimeo/psalm": "^6.12"
   },
   "suggest": {
     "ext-calendar": "For calculating the date of Easter"
