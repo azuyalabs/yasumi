@@ -89,6 +89,7 @@ class Brazil extends AbstractProvider
                 'proclamationOfRepublicDay',
                 ['pt' => 'Dia da Proclamação da República'],
                 new \DateTime("{$this->year}-11-15", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                $this->locale
             ));
         }
     }
