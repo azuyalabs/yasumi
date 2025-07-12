@@ -1,0 +1,95 @@
+<?php
+
+declare(strict_types = 1);
+
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
+ *
+ * Copyright (c) 2025 Magic Web Group 
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author Art Kurbakov <admin at mgwebgroup dot com>
+ */
+
+// This file in addition to regular holidays observed by US stock exchanges, 
+// includes full day special closure events due to:
+// weather, national emergencies and presidential proclamations.
+// All closure events are included from year 2000.
+
+require 'vendor/autoload.php';
+
+class NYSE extends Yasumi\Provider\USA
+{
+    /**
+     * Initialize holidays for the NYSE.
+     *
+     * @throws Exception
+     */
+    public function initialize(): void
+    {
+        parent::initialize();
+
+		// Add exhange-specific holidays
+        $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
+		
+		// Remove exchange-specific holidays
+        $this->removeHoliday('columbusDay');
+        $this->removeHoliday('veteransDay');
+		$this->holidaysCalculator->removeHoliday('substituteHoliday:veteransDay');
+		if (2022 < $this->year)
+			$this->removeHoliday('juneteenth');
+
+		// Add other full-day closure events
+		$this->addWeatherEvents();
+		$this->addEmergencies();
+		$this->addProclamations();
+	}
+
+	private function addWeatherEvents()
+	{
+		if (2012 == $this->year) {
+			$this->holidaysCalculator->addHoliday(new Holiday('HurricaneSandy1', [], new DateTime('2012-10-29')));
+			$this->holidaysCalculator->addHoliday(new Holiday('HurricaneSandy2', [], new DateTime('2012-10-30')));
+		}
+	}
+
+	private function addEmergencies()
+	{
+		if (2001 == $this->year) {
+			$this->holidaysCalculator->addHoliday(new Holiday('WTCAttack1', [], new DateTime('2001-09-11')));
+			$this->holidaysCalculator->addHoliday(new Holiday('WTCAttack2', [], new DateTime('2001-09-12')));
+			$this->holidaysCalculator->addHoliday(new Holiday('WTCAttack3', [], new DateTime('2001-09-13')));
+			$this->holidaysCalculator->addHoliday(new Holiday('WTCAttack4', [], new DateTime('2001-09-14')));
+		}
+	}
+
+	private function addProclamations()
+	{
+		if (2004 == $this->year)
+			$this->holidaysCalculator->addHoliday(new Holiday('ReaganMourning', [], new DateTime('2004-06-11')));
+		if (2007 == $this->year)
+			$this->holidaysCalculator->addHoliday(new Holiday('GRFordMourning', [], new DateTime('2007-01-02')));
+		if (2018 == $this->year)
+			$this->holidaysCalculator->addHoliday(new Holiday('HWBushMourning', [], new DateTime('2018-12-05')));
+		if (2025 == $this->year)
+			$this->holidaysCalculator->addHoliday(new Holiday('CarterMourning', [], new DateTime('2025-01-09')));
+	}
+
+    public function getSources(): array
+    {
+        return [
+			'https://www.nyse.com/trader-update/history#11507',
+			'https://s3.amazonaws.com/armstrongeconomics-wp/2013/07/NYSE-Closings.pdf',
+			'https://ir.theice.com/press/news-details/2018/New-York-Stock-Exchange-to-Honor-President-George-H-W-Bush/default.aspx',
+			'https://ir.theice.com/press/news-details/2024/The-New-York-Stock-Exchange-Will-Close-Markets-on-January-9-to-Honor-the-Passing-of-Former-President-Jimmy-Carter-on-National-Day-of-Mourning/default.aspx',
+			'https://www.thecorporatecounsel.net/blog/2021/10/nyse-makes-juneteenth-a-new-market-holiday.html',
+        ];
+    }
+
+
+}
+
