@@ -11,6 +11,9 @@ repo = "yasumi"
 
 [changelog]
 
+# limit the number of commits processed to keep changelog manageable
+limit_commits = 200
+
 header = """
 # Changelog\n
 All notable changes to this project will be documented in this file.
