@@ -25,6 +25,7 @@ namespace Yasumi\Provider\USA;
 use Yasumi\Provider\USA;
 use Yasumi\Holiday;
 use DateTime;
+use DateTimeZone;
 
 class NYSE extends USA
 {
@@ -61,31 +62,31 @@ class NYSE extends USA
 	private function addWeatherEvents()
 	{
 		if (2012 == $this->year) {
-			$this->addHoliday(new Holiday('hurricaneSandy1', [], new DateTime('2012-10-29')));
-			$this->addHoliday(new Holiday('hurricaneSandy2', [], new DateTime('2012-10-30')));
+			$this->addHoliday(new Holiday('hurricaneSandy1', [], new DateTime('2012-10-29', new DateTimeZone($this->timezone))));
+			$this->addHoliday(new Holiday('hurricaneSandy2', [], new DateTime('2012-10-30', new DateTimeZone($this->timezone))));
 		}
 	}
 
 	private function addEmergencies()
 	{
 		if (2001 == $this->year) {
-			$this->addHoliday(new Holiday('WTCAttack1', [], new DateTime('2001-09-11')));
-			$this->addHoliday(new Holiday('WTCAttack2', [], new DateTime('2001-09-12')));
-			$this->addHoliday(new Holiday('WTCAttack3', [], new DateTime('2001-09-13')));
-			$this->addHoliday(new Holiday('WTCAttack4', [], new DateTime('2001-09-14')));
+			$this->addHoliday(new Holiday('groundZero1', [], new DateTime('2001-09-11', new DateTimeZone($this->timezone))));
+			$this->addHoliday(new Holiday('groundZero2', [], new DateTime('2001-09-12', new DateTimeZone($this->timezone))));
+			$this->addHoliday(new Holiday('groundZero3', [], new DateTime('2001-09-13', new DateTimeZone($this->timezone))));
+			$this->addHoliday(new Holiday('groundZero4', [], new DateTime('2001-09-14', new DateTimeZone($this->timezone))));
 		}
 	}
 
 	private function addProclamations()
 	{
 		if (2004 == $this->year)
-			$this->addHoliday(new Holiday('ReaganMourning', [], new DateTime('2004-06-11')));
+			$this->addHoliday(new Holiday('ReaganMourning', [], new DateTime('2004-06-11', new DateTimeZone($this->timezone))));
 		if (2007 == $this->year)
-			$this->addHoliday(new Holiday('GRFordMourning', [], new DateTime('2007-01-02')));
+			$this->addHoliday(new Holiday('GRFordMourning', [], new DateTime('2007-01-02', new DateTimeZone($this->timezone))));
 		if (2018 == $this->year)
-			$this->addHoliday(new Holiday('HWBushMourning', [], new DateTime('2018-12-05')));
+			$this->addHoliday(new Holiday('HWBushMourning', [], new DateTime('2018-12-05', new DateTimeZone($this->timezone))));
 		if (2025 == $this->year)
-			$this->addHoliday(new Holiday('CarterMourning', [], new DateTime('2025-01-09')));
+			$this->addHoliday(new Holiday('CarterMourning', [], new DateTime('2025-01-09', new DateTimeZone($this->timezone))));
 	}
 
     public function getSources(): array
