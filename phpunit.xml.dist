@@ -199,5 +199,9 @@
         <testsuite name="USA">
             <directory>./tests/USA</directory>
         </testsuite>
+        <!-- Test Suite for holidays and closures of the New York Stock Exchange (NYSE) in United States -->
+        <testsuite name="NYSE">
+			<directory>./tests/USA/NYSE</directory>
+        </testsuite>
     </testsuites>
 </phpunit>
