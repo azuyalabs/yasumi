@@ -20,9 +20,13 @@ declare(strict_types = 1);
 // weather, national emergencies and presidential proclamations.
 // All closure events are included from year 2000.
 
-require 'vendor/autoload.php';
+namespace Yasumi\Provider\USA;
 
-class NYSE extends Yasumi\Provider\USA
+use Yasumi\Provider\USA;
+use Yasumi\Holiday;
+use DateTime;
+
+class NYSE extends USA
 {
     /**
      * Initialize holidays for the NYSE.
@@ -31,18 +35,23 @@ class NYSE extends Yasumi\Provider\USA
      */
     public function initialize(): void
     {
-        parent::initialize();
+		$this->timezone = 'America/New_York';
 
 		// Add exhange-specific holidays
+        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
+        $this->calculateMartinLutherKingday();
+        $this->calculateWashingtonsBirthday();
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
-		
-		// Remove exchange-specific holidays
-        $this->removeHoliday('columbusDay');
-        $this->removeHoliday('veteransDay');
-		$this->holidaysCalculator->removeHoliday('substituteHoliday:veteransDay');
-		if (2022 < $this->year)
-			$this->removeHoliday('juneteenth');
+        $this->calculateMemorialDay();
+		if (2021 < $this->year)
+			$this->calculateJuneteenth();
+        $this->calculateIndependenceDay();
+        $this->calculateLabourDay();
+        $this->calculateThanksgivingDay();
+        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
 
+        $this->calculateSubstituteHolidays();
+		
 		// Add other full-day closure events
 		$this->addWeatherEvents();
 		$this->addEmergencies();
@@ -52,31 +61,31 @@ class NYSE extends Yasumi\Provider\USA
 	private function addWeatherEvents()
 	{
 		if (2012 == $this->year) {
-			$this->holidaysCalculator->addHoliday(new Holiday('HurricaneSandy1', [], new DateTime('2012-10-29')));
-			$this->holidaysCalculator->addHoliday(new Holiday('HurricaneSandy2', [], new DateTime('2012-10-30')));
+			$this->addHoliday(new Holiday('hurricaneSandy1', [], new DateTime('2012-10-29')));
+			$this->addHoliday(new Holiday('hurricaneSandy2', [], new DateTime('2012-10-30')));
 		}
 	}
 
 	private function addEmergencies()
 	{
 		if (2001 == $this->year) {
-			$this->holidaysCalculator->addHoliday(new Holiday('WTCAttack1', [], new DateTime('2001-09-11')));
-			$this->holidaysCalculator->addHoliday(new Holiday('WTCAttack2', [], new DateTime('2001-09-12')));
-			$this->holidaysCalculator->addHoliday(new Holiday('WTCAttack3', [], new DateTime('2001-09-13')));
-			$this->holidaysCalculator->addHoliday(new Holiday('WTCAttack4', [], new DateTime('2001-09-14')));
+			$this->addHoliday(new Holiday('WTCAttack1', [], new DateTime('2001-09-11')));
+			$this->addHoliday(new Holiday('WTCAttack2', [], new DateTime('2001-09-12')));
+			$this->addHoliday(new Holiday('WTCAttack3', [], new DateTime('2001-09-13')));
+			$this->addHoliday(new Holiday('WTCAttack4', [], new DateTime('2001-09-14')));
 		}
 	}
 
 	private function addProclamations()
 	{
 		if (2004 == $this->year)
-			$this->holidaysCalculator->addHoliday(new Holiday('ReaganMourning', [], new DateTime('2004-06-11')));
+			$this->addHoliday(new Holiday('ReaganMourning', [], new DateTime('2004-06-11')));
 		if (2007 == $this->year)
-			$this->holidaysCalculator->addHoliday(new Holiday('GRFordMourning', [], new DateTime('2007-01-02')));
+			$this->addHoliday(new Holiday('GRFordMourning', [], new DateTime('2007-01-02')));
 		if (2018 == $this->year)
-			$this->holidaysCalculator->addHoliday(new Holiday('HWBushMourning', [], new DateTime('2018-12-05')));
+			$this->addHoliday(new Holiday('HWBushMourning', [], new DateTime('2018-12-05')));
 		if (2025 == $this->year)
-			$this->holidaysCalculator->addHoliday(new Holiday('CarterMourning', [], new DateTime('2025-01-09')));
+			$this->addHoliday(new Holiday('CarterMourning', [], new DateTime('2025-01-09')));
 	}
 
     public function getSources(): array
@@ -89,7 +98,5 @@ class NYSE extends Yasumi\Provider\USA
 			'https://www.thecorporatecounsel.net/blog/2021/10/nyse-makes-juneteenth-a-new-market-holiday.html',
         ];
     }
-
-
 }
 
