@@ -87,75 +87,13 @@ followed by any architectural or technical changes.
 - Use shared PHP CS Fixer config
 - Pin version of PHP CS Fixer to 3.46 as latest (3.47) release produces undesired changes
 
-## New Contributors ❤️
+## New Contributors
 
-* @attepulkkinen made their first contribution
-* @dependabot[bot] made their first contribution
-* @fbett made their first contribution
-* @hamrak made their first contribution
-* @mtbossa made their first contribution
-* @thrashzone13 made their first contribution
-
-## [2.7.0] - 2024-01-07
-
-### Refactor
-
-- Update copyright year
-- Simplify foreach loop in order to remove unused variables.
-- Check for type rather than null value to be more explicit. Untangle nested ifs to early returns allowing for quick exit.
-- Change nested ifs to early return as it is best to exit early. Change to array spread instead of array_merge for simplicity.
-- Extract Day of Antifascist Struggle calculation to a private method. Simplify Statehood Day calculation to make it more concise.
-- Add check in case date subtraction fails.
-- Add check for the Australia provider in case date subtraction fails.
-- Simplify the conditions for the Coming of Age day calculation.
-- Simplify the calculation of Carnival in Argentina to reduce duplication. Add check in case date subtraction fails.
-- Simplify the calculation of Carnival in Brazil to reduce duplication. Add check in case date subtraction fails.
-- Introduced private methods for each holiday to eliminate complexity.
-- Simplify the calculation of the three Carnival Days in the Netherlands to reduce duplication. Add check in case date subtraction fails.
-- Optimize some if/then statements and other parts to be more succinct.
-- Remove unnecessary method argument as method accepts none and change switch block to a simple check as it only has one scenario.
-- Replaced the anonymous function inside array_map with arrow function syntax to make it more concise and readable.
-- Extract constant representing the date format (avoid 'magic' constants).
-
-### Documentation
-
-- Update the changelog to reflect changes for the 2.7.0 release
-
-### Code Style
-
-- Fix naming of fully qualified class names
-- Simplify the code for selecting holidays before and after 2013 making it more concise
-- Fix indentation
-- Add a few more PHPStan settings and fix indentation
-- Fix code style issues.
-- Remove redundant parentheses and fix array indentation.
-- Avoid use of the empty() function.
-- Convert implicit variables into explicit ones in double-quoted strings.
-- Remove unnecessary blank lines in doc blocks.
-- Remove unnecessary intermediate variable.
-- Add expected newline between different annotations.
-- Simplify the code making it more concise and readable.
-- Simplify the code and remove useless doc blocks/annotations.
-
-### Other
-
-- Remove unused infections Composer script entry
-- Remove checks for Superfluous naming as we follow PER which supports such convention.
-- Include PHPInsights configuration for additional code analysis.
-
-## New Contributors ❤️
-
-* @gogl92 made their first contribution
-* @ihmels made their first contribution
-* @rChassat made their first contribution
-
-## [1.0.0] - 2015-04-21
-
-## New Contributors ❤️
-
-* @Furgas made their first contribution
-* @stelgenhof made their first contribution
+- @attepulkkinen made their first contribution
+- @dependabot[bot] made their first contribution
+- @fbett made their first contribution
+- @hamrak made their first contribution
+- @mtbossa made their first contribution
+- @thrashzone13 made their first contribution
 
 [2.8.0]: https://github.com/azuyalabs/yasumi/compare/2.7.0..2.8.0
-[2.7.0]: https://github.com/azuyalabs/yasumi/compare/2.6.0..2.7.0
-
