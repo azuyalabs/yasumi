@@ -6,9 +6,10 @@ The following versions are supported with security updates:
 
 | Version | Supported          |
 | ------- | ------------------ |
+| 2.8.0  | :white_check_mark: |
 | 2.7.0  | :white_check_mark: |
-| 2.6.0  | :white_check_mark: |
-| 2.5.0  | :white_check_mark: |
+| 2.6.0  | :x: |
+| 2.5.0  | :x: |
 | <2.4   | :x: |
 
 As for supported PHP versions, this project only supports the actively supported versions of PHP and versions of PHP
