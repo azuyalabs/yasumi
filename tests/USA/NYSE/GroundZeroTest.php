@@ -7,21 +7,18 @@ declare(strict_types = 1);
  *
  * The easy PHP Library for calculating holidays.
  *
- * Copyright (c) 2025 Magic Web Group
+ * Copyright (c) 2015 - 2025 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  * @author Art Kurbakov <admin at mgwebgroup dot com>
  */
 
 namespace Yasumi\tests\USA\NYSE;
 
-use Yasumi\Holiday;
-use Yasumi\tests\HolidayTestCase;
 use Yasumi\tests\USA\USABaseTestCase;
-use DateTime;
-use DateTimeZone;
 
 /**
  * Class to test 4 days of closure of NYSE due to September 11th attacks
@@ -49,90 +46,90 @@ class GroundZeroTest extends USABaseTestCase
             self::REGION,
             'groundZero1',
             self::OBSERVED_YEAR,
-            new DateTime("2001-09-11", new DateTimeZone(self::TIMEZONE))
+            new \DateTime('2001-09-11', new \DateTimeZone(self::TIMEZONE))
         );
 
         $this->assertHoliday(
             self::REGION,
             'groundZero2',
             self::OBSERVED_YEAR,
-            new DateTime("2001-09-12", new DateTimeZone(self::TIMEZONE))
+            new \DateTime('2001-09-12', new \DateTimeZone(self::TIMEZONE))
         );
 
         $this->assertHoliday(
             self::REGION,
             'groundZero3',
             self::OBSERVED_YEAR,
-            new DateTime("2001-09-13", new DateTimeZone(self::TIMEZONE))
+            new \DateTime('2001-09-13', new \DateTimeZone(self::TIMEZONE))
         );
 
         $this->assertHoliday(
             self::REGION,
             'groundZero4',
             self::OBSERVED_YEAR,
-            new DateTime("2001-09-14", new DateTimeZone(self::TIMEZONE))
+            new \DateTime('2001-09-14', new \DateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
-     * Tests years before 2001  
+     * Tests years before 2001
      *
      * @throws \Exception
      */
     public function testGroundZeroBefore2001(): void
     {
         $this->assertNotHoliday(
-           	self::REGION,
+            self::REGION,
             'groundZero1',
             self::OBSERVED_YEAR - 1
         );
 
         $this->assertNotHoliday(
-           	self::REGION,
+            self::REGION,
             'groundZero2',
             self::OBSERVED_YEAR - 1
         );
 
         $this->assertNotHoliday(
-           	self::REGION,
+            self::REGION,
             'groundZero3',
             self::OBSERVED_YEAR - 1
         );
 
         $this->assertNotHoliday(
-           	self::REGION,
+            self::REGION,
             'groundZero4',
             self::OBSERVED_YEAR - 1
         );
     }
 
     /**
-     * Tests years after 2001  
+     * Tests years after 2001
      *
      * @throws \Exception
      */
     public function testGroundZeroAfter2001(): void
     {
         $this->assertNotHoliday(
-           	self::REGION,
+            self::REGION,
             'groundZero1',
             self::OBSERVED_YEAR + 1
         );
 
         $this->assertNotHoliday(
-           	self::REGION,
+            self::REGION,
             'groundZero2',
             self::OBSERVED_YEAR + 1
         );
 
         $this->assertNotHoliday(
-           	self::REGION,
+            self::REGION,
             'groundZero3',
             self::OBSERVED_YEAR + 1
         );
 
         $this->assertNotHoliday(
-           	self::REGION,
+            self::REGION,
             'groundZero4',
             self::OBSERVED_YEAR + 1
         );

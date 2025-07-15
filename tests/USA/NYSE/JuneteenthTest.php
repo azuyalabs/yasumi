@@ -7,18 +7,18 @@ declare(strict_types = 1);
  *
  * The easy PHP Library for calculating holidays.
  *
- * Copyright (c) 2025 Magic Web Group
+ * Copyright (c) 2015 - 2025 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  * @author Art Kurbakov <admin at mgwebgroup dot com>
  */
 
 namespace Yasumi\tests\USA\NYSE;
 
 use Yasumi\Holiday;
-use Yasumi\tests\HolidayTestCase;
 use Yasumi\tests\USA\USABaseTestCase;
 
 /**
@@ -97,7 +97,7 @@ class JuneteenthTest extends USABaseTestCase
     public function testJuneteenthBefore2022(): void
     {
         $this->assertNotHoliday(
-           	self::REGION,
+            self::REGION,
             self::HOLIDAY,
             self::ESTABLISHMENT_YEAR - 1
         );

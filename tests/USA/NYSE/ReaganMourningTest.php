@@ -7,21 +7,18 @@ declare(strict_types = 1);
  *
  * The easy PHP Library for calculating holidays.
  *
- * Copyright (c) 2025 Magic Web Group
+ * Copyright (c) 2015 - 2025 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  * @author Art Kurbakov <admin at mgwebgroup dot com>
  */
 
 namespace Yasumi\tests\USA\NYSE;
 
-use Yasumi\Holiday;
-use Yasumi\tests\HolidayTestCase;
 use Yasumi\tests\USA\USABaseTestCase;
-use DateTime;
-use DateTimeZone;
 
 /**
  * Class to test day of closure of NYSE due to Reagan Mourning proclamation
@@ -49,7 +46,7 @@ class ReaganMourningTest extends USABaseTestCase
             self::REGION,
             'ReaganMourning',
             self::OBSERVED_YEAR,
-            new DateTime("2004-06-11", new DateTimeZone(self::TIMEZONE))
+            new \DateTime('2004-06-11', new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -61,21 +58,21 @@ class ReaganMourningTest extends USABaseTestCase
     public function testReaganMourningBefore2004(): void
     {
         $this->assertNotHoliday(
-           	self::REGION,
+            self::REGION,
             'ReaganMourning',
             self::OBSERVED_YEAR - 1
         );
     }
 
     /**
-     * Tests years after 2004  
+     * Tests years after 2004
      *
      * @throws \Exception
      */
     public function testReaganMourningAfter2004(): void
     {
         $this->assertNotHoliday(
-           	self::REGION,
+            self::REGION,
             'ReaganMourning',
             self::OBSERVED_YEAR + 1
         );

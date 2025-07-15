@@ -7,21 +7,18 @@ declare(strict_types = 1);
  *
  * The easy PHP Library for calculating holidays.
  *
- * Copyright (c) 2025 Magic Web Group
+ * Copyright (c) 2015 - 2025 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  * @author Art Kurbakov <admin at mgwebgroup dot com>
  */
 
 namespace Yasumi\tests\USA\NYSE;
 
-use Yasumi\Holiday;
-use Yasumi\tests\HolidayTestCase;
 use Yasumi\tests\USA\USABaseTestCase;
-use DateTime;
-use DateTimeZone;
 
 /**
  * Class to test day of closure of NYSE due to G.R. Ford Mourning proclamation
@@ -49,7 +46,7 @@ class GRFordMourningTest extends USABaseTestCase
             self::REGION,
             'GRFordMourning',
             self::OBSERVED_YEAR,
-            new DateTime("2007-01-02", new DateTimeZone(self::TIMEZONE))
+            new \DateTime('2007-01-02', new \DateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -61,7 +58,7 @@ class GRFordMourningTest extends USABaseTestCase
     public function testGRFordMourningBefore2007(): void
     {
         $this->assertNotHoliday(
-           	self::REGION,
+            self::REGION,
             'GRFordMourning',
             self::OBSERVED_YEAR - 1
         );
@@ -75,7 +72,7 @@ class GRFordMourningTest extends USABaseTestCase
     public function testGRFordMourningAfter2007(): void
     {
         $this->assertNotHoliday(
-           	self::REGION,
+            self::REGION,
             'GRFordMourning',
             self::OBSERVED_YEAR + 1
         );

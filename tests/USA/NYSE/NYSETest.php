@@ -7,11 +7,12 @@ declare(strict_types = 1);
  *
  * The easy PHP Library for calculating holidays.
  *
- * Copyright (c) 2025 Magic Web Group
+ * Copyright (c) 2015 - 2025 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  * @author Art Kurbakov <admin at mgwebgroup dot com>
  */
 
@@ -55,8 +56,8 @@ class NYSETest extends USABaseTestCase implements ProviderTestCase
             'newYearsDay',
             'martinLutherKingDay',
             'washingtonsBirthday',
-			'goodFriday',
-			'memorialDay',
+            'goodFriday',
+            'memorialDay',
             'independenceDay',
             'labourDay',
             'thanksgivingDay',
@@ -68,24 +69,24 @@ class NYSETest extends USABaseTestCase implements ProviderTestCase
             $holidays[] = 'WTCAttack2';
             $holidays[] = 'WTCAttack3';
             $holidays[] = 'WTCAttack4';
-		}
+        }
 
         if (2004 == $this->year) {
             $holidays[] = 'ReaganMourning';
-		}
+        }
 
         if (2007 == $this->year) {
             $holidays[] = 'GRFordMourning';
-		}
+        }
 
         if (2012 == $this->year) {
             $holidays[] = 'hurricaneSandy1';
             $holidays[] = 'hurricaneSandy2';
-		}
+        }
 
         if (2018 == $this->year) {
             $holidays[] = 'HWBushMourning';
-		}
+        }
 
         if (2021 > $this->year) {
             $holidays[] = 'juneteenth';
