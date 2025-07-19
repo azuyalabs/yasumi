@@ -18,6 +18,7 @@ declare(strict_types = 1);
 
 namespace Yasumi\tests\USA\NYSE;
 
+use Yasumi\Yasumi;
 use Yasumi\Holiday;
 use Yasumi\tests\ProviderTestCase;
 use Yasumi\tests\USA\USABaseTestCase;
@@ -44,10 +45,10 @@ class NYSETest extends USABaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(2000);
+        $this->year = $this->generateRandomYear(2000, 2100);
     }
 
-    /**
+	/**
      * Tests if all official holidays in the USA are defined by the provider class.
      */
     public function testOfficialHolidays(): void
@@ -65,10 +66,10 @@ class NYSETest extends USABaseTestCase implements ProviderTestCase
         ];
 
         if (2001 == $this->year) {
-            $holidays[] = 'WTCAttack1';
-            $holidays[] = 'WTCAttack2';
-            $holidays[] = 'WTCAttack3';
-            $holidays[] = 'WTCAttack4';
+            $holidays[] = 'groundZero1';
+            $holidays[] = 'groundZero2';
+            $holidays[] = 'groundZero3';
+            $holidays[] = 'groundZero4';
         }
 
         if (2004 == $this->year) {
