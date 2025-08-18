@@ -7,26 +7,27 @@ declare(strict_types = 1);
  *
  * The easy PHP Library for calculating holidays.
  *
- * Copyright (c) 2025 Magic Web Group 
+ * Copyright (c) 2015 - 2025 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @author Art Kurbakov <admin at mgwebgroup dot com>
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
-
-// This file in addition to regular holidays observed by US stock exchanges, 
-// includes full day special closure events due to:
-// weather, national emergencies and presidential proclamations.
-// All closure events are included from year 2000.
 
 namespace Yasumi\Provider\USA;
 
-use Yasumi\Provider\USA;
 use Yasumi\Holiday;
-use DateTime;
-use DateTimeZone;
+use Yasumi\Provider\USA;
 
+/**
+ * Class NYSE in addition to regular holidays observed by the New York Stock
+ * Exchange (NYSE), includes full day special closure events due to:
+ * weather, national emergencies and presidential proclamations.
+ * All trading closure events are included from year 2000.
+ *
+ * @author Art Kurbakov <admin at mgwebgroup dot com>
+ */
 class NYSE extends USA
 {
     /**
@@ -36,28 +37,40 @@ class NYSE extends USA
      */
     public function initialize(): void
     {
-		$this->timezone = 'America/New_York';
+        $this->timezone = 'America/New_York';
 
-		// Add exhange-specific holidays
+        // Add exhange-specific holidays
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
         $this->calculateMartinLutherKingday();
         $this->calculateWashingtonsBirthday();
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
         $this->calculateMemorialDay();
-		if (2021 < $this->year)
-			$this->calculateJuneteenth();
+        if (2021 < $this->year) {
+            $this->calculateJuneteenth();
+        }
         $this->calculateIndependenceDay();
         $this->calculateLabourDay();
         $this->calculateThanksgivingDay();
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
 
         $this->calculateSubstituteHolidays();
-		
-		// Add other full-day closure events
-		$this->addWeatherEvents();
-		$this->addEmergencies();
-		$this->addProclamations();
-	}
+
+        // Add other full-day closure events
+        $this->addWeatherEvents();
+        $this->addEmergencies();
+        $this->addProclamations();
+    }
+
+    public function getSources(): array
+    {
+        return [
+            'https://www.nyse.com/trader-update/history#11507',
+            'https://s3.amazonaws.com/armstrongeconomics-wp/2013/07/NYSE-Closings.pdf',
+            'https://ir.theice.com/press/news-details/2018/New-York-Stock-Exchange-to-Honor-President-George-H-W-Bush/default.aspx',
+            'https://ir.theice.com/press/news-details/2024/The-New-York-Stock-Exchange-Will-Close-Markets-on-January-9-to-Honor-the-Passing-of-Former-President-Jimmy-Carter-on-National-Day-of-Mourning/default.aspx',
+            'https://www.thecorporatecounsel.net/blog/2021/10/nyse-makes-juneteenth-a-new-market-holiday.html',
+        ];
+    }
 
     private function addWeatherEvents(): void
     {
@@ -92,16 +105,4 @@ class NYSE extends USA
             $this->addHoliday(new Holiday('CarterMourning', [], new \DateTime('2025-01-09', new \DateTimeZone($this->timezone))));
         }
     }
-
-    public function getSources(): array
-    {
-        return [
-			'https://www.nyse.com/trader-update/history#11507',
-			'https://s3.amazonaws.com/armstrongeconomics-wp/2013/07/NYSE-Closings.pdf',
-			'https://ir.theice.com/press/news-details/2018/New-York-Stock-Exchange-to-Honor-President-George-H-W-Bush/default.aspx',
-			'https://ir.theice.com/press/news-details/2024/The-New-York-Stock-Exchange-Will-Close-Markets-on-January-9-to-Honor-the-Passing-of-Former-President-Jimmy-Carter-on-National-Day-of-Mourning/default.aspx',
-			'https://www.thecorporatecounsel.net/blog/2021/10/nyse-makes-juneteenth-a-new-market-holiday.html',
-        ];
-    }
 }
-
