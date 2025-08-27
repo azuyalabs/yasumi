@@ -50,6 +50,7 @@ class NewZealand extends AbstractProvider
         $this->calculateWaitangiDay();
         $this->calculateAnzacDay();
         $this->calculateQueensBirthday();
+        $this->calculateMatariki();
         $this->calculateLabourDay();
 
         // Add Christian holidays
@@ -192,6 +193,71 @@ class NewZealand extends AbstractProvider
             new \DateTime("first monday of june {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
+    }
+
+    /**
+     * Matariki – te Mātahi o te Tau
+     * Matariki – the Māori New Year
+     *
+     * The Matariki public holiday is based on the winter rising of the Matariki cluster in the early
+     * morning sky during the Tangaroa period of the lunar month of Pipiri.
+     *
+     * The dates are predetermined by the Matariki Advisory Committee, currently for the years 2022-2052 inclusive
+     *
+     * @see https://www.tepapa.govt.nz/discover-collections/read-watch-play/matariki-maori-new-year/dates-for-matariki-public-holiday
+     * @see https://www.mbie.govt.nz/business-and-employment/employment-and-skills/employment-legislation-reviews/matariki/matariki-public-holiday
+     *
+     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws \Exception
+     */
+    protected function calculateMatariki(): void
+    {
+        if ($this->year < 2022 || 2052 < $this->year) {
+            return;
+        }
+
+        $matarikiDates = [
+            2022 => ['month' => 6, 'day' => 24],
+            2023 => ['month' => 7, 'day' => 14],
+            2024 => ['month' => 6, 'day' => 28],
+            2025 => ['month' => 6, 'day' => 20],
+            2026 => ['month' => 7, 'day' => 10],
+            2027 => ['month' => 6, 'day' => 25],
+            2028 => ['month' => 7, 'day' => 14],
+            2029 => ['month' => 7, 'day' => 6],
+            2030 => ['month' => 6, 'day' => 21],
+            2031 => ['month' => 7, 'day' => 11],
+            2032 => ['month' => 7, 'day' => 2],
+            2033 => ['month' => 6, 'day' => 24],
+            2034 => ['month' => 7, 'day' => 7],
+            2035 => ['month' => 6, 'day' => 29],
+            2036 => ['month' => 7, 'day' => 18],
+            2037 => ['month' => 7, 'day' => 10],
+            2038 => ['month' => 6, 'day' => 25],
+            2039 => ['month' => 7, 'day' => 15],
+            2040 => ['month' => 7, 'day' => 6],
+            2041 => ['month' => 7, 'day' => 19],
+            2042 => ['month' => 7, 'day' => 11],
+            2043 => ['month' => 7, 'day' => 3],
+            2044 => ['month' => 6, 'day' => 24],
+            2045 => ['month' => 7, 'day' => 7],
+            2046 => ['month' => 6, 'day' => 29],
+            2047 => ['month' => 7, 'day' => 19],
+            2048 => ['month' => 7, 'day' => 3],
+            2049 => ['month' => 6, 'day' => 25],
+            2050 => ['month' => 7, 'day' => 15],
+            2051 => ['month' => 6, 'day' => 30],
+            2052 => ['month' => 6, 'day' => 21],
+        ];
+
+        $date = new \DateTime(
+            sprintf('%04d-%02d-%02d', $this->year, $matarikiDates[$this->year]['month'],
+                $matarikiDates[$this->year]['day']),
+            DateTimeZoneFactory::getDateTimeZone($this->timezone)
+        );
+
+        $this->addHoliday(new Holiday('matariki', [], $date, $this->locale));
     }
 
     /**
