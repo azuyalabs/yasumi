@@ -31,6 +31,12 @@ use Yasumi\Provider\USA;
 class NYSE extends USA
 {
     /**
+     * Code to identify this Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
+     * country or sub-region.
+     */
+    public const ID = 'US-NYSE';
+
+    /**
      * Initialize holidays for the NYSE.
      *
      * @throws \Exception
