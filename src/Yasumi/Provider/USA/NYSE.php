@@ -45,7 +45,7 @@ class NYSE extends USA
     {
         $this->timezone = 'America/New_York';
 
-        // Add exhange-specific holidays
+        // Add exchange-specific holidays
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale));
         $this->calculateMartinLutherKingday();
         $this->calculateWashingtonsBirthday();
