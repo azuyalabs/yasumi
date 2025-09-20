@@ -15,13 +15,15 @@ declare(strict_types = 1);
  * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
+namespace Yasumi\tests\NewZealand;
+
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
 /**
- * Class for testing Matariki in the New Zealand.
+ * Class for testing Matariki in New Zealand.
  */
-class MatarikiTest extends Yasumi\tests\NewZealand\NewZealandBaseTestCase implements HolidayTestCase
+class MatarikiTest extends NewZealandBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.
@@ -46,7 +48,7 @@ class MatarikiTest extends Yasumi\tests\NewZealand\NewZealandBaseTestCase implem
      * @param int      $year     the year for which the holiday defined in this test needs to be tested
      * @param DateTime $expected the expected date
      */
-    public function testHoliday(int $year, DateTimeInterface $expected): void
+    public function testHoliday(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
@@ -106,9 +108,9 @@ class MatarikiTest extends Yasumi\tests\NewZealand\NewZealandBaseTestCase implem
 
         for ($y = 1; $y <= 100; ++$y) {
             $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::CALCULATED_UNTIL_YEAR);
-            $expected = new DateTime(
+            $expected = new \DateTime(
                 sprintf('%04d-%02d-%02d', $year, $matarikiDates[$year]['month'], $matarikiDates[$year]['day']),
-                new DateTimeZone(self::TIMEZONE)
+                new \DateTimeZone(self::TIMEZONE)
             );
             $data[] = [$year, $expected];
         }
