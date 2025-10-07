@@ -91,6 +91,18 @@ split_commits = false
 commit_preprocessors = [
   { pattern = "\\(#([0-9]+)\\)", replace = "([#${1}](<REPO>/issues/${1}))"},
 
+  # Strip HTML tags and content from commit messages
+  { pattern = "<[^>]*>.*?</[^>]*>", replace = "" },
+  { pattern = "<[^>]*>", replace = "" },
+
+  # Fix proper nouns in commit scopes before upper_first is applied
+  { pattern = "\\(czech republic\\)", replace = "(Czech Republic)" },
+  { pattern = "\\(new zealand\\)", replace = "(New Zealand)" },
+  { pattern = "\\(south africa\\)", replace = "(South Africa)" },
+  { pattern = "\\(south korea\\)", replace = "(South Korea)" },
+  { pattern = "\\(united kingdom\\)", replace = "(United Kingdom)" },
+  { pattern = "\\(united states\\)", replace = "(United States)" },
+
   # Check spelling of the commit message using https://github.com/crate-ci/typos.
   # If the spelling is incorrect, it will be fixed automatically.
   { pattern = '.*', replace_command = 'typos --write-changes -' }
