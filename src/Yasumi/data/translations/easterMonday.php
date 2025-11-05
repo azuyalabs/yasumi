@@ -40,5 +40,6 @@ return [
     'pl' => 'Poniedziałek Wielkanocny',
     'ro' => 'A doua zi de Paște',
     'sk' => 'Veľkonočný pondelok',
+    'sl' => 'Velikonočni ponedeljek',
     'sv' => 'annandag påsk',
 ];

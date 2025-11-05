@@ -47,6 +47,7 @@ return [
     'ro' => 'Ziua internațională a muncii',
     'ru' => 'День международной солидарности трудящихся',
     'sk' => 'Sviatok práce',
+    'sl' => 'Praznik dela',
     'sv' => 'första maj',
     'uk' => 'День міжнародної солідарності трудящих',
 ];

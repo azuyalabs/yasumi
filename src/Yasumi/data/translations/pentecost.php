@@ -35,6 +35,7 @@ return [
     'pl' => 'Zielone Świątki',
     'ro' => 'Rusaliile',
     'ru' => 'Троица',
+    'sl' => 'Binkoštna nedelja',
     'sv' => 'pingstdagen',
     'uk' => 'Трійця',
 ];

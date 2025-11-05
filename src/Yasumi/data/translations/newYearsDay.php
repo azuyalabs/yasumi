@@ -49,6 +49,7 @@ return [
     'ro' => 'Anul Nou',
     'ru' => 'Новый год',
     'sk' => 'Nový rok',
+    'sl' => 'Novo leto',
     'sv' => 'nyårsdagen',
     'tr' => 'Yılbaşı',
     'uk' => 'Новий Рік',

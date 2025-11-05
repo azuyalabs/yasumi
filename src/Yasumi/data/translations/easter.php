@@ -42,6 +42,7 @@ return [
     'pt' => 'Páscoa',
     'ro' => 'Paștele',
     'ru' => 'Пасха',
+    'sl' => 'Velika noč',
     'sv' => 'påskdagen',
     'uk' => 'Великдень',
 ];
