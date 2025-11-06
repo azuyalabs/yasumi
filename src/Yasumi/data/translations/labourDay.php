@@ -24,5 +24,6 @@ return [
     'ko' => '노동절',
     'nl' => 'Dag van de arbeid',
     'sk' => 'Sviatok práce',
+    'sl' => 'Praznik dela (2. dan)',
     'tr' => 'Emek ve Dayanışma Günü',
 ];

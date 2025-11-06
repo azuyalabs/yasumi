@@ -15,9 +15,9 @@ declare(strict_types = 1);
  * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
-// Translations for New Year's Day
+// Translations for Independence Day
 return [
-    'da' => '2. nytårsdag',
-    'en' => '2nd January',
-    'sl' => 'Novo leto (2. dan)',
+    'en' => 'Independence Day',
+    'hr' => 'Dan neovisnosti',
+    'sl' => 'Dan samostojnosti in enotnosti',
 ];

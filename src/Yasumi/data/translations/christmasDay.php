@@ -47,6 +47,7 @@ return [
     'ro' => 'Crăciunul',
     'ru' => 'Рождество',
     'sk' => 'Prvý sviatok vianočný',
+    'sl' => 'Božič',
     'sv' => 'juldagen',
     'uk' => 'Різдво',
 ];
