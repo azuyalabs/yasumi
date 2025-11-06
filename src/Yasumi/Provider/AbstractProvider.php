@@ -87,6 +87,11 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
     private array $holidays = [];
 
     /**
+     * flag to track if holidays need to be sorted
+     */
+    private bool $needSorting = false;
+
+    /**
      * Creates a new holiday provider (i.e. country/state).
      *
      * @param int                        $year               the year for which to provide holidays
@@ -114,7 +119,7 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
         }
 
         $this->holidays[$holiday->getKey()] = $holiday;
-        uasort($this->holidays, static fn (\DateTimeInterface $dateA, \DateTimeInterface $dateB): int => self::compareDates($dateA, $dateB));
+        $this->needSorting = true;
     }
 
     public function removeHoliday(string $key): void
@@ -182,6 +187,8 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
 
     public function getHolidays(): array
     {
+        $this->ensureSorted();
+
         return $this->holidays;
     }
 
@@ -228,7 +235,9 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
 
     public function getIterator(): \ArrayIterator
     {
-        return new \ArrayIterator($this->getHolidays());
+        $this->ensureSorted();
+
+        return new \ArrayIterator($this->holidays);
     }
 
     public function on(\DateTimeInterface $date): OnFilter
@@ -238,6 +247,8 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
 
     public function getHolidayDates(): array
     {
+        $this->ensureSorted();
+
         return array_map(static fn ($holiday): string => (string) $holiday, $this->holidays);
     }
 
@@ -264,6 +275,18 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
     private function clearHolidays(): void
     {
         $this->holidays = [];
+        $this->needSorting = false;
+    }
+
+    /**
+     * Ensures holidays are sorted chronologically if needed.
+     */
+    private function ensureSorted(): void
+    {
+        if ($this->needSorting) {
+            uasort($this->holidays, static fn (\DateTimeInterface $dateA, \DateTimeInterface $dateB): int => self::compareDates($dateA, $dateB));
+            $this->needSorting = false;
+        }
     }
 
     /**
