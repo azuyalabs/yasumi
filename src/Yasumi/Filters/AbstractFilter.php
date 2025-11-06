@@ -30,12 +30,16 @@ abstract class AbstractFilter extends \FilterIterator implements \Countable
      */
     public function count(): int
     {
-        $names = array_map(
-            static fn ($holiday) => $holiday instanceof SubstituteHoliday ?
-            $holiday->getSubstitutedHoliday()->getKey() : $holiday->getKey(),
-            iterator_to_array($this)
-        );
+        $names = [];
 
-        return count(array_unique($names));
+        foreach ($this as $holiday) {
+            $key = $holiday instanceof SubstituteHoliday
+                ? $holiday->getSubstitutedHoliday()->getKey()
+                : $holiday->getKey();
+
+            $names[$key] = true;
+        }
+
+        return count($names);
     }
 }
