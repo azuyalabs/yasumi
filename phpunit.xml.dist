@@ -163,6 +163,10 @@
         <testsuite name="Slovakia">
             <directory>./tests/Slovakia</directory>
         </testsuite>
+        <!-- Test Suite for holidays in Slovenia -->
+        <testsuite name="Slovenia">
+            <directory>./tests/Slovenia</directory>
+        </testsuite>
         <!-- Test Suite for holidays in South Africa -->
         <testsuite name="SouthAfrica">
             <directory>./tests/SouthAfrica</directory>

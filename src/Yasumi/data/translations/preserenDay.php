@@ -15,9 +15,8 @@ declare(strict_types = 1);
  * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
-// Translations for New Year's Day
+// Translations for Prešeren Day
 return [
-    'da' => '2. nytårsdag',
-    'en' => '2nd January',
-    'sl' => 'Novo leto (2. dan)',
+    'en' => 'Prešeren Day, Slovenian Cultural Holiday',
+    'sl' => 'Prešernov dan, slovenski kulturni praznik',
 ];

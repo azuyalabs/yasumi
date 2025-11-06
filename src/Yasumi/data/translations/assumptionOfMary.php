@@ -32,4 +32,5 @@ return [
     'pt' => 'Assunção de Nossa Senhora',
     'ro' => 'Adormirea Maicii Domnului',
     'sk' => 'Nanebovzatie Panny Márie',
+    'sl' => 'Marijino vnebovzetje',
 ];
