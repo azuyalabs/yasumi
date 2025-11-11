@@ -17,6 +17,9 @@ declare(strict_types = 1);
 
 namespace Yasumi\Provider;
 
+use DateTime;
+use Exception;
+use InvalidArgumentException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
@@ -61,9 +64,9 @@ class Slovakia extends AbstractProvider
     /**
      * Initialize holidays for Slovakia.
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
+     * @throws Exception
      */
     public function initialize(): void
     {
@@ -80,15 +83,17 @@ class Slovakia extends AbstractProvider
             $this->locale,
             Holiday::TYPE_BANK
         ));
-        // 8.5.
-        $this->addHoliday($this->victoryInEuropeDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
+        // 8.5. (<2025, >2026)
+        if ($this->year < 2025 || $this->year > 2026) {
+            $this->addHoliday($this->victoryInEuropeDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
+        }
         // 5.7.
         $this->calculateSaintsCyrilAndMethodiusDay();
         // 29.8.
         $this->calculateSlovakNationalUprisingDay();
         // 1.9.(<2024)
         $this->calculateSlovakConstitutionDay();
-        // 15.9.
+        // 15.9. (<2025)
         $this->calculateOurLadyOfSorrowsDay();
         // 30.10.2018
         $this->calculateDeclarationOfTheSlovakNation();
@@ -122,9 +127,9 @@ class Slovakia extends AbstractProvider
      *
      * @see https://sk.wikipedia.org/wiki/Zoznam_sviatkov_na_Slovensku#endnote_pozn-01
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
+     * @throws Exception
      */
     protected function calculateDeclarationOfTheSlovakNation(): void
     {
@@ -135,7 +140,7 @@ class Slovakia extends AbstractProvider
                     'sk' => 'Výročie Deklarácie slovenského národa',
                     'en' => 'Anniversary of the Declaration of the Slovak Nation',
                 ],
-                new \DateTime("{$this->year}-10-30", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new DateTime("{$this->year}-10-30", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }
@@ -146,9 +151,9 @@ class Slovakia extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_Slovakia
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
+     * @throws Exception
      */
     protected function calculateSlovakIndependenceDay(): void
     {
@@ -158,7 +163,7 @@ class Slovakia extends AbstractProvider
                 'sk' => 'Deň vzniku Slovenskej republiky',
                 'en' => 'Day of the Establishment of the Slovak Republic',
             ],
-            new \DateTime("{$this->year}-01-01", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new DateTime("{$this->year}-01-01", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
@@ -170,9 +175,9 @@ class Slovakia extends AbstractProvider
      *
      * Note: this holiday is common for Czech republic and Slovakia.
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
+     * @throws Exception
      */
     protected function calculateSaintsCyrilAndMethodiusDay(): void
     {
@@ -183,7 +188,7 @@ class Slovakia extends AbstractProvider
                 'cs' => 'Den slovanských věrozvěstů Cyrila a Metoděje',
                 'en' => 'Saints Cyril and Methodius Day',
             ],
-            new \DateTime("{$this->year}-07-05", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new DateTime("{$this->year}-07-05", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));
@@ -194,9 +199,9 @@ class Slovakia extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Slovak_National_Uprising
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
+     * @throws Exception
      */
     protected function calculateSlovakNationalUprisingDay(): void
     {
@@ -206,7 +211,7 @@ class Slovakia extends AbstractProvider
                 'sk' => 'Výročie Slovenského národného povstania',
                 'en' => 'Slovak National Uprising Day',
             ],
-            new \DateTime("{$this->year}-08-29", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new DateTime("{$this->year}-08-29", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));
@@ -219,9 +224,9 @@ class Slovakia extends AbstractProvider
      * Removed since 2024
      * @see https://www.slov-lex.sk/pravne-predpisy/SK/ZZ/1993/241/
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
+     * @throws Exception
      */
     protected function calculateSlovakConstitutionDay(): void
     {
@@ -232,7 +237,7 @@ class Slovakia extends AbstractProvider
                     'sk' => 'Deň Ústavy Slovenskej republiky',
                     'en' => 'Day of the Constitution of the Slovak Republic',
                 ],
-                new \DateTime("{$this->year}-09-01", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new DateTime("{$this->year}-09-01", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OFFICIAL
             ));
@@ -247,17 +252,20 @@ class Slovakia extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Our_Lady_of_Sorrows
      * @see https://sk.wikipedia.org/wiki/Sedembolestn%C3%A1_Panna_M%C3%A1ria
+     * @see https://spravy.stvr.sk/2025/09/poslanci-definitivne-schvalili-zrusenie-niektorych-dni-pracovneho-pokoja-pozrite-si-ich-prehlad-na-rok-2026/
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
+     * @throws Exception
      */
     protected function calculateOurLadyOfSorrowsDay(): void
     {
-        $this->addHoliday(new Holiday('ourLadyOfSorrowsDay', [
-            'sk' => 'Sviatok Sedembolestnej Panny Márie',
-            'en' => 'Our Lady of Sorrows Day',
-        ], new \DateTime("{$this->year}-09-15", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_BANK));
+        if ($this->year < 2025 || $this->year > 2026) {
+            $this->addHoliday(new Holiday('ourLadyOfSorrowsDay', [
+                'sk' => 'Sviatok Sedembolestnej Panny Márie',
+                'en' => 'Our Lady of Sorrows Day',
+            ], new DateTime("{$this->year}-09-15", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_BANK));
+        }
     }
 
     /**
@@ -265,9 +273,9 @@ class Slovakia extends AbstractProvider
      *
      * Note: this national day is common for Czech republic and Slovakia.
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
+     * @throws Exception
      */
     protected function calculateStruggleForFreedomAndDemocracyDay(): void
     {
@@ -279,7 +287,7 @@ class Slovakia extends AbstractProvider
                     'cs' => 'Den boje za svobodu a demokracii',
                     'en' => 'Struggle for Freedom and Democracy Day',
                 ],
-                new \DateTime("{$this->year}-11-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new DateTime("{$this->year}-11-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OFFICIAL
             ));
