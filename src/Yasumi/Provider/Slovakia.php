@@ -93,7 +93,7 @@ class Slovakia extends AbstractProvider
         $this->calculateSlovakNationalUprisingDay();
         // 1.9.(<2024)
         $this->calculateSlovakConstitutionDay();
-        // 15.9. (<2025)
+        // 15.9. (<2025, >2026)
         $this->calculateOurLadyOfSorrowsDay();
         // 30.10.2018
         $this->calculateDeclarationOfTheSlovakNation();
