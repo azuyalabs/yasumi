@@ -54,7 +54,18 @@ class StruggleForFreedomAndDemocracyDayTest extends SlovakiaBaseTestCase impleme
      */
     public function HolidayDataProvider(): array
     {
-        return $this->generateRandomDates(11, 17, self::TIMEZONE);
+        // Only use years between 1993 and 2024
+        $years = range(1993, 2024);
+        $dates = [];
+        shuffle($years);
+        foreach (array_slice($years, 0, 10) as $year) {
+            $dates[] = [
+                $year,
+                new \DateTime("{$year}-11-17", new \DateTimeZone(self::TIMEZONE)),
+            ];
+        }
+
+        return $dates;
     }
 
     /**
@@ -67,7 +78,7 @@ class StruggleForFreedomAndDemocracyDayTest extends SlovakiaBaseTestCase impleme
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            $this->generateRandomYear(1993, 2024),
             [self::LOCALE => 'Deň boja za slobodu a demokraciu']
         );
     }
@@ -79,6 +90,6 @@ class StruggleForFreedomAndDemocracyDayTest extends SlovakiaBaseTestCase impleme
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(1993, 2024), Holiday::TYPE_OFFICIAL);
     }
 }

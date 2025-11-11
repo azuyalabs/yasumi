@@ -80,21 +80,23 @@ class Slovakia extends AbstractProvider
             $this->locale,
             Holiday::TYPE_BANK
         ));
-        // 8.5.
-        $this->addHoliday($this->victoryInEuropeDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
+        // 8.5. (<2025, >2026)
+        if ($this->year < 2025 || $this->year > 2026) {
+            $this->addHoliday($this->victoryInEuropeDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
+        }
         // 5.7.
         $this->calculateSaintsCyrilAndMethodiusDay();
         // 29.8.
         $this->calculateSlovakNationalUprisingDay();
         // 1.9.(<2024)
         $this->calculateSlovakConstitutionDay();
-        // 15.9.
+        // 15.9. (<2025, >2026)
         $this->calculateOurLadyOfSorrowsDay();
         // 30.10.2018
         $this->calculateDeclarationOfTheSlovakNation();
         // 1.11.
         $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
-        // 17.11.
+        // 17.11.(<2025)
         $this->calculateStruggleForFreedomAndDemocracyDay();
         // 24.12.
         $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale, Holiday::TYPE_BANK));
@@ -247,6 +249,7 @@ class Slovakia extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Our_Lady_of_Sorrows
      * @see https://sk.wikipedia.org/wiki/Sedembolestn%C3%A1_Panna_M%C3%A1ria
+     * @see https://spravy.stvr.sk/2025/09/poslanci-definitivne-schvalili-zrusenie-niektorych-dni-pracovneho-pokoja-pozrite-si-ich-prehlad-na-rok-2026/
      *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
@@ -254,10 +257,12 @@ class Slovakia extends AbstractProvider
      */
     protected function calculateOurLadyOfSorrowsDay(): void
     {
-        $this->addHoliday(new Holiday('ourLadyOfSorrowsDay', [
-            'sk' => 'Sviatok Sedembolestnej Panny Márie',
-            'en' => 'Our Lady of Sorrows Day',
-        ], new \DateTime("{$this->year}-09-15", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_BANK));
+        if ($this->year < 2025 || $this->year > 2026) {
+            $this->addHoliday(new Holiday('ourLadyOfSorrowsDay', [
+                'sk' => 'Sviatok Sedembolestnej Panny Márie',
+                'en' => 'Our Lady of Sorrows Day',
+            ], new \DateTime("{$this->year}-09-15", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale, Holiday::TYPE_BANK));
+        }
     }
 
     /**
@@ -271,16 +276,18 @@ class Slovakia extends AbstractProvider
      */
     protected function calculateStruggleForFreedomAndDemocracyDay(): void
     {
-        $this->addHoliday(new Holiday(
-            'struggleForFreedomAndDemocracyDay',
-            [
-                'sk' => 'Deň boja za slobodu a demokraciu',
-                'cs' => 'Den boje za svobodu a demokracii',
-                'en' => 'Struggle for Freedom and Democracy Day',
-            ],
-            new \DateTime("{$this->year}-11-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-            $this->locale,
-            Holiday::TYPE_OFFICIAL
-        ));
+        if ($this->year < 2025) {
+            $this->addHoliday(new Holiday(
+                'struggleForFreedomAndDemocracyDay',
+                [
+                    'sk' => 'Deň boja za slobodu a demokraciu',
+                    'cs' => 'Den boje za svobodu a demokracii',
+                    'en' => 'Struggle for Freedom and Democracy Day',
+                ],
+                new \DateTime("{$this->year}-11-17", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                $this->locale,
+                Holiday::TYPE_OFFICIAL
+            ));
+        }
     }
 }
