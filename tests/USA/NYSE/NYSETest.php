@@ -65,27 +65,27 @@ class NYSETest extends USABaseTestCase implements ProviderTestCase
             'christmasDay',
         ];
 
-        if (2001 == $this->year) {
+        if (2001 === $this->year) {
             $holidays[] = 'WTCAttack1';
             $holidays[] = 'WTCAttack2';
             $holidays[] = 'WTCAttack3';
             $holidays[] = 'WTCAttack4';
         }
 
-        if (2004 == $this->year) {
+        if (2004 === $this->year) {
             $holidays[] = 'ReaganMourning';
         }
 
-        if (2007 == $this->year) {
+        if (2007 === $this->year) {
             $holidays[] = 'GRFordMourning';
         }
 
-        if (2012 == $this->year) {
+        if (2012 === $this->year) {
             $holidays[] = 'hurricaneSandy1';
             $holidays[] = 'hurricaneSandy2';
         }
 
-        if (2018 == $this->year) {
+        if (2018 === $this->year) {
             $holidays[] = 'HWBushMourning';
         }
 

@@ -31,9 +31,8 @@ class Translations implements TranslationsInterface
      *
      * @param array<string> $availableLocales list of all defined locales
      */
-    public function __construct(private array $availableLocales)
+    public function __construct(private readonly array $availableLocales)
     {
-        $this->availableLocales = $availableLocales;
     }
 
     /**

@@ -31,7 +31,7 @@ class OnFilter extends AbstractFilter
     private const DATE_FORMAT = 'Y-m-d';
 
     /** date to check for holidays */
-    private string $date;
+    private readonly string $date;
 
     /**
      * Construct the On FilterIterator Object.

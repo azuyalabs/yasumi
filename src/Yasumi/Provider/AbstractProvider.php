@@ -102,7 +102,7 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
     public function __construct(
         int $year,
         ?string $locale = null,
-        private ?TranslationsInterface $globalTranslations = null,
+        private readonly ?TranslationsInterface $globalTranslations = null,
     ) {
         $this->clearHolidays();
 
@@ -174,7 +174,7 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
      */
     public function count(): int
     {
-        $names = array_map(static function ($holiday): string {
+        $names = array_map(static function (Holiday $holiday): string {
             if ($holiday instanceof SubstituteHoliday) {
                 return $holiday->getSubstitutedHoliday()->getKey();
             }
@@ -249,7 +249,7 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
     {
         $this->ensureSorted();
 
-        return array_map(static fn ($holiday): string => (string) $holiday, $this->holidays);
+        return array_map(static fn (Holiday $holiday): string => (string) $holiday, $this->holidays);
     }
 
     /**

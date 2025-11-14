@@ -310,7 +310,7 @@ trait Randomizer
      *
      * @example DateTime('1999-02-02 11:42:52')
      */
-    public static function dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null): \DateTimeInterface
+    public static function dateTimeBetween($startDate = '-30 years', $endDate = 'now', ?string $timezone = null): \DateTimeInterface
     {
         $startTimestamp = $startDate instanceof \DateTime ? $startDate->getTimestamp() : strtotime($startDate);
 

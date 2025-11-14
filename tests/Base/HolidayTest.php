@@ -75,7 +75,6 @@ class HolidayTest extends TestCase
     {
         $holiday = new Holiday('testHoliday', [], new \DateTime(), 'ca_ES_VALENCIA');
         $method = new \ReflectionMethod(Holiday::class, 'getLocales');
-        $method->setAccessible(true);
 
         self::assertEquals(['ca_ES_VALENCIA', 'ca_ES', 'ca', 'en_US', 'en', Holiday::LOCALE_KEY], $method->invoke($holiday, null));
         self::assertEquals(['de_DE', 'de', 'es_ES', 'es'], $method->invoke($holiday, ['de_DE', 'es_ES']));

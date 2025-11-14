@@ -58,7 +58,7 @@ class SouthTest extends SouthBaseTestCase implements ProviderTestCase
             'recreationDay',
             'hobartShow',
         ];
-        if (2022 == $this->year) {
+        if (2022 === $this->year) {
             $expectedHolidays[] = 'nationalDayOfMourning';
         }
         $this->assertDefinedHolidays($expectedHolidays, $this->region, $this->year, Holiday::TYPE_OFFICIAL);

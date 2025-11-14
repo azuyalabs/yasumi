@@ -63,8 +63,7 @@ class TransmissionOfFederalPowerDayTest extends MexicoBaseTestCase implements Ho
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $year,
-            new \DateTime("{$year}-10-01", new \DateTimeZone(self::TIMEZONE))
+            $year
         );
     }
 

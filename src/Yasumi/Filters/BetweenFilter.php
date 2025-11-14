@@ -32,10 +32,10 @@ class BetweenFilter extends AbstractFilter
     private const DATE_FORMAT = 'Y-m-d';
 
     /** start date of the time frame to check against. */
-    private string $startDate;
+    private readonly string $startDate;
 
     /** end date of the time frame to check against */
-    private string $endDate;
+    private readonly string $endDate;
 
     /**
      * Construct the Between FilterIterator Object.
@@ -50,7 +50,7 @@ class BetweenFilter extends AbstractFilter
         \Iterator $iterator,
         \DateTimeInterface $startDate,
         \DateTimeInterface $endDate,
-        private bool $equal = true,
+        private readonly bool $equal = true,
     ) {
         parent::__construct($iterator);
         $this->startDate = $startDate->format(self::DATE_FORMAT);
