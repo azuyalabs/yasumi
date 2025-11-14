@@ -31,6 +31,10 @@ class SlovakiaTest extends SlovakiaBaseTestCase implements ProviderTestCase
      * @var int year random year number used for all tests in this Test Case
      */
     protected int $year;
+    /**
+     * @var int year of Slovakia's consolidation
+     */
+    protected int $yearOfConsolidation;
 
     /**
      * Initial setup of this Test Case.
@@ -41,6 +45,7 @@ class SlovakiaTest extends SlovakiaBaseTestCase implements ProviderTestCase
     {
         // NOTE: 1993 is the year Slovakia was founded as an independent state
         $this->year = $this->generateRandomYear(1993, 2100);
+        $this->yearOfConsolidation = $this->generateRandomYear(1993, 2024);
     }
 
     /**
@@ -49,10 +54,13 @@ class SlovakiaTest extends SlovakiaBaseTestCase implements ProviderTestCase
     public function testOfficialHolidays(): void
     {
         $this->assertDefinedHolidays([
+            'struggleForFreedomAndDemocracyDay',
+        ], self::REGION, $this->yearOfConsolidation, Holiday::TYPE_OFFICIAL);
+
+        $this->assertDefinedHolidays([
             'slovakIndependenceDay',
             'slovakNationalUprisingDay',
             'saintsCyrilAndMethodiusDay',
-            'struggleForFreedomAndDemocracyDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
 
         $this->assertDefinedHolidays([
@@ -70,10 +78,13 @@ class SlovakiaTest extends SlovakiaBaseTestCase implements ProviderTestCase
     public function testBankHolidays(): void
     {
         $this->assertDefinedHolidays([
-            'epiphany',
-            'internationalWorkersDay',
             'victoryInEuropeDay',
             'ourLadyOfSorrowsDay',
+        ], self::REGION, $this->yearOfConsolidation, Holiday::TYPE_BANK);
+
+        $this->assertDefinedHolidays([
+            'epiphany',
+            'internationalWorkersDay',
             'allSaintsDay',
             'christmasEve',
             'christmasDay',
