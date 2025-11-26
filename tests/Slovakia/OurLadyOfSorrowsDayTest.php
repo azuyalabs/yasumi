@@ -21,15 +21,12 @@ use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
 /**
- * Class for testing a holiday in Slovakia.
+ * Class for testing the Our Lady of Sorrows holiday in Slovakia.
  *
  * @author  Andrej Rypak (dakujem) <xrypak@gmail.com>
  */
 class OurLadyOfSorrowsDayTest extends SlovakiaBaseTestCase implements HolidayTestCase
 {
-    /**
-     * The name of the holiday.
-     */
     public const HOLIDAY = 'ourLadyOfSorrowsDay';
 
     /**
@@ -37,12 +34,17 @@ class OurLadyOfSorrowsDayTest extends SlovakiaBaseTestCase implements HolidayTes
      *
      * @dataProvider HolidayDataProvider
      *
-     * @param int       $year     the year for which Christmas Day needs to be tested
-     * @param \DateTime $expected the expected date
+     * @param int    $year     the year for which this holiday needs to be tested
+     * @param string $expected the expected date
      */
-    public function testHoliday(int $year, \DateTimeInterface $expected): void
+    public function testHoliday(int $year, $expected): void
     {
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new \DateTime($expected, new \DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -54,7 +56,12 @@ class OurLadyOfSorrowsDayTest extends SlovakiaBaseTestCase implements HolidayTes
      */
     public function HolidayDataProvider(): array
     {
-        return $this->generateRandomDates(9, 15, self::TIMEZONE);
+        return $this->generateRandomDatesWithModifier(9, 15, function ($year, \DateTime $date): void {
+            // Our Lady of Sorrows Day is not observed in 2025 and 2026
+            if (in_array($year, [2025, 2026])) {
+                return;
+            }
+        }, 5, 1000, self::TIMEZONE);
     }
 
     /**
@@ -64,10 +71,14 @@ class OurLadyOfSorrowsDayTest extends SlovakiaBaseTestCase implements HolidayTes
      */
     public function testTranslation(): void
     {
+        // Our Lady of Sorrows Day is not observed in 2025 and 2026
+        $validYears = array_merge(range(1993, 2024), range(2027, 2100));
+        $year = $this->randomYearFromArray($validYears);
+
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            $year,
             [self::LOCALE => 'Sviatok Sedembolestnej Panny Márie']
         );
     }
@@ -79,6 +90,10 @@ class OurLadyOfSorrowsDayTest extends SlovakiaBaseTestCase implements HolidayTes
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_BANK);
+        // Our Lady of Sorrows Day is not observed in 2025 and 2026
+        $validYears = array_merge(range(1993, 2024), range(2027, 2100));
+        $year = $this->randomYearFromArray($validYears);
+
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_BANK);
     }
 }
