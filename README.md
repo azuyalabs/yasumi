@@ -18,6 +18,51 @@ information. In addition, no exhaustive PHP library exists today covering a wide
 countries. [PEAR's Date_Holidays](https://pear.php.net/package/Date_Holidays) library was a similar attempt, however it
 hasn't been updated for a long time.
 
+## Requirements
+
+Yasumi requires **PHP 8.1** or higher. The library supports PHP 8.1, 8.2, 8.3, 8.4, and 8.5.
+
+For detailed information about supported PHP versions and security updates, please refer to
+the [SECURITY.md](SECURITY.md) file.
+
+## Installation
+
+Install Yasumi using [Composer](https://getcomposer.org):
+
+```shell
++composer require azuyalabs/yasumi
+```
+
+## Quick Start
+
+Here's a simple example to get you started:
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+// Create a holiday provider for a specific country and year
+$holidays = Yasumi\Yasumi::create('USA', 2025);
+
+// Get all holidays for the year
+foreach ($holidays as $holiday) {
+    echo $holiday->getName() . ': ' . $holiday->format('Y-m-d') . PHP_EOL;
+}
+
+// Get a specific holiday
+$independenceDay = $holidays->getHoliday('independenceDay');
+echo $independenceDay->getName() . ' is on ' . $independenceDay->format('F j, Y') . PHP_EOL;
+
+// Check if a date is a holiday
+$newYearsDay = $holidays->getHoliday('newYearsDay');
+if ($newYearsDay !== null) {
+    echo 'New Year\'s Day is a holiday!' . PHP_EOL;
+}
+```
+
+For more examples, check the [examples](examples/) directory in the repository.
+
 ## Highlights
 
 The goal of Yasumi is to be powerful while remaining lightweight, by utilizing PHP native classes wherever possible.
@@ -27,7 +72,7 @@ calculate holidays.
 - Pure PHP with a straightforward API
 - Framework-agnostic
 - Use of Providers to easily extend and expand new Holidays
-- Common Holiday Providers
+- Common Holiday Providers (e.g. Christian Holidays)
 - Accounts for the date/time when holidays have been officially established and/or abolished
 - Filters enabling to easily select certain holiday types (Official, Observed, Bank, Seasonal or Other)
 - Global Translations
