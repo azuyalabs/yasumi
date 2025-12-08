@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: "Prune stale issues and pull requests"
-        uses: "actions/stale@v10.1.0"
+        uses: "actions/stale@v10.1.1"
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
           days-before-close: "${{ env.DAYS_BEFORE_CLOSE }}"
