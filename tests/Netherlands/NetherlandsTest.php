@@ -105,6 +105,20 @@ class NetherlandsTest extends NetherlandsBaseTestCase implements ProviderTestCas
             'epiphany',
             'princesDay',
         ], self::REGION, $this->year, Holiday::TYPE_OTHER);
+
+        $this->assertDefinedHolidays([
+            'dayAfterNewYearsDay',
+            'dayAfterAscensionDay',
+        ], self::REGION, 2026, Holiday::TYPE_OTHER);
+
+        $this->assertDefinedHolidays([
+            'dayAfterAscensionDay',
+        ], self::REGION, 2027, Holiday::TYPE_OTHER);
+
+        $this->assertDefinedHolidays([
+            'dayAfterKingsDay',
+            'dayAfterAscensionDay',
+        ], self::REGION, 2028, Holiday::TYPE_OTHER);
     }
 
     /**
