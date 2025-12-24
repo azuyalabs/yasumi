@@ -84,6 +84,7 @@ class Netherlands extends AbstractProvider
         $this->calculateQueensday();
         $this->calculateKingsday();
         $this->calculateCommemorationLiberationDay();
+        $this->addEquivalentDays();
     }
 
     public function getSources(): array
@@ -280,6 +281,59 @@ class Netherlands extends AbstractProvider
                 new \DateTime("{$this->year}-5-5", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 $holidayType
+            ));
+        }
+    }
+
+    /**
+     * Extra days that are added for the "Algemene termijnenwet".
+     * These extra days are in the current cases the Friday after an official holiday, but these "day after"
+     * are not official and just administrative.
+     *
+     * @see https://wetten.overheid.nl/BWBR0002448/2010-10-10/
+     * @see https://wetten.overheid.nl/BWBR0051300/2025-07-22
+     */
+    protected function addEquivalentDays(): void
+    {
+        if (2026 == $this->year) {
+            $this->addHoliday(new Holiday(
+                'dayAfterNewYearsDay',
+                [],
+                new \DateTime("{$this->year}-1-2", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                $this->locale,
+                Holiday::TYPE_OTHER
+            ));
+            $this->addHoliday(new Holiday(
+                'dayAfterAscensionDay',
+                ['en' => 'Day after Ascension Day', 'nl' => 'Dag na Hemelvaart'],
+                new \DateTime("{$this->year}-5-15", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                $this->locale,
+                Holiday::TYPE_OTHER
+            ));
+        }
+        if (2027 == $this->year) {
+            $this->addHoliday(new Holiday(
+                'dayAfterAscensionDay',
+                ['en' => 'Day after Ascension Day', 'nl' => 'Dag na Hemelvaart'],
+                new \DateTime("{$this->year}-5-7", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                $this->locale,
+                Holiday::TYPE_OTHER
+            ));
+        }
+        if (2028 == $this->year) {
+            $this->addHoliday(new Holiday(
+                'dayAfterKingsDay',
+                ['en' => 'Day after Kings Day', 'nl' => 'Dag na Koningsdag'],
+                new \DateTime("{$this->year}-4-28", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                $this->locale,
+                Holiday::TYPE_OTHER
+            ));
+            $this->addHoliday(new Holiday(
+                'dayAfterAscensionDay',
+                ['en' => 'Day after Ascension Day', 'nl' => 'Dag na Hemelvaart'],
+                new \DateTime("{$this->year}-5-26", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                $this->locale,
+                Holiday::TYPE_OTHER
             ));
         }
     }
