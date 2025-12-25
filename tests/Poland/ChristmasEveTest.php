@@ -51,7 +51,7 @@ class ChristmasEveTest extends PolandBaseTestCase implements HolidayTestCase
      */
     public function testNotHoliday(): void
     {
-        $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR);
+        $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
     }
 
