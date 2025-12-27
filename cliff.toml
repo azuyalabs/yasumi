@@ -103,6 +103,8 @@ commit_preprocessors = [
   { pattern = "\\(united kingdom\\)", replace = "(United Kingdom)" },
   { pattern = "\\(united states\\)", replace = "(United States)" },
 
+  { pattern = "typo", replace = "Various typos" },
+
   # Check spelling of the commit message using https://github.com/crate-ci/typos.
   # If the spelling is incorrect, it will be fixed automatically.
   { pattern = '.*', replace_command = 'typos --write-changes -' }
