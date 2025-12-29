@@ -26,6 +26,16 @@ followed by any architectural or technical changes.\n
 """
 
 body = """
+{%- macro remote_url() -%}
+  https://github.com/{{ remote.github.owner }}/{{ remote.github.repo }}
+{%- endmacro -%}
+
+{% macro print_commit(commit) -%}
+    - {% if commit.scope %}*({{ commit.scope | upper_first }})* {% endif %}\
+        {% if commit.breaking %}[**breaking**] {% endif %}\
+        {{ commit.message | split(pat="\n") | first | split(pat=":") | last | trim | upper_first }}\
+{% endmacro -%}
+
 {% if version -%}
     ## [{{ version | trim_start_matches(pat="v") }}] - {{ timestamp | date(format="%Y-%m-%d") }}
 {% else -%}
@@ -35,7 +45,7 @@ body = """
 {% for group, commits in commits | unique(attribute="message") | filter(attribute="merge_commit", value=false) | group_by(attribute="group") %}
     ### {{ group | striptags | trim | upper_first }}
     {% for commit in commits %}
-        - {% if commit.scope %}({{ commit.scope | upper_first }}) {% endif%}{{ commit.message | split(pat="\n") | first | split(pat=": ") | last | trim | upper_first }}
+        {{ self::print_commit(commit=commit) }}
     {%- endfor %}
 {% endfor %}\n
 
@@ -89,11 +99,11 @@ split_commits = false
 
 # An array of regex based parsers to modify commit messages prior to further processing.
 commit_preprocessors = [
-  { pattern = "\\(#([0-9]+)\\)", replace = "([#${1}](<REPO>/issues/${1}))"},
+  # Replace issue numbers with link templates to be updated in `changelog.postprocessors`.
+  { pattern = '\((\w+\s)?#([0-9]+)\)', replace = "([#${2}](<REPO>/issues/${2}))" },
 
   # Strip HTML tags and content from commit messages
   { pattern = "<[^>]*>.*?</[^>]*>", replace = "" },
-  { pattern = "<[^>]*>", replace = "" },
 
   # Fix proper nouns in commit scopes before upper_first is applied
   { pattern = "\\(czech republic\\)", replace = "(Czech Republic)" },
@@ -107,7 +117,7 @@ commit_preprocessors = [
 
   # Check spelling of the commit message using https://github.com/crate-ci/typos.
   # If the spelling is incorrect, it will be fixed automatically.
-  { pattern = '.*', replace_command = 'typos --write-changes -' }
+  { pattern = '.*', replace_command = 'typos --write-changes -' },
 ]
 
 # An array of regex based parsers for extracting data from the commit message.
