@@ -20,7 +20,7 @@ hasn't been updated for a long time.
 
 ## Requirements
 
-Yasumi requires **PHP 8.1** or higher. The library supports PHP 8.1, 8.2, 8.3, 8.4, and 8.5.
+Yasumi requires **PHP 8.2** or higher. The library supports PHP 8.2, 8.3, 8.4, and 8.5.
 
 For detailed information about supported PHP versions and security updates, please refer to
 the [SECURITY.md](SECURITY.md) file.
@@ -43,7 +43,7 @@ Here's a simple example to get you started:
 require 'vendor/autoload.php';
 
 // Create a holiday provider for a specific country and year
-$holidays = Yasumi\Yasumi::create('USA', 2025);
+$holidays = Yasumi\Yasumi::create('USA', 2026);
 
 // Get all holidays for the year
 foreach ($holidays as $holiday) {
