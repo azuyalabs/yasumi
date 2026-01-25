@@ -30,7 +30,7 @@ the [SECURITY.md](SECURITY.md) file.
 Install Yasumi using [Composer](https://getcomposer.org):
 
 ```shell
-+composer require azuyalabs/yasumi
+composer require azuyalabs/yasumi
 ```
 
 ## Quick Start
