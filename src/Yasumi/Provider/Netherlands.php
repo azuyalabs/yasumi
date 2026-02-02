@@ -295,7 +295,7 @@ class Netherlands extends AbstractProvider
      */
     protected function addEquivalentDays(): void
     {
-        if (2026 == $this->year) {
+        if (2026 === $this->year) {
             $this->addHoliday(new Holiday(
                 'dayAfterNewYearsDay',
                 [],
@@ -311,7 +311,7 @@ class Netherlands extends AbstractProvider
                 Holiday::TYPE_OTHER
             ));
         }
-        if (2027 == $this->year) {
+        if (2027 === $this->year) {
             $this->addHoliday(new Holiday(
                 'dayAfterAscensionDay',
                 ['en' => 'Day after Ascension Day', 'nl' => 'Dag na Hemelvaart'],
@@ -320,7 +320,7 @@ class Netherlands extends AbstractProvider
                 Holiday::TYPE_OTHER
             ));
         }
-        if (2028 == $this->year) {
+        if (2028 === $this->year) {
             $this->addHoliday(new Holiday(
                 'dayAfterKingsDay',
                 ['en' => 'Day after Kings Day', 'nl' => 'Dag na Koningsdag'],
