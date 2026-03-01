@@ -61,7 +61,7 @@ class HolidayOnFilterTest extends TestCase
                 $date
             );
 
-            self::assertArrayNotHasKey($name, iterator_to_array($holidaysOnDate));
+            self::assertArrayNotHasKey($name, iterator_to_array($holidaysOnDate), sprintf('`%s` should not exist for `%s`', $name, $date->format('Y-m-d')));
         }
     }
 

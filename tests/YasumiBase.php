@@ -77,7 +77,7 @@ trait YasumiBase
 
         // Loop through all known holidays and assert they are defined by the provider class.
         foreach ($expectedHolidays as $holiday) {
-            self::assertArrayHasKey($holiday, iterator_to_array($holidays));
+            self::assertArrayHasKey($holiday, iterator_to_array($holidays), sprintf('`%s` should exist for year `%u` in the `%s` holiday list for `%s`', $holiday, $year, $type, $provider));
         }
     }
 
