@@ -256,23 +256,6 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
     }
 
     /**
-     * Checks whether the given holiday is not empty.
-     *
-     * @param string $key key of the holiday to be checked
-     *
-     * @return true upon success, otherwise an InvalidArgumentException is thrown
-     *
-     * @throws \InvalidArgumentException an InvalidArgumentException is thrown if the given holiday parameter is empty
-     *
-     * @deprecated deprecated in favor of isHolidayKeyNotEmpty()
-     * @deprecated see isHolidayKeyNotEmpty()
-     */
-    protected function isHolidayNameNotEmpty(string $key): bool
-    {
-        return $this->isHolidayKeyNotEmpty($key);
-    }
-
-    /**
      * Clear all holidays.
      */
     private function clearHolidays(): void
