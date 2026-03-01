@@ -66,10 +66,10 @@ class NYSETest extends USABaseTestCase implements ProviderTestCase
         ];
 
         if (2001 === $this->year) {
-            $holidays[] = 'WTCAttack1';
-            $holidays[] = 'WTCAttack2';
-            $holidays[] = 'WTCAttack3';
-            $holidays[] = 'WTCAttack4';
+            $holidays[] = 'groundZero1';
+            $holidays[] = 'groundZero2';
+            $holidays[] = 'groundZero3';
+            $holidays[] = 'groundZero4';
         }
 
         if (2004 === $this->year) {
@@ -89,11 +89,11 @@ class NYSETest extends USABaseTestCase implements ProviderTestCase
             $holidays[] = 'HWBushMourning';
         }
 
-        if (2021 > $this->year) {
+        if (2021 < $this->year) {
             $holidays[] = 'juneteenth';
         }
 
-        if (2025 > $this->year) {
+        if (2025 === $this->year) {
             $holidays[] = 'CarterMourning';
         }
 
