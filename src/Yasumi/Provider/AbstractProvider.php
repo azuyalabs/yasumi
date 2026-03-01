@@ -112,6 +112,9 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
         $this->initialize();
     }
 
+    /** Initialize country holidays */
+    abstract public function initialize(): void;
+
     public function addHoliday(Holiday $holiday): void
     {
         if ($this->globalTranslations instanceof TranslationsInterface) {
