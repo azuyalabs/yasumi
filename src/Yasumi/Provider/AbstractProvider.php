@@ -212,11 +212,7 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
 
     public function getHoliday(string $key): ?Holiday
     {
-        $this->isHolidayKeyNotEmpty($key); // Validate if key is not empty
-
-        $holidays = $this->getHolidays();
-
-        return $holidays[$key] ?? null;
+        return $this->holidays[$key] ?? null;
     }
 
     public function previous(string $key): ?Holiday

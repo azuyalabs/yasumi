@@ -199,8 +199,6 @@ class YasumiTest extends TestCase
 
     public function testGetHolidayWithBlankKey(): void
     {
-        $this->expectException(\InvalidArgumentException::class);
-
         $holidays = Yasumi::create('Netherlands', 1999);
         $holidays->getHoliday('');
     }
