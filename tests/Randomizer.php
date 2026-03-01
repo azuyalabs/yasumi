@@ -262,7 +262,7 @@ trait Randomizer
         ?int $lowerLimit = null,
         ?int $upperLimit = null,
     ): int {
-        return self::numberBetween($lowerLimit ?? 1000, $upperLimit ?? 9999);
+        return self::numberBetween($lowerLimit ?? 1800, $upperLimit ?? 2200);
     }
 
     /**
