@@ -199,6 +199,8 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
 
     public function getHolidayNames(): array
     {
+       $this->ensureSorted();
+
         return array_keys($this->holidays);
     }
 
