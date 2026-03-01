@@ -398,6 +398,14 @@ class YasumiTest extends TestCase
         self::assertArrayNotHasKey('octoberHoliday', $holidaysAfterRemoval);
     }
 
+    public function testRemoveHolidayWithBlankKey(): void
+    {
+        $this->expectException(\InvalidArgumentException::class);
+
+        $holidays = Yasumi::create('Netherlands', 1999);
+        $holidays->removeHoliday('');
+    }
+
     /**
      * Tests that a holiday provider instance can be created by using the ISO3166-2
      * country/region code. (Using the Yasumi::createByISO3166_2 method).

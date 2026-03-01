@@ -127,6 +127,8 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
 
     public function removeHoliday(string $key): void
     {
+        $this->isHolidayKeyNotEmpty($key);
+
         unset($this->holidays[$key]);
     }
 
