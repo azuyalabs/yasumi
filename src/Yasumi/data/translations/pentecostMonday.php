@@ -17,6 +17,7 @@ declare(strict_types = 1);
 
 // Translations for Whitmonday
 return [
+    'ca' => 'Dilluns de Pentecosta',
     'da' => '2. pinsedag',
     'de' => 'Pfingstmontag',
     'el' => 'Αγίου Πνεύματος',
