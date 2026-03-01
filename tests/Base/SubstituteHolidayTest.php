@@ -72,8 +72,6 @@ class SubstituteHolidayTest extends TestCase
         $json = json_encode($substitute, JSON_THROW_ON_ERROR);
         $instance = json_decode($json, true, 512, JSON_THROW_ON_ERROR);
 
-        self::assertIsArray($instance);
-        self::assertNotNull($instance);
         self::assertArrayHasKey('shortName', $instance);
         self::assertArrayHasKey('substitutedHoliday', $instance);
     }
@@ -84,13 +82,11 @@ class SubstituteHolidayTest extends TestCase
         // Assert with DateTime instance
         $holiday = new Holiday('testHoliday', [], new \DateTime('2019-01-01'), 'en_US');
         $substitute = new SubstituteHoliday($holiday, [], new \DateTime('2019-01-02'), 'en_US');
-        self::assertNotNull($holiday);
-        self::assertInstanceOf(SubstituteHoliday::class, $substitute);
+        self::assertInstanceOf(SubstituteHoliday::class, $substitute, 'No substitute holiday instance on 2019-01-02');
 
         // Assert with DateTimeImmutable instance
         $substitute = new SubstituteHoliday($holiday, [], new \DateTimeImmutable(), 'en_US');
-        self::assertNotNull($holiday);
-        self::assertInstanceOf(SubstituteHoliday::class, $substitute);
+        self::assertInstanceOf(SubstituteHoliday::class, $substitute, 'No substitute holiday with DateTimeImmutable date');
     }
 
     /** @throws \Exception */

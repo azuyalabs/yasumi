@@ -51,8 +51,6 @@ class HolidayTest extends TestCase
         $json = json_encode($holiday, JSON_THROW_ON_ERROR);
         $instance = json_decode($json, true, 512, JSON_THROW_ON_ERROR);
 
-        self::assertIsArray($instance);
-        self::assertNotNull($instance);
         self::assertArrayHasKey('shortName', $instance);
     }
 
@@ -61,13 +59,11 @@ class HolidayTest extends TestCase
     {
         // Assert with DateTime instance
         $holiday = new Holiday('testHoliday', [], new \DateTime(), 'en_US');
-        self::assertNotNull($holiday);
-        self::assertInstanceOf(Holiday::class, $holiday);
+        self::assertInstanceOf(Holiday::class, $holiday, 'No holiday instance for date with DateTime instance');
 
         // Assert with DateTimeImmutable instance
         $holiday = new Holiday('testHoliday', [], new \DateTimeImmutable(), 'en_US');
-        self::assertNotNull($holiday);
-        self::assertInstanceOf(Holiday::class, $holiday);
+        self::assertInstanceOf(Holiday::class, $holiday, 'No holiday instance for date with DateTimeImmutable instance');
     }
 
     /** @throws \Exception */
@@ -177,8 +173,6 @@ class HolidayTest extends TestCase
         $holiday = new Holiday('newYearsDay', [], new \DateTime('2015-01-01'), $locale);
         $holiday->mergeGlobalTranslations($translationsStub);
 
-        self::assertNotNull($holiday->getName());
-        self::assertIsString($holiday->getName());
         self::assertEquals($translations[$locale], $holiday->getName());
     }
 
@@ -199,8 +193,6 @@ class HolidayTest extends TestCase
         $holiday = new Holiday('newYearsDay', [], new \DateTime('2015-01-01'), $locale);
         $holiday->mergeGlobalTranslations($translationsStub);
 
-        self::assertNotNull($holiday->getName());
-        self::assertIsString($holiday->getName());
         self::assertEquals($translations['pl'], $holiday->getName());
     }
 
@@ -227,8 +219,6 @@ class HolidayTest extends TestCase
         );
         $holiday->mergeGlobalTranslations($translationsStub);
 
-        self::assertNotNull($holiday->getName());
-        self::assertIsString($holiday->getName());
         self::assertEquals($customTranslation, $holiday->getName());
     }
 
@@ -255,8 +245,6 @@ class HolidayTest extends TestCase
         );
         $holiday->mergeGlobalTranslations($translationsStub);
 
-        self::assertNotNull($holiday->getName());
-        self::assertIsString($holiday->getName());
         self::assertEquals($customTranslation, $holiday->getName());
     }
 }

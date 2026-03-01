@@ -45,7 +45,6 @@ class StJohnsDayTest extends SwedenBaseTestCase implements HolidayTestCase
 
         // Some basic assertions
         self::assertInstanceOf(Holiday::class, $holiday);
-        self::assertNotNull($holiday);
 
         // Holiday specific assertions
         self::assertEquals('Saturday', $holiday->format('l'));

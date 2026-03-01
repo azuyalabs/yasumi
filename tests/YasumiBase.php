@@ -103,9 +103,9 @@ trait YasumiBase
         $holidays = Yasumi::create($provider, $year);
         $holiday = $holidays->getHoliday($key);
 
-        self::assertInstanceOf(Holiday::class, $holiday);
+        self::assertInstanceOf(Holiday::class, $holiday, sprintf('No instance holiday for `%s` in year `%u`', $key, $year));
         $this->assertDateTime($expected, $holiday);
-        self::assertTrue($holidays->isHoliday($holiday));
+        self::assertTrue($holidays->isHoliday($holiday), sprintf('Holiday `%s` not recognised as holiday for year `%u`', $key, $year));
     }
 
     /**
@@ -130,7 +130,7 @@ trait YasumiBase
         $holidays = Yasumi::create($provider, $year);
         $holiday = $holidays->getHoliday('substituteHoliday:' . $key);
 
-        self::assertInstanceOf(SubstituteHoliday::class, $holiday);
+        self::assertInstanceOf(SubstituteHoliday::class, $holiday, sprintf('No substitute holiday for `%s` in year `%u`', $key, $year));
         $this->assertDateTime($expected, $holiday);
         self::assertTrue($holidays->isHoliday($holiday));
     }
@@ -179,7 +179,7 @@ trait YasumiBase
         $holidays = Yasumi::create($provider, $year);
         $holiday = $holidays->getHoliday($key);
 
-        self::assertNull($holiday);
+        self::assertNull($holiday, sprintf('Holiday `%s` should not exist for year `%u`', $key, $year));
     }
 
     /**
@@ -204,8 +204,8 @@ trait YasumiBase
         $holidays = Yasumi::create($provider, $year);
         $holiday = $holidays->getHoliday($key);
 
-        self::assertInstanceOf(Holiday::class, $holiday, sprintf('No instance for the year `%u`', $year));
-        self::assertTrue($holidays->isHoliday($holiday), sprintf('Holiday `%s` not defined for the year `%u`', $key, $year));
+        self::assertInstanceOf(Holiday::class, $holiday, sprintf('No holiday instance for `%s` in year `%u`', $key, $year));
+        self::assertTrue($holidays->isHoliday($holiday), sprintf('Holiday `%s` not recognized as holiday for year `%u`', $key, $year));
 
         foreach ($translations as $locale => $name) {
             $locales = [$locale];
@@ -249,8 +249,8 @@ trait YasumiBase
         $holidays = Yasumi::create($provider, $year);
         $holiday = $holidays->getHoliday($key);
 
-        self::assertInstanceOf(Holiday::class, $holiday, sprintf('No instance for the year `%u`', $year));
-        self::assertEquals($type, $holiday->getType(), sprintf('Expected type `%s`, got `%s` for the year `%u`', $type, $holiday->getType(), $year));
+        self::assertInstanceOf(Holiday::class, $holiday, sprintf('No holiday instance for `%s` in year `%u`', $key, $year));
+        self::assertEquals($type, $holiday->getType(), sprintf('Expected type `%s`, got `%s` for year `%u`', $type, $holiday->getType(), $year));
     }
 
     /**
@@ -275,9 +275,9 @@ trait YasumiBase
         $holidays = Yasumi::create($provider, $year);
         $holiday = $holidays->getHoliday($key);
 
-        self::assertInstanceOf(Holiday::class, $holiday);
-        self::assertTrue($holidays->isHoliday($holiday));
-        self::assertEquals($expectedDayOfWeek, $holiday->format('l'));
+        self::assertInstanceOf(Holiday::class, $holiday, sprintf('No holiday instance for key `%s` in year `%us`', $key, $year));
+        self::assertTrue($holidays->isHoliday($holiday), sprintf('Holiday `%s` not recognized as holiday for year `%u`', $key, $year));
+        self::assertEquals($expectedDayOfWeek, $holiday->format('l'), sprintf('Wrong day of week for `%s` in year `%u`', $key, $year));
     }
 
     /**

@@ -43,12 +43,7 @@ class TranslationsTest extends TestCase
 
         $translations->addTranslation($key, $locale, $translation);
 
-        self::assertNotNull($translations->getTranslations($key));
-        self::assertNotEmpty($translations->getTranslations($key));
         self::assertEquals([$locale => $translation], $translations->getTranslations($key));
-
-        self::assertNotNull($translations->getTranslation($key, $locale));
-        self::assertIsString($translations->getTranslation($key, $locale));
         self::assertEquals($translation, $translations->getTranslation($key, $locale));
     }
 
@@ -62,12 +57,7 @@ class TranslationsTest extends TestCase
 
         $translations->addTranslation($firstIdentifier, $firstLocale, $firstTranslation);
 
-        self::assertNotNull($translations->getTranslations($firstIdentifier));
-        self::assertNotEmpty($translations->getTranslations($firstIdentifier));
         self::assertEquals([$firstLocale => $firstTranslation], $translations->getTranslations($firstIdentifier));
-
-        self::assertNotNull($translations->getTranslation($firstIdentifier, $firstLocale));
-        self::assertIsString($translations->getTranslation($firstIdentifier, $firstLocale));
         self::assertEquals($firstTranslation, $translations->getTranslation($firstIdentifier, $firstLocale));
 
         $secondLocale = 'nl_NL';
@@ -76,12 +66,7 @@ class TranslationsTest extends TestCase
 
         $translations->addTranslation($secondIdentifier, $secondLocale, $secondTranslation);
 
-        self::assertNotNull($translations->getTranslations($secondIdentifier));
-        self::assertNotEmpty($translations->getTranslations($secondIdentifier));
         self::assertEquals([$secondLocale => $secondTranslation], $translations->getTranslations($secondIdentifier));
-
-        self::assertNotNull($translations->getTranslation($secondIdentifier, $secondLocale));
-        self::assertIsString($translations->getTranslation($secondIdentifier, $secondLocale));
         self::assertEquals($secondTranslation, $translations->getTranslation($secondIdentifier, $secondLocale));
 
         $thirdLocale = 'en_US';
@@ -90,15 +75,10 @@ class TranslationsTest extends TestCase
 
         $translations->addTranslation($thirdIdentifier, $thirdLocale, $thirdTranslation);
 
-        self::assertNotNull($translations->getTranslations($thirdIdentifier));
-        self::assertNotEmpty($translations->getTranslations($thirdIdentifier));
         self::assertEquals(
             [$thirdLocale => $thirdTranslation, $secondLocale => $secondTranslation],
             $translations->getTranslations($thirdIdentifier)
         );
-
-        self::assertNotNull($translations->getTranslation($thirdIdentifier, $thirdLocale));
-        self::assertIsString($translations->getTranslation($thirdIdentifier, $thirdLocale));
         self::assertEquals($thirdTranslation, $translations->getTranslation($thirdIdentifier, $thirdLocale));
     }
 
@@ -166,9 +146,6 @@ FILE;
         $locale = 'en_US';
         $translation = 'New Year’s Day';
 
-        self::assertNotNull($translations->getTranslations($key));
-        self::assertNotEmpty($translations->getTranslations($key));
-        self::assertIsString($translations->getTranslation($key, $locale));
         self::assertEquals($translation, $translations->getTranslation($key, $locale));
     }
 
@@ -257,17 +234,11 @@ FILE;
         $locale = 'en_US';
         $translation = 'New Year’s Day';
 
-        self::assertNotNull($translations->getTranslations($firstIdentifier));
-        self::assertNotEmpty($translations->getTranslations($firstIdentifier));
-        self::assertIsString($translations->getTranslation($firstIdentifier, $locale));
         self::assertEquals($translation, $translations->getTranslation($firstIdentifier, $locale));
 
         $locale = 'nl_NL';
         $translation = 'Eerste Paasdag';
 
-        self::assertNotNull($translations->getTranslations($secondIdentifier));
-        self::assertNotEmpty($translations->getTranslations($secondIdentifier));
-        self::assertIsString($translations->getTranslation($secondIdentifier, $locale));
         self::assertEquals($translation, $translations->getTranslation($secondIdentifier, $locale));
     }
 }

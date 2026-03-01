@@ -68,7 +68,7 @@ class YasumiTest extends TestCase
             $class,
             self::numberBetween(self::YEAR_LOWER_BOUND, self::YEAR_UPPER_BOUND)
         );
-        self::assertInstanceOf(YasumiExternalProvider::class, $instance);
+        self::assertInstanceOf(YasumiExternalProvider::class, $instance, 'No holiday instance for external holiday provider');
     }
 
     public function testCreateWithInvalidLocale(): void
@@ -275,16 +275,10 @@ class YasumiTest extends TestCase
         $date = $year . '-08-15';
 
         // Assertion using a DateTime instance
-        $isHoliday = Yasumi::create($provider, $year)->isHoliday(new \DateTime($date));
-        self::assertIsBool($isHoliday);
-        self::assertTrue($isHoliday);
+        self::assertTrue(Yasumi::create($provider, $year)->isHoliday(new \DateTime($date)), sprintf('Date `%s` not recognised as holiday', $date));
 
         // Assertion using a DateTimeImmutable instance
-        $isHoliday = Yasumi::create($provider, $year)->isHoliday(new \DateTimeImmutable($date));
-        self::assertIsBool($isHoliday);
-        self::assertTrue($isHoliday);
-
-        unset($isHoliday);
+        self::assertTrue(Yasumi::create($provider, $year)->isHoliday(new \DateTimeImmutable($date)), sprintf('Immutable Date `%s` not recognised as holiday', $date));
     }
 
     /**
@@ -303,12 +297,10 @@ class YasumiTest extends TestCase
 
         // Assertion using a DateTime instance
         $isHoliday = Yasumi::create($provider, $year)->isHoliday(new \DateTime($date));
-        self::assertIsBool($isHoliday);
         self::assertFalse($isHoliday);
 
         // Assertion using a DateTimeImmutable instance
         $isHoliday = Yasumi::create($provider, $year)->isHoliday(new \DateTimeImmutable($date));
-        self::assertIsBool($isHoliday);
         self::assertFalse($isHoliday);
 
         unset($isHoliday);
@@ -330,12 +322,10 @@ class YasumiTest extends TestCase
 
         // Assertion using a DateTime instance
         $isWorkingDay = Yasumi::create($provider, $year)->isWorkingDay(new \DateTime($date));
-        self::assertIsBool($isWorkingDay);
         self::assertTrue($isWorkingDay);
 
         // Assertion using a DateTimeImmutable instance
         $isWorkingDay = Yasumi::create($provider, $year)->isWorkingDay(new \DateTimeImmutable($date));
-        self::assertIsBool($isWorkingDay);
         self::assertTrue($isWorkingDay);
 
         unset($isWorkingDay);
@@ -357,12 +347,10 @@ class YasumiTest extends TestCase
 
         // Assertion using a DateTime instance
         $isNotWorkingDay = Yasumi::create($provider, $year)->isWorkingDay(new \DateTime($date));
-        self::assertIsBool($isNotWorkingDay);
         self::assertFalse($isNotWorkingDay);
 
         // Assertion using a DateTimeImmutable instance
         $isNotWorkingDay = Yasumi::create($provider, $year)->isWorkingDay(new \DateTimeImmutable($date));
-        self::assertIsBool($isNotWorkingDay);
         self::assertFalse($isNotWorkingDay);
 
         unset($isNotWorkingDay);

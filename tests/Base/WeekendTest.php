@@ -43,7 +43,6 @@ class WeekendTest extends TestCase
         $yasumiProvider = Yasumi::create(self::HOLIDAY_PROVIDER, (int) $date->format('Y'));
         $isWeekendDay = $yasumiProvider->isWeekendDay($date);
 
-        self::assertIsBool($isWeekendDay);
         self::assertTrue($isWeekendDay);
     }
 
@@ -85,7 +84,6 @@ class WeekendTest extends TestCase
         $yasumiProvider = Yasumi::create(self::HOLIDAY_PROVIDER, (int) $date->format('Y'));
         $isWeekendDay = $yasumiProvider->isWeekendDay($date);
 
-        self::assertIsBool($isWeekendDay);
         self::assertFalse($isWeekendDay);
     }
 

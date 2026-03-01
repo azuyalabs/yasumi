@@ -41,14 +41,14 @@ class YasumiWorkdayTest extends TestCase
         $startDate = new \DateTime($date, new \DateTimeZone($timezone));
         $nextWorkingDay = Yasumi::nextWorkingDay($provider, $startDate);
 
-        self::assertInstanceOf(\DateTimeImmutable::class, $nextWorkingDay);
+        self::assertInstanceOf(\DateTimeImmutable::class, $nextWorkingDay, sprintf('No holiday instance for the next working day of `%s`', $date));
         self::assertEquals($expectedDate, $nextWorkingDay->format(self::FORMAT_DATE));
 
         // Assertion using a DateTimeImmutable instance
         $startDate = new \DateTimeImmutable($date, new \DateTimeZone($timezone));
         $nextWorkingDay = Yasumi::nextWorkingDay($provider, $startDate);
 
-        self::assertInstanceOf(\DateTimeImmutable::class, $nextWorkingDay);
+        self::assertInstanceOf(\DateTimeImmutable::class, $nextWorkingDay, sprintf('No holiday instance for the next working day of `%s`', $date));
         self::assertEquals($expectedDate, $nextWorkingDay->format(self::FORMAT_DATE));
     }
 
@@ -69,14 +69,14 @@ class YasumiWorkdayTest extends TestCase
         $startDate = new \DateTime($date, new \DateTimeZone($timezone));
         $previousWorkingDay = Yasumi::prevWorkingDay($provider, $startDate);
 
-        self::assertInstanceOf(\DateTimeImmutable::class, $previousWorkingDay);
+        self::assertInstanceOf(\DateTimeImmutable::class, $previousWorkingDay, sprintf('No holiday instance for the previous working day of `%s`', $date));
         self::assertEquals($expectedDate, $previousWorkingDay->format(self::FORMAT_DATE));
 
         // Assertion using a DateTimeImmutable instance
         $startDate = new \DateTimeImmutable($date, new \DateTimeZone($timezone));
         $previousWorkingDay = Yasumi::prevWorkingDay($provider, $startDate);
 
-        self::assertInstanceOf(\DateTimeImmutable::class, $previousWorkingDay);
+        self::assertInstanceOf(\DateTimeImmutable::class, $previousWorkingDay, sprintf('No holiday instance for the previous working day of `%s`', $date));
         self::assertEquals($expectedDate, $previousWorkingDay->format(self::FORMAT_DATE));
     }
 
