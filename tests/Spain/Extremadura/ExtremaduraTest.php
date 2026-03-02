@@ -37,7 +37,7 @@ class ExtremaduraTest extends ExtremaduraBaseTestCase implements ProviderTestCas
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1984);
+        $this->year = $this->generateRandomYear(1985);
     }
 
     /**
