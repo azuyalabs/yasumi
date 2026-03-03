@@ -59,7 +59,7 @@ class NewYearsDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         }
 
         // Two days later New Year's Day
-        if ($year <= 1990) {
+        if ($year <= 1989) {
             $this->assertHoliday(
                 self::REGION,
                 'twoDaysLaterNewYearsDay',
@@ -84,7 +84,7 @@ class NewYearsDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             'twoDaysLaterNewYearsDay',
-            $this->generateRandomYear(1991)
+            $this->generateRandomYear(1990)
         );
     }
 
