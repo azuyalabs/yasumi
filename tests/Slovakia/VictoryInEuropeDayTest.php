@@ -59,11 +59,13 @@ class VictoryInEuropeDayTest extends SlovakiaBaseTestCase implements HolidayTest
      */
     public function HolidayDataProvider(): array
     {
-        return $this->generateRandomDatesWithModifier(5, 8, function ($year, \DateTime $date): void {
+        return $this->generateRandomDatesWithModifier(5, 8, function ($year, \DateTime $date): ?bool {
             // Victory in Europe Day is not observed in 2025 and 2026
             if (in_array($year, [2025, 2026])) {
-                return;
+                return false;
             }
+
+            return null;
         }, 5, 1000, self::TIMEZONE);
     }
 

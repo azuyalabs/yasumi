@@ -240,7 +240,10 @@ trait Randomizer
             $year = $this->generateRandomYear($range);
             $date = new \DateTime("{$year}-{$month}-{$day}", new \DateTimeZone($timezone ?? 'UTC'));
 
-            $callback($year, $date);
+            if (false === $callback($year, $date)) {
+                --$i;
+                continue;
+            }
 
             $data[] = [$year, $date->format('Y-m-d')];
         }

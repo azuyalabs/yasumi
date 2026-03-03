@@ -56,11 +56,13 @@ class OurLadyOfSorrowsDayTest extends SlovakiaBaseTestCase implements HolidayTes
      */
     public function HolidayDataProvider(): array
     {
-        return $this->generateRandomDatesWithModifier(9, 15, function ($year, \DateTime $date): void {
+        return $this->generateRandomDatesWithModifier(9, 15, function ($year, \DateTime $date): ?bool {
             // Our Lady of Sorrows Day is not observed in 2025 and 2026
             if (in_array($year, [2025, 2026])) {
-                return;
+                return false;
             }
+
+            return null;
         }, 5, 1000, self::TIMEZONE);
     }
 
