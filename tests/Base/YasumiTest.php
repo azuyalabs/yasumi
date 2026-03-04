@@ -61,6 +61,14 @@ class YasumiTest extends TestCase
         Yasumi::create('AbstractProvider');
     }
 
+    public function testCreateWithClassNotImplementingProviderInterface(): void
+    {
+        $this->expectException(ProviderNotFoundException::class);
+
+        $class = new class {};
+        Yasumi::create($class::class, self::YEAR_LOWER_BOUND);
+    }
+
     public function testCreateWithAbstractExtension(): void
     {
         $class = YasumiExternalProvider::class;

@@ -28,6 +28,8 @@ use Yasumi\Yasumi;
 
 /**
  * Class AbstractProvider.
+ *
+ * @implements \IteratorAggregate<string, Holiday>
  */
 abstract class AbstractProvider implements \Countable, ProviderInterface, \IteratorAggregate
 {
@@ -236,6 +238,7 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
         return new BetweenFilter($this->getIterator(), $startDate, $endDate, $equals ?? true);
     }
 
+    /** @return \ArrayIterator<string, Holiday> */
     public function getIterator(): \ArrayIterator
     {
         $this->ensureSorted();

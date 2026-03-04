@@ -17,8 +17,10 @@ declare(strict_types = 1);
 
 namespace Yasumi\Filters;
 
+use Yasumi\Holiday;
 use Yasumi\SubstituteHoliday;
 
+/** @extends \FilterIterator<string, Holiday, \Iterator<string, Holiday>> */
 abstract class AbstractFilter extends \FilterIterator implements \Countable
 {
     /**

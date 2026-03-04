@@ -17,8 +17,6 @@ declare(strict_types = 1);
 
 namespace Yasumi\Filters;
 
-use Yasumi\ProviderInterface;
-
 /**
  * BetweenFilter is a class used for filtering holidays based on given date range.
  *
@@ -40,11 +38,11 @@ class BetweenFilter extends AbstractFilter
     /**
      * Construct the Between FilterIterator Object.
      *
-     * @param \Iterator<ProviderInterface> $iterator  Iterator object of the Holidays Provider
-     * @param \DateTimeInterface           $startDate Start date of the time frame to check against
-     * @param \DateTimeInterface           $endDate   End date of the time frame to check against
-     * @param bool                         $equal     Indicate whether the start and end dates should be included in the
-     *                                                comparison
+     * @param \Iterator<string, \Yasumi\Holiday> $iterator  Iterator object of the Holidays Provider
+     * @param \DateTimeInterface                 $startDate Start date of the time frame to check against
+     * @param \DateTimeInterface                 $endDate   End date of the time frame to check against
+     * @param bool                               $equal     Indicate whether the start and end dates should be included in the
+     *                                                      comparison
      */
     public function __construct(
         \Iterator $iterator,

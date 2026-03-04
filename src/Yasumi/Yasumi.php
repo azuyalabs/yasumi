@@ -150,7 +150,13 @@ class Yasumi
             throw new UnknownLocaleException(sprintf('Locale "%s" is not a valid locale.', $locale));
         }
 
-        return new $providerClass($year, $locale, self::$globalTranslations);
+        $instance = new $providerClass($year, $locale, self::$globalTranslations);
+
+        if (! $instance instanceof ProviderInterface) {
+            throw new ProviderNotFoundException(sprintf('Holiday provider "%s" does not implement ProviderInterface.', $class));
+        }
+
+        return $instance;
     }
 
     /**
@@ -200,7 +206,7 @@ class Yasumi
     /**
      * Returns a list of available holiday providers.
      *
-     * @return array<string, array<array-key, string>|string|null> list of available holiday providers
+     * @return array<string, string> list of available holiday providers
      *
      * @throws \ReflectionException
      */
@@ -238,7 +244,13 @@ class Yasumi
             $quotedDs = preg_quote(\DIRECTORY_SEPARATOR, '');
             $provider = preg_replace("#^.+{$quotedDs}Provider{$quotedDs}(.+)\\.php$#", '$1', $file->getPathName());
 
-            $class = new \ReflectionClass(sprintf('Yasumi\Provider\%s', str_replace('/', '\\', $provider)));
+            if (! is_string($provider)) {
+                continue;
+            }
+
+            /** @var class-string $providerClass */
+            $providerClass = sprintf('Yasumi\Provider\%s', str_replace('/', '\\', $provider));
+            $class = new \ReflectionClass($providerClass);
 
             $key = 'ID';
 

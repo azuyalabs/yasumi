@@ -43,18 +43,20 @@ echo PHP_EOL;
 // Get a holiday instance for Independence Day
 $independenceDay = $holidays->getHoliday('independenceDay');
 
-// Show the localized name
-echo 'Name of the holiday : ' . $independenceDay->getName() . PHP_EOL;
+if (null !== $independenceDay) {
+    // Show the localized name
+    echo 'Name of the holiday : ' . $independenceDay->getName() . PHP_EOL;
 
-// Show the date
-echo "Date of the holiday : {$independenceDay}" . PHP_EOL;
+    // Show the date
+    echo "Date of the holiday : {$independenceDay}" . PHP_EOL;
 
-// Show the type of holiday
-echo 'Type of holiday     : ' . $independenceDay->getType() . PHP_EOL;
+    // Show the type of holiday
+    echo 'Type of holiday     : ' . $independenceDay->getType() . PHP_EOL;
+}
 echo PHP_EOL;
 
 // Dump the holiday as a JSON object
 echo 'Holiday as a JSON object:' . PHP_EOL;
-echo json_encode($independenceDay, JSON_PRETTY_PRINT);
+echo json_encode($independenceDay ?? [], JSON_PRETTY_PRINT);
 
 echo PHP_EOL;

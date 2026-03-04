@@ -89,7 +89,7 @@ interface ProviderInterface extends \Countable
     /**
      * Get an iterator for the holidays.
      *
-     * @return \ArrayIterator iterator for the holidays of this calendar
+     * @return \ArrayIterator<string, Holiday> iterator for the holidays of this calendar
      */
     public function getIterator(): \ArrayIterator;
 
