@@ -66,7 +66,10 @@ class Scotland extends UnitedKingdom
 
     public function getSources(): array
     {
-        return ['https://en.wikipedia.org/wiki/Public_and_bank_holidays_in_Scotland'];
+        return [
+            'https://en.wikipedia.org/wiki/Public_and_bank_holidays_in_Scotland',
+            'https://bank-holidays.uk/history-of-bank-holidays/',
+        ];
     }
 
     /**
@@ -103,6 +106,8 @@ class Scotland extends UnitedKingdom
      * If New Years Day falls on a Saturday, the following Monday and Tuesday are bank holidays.
      *
      * @see https://www.timeanddate.com/holidays/uk/new-year-day
+     * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom
+     * @see https://bank-holidays.uk/history-of-bank-holidays/
      *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
@@ -116,7 +121,7 @@ class Scotland extends UnitedKingdom
         }
 
         $type = Holiday::TYPE_BANK;
-        if ($this->year <= 1974) {
+        if ($this->year < 1974) {
             $type = Holiday::TYPE_OBSERVANCE;
         }
 

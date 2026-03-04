@@ -78,15 +78,15 @@ class UnitedKingdomTest extends UnitedKingdomBaseTestCase implements ProviderTes
 
         $year = $this->generateRandomYear();
 
-        if (1965 >= $this->year) {
+        if (1965 <= $year) {
             $holidays[] = 'springBankHoliday';
         }
 
-        if (1974 > $this->year) {
+        if (1974 <= $year) {
             $holidays[] = 'newYearsDay';
         }
 
-        if (1978 >= $this->year) {
+        if (1978 <= $year) {
             $holidays[] = 'mayDayBankHoliday';
         }
 
@@ -115,6 +115,6 @@ class UnitedKingdomTest extends UnitedKingdomBaseTestCase implements ProviderTes
      */
     public function testSources(): void
     {
-        $this->assertSources(self::REGION, 1);
+        $this->assertSources(self::REGION, 2);
     }
 }

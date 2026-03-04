@@ -79,15 +79,15 @@ class EnglandTest extends EnglandBaseTestCase implements ProviderTestCase
 
         $year = $this->generateRandomYear();
 
-        if (1965 >= $this->year) {
+        if (1965 <= $year) {
             $holidays[] = 'springBankHoliday';
         }
 
-        if (1974 > $this->year) {
+        if (1974 <= $year) {
             $holidays[] = 'newYearsDay';
         }
 
-        if (1978 >= $this->year) {
+        if (1978 <= $year) {
             $holidays[] = 'mayDayBankHoliday';
         }
 
@@ -116,6 +116,6 @@ class EnglandTest extends EnglandBaseTestCase implements ProviderTestCase
      */
     public function testSources(): void
     {
-        $this->assertSources(self::REGION, 1);
+        $this->assertSources(self::REGION, 2);
     }
 }

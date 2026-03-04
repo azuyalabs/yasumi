@@ -56,6 +56,13 @@ class NorthernIreland extends UnitedKingdom
         $this->calculateBattleOfTheBoyne();
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://nextbankholidays.co.uk/guides/battle-of-the-boyne/',
+        ];
+    }
+
     /**
      * St. Patrick's Day.
      *
@@ -110,6 +117,7 @@ class NorthernIreland extends UnitedKingdom
      * Boyne (1690), which began the Protestant Ascendancy in Ireland.
      *
      * @see https://en.wikipedia.org/wiki/The_Twelfth
+     * @see https://nextbankholidays.co.uk/guides/battle-of-the-boyne/
      *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException

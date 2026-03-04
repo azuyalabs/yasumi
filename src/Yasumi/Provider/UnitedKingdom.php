@@ -68,6 +68,7 @@ class UnitedKingdom extends AbstractProvider
     {
         return [
             'https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom',
+            'https://bank-holidays.uk/history-of-bank-holidays/',
         ];
     }
 
@@ -82,6 +83,7 @@ class UnitedKingdom extends AbstractProvider
      * often run to a holiday timetable.
      *
      * @see https://www.timeanddate.com/holidays/uk/early-may-bank-holiday
+     * @see https://bank-holidays.uk/history-of-bank-holidays/
      *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
@@ -126,6 +128,7 @@ class UnitedKingdom extends AbstractProvider
      *
      * @see https://www.timeanddate.com/holidays/uk/spring-bank-holiday
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom
+     * @see https://bank-holidays.uk/history-of-bank-holidays/
      *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
@@ -317,6 +320,7 @@ class UnitedKingdom extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom
      * @see https://www.timeanddate.com/holidays/uk/new-year-day
+     * @see https://bank-holidays.uk/history-of-bank-holidays/
      *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
@@ -330,7 +334,7 @@ class UnitedKingdom extends AbstractProvider
         }
 
         $type = Holiday::TYPE_BANK;
-        if ($this->year <= 1974) {
+        if ($this->year < 1974) {
             $type = Holiday::TYPE_OBSERVANCE;
         }
 

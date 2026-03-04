@@ -135,7 +135,7 @@ class SecondNewYearsDayTest extends ScotlandBaseTestCase implements HolidayTestC
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ADJUSTMENT_YEAR + 1),
+            $this->generateRandomYear(self::ADJUSTMENT_YEAR),
             Holiday::TYPE_BANK
         );
     }

@@ -79,15 +79,15 @@ class WalesTest extends WalesBaseTestCase implements ProviderTestCase
 
         $year = $this->generateRandomYear();
 
-        if (1965 >= $this->year) {
+        if (1965 <= $year) {
             $holidays[] = 'springBankHoliday';
         }
 
-        if (1974 > $this->year) {
+        if (1974 <= $year) {
             $holidays[] = 'newYearsDay';
         }
 
-        if (1978 >= $this->year) {
+        if (1978 <= $year) {
             $holidays[] = 'mayDayBankHoliday';
         }
 

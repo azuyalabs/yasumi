@@ -79,19 +79,19 @@ class NorthernIrelandTest extends NorthernIrelandBaseTestCase implements Provide
 
         $year = $this->generateRandomYear();
 
-        if (1926 >= $this->year) {
+        if (1926 <= $year) {
             $holidays[] = 'battleOfTheBoyne';
         }
 
-        if (1965 >= $this->year) {
+        if (1965 <= $year) {
             $holidays[] = 'springBankHoliday';
         }
 
-        if (1974 > $this->year) {
+        if (1974 <= $year) {
             $holidays[] = 'newYearsDay';
         }
 
-        if (1978 >= $this->year) {
+        if (1978 <= $year) {
             $holidays[] = 'mayDayBankHoliday';
         }
 
