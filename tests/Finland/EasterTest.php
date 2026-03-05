@@ -56,7 +56,7 @@ class EasterTest extends FinlandBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Pääsiäispäivä']
         );
     }
@@ -68,6 +68,6 @@ class EasterTest extends FinlandBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

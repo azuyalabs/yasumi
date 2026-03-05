@@ -37,7 +37,7 @@ class SaxonyAnhaltTest extends SaxonyAnhaltBaseTestCase implements ProviderTestC
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear();
+        $this->year = static::generateRandomYear();
     }
 
     /**
@@ -97,7 +97,15 @@ class SaxonyAnhaltTest extends SaxonyAnhaltBaseTestCase implements ProviderTestC
      */
     public function testOtherHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays(
+            [
+                'pentecost',
+                'newYearsEve',
+            ],
+            self::REGION,
+            $this->year,
+            Holiday::TYPE_OTHER
+        );
     }
 
     /**

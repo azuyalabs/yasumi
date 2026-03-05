@@ -37,7 +37,7 @@ class NorthwestTerritoriesTest extends NorthwestTerritoriesBaseTestCase implemen
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1978);
+        $this->year = static::generateRandomYear(1978);
     }
 
     /**

@@ -35,7 +35,7 @@ class VictoryDayTest extends UkraineBaseTestCase implements HolidayTestCase
      */
     public function testHoliday(): void
     {
-        $year = $this->generateRandomYear(2024);
+        $year = static::generateRandomYear(2024);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -49,7 +49,7 @@ class VictoryDayTest extends UkraineBaseTestCase implements HolidayTestCase
      */
     public function testHolidayBefore2024(): void
     {
-        $year = $this->generateRandomYear(2015, 2023);
+        $year = static::generateRandomYear(2015, 2023);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -63,7 +63,7 @@ class VictoryDayTest extends UkraineBaseTestCase implements HolidayTestCase
      */
     public function testNotHolidayBeforeEstablishment(): void
     {
-        $year = $this->generateRandomYear(1000, 2014);
+        $year = static::generateRandomYear(1000, 2014);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
     }
 
@@ -77,7 +77,7 @@ class VictoryDayTest extends UkraineBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(2015),
+            static::generateRandomYear(2015),
             [self::LOCALE => 'День перемоги']
         );
     }
@@ -89,6 +89,6 @@ class VictoryDayTest extends UkraineBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(2015), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(2015), Holiday::TYPE_OFFICIAL);
     }
 }

@@ -37,7 +37,7 @@ class GermanyTest extends GermanyBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1990);
+        $this->year = static::generateRandomYear(1990);
     }
 
     /**

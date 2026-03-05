@@ -47,7 +47,7 @@ class HomelandThanksgivingDayTest extends CroatiaBaseTestCase implements Holiday
      */
     public function testHomelandThanksgivingDayOnAfter1995(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -66,7 +66,7 @@ class HomelandThanksgivingDayTest extends CroatiaBaseTestCase implements Holiday
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -77,7 +77,7 @@ class HomelandThanksgivingDayTest extends CroatiaBaseTestCase implements Holiday
      */
     public function testTranslation(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::NAME_CHANGED_YEAR - 1);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::NAME_CHANGED_YEAR - 1);
         $expectedText = 'Dan domovinske zahvalnosti';
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -86,7 +86,7 @@ class HomelandThanksgivingDayTest extends CroatiaBaseTestCase implements Holiday
             [self::LOCALE => $expectedText]
         );
 
-        $year = $this->generateRandomYear(self::NAME_CHANGED_YEAR);
+        $year = static::generateRandomYear(self::NAME_CHANGED_YEAR);
         $expectedText = 'Dan pobjede i domovinske zahvalnosti i Dan hrvatskih branitelja';
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -106,7 +106,7 @@ class HomelandThanksgivingDayTest extends CroatiaBaseTestCase implements Holiday
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

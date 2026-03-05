@@ -33,11 +33,10 @@ class StJosephsDayTest extends StyriaBaseTestCase implements HolidayTestCase
     /**
      * Tests St. Joseph's Day.
      *
-     * @dataProvider StJosephsDayDataProvider
-     *
      * @param int       $year     the year for which St. Joseph's Day needs to be tested.
      * @param \DateTime $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('StJosephsDayDataProvider')]
     public function testStJosephsDay(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -50,9 +49,9 @@ class StJosephsDayTest extends StyriaBaseTestCase implements HolidayTestCase
      *
      * @throws \Exception
      */
-    public function StJosephsDayDataProvider(): array
+    public static function StJosephsDayDataProvider(): array
     {
-        return $this->generateRandomDates(3, 19, self::TIMEZONE);
+        return static::generateRandomDates(3, 19, self::TIMEZONE);
     }
 
     /**
@@ -65,7 +64,7 @@ class StJosephsDayTest extends StyriaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Josephstag']
         );
     }
@@ -77,6 +76,6 @@ class StJosephsDayTest extends StyriaBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

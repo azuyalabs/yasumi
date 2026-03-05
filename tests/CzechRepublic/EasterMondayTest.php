@@ -60,7 +60,7 @@ class EasterMondayTest extends CzechRepublicBaseTestCase implements HolidayTestC
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Velikonoční pondělí']
         );
     }
@@ -72,6 +72,6 @@ class EasterMondayTest extends CzechRepublicBaseTestCase implements HolidayTestC
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

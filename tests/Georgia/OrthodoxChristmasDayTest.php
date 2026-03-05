@@ -27,9 +27,7 @@ class OrthodoxChristmasDayTest extends GeorgiaBaseTestCase implements HolidayTes
      */
     public const HOLIDAY = 'orthodoxChristmasDay';
 
-    /**
-     * @dataProvider HolidayDataProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -42,9 +40,9 @@ class OrthodoxChristmasDayTest extends GeorgiaBaseTestCase implements HolidayTes
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
-        return $this->generateRandomDates(1, 7, self::TIMEZONE);
+        return static::generateRandomDates(1, 7, self::TIMEZONE);
     }
 
     /**
@@ -57,7 +55,7 @@ class OrthodoxChristmasDayTest extends GeorgiaBaseTestCase implements HolidayTes
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'ქრისტეს შობა']
         );
     }
@@ -69,6 +67,6 @@ class OrthodoxChristmasDayTest extends GeorgiaBaseTestCase implements HolidayTes
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

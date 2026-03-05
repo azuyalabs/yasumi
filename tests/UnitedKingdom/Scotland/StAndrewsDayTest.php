@@ -38,13 +38,12 @@ class StAndrewsDayTest extends ScotlandBaseTestCase implements HolidayTestCase
     /**
      * Tests the holiday defined in this test.
      *
-     * @dataProvider HolidayDataProvider
-     *
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
      * @throws \Exception
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, string $expected): void
     {
         $date = new \DateTime($expected, new \DateTimeZone(self::TIMEZONE));
@@ -63,12 +62,12 @@ class StAndrewsDayTest extends ScotlandBaseTestCase implements HolidayTestCase
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
         $data = [];
 
         for ($y = 0; $y < self::TEST_ITERATIONS; ++$y) {
-            $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+            $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
             $date = new \DateTime("{$year}-11-30", new \DateTimeZone(self::TIMEZONE));
             $data[] = [$year, $date->format('Y-m-d')];
         }
@@ -86,7 +85,7 @@ class StAndrewsDayTest extends ScotlandBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => 'St. Andrew’s Day']
         );
     }
@@ -101,7 +100,7 @@ class StAndrewsDayTest extends ScotlandBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_BANK
         );
     }

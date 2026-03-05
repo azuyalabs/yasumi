@@ -42,7 +42,7 @@ class NationalDayTest extends RomaniaBaseTestCase implements HolidayTestCase
      */
     public function testNationalDayOnAfter1990(): void
     {
-        $year = $this->generateRandomYear(1990);
+        $year = static::generateRandomYear(1990);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -58,7 +58,7 @@ class NationalDayTest extends RomaniaBaseTestCase implements HolidayTestCase
      */
     public function testNationalDayBetween19481989(): void
     {
-        $year = $this->generateRandomYear(1948, 1989);
+        $year = static::generateRandomYear(1948, 1989);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -74,7 +74,7 @@ class NationalDayTest extends RomaniaBaseTestCase implements HolidayTestCase
      */
     public function testNationalDayBetween18661947(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1947);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, 1947);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -93,7 +93,7 @@ class NationalDayTest extends RomaniaBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -107,7 +107,7 @@ class NationalDayTest extends RomaniaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => 'Ziua Națională']
         );
     }
@@ -122,7 +122,7 @@ class NationalDayTest extends RomaniaBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

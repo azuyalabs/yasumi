@@ -33,11 +33,10 @@ class EpiphanyTest extends ItalyBaseTestCase implements HolidayTestCase
     /**
      * Tests Epiphany.
      *
-     * @dataProvider EpiphanyDataProvider
-     *
      * @param int       $year     the year for which Epiphany needs to be tested
      * @param \DateTime $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('EpiphanyDataProvider')]
     public function testEpiphany(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -50,9 +49,9 @@ class EpiphanyTest extends ItalyBaseTestCase implements HolidayTestCase
      *
      * @throws \Exception
      */
-    public function EpiphanyDataProvider(): array
+    public static function EpiphanyDataProvider(): array
     {
-        return $this->generateRandomDates(1, 6, self::TIMEZONE);
+        return static::generateRandomDates(1, 6, self::TIMEZONE);
     }
 
     /**
@@ -65,7 +64,7 @@ class EpiphanyTest extends ItalyBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Epifania']
         );
     }
@@ -77,6 +76,6 @@ class EpiphanyTest extends ItalyBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

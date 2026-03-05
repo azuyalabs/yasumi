@@ -35,11 +35,10 @@ class VictoryInEuropeDayTest extends SlovakiaBaseTestCase implements HolidayTest
     /**
      * Tests Christmas Day.
      *
-     * @dataProvider HolidayDataProvider
-     *
      * @param int    $year     the year for which this holiday needs to be tested
      * @param string $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, string $expected): void
     {
         $this->assertHoliday(
@@ -57,9 +56,9 @@ class VictoryInEuropeDayTest extends SlovakiaBaseTestCase implements HolidayTest
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
-        return $this->generateRandomDatesWithModifier(5, 8, function ($year, \DateTime $date): ?bool {
+        return static::generateRandomDatesWithModifier(5, 8, function ($year, \DateTime $date): ?bool {
             // Victory in Europe Day is not observed in 2025 and 2026
             if (in_array($year, [2025, 2026])) {
                 return false;
@@ -78,7 +77,7 @@ class VictoryInEuropeDayTest extends SlovakiaBaseTestCase implements HolidayTest
     {
         // Victory in Europe Day is not observed in 2025 and 2026
         $validYears = array_merge(range(1993, 2024), range(2027, 2100));
-        $year = $this->randomYearFromArray($validYears);
+        $year = static::randomYearFromArray($validYears);
 
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -97,7 +96,7 @@ class VictoryInEuropeDayTest extends SlovakiaBaseTestCase implements HolidayTest
     {
         // Victory in Europe Day is not observed in 2025 and 2026
         $validYears = array_merge(range(1993, 2024), range(2027, 2100));
-        $year = $this->randomYearFromArray($validYears);
+        $year = static::randomYearFromArray($validYears);
 
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_BANK);
     }

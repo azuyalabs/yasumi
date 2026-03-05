@@ -47,7 +47,7 @@ class EstoniaTest extends EstoniaBaseTestCase implements ProviderTestCase
             'stJohnsDay',
         ];
 
-        $year = $this->generateRandomYear();
+        $year = static::generateRandomYear();
 
         if ($year >= Estonia::DECLARATION_OF_INDEPENDENCE_YEAR) {
             $holidays[] = 'independenceDay';
@@ -71,7 +71,7 @@ class EstoniaTest extends EstoniaBaseTestCase implements ProviderTestCase
      */
     public function testObservedHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays([], self::REGION, static::generateRandomYear(), Holiday::TYPE_OBSERVANCE);
     }
 
     /**
@@ -81,7 +81,7 @@ class EstoniaTest extends EstoniaBaseTestCase implements ProviderTestCase
      */
     public function testSeasonalHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_SEASON);
+        $this->assertDefinedHolidays([], self::REGION, static::generateRandomYear(), Holiday::TYPE_SEASON);
     }
 
     /**
@@ -91,7 +91,7 @@ class EstoniaTest extends EstoniaBaseTestCase implements ProviderTestCase
      */
     public function testBankHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_BANK);
+        $this->assertDefinedHolidays([], self::REGION, static::generateRandomYear(), Holiday::TYPE_BANK);
     }
 
     /**
@@ -101,7 +101,7 @@ class EstoniaTest extends EstoniaBaseTestCase implements ProviderTestCase
      */
     public function testOtherHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays([], self::REGION, static::generateRandomYear(), Holiday::TYPE_OTHER);
     }
 
     /**

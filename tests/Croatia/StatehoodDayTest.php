@@ -47,7 +47,7 @@ class StatehoodDayTest extends CroatiaBaseTestCase implements HolidayTestCase
      */
     public function testStatehoodDay(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::DATE_CHANGE_YEAR - 1);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::DATE_CHANGE_YEAR - 1);
         $expectedDate = "{$year}-6-25";
         $this->assertHoliday(
             self::REGION,
@@ -56,7 +56,7 @@ class StatehoodDayTest extends CroatiaBaseTestCase implements HolidayTestCase
             new \DateTime($expectedDate, new \DateTimeZone(self::TIMEZONE))
         );
 
-        $year = $this->generateRandomYear(self::DATE_CHANGE_YEAR);
+        $year = static::generateRandomYear(self::DATE_CHANGE_YEAR);
         $expectedDate = "{$year}-5-30";
         $this->assertHoliday(
             self::REGION,
@@ -76,7 +76,7 @@ class StatehoodDayTest extends CroatiaBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -90,7 +90,7 @@ class StatehoodDayTest extends CroatiaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => 'Dan državnosti']
         );
     }
@@ -105,7 +105,7 @@ class StatehoodDayTest extends CroatiaBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

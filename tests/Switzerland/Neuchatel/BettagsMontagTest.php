@@ -37,7 +37,7 @@ class BettagsMontagTest extends NeuchatelBaseTestCase implements HolidayTestCase
      */
     public function testBettagsMontagOnAfter1832(): void
     {
-        $year = $this->generateRandomYear(1832);
+        $year = static::generateRandomYear(1832);
 
         // Find third Sunday of September
         $date = new \DateTime('Third Sunday of ' . $year . '-09', new \DateTimeZone(self::TIMEZONE));
@@ -54,7 +54,7 @@ class BettagsMontagTest extends NeuchatelBaseTestCase implements HolidayTestCase
      */
     public function testBettagsMontagBefore1832(): void
     {
-        $year = $this->generateRandomYear(1000, 1831);
+        $year = static::generateRandomYear(1000, 1831);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
     }
 
@@ -68,7 +68,7 @@ class BettagsMontagTest extends NeuchatelBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1832),
+            static::generateRandomYear(1832),
             [self::LOCALE => 'Jeûne fédéral']
         );
     }
@@ -80,6 +80,6 @@ class BettagsMontagTest extends NeuchatelBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(1900), Holiday::TYPE_OTHER);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(1900), Holiday::TYPE_OTHER);
     }
 }

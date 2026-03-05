@@ -43,7 +43,7 @@ class RestorationOfIndependenceDayTest extends EstoniaBaseTestCase implements Ho
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, Estonia::RESTORATION_OF_INDEPENDENCE_YEAR - 1)
+            static::generateRandomYear(1000, Estonia::RESTORATION_OF_INDEPENDENCE_YEAR - 1)
         );
     }
 
@@ -54,7 +54,7 @@ class RestorationOfIndependenceDayTest extends EstoniaBaseTestCase implements Ho
      */
     public function testHolidayAfter(): void
     {
-        $year = $this->generateRandomYear(Estonia::RESTORATION_OF_INDEPENDENCE_YEAR);
+        $year = static::generateRandomYear(Estonia::RESTORATION_OF_INDEPENDENCE_YEAR);
 
         $this->assertHoliday(
             self::REGION,
@@ -72,13 +72,13 @@ class RestorationOfIndependenceDayTest extends EstoniaBaseTestCase implements Ho
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(Estonia::RESTORATION_OF_INDEPENDENCE_YEAR),
+            static::generateRandomYear(Estonia::RESTORATION_OF_INDEPENDENCE_YEAR),
             [self::LOCALE => 'Taasiseseisvumispäev']
         );
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(Estonia::RESTORATION_OF_INDEPENDENCE_YEAR),
+            static::generateRandomYear(Estonia::RESTORATION_OF_INDEPENDENCE_YEAR),
             ['en' => 'Day of Restoration of Independence']
         );
     }
@@ -91,7 +91,7 @@ class RestorationOfIndependenceDayTest extends EstoniaBaseTestCase implements Ho
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(Estonia::RESTORATION_OF_INDEPENDENCE_YEAR),
+            static::generateRandomYear(Estonia::RESTORATION_OF_INDEPENDENCE_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

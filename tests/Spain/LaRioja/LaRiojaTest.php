@@ -37,7 +37,7 @@ class LaRiojaTest extends LaRiojaBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1983);
+        $this->year = static::generateRandomYear(1983);
     }
 
     /**

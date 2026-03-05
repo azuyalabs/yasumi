@@ -30,9 +30,7 @@ class InternationalWomensDayTest extends UkraineBaseTestCase implements HolidayT
      */
     public const HOLIDAY = 'internationalWomensDay';
 
-    /**
-     * @dataProvider HolidayDataProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -45,9 +43,9 @@ class InternationalWomensDayTest extends UkraineBaseTestCase implements HolidayT
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
-        return $this->generateRandomDates(3, 8, self::TIMEZONE);
+        return static::generateRandomDates(3, 8, self::TIMEZONE);
     }
 
     /**
@@ -60,7 +58,7 @@ class InternationalWomensDayTest extends UkraineBaseTestCase implements HolidayT
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Міжнародний жіночий день']
         );
     }
@@ -72,6 +70,6 @@ class InternationalWomensDayTest extends UkraineBaseTestCase implements HolidayT
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

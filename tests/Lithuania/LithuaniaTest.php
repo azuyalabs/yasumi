@@ -49,7 +49,7 @@ class LithuaniaTest extends LithuaniaBaseTestCase
             'secondChristmasDay',
         ];
 
-        $year = $this->generateRandomYear();
+        $year = static::generateRandomYear();
 
         if ($year >= Lithuania::RESTORATION_OF_THE_STATE_YEAR) {
             $holidays[] = 'restorationOfTheStateOfLithuaniaDay';
@@ -73,7 +73,7 @@ class LithuaniaTest extends LithuaniaBaseTestCase
      */
     public function testObservedHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays([], self::REGION, static::generateRandomYear(), Holiday::TYPE_OBSERVANCE);
     }
 
     /**
@@ -83,7 +83,7 @@ class LithuaniaTest extends LithuaniaBaseTestCase
      */
     public function testSeasonalHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_SEASON);
+        $this->assertDefinedHolidays([], self::REGION, static::generateRandomYear(), Holiday::TYPE_SEASON);
     }
 
     /**
@@ -93,7 +93,7 @@ class LithuaniaTest extends LithuaniaBaseTestCase
      */
     public function testBankHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_BANK);
+        $this->assertDefinedHolidays([], self::REGION, static::generateRandomYear(), Holiday::TYPE_BANK);
     }
 
     /**
@@ -103,7 +103,7 @@ class LithuaniaTest extends LithuaniaBaseTestCase
      */
     public function testOtherHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays([], self::REGION, static::generateRandomYear(), Holiday::TYPE_OTHER);
     }
 
     /**

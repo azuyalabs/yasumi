@@ -27,9 +27,7 @@ class SecondNewYearDayTest extends GeorgiaBaseTestCase implements HolidayTestCas
      */
     public const HOLIDAY = 'secondDayOfNewYear';
 
-    /**
-     * @dataProvider HolidayDataProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -42,9 +40,9 @@ class SecondNewYearDayTest extends GeorgiaBaseTestCase implements HolidayTestCas
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
-        return $this->generateRandomDates(1, 2, self::TIMEZONE);
+        return static::generateRandomDates(1, 2, self::TIMEZONE);
     }
 
     /**
@@ -57,7 +55,7 @@ class SecondNewYearDayTest extends GeorgiaBaseTestCase implements HolidayTestCas
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'ბედობა']
         );
     }
@@ -69,6 +67,6 @@ class SecondNewYearDayTest extends GeorgiaBaseTestCase implements HolidayTestCas
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

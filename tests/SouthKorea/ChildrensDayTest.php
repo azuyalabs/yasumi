@@ -42,7 +42,7 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
      */
     public function testHoliday(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -122,7 +122,7 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -136,7 +136,7 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => '어린이날']
         );
     }
@@ -151,7 +151,7 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

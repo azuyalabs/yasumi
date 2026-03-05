@@ -33,13 +33,12 @@ class WorkersDayTest extends ZurichBaseTestCase implements HolidayTestCase
     /**
      * Tests the holiday defined in this test.
      *
-     * @dataProvider HolidayDataProvider
-     *
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
      * @throws \Exception
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, string $expected): void
     {
         $date = new \DateTime($expected, new \DateTimeZone(self::TIMEZONE));
@@ -53,12 +52,12 @@ class WorkersDayTest extends ZurichBaseTestCase implements HolidayTestCase
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
         $data = [];
 
         for ($y = 0; $y < 50; ++$y) {
-            $year = $this->generateRandomYear();
+            $year = static::generateRandomYear();
             $date = new \DateTime("{$year}-5-1", new \DateTimeZone(self::TIMEZONE));
             $data[] = [$year, $date->format('Y-m-d')];
         }
@@ -76,7 +75,7 @@ class WorkersDayTest extends ZurichBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Tag der Arbeit']
         );
     }
@@ -88,6 +87,6 @@ class WorkersDayTest extends ZurichBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OTHER);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OTHER);
     }
 }

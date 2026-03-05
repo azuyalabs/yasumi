@@ -37,7 +37,7 @@ class AsturiasTest extends AsturiasBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1984);
+        $this->year = static::generateRandomYear(1984);
     }
 
     /**

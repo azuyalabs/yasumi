@@ -3,6 +3,7 @@
 .php-cs-fixer.cache
 .php_cs.cache
 .phpactor.json
+.phpunit.cache
 .phpunit.result.cache
 bin/_*
 composer.lock

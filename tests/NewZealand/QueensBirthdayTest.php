@@ -38,11 +38,10 @@ class QueensBirthdayTest extends NewZealandBaseTestCase implements HolidayTestCa
     /**
      * Tests Queens Birthday.
      *
-     * @dataProvider HolidayDataProvider
-     *
      * @param int       $year     the year for which the holiday defined in this test needs to be tested
      * @param \DateTime $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -63,12 +62,12 @@ class QueensBirthdayTest extends NewZealandBaseTestCase implements HolidayTestCa
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
         $data = [];
 
         for ($y = 1; $y <= 100; ++$y) {
-            $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+            $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
             $expected = new \DateTime("first monday of june {$year}", new \DateTimeZone(self::TIMEZONE));
             $data[] = [$year, $expected];
         }
@@ -86,7 +85,7 @@ class QueensBirthdayTest extends NewZealandBaseTestCase implements HolidayTestCa
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => 'Queen’s Birthday']
         );
     }
@@ -101,7 +100,7 @@ class QueensBirthdayTest extends NewZealandBaseTestCase implements HolidayTestCa
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

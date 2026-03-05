@@ -43,13 +43,12 @@ class NewYearsDayTest extends UnitedKingdomBaseTestCase implements HolidayTestCa
     /**
      * Tests the holiday defined in this test on or after establishment.
      *
-     * @dataProvider HolidayDataProvider
-     *
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
      * @throws \Exception
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHolidayOnAfterEstablishment(int $year, string $expected): void
     {
         $this->assertHoliday(
@@ -70,7 +69,7 @@ class NewYearsDayTest extends UnitedKingdomBaseTestCase implements HolidayTestCa
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -84,7 +83,7 @@ class NewYearsDayTest extends UnitedKingdomBaseTestCase implements HolidayTestCa
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::ADJUSTMENT_YEAR - 1),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::ADJUSTMENT_YEAR - 1),
             Holiday::TYPE_OBSERVANCE
         );
     }
@@ -96,9 +95,9 @@ class NewYearsDayTest extends UnitedKingdomBaseTestCase implements HolidayTestCa
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
-        return $this->generateRandomDatesWithHolidayMovedToMonday(01, 01, self::TIMEZONE, 10, self::ESTABLISHMENT_YEAR);
+        return static::generateRandomDatesWithHolidayMovedToMonday(01, 01, self::TIMEZONE, 10, self::ESTABLISHMENT_YEAR);
     }
 
     /**
@@ -111,7 +110,7 @@ class NewYearsDayTest extends UnitedKingdomBaseTestCase implements HolidayTestCa
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => 'New Year’s Day']
         );
     }
@@ -126,7 +125,7 @@ class NewYearsDayTest extends UnitedKingdomBaseTestCase implements HolidayTestCa
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ADJUSTMENT_YEAR),
+            static::generateRandomYear(self::ADJUSTMENT_YEAR),
             Holiday::TYPE_BANK
         );
     }

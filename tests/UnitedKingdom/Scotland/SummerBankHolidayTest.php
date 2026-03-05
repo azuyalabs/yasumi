@@ -42,7 +42,7 @@ class SummerBankHolidayTest extends ScotlandBaseTestCase implements HolidayTestC
      */
     public function testHoliday(): void
     {
-        $year = $this->generateRandomYear(1970);
+        $year = static::generateRandomYear(1970);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -61,7 +61,7 @@ class SummerBankHolidayTest extends ScotlandBaseTestCase implements HolidayTestC
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -75,7 +75,7 @@ class SummerBankHolidayTest extends ScotlandBaseTestCase implements HolidayTestC
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => 'August Bank Holiday']
         );
     }
@@ -90,7 +90,7 @@ class SummerBankHolidayTest extends ScotlandBaseTestCase implements HolidayTestC
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_BANK
         );
     }

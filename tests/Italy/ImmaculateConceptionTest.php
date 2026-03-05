@@ -33,11 +33,10 @@ class ImmaculateConceptionTest extends ItalyBaseTestCase implements HolidayTestC
     /**
      * Tests the day of Immaculate Conception.
      *
-     * @dataProvider ImmaculateConceptionDataProvider
-     *
      * @param int       $year     the year for which the day of Immaculate Conception needs to be tested
      * @param \DateTime $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('ImmaculateConceptionDataProvider')]
     public function testImmaculateConception(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -50,9 +49,9 @@ class ImmaculateConceptionTest extends ItalyBaseTestCase implements HolidayTestC
      *
      * @throws \Exception
      */
-    public function ImmaculateConceptionDataProvider(): array
+    public static function ImmaculateConceptionDataProvider(): array
     {
-        return $this->generateRandomDates(12, 8, self::TIMEZONE);
+        return static::generateRandomDates(12, 8, self::TIMEZONE);
     }
 
     /**
@@ -65,7 +64,7 @@ class ImmaculateConceptionTest extends ItalyBaseTestCase implements HolidayTestC
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Immacolata Concezione']
         );
     }
@@ -77,6 +76,6 @@ class ImmaculateConceptionTest extends ItalyBaseTestCase implements HolidayTestC
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

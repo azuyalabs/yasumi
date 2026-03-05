@@ -33,11 +33,10 @@ class StStephensDayTest extends CroatiaBaseTestCase implements HolidayTestCase
     /**
      * Tests the day of St. Stephen's Day.
      *
-     * @dataProvider stStephensDayDataProvider
-     *
      * @param int       $year     the year for which St. Stephen's Day needs to be tested
      * @param \DateTime $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('stStephensDayDataProvider')]
     public function teststStephensDay(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -50,9 +49,9 @@ class StStephensDayTest extends CroatiaBaseTestCase implements HolidayTestCase
      *
      * @throws \Exception
      */
-    public function stStephensDayDataProvider(): array
+    public static function stStephensDayDataProvider(): array
     {
-        return $this->generateRandomDates(12, 26, self::TIMEZONE);
+        return static::generateRandomDates(12, 26, self::TIMEZONE);
     }
 
     /**
@@ -65,7 +64,7 @@ class StStephensDayTest extends CroatiaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Sveti Stjepan']
         );
     }
@@ -77,6 +76,6 @@ class StStephensDayTest extends CroatiaBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

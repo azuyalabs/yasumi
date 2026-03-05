@@ -35,21 +35,20 @@ class PentecostTest extends LatviaBaseTestCase implements HolidayTestCase
      *
      * @throws \Exception
      */
-    public function holidayDataProvider(): array
+    public static function holidayDataProvider(): array
     {
-        return $this->generateRandomPentecostDates(self::TIMEZONE);
+        return static::generateRandomPentecostDates(self::TIMEZONE);
     }
 
     /**
      * Test defined holiday in the test.
-     *
-     * @dataProvider holidayDataProvider
      *
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
      * @throws \Exception
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('holidayDataProvider')]
     public function testHoliday(int $year, string $expected): void
     {
         $this->assertHoliday(
@@ -68,7 +67,7 @@ class PentecostTest extends LatviaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Vasarsvētkus']
         );
     }
@@ -78,6 +77,6 @@ class PentecostTest extends LatviaBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

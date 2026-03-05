@@ -33,11 +33,10 @@ class HalloweenTest extends NetherlandsBaseTestCase implements HolidayTestCase
     /**
      * Tests Halloween.
      *
-     * @dataProvider HalloweenDataProvider
-     *
      * @param int       $year     the year for which Halloween needs to be tested
      * @param \DateTime $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HalloweenDataProvider')]
     public function testHoliday(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -50,9 +49,9 @@ class HalloweenTest extends NetherlandsBaseTestCase implements HolidayTestCase
      *
      * @throws \Exception
      */
-    public function HalloweenDataProvider(): array
+    public static function HalloweenDataProvider(): array
     {
-        return $this->generateRandomDates(10, 31, self::TIMEZONE);
+        return static::generateRandomDates(10, 31, self::TIMEZONE);
     }
 
     /**
@@ -65,7 +64,7 @@ class HalloweenTest extends NetherlandsBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Halloween']
         );
     }
@@ -77,6 +76,6 @@ class HalloweenTest extends NetherlandsBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OBSERVANCE);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OBSERVANCE);
     }
 }

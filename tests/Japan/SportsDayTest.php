@@ -76,7 +76,7 @@ class SportsDayTest extends JapanBaseTestCase implements HolidayTestCase
      */
     public function testSportsDayAfter2000(): void
     {
-        $year = $this->generateRandomYear(2001);
+        $year = static::generateRandomYear(2001);
 
         // Some years the date has changed, so in this test we need to skip them.
         if (! in_array($year, [2020, 2021])) {
@@ -134,7 +134,7 @@ class SportsDayTest extends JapanBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -149,7 +149,7 @@ class SportsDayTest extends JapanBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2019),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, 2019),
             [self::LOCALE => '体育の日']
         );
     }
@@ -166,7 +166,7 @@ class SportsDayTest extends JapanBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear($year),
+            static::generateRandomYear($year),
             [self::LOCALE => 'スポーツの日']
         );
     }
@@ -181,7 +181,7 @@ class SportsDayTest extends JapanBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

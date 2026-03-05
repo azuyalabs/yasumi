@@ -33,11 +33,10 @@ class ChristmasDayTest extends BaselLandschaftBaseTestCase implements HolidayTes
     /**
      * Tests Christmas Day.
      *
-     * @dataProvider ChristmasDayDataProvider
-     *
      * @param int       $year     the year for which Christmas Day needs to be tested
      * @param \DateTime $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('ChristmasDayDataProvider')]
     public function testChristmasDay(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -50,9 +49,9 @@ class ChristmasDayTest extends BaselLandschaftBaseTestCase implements HolidayTes
      *
      * @throws \Exception
      */
-    public function ChristmasDayDataProvider(): array
+    public static function ChristmasDayDataProvider(): array
     {
-        return $this->generateRandomDates(12, 25, self::TIMEZONE);
+        return static::generateRandomDates(12, 25, self::TIMEZONE);
     }
 
     /**
@@ -65,7 +64,7 @@ class ChristmasDayTest extends BaselLandschaftBaseTestCase implements HolidayTes
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Weihnachtstag']
         );
     }
@@ -77,6 +76,6 @@ class ChristmasDayTest extends BaselLandschaftBaseTestCase implements HolidayTes
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OTHER);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OTHER);
     }
 }

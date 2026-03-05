@@ -37,7 +37,7 @@ class BaselLandschaftTest extends BaselLandschaftBaseTestCase implements Provide
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1945);
+        $this->year = static::generateRandomYear(1945);
     }
 
     /**
@@ -103,7 +103,21 @@ class BaselLandschaftTest extends BaselLandschaftBaseTestCase implements Provide
      */
     public function testOtherHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays(
+            [
+                'newYearsDay',
+                'goodFriday',
+                'easterMonday',
+                'internationalWorkersDay',
+                'ascensionDay',
+                'pentecostMonday',
+                'christmasDay',
+                'stStephensDay',
+            ],
+            self::REGION,
+            $this->year,
+            Holiday::TYPE_OTHER
+        );
     }
 
     /**

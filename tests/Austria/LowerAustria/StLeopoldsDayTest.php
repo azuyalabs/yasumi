@@ -38,11 +38,10 @@ class StLeopoldsDayTest extends LowerAustriaBaseTestCase implements HolidayTestC
     /**
      * Tests Saint Leopold's Day.
      *
-     * @dataProvider StLeopoldsDayDataProvider
-     *
      * @param int       $year     the year for which Saint Leopold's Day needs to be tested
      * @param \DateTime $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('StLeopoldsDayDataProvider')]
     public function testStLeopoldsDay(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -55,12 +54,12 @@ class StLeopoldsDayTest extends LowerAustriaBaseTestCase implements HolidayTestC
      *
      * @throws \Exception
      */
-    public function StLeopoldsDayDataProvider(): array
+    public static function StLeopoldsDayDataProvider(): array
     {
         $data = [];
 
         for ($y = 0; $y < self::TEST_ITERATIONS; ++$y) {
-            $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+            $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
             $data[] = [$year, new \DateTime("{$year}-11-15", new \DateTimeZone(self::TIMEZONE))];
         }
 
@@ -77,7 +76,7 @@ class StLeopoldsDayTest extends LowerAustriaBaseTestCase implements HolidayTestC
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 2)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 2)
         );
     }
 
@@ -91,7 +90,7 @@ class StLeopoldsDayTest extends LowerAustriaBaseTestCase implements HolidayTestC
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => 'Leopold']
         );
     }
@@ -103,6 +102,6 @@ class StLeopoldsDayTest extends LowerAustriaBaseTestCase implements HolidayTestC
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(self::ESTABLISHMENT_YEAR), Holiday::TYPE_OFFICIAL);
     }
 }

@@ -42,12 +42,12 @@ class ReformationDayTest extends MecklenburgWesternPomeraniaBaseTestCase impleme
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
         $data = [];
 
         for ($y = 0; $y < self::TEST_ITERATIONS; ++$y) {
-            $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+            $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
             $data[] = [$year, new \DateTime("{$year}-10-31", new \DateTimeZone(self::TIMEZONE))];
         }
 
@@ -64,7 +64,7 @@ class ReformationDayTest extends MecklenburgWesternPomeraniaBaseTestCase impleme
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -78,7 +78,7 @@ class ReformationDayTest extends MecklenburgWesternPomeraniaBaseTestCase impleme
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => 'Reformationstag']
         );
     }
@@ -93,7 +93,7 @@ class ReformationDayTest extends MecklenburgWesternPomeraniaBaseTestCase impleme
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

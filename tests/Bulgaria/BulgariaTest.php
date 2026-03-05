@@ -26,7 +26,7 @@ class BulgariaTest extends BulgariaBaseTestCase implements ProviderTestCase
 
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear();
+        $this->year = static::generateRandomYear();
     }
 
     public function testOfficialHolidays(): void

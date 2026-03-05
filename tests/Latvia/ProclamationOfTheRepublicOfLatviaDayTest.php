@@ -43,7 +43,7 @@ class ProclamationOfTheRepublicOfLatviaDayTest extends LatviaBaseTestCase implem
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, Latvia::PROCLAMATION_OF_INDEPENDENCE_YEAR - 1)
+            static::generateRandomYear(1000, Latvia::PROCLAMATION_OF_INDEPENDENCE_YEAR - 1)
         );
     }
 
@@ -52,9 +52,9 @@ class ProclamationOfTheRepublicOfLatviaDayTest extends LatviaBaseTestCase implem
      *
      * @throws \Exception
      */
-    public function holidayDataProvider(): array
+    public static function holidayDataProvider(): array
     {
-        return $this->generateRandomDatesWithHolidayMovedToMonday(
+        return static::generateRandomDatesWithHolidayMovedToMonday(
             11,
             18,
             self::TIMEZONE,
@@ -66,13 +66,12 @@ class ProclamationOfTheRepublicOfLatviaDayTest extends LatviaBaseTestCase implem
     /**
      * Test defined holiday in the test.
      *
-     * @dataProvider holidayDataProvider
-     *
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
      * @throws \Exception
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('holidayDataProvider')]
     public function testHoliday(int $year, string $expected): void
     {
         $this->assertHoliday(
@@ -91,7 +90,7 @@ class ProclamationOfTheRepublicOfLatviaDayTest extends LatviaBaseTestCase implem
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(Latvia::PROCLAMATION_OF_INDEPENDENCE_YEAR),
+            static::generateRandomYear(Latvia::PROCLAMATION_OF_INDEPENDENCE_YEAR),
             [
                 self::LOCALE => 'Latvijas Republikas proklamēšanas diena',
                 'en' => 'Proclamation Day of the Republic of Latvia',
@@ -107,7 +106,7 @@ class ProclamationOfTheRepublicOfLatviaDayTest extends LatviaBaseTestCase implem
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(Latvia::PROCLAMATION_OF_INDEPENDENCE_YEAR),
+            static::generateRandomYear(Latvia::PROCLAMATION_OF_INDEPENDENCE_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

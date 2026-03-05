@@ -27,9 +27,11 @@ abstract class TasmaniaBaseTestCase extends AustraliaBaseTestCase
 {
     use YasumiBase;
 
+    /** Timezone in which this provider has holidays defined. */
+    public const TIMEZONE = 'Australia/Tasmania';
+
     /** Name of the region (e.g. country / state) to be tested. */
     public string $region = 'Australia\Tasmania';
 
-    /** Timezone in which this provider has holidays defined. */
     public string $timezone = 'Australia/Tasmania';
 }

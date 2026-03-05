@@ -26,7 +26,7 @@ class ChristmasEveTest extends BulgariaBaseTestCase implements HolidayTestCase
 
     public function testHoliday(): void
     {
-        $year = $this->generateRandomYear();
+        $year = static::generateRandomYear();
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -40,7 +40,7 @@ class ChristmasEveTest extends BulgariaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Бъдни вечер']
         );
     }
@@ -50,7 +50,7 @@ class ChristmasEveTest extends BulgariaBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             Holiday::TYPE_OFFICIAL
         );
     }

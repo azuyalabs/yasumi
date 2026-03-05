@@ -37,7 +37,7 @@ class BruderKlausenFestTest extends ObwaldenBaseTestCase implements HolidayTestC
      */
     public function testBruderKlausenFestOnAfter1947(): void
     {
-        $year = $this->generateRandomYear(1947);
+        $year = static::generateRandomYear(1947);
         $date = new \DateTime($year . '-09-25', new \DateTimeZone(self::TIMEZONE));
 
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
@@ -51,7 +51,7 @@ class BruderKlausenFestTest extends ObwaldenBaseTestCase implements HolidayTestC
      */
     public function testBruderKlausenFestBetween1649And1946(): void
     {
-        $year = $this->generateRandomYear(1649, 1946);
+        $year = static::generateRandomYear(1649, 1946);
         $date = new \DateTime($year . '-09-21', new \DateTimeZone(self::TIMEZONE));
 
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
@@ -65,7 +65,7 @@ class BruderKlausenFestTest extends ObwaldenBaseTestCase implements HolidayTestC
      */
     public function testBruderKlausenFestBefore1648(): void
     {
-        $year = $this->generateRandomYear(1000, 1648);
+        $year = static::generateRandomYear(1000, 1648);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
     }
 
@@ -79,7 +79,7 @@ class BruderKlausenFestTest extends ObwaldenBaseTestCase implements HolidayTestC
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1947),
+            static::generateRandomYear(1947),
             [self::LOCALE => 'Bruder-Klausen-Fest']
         );
     }
@@ -91,6 +91,6 @@ class BruderKlausenFestTest extends ObwaldenBaseTestCase implements HolidayTestC
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(1947), Holiday::TYPE_OTHER);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(1947), Holiday::TYPE_OTHER);
     }
 }

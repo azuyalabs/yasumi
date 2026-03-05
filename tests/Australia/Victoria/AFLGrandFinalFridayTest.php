@@ -36,13 +36,12 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements HolidayTes
     /**
      * Tests AFL Grand Final Friday.
      *
-     * @dataProvider HolidayDataProvider
-     *
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
      * @throws \Exception
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, string $expected): void
     {
         $this->assertHoliday(
@@ -63,7 +62,7 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements HolidayTes
         $this->assertTranslatedHolidayName(
             $this->region,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::LAST_KNOWN_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::LAST_KNOWN_YEAR),
             [self::LOCALE => 'AFL Grand Final Friday']
         );
     }
@@ -78,7 +77,7 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements HolidayTes
         $this->assertHolidayType(
             $this->region,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::LAST_KNOWN_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::LAST_KNOWN_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }
@@ -96,7 +95,7 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements HolidayTes
      *
      * @return array<array> list of test dates for the holiday defined in this test
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
         return [
             [2015, '2015-10-02'],

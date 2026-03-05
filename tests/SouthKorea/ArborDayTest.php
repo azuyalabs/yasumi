@@ -51,7 +51,7 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
      */
     public function testHoliday(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::REMOVED_YEAR);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::REMOVED_YEAR);
         $date = (self::TEMPORARY_CHANGED_YEAR === $year)
             ? new \DateTime("{$year}-3-21", new \DateTimeZone(self::TIMEZONE))
             : new \DateTime("{$year}-4-5", new \DateTimeZone(self::TIMEZONE));
@@ -74,7 +74,7 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::REMOVED_YEAR + 1)
+            static::generateRandomYear(self::REMOVED_YEAR + 1)
         );
     }
 
@@ -88,7 +88,7 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -99,7 +99,7 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
      */
     public function testTranslation(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::REMOVED_YEAR);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::REMOVED_YEAR);
         $translation = (self::TEMPORARY_CHANGED_YEAR === $year) ? '사방의 날' : '식목일';
 
         $this->assertTranslatedHolidayName(
@@ -117,7 +117,7 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::REMOVED_YEAR);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::REMOVED_YEAR);
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,

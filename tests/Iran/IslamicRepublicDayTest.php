@@ -37,7 +37,7 @@ class IslamicRepublicDayTest extends IranBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(Yasumi::YEAR_LOWER_BOUND, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(Yasumi::YEAR_LOWER_BOUND, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -46,7 +46,7 @@ class IslamicRepublicDayTest extends IranBaseTestCase implements HolidayTestCase
      */
     public function testIslamicRepublicDayBeforeEquinoxYear(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::EQUINOX_YEAR - 1);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::EQUINOX_YEAR - 1);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -60,7 +60,7 @@ class IslamicRepublicDayTest extends IranBaseTestCase implements HolidayTestCase
      */
     public function testIslamicRepublicDayOnEquinoxYear(): void
     {
-        $year = $this->generateRandomYear(self::EQUINOX_YEAR, self::EQUINOX_YEAR);
+        $year = static::generateRandomYear(self::EQUINOX_YEAR, self::EQUINOX_YEAR);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -74,7 +74,7 @@ class IslamicRepublicDayTest extends IranBaseTestCase implements HolidayTestCase
      */
     public function testIslamicRepublicDayAfterEquinoxYear(): void
     {
-        $year = $this->generateRandomYear(self::EQUINOX_YEAR + 1);
+        $year = static::generateRandomYear(self::EQUINOX_YEAR + 1);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -91,7 +91,7 @@ class IslamicRepublicDayTest extends IranBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::EQUINOX_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::EQUINOX_YEAR),
             [
                 self::LOCALE => 'روز جمهوری اسلامی',
                 'en' => 'Ruz e Jomhuri ye Eslami',
@@ -104,6 +104,6 @@ class IslamicRepublicDayTest extends IranBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::EQUINOX_YEAR), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::EQUINOX_YEAR), Holiday::TYPE_OFFICIAL);
     }
 }

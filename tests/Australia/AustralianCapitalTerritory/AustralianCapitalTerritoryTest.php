@@ -37,7 +37,7 @@ class AustralianCapitalTerritoryTest extends AustralianCapitalTerritoryBaseTestC
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(2018, 2100);
+        $this->year = static::generateRandomYear(2018, 2100);
     }
 
     /**

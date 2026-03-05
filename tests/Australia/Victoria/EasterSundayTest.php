@@ -33,13 +33,12 @@ class EasterSundayTest extends VictoriaBaseTestCase implements HolidayTestCase
     /**
      * Tests Easter Sunday.
      *
-     * @dataProvider HolidayDataProvider
-     *
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
      * @throws \Exception
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, string $expected): void
     {
         $this->assertHoliday(
@@ -57,13 +56,13 @@ class EasterSundayTest extends VictoriaBaseTestCase implements HolidayTestCase
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
         $data = [];
 
         for ($y = 0; $y < 50; ++$y) {
-            $year = $this->generateRandomYear();
-            $date = $this->calculateEaster($year, $this->timezone);
+            $year = static::generateRandomYear();
+            $date = static::computeEaster($year, self::TIMEZONE);
 
             $data[] = [$year, $date->format('Y-m-d')];
         }
@@ -81,7 +80,7 @@ class EasterSundayTest extends VictoriaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             $this->region,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Easter Sunday']
         );
     }
@@ -93,6 +92,6 @@ class EasterSundayTest extends VictoriaBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType($this->region, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

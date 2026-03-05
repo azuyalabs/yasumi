@@ -43,7 +43,7 @@ class RestorationOfTheStateOfLithuaniaDayTest extends LithuaniaBaseTestCase impl
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, Lithuania::RESTORATION_OF_THE_STATE_YEAR - 1)
+            static::generateRandomYear(1000, Lithuania::RESTORATION_OF_THE_STATE_YEAR - 1)
         );
     }
 
@@ -54,7 +54,7 @@ class RestorationOfTheStateOfLithuaniaDayTest extends LithuaniaBaseTestCase impl
      */
     public function testHolidayAfterRestoration(): void
     {
-        $year = $this->generateRandomYear(Lithuania::RESTORATION_OF_THE_STATE_YEAR);
+        $year = static::generateRandomYear(Lithuania::RESTORATION_OF_THE_STATE_YEAR);
 
         $this->assertHoliday(
             self::REGION,
@@ -72,13 +72,13 @@ class RestorationOfTheStateOfLithuaniaDayTest extends LithuaniaBaseTestCase impl
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(Lithuania::RESTORATION_OF_THE_STATE_YEAR),
+            static::generateRandomYear(Lithuania::RESTORATION_OF_THE_STATE_YEAR),
             [self::LOCALE => 'Lietuvos valstybės atkūrimo diena']
         );
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(Lithuania::RESTORATION_OF_THE_STATE_YEAR),
+            static::generateRandomYear(Lithuania::RESTORATION_OF_THE_STATE_YEAR),
             ['en' => 'Day of Restoration of the State of Lithuania']
         );
     }
@@ -91,7 +91,7 @@ class RestorationOfTheStateOfLithuaniaDayTest extends LithuaniaBaseTestCase impl
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(Lithuania::RESTORATION_OF_THE_STATE_YEAR),
+            static::generateRandomYear(Lithuania::RESTORATION_OF_THE_STATE_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

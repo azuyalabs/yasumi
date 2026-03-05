@@ -37,11 +37,10 @@ class ChristmasDayTest extends CzechRepublicBaseTestCase implements HolidayTestC
     /**
      * Tests Christmas Day.
      *
-     * @dataProvider HolidayDataProvider
-     *
      * @param int       $year     the year for which Christmas Day needs to be tested
      * @param \DateTime $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testChristmasDay(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -54,9 +53,9 @@ class ChristmasDayTest extends CzechRepublicBaseTestCase implements HolidayTestC
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
-        return $this->generateRandomDates(12, 25, self::TIMEZONE);
+        return static::generateRandomDates(12, 25, self::TIMEZONE);
     }
 
     /**
@@ -69,7 +68,7 @@ class ChristmasDayTest extends CzechRepublicBaseTestCase implements HolidayTestC
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => '1. svátek vánoční']
         );
     }
@@ -81,6 +80,6 @@ class ChristmasDayTest extends CzechRepublicBaseTestCase implements HolidayTestC
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

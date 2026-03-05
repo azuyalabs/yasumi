@@ -37,7 +37,7 @@ class UpperAustriaTest extends UpperAustriaBaseTestCase implements ProviderTestC
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1135);
+        $this->year = static::generateRandomYear(1135);
     }
 
     /**

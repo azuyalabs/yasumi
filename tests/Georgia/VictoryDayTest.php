@@ -27,9 +27,7 @@ class VictoryDayTest extends GeorgiaBaseTestCase implements HolidayTestCase
      */
     public const HOLIDAY = 'victoryDay';
 
-    /**
-     * @dataProvider HolidayDataProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -42,9 +40,9 @@ class VictoryDayTest extends GeorgiaBaseTestCase implements HolidayTestCase
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
-        return $this->generateRandomDates(5, 9, self::TIMEZONE);
+        return static::generateRandomDates(5, 9, self::TIMEZONE);
     }
 
     /**
@@ -57,7 +55,7 @@ class VictoryDayTest extends GeorgiaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'ფაშიზმზე გამარჯვების დღე']
         );
     }
@@ -69,6 +67,6 @@ class VictoryDayTest extends GeorgiaBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

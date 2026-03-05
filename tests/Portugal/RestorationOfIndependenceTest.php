@@ -52,7 +52,7 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Holi
      */
     public function testHolidayOnAfterEstablishment(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::HOLIDAY_YEAR_ABOLISHED - 1);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::HOLIDAY_YEAR_ABOLISHED - 1);
 
         $expected = new \DateTime("{$year}-12-01", new \DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -75,7 +75,7 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Holi
         $expected = new \DateTime("{$year}-12-01", new \DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
 
-        $year = $this->generateRandomYear(self::HOLIDAY_YEAR_RESTORED);
+        $year = static::generateRandomYear(self::HOLIDAY_YEAR_RESTORED);
 
         $expected = new \DateTime("{$year}-12-01", new \DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -88,7 +88,7 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Holi
      */
     public function testNotHolidayDuringAbolishment(): void
     {
-        $year = $this->generateRandomYear(2013, 2015);
+        $year = static::generateRandomYear(2013, 2015);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
     }
 
@@ -99,7 +99,7 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Holi
      */
     public function testHolidayBeforeEstablishment(): void
     {
-        $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1);
+        $year = static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
 
         $year = 1849;
@@ -113,7 +113,7 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Holi
      */
     public function testTranslation(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::HOLIDAY_YEAR_ABOLISHED - 1);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::HOLIDAY_YEAR_ABOLISHED - 1);
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
@@ -121,7 +121,7 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Holi
             [self::LOCALE => 'Restauração da Independência']
         );
 
-        $year = $this->generateRandomYear(self::HOLIDAY_YEAR_RESTORED);
+        $year = static::generateRandomYear(self::HOLIDAY_YEAR_RESTORED);
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
@@ -138,11 +138,11 @@ class RestorationOfIndependenceTest extends PortugalBaseTestCase implements Holi
     public function testHolidayType(): void
     {
         // After establishment and before abolishment
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::HOLIDAY_YEAR_ABOLISHED - 1);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::HOLIDAY_YEAR_ABOLISHED - 1);
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OFFICIAL);
 
         // After restoration
-        $this->generateRandomYear(self::HOLIDAY_YEAR_RESTORED);
+        static::generateRandomYear(self::HOLIDAY_YEAR_RESTORED);
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OFFICIAL);
     }
 }

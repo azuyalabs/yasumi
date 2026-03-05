@@ -42,7 +42,7 @@ class CarnationRevolutionDayTest extends PortugalBaseTestCase implements Holiday
      */
     public function testHolidayAfterEstablishment(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
         $expected = new \DateTime("{$year}-04-25", new \DateTimeZone(self::TIMEZONE));
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
@@ -54,7 +54,7 @@ class CarnationRevolutionDayTest extends PortugalBaseTestCase implements Holiday
      */
     public function testNotHolidayBeforeEstablishment(): void
     {
-        $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1);
+        $year = static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
     }
 
@@ -65,7 +65,7 @@ class CarnationRevolutionDayTest extends PortugalBaseTestCase implements Holiday
      */
     public function testTranslation(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $year, [self::LOCALE => 'Dia da Liberdade']);
     }
 
@@ -76,7 +76,7 @@ class CarnationRevolutionDayTest extends PortugalBaseTestCase implements Holiday
      */
     public function testHolidayType(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OFFICIAL);
     }
 }

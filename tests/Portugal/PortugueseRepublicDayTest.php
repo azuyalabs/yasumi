@@ -53,7 +53,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements HolidayT
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::HOLIDAY_YEAR_SUSPENDED, self::HOLIDAY_YEAR_RESTORED - 1)
+            static::generateRandomYear(self::HOLIDAY_YEAR_SUSPENDED, self::HOLIDAY_YEAR_RESTORED - 1)
         );
     }
 
@@ -120,8 +120,8 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements HolidayT
      */
     private function randomEstablishedYear(): \Generator
     {
-        yield $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::HOLIDAY_YEAR_SUSPENDED - 1);
-        yield $this->generateRandomYear(self::HOLIDAY_YEAR_RESTORED);
+        yield static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::HOLIDAY_YEAR_SUSPENDED - 1);
+        yield static::generateRandomYear(self::HOLIDAY_YEAR_RESTORED);
     }
 
     /** @return \Generator<int>
@@ -129,7 +129,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements HolidayT
      */
     private function randomYearsBeforeEstablishment(): \Generator
     {
-        yield $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1);
+        yield static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1);
         yield self::ESTABLISHMENT_YEAR - 1;
     }
 
@@ -138,7 +138,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements HolidayT
      */
     private function randomYearsOnAfterEstablishment(): \Generator
     {
-        yield $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::HOLIDAY_YEAR_SUSPENDED - 1);
+        yield static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::HOLIDAY_YEAR_SUSPENDED - 1);
         yield self::ESTABLISHMENT_YEAR;
     }
 
@@ -147,7 +147,7 @@ class PortugueseRepublicDayTest extends PortugalBaseTestCase implements HolidayT
      */
     private function randomYearsOnAfterRestoration(): \Generator
     {
-        yield $this->generateRandomYear(self::HOLIDAY_YEAR_RESTORED);
+        yield static::generateRandomYear(self::HOLIDAY_YEAR_RESTORED);
         yield self::HOLIDAY_YEAR_RESTORED;
     }
 }

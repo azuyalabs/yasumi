@@ -42,7 +42,7 @@ class nationalCataloniaDayTest extends CataloniaBaseTestCase implements HolidayT
      */
     public function testHolidayOnAfterEstablishment(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -61,7 +61,7 @@ class nationalCataloniaDayTest extends CataloniaBaseTestCase implements HolidayT
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -75,7 +75,7 @@ class nationalCataloniaDayTest extends CataloniaBaseTestCase implements HolidayT
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             [
                 'es' => 'Diada Nacional de Cataluña',
                 'ca' => 'Diada Nacional de Catalunya',
@@ -93,7 +93,7 @@ class nationalCataloniaDayTest extends CataloniaBaseTestCase implements HolidayT
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

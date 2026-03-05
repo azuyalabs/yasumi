@@ -45,7 +45,7 @@
     "mikey179/vfsstream": "^1.6",
     "phpstan/phpstan": "^2.1",
     "phpstan/phpstan-deprecation-rules": "^2.0",
-    "phpunit/phpunit": "^8.5 || ^9.6"
+    "phpunit/phpunit": "^11.5"
   },
   "suggest": {
     "ext-calendar": "For calculating the date of Easter"

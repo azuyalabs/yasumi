@@ -56,7 +56,7 @@ class EnthronementProclamationCeremonyTest extends JapanBaseTestCase implements 
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::IMPLEMENT_YEAR - 1)
+            static::generateRandomYear(1000, self::IMPLEMENT_YEAR - 1)
         );
     }
 
@@ -68,7 +68,7 @@ class EnthronementProclamationCeremonyTest extends JapanBaseTestCase implements 
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::IMPLEMENT_YEAR + 1)
+            static::generateRandomYear(self::IMPLEMENT_YEAR + 1)
         );
     }
 

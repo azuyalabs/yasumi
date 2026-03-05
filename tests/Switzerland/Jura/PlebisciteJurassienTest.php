@@ -42,7 +42,7 @@ class PlebisciteJurassienTest extends JuraBaseTestCase implements HolidayTestCas
      */
     public function testInstaurationRepubliqueOnAfter1975(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -61,7 +61,7 @@ class PlebisciteJurassienTest extends JuraBaseTestCase implements HolidayTestCas
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -75,7 +75,7 @@ class PlebisciteJurassienTest extends JuraBaseTestCase implements HolidayTestCas
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => 'Commémoration du plébiscite jurassien']
         );
     }
@@ -90,7 +90,7 @@ class PlebisciteJurassienTest extends JuraBaseTestCase implements HolidayTestCas
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_OTHER
         );
     }

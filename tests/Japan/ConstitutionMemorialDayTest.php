@@ -78,7 +78,7 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements HolidayTe
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -92,7 +92,7 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements HolidayTe
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => '憲法記念日']
         );
     }
@@ -107,7 +107,7 @@ class ConstitutionMemorialDayTest extends JapanBaseTestCase implements HolidayTe
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

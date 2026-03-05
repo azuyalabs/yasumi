@@ -33,11 +33,10 @@ class AllSaintsDayTest extends SwedenBaseTestCase implements HolidayTestCase
     /**
      * Tests the holiday defined in this test.
      *
-     * @dataProvider HolidayDataProvider
-     *
      * @param int       $year     the year for which the holiday defined in this test needs to be tested
      * @param \DateTime $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -50,12 +49,12 @@ class AllSaintsDayTest extends SwedenBaseTestCase implements HolidayTestCase
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
         $data = [];
 
         for ($y = 0; $y < 50; ++$y) {
-            $year = $this->generateRandomYear();
+            $year = static::generateRandomYear();
             $date = new \DateTime("{$year}-10-31", new \DateTimeZone(self::TIMEZONE));
 
             // Check between 31 October and 6th of November the day that is a Saturday
@@ -81,7 +80,7 @@ class AllSaintsDayTest extends SwedenBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'alla helgons dag']
         );
     }
@@ -93,6 +92,6 @@ class AllSaintsDayTest extends SwedenBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

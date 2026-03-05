@@ -50,7 +50,7 @@ class LatviaTest extends LatviaBaseTestCase implements ProviderTestCase
             'newYearsEve',
         ];
 
-        $year = $this->generateRandomYear();
+        $year = static::generateRandomYear();
 
         if ($year >= Latvia::RESTORATION_OF_INDEPENDENCE_YEAR) {
             $holidays[] = 'restorationOfIndependenceOfLatviaDay';
@@ -74,7 +74,7 @@ class LatviaTest extends LatviaBaseTestCase implements ProviderTestCase
      */
     public function testObservedHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays([], self::REGION, static::generateRandomYear(), Holiday::TYPE_OBSERVANCE);
     }
 
     /**
@@ -84,7 +84,7 @@ class LatviaTest extends LatviaBaseTestCase implements ProviderTestCase
      */
     public function testSeasonalHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_SEASON);
+        $this->assertDefinedHolidays([], self::REGION, static::generateRandomYear(), Holiday::TYPE_SEASON);
     }
 
     /**
@@ -94,7 +94,7 @@ class LatviaTest extends LatviaBaseTestCase implements ProviderTestCase
      */
     public function testBankHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_BANK);
+        $this->assertDefinedHolidays([], self::REGION, static::generateRandomYear(), Holiday::TYPE_BANK);
     }
 
     /**
@@ -104,7 +104,7 @@ class LatviaTest extends LatviaBaseTestCase implements ProviderTestCase
      */
     public function testOtherHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays([], self::REGION, static::generateRandomYear(), Holiday::TYPE_OTHER);
     }
 
     /**

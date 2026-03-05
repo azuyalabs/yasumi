@@ -40,7 +40,7 @@ class GeorgiaTest extends GeorgiaBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear();
+        $this->year = static::generateRandomYear();
     }
 
     /**

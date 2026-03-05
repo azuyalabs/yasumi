@@ -71,7 +71,7 @@ final class MarineDayTest extends JapanBaseTestCase implements HolidayTestCase
      */
     public function testMarineDayOnAfter2003(): void
     {
-        $year = $this->generateRandomYear(2004);
+        $year = self::generateRandomYear(2004);
 
         if (in_array($year, [2020, 2021])) {
             return;
@@ -129,7 +129,7 @@ final class MarineDayTest extends JapanBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            self::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -143,7 +143,7 @@ final class MarineDayTest extends JapanBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            self::generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => '海の日']
         );
     }
@@ -158,7 +158,7 @@ final class MarineDayTest extends JapanBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            self::generateRandomYear(self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

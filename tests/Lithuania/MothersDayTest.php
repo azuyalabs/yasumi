@@ -40,7 +40,7 @@ class MothersDayTest extends LithuaniaBaseTestCase implements HolidayTestCase
      */
     public function testHoliday(): void
     {
-        $year = $this->generateRandomYear();
+        $year = static::generateRandomYear();
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -57,13 +57,13 @@ class MothersDayTest extends LithuaniaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Motinos dieną']
         );
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             ['en' => 'Mother’s Day']
         );
     }
@@ -76,7 +76,7 @@ class MothersDayTest extends LithuaniaBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             Holiday::TYPE_OFFICIAL
         );
     }

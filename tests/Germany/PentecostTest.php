@@ -37,7 +37,7 @@ class PentecostTest extends GermanyBaseTestCase implements HolidayTestCase
      */
     public function testHoliday(): void
     {
-        $year = $this->generateRandomYear();
+        $year = static::generateRandomYear();
         $time_stamp = strtotime(
             $year . '-03-21' . easter_days($year) . ' day + 49 day'
         );
@@ -61,7 +61,7 @@ class PentecostTest extends GermanyBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Pfingstsonntag']
         );
     }
@@ -73,6 +73,6 @@ class PentecostTest extends GermanyBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OTHER);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OTHER);
     }
 }

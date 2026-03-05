@@ -26,10 +26,9 @@ class MotheringSundayTest extends EnglandBaseTestCase implements HolidayTestCase
     public const HOLIDAY = 'motheringSunday';
 
     /**
-     * @dataProvider HolidayDataProvider
-     *
      * @throws \Exception
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, string $expected): void
     {
         $this->assertHoliday(
@@ -45,13 +44,13 @@ class MotheringSundayTest extends EnglandBaseTestCase implements HolidayTestCase
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
         $data = [];
 
         for ($y = 0; $y < 50; ++$y) {
-            $year = $this->generateRandomYear();
-            $date = $this->calculateEaster($year, self::TIMEZONE);
+            $year = static::generateRandomYear();
+            $date = static::computeEaster($year, self::TIMEZONE);
             $date->sub(new \DateInterval('P3W'));
 
             $data[] = [$year, $date->format('Y-m-d')];
@@ -72,7 +71,7 @@ class MotheringSundayTest extends EnglandBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Mothering Sunday']
         );
     }
@@ -85,7 +84,7 @@ class MotheringSundayTest extends EnglandBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             Holiday::TYPE_OTHER
         );
     }

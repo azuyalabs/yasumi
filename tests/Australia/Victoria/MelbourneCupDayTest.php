@@ -38,13 +38,12 @@ class MelbourneCupDayTest extends VictoriaBaseTestCase implements HolidayTestCas
     /**
      * Tests Melbourne Cup Day.
      *
-     * @dataProvider HolidayDataProvider
-     *
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
      * @throws \Exception
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, string $expected): void
     {
         $this->assertHoliday(
@@ -60,7 +59,7 @@ class MelbourneCupDayTest extends VictoriaBaseTestCase implements HolidayTestCas
      *
      * @return array<array> list of test dates for the holiday defined in this test
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
         return [
             [2010, '2010-11-02'],
@@ -87,7 +86,7 @@ class MelbourneCupDayTest extends VictoriaBaseTestCase implements HolidayTestCas
         $this->assertTranslatedHolidayName(
             $this->region,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => 'Melbourne Cup']
         );
     }
@@ -102,7 +101,7 @@ class MelbourneCupDayTest extends VictoriaBaseTestCase implements HolidayTestCas
         $this->assertHolidayType(
             $this->region,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2100),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, 2100),
             Holiday::TYPE_OFFICIAL
         );
     }

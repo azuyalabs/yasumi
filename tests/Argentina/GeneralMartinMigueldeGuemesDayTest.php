@@ -114,7 +114,7 @@ class GeneralMartinMigueldeGuemesDayTest extends ArgentinaBaseTestCase implement
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => 'Paso a la Inmortalidad del General Martín Miguel de Güemes']
         );
     }
@@ -126,6 +126,6 @@ class GeneralMartinMigueldeGuemesDayTest extends ArgentinaBaseTestCase implement
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(self::ESTABLISHMENT_YEAR), Holiday::TYPE_OFFICIAL);
     }
 }

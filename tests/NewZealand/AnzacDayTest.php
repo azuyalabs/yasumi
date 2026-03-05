@@ -38,13 +38,12 @@ class AnzacDayTest extends NewZealandBaseTestCase implements HolidayTestCase
     /**
      * Tests ANZAC Day.
      *
-     * @dataProvider HolidayDataProvider
-     *
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
      * @throws \Exception
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, string $expected): void
     {
         $this->assertHoliday(
@@ -70,15 +69,15 @@ class AnzacDayTest extends NewZealandBaseTestCase implements HolidayTestCase
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
-        return $this->generateRandomDatesWithModifier(4, 25, function ($year, \DateTime $date): void {
+        return static::generateRandomDatesWithModifier(4, 25, function ($year, \DateTime $date): void {
             // in 2015 some policy was introduced to make sure this holiday was celebrated during the working week.
             if ($year < 2015) {
                 return;
             }
 
-            if (! $this->isWeekend($date)) {
+            if (! static::isWeekend($date)) {
                 return;
             }
 
@@ -96,7 +95,7 @@ class AnzacDayTest extends NewZealandBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => 'ANZAC Day']
         );
     }
@@ -111,7 +110,7 @@ class AnzacDayTest extends NewZealandBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

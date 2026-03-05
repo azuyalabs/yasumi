@@ -47,7 +47,7 @@ class BasqueCountryDayTest extends BasqueCountryBaseTestCase implements HolidayT
      */
     public function testHolidayOnAfterEstablishment(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::ABOLISHMENT_YEAR);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::ABOLISHMENT_YEAR);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -66,7 +66,7 @@ class BasqueCountryDayTest extends BasqueCountryBaseTestCase implements HolidayT
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -77,7 +77,7 @@ class BasqueCountryDayTest extends BasqueCountryBaseTestCase implements HolidayT
      */
     public function testHolidayDayAfterAbolishment(): void
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ABOLISHMENT_YEAR + 1));
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, static::generateRandomYear(self::ABOLISHMENT_YEAR + 1));
     }
 
     /**
@@ -90,7 +90,7 @@ class BasqueCountryDayTest extends BasqueCountryBaseTestCase implements HolidayT
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::ABOLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::ABOLISHMENT_YEAR),
             [self::LOCALE => 'Euskadi Eguna']
         );
     }
@@ -105,7 +105,7 @@ class BasqueCountryDayTest extends BasqueCountryBaseTestCase implements HolidayT
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::ABOLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::ABOLISHMENT_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

@@ -38,13 +38,12 @@ class BattleOfTheBoyneTest extends NorthernIrelandBaseTestCase implements Holida
     /**
      * Tests the holiday defined in this test.
      *
-     * @dataProvider HolidayDataProvider
-     *
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
      * @throws \Exception
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, string $expected): void
     {
         $date = new \DateTime($expected, new \DateTimeZone(self::TIMEZONE));
@@ -66,7 +65,7 @@ class BattleOfTheBoyneTest extends NorthernIrelandBaseTestCase implements Holida
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -77,12 +76,12 @@ class BattleOfTheBoyneTest extends NorthernIrelandBaseTestCase implements Holida
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
         $data = [];
 
         for ($y = 0; $y < self::TEST_ITERATIONS; ++$y) {
-            $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+            $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
             $date = new \DateTime("{$year}-7-12", new \DateTimeZone(self::TIMEZONE));
             $data[] = [$year, $date->format('Y-m-d')];
         }
@@ -100,7 +99,7 @@ class BattleOfTheBoyneTest extends NorthernIrelandBaseTestCase implements Holida
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => 'Battle of the Boyne']
         );
     }
@@ -115,7 +114,7 @@ class BattleOfTheBoyneTest extends NorthernIrelandBaseTestCase implements Holida
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_BANK
         );
     }

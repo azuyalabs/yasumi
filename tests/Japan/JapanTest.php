@@ -37,7 +37,7 @@ class JapanTest extends JapanBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(2020, 2150);
+        $this->year = static::generateRandomYear(2020, 2150);
     }
 
     /**

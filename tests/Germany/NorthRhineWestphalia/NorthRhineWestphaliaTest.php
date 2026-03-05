@@ -37,7 +37,7 @@ class NorthRhineWestphaliaTest extends NorthRhineWestphaliaBaseTestCase implemen
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1990);
+        $this->year = static::generateRandomYear(1990);
     }
 
     /**
@@ -89,7 +89,15 @@ class NorthRhineWestphaliaTest extends NorthRhineWestphaliaBaseTestCase implemen
      */
     public function testOtherHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays(
+            [
+                'pentecost',
+                'newYearsEve',
+            ],
+            self::REGION,
+            $this->year,
+            Holiday::TYPE_OTHER
+        );
     }
 
     /**

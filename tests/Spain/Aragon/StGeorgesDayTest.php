@@ -37,7 +37,7 @@ class StGeorgesDayTest extends AragonBaseTestCase implements HolidayTestCase
      */
     public function testHoliday(): void
     {
-        $year = $this->generateRandomYear();
+        $year = static::generateRandomYear();
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -56,7 +56,7 @@ class StGeorgesDayTest extends AragonBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'San Jorge']
         );
     }
@@ -68,6 +68,6 @@ class StGeorgesDayTest extends AragonBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OBSERVANCE);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OBSERVANCE);
     }
 }

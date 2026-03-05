@@ -37,7 +37,7 @@ class SwitzerlandTest extends SwitzerlandBaseTestCase implements ProviderTestCas
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1945);
+        $this->year = static::generateRandomYear(1945);
     }
 
     /**

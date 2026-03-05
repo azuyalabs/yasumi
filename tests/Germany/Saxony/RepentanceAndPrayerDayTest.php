@@ -48,7 +48,7 @@ class RepentanceAndPrayerDayTest extends SaxonyBaseTestCase implements HolidayTe
     public function testHolidayOnAfterEstablishment(): void
     {
         // Check between the 16th and 22nd day the one that is a Wednesday
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
         $holiday = new \DateTime("next wednesday {$year}-11-15", new \DateTimeZone(self::TIMEZONE)); // Default date
 
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $holiday);
@@ -69,7 +69,7 @@ class RepentanceAndPrayerDayTest extends SaxonyBaseTestCase implements HolidayTe
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -83,7 +83,7 @@ class RepentanceAndPrayerDayTest extends SaxonyBaseTestCase implements HolidayTe
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => 'Buß- und Bettag']
         );
     }
@@ -98,7 +98,7 @@ class RepentanceAndPrayerDayTest extends SaxonyBaseTestCase implements HolidayTe
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

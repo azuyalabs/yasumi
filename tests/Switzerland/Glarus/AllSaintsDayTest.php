@@ -33,11 +33,10 @@ class AllSaintsDayTest extends GlarusBaseTestCase implements HolidayTestCase
     /**
      * Tests All Saints' Day.
      *
-     * @dataProvider AllSaintsDayDataProvider
-     *
      * @param int       $year     the year for which All Saints' Day needs to be tested
      * @param \DateTime $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('AllSaintsDayDataProvider')]
     public function testAllSaintsDay(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -53,7 +52,7 @@ class AllSaintsDayTest extends GlarusBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Allerheiligen']
         );
     }
@@ -65,7 +64,7 @@ class AllSaintsDayTest extends GlarusBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OTHER);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OTHER);
     }
 
     /**
@@ -75,8 +74,8 @@ class AllSaintsDayTest extends GlarusBaseTestCase implements HolidayTestCase
      *
      * @throws \Exception
      */
-    public function AllSaintsDayDataProvider(): array
+    public static function AllSaintsDayDataProvider(): array
     {
-        return $this->generateRandomDates(11, 1, self::TIMEZONE);
+        return static::generateRandomDates(11, 1, self::TIMEZONE);
     }
 }

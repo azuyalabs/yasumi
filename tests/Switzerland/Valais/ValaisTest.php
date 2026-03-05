@@ -37,7 +37,7 @@ class ValaisTest extends ValaisBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1945);
+        $this->year = static::generateRandomYear(1945);
     }
 
     /**
@@ -103,7 +103,21 @@ class ValaisTest extends ValaisBaseTestCase implements ProviderTestCase
      */
     public function testOtherHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays(
+            [
+                'newYearsDay',
+                'stJosephsDay',
+                'ascensionDay',
+                'corpusChristi',
+                'assumptionOfMary',
+                'allSaintsDay',
+                'immaculateConception',
+                'christmasDay',
+            ],
+            self::REGION,
+            $this->year,
+            Holiday::TYPE_OTHER
+        );
     }
 
     /**

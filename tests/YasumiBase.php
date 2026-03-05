@@ -75,9 +75,18 @@ trait YasumiBase
                 break;
         }
 
+        $holidayList = iterator_to_array($holidays);
+
+        if ([] === $expectedHolidays) {
+            // No holidays to assert; increment count to avoid PHPUnit "no assertions" warning.
+            $this->addToAssertionCount(1);
+
+            return;
+        }
+
         // Loop through all known holidays and assert they are defined by the provider class.
         foreach ($expectedHolidays as $holiday) {
-            self::assertArrayHasKey($holiday, iterator_to_array($holidays), sprintf('`%s` should exist for year `%u` in the `%s` holiday list for `%s`', $holiday, $year, $type, $provider));
+            self::assertArrayHasKey($holiday, $holidayList, sprintf('`%s` should exist for year `%u` in the `%s` holiday list for `%s`', $holiday, $year, $type, $provider));
         }
     }
 
@@ -290,7 +299,7 @@ trait YasumiBase
      */
     public function assertSources(string $provider, int $expectedSourceCount): void
     {
-        $holidayProvider = Yasumi::create($provider, $this->generateRandomYear());
+        $holidayProvider = Yasumi::create($provider, static::generateRandomYear());
 
         self::assertCount($expectedSourceCount, $holidayProvider->getSources());
     }

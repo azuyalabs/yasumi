@@ -35,11 +35,10 @@ class SlovakConstitutionDayTest extends SlovakiaBaseTestCase implements HolidayT
     /**
      * Tests the holiday defined in this test.
      *
-     * @dataProvider HolidayDataProvider
-     *
      * @param int       $year     the year for which the holiday defined in this test needs to be tested
      * @param \DateTime $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, \DateTimeInterface $expected): void
     {
         if ($year < 2024) {
@@ -56,9 +55,9 @@ class SlovakConstitutionDayTest extends SlovakiaBaseTestCase implements HolidayT
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
-        return $this->generateRandomDates(9, 1, self::TIMEZONE);
+        return static::generateRandomDates(9, 1, self::TIMEZONE);
     }
 
     /**
@@ -71,7 +70,7 @@ class SlovakConstitutionDayTest extends SlovakiaBaseTestCase implements HolidayT
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(null, 2013),
+            static::generateRandomYear(null, 2013),
             [self::LOCALE => 'Deň Ústavy Slovenskej republiky']
         );
     }
@@ -83,6 +82,6 @@ class SlovakConstitutionDayTest extends SlovakiaBaseTestCase implements HolidayT
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(null, 2013), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(null, 2013), Holiday::TYPE_OFFICIAL);
     }
 }

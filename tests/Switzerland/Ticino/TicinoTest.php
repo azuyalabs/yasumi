@@ -37,7 +37,7 @@ class TicinoTest extends TicinoBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1945);
+        $this->year = static::generateRandomYear(1945);
     }
 
     /**
@@ -109,7 +109,27 @@ class TicinoTest extends TicinoBaseTestCase implements ProviderTestCase
      */
     public function testOtherHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays(
+            [
+                'newYearsDay',
+                'epiphany',
+                'stJosephsDay',
+                'easterMonday',
+                'internationalWorkersDay',
+                'ascensionDay',
+                'pentecostMonday',
+                'corpusChristi',
+                'stPeterPaul',
+                'assumptionOfMary',
+                'allSaintsDay',
+                'immaculateConception',
+                'christmasDay',
+                'stStephensDay',
+            ],
+            self::REGION,
+            $this->year,
+            Holiday::TYPE_OTHER
+        );
     }
 
     /**

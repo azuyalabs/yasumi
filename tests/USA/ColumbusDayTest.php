@@ -43,7 +43,7 @@ class ColumbusDayTest extends USABaseTestCase implements HolidayTestCase
      */
     public function testColumbusDayOnAfter1970(): void
     {
-        $year = $this->generateRandomYear(1970);
+        $year = static::generateRandomYear(1970);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -60,7 +60,7 @@ class ColumbusDayTest extends USABaseTestCase implements HolidayTestCase
      */
     public function testColumbusBetween1937And1969(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1969);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, 1969);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -80,7 +80,7 @@ class ColumbusDayTest extends USABaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -94,7 +94,7 @@ class ColumbusDayTest extends USABaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => 'Columbus Day']
         );
     }
@@ -109,7 +109,7 @@ class ColumbusDayTest extends USABaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

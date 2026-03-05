@@ -37,14 +37,12 @@ class NewYearHolidaysDay6Test extends RussiaBaseTestCase implements HolidayTestC
      *
      * @throws \Exception
      */
-    public function holidayDataProvider(): array
+    public static function holidayDataProvider(): array
     {
-        return $this->generateRandomDates(1, 6, self::TIMEZONE);
+        return static::generateRandomDates(1, 6, self::TIMEZONE);
     }
 
-    /**
-     * @dataProvider holidayDataProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('holidayDataProvider')]
     public function testHoliday(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -58,7 +56,7 @@ class NewYearHolidaysDay6Test extends RussiaBaseTestCase implements HolidayTestC
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Новогодние каникулы']
         );
     }
@@ -68,6 +66,6 @@ class NewYearHolidaysDay6Test extends RussiaBaseTestCase implements HolidayTestC
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

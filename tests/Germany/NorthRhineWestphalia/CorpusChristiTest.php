@@ -37,13 +37,13 @@ class CorpusChristiTest extends NorthRhineWestphaliaBaseTestCase implements Holi
      */
     public function testHoliday(): void
     {
-        $year = $this->generateRandomYear();
+        $year = static::generateRandomYear();
 
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             $year,
-            $this->calculateEaster($year, self::TIMEZONE)->add(new \DateInterval('P60D'))
+            static::computeEaster($year, self::TIMEZONE)->add(new \DateInterval('P60D'))
         );
     }
 
@@ -57,7 +57,7 @@ class CorpusChristiTest extends NorthRhineWestphaliaBaseTestCase implements Holi
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Fronleichnam']
         );
     }
@@ -69,6 +69,6 @@ class CorpusChristiTest extends NorthRhineWestphaliaBaseTestCase implements Holi
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

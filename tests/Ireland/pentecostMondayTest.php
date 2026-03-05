@@ -38,13 +38,12 @@ class pentecostMondayTest extends IrelandBaseTestCase implements HolidayTestCase
     /**
      * Tests the holiday defined in this test.
      *
-     * @dataProvider HolidayDataProvider
-     *
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
      * @throws \Exception
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, string $expected): void
     {
         $this->assertHoliday(
@@ -62,13 +61,13 @@ class pentecostMondayTest extends IrelandBaseTestCase implements HolidayTestCase
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
         $data = [];
 
         for ($y = 0; $y < self::TEST_ITERATIONS; ++$y) {
-            $year = $this->generateRandomYear(1000, self::ABOLISHMENT_YEAR);
-            $date = $this->calculateEaster($year, self::TIMEZONE);
+            $year = static::generateRandomYear(1000, self::ABOLISHMENT_YEAR);
+            $date = static::computeEaster($year, self::TIMEZONE);
             $date->add(new \DateInterval('P50D'));
             $data[] = [$year, $date->format('Y-m-d')];
         }
@@ -83,7 +82,7 @@ class pentecostMondayTest extends IrelandBaseTestCase implements HolidayTestCase
      */
     public function testHolidayDayAfterAbolishment(): void
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ABOLISHMENT_YEAR + 1));
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, static::generateRandomYear(self::ABOLISHMENT_YEAR + 1));
     }
 
     /**
@@ -96,13 +95,13 @@ class pentecostMondayTest extends IrelandBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ABOLISHMENT_YEAR),
+            static::generateRandomYear(1000, self::ABOLISHMENT_YEAR),
             [self::LOCALE => 'Whitmonday']
         );
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ABOLISHMENT_YEAR),
+            static::generateRandomYear(1000, self::ABOLISHMENT_YEAR),
             ['ga_IE' => 'Luan Cincíse']
         );
     }
@@ -117,7 +116,7 @@ class pentecostMondayTest extends IrelandBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ABOLISHMENT_YEAR),
+            static::generateRandomYear(1000, self::ABOLISHMENT_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

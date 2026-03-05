@@ -47,7 +47,7 @@ class SummerBankHolidayTest extends EnglandBaseTestCase implements HolidayTestCa
      */
     public function testHoliday(): void
     {
-        $year = $this->generateRandomYear(1970);
+        $year = static::generateRandomYear(1970);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -63,7 +63,7 @@ class SummerBankHolidayTest extends EnglandBaseTestCase implements HolidayTestCa
      */
     public function testHolidayBefore1965(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1964);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, 1964);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -127,7 +127,7 @@ class SummerBankHolidayTest extends EnglandBaseTestCase implements HolidayTestCa
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -141,7 +141,7 @@ class SummerBankHolidayTest extends EnglandBaseTestCase implements HolidayTestCa
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::RENAME_YEAR),
+            static::generateRandomYear(self::RENAME_YEAR),
             [self::LOCALE => 'Summer Bank Holiday']
         );
     }
@@ -156,7 +156,7 @@ class SummerBankHolidayTest extends EnglandBaseTestCase implements HolidayTestCa
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::RENAME_YEAR - 1),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::RENAME_YEAR - 1),
             [self::LOCALE => 'August Bank Holiday']
         );
     }
@@ -171,7 +171,7 @@ class SummerBankHolidayTest extends EnglandBaseTestCase implements HolidayTestCa
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_BANK
         );
     }

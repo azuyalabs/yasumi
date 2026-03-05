@@ -33,11 +33,10 @@ class stNicholasDayTest extends NetherlandsBaseTestCase implements HolidayTestCa
     /**
      * Tests Sint Nicholas Day.
      *
-     * @dataProvider stNicholasDayDataProvider
-     *
      * @param int       $year     the year for which Sint Nicholas Day needs to be tested
      * @param \DateTime $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('stNicholasDayDataProvider')]
     public function teststNicholasDay(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -50,9 +49,9 @@ class stNicholasDayTest extends NetherlandsBaseTestCase implements HolidayTestCa
      *
      * @throws \Exception
      */
-    public function stNicholasDayDataProvider(): array
+    public static function stNicholasDayDataProvider(): array
     {
-        return $this->generateRandomDates(12, 5, self::TIMEZONE);
+        return static::generateRandomDates(12, 5, self::TIMEZONE);
     }
 
     /**
@@ -65,7 +64,7 @@ class stNicholasDayTest extends NetherlandsBaseTestCase implements HolidayTestCa
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Sinterklaas']
         );
     }
@@ -77,6 +76,6 @@ class stNicholasDayTest extends NetherlandsBaseTestCase implements HolidayTestCa
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OBSERVANCE);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OBSERVANCE);
     }
 }

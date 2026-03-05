@@ -43,7 +43,7 @@ class DefenceOfTheFatherlandDayTest extends RussiaBaseTestCase implements Holida
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, Russia::DEFENCE_OF_THE_FATHERLAND_START_YEAR - 1)
+            static::generateRandomYear(1000, Russia::DEFENCE_OF_THE_FATHERLAND_START_YEAR - 1)
         );
     }
 
@@ -54,7 +54,7 @@ class DefenceOfTheFatherlandDayTest extends RussiaBaseTestCase implements Holida
      */
     public function testHolidayAfter(): void
     {
-        $year = $this->generateRandomYear(Russia::DEFENCE_OF_THE_FATHERLAND_START_YEAR);
+        $year = static::generateRandomYear(Russia::DEFENCE_OF_THE_FATHERLAND_START_YEAR);
 
         $this->assertHoliday(
             self::REGION,
@@ -72,13 +72,13 @@ class DefenceOfTheFatherlandDayTest extends RussiaBaseTestCase implements Holida
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(Russia::DEFENCE_OF_THE_FATHERLAND_START_YEAR),
+            static::generateRandomYear(Russia::DEFENCE_OF_THE_FATHERLAND_START_YEAR),
             [self::LOCALE => 'День защитника Отечества']
         );
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(Russia::DEFENCE_OF_THE_FATHERLAND_START_YEAR),
+            static::generateRandomYear(Russia::DEFENCE_OF_THE_FATHERLAND_START_YEAR),
             ['en' => 'Defence of the Fatherland Day']
         );
     }
@@ -91,7 +91,7 @@ class DefenceOfTheFatherlandDayTest extends RussiaBaseTestCase implements Holida
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(Russia::DEFENCE_OF_THE_FATHERLAND_START_YEAR),
+            static::generateRandomYear(Russia::DEFENCE_OF_THE_FATHERLAND_START_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

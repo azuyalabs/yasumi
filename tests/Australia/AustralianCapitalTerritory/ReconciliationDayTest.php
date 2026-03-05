@@ -38,13 +38,12 @@ class ReconciliationDayTest extends AustralianCapitalTerritoryBaseTestCase imple
     /**
      * Tests Reconciliation Day.
      *
-     * @dataProvider HolidayDataProvider
-     *
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
      * @throws \Exception
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, string $expected): void
     {
         $this->assertHoliday(
@@ -60,7 +59,7 @@ class ReconciliationDayTest extends AustralianCapitalTerritoryBaseTestCase imple
      *
      * @return array<array> list of test dates for the holiday defined in this test
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
         return [
             [2018, '2018-05-28'],
@@ -89,7 +88,7 @@ class ReconciliationDayTest extends AustralianCapitalTerritoryBaseTestCase imple
         $this->assertTranslatedHolidayName(
             $this->region,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => 'Reconciliation Day']
         );
     }
@@ -104,7 +103,7 @@ class ReconciliationDayTest extends AustralianCapitalTerritoryBaseTestCase imple
         $this->assertHolidayType(
             $this->region,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2100),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, 2100),
             Holiday::TYPE_OFFICIAL
         );
     }

@@ -65,7 +65,7 @@ class QueenElizabethFuneralBankHolidayTest extends UnitedKingdomBaseTestCase imp
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ACTIVE_YEAR - 1)
+            static::generateRandomYear(1000, self::ACTIVE_YEAR - 1)
         );
     }
 
@@ -79,7 +79,7 @@ class QueenElizabethFuneralBankHolidayTest extends UnitedKingdomBaseTestCase imp
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ACTIVE_YEAR + 1)
+            static::generateRandomYear(self::ACTIVE_YEAR + 1)
         );
     }
 

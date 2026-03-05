@@ -37,7 +37,7 @@ class GrisonsTest extends GrisonsBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1945);
+        $this->year = static::generateRandomYear(1945);
     }
 
     /**
@@ -102,7 +102,20 @@ class GrisonsTest extends GrisonsBaseTestCase implements ProviderTestCase
      */
     public function testOtherHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays(
+            [
+                'newYearsDay',
+                'goodFriday',
+                'easterMonday',
+                'ascensionDay',
+                'pentecostMonday',
+                'christmasDay',
+                'stStephensDay',
+            ],
+            self::REGION,
+            $this->year,
+            Holiday::TYPE_OTHER
+        );
     }
 
     /**

@@ -17,6 +17,7 @@ declare(strict_types = 1);
 
 use Rector\CodeQuality\Rector\Class_\InlineConstructorDefaultToPropertyRector;
 use Rector\Config\RectorConfig;
+use Rector\PHPUnit\Set\PHPUnitSetList;
 use Rector\Set\ValueObject\SetList;
 
 return static function (RectorConfig $rectorConfig): void {
@@ -35,5 +36,6 @@ return static function (RectorConfig $rectorConfig): void {
         SetList::EARLY_RETURN,
         SetList::PHP_82,
         SetList::TYPE_DECLARATION,
+        PHPUnitSetList::PHPUNIT_110,
     ]);
 };

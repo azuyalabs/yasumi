@@ -46,7 +46,7 @@ class VernalEquinoxDayTest extends JapanBaseTestCase implements HolidayTestCase
      */
     public function testVernalEquinoxDayOnAfter2150(): void
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(2151));
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, static::generateRandomYear(2151));
     }
 
     /**
@@ -56,14 +56,13 @@ class VernalEquinoxDayTest extends JapanBaseTestCase implements HolidayTestCase
      *
      * After 2150 no calculations are available yet.
      *
-     * @dataProvider vernalEquinoxHolidaysProvider
-     *
      * @param int $year  year of example data to be tested
      * @param int $month month (number) of example data to be tested
      * @param int $day   day of the month (number) of example data to be tested
      *
      * @throws \Exception
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('vernalEquinoxHolidaysProvider')]
     public function testVernalEquinoxDayBetween1948And2150(int $year, int $month, int $day): void
     {
         $this->assertHoliday(
@@ -79,7 +78,7 @@ class VernalEquinoxDayTest extends JapanBaseTestCase implements HolidayTestCase
      *
      * @return array<array> list of test dates for the holiday defined in this test
      */
-    public function vernalEquinoxHolidaysProvider(): array
+    public static function vernalEquinoxHolidaysProvider(): array
     {
         return [
             [1948, 3, 22],
@@ -102,7 +101,7 @@ class VernalEquinoxDayTest extends JapanBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -116,7 +115,7 @@ class VernalEquinoxDayTest extends JapanBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2150),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, 2150),
             [self::LOCALE => '春分の日']
         );
     }
@@ -131,7 +130,7 @@ class VernalEquinoxDayTest extends JapanBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 2150),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, 2150),
             Holiday::TYPE_OFFICIAL
         );
     }

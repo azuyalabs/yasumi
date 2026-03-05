@@ -64,7 +64,7 @@ class SubstituteDayOfGoodwillTest extends SouthAfricaBaseTestCase implements Hol
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -75,7 +75,7 @@ class SubstituteDayOfGoodwillTest extends SouthAfricaBaseTestCase implements Hol
      */
     public function testHolidayDayAfterCompletion(): void
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR + 1));
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, static::generateRandomYear(self::ESTABLISHMENT_YEAR + 1));
     }
 
     /**
@@ -88,7 +88,7 @@ class SubstituteDayOfGoodwillTest extends SouthAfricaBaseTestCase implements Hol
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::ESTABLISHMENT_YEAR),
             [self::LOCALE => 'Day of Goodwill observed']
         );
     }
@@ -103,7 +103,7 @@ class SubstituteDayOfGoodwillTest extends SouthAfricaBaseTestCase implements Hol
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

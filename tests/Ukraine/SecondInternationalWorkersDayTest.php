@@ -34,11 +34,10 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements H
     /**
      * Tests International Workers' Day.
      *
-     * @dataProvider SecondInternationalWorkersDayDataProvider
-     *
      * @param int       $year     the year for which International Workers' Day needs to be tested
      * @param \DateTime $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('SecondInternationalWorkersDayDataProvider')]
     public function testSecondInternationalWorkersDay(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -51,7 +50,7 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements H
      */
     public function testNoSecondInternationalWorkersDaySince2018(): void
     {
-        $year = $this->generateRandomYear(2018);
+        $year = static::generateRandomYear(2018);
         $holidays = Yasumi::create(self::REGION, $year);
         $holiday = $holidays->getHoliday(self::HOLIDAY);
 
@@ -70,7 +69,7 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements H
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(null, 2017),
+            static::generateRandomYear(null, 2017),
             [self::LOCALE => 'День міжнародної солідарності трудящих']
         );
     }
@@ -85,7 +84,7 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements H
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(null, 2017),
+            static::generateRandomYear(null, 2017),
             Holiday::TYPE_OFFICIAL
         );
     }
@@ -97,12 +96,12 @@ class SecondInternationalWorkersDayTest extends UkraineBaseTestCase implements H
      *
      * @throws \Exception
      */
-    public function SecondInternationalWorkersDayDataProvider(): array
+    public static function SecondInternationalWorkersDayDataProvider(): array
     {
         $data = [];
 
         for ($y = 0; $y < 10; ++$y) {
-            $year = $this->generateRandomYear(null, 2017);
+            $year = static::generateRandomYear(null, 2017);
             $data[] = [$year, new \DateTime("{$year}-05-02", new \DateTimeZone(self::TIMEZONE))];
         }
 

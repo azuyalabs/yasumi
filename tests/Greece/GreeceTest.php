@@ -37,7 +37,7 @@ class GreeceTest extends GreeceBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1985);
+        $this->year = static::generateRandomYear(1985);
     }
 
     /**

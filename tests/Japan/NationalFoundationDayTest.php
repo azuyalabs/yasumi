@@ -78,7 +78,7 @@ class NationalFoundationDayTest extends JapanBaseTestCase implements HolidayTest
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -92,7 +92,7 @@ class NationalFoundationDayTest extends JapanBaseTestCase implements HolidayTest
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => '建国記念の日']
         );
     }
@@ -107,7 +107,7 @@ class NationalFoundationDayTest extends JapanBaseTestCase implements HolidayTest
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

@@ -25,11 +25,10 @@ class LabourDayTest extends TurkeyBaseTestCase implements HolidayTestCase
     public const HOLIDAY = 'labourDay';
 
     /**
-     * @dataProvider HolidayDataProvider
-     *
      * @param int       $year     the year for which the holiday defined in this test needs to be tested
      * @param \DateTime $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -43,7 +42,7 @@ class LabourDayTest extends TurkeyBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Emek ve Dayanışma Günü']
         );
     }
@@ -56,7 +55,7 @@ class LabourDayTest extends TurkeyBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             Holiday::TYPE_OFFICIAL
         );
     }
@@ -66,8 +65,8 @@ class LabourDayTest extends TurkeyBaseTestCase implements HolidayTestCase
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
-        return $this->generateRandomDates(5, 1, self::TIMEZONE);
+        return static::generateRandomDates(5, 1, self::TIMEZONE);
     }
 }

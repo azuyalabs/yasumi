@@ -37,7 +37,7 @@ class PrinceEdwardIslandTest extends PrinceEdwardIslandBaseTestCase implements P
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1978);
+        $this->year = static::generateRandomYear(1978);
     }
 
     /**

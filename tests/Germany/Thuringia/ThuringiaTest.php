@@ -37,7 +37,7 @@ class ThuringiaTest extends ThuringiaBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear();
+        $this->year = static::generateRandomYear();
     }
 
     /**
@@ -100,7 +100,15 @@ class ThuringiaTest extends ThuringiaBaseTestCase implements ProviderTestCase
      */
     public function testOtherHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays(
+            [
+                'pentecost',
+                'newYearsEve',
+            ],
+            self::REGION,
+            $this->year,
+            Holiday::TYPE_OTHER
+        );
     }
 
     /**

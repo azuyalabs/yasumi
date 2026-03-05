@@ -42,13 +42,12 @@ class ReconciliationDayTest extends SouthAfricaBaseTestCase implements HolidayTe
     /**
      * Tests the holiday defined in this test.
      *
-     * @dataProvider HolidayDataProvider
-     *
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
      * @throws \Exception
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, string $expected): void
     {
         $date = new \DateTime($expected, new \DateTimeZone(self::TIMEZONE));
@@ -68,12 +67,12 @@ class ReconciliationDayTest extends SouthAfricaBaseTestCase implements HolidayTe
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
         $data = [];
 
         for ($y = 0; $y < 50; ++$y) {
-            $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+            $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
             $date = new \DateTime("{$year}-12-16", new \DateTimeZone(self::TIMEZONE));
             $data[] = [$year, $date->format('Y-m-d')];
         }
@@ -91,7 +90,7 @@ class ReconciliationDayTest extends SouthAfricaBaseTestCase implements HolidayTe
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -105,7 +104,7 @@ class ReconciliationDayTest extends SouthAfricaBaseTestCase implements HolidayTe
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => 'Day of Reconciliation']
         );
     }
@@ -120,7 +119,7 @@ class ReconciliationDayTest extends SouthAfricaBaseTestCase implements HolidayTe
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

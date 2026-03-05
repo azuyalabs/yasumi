@@ -38,7 +38,7 @@ class AndorraTest extends AndorraBaseTestCase implements ProviderTestCase
      */
     public function testOfficialHolidays(): void
     {
-        $year = $this->generateRandomYear();
+        $year = static::generateRandomYear();
 
         $holidays = [
             'newYearsDay',
@@ -70,7 +70,7 @@ class AndorraTest extends AndorraBaseTestCase implements ProviderTestCase
      */
     public function testObservedHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays([], self::REGION, static::generateRandomYear(), Holiday::TYPE_OBSERVANCE);
     }
 
     /**
@@ -80,7 +80,7 @@ class AndorraTest extends AndorraBaseTestCase implements ProviderTestCase
      */
     public function testSeasonalHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_SEASON);
+        $this->assertDefinedHolidays([], self::REGION, static::generateRandomYear(), Holiday::TYPE_SEASON);
     }
 
     /**
@@ -90,7 +90,7 @@ class AndorraTest extends AndorraBaseTestCase implements ProviderTestCase
      */
     public function testBankHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_BANK);
+        $this->assertDefinedHolidays([], self::REGION, static::generateRandomYear(), Holiday::TYPE_BANK);
     }
 
     /**
@@ -100,7 +100,7 @@ class AndorraTest extends AndorraBaseTestCase implements ProviderTestCase
      */
     public function testOtherHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays([], self::REGION, static::generateRandomYear(), Holiday::TYPE_OTHER);
     }
 
     /**

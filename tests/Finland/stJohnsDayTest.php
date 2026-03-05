@@ -62,7 +62,7 @@ class stJohnsDayTest extends FinlandBaseTestCase implements HolidayTestCase
      */
     public function testHolidayAfterAdjustment(): void
     {
-        $year = $this->generateRandomYear(self::ADJUSTMENT_YEAR);
+        $year = static::generateRandomYear(self::ADJUSTMENT_YEAR);
 
         $holidays = Yasumi::create(self::REGION, $year);
         $holiday = $holidays->getHoliday(self::HOLIDAY);
@@ -88,7 +88,7 @@ class stJohnsDayTest extends FinlandBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Juhannuspäivä']
         );
     }
@@ -100,6 +100,6 @@ class stJohnsDayTest extends FinlandBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

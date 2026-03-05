@@ -37,7 +37,7 @@ class BerchtoldsTagTest extends JuraBaseTestCase implements HolidayTestCase
      */
     public function testBerchtoldsTag(): void
     {
-        $year = $this->generateRandomYear();
+        $year = static::generateRandomYear();
         $date = new \DateTime($year . '-01-02', new \DateTimeZone(self::TIMEZONE));
 
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
@@ -54,7 +54,7 @@ class BerchtoldsTagTest extends JuraBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Jour de la Saint-Berthold']
         );
     }
@@ -66,6 +66,6 @@ class BerchtoldsTagTest extends JuraBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OTHER);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OTHER);
     }
 }

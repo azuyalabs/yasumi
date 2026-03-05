@@ -37,7 +37,7 @@ class MecklenburgWesternPomeraniaTest extends MecklenburgWesternPomeraniaBaseTes
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear();
+        $this->year = static::generateRandomYear();
     }
 
     /**
@@ -96,7 +96,15 @@ class MecklenburgWesternPomeraniaTest extends MecklenburgWesternPomeraniaBaseTes
      */
     public function testOtherHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays(
+            [
+                'pentecost',
+                'newYearsEve',
+            ],
+            self::REGION,
+            $this->year,
+            Holiday::TYPE_OTHER
+        );
     }
 
     /**

@@ -110,15 +110,26 @@ class SubstituteHolidayTest extends TestCase
         $substitute = new SubstituteHoliday($holiday, [$locale => $translation], new \DateTime('2019-01-02'), $locale);
 
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
+        $matcher = self::exactly(3);
         $translationsStub
-            ->expects(self::exactly(3))
-            ->method('getTranslations')
-            ->withConsecutive([self::equalTo('substituteHoliday')], [self::equalTo('substituteHoliday:testHoliday')], [self::equalTo('testHoliday')])
-            ->willReturnOnConsecutiveCalls(
-                [$locale => 'foo'],
-                [$locale => 'foo'],
-                ['en' => 'foo']
-            );
+            ->expects($matcher)
+            ->method('getTranslations')->willReturnCallback(function (...$parameters) use ($matcher, $locale) {
+                if (1 === $matcher->numberOfInvocations()) {
+                    self::assertSame('substituteHoliday', $parameters[0]);
+
+                    return [$locale => 'foo'];
+                }
+                if (2 === $matcher->numberOfInvocations()) {
+                    self::assertSame('substituteHoliday:testHoliday', $parameters[0]);
+
+                    return [$locale => 'foo'];
+                }
+                if (3 === $matcher->numberOfInvocations()) {
+                    self::assertSame('testHoliday', $parameters[0]);
+
+                    return ['en' => 'foo'];
+                }
+            });
 
         $substitute->mergeGlobalTranslations($translationsStub);
 
@@ -136,15 +147,26 @@ class SubstituteHolidayTest extends TestCase
         $substitute = new SubstituteHoliday($holiday, [], new \DateTime('2019-01-02'), $locale);
 
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
+        $matcher = self::exactly(3);
         $translationsStub
-            ->expects(self::exactly(3))
-            ->method('getTranslations')
-            ->withConsecutive([self::equalTo('substituteHoliday')], [self::equalTo('substituteHoliday:testHoliday')], [self::equalTo('testHoliday')])
-            ->willReturnOnConsecutiveCalls(
-                ['en' => '{0} obs'],
-                [],
-                [$locale => $translation]
-            );
+            ->expects($matcher)
+            ->method('getTranslations')->willReturnCallback(function (...$parameters) use ($matcher, $locale, $translation) {
+                if (1 === $matcher->numberOfInvocations()) {
+                    self::assertSame('substituteHoliday', $parameters[0]);
+
+                    return ['en' => '{0} obs'];
+                }
+                if (2 === $matcher->numberOfInvocations()) {
+                    self::assertSame('substituteHoliday:testHoliday', $parameters[0]);
+
+                    return [];
+                }
+                if (3 === $matcher->numberOfInvocations()) {
+                    self::assertSame('testHoliday', $parameters[0]);
+
+                    return [$locale => $translation];
+                }
+            });
 
         $substitute->mergeGlobalTranslations($translationsStub);
 
@@ -162,15 +184,26 @@ class SubstituteHolidayTest extends TestCase
         $substitute = new SubstituteHoliday($holiday, [$locale => $translation], new \DateTime('2019-01-02'), $locale);
 
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
+        $matcher = self::exactly(3);
         $translationsStub
-            ->expects(self::exactly(3))
-            ->method('getTranslations')
-            ->withConsecutive([self::equalTo('substituteHoliday')], [self::equalTo('substituteHoliday:testHoliday')], [self::equalTo('testHoliday')])
-            ->willReturnOnConsecutiveCalls(
-                [$locale => '{0} observed'],
-                [$locale => $translation],
-                [$locale => 'foo'],
-            );
+            ->expects($matcher)
+            ->method('getTranslations')->willReturnCallback(function (...$parameters) use ($matcher, $locale, $translation) {
+                if (1 === $matcher->numberOfInvocations()) {
+                    self::assertSame('substituteHoliday', $parameters[0]);
+
+                    return [$locale => '{0} observed'];
+                }
+                if (2 === $matcher->numberOfInvocations()) {
+                    self::assertSame('substituteHoliday:testHoliday', $parameters[0]);
+
+                    return [$locale => $translation];
+                }
+                if (3 === $matcher->numberOfInvocations()) {
+                    self::assertSame('testHoliday', $parameters[0]);
+
+                    return [$locale => 'foo'];
+                }
+            });
 
         $substitute->mergeGlobalTranslations($translationsStub);
 
@@ -188,15 +221,26 @@ class SubstituteHolidayTest extends TestCase
         $substitute = new SubstituteHoliday($holiday, [], new \DateTime('2019-01-02'), $locale);
 
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
+        $matcher = self::exactly(3);
         $translationsStub
-            ->expects(self::exactly(3))
-            ->method('getTranslations')
-            ->withConsecutive([self::equalTo('substituteHoliday')], [self::equalTo('substituteHoliday:testHoliday')], [self::equalTo('testHoliday')])
-            ->willReturnOnConsecutiveCalls(
-                [$locale => '{0} observed'],
-                [],
-                [$locale => $translation],
-            );
+            ->expects($matcher)
+            ->method('getTranslations')->willReturnCallback(function (...$parameters) use ($matcher, $locale, $translation) {
+                if (1 === $matcher->numberOfInvocations()) {
+                    self::assertSame('substituteHoliday', $parameters[0]);
+
+                    return [$locale => '{0} observed'];
+                }
+                if (2 === $matcher->numberOfInvocations()) {
+                    self::assertSame('substituteHoliday:testHoliday', $parameters[0]);
+
+                    return [];
+                }
+                if (3 === $matcher->numberOfInvocations()) {
+                    self::assertSame('testHoliday', $parameters[0]);
+
+                    return [$locale => $translation];
+                }
+            });
 
         $substitute->mergeGlobalTranslations($translationsStub);
 

@@ -43,7 +43,7 @@ class StatehoodDayTest extends LithuaniaBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, Lithuania::STATEHOOD_YEAR - 1)
+            static::generateRandomYear(1000, Lithuania::STATEHOOD_YEAR - 1)
         );
     }
 
@@ -54,7 +54,7 @@ class StatehoodDayTest extends LithuaniaBaseTestCase implements HolidayTestCase
      */
     public function testHolidayAfterRestoration(): void
     {
-        $year = $this->generateRandomYear(Lithuania::STATEHOOD_YEAR);
+        $year = static::generateRandomYear(Lithuania::STATEHOOD_YEAR);
 
         $this->assertHoliday(
             self::REGION,
@@ -72,13 +72,13 @@ class StatehoodDayTest extends LithuaniaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(Lithuania::STATEHOOD_YEAR),
+            static::generateRandomYear(Lithuania::STATEHOOD_YEAR),
             [self::LOCALE => 'Valstybės (Lietuvos karaliaus Mindaugo karūnavimo) diena']
         );
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(Lithuania::STATEHOOD_YEAR),
+            static::generateRandomYear(Lithuania::STATEHOOD_YEAR),
             ['en' => 'Statehood Day (Lithuania)']
         );
     }
@@ -91,7 +91,7 @@ class StatehoodDayTest extends LithuaniaBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(Lithuania::STATEHOOD_YEAR),
+            static::generateRandomYear(Lithuania::STATEHOOD_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

@@ -136,10 +136,9 @@ class YasumiWorkdayTest extends TestCase
     /**
      * Tests when the next working day happens to be in the next year.
      *
-     * @dataProvider dataProviderWorkDayNextYear
-     *
      * @throws \Exception
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('dataProviderWorkDayNextYear')]
     public function testWorkDayIsNextYear(string $start, int $workdays, string $expectedNext): void
     {
         $provider = 'USA';
@@ -153,7 +152,7 @@ class YasumiWorkdayTest extends TestCase
     /**
      * @return array<array> list of test dates that are considered working days the next year
      */
-    public function dataProviderWorkDayNextYear(): array
+    public static function dataProviderWorkDayNextYear(): array
     {
         return [
             [
@@ -172,10 +171,9 @@ class YasumiWorkdayTest extends TestCase
     /**
      * Tests when the previous working day happens to be in the previous year.
      *
-     * @dataProvider dataProviderWorkDayPreviousYear
-     *
      * @throws \Exception
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('dataProviderWorkDayPreviousYear')]
     public function testWorkDayIsPreviousYear(string $start, int $workdays, string $expectedNext): void
     {
         $provider = 'USA';
@@ -189,7 +187,7 @@ class YasumiWorkdayTest extends TestCase
     /**
      * @return array<array> list of test dates that are considered working days the previous year
      */
-    public function dataProviderWorkDayPreviousYear(): array
+    public static function dataProviderWorkDayPreviousYear(): array
     {
         return [
             [

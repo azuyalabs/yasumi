@@ -37,7 +37,7 @@ class NewBrunswickTest extends NewBrunswickBaseTestCase implements ProviderTestC
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1978);
+        $this->year = static::generateRandomYear(1978);
     }
 
     /**

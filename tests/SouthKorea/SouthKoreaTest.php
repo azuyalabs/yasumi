@@ -44,7 +44,7 @@ class SouthKoreaTest extends SouthKoreaBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1949, self::LUNAR_TEST_LIMIT);
+        $this->year = static::generateRandomYear(1949, self::LUNAR_TEST_LIMIT);
     }
 
     /**

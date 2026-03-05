@@ -37,7 +37,7 @@ class FlindersIslandTest extends FlindersIslandBaseTestCase implements ProviderT
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1921);
+        $this->year = static::generateRandomYear(1921);
     }
 
     /**

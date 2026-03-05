@@ -37,14 +37,12 @@ class AssumptionOfMaryDayTest extends LithuaniaBaseTestCase implements HolidayTe
      *
      * @throws \Exception
      */
-    public function holidayDataProvider(): array
+    public static function holidayDataProvider(): array
     {
-        return $this->generateRandomDates(8, 15, self::TIMEZONE);
+        return static::generateRandomDates(8, 15, self::TIMEZONE);
     }
 
-    /**
-     * @dataProvider holidayDataProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('holidayDataProvider')]
     public function testHoliday(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -58,7 +56,7 @@ class AssumptionOfMaryDayTest extends LithuaniaBaseTestCase implements HolidayTe
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Žolinė (Švč. Mergelės Marijos ėmimo į dangų diena)']
         );
     }
@@ -68,6 +66,6 @@ class AssumptionOfMaryDayTest extends LithuaniaBaseTestCase implements HolidayTe
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

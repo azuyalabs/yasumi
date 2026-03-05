@@ -63,7 +63,7 @@ class AllSaintsDayTest extends PortugalBaseTestCase implements HolidayTestCase
      */
     public function testNotHoliday(): void
     {
-        $year = $this->generateRandomYear(2013, 2015);
+        $year = static::generateRandomYear(2013, 2015);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
     }
 
@@ -74,7 +74,7 @@ class AllSaintsDayTest extends PortugalBaseTestCase implements HolidayTestCase
      */
     public function testTranslation(): void
     {
-        $year = $this->generateRandomYear(self::HOLIDAY_YEAR_RESTORED);
+        $year = static::generateRandomYear(self::HOLIDAY_YEAR_RESTORED);
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
@@ -91,11 +91,11 @@ class AllSaintsDayTest extends PortugalBaseTestCase implements HolidayTestCase
     public function testHolidayType(): void
     {
         // After restoration
-        $year = $this->generateRandomYear(self::HOLIDAY_YEAR_RESTORED);
+        $year = static::generateRandomYear(self::HOLIDAY_YEAR_RESTORED);
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OFFICIAL);
 
         // Before abolishment
-        $year = $this->generateRandomYear(1000, self::HOLIDAY_YEAR_ABOLISHED - 1);
+        $year = static::generateRandomYear(1000, self::HOLIDAY_YEAR_ABOLISHED - 1);
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OFFICIAL);
     }
 }

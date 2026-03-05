@@ -37,7 +37,7 @@ class ItalyTest extends ItalyBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1949);
+        $this->year = static::generateRandomYear(1949);
     }
 
     /**

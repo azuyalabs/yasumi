@@ -43,7 +43,7 @@ class RussiaDayTest extends RussiaBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, Russia::RUSSIA_DAY_START_YEAR - 1)
+            static::generateRandomYear(1000, Russia::RUSSIA_DAY_START_YEAR - 1)
         );
     }
 
@@ -54,7 +54,7 @@ class RussiaDayTest extends RussiaBaseTestCase implements HolidayTestCase
      */
     public function testHolidayAfter(): void
     {
-        $year = $this->generateRandomYear(Russia::RUSSIA_DAY_START_YEAR);
+        $year = static::generateRandomYear(Russia::RUSSIA_DAY_START_YEAR);
 
         $this->assertHoliday(
             self::REGION,
@@ -72,13 +72,13 @@ class RussiaDayTest extends RussiaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(Russia::RUSSIA_DAY_START_YEAR),
+            static::generateRandomYear(Russia::RUSSIA_DAY_START_YEAR),
             [self::LOCALE => 'День России']
         );
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(Russia::RUSSIA_DAY_START_YEAR),
+            static::generateRandomYear(Russia::RUSSIA_DAY_START_YEAR),
             ['en' => 'Russia Day']
         );
     }
@@ -91,7 +91,7 @@ class RussiaDayTest extends RussiaBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(Russia::RUSSIA_DAY_START_YEAR),
+            static::generateRandomYear(Russia::RUSSIA_DAY_START_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

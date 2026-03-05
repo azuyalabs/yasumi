@@ -34,11 +34,10 @@ class CatholicChristmasDayTest extends UkraineBaseTestCase implements HolidayTes
     /**
      * Tests Catholic Christmas Day.
      *
-     * @dataProvider CatholicChristmasDayDataProvider
-     *
      * @param int       $year     the year for which International Workers' Day needs to be tested
      * @param \DateTime $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('CatholicChristmasDayDataProvider')]
     public function testCatholicChristmasDay(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -51,7 +50,7 @@ class CatholicChristmasDayTest extends UkraineBaseTestCase implements HolidayTes
      */
     public function testNoCatholicChristmasDayBefore2017(): void
     {
-        $year = $this->generateRandomYear(null, 2016);
+        $year = static::generateRandomYear(null, 2016);
         $holidays = Yasumi::create(self::REGION, $year);
         $holiday = $holidays->getHoliday(self::HOLIDAY);
 
@@ -70,7 +69,7 @@ class CatholicChristmasDayTest extends UkraineBaseTestCase implements HolidayTes
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(2017),
+            static::generateRandomYear(2017),
             [self::LOCALE => 'Католицький день Різдва']
         );
     }
@@ -82,7 +81,7 @@ class CatholicChristmasDayTest extends UkraineBaseTestCase implements HolidayTes
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(2017), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(2017), Holiday::TYPE_OFFICIAL);
     }
 
     /**
@@ -92,12 +91,12 @@ class CatholicChristmasDayTest extends UkraineBaseTestCase implements HolidayTes
      *
      * @throws \Exception
      */
-    public function CatholicChristmasDayDataProvider(): array
+    public static function CatholicChristmasDayDataProvider(): array
     {
         $data = [];
 
         for ($y = 0; $y < 10; ++$y) {
-            $year = $this->generateRandomYear(2017);
+            $year = static::generateRandomYear(2017);
             $data[] = [$year, new \DateTime("{$year}-12-25", new \DateTimeZone(self::TIMEZONE))];
         }
 

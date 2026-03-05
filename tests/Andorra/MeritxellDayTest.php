@@ -33,11 +33,10 @@ class MeritxellDayTest extends AndorraBaseTestCase implements HolidayTestCase
     /**
      * Tests Our Lady of Meritxell Day.
      *
-     * @dataProvider HolidayDataProvider
-     *
      * @param int       $year     the year for which the holiday defined in this test needs to be tested
      * @param \DateTime $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -50,9 +49,9 @@ class MeritxellDayTest extends AndorraBaseTestCase implements HolidayTestCase
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
-        return $this->generateRandomDates(9, 8, self::TIMEZONE);
+        return static::generateRandomDates(9, 8, self::TIMEZONE);
     }
 
     /**
@@ -65,7 +64,7 @@ class MeritxellDayTest extends AndorraBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Dia de la Mare de Déu de Meritxell']
         );
     }
@@ -77,6 +76,6 @@ class MeritxellDayTest extends AndorraBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

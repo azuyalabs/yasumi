@@ -43,13 +43,12 @@ class SecondNewYearsDayTest extends ScotlandBaseTestCase implements HolidayTestC
     /**
      * Tests the holiday defined in this test on or after establishment.
      *
-     * @dataProvider HolidayDataProvider
-     *
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
      * @throws \Exception
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHolidayOnAfterEstablishment(int $year, string $expected): void
     {
         $date = new \DateTime($expected, new \DateTimeZone(self::TIMEZONE));
@@ -71,7 +70,7 @@ class SecondNewYearsDayTest extends ScotlandBaseTestCase implements HolidayTestC
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -85,7 +84,7 @@ class SecondNewYearsDayTest extends ScotlandBaseTestCase implements HolidayTestC
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::ADJUSTMENT_YEAR - 1),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::ADJUSTMENT_YEAR - 1),
             Holiday::TYPE_OBSERVANCE
         );
     }
@@ -97,12 +96,12 @@ class SecondNewYearsDayTest extends ScotlandBaseTestCase implements HolidayTestC
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
         $data = [];
 
         for ($y = 0; $y < self::TEST_ITERATIONS; ++$y) {
-            $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+            $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
             $date = new \DateTime("{$year}-1-2", new \DateTimeZone(self::TIMEZONE));
             $data[] = [$year, $date->format('Y-m-d')];
         }
@@ -120,7 +119,7 @@ class SecondNewYearsDayTest extends ScotlandBaseTestCase implements HolidayTestC
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => '2nd January']
         );
     }
@@ -135,7 +134,7 @@ class SecondNewYearsDayTest extends ScotlandBaseTestCase implements HolidayTestC
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ADJUSTMENT_YEAR),
+            static::generateRandomYear(self::ADJUSTMENT_YEAR),
             Holiday::TYPE_BANK
         );
     }

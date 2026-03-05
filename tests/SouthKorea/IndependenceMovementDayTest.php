@@ -42,7 +42,7 @@ class IndependenceMovementDayTest extends SouthKoreaBaseTestCase implements Holi
      */
     public function testHoliday(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -103,7 +103,7 @@ class IndependenceMovementDayTest extends SouthKoreaBaseTestCase implements Holi
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -117,7 +117,7 @@ class IndependenceMovementDayTest extends SouthKoreaBaseTestCase implements Holi
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => '삼일절']
         );
     }
@@ -132,7 +132,7 @@ class IndependenceMovementDayTest extends SouthKoreaBaseTestCase implements Holi
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

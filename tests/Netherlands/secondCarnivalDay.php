@@ -31,6 +31,11 @@ class secondCarnivalDay extends NetherlandsBaseTestCase implements HolidayTestCa
      */
     public const HOLIDAY = 'secondCarnivalDay';
 
+    public function __construct()
+    {
+        parent::__construct(static::class);
+    }
+
     /**
      * Tests the holiday defined in this test.
      *
@@ -60,7 +65,7 @@ class secondCarnivalDay extends NetherlandsBaseTestCase implements HolidayTestCa
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OBSERVANCE);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OBSERVANCE);
     }
 
     /**
@@ -76,7 +81,7 @@ class secondCarnivalDay extends NetherlandsBaseTestCase implements HolidayTestCa
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Carnaval']
         );
     }

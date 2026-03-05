@@ -37,7 +37,7 @@ class BrandenburgTest extends BrandenburgBaseTestCase implements ProviderTestCas
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear();
+        $this->year = static::generateRandomYear();
     }
 
     /**
@@ -98,7 +98,14 @@ class BrandenburgTest extends BrandenburgBaseTestCase implements ProviderTestCas
      */
     public function testOtherHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays(
+            [
+                'newYearsEve',
+            ],
+            self::REGION,
+            $this->year,
+            Holiday::TYPE_OTHER
+        );
     }
 
     /**

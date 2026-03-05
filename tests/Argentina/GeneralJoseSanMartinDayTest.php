@@ -99,7 +99,7 @@ class GeneralJoseSanMartinDayTest extends ArgentinaBaseTestCase implements Holid
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => 'Paso a la Inmortalidad del General José de San Martín']
         );
     }
@@ -111,6 +111,6 @@ class GeneralJoseSanMartinDayTest extends ArgentinaBaseTestCase implements Holid
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(self::ESTABLISHMENT_YEAR), Holiday::TYPE_OFFICIAL);
     }
 }

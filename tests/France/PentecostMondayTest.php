@@ -57,7 +57,7 @@ class PentecostMondayTest extends FranceBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Lundi de Pentecôte']
         );
     }
@@ -72,14 +72,14 @@ class PentecostMondayTest extends FranceBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(null, France::EST_YEAR_DAY_OF_SOLIDARITY_WITH_ELDERLY - 1),
+            static::generateRandomYear(null, France::EST_YEAR_DAY_OF_SOLIDARITY_WITH_ELDERLY - 1),
             Holiday::TYPE_OFFICIAL
         );
 
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(France::EST_YEAR_DAY_OF_SOLIDARITY_WITH_ELDERLY),
+            static::generateRandomYear(France::EST_YEAR_DAY_OF_SOLIDARITY_WITH_ELDERLY),
             Holiday::TYPE_OBSERVANCE
         );
     }

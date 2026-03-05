@@ -37,7 +37,7 @@ class BasqueCountryTest extends BasqueCountryBaseTestCase implements ProviderTes
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(2011, 2013);
+        $this->year = static::generateRandomYear(2011, 2013);
     }
 
     /**

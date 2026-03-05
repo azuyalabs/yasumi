@@ -47,7 +47,7 @@ class BlackConsciousnessDayTest extends BrazilBaseTestCase implements HolidayTes
      */
     public function testBlackConsciousnessDay(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::OFFICIAL_YEAR - 1);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::OFFICIAL_YEAR - 1);
         $expectedDate = "{$year}-11-20";
         $this->assertHoliday(
             self::REGION,
@@ -67,7 +67,7 @@ class BlackConsciousnessDayTest extends BrazilBaseTestCase implements HolidayTes
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -81,7 +81,7 @@ class BlackConsciousnessDayTest extends BrazilBaseTestCase implements HolidayTes
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => 'Dia Nacional de Zumbi e da Consciência Negra']
         );
     }
@@ -96,14 +96,14 @@ class BlackConsciousnessDayTest extends BrazilBaseTestCase implements HolidayTes
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::OFFICIAL_YEAR - 1),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::OFFICIAL_YEAR - 1),
             Holiday::TYPE_OBSERVANCE
         );
 
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::OFFICIAL_YEAR),
+            static::generateRandomYear(self::OFFICIAL_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

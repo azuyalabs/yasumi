@@ -35,9 +35,8 @@ class WeekendTest extends TestCase
      * Note: this test uses Belgium as a representative country for the global, common weekend definition.
      * Tests for countries that deviate from the global definition will be added as soon as their respective
      * Holiday Provider is created.
-     *
-     * @dataProvider dataProviderWeekendDays
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('dataProviderWeekendDays')]
     public function testWeekendDay(\DateTimeImmutable $date): void
     {
         $yasumiProvider = Yasumi::create(self::HOLIDAY_PROVIDER, (int) $date->format('Y'));
@@ -51,7 +50,7 @@ class WeekendTest extends TestCase
      *
      * @throws \Exception
      */
-    public function dataProviderWeekendDays(): array
+    public static function dataProviderWeekendDays(): array
     {
         return [
             [
@@ -76,9 +75,8 @@ class WeekendTest extends TestCase
      * Note: this test uses Belgium as a representative country for the global, common weekend definition.
      * Tests for countries that deviate from the global definition will be added as soon as their respective
      * Holiday Provider is created.
-     *
-     * @dataProvider dataProviderNonWeekendDays
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('dataProviderNonWeekendDays')]
     public function testNonWeekendDay(\DateTimeImmutable $date): void
     {
         $yasumiProvider = Yasumi::create(self::HOLIDAY_PROVIDER, (int) $date->format('Y'));
@@ -92,7 +90,7 @@ class WeekendTest extends TestCase
      *
      * @throws \Exception
      */
-    public function dataProviderNonWeekendDays(): array
+    public static function dataProviderNonWeekendDays(): array
     {
         return [
             [

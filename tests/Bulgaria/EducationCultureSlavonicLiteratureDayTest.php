@@ -28,7 +28,7 @@ class EducationCultureSlavonicLiteratureDayTest extends BulgariaBaseTestCase imp
 
     public function testHoliday(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -42,7 +42,7 @@ class EducationCultureSlavonicLiteratureDayTest extends BulgariaBaseTestCase imp
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -51,7 +51,7 @@ class EducationCultureSlavonicLiteratureDayTest extends BulgariaBaseTestCase imp
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => 'Ден на българската просвета и култура и на славянската писменост']
         );
     }
@@ -61,7 +61,7 @@ class EducationCultureSlavonicLiteratureDayTest extends BulgariaBaseTestCase imp
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

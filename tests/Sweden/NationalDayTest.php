@@ -61,7 +61,7 @@ class NationalDayTest extends SwedenBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -75,7 +75,7 @@ class NationalDayTest extends SwedenBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1982),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, 1982),
             [self::LOCALE => 'Svenska flaggans dag']
         );
     }
@@ -90,7 +90,7 @@ class NationalDayTest extends SwedenBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }
@@ -105,7 +105,7 @@ class NationalDayTest extends SwedenBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1983),
+            static::generateRandomYear(1983),
             [self::LOCALE => 'Sveriges nationaldag']
         );
     }

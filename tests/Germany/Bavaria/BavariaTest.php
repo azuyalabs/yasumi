@@ -37,7 +37,7 @@ class BavariaTest extends BavariaBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1990);
+        $this->year = static::generateRandomYear(1990);
     }
 
     /**
@@ -91,7 +91,11 @@ class BavariaTest extends BavariaBaseTestCase implements ProviderTestCase
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays(
-            [],
+            [
+                'pentecost',
+                'assumptionOfMary',
+                'newYearsEve',
+            ],
             self::REGION,
             $this->year,
             Holiday::TYPE_OTHER

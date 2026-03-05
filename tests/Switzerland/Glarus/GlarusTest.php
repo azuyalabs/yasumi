@@ -37,7 +37,7 @@ class GlarusTest extends GlarusBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1945);
+        $this->year = static::generateRandomYear(1945);
     }
 
     /**
@@ -105,7 +105,23 @@ class GlarusTest extends GlarusBaseTestCase implements ProviderTestCase
      */
     public function testOtherHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays(
+            [
+                'newYearsDay',
+                'berchtoldsTag',
+                'goodFriday',
+                'easterMonday',
+                'nafelserFahrt',
+                'ascensionDay',
+                'pentecostMonday',
+                'allSaintsDay',
+                'christmasDay',
+                'stStephensDay',
+            ],
+            self::REGION,
+            $this->year,
+            Holiday::TYPE_OTHER
+        );
     }
 
     /**

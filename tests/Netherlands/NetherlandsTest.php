@@ -37,7 +37,7 @@ class NetherlandsTest extends NetherlandsBaseTestCase implements ProviderTestCas
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(2014);
+        $this->year = static::generateRandomYear(2014);
     }
 
     /**
@@ -80,7 +80,7 @@ class NetherlandsTest extends NetherlandsBaseTestCase implements ProviderTestCas
 
         $this->assertDefinedHolidays([
             'liberationDay',
-        ], self::REGION, $this->generateRandomYear(2011, 2014), Holiday::TYPE_OBSERVANCE);
+        ], self::REGION, static::generateRandomYear(2011, 2014), Holiday::TYPE_OBSERVANCE);
     }
 
     /**

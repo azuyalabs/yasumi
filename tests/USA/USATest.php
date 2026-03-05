@@ -37,7 +37,7 @@ class USATest extends USABaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1986);
+        $this->year = static::generateRandomYear(1986);
     }
 
     /**

@@ -35,7 +35,7 @@ class ConstitutionDayTest extends UkraineBaseTestCase implements HolidayTestCase
      */
     public function testHoliday(): void
     {
-        $year = $this->generateRandomYear(2024);
+        $year = static::generateRandomYear(2024);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -49,7 +49,7 @@ class ConstitutionDayTest extends UkraineBaseTestCase implements HolidayTestCase
      */
     public function testHolidayBefore2024(): void
     {
-        $year = $this->generateRandomYear(1996, 2023);
+        $year = static::generateRandomYear(1996, 2023);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -63,7 +63,7 @@ class ConstitutionDayTest extends UkraineBaseTestCase implements HolidayTestCase
      */
     public function testNotHolidayBeforeEstablishment(): void
     {
-        $year = $this->generateRandomYear(1000, 1995);
+        $year = static::generateRandomYear(1000, 1995);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
     }
 

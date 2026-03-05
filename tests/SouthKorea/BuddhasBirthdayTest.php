@@ -47,7 +47,7 @@ class BuddhasBirthdayTest extends SouthKoreaBaseTestCase implements HolidayTestC
      */
     public function testHoliday(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::LUNAR_TEST_LIMIT);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::LUNAR_TEST_LIMIT);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -59,13 +59,12 @@ class BuddhasBirthdayTest extends SouthKoreaBaseTestCase implements HolidayTestC
     /**
      * Tests substitute holidays.
      *
-     * @dataProvider SubstituteHolidayDataProvider
-     *
      * @param int     $year     the year for which the holiday defined in this test needs to be tested
      * @param ?string $expected the expected date
      *
      * @throws \Exception
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('SubstituteHolidayDataProvider')]
     public function testSubstituteHoliday(int $year, ?string $expected): void
     {
         if ($expected) {
@@ -94,7 +93,7 @@ class BuddhasBirthdayTest extends SouthKoreaBaseTestCase implements HolidayTestC
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -105,7 +104,7 @@ class BuddhasBirthdayTest extends SouthKoreaBaseTestCase implements HolidayTestC
      */
     public function testTranslation(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::LUNAR_TEST_LIMIT);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::LUNAR_TEST_LIMIT);
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
@@ -121,7 +120,7 @@ class BuddhasBirthdayTest extends SouthKoreaBaseTestCase implements HolidayTestC
      */
     public function testHolidayType(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::LUNAR_TEST_LIMIT);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::LUNAR_TEST_LIMIT);
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
@@ -135,7 +134,7 @@ class BuddhasBirthdayTest extends SouthKoreaBaseTestCase implements HolidayTestC
      *
      * @return array<array> list of test dates for the holiday defined in this test
      */
-    public function SubstituteHolidayDataProvider(): array
+    public static function SubstituteHolidayDataProvider(): array
     {
         return [
             [1975, null],

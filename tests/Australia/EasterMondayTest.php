@@ -34,13 +34,12 @@ class EasterMondayTest extends AustraliaBaseTestCase implements HolidayTestCase
     /**
      * Tests Easter Monday.
      *
-     * @dataProvider HolidayDataProvider
-     *
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
      * @throws \Exception
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, string $expected): void
     {
         $this->assertHoliday(
@@ -54,13 +53,12 @@ class EasterMondayTest extends AustraliaBaseTestCase implements HolidayTestCase
     /**
      * Tests Easter Tuesday for those years when ANZAC Day clashes with Easter Sunday or Monday.
      *
-     * @dataProvider HolidayDataProvider2
-     *
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
      * @throws \Exception
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider2')]
     public function testHoliday2(int $year, string $expected): void
     {
         $this->assertHoliday(
@@ -78,13 +76,13 @@ class EasterMondayTest extends AustraliaBaseTestCase implements HolidayTestCase
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
         $data = [];
 
         for ($y = 0; $y < 50; ++$y) {
-            $year = $this->generateRandomYear();
-            $date = $this->calculateEaster($year, $this->timezone);
+            $year = static::generateRandomYear();
+            $date = static::computeEaster($year, self::TIMEZONE);
             $date->add(new \DateInterval('P1D'));
 
             $data[] = [$year, $date->format('Y-m-d')];
@@ -98,7 +96,7 @@ class EasterMondayTest extends AustraliaBaseTestCase implements HolidayTestCase
      *
      * @return array<array> list of test dates for the holiday defined in this test
      */
-    public function HolidayDataProvider2(): array
+    public static function HolidayDataProvider2(): array
     {
         return [
             [2011, '2011-04-26'],
@@ -118,7 +116,7 @@ class EasterMondayTest extends AustraliaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             $this->region,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Easter Monday']
         );
         $this->assertTranslatedHolidayName(
@@ -136,7 +134,7 @@ class EasterMondayTest extends AustraliaBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType($this->region, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OFFICIAL);
         $this->assertHolidayType($this->region, self::HOLIDAY2, 2011, Holiday::TYPE_OFFICIAL);
     }
 }

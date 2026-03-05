@@ -117,7 +117,7 @@ class QueensDayTest extends NetherlandsBaseTestCase implements HolidayTestCase
      */
     public function testQueensDayBefore1891(): void
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(1000, 1890));
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, static::generateRandomYear(1000, 1890));
     }
 
     /**
@@ -127,7 +127,7 @@ class QueensDayTest extends NetherlandsBaseTestCase implements HolidayTestCase
      */
     public function testQueensDayAfter2013(): void
     {
-        $this->assertNotHoliday(self::REGION, self::HOLIDAY, $this->generateRandomYear(2014));
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY, static::generateRandomYear(2014));
     }
 
     /**
@@ -140,7 +140,7 @@ class QueensDayTest extends NetherlandsBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1891, 2013),
+            static::generateRandomYear(1891, 2013),
             [self::LOCALE => 'Koninginnedag']
         );
     }
@@ -155,7 +155,7 @@ class QueensDayTest extends NetherlandsBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1891, 2013),
+            static::generateRandomYear(1891, 2013),
             Holiday::TYPE_OFFICIAL
         );
     }

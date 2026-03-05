@@ -34,14 +34,13 @@ class BoxingDayTest extends AustraliaBaseTestCase implements HolidayTestCase
     /**
      * Tests Boxing Day.
      *
-     * @dataProvider HolidayDataProvider
-     *
      * @param int     $year          the year for which the holiday defined in this test needs to be tested
      * @param string  $expected      the expected date
      * @param ?string $expectedExtra the expected date for the additional holiday, or null if no additional holiday
      *
      * @throws \Exception
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, string $expected, ?string $expectedExtra): void
     {
         $this->assertHoliday(
@@ -71,7 +70,7 @@ class BoxingDayTest extends AustraliaBaseTestCase implements HolidayTestCase
      *
      * @return array<array> list of test dates for the holiday defined in this test
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
         return [
             [2010, '2010-12-26', '2010-12-28'],
@@ -98,7 +97,7 @@ class BoxingDayTest extends AustraliaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             $this->region,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Boxing Day']
         );
         $this->assertTranslatedHolidayName(
@@ -116,7 +115,7 @@ class BoxingDayTest extends AustraliaBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType($this->region, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OFFICIAL);
         $this->assertHolidayType($this->region, self::HOLIDAY2, 2020, Holiday::TYPE_OFFICIAL);
     }
 }

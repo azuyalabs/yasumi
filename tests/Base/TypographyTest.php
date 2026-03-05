@@ -35,13 +35,12 @@ class TypographyTest extends TestCase
     use YasumiBase;
 
     /**
-     * @dataProvider translationProvider
-     *
      * @param string $name   The localized holiday name
      * @param string $class  The provider
      * @param string $key    The holiday key
      * @param string $locale The locale
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('translationProvider')]
     public function testTranslations(string $name, string $class, string $key, string $locale): void
     {
         self::assertStringNotContainsString("'", $name, 'Translation contains typewriter apostrophe');
@@ -56,14 +55,14 @@ class TypographyTest extends TestCase
      * @throws \ReflectionException
      * @throws \Exception
      */
-    public function translationProvider(): array
+    public static function translationProvider(): array
     {
         $classes = Yasumi::getProviders();
 
         $tests = [];
 
         foreach ($classes as $class) {
-            $provider = Yasumi::create($class, $this->generateRandomYear());
+            $provider = Yasumi::create($class, static::generateRandomYear());
 
             foreach ($provider->getHolidays() as $holiday) {
                 foreach ($holiday->translations as $locale => $name) {

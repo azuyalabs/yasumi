@@ -37,7 +37,7 @@ trait Randomizer
      *
      * @throws \Exception
      */
-    public function generateRandomDates(
+    public static function generateRandomDates(
         int $month,
         int $day,
         ?string $timezone = null,
@@ -65,7 +65,7 @@ trait Randomizer
      *
      * @throws \Exception
      */
-    public function generateRandomEasterDates(
+    public static function generateRandomEasterDates(
         ?string $timezone = null,
         ?int $iterations = null,
         ?int $range = null,
@@ -75,7 +75,7 @@ trait Randomizer
 
         for ($i = 1; $i <= ($iterations ?? 10); ++$i) {
             $year = (int) self::dateTimeBetween("-{$range} years", "+{$range} years")->format('Y');
-            $date = $this->calculateEaster($year, $timezone ?? 'UTC');
+            $date = static::computeEaster($year, $timezone ?? 'UTC');
 
             $data[] = [$year, $date->format('Y-m-d')];
         }
@@ -94,14 +94,14 @@ trait Randomizer
      *
      * @throws \Exception
      */
-    public function generateRandomEasterMondayDates(
+    public static function generateRandomEasterMondayDates(
         ?string $timezone = null,
         ?int $iterations = null,
         ?int $range = null,
     ): array {
         $range ??= 1000;
 
-        return $this->generateRandomModifiedEasterDates(static function (\DateTime $date): void {
+        return static::generateRandomModifiedEasterDates(static function (\DateTime $date): void {
             $date->add(new \DateInterval('P1D'));
         }, $timezone ?? 'UTC', $iterations ?? 10, $range);
     }
@@ -118,7 +118,7 @@ trait Randomizer
      *
      * @throws \Exception
      */
-    public function generateRandomModifiedEasterDates(
+    public static function generateRandomModifiedEasterDates(
         callable $cb,
         ?string $timezone = null,
         ?int $iterations = null,
@@ -128,7 +128,7 @@ trait Randomizer
         $range ??= 1000;
         for ($i = 1; $i <= ($iterations ?? 10); ++$i) {
             $year = (int) self::dateTimeBetween("-{$range} years", "+{$range} years")->format('Y');
-            $date = $this->calculateEaster($year, $timezone ?? 'UTC');
+            $date = static::computeEaster($year, $timezone ?? 'UTC');
 
             $cb($date);
 
@@ -149,14 +149,14 @@ trait Randomizer
      *
      * @throws \Exception
      */
-    public function generateRandomGoodFridayDates(
+    public static function generateRandomGoodFridayDates(
         ?string $timezone = null,
         ?int $iterations = null,
         ?int $range = null,
     ): array {
         $range ??= 1000;
 
-        return $this->generateRandomModifiedEasterDates(static function (\DateTime $date): void {
+        return static::generateRandomModifiedEasterDates(static function (\DateTime $date): void {
             $date->sub(new \DateInterval('P2D'));
         }, $timezone ?? 'UTC', $iterations ?? 10, $range);
     }
@@ -172,14 +172,14 @@ trait Randomizer
      *
      * @throws \Exception
      */
-    public function generateRandomPentecostDates(
+    public static function generateRandomPentecostDates(
         ?string $timezone = null,
         ?int $iterations = null,
         ?int $range = null,
     ): array {
         $range ??= 1000;
 
-        return $this->generateRandomModifiedEasterDates(static function (\DateTime $date): void {
+        return static::generateRandomModifiedEasterDates(static function (\DateTime $date): void {
             $date->add(new \DateInterval('P49D'));
         }, $timezone ?? 'UTC', $iterations ?? 10, $range);
     }
@@ -198,15 +198,15 @@ trait Randomizer
      *
      * @throws \Exception
      */
-    public function generateRandomDatesWithHolidayMovedToMonday(
+    public static function generateRandomDatesWithHolidayMovedToMonday(
         int $month,
         int $day,
         ?string $timezone = null,
         ?int $iterations = null,
         ?int $range = null,
     ): array {
-        return $this->generateRandomDatesWithModifier($month, $day, function ($range, \DateTime $date): void {
-            if ($this->isWeekend($date)) {
+        return static::generateRandomDatesWithModifier($month, $day, static function ($range, \DateTime $date): void {
+            if (static::isWeekend($date)) {
                 $date->modify('next monday');
             }
         }, $iterations ?? 10, $range, $timezone ?? 'UTC');
@@ -226,7 +226,7 @@ trait Randomizer
      *
      * @throws \Exception
      */
-    public function generateRandomDatesWithModifier(
+    public static function generateRandomDatesWithModifier(
         int $month,
         int $day,
         callable $callback,
@@ -237,7 +237,7 @@ trait Randomizer
         $data = [];
 
         for ($i = 1; $i <= $iterations; ++$i) {
-            $year = $this->generateRandomYear($range);
+            $year = static::generateRandomYear($range);
             $date = new \DateTime("{$year}-{$month}-{$day}", new \DateTimeZone($timezone ?? 'UTC'));
 
             if (false === $callback($year, $date)) {
@@ -261,7 +261,7 @@ trait Randomizer
      *
      * @throws \Exception
      */
-    public function generateRandomYear(
+    public static function generateRandomYear(
         ?int $lowerLimit = null,
         ?int $upperLimit = null,
     ): int {
@@ -276,7 +276,7 @@ trait Randomizer
      *
      * @return bool true if $dateTime is a weekend, false otherwise
      */
-    public function isWeekend(
+    public static function isWeekend(
         \DateTimeInterface $dateTime,
         array $weekendDays = [0, 6],
     ): bool {
@@ -339,7 +339,7 @@ trait Randomizer
         );
     }
 
-    public function randomYearFromArray(array $years): int
+    public static function randomYearFromArray(array $years): int
     {
         if ([] === $years) {
             throw new \InvalidArgumentException(' years array must not be empty');
@@ -372,7 +372,10 @@ trait Randomizer
      * @see http://www.gmarts.org/index.php?go=415#EasterMallen
      * @see http://www.tondering.dk/claus/cal/easter.php
      */
-    protected function calculateEaster(int $year, string $timezone): \DateTimeInterface
+    /**
+     * Static Easter calculation used by data providers (avoids conflict with ChristianHolidays::calculateEaster).
+     */
+    protected static function computeEaster(int $year, string $timezone): \DateTimeInterface
     {
         if (\extension_loaded('calendar')) {
             $easter_days = easter_days($year);
@@ -425,6 +428,11 @@ trait Randomizer
         $easter->add(new \DateInterval('P' . $easter_days . 'D'));
 
         return $easter;
+    }
+
+    protected function calculateEaster(int $year, string $timezone): \DateTimeInterface
+    {
+        return static::computeEaster($year, $timezone);
     }
 
     /**

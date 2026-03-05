@@ -39,7 +39,7 @@ class SouthAfricaTest extends SouthAfricaBaseTestCase implements ProviderTestCas
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1994);
+        $this->year = static::generateRandomYear(1994);
     }
 
     /**

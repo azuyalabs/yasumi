@@ -35,11 +35,10 @@ class ChristmasEveTest extends SlovakiaBaseTestCase implements HolidayTestCase
     /**
      * Tests Christmas Eve.
      *
-     * @dataProvider HolidayDataProvider
-     *
      * @param int       $year     the year for which Christmas Day needs to be tested
      * @param \DateTime $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testChristmasEve(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -52,9 +51,9 @@ class ChristmasEveTest extends SlovakiaBaseTestCase implements HolidayTestCase
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
-        return $this->generateRandomDates(12, 24, self::TIMEZONE);
+        return static::generateRandomDates(12, 24, self::TIMEZONE);
     }
 
     /**
@@ -67,7 +66,7 @@ class ChristmasEveTest extends SlovakiaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Štedrý deň']
         );
     }
@@ -79,6 +78,6 @@ class ChristmasEveTest extends SlovakiaBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_BANK);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_BANK);
     }
 }

@@ -45,7 +45,7 @@ class CorpusChristiTest extends TicinoBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            $this->calculateEaster($year, self::TIMEZONE)->add(new \DateInterval('P60D'))
+            static::computeEaster($year, self::TIMEZONE)->add(new \DateInterval('P60D'))
         );
     }
 
@@ -59,7 +59,7 @@ class CorpusChristiTest extends TicinoBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Corpus Domini']
         );
     }
@@ -71,6 +71,6 @@ class CorpusChristiTest extends TicinoBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OTHER);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OTHER);
     }
 }

@@ -38,11 +38,10 @@ class ReformationDayTest extends SchleswigHolsteinBaseTestCase implements Holida
     /**
      * Tests the holiday defined in this test.
      *
-     * @dataProvider HolidayDataProvider
-     *
      * @param int       $year     the year for which the holiday defined in this test needs to be tested
      * @param \DateTime $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -55,12 +54,12 @@ class ReformationDayTest extends SchleswigHolsteinBaseTestCase implements Holida
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
         $data = [];
 
         for ($y = 0; $y < self::TEST_ITERATIONS; ++$y) {
-            $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+            $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
             $data[] = [$year, new \DateTime("{$year}-10-31", new \DateTimeZone(self::TIMEZONE))];
         }
 
@@ -77,7 +76,7 @@ class ReformationDayTest extends SchleswigHolsteinBaseTestCase implements Holida
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 2)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 2)
         );
     }
 
@@ -91,7 +90,7 @@ class ReformationDayTest extends SchleswigHolsteinBaseTestCase implements Holida
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => 'Reformationstag']
         );
     }
@@ -106,7 +105,7 @@ class ReformationDayTest extends SchleswigHolsteinBaseTestCase implements Holida
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

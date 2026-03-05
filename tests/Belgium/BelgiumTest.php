@@ -36,7 +36,7 @@ class BelgiumTest extends BelgiumBaseTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear();
+        $this->year = static::generateRandomYear();
     }
 
     /**

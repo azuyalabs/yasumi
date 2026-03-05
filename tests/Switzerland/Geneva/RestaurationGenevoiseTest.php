@@ -37,7 +37,7 @@ class RestaurationGenevoiseTest extends GenevaBaseTestCase implements HolidayTes
      */
     public function testRestaurationGenevoiseAfter1813(): void
     {
-        $year = $this->generateRandomYear(1814);
+        $year = static::generateRandomYear(1814);
 
         $this->assertHoliday(
             self::REGION,
@@ -57,7 +57,7 @@ class RestaurationGenevoiseTest extends GenevaBaseTestCase implements HolidayTes
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1814),
+            static::generateRandomYear(1814),
             [self::LOCALE => 'Restauration de la République']
         );
     }
@@ -69,6 +69,6 @@ class RestaurationGenevoiseTest extends GenevaBaseTestCase implements HolidayTes
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(1814), Holiday::TYPE_OTHER);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(1814), Holiday::TYPE_OTHER);
     }
 }

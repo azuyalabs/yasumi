@@ -39,7 +39,7 @@ class NationalSovereigntyDayTest extends TurkeyBaseTestCase implements HolidayTe
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(Yasumi::YEAR_LOWER_BOUND, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(Yasumi::YEAR_LOWER_BOUND, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -48,7 +48,7 @@ class NationalSovereigntyDayTest extends TurkeyBaseTestCase implements HolidayTe
      */
     public function testHolidayOnAfterEstablishment(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -65,7 +65,7 @@ class NationalSovereigntyDayTest extends TurkeyBaseTestCase implements HolidayTe
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::NAME_CHANGED_YEAR - 1),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::NAME_CHANGED_YEAR - 1),
             [self::LOCALE => 'Ulusal Egemenlik Bayramı']
         );
     }
@@ -78,7 +78,7 @@ class NationalSovereigntyDayTest extends TurkeyBaseTestCase implements HolidayTe
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::NAME_CHANGED_YEAR),
+            static::generateRandomYear(self::NAME_CHANGED_YEAR),
             [self::LOCALE => 'Ulusal Egemenlik ve Çocuk Bayramı']
         );
     }
@@ -88,6 +88,6 @@ class NationalSovereigntyDayTest extends TurkeyBaseTestCase implements HolidayTe
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(self::ESTABLISHMENT_YEAR), Holiday::TYPE_OFFICIAL);
     }
 }

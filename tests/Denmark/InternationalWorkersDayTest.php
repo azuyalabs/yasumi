@@ -33,11 +33,10 @@ class InternationalWorkersDayTest extends DenmarkBaseTestCase implements Holiday
     /**
      * Tests International Workers' Day.
      *
-     * @dataProvider InternationalWorkersDayDataProvider
-     *
      * @param int       $year     the year for which International Workers' Day needs to be tested
      * @param \DateTime $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('InternationalWorkersDayDataProvider')]
     public function testInternationalWorkersDay(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -50,9 +49,9 @@ class InternationalWorkersDayTest extends DenmarkBaseTestCase implements Holiday
      *
      * @throws \Exception
      */
-    public function InternationalWorkersDayDataProvider(): array
+    public static function InternationalWorkersDayDataProvider(): array
     {
-        return $this->generateRandomDates(5, 1, self::TIMEZONE);
+        return static::generateRandomDates(5, 1, self::TIMEZONE);
     }
 
     /**
@@ -65,7 +64,7 @@ class InternationalWorkersDayTest extends DenmarkBaseTestCase implements Holiday
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'første maj']
         );
     }
@@ -77,6 +76,6 @@ class InternationalWorkersDayTest extends DenmarkBaseTestCase implements Holiday
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OBSERVANCE);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OBSERVANCE);
     }
 }

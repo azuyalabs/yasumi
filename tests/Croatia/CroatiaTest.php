@@ -37,7 +37,7 @@ class CroatiaTest extends CroatiaBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1941);
+        $this->year = static::generateRandomYear(1941);
     }
 
     /**

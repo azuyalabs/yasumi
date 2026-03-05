@@ -208,7 +208,7 @@ class YasumiTest extends TestCase
     public function testGetHolidayWithBlankKey(): void
     {
         $holidays = Yasumi::create('Netherlands', 1999);
-        $holidays->getHoliday('');
+        self::assertNull($holidays->getHoliday(''));
     }
 
     public function testWhatWeekDayIs(): void

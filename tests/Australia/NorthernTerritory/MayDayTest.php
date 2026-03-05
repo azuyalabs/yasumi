@@ -33,13 +33,12 @@ class MayDayTest extends NorthernTerritoryBaseTestCase implements HolidayTestCas
     /**
      * Tests May Day.
      *
-     * @dataProvider HolidayDataProvider
-     *
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
      * @throws \Exception
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, string $expected): void
     {
         $this->assertHoliday(
@@ -55,7 +54,7 @@ class MayDayTest extends NorthernTerritoryBaseTestCase implements HolidayTestCas
      *
      * @return array<array> list of test dates for the holiday defined in this test
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
         return [
             [2010, '2010-05-03'],
@@ -82,7 +81,7 @@ class MayDayTest extends NorthernTerritoryBaseTestCase implements HolidayTestCas
         $this->assertTranslatedHolidayName(
             $this->region,
             self::HOLIDAY,
-            $this->generateRandomYear(1990),
+            static::generateRandomYear(1990),
             [self::LOCALE => 'May Day']
         );
     }
@@ -94,6 +93,6 @@ class MayDayTest extends NorthernTerritoryBaseTestCase implements HolidayTestCas
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(1990), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType($this->region, self::HOLIDAY, static::generateRandomYear(1990), Holiday::TYPE_OFFICIAL);
     }
 }

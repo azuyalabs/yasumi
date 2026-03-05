@@ -37,11 +37,10 @@ class InternationalWorkersDayTest extends CzechRepublicBaseTestCase implements H
     /**
      * Tests International Workers' Day.
      *
-     * @dataProvider HolidayDataProvider
-     *
      * @param int       $year     the year for which International Workers' Day needs to be tested
      * @param \DateTime $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -57,7 +56,7 @@ class InternationalWorkersDayTest extends CzechRepublicBaseTestCase implements H
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Svátek práce']
         );
     }
@@ -69,7 +68,7 @@ class InternationalWorkersDayTest extends CzechRepublicBaseTestCase implements H
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 
     /**
@@ -79,8 +78,8 @@ class InternationalWorkersDayTest extends CzechRepublicBaseTestCase implements H
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
-        return $this->generateRandomDates(5, 1, self::TIMEZONE);
+        return static::generateRandomDates(5, 1, self::TIMEZONE);
     }
 }

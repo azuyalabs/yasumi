@@ -37,7 +37,7 @@ class NorthernIrelandTest extends NorthernIrelandBaseTestCase implements Provide
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1978);
+        $this->year = static::generateRandomYear(1978);
     }
 
     /**
@@ -77,7 +77,7 @@ class NorthernIrelandTest extends NorthernIrelandBaseTestCase implements Provide
             'secondChristmasDay',
         ];
 
-        $year = $this->generateRandomYear();
+        $year = static::generateRandomYear();
 
         if (1926 <= $year) {
             $holidays[] = 'battleOfTheBoyne';
@@ -111,7 +111,14 @@ class NorthernIrelandTest extends NorthernIrelandBaseTestCase implements Provide
      */
     public function testOtherHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays(
+            [
+                'motheringSunday',
+            ],
+            self::REGION,
+            $this->year,
+            Holiday::TYPE_OTHER
+        );
     }
 
     /**

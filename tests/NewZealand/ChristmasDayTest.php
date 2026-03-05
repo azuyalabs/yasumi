@@ -33,13 +33,12 @@ class ChristmasDayTest extends NewZealandBaseTestCase implements HolidayTestCase
     /**
      * Tests Christmas Day.
      *
-     * @dataProvider HolidayDataProvider
-     *
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
      *
      * @throws \Exception
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, string $expected): void
     {
         $this->assertHoliday(
@@ -57,12 +56,12 @@ class ChristmasDayTest extends NewZealandBaseTestCase implements HolidayTestCase
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
         $data = [];
 
         for ($y = 0; $y < 50; ++$y) {
-            $year = $this->generateRandomYear();
+            $year = static::generateRandomYear();
             $date = new \DateTime("{$year}-12-25", new \DateTimeZone(self::TIMEZONE));
 
             if (\in_array((int) $date->format('w'), [0, 6], true)) {
@@ -85,7 +84,7 @@ class ChristmasDayTest extends NewZealandBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Christmas Day']
         );
     }
@@ -97,6 +96,6 @@ class ChristmasDayTest extends NewZealandBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

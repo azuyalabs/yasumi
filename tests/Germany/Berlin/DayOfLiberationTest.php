@@ -64,7 +64,7 @@ class DayOfLiberationTest extends BerlinBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, current(self::$years) - 1)
+            static::generateRandomYear(1000, current(self::$years) - 1)
         );
     }
 
@@ -80,7 +80,7 @@ class DayOfLiberationTest extends BerlinBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(current(self::$years) + 1)
+            static::generateRandomYear(current(self::$years) + 1)
         );
     }
 

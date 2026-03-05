@@ -47,7 +47,7 @@ class IndependenceDayTest extends CroatiaBaseTestCase implements HolidayTestCase
      */
     public function testIndependenceDayOnAfter1991(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::DISBANDMENT_YEAR - 1);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::DISBANDMENT_YEAR - 1);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -66,7 +66,7 @@ class IndependenceDayTest extends CroatiaBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -80,7 +80,7 @@ class IndependenceDayTest extends CroatiaBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::DISBANDMENT_YEAR)
+            static::generateRandomYear(self::DISBANDMENT_YEAR)
         );
     }
 
@@ -94,7 +94,7 @@ class IndependenceDayTest extends CroatiaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::DISBANDMENT_YEAR - 1),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::DISBANDMENT_YEAR - 1),
             [self::LOCALE => 'Dan neovisnosti']
         );
     }
@@ -109,7 +109,7 @@ class IndependenceDayTest extends CroatiaBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, self::DISBANDMENT_YEAR - 1),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::DISBANDMENT_YEAR - 1),
             Holiday::TYPE_OFFICIAL
         );
     }

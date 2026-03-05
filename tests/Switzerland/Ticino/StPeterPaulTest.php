@@ -33,11 +33,10 @@ class StPeterPaulTest extends TicinoBaseTestCase implements HolidayTestCase
     /**
      * Tests Feast of Saints Peter and Paul.
      *
-     * @dataProvider StPeterPaulDataProvider
-     *
      * @param int       $year     the year for which Feast of Saints Peter and Paul needs to be tested
      * @param \DateTime $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('StPeterPaulDataProvider')]
     public function testStPeterPaul(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -50,9 +49,9 @@ class StPeterPaulTest extends TicinoBaseTestCase implements HolidayTestCase
      *
      * @throws \Exception
      */
-    public function StPeterPaulDataProvider(): array
+    public static function StPeterPaulDataProvider(): array
     {
-        return $this->generateRandomDates(6, 29, self::TIMEZONE);
+        return static::generateRandomDates(6, 29, self::TIMEZONE);
     }
 
     /**
@@ -65,7 +64,7 @@ class StPeterPaulTest extends TicinoBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Santi Pietro e Paolo']
         );
     }
@@ -77,6 +76,6 @@ class StPeterPaulTest extends TicinoBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OTHER);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OTHER);
     }
 }

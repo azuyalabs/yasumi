@@ -37,7 +37,7 @@ class DenmarkTest extends DenmarkBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(2024);
+        $this->year = static::generateRandomYear(2024);
     }
 
     /**

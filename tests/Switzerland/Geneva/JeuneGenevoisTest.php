@@ -38,7 +38,7 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements HolidayTestCase
      */
     public function testJeuneGenevoisBetween1870And1965(): void
     {
-        $year = $this->generateRandomYear(1870, 1965);
+        $year = static::generateRandomYear(1870, 1965);
         // Find first Sunday of September
         $date = new \DateTime('First Sunday of ' . $year . '-09', new \DateTimeZone(self::TIMEZONE));
         // Go to next Thursday
@@ -55,7 +55,7 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements HolidayTestCase
      */
     public function testJeuneGenevoisBetween1840And1869(): void
     {
-        $year = $this->generateRandomYear(Geneva::JEUNE_GENEVOIS_ESTABLISHMENT_YEAR, 1869);
+        $year = static::generateRandomYear(Geneva::JEUNE_GENEVOIS_ESTABLISHMENT_YEAR, 1869);
         // Find first Sunday of September
         $date = new \DateTime('First Sunday of ' . $year . '-09', new \DateTimeZone(self::TIMEZONE));
         // Go to next Thursday
@@ -72,7 +72,7 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements HolidayTestCase
      */
     public function testJeuneGenevoisBefore1840(): void
     {
-        $year = $this->generateRandomYear(1000, Geneva::JEUNE_GENEVOIS_ESTABLISHMENT_YEAR - 1);
+        $year = static::generateRandomYear(1000, Geneva::JEUNE_GENEVOIS_ESTABLISHMENT_YEAR - 1);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
     }
 
@@ -86,7 +86,7 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1966),
+            static::generateRandomYear(1966),
             [self::LOCALE => 'Jeûne genevois']
         );
     }
@@ -101,7 +101,7 @@ class JeuneGenevoisTest extends GenevaBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1966),
+            static::generateRandomYear(1966),
             Holiday::TYPE_OTHER
         );
     }

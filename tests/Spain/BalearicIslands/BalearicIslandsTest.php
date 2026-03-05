@@ -37,7 +37,7 @@ class BalearicIslandsTest extends BalearicIslandsBaseTestCase implements Provide
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1981);
+        $this->year = static::generateRandomYear(1981);
     }
 
     /**

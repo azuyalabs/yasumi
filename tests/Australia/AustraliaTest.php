@@ -37,7 +37,7 @@ class AustraliaTest extends AustraliaBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1987);
+        $this->year = static::generateRandomYear(1987);
     }
 
     /**

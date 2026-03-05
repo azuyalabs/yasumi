@@ -33,11 +33,10 @@ class AustraliaDayTest extends AustraliaBaseTestCase implements HolidayTestCase
     /**
      * Tests the holiday defined in this test.
      *
-     * @dataProvider HolidayDataProvider
-     *
      * @param int       $year     the year for which the holiday defined in this test needs to be tested
      * @param \DateTime $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday($this->region, self::HOLIDAY, $year, $expected);
@@ -46,13 +45,12 @@ class AustraliaDayTest extends AustraliaBaseTestCase implements HolidayTestCase
     /**
      * Tests Australia Day.
      *
-     * @dataProvider SubstituteHolidayDataProvider
-     *
      * @param int     $year     the year for which the holiday defined in this test needs to be tested
      * @param ?string $expected the expected date
      *
      * @throws \Exception
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('SubstituteHolidayDataProvider')]
     public function testSubstituteHoliday(int $year, ?string $expected): void
     {
         if ($expected) {
@@ -81,7 +79,7 @@ class AustraliaDayTest extends AustraliaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             $this->region,
             self::HOLIDAY,
-            $this->generateRandomYear(2000),
+            static::generateRandomYear(2000),
             [self::LOCALE => 'Australia Day']
         );
     }
@@ -93,7 +91,7 @@ class AustraliaDayTest extends AustraliaBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType($this->region, self::HOLIDAY, $this->generateRandomYear(2000), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType($this->region, self::HOLIDAY, static::generateRandomYear(2000), Holiday::TYPE_OFFICIAL);
     }
 
     /**
@@ -103,9 +101,9 @@ class AustraliaDayTest extends AustraliaBaseTestCase implements HolidayTestCase
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
-        return $this->generateRandomDates(1, 26, $this->timezone);
+        return static::generateRandomDates(1, 26, 'Australia/Melbourne');
     }
 
     /**
@@ -113,7 +111,7 @@ class AustraliaDayTest extends AustraliaBaseTestCase implements HolidayTestCase
      *
      * @return array<array> list of test dates for the holiday defined in this test
      */
-    public function SubstituteHolidayDataProvider(): array
+    public static function SubstituteHolidayDataProvider(): array
     {
         return [
             [2010, null],

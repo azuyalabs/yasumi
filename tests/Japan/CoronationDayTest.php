@@ -56,7 +56,7 @@ class CoronationDayTest extends JapanBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -68,7 +68,7 @@ class CoronationDayTest extends JapanBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR + 1)
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR + 1)
         );
     }
 

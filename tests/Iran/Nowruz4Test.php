@@ -29,7 +29,7 @@ class Nowruz4Test extends IranBaseTestCase implements HolidayTestCase
      */
     public function testNowruz4(): void
     {
-        $year = $this->generateRandomYear();
+        $year = static::generateRandomYear();
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -46,7 +46,7 @@ class Nowruz4Test extends IranBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [
                 self::LOCALE => 'نوروز',
                 'en' => 'Nowruz',
@@ -59,6 +59,6 @@ class Nowruz4Test extends IranBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

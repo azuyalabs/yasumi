@@ -45,12 +45,12 @@ class CarnavalTuesdayTest extends BrazilBaseTestCase implements HolidayTestCase
      */
     public function testCarnavalTuesdayAfter1700(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             $year,
-            $this->calculateEaster($year, self::TIMEZONE)->sub(new \DateInterval('P47D'))
+            static::computeEaster($year, self::TIMEZONE)->sub(new \DateInterval('P47D'))
         );
     }
 
@@ -61,7 +61,7 @@ class CarnavalTuesdayTest extends BrazilBaseTestCase implements HolidayTestCase
      */
     public function testCarnavalTuesdayBefore1700(): void
     {
-        $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1);
+        $year = static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
     }
 
@@ -72,7 +72,7 @@ class CarnavalTuesdayTest extends BrazilBaseTestCase implements HolidayTestCase
      */
     public function testTranslation(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $year, [self::LOCALE => 'Terça-feira de Carnaval']);
     }
 
@@ -83,7 +83,7 @@ class CarnavalTuesdayTest extends BrazilBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OBSERVANCE);
     }
 }

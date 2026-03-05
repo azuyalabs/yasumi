@@ -38,11 +38,10 @@ class PlebisciteDayTest extends CarinthiaBaseTestCase implements HolidayTestCase
     /**
      * Tests Plebiscite Day.
      *
-     * @dataProvider PlebisciteDayDataProvider
-     *
      * @param int       $year     the year for which Plebiscite Day needs to be tested
      * @param \DateTime $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('PlebisciteDayDataProvider')]
     public function testPlebisciteDay(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -55,12 +54,12 @@ class PlebisciteDayTest extends CarinthiaBaseTestCase implements HolidayTestCase
      *
      * @throws \Exception
      */
-    public function PlebisciteDayDataProvider(): array
+    public static function PlebisciteDayDataProvider(): array
     {
         $data = [];
 
         for ($y = 0; $y < self::TEST_ITERATIONS; ++$y) {
-            $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+            $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
             $data[] = [$year, new \DateTime("{$year}-10-10", new \DateTimeZone(self::TIMEZONE))];
         }
 
@@ -77,7 +76,7 @@ class PlebisciteDayTest extends CarinthiaBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 2)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 2)
         );
     }
 
@@ -91,7 +90,7 @@ class PlebisciteDayTest extends CarinthiaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => 'Tag der Volksabstimmung']
         );
     }
@@ -103,6 +102,6 @@ class PlebisciteDayTest extends CarinthiaBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(self::ESTABLISHMENT_YEAR), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(self::ESTABLISHMENT_YEAR), Holiday::TYPE_OFFICIAL);
     }
 }

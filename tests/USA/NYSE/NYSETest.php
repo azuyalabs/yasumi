@@ -45,7 +45,7 @@ class NYSETest extends USABaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(2000);
+        $this->year = static::generateRandomYear(2000);
     }
 
     /**

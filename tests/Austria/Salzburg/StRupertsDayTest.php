@@ -33,11 +33,10 @@ class StRupertsDayTest extends SalzburgBaseTestCase implements HolidayTestCase
     /**
      * Tests Saint Rupert's Day.
      *
-     * @dataProvider StRupertsDayDataProvider
-     *
      * @param int       $year     the year for which Saint Rupert's Day needs to be tested
      * @param \DateTime $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('StRupertsDayDataProvider')]
     public function testStRupertsDay(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -50,9 +49,9 @@ class StRupertsDayTest extends SalzburgBaseTestCase implements HolidayTestCase
      *
      * @throws \Exception
      */
-    public function StRupertsDayDataProvider(): array
+    public static function StRupertsDayDataProvider(): array
     {
-        return $this->generateRandomDates(9, 24, self::TIMEZONE);
+        return static::generateRandomDates(9, 24, self::TIMEZONE);
     }
 
     /**
@@ -65,7 +64,7 @@ class StRupertsDayTest extends SalzburgBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Rupert']
         );
     }
@@ -77,6 +76,6 @@ class StRupertsDayTest extends SalzburgBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OFFICIAL);
     }
 }

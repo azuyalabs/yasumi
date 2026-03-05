@@ -30,9 +30,11 @@ abstract class AustraliaBaseTestCase extends TestCase
     /** Locale that is considered common for this provider. */
     public const LOCALE = 'en_AU';
 
+    /** Timezone in which this provider has holidays defined. */
+    public const TIMEZONE = 'Australia/Melbourne';
+
     /** Name of the region (e.g. country / state) to be tested. */
     public string $region = 'Australia';
 
-    /** Timezone in which this provider has holidays defined. */
     public string $timezone = 'Australia/Melbourne';
 }

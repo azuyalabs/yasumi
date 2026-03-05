@@ -37,7 +37,7 @@ class VictoriaTest extends VictoriaBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(2015, 2018);
+        $this->year = static::generateRandomYear(2015, 2018);
     }
 
     /**

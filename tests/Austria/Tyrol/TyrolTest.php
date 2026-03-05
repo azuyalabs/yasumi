@@ -37,7 +37,7 @@ class TyrolTest extends TyrolBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1135);
+        $this->year = static::generateRandomYear(1135);
     }
 
     /**

@@ -35,11 +35,10 @@ class DeclarationOfTheSlovakNationTest extends SlovakiaBaseTestCase implements H
     /**
      * Tests the holiday defined in this test.
      *
-     * @dataProvider HolidayDataProvider
-     *
      * @param int       $year     the year for which the holiday defined in this test needs to be tested
      * @param \DateTime $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, \DateTimeInterface $expected): void
     {
         if (2018 === $year) {
@@ -56,9 +55,9 @@ class DeclarationOfTheSlovakNationTest extends SlovakiaBaseTestCase implements H
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
-        return $this->generateRandomDates(10, 30, self::TIMEZONE);
+        return static::generateRandomDates(10, 30, self::TIMEZONE);
     }
 
     /**

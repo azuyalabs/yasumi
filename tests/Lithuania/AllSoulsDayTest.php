@@ -41,7 +41,7 @@ class AllSoulsDayTest extends LithuaniaBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, Lithuania::ALL_SOULS_DAY - 1)
+            static::generateRandomYear(1000, Lithuania::ALL_SOULS_DAY - 1)
         );
     }
 
@@ -52,7 +52,7 @@ class AllSoulsDayTest extends LithuaniaBaseTestCase implements HolidayTestCase
      */
     public function testHolidayAfterAnnounce(): void
     {
-        $year = $this->generateRandomYear(Lithuania::ALL_SOULS_DAY);
+        $year = static::generateRandomYear(Lithuania::ALL_SOULS_DAY);
 
         $this->assertHoliday(
             self::REGION,
@@ -70,7 +70,7 @@ class AllSoulsDayTest extends LithuaniaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(Lithuania::ALL_SOULS_DAY),
+            static::generateRandomYear(Lithuania::ALL_SOULS_DAY),
             [self::LOCALE => 'Vėlinės']
         );
     }
@@ -83,7 +83,7 @@ class AllSoulsDayTest extends LithuaniaBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(Lithuania::ALL_SOULS_DAY),
+            static::generateRandomYear(Lithuania::ALL_SOULS_DAY),
             Holiday::TYPE_OFFICIAL
         );
     }

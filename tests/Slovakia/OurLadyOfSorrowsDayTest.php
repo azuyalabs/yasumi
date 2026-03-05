@@ -32,11 +32,10 @@ class OurLadyOfSorrowsDayTest extends SlovakiaBaseTestCase implements HolidayTes
     /**
      * Tests the holiday defined in this test.
      *
-     * @dataProvider HolidayDataProvider
-     *
      * @param int    $year     the year for which this holiday needs to be tested
      * @param string $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, $expected): void
     {
         $this->assertHoliday(
@@ -54,9 +53,9 @@ class OurLadyOfSorrowsDayTest extends SlovakiaBaseTestCase implements HolidayTes
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
-        return $this->generateRandomDatesWithModifier(9, 15, function ($year, \DateTime $date): ?bool {
+        return static::generateRandomDatesWithModifier(9, 15, function ($year, \DateTime $date): ?bool {
             // Our Lady of Sorrows Day is not observed in 2025 and 2026
             if (in_array($year, [2025, 2026])) {
                 return false;
@@ -75,7 +74,7 @@ class OurLadyOfSorrowsDayTest extends SlovakiaBaseTestCase implements HolidayTes
     {
         // Our Lady of Sorrows Day is not observed in 2025 and 2026
         $validYears = array_merge(range(1993, 2024), range(2027, 2100));
-        $year = $this->randomYearFromArray($validYears);
+        $year = static::randomYearFromArray($validYears);
 
         $this->assertTranslatedHolidayName(
             self::REGION,
@@ -94,7 +93,7 @@ class OurLadyOfSorrowsDayTest extends SlovakiaBaseTestCase implements HolidayTes
     {
         // Our Lady of Sorrows Day is not observed in 2025 and 2026
         $validYears = array_merge(range(1993, 2024), range(2027, 2100));
-        $year = $this->randomYearFromArray($validYears);
+        $year = static::randomYearFromArray($validYears);
 
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_BANK);
     }

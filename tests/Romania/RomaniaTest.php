@@ -37,7 +37,7 @@ class RomaniaTest extends RomaniaBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(2015, 2028);
+        $this->year = static::generateRandomYear(2015, 2028);
     }
 
     /**

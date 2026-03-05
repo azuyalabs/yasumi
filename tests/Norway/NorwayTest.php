@@ -37,7 +37,7 @@ class NorwayTest extends NorwayBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1836);
+        $this->year = static::generateRandomYear(1836);
     }
 
     /**

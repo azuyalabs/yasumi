@@ -35,11 +35,10 @@ class InternationalWorkersDayTest extends SlovakiaBaseTestCase implements Holida
     /**
      * Tests the holiday defined in this test.
      *
-     * @dataProvider HolidayDataProvider
-     *
      * @param int       $year     the year for which Christmas Day needs to be tested
      * @param \DateTime $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -52,9 +51,9 @@ class InternationalWorkersDayTest extends SlovakiaBaseTestCase implements Holida
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
-        return $this->generateRandomDates(5, 1, self::TIMEZONE);
+        return static::generateRandomDates(5, 1, self::TIMEZONE);
     }
 
     /**
@@ -67,7 +66,7 @@ class InternationalWorkersDayTest extends SlovakiaBaseTestCase implements Holida
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Sviatok práce']
         );
     }
@@ -79,6 +78,6 @@ class InternationalWorkersDayTest extends SlovakiaBaseTestCase implements Holida
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_BANK);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_BANK);
     }
 }

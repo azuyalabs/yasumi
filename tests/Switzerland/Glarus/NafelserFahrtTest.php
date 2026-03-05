@@ -42,7 +42,7 @@ class NafelserFahrtTest extends GlarusBaseTestCase implements HolidayTestCase
      */
     public function testNafelserFahrtOnAfter1389(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
         $date = new \DateTime('First Thursday of ' . $year . '-04', new \DateTimeZone(self::TIMEZONE));
 
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
@@ -55,7 +55,7 @@ class NafelserFahrtTest extends GlarusBaseTestCase implements HolidayTestCase
      */
     public function testNafelserFahrtBefore1389(): void
     {
-        $year = $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1);
+        $year = static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
     }
 
@@ -69,7 +69,7 @@ class NafelserFahrtTest extends GlarusBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => 'Näfelser Fahrt']
         );
     }
@@ -84,7 +84,7 @@ class NafelserFahrtTest extends GlarusBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_OTHER
         );
     }

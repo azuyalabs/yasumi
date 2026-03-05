@@ -43,7 +43,7 @@ class VictoryDayTest extends EstoniaBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, Estonia::VICTORY_DAY_START_YEAR - 1)
+            static::generateRandomYear(1000, Estonia::VICTORY_DAY_START_YEAR - 1)
         );
     }
 
@@ -54,7 +54,7 @@ class VictoryDayTest extends EstoniaBaseTestCase implements HolidayTestCase
      */
     public function testHolidayAfter(): void
     {
-        $year = $this->generateRandomYear(Estonia::VICTORY_DAY_START_YEAR);
+        $year = static::generateRandomYear(Estonia::VICTORY_DAY_START_YEAR);
 
         $this->assertHoliday(
             self::REGION,
@@ -72,13 +72,13 @@ class VictoryDayTest extends EstoniaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(Estonia::VICTORY_DAY_START_YEAR),
+            static::generateRandomYear(Estonia::VICTORY_DAY_START_YEAR),
             [self::LOCALE => 'Võidupüha']
         );
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(Estonia::VICTORY_DAY_START_YEAR),
+            static::generateRandomYear(Estonia::VICTORY_DAY_START_YEAR),
             ['en' => 'Victory Day']
         );
     }
@@ -91,7 +91,7 @@ class VictoryDayTest extends EstoniaBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(Estonia::VICTORY_DAY_START_YEAR),
+            static::generateRandomYear(Estonia::VICTORY_DAY_START_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

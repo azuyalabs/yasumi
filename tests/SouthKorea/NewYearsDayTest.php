@@ -42,7 +42,7 @@ class NewYearsDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
      */
     public function testHoliday(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
         $date = new \DateTime("{$year}-1-1", new \DateTimeZone(self::TIMEZONE));
 
         // New Year's Day
@@ -79,12 +79,12 @@ class NewYearsDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             'dayAfterNewYearsDay',
-            $this->generateRandomYear(1999)
+            static::generateRandomYear(1999)
         );
         $this->assertNotHoliday(
             self::REGION,
             'twoDaysLaterNewYearsDay',
-            $this->generateRandomYear(1990)
+            static::generateRandomYear(1990)
         );
     }
 
@@ -98,7 +98,7 @@ class NewYearsDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -112,19 +112,19 @@ class NewYearsDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             [self::LOCALE => '새해']
         );
         $this->assertTranslatedHolidayName(
             self::REGION,
             'dayAfterNewYearsDay',
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1998),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, 1998),
             [self::LOCALE => '새해 연휴']
         );
         $this->assertTranslatedHolidayName(
             self::REGION,
             'twoDaysLaterNewYearsDay',
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1989),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, 1989),
             [self::LOCALE => '새해 연휴']
         );
     }
@@ -139,19 +139,19 @@ class NewYearsDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_OFFICIAL
         );
         $this->assertHolidayType(
             self::REGION,
             'dayAfterNewYearsDay',
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1998),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, 1998),
             Holiday::TYPE_OFFICIAL
         );
         $this->assertHolidayType(
             self::REGION,
             'twoDaysLaterNewYearsDay',
-            $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1989),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, 1989),
             Holiday::TYPE_OFFICIAL
         );
     }

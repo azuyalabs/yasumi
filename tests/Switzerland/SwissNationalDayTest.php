@@ -52,7 +52,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements HolidayTes
      */
     public function testNationalDayOnAfter1994(): void
     {
-        $year = $this->generateRandomYear(self::NATIONAL_ESTABLISHMENT_YEAR);
+        $year = static::generateRandomYear(self::NATIONAL_ESTABLISHMENT_YEAR);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -68,7 +68,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements HolidayTes
      */
     public function testNationalDayOnAfter1899(): void
     {
-        $year = $this->generateRandomYear(self::FIRST_ESTABLISHMENT_YEAR, self::NATIONAL_ESTABLISHMENT_YEAR - 1);
+        $year = static::generateRandomYear(self::FIRST_ESTABLISHMENT_YEAR, self::NATIONAL_ESTABLISHMENT_YEAR - 1);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -105,7 +105,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements HolidayTes
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1000, self::FIRST_OBSERVANCE_YEAR - 1)
+            static::generateRandomYear(1000, self::FIRST_OBSERVANCE_YEAR - 1)
         );
     }
 
@@ -116,7 +116,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements HolidayTes
      */
     public function testNationalDayBetween1891And1899(): void
     {
-        $year = $this->generateRandomYear(self::FIRST_OBSERVANCE_YEAR + 1, self::FIRST_ESTABLISHMENT_YEAR - 1);
+        $year = static::generateRandomYear(self::FIRST_OBSERVANCE_YEAR + 1, self::FIRST_ESTABLISHMENT_YEAR - 1);
         $this->assertNotHoliday(self::REGION, self::HOLIDAY, $year);
     }
 
@@ -130,7 +130,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements HolidayTes
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::NATIONAL_ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::NATIONAL_ESTABLISHMENT_YEAR),
             [self::LOCALE => 'Bundesfeiertag']
         );
     }
@@ -145,7 +145,7 @@ class SwissNationalDayTest extends SwitzerlandBaseTestCase implements HolidayTes
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(self::NATIONAL_ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::NATIONAL_ESTABLISHMENT_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

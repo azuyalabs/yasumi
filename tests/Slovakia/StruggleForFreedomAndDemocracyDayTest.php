@@ -35,11 +35,10 @@ class StruggleForFreedomAndDemocracyDayTest extends SlovakiaBaseTestCase impleme
     /**
      * Tests the holiday defined in this test.
      *
-     * @dataProvider HolidayDataProvider
-     *
      * @param int       $year     the year for which the holiday defined in this test needs to be tested
      * @param \DateTime $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
     public function testHoliday(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -52,7 +51,7 @@ class StruggleForFreedomAndDemocracyDayTest extends SlovakiaBaseTestCase impleme
      *
      * @throws \Exception
      */
-    public function HolidayDataProvider(): array
+    public static function HolidayDataProvider(): array
     {
         // Only use years between 1993 and 2024
         $years = range(1993, 2024);
@@ -78,7 +77,7 @@ class StruggleForFreedomAndDemocracyDayTest extends SlovakiaBaseTestCase impleme
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(1993, 2024),
+            static::generateRandomYear(1993, 2024),
             [self::LOCALE => 'Deň boja za slobodu a demokraciu']
         );
     }
@@ -90,6 +89,6 @@ class StruggleForFreedomAndDemocracyDayTest extends SlovakiaBaseTestCase impleme
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(1993, 2024), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(1993, 2024), Holiday::TYPE_OFFICIAL);
     }
 }

@@ -37,7 +37,7 @@ class ScotlandTest extends ScotlandBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1978);
+        $this->year = static::generateRandomYear(1978);
     }
 
     /**
@@ -76,7 +76,7 @@ class ScotlandTest extends ScotlandBaseTestCase implements ProviderTestCase
             'secondChristmasDay',
         ];
 
-        $year = $this->generateRandomYear();
+        $year = static::generateRandomYear();
 
         if (1965 <= $year) {
             $holidays[] = 'springBankHoliday';
@@ -106,7 +106,14 @@ class ScotlandTest extends ScotlandBaseTestCase implements ProviderTestCase
      */
     public function testOtherHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays(
+            [
+                'motheringSunday',
+            ],
+            self::REGION,
+            $this->year,
+            Holiday::TYPE_OTHER
+        );
     }
 
     /**

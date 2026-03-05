@@ -47,7 +47,7 @@ class OrthodoxGoodFridayTest extends BulgariaBaseTestCase implements HolidayTest
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Разпети петък']
         );
     }
@@ -57,7 +57,7 @@ class OrthodoxGoodFridayTest extends BulgariaBaseTestCase implements HolidayTest
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             Holiday::TYPE_OFFICIAL
         );
     }

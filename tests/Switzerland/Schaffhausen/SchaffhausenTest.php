@@ -37,7 +37,7 @@ class SchaffhausenTest extends SchaffhausenBaseTestCase implements ProviderTestC
      */
     protected function setUp(): void
     {
-        $this->year = $this->generateRandomYear(1945);
+        $this->year = static::generateRandomYear(1945);
     }
 
     /**
@@ -104,7 +104,22 @@ class SchaffhausenTest extends SchaffhausenBaseTestCase implements ProviderTestC
      */
     public function testOtherHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays(
+            [
+                'newYearsDay',
+                'berchtoldsTag',
+                'goodFriday',
+                'easterMonday',
+                'internationalWorkersDay',
+                'ascensionDay',
+                'pentecostMonday',
+                'christmasDay',
+                'stStephensDay',
+            ],
+            self::REGION,
+            $this->year,
+            Holiday::TYPE_OTHER
+        );
     }
 
     /**

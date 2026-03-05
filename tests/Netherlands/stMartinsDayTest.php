@@ -33,11 +33,10 @@ class stMartinsDayTest extends NetherlandsBaseTestCase implements HolidayTestCas
     /**
      * Tests Sint Martins Day.
      *
-     * @dataProvider stMartinsDayDataProvider
-     *
      * @param int       $year     the year for which Sint Martins Day needs to be tested
      * @param \DateTime $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('stMartinsDayDataProvider')]
     public function teststMartinsDay(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -50,9 +49,9 @@ class stMartinsDayTest extends NetherlandsBaseTestCase implements HolidayTestCas
      *
      * @throws \Exception
      */
-    public function stMartinsDayDataProvider(): array
+    public static function stMartinsDayDataProvider(): array
     {
-        return $this->generateRandomDates(11, 11, self::TIMEZONE);
+        return static::generateRandomDates(11, 11, self::TIMEZONE);
     }
 
     /**
@@ -65,7 +64,7 @@ class stMartinsDayTest extends NetherlandsBaseTestCase implements HolidayTestCas
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Sint Maarten']
         );
     }
@@ -77,6 +76,6 @@ class stMartinsDayTest extends NetherlandsBaseTestCase implements HolidayTestCas
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OBSERVANCE);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OBSERVANCE);
     }
 }

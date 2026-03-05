@@ -49,7 +49,7 @@ class RussiaTest extends RussiaBaseTestCase implements ProviderTestCase
             'victoryDay',
         ];
 
-        $year = $this->generateRandomYear();
+        $year = static::generateRandomYear();
 
         if ($year >= Russia::DEFENCE_OF_THE_FATHERLAND_START_YEAR) {
             $holidays[] = 'defenceOfTheFatherlandDay';
@@ -73,7 +73,7 @@ class RussiaTest extends RussiaBaseTestCase implements ProviderTestCase
      */
     public function testObservedHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays([], self::REGION, static::generateRandomYear(), Holiday::TYPE_OBSERVANCE);
     }
 
     /**
@@ -83,7 +83,7 @@ class RussiaTest extends RussiaBaseTestCase implements ProviderTestCase
      */
     public function testSeasonalHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_SEASON);
+        $this->assertDefinedHolidays([], self::REGION, static::generateRandomYear(), Holiday::TYPE_SEASON);
     }
 
     /**
@@ -93,7 +93,7 @@ class RussiaTest extends RussiaBaseTestCase implements ProviderTestCase
      */
     public function testBankHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_BANK);
+        $this->assertDefinedHolidays([], self::REGION, static::generateRandomYear(), Holiday::TYPE_BANK);
     }
 
     /**
@@ -103,7 +103,7 @@ class RussiaTest extends RussiaBaseTestCase implements ProviderTestCase
      */
     public function testOtherHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->generateRandomYear(), Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays([], self::REGION, static::generateRandomYear(), Holiday::TYPE_OTHER);
     }
 
     /**

@@ -33,11 +33,10 @@ class AssumptionOfMaryTest extends NidwaldenBaseTestCase implements HolidayTestC
     /**
      * Tests the day of the Assumption of Mary.
      *
-     * @dataProvider AssumptionOfMaryDataProvider
-     *
      * @param int       $year     the year for which the day of the Assumption of Mary needs to be tested
      * @param \DateTime $expected the expected date
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('AssumptionOfMaryDataProvider')]
     public function testAssumptionOfMary(int $year, \DateTimeInterface $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
@@ -53,7 +52,7 @@ class AssumptionOfMaryTest extends NidwaldenBaseTestCase implements HolidayTestC
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
+            static::generateRandomYear(),
             [self::LOCALE => 'Mariä Himmelfahrt']
         );
     }
@@ -65,7 +64,7 @@ class AssumptionOfMaryTest extends NidwaldenBaseTestCase implements HolidayTestC
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OTHER);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OTHER);
     }
 
     /**
@@ -75,8 +74,8 @@ class AssumptionOfMaryTest extends NidwaldenBaseTestCase implements HolidayTestC
      *
      * @throws \Exception
      */
-    public function AssumptionOfMaryDataProvider(): array
+    public static function AssumptionOfMaryDataProvider(): array
     {
-        return $this->generateRandomDates(8, 15, self::TIMEZONE);
+        return static::generateRandomDates(8, 15, self::TIMEZONE);
     }
 }

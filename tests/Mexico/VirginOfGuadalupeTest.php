@@ -58,7 +58,7 @@ class VirginOfGuadalupeTest extends MexicoBaseTestCase implements HolidayTestCas
      */
     public function testTranslation(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertTranslatedHolidayName(self::REGION, self::HOLIDAY, $year, [self::LOCALE => 'Día de la Virgen de Guadalupe']);
     }
 
@@ -69,7 +69,7 @@ class VirginOfGuadalupeTest extends MexicoBaseTestCase implements HolidayTestCas
      */
     public function testHolidayType(): void
     {
-        $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OBSERVANCE);
     }
 }
