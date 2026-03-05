@@ -115,15 +115,12 @@ class HangulDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
      */
     public function testTranslation(): void
     {
-        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
-        if ($year <= 1990 || $year > 2012) {
-            $this->assertTranslatedHolidayName(
-                self::REGION,
-                self::HOLIDAY,
-                $year,
-                [self::LOCALE => '한글날']
-            );
-        }
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            static::generateRandomYear(2013),
+            [self::LOCALE => '한글날']
+        );
     }
 
     /**
@@ -133,14 +130,11 @@ class HangulDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
-        if ($year <= 1990 || $year > 2012) {
-            $this->assertHolidayType(
-                self::REGION,
-                self::HOLIDAY,
-                $year,
-                Holiday::TYPE_OFFICIAL
-            );
-        }
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            static::generateRandomYear(2013),
+            Holiday::TYPE_OFFICIAL
+        );
     }
 }
