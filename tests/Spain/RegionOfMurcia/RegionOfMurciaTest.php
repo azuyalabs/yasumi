@@ -37,7 +37,7 @@ class RegionOfMurciaTest extends RegionOfMurciaBaseTestCase implements ProviderT
      */
     protected function setUp(): void
     {
-        $this->year = static::generateRandomYear(1981);
+        $this->year = static::generateRandomYear(1983);
     }
 
     /**
