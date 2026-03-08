@@ -18,6 +18,10 @@
     <testsuite name="Base">
       <directory>./tests/Base</directory>
     </testsuite>
+    <!-- Test Suite for holidays in Andorra -->
+    <testsuite name="Andorra">
+      <directory>./tests/Andorra</directory>
+    </testsuite>
     <!-- Test Suite for holidays in Argentina -->
     <testsuite name="Argentina">
       <directory>./tests/Argentina</directory>
@@ -41,6 +45,10 @@
     <!-- Test Suite for holidays in Brazil -->
     <testsuite name="Brazil">
       <directory>./tests/Brazil</directory>
+    </testsuite>
+    <!-- Test Suite for holidays in Bulgaria -->
+    <testsuite name="Bulgaria">
+      <directory>./tests/Bulgaria</directory>
     </testsuite>
     <!-- Test Suite for holidays in Canada -->
     <testsuite name="Canada">
@@ -86,6 +94,10 @@
     <testsuite name="Hungary">
       <directory>./tests/Hungary</directory>
     </testsuite>
+    <!-- Test Suite for holidays in Iran -->
+    <testsuite name="Iran">
+      <directory>./tests/Iran</directory>
+    </testsuite>
     <!-- Test Suite for holidays in Ireland -->
     <testsuite name="Ireland">
       <directory>./tests/Ireland</directory>
@@ -109,6 +121,10 @@
     <!-- Test Suite for holidays in Luxembourg -->
     <testsuite name="Luxembourg">
       <directory>./tests/Luxembourg</directory>
+    </testsuite>
+    <!-- Test Suite for holidays in Mexico -->
+    <testsuite name="Mexico">
+      <directory>./tests/Mexico</directory>
     </testsuite>
     <!-- Test Suite for holidays in Netherlands -->
     <testsuite name="Netherlands">
