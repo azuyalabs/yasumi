@@ -1,0 +1,86 @@
+<?php
+
+declare(strict_types = 1);
+
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
+ *
+ * Copyright (c) 2015 - 2026 AzuyaLabs
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
+ */
+
+namespace Yasumi\tests\SanMarino;
+
+use Yasumi\Holiday;
+use Yasumi\tests\HolidayTestCase;
+
+/**
+ * Class containing tests for Foundation Day in San Marino.
+ *
+ * Foundation Day (Italian: Anniversario della Fondazione della Repubblica), observed on 3 September,
+ * commemorates the traditional founding of San Marino on 3 September 301 AD by Saint Marinus of Rab.
+ *
+ * @see https://en.wikipedia.org/wiki/San_Marino
+ */
+class FoundationDayTest extends SanMarinoBaseTestCase implements HolidayTestCase
+{
+    /**
+     * The name of the holiday.
+     */
+    public const HOLIDAY = 'foundationDay';
+
+    /**
+     * Tests Foundation Day.
+     *
+     * @param int       $year     the year for which the holiday defined in this test needs to be tested
+     * @param \DateTime $expected the expected date
+     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('HolidayDataProvider')]
+    public function testHoliday(int $year, \DateTimeInterface $expected): void
+    {
+        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
+    }
+
+    /**
+     * Returns a list of random test dates used for assertion of the holiday defined in this test.
+     *
+     * @return array<array> list of test dates for the holiday defined in this test
+     *
+     * @throws \Exception
+     */
+    public static function HolidayDataProvider(): array
+    {
+        return static::generateRandomDates(9, 3, self::TIMEZONE);
+    }
+
+    /**
+     * Tests the translated name of Foundation Day.
+     *
+     * @throws \Exception
+     */
+    public function testTranslation(): void
+    {
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            static::generateRandomYear(),
+            [self::LOCALE => 'Anniversario della Fondazione della Repubblica']
+        );
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     *
+     * @throws \Exception
+     */
+    public function testHolidayType(): void
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OFFICIAL);
+    }
+}
