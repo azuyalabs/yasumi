@@ -10,15 +10,14 @@ When contributing there are a few guidelines we'd like you to keep in mind:
 - **[PSR-12 Coding Standard](https://www.php-fig.org/psr/psr-12/)**
   Please use the following command after you have completed your work:
 
-  ```shell
-  composer format
-  ```
+    ```shell
+    composer format
+    ```
 
-  This will check/correct all the code for the PSR-12 Coding Standard using the
-  wonderful [php-cs-fixer](https://cs.symfony.com).
+    This will check/correct all the code for the PSR-12 Coding Standard using the
+    wonderful [php-cs-fixer](https://cs.symfony.com).
 
 - **Add unit tests!** - Your Pull Request won't be accepted if it does not have tests:
-
     1. Ensure your new Holiday Provider contains all the necessary unit tests.
     2. Next to the file `{REGIONNAME}BaseTestCase.php`, a file called `{REGIONNAME}Test.php` needs to be present. This
        file needs to include region/country level tests and requires assertion of all expected holidays.
@@ -37,6 +36,18 @@ When contributing there are a few guidelines we'd like you to keep in mind:
   please [squash them](https://www.git-scm.com/book/en/v2/Git-Tools-Rewriting-History#_changing_multiple) before
   submitting.
 
+- **Use [Conventional Commits](https://www.conventionalcommits.org)** - Commit messages must follow the Conventional
+  Commits specification (e.g. `feat(Netherlands): add holiday X`, `fix(Germany): correct date for Y`).
+
+- **Sign your commits (DCO)** - Each commit must include a `Signed-off-by` trailer to certify you agree to the
+  [Developer Certificate of Origin](DCO):
+
+    ```shell
+    git commit -s -m "feat: your change"
+    ```
+
+- **Branch and PR target** - Always branch off `develop` and open your pull request against `develop`.
+
 ## Running Tests
 
 ```shell
@@ -47,4 +58,20 @@ Or, alternatively run with:
 
 ```shell
 vendor/bin/phpunit
+```
+
+Run a specific suite by name:
+
+```shell
+vendor/bin/phpunit --testsuite Netherlands
+```
+
+## Before Submitting
+
+Always run all three checks before opening a pull request:
+
+```shell
+composer cs        # Check coding standard
+composer phpstan   # Static analysis (level 8)
+composer test      # Full test suite
 ```
