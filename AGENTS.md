@@ -59,7 +59,7 @@ composer phpstan       # Run static analysis (level 8)
 ## Testing
 
 - All new providers and holidays **must** have unit tests — PRs without tests are not accepted.
-- Tests use PHPUnit 8.5/9.6 and iterate over a range of years automatically.
+- Tests use PHPUnit 11 and iterate over a range of years automatically.
 - Run a specific suite: `vendor/bin/phpunit --testsuite Netherlands`
 
 ## Static Analysis
