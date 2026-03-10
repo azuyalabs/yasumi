@@ -1,0 +1,75 @@
+<?php
+
+declare(strict_types = 1);
+
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
+ *
+ * Copyright (c) 2015 - 2026 AzuyaLabs
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
+ */
+
+namespace Yasumi\tests\Venezuela;
+
+use Yasumi\Holiday;
+use Yasumi\tests\HolidayTestCase;
+
+/**
+ * Class for testing New Year's Eve in Venezuela.
+ */
+class NewYearsEveTest extends VenezuelaBaseTestCase implements HolidayTestCase
+{
+    /**
+     * The name of the holiday.
+     */
+    public const HOLIDAY = 'newYearsEve';
+
+    /**
+     * Tests New Year's Eve.
+     *
+     * @throws \Exception
+     */
+    public function testNewYearsEve(): void
+    {
+        $year = static::generateRandomYear();
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new \DateTime("{$year}-12-31", new \DateTimeZone(self::TIMEZONE))
+        );
+    }
+
+    /**
+     * Tests the translated name of the holiday defined in this test.
+     *
+     * @throws \Exception
+     */
+    public function testTranslation(): void
+    {
+        $year = static::generateRandomYear();
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            [self::LOCALE => 'Nochevieja']
+        );
+    }
+
+    /**
+     * Tests type of the holiday defined in this test.
+     *
+     * @throws \Exception
+     */
+    public function testHolidayType(): void
+    {
+        $year = static::generateRandomYear();
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, $year, Holiday::TYPE_OFFICIAL);
+    }
+}

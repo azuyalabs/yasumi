@@ -194,6 +194,10 @@
     <testsuite name="Ukraine">
       <directory>./tests/Ukraine</directory>
     </testsuite>
+    <!-- Test Suite for holidays in Venezuela -->
+    <testsuite name="Venezuela">
+      <directory>./tests/Venezuela</directory>
+    </testsuite>
     <!-- Test Suite for holidays in United Kingdom -->
     <testsuite name="UnitedKingdom">
       <directory>./tests/UnitedKingdom</directory>
