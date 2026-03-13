@@ -15,13 +15,9 @@ declare(strict_types = 1);
  * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
-// Translations for New Year's Eve
+// Translations for Day of Indigenous Resistance / Columbus Day (Venezuela, 12 October)
+// Renamed from 'Día de la Raza' to 'Día de la Resistencia Indígena' in 2002 (Decreto 2028)
 return [
-    'da' => 'nytårsaften',
-    'de' => 'Silvester',
-    'en' => 'New Year’s Eve',
-    'es' => 'Víspera de Año Nuevo',
-    'ko' => '신년전야',
-    'lv' => 'Vecgada vakars',
-    'sv' => 'nyårsafton',
+    'en' => 'Day of Indigenous Resistance',
+    'es' => 'Día de la Resistencia Indígena',
 ];

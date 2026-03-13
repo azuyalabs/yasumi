@@ -15,13 +15,8 @@ declare(strict_types = 1);
  * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
-// Translations for New Year's Eve
+// Translations for Battle of Carabobo Day (Venezuela, 24 June)
 return [
-    'da' => 'nytårsaften',
-    'de' => 'Silvester',
-    'en' => 'New Year’s Eve',
-    'es' => 'Víspera de Año Nuevo',
-    'ko' => '신년전야',
-    'lv' => 'Vecgada vakars',
-    'sv' => 'nyårsafton',
+    'en' => 'Battle of Carabobo Day',
+    'es' => 'Batalla de Carabobo',
 ];

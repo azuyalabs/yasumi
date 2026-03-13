@@ -1,0 +1,60 @@
+<?php
+
+declare(strict_types = 1);
+
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
+ *
+ * Copyright (c) 2015 - 2026 AzuyaLabs
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
+ */
+
+namespace Yasumi\tests\Venezuela;
+
+use Yasumi\Holiday;
+use Yasumi\tests\HolidayTestCase;
+
+/**
+ * Class for testing New Year's Eve (Víspera de Año Nuevo, 31 December) in Venezuela.
+ *
+ * Established by LOTTT Art. 184(b).
+ */
+class NewYearsEveTest extends VenezuelaBaseTestCase implements HolidayTestCase
+{
+    public const HOLIDAY = 'newYearsEve';
+
+    /** @throws \Exception */
+    public function testHoliday(): void
+    {
+        $year = 2025;
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new \DateTime("{$year}-12-31", new \DateTimeZone(self::TIMEZONE))
+        );
+    }
+
+    /** @throws \Exception */
+    public function testTranslation(): void
+    {
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            static::generateRandomYear(),
+            [self::LOCALE => 'Víspera de Año Nuevo']
+        );
+    }
+
+    /** @throws \Exception */
+    public function testHolidayType(): void
+    {
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OFFICIAL);
+    }
+}

@@ -15,13 +15,8 @@ declare(strict_types = 1);
  * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
-// Translations for New Year's Eve
+// Translations for Declaration of Independence Day (Venezuela, 19 April)
 return [
-    'da' => 'nytårsaften',
-    'de' => 'Silvester',
-    'en' => 'New Year’s Eve',
-    'es' => 'Víspera de Año Nuevo',
-    'ko' => '신년전야',
-    'lv' => 'Vecgada vakars',
-    'sv' => 'nyårsafton',
+    'en' => 'Declaration of Independence Day',
+    'es' => 'Declaración de Independencia',
 ];

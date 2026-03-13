@@ -23,6 +23,7 @@ return [
     'da' => 'juleaften',
     'de' => 'Heiliger Abend',
     'en' => 'Christmas Eve',
+    'es' => 'Nochebuena',
     'et' => 'Jõululaupäev',
     'fr' => 'Réveillon de Noël',
     'it' => 'Vigilia di Natale',

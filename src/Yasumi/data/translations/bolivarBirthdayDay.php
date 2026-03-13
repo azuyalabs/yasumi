@@ -15,13 +15,8 @@ declare(strict_types = 1);
  * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
-// Translations for New Year's Eve
+// Translations for Simón Bolívar's Birthday (Venezuela, 24 July)
 return [
-    'da' => 'nytårsaften',
-    'de' => 'Silvester',
-    'en' => 'New Year’s Eve',
-    'es' => 'Víspera de Año Nuevo',
-    'ko' => '신년전야',
-    'lv' => 'Vecgada vakars',
-    'sv' => 'nyårsafton',
+    'en' => 'Simón Bolívar’s Birthday',
+    'es' => 'Natalicio de Simón Bolívar',
 ];
