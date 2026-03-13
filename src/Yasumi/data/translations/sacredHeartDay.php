@@ -15,16 +15,11 @@ declare(strict_types = 1);
  * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
-// Translations for Corpus Christi
+// Translations for Sacred Heart of Jesus Day
 return [
-    'de' => 'Fronleichnam',
-    'en' => 'Corpus Christi',
-    'es' => 'Corpus Christi',
-    'fr' => 'Fête-Dieu',
-    'hr' => 'Tijelovo',
-    'it' => 'Corpus Domini',
-    'pl' => 'Boże Ciało',
-    'pt' => 'Corpus Christi',
-    'pt_PT' => 'Corpo de Deus',
-    'sk' => 'Božie Telo',
+    'en' => 'Sacred Heart of Jesus',
+    'es' => 'Sagrado Corazón de Jesús',
+    'fr' => 'Sacré-Cœur de Jésus',
+    'it' => 'Sacro Cuore di Gesù',
+    'pt' => 'Sagrado Coração de Jesus',
 ];

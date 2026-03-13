@@ -15,16 +15,11 @@ declare(strict_types = 1);
  * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
-// Translations for Corpus Christi
+// Translations for Saints Peter and Paul Day
 return [
-    'de' => 'Fronleichnam',
-    'en' => 'Corpus Christi',
-    'es' => 'Corpus Christi',
-    'fr' => 'Fête-Dieu',
-    'hr' => 'Tijelovo',
-    'it' => 'Corpus Domini',
-    'pl' => 'Boże Ciało',
-    'pt' => 'Corpus Christi',
-    'pt_PT' => 'Corpo de Deus',
-    'sk' => 'Božie Telo',
+    'en' => 'Saints Peter and Paul Day',
+    'es' => 'San Pedro y San Pablo',
+    'fr' => 'Saints Pierre et Paul',
+    'it' => 'Santi Pietro e Paolo',
+    'pt' => 'São Pedro e São Paulo',
 ];
