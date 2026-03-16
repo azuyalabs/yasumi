@@ -70,6 +70,10 @@
     <testsuite name="Denmark">
       <directory>./tests/Denmark</directory>
     </testsuite>
+    <!-- Test Suite for holidays in Ecuador -->
+    <testsuite name="Ecuador">
+      <directory>./tests/Ecuador</directory>
+    </testsuite>
     <!-- Test Suite for holidays in Estonia -->
     <testsuite name="Estonia">
       <directory>./tests/Estonia</directory>
