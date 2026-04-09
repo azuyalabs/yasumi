@@ -15,11 +15,11 @@ declare(strict_types = 1);
  * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
-namespace Yasumi\tests\Australia\Tasmania\South\Southeast;
-
-/**
- * Class for testing Monarch's Birthday in southeastern Tasmania (Australia)..
- */
-class QueensBirthdayTest extends \Yasumi\tests\Australia\Tasmania\South\QueensBirthdayTest
-{
-}
+// Translations for Monarch's Birthday
+return [
+    'da' => 'Dronningens fødselsdag',
+    'en' => 'Monarch’s Birthday',
+    'fr' => 'Anniversaire officiel de la reine',
+    'pt' => 'Aniversário da Rainha',
+    'ru' => 'Официальный день рождения королевы',
+];

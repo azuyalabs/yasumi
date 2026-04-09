@@ -28,10 +28,10 @@ abstract class AustralianCapitalTerritoryBaseTestCase extends AustraliaBaseTestC
     use YasumiBase;
 
     /** Timezone in which this provider has holidays defined. */
-    public const TIMEZONE = 'Australia/ACT';
+    public const TIMEZONE = 'Australia/Sydney';
 
     /** Name of the region (e.g. country / state) to be tested. */
     public string $region = 'Australia\AustralianCapitalTerritory';
 
-    public string $timezone = 'Australia/ACT';
+    public string $timezone = 'Australia/Sydney';
 }

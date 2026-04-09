@@ -53,13 +53,24 @@ class WesternAustraliaTest extends WesternAustraliaBaseTestCase implements Provi
             'secondChristmasDay',
             'australiaDay',
             'anzacDay',
-            'queensBirthday',
+            'monarchsBirthday',
             'labourDay',
             'westernAustraliaDay',
         ];
+
+        if ($this->year >= 2022) {
+            $expectedHolidays[] = 'easter';
+        }
+
         if (2022 === $this->year) {
             $expectedHolidays[] = 'nationalDayOfMourning';
         }
+
+        $anzacDay = new \DateTime("{$this->year}-04-25", new \DateTimeZone(self::TIMEZONE));
+        if ($this->year >= 1972 && in_array((int) $anzacDay->format('w'), [0, 6], true)) {
+            $expectedHolidays[] = 'anzacDayMonday';
+        }
+
         $this->assertDefinedHolidays($expectedHolidays, $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

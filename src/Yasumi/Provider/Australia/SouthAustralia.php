@@ -33,7 +33,7 @@ class SouthAustralia extends Australia
      */
     public const ID = 'AU-SA';
 
-    public string $timezone = 'Australia/South';
+    public string $timezone = 'Australia/Adelaide';
 
     /**
      * Initialize holidays for South Australia (Australia).
@@ -47,7 +47,12 @@ class SouthAustralia extends Australia
         parent::initialize();
 
         $this->addHoliday($this->easterSaturday($this->year, $this->timezone, $this->locale));
-        $this->calculateQueensBirthday();
+
+        if ($this->year >= 2024) {
+            $this->addHoliday($this->easterSunday($this->year, $this->timezone, $this->locale));
+        }
+
+        $this->calculateMonarchsBirthday();
         $this->calculateLabourDay();
         $this->calculateAdelaideCupDay();
 
@@ -99,9 +104,44 @@ class SouthAustralia extends Australia
     }
 
     /**
-     * Queens Birthday.
+     * Easter Sunday.
      *
-     * The Queen's Birthday is an Australian public holiday but the date varies across
+     * Easter is a festival and holiday celebrating the resurrection of Jesus Christ from the dead. Easter is celebrated
+     * on a date based on a certain number of days after March 21st. The date of Easter Day was defined by the Council
+     * of Nicaea in AD325 as the Sunday after the first full moon which falls on or after the Spring Equinox.
+     *
+     * Only a public holiday from 2024 onwards (via Public Holidays Act 2023).
+     *
+     * @see https://en.wikipedia.org/wiki/Easter
+     * @see https://www.safework.sa.gov.au/resources/public-holidays
+     *
+     * @param int         $year     the year for which Easter Sunday need to be created
+     * @param string      $timezone the timezone in which Easter Sunday is celebrated
+     * @param string      $locale   the locale for which Easter Sunday need to be displayed in
+     * @param string|null $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                              TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
+     *
+     * @throws \Exception
+     */
+    protected function easterSunday(
+        int $year,
+        string $timezone,
+        string $locale,
+        ?string $type = null,
+    ): Holiday {
+        return new Holiday(
+            'easter',
+            ['en' => 'Easter Sunday'],
+            $this->calculateEaster($year, $timezone),
+            $locale,
+            $type ?? Holiday::TYPE_OFFICIAL
+        );
+    }
+
+    /**
+     * Monarch's Birthday.
+     *
+     * The Monarch's Birthday is an Australian public holiday but the date varies across
      * states and territories. Australia celebrates this holiday because it is a constitutional
      * monarchy, with the English monarch as head of state.
      *
@@ -113,11 +153,13 @@ class SouthAustralia extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    protected function calculateQueensBirthday(): void
+    protected function calculateMonarchsBirthday(): void
     {
+        $name = $this->year >= 2023 ? 'King’s Birthday' : 'Queen’s Birthday';
+
         $this->addHoliday(new Holiday(
-            'queensBirthday',
-            [],
+            'monarchsBirthday',
+            ['en' => $name],
             new \DateTime("second monday of june {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL

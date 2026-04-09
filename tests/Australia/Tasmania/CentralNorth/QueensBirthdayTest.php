@@ -18,7 +18,7 @@ declare(strict_types = 1);
 namespace Yasumi\tests\Australia\Tasmania\CentralNorth;
 
 /**
- * Class for testing Queen's Birthday in central north Tasmania (Australia)..
+ * Class for testing Monarch's Birthday in central north Tasmania (Australia)..
  */
 class QueensBirthdayTest extends \Yasumi\tests\Australia\Tasmania\QueensBirthdayTest
 {

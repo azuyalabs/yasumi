@@ -18,7 +18,7 @@ declare(strict_types = 1);
 namespace Yasumi\tests\Australia\Tasmania\Northwest\CircularHead;
 
 /**
- * Class for testing Queen's Birthday in Circular Head (Australia)..
+ * Class for testing Monarch's Birthday in Circular Head (Australia)..
  */
 class QueensBirthdayTest extends \Yasumi\tests\Australia\Tasmania\Northwest\QueensBirthdayTest
 {

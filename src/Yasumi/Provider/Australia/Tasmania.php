@@ -33,7 +33,7 @@ class Tasmania extends Australia
      */
     public const ID = 'AU-TAS';
 
-    public string $timezone = 'Australia/Tasmania';
+    public string $timezone = 'Australia/Hobart';
 
     /**
      * Initialize holidays for Tasmania (Australia).
@@ -47,7 +47,7 @@ class Tasmania extends Australia
         parent::initialize();
 
         $this->calculateEightHoursDay();
-        $this->calculateQueensBirthday();
+        $this->calculateMonarchsBirthday();
         $this->calculateRecreationDay();
     }
 
@@ -64,9 +64,9 @@ class Tasmania extends Australia
     }
 
     /**
-     * Queens Birthday.
+     * Monarch's Birthday.
      *
-     * The Queen's Birthday is an Australian public holiday but the date varies across
+     * The Monarch's Birthday is an Australian public holiday but the date varies across
      * states and territories. Australia celebrates this holiday because it is a constitutional
      * monarchy, with the English monarch as head of state.
      *
@@ -78,11 +78,13 @@ class Tasmania extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    protected function calculateQueensBirthday(): void
+    protected function calculateMonarchsBirthday(): void
     {
+        $name = $this->year >= 2023 ? 'King’s Birthday' : 'Queen’s Birthday';
+
         $this->addHoliday(new Holiday(
-            'queensBirthday',
-            [],
+            'monarchsBirthday',
+            ['en' => $name],
             new \DateTime("second monday of june {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL

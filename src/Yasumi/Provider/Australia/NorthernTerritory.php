@@ -33,7 +33,7 @@ class NorthernTerritory extends Australia
      */
     public const ID = 'AU-NT';
 
-    public string $timezone = 'Australia/North';
+    public string $timezone = 'Australia/Darwin';
 
     /**
      * Initialize holidays for Northern Territory (Australia).
@@ -47,7 +47,9 @@ class NorthernTerritory extends Australia
         parent::initialize();
 
         $this->addHoliday($this->easterSaturday($this->year, $this->timezone, $this->locale));
-        $this->calculateQueensBirthday();
+        $this->addHoliday($this->easterSunday($this->year, $this->timezone, $this->locale));
+        $this->calculateAnzacDayMonday();
+        $this->calculateMonarchsBirthday();
         $this->calculateMayDay();
         $this->calculatePicnicDay();
     }
@@ -91,9 +93,69 @@ class NorthernTerritory extends Australia
     }
 
     /**
-     * Queens Birthday.
+     * Easter Sunday.
      *
-     * The Queen's Birthday is an Australian public holiday but the date varies across
+     * Easter is a festival and holiday celebrating the resurrection of Jesus Christ from the dead. Easter is celebrated
+     * on a date based on a certain number of days after March 21st. The date of Easter Day was defined by the Council
+     * of Nicaea in AD325 as the Sunday after the first full moon which falls on or after the Spring Equinox.
+     *
+     * @see https://en.wikipedia.org/wiki/Easter
+     *
+     * @param int         $year     the year for which Easter Sunday need to be created
+     * @param string      $timezone the timezone in which Easter Sunday is celebrated
+     * @param string      $locale   the locale for which Easter Sunday need to be displayed in
+     * @param string|null $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                              TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
+     *
+     * @throws \Exception
+     */
+    protected function easterSunday(
+        int $year,
+        string $timezone,
+        string $locale,
+        ?string $type = null,
+    ): Holiday {
+        return new Holiday(
+            'easter',
+            ['en' => 'Easter Sunday'],
+            $this->calculateEaster($year, $timezone),
+            $locale,
+            $type ?? Holiday::TYPE_OFFICIAL
+        );
+    }
+
+    /**
+     * ANZAC Day Monday substitute.
+     *
+     * In the Northern Territory, a substitute public holiday is observed on the following Monday
+     * when ANZAC Day falls on a Sunday.
+     *
+     * @see https://nt.gov.au/nt-public-holidays
+     *
+     * @throws \Exception
+     */
+    protected function calculateAnzacDayMonday(): void
+    {
+        $date = new \DateTime("{$this->year}-04-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        if ('0' !== $date->format('w')) {
+            return;
+        }
+
+        $date->add(new \DateInterval('P1D'));
+
+        $this->addHoliday(new Holiday(
+            'anzacDayMonday',
+            ['en' => 'ANZAC Day'],
+            $date,
+            $this->locale,
+            Holiday::TYPE_OFFICIAL
+        ));
+    }
+
+    /**
+     * Monarch's Birthday.
+     *
+     * The Monarch's Birthday is an Australian public holiday but the date varies across
      * states and territories. Australia celebrates this holiday because it is a constitutional
      * monarchy, with the English monarch as head of state.
      *
@@ -105,11 +167,13 @@ class NorthernTerritory extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    protected function calculateQueensBirthday(): void
+    protected function calculateMonarchsBirthday(): void
     {
+        $name = $this->year >= 2023 ? 'King’s Birthday' : 'Queen’s Birthday';
+
         $this->addHoliday(new Holiday(
-            'queensBirthday',
-            [],
+            'monarchsBirthday',
+            ['en' => $name],
             new \DateTime("second monday of june {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL

@@ -53,7 +53,7 @@ class BrisbaneTest extends BrisbaneBaseTestCase implements ProviderTestCase
             'secondChristmasDay',
             'australiaDay',
             'anzacDay',
-            'queensBirthday',
+            'monarchsBirthday',
             'labourDay',
             'peoplesDay',
         ];

@@ -54,13 +54,19 @@ class NorthernTerritoryTest extends NorthernTerritoryBaseTestCase implements Pro
             'australiaDay',
             'anzacDay',
             'easterSaturday',
-            'queensBirthday',
+            'easter',
+            'monarchsBirthday',
             'mayDay',
             'picnicDay',
         ];
 
         if (2022 === $this->year) {
             $expectedHolidays[] = 'nationalDayOfMourning';
+        }
+
+        $anzacDay = new \DateTime("{$this->year}-04-25", new \DateTimeZone(self::TIMEZONE));
+        if (0 === (int) $anzacDay->format('w')) {
+            $expectedHolidays[] = 'anzacDayMonday';
         }
 
         $this->assertDefinedHolidays($expectedHolidays, $this->region, $this->year, Holiday::TYPE_OFFICIAL);

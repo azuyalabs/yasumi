@@ -18,7 +18,7 @@ declare(strict_types = 1);
 namespace Yasumi\tests\Australia\Tasmania\FlindersIsland;
 
 /**
- * Class for testing Queen's Birthday in Flinders Island (Australia)..
+ * Class for testing Monarch's Birthday in Flinders Island (Australia)..
  */
 class QueensBirthdayTest extends \Yasumi\tests\Australia\Tasmania\QueensBirthdayTest
 {

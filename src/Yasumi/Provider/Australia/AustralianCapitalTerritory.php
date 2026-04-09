@@ -33,7 +33,7 @@ class AustralianCapitalTerritory extends Australia
      */
     public const ID = 'AU-ACT';
 
-    public string $timezone = 'Australia/ACT';
+    public string $timezone = 'Australia/Sydney';
 
     /**
      * Initialize holidays for Australian Capital Territory (Australia).
@@ -48,10 +48,48 @@ class AustralianCapitalTerritory extends Australia
 
         $this->addHoliday($this->easterSunday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->easterSaturday($this->year, $this->timezone, $this->locale));
-        $this->calculateQueensBirthday();
+        $this->calculateMonarchsBirthday();
         $this->calculateLabourDay();
         $this->calculateCanberraDay();
         $this->calculateReconciliationDay();
+        $this->calculateAnzacDayMonday();
+    }
+
+    /**
+     * ANZAC Day Monday substitute.
+     *
+     * When ANZAC Day (April 25) falls on a Saturday or Sunday, the following Monday is an additional public holiday
+     * in this state/territory.
+     *
+     * @see https://en.wikipedia.org/wiki/Anzac_Day
+     * @see https://www.timeanddate.com/holidays/australia/anzac-day
+     *
+     * @throws \Exception
+     */
+    protected function calculateAnzacDayMonday(): void
+    {
+        if ($this->year < 2020) {
+            return;
+        }
+
+        $date = new \DateTime("{$this->year}-04-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $dow = (int) $date->format('w');
+
+        if (6 === $dow) { // Saturday → Monday
+            $date->add(new \DateInterval('P2D'));
+        } elseif (0 === $dow) { // Sunday → Monday
+            $date->add(new \DateInterval('P1D'));
+        } else {
+            return;
+        }
+
+        $this->addHoliday(new Holiday(
+            'anzacDayMonday',
+            ['en' => 'ANZAC Day'],
+            $date,
+            $this->locale,
+            Holiday::TYPE_OFFICIAL
+        ));
     }
 
     /**
@@ -125,9 +163,9 @@ class AustralianCapitalTerritory extends Australia
     }
 
     /**
-     * Queens Birthday.
+     * Monarch's Birthday.
      *
-     * The Queen's Birthday is an Australian public holiday but the date varies across
+     * The Monarch's Birthday is an Australian public holiday but the date varies across
      * states and territories. Australia celebrates this holiday because it is a constitutional
      * monarchy, with the English monarch as head of state.
      *
@@ -139,11 +177,13 @@ class AustralianCapitalTerritory extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    protected function calculateQueensBirthday(): void
+    protected function calculateMonarchsBirthday(): void
     {
+        $name = $this->year >= 2023 ? 'King’s Birthday' : 'Queen’s Birthday';
+
         $this->addHoliday(new Holiday(
-            'queensBirthday',
-            [],
+            'monarchsBirthday',
+            ['en' => $name],
             new \DateTime("second monday of june {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL

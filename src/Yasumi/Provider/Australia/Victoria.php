@@ -33,7 +33,7 @@ class Victoria extends Australia
      */
     public const ID = 'AU-VIC';
 
-    public string $timezone = 'Australia/Victoria';
+    public string $timezone = 'Australia/Melbourne';
 
     /**
      * Initialize holidays for Victoria (Australia).
@@ -49,7 +49,7 @@ class Victoria extends Australia
         $this->addHoliday($this->easterSunday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->easterSaturday($this->year, $this->timezone, $this->locale));
         $this->calculateLabourDay();
-        $this->calculateQueensBirthday();
+        $this->calculateMonarchsBirthday();
         $this->calculateMelbourneCupDay();
         $this->calculateAFLGrandFinalDay();
     }
@@ -137,9 +137,9 @@ class Victoria extends Australia
     }
 
     /**
-     * Queens Birthday.
+     * Monarch's Birthday.
      *
-     * The Queen's Birthday is an Australian public holiday but the date varies across
+     * The Monarch's Birthday is an Australian public holiday but the date varies across
      * states and territories. Australia celebrates this holiday because it is a constitutional
      * monarchy, with the English monarch as head of state.
      *
@@ -151,11 +151,13 @@ class Victoria extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    protected function calculateQueensBirthday(): void
+    protected function calculateMonarchsBirthday(): void
     {
+        $name = $this->year >= 2023 ? 'King’s Birthday' : 'Queen’s Birthday';
+
         $this->addHoliday(new Holiday(
-            'queensBirthday',
-            [],
+            'monarchsBirthday',
+            ['en' => $name],
             new \DateTime("second monday of june {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL
@@ -177,39 +179,35 @@ class Victoria extends Australia
     /**
      * AFL Grand Final Day.
      *
+     * The Friday before the AFL Grand Final is a public holiday in Victoria. The date varies each year
+     * depending on the AFL schedule.
+     *
      * @throws \Exception
      */
     protected function calculateAFLGrandFinalDay(): void
     {
-        switch ($this->year) {
-            case 2015:
-                $aflGrandFinalFriday = '2015-10-02';
-                break;
-            case 2016:
-                $aflGrandFinalFriday = '2016-09-30';
-                break;
-            case 2017:
-                $aflGrandFinalFriday = '2017-09-29';
-                break;
-            case 2018:
-                $aflGrandFinalFriday = '2018-09-28';
-                break;
-            case 2019:
-                $aflGrandFinalFriday = '2019-09-27';
-                break;
-            case 2020:
-                $aflGrandFinalFriday = '2020-09-25';
-                break;
-            default:
-                return;
-        }
+        $dates = [
+            2015 => '2015-10-02',
+            2016 => '2016-09-30',
+            2017 => '2017-09-29',
+            2018 => '2018-09-28',
+            2019 => '2019-09-27',
+            2020 => '2020-09-25',
+            2021 => '2021-09-24',
+            2022 => '2022-09-23',
+            2023 => '2023-09-29',
+            2024 => '2024-09-27',
+            2025 => '2025-09-26',
+        ];
 
-        $date = new \DateTime($aflGrandFinalFriday, DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        if (! isset($dates[$this->year])) {
+            return;
+        }
 
         $this->addHoliday(new Holiday(
             'aflGrandFinalFriday',
             ['en' => 'AFL Grand Final Friday'],
-            $date,
+            new \DateTime($dates[$this->year], DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }

@@ -28,10 +28,10 @@ abstract class WesternAustraliaBaseTestCase extends AustraliaBaseTestCase
     use YasumiBase;
 
     /** Timezone in which this provider has holidays defined. */
-    public const TIMEZONE = 'Australia/West';
+    public const TIMEZONE = 'Australia/Perth';
 
     /** Name of the region (e.g. country / state) to be tested. */
     public string $region = 'Australia\WesternAustralia';
 
-    public string $timezone = 'Australia/West';
+    public string $timezone = 'Australia/Perth';
 }

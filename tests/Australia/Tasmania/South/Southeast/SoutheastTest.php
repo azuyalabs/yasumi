@@ -52,7 +52,7 @@ class SoutheastTest extends SoutheastBaseTestCase
             'secondChristmasDay',
             'australiaDay',
             'anzacDay',
-            'queensBirthday',
+            'monarchsBirthday',
             'eightHourDay',
             'hobartShow',
             'hobartRegatta',

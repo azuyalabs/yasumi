@@ -55,7 +55,7 @@ class AustralianCapitalTerritoryTest extends AustralianCapitalTerritoryBaseTestC
             'anzacDay',
             'easter',
             'easterSaturday',
-            'queensBirthday',
+            'monarchsBirthday',
             'labourDay',
             'canberraDay',
             'reconciliationDay',
@@ -63,6 +63,11 @@ class AustralianCapitalTerritoryTest extends AustralianCapitalTerritoryBaseTestC
 
         if (2022 === $this->year) {
             $expectedHolidays[] = 'nationalDayOfMourning';
+        }
+
+        $anzacDay = new \DateTime("{$this->year}-04-25", new \DateTimeZone(self::TIMEZONE));
+        if ($this->year >= 2020 && in_array((int) $anzacDay->format('w'), [0, 6], true)) {
+            $expectedHolidays[] = 'anzacDayMonday';
         }
 
         $this->assertDefinedHolidays($expectedHolidays, $this->region, $this->year, Holiday::TYPE_OFFICIAL);

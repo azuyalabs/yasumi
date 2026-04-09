@@ -28,10 +28,10 @@ abstract class VictoriaBaseTestCase extends AustraliaBaseTestCase
     use YasumiBase;
 
     /** Timezone in which this provider has holidays defined. */
-    public const TIMEZONE = 'Australia/Victoria';
+    public const TIMEZONE = 'Australia/Melbourne';
 
     /** Name of the region (e.g. country / state) to be tested. */
     public string $region = 'Australia\Victoria';
 
-    public string $timezone = 'Australia/Victoria';
+    public string $timezone = 'Australia/Melbourne';
 }

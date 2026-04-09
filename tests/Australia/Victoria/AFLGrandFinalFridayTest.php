@@ -31,7 +31,7 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements HolidayTes
     public const HOLIDAY = 'aflGrandFinalFriday';
 
     public const ESTABLISHMENT_YEAR = 2015;
-    public const LAST_KNOWN_YEAR = 2020;
+    public const LAST_KNOWN_YEAR = 2025;
 
     /**
      * Tests AFL Grand Final Friday.
@@ -104,6 +104,11 @@ class AFLGrandFinalFridayTest extends VictoriaBaseTestCase implements HolidayTes
             [2018, '2018-09-28'],
             [2019, '2019-09-27'],
             [2020, '2020-09-25'],
+            [2021, '2021-09-24'],
+            [2022, '2022-09-23'],
+            [2023, '2023-09-29'],
+            [2024, '2024-09-27'],
+            [2025, '2025-09-26'],
         ];
     }
 }

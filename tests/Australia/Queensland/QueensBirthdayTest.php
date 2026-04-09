@@ -21,14 +21,14 @@ use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
 /**
- * Class for testing Queen's Birthday in Queensland (Australia)..
+ * Class for testing Monarch's Birthday in Queensland (Australia)..
  */
 class QueensBirthdayTest extends QueenslandBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.
      */
-    public const HOLIDAY = 'queensBirthday';
+    public const HOLIDAY = 'monarchsBirthday';
 
     /**
      * The year in which the holiday was first established.
@@ -36,7 +36,7 @@ class QueensBirthdayTest extends QueenslandBaseTestCase implements HolidayTestCa
     public const ESTABLISHMENT_YEAR = 1950;
 
     /**
-     * Tests Queen's Birthday.
+     * Tests Monarch's Birthday.
      *
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
@@ -73,6 +73,12 @@ class QueensBirthdayTest extends QueenslandBaseTestCase implements HolidayTestCa
             [2018, '2018-10-01'],
             [2019, '2019-10-07'],
             [2020, '2020-10-05'],
+            [2021, '2021-10-04'],
+            [2022, '2022-10-03'],
+            [2023, '2023-10-02'],
+            [2024, '2024-10-07'],
+            [2025, '2025-10-06'],
+            [2026, '2026-10-05'],
         ];
     }
 
@@ -86,8 +92,14 @@ class QueensBirthdayTest extends QueenslandBaseTestCase implements HolidayTestCa
         $this->assertTranslatedHolidayName(
             $this->region,
             self::HOLIDAY,
-            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, 2022),
             [self::LOCALE => 'Queen’s Birthday']
+        );
+        $this->assertTranslatedHolidayName(
+            $this->region,
+            self::HOLIDAY,
+            static::generateRandomYear(2023),
+            [self::LOCALE => 'King’s Birthday']
         );
     }
 

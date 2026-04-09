@@ -52,7 +52,7 @@ class CircularHeadTest extends CircularHeadBaseTestCase
             'secondChristmasDay',
             'australiaDay',
             'anzacDay',
-            'queensBirthday',
+            'monarchsBirthday',
             'eightHourDay',
             'recreationDay',
             'burnieShow',

@@ -18,7 +18,7 @@ declare(strict_types = 1);
 namespace Yasumi\tests\Australia\Queensland\Brisbane;
 
 /**
- * Class for testing Queen's Birthday in Brisbane (Australia)..
+ * Class for testing Monarch's Birthday in Brisbane (Australia)..
  */
 class QueensBirthdayTest extends \Yasumi\tests\Australia\Queensland\QueensBirthdayTest
 {

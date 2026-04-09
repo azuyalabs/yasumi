@@ -15,28 +15,23 @@ declare(strict_types = 1);
  * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
-namespace Yasumi\tests\Australia\Victoria;
+namespace Yasumi\tests\Australia\Queensland;
 
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
 /**
- * Class for testing Monarch's Birthday in Victoria (Australia)..
+ * Class for testing Easter Sunday in Queensland (Australia).
  */
-class QueensBirthdayTest extends VictoriaBaseTestCase implements HolidayTestCase
+class EasterSundayTest extends QueenslandBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.
      */
-    public const HOLIDAY = 'monarchsBirthday';
+    public const HOLIDAY = 'easter';
 
     /**
-     * The year in which the holiday was first established.
-     */
-    public const ESTABLISHMENT_YEAR = 1950;
-
-    /**
-     * Tests Monarch's Birthday.
+     * Tests Easter Sunday.
      *
      * @param int    $year     the year for which the holiday defined in this test needs to be tested
      * @param string $expected the expected date
@@ -58,28 +53,21 @@ class QueensBirthdayTest extends VictoriaBaseTestCase implements HolidayTestCase
      * Returns a list of test dates.
      *
      * @return array<array> list of test dates for the holiday defined in this test
+     *
+     * @throws \Exception
      */
     public static function HolidayDataProvider(): array
     {
-        return [
-            [2010, '2010-06-14'],
-            [2011, '2011-06-13'],
-            [2012, '2012-06-11'],
-            [2013, '2013-06-10'],
-            [2014, '2014-06-09'],
-            [2015, '2015-06-08'],
-            [2016, '2016-06-13'],
-            [2017, '2017-06-12'],
-            [2018, '2018-06-11'],
-            [2019, '2019-06-10'],
-            [2020, '2020-06-08'],
-            [2021, '2021-06-14'],
-            [2022, '2022-06-13'],
-            [2023, '2023-06-12'],
-            [2024, '2024-06-10'],
-            [2025, '2025-06-09'],
-            [2026, '2026-06-08'],
-        ];
+        $data = [];
+
+        for ($y = 0; $y < 50; ++$y) {
+            $year = static::generateRandomYear(2017);
+            $date = static::computeEaster($year, self::TIMEZONE);
+
+            $data[] = [$year, $date->format('Y-m-d')];
+        }
+
+        return $data;
     }
 
     /**
@@ -92,15 +80,17 @@ class QueensBirthdayTest extends VictoriaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             $this->region,
             self::HOLIDAY,
-            static::generateRandomYear(self::ESTABLISHMENT_YEAR, 2022),
-            [self::LOCALE => 'Queen’s Birthday']
+            static::generateRandomYear(2017),
+            [self::LOCALE => 'Easter Sunday']
         );
-        $this->assertTranslatedHolidayName(
-            $this->region,
-            self::HOLIDAY,
-            static::generateRandomYear(2023),
-            [self::LOCALE => 'King’s Birthday']
-        );
+    }
+
+    /**
+     * @throws \Exception
+     */
+    public function testNotHoliday(): void
+    {
+        $this->assertNotHoliday($this->region, self::HOLIDAY, 2016);
     }
 
     /**
@@ -110,11 +100,6 @@ class QueensBirthdayTest extends VictoriaBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(
-            $this->region,
-            self::HOLIDAY,
-            static::generateRandomYear(self::ESTABLISHMENT_YEAR, 2100),
-            Holiday::TYPE_OFFICIAL
-        );
+        $this->assertHolidayType($this->region, self::HOLIDAY, static::generateRandomYear(2017), Holiday::TYPE_OFFICIAL);
     }
 }

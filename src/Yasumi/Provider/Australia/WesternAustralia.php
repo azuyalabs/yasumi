@@ -33,7 +33,7 @@ class WesternAustralia extends Australia
      */
     public const ID = 'AU-WA';
 
-    public string $timezone = 'Australia/West';
+    public string $timezone = 'Australia/Perth';
 
     /**
      * Initialize holidays for Western Australia (Australia).
@@ -46,15 +46,90 @@ class WesternAustralia extends Australia
     {
         parent::initialize();
 
-        $this->calculateQueensBirthday();
+        if ($this->year >= 2022) {
+            $this->addHoliday($this->easterSunday($this->year, $this->timezone, $this->locale));
+        }
+
+        $this->calculateMonarchsBirthday();
         $this->calculateLabourDay();
         $this->calculateWesternAustraliaDay();
+        $this->calculateAnzacDayMonday();
     }
 
     /**
-     * Queens Birthday.
+     * Easter Sunday.
      *
-     * The Queen's Birthday is an Australian public holiday but the date varies across
+     * Easter is a festival and holiday celebrating the resurrection of Jesus Christ from the dead. Easter is celebrated
+     * on a date based on a certain number of days after March 21st. The date of Easter Day was defined by the Council
+     * of Nicaea in AD325 as the Sunday after the first full moon which falls on or after the Spring Equinox.
+     *
+     * @see https://en.wikipedia.org/wiki/Easter
+     * @see https://www.wa.gov.au/service/employment/workplace-arrangements/public-holidays-western-australia
+     *
+     * @param int         $year     the year for which Easter Sunday need to be created
+     * @param string      $timezone the timezone in which Easter Sunday is celebrated
+     * @param string      $locale   the locale for which Easter Sunday need to be displayed in
+     * @param string|null $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                              TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
+     *
+     * @throws \Exception
+     */
+    protected function easterSunday(
+        int $year,
+        string $timezone,
+        string $locale,
+        ?string $type = null,
+    ): Holiday {
+        return new Holiday(
+            'easter',
+            ['en' => 'Easter Sunday'],
+            $this->calculateEaster($year, $timezone),
+            $locale,
+            $type ?? Holiday::TYPE_OFFICIAL
+        );
+    }
+
+    /**
+     * ANZAC Day Monday substitute.
+     *
+     * When ANZAC Day (April 25) falls on a Saturday or Sunday, the following Monday is an additional public holiday
+     * in this state/territory.
+     *
+     * @see https://en.wikipedia.org/wiki/Anzac_Day
+     * @see https://www.timeanddate.com/holidays/australia/anzac-day
+     *
+     * @throws \Exception
+     */
+    protected function calculateAnzacDayMonday(): void
+    {
+        if ($this->year < 1972) {
+            return;
+        }
+
+        $date = new \DateTime("{$this->year}-04-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $dow = (int) $date->format('w');
+
+        if (6 === $dow) { // Saturday → Monday
+            $date->add(new \DateInterval('P2D'));
+        } elseif (0 === $dow) { // Sunday → Monday
+            $date->add(new \DateInterval('P1D'));
+        } else {
+            return;
+        }
+
+        $this->addHoliday(new Holiday(
+            'anzacDayMonday',
+            ['en' => 'ANZAC Day'],
+            $date,
+            $this->locale,
+            Holiday::TYPE_OFFICIAL
+        ));
+    }
+
+    /**
+     * Monarch's Birthday.
+     *
+     * The Monarch's Birthday is an Australian public holiday but the date varies across
      * states and territories. Australia celebrates this holiday because it is a constitutional
      * monarchy, with the English monarch as head of state.
      *
@@ -66,7 +141,7 @@ class WesternAustralia extends Australia
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
-    protected function calculateQueensBirthday(): void
+    protected function calculateMonarchsBirthday(): void
     {
         $birthDay = "last monday of september {$this->year}";
         if (2011 === $this->year) {
@@ -77,9 +152,15 @@ class WesternAustralia extends Australia
             $birthDay = '2012-10-01';
         }
 
+        if (2024 === $this->year) {
+            $birthDay = '2024-09-23';
+        }
+
+        $name = $this->year >= 2023 ? 'King’s Birthday' : 'Queen’s Birthday';
+
         $this->addHoliday(new Holiday(
-            'queensBirthday',
-            [],
+            'monarchsBirthday',
+            ['en' => $name],
             new \DateTime($birthDay, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale,
             Holiday::TYPE_OFFICIAL

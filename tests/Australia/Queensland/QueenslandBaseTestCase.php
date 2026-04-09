@@ -28,10 +28,10 @@ abstract class QueenslandBaseTestCase extends AustraliaBaseTestCase
     use YasumiBase;
 
     /** Timezone in which this provider has holidays defined. */
-    public const TIMEZONE = 'Australia/Queensland';
+    public const TIMEZONE = 'Australia/Brisbane';
 
     /** Name of the region (e.g. country / state) to be tested. */
     public string $region = 'Australia\Queensland';
 
-    public string $timezone = 'Australia/Queensland';
+    public string $timezone = 'Australia/Brisbane';
 }

@@ -55,12 +55,16 @@ class NewSouthWalesTest extends NewSouthWalesBaseTestCase implements ProviderTes
             'anzacDay',
             'easter',
             'easterSaturday',
-            'queensBirthday',
+            'monarchsBirthday',
             'labourDay',
         ];
 
         if (2022 === $this->year) {
             $holidays[] = 'nationalDayOfMourning';
+        }
+
+        if (2026 === $this->year || 2027 === $this->year) {
+            $holidays[] = 'anzacDayMonday';
         }
 
         $this->assertDefinedHolidays($holidays, $this->region, $this->year, Holiday::TYPE_OFFICIAL);

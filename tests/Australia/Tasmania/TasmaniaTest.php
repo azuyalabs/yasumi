@@ -53,7 +53,7 @@ class TasmaniaTest extends TasmaniaBaseTestCase implements ProviderTestCase
             'secondChristmasDay',
             'australiaDay',
             'anzacDay',
-            'queensBirthday',
+            'monarchsBirthday',
             'eightHourDay',
             'recreationDay',
         ];

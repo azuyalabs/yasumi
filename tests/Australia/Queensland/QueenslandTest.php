@@ -53,9 +53,15 @@ class QueenslandTest extends QueenslandBaseTestCase implements ProviderTestCase
             'secondChristmasDay',
             'australiaDay',
             'anzacDay',
-            'queensBirthday',
+            'monarchsBirthday',
             'labourDay',
+            'easterSaturday',
         ];
+
+        if ($this->year >= 2017) {
+            $expectedHolidays[] = 'easter';
+        }
+
         if (2022 === $this->year) {
             $expectedHolidays[] = 'nationalDayOfMourning';
         }

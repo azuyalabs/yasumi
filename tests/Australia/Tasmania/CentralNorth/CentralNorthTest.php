@@ -53,7 +53,7 @@ class CentralNorthTest extends CentralNorthBaseTestCase implements ProviderTestC
             'secondChristmasDay',
             'australiaDay',
             'anzacDay',
-            'queensBirthday',
+            'monarchsBirthday',
             'eightHourDay',
             'recreationDay',
             'devonportShow',

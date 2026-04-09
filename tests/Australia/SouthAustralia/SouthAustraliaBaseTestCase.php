@@ -28,10 +28,10 @@ abstract class SouthAustraliaBaseTestCase extends AustraliaBaseTestCase
     use YasumiBase;
 
     /** Timezone in which this provider has holidays defined. */
-    public const TIMEZONE = 'Australia/South';
+    public const TIMEZONE = 'Australia/Adelaide';
 
     /** Name of the region (e.g. country / state) to be tested. */
     public string $region = 'Australia\SouthAustralia';
 
-    public string $timezone = 'Australia/South';
+    public string $timezone = 'Australia/Adelaide';
 }

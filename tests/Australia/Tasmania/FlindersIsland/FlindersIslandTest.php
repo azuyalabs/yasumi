@@ -53,7 +53,7 @@ class FlindersIslandTest extends FlindersIslandBaseTestCase implements ProviderT
             'secondChristmasDay',
             'australiaDay',
             'anzacDay',
-            'queensBirthday',
+            'monarchsBirthday',
             'eightHourDay',
             'recreationDay',
             'flindersIslandShow',

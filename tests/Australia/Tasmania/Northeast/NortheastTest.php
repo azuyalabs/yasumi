@@ -53,7 +53,7 @@ class NortheastTest extends NortheastBaseTestCase implements ProviderTestCase
             'secondChristmasDay',
             'australiaDay',
             'anzacDay',
-            'queensBirthday',
+            'monarchsBirthday',
             'eightHourDay',
             'recreationDay',
             'launcestonShow',
