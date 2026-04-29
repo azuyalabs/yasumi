@@ -18,6 +18,7 @@ declare(strict_types = 1);
 namespace Yasumi\tests\Australia\Queensland;
 
 use Yasumi\Holiday;
+use Yasumi\tests\Australia\MonarchsBirthdayTransitionTestTrait;
 use Yasumi\tests\HolidayTestCase;
 
 /**
@@ -25,6 +26,8 @@ use Yasumi\tests\HolidayTestCase;
  */
 class QueensBirthdayTest extends QueenslandBaseTestCase implements HolidayTestCase
 {
+    use MonarchsBirthdayTransitionTestTrait;
+
     /**
      * The name of the holiday.
      */
@@ -57,7 +60,7 @@ class QueensBirthdayTest extends QueenslandBaseTestCase implements HolidayTestCa
     /**
      * Returns a list of test dates.
      *
-     * @return array<array> list of test dates for the holiday defined in this test
+     * @return array<int, array{int, string}> list of test dates for the holiday defined in this test
      */
     public static function HolidayDataProvider(): array
     {

@@ -66,6 +66,10 @@ class SouthAustraliaTest extends SouthAustraliaBaseTestCase implements ProviderT
             $expectedHolidays[] = 'easter';
         }
 
+        if (2026 === $this->year) {
+            $expectedHolidays[] = 'substituteHoliday:proclamationDay';
+        }
+
         $this->assertDefinedHolidays($expectedHolidays, $this->region, $this->year, Holiday::TYPE_OFFICIAL);
     }
 

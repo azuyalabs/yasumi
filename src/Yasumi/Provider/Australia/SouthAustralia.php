@@ -21,6 +21,7 @@ use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia;
 use Yasumi\Provider\DateTimeZoneFactory;
+use Yasumi\SubstituteHoliday;
 
 /**
  * Provider for all holidays in South Australia (Australia).
@@ -32,6 +33,10 @@ class SouthAustralia extends Australia
      * country or sub-region.
      */
     public const ID = 'AU-SA';
+
+    private const EASTER_SUNDAY_ESTABLISHMENT_YEAR = 2024;
+
+    private const PROCLAMATION_DAY_SUBSTITUTE_YEAR = 2024;
 
     public string $timezone = 'Australia/Adelaide';
 
@@ -48,7 +53,7 @@ class SouthAustralia extends Australia
 
         $this->addHoliday($this->easterSaturday($this->year, $this->timezone, $this->locale));
 
-        if ($this->year >= 2024) {
+        if ($this->year >= self::EASTER_SUNDAY_ESTABLISHMENT_YEAR) {
             $this->addHoliday($this->easterSunday($this->year, $this->timezone, $this->locale));
         }
 
@@ -155,15 +160,9 @@ class SouthAustralia extends Australia
      */
     protected function calculateMonarchsBirthday(): void
     {
-        $name = $this->year >= 2023 ? 'King’s Birthday' : 'Queen’s Birthday';
-
-        $this->addHoliday(new Holiday(
-            'monarchsBirthday',
-            ['en' => $name],
-            new \DateTime("second monday of june {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-            $this->locale,
-            Holiday::TYPE_OFFICIAL
-        ));
+        $this->addMonarchsBirthdayHoliday(
+            new \DateTime("second monday of june {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone))
+        );
     }
 
     /**
@@ -213,6 +212,7 @@ class SouthAustralia extends Australia
     protected function calculateProclamationDay(): void
     {
         $christmasDay = new \DateTime("{$this->year}-12-25", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        $proclamationDay = new \DateTime("{$this->year}-12-26", DateTimeZoneFactory::getDateTimeZone($this->timezone));
 
         $this->addHoliday(new Holiday(
             'christmasDay',
@@ -221,6 +221,29 @@ class SouthAustralia extends Australia
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));
+
+        if ($this->year >= self::PROCLAMATION_DAY_SUBSTITUTE_YEAR && 5 === (int) $christmasDay->format('w')) {
+            $holiday = new Holiday(
+                'proclamationDay',
+                ['en' => 'Proclamation Day'],
+                $proclamationDay,
+                $this->locale,
+                Holiday::TYPE_OFFICIAL
+            );
+
+            $this->addHoliday($holiday);
+
+            $proclamationDay->add(new \DateInterval('P2D'));
+            $this->addHoliday(new SubstituteHoliday(
+                $holiday,
+                [],
+                $proclamationDay,
+                $this->locale,
+                Holiday::TYPE_OFFICIAL
+            ));
+
+            return;
+        }
 
         switch ($christmasDay->format('w')) {
             case 0: // sunday

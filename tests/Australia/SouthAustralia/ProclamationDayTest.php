@@ -52,7 +52,7 @@ class ProclamationDayTest extends SouthAustraliaBaseTestCase implements HolidayT
     /**
      * Returns a list of test dates.
      *
-     * @return array<array> list of test dates for the holiday defined in this test
+     * @return array<int, array{int, string}> list of test dates for the holiday defined in this test
      */
     public static function HolidayDataProvider(): array
     {
@@ -68,6 +68,40 @@ class ProclamationDayTest extends SouthAustraliaBaseTestCase implements HolidayT
             [2018, '2018-12-26'],
             [2019, '2019-12-26'],
             [2020, '2020-12-28'],
+            [2024, '2024-12-26'],
+            [2025, '2025-12-26'],
+            [2026, '2026-12-26'],
+        ];
+    }
+
+    /**
+     * Tests substitute Proclamation Day.
+     *
+     * @param int    $year     the year for which the substitute holiday needs to be tested
+     * @param string $expected the expected date
+     *
+     * @throws \Exception
+     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('SubstituteHolidayDataProvider')]
+    public function testSubstituteHoliday(int $year, string $expected): void
+    {
+        $this->assertSubstituteHoliday(
+            $this->region,
+            self::HOLIDAY,
+            $year,
+            new \DateTime($expected, new \DateTimeZone($this->timezone))
+        );
+    }
+
+    /**
+     * Returns a list of substitute holiday test dates.
+     *
+     * @return array<int, array{int, string}> list of test dates for substitute Proclamation Day
+     */
+    public static function SubstituteHolidayDataProvider(): array
+    {
+        return [
+            [2026, '2026-12-28'],
         ];
     }
 

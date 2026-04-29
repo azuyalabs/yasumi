@@ -146,15 +146,9 @@ class NewSouthWales extends Australia
      */
     protected function calculateMonarchsBirthday(): void
     {
-        $name = $this->year >= 2023 ? 'King’s Birthday' : 'Queen’s Birthday';
-
-        $this->addHoliday(new Holiday(
-            'monarchsBirthday',
-            ['en' => $name],
-            new \DateTime("second monday of june {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
-            $this->locale,
-            Holiday::TYPE_OFFICIAL
-        ));
+        $this->addMonarchsBirthdayHoliday(
+            new \DateTime("second monday of june {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone))
+        );
     }
 
     /**

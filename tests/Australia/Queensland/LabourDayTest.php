@@ -52,7 +52,7 @@ class LabourDayTest extends QueenslandBaseTestCase implements HolidayTestCase
     /**
      * Returns a list of test dates.
      *
-     * @return array<array> list of test dates for the holiday defined in this test
+     * @return array<int, array{int, string}> list of test dates for the holiday defined in this test
      */
     public static function HolidayDataProvider(): array
     {
@@ -68,6 +68,9 @@ class LabourDayTest extends QueenslandBaseTestCase implements HolidayTestCase
             [2018, '2018-05-07'],
             [2019, '2019-05-06'],
             [2020, '2020-05-04'],
+            [2024, '2024-05-06'],
+            [2025, '2025-05-05'],
+            [2026, '2026-05-04'],
         ];
     }
 

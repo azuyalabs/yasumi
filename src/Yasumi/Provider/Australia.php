@@ -35,6 +35,8 @@ class Australia extends AbstractProvider
      */
     public const ID = 'AU';
 
+    protected const MONARCHY_CHANGE_YEAR = 2023;
+
     public string $timezone = 'Australia/Melbourne';
 
     /**
@@ -229,6 +231,35 @@ class Australia extends AbstractProvider
             'nationalDayOfMourning',
             ['en' => 'National Day of Mourning'],
             new \DateTime("{$this->year}-9-22", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale,
+            Holiday::TYPE_OFFICIAL
+        ));
+    }
+
+    /**
+     * Monarch's Birthday.
+     *
+     * @throws \Exception
+     */
+    protected function addMonarchsBirthdayHoliday(\DateTimeInterface $date): void
+    {
+        $name = $this->year >= self::MONARCHY_CHANGE_YEAR ? 'King’s Birthday' : 'Queen’s Birthday';
+
+        $holiday = new Holiday(
+            'monarchsBirthday',
+            ['en' => $name],
+            $date,
+            $this->locale,
+            Holiday::TYPE_OFFICIAL
+        );
+
+        $this->addHoliday($holiday);
+
+        // Deprecated alias retained for downstream consumers using the former holiday key.
+        $this->addHoliday(new Holiday(
+            'queensBirthday',
+            ['en' => $name],
+            $date,
             $this->locale,
             Holiday::TYPE_OFFICIAL
         ));
