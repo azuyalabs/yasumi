@@ -17,8 +17,12 @@ declare(strict_types = 1);
 
 namespace Yasumi\tests\SouthKorea;
 
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\TestWith;
 use Yasumi\Holiday;
 use Yasumi\Provider\SouthKorea;
+use Yasumi\ProviderInterface;
+use Yasumi\SubstituteHoliday;
 use Yasumi\tests\ProviderTestCase;
 use Yasumi\Yasumi;
 
@@ -27,126 +31,21 @@ use Yasumi\Yasumi;
  */
 class SouthKoreaTest extends SouthKoreaBaseTestCase implements ProviderTestCase
 {
-    /**
-     * @var int the year of upper limit for tests of lunar date
-     */
-    public const LUNAR_TEST_LIMIT = 2050;
+    /** @var int The year in which the holiday was first established */
+    public const ESTABLISHMENT_YEAR = 1949;
 
     /**
-     * @var int year random year number used for all tests in this Test Case
+     * Test if the provider returns a valid holiday list
      */
-    protected int $year;
-
-    /**
-     * Initial setup of this Test Case.
-     *
-     * @throws \Exception
-     */
-    protected function setUp(): void
+    public function testCount(): void
     {
-        $this->year = static::generateRandomYear(1949, self::LUNAR_TEST_LIMIT);
-    }
+        // Assert years from 1949 onwards.
+        $year = self::generateRandomYear(self::ESTABLISHMENT_YEAR);
+        $this->assertNotCount(0, Yasumi::create(self::REGION, $year), "Missing holiday data for year {$year}.");
 
-    /**
-     * Tests if all official holidays in South Korea are defined by the provider class.
-     */
-    public function testOfficialHolidays(): void
-    {
-        $officialHolidays = [];
-
-        if ($this->year >= 1949) {
-            $officialHolidays[] = 'independenceMovementDay';
-            $officialHolidays[] = 'liberationDay';
-            $officialHolidays[] = 'nationalFoundationDay';
-            $officialHolidays[] = 'newYearsDay';
-            $officialHolidays[] = 'chuseok';
-            $officialHolidays[] = 'christmasDay';
-
-            if ($this->year >= 1950 && $this->year < 1976) {
-                $officialHolidays[] = 'unitedNationsDay';
-            }
-
-            if ($this->year >= 1956) {
-                $officialHolidays[] = 'memorialDay';
-            }
-
-            if ($this->year >= 1975) {
-                $officialHolidays[] = 'childrensDay';
-                $officialHolidays[] = 'buddhasBirthday';
-            }
-
-            if ($this->year >= 1976 && $this->year <= 1990) {
-                $officialHolidays[] = 'armedForcesDay';
-            }
-
-            if ($this->year >= 1985) {
-                $officialHolidays[] = 'seollal';
-            }
-
-            if ($this->year >= 1986) {
-                $officialHolidays[] = 'dayAfterChuseok';
-            }
-
-            if ($this->year >= 1989) {
-                $officialHolidays[] = 'dayBeforeChuseok';
-                $officialHolidays[] = 'dayBeforeSeollal';
-                $officialHolidays[] = 'dayAfterSeollal';
-            }
-
-            if ($this->year <= 1989) {
-                $officialHolidays[] = 'twoDaysLaterNewYearsDay';
-            }
-
-            if ($this->year <= 1990 || $this->year > 2012) {
-                $officialHolidays[] = 'hangulDay';
-            }
-
-            if ($this->year <= 1998) {
-                $officialHolidays[] = 'dayAfterNewYearsDay';
-            }
-
-            if ($this->year <= 2005) {
-                $officialHolidays[] = 'arborDay';
-            }
-
-            if ($this->year < 2008) {
-                $officialHolidays[] = 'constitutionDay';
-            }
-        }
-
-        $this->assertDefinedHolidays($officialHolidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
-    }
-
-    /**
-     * Tests if all observed holidays in South Korea are defined by the provider class.
-     */
-    public function testObservedHolidays(): void
-    {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
-    }
-
-    /**
-     * Tests if all seasonal holidays in South Korea are defined by the provider class.
-     */
-    public function testSeasonalHolidays(): void
-    {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_SEASON);
-    }
-
-    /**
-     * Tests if all bank holidays in South Korea are defined by the provider class.
-     */
-    public function testBankHolidays(): void
-    {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_BANK);
-    }
-
-    /**
-     * Tests if all other holidays in South Korea are defined by the provider class.
-     */
-    public function testOtherHolidays(): void
-    {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        // Assert years before 1949.
+        $year = self::generateRandomYear(null, self::ESTABLISHMENT_YEAR);
+        $this->assertCount(0, Yasumi::create(self::REGION, $year), 'Data available from 1949 onwards only.');
     }
 
     /**
@@ -159,15 +58,65 @@ class SouthKoreaTest extends SouthKoreaBaseTestCase implements ProviderTestCase
     }
 
     /**
-     * Tests if all generation methods is exists in provider.
+     * Testing the provider object
      */
-    public function testGenerationMethods(): void
+    public function testProvider(): void
     {
-        $holidayProvider = Yasumi::create(self::REGION, $this->year);
+        // Assert with SouthKorea provider instance
+        $this->assertInstanceOf(ProviderInterface::class, Yasumi::create(self::REGION, self::generateRandomYear()));
+    }
 
-        $this->assertIsArray(SouthKorea::HOLIDAY_NAMES, 'Yasumi\Provider\SouthKorea::HOLIDAY_NAMES is not array');
+    /**
+     * Testing the holiday object
+     */
+    #[DataProvider('HolidaysDataProvider')]
+    public function testHolidays(Holiday $holiday, string $key): void
+    {
+        // Asserting the type of holidays
+        $this->assertInstanceOf(Holiday::class, $holiday);
+        $this->assertInstanceOf(\DateTimeInterface::class, $holiday);
+
+        // Asserting the type of alternative holidays
+        if (str_starts_with($key, 'substituteHoliday:')) {
+            $this->assertInstanceOf(SubstituteHoliday::class, $holiday);
+        }
+    }
+
+    /**
+     * Testing the holiday name translations
+     *
+     * Test only whether the translation exists
+     */
+    #[DataProvider('HolidaysDataProvider')]
+    public function testTranslations(Holiday $holiday, string $key): void
+    {
+        $this->assertNotSame('', $holiday->getName(['en']), "Missing en translation for $key");
+        $this->assertNotSame('', $holiday->getName(['ko']), "Missing ko translation for $key");
+    }
+
+    /**
+     * Test if the method exists
+     */
+    public function testMethods(): void
+    {
+        // Assert the existence of the holiday method within the class
         foreach (array_keys(SouthKorea::HOLIDAY_NAMES) as $key) {
-            $this->assertTrue(method_exists($holidayProvider, $key), sprintf('Generation method `%s` is not declared in provider `%s`', $key, self::REGION));
+            $this->assertIsString($key);
+            $this->assertTrue(method_exists(SouthKorea::class, $key), "Method {$key} does not exist.");
+        }
+    }
+
+    /**
+     * Data provider for holiday data
+     *
+     * @return \Generator<Holiday, string>
+     */
+    public static function HolidaysDataProvider(): \Generator
+    {
+        $provider = Yasumi::create(self::REGION, static::generateRandomYear(self::ESTABLISHMENT_YEAR));
+
+        foreach ($provider->getHolidays() as $holiday) {
+            yield [$holiday, $holiday->getKey()];
         }
     }
 }

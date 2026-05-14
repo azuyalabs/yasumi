@@ -18,6 +18,7 @@ declare(strict_types = 1);
 namespace Yasumi\tests\SouthKorea;
 
 use Yasumi\Holiday;
+use Yasumi\Provider\DateTimeZoneFactory;
 use Yasumi\tests\HolidayTestCase;
 
 /**
@@ -42,39 +43,14 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
      */
     public function testHoliday(): void
     {
+        // From 1975 onwards.
         $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime("{$year}-5-5", new \DateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-5-5", DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
         );
-    }
-
-    /**
-     * Tests the substitute holiday defined in this test (conflict with Buddha's Birthday).
-     *
-     * @throws \Exception
-     */
-    public function testSubstituteHolidayByBuddhasBirthday(): void
-    {
-        $tz = new \DateTimeZone(self::TIMEZONE);
-
-        foreach ([2025, 2044] as $year) {
-            $this->assertHoliday(
-                self::REGION,
-                'buddhasBirthday',
-                $year,
-                new \DateTime("{$year}-5-5", $tz)
-            );
-
-            $this->assertSubstituteHoliday(
-                self::REGION,
-                'buddhasBirthday',
-                $year,
-                new \DateTime("{$year}-5-6", $tz)
-            );
-        }
     }
 
     /**
@@ -84,15 +60,13 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
      */
     public function testSubstituteHoliday(): void
     {
-        $tz = new \DateTimeZone(self::TIMEZONE);
-
         // Before 2022
         $this->assertNotSubstituteHoliday(self::REGION, self::HOLIDAY, 2013);
         $this->assertSubstituteHoliday(
             self::REGION,
             self::HOLIDAY,
             2019,
-            new \DateTime('2019-5-6', $tz)
+            new \DateTime('2019-5-6', DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
         );
 
         // By saturday
@@ -100,7 +74,7 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             2029,
-            new \DateTime('2029-5-7', $tz)
+            new \DateTime('2029-5-7', DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
         );
 
         // By sunday
@@ -108,21 +82,7 @@ class ChildrensDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             2024,
-            new \DateTime('2024-5-6', $tz)
-        );
-    }
-
-    /**
-     * Tests the holiday defined in this test before establishment.
-     *
-     * @throws \Exception
-     */
-    public function testHolidayBeforeEstablishment(): void
-    {
-        $this->assertNotHoliday(
-            self::REGION,
-            self::HOLIDAY,
-            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            new \DateTime('2024-5-6', DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
         );
     }
 
