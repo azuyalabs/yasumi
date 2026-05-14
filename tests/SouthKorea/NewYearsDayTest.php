@@ -17,89 +17,98 @@ declare(strict_types = 1);
 
 namespace Yasumi\tests\SouthKorea;
 
+use PHPUnit\Framework\Attributes\TestWith;
 use Yasumi\Holiday;
+use Yasumi\Provider\DateTimeZoneFactory;
 use Yasumi\tests\HolidayTestCase;
 
 /**
- * Class for testing New Year's Day in South Korea.
+ * Class for testing New Year's Day.
  */
 class NewYearsDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
 {
     /**
-     * The name of the holiday.
-     */
-    public const HOLIDAY = 'newYearsDay';
-
-    /**
-     * The year in which the holiday was first established.
-     */
-    public const ESTABLISHMENT_YEAR = 1950;
-
-    /**
-     * Tests the holiday defined in this test.
+     * Test January 1.
      *
      * @throws \Exception
      */
-    public function testHoliday(): void
+    public function testNewYearsDay(): void
     {
-        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
-        $date = new \DateTime("{$year}-1-1", new \DateTimeZone(self::TIMEZONE));
-
-        // New Year's Day
-        $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $date);
-
-        // Day after New Year's Day
-        if ($year <= 1998) {
-            $this->assertHoliday(
-                self::REGION,
-                'dayAfterNewYearsDay',
-                $year,
-                (clone $date)->add(new \DateInterval('P1D'))
-            );
-        }
-
-        // Two days later New Year's Day
-        if ($year <= 1989) {
-            $this->assertHoliday(
-                self::REGION,
-                'twoDaysLaterNewYearsDay',
-                $year,
-                (clone $date)->add(new \DateInterval('P2D'))
-            );
-        }
+        // From 1949 onwards.
+        $year = static::generateRandomYear(1949);
+        $this->assertHoliday(
+            self::REGION,
+            'newYearsDay',
+            $year,
+            new \DateTime("{$year}-1-1", DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
-     * Tests the holiday defined in this test after removal.
+     * Test January 2.
+     *
+     * In effect from 1949 to 1998, and removed starting in 1999.
      *
      * @throws \Exception
      */
-    public function testHolidayAfterRemoval(): void
+    public function testDayAfterNewYearsDay(): void
     {
+        // From 1949 to 1998
+        $year = static::generateRandomYear(1949, 1998);
+        $this->assertHoliday(
+            self::REGION,
+            'dayAfterNewYearsDay',
+            $year,
+            new \DateTime("{$year}-1-2", DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
+        );
+
+        // Starting from 1999
         $this->assertNotHoliday(
             self::REGION,
             'dayAfterNewYearsDay',
-            static::generateRandomYear(1999)
-        );
-        $this->assertNotHoliday(
-            self::REGION,
-            'twoDaysLaterNewYearsDay',
-            static::generateRandomYear(1990)
+            static::generateRandomYear(1999),
         );
     }
 
     /**
-     * Tests the holiday defined in this test before establishment.
+     * Test January 3.
+     *
+     * In effect from 1949 to 1989, and removed starting in 1990
      *
      * @throws \Exception
      */
-    public function testHolidayBeforeEstablishment(): void
+    public function testTwoDaysLaterNewYearsDay(): void
     {
+        // From 1949 to 1998
+        $year = static::generateRandomYear(1949, 1989);
+        $this->assertHoliday(
+            self::REGION,
+            'twoDaysLaterNewYearsDay',
+            $year,
+            new \DateTime("{$year}-1-3", DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
+        );
+
+        // Starting from 1990
         $this->assertNotHoliday(
             self::REGION,
-            self::HOLIDAY,
-            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+            'twoDaysLaterNewYearsDay',
+            static::generateRandomYear(1990),
         );
+    }
+
+    /**
+     * Test that there are no alternative holidays.
+     *
+     * Alternative holidays do not apply to New Year's Day-related holidays.
+     *
+     * @throws \Exception
+     */
+    #[TestWith(['newYearsDay'])]
+    #[TestWith(['dayAfterNewYearsDay'])]
+    #[TestWith(['twoDaysLaterNewYearsDay'])]
+    public function testSubstituteHoliday(string $key): void
+    {
+        $this->assertNotSubstituteHoliday(self::REGION, $key, static::generateRandomYear());
     }
 
     /**
@@ -111,48 +120,48 @@ class NewYearsDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
-            self::HOLIDAY,
-            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
+            'newYearsDay',
+            static::generateRandomYear(1949),
             [self::LOCALE => '새해']
         );
+
         $this->assertTranslatedHolidayName(
             self::REGION,
             'dayAfterNewYearsDay',
-            static::generateRandomYear(self::ESTABLISHMENT_YEAR, 1998),
+            static::generateRandomYear(1949, 1998),
             [self::LOCALE => '새해 연휴']
         );
+
         $this->assertTranslatedHolidayName(
             self::REGION,
             'twoDaysLaterNewYearsDay',
-            static::generateRandomYear(self::ESTABLISHMENT_YEAR, 1989),
+            static::generateRandomYear(1949, 1989),
             [self::LOCALE => '새해 연휴']
         );
     }
 
-    /**
-     * Tests type of the holiday defined in this test.
-     *
-     * @throws \Exception
-     */
     public function testHolidayType(): void
     {
         $this->assertHolidayType(
             self::REGION,
-            self::HOLIDAY,
-            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
+            'newYearsDay',
+            static::generateRandomYear(1949),
             Holiday::TYPE_OFFICIAL
         );
+
         $this->assertHolidayType(
             self::REGION,
             'dayAfterNewYearsDay',
-            static::generateRandomYear(self::ESTABLISHMENT_YEAR, 1998),
+            static::generateRandomYear(1949, 1998),
             Holiday::TYPE_OFFICIAL
         );
+
         $this->assertHolidayType(
             self::REGION,
             'twoDaysLaterNewYearsDay',
-            static::generateRandomYear(self::ESTABLISHMENT_YEAR, 1989),
+            static::generateRandomYear(1949, 1989),
             Holiday::TYPE_OFFICIAL
         );
     }
+
 }

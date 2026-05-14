@@ -18,10 +18,11 @@ declare(strict_types = 1);
 namespace Yasumi\tests\SouthKorea;
 
 use Yasumi\Holiday;
+use Yasumi\Provider\DateTimeZoneFactory;
 use Yasumi\tests\HolidayTestCase;
 
 /**
- * Class for testing Buddha's Birthday in South Korea.
+ * Class for testing Buddha's Birthday.
  */
 class BuddhasBirthdayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
 {
@@ -35,10 +36,8 @@ class BuddhasBirthdayTest extends SouthKoreaBaseTestCase implements HolidayTestC
      */
     public const ESTABLISHMENT_YEAR = 1975;
 
-    /**
-     * The year of upper limit for tests of lunar date.
-     */
-    public const LUNAR_TEST_LIMIT = 2050;
+    /** @var int Upper limit year for lunar calendar test. */
+    public const LUNAR_UPPER_LIMIT = 2050;
 
     /**
      * Tests the holiday defined in this test.
@@ -47,12 +46,20 @@ class BuddhasBirthdayTest extends SouthKoreaBaseTestCase implements HolidayTestC
      */
     public function testHoliday(): void
     {
-        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::LUNAR_TEST_LIMIT);
+        // From 1975 to LUNAR_UPPER_LIMIT
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::LUNAR_UPPER_LIMIT);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             $year,
-            new \DateTime(self::LUNAR_HOLIDAY[self::HOLIDAY][$year], new \DateTimeZone(self::TIMEZONE))
+            new \DateTime(self::LUNAR_HOLIDAY[self::HOLIDAY][$year], DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
+        );
+
+        // Before 1975
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            static::generateRandomYear(null, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -72,7 +79,7 @@ class BuddhasBirthdayTest extends SouthKoreaBaseTestCase implements HolidayTestC
                 self::REGION,
                 self::HOLIDAY,
                 $year,
-                new \DateTime($expected, new \DateTimeZone(self::TIMEZONE))
+                new \DateTime($expected, DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
             );
         } else {
             $this->assertNotSubstituteHoliday(
@@ -84,32 +91,26 @@ class BuddhasBirthdayTest extends SouthKoreaBaseTestCase implements HolidayTestC
     }
 
     /**
-     * Tests the holiday defined in this test before establishment.
-     *
-     * @throws \Exception
-     */
-    public function testHolidayBeforeEstablishment(): void
-    {
-        $this->assertNotHoliday(
-            self::REGION,
-            self::HOLIDAY,
-            static::generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
-        );
-    }
-
-    /**
      * Tests the translated name of the holiday defined in this test.
      *
      * @throws \Exception
      */
     public function testTranslation(): void
     {
-        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::LUNAR_TEST_LIMIT);
+        // Initial official name (Until 2017)
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $year,
-            [self::LOCALE => '부처님오신날']
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, 2017),
+            ['ko' => '석가탄신일']
+        );
+
+        // Revised official name (From 2018)
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            static::generateRandomYear(2018, self::LUNAR_UPPER_LIMIT),
+            ['ko' => '부처님오신날']
         );
     }
 
@@ -120,39 +121,41 @@ class BuddhasBirthdayTest extends SouthKoreaBaseTestCase implements HolidayTestC
      */
     public function testHolidayType(): void
     {
-        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::LUNAR_TEST_LIMIT);
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            $year,
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::LUNAR_UPPER_LIMIT),
             Holiday::TYPE_OFFICIAL
         );
     }
 
     /**
-     * Returns a list of test dates.
+     * Data provider for generating a precalculated list of alternative holidays
      *
-     * @return array<array> list of test dates for the holiday defined in this test
+     * Range: From 2020 to 2050 (LUNAR_UPPER_LIMIT)
+     * Alternative holidays applied from 2023 onwards.
+     *
+     * @return \Generator<array<int, string>> year, date
      */
-    public static function SubstituteHolidayDataProvider(): array
+    public static function SubstituteHolidayDataProvider(): \Generator
     {
-        return [
-            [1975, null],
-            [2005, null],
-            [2020, null],
-            [2021, null],
-            [2022, null],
-            [2023, '2023-05-29'],
-            [2024, null],
-            [2025, '2025-05-06'],
-            [2026, '2026-05-25'],
-            [2027, null],
-            [2028, null],
-            [2029, '2029-05-21'],
-            [2030, null],
-            [2031, null],
-            [2032, '2032-05-17'],
-            [2036, '2036-05-06'],
+        $data = [
+            2023 => '2023-05-29',
+            2025 => '2025-05-06',
+            2026 => '2026-05-25',
+            2029 => '2029-05-21',
+            2032 => '2032-05-17',
+            2036 => '2036-05-06',
+            2039 => '2039-05-02',
+            2043 => '2043-05-18',
+            2044 => '2044-05-06',
+            2046 => '2046-05-14',
+            2049 => '2049-05-10',
+            2050 => '2050-05-30',
         ];
+
+        foreach (range(2020, 2050) as $year) {
+            yield [$year, $data[$year] ?? null];
+        }
     }
 }
