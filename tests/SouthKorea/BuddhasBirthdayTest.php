@@ -64,7 +64,7 @@ class BuddhasBirthdayTest extends SouthKoreaBaseTestCase implements HolidayTestC
     }
 
     /**
-     * Tests substitute holidays.
+     * Tests the substitute holiday defined in this test.
      *
      * @param int     $year     the year for which the holiday defined in this test needs to be tested
      * @param ?string $expected the expected date
@@ -72,7 +72,7 @@ class BuddhasBirthdayTest extends SouthKoreaBaseTestCase implements HolidayTestC
      * @throws \Exception
      */
     #[\PHPUnit\Framework\Attributes\DataProvider('SubstituteHolidayDataProvider')]
-    public function testSubstituteHoliday(int $year, ?string $expected): void
+    public function testSubstituteHoliday($year, ?string $expected): void
     {
         if ($expected) {
             $this->assertSubstituteHoliday(
@@ -102,7 +102,7 @@ class BuddhasBirthdayTest extends SouthKoreaBaseTestCase implements HolidayTestC
             self::REGION,
             self::HOLIDAY,
             static::generateRandomYear(self::ESTABLISHMENT_YEAR, 2017),
-            ['ko' => '석가탄신일']
+            [self::LOCALE => '석가탄신일']
         );
 
         // Revised official name (From 2018)
@@ -110,7 +110,7 @@ class BuddhasBirthdayTest extends SouthKoreaBaseTestCase implements HolidayTestC
             self::REGION,
             self::HOLIDAY,
             static::generateRandomYear(2018, self::LUNAR_UPPER_LIMIT),
-            ['ko' => '부처님오신날']
+            [self::LOCALE => '부처님오신날']
         );
     }
 
@@ -139,23 +139,14 @@ class BuddhasBirthdayTest extends SouthKoreaBaseTestCase implements HolidayTestC
      */
     public static function SubstituteHolidayDataProvider(): \Generator
     {
-        $data = [
-            2023 => '2023-05-29',
-            2025 => '2025-05-06',
-            2026 => '2026-05-25',
-            2029 => '2029-05-21',
-            2032 => '2032-05-17',
-            2036 => '2036-05-06',
-            2039 => '2039-05-02',
-            2043 => '2043-05-18',
-            2044 => '2044-05-06',
-            2046 => '2046-05-14',
-            2049 => '2049-05-10',
-            2050 => '2050-05-30',
+        $dates = [
+            2023 => '2023-05-29', 2025 => '2025-05-06', 2026 => '2026-05-25', 2029 => '2029-05-21', 2032 => '2032-05-17',
+            2036 => '2036-05-06', 2039 => '2039-05-02', 2043 => '2043-05-18', 2044 => '2044-05-06', 2046 => '2046-05-14',
+            2049 => '2049-05-10', 2050 => '2050-05-30',
         ];
 
         foreach (range(2020, 2050) as $year) {
-            yield [$year, $data[$year] ?? null];
+            yield [$year, $dates[$year] ?? null];
         }
     }
 }

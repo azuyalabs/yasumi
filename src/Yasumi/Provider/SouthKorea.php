@@ -116,6 +116,8 @@ class SouthKorea extends AbstractProvider
         ],
     ];
 
+    private TranslationsInterface $translations;
+
     /**
      * Collection of All established KR holidays.
      *
@@ -202,8 +204,6 @@ class SouthKorea extends AbstractProvider
         ],
         'christmasDay' => [],
     ];
-
-    private TranslationsInterface $translations;
 
     /**
      * Constructor
