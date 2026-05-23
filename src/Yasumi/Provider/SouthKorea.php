@@ -150,13 +150,13 @@ class SouthKorea extends AbstractProvider
             'en' => 'Arbor Day',
             'ko' => '식목일',
         ],
-        'internationalWorkersDay' => [
-            'en' => 'International Workers Day',
-            'ko' => '노동절',
-        ],
         'buddhasBirthday' => [
             'en' => 'Buddha’s Birthday',
             'ko' => '부처님오신날',
+        ],
+        'internationalWorkersDay' => [
+            'en' => 'International Workers Day',
+            'ko' => '노동절',
         ],
         'childrensDay' => [
             'en' => 'Children’s Day',
@@ -482,31 +482,6 @@ class SouthKorea extends AbstractProvider
     }
 
     /**
-     * International Workers' Day
-     *
-     * @see https://en.wikipedia.org/wiki/International_Workers%27_Day#South_Korea
-     */
-    protected function internationalWorkersDay(
-        int $year,
-        string $timezone,
-        string $locale,
-        string $type = Holiday::TYPE_OFFICIAL,
-    ): ?Holiday {
-        // Included starting from 2026
-        if ($year < 2026) {
-            return null;
-        }
-
-        return new Holiday(
-            'internationalWorkersDay',
-            $this->getTranslations('internationalWorkersDay'),
-            new \DateTime("{$year}-5-1", DateTimeZoneFactory::getDateTimeZone($timezone)),
-            $locale,
-            $type
-        );
-    }
-
-    /**
      * Buddha's Birthday.
      * Buddha's Birthday is held on the 8th day of the 4th lunar month and was established since 1975.
      *
@@ -528,6 +503,31 @@ class SouthKorea extends AbstractProvider
             'buddhasBirthday',
             $this->getTranslations('buddhasBirthday'),
             new \DateTime($buddhasBirthday, DateTimeZoneFactory::getDateTimeZone($timezone)),
+            $locale,
+            $type
+        );
+    }
+
+    /**
+     * International Workers' Day
+     *
+     * @see https://en.wikipedia.org/wiki/International_Workers%27_Day#South_Korea
+     */
+    protected function internationalWorkersDay(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL,
+    ): ?Holiday {
+        // From 2026 onwards.
+        if ($year < 2026) {
+            return null;
+        }
+
+        return new Holiday(
+            'internationalWorkersDay',
+            $this->getTranslations('internationalWorkersDay'),
+            new \DateTime("{$year}-5-1", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
