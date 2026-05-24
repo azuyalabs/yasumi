@@ -19,6 +19,7 @@ namespace Yasumi\Provider;
 
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
+use Yasumi\Provider\SouthKorea\Policy\SubstitutePolicy;
 use Yasumi\Provider\SouthKorea\Translation\KoreanTranslation;
 use Yasumi\SubstituteHoliday;
 use Yasumi\TranslationsInterface;
@@ -117,6 +118,8 @@ class SouthKorea extends AbstractProvider
     ];
 
     private TranslationsInterface $translations;
+
+    private SubstitutePolicy $policy;
 
     /**
      * Collection of All established KR holidays.
@@ -218,6 +221,7 @@ class SouthKorea extends AbstractProvider
         ?TranslationsInterface $globalTranslations = null
     ) {
         $this->translations = new KoreanTranslation($year, self::HOLIDAY_NAMES);
+        $this->policy = new SubstitutePolicy($year);
 
         parent::__construct($year, $locale, $globalTranslations);
     }
@@ -950,89 +954,49 @@ class SouthKorea extends AbstractProvider
             return;
         }
 
-        // List of holidays allowed for substitution.
-        $acceptedHolidays = $this->calculateAcceptedSubstituteHolidays($year);
-
         // Step 1. Build a temporary table that aggregates holidays by date.
         $dates = [];
-        foreach ($this->getHolidayDates() as $name => $day) {
-            $holiday = $this->getHoliday($name);
-            $dates[$day][] = $name;
 
-            if (! isset($acceptedHolidays[$name])) {
-                continue;
-            }
-
-            if (! $holiday instanceof Holiday) {
-                continue;
-            }
-
-            $dayOfWeek = (int) $holiday->format('w');
-            if (\in_array($dayOfWeek, $acceptedHolidays[$name], true)) {
-                $dates[$day]['weekend:' . $day] = $name;
-            }
+        foreach ($this->getHolidays() as $holiday) {
+            $dates[$holiday->format('Y-m-d')][] = $holiday;
         }
 
-        // Step 2. Add substitute holidays by referring to the temporary table.
-        $tz = DateTimeZoneFactory::getDateTimeZone($this->timezone);
-        foreach ($dates as $day => $names) {
-            if (\count($names) < 2) {
+        // Step 2. Generate alternative holidays for the holidays collected in the temporary table.
+        foreach ($dates as $holidays) {
+            $isWeekendDay = $this->isWeekendDay($holidays[0]);
+
+            if ($isWeekendDay) {
+                $holidays[] = 'weekend';
+            }
+
+            // Skip alternative holiday generation if it's a single.
+            if (\count($holidays) < 2) {
                 continue;
             }
 
-            // In a temporary table, public holidays are keyed by numeric number.
-            // And weekends are keyed by string start with 'weekend:'.
-            // For the substitute, we will use first item in queue.
-            $origin = $this->getHoliday($names[0]);
+            array_pop($holidays);
 
-            if ($origin instanceof \DateTime) {
+            foreach ($holidays as $origin) {
+                if (! $origin instanceof Holiday) {
+                    continue;
+                }
+
+                if (! $this->policy->canSubsitute($origin)) {
+                    continue;
+                }
+
+                if ($isWeekendDay && ! $this->policy->shouldSubstitute($origin)) {
+                    continue;
+                }
+
+                // Find the next weekday and add it as an alternative holiday
                 $workDay = $this->nextWorkingDay($origin);
                 $this->addSubstituteHoliday($origin, $workDay->format('Y-m-d'));
             }
         }
     }
 
-    /**
-     * Return a dictionary of substitute holiday
-     * Government-recognized holidays will be replaced with an alternative holiday if they overlap with a Saturday or Sunday.
-     * This dictionary contains information about which day of the week the holiday is replaced when it falls on.
-     *
-     * @return array<string, array<int>>
-     */
-    protected function calculateAcceptedSubstituteHolidays(int $year): array
-    {
-        // List of holidays allowed for substitution.
-        // This dictionary has key => value mappings.
-        // each key is key of holiday and value contains day of week (saturday or sunday or both)
-        // value meaning : 0 = saturday, 1 = sunday
-        $acceptedHolidays = [];
 
-        if ($year < 2023) {
-            return $acceptedHolidays;
-        }
-
-        // When deciding on alternative holidays, place lunar holidays first for consistent rules.
-        // These holidays will substitute for the sunday only.
-        $acceptedHolidays += array_fill_keys([
-            'dayBeforeSeollal', 'seollal', 'dayAfterSeollal',
-            'dayBeforeChuseok', 'chuseok', 'dayAfterChuseok',
-        ], [0]);
-
-        // These holidays will substitute for any weekend days (Sunday and Saturday).
-        // 'buddhasBirthday' and 'christmasDay' included as alternative holiday in May 2023.
-        $acceptedHolidays += array_fill_keys([
-            'childrensDay', 'independenceMovementDay', 'liberationDay',
-            'nationalFoundationDay', 'hangulDay', 'buddhasBirthday', 'christmasDay',
-        ], [0, 6]);
-
-        // Reinstated as a public holiday in 2026, now including substitute holidays.
-        if ($year > 2025) {
-            $acceptedHolidays['internationalWorkersDay'] = [0, 6];
-            $acceptedHolidays['constitutionDay'] = [0, 6];
-        }
-
-        return $acceptedHolidays;
-    }
 
     /**
      * Helper method to find a first working day after specific date.
