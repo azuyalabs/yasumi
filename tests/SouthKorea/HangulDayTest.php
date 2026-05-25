@@ -17,6 +17,7 @@ declare(strict_types = 1);
 
 namespace Yasumi\tests\SouthKorea;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use Yasumi\Holiday;
 use Yasumi\Provider\DateTimeZoneFactory;
 use Yasumi\tests\HolidayTestCase;
@@ -53,11 +54,10 @@ class HangulDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         );
 
         // From 1991 to 2012
-        $year = static::generateRandomYear(1991, 2012);
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            $year,
+            static::generateRandomYear(1991, 2012),
         );
 
         // From 2013 and after
@@ -68,6 +68,13 @@ class HangulDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
             $year,
             new \DateTime("{$year}-10-9", DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
         );
+
+        // Before 1949
+        $this->assertNotSubstituteHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            static::generateRandomYear(null, self::ESTABLISHMENT_YEAR)
+        );
     }
 
     /**
@@ -75,36 +82,14 @@ class HangulDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
      *
      * @throws \Exception
      */
-    public function testSubstituteHoliday(): void
+    #[DataProvider('SubstituteHolidayDataProvider')]
+    public function testSubstituteHoliday(int $year, string $expected): void
     {
-        // Before 2022
-        $this->assertNotSubstituteHoliday(
-            self::REGION,
-            self::HOLIDAY,
-            static::generateRandomYear(null, 2020),
-        );
-
         $this->assertSubstituteHoliday(
             self::REGION,
             self::HOLIDAY,
-            2021,
-            new \DateTime('2021-10-11', DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
-        );
-
-        // By saturday
-        $this->assertSubstituteHoliday(
-            self::REGION,
-            self::HOLIDAY,
-            2027,
-            new \DateTime('2027-10-11', DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
-        );
-
-        // By sunday
-        $this->assertSubstituteHoliday(
-            self::REGION,
-            self::HOLIDAY,
-            2022,
-            new \DateTime('2022-10-10', DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
+            $year,
+            new \DateTime($expected, DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -150,5 +135,19 @@ class HangulDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
             static::generateRandomYear(2013),
             Holiday::TYPE_OFFICIAL
         );
+    }
+
+    public static function SubstituteHolidayDataProvider(): array
+    {
+        return [
+            [1960, '1960-10-10'],
+            [2027, '2027-10-11'],
+            [2032, '2032-10-11'],
+            [2033, '2033-10-10'],
+            [2038, '2038-10-11'],
+            [2039, '2039-10-10'],
+            [2044, '2044-10-10'],
+            [2049, '2049-10-11'],
+        ];
     }
 }

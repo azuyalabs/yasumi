@@ -61,6 +61,13 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
             self::HOLIDAY,
             static::generateRandomYear(2006)
         );
+
+        // Before 1949
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            static::generateRandomYear(null, self::ESTABLISHMENT_YEAR - 1)
+        );
     }
 
     /**

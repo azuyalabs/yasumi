@@ -27,8 +27,9 @@ use Yasumi\tests\HolidayTestCase;
  */
 class NewYearsDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
 {
+
     /**
-     * Test January 1.
+     * Test january 1 (New Year's Day).
      *
      * @throws \Exception
      */
@@ -41,6 +42,13 @@ class NewYearsDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
             'newYearsDay',
             $year,
             new \DateTime("{$year}-1-1", DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
+        );
+
+        // Before 1949
+        $this->assertNotHoliday(
+            self::REGION,
+            'newYearsDay',
+            static::generateRandomYear(null, 1948)
         );
     }
 
@@ -62,24 +70,31 @@ class NewYearsDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
             new \DateTime("{$year}-1-2", DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
         );
 
-        // Starting from 1999
+        // From 1999 onwards.
         $this->assertNotHoliday(
             self::REGION,
             'dayAfterNewYearsDay',
             static::generateRandomYear(1999),
+        );
+
+        // Before 1949
+        $this->assertNotHoliday(
+            self::REGION,
+            'dayAfterNewYearsDay',
+            static::generateRandomYear(null, 1949),
         );
     }
 
     /**
      * Test January 3.
      *
-     * In effect from 1949 to 1989, and removed starting in 1990
+     * In effect from 1949 to 1989, and removed starting in 1990.
      *
      * @throws \Exception
      */
     public function testTwoDaysLaterNewYearsDay(): void
     {
-        // From 1949 to 1998
+        // From 1949 to 1989
         $year = static::generateRandomYear(1949, 1989);
         $this->assertHoliday(
             self::REGION,
@@ -88,7 +103,7 @@ class NewYearsDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
             new \DateTime("{$year}-1-3", DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
         );
 
-        // Starting from 1990
+        // From 1990 onwards.
         $this->assertNotHoliday(
             self::REGION,
             'twoDaysLaterNewYearsDay',

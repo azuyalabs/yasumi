@@ -51,6 +51,13 @@ class ChristmasDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
             $year,
             new \DateTime("{$year}-12-25", DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
         );
+
+        // Before 1949
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            static::generateRandomYear(null, self::ESTABLISHMENT_YEAR - 1)
+        );
     }
 
     /**
@@ -62,22 +69,14 @@ class ChristmasDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
      * @throws \Exception
      */
     #[\PHPUnit\Framework\Attributes\DataProvider('SubstituteHolidayDataProvider')]
-    public function testSubstituteHoliday(int $year, ?string $expected): void
+    public function testSubstituteHoliday(int $year, string $expected): void
     {
-        if ($expected) {
-            $this->assertSubstituteHoliday(
-                self::REGION,
-                self::HOLIDAY,
-                $year,
-                new \DateTime($expected, DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
-            );
-        } else {
-            $this->assertNotSubstituteHoliday(
-                self::REGION,
-                self::HOLIDAY,
-                $year
-            );
-        }
+        $this->assertSubstituteHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new \DateTime($expected, DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**
@@ -110,20 +109,22 @@ class ChristmasDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         );
     }
 
-    /**
-     * Returns a list of test dates.
-     *
-     * @return \Generator<array<int, string>> list of test dates for the holiday defined in this test
-     */
-    public static function SubstituteHolidayDataProvider(): \Generator
+    public static function SubstituteHolidayDataProvider(): array
     {
-        $dates = [
-            1960 => '1960-12-26', 2027 => '2027-12-27', 2032 => '2032-12-27', 2033 => '2033-12-26', 2038 => '2038-12-27',
-            2039 => '2039-12-26', 2044 => '2044-12-26', 2049 => '2049-12-27', 2050 => '2050-12-26',
-        ];
+        return static::generateRandomDatesWithModifier(12, 25, function($year, \DateTime $date): ?bool {
+            if ($year === 1960) {
+                $date->modify('next monday');
 
-        foreach (range(2020, 2050) as $year) {
-            yield [$year, $dates[$year] ?? null];
-        }
+                return null;
+            }
+
+            if ($year < 2023 || ! self::isWeekend($date)) {
+                return false;
+            }
+
+            $date->modify('next monday');
+
+            return null;
+        }, 20, self::ESTABLISHMENT_YEAR, self::TIMEZONE);
     }
 }

@@ -17,6 +17,7 @@ declare(strict_types = 1);
 
 namespace Yasumi\tests\SouthKorea;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use Yasumi\Holiday;
 use Yasumi\Provider\DateTimeZoneFactory;
 use Yasumi\tests\HolidayTestCase;
@@ -65,6 +66,37 @@ class ArmedForcesDayTest extends SouthKoreaBaseTestCase implements HolidayTestCa
             self::HOLIDAY,
             static::generateRandomYear(1991)
         );
+
+        // Before 1976
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            static::generateRandomYear(null, self::ESTABLISHMENT_YEAR - 1)
+        );
+    }
+
+    /**
+     * Tests the substitute holiday defined in this test.
+     *
+     * @throws \Exception
+     */
+    #[DataProvider('SubstituteHolidayDataProvider')]
+    public function testSubstituteHoliday(int $year, ?string $expected): void
+    {
+        if ($expected) {
+            $this->assertSubstituteHoliday(
+                self::REGION,
+                self::HOLIDAY,
+                $year,
+                new \DateTime($expected, DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
+            );
+        } else {
+            $this->assertNotSubstituteHoliday(
+                self::REGION,
+                self::HOLIDAY,
+                $year
+            );
+        }
     }
 
     /**
@@ -95,5 +127,16 @@ class ArmedForcesDayTest extends SouthKoreaBaseTestCase implements HolidayTestCa
             static::generateRandomYear(self::ESTABLISHMENT_YEAR, 1990),
             Holiday::TYPE_OFFICIAL
         );
+    }
+
+    public static function SubstituteHolidayDataProvider(): \Generator
+    {
+        for ($i = 0; $i < 20; $i++) {
+            $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR);
+            switch ($year) {
+                case 1989: yield [$year, '1989-10-02']; break;
+                default: yield [$year, null]; break;
+            }
+        }
     }
 }

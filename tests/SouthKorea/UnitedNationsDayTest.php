@@ -58,6 +58,13 @@ class UnitedNationsDayTest extends SouthKoreaBaseTestCase implements HolidayTest
             self::HOLIDAY,
             static::generateRandomYear(1976)
         );
+
+        // Before 1950
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            static::generateRandomYear(null, self::ESTABLISHMENT_YEAR - 1)
+        );
     }
 
     /**

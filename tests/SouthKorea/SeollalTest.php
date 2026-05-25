@@ -17,6 +17,7 @@ declare(strict_types = 1);
 
 namespace Yasumi\tests\SouthKorea;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use Yasumi\Holiday;
 use Yasumi\Provider\DateTimeZoneFactory;
 use Yasumi\tests\HolidayTestCase;
@@ -106,35 +107,14 @@ class SeollalTest extends SouthKoreaBaseTestCase implements HolidayTestCase
      *
      * @throws \Exception
      */
-    public function testSubstituteHoliday(): void
+    #[DataProvider('SubstituteHolidayDataProvider')]
+    public function testSubstituteHoliday(int $year, string $key, string $expected): void
     {
-        // Before 2022
         $this->assertSubstituteHoliday(
             self::REGION,
-            'dayBeforeSeollal',
-            2016,
-            new \DateTime('2016-2-10', DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
-        );
-        $this->assertNotSubstituteHoliday(self::REGION, 'dayAfterSeollal', 2021);
-
-        // By sunday
-        $this->assertSubstituteHoliday(
-            self::REGION,
-            'dayBeforeSeollal',
-            2033,
-            new \DateTime('2033-2-2', DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
-        );
-        $this->assertSubstituteHoliday(
-            self::REGION,
-            'seollal',
-            2034,
-            new \DateTime('2034-2-21', DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
-        );
-        $this->assertSubstituteHoliday(
-            self::REGION,
-            'dayAfterSeollal',
-            2024,
-            new \DateTime('2024-2-12', DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
+            $key,
+            $year,
+            new \DateTime($expected, DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -214,4 +194,31 @@ class SeollalTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         );
     }
 
+    /**
+     * Data provider for generating a precalculated list of alternative holidays
+     *
+     * Range: From 2010 to 2050 (LUNAR_UPPER_LIMIT)
+     *
+     * @return array<array<int, string>> year, date
+     */
+    public static function SubstituteHolidayDataProvider(): array
+    {
+        return [
+            2016 => [2016, 'dayBeforeSeollal', '2016-02-10'],
+            2017 => [2017, 'dayAfterSeollal', '2017-01-30'],
+            2020 => [2020, 'dayAfterSeollal', '2020-01-27'],
+            2023 => [2023, 'seollal', '2023-01-24'],
+            2024 => [2024, 'dayAfterSeollal', '2024-02-12'],
+            2027 => [2027, 'seollal', '2027-02-09'],
+            2030 => [2030, 'seollal', '2030-02-05'],
+            2033 => [2033, 'dayBeforeSeollal', '2033-02-02'],
+            2034 => [2034, 'seollal', '2034-02-21'],
+            2036 => [2036, 'dayBeforeSeollal', '2036-01-30'],
+            2037 => [2037, 'seollal', '2037-02-17'],
+            2039 => [2039, 'dayBeforeSeollal', '2039-01-26'],
+            2040 => [2040, 'seollal', '2040-02-14'],
+            2044 => [2044, 'dayAfterSeollal', '2044-02-01'],
+            2047 => [2047, 'dayAfterSeollal', '2047-01-28'],
+        ];
+    }
 }

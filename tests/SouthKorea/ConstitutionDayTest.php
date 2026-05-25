@@ -17,6 +17,7 @@ declare(strict_types = 1);
 
 namespace Yasumi\tests\SouthKorea;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use Yasumi\Holiday;
 use Yasumi\Provider\DateTimeZoneFactory;
 use Yasumi\tests\HolidayTestCase;
@@ -67,8 +68,30 @@ class ConstitutionDayTest extends SouthKoreaBaseTestCase implements HolidayTestC
             $year,
             new \DateTime("{$year}-7-17", DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
         );
+
+        // Before 1949
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            static::generateRandomYear(null, self::ESTABLISHMENT_YEAR - 1)
+        );
     }
 
+    /**
+     * Tests the substitute holiday defined in this test.
+     *
+     * @throws \Exception
+     */
+    #[DataProvider('SubstituteHolidayDataProvider')]
+    public function testSubstituteHoliday(int $year, string $expected): void
+    {
+        $this->assertSubstituteHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new \DateTime($expected, DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
+        );
+    }
 
     /**
      * Tests the translated name of the holiday defined in this test.
@@ -112,5 +135,24 @@ class ConstitutionDayTest extends SouthKoreaBaseTestCase implements HolidayTestC
             static::generateRandomYear(2026),
             Holiday::TYPE_OFFICIAL
         );
+    }
+
+    public static function SubstituteHolidayDataProvider(): array
+    {
+        return static::generateRandomDatesWithModifier(7, 17, function($year, \DateTime $date): ?bool {
+            if ($year === 1960) {
+                $date->modify('next monday');
+
+                return null;
+            }
+
+            if ($year < 2026 || ! self::isWeekend($date)) {
+                return false;
+            }
+
+            $date->modify('next monday');
+
+            return null;
+        }, 20, self::ESTABLISHMENT_YEAR, self::TIMEZONE);
     }
 }

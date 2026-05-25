@@ -17,6 +17,7 @@ declare(strict_types = 1);
 
 namespace Yasumi\tests\SouthKorea;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use Yasumi\Holiday;
 use Yasumi\Provider\DateTimeZoneFactory;
 use Yasumi\tests\HolidayTestCase;
@@ -57,37 +58,14 @@ class LiberationDayTest extends SouthKoreaBaseTestCase implements HolidayTestCas
      *
      * @throws \Exception
      */
-    public function testSubstituteHoliday(): void
+    #[DataProvider('SubstituteHolidayDataProvider')]
+    public function testSubstituteHoliday(int $year, string $expected): void
     {
-        // Before 2022
-        $this->assertNotSubstituteHoliday(
-            self::REGION,
-            self::HOLIDAY,
-            self::generateRandomYear(null, 2020),
-        );
-
-        // Year 2021
         $this->assertSubstituteHoliday(
             self::REGION,
             self::HOLIDAY,
-            2021,
-            new \DateTime('2021-8-16', DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
-        );
-
-        // By saturday
-        $this->assertSubstituteHoliday(
-            self::REGION,
-            self::HOLIDAY,
-            2037,
-            new \DateTime('2037-8-17', DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
-        );
-
-        // By sunday
-        $this->assertSubstituteHoliday(
-            self::REGION,
-            self::HOLIDAY,
-            2027,
-            new \DateTime('2027-8-16', DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
+            $year,
+            new \DateTime($expected, DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
         );
     }
 
@@ -119,5 +97,19 @@ class LiberationDayTest extends SouthKoreaBaseTestCase implements HolidayTestCas
             static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_OFFICIAL
         );
+    }
+
+    public static function SubstituteHolidayDataProvider(): array
+    {
+        // From 2021 onwards.
+        return static::generateRandomDatesWithModifier(8, 15, function($year, \DateTime $date): ?bool {
+            if (! self::isWeekend($date)) {
+                return false;
+            }
+
+            $date->modify('next monday');
+
+            return null;
+        }, 20, 2021, self::TIMEZONE);
     }
 }
