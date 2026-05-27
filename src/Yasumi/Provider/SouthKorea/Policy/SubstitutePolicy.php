@@ -64,7 +64,7 @@ class SubstitutePolicy
         ], [0, 6]);
 
         if ($this->year > 2025) {
-            $this->policy['internationalWorkersDay'] = [0, 6];
+            $this->policy['labourDay'] = [0, 6];
             $this->policy['constitutionDay'] = [0, 6];
         }
     }

@@ -152,8 +152,7 @@ class SouthKorea extends AbstractProvider
             'en' => 'Buddha’s Birthday',
             'ko' => '부처님오신날',
         ],
-        'internationalWorkersDay' => [
-            'en' => 'International Workers Day',
+        'labourDay' => [
             'ko' => '노동절',
         ],
         'childrensDay' => [
@@ -512,7 +511,7 @@ class SouthKorea extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/International_Workers%27_Day#South_Korea
      */
-    protected function internationalWorkersDay(
+    protected function labourDay(
         int $year,
         string $timezone,
         string $locale,
@@ -524,8 +523,8 @@ class SouthKorea extends AbstractProvider
         }
 
         return new Holiday(
-            'internationalWorkersDay',
-            $this->getTranslations('internationalWorkersDay'),
+            'labourDay',
+            $this->getTranslations('labourDay'),
             new \DateTime("{$year}-5-1", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
