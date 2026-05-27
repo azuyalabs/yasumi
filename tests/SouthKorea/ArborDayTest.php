@@ -26,16 +26,15 @@ use Yasumi\tests\HolidayTestCase;
  */
 class ArborDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
 {
+    /**
+     * The year in which the holiday was first established.
+     */
+    public const ESTABLISHMENT_YEAR = 1949;
 
     /**
      * The name of the holiday.
      */
     private const HOLIDAY = 'arborDay';
-
-    /**
-     * The year in which the holiday was first established.
-     */
-    public const ESTABLISHMENT_YEAR = 1949;
 
     /**
      * Tests the holiday defined in this test.
@@ -79,12 +78,12 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     {
         $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, 2005);
 
-        if ($year === 1959) {
+        if (1959 === $year) {
             $this->assertSubstituteHoliday(
                 self::REGION,
                 self::HOLIDAY,
                 $year,
-                new \DateTime("1959-04-06", DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
+                new \DateTime('1959-04-06', DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
             );
         } else {
             $this->assertNotSubstituteHoliday(

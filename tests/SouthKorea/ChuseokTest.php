@@ -28,7 +28,6 @@ use Yasumi\tests\HolidayTestCase;
  */
 class ChuseokTest extends SouthKoreaBaseTestCase implements HolidayTestCase
 {
-
     /**
      * The year of upper limit for tests of lunar date.
      */

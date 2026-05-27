@@ -139,8 +139,8 @@ class ConstitutionDayTest extends SouthKoreaBaseTestCase implements HolidayTestC
 
     public static function SubstituteHolidayDataProvider(): array
     {
-        return static::generateRandomDatesWithModifier(7, 17, function($year, \DateTime $date): ?bool {
-            if ($year === 1960) {
+        return static::generateRandomDatesWithModifier(7, 17, function ($year, \DateTime $date): ?bool {
+            if (1960 === $year) {
                 $date->modify('next monday');
 
                 return null;

@@ -102,7 +102,7 @@ class LiberationDayTest extends SouthKoreaBaseTestCase implements HolidayTestCas
     public static function SubstituteHolidayDataProvider(): array
     {
         // From 2021 onwards.
-        return static::generateRandomDatesWithModifier(8, 15, function($year, \DateTime $date): ?bool {
+        return static::generateRandomDatesWithModifier(8, 15, function ($year, \DateTime $date): ?bool {
             if (! self::isWeekend($date)) {
                 return false;
             }

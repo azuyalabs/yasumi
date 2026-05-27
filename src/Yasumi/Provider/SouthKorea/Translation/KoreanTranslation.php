@@ -1,5 +1,20 @@
 <?php
 
+declare(strict_types = 1);
+
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
+ *
+ * Copyright (c) 2015 - 2026 AzuyaLabs
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
+ */
+
 namespace Yasumi\Provider\SouthKorea\Translation;
 
 use Yasumi\TranslationsInterface;
@@ -11,7 +26,7 @@ class KoreanTranslation implements TranslationsInterface
         foreach (array_keys($this->translations) as $key) {
             if (method_exists($this, $key)) {
                 $this->{$key}();
-            };
+            }
         }
     }
 
@@ -41,7 +56,7 @@ class KoreanTranslation implements TranslationsInterface
     private function arborDay(): void
     {
         // In 1960 only, "사방의 날" temporarily replaced "식목일".
-        if ($this->year === 1960) {
+        if (1960 === $this->year) {
             $this->addTranslation('arborDay', '사방의 날');
         }
     }

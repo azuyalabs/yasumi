@@ -31,7 +31,6 @@ use Yasumi\TranslationsInterface;
  */
 class SouthKorea extends AbstractProvider
 {
-
     /**
      * Code to identify this Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
      * country or sub-region.
@@ -116,10 +115,6 @@ class SouthKorea extends AbstractProvider
             2049 => '2049-9-11', 2050 => '2050-9-30',
         ],
     ];
-
-    private TranslationsInterface $translations;
-
-    private SubstitutePolicy $policy;
 
     /**
      * Collection of All established KR holidays.
@@ -208,17 +203,17 @@ class SouthKorea extends AbstractProvider
         'christmasDay' => [],
     ];
 
+    private TranslationsInterface $translations;
+
+    private SubstitutePolicy $policy;
+
     /**
      * Constructor
-     *
-     * @param int $year
-     * @param string|null $locale
-     * @param TranslationsInterface|null $globalTranslations
      */
     public function __construct(
         int $year,
         ?string $locale = null,
-        ?TranslationsInterface $globalTranslations = null
+        ?TranslationsInterface $globalTranslations = null,
     ) {
         $this->translations = new KoreanTranslation($year, self::HOLIDAY_NAMES);
         $this->policy = new SubstitutePolicy($year);
@@ -284,7 +279,7 @@ class SouthKorea extends AbstractProvider
         return new Holiday(
             'newYearsDay',
             $this->getTranslations('newYearsDay'),
-            new \DateTime("{$year}-1-1",DateTimeZoneFactory::getDateTimeZone($timezone)),
+            new \DateTime("{$year}-1-1", DateTimeZoneFactory::getDateTimeZone($timezone)),
             $locale,
             $type
         );
@@ -995,8 +990,6 @@ class SouthKorea extends AbstractProvider
             }
         }
     }
-
-
 
     /**
      * Helper method to find a first working day after specific date.

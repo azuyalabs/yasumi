@@ -27,7 +27,6 @@ use Yasumi\tests\HolidayTestCase;
  */
 class NewYearsDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
 {
-
     /**
      * Test january 1 (New Year's Day).
      *
@@ -178,5 +177,4 @@ class NewYearsDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
             Holiday::TYPE_OFFICIAL
         );
     }
-
 }

@@ -18,7 +18,6 @@ declare(strict_types = 1);
 namespace Yasumi\tests\SouthKorea;
 
 use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\TestWith;
 use Yasumi\Holiday;
 use Yasumi\Provider\SouthKorea;
 use Yasumi\ProviderInterface;
@@ -90,8 +89,8 @@ class SouthKoreaTest extends SouthKoreaBaseTestCase implements ProviderTestCase
     #[DataProvider('HolidaysDataProvider')]
     public function testTranslations(Holiday $holiday, string $key): void
     {
-        $this->assertNotSame('', $holiday->getName(['en']), "Missing en translation for $key");
-        $this->assertNotSame('', $holiday->getName(['ko']), "Missing ko translation for $key");
+        $this->assertNotSame('', $holiday->getName(['en']), "Missing en translation for {$key}");
+        $this->assertNotSame('', $holiday->getName(['ko']), "Missing ko translation for {$key}");
     }
 
     /**

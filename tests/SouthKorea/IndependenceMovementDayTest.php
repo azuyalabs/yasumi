@@ -109,7 +109,7 @@ class IndependenceMovementDayTest extends SouthKoreaBaseTestCase implements Holi
 
     public static function SubstituteHolidayDataProvider(): array
     {
-        return static::generateRandomDatesWithModifier(3, 1, function($year, \DateTime $date): ?bool {
+        return static::generateRandomDatesWithModifier(3, 1, function ($year, \DateTime $date): ?bool {
             if ($year < 2023 || ! self::isWeekend($date)) {
                 return false;
             }

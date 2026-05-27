@@ -111,8 +111,8 @@ class ChristmasDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
 
     public static function SubstituteHolidayDataProvider(): array
     {
-        return static::generateRandomDatesWithModifier(12, 25, function($year, \DateTime $date): ?bool {
-            if ($year === 1960) {
+        return static::generateRandomDatesWithModifier(12, 25, function ($year, \DateTime $date): ?bool {
+            if (1960 === $year) {
                 $date->modify('next monday');
 
                 return null;

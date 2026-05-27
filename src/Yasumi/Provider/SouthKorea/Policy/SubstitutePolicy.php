@@ -1,5 +1,20 @@
 <?php
 
+declare(strict_types = 1);
+
+/**
+ * This file is part of the 'Yasumi' package.
+ *
+ * The easy PHP Library for calculating holidays.
+ *
+ * Copyright (c) 2015 - 2026 AzuyaLabs
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author Sacha Telgenhof <me at sachatelgenhof dot com>
+ */
+
 namespace Yasumi\Provider\SouthKorea\Policy;
 
 use Yasumi\Holiday;
@@ -15,6 +30,25 @@ class SubstitutePolicy
     {
         $this->year = $year;
         $this->init();
+    }
+
+    public function canSubsitute(Holiday $holiday): bool
+    {
+        return isset($this->policy[$holiday->getKey()]);
+    }
+
+    /**
+     * Determines if an alternative holiday should be added for this year's holidays based on the policy.
+     *
+     * @return bool
+     */
+    public function shouldSubstitute(Holiday $holiday)
+    {
+        return \in_array(
+            (int) $holiday->format('w'),
+            $this->policy[$holiday->getKey()] ?? [],
+            true
+        );
     }
 
     private function init(): void
@@ -33,25 +67,5 @@ class SubstitutePolicy
             $this->policy['internationalWorkersDay'] = [0, 6];
             $this->policy['constitutionDay'] = [0, 6];
         }
-    }
-
-    public function canSubsitute(Holiday $holiday): bool
-    {
-        return isset($this->policy[$holiday->getKey()]);
-    }
-
-    /**
-     * Determines if an alternative holiday should be added for this year's holidays based on the policy.
-     *
-     * @param Holiday $holiday
-     * @return bool
-     */
-    public function shouldSubstitute(Holiday $holiday)
-    {
-        return \in_array(
-            (int) $holiday->format('w'),
-            $this->policy[$holiday->getKey()] ?? [],
-            true
-        );
     }
 }
