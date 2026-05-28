@@ -67,7 +67,7 @@ class KoreanTranslation implements TranslationsInterface
     private function buddhasBirthday(): void
     {
         // Officially renamed from "석가탄신일" to "부처님오신날" in 2017
-        if ($this->year < 2016) {
+        if ($this->year < 2017) {
             $this->addTranslation('buddhasBirthday', '석가탄신일');
         }
     }
