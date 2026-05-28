@@ -23,7 +23,7 @@ class SubstitutePolicy
 {
     private int $year;
 
-    /** @var array Substitute policy. */
+    /** @var array<string, list<int>> Substitute policy. */
     private array $policy = [];
 
     public function __construct(int $year)

@@ -21,6 +21,10 @@ use Yasumi\TranslationsInterface;
 
 class KoreanTranslation implements TranslationsInterface
 {
+    /**
+     * @param int $year
+     * @param array<string, array<string, string>> $translations
+     */
     public function __construct(protected int $year, protected array $translations = [])
     {
         foreach (array_keys($this->translations) as $key) {
