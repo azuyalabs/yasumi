@@ -80,7 +80,7 @@ class NewYearsDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             'dayAfterNewYearsDay',
-            static::generateRandomYear(null, 1949),
+            static::generateRandomYear(null, 1948),
         );
     }
 
