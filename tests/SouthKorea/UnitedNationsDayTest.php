@@ -52,7 +52,7 @@ class UnitedNationsDayTest extends SouthKoreaBaseTestCase implements HolidayTest
             new \DateTime("{$year}-10-24", DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
         );
 
-        // From 1986 and later
+        // From 1976 and later
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
