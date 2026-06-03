@@ -381,7 +381,7 @@ class SouthKorea extends AbstractProvider
             return null;
         }
 
-        // Seollal was extended to a multi-day holiday starging from 1989
+        // Seollal was extended to a multi-day holiday starting from 1989
         if ($year < 1989) {
             return null;
         }
