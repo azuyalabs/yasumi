@@ -206,9 +206,6 @@ class SouthKorea extends AbstractProvider
 
     private SubstitutePolicy $policy;
 
-    /**
-     * Constructor
-     */
     public function __construct(
         int $year,
         ?string $locale = null,
