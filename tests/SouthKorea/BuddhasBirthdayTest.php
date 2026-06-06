@@ -40,6 +40,12 @@ class BuddhasBirthdayTest extends SouthKoreaBaseTestCase implements HolidayTestC
     public const LUNAR_UPPER_LIMIT = 2050;
 
     /**
+     * The year in which the official name of the holiday was changed (renamed)
+     * from "석가탄신일" to "부처님오신날".
+     */
+    public const RENAMED_YEAR = 2018;
+
+    /**
      * Tests the holiday defined in this test.
      *
      * @throws \Exception
@@ -101,7 +107,7 @@ class BuddhasBirthdayTest extends SouthKoreaBaseTestCase implements HolidayTestC
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            static::generateRandomYear(self::ESTABLISHMENT_YEAR, 2017),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::RENAMED_YEAR - 1),
             [self::LOCALE => '석가탄신일']
         );
 
@@ -109,7 +115,7 @@ class BuddhasBirthdayTest extends SouthKoreaBaseTestCase implements HolidayTestC
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            static::generateRandomYear(2018, self::LUNAR_UPPER_LIMIT),
+            static::generateRandomYear(self::RENAMED_YEAR, self::LUNAR_UPPER_LIMIT),
             [self::LOCALE => '부처님오신날']
         );
     }

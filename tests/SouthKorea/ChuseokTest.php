@@ -34,6 +34,23 @@ class ChuseokTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     public const LUNAR_UPPER_LIMIT = 2050;
 
     /**
+     * The year in which the holiday was first established.
+     */
+    public const ESTABLISHMENT_YEAR = 1949;
+
+    /**
+     * The year in which the day before Chuseok became a public holiday,
+     * officially extending Chuseok into a multi-day holiday period.
+     */
+    public const EVE_EXPANSION_YEAR = 1989;
+
+    /**
+     * The year in which the day after Chuseok became a public holiday,
+     * officially expanding Chuseok into a multi-day holiday period.
+     */
+    public const MORROW_EXPANSION_YEAR = 1986;
+
+    /**
      * Tests the holiday defined in this test.
      *
      * @throws \Exception
@@ -41,7 +58,7 @@ class ChuseokTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     public function testChuseok(): void
     {
         // From 1949 to LUNAR_UPPER_LIMIT
-        $year = static::generateRandomYear(1949, self::LUNAR_UPPER_LIMIT);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::LUNAR_UPPER_LIMIT);
         $this->assertHoliday(
             self::REGION,
             'chuseok',
@@ -53,14 +70,14 @@ class ChuseokTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             'chuseok',
-            static::generateRandomYear(null, 1948)
+            static::generateRandomYear(null, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
     public function testDayBeforeChuseok(): void
     {
         // From 1989 to LUNAR_UPPER_LIMIT
-        $year = static::generateRandomYear(1989, self::LUNAR_UPPER_LIMIT);
+        $year = static::generateRandomYear(self::EVE_EXPANSION_YEAR, self::LUNAR_UPPER_LIMIT);
         $this->assertHoliday(
             self::REGION,
             'dayBeforeChuseok',
@@ -72,14 +89,14 @@ class ChuseokTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             'dayBeforeChuseok',
-            static::generateRandomYear(null, 1988)
+            static::generateRandomYear(null, self::EVE_EXPANSION_YEAR - 1)
         );
     }
 
     public function testDayAfterChuseok(): void
     {
         // From 1986 to LUNAR_UPPER_LIMIT
-        $year = static::generateRandomYear(1986, self::LUNAR_UPPER_LIMIT);
+        $year = static::generateRandomYear(self::MORROW_EXPANSION_YEAR, self::LUNAR_UPPER_LIMIT);
         $this->assertHoliday(
             self::REGION,
             'dayAfterChuseok',
@@ -91,7 +108,7 @@ class ChuseokTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             'dayAfterChuseok',
-            static::generateRandomYear(null, 1985)
+            static::generateRandomYear(null, self::MORROW_EXPANSION_YEAR - 1)
         );
     }
 
@@ -116,9 +133,9 @@ class ChuseokTest extends SouthKoreaBaseTestCase implements HolidayTestCase
      *
      * @throws \Exception
      */
-    #[TestWith(['chuseok', 1949, self::LUNAR_UPPER_LIMIT, '추석'])]
-    #[TestWith(['dayAfterChuseok', 1986, self::LUNAR_UPPER_LIMIT, '추석 연휴'])]
-    #[TestWith(['dayBeforeChuseok', 1989, self::LUNAR_UPPER_LIMIT, '추석 연휴'])]
+    #[TestWith(['chuseok', self::ESTABLISHMENT_YEAR, self::LUNAR_UPPER_LIMIT, '추석'])]
+    #[TestWith(['dayAfterChuseok', self::MORROW_EXPANSION_YEAR, self::LUNAR_UPPER_LIMIT, '추석 연휴'])]
+    #[TestWith(['dayBeforeChuseok', self::EVE_EXPANSION_YEAR, self::LUNAR_UPPER_LIMIT, '추석 연휴'])]
     public function testTranslation(string $key = 'chuseok', int $lower = 1949, int $upper = self::LUNAR_UPPER_LIMIT, string $name = '추석'): void
     {
         $this->assertTranslatedHolidayName(
@@ -134,9 +151,9 @@ class ChuseokTest extends SouthKoreaBaseTestCase implements HolidayTestCase
      *
      * @throws \Exception
      */
-    #[TestWith(['chuseok', 1949])]
-    #[TestWith(['dayAfterChuseok', 1986])]
-    #[TestWith(['dayBeforeChuseok', 1989])]
+    #[TestWith(['chuseok', self::ESTABLISHMENT_YEAR])]
+    #[TestWith(['dayAfterChuseok', self::MORROW_EXPANSION_YEAR])]
+    #[TestWith(['dayBeforeChuseok', self::EVE_EXPANSION_YEAR])]
     public function testHolidayType(string $key = 'chuseok', int $lower = 1949): void
     {
         $this->assertHolidayType(

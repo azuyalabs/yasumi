@@ -38,6 +38,16 @@ class ConstitutionDayTest extends SouthKoreaBaseTestCase implements HolidayTestC
     public const ESTABLISHMENT_YEAR = 1949;
 
     /**
+     * The year in which the holiday was abolished.
+     */
+    public const ABOLISHED_YEAR = 2008;
+
+    /**
+     * The year in which the holiday was restored after having been previously abolished.
+     */
+    public const RESTORATION_YEAR = 2026;
+
+    /**
      * Tests the holiday defined in this test.
      *
      * @throws \Exception
@@ -45,7 +55,7 @@ class ConstitutionDayTest extends SouthKoreaBaseTestCase implements HolidayTestC
     public function testHoliday(): void
     {
         // From 1949 to 2007
-        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, 2007);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::ABOLISHED_YEAR - 1);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -57,11 +67,11 @@ class ConstitutionDayTest extends SouthKoreaBaseTestCase implements HolidayTestC
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            static::generateRandomYear(2008, 2025)
+            static::generateRandomYear(self::ABOLISHED_YEAR, self::RESTORATION_YEAR - 1)
         );
 
         // From 2026 and after
-        $year = static::generateRandomYear(2026);
+        $year = static::generateRandomYear(self::RESTORATION_YEAR);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -103,14 +113,14 @@ class ConstitutionDayTest extends SouthKoreaBaseTestCase implements HolidayTestC
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            static::generateRandomYear(self::ESTABLISHMENT_YEAR, 2007),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::ABOLISHED_YEAR - 1),
             [self::LOCALE => '제헌절']
         );
 
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            static::generateRandomYear(2026),
+            static::generateRandomYear(self::RESTORATION_YEAR),
             [self::LOCALE => '제헌절']
         );
     }
@@ -125,14 +135,14 @@ class ConstitutionDayTest extends SouthKoreaBaseTestCase implements HolidayTestC
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            static::generateRandomYear(self::ESTABLISHMENT_YEAR, 2007),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::ABOLISHED_YEAR - 1),
             Holiday::TYPE_OFFICIAL
         );
 
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            static::generateRandomYear(2026),
+            static::generateRandomYear(self::RESTORATION_YEAR),
             Holiday::TYPE_OFFICIAL
         );
     }

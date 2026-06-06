@@ -38,6 +38,11 @@ class ArmedForcesDayTest extends SouthKoreaBaseTestCase implements HolidayTestCa
     public const ESTABLISHMENT_YEAR = 1976;
 
     /**
+     * The year in which the holiday was abolished.
+     */
+    public const ABOLISHED_YEAR = 1991;
+
+    /**
      * Tests the holiday defined in this test.
      *
      * @throws \Exception
@@ -45,7 +50,7 @@ class ArmedForcesDayTest extends SouthKoreaBaseTestCase implements HolidayTestCa
     public function testHoliday(): void
     {
         // From 1976 to 1990
-        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, 1990);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::ABOLISHED_YEAR - 1);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -57,14 +62,14 @@ class ArmedForcesDayTest extends SouthKoreaBaseTestCase implements HolidayTestCa
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            static::generateRandomYear(null, 1975)
+            static::generateRandomYear(null, self::ESTABLISHMENT_YEAR - 1)
         );
 
         // From 1991 and later
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            static::generateRandomYear(1991)
+            static::generateRandomYear(self::ABOLISHED_YEAR)
         );
 
         // Before 1976
@@ -109,7 +114,7 @@ class ArmedForcesDayTest extends SouthKoreaBaseTestCase implements HolidayTestCa
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            static::generateRandomYear(self::ESTABLISHMENT_YEAR, 1990),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::ABOLISHED_YEAR - 1),
             [self::LOCALE => '국군의 날']
         );
     }
@@ -124,7 +129,7 @@ class ArmedForcesDayTest extends SouthKoreaBaseTestCase implements HolidayTestCa
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            static::generateRandomYear(self::ESTABLISHMENT_YEAR, 1990),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::ABOLISHED_YEAR - 1),
             Holiday::TYPE_OFFICIAL
         );
     }

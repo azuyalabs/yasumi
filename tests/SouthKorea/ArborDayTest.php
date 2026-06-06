@@ -34,7 +34,12 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     /**
      * The name of the holiday.
      */
-    private const HOLIDAY = 'arborDay';
+    public const HOLIDAY = 'arborDay';
+
+    /**
+     * The year in which the holiday was abolished.
+     */
+    public const ABOLISHED_YEAR = 2006;
 
     /**
      * Tests the holiday defined in this test.
@@ -44,7 +49,7 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     public function testHoliday(): void
     {
         // From 1949 to 2005
-        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, 2005);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::ABOLISHED_YEAR - 1);
         $date = (1960 === $year) ? "{$year}-3-21" : "{$year}-4-5";
 
         $this->assertHoliday(
@@ -58,7 +63,7 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             self::HOLIDAY,
-            static::generateRandomYear(2006)
+            static::generateRandomYear(self::ABOLISHED_YEAR)
         );
 
         // Before 1949
@@ -76,7 +81,7 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
      */
     public function testSubstituteHoliday(): void
     {
-        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, 2005);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::ABOLISHED_YEAR - 1);
 
         if (1959 === $year) {
             $this->assertSubstituteHoliday(
@@ -101,7 +106,7 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
      */
     public function testTranslation(): void
     {
-        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, 2005);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::ABOLISHED_YEAR - 1);
         $translation = (1960 === $year) ? '사방의 날' : '식목일';
 
         $this->assertTranslatedHolidayName(
@@ -122,7 +127,7 @@ class ArborDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            static::generateRandomYear(self::ESTABLISHMENT_YEAR, 2005),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::ABOLISHED_YEAR - 1),
             Holiday::TYPE_OFFICIAL
         );
     }

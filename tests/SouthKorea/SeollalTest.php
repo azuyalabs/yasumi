@@ -31,6 +31,16 @@ class SeollalTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     public const LUNAR_UPPER_LIMIT = 2050;
 
     /**
+     * The year in which the holiday was first established.
+     */
+    public const ESTABLISHMENT_YEAR = 1985;
+
+    /**
+     * The year in which the holiday was first expanded into a multi-day holiday.
+     */
+    public const EXPANSION_YEAR = 1989;
+
+    /**
      * Testing Seollal itself
      *
      * @throws \Exception
@@ -38,7 +48,7 @@ class SeollalTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     public function testSeollal(): void
     {
         // From 1985 to LUNAR_UPPER_LIMIT
-        $year = static::generateRandomYear(1985, self::LUNAR_UPPER_LIMIT);
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::LUNAR_UPPER_LIMIT);
         $this->assertHoliday(
             self::REGION,
             'seollal',
@@ -50,7 +60,7 @@ class SeollalTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             'seollal',
-            static::generateRandomYear(null, 1984)
+            static::generateRandomYear(null, self::ESTABLISHMENT_YEAR - 1)
         );
     }
 
@@ -62,7 +72,7 @@ class SeollalTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     public function testDayBeforeSeollal(): void
     {
         // From 1989 to LUNAR_UPPER_LIMIT
-        $year = static::generateRandomYear(1989, self::LUNAR_UPPER_LIMIT);
+        $year = static::generateRandomYear(self::EXPANSION_YEAR, self::LUNAR_UPPER_LIMIT);
         $this->assertHoliday(
             self::REGION,
             'dayBeforeSeollal',
@@ -74,7 +84,7 @@ class SeollalTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             'dayBeforeSeollal',
-            static::generateRandomYear(null, 1988)
+            static::generateRandomYear(null, self::EXPANSION_YEAR - 1)
         );
     }
 
@@ -86,7 +96,7 @@ class SeollalTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     public function testDayAfterSeollal(): void
     {
         // From 1989 to LUNAR_UPPER_LIMIT
-        $year = static::generateRandomYear(1989, self::LUNAR_UPPER_LIMIT);
+        $year = static::generateRandomYear(self::EXPANSION_YEAR, self::LUNAR_UPPER_LIMIT);
         $this->assertHoliday(
             self::REGION,
             'dayAfterSeollal',
@@ -98,7 +108,7 @@ class SeollalTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         $this->assertNotHoliday(
             self::REGION,
             'dayAfterSeollal',
-            static::generateRandomYear(null, 1988)
+            static::generateRandomYear(null, self::EXPANSION_YEAR - 1)
         );
     }
 
@@ -130,7 +140,7 @@ class SeollalTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             'seollal',
-            static::generateRandomYear(1985, 1988),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::EXPANSION_YEAR - 1),
             [self::LOCALE => '민속의 날']
         );
 
@@ -139,7 +149,7 @@ class SeollalTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             'seollal',
-            static::generateRandomYear(1989, self::LUNAR_UPPER_LIMIT),
+            static::generateRandomYear(self::EXPANSION_YEAR, self::LUNAR_UPPER_LIMIT),
             [self::LOCALE => '설날']
         );
 
@@ -148,7 +158,7 @@ class SeollalTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             'dayBeforeSeollal',
-            static::generateRandomYear(1989, self::LUNAR_UPPER_LIMIT),
+            static::generateRandomYear(self::EXPANSION_YEAR, self::LUNAR_UPPER_LIMIT),
             [self::LOCALE => '설날 연휴']
         );
 
@@ -157,7 +167,7 @@ class SeollalTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         $this->assertTranslatedHolidayName(
             self::REGION,
             'dayAfterSeollal',
-            static::generateRandomYear(1989, self::LUNAR_UPPER_LIMIT),
+            static::generateRandomYear(self::EXPANSION_YEAR, self::LUNAR_UPPER_LIMIT),
             [self::LOCALE => '설날 연휴']
         );
     }
@@ -173,7 +183,7 @@ class SeollalTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             'seollal',
-            static::generateRandomYear(1985, self::LUNAR_UPPER_LIMIT),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, self::LUNAR_UPPER_LIMIT),
             Holiday::TYPE_OFFICIAL
         );
 
@@ -181,7 +191,7 @@ class SeollalTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             'dayBeforeSeollal',
-            static::generateRandomYear(1989, self::LUNAR_UPPER_LIMIT),
+            static::generateRandomYear(self::EXPANSION_YEAR, self::LUNAR_UPPER_LIMIT),
             Holiday::TYPE_OFFICIAL
         );
 
@@ -189,7 +199,7 @@ class SeollalTest extends SouthKoreaBaseTestCase implements HolidayTestCase
         $this->assertHolidayType(
             self::REGION,
             'dayAfterSeollal',
-            static::generateRandomYear(1989, self::LUNAR_UPPER_LIMIT),
+            static::generateRandomYear(self::EXPANSION_YEAR, self::LUNAR_UPPER_LIMIT),
             Holiday::TYPE_OFFICIAL
         );
     }
