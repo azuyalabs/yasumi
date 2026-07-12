@@ -114,6 +114,10 @@
     <testsuite name="Japan">
       <directory>./tests/Japan</directory>
     </testsuite>
+    <!-- Test Suite for holidays in Kenya -->
+    <testsuite name="Kenya">
+      <directory>./tests/Kenya</directory>
+    </testsuite>
     <!-- Test Suite for holidays in Latvia -->
     <testsuite name="Latvia">
       <directory>./tests/Latvia</directory>
