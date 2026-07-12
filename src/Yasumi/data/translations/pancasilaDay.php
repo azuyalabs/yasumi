@@ -15,10 +15,8 @@ declare(strict_types = 1);
  * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
-// Translations for Independence Day
+// Translations for Pancasila Day
 return [
-    'en' => 'Independence Day',
-    'hr' => 'Dan neovisnosti',
-    'id' => 'Hari Kemerdekaan Republik Indonesia',
-    'sl' => 'Dan samostojnosti in enotnosti',
+    'en' => 'Pancasila Day',
+    'id' => 'Hari Lahir Pancasila',
 ];

@@ -33,6 +33,7 @@ return [
     'fr' => 'Fête du Travail',
     'hr' => 'Praznik rada',
     'hu' => 'A munka ünnepe',
+    'id' => 'Hari Buruh Internasional',
     'it' => 'Festa del Lavoro',
     'it_CH' => 'Festa dei lavoratori',
     'ja' => '労働の日',
