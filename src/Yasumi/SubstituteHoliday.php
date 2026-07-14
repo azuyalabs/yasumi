@@ -31,12 +31,6 @@ use Yasumi\Exception\UnknownLocaleException;
 class SubstituteHoliday extends Holiday
 {
     /**
-     * @deprecated public access to this property is deprecated in favor of getSubstitutedHoliday()
-     * @see getSubstitutedHoliday()
-     */
-    public Holiday $substitutedHoliday;
-
-    /**
      * @var array<string> list of translations of the "{0} observed" pattern
      */
     public array $substituteHolidayTranslations;
@@ -62,17 +56,15 @@ class SubstituteHoliday extends Holiday
      * @throws \Exception
      */
     public function __construct(
-        Holiday $substitutedHoliday,
+        public Holiday $substitutedHoliday,
         array $names,
         \DateTimeInterface $date,
         string $displayLocale = self::DEFAULT_LOCALE,
         string $type = self::TYPE_OFFICIAL,
     ) {
-        $this->substitutedHoliday = $substitutedHoliday;
+        $key = 'substituteHoliday:' . $this->substitutedHoliday->getKey();
 
-        $key = 'substituteHoliday:' . $substitutedHoliday->getKey();
-
-        if ($date == $substitutedHoliday) {
+        if ($date == $this->substitutedHoliday) {
             throw new \InvalidArgumentException('Date must differ from the substituted holiday');
         }
 

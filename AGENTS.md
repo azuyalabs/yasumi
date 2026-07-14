@@ -45,6 +45,25 @@ composer phpstan       # Run static analysis (level 8)
 - Strict types (`declare(strict_types=1)`) are required in all PHP files.
 - Holiday providers extend `AbstractProvider` and implement `initialize()`.
 
+### Holiday type classification
+
+`Holiday::TYPE_OFFICIAL` is for days **formally designated as public holidays by national or
+regional legislation** - days employees are legally entitled to as non-working days. The count
+returned by `getOfficialHolidays()` must match the number of statutory holidays a government
+or HR system would recognise.
+
+`Holiday::TYPE_OBSERVANCE` is for days that are culturally or religiously significant and
+widely observed, but are **not independently designated by law**. This includes days that
+happen to always fall on a Sunday or existing rest day and are therefore not separately
+legislated (e.g. Easter Sunday or Pentecost Sunday in Belgium). It also covers days that are
+merely commemorated without granting a day off (e.g. Valentine's Day, Father's Day).
+
+`Holiday::TYPE_BANK` is for bank/financial sector holidays not applicable to the general
+public.
+
+When in doubt, check the country's official public holiday legislation. Do not classify a day
+as `TYPE_OFFICIAL` solely because it always falls on a rest day or is culturally expected.
+
 ## Adding a New Holiday Provider
 
 1. Create `src/Yasumi/Provider/{CountryName}.php` extending `AbstractProvider`.

@@ -75,6 +75,6 @@ class EasterTest extends BelgiumBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OBSERVANCE);
     }
 }

@@ -62,6 +62,7 @@ class Italy extends AbstractProvider
         // Calculate other holidays
         $this->calculateLiberationDay();
         $this->calculateRepublicDay();
+        $this->calculateSanFrancescoAssisi();
     }
 
     public function getSources(): array
@@ -69,6 +70,7 @@ class Italy extends AbstractProvider
         return [
             'https://en.wikipedia.org/wiki/Public_holidays_in_Italy',
             'https://it.wikipedia.org/wiki/Festivit%C3%A0_in_Italia',
+            'https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2025-10-08;151',
         ];
     }
 
@@ -94,6 +96,31 @@ class Italy extends AbstractProvider
                 'liberationDay',
                 ['it' => 'Festa della Liberazione'],
                 new \DateTime("{$this->year}-4-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                $this->locale
+            ));
+        }
+    }
+
+    /**
+     * Feast of Saint Francis of Assisi.
+     *
+     * Established as a national public holiday by Law n. 151 of 8 October 2025
+     * (GU n. 236 del 10-10-2025), in force from 1 January 2026.
+     * Amends Article 2 of Law 27 maggio 1949, n. 260.
+     *
+     * @see https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2025-10-08;151
+     *
+     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws \Exception
+     */
+    protected function calculateSanFrancescoAssisi(): void
+    {
+        if ($this->year >= 2026) {
+            $this->addHoliday(new Holiday(
+                'sanFrancescoAssisi',
+                ['it' => 'Festa di San Francesco d’Assisi'],
+                new \DateTime("{$this->year}-10-4", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
         }

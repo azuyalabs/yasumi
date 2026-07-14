@@ -15,57 +15,45 @@ declare(strict_types = 1);
  * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
-namespace Yasumi\tests\Belgium;
+namespace Yasumi\tests\Colombia;
 
 use Yasumi\Holiday;
+use Yasumi\Provider\ChristianHolidays;
 use Yasumi\tests\HolidayTestCase;
 
 /**
- * Class for testing Pentecost Monday in Belgium.
+ * Class for testing Maundy Thursday in Colombia.
  */
-class pentecostMondayTest extends BelgiumBaseTestCase implements HolidayTestCase
+class MaundyThursdayTest extends ColombiaBaseTestCase implements HolidayTestCase
 {
-    /**
-     * The name of the holiday to be tested.
-     */
-    public const HOLIDAY = 'pentecostMonday';
+    use ChristianHolidays;
 
-    /**
-     * Tests Pentecost Monday.
-     *
-     * @throws \Exception
-     */
+    public const HOLIDAY = 'maundyThursday';
+
+    /** @throws \Exception */
     public function testHoliday(): void
     {
-        $year = 2020;
+        $year = 2024;
         $this->assertHoliday(
             self::REGION,
-            'pentecostMonday',
+            self::HOLIDAY,
             $year,
-            new \DateTime("{$year}-6-1", new \DateTimeZone(self::TIMEZONE))
+            static::computeEaster($year, self::TIMEZONE)->sub(new \DateInterval('P3D'))
         );
     }
 
-    /**
-     * Tests the translated name of the holiday defined in this test.
-     *
-     * @throws \Exception
-     */
+    /** @throws \Exception */
     public function testTranslation(): void
     {
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
             static::generateRandomYear(),
-            [self::LOCALE => 'pinkstermaandag']
+            [self::LOCALE => 'Jueves Santo']
         );
     }
 
-    /**
-     * Tests type of the holiday defined in this test.
-     *
-     * @throws \Exception
-     */
+    /** @throws \Exception */
     public function testHolidayType(): void
     {
         $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OFFICIAL);

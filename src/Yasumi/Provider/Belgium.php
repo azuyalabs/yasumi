@@ -50,10 +50,10 @@ class Belgium extends AbstractProvider
         $this->addHoliday($this->internationalWorkersDay($this->year, $this->timezone, $this->locale));
 
         // Add Christian holidays
-        $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale));
+        $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
         $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale));
@@ -66,9 +66,10 @@ class Belgium extends AbstractProvider
          * Belgian National Day is the National Day of Belgium celebrated on 21 July each year.
          */
         $this->addHoliday(new Holiday('nationalDay', [
-            'fr' => 'Fête nationale',
+            'de' => 'Nationalfeiertag',
             'en' => 'Belgian National Day',
-            'nl' => 'nationale feestdag',
+            'fr' => 'Fête nationale',
+            'nl' => 'Nationale feestdag',
         ], new \DateTime("{$this->year}-7-21", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
     }
 

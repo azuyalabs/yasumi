@@ -262,7 +262,9 @@ class Yasumi
                 continue;
             }
 
-            $providers[strtoupper((string) $class->getConstant($key))] = $provider;
+            if (is_string($constantValue = $class->getConstant($key))) {
+                $providers[strtoupper($constantValue)] = $provider;
+            }
         }
 
         return $providers;

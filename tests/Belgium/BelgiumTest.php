@@ -46,11 +46,9 @@ class BelgiumTest extends BelgiumBaseTestCase
     {
         $this->assertDefinedHolidays([
             'newYearsDay',
-            'easter',
             'easterMonday',
             'internationalWorkersDay',
             'ascensionDay',
-            'pentecost',
             'pentecostMonday',
             'assumptionOfMary',
             'nationalDay',
@@ -65,7 +63,9 @@ class BelgiumTest extends BelgiumBaseTestCase
      */
     public function testObservedHolidays(): void
     {
-        $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
+        $this->assertDefinedHolidays([
+            'easter', 'pentecost',
+        ], self::REGION, $this->year, Holiday::TYPE_OBSERVANCE);
     }
 
     /**

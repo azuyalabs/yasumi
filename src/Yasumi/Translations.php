@@ -68,6 +68,7 @@ class Translations implements TranslationsInterface
             $filename = $file->getFilename();
             $key = $file->getBasename('.' . $extension);
 
+            /** @var array<string, string> $translations */
             $translations = require $directoryPath . $filename;
 
             if (\is_array($translations)) {

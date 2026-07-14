@@ -196,7 +196,7 @@ class Japan extends AbstractProvider
     }
 
     /**
-     * Culture Day. Culture Day is held on November 11th and established since 1948.
+     * Culture Day. Culture Day is held on November 3rd and established since 1948.
      *
      * @throws \Exception
      */
@@ -251,7 +251,7 @@ class Japan extends AbstractProvider
         if (null !== $emperorsBirthday) {
             $this->addHoliday(new Holiday(
                 'emperorsBirthday',
-                ['en' => 'Emperors Birthday', 'ja' => '天皇誕生日'],
+                ['en' => 'Emperor’s Birthday', 'ja' => '天皇誕生日'],
                 new \DateTime($emperorsBirthday, DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
@@ -425,8 +425,10 @@ class Japan extends AbstractProvider
     /**
      * Calculates Respect for the Age Day.
      *
-     * Respect for the Age Day was established since 1996 on September 15th. After 2003 it was changed to be the third
+     * Respect for the Age Day was established since 1966 on September 15th. After 2003 it was changed to be the third
      * monday of September.
+     *
+     * @see https://www8.cao.go.jp/chosei/shukujitsu/gaiyou.html
      *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
@@ -437,7 +439,8 @@ class Japan extends AbstractProvider
         $date = null;
         if ($this->year >= 2003) {
             $date = new \DateTime("third monday of september {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone));
-        } elseif ($this->year >= 1996) {
+        } elseif ($this->year >= 1966) {
+            // Source: https://www8.cao.go.jp/chosei/shukujitsu/gaiyou.html
             $date = new \DateTime("{$this->year}-9-15", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         }
 
@@ -452,10 +455,12 @@ class Japan extends AbstractProvider
     }
 
     /**
-     * Calculates Health And Sports Day.
+     * Calculates Health And Sports Day / Sports Day.
      *
      * Health And Sports Day was established since 1966 on October 10th. After 2000 it was changed to be the second
-     * monday of October.In 2020 is July 24th.
+     * monday of October. In 2020 is July 24th. Renamed to Sports Day from 2020.
+     *
+     * @see https://www8.cao.go.jp/chosei/shukujitsu/gaiyou.html
      *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
@@ -472,7 +477,8 @@ class Japan extends AbstractProvider
             $date = new \DateTime("{$this->year}-7-24", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         } elseif ($this->year >= 2000) {
             $date = new \DateTime("second monday of october {$this->year}", DateTimeZoneFactory::getDateTimeZone($this->timezone));
-        } elseif ($this->year >= 1996) {
+        } elseif ($this->year >= 1966) {
+            // Source: https://www8.cao.go.jp/chosei/shukujitsu/gaiyou.html
             $date = new \DateTime("{$this->year}-10-10", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         }
 
@@ -637,7 +643,7 @@ class Japan extends AbstractProvider
             $datesIterator->next();
 
             // Skip if next holiday is not set
-            if (null === $datesIterator->current()) {
+            if (! $datesIterator->current() instanceof Holiday) {
                 continue;
             }
 

@@ -33,7 +33,7 @@ class SportsDayTest extends JapanBaseTestCase implements HolidayTestCase
     /**
      * The year in which the holiday was first established.
      */
-    public const ESTABLISHMENT_YEAR = 1996;
+    public const ESTABLISHMENT_YEAR = 1966;
 
     /**
      * Tests Health And Sports Day in 2021. Health And Sports Day in 2021 is July 23th for rescheduled Olympic Games
@@ -90,14 +90,14 @@ class SportsDayTest extends JapanBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * Tests Health And Sports Day between 1996 and 2000. Health And Sports Day was established since 1996 on October
+     * Tests Health And Sports Day between 1966 and 1999. Health And Sports Day was established since 1966 on October
      * 10th. After 2000 it was changed to be the second monday of October.
      *
      * @throws \Exception
      */
-    public function testSportsDayBetween1996And2000(): void
+    public function testSportsDayBetween1966And1999(): void
     {
-        $year = 1997;
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, 1999);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -107,12 +107,12 @@ class SportsDayTest extends JapanBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * Tests Health And Sports Day between 1996 and 2000 substituted next working day (when Health And Sports Day falls
+     * Tests Health And Sports Day between 1966 and 1999 substituted next working day (when Health And Sports Day falls
      * on a Sunday).
      *
      * @throws \Exception
      */
-    public function testSportsDayBetween1996And2000SubstitutedNextWorkingDay(): void
+    public function testSportsDayBetween1966And1999SubstitutedNextWorkingDay(): void
     {
         $year = 1999;
         $this->assertHoliday(
@@ -124,12 +124,11 @@ class SportsDayTest extends JapanBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * Tests Health And Sports Day before. Health And Sports Day was established since 1996 on October 10th. After
-     * 2000 it was changed to be the second monday of October.
+     * Tests Health And Sports Day before 1966. Health And Sports Day was established since 1966 on October 10th.
      *
      * @throws \Exception
      */
-    public function testSportsDayBefore1996(): void
+    public function testSportsDayBefore1966(): void
     {
         $this->assertNotHoliday(
             self::REGION,
@@ -140,7 +139,7 @@ class SportsDayTest extends JapanBaseTestCase implements HolidayTestCase
 
     /**
      * Tests the translated name of the holiday defined in this test.
-     * 1996-2019:Health And Sports Day.
+     * 1966-2019: Health And Sports Day (体育の日).
      *
      * @throws \Exception
      */

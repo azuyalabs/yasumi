@@ -22,6 +22,7 @@ return [
     'de_CH' => 'Auffahrt',
     'el' => 'Ανάληψη του Χριστού',
     'en' => 'Ascension Day',
+    'es' => 'Ascensión del Señor',
     'fi' => 'Helatorstai',
     'fr' => 'Ascension',
     'it' => 'Ascensione',

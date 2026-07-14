@@ -37,7 +37,7 @@ class ItalyTest extends ItalyBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = static::generateRandomYear(1949);
+        $this->year = static::generateRandomYear(2026);
     }
 
     /**
@@ -58,6 +58,7 @@ class ItalyTest extends ItalyBaseTestCase implements ProviderTestCase
             'stStephensDay',
             'liberationDay',
             'republicDay',
+            'sanFrancescoAssisi',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -99,6 +100,6 @@ class ItalyTest extends ItalyBaseTestCase implements ProviderTestCase
      */
     public function testSources(): void
     {
-        $this->assertSources(self::REGION, 2);
+        $this->assertSources(self::REGION, 3);
     }
 }

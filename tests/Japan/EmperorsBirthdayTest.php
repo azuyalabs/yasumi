@@ -139,10 +139,19 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements HolidayTestCase
      */
     public function testTranslation(): void
     {
+        // Era 1: 1949–2018 (2019 is excluded — no Emperor's Birthday that year due to abdication)
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, 2018),
+            [self::LOCALE => '天皇誕生日']
+        );
+
+        // Era 2: 2020+ (Emperor Naruhito's birthday, February 23)
+        $this->assertTranslatedHolidayName(
+            self::REGION,
+            self::HOLIDAY,
+            static::generateRandomYear(2020),
             [self::LOCALE => '天皇誕生日']
         );
     }
@@ -154,10 +163,19 @@ class EmperorsBirthdayTest extends JapanBaseTestCase implements HolidayTestCase
      */
     public function testHolidayType(): void
     {
+        // Era 1: 1949–2018 (2019 is excluded — no Emperor's Birthday that year due to abdication)
         $this->assertHolidayType(
             self::REGION,
             self::HOLIDAY,
-            static::generateRandomYear(self::ESTABLISHMENT_YEAR),
+            static::generateRandomYear(self::ESTABLISHMENT_YEAR, 2018),
+            Holiday::TYPE_OFFICIAL
+        );
+
+        // Era 2: 2020+ (Emperor Naruhito's birthday, February 23)
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            static::generateRandomYear(2020),
             Holiday::TYPE_OFFICIAL
         );
     }

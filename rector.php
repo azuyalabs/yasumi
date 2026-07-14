@@ -15,27 +15,20 @@ declare(strict_types = 1);
  * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
-use Rector\CodeQuality\Rector\Class_\InlineConstructorDefaultToPropertyRector;
 use Rector\Config\RectorConfig;
-use Rector\PHPUnit\Set\PHPUnitSetList;
-use Rector\Set\ValueObject\SetList;
 
-return static function (RectorConfig $rectorConfig): void {
-    $rectorConfig->paths([
+return RectorConfig::configure()
+    ->withPaths([
         __DIR__ . '/src',
         __DIR__ . '/tests',
-    ]);
-
-    // single rules
-    $rectorConfig->rule(InlineConstructorDefaultToPropertyRector::class);
-
-    // sets of rules
-    $rectorConfig->sets([
-        SetList::CODE_QUALITY,
-        SetList::DEAD_CODE,
-        SetList::EARLY_RETURN,
-        SetList::PHP_82,
-        SetList::TYPE_DECLARATION,
-        PHPUnitSetList::PHPUNIT_110,
-    ]);
-};
+    ])
+    ->withParallel()
+    ->withFluentCallNewLine()
+    ->withPhpSets()
+    ->withPreparedSets(
+        deadCode: true,
+        codeQuality: true,
+        typeDeclarations: true,
+        earlyReturn: true,
+    )
+    ->withComposerBased(phpunit: true);

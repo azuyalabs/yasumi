@@ -65,7 +65,7 @@ class NationalDayTest extends BelgiumBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             static::generateRandomYear(),
-            [self::LOCALE => 'nationale feestdag']
+            [self::LOCALE => 'Nationale feestdag']
         );
     }
 

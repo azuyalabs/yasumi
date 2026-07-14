@@ -19,6 +19,7 @@ declare(strict_types = 1);
 return [
     'de' => 'Fronleichnam',
     'en' => 'Corpus Christi',
+    'es' => 'Corpus Christi',
     'fr' => 'Fête-Dieu',
     'hr' => 'Tijelovo',
     'it' => 'Corpus Domini',

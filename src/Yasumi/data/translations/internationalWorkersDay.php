@@ -25,6 +25,7 @@ return [
     'de' => 'Tag der Arbeit',
     'de_AT' => 'Staatsfeiertag',
     'el' => 'Εργατική Πρωτομαγιά',
+    'en_KE' => 'Labour Day',
     'en_US' => 'International Workers’ Day',
     'en_ZA' => 'Workers’ Day',
     'es' => 'Día del Trabajador',

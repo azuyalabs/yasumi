@@ -27,6 +27,11 @@ When contributing there are a few guidelines we'd like you to keep in mind:
        Some holidays are only established from a certain year and having the test year number smaller than the minimum
        establishment year (amongst all holidays) can result in false errors.
 
+- **Holiday type classification** - `Holiday::TYPE_OFFICIAL` is for days **formally designated as public holidays by
+  national or regional legislation** - days employees are legally entitled to as non-working days.
+  Use `Holiday::TYPE_OBSERVANCE` for days that are culturally or religiously significant and
+  widely observed, but are **not independently designated by law**. See `AGENTS.md` for the full rationale.
+
 - **Document any change** - Make sure the `CHANGELOG.md` and any other relevant documentation are kept up-to-date.
 
 - **One pull request per feature** - If you want to contribute more than one thing, send multiple pull requests.

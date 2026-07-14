@@ -33,7 +33,7 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase implements HolidayTestC
     /**
      * The year in which the holiday was first established.
      */
-    public const ESTABLISHMENT_YEAR = 1996;
+    public const ESTABLISHMENT_YEAR = 1966;
 
     /**
      * Tests Respect for the Aged Day after 2003. Respect for the Aged Day was established since 1996 on September
@@ -53,14 +53,14 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase implements HolidayTestC
     }
 
     /**
-     * Tests Respect for the Aged Day between 1996 and 2003. Respect for the Aged Day was established since 1996 on
+     * Tests Respect for the Aged Day between 1966 and 2002. Respect for the Aged Day was established since 1966 on
      * September 15th. After 2003 it was changed to be the third monday of September.
      *
      * @throws \Exception
      */
-    public function testRespectForTheAgedDayBetween1996And2003(): void
+    public function testRespectForTheAgedDayBetween1966And2002(): void
     {
-        $year = 1998;
+        $year = static::generateRandomYear(self::ESTABLISHMENT_YEAR, 2002);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -70,12 +70,12 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase implements HolidayTestC
     }
 
     /**
-     * Tests Respect for the Aged Day between 1996 and 2003 substituted next working day (when Respect for the Aged Day
+     * Tests Respect for the Aged Day between 1966 and 2002 substituted next working day (when Respect for the Aged Day
      * falls on a Sunday).
      *
      * @throws \Exception
      */
-    public function testRespectForTheAgedDayBetween1996And2003SubstitutedNextWorkingDay(): void
+    public function testRespectForTheAgedDayBetween1966And2002SubstitutedNextWorkingDay(): void
     {
         $year = 2002;
         $this->assertHoliday(
@@ -87,12 +87,12 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase implements HolidayTestC
     }
 
     /**
-     * Tests Respect for the Aged Day before 1996. Respect for the Aged Day was established since 1996 on September
+     * Tests Respect for the Aged Day before 1966. Respect for the Aged Day was established since 1966 on September
      * 15th. After 2003 it was changed to be the third monday of September.
      *
      * @throws \Exception
      */
-    public function testRespectForTheAgedDayBefore1996(): void
+    public function testRespectForTheAgedDayBefore1966(): void
     {
         $this->assertNotHoliday(
             self::REGION,
