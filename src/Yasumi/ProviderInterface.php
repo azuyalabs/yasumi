@@ -17,6 +17,7 @@ declare(strict_types = 1);
 
 namespace Yasumi;
 
+use Yasumi\Exception\HolidayNotFoundException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Filters\BetweenFilter;
 use Yasumi\Filters\OnFilter;
@@ -128,7 +129,8 @@ interface ProviderInterface extends \Countable
      *
      * @return string the date of the requested holiday
      *
-     * @throws \InvalidArgumentException when the given name is blank or empty
+     * @throws \InvalidArgumentException  when the given name is blank or empty
+     * @throws HolidayNotFoundException   when no holiday exists for the given key
      */
     public function whenIs(string $key): string;
 
@@ -142,7 +144,8 @@ interface ProviderInterface extends \Countable
      *
      * @return int the index of the weekdays of the requested holiday (0 = Sunday, 1 = Monday, etc.)
      *
-     * @throws \InvalidArgumentException when the given name is blank or empty
+     * @throws \InvalidArgumentException  when the given name is blank or empty
+     * @throws HolidayNotFoundException   when no holiday exists for the given key
      */
     public function whatWeekDayIs(string $key): int;
 
