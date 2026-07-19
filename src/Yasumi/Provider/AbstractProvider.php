@@ -298,8 +298,8 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
      *
      * @param string $key key of the holiday to be retrieved
      *
-     * @throws \InvalidArgumentException  when the given name is blank or empty
-     * @throws HolidayNotFoundException   when no holiday exists for the given key
+     * @throws \InvalidArgumentException when the given name is blank or empty
+     * @throws HolidayNotFoundException  when no holiday exists for the given key
      */
     private function getHolidayOrFail(string $key): Holiday
     {
