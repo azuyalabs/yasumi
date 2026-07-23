@@ -77,6 +77,6 @@ Always run all three checks before opening a pull request:
 
 ```shell
 composer cs        # Check coding standard
-composer phpstan   # Static analysis (level 8)
+composer phpstan   # Static analysis (level 9)
 composer test      # Full test suite
 ```

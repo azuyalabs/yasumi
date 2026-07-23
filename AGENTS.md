@@ -35,7 +35,7 @@ examples/                 # Usage examples
 composer test          # Run the full PHPUnit test suite
 composer cs            # Check coding standard (dry-run)
 composer cs-fix        # Auto-fix coding standard violations (alias: composer format)
-composer phpstan       # Run static analysis (level 8)
+composer phpstan       # Run static analysis (level 9)
 ```
 
 ## Coding Conventions
@@ -83,7 +83,7 @@ as `TYPE_OFFICIAL` solely because it always falls on a rest day or is culturally
 
 ## Static Analysis
 
-- PHPStan at level 8. Run `composer phpstan` and fix all errors before committing.
+- PHPStan at level 9. Run `composer phpstan` and fix all errors before committing.
 - Ignored errors are listed in `phpstan.neon.dist`; do not add new ignores without good reason.
 
 ## Pull Request Guidelines

@@ -18,6 +18,7 @@ declare(strict_types = 1);
 namespace Yasumi\tests\Base;
 
 use PHPUnit\Framework\TestCase;
+use Yasumi\Exception\HolidayNotFoundException;
 use Yasumi\Exception\InvalidYearException;
 use Yasumi\Exception\ProviderNotFoundException;
 use Yasumi\Exception\UnknownLocaleException;
@@ -205,6 +206,15 @@ class YasumiTest extends TestCase
         $holidays->whenIs('');
     }
 
+    public function testWhenIsWithNonExistentKey(): void
+    {
+        $this->expectException(HolidayNotFoundException::class);
+
+        // moiDay is only defined for Kenya between 1989-2009 and in 2018/2019
+        $holidays = Yasumi::create('Kenya', 2015);
+        $holidays->whenIs('moiDay');
+    }
+
     public function testGetHolidayWithBlankKey(): void
     {
         $holidays = Yasumi::create('Netherlands', 1999);
@@ -226,6 +236,15 @@ class YasumiTest extends TestCase
 
         $holidays = Yasumi::create('Netherlands', 2388);
         $holidays->whatWeekDayIs('');
+    }
+
+    public function testWhatWeekDayIsWithNonExistentKey(): void
+    {
+        $this->expectException(HolidayNotFoundException::class);
+
+        // moiDay is only defined for Kenya between 1989-2009 and in 2018/2019
+        $holidays = Yasumi::create('Kenya', 2015);
+        $holidays->whatWeekDayIs('moiDay');
     }
 
     /**

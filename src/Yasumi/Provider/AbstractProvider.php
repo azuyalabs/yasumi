@@ -17,6 +17,7 @@ declare(strict_types = 1);
 
 namespace Yasumi\Provider;
 
+use Yasumi\Exception\HolidayNotFoundException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Filters\BetweenFilter;
 use Yasumi\Filters\OnFilter;
@@ -161,16 +162,12 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
 
     public function whenIs(string $key): string
     {
-        $this->isHolidayKeyNotEmpty($key); // Validate if key is not empty
-
-        return (string) $this->holidays[$key];
+        return (string) $this->getHolidayOrFail($key);
     }
 
     public function whatWeekDayIs(string $key): int
     {
-        $this->isHolidayKeyNotEmpty($key); // Validate if key is not empty
-
-        return (int) $this->holidays[$key]->format('w');
+        return (int) $this->getHolidayOrFail($key)->format('w');
     }
 
     /**
@@ -294,6 +291,27 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
         }
 
         return true;
+    }
+
+    /**
+     * Retrieves the holiday for the given key, or throws if it is not defined.
+     *
+     * @param string $key key of the holiday to be retrieved
+     *
+     * @throws \InvalidArgumentException when the given name is blank or empty
+     * @throws HolidayNotFoundException  when no holiday exists for the given key
+     */
+    private function getHolidayOrFail(string $key): Holiday
+    {
+        $this->isHolidayKeyNotEmpty($key); // Validate if key is not empty
+
+        $holiday = $this->getHoliday($key);
+
+        if (! $holiday instanceof Holiday) {
+            throw new HolidayNotFoundException(sprintf('Holiday "%s" is not defined for the year %d.', $key, $this->year));
+        }
+
+        return $holiday;
     }
 
     /**
