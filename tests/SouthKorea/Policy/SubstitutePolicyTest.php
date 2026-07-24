@@ -39,7 +39,7 @@ class SubstitutePolicyTest extends SouthKoreaBaseTestCase
      * @throws \Exception
      */
     #[DataProvider('YearsDataProvider')]
-    public function testSubstituteHoliday(int $year): void
+    public function testSubstitutePolicy(int $year): void
     {
         $holiday = Yasumi::create(self::REGION, $year)->getHoliday(self::HOLIDAY);
 
