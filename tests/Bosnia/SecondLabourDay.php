@@ -30,6 +30,11 @@ class SecondLabourDay extends BosniaBaseTestCase implements HolidayTestCase
      */
     public const HOLIDAY = 'secondLabourDay';
 
+    public function __construct()
+    {
+        parent::__construct(static::class);
+    }
+
     /**
      * Tests the holiday defined in this test.
      *

@@ -159,7 +159,7 @@ class HolidayTest extends TestCase
     /** @throws \Exception */
     public function testHolidayGetNameWithGlobalTranslations(): void
     {
-        $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
+        $translationsStub = $this->createMock(TranslationsInterface::class);
 
         $translations = [
             'en_US' => 'New Year’s Day',
@@ -179,7 +179,7 @@ class HolidayTest extends TestCase
     /** @throws \Exception */
     public function testHolidayGetNameWithGlobalParentLocaleTranslations(): void
     {
-        $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
+        $translationsStub = $this->createMock(TranslationsInterface::class);
 
         $translations = [
             'en_US' => 'New Year’s Day',
@@ -199,7 +199,7 @@ class HolidayTest extends TestCase
     /** @throws \Exception */
     public function testHolidayGetNameWithGlobalAndCustomTranslations(): void
     {
-        $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
+        $translationsStub = $this->createMock(TranslationsInterface::class);
 
         $translations = [
             'en_US' => 'New Year’s Day',
@@ -225,7 +225,7 @@ class HolidayTest extends TestCase
     /** @throws \Exception */
     public function testHolidayGetNameWithOverriddenGlobalTranslations(): void
     {
-        $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
+        $translationsStub = $this->createMock(TranslationsInterface::class);
 
         $translations = [
             'en_US' => 'New Year’s Day',

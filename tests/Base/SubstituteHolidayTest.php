@@ -109,7 +109,7 @@ class SubstituteHolidayTest extends TestCase
         $holiday = new Holiday($name, [$locale => 'foo'], new \DateTime('2019-01-01'), $locale);
         $substitute = new SubstituteHoliday($holiday, [$locale => $translation], new \DateTime('2019-01-02'), $locale);
 
-        $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
+        $translationsStub = $this->createMock(TranslationsInterface::class);
         $matcher = self::exactly(3);
         $translationsStub
             ->expects($matcher)
@@ -146,7 +146,7 @@ class SubstituteHolidayTest extends TestCase
         $holiday = new Holiday($name, [], new \DateTime('2019-01-01'), $locale);
         $substitute = new SubstituteHoliday($holiday, [], new \DateTime('2019-01-02'), $locale);
 
-        $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
+        $translationsStub = $this->createMock(TranslationsInterface::class);
         $matcher = self::exactly(3);
         $translationsStub
             ->expects($matcher)
@@ -183,7 +183,7 @@ class SubstituteHolidayTest extends TestCase
         $holiday = new Holiday($name, [$locale => 'foo'], new \DateTime('2019-01-01'), $locale);
         $substitute = new SubstituteHoliday($holiday, [$locale => $translation], new \DateTime('2019-01-02'), $locale);
 
-        $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
+        $translationsStub = $this->createMock(TranslationsInterface::class);
         $matcher = self::exactly(3);
         $translationsStub
             ->expects($matcher)
@@ -220,7 +220,7 @@ class SubstituteHolidayTest extends TestCase
         $holiday = new Holiday($name, [$locale => $translation], new \DateTime('2019-01-01'), $locale);
         $substitute = new SubstituteHoliday($holiday, [], new \DateTime('2019-01-02'), $locale);
 
-        $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
+        $translationsStub = $this->createMock(TranslationsInterface::class);
         $matcher = self::exactly(3);
         $translationsStub
             ->expects($matcher)

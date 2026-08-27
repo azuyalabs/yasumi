@@ -92,7 +92,7 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
     /**
      * flag to track if holidays need to be sorted
      */
-    private bool $needSorting = false;
+    private bool $needSorting;
 
     /**
      * Creates a new holiday provider (i.e. country/state).
