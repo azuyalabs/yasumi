@@ -31,7 +31,7 @@ abstract class NorthernIrelandBaseTestCase extends UnitedKingdomBaseTestCase
     public const REGION = 'UnitedKingdom\NorthernIreland';
 
     /** Timezone in which this provider has holidays defined. */
-    public const TIMEZONE = 'Europe/Belfast';
+    public const TIMEZONE = 'Europe/London';
 
     /** Locale that is considered common for this provider. */
     public const LOCALE = 'en_GB';

@@ -48,7 +48,7 @@ class Ukraine extends AbstractProvider
      */
     public function initialize(): void
     {
-        $this->timezone = 'Europe/Kiev';
+        $this->timezone = 'Europe/Kyiv';
 
         // Add common holidays
         // New Years Day will not be substituted to an monday if it's on a weekend!

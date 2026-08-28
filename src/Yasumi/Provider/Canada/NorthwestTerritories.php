@@ -46,7 +46,7 @@ class NorthwestTerritories extends Canada
     {
         parent::initialize();
 
-        $this->timezone = 'America/Yellowknife';
+        $this->timezone = 'America/Edmonton';
 
         $this->calculateCivicHoliday();
         $this->calculateNationalIndigenousPeoplesDay();
