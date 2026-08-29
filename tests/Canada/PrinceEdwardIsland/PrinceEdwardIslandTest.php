@@ -97,6 +97,6 @@ class PrinceEdwardIslandTest extends PrinceEdwardIslandBaseTestCase implements P
      */
     public function testSources(): void
     {
-        $this->assertSources(self::REGION, 1);
+        $this->assertSources(self::REGION, 2);
     }
 }

@@ -37,11 +37,11 @@ class CanadaTest extends CanadaBaseTestCase implements ProviderTestCase
      */
     protected function setUp(): void
     {
-        $this->year = static::generateRandomYear(1986);
+        $this->year = static::generateRandomYear(2021);
     }
 
     /**
-     * Tests if all official holidays in the USA are defined by the provider class.
+     * Tests if all official holidays in the Canada are defined by the provider class.
      */
     public function testOfficialHolidays(): void
     {
@@ -55,7 +55,8 @@ class CanadaTest extends CanadaBaseTestCase implements ProviderTestCase
             'remembranceDay',
             'thanksgivingDay',
             'christmasDay',
-            'secondChristmasDay',
+            'boxingDay',
+            'truthAndReconciliationDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -97,6 +98,6 @@ class CanadaTest extends CanadaBaseTestCase implements ProviderTestCase
      */
     public function testSources(): void
     {
-        $this->assertSources(self::REGION, 1);
+        $this->assertSources(self::REGION, 2);
     }
 }

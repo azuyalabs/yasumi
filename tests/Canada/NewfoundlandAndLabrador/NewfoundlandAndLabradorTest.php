@@ -93,6 +93,6 @@ class NewfoundlandAndLabradorTest extends NewfoundlandAndLabradorBaseTestCase im
      */
     public function testSources(): void
     {
-        $this->assertSources(self::REGION, 1);
+        $this->assertSources(self::REGION, 2);
     }
 }

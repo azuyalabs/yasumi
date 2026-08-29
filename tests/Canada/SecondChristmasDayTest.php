@@ -21,14 +21,14 @@ use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
 /**
- * Class for testing the second day of Christmas in Canada.
+ * Class for testing Boxing Day in Canada.
  */
 class SecondChristmasDayTest extends CanadaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.
      */
-    public const HOLIDAY = 'secondChristmasDay';
+    public const HOLIDAY = 'boxingDay';
 
     /**
      * Tests the holiday defined in this test.
@@ -51,7 +51,13 @@ class SecondChristmasDayTest extends CanadaBaseTestCase implements HolidayTestCa
      */
     public static function HolidayDataProvider(): array
     {
-        return static::generateRandomDates(12, 26, self::TIMEZONE);
+        $data = [];
+        for ($y = 1; $y <= 10; ++$y) {
+            $year = (int) self::dateTimeBetween('2000-01-01', '2100-01-01')->format('Y');
+            $data[] = [$year, new \DateTime("{$year}-12-26", new \DateTimeZone(self::TIMEZONE))];
+        }
+
+        return $data;
     }
 
     /**

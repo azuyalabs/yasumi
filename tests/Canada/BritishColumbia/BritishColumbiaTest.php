@@ -97,6 +97,6 @@ class BritishColumbiaTest extends BritishColumbiaBaseTestCase implements Provide
      */
     public function testSources(): void
     {
-        $this->assertSources(self::REGION, 1);
+        $this->assertSources(self::REGION, 2);
     }
 }

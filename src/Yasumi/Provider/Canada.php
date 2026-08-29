@@ -50,11 +50,11 @@ class Canada extends AbstractProvider
 
         // Add Christian holidays
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
-        $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->goodFriday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale));
 
         // Calculate other holidays
+        $this->calculateBoxingDay();
         $this->calculateCanadaDay();
         $this->calculateVictoriaDay();
         $this->calculateLabourDay();
@@ -67,7 +67,34 @@ class Canada extends AbstractProvider
     {
         return [
             'https://en.wikipedia.org/wiki/Public_holidays_in_Canada',
+            'https://www.canada.ca/en/services/jobs/workplace/federal-labour-standards/vacations-holidays.html',
         ];
+    }
+
+    /**
+     * Boxing Day.
+     *
+     * @see https://en.wikipedia.org/wiki/Boxing_Day
+     *
+     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws \Exception
+     */
+    protected function calculateBoxingDay(): void
+    {
+        if ($this->year < 1879) {
+            return;
+        }
+
+        $this->addHoliday(new Holiday(
+            'boxingDay',
+            [
+                'en' => 'Boxing Day',
+                'fr' => 'Lendemain de Noël',
+            ],
+            new \DateTime("{$this->year}-12-26", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale
+        ));
     }
 
     /**
