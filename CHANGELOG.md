@@ -20,6 +20,7 @@ followed by any architectural or technical changes.
 
 ### Fixes
 
+- Replace outdated PHP timezone names ([#425](https://github.com/azuyalabs/yasumi/issues/425))
 - _(Canada)_ Add Victoria Day and correct historical year bounds
 - _(SouthKorea)_ Correct buddhasBirthday translation year bound and update source URL
 - _(Argentina)_ Align code style with codebase conventions
@@ -30,6 +31,7 @@ followed by any architectural or technical changes.
 
 ### Refactor
 
+- Clean up property initialization and modernize test mocks
 - _(Test)_ Remove redundant test constructors
 - _(South Korea)_ Use readonly properties and constructor promotion
 - _(South Korea)_ Add Labor Day and reinstate Constitution Day ([#413](https://github.com/azuyalabs/yasumi/issues/413))
@@ -53,6 +55,7 @@ followed by any architectural or technical changes.
 
 ### Other
 
+- _(Deps)_ Bump actions/stale from 10.4.0 to 11.0.0 ([#422](https://github.com/azuyalabs/yasumi/issues/422))
 - _(Deps)_ Add rector dev dependency and configure tool
 - _(Colombia)_ Fix file permissions on test files
 - Update .editorconfig settings
@@ -69,6 +72,7 @@ followed by any architectural or technical changes.
 - @aaronflorey made their first contribution
 - @d-takeuchi made their first contribution
 - @giovanny07 made their first contribution
+- @kevinpapst made their first contribution
 - @zigzagdev made their first contribution
 
 ## [2.11.0] - 2026-03-30
