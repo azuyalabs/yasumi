@@ -70,7 +70,7 @@ class SecondChristmasDayTest extends CanadaBaseTestCase implements HolidayTestCa
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            static::generateRandomYear(),
+            static::generateRandomYear(1879),
             [self::LOCALE => 'Boxing Day']
         );
     }
@@ -82,6 +82,6 @@ class SecondChristmasDayTest extends CanadaBaseTestCase implements HolidayTestCa
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(1879), Holiday::TYPE_OFFICIAL);
     }
 }
