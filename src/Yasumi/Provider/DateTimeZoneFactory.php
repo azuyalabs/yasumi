@@ -29,9 +29,7 @@ final class DateTimeZoneFactory
 
     public static function getDateTimeZone(string $timezone): \DateTimeZone
     {
-        if (! isset(self::$dateTimeZones[$timezone])) {
-            self::$dateTimeZones[$timezone] = new \DateTimeZone($timezone);
-        }
+        self::$dateTimeZones[$timezone] ??= new \DateTimeZone($timezone);
 
         return self::$dateTimeZones[$timezone];
     }

@@ -270,7 +270,7 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
     private function ensureSorted(): void
     {
         if ($this->needSorting) {
-            uasort($this->holidays, static fn (\DateTimeInterface $dateA, \DateTimeInterface $dateB): int => self::compareDates($dateA, $dateB));
+            uasort($this->holidays, $this->compareDates(...));
             $this->needSorting = false;
         }
     }
@@ -323,7 +323,7 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
      * @return int result where 0 means dates are equal, -1 the first date is before the second date, and 1 if the
      *             second date is after the first
      */
-    private static function compareDates(\DateTimeInterface $dateA, \DateTimeInterface $dateB): int
+    private function compareDates(\DateTimeInterface $dateA, \DateTimeInterface $dateB): int
     {
         return $dateA <=> $dateB;
     }
