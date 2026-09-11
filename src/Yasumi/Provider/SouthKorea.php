@@ -972,7 +972,7 @@ class SouthKorea extends AbstractProvider
                     continue;
                 }
 
-                if (! $this->policy->canSubsitute($origin)) {
+                if (! $this->policy->canSubstitute($origin)) {
                     continue;
                 }
 

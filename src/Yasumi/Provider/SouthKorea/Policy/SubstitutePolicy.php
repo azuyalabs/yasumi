@@ -29,7 +29,7 @@ class SubstitutePolicy
         $this->init();
     }
 
-    public function canSubsitute(Holiday $holiday): bool
+    public function canSubstitute(Holiday $holiday): bool
     {
         return isset($this->policy[$holiday->getKey()]);
     }

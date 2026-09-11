@@ -44,7 +44,7 @@ class SubstitutePolicyTest extends SouthKoreaBaseTestCase
         $holiday = Yasumi::create(self::REGION, $year)->getHoliday(self::HOLIDAY);
 
         $policy = new SubstitutePolicy($year);
-        $this->assertTrue($policy->canSubsitute($holiday));
+        $this->assertTrue($policy->canSubstitute($holiday));
 
         if (self::isWeekend($holiday)) {
             $this->assertTrue($policy->shouldSubstitute($holiday));

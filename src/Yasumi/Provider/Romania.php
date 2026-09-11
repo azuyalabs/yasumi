@@ -260,7 +260,7 @@ class Romania extends AbstractProvider
     /**
      * Children's Day.
      *
-     * International Children's Day becamed a public Holiday in Romania starting with 2017
+     * International Children's Day became a public Holiday in Romania starting with 2017
      * according to the Law 220/2016 (18.11.2016)
      *
      * @see https://en.wikipedia.org/wiki/Children%27s_Day

@@ -23,7 +23,7 @@ use Yasumi\tests\YasumiBase;
 /**
  * Base class for test cases of the South Africa holiday provider.
  *
- * @author  Sacha Telgenhof <sme at sachatelgenhof dot com>
+ * @author  Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 abstract class SouthAfricaBaseTestCase extends TestCase
 {
