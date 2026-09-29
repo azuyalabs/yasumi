@@ -32,8 +32,6 @@ When contributing there are a few guidelines we'd like you to keep in mind:
   Use `Holiday::TYPE_OBSERVANCE` for days that are culturally or religiously significant and
   widely observed, but are **not independently designated by law**. See `AGENTS.md` for the full rationale.
 
-- **Document any change** - Make sure the `CHANGELOG.md` and any other relevant documentation are kept up-to-date.
-
 - **One pull request per feature** - If you want to contribute more than one thing, send multiple pull requests.
 
 - **Send coherent history** - Make sure each individual commit in your pull request is meaningful. If you had to make
@@ -52,6 +50,12 @@ When contributing there are a few guidelines we'd like you to keep in mind:
     ```
 
 - **Branch and PR target** - Always branch off `develop` and open your pull request against `develop`.
+
+## Release Policy
+
+Yasumi follows a scheduled **bi-annual release cycle**, issuing minor releases twice a year, **targeted for**
+**March** and **September**. These are best-effort targets rather than fixed dates and may shift.
+See [RELEASE.md](RELEASE.md) for the full policy.
 
 ## Running Tests
 

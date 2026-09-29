@@ -89,6 +89,13 @@ calculate holidays.
 Yasumi’s documentation is available on [https://www.yasumi.dev](https://www.yasumi.dev). You will find all the necessary
 information how to install Yasumi and also recipes how you can use Yasumi in your project.
 
+## Release Policy
+
+Yasumi follows a scheduled **bi-annual release cycle**, with minor releases **targeted for** **March** and
+**September** (best-effort targets - actual dates may shift), plus patch releases whenever holiday legislation, calculations
+or other kind of bugs that require an urgent, backwards-compatible fix.
+The project adheres to [Semantic Versioning](https://semver.org). See [RELEASE.md](RELEASE.md) for the full policy.
+
 ## Contributing
 
 Contributions are encouraged and welcome; I am always happy to get feedback or pull requests on GitHub :)
