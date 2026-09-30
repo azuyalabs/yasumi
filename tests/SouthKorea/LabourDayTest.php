@@ -15,10 +15,11 @@ declare(strict_types = 1);
  * @author Sacha Telgenhof <me at sachatelgenhof dot com>
  */
 
+namespace Yasumi\tests\SouthKorea;
+
 use Yasumi\Holiday;
 use Yasumi\Provider\DateTimeZoneFactory;
 use Yasumi\tests\HolidayTestCase;
-use Yasumi\tests\SouthKorea\SouthKoreaBaseTestCase;
 
 /**
  * Class for testing Labour Day in South Korea.
@@ -38,7 +39,7 @@ class LabourDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     /**
      * Tests the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testLabourDay(): void
     {
@@ -48,7 +49,7 @@ class LabourDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime("{$year}-5-1", DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
+            new \DateTime("{$year}-5-1", DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
         );
 
         // Before 2026
@@ -62,23 +63,23 @@ class LabourDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     /**
      * Tests the substitute holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
-    #[PHPUnit\Framework\Attributes\DataProvider('SubstituteHolidayDataProvider')]
+    #[\PHPUnit\Framework\Attributes\DataProvider('SubstituteHolidayDataProvider')]
     public function testSubstituteHoliday(int $year, string $expected): void
     {
         $this->assertSubstituteHoliday(
             self::REGION,
             self::HOLIDAY,
             $year,
-            new DateTime($expected, DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
+            new \DateTime($expected, DateTimeZoneFactory::getDateTimeZone(self::TIMEZONE))
         );
     }
 
     /**
      * Tests translated name of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testTranslation(): void
     {
@@ -93,7 +94,7 @@ class LabourDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
     /**
      * Tests type of the holiday defined in this test.
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function testHolidayType(): void
     {
@@ -111,7 +112,6 @@ class LabourDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
             [2027, '2027-05-03'],
             [2032, '2032-05-03'],
             [2033, '2033-05-02'],
-            [2038, '2038-05-03'],
             [2038, '2038-05-03'],
             [2039, '2039-05-03'],
             [2044, '2044-05-02'],
