@@ -20,6 +20,8 @@ followed by any architectural or technical changes.
 
 ### Fixes
 
+- _(Various typos)_ Correct spelling errors
+- _(Canada)_ Add Boxing Day as explicit holiday and fix tests
 - Replace outdated PHP timezone names ([#425](https://github.com/azuyalabs/yasumi/issues/425))
 - _(Canada)_ Add Victoria Day and correct historical year bounds
 - _(SouthKorea)_ Correct buddhasBirthday translation year bound and update source URL
@@ -31,6 +33,7 @@ followed by any architectural or technical changes.
 
 ### Refactor
 
+- _(Provider)_ Modernize PHP syntax for readability and conciseness
 - Clean up property initialization and modernize test mocks
 - _(Test)_ Remove redundant test constructors
 - _(South Korea)_ Use readonly properties and constructor promotion
@@ -41,6 +44,7 @@ followed by any architectural or technical changes.
 
 ### Documentation
 
+- Add release policy documenting bi-annual release cycle
 - Update CODE_OF_CONDUCT to Contributor Covenant v3.0
 - Updates to reflect recent PHPstan level bump
 - Clarify holiday type classification
@@ -48,6 +52,7 @@ followed by any architectural or technical changes.
 
 ### Testing
 
+- _(Canada)_ Bound random year range in Boxing Day tests to >= 1879
 - _(Lithuania)_ Add allSoulsDay to official holidays test and implement ProviderTestCase
 - _(Japan)_ Skip 2020/2021 in MarineDay random year test instead of early return
 - _(SouthKorea)_ Correct test year range for pre-1949 assertion
@@ -55,6 +60,7 @@ followed by any architectural or technical changes.
 
 ### Other
 
+- Bump composer package versions to latest installed versions
 - _(Deps)_ Bump actions/stale from 10.4.0 to 11.0.0 ([#422](https://github.com/azuyalabs/yasumi/issues/422))
 - _(Deps)_ Add rector dev dependency and configure tool
 - _(Colombia)_ Fix file permissions on test files
