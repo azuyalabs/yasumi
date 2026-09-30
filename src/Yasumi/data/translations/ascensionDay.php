@@ -25,6 +25,7 @@ return [
     'es' => 'Ascensión del Señor',
     'fi' => 'Helatorstai',
     'fr' => 'Ascension',
+    'id' => 'Kenaikan Isa Almasih',
     'it' => 'Ascensione',
     'nb' => 'Kristi himmelfartsdag',
     'nl' => 'Hemelvaart',

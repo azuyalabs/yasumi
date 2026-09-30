@@ -98,6 +98,10 @@
     <testsuite name="Hungary">
       <directory>./tests/Hungary</directory>
     </testsuite>
+    <!-- Test Suite for holidays in Indonesia -->
+    <testsuite name="Indonesia">
+      <directory>./tests/Indonesia</directory>
+    </testsuite>
     <!-- Test Suite for holidays in Iran -->
     <testsuite name="Iran">
       <directory>./tests/Iran</directory>
