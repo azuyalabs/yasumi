@@ -20,6 +20,7 @@ followed by any architectural or technical changes.
 
 ### Fixes
 
+- _(South Korea)_ Add missing namespace to LabourDayTest
 - _(Various typos)_ Correct spelling errors
 - _(Canada)_ Add Boxing Day as explicit holiday and fix tests
 - Replace outdated PHP timezone names ([#425](https://github.com/azuyalabs/yasumi/issues/425))
