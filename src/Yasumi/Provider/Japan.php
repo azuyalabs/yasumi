@@ -634,6 +634,10 @@ class Japan extends AbstractProvider
      * Bridge holidays were introduced by the amendment of the National Holidays Act enforced on December 27th, 1985.
      * Until the amendment of 2007, a day falling on a Sunday did not become a bridge holiday.
      *
+     * @see https://www.shugiin.go.jp/internet/itdb_housei.nsf/html/houritsu/10319851227103.htm Act No. 103 of 1985 (in Japanese)
+     * @see https://www.shugiin.go.jp/internet/itdb_housei.nsf/html/housei/16220050520043.htm Act No. 43 of 2005, enforced on January 1st, 2007 (in Japanese)
+     * @see https://laws.e-gov.go.jp/law/323AC1000000178 National Holidays Act, Article 3 (in Japanese)
+     *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
