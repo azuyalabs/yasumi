@@ -43,7 +43,7 @@ class ComingOfAgeDayTest extends JapanBaseTestCase implements HolidayTestCase
      */
     public function testComingOfAgeDayOnAfter2000(): void
     {
-        $year = static::generateRandomYear(2001);
+        $year = static::generateRandomYear(2000);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,

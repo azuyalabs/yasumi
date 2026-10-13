@@ -76,17 +76,17 @@ class SportsDayTest extends JapanBaseTestCase implements HolidayTestCase
      */
     public function testSportsDayAfter2000(): void
     {
-        $year = static::generateRandomYear(2001);
-
         // Some years the date has changed, so in this test we need to skip them.
-        if (! in_array($year, [2020, 2021])) {
-            $this->assertHoliday(
-                self::REGION,
-                self::HOLIDAY,
-                $year,
-                new \DateTime("second monday of october {$year}", new \DateTimeZone(self::TIMEZONE))
-            );
-        }
+        do {
+            $year = static::generateRandomYear(2000);
+        } while (in_array($year, [2020, 2021], true));
+
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $year,
+            new \DateTime("second monday of october {$year}", new \DateTimeZone(self::TIMEZONE))
+        );
     }
 
     /**

@@ -79,11 +79,11 @@ class MarineDayTest extends JapanBaseTestCase implements HolidayTestCase
      */
     public function testMarineDayOnAfter2003(): void
     {
-        $year = self::generateRandomYear(2004);
+        $year = self::generateRandomYear(2003);
 
         while (in_array($year, [2020, 2021], true)) {
             // Skip 2020 and 2021 as they have special dates (rescheduled for Tokyo Olympics).
-            $year = self::generateRandomYear(2004);
+            $year = self::generateRandomYear(2003);
         }
 
         $this->assertHoliday(
