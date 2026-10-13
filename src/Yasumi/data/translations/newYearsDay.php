@@ -35,6 +35,7 @@ return [
     'ga' => 'Lá Caille',
     'hr' => 'Nova godina',
     'hu' => 'Újév',
+    'id' => 'Tahun Baru Masehi',
     'it' => 'Capodanno',
     'ja' => '元日',
     'ka' => 'ახალი წელი',
