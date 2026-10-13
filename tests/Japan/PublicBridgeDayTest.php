@@ -65,6 +65,39 @@ class PublicBridgeDayTest extends JapanBaseTestCase implements HolidayTestCase
     }
 
     /**
+     * Tests public bridge days sandwiched between Respect for the Aged Day and Autumnal Equinox Day.
+     *
+     * @param int    $year     the year for which the public bridge day needs to be tested
+     * @param string $expected the expected date of the public bridge day
+     *
+     * @throws \Exception
+     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('silverWeekBridgeDayDataProvider')]
+    public function testSilverWeekBridgeDay(int $year, string $expected): void
+    {
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY . '1',
+            $year,
+            new \DateTime($expected, new \DateTimeZone(self::TIMEZONE))
+        );
+    }
+
+    /**
+     * Returns a list of years and dates in which a public bridge day falls in September.
+     *
+     * @return array<string, array{int, string}> list of years and expected dates
+     */
+    public static function silverWeekBridgeDayDataProvider(): array
+    {
+        return [
+            '2009' => [2009, '2009-09-22'],
+            '2015' => [2015, '2015-09-22'],
+            '2026' => [2026, '2026-09-22'],
+        ];
+    }
+
+    /**
      * Tests the translated name of the holiday defined in this test.
      *
      * @throws \Exception
