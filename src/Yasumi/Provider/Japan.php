@@ -631,6 +631,8 @@ class Japan extends AbstractProvider
      * Calculate public bridge holidays.
      *
      * Any day that falls between two other national holidays also becomes a holiday, known as a bridge holiday.
+     * Bridge holidays were introduced by the amendment of the National Holidays Act enforced on December 27th, 1985.
+     * Until the amendment of 2007, a day falling on a Sunday did not become a bridge holiday.
      *
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
@@ -638,6 +640,10 @@ class Japan extends AbstractProvider
      */
     protected function calculateBridgeHolidays(): void
     {
+        if ($this->year < 1986) {
+            return;
+        }
+
         // Get initial list of holidays and iterator
         $datesIterator = $this->getIterator();
 
@@ -660,6 +666,11 @@ class Japan extends AbstractProvider
 
                 $bridgeDate = clone $previous;
                 $bridgeDate->add(new \DateInterval('P1D'));
+
+                // Skip if the bridge day falls on a Sunday before 2007
+                if ($this->year < 2007 && 0 === (int) $bridgeDate->format('w')) {
+                    continue;
+                }
 
                 $this->addHoliday(new Holiday("bridgeDay{$counter}", [
                     'en' => 'Bridge Public holiday',

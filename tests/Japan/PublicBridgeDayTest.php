@@ -83,4 +83,50 @@ class PublicBridgeDayTest extends JapanBaseTestCase implements HolidayTestCase
     {
         $this->assertHolidayType(self::REGION, self::HOLIDAY . '1', $this->year, Holiday::TYPE_OFFICIAL);
     }
+
+    /**
+     * Tests that no public bridge day is given in the cases excluded by the National Holidays Act.
+     * Bridge days were introduced by the amendment enforced on December 27th, 1985, and until the amendment of 2007
+     * a day falling on a Sunday did not become a bridge day.
+     *
+     * @param int $year the year in which no public bridge day is expected
+     *
+     * @throws \Exception
+     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('noBridgeDayDataProvider')]
+    public function testNoBridgeDay(int $year): void
+    {
+        $this->assertNotHoliday(self::REGION, self::HOLIDAY . '1', $year);
+    }
+
+    /**
+     * Returns a list of years in which May 4th did not become a public bridge day.
+     *
+     * @return array<string, array{int}> list of years
+     */
+    public static function noBridgeDayDataProvider(): array
+    {
+        return [
+            'before 1986, May 4th on a Sunday' => [1980],
+            'before 1986, May 4th on a Friday' => [1984],
+            'May 4th on a Sunday in 1986' => [1986],
+            'May 4th on a Sunday in 1997' => [1997],
+            'May 4th on a Sunday in 2003' => [2003],
+        ];
+    }
+
+    /**
+     * Tests the first public bridge day after the amendment enforced on December 27th, 1985.
+     *
+     * @throws \Exception
+     */
+    public function testFirstBridgeDay(): void
+    {
+        $this->assertHoliday(
+            self::REGION,
+            self::HOLIDAY . '1',
+            1988,
+            new \DateTime('1988-05-04', new \DateTimeZone(self::TIMEZONE))
+        );
+    }
 }
