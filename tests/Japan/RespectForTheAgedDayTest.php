@@ -43,7 +43,7 @@ class RespectForTheAgedDayTest extends JapanBaseTestCase implements HolidayTestC
      */
     public function testRespectForTheAgedDayOnAfter2003(): void
     {
-        $year = static::generateRandomYear(2004);
+        $year = static::generateRandomYear(2003);
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
