@@ -38,25 +38,44 @@ class VictoriaDayTest extends CanadaBaseTestCase implements HolidayTestCase
     /**
      * Tests Victoria Day on or after 1845. Victoria Day is celebrated on the last Monday on or before May 24.
      *
+     * @param int    $year     the year for which Victoria Day needs to be tested
+     * @param string $expected the expected date of Victoria Day
+     *
      * @throws \Exception
      */
-    public function testVictoriaDayOnAfter1845(): void
+    #[\PHPUnit\Framework\Attributes\DataProvider('victoriaDayDataProvider')]
+    public function testVictoriaDayOnAfter1845(int $year, string $expected): void
     {
-        $year = 2019;
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
             $year,
-            $this->getVictoriaDayDate($year)
+            new \DateTime($expected, new \DateTimeZone(self::TIMEZONE))
         );
+    }
 
-        $year = 2024;
-        $this->assertHoliday(
-            self::REGION,
-            self::HOLIDAY,
-            $year,
-            $this->getVictoriaDayDate($year)
-        );
+    /**
+     * Returns a list of years and the expected dates of Victoria Day.
+     *
+     * The list covers years across centuries, as well as the years in which May 24th falls on a Monday.
+     *
+     * @return array<string, array{int, string}> list of years and expected dates
+     */
+    public static function victoriaDayDataProvider(): array
+    {
+        return [
+            'in 1845' => [1845, '1845-05-19'],
+            'in 1900' => [1900, '1900-05-21'],
+            'in 1952' => [1952, '1952-05-19'],
+            'in 1969' => [1969, '1969-05-19'],
+            'in 1970' => [1970, '1970-05-18'],
+            'in 2010 (May 24th on a Monday)' => [2010, '2010-05-24'],
+            'in 2019' => [2019, '2019-05-20'],
+            'in 2024' => [2024, '2024-05-20'],
+            'in 2069' => [2069, '2069-05-20'],
+            'in 2070' => [2070, '2070-05-19'],
+            'in 2100 (May 24th on a Monday)' => [2100, '2100-05-24'],
+        ];
     }
 
     /**
@@ -101,17 +120,5 @@ class VictoriaDayTest extends CanadaBaseTestCase implements HolidayTestCase
             static::generateRandomYear(self::ESTABLISHMENT_YEAR),
             Holiday::TYPE_OFFICIAL
         );
-    }
-
-    /**
-     * Returns the expected Victoria Day date (the Monday on or before May 24) for the given year.
-     *
-     * @throws \Exception
-     */
-    private function getVictoriaDayDate(int $year): \DateTimeInterface
-    {
-        $date = new \DateTime("last monday front of {$year}-05-25", new \DateTimeZone(self::TIMEZONE));
-
-        return new \DateTime($date->format('Y-m-d'), new \DateTimeZone(self::TIMEZONE));
     }
 }

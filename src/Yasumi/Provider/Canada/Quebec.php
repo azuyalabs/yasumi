@@ -108,7 +108,7 @@ class Quebec extends Canada
         $this->addHoliday(new Holiday(
             'nationalPatriotsDay',
             [],
-            new \DateTime("last monday front of {$this->year}-05-25", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            new \DateTime("{$this->year}-05-25 previous monday", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
             $this->locale
         ));
     }
