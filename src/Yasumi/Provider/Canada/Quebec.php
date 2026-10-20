@@ -105,6 +105,9 @@ class Quebec extends Canada
             return;
         }
 
+        // Do not use "last monday front of {year}-05-25": in PHP, "front of" is a time expression (e.g. "front of 7pm"
+        // is 18:45), so the first two digits of the year are parsed as an hour and the rest as a two-digit year,
+        // which returns a date in the wrong year outside 1970-2069.
         $this->addHoliday(new Holiday(
             'nationalPatriotsDay',
             [],
