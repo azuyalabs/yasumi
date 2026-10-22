@@ -33,6 +33,7 @@ return [
     'et' => 'Esimene jõulupüha',
     'fi' => 'Joulupäivä',
     'fr' => 'Noël',
+    'fr_BJ' => 'Jour de la Noël',
     'hr' => 'Božić',
     'hu' => 'Karácsony',
     'it' => 'Natale',
