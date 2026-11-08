@@ -64,7 +64,6 @@ class Yasumi
      * @param int                $workingDays Number of days to look ahead for the (first) next working day
      *
      * @throws UnknownLocaleException
-     * @throws \RuntimeException
      * @throws \InvalidArgumentException
      * @throws \Exception
      *
@@ -77,13 +76,10 @@ class Yasumi
     ): \DateTimeInterface {
         $date = $startDate instanceof \DateTime ? \DateTimeImmutable::createFromMutable($startDate) : $startDate;
         $provider = null;
+        $oneDay = new \DateInterval('P1D');
 
         while ($workingDays > 0) {
-            $date = $date->add(new \DateInterval('P1D'));
-
-            if (! $date instanceof \DateTimeImmutable) {
-                throw new \RuntimeException('Unable to perform date interval addition');
-            }
+            $date = $date->add($oneDay);
 
             if (! $provider instanceof ProviderInterface || $provider->getYear() !== (int) $date->format('Y')) {
                 $provider = self::create($class, (int) $date->format('Y'));
@@ -282,7 +278,6 @@ class Yasumi
      * @param int                $workingDays Number of days to look back for the (first) previous working day
      *
      * @throws UnknownLocaleException
-     * @throws \RuntimeException
      * @throws \InvalidArgumentException
      * @throws \Exception
      *
@@ -295,13 +290,10 @@ class Yasumi
     ): \DateTimeInterface {
         $date = $startDate instanceof \DateTime ? \DateTimeImmutable::createFromMutable($startDate) : $startDate;
         $provider = null;
+        $oneDay = new \DateInterval('P1D');
 
         while ($workingDays > 0) {
-            $date = $date->sub(new \DateInterval('P1D'));
-
-            if (! $date instanceof \DateTimeImmutable) {
-                throw new \RuntimeException('Unable to perform date interval subtraction');
-            }
+            $date = $date->sub($oneDay);
 
             if (! $provider instanceof ProviderInterface || $provider->getYear() !== (int) $date->format('Y')) {
                 $provider = self::create($class, (int) $date->format('Y'));
