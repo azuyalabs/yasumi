@@ -261,6 +261,15 @@ trait ChristianHolidays
      */
     protected function calculateOrthodoxEaster(int $year, string $timezone): \DateTimeInterface
     {
+        // shortcut: cache lives for the process; bound it if many years/timezones are queried.
+        /** @var array<string, \DateTime> $cache */
+        static $cache = [];
+
+        $key = "{$year}|{$timezone}";
+        if (isset($cache[$key])) {
+            return clone $cache[$key];
+        }
+
         $a = $year % 4;
         $b = $year % 7;
         $c = $year % 19;
@@ -269,7 +278,11 @@ trait ChristianHolidays
         $month = floor(($d + $e + 114) / 31);
         $day = (($d + $e + 114) % 31) + 1;
 
-        return (new \DateTime("{$year}-{$month}-{$day}", DateTimeZoneFactory::getDateTimeZone($timezone)))->add(new \DateInterval('P13D'));
+        $easter = (new \DateTime("{$year}-{$month}-{$day}", DateTimeZoneFactory::getDateTimeZone($timezone)))->add(new \DateInterval('P13D'));
+
+        $cache[$key] = $easter;
+
+        return clone $easter;
     }
 
     /**
@@ -338,6 +351,15 @@ trait ChristianHolidays
      */
     protected function calculateEaster(int $year, string $timezone): \DateTimeInterface
     {
+        // shortcut: cache lives for the process; bound it if many years/timezones are queried.
+        /** @var array<string, \DateTime> $cache */
+        static $cache = [];
+
+        $key = "{$year}|{$timezone}";
+        if (isset($cache[$key])) {
+            return clone $cache[$key];
+        }
+
         if (\extension_loaded('calendar')) {
             $easterDays = easter_days($year);
         } else {
@@ -386,7 +408,9 @@ trait ChristianHolidays
         $easter = new \DateTime("{$year}-3-21", DateTimeZoneFactory::getDateTimeZone($timezone));
         $easter->add(new \DateInterval(sprintf('P%dD', $easterDays)));
 
-        return $easter;
+        $cache[$key] = $easter;
+
+        return clone $easter;
     }
 
     /**
