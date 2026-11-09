@@ -121,7 +121,9 @@ class Holiday extends \DateTime implements \JsonSerializable, \Stringable
         $this->displayLocale = $displayLocale;
 
         // Construct instance
-        parent::__construct($date->format('Y-m-d'), $date->getTimezone());
+        parent::__construct('@' . $date->getTimestamp());
+        $this->setTimezone($date->getTimezone());
+        $this->setTime(0, 0);
     }
 
     /**

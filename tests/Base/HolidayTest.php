@@ -67,6 +67,17 @@ class HolidayTest extends TestCase
     }
 
     /** @throws \Exception */
+    public function testHolidayPreservesDateAndTimezoneAtMidnight(): void
+    {
+        $date = new \DateTimeImmutable('2024-02-29 13:45:00', new \DateTimeZone('Pacific/Auckland'));
+        $holiday = new Holiday('testHoliday', [], $date, 'en_US');
+
+        self::assertSame('2024-02-29', $holiday->format('Y-m-d'));
+        self::assertSame('00:00:00', $holiday->format('H:i:s'));
+        self::assertSame('Pacific/Auckland', $holiday->getTimezone()->getName());
+    }
+
+    /** @throws \Exception */
     public function testHolidayGetLocales(): void
     {
         $holiday = new Holiday('testHoliday', [], new \DateTime(), 'ca_ES_VALENCIA');
