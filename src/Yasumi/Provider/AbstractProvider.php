@@ -95,6 +95,14 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
     private bool $needSorting;
 
     /**
+     * cached result of count(), null when it needs to be recomputed
+     *
+     * shortcut: mutating a Holiday's public $shortName after addHoliday() leaves this stale, drop the cache if that
+     * deprecated property gets used
+     */
+    private ?int $holidayCount = null;
+
+    /**
      * Creates a new holiday provider (i.e. country/state).
      *
      * @param int                        $year               the year for which to provide holidays
@@ -126,6 +134,7 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
 
         $this->holidays[$holiday->getKey()] = $holiday;
         $this->needSorting = true;
+        $this->holidayCount = null;
     }
 
     public function removeHoliday(string $key): void
@@ -133,6 +142,7 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
         $this->isHolidayKeyNotEmpty($key);
 
         unset($this->holidays[$key]);
+        $this->holidayCount = null;
     }
 
     public function isWorkingDay(\DateTimeInterface $date): bool
@@ -178,6 +188,10 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
      */
     public function count(): int
     {
+        if (null !== $this->holidayCount) {
+            return $this->holidayCount;
+        }
+
         $names = array_map(static function (Holiday $holiday): string {
             if ($holiday instanceof SubstituteHoliday) {
                 return $holiday->getSubstitutedHoliday()->getKey();
@@ -186,7 +200,7 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
             return $holiday->getKey();
         }, $this->getHolidays());
 
-        return \count(array_unique($names));
+        return $this->holidayCount = \count(array_unique($names));
     }
 
     public function getHolidays(): array
@@ -262,6 +276,7 @@ abstract class AbstractProvider implements \Countable, ProviderInterface, \Itera
     {
         $this->holidays = [];
         $this->needSorting = false;
+        $this->holidayCount = null;
     }
 
     /**

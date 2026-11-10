@@ -101,6 +101,19 @@ class YasumiTest extends TestCase
         self::assertNotEquals(17, $holidays->count());
     }
 
+    public function testCountIsRecomputedAfterHolidayChanges(): void
+    {
+        $holidays = Yasumi::create('Japan', 2015);
+        $initialCount = $holidays->count();
+        $holiday = $holidays->getHoliday('newYearsDay');
+
+        $holidays->removeHoliday('newYearsDay');
+        self::assertEquals($initialCount - 1, $holidays->count());
+
+        $holidays->addHoliday($holiday);
+        self::assertEquals($initialCount, $holidays->count());
+    }
+
     public function testGetType(): void
     {
         $holidays = Yasumi::create('Japan', self::numberBetween(1949, self::YEAR_UPPER_BOUND));
