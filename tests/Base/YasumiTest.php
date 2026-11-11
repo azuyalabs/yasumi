@@ -131,6 +131,13 @@ class YasumiTest extends TestCase
         self::assertEquals($year, $holidays->getYear());
     }
 
+    public function testCreateDefaultsToCurrentYear(): void
+    {
+        $holidays = Yasumi::create('Netherlands');
+
+        self::assertSame((int) date('Y'), $holidays->getYear());
+    }
+
     /**
      * Tests that the next function returns the next upcoming date (i.e. next year) for the given holiday.
      *
@@ -465,6 +472,18 @@ class YasumiTest extends TestCase
         );
 
         self::assertEquals($year, $provider->getYear());
+    }
+
+    /**
+     * Tests that the current year is used when no year is given.
+     *
+     * @throws \ReflectionException
+     */
+    public function testCreateByISO31662DefaultsToCurrentYear(): void
+    {
+        $provider = Yasumi::createByISO3166_2('JP');
+
+        self::assertSame((int) date('Y'), $provider->getYear());
     }
 
     /**

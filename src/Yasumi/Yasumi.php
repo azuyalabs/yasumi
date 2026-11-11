@@ -100,10 +100,10 @@ class Yasumi
      * already with Yasumi, or your own provider by giving the name of your class in the first parameter. Your provider
      * class needs to implement the 'ProviderInterface' class.
      *
-     * @param string $class  holiday provider name
-     * @param int    $year   year for which the country provider needs to be created. Year needs to be a valid integer
-     *                       between the defined lower and upper bounds.
-     * @param string $locale The locale to use. If empty we'll use the default locale (en_US)
+     * @param string   $class  holiday provider name
+     * @param int|null $year   year for which the country provider needs to be created. Year needs to be a valid
+     *                         integer between the defined lower and upper bounds. If null, the current year is used.
+     * @param string   $locale The locale to use. If empty we'll use the default locale (en_US)
      *
      * @return ProviderInterface An instance of class $class is created and returned
      *
@@ -112,7 +112,7 @@ class Yasumi
      * @throws UnknownLocaleException    if the locale parameter is invalid
      * @throws ProviderNotFoundException if the holiday provider for the given country does not exist
      */
-    public static function create(string $class, int $year = self::YEAR_LOWER_BOUND, string $locale = self::DEFAULT_LOCALE): ProviderInterface
+    public static function create(string $class, ?int $year = null, string $locale = self::DEFAULT_LOCALE): ProviderInterface
     {
         // Find and return holiday provider instance
         $providerClass = sprintf('Yasumi\Provider\%s', str_replace('/', '\\', $class));
@@ -124,6 +124,9 @@ class Yasumi
         if ('AbstractProvider' === $class || ! class_exists($providerClass)) {
             throw new ProviderNotFoundException(sprintf('Unable to find holiday provider "%s".', $class));
         }
+
+        // Default to the current year
+        $year ??= (int) date('Y');
 
         // Assert year input
         if ($year < self::YEAR_LOWER_BOUND || $year > self::YEAR_UPPER_BOUND) {
@@ -172,10 +175,10 @@ class Yasumi
      * already with Yasumi, or your own provider by giving the 'const ID', corresponding to the ISO3166-2 Code, set in
      * your class in the first parameter. Your provider class needs to implement the 'ProviderInterface' class.
      *
-     * @param string $isoCode ISO3166-2 Coded region, holiday provider will be searched for
-     * @param int    $year    year for which the country provider needs to be created. Year needs to be a valid
-     *                        integer between the defined lower and upper bounds.
-     * @param string $locale  The locale to use. If empty we'll use the default locale (en_US)
+     * @param string   $isoCode ISO3166-2 Coded region, holiday provider will be searched for
+     * @param int|null $year    year for which the country provider needs to be created. Year needs to be a valid
+     *                          integer between the defined lower and upper bounds. If null, the current year is used.
+     * @param string   $locale  The locale to use. If empty we'll use the default locale (en_US)
      *
      * @return ProviderInterface An instance of class $class is created and returned
      *
@@ -187,7 +190,7 @@ class Yasumi
      */
     public static function createByISO3166_2(
         string $isoCode,
-        int $year = self::YEAR_LOWER_BOUND,
+        ?int $year = null,
         string $locale = self::DEFAULT_LOCALE,
     ): ProviderInterface {
         $availableProviders = self::getProviders();
