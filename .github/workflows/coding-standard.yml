@@ -27,7 +27,6 @@ jobs:
         uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # v2.40.0
         with:
           php-version: ${{ matrix.php-versions }}
-          extensions: intl
 
       - name: Get Composer Cache Directory
         id: composer-cache

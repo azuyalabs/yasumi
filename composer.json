@@ -36,15 +36,12 @@
     }
   ],
   "require": {
-    "php": ">=8.2",
-    "ext-json": "*"
+    "php": ">=8.2"
   },
   "require-dev": {
-    "ext-intl": "*",
     "azuyalabs/php-cs-fixer-config": "^0.3",
     "mikey179/vfsstream": "^1.6",
     "phpstan/phpstan": "^2.2",
-    "phpstan/phpstan-deprecation-rules": "^2.0",
     "phpunit/phpunit": "^11.5",
     "rector/rector": "^2.6"
   },
@@ -63,9 +60,6 @@
     }
   },
   "config": {
-    "allow-plugins": {
-      "composer/package-versions-deprecated": true
-    },
     "sort-packages": true
   },
   "scripts": {

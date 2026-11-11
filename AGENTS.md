@@ -6,7 +6,7 @@ and PSR-12/PSR-4 compliant.
 
 ## Project Structure
 
-```
+```text
 src/Yasumi/
   Yasumi.php              # Main entry point / factory
   Holiday.php             # Represents a single holiday
@@ -27,7 +27,7 @@ examples/                 # Usage examples
 ## Requirements
 
 - PHP 8.2+
-- `ext-json` (required), `ext-intl` (dev), `ext-calendar` (optional, for Easter)
+- `ext-calendar` (optional, for Easter)
 
 ## Key Commands
 
