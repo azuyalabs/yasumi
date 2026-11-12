@@ -10,6 +10,36 @@ followed by any architectural or technical changes.
 
 ## [unreleased]
 
+### Features
+
+- Add Ecuador holiday provider ([#408](https://github.com/azuyalabs/yasumi/issues/408))
+
+### Fixes
+
+- Default to the current year when no year is given
+- *(Japan)* Apply legal conditions to bridge holidays ([#432](https://github.com/azuyalabs/yasumi/issues/432))
+
+### Performance
+
+- Cache the holiday count
+- Build holiday date from timestamp
+- Cache calculated Easter dates
+- Reuse one DateInterval in working-day loops
+
+### Documentation
+
+- Update list of supported versions
+
+### Testing
+
+- *(Japan)* Add tests for September bridge days and substitute holidays before 1973 ([#431](https://github.com/azuyalabs/yasumi/issues/431))
+- *(Japan)* Fix boundary years and risky tests for moved holidays ([#430](https://github.com/azuyalabs/yasumi/issues/430))
+
+### Other
+
+- *(Deps)* Drop unused ext-json, ext-intl and deprecation rules
+- *(Deps)* Pin GitHub actions to specific commit SHA
+
 ## [2.12.0] - 2026-09-30
 
 ### Features
@@ -78,11 +108,11 @@ followed by any architectural or technical changes.
 
 ## New Contributors ❤️
 
-* @aaronflorey made their first contribution
-* @d-takeuchi made their first contribution
-* @giovanny07 made their first contribution
-* @kevinpapst made their first contribution
-* @zigzagdev made their first contribution
+- @aaronflorey made their first contribution
+- @d-takeuchi made their first contribution
+- @giovanny07 made their first contribution
+- @kevinpapst made their first contribution
+- @zigzagdev made their first contribution
 
 ## [2.11.0] - 2026-03-30
 
@@ -132,7 +162,7 @@ followed by any architectural or technical changes.
 
 ## New Contributors ❤️
 
-* @ppaulis made their first contribution
+- @ppaulis made their first contribution
 
 ## [2.10.0] - 2026-01-22
 
@@ -143,7 +173,6 @@ followed by any architectural or technical changes.
 ### Other
 
 - Drop PHP 8.1 support
-
 
 ## [2.9.0] - 2025-12-29
 
@@ -190,10 +219,10 @@ followed by any architectural or technical changes.
 
 ## New Contributors ❤️
 
-* @Stollie made their first contribution
-* @mgwebgroup made their first contribution
-* @soukicz made their first contribution
-* @timeshifting made their first contribution
+- @Stollie made their first contribution
+- @mgwebgroup made their first contribution
+- @soukicz made their first contribution
+- @timeshifting made their first contribution
 
 ## [2.8.0] - 2025-07-13
 
@@ -276,12 +305,12 @@ followed by any architectural or technical changes.
 
 ## New Contributors ❤️
 
-* @attepulkkinen made their first contribution
-* @dependabot[bot] made their first contribution
-* @fbett made their first contribution
-* @hamrak made their first contribution
-* @mtbossa made their first contribution
-* @thrashzone13 made their first contribution
+- @attepulkkinen made their first contribution
+- @dependabot[bot] made their first contribution
+- @fbett made their first contribution
+- @hamrak made their first contribution
+- @mtbossa made their first contribution
+- @thrashzone13 made their first contribution
 
 [unreleased]: https://github.com/azuyalabs/yasumi/compare/2.12.0..HEAD
 [2.12.0]: https://github.com/azuyalabs/yasumi/compare/2.11.0..2.12.0
@@ -289,4 +318,3 @@ followed by any architectural or technical changes.
 [2.10.0]: https://github.com/azuyalabs/yasumi/compare/2.9.0..2.10.0
 [2.9.0]: https://github.com/azuyalabs/yasumi/compare/2.8.0..2.9.0
 [2.8.0]: https://github.com/azuyalabs/yasumi/compare/2.7.0..2.8.0
-
