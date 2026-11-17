@@ -53,8 +53,8 @@ class Peru extends AbstractProvider
     /** Year of the Battle of Angamos (8 October 1879). */
     public const BATTLE_OF_ANGAMOS_YEAR = 1879;
 
-    /** Year the Peruvian Air Force was established (20 May 1929). */
-    public const AIR_FORCE_YEAR = 1929;
+    /** Year Air Force Day became a national holiday (Ley N° 31822, 2023). */
+    public const AIR_FORCE_YEAR = 2023;
 
     /**
      * Code to identify this Holiday Provider. Typically, this is the ISO3166

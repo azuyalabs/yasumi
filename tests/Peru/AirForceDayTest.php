@@ -35,7 +35,7 @@ class AirForceDayTest extends PeruBaseTestCase implements HolidayTestCase
      */
     public function testHoliday(): void
     {
-        $year = 2018;
+        $year = 2029;
         $this->assertHoliday(
             self::REGION,
             self::HOLIDAY,
@@ -64,7 +64,7 @@ class AirForceDayTest extends PeruBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * Tests that the holiday is not present before 1929.
+     * Tests that the holiday is not present before 2023.
      *
      * @throws \Exception
      */
