@@ -16,6 +16,7 @@ followed by any architectural or technical changes.
 
 ### Fixes
 
+- *(Germany)* Set Assumption of Mary to official holiday in Saarland ([#436](https://github.com/azuyalabs/yasumi/issues/436))
 - Default to the current year when no year is given
 - *(Japan)* Apply legal conditions to bridge holidays ([#432](https://github.com/azuyalabs/yasumi/issues/432))
 
