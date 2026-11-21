@@ -278,7 +278,11 @@ trait ChristianHolidays
         $month = floor(($d + $e + 114) / 31);
         $day = (($d + $e + 114) % 31) + 1;
 
-        $easter = (new \DateTime("{$year}-{$month}-{$day}", DateTimeZoneFactory::getDateTimeZone($timezone)))->add(new \DateInterval('P13D'));
+        // The date above is in the Julian calendar. Its gap to the Gregorian calendar grows by one day in every
+        // century year that is not a multiple of 400: 10 days in 1583, 13 days in 1900-2099, 14 days from 2100.
+        $julianToGregorian = intdiv($year, 100) - intdiv($year, 400) - 2;
+
+        $easter = (new \DateTime("{$year}-{$month}-{$day}", DateTimeZoneFactory::getDateTimeZone($timezone)))->add(new \DateInterval("P{$julianToGregorian}D"));
 
         $cache[$key] = $easter;
 
