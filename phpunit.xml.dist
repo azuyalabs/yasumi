@@ -38,6 +38,10 @@
     <testsuite name="Belgium">
       <directory>./tests/Belgium</directory>
     </testsuite>
+    <!-- Test Suite for holidays in Benin -->
+    <testsuite name="Benin">
+      <directory>./tests/Benin</directory>
+    </testsuite>
     <!-- Test Suite for holidays in Bosnia & Herzegovina -->
     <testsuite name="Bosnia">
       <directory>./tests/Bosnia</directory>

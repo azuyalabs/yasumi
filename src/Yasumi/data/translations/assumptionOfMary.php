@@ -23,6 +23,7 @@ return [
     'en' => 'Assumption of Mary',
     'es' => 'Asunción de la Virgen María',
     'fr' => 'Assomption',
+    'fr_BJ' => 'Jour de l’Assomption',
     'hr' => 'Velika Gospa',
     'it' => 'Assunzione di Maria Vergine',
     'it_CH' => 'Assunzione',

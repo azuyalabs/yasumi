@@ -25,6 +25,7 @@ return [
     'es' => 'Ascensión del Señor',
     'fi' => 'Helatorstai',
     'fr' => 'Ascension',
+    'fr_BJ' => 'Jour de l’Ascension',
     'it' => 'Ascensione',
     'nb' => 'Kristi himmelfartsdag',
     'nl' => 'Hemelvaart',

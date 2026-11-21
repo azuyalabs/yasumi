@@ -31,6 +31,7 @@ return [
     'fi' => 'Uudenvuodenpäivä',
     'fr' => 'Jour de l’An',
     'fr_BE' => 'Nouvel An',
+    'fr_BJ' => 'Fête du Nouvel An',
     'fr_CH' => 'Nouvel An',
     'ga' => 'Lá Caille',
     'hr' => 'Nova godina',
