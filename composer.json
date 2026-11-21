@@ -41,9 +41,9 @@
   "require-dev": {
     "azuyalabs/php-cs-fixer-config": "^0.3",
     "mikey179/vfsstream": "^1.6",
-    "phpstan/phpstan": "^2.2",
+    "phpstan/phpstan": "^2.3",
     "phpunit/phpunit": "^11.5",
-    "rector/rector": "^2.6"
+    "rector/rector": "^2.8"
   },
   "suggest": {
     "ext-calendar": "For calculating the date of Easter"

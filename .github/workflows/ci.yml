@@ -1,4 +1,4 @@
-name: "Testing"
+name: "CI"
 
 on:
   - push
@@ -12,7 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         operating-system: [ubuntu-latest, windows-latest]
-        php-versions: ["8.2", "8.3", "8.4", "8.5"]
+        php-versions: ["8.2", "8.3", "8.4", "8.5", "8.6"]
 
     steps:
       - name: Set git to use LF
@@ -29,7 +29,7 @@ jobs:
           php-version: ${{ matrix.php-versions }}
           extensions: calendar
 
-      - name: Get Composer Cache Directory
+      - name: Get Composer cache directory
         id: composer-cache
         shell: bash
         run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
@@ -46,6 +46,14 @@ jobs:
 
       - name: Install dependencies
         run: composer install --no-progress --prefer-dist --optimize-autoloader
+
+      - name: Check coding style
+        run: vendor/bin/php-cs-fixer --diff --dry-run -v fix
+        env:
+          PHP_CS_FIXER_IGNORE_ENV: 1
+
+      - name: Run PHPStan static analysis
+        run: composer phpstan
 
       - name: Run unit tests
         run: vendor/bin/phpunit

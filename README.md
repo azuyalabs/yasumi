@@ -20,7 +20,7 @@ hasn't been updated for a long time.
 
 ## Requirements
 
-Yasumi requires **PHP 8.2** or higher. The library supports PHP 8.2, 8.3, 8.4, and 8.5.
+Yasumi requires **PHP 8.2** or higher. The library supports PHP 8.2, 8.3, 8.4, 8.5 and 8.6.
 
 For detailed information about supported PHP versions and security updates, please refer to
 the [SECURITY.md](SECURITY.md) file.
