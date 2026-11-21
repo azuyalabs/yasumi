@@ -16,6 +16,7 @@ followed by any architectural or technical changes.
 
 ### Fixes
 
+- Use the Julian-Gregorian gap of the year for Orthodox Easter ([#438](https://github.com/azuyalabs/yasumi/issues/438))
 - *(Germany)* Set Assumption of Mary to official holiday in Saarland ([#436](https://github.com/azuyalabs/yasumi/issues/436))
 - Default to the current year when no year is given
 - *(Japan)* Apply legal conditions to bridge holidays ([#432](https://github.com/azuyalabs/yasumi/issues/432))
@@ -40,6 +41,10 @@ followed by any architectural or technical changes.
 
 - *(Deps)* Drop unused ext-json, ext-intl and deprecation rules
 - *(Deps)* Pin GitHub actions to specific commit SHA
+
+## New Contributors ❤️
+
+- @bardrop made their first contribution
 
 ## [2.12.0] - 2026-09-30
 
