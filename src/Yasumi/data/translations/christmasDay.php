@@ -35,6 +35,7 @@ return [
     'fr' => 'Noël',
     'hr' => 'Božić',
     'hu' => 'Karácsony',
+    'id' => 'Hari Raya Natal',
     'it' => 'Natale',
     'ko' => '기독탄신일',
     'lt' => 'Šv. Kalėdos',

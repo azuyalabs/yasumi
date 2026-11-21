@@ -30,6 +30,7 @@ return [
     'fr' => 'Vendredi Saint',
     'ga' => 'Aoine an Chéasta',
     'hu' => 'Nagypéntek',
+    'id' => 'Jumat Agung',
     'it' => 'Venerdi Santo',
     'ja' => 'グッドフライデー',
     'lv' => 'Lielā Piektdiena',

@@ -19,5 +19,6 @@ declare(strict_types = 1);
 return [
     'en' => 'Independence Day',
     'hr' => 'Dan neovisnosti',
+    'id' => 'Hari Kemerdekaan Republik Indonesia',
     'sl' => 'Dan samostojnosti in enotnosti',
 ];
