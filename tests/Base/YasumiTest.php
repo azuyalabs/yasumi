@@ -23,6 +23,7 @@ use Yasumi\Exception\InvalidYearException;
 use Yasumi\Exception\ProviderNotFoundException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
+use Yasumi\Provider\CzechRepublic;
 use Yasumi\tests\YasumiBase;
 use Yasumi\Yasumi;
 
@@ -484,6 +485,20 @@ class YasumiTest extends TestCase
         $provider = Yasumi::createByISO3166_2('JP');
 
         self::assertSame((int) date('Y'), $provider->getYear());
+    }
+
+    /**
+     * Tests that the ISO3166-2 code shared by Czechia and the Czech Republic resolves to one provider.
+     *
+     * @throws \ReflectionException
+     */
+    public function testCreateByISO31662ForCzechia(): void
+    {
+        self::assertSame('CzechRepublic', Yasumi::getProviders()['CZ']);
+
+        $provider = Yasumi::createByISO3166_2('CZ', 2019);
+
+        self::assertSame(CzechRepublic::class, $provider::class);
     }
 
     /**

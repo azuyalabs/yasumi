@@ -47,9 +47,10 @@ class Yasumi
      * @var array<string>
      */
     private static array $ignoredProvider = [
-        'AbstractProvider.php',
-        'CommonHolidays.php',
-        'ChristianHolidays.php',
+        'AbstractProvider',
+        'CommonHolidays',
+        'ChristianHolidays',
+        'Czechia',
     ];
 
     /**
