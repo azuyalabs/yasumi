@@ -16,6 +16,9 @@ followed by any architectural or technical changes.
 
 ### Fixes
 
+- Respect requested locales in substitute holiday names
+- Remove dead Juneteenth substitute block
+- Make provider ignore list match file names and pin CZ lookup
 - Use the Julian-Gregorian gap of the year for Orthodox Easter ([#438](https://github.com/azuyalabs/yasumi/issues/438))
 - *(Germany)* Set Assumption of Mary to official holiday in Saarland ([#436](https://github.com/azuyalabs/yasumi/issues/436))
 - Default to the current year when no year is given
@@ -30,6 +33,7 @@ followed by any architectural or technical changes.
 
 ### Documentation
 
+- Remove obsolete badges and add new CI badge
 - Update list of supported versions
 
 ### Testing
