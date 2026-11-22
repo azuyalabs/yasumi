@@ -64,7 +64,7 @@ class SubstituteHoliday extends Holiday
     ) {
         $key = 'substituteHoliday:' . $this->substitutedHoliday->getKey();
 
-        if ($date == $this->substitutedHoliday) {
+        if ($date->format('Y-m-d') === $this->substitutedHoliday->format('Y-m-d')) {
             throw new \InvalidArgumentException('Date must differ from the substituted holiday');
         }
 
@@ -99,7 +99,8 @@ class SubstituteHoliday extends Holiday
      */
     public function getName(?array $locales = null): string
     {
-        $name = parent::getName();
+        $lookupLocales = null === $locales ? null : [...$locales, self::DEFAULT_LOCALE, self::LOCALE_KEY];
+        $name = parent::getName($lookupLocales);
 
         if ($name !== $this->getKey()) {
             return $name;
@@ -108,7 +109,7 @@ class SubstituteHoliday extends Holiday
         foreach ($this->getLocales($locales) as $localeList) {
             $pattern = $this->substituteHolidayTranslations[$localeList] ?? null;
             if ($pattern) {
-                return str_replace('{0}', $this->substitutedHoliday->getName(), $pattern);
+                return str_replace('{0}', $this->substitutedHoliday->getName($lookupLocales), $pattern);
             }
         }
 

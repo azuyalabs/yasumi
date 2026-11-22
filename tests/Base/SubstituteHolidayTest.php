@@ -31,11 +31,11 @@ class SubstituteHolidayTest extends TestCase
     /** @throws \Exception */
     public function testCreateSubstituteHolidayUnknownLocaleException(): void
     {
-        $holiday = new Holiday('testHoliday', [], new \DateTime());
+        $holiday = new Holiday('testHoliday', [], new \DateTime('2019-01-01'));
 
         $this->expectException(UnknownLocaleException::class);
 
-        new SubstituteHoliday($holiday, [], new \DateTime(), 'wx-YZ');
+        new SubstituteHoliday($holiday, [], new \DateTime('2019-01-02'), 'wx-YZ');
     }
 
     /**
@@ -246,5 +246,55 @@ class SubstituteHolidayTest extends TestCase
 
         self::assertIsString($substitute->getName());
         self::assertEquals('My Holiday observed', $substitute->getName());
+    }
+
+    /**
+     * Tests that an InvalidArgumentException is thrown when the substitute falls on the same day as the
+     * substituted holiday, even when the times differ.
+     *
+     * @throws \Exception
+     */
+    public function testCreateSubstituteHolidaySameDateDifferentTime(): void
+    {
+        $holiday = new Holiday('testHoliday', [], new \DateTime('2019-01-01'));
+
+        $this->expectException(\InvalidArgumentException::class);
+
+        new SubstituteHoliday($holiday, [], new \DateTime('2019-01-01 15:30'), 'en_US');
+    }
+
+    /** @throws \Exception */
+    public function testSubstituteHolidayGetNameUsesRequestedLocale(): void
+    {
+        $holiday = new Holiday('testHoliday', [], new \DateTime('2019-01-01'), 'en_US');
+        $substitute = new SubstituteHoliday($holiday, ['nl' => 'Vervangende feestdag'], new \DateTime('2019-01-02'), 'en_US');
+
+        $translationsStub = $this->createMock(TranslationsInterface::class);
+        $translationsStub
+            ->method('getTranslations')
+            ->willReturn([]);
+
+        $substitute->mergeGlobalTranslations($translationsStub);
+
+        self::assertSame('Vervangende feestdag', $substitute->getName(['nl']));
+    }
+
+    /** @throws \Exception */
+    public function testSubstituteHolidayGetNameUsesRequestedLocaleForSubstitutedHoliday(): void
+    {
+        $holiday = new Holiday('testHoliday', [
+            'en_US' => 'Original Holiday',
+            'nl' => 'Oorspronkelijke feestdag',
+        ], new \DateTime('2019-01-01'), 'en_US');
+        $substitute = new SubstituteHoliday($holiday, [], new \DateTime('2019-01-02'), 'en_US');
+
+        $translationsStub = $this->createMock(TranslationsInterface::class);
+        $translationsStub
+            ->method('getTranslations')
+            ->willReturnCallback(static fn (string $key): array => 'substituteHoliday' === $key ? ['nl' => '{0} vervangend'] : []);
+
+        $substitute->mergeGlobalTranslations($translationsStub);
+
+        self::assertSame('Oorspronkelijke feestdag vervangend', $substitute->getName(['nl']));
     }
 }
