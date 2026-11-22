@@ -161,32 +161,10 @@ class USA extends AbstractProvider
     {
         if ($this->year >= 2021) {
             $date = new \DateTime("{$this->year}-6-19", DateTimeZoneFactory::getDateTimeZone($this->timezone));
-            $label = 'Juneteenth';
 
-            $holiday = new Holiday('juneteenth', [
-                'en' => $label,
-            ], $date, $this->locale);
-            $this->addHoliday($holiday);
-
-            $day_of_week = (int) $date->format('w');
-
-            if (0 === $day_of_week || 6 === $day_of_week) {
-                $date = clone $holiday;
-                $date->modify('previous friday');
-
-                if (0 === $day_of_week) {
-                    $date->modify('next monday');
-                }
-
-                $this->addHoliday(new SubstituteHoliday(
-                    $holiday,
-                    [
-                        'en' => $label . ' (observed)',
-                    ],
-                    $date,
-                    $this->locale
-                ));
-            }
+            $this->addHoliday(new Holiday('juneteenth', [
+                'en' => 'Juneteenth',
+            ], $date, $this->locale));
         }
     }
 
