@@ -23,17 +23,12 @@ use Yasumi\tests\HolidayTestCase;
 /**
  * Class containing tests for Orthodox Christmas Day in Bosnia.
  */
-class OrthodoxChristmasDay extends BosniaBaseTestCase implements HolidayTestCase
+class OrthodoxChristmasDayTest extends BosniaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.
      */
     public const HOLIDAY = 'orthodoxChristmasDay';
-
-    public function __construct()
-    {
-        parent::__construct(static::class);
-    }
 
     /**
      * @return array<array> list of test dates for the holiday defined in this test

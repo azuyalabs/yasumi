@@ -21,19 +21,14 @@ use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
 /**
- * Class for testing Day after New Years Day in Bosnia.
+ * Class containing tests for the Second International Workers' Day (i.e. Labour Day) in Bosnia.
  */
-class DayAfterNewYearsDay extends BosniaBaseTestCase implements HolidayTestCase
+class SecondLabourDayTest extends BosniaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.
      */
-    public const HOLIDAY = 'dayAfterNewYearsDay';
-
-    public function __construct()
-    {
-        parent::__construct(static::class);
-    }
+    public const HOLIDAY = 'secondLabourDay';
 
     /**
      * Tests the holiday defined in this test.
@@ -48,18 +43,6 @@ class DayAfterNewYearsDay extends BosniaBaseTestCase implements HolidayTestCase
     }
 
     /**
-     * Returns a list of random test dates used for assertion of the holiday defined in this test.
-     *
-     * @return array<array> list of test dates for the holiday defined in this test
-     *
-     * @throws \Exception
-     */
-    public static function HolidayDataProvider(): array
-    {
-        return static::generateRandomDates(1, 2, self::TIMEZONE);
-    }
-
-    /**
      * Tests the translated name of the holiday defined in this test.
      *
      * @throws \Exception
@@ -70,7 +53,7 @@ class DayAfterNewYearsDay extends BosniaBaseTestCase implements HolidayTestCase
             self::REGION,
             self::HOLIDAY,
             static::generateRandomYear(),
-            [self::LOCALE => 'Nova godina - drugi dan']
+            [self::LOCALE => 'Praznik rada - drugi dan']
         );
     }
 
@@ -82,5 +65,17 @@ class DayAfterNewYearsDay extends BosniaBaseTestCase implements HolidayTestCase
     public function testHolidayType(): void
     {
         $this->assertHolidayType(self::REGION, self::HOLIDAY, static::generateRandomYear(), Holiday::TYPE_OFFICIAL);
+    }
+
+    /**
+     * Returns a list of random test dates used for assertion of the holiday defined in this test.
+     *
+     * @return array<array> list of test dates for the holiday defined in this test
+     *
+     * @throws \Exception
+     */
+    public static function HolidayDataProvider(): array
+    {
+        return static::generateRandomDates(5, 2, self::TIMEZONE);
     }
 }
