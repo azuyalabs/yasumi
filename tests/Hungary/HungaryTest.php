@@ -72,6 +72,10 @@ class HungaryTest extends HungaryBaseTestCase implements ProviderTestCase
             $officialHolidays[] = 'goodFriday';
         }
 
+        if ($this->year >= 2026) {
+            $officialHolidays[] = 'christmasEve';
+        }
+
         $this->assertDefinedHolidays($officialHolidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -113,6 +117,6 @@ class HungaryTest extends HungaryBaseTestCase implements ProviderTestCase
      */
     public function testSources(): void
     {
-        $this->assertSources(self::REGION, 2);
+        $this->assertSources(self::REGION, 3);
     }
 }

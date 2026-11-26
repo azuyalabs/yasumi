@@ -60,6 +60,9 @@ class Hungary extends AbstractProvider
         $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale, Holiday::TYPE_OBSERVANCE));
         $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->allSaintsDay($this->year, $this->timezone, $this->locale));
+        if ($this->year >= 2026) {
+            $this->addHoliday($this->christmasEve($this->year, $this->timezone, $this->locale, Holiday::TYPE_OFFICIAL));
+        }
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale));
         $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
 
@@ -99,6 +102,7 @@ class Hungary extends AbstractProvider
         return [
             'https://en.wikipedia.org/wiki/Public_holidays_in_Hungary',
             'https://hu.wikipedia.org/wiki/Magyarorsz%C3%A1gi_%C3%BCnnepek_%C3%A9s_eml%C3%A9knapok_list%C3%A1ja',
+            'https://njt.jog.gov.hu/jogszabaly/2026-72-00-00',
         ];
     }
 }
