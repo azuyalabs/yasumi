@@ -12,10 +12,12 @@ followed by any architectural or technical changes.
 
 ### Features
 
+- *(Hungary)* Add Christmas Eve as an official holiday from 2026 ([#440](https://github.com/azuyalabs/yasumi/issues/440))
 - Add Ecuador holiday provider ([#408](https://github.com/azuyalabs/yasumi/issues/408))
 
 ### Fixes
 
+- *(Test)* Rename test classes to end in Test
 - Respect requested locales in substitute holiday names
 - Remove dead Juneteenth substitute block
 - Make provider ignore list match file names and pin CZ lookup
@@ -43,6 +45,7 @@ followed by any architectural or technical changes.
 
 ### Other
 
+- *(Docs)* Remove astray trailing whitespace
 - *(Deps)* Drop unused ext-json, ext-intl and deprecation rules
 - *(Deps)* Pin GitHub actions to specific commit SHA
 
