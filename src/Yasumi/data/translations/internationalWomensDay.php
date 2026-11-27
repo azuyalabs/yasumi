@@ -19,6 +19,8 @@ declare(strict_types = 1);
 return [
     'de' => 'Internationaler Frauentag',
     'en' => 'International Women’s Day',
+    'fr' => 'Journée internationale des droits des femmes',
+    'fr_BJ' => 'Journée de la Femme',
     'ka' => 'ქალთა საერთაშორისო დღე',
     'ko' => '국제 여성의 날',
     'ru' => 'Международный женский день',
